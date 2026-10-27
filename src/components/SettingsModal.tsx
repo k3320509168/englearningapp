@@ -35,6 +35,11 @@ export default function SettingsModal() {
           <input type="range" min={0} max={1} step={0.1} value={settings.sfxVolume}
             onChange={e => { updateSettings({ sfxVolume: Number(e.target.value) }); sfx.hit(); }} />
         </label>
+        <label className="range">
+          <span>背景音樂 <b>{Math.round(settings.musicVolume * 100)}%</b></span>
+          <input type="range" min={0} max={1} step={0.05} value={settings.musicVolume}
+            onChange={e => updateSettings({ musicVolume: Number(e.target.value) })} />
+        </label>
         <button className="btn" onMouseDown={keepFocus} onClick={() => say('Welcome to the English adventure.')}>▶ 試聽發音</button>
         <label className="check">
           <input type="checkbox" checked={settings.autoSpeak} onChange={e => updateSettings({ autoSpeak: e.target.checked })} />

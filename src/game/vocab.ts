@@ -1,9 +1,11 @@
 import type { Question, VocabEntry } from './types';
+import generatedVocab from './questions/generated-vocab.json';
 
 // 單字資料：拼寫、填空、語音題共用同一個字的中文與例句。
 // key 為大寫單字；題目透過 vocabKey() 對應到這裡。
 
-export const VOCAB: Record<string, VocabEntry> = {
+// 手寫的單字資料；自動生成題目附帶的單字放在 questions/generated-vocab.json，載入時合併
+const BASE_VOCAB: Record<string, VocabEntry> = {
   // ---------- A1 ----------
   BOOK: { pos: 'n.', meaning: '書本', example: 'I read a book every night.', exampleZh: '我每晚讀一本書。' },
   APPLE: { pos: 'n.', meaning: '蘋果', example: 'She eats an apple for breakfast.', exampleZh: '她早餐吃一顆蘋果。' },
@@ -95,6 +97,8 @@ export const VOCAB: Record<string, VocabEntry> = {
 };
 
 // 題目對應的單字：拼寫／語音看答案，填空看 speak（答案只是缺的字母），選擇題沒有單一單字
+export const VOCAB: Record<string, VocabEntry> = { ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) };
+
 export function vocabKey(q: Question): string | null {
   if (q.type === 'spell' || q.type === 'voice') return q.ans;
   if (q.type === 'fill') return q.speak ? q.speak.toUpperCase().replace(/[^A-Z]/g, '') : null;

@@ -323,7 +323,7 @@ export function registerSprites(scene: Phaser.Scene) {
     });
     // 寶箱怪沒有屬性配件，各屬性共用同一個外觀
     register(scene, monsterKey('chest', el), CHEST, { ...MONSTER_FIXED, ...CHEST_COLORS });
-    register(scene, monsterKey('demon', el), DEMON, { ...MONSTER_FIXED, ...DEMON_COLORS });
+    register(scene, monsterKey('demon', el), DEMON, { ...MONSTER_FIXED, ...DEMON_COLORS, ...(el === 'dark' ? {} : { A: colors.m, L: colors.M }) });
   });
   // 復仇魔王固定是暗屬性的幽靈
   register(scene, monsterKey('ghost', 'dark'), withAccessory(GHOST, 'dark'), { ...MONSTER_FIXED, ...GHOST_COLORS, A: ELEMENT_MONSTER_COLORS.dark.A, a: ELEMENT_MONSTER_COLORS.dark.a });

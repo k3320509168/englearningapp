@@ -2,6 +2,7 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { classDef } from '../game/character';
 import { currentClassName } from '../game/growth';
+import { dailyDef } from '../game/daily';
 import { keepFocus } from './keepFocus';
 
 // 地圖畫面上方的工具列：金幣、英雄、商店、圖鑑、說明、設定
@@ -10,6 +11,8 @@ export default function MapToolbar() {
   const partySize = useSaveStore(s => s.party.length);
   const tickets = useSaveStore(s => s.tickets);
   const player = useSaveStore(s => s.player);
+  // 有可以領取的每日任務時顯示紅點
+  const dailyReady = useSaveStore(s => s.daily?.tasks.some(t => !t.claimed && t.progress >= (dailyDef(t.id)?.goal ?? Infinity)) ?? false);
   const character = useSaveStore(s => s.character);
   const mistakeCount = useSaveStore(s => Object.keys(s.mistakes).length);
   const openModal = useUiStore(s => s.openModal);
@@ -31,6 +34,7 @@ export default function MapToolbar() {
         )}
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('heroes')}>⚔️ 隊伍 {partySize}/4</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚 🎫{tickets}</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('daily')}>📅 每日{dailyReady && <span className="dot-badge" aria-label="有獎勵可以領取" />}</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('shop')}>🏪 商店</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('codex')}>📚 圖鑑</button>
       </nav>

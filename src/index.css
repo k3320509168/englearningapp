@@ -1121,3 +1121,36 @@ button { font: inherit; color: inherit; }
 .golden-best { margin: 0; padding: 8px 10px; border: 2px solid var(--accent-dark); background: rgba(255, 205, 75, 0.08); font-family: var(--font-ui); }
 .title-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px !important; }
 .title-badges span { padding: 2px 8px; border: 2px solid var(--accent-dark); border-radius: 4px; background: rgba(255, 205, 75, 0.12); color: var(--accent); font-family: var(--font-ui); font-size: 13px; }
+
+/* ---------- 每日任務 ---------- */
+.daily-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.daily-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 2px solid var(--ink); background: var(--panel-2); }
+.daily-item.is-done { border-color: var(--accent); }
+.daily-item.is-claimed { opacity: 0.6; }
+.daily-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.daily-info b { font-family: var(--font-body); font-weight: 700; } /* 像素字的 2 容易看成 8 */
+.daily-track { height: 10px; border: 2px solid var(--ink); background: var(--bg); }
+.daily-track span { display: block; height: 100%; background: var(--good); }
+.dot-badge { display: inline-block; width: 10px; height: 10px; margin-left: 4px; border-radius: 50%; background: var(--bad); box-shadow: 0 0 6px var(--bad); vertical-align: top; }
+
+/* ---------- 魔王挑戰（聽說讀寫） ---------- */
+.challenge-row { display: grid; grid-template-columns: 1fr 2fr; gap: 8px; margin-top: 10px; }
+.challenge-row .golden-btn { margin-top: 0; }
+.skill-boss-btn { display: flex; flex-direction: column; align-items: center; font-family: var(--font-ui); font-size: 18px; --btn-bg: #4a2a6a; background: linear-gradient(90deg, #3a1f5a, #6a3a8a, #3a1f5a); color: #f0e0ff; }
+.skill-boss-btn small { font-size: 12px; color: #d8c0ff; }
+.skill-boss-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.skill-boss {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: var(--px) solid var(--ink);
+  border-radius: 6px;
+  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--el) 30%, transparent), var(--panel-2) 70%);
+  font-size: 14px;
+}
+.skill-boss.is-cleared { border-color: var(--accent); }
+.skill-boss-icon { font-size: 34px; }
+.skill-boss b { font-family: var(--font-ui); font-size: 18px; }
+.skill-boss .btn { align-self: flex-start; margin-top: auto; }
+@media (max-width: 560px) { .challenge-row { grid-template-columns: 1fr; } }

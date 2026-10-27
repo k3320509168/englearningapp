@@ -18,7 +18,7 @@ const VOICE_ANSWER = /^[A-Z']+( [A-Z']+)*$/;
 const CHOICE_LETTERS = ['A', 'B', 'C', 'D'];
 const MIN_QUESTIONS_PER_LEVEL = 3;
 
-function validateQuestion(q: Question, where: string): ValidationIssue[] {
+export function validateQuestion(q: Question, where: string): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const error = (message: string) => issues.push({ level: 'error', where, message });
   const warn = (message: string) => issues.push({ level: 'warning', where, message });

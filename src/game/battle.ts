@@ -153,5 +153,5 @@ export function buildAssist(q: Question, random: () => number = Math.random): As
 
 // 錯題紀錄的 key：同一題型同一答案視為同一題
 export function questionKey(q: Question): string {
-  return `${q.type}:${q.type === 'choice' ? q.desc : q.ans}`;
+  return `${q.type}:${q.type === 'choice' ? `${q.desc}${q.speak ? `|${q.speak}` : ''}` : q.ans}`;
 }

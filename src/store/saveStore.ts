@@ -14,6 +14,8 @@ import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '.
 import { MAX_PLUS, enhanceCost, equipDef, resolveCost } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
+import { applyDailyEvent, dailyDef, localDate, refreshDaily } from '../game/daily';
+import type { DailyEvent, DailyState } from '../game/daily';
 import { normalizeCharacter } from '../game/character';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
@@ -21,7 +23,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 12;
+export const SAVE_VERSION = 13;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -47,6 +49,7 @@ export interface Settings {
   autoSpeak: boolean;   // 出題時自動播放發音
   showLessons: boolean; // 每 10 關開始前自動顯示戰前預習
   voiceAsSpelling: boolean; // 不方便用麥克風時，口說題改成拼寫題
+  musicVolume: number;      // 背景音樂
 }
 
 interface SaveData {
@@ -86,6 +89,9 @@ interface SaveData {
   // 黃金之路最多通過幾關（全部通關為關卡總數）、獲得的稱號
   goldenBest: number;
   titles: string[];
+  // 每日任務與連續登入；擴充魔王（聽說讀寫）的通關紀錄
+  daily: DailyState | null;
+  skillBossCleared: string[];
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -126,6 +132,10 @@ interface SaveActions {
   // 完成一項真名考驗，第一次完成時送碎片；回傳是否第一次完成
   completeTrial: (id: HeroId, trialIdx: number) => boolean;
   recordGolden: (stagesReached: number) => void;
+  ensureDaily: () => void;
+  trackDaily: (event: DailyEvent, amount?: number) => void;
+  claimDaily: (id: string) => boolean;
+  recordSkillBoss: (id: string) => boolean; // 第一次通關回傳 true
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
@@ -139,7 +149,7 @@ export const initialSave: SaveData = {
   micAsked: false,
   mistakes: {},
   codex: {},
-  settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false },
+  settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35 },
   tutorialDone: false,
   gold: 0,
   upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 },
@@ -161,6 +171,8 @@ export const initialSave: SaveData = {
   trueName: {},
   goldenBest: 0,
   titles: [],
+  daily: null,
+  skillBossCleared: [],
 };
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
@@ -195,6 +207,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v9 → v10：主角等級／轉職、英雄等級、素材、裝備（預設值補齊）。
   // v10 → v11：真名考驗進度（預設值補齊）。
   // v11 → v12：黃金之路紀錄與稱號（預設值補齊）。
+  // v12 → v13：每日任務、背景音樂音量、擴充魔王紀錄（預設值補齊）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -252,7 +265,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         })),
         setMicAsked: () => set({ micAsked: true }),
 
-        recordAnswer: (q, correct, review) => set(s => {
+        recordAnswer: (q, correct, review) => {
+          let reviewed = false;
+          set(s => {
           const key = questionKey(q);
           const now = Date.now();
           const prevCodex = s.codex[key];
@@ -271,12 +286,15 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (!correct) {
             mistakes[key] = { question: q, wrongCount: (prev?.wrongCount ?? 0) + 1, lastWrongAt: now, box: 0, dueAt: now };
           } else if (prev && review && prev.dueAt <= now) {
+            reviewed = true;
             const box = prev.box + 1;
             if (box >= SRS_MASTERED_BOX) delete mistakes[key];
             else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box] };
           }
           return { codex, mistakes };
-        }),
+        });
+        if (reviewed) get().trackDaily('review');
+      },
 
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
         setTutorialDone: (done) => set({ tutorialDone: done }),
@@ -307,6 +325,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const merged = mergeStars(prev, stars);
           const gained = merged.filter(Boolean).length - (prev ?? []).filter(Boolean).length;
           set(s => ({ mapStars: { ...s.mapStars, [key]: merged }, tickets: s.tickets + gained * STAR_TICKETS }));
+          if (gained > 0) get().trackDaily('star', gained);
           return gained;
         },
 
@@ -388,6 +407,38 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             trueName: { ...s.trueName, [id]: next },
             heroShards: { ...s.heroShards, [id]: (s.heroShards[id] ?? 0) + TRIAL_SHARDS },
           });
+          get().trackDaily('trial');
+          return true;
+        },
+
+        // 每日任務：換日時重新抽任務、計算連續登入
+        ensureDaily: () => {
+          const next = refreshDaily(get().daily ?? undefined, localDate());
+          if (next !== get().daily) set({ daily: next });
+        },
+
+        trackDaily: (event, amount = 1) => {
+          get().ensureDaily();
+          set(s => ({ daily: s.daily ? applyDailyEvent(s.daily, event, amount) : s.daily }));
+        },
+
+        claimDaily: (id) => {
+          get().ensureDaily();
+          const s = get();
+          const task = s.daily?.tasks.find(t => t.id === id);
+          const def = dailyDef(id);
+          if (!task || !def || task.claimed || task.progress < def.goal) return false;
+          set({
+            gold: s.gold + def.reward.gold,
+            tickets: s.tickets + def.reward.tickets,
+            daily: { ...s.daily!, tasks: s.daily!.tasks.map(t => (t.id === id ? { ...t, claimed: true } : t)) },
+          });
+          return true;
+        },
+
+        recordSkillBoss: (id) => {
+          if (get().skillBossCleared.includes(id)) return false;
+          set(s => ({ skillBossCleared: [...s.skillBossCleared, id] }));
           return true;
         },
 
@@ -422,6 +473,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             return outcome;
           });
           set({ tickets: state.tickets, summonCounter: state.summonCounter, heroes: state.heroes, party: state.party, heroShards: state.heroShards });
+          get().trackDaily('summon');
           return outcomes;
         },
 
@@ -474,7 +526,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles,
+        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, skillBossCleared: s.skillBossCleared,
       }),
     },
   ),

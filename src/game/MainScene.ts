@@ -138,7 +138,7 @@ export default class MainScene extends Phaser.Scene {
   create() {
     const s = useBattleStore.getState();
     // 黃金之路固定用王城的背景
-    this.region = s.mode === 'golden' ? LEVELS.length - 1 : Math.max(0, LEVELS.indexOf(s.levelKey));
+    this.region = s.mode !== 'normal' ? LEVELS.length - 1 : Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
     this.character = useSaveStore.getState().character;
     this.tier = useSaveStore.getState().player.classPath.length;
@@ -208,7 +208,8 @@ export default class MainScene extends Phaser.Scene {
       return;
     }
     const stage = s.stages[s.stageIdx];
-    if (stage) this.stageText.setText(s.mode === 'golden'
+    if (stage) this.stageText.setText(s.mode === 'skill' ? `魔王挑戰  ${stage.name}`
+      : s.mode === 'golden'
       ? `黃金之路  第 ${s.stageIdx + 1} / ${s.stages.length} 關`
       : `${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx)}`);
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
@@ -313,7 +314,7 @@ export default class MainScene extends Phaser.Scene {
     this.monsterScale = this.monsterKind === 'demon' ? 9 : isRevenge ? 10 : isBoss ? 11 : isElite ? 9 : this.monsterKind === 'bat' ? 7 : 7.5;
     const el = elementDef(s.monsterElement);
     this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
-    const name = `${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
+    const name = s.mode === 'skill' ? `👑 ${stage.name}` : `${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
     this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : isElite || this.monsterKind === 'chest' ? '#ffcd4b' : '#ffffff');
     // 寶箱怪沒有屬性相剋，不顯示徽章
     if (this.monsterKind === 'chest') this.elementBadge.removeAll(true);

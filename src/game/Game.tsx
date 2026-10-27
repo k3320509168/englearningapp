@@ -19,9 +19,12 @@ import StoryModal from '../components/StoryModal';
 import GrowthModal from '../components/GrowthModal';
 import TrueNameModal from '../components/TrueNameModal';
 import GoldenModal from '../components/GoldenModal';
+import DailyModal from '../components/DailyModal';
+import SkillBossModal from '../components/SkillBossModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
+import { playMusic, setMusicVolume, unlockMusic } from './music';
 
 // 遊戲畫布固定 800x480 的邏輯座標，由 Phaser 依容器大小等比縮放（RWD）
 export const GAME_WIDTH = 800;
@@ -37,16 +40,44 @@ export default function Game() {
 
   // 第一次進入遊戲：建立主角 → 新手引導 → 麥克風
   useEffect(() => {
+    useSaveStore.getState().ensureDaily();
     const { character, tutorialDone, micAsked } = useSaveStore.getState();
     if (!character) useUiStore.getState().openModal('character');
     else if (!tutorialDone) useUiStore.getState().openModal('tutorial');
     else if (!micAsked) useUiStore.getState().openModal('mic');
   }, []);
 
-  // 音效音量跟著設定走
+  // 音效與背景音樂的音量跟著設定走
   useEffect(() => {
-    setSfxVolume(useSaveStore.getState().settings.sfxVolume);
-    return useSaveStore.subscribe(s => setSfxVolume(s.settings.sfxVolume));
+    const apply = () => {
+      const { sfxVolume, musicVolume } = useSaveStore.getState().settings;
+      setSfxVolume(sfxVolume);
+      setMusicVolume(musicVolume);
+    };
+    apply();
+    return useSaveStore.subscribe(apply);
+  }, []);
+
+  // 背景音樂：地圖、戰鬥、頭目各一首。瀏覽器要求使用者互動後才能播放聲音
+  useEffect(() => {
+    const pick = () => {
+      const s = useBattleStore.getState();
+      if (!s.active) return playMusic('map');
+      const stage = s.stages[s.stageIdx];
+      playMusic(stage?.bossMode ? 'boss' : 'battle');
+    };
+    pick();
+    const unsubscribe = useBattleStore.subscribe((s, prev) => {
+      if (s.active !== prev.active || s.stageIdx !== prev.stageIdx) pick();
+    });
+    const unlock = () => unlockMusic();
+    window.addEventListener('pointerdown', unlock);
+    window.addEventListener('keydown', unlock);
+    return () => {
+      unsubscribe();
+      window.removeEventListener('pointerdown', unlock);
+      window.removeEventListener('keydown', unlock);
+    };
   }, []);
 
   useEffect(() => {
@@ -116,6 +147,8 @@ export default function Game() {
       {modal === 'growth' && <GrowthModal />}
       {modal === 'trueName' && <TrueNameModal />}
       {modal === 'golden' && <GoldenModal />}
+      {modal === 'daily' && <DailyModal />}
+      {modal === 'skillBoss' && <SkillBossModal />}
     </div>
   );
 }

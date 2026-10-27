@@ -1,4 +1,5 @@
 // 瀏覽器內建語音（Web Speech API）的薄包裝。之後接 Whisper 備援時，從這裡擴充。
+import { duckMusic } from './music';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Recognizer {
@@ -46,6 +47,9 @@ export function speak(text: string, rate = 1, volume = 1, slow = false) {
   utterance.rate = slow ? SLOW_RATE : rate;
   utterance.volume = volume;
   current = utterance;
+  // 發音時壓低背景音樂，唸完再恢復
+  duckMusic(true);
+  utterance.onend = utterance.onerror = () => { if (current === utterance) duckMusic(false); };
   const start = () => { if (current === utterance) synth.speak(utterance); };
   if (busy) pending = window.setTimeout(start, 120);
   else start();

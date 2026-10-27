@@ -30,7 +30,8 @@ export default function BattleHUD() {
     questionSeq: s.questionSeq,
     phase: s.phase,
     // 例如「風車丘 2-5：菁英怪」
-    stageName: s.mode === 'golden'
+    stageName: s.mode === 'skill' ? `⚔️ 魔王挑戰：${s.stages[0]?.name ?? ''}`
+      : s.mode === 'golden'
       ? `👑 黃金之路・${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`
       : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
     stageNo: s.stageIdx + 1,
@@ -44,7 +45,8 @@ export default function BattleHUD() {
   // 新題目出現時自動播放發音（可在設定關閉）
   useEffect(() => {
     const { question: q, phase: p } = useBattleStore.getState();
-    if (q?.speak && p === 'answering' && useSaveStore.getState().settings.autoSpeak) say(q.speak);
+    // 聽力題（題目只有聲音）不管設定都要播放
+    if (q?.speak && p === 'answering' && (useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧'))) say(q.speak);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionSeq]);
 

@@ -12,6 +12,7 @@ import { finishGoldenRoad, finishRegion } from '../game/startLevel';
 import { useSaveStore } from '../store/saveStore';
 import { GOLDEN_CLEAR_TICKETS, GOLDEN_TITLE, MAIN_TITLE } from '../game/golden';
 import { LEVELS } from '../game/QuestionData';
+import { skillBossDef } from '../game/skillBosses';
 import { materialIcon, materialName } from '../game/equipment';
 import { keepFocus } from './keepFocus';
 
@@ -32,6 +33,7 @@ export default function SummaryPanel() {
     mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
   })));
   const goldenBest = useSaveStore(s => s.goldenBest);
+  const titles = useSaveStore(s => s.titles);
   const golden = mode === 'golden';
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
@@ -46,7 +48,10 @@ export default function SummaryPanel() {
   const region = regionOf(levelKey);
   const map = region.maps[Math.floor(stageIdx / 10)] ?? '';
   const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
-  const title = golden
+  const skillDef = mode === 'skill' ? skillBossDef(useBattleStore.getState().skillBoss ?? '') : undefined;
+  const title = skillDef
+    ? (phase === 'levelClear' ? `⚔️ 擊敗${skillDef.name}！` : `⚔️ ${skillDef.name}挑戰失敗`)
+    : golden
     ? (phase === 'levelClear' ? `👑 黃金之路通關！你就是「${GOLDEN_TITLE}」` : `👑 黃金之路：在第 ${stageIdx + 1} / ${stages.length} 關止步`)
     : phase === 'summary' ? `${bossName}！「${map}」通關`
     : phase === 'levelClear' ? '🎉 區域完全通關！' : '💀 體力耗盡';
@@ -54,7 +59,8 @@ export default function SummaryPanel() {
   return (
     <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
-      {phase === 'levelClear' && !golden && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : '下一個區域已解鎖'}</p>}
+      {skillDef && phase === 'levelClear' && <p>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</p>}
+      {phase === 'levelClear' && !golden && !skillDef && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : '下一個區域已解鎖'}</p>}
       {golden && phase === 'gameOver' && <p>一次失誤就結束——這就是黃金之路。最佳紀錄：通過 {goldenBest} / {stages.length} 關。看看是哪一題，再挑戰一次吧！</p>}
       {golden && phase === 'levelClear' && <p>沒有夥伴、沒有裝備，只憑英文能力擊敗了沉默魔王。獲得召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS}！</p>}
       {mapResult && phase !== 'gameOver' && (
@@ -116,7 +122,7 @@ export default function SummaryPanel() {
 
       <div className="feedback-actions">
         {phase === 'summary' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={nextStage}>繼續冒險 ⏎</button>}
-        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => (golden ? finishGoldenRoad() : finishRegion(levelIdx))}>回到世界地圖 ⏎</button>}
+        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => (golden ? finishGoldenRoad() : skillDef ? exitToMap() : finishRegion(levelIdx))}>回到世界地圖 ⏎</button>}
         {phase === 'gameOver' && (
           <>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={retryLevel}>重新挑戰 ⏎</button>

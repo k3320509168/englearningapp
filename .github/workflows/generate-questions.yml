@@ -1,0 +1,66 @@
+# 題庫自動擴充：Gemini 出題 → 驗證 → 測試 → 開 PR 通知抽查。
+# 需要在 GitHub 專案的 Settings → Secrets and variables → Actions 新增 GEMINI_API_KEY。
+name: 題庫自動擴充
+
+on:
+  workflow_dispatch:
+    inputs:
+      level:
+        description: '區域題庫（0=A1 ... 5=C2）'
+        required: true
+        default: '0'
+      count:
+        description: '要出幾題'
+        required: true
+        default: '12'
+  schedule:
+    # 每週一台灣時間早上 9 點，輪流擴充各區域
+    - cron: '0 1 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: 決定題庫
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "level=$(( $(date +%U) % 6 ))" >> "$GITHUB_OUTPUT"
+            echo "count=12" >> "$GITHUB_OUTPUT"
+          else
+            echo "level=${{ inputs.level }}" >> "$GITHUB_OUTPUT"
+            echo "count=${{ inputs.count }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Gemini 出題
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npx tsx scripts/generate-questions.ts --level ${{ steps.pick.outputs.level }} --count ${{ steps.pick.outputs.count }}
+
+      - name: 驗證題庫與測試
+        run: |
+          npm run validate:questions
+          npm test
+
+      - name: 開 PR（請抽查後合併）
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/questions-${{ github.run_id }}
+          commit-message: 'content: 題庫自動擴充（待人工抽查）'
+          title: '題庫自動擴充：請抽查新題目'
+          body-path: question-report.md
+          labels: needs-review
+          add-paths: |
+            src/game/questions/generated.json
+            src/game/questions/generated-vocab.json

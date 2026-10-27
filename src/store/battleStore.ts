@@ -3,7 +3,7 @@ import type { Question, Stage } from '../game/types';
 import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
-  ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT,
+  ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT, shuffleArray,
   applyLetter, buildAssist, checkChoice, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
 } from '../game/battle';
 import type { Assist } from '../game/battle';
@@ -24,6 +24,8 @@ import { XP, xpScale } from '../game/growth';
 import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey } from '../game/regions';
 import { emptyRunStats, evaluateStars } from '../game/stars';
+import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
+import type { SkillBossId } from '../game/skillBosses';
 import {
   GOLDEN_CLEAR_TICKETS, GOLDEN_LEVEL_KEY, GOLDEN_STAGE_COUNT, GOLDEN_TITLE, createGoldenDecks, generateGoldenStages, goldenMonsterHp, goldenTier,
 } from '../game/golden';
@@ -76,7 +78,8 @@ export const COMBO_GOLD_STEP = 10; // 每 10 combo 金幣 +10%，最多 +100%
 interface BattleState {
   active: boolean;
   levelKey: string;
-  mode: 'normal' | 'golden'; // golden：黃金之路（不能答錯、初始角色）
+  mode: 'normal' | 'golden' | 'skill'; // golden：黃金之路；skill：聽說讀寫擴充魔王
+  skillBoss: SkillBossId | null;
   levelIdx: number;
   stages: Stage[];
   stageIdx: number;
@@ -128,6 +131,7 @@ interface BattleState {
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
   startGoldenRoad: (transform?: (q: Question) => Question) => void;
+  startSkillBoss: (id: SkillBossId) => void;
   startBattle: () => void;
   openLesson: () => void;
   tick: (ms: number) => void;
@@ -225,8 +229,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const s = get();
     const golden = s.mode === 'golden';
     if (golden) decks = goldenDecks![goldenTier(stageIdx)];
-    else save().setLevelProgress(s.levelKey, stageIdx);
-    const stage = golden ? s.stages[stageIdx] : withRevenge(s.stages[stageIdx], stageIdx, s.stages.length);
+    else if (s.mode === 'normal') save().setLevelProgress(s.levelKey, stageIdx);
+    const stage = s.mode === 'normal' ? withRevenge(s.stages[stageIdx], stageIdx, s.stages.length) : s.stages[stageIdx];
     const stages = s.stages.map((st, i) => (i === stageIdx ? stage : st));
     // 復仇魔王：每答對一題扣固定血量，要把到期的錯題全部答對才會倒下
     const maxHp = stage.revenge
@@ -234,15 +238,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       : stage.kind === 'treasure'
         ? Math.round(BASE_DAMAGE * TREASURE_HITS * monsterGrowth(stageIdx, s.levelIdx))
         : golden ? goldenMonsterHp(stageIdx, stage)
+        : s.mode === 'skill' ? Math.round(BASE_DAMAGE * SKILL_BOSS_HITS * monsterGrowth(25, s.levelIdx))
         : Math.round(monsterMaxHp(stageIdx, s.levelIdx, stage.bossMode) * (stage.kind === 'elite' ? ELITE_HP_MULT : stage.kind === 'final' ? 3 : 1));
     // 區段開頭，或從中途繼續時，先預習這一段的內容
-    const showLesson = !golden && (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
+    const showLesson = !golden && s.mode !== 'skill' && (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
     // 新地圖：combo 與戰績重新計算（combo 只在同一張地圖內延續）
     const newMap = isFirst || (!golden && stageIdx % MAP_SIZE === 0);
     // 每第 5 題是魔王題：剛好輪到這一關的第一題時也要出（之後再出這關準備好的題目）
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
-    const original = isBossQuestion ? pickBossQuestion(null) : stage.questions[0];
+    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null)) : stage.questions[0];
     set({
       ...(newMap ? { combo: 0, bossMult: 1, bossChain: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
@@ -257,7 +262,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       retrying: false,
       monsterHp: maxHp,
       monsterMaxHp: maxHp,
-      monsterElement: monsterElement(stageIdx, golden ? goldenTier(stageIdx) : s.levelIdx, stage.revenge || stage.kind === 'final'),
+      monsterElement: s.mode === 'skill' ? skillBossDef(s.skillBoss!)!.element
+        : monsterElement(stageIdx, golden ? goldenTier(stageIdx) : s.levelIdx, stage.revenge || stage.kind === 'final'),
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
       stageHits: 0,
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
@@ -282,7 +288,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     let qIdx = s.qIdx;
     let original: Question;
     if (isBossQuestion) {
-      original = pickBossQuestion(s.original);
+      original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original);
     } else {
       qIdx += 1;
       original = qIdx < stage.questions.length
@@ -338,6 +344,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       }
       return;
     }
+    // 擴充魔王：第一次擊敗得到稱號與召喚券
+    if (s.mode === 'skill') {
+      const def = skillBossDef(s.skillBoss!)!;
+      if (save().recordSkillBoss(def.id)) {
+        save().addTitle(def.title);
+        save().addTickets(SKILL_BOSS_FIRST_TICKETS);
+      }
+      set({ ...patch, phase: 'levelClear' });
+      return;
+    }
     // 地圖最後一關（頭目）：三星評價
     if (stage.bossMode || isLastStage) {
       const merged = { ...s, ...patch };
@@ -375,6 +391,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const crit = random() < attacker.crit;
     const regionScale = xpScale(s.levelIdx);
     let party = gainEnergy(s.party);
+    save().trackDaily('correct');
+    save().trackDaily('combo', combo);
     const mapStats = {
       ...s.mapStats,
       answered: s.mapStats.answered + 1,
@@ -439,13 +457,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const gold = earn(goldBase, combo);
     // 打倒頭目、通關可以拿到召喚券
     const tickets = !killed ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
-    if (tickets > 0 && s.mode !== 'golden') save().addTickets(tickets);
+    if (tickets > 0 && s.mode === 'normal') save().addTickets(tickets);
 
     // 擊倒：經驗值與素材掉落
     const dropKind = stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : stage.kind === 'treasure' ? 'treasure' : 'normal';
     const { xp, levelUp } = gainXp(!killed ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
     const drops = killed && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random) : {};
     if (killed) save().addMaterials(drops);
+    if (killed && stage.bossMode && s.mode !== 'golden') save().trackDaily('boss');
 
     const common = {
       ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
@@ -520,6 +539,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     active: false,
     levelKey: '',
     mode: 'normal',
+    skillBoss: null,
     levelIdx: 0,
     stages: [],
     stageIdx: 0,
@@ -575,7 +595,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const stats = playerStats({ upgrades });
       const party = buildParty(ids, heroes, character, stats, partyOptions());
       set({
-        active: true, mode: 'normal', levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
+        active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
@@ -593,7 +613,29 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const stats = playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 } });
       const party = buildParty([character ? 'player' : heroes[0]], heroes, character, stats);
       set({
-        active: true, mode: 'golden', levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
+        active: true, mode: 'golden', skillBoss: null, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
+        combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
+        stats, ...withTotals(party), attackerIdx: 0,
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
+      });
+      loadStage(0, true);
+    },
+
+    // 擴充魔王：單一頭目戰，題目只來自一種能力；用正式隊伍（含成長）挑戰
+    startSkillBoss: (id) => {
+      const def = skillBossDef(id)!;
+      questionTransform = q => q;
+      const { upgrades, party: ids, character, heroes, unlockedIndex } = save();
+      const levelIdx = Math.min(unlockedIndex, LEVELS.length - 1);
+      const questions = shuffleArray(skillBossQuestions(id, reachablePool(unlockedIndex)));
+      let i = 0;
+      const draw = () => questions[i++ % questions.length];
+      decks = { normal: draw, boss: draw };
+      const stats = playerStats({ upgrades });
+      const party = buildParty(ids, heroes, character, stats, partyOptions());
+      set({
+        active: true, mode: 'skill', skillBoss: id, levelKey: `skill-${id}`, levelIdx,
+        stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
@@ -746,7 +788,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     },
 
     // 全隊倒下後重新挑戰：從倒下的那一關重來，不必從第 1 關打起
-    retryLevel: () => (get().mode === 'golden' ? get().startGoldenRoad(questionTransform) : get().startLevel(get().levelKey, questionTransform, get().stageIdx)),
+    retryLevel: () => {
+      const s = get();
+      if (s.mode === 'golden') s.startGoldenRoad(questionTransform);
+      else if (s.mode === 'skill') s.startSkillBoss(s.skillBoss!);
+      else s.startLevel(s.levelKey, questionTransform, s.stageIdx);
+    },
 
     exitToMap: () => set({ active: false, question: null }),
   };

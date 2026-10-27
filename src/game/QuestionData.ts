@@ -1,5 +1,6 @@
 import type { Question, Stage } from './types';
 import { shuffleArray } from './battle';
+import generatedPool from './questions/generated.json';
 
 export const LEVELS = [
   "A1 入門 (120-224分)", "A2 初級 (225-549分)", "B1 中級 (550-784分)",
@@ -10,7 +11,8 @@ export const LEVELS = [
 // voice 的 ans 為大寫單字（以「辨識結果包含 ans 或 accept」判定）。
 export type QuestionPool = Record<string, { normal: Question[], boss: Question[] }>;
 
-export const QUESTION_POOL: QuestionPool = {
+// 手寫的題庫；自動生成（Gemini → 驗證 → 人工抽查）的題目放在 questions/generated.json，載入時合併
+const BASE_POOL: QuestionPool = {
   "A1 入門 (120-224分)": {
     normal: [
       { type: "spell", desc: "請拼出：書本", ans: "BOOK", speak: "book" },
@@ -158,6 +160,19 @@ export const QUESTION_POOL: QuestionPool = {
     ]
   }
 };
+
+export function mergePools(base: QuestionPool, extra: Partial<QuestionPool>): QuestionPool {
+  const merged: QuestionPool = {};
+  for (const key of new Set([...Object.keys(base), ...Object.keys(extra)])) {
+    merged[key] = {
+      normal: [...(base[key]?.normal ?? []), ...(extra[key]?.normal ?? [])],
+      boss: [...(base[key]?.boss ?? []), ...(extra[key]?.boss ?? [])],
+    };
+  }
+  return merged;
+}
+
+export const QUESTION_POOL: QuestionPool = mergePools(BASE_POOL, generatedPool as Partial<QuestionPool>);
 
 export function getPool(levelKey: string) {
   return QUESTION_POOL[levelKey] || QUESTION_POOL["A1 入門 (120-224分)"];

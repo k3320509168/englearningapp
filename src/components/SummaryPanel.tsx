@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
 import { segmentRange, summarize } from '../game/lesson';
@@ -5,6 +6,9 @@ import { questionHint, completedSentence, questionKey } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question } from '../game/types';
 import { useSpeak } from './useSpeak';
+import { regionOf } from '../game/regions';
+import { starConditions } from '../game/stars';
+import { finishRegion } from '../game/startLevel';
 import { keepFocus } from './keepFocus';
 
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
@@ -19,24 +23,43 @@ function answerLabel(q: Question): { text: string; audio: string; meaning: strin
 }
 
 export default function SummaryPanel() {
-  const { phase, answers, stageIdx, stages, maxCombo, runGold } = useBattleStore(useShallow(s => ({
+  const { phase, answers, stageIdx, stages, maxCombo, runGold, mapResult, levelKey, levelIdx } = useBattleStore(useShallow(s => ({
     phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold,
+    mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx,
   })));
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
+  const ref = useRef<HTMLDivElement>(null);
+  // 結算出現時捲到畫面中，手機或小螢幕上才不會漏看
+  useEffect(() => { ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, [phase]);
 
   // 區段結算只看這 10 關；通關與失敗看整個區域
   const [from] = phase === 'summary' ? segmentRange(stageIdx, stages.length) : [0];
   const summary = summarize(answers, from, stageIdx);
 
+  const region = regionOf(levelKey);
+  const map = region.maps[Math.floor(stageIdx / 10)] ?? '';
   const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
-  const title = phase === 'summary' ? `${bossName}！第 ${from + 1}–${stageIdx + 1} 關結算`
+  const title = phase === 'summary' ? `${bossName}！「${map}」通關`
     : phase === 'levelClear' ? '🎉 區域完全通關！' : '💀 體力耗盡';
 
   return (
-    <div className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
+    <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
       {phase === 'levelClear' && <p>下一個區域已解鎖</p>}
+      {mapResult && phase !== 'gameOver' && (
+        <section className="star-result" aria-label="三星評價">
+          <div className="star-row">
+            {mapResult.stars.map((on, i) => <span key={i} className={`big-star ${on ? 'on' : ''}`} style={{ animationDelay: `${i * 0.25}s` }}>★</span>)}
+          </div>
+          <ul>
+            {starConditions(levelIdx).map((c, i) => (
+              <li key={c.label} className={mapResult.stars[i] ? 'met' : ''}>{mapResult.stars[i] ? '✔' : '✘'} {c.label}</li>
+            ))}
+          </ul>
+          {mapResult.gained > 0 && <p className="star-gain">新星星 +{mapResult.gained}，獲得召喚券 🎫 ×{mapResult.gained}！</p>}
+        </section>
+      )}
       {phase === 'gameOver' && <p>別灰心！賺到的金幣都保留了，可以到商店升級。下面是這次要加強的字。</p>}
       {stages[stageIdx]?.revenge && phase === 'summary' && <p>復仇成功！這些錯題的複習間隔已經拉長，下次會在幾天後再考你。</p>}
 
@@ -79,7 +102,7 @@ export default function SummaryPanel() {
 
       <div className="feedback-actions">
         {phase === 'summary' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={nextStage}>繼續冒險 ⏎</button>}
-        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={exitToMap}>回到世界地圖 ⏎</button>}
+        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => finishRegion(levelIdx)}>回到世界地圖 ⏎</button>}
         {phase === 'gameOver' && (
           <>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={retryLevel}>重新挑戰 ⏎</button>
@@ -90,3 +113,4 @@ export default function SummaryPanel() {
     </div>
   );
 }
+

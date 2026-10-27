@@ -9,6 +9,7 @@ import {
   heroDef, isHeroId, summon,
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
+import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { normalizeCharacter } from '../game/character';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
@@ -16,7 +17,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 8;
+export const SAVE_VERSION = 9;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -66,6 +67,10 @@ interface SaveData {
   summonCounter: SummonCounter;
   heroShards: Record<HeroId, number>;
   heroTier: Record<HeroId, number>;
+  // 世界：每張地圖的最佳三星紀錄（key 為 regionId#mapIdx）、每個區域打到過的最遠關卡、看過的劇情
+  mapStars: Record<string, boolean[]>;
+  bestStage: Record<string, number>;
+  storySeen: string[];
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -92,6 +97,9 @@ interface SaveActions {
   summonHeroes: (count: number, rand?: () => number) => SummonOutcome[] | null;
   exchangeSpark: (id: HeroId) => SummonOutcome | null;
   tierUp: (id: HeroId) => boolean;
+  // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
+  recordMapStars: (key: string, stars: boolean[]) => number;
+  markStorySeen: (id: string) => void;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
   resetProgress: () => void;
@@ -115,6 +123,9 @@ export const initialSave: SaveData = {
   summonCounter: { sinceSsr: 0, spark: 0 },
   heroShards: {},
   heroTier: {},
+  mapStars: {},
+  bestStage: {},
+  storySeen: [],
 };
 
 // 把召喚到的英雄加進存檔：新英雄直接擁有（隊伍有空位就加入），重複的轉成碎片
@@ -142,6 +153,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v5 → v6：新增自創主角（舊玩家也要先建立角色）。
   // v6 → v7：單一出戰英雄改為 4 人隊伍（主角＋原本選的英雄）。
   // v7 → v8：英雄改為 50 位＋召喚；舊英雄保留，並贈送起始召喚券。
+  // v8 → v9：地圖三星、最遠關卡、劇情紀錄；舊玩家的最遠關卡以目前進度補上，並視為看過序章。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -151,6 +163,8 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     character: normalizeCharacter(data.character),
     party: data.party ?? ['player', data.hero ?? 'knight'],
     summonCounter: { ...initialSave.summonCounter, ...data.summonCounter },
+    bestStage: data.bestStage ?? { ...data.levelProgress },
+    storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
   migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
@@ -183,7 +197,10 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         ...initialSave,
         setCharacter: (c) => set({ character: normalizeCharacter(c) }),
         unlockLevel: (index) => set(s => ({ unlockedIndex: Math.max(s.unlockedIndex, index) })),
-        setLevelProgress: (levelKey, stageIdx) => set(s => ({ levelProgress: { ...s.levelProgress, [levelKey]: stageIdx } })),
+        setLevelProgress: (levelKey, stageIdx) => set(s => ({
+          levelProgress: { ...s.levelProgress, [levelKey]: stageIdx },
+          bestStage: { ...s.bestStage, [levelKey]: Math.max(s.bestStage[levelKey] ?? 0, stageIdx) },
+        })),
         setMicAsked: () => set({ micAsked: true }),
 
         recordAnswer: (q, correct, review) => set(s => {
@@ -235,6 +252,16 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         },
 
         addTickets: (n) => set(s => ({ tickets: s.tickets + n })),
+
+        recordMapStars: (key, stars) => {
+          const prev = get().mapStars[key];
+          const merged = mergeStars(prev, stars);
+          const gained = merged.filter(Boolean).length - (prev ?? []).filter(Boolean).length;
+          set(s => ({ mapStars: { ...s.mapStars, [key]: merged }, tickets: s.tickets + gained * STAR_TICKETS }));
+          return gained;
+        },
+
+        markStorySeen: (id) => set(s => (s.storySeen.includes(id) ? {} : { storySeen: [...s.storySeen, id] })),
         buyTicket: () => purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1 })),
 
         // 召喚：每抽 1 張券；有保底與累積點數
@@ -284,7 +311,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
         // 只保留設定、新手引導進度與主角
-        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character })),
+        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character, storySeen: s.storySeen })),
       };
     },
     {
@@ -297,6 +324,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
+        mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
       }),
     },
   ),

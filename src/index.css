@@ -912,3 +912,92 @@ button { font: inherit; color: inherit; }
 .timer-track { position: relative; }
 .timer-mark { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.55); }
 .timer-note.treasure { color: var(--accent); }
+
+/* ---------- 區域地圖（跑地圖） ---------- */
+.region-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-family: var(--font-ui); }
+.region-head b { font-family: var(--font-num); font-size: 12px; color: var(--accent); }
+.region-route {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 28px 12px 16px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  border: var(--px) solid var(--ink);
+  background: linear-gradient(180deg, #8fd0ff 0%, #bfe8ff 45%, #6fbf5a 46%, #4f9a43 100%);
+}
+.region-route.theme-1 { background: linear-gradient(180deg, #7aa0b8 0%, #b7c9d6 45%, #3f7a4a 46%, #2c5a36 100%); }
+.region-route.theme-2 { background: linear-gradient(180deg, #ffd08a 0%, #ffe9b8 45%, #e2b35f 46%, #c48d3f 100%); }
+.region-route.theme-3 { background: linear-gradient(180deg, #5a5fb8 0%, #a9b4ff 45%, #e8f0ff 46%, #b9c8e8 100%); }
+.region-route.theme-4 { background: linear-gradient(180deg, #3a1530 0%, #8f2a3a 45%, #4a2a2a 46%, #2a1616 100%); }
+/* 連接地圖的小路 */
+.region-route::before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 74px;
+  border-top: 6px dotted rgba(26, 18, 38, 0.6);
+}
+.route-node { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
+.route-node b { padding: 1px 6px; border-radius: 4px; background: rgba(15, 16, 35, 0.75); font-family: var(--font-ui); font-size: 14px; }
+.route-node.is-locked b { color: var(--muted); }
+.route-flag {
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border: var(--px) solid var(--ink);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 4px 0 var(--accent-dark);
+  cursor: pointer;
+}
+.route-flag:disabled { background: #6c667c; box-shadow: 0 4px 0 #3c3a48; cursor: default; }
+.route-no { font-family: var(--font-num); font-size: 14px; color: #2a1a00; }
+.route-hero { position: absolute; top: -30px; left: 50%; width: 48px; transform: translateX(-90%); image-rendering: pixelated; z-index: 2; animation: hero-bob 0.6s ease-in-out infinite alternate; }
+.route-hero.is-running { animation: hero-run 0.12s linear infinite alternate; }
+@keyframes hero-bob { to { transform: translate(-90%, -4px); } }
+@keyframes hero-run { to { transform: translate(-90%, -8px); } }
+.route-stars { font-size: 15px; letter-spacing: 1px; text-shadow: 0 1px 0 #000; }
+.route-stars i { font-style: normal; color: rgba(15, 16, 35, 0.55); }
+.route-stars i.on { color: var(--accent); }
+.route-progress { padding: 0 4px; background: rgba(15, 16, 35, 0.75); color: var(--accent); font-size: 12px; }
+.route-node .level-restart { background: rgba(15, 16, 35, 0.75); }
+.star-rules ol { margin: 0; padding-left: 22px; line-height: 1.8; font-size: 14px; }
+@media (max-width: 560px) {
+  .region-route { grid-template-columns: 1fr; padding: 16px 12px; }
+  .region-route::before { display: none; }
+  .route-node { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+  .route-hero { position: static; transform: none; width: 36px; animation: none; }
+}
+
+/* ---------- 劇情 ---------- */
+.story-line { display: flex; gap: 12px; align-items: flex-start; min-height: 120px; cursor: pointer; animation: slide-up 0.18s ease-out; }
+.story-portrait {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border: var(--px) solid var(--ink);
+  border-radius: 6px;
+  background: var(--panel-2);
+  font-size: 44px;
+}
+.story-portrait img { width: 76px; image-rendering: pixelated; }
+.story-bubble { flex: 1; padding: 12px 14px; border: var(--px) solid var(--ink); border-radius: 8px; background: var(--panel-2); }
+.story-bubble b { display: block; margin-bottom: 4px; font-family: var(--font-ui); color: var(--accent); }
+.story-bubble p { margin: 0; line-height: 1.8; font-size: 16px; }
+.speaker-villain .story-bubble { border-color: #8f2a3a; background: #2a1426; }
+.speaker-narrator .story-bubble { font-style: italic; }
+
+/* ---------- 三星結算 ---------- */
+.star-result { margin: 0 0 14px; padding: 12px; border: 2px solid var(--accent-dark); background: rgba(255, 205, 75, 0.08); text-align: center; }
+.star-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 8px; }
+.big-star { font-size: 42px; color: #3c3a52; text-shadow: 0 3px 0 #000; }
+.big-star.on { color: var(--accent); animation: star-pop 0.4s ease-out both; }
+@keyframes star-pop { from { transform: scale(0) rotate(-90deg); } 70% { transform: scale(1.3); } to { transform: none; } }
+.star-result ul { list-style: none; margin: 0; padding: 0; text-align: left; display: inline-block; line-height: 1.8; font-size: 14px; color: var(--muted); }
+.star-result li.met { color: var(--good); }
+.star-gain { margin: 6px 0 0; color: var(--accent); font-family: var(--font-ui); }

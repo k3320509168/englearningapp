@@ -1,6 +1,8 @@
 import { useSaveStore } from '../store/saveStore';
 import { REGIONS } from '../game/regions';
+import { useUiStore } from '../store/uiStore';
 import { beginLevel } from '../game/startLevel';
+import { mapName } from '../game/regions';
 import { keepFocus } from './keepFocus';
 
 // 地圖下方的區域按鈕：比點畫布上的旗幟更明顯，手機上也好點。
@@ -20,10 +22,10 @@ export default function MapLevelBar() {
             <div key={levelKey} className="level-cell">
               <button
                 className={`btn level-btn ${i === unlockedIndex ? 'btn-primary' : ''}`}
-                onMouseDown={keepFocus} onClick={() => beginLevel(levelKey)} disabled={locked}
+                onMouseDown={keepFocus} onClick={() => useUiStore.getState().openRegion(i)} disabled={locked}
                 aria-label={locked ? `${name}（尚未解鎖）` : stage > 0 ? `繼續 ${name} 第 ${stage + 1} 關` : `開始 ${name}`}>
                 <b>{locked ? '🔒' : '▶'} {name}</b>
-                {!locked && stage > 0 && <small className="level-progress">繼續 第 {stage + 1} 關</small>}
+                {!locked && stage > 0 && <small className="level-progress">{mapName(levelKey, stage)}</small>}
               </button>
               {!locked && stage > 0 && (
                 <button className="level-restart" onMouseDown={keepFocus} onClick={() => beginLevel(levelKey, 0)}>

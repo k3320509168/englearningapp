@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import { useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
+import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
 import { SKILLS, comboMultiplier } from './progression';
 import type { Member, MemberId } from './party';
@@ -203,7 +204,7 @@ export default class MainScene extends Phaser.Scene {
       return;
     }
     const stage = s.stages[s.stageIdx];
-    if (stage) this.stageText.setText(`${themeName(this.region)}  第 ${s.stageIdx + 1} / ${s.stages.length} 關`);
+    if (stage) this.stageText.setText(`${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx)}`);
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);

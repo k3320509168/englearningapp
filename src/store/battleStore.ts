@@ -19,6 +19,9 @@ import type { Element } from '../game/character';
 import { buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, partyHp, skillReady } from '../game/party';
 import type { Member, MemberId } from '../game/party';
 import { dueMistakes, useSaveStore } from './saveStore';
+import { MAP_SIZE, mapIndexOf, mapKey } from '../game/regions';
+import { emptyRunStats, evaluateStars } from '../game/stars';
+import type { MapRunStats } from '../game/stars';
 
 // 戰鬥進行中的狀態（不存檔）。React 負責作答介面與計時（呼叫 tick），Phaser 訂閱 event 播放動畫。
 //
@@ -40,6 +43,13 @@ export interface BattleEvent {
   member?: MemberId;       // 出手或受傷的隊員
   bossQuestion?: boolean;  // 這一擊來自魔王題
   skill?: SkillId;
+}
+
+// 地圖結算：這張地圖拿到的星星（與先前最佳紀錄合併前）、這次新拿到幾顆
+export interface MapResult {
+  mapIdx: number;
+  stars: boolean[];
+  gained: number;
 }
 
 export interface Feedback {
@@ -99,6 +109,8 @@ interface BattleState {
   casting: number | null; // 正在確認施放技能的隊員
   stats: PlayerStats;
   runGold: number;
+  mapStats: MapRunStats; // 這張地圖的戰績（三星評價用）
+  mapResult: MapResult | null;
 
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
@@ -177,16 +189,22 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         : Math.round(monsterMaxHp(stageIdx, s.levelIdx, stage.bossMode) * (stage.kind === 'elite' ? ELITE_HP_MULT : 1));
     // 區段開頭，或從中途繼續時，先預習這一段的內容
     const showLesson = (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
-    const original = stage.questions[0];
+    // 新地圖：combo 與戰績重新計算（combo 只在同一張地圖內延續）
+    const newMap = isFirst || stageIdx % MAP_SIZE === 0;
+    // 每第 5 題是魔王題：剛好輪到這一關的第一題時也要出（之後再出這關準備好的題目）
+    const questionCount = s.questionCount + 1;
+    const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
+    const original = isBossQuestion ? pickBossQuestion(null) : stage.questions[0];
     set({
+      ...(newMap ? { combo: 0, bossMult: 1, bossChain: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
       stageIdx,
-      qIdx: 0,
+      qIdx: isBossQuestion ? -1 : 0,
       original,
       question: prepare(original),
       questionSeq: s.questionSeq + 1,
-      questionCount: s.questionCount + 1,
-      isBossQuestion: false,
+      questionCount,
+      isBossQuestion,
       typed: '',
       retrying: false,
       monsterHp: maxHp,
@@ -236,11 +254,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const damage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx);
     const hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
     const wiped = hurt.every(m => !isAlive(m));
+    const knockedOut = isAlive(party[target]) && !isAlive(hurt[target]);
     const attackerIdx = isAlive(hurt[s.attackerIdx] ?? hurt[0]) ? s.attackerIdx : nextAlive(hurt, s.attackerIdx);
     return {
       ...withTotals(hurt),
       attackerIdx: Math.max(0, attackerIdx),
       wiped,
+      mapStats: { ...s.mapStats, knockouts: s.mapStats.knockouts + (knockedOut ? 1 : 0) },
       event: nextEvent('hurt', { amount: damage, member: party[target].id }),
     };
   };
@@ -257,6 +277,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const s = get();
     const stage = s.stages[s.stageIdx];
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
+    // 地圖最後一關（頭目）：三星評價
+    if (stage.bossMode || isLastStage) {
+      const merged = { ...s, ...patch };
+      const stats = { ...merged.mapStats, hpRatio: merged.playerHp / Math.max(1, merged.playerMaxHp) };
+      const stars = evaluateStars(s.levelIdx, stats);
+      const mapIdx = mapIndexOf(s.stageIdx);
+      const gained = save().recordMapStars(mapKey(s.levelKey, mapIdx), stars);
+      patch = { ...patch, mapStats: stats, mapResult: { mapIdx, stars, gained } };
+    }
     if (isLastStage) {
       save().unlockLevel(s.levelIdx + 1);
       save().setLevelProgress(s.levelKey, 0); // 全區通關，下次從第 1 關重玩
@@ -284,7 +313,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const bossChain = s.isBossQuestion && !s.overtime ? s.bossChain + 1 : s.bossChain;
     const crit = random() < attacker.crit;
     const party = gainEnergy(s.party);
+    const mapStats = {
+      ...s.mapStats,
+      answered: s.mapStats.answered + 1,
+      correct: s.mapStats.correct + 1,
+      maxCombo: Math.max(s.mapStats.maxCombo, combo),
+      bossQuestionsCorrect: s.mapStats.bossQuestionsCorrect + (s.isBossQuestion && !s.overtime ? 1 : 0),
+      correctTimeMs: s.mapStats.correctTimeMs + elapsed,
+    };
     const base = {
+      mapStats,
       ...withTotals(party),
       attackerIdx: s.isBossQuestion ? s.attackerIdx : Math.max(0, nextAlive(party, attackerIdx + 1)),
       combo, maxCombo: Math.max(s.maxCombo, combo), bossMult, bossChain,
@@ -349,6 +387,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: false }],
       wrongStreak: s.wrongStreak + 1,
       feedback: { question: s.question, given, timeout },
+      mapStats: { ...s.mapStats, answered: s.mapStats.answered + 1, bossFlawless: s.mapStats.bossFlawless && !stage.bossMode },
     };
 
     // 護盾（援軍、道具或技能），或不會攻擊的寶箱怪：不受傷
@@ -359,6 +398,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const strike = enemyStrike(s.party);
     set({
       ...base,
+      mapStats: { ...base.mapStats, knockouts: strike.mapStats.knockouts },
       ...withTotals(strike.party),
       attackerIdx: strike.attackerIdx,
       event: strike.event,
@@ -423,6 +463,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     casting: null,
     stats: playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 } }),
     runGold: 0,
+    mapStats: emptyRunStats(),
+    mapResult: null,
 
     startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);

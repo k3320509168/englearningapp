@@ -13,6 +13,7 @@ import { keepFocus } from './keepFocus';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
 import { BattleStatusBar } from './BattleExtras';
+import { mapName, stageLabel } from '../game/regions';
 import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty';
 import { useBattleClock } from './useBattleClock';
 
@@ -28,7 +29,8 @@ export default function BattleHUD() {
     question: s.question,
     questionSeq: s.questionSeq,
     phase: s.phase,
-    stageName: s.stages[s.stageIdx]?.name ?? '',
+    // 例如「風車丘 2-5：菁英怪」
+    stageName: `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
     stageNo: s.stageIdx + 1,
     stageCount: s.stages.length,
     shield: s.shield,

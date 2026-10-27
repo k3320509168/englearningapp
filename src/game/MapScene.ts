@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { REGIONS } from './regions';
 import { useSaveStore } from '../store/saveStore';
 import { useBattleStore } from '../store/battleStore';
-import { beginLevel } from './startLevel';
+import { useUiStore } from '../store/uiStore';
 import { flagKey, heroKey, registerAvatar, registerHero, registerSprites } from './art/sprites';
 import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
 import { BG_LAYERS, bgKey, registerBackground, THEMES } from './art/backgrounds';
@@ -80,7 +80,7 @@ export default class MapScene extends Phaser.Scene {
         zone.on('pointerout', () => flag.setScale(5));
         zone.on('pointerdown', () => {
           burst(this, x + 10, y - 40, [0xffcd4b, 0xffffff], 14, { speed: 160 });
-          beginLevel(region.id);
+          useUiStore.getState().openRegion(index);
         });
       }
     });

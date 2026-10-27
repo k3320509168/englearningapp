@@ -40,7 +40,9 @@ export default function CharacterModal() {
     closeModal();
     if (!isNew) return;
     const { tutorialDone, micAsked } = useSaveStore.getState();
-    if (!tutorialDone) openModal('tutorial');
+    // 新玩家：先看序章，序章結束後再接新手引導與麥克風
+    if (!useSaveStore.getState().storySeen.includes('prologue')) useUiStore.getState().openStory('prologue');
+    else if (!tutorialDone) openModal('tutorial');
     else if (!micAsked) openModal('mic');
   };
 

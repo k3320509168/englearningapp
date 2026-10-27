@@ -14,6 +14,8 @@ import MapLevelBar from '../components/MapLevelBar';
 import MicPermissionModal from '../components/MicPermissionModal';
 import CharacterModal from '../components/CharacterModal';
 import SummonModal from '../components/SummonModal';
+import RegionModal from '../components/RegionModal';
+import StoryModal from '../components/StoryModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -106,6 +108,8 @@ export default function Game() {
       {modal === 'mic' && <MicPermissionModal />}
       {modal === 'character' && <CharacterModal />}
       {modal === 'summon' && <SummonModal />}
+      {modal === 'region' && <RegionModal />}
+      {modal === 'story' && <StoryModal />}
     </div>
   );
 }

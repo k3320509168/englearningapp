@@ -104,10 +104,35 @@ const CHEST = [
 ];
 const CHEST_COLORS = { B: '#b07a3e', b: '#7a5230', Y: '#fff3a0' };
 
-export type MonsterKind = 'slime' | 'bat' | 'mushroom' | 'king' | 'ghost' | 'chest';
+// 沉默魔王：王城與黃金之路的最終頭目
+const DEMON = [
+  '...G...GG...G...',
+  '...GG.GGGG.GG...',
+  '...GGGGGGGGGG...',
+  '..KMMMMMMMMMMK..',
+  '.KMMMMMMMMMMMMK.',
+  '.KMMRRMMMMRRMMK.',
+  '.KMMMMMMMMMMMMK.',
+  '..KMMMDDDDMMMK..',
+  '...KMMMMMMMMK...',
+  '.CCKAAAAAAAAKCC.',
+  'CCKAAALLLLAAAKCC',
+  'CKAAAALLLLAAAAKC',
+  'CKAAAAAAAAAAAAKC',
+  'CKAAAAAGGAAAAAKC',
+  'CKAAAAAAAAAAAAKC',
+  'CCKAAAAAAAAAAKCC',
+  '.CCKAAA..AAAKCC.',
+  '..CKAAK..KAAKC..',
+  '..CKAAK..KAAKC..',
+  '...KKK....KKK...',
+];
+const DEMON_COLORS = { M: '#2a1a3a', R: '#ff2a4a', D: '#120a18', G: '#ffcd4b', A: '#3a2a52', L: '#6a4fa0', C: '#8f1f2e' };
+
+export type MonsterKind = 'slime' | 'bat' | 'mushroom' | 'king' | 'ghost' | 'chest' | 'demon';
 
 const MONSTER_ART: Record<MonsterKind, string[]> = {
-  slime: SLIME, bat: BAT, mushroom: MUSHROOM, king: KING_SLIME, ghost: GHOST, chest: CHEST,
+  slime: SLIME, bat: BAT, mushroom: MUSHROOM, king: KING_SLIME, ghost: GHOST, chest: CHEST, demon: DEMON,
 };
 
 // 每個區域的怪物配色（M 主色、L 亮部、m 暗部）
@@ -117,6 +142,7 @@ export const REGION_MONSTER_COLORS: { M: string; L: string; m: string }[] = [
   { M: '#e8a64f', L: '#ffe0a3', m: '#a8642a' }, // B1 沙漠
   { M: '#9aa8ff', L: '#e3e7ff', m: '#5a62b8' }, // B2 雪山
   { M: '#e8505b', L: '#ffb0a8', m: '#8f2a3a' }, // C1 火山
+  { M: '#b48aff', L: '#ffe08a', m: '#5a3a9a' }, // C2 王城
 ];
 
 const MONSTER_FIXED: Palette = {
@@ -297,6 +323,7 @@ export function registerSprites(scene: Phaser.Scene) {
     });
     // 寶箱怪沒有屬性配件，各屬性共用同一個外觀
     register(scene, monsterKey('chest', el), CHEST, { ...MONSTER_FIXED, ...CHEST_COLORS });
+    register(scene, monsterKey('demon', el), DEMON, { ...MONSTER_FIXED, ...DEMON_COLORS });
   });
   // 復仇魔王固定是暗屬性的幽靈
   register(scene, monsterKey('ghost', 'dark'), withAccessory(GHOST, 'dark'), { ...MONSTER_FIXED, ...GHOST_COLORS, A: ELEMENT_MONSTER_COLORS.dark.A, a: ELEMENT_MONSTER_COLORS.dark.a });
@@ -312,7 +339,8 @@ export function registerSprites(scene: Phaser.Scene) {
 }
 
 // 一般關卡輪流出現三種怪物，Boss 是史萊姆王，復仇魔王是幽靈，寶箱關是寶箱怪
-export function monsterKindFor(stageIdx: number, isBoss: boolean, isRevenge: boolean, isTreasure = false): MonsterKind {
+export function monsterKindFor(stageIdx: number, isBoss: boolean, isRevenge: boolean, isTreasure = false, isFinal = false): MonsterKind {
+  if (isFinal) return 'demon';
   if (isRevenge) return 'ghost';
   if (isTreasure) return 'chest';
   if (isBoss) return 'king';
@@ -320,7 +348,7 @@ export function monsterKindFor(stageIdx: number, isBoss: boolean, isRevenge: boo
 }
 
 export const MONSTER_NAMES: Record<MonsterKind, string> = {
-  slime: '史萊姆', bat: '夜蝠', mushroom: '毒菇怪', king: '史萊姆王', ghost: '復仇魔王', chest: '寶箱怪',
+  slime: '史萊姆', bat: '夜蝠', mushroom: '毒菇怪', king: '史萊姆王', ghost: '復仇魔王', chest: '寶箱怪', demon: '沉默魔王',
 };
 
 // 屬性怪物的名字前綴，例如「火焰史萊姆」
@@ -329,7 +357,7 @@ export const ELEMENT_PREFIX: Record<Element, string> = {
 };
 
 export function monsterName(kind: MonsterKind, el: Element): string {
-  return kind === 'ghost' || kind === 'chest' ? MONSTER_NAMES[kind] : `${ELEMENT_PREFIX[el]}${MONSTER_NAMES[kind]}`;
+  return kind === 'ghost' || kind === 'chest' || kind === 'demon' ? MONSTER_NAMES[kind] : `${ELEMENT_PREFIX[el]}${MONSTER_NAMES[kind]}`;
 }
 
 export function registerAvatar(scene: Phaser.Scene, c: Character, tier = 0) {

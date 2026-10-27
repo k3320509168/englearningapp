@@ -3,7 +3,7 @@ import { shuffleArray } from './battle';
 
 export const LEVELS = [
   "A1 入門 (120-224分)", "A2 初級 (225-549分)", "B1 中級 (550-784分)",
-  "B2 中高級 (785-944分)", "C1 高級 (945分以上)"
+  "B2 中高級 (785-944分)", "C1 高級 (945分以上)", "C2 精通 (母語程度)"
 ];
 
 // 注意：spell / fill 的 ans 只能是大寫 A-Z（鍵盤輸入限制），choice 的 ans 為 A-D，
@@ -127,6 +127,35 @@ export const QUESTION_POOL: QuestionPool = {
       { type: "voice", desc: "請唸出單字：透明度", ans: "TRANSPARENCY", speak: "transparency" },
       { type: "choice", desc: "【最終試煉】Seldom ___ such a dramatic shift in consumer behavior.", options: ["A. we have seen", "B. have we seen", "C. we saw", "D. seen we have"], ans: "B", explain: "否定副詞 Seldom 放句首要倒裝：have + 主詞 + 過去分詞。" }
     ]
+  },
+  "C2 精通 (母語程度)": {
+    normal: [
+      { type: "spell", desc: "請拼出：無所不在的", ans: "UBIQUITOUS", speak: "ubiquitous" },
+      { type: "spell", desc: "請拼出：並列對照", ans: "JUXTAPOSE", speak: "juxtapose" },
+      { type: "spell", desc: "請拼出：深奧難懂的", ans: "ESOTERIC", speak: "esoteric" },
+      { type: "spell", desc: "請拼出：務實的", ans: "PRAGMATIC", speak: "pragmatic" },
+      { type: "spell", desc: "請拼出：盡責的、認真的", ans: "CONSCIENTIOUS", speak: "conscientious" },
+      { type: "spell", desc: "請拼出：敷衍的", ans: "PERFUNCTORY", speak: "perfunctory" },
+      { type: "spell", desc: "請拼出：短暫的、轉瞬即逝的", ans: "EPHEMERAL", speak: "ephemeral" },
+      { type: "fill", desc: "填空題：M A G N A N _ M O U S (寬宏大量的)", ans: "I", speak: "magnanimous" },
+      { type: "fill", desc: "填空題：A C Q U I E S C _ (默許、勉強同意)", ans: "E", speak: "acquiesce" },
+      { type: "fill", desc: "填空題：P R O L I F E R _ T E (激增、擴散)", ans: "A", speak: "proliferate" },
+      { type: "choice", desc: "【慣用語】Let's not ___ the gun; we haven't got approval yet.", options: ["A. jump", "B. shoot", "C. fire", "D. pull"], ans: "A", explain: "jump the gun 搶先行動、操之過急。" },
+      { type: "choice", desc: "【倒裝句】Little ___ that the decision would change everything.", options: ["A. did they know", "B. they knew", "C. knew they", "D. they did know"], ans: "A", explain: "否定意味的 Little 放句首要倒裝：did + 主詞 + 原形動詞。" },
+      { type: "choice", desc: "【精準用字】Her argument was so ___ that no one could refute it.", options: ["A. cogent", "B. tenuous", "C. vague", "D. trivial"], ans: "A", explain: "cogent 有說服力的；tenuous 薄弱的、vague 含糊的、trivial 瑣碎的。" },
+      { type: "choice", desc: "【假設語氣】It is high time we ___ a decision.", options: ["A. make", "B. made", "C. will make", "D. have made"], ans: "B", explain: "It is (high) time + 主詞 + 過去式，表示「早該做某事了」。" },
+      { type: "choice", desc: "【片語動詞】The staff resisted at first, but eventually came ___ to the new policy.", options: ["A. around", "B. across", "C. over", "D. up"], ans: "A", explain: "come around to 逐漸接受（原本反對的想法）。" },
+      { type: "choice", desc: "【分詞構句】___ by the results, the team decided to expand the project.", options: ["A. Encouraged", "B. Encouraging", "C. To encourage", "D. Encourage"], ans: "A", explain: "團隊是「被鼓舞」的，用過去分詞 Encouraged 開頭的分詞構句。" },
+      { type: "voice", desc: "請唸出單字：現象", ans: "PHENOMENON", speak: "phenomenon" },
+      { type: "voice", desc: "請唸出單字：假說", ans: "HYPOTHESIS", speak: "hypothesis" }
+    ],
+    boss: [
+      { type: "voice", desc: "請唸出單字：不可或缺的", ans: "INDISPENSABLE", speak: "indispensable" },
+      { type: "voice", desc: "請唸出單字：精緻複雜的", ans: "SOPHISTICATED", speak: "sophisticated" },
+      { type: "spell", desc: "請拼出：沉著、泰然自若", ans: "EQUANIMITY", speak: "equanimity" },
+      { type: "choice", desc: "【最終咒語】Had it not been for your courage, the kingdom ___ lost forever.", options: ["A. would have been", "B. would be", "C. had been", "D. will be"], ans: "A", explain: "Had it not been for… 是省略 if 的過去假設，主要子句用 would have + 過去分詞。" },
+      { type: "choice", desc: "【語感】The silence was ___; no one dared to speak.", options: ["A. deafening", "B. deaf", "C. deafened", "D. deafly"], ans: "A", explain: "deafening silence 震耳欲聾的寂靜，形容令人極度不安的沉默。" }
+    ]
   }
 };
 
@@ -155,7 +184,10 @@ export function createDecks(levelKey: string): Decks {
 export function generateStages(levelKey: string, decks: Decks = createDecks(levelKey)): Stage[] {
   const generatedStages: Stage[] = [];
   for (let i = 1; i <= 50; i++) {
-    if (i === 50) {
+    if (i === 50 && levelKey === LEVELS[LEVELS.length - 1]) {
+      // 最後一個區域的終點：沉默魔王
+      generatedStages.push({ name: `第 ${i} 關：沉默魔王`, bossMode: true, kind: 'final', questions: [decks.boss(), decks.boss(), decks.boss()] });
+    } else if (i === 50) {
       generatedStages.push({ name: `第 ${i} 關：星球最終試煉`, bossMode: true, questions: [decks.boss(), decks.boss()] });
     } else if (i % 10 === 0) {
       generatedStages.push({ name: `第 ${i} 關：守門菁英`, bossMode: true, questions: [decks.boss()] });

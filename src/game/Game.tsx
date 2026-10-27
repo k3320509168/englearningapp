@@ -18,6 +18,7 @@ import RegionModal from '../components/RegionModal';
 import StoryModal from '../components/StoryModal';
 import GrowthModal from '../components/GrowthModal';
 import TrueNameModal from '../components/TrueNameModal';
+import GoldenModal from '../components/GoldenModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -114,6 +115,7 @@ export default function Game() {
       {modal === 'story' && <StoryModal />}
       {modal === 'growth' && <GrowthModal />}
       {modal === 'trueName' && <TrueNameModal />}
+      {modal === 'golden' && <GoldenModal />}
     </div>
   );
 }

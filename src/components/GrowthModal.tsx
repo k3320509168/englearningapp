@@ -63,6 +63,7 @@ export default function GrowthModal() {
             <img src={avatarDataUrl(character, 'idle', 3, player.classPath.length)} alt="" />
             <div>
               <h3>Lv {player.level} <span className="muted">/ {MAX_LEVEL}</span></h3>
+              {sv.titles.length > 0 && <p className="title-badges">{sv.titles.map(t => <span key={t}>🏅 {t}</span>)}</p>}
               {player.level < MAX_LEVEL && (
                 <div className="xp-bar" title="答對題目、打倒怪物都能得到經驗值">
                   <span style={{ width: `${(player.xp / xpToNext(player.level)) * 100}%` }} />

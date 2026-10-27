@@ -30,7 +30,9 @@ export default function BattleHUD() {
     questionSeq: s.questionSeq,
     phase: s.phase,
     // 例如「風車丘 2-5：菁英怪」
-    stageName: `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
+    stageName: s.mode === 'golden'
+      ? `👑 黃金之路・${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`
+      : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
     stageNo: s.stageIdx + 1,
     stageCount: s.stages.length,
     shield: s.shield,

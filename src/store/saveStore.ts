@@ -21,7 +21,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 11;
+export const SAVE_VERSION = 12;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -83,6 +83,9 @@ interface SaveData {
   equipped: Partial<Record<Slot, string>>;
   // 真名考驗：每位英雄五項考驗是否完成
   trueName: Record<HeroId, boolean[]>;
+  // 黃金之路最多通過幾關（全部通關為關卡總數）、獲得的稱號
+  goldenBest: number;
+  titles: string[];
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -122,6 +125,8 @@ interface SaveActions {
   trainHero: (id: HeroId) => boolean;
   // 完成一項真名考驗，第一次完成時送碎片；回傳是否第一次完成
   completeTrial: (id: HeroId, trialIdx: number) => boolean;
+  recordGolden: (stagesReached: number) => void;
+  addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
   resetProgress: () => void;
@@ -154,6 +159,8 @@ export const initialSave: SaveData = {
   equipment: [],
   equipped: {},
   trueName: {},
+  goldenBest: 0,
+  titles: [],
 };
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
@@ -187,6 +194,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v8 → v9：地圖三星、最遠關卡、劇情紀錄；舊玩家的最遠關卡以目前進度補上，並視為看過序章。
   // v9 → v10：主角等級／轉職、英雄等級、素材、裝備（預設值補齊）。
   // v10 → v11：真名考驗進度（預設值補齊）。
+  // v11 → v12：黃金之路紀錄與稱號（預設值補齊）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -383,6 +391,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return true;
         },
 
+        recordGolden: (stagesReached) => set(s => ({ goldenBest: Math.max(s.goldenBest, stagesReached) })),
+
+        addTitle: (title) => {
+          if (get().titles.includes(title)) return false;
+          set(s => ({ titles: [...s.titles, title] }));
+          return true;
+        },
+
         // 英雄訓練：花金幣升一級，最高到主角的等級
         trainHero: (id) => {
           const s = get();
@@ -443,7 +459,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
         // 只保留設定、新手引導進度與主角
-        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character, storySeen: s.storySeen })),
+        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character, storySeen: s.storySeen, titles: s.titles })),
       };
     },
     {
@@ -458,7 +474,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName,
+        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles,
       }),
     },
   ),

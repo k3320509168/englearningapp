@@ -14,7 +14,7 @@ export interface Stage {
   bossMode: boolean;
   questions: Question[];
   revenge?: boolean; // 復仇魔王：題目來自玩家到期的錯題
-  kind?: 'elite' | 'treasure'; // 關卡變化：菁英怪、寶箱怪
+  kind?: 'elite' | 'treasure' | 'final'; // 關卡變化：菁英怪、寶箱怪；final 是沉默魔王
 }
 
 // 單字資料（中文、詞性、例句），以大寫單字為 key 存在 vocab.ts

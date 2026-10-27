@@ -64,8 +64,28 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
   'clear-4': [
     { speaker: 'narrator', text: '熔岩冷卻，魔王軍節節敗退。王城的方向，傳來了久違的鐘聲。' },
-    { speaker: 'spirit', text: '{name}，你已經是真正的咒語使了。王城之戰……很快就會到來。' },
-    { speaker: 'narrator', text: '（待續：王城與沉默魔王的決戰將在之後的更新登場）' },
+    { speaker: 'spirit', text: '{name}，你已經是真正的咒語使了。王城就在眼前，沉默魔王在王座之間等著我們。' },
+  ],
+  'region-5': [
+    { speaker: 'narrator', text: '天空島的另一端，王城靜靜地漂浮在雲上。城裡沒有任何聲音。' },
+    { speaker: 'villain', text: '你收集了那麼多咒語……但在絕對的沉默面前，它們不過是噪音。' },
+    { speaker: 'hero', text: '我不會再害怕開口了。每一個字，我都會清清楚楚地說出來！' },
+    { speaker: 'spirit', text: '這裡的咒語是最高階的語言。相信你一路走來學會的一切！' },
+  ],
+  'clear-5': [
+    { speaker: 'villain', text: '……不可能。這些聲音……竟然壓過了沉默……' },
+    { speaker: 'narrator', text: '最後一道咒語響徹王座之間。沉默魔王化成了灰燼，被奪走的語言如流星般回到人們身邊。' },
+    { speaker: 'elder', text: '聽！是孩子們的歌聲！市集在叫賣，書店重新開門了！' },
+    { speaker: 'spirit', text: '{name}，謝謝你。從今以後，你就是這個王國的「語言守護者」。' },
+    { speaker: 'hero', text: '一開始我連一個單字都不敢說……原來，只要一步一步來就做得到。' },
+    { speaker: 'narrator', text: '【主線結局】你獲得了稱號「語言守護者」。王國的冒險仍在繼續——新的區域與挑戰，將陸續開放。' },
+  ],
+  'golden-ending': [
+    { speaker: 'narrator', text: '沒有夥伴、沒有裝備、沒有轉職。只憑一路不曾說錯的古代咒語，你站在了沉默魔王面前。' },
+    { speaker: 'villain', text: '區區一個初出茅廬的旅人……怎麼可能？' },
+    { speaker: 'spirit', text: '因為真正的力量，從來都在語言本身。' },
+    { speaker: 'narrator', text: '時空因你的咒語而震動。你跨越了所有試煉，成為傳說中的存在——' },
+    { speaker: 'narrator', text: '【特殊結局】你獲得了稱號「掌握古代咒語的超時空勇者」！' },
   ],
 };
 

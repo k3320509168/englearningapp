@@ -364,8 +364,9 @@ button { font: inherit; color: inherit; }
 
 .level-bar { width: 100%; max-width: 860px; display: flex; flex-direction: column; gap: 8px; }
 .level-bar-hint { margin: 0; font-size: 13px; text-align: center; }
-.level-buttons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-@media (max-width: 560px) { .level-buttons { grid-template-columns: repeat(2, 1fr); } }
+.level-buttons { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 760px) { .level-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .level-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .level-btn { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px; }
 .level-btn b { font-family: var(--font-num); font-weight: 400; font-size: 14px; line-height: 1.6; }
 .level-btn small { font-family: var(--font-body); font-weight: 400; font-size: 12px; opacity: 0.85; white-space: nowrap; }
@@ -1099,3 +1100,24 @@ button { font: inherit; color: inherit; }
 .trial-result.is-correct { color: var(--good); font-family: var(--font-ui); }
 .trial-result.is-wrong { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--bad); }
 .trial-result b { font-family: var(--font-word); color: var(--good); }
+
+/* ---------- 黃金之路與稱號 ---------- */
+.golden-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  --btn-bg: linear-gradient(90deg, #6a4a10, #c9952a, #6a4a10);
+  background: linear-gradient(90deg, #5a3a0a, #b8861f, #5a3a0a);
+  color: #fff6d0;
+  font-family: var(--font-ui);
+  font-size: 18px;
+}
+.golden-btn small { font-size: 12px; color: #ffe9a8; }
+.golden-intro { display: flex; flex-direction: column; gap: 10px; }
+.golden-lead { margin: 0; font-family: var(--font-ui); font-size: 17px; color: var(--accent); }
+.golden-rules { margin: 0; padding-left: 4px; list-style: none; display: flex; flex-direction: column; gap: 6px; line-height: 1.6; font-size: 14px; }
+.golden-best { margin: 0; padding: 8px 10px; border: 2px solid var(--accent-dark); background: rgba(255, 205, 75, 0.08); font-family: var(--font-ui); }
+.title-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px !important; }
+.title-badges span { padding: 2px 8px; border: 2px solid var(--accent-dark); border-radius: 4px; background: rgba(255, 205, 75, 0.12); color: var(--accent); font-family: var(--font-ui); font-size: 13px; }

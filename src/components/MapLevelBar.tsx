@@ -3,6 +3,7 @@ import { REGIONS } from '../game/regions';
 import { useUiStore } from '../store/uiStore';
 import { beginLevel } from '../game/startLevel';
 import { mapName } from '../game/regions';
+import { GOLDEN_STAGE_COUNT } from '../game/golden';
 import { keepFocus } from './keepFocus';
 
 // 地圖下方的區域按鈕：比點畫布上的旗幟更明顯，手機上也好點。
@@ -10,6 +11,7 @@ import { keepFocus } from './keepFocus';
 export default function MapLevelBar() {
   const unlockedIndex = useSaveStore(s => s.unlockedIndex);
   const progress = useSaveStore(s => s.levelProgress);
+  const goldenBest = useSaveStore(s => s.goldenBest);
 
   return (
     <section className="level-bar" aria-label="選擇區域開始冒險">
@@ -36,6 +38,9 @@ export default function MapLevelBar() {
           );
         })}
       </div>
+      <button className="btn golden-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openModal('golden')}>
+        👑 黃金之路<small>{goldenBest > 0 ? `最佳：通過 ${goldenBest} / ${GOLDEN_STAGE_COUNT} 關` : '只憑英文能力挑戰沉默魔王'}</small>
+      </button>
     </section>
   );
 }

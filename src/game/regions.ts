@@ -23,6 +23,7 @@ const DATA: { name: string; maps: string[] }[] = [
   { name: '黃金沙漠', maps: ['綠洲', '商隊之路', '沙暴城', '蠍子巢', '日落神殿'] },
   { name: '極光雪嶺', maps: ['冰原', '極光坡', '冰晶洞', '雪狼原', '冰龍巢穴'] },
   { name: '熔岩魔域', maps: ['火山口', '黑曜石塔', '地底大河', '鍛造之城', '炎之祭壇'] },
+  { name: '王城', maps: ['天空島', '時空迴廊', '失落圖書館', '王城外郭', '王座之間'] },
 ];
 
 export const REGIONS: RegionDef[] = LEVELS.map((pool, i) => ({

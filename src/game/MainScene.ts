@@ -137,7 +137,8 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     const s = useBattleStore.getState();
-    this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
+    // 黃金之路固定用王城的背景
+    this.region = s.mode === 'golden' ? LEVELS.length - 1 : Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
     this.character = useSaveStore.getState().character;
     this.tier = useSaveStore.getState().player.classPath.length;
@@ -207,7 +208,9 @@ export default class MainScene extends Phaser.Scene {
       return;
     }
     const stage = s.stages[s.stageIdx];
-    if (stage) this.stageText.setText(`${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx)}`);
+    if (stage) this.stageText.setText(s.mode === 'golden'
+      ? `黃金之路  第 ${s.stageIdx + 1} / ${s.stages.length} 關`
+      : `${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx)}`);
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);
@@ -306,8 +309,8 @@ export default class MainScene extends Phaser.Scene {
     const isBoss = stage.bossMode;
     const isRevenge = !!stage.revenge;
     const isElite = stage.kind === 'elite';
-    this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge, stage.kind === 'treasure');
-    this.monsterScale = isRevenge ? 10 : isBoss ? 11 : isElite ? 9 : this.monsterKind === 'bat' ? 7 : 7.5;
+    this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge, stage.kind === 'treasure', stage.kind === 'final');
+    this.monsterScale = this.monsterKind === 'demon' ? 9 : isRevenge ? 10 : isBoss ? 11 : isElite ? 9 : this.monsterKind === 'bat' ? 7 : 7.5;
     const el = elementDef(s.monsterElement);
     this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
     const name = `${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;

@@ -65,6 +65,14 @@ export const THEMES: Theme[] = [
     far: '#2e1424', farCap: '#ff7a3d', near: '#241019', nearShade: '#180a10',
     groundTop: '#5a2b2b', groundEdge: '#ff7a3d', ground: '#2c171c', groundDark: '#1e0f13', speck: '#ff5a2a',
   },
+  {
+    // 王城：黃昏下的尖塔群，金色塔頂
+    name: '王城', terrain: 'peaks',
+    sky: ['#1a0f2e', '#2e1a4a', '#4a2a6a', '#7a3f7a', '#c26a6a'],
+    sun: { x: 150, y: 34, r: 11, color: '#ffd9a0', glow: '#ff9a6a' }, stars: 30,
+    far: '#3a2f5a', farCap: '#ffcd4b', near: '#2a2440', nearShade: '#1e1a30',
+    groundTop: '#8a84a0', groundEdge: '#5a5570', ground: '#3a3548', groundDark: '#2a2638', speck: '#7a7490',
+  },
 ];
 
 function rng(seed: number) {

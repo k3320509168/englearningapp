@@ -12,7 +12,7 @@ import { sfx } from './sfx';
 // 世界地圖：背景使用玩家目前所在區域的風景，五面旗幟代表五個區域
 
 const NODES = [
-  { x: 105, y: 330 }, { x: 255, y: 280 }, { x: 400, y: 318 }, { x: 545, y: 268 }, { x: 695, y: 306 },
+  { x: 85, y: 330 }, { x: 210, y: 282 }, { x: 335, y: 320 }, { x: 460, y: 270 }, { x: 590, y: 312 }, { x: 715, y: 262 },
 ];
 
 export default class MapScene extends Phaser.Scene {

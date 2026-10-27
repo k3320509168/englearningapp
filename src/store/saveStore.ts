@@ -4,10 +4,12 @@ import type { Question } from '../game/types';
 import { questionKey } from '../game/battle';
 import { HEROES, ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
 import type { HeroId, ItemId, UpgradeId } from '../game/progression';
+import { normalizeCharacter } from '../game/character';
+import type { Character } from '../game/character';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 5;
+export const SAVE_VERSION = 6;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -35,6 +37,8 @@ export interface Settings {
 }
 
 interface SaveData {
+  // 玩家自創的主角；null 代表還沒建立（第一次進入遊戲會先開角色創建）
+  character: Character | null;
   unlockedIndex: number;
   // 每個區域目前打到第幾關（stage index），離開後回來從這裡繼續
   levelProgress: Record<string, number>;
@@ -51,6 +55,7 @@ interface SaveData {
 }
 
 interface SaveActions {
+  setCharacter: (c: Character) => void;
   unlockLevel: (index: number) => void;
   setLevelProgress: (levelKey: string, stageIdx: number) => void;
   setMicAsked: () => void;
@@ -68,6 +73,7 @@ interface SaveActions {
 }
 
 export const initialSave: SaveData = {
+  character: null,
   unlockedIndex: 0,
   levelProgress: {},
   micAsked: false,
@@ -89,12 +95,14 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v2 → v3：錯題補上 SRS 欄位（立即可複習）。
   // v3 → v4：新增音效音量設定（預設值補齊）。
   // v4 → v5：新增各區域關卡進度與麥克風詢問紀錄。
+  // v5 → v6：新增自創主角（舊玩家也要先建立角色）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
     settings: { ...initialSave.settings, ...data.settings },
     upgrades: { ...initialSave.upgrades, ...data.upgrades },
     items: { ...initialSave.items, ...data.items },
+    character: normalizeCharacter(data.character),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
   migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
@@ -122,6 +130,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
       return {
         ...initialSave,
+        setCharacter: (c) => set({ character: normalizeCharacter(c) }),
         unlockLevel: (index) => set(s => ({ unlockedIndex: Math.max(s.unlockedIndex, index) })),
         setLevelProgress: (levelKey, stageIdx) => set(s => ({ levelProgress: { ...s.levelProgress, [levelKey]: stageIdx } })),
         setMicAsked: () => set({ micAsked: true }),
@@ -182,8 +191,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         selectHero: (id) => { if (get().heroes.includes(id)) set({ hero: id }); },
 
-        // 只保留設定與新手引導進度
-        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone })),
+        // 只保留設定、新手引導進度與主角
+        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character })),
       };
     },
     {
@@ -192,6 +201,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       storage: createJSONStorage(() => localStorage),
       migrate: migrateSave,
       partialize: (s) => ({
+        character: s.character,
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, hero: s.hero,
       }),

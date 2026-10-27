@@ -12,6 +12,7 @@ import HeroModal from '../components/HeroModal';
 import CodexModal from '../components/CodexModal';
 import MapLevelBar from '../components/MapLevelBar';
 import MicPermissionModal from '../components/MicPermissionModal';
+import CharacterModal from '../components/CharacterModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -28,10 +29,11 @@ export default function Game() {
   // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
   useEffect(() => { window.scrollTo(0, 0); }, [inBattle]);
 
-  // 第一次進入遊戲時自動打開新手引導
+  // 第一次進入遊戲：建立主角 → 新手引導 → 麥克風
   useEffect(() => {
-    const { tutorialDone, micAsked } = useSaveStore.getState();
-    if (!tutorialDone) useUiStore.getState().openModal('tutorial');
+    const { character, tutorialDone, micAsked } = useSaveStore.getState();
+    if (!character) useUiStore.getState().openModal('character');
+    else if (!tutorialDone) useUiStore.getState().openModal('tutorial');
     else if (!micAsked) useUiStore.getState().openModal('mic');
   }, []);
 
@@ -101,6 +103,7 @@ export default function Game() {
       {modal === 'heroes' && <HeroModal />}
       {modal === 'codex' && <CodexModal />}
       {modal === 'mic' && <MicPermissionModal />}
+      {modal === 'character' && <CharacterModal />}
     </div>
   );
 }

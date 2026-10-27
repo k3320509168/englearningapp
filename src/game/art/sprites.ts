@@ -1,5 +1,9 @@
 import Phaser from 'phaser';
 import type { HeroId } from '../progression';
+import type { Character } from '../character';
+import { OUTLINE } from './palette';
+import { avatarKey, composeAvatar } from './avatar';
+import type { AvatarFrame } from './avatar';
 
 // 像素美術：所有角色與怪物都以文字點陣繪製，再依調色盤上色、註冊成 Phaser 貼圖。
 // 不依賴外部圖檔，換色（英雄、各區域怪物）只需要換調色盤。
@@ -7,7 +11,7 @@ import type { HeroId } from '../progression';
 
 type Palette = Record<string, string>;
 
-const OUTLINE = '#1a1226';
+
 
 // ---------- 英雄（24x16，面向右；idle 與 attack 兩格） ----------
 const HERO_IDLE = [
@@ -250,21 +254,22 @@ function register(scene: Phaser.Scene, key: string, rows: string[], palette: Pal
   drawPixels(scene, `${key}_flash`, rows, palette, true);
 }
 
-// React 介面用：把點陣圖轉成 data URL（例如英雄選單裡的角色預覽）
-export function heroDataUrl(hero: HeroId, scale = 6): string {
-  const rows = HERO_IDLE;
-  const palette = HERO_PALETTES[hero];
+// React 介面用：把點陣圖轉成 data URL（例如角色預覽）；width 可只取左邊幾格
+export function pixelDataUrl(rows: string[], palette: Palette, scale = 6, width?: number): string {
+  const w = width ?? Math.max(...rows.map(r => r.length));
   const canvas = document.createElement('canvas');
-  canvas.width = 16 * scale;
+  canvas.width = w * scale;
   canvas.height = rows.length * scale;
   const ctx = canvas.getContext('2d')!;
-  rows.forEach((row, y) => [...row.slice(0, 16)].forEach((ch, x) => {
+  rows.forEach((row, y) => [...row.slice(0, w)].forEach((ch, x) => {
     if (ch === '.' || !palette[ch]) return;
     ctx.fillStyle = palette[ch];
     ctx.fillRect(x * scale, y * scale, scale, scale);
   }));
   return canvas.toDataURL();
 }
+
+export const heroDataUrl = (hero: HeroId, scale = 6) => pixelDataUrl(HERO_IDLE, HERO_PALETTES[hero], scale, 16);
 
 export const heroKey =(hero: HeroId, frame: 'idle' | 'attack') => `hero_${hero}_${frame}`;
 export const monsterKey = (kind: MonsterKind, region: number) => `mon_${kind}_${region}`;
@@ -301,3 +306,15 @@ export function monsterKindFor(stageIdx: number, isBoss: boolean, isRevenge: boo
 export const MONSTER_NAMES: Record<MonsterKind, string> = {
   slime: '史萊姆', bat: '夜蝠', mushroom: '毒菇怪', king: '史萊姆王', ghost: '復仇魔王',
 };
+
+export function registerAvatar(scene: Phaser.Scene, c: Character) {
+  (['idle', 'attack'] as AvatarFrame[]).forEach(frame => {
+    const { rows, palette } = composeAvatar(c, frame);
+    register(scene, avatarKey(c, frame), rows, palette);
+  });
+}
+
+export function avatarDataUrl(c: Character, frame: AvatarFrame = 'idle', scale = 6): string {
+  const { rows, palette } = composeAvatar(c, frame);
+  return pixelDataUrl(rows, palette, scale);
+}

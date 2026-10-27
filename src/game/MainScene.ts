@@ -5,8 +5,13 @@ import { LEVELS } from './QuestionData';
 import { BASE_DAMAGE } from './battle';
 import { comboMultiplier, heroDef } from './progression';
 import {
-  MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerSprites,
+  MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerAvatar, registerSprites,
 } from './art/sprites';
+import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
+import type { AvatarFrame } from './art/avatar';
+import { elementDef } from './character';
+import type { Character } from './character';
+import { useSaveStore } from '../store/saveStore';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
 import { PixelBar, burst, hitStop, labelStyle, numStyle, popText, screenFlash, slashArc, slowMo, textStyle } from './fx';
@@ -18,9 +23,10 @@ type State = ReturnType<typeof useBattleStore.getState>;
 
 const PLAYER_X = 230;
 const MONSTER_X = 580;
+// 舊版英雄貼圖寬 24 格，身體中心約在第 8 格；自創主角的點陣較大，縮放倍率較小
 const HERO_SCALE = 6;
-// 英雄貼圖寬 24 格，身體中心約在第 8 格
 const HERO_ORIGIN_X = 8 / 24;
+const AVATAR_SCALE = 4;
 
 const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
 
@@ -37,6 +43,8 @@ export default class MainScene extends Phaser.Scene {
   private hero!: Phaser.GameObjects.Container;
   private heroSprite!: Phaser.GameObjects.Image;
   private heroIdle?: Phaser.Tweens.Tween;
+  private character: Character | null = null;
+  private heroScale = HERO_SCALE;
   private monster!: Phaser.GameObjects.Container;
   private monsterSprite!: Phaser.GameObjects.Image;
   private monsterShadow!: Phaser.GameObjects.Ellipse;
@@ -59,10 +67,18 @@ export default class MainScene extends Phaser.Scene {
 
   constructor() { super('MainScene'); }
 
+  // 有自創主角就用主角的貼圖，否則用舊版英雄貼圖
+  private heroTex(frame: AvatarFrame): string {
+    return this.character ? avatarKey(this.character, frame) : heroKey(useBattleStore.getState().hero, frame);
+  }
+
   create() {
     const s = useBattleStore.getState();
     this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
+    this.character = useSaveStore.getState().character;
+    if (this.character) registerAvatar(this, this.character);
+    this.heroScale = this.character ? AVATAR_SCALE : HERO_SCALE;
     registerBackground(this, this.region);
     this.tweens.timeScale = 1;
     this.busy = false;
@@ -76,9 +92,14 @@ export default class MainScene extends Phaser.Scene {
 
     // 角色（容器負責位置與擊退，內部圖片負責呼吸／擠壓動畫）
     this.add.ellipse(PLAYER_X, GROUND_Y + 2, 100, 18, 0x000000, 0.3);
-    this.heroSprite = this.add.image(0, 0, heroKey(s.hero, 'idle')).setOrigin(HERO_ORIGIN_X, 1).setScale(HERO_SCALE);
+    if (this.character) {
+      // 屬性光環：腳下發光的橢圓
+      const aura = this.add.ellipse(PLAYER_X, GROUND_Y + 2, 120, 24, hex(elementDef(this.character.element).color), 0.35).setDepth(1);
+      this.tweens.add({ targets: aura, scaleX: 1.15, alpha: 0.15, yoyo: true, repeat: -1, duration: 900, ease: 'Sine.easeInOut' });
+    }
+    this.heroSprite = this.add.image(0, 0, this.heroTex('idle')).setOrigin(this.character ? AVATAR_ORIGIN_X : HERO_ORIGIN_X, 1).setScale(this.heroScale);
     this.hero = this.add.container(PLAYER_X, GROUND_Y, [this.heroSprite]).setDepth(20);
-    this.heroIdle = this.tweens.add({ targets: this.heroSprite, scaleY: HERO_SCALE * 0.96, scaleX: HERO_SCALE * 1.02, yoyo: true, repeat: -1, duration: 600, ease: 'Sine.easeInOut' });
+    this.heroIdle = this.tweens.add({ targets: this.heroSprite, scaleY: this.heroScale * 0.96, scaleX: this.heroScale * 1.02, yoyo: true, repeat: -1, duration: 600, ease: 'Sine.easeInOut' });
     this.shieldBubble = this.add.circle(PLAYER_X, GROUND_Y - 48, 72).setStrokeStyle(4, 0x7fffd4, 0.9).setFillStyle(0x7fffd4, 0.12).setDepth(21).setVisible(false);
     this.tweens.add({ targets: this.shieldBubble, scale: 1.06, yoyo: true, repeat: -1, duration: 500 });
 
@@ -91,7 +112,7 @@ export default class MainScene extends Phaser.Scene {
 
     // ---------- 畫面上方 HUD（格鬥遊戲式） ----------
     this.add.image(28, 30, 'heart').setScale(4).setDepth(80);
-    this.add.text(52, 12, heroDef(s.hero).name, textStyle(22)).setDepth(80);
+    this.add.text(52, 12, this.character?.name ?? heroDef(s.hero).name, textStyle(22)).setDepth(80);
     this.playerBar = new PixelBar(this, 24, 54, 250, 16);
     this.playerHpText = this.add.text(274, 32, '', numStyle(12)).setOrigin(1, 0).setDepth(81);
     this.add.image(32, 96, 'coin').setScale(4).setDepth(80);
@@ -139,7 +160,7 @@ export default class MainScene extends Phaser.Scene {
       sfx.key(progress);
       const spark = this.add.image(PLAYER_X + 40, GROUND_Y - 70, 'spark').setScale(3 + progress * 3).setDepth(30);
       this.tweens.add({ targets: spark, scale: 0, angle: 90, duration: 220, onComplete: () => spark.destroy() });
-      this.tweens.add({ targets: this.heroSprite, scaleX: HERO_SCALE * 1.08, duration: 50, yoyo: true });
+      this.tweens.add({ targets: this.heroSprite, scaleX: this.heroScale * 1.08, duration: 50, yoyo: true });
     }
 
     if (s.event && s.event !== prev?.event) this.playEvent(s.event, s);
@@ -231,7 +252,7 @@ export default class MainScene extends Phaser.Scene {
     // 換關：英雄往前跑，背景視差捲動，再讓下一隻怪物登場
     const wait = this.busy ? 700 : 0;
     this.time.delayedCall(wait, () => {
-      this.heroSprite.setTexture(heroKey(s.hero, 'idle')).clearTint();
+      this.heroSprite.setTexture(this.heroTex('idle')).clearTint();
       const run = this.tweens.add({ targets: this.heroSprite, y: -10, duration: 90, yoyo: true, repeat: 5 });
       const scroll = { v: 0 };
       this.tweens.add({
@@ -279,7 +300,7 @@ export default class MainScene extends Phaser.Scene {
     const crit = damage >= BASE_DAMAGE * 1.5 || (s.combo >= 5 && s.combo % 5 === 0);
     this.busy = true;
     this.heroIdle?.pause();
-    this.heroSprite.setTexture(heroKey(s.hero, 'attack'));
+    this.heroSprite.setTexture(this.heroTex('attack'));
     sfx.slash();
 
     this.tweens.add({
@@ -289,7 +310,7 @@ export default class MainScene extends Phaser.Scene {
         this.tweens.add({
           targets: this.hero, x: PLAYER_X, duration: 220, delay: 90, ease: 'Quad.easeOut',
           onComplete: () => {
-            this.heroSprite.setTexture(heroKey(s.hero, 'idle'));
+            this.heroSprite.setTexture(this.heroTex('idle'));
             this.heroIdle?.resume();
             if (!killed) this.busy = false;
           },
@@ -408,9 +429,8 @@ export default class MainScene extends Phaser.Scene {
       hitStop(this, 60);
       this.cameras.main.shake(180, 0.014);
       screenFlash(this, 0xff2a4a, 0.3, 300);
-      const { hero } = useBattleStore.getState();
-      this.heroSprite.setTexture(`${heroKey(hero, 'idle')}_flash`).setTint(0xff5a6e);
-      this.time.delayedCall(120, () => this.heroSprite.setTexture(heroKey(hero, 'idle')).clearTint());
+      this.heroSprite.setTexture(`${this.heroTex('idle')}_flash`).setTint(0xff5a6e);
+      this.time.delayedCall(120, () => this.heroSprite.setTexture(this.heroTex('idle')).clearTint());
       this.tweens.add({ targets: this.hero, x: PLAYER_X - 30, duration: 80, yoyo: true });
       burst(this, PLAYER_X + 20, GROUND_Y - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
       popText(this, PLAYER_X, GROUND_Y - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });

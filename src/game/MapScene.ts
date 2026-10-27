@@ -1,12 +1,12 @@
 import Phaser from 'phaser';
-import { LEVELS } from './QuestionData';
+import { REGIONS } from './regions';
 import { useSaveStore } from '../store/saveStore';
 import { useBattleStore } from '../store/battleStore';
 import { beginLevel } from './startLevel';
 import { flagKey, heroKey, registerAvatar, registerHero, registerSprites } from './art/sprites';
 import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
 import { BG_LAYERS, bgKey, registerBackground, THEMES } from './art/backgrounds';
-import { labelStyle, numStyle, textStyle, burst } from './fx';
+import { labelStyle, textStyle, burst } from './fx';
 import { sfx } from './sfx';
 
 // 世界地圖：背景使用玩家目前所在區域的風景，五面旗幟代表五個區域
@@ -52,19 +52,17 @@ export default class MapScene extends Phaser.Scene {
       }
     }
 
-    LEVELS.forEach((levelKey, index) => {
+    REGIONS.forEach((region, index) => {
       const { x, y } = NODES[index];
       const locked = index > unlockedIndex;
       const current = index === unlockedIndex;
-      const [code, name] = levelKey.split(' ');
 
       this.add.image(x, y + 4, 'pedestal').setOrigin(0.5, 0).setScale(5);
       const flag = this.add.image(x - 4, y + 4, flagKey(index, locked)).setOrigin(0.15, 1).setScale(5);
       if (!locked) this.tweens.add({ targets: flag, scaleX: 4.6, yoyo: true, repeat: -1, duration: 700 + index * 90, ease: 'Sine.easeInOut' });
       if (locked) this.add.image(x + 14, y - 36, 'lock').setScale(4);
 
-      this.add.text(x, y + 42, code, numStyle(16, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
-      this.add.text(x, y + 66, name, labelStyle(14, locked ? '#8a8494' : '#e8e6ff')).setOrigin(0.5);
+      this.add.text(x, y + 50, region.name, textStyle(17, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
 
       if (current) {
         // 英雄站在目前可挑戰的旗幟旁
@@ -82,7 +80,7 @@ export default class MapScene extends Phaser.Scene {
         zone.on('pointerout', () => flag.setScale(5));
         zone.on('pointerdown', () => {
           burst(this, x + 10, y - 40, [0xffcd4b, 0xffffff], 14, { speed: 160 });
-          beginLevel(levelKey);
+          beginLevel(region.id);
         });
       }
     });

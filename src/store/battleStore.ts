@@ -3,15 +3,15 @@ import type { Question, Stage } from '../game/types';
 import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
-  ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, ENEMY_TURN_TIME, TURN_TIME,
-  applyLetter, buildAssist, checkChoice, checkVoice, questionKey, questionTime, shuffleChoice, timeScale,
+  ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT,
+  applyLetter, buildAssist, checkChoice, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
 } from '../game/battle';
 import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
 import type { AnswerRecord } from '../game/lesson';
 import {
-  BOSS_QUESTION_EVERY, GOLD, POTION_HEAL, TICKETS, bossStep, computeDamage,
-  goldWithBonus, monsterAttack, monsterElement, monsterMaxHp, playerStats,
+  BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
+  bossStep, computeDamage, goldWithBonus, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -22,24 +22,24 @@ import { dueMistakes, useSaveStore } from './saveStore';
 
 // 戰鬥進行中的狀態（不存檔）。React 負責作答介面與計時（呼叫 tick），Phaser 訂閱 event 播放動畫。
 //
-// 回合制：每回合 TURN_TIME 內可以連續作答，每題有自己的時限。
-// 答錯、超時 → 敵人攻擊並顯示正確答案；回合時間用完 → 敵人攻擊後開始新回合。
+// 每題有 20 秒的 combo 計時：時間內答對 combo +1，越快傷害越高。
+// 敵人只在答錯時攻擊。前 25 關超時只讓 combo 歸零（可以繼續作答），第 26 關之後超時算答錯。
 
-// lesson：戰前預習；enemyTurn：敵人攻擊的短暫停頓；casting：技能施放確認（計時暫停）；summary：Boss 後的區段結算
+// lesson：戰前預習；casting：技能施放確認（計時暫停）；summary：Boss 後的區段結算
 export type BattlePhase =
-  | 'lesson' | 'answering' | 'enemyTurn' | 'casting' | 'feedback'
+  | 'lesson' | 'answering' | 'casting' | 'feedback'
   | 'monsterDown' | 'summary' | 'levelClear' | 'gameOver';
 
 export interface BattleEvent {
   id: number;
-  kind: 'attack' | 'hurt' | 'stage' | 'assist' | 'shield' | 'heal' | 'guard' | 'skill';
+  kind: 'attack' | 'hurt' | 'stage' | 'assist' | 'shield' | 'heal' | 'guard' | 'skill' | 'overtime' | 'shieldHit' | 'escape';
   amount?: number;
   gold?: number;
   crit?: boolean;
+  fast?: number;           // 快答加成倍率（> 1 時顯示 FAST!）
   member?: MemberId;       // 出手或受傷的隊員
   bossQuestion?: boolean;  // 這一擊來自魔王題
   skill?: SkillId;
-  turnEnd?: boolean;       // 回合時間到的敵人攻擊（不是答錯）
 }
 
 export interface Feedback {
@@ -49,8 +49,9 @@ export interface Feedback {
 }
 
 export const REVENGE_MAX_QUESTIONS = 5;
-export const FOCUS_BONUS = 3_000;
-export const HASTE_BONUS = 5_000;
+export const FOCUS_BONUS = 5_000;
+export const HASTE_BONUS = 10_000;
+export const AMPLIFY_HITS = 3;
 export const COMBO_GOLD_STEP = 10; // 每 10 combo 金幣 +10%，最多 +100%
 
 interface BattleState {
@@ -78,6 +79,8 @@ interface BattleState {
   monsterHp: number;
   monsterMaxHp: number;
   monsterElement: Element;
+  monsterShield: number;    // 菁英怪剩餘護盾
+  treasureLeft: number;     // 寶箱怪剩餘時間
   phase: BattlePhase;
   feedback: Feedback | null;
   event: BattleEvent | null;
@@ -86,15 +89,13 @@ interface BattleState {
   assist: Assist | null;
   assistSource: 'helper' | 'item' | null;
   shield: boolean;
-  comboGuard: boolean; // 守護之盾：下一次答錯不中斷 combo
-  amplify: boolean;    // 魔力增幅：這回合傷害翻倍
-  focus: boolean;      // 專注：這回合每題多 3 秒
-  timeScale: number;
-  turnLimit: number;
-  turnLeft: number;
+  comboGuard: boolean;  // 守護之盾：下一次答錯不中斷 combo
+  amplifyLeft: number;  // 魔力增幅：剩幾次攻擊翻倍
+  focus: boolean;       // 專注：這一關每題多 5 秒
   questionLimit: number;
   questionLeft: number;
-  phaseLeft: number;   // enemyTurn／casting 剩餘時間
+  overtime: boolean;    // 這題已超過 20 秒（前 25 關）：答對不加 combo
+  phaseLeft: number;    // 施法確認剩餘時間
   casting: number | null; // 正在確認施放技能的隊員
   stats: PlayerStats;
   runGold: number;
@@ -157,13 +158,11 @@ const withTotals = (party: Member[]) => {
 export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q));
 
-  // 題目時限：依題目長度、新手緩衝、專注技能
-  const limitFor = (q: Question, focus: boolean, scale: number) => questionTime(q) * scale + (focus ? FOCUS_BONUS : 0);
-
-  // 新回合：時間重置、回合限定的技能效果結束
-  const freshTurn = (scale: number) => ({
-    turnLimit: TURN_TIME * scale, turnLeft: TURN_TIME * scale, amplify: false, focus: false,
-  });
+  // 新題目的計時：20 秒，專注技能每題再多 5 秒
+  const freshTimer = (focus: boolean) => {
+    const limit = QUESTION_LIMIT + (focus ? FOCUS_BONUS : 0);
+    return { questionLimit: limit, questionLeft: limit, overtime: false };
+  };
 
   const loadStage = (stageIdx: number, isFirst = false) => {
     const s = get();
@@ -173,19 +172,18 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 復仇魔王：每答對一題扣固定血量，要把到期的錯題全部答對才會倒下
     const maxHp = stage.revenge
       ? stage.questions.length * BASE_DAMAGE * 2
-      : monsterMaxHp(stageIdx, s.levelIdx, stage.bossMode);
+      : stage.kind === 'treasure'
+        ? Math.round(BASE_DAMAGE * TREASURE_HITS * monsterGrowth(stageIdx, s.levelIdx))
+        : Math.round(monsterMaxHp(stageIdx, s.levelIdx, stage.bossMode) * (stage.kind === 'elite' ? ELITE_HP_MULT : 1));
     // 區段開頭，或從中途繼續時，先預習這一段的內容
     const showLesson = (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
     const original = stage.questions[0];
-    const question = prepare(original);
-    const scale = timeScale(s.levelIdx, stageIdx);
-    const limit = limitFor(question, false, scale);
     set({
       stages,
       stageIdx,
       qIdx: 0,
       original,
-      question,
+      question: prepare(original),
       questionSeq: s.questionSeq + 1,
       questionCount: s.questionCount + 1,
       isBossQuestion: false,
@@ -194,26 +192,26 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       monsterHp: maxHp,
       monsterMaxHp: maxHp,
       monsterElement: monsterElement(stageIdx, s.levelIdx, stage.revenge),
+      monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
+      treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
       assist: null,
       assistSource: null,
-      timeScale: scale,
-      ...freshTurn(scale),
-      questionLimit: limit,
-      questionLeft: limit,
+      focus: false,
+      ...freshTimer(false),
       casting: null,
       event: nextEvent('stage'),
     });
   };
 
-  // 下一題：每第 5 題是魔王題（復仇魔王關卡本身就是錯題，不另外出）；
+  // 下一題：每第 5 題是魔王題（復仇魔王、寶箱怪不另外出）；
   // 其他時候先出這一關準備好的題目，出完再從題庫繼續抽
-  const nextQuestion = (focus: boolean) => {
+  const nextQuestion = () => {
     const s = get();
     const stage = s.stages[s.stageIdx];
     const questionCount = s.questionCount + 1;
-    const isBossQuestion = !stage.revenge && questionCount % BOSS_QUESTION_EVERY === 0;
+    const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
     let qIdx = s.qIdx;
     let original: Question;
     if (isBossQuestion) {
@@ -224,16 +222,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         ? stage.questions[qIdx]
         : (stage.bossMode ? decks!.boss() : decks!.normal());
     }
-    const question = prepare(original);
-    const limit = limitFor(question, focus, s.timeScale);
     return {
-      qIdx, original, question, questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
-      retrying: false, questionLimit: limit, questionLeft: limit,
+      qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
+      retrying: false, ...freshTimer(s.focus),
     };
   };
 
   // 敵人攻擊隨機一位站著的隊員；全滅則戰敗
-  const enemyStrike = (party: Member[], turnEnd: boolean) => {
+  const enemyStrike = (party: Member[]) => {
     const s = get();
     const alive = party.map((m, i) => (isAlive(m) ? i : -1)).filter(i => i >= 0);
     const target = alive[Math.floor(random() * alive.length)];
@@ -245,7 +241,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...withTotals(hurt),
       attackerIdx: Math.max(0, attackerIdx),
       wiped,
-      event: nextEvent('hurt', { amount: damage, member: party[target].id, turnEnd }),
+      event: nextEvent('hurt', { amount: damage, member: party[target].id }),
     };
   };
 
@@ -256,66 +252,85 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     return gold;
   };
 
+  // 怪物倒下（或寶箱逃走）後進入下一階段
+  const finishStage = (patch: Partial<BattleState>) => {
+    const s = get();
+    const stage = s.stages[s.stageIdx];
+    const isLastStage = s.stageIdx + 1 >= s.stages.length;
+    if (isLastStage) {
+      save().unlockLevel(s.levelIdx + 1);
+      save().setLevelProgress(s.levelKey, 0); // 全區通關，下次從第 1 關重玩
+      set({ ...patch, phase: 'levelClear' });
+      return;
+    }
+    set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
+  };
+
   const onCorrect = () => {
     const s = get();
     if (!s.original || !s.question) return;
     save().recordAnswer(s.original, true, !s.retrying);
     const stage = s.stages[s.stageIdx];
-    const combo = s.combo + 1;
+    // 超過 20 秒才答對：這題不累積 combo
+    const combo = s.overtime ? 0 : s.combo + 1;
+    const elapsed = s.questionLimit - s.questionLeft;
+    const speed = s.overtime ? 1 : speedMultiplier(elapsed);
 
     // 魔王題由隊長出手，其他題目隊伍輪流
     const attackerIdx = s.isBossQuestion ? Math.max(0, leaderIndex(s.party)) : s.attackerIdx;
     const attacker = s.party[attackerIdx];
-    const bossMult = s.isBossQuestion ? s.bossMult * bossStep(s.bossChain) * (s.amplify ? 2 : 1) : s.bossMult;
-    const bossChain = s.isBossQuestion ? s.bossChain + 1 : s.bossChain;
+    const amplify = s.amplifyLeft > 0;
+    const bossMult = s.isBossQuestion && !s.overtime ? s.bossMult * bossStep(s.bossChain) * (amplify ? 2 : 1) : s.bossMult;
+    const bossChain = s.isBossQuestion && !s.overtime ? s.bossChain + 1 : s.bossChain;
     const crit = random() < attacker.crit;
+    const party = gainEnergy(s.party);
+    const base = {
+      ...withTotals(party),
+      attackerIdx: s.isBossQuestion ? s.attackerIdx : Math.max(0, nextAlive(party, attackerIdx + 1)),
+      combo, maxCombo: Math.max(s.maxCombo, combo), bossMult, bossChain,
+      amplifyLeft: Math.max(0, s.amplifyLeft - 1),
+      answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
+      wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
+    };
+
+    // 菁英怪：護盾還在時，答對只會削掉一層護盾
+    if (s.monsterShield > 0) {
+      const monsterShield = s.monsterShield - 1;
+      const gold = earn(GOLD.correct, combo);
+      set({
+        ...base, ...nextQuestion(), monsterShield, runGold: s.runGold + gold,
+        event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion }),
+      });
+      return;
+    }
+
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
       : computeDamage({
-        atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult,
-        element: elementMultiplier(attacker.element, s.monsterElement), amplify: s.amplify, crit,
+        atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
+        element: stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement),
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
 
-    let goldBase = GOLD.correct;
-    if (killed) goldBase += stage.revenge ? GOLD.revengeKill : stage.bossMode ? GOLD.bossKill : GOLD.kill;
+    let goldBase = stage.kind === 'treasure' ? GOLD.treasureHit : GOLD.correct;
+    if (killed) goldBase += stage.revenge ? GOLD.revengeKill : stage.bossMode ? GOLD.bossKill : stage.kind === 'treasure' ? GOLD.treasureOpen : GOLD.kill;
     if (killed && isLastStage) goldBase += GOLD.levelClear;
     const gold = earn(goldBase, combo);
     // 打倒頭目、通關可以拿到召喚券
     const tickets = !killed ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
     if (tickets > 0) save().addTickets(tickets);
 
-    const party = gainEnergy(s.party);
     const common = {
-      ...withTotals(party),
-      attackerIdx: s.isBossQuestion ? s.attackerIdx : Math.max(0, nextAlive(party, attackerIdx + 1)),
-      combo, maxCombo: Math.max(s.maxCombo, combo), monsterHp, bossMult, bossChain,
-      answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
-      wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
-      runGold: s.runGold + gold,
-      event: nextEvent('attack', { amount: damage, gold, crit, member: attacker.id, bossQuestion: s.isBossQuestion }),
+      ...base, monsterHp, runGold: s.runGold + gold,
+      event: nextEvent('attack', { amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion }),
     };
-
     if (!killed) {
-      // 回合時間用完：敵人攻擊，停頓一下再開新回合
-      if (s.turnLeft <= 0) {
-        set({ ...common, ...nextQuestion(false) });
-        const strike = enemyStrike(get().party, true);
-        set({ ...withTotals(strike.party), attackerIdx: strike.attackerIdx, event: strike.event, phase: strike.wiped ? 'gameOver' : 'enemyTurn', phaseLeft: ENEMY_TURN_TIME });
-        return;
-      }
-      set({ ...common, ...nextQuestion(s.focus) });
+      set({ ...common, ...nextQuestion() });
       return;
     }
-    if (isLastStage) {
-      save().unlockLevel(s.levelIdx + 1);
-      save().setLevelProgress(s.levelKey, 0); // 全區通關，下次從第 1 關重玩
-      set({ ...common, phase: 'levelClear' });
-      return;
-    }
-    set({ ...common, phase: stage.bossMode ? 'summary' : 'monsterDown' });
+    finishStage(common);
   };
 
   const onWrong = (given: string, timeout = false) => {
@@ -323,22 +338,25 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (!s.question || !s.original) return;
     save().recordAnswer(s.original, false, false);
     const guarded = s.comboGuard;
+    const stage = s.stages[s.stageIdx];
     const base = {
       combo: guarded ? s.combo : 0,
       bossMult: guarded ? s.bossMult : 1,
       bossChain: guarded ? s.bossChain : 0,
       comboGuard: false,
+      // 菁英怪的護盾在答錯時恢復
+      monsterShield: stage.kind === 'elite' && s.monsterShield > 0 ? ELITE_SHIELD : s.monsterShield,
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: false }],
       wrongStreak: s.wrongStreak + 1,
       feedback: { question: s.question, given, timeout },
     };
 
-    // 護盾（援軍、道具或技能）：擋下這次傷害
-    if (s.shield) {
-      set({ ...base, shield: false, phase: 'feedback', event: nextEvent('shield') });
+    // 護盾（援軍、道具或技能），或不會攻擊的寶箱怪：不受傷
+    if (s.shield || stage.kind === 'treasure') {
+      set({ ...base, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
       return;
     }
-    const strike = enemyStrike(s.party, false);
+    const strike = enemyStrike(s.party);
     set({
       ...base,
       ...withTotals(strike.party),
@@ -354,9 +372,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const s = get();
     switch (skill) {
       case 'guard': return { shield: true, comboGuard: true };
-      case 'haste': return { turnLeft: s.turnLeft + HASTE_BONUS, turnLimit: s.turnLimit + HASTE_BONUS };
-      case 'focus': return { focus: true, questionLeft: s.questionLeft + FOCUS_BONUS, questionLimit: s.questionLimit + FOCUS_BONUS };
-      case 'amplify': return { amplify: true };
+      case 'haste': return { questionLeft: s.questionLeft + HASTE_BONUS, questionLimit: s.questionLimit + HASTE_BONUS, overtime: false };
+      case 'focus': return { focus: true, questionLeft: s.questionLeft + FOCUS_BONUS, questionLimit: s.questionLimit + FOCUS_BONUS, overtime: false };
+      case 'amplify': return { amplifyLeft: AMPLIFY_HITS };
     }
   };
 
@@ -385,6 +403,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     monsterHp: 0,
     monsterMaxHp: 0,
     monsterElement: 'wood',
+    monsterShield: 0,
+    treasureLeft: 0,
     phase: 'answering',
     feedback: null,
     event: null,
@@ -394,13 +414,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     assistSource: null,
     shield: false,
     comboGuard: false,
-    amplify: false,
+    amplifyLeft: 0,
     focus: false,
-    timeScale: 1,
-    turnLimit: TURN_TIME,
-    turnLeft: TURN_TIME,
-    questionLimit: 0,
-    questionLeft: 0,
+    questionLimit: QUESTION_LIMIT,
+    questionLeft: QUESTION_LIMIT,
+    overtime: false,
     phaseLeft: 0,
     casting: null,
     stats: playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 } }),
@@ -416,7 +434,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         active: true, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, runGold: 0,
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0,
       });
       const saved = save().levelProgress[levelKey] ?? 0;
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
@@ -427,8 +445,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     startBattle: () => {
       const s = get();
       if (s.phase !== 'lesson') return;
-      const limit = limitFor(s.question!, false, s.timeScale);
-      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...freshTurn(s.timeScale), questionLimit: limit, questionLeft: limit });
+      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...freshTimer(s.focus) });
     },
 
     openLesson: () => {
@@ -436,19 +453,30 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ phase: 'lesson' });
     },
 
-    // 由介面每一幀呼叫。只有作答、敵人回合、施法確認時會計時，其他畫面（預習、解說、結算）都暫停
+    // 由介面定時呼叫。只有作答與施法確認時計時，其他畫面（預習、解說、結算）都暫停
     tick: (ms) => {
       const s = get();
       if (!s.active || ms <= 0) return;
       if (s.phase === 'answering') {
-        const questionLeft = s.questionLeft - ms;
-        set({ turnLeft: s.turnLeft - ms, questionLeft });
-        if (questionLeft <= 0) onWrong('', true);
-      } else if (s.phase === 'enemyTurn') {
-        const phaseLeft = s.phaseLeft - ms;
-        if (phaseLeft > 0) { set({ phaseLeft }); return; }
-        const limit = limitFor(s.question!, false, s.timeScale);
-        set({ phase: 'answering', phaseLeft: 0, ...freshTurn(s.timeScale), questionLimit: limit, questionLeft: limit, questionSeq: s.questionSeq + 1 });
+        // 寶箱怪：時間到就帶著寶物逃走
+        if (s.treasureLeft > 0) {
+          const treasureLeft = s.treasureLeft - ms;
+          if (treasureLeft <= 0) {
+            finishStage({ treasureLeft: 0, event: nextEvent('escape') });
+            return;
+          }
+          set({ treasureLeft });
+        }
+        if (s.overtime) return;
+        const questionLeft = Math.max(0, s.questionLeft - ms);
+        if (questionLeft > 0) { set({ questionLeft }); return; }
+        if (isLenientStage(s.stageIdx)) {
+          // 前 25 關：超時不算答錯，只是 combo 中斷，繼續作答同一題
+          set({ questionLeft: 0, overtime: true, combo: 0, bossMult: 1, bossChain: 0, event: nextEvent('overtime') });
+        } else {
+          set({ questionLeft: 0 });
+          onWrong('', true);
+        }
       } else if (s.phase === 'casting') {
         const phaseLeft = s.phaseLeft - ms;
         if (phaseLeft > 0) set({ phaseLeft });
@@ -488,16 +516,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       onWrong(transcript);
     },
 
-    // 看完正確答案後開新回合，同一題重新作答一次（選項重新洗牌，避免只記位置）。
+    // 看完正確答案後，同一題重新作答一次（選項重新洗牌，避免只記位置）。
     // 連續答錯達門檻時，援軍登場：給提示並附上一次護盾
     continueAfterFeedback: () => {
       const s = get();
       if (s.phase !== 'feedback' || !s.original) return;
       const question = prepare(s.original);
-      const limit = limitFor(question, false, s.timeScale);
       const base = {
         phase: 'answering' as const, feedback: null, question, questionSeq: s.questionSeq + 1, retrying: true,
-        isBossQuestion: false, ...freshTurn(s.timeScale), questionLimit: limit, questionLeft: limit,
+        isBossQuestion: false, ...freshTimer(s.focus),
       };
       if (s.wrongStreak >= ASSIST_STREAK) {
         const assist = buildAssist(question);

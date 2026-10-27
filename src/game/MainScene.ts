@@ -73,6 +73,7 @@ export default class MainScene extends Phaser.Scene {
   private monsterEl: Element = 'wood';
   private elementBadge!: Phaser.GameObjects.Container;
   private monsterScale = 6;
+  private monsterShieldBubble!: Phaser.GameObjects.Arc;
   private shieldBubble!: Phaser.GameObjects.Arc;
   private helper!: Phaser.GameObjects.Text;
   private playerBar!: PixelBar;
@@ -156,6 +157,10 @@ export default class MainScene extends Phaser.Scene {
     this.monsterShadow = this.add.ellipse(MONSTER_X, GROUND_Y + 2, 110, 18, 0x000000, 0.3);
     this.monsterSprite = this.add.image(0, 0, monsterKey('slime', s.monsterElement)).setOrigin(0.5, 1);
     this.monster = this.add.container(MONSTER_X, GROUND_Y, [this.monsterSprite]).setDepth(19);
+    // 菁英怪的護盾
+    this.monsterShieldBubble = this.add.circle(0, -70, 95).setStrokeStyle(5, 0xffcd4b, 0.9).setFillStyle(0xffcd4b, 0.12).setVisible(false);
+    this.monster.add(this.monsterShieldBubble);
+    this.tweens.add({ targets: this.monsterShieldBubble, scale: 1.05, yoyo: true, repeat: -1, duration: 450 });
 
     this.helper = this.add.text(PLAYER_X - 80, GROUND_Y - 110, '🧚', { fontSize: '40px' }).setOrigin(0.5).setDepth(22).setVisible(false);
     this.tweens.add({ targets: this.helper, y: GROUND_Y - 124, yoyo: true, repeat: -1, duration: 700, ease: 'Sine.easeInOut' });
@@ -202,6 +207,7 @@ export default class MainScene extends Phaser.Scene {
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);
+    this.monsterShieldBubble.setVisible(s.monsterShield > 0 && s.phase !== 'monsterDown');
     s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
@@ -256,6 +262,19 @@ export default class MainScene extends Phaser.Scene {
       case 'attack': return this.playAttack(event, s);
       case 'hurt': return this.playHurt(event, s);
       case 'skill': return this.playSkill(event);
+      case 'shieldHit': return this.playAttack(event, s);
+      case 'overtime':
+        sfx.wrong();
+        popText(this, 400, 230, '超過 20 秒：Combo 中斷', 26, '#ff8a8a', { rise: 20, dur: 1100 });
+        return;
+      case 'escape':
+        sfx.wrong();
+        popText(this, MONSTER_X, GROUND_Y - 160, '寶箱逃走了…', 28, '#ffcd4b', { rise: 30, dur: 1200 });
+        this.tweens.killTweensOf([this.monster, this.monsterSprite]);
+        this.monsterIdle?.stop();
+        this.tweens.add({ targets: this.monster, x: MONSTER_X + 420, duration: 700, ease: 'Quad.easeIn' });
+        this.tweens.add({ targets: this.monsterSprite, y: -30, duration: 90, yoyo: true, repeat: 3 });
+        return;
       case 'shield': return this.playBlocked();
       case 'heal':
         sfx.heal();
@@ -282,13 +301,16 @@ export default class MainScene extends Phaser.Scene {
     if (!stage) return;
     const isBoss = stage.bossMode;
     const isRevenge = !!stage.revenge;
-    this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge);
-    this.monsterScale = isRevenge ? 10 : isBoss ? 11 : this.monsterKind === 'bat' ? 7 : 7.5;
+    const isElite = stage.kind === 'elite';
+    this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge, stage.kind === 'treasure');
+    this.monsterScale = isRevenge ? 10 : isBoss ? 11 : isElite ? 9 : this.monsterKind === 'bat' ? 7 : 7.5;
     const el = elementDef(s.monsterElement);
     this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
-    const name = `${isBoss ? '👑 ' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
-    this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : '#ffffff');
-    this.showElementBadge(el.id === this.monsterEl ? el : elementDef(this.monsterEl));
+    const name = `${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
+    this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : isElite || this.monsterKind === 'chest' ? '#ffcd4b' : '#ffffff');
+    // 寶箱怪沒有屬性相剋，不顯示徽章
+    if (this.monsterKind === 'chest') this.elementBadge.removeAll(true);
+    else this.showElementBadge(el.id === this.monsterEl ? el : elementDef(this.monsterEl));
     this.monsterBar.set(1, true);
 
     const appear = () => {
@@ -374,6 +396,7 @@ export default class MainScene extends Phaser.Scene {
     const f = this.fighterFor(event.member);
     if (member && s.party.length > 1) popText(this, f.homeX, f.homeY - 140, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
     if (event.bossQuestion) this.bossQuestionHit(s.bossMult);
+    if (event.fast) popText(this, f.homeX + 40, f.homeY - 175, event.fast >= 1.5 ? 'FAST! ×1.5' : 'QUICK ×1.2', 22, '#7fffd4', { rise: 30, dur: 700 });
     this.busy = true;
     f.idle?.pause();
     f.sprite.setTexture(f.attackKey);
@@ -384,7 +407,8 @@ export default class MainScene extends Phaser.Scene {
     this.tweens.add({
       targets: f.container, x: MONSTER_X - 150, y: GROUND_Y, duration: 90 + (PLAYER_X - f.homeX) * 0.4, ease: 'Quad.easeIn',
       onComplete: () => {
-        this.impact(damage, crit, killed, s);
+        if (event.kind === 'shieldHit') this.shieldImpact(damage);
+        else this.impact(damage, crit, killed, s);
         this.tweens.add({
           targets: f.container, x: f.homeX, y: f.homeY, duration: 220, delay: 90, ease: 'Quad.easeOut',
           onComplete: () => {
@@ -429,6 +453,23 @@ export default class MainScene extends Phaser.Scene {
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
     if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
     else if (killed) this.busy = false;
+  }
+
+  // 菁英怪的護盾被削掉一層；剩 0 就碎掉
+  private shieldImpact(remaining: number) {
+    const hitY = GROUND_Y - this.monsterSprite.displayHeight * 0.5;
+    hitStop(this, 60);
+    this.cameras.main.shake(100, 0.006);
+    burst(this, MONSTER_X - 60, hitY, [0xffcd4b, 0xffffff], 12, { speed: 200 });
+    if (remaining > 0) {
+      sfx.shield();
+      popText(this, MONSTER_X, hitY - 80, `護盾 ${remaining}`, 30, '#ffcd4b', { rise: 30 });
+    } else {
+      sfx.crit();
+      screenFlash(this, 0xffcd4b, 0.3, 300);
+      popText(this, MONSTER_X, hitY - 80, 'BREAK!', 44, '#ffcd4b', { rise: 40 });
+    }
+    this.busy = false;
   }
 
   // 魔王題答對：大字顯示累積倍率
@@ -533,7 +574,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   private playHurt(event: BattleEvent, s: State) {
-    if (event.turnEnd) this.banner('敵人回合', '#ff8a8a'); else sfx.wrong();
+    sfx.wrong();
     const target = s.party.find(m => m.id === event.member);
     this.monsterLunge(() => {
       sfx.hurt();

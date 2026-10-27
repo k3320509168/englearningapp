@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { LEVELS } from '../game/QuestionData';
+import { regionName } from '../game/regions';
 import { codexItems } from '../game/codex';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
@@ -26,7 +27,7 @@ export default function CodexModal() {
       <div className="tabs tabs-scroll" role="tablist">
         {LEVELS.map((lv, i) => (
           <button key={lv} role="tab" aria-selected={i === levelIdx} className={`tab ${i === levelIdx ? 'is-active' : ''}`}
-            onMouseDown={keepFocus} onClick={() => { setLevelIdx(i); setOpenId(null); }}>{lv.split(' ')[0]}</button>
+            onMouseDown={keepFocus} onClick={() => { setLevelIdx(i); setOpenId(null); }}>{regionName(lv)}</button>
         ))}
       </div>
       <p className="codex-progress">已收錄 <b>{seen}</b> / {items.length} · 精通 ★★★ <b>{mastered}</b></p>

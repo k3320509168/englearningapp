@@ -2,8 +2,8 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { HASTE_BONUS, REVENGE_MAX_QUESTIONS, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
-import { ASSIST_STREAK, CAST_CONFIRM_TIME, ENEMY_TURN_TIME, PLAYER_MAX_HP, questionKey, voiceFallback } from '../game/battle';
-import { GOLD, SKILL_ENERGY, SRS_INTERVALS, monsterAttack } from '../game/progression';
+import { ASSIST_STREAK, CAST_CONFIRM_TIME, LENIENT_STAGE_COUNT, PLAYER_MAX_HP, QUESTION_LIMIT, questionKey, voiceFallback } from '../game/battle';
+import { ELITE_SHIELD, GOLD, SKILL_ENERGY, SRS_INTERVALS, TREASURE_TIME, monsterAttack } from '../game/progression';
 import { DEFAULT_CHARACTER } from '../game/character';
 import type { Question } from '../game/types';
 
@@ -141,35 +141,81 @@ describe('party and upgrades', () => {
   });
 });
 
-describe('timer', () => {
+describe('combo timer', () => {
   beforeEach(() => startLevel());
 
-  it('counts a timeout as wrong and shows the answer', () => {
-    state().tick(state().questionLimit + 1);
+  it('first 25 stages: a timeout only breaks combo — no damage, no mistake, keep answering', () => {
+    useBattleStore.setState({ combo: 5 });
+    state().tick(QUESTION_LIMIT + 1);
+    expect(state().phase).toBe('answering');
+    expect(state().overtime).toBe(true);
+    expect(state().combo).toBe(0);
+    expect(state().playerHp).toBe(state().playerMaxHp);
+    expect(Object.keys(saved().mistakes)).toHaveLength(0);
+    // 超時後答對：有攻擊，但這題不累積 combo
+    answerCurrent();
+    expect(state().event?.kind).toBe('attack');
+    expect(state().combo).toBe(0);
+    expect(state().overtime).toBe(false);
+  });
+
+  it('from stage 26 on, a timeout counts as wrong', () => {
+    state().startLevel(LEVELS[0], undefined, LENIENT_STAGE_COUNT);
+    state().tick(QUESTION_LIMIT + 1);
     expect(state().phase).toBe('feedback');
     expect(state().feedback?.timeout).toBe(true);
     expect(state().playerHp).toBeLessThan(state().playerMaxHp);
     // 看解說時不計時
-    const left = state().turnLeft;
+    const left = state().questionLeft;
     state().tick(5000);
-    expect(state().turnLeft).toBe(left);
+    expect(state().questionLeft).toBe(left);
   });
 
-  it('lets the enemy attack when the turn runs out, then starts a new turn', () => {
-    useBattleStore.setState({ turnLeft: 0 });
+  it('gives a speed bonus: within 5s x1.5, within 10s x1.2', () => {
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
     answerCurrent();
-    expect(state().phase).toBe('enemyTurn');
-    expect(state().event?.turnEnd).toBe(true);
-    expect(state().playerHp).toBeLessThan(state().playerMaxHp);
-    state().tick(ENEMY_TURN_TIME);
-    expect(state().phase).toBe('answering');
-    expect(state().turnLeft).toBe(state().turnLimit);
+    expect(state().event?.fast).toBe(1.5);
+    state().tick(7000);
+    answerCurrent();
+    expect(state().event?.fast).toBe(1.2);
+    state().tick(12_000);
+    answerCurrent();
+    expect(state().event?.fast).toBeUndefined();
   });
 
-  it('gives the current question its full time even when the turn is almost over', () => {
-    useBattleStore.setState({ turnLeft: 100 });
-    state().tick(500);
-    expect(state().phase).toBe('answering');
+  it('enemies only attack on wrong answers', () => {
+    for (let i = 0; i < 6; i++) { state().tick(3000); answerCurrent(); playUntil(() => state().phase === 'answering'); }
+    expect(state().playerHp).toBe(state().playerMaxHp);
+  });
+});
+
+describe('stage variations', () => {
+  it('elite monsters need 3 correct answers in a row to break the shield', () => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, 4);
+    expect(state().stages[4].kind).toBe('elite');
+    expect(state().monsterShield).toBe(ELITE_SHIELD);
+    const hp = state().monsterHp;
+    answerCurrent();
+    expect(state().monsterShield).toBe(ELITE_SHIELD - 1);
+    expect(state().monsterHp).toBe(hp);
+    answerWrong();
+    expect(state().monsterShield).toBe(ELITE_SHIELD);
+  });
+
+  it('treasure chests never attack, drop gold per hit, and escape when time is up', () => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, 6);
+    expect(state().stages[6].kind).toBe('treasure');
+    answerWrong();
+    expect(state().playerHp).toBe(state().playerMaxHp);
+    state().continueAfterFeedback();
+    const gold = state().runGold;
+    answerCurrent();
+    expect(state().runGold).toBeGreaterThan(gold);
+    state().tick(TREASURE_TIME);
+    expect(state().phase).toBe('monsterDown');
+    expect(state().event?.kind).toBe('escape');
   });
 });
 
@@ -219,23 +265,23 @@ describe('skills', () => {
     state().requestSkill(0);
     expect(state().phase).toBe('answering');
     fillEnergy();
-    const turnLeft = state().turnLeft;
+    const left = state().questionLeft;
     state().requestSkill(0);
     expect(state().phase).toBe('casting');
     state().tick(1000);
-    expect(state().turnLeft).toBe(turnLeft);
+    expect(state().questionLeft).toBe(left);
     state().tick(CAST_CONFIRM_TIME);
     expect(state().phase).toBe('answering');
     expect(state().party[0].energy).toBe(SKILL_ENERGY);
   });
 
-  it('haste (warrior) adds turn time', () => {
+  it('haste (warrior) adds time to this question', () => {
     startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'warrior' } });
     fillEnergy();
-    const turnLeft = state().turnLeft;
+    const left = state().questionLeft;
     state().requestSkill(0);
     state().confirmSkill();
-    expect(state().turnLeft).toBe(turnLeft + HASTE_BONUS);
+    expect(state().questionLeft).toBe(left + HASTE_BONUS);
     expect(state().party[0].energy).toBe(0);
   });
 
@@ -250,7 +296,7 @@ describe('skills', () => {
     expect(state().playerHp).toBe(hp);
   });
 
-  it('amplify (mage) doubles damage this turn', () => {
+  it('amplify (mage) doubles damage for the next hits', () => {
     startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'mage' }, party: ['player'] });
     useBattleStore.setState({ combo: 0, questionCount: 1, party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
     const before = state().monsterHp;

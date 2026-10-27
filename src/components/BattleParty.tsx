@@ -7,34 +7,40 @@ import { SKILLS, SKILL_ENERGY, bossStep } from '../game/progression';
 import { elementDef, elementMultiplier } from '../game/character';
 import { isAlive, leaderIndex, skillReady } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
+import { FAST_TIME, QUICK_TIME, isLenientStage } from '../game/battle';
 import { keepFocus } from './keepFocus';
 
 // 戰鬥計時、隊伍狀態列與技能施放確認
 
 const seconds = (ms: number) => Math.max(0, ms / 1000).toFixed(1);
 
+// 每題 20 秒的 combo 計時。越快答對傷害越高（5 秒內 ×1.5、10 秒內 ×1.2）
 export function TimerBars() {
-  const { phase, turnLeft, turnLimit, questionLeft, questionLimit, timeScale } = useBattleStore(useShallow(s => ({
-    phase: s.phase, turnLeft: s.turnLeft, turnLimit: s.turnLimit,
-    questionLeft: s.questionLeft, questionLimit: s.questionLimit, timeScale: s.timeScale,
+  const { phase, questionLeft, questionLimit, overtime, stageIdx, treasureLeft } = useBattleStore(useShallow(s => ({
+    phase: s.phase, questionLeft: s.questionLeft, questionLimit: s.questionLimit,
+    overtime: s.overtime, stageIdx: s.stageIdx, treasureLeft: s.treasureLeft,
   })));
-  if (phase !== 'answering' && phase !== 'casting' && phase !== 'enemyTurn') return null;
-  const turnPct = Math.max(0, turnLeft / turnLimit) * 100;
-  const qPct = Math.max(0, questionLeft / questionLimit) * 100;
+  if (phase !== 'answering' && phase !== 'casting') return null;
+  const pct = Math.max(0, questionLeft / questionLimit) * 100;
+  const elapsed = questionLimit - questionLeft;
+  const speed = elapsed <= FAST_TIME ? 'FAST ×1.5' : elapsed <= QUICK_TIME ? 'QUICK ×1.2' : '';
+  const lenient = isLenientStage(stageIdx);
   return (
     <div className={`timers ${phase !== 'answering' ? 'is-paused' : ''}`}>
-      <div className="timer" title="這回合剩下的時間，用完換敵人攻擊">
-        <span className="timer-label">回合</span>
-        <span className="timer-track"><span className={`timer-fill turn ${turnPct < 25 ? 'is-low' : ''}`} style={{ width: `${turnPct}%` }} /></span>
-        <b>{seconds(turnLeft)}</b>
-      </div>
-      <div className="timer" title="這一題剩下的時間，時間到算答錯">
-        <span className="timer-label">本題</span>
-        <span className="timer-track"><span className={`timer-fill question ${qPct < 30 ? 'is-low' : ''}`} style={{ width: `${qPct}%` }} /></span>
+      <div className="timer" title={lenient ? '20 秒內答對 combo +1；超時只會讓 combo 中斷' : '20 秒內要答對，超時算答錯'}>
+        <span className="timer-label">Combo</span>
+        <span className="timer-track">
+          <span className={`timer-fill question ${pct < 25 ? 'is-low' : ''}`} style={{ width: `${pct}%` }} />
+          <i className="timer-mark" style={{ left: `${(1 - FAST_TIME / questionLimit) * 100}%` }} />
+          <i className="timer-mark" style={{ left: `${(1 - QUICK_TIME / questionLimit) * 100}%` }} />
+        </span>
         <b>{seconds(questionLeft)}</b>
       </div>
-      {timeScale > 1 && <span className="timer-note">新手區：時間加倍</span>}
-      {phase === 'enemyTurn' && <span className="timer-note is-enemy">敵人回合…</span>}
+      {overtime
+        ? <span className="timer-note is-enemy">⏰ 超過 20 秒：這題答對不加 combo，慢慢想沒關係</span>
+        : speed && <span className="timer-note">⚡ {speed}</span>}
+      {!overtime && !lenient && <span className="timer-note is-enemy">超時算答錯</span>}
+      {treasureLeft > 0 && <span className="timer-note treasure">💰 寶箱逃走倒數 {seconds(treasureLeft)}</span>}
     </div>
   );
 }
@@ -110,7 +116,7 @@ export function CastConfirm() {
 // 魔王題標籤：答對可得到的倍率
 export function BossQuestionTag() {
   const { isBossQuestion, bossChain, amplify } = useBattleStore(useShallow(s => ({
-    isBossQuestion: s.isBossQuestion, bossChain: s.bossChain, amplify: s.amplify,
+    isBossQuestion: s.isBossQuestion, bossChain: s.bossChain, amplify: s.amplifyLeft > 0,
   })));
   if (!isBossQuestion) return null;
   const step = bossStep(bossChain) * (amplify ? 2 : 1);

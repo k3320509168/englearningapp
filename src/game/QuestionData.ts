@@ -159,6 +159,10 @@ export function generateStages(levelKey: string, decks: Decks = createDecks(leve
       generatedStages.push({ name: `第 ${i} 關：星球最終試煉`, bossMode: true, questions: [decks.boss(), decks.boss()] });
     } else if (i % 10 === 0) {
       generatedStages.push({ name: `第 ${i} 關：守門菁英`, bossMode: true, questions: [decks.boss()] });
+    } else if (i % 10 === 5) {
+      generatedStages.push({ name: `第 ${i} 關：菁英怪`, bossMode: false, kind: 'elite', questions: [decks.normal()] });
+    } else if (i % 10 === 7) {
+      generatedStages.push({ name: `第 ${i} 關：寶箱怪`, bossMode: false, kind: 'treasure', questions: [decks.normal()] });
     } else {
       generatedStages.push({ name: `第 ${i} 關：持續推進`, bossMode: false, questions: [decks.normal()] });
     }

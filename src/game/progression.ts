@@ -59,9 +59,9 @@ export interface SkillDef {
 
 export const SKILLS: Record<SkillId, SkillDef> = {
   guard: { id: 'guard', icon: '🛡️', name: '守護之盾', desc: '下一次答錯不扣血，Combo 也不會中斷' },
-  focus: { id: 'focus', icon: '🎯', name: '專注', desc: '這回合每一題多 3 秒' },
-  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', desc: '這回合傷害與魔王題倍率翻倍' },
-  haste: { id: 'haste', icon: '⏩', name: '加速之歌', desc: '這回合的時間 +5 秒' },
+  focus: { id: 'focus', icon: '🎯', name: '專注', desc: '這一關每題多 5 秒' },
+  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', desc: '接下來 3 次攻擊傷害與魔王題倍率翻倍' },
+  haste: { id: 'haste', icon: '⏩', name: '加速之歌', desc: '這一題多 10 秒' },
 };
 
 // 主角的技能依職業決定
@@ -110,10 +110,11 @@ export interface DamageInput {
   element: number; // 屬性相剋倍率
   amplify: boolean;
   crit: boolean;
+  speed?: number;  // 快答加成
 }
 
 export function computeDamage(d: DamageInput): number {
-  const mult = comboMultiplier(d.combo, d.comboStep) * d.bossMult * d.element * (d.amplify ? 2 : 1) * (d.crit ? 2 : 1);
+  const mult = comboMultiplier(d.combo, d.comboStep) * d.bossMult * d.element * (d.amplify ? 2 : 1) * (d.crit ? 2 : 1) * (d.speed ?? 1);
   return Math.max(1, Math.round(d.atk * mult));
 }
 
@@ -125,6 +126,13 @@ export const HITS_TO_KILL = { normal: 2.5, boss: 12 };
 export function monsterGrowth(stageIdx: number, levelIdx: number): number {
   return (1 + stageIdx * 0.02) * (1 + levelIdx * 0.3);
 }
+
+// 關卡變化：菁英怪有護盾，要連續答對 ELITE_SHIELD 題打破才會受傷；
+// 寶箱怪不會攻擊，限時內每次命中都掉金幣，打開寶箱有大獎，時間到就逃走
+export const ELITE_SHIELD = 3;
+export const ELITE_HP_MULT = 1.5;
+export const TREASURE_TIME = 30_000;
+export const TREASURE_HITS = 6;
 
 export function monsterMaxHp(stageIdx: number, levelIdx: number, isBoss: boolean): number {
   const hits = isBoss ? HITS_TO_KILL.boss : HITS_TO_KILL.normal;
@@ -150,6 +158,8 @@ export const GOLD = {
   bossKill: 30,
   revengeKill: 50,
   levelClear: 100,
+  treasureHit: 4,
+  treasureOpen: 60,
 };
 
 export function goldWithBonus(amount: number, stats: PlayerStats): number {

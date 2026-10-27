@@ -99,7 +99,7 @@ export default function BattleHUD() {
       <TimerBars />
       {phase === 'lesson' && <LessonPanel />}
       {phase === 'casting' && <CastConfirm />}
-      {(phase === 'answering' || phase === 'casting' || phase === 'enemyTurn') && <AnswerPanel question={question} />}
+      {(phase === 'answering' || phase === 'casting') && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}
       {phase === 'monsterDown' && <StageClearPanel />}
       {(phase === 'summary' || phase === 'levelClear' || phase === 'gameOver') && <SummaryPanel />}

@@ -909,3 +909,6 @@ button { font: inherit; color: inherit; }
   .hero-detail .hero-actions, .tier-line { justify-content: center; }
 }
 .num { font-family: var(--font-num); font-size: 11px; }
+.timer-track { position: relative; }
+.timer-mark { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.55); }
+.timer-note.treasure { color: var(--accent); }

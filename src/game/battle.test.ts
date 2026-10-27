@@ -1,9 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from './types';
 import {
-  PHRASE_TIME, QUESTION_TIME, READING_TIME, VOICE_TIME,
-  applyLetter, checkChoice, checkVoice,
-  questionHint, questionTime, sentenceMatchRatio, shuffleChoice, timeScale,
+  applyLetter, checkChoice, checkVoice, isLenientStage,
+  questionHint, sentenceMatchRatio, shuffleChoice, speedMultiplier,
 } from './battle';
 
 const choiceQ: Question = { type: 'choice', desc: 'I ___ a student.', options: ['A. am', 'B. is', 'C. are', 'D. be'], ans: 'A' };
@@ -58,20 +57,17 @@ describe('voice', () => {
   });
 });
 
-describe('question time', () => {
-  it('gives 5 seconds, more for long words, phrases, speaking and reading', () => {
-    expect(questionTime({ type: 'spell', desc: '', ans: 'BOOK' })).toBe(QUESTION_TIME);
-    expect(questionTime({ type: 'spell', desc: '', ans: 'BEAUTIFUL' })).toBe(QUESTION_TIME + 3 * 400);
-    expect(questionTime({ type: 'spell', desc: '', ans: 'LOOK FOR' })).toBe(PHRASE_TIME);
-    expect(questionTime({ type: 'voice', desc: '', ans: 'apple' })).toBe(VOICE_TIME);
-    expect(questionTime({ type: 'voice', desc: '', ans: 'see you tomorrow' })).toBe(READING_TIME);
-    expect(questionTime({ type: 'choice', desc: 'x'.repeat(80), ans: 'A' })).toBe(READING_TIME);
+describe('combo timer rules', () => {
+  it('rewards fast answers', () => {
+    expect(speedMultiplier(3000)).toBe(1.5);
+    expect(speedMultiplier(8000)).toBe(1.2);
+    expect(speedMultiplier(15_000)).toBe(1);
   });
 
-  it('doubles time in the first 30 stages of A1', () => {
-    expect(timeScale(0, 0)).toBe(2);
-    expect(timeScale(0, 30)).toBe(1);
-    expect(timeScale(1, 0)).toBe(1);
+  it('the first 25 stages are lenient', () => {
+    expect(isLenientStage(0)).toBe(true);
+    expect(isLenientStage(24)).toBe(true);
+    expect(isLenientStage(25)).toBe(false);
   });
 });
 

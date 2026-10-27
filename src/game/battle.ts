@@ -10,41 +10,21 @@ export const WRONG_ANSWER_DAMAGE = 10;
 export const SENTENCE_PASS_RATIO = 0.8;
 
 // ---------- 計時 ----------
-// 每回合 10 秒內可以連續作答；每題有自己的時限，題目越長給越多時間。
-// 回合時間不夠完成目前這題時，這題仍會給足時間，答完才換敵人攻擊。
-export const TURN_TIME = 10_000;
-export const QUESTION_TIME = 5_000;
-export const LETTER_BONUS = 400;      // 拼寫／填空超過 6 個字母後，每多一個字母
-export const LONG_WORD_LETTERS = 6;
-export const PHRASE_TIME = 7_000;     // 答案是片語（有空格）
-export const VOICE_TIME = 8_000;      // 口說單字
-export const READING_TIME = 12_000;   // 長句閱讀、口說整句
-export const READING_CHARS = 60;
-export const ENEMY_TURN_TIME = 900;   // 敵人攻擊動畫的停頓
+// 每題 20 秒的「combo 計時」：20 秒內答對 combo +1，越快答對傷害越高。
+// 前 25 關超時只會讓 combo 歸零（不扣血、不算錯題），可以繼續慢慢想；
+// 第 26 關之後超時就算答錯。
+export const QUESTION_LIMIT = 20_000;
+export const LENIENT_STAGE_COUNT = 25;
 export const CAST_CONFIRM_TIME = 5_000;
+export const FAST_TIME = 5_000;   // 5 秒內答對：傷害 ×1.5
+export const QUICK_TIME = 10_000; // 10 秒內答對：傷害 ×1.2
 
-export function questionTime(q: Question): number {
-  switch (q.type) {
-    case 'spell':
-    case 'fill': {
-      // 填空題的 ans 是要補上的字母，依實際要打的字母數計算
-      if (q.ans.trim().includes(' ')) return PHRASE_TIME;
-      const letters = q.ans.replace(/[^a-zA-Z]/g, '').length;
-      return QUESTION_TIME + Math.max(0, letters - LONG_WORD_LETTERS) * LETTER_BONUS;
-    }
-    case 'voice':
-      return (q.speak ?? q.ans).trim().includes(' ') ? READING_TIME : VOICE_TIME;
-    case 'choice':
-      return q.desc.length > READING_CHARS ? READING_TIME : QUESTION_TIME;
-    default:
-      return QUESTION_TIME;
-  }
-}
+export const isLenientStage = (stageIdx: number) => stageIdx < LENIENT_STAGE_COUNT;
 
-// 新手緩衝：A1 前 30 關（約前 3 張地圖）時間加倍
-export const LENIENT_STAGES = 30;
-export function timeScale(levelIdx: number, stageIdx: number): number {
-  return levelIdx === 0 && stageIdx < LENIENT_STAGES ? 2 : 1;
+export function speedMultiplier(elapsedMs: number): number {
+  if (elapsedMs <= FAST_TIME) return 1.5;
+  if (elapsedMs <= QUICK_TIME) return 1.2;
+  return 1;
 }
 
 export function shuffleArray<T>(array: T[], random: () => number = Math.random): T[] {

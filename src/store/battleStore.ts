@@ -10,7 +10,7 @@ import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
 import type { AnswerRecord } from '../game/lesson';
 import {
-  BOSS_QUESTION_EVERY, GOLD, POTION_HEAL, bossStep, computeDamage,
+  BOSS_QUESTION_EVERY, GOLD, POTION_HEAL, TICKETS, bossStep, computeDamage,
   goldWithBonus, monsterAttack, monsterElement, monsterMaxHp, playerStats,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
@@ -283,6 +283,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (killed) goldBase += stage.revenge ? GOLD.revengeKill : stage.bossMode ? GOLD.bossKill : GOLD.kill;
     if (killed && isLastStage) goldBase += GOLD.levelClear;
     const gold = earn(goldBase, combo);
+    // 打倒頭目、通關可以拿到召喚券
+    const tickets = !killed ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
+    if (tickets > 0) save().addTickets(tickets);
 
     const party = gainEnergy(s.party);
     const common = {
@@ -406,9 +409,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);
       decks = createDecks(levelKey);
-      const { upgrades, party: ids, character } = save();
+      const { upgrades, party: ids, character, heroes, heroTier } = save();
       const stats = playerStats({ upgrades });
-      const party = buildParty(ids, character, stats);
+      const party = buildParty(ids, heroes, character, stats, heroTier);
       set({
         active: true, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,

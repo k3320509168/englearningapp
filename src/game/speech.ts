@@ -18,16 +18,37 @@ function pickVoice(slow: boolean): SpeechSynthesisVoice | undefined {
   return pool.find(v => v.default) ?? pool[0];
 }
 
+// 讓語音引擎唸得自然：「thank you」這種沒有標點的小寫短語，常被唸成拖長的問句語調。
+// 首字大寫並補上句點，就會用一般的陳述語調唸出來。
+export function speakableText(text: string): string {
+  const t = text.trim();
+  if (!t) return t;
+  const capitalized = t[0].toUpperCase() + t.slice(1);
+  return /[.!?]$/.test(capitalized) ? capitalized : `${capitalized}.`;
+}
+
+// Chrome 的已知問題：cancel() 後立刻 speak()，開頭常會被吃掉（例如「thank」只剩「ank」）。
+// 正在播放時先取消，等一下再唸。
+let pending: number | undefined;
+// 保留目前的 utterance，避免被回收後播到一半中斷
+let current: SpeechSynthesisUtterance | null = null;
+
 export function speak(text: string, rate = 1, volume = 1, slow = false) {
   if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
+  const synth = window.speechSynthesis;
+  const busy = synth.speaking || synth.pending;
+  synth.cancel();
+  window.clearTimeout(pending);
+  const utterance = new SpeechSynthesisUtterance(speakableText(text));
   utterance.lang = 'en-US';
   const voice = pickVoice(slow);
   if (voice) utterance.voice = voice;
   utterance.rate = slow ? SLOW_RATE : rate;
   utterance.volume = volume;
-  window.speechSynthesis.speak(utterance);
+  current = utterance;
+  const start = () => { if (current === utterance) synth.speak(utterance); };
+  if (busy) pending = window.setTimeout(start, 120);
+  else start();
 }
 
 function getRecognitionCtor(): any {

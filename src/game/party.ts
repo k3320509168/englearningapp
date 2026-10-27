@@ -1,8 +1,10 @@
 import { BASE_DAMAGE } from './battle';
 import { classDef } from './character';
 import type { Character, Element } from './character';
-import { CLASS_SKILL, HEROES, SKILL_ENERGY, heroDef } from './progression';
-import type { HeroId, PlayerStats, SkillId } from './progression';
+import { CLASS_SKILL, SKILL_ENERGY } from './progression';
+import type { PlayerStats, SkillId } from './progression';
+import { heroDef, heroSkill, heroStats, heroWord } from './heroes';
+import type { HeroId } from './heroes';
 
 // 隊伍：主角＋夥伴英雄，最多 4 人，可以不派主角。
 // 每題由隊伍輪流出手；魔王題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
@@ -22,7 +24,7 @@ export interface Member {
   energy: number;
 }
 
-export function buildMember(id: MemberId, character: Character | null, stats: PlayerStats): Member {
+export function buildMember(id: MemberId, character: Character | null, stats: PlayerStats, tier = 0): Member {
   if (id === 'player') {
     const c = character!;
     const cls = classDef(c.classId);
@@ -34,16 +36,19 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     };
   }
   const h = heroDef(id);
-  const maxHp = Math.round(stats.maxHp * h.stats.hp);
+  const hs = heroStats(h, tier);
+  const maxHp = Math.round(stats.maxHp * hs.hp);
   return {
-    id, name: h.name, element: h.element, maxHp, hp: maxHp,
-    atk: BASE_DAMAGE * stats.atkMult * h.stats.atk, crit: h.stats.crit,
-    skill: h.skill, energy: 0,
+    id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,
+    atk: BASE_DAMAGE * stats.atkMult * hs.atk, crit: hs.crit,
+    skill: heroSkill(h), energy: 0,
   };
 }
 
-export function buildParty(ids: MemberId[], character: Character | null, stats: PlayerStats): Member[] {
-  return normalizeParty(ids, HEROES.map(h => h.id), character !== null).map(id => buildMember(id, character, stats));
+export function buildParty(
+  ids: MemberId[], owned: HeroId[], character: Character | null, stats: PlayerStats, tiers: Record<HeroId, number> = {},
+): Member[] {
+  return normalizeParty(ids, owned, character !== null).map(id => buildMember(id, character, stats, tiers[id] ?? 0));
 }
 
 // 存檔修正：只留下擁有的成員、不重複、最多 4 人；空隊伍時至少派一位

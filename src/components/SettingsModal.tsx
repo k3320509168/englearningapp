@@ -45,6 +45,10 @@ export default function SettingsModal() {
       <section className="settings-group">
         <h3>🎤 麥克風測試</h3>
         <MicTest />
+        <label className="check">
+          <input type="checkbox" checked={settings.voiceAsSpelling} onChange={e => updateSettings({ voiceAsSpelling: e.target.checked })} />
+          暫時不用麥克風：口說題改成拼寫題（下一次進入關卡生效）
+        </label>
       </section>
 
       <section className="settings-group">

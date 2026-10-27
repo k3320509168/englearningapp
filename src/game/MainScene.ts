@@ -4,15 +4,14 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { BASE_DAMAGE } from './battle';
 import { SKILLS, comboMultiplier } from './progression';
-import type { HeroId } from './progression';
 import type { Member, MemberId } from './party';
 import {
-  MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerAvatar, registerSprites,
+  ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
 } from './art/sprites';
 import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
 import type { AvatarFrame } from './art/avatar';
 import { elementDef } from './character';
-import type { Character } from './character';
+import type { Character, Element, ElementDef } from './character';
 import { useSaveStore } from '../store/saveStore';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
@@ -25,9 +24,6 @@ type State = ReturnType<typeof useBattleStore.getState>;
 
 const PLAYER_X = 230;
 const MONSTER_X = 580;
-// 舊版英雄貼圖寬 24 格，身體中心約在第 8 格；自創主角的點陣較大，縮放倍率較小
-const HERO_SCALE = 6;
-const HERO_ORIGIN_X = 8 / 24;
 const AVATAR_SCALE = 4;
 
 // 隊形：隊長站最前面，其餘隊員往後排、前後錯開，看起來有縱深
@@ -74,6 +70,8 @@ export default class MainScene extends Phaser.Scene {
   private monsterShadow!: Phaser.GameObjects.Ellipse;
   private monsterIdle?: Phaser.Tweens.Tween;
   private monsterKind: MonsterKind = 'slime';
+  private monsterEl: Element = 'wood';
+  private elementBadge!: Phaser.GameObjects.Container;
   private monsterScale = 6;
   private shieldBubble!: Phaser.GameObjects.Arc;
   private helper!: Phaser.GameObjects.Text;
@@ -104,14 +102,15 @@ export default class MainScene extends Phaser.Scene {
   private createFighter(m: Member, slot: number): Fighter {
     const pos = FORMATION[slot] ?? FORMATION[FORMATION.length - 1];
     const isPlayer = m.id === 'player' && this.character !== null;
-    const frame = (f: AvatarFrame) => (isPlayer ? avatarKey(this.character!, f) : heroKey(m.id as HeroId, f));
-    const scale = isPlayer ? AVATAR_SCALE : HERO_SCALE;
+    if (!isPlayer) registerHero(this, m.id);
+    const frame = (f: AvatarFrame) => (isPlayer ? avatarKey(this.character!, f) : heroKey(m.id, f));
+    const scale = AVATAR_SCALE;
     const homeY = GROUND_Y + pos.dy;
     // 腳下的影子與屬性光環
     this.add.ellipse(pos.x, homeY + 2, 80, 14, 0x000000, 0.3).setDepth(10 + slot);
     const aura = this.add.ellipse(pos.x, homeY + 2, 96, 20, hex(elementDef(m.element).color), 0.3).setDepth(10 + slot);
     this.tweens.add({ targets: aura, scaleX: 1.15, alpha: 0.12, yoyo: true, repeat: -1, duration: 900, delay: slot * 150, ease: 'Sine.easeInOut' });
-    const sprite = this.add.image(0, 0, frame('idle')).setOrigin(isPlayer ? AVATAR_ORIGIN_X : HERO_ORIGIN_X, 1).setScale(scale);
+    const sprite = this.add.image(0, 0, frame('idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(scale);
     // 越前面（y 越大）畫在越上層
     const container = this.add.container(pos.x, homeY, [sprite]).setDepth(20 + pos.dy / 100 + (FORMATION.length - slot) * 0.01);
     const idle = this.tweens.add({ targets: sprite, scaleY: scale * 0.96, scaleX: scale * 1.02, yoyo: true, repeat: -1, duration: 600, delay: slot * 120, ease: 'Sine.easeInOut' });
@@ -155,7 +154,7 @@ export default class MainScene extends Phaser.Scene {
     this.tweens.add({ targets: this.shieldBubble, scale: 1.06, yoyo: true, repeat: -1, duration: 500 });
 
     this.monsterShadow = this.add.ellipse(MONSTER_X, GROUND_Y + 2, 110, 18, 0x000000, 0.3);
-    this.monsterSprite = this.add.image(0, 0, monsterKey('slime', this.region)).setOrigin(0.5, 1);
+    this.monsterSprite = this.add.image(0, 0, monsterKey('slime', s.monsterElement)).setOrigin(0.5, 1);
     this.monster = this.add.container(MONSTER_X, GROUND_Y, [this.monsterSprite]).setDepth(19);
 
     this.helper = this.add.text(PLAYER_X - 80, GROUND_Y - 110, '🧚', { fontSize: '40px' }).setOrigin(0.5).setDepth(22).setVisible(false);
@@ -163,14 +162,15 @@ export default class MainScene extends Phaser.Scene {
 
     // ---------- 畫面上方 HUD（格鬥遊戲式） ----------
     this.add.image(28, 30, 'heart').setScale(4).setDepth(80);
-    const lead = s.party.find(m => m.id === 'player') ?? s.party[0];
-    this.add.text(52, 12, `${lead?.name ?? ''}${s.party.length > 1 ? `  +${s.party.length - 1}` : ''}`, textStyle(22)).setDepth(80);
+    // 上方血條是全隊 HP 合計；每位隊員的血量在下方隊伍列
+    this.add.text(52, 12, s.party.length > 1 ? `隊伍總 HP（${s.party.length} 人）` : (s.party[0]?.name ?? ''), textStyle(20)).setDepth(80);
     this.playerBar = new PixelBar(this, 24, 54, 250, 16);
     this.playerHpText = this.add.text(274, 32, '', numStyle(12)).setOrigin(1, 0).setDepth(81);
     this.add.image(32, 96, 'coin').setScale(4).setDepth(80);
     this.goldText = this.add.text(54, 84, `${s.runGold}`, numStyle(18, '#ffcd4b')).setDepth(80);
 
     this.monsterNameText = this.add.text(width - 24, 12, '', textStyle(22)).setOrigin(1, 0).setDepth(80);
+    this.elementBadge = this.add.container(0, 0).setDepth(81);
     this.monsterBar = new PixelBar(this, width - 274, 54, 250, 16, true);
     this.stageText = this.add.text(width / 2, 88, '', labelStyle(20)).setOrigin(0.5, 0).setDepth(80);
 
@@ -285,15 +285,17 @@ export default class MainScene extends Phaser.Scene {
     this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge);
     this.monsterScale = isRevenge ? 10 : isBoss ? 11 : this.monsterKind === 'bat' ? 7 : 7.5;
     const el = elementDef(s.monsterElement);
-    const name = `${isBoss ? '👑 ' : ''}${MONSTER_NAMES[this.monsterKind]}【${el.name}】`;
+    this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
+    const name = `${isBoss ? '👑 ' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
     this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : '#ffffff');
+    this.showElementBadge(el.id === this.monsterEl ? el : elementDef(this.monsterEl));
     this.monsterBar.set(1, true);
 
     const appear = () => {
       // 停掉上一隻怪物還沒播完的擊倒動畫，避免它把新怪物藏起來
       this.tweens.killTweensOf([this.monsterSprite, this.monster]);
       this.monsterIdle?.stop();
-      this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.region)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0);
+      this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.monsterEl)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0);
       this.monsterSprite.setVisible(true);
       this.monsterShadow.setVisible(true).setScale(isBoss ? 1.6 : 1);
       // 從右邊跳進場
@@ -323,6 +325,17 @@ export default class MainScene extends Phaser.Scene {
         onComplete: () => { run.stop(); runners.forEach(f => f.sprite.setY(0)); appear(); },
       });
     });
+  }
+
+  // 怪物名字左邊的屬性徽章：屬性色的寶石＋屬性字，登場時彈出
+  private showElementBadge(el: ElementDef) {
+    this.elementBadge.removeAll(true);
+    const x = this.scale.width - 24 - this.monsterNameText.width - 26;
+    const gem = this.add.rectangle(0, 0, 30, 30, hex(el.color)).setAngle(45).setStrokeStyle(3, 0x1a1226);
+    const shine = this.add.rectangle(-5, -5, 8, 8, hex(el.light)).setAngle(45);
+    const label = this.add.text(0, 1, el.name, textStyle(16, '#1a1226', 0)).setOrigin(0.5);
+    this.elementBadge.add([gem, shine, label]).setPosition(x, 27).setScale(0);
+    this.tweens.add({ targets: this.elementBadge, scale: 1, duration: 300, ease: 'Back.easeOut' });
   }
 
   private startMonsterIdle() {
@@ -396,8 +409,8 @@ export default class MainScene extends Phaser.Scene {
     this.cameras.main.shake(crit ? 220 : 120, crit ? 0.016 : 0.008);
 
     // 怪物閃白＋被擊退
-    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.region)}_flash`);
-    this.time.delayedCall(80, () => this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.region)));
+    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.monsterEl)}_flash`);
+    this.time.delayedCall(80, () => this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.monsterEl)));
     this.tweens.add({ targets: this.monster, x: MONSTER_X + (crit ? 46 : 26), duration: 70, yoyo: true, ease: 'Quad.easeOut' });
 
     const spark = this.add.image(hitX, hitY, 'spark').setScale(crit ? 14 : 9).setDepth(56).setAngle(Phaser.Math.Between(0, 45));
@@ -457,7 +470,7 @@ export default class MainScene extends Phaser.Scene {
     this.monsterIdle?.stop();
     const cx = MONSTER_X;
     const cy = GROUND_Y - this.monsterSprite.displayHeight / 2;
-    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.region)}_flash`);
+    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.monsterEl)}_flash`);
     this.tweens.add({
       targets: this.monsterSprite, scaleX: this.monsterScale * 1.3, scaleY: this.monsterScale * 0.2, alpha: 0, duration: 260, ease: 'Quad.easeIn',
       onComplete: () => {
@@ -564,7 +577,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   private monsterColors(): number[] {
-    const c = this.monsterKind === 'ghost' ? GHOST_COLORS : REGION_MONSTER_COLORS[this.region] ?? REGION_MONSTER_COLORS[0];
+    const c = this.monsterKind === 'ghost' ? GHOST_COLORS : ELEMENT_MONSTER_COLORS[this.monsterEl];
     return [hex(c.M), hex(c.L), hex(c.m)];
   }
 }

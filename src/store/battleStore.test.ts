@@ -113,10 +113,10 @@ describe('battle flow', () => {
 });
 
 describe('party and upgrades', () => {
-  it('sums the party HP with upgrades (swordsman x1.0 + knight x1.2)', () => {
+  it('sums the party HP with upgrades (swordsman x1.0 + knight x1.0)', () => {
     startLevel({ upgrades: { hp: 2, atk: 0, combo: 0, gold: 0 } });
     const hp = PLAYER_MAX_HP + 20;
-    expect(state().playerMaxHp).toBe(hp + Math.round(hp * 1.2));
+    expect(state().playerMaxHp).toBe(hp * 2);
     expect(state().playerHp).toBe(state().playerMaxHp);
   });
 

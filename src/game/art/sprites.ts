@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
-import type { HeroId } from '../progression';
-import type { Character } from '../character';
+import { heroCharacter, heroDef } from '../heroes';
+import type { HeroId } from '../heroes';
+import type { Character, Element } from '../character';
 import { OUTLINE } from './palette';
 import { avatarKey, composeAvatar } from './avatar';
 import type { AvatarFrame } from './avatar';
@@ -12,58 +13,6 @@ import type { AvatarFrame } from './avatar';
 type Palette = Record<string, string>;
 
 
-
-// ---------- 英雄（24x16，面向右；idle 與 attack 兩格） ----------
-const HERO_IDLE = [
-  '......KKKKK...K.........',
-  '.....KHHHHHK.KWK........',
-  '....KHHHHHHHKKWK........',
-  '....KHHHHHHHKKWK........',
-  '....KHSSSSSSKKWK........',
-  '....KSSESSESKKWK........',
-  '....KSSSSSSsKKWK........',
-  '.....KSSssSK.KWK........',
-  '....KKAAAAAKKKWK........',
-  '...KCAALLAAAKGGK........',
-  '...KCAAAAAAASSK.........',
-  '...KCAAGGGAAKK..........',
-  '...KCcAAAAAAK...........',
-  '....KKBBKBBKK...........',
-  '....KBBK.KBBK...........',
-  '....KKK...KKK...........',
-];
-
-const HERO_ATTACK = [
-  '........................',
-  '.......KKKKK............',
-  '......KHHHHHK...........',
-  '.....KHHHHHHHK..........',
-  '.....KHSSSSSSK..........',
-  '.....KSSESSESK..........',
-  '.....KSSSSSSsK..........',
-  '......KSSssSK...........',
-  '.....KKAAAAAKK..........',
-  '....KCAALLAAAKGKKKKKKKKK',
-  '...KCCAAAAAAASGWWWWWWWWK',
-  '...KCAAGGGAAKKGKKKKKKKK.',
-  '...KCcAAAAAAK...........',
-  '...KKBBK.KBBKK..........',
-  '..KBBK.....KBBK.........',
-  '..KKK.......KKK.........',
-];
-
-const HERO_BASE: Palette = {
-  K: OUTLINE, S: '#f4c7a1', s: '#d08f6a', E: '#1a1226', H: '#5b3a29',
-  W: '#eef5ff', G: '#ffcd4b', B: '#3b2d4f', c: '#7a1f2e',
-};
-
-// 英雄換色：盔甲 A/L 與披風 C
-export const HERO_PALETTES: Record<HeroId, Palette> = {
-  knight: { ...HERO_BASE, A: '#5b7bd5', L: '#a9c1ff', C: '#d6404f' },
-  archer: { ...HERO_BASE, A: '#3f9e5a', L: '#9be3a8', C: '#8a5a2b', H: '#c9862f' },
-  mage: { ...HERO_BASE, A: '#7d4fd1', L: '#c9a8ff', C: '#2e2a6b', H: '#e8e8f0' },
-  bard: { ...HERO_BASE, A: '#e08a2e', L: '#ffd28a', C: '#2b8a8a', H: '#2a2030' },
-};
 
 // ---------- 怪物 ----------
 const SLIME = [
@@ -157,6 +106,54 @@ const MONSTER_FIXED: Palette = {
 };
 
 export const GHOST_COLORS = { M: '#a77bf0', L: '#e2ccff', m: '#5e3aa8' };
+
+// ---------- 怪物屬性：每個屬性有自己的配色與頭上的配件 ----------
+// 配件畫在怪物頭頂（最下面一列疊在怪物最上緣），A 主色、a 暗色
+export const ELEMENT_MONSTER_COLORS: Record<Element, { M: string; L: string; m: string; A: string; a: string }> = {
+  metal: { M: '#b8c2d0', L: '#eef2f8', m: '#6f7a8c', A: '#ffd34d', a: '#c0922a' },
+  wood: { M: '#5fd36b', L: '#b6f5a8', m: '#2f8a4a', A: '#9cf06b', a: '#6b4626' },
+  water: { M: '#4fb3e8', L: '#b0e6ff', m: '#2a6fa8', A: '#8fdcff', a: '#2a6fa8' },
+  fire: { M: '#ff6b4a', L: '#ffc0a0', m: '#a8322a', A: '#ffcd4b', a: '#ff5a1f' },
+  earth: { M: '#c08a4f', L: '#ead0a0', m: '#7a5230', A: '#a89a88', a: '#5c5248' },
+  light: { M: '#fff0a8', L: '#ffffff', m: '#d0b050', A: '#ffe066', a: '#c9a020' },
+  dark: { M: '#7a4fc1', L: '#c9a8ff', m: '#3e2470', A: '#4a3a5e', a: '#ff4a6e' },
+};
+
+const ACCESSORIES: Record<Element, string[]> = {
+  // 鋼鐵頭盔＋尖刺
+  metal: ['...KK...', '..KWAK..', '.KAAAaK.', 'KAAAAAaK'],
+  // 兩片葉子的嫩芽
+  wood: ['.KK..KK.', 'KAAKKAAK', '.KKaaKK.', '...KK...'],
+  // 水滴
+  water: ['...K....', '..KAK...', '.KAWaK..', '.KAaaK..', '..KKK...'],
+  // 火焰
+  fire: ['...K....', '..KAK.K.', '.KAaAKAK', 'KAaWaAaK'],
+  // 岩石碎塊
+  earth: ['..KK.KK.', '.KAAKAaK', 'KAAaKaaK'],
+  // 光環（浮在頭上）
+  light: ['.KKKKKK.', 'KAWWWWAK', '.KKKKKK.', '........'],
+  // 惡魔角
+  dark: ['K......K', 'KK....KK', 'KAK..KAK', '.KAK.KAK'],
+};
+
+// 把屬性配件疊到怪物點陣的頭頂，必要時往上加高
+function withAccessory(rows: string[], el: Element): string[] {
+  const acc = ACCESSORIES[el];
+  const w = Math.max(...rows.map(r => r.length));
+  const top = rows.findIndex(r => /[^.]/.test(r));
+  const topRow = rows[top];
+  const first = topRow.search(/[^.]/);
+  const last = topRow.length - 1 - [...topRow].reverse().join('').search(/[^.]/);
+  const pad = Math.max(0, acc.length - 1 - top);
+  const grid = [...Array(pad).fill('.'.repeat(w)), ...rows.map(r => r.padEnd(w, '.'))].map(r => [...r]);
+  const y0 = pad + top - (acc.length - 1);
+  const x0 = Math.round((first + last) / 2) - 4;
+  acc.forEach((row, dy) => [...row].forEach((ch, dx) => {
+    const x = x0 + dx;
+    if (ch !== '.' && x >= 0 && x < w) grid[y0 + dy][x] = ch;
+  }));
+  return grid.map(r => r.join(''));
+}
 
 // ---------- 小圖示 ----------
 const SPARK = [
@@ -269,22 +266,20 @@ export function pixelDataUrl(rows: string[], palette: Palette, scale = 6, width?
   return canvas.toDataURL();
 }
 
-export const heroDataUrl = (hero: HeroId, scale = 6) => pixelDataUrl(HERO_IDLE, HERO_PALETTES[hero], scale, 16);
+export const heroDataUrl = (hero: HeroId, scale = 3) => avatarDataUrl(heroCharacter(heroDef(hero)), 'idle', scale);
 
-export const heroKey =(hero: HeroId, frame: 'idle' | 'attack') => `hero_${hero}_${frame}`;
-export const monsterKey = (kind: MonsterKind, region: number) => `mon_${kind}_${region}`;
+export const heroKey = (hero: HeroId, frame: AvatarFrame) => `hero_${hero}_${frame}`;
+export const monsterKey = (kind: MonsterKind, el: Element) => `mon_${kind}_${el}`;
 
 export function registerSprites(scene: Phaser.Scene) {
-  (Object.keys(HERO_PALETTES) as HeroId[]).forEach(hero => {
-    register(scene, heroKey(hero, 'idle'), HERO_IDLE, HERO_PALETTES[hero]);
-    register(scene, heroKey(hero, 'attack'), HERO_ATTACK, HERO_PALETTES[hero]);
-  });
-  REGION_MONSTER_COLORS.forEach((colors, region) => {
+  (Object.keys(ELEMENT_MONSTER_COLORS) as Element[]).forEach(el => {
+    const colors = ELEMENT_MONSTER_COLORS[el];
     (['slime', 'bat', 'mushroom', 'king'] as MonsterKind[]).forEach(kind => {
-      register(scene, monsterKey(kind, region), MONSTER_ART[kind], { ...MONSTER_FIXED, ...colors });
+      register(scene, monsterKey(kind, el), withAccessory(MONSTER_ART[kind], el), { ...MONSTER_FIXED, ...colors });
     });
-    register(scene, monsterKey('ghost', region), GHOST, { ...MONSTER_FIXED, ...GHOST_COLORS });
   });
+  // 復仇魔王固定是暗屬性的幽靈
+  register(scene, monsterKey('ghost', 'dark'), withAccessory(GHOST, 'dark'), { ...MONSTER_FIXED, ...GHOST_COLORS, A: ELEMENT_MONSTER_COLORS.dark.A, a: ELEMENT_MONSTER_COLORS.dark.a });
   REGION_MONSTER_COLORS.forEach((c, region) => {
     register(scene, flagKey(region, false), FLAG, { K: OUTLINE, P: '#d8c8b4', F: c.M, L: c.L });
   });
@@ -307,6 +302,15 @@ export const MONSTER_NAMES: Record<MonsterKind, string> = {
   slime: '史萊姆', bat: '夜蝠', mushroom: '毒菇怪', king: '史萊姆王', ghost: '復仇魔王',
 };
 
+// 屬性怪物的名字前綴，例如「火焰史萊姆」
+export const ELEMENT_PREFIX: Record<Element, string> = {
+  metal: '鋼鐵', wood: '森林', water: '水靈', fire: '火焰', earth: '岩石', light: '聖光', dark: '暗影',
+};
+
+export function monsterName(kind: MonsterKind, el: Element): string {
+  return kind === 'ghost' ? MONSTER_NAMES.ghost : `${ELEMENT_PREFIX[el]}${MONSTER_NAMES[kind]}`;
+}
+
 export function registerAvatar(scene: Phaser.Scene, c: Character) {
   (['idle', 'attack'] as AvatarFrame[]).forEach(frame => {
     const { rows, palette } = composeAvatar(c, frame);
@@ -317,4 +321,13 @@ export function registerAvatar(scene: Phaser.Scene, c: Character) {
 export function avatarDataUrl(c: Character, frame: AvatarFrame = 'idle', scale = 6): string {
   const { rows, palette } = composeAvatar(c, frame);
   return pixelDataUrl(rows, palette, scale);
+}
+
+// 夥伴英雄的貼圖（用到時才畫）
+export function registerHero(scene: Phaser.Scene, id: HeroId) {
+  const c = heroCharacter(heroDef(id));
+  (['idle', 'attack'] as AvatarFrame[]).forEach(frame => {
+    const { rows, palette } = composeAvatar(c, frame);
+    register(scene, heroKey(id, frame), rows, palette);
+  });
 }

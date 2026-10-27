@@ -7,6 +7,7 @@ import { keepFocus } from './keepFocus';
 export default function MapToolbar() {
   const gold = useSaveStore(s => s.gold);
   const partySize = useSaveStore(s => s.party.length);
+  const tickets = useSaveStore(s => s.tickets);
   const character = useSaveStore(s => s.character);
   const mistakeCount = useSaveStore(s => Object.keys(s.mistakes).length);
   const openModal = useUiStore(s => s.openModal);
@@ -27,6 +28,7 @@ export default function MapToolbar() {
           <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('character')}>🛡️ {character.name}・{classDef(character.classId).name}</button>
         )}
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('heroes')}>⚔️ 隊伍 {partySize}/4</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚 🎫{tickets}</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('shop')}>🏪 商店</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('codex')}>📚 圖鑑</button>
       </nav>

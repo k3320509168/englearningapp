@@ -66,12 +66,15 @@ describe('monsters', () => {
 
 describe('party', () => {
   it('builds members from class and hero stats', () => {
-    const party = buildParty(['player', 'knight'], { ...DEFAULT_CHARACTER, classId: 'warrior' }, base);
+    // 騎士：N 稀有度的劍士（HP ×1.0）；升品階後是 R（×1.12）
+    const party = buildParty(['player', 'knight'], ['knight'], { ...DEFAULT_CHARACTER, classId: 'warrior' }, base);
     expect(party.map(m => m.id)).toEqual(['player', 'knight']);
     expect(party[0].maxHp).toBe(130);
     expect(party[0].skill).toBe('haste');
-    expect(party[1].maxHp).toBe(120);
-    expect(partyHp(party)).toEqual({ hp: 250, maxHp: 250 });
+    expect(party[1].maxHp).toBe(100);
+    expect(party[1].name).toBe('KNIGHT');
+    expect(partyHp(party)).toEqual({ hp: 230, maxHp: 230 });
+    expect(buildParty(['knight'], ['knight'], null, base, { knight: 1 })[0].maxHp).toBe(112);
   });
 
   it('can leave the protagonist out, but never be empty', () => {
@@ -83,7 +86,7 @@ describe('party', () => {
   });
 
   it('rotates over members that are still standing', () => {
-    const party = buildParty(['player', 'knight'], DEFAULT_CHARACTER, base);
+    const party = buildParty(['player', 'knight'], ['knight'], DEFAULT_CHARACTER, base);
     party[1].hp = 0;
     expect(nextAlive(party, 1)).toBe(0);
     expect(gainEnergy(party)[1].energy).toBe(0);

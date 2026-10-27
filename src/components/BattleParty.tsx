@@ -4,7 +4,6 @@ import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
 import { useSaveStore } from '../store/saveStore';
 import { SKILLS, SKILL_ENERGY, bossStep } from '../game/progression';
-import type { HeroId } from '../game/progression';
 import { elementDef, elementMultiplier } from '../game/character';
 import { isAlive, leaderIndex, skillReady } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
@@ -46,7 +45,7 @@ export function PartyBar() {
   })));
   const character = useSaveStore(s => s.character);
   const portraits = useMemo(() => Object.fromEntries(party.map(m => [
-    m.id, m.id === 'player' && character ? avatarDataUrl(character, 'idle', 2) : heroDataUrl(m.id as HeroId, 3),
+    m.id, m.id === 'player' && character ? avatarDataUrl(character, 'idle', 2) : heroDataUrl(m.id, 2),
   ])), [party, character]);
   const striker = isBossQuestion ? leaderIndex(party) : attackerIdx;
 

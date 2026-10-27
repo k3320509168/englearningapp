@@ -3,7 +3,7 @@ import { LEVELS } from './QuestionData';
 import { useSaveStore } from '../store/saveStore';
 import { useBattleStore } from '../store/battleStore';
 import { beginLevel } from './startLevel';
-import { flagKey, heroKey, registerAvatar, registerSprites } from './art/sprites';
+import { flagKey, heroKey, registerAvatar, registerHero, registerSprites } from './art/sprites';
 import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
 import { BG_LAYERS, bgKey, registerBackground, THEMES } from './art/backgrounds';
 import { labelStyle, numStyle, textStyle, burst } from './fx';
@@ -27,6 +27,7 @@ export default class MapScene extends Phaser.Scene {
     const region = Math.min(unlockedIndex, THEMES.length - 1);
     registerSprites(this);
     if (character) registerAvatar(this, character);
+    else registerHero(this, 'knight');
     registerBackground(this, region);
     BG_LAYERS.forEach(({ layer }) => {
       const sprite = this.add.tileSprite(0, 0, 800, 480, bgKey(region, layer)).setOrigin(0);
@@ -69,7 +70,7 @@ export default class MapScene extends Phaser.Scene {
         // 英雄站在目前可挑戰的旗幟旁
         const h = character
           ? this.add.image(x - 42, y + 6, avatarKey(character, 'idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2)
-          : this.add.image(x - 42, y + 6, heroKey('knight', 'idle')).setOrigin(8 / 24, 1).setScale(3);
+          : this.add.image(x - 42, y + 6, heroKey('knight', 'idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2);
         this.tweens.add({ targets: h, y: y - 2, yoyo: true, repeat: -1, duration: 420, ease: 'Sine.easeInOut' });
         const ring = this.add.circle(x + 10, y - 30, 46).setStrokeStyle(3, 0xffcd4b, 0.8);
         this.tweens.add({ targets: ring, scale: 1.25, alpha: 0, repeat: -1, duration: 1200 });

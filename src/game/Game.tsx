@@ -13,6 +13,7 @@ import CodexModal from '../components/CodexModal';
 import MapLevelBar from '../components/MapLevelBar';
 import MicPermissionModal from '../components/MicPermissionModal';
 import CharacterModal from '../components/CharacterModal';
+import SummonModal from '../components/SummonModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -104,6 +105,7 @@ export default function Game() {
       {modal === 'codex' && <CodexModal />}
       {modal === 'mic' && <MicPermissionModal />}
       {modal === 'character' && <CharacterModal />}
+      {modal === 'summon' && <SummonModal />}
     </div>
   );
 }

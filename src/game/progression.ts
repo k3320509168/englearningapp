@@ -47,29 +47,6 @@ export const ITEMS: ItemDef[] = [
 
 export const POTION_HEAL = 30;
 
-// ---------- 夥伴英雄 ----------
-export type HeroId = 'knight' | 'archer' | 'mage' | 'bard';
-
-export interface HeroDef {
-  id: HeroId;
-  icon: string;
-  name: string;
-  desc: string;
-  cost: number;
-  element: Element;
-  stats: { hp: number; atk: number; crit: number };
-  skill: SkillId;
-}
-
-export const HEROES: HeroDef[] = [
-  { id: 'knight', icon: '🛡️', name: '騎士', desc: '耐打的守護者，技能「守護之盾」', cost: 0, element: 'light', stats: { hp: 1.2, atk: 0.9, crit: 0.05 }, skill: 'guard' },
-  { id: 'archer', icon: '🏹', name: '弓箭手', desc: '暴擊率高，技能「專注」延長每題時間', cost: 300, element: 'wood', stats: { hp: 0.9, atk: 1.0, crit: 0.2 }, skill: 'focus' },
-  { id: 'mage', icon: '🔮', name: '法師', desc: '傷害最高，技能「魔力增幅」傷害翻倍', cost: 300, element: 'fire', stats: { hp: 0.8, atk: 1.3, crit: 0.05 }, skill: 'amplify' },
-  { id: 'bard', icon: '🎵', name: '吟遊詩人', desc: '輔助型，技能「加速之歌」延長回合', cost: 300, element: 'water', stats: { hp: 1.0, atk: 0.9, crit: 0.1 }, skill: 'haste' },
-];
-
-export const heroDef = (id: HeroId) => HEROES.find(h => h.id === id) ?? HEROES[0];
-
 // ---------- 技能 ----------
 export type SkillId = 'guard' | 'focus' | 'amplify' | 'haste';
 
@@ -153,6 +130,9 @@ export function monsterMaxHp(stageIdx: number, levelIdx: number, isBoss: boolean
   const hits = isBoss ? HITS_TO_KILL.boss : HITS_TO_KILL.normal;
   return Math.round(BASE_DAMAGE * hits * monsterGrowth(stageIdx, levelIdx));
 }
+
+// 打倒頭目可得到召喚券（抽英雄用）
+export const TICKETS = { bossKill: 1, revengeKill: 2, levelClear: 5 };
 
 export const monsterAttack = (isBoss: boolean, levelIdx = 0) => Math.round((isBoss ? 15 : 10) * (1 + levelIdx * 0.2));
 

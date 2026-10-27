@@ -1,13 +1,17 @@
+import { useMemo } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { HEROES } from '../game/progression';
+import { heroDataUrl } from '../game/art/sprites';
 import { keepFocus } from './keepFocus';
 
 // 英雄：每位英雄強化一種題型，鼓勵玩家嘗試所有玩法
 export default function HeroModal() {
   const { gold, heroes, hero, buyHero, selectHero } = useSaveStore();
   const closeModal = useUiStore(s => s.closeModal);
+  // 英雄頭像直接用遊戲裡的像素圖
+  const portraits = useMemo(() => Object.fromEntries(HEROES.map(h => [h.id, heroDataUrl(h.id)])), []);
 
   return (
     <Modal title="🦸 英雄" onClose={closeModal}>
@@ -18,7 +22,7 @@ export default function HeroModal() {
           const selected = hero === h.id;
           return (
             <li key={h.id} className={`hero-card ${selected ? 'is-selected' : ''}`}>
-              <span className="hero-icon" aria-hidden="true">{h.icon}</span>
+              <img className="hero-portrait" src={portraits[h.id]} alt="" />
               <b>{h.name}</b>
               <span className="muted">{h.desc}</span>
               {selected ? (

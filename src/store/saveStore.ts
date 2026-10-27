@@ -7,7 +7,7 @@ import type { HeroId, ItemId, UpgradeId } from '../game/progression';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 3;
+export const SAVE_VERSION = 4;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -29,6 +29,7 @@ export interface CodexEntry {
 export interface Settings {
   speechRate: number;
   volume: number;
+  sfxVolume: number;    // 打擊音效
   autoSpeak: boolean;   // 出題時自動播放發音
   showLessons: boolean; // 每 10 關開始前自動顯示戰前預習
 }
@@ -65,7 +66,7 @@ export const initialSave: SaveData = {
   unlockedIndex: 0,
   mistakes: {},
   codex: {},
-  settings: { speechRate: 0.9, volume: 1, autoSpeak: true, showLessons: true },
+  settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true },
   tutorialDone: false,
   gold: 0,
   upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 },
@@ -79,6 +80,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // 每次升級都只「新增欄位」，所以用預設值補齊即可。
   // v1 → v2：舊玩家已經玩過，視為看過新手引導。
   // v2 → v3：錯題補上 SRS 欄位（立即可複習）。
+  // v3 → v4：新增音效音量設定（預設值補齊）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,

@@ -3,55 +3,97 @@ import { LEVELS } from './QuestionData';
 import { useSaveStore } from '../store/saveStore';
 import { useBattleStore } from '../store/battleStore';
 import { beginLevel } from './startLevel';
+import { flagKey, heroKey, registerSprites } from './art/sprites';
+import { BG_LAYERS, bgKey, registerBackground, THEMES } from './art/backgrounds';
+import { labelStyle, numStyle, textStyle, burst } from './fx';
+import { sfx } from './sfx';
+
+// 世界地圖：背景使用玩家目前所在區域的風景，五面旗幟代表五個區域
+
+const NODES = [
+  { x: 105, y: 330 }, { x: 255, y: 280 }, { x: 400, y: 318 }, { x: 545, y: 268 }, { x: 695, y: 306 },
+];
 
 export default class MapScene extends Phaser.Scene {
+  private clouds?: Phaser.GameObjects.TileSprite;
+
   constructor() { super('MapScene'); }
 
-  preload() {
-    this.load.image('bg', 'https://labs.phaser.io/assets/skies/space3.png');
-  }
-
   create() {
-    const { width, height } = this.scale;
-    this.add.image(width / 2, height / 2, 'bg').setDisplaySize(width, height).setAlpha(0.8);
-    const fontBase = { fontFamily: '"Microsoft JhengHei", "PingFang TC", "Noto Sans TC", monospace', stroke: '#000', strokeThickness: 4, shadow: { offsetX: 2, offsetY: 2, color: '#000', blur: 2, stroke: true, fill: true } };
-    this.add.text(width / 2, 44, '選擇探索區域', { ...fontBase, fontSize: '36px', color: '#ffd700', fontStyle: 'bold' }).setOrigin(0.5);
-
+    const { width } = this.scale;
     const unlockedIndex = useSaveStore.getState().unlockedIndex;
-    const mapNodes = [
-      { x: 130, y: 360 }, { x: 320, y: 280 }, { x: 520, y: 360 },
-      { x: 660, y: 220 }, { x: 420, y: 130 }
-    ];
+    const hero = useSaveStore.getState().hero;
+    const region = Math.min(unlockedIndex, THEMES.length - 1);
+    registerSprites(this);
+    registerBackground(this, region);
+    BG_LAYERS.forEach(({ layer }) => {
+      const sprite = this.add.tileSprite(0, 0, 800, 480, bgKey(region, layer)).setOrigin(0);
+      if (layer === 'clouds') this.clouds = sprite;
+    });
+    // 讓地圖上的文字更清楚
+    this.add.rectangle(0, 0, width, 480, 0x0d0b1a, 0.25).setOrigin(0);
 
-    const graphics = this.add.graphics();
-    for (let i = 0; i < mapNodes.length - 1; i++) {
-      graphics.lineStyle(4, unlockedIndex >= i + 1 ? 0x4aa8ff : 0x444444, unlockedIndex >= i + 1 ? 1 : 0.5);
-      graphics.strokeLineShape(new Phaser.Geom.Line(mapNodes[i].x, mapNodes[i].y, mapNodes[i + 1].x, mapNodes[i + 1].y));
+    this.add.text(width / 2, 40, '選擇冒險區域', textStyle(34, '#ffcd4b', 7)).setOrigin(0.5);
+    this.add.text(width / 2, 78, '點旗幟或下方按鈕開始，通關後解鎖下一區', labelStyle(16, '#e8e6ff')).setOrigin(0.5);
+
+    // 路徑：像素小方塊連成的虛線，已解鎖的段落亮起
+    const path = this.add.graphics();
+    for (let i = 0; i < NODES.length - 1; i++) {
+      const a = NODES[i], b = NODES[i + 1];
+      const lit = unlockedIndex >= i + 1;
+      for (let t = 0.12; t < 0.9; t += 0.08) {
+        const x = Phaser.Math.Linear(a.x, b.x, t);
+        const y = Phaser.Math.Linear(a.y, b.y, t) - Math.sin(t * Math.PI) * 24;
+        path.fillStyle(0x1a1226, 1).fillRect(Math.round(x) - 5, Math.round(y) - 5, 10, 10);
+        path.fillStyle(lit ? 0xffcd4b : 0x6c667c, 1).fillRect(Math.round(x) - 3, Math.round(y) - 3, 6, 6);
+      }
     }
 
     LEVELS.forEach((levelKey, index) => {
-      const pos = mapNodes[index];
-      const isUnlocked = index <= unlockedIndex;
-      // 圓點加大，手機上比較好點
-      const circle = this.add.circle(pos.x, pos.y, 30, isUnlocked ? 0x4aa8ff : 0x333333).setStrokeStyle(3, 0xffffff);
-      const label = this.add.text(pos.x, pos.y + 50, isUnlocked ? levelKey : `🔒 ${levelKey}`, { ...fontBase, fontSize: '18px', color: isUnlocked ? '#ffffff' : '#888888' }).setOrigin(0.5);
+      const { x, y } = NODES[index];
+      const locked = index > unlockedIndex;
+      const current = index === unlockedIndex;
+      const [code, name] = levelKey.split(' ');
 
-      if (isUnlocked) {
-        if (index === unlockedIndex) {
-          this.tweens.add({ targets: circle, scale: 1.2, alpha: 0.8, yoyo: true, repeat: -1, duration: 800 });
-          label.setColor('#ffaa00');
-        }
-        circle.setInteractive({ useHandCursor: true })
-          .on('pointerover', () => circle.setScale(1.2))
-          .on('pointerout', () => circle.setScale(1))
-          .on('pointerdown', () => beginLevel(levelKey));
+      this.add.image(x, y + 4, 'pedestal').setOrigin(0.5, 0).setScale(5);
+      const flag = this.add.image(x - 4, y + 4, flagKey(index, locked)).setOrigin(0.15, 1).setScale(5);
+      if (!locked) this.tweens.add({ targets: flag, scaleX: 4.6, yoyo: true, repeat: -1, duration: 700 + index * 90, ease: 'Sine.easeInOut' });
+      if (locked) this.add.image(x + 14, y - 36, 'lock').setScale(4);
+
+      this.add.text(x, y + 42, code, numStyle(16, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
+      this.add.text(x, y + 66, name, labelStyle(14, locked ? '#8a8494' : '#e8e6ff')).setOrigin(0.5);
+
+      if (current) {
+        // 英雄站在目前可挑戰的旗幟旁
+        const h = this.add.image(x - 42, y + 6, heroKey(hero, 'idle')).setOrigin(8 / 24, 1).setScale(3);
+        this.tweens.add({ targets: h, y: y - 2, yoyo: true, repeat: -1, duration: 420, ease: 'Sine.easeInOut' });
+        const ring = this.add.circle(x + 10, y - 30, 46).setStrokeStyle(3, 0xffcd4b, 0.8);
+        this.tweens.add({ targets: ring, scale: 1.25, alpha: 0, repeat: -1, duration: 1200 });
+      }
+
+      if (!locked) {
+        const zone = this.add.zone(x + 10, y - 10, 100, 130).setInteractive({ useHandCursor: true });
+        zone.on('pointerover', () => { flag.setScale(5.6); sfx.click(); });
+        zone.on('pointerout', () => flag.setScale(5));
+        zone.on('pointerdown', () => {
+          burst(this, x + 10, y - 40, [0xffcd4b, 0xffffff], 14, { speed: 160 });
+          beginLevel(levelKey);
+        });
       }
     });
 
-    // 不論從圓點或地圖下方的按鈕開始關卡，都在這裡切換到戰鬥場景
+    // 不論從旗幟或地圖下方的按鈕開始關卡，都在這裡切換到戰鬥場景
     const unsubscribe = useBattleStore.subscribe((s, prev) => {
       if (s.active && !prev.active) this.scene.start('MainScene');
     });
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, unsubscribe);
+    // 在英雄選單換人或重置進度時，重畫地圖
+    const unsubscribeSave = useSaveStore.subscribe((s, prev) => {
+      if (s.hero !== prev.hero || s.unlockedIndex !== prev.unlockedIndex) this.scene.restart();
+    });
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { unsubscribe(); unsubscribeSave(); });
+  }
+
+  update(_time: number, delta: number) {
+    if (this.clouds) this.clouds.tilePositionX += delta * 0.006;
   }
 }

@@ -1,187 +1,451 @@
 import Phaser from 'phaser';
 import { useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
+import { LEVELS } from './QuestionData';
+import { BASE_DAMAGE } from './battle';
 import { comboMultiplier, heroDef } from './progression';
+import {
+  MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerSprites,
+} from './art/sprites';
+import type { MonsterKind } from './art/sprites';
+import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
+import { PixelBar, burst, hitStop, labelStyle, numStyle, popText, screenFlash, slashArc, slowMo, textStyle } from './fx';
+import { sfx } from './sfx';
 
-// 戰鬥畫面：只負責顯示與動畫。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
+// 戰鬥畫面：只負責顯示、動畫與音效。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
 
-const PLAYER_X = 220;
+type State = ReturnType<typeof useBattleStore.getState>;
+
+const PLAYER_X = 230;
 const MONSTER_X = 580;
-const GROUND_Y = 300;
+const HERO_SCALE = 6;
+// 英雄貼圖寬 24 格，身體中心約在第 8 格
+const HERO_ORIGIN_X = 8 / 24;
 
-class HealthBar {
-  private bgBar: Phaser.GameObjects.Graphics;
-  private bar: Phaser.GameObjects.Graphics;
-  private x: number;
-  private y: number;
+const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
 
-  constructor(scene: Phaser.Scene, x: number, y: number) {
-    this.x = x;
-    this.y = y;
-    this.bgBar = scene.add.graphics();
-    this.bar = scene.add.graphics();
-  }
-
-  setHp(hp: number, maxHp: number) {
-    this.bgBar.clear(); this.bar.clear();
-    this.bgBar.fillStyle(0x000000, 0.6).fillRoundedRect(this.x - 2, this.y - 2, 124, 16, 4);
-    this.bgBar.lineStyle(2, 0xffffff, 0.8).strokeRoundedRect(this.x - 2, this.y - 2, 124, 16, 4);
-    const w = maxHp > 0 ? Math.max(0, (hp / maxHp) * 120) : 0;
-    const color = hp <= maxHp * 0.3 ? 0xff4444 : 0x44ff44;
-    if (w > 0) this.bar.fillStyle(color, 1).fillRoundedRect(this.x, this.y, w, 12, 2);
-  }
+// Combo 稱號：越高越華麗
+function comboTier(combo: number) {
+  if (combo >= 20) return { label: 'UNSTOPPABLE!', color: '#ff5af0' };
+  if (combo >= 10) return { label: 'AWESOME!', color: '#ff7a3d' };
+  if (combo >= 5) return { label: 'GREAT!', color: '#ffcd4b' };
+  return { label: '', color: '#ffffff' };
 }
 
 export default class MainScene extends Phaser.Scene {
-  private player!: Phaser.GameObjects.Sprite;
-  private monster!: Phaser.GameObjects.Image;
-  private playerHpBar!: HealthBar;
-  private monsterHpBar!: HealthBar;
-  private stageTxt!: Phaser.GameObjects.Text;
-  private comboTxt!: Phaser.GameObjects.Text;
+  private layers: { sprite: Phaser.GameObjects.TileSprite; speed: number }[] = [];
+  private hero!: Phaser.GameObjects.Container;
+  private heroSprite!: Phaser.GameObjects.Image;
+  private heroIdle?: Phaser.Tweens.Tween;
+  private monster!: Phaser.GameObjects.Container;
+  private monsterSprite!: Phaser.GameObjects.Image;
+  private monsterShadow!: Phaser.GameObjects.Ellipse;
+  private monsterIdle?: Phaser.Tweens.Tween;
+  private monsterKind: MonsterKind = 'slime';
+  private monsterScale = 6;
+  private shieldBubble!: Phaser.GameObjects.Arc;
   private helper!: Phaser.GameObjects.Text;
-  private fontBase = {
-    fontFamily: '"Microsoft JhengHei", "PingFang TC", "Noto Sans TC", monospace',
-    stroke: '#000', strokeThickness: 4,
-    shadow: { offsetX: 2, offsetY: 2, color: '#000', blur: 2, stroke: true, fill: true },
-  };
+  private playerBar!: PixelBar;
+  private monsterBar!: PixelBar;
+  private playerHpText!: Phaser.GameObjects.Text;
+  private monsterNameText!: Phaser.GameObjects.Text;
+  private stageText!: Phaser.GameObjects.Text;
+  private comboNum!: Phaser.GameObjects.Text;
+  private comboLabel!: Phaser.GameObjects.Text;
+  private goldText!: Phaser.GameObjects.Text;
+  private shownGold = 0;
+  private region = 0;
+  private busy = false; // 攻擊動畫進行中，避免下一隻怪物太早登場
 
   constructor() { super('MainScene'); }
 
-  preload() {
-    this.load.spritesheet('player', 'https://labs.phaser.io/assets/sprites/dude.png', { frameWidth: 32, frameHeight: 48 });
-    this.load.image('monster', 'https://labs.phaser.io/assets/sprites/space-baddie.png');
-  }
-
   create() {
-    const { width, height } = this.scale;
-    this.add.image(width / 2, height / 2, 'bg').setDisplaySize(width, height).setAlpha(0.8);
+    const s = useBattleStore.getState();
+    this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
+    registerSprites(this);
+    registerBackground(this, this.region);
+    this.tweens.timeScale = 1;
+    this.busy = false;
+    this.shownGold = s.runGold;
 
-    if (!this.anims.exists('idle')) {
-      this.anims.create({ key: 'idle', frames: [{ key: 'player', frame: 4 }], frameRate: 10 });
-      this.anims.create({ key: 'run', frames: this.anims.generateFrameNumbers('player', { start: 5, end: 8 }), frameRate: 10, repeat: -1 });
-    }
+    const { width } = this.scale;
+    this.layers = BG_LAYERS.map(({ layer, speed }) => ({
+      sprite: this.add.tileSprite(0, 0, 800, 480, bgKey(this.region, layer)).setOrigin(0),
+      speed,
+    }));
 
-    this.player = this.add.sprite(PLAYER_X, GROUND_Y, 'player', 4).setScale(2.5);
-    this.monster = this.add.image(MONSTER_X, GROUND_Y, 'monster').setScale(2);
-    this.add.text(PLAYER_X, 182, '玩家', { ...this.fontBase, fontSize: '20px', color: '#fff' }).setOrigin(0.5);
-    this.playerHpBar = new HealthBar(this, PLAYER_X - 60, 200);
-    this.monsterHpBar = new HealthBar(this, MONSTER_X - 60, 200);
-    this.stageTxt = this.add.text(width / 2, 40, '', { ...this.fontBase, fontSize: '24px', color: '#ffffff' }).setOrigin(0.5);
-    this.comboTxt = this.add.text(width / 2, 110, '', { ...this.fontBase, fontSize: '44px', color: '#ffaa00', fontStyle: 'italic bold' }).setOrigin(0.5);
+    // 角色（容器負責位置與擊退，內部圖片負責呼吸／擠壓動畫）
+    this.add.ellipse(PLAYER_X, GROUND_Y + 2, 100, 18, 0x000000, 0.3);
+    this.heroSprite = this.add.image(0, 0, heroKey(s.hero, 'idle')).setOrigin(HERO_ORIGIN_X, 1).setScale(HERO_SCALE);
+    this.hero = this.add.container(PLAYER_X, GROUND_Y, [this.heroSprite]).setDepth(20);
+    this.heroIdle = this.tweens.add({ targets: this.heroSprite, scaleY: HERO_SCALE * 0.96, scaleX: HERO_SCALE * 1.02, yoyo: true, repeat: -1, duration: 600, ease: 'Sine.easeInOut' });
+    this.shieldBubble = this.add.circle(PLAYER_X, GROUND_Y - 48, 72).setStrokeStyle(4, 0x7fffd4, 0.9).setFillStyle(0x7fffd4, 0.12).setDepth(21).setVisible(false);
+    this.tweens.add({ targets: this.shieldBubble, scale: 1.06, yoyo: true, repeat: -1, duration: 500 });
 
-    // 援軍夥伴：連續答錯時出現在玩家旁邊，護盾用掉後離開
-    this.helper = this.add.text(PLAYER_X - 90, GROUND_Y - 50, '🧚', { fontSize: '40px' }).setOrigin(0.5).setVisible(false);
-    this.tweens.add({ targets: this.helper, y: GROUND_Y - 62, yoyo: true, repeat: -1, duration: 700, ease: 'Sine.easeInOut' });
+    this.monsterShadow = this.add.ellipse(MONSTER_X, GROUND_Y + 2, 110, 18, 0x000000, 0.3);
+    this.monsterSprite = this.add.image(0, 0, monsterKey('slime', this.region)).setOrigin(0.5, 1);
+    this.monster = this.add.container(MONSTER_X, GROUND_Y, [this.monsterSprite]).setDepth(19);
+
+    this.helper = this.add.text(PLAYER_X - 80, GROUND_Y - 110, '🧚', { fontSize: '40px' }).setOrigin(0.5).setDepth(22).setVisible(false);
+    this.tweens.add({ targets: this.helper, y: GROUND_Y - 124, yoyo: true, repeat: -1, duration: 700, ease: 'Sine.easeInOut' });
+
+    // ---------- 畫面上方 HUD（格鬥遊戲式） ----------
+    this.add.image(28, 30, 'heart').setScale(4).setDepth(80);
+    this.add.text(52, 12, heroDef(s.hero).name, textStyle(22)).setDepth(80);
+    this.playerBar = new PixelBar(this, 24, 54, 250, 16);
+    this.playerHpText = this.add.text(274, 32, '', numStyle(12)).setOrigin(1, 0).setDepth(81);
+    this.add.image(32, 96, 'coin').setScale(4).setDepth(80);
+    this.goldText = this.add.text(54, 84, `${s.runGold}`, numStyle(18, '#ffcd4b')).setDepth(80);
+
+    this.monsterNameText = this.add.text(width - 24, 12, '', textStyle(22)).setOrigin(1, 0).setDepth(80);
+    this.monsterBar = new PixelBar(this, width - 274, 54, 250, 16, true);
+    this.stageText = this.add.text(width / 2, 88, '', labelStyle(20)).setOrigin(0.5, 0).setDepth(80);
+
+    this.comboNum = this.add.text(36, 150, '', numStyle(40)).setOrigin(0, 0.5).setDepth(85);
+    this.comboLabel = this.add.text(40, 190, '', textStyle(18, '#ffcd4b')).setOrigin(0, 0.5).setDepth(85);
 
     const unsubscribe = useBattleStore.subscribe((state, prev) => this.sync(state, prev));
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, unsubscribe);
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      unsubscribe();
+      this.tweens.timeScale = 1;
+    });
     this.sync(useBattleStore.getState(), null);
   }
 
-  private sync(s: ReturnType<typeof useBattleStore.getState>, prev: ReturnType<typeof useBattleStore.getState> | null) {
+  update(_time: number, delta: number) {
+    // 雲朵緩慢飄動
+    const clouds = this.layers[1];
+    if (clouds) clouds.sprite.tilePositionX += delta * 0.006;
+  }
+
+  private sync(s: State, prev: State | null) {
     if (!s.active) {
       this.scene.start('MapScene');
       return;
     }
     const stage = s.stages[s.stageIdx];
-    if (stage) this.stageTxt.setText(`${stage.name}  (${s.stageIdx + 1}/${s.stages.length})`);
-    this.playerHpBar.setHp(s.playerHp, s.playerMaxHp);
+    if (stage) this.stageText.setText(`${themeName(this.region)}  第 ${s.stageIdx + 1} / ${s.stages.length} 關`);
+    this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
+    if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
+    this.shieldBubble.setVisible(s.shield);
+    this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
-    if (s.combo !== prev?.combo) {
-      if (s.combo > 1) {
-        this.comboTxt.setText(`${s.combo} COMBO!  ×${comboMultiplier(s.combo, s.stats.comboCap).toFixed(1)}`).setAlpha(1);
-        this.tweens.add({ targets: this.comboTxt, scale: 1.2, yoyo: true, duration: 150 });
-      } else {
-        this.comboTxt.setText('');
-      }
+    if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
+    if (!prev) this.showCombo(s, 0);
+
+    // 打對每個字母：劍上閃光＋音高漸升的提示音，營造「蓄力」感
+    if (prev && s.phase === 'answering' && s.question === prev.question && s.typed.length > prev.typed.length && s.question) {
+      const progress = s.typed.length / s.question.ans.length;
+      sfx.key(progress);
+      const spark = this.add.image(PLAYER_X + 40, GROUND_Y - 70, 'spark').setScale(3 + progress * 3).setDepth(30);
+      this.tweens.add({ targets: spark, scale: 0, angle: 90, duration: 220, onComplete: () => spark.destroy() });
+      this.tweens.add({ targets: this.heroSprite, scaleX: HERO_SCALE * 1.08, duration: 50, yoyo: true });
     }
 
-    if (s.event && s.event !== prev?.event) this.playEvent(s.event);
-    this.helper.setVisible(s.shield || s.assist !== null);
+    if (s.event && s.event !== prev?.event) this.playEvent(s.event, s);
 
-    if (s.phase === 'gameOver') {
-      this.player.anims.stop();
-      this.player.setTint(0x555555);
+    if (s.phase === 'gameOver' && prev?.phase !== 'gameOver') this.playDefeat();
+    if (s.phase === 'levelClear' && prev?.phase !== 'levelClear') {
+      this.time.delayedCall(900, () => this.playVictory());
     }
   }
 
-  private playEvent(event: BattleEvent) {
-    const s = useBattleStore.getState();
-    if (event.kind === 'stage') {
-      const stage = s.stages[s.stageIdx];
-      const isBoss = stage?.bossMode;
-      this.tweens.killTweensOf(this.monster);
-      this.monster.setScale(isBoss ? 3.5 : 2).setAlpha(1).setPosition(MONSTER_X, GROUND_Y);
-      // 復仇魔王用紫色、一般 Boss 用紅色
-      if (stage?.revenge) this.monster.setTint(0xb04dff);
-      else if (isBoss) this.monster.setTint(0xff5555);
-      else this.monster.clearTint();
-      this.applyHeroTint();
-      this.player.setPosition(PLAYER_X, GROUND_Y).play('run', true);
-      this.monsterHpBar.setHp(s.monsterHp, s.monsterMaxHp);
+  private showCombo(s: State, prevCombo: number) {
+    if (s.combo < 2) {
+      if (prevCombo >= 2) {
+        // Combo 中斷：數字碎裂往下掉
+        this.tweens.add({ targets: [this.comboNum, this.comboLabel], alpha: 0, y: '+=20', duration: 250, onComplete: () => {
+          this.comboNum.setText('').setAlpha(1).setY(150);
+          this.comboLabel.setText('').setAlpha(1).setY(190);
+        } });
+      }
       return;
     }
+    const tier = comboTier(s.combo);
+    const mult = comboMultiplier(s.combo, s.stats.comboCap).toFixed(1);
+    this.comboNum.setText(`${s.combo}`).setColor(tier.color).setAlpha(1).setY(150);
+    this.comboLabel.setText(`COMBO  x${mult}${tier.label ? `  ${tier.label}` : ''}`).setColor(tier.color).setAlpha(1).setY(190);
+    this.comboNum.setScale(1.6);
+    this.tweens.add({ targets: this.comboNum, scale: 1, duration: 180, ease: 'Back.easeOut' });
+    if (comboTier(prevCombo).label !== tier.label && tier.label) {
+      sfx.combo(s.combo);
+      popText(this, 400, 150, tier.label, 46, tier.color, { rise: 30, dur: 900 });
+    }
+  }
 
-    if (event.kind === 'attack') {
+  private playEvent(event: BattleEvent, s: State) {
+    switch (event.kind) {
+      case 'stage': return this.enterStage(s);
+      case 'attack': return this.playAttack(event, s);
+      case 'hurt': return this.playHurt(event);
+      case 'shield': return this.playBlocked();
+      case 'heal':
+        sfx.heal();
+        burst(this, PLAYER_X, GROUND_Y - 40, [0x5fd36b, 0xb6f5a8, 0xffffff], 14, { up: true, gravity: -60, speed: 120 });
+        popText(this, PLAYER_X, GROUND_Y - 120, `+${event.amount} HP`, 30, '#6ee7a8');
+        return;
+      case 'guard':
+        sfx.shield();
+        this.shieldBubble.setScale(0.2);
+        this.tweens.add({ targets: this.shieldBubble, scale: 1, duration: 250, ease: 'Back.easeOut' });
+        popText(this, PLAYER_X, GROUND_Y - 130, 'SHIELD', 26, '#7fffd4');
+        return;
+      case 'assist':
+        sfx.heal();
+        burst(this, PLAYER_X - 80, GROUND_Y - 110, [0x7fffd4, 0xffffff, 0xffcd4b], 16, { speed: 140, gravity: 40 });
+        popText(this, PLAYER_X, GROUND_Y - 150, '援軍登場！', 30, '#7fffd4');
+        return;
+    }
+  }
+
+  // ---------- 怪物登場 ----------
+  private enterStage(s: State) {
+    const stage = s.stages[s.stageIdx];
+    if (!stage) return;
+    const isBoss = stage.bossMode;
+    const isRevenge = !!stage.revenge;
+    this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge);
+    this.monsterScale = isRevenge ? 10 : isBoss ? 11 : this.monsterKind === 'bat' ? 7 : 7.5;
+    const name = `${isBoss ? '👑 ' : ''}${MONSTER_NAMES[this.monsterKind]}`;
+    this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : '#ffffff');
+    this.monsterBar.set(1, true);
+
+    const appear = () => {
+      // 停掉上一隻怪物還沒播完的擊倒動畫，避免它把新怪物藏起來
+      this.tweens.killTweensOf([this.monsterSprite, this.monster]);
+      this.monsterIdle?.stop();
+      this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.region)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0);
+      this.monsterSprite.setVisible(true);
+      this.monsterShadow.setVisible(true).setScale(isBoss ? 1.6 : 1);
+      // 從右邊跳進場
+      this.monster.setPosition(MONSTER_X + 260, GROUND_Y);
+      this.tweens.add({ targets: this.monster, x: MONSTER_X, duration: 380, ease: 'Quad.easeOut' });
+      this.tweens.add({ targets: this.monsterSprite, y: -60, duration: 190, yoyo: true, ease: 'Quad.easeOut', onComplete: () => this.startMonsterIdle() });
+      if (isBoss) this.bossIntro(isRevenge);
+    };
+
+    if (s.stageIdx === 0) {
+      appear();
+      return;
+    }
+    // 換關：英雄往前跑，背景視差捲動，再讓下一隻怪物登場
+    const wait = this.busy ? 700 : 0;
+    this.time.delayedCall(wait, () => {
+      this.heroSprite.setTexture(heroKey(s.hero, 'idle')).clearTint();
+      const run = this.tweens.add({ targets: this.heroSprite, y: -10, duration: 90, yoyo: true, repeat: 5 });
+      const scroll = { v: 0 };
       this.tweens.add({
-        targets: this.player, x: MONSTER_X - 70, yoyo: true, duration: 180,
-        onYoyo: () => {
-          const now = useBattleStore.getState();
-          this.monsterHpBar.setHp(now.monsterHp, now.monsterMaxHp);
-          this.showNumber(MONSTER_X, GROUND_Y - 80, `-${event.amount}`, '#ffff00');
-          if (event.gold) this.showNumber(MONSTER_X, GROUND_Y - 130, `+${event.gold} 🪙`, '#ffd34d');
-          this.cameras.main.shake(100, 0.01);
-          this.tweens.add({ targets: this.monster, alpha: 0.3, yoyo: true, duration: 80, repeat: 1 });
-          if (now.monsterHp <= 0) {
-            this.player.play('idle');
-            this.tweens.add({ targets: this.monster, alpha: 0, y: GROUND_Y + 30, delay: 200, duration: 500 });
-          }
+        targets: scroll, v: 1, duration: 700, ease: 'Sine.easeInOut',
+        onUpdate: (_tw, target: { v: number }) => {
+          this.layers.forEach(l => { l.sprite.tilePositionX = l.sprite.getData('base') + target.v * 360 * l.speed; });
         },
+        onStart: () => this.layers.forEach(l => l.sprite.setData('base', l.sprite.tilePositionX)),
+        onComplete: () => { run.stop(); this.heroSprite.setY(0); appear(); },
       });
-      return;
-    }
-
-    if (event.kind === 'assist') {
-      this.showNumber(PLAYER_X, GROUND_Y - 120, '援軍登場！', '#7fffd4');
-      this.helper.setAlpha(0);
-      this.tweens.add({ targets: this.helper, alpha: 1, duration: 400 });
-      return;
-    }
-
-    if (event.kind === 'heal') {
-      this.showNumber(PLAYER_X, GROUND_Y - 80, `+${event.amount} HP`, '#44d17a');
-      return;
-    }
-
-    if (event.kind === 'guard') {
-      this.showNumber(PLAYER_X, GROUND_Y - 80, '🛡️ 護盾', '#7fffd4');
-      return;
-    }
-
-    if (event.kind === 'shield') {
-      this.showNumber(PLAYER_X, GROUND_Y - 80, '🛡️ 擋下！', '#7fffd4');
-      this.cameras.main.flash(150, 127, 255, 212);
-      return;
-    }
-
-    // hurt
-    this.showNumber(PLAYER_X, GROUND_Y - 80, `-${event.amount}`, '#ff4444');
-    this.cameras.main.shake(80, 0.006);
-    this.player.setTint(0xff4444);
-    this.time.delayedCall(200, () => {
-      if (useBattleStore.getState().phase !== 'gameOver') this.applyHeroTint();
     });
   }
 
-  // 暫用素材時以顏色區分英雄
-  private applyHeroTint() {
-    const tint = heroDef(useBattleStore.getState().hero).tint;
-    if (tint === 0xffffff) this.player.clearTint(); else this.player.setTint(tint);
+  private startMonsterIdle() {
+    const sc = this.monsterScale;
+    const sp = this.monsterSprite;
+    this.monsterIdle?.stop();
+    if (this.monsterKind === 'bat' || this.monsterKind === 'ghost') {
+      this.monsterIdle = this.tweens.add({ targets: sp, y: -26, yoyo: true, repeat: -1, duration: this.monsterKind === 'bat' ? 320 : 900, ease: 'Sine.easeInOut' });
+    } else if (this.monsterKind === 'mushroom') {
+      this.monsterIdle = this.tweens.add({ targets: sp, angle: { from: -4, to: 4 }, yoyo: true, repeat: -1, duration: 500, ease: 'Sine.easeInOut' });
+    } else {
+      this.monsterIdle = this.tweens.add({ targets: sp, scaleX: sc * 1.08, scaleY: sc * 0.9, yoyo: true, repeat: -1, duration: this.monsterKind === 'king' ? 700 : 450, ease: 'Sine.easeInOut' });
+    }
   }
 
-  private showNumber(x: number, y: number, text: string, color: string) {
-    const t = this.add.text(x, y, text, { fontFamily: 'monospace', fontSize: '34px', color, fontStyle: 'bold', stroke: '#000', strokeThickness: 5 }).setOrigin(0.5);
-    this.tweens.add({ targets: t, y: y - 60, alpha: 0, duration: 800, onComplete: () => t.destroy() });
+  private bossIntro(isRevenge: boolean) {
+    sfx.boss();
+    this.cameras.main.shake(600, 0.008);
+    screenFlash(this, isRevenge ? 0x5e3aa8 : 0x8f2a3a, 0.45, 900);
+    const { width } = this.scale;
+    const band = this.add.rectangle(width / 2, 200, width, 70, 0x1a1226, 0.85).setDepth(88).setScale(1, 0);
+    const label = this.add.text(width / 2, 200, isRevenge ? '⚠ 復仇魔王來襲 ⚠' : '⚠ WARNING  BOSS ⚠', textStyle(34, isRevenge ? '#c9a8ff' : '#ff5a6e', 7)).setOrigin(0.5).setDepth(89).setAlpha(0);
+    this.tweens.add({ targets: band, scaleY: 1, duration: 160 });
+    this.tweens.add({ targets: label, alpha: 1, duration: 120, yoyo: true, repeat: 3, hold: 120 });
+    this.time.delayedCall(1300, () => {
+      this.tweens.add({ targets: [band, label], alpha: 0, duration: 250, onComplete: () => { band.destroy(); label.destroy(); } });
+    });
+  }
+
+  // ---------- 攻擊 ----------
+  private playAttack(event: BattleEvent, s: State) {
+    const damage = event.amount ?? 0;
+    const killed = s.monsterHp <= 0;
+    const crit = damage >= BASE_DAMAGE * 1.5 || (s.combo >= 5 && s.combo % 5 === 0);
+    this.busy = true;
+    this.heroIdle?.pause();
+    this.heroSprite.setTexture(heroKey(s.hero, 'attack'));
+    sfx.slash();
+
+    this.tweens.add({
+      targets: this.hero, x: MONSTER_X - 150, duration: 90, ease: 'Quad.easeIn',
+      onComplete: () => {
+        this.impact(damage, crit, killed, s);
+        this.tweens.add({
+          targets: this.hero, x: PLAYER_X, duration: 220, delay: 90, ease: 'Quad.easeOut',
+          onComplete: () => {
+            this.heroSprite.setTexture(heroKey(s.hero, 'idle'));
+            this.heroIdle?.resume();
+            if (!killed) this.busy = false;
+          },
+        });
+      },
+    });
+  }
+
+  private impact(damage: number, crit: boolean, killed: boolean, s: State) {
+    // 玩家很快按下一關時，新怪物已經登場，舊攻擊的血條與擊倒動畫就不要再套用
+    const sameStage = () => useBattleStore.getState().stageIdx === s.stageIdx;
+    const hitX = MONSTER_X - 20;
+    const hitY = GROUND_Y - (this.monsterSprite.displayHeight * 0.5);
+    slashArc(this, hitX, hitY, crit);
+    if (crit) sfx.crit(); else sfx.hit(Math.min(1.5, damage / BASE_DAMAGE));
+    hitStop(this, crit ? 120 : 70);
+    this.cameras.main.shake(crit ? 220 : 120, crit ? 0.016 : 0.008);
+
+    // 怪物閃白＋被擊退
+    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.region)}_flash`);
+    this.time.delayedCall(80, () => this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.region)));
+    this.tweens.add({ targets: this.monster, x: MONSTER_X + (crit ? 46 : 26), duration: 70, yoyo: true, ease: 'Quad.easeOut' });
+
+    const spark = this.add.image(hitX, hitY, 'spark').setScale(crit ? 14 : 9).setDepth(56).setAngle(Phaser.Math.Between(0, 45));
+    this.tweens.add({ targets: spark, scale: 0, angle: '+=90', duration: 220, onComplete: () => spark.destroy() });
+    const colors = this.monsterColors();
+    burst(this, hitX, hitY, [...colors, 0xffffff], crit ? 22 : 12, { speed: crit ? 260 : 180 });
+
+    popText(this, MONSTER_X + Phaser.Math.Between(-20, 20), hitY - 60, `${damage}`, crit ? 56 : 40, crit ? '#ffcd4b' : '#ffffff', { numeric: true });
+    if (crit) {
+      popText(this, MONSTER_X, hitY - 120, 'CRITICAL!', 30, '#ff7a3d', { rise: 40 });
+      this.cameras.main.zoomTo(1.06, 80, 'Quad.easeOut', true);
+      this.time.delayedCall(160, () => this.cameras.main.zoomTo(1, 200, 'Quad.easeOut', true));
+    }
+
+    if (sameStage()) this.monsterBar.set(s.monsterHp / Math.max(1, s.monsterMaxHp));
+    if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
+    if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
+    else if (killed) this.busy = false;
+  }
+
+  private playKill(s: State) {
+    const stage = s.stages[s.stageIdx];
+    const isBoss = !!stage?.bossMode;
+    slowMo(this, isBoss ? 700 : 380, 0.3);
+    sfx.kill();
+    this.monsterIdle?.stop();
+    const cx = MONSTER_X;
+    const cy = GROUND_Y - this.monsterSprite.displayHeight / 2;
+    this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.region)}_flash`);
+    this.tweens.add({
+      targets: this.monsterSprite, scaleX: this.monsterScale * 1.3, scaleY: this.monsterScale * 0.2, alpha: 0, duration: 260, ease: 'Quad.easeIn',
+      onComplete: () => {
+        this.busy = false;
+        if (useBattleStore.getState().stageIdx !== s.stageIdx) return;
+        this.monsterSprite.setVisible(false);
+        this.monsterShadow.setVisible(false);
+      },
+    });
+    burst(this, cx, cy, [...this.monsterColors(), 0xffffff, 0x1a1226], isBoss ? 60 : 30, { speed: isBoss ? 340 : 240, size: isBoss ? 14 : 10 });
+    screenFlash(this, 0xffffff, isBoss ? 0.6 : 0.35, isBoss ? 400 : 200);
+    if (isBoss) {
+      this.cameras.main.shake(500, 0.02);
+      const ko = this.add.text(400, 210, 'K.O.!', textStyle(96, '#ffcd4b', 10)).setOrigin(0.5).setDepth(95).setScale(3).setAlpha(0);
+      this.tweens.add({ targets: ko, scale: 1, alpha: 1, duration: 260, ease: 'Back.easeOut' });
+      this.tweens.add({ targets: ko, alpha: 0, delay: 1300, duration: 400, onComplete: () => ko.destroy() });
+      sfx.victory();
+    } else {
+      popText(this, cx, cy - 80, 'DEFEATED', 28, '#ffffff', { rise: 40 });
+    }
+  }
+
+  private flyCoins(gold: number, x: number, y: number, total: number) {
+    const n = Math.min(8, Math.max(1, Math.ceil(gold / 4)));
+    for (let i = 0; i < n; i++) {
+      const c = this.add.image(x, y, 'coin').setScale(4).setDepth(75);
+      const midX = x + Phaser.Math.Between(-80, 80);
+      const midY = y - Phaser.Math.Between(40, 120);
+      this.tweens.add({
+        targets: c, x: midX, y: midY, duration: 220, ease: 'Quad.easeOut', delay: i * 30,
+        onComplete: () => this.tweens.add({
+          targets: c, x: 32, y: 96, scale: 2, duration: 380, ease: 'Quad.easeIn',
+          onComplete: () => {
+            c.destroy();
+            if (i === 0) sfx.coin();
+            if (i === n - 1) this.bumpGold(total);
+          },
+        }),
+      });
+    }
+  }
+
+  private bumpGold(total: number) {
+    const obj = { v: this.shownGold };
+    this.shownGold = total;
+    this.tweens.add({ targets: obj, v: total, duration: 300, onUpdate: () => this.goldText.setText(`${Math.round(obj.v)}`) });
+    this.goldText.setScale(1.3);
+    this.tweens.add({ targets: this.goldText, scale: 1, duration: 200 });
+  }
+
+  // ---------- 受傷 ----------
+  private monsterLunge(onContact: () => void) {
+    this.tweens.add({
+      targets: this.monster, x: PLAYER_X + 130, duration: 120, ease: 'Quad.easeIn',
+      onComplete: () => {
+        onContact();
+        this.tweens.add({ targets: this.monster, x: MONSTER_X, duration: 260, ease: 'Quad.easeOut' });
+      },
+    });
+  }
+
+  private playHurt(event: BattleEvent) {
+    sfx.wrong();
+    this.monsterLunge(() => {
+      sfx.hurt();
+      hitStop(this, 60);
+      this.cameras.main.shake(180, 0.014);
+      screenFlash(this, 0xff2a4a, 0.3, 300);
+      const { hero } = useBattleStore.getState();
+      this.heroSprite.setTexture(`${heroKey(hero, 'idle')}_flash`).setTint(0xff5a6e);
+      this.time.delayedCall(120, () => this.heroSprite.setTexture(heroKey(hero, 'idle')).clearTint());
+      this.tweens.add({ targets: this.hero, x: PLAYER_X - 30, duration: 80, yoyo: true });
+      burst(this, PLAYER_X + 20, GROUND_Y - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
+      popText(this, PLAYER_X, GROUND_Y - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
+    });
+  }
+
+  private playBlocked() {
+    sfx.wrong();
+    this.monsterLunge(() => {
+      sfx.shield();
+      hitStop(this, 50);
+      this.cameras.main.shake(100, 0.006);
+      burst(this, PLAYER_X + 50, GROUND_Y - 50, [0x7fffd4, 0xffffff], 14, { speed: 200 });
+      popText(this, PLAYER_X, GROUND_Y - 130, 'BLOCK!', 34, '#7fffd4');
+    });
+  }
+
+  private playDefeat() {
+    this.heroIdle?.stop();
+    this.time.delayedCall(450, () => {
+      this.tweens.add({ targets: this.heroSprite, angle: -90, y: -10, duration: 400, ease: 'Bounce.easeOut' });
+      this.heroSprite.setTint(0x666677);
+      screenFlash(this, 0x000000, 0.5, 1200);
+    });
+  }
+
+  private playVictory() {
+    this.tweens.add({ targets: this.heroSprite, y: -50, duration: 220, yoyo: true, repeat: 2, ease: 'Quad.easeOut' });
+    for (let i = 0; i < 4; i++) {
+      this.time.delayedCall(i * 180, () => burst(this, Phaser.Math.Between(150, 650), 120, [0xffcd4b, 0x5fd36b, 0x4fb3e8, 0xff5af0, 0xffffff], 24, { speed: 260, gravity: 300 }));
+    }
+  }
+
+  private monsterColors(): number[] {
+    const c = this.monsterKind === 'ghost' ? GHOST_COLORS : REGION_MONSTER_COLORS[this.region] ?? REGION_MONSTER_COLORS[0];
+    return [hex(c.M), hex(c.L), hex(c.m)];
   }
 }

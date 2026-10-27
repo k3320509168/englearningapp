@@ -56,14 +56,13 @@ export interface HeroDef {
   name: string;
   desc: string;
   cost: number;
-  tint: number; // 暫用素材時以顏色區分英雄
 }
 
 export const HEROES: HeroDef[] = [
-  { id: 'knight', icon: '🛡️', name: '騎士', desc: '最大 HP +20，適合新手', cost: 0, tint: 0xffffff },
-  { id: 'archer', icon: '🏹', name: '弓箭手', desc: '拼寫、填空題傷害 +30%', cost: 300, tint: 0x9cff9c },
-  { id: 'mage', icon: '🔮', name: '法師', desc: '選擇題答錯時 Combo 不會中斷', cost: 300, tint: 0xb9a0ff },
-  { id: 'bard', icon: '🎵', name: '吟遊詩人', desc: '口說題傷害 ×2', cost: 300, tint: 0xffd36b },
+  { id: 'knight', icon: '🛡️', name: '騎士', desc: '最大 HP +20，適合新手', cost: 0 },
+  { id: 'archer', icon: '🏹', name: '弓箭手', desc: '拼寫、填空題傷害 +30%', cost: 300 },
+  { id: 'mage', icon: '🔮', name: '法師', desc: '選擇題答錯時 Combo 不會中斷', cost: 300 },
+  { id: 'bard', icon: '🎵', name: '吟遊詩人', desc: '口說題傷害 ×2', cost: 300 },
 ];
 
 export const heroDef = (id: HeroId) => HEROES.find(h => h.id === id) ?? HEROES[0];

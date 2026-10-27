@@ -72,15 +72,6 @@ export function checkVoice(q: Question, transcript: string): boolean {
   return candidates.some(c => words.includes(c.toUpperCase()));
 }
 
-// Combo 加成：每層 +10%，最高 2 倍
-export function comboMultiplier(combo: number): number {
-  return Math.min(2, 1 + 0.1 * Math.max(0, combo - 1));
-}
-
-export function attackDamage(combo: number, base = BASE_DAMAGE): number {
-  return Math.round(base * comboMultiplier(combo));
-}
-
 // 從題目描述取出中文提示，例如「請拼出：書本」→「書本」、「填空題：B U D G _ T (預算)」→「預算」
 export function questionHint(q: Question): string {
   const paren = q.desc.match(/[(（]([^)）]+)[)）]\s*$/);

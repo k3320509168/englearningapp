@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from './types';
 import {
-  applyLetter, attackDamage, checkChoice, checkVoice, comboMultiplier,
+  applyLetter, checkChoice, checkVoice,
   questionHint, sentenceMatchRatio, shuffleChoice,
 } from './battle';
+import { comboMultiplier } from './progression';
 
 const choiceQ: Question = { type: 'choice', desc: 'I ___ a student.', options: ['A. am', 'B. is', 'C. are', 'D. be'], ans: 'A' };
 
@@ -60,8 +61,9 @@ describe('voice', () => {
 describe('combo damage', () => {
   it('grows 10% per combo and caps at 2x', () => {
     expect(comboMultiplier(1)).toBe(1);
-    expect(attackDamage(3)).toBe(60);
+    expect(comboMultiplier(3)).toBeCloseTo(1.2);
     expect(comboMultiplier(50)).toBe(2);
+    expect(comboMultiplier(50, 2.6)).toBe(2.6);
   });
 });
 

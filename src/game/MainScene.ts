@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import { useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
-import { PLAYER_MAX_HP, comboMultiplier } from './battle';
+import { comboMultiplier, heroDef } from './progression';
 
 // 戰鬥畫面：只負責顯示與動畫。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
 
@@ -86,11 +86,11 @@ export default class MainScene extends Phaser.Scene {
     }
     const stage = s.stages[s.stageIdx];
     if (stage) this.stageTxt.setText(`${stage.name}  (${s.stageIdx + 1}/${s.stages.length})`);
-    this.playerHpBar.setHp(s.playerHp, PLAYER_MAX_HP);
+    this.playerHpBar.setHp(s.playerHp, s.playerMaxHp);
 
     if (s.combo !== prev?.combo) {
       if (s.combo > 1) {
-        this.comboTxt.setText(`${s.combo} COMBO!  ×${comboMultiplier(s.combo).toFixed(1)}`).setAlpha(1);
+        this.comboTxt.setText(`${s.combo} COMBO!  ×${comboMultiplier(s.combo, s.stats.comboCap).toFixed(1)}`).setAlpha(1);
         this.tweens.add({ targets: this.comboTxt, scale: 1.2, yoyo: true, duration: 150 });
       } else {
         this.comboTxt.setText('');
@@ -109,11 +109,16 @@ export default class MainScene extends Phaser.Scene {
   private playEvent(event: BattleEvent) {
     const s = useBattleStore.getState();
     if (event.kind === 'stage') {
-      const isBoss = s.stages[s.stageIdx]?.bossMode;
+      const stage = s.stages[s.stageIdx];
+      const isBoss = stage?.bossMode;
       this.tweens.killTweensOf(this.monster);
       this.monster.setScale(isBoss ? 3.5 : 2).setAlpha(1).setPosition(MONSTER_X, GROUND_Y);
-      if (isBoss) this.monster.setTint(0xff5555); else this.monster.clearTint();
-      this.player.clearTint().setPosition(PLAYER_X, GROUND_Y).play('run', true);
+      // 復仇魔王用紫色、一般 Boss 用紅色
+      if (stage?.revenge) this.monster.setTint(0xb04dff);
+      else if (isBoss) this.monster.setTint(0xff5555);
+      else this.monster.clearTint();
+      this.applyHeroTint();
+      this.player.setPosition(PLAYER_X, GROUND_Y).play('run', true);
       this.monsterHpBar.setHp(s.monsterHp, s.monsterMaxHp);
       return;
     }
@@ -125,6 +130,7 @@ export default class MainScene extends Phaser.Scene {
           const now = useBattleStore.getState();
           this.monsterHpBar.setHp(now.monsterHp, now.monsterMaxHp);
           this.showNumber(MONSTER_X, GROUND_Y - 80, `-${event.amount}`, '#ffff00');
+          if (event.gold) this.showNumber(MONSTER_X, GROUND_Y - 130, `+${event.gold} 🪙`, '#ffd34d');
           this.cameras.main.shake(100, 0.01);
           this.tweens.add({ targets: this.monster, alpha: 0.3, yoyo: true, duration: 80, repeat: 1 });
           if (now.monsterHp <= 0) {
@@ -143,6 +149,16 @@ export default class MainScene extends Phaser.Scene {
       return;
     }
 
+    if (event.kind === 'heal') {
+      this.showNumber(PLAYER_X, GROUND_Y - 80, `+${event.amount} HP`, '#44d17a');
+      return;
+    }
+
+    if (event.kind === 'guard') {
+      this.showNumber(PLAYER_X, GROUND_Y - 80, '🛡️ 護盾', '#7fffd4');
+      return;
+    }
+
     if (event.kind === 'shield') {
       this.showNumber(PLAYER_X, GROUND_Y - 80, '🛡️ 擋下！', '#7fffd4');
       this.cameras.main.flash(150, 127, 255, 212);
@@ -154,8 +170,14 @@ export default class MainScene extends Phaser.Scene {
     this.cameras.main.shake(80, 0.006);
     this.player.setTint(0xff4444);
     this.time.delayedCall(200, () => {
-      if (useBattleStore.getState().phase !== 'gameOver') this.player.clearTint();
+      if (useBattleStore.getState().phase !== 'gameOver') this.applyHeroTint();
     });
+  }
+
+  // 暫用素材時以顏色區分英雄
+  private applyHeroTint() {
+    const tint = heroDef(useBattleStore.getState().hero).tint;
+    if (tint === 0xffffff) this.player.clearTint(); else this.player.setTint(tint);
   }
 
   private showNumber(x: number, y: number, text: string, color: string) {

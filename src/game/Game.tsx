@@ -7,6 +7,10 @@ import BattleHUD from '../components/BattleHUD';
 import MapToolbar from '../components/MapToolbar';
 import SettingsModal from '../components/SettingsModal';
 import TutorialModal from '../components/TutorialModal';
+import ShopModal from '../components/ShopModal';
+import HeroModal from '../components/HeroModal';
+import CodexModal from '../components/CodexModal';
+import MapLevelBar from '../components/MapLevelBar';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 
@@ -18,6 +22,9 @@ export default function Game() {
   const gameRef = useRef<HTMLDivElement>(null);
   const inBattle = useBattleStore(s => s.active);
   const modal = useUiStore(s => s.modal);
+
+  // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
+  useEffect(() => { window.scrollTo(0, 0); }, [inBattle]);
 
   // 第一次進入遊戲時自動打開新手引導
   useEffect(() => {
@@ -41,7 +48,11 @@ export default function Game() {
     // 開發模式下開放給瀏覽器 console 偵錯用
     if (import.meta.env.DEV) Object.assign(window, { __game: game, __battle: useBattleStore, __save: useSaveStore });
     // 地圖與戰鬥的容器大小不同（CSS 決定），容器尺寸變化時通知 Phaser 重新計算縮放
-    const observer = new ResizeObserver(() => game.scale.refresh());
+    // 注意：Phaser 的 refresh() 只用快取的父層尺寸，必須先 getParentBounds() 重新量測
+    const observer = new ResizeObserver(() => {
+      game.scale.getParentBounds();
+      game.scale.refresh();
+    });
     observer.observe(gameRef.current);
     return () => {
       observer.disconnect();
@@ -53,9 +64,12 @@ export default function Game() {
     <div className={`game-shell ${inBattle ? 'is-battle' : 'is-map'}`}>
       {!inBattle && <MapToolbar />}
       <div ref={gameRef} className="game-canvas" />
-      {inBattle && <BattleHUD />}
+      {inBattle ? <BattleHUD /> : <MapLevelBar />}
       {modal === 'settings' && <SettingsModal />}
       {modal === 'tutorial' && <TutorialModal />}
+      {modal === 'shop' && <ShopModal />}
+      {modal === 'heroes' && <HeroModal />}
+      {modal === 'codex' && <CodexModal />}
     </div>
   );
 }

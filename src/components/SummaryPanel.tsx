@@ -19,8 +19,8 @@ function answerLabel(q: Question): { text: string; audio: string; meaning: strin
 }
 
 export default function SummaryPanel() {
-  const { phase, answers, stageIdx, stages, maxCombo } = useBattleStore(useShallow(s => ({
-    phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo,
+  const { phase, answers, stageIdx, stages, maxCombo, runGold } = useBattleStore(useShallow(s => ({
+    phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold,
   })));
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
@@ -29,19 +29,22 @@ export default function SummaryPanel() {
   const [from] = phase === 'summary' ? segmentRange(stageIdx, stages.length) : [0];
   const summary = summarize(answers, from, stageIdx);
 
-  const title = phase === 'summary' ? `🏆 擊敗守門 Boss！第 ${from + 1}–${stageIdx + 1} 關結算`
+  const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
+  const title = phase === 'summary' ? `${bossName}！第 ${from + 1}–${stageIdx + 1} 關結算`
     : phase === 'levelClear' ? '🎉 區域完全通關！' : '💀 體力耗盡';
 
   return (
     <div className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
       {phase === 'levelClear' && <p>下一個區域已解鎖</p>}
-      {phase === 'gameOver' && <p>別灰心！下面是這次要加強的字，記住它們再挑戰一次。</p>}
+      {phase === 'gameOver' && <p>別灰心！賺到的金幣都保留了，可以到商店升級。下面是這次要加強的字。</p>}
+      {stages[stageIdx]?.revenge && phase === 'summary' && <p>復仇成功！這些錯題的複習間隔已經拉長，下次會在幾天後再考你。</p>}
 
       <div className="stats">
         <div><b>{summary.accuracy}%</b><span>正確率</span></div>
         <div><b>{summary.correct}/{summary.total}</b><span>答對題數</span></div>
         <div><b>{maxCombo}</b><span>最高 Combo</span></div>
+        <div><b>🪙 {runGold}</b><span>本趟金幣</span></div>
       </div>
 
       {summary.mastered.length > 0 && (

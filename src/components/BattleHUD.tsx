@@ -12,6 +12,7 @@ import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
+import { BattleStatusBar, BuffPanel } from './BattleExtras';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -53,6 +54,10 @@ export default function BattleHUD() {
       if ((s.phase === 'monsterDown' || s.phase === 'summary') && e.key === 'Enter') { handled(); return s.nextStage(); }
       if (s.phase === 'levelClear' && e.key === 'Enter') { handled(); return s.exitToMap(); }
       if (s.phase === 'gameOver' && e.key === 'Enter') { handled(); return s.retryLevel(); }
+      if (s.phase === 'buff' && /^[1-3]$/.test(e.key)) {
+        const id = s.buffChoices[Number(e.key) - 1];
+        if (id) { handled(); return s.pickBuff(id); }
+      }
       if (s.phase !== 'answering' || !q) return;
 
       if (e.key === ' ') { handled(); return say(q.speak); }
@@ -76,7 +81,7 @@ export default function BattleHUD() {
         <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().exitToMap()} aria-label="撤退回地圖">←<span className="btn-label"> 撤退</span></button>
         <span className="hud-stage">
           {stageName}<small> {stageNo}/{stageCount}</small>
-          {shield && <span className="shield-badge" title="援軍護盾：下一次答錯不扣血">🛡️</span>}
+          {shield && <span className="shield-badge" title="護盾：下一次答錯不扣血">🛡️</span>}
         </span>
         <div className="hud-tools">
           <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().openLesson()} disabled={phase !== 'answering'} aria-label="戰前預習">📖</button>
@@ -85,7 +90,9 @@ export default function BattleHUD() {
         </div>
       </header>
 
+      <BattleStatusBar />
       {phase === 'lesson' && <LessonPanel />}
+      {phase === 'buff' && <BuffPanel />}
       {phase === 'answering' && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}
       {phase === 'monsterDown' && <StageClearPanel />}
@@ -105,12 +112,14 @@ function QuestionCard({ question }: { question: Question }) {
 
 function AssistBanner({ question }: { question: Question }) {
   const assist = useBattleStore(s => s.assist);
+  const source = useBattleStore(s => s.assistSource);
   if (!assist) return null;
-  const tip = question.type === 'choice' ? '幫你刪掉了兩個錯誤選項'
-    : assist.revealed ? `幫你填好了第一個字母「${assist.revealed}」`
-    : question.type === 'voice' ? '幫你把要唸的字寫出來了'
-    : '幫你重播了發音';
-  return <p className="assist-banner">🧚 援軍登場！{tip}，還會替你擋下一次傷害 🛡️</p>;
+  const tip = question.type === 'choice' ? '刪掉了兩個錯誤選項'
+    : assist.revealed ? `填好了第一個字母「${assist.revealed}」`
+    : question.type === 'voice' ? '把要唸的字寫出來了'
+    : '重播了發音';
+  if (source === 'item') return <p className="assist-banner">💡 提示卷軸：{tip}</p>;
+  return <p className="assist-banner">🧚 援軍登場！幫你{tip}，還會替你擋下一次傷害 🛡️</p>;
 }
 
 function AnswerPanel({ question }: { question: Question }) {

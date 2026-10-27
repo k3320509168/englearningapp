@@ -130,24 +130,37 @@ export const QUESTION_POOL: QuestionPool = {
   }
 };
 
-export function generateStages(levelKey: string): Stage[] {
-  const pool = QUESTION_POOL[levelKey] || QUESTION_POOL["A1 入門 (120-224分)"];
-  const generatedStages: Stage[] = [];
-  const normalDeck = shuffleArray(pool.normal);
-  const bossDeck = shuffleArray(pool.boss);
+export function getPool(levelKey: string) {
+  return QUESTION_POOL[levelKey] || QUESTION_POOL["A1 入門 (120-224分)"];
+}
 
-  const drawCard = (deck: Question[], original: Question[]) => {
-    if (deck.length === 0) deck.push(...shuffleArray(original));
-    return deck.pop()!;
+// 洗牌後依序抽題，抽完自動重新洗牌；戰鬥中怪物還沒倒下時也從這裡繼續抽題
+export interface Decks {
+  normal: () => Question;
+  boss: () => Question;
+}
+
+export function createDecks(levelKey: string): Decks {
+  const pool = getPool(levelKey);
+  const makeDraw = (original: Question[]) => {
+    const deck: Question[] = [];
+    return () => {
+      if (deck.length === 0) deck.push(...shuffleArray(original));
+      return deck.pop()!;
+    };
   };
+  return { normal: makeDraw(pool.normal), boss: makeDraw(pool.boss) };
+}
 
+export function generateStages(levelKey: string, decks: Decks = createDecks(levelKey)): Stage[] {
+  const generatedStages: Stage[] = [];
   for (let i = 1; i <= 50; i++) {
     if (i === 50) {
-      generatedStages.push({ name: `第 ${i} 關：星球最終試煉`, bossMode: true, questions: [drawCard(bossDeck, pool.boss), drawCard(bossDeck, pool.boss)] });
+      generatedStages.push({ name: `第 ${i} 關：星球最終試煉`, bossMode: true, questions: [decks.boss(), decks.boss()] });
     } else if (i % 10 === 0) {
-      generatedStages.push({ name: `第 ${i} 關：守門菁英`, bossMode: true, questions: [drawCard(bossDeck, pool.boss)] });
+      generatedStages.push({ name: `第 ${i} 關：守門菁英`, bossMode: true, questions: [decks.boss()] });
     } else {
-      generatedStages.push({ name: `第 ${i} 關：持續推進`, bossMode: false, questions: [drawCard(normalDeck, pool.normal)] });
+      generatedStages.push({ name: `第 ${i} 關：持續推進`, bossMode: false, questions: [decks.normal()] });
     }
   }
   return generatedStages;

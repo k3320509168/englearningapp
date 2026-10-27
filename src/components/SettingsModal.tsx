@@ -52,7 +52,7 @@ export default function SettingsModal() {
 
       <section className="settings-group danger">
         <h3>⚠️ 重置進度</h3>
-        <p className="muted">清除區域解鎖進度與錯題本（設定會保留）。此動作無法復原。</p>
+        <p className="muted">清除區域進度、金幣、升級、道具、英雄、錯題本與圖鑑（設定會保留）。此動作無法復原。</p>
         {confirmReset ? (
           <div className="feedback-actions">
             <button className="btn btn-danger" onMouseDown={keepFocus} onClick={() => { resetProgress(); setConfirmReset(false); }}>確定重置</button>

@@ -48,7 +48,14 @@ button { font: inherit; color: inherit; }
 }
 
 /* 地圖：盡量放大畫布 */
-.is-map .game-canvas { max-width: calc((100dvh - 96px) * 5 / 3); }
+.is-map .game-canvas { max-width: max(320px, calc((100dvh - 250px) * 5 / 3)); }
+
+.level-bar { width: 100%; max-width: 860px; display: flex; flex-direction: column; gap: 8px; }
+.level-bar-hint { margin: 0; font-size: 13px; text-align: center; }
+.level-buttons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+@media (max-width: 560px) { .level-buttons { grid-template-columns: repeat(2, 1fr); } }
+.level-btn { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px; }
+.level-btn small { font-size: 12px; opacity: 0.85; white-space: nowrap; }
 /* 戰鬥：畫布限制高度，保留空間給作答區 */
 .is-battle .game-canvas { max-width: min(860px, calc(48dvh * 5 / 3)); }
 
@@ -249,15 +256,161 @@ button { font: inherit; color: inherit; }
 /* ---------- 地圖工具列 ---------- */
 .map-toolbar {
   width: 100%;
-  max-width: calc((100dvh - 96px) * 5 / 3);
+  max-width: max(560px, calc((100dvh - 150px) * 5 / 3));
   display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
 }
+.toolbar-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.toolbar-nav .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; }
 .brand { font-weight: bold; font-size: 20px; color: var(--accent); }
 .map-stat { font-size: 14px; }
 .toolbar-actions { margin-left: auto; display: flex; gap: 8px; }
+.gold-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 211, 77, 0.14);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* ---------- 戰鬥狀態列：金幣、Buff、道具 ---------- */
+.status-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.buff-list { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.buff-chip { padding: 2px 6px; border-radius: 8px; background: var(--panel-2); cursor: help; }
+.buff-chip small { color: var(--muted); margin-left: 2px; }
+.item-bar { display: flex; gap: 6px; margin-left: auto; }
+.item-btn {
+  position: relative;
+  min-width: 48px;
+  min-height: 44px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  font-size: 20px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.item-btn small {
+  position: absolute;
+  right: 3px;
+  bottom: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--accent);
+}
+.item-btn:disabled { opacity: 0.35; cursor: default; }
+.item-btn:not(:disabled):hover { border-color: var(--primary); }
+
+/* ---------- 三選一 Buff ---------- */
+.buff-panel { text-align: center; animation: slide-up 0.2s ease-out; }
+.buff-panel p { margin: 0 0 8px; }
+.buff-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 560px) { .buff-options { grid-template-columns: 1fr; } }
+.buff-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 10px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.15s;
+}
+.buff-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.buff-icon { font-size: 36px; }
+.buff-card kbd { position: absolute; top: 6px; right: 10px; }
+
+/* ---------- 商店／英雄／圖鑑 ---------- */
+.shop-gold { margin: 0; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); }
+.tabs-scroll { overflow-x: auto; }
+.tab {
+  padding: 8px 14px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tab.is-active { color: var(--text); border-bottom-color: var(--accent); font-weight: bold; }
+.shop-list, .hero-grid, .codex-grid { list-style: none; margin: 0; padding: 0; }
+.shop-list { display: flex; flex-direction: column; gap: 8px; }
+.shop-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border-radius: 10px;
+}
+.shop-icon { font-size: 28px; }
+.shop-info { flex: 1; display: flex; flex-direction: column; gap: 2px; font-size: 14px; min-width: 0; }
+.shop-info b { font-size: 16px; }
+.shop-note { font-size: 13px; margin: 0; }
+
+.hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 14px 10px;
+  background: var(--panel-2);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+.hero-card.is-selected { border-color: var(--accent); }
+.hero-card b { font-size: 17px; }
+.hero-icon { font-size: 40px; }
+.hero-tag { color: var(--accent); font-weight: bold; padding: 8px 0; }
+
+.codex-progress { margin: 0; }
+.progress-bar { height: 8px; border-radius: 4px; background: var(--panel-2); overflow: hidden; }
+.progress-bar span { display: block; height: 100%; background: var(--accent); transition: width 0.3s; }
+.codex-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.codex-card {
+  background: var(--panel-2);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+.codex-card.is-open { grid-column: 1 / -1; border-color: var(--border); }
+.codex-card.is-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 64px;
+  opacity: 0.5;
+  font-size: 13px;
+}
+.codex-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.codex-title { font-weight: bold; overflow-wrap: anywhere; }
+.stars { color: var(--accent); letter-spacing: 1px; }
+.review-tag { font-size: 12px; color: var(--bad); }
+.codex-detail { padding: 0 12px 12px; font-size: 14px; }
+.codex-detail p { margin: 6px 0 0; }
 
 .hud-tools { display: flex; gap: 4px; }
 .shield-badge { margin-left: 6px; }
@@ -312,10 +465,11 @@ button { font: inherit; color: inherit; }
 .result.is-fail { border-color: var(--bad); }
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   margin: 12px 0;
 }
+@media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
 .stats div {
   display: flex;
   flex-direction: column;

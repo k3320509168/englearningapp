@@ -2,8 +2,7 @@ import Phaser from 'phaser';
 import { LEVELS } from './QuestionData';
 import { useSaveStore } from '../store/saveStore';
 import { useBattleStore } from '../store/battleStore';
-import { isSpeechRecognitionSupported } from './speech';
-import { voiceFallback } from './battle';
+import { beginLevel } from './startLevel';
 
 export default class MapScene extends Phaser.Scene {
   constructor() { super('MapScene'); }
@@ -45,11 +44,14 @@ export default class MapScene extends Phaser.Scene {
         circle.setInteractive({ useHandCursor: true })
           .on('pointerover', () => circle.setScale(1.2))
           .on('pointerout', () => circle.setScale(1))
-          .on('pointerdown', () => {
-            useBattleStore.getState().startLevel(levelKey, isSpeechRecognitionSupported() ? undefined : voiceFallback);
-            this.scene.start('MainScene');
-          });
+          .on('pointerdown', () => beginLevel(levelKey));
       }
     });
+
+    // 不論從圓點或地圖下方的按鈕開始關卡，都在這裡切換到戰鬥場景
+    const unsubscribe = useBattleStore.subscribe((s, prev) => {
+      if (s.active && !prev.active) this.scene.start('MainScene');
+    });
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, unsubscribe);
   }
 }

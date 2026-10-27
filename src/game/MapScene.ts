@@ -23,7 +23,7 @@ export default class MapScene extends Phaser.Scene {
   create() {
     const { width } = this.scale;
     const unlockedIndex = useSaveStore.getState().unlockedIndex;
-    const { hero, character } = useSaveStore.getState();
+    const { character } = useSaveStore.getState();
     const region = Math.min(unlockedIndex, THEMES.length - 1);
     registerSprites(this);
     if (character) registerAvatar(this, character);
@@ -69,7 +69,7 @@ export default class MapScene extends Phaser.Scene {
         // 英雄站在目前可挑戰的旗幟旁
         const h = character
           ? this.add.image(x - 42, y + 6, avatarKey(character, 'idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2)
-          : this.add.image(x - 42, y + 6, heroKey(hero, 'idle')).setOrigin(8 / 24, 1).setScale(3);
+          : this.add.image(x - 42, y + 6, heroKey('knight', 'idle')).setOrigin(8 / 24, 1).setScale(3);
         this.tweens.add({ targets: h, y: y - 2, yoyo: true, repeat: -1, duration: 420, ease: 'Sine.easeInOut' });
         const ring = this.add.circle(x + 10, y - 30, 46).setStrokeStyle(3, 0xffcd4b, 0.8);
         this.tweens.add({ targets: ring, scale: 1.25, alpha: 0, repeat: -1, duration: 1200 });
@@ -92,7 +92,7 @@ export default class MapScene extends Phaser.Scene {
     });
     // 在英雄選單換人或重置進度時，重畫地圖
     const unsubscribeSave = useSaveStore.subscribe((s, prev) => {
-      if (s.hero !== prev.hero || s.character !== prev.character || s.unlockedIndex !== prev.unlockedIndex) this.scene.restart();
+      if (s.character !== prev.character || s.unlockedIndex !== prev.unlockedIndex) this.scene.restart();
     });
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { unsubscribe(); unsubscribeSave(); });
   }

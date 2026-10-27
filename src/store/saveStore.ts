@@ -6,10 +6,12 @@ import { HEROES, ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost }
 import type { HeroId, ItemId, UpgradeId } from '../game/progression';
 import { normalizeCharacter } from '../game/character';
 import type { Character } from '../game/character';
+import { PARTY_MAX } from '../game/party';
+import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 6;
+export const SAVE_VERSION = 7;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -51,7 +53,8 @@ interface SaveData {
   upgrades: Record<UpgradeId, number>;
   items: Record<ItemId, number>;
   heroes: HeroId[];
-  hero: HeroId;
+  // 出戰隊伍（第一位是隊長），'player' 代表主角
+  party: MemberId[];
 }
 
 interface SaveActions {
@@ -68,7 +71,8 @@ interface SaveActions {
   buyItem: (id: ItemId) => boolean;
   consumeItem: (id: ItemId) => boolean;
   buyHero: (id: HeroId) => boolean;
-  selectHero: (id: HeroId) => void;
+  toggleMember: (id: MemberId) => void;
+  setLeader: (id: MemberId) => void;
   resetProgress: () => void;
 }
 
@@ -85,17 +89,18 @@ export const initialSave: SaveData = {
   upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 },
   items: { potion: 0, hint: 0, shield: 0 },
   heroes: ['knight'],
-  hero: 'knight',
+  party: ['player', 'knight'],
 };
 
 export function migrateSave(persisted: unknown, version: number): SaveData {
-  const data = (persisted ?? {}) as Partial<SaveData>;
+  const data = (persisted ?? {}) as Partial<SaveData> & { hero?: HeroId };
   // 每次升級都只「新增欄位」，所以用預設值補齊即可。
   // v1 → v2：舊玩家已經玩過，視為看過新手引導。
   // v2 → v3：錯題補上 SRS 欄位（立即可複習）。
   // v3 → v4：新增音效音量設定（預設值補齊）。
   // v4 → v5：新增各區域關卡進度與麥克風詢問紀錄。
   // v5 → v6：新增自創主角（舊玩家也要先建立角色）。
+  // v6 → v7：單一出戰英雄改為 4 人隊伍（主角＋原本選的英雄）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -103,6 +108,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     upgrades: { ...initialSave.upgrades, ...data.upgrades },
     items: { ...initialSave.items, ...data.items },
     character: normalizeCharacter(data.character),
+    party: data.party ?? ['player', data.hero ?? 'knight'],
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
   migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
@@ -186,10 +192,21 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         buyHero: (id) => {
           const def = HEROES.find(h => h.id === id)!;
           if (get().heroes.includes(id)) return false;
-          return purchase(def.cost, s => ({ heroes: [...s.heroes, id], hero: id }));
+          // 隊伍還有空位就直接加入
+          return purchase(def.cost, s => ({
+            heroes: [...s.heroes, id],
+            party: s.party.length < PARTY_MAX ? [...s.party, id] : s.party,
+          }));
         },
 
-        selectHero: (id) => { if (get().heroes.includes(id)) set({ hero: id }); },
+        // 加入或移出隊伍：最多 4 人、至少留 1 人
+        toggleMember: (id) => set(s => {
+          if (s.party.includes(id)) return s.party.length > 1 ? { party: s.party.filter(m => m !== id) } : {};
+          const owned = id === 'player' ? s.character !== null : s.heroes.includes(id);
+          return owned && s.party.length < PARTY_MAX ? { party: [...s.party, id] } : {};
+        }),
+
+        setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
         // 只保留設定、新手引導進度與主角
         resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character })),
@@ -203,7 +220,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       partialize: (s) => ({
         character: s.character,
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
-        tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, hero: s.hero,
+        tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
       }),
     },
   ),

@@ -13,6 +13,8 @@ import { keepFocus } from './keepFocus';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
 import { BattleStatusBar } from './BattleExtras';
+import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty';
+import { useBattleClock } from './useBattleClock';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -33,6 +35,7 @@ export default function BattleHUD() {
   })));
   const openModal = useUiStore(s => s.openModal);
   const say = useSpeak();
+  useBattleClock();
 
   // 新題目出現時自動播放發音（可在設定關閉）
   useEffect(() => {
@@ -48,6 +51,11 @@ export default function BattleHUD() {
       const q = s.question;
       const handled = () => e.preventDefault();
 
+      if (s.phase === 'casting') {
+        if (e.key === 'Escape') { handled(); return s.cancelSkill(); }
+        if (e.key === 'Enter') { handled(); return s.confirmSkill(); }
+        return;
+      }
       if (e.key === 'Escape') { handled(); return s.exitToMap(); }
       if (s.phase === 'lesson' && e.key === 'Enter') { handled(); return s.startBattle(); }
       if (s.phase === 'feedback' && (e.key === 'Enter' || e.key === ' ')) { handled(); return s.continueAfterFeedback(); }
@@ -87,8 +95,11 @@ export default function BattleHUD() {
       </header>
 
       <BattleStatusBar />
+      <PartyBar />
+      <TimerBars />
       {phase === 'lesson' && <LessonPanel />}
-      {phase === 'answering' && <AnswerPanel question={question} />}
+      {phase === 'casting' && <CastConfirm />}
+      {(phase === 'answering' || phase === 'casting' || phase === 'enemyTurn') && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}
       {phase === 'monsterDown' && <StageClearPanel />}
       {(phase === 'summary' || phase === 'levelClear' || phase === 'gameOver') && <SummaryPanel />}
@@ -121,6 +132,7 @@ function AnswerPanel({ question }: { question: Question }) {
   return (
     <>
       <AssistBanner question={question} />
+      <BossQuestionTag />
       <QuestionCard question={question} />
       {(question.type === 'spell' || question.type === 'fill') && <TypingAnswer question={question} />}
       {question.type === 'choice' && <ChoiceAnswer question={question} />}
@@ -247,10 +259,10 @@ function FeedbackPanel() {
 
   return (
     <div className="feedback" role="alert">
-      <p className="feedback-title">差一點！一起看看正確答案</p>
+      <p className="feedback-title">{feedback.timeout ? '⏰ 時間到！一起看看正確答案' : '差一點！一起看看正確答案'}</p>
       <dl className="feedback-grid">
         <dt>你的答案</dt>
-        <dd className="given">{q.type === 'voice' ? `聽成「${feedback.given || '（沒聽到）'}」` : feedback.given}</dd>
+        <dd className="given">{feedback.timeout ? '（沒有在時間內作答）' : q.type === 'voice' ? `聽成「${feedback.given || '（沒聽到）'}」` : feedback.given}</dd>
         <dt>正確答案</dt>
         <dd className="correct">{q.type === 'choice' ? correctOption : correctWord(q)}</dd>
         {hint && (<><dt>中文</dt><dd>{vocab?.pos && <span className="pos">{vocab.pos}</span>} {hint}</dd></>)}

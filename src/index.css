@@ -705,3 +705,80 @@ button { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- 隊伍編成 ---------- */
+.party-note { margin: 0; font-size: 14px; line-height: 1.6; }
+.hero-card { position: relative; }
+.party-pos { position: absolute; top: 6px; left: 8px; color: var(--accent); font-family: var(--font-ui); font-size: 13px; }
+.el-badge {
+  display: inline-block;
+  padding: 0 6px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  background: var(--el);
+  color: #1a1226;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.skill-line { font-size: 13px; color: var(--primary); }
+.hero-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- 戰鬥：計時、隊伍、技能 ---------- */
+.timers { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.timers.is-paused .timer-fill { opacity: 0.5; }
+.timer { display: flex; align-items: center; gap: 8px; flex: 1 1 220px; }
+.timer-label { font-family: var(--font-ui); font-size: 14px; color: var(--muted); }
+.timer b { min-width: 42px; text-align: right; font-family: var(--font-num); font-size: 11px; }
+.timer-track { flex: 1; height: 12px; border: 2px solid var(--ink); background: var(--bg); overflow: hidden; }
+.timer-fill { display: block; height: 100%; transition: width 0.08s linear; }
+.timer-fill.turn { background: var(--primary); }
+.timer-fill.question { background: var(--good); }
+.timer-fill.is-low { background: var(--bad); animation: pulse 0.5s infinite alternate; }
+.timer-note { font-size: 13px; color: var(--accent); font-family: var(--font-ui); }
+.timer-note.is-enemy { color: var(--bad); }
+@keyframes pulse { from { opacity: 1; } to { opacity: 0.55; } }
+
+.party-bar { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px; }
+.member {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  border: var(--px) solid var(--ink);
+  border-radius: 6px;
+  background: var(--panel-2);
+  text-align: left;
+  cursor: default;
+}
+.member:disabled { opacity: 1; }
+.member.is-striker { border-color: var(--accent); }
+.member.is-ready { cursor: pointer; box-shadow: 0 0 0 2px var(--el), 0 0 12px var(--el); animation: pulse 0.8s infinite alternate; }
+.member.is-down { filter: grayscale(1); opacity: 0.5; }
+.member-portrait { position: relative; flex: none; width: 44px; height: 44px; display: grid; place-items: center; background: color-mix(in srgb, var(--el) 25%, transparent); border-radius: 4px; overflow: hidden; }
+.member-portrait img { max-width: 44px; max-height: 44px; image-rendering: pixelated; }
+.member-adv, .member-dis { position: absolute; right: 1px; bottom: 0; font-size: 13px; font-weight: 700; text-shadow: 0 0 2px #000; }
+.member-adv { color: var(--good); }
+.member-dis { color: var(--bad); }
+.member-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.member-name { font-family: var(--font-ui); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.member-hp { height: 7px; border: 2px solid var(--ink); background: var(--bg); }
+.member-hp span { display: block; height: 100%; background: var(--good); transition: width 0.2s; }
+.member-energy { display: flex; align-items: center; gap: 3px; }
+.member-energy i { width: 8px; height: 8px; border: 2px solid var(--ink); background: var(--bg); }
+.member-energy i.on { background: var(--accent); }
+.member-energy em { font-style: normal; font-size: 13px; margin-left: 2px; }
+
+.cast-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: var(--px) solid #7fffd4;
+  background: rgba(127, 255, 212, 0.1);
+}
+.cast-confirm p { flex: 1 1 200px; margin: 0; line-height: 1.5; }
+.cast-timer { font-family: var(--font-num); font-size: 12px; color: #7fffd4; }
+.cast-actions { display: flex; gap: 6px; }
+.boss-q-tag { margin: 0; padding: 8px 10px; border: 2px solid #ff5af0; background: rgba(255, 90, 240, 0.12); color: #ffc2f7; font-family: var(--font-ui); }

@@ -3,7 +3,8 @@ import { useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { BASE_DAMAGE } from './battle';
-import { comboMultiplier, heroDef } from './progression';
+import { SKILLS, comboMultiplier } from './progression';
+import type { HeroId } from './progression';
 import {
   MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerAvatar, registerSprites,
 } from './art/sprites';
@@ -29,6 +30,8 @@ const HERO_ORIGIN_X = 8 / 24;
 const AVATAR_SCALE = 4;
 
 const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
+// 傷害可能高達數億：加上千分位
+const formatDamage = (n: number) => Math.round(n).toLocaleString('en-US');
 
 // Combo 稱號：越高越華麗
 function comboTier(combo: number) {
@@ -44,6 +47,9 @@ export default class MainScene extends Phaser.Scene {
   private heroSprite!: Phaser.GameObjects.Image;
   private heroIdle?: Phaser.Tweens.Tween;
   private character: Character | null = null;
+  // 畫面上代表隊伍的角色：有派主角就顯示主角，否則顯示隊長
+  private displayHero: HeroId | null = null;
+  private bossMultText!: Phaser.GameObjects.Text;
   private heroScale = HERO_SCALE;
   private monster!: Phaser.GameObjects.Container;
   private monsterSprite!: Phaser.GameObjects.Image;
@@ -69,14 +75,16 @@ export default class MainScene extends Phaser.Scene {
 
   // 有自創主角就用主角的貼圖，否則用舊版英雄貼圖
   private heroTex(frame: AvatarFrame): string {
-    return this.character ? avatarKey(this.character, frame) : heroKey(useBattleStore.getState().hero, frame);
+    return this.character ? avatarKey(this.character, frame) : heroKey(this.displayHero ?? 'knight', frame);
   }
 
   create() {
     const s = useBattleStore.getState();
     this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
-    this.character = useSaveStore.getState().character;
+    const showPlayer = s.party.some(m => m.id === 'player');
+    this.character = showPlayer ? useSaveStore.getState().character : null;
+    this.displayHero = showPlayer ? null : (s.party[0]?.id as HeroId | undefined) ?? 'knight';
     if (this.character) registerAvatar(this, this.character);
     this.heroScale = this.character ? AVATAR_SCALE : HERO_SCALE;
     registerBackground(this, this.region);
@@ -112,7 +120,8 @@ export default class MainScene extends Phaser.Scene {
 
     // ---------- 畫面上方 HUD（格鬥遊戲式） ----------
     this.add.image(28, 30, 'heart').setScale(4).setDepth(80);
-    this.add.text(52, 12, this.character?.name ?? heroDef(s.hero).name, textStyle(22)).setDepth(80);
+    const lead = s.party.find(m => m.id === 'player') ?? s.party[0];
+    this.add.text(52, 12, `${lead?.name ?? ''}${s.party.length > 1 ? `  +${s.party.length - 1}` : ''}`, textStyle(22)).setDepth(80);
     this.playerBar = new PixelBar(this, 24, 54, 250, 16);
     this.playerHpText = this.add.text(274, 32, '', numStyle(12)).setOrigin(1, 0).setDepth(81);
     this.add.image(32, 96, 'coin').setScale(4).setDepth(80);
@@ -124,6 +133,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.comboNum = this.add.text(36, 150, '', numStyle(40)).setOrigin(0, 0.5).setDepth(85);
     this.comboLabel = this.add.text(40, 190, '', textStyle(18, '#ffcd4b')).setOrigin(0, 0.5).setDepth(85);
+    this.bossMultText = this.add.text(40, 222, '', textStyle(18, '#ff5af0')).setOrigin(0, 0.5).setDepth(85);
 
     const unsubscribe = useBattleStore.subscribe((state, prev) => this.sync(state, prev));
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
@@ -151,6 +161,7 @@ export default class MainScene extends Phaser.Scene {
     this.shieldBubble.setVisible(s.shield);
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
+    if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
     if (!prev) this.showCombo(s, 0);
 
@@ -183,7 +194,7 @@ export default class MainScene extends Phaser.Scene {
       return;
     }
     const tier = comboTier(s.combo);
-    const mult = comboMultiplier(s.combo, s.stats.comboCap).toFixed(1);
+    const mult = comboMultiplier(s.combo, s.stats.comboStep).toFixed(1);
     this.comboNum.setText(`${s.combo}`).setColor(tier.color).setAlpha(1).setY(150);
     this.comboLabel.setText(`COMBO  x${mult}${tier.label ? `  ${tier.label}` : ''}`).setColor(tier.color).setAlpha(1).setY(190);
     this.comboNum.setScale(1.6);
@@ -198,7 +209,8 @@ export default class MainScene extends Phaser.Scene {
     switch (event.kind) {
       case 'stage': return this.enterStage(s);
       case 'attack': return this.playAttack(event, s);
-      case 'hurt': return this.playHurt(event);
+      case 'hurt': return this.playHurt(event, s);
+      case 'skill': return this.playSkill(event);
       case 'shield': return this.playBlocked();
       case 'heal':
         sfx.heal();
@@ -227,7 +239,8 @@ export default class MainScene extends Phaser.Scene {
     const isRevenge = !!stage.revenge;
     this.monsterKind = monsterKindFor(s.stageIdx, isBoss, isRevenge);
     this.monsterScale = isRevenge ? 10 : isBoss ? 11 : this.monsterKind === 'bat' ? 7 : 7.5;
-    const name = `${isBoss ? '👑 ' : ''}${MONSTER_NAMES[this.monsterKind]}`;
+    const el = elementDef(s.monsterElement);
+    const name = `${isBoss ? '👑 ' : ''}${MONSTER_NAMES[this.monsterKind]}【${el.name}】`;
     this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : '#ffffff');
     this.monsterBar.set(1, true);
 
@@ -297,7 +310,10 @@ export default class MainScene extends Phaser.Scene {
   private playAttack(event: BattleEvent, s: State) {
     const damage = event.amount ?? 0;
     const killed = s.monsterHp <= 0;
-    const crit = damage >= BASE_DAMAGE * 1.5 || (s.combo >= 5 && s.combo % 5 === 0);
+    const crit = event.crit ?? false;
+    const member = s.party.find(m => m.id === event.member);
+    if (member && s.party.length > 1) popText(this, PLAYER_X, GROUND_Y - 150, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
+    if (event.bossQuestion) this.bossQuestionHit(s.bossMult);
     this.busy = true;
     this.heroIdle?.pause();
     this.heroSprite.setTexture(this.heroTex('attack'));
@@ -339,7 +355,7 @@ export default class MainScene extends Phaser.Scene {
     const colors = this.monsterColors();
     burst(this, hitX, hitY, [...colors, 0xffffff], crit ? 22 : 12, { speed: crit ? 260 : 180 });
 
-    popText(this, MONSTER_X + Phaser.Math.Between(-20, 20), hitY - 60, `${damage}`, crit ? 56 : 40, crit ? '#ffcd4b' : '#ffffff', { numeric: true });
+    popText(this, MONSTER_X + Phaser.Math.Between(-20, 20), hitY - 60, formatDamage(damage), crit ? 56 : 40, crit ? '#ffcd4b' : '#ffffff', { numeric: true });
     if (crit) {
       popText(this, MONSTER_X, hitY - 120, 'CRITICAL!', 30, '#ff7a3d', { rise: 40 });
       this.cameras.main.zoomTo(1.06, 80, 'Quad.easeOut', true);
@@ -350,6 +366,37 @@ export default class MainScene extends Phaser.Scene {
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
     if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
     else if (killed) this.busy = false;
+  }
+
+  // 魔王題答對：大字顯示累積倍率
+  private bossQuestionHit(mult: number) {
+    sfx.combo(20);
+    screenFlash(this, 0xff5af0, 0.35, 400);
+    popText(this, 400, 200, `魔王題 ×${formatDamage(mult)}!`, 44, '#ff5af0', { rise: 30, dur: 1000 });
+  }
+
+  private playSkill(event: BattleEvent) {
+    if (!event.skill) return;
+    const skill = SKILLS[event.skill];
+    sfx.heal();
+    screenFlash(this, 0x7fffd4, 0.25, 350);
+    burst(this, PLAYER_X, GROUND_Y - 60, [0x7fffd4, 0xffffff, 0xffcd4b], 20, { up: true, gravity: -40, speed: 160 });
+    this.banner(`${skill.icon} ${skill.name}`, '#7fffd4');
+    if (event.skill === 'guard') {
+      this.shieldBubble.setScale(0.2);
+      this.tweens.add({ targets: this.shieldBubble, scale: 1, duration: 250, ease: 'Back.easeOut' });
+    }
+  }
+
+  // 畫面中央的橫幅提示（敵人回合、技能名稱）
+  private banner(text: string, color: string) {
+    const { width } = this.scale;
+    const band = this.add.rectangle(width / 2, 250, width, 54, 0x1a1226, 0.8).setDepth(88).setScale(1, 0);
+    const label = this.add.text(width / 2, 250, text, textStyle(28, color, 6)).setOrigin(0.5).setDepth(89);
+    this.tweens.add({ targets: band, scaleY: 1, duration: 120 });
+    this.time.delayedCall(650, () => {
+      this.tweens.add({ targets: [band, label], alpha: 0, duration: 200, onComplete: () => { band.destroy(); label.destroy(); } });
+    });
   }
 
   private playKill(s: State) {
@@ -422,8 +469,9 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
-  private playHurt(event: BattleEvent) {
-    sfx.wrong();
+  private playHurt(event: BattleEvent, s: State) {
+    if (event.turnEnd) this.banner('敵人回合', '#ff8a8a'); else sfx.wrong();
+    const target = s.party.find(m => m.id === event.member);
     this.monsterLunge(() => {
       sfx.hurt();
       hitStop(this, 60);
@@ -434,6 +482,7 @@ export default class MainScene extends Phaser.Scene {
       this.tweens.add({ targets: this.hero, x: PLAYER_X - 30, duration: 80, yoyo: true });
       burst(this, PLAYER_X + 20, GROUND_Y - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
       popText(this, PLAYER_X, GROUND_Y - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
+      if (target && s.party.length > 1) popText(this, PLAYER_X, GROUND_Y - 165, target.hp <= 0 ? `${target.name} 倒下了` : target.name, 20, '#ffb0b8', { rise: 20, dur: 800 });
     });
   }
 

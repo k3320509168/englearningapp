@@ -1,9 +1,10 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { REVENGE_MAX_QUESTIONS, useBattleStore } from './battleStore';
+import { HASTE_BONUS, REVENGE_MAX_QUESTIONS, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
-import { ASSIST_STREAK, PLAYER_MAX_HP, questionKey, voiceFallback } from '../game/battle';
-import { GOLD, POTION_HEAL, SRS_INTERVALS, monsterAttack } from '../game/progression';
+import { ASSIST_STREAK, CAST_CONFIRM_TIME, ENEMY_TURN_TIME, PLAYER_MAX_HP, questionKey, voiceFallback } from '../game/battle';
+import { GOLD, SKILL_ENERGY, SRS_INTERVALS, monsterAttack } from '../game/progression';
+import { DEFAULT_CHARACTER } from '../game/character';
 import type { Question } from '../game/types';
 
 const state = () => useBattleStore.getState();
@@ -36,8 +37,10 @@ const playUntil = (stop: () => boolean, guard = 2000) => {
   }
 };
 
+// 預設：劍士主角＋騎士；亂數固定為 0.99（不暴擊、敵人打最後一位）
 const resetSave = (patch: Partial<ReturnType<typeof saved>> = {}) => {
-  useSaveStore.setState({ ...initialSave, settings: { ...initialSave.settings, showLessons: false }, ...patch });
+  setBattleRandom(() => 0.99);
+  useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, settings: { ...initialSave.settings, showLessons: false }, ...patch });
 };
 
 const startLevel = (patch: Partial<ReturnType<typeof saved>> = {}) => {
@@ -48,17 +51,20 @@ const startLevel = (patch: Partial<ReturnType<typeof saved>> = {}) => {
 describe('battle flow', () => {
   beforeEach(() => startLevel());
 
-  it('defeats the first monster with one correct answer and earns gold', () => {
+  it('needs a few correct answers to defeat the first monster, then earns gold', () => {
     answerCurrent();
-    expect(state().phase).toBe('monsterDown');
-    expect(state().runGold).toBe(GOLD.correct + GOLD.kill);
-    expect(saved().gold).toBe(GOLD.correct + GOLD.kill);
+    expect(state().phase).toBe('answering');
+    expect(state().monsterHp).toBeGreaterThan(0);
+    playUntil(() => state().phase === 'monsterDown');
+    expect(state().answers.length).toBeGreaterThanOrEqual(2);
+    expect(state().runGold).toBeGreaterThanOrEqual(GOLD.kill);
+    expect(saved().gold).toBe(state().runGold);
   });
 
   it('shows feedback, damages the player and records the mistake', () => {
     answerWrong();
     expect(state().phase).toBe('feedback');
-    expect(state().playerHp).toBe(state().playerMaxHp - monsterAttack(false));
+    expect(state().playerHp).toBe(state().playerMaxHp - monsterAttack(false, 0));
     expect(Object.keys(saved().mistakes)).toHaveLength(1);
     state().continueAfterFeedback();
     expect(state().phase).toBe('answering');
@@ -66,7 +72,7 @@ describe('battle flow', () => {
   });
 
   it('ends in game over after enough wrong answers, keeping earned gold', () => {
-    answerCurrent();
+    playUntil(() => state().phase === 'monsterDown');
     state().nextStage();
     const goldBefore = saved().gold;
     for (let i = 0; i < 40 && state().phase !== 'gameOver'; i++) {
@@ -93,7 +99,7 @@ describe('battle flow', () => {
 
   it('needs more than one hit on later monsters without Combo', () => {
     playUntil(() => state().stageIdx === 35 && state().phase === 'answering');
-    useBattleStore.setState({ combo: 0 });
+    useBattleStore.setState({ combo: 0, bossMult: 1 });
     answerCurrent();
     expect(state().monsterHp).toBeGreaterThan(0);
     expect(state().phase).toBe('answering');
@@ -106,11 +112,156 @@ describe('battle flow', () => {
   });
 });
 
-describe('heroes and upgrades', () => {
-  it('applies the knight HP bonus and HP upgrades', () => {
-    startLevel({ hero: 'knight', upgrades: { hp: 2, atk: 0, combo: 0, gold: 0 } });
-    expect(state().playerMaxHp).toBe(PLAYER_MAX_HP + 20 + 20);
+describe('party and upgrades', () => {
+  it('sums the party HP with upgrades (swordsman x1.0 + knight x1.2)', () => {
+    startLevel({ upgrades: { hp: 2, atk: 0, combo: 0, gold: 0 } });
+    const hp = PLAYER_MAX_HP + 20;
+    expect(state().playerMaxHp).toBe(hp + Math.round(hp * 1.2));
     expect(state().playerHp).toBe(state().playerMaxHp);
+  });
+
+  it('takes turns attacking', () => {
+    startLevel();
+    answerCurrent();
+    const first = state().event?.member;
+    answerCurrent();
+    expect(state().event?.member).not.toBe(first);
+  });
+
+  it('can fight without the protagonist', () => {
+    startLevel({ party: ['knight'] });
+    expect(state().party.map(m => m.id)).toEqual(['knight']);
+  });
+
+  it('loses only when every member is down', () => {
+    startLevel();
+    for (let i = 0; i < 60 && state().phase !== 'gameOver'; i++) { answerWrong(); state().continueAfterFeedback(); }
+    expect(state().phase).toBe('gameOver');
+    expect(state().party.every(m => m.hp === 0)).toBe(true);
+  });
+});
+
+describe('timer', () => {
+  beforeEach(() => startLevel());
+
+  it('counts a timeout as wrong and shows the answer', () => {
+    state().tick(state().questionLimit + 1);
+    expect(state().phase).toBe('feedback');
+    expect(state().feedback?.timeout).toBe(true);
+    expect(state().playerHp).toBeLessThan(state().playerMaxHp);
+    // 看解說時不計時
+    const left = state().turnLeft;
+    state().tick(5000);
+    expect(state().turnLeft).toBe(left);
+  });
+
+  it('lets the enemy attack when the turn runs out, then starts a new turn', () => {
+    useBattleStore.setState({ turnLeft: 0 });
+    answerCurrent();
+    expect(state().phase).toBe('enemyTurn');
+    expect(state().event?.turnEnd).toBe(true);
+    expect(state().playerHp).toBeLessThan(state().playerMaxHp);
+    state().tick(ENEMY_TURN_TIME);
+    expect(state().phase).toBe('answering');
+    expect(state().turnLeft).toBe(state().turnLimit);
+  });
+
+  it('gives the current question its full time even when the turn is almost over', () => {
+    useBattleStore.setState({ turnLeft: 100 });
+    state().tick(500);
+    expect(state().phase).toBe('answering');
+  });
+});
+
+describe('boss questions', () => {
+  beforeEach(() => startLevel());
+
+  it('every 5th question is a boss question; multipliers chain x2 then x3', () => {
+    playUntil(() => state().isBossQuestion);
+    expect(state().questionCount % 5).toBe(0);
+    answerCurrent();
+    expect(state().bossMult).toBe(2);
+    expect(state().event?.bossQuestion).toBe(true);
+    playUntil(() => state().isBossQuestion);
+    answerCurrent();
+    expect(state().bossMult).toBe(6);
+  });
+
+  it('a wrong answer resets combo and the multiplier', () => {
+    playUntil(() => state().isBossQuestion);
+    answerCurrent();
+    playUntil(() => state().phase === 'answering' && !state().isBossQuestion);
+    answerWrong();
+    expect(state().combo).toBe(0);
+    expect(state().bossMult).toBe(1);
+  });
+
+  it('prefers past mistakes', () => {
+    const q: Question = { type: 'spell', desc: '請拼出：測試', ans: 'MISTAKEWORD' };
+    startLevel({ mistakes: { [questionKey(q)]: { question: q, wrongCount: 1, lastWrongAt: 0, box: 0, dueAt: 0 } } });
+    playUntil(() => state().isBossQuestion);
+    expect(state().original?.ans).toBe('MISTAKEWORD');
+  });
+});
+
+describe('skills', () => {
+  beforeEach(() => startLevel());
+
+  const fillEnergy = () => {
+    for (let i = 0; i < SKILL_ENERGY; i++) {
+      playUntil(() => state().phase === 'answering');
+      answerCurrent();
+    }
+    playUntil(() => state().phase === 'answering');
+  };
+
+  it('needs full energy, pauses the clock while confirming, and can be cancelled', () => {
+    state().requestSkill(0);
+    expect(state().phase).toBe('answering');
+    fillEnergy();
+    const turnLeft = state().turnLeft;
+    state().requestSkill(0);
+    expect(state().phase).toBe('casting');
+    state().tick(1000);
+    expect(state().turnLeft).toBe(turnLeft);
+    state().tick(CAST_CONFIRM_TIME);
+    expect(state().phase).toBe('answering');
+    expect(state().party[0].energy).toBe(SKILL_ENERGY);
+  });
+
+  it('haste (warrior) adds turn time', () => {
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'warrior' } });
+    fillEnergy();
+    const turnLeft = state().turnLeft;
+    state().requestSkill(0);
+    state().confirmSkill();
+    expect(state().turnLeft).toBe(turnLeft + HASTE_BONUS);
+    expect(state().party[0].energy).toBe(0);
+  });
+
+  it('guard (swordsman) keeps combo and blocks damage on the next mistake', () => {
+    fillEnergy();
+    const combo = state().combo;
+    state().requestSkill(0);
+    state().confirmSkill();
+    const hp = state().playerHp;
+    answerWrong();
+    expect(state().combo).toBe(combo);
+    expect(state().playerHp).toBe(hp);
+  });
+
+  it('amplify (mage) doubles damage this turn', () => {
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'mage' }, party: ['player'] });
+    useBattleStore.setState({ combo: 0, questionCount: 1, party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
+    const before = state().monsterHp;
+    answerCurrent();
+    const normal = before - state().monsterHp;
+    useBattleStore.setState({ combo: 0 });
+    state().requestSkill(0);
+    expect(state().phase).toBe('casting');
+    state().confirmSkill();
+    answerCurrent();
+    expect(Math.abs(state().event!.amount! - normal * 2)).toBeLessThanOrEqual(1);
   });
 });
 
@@ -121,9 +272,9 @@ describe('items', () => {
     state().consumeItem('potion');
     expect(saved().items.potion).toBe(1);
     answerWrong(); state().continueAfterFeedback();
-    const hp = state().playerHp;
+    expect(state().playerHp).toBeLessThan(state().playerMaxHp);
     state().consumeItem('potion');
-    expect(state().playerHp).toBe(Math.min(state().playerMaxHp, hp + POTION_HEAL));
+    expect(state().playerHp).toBe(state().playerMaxHp);
     expect(saved().items.potion).toBe(0);
   });
 
@@ -161,7 +312,8 @@ describe('revenge boss (SRS)', () => {
         [questionKey(q2)]: { question: q2, wrongCount: 1, lastWrongAt: now, box: 0, dueAt: now + 60_000 }, // 還沒到期
       },
     });
-    playUntil(() => state().stageIdx === 9);
+    // 從第 10 關開始，避免錯題在前面的魔王題就先被複習掉
+    state().startLevel(LEVELS[0], undefined, 9);
     const boss = state().stages[9];
     expect(boss.revenge).toBe(true);
     expect(boss.questions.map(q => q.ans)).toEqual(['REVENGEONE']);
@@ -208,7 +360,7 @@ describe('save migration', () => {
     }, 2);
     expect(migrated.unlockedIndex).toBe(2);
     expect(migrated.gold).toBe(0);
-    expect(migrated.hero).toBe('knight');
+    expect(migrated.party).toEqual(['player', 'knight']);
     expect(migrated.settings.speechRate).toBe(1.1);
     expect(migrated.mistakes[questionKey(q)]).toMatchObject({ box: 0, dueAt: 500, wrongCount: 2 });
   });

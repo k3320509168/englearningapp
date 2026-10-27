@@ -13,6 +13,7 @@ export function BattleStatusBar() {
   const items = useSaveStore(s => s.items);
   const consumeItem = useBattleStore(s => s.consumeItem);
   const canUse = phase === 'answering';
+  // 藥水：全隊滿血時不能用
   // 已經有效果時不能再用（例如滿血時不能喝藥水）
   const disabledReason: Record<string, boolean> = {
     potion: playerHp >= playerMaxHp,

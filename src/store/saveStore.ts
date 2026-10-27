@@ -10,6 +10,9 @@ import {
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
+import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '../game/growth';
+import { MAX_PLUS, enhanceCost, equipDef, resolveCost } from '../game/equipment';
+import type { OwnedEquip, Slot } from '../game/equipment';
 import { normalizeCharacter } from '../game/character';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
@@ -17,7 +20,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 9;
+export const SAVE_VERSION = 10;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -71,6 +74,12 @@ interface SaveData {
   mapStars: Record<string, boolean[]>;
   bestStage: Record<string, number>;
   storySeen: string[];
+  // 成長：主角等級與轉職路線、英雄等級、素材、裝備
+  player: { level: number; xp: number; classPath: string[] };
+  heroLevel: Record<HeroId, number>;
+  materials: Record<string, number>;
+  equipment: OwnedEquip[];
+  equipped: Partial<Record<Slot, string>>;
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -100,6 +109,14 @@ interface SaveActions {
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
+  gainXp: (n: number) => number; // 回傳升了幾級
+  advanceClass: (nodeId: string) => boolean;
+  addMaterials: (drops: Record<string, number>) => void;
+  forge: (defId: string) => boolean;
+  enhance: (uid: string) => boolean;
+  equip: (uid: string) => void;
+  unequip: (slot: Slot) => void;
+  trainHero: (id: HeroId) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
   resetProgress: () => void;
@@ -126,7 +143,15 @@ export const initialSave: SaveData = {
   mapStars: {},
   bestStage: {},
   storySeen: [],
+  player: { level: 1, xp: 0, classPath: [] },
+  heroLevel: {},
+  materials: {},
+  equipment: [],
+  equipped: {},
 };
+
+// 英雄訓練的金幣：等級越高、稀有度越高越貴
+export const trainCost = (level: number, rarityIdx: number) => 30 * level * (rarityIdx + 1);
 
 // 把召喚到的英雄加進存檔：新英雄直接擁有（隊伍有空位就加入），重複的轉成碎片
 function grantHero(s: SaveData, r: SummonResult): { patch: Pick<SaveData, 'heroes' | 'party' | 'heroShards'>; outcome: SummonOutcome } {
@@ -154,6 +179,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v6 → v7：單一出戰英雄改為 4 人隊伍（主角＋原本選的英雄）。
   // v7 → v8：英雄改為 50 位＋召喚；舊英雄保留，並贈送起始召喚券。
   // v8 → v9：地圖三星、最遠關卡、劇情紀錄；舊玩家的最遠關卡以目前進度補上，並視為看過序章。
+  // v9 → v10：主角等級／轉職、英雄等級、素材、裝備（預設值補齊）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -164,12 +190,20 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     party: data.party ?? ['player', data.hero ?? 'knight'],
     summonCounter: { ...initialSave.summonCounter, ...data.summonCounter },
     bestStage: data.bestStage ?? { ...data.levelProgress },
+    player: { ...initialSave.player, ...data.player },
     storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
   migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
     key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 },
   ]));
+  // 舊玩家補發已打過關卡的經驗值（每關約 20，後面的區域較多）
+  if (version >= 1 && version < 10 && !data.player) {
+    const regionIds = Object.keys(migrated.bestStage);
+    const xp = regionIds.reduce((sum, id, i) => sum + (migrated.bestStage[id] ?? 0) * 20 * xpScale(i), 0);
+    const r = addXp(1, 0, Math.round(xp));
+    migrated.player = { ...migrated.player, level: r.level, xp: r.xp };
+  }
   migrated.heroes = migrated.heroes.filter(isHeroId);
   if (migrated.heroes.length === 0) migrated.heroes = ['knight'];
   migrated.party = migrated.party.filter(id => id === 'player' || migrated.heroes.includes(id));
@@ -262,6 +296,82 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         },
 
         markStorySeen: (id) => set(s => (s.storySeen.includes(id) ? {} : { storySeen: [...s.storySeen, id] })),
+
+        gainXp: (n) => {
+          const p = get().player;
+          const r = addXp(p.level, p.xp, n);
+          set({ player: { ...p, level: r.level, xp: r.xp } });
+          return r.levelsGained;
+        },
+
+        // 轉職：必須是目前路線的下一階，且達到等級與通關條件
+        advanceClass: (nodeId) => {
+          const s = get();
+          const n = classNode(nodeId);
+          if (!n || !s.character) return false;
+          const options = nextOptions(s.character.classId, s.player.classPath);
+          if (!options.some(o => o.id === nodeId) || !canAdvance(n.tier, s.player.level, s.unlockedIndex)) return false;
+          set({ player: { ...s.player, classPath: [...s.player.classPath, nodeId] } });
+          return true;
+        },
+
+        addMaterials: (drops) => set(s => {
+          const materials = { ...s.materials };
+          for (const [k, v] of Object.entries(drops)) materials[k] = (materials[k] ?? 0) + v;
+          return { materials };
+        }),
+
+        forge: (defId) => {
+          const s = get();
+          const def = equipDef(defId);
+          if (!def || !s.character) return false;
+          if ((def.requires?.regionsCleared ?? 0) > s.unlockedIndex) return false;
+          if ((def.requires?.classTier ?? 0) > s.player.classPath.length) return false;
+          const need = resolveCost(def, s.character.element);
+          if (Object.entries(need).some(([k, v]) => (s.materials[k] ?? 0) < v)) return false;
+          return purchase(def.cost.gold, st => {
+            const materials = { ...st.materials };
+            for (const [k, v] of Object.entries(need)) materials[k] -= v;
+            const item: OwnedEquip = { uid: `${defId}-${Date.now().toString(36)}-${st.equipment.length}`, defId, plus: 0 };
+            // 該欄位還空著就直接裝上
+            const equipped = st.equipped[def.slot] ? st.equipped : { ...st.equipped, [def.slot]: item.uid };
+            return { materials, equipment: [...st.equipment, item], equipped };
+          });
+        },
+
+        enhance: (uid) => {
+          const s = get();
+          const item = s.equipment.find(e => e.uid === uid);
+          if (!item || item.plus >= MAX_PLUS) return false;
+          const cost = enhanceCost(item);
+          if ((s.materials.ore ?? 0) < cost.ore) return false;
+          return purchase(cost.gold, st => ({
+            materials: { ...st.materials, ore: st.materials.ore - cost.ore },
+            equipment: st.equipment.map(e => (e.uid === uid ? { ...e, plus: e.plus + 1 } : e)),
+          }));
+        },
+
+        equip: (uid) => set(s => {
+          const item = s.equipment.find(e => e.uid === uid);
+          const def = item && equipDef(item.defId);
+          return def ? { equipped: { ...s.equipped, [def.slot]: uid } } : {};
+        }),
+
+        unequip: (slot) => set(s => {
+          const equipped = { ...s.equipped };
+          delete equipped[slot];
+          return { equipped };
+        }),
+
+        // 英雄訓練：花金幣升一級，最高到主角的等級
+        trainHero: (id) => {
+          const s = get();
+          if (!s.heroes.includes(id)) return false;
+          const level = s.heroLevel[id] ?? 1;
+          if (level >= Math.min(MAX_LEVEL, s.player.level)) return false;
+          const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(heroDef(id).rarity);
+          return purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
+        },
         buyTicket: () => purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1 })),
 
         // 召喚：每抽 1 張券；有保底與累積點數
@@ -325,6 +435,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
+        player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
       }),
     },
   ),

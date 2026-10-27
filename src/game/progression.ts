@@ -110,11 +110,13 @@ export interface DamageInput {
   element: number; // 屬性相剋倍率
   amplify: boolean;
   crit: boolean;
-  speed?: number;  // 快答加成
+  speed?: number;    // 快答加成
+  critMult?: number; // 暴擊倍率（基本 ×2，轉職可提高）
+  extra?: number;    // 其他被動倍率（每關第一擊、低血量加成…）
 }
 
 export function computeDamage(d: DamageInput): number {
-  const mult = comboMultiplier(d.combo, d.comboStep) * d.bossMult * d.element * (d.amplify ? 2 : 1) * (d.crit ? 2 : 1) * (d.speed ?? 1);
+  const mult = comboMultiplier(d.combo, d.comboStep) * d.bossMult * d.element * (d.amplify ? 2 : 1) * (d.crit ? d.critMult ?? 2 : 1) * (d.speed ?? 1) * (d.extra ?? 1);
   return Math.max(1, Math.round(d.atk * mult));
 }
 

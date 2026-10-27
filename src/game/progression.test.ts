@@ -74,7 +74,7 @@ describe('party', () => {
     expect(party[1].maxHp).toBe(100);
     expect(party[1].name).toBe('KNIGHT');
     expect(partyHp(party)).toEqual({ hp: 230, maxHp: 230 });
-    expect(buildParty(['knight'], ['knight'], null, base, { knight: 1 })[0].maxHp).toBe(112);
+    expect(buildParty(['knight'], ['knight'], null, base, { tiers: { knight: 1 } })[0].maxHp).toBe(112);
   });
 
   it('can leave the protagonist out, but never be empty', () => {

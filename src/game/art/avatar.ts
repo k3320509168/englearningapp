@@ -138,7 +138,8 @@ const FACES: ((p: Pen, female: boolean) => void)[] = [
   (p, f) => { p.dot(4, 4, 's'); p.dot(6, 4, 's'); p.dot(4, 5, 'E'); p.dot(6, 5, 'E'); p.rect(5, 7, 6, 7, f ? 'P' : 'm'); },
 ];
 
-export function composeAvatar(c: Character, frame: AvatarFrame): { rows: string[]; palette: Record<string, string> } {
+// tier：轉職階段。一轉以上背後有屬性色披風，二轉以上頭戴金冠
+export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { rows: string[]; palette: Record<string, string> } {
   const g = new Grid();
   const body = BODIES[c.body] ?? BODIES[1];
   const female = c.gender === 'female';
@@ -152,6 +153,12 @@ export function composeAvatar(c: Character, frame: AvatarFrame): { rows: string[
 
   // 1. 背後：長髮、箭袋
   hair.back?.(hp);
+  if (tier >= 1) {
+    // 披風：從肩膀垂到小腿，往後飄
+    g.rect(l - 2, ty0, l - 1, ty1 + 3, 'Q');
+    g.rect(l - 3, ty0 + 3, l - 3, ty1 + 3, 'Q');
+    g.rect(l - 3, ty1 + 3, l - 1, ty1 + 3, 'L');
+  }
   if (c.classId === 'archer') {
     g.rect(l - 2, ty0 - 2, l - 1, ty0 + 4, 'D');
     g.rect(l - 2, ty0 - 2, l - 2, ty0 + 4, 'd');
@@ -209,6 +216,12 @@ export function composeAvatar(c: Character, frame: AvatarFrame): { rows: string[
 
   // 6. 頭髮
   hair.front(hp);
+  if (tier >= 2) {
+    // 金冠（覺醒時中間鑲屬性寶石）
+    hp.rect(1, -2, 6, -2, 'T');
+    hp.dot(1, -3, 'T'); hp.dot(3, -3, 'T'); hp.dot(4, -3, 'T'); hp.dot(6, -3, 'T');
+    if (tier >= 3) hp.dot(3, -2, 'Q');
+  }
 
   // 7. 戰士的護肩
   if (c.classId === 'warrior') {
@@ -298,7 +311,7 @@ function drawAttackWeapon(g: Grid, cls: ClassId, hx: number, hy: number) {
 }
 
 // 外觀改變時用不同的貼圖 key，不必刪除舊貼圖（其他場景可能還在用）
-export function avatarKey(c: Character, frame: AvatarFrame): string {
-  return `avatar_${c.classId}_${c.element}_${c.gender}_${c.face}_${c.body}_${c.skin}_${c.hair}_${c.hairColor}_${frame}`;
+export function avatarKey(c: Character, frame: AvatarFrame, tier = 0): string {
+  return `avatar_${c.classId}_${c.element}_${c.gender}_${c.face}_${c.body}_${c.skin}_${c.hair}_${c.hairColor}_t${tier}_${frame}`;
 }
 

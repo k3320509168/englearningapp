@@ -51,7 +51,7 @@ export function PartyBar() {
   })));
   const character = useSaveStore(s => s.character);
   const portraits = useMemo(() => Object.fromEntries(party.map(m => [
-    m.id, m.id === 'player' && character ? avatarDataUrl(character, 'idle', 2) : heroDataUrl(m.id, 2),
+    m.id, m.id === 'player' && character ? avatarDataUrl(character, 'idle', 2, useSaveStore.getState().player.classPath.length) : heroDataUrl(m.id, 2),
   ])), [party, character]);
   const striker = isBossQuestion ? leaderIndex(party) : attackerIdx;
 

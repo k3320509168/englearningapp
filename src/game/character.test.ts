@@ -81,7 +81,7 @@ describe('主角像素圖', () => {
       for (let body = 0; body < BODY_NAMES.length; body++) check({ ...DEFAULT_CHARACTER, classId: cls.id, gender, body });
     }
     ELEMENTS.forEach(e => check({ ...DEFAULT_CHARACTER, element: e.id }));
-  });
+  }, 30_000); // 會畫出數百種組合，較慢
 
   it('不同髮型畫出來不一樣', () => {
     const shapes = new Set(HAIR_NAMES.map((_, hair) => composeAvatar({ ...DEFAULT_CHARACTER, hair }, 'idle').rows.join('\n')));

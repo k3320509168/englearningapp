@@ -10,6 +10,8 @@ import {
 } from '../game/heroes';
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
+import { trainCost } from '../store/saveStore';
+import { LEVEL_STAT } from '../game/growth';
 import type { MemberId } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { keepFocus } from './keepFocus';
@@ -19,16 +21,16 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, tickets, toggleMember, setLeader, tierUp } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, toggleMember, setLeader, tierUp, trainHero } = useSaveStore();
   const { closeModal, openModal } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
 
   const portraits = useMemo(() => {
     const map: Record<string, string> = Object.fromEntries(HEROES.map(h => [h.id, heroDataUrl(h.id, 2)]));
-    if (character) map.player = avatarDataUrl(character, 'idle', 2);
+    if (character) map.player = avatarDataUrl(character, 'idle', 2, player.classPath.length);
     return map;
-  }, [character]);
+  }, [character, player.classPath.length]);
 
   const list = HEROES
     .filter(h => filter === 'all' || (filter === 'owned' ? heroes.includes(h.id) : currentRarity(h, heroTier[h.id] ?? 0) === filter))
@@ -139,6 +141,10 @@ export default function HeroModal() {
     const shards = heroShards[id] ?? 0;
     const need = TIER_UP_SHARDS[h.rarity];
     const canTierUp = owned && tier === 0 && shards >= need && gold >= TIER_UP_GOLD[h.rarity];
+    const level = heroLevel[id] ?? 1;
+    const levelMult = 1 + (level - 1) * LEVEL_STAT;
+    const cost = trainCost(level, ['N', 'R', 'SR', 'SSR'].indexOf(h.rarity));
+    const levelCap = level >= player.level;
     return (
       <section className="hero-detail" style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}>
         <img src={pics[id]} alt="" className={owned ? '' : 'is-locked'} />
@@ -148,7 +154,7 @@ export default function HeroModal() {
             {' '}<span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span>
           </h3>
           <p className="muted">{h.id}：{h.meaning}・{heroTitle(h)}（{classDef(h.classId).role}）</p>
-          <p className="hero-stats">HP ×{stats.hp.toFixed(2)} ・ 攻擊 ×{stats.atk.toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
+          <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
           <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
           {owned ? (
             <>
@@ -158,6 +164,11 @@ export default function HeroModal() {
                   {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => tierUp(id)} disabled={!canTierUp}>升品階</button>
                 </p>
               ) : <p className="tier-line">✨ 已升品階（{rarity}）</p>}
+              <p className="tier-line">
+                訓練 Lv {level} → {level + 1}：🪙 {cost}
+                {' '}<button className="btn btn-small" onMouseDown={keepFocus} onClick={() => trainHero(id)} disabled={levelCap || gold < cost}>訓練</button>
+                {levelCap && <small className="muted">（英雄等級不能超過主角 Lv {player.level}）</small>}
+              </p>
               {renderMemberButtons(id, inParty, pos, full)}
             </>
           ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}

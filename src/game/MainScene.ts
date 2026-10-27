@@ -14,6 +14,7 @@ import type { AvatarFrame } from './art/avatar';
 import { elementDef } from './character';
 import type { Character, Element, ElementDef } from './character';
 import { useSaveStore } from '../store/saveStore';
+import { materialIcon } from './equipment';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
 import { PixelBar, burst, hitStop, labelStyle, numStyle, popText, screenFlash, slashArc, slowMo, textStyle } from './fx';
@@ -65,6 +66,7 @@ export default class MainScene extends Phaser.Scene {
   private layers: { sprite: Phaser.GameObjects.TileSprite; speed: number }[] = [];
   private fighters: Fighter[] = [];
   private character: Character | null = null;
+  private tier = 0; // 主角轉職階段（外觀）
   private bossMultText!: Phaser.GameObjects.Text;
   private monster!: Phaser.GameObjects.Container;
   private monsterSprite!: Phaser.GameObjects.Image;
@@ -105,7 +107,7 @@ export default class MainScene extends Phaser.Scene {
     const pos = FORMATION[slot] ?? FORMATION[FORMATION.length - 1];
     const isPlayer = m.id === 'player' && this.character !== null;
     if (!isPlayer) registerHero(this, m.id);
-    const frame = (f: AvatarFrame) => (isPlayer ? avatarKey(this.character!, f) : heroKey(m.id, f));
+    const frame = (f: AvatarFrame) => (isPlayer ? avatarKey(this.character!, f, this.tier) : heroKey(m.id, f));
     const scale = AVATAR_SCALE;
     const homeY = GROUND_Y + pos.dy;
     // 腳下的影子與屬性光環
@@ -138,7 +140,8 @@ export default class MainScene extends Phaser.Scene {
     this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
     this.character = useSaveStore.getState().character;
-    if (this.character) registerAvatar(this, this.character);
+    this.tier = useSaveStore.getState().player.classPath.length;
+    if (this.character) registerAvatar(this, this.character, this.tier);
     registerBackground(this, this.region);
     this.tweens.timeScale = 1;
     this.busy = false;
@@ -397,6 +400,16 @@ export default class MainScene extends Phaser.Scene {
     const f = this.fighterFor(event.member);
     if (member && s.party.length > 1) popText(this, f.homeX, f.homeY - 140, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
     if (event.bossQuestion) this.bossQuestionHit(s.bossMult);
+    if (event.levelUp) this.time.delayedCall(250, () => {
+      sfx.victory();
+      burst(this, f.homeX, f.homeY - 60, [0xffcd4b, 0xffffff, 0x4cc9f0], 24, { up: true, gravity: -80, speed: 180 });
+      popText(this, f.homeX, f.homeY - 200, `LEVEL UP!  Lv ${event.levelUp}`, 30, '#ffcd4b', { rise: 40, dur: 1400 });
+    });
+    if (event.guardGained) this.time.delayedCall(350, () => popText(this, PLAYER_X, GROUND_Y - 220, '🛡️ 守護觸發', 22, '#7fffd4', { rise: 20, dur: 900 }));
+    if (event.drops && Object.keys(event.drops).length) {
+      const text = Object.entries(event.drops).map(([k, v]) => `${materialIcon(k)}+${v}`).join(' ');
+      this.time.delayedCall(500, () => popText(this, MONSTER_X, GROUND_Y - 200, text, 22, '#e8e6ff', { rise: 30, dur: 1200 }));
+    }
     if (event.fast) popText(this, f.homeX + 40, f.homeY - 175, event.fast >= 1.5 ? 'FAST! ×1.5' : 'QUICK ×1.2', 22, '#7fffd4', { rise: 30, dur: 700 });
     this.busy = true;
     f.idle?.pause();

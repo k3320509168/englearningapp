@@ -332,15 +332,15 @@ export function monsterName(kind: MonsterKind, el: Element): string {
   return kind === 'ghost' || kind === 'chest' ? MONSTER_NAMES[kind] : `${ELEMENT_PREFIX[el]}${MONSTER_NAMES[kind]}`;
 }
 
-export function registerAvatar(scene: Phaser.Scene, c: Character) {
+export function registerAvatar(scene: Phaser.Scene, c: Character, tier = 0) {
   (['idle', 'attack'] as AvatarFrame[]).forEach(frame => {
-    const { rows, palette } = composeAvatar(c, frame);
-    register(scene, avatarKey(c, frame), rows, palette);
+    const { rows, palette } = composeAvatar(c, frame, tier);
+    register(scene, avatarKey(c, frame, tier), rows, palette);
   });
 }
 
-export function avatarDataUrl(c: Character, frame: AvatarFrame = 'idle', scale = 6): string {
-  const { rows, palette } = composeAvatar(c, frame);
+export function avatarDataUrl(c: Character, frame: AvatarFrame = 'idle', scale = 6, tier = 0): string {
+  const { rows, palette } = composeAvatar(c, frame, tier);
   return pixelDataUrl(rows, palette, scale);
 }
 

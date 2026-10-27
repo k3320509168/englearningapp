@@ -1,6 +1,7 @@
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { classDef } from '../game/character';
+import { currentClassName } from '../game/growth';
 import { keepFocus } from './keepFocus';
 
 // 地圖畫面上方的工具列：金幣、英雄、商店、圖鑑、說明、設定
@@ -8,6 +9,7 @@ export default function MapToolbar() {
   const gold = useSaveStore(s => s.gold);
   const partySize = useSaveStore(s => s.party.length);
   const tickets = useSaveStore(s => s.tickets);
+  const player = useSaveStore(s => s.player);
   const character = useSaveStore(s => s.character);
   const mistakeCount = useSaveStore(s => Object.keys(s.mistakes).length);
   const openModal = useUiStore(s => s.openModal);
@@ -25,7 +27,7 @@ export default function MapToolbar() {
       </div>
       <nav className="toolbar-row toolbar-nav">
         {character && (
-          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('character')}>🛡️ {character.name}・{classDef(character.classId).name}</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('growth')}>🛡️ Lv{player.level} {character.name}・{currentClassName(classDef(character.classId).name, player.classPath)}</button>
         )}
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('heroes')}>⚔️ 隊伍 {partySize}/4</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚 🎫{tickets}</button>

@@ -1001,3 +1001,43 @@ button { font: inherit; color: inherit; }
 .star-result ul { list-style: none; margin: 0; padding: 0; text-align: left; display: inline-block; line-height: 1.8; font-size: 14px; color: var(--muted); }
 .star-result li.met { color: var(--good); }
 .star-gain { margin: 6px 0 0; color: var(--accent); font-family: var(--font-ui); }
+
+/* ---------- 成長：主角、轉職、裝備、鍛造 ---------- */
+.growth-head { display: flex; gap: 14px; align-items: flex-start; padding: 12px; background: radial-gradient(circle at 15% 50%, color-mix(in srgb, var(--el) 30%, transparent), var(--panel-2) 60%); }
+.growth-head img { flex: none; width: 96px; image-rendering: pixelated; }
+.growth-head h3 { margin: 0 0 6px; font-family: var(--font-num); font-size: 16px; color: var(--accent); }
+.growth-head p { margin: 6px 0; font-size: 14px; }
+.xp-bar { position: relative; height: 18px; border: 2px solid var(--ink); background: var(--bg); }
+.xp-bar span { display: block; height: 100%; background: linear-gradient(90deg, #4cc9f0, #a78bfa); }
+.xp-bar small { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-num); font-size: 8px; text-shadow: 0 1px 0 #000; }
+.mods-line { color: var(--good); font-size: 13px; }
+.path-steps { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 8px; padding: 0; }
+.path-steps li { padding: 4px 10px; border: 2px solid var(--ink); border-radius: 4px; background: var(--panel-2); font-family: var(--font-ui); }
+.path-steps li + li::before { content: '→ '; color: var(--muted); }
+.path-steps li.is-done:last-child { background: var(--accent); color: #2a1a00; }
+.req-ok { color: var(--good); }
+.advance-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+.advance-card { display: flex; flex-direction: column; gap: 4px; padding: 10px; border: var(--px) solid var(--ink); border-radius: 6px; background: var(--panel-2); font-size: 14px; }
+.advance-card b { font-family: var(--font-ui); font-size: 17px; }
+.advance-card .btn { align-self: flex-start; margin-top: 4px; }
+.material-bar { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; font-size: 14px; }
+.material-bar b { font-family: var(--font-num); font-size: 11px; color: var(--accent); }
+.gear-slots, .gear-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.gear-slot, .gear-item {
+  --rarity: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 2px solid color-mix(in srgb, var(--rarity) 70%, var(--ink));
+  background: color-mix(in srgb, var(--rarity) 8%, var(--panel-2));
+}
+.gear-slot > div, .gear-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.gear-slot b, .gear-info b { font-family: var(--font-ui); }
+.gear-icon { font-size: 26px; }
+.gear-item.is-locked { opacity: 0.6; }
+.cost-line { font-size: 12px; }
+.cost-line .short { color: var(--bad); }
+.lock-text { font-size: 12px; }
+.drop-line { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }

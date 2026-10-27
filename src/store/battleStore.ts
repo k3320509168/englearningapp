@@ -16,9 +16,12 @@ import {
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
 import type { Element } from '../game/character';
-import { buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, partyHp, skillReady } from '../game/party';
+import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, partyHp, skillReady, teamGuardEvery, teamTimeBonus } from '../game/party';
+import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
 import { dueMistakes, useSaveStore } from './saveStore';
+import { XP, xpScale } from '../game/growth';
+import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey } from '../game/regions';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import type { MapRunStats } from '../game/stars';
@@ -43,6 +46,9 @@ export interface BattleEvent {
   member?: MemberId;       // 出手或受傷的隊員
   bossQuestion?: boolean;  // 這一擊來自魔王題
   skill?: SkillId;
+  levelUp?: number;                 // 主角升到第幾級
+  guardGained?: boolean;            // 被動守護觸發
+  drops?: Record<string, number>;   // 擊倒後的素材
 }
 
 // 地圖結算：這張地圖拿到的星星（與先前最佳紀錄合併前）、這次新拿到幾顆
@@ -111,6 +117,9 @@ interface BattleState {
   runGold: number;
   mapStats: MapRunStats; // 這張地圖的戰績（三星評價用）
   mapResult: MapResult | null;
+  runXp: number;
+  runDrops: Record<string, number>;
+  stageHits: number; // 這一關打出的攻擊數（每關第一擊加成用）
 
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
@@ -162,6 +171,35 @@ function pickBossQuestion(exclude: Question | null): Question {
   return decks!.boss();
 }
 
+// 從存檔組出隊伍的成長資料（英雄品階與等級、主角等級／轉職／裝備）
+function partyOptions(): PartyOptions {
+  const sv = save();
+  return {
+    tiers: sv.heroTier,
+    heroLevels: sv.heroLevel,
+    growth: {
+      level: sv.player.level,
+      classPath: sv.player.classPath,
+      equipped: Object.values(sv.equipped).map(uid => sv.equipment.find(e => e.uid === uid)).filter(e => e !== undefined),
+    },
+  };
+}
+
+// 主角升級：用新能力重算，保留已受的傷害
+function refreshPlayer(party: Member[]): Member[] {
+  return party.map(m => {
+    if (m.id !== 'player') return m;
+    const fresh = buildMember('player', save().character, playerStats({ upgrades: save().upgrades }), partyOptions());
+    return { ...fresh, hp: Math.max(0, Math.min(fresh.maxHp, m.hp + (fresh.maxHp - m.maxHp))), energy: m.energy };
+  });
+}
+
+const mergeDrops = (a: Record<string, number>, b: Record<string, number>) => {
+  const out = { ...a };
+  for (const [k, v] of Object.entries(b)) out[k] = (out[k] ?? 0) + v;
+  return out;
+};
+
 const withTotals = (party: Member[]) => {
   const { hp, maxHp } = partyHp(party);
   return { party, playerHp: hp, playerMaxHp: maxHp };
@@ -172,7 +210,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
   // 新題目的計時：20 秒，專注技能每題再多 5 秒
   const freshTimer = (focus: boolean) => {
-    const limit = QUESTION_LIMIT + (focus ? FOCUS_BONUS : 0);
+    const limit = QUESTION_LIMIT + (focus ? FOCUS_BONUS : 0) + teamTimeBonus(get().party);
     return { questionLimit: limit, questionLeft: limit, overtime: false };
   };
 
@@ -211,6 +249,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       monsterMaxHp: maxHp,
       monsterElement: monsterElement(stageIdx, s.levelIdx, stage.revenge),
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
+      stageHits: 0,
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
@@ -312,7 +351,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const bossMult = s.isBossQuestion && !s.overtime ? s.bossMult * bossStep(s.bossChain) * (amplify ? 2 : 1) : s.bossMult;
     const bossChain = s.isBossQuestion && !s.overtime ? s.bossChain + 1 : s.bossChain;
     const crit = random() < attacker.crit;
-    const party = gainEnergy(s.party);
+    const regionScale = xpScale(s.levelIdx);
+    let party = gainEnergy(s.party);
     const mapStats = {
       ...s.mapStats,
       answered: s.mapStats.answered + 1,
@@ -321,32 +361,50 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       bossQuestionsCorrect: s.mapStats.bossQuestionsCorrect + (s.isBossQuestion && !s.overtime ? 1 : 0),
       correctTimeMs: s.mapStats.correctTimeMs + elapsed,
     };
+    // 見習騎士系的被動：每 N combo 得到一次守護
+    const guardEvery = teamGuardEvery(party);
+    const guardGained = guardEvery > 0 && combo > 0 && combo % guardEvery === 0 && !s.comboGuard;
     const base = {
       mapStats,
-      ...withTotals(party),
       attackerIdx: s.isBossQuestion ? s.attackerIdx : Math.max(0, nextAlive(party, attackerIdx + 1)),
       combo, maxCombo: Math.max(s.maxCombo, combo), bossMult, bossChain,
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
       wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
+      ...(guardGained ? { shield: true, comboGuard: true } : {}),
+    };
+
+    // 經驗值：每答對一題都有，擊倒另外加；升級時主角能力立刻更新
+    const gainXp = (killedKind: 'none' | 'kill' | 'elite' | 'boss') => {
+      const xp = Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale);
+      const levels = save().gainXp(xp);
+      if (levels > 0) party = refreshPlayer(party);
+      return { xp, levelUp: levels > 0 ? save().player.level : undefined };
     };
 
     // 菁英怪：護盾還在時，答對只會削掉一層護盾
     if (s.monsterShield > 0) {
       const monsterShield = s.monsterShield - 1;
       const gold = earn(GOLD.correct, combo);
+      const { xp, levelUp } = gainXp('none');
       set({
-        ...base, ...nextQuestion(), monsterShield, runGold: s.runGold + gold,
-        event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion }),
+        ...base, ...withTotals(party), ...nextQuestion(), monsterShield, runGold: s.runGold + gold, runXp: s.runXp + xp,
+        event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion, levelUp, guardGained }),
       });
       return;
     }
 
+    // 被動倍率：每關第一擊、隊伍低血量
+    const firstHit = s.stageHits === 0 ? 1 + attacker.mods.firstHit : 1;
+    const lowHp = s.playerHp / Math.max(1, s.playerMaxHp) < 0.5 ? 1 + attacker.mods.lowHp : 1;
+    const em = stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement);
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
       : computeDamage({
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
-        element: stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement),
+        element: em > 1 ? em + attacker.mods.elementBonus : em,
+        critMult: 2 + attacker.mods.critDmg,
+        extra: firstHit * lowHp,
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
@@ -360,9 +418,19 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const tickets = !killed ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
     if (tickets > 0) save().addTickets(tickets);
 
+    // 擊倒：經驗值與素材掉落
+    const dropKind = stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : stage.kind === 'treasure' ? 'treasure' : 'normal';
+    const { xp, levelUp } = gainXp(!killed ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
+    const drops = killed ? rollDrops(dropKind, s.monsterElement, random) : {};
+    if (killed) save().addMaterials(drops);
+
     const common = {
-      ...base, monsterHp, runGold: s.runGold + gold,
-      event: nextEvent('attack', { amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion }),
+      ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
+      runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
+      event: nextEvent('attack', {
+        amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
+        levelUp, guardGained, drops: killed ? drops : undefined,
+      }),
     };
     if (!killed) {
       set({ ...common, ...nextQuestion() });
@@ -465,18 +533,21 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     runGold: 0,
     mapStats: emptyRunStats(),
     mapResult: null,
+    runXp: 0,
+    runDrops: {},
+    stageHits: 0,
 
     startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);
       decks = createDecks(levelKey);
-      const { upgrades, party: ids, character, heroes, heroTier } = save();
+      const { upgrades, party: ids, character, heroes } = save();
       const stats = playerStats({ upgrades });
-      const party = buildParty(ids, heroes, character, stats, heroTier);
+      const party = buildParty(ids, heroes, character, stats, partyOptions());
       set({
         active: true, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0,
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
       });
       const saved = save().levelProgress[levelKey] ?? 0;
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);

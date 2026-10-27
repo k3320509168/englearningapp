@@ -9,6 +9,7 @@ import { useSpeak } from './useSpeak';
 import { regionOf } from '../game/regions';
 import { starConditions } from '../game/stars';
 import { finishRegion } from '../game/startLevel';
+import { materialIcon, materialName } from '../game/equipment';
 import { keepFocus } from './keepFocus';
 
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
@@ -23,9 +24,9 @@ function answerLabel(q: Question): { text: string; audio: string; meaning: strin
 }
 
 export default function SummaryPanel() {
-  const { phase, answers, stageIdx, stages, maxCombo, runGold, mapResult, levelKey, levelIdx } = useBattleStore(useShallow(s => ({
+  const { phase, answers, stageIdx, stages, maxCombo, runGold, mapResult, levelKey, levelIdx, runXp, runDrops } = useBattleStore(useShallow(s => ({
     phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold,
-    mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx,
+    mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops,
   })));
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
@@ -68,7 +69,11 @@ export default function SummaryPanel() {
         <div><b>{summary.correct}/{summary.total}</b><span>答對題數</span></div>
         <div><b>{maxCombo}</b><span>最高 Combo</span></div>
         <div><b>🪙 {runGold}</b><span>本趟金幣</span></div>
+        <div><b>+{runXp}</b><span>經驗值</span></div>
       </div>
+      {Object.keys(runDrops).length > 0 && (
+        <p className="drop-line">獲得素材：{Object.entries(runDrops).map(([k, v]) => `${materialIcon(k)}${materialName(k)}×${v}`).join('、')}</p>
+      )}
 
       {summary.mastered.length > 0 && (
         <section className="summary-section">

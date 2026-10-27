@@ -5,6 +5,10 @@ import { CLASS_SKILL, SKILL_ENERGY } from './progression';
 import type { PlayerStats, SkillId } from './progression';
 import { heroDef, heroSkill, heroStats, heroWord } from './heroes';
 import type { HeroId } from './heroes';
+import { NO_MODS, combineMods, levelMods, pathMods } from './growth';
+import type { Mods } from './growth';
+import { equipMods } from './equipment';
+import type { OwnedEquip } from './equipment';
 
 // 隊伍：主角＋夥伴英雄，最多 4 人，可以不派主角。
 // 每題由隊伍輪流出手；魔王題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
@@ -22,33 +26,63 @@ export interface Member {
   crit: number;
   skill: SkillId;
   energy: number;
+  mods: Mods; // 等級、轉職、裝備帶來的被動效果
 }
 
-export function buildMember(id: MemberId, character: Character | null, stats: PlayerStats, tier = 0): Member {
+// 主角的成長資料
+export interface PlayerGrowth {
+  level: number;
+  classPath: string[];
+  equipped: OwnedEquip[];
+}
+
+export function playerMods(g: PlayerGrowth): Mods {
+  return combineMods(levelMods(g.level), pathMods(g.classPath), ...g.equipped.map(equipMods));
+}
+
+export interface PartyOptions {
+  tiers?: Record<HeroId, number>;
+  heroLevels?: Record<HeroId, number>;
+  growth?: PlayerGrowth;
+}
+
+export function buildMember(id: MemberId, character: Character | null, stats: PlayerStats, opts: PartyOptions = {}): Member {
   if (id === 'player') {
     const c = character!;
     const cls = classDef(c.classId);
-    const maxHp = Math.round(stats.maxHp * cls.stats.hp);
+    const mods = opts.growth ? playerMods(opts.growth) : { ...NO_MODS };
+    const maxHp = Math.round(stats.maxHp * cls.stats.hp * (1 + mods.hp));
     return {
       id, name: c.name, element: c.element, maxHp, hp: maxHp,
-      atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk, crit: cls.stats.crit,
-      skill: CLASS_SKILL[c.classId], energy: 0,
+      atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
+      skill: CLASS_SKILL[c.classId], energy: 0, mods,
     };
   }
   const h = heroDef(id);
-  const hs = heroStats(h, tier);
-  const maxHp = Math.round(stats.maxHp * hs.hp);
+  const hs = heroStats(h, opts.tiers?.[id] ?? 0);
+  const mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1));
+  const maxHp = Math.round(stats.maxHp * hs.hp * (1 + mods.hp));
   return {
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,
-    atk: BASE_DAMAGE * stats.atkMult * hs.atk, crit: hs.crit,
-    skill: heroSkill(h), energy: 0,
+    atk: BASE_DAMAGE * stats.atkMult * hs.atk * (1 + mods.atk), crit: hs.crit,
+    skill: heroSkill(h), energy: 0, mods,
   };
 }
 
 export function buildParty(
-  ids: MemberId[], owned: HeroId[], character: Character | null, stats: PlayerStats, tiers: Record<HeroId, number> = {},
+  ids: MemberId[], owned: HeroId[], character: Character | null, stats: PlayerStats, opts: PartyOptions = {},
 ): Member[] {
-  return normalizeParty(ids, owned, character !== null).map(id => buildMember(id, character, stats, tiers[id] ?? 0));
+  return normalizeParty(ids, owned, character !== null).map(id => buildMember(id, character, stats, opts));
+}
+
+// 隊伍共用的被動：每題多出的時間（加總）、守護間隔（最短）
+export function teamTimeBonus(party: Member[]): number {
+  return party.filter(isAlive).reduce((sum, m) => sum + m.mods.timeMs, 0);
+}
+
+export function teamGuardEvery(party: Member[]): number {
+  const list = party.filter(isAlive).map(m => m.mods.guardEvery).filter(n => n > 0);
+  return list.length ? Math.min(...list) : 0;
 }
 
 // 存檔修正：只留下擁有的成員、不重複、最多 4 人；空隊伍時至少派一位

@@ -1,0 +1,234 @@
+:root {
+  --bg: #14141c;
+  --panel: #1f2030;
+  --panel-2: #2a2c40;
+  --border: #3d4060;
+  --text: #f2f2f7;
+  --muted: #9a9cb5;
+  --accent: #ffd34d;
+  --primary: #4aa8ff;
+  --good: #44d17a;
+  --bad: #ff6b6b;
+  --radius: 12px;
+  font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+button { font: inherit; color: inherit; }
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+}
+
+/* ---------- 版面：畫布在上、作答區在下；寬螢幕橫向時左右並排 ---------- */
+.game-shell {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.game-canvas {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* 地圖：盡量放大畫布 */
+.is-map .game-canvas { max-width: calc((100dvh - 32px) * 5 / 3); }
+/* 戰鬥：畫布限制高度，保留空間給作答區 */
+.is-battle .game-canvas { max-width: min(860px, calc(48dvh * 5 / 3)); }
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  .game-shell.is-battle {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .is-battle .game-canvas { max-width: min(760px, calc((100dvh - 32px) * 5 / 3)); flex: 1 1 auto; }
+  .is-battle .hud { width: 400px; flex: 0 0 400px; }
+}
+
+/* ---------- 作答區 ---------- */
+.hud {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.hud-stage { font-weight: bold; text-align: center; }
+.hud-stage small { color: var(--muted); font-weight: normal; }
+
+.btn {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-2);
+  cursor: pointer;
+  transition: transform 0.08s, background 0.15s;
+}
+.btn:hover { background: #34375a; }
+.btn:active { transform: scale(0.96); }
+.btn:disabled { opacity: 0.4; cursor: default; }
+.btn-ghost { background: transparent; }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #0b1a2b; font-weight: bold; }
+.btn-primary:hover { background: #6bb9ff; }
+
+.question-card {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.q-tag {
+  display: inline-block;
+  font-size: 13px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  background: var(--panel-2);
+}
+.q-spell { color: #7fd1ff; }
+.q-fill { color: #b7f07a; }
+.q-choice { color: #ffc56b; }
+.q-voice { color: #ff9be0; }
+.q-desc { margin: 0; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; }
+
+/* 字母格 */
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.slot {
+  width: clamp(30px, 8vw, 42px);
+  height: clamp(40px, 10vw, 52px);
+  display: grid;
+  place-items: center;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: bold;
+  font-family: monospace;
+  border-radius: 8px;
+}
+.slot-blank { background: var(--panel); border: 2px solid var(--border); }
+.slot-fixed { color: var(--muted); }
+.slot-cursor { border-color: var(--accent); animation: blink 1s infinite; }
+@keyframes blink { 50% { border-color: var(--border); } }
+
+.kbd-hint { margin: 0; text-align: center; color: var(--muted); font-size: 13px; }
+
+/* 螢幕鍵盤：只在觸控裝置顯示 */
+.vkbd { display: none; flex-direction: column; gap: 6px; }
+.vkbd-row { display: flex; justify-content: center; gap: 4px; }
+.vkbd-key {
+  flex: 1 1 0;
+  max-width: 44px;
+  min-height: 46px;
+  border: none;
+  border-radius: 8px;
+  background: var(--panel-2);
+  font-size: 18px;
+  font-weight: bold;
+  touch-action: manipulation;
+}
+.vkbd-key:active { background: var(--primary); color: #0b1a2b; }
+.vkbd-wide { max-width: 64px; flex-grow: 1.5; }
+
+@media (pointer: coarse) {
+  .vkbd { display: flex; }
+  .kbd-hint { display: none; }
+}
+
+/* 選擇題 */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 480px) { .options { grid-template-columns: 1fr; } }
+.option-btn {
+  min-height: 52px;
+  padding: 10px 14px;
+  text-align: left;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  cursor: pointer;
+  font-size: 17px;
+  touch-action: manipulation;
+}
+.option-btn b { color: var(--accent); margin-right: 10px; }
+.option-btn:hover { border-color: var(--primary); }
+.option-btn:active { transform: scale(0.98); }
+
+/* 語音題 */
+.voice { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.mic-btn {
+  min-width: 220px;
+  min-height: 64px;
+  border: none;
+  border-radius: 999px;
+  background: #ff5fa2;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #b8336e;
+}
+.mic-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 #b8336e; }
+.mic-btn.is-listening { background: var(--bad); animation: pulse 1s infinite; }
+@keyframes pulse { 50% { transform: scale(1.05); } }
+.voice-error { margin: 0; color: var(--bad); }
+
+/* 答錯回饋 */
+.feedback, .result {
+  background: var(--panel);
+  border: 2px solid var(--bad);
+  border-radius: var(--radius);
+  padding: 16px;
+  animation: slide-up 0.2s ease-out;
+}
+.result { border-color: var(--accent); text-align: center; }
+@keyframes slide-up { from { transform: translateY(12px); opacity: 0; } }
+.feedback-title, .result-title { margin: 0 0 10px; font-size: 20px; font-weight: bold; }
+.feedback-title { color: var(--bad); }
+.feedback-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 0 0 14px;
+}
+.feedback-grid dt { color: var(--muted); }
+.feedback-grid dd { margin: 0; }
+.given { text-decoration: line-through; color: var(--bad); }
+.correct { color: var(--good); font-size: 22px; font-weight: bold; letter-spacing: 1px; }
+.sentence { font-style: italic; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.feedback-note { margin: 10px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

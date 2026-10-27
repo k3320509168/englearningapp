@@ -1,19 +1,10 @@
 import type { Question, Stage } from './types';
+import { shuffleArray } from './battle';
 
 export const LEVELS = [
-  "A1 入門 (120-224分)", "A2 初級 (225-549分)", "B1 中級 (550-784分)", 
+  "A1 入門 (120-224分)", "A2 初級 (225-549分)", "B1 中級 (550-784分)",
   "B2 中高級 (785-944分)", "C1 高級 (945分以上)"
 ];
-
-// 全域解鎖進度
-export let globalUnlockedIndex = 0;
-
-export function unlockNextLevel(currentLevelKey: string) {
-  const currentLevelIndex = LEVELS.indexOf(currentLevelKey);
-  if (currentLevelIndex === globalUnlockedIndex && globalUnlockedIndex < LEVELS.length - 1) {
-    globalUnlockedIndex++;
-  }
-}
 
 // 注意：spell / fill 的 ans 只能是大寫 A-Z（鍵盤輸入限制），choice 的 ans 為 A-D，
 // voice 的 ans 為大寫單字（以「辨識結果包含 ans 或 accept」判定）。
@@ -139,20 +130,11 @@ export const QUESTION_POOL: QuestionPool = {
   }
 };
 
-function shuffleArray<T>(array: T[]): T[] {
-  const newArr = [...array];
-  for (let i = newArr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-  }
-  return newArr;
-}
-
 export function generateStages(levelKey: string): Stage[] {
   const pool = QUESTION_POOL[levelKey] || QUESTION_POOL["A1 入門 (120-224分)"];
   const generatedStages: Stage[] = [];
-  let normalDeck = shuffleArray(pool.normal);
-  let bossDeck = shuffleArray(pool.boss);
+  const normalDeck = shuffleArray(pool.normal);
+  const bossDeck = shuffleArray(pool.boss);
 
   const drawCard = (deck: Question[], original: Question[]) => {
     if (deck.length === 0) deck.push(...shuffleArray(original));

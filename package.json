@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "validate:questions": "tsx scripts/validate-questions.ts"
+    "validate:questions": "tsx scripts/validate-questions.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "phaser": "^4.2.1",
@@ -29,6 +30,7 @@
     "tsx": "^4.23.15",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.71.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
   }
 }

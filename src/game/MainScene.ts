@@ -1,56 +1,51 @@
 import Phaser from 'phaser';
-import { Stage } from './types';
-import { generateStages, unlockNextLevel } from './QuestionData';
+import { useBattleStore } from '../store/battleStore';
+import type { BattleEvent } from '../store/battleStore';
+import { PLAYER_MAX_HP, comboMultiplier } from './battle';
+
+// 戰鬥畫面：只負責顯示與動畫。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
+
+const PLAYER_X = 220;
+const MONSTER_X = 580;
+const GROUND_Y = 300;
 
 class HealthBar {
   private bgBar: Phaser.GameObjects.Graphics;
   private bar: Phaser.GameObjects.Graphics;
-  private maxHp: number;
-  constructor(scene: Phaser.Scene, private x: number, private y: number, maxHp: number) {
+  private x: number;
+  private y: number;
+
+  constructor(scene: Phaser.Scene, x: number, y: number) {
+    this.x = x;
+    this.y = y;
     this.bgBar = scene.add.graphics();
     this.bar = scene.add.graphics();
-    this.maxHp = maxHp;
-    this.setHp(maxHp);
   }
-  setMaxHp(max: number) { this.maxHp = max; }
-  setHp(hp: number) {
+
+  setHp(hp: number, maxHp: number) {
     this.bgBar.clear(); this.bar.clear();
-    this.bgBar.fillStyle(0x000000, 0.6).fillRoundedRect(this.x - 2, this.y - 2, 104, 14, 4);
-    this.bgBar.lineStyle(2, 0xffffff, 0.8).strokeRoundedRect(this.x - 2, this.y - 2, 104, 14, 4);
-    const w = Math.max(0, (hp / this.maxHp) * 100);
-    const color = hp <= this.maxHp * 0.3 ? 0xff4444 : 0x44ff44;
-    if (w > 0) this.bar.fillStyle(color, 1).fillRoundedRect(this.x, this.y, w, 10, 2);
+    this.bgBar.fillStyle(0x000000, 0.6).fillRoundedRect(this.x - 2, this.y - 2, 124, 16, 4);
+    this.bgBar.lineStyle(2, 0xffffff, 0.8).strokeRoundedRect(this.x - 2, this.y - 2, 124, 16, 4);
+    const w = maxHp > 0 ? Math.max(0, (hp / maxHp) * 120) : 0;
+    const color = hp <= maxHp * 0.3 ? 0xff4444 : 0x44ff44;
+    if (w > 0) this.bar.fillStyle(color, 1).fillRoundedRect(this.x, this.y, w, 12, 2);
   }
 }
 
 export default class MainScene extends Phaser.Scene {
-  private playerHp = 100;
-  private monsterHp = 100;
-  private stageIdx = 0;      
-  private qIdx = 0;          
-  private typed = "";
-  private combo = 0;         
-  private isLocked = false;  
-  private isStageClear = false; 
-  private currentStages: Stage[] = [];
-  private currentLevelKey = "";
-  private ui!: Record<string, any>;
+  private player!: Phaser.GameObjects.Sprite;
+  private monster!: Phaser.GameObjects.Image;
   private playerHpBar!: HealthBar;
   private monsterHpBar!: HealthBar;
-  private recognition: any;
-  private isListening = false;
-  private comboTimer?: Phaser.Time.TimerEvent;
+  private stageTxt!: Phaser.GameObjects.Text;
+  private comboTxt!: Phaser.GameObjects.Text;
+  private fontBase = {
+    fontFamily: '"Microsoft JhengHei", "PingFang TC", "Noto Sans TC", monospace',
+    stroke: '#000', strokeThickness: 4,
+    shadow: { offsetX: 2, offsetY: 2, color: '#000', blur: 2, stroke: true, fill: true },
+  };
 
   constructor() { super('MainScene'); }
-
-  init(data: { levelKey: string }) {
-    this.currentLevelKey = data.levelKey;
-    this.currentStages = generateStages(data.levelKey);
-    this.stageIdx = 0;
-    this.qIdx = 0;
-    this.playerHp = 100;
-    this.combo = 0;
-  }
 
   preload() {
     this.load.spritesheet('player', 'https://labs.phaser.io/assets/sprites/dude.png', { frameWidth: 32, frameHeight: 48 });
@@ -58,290 +53,94 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(400, 300, 'bg').setDisplaySize(800, 600).setAlpha(0.8);
-    const fontBase = { fontFamily: '"Microsoft JhengHei", monospace', stroke: '#000', strokeThickness: 4, shadow: { offsetX: 2, offsetY: 2, color: '#000', blur: 2, stroke: true, fill: true } };
+    const { width, height } = this.scale;
+    this.add.image(width / 2, height / 2, 'bg').setDisplaySize(width, height).setAlpha(0.8);
 
-    this.add.graphics().fillStyle(0x000000, 0.6).fillRoundedRect(80, 260, 640, 190, 12);
-
-    this.ui = {
-      pBox: this.add.sprite(200, 170, 'player', 4).setScale(2),
-      mBox: this.add.image(600, 170, 'monster').setScale(2),
-      comboTxt: this.add.text(400, 60, '', { ...fontBase, fontSize: '42px', color: '#ffaa00', fontStyle: 'italic bold' }).setOrigin(0.5),
-      mName: this.add.text(600, 90, '', { ...fontBase, fontSize: '18px', color: '#ffffff' }).setOrigin(0.5),
-      msg: this.add.text(400, 290, '', { ...fontBase, fontSize: '26px', color: '#ffd700' }).setOrigin(0.5),
-      optLeft: this.add.text(140, 340, '', { ...fontBase, fontSize: '20px', color: '#ffffff', align: 'left', lineSpacing: 25 }).setOrigin(0, 0).setVisible(false),
-      optRight: this.add.text(420, 340, '', { ...fontBase, fontSize: '20px', color: '#ffffff', align: 'left', lineSpacing: 25 }).setOrigin(0, 0).setVisible(false),
-      hint: this.add.text(400, 560, '🔊 [空白鍵] 發音 | 🎤 語音關卡按 [Enter] 錄音', { ...fontBase, fontSize: '14px', color: '#aaaaaa', strokeThickness: 2 }).setOrigin(0.5),
-      inputBg: this.add.graphics(),
-      word: this.add.text(400, 500, '', { ...fontBase, fontSize: '36px', letterSpacing: 8 }).setOrigin(0.5)
-    };
-
-    this.drawInputBg(0x4aa8ff);
-    this.anims.create({ key: 'idle', frames: [{ key: 'player', frame: 4 }], frameRate: 10 });
-    this.anims.create({ key: 'run', frames: this.anims.generateFrameNumbers('player', { start: 5, end: 8 }), frameRate: 10, repeat: -1 });
-
-    this.playerHpBar = new HealthBar(this, 150, 110, 100);
-    this.add.text(200, 90, '玩家', { ...fontBase, fontSize: '18px', color: '#fff' }).setOrigin(0.5);
-    this.monsterHpBar = new HealthBar(this, 550, 110, 100);
-    
-    this.initSpeechRecognition();
-    this.loadStage();
-    this.input.keyboard?.on('keydown', this.handleInput, this);
-  }
-
-  private resetCombo() {
-    this.combo = 0;
-    this.ui.comboTxt.setText('').setAlpha(1);
-    if (this.comboTimer) {
-      this.comboTimer.remove();
-      this.comboTimer = undefined;
-    }
-  }
-
-  private drawInputBg(borderColor: number) {
-    this.ui.inputBg.clear();
-    this.ui.inputBg.fillStyle(0x111111, 0.8).fillRoundedRect(250, 470, 300, 60, 10);
-    this.ui.inputBg.lineStyle(3, borderColor, 1).strokeRoundedRect(250, 470, 300, 60, 10);
-  }
-
-  private initSpeechRecognition() {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (SpeechRecognition) {
-      this.recognition = new SpeechRecognition();
-      this.recognition.lang = 'en-US'; 
-      this.recognition.interimResults = false;
-      this.recognition.onstart = () => {
-        this.isListening = true;
-        this.drawInputBg(0xff4a4a);
-        this.ui.word.setText("🎤 聆聽中...").setColor('#ffaa00').setFontSize('24px').setLetterSpacing(2);
-      };
-      this.recognition.onresult = (event: any) => { this.handleVoiceInput(event.results[0][0].transcript.toUpperCase()); };
-      this.recognition.onerror = (event: any) => {
-        this.isListening = false;
-        this.ui.word.setText(`❌ 錯誤: ${event.error}`).setColor('#f44').setFontSize('20px');
-        this.time.delayedCall(2000, () => { if (this.monsterHp > 0 && this.playerHp > 0) this.updateWordDisplay(); });
-      };
-      this.recognition.onend = () => { this.isListening = false; };
-    }
-  }
-
-  private speak(text: string) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel(); 
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US'; 
-    window.speechSynthesis.speak(utterance);
-  }
-
-  private showDamage(x: number, y: number, amount: number, color: string) {
-    const dmgText = this.add.text(x, y, `-${amount}`, { fontFamily: 'monospace', fontSize: '32px', color, fontStyle: 'bold', stroke: '#000', strokeThickness: 5 }).setOrigin(0.5);
-    this.tweens.add({ targets: dmgText, y: y - 60, alpha: 0, duration: 800, onComplete: () => dmgText.destroy() });
-  }
-
-  private hideOptions() {
-    this.ui.optLeft.setVisible(false);
-    this.ui.optRight.setVisible(false);
-  }
-
-  private loadStage() {
-    if (this.stageIdx >= this.currentStages.length) {
-      this.isStageClear = true;
-      this.ui.pBox.play('idle');
-      this.ui.msg.setText("🎉 區域完全通關！按 [ Enter ] 回到世界地圖");
-      this.monsterHpBar.setHp(0);
-      this.ui.mBox.setTint(0x555555).setAlpha(0.3);
-      this.hideOptions();
-      this.ui.word.setText("");
-      this.ui.inputBg.setVisible(false);
-      unlockNextLevel(this.currentLevelKey);
-      return;
-    }
-    this.isStageClear = false;
-    const stage = this.currentStages[this.stageIdx];
-    const maxHp = stage.questions.length * 50; 
-    
-    this.monsterHp = maxHp;
-    this.monsterHpBar.setMaxHp(maxHp);
-    this.monsterHpBar.setHp(maxHp);
-    this.ui.mName.setText(`${stage.name} (${this.stageIdx + 1}/50)`);
-
-    if (stage.bossMode) {
-      this.ui.mBox.setScale(4).setTint(0xff5555).setAlpha(1); 
-    } else {
-      this.ui.mBox.setScale(2).clearTint().setAlpha(1);       
-    }
-    this.loadQuestion();
-  }
-
-  private loadQuestion() {
-    const q = this.currentStages[this.stageIdx].questions[this.qIdx];
-    this.isLocked = false; 
-    this.typed = "";
-    this.ui.pBox.play('run', true); 
-    this.ui.msg.setText(q.desc);
-    
-    if (q.type === 'choice' && q.options && q.options.length >= 4) {
-      this.ui.optLeft.setText(`${q.options[0]}\n${q.options[2]}`).setVisible(true);
-      this.ui.optRight.setText(`${q.options[1]}\n${q.options[3]}`).setVisible(true);
-    } else {
-      this.hideOptions();
-    }
-    
-    this.updateWordDisplay();
-    if (q.speak) this.speak(q.speak); 
-  }
-
-  private updateWordDisplay() {
-    if (this.isListening) return; 
-    const q = this.currentStages[this.stageIdx].questions[this.qIdx];
-    let str = "";
-    let isValid = true;
-    
-    if (q.type === 'spell') {
-      isValid = q.ans.startsWith(this.typed);
-      str = q.ans.split('').map((c, i) => i < this.typed.length ? this.typed[i] : (i === this.typed.length ? '_' : '·')).join(' ');
-      this.ui.word.setFontSize('36px').setLetterSpacing(8);
-    } else if (q.type === 'fill') {
-      isValid = q.ans.startsWith(this.typed);
-      str = this.typed === "" ? '_' : this.typed; 
-      this.ui.word.setFontSize('36px').setLetterSpacing(8);
-    } else if (q.type === 'choice') {
-      str = "[ 請輸入 A, B, C 或 D ]";
-      this.ui.word.setFontSize('22px').setLetterSpacing(2); 
-    } else if (q.type === 'voice') {
-      str = "[ 按 Enter 開始錄音 ]";
-      this.ui.word.setFontSize('22px').setLetterSpacing(2); 
+    if (!this.anims.exists('idle')) {
+      this.anims.create({ key: 'idle', frames: [{ key: 'player', frame: 4 }], frameRate: 10 });
+      this.anims.create({ key: 'run', frames: this.anims.generateFrameNumbers('player', { start: 5, end: 8 }), frameRate: 10, repeat: -1 });
     }
 
-    this.ui.word.setText(str).setColor(isValid ? '#ffffff' : '#ff4444');
-    this.drawInputBg(isValid ? 0x4aa8ff : 0xff4444);
+    this.player = this.add.sprite(PLAYER_X, GROUND_Y, 'player', 4).setScale(2.5);
+    this.monster = this.add.image(MONSTER_X, GROUND_Y, 'monster').setScale(2);
+    this.add.text(PLAYER_X, 182, '玩家', { ...this.fontBase, fontSize: '20px', color: '#fff' }).setOrigin(0.5);
+    this.playerHpBar = new HealthBar(this, PLAYER_X - 60, 200);
+    this.monsterHpBar = new HealthBar(this, MONSTER_X - 60, 200);
+    this.stageTxt = this.add.text(width / 2, 40, '', { ...this.fontBase, fontSize: '24px', color: '#ffffff' }).setOrigin(0.5);
+    this.comboTxt = this.add.text(width / 2, 110, '', { ...this.fontBase, fontSize: '44px', color: '#ffaa00', fontStyle: 'italic bold' }).setOrigin(0.5);
+
+    const unsubscribe = useBattleStore.subscribe((state, prev) => this.sync(state, prev));
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, unsubscribe);
+    this.sync(useBattleStore.getState(), null);
   }
 
-  private handleVoiceInput(transcript: string) {
-    const q = this.currentStages[this.stageIdx].questions[this.qIdx];
-    const upperTranscript = transcript.toUpperCase();
-    const validAnswers = q.accept ? [q.ans, ...q.accept] : [q.ans];
-    
-    if (validAnswers.some(word => upperTranscript.includes(word))) {
-      this.ui.word.setText(q.ans).setColor('#44ff44'); 
-      this.attackMonster();
-    } else {
-      this.ui.word.setText(`聽成: ${transcript}`).setColor('#ff4444');
-      this.drawInputBg(0xff4444);
-      this.resetCombo();
-      this.damagePlayer();
-      this.time.delayedCall(1500, () => { if (this.monsterHp > 0 && this.playerHp > 0) this.updateWordDisplay(); });
-    }
-  }
-
-  private handleInput(e: KeyboardEvent) {
-    if (e.key === 'Escape') {
+  private sync(s: ReturnType<typeof useBattleStore.getState>, prev: ReturnType<typeof useBattleStore.getState> | null) {
+    if (!s.active) {
       this.scene.start('MapScene');
       return;
     }
-    if (e.key === 'Enter') {
-      if (this.isStageClear) {
-        if (this.stageIdx >= this.currentStages.length) {
-          this.scene.start('MapScene');
-        } else {
-          this.stageIdx++;
-          this.qIdx = 0;
-          this.loadStage();
-        }
+    const stage = s.stages[s.stageIdx];
+    if (stage) this.stageTxt.setText(`${stage.name}  (${s.stageIdx + 1}/${s.stages.length})`);
+    this.playerHpBar.setHp(s.playerHp, PLAYER_MAX_HP);
+
+    if (s.combo !== prev?.combo) {
+      if (s.combo > 1) {
+        this.comboTxt.setText(`${s.combo} COMBO!  ×${comboMultiplier(s.combo).toFixed(1)}`).setAlpha(1);
+        this.tweens.add({ targets: this.comboTxt, scale: 1.2, yoyo: true, duration: 150 });
       } else {
-        const q = this.currentStages[this.stageIdx].questions[this.qIdx];
-        if (q.type === 'voice' && this.recognition && !this.isListening && !this.isLocked) {
-          try { this.recognition.start(); } catch (err) {}
-        }
+        this.comboTxt.setText('');
       }
-      return;
     }
 
-    if (this.isLocked || this.playerHp <= 0 || this.stageIdx >= this.currentStages.length) return;
-    const q = this.currentStages[this.stageIdx].questions[this.qIdx];
+    if (s.event && s.event !== prev?.event) this.playEvent(s.event);
 
-    if (e.key === ' ') {
-      if (q.speak) this.speak(q.speak);
-      return;
-    }
-    if (e.key === 'Backspace' && (q.type === 'spell' || q.type === 'fill')) {
-      this.typed = this.typed.slice(0, -1);
-      return this.updateWordDisplay();
-    }
-    if (e.keyCode >= 65 && e.keyCode <= 90 && q.type !== 'voice') {
-      const pressedKey = e.key.toUpperCase();
-      if (q.type === 'choice') {
-        if (pressedKey === q.ans) {
-          this.attackMonster();
-        } else {
-          this.resetCombo(); 
-          this.damagePlayer(); 
-        }
-      } else if (this.typed.length < q.ans.length) {
-        this.typed += pressedKey;
-        this.updateWordDisplay();
-        if (this.typed === q.ans) {
-          this.attackMonster();
-        } else if (!q.ans.startsWith(this.typed)) {
-          this.resetCombo();
-          this.damagePlayer();
-        }
-      }
+    if (s.phase === 'gameOver') {
+      this.player.anims.stop();
+      this.player.setTint(0x555555);
     }
   }
 
-  private attackMonster() {
-    this.isLocked = true; 
-    this.combo++;         
-    if (this.combo > 1) {
-      this.ui.comboTxt.setText(`${this.combo} COMBO!`).setAlpha(1);
-      this.tweens.add({ targets: this.ui.comboTxt, scale: 1.2, yoyo: true, duration: 150 });
-      if (this.comboTimer) this.comboTimer.remove();
-      this.comboTimer = this.time.delayedCall(5000, () => {
-        this.tweens.add({ targets: this.ui.comboTxt, alpha: 0, duration: 500, onComplete: () => this.resetCombo() });
-      });
+  private playEvent(event: BattleEvent) {
+    const s = useBattleStore.getState();
+    if (event.kind === 'stage') {
+      const isBoss = s.stages[s.stageIdx]?.bossMode;
+      this.tweens.killTweensOf(this.monster);
+      this.monster.setScale(isBoss ? 3.5 : 2).setAlpha(1).setPosition(MONSTER_X, GROUND_Y);
+      if (isBoss) this.monster.setTint(0xff5555); else this.monster.clearTint();
+      this.player.clearTint().setPosition(PLAYER_X, GROUND_Y).play('run', true);
+      this.monsterHpBar.setHp(s.monsterHp, s.monsterMaxHp);
+      return;
     }
 
-    this.tweens.add({
-      targets: this.ui.pBox, x: 550, yoyo: true, duration: 200, 
-      onYoyo: () => {
-        this.monsterHp -= 50;
-        this.monsterHpBar.setHp(this.monsterHp);
-        this.showDamage(600, 150, 50, '#ffff00');
-        this.cameras.main.shake(100, 0.01);
-        
-        if (this.monsterHp <= 0) {
-          this.ui.mBox.setTint(0x555555);
-          this.isStageClear = true; 
-          this.hideOptions();
-          this.ui.pBox.play('idle'); 
-          
-          if (this.stageIdx + 1 >= this.currentStages.length) {
-             this.ui.msg.setText("🎉 區域完全通關！按 [ Enter ] 回到世界地圖");
-             unlockNextLevel(this.currentLevelKey);
-          } else {
-             this.ui.msg.setText("💥 擊敗怪獸！請按 [ Enter ] 前往下一區");
+    if (event.kind === 'attack') {
+      this.tweens.add({
+        targets: this.player, x: MONSTER_X - 70, yoyo: true, duration: 180,
+        onYoyo: () => {
+          const now = useBattleStore.getState();
+          this.monsterHpBar.setHp(now.monsterHp, now.monsterMaxHp);
+          this.showNumber(MONSTER_X, GROUND_Y - 80, `-${event.amount}`, '#ffff00');
+          this.cameras.main.shake(100, 0.01);
+          this.tweens.add({ targets: this.monster, alpha: 0.3, yoyo: true, duration: 80, repeat: 1 });
+          if (now.monsterHp <= 0) {
+            this.player.play('idle');
+            this.tweens.add({ targets: this.monster, alpha: 0, y: GROUND_Y + 30, delay: 200, duration: 500 });
           }
-        } else {
-          this.ui.msg.setText(`💪 繼續攻擊！ (剩餘 HP: ${this.monsterHp})`);
-          this.hideOptions();
-          this.time.delayedCall(300, () => { this.qIdx++; this.loadQuestion(); });
-        }
-      }
+        },
+      });
+      return;
+    }
+
+    // hurt
+    this.showNumber(PLAYER_X, GROUND_Y - 80, `-${event.amount}`, '#ff4444');
+    this.cameras.main.shake(80, 0.006);
+    this.player.setTint(0xff4444);
+    this.time.delayedCall(200, () => {
+      if (useBattleStore.getState().phase !== 'gameOver') this.player.clearTint();
     });
   }
 
-  private damagePlayer() {
-    this.playerHp -= 10;
-    this.playerHpBar.setHp(this.playerHp);
-    this.showDamage(200, 150, 10, '#ff0000');
-    this.cameras.main.shake(50, 0.005);
-    
-    this.tweens.add({ targets: this.ui.pBox, tint: 0xff0000, yoyo: true, duration: 100, onComplete: () => this.ui.pBox.clearTint() });
-    if (this.playerHp <= 0) {
-      this.ui.msg.setText("💀 Game Over，按 [ ESC ] 回地圖");
-      this.ui.pBox.setTint(0x555555);
-      this.ui.pBox.anims.stop(); 
-    }
+  private showNumber(x: number, y: number, text: string, color: string) {
+    const t = this.add.text(x, y, text, { fontFamily: 'monospace', fontSize: '34px', color, fontStyle: 'bold', stroke: '#000', strokeThickness: 5 }).setOrigin(0.5);
+    this.tweens.add({ targets: t, y: y - 60, alpha: 0, duration: 800, onComplete: () => t.destroy() });
   }
 }

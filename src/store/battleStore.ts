@@ -177,6 +177,7 @@ function partyOptions(): PartyOptions {
   return {
     tiers: sv.heroTier,
     heroLevels: sv.heroLevel,
+    trueName: sv.trueName,
     growth: {
       level: sv.player.level,
       classPath: sv.player.classPath,

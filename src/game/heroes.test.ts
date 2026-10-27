@@ -75,6 +75,8 @@ describe('summon in the save', () => {
     expect(useSaveStore.getState().heroes).toContain('aurora');
     expect(useSaveStore.getState().exchangeSpark('aurora')).toBeNull(); // 點數不夠了
     useSaveStore.setState({ heroShards: { aurora: 60 } });
+    expect(useSaveStore.getState().tierUp('aurora')).toBe(false); // 還沒有真名進度
+    useSaveStore.setState({ trueName: { aurora: [true, true, true, false, false] } });
     expect(useSaveStore.getState().tierUp('aurora')).toBe(true);
     expect(useSaveStore.getState().heroTier.aurora).toBe(1);
     expect(useSaveStore.getState().tierUp('aurora')).toBe(false); // 只能升一次

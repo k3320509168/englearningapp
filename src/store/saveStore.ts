@@ -13,6 +13,7 @@ import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '../game/growth';
 import { MAX_PLUS, enhanceCost, equipDef, resolveCost } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
+import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
 import { normalizeCharacter } from '../game/character';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
@@ -20,7 +21,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 10;
+export const SAVE_VERSION = 11;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -80,6 +81,8 @@ interface SaveData {
   materials: Record<string, number>;
   equipment: OwnedEquip[];
   equipped: Partial<Record<Slot, string>>;
+  // 真名考驗：每位英雄五項考驗是否完成
+  trueName: Record<HeroId, boolean[]>;
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -117,6 +120,8 @@ interface SaveActions {
   equip: (uid: string) => void;
   unequip: (slot: Slot) => void;
   trainHero: (id: HeroId) => boolean;
+  // 完成一項真名考驗，第一次完成時送碎片；回傳是否第一次完成
+  completeTrial: (id: HeroId, trialIdx: number) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
   resetProgress: () => void;
@@ -148,6 +153,7 @@ export const initialSave: SaveData = {
   materials: {},
   equipment: [],
   equipped: {},
+  trueName: {},
 };
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
@@ -180,6 +186,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v7 → v8：英雄改為 50 位＋召喚；舊英雄保留，並贈送起始召喚券。
   // v8 → v9：地圖三星、最遠關卡、劇情紀錄；舊玩家的最遠關卡以目前進度補上，並視為看過序章。
   // v9 → v10：主角等級／轉職、英雄等級、素材、裝備（預設值補齊）。
+  // v10 → v11：真名考驗進度（預設值補齊）。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -363,6 +370,19 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return { equipped };
         }),
 
+        completeTrial: (id, trialIdx) => {
+          const s = get();
+          if (!s.heroes.includes(id) || trialIdx < 0 || trialIdx >= TRIAL_COUNT) return false;
+          const prev = s.trueName[id] ?? Array<boolean>(TRIAL_COUNT).fill(false);
+          if (prev[trialIdx]) return false;
+          const next = prev.map((v, i) => v || i === trialIdx);
+          set({
+            trueName: { ...s.trueName, [id]: next },
+            heroShards: { ...s.heroShards, [id]: (s.heroShards[id] ?? 0) + TRIAL_SHARDS },
+          });
+          return true;
+        },
+
         // 英雄訓練：花金幣升一級，最高到主角的等級
         trainHero: (id) => {
           const s = get();
@@ -405,6 +425,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const rarity = heroDef(id).rarity;
           const need = TIER_UP_SHARDS[rarity];
           if (!s.heroes.includes(id) || (s.heroTier[id] ?? 0) >= 1 || (s.heroShards[id] ?? 0) < need) return false;
+          // 升品階也需要真名進度：至少完成幾項考驗
+          if (trialsDone(s.trueName[id]) < TIER_UP_TRIALS) return false;
           return purchase(TIER_UP_GOLD[rarity], st => ({
             heroShards: { ...st.heroShards, [id]: st.heroShards[id] - need },
             heroTier: { ...st.heroTier, [id]: 1 },
@@ -436,6 +458,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
+        trueName: s.trueName,
       }),
     },
   ),

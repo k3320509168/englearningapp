@@ -9,6 +9,7 @@ import { NO_MODS, combineMods, levelMods, pathMods } from './growth';
 import type { Mods } from './growth';
 import { equipMods } from './equipment';
 import type { OwnedEquip } from './equipment';
+import { TRUE_NAME_BONUS, isTrueName } from './trueName';
 
 // 隊伍：主角＋夥伴英雄，最多 4 人，可以不派主角。
 // 每題由隊伍輪流出手；魔王題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
@@ -43,6 +44,7 @@ export function playerMods(g: PlayerGrowth): Mods {
 export interface PartyOptions {
   tiers?: Record<HeroId, number>;
   heroLevels?: Record<HeroId, number>;
+  trueName?: Record<HeroId, boolean[]>;
   growth?: PlayerGrowth;
 }
 
@@ -60,7 +62,9 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
   }
   const h = heroDef(id);
   const hs = heroStats(h, opts.tiers?.[id] ?? 0);
-  const mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1));
+  // 真名英雄：基礎能力 +50%
+  const named = isTrueName(opts.trueName?.[id]) ? TRUE_NAME_BONUS : 0;
+  const mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1), { hp: named, atk: named });
   const maxHp = Math.round(stats.maxHp * hs.hp * (1 + mods.hp));
   return {
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,

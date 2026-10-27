@@ -12,6 +12,7 @@ import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
 import { trainCost } from '../store/saveStore';
 import { LEVEL_STAT } from '../game/growth';
+import { TIER_UP_TRIALS, TRIAL_COUNT, TRUE_NAME_BONUS, isTrueName, trialsDone } from '../game/trueName';
 import type { MemberId } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { keepFocus } from './keepFocus';
@@ -21,8 +22,8 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, toggleMember, setLeader, tierUp, trainHero } = useSaveStore();
-  const { closeModal, openModal } = useUiStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, tierUp, trainHero } = useSaveStore();
+  const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
 
@@ -94,7 +95,7 @@ export default function HeroModal() {
                 >
                   <span className="rarity-tag">{rarity}</span>
                   <img src={portraits[h.id]} alt="" />
-                  <b>{owned ? heroWord(h) : '？？？'}</b>
+                  <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
                   <small>{owned ? heroTitle(h) : h.meaning}</small>
                   {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
                 </button>
@@ -140,9 +141,10 @@ export default function HeroModal() {
     const skill = SKILLS[heroSkill(h)];
     const shards = heroShards[id] ?? 0;
     const need = TIER_UP_SHARDS[h.rarity];
-    const canTierUp = owned && tier === 0 && shards >= need && gold >= TIER_UP_GOLD[h.rarity];
+    const trials = trialsDone(trueName[id]);
+    const canTierUp = owned && tier === 0 && shards >= need && gold >= TIER_UP_GOLD[h.rarity] && trials >= TIER_UP_TRIALS;
     const level = heroLevel[id] ?? 1;
-    const levelMult = 1 + (level - 1) * LEVEL_STAT;
+    const levelMult = (1 + (level - 1) * LEVEL_STAT) * (isTrueName(trueName[id]) ? 1 + TRUE_NAME_BONUS : 1);
     const cost = trainCost(level, ['N', 'R', 'SR', 'SSR'].indexOf(h.rarity));
     const levelCap = level >= player.level;
     return (
@@ -160,10 +162,14 @@ export default function HeroModal() {
             <>
               {tier === 0 ? (
                 <p className="tier-line">
-                  升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}
+                  升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}、真名考驗 {Math.min(trials, TIER_UP_TRIALS)}/{TIER_UP_TRIALS}
                   {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => tierUp(id)} disabled={!canTierUp}>升品階</button>
                 </p>
               ) : <p className="tier-line">✨ 已升品階（{rarity}）</p>}
+              <p className="tier-line">
+                ✦ 真名考驗 {trials}/{TRIAL_COUNT}{isTrueName(trueName[id]) ? `（真名英雄：能力 +${TRUE_NAME_BONUS * 100}%）` : ''}
+                {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => openTrueName(id)}>{isTrueName(trueName[id]) ? '查看' : '挑戰'}</button>
+              </p>
               <p className="tier-line">
                 訓練 Lv {level} → {level + 1}：🪙 {cost}
                 {' '}<button className="btn btn-small" onMouseDown={keepFocus} onClick={() => trainHero(id)} disabled={levelCap || gold < cost}>訓練</button>

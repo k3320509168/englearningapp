@@ -236,3 +236,33 @@ describe('lesson phase', () => {
     expect(state().phase).toBe('lesson');
   });
 });
+
+describe('stage progress', () => {
+  it('saves the current stage and resumes there next time', () => {
+    resetSave();
+    state().startLevel(LEVELS[0]);
+    playUntil(() => state().stageIdx === 4 && state().phase === 'answering');
+    expect(saved().levelProgress[LEVELS[0]]).toBe(4);
+    state().exitToMap();
+    state().startLevel(LEVELS[0]);
+    expect(state().stageIdx).toBe(4);
+  });
+
+  it('can restart from stage 1 on request, and retries from the stage where the player fell', () => {
+    resetSave({ levelProgress: { [LEVELS[0]]: 6 } });
+    state().startLevel(LEVELS[0], undefined, 0);
+    expect(state().stageIdx).toBe(0);
+    playUntil(() => state().stageIdx === 3 && state().phase === 'answering');
+    for (let i = 0; i < 40 && state().phase !== 'gameOver'; i++) { answerWrong(); state().continueAfterFeedback(); }
+    state().retryLevel();
+    expect(state().stageIdx).toBe(3);
+    expect(state().playerHp).toBe(state().playerMaxHp);
+  });
+
+  it('resets progress after clearing the whole level', () => {
+    resetSave();
+    state().startLevel(LEVELS[0]);
+    playUntil(() => state().phase === 'levelClear');
+    expect(saved().levelProgress[LEVELS[0]]).toBe(0);
+  });
+});

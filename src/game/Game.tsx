@@ -11,6 +11,7 @@ import ShopModal from '../components/ShopModal';
 import HeroModal from '../components/HeroModal';
 import CodexModal from '../components/CodexModal';
 import MapLevelBar from '../components/MapLevelBar';
+import MicPermissionModal from '../components/MicPermissionModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -29,7 +30,9 @@ export default function Game() {
 
   // 第一次進入遊戲時自動打開新手引導
   useEffect(() => {
-    if (!useSaveStore.getState().tutorialDone) useUiStore.getState().openModal('tutorial');
+    const { tutorialDone, micAsked } = useSaveStore.getState();
+    if (!tutorialDone) useUiStore.getState().openModal('tutorial');
+    else if (!micAsked) useUiStore.getState().openModal('mic');
   }, []);
 
   // 音效音量跟著設定走
@@ -97,6 +100,7 @@ export default function Game() {
       {modal === 'shop' && <ShopModal />}
       {modal === 'heroes' && <HeroModal />}
       {modal === 'codex' && <CodexModal />}
+      {modal === 'mic' && <MicPermissionModal />}
     </div>
   );
 }

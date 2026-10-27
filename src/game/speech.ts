@@ -6,12 +6,26 @@ export interface Recognizer {
   stop: () => void;
 }
 
-export function speak(text: string, rate = 1, volume = 1) {
+export const SLOW_RATE = 0.5;
+
+// 挑選英文語音。慢速時優先用本機語音：Chrome 的線上語音（Google US English）
+// 幾乎不理會語速設定，放慢後聽起來跟原速差不多。
+function pickVoice(slow: boolean): SpeechSynthesisVoice | undefined {
+  const voices = window.speechSynthesis.getVoices().filter(v => v.lang.replace('_', '-').startsWith('en'));
+  const us = voices.filter(v => v.lang.replace('_', '-') === 'en-US');
+  const pool = us.length ? us : voices;
+  if (slow) return pool.find(v => v.localService) ?? pool[0];
+  return pool.find(v => v.default) ?? pool[0];
+}
+
+export function speak(text: string, rate = 1, volume = 1, slow = false) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-US';
-  utterance.rate = rate;
+  const voice = pickVoice(slow);
+  if (voice) utterance.voice = voice;
+  utterance.rate = slow ? SLOW_RATE : rate;
   utterance.volume = volume;
   window.speechSynthesis.speak(utterance);
 }

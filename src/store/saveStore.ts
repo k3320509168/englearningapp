@@ -7,7 +7,7 @@ import type { HeroId, ItemId, UpgradeId } from '../game/progression';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 4;
+export const SAVE_VERSION = 5;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -36,6 +36,9 @@ export interface Settings {
 
 interface SaveData {
   unlockedIndex: number;
+  // 每個區域目前打到第幾關（stage index），離開後回來從這裡繼續
+  levelProgress: Record<string, number>;
+  micAsked: boolean;
   mistakes: Record<string, MistakeRecord>;
   codex: Record<string, CodexEntry>;
   settings: Settings;
@@ -49,6 +52,8 @@ interface SaveData {
 
 interface SaveActions {
   unlockLevel: (index: number) => void;
+  setLevelProgress: (levelKey: string, stageIdx: number) => void;
+  setMicAsked: () => void;
   // review：這次作答是否算一次 SRS 複習（看完正確答案後的重答不算）
   recordAnswer: (q: Question, correct: boolean, review: boolean) => void;
   updateSettings: (patch: Partial<Settings>) => void;
@@ -64,6 +69,8 @@ interface SaveActions {
 
 export const initialSave: SaveData = {
   unlockedIndex: 0,
+  levelProgress: {},
+  micAsked: false,
   mistakes: {},
   codex: {},
   settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true },
@@ -81,6 +88,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v1 → v2：舊玩家已經玩過，視為看過新手引導。
   // v2 → v3：錯題補上 SRS 欄位（立即可複習）。
   // v3 → v4：新增音效音量設定（預設值補齊）。
+  // v4 → v5：新增各區域關卡進度與麥克風詢問紀錄。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -115,6 +123,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       return {
         ...initialSave,
         unlockLevel: (index) => set(s => ({ unlockedIndex: Math.max(s.unlockedIndex, index) })),
+        setLevelProgress: (levelKey, stageIdx) => set(s => ({ levelProgress: { ...s.levelProgress, [levelKey]: stageIdx } })),
+        setMicAsked: () => set({ micAsked: true }),
 
         recordAnswer: (q, correct, review) => set(s => {
           const key = questionKey(q);
@@ -182,7 +192,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       storage: createJSONStorage(() => localStorage),
       migrate: migrateSave,
       partialize: (s) => ({
-        unlockedIndex: s.unlockedIndex, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, hero: s.hero,
       }),
     },

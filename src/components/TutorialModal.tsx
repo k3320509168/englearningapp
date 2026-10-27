@@ -25,8 +25,13 @@ const STEPS = [
 export default function TutorialModal() {
   const [step, setStep] = useState(0);
   const setTutorialDone = useSaveStore(s => s.setTutorialDone);
-  const closeModal = useUiStore(s => s.closeModal);
-  const close = () => { setTutorialDone(true); closeModal(); };
+  const { closeModal, openModal } = useUiStore();
+  // 看完（或跳過）新手引導後，接著詢問麥克風權限（只問一次）
+  const close = () => {
+    setTutorialDone(true);
+    if (!useSaveStore.getState().micAsked) openModal('mic');
+    else closeModal();
+  };
   const isLast = step === STEPS.length - 1;
   const s = STEPS[step];
 

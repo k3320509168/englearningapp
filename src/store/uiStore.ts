@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 // 介面狀態（不存檔）：目前開啟的視窗
-export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex';
+export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic';
 
 interface UiState {
   modal: ModalName | null;

@@ -64,7 +64,8 @@ interface BattleState {
   hero: HeroId;
   runGold: number;
 
-  startLevel: (levelKey: string, transform?: (q: Question) => Question) => void;
+  // fromStage 未指定時，從存檔記錄的進度繼續
+  startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
   startBattle: () => void;
   openLesson: () => void;
   inputLetter: (letter: string) => void;
@@ -99,15 +100,17 @@ function withRevenge(stage: Stage, stageIdx: number, stageCount: number): Stage 
 export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q));
 
-  const loadStage = (stageIdx: number) => {
+  const loadStage = (stageIdx: number, isFirst = false) => {
     const s = get();
+    save().setLevelProgress(s.levelKey, stageIdx);
     const stage = withRevenge(s.stages[stageIdx], stageIdx, s.stages.length);
     const stages = s.stages.map((st, i) => (i === stageIdx ? stage : st));
     // 復仇魔王：每答對一題扣固定血量，要把到期的錯題全部答對才會倒下
     const maxHp = stage.revenge
       ? stage.questions.length * BASE_DAMAGE * 2
       : monsterMaxHp(stageIdx, LEVELS.indexOf(s.levelKey), stage.bossMode);
-    const showLesson = stageIdx % SEGMENT_SIZE === 0 && save().settings.showLessons;
+    // 區段開頭，或從中途繼續時，先預習這一段的內容
+    const showLesson = (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
     const original = stage.questions[0];
     set({
       stages,
@@ -175,6 +178,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     }
     if (isLastStage) {
       save().unlockLevel(LEVELS.indexOf(s.levelKey) + 1);
+      save().setLevelProgress(s.levelKey, 0); // 全區通關，下次從第 1 關重玩
       set({ ...common, phase: 'levelClear' });
       return;
     }
@@ -238,7 +242,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     hero: 'knight',
     runGold: 0,
 
-    startLevel: (levelKey, transform) => {
+    startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);
       decks = createDecks(levelKey);
       const { upgrades, hero } = save();
@@ -248,7 +252,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         stats, hero, playerHp: stats.maxHp, playerMaxHp: stats.maxHp,
         answers: [], wrongStreak: 0, shield: false, runGold: 0,
       });
-      loadStage(0);
+      const saved = save().levelProgress[levelKey] ?? 0;
+      const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
+      loadStage(start, true);
     },
 
     // 預習結束（或跳過）開始作答；questionSeq +1 讓介面播放題目發音
@@ -334,7 +340,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       loadStage(s.stageIdx + 1);
     },
 
-    retryLevel: () => get().startLevel(get().levelKey, questionTransform),
+    // 體力耗盡後重新挑戰：從倒下的那一關重來，不必從第 1 關打起
+    retryLevel: () => get().startLevel(get().levelKey, questionTransform, get().stageIdx),
 
     exitToMap: () => set({ active: false, question: null }),
   };

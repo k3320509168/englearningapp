@@ -369,6 +369,19 @@ button { font: inherit; color: inherit; }
 .level-btn { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px; }
 .level-btn b { font-family: var(--font-num); font-weight: 400; font-size: 14px; line-height: 1.6; }
 .level-btn small { font-family: var(--font-body); font-weight: 400; font-size: 12px; opacity: 0.85; white-space: nowrap; }
+.level-cell { display: flex; flex-direction: column; gap: 4px; }
+.level-cell .level-btn { flex: 1; }
+.level-btn .level-progress { font-weight: 700; opacity: 1; }
+.level-restart {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 2px;
+}
+.level-restart:hover { color: var(--text); }
 
 /* ---------- 戰鬥狀態列：金幣、道具 ---------- */
 .status-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -484,6 +497,7 @@ button { font: inherit; color: inherit; }
 .range b { font-family: var(--font-num); font-size: 11px; color: var(--accent); }
 .range input { width: 100%; accent-color: var(--accent); }
 .mic-test p { margin: 8px 0 0; }
+.mic-note { margin-top: 10px !important; font-size: 13px; }
 
 /* ---------- 分頁 ---------- */
 .tabs { display: flex; gap: 6px; }

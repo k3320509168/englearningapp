@@ -5,6 +5,7 @@ import { LEVELS } from './QuestionData';
 import { BASE_DAMAGE } from './battle';
 import { SKILLS, comboMultiplier } from './progression';
 import type { HeroId } from './progression';
+import type { Member, MemberId } from './party';
 import {
   MONSTER_NAMES, REGION_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, registerAvatar, registerSprites,
 } from './art/sprites';
@@ -29,6 +30,28 @@ const HERO_SCALE = 6;
 const HERO_ORIGIN_X = 8 / 24;
 const AVATAR_SCALE = 4;
 
+// 隊形：隊長站最前面，其餘隊員往後排、前後錯開，看起來有縱深
+const FORMATION = [
+  { x: PLAYER_X + 20, dy: 0 },
+  { x: PLAYER_X - 55, dy: -16 },
+  { x: PLAYER_X - 115, dy: 10 },
+  { x: PLAYER_X - 175, dy: -8 },
+];
+
+// 畫面上的一位隊員（容器負責位置與衝刺，圖片負責呼吸／擠壓動畫）
+interface Fighter {
+  id: MemberId;
+  container: Phaser.GameObjects.Container;
+  sprite: Phaser.GameObjects.Image;
+  idle?: Phaser.Tweens.Tween;
+  scale: number;
+  homeX: number;
+  homeY: number;
+  idleKey: string;
+  attackKey: string;
+  down: boolean;
+}
+
 const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
 // 傷害可能高達數億：加上千分位
 const formatDamage = (n: number) => Math.round(n).toLocaleString('en-US');
@@ -43,14 +66,9 @@ function comboTier(combo: number) {
 
 export default class MainScene extends Phaser.Scene {
   private layers: { sprite: Phaser.GameObjects.TileSprite; speed: number }[] = [];
-  private hero!: Phaser.GameObjects.Container;
-  private heroSprite!: Phaser.GameObjects.Image;
-  private heroIdle?: Phaser.Tweens.Tween;
+  private fighters: Fighter[] = [];
   private character: Character | null = null;
-  // 畫面上代表隊伍的角色：有派主角就顯示主角，否則顯示隊長
-  private displayHero: HeroId | null = null;
   private bossMultText!: Phaser.GameObjects.Text;
-  private heroScale = HERO_SCALE;
   private monster!: Phaser.GameObjects.Container;
   private monsterSprite!: Phaser.GameObjects.Image;
   private monsterShadow!: Phaser.GameObjects.Ellipse;
@@ -73,20 +91,53 @@ export default class MainScene extends Phaser.Scene {
 
   constructor() { super('MainScene'); }
 
-  // 有自創主角就用主角的貼圖，否則用舊版英雄貼圖
-  private heroTex(frame: AvatarFrame): string {
-    return this.character ? avatarKey(this.character, frame) : heroKey(this.displayHero ?? 'knight', frame);
+  private fighterFor(id: MemberId | undefined): Fighter {
+    return this.fighters.find(f => f.id === id) ?? this.fighters[0];
+  }
+
+  // 接下來要出手的隊員（魔王題由隊長出手）
+  private striker(s: State): Fighter {
+    const idx = s.isBossQuestion ? 0 : s.attackerIdx;
+    return this.fighterFor(s.party[idx]?.id);
+  }
+
+  private createFighter(m: Member, slot: number): Fighter {
+    const pos = FORMATION[slot] ?? FORMATION[FORMATION.length - 1];
+    const isPlayer = m.id === 'player' && this.character !== null;
+    const frame = (f: AvatarFrame) => (isPlayer ? avatarKey(this.character!, f) : heroKey(m.id as HeroId, f));
+    const scale = isPlayer ? AVATAR_SCALE : HERO_SCALE;
+    const homeY = GROUND_Y + pos.dy;
+    // 腳下的影子與屬性光環
+    this.add.ellipse(pos.x, homeY + 2, 80, 14, 0x000000, 0.3).setDepth(10 + slot);
+    const aura = this.add.ellipse(pos.x, homeY + 2, 96, 20, hex(elementDef(m.element).color), 0.3).setDepth(10 + slot);
+    this.tweens.add({ targets: aura, scaleX: 1.15, alpha: 0.12, yoyo: true, repeat: -1, duration: 900, delay: slot * 150, ease: 'Sine.easeInOut' });
+    const sprite = this.add.image(0, 0, frame('idle')).setOrigin(isPlayer ? AVATAR_ORIGIN_X : HERO_ORIGIN_X, 1).setScale(scale);
+    // 越前面（y 越大）畫在越上層
+    const container = this.add.container(pos.x, homeY, [sprite]).setDepth(20 + pos.dy / 100 + (FORMATION.length - slot) * 0.01);
+    const idle = this.tweens.add({ targets: sprite, scaleY: scale * 0.96, scaleX: scale * 1.02, yoyo: true, repeat: -1, duration: 600, delay: slot * 120, ease: 'Sine.easeInOut' });
+    return { id: m.id, container, sprite, idle, scale, homeX: pos.x, homeY, idleKey: frame('idle'), attackKey: frame('attack'), down: false };
+  }
+
+  // 倒下的隊員躺平變灰；重新挑戰時站回來
+  private setDown(f: Fighter, down: boolean) {
+    if (f.down === down) return;
+    f.down = down;
+    if (down) {
+      f.idle?.pause();
+      this.tweens.add({ targets: f.sprite, angle: -90, y: -8, duration: 400, delay: 200, ease: 'Bounce.easeOut' });
+      f.sprite.setTint(0x666677);
+    } else {
+      f.sprite.setAngle(0).setY(0).clearTint().setTexture(f.idleKey);
+      f.idle?.resume();
+    }
   }
 
   create() {
     const s = useBattleStore.getState();
     this.region = Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
-    const showPlayer = s.party.some(m => m.id === 'player');
-    this.character = showPlayer ? useSaveStore.getState().character : null;
-    this.displayHero = showPlayer ? null : (s.party[0]?.id as HeroId | undefined) ?? 'knight';
+    this.character = useSaveStore.getState().character;
     if (this.character) registerAvatar(this, this.character);
-    this.heroScale = this.character ? AVATAR_SCALE : HERO_SCALE;
     registerBackground(this, this.region);
     this.tweens.timeScale = 1;
     this.busy = false;
@@ -98,17 +149,9 @@ export default class MainScene extends Phaser.Scene {
       speed,
     }));
 
-    // 角色（容器負責位置與擊退，內部圖片負責呼吸／擠壓動畫）
-    this.add.ellipse(PLAYER_X, GROUND_Y + 2, 100, 18, 0x000000, 0.3);
-    if (this.character) {
-      // 屬性光環：腳下發光的橢圓
-      const aura = this.add.ellipse(PLAYER_X, GROUND_Y + 2, 120, 24, hex(elementDef(this.character.element).color), 0.35).setDepth(1);
-      this.tweens.add({ targets: aura, scaleX: 1.15, alpha: 0.15, yoyo: true, repeat: -1, duration: 900, ease: 'Sine.easeInOut' });
-    }
-    this.heroSprite = this.add.image(0, 0, this.heroTex('idle')).setOrigin(this.character ? AVATAR_ORIGIN_X : HERO_ORIGIN_X, 1).setScale(this.heroScale);
-    this.hero = this.add.container(PLAYER_X, GROUND_Y, [this.heroSprite]).setDepth(20);
-    this.heroIdle = this.tweens.add({ targets: this.heroSprite, scaleY: this.heroScale * 0.96, scaleX: this.heroScale * 1.02, yoyo: true, repeat: -1, duration: 600, ease: 'Sine.easeInOut' });
-    this.shieldBubble = this.add.circle(PLAYER_X, GROUND_Y - 48, 72).setStrokeStyle(4, 0x7fffd4, 0.9).setFillStyle(0x7fffd4, 0.12).setDepth(21).setVisible(false);
+    // 隊伍全員：隊長在最前面
+    this.fighters = s.party.map((m, i) => this.createFighter(m, i));
+    this.shieldBubble = this.add.circle(PLAYER_X - 40, GROUND_Y - 48, 110).setStrokeStyle(4, 0x7fffd4, 0.9).setFillStyle(0x7fffd4, 0.12).setDepth(21).setVisible(false);
     this.tweens.add({ targets: this.shieldBubble, scale: 1.06, yoyo: true, repeat: -1, duration: 500 });
 
     this.monsterShadow = this.add.ellipse(MONSTER_X, GROUND_Y + 2, 110, 18, 0x000000, 0.3);
@@ -159,6 +202,7 @@ export default class MainScene extends Phaser.Scene {
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);
+    s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
@@ -169,9 +213,10 @@ export default class MainScene extends Phaser.Scene {
     if (prev && s.phase === 'answering' && s.question === prev.question && s.typed.length > prev.typed.length && s.question) {
       const progress = s.typed.length / s.question.ans.length;
       sfx.key(progress);
-      const spark = this.add.image(PLAYER_X + 40, GROUND_Y - 70, 'spark').setScale(3 + progress * 3).setDepth(30);
+      const f = this.striker(s);
+      const spark = this.add.image(f.homeX + 40, f.homeY - 70, 'spark').setScale(3 + progress * 3).setDepth(30);
       this.tweens.add({ targets: spark, scale: 0, angle: 90, duration: 220, onComplete: () => spark.destroy() });
-      this.tweens.add({ targets: this.heroSprite, scaleX: this.heroScale * 1.08, duration: 50, yoyo: true });
+      this.tweens.add({ targets: f.sprite, scaleX: f.scale * 1.08, duration: 50, yoyo: true });
     }
 
     if (s.event && s.event !== prev?.event) this.playEvent(s.event, s);
@@ -265,8 +310,9 @@ export default class MainScene extends Phaser.Scene {
     // 換關：英雄往前跑，背景視差捲動，再讓下一隻怪物登場
     const wait = this.busy ? 700 : 0;
     this.time.delayedCall(wait, () => {
-      this.heroSprite.setTexture(this.heroTex('idle')).clearTint();
-      const run = this.tweens.add({ targets: this.heroSprite, y: -10, duration: 90, yoyo: true, repeat: 5 });
+      const runners = this.fighters.filter(f => !f.down);
+      runners.forEach(f => f.sprite.setTexture(f.idleKey).clearTint());
+      const run = this.tweens.add({ targets: runners.map(f => f.sprite), y: -10, duration: 90, yoyo: true, repeat: 5 });
       const scroll = { v: 0 };
       this.tweens.add({
         targets: scroll, v: 1, duration: 700, ease: 'Sine.easeInOut',
@@ -274,7 +320,7 @@ export default class MainScene extends Phaser.Scene {
           this.layers.forEach(l => { l.sprite.tilePositionX = l.sprite.getData('base') + target.v * 360 * l.speed; });
         },
         onStart: () => this.layers.forEach(l => l.sprite.setData('base', l.sprite.tilePositionX)),
-        onComplete: () => { run.stop(); this.heroSprite.setY(0); appear(); },
+        onComplete: () => { run.stop(); runners.forEach(f => f.sprite.setY(0)); appear(); },
       });
     });
   }
@@ -312,22 +358,26 @@ export default class MainScene extends Phaser.Scene {
     const killed = s.monsterHp <= 0;
     const crit = event.crit ?? false;
     const member = s.party.find(m => m.id === event.member);
-    if (member && s.party.length > 1) popText(this, PLAYER_X, GROUND_Y - 150, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
+    const f = this.fighterFor(event.member);
+    if (member && s.party.length > 1) popText(this, f.homeX, f.homeY - 140, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
     if (event.bossQuestion) this.bossQuestionHit(s.bossMult);
     this.busy = true;
-    this.heroIdle?.pause();
-    this.heroSprite.setTexture(this.heroTex('attack'));
+    f.idle?.pause();
+    f.sprite.setTexture(f.attackKey);
+    f.container.setDepth(25); // 衝刺時畫在其他隊員前面
     sfx.slash();
 
+    this.tweens.killTweensOf(f.container);
     this.tweens.add({
-      targets: this.hero, x: MONSTER_X - 150, duration: 90, ease: 'Quad.easeIn',
+      targets: f.container, x: MONSTER_X - 150, y: GROUND_Y, duration: 90 + (PLAYER_X - f.homeX) * 0.4, ease: 'Quad.easeIn',
       onComplete: () => {
         this.impact(damage, crit, killed, s);
         this.tweens.add({
-          targets: this.hero, x: PLAYER_X, duration: 220, delay: 90, ease: 'Quad.easeOut',
+          targets: f.container, x: f.homeX, y: f.homeY, duration: 220, delay: 90, ease: 'Quad.easeOut',
           onComplete: () => {
-            this.heroSprite.setTexture(this.heroTex('idle'));
-            this.heroIdle?.resume();
+            f.sprite.setTexture(f.idleKey);
+            f.container.setDepth(20 + (f.homeY - GROUND_Y) / 100);
+            if (!f.down) f.idle?.resume();
             if (!killed) this.busy = false;
           },
         });
@@ -461,7 +511,7 @@ export default class MainScene extends Phaser.Scene {
   // ---------- 受傷 ----------
   private monsterLunge(onContact: () => void) {
     this.tweens.add({
-      targets: this.monster, x: PLAYER_X + 130, duration: 120, ease: 'Quad.easeIn',
+      targets: this.monster, x: PLAYER_X + 150, duration: 120, ease: 'Quad.easeIn',
       onComplete: () => {
         onContact();
         this.tweens.add({ targets: this.monster, x: MONSTER_X, duration: 260, ease: 'Quad.easeOut' });
@@ -477,12 +527,14 @@ export default class MainScene extends Phaser.Scene {
       hitStop(this, 60);
       this.cameras.main.shake(180, 0.014);
       screenFlash(this, 0xff2a4a, 0.3, 300);
-      this.heroSprite.setTexture(`${this.heroTex('idle')}_flash`).setTint(0xff5a6e);
-      this.time.delayedCall(120, () => this.heroSprite.setTexture(this.heroTex('idle')).clearTint());
-      this.tweens.add({ targets: this.hero, x: PLAYER_X - 30, duration: 80, yoyo: true });
-      burst(this, PLAYER_X + 20, GROUND_Y - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
-      popText(this, PLAYER_X, GROUND_Y - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
-      if (target && s.party.length > 1) popText(this, PLAYER_X, GROUND_Y - 165, target.hp <= 0 ? `${target.name} 倒下了` : target.name, 20, '#ffb0b8', { rise: 20, dur: 800 });
+      const f = this.fighterFor(event.member);
+      const knockedOut = (target?.hp ?? 1) <= 0;
+      f.sprite.setTexture(`${f.idleKey}_flash`).setTint(0xff5a6e);
+      this.time.delayedCall(120, () => { if (!f.down) f.sprite.setTexture(f.idleKey).clearTint(); else f.sprite.setTexture(f.idleKey).setTint(0x666677); });
+      this.tweens.add({ targets: f.container, x: f.homeX - 30, duration: 80, yoyo: true });
+      burst(this, f.homeX + 20, f.homeY - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
+      popText(this, f.homeX, f.homeY - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
+      if (target && s.party.length > 1) popText(this, f.homeX, f.homeY - 165, knockedOut ? `${target.name} 倒下了` : target.name, 20, '#ffb0b8', { rise: 20, dur: 800 });
     });
   }
 
@@ -498,16 +550,14 @@ export default class MainScene extends Phaser.Scene {
   }
 
   private playDefeat() {
-    this.heroIdle?.stop();
     this.time.delayedCall(450, () => {
-      this.tweens.add({ targets: this.heroSprite, angle: -90, y: -10, duration: 400, ease: 'Bounce.easeOut' });
-      this.heroSprite.setTint(0x666677);
+      this.fighters.forEach(f => this.setDown(f, true));
       screenFlash(this, 0x000000, 0.5, 1200);
     });
   }
 
   private playVictory() {
-    this.tweens.add({ targets: this.heroSprite, y: -50, duration: 220, yoyo: true, repeat: 2, ease: 'Quad.easeOut' });
+    this.fighters.filter(f => !f.down).forEach((f, i) => this.tweens.add({ targets: f.sprite, y: -50, duration: 220, delay: i * 80, yoyo: true, repeat: 2, ease: 'Quad.easeOut' }));
     for (let i = 0; i < 4; i++) {
       this.time.delayedCall(i * 180, () => burst(this, Phaser.Math.Between(150, 650), 120, [0xffcd4b, 0x5fd36b, 0x4fb3e8, 0xff5af0, 0xffffff], 24, { speed: 260, gravity: 300 }));
     }

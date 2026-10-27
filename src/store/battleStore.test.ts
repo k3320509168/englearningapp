@@ -3,7 +3,7 @@ import { REVENGE_MAX_QUESTIONS, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
 import { ASSIST_STREAK, PLAYER_MAX_HP, questionKey, voiceFallback } from '../game/battle';
-import { BUFF_EVERY, GOLD, POTION_HEAL, SRS_INTERVALS, monsterAttack } from '../game/progression';
+import { GOLD, POTION_HEAL, SRS_INTERVALS, monsterAttack } from '../game/progression';
 import type { Question } from '../game/types';
 
 const state = () => useBattleStore.getState();
@@ -25,12 +25,11 @@ const answerWrong = () => {
   else state().inputLetter(q.ans[state().typed.length] === 'Q' ? 'Z' : 'Q');
 };
 
-// 一路答對，遇到結算／Buff 自動往下，直到 stop 條件成立
+// 一路答對，遇到結算自動往下，直到 stop 條件成立
 const playUntil = (stop: () => boolean, guard = 2000) => {
   for (let i = 0; i < guard && !stop(); i++) {
     const s = state();
     if (s.phase === 'monsterDown' || s.phase === 'summary') s.nextStage();
-    else if (s.phase === 'buff') s.pickBuff(s.buffChoices[0]);
     else if (s.phase === 'lesson') s.startBattle();
     else if (s.phase === 'feedback') s.continueAfterFeedback();
     else answerCurrent();
@@ -78,26 +77,23 @@ describe('battle flow', () => {
     expect(saved().gold).toBe(goldBefore);
   });
 
-  it('clears all 50 stages with buffs and boss summaries, then unlocks the next level', () => {
+  it('clears all 50 stages with boss summaries, then unlocks the next level', () => {
     let summaries = 0;
-    let buffs = 0;
     for (let i = 0; i < 2000 && state().phase !== 'levelClear'; i++) {
       const s = state();
       if (s.phase === 'summary') { summaries++; s.nextStage(); }
-      else if (s.phase === 'buff') { buffs++; s.pickBuff(s.buffChoices[0]); }
       else if (s.phase === 'monsterDown') s.nextStage();
       else answerCurrent();
     }
     expect(state().phase).toBe('levelClear');
     expect(summaries).toBe(4);
-    expect(buffs).toBe(Math.floor(45 / BUFF_EVERY));
     expect(saved().unlockedIndex).toBe(1);
     expect(saved().gold).toBeGreaterThan(GOLD.levelClear);
   });
 
-  it('needs more than one hit on later monsters without Combo or buffs', () => {
+  it('needs more than one hit on later monsters without Combo', () => {
     playUntil(() => state().stageIdx === 35 && state().phase === 'answering');
-    useBattleStore.setState({ combo: 0, buffs: [] });
+    useBattleStore.setState({ combo: 0 });
     answerCurrent();
     expect(state().monsterHp).toBeGreaterThan(0);
     expect(state().phase).toBe('answering');
@@ -115,22 +111,6 @@ describe('heroes and upgrades', () => {
     startLevel({ hero: 'knight', upgrades: { hp: 2, atk: 0, combo: 0, gold: 0 } });
     expect(state().playerMaxHp).toBe(PLAYER_MAX_HP + 20 + 20);
     expect(state().playerHp).toBe(state().playerMaxHp);
-  });
-});
-
-describe('buffs', () => {
-  it(`offers 3 buffs after every ${BUFF_EVERY} normal kills and applies instant heal`, () => {
-    startLevel();
-    answerWrong(); state().continueAfterFeedback();
-    playUntil(() => state().phase === 'buff');
-    expect(state().stageIdx).toBe(BUFF_EVERY - 1);
-    expect(state().buffChoices).toHaveLength(3);
-    useBattleStore.setState({ buffChoices: ['heal', 'power', 'sniper'] });
-    const hp = state().playerHp;
-    state().pickBuff('heal');
-    expect(state().playerHp).toBeGreaterThan(hp);
-    expect(state().buffs).not.toContain('heal');
-    expect(state().stageIdx).toBe(BUFF_EVERY);
   });
 });
 
@@ -250,8 +230,7 @@ describe('lesson phase', () => {
     for (let i = 0; i < 500 && state().stageIdx < 10; i++) {
       const s = state();
       if (s.phase === 'monsterDown' || s.phase === 'summary') s.nextStage();
-      else if (s.phase === 'buff') s.pickBuff(s.buffChoices[0]);
-      else answerCurrent();
+        else answerCurrent();
     }
     expect(state().stageIdx).toBe(10);
     expect(state().phase).toBe('lesson');

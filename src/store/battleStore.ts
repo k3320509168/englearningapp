@@ -10,16 +10,16 @@ import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
 import type { AnswerRecord } from '../game/lesson';
 import {
-  BUFF_EVERY, BUFF_HEAL, GOLD, POTION_HEAL, buffDef, comboAfterWrong, computeDamage,
-  goldWithBonus, monsterAttack, monsterMaxHp, playerStats, rollBuffChoices,
+  GOLD, POTION_HEAL, comboAfterWrong, computeDamage,
+  goldWithBonus, monsterAttack, monsterMaxHp, playerStats,
 } from '../game/progression';
-import type { BuffId, HeroId, ItemId, PlayerStats } from '../game/progression';
+import type { HeroId, ItemId, PlayerStats } from '../game/progression';
 import { dueMistakes, useSaveStore } from './saveStore';
 
 // 戰鬥進行中的狀態（不存檔）。React 負責作答介面，Phaser 訂閱 event 播放動畫。
 
-// lesson：戰前預習；buff：三選一；summary：Boss 後的區段結算
-export type BattlePhase = 'lesson' | 'answering' | 'feedback' | 'monsterDown' | 'buff' | 'summary' | 'levelClear' | 'gameOver';
+// lesson：戰前預習；summary：Boss 後的區段結算
+export type BattlePhase = 'lesson' | 'answering' | 'feedback' | 'monsterDown' | 'summary' | 'levelClear' | 'gameOver';
 
 export interface BattleEvent {
   id: number;
@@ -62,9 +62,6 @@ interface BattleState {
   shield: boolean;
   stats: PlayerStats;
   hero: HeroId;
-  buffs: BuffId[];
-  buffChoices: BuffId[];
-  normalKills: number;
   runGold: number;
 
   startLevel: (levelKey: string, transform?: (q: Question) => Question) => void;
@@ -75,7 +72,6 @@ interface BattleState {
   chooseOption: (letter: string) => void;
   submitVoice: (transcript: string) => void;
   continueAfterFeedback: () => void;
-  pickBuff: (id: BuffId) => void;
   consumeItem: (id: ItemId) => void;
   nextStage: () => void;
   retryLevel: () => void;
@@ -145,7 +141,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
   const earn = (amount: number) => {
     const s = get();
-    const gold = goldWithBonus(amount, s.stats, s.buffs);
+    const gold = goldWithBonus(amount, s.stats);
     save().addGold(gold);
     return gold;
   };
@@ -156,7 +152,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     save().recordAnswer(s.original, true, !s.retrying);
     const stage = s.stages[s.stageIdx];
     const combo = s.combo + 1;
-    const damage = stage.revenge ? BASE_DAMAGE * 2 : computeDamage(s.question, combo, s.stats, s.hero, s.buffs);
+    const damage = stage.revenge ? BASE_DAMAGE * 2 : computeDamage(s.question, combo, s.stats, s.hero);
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
@@ -182,16 +178,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ ...common, phase: 'levelClear' });
       return;
     }
-    if (stage.bossMode) {
-      set({ ...common, phase: 'summary' });
-      return;
-    }
-    const normalKills = s.normalKills + 1;
-    if (normalKills % BUFF_EVERY === 0) {
-      set({ ...common, normalKills, phase: 'buff', buffChoices: rollBuffChoices() });
-      return;
-    }
-    set({ ...common, normalKills, phase: 'monsterDown' });
+    set({ ...common, phase: stage.bossMode ? 'summary' : 'monsterDown' });
   };
 
   const onWrong = (given: string) => {
@@ -199,13 +186,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (!s.question || !s.original) return;
     save().recordAnswer(s.original, false, false);
     const base = {
-      combo: comboAfterWrong(s.question, s.combo, s.hero, s.buffs),
+      combo: comboAfterWrong(s.question, s.combo, s.hero),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: false }],
       wrongStreak: s.wrongStreak + 1,
       feedback: { question: s.question, given },
     };
 
-    // 護盾（援軍、道具或 Buff）：擋下這次傷害
+    // 護盾（援軍或道具）：擋下這次傷害
     if (s.shield) {
       set({ ...base, shield: false, phase: 'feedback', event: nextEvent('shield') });
       return;
@@ -249,9 +236,6 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     shield: false,
     stats: playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 }, hero: 'knight' }),
     hero: 'knight',
-    buffs: [],
-    buffChoices: [],
-    normalKills: 0,
     runGold: 0,
 
     startLevel: (levelKey, transform) => {
@@ -262,7 +246,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({
         active: true, levelKey, stages: generateStages(levelKey, decks), combo: 0, maxCombo: 0,
         stats, hero, playerHp: stats.maxHp, playerMaxHp: stats.maxHp,
-        answers: [], wrongStreak: 0, shield: false, buffs: [], buffChoices: [], normalKills: 0, runGold: 0,
+        answers: [], wrongStreak: 0, shield: false, runGold: 0,
       });
       loadStage(0);
     },
@@ -323,17 +307,6 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         return;
       }
       set({ ...base, typed: '', assist: null, assistSource: null });
-    },
-
-    pickBuff: (id) => {
-      const s = get();
-      if (s.phase !== 'buff' || !s.buffChoices.includes(id)) return;
-      const def = buffDef(id);
-      if (id === 'heal') set({ playerHp: Math.min(s.playerMaxHp, s.playerHp + BUFF_HEAL), event: nextEvent('heal', BUFF_HEAL) });
-      else if (id === 'guard') set({ shield: true, event: nextEvent('guard') });
-      if (!def.instant) set({ buffs: [...s.buffs, id] });
-      set({ buffChoices: [] });
-      loadStage(s.stageIdx + 1);
     },
 
     consumeItem: (id) => {

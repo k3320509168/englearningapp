@@ -12,7 +12,7 @@ import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
-import { BattleStatusBar, BuffPanel } from './BattleExtras';
+import { BattleStatusBar } from './BattleExtras';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -54,10 +54,6 @@ export default function BattleHUD() {
       if ((s.phase === 'monsterDown' || s.phase === 'summary') && e.key === 'Enter') { handled(); return s.nextStage(); }
       if (s.phase === 'levelClear' && e.key === 'Enter') { handled(); return s.exitToMap(); }
       if (s.phase === 'gameOver' && e.key === 'Enter') { handled(); return s.retryLevel(); }
-      if (s.phase === 'buff' && /^[1-3]$/.test(e.key)) {
-        const id = s.buffChoices[Number(e.key) - 1];
-        if (id) { handled(); return s.pickBuff(id); }
-      }
       if (s.phase !== 'answering' || !q) return;
 
       if (e.key === ' ') { handled(); return say(q.speak); }
@@ -92,7 +88,6 @@ export default function BattleHUD() {
 
       <BattleStatusBar />
       {phase === 'lesson' && <LessonPanel />}
-      {phase === 'buff' && <BuffPanel />}
       {phase === 'answering' && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}
       {phase === 'monsterDown' && <StageClearPanel />}

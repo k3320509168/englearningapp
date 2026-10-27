@@ -1,7 +1,7 @@
 import type { Question } from './types';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
 
-// 成長系統的數值設定（純資料＋純函式）：永久升級、道具、英雄、三選一 Buff、怪物強度、金幣、SRS 間隔。
+// 成長系統的數值設定（純資料＋純函式）：永久升級、道具、英雄、怪物強度、金幣、SRS 間隔。
 // 平衡調整只需要改這個檔案。
 
 // ---------- 永久升級（商店） ----------
@@ -68,43 +68,6 @@ export const HEROES: HeroDef[] = [
 
 export const heroDef = (id: HeroId) => HEROES.find(h => h.id === id) ?? HEROES[0];
 
-// ---------- 三選一 Buff（只在這一趟冒險有效） ----------
-export type BuffId = 'power' | 'speller' | 'sniper' | 'voice' | 'heal' | 'guard' | 'fortune' | 'ember';
-
-export interface BuffDef {
-  id: BuffId;
-  icon: string;
-  name: string;
-  desc: string;
-  instant?: boolean; // 立即生效、不會留在 Buff 列表
-}
-
-export const BUFFS: BuffDef[] = [
-  { id: 'power', icon: '💪', name: '力量', desc: '所有傷害 +15%' },
-  { id: 'speller', icon: '✍️', name: '拼字專家', desc: '拼寫、填空題傷害 +30%' },
-  { id: 'sniper', icon: '🎯', name: '神射手', desc: '選擇題傷害 +30%' },
-  { id: 'voice', icon: '🎤', name: '好嗓子', desc: '口說題傷害 +40%' },
-  { id: 'heal', icon: '❤️', name: '生命湧泉', desc: '立即回復 40 HP', instant: true },
-  { id: 'guard', icon: '🛡️', name: '守護', desc: '立即獲得一次護盾', instant: true },
-  { id: 'fortune', icon: '🪙', name: '招財', desc: '金幣 +25%' },
-  { id: 'ember', icon: '🕯️', name: '不滅之火', desc: '答錯時 Combo 只減半，不會歸零' },
-];
-
-export const buffDef = (id: BuffId) => BUFFS.find(b => b.id === id)!;
-export const BUFF_EVERY = 3; // 每打倒 3 隻怪（非 Boss）選一次
-export const BUFF_HEAL = 40;
-
-// 已擁有的被動 Buff 仍可再次出現（效果疊加），三個選項彼此不重複
-export function rollBuffChoices(random: () => number = Math.random): BuffId[] {
-  const pool = BUFFS.map(b => b.id);
-  const picked: BuffId[] = [];
-  while (picked.length < 3 && picked.length < pool.length) {
-    const id = pool[Math.floor(random() * pool.length)];
-    if (!picked.includes(id)) picked.push(id);
-  }
-  return picked;
-}
-
 // ---------- 玩家能力 ----------
 export interface Loadout {
   upgrades: Record<UpgradeId, number>;
@@ -127,28 +90,22 @@ export function playerStats({ upgrades, hero }: Loadout): PlayerStats {
   };
 }
 
-const count = (buffs: BuffId[], id: BuffId) => buffs.filter(b => b === id).length;
-
 // Combo 加成：每層 +10%，上限由升級決定
 export function comboMultiplier(combo: number, cap = 2): number {
   return Math.min(cap, 1 + 0.1 * Math.max(0, combo - 1));
 }
 
-export function computeDamage(q: Question, combo: number, stats: PlayerStats, hero: HeroId, buffs: BuffId[]): number {
+export function computeDamage(q: Question, combo: number, stats: PlayerStats, hero: HeroId): number {
   const isTyping = q.type === 'spell' || q.type === 'fill';
   let mult = stats.atkMult * comboMultiplier(combo, stats.comboCap);
-  mult *= 1 + 0.15 * count(buffs, 'power');
-  if (isTyping) mult *= 1 + 0.3 * count(buffs, 'speller') + (hero === 'archer' ? 0.3 : 0);
-  if (q.type === 'choice') mult *= 1 + 0.3 * count(buffs, 'sniper');
-  if (q.type === 'voice') mult *= (1 + 0.4 * count(buffs, 'voice')) * (hero === 'bard' ? 2 : 1);
+  if (isTyping && hero === 'archer') mult *= 1.3;
+  if (q.type === 'voice' && hero === 'bard') mult *= 2;
   return Math.round(BASE_DAMAGE * mult);
 }
 
-// 答錯後的 Combo：法師答錯選擇題不中斷；不滅之火讓 Combo 減半
-export function comboAfterWrong(q: Question, combo: number, hero: HeroId, buffs: BuffId[]): number {
-  if (hero === 'mage' && q.type === 'choice') return combo;
-  if (buffs.includes('ember')) return Math.floor(combo / 2);
-  return 0;
+// 答錯後的 Combo：法師答錯選擇題不中斷，其他情況歸零
+export function comboAfterWrong(q: Question, combo: number, hero: HeroId): number {
+  return hero === 'mage' && q.type === 'choice' ? combo : 0;
 }
 
 // ---------- 怪物強度 ----------
@@ -169,8 +126,8 @@ export const GOLD = {
   levelClear: 100,
 };
 
-export function goldWithBonus(amount: number, stats: PlayerStats, buffs: BuffId[]): number {
-  return Math.round(amount * stats.goldMult * (1 + 0.25 * count(buffs, 'fortune')));
+export function goldWithBonus(amount: number, stats: PlayerStats): number {
+  return Math.round(amount * stats.goldMult);
 }
 
 // ---------- 間隔重複（SRS，Leitner 盒子） ----------

@@ -39,6 +39,7 @@ export default class MainScene extends Phaser.Scene {
   private monsterHpBar!: HealthBar;
   private stageTxt!: Phaser.GameObjects.Text;
   private comboTxt!: Phaser.GameObjects.Text;
+  private helper!: Phaser.GameObjects.Text;
   private fontBase = {
     fontFamily: '"Microsoft JhengHei", "PingFang TC", "Noto Sans TC", monospace',
     stroke: '#000', strokeThickness: 4,
@@ -69,6 +70,10 @@ export default class MainScene extends Phaser.Scene {
     this.stageTxt = this.add.text(width / 2, 40, '', { ...this.fontBase, fontSize: '24px', color: '#ffffff' }).setOrigin(0.5);
     this.comboTxt = this.add.text(width / 2, 110, '', { ...this.fontBase, fontSize: '44px', color: '#ffaa00', fontStyle: 'italic bold' }).setOrigin(0.5);
 
+    // 援軍夥伴：連續答錯時出現在玩家旁邊，護盾用掉後離開
+    this.helper = this.add.text(PLAYER_X - 90, GROUND_Y - 50, '🧚', { fontSize: '40px' }).setOrigin(0.5).setVisible(false);
+    this.tweens.add({ targets: this.helper, y: GROUND_Y - 62, yoyo: true, repeat: -1, duration: 700, ease: 'Sine.easeInOut' });
+
     const unsubscribe = useBattleStore.subscribe((state, prev) => this.sync(state, prev));
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, unsubscribe);
     this.sync(useBattleStore.getState(), null);
@@ -93,6 +98,7 @@ export default class MainScene extends Phaser.Scene {
     }
 
     if (s.event && s.event !== prev?.event) this.playEvent(s.event);
+    this.helper.setVisible(s.shield || s.assist !== null);
 
     if (s.phase === 'gameOver') {
       this.player.anims.stop();
@@ -127,6 +133,19 @@ export default class MainScene extends Phaser.Scene {
           }
         },
       });
+      return;
+    }
+
+    if (event.kind === 'assist') {
+      this.showNumber(PLAYER_X, GROUND_Y - 120, '援軍登場！', '#7fffd4');
+      this.helper.setAlpha(0);
+      this.tweens.add({ targets: this.helper, alpha: 1, duration: 400 });
+      return;
+    }
+
+    if (event.kind === 'shield') {
+      this.showNumber(PLAYER_X, GROUND_Y - 80, '🛡️ 擋下！', '#7fffd4');
+      this.cameras.main.flash(150, 127, 255, 212);
       return;
     }
 

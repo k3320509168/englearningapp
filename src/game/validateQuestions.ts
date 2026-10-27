@@ -1,5 +1,6 @@
 import type { Question } from './types';
 import type { QuestionPool } from './QuestionData';
+import { VOCAB, vocabKey } from './vocab';
 
 // 題庫驗證：檢查資料格式是否符合 MainScene 的判讀規則。
 // error = 遊戲中會壞掉或無法作答；warning = 可以玩，但值得人工檢查。
@@ -28,6 +29,11 @@ function validateQuestion(q: Question, where: string): ValidationIssue[] {
     error('缺少 ans（正確答案）');
     return issues;
   }
+
+  // 學習資料：戰前預習與答錯回饋會用到
+  const key = vocabKey(q);
+  if (key && !VOCAB[key]) warn(`單字 ${key} 缺少中文與例句（請補到 vocab.ts）`);
+  if (q.type === 'choice' && !q.explain?.trim()) warn('選擇題缺少 explain（文法解說）');
 
   switch (q.type) {
     case 'spell': {

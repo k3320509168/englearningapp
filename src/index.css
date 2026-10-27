@@ -48,7 +48,7 @@ button { font: inherit; color: inherit; }
 }
 
 /* 地圖：盡量放大畫布 */
-.is-map .game-canvas { max-width: calc((100dvh - 32px) * 5 / 3); }
+.is-map .game-canvas { max-width: calc((100dvh - 96px) * 5 / 3); }
 /* 戰鬥：畫布限制高度，保留空間給作答區 */
 .is-battle .game-canvas { max-width: min(860px, calc(48dvh * 5 / 3)); }
 
@@ -77,7 +77,20 @@ button { font: inherit; color: inherit; }
   justify-content: space-between;
   gap: 8px;
 }
-.hud-stage { font-weight: bold; text-align: center; }
+.hud-stage {
+  flex: 1;
+  min-width: 0;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+  .hud-stage { font-size: 14px; }
+  .hud-top .btn-small { padding: 6px 9px; }
+  .btn-label { display: none; }
+}
 .hud-stage small { color: var(--muted); font-weight: normal; }
 
 .btn {
@@ -95,6 +108,10 @@ button { font: inherit; color: inherit; }
 .btn-ghost { background: transparent; }
 .btn-primary { background: var(--primary); border-color: var(--primary); color: #0b1a2b; font-weight: bold; }
 .btn-primary:hover { background: #6bb9ff; }
+.btn-small { min-height: 40px; padding: 6px 12px; }
+.btn-danger { background: var(--bad); border-color: var(--bad); color: #2b0b0b; font-weight: bold; }
+.muted { color: var(--muted); }
+.pos { color: var(--muted); font-size: 0.8em; font-style: italic; }
 
 .question-card {
   background: var(--panel);
@@ -228,6 +245,162 @@ button { font: inherit; color: inherit; }
 .sentence { font-style: italic; }
 .feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .feedback-note { margin: 10px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+/* ---------- 地圖工具列 ---------- */
+.map-toolbar {
+  width: 100%;
+  max-width: calc((100dvh - 96px) * 5 / 3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.brand { font-weight: bold; font-size: 20px; color: var(--accent); }
+.map-stat { font-size: 14px; }
+.toolbar-actions { margin-left: auto; display: flex; gap: 8px; }
+
+.hud-tools { display: flex; gap: 4px; }
+.shield-badge { margin-left: 6px; }
+
+/* ---------- 援軍 ---------- */
+.assist-banner {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(127, 255, 212, 0.12);
+  border: 2px solid #7fffd4;
+  color: #c9fff0;
+  animation: slide-up 0.2s ease-out;
+}
+.slot-revealed { color: #7fffd4; border-color: #7fffd4; }
+.option-btn.is-hidden { opacity: 0.25; text-decoration: line-through; cursor: default; }
+.voice-word { margin: 0; font-size: 30px; font-weight: bold; color: #7fffd4; letter-spacing: 1px; }
+
+/* ---------- 戰前預習 ---------- */
+.lesson { display: flex; flex-direction: column; gap: 12px; }
+.lesson-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lesson-title { margin: 0; font-weight: bold; color: var(--accent); }
+.lesson-card {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  justify-content: center;
+  animation: slide-up 0.2s ease-out;
+}
+.lesson-card p { margin: 0; }
+.lesson-word { font-size: clamp(28px, 6vw, 36px); font-weight: bold; }
+.lesson-meaning { font-size: 20px; color: var(--accent); }
+.lesson-example { font-style: italic; font-size: 17px; }
+.lesson-example-zh { color: var(--muted); }
+.lesson-explain { text-align: left; line-height: 1.6; }
+.lesson-card .q-tag { align-self: center; }
+.lesson-empty { text-align: center; color: var(--muted); }
+.lesson-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.lesson-count { color: var(--muted); }
+.check { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); cursor: pointer; }
+.check input { width: 18px; height: 18px; }
+
+/* ---------- 結算 ---------- */
+.summary { text-align: left; }
+.summary .result-title, .summary > p { text-align: center; }
+.result.is-fail { border-color: var(--bad); }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+}
+.stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 4px;
+  background: var(--panel-2);
+  border-radius: 10px;
+}
+.stats b { font-size: 22px; color: var(--accent); }
+.stats span { font-size: 13px; color: var(--muted); }
+.summary-section { margin-bottom: 12px; }
+.summary-label { margin: 0 0 6px; font-weight: bold; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--good);
+  background: rgba(68, 209, 122, 0.12);
+  cursor: pointer;
+}
+.mistake-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.mistake-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "btn text" "btn meaning";
+  column-gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  background: var(--panel-2);
+  border-radius: 8px;
+}
+.mistake-list .btn { grid-area: btn; }
+.mistake-text { grid-area: text; font-weight: bold; }
+.mistake-meaning { grid-area: meaning; color: var(--muted); font-size: 14px; }
+
+/* ---------- 彈出視窗 ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.65);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.modal {
+  width: min(520px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: slide-up 0.2s ease-out;
+}
+.modal-head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.modal-head h2 { margin: 0; font-size: 18px; }
+.modal-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.tutorial-step { text-align: center; min-height: 200px; animation: slide-up 0.2s ease-out; }
+.tutorial-icon { font-size: 56px; }
+.tutorial-step h3 { margin: 8px 0; color: var(--accent); }
+.tutorial-step p { margin: 0; line-height: 1.7; }
+.dots { display: flex; justify-content: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.dot.is-active { background: var(--accent); width: 20px; border-radius: 4px; }
+.tutorial-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tutorial-nav { display: flex; gap: 8px; }
+
+.settings-group { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.settings-group h3 { margin: 0; font-size: 16px; }
+.settings-group p { margin: 0; }
+.settings-group.danger h3 { color: var(--bad); }
+.range { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.range input { width: 100%; accent-color: var(--primary); }
+.mic-test p { margin: 8px 0 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

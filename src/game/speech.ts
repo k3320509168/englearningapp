@@ -6,12 +6,13 @@ export interface Recognizer {
   stop: () => void;
 }
 
-export function speak(text: string, rate = 1) {
+export function speak(text: string, rate = 1, volume = 1) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-US';
   utterance.rate = rate;
+  utterance.volume = volume;
   window.speechSynthesis.speak(utterance);
 }
 

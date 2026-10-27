@@ -119,6 +119,29 @@ export function completedSentence(q: Question): string {
   return sentence.includes('___') ? sentence.replace('___', answer) : '';
 }
 
+// 援軍：連續答錯幾次後出現
+export const ASSIST_STREAK = 3;
+
+export interface Assist {
+  hiddenOptions: string[]; // 選擇題：被刪掉的兩個錯誤選項
+  revealed: string;        // 拼寫／填空：預先填好的字母
+  showWord: boolean;       // 語音題：直接顯示要唸的單字
+}
+
+export function buildAssist(q: Question, random: () => number = Math.random): Assist {
+  const assist: Assist = { hiddenOptions: [], revealed: '', showWord: false };
+  if (q.type === 'choice') {
+    const wrong = CHOICE_LETTERS.filter(l => l !== q.ans);
+    assist.hiddenOptions = shuffleArray(wrong, random).slice(0, 2);
+  } else if ((q.type === 'spell' || q.type === 'fill') && q.ans.length > 1) {
+    // 只剩一個字母的填空題不提示，否則等於直接給答案
+    assist.revealed = q.ans[0];
+  } else if (q.type === 'voice') {
+    assist.showWord = true;
+  }
+  return assist;
+}
+
 // 錯題紀錄的 key：同一題型同一答案視為同一題
 export function questionKey(q: Question): string {
   return `${q.type}:${q.type === 'choice' ? q.desc : q.ans}`;

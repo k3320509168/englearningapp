@@ -11,7 +11,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '../game/growth';
-import { MAX_PLUS, SELL_RATE, enhanceCost, equipDef, resolveCost, sellValue } from '../game/equipment';
+import { MAX_GRADE, SELL_RATE, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
 import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, streakMilestone } from '../game/daily';
@@ -132,6 +132,7 @@ interface SaveActions {
   forge: (defId: string) => boolean;
   enhance: (uid: string) => boolean;
   sellEquip: (uid: string) => boolean;
+  gradeUp: (uid: string) => boolean;
   sellHero: (id: HeroId) => number; // 回傳得到的金幣，不能賣時回傳 0
   equip: (uid: string) => void;
   unequip: (slot: Slot) => void;
@@ -402,7 +403,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         enhance: (uid) => {
           const s = get();
           const item = s.equipment.find(e => e.uid === uid);
-          if (!item || item.plus >= MAX_PLUS) return false;
+          if (!item || item.plus >= maxPlus(item)) return false;
           const cost = enhanceCost(item);
           if ((s.materials.ore ?? 0) < cost.ore) return false;
           return purchase(cost.gold, st => ({
@@ -425,6 +426,21 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             trueName: omit(s.trueName),
           });
           return value;
+        },
+
+        // 升品階：吃掉一件沒穿在身上的同名裝備，素材件強化過的礦石退還 65%
+        gradeUp: (uid) => {
+          const s = get();
+          const item = s.equipment.find(e => e.uid === uid);
+          if (!item || gradeOf(item) >= MAX_GRADE) return false;
+          const material = gradeMaterial(item, s.equipment, Object.values(s.equipped).filter((u): u is string => !!u));
+          if (!material) return false;
+          const refund = gradeRefund(material);
+          set({
+            equipment: s.equipment.filter(e => e.uid !== material.uid).map(e => (e.uid === uid ? { ...e, grade: gradeOf(e) + 1 } : e)),
+            materials: refund > 0 ? { ...s.materials, ore: (s.materials.ore ?? 0) + refund } : s.materials,
+          });
+          return true;
         },
 
         // 賣掉沒穿在身上的裝備，退還部分金幣與素材

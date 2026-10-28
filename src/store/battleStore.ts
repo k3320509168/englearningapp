@@ -486,7 +486,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 擊倒：經驗值與素材掉落
     const dropKind = stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : stage.kind === 'treasure' ? 'treasure' : 'normal';
     const { xp, levelUp } = gainXp(!killed ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
-    const drops = killed && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random) : {};
+    const drops = killed && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random, s.mode === 'normal' ? s.levelIdx : 0) : {};
     if (killed) save().addMaterials(drops);
     if (killed && stage.bossMode && s.mode !== 'golden') save().trackDaily('boss');
 

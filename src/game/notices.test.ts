@@ -14,6 +14,7 @@ const base = (): NoticeInput => ({
   player: { level: 1, classPath: [] },
   materials: {},
   equipment: [],
+  equipped: {},
   heroes: ['knight'],
   heroShards: {},
   heroTier: {},

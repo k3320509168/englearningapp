@@ -58,7 +58,7 @@ export default function MapToolbar() {
           <span className="nav-icon">🔮</span><span>召喚</span>{dot(notices.summon)}
         </button>
         <button className="nav-btn" onMouseDown={keepFocus} onClick={() => open('growth')}>
-          <span className="nav-icon">🛡️</span><span>成長</span>{dot(notices.classAdvance || notices.forge)}
+          <span className="nav-icon">🛡️</span><span>成長</span>{dot(notices.classAdvance || notices.forge || notices.gradeUp)}
         </button>
         <button className="nav-btn" onMouseDown={keepFocus} onClick={() => open('daily')}>
           <span className="nav-icon">📅</span><span>每日</span>{dot(notices.daily)}

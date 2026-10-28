@@ -1449,3 +1449,4 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .skill-btn small { display: block; font-family: var(--font-body); font-size: 12px; opacity: 0.85; }
 .skill-btn kbd { margin-left: auto; padding: 1px 6px; border: 2px solid var(--ink); border-radius: 4px; background: var(--bg); font-family: var(--font-body); font-size: 12px; }
 @media (pointer: coarse) { .only-desktop { display: none; } }
+.grade-stars { color: var(--accent); text-shadow: 0 0 6px var(--accent); }

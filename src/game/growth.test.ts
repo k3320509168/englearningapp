@@ -151,3 +151,29 @@ describe('經驗值曲線', () => {
     expect(xpToNext(10)).toBe(190);
   });
 });
+
+describe('裝備品階', () => {
+  it('品階讓效果與強化上限提高，稀有度不變；龍晶只在第 4 區以後掉', async () => {
+    const { equipMods, maxPlus, rollDrops, sellValue, gradeMaterial, gradeRefund, equipDef } = await import('./equipment');
+    const base = { uid: 'a', defId: 'blade_training', plus: 0 };
+    expect(equipMods({ ...base, grade: 2 }).atk).toBeCloseTo(0.1 * 1.4);
+    expect(maxPlus({ ...base, grade: 3 })).toBe(16);
+    expect(equipDef('blade_training')!.rarity).toBe('N');
+    // 素材：沒穿在身上、品階與強化最低的同名裝備
+    const all = [base, { uid: 'b', defId: 'blade_training', plus: 3 }, { uid: 'c', defId: 'blade_training', plus: 1 }, { uid: 'd', defId: 'armor_cloth', plus: 0 }];
+    expect(gradeMaterial(base, all, ['a', 'c'])?.uid).toBe('b');
+    expect(gradeRefund({ uid: 'b', defId: 'blade_training', plus: 3 })).toBe(Math.floor((1 + 2 + 3) * 0.65));
+    // 升過品階的裝備賣出時，打造成本按份數計算
+    expect(sellValue({ ...base, grade: 1 }, 'fire').gold).toBe(Math.floor(200 * 0.65));
+    expect(rollDrops('boss', 'fire', () => 0.1, 2).dragon).toBeUndefined();
+    expect(rollDrops('boss', 'fire', () => 0.1, 3).dragon).toBe(1);
+  });
+
+  it('每種屬性都有護符，用該屬性的結晶打造', async () => {
+    const { EQUIPMENT } = await import('./equipment');
+    const amulets = EQUIPMENT.filter(e => e.id.startsWith('amulet_'));
+    expect(amulets).toHaveLength(7);
+    expect(EQUIPMENT.length).toBe(26);
+    expect(amulets.find(a => a.id === 'amulet_fire')!.cost.materials).toMatchObject({ crystal_fire: 4 });
+  });
+});

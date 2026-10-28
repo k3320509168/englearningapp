@@ -25,7 +25,7 @@ export default function MapLevelBar() {
   // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
   const doStep = () => {
     if (step.action === 'continue') return continueJourney();
-    if (step.action === 'growth') return openGrowth(notices.classAdvance ? 'hero' : 'forge');
+    if (step.action === 'growth') return openGrowth(notices.classAdvance ? 'hero' : notices.forge ? 'forge' : 'gear');
     openModal(step.action);
   };
 

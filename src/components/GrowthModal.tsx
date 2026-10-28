@@ -10,7 +10,7 @@ import {
   ADVANCE_REQ, MAX_LEVEL, canAdvance, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
-  EQUIPMENT, MAX_PLUS, SLOTS, displayName, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
+  EQUIPMENT, MAX_GRADE, SLOTS, displayName, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
 } from '../game/equipment';
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
@@ -36,6 +36,7 @@ export default function GrowthModal() {
   );
   if (!character) return null;
 
+  const ownedCount = (defId: string) => equipment.filter(e => e.defId === defId).length;
   const sellText = (item: OwnedEquip) => {
     const v = sellValue(item, character.element);
     return [`🪙${v.gold}`, ...Object.entries(v.materials).map(([k, n]) => `${materialIcon(k)}${n}`)].join(' ');
@@ -52,7 +53,7 @@ export default function GrowthModal() {
   const materialBar = (
     <p className="material-bar">
       <span>🪙 <b>{gold}</b></span>
-      {['ore', 'core', `crystal_${character.element}`].map(id => (
+      {['ore', 'core', ...((materials.dragon ?? 0) > 0 || unlockedIndex >= 3 ? ['dragon'] : []), `crystal_${character.element}`].map(id => (
         <span key={id} title={materialName(id)}>{materialIcon(id)} {materialName(id)} <b>{materials[id] ?? 0}</b></span>
       ))}
     </p>
@@ -63,7 +64,7 @@ export default function GrowthModal() {
       <div className="tabs" role="tablist">
         {([['hero', '主角'], ['gear', '裝備'], ['forge', '鍛造坊']] as [Tab, string][]).map(([id, label]) => (
           <button key={id} role="tab" aria-selected={tab === id} className={`tab ${tab === id ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab(id)}>
-            {label}{((id === 'hero' && notices.classAdvance) || (id === 'forge' && notices.forge)) && <span className="dot-badge" aria-label="有可以做的事" />}
+            {label}{((id === 'hero' && notices.classAdvance) || (id === 'gear' && notices.gradeUp) || (id === 'forge' && notices.forge)) && <span className="dot-badge" aria-label="有可以做的事" />}
           </button>
         ))}
       </div>
@@ -129,21 +130,31 @@ export default function GrowthModal() {
               if (!def) return null;
               const isOn = equipped[def.slot] === item.uid;
               const cost = enhanceCost(item);
-              const canEnhance = item.plus < MAX_PLUS && gold >= cost.gold && (materials.ore ?? 0) >= cost.ore;
+              const cap = maxPlus(item);
+              const canEnhance = item.plus < cap && gold >= cost.gold && (materials.ore ?? 0) >= cost.ore;
+              const grade = gradeOf(item);
+              const hasMaterial = !!gradeMaterial(item, equipment, Object.values(equipped).filter((u): u is string => !!u));
               return (
                 <li key={item.uid} className="gear-item" style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
                   <span className="rarity-tag inline">{def.rarity}</span>
                   <div className="gear-info">
-                    <b>{displayName(def, character.classId)} +{item.plus}</b>
+                    <b>{displayName(def, character.classId)} +{item.plus}{grade > 0 && <span className="grade-stars" aria-label={`品階 ${grade}`}> {'★'.repeat(grade)}</span>}</b>
                     <small className="muted">{describeMods(equipMods(item)).join('、')}</small>
                   </div>
                   {isOn ? <span className="hero-tag">裝備中</span>
                     : <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { sfx.click(); sv.equip(item.uid); }}>裝備</button>}
                   <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!canEnhance}
                     onClick={() => { if (sv.enhance(item.uid)) sfx.coin(); }}
-                    title={item.plus >= MAX_PLUS ? '已經強化到最高' : `需要 🪙${cost.gold}、🪨${cost.ore}`}>
-                    {item.plus >= MAX_PLUS ? 'MAX' : `強化 🪙${cost.gold} 🪨${cost.ore}`}
+                    title={item.plus >= cap ? `已經強化到目前上限 +${cap}${grade < MAX_GRADE ? '（升品階可以提高上限）' : ''}` : `需要 🪙${cost.gold}、🪨${cost.ore}`}>
+                    {item.plus >= cap ? `MAX +${cap}` : `強化 🪙${cost.gold} 🪨${cost.ore}`}
                   </button>
+                  {grade < MAX_GRADE && (
+                    <button className="btn btn-small" onMouseDown={keepFocus} disabled={!hasMaterial}
+                      onClick={() => { if (sv.gradeUp(item.uid)) sfx.victory(); }}
+                      title={hasMaterial ? '用掉一件沒穿在身上的同名裝備：效果 +20%、強化上限 +2（稀有度不變）' : '需要一件沒穿在身上的同名裝備（可以到鍛造坊再打造一件）'}>
+                      ★ 升品階 {grade}→{grade + 1}
+                    </button>
+                  )}
                   {!isOn && (selling === item.uid ? (
                     <span className="sell-confirm">
                       <small>賣出可得 {sellText(item)}</small>
@@ -163,7 +174,7 @@ export default function GrowthModal() {
       {tab === 'forge' && (
         <>
           {materialBar}
-          <p className="muted party-note">素材來源：一般怪掉礦石，菁英怪與頭目掉屬性結晶，頭目掉魔核，寶箱怪掉一大堆。</p>
+          <p className="muted party-note">素材來源：一般怪掉礦石，菁英怪與頭目掉屬性結晶，頭目掉魔核，第 4 區以後的菁英與頭目掉龍晶，寶箱怪掉一大堆。重複打造的同名裝備可以拿來「升品階」：效果 +20%、強化上限 +2（最多 ★3，稀有度不變）。</p>
           <ul className="gear-list">
             {EQUIPMENT.map(def => {
               const need = resolveCost(def, character.element);
@@ -175,7 +186,7 @@ export default function GrowthModal() {
                 <li key={def.id} className={`gear-item ${lockText ? 'is-locked' : ''}`} style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
                   <span className="rarity-tag inline">{def.rarity}</span>
                   <div className="gear-info">
-                    <b>{SLOTS.find(sl => sl.id === def.slot)?.icon} {displayName(def, character.classId)}</b>
+                    <b>{SLOTS.find(sl => sl.id === def.slot)?.icon} {displayName(def, character.classId)}{ownedCount(def.id) > 0 && <small className="muted"> 已擁有 {ownedCount(def.id)} 件</small>}</b>
                     <small className="muted">{describeMods(def.mods).join('、')}</small>
                     <small className="cost-line">
                       🪙{def.cost.gold}

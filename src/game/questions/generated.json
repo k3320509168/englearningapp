@@ -288,6 +288,282 @@
     ],
     "ans": "C",
     "explain": "red 紅、blue 藍、green 綠、yellow 黃。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：咖啡",
+    "ans": "COFFEE",
+    "speak": "coffee"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：T _ A (茶)",
+    "ans": "E",
+    "speak": "tea"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：蛋糕",
+    "ans": "CAKE",
+    "speak": "cake"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ N A N A (香蕉)",
+    "ans": "A",
+    "speak": "banana"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：雞肉",
+    "ans": "CHICKEN",
+    "speak": "chicken"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S _ U P (湯)",
+    "ans": "O",
+    "speak": "soup"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：糖",
+    "ans": "SUGAR",
+    "speak": "sugar"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ D (床)",
+    "ans": "E",
+    "speak": "bed"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：廚房",
+    "ans": "KITCHEN",
+    "speak": "kitchen"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：G _ R D E N (花園)",
+    "ans": "A",
+    "speak": "garden"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：公園",
+    "ans": "PARK",
+    "speak": "park"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S H _ E (鞋子)",
+    "ans": "O",
+    "speak": "shoe"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：襯衫",
+    "ans": "SHIRT",
+    "speak": "shirt"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：H _ T (帽子)",
+    "ans": "A",
+    "speak": "hat"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：紅色的",
+    "ans": "RED",
+    "speak": "red"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B L _ E (藍色的)",
+    "ans": "U",
+    "speak": "blue"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：黑色的",
+    "ans": "BLACK",
+    "speak": "black"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：W H _ T E (白色的)",
+    "ans": "I",
+    "speak": "white"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：狗",
+    "ans": "DOG",
+    "speak": "dog"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ R D (鳥)",
+    "ans": "I",
+    "speak": "bird"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：太陽",
+    "ans": "SUN",
+    "speak": "sun"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：R _ I N (雨)",
+    "ans": "A",
+    "speak": "rain"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：打開",
+    "ans": "OPEN",
+    "speak": "open"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C L _ S E (關上)",
+    "ans": "O",
+    "speak": "close"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：唱歌",
+    "ans": "SING",
+    "speak": "sing"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ N C E (跳舞)",
+    "ans": "A",
+    "speak": "dance"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：玩",
+    "ans": "PLAY",
+    "speak": "play"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C L _ A N (打掃)",
+    "ans": "E",
+    "speak": "clean"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：老的",
+    "ans": "OLD",
+    "speak": "old"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：N _ W (新的)",
+    "ans": "E",
+    "speak": "new"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：快的",
+    "ans": "FAST",
+    "speak": "fast"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S L _ W (慢的)",
+    "ans": "O",
+    "speak": "slow"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：家",
+    "ans": "HOME",
+    "speak": "home"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：N _ G H T (晚上)",
+    "ans": "I",
+    "speak": "night"
+   },
+   {
+    "type": "choice",
+    "desc": "【基礎文法】This ___ my friend, Tom.",
+    "options": [
+     "A. is",
+     "B. are",
+     "C. am",
+     "D. be"
+    ],
+    "ans": "A",
+    "explain": "介紹一個人用 This is...；this 是單數。"
+   },
+   {
+    "type": "choice",
+    "desc": "【基礎文法】We ___ lunch at noon.",
+    "options": [
+     "A. has",
+     "B. have",
+     "C. having",
+     "D. is"
+    ],
+    "ans": "B",
+    "explain": "主詞 we 搭配 have；只有第三人稱單數用 has。"
+   },
+   {
+    "type": "choice",
+    "desc": "【疑問詞】___ is your name?",
+    "options": [
+     "A. What",
+     "B. Where",
+     "C. When",
+     "D. Who"
+    ],
+    "ans": "A",
+    "explain": "問名字用 What is your name?"
+   },
+   {
+    "type": "choice",
+    "desc": "【介系詞】My birthday is ___ May.",
+    "options": [
+     "A. on",
+     "B. at",
+     "C. in",
+     "D. to"
+    ],
+    "ans": "C",
+    "explain": "月份前用 in；日期、星期用 on。"
+   },
+   {
+    "type": "choice",
+    "desc": "【字彙】「星期五」的英文是？",
+    "options": [
+     "A. Thursday",
+     "B. Friday",
+     "C. Tuesday",
+     "D. Saturday"
+    ],
+    "ans": "B",
+    "explain": "Friday 星期五；Thursday 星期四，Tuesday 星期二。"
+   },
+   {
+    "type": "choice",
+    "desc": "【複數】Two ___ are on the table.",
+    "options": [
+     "A. box",
+     "B. boxs",
+     "C. boxes",
+     "D. boxies"
+    ],
+    "ans": "C",
+    "explain": "字尾 -x 的名詞複數加 -es：box → boxes。"
    }
   ],
   "boss": [
@@ -362,6 +638,96 @@
     ],
     "ans": "C",
     "explain": "助動詞 can 後面接原形動詞：can speak。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：果汁",
+    "ans": "JUICE",
+    "speak": "juice"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：柳橙",
+    "ans": "ORANGE",
+    "speak": "orange"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：房間",
+    "ans": "ROOM",
+    "speak": "room"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：城市",
+    "ans": "CITY",
+    "speak": "city"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：包包",
+    "ans": "BAG",
+    "speak": "bag"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：綠色的",
+    "ans": "GREEN",
+    "speak": "green"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：馬",
+    "ans": "HORSE",
+    "speak": "horse"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：雪",
+    "ans": "SNOW",
+    "speak": "snow"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：游泳",
+    "ans": "SWIM",
+    "speak": "swim"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：年輕的",
+    "ans": "YOUNG",
+    "speak": "young"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：簡單的",
+    "ans": "EASY",
+    "speak": "easy"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】He ___ to school every day.",
+    "options": [
+     "A. walk",
+     "B. walks",
+     "C. walking",
+     "D. is walk"
+    ],
+    "ans": "B",
+    "explain": "現在簡單式，第三人稱單數動詞加 -s。"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】___ you speak English?",
+    "options": [
+     "A. Can",
+     "B. Are",
+     "C. Is",
+     "D. Have"
+    ],
+    "ans": "A",
+    "explain": "詢問能力用 Can you...?，後面接原形動詞。"
    }
   ]
  },
@@ -654,6 +1020,282 @@
     ],
     "ans": "A",
     "explain": "I'd like + 名詞，是點餐最常用的禮貌說法。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：假期",
+    "ans": "VACATION",
+    "speak": "vacation"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ A C H (海灘)",
+    "ans": "E",
+    "speak": "beach"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：島",
+    "ans": "ISLAND",
+    "speak": "island"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ M E R A (相機)",
+    "ans": "A",
+    "speak": "camera"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：觀光客",
+    "ans": "TOURIST",
+    "speak": "tourist"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S _ U V _ N I R (紀念品)",
+    "ans": "OE",
+    "speak": "souvenir"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：麵包店",
+    "ans": "BAKERY",
+    "speak": "bakery"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：P H _ R M _ C Y (藥局)",
+    "ans": "AA",
+    "speak": "pharmacy"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：鄰居",
+    "ans": "NEIGHBOR",
+    "speak": "neighbor"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ R T H D _ Y (生日)",
+    "ans": "IA",
+    "speak": "birthday"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：邀請",
+    "ans": "INVITE",
+    "speak": "invite"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：V _ S I T (拜訪)",
+    "ans": "I",
+    "speak": "visit"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：旅行",
+    "ans": "TRAVEL",
+    "speak": "travel"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D R _ V E (開車)",
+    "ans": "I",
+    "speak": "drive"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：購物",
+    "ans": "SHOPPING",
+    "speak": "shopping"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ _ N T E R (櫃台)",
+    "ans": "OU",
+    "speak": "counter"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：樓梯",
+    "ans": "STAIRS",
+    "speak": "stairs"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E N T R _ N C _ (入口)",
+    "ans": "AE",
+    "speak": "entrance"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：出口",
+    "ans": "EXIT",
+    "speak": "exit"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ R N E R (轉角)",
+    "ans": "O",
+    "speak": "corner"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：地鐵",
+    "ans": "SUBWAY",
+    "speak": "subway"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：T _ X I (計程車)",
+    "ans": "A",
+    "speak": "taxi"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：座位",
+    "ans": "SEAT",
+    "speak": "seat"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：F _ V E R (發燒)",
+    "ans": "E",
+    "speak": "fever"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：咳嗽",
+    "ans": "COUGH",
+    "speak": "cough"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ N T _ S T (牙醫)",
+    "ans": "EI",
+    "speak": "dentist"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：毛巾",
+    "ans": "TOWEL",
+    "speak": "towel"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B L _ N K _ T (毯子)",
+    "ans": "AE",
+    "speak": "blanket"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：待洗的衣物",
+    "ans": "LAUNDRY",
+    "speak": "laundry"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：N _ I S Y (吵鬧的)",
+    "ans": "O",
+    "speak": "noisy"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：友善的",
+    "ans": "FRIENDLY",
+    "speak": "friendly"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ S Y (忙碌的)",
+    "ans": "U",
+    "speak": "busy"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：早的",
+    "ans": "EARLY",
+    "speak": "early"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：L _ T E (晚的)",
+    "ans": "A",
+    "speak": "late"
+   },
+   {
+    "type": "choice",
+    "desc": "【過去式】They ___ a great time last weekend.",
+    "options": [
+     "A. have",
+     "B. had",
+     "C. has",
+     "D. having"
+    ],
+    "ans": "B",
+    "explain": "last weekend 是過去，have 的過去式是 had。"
+   },
+   {
+    "type": "choice",
+    "desc": "【比較級】The subway is ___ than the bus.",
+    "options": [
+     "A. fast",
+     "B. faster",
+     "C. fastest",
+     "D. more fast"
+    ],
+    "ans": "B",
+    "explain": "有 than 用比較級：fast → faster。"
+   },
+   {
+    "type": "choice",
+    "desc": "【最高級】It's the ___ day of the year.",
+    "options": [
+     "A. hot",
+     "B. hotter",
+     "C. hottest",
+     "D. most hot"
+    ],
+    "ans": "C",
+    "explain": "the + 最高級；短母音加子音結尾要重複字尾：hot → hottest。"
+   },
+   {
+    "type": "choice",
+    "desc": "【問路】How do I ___ to the station?",
+    "options": [
+     "A. get",
+     "B. go to",
+     "C. arrive",
+     "D. reach to"
+    ],
+    "ans": "A",
+    "explain": "How do I get to...? 是問路最常用的說法。"
+   },
+   {
+    "type": "choice",
+    "desc": "【點餐】Could I have the ___, please?",
+    "options": [
+     "A. bill",
+     "B. note",
+     "C. ticket",
+     "D. price"
+    ],
+    "ans": "A",
+    "explain": "買單說 Could I have the bill (check), please?"
+   },
+   {
+    "type": "choice",
+    "desc": "【現在完成式】I have ___ finished my homework.",
+    "options": [
+     "A. yet",
+     "B. already",
+     "C. ago",
+     "D. since"
+    ],
+    "ans": "B",
+    "explain": "already 放在 have 與過去分詞之間，表示「已經」。"
    }
   ],
   "boss": [
@@ -728,6 +1370,96 @@
     ],
     "ans": "C",
     "explain": "過去某動作進行中被打斷：進行中的用過去進行式 was cooking。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：山",
+    "ans": "MOUNTAIN",
+    "speak": "mountain"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：導遊",
+    "ans": "GUIDE",
+    "speak": "guide"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：圖書館",
+    "ans": "LIBRARY",
+    "speak": "library"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：禮物",
+    "ans": "GIFT",
+    "speak": "gift"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：付錢",
+    "ans": "PAY",
+    "speak": "pay"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：電梯",
+    "ans": "ELEVATOR",
+    "speak": "elevator"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：交通",
+    "ans": "TRAFFIC",
+    "speak": "traffic"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：月台",
+    "ans": "PLATFORM",
+    "speak": "platform"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：冰箱",
+    "ans": "FRIDGE",
+    "speak": "fridge"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：枕頭",
+    "ans": "PILLOW",
+    "speak": "pillow"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：空的",
+    "ans": "EMPTY",
+    "speak": "empty"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】If it ___ tomorrow, we will stay home.",
+    "options": [
+     "A. rain",
+     "B. rains",
+     "C. rained",
+     "D. will rain"
+    ],
+    "ans": "B",
+    "explain": "條件句 if 子句用現在式表示未來：If it rains..."
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】She is good ___ cooking.",
+    "options": [
+     "A. in",
+     "B. at",
+     "C. on",
+     "D. for"
+    ],
+    "ans": "B",
+    "explain": "be good at + 名詞／動名詞：擅長…。"
    }
   ]
  },
@@ -1020,6 +1752,276 @@
     ],
     "ans": "B",
     "explain": "look forward to 的 to 是介系詞，後面接 V-ing。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：備忘錄",
+    "ans": "MEMO",
+    "speak": "memo"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：N _ T I C E (通知)",
+    "ans": "O",
+    "speak": "notice"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：識別證",
+    "ans": "BADGE",
+    "speak": "badge"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：L _ B B Y (大廳)",
+    "ans": "O",
+    "speak": "lobby"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：訪客",
+    "ans": "VISITOR",
+    "speak": "visitor"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ N F _ R _ N C E (研討會)",
+    "ans": "OEE",
+    "speak": "conference"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：研討課",
+    "ans": "SEMINAR",
+    "speak": "seminar"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：W _ R K S H _ P (工作坊)",
+    "ans": "OO",
+    "speak": "workshop"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：主任",
+    "ans": "DIRECTOR",
+    "speak": "director"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A S S _ S T _ N T (助理)",
+    "ans": "IA",
+    "speak": "assistant"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：應徵者",
+    "ans": "CANDIDATE",
+    "speak": "candidate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E X P _ R _ _ N C E (經驗)",
+    "ans": "EIE",
+    "speak": "experience"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：技能",
+    "ans": "SKILL",
+    "speak": "skill"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ G R E E (學位)",
+    "ans": "E",
+    "speak": "degree"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：文件",
+    "ans": "DOCUMENT",
+    "speak": "document"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ P Y (副本)",
+    "ans": "O",
+    "speak": "copy"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：筆記型電腦",
+    "ans": "LAPTOP",
+    "speak": "laptop"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S _ F T W _ R E (軟體)",
+    "ans": "OA",
+    "speak": "software"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：密碼",
+    "ans": "PASSWORD",
+    "speak": "password"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A C C _ _ N T (帳戶)",
+    "ans": "OU",
+    "speak": "account"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：包裹",
+    "ans": "PACKAGE",
+    "speak": "package"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：L _ B E L (標籤)",
+    "ans": "A",
+    "speak": "label"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：供應",
+    "ans": "SUPPLY",
+    "speak": "supply"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：P R _ D _ C T (產品)",
+    "ans": "OU",
+    "speak": "product"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：樣品",
+    "ans": "SAMPLE",
+    "speak": "sample"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ T _ L O G (型錄)",
+    "ans": "AA",
+    "speak": "catalog"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：安排",
+    "ans": "ARRANGE",
+    "speak": "arrange"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：R _ M I N D (提醒)",
+    "ans": "E",
+    "speak": "remind"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：提交",
+    "ans": "SUBMIT",
+    "speak": "submit"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：U P D _ T E (更新)",
+    "ans": "A",
+    "speak": "update"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：準備",
+    "ans": "PREPARE",
+    "speak": "prepare"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ S C _ S S (討論)",
+    "ans": "IU",
+    "speak": "discuss"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：輪班",
+    "ans": "SHIFT",
+    "speak": "shift"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益文法】Please let me know ___ you need any help.",
+    "options": [
+     "A. if",
+     "B. that",
+     "C. what",
+     "D. which"
+    ],
+    "ans": "A",
+    "explain": "let me know if...：如果…請告訴我。"
+   },
+   {
+    "type": "choice",
+    "desc": "【被動語態】The meeting room ___ cleaned every evening.",
+    "options": [
+     "A. is",
+     "B. are",
+     "C. does",
+     "D. has"
+    ],
+    "ans": "A",
+    "explain": "房間「被」打掃，現在被動 is + p.p.。"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益字彙】Please ___ the form and return it to reception.",
+    "options": [
+     "A. fill out",
+     "B. fill up",
+     "C. fill on",
+     "D. fill with"
+    ],
+    "ans": "A",
+    "explain": "fill out a form：填寫表格。"
+   },
+   {
+    "type": "choice",
+    "desc": "【時態】By the time you arrive, we ___ the report.",
+    "options": [
+     "A. finish",
+     "B. will have finished",
+     "C. finished",
+     "D. have finished"
+    ],
+    "ans": "B",
+    "explain": "by the time + 未來時間，主要子句用未來完成式。"
+   },
+   {
+    "type": "choice",
+    "desc": "【介系詞】The office is closed ___ national holidays.",
+    "options": [
+     "A. in",
+     "B. on",
+     "C. at",
+     "D. for"
+    ],
+    "ans": "B",
+    "explain": "特定日子（holidays、Monday）前用 on。"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益字彙】We look forward to ___ with you.",
+    "options": [
+     "A. work",
+     "B. working",
+     "C. worked",
+     "D. be working"
+    ],
+    "ans": "B",
+    "explain": "look forward to 的 to 是介系詞，後接 V-ing。"
    }
   ],
   "boss": [
@@ -1094,6 +2096,96 @@
     ],
     "ans": "B",
     "explain": "員工「被」訓練，未來被動語態：will be + p.p.。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：簽名",
+    "ans": "SIGNATURE",
+    "speak": "signature"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：接待處",
+    "ans": "RECEPTION",
+    "speak": "reception"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：委員會",
+    "ans": "COMMITTEE",
+    "speak": "committee"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：實習生",
+    "ans": "INTERN",
+    "speak": "intern"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：證書",
+    "ans": "CERTIFICATE",
+    "speak": "certificate"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：掃描器",
+    "ans": "SCANNER",
+    "speak": "scanner"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：付款",
+    "ans": "PAYMENT",
+    "speak": "payment"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：庫存",
+    "ans": "STOCK",
+    "speak": "stock"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：宣傳手冊",
+    "ans": "BROCHURE",
+    "speak": "brochure"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：回覆",
+    "ans": "REPLY",
+    "speak": "reply"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：人事",
+    "ans": "PERSONNEL",
+    "speak": "personnel"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】Neither of the candidates ___ enough experience.",
+    "options": [
+     "A. have",
+     "B. has",
+     "C. are having",
+     "D. were"
+    ],
+    "ans": "B",
+    "explain": "neither of + 複數名詞，動詞用單數：has。"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】The package should arrive ___ three business days.",
+    "options": [
+     "A. within",
+     "B. during",
+     "C. between",
+     "D. until"
+    ],
+    "ans": "A",
+    "explain": "within + 時間：在…之內。"
    }
   ]
  },
@@ -1386,6 +2478,282 @@
     ],
     "ans": "A",
     "explain": "meet the deadline 趕上截止期限。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：收購",
+    "ans": "ACQUIRE",
+    "speak": "acquire"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A N N _ _ N C E (宣布)",
+    "ans": "OU",
+    "speak": "announce"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：評估",
+    "ans": "ASSESS",
+    "speak": "assess"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ N _ F I T (福利)",
+    "ans": "EE",
+    "speak": "benefit"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：佣金",
+    "ans": "COMMISSION",
+    "speak": "commission"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ M P _ N S _ T I O N (薪酬)",
+    "ans": "OEA",
+    "speak": "compensation"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：顧問",
+    "ans": "CONSULTANT",
+    "speak": "consultant"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ R P O R _ T E (公司的)",
+    "ans": "OA",
+    "speak": "corporate"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：訂金",
+    "ans": "DEPOSIT",
+    "speak": "deposit"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ V _ D E N D (股利)",
+    "ans": "II",
+    "speak": "dividend"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：估價",
+    "ans": "ESTIMATE",
+    "speak": "estimate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E X _ C U T _ V E (主管)",
+    "ans": "EI",
+    "speak": "executive"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：設施",
+    "ans": "FACILITY",
+    "speak": "facility"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：F _ N _ N C E (財務)",
+    "ans": "IA",
+    "speak": "finance"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：總部",
+    "ans": "HEADQUARTERS",
+    "speak": "headquarters"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：I N S _ R _ N C E (保險)",
+    "ans": "UA",
+    "speak": "insurance"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：利潤率",
+    "ans": "MARGIN",
+    "speak": "margin"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：M _ R C H _ N D _ S E (商品)",
+    "ans": "EAI",
+    "speak": "merchandise"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：外包",
+    "ans": "OUTSOURCE",
+    "speak": "outsource"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：O V _ R H _ A D (營運費用)",
+    "ans": "EE",
+    "speak": "overhead"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：薪資名冊",
+    "ans": "PAYROLL",
+    "speak": "payroll"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：P _ N S _ O N (退休金)",
+    "ans": "EI",
+    "speak": "pension"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：保費",
+    "ans": "PREMIUM",
+    "speak": "premium"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：Q _ _ R T E R L Y (每季的)",
+    "ans": "UA",
+    "speak": "quarterly"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：招募",
+    "ans": "RECRUIT",
+    "speak": "recruit"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：R _ S I G N (辭職)",
+    "ans": "E",
+    "speak": "resign"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：修改",
+    "ans": "REVISE",
+    "speak": "revise"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S P _ N S _ R (贊助商)",
+    "ans": "OO",
+    "speak": "sponsor"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：關稅",
+    "ans": "TARIFF",
+    "speak": "tariff"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：T _ N A N T (房客)",
+    "ans": "E",
+    "speak": "tenant"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：交易",
+    "ans": "TRANSACTION",
+    "speak": "transaction"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：W H _ L E S _ L E (批發)",
+    "ans": "OA",
+    "speak": "wholesale"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：稽核員",
+    "ans": "AUDITOR",
+    "speak": "auditor"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S T _ K E (股份)",
+    "ans": "A",
+    "speak": "stake"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益文法】___ the delay, we still met the deadline.",
+    "options": [
+     "A. Despite",
+     "B. Although",
+     "C. Because of",
+     "D. However"
+    ],
+    "ans": "A",
+    "explain": "despite + 名詞：儘管；although 後面接子句。"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益字彙】The contract is ___ to approval by the board.",
+    "options": [
+     "A. subject",
+     "B. subjected",
+     "C. subjecting",
+     "D. subjects"
+    ],
+    "ans": "A",
+    "explain": "be subject to：須經…；以…為條件。"
+   },
+   {
+    "type": "choice",
+    "desc": "【詞性】The new policy will take ___ next month.",
+    "options": [
+     "A. effect",
+     "B. affect",
+     "C. effective",
+     "D. effects"
+    ],
+    "ans": "A",
+    "explain": "take effect：生效；affect 是動詞「影響」。"
+   },
+   {
+    "type": "choice",
+    "desc": "【關係代名詞】This is the vendor ___ we signed the contract with.",
+    "options": [
+     "A. who",
+     "B. whom",
+     "C. whose",
+     "D. which"
+    ],
+    "ans": "B",
+    "explain": "介系詞 with 的受詞是人，用 whom（也可以 that 或省略）。"
+   },
+   {
+    "type": "choice",
+    "desc": "【假設語氣】If the shipment ___ on time, we would not have lost the client.",
+    "options": [
+     "A. arrived",
+     "B. had arrived",
+     "C. has arrived",
+     "D. arrives"
+    ],
+    "ans": "B",
+    "explain": "與過去事實相反：If + had p.p.，主要子句 would have p.p.。"
+   },
+   {
+    "type": "choice",
+    "desc": "【多益字彙】Employees are ___ to submit receipts within 30 days.",
+    "options": [
+     "A. required",
+     "B. requiring",
+     "C. requirement",
+     "D. require"
+    ],
+    "ans": "A",
+    "explain": "be required to + V：被要求…。"
    }
   ],
   "boss": [
@@ -1460,6 +2828,96 @@
     ],
     "ans": "B",
     "explain": "逗號後的補充說明（非限定子句）只能用 which，不能用 that。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：核准",
+    "ans": "APPROVE",
+    "speak": "approve"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：容量",
+    "ans": "CAPACITY",
+    "speak": "capacity"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：扣除",
+    "ans": "DEDUCT",
+    "speak": "deduct"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：企業",
+    "ans": "ENTERPRISE",
+    "speak": "enterprise"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：加盟店",
+    "ans": "FRANCHISE",
+    "speak": "franchise"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：貸款",
+    "ans": "LOAN",
+    "speak": "loan"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：專利",
+    "ans": "PATENT",
+    "speak": "patent"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：投資組合",
+    "ans": "PORTFOLIO",
+    "speak": "portfolio"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：零售",
+    "ans": "RETAIL",
+    "speak": "retail"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：子公司",
+    "ans": "SUBSIDIARY",
+    "speak": "subsidiary"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：租約",
+    "ans": "LEASE",
+    "speak": "lease"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】Only employees ___ badges may enter the lab.",
+    "options": [
+     "A. with",
+     "B. who",
+     "C. having",
+     "D. wear"
+    ],
+    "ans": "A",
+    "explain": "with badges：帶著識別證的員工（介系詞片語修飾名詞）。"
+   },
+   {
+    "type": "choice",
+    "desc": "【守門試煉】The report must be ___ to the manager by Friday.",
+    "options": [
+     "A. submitted",
+     "B. submitting",
+     "C. submit",
+     "D. submits"
+    ],
+    "ans": "A",
+    "explain": "must be + p.p. 被動語態：報告「被」提交。"
    }
   ]
  },
@@ -1752,6 +3210,282 @@
     ],
     "ans": "B",
     "explain": "showed great ___ 需要名詞：resilience（韌性）。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：問責",
+    "ans": "ACCOUNTABILITY",
+    "speak": "accountability"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A L L _ V I _ T E (減輕)",
+    "ans": "EA",
+    "speak": "alleviate"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：任意的",
+    "ans": "ARBITRARY",
+    "speak": "arbitrary"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A _ T _ N O M Y (自主權)",
+    "ans": "UO",
+    "speak": "autonomy"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：有條理的",
+    "ans": "COHERENT",
+    "speak": "coherent"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ L L _ T _ R A L (擔保品)",
+    "ans": "OAE",
+    "speak": "collateral"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：自滿的",
+    "ans": "COMPLACENT",
+    "speak": "complacent"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ N C _ S E (簡潔的)",
+    "ans": "OI",
+    "speak": "concise"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：仔細考慮",
+    "ans": "CONTEMPLATE",
+    "speak": "contemplate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C R _ D _ B _ L I T Y (可信度)",
+    "ans": "EII",
+    "speak": "credibility"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：延後",
+    "ans": "DEFER",
+    "speak": "defer"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ V I _ T E (偏離)",
+    "ans": "EA",
+    "speak": "deviate"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：多元化",
+    "ans": "DIVERSIFY",
+    "speak": "diversify"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E L _ C I T (引出)",
+    "ans": "I",
+    "speak": "elicit"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：提升",
+    "ans": "ENHANCE",
+    "speak": "enhance"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E S C _ L _ T E (升級)",
+    "ans": "AA",
+    "speak": "escalate"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：強大的",
+    "ans": "FORMIDABLE",
+    "speak": "formidable"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：I M P _ D E (阻礙)",
+    "ans": "E",
+    "speak": "impede"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：創新",
+    "ans": "INNOVATION",
+    "speak": "innovation"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：I N T _ G R _ T Y (正直)",
+    "ans": "EI",
+    "speak": "integrity"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：有利可圖的",
+    "ans": "LUCRATIVE",
+    "speak": "lucrative"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：M _ N D _ T E (授權)",
+    "ans": "AA",
+    "speak": "mandate"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：最佳化",
+    "ans": "OPTIMIZE",
+    "speak": "optimize"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：O V _ R H _ U L (全面翻修)",
+    "ans": "EA",
+    "speak": "overhaul"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：相關的",
+    "ans": "PERTINENT",
+    "speak": "pertinent"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：P R _ C _ D E N T (先例)",
+    "ans": "EE",
+    "speak": "precedent"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：批准",
+    "ans": "RATIFY",
+    "speak": "ratify"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：R _ C T _ F Y (修正)",
+    "ans": "EI",
+    "speak": "rectify"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：嚴格的",
+    "ans": "RIGOROUS",
+    "speak": "rigorous"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S C _ L _ B L E (可擴展的)",
+    "ans": "AA",
+    "speak": "scalable"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：推測",
+    "ans": "SPECULATE",
+    "speak": "speculate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S _ B S _ Q _ E N T (後續的)",
+    "ans": "UEU",
+    "speak": "subsequent"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：不穩定的",
+    "ans": "VOLATILE",
+    "speak": "volatile"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：W _ R R _ N T (使有必要)",
+    "ans": "AA",
+    "speak": "warrant"
+   },
+   {
+    "type": "choice",
+    "desc": "【倒裝句】Under no circumstances ___ leave the door unlocked.",
+    "options": [
+     "A. you should",
+     "B. should you",
+     "C. you must",
+     "D. must you not"
+    ],
+    "ans": "B",
+    "explain": "否定副詞片語放句首要倒裝：Under no circumstances should you...。"
+   },
+   {
+    "type": "choice",
+    "desc": "【虛擬語氣】I'd rather you ___ the meeting tomorrow.",
+    "options": [
+     "A. attend",
+     "B. attended",
+     "C. will attend",
+     "D. attending"
+    ],
+    "ans": "B",
+    "explain": "would rather + 主詞 + 過去式：表示對現在或未來的希望。"
+   },
+   {
+    "type": "choice",
+    "desc": "【高階字彙】The two reports are ___ ; they say opposite things.",
+    "options": [
+     "A. contradictory",
+     "B. complementary",
+     "C. complimentary",
+     "D. compulsory"
+    ],
+    "ans": "A",
+    "explain": "contradictory 互相矛盾的；complementary 互補的。"
+   },
+   {
+    "type": "choice",
+    "desc": "【搭配詞】The project came ___ budget, saving us money.",
+    "options": [
+     "A. in under",
+     "B. under in",
+     "C. below to",
+     "D. on less"
+    ],
+    "ans": "A",
+    "explain": "come in under budget：結算低於預算。"
+   },
+   {
+    "type": "choice",
+    "desc": "【語意】The CEO's remarks were taken out of ___.",
+    "options": [
+     "A. context",
+     "B. contest",
+     "C. contact",
+     "D. content"
+    ],
+    "ans": "A",
+    "explain": "take something out of context：斷章取義。"
+   },
+   {
+    "type": "choice",
+    "desc": "【詞性】The ___ of the merger surprised investors.",
+    "options": [
+     "A. announce",
+     "B. announcement",
+     "C. announced",
+     "D. announcing"
+    ],
+    "ans": "B",
+    "explain": "the ___ of 中間要用名詞：announcement。"
    }
   ],
   "boss": [
@@ -1826,6 +3560,96 @@
     ],
     "ans": "A",
     "explain": "主詞是 The CEO（along with 不影響單複數），用 is。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：模稜兩可的",
+    "ans": "AMBIGUOUS",
+    "speak": "ambiguous"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：瓶頸",
+    "ans": "BOTTLENECK",
+    "speak": "bottleneck"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：限制",
+    "ans": "CONSTRAINT",
+    "speak": "constraint"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：縮減",
+    "ans": "CURTAIL",
+    "speak": "curtail"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：實證的",
+    "ans": "EMPIRICAL",
+    "speak": "empirical"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：波動",
+    "ans": "FLUCTUATE",
+    "speak": "fluctuate"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：危及",
+    "ans": "JEOPARDIZE",
+    "speak": "jeopardize"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：微不足道的",
+    "ans": "NEGLIGIBLE",
+    "speak": "negligible"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：熟練的",
+    "ans": "PROFICIENT",
+    "speak": "proficient"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：多餘的",
+    "ans": "REDUNDANT",
+    "speak": "redundant"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：盈餘",
+    "ans": "SURPLUS",
+    "speak": "surplus"
+   },
+   {
+    "type": "choice",
+    "desc": "【最終試煉】Hardly ___ the presentation begun when the projector failed.",
+    "options": [
+     "A. had",
+     "B. has",
+     "C. did",
+     "D. was"
+    ],
+    "ans": "A",
+    "explain": "Hardly had + 主詞 + p.p. ... when ...：一…就…。"
+   },
+   {
+    "type": "choice",
+    "desc": "【最終試煉】It is imperative that the data ___ verified.",
+    "options": [
+     "A. be",
+     "B. is",
+     "C. are",
+     "D. will be"
+    ],
+    "ans": "A",
+    "explain": "It is imperative that + 主詞 + 原形動詞（虛擬語氣）。"
    }
   ]
  },
@@ -2118,6 +3942,294 @@
     ],
     "ans": "A",
     "explain": "break down（談判）破裂；break off 中斷關係。"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：異常",
+    "ans": "ABERRATION",
+    "speak": "aberration"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A C R _ M _ N _ O U S (尖刻的)",
+    "ans": "IOI",
+    "speak": "acrimonious"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：改善",
+    "ans": "AMELIORATE",
+    "speak": "ameliorate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：A N _ T H _ M A (深惡痛絕的事物)",
+    "ans": "AE",
+    "speak": "anathema"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：晦澀難懂的",
+    "ans": "ARCANE",
+    "speak": "arcane"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：B _ L L _ G _ R E N T (好戰的)",
+    "ans": "EIE",
+    "speak": "belligerent"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：誇大其詞的",
+    "ans": "BOMBASTIC",
+    "speak": "bombastic"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ C _ P H O N Y (刺耳的雜音)",
+    "ans": "AO",
+    "speak": "cacophony"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：脾氣暴躁的",
+    "ans": "CANTANKEROUS",
+    "speak": "cantankerous"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：C _ N _ N D R U M (難題)",
+    "ans": "OU",
+    "speak": "conundrum"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：有害的",
+    "ans": "DELETERIOUS",
+    "speak": "deleterious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：D _ L _ T T _ N T E (業餘愛好者)",
+    "ans": "IEA",
+    "speak": "dilettante"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：迥然不同的",
+    "ans": "DISPARATE",
+    "speak": "disparate"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E F F _ C _ C _ O U S (有效的)",
+    "ans": "IAI",
+    "speak": "efficacious"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：謎一般的",
+    "ans": "ENIGMATIC",
+    "speak": "enigmatic"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：E R _ D _ T E (博學的)",
+    "ans": "UI",
+    "speak": "erudite"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：偶然的",
+    "ans": "FORTUITOUS",
+    "speak": "fortuitous"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：G R _ G _ R _ O U S (愛交際的)",
+    "ans": "EAI",
+    "speak": "gregarious"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：怪癖",
+    "ans": "IDIOSYNCRASY",
+    "speak": "idiosyncrasy"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：I M P _ C C _ B L _ (無瑕的)",
+    "ans": "EAE",
+    "speak": "impeccable"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：難以言喻的",
+    "ans": "INEFFABLE",
+    "speak": "ineffable"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：I N S _ P _ D (乏味的)",
+    "ans": "II",
+    "speak": "insipid"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：話多的",
+    "ans": "LOQUACIOUS",
+    "speak": "loquacious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：M _ L L E _ B L E (可塑的)",
+    "ans": "AA",
+    "speak": "malleable"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：說謊的",
+    "ans": "MENDACIOUS",
+    "speak": "mendacious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：M _ L L _ F Y (安撫)",
+    "ans": "OI",
+    "speak": "mollify"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：奉承的",
+    "ans": "OBSEQUIOUS",
+    "speak": "obsequious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：O S T _ N T _ T _ O U S (炫耀的)",
+    "ans": "EAI",
+    "speak": "ostentatious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：P _ R N I C _ O U S (有害的)",
+    "ans": "EI",
+    "speak": "pernicious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：Q _ I X _ T I C (不切實際的)",
+    "ans": "UO",
+    "speak": "quixotic"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：頑抗的",
+    "ans": "RECALCITRANT",
+    "speak": "recalcitrant"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：S _ G A C _ O U S (睿智的)",
+    "ans": "AI",
+    "speak": "sagacious"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：虛假的",
+    "ans": "SPURIOUS",
+    "speak": "spurious"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：T _ C _ T U R N (沉默寡言的)",
+    "ans": "AI",
+    "speak": "taciturn"
+   },
+   {
+    "type": "spell",
+    "desc": "請拼出：大聲疾呼的",
+    "ans": "VOCIFEROUS",
+    "speak": "vociferous"
+   },
+   {
+    "type": "fill",
+    "desc": "填空題：Z _ A L _ U S (熱心的)",
+    "ans": "EO",
+    "speak": "zealous"
+   },
+   {
+    "type": "choice",
+    "desc": "【精準用字】The minister's ___ reply avoided every question.",
+    "options": [
+     "A. evasive",
+     "B. evocative",
+     "C. invasive",
+     "D. pervasive"
+    ],
+    "ans": "A",
+    "explain": "evasive 閃爍其詞的；evocative 喚起回憶的。"
+   },
+   {
+    "type": "choice",
+    "desc": "【精準用字】Her ___ remarks made everyone uncomfortable.",
+    "options": [
+     "A. tactless",
+     "B. tactile",
+     "C. tactical",
+     "D. tacit"
+    ],
+    "ans": "A",
+    "explain": "tactless 不得體的；tacit 心照不宣的。"
+   },
+   {
+    "type": "choice",
+    "desc": "【慣用語】He let the cat out of the ___.",
+    "options": [
+     "A. bag",
+     "B. box",
+     "C. house",
+     "D. basket"
+    ],
+    "ans": "A",
+    "explain": "let the cat out of the bag：洩漏秘密。"
+   },
+   {
+    "type": "choice",
+    "desc": "【慣用語】We are not out of the ___ yet.",
+    "options": [
+     "A. woods",
+     "B. forest",
+     "C. trees",
+     "D. garden"
+    ],
+    "ans": "A",
+    "explain": "not out of the woods：還沒脫離險境。"
+   },
+   {
+    "type": "choice",
+    "desc": "【倒裝句】Not until the end ___ the truth.",
+    "options": [
+     "A. did we learn",
+     "B. we learned",
+     "C. learned we",
+     "D. we did learn"
+    ],
+    "ans": "A",
+    "explain": "Not until... 放句首，主要子句倒裝：did we learn。"
+   },
+   {
+    "type": "choice",
+    "desc": "【語感】His ___ attitude toward rules worried his boss.",
+    "options": [
+     "A. cavalier",
+     "B. cavernous",
+     "C. chivalrous",
+     "D. cathartic"
+    ],
+    "ans": "A",
+    "explain": "cavalier 漫不經心、傲慢的；chivalrous 有騎士風度的。"
    }
   ],
   "boss": [
@@ -2192,6 +4304,102 @@
     ],
     "ans": "A",
     "explain": "The 比較級..., the 比較級...：越…就越…。"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：欣然",
+    "ans": "ALACRITY",
+    "speak": "alacrity"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：沉著",
+    "ans": "APLOMB",
+    "speak": "aplomb"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：哄騙",
+    "ans": "CAJOLE",
+    "speak": "cajole"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：大失敗",
+    "ans": "DEBACLE",
+    "speak": "debacle"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：極其惡劣的",
+    "ans": "EGREGIOUS",
+    "speak": "egregious"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：免罪",
+    "ans": "EXONERATE",
+    "speak": "exonerate"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：無可救藥的",
+    "ans": "INCORRIGIBLE",
+    "speak": "incorrigible"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：不可撤回的",
+    "ans": "IRREVOCABLE",
+    "speak": "irrevocable"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：邪惡的",
+    "ans": "NEFARIOUS",
+    "speak": "nefarious"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：吝嗇的",
+    "ans": "PARSIMONIOUS",
+    "speak": "parsimonious"
+   },
+   {
+    "type": "voice",
+    "desc": "請唸出單字：樂觀的",
+    "ans": "SANGUINE",
+    "speak": "sanguine"
+   },
+   {
+    "type": "spell",
+    "desc": "【守門試煉】請拼出：可敬的",
+    "ans": "VENERABLE",
+    "speak": "venerable"
+   },
+   {
+    "type": "choice",
+    "desc": "【最終咒語】Little ___ that the decision would change everything.",
+    "options": [
+     "A. did they realize",
+     "B. they realized",
+     "C. they did realize",
+     "D. realized they"
+    ],
+    "ans": "A",
+    "explain": "否定意味的 Little 放句首要倒裝：Little did they realize...。"
+   },
+   {
+    "type": "choice",
+    "desc": "【最終咒語】Were he ___ the truth, he would be furious.",
+    "options": [
+     "A. to learn",
+     "B. learning",
+     "C. learned",
+     "D. learn"
+    ],
+    "ans": "A",
+    "explain": "Were + 主詞 + to V：與未來相反的假設（= If he were to learn）。"
    }
   ]
  }

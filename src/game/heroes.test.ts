@@ -97,3 +97,21 @@ describe('hero titles', () => {
     expect(heroTitle(heroDef('apple'))).toBe('蘋果劍士');
   });
 });
+
+describe('送別英雄', () => {
+  it('不在隊伍才能賣，退還基本金幣＋投入的 65%，碎片保留', async () => {
+    const { HERO_SELL_BASE, heroSellValue, trainCost } = await import('../store/saveStore');
+    useSaveStore.setState({ ...initialSave, gold: 0, heroes: ['knight', 'apple'], party: ['player', 'knight'], heroLevel: { apple: 3 }, heroShards: { apple: 5 }, trueName: { apple: [true] } });
+    expect(useSaveStore.getState().sellHero('knight')).toBe(0); // 在隊伍中
+    const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(heroDef('apple').rarity);
+    const expected = heroSellValue('apple', 3, 0);
+    expect(expected).toBe(HERO_SELL_BASE[heroDef('apple').rarity] + Math.floor((trainCost(1, rarityIdx) + trainCost(2, rarityIdx)) * 0.65));
+    expect(useSaveStore.getState().sellHero('apple')).toBe(expected);
+    const s = useSaveStore.getState();
+    expect(s.gold).toBe(expected);
+    expect(s.heroes).toEqual(['knight']);
+    expect(s.trueName.apple).toBeUndefined();
+    expect(s.heroShards.apple).toBe(5);
+    expect(s.sellHero('knight')).toBe(0); // 至少留一位
+  });
+});

@@ -131,3 +131,13 @@ describe('retroactive EXP', () => {
     expect(migrateSave(undefined, 0).player.level).toBe(1);
   });
 });
+
+describe('賣出裝備', () => {
+  it('退還打造與強化投入的 65%', async () => {
+    const { sellValue } = await import('./equipment');
+    // 見習之刃：🪙100、礦石 3；強化到 +2 再花 🪙50+100、礦石 1+2
+    const v = sellValue({ uid: 'x', defId: 'blade_training', plus: 2 }, 'fire');
+    expect(v.gold).toBe(Math.floor(250 * 0.65));
+    expect(v.materials).toEqual({ ore: Math.floor(6 * 0.65) });
+  });
+});

@@ -11,7 +11,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '../game/growth';
-import { MAX_PLUS, enhanceCost, equipDef, resolveCost } from '../game/equipment';
+import { MAX_PLUS, SELL_RATE, enhanceCost, equipDef, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
 import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, streakMilestone } from '../game/daily';
@@ -131,6 +131,8 @@ interface SaveActions {
   addMaterials: (drops: Record<string, number>) => void;
   forge: (defId: string) => boolean;
   enhance: (uid: string) => boolean;
+  sellEquip: (uid: string) => boolean;
+  sellHero: (id: HeroId) => number; // 回傳得到的金幣，不能賣時回傳 0
   equip: (uid: string) => void;
   unequip: (slot: Slot) => void;
   trainHero: (id: HeroId) => boolean;
@@ -185,6 +187,18 @@ export const initialSave: SaveData = {
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
 export const trainCost = (level: number, rarityIdx: number) => 30 * level * (rarityIdx + 1);
+
+// 送別英雄（賣掉）：依稀有度的基本金幣＋訓練與升品階投入金幣的 65%。
+// 只退金幣，不退召喚券或累積點數，避免「抽了再賣」刷召喚；該英雄的碎片保留。
+export const HERO_SELL_BASE: Record<string, number> = { N: 50, R: 100, SR: 250, SSR: 600, UR: 1500 };
+export function heroSellValue(id: HeroId, level: number, tier: number): number {
+  const rarity = heroDef(id).rarity;
+  const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(rarity);
+  let invested = 0;
+  for (let l = 1; l < level; l++) invested += trainCost(l, rarityIdx);
+  if (tier > 0) invested += TIER_UP_GOLD[rarity];
+  return HERO_SELL_BASE[rarity] + Math.floor(invested * SELL_RATE);
+}
 
 // 把召喚到的英雄加進存檔：新英雄直接擁有（隊伍有空位就加入），重複的轉成碎片
 function grantHero(s: SaveData, r: SummonResult): { patch: Pick<SaveData, 'heroes' | 'party' | 'heroShards'>; outcome: SummonOutcome } {
@@ -395,6 +409,34 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             materials: { ...st.materials, ore: st.materials.ore - cost.ore },
             equipment: st.equipment.map(e => (e.uid === uid ? { ...e, plus: e.plus + 1 } : e)),
           }));
+        },
+
+        // 送別英雄：不在隊伍中、而且至少留下一位；等級、品階與真名進度一併清除
+        sellHero: (id) => {
+          const s = get();
+          if (!s.heroes.includes(id) || s.party.includes(id) || s.heroes.length <= 1) return 0;
+          const value = heroSellValue(id, s.heroLevel[id] ?? 1, s.heroTier[id] ?? 0);
+          const omit = <T,>(rec: Record<HeroId, T>) => Object.fromEntries(Object.entries(rec).filter(([k]) => k !== id)) as Record<HeroId, T>;
+          set({
+            gold: s.gold + value,
+            heroes: s.heroes.filter(h => h !== id),
+            heroLevel: omit(s.heroLevel),
+            heroTier: omit(s.heroTier),
+            trueName: omit(s.trueName),
+          });
+          return value;
+        },
+
+        // 賣掉沒穿在身上的裝備，退還部分金幣與素材
+        sellEquip: (uid) => {
+          const s = get();
+          const item = s.equipment.find(e => e.uid === uid);
+          if (!item || !s.character || Object.values(s.equipped).includes(uid)) return false;
+          const back = sellValue(item, s.character.element);
+          const materials = { ...s.materials };
+          for (const [k, v] of Object.entries(back.materials)) materials[k] = (materials[k] ?? 0) + v;
+          set({ gold: s.gold + back.gold, materials, equipment: s.equipment.filter(e => e.uid !== uid) });
+          return true;
         },
 
         equip: (uid) => set(s => {

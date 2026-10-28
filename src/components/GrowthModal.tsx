@@ -10,7 +10,7 @@ import {
   ADVANCE_REQ, MAX_LEVEL, canAdvance, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
-  EQUIPMENT, MAX_PLUS, SLOTS, displayName, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost,
+  EQUIPMENT, MAX_PLUS, SLOTS, displayName, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
 } from '../game/equipment';
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
@@ -29,11 +29,17 @@ export default function GrowthModal() {
   const { closeModal, openModal } = useUiStore();
   const [tab, setTab] = useState<Tab>(() => useUiStore.getState().growthTab);
   const notices = useNotices();
+  const [selling, setSelling] = useState<string | null>(null); // 正在確認賣出的裝備
   const equippedItems = useMemo(
     () => Object.values(equipped).map(uid => equipment.find(e => e.uid === uid)).filter((e): e is OwnedEquip => e !== undefined),
     [equipped, equipment],
   );
   if (!character) return null;
+
+  const sellText = (item: OwnedEquip) => {
+    const v = sellValue(item, character.element);
+    return [`🪙${v.gold}`, ...Object.entries(v.materials).map(([k, n]) => `${materialIcon(k)}${n}`)].join(' ');
+  };
 
   const growth = { level: player.level, classPath: player.classPath, equipped: equippedItems };
   const member = buildMember('player', character, playerStats({ upgrades }), { growth });
@@ -138,6 +144,15 @@ export default function GrowthModal() {
                     title={item.plus >= MAX_PLUS ? '已經強化到最高' : `需要 🪙${cost.gold}、🪨${cost.ore}`}>
                     {item.plus >= MAX_PLUS ? 'MAX' : `強化 🪙${cost.gold} 🪨${cost.ore}`}
                   </button>
+                  {!isOn && (selling === item.uid ? (
+                    <span className="sell-confirm">
+                      <small>賣出可得 {sellText(item)}</small>
+                      <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { if (sv.sellEquip(item.uid)) sfx.coin(); setSelling(null); }}>確定賣出</button>
+                      <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => setSelling(null)}>取消</button>
+                    </span>
+                  ) : (
+                    <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => setSelling(item.uid)} title={`退還打造與強化投入的 ${Math.round(SELL_RATE * 100)}%`}>賣出</button>
+                  ))}
                 </li>
               );
             })}

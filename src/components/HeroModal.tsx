@@ -10,7 +10,8 @@ import {
 } from '../game/heroes';
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
-import { trainCost } from '../store/saveStore';
+import { heroSellValue, trainCost } from '../store/saveStore';
+import { sfx } from '../game/sfx';
 import { LEVEL_STAT } from '../game/growth';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRUE_NAME_BONUS, isTrueName, trialsDone } from '../game/trueName';
 import type { MemberId } from '../game/party';
@@ -22,10 +23,11 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, tierUp, trainHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, tierUp, trainHero, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
+  const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
 
   const portraits = useMemo(() => {
     const map: Record<string, string> = Object.fromEntries(HEROES.map(h => [h.id, heroDataUrl(h.id, 2)]));
@@ -180,10 +182,29 @@ export default function HeroModal() {
                 {levelCap && <small className="muted">（英雄等級不能超過主角 Lv {player.level}）</small>}
               </p>
               {renderMemberButtons(id, inParty, pos, full)}
+              {renderSell(id, inParty, level, tier, trials)}
             </>
           ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}
         </div>
       </section>
+    );
+  }
+
+  // 送別英雄（賣出）：隊伍中的英雄要先離隊；有升品階或真名進度時特別提醒會失去
+  function renderSell(id: string, inParty: boolean, level: number, tier: number, trials: number) {
+    if (heroes.length <= 1) return null;
+    if (inParty) return <p className="muted sell-note">想送別這位英雄，請先讓這位英雄離隊。</p>;
+    const value = heroSellValue(id, level, tier);
+    if (selling !== id) {
+      return <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setSelling(id)}>👋 送別（賣出 🪙{value}）</button>;
+    }
+    const losses = [level > 1 && `Lv ${level}`, tier > 0 && '已升的品階', trials > 0 && `真名考驗 ${trials}/${TRIAL_COUNT}`].filter(Boolean);
+    return (
+      <div className="sell-confirm">
+        <small>送別後得到 🪙{value}，碎片會保留。{losses.length > 0 && <b className="sell-warn">會失去：{losses.join('、')}</b>}之後再召喚到會是新的英雄。</small>
+        <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { if (sellHero(id)) sfx.coin(); setSelling(null); }}>確定送別</button>
+        <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => setSelling(null)}>取消</button>
+      </div>
     );
   }
 

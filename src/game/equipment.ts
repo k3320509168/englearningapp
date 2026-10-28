@@ -120,3 +120,21 @@ export function resolveCost(def: EquipDef, element: Element): Record<string, num
 export function displayName(def: EquipDef, cls: ClassId): string {
   return def.id === 'signature' ? signatureName(cls) : def.name;
 }
+
+// ---------- 賣出 ----------
+// 沒有裝備在身上的裝備可以賣掉，退還打造與強化時投入的 65%（金幣與素材都退）
+export const SELL_RATE = 0.65;
+
+export function sellValue(item: OwnedEquip, element: Element): { gold: number; materials: Record<string, number> } {
+  const def = equipDef(item.defId);
+  if (!def) return { gold: 0, materials: {} };
+  let gold = def.cost.gold;
+  const materials = resolveCost(def, element);
+  for (let p = 0; p < item.plus; p++) {
+    const c = enhanceCost({ ...item, plus: p });
+    gold += c.gold;
+    materials.ore = (materials.ore ?? 0) + c.ore;
+  }
+  const back = Object.fromEntries(Object.entries(materials).map(([k, v]) => [k, Math.floor(v * SELL_RATE)]).filter(([, v]) => (v as number) > 0));
+  return { gold: Math.floor(gold * SELL_RATE), materials: back };
+}

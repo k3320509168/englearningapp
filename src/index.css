@@ -1423,3 +1423,8 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .text-scale { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .text-scale > span { margin-right: 4px; }
 .story-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.sell-confirm { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sell-confirm small { color: var(--accent); font-family: var(--font-body); }
+.gear-item { flex-wrap: wrap; }
+.sell-note { margin: 4px 0 0; font-size: 13px; }
+.sell-warn { display: block; color: var(--bad); }

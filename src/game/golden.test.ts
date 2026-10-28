@@ -13,13 +13,13 @@ const answer = () => {
   const q = st().question!;
   if (q.type === 'choice') st().chooseOption(q.ans);
   else if (q.type === 'voice') st().submitVoice(q.ans);
-  else q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c));
+  else { q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c)); st().submitTyped(); }
 };
 const wrong = () => {
   const q = st().question!;
   if (q.type === 'choice') st().chooseOption(['A', 'B', 'C', 'D'].find(l => l !== q.ans)!);
   else if (q.type === 'voice') st().submitVoice('banana');
-  else st().inputLetter(q.ans[st().typed.length] === 'Q' ? 'Z' : 'Q');
+  else { st().inputLetter(q.ans[st().typed.length] === 'Q' ? 'Z' : 'Q'); st().submitTyped(); }
 };
 
 describe('final region', () => {

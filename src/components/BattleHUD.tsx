@@ -78,6 +78,7 @@ export default function BattleHUD() {
       // 1～4：施放對應隊員的技能（答案只會是英文字母，數字鍵不會衝突）
       if (/^[1-4]$/.test(e.key)) { handled(); return s.requestSkill(Number(e.key) - 1); }
       if (e.key === 'Backspace') { handled(); return s.backspace(); }
+      if (e.key === 'Enter' && (q.type === 'spell' || q.type === 'fill')) { handled(); return s.submitTyped(); }
       if (/^[a-zA-Z]$/.test(e.key)) {
         handled();
         if (q.type === 'choice') return s.chooseOption(e.key);
@@ -143,12 +144,19 @@ function AssistBanner({ question }: { question: Question }) {
 
 // 情境提示：遇到才教，每則只出現一次；按「知道了」或答完這題就不再出現
 function BattleHint({ question }: { question: Question }) {
-  const { combo, isBossQuestion, ready, questionSeq } = useBattleStore(useShallow(s => ({
+  const { combo, isBossQuestion, ready, questionSeq, partySize } = useBattleStore(useShallow(s => ({
     combo: s.combo, isBossQuestion: s.isBossQuestion, ready: s.party.some(skillReady), questionSeq: s.questionSeq,
+    partySize: s.party.length,
   })));
   const seen = useSaveStore(s => s.hintsSeen);
   const markHint = useSaveStore(s => s.markHint);
-  const id = pickHint({ questionType: question.type, combo, isBossQuestion, skillReady: ready }, seen);
+  const id = pickHint({ questionType: question.type, combo, isBossQuestion, skillReady: ready, partySize }, seen);
+
+  // 提示顯示時計時暫停，按「知道了」才開始計時（不讓讀說明吃掉作答時間）
+  useEffect(() => {
+    useUiStore.getState().setHintOpen(!!id);
+    return () => useUiStore.getState().setHintOpen(false);
+  }, [id]);
 
   // 提示顯示過、而且這題答完（換題或離開作答）後就算看過了
   useEffect(() => {
@@ -164,7 +172,7 @@ function BattleHint({ question }: { question: Question }) {
   return (
     <p className="battle-hint" role="note">
       <span aria-hidden>{hint.icon}</span>
-      <span>{hint.text}</span>
+      <span>{hint.text}<small className="hint-paused">⏸ 計時暫停中，按「知道了」開始</small></span>
       <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => markHint(id)}>知道了</button>
     </p>
   );
@@ -188,8 +196,9 @@ function AnswerPanel({ question }: { question: Question }) {
 function TypingAnswer({ question }: { question: Question }) {
   const typed = useBattleStore(s => s.typed);
   const revealed = useBattleStore(s => s.assist?.revealed.length ?? 0);
-  const { inputLetter, backspace } = useBattleStore.getState();
+  const { inputLetter, backspace, submitTyped } = useBattleStore.getState();
   const slots = answerSlots(question, typed);
+  const full = typed.length >= question.ans.length;
   const nextBlank = slots.findIndex(sl => sl.blank && !sl.char);
   let blankIdx = 0;
 
@@ -203,7 +212,10 @@ function TypingAnswer({ question }: { question: Question }) {
           );
         })}
       </div>
-      <p className="kbd-hint">直接用鍵盤輸入字母，Backspace 刪除，空白鍵聽發音</p>
+      <div className="submit-row">
+        <p className="kbd-hint">用鍵盤輸入字母，Backspace 修改，<b>Enter 送出</b>；空白鍵聽發音</p>
+        <button className={`btn btn-small ${full ? 'btn-primary' : ''}`} onMouseDown={keepFocus} onClick={submitTyped} disabled={!typed}>送出 ⏎</button>
+      </div>
       <div className="vkbd">
         {KEYBOARD_ROWS.map((row, r) => (
           <div className="vkbd-row" key={row}>
@@ -211,7 +223,10 @@ function TypingAnswer({ question }: { question: Question }) {
               <button key={ch} className="vkbd-key" onMouseDown={keepFocus} onClick={() => inputLetter(ch)}>{ch}</button>
             ))}
             {r === KEYBOARD_ROWS.length - 1 && (
-              <button className="vkbd-key vkbd-wide" onMouseDown={keepFocus} onClick={backspace} aria-label="刪除">⌫</button>
+              <>
+                <button className="vkbd-key vkbd-wide" onMouseDown={keepFocus} onClick={backspace} aria-label="刪除">⌫</button>
+                <button className={`vkbd-key vkbd-wide vkbd-enter ${full ? 'is-ready' : ''}`} onMouseDown={keepFocus} onClick={submitTyped} disabled={!typed} aria-label="送出">⏎</button>
+              </>
             )}
           </div>
         ))}

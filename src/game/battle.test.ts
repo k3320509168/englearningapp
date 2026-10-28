@@ -27,10 +27,11 @@ describe('shuffleChoice', () => {
 
 describe('applyLetter', () => {
   const q: Question = { type: 'spell', desc: '請拼出：書本', ans: 'BOOK' };
-  it('progresses, completes, and rejects wrong letters without keeping them', () => {
-    expect(applyLetter(q, '', 'b')).toEqual({ typed: 'B', status: 'progress' });
-    expect(applyLetter(q, 'BOO', 'K')).toEqual({ typed: 'BOOK', status: 'correct' });
-    expect(applyLetter(q, 'BO', 'X')).toEqual({ typed: 'BO', status: 'wrong' });
+  it('lets the player type freely up to the answer length (judged only on submit)', () => {
+    // 自由輸入、不當場判定；最多打到答案的長度
+    expect(applyLetter(q, '', 'b')).toBe('B');
+    expect(applyLetter(q, 'BO', 'X')).toBe('BOX');
+    expect(applyLetter(q, 'BOOK', 'S')).toBe('BOOK');
   });
 });
 

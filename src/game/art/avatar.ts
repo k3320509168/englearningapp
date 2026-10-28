@@ -148,6 +148,8 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
   const headX = 6, headY = 3 - lift;
   const ty0 = 13 - lift, ty1 = 19 - lift; // 軀幹上下
   const cx = Math.floor((l + r) / 2);
+  // 前手的位置：圓潤體型的肚子往前凸，手要放在肚子前面才看得到肚子
+  const ar = body.belly ? r + 3 : r;
   const hp = pen(g, headX, headY);
   const hair = HAIRSTYLES[c.hair] ?? HAIRSTYLES[0];
 
@@ -178,9 +180,29 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
   // 4. 軀幹與職業服裝
   g.rect(l, ty0, r, ty1, 'A');
   g.rect(l, ty0, l, ty1, 'a');
-  if (c.classId !== 'warrior') { g.clear(l, ty0); g.clear(r, ty0); }
-  if (body.belly) g.rect(r + 1, ty0 + 3, r + 1, ty0 + 5, 'A');
-  if (female && c.classId !== 'mage') { g.rect(l - 1, ty1 - 1, r + 1, ty1 + 1, 'A'); g.rect(l - 1, ty1 - 1, l - 1, ty1 + 1, 'a'); }
+  if (female) {
+    // 女性：斜肩、收腰
+    if (c.classId !== 'warrior') { g.clear(l, ty0); g.clear(r, ty0); }
+    g.clear(l, ty0 + 4);
+  } else {
+    // 男性：方肩（肩膀比軀幹寬一格）
+    g.rect(l - 1, ty0, r + 1, ty0, 'A'); g.set(l - 1, ty0, 'a');
+  }
+  if (body.belly) {
+    // 圓滾滾：從胸口往下左右都鼓出去，肚子往前凸最多，像一顆球
+    g.rect(l - 1, ty0 + 2, r + 2, ty1, 'A');
+    g.rect(l - 2, ty0 + 3, r + 3, ty1 - 1, 'A');
+    g.rect(r + 4, ty0 + 4, r + 4, ty1 - 2, 'A');
+    g.rect(l - 2, ty0 + 3, l - 1, ty1 - 1, 'a');
+    g.rect(l - 1, ty0 + 2, l - 1, ty1, 'a');
+  }
+  if (female && c.classId !== 'mage') {
+    // 裙子：往下展開的 A 字裙
+    g.rect(l - 1, ty1 - 1, ar + 1, ty1 + 1, 'A');
+    g.rect(l - 2, ty1 + 1, ar + 2, ty1 + 2, 'A');
+    g.rect(l - 2, ty1 + 1, l - 1, ty1 + 2, 'a');
+    g.rect(l - 1, ty1 + 2, ar + 2, ty1 + 2, 'L');
+  }
   switch (c.classId) {
     case 'mage':
       // 長袍蓋到腳踝，下襬與領口用屬性色
@@ -206,6 +228,14 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
       break;
   }
 
+  // 圓潤：腰帶繞過整個肚子，看得出肚子的弧度
+  if (body.belly) {
+    for (const y of [ty0 + 4, ty0 + 5]) {
+      const belt = g.cells[y]?.[cx];
+      if (belt === 'T' || belt === 'd') { g.rect(l - 2, y, r + 3, y, belt); g.set(r + 4, y, belt); }
+    }
+  }
+
   // 5. 脖子、頭、耳朵、臉
   g.rect(9, ty0 - 1, 10, ty0 - 1, 's');
   hp.rect(0, 0, 7, 8, 'S');
@@ -213,9 +243,24 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
   hp.rect(0, 6, 1, 7, 's');
   hp.rect(2, 5, 2, 6, 's');
   FACES[c.face]?.(hp, female);
+  if (female) {
+    // 長睫毛與腮紅
+    hp.dot(7, 3, 'E'); hp.dot(3, 3, 'E');
+    hp.dot(7, 6, 'P');
+  } else {
+    // 粗眉毛、方下巴（銳利臉型本來就有眉毛）
+    if (c.face !== 3) { hp.dot(4, 3, 'h'); hp.dot(6, 3, 'h'); hp.dot(7, 3, 'h'); }
+    hp.dot(7, 8, 'S');
+  }
+  if (body.belly) {
+    // 圓潤：臉頰鼓起來
+    hp.rect(8, 5, 8, 7, 'S'); hp.dot(7, 8, 'S'); hp.dot(0, 8, 'S');
+  }
 
   // 6. 頭髮
   hair.front(hp);
+  // 女性：頭上的蝴蝶結
+  if (female) { hp.dot(5, -1, 'P'); hp.dot(7, -1, 'P'); hp.dot(6, -1, 'm'); hp.dot(5, -2, 'P'); hp.dot(7, -2, 'P'); }
   if (tier >= 2) {
     // 金冠（覺醒時中間鑲屬性寶石）
     hp.rect(1, -2, 6, -2, 'T');
@@ -231,17 +276,17 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
 
   // 8. 前手與武器
   if (frame === 'idle') {
-    const hx = r + 1, hy = ty0 + 5, wx = hx + 1;
+    const hx = ar + 1, hy = ty0 + 5, wx = hx + 1;
     drawIdleWeapon(g, c.classId, wx, hy);
     // 前手與軀幹之間加一道暗色，看得出是手臂
-    g.rect(r, ty0 + 1, r, ty0 + 4, 'a');
+    g.rect(ar, ty0 + 1, ar, ty0 + 4, 'a');
     g.rect(hx, ty0 + 1, hx, ty0 + 4, 'A');
     if (c.classId === 'warrior') g.rect(hx, ty0 - 1, hx + 1, ty0 + 1, 'X');
     g.rect(hx, hy, wx, hy, 'S');
   } else {
-    const hx = r + 4, hy = ty0 + 1;
+    const hx = ar + 4, hy = ty0 + 1;
     drawAttackWeapon(g, c.classId, hx, hy);
-    g.rect(r + 1, hy, r + 3, hy, 'A');
+    g.rect(ar + 1, hy, ar + 3, hy, 'A');
     if (c.classId === 'warrior') g.rect(r, ty0 - 1, r + 2, ty0, 'X');
     g.set(hx, hy, 'S');
   }

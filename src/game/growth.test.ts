@@ -117,7 +117,7 @@ describe('growth from battles', () => {
       const q = st().question!;
       if (q.type === 'choice') st().chooseOption(q.ans);
       else if (q.type === 'voice') st().submitVoice(q.ans);
-      else q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c));
+      else { q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c)); st().submitTyped(); }
     }
     expect(st().runXp).toBeGreaterThan(0);
     expect(useSaveStore.getState().player.level).toBeGreaterThan(1);

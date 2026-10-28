@@ -7,16 +7,44 @@ export interface Recognizer {
   stop: () => void;
 }
 
-export const SLOW_RATE = 0.5;
+export const SLOW_RATE = 0.55;
 
-// 挑選英文語音。慢速時優先用本機語音：Chrome 的線上語音（Google US English）
-// 幾乎不理會語速設定，放慢後聽起來跟原速差不多。
-function pickVoice(slow: boolean): SpeechSynthesisVoice | undefined {
-  const voices = window.speechSynthesis.getVoices().filter(v => v.lang.replace('_', '-').startsWith('en'));
-  const us = voices.filter(v => v.lang.replace('_', '-') === 'en-US');
-  const pool = us.length ? us : voices;
-  if (slow) return pool.find(v => v.localService) ?? pool[0];
-  return pool.find(v => v.default) ?? pool[0];
+// macOS 內建很多「趣味語音」（Bubbles、Bad News…）和機器人感很重的舊語音，系統預設甚至可能是它們，
+// 用來教發音完全不行，一律排除
+const NOVELTY = /albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|superstar|trinoids|whisper|wobble|zarvox|junior|ralph|kathy|fred|princess|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley/i;
+
+// 清晰度排名：越前面越自然。本機語音（Samantha、Microsoft 等）會確實遵守語速，慢速才聽得出差別
+const PREFERRED = [
+  /samantha/i, /ava/i, /allison/i, /susan/i, /\balex\b/i,                 // macOS／iOS
+  /microsoft (aria|jenny|guy|ana).*natural/i, /microsoft (aria|jenny)/i,  // Windows 的自然語音
+  /microsoft (zira|david|mark)/i,
+  /google us english/i,                                                  // Chrome 線上語音：清楚，但不太理會語速
+  /karen|daniel|moira|tessa|serena/i,                                     // 其他英文腔
+];
+
+export function englishVoices(): SpeechSynthesisVoice[] {
+  if (!('speechSynthesis' in window)) return [];
+  return window.speechSynthesis.getVoices()
+    .filter(v => v.lang.replace('_', '-').toLowerCase().startsWith('en') && !NOVELTY.test(v.name));
+}
+
+const rank = (v: SpeechSynthesisVoice) => {
+  const i = PREFERRED.findIndex(re => re.test(v.name));
+  const us = v.lang.replace('_', '-') === 'en-US' ? 0 : 0.5;
+  return (i < 0 ? PREFERRED.length : i) + us;
+};
+
+// 挑選語音：玩家在設定選過就用那個；否則選清晰度最高的。
+// 慢速時避開 Google 線上語音（它幾乎不理會語速，放慢後聽起來跟原速一樣）
+export function pickVoice(slow: boolean, preferred?: string): SpeechSynthesisVoice | undefined {
+  const voices = englishVoices();
+  const chosen = preferred ? voices.find(v => v.name === preferred) : undefined;
+  const sorted = [...voices].sort((a, b) => rank(a) - rank(b));
+  if (slow) {
+    if (chosen && chosen.localService) return chosen;
+    return sorted.find(v => v.localService) ?? sorted[0];
+  }
+  return chosen ?? sorted[0];
 }
 
 // 讓語音引擎唸得自然：「thank you」這種沒有標點的小寫短語，常被唸成拖長的問句語調。
@@ -34,25 +62,44 @@ let pending: number | undefined;
 // 保留目前的 utterance，避免被回收後播到一半中斷
 let current: SpeechSynthesisUtterance | null = null;
 
-export function speak(text: string, rate = 1, volume = 1, slow = false) {
+export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string) {
   if (!('speechSynthesis' in window)) return;
   const synth = window.speechSynthesis;
   const busy = synth.speaking || synth.pending;
   synth.cancel();
+  // Chrome（尤其 Mac）的已知問題：語音引擎有時卡在暫停狀態，之後按什麼都不會唸，先恢復
+  if (synth.paused) synth.resume();
   window.clearTimeout(pending);
   const utterance = new SpeechSynthesisUtterance(speakableText(text));
   utterance.lang = 'en-US';
-  const voice = pickVoice(slow);
+  const voice = pickVoice(slow, voiceName);
   if (voice) utterance.voice = voice;
-  utterance.rate = slow ? SLOW_RATE : rate;
+  utterance.rate = slow ? Math.min(SLOW_RATE, rate * 0.6) : rate;
   utterance.volume = volume;
   current = utterance;
   // 發音時壓低背景音樂，唸完再恢復
   duckMusic(true);
   utterance.onend = utterance.onerror = () => { if (current === utterance) duckMusic(false); };
-  const start = () => { if (current === utterance) synth.speak(utterance); };
+  const start = () => {
+    if (current !== utterance) return;
+    synth.speak(utterance);
+    synth.resume();
+    // 保險：1.5 秒後還沒開始唸（引擎卡住），重設一次再唸
+    window.setTimeout(() => {
+      if (current === utterance && !synth.speaking && !synth.pending) { synth.cancel(); synth.speak(utterance); }
+    }, 1500);
+  };
   if (busy) pending = window.setTimeout(start, 120);
   else start();
+}
+
+// 開始錄音前停止發音，避免麥克風把遊戲自己的語音也收進去
+export function stopSpeaking() {
+  if (!('speechSynthesis' in window)) return;
+  window.clearTimeout(pending);
+  current = null;
+  window.speechSynthesis.cancel();
+  duckMusic(false);
 }
 
 function getRecognitionCtor(): any {
@@ -65,7 +112,7 @@ export function isSpeechRecognitionSupported(): boolean {
 
 export function createRecognizer(handlers: {
   onStart: () => void;
-  onResult: (transcript: string) => void;
+  onResult: (transcripts: string[]) => void; // 辨識結果的所有候選（第一個最可能）
   onError: (error: string) => void;
   onEnd: () => void;
 }): Recognizer | null {
@@ -74,12 +121,19 @@ export function createRecognizer(handlers: {
   const recognition = new Ctor();
   recognition.lang = 'en-US';
   recognition.interimResults = false;
+  // 多拿幾個候選：發音正確但被辨識成相近的字時，其他候選常常就是正確答案
+  recognition.maxAlternatives = 5;
   recognition.onstart = handlers.onStart;
-  recognition.onresult = (event: any) => handlers.onResult(event.results[0][0].transcript);
+  recognition.onresult = (event: any) => {
+    const result = event.results[0];
+    const list: string[] = [];
+    for (let i = 0; i < result.length; i++) list.push(result[i].transcript);
+    handlers.onResult(list);
+  };
   recognition.onerror = (event: any) => handlers.onError(event.error);
   recognition.onend = handlers.onEnd;
   return {
-    start: () => { try { recognition.start(); } catch { /* 已在錄音中 */ } },
+    start: () => { stopSpeaking(); try { recognition.start(); } catch { /* 已在錄音中 */ } },
     stop: () => recognition.stop(),
   };
 }

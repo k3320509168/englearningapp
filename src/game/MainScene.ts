@@ -49,6 +49,7 @@ interface Fighter {
   idleKey: string;
   attackKey: string;
   down: boolean;
+  koLabel?: Phaser.GameObjects.Text; // 倒下時頭上的「💤 倒下」
 }
 
 const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
@@ -123,12 +124,18 @@ export default class MainScene extends Phaser.Scene {
     if (f.down === down) return;
     f.down = down;
     if (down) {
+      // HP 歸零：躺下、變灰，頭上標示「倒下」（倒下的隊員不會出手，回到地圖或重新挑戰會恢復）
       f.idle?.pause();
       this.tweens.add({ targets: f.sprite, angle: -90, y: -8, duration: 400, delay: 200, ease: 'Bounce.easeOut' });
       f.sprite.setTint(0x666677);
+      f.koLabel?.destroy();
+      f.koLabel = this.add.text(f.homeX, f.homeY - 60, '💤 倒下', labelStyle(16, '#c8c8d8')).setOrigin(0.5).setDepth(40).setAlpha(0);
+      this.tweens.add({ targets: f.koLabel, alpha: 1, y: f.homeY - 70, duration: 400, delay: 500 });
     } else {
       f.sprite.setAngle(0).setY(0).clearTint().setTexture(f.idleKey);
       f.idle?.resume();
+      f.koLabel?.destroy();
+      f.koLabel = undefined;
     }
   }
 
@@ -427,6 +434,9 @@ export default class MainScene extends Phaser.Scene {
       this.time.delayedCall(500, () => popText(this, MONSTER_X, GROUND_Y - 200, text, 22, '#e8e6ff', { rise: 30, dur: 1200 }));
     }
     if (event.fast) popText(this, f.homeX + 40, f.homeY - 175, event.fast >= 1.5 ? 'FAST! ×1.5' : 'QUICK ×1.2', 22, '#7fffd4', { rise: 30, dur: 700 });
+    // 職業合作：吃到上一位隊員的接力加成、全員連攜
+    if (event.relay) popText(this, f.homeX, f.homeY - 205, event.relay, 20, '#ffe27a', { rise: 24, dur: 900 });
+    if (event.chain) this.playChain(event.member);
     this.busy = true;
     f.idle?.pause();
     this.tweens.killTweensOf(f.container);
@@ -521,6 +531,24 @@ export default class MainScene extends Phaser.Scene {
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
     if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
     else if (killed) this.busy = false;
+  }
+
+  // 連攜攻擊：其他站著的隊員一起衝上去補一刀
+  private playChain(attackerId: MemberId | undefined) {
+    popText(this, 400, 200, `連攜攻擊！×${this.fighters.filter(x => !x.down).length}`, 40, '#7fe8ff', { rise: 30, dur: 1200 });
+    sfx.combo(15);
+    this.fighters.filter(x => !x.down && x.id !== attackerId).forEach((x, i) => {
+      this.time.delayedCall(80 + i * 110, () => {
+        afterimage(this, x.sprite, x.container.x, x.container.y, 0x7fe8ff);
+        this.tweens.add({
+          targets: x.container, x: MONSTER_X - 190 - i * 18, duration: 110, yoyo: true, hold: 60, ease: 'Quad.easeIn',
+          onYoyo: () => {
+            slashArc(this, MONSTER_X - 20, GROUND_Y - this.monsterSprite.displayHeight * 0.5, false, 0x7fe8ff, 30 - i * 40);
+            sfx.slash();
+          },
+        });
+      });
+    });
   }
 
   // 拼寫題蓄力光：跟著出手的隊員，進度越高越大越亮；f 為 null 時散掉
@@ -718,6 +746,7 @@ export default class MainScene extends Phaser.Scene {
       this.tweens.add({ targets: f.container, x: f.homeX - 30, duration: 80, yoyo: true });
       burst(this, f.homeX + 20, f.homeY - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
       popText(this, f.homeX, f.homeY - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
+      if (event.taunt) popText(this, f.homeX, f.homeY - 200, '🛡️ 挑釁！替隊友擋下', 20, '#ffcd4b', { rise: 20, dur: 1000 });
       if (target && s.party.length > 1) popText(this, f.homeX, f.homeY - 165, knockedOut ? `${target.name} 倒下了` : target.name, 20, '#ffb0b8', { rise: 20, dur: 800 });
     });
   }

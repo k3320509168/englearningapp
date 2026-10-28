@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { createRecognizer, isSpeechRecognitionSupported } from '../game/speech';
+import { createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice } from '../game/speech';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
@@ -28,7 +28,6 @@ export default function SettingsModal() {
   const resetProgress = useSaveStore(s => s.resetProgress);
   const { closeModal, openModal, openStory } = useUiStore();
   const storySeen = useSaveStore(s => s.storySeen);
-  const say = useSpeak();
   const [confirmReset, setConfirmReset] = useState(false);
 
   return (
@@ -56,7 +55,7 @@ export default function SettingsModal() {
           <input type="range" min={0} max={1} step={0.05} value={settings.musicVolume}
             onChange={e => updateSettings({ musicVolume: Number(e.target.value) })} />
         </label>
-        <button className="btn" onMouseDown={keepFocus} onClick={() => say('Welcome to the English adventure.')}>▶ 試聽發音</button>
+        <VoicePicker />
         <label className="check">
           <input type="checkbox" checked={settings.autoSpeak} onChange={e => updateSettings({ autoSpeak: e.target.checked })} />
           出題時自動播放發音
@@ -133,6 +132,39 @@ export default function SettingsModal() {
   );
 }
 
+// 發音語音：預設自動選最清楚的語音；也可以自己挑（只列出適合學英文的語音）
+function VoicePicker() {
+  const voiceName = useSaveStore(s => s.settings.voiceName ?? '');
+  const updateSettings = useSaveStore(s => s.updateSettings);
+  const say = useSpeak();
+  const [voices, setVoices] = useState(() => englishVoices());
+  // 語音清單是非同步載入的，載好後更新
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return;
+    const update = () => setVoices(englishVoices());
+    window.speechSynthesis.addEventListener('voiceschanged', update);
+    return () => window.speechSynthesis.removeEventListener('voiceschanged', update);
+  }, []);
+  const auto = pickVoice(false);
+  const sample = 'Good morning. I would like to make a reservation.';
+  return (
+    <div className="voice-picker">
+      <label className="range">
+        <span>發音語音</span>
+        <select value={voiceName} onChange={e => updateSettings({ voiceName: e.target.value })} aria-label="發音語音">
+          <option value="">自動（{auto?.name ?? '瀏覽器預設'}）</option>
+          {voices.map(v => <option key={v.name} value={v.name}>{v.name}（{v.lang}）</option>)}
+        </select>
+      </label>
+      <div className="feedback-actions">
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
+      </div>
+      <p className="muted voice-note">聽起來不自然的話，換一個語音試試。Mac 推薦 Samantha，Windows 推薦 Microsoft Aria／Jenny。</p>
+    </div>
+  );
+}
+
 function MicTest() {
   const [status, setStatus] = useState<'idle' | 'listening' | 'done' | 'error'>('idle');
   const [text, setText] = useState('');
@@ -141,7 +173,7 @@ function MicTest() {
   useEffect(() => {
     recognizer.current = createRecognizer({
       onStart: () => { setStatus('listening'); setText(''); },
-      onResult: (t) => { setStatus('done'); setText(t); },
+      onResult: (t) => { setStatus('done'); setText(t[0] ?? ''); },
       onError: (err) => { setStatus('error'); setText(err === 'not-allowed' ? '請允許瀏覽器使用麥克風' : `辨識失敗（${err}）`); },
       onEnd: () => setStatus(s => (s === 'listening' ? 'idle' : s)),
     });

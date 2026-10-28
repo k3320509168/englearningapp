@@ -11,6 +11,7 @@ import {
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
 import { heroSellValue, trainCost } from '../store/saveStore';
+import { RELAY } from '../game/synergy';
 import { sfx } from '../game/sfx';
 import { LEVEL_STAT } from '../game/growth';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRUE_NAME_BONUS, isTrueName, trialsDone } from '../game/trueName';
@@ -128,6 +129,7 @@ export default function HeroModal() {
             <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
             <p className="muted">主角・{cls.name}（{cls.role}）</p>
             <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+            <p className="skill-line relay-line">接力 {RELAY[character.classId].icon} {RELAY[character.classId].name}：{RELAY[character.classId].desc}</p>
             {renderMemberButtons(id, inParty, pos, full)}
           </div>
         </section>
@@ -160,6 +162,7 @@ export default function HeroModal() {
           <p className="muted">{h.id}：{h.meaning}・{heroTitle(h)}（{classDef(h.classId).role}）</p>
           <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
           <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+          <p className="skill-line relay-line">接力 {RELAY[h.classId].icon} {RELAY[h.classId].name}：{RELAY[h.classId].desc}{h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}</p>
           {owned ? (
             <>
               {tier === 0 ? (

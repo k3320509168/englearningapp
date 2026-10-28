@@ -1465,3 +1465,17 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .save-code { width: 100%; padding: 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--bg); color: var(--text); font-family: monospace; font-size: 12px; word-break: break-all; resize: vertical; }
 .login-error { display: flex; align-items: center; gap: 10px; margin: 0; padding: 10px 12px; border: 2px solid var(--bad); border-radius: 6px; background: color-mix(in srgb, var(--bad) 14%, var(--panel)); line-height: 1.6; }
 .login-error span { flex: 1; }
+.voice-picker select { width: 100%; min-height: 40px; padding: 6px 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); font-size: 14px; }
+.voice-note { margin: 0; font-size: 12px; }
+.inline-say { min-height: 32px; padding: 2px 8px; margin-left: 4px; vertical-align: middle; font-size: 13px; }
+.submit-row { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.submit-row .kbd-hint { flex: 1; }
+.vkbd-enter { background: var(--panel-3); }
+.vkbd-enter.is-ready { background: var(--accent); color: #2a1a00; }
+@media (pointer: coarse) { .submit-row > .btn { display: none; } }
+.hint-paused { display: block; margin-top: 2px; color: var(--accent); font-size: 12px; }
+.chain-line { margin: 0; font-size: 13px; color: var(--muted); }
+.chain-line b { color: #7fe8ff; }
+.chain-line span { color: #ffe27a; }
+.member-chain { position: absolute; left: 1px; top: 0; font-size: 11px; }
+.relay-line { color: #ffe27a; }

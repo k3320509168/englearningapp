@@ -55,6 +55,7 @@ export interface Settings {
   musicVolume: number;      // 背景音樂
   reduceMotion: boolean;    // 減少動態效果：不震動、不閃光
   textScale: number;        // 文字大小（1 = 標準）
+  voiceName?: string;       // 發音用的語音（空白 = 自動選最清楚的）
 }
 
 interface SaveData {

@@ -75,7 +75,7 @@ describe('skill bosses', () => {
     for (let i = 0; i < 300 && st().phase !== 'levelClear'; i++) {
       const q = st().question!;
       expect(q.type).toBe('spell');
-      q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c));
+      { q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c)); st().submitTyped(); }
     }
     expect(st().phase).toBe('levelClear');
     expect(useSaveStore.getState().titles).toContain('咒文大師');

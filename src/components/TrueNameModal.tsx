@@ -113,7 +113,7 @@ function TrialPanel({ question, onPass, onRetry }: { question: TrialQuestion; on
     if (question.kind !== 'voice' || dictation) return;
     recognizer.current = createRecognizer({
       onStart: () => setListening(true),
-      onResult: (t) => judge(t, checkVoice({ type: 'voice', desc: '', ans: question.answer }, t)),
+      onResult: (t) => judge(t[0] ?? '', checkVoice({ type: 'voice', desc: '', ans: question.answer }, t)),
       onError: () => setListening(false),
       onEnd: () => setListening(false),
     });

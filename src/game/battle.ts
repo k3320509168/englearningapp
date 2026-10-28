@@ -49,14 +49,13 @@ export function shuffleChoice(q: Question, random: () => number = Math.random): 
   };
 }
 
-export type KeyResult = { typed: string; status: 'progress' | 'correct' | 'wrong' };
-
-// 拼寫／填空：逐字母判定。打錯的字母不會被保留，玩家可直接重打
-export function applyLetter(q: Question, typed: string, letter: string): KeyResult {
-  const next = typed + letter.toUpperCase();
-  if (!q.ans.startsWith(next)) return { typed, status: 'wrong' };
-  return { typed: next, status: next === q.ans ? 'correct' : 'progress' };
+// 拼寫／填空：自由輸入（最多到答案的長度），按 Enter 或「送出」才判定對錯，
+// 打錯可以用 Backspace 改，讓玩家有思考的空間
+export function applyLetter(q: Question, typed: string, letter: string): string {
+  return typed.length >= q.ans.length ? typed : typed + letter.toUpperCase();
 }
+
+export const checkTypedAnswer = (q: Question, typed: string) => typed.toUpperCase() === q.ans;
 
 export function checkChoice(q: Question, letter: string): boolean {
   return letter.toUpperCase() === q.ans;
@@ -80,14 +79,38 @@ export function sentenceMatchRatio(expected: string, transcript: string): number
   return dp[a.length][b.length] / a.length;
 }
 
-export function checkVoice(q: Question, transcript: string): boolean {
+// 兩個字差幾個字母（編輯距離）
+function editDistance(a: string, b: string): number {
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+// 辨識出來的字算不算唸對：完全一樣、單複數（reservation / reservations），
+// 或長字只差一個字母（辨識引擎常見的小誤差，例如 luggage → luggages）
+function wordMatches(heard: string, target: string): boolean {
+  if (heard === target) return true;
+  if (heard === `${target}S` || heard === `${target}ES` || `${heard}S` === target) return true;
+  return target.length >= 6 && editDistance(heard, target) <= 1;
+}
+
+// transcripts：辨識引擎給的所有候選，任何一個唸對就算對
+export function checkVoice(q: Question, transcripts: string | string[]): boolean {
+  const heardList = Array.isArray(transcripts) ? transcripts : [transcripts];
   const candidates = [q.ans, ...(q.accept ?? [])];
   const isSentence = q.ans.trim().includes(' ');
-  if (isSentence) {
-    return candidates.some(c => sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO);
-  }
-  const words = normalizeWords(transcript);
-  return candidates.some(c => words.includes(c.toUpperCase()));
+  return heardList.some(transcript => {
+    if (isSentence) return candidates.some(c => sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO);
+    const words = normalizeWords(transcript);
+    // 片語（例如 thank you）也可能被辨識成連在一起的一個字
+    const joined = words.join('');
+    return candidates.some(c => words.some(w => wordMatches(w, c.toUpperCase())) || joined === c.toUpperCase());
+  });
 }
 
 // 從題目描述取出中文提示，例如「請拼出：書本」→「書本」、「填空題：B U D G _ T (預算)」→「預算」

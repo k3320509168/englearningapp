@@ -54,7 +54,7 @@ describe('maps in battle', () => {
     const q = st().question!;
     if (q.type === 'choice') st().chooseOption(q.ans);
     else if (q.type === 'voice') st().submitVoice(q.ans);
-    else q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c));
+    else { q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c)); st().submitTyped(); }
   };
 
   it('rates the map at its boss, then resets combo on the next map', () => {

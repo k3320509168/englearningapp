@@ -6,6 +6,7 @@ import { useSaveStore } from '../store/saveStore';
 import { SKILLS, SKILL_ENERGY, bossStep } from '../game/progression';
 import { elementDef, elementMultiplier } from '../game/character';
 import { isAlive, leaderIndex, skillReady } from '../game/party';
+import { RELAY } from '../game/synergy';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { FAST_TIME, QUICK_TIME, isLenientStage } from '../game/battle';
 import { keepFocus } from './keepFocus';
@@ -46,9 +47,11 @@ export function TimerBars() {
 }
 
 export function PartyBar() {
-  const { party, attackerIdx, isBossQuestion, phase, monsterElement } = useBattleStore(useShallow(s => ({
+  const { party, attackerIdx, isBossQuestion, phase, monsterElement, relay, chain } = useBattleStore(useShallow(s => ({
     party: s.party, attackerIdx: s.attackerIdx, isBossQuestion: s.isBossQuestion, phase: s.phase, monsterElement: s.monsterElement,
+    relay: s.relay, chain: s.chain,
   })));
+  const aliveCount = party.filter(isAlive).length;
   const character = useSaveStore(s => s.character);
   const portraits = useMemo(() => Object.fromEntries(party.map(m => [
     m.id, m.id === 'player' && character ? avatarDataUrl(character, 'idle', 2, useSaveStore.getState().player.classPath.length) : heroDataUrl(m.id, 2),
@@ -56,12 +59,21 @@ export function PartyBar() {
   const striker = isBossQuestion ? leaderIndex(party) : attackerIdx;
 
   return (
+    <>
+    {aliveCount >= 2 && (
+      <p className="chain-line" title="所有站著的隊員輪流答對一次（中間沒答錯）就會觸發連攜攻擊">
+        🔗 連攜 <b>{chain.length}/{aliveCount}</b>
+        {relay && relay.by !== party[striker]?.id && <span>・下一擊 {RELAY[relay.classId].icon} {RELAY[relay.classId].name}</span>}
+      </p>
+    )}
     <ul className="party-bar" aria-label="隊伍">
       {party.map((m, i) => {
         const ready = skillReady(m) && phase === 'answering';
         const el = elementDef(m.element);
         const mult = elementMultiplier(m.element, monsterElement);
         const skill = SKILLS[m.skill];
+        const relayDef = RELAY[m.classId];
+        const inChain = chain.includes(m.id);
         return (
           <li key={m.id}>
             <button
@@ -70,13 +82,14 @@ export function PartyBar() {
               onMouseDown={keepFocus}
               onClick={() => useBattleStore.getState().requestSkill(i)}
               disabled={!ready}
-              title={`${m.name}（${el.name}）｜${skill.icon} ${skill.name}：${skill.desc}`}
+              title={`${m.name}（${el.name}）｜${skill.icon} ${skill.name}：${skill.desc}｜接力 ${relayDef.icon} ${relayDef.name}：${relayDef.desc}`}
               aria-label={`${m.name}，HP ${m.hp}/${m.maxHp}${ready ? `，可以施放${skill.name}` : ''}`}
             >
               <span className="member-portrait">
                 <img src={portraits[m.id]} alt="" />
                 {mult > 1 && <span className="member-adv" title="剋制這隻怪物">▲</span>}
                 {mult < 1 && <span className="member-dis" title="被這隻怪物剋制">▼</span>}
+                {inChain && <span className="member-chain" title="這一輪已經出手">🔗</span>}
               </span>
               <span className="member-info">
                 <span className="member-name">{m.name}</span>
@@ -91,6 +104,7 @@ export function PartyBar() {
         );
       })}
     </ul>
+    </>
   );
 }
 

@@ -42,7 +42,7 @@ export interface ItemDef {
 export const ITEMS: ItemDef[] = [
   { id: 'potion', icon: '🧪', name: '回復藥水', desc: '全隊立即回復 30 HP', cost: 40 },
   { id: 'hint', icon: '💡', name: '提示卷軸', desc: '刪掉兩個錯誤選項，或提示第一個字母、顯示口說單字', cost: 30 },
-  { id: 'shield', icon: '🛡️', name: '護盾', desc: '擋下下一次答錯的傷害', cost: 35 },
+  { id: 'shield', icon: '🛡️', name: '護盾', desc: '擋下下一次答錯或超時：不扣血、combo 不中斷', cost: 35 },
 ];
 
 export const POTION_HEAL = 30;
@@ -129,7 +129,7 @@ export function monsterGrowth(stageIdx: number, levelIdx: number): number {
   return (1 + stageIdx * 0.02) * (1 + levelIdx * 0.3);
 }
 
-// 關卡變化：菁英怪有護盾，要連續答對 ELITE_SHIELD 題打破才會受傷；
+// 關卡變化：菁英怪有護盾，要答對 ELITE_SHIELD 題打破才會受傷（答錯會恢復一層）；
 // 寶箱怪不會攻擊，限時內每次命中都掉金幣，打開寶箱有大獎，時間到就逃走
 export const ELITE_SHIELD = 3;
 export const ELITE_HP_MULT = 1.5;

@@ -22,6 +22,8 @@ interface UiState {
   heroId: string;
   growthTab: GrowthTab;
   celebrations: Celebration[];
+  hintOpen: boolean; // 戰鬥中的情境提示還沒按「知道了」：計時暫停
+  setHintOpen: (open: boolean) => void;
   celebrate: (c: Celebration) => void;
   dismissCelebration: () => void;
   openModal: (name: ModalName) => void;
@@ -41,6 +43,8 @@ export const useUiStore = create<UiState>()((set) => ({
   heroId: '',
   growthTab: 'hero',
   celebrations: [],
+  hintOpen: false,
+  setHintOpen: (open) => set({ hintOpen: open }),
   celebrate: (c) => set(s => ({ celebrations: [...s.celebrations, c] })),
   dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),
   openModal: (name) => set(name === 'growth' ? { modal: name, growthTab: 'hero' } : { modal: name }),

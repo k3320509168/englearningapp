@@ -14,7 +14,7 @@ const answerCurrent = () => {
   const q = state().question!;
   if (q.type === 'choice') state().chooseOption(q.ans);
   else if (q.type === 'voice') state().submitVoice(q.ans);
-  else q.ans.slice(state().typed.length).split('').forEach(ch => state().inputLetter(ch));
+  else { q.ans.slice(state().typed.length).split('').forEach(ch => state().inputLetter(ch)); state().submitTyped(); }
 };
 
 const answerWrong = () => {
@@ -23,7 +23,7 @@ const answerWrong = () => {
     const hidden = state().assist?.hiddenOptions ?? [];
     state().chooseOption(['A', 'B', 'C', 'D'].find(l => l !== q.ans && !hidden.includes(l))!);
   } else if (q.type === 'voice') state().submitVoice('banana');
-  else state().inputLetter(q.ans[state().typed.length] === 'Q' ? 'Z' : 'Q');
+  else { state().inputLetter(q.ans[state().typed.length] === 'Q' ? 'Z' : 'Q'); state().submitTyped(); }
 };
 
 // 一路答對，遇到結算自動往下，直到 stop 條件成立
@@ -190,17 +190,18 @@ describe('combo timer', () => {
 });
 
 describe('stage variations', () => {
-  it('elite monsters need 3 correct answers in a row to break the shield', () => {
+  it('elite monsters need 3 correct answers to break the shield; a wrong answer restores one layer', () => {
     startLevel();
     state().startLevel(LEVELS[0], undefined, 4);
     expect(state().stages[4].kind).toBe('elite');
     expect(state().monsterShield).toBe(ELITE_SHIELD);
     const hp = state().monsterHp;
     answerCurrent();
-    expect(state().monsterShield).toBe(ELITE_SHIELD - 1);
+    answerCurrent();
+    expect(state().monsterShield).toBe(ELITE_SHIELD - 2);
     expect(state().monsterHp).toBe(hp);
     answerWrong();
-    expect(state().monsterShield).toBe(ELITE_SHIELD);
+    expect(state().monsterShield).toBe(ELITE_SHIELD - 1);
   });
 
   it('treasure chests never attack, drop gold per hit, and escape when time is up', () => {

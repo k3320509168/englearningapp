@@ -4,7 +4,7 @@ import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
   ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT, shuffleArray,
-  applyLetter, buildAssist, checkChoice, easeOrder, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
+  applyLetter, buildAssist, checkChoice, checkTypedAnswer, easeOrder, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
 } from '../game/battle';
 import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
@@ -19,6 +19,8 @@ import type { Element } from '../game/character';
 import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, partyHp, skillReady, teamGuardEvery, teamTimeBonus } from '../game/party';
 import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
+import { TAUNT_CHANCE, TAUNT_REDUCTION, advanceChain, chainMultiplier, relayFor } from '../game/synergy';
+import type { Relay } from '../game/synergy';
 import { dueMistakes, useSaveStore } from './saveStore';
 import { ADVANCE_REQ, XP, canAdvance, isMilestoneLevel, xpScale } from '../game/growth';
 import { rollDrops } from '../game/equipment';
@@ -55,6 +57,9 @@ export interface BattleEvent {
   levelUp?: number;                 // 主角升到第幾級
   guardGained?: boolean;            // 被動守護觸發
   drops?: Record<string, number>;   // 擊倒後的素材
+  relay?: string;                   // 這一擊吃到的接力加成（例如「⚔️ 劍氣接力」）
+  chain?: number;                   // 觸發連攜攻擊：參與的隊員數
+  taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
 }
 
 // 地圖結算：這張地圖拿到的星星（與先前最佳紀錄合併前）、這次新拿到幾顆
@@ -115,6 +120,8 @@ interface BattleState {
   shield: boolean;
   comboGuard: boolean;  // 守護之盾：下一次答錯不中斷 combo
   amplifyLeft: number;  // 魔力增幅：剩幾次攻擊翻倍
+  relay: Relay | null;  // 上一位出手隊員給下一位的接力加成
+  chain: MemberId[];    // 連攜進度：這一輪已經出手過的隊員
   focus: boolean;       // 專注：這一關每題多 5 秒
   questionLimit: number;
   questionLeft: number;
@@ -138,8 +145,9 @@ interface BattleState {
   tick: (ms: number) => void;
   inputLetter: (letter: string) => void;
   backspace: () => void;
+  submitTyped: () => void;
   chooseOption: (letter: string) => void;
-  submitVoice: (transcript: string) => void;
+  submitVoice: (transcripts: string | string[]) => void;
   continueAfterFeedback: () => void;
   requestSkill: (memberIdx: number) => void;
   confirmSkill: () => void;
@@ -323,8 +331,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const enemyStrike = (party: Member[]) => {
     const s = get();
     const alive = party.map((m, i) => (isAlive(m) ? i : -1)).filter(i => i >= 0);
-    const target = alive[Math.floor(random() * alive.length)];
-    const damage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx);
+    // 戰士挑釁：站著的戰士有機會替隊友擋下這一擊，而且受到的傷害較少
+    const warriors = alive.filter(i => party[i].classId === 'warrior');
+    const taunt = warriors.length > 0 && alive.length > 1 && random() < TAUNT_CHANCE;
+    const target = taunt ? warriors[0] : alive[Math.floor(random() * alive.length)];
+    const baseDamage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx);
+    const damage = taunt ? Math.round(baseDamage * (1 - TAUNT_REDUCTION)) : baseDamage;
     const hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
     const wiped = hurt.every(m => !isAlive(m));
     const knockedOut = isAlive(party[target]) && !isAlive(hurt[target]);
@@ -334,7 +346,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       attackerIdx: Math.max(0, attackerIdx),
       wiped,
       mapStats: { ...s.mapStats, knockouts: s.mapStats.knockouts + (knockedOut ? 1 : 0) },
-      event: nextEvent('hurt', { amount: damage, member: party[target].id }),
+      event: nextEvent('hurt', { amount: damage, member: party[target].id, taunt }),
     };
   };
 
@@ -409,7 +421,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const amplify = s.amplifyLeft > 0;
     const bossMult = s.isBossQuestion && !s.overtime ? s.bossMult * bossStep(s.bossChain) * (amplify ? 2 : 1) : s.bossMult;
     const bossChain = s.isBossQuestion && !s.overtime ? s.bossChain + 1 : s.bossChain;
-    const crit = random() < attacker.crit;
+    // 職業合作：上一位隊員給的接力加成、所有隊員輪過一次的連攜攻擊
+    const relayFx = relayFor(s.relay, attacker.id);
+    const aliveIds = s.party.filter(isAlive).map(m => m.id);
+    const chainStep = advanceChain(s.chain, attacker.id, aliveIds);
+    const crit = random() < attacker.crit + (relayFx?.crit ?? 0);
     const regionScale = xpScale(s.levelIdx);
     let party = gainEnergy(s.party);
     save().trackDaily('correct');
@@ -432,6 +448,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
       wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
+      relay: { classId: attacker.classId, by: attacker.id }, chain: chainStep.chain,
       ...(guardGained ? { shield: true, comboGuard: true } : {}),
     };
 
@@ -462,14 +479,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 被動倍率：每關第一擊、隊伍低血量
     const firstHit = s.stageHits === 0 ? 1 + attacker.mods.firstHit : 1;
     const lowHp = s.playerHp / Math.max(1, s.playerMaxHp) < 0.5 ? 1 + attacker.mods.lowHp : 1;
-    const em = stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement);
+    const rawEm = stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement);
+    const em = relayFx?.ignoreWeak && rawEm < 1 ? 1 : rawEm;
+    const teamwork = (1 + (relayFx?.dmg ?? 0)) * (chainStep.triggered ? chainMultiplier(aliveIds.length) : 1);
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
       : computeDamage({
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
         element: em > 1 ? em + attacker.mods.elementBonus : em,
         critMult: 2 + attacker.mods.critDmg,
-        extra: firstHit * lowHp,
+        extra: firstHit * lowHp * teamwork,
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
@@ -496,6 +515,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       event: nextEvent('attack', {
         amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
         levelUp, guardGained, drops: killed ? drops : undefined,
+        relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
+        chain: chainStep.triggered ? aliveIds.length : undefined,
       }),
     };
     if (!killed) {
@@ -516,8 +537,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       bossMult: guarded ? s.bossMult : 1,
       bossChain: guarded ? s.bossChain : 0,
       comboGuard: false,
-      // 菁英怪的護盾在答錯時恢復
-      monsterShield: stage.kind === 'elite' && s.monsterShield > 0 ? ELITE_SHIELD : s.monsterShield,
+      // 答錯：接力與連攜中斷（守護保住 combo 時也保住接力）
+      relay: guarded ? s.relay : null,
+      chain: guarded ? s.chain : [],
+      // 菁英怪的護盾在答錯時恢復一層（以前是全部回滿，程度較弱的玩家會卡很久）
+      monsterShield: stage.kind === 'elite' && s.monsterShield > 0 ? Math.min(ELITE_SHIELD, s.monsterShield + 1) : s.monsterShield,
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: false }],
       wrongStreak: s.wrongStreak + 1,
       feedback: { question: s.question, given, timeout },
@@ -598,6 +622,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     shield: false,
     comboGuard: false,
     amplifyLeft: 0,
+    relay: null,
+    chain: [],
     focus: false,
     questionLimit: QUESTION_LIMIT,
     questionLeft: QUESTION_LIMIT,
@@ -622,7 +648,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       const saved = save().levelProgress[levelKey] ?? 0;
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
@@ -645,7 +671,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         active: true, mode: 'golden', skillBoss: null, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       loadStage(0, true);
     },
@@ -668,7 +694,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       loadStage(0, true);
     },
@@ -703,8 +729,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         const questionLeft = Math.max(0, s.questionLeft - ms);
         if (questionLeft > 0) { set({ questionLeft }); return; }
         if (s.mode !== 'golden' && isLenientStage(s.stageIdx)) {
-          // 前 25 關：超時不算答錯，只是 combo 中斷，繼續作答同一題
-          set({ questionLeft: 0, overtime: true, combo: 0, bossMult: 1, bossChain: 0, event: nextEvent('overtime') });
+          // 前 25 關：超時不算答錯，只是 combo 中斷，繼續作答同一題。
+          // 有守護（護盾、守護技能）時用掉守護，combo 保住
+          if (s.comboGuard) set({ questionLeft: 0, overtime: true, comboGuard: false, shield: false, event: nextEvent('overtime') });
+          else set({ questionLeft: 0, overtime: true, combo: 0, bossMult: 1, bossChain: 0, event: nextEvent('overtime') });
         } else {
           set({ questionLeft: 0 });
           onWrong('', true);
@@ -719,10 +747,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     inputLetter: (letter) => {
       const { question, typed } = get();
       if (!canAnswer() || !question || (question.type !== 'spell' && question.type !== 'fill')) return;
-      const result = applyLetter(question, typed, letter);
-      if (result.status === 'wrong') return onWrong(typed + letter.toUpperCase());
-      set({ typed: result.typed });
-      if (result.status === 'correct') onCorrect();
+      set({ typed: applyLetter(question, typed, letter) });
+    },
+
+    // 送出拼寫：按 Enter 或「送出」按鈕才判定
+    submitTyped: () => {
+      const { question, typed } = get();
+      if (!canAnswer() || !question || (question.type !== 'spell' && question.type !== 'fill') || !typed) return;
+      if (checkTypedAnswer(question, typed)) return onCorrect();
+      onWrong(typed);
     },
 
     backspace: () => {
@@ -741,11 +774,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       onWrong(picked);
     },
 
-    submitVoice: (transcript) => {
+    submitVoice: (transcripts) => {
       const { question } = get();
       if (!canAnswer() || !question || question.type !== 'voice') return;
-      if (checkVoice(question, transcript)) return onCorrect();
-      onWrong(transcript);
+      if (checkVoice(question, transcripts)) return onCorrect();
+      // 回饋畫面顯示最可能的那個辨識結果
+      onWrong(Array.isArray(transcripts) ? transcripts[0] ?? '' : transcripts);
     },
 
     // 看完正確答案後，同一題重新作答一次（選項重新洗牌，避免只記位置）。
@@ -801,7 +835,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         set({ ...totals, event: nextEvent('heal', { amount: totals.playerHp - s.playerHp }) });
       } else if (id === 'shield') {
         if (s.shield || !save().consumeItem('shield')) return;
-        set({ shield: true, event: nextEvent('guard') });
+        // 護盾：下一次答錯（或超時）不扣血，combo 也不會中斷
+        set({ shield: true, comboGuard: true, event: nextEvent('guard') });
       } else {
         if (s.assist) return;
         const assist = buildAssist(s.question);

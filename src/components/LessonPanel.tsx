@@ -62,7 +62,11 @@ export default function LessonPanel() {
             <>
               <p className="lesson-word">{card.word.display} <span className="pos">{card.word.pos}</span></p>
               <p className="lesson-meaning">{card.word.meaning}</p>
-              <p className="lesson-example">{card.word.example}</p>
+              <p className="lesson-example">
+                {card.word.example}
+                {' '}<button className="btn btn-ghost btn-small inline-say" onMouseDown={keepFocus} onClick={() => say(card.word.example)} aria-label="唸出整個例句">🔊 例句</button>
+                <button className="btn btn-ghost btn-small inline-say" onMouseDown={keepFocus} onClick={() => say(card.word.example, true)} aria-label="慢速唸出例句">🐢</button>
+              </p>
               <p className="lesson-example-zh">{card.word.exampleZh}</p>
             </>
           ) : (
@@ -74,7 +78,7 @@ export default function LessonPanel() {
           )}
           {audioText && (
             <div className="feedback-actions">
-              <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 發音</button>
+              <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 {card.kind === 'word' ? '單字' : '句子'}</button>
               <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
             </div>
           )}

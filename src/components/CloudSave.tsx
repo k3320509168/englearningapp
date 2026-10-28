@@ -10,6 +10,18 @@ const timeText = (iso: string | null | undefined) => (iso ? new Date(iso).toLoca
 const describe = (s: SaveSummary) => `${s.name}・Lv ${s.level}・${REGIONS[Math.min(s.regions, REGIONS.length - 1)]?.name ?? ''}・🪙${s.gold}`;
 
 // 設定裡的「雲端存檔」：Email 登入連結、同步狀態、手動上傳、登出
+// 登入連結失敗的提示（設定視窗最上方與雲端存檔區都會顯示）
+export function CloudLoginError() {
+  const loginError = useCloudStore(s => s.loginError);
+  if (!loginError) return null;
+  return (
+    <p className="login-error" role="alert">
+      <span>⚠️ {loginError}</span>
+      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useCloudStore.setState({ loginError: '' })}>知道了</button>
+    </p>
+  );
+}
+
 export function CloudSection() {
   const { status, user, lastSync, error } = useCloudStore();
   const [email, setEmail] = useState('');

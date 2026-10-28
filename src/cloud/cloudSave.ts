@@ -7,6 +7,8 @@ import { useSaveStore } from '../store/saveStore';
 // 登入後存檔自動上傳；換裝置登入時下載。兩邊都有新進度時，讓玩家選要留哪一份。
 // 連線資訊放在專案根目錄的 .env.local（VITE_SUPABASE_URL、VITE_SUPABASE_ANON_KEY），沒有設定時雲端功能整個關閉。
 
+// 在建立 Supabase 連線之前先記下網址的 # 部分（Supabase 啟動時會讀取並可能清掉它）
+const initialHash = typeof window !== 'undefined' ? window.location.hash : '';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 export const supabase: SupabaseClient | null = SUPABASE_URL && SUPABASE_KEY ? createClient(SUPABASE_URL, SUPABASE_KEY) : null;
@@ -28,10 +30,11 @@ interface CloudState {
   user: User | null;
   lastSync: string | null;
   error: string;
+  loginError: string; // 點登入連結失敗（連結過期、已使用過等）時顯示給玩家
   conflict: { local: SaveSummary; cloud: SaveSummary; snapshot: CloudSnapshot } | null;
 }
 export const useCloudStore = create<CloudState>()(() => ({
-  status: cloudEnabled ? 'signedOut' : 'off', user: null, lastSync: null, error: '', conflict: null,
+  status: cloudEnabled ? 'signedOut' : 'off', user: null, lastSync: null, error: '', loginError: '', conflict: null,
 }));
 const setCloud = (patch: Partial<CloudState>) => useCloudStore.setState(patch);
 
@@ -112,13 +115,30 @@ async function syncOnLogin(user: User) {
   }
 }
 
+// 登入連結失敗時，Supabase 會把錯誤放在網址的 # 後面（例如 #error=access_denied&error_code=otp_expired）
+export function readLoginError(hash: string): string | null {
+  const params = new URLSearchParams(hash.replace(/^#/, ''));
+  if (!params.get('error') && !params.get('error_code')) return null;
+  const code = params.get('error_code') ?? '';
+  if (code === 'otp_expired') return '登入連結已失效：可能已經用過、超過 1 小時，或之後又寄了新的一封。請重新寄送，並只點「最新那一封」信裡的連結。';
+  const desc = params.get('error_description'); // URLSearchParams 已經把 + 轉回空白
+  return `登入沒有成功${desc ? `（${desc}）` : ''}，請重新寄送登入連結再試一次。`;
+}
+
 let started = false;
 let uploadTimer: number | undefined;
 
-// 遊戲啟動時呼叫一次：恢復登入狀態、監聽登入登出、存檔變動後自動上傳（5 秒內的變動合併成一次）
-export function initCloud() {
-  if (!supabase || started) return;
+// 遊戲啟動時呼叫一次：恢復登入狀態、監聽登入登出、存檔變動後自動上傳（5 秒內的變動合併成一次）。
+// 回傳 true 代表這次是從失敗的登入連結回來的
+export function initCloud(): boolean {
+  if (!supabase || started) return false;
   started = true;
+  // 登入連結失敗：記下原因、把網址上的錯誤清掉（重新整理才不會一直出現）
+  const loginError = readLoginError(initialHash);
+  if (loginError) {
+    setCloud({ loginError });
+    if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
   supabase.auth.onAuthStateChange((event, session) => {
     if (session?.user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
       if (useCloudStore.getState().user?.id !== session.user.id) void syncOnLogin(session.user);
@@ -135,11 +155,13 @@ export function initCloud() {
     window.clearTimeout(uploadTimer);
     uploadTimer = window.setTimeout(() => { void uploadNow(); }, 5000);
   });
+  return !!loginError;
 }
 
 // Email 登入連結：點信裡的連結回到遊戲就會登入
 export async function sendLoginLink(email: string): Promise<string | null> {
   if (!supabase) return '雲端存檔沒有設定';
+  setCloud({ loginError: '' });
   const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL } });
   return error ? error.message : null;
 }

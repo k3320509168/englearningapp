@@ -1463,3 +1463,5 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .conflict-card:hover:not(:disabled) { border-color: var(--accent); }
 .conflict-card b { font-family: var(--font-ui); font-size: 17px; color: var(--accent); }
 .save-code { width: 100%; padding: 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--bg); color: var(--text); font-family: monospace; font-size: 12px; word-break: break-all; resize: vertical; }
+.login-error { display: flex; align-items: center; gap: 10px; margin: 0; padding: 10px 12px; border: 2px solid var(--bad); border-radius: 6px; background: color-mix(in srgb, var(--bad) 14%, var(--panel)); line-height: 1.6; }
+.login-error span { flex: 1; }

@@ -47,10 +47,12 @@ export default function Game() {
   // 第一次進入遊戲：建立主角 → 序章，然後直接開始冒險。
   // 操作說明改成戰鬥中的情境提示，麥克風等第一次遇到口說題時才詢問
   useEffect(() => {
-    initCloud();
+    const loginFailed = initCloud();
     useSaveStore.getState().ensureDaily();
     const { character, tutorialDone } = useSaveStore.getState();
     if (!character) useUiStore.getState().openModal('character');
+    // 從失敗的登入連結回來：直接打開設定，顯示原因與重新寄送
+    else if (loginFailed) useUiStore.getState().openModal('settings');
     else if (!tutorialDone) useSaveStore.getState().setTutorialDone(true);
   }, []);
 

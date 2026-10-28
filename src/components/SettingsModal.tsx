@@ -9,7 +9,7 @@ import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
-import { CloudSection, SaveCodeSection } from './CloudSave';
+import { CloudLoginError, CloudSection, SaveCodeSection } from './CloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
 
@@ -33,6 +33,7 @@ export default function SettingsModal() {
 
   return (
     <Modal title="設定" onClose={closeModal}>
+      <CloudLoginError />
       <section className="settings-group">
         <h3>🔊 聲音</h3>
         <label className="range">

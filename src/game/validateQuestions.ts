@@ -17,6 +17,7 @@ const LETTERS_ONLY = /^[A-Z]+$/;
 const VOICE_ANSWER = /^[A-Z']+( [A-Z']+)*$/;
 const CHOICE_LETTERS = ['A', 'B', 'C', 'D'];
 const MIN_QUESTIONS_PER_LEVEL = 3;
+const SKILLS = ['listening', 'speaking', 'reading', 'writing'];
 
 export function validateQuestion(q: Question, where: string): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
@@ -34,6 +35,11 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
   const key = vocabKey(q);
   if (key && !VOCAB[key]) warn(`單字 ${key} 缺少中文與例句（請補到 vocab.ts）`);
   if (q.type === 'choice' && !q.explain?.trim()) warn('選擇題缺少 explain（文法解說）');
+  if (q.skill !== undefined && !SKILLS.includes(q.skill)) error(`skill 只能是 ${SKILLS.join(' / ')}："${q.skill}"`);
+  if (q.difficulty !== undefined && ![1, 2, 3].includes(q.difficulty)) error(`difficulty 只能是 1、2、3："${q.difficulty}"`);
+  // 聽力題：題目只用聲音，一定要有 speak 才播得出來
+  if ((q.skill === 'listening' || q.desc?.startsWith('🎧')) && !q.speak?.trim()) error('聽力題缺少 speak（要播放的英文）');
+  if (q.skill === 'listening' && !q.desc.startsWith('🎧')) error('聽力題的 desc 要以 🎧 開頭（遊戲會自動播放聲音）');
 
   switch (q.type) {
     case 'spell': {

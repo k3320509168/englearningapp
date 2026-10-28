@@ -8,7 +8,11 @@ export interface Question {
   spellAccept?: string[]; // 同義寫法（例如 THANK／THANKS／THANKYOU）：拼寫與口說都接受
   // 選擇題的文法／字彙解說，用於戰前預習與答錯回饋
   explain?: string;
+  skill?: QuestionSkill; // 聽說讀寫分類（CEFR 題庫才有；舊題目依題型推斷）
+  difficulty?: 1 | 2 | 3; // 同一個區域內的難度：1 前段、2 中段、3 後段（沒有時依題目推斷）
 }
+
+export type QuestionSkill = 'listening' | 'speaking' | 'reading' | 'writing';
 
 export interface Stage {
   name: string;

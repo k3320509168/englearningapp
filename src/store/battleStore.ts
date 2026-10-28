@@ -342,7 +342,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       qIdx += 1;
       const repeat = s.mode === 'normal' && !stage.bossMode && !stage.kind ? pickRepeat(s.original) : null;
       original = repeat ?? takeEasy(stage)
-        ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss() : decks!.normal()));
+        ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss(s.stageIdx) : decks!.normal(s.stageIdx)));
     }
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
@@ -697,7 +697,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
       // 人生第一場戰鬥（圖鑑還是空的）：前幾題從題庫挑最簡單的
       easyQueue = Object.keys(save().codex).length === 0
-        ? easeOrder(Array.from({ length: 12 }, () => decks!.normal())).slice(0, EASY_START)
+        ? easeOrder(Array.from({ length: 12 }, () => decks!.normal(0))).slice(0, EASY_START)
         : [];
       loadStage(start, true);
     },

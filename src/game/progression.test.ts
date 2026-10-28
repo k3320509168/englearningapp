@@ -145,3 +145,16 @@ describe('skills', () => {
     expect(new Set(HEROES.filter(h => h.rarity === 'SSR').map(heroSkill)).size).toBe(8);
   });
 });
+
+describe('question difficulty within a region', () => {
+  it('early stages only draw easy questions, later stages reach harder ones', async () => {
+    const { createDecks, questionDifficulty, maxDifficultyAt, LEVELS } = await import('./QuestionData');
+    const decks = createDecks(LEVELS[0]);
+    for (let i = 0; i < 40; i++) expect(questionDifficulty(decks.normal(0))).toBeLessThanOrEqual(1);
+    expect(maxDifficultyAt(0)).toBe(1);
+    expect(maxDifficultyAt(20)).toBe(2);
+    expect(maxDifficultyAt(49)).toBe(3);
+    const late = new Set(Array.from({ length: 200 }, () => questionDifficulty(decks.normal(49))));
+    expect(late.has(3) || late.has(2)).toBe(true);
+  });
+});

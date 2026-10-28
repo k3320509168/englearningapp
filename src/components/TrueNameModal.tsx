@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { RARITY_INFO, currentRarity, heroDef, heroTitle } from '../game/heroes';
+import { RARITY_INFO, currentRarity, heroDef, heroTitle, heroWord } from '../game/heroes';
 import { TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_BONUS, checkTyped, isTrueName, revealedName, trialQuestion, trialsDone } from '../game/trueName';
 import type { TrialQuestion } from '../game/trueName';
 import { checkVoice } from '../game/battle';
@@ -76,6 +76,11 @@ export default function TrueNameModal() {
           onPass={() => {
             completeTrial(heroId, active);
             sfx.victory();
+            // 五項全部完成：真名英雄誕生
+            if (isTrueName(useSaveStore.getState().trueName[heroId])) {
+              const h = heroDef(heroId);
+              useUiStore.getState().celebrate({ icon: '✨', title: `真名覺醒：${heroWord(h)}`, sub: `${heroTitle(h)}的基礎能力 +${Math.round(TRUE_NAME_BONUS * 100)}%`, img: heroDataUrl(heroId, 4), color: '#ffcd4b' });
+            }
             window.setTimeout(() => setActive(null), 900);
           }}
           onRetry={() => setRound(r => r + 1)}

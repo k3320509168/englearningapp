@@ -20,9 +20,10 @@ import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, p
 import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
 import { dueMistakes, useSaveStore } from './saveStore';
-import { XP, xpScale } from '../game/growth';
+import { ADVANCE_REQ, XP, canAdvance, xpScale } from '../game/growth';
 import { rollDrops } from '../game/equipment';
-import { MAP_SIZE, mapIndexOf, mapKey } from '../game/regions';
+import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
+import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
 import type { SkillBossId } from '../game/skillBosses';
@@ -166,6 +167,18 @@ let random: () => number = Math.random;
 export const setBattleRandom = (fn: () => number) => { random = fn; };
 
 const save = () => useSaveStore.getState();
+
+// 升級慶祝：剛好達到轉職等級時一起提醒
+function celebrateLevelUp(level: number) {
+  const { character, player, unlockedIndex } = save();
+  const tier = (player.classPath.length + 1) as 1 | 2 | 3;
+  const canClass = !!character && tier <= 3 && ADVANCE_REQ[tier].level === level && canAdvance(tier, level, unlockedIndex);
+  useUiStore.getState().celebrate({
+    icon: '⬆️', title: `LEVEL UP!  Lv ${level}`,
+    sub: canClass ? '可以轉職了！到「成長」選擇新的職業路線' : 'HP 與攻擊力提升了',
+    color: '#7fe8ff',
+  });
+}
 
 // 第 10、20、30、40 關：如果有到期的錯題，守門 Boss 換成「復仇魔王」
 function withRevenge(stage: Stage, stageIdx: number, stageCount: number): Stage {
@@ -366,6 +379,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const mapIdx = mapIndexOf(s.stageIdx);
       const gained = save().recordMapStars(mapKey(s.levelKey, mapIdx), stars);
       patch = { ...patch, mapStats: stats, mapResult: { mapIdx, stars, gained } };
+      if (gained > 0 && stars.every(Boolean)) {
+        useUiStore.getState().celebrate({ icon: '⭐', title: '三星通關！', sub: `「${regionOf(s.levelKey).maps[mapIdx] ?? ''}」全部條件達成`, color: '#ffcd4b' });
+      }
     }
     if (isLastStage) {
       save().unlockLevel(s.levelIdx + 1);
@@ -423,7 +439,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       if (s.mode === 'golden') return { xp: 0, levelUp: undefined };
       const xp = Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale);
       const levels = save().gainXp(xp);
-      if (levels > 0) party = refreshPlayer(party);
+      if (levels > 0) {
+        party = refreshPlayer(party);
+        celebrateLevelUp(save().player.level);
+      }
       return { xp, levelUp: levels > 0 ? save().player.level : undefined };
     };
 

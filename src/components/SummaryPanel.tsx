@@ -38,6 +38,11 @@ export default function SummaryPanel() {
   const titles = useSaveStore(s => s.titles);
   // 新手引導：第一次打完地圖、還沒召喚過，而且召喚券夠十連
   const tickets = useSaveStore(s => s.tickets);
+  // 學習成果：圖鑑裡答對過的題目數，以及答對 5 次以上（熟練）的數量
+  const learned = useSaveStore(useShallow(s => {
+    const list = Object.values(s.codex);
+    return { known: list.filter(c => c.correct > 0).length, mastered: list.filter(c => c.correct >= 5).length };
+  }));
   const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1) && tickets >= TEN_PULL;
   const golden = mode === 'golden';
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
@@ -102,9 +107,17 @@ export default function SummaryPanel() {
         <p className="drop-line">獲得素材：{Object.entries(runDrops).map(([k, v]) => `${materialIcon(k)}${materialName(k)}×${v}`).join('、')}</p>
       )}
 
+      {!golden && !skillDef && phase !== 'gameOver' && (
+        <section className="learned-card" aria-label="學習成果">
+          <div><b>{summary.mastered.length}</b><span>這趟學會</span></div>
+          <div><b>{learned.known}</b><span>累積答對過的字詞</span></div>
+          <div><b>{learned.mastered}</b><span>已熟練（答對 5 次）</span></div>
+        </section>
+      )}
+
       {summary.mastered.length > 0 && (
         <section className="summary-section">
-          <p className="summary-label">✅ 一次就答對（{summary.mastered.length}）</p>
+          <p className="summary-label">🎓 這趟學會的單字（一次就答對，點一下聽發音）</p>
           <div className="chips">
             {summary.mastered.map(q => {
               const l = answerLabel(q);

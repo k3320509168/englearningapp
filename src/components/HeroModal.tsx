@@ -163,7 +163,11 @@ export default function HeroModal() {
               {tier === 0 ? (
                 <p className="tier-line">
                   升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}、真名考驗 {Math.min(trials, TIER_UP_TRIALS)}/{TIER_UP_TRIALS}
-                  {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => tierUp(id)} disabled={!canTierUp}>升品階</button>
+                  {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => {
+                    if (!tierUp(id)) return;
+                    const r = currentRarity(h, 1);
+                    useUiStore.getState().celebrate({ icon: '🌟', title: `升品階：${r}`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO[r].color });
+                  }} disabled={!canTierUp}>升品階</button>
                 </p>
               ) : <p className="tier-line">✨ 已升品階（{rarity}）</p>}
               <p className="tier-line">

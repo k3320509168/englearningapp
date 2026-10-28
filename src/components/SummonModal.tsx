@@ -26,6 +26,15 @@ export default function SummonModal() {
     setPicking(false);
     setResults(out);
     if (out.some(r => r.rarity === 'SSR')) sfx.victory(); else sfx.coin();
+    celebrateNew(out);
+  };
+
+  // 新的 SSR 以上英雄：全螢幕登場
+  const celebrateNew = (out: SummonOutcome[]) => {
+    out.filter(r => r.isNew && (r.rarity === 'SSR' || r.rarity === 'UR')).forEach(r => {
+      const h = heroDef(r.id);
+      useUiStore.getState().celebrate({ icon: '🌟', title: `${r.rarity} 英雄登場！`, sub: `${heroWord(h)}・${heroTitle(h)}`, img: heroDataUrl(r.id, 4), color: RARITY_INFO[r.rarity].color });
+    });
   };
 
   const pick = (id: string) => {
@@ -34,6 +43,7 @@ export default function SummonModal() {
     sfx.victory();
     setPicking(false);
     setResults([out]);
+    celebrateNew([out]);
   };
 
   const sparkReady = summonCounter.spark >= SPARK_COST;

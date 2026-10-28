@@ -202,7 +202,10 @@ export default function GrowthModal() {
                 <small className="mods-line">{describeMods(o.mods).join('、')}</small>
                 {next.length > 0 && <small className="muted">之後可選：{next.map(n => n.name).join(' ／ ')}</small>}
                 <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!ok}
-                  onClick={() => { if (sv.advanceClass(o.id)) sfx.victory(); }}>轉職</button>
+                  onClick={() => {
+                    if (!sv.advanceClass(o.id)) return;
+                    useUiStore.getState().celebrate({ icon: '⚔️', title: `轉職：${o.name}`, sub: o.desc, img: avatarDataUrl(character!, 'idle', 4, sv.player.classPath.length + 1), color: '#ff7a3d' });
+                  }}>轉職</button>
               </div>
             );
           })}

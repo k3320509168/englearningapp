@@ -5,12 +5,24 @@ export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 
 
 export type GrowthTab = 'hero' | 'gear' | 'forge';
 
+// 全螢幕慶祝：升級、三星、SSR、真名、轉職等重大時刻。排隊依序顯示
+export interface Celebration {
+  icon: string;
+  title: string;
+  sub?: string;
+  img?: string;   // 角色圖（data URL）
+  color?: string; // 光芒顏色
+}
+
 interface UiState {
   modal: ModalName | null;
   regionIdx: number;
   storyId: string;
   heroId: string;
   growthTab: GrowthTab;
+  celebrations: Celebration[];
+  celebrate: (c: Celebration) => void;
+  dismissCelebration: () => void;
   openModal: (name: ModalName) => void;
   openRegion: (regionIdx: number) => void;
   openStory: (storyId: string) => void;
@@ -25,6 +37,9 @@ export const useUiStore = create<UiState>()((set) => ({
   storyId: '',
   heroId: '',
   growthTab: 'hero',
+  celebrations: [],
+  celebrate: (c) => set(s => ({ celebrations: [...s.celebrations, c] })),
+  dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),
   openModal: (name) => set(name === 'growth' ? { modal: name, growthTab: 'hero' } : { modal: name }),
   openRegion: (regionIdx) => set({ modal: 'region', regionIdx }),
   openStory: (storyId) => set({ modal: 'story', storyId }),

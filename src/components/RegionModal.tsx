@@ -9,13 +9,15 @@ import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { beginLevel } from '../game/startLevel';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { GATE_LEVEL, SKIPPABLE_REGIONS, canChallengeGate } from '../game/placement';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
 // 點一張已解鎖的地圖，主角會跑過去，然後進入那張地圖的第 1 關。
 export default function RegionModal() {
   const regionIdx = useUiStore(s => s.regionIdx);
   const { closeModal, openStory } = useUiStore.getState();
-  const { character, party, levelProgress, bestStage, mapStars, storySeen } = useSaveStore();
+  const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex } = useSaveStore();
+  const level = useSaveStore(s => s.player.level);
   const region = REGIONS[regionIdx] ?? REGIONS[0];
   const progress = levelProgress[region.id] ?? 0;
   const best = bestStage[region.id] ?? 0;
@@ -52,6 +54,13 @@ export default function RegionModal() {
       <div className="region-head">
         <span>⭐ <b>{totalStars}</b> / {region.maps.length * 3}</span>
         <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => openStory(regionStoryId(regionIdx))}>📜 重看劇情</button>
+        {/* 目前的最前線區域（王城以外）可以挑戰守門試煉直接通關 */}
+        {regionIdx === unlockedIndex && regionIdx < SKIPPABLE_REGIONS && (
+          <button className={`btn btn-small ${canChallengeGate(regionIdx, level) ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus}
+            onClick={() => useUiStore.getState().openGate(regionIdx)} title="答對 8/10 題就能直接通關這個區域">
+            🏰 守門試煉{canChallengeGate(regionIdx, level) ? '' : `（Lv ${GATE_LEVEL[regionIdx]}）`}
+          </button>
+        )}
       </div>
 
       <ol className={`region-route theme-${region.theme}`}>

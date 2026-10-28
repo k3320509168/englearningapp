@@ -24,8 +24,11 @@ export default function StoryModal() {
   const finish = () => {
     markStorySeen(storyId);
     if (useUiStore.getState().storyReplay) return closeModal();
-    // 序章看完就直接進地圖，「繼續征途」會帶玩家進第一場戰鬥
-    if (storyId === 'prologue') useSaveStore.getState().setTutorialDone(true);
+    // 序章看完：問玩家要從頭冒險，還是先做程度測驗跳級
+    if (storyId === 'prologue') {
+      useSaveStore.getState().setTutorialDone(true);
+      return useUiStore.getState().openModal('placement');
+    }
     if (storyId.startsWith('region-')) return openRegion(regionIdx);
     closeModal();
   };

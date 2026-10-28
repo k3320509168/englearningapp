@@ -18,6 +18,8 @@ import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily
 import type { DailyEvent, DailyState } from '../game/daily';
 import { normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
+import { MAP_SIZE, REGIONS } from '../game/regions';
+import { clearStoryId, regionStoryId } from '../game/story';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
 import type { MemberId } from '../game/party';
@@ -108,6 +110,8 @@ export interface SummonOutcome extends SummonResult {
 interface SaveActions {
   setCharacter: (c: Character) => void;
   unlockLevel: (index: number) => void;
+  // 跳級（程度測驗或守門試煉）：前面 count 個區域視為通關，地圖全部開放（之後可以回去拿星星），劇情可在劇情回顧補看
+  skipRegions: (count: number) => void;
   setLevelProgress: (levelKey: string, stageIdx: number) => void;
   setMicAsked: () => void;
   // review：這次作答是否算一次 SRS 複習（看完正確答案後的重答不算）
@@ -284,6 +288,18 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         ...initialSave,
         setCharacter: (c) => set({ character: normalizeCharacter(c) }),
         unlockLevel: (index) => set(s => ({ unlockedIndex: Math.max(s.unlockedIndex, index) })),
+        skipRegions: (count) => set(s => {
+          const n = Math.min(count, REGIONS.length - 1);
+          if (n <= s.unlockedIndex) return {};
+          const bestStage = { ...s.bestStage };
+          const storySeen = new Set(s.storySeen);
+          for (let i = 0; i < n; i++) {
+            const r = REGIONS[i];
+            bestStage[r.id] = Math.max(bestStage[r.id] ?? 0, r.maps.length * MAP_SIZE - 1);
+            storySeen.add(regionStoryId(i)).add(clearStoryId(i));
+          }
+          return { unlockedIndex: n, bestStage, storySeen: [...storySeen] };
+        }),
         setLevelProgress: (levelKey, stageIdx) => set(s => ({
           levelProgress: { ...s.levelProgress, [levelKey]: stageIdx },
           bestStage: { ...s.bestStage, [levelKey]: Math.max(s.bestStage[levelKey] ?? 0, stageIdx) },

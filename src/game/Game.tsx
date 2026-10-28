@@ -23,6 +23,8 @@ import DailyModal from '../components/DailyModal';
 import SkillBossModal from '../components/SkillBossModal';
 import CelebrationOverlay from '../components/CelebrationOverlay';
 import ReviewModal from '../components/ReviewModal';
+import PlacementModal from '../components/PlacementModal';
+import GateTrialModal from '../components/GateTrialModal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -155,6 +157,8 @@ export default function Game() {
       {modal === 'golden' && <GoldenModal />}
       {modal === 'daily' && <DailyModal />}
       {modal === 'review' && <ReviewModal />}
+      {modal === 'placement' && <PlacementModal />}
+      {modal === 'gateTrial' && <GateTrialModal />}
       <CelebrationOverlay />
       {modal === 'skillBoss' && <SkillBossModal />}
     </div>

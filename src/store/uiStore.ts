@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 // 介面狀態（不存檔）：目前開啟的視窗，以及視窗需要的參數（例如哪個區域、哪段劇情）
-export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review';
+export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review' | 'placement' | 'gateTrial';
 
 export type GrowthTab = 'hero' | 'gear' | 'forge';
 
@@ -26,6 +26,7 @@ interface UiState {
   dismissCelebration: () => void;
   openModal: (name: ModalName) => void;
   openRegion: (regionIdx: number) => void;
+  openGate: (regionIdx: number) => void;
   openStory: (storyId: string, replay?: boolean) => void;
   openTrueName: (heroId: string) => void;
   openGrowth: (tab?: GrowthTab) => void;
@@ -44,6 +45,7 @@ export const useUiStore = create<UiState>()((set) => ({
   dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),
   openModal: (name) => set(name === 'growth' ? { modal: name, growthTab: 'hero' } : { modal: name }),
   openRegion: (regionIdx) => set({ modal: 'region', regionIdx }),
+  openGate: (regionIdx) => set({ modal: 'gateTrial', regionIdx }),
   openStory: (storyId, replay = false) => set({ modal: 'story', storyId, storyReplay: replay }),
   openTrueName: (heroId) => set({ modal: 'trueName', heroId }),
   openGrowth: (tab = 'hero') => set({ modal: 'growth', growthTab: tab }),

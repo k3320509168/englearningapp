@@ -4,7 +4,7 @@
 //   GEMINI_API_KEY=xxx npx tsx scripts/generate-questions.ts --level 0 --count 12
 //   npx tsx scripts/generate-questions.ts --level 0 --dry-run   （不呼叫 API，用內建範例測試流程）
 //
-// 環境變數：GEMINI_API_KEY（必填，除非 --dry-run）、GEMINI_MODEL（預設 gemini-2.5-flash）
+// 環境變數：GEMINI_API_KEY（必填，除非 --dry-run）、GEMINI_MODEL（預設 gemini-3.8-flash）
 // 產生的 PR 說明寫在 question-report.md，GitHub Actions 會拿來當 PR 內容。
 import { readFileSync, writeFileSync } from 'node:fs';
 import { LEVELS, QUESTION_POOL } from '../src/game/QuestionData';
@@ -32,7 +32,7 @@ const SAMPLE = JSON.stringify({
 async function callGemini(prompt: string): Promise<string> {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error('缺少 GEMINI_API_KEY（請在 GitHub Secrets 或環境變數設定）');
-  const model = process.env.GEMINI_MODEL ?? 'gemini-2.5-flash';
+  const model = process.env.GEMINI_MODEL ?? 'gemini-3.8-flash';
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },

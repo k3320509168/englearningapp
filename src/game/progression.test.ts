@@ -121,3 +121,27 @@ describe('economy', () => {
     expect(goldWithBonus(10, s)).toBe(12);
   });
 });
+
+describe('skills', () => {
+  it('get stronger with rarity', async () => {
+    const { RARITY_POWER, SKILLS, skillEffect, skillDesc } = await import('./progression');
+    for (const id of Object.keys(SKILLS) as (keyof typeof SKILLS)[]) {
+      const weak = skillEffect(id, RARITY_POWER.N);
+      const strong = skillEffect(id, RARITY_POWER.UR);
+      const sum = (e: Record<string, unknown>) => Object.values(e).reduce<number>((a, v) => a + (typeof v === 'number' ? v : 0), 0);
+      expect(sum(strong as Record<string, unknown>)).toBeGreaterThanOrEqual(sum(weak as Record<string, unknown>));
+      expect(skillDesc(id, 1).length).toBeGreaterThan(0);
+    }
+    expect(skillDesc('heal', RARITY_POWER.N)).toContain('25%');
+    expect(skillDesc('heal', RARITY_POWER.UR)).toContain('48%');
+  });
+
+  it('heroes of the same class do not all share one skill; SSR heroes have signatures', async () => {
+    const { HEROES, heroSkill } = await import('./heroes');
+    const { SKILLS } = await import('./progression');
+    const swords = new Set(HEROES.filter(h => h.classId === 'swordsman' && h.rarity !== 'SSR').map(heroSkill));
+    expect(swords.size).toBeGreaterThan(1);
+    for (const h of HEROES.filter(h => h.rarity === 'SSR')) expect(SKILLS[heroSkill(h)].signature).toBe(true);
+    expect(new Set(HEROES.filter(h => h.rarity === 'SSR').map(heroSkill)).size).toBe(8);
+  });
+});

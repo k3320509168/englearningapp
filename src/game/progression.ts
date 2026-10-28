@@ -48,26 +48,100 @@ export const ITEMS: ItemDef[] = [
 export const POTION_HEAL = 30;
 
 // ---------- 技能 ----------
-export type SkillId = 'guard' | 'focus' | 'amplify' | 'haste';
+// 每個職業有 3 種技能，英雄依名字固定分到其中一種；SSR 英雄有自己的專屬技。
+// 技能強度看「技能威力」：稀有度越高（升品階也算）越強，主角則隨轉職變強。
+export type SkillId =
+  | 'guard' | 'slash' | 'rally'          // 劍士
+  | 'focus' | 'arrowRain' | 'pierce'     // 弓箭手
+  | 'amplify' | 'heal' | 'fireball'      // 魔法師
+  | 'haste' | 'quake' | 'fortify'        // 戰士
+  | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora'; // SSR 專屬
+
+// 技能效果的組成（數值已經套用威力）
+export interface SkillEffect {
+  shield?: boolean;     // 下一次答錯不扣血，Combo 不中斷
+  heal?: number;        // 全隊回復最大 HP 的 %
+  revive?: boolean;     // 倒下的隊員復活（回復 heal %）
+  timeThis?: number;    // 這一題多幾秒
+  timeStage?: number;   // 這一關每題多幾秒
+  amplify?: number;     // 接下來幾次攻擊傷害與魔王題倍率翻倍
+  charge?: number;      // 下一次答對的傷害倍率
+  bossCharge?: boolean; // 頭目關時 charge 再 ×1.5
+  crits?: number;       // 接下來幾次攻擊必定暴擊
+  combo?: number;       // Combo 直接增加
+  bossStep?: boolean;   // 魔王題倍率直接進一階
+  breakShield?: number; // 削掉菁英怪幾層護盾
+}
 
 export interface SkillDef {
   id: SkillId;
   icon: string;
   name: string;
-  desc: string;
+  signature?: boolean; // SSR 專屬技
+  effect: (power: number) => SkillEffect;
 }
 
+const r = Math.round;
+const r1 = (n: number) => Math.round(n * 10) / 10;
+
 export const SKILLS: Record<SkillId, SkillDef> = {
-  guard: { id: 'guard', icon: '🛡️', name: '守護之盾', desc: '下一次答錯不扣血，Combo 也不會中斷' },
-  focus: { id: 'focus', icon: '🎯', name: '專注', desc: '這一關每題多 5 秒' },
-  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', desc: '接下來 3 次攻擊傷害與魔王題倍率翻倍' },
-  haste: { id: 'haste', icon: '⏩', name: '加速之歌', desc: '這一題多 10 秒' },
+  guard: { id: 'guard', icon: '🛡️', name: '守護之盾', effect: p => ({ shield: true, heal: r(8 * p) }) },
+  slash: { id: 'slash', icon: '⚔️', name: '劍氣斬', effect: p => ({ charge: r1(1.5 + 1.5 * p) }) },
+  rally: { id: 'rally', icon: '📯', name: '戰意高昂', effect: p => ({ combo: r(2 * p) }) },
+  focus: { id: 'focus', icon: '🎯', name: '專注', effect: p => ({ timeStage: r(4 * p) }) },
+  arrowRain: { id: 'arrowRain', icon: '🏹', name: '箭雨', effect: p => ({ crits: r(2 * p) }) },
+  pierce: { id: 'pierce', icon: '🪡', name: '破甲箭', effect: p => ({ breakShield: p >= 1.35 ? 3 : 2, charge: r1(1 + 0.5 * p) }) },
+  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', effect: p => ({ amplify: r(2.5 * p) }) },
+  heal: { id: 'heal', icon: '💚', name: '治癒之光', effect: p => ({ heal: r(25 * p) }) },
+  fireball: { id: 'fireball', icon: '🔥', name: '元素爆裂', effect: p => ({ charge: r1(1.2 + 1.5 * p), crits: 1 }) },
+  haste: { id: 'haste', icon: '⏩', name: '加速之歌', effect: p => ({ timeThis: r(8 * p) }) },
+  quake: { id: 'quake', icon: '🪨', name: '大地震擊', effect: p => ({ charge: r1(1 + 1.2 * p), bossCharge: true }) },
+  fortify: { id: 'fortify', icon: '🧱', name: '鋼鐵意志', effect: p => ({ shield: true, heal: r(15 * p) }) },
+  rebirth: { id: 'rebirth', icon: '🐦‍🔥', name: '浴火重生', signature: true, effect: p => ({ revive: true, heal: r(30 * p) }) },
+  eclipse: { id: 'eclipse', icon: '🌑', name: '日蝕斬', signature: true, effect: p => ({ charge: r1(2 + 2 * p) }) },
+  storm: { id: 'storm', icon: '🌪️', name: '暴風連射', signature: true, effect: p => ({ crits: r(2 * p) + 1, charge: r1(1 + 0.4 * p) }) },
+  sanctum: { id: 'sanctum', icon: '⛪', name: '聖域結界', signature: true, effect: p => ({ shield: true, heal: r(25 * p), timeThis: 5 }) },
+  valor: { id: 'valor', icon: '🎖️', name: '英勇號令', signature: true, effect: p => ({ combo: r(3 * p), bossStep: true }) },
+  calm: { id: 'calm', icon: '🍃', name: '寧靜之心', signature: true, effect: p => ({ timeStage: r(5 * p), heal: r(12 * p) }) },
+  maze: { id: 'maze', icon: '🌀', name: '迷宮困敵', signature: true, effect: p => ({ breakShield: 3, charge: r1(1 + p) }) },
+  aurora: { id: 'aurora', icon: '🌌', name: '極光祝福', signature: true, effect: p => ({ heal: r(25 * p), amplify: 3 }) },
 };
 
-// 主角的技能依職業決定
+// 各職業的技能池；第一個是主角的技能
+export const CLASS_SKILLS: Record<ClassId, SkillId[]> = {
+  swordsman: ['guard', 'slash', 'rally'],
+  archer: ['focus', 'arrowRain', 'pierce'],
+  mage: ['amplify', 'heal', 'fireball'],
+  warrior: ['haste', 'quake', 'fortify'],
+};
 export const CLASS_SKILL: Record<ClassId, SkillId> = {
   mage: 'amplify', swordsman: 'guard', warrior: 'haste', archer: 'focus',
 };
+
+// 技能威力：N 最弱，UR 最強
+export const RARITY_POWER = { N: 1, R: 1.15, SR: 1.35, SSR: 1.6, UR: 1.9 } as const;
+// 主角：轉職一次威力 +0.2
+export const playerSkillPower = (classTier: number) => r1(1.15 + 0.2 * classTier);
+
+export const skillEffect = (id: SkillId, power: number) => SKILLS[id].effect(power);
+
+// 技能說明（依威力算出實際數值）
+export function skillDesc(id: SkillId, power: number): string {
+  const e = skillEffect(id, power);
+  const parts: string[] = [];
+  if (e.revive) parts.push('倒下的隊員復活');
+  if (e.shield) parts.push('下一次答錯不扣血、Combo 不中斷');
+  if (e.heal) parts.push(`全隊回復 ${e.heal}% HP`);
+  if (e.charge) parts.push(`下一次答對傷害 ×${e.charge}${e.bossCharge ? '（頭目再 ×1.5）' : ''}`);
+  if (e.crits) parts.push(`接下來 ${e.crits} 次攻擊必定暴擊`);
+  if (e.amplify) parts.push(`接下來 ${e.amplify} 次攻擊傷害與魔王題倍率翻倍`);
+  if (e.combo) parts.push(`Combo +${e.combo}`);
+  if (e.bossStep) parts.push('魔王題倍率直接進一階');
+  if (e.breakShield) parts.push(e.breakShield >= ELITE_SHIELD ? '菁英怪護盾全破' : `菁英怪護盾 -${e.breakShield} 層`);
+  if (e.timeThis) parts.push(`這一題多 ${e.timeThis} 秒`);
+  if (e.timeStage) parts.push(`這一關每題多 ${e.timeStage} 秒`);
+  return parts.join('，');
+}
 
 // 每答對一題，全隊每人 +1 能量；集滿就能施放技能
 export const SKILL_ENERGY = 4;

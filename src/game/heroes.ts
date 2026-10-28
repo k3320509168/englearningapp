@@ -1,6 +1,6 @@
 import { BODY_NAMES, FACE_NAMES, HAIR_COLORS, HAIR_NAMES, SKIN_TONES, classDef } from './character';
 import type { Character, ClassId, Element, Gender } from './character';
-import { CLASS_SKILL } from './progression';
+import { CLASS_SKILLS, RARITY_POWER } from './progression';
 import type { SkillId } from './progression';
 
 // 夥伴英雄：50 位，名字都是英文單字（真名機制的基礎），稀有度對應單字難度。
@@ -120,7 +120,23 @@ export function heroTitle(h: HeroDef): string {
   return h.meaning === cls ? cls : `${h.meaning}${cls}`;
 }
 export const heroWord = (h: HeroDef) => h.id.toUpperCase();
-export const heroSkill = (h: HeroDef): SkillId => CLASS_SKILL[h.classId];
+// SSR 英雄的專屬技
+const SIGNATURE: Record<HeroId, SkillId> = {
+  phoenix: 'rebirth', eclipse: 'eclipse', tempest: 'storm', sanctuary: 'sanctum',
+  valor: 'valor', serenity: 'calm', labyrinth: 'maze', aurora: 'aurora',
+};
+
+// 英雄的技能：SSR 用專屬技，其他依名字固定分到職業技能池的其中一種（同職業的英雄技能不一定一樣）
+export function heroSkill(h: HeroDef): SkillId {
+  if (SIGNATURE[h.id]) return SIGNATURE[h.id];
+  const pool = CLASS_SKILLS[h.classId];
+  let n = 0;
+  for (const ch of h.id) n = (n * 31 + ch.charCodeAt(0)) >>> 0;
+  return pool[n % pool.length];
+}
+
+// 技能威力看目前的稀有度（升品階後變強）
+export const heroSkillPower = (h: HeroDef, tier: number) => RARITY_POWER[currentRarity(h, tier)];
 
 // 目前的稀有度：升過品階就高一階
 export function currentRarity(h: HeroDef, tier: number): Rarity {

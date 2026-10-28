@@ -1,9 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { HASTE_BONUS, REVENGE_MAX_QUESTIONS, setBattleRandom, useBattleStore } from './battleStore';
+import { REVENGE_MAX_QUESTIONS, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
 import { ASSIST_STREAK, CAST_CONFIRM_TIME, LENIENT_STAGE_COUNT, PLAYER_MAX_HP, QUESTION_LIMIT, questionKey, voiceFallback } from '../game/battle';
-import { ELITE_SHIELD, GOLD, SKILL_ENERGY, SRS_INTERVALS, TREASURE_TIME, monsterAttack } from '../game/progression';
+import { ELITE_SHIELD, GOLD, SKILL_ENERGY, skillEffect, SRS_INTERVALS, TREASURE_TIME, monsterAttack } from '../game/progression';
 import { DEFAULT_CHARACTER } from '../game/character';
 import type { Question } from '../game/types';
 
@@ -282,7 +282,8 @@ describe('skills', () => {
     const left = state().questionLeft;
     state().requestSkill(0);
     state().confirmSkill();
-    expect(state().questionLeft).toBe(left + HASTE_BONUS);
+    const m = state().party[0];
+    expect(state().questionLeft).toBe(left + skillEffect('haste', m.skillPower).timeThis! * 1000);
     expect(state().party[0].energy).toBe(0);
   });
 
@@ -309,6 +310,19 @@ describe('skills', () => {
     state().confirmSkill();
     answerCurrent();
     expect(Math.abs(state().event!.amount! - normal * 2)).toBeLessThanOrEqual(1);
+  });
+
+  it('charge skills multiply only the next hit', () => {
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'mage' }, party: ['player'] });
+    useBattleStore.setState({ combo: 0, questionCount: 1, monsterHp: 1e9, monsterMaxHp: 1e9, critLeft: 0 });
+    const before = state().monsterHp;
+    answerCurrent();
+    const normal = before - state().monsterHp;
+    playUntil(() => state().phase === 'answering');
+    useBattleStore.setState({ combo: 0, charge: 3 });
+    answerCurrent();
+    expect(Math.abs(state().event!.amount! - normal * 3)).toBeLessThanOrEqual(2);
+    expect(state().charge).toBe(1);
   });
 });
 

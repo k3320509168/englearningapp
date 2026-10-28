@@ -11,7 +11,7 @@ import { SEGMENT_SIZE } from '../game/lesson';
 import type { AnswerRecord } from '../game/lesson';
 import {
   BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
-  bossStep, computeDamage, goldWithBonus, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
+  bossStep, computeDamage, goldWithBonus, skillEffect, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -76,9 +76,6 @@ export interface Feedback {
 }
 
 export const REVENGE_MAX_QUESTIONS = 5;
-export const FOCUS_BONUS = 5_000;
-export const HASTE_BONUS = 10_000;
-export const AMPLIFY_HITS = 3;
 export const COMBO_GOLD_STEP = 10; // 每 10 combo 金幣 +10%，最多 +100%
 
 interface BattleState {
@@ -122,7 +119,9 @@ interface BattleState {
   amplifyLeft: number;  // 魔力增幅：剩幾次攻擊翻倍
   relay: Relay | null;  // 上一位出手隊員給下一位的接力加成
   chain: MemberId[];    // 連攜進度：這一輪已經出手過的隊員
-  focus: boolean;       // 專注：這一關每題多 5 秒
+  focusMs: number;      // 專注類技能：這一關每題多幾毫秒
+  charge: number;       // 蓄力類技能：下一次答對的傷害倍率（1 = 沒有）
+  critLeft: number;     // 箭雨類技能：接下來幾次攻擊必定暴擊
   questionLimit: number;
   questionLeft: number;
   overtime: boolean;    // 這題已超過 20 秒（前 25 關）：答對不加 combo
@@ -249,8 +248,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q));
 
   // 新題目的計時：20 秒，專注技能每題再多 5 秒
-  const freshTimer = (focus: boolean) => {
-    const limit = QUESTION_LIMIT + (focus ? FOCUS_BONUS : 0) + teamTimeBonus(get().party);
+  const freshTimer = (focusMs: number) => {
+    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party);
     return { questionLimit: limit, questionLeft: limit, overtime: false };
   };
 
@@ -300,8 +299,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       feedback: null,
       assist: null,
       assistSource: null,
-      focus: false,
-      ...freshTimer(false),
+      focusMs: 0,
+      ...freshTimer(0),
       casting: null,
       event: nextEvent('stage'),
     });
@@ -325,7 +324,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     }
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
-      retrying: false, ...freshTimer(s.focus),
+      retrying: false, ...freshTimer(s.focusMs),
     };
   };
 
@@ -427,7 +426,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const relayFx = relayFor(s.relay, attacker.id);
     const aliveIds = s.party.filter(isAlive).map(m => m.id);
     const chainStep = advanceChain(s.chain, attacker.id, aliveIds);
-    const crit = random() < attacker.crit + (relayFx?.crit ?? 0);
+    const crit = s.critLeft > 0 || random() < attacker.crit + (relayFx?.crit ?? 0);
     const regionScale = xpScale(s.levelIdx);
     let party = gainEnergy(s.party);
     save().trackDaily('correct');
@@ -490,7 +489,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
         element: em > 1 ? em + attacker.mods.elementBonus : em,
         critMult: 2 + attacker.mods.critDmg,
-        extra: firstHit * lowHp * teamwork,
+        extra: firstHit * lowHp * teamwork * s.charge,
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
@@ -513,6 +512,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     const common = {
       ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
+      // 蓄力與必定暴擊在真正造成傷害時才用掉（打菁英怪護盾時保留）
+      charge: 1, critLeft: Math.max(0, s.critLeft - 1),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
         amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
@@ -575,14 +576,30 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
   const canAnswer = () => get().phase === 'answering' && get().question !== null;
 
-  const applySkill = (skill: SkillId) => {
+  // 技能效果：依技能與威力組合出這次要改的狀態
+  const applySkill = (m: Member): Partial<BattleState> => {
     const s = get();
-    switch (skill) {
-      case 'guard': return { shield: true, comboGuard: true };
-      case 'haste': return { questionLeft: s.questionLeft + HASTE_BONUS, questionLimit: s.questionLimit + HASTE_BONUS, overtime: false };
-      case 'focus': return { focus: true, questionLeft: s.questionLeft + FOCUS_BONUS, questionLimit: s.questionLimit + FOCUS_BONUS, overtime: false };
-      case 'amplify': return { amplifyLeft: AMPLIFY_HITS };
+    const e = skillEffect(m.skill, m.skillPower);
+    const patch: Partial<BattleState> = {};
+    if (e.shield) Object.assign(patch, { shield: true, comboGuard: true });
+    if (e.heal || e.revive) {
+      // 施放者自己也一起回復；復活的隊員回復到 heal %
+      const party = s.party.map(p => {
+        if (!isAlive(p)) return e.revive ? { ...p, hp: Math.max(1, Math.round(p.maxHp * (e.heal ?? 30) / 100)) } : p;
+        return { ...p, hp: Math.min(p.maxHp, p.hp + Math.round(p.maxHp * (e.heal ?? 0) / 100)) };
+      });
+      Object.assign(patch, withTotals(party));
     }
+    const thisMs = (e.timeThis ?? 0) * 1000 + (e.timeStage ?? 0) * 1000;
+    if (thisMs > 0) Object.assign(patch, { questionLeft: s.questionLeft + thisMs, questionLimit: s.questionLimit + thisMs, overtime: false });
+    if (e.timeStage) patch.focusMs = Math.max(s.focusMs, e.timeStage * 1000);
+    if (e.amplify) patch.amplifyLeft = Math.max(s.amplifyLeft, e.amplify);
+    if (e.charge) patch.charge = Math.max(s.charge, e.charge * (e.bossCharge && s.stages[s.stageIdx]?.bossMode ? 1.5 : 1));
+    if (e.crits) patch.critLeft = Math.max(s.critLeft, e.crits);
+    if (e.combo) Object.assign(patch, { combo: s.combo + e.combo, maxCombo: Math.max(s.maxCombo, s.combo + e.combo) });
+    if (e.bossStep) patch.bossChain = s.bossChain + 1;
+    if (e.breakShield && s.monsterShield > 0) patch.monsterShield = Math.max(0, s.monsterShield - e.breakShield);
+    return patch;
   };
 
   return {
@@ -626,7 +643,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     amplifyLeft: 0,
     relay: null,
     chain: [],
-    focus: false,
+    focusMs: 0,
+    charge: 1,
+    critLeft: 0,
     questionLimit: QUESTION_LIMIT,
     questionLeft: QUESTION_LIMIT,
     overtime: false,
@@ -650,7 +669,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       const saved = save().levelProgress[levelKey] ?? 0;
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
@@ -673,7 +692,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         active: true, mode: 'golden', skillBoss: null, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       loadStage(0, true);
     },
@@ -696,7 +715,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
-        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
+        answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runXp: 0, runDrops: {},
       });
       loadStage(0, true);
     },
@@ -705,7 +724,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     startBattle: () => {
       const s = get();
       if (s.phase !== 'lesson') return;
-      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...freshTimer(s.focus) });
+      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...freshTimer(s.focusMs) });
     },
 
     openLesson: () => {
@@ -803,7 +822,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const question = prepare(s.original);
       const base = {
         phase: 'answering' as const, feedback: null, question, questionSeq: s.questionSeq + 1, retrying: true,
-        isBossQuestion: false, ...freshTimer(s.focus),
+        isBossQuestion: false, ...freshTimer(s.focusMs),
       };
       if (s.wrongStreak >= ASSIST_STREAK) {
         const assist = buildAssist(question);
@@ -825,9 +844,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const s = get();
       if (s.phase !== 'casting' || s.casting === null) return;
       const m = s.party[s.casting];
-      const party = s.party.map((p, i) => (i === s.casting ? { ...p, energy: 0 } : p));
+      const effect = applySkill(m);
+      const party = (effect.party ?? s.party).map((p, i) => (i === s.casting ? { ...p, energy: 0 } : p));
       set({
-        phase: 'answering', casting: null, phaseLeft: 0, party, ...applySkill(m.skill),
+        ...effect, phase: 'answering', casting: null, phaseLeft: 0, ...withTotals(party),
         event: nextEvent('skill', { skill: m.skill, member: m.id }),
       });
     },

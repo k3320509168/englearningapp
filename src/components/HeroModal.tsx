@@ -3,10 +3,10 @@ import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { CLASS_SKILL, SKILLS } from '../game/progression';
+import { CLASS_SKILL, SKILLS, playerSkillPower, skillDesc } from '../game/progression';
 import { classDef, elementDef } from '../game/character';
 import {
-  HEROES, RARITIES, RARITY_INFO, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroStats, heroTitle, heroWord,
+  HEROES, RARITIES, RARITY_INFO, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroSkillPower, heroStats, heroTitle, heroWord,
 } from '../game/heroes';
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
@@ -134,7 +134,7 @@ export default function HeroModal() {
           <div>
             <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
             <p className="muted">主角・{cls.name}（{cls.role}）</p>
-            <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+            <p className="skill-line">{skill.icon} {skill.name}：{skillDesc(skill.id, playerSkillPower(player.classPath.length))}</p>
             <p className="skill-line relay-line">接力 {RELAY[character.classId].icon} {RELAY[character.classId].name}：{RELAY[character.classId].desc}</p>
             {renderMemberButtons(id, inParty, pos, full)}
           </div>
@@ -167,7 +167,7 @@ export default function HeroModal() {
           </h3>
           <p className="muted">{h.id}：{h.meaning}・{heroTitle(h)}（{classDef(h.classId).role}）</p>
           <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
-          <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+          <p className="skill-line">{skill.signature && <span className="rarity-tag inline">專屬</span>} {skill.icon} {skill.name}：{skillDesc(skill.id, heroSkillPower(h, tier))}</p>
           <p className="skill-line relay-line">接力 {RELAY[h.classId].icon} {RELAY[h.classId].name}：{RELAY[h.classId].desc}{h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}</p>
           {owned ? (
             <>

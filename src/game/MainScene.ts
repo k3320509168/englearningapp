@@ -4,7 +4,7 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, comboMultiplier } from './progression';
+import { SKILLS, comboMultiplier, skillEffect } from './progression';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -644,7 +644,7 @@ export default class MainScene extends Phaser.Scene {
     screenFlash(this, 0x7fffd4, 0.25, 350);
     burst(this, PLAYER_X, GROUND_Y - 60, [0x7fffd4, 0xffffff, 0xffcd4b], 20, { up: true, gravity: -40, speed: 160 });
     this.banner(`${skill.icon} ${skill.name}`, '#7fffd4');
-    if (event.skill === 'guard') {
+    if (skillEffect(event.skill, 1).shield) {
       this.shieldBubble.setScale(0.2);
       this.tweens.add({ targets: this.shieldBubble, scale: 1, duration: 250, ease: 'Back.easeOut' });
     }

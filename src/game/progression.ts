@@ -252,8 +252,11 @@ export function goldWithBonus(amount: number, stats: PlayerStats): number {
 // ---------- 間隔重複（SRS，Leitner 盒子） ----------
 // 答錯 → 第 0 盒，下一個 Boss 就會複習；之後每答對一次升一盒，間隔拉長；第 5 次答對視為熟練
 const DAY = 24 * 60 * 60 * 1000;
-export const SRS_INTERVALS = [0, 1 * DAY, 3 * DAY, 7 * DAY, 14 * DAY];
-export const SRS_MASTERED_BOX = SRS_INTERVALS.length;
+// 錯題本畢業：在「不同的三天」各答對一次（間隔 1 天 → 3 天 → 7 天）就離開錯題本。
+// 間隔提取比同一天連續答對記得更牢（間隔效應、提取練習）；同一天答對只算當下的複習，不累積次數，
+// 答錯就從頭開始。box = 已經在不同天答對的次數；SRS_INTERVALS[box + 1] 是下一次該複習的間隔
+export const SRS_INTERVALS = [0, 1 * DAY, 3 * DAY, 7 * DAY];
+export const SRS_MASTERED_BOX = 3;
 
 // ---------- 圖鑑熟練度 ----------
 export function masteryStars(correct: number): number {

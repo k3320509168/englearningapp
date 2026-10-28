@@ -314,10 +314,13 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   return migrated;
 }
 
+// 到期的錯題：越不熟（答對次數越少）的越先考，一樣熟的再看誰比較早到期
+export const byLeastKnown = (a: MistakeRecord, b: MistakeRecord) => a.box - b.box || a.dueAt - b.dueAt;
+
 export function dueMistakes(mistakes: Record<string, MistakeRecord>, now: number, limit: number): MistakeRecord[] {
   return Object.values(mistakes)
     .filter(m => m.dueAt <= now)
-    .sort((a, b) => a.dueAt - b.dueAt)
+    .sort(byLeastKnown)
     .slice(0, limit);
 }
 
@@ -395,9 +398,11 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             mistakes[key] = { question: q, wrongCount: (prev?.wrongCount ?? 0) + 1, lastWrongAt: now, box: 0, dueAt: now };
           } else if (prev && review && prev.dueAt <= now) {
             reviewed = true;
-            const box = prev.box + 1;
+            // 答錯的同一天就答對：是很好的立即複習，但還不算記住，明天再考一次
+            const sameDay = prev.box === 0 && localDate(new Date(prev.lastWrongAt)) === localDate(new Date(now));
+            const box = sameDay ? 0 : prev.box + 1;
             if (box >= SRS_MASTERED_BOX) delete mistakes[key];
-            else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box] };
+            else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box + 1] };
           }
           return { codex, mistakes };
         });

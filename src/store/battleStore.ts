@@ -199,14 +199,35 @@ function withRevenge(stage: Stage, stageIdx: number, stageCount: number): Stage 
   return { name: `第 ${stageIdx + 1} 關：復仇魔王`, bossMode: true, revenge: true, questions: due.map(m => m.question) };
 }
 
-// 魔王題：優先出到期的錯題，其次任何錯題，都沒有就出這個區域的 Boss 題
+// 魔王題：優先出到期的錯題，其次任何錯題，都沒有就出這個區域的 Boss 題。
+// 錯題中先考最不熟的（在不同天答對次數最少的），一樣不熟的隨機挑
 function pickBossQuestion(exclude: Question | null): Question {
   const skip = exclude ? questionKey(exclude) : '';
   const mistakes = Object.values(save().mistakes).filter(m => questionKey(m.question) !== skip);
   const due = mistakes.filter(m => m.dueAt <= Date.now());
   const pool = due.length > 0 ? due : mistakes;
-  if (pool.length > 0) return pool[Math.floor(random() * pool.length)].question;
+  if (pool.length > 0) {
+    const least = Math.min(...pool.map(m => m.box));
+    const weakest = pool.filter(m => m.box === least);
+    return weakest[Math.floor(random() * weakest.length)].question;
+  }
   return decks!.boss();
+}
+
+// 戰鬥中的重複練習：一般題目約 15% 換成「答對過、但還沒熟練（答對不到 5 次）」的字，
+// 讓剛學的字在之後的關卡再出現幾次。越不熟的越常被抽到
+export const REPEAT_CHANCE = 0.15;
+export const REPEAT_MASTERED = 5;
+function pickRepeat(exclude: Question | null): Question | null {
+  if (random() >= REPEAT_CHANCE) return null;
+  const skip = exclude ? questionKey(exclude) : '';
+  const { codex, mistakes } = save();
+  const pool = Object.entries(codex)
+    .filter(([key, c]) => key !== skip && !mistakes[key] && c.correct > 0 && c.correct < REPEAT_MASTERED);
+  if (pool.length === 0) return null;
+  const least = Math.min(...pool.map(([, c]) => c.correct));
+  const weakest = pool.filter(([, c]) => c.correct === least);
+  return weakest[Math.floor(random() * weakest.length)][1].question;
 }
 
 // 從存檔組出隊伍的成長資料（英雄品階與等級、主角等級／轉職／裝備）
@@ -319,7 +340,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original);
     } else {
       qIdx += 1;
-      original = takeEasy(stage)
+      const repeat = s.mode === 'normal' && !stage.bossMode && !stage.kind ? pickRepeat(s.original) : null;
+      original = repeat ?? takeEasy(stage)
         ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss() : decks!.normal()));
     }
     return {

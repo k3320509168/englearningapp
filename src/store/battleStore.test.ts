@@ -369,7 +369,7 @@ describe('revenge boss (SRS)', () => {
     const now = Date.now();
     startLevel({
       mistakes: {
-        [questionKey(q1)]: { question: q1, wrongCount: 1, lastWrongAt: now, box: 0, dueAt: now - 1000 },
+        [questionKey(q1)]: { question: q1, wrongCount: 1, lastWrongAt: now - 2 * 86_400_000, box: 0, dueAt: now - 1000 },
         [questionKey(q2)]: { question: q2, wrongCount: 1, lastWrongAt: now, box: 0, dueAt: now + 60_000 }, // 還沒到期
       },
     });
@@ -400,6 +400,44 @@ describe('revenge boss (SRS)', () => {
     const due = dueMistakes(mistakes, Date.now(), REVENGE_MAX_QUESTIONS);
     expect(due).toHaveLength(REVENGE_MAX_QUESTIONS);
     expect(due[0].dueAt).toBe(93);
+  });
+
+  it('a correct answer on the same day as the mistake does not count yet; three different days graduate', () => {
+    const q: Question = { type: 'spell', desc: '請拼出：測試三', ans: 'REVENGETHREE' };
+    const key = questionKey(q);
+    const now = Date.now();
+    useSaveStore.setState({ mistakes: { [key]: { question: q, wrongCount: 1, lastWrongAt: now, box: 0, dueAt: 0 } } });
+    useSaveStore.getState().recordAnswer(q, true, true);
+    expect(saved().mistakes[key].box).toBe(0);
+    expect(saved().mistakes[key].dueAt).toBeGreaterThanOrEqual(now + SRS_INTERVALS[1]);
+    // 之後在不同天答對：1 → 2 → 畢業
+    for (const box of [1, 2]) {
+      useSaveStore.setState(st => ({ mistakes: { [key]: { ...st.mistakes[key], lastWrongAt: 0, dueAt: 0 } } }));
+      useSaveStore.getState().recordAnswer(q, true, true);
+      expect(saved().mistakes[key].box).toBe(box);
+    }
+    useSaveStore.setState(st => ({ mistakes: { [key]: { ...st.mistakes[key], dueAt: 0 } } }));
+    useSaveStore.getState().recordAnswer(q, true, true);
+    expect(saved().mistakes[key]).toBeUndefined();
+  });
+
+  it('mixes in learned-but-not-mastered words now and then', () => {
+    const q: Question = { type: 'spell', desc: '請拼出：重複練習', ans: 'REPEATWORD' };
+    startLevel({ codex: { [questionKey(q)]: { question: q, correct: 1, wrong: 0, firstSeenAt: 0 } } });
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
+    setBattleRandom(() => 0); // 每次都抽中重複練習
+    answerCurrent();
+    // 抽到的是答對過、還沒熟練的字（剛答對的那題或 REPEATWORD）
+    const c = saved().codex[questionKey(state().original!)];
+    expect(c.correct).toBeGreaterThan(0);
+    expect(c.correct).toBeLessThan(5);
+    setBattleRandom(() => 0.99);
+  });
+
+  it('due mistakes come least-known first', () => {
+    const mk = (ans: string, box: number, dueAt: number) => ({ question: { type: 'spell' as const, desc: ans, ans }, wrongCount: 1, lastWrongAt: 0, box, dueAt });
+    const due = dueMistakes({ a: mk('A', 2, 1), b: mk('B', 0, 50), c: mk('C', 1, 2) }, Date.now(), 3);
+    expect(due.map(m => m.question.ans)).toEqual(['B', 'C', 'A']);
   });
 
   it('does not count the retry right after seeing the answer as a review', () => {

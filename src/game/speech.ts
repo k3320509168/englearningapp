@@ -84,7 +84,8 @@ let pending: number | undefined;
 // 保留目前的 utterance，避免被回收後播到一半中斷
 let current: SpeechSynthesisUtterance | null = null;
 
-export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string) {
+// rate：正常語速；slowRate：慢速語速（兩個分開設定，調其中一個不會影響另一個）
+export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string, slowRate = SLOW_RATE) {
   if (!('speechSynthesis' in window)) return;
   const synth = window.speechSynthesis;
   const busy = synth.speaking || synth.pending;
@@ -96,7 +97,7 @@ export function speak(text: string, rate = 1, volume = 1, slow = false, voiceNam
   utterance.lang = 'en-US';
   const voice = pickVoice(slow, voiceName);
   if (voice) utterance.voice = voice;
-  utterance.rate = slow ? Math.min(SLOW_RATE, rate * 0.55) : rate;
+  utterance.rate = slow ? slowRate : rate;
   utterance.volume = volume;
   current = utterance;
   // 發音時壓低背景音樂，唸完再恢復

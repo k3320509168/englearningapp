@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice } from '../game/speech';
+import { SLOW_RATE, createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice } from '../game/speech';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
@@ -37,9 +37,14 @@ export default function SettingsModal() {
       <section className="settings-group">
         <h3>🔊 聲音</h3>
         <label className="range">
-          <span>發音語速 <b>{settings.speechRate.toFixed(1)}x</b></span>
+          <span>正常語速 <b>{settings.speechRate.toFixed(1)}x</b></span>
           <input type="range" min={0.5} max={1.3} step={0.1} value={settings.speechRate}
             onChange={e => updateSettings({ speechRate: Number(e.target.value) })} />
+        </label>
+        <label className="range">
+          <span>慢速語速（🐢 按鈕）<b>{(settings.slowRate ?? SLOW_RATE).toFixed(2)}x</b></span>
+          <input type="range" min={0.3} max={0.9} step={0.05} value={settings.slowRate ?? SLOW_RATE}
+            onChange={e => updateSettings({ slowRate: Number(e.target.value) })} />
         </label>
         <label className="range">
           <span>發音音量 <b>{Math.round(settings.volume * 100)}%</b></span>

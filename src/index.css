@@ -1456,3 +1456,10 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .quiz-count { margin: 0; color: var(--accent); font-family: var(--font-ui); font-weight: 700; }
 .gate-rules { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.7; }
 .region-head { flex-wrap: wrap; gap: 8px; }
+
+/* ---------- 雲端存檔 ---------- */
+.conflict-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.conflict-card { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: var(--px) solid var(--ink); border-radius: 6px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); text-align: left; cursor: pointer; }
+.conflict-card:hover:not(:disabled) { border-color: var(--accent); }
+.conflict-card b { font-family: var(--font-ui); font-size: 17px; color: var(--accent); }
+.save-code { width: 100%; padding: 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--bg); color: var(--text); font-family: monospace; font-size: 12px; word-break: break-all; resize: vertical; }

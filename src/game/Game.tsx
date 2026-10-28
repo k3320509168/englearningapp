@@ -25,6 +25,8 @@ import CelebrationOverlay from '../components/CelebrationOverlay';
 import ReviewModal from '../components/ReviewModal';
 import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
+import { CloudConflict } from '../components/CloudSave';
+import { initCloud } from '../cloud/cloudSave';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -45,6 +47,7 @@ export default function Game() {
   // 第一次進入遊戲：建立主角 → 序章，然後直接開始冒險。
   // 操作說明改成戰鬥中的情境提示，麥克風等第一次遇到口說題時才詢問
   useEffect(() => {
+    initCloud();
     useSaveStore.getState().ensureDaily();
     const { character, tutorialDone } = useSaveStore.getState();
     if (!character) useUiStore.getState().openModal('character');
@@ -160,6 +163,7 @@ export default function Game() {
       {modal === 'placement' && <PlacementModal />}
       {modal === 'gateTrial' && <GateTrialModal />}
       <CelebrationOverlay />
+      <CloudConflict />
       {modal === 'skillBoss' && <SkillBossModal />}
     </div>
   );

@@ -9,6 +9,7 @@ import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
+import { CloudSection, SaveCodeSection } from './CloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
 
@@ -103,6 +104,16 @@ export default function SettingsModal() {
             ))}
           </div>
         )}
+      </section>
+
+      <section className="settings-group">
+        <h3>☁️ 雲端存檔</h3>
+        <CloudSection />
+      </section>
+
+      <section className="settings-group">
+        <h3>💾 存檔備份</h3>
+        <SaveCodeSection />
       </section>
 
       <section className="settings-group danger">

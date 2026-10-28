@@ -7,7 +7,7 @@ export interface Recognizer {
   stop: () => void;
 }
 
-export const SLOW_RATE = 0.55;
+export const SLOW_RATE = 0.5;
 
 // macOS 內建很多「趣味語音」（Bubbles、Bad News…）和機器人感很重的舊語音，系統預設甚至可能是它們，
 // 用來教發音完全不行，一律排除
@@ -41,17 +41,32 @@ const rank = (v: SpeechSynthesisVoice) => {
   return (i < 0 ? PREFERRED.length : i) + us;
 };
 
-// 挑選語音：玩家在設定選過就用那個；否則選清晰度最高的。
-// 慢速時避開 Google 線上語音（它幾乎不理會語速，放慢後聽起來跟原速一樣）
+// 不理會語速設定的語音：Chrome 的 Google 線上語音、iPhone／Mac 的高品質語音（Enhanced、Premium、Siri）
+// 以及 Windows 的線上自然語音。放慢時改用一般的本機語音，慢速才聽得出差別
+const IGNORES_RATE = /google|enhanced|premium|siri|neural|natural|online/i;
+export const honorsRate = (v: SpeechSynthesisVoice) => v.localService && !IGNORES_RATE.test(v.name);
+
+// 挑選語音：玩家在設定選過就用那個；否則選清晰度最高的
 export function pickVoice(slow: boolean, preferred?: string): SpeechSynthesisVoice | undefined {
   const voices = englishVoices();
   const chosen = preferred ? voices.find(v => v.name === preferred) : undefined;
   const sorted = [...voices].sort((a, b) => rank(a) - rank(b));
   if (slow) {
-    if (chosen && chosen.localService) return chosen;
-    return sorted.find(v => v.localService) ?? sorted[0];
+    if (chosen && honorsRate(chosen)) return chosen;
+    // 優先找同一個人聲的一般版本（例如 Samantha (Enhanced) → Samantha），聽起來才一致
+    const base = chosen ?? sorted[0];
+    const family = base?.name.split(/[\s(]/)[0];
+    return voices.find(v => honorsRate(v) && family && v.name.startsWith(family))
+      ?? sorted.find(honorsRate) ?? sorted.find(v => v.localService) ?? sorted[0];
   }
   return chosen ?? sorted[0];
+}
+
+// 慢速的句子：在字與字之間加停頓（逗號），就算語音引擎不理會語速，聽起來也確實一個字一個字慢慢唸
+export function slowText(text: string): string {
+  const words = text.trim().split(/\s+/);
+  if (words.length < 2) return text;
+  return words.map((w, i) => (i < words.length - 1 && !/[,.!?;:]$/.test(w) ? `${w},` : w)).join(' ');
 }
 
 // 讓語音引擎唸得自然：「thank you」這種沒有標點的小寫短語，常被唸成拖長的問句語調。
@@ -77,11 +92,11 @@ export function speak(text: string, rate = 1, volume = 1, slow = false, voiceNam
   // Chrome（尤其 Mac）的已知問題：語音引擎有時卡在暫停狀態，之後按什麼都不會唸，先恢復
   if (synth.paused) synth.resume();
   window.clearTimeout(pending);
-  const utterance = new SpeechSynthesisUtterance(speakableText(text));
+  const utterance = new SpeechSynthesisUtterance(speakableText(slow ? slowText(text) : text));
   utterance.lang = 'en-US';
   const voice = pickVoice(slow, voiceName);
   if (voice) utterance.voice = voice;
-  utterance.rate = slow ? Math.min(SLOW_RATE, rate * 0.6) : rate;
+  utterance.rate = slow ? Math.min(SLOW_RATE, rate * 0.55) : rate;
   utterance.volume = volume;
   current = utterance;
   // 發音時壓低背景音樂，唸完再恢復

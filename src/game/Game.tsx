@@ -139,6 +139,8 @@ export default function Game() {
           height: GAME_HEIGHT,
         },
         scene: [MapScene, MainScene],
+        // 遊戲的音樂與音效都自己用 Web Audio 合成，不用 Phaser 的音訊（少開一個音訊環境，避免和發音、麥克風互相干擾）
+        audio: { noAudio: true },
       });
       game = g;
       // 開發模式下開放給瀏覽器 console 偵錯用

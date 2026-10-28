@@ -42,3 +42,24 @@ describe('正常語速與慢速語速分開', () => {
     expect(spoken.map(x => x.rate)).toEqual([1.2, 0.4, 0.4]);
   });
 });
+
+describe('Mac Chrome 的發音穩定性', () => {
+  it('沒有在唸的時候不呼叫 cancel（Chrome 在 cancel 後立刻 speak 容易卡住）', () => {
+    const cancel = vi.spyOn(synth, 'cancel');
+    synth.speaking = false;
+    speak('rice');
+    expect(cancel).not.toHaveBeenCalled();
+    synth.speaking = true;
+    speak('rice');
+    expect(cancel).toHaveBeenCalledTimes(1);
+    synth.speaking = false;
+    cancel.mockRestore();
+  });
+
+  it('語音辨識錯誤有給玩家看的說明，自己停止的不顯示', async () => {
+    const { recognitionErrorText } = await import('./speech');
+    expect(recognitionErrorText('aborted')).toBe('');
+    expect(recognitionErrorText('audio-capture')).toContain('占用');
+    expect(recognitionErrorText('network')).toContain('網路');
+  });
+});

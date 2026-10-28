@@ -54,6 +54,7 @@ let audio: AudioContext | null = null;
 let musicGain: GainNode | null = null;
 let volume = 0.35;
 let ducked = false;
+let held = false; // 麥克風聆聽中：音樂完全靜音
 let current: Track | null = null;
 let timer: number | undefined;
 let step = 0;
@@ -79,8 +80,8 @@ function ctx(): AudioContext | null {
 
 function applyVolume() {
   if (!audio || !musicGain) return;
-  const target = volume * (ducked ? 0.3 : 1);
-  musicGain.gain.setTargetAtTime(target, audio.currentTime, 0.15);
+  const target = held ? 0 : volume * (ducked ? 0.3 : 1);
+  musicGain.gain.setTargetAtTime(target, audio.currentTime, held ? 0.03 : 0.15);
 }
 
 export function setMusicVolume(v: number) {
@@ -93,6 +94,12 @@ export function setMusicVolume(v: number) {
 // 播放英文發音時壓低音樂
 export function duckMusic(on: boolean) {
   ducked = on;
+  applyVolume();
+}
+
+// 語音辨識聆聽時讓音樂完全靜音：Mac 的喇叭就在麥克風旁邊，音樂會被收進去而辨識錯誤
+export function holdMusic(on: boolean) {
+  held = on;
   applyVolume();
 }
 

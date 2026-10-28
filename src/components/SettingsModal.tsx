@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { SLOW_RATE, createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice } from '../game/speech';
+import { SLOW_RATE, createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice, recognitionErrorText } from '../game/speech';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
@@ -189,7 +189,7 @@ function MicTest() {
     recognizer.current = createRecognizer({
       onStart: () => { setStatus('listening'); setText(''); },
       onResult: (t) => { setStatus('done'); setText(t[0] ?? ''); },
-      onError: (err) => { setStatus('error'); setText(err === 'not-allowed' ? '請允許瀏覽器使用麥克風' : `辨識失敗（${err}）`); },
+      onError: (err) => { setStatus('error'); setText(recognitionErrorText(err)); },
       onEnd: () => setStatus(s => (s === 'listening' ? 'idle' : s)),
     });
     return () => recognizer.current?.stop();

@@ -14,7 +14,7 @@ import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
-import { BattleStatusBar } from './BattleExtras';
+import { BattleStatusBar, ItemMenu } from './BattleExtras';
 import { mapName, stageLabel } from '../game/regions';
 import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty';
 import { useBattleClock } from './useBattleClock';
@@ -98,6 +98,7 @@ export default function BattleHUD() {
           {shield && <span className="shield-badge" title="護盾：下一次答錯不扣血">🛡️</span>}
         </span>
         <div className="hud-tools">
+          <ItemMenu />
           <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().openLesson()} disabled={phase !== 'answering'} aria-label="戰前預習">📖</button>
           <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(question.speak)} disabled={!question.speak || phase !== 'answering'} aria-label="播放發音">🔊</button>
           <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => openModal('settings')} aria-label="設定">⚙️</button>

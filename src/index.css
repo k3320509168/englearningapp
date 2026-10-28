@@ -1301,3 +1301,48 @@ button { font: inherit; color: inherit; }
 .first-summon { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 2px solid #c77dff; border-radius: 6px; background: color-mix(in srgb, #c77dff 16%, var(--panel)); text-align: left; }
 .first-summon > span { font-size: 28px; }
 .first-summon p { flex: 1; margin: 0; }
+
+/* ---------- 手機戰鬥：一個畫面放得下，不用捲動 ---------- */
+.only-mobile { display: none; }
+.item-menu { position: relative; }
+.item-count { margin-left: 2px; font-family: var(--font-body); font-size: 12px; color: var(--accent); }
+.item-pop {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 8;
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  border: var(--px) solid var(--ink);
+  border-radius: 6px;
+  background: var(--panel);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 560px) {
+  .only-mobile { display: block; }
+  .app:has(.is-battle) { padding: 6px 8px 8px; }
+  .is-battle { gap: 8px; }
+  .is-battle .game-canvas { max-width: min(100%, calc(30dvh * 5 / 3)); border-width: 3px; }
+  .is-battle .hud { gap: 8px; }
+  .is-battle .status-bar { display: none; }
+  .hud-top .btn-small { min-height: 36px; }
+  /* 隊伍：一列 4 格小頭像＋血條＋能量 */
+  .is-battle .party-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+  .is-battle .member { flex-direction: column; align-items: stretch; gap: 3px; padding: 4px; }
+  .is-battle .member-portrait { width: 100%; height: 30px; }
+  .is-battle .member-portrait img { max-height: 30px; }
+  .is-battle .member-name { display: none; }
+  .is-battle .member-hp { height: 6px; }
+  .is-battle .member-energy { justify-content: center; gap: 2px; }
+  .is-battle .member-energy i { width: 6px; height: 6px; border-width: 1px; }
+  .is-battle .member-energy em { display: none; }
+  .is-battle .question-card { padding: 10px 12px; }
+  .is-battle .q-tag { margin-bottom: 4px; }
+  .is-battle .q-desc { font-size: 17px; line-height: 1.4; }
+  .is-battle .option-btn { min-height: 48px; padding: 8px 12px; font-size: 16px; }
+  .is-battle .options { gap: 8px; }
+  .vkbd { gap: 5px; }
+  .vkbd-key { min-height: 44px; }
+  .battle-hint { font-size: 14px; padding: 6px 8px; }
+}

@@ -6,7 +6,9 @@
 
 @font-face {
   font-family: "UiDigits";
-  src: local("Segoe UI Bold"), local("SegoeUI-Bold"), local("Arial Bold"), local("Arial-BoldMT"), local("Roboto Bold"), local("Helvetica Bold"), local("Arial");
+  /* 字型檔跟著遊戲一起打包：Android Chrome 不允許用 local() 取用系統字型，只靠系統字型時會退回像素字（5 看起來像 S） */
+  src: url("@fontsource/roboto/files/roboto-latin-700-normal.woff2") format("woff2"), local("Segoe UI Bold"), local("Arial Bold");
+  font-display: swap;
   font-weight: 400 900;
   unicode-range: U+0030-0039;
 }

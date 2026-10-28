@@ -1500,7 +1500,18 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
   .is-battle .hud { flex: 1 1 0; min-width: 0; max-height: calc(100dvh - 12px); overflow-y: auto; gap: 6px; }
   .is-battle .party-bar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .is-battle .member-name { display: none; }
-  .is-battle .option-btn { min-height: 44px; padding: 6px 10px; }
+  .is-battle .option-btn { min-height: 40px; padding: 4px 10px; font-size: 15px; }
+  .is-battle .options { gap: 6px; }
+  .is-battle .status-bar { display: none; }
+  .only-mobile { display: block; }
+  .is-battle .question-card { padding: 6px 10px; }
+  .is-battle .q-tag { margin-bottom: 2px; }
+  .is-battle .q-desc { font-size: 16px; line-height: 1.35; }
+  .is-battle .kbd-hint { display: none; }
+  .hud-top .btn-small { min-height: 34px; }
+  .is-battle .member { padding: 3px 6px; }
+  .is-battle .member-portrait { height: 26px; }
+  .is-battle .member-portrait img { max-height: 26px; }
 }
 @media (min-width: 1000px) and (orientation: landscape) {
   /* 筆電視窗比較矮時，作答區在右側自己捲動，不用捲整頁 */
@@ -1511,3 +1522,10 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .review-chip { padding: 4px 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); font-size: 14px; cursor: pointer; }
 .placement-entry { padding: 8px 12px; border: 2px dashed #7fe8ff; border-radius: 6px; background: color-mix(in srgb, #7fe8ff 10%, var(--panel)); color: var(--text); font-family: var(--font-body); font-size: 14px; text-align: left; cursor: pointer; }
 .placement-entry b { color: #7fe8ff; }
+/* 大字級的手機：畫布縮小一點、答案排成兩欄，四個選項才放得進一個畫面 */
+@media (max-width: 560px) {
+  html[data-text-scale="large"] .is-battle .game-canvas { max-width: min(100%, calc(22dvh * 5 / 3)); }
+  html[data-text-scale="large"] .is-battle .options { grid-template-columns: 1fr 1fr; }
+  html[data-text-scale="large"] .is-battle .option-btn { padding: 6px 8px; }
+  html[data-text-scale="large"] .is-battle .option-btn b { margin-right: 6px; }
+}

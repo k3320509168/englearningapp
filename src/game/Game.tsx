@@ -71,6 +71,7 @@ export default function Game() {
       setMusicVolume(musicVolume);
       const root = document.documentElement;
       root.style.setProperty('--text-scale', String(textScale ?? 1));
+      root.dataset.textScale = (textScale ?? 1) > 1 ? 'large' : 'normal';
       if (reduceMotion) root.dataset.reduceMotion = 'true';
       else delete root.dataset.reduceMotion;
     };

@@ -100,3 +100,26 @@ describe('連續登入里程碑', () => {
     expect(nextMilestone(1)?.days).toBe(3);
   });
 });
+
+describe('每週任務', () => {
+  it('同一週任務固定、週一換新，固定包含上線天數', async () => {
+    const { refreshWeekly, weekStart, pickWeekly } = await import('./daily');
+    expect(weekStart('2026-10-28')).toBe('2026-10-26'); // 星期三 → 那週的星期一
+    expect(weekStart('2026-10-26')).toBe('2026-10-26');
+    expect(weekStart('2026-11-01')).toBe('2026-10-26'); // 星期日還是同一週
+    const w = refreshWeekly(null, '2026-10-28');
+    expect(refreshWeekly(w, '2026-11-01')).toBe(w);
+    expect(refreshWeekly(w, '2026-11-02').week).toBe('2026-11-02');
+    expect(pickWeekly('2026-10-26').map(t => t.id)).toContain('w_days5');
+    expect(pickWeekly('2026-10-26')).toHaveLength(3);
+  });
+
+  it('答題同時推進每日與每週任務', () => {
+    useSaveStore.setState({ ...initialSave, daily: null, weekly: null });
+    useSaveStore.getState().trackDaily('correct', 5);
+    const s = useSaveStore.getState();
+    const w = s.weekly!.tasks.find(t => t.id === 'w_correct150');
+    if (w) expect(w.progress).toBe(5);
+    expect(s.weekly!.tasks.find(t => t.id === 'w_days5')!.progress).toBe(1);
+  });
+});

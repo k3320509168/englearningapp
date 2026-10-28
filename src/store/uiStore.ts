@@ -23,6 +23,10 @@ interface UiState {
   growthTab: GrowthTab;
   celebrations: Celebration[];
   hintOpen: boolean; // 戰鬥中的情境提示還沒按「知道了」：計時暫停
+  retreatAsk: boolean; // 撤退確認中（計時暫停）
+  setRetreatAsk: (on: boolean) => void;
+  imeWarning: boolean; // 偵測到中文輸入法（注音）：英文字母打不進去
+  setImeWarning: (on: boolean) => void;
   setHintOpen: (open: boolean) => void;
   celebrate: (c: Celebration) => void;
   dismissCelebration: () => void;
@@ -44,6 +48,10 @@ export const useUiStore = create<UiState>()((set) => ({
   growthTab: 'hero',
   celebrations: [],
   hintOpen: false,
+  retreatAsk: false,
+  setRetreatAsk: (on) => set({ retreatAsk: on }),
+  imeWarning: false,
+  setImeWarning: (on) => set(s => (s.imeWarning === on ? s : { imeWarning: on })),
   setHintOpen: (open) => set({ hintOpen: open }),
   celebrate: (c) => set(s => ({ celebrations: [...s.celebrations, c] })),
   dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),

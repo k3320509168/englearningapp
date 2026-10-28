@@ -48,3 +48,17 @@ export function continueJourney() {
   if (target.needsStory) return useUiStore.getState().openRegion(target.regionIdx);
   beginLevel(REGIONS[target.regionIdx].id, target.stage);
 }
+
+// 結算畫面「回到世界地圖」：按鈕和 Enter 都走這裡，確保通關劇情、主線稱號、黃金之路結局不會被跳過
+export function finishBattle() {
+  const s = useBattleStore.getState();
+  if (s.mode === 'golden') return finishGoldenRoad();
+  if (s.mode === 'skill') return s.exitToMap();
+  finishRegion(s.levelIdx);
+}
+
+// 舊版本按 Enter 離開通關畫面會漏掉主線稱號：已經通關最後一個區域、卻沒有稱號的存檔補發
+export function backfillMainTitle() {
+  const save = useSaveStore.getState();
+  if (save.unlockedIndex >= LEVELS.length && !save.titles.includes(MAIN_TITLE)) save.addTitle(MAIN_TITLE);
+}

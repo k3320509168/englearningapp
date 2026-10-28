@@ -47,7 +47,9 @@ export default function MapToolbar() {
         <div className="toolbar-actions">
           <span className="gold-badge" aria-label={`金幣 ${gold}`}>🪙 {gold}</span>
           <span className="ticket-badge" aria-label={`召喚券 ${tickets}`}>🎫 {tickets}</span>
-          <span className="muted map-stat" title="答錯過的單字，會在戰鬥中以魔王題再次出現">📌 {mistakeCount}</span>
+          {/* 📌 今天該複習的錯題（和「今日複習」同一個數字），點一下打開清單 */}
+          <button className="map-stat review-chip" onMouseDown={keepFocus} onClick={() => openModal('review')}
+            title={`今天要複習 ${notices.dueMistakes} 個錯題（錯題本共 ${mistakeCount} 個）`} aria-label={`今日複習 ${notices.dueMistakes} 個`}>📌 {notices.dueMistakes}</button>
         </div>
       </div>
       <nav className="toolbar-nav" aria-label="主要選單">

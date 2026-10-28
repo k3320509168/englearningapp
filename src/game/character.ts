@@ -18,7 +18,7 @@ export interface Character {
 }
 
 export const NAME_MAX_LENGTH = 10;
-export const DEFAULT_NAME = '光';
+export const DEFAULT_NAME = '勇者'; // 名字留空時的預設（不用屬性名，避免頂部顯示成「光・劍士」像重複）
 
 export interface ClassDef {
   id: ClassId;

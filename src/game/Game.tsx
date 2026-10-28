@@ -26,7 +26,9 @@ import ReviewModal from '../components/ReviewModal';
 import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
 import { CloudConflict } from '../components/CloudSave';
+import SaveRecoveryNotice from '../components/SaveRecoveryNotice';
 import { initCloud } from '../cloud/cloudSave';
+import { backfillMainTitle } from './startLevel';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
@@ -48,12 +50,17 @@ export default function Game() {
   // 操作說明改成戰鬥中的情境提示，麥克風等第一次遇到口說題時才詢問
   useEffect(() => {
     const loginFailed = initCloud();
+    // 同時開好幾個分頁：別的分頁存檔時，這裡跟著讀取最新的存檔，避免互相覆蓋（英雄消失、召喚券被刷回來）
+    const onStorage = (e: StorageEvent) => { if (e.key === 'english-rpg-save') void useSaveStore.persist.rehydrate(); };
+    window.addEventListener('storage', onStorage);
+    backfillMainTitle();
     useSaveStore.getState().ensureDaily();
     const { character, tutorialDone } = useSaveStore.getState();
     if (!character) useUiStore.getState().openModal('character');
     // 從失敗的登入連結回來：直接打開設定，顯示原因與重新寄送
     else if (loginFailed) useUiStore.getState().openModal('settings');
     else if (!tutorialDone) useSaveStore.getState().setTutorialDone(true);
+    return () => window.removeEventListener('storage', onStorage);
   }, []);
 
   // 音效與背景音樂的音量、文字大小、減少動態效果跟著設定走
@@ -166,6 +173,7 @@ export default function Game() {
       {modal === 'gateTrial' && <GateTrialModal />}
       <CelebrationOverlay />
       <CloudConflict />
+      <SaveRecoveryNotice />
       {modal === 'skillBoss' && <SkillBossModal />}
     </div>
   );

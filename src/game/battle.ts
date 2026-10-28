@@ -51,11 +51,15 @@ export function shuffleChoice(q: Question, random: () => number = Math.random): 
 
 // 拼寫／填空：自由輸入（最多到答案的長度），按 Enter 或「送出」才判定對錯，
 // 打錯可以用 Backspace 改，讓玩家有思考的空間
+// 可以接受的拼法（答案＋同義的寫法，例如 THANK／THANKS）
+const typedCandidates = (q: Question) => [q.ans, ...(q.type === 'spell' ? q.accept ?? [] : [])];
+const maxTypedLength = (q: Question) => Math.max(...typedCandidates(q).map(a => a.length));
+
 export function applyLetter(q: Question, typed: string, letter: string): string {
-  return typed.length >= q.ans.length ? typed : typed + letter.toUpperCase();
+  return typed.length >= maxTypedLength(q) ? typed : typed + letter.toUpperCase();
 }
 
-export const checkTypedAnswer = (q: Question, typed: string) => typed.toUpperCase() === q.ans;
+export const checkTypedAnswer = (q: Question, typed: string) => typedCandidates(q).includes(typed.toUpperCase());
 
 export function checkChoice(q: Question, letter: string): boolean {
   return letter.toUpperCase() === q.ans;
@@ -115,16 +119,21 @@ export function checkVoice(q: Question, transcripts: string | string[]): boolean
 
 // 從題目描述取出中文提示，例如「請拼出：書本」→「書本」、「填空題：B U D G _ T (預算)」→「預算」
 export function questionHint(q: Question): string {
-  const paren = q.desc.match(/[(（]([^)）]+)[)）]\s*$/);
-  if (paren) return paren[1];
-  const afterColon = q.desc.split('：').pop() ?? '';
-  return q.type === 'choice' ? '' : afterColon.trim();
+  // 只有填空題的中文放在最後的括號裡；其他題目的中文本身可能就有括號（例如「附加（檔案）」），整段都要
+  if (q.desc.startsWith('填空題')) {
+    const paren = q.desc.match(/[(（]([^)）]+)[)）]\s*$/);
+    if (paren) return paren[1];
+  }
+  if (q.type === 'choice') return '';
+  return (q.desc.split('：').pop() ?? '').trim();
 }
 
 // 瀏覽器不支援語音辨識時，把單字語音題改為拼寫題，讓玩家仍能練到這個字
 export function voiceFallback(q: Question): Question {
   if (q.type !== 'voice' || !/^[A-Z]+$/.test(q.ans)) return q;
-  return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: undefined };
+  // 口說的「可接受答案」裡，能用鍵盤打的（例如 THANKS）拼寫時也接受
+  const accept = q.accept?.filter(a => /^[A-Z]+$/.test(a));
+  return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: accept?.length ? accept : undefined };
 }
 
 // 拼寫／填空的進度顯示：拼寫顯示字母格，填空把已輸入的字母填進題目的空格
@@ -134,7 +143,11 @@ export interface AnswerSlot {
 }
 
 export function answerSlots(q: Question, typed: string): AnswerSlot[] {
-  if (q.type === 'spell') return q.ans.split('').map((_, i) => ({ char: typed[i] ?? '', blank: true }));
+  if (q.type === 'spell') {
+    // 格子數是答案的長度；打的是較長的可接受拼法（例如 THANKYOU）時跟著延長
+    const n = Math.max(q.ans.length, typed.length);
+    return Array.from({ length: n }, (_, i) => ({ char: typed[i] ?? '', blank: true }));
+  }
   if (q.type === 'fill') {
     const pattern = (q.desc.split('：').pop() ?? '').split(/[(（]/)[0].trim().split(/\s+/);
     let i = 0;

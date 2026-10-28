@@ -14,7 +14,7 @@ export function useBattleClock() {
       const dt = now - last;
       last = now;
       const ui = useUiStore.getState();
-      if (document.hidden || ui.modal || ui.hintOpen) return;
+      if (document.hidden || ui.modal || ui.hintOpen || ui.retreatAsk) return;
       // 電腦休眠等極端情況，最多只算 1 秒
       useBattleStore.getState().tick(Math.min(1000, dt));
     }, TICK_MS);

@@ -5,8 +5,8 @@ import type { OwnedEquip } from './equipment';
 import { SPARK_COST, TEN_PULL, TIER_UP_GOLD, TIER_UP_SHARDS, heroDef } from './heroes';
 import type { HeroId, SummonCounter } from './heroes';
 import { TIER_UP_TRIALS, trialsDone } from './trueName';
-import { claimableMilestones, dailyDef } from './daily';
-import type { DailyState } from './daily';
+import { claimable, claimableMilestones } from './daily';
+import type { DailyState, WeeklyState } from './daily';
 import { REGIONS } from './regions';
 import { regionStoryId } from './story';
 
@@ -30,6 +30,7 @@ export interface NoticeInput {
   heroTier: Record<HeroId, number>;
   trueName: Record<HeroId, boolean[]>;
   daily: DailyState | null;
+  weekly?: WeeklyState | null;
   mistakes: Record<string, { dueAt: number }>;
 }
 
@@ -73,7 +74,7 @@ export function computeNotices(s: NoticeInput, now = Date.now()): Notices {
     gradeUp,
     tierUp,
     summon: s.tickets >= TEN_PULL || s.summonCounter.spark >= SPARK_COST,
-    daily: (s.daily?.tasks.some(t => !t.claimed && t.progress >= (dailyDef(t.id)?.goal ?? Infinity)) ?? false) || claimableMilestones(s.daily).length > 0,
+    daily: claimable(s.daily?.tasks) || claimable(s.weekly?.tasks) || claimableMilestones(s.daily).length > 0,
     dueMistakes: Object.values(s.mistakes).filter(m => m.dueAt <= now).length,
   };
 }

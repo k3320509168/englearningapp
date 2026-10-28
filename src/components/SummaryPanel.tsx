@@ -7,7 +7,7 @@ import { answerLabel } from '../game/answerLabel';
 import { useSpeak } from './useSpeak';
 import { regionOf } from '../game/regions';
 import { starConditions } from '../game/stars';
-import { finishGoldenRoad, finishRegion } from '../game/startLevel';
+import { finishBattle } from '../game/startLevel';
 import { useSaveStore } from '../store/saveStore';
 import { GOLDEN_CLEAR_TICKETS, GOLDEN_TITLE, MAIN_TITLE } from '../game/golden';
 import { LEVELS } from '../game/QuestionData';
@@ -137,10 +137,10 @@ export default function SummaryPanel() {
 
       <div className="feedback-actions">
         {phase === 'summary' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={nextStage}>繼續冒險 ⏎</button>}
-        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => (golden ? finishGoldenRoad() : skillDef ? exitToMap() : finishRegion(levelIdx))}>回到世界地圖 ⏎</button>}
+        {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={finishBattle}>回到世界地圖 ⏎</button>}
         {phase === 'gameOver' && (
           <>
-            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={retryLevel}>重新挑戰 ⏎</button>
+            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={retryLevel}>重新挑戰</button>
             <button className="btn" onMouseDown={keepFocus} onClick={exitToMap}>回地圖</button>
           </>
         )}

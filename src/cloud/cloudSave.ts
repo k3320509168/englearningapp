@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import type { SupabaseClient, User } from '@supabase/supabase-js';
 import { create } from 'zustand';
-import { useSaveStore } from '../store/saveStore';
+import { SAVE_VERSION, migrateSave, useSaveStore } from '../store/saveStore';
 
 // 雲端存檔（Supabase）：登入是選擇性的，不登入照常玩、存檔只在這個瀏覽器。
 // 登入後存檔自動上傳；換裝置登入時下載。兩邊都有新進度時，讓玩家選要留哪一份。
@@ -158,16 +158,40 @@ export function initCloud(): boolean {
   return !!loginError;
 }
 
+// Supabase 的錯誤訊息是英文，轉成玩家看得懂的中文
+export function loginErrorText(message: string): string {
+  const m = message.toLowerCase();
+  const wait = message.match(/after (\d+) seconds?/i);
+  if (wait) return `寄信太頻繁了，請等 ${wait[1]} 秒後再試。`;
+  if (m.includes('rate limit')) return '寄信次數太多了（免費方案每小時有上限），請過一段時間再試。';
+  if (m.includes('invalid') && m.includes('email')) return 'Email 格式不正確，請檢查一下。';
+  if (m.includes('signups not allowed') || m.includes('signup')) return '目前不開放新帳號註冊。';
+  if (m.includes('network') || m.includes('fetch')) return '連不上伺服器，請檢查網路後再試。';
+  return `寄送失敗，請稍後再試（${message}）`;
+}
+
 // Email 登入連結：點信裡的連結回到遊戲就會登入
 export async function sendLoginLink(email: string): Promise<string | null> {
   if (!supabase) return '雲端存檔沒有設定';
   setCloud({ loginError: '' });
-  const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL } });
-  return error ? error.message : null;
+  try {
+    const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL } });
+    return error ? loginErrorText(error.message) : null;
+  } catch (e) {
+    return loginErrorText(e instanceof Error ? e.message : String(e));
+  }
 }
 
 export async function signOut() {
   await supabase?.auth.signOut();
+}
+
+// 重置遊戲時：登出雲端並忘記這台裝置的同步紀錄，避免新的空白進度自動上傳、蓋掉雲端的舊存檔。
+// 之後再登入時，兩邊都有進度會讓玩家選要保留哪一份
+export async function forgetCloudForReset() {
+  window.clearTimeout(uploadTimer);
+  try { localStorage.removeItem(META_KEY); } catch { /* 略過 */ }
+  if (supabase && useCloudStore.getState().user) await supabase.auth.signOut();
 }
 
 // ---------- 存檔碼（不需要雲端）：整份存檔轉成一段文字，可以備份或搬到別的瀏覽器 ----------
@@ -183,7 +207,10 @@ export function parseSaveCode(code: string): { state: Record<string, unknown>; v
   try {
     const bytes = Uint8Array.from(atob(code.trim()), c => c.charCodeAt(0));
     const data = JSON.parse(new TextDecoder().decode(bytes));
-    return data && typeof data === 'object' && data.state && typeof data.version === 'number' ? data : null;
+    if (!data || typeof data !== 'object' || !data.state || typeof data.state !== 'object' || typeof data.version !== 'number') return null;
+    // 補齊欄位、檢查型別，壞掉的欄位改回預設值；轉成目前的存檔版本
+    const state = migrateSave(data.state, data.version) as unknown as Record<string, unknown>;
+    return { state, version: SAVE_VERSION };
   } catch {
     return null;
   }

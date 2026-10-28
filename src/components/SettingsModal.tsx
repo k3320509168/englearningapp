@@ -10,6 +10,7 @@ import { keepFocus } from './keepFocus';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
 import { CloudLoginError, CloudSection, SaveCodeSection } from './CloudSave';
+import { forgetCloudForReset } from '../cloud/cloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
 
@@ -118,10 +119,18 @@ export default function SettingsModal() {
 
       <section className="settings-group danger">
         <h3>⚠️ 重置進度</h3>
-        <p className="muted">清除區域進度、金幣、升級、道具、英雄、錯題本與圖鑑（設定會保留）。此動作無法復原。</p>
+        <p className="muted">全部歸零：主角、區域進度、金幣、英雄、裝備、錯題本、圖鑑、劇情與設定都會清除，從建立主角重新開始。此動作無法復原。
+          有登入雲端存檔的話會先登出，雲端上的舊存檔不會被覆蓋（之後重新登入時可以選擇要保留哪一份）。</p>
         {confirmReset ? (
           <div className="feedback-actions">
-            <button className="btn btn-danger" onMouseDown={keepFocus} onClick={() => { resetProgress(); setConfirmReset(false); }}>確定重置</button>
+            <button className="btn btn-danger" onMouseDown={keepFocus} onClick={() => {
+              void forgetCloudForReset().finally(() => {
+                resetProgress();
+                setConfirmReset(false);
+                // 重新載入：回到建立主角的畫面
+                window.location.reload();
+              });
+            }}>確定全部重置</button>
             <button className="btn" onMouseDown={keepFocus} onClick={() => setConfirmReset(false)}>取消</button>
           </div>
         ) : (
@@ -160,6 +169,7 @@ function VoicePicker() {
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
       </div>
+      {voices.length === 0 && <p className="voice-error">這台裝置找不到英文語音，聽力題會改成顯示單字。可以到系統設定安裝英文語音（Mac：系統設定 → 輔助使用 → 語音內容；Windows：設定 → 時間與語言 → 語音）。</p>}
       <p className="muted voice-note">聽起來不自然的話，換一個語音試試。Mac 推薦 Samantha，Windows 推薦 Microsoft Aria／Jenny。</p>
     </div>
   );

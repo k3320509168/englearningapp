@@ -36,7 +36,7 @@ export function CloudSection() {
       setSending(true);
       const err = await sendLoginLink(email.trim());
       setSending(false);
-      setSent(err ? `寄送失敗：${err}` : `登入連結已寄到 ${email.trim()}，請到信箱點連結（會回到遊戲並自動登入）。`);
+      setSent(err ? `⚠️ ${err}` : `登入連結已寄到 ${email.trim()}，請到信箱點連結（會回到遊戲並自動登入）。`);
     };
     return (
       <>
@@ -45,7 +45,7 @@ export function CloudSection() {
           <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="你的 Email" autoComplete="email" aria-label="Email" />
           <button className="btn btn-primary" type="submit" disabled={sending || !email.includes('@')}>{sending ? '寄送中…' : '寄送登入連結'}</button>
         </form>
-        {sent && <p className={sent.startsWith('寄送失敗') ? 'voice-error' : 'req-ok'}>{sent}</p>}
+        {sent && <p className={sent.startsWith('⚠️') ? 'voice-error' : 'req-ok'}>{sent}</p>}
       </>
     );
   }

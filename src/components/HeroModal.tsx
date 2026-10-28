@@ -217,7 +217,8 @@ export default function HeroModal() {
         {inParty ? (
           <>
             {pos > 0 && <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => setLeader(id)}>設為隊長</button>}
-            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)} disabled={party.length <= 1}>離隊</button>
+            {/* 只剩一位隊員時不能離隊，直接不顯示 */}
+            {party.length > 1 && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)}>離隊</button>}
           </>
         ) : (
           <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => toggleMember(id)} disabled={full}>{full ? '隊伍已滿' : '加入隊伍'}</button>

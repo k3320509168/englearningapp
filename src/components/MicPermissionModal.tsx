@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { isSpeechRecognitionSupported } from '../game/speech';
+import { useBattleStore } from '../store/battleStore';
 import { keepFocus } from './keepFocus';
 
 // 第一次遇到口說題時（戰鬥暫停），先說明為什麼需要麥克風，再由玩家按鈕觸發瀏覽器的權限視窗，
@@ -18,6 +19,11 @@ export default function MicPermissionModal() {
   );
 
   const close = () => { setMicAsked(); closeModal(); };
+  // 沒有麥克風可用：口說題改成拼寫（戰鬥中眼前的口說題也立刻轉換），玩家不會卡在口說題
+  const fallbackToSpelling = () => {
+    useSaveStore.getState().updateSettings({ voiceAsSpelling: true });
+    useBattleStore.getState().switchToSpelling();
+  };
 
   const ask = async () => {
     setStatus('asking');
@@ -28,6 +34,7 @@ export default function MicPermissionModal() {
       setStatus('granted');
     } catch {
       setStatus('denied');
+      fallbackToSpelling();
     }
   };
 
@@ -49,7 +56,7 @@ export default function MicPermissionModal() {
         ) : status === 'denied' ? (
           <>
             <h3>麥克風沒有開啟</h3>
-            <p>沒關係，仍然可以玩其他題型。之後想開啟時，點瀏覽器網址列左邊的 🔒 圖示，把「麥克風」改成允許，再重新整理頁面即可。</p>
+            <p>沒關係！口說題已經自動改成拼寫題，一樣可以練到這些字。之後想開啟時，點瀏覽器網址列左邊的 🔒 圖示把「麥克風」改成允許，再到設定取消「口說題改成拼寫題」。</p>
           </>
         ) : (
           <>
@@ -61,7 +68,7 @@ export default function MicPermissionModal() {
       <div className="tutorial-actions">
         {status === 'idle' || status === 'asking' ? (
           <>
-            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={close}>稍後再說</button>
+            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { fallbackToSpelling(); close(); }}>先改用拼寫</button>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={ask} disabled={status === 'asking'}>
               {status === 'asking' ? '請在瀏覽器視窗中選擇…' : '🎤 允許麥克風'}
             </button>

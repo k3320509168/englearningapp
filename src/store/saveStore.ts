@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
+import type { StateStorage } from 'zustand/middleware';
 import type { Question } from '../game/types';
 import { questionKey } from '../game/battle';
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
@@ -14,8 +15,8 @@ import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '.
 import { MAX_GRADE, SELL_RATE, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
-import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, streakMilestone } from '../game/daily';
-import type { DailyEvent, DailyState } from '../game/daily';
+import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weeklyDef } from '../game/daily';
+import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
 import { normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
 import { MAP_SIZE, REGIONS } from '../game/regions';
@@ -97,6 +98,7 @@ interface SaveData {
   titles: string[];
   // 每日任務與連續登入；擴充魔王（聽說讀寫）的通關紀錄
   daily: DailyState | null;
+  weekly: WeeklyState | null; // 每週任務
   skillBossCleared: string[];
   // 戰鬥中已看過的情境提示
   hintsSeen: string[];
@@ -149,12 +151,13 @@ interface SaveActions {
   trackDaily: (event: DailyEvent, amount?: number) => void;
   claimDaily: (id: string) => boolean;
   claimStreak: (days: number) => boolean;
+  claimWeekly: (id: string) => boolean;
   recordSkillBoss: (id: string) => boolean; // 第一次通關回傳 true
   markHint: (id: string) => void;
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
-  resetProgress: () => void;
+  resetProgress: () => void; // 全部歸零，從建立主角重新開始
 }
 
 export const initialSave: SaveData = {
@@ -187,6 +190,7 @@ export const initialSave: SaveData = {
   goldenBest: 0,
   titles: [],
   daily: null,
+  weekly: null,
   skillBossCleared: [],
   hintsSeen: [],
 };
@@ -221,8 +225,27 @@ function grantHero(s: SaveData, r: SummonResult): { patch: Pick<SaveData, 'heroe
   };
 }
 
+const isPlainObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
+
+// 依預設值的型別檢查存檔欄位：型別不對（例如 heroes: null、gold: "abc"）就用預設值，
+// 避免壞掉的存檔（匯入的存檔碼、手動修改、資料損毀）讓整個遊戲白畫面
+export function conform<T>(fallback: T, value: unknown): T {
+  if (Array.isArray(fallback)) return (Array.isArray(value) ? value : fallback) as T;
+  if (typeof fallback === 'number') return (typeof value === 'number' && Number.isFinite(value) ? value : fallback) as T;
+  if (typeof fallback === 'string' || typeof fallback === 'boolean') return (typeof value === typeof fallback ? value : fallback) as T;
+  if (isPlainObject(fallback)) {
+    if (!isPlainObject(value)) return fallback;
+    // 動態 key 的紀錄（錯題、圖鑑、各區進度…）只要求是物件
+    if (Object.keys(fallback).length === 0) return value as T;
+    const out: Record<string, unknown> = { ...value };
+    for (const k of Object.keys(fallback)) out[k] = conform((fallback as Record<string, unknown>)[k], value[k]);
+    return out as T;
+  }
+  return value as T;
+}
+
 export function migrateSave(persisted: unknown, version: number): SaveData {
-  const data = (persisted ?? {}) as Partial<SaveData> & { hero?: HeroId };
+  const data = (isPlainObject(persisted) ? persisted : {}) as Partial<SaveData> & { hero?: HeroId };
   // 每次升級都只「新增欄位」，所以用預設值補齊即可。
   // v1 → v2：舊玩家已經玩過，視為看過新手引導。
   // v2 → v3：錯題補上 SRS 欄位（立即可複習）。
@@ -251,10 +274,15 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
+  // 型別檢查：壞掉的欄位改回預設值（每日任務可以是 null，其他物件要長得對）
+  Object.assign(migrated, conform(initialSave, migrated));
+  if (migrated.daily !== null && !(isPlainObject(migrated.daily) && Array.isArray(migrated.daily.tasks))) migrated.daily = null;
+  if (migrated.weekly !== null && !(isPlainObject(migrated.weekly) && Array.isArray(migrated.weekly.tasks))) migrated.weekly = null;
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
-  migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
-    key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 },
-  ]));
+  migrated.mistakes = Object.fromEntries(Object.entries(migrated.mistakes)
+    .filter(([, m]) => isPlainObject(m) && isPlainObject(m.question))
+    .map(([key, m]) => [key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 }]));
+  migrated.codex = Object.fromEntries(Object.entries(migrated.codex).filter(([, c]) => isPlainObject(c) && isPlainObject(c.question)));
   // 舊玩家補發已打過關卡的經驗值（每關約 20，後面的區域較多）
   if (version >= 1 && version < 10 && !data.player) {
     const regionIds = Object.keys(migrated.bestStage);
@@ -265,6 +293,9 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.heroes = migrated.heroes.filter(isHeroId);
   if (migrated.heroes.length === 0) migrated.heroes = ['knight'];
   migrated.party = migrated.party.filter(id => id === 'player' || migrated.heroes.includes(id));
+  if (migrated.party.length === 0) migrated.party = [migrated.character ? 'player' : migrated.heroes[0]];
+  migrated.equipment = migrated.equipment.filter(e => isPlainObject(e) && typeof e.uid === 'string' && !!equipDef(e.defId));
+  migrated.equipped = Object.fromEntries(Object.entries(migrated.equipped).filter(([, uid]) => migrated.equipment.some(e => e.uid === uid)));
   return migrated;
 }
 
@@ -274,6 +305,26 @@ export function dueMistakes(mistakes: Record<string, MistakeRecord>, now: number
     .sort((a, b) => a.dueAt - b.dueAt)
     .slice(0, limit);
 }
+
+// 讀檔時存檔不是合法的 JSON（資料損毀）：先把原始內容備份到另一個 key 並記下來，
+// 而不是默默開新檔把舊資料覆蓋掉；遊戲會提示玩家（見 SaveRecoveryNotice）
+export const SAVE_RECOVERY_KEY = 'english-rpg-save-recovery';
+const safeStorage: StateStorage = {
+  getItem: (name) => {
+    try {
+      const raw = localStorage.getItem(name);
+      if (raw === null) return null;
+      try { JSON.parse(raw); return raw; } catch {
+        const backupKey = `${name}-corrupt-${Date.now()}`;
+        localStorage.setItem(backupKey, raw);
+        localStorage.setItem(SAVE_RECOVERY_KEY, backupKey);
+        return null;
+      }
+    } catch { return null; } // 無痕模式等無法使用 localStorage
+  },
+  setItem: (name, value) => { try { localStorage.setItem(name, value); } catch { /* 空間不足等 */ } },
+  removeItem: (name) => { try { localStorage.removeItem(name); } catch { /* 略過 */ } },
+};
 
 export const useSaveStore = create<SaveData & SaveActions>()(
   persist(
@@ -500,13 +551,36 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         // 每日任務：換日時重新抽任務、計算連續登入
         ensureDaily: () => {
-          const next = refreshDaily(get().daily ?? undefined, localDate());
-          if (next !== get().daily) set({ daily: next });
+          const today = localDate();
+          const prev = get().daily;
+          const next = refreshDaily(prev ?? undefined, today);
+          const prevWeekly = get().weekly;
+          const weekly = refreshWeekly(prevWeekly, today);
+          if (next !== prev || weekly !== prevWeekly) set({ daily: next, weekly });
+          // 新的一天第一次上線（或這週的任務剛建立）：每週任務的「上線天數」+1
+          if (next !== prev || weekly !== prevWeekly) set(s => ({ weekly: s.weekly ? applyDailyEvent(s.weekly, 'login', 1) : s.weekly }));
         },
 
         trackDaily: (event, amount = 1) => {
           get().ensureDaily();
-          set(s => ({ daily: s.daily ? applyDailyEvent(s.daily, event, amount) : s.daily }));
+          set(s => ({
+            daily: s.daily ? applyDailyEvent(s.daily, event, amount) : s.daily,
+            weekly: s.weekly ? applyDailyEvent(s.weekly, event, amount) : s.weekly,
+          }));
+        },
+
+        claimWeekly: (id) => {
+          get().ensureDaily();
+          const s = get();
+          const task = s.weekly?.tasks.find(t => t.id === id);
+          const def = weeklyDef(id);
+          if (!task || !def || task.claimed || task.progress < def.goal) return false;
+          set({
+            gold: s.gold + def.reward.gold,
+            tickets: s.tickets + def.reward.tickets,
+            weekly: { ...s.weekly!, tasks: s.weekly!.tasks.map(t => (t.id === id ? { ...t, claimed: true } : t)) },
+          });
+          return true;
         },
 
         claimDaily: (id) => {
@@ -611,14 +685,17 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
         // 只保留設定、新手引導進度與主角
-        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, hintsSeen: s.hintsSeen, character: s.character, storySeen: s.storySeen, titles: s.titles })),
+        // 重置：全部歸零（主角、劇情、提示、設定都清掉），回到建立主角
+        resetProgress: () => set({ ...initialSave }),
       };
     },
     {
       name: 'english-rpg-save',
       version: SAVE_VERSION,
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => safeStorage),
       migrate: migrateSave,
+      // 版本相同時也做型別檢查（migrate 只在版本不同時才會執行）
+      merge: (persisted, current) => ({ ...current, ...migrateSave(persisted, SAVE_VERSION) }),
       partialize: (s) => ({
         character: s.character,
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
@@ -626,7 +703,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
+        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),
     },
   ),

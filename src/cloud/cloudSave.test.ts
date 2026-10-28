@@ -10,7 +10,7 @@ describe('存檔碼', () => {
     const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350 }, version: 14 };
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
     const back = parseSaveCode(exportSaveCode());
-    expect(back).toEqual(save);
+    expect(back?.version).toBe(14);
     expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 7, regions: 2, gold: 350 });
   });
 
@@ -27,5 +27,20 @@ describe('登入連結失敗', () => {
     expect(readLoginError('#error=server_error&error_description=Something+broke')).toContain('Something broke');
     expect(readLoginError('#access_token=abc')).toBeNull();
     expect(readLoginError('')).toBeNull();
+  });
+});
+
+describe('匯入壞掉的存檔碼', () => {
+  it('欄位型別錯誤會改回預設值，不會讓遊戲當掉', () => {
+    const bad = { state: { heroes: null, gold: 'abc', party: 'x', character: { name: '測試' }, player: { level: 'nine' }, equipment: [null, { uid: 1 }] }, version: 14 };
+    const code = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(bad))));
+    const back = parseSaveCode(code)!;
+    const s = back.state as { heroes: string[]; gold: number; party: string[]; player: { level: number }; equipment: unknown[] };
+    expect(s.heroes).toEqual(['knight']);
+    expect(s.gold).toBe(0);
+    expect(s.party.length).toBeGreaterThan(0);
+    expect(s.player.level).toBe(1);
+    expect(s.equipment).toEqual([]);
+    expect(summarize(back.state).gold).toBe(0);
   });
 });

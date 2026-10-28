@@ -1,7 +1,7 @@
 // 每日任務：每天從任務池抽 3 項，完成後領取金幣與召喚券。
 // 也記錄連續登入天數（之後的個人排行榜會用到）。
 
-export type DailyEvent = 'correct' | 'review' | 'boss' | 'star' | 'trial' | 'summon' | 'combo';
+export type DailyEvent = 'correct' | 'review' | 'boss' | 'star' | 'trial' | 'summon' | 'combo' | 'login';
 
 export interface DailyDef {
   id: string;
@@ -90,12 +90,62 @@ export function refreshDaily(prev: DailyState | undefined, today: string): Daily
   return { date: today, tasks: pickDaily(today), streak: continued ? prev.streak + 1 : 1, milestones: continued ? prev.milestones ?? [] : [] };
 }
 
-// combo 類任務記錄最大值，其他累加
-export function applyDailyEvent(state: DailyState, event: DailyEvent, amount: number): DailyState {
+// ---------- 每週任務：每週一換新，目標比較大、獎勵比較多 ----------
+export const WEEKLY_POOL: DailyDef[] = [
+  { id: 'w_correct150', event: 'correct', goal: 150, label: '本週答對 150 題', reward: { gold: 400, tickets: 3 } },
+  { id: 'w_review15', event: 'review', goal: 15, label: '本週複習 15 個錯題', reward: { gold: 300, tickets: 3 } },
+  { id: 'w_boss5', event: 'boss', goal: 5, label: '本週打倒 5 隻地圖頭目', reward: { gold: 400, tickets: 3 } },
+  { id: 'w_star6', event: 'star', goal: 6, label: '本週拿到 6 顆新星星', reward: { gold: 300, tickets: 3 } },
+  { id: 'w_trial3', event: 'trial', goal: 3, label: '本週完成 3 項真名考驗', reward: { gold: 300, tickets: 2 } },
+  { id: 'w_combo25', event: 'combo', goal: 25, label: '本週打出 25 combo', reward: { gold: 300, tickets: 3 } },
+  { id: 'w_days5', event: 'login', goal: 5, label: '本週有 5 天上線練習', reward: { gold: 500, tickets: 5 } },
+];
+export const WEEKLY_COUNT = 3;
+
+export interface WeeklyState {
+  week: string;      // 這一週星期一的日期 YYYY-MM-DD
+  tasks: DailyTask[];
+}
+
+export const weeklyDef = (id: string) => WEEKLY_POOL.find(d => d.id === id);
+// 每日或每週任務的定義
+export const taskDef = (id: string) => dailyDef(id) ?? weeklyDef(id);
+
+// 這一週的星期一
+export function weekStart(date: string): string {
+  const d = new Date(`${date}T12:00:00`);
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return localDate(d);
+}
+
+// 每週固定抽到「上線天數」，另外兩項依週次決定
+export function pickWeekly(week: string): DailyTask[] {
+  let h = 7;
+  for (const ch of week) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const pool = WEEKLY_POOL.filter(d => d.event !== 'login');
+  const picked: DailyTask[] = [{ id: 'w_days5', progress: 0, claimed: false }];
+  while (picked.length < WEEKLY_COUNT && pool.length) {
+    h = (h * 1103515245 + 12345) >>> 0;
+    picked.push({ id: pool.splice(h % pool.length, 1)[0].id, progress: 0, claimed: false });
+  }
+  return picked;
+}
+
+export function refreshWeekly(prev: WeeklyState | null | undefined, today: string): WeeklyState {
+  const week = weekStart(today);
+  if (prev && prev.week === week) return prev;
+  return { week, tasks: pickWeekly(week) };
+}
+
+export const claimable = (tasks: DailyTask[] | undefined) =>
+  (tasks ?? []).some(t => !t.claimed && t.progress >= (taskDef(t.id)?.goal ?? Infinity));
+
+// combo 類任務記錄最大值，其他累加（每日、每週共用）
+export function applyDailyEvent<T extends { tasks: DailyTask[] }>(state: T, event: DailyEvent, amount: number): T {
   return {
     ...state,
     tasks: state.tasks.map(t => {
-      const def = dailyDef(t.id);
+      const def = taskDef(t.id);
       if (!def || def.event !== event || t.claimed) return t;
       const progress = event === 'combo' ? Math.max(t.progress, amount) : t.progress + amount;
       return { ...t, progress: Math.min(def.goal, progress) };

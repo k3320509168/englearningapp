@@ -6,7 +6,8 @@ import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question } from '../game/types';
-import { createRecognizer, isSpeechRecognitionSupported } from '../game/speech';
+import { createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported } from '../game/speech';
+import { spellingExtra } from '../game/questionHelp';
 import { HINTS, pickHint } from '../game/hints';
 import { skillReady } from '../game/party';
 import type { Recognizer } from '../game/speech';
@@ -18,6 +19,7 @@ import { BattleStatusBar, ItemMenu } from './BattleExtras';
 import { mapName, stageLabel } from '../game/regions';
 import { BossQuestionTag, CastConfirm, PartyBar, SkillButtons, TimerBars } from './BattleParty';
 import { useBattleClock } from './useBattleClock';
+import { finishBattle } from '../game/startLevel';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -41,8 +43,12 @@ export default function BattleHUD() {
     shield: s.shield,
   })));
   const openModal = useUiStore(s => s.openModal);
+  const retreatAsk = useUiStore(s => s.retreatAsk);
+  const setRetreatAsk = useUiStore(s => s.setRetreatAsk);
   const say = useSpeak();
   useBattleClock();
+  // 離開戰鬥時關掉撤退確認
+  useEffect(() => () => useUiStore.getState().setRetreatAsk(false), []);
 
   // 新題目出現時自動播放發音（可在設定關閉）
   useEffect(() => {
@@ -57,21 +63,35 @@ export default function BattleHUD() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey || useUiStore.getState().modal) return;
+      // 注音等中文輸入法開著時，瀏覽器給的是 Process 而不是字母：提示玩家切換成英文
+      if (e.key === 'Process' || e.isComposing) { useUiStore.getState().setImeWarning(true); return; }
       const s = useBattleStore.getState();
       const q = s.question;
       const handled = () => e.preventDefault();
 
+      // 撤退確認：Enter 撤退、Esc 取消
+      const ui = useUiStore.getState();
+      if (ui.retreatAsk) {
+        if (e.key === 'Enter') { handled(); ui.setRetreatAsk(false); return s.exitToMap(); }
+        if (e.key === 'Escape') { handled(); return ui.setRetreatAsk(false); }
+        return;
+      }
       if (s.phase === 'casting') {
         if (e.key === 'Escape') { handled(); return s.cancelSkill(); }
         if (e.key === 'Enter') { handled(); return s.confirmSkill(); }
         return;
       }
-      if (e.key === 'Escape') { handled(); return s.exitToMap(); }
+      // Esc 先問要不要撤退，不會一按就離開（戰鬥結束後的結算畫面才直接離開）
+      if (e.key === 'Escape') {
+        handled();
+        return s.phase === 'answering' || s.phase === 'feedback' || s.phase === 'lesson' ? ui.setRetreatAsk(true) : s.exitToMap();
+      }
       if (s.phase === 'lesson' && e.key === 'Enter') { handled(); return s.startBattle(); }
       if (s.phase === 'feedback' && (e.key === 'Enter' || e.key === ' ')) { handled(); return s.continueAfterFeedback(); }
       if ((s.phase === 'monsterDown' || s.phase === 'summary') && e.key === 'Enter') { handled(); return s.nextStage(); }
-      if (s.phase === 'levelClear' && e.key === 'Enter') { handled(); return s.exitToMap(); }
-      if (s.phase === 'gameOver' && e.key === 'Enter') { handled(); return s.retryLevel(); }
+      // 通關：和「回到世界地圖」按鈕走同一個流程（通關劇情、稱號、黃金之路結局）
+      if (s.phase === 'levelClear' && e.key === 'Enter') { handled(); return finishBattle(); }
+      // 失敗畫面不接受 Enter：連按 Enter 的玩家才不會沒看到結算就直接重來
       if (s.phase !== 'answering' || !q) return;
 
       if (e.key === ' ') { handled(); return say(q.speak); }
@@ -81,6 +101,7 @@ export default function BattleHUD() {
       if (e.key === 'Enter' && (q.type === 'spell' || q.type === 'fill')) { handled(); return s.submitTyped(); }
       if (/^[a-zA-Z]$/.test(e.key)) {
         handled();
+        useUiStore.getState().setImeWarning(false);
         if (q.type === 'choice') return s.chooseOption(e.key);
         return s.inputLetter(e.key);
       }
@@ -95,7 +116,7 @@ export default function BattleHUD() {
   return (
     <section className="hud" aria-live="polite">
       <header className="hud-top">
-        <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().exitToMap()} aria-label="撤退回地圖">←<span className="btn-label"> 撤退</span></button>
+        <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setRetreatAsk(true)} aria-label="撤退回地圖">←<span className="btn-label"> 撤退</span></button>
         <span className="hud-stage">
           {stageName}<small> {stageNo}/{stageCount}</small>
           {shield && <span className="shield-badge" title="護盾：下一次答錯不扣血">🛡️</span>}
@@ -108,6 +129,13 @@ export default function BattleHUD() {
         </div>
       </header>
 
+      {retreatAsk && (
+        <div className="retreat-ask" role="dialog" aria-label="確定撤退">
+          <span>確定要撤退回地圖嗎？目前的關卡進度、金幣和經驗都會保留。</span>
+          <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => setRetreatAsk(false)}>繼續戰鬥 Esc</button>
+          <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { setRetreatAsk(false); useBattleStore.getState().exitToMap(); }}>撤退 ⏎</button>
+        </div>
+      )}
       <BattleStatusBar />
       <PartyBar />
       <TimerBars />
@@ -122,10 +150,14 @@ export default function BattleHUD() {
 }
 
 function QuestionCard({ question }: { question: Question }) {
+  const extra = spellingExtra(question);
+  // 聽力題（題目只有聲音）：這台裝置沒有英文語音時改成顯示單字，不然完全無法作答
+  const silent = question.desc.startsWith('🎧') && !hasEnglishVoice();
   return (
     <div className="question-card">
       <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>
-      <p className="q-desc">{question.desc}</p>
+      <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>
+      {silent && question.speak && <p className="q-silent">這台裝置沒有英文語音，改成顯示單字：<b>{question.speak}</b></p>}
     </div>
   );
 }
@@ -178,9 +210,16 @@ function BattleHint({ question }: { question: Question }) {
   );
 }
 
+function ImeWarning() {
+  const on = useUiStore(s => s.imeWarning);
+  if (!on) return null;
+  return <p className="ime-warning" role="alert">⌨️ 偵測到中文輸入法（注音），英文字母打不進去。請按 <b>Shift</b> 或切換成英文輸入再作答。</p>;
+}
+
 function AnswerPanel({ question }: { question: Question }) {
   return (
     <>
+      <ImeWarning />
       <BattleHint question={question} />
       <SkillButtons />
       <AssistBanner question={question} />
@@ -255,6 +294,12 @@ function ChoiceAnswer({ question }: { question: Question }) {
   );
 }
 
+// 改用拼寫：眼前這題立刻轉成拼寫，並打開「口說題改成拼寫題」設定（之後的關卡也適用）
+function switchVoiceToSpelling() {
+  useSaveStore.getState().updateSettings({ voiceAsSpelling: true });
+  useBattleStore.getState().switchToSpelling();
+}
+
 function VoiceAnswer({ question }: { question: Question }) {
   const [listening, setListening] = useState(false);
   const [error, setError] = useState('');
@@ -266,9 +311,11 @@ function VoiceAnswer({ question }: { question: Question }) {
     recognizer.current = createRecognizer({
       onStart: () => { setListening(true); setError(''); },
       onResult: (t) => useBattleStore.getState().submitVoice(t),
-      onError: (err) => setError(
-        err === 'not-allowed' ? '請允許瀏覽器使用麥克風' :
-        err === 'no-speech' ? '沒有聽到聲音，再試一次' : `辨識失敗（${err}），再試一次`),
+      onError: (err) => {
+        // 麥克風被擋下：這場戰鬥的口說題改成拼寫，之後的關卡也是（設定可以再改回來）
+        if (err === 'not-allowed' || err === 'service-not-allowed' || err === 'audio-capture') return switchVoiceToSpelling();
+        setError(err === 'no-speech' ? '沒有聽到聲音，再試一次' : `辨識失敗（${err}），再試一次`);
+      },
       onEnd: () => setListening(false),
     });
     const onKey = (e: KeyboardEvent) => {
@@ -295,6 +342,7 @@ function VoiceAnswer({ question }: { question: Question }) {
       </button>
       {error && <p className="voice-error">{error}</p>}
       <p className="kbd-hint">也可以按 Enter 開始錄音</p>
+      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={switchVoiceToSpelling}>⌨️ 不方便說話？改用拼寫作答</button>
     </div>
   );
 }

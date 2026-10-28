@@ -5,7 +5,7 @@ import { beginLevel, continueJourney } from '../game/startLevel';
 import { continueTarget, nextStep } from '../game/notices';
 import { useNotices } from './useNotices';
 import { dailyDef } from '../game/daily';
-import { mapName, stageLabel } from '../game/regions';
+import { MAP_SIZE, mapName, stageLabel } from '../game/regions';
 import { GOLDEN_STAGE_COUNT } from '../game/golden';
 import { keepFocus } from './keepFocus';
 
@@ -43,6 +43,12 @@ export default function MapLevelBar() {
           </button>
         ) : null}
       </div>
+      {/* 前 10 關都可以做程度測驗：英文好的玩家隨時可以跳到後面的區域 */}
+      {unlockedIndex === 0 && (progress[REGIONS[0].id] ?? 0) < MAP_SIZE && (
+        <button className="placement-entry" onMouseDown={keepFocus} onClick={() => openModal('placement')}>
+          🧭 英文不錯？<b>做程度測驗</b>，直接跳到適合你的區域
+        </button>
+      )}
       {daily && (
         <div className="today-card" aria-label="今天的冒險">
           <span className="today-title">📅 今天的冒險 <small className="muted">約 5 分鐘</small></span>

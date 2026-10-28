@@ -31,8 +31,8 @@ const BASE_POOL: QuestionPool = {
     ],
     boss: [
       { type: "voice", desc: "請唸出單字：開始", ans: "START", speak: "start", accept: ["STAR"] },
-      { type: "voice", desc: "請唸出單字：謝謝", ans: "THANK", speak: "thank you", accept: ["THANKS"] },
-      { type: "voice", desc: "請唸出單字：早安", ans: "MORNING", speak: "good morning" },
+      { type: "voice", desc: "請唸出單字：謝謝", ans: "THANK", speak: "thank you", accept: ["THANKS", "THANKYOU"] },
+      { type: "voice", desc: "請唸出單字：早安", ans: "MORNING", speak: "good morning", accept: ["GOODMORNING"] },
       { type: "voice", desc: "請唸出單字：家庭", ans: "FAMILY", speak: "family" },
       { type: "spell", desc: "【守門試煉】請拼出：星期三", ans: "WEDNESDAY", speak: "Wednesday" }
     ]

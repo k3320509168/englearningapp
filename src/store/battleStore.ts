@@ -4,7 +4,7 @@ import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
   ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT, shuffleArray,
-  applyLetter, buildAssist, checkChoice, checkTypedAnswer, easeOrder, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
+  applyLetter, buildAssist, checkChoice, checkTypedAnswer, easeOrder, voiceFallback, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
 } from '../game/battle';
 import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
@@ -146,6 +146,8 @@ interface BattleState {
   inputLetter: (letter: string) => void;
   backspace: () => void;
   submitTyped: () => void;
+  // 沒有麥克風或不方便說話：這場戰鬥的口說題都改成拼寫（眼前這題立刻轉換）
+  switchToSpelling: () => void;
   chooseOption: (letter: string) => void;
   submitVoice: (transcripts: string | string[]) => void;
   continueAfterFeedback: () => void;
@@ -748,6 +750,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const { question, typed } = get();
       if (!canAnswer() || !question || (question.type !== 'spell' && question.type !== 'fill')) return;
       set({ typed: applyLetter(question, typed, letter) });
+    },
+
+    switchToSpelling: () => {
+      const prev = questionTransform;
+      questionTransform = q => voiceFallback(prev(q));
+      const s = get();
+      if (s.phase !== 'answering' || !s.original || s.question?.type !== 'voice') return;
+      const converted = prepare(s.original);
+      // 句子型的口說題沒辦法改成拼寫：直接換下一題（不算答錯）
+      if (converted.type === 'voice') { set({ ...nextQuestion(), typed: '', assist: null, assistSource: null }); return; }
+      set({ question: converted, typed: '', assist: null, assistSource: null, questionSeq: s.questionSeq + 1 });
     },
 
     // 送出拼寫：按 Enter 或「送出」按鈕才判定

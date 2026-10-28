@@ -22,6 +22,13 @@ const PREFERRED = [
   /karen|daniel|moira|tessa|serena/i,                                     // 其他英文腔
 ];
 
+// 這台裝置有沒有英文語音（沒有的話聽力題要改成顯示單字）。語音清單還沒載入時先當作有
+export function hasEnglishVoice(): boolean {
+  if (!('speechSynthesis' in window)) return false;
+  const all = window.speechSynthesis.getVoices();
+  return all.length === 0 || all.some(v => v.lang.replace('_', '-').toLowerCase().startsWith('en'));
+}
+
 export function englishVoices(): SpeechSynthesisVoice[] {
   if (!('speechSynthesis' in window)) return [];
   return window.speechSynthesis.getVoices()

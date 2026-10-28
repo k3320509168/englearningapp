@@ -70,7 +70,7 @@ export default function PlacementModal() {
           </div>
         </>
       ) : (
-        <QuizRunner key={level} questions={questions}
+        <QuizRunner key={level} questions={questions} lastLabel="繼續"
           label={i => `${REGIONS[level].name}・第 ${i + 1} / ${questions.length} 題`} onAnswer={onAnswer} />
       )}
     </Modal>

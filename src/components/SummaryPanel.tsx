@@ -38,8 +38,12 @@ export default function SummaryPanel() {
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
   const ref = useRef<HTMLDivElement>(null);
-  // 結算出現時捲到畫面中，手機或小螢幕上才不會漏看
-  useEffect(() => { ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, [phase]);
+  // 結算出現時捲到畫面中，手機或小螢幕上才不會漏看。
+  // 先等最後一擊與倒下動畫播完再捲，不然手機上會直接跳走、看不到打在 Boss 身上的那一下
+  useEffect(() => {
+    const t = window.setTimeout(() => ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 1600);
+    return () => window.clearTimeout(t);
+  }, [phase]);
 
   // 區段結算只看這 10 關；通關與失敗看整個區域
   const [from] = phase === 'summary' ? segmentRange(stageIdx, stages.length) : [0];

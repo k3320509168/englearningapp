@@ -12,8 +12,14 @@ function ctx(): AudioContext | null {
     master = audio.createGain();
     master.gain.value = volume;
     master.connect(audio.destination);
+    // 切到背景時音效也一起停，回來再恢復
+    document.addEventListener('visibilitychange', () => {
+      if (!audio) return;
+      if (document.hidden) void audio.suspend();
+      else void audio.resume();
+    });
   }
-  if (audio.state === 'suspended') void audio.resume();
+  if (audio.state === 'suspended' && !document.hidden) void audio.resume();
   return audio;
 }
 

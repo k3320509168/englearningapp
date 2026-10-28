@@ -94,7 +94,15 @@ export default class MapScene extends Phaser.Scene {
     const unsubscribeSave = useSaveStore.subscribe((s, prev) => {
       if (s.character !== prev.character || s.unlockedIndex !== prev.unlockedIndex) this.scene.restart();
     });
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { unsubscribe(); unsubscribeSave(); });
+    // 視窗（英雄、設定…）開著時，地圖不接受點擊；不然點視窗裡的按鈕會穿透到後面的旗幟，直接跳進關卡
+    this.input.enabled = !useUiStore.getState().modal;
+    const unsubscribeUi = useUiStore.subscribe((s, prev) => {
+      if (s.modal === prev.modal) return;
+      // 關掉視窗的那一下點擊也不要穿透：等下一輪事件再恢復
+      if (s.modal) this.input.enabled = false;
+      else this.time.delayedCall(80, () => { this.input.enabled = !useUiStore.getState().modal; });
+    });
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => { unsubscribe(); unsubscribeSave(); unsubscribeUi(); });
   }
 
   update(_time: number, delta: number) {

@@ -67,6 +67,12 @@ function ctx(): AudioContext | null {
     musicGain = audio.createGain();
     musicGain.connect(audio.destination);
     applyVolume();
+    // 切到別的 App 或分頁時暫停音樂，回來再繼續（不然手機上會一直在背景播）
+    document.addEventListener('visibilitychange', () => {
+      if (!audio) return;
+      if (document.hidden) void audio.suspend();
+      else void audio.resume();
+    });
   }
   return audio;
 }
@@ -93,7 +99,7 @@ export function duckMusic(on: boolean) {
 // 瀏覽器要求使用者互動後才能播放：第一次點擊或按鍵時呼叫
 export function unlockMusic() {
   const ac = ctx();
-  if (ac?.state === 'suspended') void ac.resume();
+  if (ac?.state === 'suspended' && !document.hidden) void ac.resume();
   if (current && timer === undefined && volume > 0) startScheduler();
 }
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   BOSS_QUESTION_STEPS, HITS_TO_KILL, UPGRADES, bossStep, comboMultiplier, computeDamage, goldWithBonus,
-  monsterElement, monsterMaxHp, playerStats, upgradeCost,
+  monsterAttack, monsterElement, monsterMaxHp, playerStats, upgradeCost,
 } from './progression';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
 import { buildParty, gainEnergy, nextAlive, normalizeParty, partyHp } from './party';
@@ -55,6 +55,21 @@ describe('monsters', () => {
     expect(monsterMaxHp(0, 0, true) / BASE_DAMAGE).toBeCloseTo(HITS_TO_KILL.boss);
     expect(monsterMaxHp(30, 0, false)).toBeGreaterThan(monsterMaxHp(0, 0, false));
     expect(monsterMaxHp(0, 4, false)).toBeGreaterThan(monsterMaxHp(0, 0, false));
+  });
+
+  it('get harder every stage and every region, without a jump between regions', () => {
+    for (let r = 0; r < 6; r++) {
+      for (let st = 1; st < 50; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
+      if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(49, r - 1, false)).toBeLessThan(1.05);
+    }
+    // 最後一區的最後一關：沒升級時一般怪約要 3 × 1.4^6 ≈ 22 題的傷害
+    expect(monsterMaxHp(49, 5, false) / BASE_DAMAGE).toBeGreaterThan(20);
+  });
+
+  it('hit harder in later regions', () => {
+    expect(monsterAttack(false, 0, 0)).toBe(20);
+    expect(monsterAttack(true, 0, 0)).toBe(30);
+    expect(monsterAttack(false, 5, 49)).toBeGreaterThan(110);
   });
 
   it('have an element; revenge bosses are dark', () => {

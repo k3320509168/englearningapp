@@ -195,6 +195,7 @@ export async function forgetCloudForReset() {
 }
 
 // ---------- 存檔碼（不需要雲端）：整份存檔轉成一段文字，可以備份或搬到別的瀏覽器 ----------
+// 舊版的存檔碼（base64）；只留給測試確認舊碼還能讀取
 export function exportSaveCode(): string {
   const bytes = new TextEncoder().encode(localStorage.getItem(SAVE_KEY) ?? '');
   // 分段轉換，避免存檔很大時展開參數超過上限
@@ -203,10 +204,22 @@ export function exportSaveCode(): string {
   return btoa(bin);
 }
 
+// 備份檔：整份存檔原樣存成 JSON 檔（存檔碼太長，LINE 等聊天軟體會截斷，所以改成檔案）
+export function exportBackupFile(): { name: string; text: string } {
+  const d = new Date();
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return {
+    name: `english-rpg-backup-${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.json`,
+    text: localStorage.getItem(SAVE_KEY) ?? '',
+  };
+}
+
+// 讀取備份：接受備份檔的 JSON，也接受以前匯出的存檔碼（base64）
 export function parseSaveCode(code: string): { state: Record<string, unknown>; version: number } | null {
   try {
-    const bytes = Uint8Array.from(atob(code.trim()), c => c.charCodeAt(0));
-    const data = JSON.parse(new TextDecoder().decode(bytes));
+    const raw = code.trim();
+    const text = raw.startsWith('{') ? raw : new TextDecoder().decode(Uint8Array.from(atob(raw), c => c.charCodeAt(0)));
+    const data = JSON.parse(text);
     if (!data || typeof data !== 'object' || !data.state || typeof data.state !== 'object' || typeof data.version !== 'number') return null;
     // 補齊欄位、檢查型別，壞掉的欄位改回預設值；轉成目前的存檔版本
     const state = migrateSave(data.state, data.version) as unknown as Record<string, unknown>;

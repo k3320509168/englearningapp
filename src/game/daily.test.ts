@@ -110,16 +110,32 @@ describe('每週任務', () => {
     const w = refreshWeekly(null, '2026-10-28');
     expect(refreshWeekly(w, '2026-11-01')).toBe(w);
     expect(refreshWeekly(w, '2026-11-02').week).toBe('2026-11-02');
-    expect(pickWeekly('2026-10-26').map(t => t.id)).toContain('w_days5');
-    expect(pickWeekly('2026-10-26')).toHaveLength(3);
+    expect(pickWeekly().map(t => t.id)).toContain('w_days5');
+    expect(pickWeekly()).toHaveLength(13);
+  });
+
+  it('舊存檔同一週只有 3 項：補上新任務，保留原本的進度', async () => {
+    const { refreshWeekly } = await import('./daily');
+    const old = { week: '2026-10-26', tasks: [{ id: 'w_days5', progress: 3, claimed: false }, { id: 'w_boss5', progress: 2, claimed: false }] };
+    const w = refreshWeekly(old, '2026-10-28');
+    expect(w.tasks).toHaveLength(13);
+    expect(w.tasks.find(t => t.id === 'w_days5')!.progress).toBe(3);
+    expect(refreshWeekly(w, '2026-10-29')).toBe(w);
+  });
+
+  it('升級與訓練英雄推進「升級」週任務', () => {
+    useSaveStore.setState({ ...initialSave, daily: null, weekly: null });
+    useSaveStore.getState().gainXp(100000);
+    const tasks = useSaveStore.getState().weekly!.tasks;
+    expect(tasks.find(t => t.id === 'w_level5')!.progress).toBe(5);
+    expect(tasks.find(t => t.id === 'w_level15')!.progress).toBe(15);
   });
 
   it('答題同時推進每日與每週任務', () => {
     useSaveStore.setState({ ...initialSave, daily: null, weekly: null });
     useSaveStore.getState().trackDaily('correct', 5);
     const s = useSaveStore.getState();
-    const w = s.weekly!.tasks.find(t => t.id === 'w_correct150');
-    if (w) expect(w.progress).toBe(5);
+    expect(s.weekly!.tasks.find(t => t.id === 'w_correct100')!.progress).toBe(5);
     expect(s.weekly!.tasks.find(t => t.id === 'w_days5')!.progress).toBe(1);
   });
 });

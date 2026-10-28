@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import {
-  cloudEnabled, exportSaveCode, importSave, parseSaveCode, resolveConflict, sendLoginLink, signOut, summarize, uploadNow, useCloudStore,
+  cloudEnabled, exportBackupFile, importSave, parseSaveCode, resolveConflict, sendLoginLink, signOut, summarize, uploadNow, useCloudStore,
 } from '../cloud/cloudSave';
 import type { SaveSummary } from '../cloud/cloudSave';
 import { REGIONS } from '../game/regions';
@@ -90,35 +90,49 @@ export function CloudConflict() {
   );
 }
 
-// 存檔碼：不需要登入的備份方式
-export function SaveCodeSection() {
-  const [code, setCode] = useState('');
-  const [mode, setMode] = useState<'idle' | 'export' | 'import'>('idle');
+// 備份檔：不需要登入的備份方式。下載成一個檔案，換裝置時再讀取這個檔案
+export function BackupSection() {
+  const [loaded, setLoaded] = useState<ReturnType<typeof parseSaveCode> | undefined>(undefined);
   const [msg, setMsg] = useState('');
-  const pasted = mode === 'import' ? parseSaveCode(code) : null;
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const download = () => {
+    const { name, text } = exportBackupFile();
+    const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    setMsg(`已下載「${name}」，請把這個檔案收好（可以存到雲端硬碟或傳給自己）`);
+  };
+
+  const pick = (file: File | undefined) => {
+    setMsg('');
+    if (!file) return;
+    void file.text().then(text => setLoaded(parseSaveCode(text)), () => setLoaded(null));
+  };
 
   return (
     <>
-      <p className="muted">把整份存檔轉成一段文字，可以自己保存備份，或貼到別的瀏覽器還原。</p>
+      <p className="muted">把整份存檔下載成一個備份檔，自己保存；換瀏覽器或裝置時，再讀取這個檔案還原。要在多台裝置之間同步，建議使用上面的雲端存檔。</p>
       <div className="feedback-actions">
-        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { setCode(exportSaveCode()); setMode('export'); setMsg(''); }}>📤 匯出存檔碼</button>
-        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { setCode(''); setMode('import'); setMsg(''); }}>📥 匯入存檔碼</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={download}>📤 下載備份檔</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { setLoaded(undefined); fileRef.current?.click(); }}>📥 讀取備份檔</button>
+        <input ref={fileRef} type="file" accept=".json,application/json,text/plain" hidden
+          onChange={e => { pick(e.target.files?.[0]); e.target.value = ''; }} aria-label="選擇備份檔" />
       </div>
-      {mode !== 'idle' && (
-        <textarea className="save-code" value={code} readOnly={mode === 'export'} onChange={e => setCode(e.target.value)}
-          placeholder="把存檔碼貼在這裡" rows={4} onFocus={e => mode === 'export' && e.target.select()} aria-label="存檔碼" />
-      )}
-      {mode === 'export' && (
-        <button className="btn btn-small btn-primary" onMouseDown={keepFocus}
-          onClick={() => { void navigator.clipboard?.writeText(code).then(() => setMsg('已複製到剪貼簿'), () => setMsg('請手動選取並複製')); }}>📋 複製</button>
-      )}
-      {mode === 'import' && code.trim() && (
-        pasted ? (
-          <>
-            <p>這份存檔：<b>{describe(summarize(pasted.state))}</b>。匯入會取代目前的進度。</p>
-            <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { void importSave(pasted).then(() => { setMsg('匯入完成！'); setMode('idle'); }); }}>確定匯入</button>
-          </>
-        ) : <p className="voice-error">這段存檔碼無法讀取，請確認有完整貼上。</p>
+      {loaded === null && <p className="voice-error">這個檔案無法讀取，請確認選的是遊戲下載的備份檔。</p>}
+      {loaded && (
+        <>
+          <p>這份備份：<b>{describe(summarize(loaded.state))}</b>。讀取會取代目前的進度。</p>
+          <div className="feedback-actions">
+            <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { void importSave(loaded).then(() => { setMsg('讀取完成！'); setLoaded(undefined); }); }}>確定讀取</button>
+            <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => setLoaded(undefined)}>取消</button>
+          </div>
+        </>
       )}
       {msg && <p className="req-ok">{msg}</p>}
     </>

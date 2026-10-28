@@ -816,6 +816,8 @@ button { font: inherit; color: inherit; }
 .party-slot.is-selected { border-color: var(--accent); }
 .hero-collection { display: flex; flex-direction: column; gap: 8px; }
 .collection-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.hero-filter { display: flex; align-items: center; gap: 8px; margin: 6px 0 8px; font-size: 14px; }
+.hero-filter select { min-height: 36px; padding: 4px 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); font-size: 14px; }
 .hero-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
 .hero-tile {
   --rarity: var(--muted);

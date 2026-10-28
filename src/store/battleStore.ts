@@ -337,7 +337,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const warriors = alive.filter(i => party[i].classId === 'warrior');
     const taunt = warriors.length > 0 && alive.length > 1 && random() < TAUNT_CHANCE;
     const target = taunt ? warriors[0] : alive[Math.floor(random() * alive.length)];
-    const baseDamage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx);
+    const baseDamage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx, s.mode === 'skill' ? 25 : s.stageIdx);
     const damage = taunt ? Math.round(baseDamage * (1 - TAUNT_REDUCTION)) : baseDamage;
     const hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
     const wiped = hurt.every(m => !isAlive(m));

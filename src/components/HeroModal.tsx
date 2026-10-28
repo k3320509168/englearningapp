@@ -24,7 +24,7 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, tierUp, trainHero, sellHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, clearParty, tierUp, trainHero, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
@@ -43,7 +43,12 @@ export default function HeroModal() {
   return (
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
       <section className="party-slots">
-        <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">第一位是隊長，負責魔王題</span></p>
+        <div className="collection-head">
+          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">第一位是隊長，負責魔王題</span></p>
+          {party.length > 1 && (
+            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
+          )}
+        </div>
         <div className="party-row">
           {Array.from({ length: PARTY_MAX }, (_, i) => {
             const id = party[i];
@@ -67,13 +72,14 @@ export default function HeroModal() {
           <p className="shop-gold">收集 <b>{heroes.length}/{HEROES.length}</b></p>
           <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚（🎫 {tickets}）</button>
         </div>
-        <div className="tabs tabs-scroll" role="tablist">
-          {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
-            <button key={f} role="tab" aria-selected={filter === f} className={`tab ${filter === f ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)}>
-              {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
-            </button>
-          ))}
-        </div>
+        <label className="hero-filter">
+          顯示
+          <select value={filter} onChange={e => setFilter(e.target.value as Filter)}>
+            {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
+              <option key={f} value={f}>{f === 'owned' ? '已擁有' : f === 'all' ? '全部英雄' : `${f} 品階`}</option>
+            ))}
+          </select>
+        </label>
         <ul className="hero-tiles">
           {character && filter === 'owned' && (
             <li>

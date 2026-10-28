@@ -64,7 +64,7 @@ describe('battle flow', () => {
   it('shows feedback, damages the player and records the mistake', () => {
     answerWrong();
     expect(state().phase).toBe('feedback');
-    expect(state().playerHp).toBe(state().playerMaxHp - monsterAttack(false, 0));
+    expect(state().playerHp).toBe(state().playerMaxHp - monsterAttack(false, 0, state().stageIdx));
     expect(Object.keys(saved().mistakes)).toHaveLength(1);
     state().continueAfterFeedback();
     expect(state().phase).toBe('answering');

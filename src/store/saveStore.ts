@@ -158,6 +158,7 @@ interface SaveActions {
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
+  clearParty: () => void; // 一鍵撤下：只留主角當隊長
   resetProgress: () => void; // 全部歸零，從建立主角重新開始
 }
 
@@ -444,6 +445,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const p = get().player;
           const r = addXp(p.level, p.xp, n);
           set({ player: { ...p, level: r.level, xp: r.xp } });
+          if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
           return r.levelsGained;
         },
 
@@ -571,8 +573,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const prevWeekly = get().weekly;
           const weekly = refreshWeekly(prevWeekly, today);
           if (next !== prev || weekly !== prevWeekly) set({ daily: next, weekly });
-          // 新的一天第一次上線（或這週的任務剛建立）：每週任務的「上線天數」+1
-          if (next !== prev || weekly !== prevWeekly) set(s => ({ weekly: s.weekly ? applyDailyEvent(s.weekly, 'login', 1) : s.weekly }));
+          // 新的一天第一次上線（或這週的任務剛建立）：每週任務的「上線天數」+1。
+          // 同一週只是補上新任務時不算，避免重複加
+          if (next !== prev || weekly.week !== prevWeekly?.week) set(s => ({ weekly: s.weekly ? applyDailyEvent(s.weekly, 'login', 1) : s.weekly }));
         },
 
         trackDaily: (event, amount = 1) => {
@@ -645,7 +648,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const level = s.heroLevel[id] ?? 1;
           if (level >= Math.min(MAX_LEVEL, s.player.level)) return false;
           const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(heroDef(id).rarity);
-          return purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
+          const ok = purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
+          if (ok) get().trackDaily('levelup');
+          return ok;
         },
         buyTicket: () => purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1 })),
 
@@ -697,6 +702,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         }),
 
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
+
+        // 隊伍至少要有一人：有主角就留主角，否則留目前的隊長
+        clearParty: () => set(s => ({ party: s.character ? ['player'] : s.party.slice(0, 1) })),
 
         // 只保留設定、新手引導進度與主角
         // 重置：全部歸零（主角、劇情、提示、設定都清掉），回到建立主角

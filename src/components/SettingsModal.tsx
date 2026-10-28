@@ -9,7 +9,7 @@ import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
-import { CloudLoginError, CloudSection, SaveCodeSection } from './CloudSave';
+import { CloudLoginError, CloudSection, BackupSection } from './CloudSave';
 import { forgetCloudForReset } from '../cloud/cloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
@@ -119,7 +119,7 @@ export default function SettingsModal() {
 
       <section className="settings-group">
         <h3>💾 存檔備份</h3>
-        <SaveCodeSection />
+        <BackupSection />
       </section>
 
       <section className="settings-group danger">

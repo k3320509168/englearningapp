@@ -121,12 +121,15 @@ export function computeDamage(d: DamageInput): number {
 }
 
 // ---------- 怪物強度 ----------
-// 以「沒有 Combo、沒有升級時要答對幾題」來設計：一般怪約 2.5 題、頭目約 12 題。
-// 關卡與區域越後面越硬，所以升級攻擊力仍然有意義；Combo 與魔王題倍率可以大幅縮短。
-export const HITS_TO_KILL = { normal: 2.5, boss: 12 };
+// 以「區域第一關、沒有 Combo、沒有升級時要答對幾題」來設計：一般怪約 3 題、頭目約 14 題。
+// 之後每一關都比前一關硬一點，打完一整個區域（50 關）強度 ×1.4，下一個區域再接著往上。
+// 主角升級只能追上一部分，越後面越需要升級攻擊力、裝備、轉職、技能與 Combo 才打得動。
+export const HITS_TO_KILL = { normal: 3, boss: 14 };
+export const REGION_GROWTH = 1.4;
+export const STAGES_PER_REGION = 50;
 
 export function monsterGrowth(stageIdx: number, levelIdx: number): number {
-  return (1 + stageIdx * 0.02) * (1 + levelIdx * 0.3);
+  return REGION_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION);
 }
 
 // 關卡變化：菁英怪有護盾，要答對 ELITE_SHIELD 題打破才會受傷（答錯會恢復一層）；
@@ -144,7 +147,11 @@ export function monsterMaxHp(stageIdx: number, levelIdx: number, isBoss: boolean
 // 打倒頭目可得到召喚券（抽英雄用）
 export const TICKETS = { bossKill: 1, revengeKill: 2, levelClear: 5 };
 
-export const monsterAttack = (isBoss: boolean, levelIdx = 0) => Math.round((isBoss ? 15 : 10) * (1 + levelIdx * 0.2));
+// 怪物攻擊（答錯時打一位隊員）：同樣隨區域與關卡變強。
+// 第一區約 20 次答錯才會全滅（4 人隊伍），最後一區沒升級生命時約 9 次，所以生命升級與藥水越後面越重要
+export const ATTACK_GROWTH = 1.35;
+export const monsterAttack = (isBoss: boolean, levelIdx = 0, stageIdx = 0) =>
+  Math.round((isBoss ? 30 : 20) * ATTACK_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION));
 
 // 怪物屬性：依區域與關卡輪替，讓玩家有機會換隊伍打剋制
 const ELEMENT_ORDER: Element[] = ['wood', 'water', 'fire', 'earth', 'metal', 'light', 'dark'];

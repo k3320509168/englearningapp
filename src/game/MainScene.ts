@@ -17,7 +17,8 @@ import { useSaveStore } from '../store/saveStore';
 import { materialIcon } from './equipment';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
-import { PixelBar, burst, hitStop, labelStyle, numStyle, popText, screenFlash, slashArc, slowMo, textStyle } from './fx';
+import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shockwave, slashArc, slowMo, textStyle } from './fx';
+import { chargeColor, comboFx, hitPitch } from './comboFx';
 import { sfx } from './sfx';
 
 // 戰鬥畫面：只負責顯示、動畫與音效。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
@@ -54,13 +55,6 @@ const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
 // 傷害可能高達數億：加上千分位
 const formatDamage = (n: number) => Math.round(n).toLocaleString('en-US');
 
-// Combo 稱號：越高越華麗
-function comboTier(combo: number) {
-  if (combo >= 20) return { label: 'UNSTOPPABLE!', color: '#ff5af0' };
-  if (combo >= 10) return { label: 'AWESOME!', color: '#ff7a3d' };
-  if (combo >= 5) return { label: 'GREAT!', color: '#ffcd4b' };
-  return { label: '', color: '#ffffff' };
-}
 
 export default class MainScene extends Phaser.Scene {
   private layers: { sprite: Phaser.GameObjects.TileSprite; speed: number }[] = [];
@@ -90,6 +84,9 @@ export default class MainScene extends Phaser.Scene {
   private shownGold = 0;
   private region = 0;
   private busy = false; // 攻擊動畫進行中，避免下一隻怪物太早登場
+  private chargeGlow?: Phaser.GameObjects.Ellipse; // 拼寫題的蓄力光
+  private comboPulse?: Phaser.Tweens.Tween;
+  private flameTimer?: Phaser.Time.TimerEvent;
 
   constructor() { super('MainScene'); }
 
@@ -137,6 +134,11 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     const s = useBattleStore.getState();
+    // 場景重開時物件已被銷毀，特效狀態歸零
+    this.chargeGlow = undefined;
+    this.comboPulse = undefined;
+    this.flameTimer = undefined;
+    this.flameLevel = 0;
     // 黃金之路固定用王城的背景
     this.region = s.mode !== 'normal' ? LEVELS.length - 1 : Math.max(0, LEVELS.indexOf(s.levelKey));
     registerSprites(this);
@@ -228,10 +230,16 @@ export default class MainScene extends Phaser.Scene {
       const progress = s.typed.length / s.question.ans.length;
       sfx.key(progress);
       const f = this.striker(s);
-      const spark = this.add.image(f.homeX + 40, f.homeY - 70, 'spark').setScale(3 + progress * 3).setDepth(30);
+      const color = chargeColor(progress);
+      const spark = this.add.image(f.homeX + 40, f.homeY - 70, 'spark').setScale(3 + progress * 3).setTint(color).setDepth(30);
       this.tweens.add({ targets: spark, scale: 0, angle: 90, duration: 220, onComplete: () => spark.destroy() });
       this.tweens.add({ targets: f.sprite, scaleX: f.scale * 1.08, duration: 50, yoyo: true });
+      // 蓄力：光圈隨進度變大、換色，光點往角色身上收聚
+      gather(this, f.homeX + 10, f.homeY - 50, color, 3 + Math.round(progress * 6));
+      this.setCharge(f, progress, color);
     }
+    // 換題或打錯字被清掉：蓄力散掉
+    if (prev && (s.question !== prev.question || s.typed.length < prev.typed.length)) this.setCharge(null, 0, 0);
 
     if (s.event && s.event !== prev?.event) this.playEvent(s.event, s);
 
@@ -243,6 +251,7 @@ export default class MainScene extends Phaser.Scene {
 
   private showCombo(s: State, prevCombo: number) {
     if (s.combo < 2) {
+      this.setFlames(0);
       if (prevCombo >= 2) {
         // Combo 中斷：數字碎裂往下掉
         this.tweens.add({ targets: [this.comboNum, this.comboLabel], alpha: 0, y: '+=20', duration: 250, onComplete: () => {
@@ -252,16 +261,19 @@ export default class MainScene extends Phaser.Scene {
       }
       return;
     }
-    const tier = comboTier(s.combo);
+    const tier = comboFx(s.combo);
     const mult = comboMultiplier(s.combo, s.stats.comboStep).toFixed(1);
     this.comboNum.setText(`${s.combo}`).setColor(tier.color).setAlpha(1).setY(150);
     this.comboLabel.setText(`COMBO  x${mult}${tier.label ? `  ${tier.label}` : ''}`).setColor(tier.color).setAlpha(1).setY(190);
-    this.comboNum.setScale(1.6);
+    // 等級越高，數字的光暈越強、彈出越大
+    this.comboNum.setShadow(0, 0, tier.color, tier.tier * 4, true, true);
+    this.comboNum.setScale(1.6 + tier.tier * 0.1);
     this.tweens.add({ targets: this.comboNum, scale: 1, duration: 180, ease: 'Back.easeOut' });
-    if (comboTier(prevCombo).label !== tier.label && tier.label) {
+    if (comboFx(prevCombo).tier !== tier.tier && tier.label) {
       sfx.combo(s.combo);
-      popText(this, 400, 150, tier.label, 46, tier.color, { rise: 30, dur: 900 });
+      this.announceTier(tier.label, tier.color, tier.tier);
     }
+    this.setFlames(tier.flames ? tier.tier : 0);
   }
 
   private playEvent(event: BattleEvent, s: State) {
@@ -417,13 +429,37 @@ export default class MainScene extends Phaser.Scene {
     if (event.fast) popText(this, f.homeX + 40, f.homeY - 175, event.fast >= 1.5 ? 'FAST! ×1.5' : 'QUICK ×1.2', 22, '#7fffd4', { rise: 30, dur: 700 });
     this.busy = true;
     f.idle?.pause();
-    f.sprite.setTexture(f.attackKey);
-    f.container.setDepth(25); // 衝刺時畫在其他隊員前面
-    sfx.slash();
-
     this.tweens.killTweensOf(f.container);
+    const fx = comboFx(s.combo);
+    const glow = fx.tier ? hex(fx.color) : chargeColor(1);
+
+    // 蓄力：短暫蹲低、光點收聚、閃一下（0.1 秒，不拖慢答題節奏）
+    this.setCharge(null, 0, 0);
+    f.sprite.setScale(f.scale * 1.14, f.scale * 0.84);
+    gather(this, f.homeX + 10, f.homeY - 50, glow, 8 + fx.tier * 3, 90);
+    sfx.release(fx.tier);
+    const flash = this.add.image(f.homeX + 10, f.homeY - 50, 'spark').setScale(6 + fx.tier * 2).setTint(glow).setDepth(30).setAlpha(0.9);
+    this.tweens.add({ targets: flash, scale: 0, angle: 180, duration: 160, onComplete: () => flash.destroy() });
+
+    const dashDur = Math.max(60, 90 + (PLAYER_X - f.homeX) * 0.4 - fx.tier * 8);
+    this.time.delayedCall(100, () => {
+      // 釋放：彈回原形往前衝，combo 越高背後殘影越多
+      f.sprite.setScale(f.scale).setTexture(f.attackKey);
+      f.container.setDepth(25); // 衝刺時畫在其他隊員前面
+      sfx.slash();
+      const fromX = f.container.x;
+      const fromY = f.container.y;
+      for (let i = 0; i < fx.afterimages; i++) {
+        const t = (i + 1) / (fx.afterimages + 1);
+        afterimage(this, f.sprite, fromX + (MONSTER_X - 150 - fromX) * t, fromY + (GROUND_Y - fromY) * t, fx.slashColor, dashDur * t);
+      }
+      this.dash(f, event, s, damage, crit, killed, dashDur);
+    });
+  }
+
+  private dash(f: Fighter, event: BattleEvent, s: State, damage: number, crit: boolean, killed: boolean, dashDur: number) {
     this.tweens.add({
-      targets: f.container, x: MONSTER_X - 150, y: GROUND_Y, duration: 90 + (PLAYER_X - f.homeX) * 0.4, ease: 'Quad.easeIn',
+      targets: f.container, x: MONSTER_X - 150, y: GROUND_Y, duration: dashDur, ease: 'Quad.easeIn',
       onComplete: () => {
         if (event.kind === 'shieldHit') this.shieldImpact(damage);
         else this.impact(damage, crit, killed, s);
@@ -445,10 +481,22 @@ export default class MainScene extends Phaser.Scene {
     const sameStage = () => useBattleStore.getState().stageIdx === s.stageIdx;
     const hitX = MONSTER_X - 20;
     const hitY = GROUND_Y - (this.monsterSprite.displayHeight * 0.5);
-    slashArc(this, hitX, hitY, crit);
-    if (crit) sfx.crit(); else sfx.hit(Math.min(1.5, damage / BASE_DAMAGE));
-    hitStop(this, crit ? 120 : 70);
-    this.cameras.main.shake(crit ? 220 : 120, crit ? 0.016 : 0.008);
+    const fx = comboFx(s.combo);
+    const calm = reducedMotion();
+    const pitch = hitPitch(s.combo);
+    // 斬擊：combo 越高道數越多（弧 → 十字 → 交錯），顏色跟著等級
+    const angles = [-15, 75, 30, -60];
+    for (let i = 0; i < fx.slashes; i++) {
+      this.time.delayedCall(i * 40, () => slashArc(this, hitX, hitY, crit || i > 0, fx.slashColor, angles[i]));
+    }
+    if (crit) sfx.crit(pitch); else sfx.hit(Math.min(1.5, damage / BASE_DAMAGE), pitch);
+    sfx.comboChord(fx.tier, pitch);
+    hitStop(this, (crit ? 120 : 70) + fx.tier * 12);
+    if (!calm) this.cameras.main.shake((crit ? 220 : 120) + fx.tier * 30, (crit ? 0.016 : 0.008) + fx.tier * 0.002);
+    if (fx.shockwave) shockwave(this, hitX, hitY, fx.slashColor, 90 + fx.tier * 25, 4 + fx.tier * 2);
+    if (fx.lightning) { lightning(this, hitX + 20, hitY, hex(fx.color)); sfx.thunder(); }
+    if (fx.pillar) pillar(this, MONSTER_X, GROUND_Y, hex(fx.color));
+    if (fx.tier >= 3 && !calm) screenFlash(this, hex(fx.color), 0.12 + (fx.tier - 3) * 0.04, 220);
 
     // 怪物閃白＋被擊退
     this.monsterSprite.setTexture(`${monsterKey(this.monsterKind, this.monsterEl)}_flash`);
@@ -458,9 +506,11 @@ export default class MainScene extends Phaser.Scene {
     const spark = this.add.image(hitX, hitY, 'spark').setScale(crit ? 14 : 9).setDepth(56).setAngle(Phaser.Math.Between(0, 45));
     this.tweens.add({ targets: spark, scale: 0, angle: '+=90', duration: 220, onComplete: () => spark.destroy() });
     const colors = this.monsterColors();
-    burst(this, hitX, hitY, [...colors, 0xffffff], crit ? 22 : 12, { speed: crit ? 260 : 180 });
+    burst(this, hitX, hitY, [...colors, 0xffffff, fx.slashColor], Math.round((crit ? 22 : 12) * fx.particles), { speed: (crit ? 260 : 180) + fx.tier * 25 });
 
-    popText(this, MONSTER_X + Phaser.Math.Between(-20, 20), hitY - 60, formatDamage(damage), crit ? 56 : 40, crit ? '#ffcd4b' : '#ffffff', { numeric: true });
+    // 傷害數字：combo 等級越高字越大，顏色跟著等級
+    const dmgColor = crit ? '#ffcd4b' : fx.tier ? fx.color : '#ffffff';
+    popText(this, MONSTER_X + Phaser.Math.Between(-20, 20), hitY - 60, formatDamage(damage), (crit ? 56 : 40) + fx.tier * 5, dmgColor, { numeric: true });
     if (crit) {
       popText(this, MONSTER_X, hitY - 120, 'CRITICAL!', 30, '#ff7a3d', { rise: 40 });
       this.cameras.main.zoomTo(1.06, 80, 'Quad.easeOut', true);
@@ -471,6 +521,68 @@ export default class MainScene extends Phaser.Scene {
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
     if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
     else if (killed) this.busy = false;
+  }
+
+  // 拼寫題蓄力光：跟著出手的隊員，進度越高越大越亮；f 為 null 時散掉
+  private setCharge(f: Fighter | null, progress: number, color: number) {
+    if (!f || progress <= 0) {
+      if (this.chargeGlow) {
+        const g = this.chargeGlow;
+        this.chargeGlow = undefined;
+        this.tweens.killTweensOf(g);
+        this.tweens.add({ targets: g, alpha: 0, scale: g.scale * 1.4, duration: 150, onComplete: () => g.destroy() });
+      }
+      return;
+    }
+    if (!this.chargeGlow) {
+      this.chargeGlow = this.add.ellipse(0, 0, 70, 100, color, 0.25).setDepth(18).setBlendMode(Phaser.BlendModes.ADD);
+    }
+    const size = 0.8 + progress * 0.6;
+    this.chargeGlow.setPosition(f.homeX + 10, f.homeY - 45).setFillStyle(color, 0.18 + progress * 0.3).setScale(size);
+    this.tweens.killTweensOf(this.chargeGlow);
+    this.tweens.add({ targets: this.chargeGlow, scale: size * 1.08, duration: 160, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' });
+  }
+
+  // 達到新的 combo 等級：大字稱號＋震波＋光點
+  private announceTier(label: string, color: string, tier: number) {
+    const c = hex(color);
+    popText(this, 420, 140, label, 44 + tier * 2, color, { rise: 30, dur: 1000 + tier * 100 });
+    shockwave(this, 400, 150, c, 160 + tier * 30, 6);
+    burst(this, 400, 150, [c, 0xffffff], 10 + tier * 6, { speed: 220, gravity: 120 });
+    if (tier >= 3 && !reducedMotion()) screenFlash(this, c, 0.18, 300);
+    // 高等級時 combo 數字持續搖擺
+    this.comboPulse?.stop();
+    this.comboNum.setAngle(0);
+    this.comboPulse = tier >= 3
+      ? this.tweens.add({ targets: this.comboNum, angle: { from: -3, to: 3 }, duration: 260, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' })
+      : undefined;
+  }
+
+  // 鬥氣：combo 夠高時，隊伍身上持續冒出往上飄的火光；level 0 代表關閉
+  private flameLevel = 0;
+  private setFlames(level: number) {
+    if (level === this.flameLevel) return;
+    this.flameLevel = level;
+    this.flameTimer?.remove();
+    this.flameTimer = undefined;
+    if (level <= 0) {
+      this.comboPulse?.stop();
+      this.comboPulse = undefined;
+      this.comboNum?.setAngle(0);
+      return;
+    }
+    const colors = level >= 5 ? [0xfff36b, 0xffffff, 0xff5af0, 0x7fe8ff] : level >= 4 ? [0x7fe8ff, 0xffffff, 0x4fb3e8]
+      : level >= 3 ? [0xff5af0, 0xffa0f8, 0xffffff] : [0xff7a3d, 0xffcd4b, 0xff5a3d];
+    this.flameTimer = this.time.addEvent({
+      delay: Math.max(50, 130 - level * 15), loop: true, callback: () => {
+        const alive = this.fighters.filter(x => !x.down);
+        if (!alive.length) return;
+        const f = alive[Phaser.Math.Between(0, alive.length - 1)];
+        const p = this.add.rectangle(f.container.x + Phaser.Math.Between(-22, 22), f.container.y - Phaser.Math.Between(0, 30), 6, 6, colors[Phaser.Math.Between(0, colors.length - 1)])
+          .setDepth(19).setBlendMode(Phaser.BlendModes.ADD);
+        this.tweens.add({ targets: p, y: p.y - Phaser.Math.Between(50, 90), x: p.x + Phaser.Math.Between(-10, 10), scale: 0.3, alpha: 0, duration: 600, ease: 'Quad.easeOut', onComplete: () => p.destroy() });
+      },
+    });
   }
 
   // 菁英怪的護盾被削掉一層；剩 0 就碎掉

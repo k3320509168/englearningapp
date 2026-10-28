@@ -74,8 +74,11 @@ export function popText(scene: Phaser.Scene, x: number, y: number, text: string,
   return t;
 }
 
-// 斬擊軌跡：一道快速張開又消失的白色弧線
-export function slashArc(scene: Phaser.Scene, x: number, y: number, big = false) {
+// 系統設定「減少動態效果」時，震動與閃光減弱
+export const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+// 斬擊軌跡：一道快速張開又消失的弧線；combo 高時換顏色、轉角度疊成十字斬
+export function slashArc(scene: Phaser.Scene, x: number, y: number, big = false, color = 0xfff3a0, angle = -15) {
   const g = scene.add.graphics().setDepth(55);
   const r = big ? 110 : 80;
   const start = Phaser.Math.DegToRad(-70);
@@ -84,12 +87,66 @@ export function slashArc(scene: Phaser.Scene, x: number, y: number, big = false)
   g.beginPath();
   g.arc(0, 0, r, start, end);
   g.strokePath();
-  g.lineStyle(big ? 8 : 6, 0xfff3a0, 1);
+  g.lineStyle(big ? 8 : 6, color, 1);
   g.beginPath();
   g.arc(0, 0, r - 10, start + 0.2, end - 0.1);
   g.strokePath();
-  g.setPosition(x - r * 0.4, y).setScale(0.6).setAngle(-15);
+  g.setPosition(x - r * 0.4, y).setScale(0.6).setAngle(angle);
   scene.tweens.add({ targets: g, scale: 1.1, alpha: 0, duration: 200, ease: 'Quad.easeOut', onComplete: () => g.destroy() });
+}
+
+// 命中震波環：從命中點往外擴散的圓環
+export function shockwave(scene: Phaser.Scene, x: number, y: number, color: number, radius = 120, thickness = 8) {
+  const ring = scene.add.circle(x, y, 20).setStrokeStyle(thickness, color, 1).setDepth(54);
+  scene.tweens.add({ targets: ring, radius, alpha: 0, duration: 380, ease: 'Cubic.easeOut', onComplete: () => ring.destroy() });
+}
+
+// 能量往中心收聚：蓄力時的小光點
+export function gather(scene: Phaser.Scene, x: number, y: number, color: number, count: number, radius = 70) {
+  for (let i = 0; i < count; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const d = radius * (0.7 + Math.random() * 0.5);
+    const p = scene.add.rectangle(x + Math.cos(a) * d, y + Math.sin(a) * d, 4, 4, color).setDepth(31);
+    scene.tweens.add({ targets: p, x, y, alpha: 0.2, duration: 200 + Math.random() * 120, ease: 'Quad.easeIn', onComplete: () => p.destroy() });
+  }
+}
+
+// 衝刺殘影：在角色目前位置留下一個漸淡的半透明分身
+export function afterimage(scene: Phaser.Scene, src: Phaser.GameObjects.Image, x: number, y: number, tint: number, delay = 0) {
+  scene.time.delayedCall(delay, () => {
+    const img = scene.add.image(x, y, src.texture.key).setOrigin(src.originX, src.originY).setScale(src.scaleX, src.scaleY)
+      .setTint(tint).setTintMode(Phaser.TintModes.FILL).setAlpha(0.55).setDepth(19);
+    scene.tweens.add({ targets: img, alpha: 0, duration: 260, ease: 'Quad.easeOut', onComplete: () => img.destroy() });
+  });
+}
+
+// 天降雷擊：鋸齒狀的閃電打在命中點
+export function lightning(scene: Phaser.Scene, x: number, y: number, color: number) {
+  const g = scene.add.graphics().setDepth(57);
+  const draw = (w: number, c: number) => {
+    g.lineStyle(w, c, 1);
+    g.beginPath();
+    let px = x + Phaser.Math.Between(-30, 30);
+    let py = 0;
+    g.moveTo(px, py);
+    while (py < y) {
+      py = Math.min(y, py + Phaser.Math.Between(24, 44));
+      px = py === y ? x : px + Phaser.Math.Between(-26, 26);
+      g.lineTo(px, py);
+    }
+    g.strokePath();
+  };
+  draw(10, color);
+  draw(4, 0xffffff);
+  scene.tweens.add({ targets: g, alpha: 0, duration: 260, delay: 60, onComplete: () => g.destroy() });
+}
+
+// 光柱：從天而降的一道光，最高等級的 combo 才有
+export function pillar(scene: Phaser.Scene, x: number, groundY: number, color: number) {
+  const beam = scene.add.rectangle(x, groundY, 90, groundY * 2, color, 0.55).setOrigin(0.5, 1).setDepth(53).setScale(0.1, 1);
+  const core = scene.add.rectangle(x, groundY, 30, groundY * 2, 0xffffff, 0.8).setOrigin(0.5, 1).setDepth(53).setScale(0.1, 1);
+  scene.tweens.add({ targets: [beam, core], scaleX: 1, duration: 120, ease: 'Quad.easeOut' });
+  scene.tweens.add({ targets: [beam, core], scaleX: 0, alpha: 0, delay: 260, duration: 300, ease: 'Quad.easeIn', onComplete: () => { beam.destroy(); core.destroy(); } });
 }
 
 // 全畫面色閃（受傷紅光、Boss 登場等）

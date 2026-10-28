@@ -90,12 +90,13 @@ export const sfx = {
     noise({ dur: 0.14, gain: 0.3, from: 9000, to: 1200, type: 'highpass' });
     tone({ type: 'sawtooth', freq: 900, to: 220, dur: 0.1, gain: 0.08 });
   },
-  hit(power = 1) {
-    noise({ dur: 0.18 + power * 0.08, gain: 0.35, from: 2500, to: 120 });
-    tone({ freq: 200, to: 50, dur: 0.16, gain: 0.25 });
+  // pitch：combo 越高打擊音越高（每 combo 升半音，最多一個八度）
+  hit(power = 1, pitch = 1) {
+    noise({ dur: 0.18 + power * 0.08, gain: 0.35, from: 2500 * pitch, to: 120 });
+    tone({ freq: 200 * pitch, to: 50, dur: 0.16, gain: 0.25 });
   },
-  crit() {
-    this.hit(1.4);
+  crit(pitch = 1) {
+    this.hit(1.4, pitch);
     tone({ type: 'square', freq: 1400, to: 2200, dur: 0.12, gain: 0.12, delay: 0.02 });
     tone({ type: 'triangle', freq: 90, to: 40, dur: 0.35, gain: 0.35 });
   },
@@ -110,6 +111,22 @@ export const sfx = {
   wrong() {
     tone({ type: 'square', freq: 180, dur: 0.09, gain: 0.12 });
     tone({ type: 'square', freq: 140, dur: 0.14, gain: 0.12, delay: 0.09 });
+  },
+  // 蓄力釋放：衝刺前的短促上滑音，越高的 combo 越長越亮
+  release(tier: number) {
+    tone({ type: 'sawtooth', freq: 220, to: 880 + tier * 220, dur: 0.12 + tier * 0.02, gain: 0.07 });
+    if (tier >= 2) noise({ dur: 0.15, gain: 0.12, from: 6000, to: 12000, type: 'bandpass' });
+  },
+  // 高 combo 命中時疊上的和弦：等級越高音越多（大三和弦往上疊）
+  comboChord(tier: number, pitch = 1) {
+    if (tier <= 0) return;
+    const notes = [1, 1.26, 1.5, 2, 2.52].slice(0, Math.min(5, tier + 1));
+    notes.forEach((r, i) => tone({ type: 'triangle', freq: 523 * pitch * r, dur: 0.22, gain: 0.07, delay: 0.03 + i * 0.025 }));
+    if (tier >= 3) tone({ type: 'sine', freq: 2093 * pitch, to: 3136 * pitch, dur: 0.4, gain: 0.05, delay: 0.1 });
+  },
+  thunder() {
+    noise({ dur: 0.45, gain: 0.3, from: 5000, to: 80 });
+    tone({ type: 'square', freq: 70, to: 35, dur: 0.4, gain: 0.18 });
   },
   coin() {
     tone({ freq: 988, dur: 0.06, gain: 0.1 });

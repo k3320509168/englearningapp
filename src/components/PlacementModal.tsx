@@ -4,7 +4,7 @@ import QuizRunner from './QuizRunner';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { REGIONS } from '../game/regions';
-import { PLACEMENT_PASS, PLACEMENT_PER_LEVEL, SKIPPABLE_REGIONS, placementQuestions } from '../game/placement';
+import { PLACEMENT_MAX_START, PLACEMENT_PASS, PLACEMENT_PER_LEVEL, placementQuestions } from '../game/placement';
 import type { Question } from '../game/types';
 import { continueJourney } from '../game/startLevel';
 import { keepFocus } from './keepFocus';
@@ -30,7 +30,7 @@ export default function PlacementModal() {
     setScore(s);
     if (s.answered < PLACEMENT_PER_LEVEL || level === null) return;
     const passed = s.correct >= PLACEMENT_PASS;
-    if (passed && level + 1 < SKIPPABLE_REGIONS) testLevel(level + 1);
+    if (passed && level + 1 < PLACEMENT_MAX_START) testLevel(level + 1);
     else setResult(passed ? level + 1 : level);
   };
 
@@ -58,7 +58,7 @@ export default function PlacementModal() {
         <>
           <p>有英文基礎的話，可以先做個小測驗，直接從適合你的區域開始；也可以從頭慢慢冒險。</p>
           <ul className="muted gate-rules">
-            <li>每個區域 3 題，答對 2 題就往下一區，最多 15 題、約 3 分鐘。</li>
+            <li>每個區域 3 題，答對 2 題就往下一區，最多 12 題、約 3 分鐘；最遠建議從「{REGIONS[PLACEMENT_MAX_START].name}」開始。</li>
             <li>沒有計時、不會受傷；之後也可以在區域地圖用「守門試煉」繼續跳級。</li>
           </ul>
           <div className="tutorial-actions">

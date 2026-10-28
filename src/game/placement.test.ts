@@ -40,3 +40,10 @@ describe('跳級：守門試煉與程度測驗', () => {
     expect(useSaveStore.getState().unlockedIndex).toBe(2);
   });
 });
+
+describe('程度測驗的上限', () => {
+  it('最遠建議從熔岩魔域開始', async () => {
+    const { PLACEMENT_MAX_START } = await import('./placement');
+    expect(REGIONS[PLACEMENT_MAX_START].name).toBe('熔岩魔域');
+  });
+});

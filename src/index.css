@@ -1571,3 +1571,11 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
   .is-battle .skill-btn small { display: none; }
   .is-battle .battle-hint { padding: 4px 8px; font-size: 13px; }
 }
+
+/* 單字學習視窗 */
+.word-study { display: flex; flex-direction: column; gap: 12px; }
+.word-study-head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.word-sense { border-top: 2px dashed var(--panel-2); padding-top: 8px; }
+.word-sense-head { margin: 0 0 4px; font-size: 16px; }
+.word-examples { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.word-examples li p { margin: 0; }

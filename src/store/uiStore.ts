@@ -23,6 +23,9 @@ interface UiState {
   growthTab: GrowthTab;
   celebrations: Celebration[];
   hintOpen: boolean; // 戰鬥中的情境提示還沒按「知道了」：計時暫停
+  studyWord: string | null; // 單字學習視窗：正在看的單字（VOCAB 的 key），可以疊在其他視窗上
+  openStudy: (key: string) => void;
+  closeStudy: () => void;
   retreatAsk: boolean; // 撤退確認中（計時暫停）
   setRetreatAsk: (on: boolean) => void;
   imeWarning: boolean; // 偵測到中文輸入法（注音）：英文字母打不進去
@@ -41,6 +44,7 @@ interface UiState {
 
 export const useUiStore = create<UiState>()((set) => ({
   modal: null,
+  studyWord: null,
   regionIdx: 0,
   storyId: '',
   storyReplay: false,
@@ -62,4 +66,6 @@ export const useUiStore = create<UiState>()((set) => ({
   openTrueName: (heroId) => set({ modal: 'trueName', heroId }),
   openGrowth: (tab = 'hero') => set({ modal: 'growth', growthTab: tab }),
   closeModal: () => set({ modal: null }),
+  openStudy: (key) => set({ studyWord: key }),
+  closeStudy: () => set({ studyWord: null }),
 }));

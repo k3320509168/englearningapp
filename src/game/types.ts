@@ -19,10 +19,20 @@ export interface Stage {
 }
 
 // 單字資料（中文、詞性、例句），以大寫單字為 key 存在 vocab.ts
+export interface VocabExample { en: string; zh: string }
+
+// 一個詞性的意思與例句（同一個字可以有好幾個詞性，例如 run 的 v. 跑／n. 一段跑步）
+export interface VocabSense {
+  pos: string;
+  meaning: string;
+  examples: VocabExample[];
+}
+
 export interface VocabEntry {
   word?: string; // 顯示用拼法，預設為 key 的小寫（例如 THANK → "thank you"）
   pos: string;
   meaning: string;
   example: string;
   exampleZh: string;
+  senses?: VocabSense[]; // 單字學習視窗用的完整詞性與例句（由出題流程補齊；沒有時用上面的主要意思）
 }

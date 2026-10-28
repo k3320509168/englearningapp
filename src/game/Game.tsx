@@ -23,6 +23,7 @@ import DailyModal from '../components/DailyModal';
 import SkillBossModal from '../components/SkillBossModal';
 import CelebrationOverlay from '../components/CelebrationOverlay';
 import ReviewModal from '../components/ReviewModal';
+import WordStudy from '../components/WordStudy';
 import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
 import { CloudConflict } from '../components/CloudSave';
@@ -184,6 +185,7 @@ export default function Game() {
       <CloudConflict />
       <SaveRecoveryNotice />
       {modal === 'skillBoss' && <SkillBossModal />}
+      <WordStudy />
     </div>
   );
 }

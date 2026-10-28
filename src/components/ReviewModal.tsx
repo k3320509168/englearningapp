@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import Modal from './Modal';
 import { dueMistakes, useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
+import { VOCAB, vocabKey } from '../game/vocab';
 import { answerLabel } from '../game/answerLabel';
 import { questionKey } from '../game/battle';
 import { continueJourney } from '../game/startLevel';
@@ -34,6 +35,9 @@ export default function ReviewModal() {
                   <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(l.audio)} aria-label="播放發音" disabled={!l.audio}>🔊</button>
                   <span className="mistake-text">{l.text}</span>
                   <span className="mistake-meaning">{l.meaning}{m.wrongCount > 1 ? `・答錯 ${m.wrongCount} 次` : ''}</span>
+                  {vocabKey(m.question) && VOCAB[vocabKey(m.question)!] && (
+                    <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocabKey(m.question)!)} aria-label="打開單字學習">📖</button>
+                  )}
                 </li>
               );
             })}

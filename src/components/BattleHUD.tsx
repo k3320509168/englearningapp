@@ -399,6 +399,7 @@ function FeedbackPanel() {
         <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 再聽一次</button>
         <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
         {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => say(vocab.example)}>🔊 例句</button>}
+        {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocab.key)}>📖 學這個字</button>}
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().continueAfterFeedback()}>記住了，再試一次 ⏎</button>
       </div>
       <p className="feedback-note">這個字已加入錯題本，之後會再出現讓你複習</p>

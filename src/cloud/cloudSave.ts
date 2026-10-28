@@ -140,7 +140,7 @@ export function initCloud() {
 // Email 登入連結：點信裡的連結回到遊戲就會登入
 export async function sendLoginLink(email: string): Promise<string | null> {
   if (!supabase) return '雲端存檔沒有設定';
-  const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin } });
+  const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL } });
   return error ? error.message : null;
 }
 

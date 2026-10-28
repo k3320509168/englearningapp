@@ -31,14 +31,17 @@ export default function PlacementModal() {
     if (s.answered < PLACEMENT_PER_LEVEL || level === null) return;
     const passed = s.correct >= PLACEMENT_PASS;
     if (passed && level + 1 < PLACEMENT_MAX_START) testLevel(level + 1);
-    else setResult(passed ? level + 1 : level);
+    else {
+      const start = passed ? level + 1 : level;
+      // 結果出來就開放區域：不管玩家選從哪裡出發、或直接關掉視窗，之後都能去挑戰
+      if (start > 0) skipRegions(start);
+      setResult(start);
+    }
   };
 
-  const finish = (start: number) => {
-    if (start > 0) skipRegions(start);
-    closeModal();
-    continueJourney();
-  };
+  // 從推薦的區域出發，或回到第一個區域（後面的區域維持開放）
+  const goRecommended = () => { closeModal(); continueJourney(); };
+  const goFirst = () => { closeModal(); useUiStore.getState().openRegion(0); };
 
   return (
     <Modal title="🧭 程度測驗" onClose={closeModal}>
@@ -47,11 +50,11 @@ export default function PlacementModal() {
           <p className="result-title">建議從「{REGIONS[result].name}」開始</p>
           <p>{result === 0
             ? '從第一個區域開始，打好基礎、一路升級！'
-            : `你的英文已經超過前 ${result} 個區域的程度。直接從「${REGIONS[result].name}」出發吧！跳過的區域之後隨時可以回去打、拿星星和召喚券。`}</p>
+            : `你的英文已經超過前 ${result} 個區域的程度，已經幫你開放到「${REGIONS[result].name}」。想從哪個區域開始都可以，跳過的區域之後隨時可以回去打、拿星星和召喚券。`}</p>
           {result > 0 && <p className="muted">注意：不會增加等級，前期怪物比較耐打；你答對時隊伍才會攻擊、答錯時怪物才會反擊，所以英文好就不容易輸。</p>}
           <div className="tutorial-actions">
-            {result > 0 && <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => finish(0)}>還是從頭開始</button>}
-            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => finish(result)}>從「{REGIONS[result].name}」出發</button>
+            {result > 0 && <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={goFirst}>先從「{REGIONS[0].name}」開始</button>}
+            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={goRecommended}>從「{REGIONS[result].name}」出發</button>
           </div>
         </>
       ) : level === null ? (
@@ -62,7 +65,7 @@ export default function PlacementModal() {
             <li>沒有計時、不會受傷；之後也可以在區域地圖用「守門試煉」繼續跳級。</li>
           </ul>
           <div className="tutorial-actions">
-            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => finish(0)}>從頭開始冒險</button>
+            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={goRecommended}>從頭開始冒險</button>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => testLevel(0)}>做程度測驗</button>
           </div>
         </>

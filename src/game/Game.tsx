@@ -49,12 +49,16 @@ export default function Game() {
     else if (!tutorialDone) useSaveStore.getState().setTutorialDone(true);
   }, []);
 
-  // 音效與背景音樂的音量跟著設定走
+  // 音效與背景音樂的音量、文字大小、減少動態效果跟著設定走
   useEffect(() => {
     const apply = () => {
-      const { sfxVolume, musicVolume } = useSaveStore.getState().settings;
+      const { sfxVolume, musicVolume, textScale, reduceMotion } = useSaveStore.getState().settings;
       setSfxVolume(sfxVolume);
       setMusicVolume(musicVolume);
+      const root = document.documentElement;
+      root.style.setProperty('--text-scale', String(textScale ?? 1));
+      if (reduceMotion) root.dataset.reduceMotion = 'true';
+      else delete root.dataset.reduceMotion;
     };
     apply();
     return useSaveStore.subscribe(apply);

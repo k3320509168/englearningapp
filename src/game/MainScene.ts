@@ -17,7 +17,7 @@ import { useSaveStore } from '../store/saveStore';
 import { materialIcon } from './equipment';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
-import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shockwave, slashArc, slowMo, textStyle } from './fx';
+import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
 import { sfx } from './sfx';
 
@@ -395,7 +395,7 @@ export default class MainScene extends Phaser.Scene {
 
   private bossIntro(isRevenge: boolean) {
     sfx.boss();
-    this.cameras.main.shake(600, 0.008);
+    shake(this, 600, 0.008);
     screenFlash(this, isRevenge ? 0x5e3aa8 : 0x8f2a3a, 0.45, 900);
     const { width } = this.scale;
     const band = this.add.rectangle(width / 2, 200, width, 70, 0x1a1226, 0.85).setDepth(88).setScale(1, 0);
@@ -492,7 +492,7 @@ export default class MainScene extends Phaser.Scene {
     if (crit) sfx.crit(pitch); else sfx.hit(Math.min(1.5, damage / BASE_DAMAGE), pitch);
     sfx.comboChord(fx.tier, pitch);
     hitStop(this, (crit ? 120 : 70) + fx.tier * 12);
-    if (!calm) this.cameras.main.shake((crit ? 220 : 120) + fx.tier * 30, (crit ? 0.016 : 0.008) + fx.tier * 0.002);
+    if (!calm) shake(this, (crit ? 220 : 120) + fx.tier * 30, (crit ? 0.016 : 0.008) + fx.tier * 0.002);
     if (fx.shockwave) shockwave(this, hitX, hitY, fx.slashColor, 90 + fx.tier * 25, 4 + fx.tier * 2);
     if (fx.lightning) { lightning(this, hitX + 20, hitY, hex(fx.color)); sfx.thunder(); }
     if (fx.pillar) pillar(this, MONSTER_X, GROUND_Y, hex(fx.color));
@@ -589,7 +589,7 @@ export default class MainScene extends Phaser.Scene {
   private shieldImpact(remaining: number) {
     const hitY = GROUND_Y - this.monsterSprite.displayHeight * 0.5;
     hitStop(this, 60);
-    this.cameras.main.shake(100, 0.006);
+    shake(this, 100, 0.006);
     burst(this, MONSTER_X - 60, hitY, [0xffcd4b, 0xffffff], 12, { speed: 200 });
     if (remaining > 0) {
       sfx.shield();
@@ -654,7 +654,7 @@ export default class MainScene extends Phaser.Scene {
     burst(this, cx, cy, [...this.monsterColors(), 0xffffff, 0x1a1226], isBoss ? 60 : 30, { speed: isBoss ? 340 : 240, size: isBoss ? 14 : 10 });
     screenFlash(this, 0xffffff, isBoss ? 0.6 : 0.35, isBoss ? 400 : 200);
     if (isBoss) {
-      this.cameras.main.shake(500, 0.02);
+      shake(this, 500, 0.02);
       const ko = this.add.text(400, 210, 'K.O.!', textStyle(96, '#ffcd4b', 10)).setOrigin(0.5).setDepth(95).setScale(3).setAlpha(0);
       this.tweens.add({ targets: ko, scale: 1, alpha: 1, duration: 260, ease: 'Back.easeOut' });
       this.tweens.add({ targets: ko, alpha: 0, delay: 1300, duration: 400, onComplete: () => ko.destroy() });
@@ -709,7 +709,7 @@ export default class MainScene extends Phaser.Scene {
     this.monsterLunge(() => {
       sfx.hurt();
       hitStop(this, 60);
-      this.cameras.main.shake(180, 0.014);
+      shake(this, 180, 0.014);
       screenFlash(this, 0xff2a4a, 0.3, 300);
       const f = this.fighterFor(event.member);
       const knockedOut = (target?.hp ?? 1) <= 0;
@@ -727,7 +727,7 @@ export default class MainScene extends Phaser.Scene {
     this.monsterLunge(() => {
       sfx.shield();
       hitStop(this, 50);
-      this.cameras.main.shake(100, 0.006);
+      shake(this, 100, 0.006);
       burst(this, PLAYER_X + 50, GROUND_Y - 50, [0x7fffd4, 0xffffff], 14, { speed: 200 });
       popText(this, PLAYER_X, GROUND_Y - 130, 'BLOCK!', 34, '#7fffd4');
     });

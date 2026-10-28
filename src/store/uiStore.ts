@@ -18,6 +18,7 @@ interface UiState {
   modal: ModalName | null;
   regionIdx: number;
   storyId: string;
+  storyReplay: boolean; // 從設定重看劇情：看完直接關閉
   heroId: string;
   growthTab: GrowthTab;
   celebrations: Celebration[];
@@ -25,7 +26,7 @@ interface UiState {
   dismissCelebration: () => void;
   openModal: (name: ModalName) => void;
   openRegion: (regionIdx: number) => void;
-  openStory: (storyId: string) => void;
+  openStory: (storyId: string, replay?: boolean) => void;
   openTrueName: (heroId: string) => void;
   openGrowth: (tab?: GrowthTab) => void;
   closeModal: () => void;
@@ -35,6 +36,7 @@ export const useUiStore = create<UiState>()((set) => ({
   modal: null,
   regionIdx: 0,
   storyId: '',
+  storyReplay: false,
   heroId: '',
   growthTab: 'hero',
   celebrations: [],
@@ -42,7 +44,7 @@ export const useUiStore = create<UiState>()((set) => ({
   dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),
   openModal: (name) => set(name === 'growth' ? { modal: name, growthTab: 'hero' } : { modal: name }),
   openRegion: (regionIdx) => set({ modal: 'region', regionIdx }),
-  openStory: (storyId) => set({ modal: 'story', storyId }),
+  openStory: (storyId, replay = false) => set({ modal: 'story', storyId, storyReplay: replay }),
   openTrueName: (heroId) => set({ modal: 'trueName', heroId }),
   openGrowth: (tab = 'hero') => set({ modal: 'growth', growthTab: tab }),
   closeModal: () => set({ modal: null }),

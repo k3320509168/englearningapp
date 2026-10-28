@@ -23,6 +23,7 @@ export default function StoryModal() {
 
   const finish = () => {
     markStorySeen(storyId);
+    if (useUiStore.getState().storyReplay) return closeModal();
     // 序章看完就直接進地圖，「繼續征途」會帶玩家進第一場戰鬥
     if (storyId === 'prologue') useSaveStore.getState().setTutorialDone(true);
     if (storyId.startsWith('region-')) return openRegion(regionIdx);

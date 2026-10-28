@@ -7,12 +7,26 @@ import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { STORIES } from '../game/story';
+import { REGIONS } from '../game/regions';
+
+const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
+
+// 劇情名稱：序章、各區域的開場與通關、黃金之路結局
+function storyTitle(id: string): string {
+  if (id === 'prologue') return '序章';
+  if (id === 'golden-ending') return '黃金之路・結局';
+  const [kind, idx] = id.split('-');
+  const name = REGIONS[Number(idx)]?.name ?? '';
+  return kind === 'region' ? `${name}・開場` : `${name}・通關`;
+}
 
 export default function SettingsModal() {
   const settings = useSaveStore(s => s.settings);
   const updateSettings = useSaveStore(s => s.updateSettings);
   const resetProgress = useSaveStore(s => s.resetProgress);
-  const { closeModal, openModal } = useUiStore();
+  const { closeModal, openModal, openStory } = useUiStore();
+  const storySeen = useSaveStore(s => s.storySeen);
   const say = useSpeak();
   const [confirmReset, setConfirmReset] = useState(false);
 
@@ -57,12 +71,38 @@ export default function SettingsModal() {
       </section>
 
       <section className="settings-group">
+        <h3>👁️ 顯示</h3>
+        <div className="text-scale" role="radiogroup" aria-label="文字大小">
+          <span>文字大小</span>
+          {TEXT_SCALES.map(([v, label]) => (
+            <button key={v} role="radio" aria-checked={settings.textScale === v} className={`btn btn-small ${settings.textScale === v ? 'btn-primary' : ''}`}
+              onMouseDown={keepFocus} onClick={() => updateSettings({ textScale: v })}>{label}</button>
+          ))}
+        </div>
+        <label className="check">
+          <input type="checkbox" checked={settings.reduceMotion} onChange={e => updateSettings({ reduceMotion: e.target.checked })} />
+          減少動態效果（不震動、不閃光，適合容易頭暈的人）
+        </label>
+      </section>
+
+      <section className="settings-group">
         <h3>📖 學習</h3>
         <label className="check">
           <input type="checkbox" checked={settings.showLessons} onChange={e => updateSettings({ showLessons: e.target.checked })} />
           每 10 關開始前自動顯示戰前預習
         </label>
-        <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('tutorial')}>❓ 重看新手引導</button>
+        <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('tutorial')}>❓ 重看遊戲說明</button>
+      </section>
+
+      <section className="settings-group">
+        <h3>📜 劇情回顧</h3>
+        {storySeen.length === 0 ? <p className="muted">還沒有看過的劇情。</p> : (
+          <div className="story-list">
+            {Object.keys(STORIES).filter(id => storySeen.includes(id)).map(id => (
+              <button key={id} className="btn btn-small" onMouseDown={keepFocus} onClick={() => openStory(id, true)}>{storyTitle(id)}</button>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="settings-group danger">

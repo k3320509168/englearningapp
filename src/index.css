@@ -4,6 +4,13 @@
    標題與按鈕用 Pixelify Sans，數字用 Press Start 2P，內文用無襯線中文字型。
    ========================================================= */
 
+@font-face {
+  font-family: "UiDigits";
+  src: local("Segoe UI Bold"), local("SegoeUI-Bold"), local("Arial Bold"), local("Arial-BoldMT"), local("Roboto Bold"), local("Helvetica Bold"), local("Arial");
+  font-weight: 400 900;
+  unicode-range: U+0030-0039;
+}
+
 :root {
   --bg: #0f1023;
   --bg-2: #15173a;
@@ -24,7 +31,8 @@
   --bad-dark: #c23a55;
   --purple: #a78bfa;
   --px: 3px;               /* 像素框線粗細 */
-  --font-ui: "Pixelify Sans", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  /* 數字一律用清楚的系統字型：像素字的 2 容易看成 8（unicode-range 只替換 0～9） */
+  --font-ui: "UiDigits", "Pixelify Sans", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
   --font-body: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   --font-num: "Press Start 2P", monospace;
   /* 英文學習內容（單字、答案、例句）一律用最易讀的無襯線字型，避免像素字 C/O、5/S 混淆 */
@@ -658,7 +666,7 @@ button { font: inherit; color: inherit; }
 .segmented button.is-selected { background: var(--accent); color: #2a1a00; }
 .stepper { display: flex; align-items: center; gap: 8px; }
 .stepper-value { flex: 1; max-width: 160px; text-align: center; font-family: var(--font-ui); font-size: 17px; }
-.stepper-value small { color: var(--muted); font-family: var(--font-num); font-size: 9px; }
+.stepper-value small { color: var(--muted); font-family: var(--font-num); font-size: 10px; }
 .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
 .swatch {
   width: 34px;
@@ -841,7 +849,7 @@ button { font: inherit; color: inherit; }
   line-height: 16px;
 }
 .rarity-tag.inline { position: static; vertical-align: middle; }
-.shard-tag { position: absolute; top: 3px; right: 4px; color: #7fd0ff; font-family: var(--font-num); font-size: 8px; }
+.shard-tag { position: absolute; top: 3px; right: 4px; color: #7fd0ff; font-family: var(--font-num); font-size: 10px; }
 .hero-detail {
   --rarity: var(--muted);
   display: flex;
@@ -898,7 +906,7 @@ button { font: inherit; color: inherit; }
 .summon-card small { color: var(--muted); font-size: 12px; }
 .summon-card.is-revealed { cursor: default; animation: reveal 0.45s ease-out both; }
 .summon-card.rarity-SSR, .summon-card.rarity-UR { box-shadow: 0 0 16px var(--rarity); }
-.new-tag { color: var(--accent); font-family: var(--font-num); font-size: 9px; margin-top: 2px; }
+.new-tag { color: var(--accent); font-family: var(--font-num); font-size: 10px; margin-top: 2px; }
 .summon-card .shard-tag { position: static; margin-top: 2px; }
 @keyframes reveal {
   from { opacity: 0; transform: rotateY(90deg) scale(0.8); }
@@ -1010,7 +1018,7 @@ button { font: inherit; color: inherit; }
 .growth-head p { margin: 6px 0; font-size: 14px; }
 .xp-bar { position: relative; height: 18px; border: 2px solid var(--ink); background: var(--bg); }
 .xp-bar span { display: block; height: 100%; background: linear-gradient(90deg, #4cc9f0, #a78bfa); }
-.xp-bar small { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-num); font-size: 8px; text-shadow: 0 1px 0 #000; }
+.xp-bar small { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-num); font-size: 10px; text-shadow: 0 1px 0 #000; }
 .mods-line { color: var(--good); font-size: 13px; }
 .path-steps { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 8px; padding: 0; }
 .path-steps li { padding: 4px 10px; border: 2px solid var(--ink); border-radius: 4px; background: var(--panel-2); font-family: var(--font-ui); }
@@ -1403,3 +1411,15 @@ button { font: inherit; color: inherit; }
 .streak-milestones li.is-ready { border-color: var(--accent); box-shadow: 0 0 8px var(--accent); }
 .streak-milestones li.is-claimed { opacity: 0.6; }
 .streak-note { margin: 0; font-size: 12px; }
+
+/* ---------- 顯示設定：文字大小、減少動態效果 ---------- */
+.modal-body, .hud, .map-toolbar, .level-bar { zoom: var(--text-scale, 1); }
+html[data-reduce-motion] *, html[data-reduce-motion] *::before, html[data-reduce-motion] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { display: none; }
+.text-scale { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.text-scale > span { margin-right: 4px; }
+.story-list { display: flex; flex-wrap: wrap; gap: 6px; }

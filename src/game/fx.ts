@@ -75,7 +75,14 @@ export function popText(scene: Phaser.Scene, x: number, y: number, text: string,
 }
 
 // 系統設定「減少動態效果」時，震動與閃光減弱
-export const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+// 系統設定或遊戲內「減少動態效果」任一開啟都算
+export const reducedMotion = () => typeof window !== 'undefined'
+  && (document.documentElement.dataset.reduceMotion === 'true' || !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+
+// 畫面震動：減少動態效果時不震
+export function shake(scene: Phaser.Scene, duration: number, intensity: number) {
+  if (!reducedMotion()) scene.cameras.main.shake(duration, intensity);
+}
 
 // 斬擊軌跡：一道快速張開又消失的弧線；combo 高時換顏色、轉角度疊成十字斬
 export function slashArc(scene: Phaser.Scene, x: number, y: number, big = false, color = 0xfff3a0, angle = -15) {
@@ -152,7 +159,7 @@ export function pillar(scene: Phaser.Scene, x: number, groundY: number, color: n
 // 全畫面色閃（受傷紅光、Boss 登場等）
 export function screenFlash(scene: Phaser.Scene, color: number, alpha: number, dur: number) {
   const { width, height } = scene.scale;
-  const r = scene.add.rectangle(0, 0, width, height, color, alpha).setOrigin(0).setDepth(90);
+  const r = scene.add.rectangle(0, 0, width, height, color, reducedMotion() ? alpha * 0.25 : alpha).setOrigin(0).setDepth(90);
   scene.tweens.add({ targets: r, alpha: 0, duration: dur, onComplete: () => r.destroy() });
 }
 

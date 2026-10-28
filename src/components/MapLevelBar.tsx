@@ -1,8 +1,10 @@
 import { useSaveStore } from '../store/saveStore';
 import { REGIONS } from '../game/regions';
 import { useUiStore } from '../store/uiStore';
-import { beginLevel } from '../game/startLevel';
-import { mapName } from '../game/regions';
+import { beginLevel, continueJourney } from '../game/startLevel';
+import { continueTarget, nextStep } from '../game/notices';
+import { useNotices } from './useNotices';
+import { mapName, stageLabel } from '../game/regions';
 import { GOLDEN_STAGE_COUNT } from '../game/golden';
 import { keepFocus } from './keepFocus';
 
@@ -12,10 +14,33 @@ export default function MapLevelBar() {
   const unlockedIndex = useSaveStore(s => s.unlockedIndex);
   const progress = useSaveStore(s => s.levelProgress);
   const goldenBest = useSaveStore(s => s.goldenBest);
+  const storySeen = useSaveStore(s => s.storySeen);
+  const notices = useNotices();
+  const target = continueTarget({ unlockedIndex, levelProgress: progress, storySeen });
+  const step = nextStep(notices);
+  const { openModal, openGrowth } = useUiStore.getState();
+  // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
+  const doStep = () => {
+    if (step.action === 'continue') return continueJourney();
+    if (step.action === 'growth') return openGrowth(notices.classAdvance ? 'hero' : 'forge');
+    openModal(step.action);
+  };
 
   return (
     <section className="level-bar" aria-label="選擇區域開始冒險">
-      <p className="muted level-bar-hint">選擇區域開始冒險（也可以直接點地圖上的旗幟）</p>
+      <div className="journey">
+        <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney}>
+          <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
+          <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文' : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage)} 關`}</small>
+        </button>
+        {step.action !== 'continue' || notices.dueMistakes > 0 ? (
+          <button className="next-step" onMouseDown={keepFocus} onClick={doStep}>
+            <span className="next-step-icon" aria-hidden>{step.icon}</span>
+            <span><small>下一步</small>{step.text}</span>
+          </button>
+        ) : null}
+      </div>
+      <p className="muted level-bar-hint">或選擇區域（也可以直接點地圖上的旗幟）</p>
       <div className="level-buttons">
         {REGIONS.map(({ id: levelKey, name }, i) => {
           const locked = i > unlockedIndex;

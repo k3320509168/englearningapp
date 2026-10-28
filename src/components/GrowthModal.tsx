@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
+import type { GrowthTab } from '../store/uiStore';
+import { useNotices } from './useNotices';
 import { classDef, elementDef } from '../game/character';
 import {
   ADVANCE_REQ, MAX_LEVEL, canAdvance, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
@@ -18,14 +20,15 @@ import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
-type Tab = 'hero' | 'gear' | 'forge';
+type Tab = GrowthTab;
 
 // 主角成長：等級、轉職樹、裝備、鍛造
 export default function GrowthModal() {
   const sv = useSaveStore();
   const { character, player, materials, equipment, equipped, gold, unlockedIndex, upgrades } = sv;
   const { closeModal, openModal } = useUiStore();
-  const [tab, setTab] = useState<Tab>('hero');
+  const [tab, setTab] = useState<Tab>(() => useUiStore.getState().growthTab);
+  const notices = useNotices();
   const equippedItems = useMemo(
     () => Object.values(equipped).map(uid => equipment.find(e => e.uid === uid)).filter((e): e is OwnedEquip => e !== undefined),
     [equipped, equipment],
@@ -53,7 +56,9 @@ export default function GrowthModal() {
     <Modal title={`🛡️ ${character.name}・${className}`} onClose={closeModal} wide>
       <div className="tabs" role="tablist">
         {([['hero', '主角'], ['gear', '裝備'], ['forge', '鍛造坊']] as [Tab, string][]).map(([id, label]) => (
-          <button key={id} role="tab" aria-selected={tab === id} className={`tab ${tab === id ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab(id)}>{label}</button>
+          <button key={id} role="tab" aria-selected={tab === id} className={`tab ${tab === id ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab(id)}>
+            {label}{((id === 'hero' && notices.classAdvance) || (id === 'forge' && notices.forge)) && <span className="dot-badge" aria-label="有可以做的事" />}
+          </button>
         ))}
       </div>
 

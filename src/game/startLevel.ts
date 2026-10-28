@@ -6,6 +6,8 @@ import { useUiStore } from '../store/uiStore';
 import { clearStoryId } from './story';
 import { LEVELS } from './QuestionData';
 import { GOLDEN_TITLE, MAIN_TITLE } from './golden';
+import { REGIONS } from './regions';
+import { continueTarget } from './notices';
 
 // 從地圖（Phaser 圓點或 React 按鈕）開始關卡的共用入口。
 // 場景切換由 MapScene 訂閱 battleStore.active 處理，React 與 Phaser 不必互相呼叫。
@@ -37,4 +39,12 @@ export function finishRegion(levelIdx: number) {
 export function finishGoldenRoad() {
   useBattleStore.getState().exitToMap();
   if (useSaveStore.getState().titles.includes(GOLDEN_TITLE)) useUiStore.getState().openStory('golden-ending');
+}
+
+// 「繼續征途」：回到最前線區域的目前關卡；第一次進入的區域先開區域地圖（會播開場劇情），全部通關後去黃金之路
+export function continueJourney() {
+  const target = continueTarget(useSaveStore.getState());
+  if (target.kind === 'golden') return useUiStore.getState().openModal('golden');
+  if (target.needsStory) return useUiStore.getState().openRegion(target.regionIdx);
+  beginLevel(REGIONS[target.regionIdx].id, target.stage);
 }

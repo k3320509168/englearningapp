@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import Modal from './Modal';
 import { dueMistakes, useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
+import { VOCAB, vocabKey } from '../game/vocab';
 import { answerLabel } from '../game/answerLabel';
 import { questionKey } from '../game/battle';
 import { continueJourney } from '../game/startLevel';
@@ -25,7 +26,7 @@ export default function ReviewModal() {
         <p>今天沒有到期的錯題 🎉 {total > 0 ? `錯題本裡還有 ${total} 個字，會在之後幾天陸續回來考你。` : '繼續冒險，遇到不會的字也不用怕。'}</p>
       ) : (
         <>
-          <p className="muted">這 {due.length} 個字今天該複習了。先看一眼、聽一次發音，它們會在戰鬥中以「魔王題」出現——答對後複習間隔會拉長（1 天 → 3 天 → 7 天…）。</p>
+          <p className="muted">這 {due.length} 個字今天該複習了。先看一眼、聽一次發音，它們會在戰鬥中以「魔王題」出現——在不同的三天各答對一次（間隔 1 天 → 3 天 → 7 天）就會離開錯題本。</p>
           <ul className="mistake-list">
             {due.map(m => {
               const l = answerLabel(m.question);
@@ -34,6 +35,9 @@ export default function ReviewModal() {
                   <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(l.audio)} aria-label="播放發音" disabled={!l.audio}>🔊</button>
                   <span className="mistake-text">{l.text}</span>
                   <span className="mistake-meaning">{l.meaning}{m.wrongCount > 1 ? `・答錯 ${m.wrongCount} 次` : ''}</span>
+                  {vocabKey(m.question) && VOCAB[vocabKey(m.question)!] && (
+                    <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocabKey(m.question)!)} aria-label="打開單字學習">📖</button>
+                  )}
                 </li>
               );
             })}

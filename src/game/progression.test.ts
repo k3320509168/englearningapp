@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   BOSS_QUESTION_STEPS, HITS_TO_KILL, UPGRADES, bossStep, comboMultiplier, computeDamage, goldWithBonus,
-  monsterElement, monsterMaxHp, playerStats, upgradeCost,
+  monsterAttack, monsterElement, monsterMaxHp, playerStats, upgradeCost,
 } from './progression';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
 import { buildParty, gainEnergy, nextAlive, normalizeParty, partyHp } from './party';
@@ -57,6 +57,21 @@ describe('monsters', () => {
     expect(monsterMaxHp(0, 4, false)).toBeGreaterThan(monsterMaxHp(0, 0, false));
   });
 
+  it('get harder every stage and every region, without a jump between regions', () => {
+    for (let r = 0; r < 6; r++) {
+      for (let st = 1; st < 50; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
+      if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(49, r - 1, false)).toBeLessThan(1.05);
+    }
+    // 最後一區的最後一關：沒升級時一般怪約要 3 × 1.4^6 ≈ 22 題的傷害
+    expect(monsterMaxHp(49, 5, false) / BASE_DAMAGE).toBeGreaterThan(20);
+  });
+
+  it('hit harder in later regions', () => {
+    expect(monsterAttack(false, 0, 0)).toBe(20);
+    expect(monsterAttack(true, 0, 0)).toBe(30);
+    expect(monsterAttack(false, 5, 49)).toBeGreaterThan(110);
+  });
+
   it('have an element; revenge bosses are dark', () => {
     expect(monsterElement(0, 0)).toBe('wood');
     expect(monsterElement(3, 0)).not.toBe(monsterElement(0, 0));
@@ -104,5 +119,42 @@ describe('economy', () => {
   it('applies gold bonuses', () => {
     const s = playerStats({ upgrades: { ...noUpgrades, gold: 2 } });
     expect(goldWithBonus(10, s)).toBe(12);
+  });
+});
+
+describe('skills', () => {
+  it('get stronger with rarity', async () => {
+    const { RARITY_POWER, SKILLS, skillEffect, skillDesc } = await import('./progression');
+    for (const id of Object.keys(SKILLS) as (keyof typeof SKILLS)[]) {
+      const weak = skillEffect(id, RARITY_POWER.N);
+      const strong = skillEffect(id, RARITY_POWER.UR);
+      const sum = (e: Record<string, unknown>) => Object.values(e).reduce<number>((a, v) => a + (typeof v === 'number' ? v : 0), 0);
+      expect(sum(strong as Record<string, unknown>)).toBeGreaterThanOrEqual(sum(weak as Record<string, unknown>));
+      expect(skillDesc(id, 1).length).toBeGreaterThan(0);
+    }
+    expect(skillDesc('heal', RARITY_POWER.N)).toContain('25%');
+    expect(skillDesc('heal', RARITY_POWER.UR)).toContain('48%');
+  });
+
+  it('heroes of the same class do not all share one skill; SSR heroes have signatures', async () => {
+    const { HEROES, heroSkill } = await import('./heroes');
+    const { SKILLS } = await import('./progression');
+    const swords = new Set(HEROES.filter(h => h.classId === 'swordsman' && h.rarity !== 'SSR').map(heroSkill));
+    expect(swords.size).toBeGreaterThan(1);
+    for (const h of HEROES.filter(h => h.rarity === 'SSR')) expect(SKILLS[heroSkill(h)].signature).toBe(true);
+    expect(new Set(HEROES.filter(h => h.rarity === 'SSR').map(heroSkill)).size).toBe(8);
+  });
+});
+
+describe('question difficulty within a region', () => {
+  it('early stages only draw easy questions, later stages reach harder ones', async () => {
+    const { createDecks, questionDifficulty, maxDifficultyAt, LEVELS } = await import('./QuestionData');
+    const decks = createDecks(LEVELS[0]);
+    for (let i = 0; i < 40; i++) expect(questionDifficulty(decks.normal(0))).toBeLessThanOrEqual(1);
+    expect(maxDifficultyAt(0)).toBe(1);
+    expect(maxDifficultyAt(20)).toBe(2);
+    expect(maxDifficultyAt(49)).toBe(3);
+    const late = new Set(Array.from({ length: 200 }, () => questionDifficulty(decks.normal(49))));
+    expect(late.has(3) || late.has(2)).toBe(true);
   });
 });

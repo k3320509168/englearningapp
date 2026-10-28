@@ -158,6 +158,7 @@ interface SaveActions {
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
+  clearParty: () => void; // 一鍵撤下：只留主角當隊長
   resetProgress: () => void; // 全部歸零，從建立主角重新開始
 }
 
@@ -313,10 +314,13 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   return migrated;
 }
 
+// 到期的錯題：越不熟（答對次數越少）的越先考，一樣熟的再看誰比較早到期
+export const byLeastKnown = (a: MistakeRecord, b: MistakeRecord) => a.box - b.box || a.dueAt - b.dueAt;
+
 export function dueMistakes(mistakes: Record<string, MistakeRecord>, now: number, limit: number): MistakeRecord[] {
   return Object.values(mistakes)
     .filter(m => m.dueAt <= now)
-    .sort((a, b) => a.dueAt - b.dueAt)
+    .sort(byLeastKnown)
     .slice(0, limit);
 }
 
@@ -394,9 +398,11 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             mistakes[key] = { question: q, wrongCount: (prev?.wrongCount ?? 0) + 1, lastWrongAt: now, box: 0, dueAt: now };
           } else if (prev && review && prev.dueAt <= now) {
             reviewed = true;
-            const box = prev.box + 1;
+            // 答錯的同一天就答對：是很好的立即複習，但還不算記住，明天再考一次
+            const sameDay = prev.box === 0 && localDate(new Date(prev.lastWrongAt)) === localDate(new Date(now));
+            const box = sameDay ? 0 : prev.box + 1;
             if (box >= SRS_MASTERED_BOX) delete mistakes[key];
-            else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box] };
+            else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box + 1] };
           }
           return { codex, mistakes };
         });
@@ -444,6 +450,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const p = get().player;
           const r = addXp(p.level, p.xp, n);
           set({ player: { ...p, level: r.level, xp: r.xp } });
+          if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
           return r.levelsGained;
         },
 
@@ -571,8 +578,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const prevWeekly = get().weekly;
           const weekly = refreshWeekly(prevWeekly, today);
           if (next !== prev || weekly !== prevWeekly) set({ daily: next, weekly });
-          // 新的一天第一次上線（或這週的任務剛建立）：每週任務的「上線天數」+1
-          if (next !== prev || weekly !== prevWeekly) set(s => ({ weekly: s.weekly ? applyDailyEvent(s.weekly, 'login', 1) : s.weekly }));
+          // 新的一天第一次上線（或這週的任務剛建立）：每週任務的「上線天數」+1。
+          // 同一週只是補上新任務時不算，避免重複加
+          if (next !== prev || weekly.week !== prevWeekly?.week) set(s => ({ weekly: s.weekly ? applyDailyEvent(s.weekly, 'login', 1) : s.weekly }));
         },
 
         trackDaily: (event, amount = 1) => {
@@ -645,7 +653,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const level = s.heroLevel[id] ?? 1;
           if (level >= Math.min(MAX_LEVEL, s.player.level)) return false;
           const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(heroDef(id).rarity);
-          return purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
+          const ok = purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
+          if (ok) get().trackDaily('levelup');
+          return ok;
         },
         buyTicket: () => purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1 })),
 
@@ -697,6 +707,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         }),
 
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
+
+        // 隊伍至少要有一人：有主角就留主角，否則留目前的隊長
+        clearParty: () => set(s => ({ party: s.character ? ['player'] : s.party.slice(0, 1) })),
 
         // 只保留設定、新手引導進度與主角
         // 重置：全部歸零（主角、劇情、提示、設定都清掉），回到建立主角

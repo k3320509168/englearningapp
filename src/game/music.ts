@@ -54,6 +54,7 @@ let audio: AudioContext | null = null;
 let musicGain: GainNode | null = null;
 let volume = 0.35;
 let ducked = false;
+let held = false; // 麥克風聆聽中：音樂完全靜音
 let current: Track | null = null;
 let timer: number | undefined;
 let step = 0;
@@ -67,14 +68,20 @@ function ctx(): AudioContext | null {
     musicGain = audio.createGain();
     musicGain.connect(audio.destination);
     applyVolume();
+    // 切到別的 App 或分頁時暫停音樂，回來再繼續（不然手機上會一直在背景播）
+    document.addEventListener('visibilitychange', () => {
+      if (!audio) return;
+      if (document.hidden) void audio.suspend();
+      else void audio.resume();
+    });
   }
   return audio;
 }
 
 function applyVolume() {
   if (!audio || !musicGain) return;
-  const target = volume * (ducked ? 0.3 : 1);
-  musicGain.gain.setTargetAtTime(target, audio.currentTime, 0.15);
+  const target = held ? 0 : volume * (ducked ? 0.3 : 1);
+  musicGain.gain.setTargetAtTime(target, audio.currentTime, held ? 0.03 : 0.15);
 }
 
 export function setMusicVolume(v: number) {
@@ -90,10 +97,16 @@ export function duckMusic(on: boolean) {
   applyVolume();
 }
 
+// 語音辨識聆聽時讓音樂完全靜音：Mac 的喇叭就在麥克風旁邊，音樂會被收進去而辨識錯誤
+export function holdMusic(on: boolean) {
+  held = on;
+  applyVolume();
+}
+
 // 瀏覽器要求使用者互動後才能播放：第一次點擊或按鍵時呼叫
 export function unlockMusic() {
   const ac = ctx();
-  if (ac?.state === 'suspended') void ac.resume();
+  if (ac?.state === 'suspended' && !document.hidden) void ac.resume();
   if (current && timer === undefined && volume > 0) startScheduler();
 }
 

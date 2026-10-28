@@ -15,7 +15,7 @@ import {
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
 import { buildMember, playerMods } from '../game/party';
-import { CLASS_SKILL, SKILLS, playerStats } from '../game/progression';
+import { CLASS_SKILL, SKILLS, skillDesc, playerStats } from '../game/progression';
 import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
@@ -83,7 +83,7 @@ export default function GrowthModal() {
                 </div>
               )}
               <p className="hero-stats">HP {member.maxHp} ・ 攻擊 {Math.round(member.atk)} ・ 暴擊 {Math.round(member.crit * 100)}%</p>
-              <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+              <p className="skill-line">{skill.icon} {skill.name}：{skillDesc(member.skill, member.skillPower)}</p>
               {describeMods({ ...mods, hp: 0, atk: 0, crit: 0 }).length > 0 && (
                 <p className="mods-line">被動：{describeMods({ ...mods, hp: 0, atk: 0, crit: 0 }).join('、')}</p>
               )}

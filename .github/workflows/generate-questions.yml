@@ -1,20 +1,31 @@
 # 題庫自動擴充：Gemini 出題 → 驗證 → 測試 → 開 PR 通知抽查。
 # 需要在 GitHub 專案的 Settings → Secrets and variables → Actions 新增 GEMINI_API_KEY。
+#
+# CEFR 題庫：每個區域聽、說、讀、寫各 250 題（共 1000 題）。一次執行會依序補各區域、各技能，
+# 到達呼叫上限就停，整次執行只開一個 PR；沒補滿的部分下次執行（或每週排程）會接著補。
 name: 題庫自動擴充
 
 on:
   workflow_dispatch:
     inputs:
       level:
-        description: '區域題庫（0=A1 ... 5=C2）'
+        description: '區域（0=A1 … 5=C2，all=全部）'
         required: true
-        default: '0'
-      count:
-        description: '要出幾題'
+        default: 'all'
+      skill:
+        description: '技能（listening / speaking / reading / writing / all）'
         required: true
-        default: '12'
+        default: 'all'
+      target:
+        description: '每個區域每項技能的目標題數'
+        required: true
+        default: '250'
+      max_calls:
+        description: '這次最多呼叫 Gemini 幾次（每次約 40 題）'
+        required: true
+        default: '60'
   schedule:
-    # 每週一台灣時間早上 9 點，輪流擴充各區域
+    # 每週一台灣時間早上 9 點，接著補還沒滿的題庫
     - cron: '0 1 * * 1'
 
 permissions:
@@ -24,6 +35,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,21 +44,15 @@ jobs:
           cache: npm
       - run: npm ci
 
-      - name: 決定題庫
-        id: pick
-        run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "level=$(( $(date +%U) % 6 ))" >> "$GITHUB_OUTPUT"
-            echo "count=12" >> "$GITHUB_OUTPUT"
-          else
-            echo "level=${{ inputs.level }}" >> "$GITHUB_OUTPUT"
-            echo "count=${{ inputs.count }}" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Gemini 出題
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: npx tsx scripts/generate-questions.ts --level ${{ steps.pick.outputs.level }} --count ${{ steps.pick.outputs.count }}
+        run: >
+          npx tsx scripts/generate-questions.ts
+          --level ${{ inputs.level || 'all' }}
+          --skill ${{ inputs.skill || 'all' }}
+          --target ${{ inputs.target || '250' }}
+          --max-calls ${{ inputs.max_calls || '40' }}
 
       - name: 驗證題庫與測試
         run: |
@@ -57,10 +63,11 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           branch: auto/questions-${{ github.run_id }}
-          commit-message: 'content: 題庫自動擴充（待人工抽查）'
-          title: '題庫自動擴充：請抽查新題目'
+          commit-message: 'content: CEFR 題庫自動擴充（待人工抽查）'
+          title: 'CEFR 題庫自動擴充：請抽查新題目'
           body-path: question-report.md
           labels: needs-review
           add-paths: |
+            src/game/questions/bank/*.json
             src/game/questions/generated.json
             src/game/questions/generated-vocab.json

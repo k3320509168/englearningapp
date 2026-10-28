@@ -1,9 +1,9 @@
 import { BASE_DAMAGE } from './battle';
 import { classDef } from './character';
 import type { Character, ClassId, Element } from './character';
-import { CLASS_SKILL, SKILL_ENERGY } from './progression';
+import { CLASS_SKILL, SKILL_ENERGY, playerSkillPower } from './progression';
 import type { PlayerStats, SkillId } from './progression';
-import { heroDef, heroSkill, heroStats, heroWord } from './heroes';
+import { heroDef, heroSkill, heroSkillPower, heroStats, heroWord } from './heroes';
 import type { HeroId } from './heroes';
 import { NO_MODS, combineMods, levelMods, pathMods } from './growth';
 import type { Mods } from './growth';
@@ -26,6 +26,7 @@ export interface Member {
   atk: number;
   crit: number;
   skill: SkillId;
+  skillPower: number; // 技能威力：稀有度（主角看轉職）越高越強
   energy: number;
   mods: Mods; // 等級、轉職、裝備帶來的被動效果
   classId: ClassId; // 職業：決定出手後給下一位隊員的接力加成
@@ -58,7 +59,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     return {
       id, name: c.name, element: c.element, maxHp, hp: maxHp,
       atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
-      skill: CLASS_SKILL[c.classId], energy: 0, mods, classId: c.classId,
+      skill: CLASS_SKILL[c.classId], skillPower: playerSkillPower(opts.growth?.classPath.length ?? 0), energy: 0, mods, classId: c.classId,
     };
   }
   const h = heroDef(id);
@@ -70,7 +71,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
   return {
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,
     atk: BASE_DAMAGE * stats.atkMult * hs.atk * (1 + mods.atk), crit: hs.crit,
-    skill: heroSkill(h), energy: 0, mods, classId: h.classId,
+    skill: heroSkill(h), skillPower: heroSkillPower(h, opts.tiers?.[id] ?? 0), energy: 0, mods, classId: h.classId,
   };
 }
 

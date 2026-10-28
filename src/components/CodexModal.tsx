@@ -51,6 +51,9 @@ export default function CodexModal() {
                   <p>{item.pos && <span className="pos">{item.pos} </span>}{item.subtitle}</p>
                   {item.example && <p className="lesson-example">{item.example.split('\n')[0]}<br /><span className="muted">{item.example.split('\n')[1]}</span></p>}
                   <p className="muted">答對 {item.correct} 次 · 答錯 {item.wrong} 次</p>
+                  {item.kind === 'word' && (
+                    <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(item.id.slice(2))}>📖 更多詞性與例句</button>
+                  )}
                 </div>
               )}
             </li>

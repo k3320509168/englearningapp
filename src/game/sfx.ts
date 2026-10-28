@@ -4,22 +4,35 @@
 let audio: AudioContext | null = null;
 let master: GainNode | null = null;
 let volume = 0.7;
+let muted = false; // 麥克風聆聽中：音效靜音
 
 function ctx(): AudioContext | null {
   if (typeof window === 'undefined' || !('AudioContext' in window)) return null;
   if (!audio) {
     audio = new AudioContext();
     master = audio.createGain();
-    master.gain.value = volume;
+    master.gain.value = muted ? 0 : volume;
     master.connect(audio.destination);
+    // 切到背景時音效也一起停，回來再恢復
+    document.addEventListener('visibilitychange', () => {
+      if (!audio) return;
+      if (document.hidden) void audio.suspend();
+      else void audio.resume();
+    });
   }
-  if (audio.state === 'suspended') void audio.resume();
+  if (audio.state === 'suspended' && !document.hidden) void audio.resume();
   return audio;
 }
 
 export function setSfxVolume(v: number) {
   volume = v;
-  if (master) master.gain.value = v;
+  if (master) master.gain.value = muted ? 0 : v;
+}
+
+// 語音辨識聆聽時讓音效靜音，避免被麥克風收進去
+export function muteSfx(on: boolean) {
+  muted = on;
+  if (master) master.gain.value = on ? 0 : volume;
 }
 
 interface ToneOpts {

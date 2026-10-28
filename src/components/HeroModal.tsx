@@ -3,10 +3,10 @@ import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { CLASS_SKILL, SKILLS } from '../game/progression';
+import { CLASS_SKILL, SKILLS, playerSkillPower, skillDesc } from '../game/progression';
 import { classDef, elementDef } from '../game/character';
 import {
-  HEROES, RARITIES, RARITY_INFO, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroStats, heroTitle, heroWord,
+  HEROES, RARITIES, RARITY_INFO, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroSkillPower, heroStats, heroTitle, heroWord,
 } from '../game/heroes';
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
@@ -24,7 +24,7 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, tierUp, trainHero, sellHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, clearParty, tierUp, trainHero, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
@@ -43,7 +43,12 @@ export default function HeroModal() {
   return (
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
       <section className="party-slots">
-        <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">第一位是隊長，負責魔王題</span></p>
+        <div className="collection-head">
+          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">第一位是隊長，負責魔王題</span></p>
+          {party.length > 1 && (
+            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
+          )}
+        </div>
         <div className="party-row">
           {Array.from({ length: PARTY_MAX }, (_, i) => {
             const id = party[i];
@@ -67,13 +72,14 @@ export default function HeroModal() {
           <p className="shop-gold">收集 <b>{heroes.length}/{HEROES.length}</b></p>
           <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚（🎫 {tickets}）</button>
         </div>
-        <div className="tabs tabs-scroll" role="tablist">
-          {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
-            <button key={f} role="tab" aria-selected={filter === f} className={`tab ${filter === f ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)}>
-              {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
-            </button>
-          ))}
-        </div>
+        <label className="hero-filter">
+          顯示
+          <select value={filter} onChange={e => setFilter(e.target.value as Filter)}>
+            {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
+              <option key={f} value={f}>{f === 'owned' ? '已擁有' : f === 'all' ? '全部英雄' : `${f} 品階`}</option>
+            ))}
+          </select>
+        </label>
         <ul className="hero-tiles">
           {character && filter === 'owned' && (
             <li>
@@ -128,7 +134,7 @@ export default function HeroModal() {
           <div>
             <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
             <p className="muted">主角・{cls.name}（{cls.role}）</p>
-            <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+            <p className="skill-line">{skill.icon} {skill.name}：{skillDesc(skill.id, playerSkillPower(player.classPath.length))}</p>
             <p className="skill-line relay-line">接力 {RELAY[character.classId].icon} {RELAY[character.classId].name}：{RELAY[character.classId].desc}</p>
             {renderMemberButtons(id, inParty, pos, full)}
           </div>
@@ -161,7 +167,7 @@ export default function HeroModal() {
           </h3>
           <p className="muted">{h.id}：{h.meaning}・{heroTitle(h)}（{classDef(h.classId).role}）</p>
           <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
-          <p className="skill-line">{skill.icon} {skill.name}：{skill.desc}</p>
+          <p className="skill-line">{skill.signature && <span className="rarity-tag inline">專屬</span>} {skill.icon} {skill.name}：{skillDesc(skill.id, heroSkillPower(h, tier))}</p>
           <p className="skill-line relay-line">接力 {RELAY[h.classId].icon} {RELAY[h.classId].name}：{RELAY[h.classId].desc}{h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}</p>
           {owned ? (
             <>

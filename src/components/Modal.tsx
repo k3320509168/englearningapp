@@ -2,17 +2,27 @@ import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { keepFocus } from './keepFocus';
 
+// 疊在一起的視窗（例如圖鑑上再開單字學習）：Esc 只關最上面那個
+const stack: symbol[] = [];
+
 // 共用彈出視窗：點背景或按 Esc 關閉。closable=false 時必須在視窗內完成操作（例如第一次建立角色）
 export default function Modal({ title, onClose, children, closable = true, wide = false }: {
   title: string; onClose: () => void; children: ReactNode; closable?: boolean; wide?: boolean;
 }) {
   useEffect(() => {
+    const id = Symbol('modal');
+    stack.push(id);
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); if (closable) onClose(); }
+      if (e.key !== 'Escape' || stack[stack.length - 1] !== id) return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      if (closable) onClose();
     };
     // capture：比戰鬥介面的鍵盤處理先收到，避免 Esc 同時讓玩家撤退
     window.addEventListener('keydown', onKey, true);
-    return () => window.removeEventListener('keydown', onKey, true);
+    return () => {
+      window.removeEventListener('keydown', onKey, true);
+      stack.splice(stack.indexOf(id), 1);
+    };
   }, [onClose, closable]);
 
   return (

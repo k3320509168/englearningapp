@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useBattleStore } from '../store/battleStore';
 import { useSaveStore } from '../store/saveStore';
+import { useUiStore } from '../store/uiStore';
 import { buildLesson, segmentRange } from '../game/lesson';
 import type { LessonGrammar, LessonWord } from '../game/lesson';
 import { useSpeak } from './useSpeak';
@@ -68,6 +69,7 @@ export default function LessonPanel() {
                 <button className="btn btn-ghost btn-small inline-say" onMouseDown={keepFocus} onClick={() => say(card.word.example, true)} aria-label="慢速唸出例句">🐢</button>
               </p>
               <p className="lesson-example-zh">{card.word.exampleZh}</p>
+              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(card.word.key)}>📖 更多詞性與例句</button>
             </>
           ) : (
             <>

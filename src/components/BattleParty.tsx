@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
 import { useSaveStore } from '../store/saveStore';
-import { SKILLS, SKILL_ENERGY, bossStep } from '../game/progression';
+import { SKILLS, skillDesc, SKILL_ENERGY, bossStep } from '../game/progression';
 import { elementDef, elementMultiplier } from '../game/character';
 import { isAlive, leaderIndex, skillReady } from '../game/party';
 import { RELAY } from '../game/synergy';
@@ -82,7 +82,7 @@ export function PartyBar() {
               onMouseDown={keepFocus}
               onClick={() => useBattleStore.getState().requestSkill(i)}
               disabled={!ready}
-              title={`${m.name}（${el.name}）｜${skill.icon} ${skill.name}：${skill.desc}｜接力 ${relayDef.icon} ${relayDef.name}：${relayDef.desc}`}
+              title={`${m.name}（${el.name}）｜${skill.icon} ${skill.name}：${skillDesc(m.skill, m.skillPower)}｜接力 ${relayDef.icon} ${relayDef.name}：${relayDef.desc}`}
               aria-label={`${m.name}，HP ${m.hp}/${m.maxHp}${ready ? `，可以施放${skill.name}` : ''}`}
             >
               <span className="member-portrait">
@@ -117,7 +117,7 @@ export function CastConfirm() {
   const { confirmSkill, cancelSkill } = useBattleStore.getState();
   return (
     <div className="cast-confirm" role="dialog" aria-label="施放技能">
-      <p><b>{skill.icon} {m.name}：{skill.name}</b><br /><span className="muted">{skill.desc}</span></p>
+      <p><b>{skill.icon} {m.name}：{skill.name}</b><br /><span className="muted">{skillDesc(m.skill, m.skillPower)}</span></p>
       <span className="cast-timer">⏸ {seconds(phaseLeft)}</span>
       <div className="cast-actions">
         <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={cancelSkill}>取消 Esc</button>
@@ -151,7 +151,7 @@ export function SkillButtons() {
         const skill = SKILLS[m.skill];
         return (
           <button key={m.id} className="btn skill-btn" style={{ '--el': elementDef(m.element).color } as CSSProperties}
-            onMouseDown={keepFocus} onClick={() => useBattleStore.getState().requestSkill(i)} title={skill.desc}>
+            onMouseDown={keepFocus} onClick={() => useBattleStore.getState().requestSkill(i)} title={skillDesc(m.skill, m.skillPower)}>
             <span aria-hidden>{skill.icon}</span>
             <span><b>{skill.name}</b><small>{m.name}</small></span>
             <kbd className="only-desktop">{i + 1}</kbd>

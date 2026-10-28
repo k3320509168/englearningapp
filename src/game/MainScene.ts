@@ -4,7 +4,7 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, comboMultiplier } from './progression';
+import { SKILLS, comboMultiplier, skillEffect } from './progression';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -452,6 +452,16 @@ export default class MainScene extends Phaser.Scene {
     this.tweens.add({ targets: flash, scale: 0, angle: 180, duration: 160, onComplete: () => flash.destroy() });
 
     const dashDur = Math.max(60, 90 + (PLAYER_X - f.homeX) * 0.4 - fx.tier * 8);
+    // 各職業的攻擊方式不同：劍士衝刺斬擊、戰士跳起重擊、弓箭手原地射箭、魔法師施放元素法球
+    const classId = member?.classId ?? 'swordsman';
+    if (classId !== 'swordsman') {
+      this.time.delayedCall(100, () => {
+        f.sprite.setScale(f.scale).setTexture(f.attackKey);
+        if (classId === 'warrior') this.leap(f, event, s, damage, crit, killed);
+        else this.shoot(f, event, s, damage, crit, killed, classId === 'archer' ? 'arrow' : 'orb', member ? hex(elementDef(member.element).light) : glow);
+      });
+      return;
+    }
     this.time.delayedCall(100, () => {
       // 釋放：彈回原形往前衝，combo 越高背後殘影越多
       f.sprite.setScale(f.scale).setTexture(f.attackKey);
@@ -482,6 +492,85 @@ export default class MainScene extends Phaser.Scene {
             if (!killed) this.busy = false;
           },
         });
+      },
+    });
+  }
+
+  // 攻擊結束：回到待機姿勢；最後一擊時保持 busy，讓擊倒動畫播完
+  private settle(f: Fighter, killed: boolean) {
+    f.sprite.setTexture(f.idleKey);
+    f.container.setDepth(20 + (f.homeY - GROUND_Y) / 100);
+    if (!f.down) f.idle?.resume();
+    if (!killed) this.busy = false;
+  }
+
+  private hitTarget(event: BattleEvent, s: State, damage: number, crit: boolean, killed: boolean) {
+    if (event.kind === 'shieldHit') this.shieldImpact(damage);
+    else this.impact(damage, crit, killed, s);
+  }
+
+  // 戰士：高高跳起、落在怪物面前重擊地面，震波擴散
+  private leap(f: Fighter, event: BattleEvent, s: State, damage: number, crit: boolean, killed: boolean) {
+    sfx.slash();
+    f.container.setDepth(25);
+    const landX = MONSTER_X - 140;
+    const peakY = GROUND_Y - 150;
+    this.tweens.add({ targets: f.container, x: (f.container.x + landX) / 2, y: peakY, duration: 150, ease: 'Quad.easeOut' });
+    this.tweens.add({ targets: f.sprite, angle: 360, duration: 300, ease: 'Linear', onComplete: () => f.sprite.setAngle(0) });
+    this.time.delayedCall(150, () => {
+      this.tweens.add({
+        targets: f.container, x: landX, y: GROUND_Y, duration: 130, ease: 'Quad.easeIn',
+        onComplete: () => {
+          // 落地震波
+          const ring = this.add.ellipse(landX + 40, GROUND_Y + 4, 40, 12).setStrokeStyle(4, 0xffcd4b, 0.9).setDepth(24);
+          this.tweens.add({ targets: ring, scaleX: 6, scaleY: 3, alpha: 0, duration: 380, onComplete: () => ring.destroy() });
+          if (!reducedMotion()) this.cameras.main.shake(140, 0.008);
+          burst(this, landX + 30, GROUND_Y, [0xc8a25a, 0xffffff], 10, { speed: 140 });
+          this.hitTarget(event, s, damage, crit, killed);
+          this.tweens.add({
+            targets: f.container, x: f.homeX, y: f.homeY, duration: 240, delay: 120, ease: 'Quad.easeOut',
+            onComplete: () => this.settle(f, killed),
+          });
+        },
+      });
+    });
+  }
+
+  // 弓箭手射箭／魔法師的元素法球：站在原地出手，飛行物命中才算傷害
+  private shoot(f: Fighter, event: BattleEvent, s: State, damage: number, crit: boolean, killed: boolean, kind: 'arrow' | 'orb', color: number) {
+    const startX = f.homeX + 40;
+    const startY = f.homeY - 55;
+    const endX = MONSTER_X - 30;
+    const endY = GROUND_Y - this.monsterSprite.displayHeight * 0.5;
+    const dur = kind === 'arrow' ? 170 : 260;
+    // 出手時往後退一點的後座力
+    this.tweens.add({ targets: f.container, x: f.homeX - 12, duration: 80, yoyo: true, ease: 'Quad.easeOut' });
+    let shot: Phaser.GameObjects.Shape;
+    if (kind === 'arrow') {
+      sfx.slash();
+      shot = this.add.rectangle(startX, startY, 46, 5, 0xfff1c1).setDepth(30);
+      shot.setRotation(Math.atan2(endY - startY, endX - startX));
+    } else {
+      sfx.release(2);
+      shot = this.add.circle(startX, startY, 14, color, 0.95).setStrokeStyle(3, 0xffffff, 0.8).setDepth(30);
+      this.tweens.add({ targets: shot, scale: 1.3, duration: 90, yoyo: true, repeat: -1 });
+    }
+    // 拖尾
+    const trail = this.time.addEvent({
+      delay: 30, loop: true,
+      callback: () => {
+        const dot = this.add.circle(shot.x, shot.y, kind === 'arrow' ? 3 : 8, kind === 'arrow' ? 0xffffff : color, 0.6).setDepth(29);
+        this.tweens.add({ targets: dot, alpha: 0, scale: 0.2, duration: 220, onComplete: () => dot.destroy() });
+      },
+    });
+    this.tweens.add({
+      targets: shot, x: endX, y: endY, duration: dur, ease: kind === 'arrow' ? 'Linear' : 'Sine.easeIn',
+      onComplete: () => {
+        trail.remove();
+        shot.destroy();
+        if (kind === 'orb') burst(this, endX, endY, [color, 0xffffff], 16, { speed: 200 });
+        this.hitTarget(event, s, damage, crit, killed);
+        this.time.delayedCall(160, () => this.settle(f, killed));
       },
     });
   }
@@ -644,7 +733,7 @@ export default class MainScene extends Phaser.Scene {
     screenFlash(this, 0x7fffd4, 0.25, 350);
     burst(this, PLAYER_X, GROUND_Y - 60, [0x7fffd4, 0xffffff, 0xffcd4b], 20, { up: true, gravity: -40, speed: 160 });
     this.banner(`${skill.icon} ${skill.name}`, '#7fffd4');
-    if (event.skill === 'guard') {
+    if (skillEffect(event.skill, 1).shield) {
       this.shieldBubble.setScale(0.2);
       this.tweens.add({ targets: this.shieldBubble, scale: 1, duration: 250, ease: 'Back.easeOut' });
     }

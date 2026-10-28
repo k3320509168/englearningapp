@@ -1,4 +1,4 @@
-import type { Question, VocabEntry } from './types';
+import type { Question, QuestionSkill, VocabEntry, VocabSense } from './types';
 import type { QuestionPool } from './QuestionData';
 import { validateQuestion } from './validateQuestions';
 import type { ValidationIssue } from './validateQuestions';
@@ -39,6 +39,79 @@ export function buildPrompt(levelKey: string, count: number, existingDescs: stri
 - 不要和以下已有的題目重複：
 ${existingDescs.slice(0, 200).map(d => `  - ${d}`).join('\n')}`;
 }
+
+// ---------- CEFR 題庫（聽說讀寫各 250 題）----------
+export const SKILL_TARGET = 250;
+export const BANK_SKILLS: QuestionSkill[] = ['listening', 'speaking', 'reading', 'writing'];
+
+const SKILL_RULES: Record<QuestionSkill, string> = {
+  listening: `聽力題（全部用選擇題，玩家只聽得到聲音、看不到英文）：
+  { "type": "choice", "skill": "listening", "difficulty": 1, "desc": "🎧 聽一聽，選出正確的意思", "speak": "要播放的英文（單字、片語或一句話）", "options": ["A. 中文意思", "B. ...", "C. ...", "D. ..."], "ans": "A~D", "explain": "繁體中文解說（寫出英文原句與意思）" }
+  - desc 一定要以 🎧 開頭，例如「🎧 聽一聽，選出正確的意思」「🎧 聽到這句話，最適合的回應是？」（回應題的選項用英文）。
+  - 難度 1 用單字、難度 2 用片語或短句、難度 3 用完整句子或對話回應。`,
+  speaking: `口說題（全部用口說題型，玩家要對著麥克風唸）：
+  { "type": "voice", "skill": "speaking", "difficulty": 1, "desc": "請唸出單字：中文意思", "ans": "全大寫英文（單字或短句，只能有 A-Z、空白、撇號）", "speak": "小寫示範發音" }
+  - 難度 1 是單字，難度 2 是常用片語（desc 寫「請唸出：中文意思」），難度 3 是短句（不超過 8 個字）。
+  - 單字題的單字要附 vocab。`,
+  reading: `閱讀題（全部用選擇題，考句子理解、文法與字彙用法）：
+  { "type": "choice", "skill": "reading", "difficulty": 1, "desc": "【主題】含有 ___ 的英文句子（難度 3 可以是 2～3 句的短文再問問題）", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "ans": "A~D", "explain": "繁體中文解說" }`,
+  writing: `寫作題（拼寫題與填空題各一半）：
+  - 拼寫：{ "type": "spell", "skill": "writing", "difficulty": 1, "desc": "請拼出：中文意思", "ans": "全大寫單字（只能有 A-Z）", "speak": "小寫單字" }
+  - 填空：{ "type": "fill", "skill": "writing", "difficulty": 1, "desc": "填空題：W O R _ (中文)", "ans": "空格中的大寫字母", "speak": "完整小寫單字" }（字母之間用空格隔開，空格用 _ 表示）
+  - 難度越高單字越長、越不常見，填空的空格越多。`,
+};
+
+export function buildSkillPrompt(levelKey: string, skill: QuestionSkill, count: number, existingDescs: string[], existingWords: string[]): string {
+  return `你是 CEFR 與多益（TOEIC）英語教材的出題老師。請為程度「${levelKey}」出 ${count} 題新的「${skill}」練習題，對象是台灣成年人，主題以職場、生活、旅遊為主。
+單字與句型必須符合這個 CEFR 等級（參考 CEFR 與 English Vocabulary Profile 的等級）。
+
+請只回傳 JSON（不要任何說明文字），格式：
+{
+  "normal": [ ...題目 ],
+  "boss": [ ...較難的題目，約佔 1/4 ],
+  "vocab": { "大寫單字": { "pos": "主要詞性", "meaning": "主要的繁體中文意思", "example": "英文例句", "exampleZh": "例句中文翻譯",
+    "senses": [ { "pos": "詞性", "meaning": "繁體中文意思", "examples": [ { "en": "英文例句", "zh": "中文翻譯" } ] } ] } }
+}
+
+${SKILL_RULES[skill]}
+
+規則：
+- 每一題都要有 "skill": "${skill}" 與 "difficulty"（這個等級內的難易：1 簡單、2 中等、3 較難，比例約 4:3:3）。
+- 選擇題只能有一個正確答案，錯誤選項要明確錯誤，不可以有模稜兩可。
+- 有單字的題目（拼寫、填空、口說單字、聽力單字）都要附上 vocab；vocab 的 senses 列出這個字常用的每一個詞性（最多 3 個），每個詞性 2～3 個例句，例句的難度符合這個等級。
+- 不要和以下已有的題目重複：
+${existingDescs.slice(-150).map(d => `  - ${d}`).join('\n')}
+- 盡量不要再用這些已經出過的單字：${existingWords.slice(-300).join(', ')}`;
+}
+
+// 模型回傳的 senses 格式不對就丟掉，避免單字學習視窗壞掉
+export function cleanVocab(vocab: Record<string, VocabEntry>): Record<string, VocabEntry> {
+  const out: Record<string, VocabEntry> = {};
+  for (const [rawKey, v] of Object.entries(vocab)) {
+    const key = rawKey.toUpperCase().replace(/[^A-Z]/g, '');
+    if (!key || !v || typeof v.meaning !== 'string' || typeof v.example !== 'string') continue;
+    const senses: VocabSense[] = Array.isArray(v.senses)
+      ? v.senses
+        .filter(s => s && typeof s.pos === 'string' && typeof s.meaning === 'string' && Array.isArray(s.examples))
+        .map(s => ({ pos: s.pos, meaning: s.meaning, examples: s.examples.filter(e => e && typeof e.en === 'string' && typeof e.zh === 'string').slice(0, 3) }))
+        .filter(s => s.examples.length > 0)
+        .slice(0, 3)
+      : [];
+    out[key] = { pos: String(v.pos ?? ''), meaning: v.meaning, example: v.example, exampleZh: String(v.exampleZh ?? ''), ...(senses.length ? { senses } : {}) };
+  }
+  return out;
+}
+
+// 補上（或改正）題目的分類與難度：skill 一律以這一批要求的為準，難度缺少或不合法時用 2
+export function tagBatch(batch: GeneratedBatch, skill: QuestionSkill): GeneratedBatch {
+  const tag = (q: Question): Question => (q && typeof q === 'object'
+    ? { ...q, skill, difficulty: ([1, 2, 3] as const).includes(q.difficulty as 1) ? q.difficulty : 2 }
+    : q);
+  return { normal: batch.normal.map(tag), boss: batch.boss.map(tag), vocab: cleanVocab(batch.vocab) };
+}
+
+export const countSkill = (file: { normal: Question[]; boss: Question[] }, skill: QuestionSkill) =>
+  [...file.normal, ...file.boss].filter(q => q.skill === skill).length;
 
 // 解析模型回傳：容許包在 ```json 區塊裡
 export function parseBatch(text: string): GeneratedBatch {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addToPool, buildPrompt, parseBatch, reviewBatch, reviewReport } from './questionPipeline';
+import { addToPool, buildPrompt, buildSkillPrompt, cleanVocab, countSkill, parseBatch, reviewBatch, reviewReport, tagBatch } from './questionPipeline';
 import { QUESTION_POOL, mergePools } from './QuestionData';
 
 const existing = Object.values(QUESTION_POOL).flatMap(p => [...p.normal, ...p.boss]);
@@ -39,5 +39,32 @@ describe('question pipeline', () => {
     const extra = addToPool({}, 'A1', r.accepted);
     const merged = mergePools({ A1: { normal: [], boss: [] } }, extra);
     expect(merged.A1.normal.map(q => q.ans)).toEqual(['NEWWORD']);
+  });
+});
+
+describe('CEFR 題庫', () => {
+  it('每項技能的提示詞都要求標註 skill 與 difficulty，並附上多詞性的單字資料', () => {
+    const p = buildSkillPrompt('A1 入門 (120-224分)', 'listening', 40, ['請拼出：書本'], ['BOOK']);
+    expect(p).toContain('"skill": "listening"');
+    expect(p).toContain('🎧');
+    expect(p).toContain('senses');
+    expect(p).toContain('BOOK');
+  });
+
+  it('補上分類、改正不合法的難度，壞掉的 senses 會被丟掉', () => {
+    const batch = tagBatch({
+      normal: [{ type: 'spell', desc: '請拼出：測試', ans: 'TESTWORD', speak: 'testword', difficulty: 7 as 1, skill: 'reading' }],
+      boss: [],
+      vocab: { testword: { pos: 'n.', meaning: '測試', example: 'A test.', exampleZh: '測試。', senses: [{ pos: 'n.', meaning: '測試', examples: [{ en: 'x' }] }] } as never },
+    }, 'writing');
+    expect(batch.normal[0]).toMatchObject({ skill: 'writing', difficulty: 2 });
+    expect(batch.vocab.TESTWORD.senses).toBeUndefined();
+    expect(countSkill({ normal: batch.normal, boss: [] }, 'writing')).toBe(1);
+    expect(Object.keys(cleanVocab({ '': { pos: '', meaning: '', example: '', exampleZh: '' } }))).toHaveLength(0);
+  });
+
+  it('聽力題沒有聲音會被擋下', () => {
+    const r = reviewBatch({ normal: [{ type: 'choice', skill: 'listening', desc: '🎧 聽一聽', options: ['A. 一', 'B. 二', 'C. 三', 'D. 四'], ans: 'A', explain: 'x' }], boss: [], vocab: {} }, []);
+    expect(r.accepted).toHaveLength(0);
   });
 });

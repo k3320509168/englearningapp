@@ -6,7 +6,7 @@ import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question } from '../game/types';
-import { VOICE_WAIT_MS, createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported } from '../game/speech';
+import { VOICE_WAIT_MS, createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported, recognitionErrorText } from '../game/speech';
 import { spellingExtra } from '../game/questionHelp';
 import { HINTS, pickHint } from '../game/hints';
 import { skillReady } from '../game/party';
@@ -330,9 +330,10 @@ function VoiceAnswer({ question }: { question: Question }) {
       onStart: () => { setListening(true); setError(''); },
       onResult: (t) => useBattleStore.getState().submitVoice(t),
       onError: (err) => {
-        // 麥克風被擋下：這場戰鬥的口說題改成拼寫，之後的關卡也是（設定可以再改回來）
-        if (err === 'not-allowed' || err === 'service-not-allowed' || err === 'audio-capture') return switchVoiceToSpelling();
-        setError(err === 'no-speech' ? '沒有聽到聲音，再試一次' : `辨識失敗（${err}），再試一次`);
+        // 玩家拒絕使用麥克風：口說題改成拼寫，之後的關卡也是（設定可以再改回來）。
+        // 其他錯誤（麥克風暫時被占用、網路、辨識服務）只是這一次失敗，說明原因讓玩家再試，不自動改設定
+        if (err === 'not-allowed') return switchVoiceToSpelling();
+        setError(recognitionErrorText(err));
       },
       onEnd: () => setListening(false),
     });
@@ -399,6 +400,7 @@ function FeedbackPanel() {
         <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 再聽一次</button>
         <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
         {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => say(vocab.example)}>🔊 例句</button>}
+        {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocab.key)}>📖 學這個字</button>}
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().continueAfterFeedback()}>記住了，再試一次 ⏎</button>
       </div>
       <p className="feedback-note">這個字已加入錯題本，之後會再出現讓你複習</p>

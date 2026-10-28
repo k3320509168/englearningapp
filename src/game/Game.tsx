@@ -23,6 +23,7 @@ import DailyModal from '../components/DailyModal';
 import SkillBossModal from '../components/SkillBossModal';
 import CelebrationOverlay from '../components/CelebrationOverlay';
 import ReviewModal from '../components/ReviewModal';
+import WordStudy from '../components/WordStudy';
 import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
 import { CloudConflict } from '../components/CloudSave';
@@ -32,6 +33,7 @@ import { backfillMainTitle } from './startLevel';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
+import { stopSpeaking } from './speech';
 import { playMusic, setMusicVolume, unlockMusic } from './music';
 
 // 遊戲畫布固定 800x480 的邏輯座標，由 Phaser 依容器大小等比縮放（RWD）
@@ -45,6 +47,13 @@ export default function Game() {
 
   // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
   useEffect(() => { window.scrollTo(0, 0); }, [inBattle]);
+
+  // 切到別的 App 或分頁時停止英文發音（音樂與音效在各自的模組裡暫停）
+  useEffect(() => {
+    const onHide = () => { if (document.hidden) stopSpeaking(); };
+    document.addEventListener('visibilitychange', onHide);
+    return () => document.removeEventListener('visibilitychange', onHide);
+  }, []);
 
   // 第一次進入遊戲：建立主角 → 序章，然後直接開始冒險。
   // 操作說明改成戰鬥中的情境提示，麥克風等第一次遇到口說題時才詢問
@@ -130,6 +139,8 @@ export default function Game() {
           height: GAME_HEIGHT,
         },
         scene: [MapScene, MainScene],
+        // 遊戲的音樂與音效都自己用 Web Audio 合成，不用 Phaser 的音訊（少開一個音訊環境，避免和發音、麥克風互相干擾）
+        audio: { noAudio: true },
       });
       game = g;
       // 開發模式下開放給瀏覽器 console 偵錯用
@@ -176,6 +187,7 @@ export default function Game() {
       <CloudConflict />
       <SaveRecoveryNotice />
       {modal === 'skillBoss' && <SkillBossModal />}
+      <WordStudy />
     </div>
   );
 }

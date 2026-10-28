@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { SLOW_RATE, createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice } from '../game/speech';
+import { SLOW_RATE, createRecognizer, englishVoices, isSpeechRecognitionSupported, pickVoice, recognitionErrorText } from '../game/speech';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
-import { CloudLoginError, CloudSection, SaveCodeSection } from './CloudSave';
+import { CloudLoginError, CloudSection, BackupSection } from './CloudSave';
 import { forgetCloudForReset } from '../cloud/cloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
@@ -119,7 +119,7 @@ export default function SettingsModal() {
 
       <section className="settings-group">
         <h3>💾 存檔備份</h3>
-        <SaveCodeSection />
+        <BackupSection />
       </section>
 
       <section className="settings-group danger">
@@ -189,7 +189,7 @@ function MicTest() {
     recognizer.current = createRecognizer({
       onStart: () => { setStatus('listening'); setText(''); },
       onResult: (t) => { setStatus('done'); setText(t[0] ?? ''); },
-      onError: (err) => { setStatus('error'); setText(err === 'not-allowed' ? '請允許瀏覽器使用麥克風' : `辨識失敗（${err}）`); },
+      onError: (err) => { setStatus('error'); setText(recognitionErrorText(err)); },
       onEnd: () => setStatus(s => (s === 'listening' ? 'idle' : s)),
     });
     return () => recognizer.current?.stop();

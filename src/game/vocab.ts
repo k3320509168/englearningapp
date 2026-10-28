@@ -1,5 +1,6 @@
-import type { Question, VocabEntry } from './types';
+import type { Question, VocabEntry, VocabSense } from './types';
 import generatedVocab from './questions/generated-vocab.json';
+import { BANK_VOCAB } from './questions/bank';
 
 // 單字資料：拼寫、填空、語音題共用同一個字的中文與例句。
 // key 為大寫單字；題目透過 vocabKey() 對應到這裡。
@@ -97,7 +98,24 @@ const BASE_VOCAB: Record<string, VocabEntry> = {
 };
 
 // 題目對應的單字：拼寫／語音看答案，填空看 speak（答案只是缺的字母），選擇題沒有單一單字
-export const VOCAB: Record<string, VocabEntry> = { ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) };
+export const VOCAB: Record<string, VocabEntry> = Object.assign({ ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) }, ...BANK_VOCAB);
+
+// 單字的所有詞性與例句：有完整資料就用，沒有就用主要意思與例句；主要意思一定排第一個
+export function vocabSenses(entry: VocabEntry): VocabSense[] {
+  const main: VocabSense = { pos: entry.pos, meaning: entry.meaning, examples: [{ en: entry.example, zh: entry.exampleZh }] };
+  if (!entry.senses?.length) return [main];
+  const senses = entry.senses.filter(s => s.meaning && s.examples?.length);
+  const idx = senses.findIndex(s => s.pos === entry.pos);
+  if (idx < 0) return [main, ...senses];
+  const first = senses[idx];
+  const examples = first.examples.some(e => e.en === entry.example) ? first.examples : [main.examples[0], ...first.examples];
+  return [{ ...first, examples }, ...senses.filter((_, i) => i !== idx)];
+}
+
+export const vocabByKey = (key: string) => {
+  const entry = VOCAB[key];
+  return entry ? { ...entry, key, display: entry.word ?? key.toLowerCase() } : null;
+};
 
 export function vocabKey(q: Question): string | null {
   if (q.type === 'spell' || q.type === 'voice') return q.ans;

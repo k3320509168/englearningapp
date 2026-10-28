@@ -14,6 +14,8 @@ import { GOLDEN_CLEAR_TICKETS, GOLDEN_TITLE, MAIN_TITLE } from '../game/golden';
 import { LEVELS } from '../game/QuestionData';
 import { skillBossDef } from '../game/skillBosses';
 import { materialIcon, materialName } from '../game/equipment';
+import { TEN_PULL } from '../game/heroes';
+import { useUiStore } from '../store/uiStore';
 import { keepFocus } from './keepFocus';
 
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
@@ -34,6 +36,9 @@ export default function SummaryPanel() {
   })));
   const goldenBest = useSaveStore(s => s.goldenBest);
   const titles = useSaveStore(s => s.titles);
+  // 新手引導：第一次打完地圖、還沒召喚過，而且召喚券夠十連
+  const tickets = useSaveStore(s => s.tickets);
+  const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1) && tickets >= TEN_PULL;
   const golden = mode === 'golden';
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
@@ -75,6 +80,13 @@ export default function SummaryPanel() {
           </ul>
           {mapResult.gained > 0 && <p className="star-gain">新星星 +{mapResult.gained}，獲得召喚券 🎫 ×{mapResult.gained}！</p>}
         </section>
+      )}
+      {firstSummon && mapResult && phase === 'summary' && (
+        <div className="first-summon">
+          <span aria-hidden>🔮</span>
+          <p>你已經有 <b>{tickets}</b> 張召喚券了！做第一次十連召喚，找新夥伴加入隊伍吧。</p>
+          <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => { exitToMap(); useUiStore.getState().openModal('summon'); }}>去召喚</button>
+        </div>
       )}
       {phase === 'gameOver' && !golden && <p>別灰心！賺到的金幣都保留了，可以到商店升級。下面是這次要加強的字。</p>}
       {stages[stageIdx]?.revenge && phase === 'summary' && <p>復仇成功！這些錯題的複習間隔已經拉長，下次會在幾天後再考你。</p>}

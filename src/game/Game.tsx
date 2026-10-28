@@ -38,13 +38,13 @@ export default function Game() {
   // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
   useEffect(() => { window.scrollTo(0, 0); }, [inBattle]);
 
-  // 第一次進入遊戲：建立主角 → 新手引導 → 麥克風
+  // 第一次進入遊戲：建立主角 → 序章，然後直接開始冒險。
+  // 操作說明改成戰鬥中的情境提示，麥克風等第一次遇到口說題時才詢問
   useEffect(() => {
     useSaveStore.getState().ensureDaily();
-    const { character, tutorialDone, micAsked } = useSaveStore.getState();
+    const { character, tutorialDone } = useSaveStore.getState();
     if (!character) useUiStore.getState().openModal('character');
-    else if (!tutorialDone) useUiStore.getState().openModal('tutorial');
-    else if (!micAsked) useUiStore.getState().openModal('mic');
+    else if (!tutorialDone) useSaveStore.getState().setTutorialDone(true);
   }, []);
 
   // 音效與背景音樂的音量跟著設定走

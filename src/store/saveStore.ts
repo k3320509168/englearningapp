@@ -17,13 +17,14 @@ import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/t
 import { applyDailyEvent, dailyDef, localDate, refreshDaily } from '../game/daily';
 import type { DailyEvent, DailyState } from '../game/daily';
 import { normalizeCharacter } from '../game/character';
+import { ALL_HINTS } from '../game/hints';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
 import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 13;
+export const SAVE_VERSION = 14;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -50,6 +51,8 @@ export interface Settings {
   showLessons: boolean; // 每 10 關開始前自動顯示戰前預習
   voiceAsSpelling: boolean; // 不方便用麥克風時，口說題改成拼寫題
   musicVolume: number;      // 背景音樂
+  reduceMotion: boolean;    // 減少動態效果：不震動、不閃光
+  textScale: number;        // 文字大小（1 = 標準）
 }
 
 interface SaveData {
@@ -92,6 +95,8 @@ interface SaveData {
   // 每日任務與連續登入；擴充魔王（聽說讀寫）的通關紀錄
   daily: DailyState | null;
   skillBossCleared: string[];
+  // 戰鬥中已看過的情境提示
+  hintsSeen: string[];
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -136,6 +141,7 @@ interface SaveActions {
   trackDaily: (event: DailyEvent, amount?: number) => void;
   claimDaily: (id: string) => boolean;
   recordSkillBoss: (id: string) => boolean; // 第一次通關回傳 true
+  markHint: (id: string) => void;
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
@@ -149,7 +155,7 @@ export const initialSave: SaveData = {
   micAsked: false,
   mistakes: {},
   codex: {},
-  settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35 },
+  settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35, reduceMotion: false, textScale: 1 },
   tutorialDone: false,
   gold: 0,
   upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 },
@@ -173,6 +179,7 @@ export const initialSave: SaveData = {
   titles: [],
   daily: null,
   skillBossCleared: [],
+  hintsSeen: [],
 };
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
@@ -208,6 +215,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v10 → v11：真名考驗進度（預設值補齊）。
   // v11 → v12：黃金之路紀錄與稱號（預設值補齊）。
   // v12 → v13：每日任務、背景音樂音量、擴充魔王紀錄（預設值補齊）。
+  // v13 → v14：戰鬥情境提示、動態效果與文字大小設定；已看過新手引導的舊玩家視為看過全部提示。
   const migrated: SaveData = {
     ...initialSave,
     ...data,
@@ -222,6 +230,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
+  if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
   migrated.mistakes = Object.fromEntries(Object.entries(data.mistakes ?? {}).map(([key, m]) => [
     key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 },
   ]));
@@ -328,6 +337,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (gained > 0) get().trackDaily('star', gained);
           return gained;
         },
+
+        markHint: (id) => set(s => (s.hintsSeen.includes(id) ? {} : { hintsSeen: [...s.hintsSeen, id] })),
 
         markStorySeen: (id) => set(s => (s.storySeen.includes(id) ? {} : { storySeen: [...s.storySeen, id] })),
 
@@ -511,7 +522,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
         // 只保留設定、新手引導進度與主角
-        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, character: s.character, storySeen: s.storySeen, titles: s.titles })),
+        resetProgress: () => set(s => ({ ...initialSave, settings: s.settings, tutorialDone: s.tutorialDone, hintsSeen: s.hintsSeen, character: s.character, storySeen: s.storySeen, titles: s.titles })),
       };
     },
     {
@@ -526,7 +537,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, skillBossCleared: s.skillBossCleared,
+        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),
     },
   ),

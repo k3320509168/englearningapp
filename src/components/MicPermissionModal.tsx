@@ -5,8 +5,8 @@ import { useUiStore } from '../store/uiStore';
 import { isSpeechRecognitionSupported } from '../game/speech';
 import { keepFocus } from './keepFocus';
 
-// 一開始就先說明為什麼需要麥克風，再由玩家按鈕觸發瀏覽器的權限視窗，
-// 避免第一次遇到口說題時才突然跳出權限要求。
+// 第一次遇到口說題時（戰鬥暫停），先說明為什麼需要麥克風，再由玩家按鈕觸發瀏覽器的權限視窗，
+// 避免瀏覽器突然跳出權限要求。
 type Status = 'idle' | 'asking' | 'granted' | 'denied' | 'unsupported';
 
 export default function MicPermissionModal() {
@@ -69,7 +69,7 @@ export default function MicPermissionModal() {
         ) : (
           <>
             <span />
-            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>開始冒險</button>
+            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>繼續</button>
           </>
         )}
       </div>

@@ -1279,3 +1279,25 @@ button { font: inherit; color: inherit; }
   .toolbar-actions { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .journey-btn { animation: none; } }
+
+/* ---------- 戰鬥中的情境提示 ---------- */
+.battle-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 8px 10px;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 14%, var(--panel));
+  font-size: 15px;
+  line-height: 1.5;
+  animation: hint-in 0.25s ease-out;
+}
+.battle-hint > span:first-child { font-size: 22px; }
+.battle-hint > span:nth-child(2) { flex: 1; }
+.battle-hint .btn { flex-shrink: 0; }
+@keyframes hint-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.first-summon { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 2px solid #c77dff; border-radius: 6px; background: color-mix(in srgb, #c77dff 16%, var(--panel)); text-align: left; }
+.first-summon > span { font-size: 28px; }
+.first-summon p { flex: 1; margin: 0; }

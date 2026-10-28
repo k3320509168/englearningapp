@@ -155,3 +155,11 @@ export function buildAssist(q: Question, random: () => number = Math.random): As
 export function questionKey(q: Question): string {
   return `${q.type}:${q.type === 'choice' ? `${q.desc}${q.speak ? `|${q.speak}` : ''}` : q.ans}`;
 }
+
+// 第一場戰鬥：把同一關的題目依難度排序（選擇題最簡單、再來是短的拼寫），
+// 讓新玩家前幾題一定答得出來、先建立信心。題目本身不變，只換順序。
+const TYPE_EASE: Record<string, number> = { choice: 0, spell: 1, fill: 2, voice: 3 };
+export function easeOrder(questions: Question[]): Question[] {
+  const score = (q: Question) => (TYPE_EASE[q.type] ?? 2) * 100 + q.ans.length;
+  return [...questions].sort((a, b) => score(a) - score(b));
+}

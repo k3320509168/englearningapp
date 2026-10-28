@@ -4,7 +4,7 @@ import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
   ASSIST_STREAK, BASE_DAMAGE, CAST_CONFIRM_TIME, QUESTION_LIMIT, shuffleArray,
-  applyLetter, buildAssist, checkChoice, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
+  applyLetter, buildAssist, checkChoice, easeOrder, checkVoice, isLenientStage, questionKey, shuffleChoice, speedMultiplier,
 } from '../game/battle';
 import type { Assist } from '../game/battle';
 import { SEGMENT_SIZE } from '../game/lesson';
@@ -156,6 +156,11 @@ const nextEvent = (kind: BattleEvent['kind'], extra: Omit<BattleEvent, 'id' | 'k
 let questionTransform: (q: Question) => Question = q => q;
 let decks: Decks | null = null;
 let goldenDecks: Decks[] | null = null; // 黃金之路：每個區域一份題庫，依關卡切換
+// 新玩家第一場戰鬥的前幾題（由易到難），用完就回到正常出題
+const EASY_START = 3;
+let easyQueue: Question[] = [];
+// 只用在一般關卡（頭目、菁英、寶箱、復仇魔王照常出題）
+const takeEasy = (stage: Stage) => (stage.bossMode || stage.revenge || stage.kind ? undefined : easyQueue.shift());
 // 暴擊與敵人攻擊目標用的亂數（測試可替換）
 let random: () => number = Math.random;
 export const setBattleRandom = (fn: () => number) => { random = fn; };
@@ -247,7 +252,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 每第 5 題是魔王題：剛好輪到這一關的第一題時也要出（之後再出這關準備好的題目）
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
-    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null)) : stage.questions[0];
+    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null)) : takeEasy(stage) ?? stage.questions[0];
     set({
       ...(newMap ? { combo: 0, bossMult: 1, bossChain: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
@@ -291,9 +296,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original);
     } else {
       qIdx += 1;
-      original = qIdx < stage.questions.length
-        ? stage.questions[qIdx]
-        : (stage.bossMode ? decks!.boss() : decks!.normal());
+      original = takeEasy(stage)
+        ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss() : decks!.normal()));
     }
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
@@ -602,12 +606,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       });
       const saved = save().levelProgress[levelKey] ?? 0;
       const start = Math.min(Math.max(0, fromStage ?? saved), get().stages.length - 1);
+      // 人生第一場戰鬥（圖鑑還是空的）：前幾題從題庫挑最簡單的
+      easyQueue = Object.keys(save().codex).length === 0
+        ? easeOrder(Array.from({ length: 12 }, () => decks!.normal())).slice(0, EASY_START)
+        : [];
       loadStage(start, true);
     },
 
     // 黃金之路：只有主角（沒有主角時用第一位英雄），Lv 1、沒有轉職、沒有裝備、沒有商店升級
     startGoldenRoad: (transform) => {
       questionTransform = transform ?? (q => q);
+      easyQueue = [];
       goldenDecks = createGoldenDecks();
       const { character, heroes } = save();
       const stats = playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 } });
@@ -625,6 +634,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     startSkillBoss: (id) => {
       const def = skillBossDef(id)!;
       questionTransform = q => q;
+      easyQueue = [];
       const { upgrades, party: ids, character, heroes, unlockedIndex } = save();
       const levelIdx = Math.min(unlockedIndex, LEVELS.length - 1);
       const questions = shuffleArray(skillBossQuestions(id, reachablePool(unlockedIndex)));

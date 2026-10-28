@@ -12,7 +12,7 @@ import { keepFocus } from './keepFocus';
 export default function StoryModal() {
   const storyId = useUiStore(s => s.storyId);
   const regionIdx = useUiStore(s => s.regionIdx);
-  const { closeModal, openModal, openRegion } = useUiStore.getState();
+  const { closeModal, openRegion } = useUiStore.getState();
   const character = useSaveStore(s => s.character);
   const markStorySeen = useSaveStore(s => s.markStorySeen);
   const [step, setStep] = useState(0);
@@ -23,12 +23,8 @@ export default function StoryModal() {
 
   const finish = () => {
     markStorySeen(storyId);
-    if (storyId === 'prologue') {
-      const { tutorialDone, micAsked } = useSaveStore.getState();
-      if (!tutorialDone) return openModal('tutorial');
-      if (!micAsked) return openModal('mic');
-      return closeModal();
-    }
+    // 序章看完就直接進地圖，「繼續征途」會帶玩家進第一場戰鬥
+    if (storyId === 'prologue') useSaveStore.getState().setTutorialDone(true);
     if (storyId.startsWith('region-')) return openRegion(regionIdx);
     closeModal();
   };

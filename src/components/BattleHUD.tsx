@@ -6,7 +6,9 @@ import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question } from '../game/types';
-import { createRecognizer } from '../game/speech';
+import { createRecognizer, isSpeechRecognitionSupported } from '../game/speech';
+import { HINTS, pickHint } from '../game/hints';
+import { skillReady } from '../game/party';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
@@ -47,6 +49,8 @@ export default function BattleHUD() {
     const { question: q, phase: p } = useBattleStore.getState();
     // 聽力題（題目只有聲音）不管設定都要播放
     if (q?.speak && p === 'answering' && (useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧'))) say(q.speak);
+    // 第一次遇到口說題才詢問麥克風（視窗打開時戰鬥計時會暫停）
+    if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported()) openModal('mic');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionSeq]);
 
@@ -134,9 +138,39 @@ function AssistBanner({ question }: { question: Question }) {
   return <p className="assist-banner">🧚 援軍登場！幫你{tip}，還會替你擋下一次傷害 🛡️</p>;
 }
 
+// 情境提示：遇到才教，每則只出現一次；按「知道了」或答完這題就不再出現
+function BattleHint({ question }: { question: Question }) {
+  const { combo, isBossQuestion, ready, questionSeq } = useBattleStore(useShallow(s => ({
+    combo: s.combo, isBossQuestion: s.isBossQuestion, ready: s.party.some(skillReady), questionSeq: s.questionSeq,
+  })));
+  const seen = useSaveStore(s => s.hintsSeen);
+  const markHint = useSaveStore(s => s.markHint);
+  const id = pickHint({ questionType: question.type, combo, isBossQuestion, skillReady: ready }, seen);
+
+  // 提示顯示過、而且這題答完（換題或離開作答）後就算看過了
+  useEffect(() => {
+    if (!id) return;
+    return () => {
+      const s = useBattleStore.getState();
+      if (s.questionSeq !== questionSeq || s.phase !== 'answering') markHint(id);
+    };
+  }, [id, questionSeq, markHint]);
+
+  if (!id) return null;
+  const hint = HINTS[id];
+  return (
+    <p className="battle-hint" role="note">
+      <span aria-hidden>{hint.icon}</span>
+      <span>{hint.text}</span>
+      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => markHint(id)}>知道了</button>
+    </p>
+  );
+}
+
 function AnswerPanel({ question }: { question: Question }) {
   return (
     <>
+      <BattleHint question={question} />
       <AssistBanner question={question} />
       <BossQuestionTag />
       <QuestionCard question={question} />

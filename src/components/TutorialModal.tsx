@@ -4,33 +4,26 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { keepFocus } from './keepFocus';
 
-// 新手引導：第一次進入時自動開啟，可跳過；之後可從地圖上的「❓ 說明」重看。
-// 新增系統（商店、英雄…）時，在 STEPS 加一頁即可。
+// 遊戲說明：從地圖的「更多 → 說明」打開。新玩家不會被強制看，操作改在戰鬥中用情境提示教。
+// 新增系統時，在 STEPS 加一頁即可。
 
 const STEPS = [
-  { icon: '👋', title: '歡迎來到單字冒險', body: '這是一款「打怪背多益單字」的遊戲。不用怕犯錯——答錯也是學習的一部分，遊戲會陪你把每個字學會。' },
-  { icon: '🗺️', title: '選擇區域', body: '地圖上有 A1～C1 五個區域，對應多益分數。每個區域 50 關，第 10、20…關是守門 Boss，全部通關就會解鎖下一區。' },
-  { icon: '📖', title: '戰前預習', body: '每 10 關開始前，會先用卡片預習這一段會出現的單字和文法。趕時間可以跳過，戰鬥中也能隨時按 📖 再看一次。' },
-  { icon: '⚔️', title: '四種題型', body: '拼寫／填空：用鍵盤輸入字母（手機會出現螢幕鍵盤）。選擇：點選答案或按 A～D。口說：按 🎤 對麥克風唸出單字。任何時候都能按 🔊 聽發音。' },
-  { icon: '🔥', title: '連擊 Combo', body: '連續答對會累積 Combo，每一層攻擊力 +10%，最高 2 倍。答錯時 Combo 歸零，玩家也會受到傷害。' },
-  { icon: '💡', title: '答錯沒關係', body: '答錯時會顯示正確答案、中文和例句，看完再試一次。答錯的字會記進錯題本，之後會再出現讓你複習。' },
-  { icon: '🧚', title: '援軍', body: '連續答錯 3 次時，援軍會登場：刪掉錯誤選項或提示第一個字母，還會幫你擋下一次傷害。' },
-  { icon: '🪙', title: '金幣與商店', body: '答對題目、打倒怪獸都會獲得金幣，就算體力耗盡也會保留。到地圖上的「🏪 商店」升級血量、攻擊力，或購買藥水、提示卷軸、護盾，在戰鬥中隨時使用。' },
-  { icon: '🦸', title: '英雄', body: '每位英雄擅長不同題型：弓箭手加強拼寫、法師答錯選擇題不斷 Combo、吟遊詩人口說題傷害加倍。用金幣解鎖，出發前在「🦸 英雄」選擇出戰。' },
-  { icon: '😈', title: '復仇魔王', body: '答錯的字不會被忘記！它們會在第 10、20、30、40 關化身為復仇魔王。答對後複習間隔會拉長（1 天、3 天、7 天…），這就是幫助長期記憶的「間隔重複」。' },
-  { icon: '📚', title: '單字圖鑑', body: '遇過的單字和文法都會收進圖鑑，答對越多次星星越多。打開「📚 圖鑑」看看你征服了多少單字！' },
-  { icon: '✅', title: '準備出發！', body: '這份說明隨時可以從地圖上方的「❓ 說明」重新打開。祝你冒險愉快！' },
+  { icon: '👋', title: '歡迎來到單字冒險', body: '這是一款「打怪學英文」的遊戲。不用怕犯錯——答錯也是學習的一部分，遊戲會陪你把每個字學會。' },
+  { icon: '▶', title: '繼續征途', body: '地圖下方的「繼續征途」會帶你回到目前的進度。也可以點區域，選擇其中的任一張地圖重打、拿星星。' },
+  { icon: '⚔️', title: '答對就攻擊', body: '選擇題點答案或按 A～D；拼寫題用鍵盤輸入；口說題按 🎤 唸出單字。答對時隊員輪流衝上去攻擊，答錯時怪物會反擊。' },
+  { icon: '🔥', title: 'Combo 與計時', body: '連續答對累積 Combo，傷害越來越高。每題 20 秒內答對才能延續 Combo，5 秒內答對還有快答加成。' },
+  { icon: '😈', title: '魔王題與錯題複習', body: '每 5 題會出一次魔王題，答對倍率大增。答錯的字會記進錯題本，之後以魔王題或復仇魔王的形式回來，間隔越拉越長，幫你長期記住。' },
+  { icon: '🔮', title: '英雄與成長', body: '用召喚券召喚英雄組成 4 人隊伍；主角升級後可以轉職、鍛造裝備。有紅點的按鈕代表有事可以做。' },
+  { icon: '📅', title: '每天一點點', body: '每日任務每天換新，完成可以領金幣和召喚券；連續登入還有額外獎勵。每天 5 分鐘，就能穩穩進步。' },
 ];
 
 export default function TutorialModal() {
   const [step, setStep] = useState(0);
   const setTutorialDone = useSaveStore(s => s.setTutorialDone);
-  const { closeModal, openModal } = useUiStore();
-  // 看完（或跳過）新手引導後，接著詢問麥克風權限（只問一次）
+  const closeModal = useUiStore(s => s.closeModal);
   const close = () => {
     setTutorialDone(true);
-    if (!useSaveStore.getState().micAsked) openModal('mic');
-    else closeModal();
+    closeModal();
   };
   const isLast = step === STEPS.length - 1;
   const s = STEPS[step];
@@ -50,7 +43,7 @@ export default function TutorialModal() {
         <div className="tutorial-nav">
           {step > 0 && <button className="btn" onMouseDown={keepFocus} onClick={() => setStep(step - 1)}>上一步</button>}
           {isLast
-            ? <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>開始冒險</button>
+            ? <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>知道了</button>
             : <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => setStep(step + 1)}>下一步</button>}
         </div>
       </div>

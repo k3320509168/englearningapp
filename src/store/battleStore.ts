@@ -20,7 +20,7 @@ import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, p
 import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
 import { dueMistakes, useSaveStore } from './saveStore';
-import { ADVANCE_REQ, XP, canAdvance, xpScale } from '../game/growth';
+import { ADVANCE_REQ, XP, canAdvance, isMilestoneLevel, xpScale } from '../game/growth';
 import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
 import { useUiStore } from './uiStore';
@@ -168,11 +168,12 @@ export const setBattleRandom = (fn: () => number) => { random = fn; };
 
 const save = () => useSaveStore.getState();
 
-// 升級慶祝：剛好達到轉職等級時一起提醒
+// 升級慶祝：只在里程碑等級或剛好可以轉職時全螢幕慶祝（其他升級只在戰鬥畫面跳字）
 function celebrateLevelUp(level: number) {
   const { character, player, unlockedIndex } = save();
   const tier = (player.classPath.length + 1) as 1 | 2 | 3;
   const canClass = !!character && tier <= 3 && ADVANCE_REQ[tier].level === level && canAdvance(tier, level, unlockedIndex);
+  if (!canClass && !isMilestoneLevel(level)) return;
   useUiStore.getState().celebrate({
     icon: '⬆️', title: `LEVEL UP!  Lv ${level}`,
     sub: canClass ? '可以轉職了！到「成長」選擇新的職業路線' : 'HP 與攻擊力提升了',

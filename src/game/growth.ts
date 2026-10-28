@@ -54,7 +54,12 @@ export function describeMods(m: Partial<Mods>): string[] {
 export const MAX_LEVEL = 60;
 export const LEVEL_STAT = 0.03; // 每級 HP 與攻擊 +3%
 
-export const xpToNext = (level: number) => 40 + level * 15;
+// Lv 1～9 每級需求接近（約 100），前期不會一張地圖連升好幾級；
+// Lv 1→10 的總量與原本相同（1035），一轉的時間點不變。Lv 10 以後維持 40 + 15×Lv
+export const xpToNext = (level: number) => (level < 10 ? 100 + level * 3 : 40 + level * 15);
+
+// 全螢幕慶祝只留給里程碑等級（每 5 級），其他升級在戰鬥畫面跳字就好
+export const isMilestoneLevel = (level: number) => level % 5 === 0;
 
 export function levelMods(level: number): Partial<Mods> {
   return { hp: (level - 1) * LEVEL_STAT, atk: (level - 1) * LEVEL_STAT };

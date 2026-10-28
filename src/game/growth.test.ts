@@ -141,3 +141,13 @@ describe('賣出裝備', () => {
     expect(v.materials).toEqual({ ore: Math.floor(6 * 0.65) });
   });
 });
+
+describe('經驗值曲線', () => {
+  it('前期每級需求接近，Lv 1→10 總量與舊曲線相同', () => {
+    let total = 0;
+    for (let l = 1; l < 10; l++) total += xpToNext(l);
+    expect(total).toBe(1035);
+    expect(xpToNext(1)).toBeGreaterThanOrEqual(100);
+    expect(xpToNext(10)).toBe(190);
+  });
+});

@@ -122,3 +122,28 @@ export function BossQuestionTag() {
   const step = bossStep(bossChain) * (amplify ? 2 : 1);
   return <p className="boss-q-tag">👹 魔王題（你答錯過的題目）——答對傷害 ×{step}，倍率會一路累乘！</p>;
 }
+
+// 技能按鈕：有隊員能量滿時，在答案上方出現大按鈕（拇指按得到），
+// 按下後進入原本的 5 秒確認。電腦可以按 1～4 對應隊員
+export function SkillButtons() {
+  const party = useBattleStore(s => s.party);
+  const phase = useBattleStore(s => s.phase);
+  if (phase !== 'answering') return null;
+  const ready = party.map((m, i) => ({ m, i })).filter(({ m }) => skillReady(m));
+  if (ready.length === 0) return null;
+  return (
+    <div className="skill-buttons">
+      {ready.map(({ m, i }) => {
+        const skill = SKILLS[m.skill];
+        return (
+          <button key={m.id} className="btn skill-btn" style={{ '--el': elementDef(m.element).color } as CSSProperties}
+            onMouseDown={keepFocus} onClick={() => useBattleStore.getState().requestSkill(i)} title={skill.desc}>
+            <span aria-hidden>{skill.icon}</span>
+            <span><b>{skill.name}</b><small>{m.name}</small></span>
+            <kbd className="only-desktop">{i + 1}</kbd>
+          </button>
+        );
+      })}
+    </div>
+  );
+}

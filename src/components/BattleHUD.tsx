@@ -16,7 +16,7 @@ import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
 import { BattleStatusBar, ItemMenu } from './BattleExtras';
 import { mapName, stageLabel } from '../game/regions';
-import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty';
+import { BossQuestionTag, CastConfirm, PartyBar, SkillButtons, TimerBars } from './BattleParty';
 import { useBattleClock } from './useBattleClock';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
@@ -75,6 +75,8 @@ export default function BattleHUD() {
       if (s.phase !== 'answering' || !q) return;
 
       if (e.key === ' ') { handled(); return say(q.speak); }
+      // 1～4：施放對應隊員的技能（答案只會是英文字母，數字鍵不會衝突）
+      if (/^[1-4]$/.test(e.key)) { handled(); return s.requestSkill(Number(e.key) - 1); }
       if (e.key === 'Backspace') { handled(); return s.backspace(); }
       if (/^[a-zA-Z]$/.test(e.key)) {
         handled();
@@ -172,6 +174,7 @@ function AnswerPanel({ question }: { question: Question }) {
   return (
     <>
       <BattleHint question={question} />
+      <SkillButtons />
       <AssistBanner question={question} />
       <BossQuestionTag />
       <QuestionCard question={question} />

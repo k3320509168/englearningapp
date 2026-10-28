@@ -2,9 +2,8 @@ import { useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
 import { segmentRange, summarize } from '../game/lesson';
-import { questionHint, completedSentence, questionKey } from '../game/battle';
-import { vocabFor } from '../game/vocab';
-import type { Question } from '../game/types';
+import { questionKey } from '../game/battle';
+import { answerLabel } from '../game/answerLabel';
 import { useSpeak } from './useSpeak';
 import { regionOf } from '../game/regions';
 import { starConditions } from '../game/stars';
@@ -19,15 +18,6 @@ import { useUiStore } from '../store/uiStore';
 import { keepFocus } from './keepFocus';
 
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
-
-function answerLabel(q: Question): { text: string; audio: string; meaning: string } {
-  const v = vocabFor(q);
-  if (v) return { text: v.display, audio: v.display, meaning: v.meaning };
-  // 選擇題：有空格就顯示完整句子，否則（例如「早餐的英文是？」）顯示正確選項
-  const sentence = completedSentence(q);
-  const option = q.options?.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? '';
-  return { text: sentence || option || q.desc, audio: sentence || option, meaning: q.explain ?? questionHint(q) };
-}
 
 export default function SummaryPanel() {
   const { phase, answers, stageIdx, stages, maxCombo, runGold, mapResult, levelKey, levelIdx, runXp, runDrops, mode } = useBattleStore(useShallow(s => ({

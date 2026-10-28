@@ -82,3 +82,21 @@ describe('skill bosses', () => {
     expect(useSaveStore.getState().tickets).toBe(tickets + 5);
   });
 });
+
+describe('連續登入里程碑', () => {
+  it('達到天數才能領，中斷後重新累積可以再領', async () => {
+    const { claimableMilestones, nextMilestone } = await import('./daily');
+    let d = refreshDaily(undefined, '2026-10-01');
+    for (let i = 2; i <= 7; i++) d = refreshDaily(d, `2026-10-0${i}`);
+    expect(d.streak).toBe(7);
+    expect(claimableMilestones(d).map(m => m.days)).toEqual([3, 7]);
+    d = { ...d, milestones: [3, 7] };
+    expect(claimableMilestones(d)).toEqual([]);
+    expect(refreshDaily(d, '2026-10-08').milestones).toEqual([3, 7]);
+    // 中斷一天：天數與里程碑重新開始
+    const reset = refreshDaily(d, '2026-10-10');
+    expect(reset.streak).toBe(1);
+    expect(reset.milestones).toEqual([]);
+    expect(nextMilestone(1)?.days).toBe(3);
+  });
+});

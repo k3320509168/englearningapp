@@ -4,6 +4,7 @@ import { useUiStore } from '../store/uiStore';
 import { beginLevel, continueJourney } from '../game/startLevel';
 import { continueTarget, nextStep } from '../game/notices';
 import { useNotices } from './useNotices';
+import { dailyDef } from '../game/daily';
 import { mapName, stageLabel } from '../game/regions';
 import { GOLDEN_STAGE_COUNT } from '../game/golden';
 import { keepFocus } from './keepFocus';
@@ -16,6 +17,8 @@ export default function MapLevelBar() {
   const goldenBest = useSaveStore(s => s.goldenBest);
   const storySeen = useSaveStore(s => s.storySeen);
   const notices = useNotices();
+  const daily = useSaveStore(s => s.daily);
+  const tasksDone = daily?.tasks.filter(t => t.claimed || t.progress >= (dailyDef(t.id)?.goal ?? Infinity)).length ?? 0;
   const target = continueTarget({ unlockedIndex, levelProgress: progress, storySeen });
   const step = nextStep(notices);
   const { openModal, openGrowth } = useUiStore.getState();
@@ -33,13 +36,27 @@ export default function MapLevelBar() {
           <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
           <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文' : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage)} 關`}</small>
         </button>
-        {step.action !== 'continue' || notices.dueMistakes > 0 ? (
+        {step.action !== 'continue' ? (
           <button className="next-step" onMouseDown={keepFocus} onClick={doStep}>
             <span className="next-step-icon" aria-hidden>{step.icon}</span>
             <span><small>下一步</small>{step.text}</span>
           </button>
         ) : null}
       </div>
+      {daily && (
+        <div className="today-card" aria-label="今天的冒險">
+          <span className="today-title">📅 今天的冒險 <small className="muted">約 5 分鐘</small></span>
+          <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('daily')}>
+            ✅ 任務 <b>{tasksDone}/{daily.tasks.length}</b>
+          </button>
+          <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('review')}>
+            📌 今日複習 <b>{notices.dueMistakes}</b>
+          </button>
+          <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('daily')}>
+            🔥 連續 <b>{daily.streak}</b> 天
+          </button>
+        </div>
+      )}
       <p className="muted level-bar-hint">或選擇區域（也可以直接點地圖上的旗幟）</p>
       <div className="level-buttons">
         {REGIONS.map(({ id: levelKey, name }, i) => {

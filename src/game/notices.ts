@@ -5,7 +5,7 @@ import type { OwnedEquip } from './equipment';
 import { SPARK_COST, TEN_PULL, TIER_UP_GOLD, TIER_UP_SHARDS, heroDef } from './heroes';
 import type { HeroId, SummonCounter } from './heroes';
 import { TIER_UP_TRIALS, trialsDone } from './trueName';
-import { dailyDef } from './daily';
+import { claimableMilestones, dailyDef } from './daily';
 import type { DailyState } from './daily';
 import { REGIONS } from './regions';
 import { regionStoryId } from './story';
@@ -67,7 +67,7 @@ export function computeNotices(s: NoticeInput, now = Date.now()): Notices {
     forge,
     tierUp,
     summon: s.tickets >= TEN_PULL || s.summonCounter.spark >= SPARK_COST,
-    daily: s.daily?.tasks.some(t => !t.claimed && t.progress >= (dailyDef(t.id)?.goal ?? Infinity)) ?? false,
+    daily: (s.daily?.tasks.some(t => !t.claimed && t.progress >= (dailyDef(t.id)?.goal ?? Infinity)) ?? false) || claimableMilestones(s.daily).length > 0,
     dueMistakes: Object.values(s.mistakes).filter(m => m.dueAt <= now).length,
   };
 }
@@ -91,15 +91,15 @@ export function continueTarget(s: Pick<NoticeInput, 'unlockedIndex' | 'levelProg
 }
 
 // 下一步建議：一次只給一件最值得做的事，避免玩家被一排選項淹沒
-export type NextStepAction = 'daily' | 'growth' | 'summon' | 'heroes' | 'continue';
+export type NextStepAction = 'daily' | 'growth' | 'summon' | 'heroes' | 'review' | 'continue';
 export interface NextStep { icon: string; text: string; action: NextStepAction }
 
 export function nextStep(n: Notices): NextStep {
-  if (n.daily) return { icon: '🎁', text: '每日任務完成了，領取獎勵吧', action: 'daily' };
+  if (n.daily) return { icon: '🎁', text: '有每日獎勵可以領取', action: 'daily' };
   if (n.classAdvance) return { icon: '✨', text: '你可以轉職了！選擇新的職業路線', action: 'growth' };
   if (n.summon) return { icon: '🔮', text: '召喚券夠十連了，去召喚新英雄', action: 'summon' };
   if (n.forge) return { icon: '⚒️', text: '材料夠了，可以鍛造新裝備', action: 'growth' };
   if (n.tierUp) return { icon: '🌟', text: '有英雄可以升品階了', action: 'heroes' };
-  if (n.dueMistakes > 0) return { icon: '📌', text: `${n.dueMistakes} 個錯題該複習了，會在戰鬥中以魔王題出現`, action: 'continue' };
+  if (n.dueMistakes > 0) return { icon: '📌', text: `${n.dueMistakes} 個錯題該複習了，先看一眼再出發`, action: 'review' };
   return { icon: '⚔️', text: '繼續冒險，往下一張地圖前進', action: 'continue' };
 }

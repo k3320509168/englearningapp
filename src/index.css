@@ -1385,3 +1385,21 @@ button { font: inherit; color: inherit; }
 .learned-card div { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
 .learned-card b { font-family: var(--font-body); font-size: 26px; color: var(--good); }
 .learned-card span { font-size: 12px; color: var(--muted); }
+
+/* ---------- 今天的冒險、連續登入 ---------- */
+.today-card { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; border: 2px solid var(--line); border-radius: 6px; background: var(--panel); }
+.today-title { font-family: var(--font-ui); font-weight: 700; margin-right: auto; }
+.today-chip { display: inline-flex; align-items: center; gap: 4px; min-height: 36px; padding: 4px 10px; border: 2px solid var(--ink); border-radius: 999px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); font-size: 14px; cursor: pointer; }
+.today-chip b { color: var(--accent); }
+.today-chip:hover { border-color: var(--accent); }
+@media (max-width: 560px) { .today-title { width: 100%; } .today-chip { flex: 1; justify-content: center; } }
+.streak { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.streak-week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.streak-week li { display: grid; place-items: center; height: 34px; border: 2px solid var(--ink); border-radius: 4px; background: var(--bg); color: var(--muted); font-family: var(--font-body); font-weight: 700; }
+.streak-week li.on { background: var(--accent); color: #2a1a00; }
+.streak-week li.today { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.streak-milestones { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 6px; }
+.streak-milestones li { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel-2); font-family: var(--font-body); }
+.streak-milestones li.is-ready { border-color: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.streak-milestones li.is-claimed { opacity: 0.6; }
+.streak-note { margin: 0; font-size: 12px; }

@@ -14,7 +14,7 @@ import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '.
 import { MAX_PLUS, enhanceCost, equipDef, resolveCost } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
-import { applyDailyEvent, dailyDef, localDate, refreshDaily } from '../game/daily';
+import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, streakMilestone } from '../game/daily';
 import type { DailyEvent, DailyState } from '../game/daily';
 import { normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
@@ -140,6 +140,7 @@ interface SaveActions {
   ensureDaily: () => void;
   trackDaily: (event: DailyEvent, amount?: number) => void;
   claimDaily: (id: string) => boolean;
+  claimStreak: (days: number) => boolean;
   recordSkillBoss: (id: string) => boolean; // 第一次通關回傳 true
   markHint: (id: string) => void;
   addTitle: (title: string) => boolean;
@@ -443,6 +444,19 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             gold: s.gold + def.reward.gold,
             tickets: s.tickets + def.reward.tickets,
             daily: { ...s.daily!, tasks: s.daily!.tasks.map(t => (t.id === id ? { ...t, claimed: true } : t)) },
+          });
+          return true;
+        },
+
+        claimStreak: (days) => {
+          get().ensureDaily();
+          const s = get();
+          const m = streakMilestone(days);
+          if (!m || !s.daily || !claimableMilestones(s.daily).includes(m)) return false;
+          set({
+            gold: s.gold + m.gold,
+            tickets: s.tickets + m.tickets,
+            daily: { ...s.daily, milestones: [...(s.daily.milestones ?? []), days] },
           });
           return true;
         },

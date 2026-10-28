@@ -34,7 +34,25 @@ export interface DailyState {
   date: string;      // 本地日期 YYYY-MM-DD
   tasks: DailyTask[];
   streak: number;    // 連續登入天數
+  milestones?: number[]; // 這一輪連續登入已領過的里程碑（天數）；中斷後重新累積
 }
+
+// 連續登入里程碑：中斷後重新計算，可以再領一次
+export const STREAK_MILESTONES: { days: number; gold: number; tickets: number }[] = [
+  { days: 3, gold: 100, tickets: 1 },
+  { days: 7, gold: 200, tickets: 3 },
+  { days: 14, gold: 300, tickets: 5 },
+  { days: 30, gold: 1000, tickets: 10 },
+];
+
+export const streakMilestone = (days: number) => STREAK_MILESTONES.find(m => m.days === days);
+
+// 可以領取的里程碑（達到天數、這一輪還沒領）
+export const claimableMilestones = (state: DailyState | null | undefined) =>
+  STREAK_MILESTONES.filter(m => state && state.streak >= m.days && !(state.milestones ?? []).includes(m.days));
+
+// 下一個還沒達到的里程碑
+export const nextMilestone = (streak: number) => STREAK_MILESTONES.find(m => m.days > streak);
 
 export const dailyDef = (id: string) => DAILY_POOL.find(d => d.id === id);
 
@@ -68,8 +86,8 @@ const dayBefore = (date: string) => {
 // 換日：重新抽任務；昨天有登入就延續連續天數
 export function refreshDaily(prev: DailyState | undefined, today: string): DailyState {
   if (prev && prev.date === today) return prev;
-  const streak = prev && prev.date === dayBefore(today) ? prev.streak + 1 : 1;
-  return { date: today, tasks: pickDaily(today), streak };
+  const continued = !!prev && prev.date === dayBefore(today);
+  return { date: today, tasks: pickDaily(today), streak: continued ? prev.streak + 1 : 1, milestones: continued ? prev.milestones ?? [] : [] };
 }
 
 // combo 類任務記錄最大值，其他累加

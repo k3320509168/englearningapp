@@ -44,3 +44,16 @@ describe('匯入壞掉的存檔碼', () => {
     expect(summarize(back.state).gold).toBe(0);
   });
 });
+
+describe('匯入存檔的數值與物件檢查（N2）', () => {
+  it('負數改成 0、等級至少 1、字串型的物件欄位改回預設值', () => {
+    const bad = { state: { character: { name: '測試' }, tickets: -50, gold: -3, player: 'oops', materials: { ore: -5, core: 'x' }, heroLevel: { knight: -2 } }, version: 14 };
+    const code = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(bad))));
+    const s = parseSaveCode(code)!.state as { tickets: number; gold: number; player: Record<string, unknown>; materials: Record<string, number>; heroLevel: Record<string, number> };
+    expect(s.tickets).toBe(0);
+    expect(s.gold).toBe(0);
+    expect(s.player).toEqual({ level: 1, xp: 0, classPath: [] });
+    expect(s.materials).toEqual({ ore: 0 });
+    expect(s.heroLevel).toEqual({ knight: 1 });
+  });
+});

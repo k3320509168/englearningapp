@@ -47,3 +47,11 @@ describe('程度測驗的上限', () => {
     expect(REGIONS[PLACEMENT_MAX_START].name).toBe('熔岩魔域');
   });
 });
+
+describe('測驗的同義寫法（M4）', () => {
+  it('程度測驗、守門試煉和戰鬥用同一套判定', () => {
+    const q = { type: 'spell', desc: '請拼出：謝謝', ans: 'THANK', spellAccept: ['THANKS'] };
+    expect(checkQuizAnswer(q, 'thanks')).toBe(true);
+    expect(checkQuizAnswer({ type: 'spell', desc: '請拼出：開始', ans: 'START' }, 'star')).toBe(false);
+  });
+});

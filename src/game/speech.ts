@@ -22,11 +22,20 @@ const PREFERRED = [
   /karen|daniel|moira|tessa|serena/i,                                     // 其他英文腔
 ];
 
-// 這台裝置有沒有英文語音（沒有的話聽力題要改成顯示單字）。語音清單還沒載入時先當作有
+// 這台裝置有沒有英文語音（沒有的話聽力題要改成顯示單字）。
+// 語音清單是非同步載入的：清單還是空的時候，最多等 1.5 秒（VOICE_WAIT_MS）；之後還是空的就當作沒有
+export const VOICE_WAIT_MS = 1500;
+let voicesSettled = false;
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  window.speechSynthesis.addEventListener?.('voiceschanged', () => { voicesSettled = true; });
+  window.setTimeout(() => { voicesSettled = true; }, VOICE_WAIT_MS);
+}
+
 export function hasEnglishVoice(): boolean {
-  if (!('speechSynthesis' in window)) return false;
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return false;
   const all = window.speechSynthesis.getVoices();
-  return all.length === 0 || all.some(v => v.lang.replace('_', '-').toLowerCase().startsWith('en'));
+  if (all.length === 0) return !voicesSettled;
+  return all.some(v => v.lang.replace('_', '-').toLowerCase().startsWith('en'));
 }
 
 export function englishVoices(): SpeechSynthesisVoice[] {

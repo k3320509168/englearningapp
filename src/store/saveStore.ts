@@ -232,7 +232,8 @@ const isPlainObject = (v: unknown): v is Record<string, unknown> => typeof v ===
 // 避免壞掉的存檔（匯入的存檔碼、手動修改、資料損毀）讓整個遊戲白畫面
 export function conform<T>(fallback: T, value: unknown): T {
   if (Array.isArray(fallback)) return (Array.isArray(value) ? value : fallback) as T;
-  if (typeof fallback === 'number') return (typeof value === 'number' && Number.isFinite(value) ? value : fallback) as T;
+  // 存檔裡的數字（金幣、召喚券、等級、音量…）都不會是負數
+  if (typeof fallback === 'number') return (typeof value === 'number' && Number.isFinite(value) ? (fallback >= 0 ? Math.max(0, value) : value) : fallback) as T;
   if (typeof fallback === 'string' || typeof fallback === 'boolean') return (typeof value === typeof fallback ? value : fallback) as T;
   if (isPlainObject(fallback)) {
     if (!isPlainObject(value)) return fallback;
@@ -261,17 +262,19 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v11 → v12：黃金之路紀錄與稱號（預設值補齊）。
   // v12 → v13：每日任務、背景音樂音量、擴充魔王紀錄（預設值補齊）。
   // v13 → v14：戰鬥情境提示、動態效果與文字大小設定；已看過新手引導的舊玩家視為看過全部提示。
+  // 物件欄位先確認真的是物件再合併（不然字串會被展開成 {"0": …, "1": …}）
+  const obj = <K extends keyof SaveData>(k: K) => (isPlainObject(data[k]) ? data[k] : {}) as Partial<SaveData[K]>;
   const migrated: SaveData = {
     ...initialSave,
     ...data,
-    settings: { ...initialSave.settings, ...data.settings },
-    upgrades: { ...initialSave.upgrades, ...data.upgrades },
-    items: { ...initialSave.items, ...data.items },
+    settings: { ...initialSave.settings, ...obj('settings') },
+    upgrades: { ...initialSave.upgrades, ...obj('upgrades') },
+    items: { ...initialSave.items, ...obj('items') },
     character: normalizeCharacter(data.character),
     party: data.party ?? ['player', data.hero ?? 'knight'],
-    summonCounter: { ...initialSave.summonCounter, ...data.summonCounter },
+    summonCounter: { ...initialSave.summonCounter, ...obj('summonCounter') },
     bestStage: data.bestStage ?? { ...data.levelProgress },
-    player: { ...initialSave.player, ...data.player },
+    player: { ...initialSave.player, ...obj('player') },
     storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
@@ -279,6 +282,16 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   Object.assign(migrated, conform(initialSave, migrated));
   if (migrated.daily !== null && !(isPlainObject(migrated.daily) && Array.isArray(migrated.daily.tasks))) migrated.daily = null;
   if (migrated.weekly !== null && !(isPlainObject(migrated.weekly) && Array.isArray(migrated.weekly.tasks))) migrated.weekly = null;
+  // 數量類的紀錄：去掉不是數字的項目，負數改成 0；等級至少 1
+  const counts = (rec: Record<string, number>, min = 0) => Object.fromEntries(Object.entries(rec)
+    .filter(([, v]) => typeof v === 'number' && Number.isFinite(v)).map(([k, v]) => [k, Math.max(min, v)]));
+  migrated.materials = counts(migrated.materials);
+  migrated.heroShards = counts(migrated.heroShards);
+  migrated.heroTier = counts(migrated.heroTier);
+  migrated.heroLevel = counts(migrated.heroLevel, 1);
+  migrated.levelProgress = counts(migrated.levelProgress);
+  migrated.bestStage = counts(migrated.bestStage);
+  migrated.player = { ...migrated.player, level: Math.min(MAX_LEVEL, Math.max(1, Math.floor(migrated.player.level))) };
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
   migrated.mistakes = Object.fromEntries(Object.entries(migrated.mistakes)
     .filter(([, m]) => isPlainObject(m) && isPlainObject(m.question))

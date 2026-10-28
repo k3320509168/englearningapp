@@ -4,7 +4,7 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import {
-  BODY_NAMES, CLASSES, DEFAULT_CHARACTER, ELEMENTS, FACE_NAMES, HAIR_COLORS, HAIR_NAMES, NAME_MAX_LENGTH, SKIN_TONES,
+  BODY_NAMES, CLASSES, DEFAULT_CHARACTER, DEFAULT_NAME, ELEMENTS, FACE_NAMES, HAIR_COLORS, HAIR_NAMES, NAME_MAX_LENGTH, SKIN_TONES,
   cleanName, elementDef, elementRelation, randomCharacter,
 } from '../game/character';
 import type { Character } from '../game/character';
@@ -71,7 +71,7 @@ export default function CharacterModal() {
             <input
               value={draft.name}
               maxLength={NAME_MAX_LENGTH}
-              placeholder="光"
+              placeholder={DEFAULT_NAME}
               onChange={e => setDraft(d => ({ ...d, name: e.target.value }))}
             />
           </label>

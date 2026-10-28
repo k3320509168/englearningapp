@@ -39,6 +39,7 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
     case 'spell': {
       // 只能用 A-Z 鍵輸入，答案若含空白或符號會永遠無法答對
       if (!LETTERS_ONLY.test(q.ans)) error(`spell 答案只能是大寫 A-Z："${q.ans}"`);
+      q.spellAccept?.forEach(x => { if (!LETTERS_ONLY.test(x)) error(`spellAccept（同義寫法）只能是大寫 A-Z："${x}"`); });
       if (q.speak && q.speak.toUpperCase().replace(/[^A-Z]/g, '') !== q.ans) {
         warn(`speak "${q.speak}" 與答案 "${q.ans}" 不一致`);
       }
@@ -74,6 +75,9 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
     }
     case 'voice': {
       if (!VOICE_ANSWER.test(q.ans)) error(`voice 答案需為大寫英文單字或句子："${q.ans}"`);
+      q.spellAccept?.forEach(a => {
+        if (!LETTERS_ONLY.test(a)) error(`spellAccept（同義寫法）只能是大寫 A-Z："${a}"`);
+      });
       q.accept?.forEach(a => {
         if (!VOICE_ANSWER.test(a)) error(`accept 需為大寫英文："${a}"`);
       });

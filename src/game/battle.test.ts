@@ -79,3 +79,35 @@ describe('questionHint', () => {
     expect(questionHint(choiceQ)).toBe('');
   });
 });
+
+describe('口說轉拼寫：辨識容錯不能當成正確拼法（N1）', () => {
+  it('全題庫掃描：拼寫時只接受答案與同義寫法', async () => {
+    const { LEVELS, getPool } = await import('./QuestionData');
+    const { voiceFallback, checkTypedAnswer } = await import('./battle');
+    let checked = 0;
+    for (const level of LEVELS) {
+      const pool = getPool(level);
+      for (const q of [...pool.normal, ...pool.boss]) {
+        if (q.type !== 'voice') continue;
+        const spell = voiceFallback(q);
+        if (spell.type !== 'spell') continue;
+        checked++;
+        expect(checkTypedAnswer(spell, q.ans)).toBe(true);
+        for (const heard of q.accept ?? []) {
+          if (!(q.spellAccept ?? []).includes(heard)) expect(checkTypedAnswer(spell, heard)).toBe(false);
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(50);
+  });
+
+  it('同義寫法在拼寫與口說都接受；誤聽只在口說接受', async () => {
+    const { voiceFallback, checkTypedAnswer, checkVoice } = await import('./battle');
+    const thank = { type: 'voice', desc: '請唸出單字：謝謝', ans: 'THANK', speak: 'thank you', spellAccept: ['THANKS', 'THANKYOU'] };
+    expect(checkTypedAnswer(voiceFallback(thank), 'THANKS')).toBe(true);
+    expect(checkVoice(thank, 'thanks')).toBe(true);
+    const start = { type: 'voice', desc: '請唸出單字：開始', ans: 'START', speak: 'start', accept: ['STAR'] };
+    expect(checkVoice(start, 'star')).toBe(true);
+    expect(checkTypedAnswer(voiceFallback(start), 'STAR')).toBe(false);
+  });
+});

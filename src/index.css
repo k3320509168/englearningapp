@@ -1529,3 +1529,43 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
   html[data-text-scale="large"] .is-battle .option-btn { padding: 6px 8px; }
   html[data-text-scale="large"] .is-battle .option-btn b { margin-right: 6px; }
 }
+
+/* ---------- 手機直式：螢幕鍵盤固定在畫面最下方（像手機內建鍵盤），題目和字母格在上方 ---------- */
+@media (max-width: 560px) and (pointer: coarse) {
+  .is-battle .vkbd {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    background: var(--panel);
+    border-top: var(--px) solid var(--ink);
+    box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.45);
+  }
+  /* 留出鍵盤的高度，內容才不會被鍵盤蓋住 */
+  .is-battle .hud:has(.vkbd) { padding-bottom: calc(170px + env(safe-area-inset-bottom)); }
+  .is-battle:has(.vkbd) .game-canvas { max-width: min(100%, calc(24dvh * 5 / 3)); }
+  html[data-text-scale="large"] .is-battle:has(.vkbd) .game-canvas { max-width: min(100%, calc(18dvh * 5 / 3)); }
+  /* 鍵盤不跟著文字大小放大（已經是最大可點的尺寸），避免把按鍵擠出畫面 */
+  .is-battle .vkbd { zoom: calc(1 / var(--text-scale, 1)); }
+  .is-battle .skill-btn { min-height: 42px; padding: 4px 8px; }
+  .is-battle .skill-btn > span:first-child { font-size: 20px; }
+  .is-battle .skill-btn small { display: none; }
+}
+
+/* ---------- 橫向矮螢幕：拼寫題的三排鍵盤也要放得下 ---------- */
+@media (orientation: landscape) and (max-height: 600px) {
+  .vkbd { gap: 3px; }
+  .vkbd-row { gap: 3px; }
+  .vkbd-key { min-height: 28px; font-size: 15px; }
+  /* 題型標籤在矮螢幕上省略（題目本身已經寫了「請拼出」「填空題」） */
+  .is-battle .question-card .q-tag { display: none; }
+  .is-battle .slots { gap: 4px; }
+  .is-battle .slot { height: 34px; width: 28px; font-size: 15px; }
+  .is-battle .chain-line { font-size: 12px; }
+  .is-battle .timers { gap: 2px 10px; }
+  .is-battle .skill-btn { min-height: 36px; padding: 2px 8px; }
+  .is-battle .skill-btn small { display: none; }
+  .is-battle .battle-hint { padding: 4px 8px; font-size: 13px; }
+}

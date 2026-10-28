@@ -52,7 +52,8 @@ export function shuffleChoice(q: Question, random: () => number = Math.random): 
 // 拼寫／填空：自由輸入（最多到答案的長度），按 Enter 或「送出」才判定對錯，
 // 打錯可以用 Backspace 改，讓玩家有思考的空間
 // 可以接受的拼法（答案＋同義的寫法，例如 THANK／THANKS）
-const typedCandidates = (q: Question) => [q.ans, ...(q.type === 'spell' ? q.accept ?? [] : [])];
+// 只接受「同義寫法」；口說題的 accept 是辨識容錯（例如 STAR），拼寫時接受會教錯
+const typedCandidates = (q: Question) => [q.ans, ...(q.type === 'spell' ? q.spellAccept ?? [] : [])];
 const maxTypedLength = (q: Question) => Math.max(...typedCandidates(q).map(a => a.length));
 
 export function applyLetter(q: Question, typed: string, letter: string): string {
@@ -106,7 +107,7 @@ function wordMatches(heard: string, target: string): boolean {
 // transcripts：辨識引擎給的所有候選，任何一個唸對就算對
 export function checkVoice(q: Question, transcripts: string | string[]): boolean {
   const heardList = Array.isArray(transcripts) ? transcripts : [transcripts];
-  const candidates = [q.ans, ...(q.accept ?? [])];
+  const candidates = [q.ans, ...(q.accept ?? []), ...(q.spellAccept ?? [])];
   const isSentence = q.ans.trim().includes(' ');
   return heardList.some(transcript => {
     if (isSentence) return candidates.some(c => sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO);
@@ -131,9 +132,8 @@ export function questionHint(q: Question): string {
 // 瀏覽器不支援語音辨識時，把單字語音題改為拼寫題，讓玩家仍能練到這個字
 export function voiceFallback(q: Question): Question {
   if (q.type !== 'voice' || !/^[A-Z]+$/.test(q.ans)) return q;
-  // 口說的「可接受答案」裡，能用鍵盤打的（例如 THANKS）拼寫時也接受
-  const accept = q.accept?.filter(a => /^[A-Z]+$/.test(a));
-  return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: accept?.length ? accept : undefined };
+  // 只帶「同義寫法」；辨識容錯（accept）是給語音用的，拼寫時不能算對
+  return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: undefined };
 }
 
 // 拼寫／填空的進度顯示：拼寫顯示字母格，填空把已輸入的字母填進題目的空格

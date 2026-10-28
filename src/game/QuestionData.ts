@@ -8,7 +8,7 @@ export const LEVELS = [
 ];
 
 // 注意：spell / fill 的 ans 只能是大寫 A-Z（鍵盤輸入限制），choice 的 ans 為 A-D，
-// voice 的 ans 為大寫單字（以「辨識結果包含 ans 或 accept」判定）。
+// voice 的 ans 為大寫單字（以「辨識結果包含 ans、accept（辨識容錯）或 spellAccept（同義寫法）」判定）。
 export type QuestionPool = Record<string, { normal: Question[], boss: Question[] }>;
 
 // 手寫的題庫；自動生成（Gemini → 驗證 → 人工抽查）的題目放在 questions/generated.json，載入時合併
@@ -31,8 +31,8 @@ const BASE_POOL: QuestionPool = {
     ],
     boss: [
       { type: "voice", desc: "請唸出單字：開始", ans: "START", speak: "start", accept: ["STAR"] },
-      { type: "voice", desc: "請唸出單字：謝謝", ans: "THANK", speak: "thank you", accept: ["THANKS", "THANKYOU"] },
-      { type: "voice", desc: "請唸出單字：早安", ans: "MORNING", speak: "good morning", accept: ["GOODMORNING"] },
+      { type: "voice", desc: "請唸出單字：謝謝", ans: "THANK", speak: "thank you", spellAccept: ["THANKS", "THANKYOU"] },
+      { type: "voice", desc: "請唸出單字：早安", ans: "MORNING", speak: "good morning", spellAccept: ["GOODMORNING"] },
       { type: "voice", desc: "請唸出單字：家庭", ans: "FAMILY", speak: "family" },
       { type: "spell", desc: "【守門試煉】請拼出：星期三", ans: "WEDNESDAY", speak: "Wednesday" }
     ]

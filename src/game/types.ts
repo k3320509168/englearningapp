@@ -4,7 +4,8 @@ export interface Question {
   ans: string;
   speak?: string;
   options?: string[];
-  accept?: string[];
+  accept?: string[];      // 口說題專用：語音辨識常見的誤聽（例如 start 聽成 STAR），不代表拼法正確
+  spellAccept?: string[]; // 同義寫法（例如 THANK／THANKS／THANKYOU）：拼寫與口說都接受
   // 選擇題的文法／字彙解說，用於戰前預習與答錯回饋
   explain?: string;
 }

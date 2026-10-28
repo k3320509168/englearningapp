@@ -6,7 +6,7 @@ import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question } from '../game/types';
-import { createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported } from '../game/speech';
+import { VOICE_WAIT_MS, createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported } from '../game/speech';
 import { spellingExtra } from '../game/questionHelp';
 import { HINTS, pickHint } from '../game/hints';
 import { skillReady } from '../game/party';
@@ -149,10 +149,23 @@ export default function BattleHUD() {
   );
 }
 
+// 有沒有英文語音：語音清單載入完成（或等待逾時）後重新判斷一次
+function useEnglishVoice(): boolean {
+  const [has, setHas] = useState(hasEnglishVoice);
+  useEffect(() => {
+    const update = () => setHas(hasEnglishVoice());
+    const t = window.setTimeout(update, VOICE_WAIT_MS + 50);
+    window.speechSynthesis?.addEventListener?.('voiceschanged', update);
+    return () => { window.clearTimeout(t); window.speechSynthesis?.removeEventListener?.('voiceschanged', update); };
+  }, []);
+  return has;
+}
+
 function QuestionCard({ question }: { question: Question }) {
   const extra = spellingExtra(question);
   // 聽力題（題目只有聲音）：這台裝置沒有英文語音時改成顯示單字，不然完全無法作答
-  const silent = question.desc.startsWith('🎧') && !hasEnglishVoice();
+  const englishVoice = useEnglishVoice();
+  const silent = question.desc.startsWith('🎧') && !englishVoice;
   return (
     <div className="question-card">
       <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>
@@ -238,12 +251,17 @@ function TypingAnswer({ question }: { question: Question }) {
   const { inputLetter, backspace, submitTyped } = useBattleStore.getState();
   const slots = answerSlots(question, typed);
   const full = typed.length >= question.ans.length;
+  const slotsRef = useRef<HTMLDivElement>(null);
+  // 手機：鍵盤固定在下方，換題時把字母格捲到畫面中間，打字時看得到
+  useEffect(() => {
+    if (window.matchMedia?.('(max-width: 560px) and (pointer: coarse)').matches) slotsRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, [question]);
   const nextBlank = slots.findIndex(sl => sl.blank && !sl.char);
   let blankIdx = 0;
 
   return (
     <>
-      <div className="slots" aria-label={`已輸入 ${typed || '（空）'}`}>
+      <div className="slots" ref={slotsRef} aria-label={`已輸入 ${typed || '（空）'}`}>
         {slots.map((sl, i) => {
           const isRevealed = sl.blank && blankIdx++ < revealed;
           return (

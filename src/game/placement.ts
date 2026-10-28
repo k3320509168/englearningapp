@@ -1,6 +1,6 @@
 import type { Question } from './types';
 import { LEVELS, getPool } from './QuestionData';
-import { shuffleArray, shuffleChoice, voiceFallback } from './battle';
+import { checkTypedAnswer, shuffleArray, shuffleChoice, voiceFallback } from './battle';
 
 // 跳級：程度測驗（新玩家看完序章時可選）與守門試煉（隨時挑戰目前的區域，答對 8/10 直接通關）。
 // 不送等級；守門試煉需要主角達到一定等級才能挑戰。最後一個區域（王城）有主線結局，不能跳過。
@@ -41,5 +41,6 @@ export function checkQuizAnswer(q: Question, input: string): boolean {
   const given = input.trim().toUpperCase().replace(/[^A-Z]/g, '');
   if (q.type === 'choice') return input === q.ans;
   if (q.type === 'fill') return given === q.ans || (!!q.speak && given === q.speak.toUpperCase().replace(/[^A-Z]/g, ''));
-  return given === q.ans;
+  // 拼寫：和戰鬥中同一套判定（接受同義寫法）
+  return checkTypedAnswer(q, given);
 }

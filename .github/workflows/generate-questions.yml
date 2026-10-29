@@ -1,7 +1,8 @@
 # 題庫自動擴充：Gemini 出題 → 驗證 → 測試 → 開 PR 通知抽查。
 # 需要在 GitHub 專案的 Settings → Secrets and variables → Actions 新增 GEMINI_API_KEY。
 #
-# CEFR 題庫：每個區域聽、說、讀、寫各 250 題（共 1000 題）。一次執行會依序補各區域、各技能，
+# CEFR 題庫：各區目標 1000～2000 題（聽 30%、讀 30%、說 20%、寫 20%）。
+# 免費額度是每個模型每天 20 次（失敗的也算），程式會在模型忙碌或額度用完時自動換模型。一次執行會依序補各區域、各技能，
 # 到達呼叫上限就停，整次執行只開一個 PR；沒補滿的部分下次執行（或每週排程）會接著補。
 name: 題庫自動擴充
 
@@ -17,11 +18,11 @@ on:
         required: true
         default: 'all'
       target:
-        description: '每個區域每項技能的目標題數'
-        required: true
-        default: '250'
+        description: '每個區域每項技能的目標題數（留空 = 依區域自動：A1 1000 題 … C2 2000 題）'
+        required: false
+        default: ''
       max_calls:
-        description: '這次最多呼叫 Gemini 幾次（每次約 40 題）'
+        description: '這次最多呼叫 Gemini 幾次（每次約 60 題；免費額度每個模型每天 20 次）'
         required: true
         default: '60'
   schedule:
@@ -51,7 +52,7 @@ jobs:
           npx tsx scripts/generate-questions.ts
           --level ${{ inputs.level || 'all' }}
           --skill ${{ inputs.skill || 'all' }}
-          --target ${{ inputs.target || '250' }}
+          ${{ inputs.target && format('--target {0}', inputs.target) || '' }}
           --max-calls ${{ inputs.max_calls || '40' }}
 
       - name: 驗證題庫與測試

@@ -233,6 +233,10 @@ export default class MainScene extends Phaser.Scene {
 
     this.armorText.setText(this.armorLabel(s)).setColor(s.charging || (s.bossGate > 0 && s.combo < s.bossGate) ? '#ff8a8a' : '#ffcd4b');
     if (s.charging && !prev?.charging) this.chargeWarning();
+    if (s.bossCast && s.bossCast.seq !== prev?.bossCast?.seq) {
+      sfx.boss();
+      popText(this, 400, 150, s.bossCast.text, 24, '#ffcd4b', { rise: 16, dur: 2200 });
+    }
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
     if (!prev) this.showCombo(s, 0);
@@ -770,7 +774,16 @@ export default class MainScene extends Phaser.Scene {
       const a = assaultFor(s.levelIdx);
       return a && a.window > 0 ? `⚡ 敵人蓄力中！${a.window / 1000} 秒內答對可打斷` : '⚡ 敵人蓄力重擊！答錯傷害加倍';
     }
-    if (s.bossGate > 0) return s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
+    if (s.bossGate > 0) {
+      const armor = s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
+      const status = [
+        s.frostLeft > 0 && `❄️ 極寒 ${s.frostLeft}`, s.mirageLeft > 0 && `🏜️ 分身 ${s.mirageLeft}`,
+        s.bombLeft > 0 && `💣 炸彈 ${s.bombLeft}`, s.staticStacks > 0 && `⚡ 靜電 ×${s.staticStacks}`,
+        s.sealed && `🔇 技能封印（${s.combo}/50）`, s.stunned && `🪨 ${s.party.find(m => m.id === s.stunned?.member)?.name ?? ''} 被震飛`,
+      ].filter(Boolean).join('  ');
+      return status ? `${armor}
+${status}` : armor;
+    }
     if (s.waves > 1) return `第 ${s.wave}/${s.waves} 隻${s.blessed ? '  ✨ 祝福中' : ''}`;
     return s.blessed ? '✨ 祝福中' : '';
   }

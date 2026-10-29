@@ -54,7 +54,8 @@ export default function BattleHUD() {
   useEffect(() => {
     const { question: q, phase: p } = useBattleStore.getState();
     // 聽力題（題目只有聲音）不管設定都要播放
-    if (q?.speak && p === 'answering' && (useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧'))) say(q.speak);
+    // 魔王的「視覺剝奪」看不到題目時也一定要播放
+    if (q?.speak && p === 'answering' && (useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧') || useBattleStore.getState().blind)) say(q.speak);
     // 第一次遇到口說題才詢問麥克風（視窗打開時戰鬥計時會暫停）
     if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported()) openModal('mic');
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -166,10 +167,14 @@ function QuestionCard({ question }: { question: Question }) {
   // 聽力題（題目只有聲音）：這台裝置沒有英文語音時改成顯示單字，不然完全無法作答
   const englishVoice = useEnglishVoice();
   const silent = question.desc.startsWith('🎧') && !englishVoice;
+  // 魔王「視覺剝奪」：有發音的題目把題目文字藏起來，只能用聽的（沒有英文語音的裝置照常顯示）
+  const blind = useBattleStore(s => s.blind) && !!question.speak && englishVoice;
   return (
     <div className="question-card">
       <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>
-      <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>
+      {blind
+        ? <p className="q-desc">🌫️ 迷霧遮住了題目，仔細聽發音！</p>
+        : <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>}
       {silent && question.speak && <p className="q-silent">這台裝置沒有英文語音，改成顯示單字：<b>{question.speak}</b></p>}
     </div>
   );

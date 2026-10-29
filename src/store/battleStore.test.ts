@@ -563,3 +563,46 @@ describe('enemy assaults (A2+)', () => {
     expect(before - state().playerHp).toBe(Math.round(monsterAttack(false, 2, 0) * 1.5));
   });
 });
+
+describe('region boss skills', () => {
+  const startBoss = (levelIdx: number) => {
+    resetSave({ unlockedIndex: levelIdx });
+    state().startLevel(LEVELS[levelIdx], undefined, 49);
+    if (state().phase === 'lesson') state().startBattle();
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
+  };
+
+  it('each region boss has its own skill', () => {
+    startBoss(0);
+    expect(state().bossSkill).toBe('regrow');
+    startBoss(8);
+    expect(state().bossSkill).toBe('seal');
+  });
+
+  it('A1 tree regrows 10% every 3 questions unless combo is 5+', () => {
+    startBoss(0);
+    useBattleStore.setState({ monsterHp: 5e8 });
+    for (let i = 0; i < 3; i++) { useBattleStore.setState({ combo: 0 }); answerCurrent(); }
+    expect(state().bossCast?.text).toContain('瘋狂生長');
+    expect(state().monsterHp).toBeGreaterThan(5e8);
+  });
+
+  it('C1 bomb explodes on a wrong answer during the countdown', () => {
+    startBoss(7);
+    useBattleStore.setState({ bombLeft: 3 });
+    const before = state().party.map(m => m.hp);
+    answerWrong();
+    expect(state().bombLeft).toBe(0);
+    expect(state().party.every((m, i) => m.hp < before[i])).toBe(true);
+  });
+
+  it('C2 seal blocks skills until 50 combo', () => {
+    startBoss(8);
+    useBattleStore.setState({ party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
+    state().requestSkill(0);
+    expect(state().phase).toBe('answering');
+    useBattleStore.setState({ combo: 49 });
+    answerCurrent();
+    expect(state().sealed).toBe(false);
+  });
+});

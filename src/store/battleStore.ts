@@ -1,5 +1,10 @@
 import { create } from 'zustand';
 import type { Question, Stage } from '../game/types';
+import {
+  BOMB_DAMAGE, BOMB_QUESTIONS, FROST_BLOCK_COMBO, FROST_LIMIT, FROST_QUESTIONS, MIRAGE_QUESTIONS, QUAKE_QUESTIONS, REGROW_BLOCK_COMBO, REGROW_HEAL,
+  SEAL_BREAK_COMBO, STATIC_STEP, bossSkillFor,
+} from '../game/bossSkills';
+import type { BossSkillId } from '../game/bossSkills';
 import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
@@ -144,6 +149,17 @@ interface BattleState {
   bossGate: number;   // 首領戰：破甲需要的 combo（0 = 不是首領戰）
   blessed: boolean;   // 祝福：答錯 combo 只扣 30%（首領戰固定有；一般關失敗後有機率）
   enemyTurn: number;  // A2+ 敵人主動攻擊的計數（每題 +1）
+  // 區域最終魔王的特殊技能（見 game/bossSkills.ts）
+  bossSkill: BossSkillId | null;
+  bossCast: { seq: number; text: string } | null; // 魔王剛發動技能／被破解的提示
+  frostLeft: number;   // 極寒：剩幾題只有 8 秒
+  blind: boolean;      // 視覺剝奪：這一題看不到題目文字
+  mirageLeft: number;  // 海市蜃樓：剩幾題答錯會雙倍傷害
+  mirageStreak: number;
+  stunned: { member: MemberId; left: number } | null; // 大地碎裂：被震飛的隊員
+  staticStacks: number; // 靜電標記：連續答錯幾次
+  bombLeft: number;    // 灰燼炸彈：倒數
+  sealed: boolean;     // 全知封印：技能被封印
   charging: boolean;  // 敵人正在蓄力：這一題答完就會出手
 
   // fromStage 未指定時，從存檔記錄的進度繼續
@@ -275,6 +291,13 @@ const mergeDrops = (a: Record<string, number>, b: Record<string, number>) => {
   return out;
 };
 
+const bossSkillState = (bossSkill: BossSkillId | null) => ({
+  bossSkill, bossCast: null, frostLeft: 0, blind: false, mirageLeft: 0, mirageStreak: 0, stunned: null,
+  staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal',
+});
+let castSeq = 0;
+const cast = (text: string) => ({ seq: ++castSeq, text });
+
 const withTotals = (party: Member[]) => {
   const { hp, maxHp } = partyHp(party);
   return { party, playerHp: hp, playerMaxHp: maxHp };
@@ -302,7 +325,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? NORMAL_WAVES : 1;
     const fails = s.mode === 'normal' ? stageFails.get(failKey(s.levelKey, stageIdx)) ?? 0 : 0;
     const blessed = bossGate > 0 || (fails > 0 && random() < blessingChance(fails));
-    if (bossGate > 0) {
+    if (bossGate > 0 && isFinalBoss) {
+      const def = bossSkillFor(s.levelIdx);
+      useUiStore.getState().celebrate({
+        icon: def.icon, title: `區域魔王：${def.boss}`,
+        sub: `${def.name}：${def.desc}｜破解：${def.counter}｜連擊破甲 ${bossGate} combo｜魔王祝福：答錯 combo 只扣 30%`, color: '#ff8a8a',
+      });
+    } else if (bossGate > 0) {
       useUiStore.getState().celebrate({ icon: '👑', title: '首領戰：連擊破甲', sub: `combo 未達 ${bossGate} 時傷害只有 ${Math.round(ARMOR_DAMAGE * 100)}%｜魔王祝福：答錯 combo 只扣 30%`, color: '#ff8a8a' });
     } else if (blessed) {
       useUiStore.getState().celebrate({ icon: '✨', title: '女神的祝福', sub: '這一關答錯不會中斷 combo（只扣 30%），全隊傷害 +20%', color: '#7fe8ff' });
@@ -344,6 +373,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
       stageHits: 0,
       wave: 1, waves, bossGate, blessed, enemyTurn: 0, charging: false,
+      ...bossSkillState(s.mode === 'normal' && stage.bossMode && isFinalBoss && !stage.revenge ? bossSkillFor(s.levelIdx).id : null),
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
@@ -354,6 +384,44 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       casting: null,
       event: nextEvent('stage'),
     });
+  };
+
+  // 區域最終魔王：每出一題更新技能狀態，輪到時發動技能
+  const bossTurn = (turn: number): Partial<BattleState> & { frostLeft: number } => {
+    const s = get();
+    const left = {
+      frostLeft: Math.max(0, s.frostLeft - 1), blind: false, mirageLeft: Math.max(0, s.mirageLeft - 1),
+      stunned: s.stunned && s.stunned.left > 1 ? { ...s.stunned, left: s.stunned.left - 1 } : null,
+    };
+    if (!s.bossSkill) return left;
+    const def = bossSkillFor(s.levelIdx);
+    if (!def.every || turn % def.every !== 0) return left;
+    const head = `${def.icon} ${def.boss}發動「${def.name}」`;
+    switch (s.bossSkill) {
+      case 'regrow':
+        if (s.combo >= REGROW_BLOCK_COMBO) return { ...left, bossCast: cast(`${head}，但被 combo 的火焰燒掉了！`) };
+        return { ...left, monsterHp: Math.min(s.monsterMaxHp, s.monsterHp + Math.round(s.monsterMaxHp * REGROW_HEAL)), bossCast: cast(`${head}：回復 10% 生命`) };
+      case 'blind':
+        return { ...left, blind: true, bossCast: cast(`${head}：看不到題目，仔細聽！`) };
+      case 'tsunami':
+        if (s.shield) return { ...left, bossCast: cast(`${head}，被護盾擋下了！`) };
+        return { ...left, party: s.party.map(m => ({ ...m, energy: 0 })), bossCast: cast(`${head}：全隊技能能量被沖走`) };
+      case 'mirage':
+        return { ...left, mirageLeft: MIRAGE_QUESTIONS, mirageStreak: 0, bossCast: cast(`${head}：接下來答錯會受到雙倍傷害`) };
+      case 'quake': {
+        const alive = s.party.filter(isAlive);
+        if (alive.length < 2) return left;
+        const target = alive[Math.floor(random() * alive.length)];
+        return { ...left, stunned: { member: target.id, left: QUAKE_QUESTIONS }, bossCast: cast(`${head}：${target.name} 被震飛了！`) };
+      }
+      case 'frost':
+        if (s.combo >= FROST_BLOCK_COMBO) return { ...left, bossCast: cast(`${head}，被 combo 的熱能抵消了！`) };
+        return { ...left, frostLeft: FROST_QUESTIONS, bossCast: cast(`${head}：答題時間只剩 ${FROST_LIMIT / 1000} 秒`) };
+      case 'bomb':
+        return { ...left, bombLeft: BOMB_QUESTIONS, bossCast: cast(`${head}：${BOMB_QUESTIONS} 題內不能答錯！`) };
+      default:
+        return left;
+    }
   };
 
   // 下一題：每第 5 題是魔王題（復仇魔王、寶箱怪不另外出）；
@@ -376,10 +444,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // A2+ 敵人主動攻擊：每 every 題蓄力一次（寶箱怪不攻擊）
     const assault = s.mode === 'normal' && stage.kind !== 'treasure' ? assaultFor(s.levelIdx) : null;
     const enemyTurn = s.enemyTurn + 1;
+    const boss = bossTurn(enemyTurn);
+    const timer = freshTimer(s.focusMs);
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
-      retrying: false, ...freshTimer(s.focusMs),
+      retrying: false, ...timer,
+      ...(boss.frostLeft > 0 ? { questionLimit: FROST_LIMIT, questionLeft: FROST_LIMIT } : {}),
       enemyTurn, charging: !!assault && enemyTurn % assault.every === 0,
+      ...boss,
     };
   };
 
@@ -475,6 +547,34 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
   };
 
+  // 魔王技能：答對時的破解與倒數
+  const nextAttacker = (party: Member[], from: number) => {
+    const stunned = get().stunned?.member;
+    const idx = Math.max(0, nextAlive(party, from));
+    if (party[idx]?.id !== stunned) return idx;
+    const after = nextAlive(party, idx + 1);
+    return after >= 0 && after !== idx ? after : idx;
+  };
+
+  const bossOnCorrect = (combo: number, chained: boolean): Partial<BattleState> => {
+    const s = get();
+    if (!s.bossSkill) return {};
+    const patch: Partial<BattleState> = { staticStacks: 0 };
+    const def = bossSkillFor(s.levelIdx);
+    if (s.blind) Object.assign(patch, { charge: 2, bossCast: cast(`${def.icon} 聽懂了！${def.boss}破防，下一擊 ×2`) });
+    if (s.mirageLeft > 0) {
+      const streak = s.mirageStreak + 1;
+      Object.assign(patch, streak >= 2 ? { mirageLeft: 0, mirageStreak: 0, bossCast: cast('🏜️ 看破分身！') } : { mirageStreak: streak });
+    }
+    if (s.bombLeft > 0) {
+      const bombLeft = s.bombLeft - 1;
+      Object.assign(patch, { bombLeft }, bombLeft === 0 ? { charge: 3, bossCast: cast('💣 炸彈反丟回去！下一擊 ×3') } : {});
+    }
+    if (s.stunned && chained) Object.assign(patch, { stunned: null, bossCast: cast('🔗 連攜攻擊把隊友拉回來了！') });
+    if (s.sealed && combo >= SEAL_BREAK_COMBO) Object.assign(patch, { sealed: false, charge: 2, bossCast: cast('🔓 封印解除！Fever：下一擊 ×2') });
+    return patch;
+  };
+
   const onCorrect = () => {
     const s = get();
     if (!s.original || !s.question) return;
@@ -486,7 +586,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const speed = s.overtime ? 1 : speedMultiplier(elapsed);
 
     // 魔王題由隊長出手，其他題目隊伍輪流
-    const attackerIdx = s.isBossQuestion ? Math.max(0, leaderIndex(s.party)) : s.attackerIdx;
+    // 被大地碎裂震飛的隊員不能出手，輪到他時換下一位
+    const attackerIdx = s.isBossQuestion ? Math.max(0, leaderIndex(s.party)) : s.party[s.attackerIdx]?.id === s.stunned?.member ? nextAttacker(s.party, s.attackerIdx + 1) : s.attackerIdx;
     const attacker = s.party[attackerIdx];
     const amplify = s.amplifyLeft > 0;
     const bossMult = s.isBossQuestion && !s.overtime ? s.bossMult * bossStep(s.bossChain) * (amplify ? 2 : 1) : s.bossMult;
@@ -513,7 +614,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const guardGained = guardEvery > 0 && combo > 0 && combo % guardEvery === 0 && !s.comboGuard;
     const base = {
       mapStats,
-      attackerIdx: s.isBossQuestion ? s.attackerIdx : Math.max(0, nextAlive(party, attackerIdx + 1)),
+      attackerIdx: s.isBossQuestion ? s.attackerIdx : nextAttacker(party, attackerIdx + 1),
       combo, maxCombo: Math.max(s.maxCombo, combo), bossMult, bossChain,
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
@@ -592,6 +693,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
       // 蓄力與必定暴擊在真正造成傷害時才用掉（打菁英怪護盾時保留）
       charge: 1, critLeft: Math.max(0, s.critLeft - 1),
+      ...bossOnCorrect(combo, chainStep.triggered),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
         amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
@@ -658,14 +760,24 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ ...base, charging: false, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
       return;
     }
-    // 蓄力那一題答錯：吃到加倍的蓄力攻擊
-    const strike = enemyStrike(s.party, s.charging ? assaultFor(s.levelIdx)?.wrongMult ?? 1 : 1);
+    // 蓄力那一題答錯：吃到加倍的蓄力攻擊；魔王的分身與靜電再加倍
+    const bossMultWrong = (s.mirageLeft > 0 ? 2 : 1) * (s.bossSkill === 'static' ? 1 + STATIC_STEP * s.staticStacks : 1);
+    let strike = enemyStrike(s.party, (s.charging ? assaultFor(s.levelIdx)?.wrongMult ?? 1 : 1) * bossMultWrong);
+    // 灰燼炸彈：倒數中答錯就爆炸，全隊各扣最大生命的 30%
+    const exploded = s.bombLeft > 0;
+    if (exploded) {
+      const blasted = strike.party.map(m => (isAlive(m) ? { ...m, hp: Math.max(0, m.hp - Math.round(m.maxHp * BOMB_DAMAGE)) } : m));
+      strike = { ...strike, ...withTotals(blasted), wiped: blasted.every(m => !isAlive(m)) };
+    }
     set({
       ...base,
       mapStats: { ...base.mapStats, knockouts: strike.mapStats.knockouts },
       ...withTotals(strike.party),
       attackerIdx: strike.attackerIdx,
       charging: false,
+      mirageStreak: 0,
+      staticStacks: s.bossSkill === 'static' ? s.staticStacks + 1 : 0,
+      ...(exploded ? { bombLeft: 0, bossCast: cast('💥 灰燼炸彈爆炸了！全隊受到重創') } : {}),
       event: strike.event,
       phase: strike.wiped ? 'gameOver' : 'feedback',
     });
@@ -760,6 +872,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     runDrops: {},
     stageHits: 0,
     enemyTurn: 0,
+    ...bossSkillState(null),
     charging: false,
     wave: 1,
     waves: 1,
@@ -943,7 +1056,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     requestSkill: (memberIdx) => {
       const s = get();
       const m = s.party[memberIdx];
-      if (s.phase !== 'answering' || !m || !skillReady(m)) return;
+      if (s.phase !== 'answering' || !m || !skillReady(m) || s.sealed) return;
       set({ phase: 'casting', casting: memberIdx, phaseLeft: CAST_CONFIRM_TIME });
     },
 

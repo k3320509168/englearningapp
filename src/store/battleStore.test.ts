@@ -624,3 +624,22 @@ describe('talents and finishers', () => {
     expect(state().party.every(m => m.hp > m.maxHp / 2)).toBe(true);
   });
 });
+
+describe('gate boss and elite skills (A2+)', () => {
+  it('a time thief shortens every question by 5 seconds', () => {
+    resetSave({ unlockedIndex: 2 });
+    // 第 5 關（index 4）的菁英怪是第一隻，技能是時光小偷；第 10 關（index 9）守門頭目換下一招
+    state().startLevel(LEVELS[2], undefined, 4);
+    if (state().phase === 'lesson') state().startBattle();
+    expect(state().foeSkill).toBe('timeThief');
+    expect(state().questionLimit).toBeLessThan(QUESTION_LIMIT);
+    state().startLevel(LEVELS[2], undefined, 9);
+    expect(state().foeSkill).toBe('hardShell');
+  });
+
+  it('A1 and A2 elites have no extra skills', () => {
+    resetSave();
+    state().startLevel(LEVELS[0], undefined, 4);
+    expect(state().foeSkill).toBeNull();
+  });
+});

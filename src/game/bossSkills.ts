@@ -40,3 +40,28 @@ export const STATIC_STEP = 0.7;   // 每多一次連續答錯，受到的傷害 
 export const BOMB_QUESTIONS = 3;
 export const BOMB_DAMAGE = 0.3;   // 爆炸：全隊各扣最大生命 30%
 export const SEAL_BREAK_COMBO = 50;
+
+// ---------- 守門頭目與菁英怪的共用技能（每隻抽一招，依關卡固定） ----------
+export type FoeSkillId = 'timeThief' | 'hardShell' | 'berserkFoe' | 'refraction' | 'vampire';
+
+export interface FoeSkillDef { id: FoeSkillId; icon: string; name: string; desc: string }
+
+export const FOE_SKILLS: FoeSkillDef[] = [
+  { id: 'timeThief', icon: '⏳', name: '時光小偷', desc: '每題答題時間少 5 秒' },
+  { id: 'hardShell', icon: '🐚', name: '硬化護甲', desc: '只有暴擊或屬性剋制才打得痛（其他攻擊只剩 30%）' },
+  { id: 'berserkFoe', icon: '😡', name: '狂暴化', desc: '生命低於 30% 後，答錯會受到三倍反擊' },
+  { id: 'refraction', icon: '🔮', name: '屬性折射', desc: '對三種屬性免疫（只受 20% 傷害），換其他屬性的隊員出手' },
+  { id: 'vampire', icon: '🧛', name: '吸血鬼', desc: '每次攻擊隊員都會回復 5% 生命' },
+];
+
+// 菁英與守門頭目在第 5、10、15… 關（index 4、9、14…），依「第幾隻」輪替技能
+export const foeSkillFor = (stageIdx: number) => FOE_SKILLS[Math.floor(stageIdx / 5) % FOE_SKILLS.length];
+
+export const TIME_THIEF_MS = 5_000;
+export const HARD_SHELL_DAMAGE = 0.3;
+export const BERSERK_FOE_MULT = 3;
+export const REFRACTION_DAMAGE = 0.2;
+export const VAMPIRE_HEAL = 0.05;
+// 屬性折射免疫的三個屬性（依關卡固定）
+const ELEMENT_LIST = ['metal', 'wood', 'water', 'fire', 'earth', 'light', 'dark'] as const;
+export const refractionImmune = (stageIdx: number) => [0, 2, 4].map(k => ELEMENT_LIST[(stageIdx + k) % ELEMENT_LIST.length]);

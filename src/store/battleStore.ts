@@ -3,8 +3,9 @@ import type { Question, Stage } from '../game/types';
 import {
   BOMB_DAMAGE, BOMB_QUESTIONS, FROST_BLOCK_COMBO, FROST_LIMIT, FROST_QUESTIONS, MIRAGE_QUESTIONS, QUAKE_QUESTIONS, REGROW_BLOCK_COMBO, REGROW_HEAL,
   SEAL_BREAK_COMBO, STATIC_STEP, bossSkillFor,
+  BERSERK_FOE_MULT, HARD_SHELL_DAMAGE, REFRACTION_DAMAGE, TIME_THIEF_MS, VAMPIRE_HEAL, foeSkillFor, refractionImmune,
 } from '../game/bossSkills';
-import type { BossSkillId } from '../game/bossSkills';
+import type { BossSkillId, FoeSkillId } from '../game/bossSkills';
 import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
@@ -163,6 +164,7 @@ interface BattleState {
   staticStacks: number; // 靜電標記：連續答錯幾次
   bombLeft: number;    // 灰燼炸彈：倒數
   sealed: boolean;     // 全知封印：技能被封印
+  foeSkill: FoeSkillId | null; // 守門頭目／菁英怪的技能
   charging: boolean;  // 敵人正在蓄力：這一題答完就會出手
 
   // fromStage 未指定時，從存檔記錄的進度繼續
@@ -310,7 +312,7 @@ const withSpring = (party: Member[]) => party.map(m => ({ ...m, energy: Math.min
 
 const bossSkillState = (bossSkill: BossSkillId | null) => ({
   bossSkill, bossCast: null, frostLeft: 0, blind: false, mirageLeft: 0, mirageStreak: 0, stunned: null,
-  staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal',
+  staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal', foeSkill: null as FoeSkillId | null,
 });
 let castSeq = 0;
 const cast = (text: string) => ({ seq: ++castSeq, text });
@@ -343,6 +345,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? NORMAL_WAVES : 1;
     const fails = s.mode === 'normal' ? stageFails.get(failKey(s.levelKey, stageIdx)) ?? 0 : 0;
     const blessed = bossGate > 0 || (fails > 0 && random() < blessingChance(fails));
+    // 守門頭目與菁英怪各帶一招共用技能（A2+ 開始，新手區不加難度）
+    const foe = s.mode === 'normal' && s.levelIdx >= 2 && !stage.revenge && ((stage.bossMode && !isFinalBoss) || stage.kind === 'elite') ? foeSkillFor(stageIdx) : null;
     if (bossGate > 0 && isFinalBoss) {
       const def = bossSkillFor(s.levelIdx);
       useUiStore.getState().celebrate({
@@ -392,13 +396,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageHits: 0,
       wave: 1, waves, bossGate, blessed, enemyTurn: 0, charging: false,
       ...bossSkillState(s.mode === 'normal' && stage.bossMode && isFinalBoss && !stage.revenge ? bossSkillFor(s.levelIdx).id : null),
+      ...(foe ? { foeSkill: foe.id, bossCast: cast(`${foe.icon} ${foe.name}：${foe.desc}`) } : {}),
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
       assist: null,
       assistSource: null,
       focusMs: 0,
-      ...freshTimer(0),
+      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0),
       casting: null,
       event: nextEvent('stage'),
     });
@@ -463,7 +468,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const assault = s.mode === 'normal' && stage.kind !== 'treasure' ? assaultFor(s.levelIdx) : null;
     const enemyTurn = s.enemyTurn + 1;
     const boss = bossTurn(enemyTurn);
-    const timer = freshTimer(s.focusMs);
+    const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0));
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
       retrying: false, ...timer,
@@ -698,7 +703,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (finisher?.heal) party = party.map(m => (isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.round(m.maxHp * finisher.heal!)) } : m));
     const teamwork = (1 + (relayFx?.dmg ?? 0)) * (finisher ? finisherMultiplier(finisher, aliveIds.length) : 1);
     // 首領戰：combo 沒達到門檻時是「刮痧」，達到後全額
-    const armor = s.bossGate > 0 && combo < s.bossGate ? ARMOR_DAMAGE : 1;
+    const armor = (s.bossGate > 0 && combo < s.bossGate ? ARMOR_DAMAGE : 1)
+      * (s.foeSkill === 'hardShell' && !crit && em <= 1 ? HARD_SHELL_DAMAGE : 1)
+      * (s.foeSkill === 'refraction' && refractionImmune(s.stageIdx).includes(attacker.element as never) ? REFRACTION_DAMAGE : 1);
     const armorBroken = s.bossGate > 0 && combo === s.bossGate;
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
@@ -808,10 +815,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       return;
     }
     // 蓄力那一題答錯：吃到加倍的蓄力攻擊；魔王的分身與靜電再加倍
-    const bossMultWrong = (s.mirageLeft > 0 ? 2 : 1) * (s.bossSkill === 'static' ? 1 + STATIC_STEP * s.staticStacks : 1);
+    const bossMultWrong = (s.mirageLeft > 0 ? 2 : 1) * (s.bossSkill === 'static' ? 1 + STATIC_STEP * s.staticStacks : 1)
+      * (s.foeSkill === 'berserkFoe' && s.monsterHp < s.monsterMaxHp * 0.3 ? BERSERK_FOE_MULT : 1);
     let strike = enemyStrike(s.party, (s.charging ? assaultFor(s.levelIdx)?.wrongMult ?? 1 : 1) * bossMultWrong);
     // 灰燼炸彈：倒數中答錯就爆炸，全隊各扣最大生命的 30%
     const exploded = s.bombLeft > 0;
+    // 吸血鬼：攻擊隊員時回復生命
+    const vampHeal = s.foeSkill === 'vampire' ? Math.round(s.monsterMaxHp * VAMPIRE_HEAL) : 0;
     if (exploded) {
       const blasted = strike.party.map(m => (isAlive(m) ? { ...m, hp: Math.max(0, m.hp - Math.round(m.maxHp * BOMB_DAMAGE)) } : m));
       strike = { ...strike, ...withTotals(blasted), wiped: blasted.every(m => !isAlive(m)) };
@@ -824,6 +834,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       charging: false,
       mirageStreak: 0,
       staticStacks: s.bossSkill === 'static' ? s.staticStacks + 1 : 0,
+      ...(vampHeal ? { monsterHp: Math.min(s.monsterMaxHp, s.monsterHp + vampHeal) } : {}),
       ...(exploded ? { bombLeft: 0, bossCast: cast('💥 灰燼炸彈爆炸了！全隊受到重創') } : {}),
       event: strike.event,
       phase: strike.wiped ? 'gameOver' : 'feedback',

@@ -265,6 +265,12 @@ function pickRepeat(exclude: Question | null): Question | null {
 }
 
 // 從存檔組出隊伍的成長資料（英雄品階與等級、主角等級／轉職／裝備）
+// 出戰前預覽目前隊伍（算戰力用），和開始關卡時組出的隊伍相同
+export function previewParty(): Member[] {
+  const { upgrades, party: ids, character, heroes } = save();
+  return buildParty(ids, heroes, character, playerStats({ upgrades }), partyOptions());
+}
+
 function partyOptions(): PartyOptions {
   const sv = save();
   return {

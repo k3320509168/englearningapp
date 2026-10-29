@@ -51,7 +51,12 @@ export function describeMods(m: Partial<Mods>): string[] {
 }
 
 // ---------- 等級 ----------
-export const MAX_LEVEL = 60;
+// 等級上限（第四輪）：主角每轉職一次上限提高，覺醒後可以突破到 100；
+// 英雄依目前稀有度（含升階）最高 N 40、R 50、SR 60、SSR 70、UR 80，也不能超過主角
+export const MAX_LEVEL = 100;
+export const PLAYER_LEVEL_CAPS = [40, 60, 80, 100];
+export const playerLevelCap = (classTier: number) => PLAYER_LEVEL_CAPS[Math.min(Math.max(0, classTier), PLAYER_LEVEL_CAPS.length - 1)];
+export const HERO_LEVEL_CAPS: Record<string, number> = { N: 40, R: 50, SR: 60, SSR: 70, UR: 80 };
 export const LEVEL_STAT = 0.03; // 每級 HP 與攻擊 +3%
 
 // Lv 1～9 每級需求接近（約 100），前期不會一張地圖連升好幾級；
@@ -66,14 +71,14 @@ export function levelMods(level: number): Partial<Mods> {
 }
 
 // 加經驗值，處理連續升級；滿級後不再累積
-export function addXp(level: number, xp: number, gained: number): { level: number; xp: number; levelsGained: number } {
+export function addXp(level: number, xp: number, gained: number, cap = MAX_LEVEL): { level: number; xp: number; levelsGained: number } {
   let lv = level;
   let cur = xp + gained;
-  while (lv < MAX_LEVEL && cur >= xpToNext(lv)) {
+  while (lv < cap && cur >= xpToNext(lv)) {
     cur -= xpToNext(lv);
     lv += 1;
   }
-  if (lv >= MAX_LEVEL) cur = 0;
+  if (lv >= cap) cur = 0;
   return { level: lv, xp: cur, levelsGained: lv - level };
 }
 

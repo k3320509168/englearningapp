@@ -7,7 +7,7 @@ import type { GrowthTab } from '../store/uiStore';
 import { useNotices } from './useNotices';
 import { classDef, elementDef } from '../game/character';
 import {
-  ADVANCE_REQ, MAX_LEVEL, canAdvance, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
+  ADVANCE_REQ, MAX_LEVEL, canAdvance, playerLevelCap, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
   DRAGON_REGION, EQUIPMENT, MAX_GRADE, SLOTS, displayName, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
@@ -74,9 +74,12 @@ export default function GrowthModal() {
           <section className="growth-head" style={{ '--el': el.color } as CSSProperties}>
             <img src={avatarDataUrl(character, 'idle', 3, player.classPath.length)} alt="" />
             <div>
-              <h3>Lv {player.level} <span className="muted">/ {MAX_LEVEL}</span></h3>
+              <h3>Lv {player.level} <span className="muted">/ {playerLevelCap(player.classPath.length)}</span></h3>
               {sv.titles.length > 0 && <p className="title-badges">{sv.titles.map(t => <span key={t}>🏅 {t}</span>)}</p>}
-              {player.level < MAX_LEVEL && (
+              {player.level >= playerLevelCap(player.classPath.length) && player.level < MAX_LEVEL && (
+                <p className="muted">已達等級上限，轉職後上限提高（覺醒後最高 Lv {MAX_LEVEL}）</p>
+              )}
+              {player.level < playerLevelCap(player.classPath.length) && (
                 <div className="xp-bar" title="答對題目、打倒怪物都能得到經驗值">
                   <span style={{ width: `${(player.xp / xpToNext(player.level)) * 100}%` }} />
                   <small>EXP {player.xp} / {xpToNext(player.level)}</small>

@@ -259,6 +259,28 @@ export const BLESSING_DAMAGE = 1.2; // 一般關失敗後的祝福：全隊傷�
 // 同一關失敗幾次後有多少機率得到祝福：失敗 1 次 50%、2 次以上必定
 export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ? 0.5 : 0);
 
+// ---------- 敵人等級與推薦戰力（第四輪） ----------
+// 九區平均分配 Lv 1～100：每區約 11 級，區內越後面越高；菁英 +2、守門頭目 +3、區域魔王 +5
+export const LEVELS_PER_REGION = 11;
+export const recommendedLevel = (levelIdx: number, stageIdx: number) =>
+  Math.min(100, 1 + levelIdx * LEVELS_PER_REGION + Math.floor((stageIdx / STAGES_PER_REGION) * (LEVELS_PER_REGION - 1)));
+export function monsterLevel(levelIdx: number, stageIdx: number, kind?: 'elite' | 'gate' | 'final'): number {
+  return recommendedLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
+}
+
+// 戰力：每位隊員「攻擊 × 10 ＋ 生命」，隊伍加總
+export const memberPower = (m: { atk: number; maxHp: number }) => Math.round(m.atk * 10 + m.maxHp);
+export const teamPower = (party: { atk: number; maxHp: number }[]) => party.reduce((sum, m) => sum + memberPower(m), 0);
+// 推薦戰力：4 位隊員都在推薦等級、裝備跟上區域進度時的戰力
+export function recommendedPower(levelIdx: number, stageIdx: number): number {
+  const lv = recommendedLevel(levelIdx, stageIdx);
+  const member = (BASE_DAMAGE * 10 + PLAYER_MAX_HP) * (1 + 0.03 * (lv - 1)) * (1 + 0.12 * levelIdx);
+  return Math.round(member * 4);
+}
+// 戰力比較：綠色（輕鬆）、黃色（有挑戰）、紅色（很吃力）
+export const powerVerdict = (mine: number, recommended: number) =>
+  (mine >= recommended ? 'easy' : mine >= recommended * 0.75 ? 'fair' : 'hard') as 'easy' | 'fair' | 'hard';
+
 // 關卡變化：菁英怪有護盾，要答對 ELITE_SHIELD 題打破才會受傷（答錯會恢復一層）；
 // 寶箱怪不會攻擊，限時內每次命中都掉金幣，打開寶箱有大獎，時間到就逃走
 export const ELITE_SHIELD = 3;

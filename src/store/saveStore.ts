@@ -7,11 +7,11 @@ import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '.
 import type { ItemId, UpgradeId } from '../game/progression';
 import {
   DUPLICATE_SHARDS, SPARK_COST, STARTER_TICKETS, TICKET_GOLD_PRICE, TIER_UP_GOLD, TIER_UP_SHARDS,
-  heroDef, isHeroId, summon,
+  currentRarity, heroDef, isHeroId, summon,
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
-import { MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, xpScale } from '../game/growth';
+import { HERO_LEVEL_CAPS, MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, playerLevelCap, xpScale } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
@@ -454,7 +454,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         gainXp: (n) => {
           const p = get().player;
-          const r = addXp(p.level, p.xp, n);
+          const r = addXp(p.level, p.xp, n, playerLevelCap(p.classPath.length));
           set({ player: { ...p, level: r.level, xp: r.xp } });
           if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
           return r.levelsGained;
@@ -657,7 +657,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const s = get();
           if (!s.heroes.includes(id)) return false;
           const level = s.heroLevel[id] ?? 1;
-          if (level >= Math.min(MAX_LEVEL, s.player.level)) return false;
+          if (level >= Math.min(HERO_LEVEL_CAPS[currentRarity(heroDef(id), s.heroTier[id] ?? 0)] ?? MAX_LEVEL, s.player.level)) return false;
           const rarityIdx = ['N', 'R', 'SR', 'SSR'].indexOf(heroDef(id).rarity);
           const ok = purchase(trainCost(level, rarityIdx), st => ({ heroLevel: { ...st.heroLevel, [id]: level + 1 } }));
           if (ok) get().trackDaily('levelup');

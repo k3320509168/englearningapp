@@ -10,6 +10,8 @@ import { beginLevel } from '../game/startLevel';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { GATE_LEVEL, SKIPPABLE_REGIONS, canChallengeGate } from '../game/placement';
+import { STAGES_PER_REGION, powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../game/progression';
+import { previewParty } from '../store/battleStore';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
 // 點一張已解鎖的地圖，主角會跑過去，然後進入那張地圖的第 1 關。
@@ -63,6 +65,8 @@ export default function RegionModal() {
         )}
       </div>
 
+      <PowerHint regionIdx={regionIdx} stageIdx={progress} />
+
       <ol className={`region-route theme-${region.theme}`}>
         {region.maps.map((name, i) => {
           const open = unlocked(i);
@@ -94,5 +98,21 @@ export default function RegionModal() {
         <ol>{conditions.map(c => <li key={c.label}>{c.label}</li>)}</ol>
       </section>
     </Modal>
+  );
+}
+
+// 推薦等級與戰力：和目前隊伍比較，讓玩家知道要強化到什麼程度
+function PowerHint({ regionIdx, stageIdx }: { regionIdx: number; stageIdx: number }) {
+  const save = useSaveStore();
+  const mine = useMemo(() => teamPower(previewParty()), [save.party, save.player, save.heroLevel, save.heroTier, save.equipped, save.upgrades, save.trueName]);
+  const lvFrom = recommendedLevel(regionIdx, 0);
+  const lvTo = recommendedLevel(regionIdx, STAGES_PER_REGION - 1);
+  const rec = recommendedPower(regionIdx, stageIdx);
+  const verdict = powerVerdict(mine, rec);
+  const label = verdict === 'easy' ? '輕鬆' : verdict === 'fair' ? '有挑戰' : '很吃力';
+  return (
+    <p className={`power-hint power-${verdict}`}>
+      推薦等級 Lv {lvFrom}～{lvTo}｜推薦戰力 {rec.toLocaleString()}｜你的隊伍 <b>{mine.toLocaleString()}</b>（{label}）
+    </p>
   );
 }

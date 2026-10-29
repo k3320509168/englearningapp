@@ -4,7 +4,7 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, assaultFor, comboMultiplier, skillEffect } from './progression';
+import { SKILLS, assaultFor, comboMultiplier, monsterLevel, skillEffect } from './progression';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -342,7 +342,10 @@ export default class MainScene extends Phaser.Scene {
     this.monsterScale = this.monsterKind === 'demon' ? 9 : isRevenge ? 10 : isBoss ? 11 : isElite ? 9 : this.monsterKind === 'bat' ? 7 : 7.5;
     const el = elementDef(s.monsterElement);
     this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
-    const name = s.mode === 'skill' ? `👑 ${stage.name}` : `${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
+    // 一般模式顯示敵人等級，方便和自己的隊伍比較
+    const finalBoss = isBoss && (stage.kind === 'final' || s.stageIdx === s.stages.length - 1);
+    const lv = s.mode === 'normal' && !isRevenge ? `Lv ${monsterLevel(s.levelIdx, s.stageIdx, finalBoss ? 'final' : isBoss ? 'gate' : isElite ? 'elite' : undefined)} ` : '';
+    const name = s.mode === 'skill' ? `👑 ${stage.name}` : `${lv}${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
     this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : isElite || this.monsterKind === 'chest' ? '#ffcd4b' : '#ffffff');
     // 寶箱怪沒有屬性相剋，不顯示徽章
     if (this.monsterKind === 'chest') this.elementBadge.removeAll(true);

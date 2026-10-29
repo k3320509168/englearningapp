@@ -62,14 +62,14 @@ describe('monsters', () => {
       for (let st = 1; st < 50; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
       if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(49, r - 1, false)).toBeLessThan(1.05);
     }
-    // 最後一區的最後一關：沒升級時一般怪約要 3 × 1.4^6 ≈ 22 題的傷害
-    expect(monsterMaxHp(49, 5, false) / BASE_DAMAGE).toBeGreaterThan(20);
+    // 最後一區（C2）的最後一關：沒升級時約要 3 × 1.3^9 ≈ 32 題的傷害
+    expect(monsterMaxHp(49, 8, false) / BASE_DAMAGE).toBeGreaterThan(30);
   });
 
   it('hit harder in later regions', () => {
     expect(monsterAttack(false, 0, 0)).toBe(20);
     expect(monsterAttack(true, 0, 0)).toBe(30);
-    expect(monsterAttack(false, 5, 49)).toBeGreaterThan(110);
+    expect(monsterAttack(false, 8, 49)).toBeGreaterThan(200);
   });
 
   it('have an element; revenge bosses are dark', () => {

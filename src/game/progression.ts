@@ -204,7 +204,7 @@ export function computeDamage(d: DamageInput): number {
 // 之後每一關都比前一關硬一點，打完一整個區域（50 關）強度 ×1.4，下一個區域再接著往上。
 // 主角升級只能追上一部分，越後面越需要升級攻擊力、裝備、轉職、技能與 Combo 才打得動。
 export const HITS_TO_KILL = { normal: 3, boss: 14 };
-export const REGION_GROWTH = 1.4;
+export const REGION_GROWTH = 1.3; // 九區之後調低：跟上推薦等級與裝備的成長（原本 6 區時是 1.4）
 export const STAGES_PER_REGION = 50;
 
 export function monsterGrowth(stageIdx: number, levelIdx: number): number {
@@ -298,7 +298,7 @@ export const TICKETS = { bossKill: 1, revengeKill: 2, levelClear: 5 };
 
 // 怪物攻擊（答錯時打一位隊員）：同樣隨區域與關卡變強。
 // 第一區約 20 次答錯才會全滅（4 人隊伍），最後一區沒升級生命時約 9 次，所以生命升級與藥水越後面越重要
-export const ATTACK_GROWTH = 1.35;
+export const ATTACK_GROWTH = 1.3;
 export const monsterAttack = (isBoss: boolean, levelIdx = 0, stageIdx = 0) =>
   Math.round((isBoss ? 30 : 20) * ATTACK_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION));
 

@@ -11,7 +11,10 @@ import {
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
 import { heroSellValue, trainCost } from '../store/saveStore';
-import { RELAY } from '../game/synergy';
+import { FINISHERS, RELAY } from '../game/synergy';
+import { CLASS_TALENT, TALENTS, heroTalent, talentDesc } from '../game/talents';
+import type { TalentId } from '../game/talents';
+import type { ClassId } from '../game/character';
 import { sfx } from '../game/sfx';
 import { LEVEL_STAT } from '../game/growth';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRUE_NAME_BONUS, isTrueName, trialsDone } from '../game/trueName';
@@ -136,6 +139,7 @@ export default function HeroModal() {
             <p className="muted">主角・{cls.name}（{cls.role}）</p>
             <p className="skill-line">{skill.icon} {skill.name}：{skillDesc(skill.id, playerSkillPower(player.classPath.length))}</p>
             <p className="skill-line relay-line">接力 {RELAY[character.classId].icon} {RELAY[character.classId].name}：{RELAY[character.classId].desc}</p>
+            <TalentLines talent={CLASS_TALENT[character.classId]} power={playerSkillPower(player.classPath.length)} classId={character.classId} />
             {renderMemberButtons(id, inParty, pos, full)}
           </div>
         </section>
@@ -169,6 +173,7 @@ export default function HeroModal() {
           <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
           <p className="skill-line">{skill.signature && <span className="rarity-tag inline">專屬</span>} {skill.icon} {skill.name}：{skillDesc(skill.id, heroSkillPower(h, tier))}</p>
           <p className="skill-line relay-line">接力 {RELAY[h.classId].icon} {RELAY[h.classId].name}：{RELAY[h.classId].desc}{h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}</p>
+          <TalentLines talent={heroTalent(h.id)} power={heroSkillPower(h, tier)} classId={h.classId} />
           {owned ? (
             <>
               {tier === 0 ? (
@@ -232,4 +237,16 @@ export default function HeroModal() {
       </span>
     );
   }
+}
+
+// 被動天賦與連攜技（收尾時發動的大招）
+function TalentLines({ talent, power, classId }: { talent: TalentId; power: number; classId: ClassId }) {
+  const t = TALENTS[talent];
+  const f = FINISHERS[classId];
+  return (
+    <>
+      <p className="skill-line relay-line">天賦 {t.icon} {t.name}：{talentDesc(talent, power)}</p>
+      <p className="skill-line relay-line">連攜技 {f.icon} {f.name}：由這位隊員收尾時發動</p>
+    </>
+  );
 }

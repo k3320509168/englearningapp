@@ -606,3 +606,21 @@ describe('region boss skills', () => {
     expect(state().sealed).toBe(false);
   });
 });
+
+describe('talents and finishers', () => {
+  it('every member has a talent; the monk player gets lifesteal', () => {
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'monk' } });
+    expect(state().party[0].talent).toBe('lifesteal');
+    expect(state().party.every(m => !!m.talent)).toBe(true);
+  });
+
+  it('a monk finisher heals the whole party', () => {
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'monk' }, party: ['knight', 'player'] });
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9, party: state().party.map(m => ({ ...m, hp: Math.round(m.maxHp / 2) })) });
+    // 騎士先出手，接著僧侶主角收尾觸發連攜技
+    answerCurrent();
+    answerCurrent();
+    expect(state().event?.finisher).toContain('神聖洗禮');
+    expect(state().party.every(m => m.hp > m.maxHp / 2)).toBe(true);
+  });
+});

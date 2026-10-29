@@ -22,6 +22,26 @@ export const RELAY: Record<ClassId, RelayDef> = {
   monk: { icon: '🙏', name: '心靈祥和', desc: '下一位隊員的攻擊 +20%，而且那一題答錯也保住 combo', dmg: 0.2, crit: 0, ignoreWeak: false, guard: true },
 };
 
+// 連攜技（第四輪，和 Gemini 討論定案）：所有站著的隊員都出手過一輪就觸發，
+// 依「最後出手」的職業決定大招。數值是 4 人時的倍率，人數少時按比例降低。
+export interface FinisherDef {
+  icon: string;
+  name: string;
+  mult: number;        // 4 人時的傷害倍率
+  crit?: boolean;      // 必定暴擊
+  shield?: boolean;    // 全隊護盾（擋下一次攻擊並保住 combo）
+  heal?: number;       // 全隊回復最大生命的比例，並清除魔王造成的負面狀態
+}
+export const FINISHERS: Record<ClassId, FinisherDef> = {
+  swordsman: { icon: '⚔️', name: '無盡劍陣', mult: 3 },
+  warrior: { icon: '🛡️', name: '絕對城壁', mult: 1.5, shield: true },
+  archer: { icon: '🌠', name: '流星箭雨', mult: 2, crit: true },
+  mage: { icon: '☄️', name: '元素核爆', mult: 4 },
+  monk: { icon: '✨', name: '神聖洗禮', mult: 1, heal: 0.2 },
+};
+export const finisherMultiplier = (def: FinisherDef, alive: number) =>
+  1 + (def.mult - 1) * Math.min(1, Math.max(1, alive - 1) / 3);
+
 // 連攜攻擊：站著的隊員每多一位，傷害再 +25%
 export const CHAIN_BONUS = 0.25;
 export const chainMultiplier = (alive: number) => 1 + CHAIN_BONUS * Math.max(0, alive - 1);

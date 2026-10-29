@@ -17,7 +17,7 @@ import type { AnswerRecord } from '../game/lesson';
 import {
   BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
   bossStep, computeDamage, goldWithBonus, skillEffect, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
-  ARMOR_DAMAGE, STUN_DAMAGE, assaultFor, BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossComboGate, bossMaxHp, waveMaxHp,
+  ARMOR_DAMAGE, SKILL_ENERGY, STUN_DAMAGE, assaultFor, BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossComboGate, bossMaxHp, waveMaxHp,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -25,7 +25,9 @@ import type { Element } from '../game/character';
 import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, partyHp, skillReady, teamGuardEvery, teamTimeBonus } from '../game/party';
 import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
-import { TAUNT_CHANCE, TAUNT_REDUCTION, advanceChain, chainMultiplier, relayFor } from '../game/synergy';
+import { talentValue } from '../game/talents';
+import type { TalentId } from '../game/talents';
+import { FINISHERS, TAUNT_CHANCE, TAUNT_REDUCTION, advanceChain, finisherMultiplier, relayFor } from '../game/synergy';
 import type { Relay } from '../game/synergy';
 import { dueMistakes, useSaveStore } from './saveStore';
 import { ADVANCE_REQ, XP, canAdvance, isMilestoneLevel, xpScale } from '../game/growth';
@@ -69,6 +71,7 @@ export interface BattleEvent {
   waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
   armorBroken?: boolean;            // 首領戰：combo 剛好達到破甲門檻
   interrupted?: boolean;            // 快答打斷了敵人的蓄力（敵人暈眩）
+  finisher?: string;                // 連攜技名稱（依最後出手的職業）
   counter?: { member: MemberId; amount: number }; // 答對但沒打斷：攻擊後敵人的蓄力一擊
 }
 
@@ -291,6 +294,13 @@ const mergeDrops = (a: Record<string, number>, b: Record<string, number>) => {
   return out;
 };
 
+// 被動天賦：這位隊員有這個天賦時回傳數值，否則 0
+const talentOf = (m: Member | undefined, id: TalentId) => (m && m.talent === id ? talentValue(id, m.skillPower) : 0);
+// 不死鳥之羽：每關每位隊員最多發動一次
+const rebirthUsed = new Set<string>();
+// 能量泉源：出戰時技能能量先有幾點
+const withSpring = (party: Member[]) => party.map(m => ({ ...m, energy: Math.min(SKILL_ENERGY, m.energy + Math.round(talentOf(m, 'energySpring'))) }));
+
 const bossSkillState = (bossSkill: BossSkillId | null) => ({
   bossSkill, bossCast: null, frostLeft: 0, blind: false, mirageLeft: 0, mirageStreak: 0, stunned: null,
   staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal',
@@ -314,6 +324,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
   const loadStage = (stageIdx: number, isFirst = false) => {
     const s = get();
+    rebirthUsed.clear();
     const golden = s.mode === 'golden';
     if (golden) decks = goldenDecks![goldenTier(stageIdx)];
     else if (s.mode === 'normal') save().setLevelProgress(s.levelKey, stageIdx);
@@ -464,8 +475,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const taunt = warriors.length > 0 && alive.length > 1 && random() < TAUNT_CHANCE;
     const target = taunt ? warriors[0] : alive[Math.floor(random() * alive.length)];
     const baseDamage = monsterAttack(s.stages[s.stageIdx].bossMode, s.levelIdx, s.mode === 'skill' ? 25 : s.stageIdx);
-    const damage = Math.round((taunt ? baseDamage * (1 - TAUNT_REDUCTION) : baseDamage) * mult);
-    const hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
+    // 鋼鐵意志：有機率傷害減半
+    const iron = random() < talentOf(party[target], 'ironWill') ? 0.5 : 1;
+    const damage = Math.round((taunt ? baseDamage * (1 - TAUNT_REDUCTION) : baseDamage) * mult * iron);
+    let hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
+    // 不死鳥之羽：倒下時有機率以 30% 生命站起來（每關一次）
+    const victim = hurt[target];
+    if (!isAlive(victim) && !rebirthUsed.has(victim.id) && random() < talentOf(victim, 'rebirth')) {
+      rebirthUsed.add(victim.id);
+      hurt = hurt.map((m, i) => (i === target ? { ...m, hp: Math.round(m.maxHp * 0.3) } : m));
+    }
     const wiped = hurt.every(m => !isAlive(m));
     const knockedOut = isAlive(party[target]) && !isAlive(hurt[target]);
     const attackerIdx = isAlive(hurt[s.attackerIdx] ?? hurt[0]) ? s.attackerIdx : nextAlive(hurt, s.attackerIdx);
@@ -575,13 +594,18 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     return patch;
   };
 
+  // 輸出類天賦的傷害倍率
+  const talentDamage = (m: Member, combo: number, boss: boolean) =>
+    (1 + (m.hp / Math.max(1, m.maxHp) < 0.3 ? talentOf(m, 'berserk') : 0))
+    * (1 + Math.min(1, Math.floor(combo / 10) * talentOf(m, 'resonance')))
+    * (1 + (boss ? talentOf(m, 'giantSlayer') : 0));
+
   const onCorrect = () => {
     const s = get();
     if (!s.original || !s.question) return;
     save().recordAnswer(s.original, true, !s.retrying);
     const stage = s.stages[s.stageIdx];
     // 超過 20 秒才答對：這題不累積 combo
-    const combo = s.overtime ? 0 : s.combo + 1;
     const elapsed = s.questionLimit - s.questionLeft;
     const speed = s.overtime ? 1 : speedMultiplier(elapsed);
 
@@ -589,6 +613,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 被大地碎裂震飛的隊員不能出手，輪到他時換下一位
     const attackerIdx = s.isBossQuestion ? Math.max(0, leaderIndex(s.party)) : s.party[s.attackerIdx]?.id === s.stunned?.member ? nextAttacker(s.party, s.attackerIdx + 1) : s.attackerIdx;
     const attacker = s.party[attackerIdx];
+    // 靈光一閃：2 秒內答對，combo 額外增加
+    const combo = s.overtime ? 0 : s.combo + 1 + (elapsed <= 2000 ? Math.round(talentOf(attacker, 'insight')) : 0);
     const amplify = s.amplifyLeft > 0;
     const bossMult = s.isBossQuestion && !s.overtime ? s.bossMult * bossStep(s.bossChain) * (amplify ? 2 : 1) : s.bossMult;
     const bossChain = s.isBossQuestion && !s.overtime ? s.bossChain + 1 : s.bossChain;
@@ -596,9 +622,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const relayFx = relayFor(s.relay, attacker.id);
     const aliveIds = s.party.filter(isAlive).map(m => m.id);
     const chainStep = advanceChain(s.chain, attacker.id, aliveIds);
-    const crit = s.critLeft > 0 || random() < attacker.crit + (relayFx?.crit ?? 0);
+    const crit = s.critLeft > 0 || (chainStep.triggered && !!FINISHERS[attacker.classId].crit) || random() < attacker.crit + (relayFx?.crit ?? 0);
     const regionScale = xpScale(s.levelIdx);
     let party = gainEnergy(s.party);
+    // 運氣大師：最後 3 秒才答對，有機率技能能量直接集滿
+    if (!s.overtime && s.questionLeft <= 3000 && random() < talentOf(attacker, 'luckyStar')) {
+      party = party.map((m, i) => (i === attackerIdx ? { ...m, energy: Math.max(m.energy, SKILL_ENERGY) } : m));
+    }
     save().trackDaily('correct');
     save().trackDaily('combo', combo);
     const mapStats = {
@@ -655,7 +685,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const lowHp = s.playerHp / Math.max(1, s.playerMaxHp) < 0.5 ? 1 + attacker.mods.lowHp : 1;
     const rawEm = stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement);
     const em = relayFx?.ignoreWeak && rawEm < 1 ? 1 : rawEm;
-    const teamwork = (1 + (relayFx?.dmg ?? 0)) * (chainStep.triggered ? chainMultiplier(aliveIds.length) : 1);
+    // 連攜技：依最後出手（就是這一擊）的職業發動大招
+    const finisher = chainStep.triggered ? FINISHERS[attacker.classId] : null;
+    // 神聖洗禮：全隊回血；絕對城壁：全隊護盾
+    if (finisher?.heal) party = party.map(m => (isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.round(m.maxHp * finisher.heal!)) } : m));
+    const teamwork = (1 + (relayFx?.dmg ?? 0)) * (finisher ? finisherMultiplier(finisher, aliveIds.length) : 1);
     // 首領戰：combo 沒達到門檻時是「刮痧」，達到後全額
     const armor = s.bossGate > 0 && combo < s.bossGate ? ARMOR_DAMAGE : 1;
     const armorBroken = s.bossGate > 0 && combo === s.bossGate;
@@ -665,9 +699,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
         element: em > 1 ? em + attacker.mods.elementBonus : em,
         critMult: 2 + attacker.mods.critDmg,
-        extra: firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossGate ? BLESSING_DAMAGE : 1),
+        extra: firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossGate ? BLESSING_DAMAGE : 1) * talentDamage(attacker, combo, stage.bossMode),
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
+    // 吸血：傷害的一部分轉為出手隊員的生命（每擊最多回復最大生命的 10%）
+    const steal = talentOf(attacker, 'lifesteal');
+    if (steal > 0) party = party.map((m, i) => (i === attackerIdx && isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.min(Math.round(damage * steal), Math.round(m.maxHp * 0.1))) } : m));
     const killed = monsterHp <= 0;
     // 一般關還有下一隻：只是這一波倒下，關卡繼續
     const waveKill = killed && s.wave < s.waves;
@@ -694,12 +731,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       // 蓄力與必定暴擊在真正造成傷害時才用掉（打菁英怪護盾時保留）
       charge: 1, critLeft: Math.max(0, s.critLeft - 1),
       ...bossOnCorrect(combo, chainStep.triggered),
+      ...(finisher?.shield ? { shield: true, comboGuard: true } : {}),
+      ...(finisher?.heal ? { stunned: null, mirageLeft: 0, staticStacks: 0, frostLeft: 0 } : {}),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
         amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
         levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill, armorBroken,
         relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
         chain: chainStep.triggered ? aliveIds.length : undefined,
+        finisher: finisher ? `${finisher.icon} ${finisher.name}` : undefined,
       }),
     };
     if (!killed) {
@@ -884,7 +924,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       decks = createDecks(levelKey);
       const { upgrades, party: ids, character, heroes } = save();
       const stats = playerStats({ upgrades });
-      const party = buildParty(ids, heroes, character, stats, partyOptions());
+      const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions()));
       set({
         active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossMult: 1, bossChain: 0, questionCount: 0,
@@ -929,7 +969,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const draw = () => questions[i++ % questions.length];
       decks = { normal: draw, boss: draw };
       const stats = playerStats({ upgrades });
-      const party = buildParty(ids, heroes, character, stats, partyOptions());
+      const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions()));
       set({
         active: true, mode: 'skill', skillBoss: id, levelKey: `skill-${id}`, levelIdx,
         stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],

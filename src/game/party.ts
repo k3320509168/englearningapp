@@ -10,6 +10,8 @@ import type { Mods } from './growth';
 import { equipMods } from './equipment';
 import type { OwnedEquip } from './equipment';
 import { TRUE_NAME_BONUS, isTrueName } from './trueName';
+import { CLASS_TALENT, heroTalent } from './talents';
+import type { TalentId } from './talents';
 
 // 隊伍：主角＋夥伴英雄，最多 4 人，可以不派主角。
 // 每題由隊伍輪流出手；魔王題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
@@ -30,6 +32,7 @@ export interface Member {
   energy: number;
   mods: Mods; // 等級、轉職、裝備帶來的被動效果
   classId: ClassId; // 職業：決定出手後給下一位隊員的接力加成
+  talent: TalentId; // 被動天賦（數值跟著 skillPower 成長）
 }
 
 // 主角的成長資料
@@ -60,6 +63,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
       id, name: c.name, element: c.element, maxHp, hp: maxHp,
       atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
       skill: CLASS_SKILL[c.classId], skillPower: playerSkillPower(opts.growth?.classPath.length ?? 0), energy: 0, mods, classId: c.classId,
+      talent: CLASS_TALENT[c.classId],
     };
   }
   const h = heroDef(id);
@@ -72,6 +76,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,
     atk: BASE_DAMAGE * stats.atkMult * hs.atk * (1 + mods.atk), crit: hs.crit,
     skill: heroSkill(h), skillPower: heroSkillPower(h, opts.tiers?.[id] ?? 0), energy: 0, mods, classId: h.classId,
+    talent: heroTalent(h.id),
   };
 }
 

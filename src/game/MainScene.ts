@@ -453,7 +453,7 @@ export default class MainScene extends Phaser.Scene {
     if (event.fast) popText(this, f.homeX + 40, f.homeY - 175, event.fast >= 1.5 ? 'FAST! ×1.5' : 'QUICK ×1.2', 22, '#7fffd4', { rise: 30, dur: 700 });
     // 職業合作：吃到上一位隊員的接力加成、全員連攜
     if (event.relay) popText(this, f.homeX, f.homeY - 205, event.relay, 20, '#ffe27a', { rise: 24, dur: 900 });
-    if (event.chain) this.playChain(event.member);
+    if (event.chain) this.playChain(event.member, event.finisher);
     this.busy = true;
     f.idle?.pause();
     this.tweens.killTweensOf(f.container);
@@ -642,8 +642,8 @@ export default class MainScene extends Phaser.Scene {
   }
 
   // 連攜攻擊：其他站著的隊員一起衝上去補一刀
-  private playChain(attackerId: MemberId | undefined) {
-    popText(this, 400, 200, `連攜攻擊！×${this.fighters.filter(x => !x.down).length}`, 40, '#7fe8ff', { rise: 30, dur: 1200 });
+  private playChain(attackerId: MemberId | undefined, finisher?: string) {
+    popText(this, 400, 200, finisher ? `連攜技・${finisher}！` : `連攜攻擊！×${this.fighters.filter(x => !x.down).length}`, 40, '#7fe8ff', { rise: 30, dur: 1400 });
     sfx.combo(15);
     this.fighters.filter(x => !x.down && x.id !== attackerId).forEach((x, i) => {
       this.time.delayedCall(80 + i * 110, () => {

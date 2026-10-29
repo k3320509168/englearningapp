@@ -518,3 +518,48 @@ describe('stage progress', () => {
     expect(saved().levelProgress[LEVELS[0]]).toBe(0);
   });
 });
+
+describe('enemy assaults (A2+)', () => {
+  const startAt = (levelIdx: number) => {
+    resetSave({ unlockedIndex: levelIdx });
+    state().startLevel(LEVELS[levelIdx]);
+    if (state().phase === 'lesson') state().startBattle();
+    // 不讓怪物倒下，專心看蓄力
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
+  };
+  const untilCharging = () => {
+    for (let i = 0; i < 10 && !state().charging; i++) answerCurrent();
+  };
+
+  it('A1 and A2 never charge', () => {
+    startAt(1);
+    for (let i = 0; i < 8; i++) answerCurrent();
+    expect(state().charging).toBe(false);
+  });
+
+  it('A2+: a fast correct answer interrupts and stuns (next hit ×1.5)', () => {
+    startAt(2);
+    untilCharging();
+    expect(state().charging).toBe(true);
+    const hp = state().playerHp;
+    answerCurrent(); // 測試裡作答時間是 0，算快答
+    expect(state().event?.interrupted).toBe(true);
+    expect(state().charge).toBe(1.5);
+    expect(state().playerHp).toBe(hp);
+  });
+
+  it('A2+: a slow correct answer still takes the charged hit; a wrong answer takes 1.5×', () => {
+    startAt(2);
+    untilCharging();
+    useBattleStore.setState({ questionLeft: state().questionLimit - 8000 });
+    const hp = state().playerHp;
+    answerCurrent();
+    expect(state().event?.counter?.amount).toBe(monsterAttack(false, 2, 0));
+    expect(state().playerHp).toBe(hp - monsterAttack(false, 2, 0));
+
+    untilCharging();
+    const before = state().playerHp;
+    answerWrong();
+    expect(before - state().playerHp).toBe(Math.round(monsterAttack(false, 2, 0) * 1.5));
+  });
+});

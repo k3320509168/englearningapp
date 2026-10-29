@@ -3865,6 +3865,546 @@
       ],
       "ans": "B",
       "explain": "詢問今日是否下雨「Will it rain today? (今天會下雨嗎？)」，回答天氣現況「No, the sun is shining. (不會，太陽正在發光呢)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Morning.",
+      "options": [
+        "A. 早安",
+        "B. 午安",
+        "C. 晚安",
+        "D. 再見"
+      ],
+      "ans": "A",
+      "explain": "原句：Morning. 意思是早安。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Taiwan.",
+      "options": [
+        "A. 日本",
+        "B. 美國",
+        "C. 台灣",
+        "D. 英國"
+      ],
+      "ans": "C",
+      "explain": "原句：Taiwan. 意思是台灣。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "English.",
+      "options": [
+        "A. 中文",
+        "B. 數學",
+        "C. 科學",
+        "D. 英文"
+      ],
+      "ans": "D",
+      "explain": "原句：English. 意思是英文。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Monday.",
+      "options": [
+        "A. 星期一",
+        "B. 星期二",
+        "C. 星期三",
+        "D. 星期四"
+      ],
+      "ans": "A",
+      "explain": "原句：Monday. 意思是星期一。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "July.",
+      "options": [
+        "A. 六月",
+        "B. 七月",
+        "C. 八月",
+        "D. 九月"
+      ],
+      "ans": "B",
+      "explain": "原句：July. 意思是七月。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Fifty.",
+      "options": [
+        "A. 十五",
+        "B. 五十",
+        "C. 五",
+        "D. 五百"
+      ],
+      "ans": "B",
+      "explain": "原句：Fifty. 意思是五十。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Head.",
+      "options": [
+        "A. 手",
+        "B. 腳",
+        "C. 頭",
+        "D. 眼睛"
+      ],
+      "ans": "C",
+      "explain": "原句：Head. 意思是頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Kitchen.",
+      "options": [
+        "A. 臥室",
+        "B. 客廳",
+        "C. 浴室",
+        "D. 廚房"
+      ],
+      "ans": "D",
+      "explain": "原句：Kitchen. 意思是廚房。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Dog.",
+      "options": [
+        "A. 狗",
+        "B. 貓",
+        "C. 鳥",
+        "D. 魚"
+      ],
+      "ans": "A",
+      "explain": "原句：Dog. 意思是狗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Blue.",
+      "options": [
+        "A. 紅色",
+        "B. 藍色",
+        "C. 綠色",
+        "D. 黃色"
+      ],
+      "ans": "B",
+      "explain": "原句：Blue. 意思是藍色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Baseball.",
+      "options": [
+        "A. 籃球",
+        "B. 足球",
+        "C. 棒球",
+        "D. 網球"
+      ],
+      "ans": "C",
+      "explain": "原句：Baseball. 意思是棒球。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Sleep.",
+      "options": [
+        "A. 睡覺",
+        "B. 起床",
+        "C. 走路",
+        "D. 跑步"
+      ],
+      "ans": "A",
+      "explain": "原句：Sleep. 意思是睡覺。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Good afternoon.",
+      "options": [
+        "A. 早安",
+        "B. 午安",
+        "C. 晚安",
+        "D. 晚安（道別）"
+      ],
+      "ans": "B",
+      "explain": "原句：Good afternoon. 意思是午安。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My name is John.",
+      "options": [
+        "A. 他是約翰",
+        "B. 我是約翰",
+        "C. 你是約翰",
+        "D. 我們是約翰"
+      ],
+      "ans": "B",
+      "explain": "原句：My name is John. 意思是我叫做約翰。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I am from Taiwan.",
+      "options": [
+        "A. 我喜歡台灣",
+        "B. 我來自美國",
+        "C. 我來自台灣",
+        "D. 我住在日本"
+      ],
+      "ans": "C",
+      "explain": "原句：I am from Taiwan. 意思是我來自台灣。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Speak English.",
+      "options": [
+        "A. 說中文",
+        "B. 寫英文",
+        "C. 讀英文",
+        "D. 說英文"
+      ],
+      "ans": "D",
+      "explain": "原句：Speak English. 意思是說英文。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "On Tuesday.",
+      "options": [
+        "A. 在星期二",
+        "B. 在星期三",
+        "C. 在星期四",
+        "D. 在星期五"
+      ],
+      "ans": "A",
+      "explain": "原句：On Tuesday. 意思是在星期二。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "In October.",
+      "options": [
+        "A. 在八月",
+        "B. 在十月",
+        "C. 在十一月",
+        "D. 在十二月"
+      ],
+      "ans": "B",
+      "explain": "原句：In October. 意思是在十月。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Twenty dollars.",
+      "options": [
+        "A. 兩元",
+        "B. 十二元",
+        "C. 二十元",
+        "D. 二百元"
+      ],
+      "ans": "C",
+      "explain": "原句：Twenty dollars. 意思是二十元。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I feel happy.",
+      "options": [
+        "A. 我覺得傷心",
+        "B. 我覺得生氣",
+        "C. 我覺得累",
+        "D. 我覺得開心"
+      ],
+      "ans": "D",
+      "explain": "原句：I feel happy. 意思是我覺得開心。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A big bed.",
+      "options": [
+        "A. 一張大床",
+        "B. 一張小床",
+        "C. 一張大桌子",
+        "D. 一張小桌子"
+      ],
+      "ans": "A",
+      "explain": "原句：A big bed. 意思是一張大床。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Three cats.",
+      "options": [
+        "A. 兩隻貓",
+        "B. 三隻貓",
+        "C. 四隻貓",
+        "D. 五隻貓"
+      ],
+      "ans": "B",
+      "explain": "原句：Three cats. 意思是三隻貓。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A red shirt.",
+      "options": [
+        "A. 一件紅色的裙子",
+        "B. 一件藍色的襯衫",
+        "C. 一件紅色的襯衫",
+        "D. 一件黃色的褲子"
+      ],
+      "ans": "C",
+      "explain": "原句：A red shirt. 意思是一件紅色的襯衫。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Play basketball.",
+      "options": [
+        "A. 踢足球",
+        "B. 打網球",
+        "C. 游泳",
+        "D. 打籃球"
+      ],
+      "ans": "D",
+      "explain": "原句：Play basketball. 意思是打籃球。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Get up.",
+      "options": [
+        "A. 起床",
+        "B. 睡覺",
+        "C. 吃飯",
+        "D. 洗澡"
+      ],
+      "ans": "A",
+      "explain": "原句：Get up. 意思是起床。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Take a shower.",
+      "options": [
+        "A. 刷牙",
+        "B. 洗澡",
+        "C. 洗手",
+        "D. 洗臉"
+      ],
+      "ans": "B",
+      "explain": "原句：Take a shower. 意思是洗澡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Watch TV.",
+      "options": [
+        "A. 聽音樂",
+        "B. 看書",
+        "C. 看電視",
+        "D. 玩遊戲"
+      ],
+      "ans": "C",
+      "explain": "原句：Watch TV. 意思是看電視。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Go to bed.",
+      "options": [
+        "A. 上學",
+        "B. 上班",
+        "C. 回家",
+        "D. 上床睡覺"
+      ],
+      "ans": "D",
+      "explain": "原句：Go to bed. 意思是上床睡覺。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I can speak English and Chinese.",
+      "options": [
+        "A. 我會說英文和日文。",
+        "B. 我會讀英文和中文。",
+        "C. 我會說英文和中文。",
+        "D. 我只會說中文。"
+      ],
+      "ans": "C",
+      "explain": "原句：I can speak English and Chinese. 意思是我會說英文和中文。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What day is today?",
+      "options": [
+        "A. It is in May.",
+        "B. It is 10 o'clock.",
+        "C. I am cold.",
+        "D. It is Friday."
+      ],
+      "ans": "D",
+      "explain": "原句：What day is today?（今天是星期幾？）最適合的回應是 It is Friday. (今天是星期五。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How much is this book?",
+      "options": [
+        "A. It is one hundred dollars.",
+        "B. It is a blue book.",
+        "C. I like books.",
+        "D. Yes, it is."
+      ],
+      "ans": "A",
+      "explain": "原句：How much is this book?（這本書多少錢？）最適合的回應是 It is one hundred dollars. (這是一百元。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My leg hurts.",
+      "options": [
+        "A. 我的手痛。",
+        "B. 我的腿痛。",
+        "C. 我的頭痛。",
+        "D. 我的背痛。"
+      ],
+      "ans": "B",
+      "explain": "原句：My leg hurts. 意思是我的腿痛。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The chair is in the living room.",
+      "options": [
+        "A. 椅子在廚房裡。",
+        "B. 桌子在客廳裡。",
+        "C. 椅子在客廳裡。",
+        "D. 沙發在臥室裡。"
+      ],
+      "ans": "C",
+      "explain": "原句：The chair is in the living room. 意思是椅子在客廳裡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you like cats?",
+      "options": [
+        "A. Yes, I do.",
+        "B. I am a cat.",
+        "C. No, I am not.",
+        "D. Yes, she does."
+      ],
+      "ans": "A",
+      "explain": "原句：Do you like cats?（你喜歡貓嗎？）最適合的回應是 Yes, I do. (是的，我喜歡。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What is your favorite color?",
+      "options": [
+        "A. I have a dog.",
+        "B. My favorite color is blue.",
+        "C. I am fine.",
+        "D. It is a book."
+      ],
+      "ans": "B",
+      "explain": "原句：What is your favorite color?（你最喜歡的顏色是什麼？）最適合的回應是 My favorite color is blue. (我最喜歡藍色。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time do you get up?",
+      "options": [
+        "A. I get up in the bedroom.",
+        "B. I am tired.",
+        "C. I get up at seven o'clock.",
+        "D. I go to bed at ten."
+      ],
+      "ans": "C",
+      "explain": "原句：What time do you get up?（你幾點起床？）最適合的回應是 I get up at seven o'clock. (我七點起床。)"
     }
   ],
   "boss": [
@@ -5129,6 +5669,141 @@
       ],
       "ans": "D",
       "explain": "詢問顏色偏好「Which color do you like? (你喜歡哪一個顏色？)」，回答「I like the red one. (我喜歡紅色的那一個)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Thirsty.",
+      "options": [
+        "A. 餓的",
+        "B. 累的",
+        "C. 渴的",
+        "D. 氣的"
+      ],
+      "ans": "C",
+      "explain": "原句：Thirsty. 意思是口渴的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Wardrobe.",
+      "options": [
+        "A. 衣櫥",
+        "B. 書架",
+        "C. 冰箱",
+        "D. 浴缸"
+      ],
+      "ans": "A",
+      "explain": "原句：Wardrobe. 意思是衣櫥。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Elephant.",
+      "options": [
+        "A. 老虎",
+        "B. 大象",
+        "C. 獅子",
+        "D. 猴子"
+      ],
+      "ans": "B",
+      "explain": "原句：Elephant. 意思是大家。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A pair of shoes.",
+      "options": [
+        "A. 一件外套",
+        "B. 兩件襯衫",
+        "C. 一雙鞋子",
+        "D. 一頂帽子"
+      ],
+      "ans": "C",
+      "explain": "原句：A pair of shoes. 意思是一雙鞋子。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Listen to music.",
+      "options": [
+        "A. 唱歌",
+        "B. 彈吉他",
+        "C. 看電影",
+        "D. 聽音樂"
+      ],
+      "ans": "D",
+      "explain": "原句：Listen to music. 意思是聽音樂。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Have breakfast.",
+      "options": [
+        "A. 吃早餐",
+        "B. 吃午餐",
+        "C. 吃晚餐",
+        "D. 吃宵夜"
+      ],
+      "ans": "A",
+      "explain": "原句：Have breakfast. 意思是吃早餐。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Clean the room.",
+      "options": [
+        "A. 洗衣服",
+        "B. 打掃房間",
+        "C. 倒垃圾",
+        "D. 洗碗"
+      ],
+      "ans": "B",
+      "explain": "原句：Clean the room. 意思是打掃房間。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He is my English teacher.",
+      "options": [
+        "A. 他是我的好朋友。",
+        "B. 他是我的爸爸。",
+        "C. 他是我的數學老師。",
+        "D. 他是我的英文老師。"
+      ],
+      "ans": "D",
+      "explain": "原句：He is my English teacher. 意思是他是我英文老師。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I want to buy a new jacket.",
+      "options": [
+        "A. 我想買一雙新鞋。",
+        "B. 我想買一件新夾克。",
+        "C. 我想買一條新褲子。",
+        "D. 我想買一頂新帽子。"
+      ],
+      "ans": "B",
+      "explain": "原句：I want to buy a new jacket. 意思是我想要買一件新外套(夾克)。"
     }
   ]
 }

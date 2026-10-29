@@ -236,6 +236,23 @@ export function bossMaxHp(stageIdx: number, levelIdx: number, final: boolean): n
   for (let k = 0; k < hits; k++) units += comboMultiplier(gate + k);
   return Math.round(BASE_DAMAGE * units * monsterGrowth(stageIdx, levelIdx));
 }
+// 敵人主動攻擊（A2+ 開始；A1、A2 新手區只在答錯時反擊）。每 every 題蓄力一次，蓄力那一題：
+//   window 毫秒內答對 → 打斷並讓敵人暈眩（下一擊傷害 ×1.5）；較慢答對 → 承受 hitMult 倍攻擊；答錯 → wrongMult 倍
+// window = 0 表示打不斷（B1+、B2 的「重擊」：答對仍受 0.5 倍，只有護盾能擋）
+export interface Assault { every: number; window: number; hitMult: number; wrongMult: number }
+const ASSAULTS: (Assault | null)[] = [
+  null, null,
+  { every: 4, window: 5_000, hitMult: 1, wrongMult: 1.5 },
+  { every: 4, window: 5_000, hitMult: 1, wrongMult: 1.5 },
+  { every: 3, window: 0, hitMult: 0.5, wrongMult: 2 },
+  { every: 3, window: 0, hitMult: 0.5, wrongMult: 2 },
+  { every: 3, window: 3_000, hitMult: 1, wrongMult: 2.5 },
+  { every: 3, window: 3_000, hitMult: 1, wrongMult: 2.5 },
+  { every: 3, window: 3_000, hitMult: 1, wrongMult: 2.5 },
+];
+export const assaultFor = (levelIdx: number) => ASSAULTS[Math.min(levelIdx, ASSAULTS.length - 1)] ?? null;
+export const STUN_DAMAGE = 1.5;
+
 // 魔王祝福：首領戰（以及觸發祝福的一般關）答錯時 combo 只扣 30%，不會歸零
 export const BLESSED_COMBO_KEEP = 0.7;
 export const BLESSING_DAMAGE = 1.2; // 一般關失敗後的祝福：全隊傷害 +20%

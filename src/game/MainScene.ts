@@ -4,7 +4,7 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, comboMultiplier, skillEffect } from './progression';
+import { SKILLS, assaultFor, comboMultiplier, skillEffect } from './progression';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -231,7 +231,8 @@ export default class MainScene extends Phaser.Scene {
     s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
-    this.armorText.setText(this.armorLabel(s)).setColor(s.bossGate > 0 && s.combo < s.bossGate ? '#ff8a8a' : '#ffcd4b');
+    this.armorText.setText(this.armorLabel(s)).setColor(s.charging || (s.bossGate > 0 && s.combo < s.bossGate) ? '#ff8a8a' : '#ffcd4b');
+    if (s.charging && !prev?.charging) this.chargeWarning();
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
     if (!prev) this.showCombo(s, 0);
@@ -432,6 +433,14 @@ export default class MainScene extends Phaser.Scene {
       burst(this, f.homeX, f.homeY - 60, [0xffcd4b, 0xffffff, 0x4cc9f0], 24, { up: true, gravity: -80, speed: 180 });
       popText(this, f.homeX, f.homeY - 200, `LEVEL UP!  Lv ${event.levelUp}`, 30, '#ffcd4b', { rise: 40, dur: 1400 });
     });
+    if (event.interrupted) this.time.delayedCall(300, () => {
+      sfx.crit(1.3);
+      popText(this, MONSTER_X, GROUND_Y - 230, '⚡ 打斷！敵人暈眩', 30, '#7fe8ff', { rise: 24, dur: 1200 });
+    });
+    if (event.counter) {
+      const counter = event.counter;
+      this.time.delayedCall(700, () => this.playHurt({ id: -1, kind: 'hurt', member: counter.member, amount: counter.amount }, useBattleStore.getState()));
+    }
     if (event.guardGained) this.time.delayedCall(350, () => popText(this, PLAYER_X, GROUND_Y - 220, '🛡️ 守護觸發', 22, '#7fffd4', { rise: 20, dur: 900 }));
     if (event.drops && Object.keys(event.drops).length) {
       const text = Object.entries(event.drops).map(([k, v]) => `${materialIcon(k)}+${v}`).join(' ');
@@ -757,9 +766,21 @@ export default class MainScene extends Phaser.Scene {
   }
 
   private armorLabel(s: State): string {
+    if (s.charging && s.phase === 'answering') {
+      const a = assaultFor(s.levelIdx);
+      return a && a.window > 0 ? `⚡ 敵人蓄力中！${a.window / 1000} 秒內答對可打斷` : '⚡ 敵人蓄力重擊！答錯傷害加倍';
+    }
     if (s.bossGate > 0) return s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
     if (s.waves > 1) return `第 ${s.wave}/${s.waves} 隻${s.blessed ? '  ✨ 祝福中' : ''}`;
     return s.blessed ? '✨ 祝福中' : '';
+  }
+
+  // 敵人開始蓄力：怪物發紅光、跳出警告
+  private chargeWarning() {
+    sfx.boss();
+    this.monsterSprite.setTint(0xff7a7a);
+    this.time.delayedCall(500, () => this.monsterSprite.clearTint());
+    popText(this, MONSTER_X, GROUND_Y - 220, '⚡ 蓄力中！', 30, '#ff8a8a', { rise: 20, dur: 1100 });
   }
 
   // 首領戰：combo 剛好達到門檻，盔甲碎裂

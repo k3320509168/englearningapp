@@ -131,9 +131,12 @@ export function questionHint(q: Question): string {
 
 // 瀏覽器不支援語音辨識時，把單字語音題改為拼寫題，讓玩家仍能練到這個字
 export function voiceFallback(q: Question): Question {
-  if (q.type !== 'voice' || !/^[A-Z]+$/.test(q.ans)) return q;
+  if (q.type !== 'voice') return q;
   // 只帶「同義寫法」；辨識容錯（accept）是給語音用的，拼寫時不能算對
-  return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: undefined };
+  if (/^[A-Z]+$/.test(q.ans)) return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: undefined };
+  // 片語、短句（例如 GOOD MORNING）：鍵盤只能打字母，所以去掉空格與撇號連在一起拼
+  const letters = q.ans.replace(/[^A-Z]/g, '');
+  return { ...q, type: 'spell', ans: letters, desc: `請拼出（不用打空格）：${questionHint(q)}`, accept: undefined, spellAccept: undefined };
 }
 
 // 拼寫／填空的進度顯示：拼寫顯示字母格，填空把已輸入的字母填進題目的空格

@@ -92,7 +92,7 @@ describe('口說轉拼寫：辨識容錯不能當成正確拼法（N1）', () =>
         const spell = voiceFallback(q);
         if (spell.type !== 'spell') continue;
         checked++;
-        expect(checkTypedAnswer(spell, q.ans)).toBe(true);
+        expect(checkTypedAnswer(spell, q.ans.replace(/[^A-Z]/g, ''))).toBe(true); // 鍵盤只打得出字母
         for (const heard of q.accept ?? []) {
           if (!(q.spellAccept ?? []).includes(heard)) expect(checkTypedAnswer(spell, heard)).toBe(false);
         }

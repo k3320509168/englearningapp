@@ -12,7 +12,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { HERO_LEVEL_CAPS, MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, playerLevelCap, xpScale } from '../game/growth';
-import { MAX_GRADE, SELL_RATE, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
+import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
 import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weeklyDef } from '../game/daily';
@@ -143,7 +143,7 @@ interface SaveActions {
   advanceClass: (nodeId: string) => boolean;
   addMaterials: (drops: Record<string, number>) => void;
   forge: (defId: string) => boolean;
-  enhance: (uid: string) => boolean;
+  enhance: (uid: string, holy?: boolean, rand?: () => number) => 'ok' | 'fail' | false; // 失敗只扣材料
   sellEquip: (uid: string) => boolean;
   gradeUp: (uid: string) => boolean;
   sellHero: (id: HeroId) => number; // 回傳得到的金幣，不能賣時回傳 0
@@ -515,16 +515,19 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           });
         },
 
-        enhance: (uid) => {
+        // 強化：有成功率；holy（神聖鍛造，答對 3 題英文）一定成功並得到神聖加護
+        enhance: (uid, holy = false, rand = Math.random) => {
           const s = get();
           const item = s.equipment.find(e => e.uid === uid);
           if (!item || item.plus >= maxPlus(item)) return false;
           const cost = enhanceCost(item);
-          if ((s.materials.ore ?? 0) < cost.ore) return false;
-          return purchase(cost.gold, st => ({
+          if ((s.materials.ore ?? 0) < cost.ore || s.gold < cost.gold) return false;
+          const success = holy || rand() < enhanceChance(item);
+          purchase(cost.gold, st => ({
             materials: { ...st.materials, ore: st.materials.ore - cost.ore },
-            equipment: st.equipment.map(e => (e.uid === uid ? { ...e, plus: e.plus + 1 } : e)),
+            equipment: success ? st.equipment.map(e => (e.uid === uid ? { ...e, plus: e.plus + 1, ...(holy ? { blessed: true } : {}) } : e)) : st.equipment,
           }));
+          return success ? 'ok' : 'fail';
         },
 
         // 送別英雄：不在隊伍中、而且至少留下一位；等級、品階與真名進度一併清除

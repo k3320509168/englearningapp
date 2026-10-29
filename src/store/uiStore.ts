@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 // 介面狀態（不存檔）：目前開啟的視窗，以及視窗需要的參數（例如哪個區域、哪段劇情）
-export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review' | 'placement' | 'gateTrial' | 'shardQuiz';
+export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review' | 'placement' | 'gateTrial' | 'shardQuiz' | 'holyForge';
 
 export type GrowthTab = 'hero' | 'gear' | 'forge';
 
@@ -16,6 +16,8 @@ export interface Celebration {
 
 interface UiState {
   modal: ModalName | null;
+  forgeUid: string | null; // 神聖鍛造的裝備
+  openHolyForge: (uid: string) => void;
   regionIdx: number;
   storyId: string;
   storyReplay: boolean; // 從設定重看劇情：看完直接關閉
@@ -44,6 +46,7 @@ interface UiState {
 
 export const useUiStore = create<UiState>()((set) => ({
   modal: null,
+  forgeUid: null,
   studyWord: null,
   regionIdx: 0,
   storyId: '',
@@ -64,6 +67,7 @@ export const useUiStore = create<UiState>()((set) => ({
   openGate: (regionIdx) => set({ modal: 'gateTrial', regionIdx }),
   openStory: (storyId, replay = false) => set({ modal: 'story', storyId, storyReplay: replay }),
   openTrueName: (heroId) => set({ modal: 'trueName', heroId }),
+  openHolyForge: (uid) => set({ modal: 'holyForge', forgeUid: uid }),
   openGrowth: (tab = 'hero') => set({ modal: 'growth', growthTab: tab }),
   closeModal: () => set({ modal: null }),
   openStudy: (key) => set({ studyWord: key }),

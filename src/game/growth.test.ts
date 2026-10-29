@@ -83,7 +83,7 @@ describe('growth in the save', () => {
     expect(sv().forge('blade_training')).toBe(true);
     const item = sv().equipment[0];
     expect(sv().equipped.weapon).toBe(item.uid);
-    expect(sv().enhance(item.uid)).toBe(true);
+    expect(sv().enhance(item.uid)).toBe('ok'); // +5 以前一定成功
     expect(sv().equipment[0].plus).toBe(1);
 
     expect(sv().advanceClass('squire')).toBe(false);
@@ -175,5 +175,16 @@ describe('裝備品階', () => {
     expect(amulets).toHaveLength(7);
     expect(EQUIPMENT.length).toBe(26);
     expect(amulets.find(a => a.id === 'amulet_fire')!.cost.materials).toMatchObject({ crystal_fire: 4 });
+  });
+});
+
+describe('enhance success rate and holy forging', () => {
+  it('can fail after +5, but holy forging always succeeds and blesses the item', () => {
+    useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, gold: 99999, materials: { ore: 99 },
+      equipment: [{ uid: 'w1', defId: 'blade_steel', plus: 6 }] });
+    expect(useSaveStore.getState().enhance('w1', false, () => 0.99)).toBe('fail');
+    expect(useSaveStore.getState().equipment[0].plus).toBe(6);
+    expect(useSaveStore.getState().enhance('w1', true)).toBe('ok');
+    expect(useSaveStore.getState().equipment[0]).toMatchObject({ plus: 7, blessed: true });
   });
 });

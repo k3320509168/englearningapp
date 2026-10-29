@@ -124,6 +124,7 @@ export interface OwnedEquip {
   defId: string;
   plus: number;
   grade?: number; // 品階 0～3：用同名裝備提升，稀有度不變
+  blessed?: boolean; // 神聖鍛造成功過：效果再 +10%
 }
 
 export const MAX_PLUS = 10;
@@ -137,9 +138,20 @@ export const maxPlus = (item: OwnedEquip) => MAX_PLUS + gradeOf(item) * GRADE_PL
 export function equipMods(item: OwnedEquip): Partial<Mods> {
   const def = equipDef(item.defId);
   if (!def) return {};
-  const scale = (1 + item.plus * 0.1) * (1 + gradeOf(item) * GRADE_BONUS);
+  const scale = (1 + item.plus * 0.1) * (1 + gradeOf(item) * GRADE_BONUS) * (item.blessed ? 1 + BLESS_BONUS : 1);
   // 守護是「每 N combo」，不能放大，維持原值
   return Object.fromEntries(Object.entries(def.mods).map(([k, v]) => [k, k === 'guardEvery' ? v : (v as number) * scale]));
+}
+
+// 強化成功率（第四輪）：+5 以前一定成功，之後越來越難；失敗只扣材料與金幣，裝備不會壞。
+// 「神聖鍛造」答對 3 題英文題就一定成功，而且第一次成功時裝備得到神聖加護（效果 +10%）。
+export const BLESS_BONUS = 0.1;
+export const HOLY_FORGE_QUESTIONS = 3;
+export function enhanceChance(item: OwnedEquip): number {
+  if (item.plus < 5) return 1;
+  if (item.plus < 8) return 0.8;
+  if (item.plus < 10) return 0.6;
+  return 0.5;
 }
 
 export function enhanceCost(item: OwnedEquip): { gold: number; ore: number } {

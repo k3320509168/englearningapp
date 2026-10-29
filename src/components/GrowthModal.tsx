@@ -10,7 +10,7 @@ import {
   ADVANCE_REQ, MAX_LEVEL, canAdvance, playerLevelCap, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
-  DRAGON_REGION, EQUIPMENT, MAX_GRADE, SLOTS, displayName, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
+  DRAGON_REGION, EQUIPMENT, HOLY_FORGE_QUESTIONS, MAX_GRADE, SLOTS, displayName, enhanceChance, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
 } from '../game/equipment';
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
@@ -141,16 +141,27 @@ export default function GrowthModal() {
                 <li key={item.uid} className="gear-item" style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
                   <span className="rarity-tag inline">{def.rarity}</span>
                   <div className="gear-info">
-                    <b>{displayName(def, character.classId)} +{item.plus}{grade > 0 && <span className="grade-stars" aria-label={`品階 ${grade}`}> {'★'.repeat(grade)}</span>}</b>
+                    <b>{item.blessed && '✨'}{displayName(def, character.classId)} +{item.plus}{grade > 0 && <span className="grade-stars" aria-label={`品階 ${grade}`}> {'★'.repeat(grade)}</span>}</b>
                     <small className="muted">{describeMods(equipMods(item)).join('、')}</small>
                   </div>
                   {isOn ? <span className="hero-tag">裝備中</span>
                     : <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { sfx.click(); sv.equip(item.uid); }}>裝備</button>}
                   <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!canEnhance}
-                    onClick={() => { if (sv.enhance(item.uid)) sfx.coin(); }}
+                    onClick={() => {
+                      const r = sv.enhance(item.uid);
+                      if (r === 'ok') sfx.coin();
+                      else if (r === 'fail') { sfx.wrong(); useUiStore.getState().celebrate({ icon: '💨', title: '強化失敗', sub: '材料用掉了，裝備沒事。試試「神聖鍛造」：答對 3 題英文一定成功', color: '#8a8494' }); }
+                    }}
                     title={item.plus >= cap ? `已經強化到目前上限 +${cap}${grade < MAX_GRADE ? '（升品階可以提高上限）' : ''}` : `需要 🪙${cost.gold}、🪨${cost.ore}`}>
-                    {item.plus >= cap ? `MAX +${cap}` : `強化 🪙${cost.gold} 🪨${cost.ore}`}
+                    {item.plus >= cap ? `MAX +${cap}` : `強化 ${Math.round(enhanceChance(item) * 100)}% 🪙${cost.gold} 🪨${cost.ore}`}
                   </button>
+                  {item.plus < cap && enhanceChance(item) < 1 && (
+                    <button className="btn btn-small" onMouseDown={keepFocus} disabled={!canEnhance}
+                      onClick={() => useUiStore.getState().openHolyForge(item.uid)}
+                      title={`答對 ${HOLY_FORGE_QUESTIONS} 題英文題，強化一定成功，而且得到神聖加護（效果 +10%）`}>
+                      ✨ 神聖鍛造
+                    </button>
+                  )}
                   {grade < MAX_GRADE && (
                     <button className="btn btn-small" onMouseDown={keepFocus} disabled={!hasMaterial}
                       onClick={() => { if (sv.gradeUp(item.uid)) sfx.victory(); }}

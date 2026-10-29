@@ -51,8 +51,10 @@ if (mode === 'status') {
   const pool = QUESTION_POOL[LEVELS[level]];
   const levelQs = [...pool.normal, ...pool.boss];
   const same = levelQs.filter(q => q.skill === skill);
+  // 聽力題的題目文字都一樣，改給已經播過的英文，Gemini 才知道哪些不要重複
+  const seen = same.map(q => (skill === 'listening' ? q.speak ?? q.desc : q.desc));
   const words = levelQs.map(wordOf).filter((w): w is string => !!w);
-  const prompt = `${buildSkillPrompt(LEVELS[level], skill, Number(arg('count', '40')), same.map(q => q.desc), words)}\n- 只回傳一個 JSON 程式碼區塊。`;
+  const prompt = buildSkillPrompt(LEVELS[level], skill, Number(arg('count', '40')), seen, words);
   writeFileSync(arg('out', 'prompt.txt'), prompt);
   console.log(`提示詞 ${prompt.length} 字，已寫入 ${arg('out', 'prompt.txt')}`);
 } else if (mode === 'import') {
@@ -60,7 +62,20 @@ if (mode === 'status') {
   const vocab = readJson<Record<string, VocabEntry>>(bankVocabFile(level));
   const knownWords = new Set([...Object.keys(VOCAB), ...Object.keys(vocab)]);
   const source = args.includes('--download') ? latestDownload() : arg('file', 'reply.json');
-  const batch = tagBatch(parseBatch(readFileSync(source, 'utf-8')), skill);
+  const text = readFileSync(source, 'utf-8');
+  // 壞掉的檔案整批不收（例如 Gemini 中途重來、輸出被截斷），題庫保持原樣
+  let parsed;
+  try {
+    parsed = parseBatch(text);
+  } catch (e) {
+    console.log(`✖ 整批不收：JSON 解析失敗（${(e as Error).message.slice(0, 80)}），檔案留在 ${source}`);
+    process.exit(1);
+  }
+  if (/```/.test(text.trim().replace(/^```(?:json)?/, '').replace(/```\s*$/, ''))) {
+    console.log(`✖ 整批不收：回覆裡有第二個程式碼區塊（Gemini 中途重來），檔案留在 ${source}`);
+    process.exit(1);
+  }
+  const batch = tagBatch(parsed, skill);
   // 匯入過的下載檔移到 --archive 資料夾，下一批才不會重複匯入
   if (args.includes('--download')) {
     const dir = arg('archive', join(homedir(), 'Downloads', 'gemini-batches'));

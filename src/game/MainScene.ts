@@ -12,13 +12,15 @@ import {
 import { AVATAR_ORIGIN_X, avatarKey } from './art/avatar';
 import type { AvatarFrame } from './art/avatar';
 import { elementDef } from './character';
-import type { Character, Element, ElementDef } from './character';
+import type { Character, ClassId, Element, ElementDef } from './character';
 import { useSaveStore } from '../store/saveStore';
 import { materialIcon } from './equipment';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
 import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
+import { ultimateEchoes, ultimateName, ultimateTier } from './ultimates';
+import { playUltimate } from './ultimateFx';
 import { sfx } from './sfx';
 
 // 戰鬥畫面：只負責顯示、動畫與音效。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
@@ -239,6 +241,7 @@ export default class MainScene extends Phaser.Scene {
     }
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
+    if (ultimateTier(s.combo) < this.lastUltTier) this.lastUltTier = ultimateTier(s.combo);
     if (!prev) this.showCombo(s, 0);
 
     // 打對每個字母：劍上閃光＋音高漸升的提示音，營造「蓄力」感
@@ -463,10 +466,12 @@ export default class MainScene extends Phaser.Scene {
     const fx = comboFx(s.combo);
     const glow = fx.tier ? hex(fx.color) : chargeColor(1);
 
-    // 蓄力：短暫蹲低、光點收聚、閃一下（0.1 秒，不拖慢答題節奏）
+    // 蓄力：短暫蹲低、光點收聚、閃一下（0.1 秒，不拖慢答題節奏）；有大招時聚更多、更大圈的屬性光
     this.setCharge(null, 0, 0);
     f.sprite.setScale(f.scale * 1.14, f.scale * 0.84);
-    gather(this, f.homeX + 10, f.homeY - 50, glow, 8 + fx.tier * 3, 90);
+    const ult = ultimateTier(s.combo);
+    gather(this, f.homeX + 10, f.homeY - 50, glow, 8 + fx.tier * 3 + ult * 6, 90 + ult * 25);
+    if (member && ult > 0) this.castUltimate(f, member.classId, member.element, ult, s.combo);
     sfx.release(fx.tier);
     const flash = this.add.image(f.homeX + 10, f.homeY - 50, 'spark').setScale(6 + fx.tier * 2).setTint(glow).setDepth(30).setAlpha(0.9);
     this.tweens.add({ targets: flash, scale: 0, angle: 180, duration: 160, onComplete: () => flash.destroy() });
@@ -789,6 +794,25 @@ ${status}` : armor;
     }
     if (s.waves > 1) return `第 ${s.wave}/${s.waves} 隻${s.blessed ? '  ✨ 祝福中' : ''}`;
     return s.blessed ? '✨ 祝福中' : '';
+  }
+
+  // Combo 大招：和一般攻擊同時播放；剛升到新的大招等級時打出大招名稱
+  private lastUltTier = 0;
+  private castUltimate(f: Fighter, classId: ClassId, element: Element, tier: number, combo: number) {
+    const el = elementDef(element);
+    if (tier > this.lastUltTier) {
+      sfx.combo(combo);
+      const band = this.add.rectangle(400, 240, 800, 56, 0x1a1226, 0.8).setDepth(88).setScale(1, 0);
+      const label = this.add.text(400, 240, `${ultimateName(classId, tier)}！`, textStyle(34, el.light, 7)).setOrigin(0.5).setDepth(89).setScale(2).setAlpha(0);
+      this.tweens.add({ targets: band, scaleY: 1, duration: 140 });
+      this.tweens.add({ targets: label, scale: 1, alpha: 1, duration: 220, ease: 'Back.easeOut' });
+      this.time.delayedCall(1100, () => this.tweens.add({ targets: [band, label], alpha: 0, duration: 260, onComplete: () => { band.destroy(); label.destroy(); } }));
+    }
+    this.lastUltTier = tier;
+    this.time.delayedCall(120, () => playUltimate({
+      scene: this, from: { x: f.homeX, y: f.homeY }, to: { x: MONSTER_X, y: GROUND_Y - this.monsterSprite.displayHeight / 2 },
+      ground: GROUND_Y, color: hex(el.color), light: hex(el.light),
+    }, classId, tier, ultimateEchoes(combo)));
   }
 
   // 敵人開始蓄力：怪物發紅光、跳出警告

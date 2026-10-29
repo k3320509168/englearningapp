@@ -30,10 +30,11 @@ function draw(regionIdx: number, bossCount: number, normalCount: number, rand: (
 export const gateQuestions = (regionIdx: number, rand: () => number = Math.random) => draw(regionIdx, 4, GATE_QUESTIONS - 4, rand);
 
 // 程度測驗：從第一區開始，每區 3 題；答對 2 題以上就往下一區，否則停在這一區。
-// 最多建議從熔岩魔域開始（王城要自己打進去），所以只測到第 4 區，最多 12 題
+// 最多建議從熔岩魔域（C1）開始（王城要自己打進去），所以只測到倒數第二區之前，最多 PLACEMENT_MAX_QUESTIONS 題
 export const PLACEMENT_MAX_START = SKIPPABLE_REGIONS - 1;
 export const PLACEMENT_PER_LEVEL = 3;
 export const PLACEMENT_PASS = 2;
+export const PLACEMENT_MAX_QUESTIONS = PLACEMENT_MAX_START * PLACEMENT_PER_LEVEL;
 export const placementQuestions = (regionIdx: number, rand: () => number = Math.random) => draw(regionIdx, 1, PLACEMENT_PER_LEVEL - 1, rand);
 
 // 判斷作答：拼寫比對整個字；填空可以只填空格的字母，也可以打完整個字

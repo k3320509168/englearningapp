@@ -703,8 +703,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (finisher?.heal) party = party.map(m => (isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.round(m.maxHp * finisher.heal!)) } : m));
     const teamwork = (1 + (relayFx?.dmg ?? 0)) * (finisher ? finisherMultiplier(finisher, aliveIds.length) : 1);
     // 首領戰：combo 沒達到門檻時是「刮痧」，達到後全額
-    const armor = (s.bossGate > 0 && combo < s.bossGate ? ARMOR_DAMAGE : 1)
-      * (s.foeSkill === 'hardShell' && !crit && em <= 1 ? HARD_SHELL_DAMAGE : 1)
+    // 連擊破甲與硬化護甲不疊加：還沒破甲時只算破甲，破甲後硬化護甲才生效
+    const armored = s.bossGate > 0 && combo < s.bossGate;
+    const armor = (armored ? ARMOR_DAMAGE : s.foeSkill === 'hardShell' && !crit && em <= 1 ? HARD_SHELL_DAMAGE : 1)
       * (s.foeSkill === 'refraction' && refractionImmune(s.stageIdx).includes(attacker.element as never) ? REFRACTION_DAMAGE : 1);
     const armorBroken = s.bossGate > 0 && combo === s.bossGate;
     const damage = stage.revenge

@@ -238,7 +238,7 @@ export default class MainScene extends Phaser.Scene {
     if (s.charging && !prev?.charging) this.chargeWarning();
     if (s.bossCast && s.bossCast.seq !== prev?.bossCast?.seq) {
       sfx.boss();
-      popText(this, 400, 150, s.bossCast.text, 24, '#ffcd4b', { rise: 16, dur: 2200 });
+      popText(this, 400, 205, s.bossCast.text, 20, '#ffcd4b', { rise: 12, dur: 2200 });
     }
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);

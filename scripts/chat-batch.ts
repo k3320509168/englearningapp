@@ -9,6 +9,7 @@ import { copyFileSync, mkdirSync, readFileSync, readdirSync, statSync, unlinkSyn
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { LEVELS, QUESTION_POOL } from '../src/game/QuestionData';
+import './loadBanks';
 import { VOCAB, vocabKey } from '../src/game/vocab';
 import { bankFile, bankVocabFile } from '../src/game/questions/bank';
 import type { BankFile } from '../src/game/questions/bank';

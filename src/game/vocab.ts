@@ -1,6 +1,5 @@
 import type { Question, VocabEntry, VocabSense } from './types';
 import generatedVocab from './questions/generated-vocab.json';
-import { BANK_VOCAB } from './questions/bank';
 
 // 單字資料：拼寫、填空、語音題共用同一個字的中文與例句。
 // key 為大寫單字；題目透過 vocabKey() 對應到這裡。
@@ -98,7 +97,11 @@ const BASE_VOCAB: Record<string, VocabEntry> = {
 };
 
 // 題目對應的單字：拼寫／語音看答案，填空看 speak（答案只是缺的字母），選擇題沒有單一單字
-export const VOCAB: Record<string, VocabEntry> = Object.assign({ ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) }, ...BANK_VOCAB);
+export const VOCAB: Record<string, VocabEntry> = { ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) };
+// CEFR 題庫的單字資料：分區域載入時加進來（已有的字不覆蓋）
+export function addBankVocab(vocab: Record<string, VocabEntry>) {
+  for (const [k, v] of Object.entries(vocab)) if (!VOCAB[k]) VOCAB[k] = v;
+}
 
 // 單字的所有詞性與例句：有完整資料就用，沒有就用主要意思與例句；主要意思一定排第一個
 export function vocabSenses(entry: VocabEntry): VocabSense[] {

@@ -1,7 +1,7 @@
 import type { Question, QuestionSkill, Stage } from './types';
 import { shuffleArray } from './battle';
 import generatedPool from './questions/generated.json';
-import { BANK } from './questions/bank';
+import type { BankFile } from './questions/bank';
 
 // 九個細分等級。字串同時是存檔的 key（關卡進度、星星），舊的六個不能改名；
 // A2+、B1+、B2+ 是第四輪新增，插在原本的等級之間（舊存檔的 unlockedIndex 在 migrateSave 轉換）
@@ -175,8 +175,20 @@ export function mergePools(base: QuestionPool, extra: Partial<QuestionPool>): Qu
   return merged;
 }
 
-const BANK_POOL: QuestionPool = Object.fromEntries(LEVELS.map((level, i) => [level, BANK[i] ?? { normal: [], boss: [] }]));
-export const QUESTION_POOL: QuestionPool = mergePools(mergePools(BASE_POOL, generatedPool as Partial<QuestionPool>), BANK_POOL);
+// 內建題目＋Gemini 早期生成的題目；CEFR 題庫（questions/bank）之後分區域載入並用 addBank 加進來
+export const QUESTION_POOL: QuestionPool = mergePools(mergePools(BASE_POOL, generatedPool as Partial<QuestionPool>),
+  Object.fromEntries(LEVELS.map(level => [level, { normal: [], boss: [] }])));
+
+const loadedBanks = new Set<number>();
+export const isBankLoaded = (regionIdx: number) => loadedBanks.has(regionIdx);
+// 把一個區域的 CEFR 題庫加進題庫（直接加到原本的陣列，已經拿到 pool 的地方也看得到）
+export function addBank(regionIdx: number, file: BankFile) {
+  if (loadedBanks.has(regionIdx) || !LEVELS[regionIdx]) return;
+  loadedBanks.add(regionIdx);
+  const pool = QUESTION_POOL[LEVELS[regionIdx]];
+  pool.normal.push(...file.normal);
+  pool.boss.push(...file.boss);
+}
 
 // 題目在區域內的難度：CEFR 題庫有標註；舊題目用題型與單字長度推斷
 export function questionDifficulty(q: Question): 1 | 2 | 3 {

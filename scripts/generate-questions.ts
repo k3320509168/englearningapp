@@ -12,6 +12,7 @@
 // 產生的 PR 說明寫在 question-report.md，GitHub Actions 會拿來當 PR 內容。
 import { readFileSync, writeFileSync } from 'node:fs';
 import { LEVELS, QUESTION_POOL } from '../src/game/QuestionData';
+import './loadBanks';
 import { VOCAB, vocabKey } from '../src/game/vocab';
 import { bankFile, bankVocabFile } from '../src/game/questions/bank';
 import type { BankFile } from '../src/game/questions/bank';

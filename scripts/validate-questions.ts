@@ -1,6 +1,7 @@
 // 用法：npm run validate:questions
 // 有 error 時以結束碼 1 離開，可接在 CI 或 Gemini 批次生成題庫之後執行。
 import { QUESTION_POOL, LEVELS } from '../src/game/QuestionData';
+import './loadBanks';
 import { validateQuestionPool } from '../src/game/validateQuestions';
 
 const issues = validateQuestionPool(QUESTION_POOL, LEVELS);

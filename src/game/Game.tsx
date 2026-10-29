@@ -27,6 +27,7 @@ import WordStudy from '../components/WordStudy';
 import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
 import ShardQuizModal from '../components/ShardQuizModal';
+import { loadBanksFrom } from './questions/bank/loader';
 import HolyForgeModal from '../components/HolyForgeModal';
 import RushModal from '../components/RushModal';
 import TowerModal from '../components/TowerModal';
@@ -51,6 +52,8 @@ export default function Game() {
 
   // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
   useEffect(() => { window.scrollTo(0, 0); }, [inBattle]);
+  // CEFR 題庫在背景分區域載入：目前冒險的區域優先
+  useEffect(() => { void loadBanksFrom(useSaveStore.getState().unlockedIndex); }, []);
 
   // 切到別的 App 或分頁時停止英文發音（音樂與音效在各自的模組裡暫停）
   useEffect(() => {

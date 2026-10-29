@@ -5,6 +5,9 @@ import { VOCAB, vocabKey } from './vocab';
 // 題庫驗證：檢查資料格式是否符合 MainScene 的判讀規則。
 // error = 遊戲中會壞掉或無法作答；warning = 可以玩，但值得人工檢查。
 
+// 判斷重複題目用：聽力題的題目文字都一樣（「🎧 聽一聽…」），要連播放的英文一起比
+export const questionKey = (q: { type?: string; desc?: string; speak?: string }) => `${q.type}|${q.desc}|${q.speak ?? ''}`;
+
 export interface ValidationIssue {
   level: 'error' | 'warning';
   where: string;
@@ -127,11 +130,11 @@ export function validateQuestionPool(pool: QuestionPool, levels: string[]): Vali
 
     const seen = new Map<string, number>();
     all.forEach(q => {
-      const key = `${q.type}|${q.desc}`;
+      const key = questionKey(q);
       seen.set(key, (seen.get(key) ?? 0) + 1);
     });
     for (const [key, count] of seen) {
-      if (count > 1) issues.push({ level: 'error', where: levelKey, message: `重複題目 ×${count}：${key.split('|')[1]}` });
+      if (count > 1) issues.push({ level: 'error', where: levelKey, message: `重複題目 ×${count}：${key.split('|').slice(1).join(' ')}` });
     }
   }
   return issues;

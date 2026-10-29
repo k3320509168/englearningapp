@@ -17,7 +17,7 @@ import { bankFile, bankVocabFile } from '../src/game/questions/bank';
 import type { BankFile } from '../src/game/questions/bank';
 import type { Question, QuestionSkill, VocabEntry } from '../src/game/types';
 import {
-  BANK_SKILLS, SKILL_TARGET, addToPool, buildPrompt, buildSkillPrompt, countSkill, parseBatch, reviewBatch, reviewReport, tagBatch,
+  BANK_SKILLS, addToPool, skillTarget, buildPrompt, buildSkillPrompt, countSkill, parseBatch, reviewBatch, reviewReport, tagBatch,
 } from '../src/game/questionPipeline';
 import type { GeneratedBatch, Reviewed } from '../src/game/questionPipeline';
 
@@ -105,7 +105,7 @@ async function bank() {
   const skillArg = arg('skill', 'all');
   const levels = levelArg === 'all' ? LEVELS.map((_, i) => i) : [Number(levelArg)];
   const skills = skillArg === 'all' ? BANK_SKILLS : [skillArg as QuestionSkill];
-  const target = Number(arg('target', String(SKILL_TARGET)));
+  const fixedTarget = args.includes('--target') ? Number(arg('target', '0')) : null;
   const batchSize = Number(arg('batch', '40'));
   const maxCalls = Number(arg('max-calls', '60'));
   if (skills.some(s => !BANK_SKILLS.includes(s))) throw new Error(`--skill 只能是 ${BANK_SKILLS.join('／')} 或 all`);
@@ -121,6 +121,7 @@ async function bank() {
     const file = readJson<BankFile>(bankFile(li));
     const vocab = readJson<Record<string, VocabEntry>>(bankVocabFile(li));
     for (const skill of skills) {
+      const target = fixedTarget ?? skillTarget(li, skill);
       const all: Reviewed = { accepted: [], rejected: [] };
       // 連續兩次都沒有新題目就換下一項，避免一直重複呼叫
       let misses = 0;

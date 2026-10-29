@@ -3,9 +3,11 @@ import { shuffleArray } from './battle';
 import generatedPool from './questions/generated.json';
 import { BANK } from './questions/bank';
 
+// 九個細分等級。字串同時是存檔的 key（關卡進度、星星），舊的六個不能改名；
+// A2+、B1+、B2+ 是第四輪新增，插在原本的等級之間（舊存檔的 unlockedIndex 在 migrateSave 轉換）
 export const LEVELS = [
-  "A1 入門 (120-224分)", "A2 初級 (225-549分)", "B1 中級 (550-784分)",
-  "B2 中高級 (785-944分)", "C1 高級 (945分以上)", "C2 精通 (母語程度)"
+  "A1 入門 (120-224分)", "A2 初級 (225-549分)", "A2+ 初級進階", "B1 中級 (550-784分)", "B1+ 中級進階",
+  "B2 中高級 (785-944分)", "B2+ 中高級進階", "C1 高級 (945分以上)", "C2 精通 (母語程度)"
 ];
 
 // 注意：spell / fill 的 ans 只能是大寫 A-Z（鍵盤輸入限制），choice 的 ans 為 A-D，
@@ -196,8 +198,15 @@ export function questionSkill(q: Question): QuestionSkill {
 // 區域內第幾關可以出到哪個難度：前 1/3 只出 1、中段出到 2、後段全部（50 關一個區域）
 export const maxDifficultyAt = (stageIdx: number) => Math.min(3, 1 + Math.floor(stageIdx / 17)) as 1 | 2 | 3;
 
+// 題庫還沒準備好的等級（新增的 A2+／B1+／B2+ 在題庫補齊前）先借用前一個有題目的等級
 export function getPool(levelKey: string) {
-  return QUESTION_POOL[levelKey] || QUESTION_POOL["A1 入門 (120-224分)"];
+  const own = QUESTION_POOL[levelKey];
+  if (own && own.normal.length && own.boss.length) return own;
+  for (let i = LEVELS.indexOf(levelKey) - 1; i >= 0; i--) {
+    const prev = QUESTION_POOL[LEVELS[i]];
+    if (prev && prev.normal.length && prev.boss.length) return prev;
+  }
+  return QUESTION_POOL[LEVELS[0]];
 }
 
 // 洗牌後依序抽題，抽完自動重新洗牌；戰鬥中怪物還沒倒下時也從這裡繼續抽題。

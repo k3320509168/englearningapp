@@ -24,11 +24,11 @@ const wrong = () => {
 
 describe('final region', () => {
   it('adds the castle region with C2 questions and the Silent Demon Lord at the end', () => {
-    expect(LEVELS).toHaveLength(6);
-    expect(REGIONS[5].name).toBe('王城');
-    const stages = generateStages(LEVELS[5]);
+    expect(LEVELS).toHaveLength(9);
+    expect(REGIONS[8].name).toBe('王城');
+    const stages = generateStages(LEVELS[8]);
     expect(stages[49].kind).toBe('final');
-    expect(generateStages(LEVELS[4])[49].kind).toBeUndefined();
+    expect(generateStages(LEVELS[7])[49].kind).toBeUndefined();
     expect(STORIES['region-5'].length).toBeGreaterThan(0);
     expect(STORIES['clear-5'].length).toBeGreaterThan(0);
   });

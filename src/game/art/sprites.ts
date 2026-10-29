@@ -139,8 +139,11 @@ const MONSTER_ART: Record<MonsterKind, string[]> = {
 export const REGION_MONSTER_COLORS: { M: string; L: string; m: string }[] = [
   { M: '#5fd36b', L: '#b6f5a8', m: '#2f8a4a' }, // A1 草原
   { M: '#4fb3e8', L: '#b0e6ff', m: '#2a6fa8' }, // A2 森林湖畔
+  { M: '#3fd6c6', L: '#b4fff4', m: '#1f8a80' }, // A2+ 海岸
   { M: '#e8a64f', L: '#ffe0a3', m: '#a8642a' }, // B1 沙漠
+  { M: '#d8663c', L: '#ffc09a', m: '#8a3a1f' }, // B1+ 峽谷
   { M: '#9aa8ff', L: '#e3e7ff', m: '#5a62b8' }, // B2 雪山
+  { M: '#7fa0c8', L: '#e0ecff', m: '#3f5a80' }, // B2+ 雷鳴高原
   { M: '#e8505b', L: '#ffb0a8', m: '#8f2a3a' }, // C1 火山
   { M: '#b48aff', L: '#ffe08a', m: '#5a3a9a' }, // C2 王城
 ];

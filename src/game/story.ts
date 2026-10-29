@@ -40,6 +40,15 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
   'clear-1': [
     { speaker: 'narrator', text: '濃霧散去，森林裡再次響起歌聲。' },
+    { speaker: 'spirit', text: '霧的另一邊是碧藍海岸。燈塔熄了，船隻找不到回家的路。' },
+  ],
+  'region-a2p': [
+    { speaker: 'elder', text: '漁夫們說，海怪把燈塔的訊號全吃掉了，現在誰也看不懂航海日誌。' },
+    { speaker: 'spirit', text: '這裡的咒語要描述過去和未來：昨天發生了什麼、明天要去哪裡。' },
+    { speaker: 'hero', text: '把時間說清楚，燈塔就會重新亮起來吧！' },
+  ],
+  'clear-a2p': [
+    { speaker: 'narrator', text: '燈塔再次點亮，漁船一艘艘平安靠岸。' },
     { speaker: 'spirit', text: '下一站是黃金沙漠。商人們因為說不出話，已經好久無法做生意了。' },
   ],
   'region-2': [
@@ -48,7 +57,15 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
   'clear-2': [
     { speaker: 'narrator', text: '商隊重新出發，沙漠的城市恢復了熱鬧。' },
-    { speaker: 'villain', text: '……有人在收集咒語？無妨，雪嶺的冰會讓一切凍結。' },
+    { speaker: 'villain', text: '……有人在收集咒語？無妨，峽谷的回音會把它們全部扭曲。' },
+  ],
+  'region-b1p': [
+    { speaker: 'spirit', text: '赤岩峽谷的回音會把話語扭曲。只有結構正確的句子，回音才會照實傳回來。' },
+    { speaker: 'hero', text: '誰、哪一個、做了什麼……把句子接得完整，回音就騙不了我！' },
+  ],
+  'clear-b1p': [
+    { speaker: 'narrator', text: '峽谷的回音變得清澈，礦工們又能隔著岩壁互相呼喊。' },
+    { speaker: 'villain', text: '哼，那就讓雪嶺的冰，把一切凍結吧。' },
   ],
   'region-3': [
     { speaker: 'spirit', text: '極光雪嶺的冰龍守著王國的史書。牠只回應精確的咒語。' },
@@ -56,6 +73,14 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
   'clear-3': [
     { speaker: 'narrator', text: '冰龍低下了頭，史書上的文字一行行亮了起來。' },
+    { speaker: 'spirit', text: '雪嶺之上是雷鳴高原。雷鳥守著通往魔域的唯一道路。' },
+  ],
+  'region-b2p': [
+    { speaker: 'spirit', text: '雷鳥只尊敬能精準表達推測與假設的人：「如果當時……就會……」。' },
+    { speaker: 'hero', text: '說出所有的可能性，雷電也擋不住我！' },
+  ],
+  'clear-b2p': [
+    { speaker: 'narrator', text: '雷雲散開，雷鳥展翅為你指路。' },
     { speaker: 'spirit', text: '最後是熔岩魔域……沉默魔王的軍隊就在那裡。' },
   ],
   'region-4': [
@@ -89,5 +114,8 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
 };
 
-export const regionStoryId = (regionIdx: number) => `region-${regionIdx}`;
-export const clearStoryId = (regionIdx: number) => `clear-${regionIdx}`;
+// 劇情 id 依區域固定：原本六個區域沿用舊 id（存檔裡記錄看過哪些），新增的三區用自己的 id
+const REGION_STORY_KEYS = ['0', '1', 'a2p', '2', 'b1p', '3', 'b2p', '4', '5'];
+const storyKey = (regionIdx: number) => REGION_STORY_KEYS[regionIdx] ?? String(regionIdx);
+export const regionStoryId = (regionIdx: number) => `region-${storyKey(regionIdx)}`;
+export const clearStoryId = (regionIdx: number) => `clear-${storyKey(regionIdx)}`;

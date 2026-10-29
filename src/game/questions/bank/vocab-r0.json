@@ -1,1 +1,2592 @@
-{}
+{
+  "EMAIL": {
+    "pos": "n.",
+    "meaning": "電子郵件",
+    "example": "Please send me an email.",
+    "exampleZh": "請寄封電子郵件給我。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "電子郵件",
+        "examples": [
+          {
+            "en": "Please send me an email.",
+            "zh": "請寄封電子郵件給我。"
+          },
+          {
+            "en": "I read my emails every morning.",
+            "zh": "我每天早上看電子郵件。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "寄電子郵件",
+        "examples": [
+          {
+            "en": "I will email you the map.",
+            "zh": "我會把地圖用電子郵件寄給你。"
+          },
+          {
+            "en": "She emailed her boss today.",
+            "zh": "她今天寄電子郵件給老闆了。"
+          }
+        ]
+      }
+    ]
+  },
+  "TIME": {
+    "pos": "n.",
+    "meaning": "時間",
+    "example": "What time is it?",
+    "exampleZh": "現在幾點？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "時間",
+        "examples": [
+          {
+            "en": "What time is it?",
+            "zh": "現在幾點？"
+          },
+          {
+            "en": "I don't have time to play.",
+            "zh": "我沒有時間玩。"
+          }
+        ]
+      }
+    ]
+  },
+  "YEAR": {
+    "pos": "n.",
+    "meaning": "年",
+    "example": "I go to Japan every year.",
+    "exampleZh": "我每年去日本。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "年",
+        "examples": [
+          {
+            "en": "I go to Japan every year.",
+            "zh": "我每年去日本。"
+          },
+          {
+            "en": "Next year, I will buy a car.",
+            "zh": "明年我將會買車。"
+          }
+        ]
+      }
+    ]
+  },
+  "MONTH": {
+    "pos": "n.",
+    "meaning": "月",
+    "example": "My birthday is next month.",
+    "exampleZh": "我的生日在下個月。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "月",
+        "examples": [
+          {
+            "en": "My birthday is next month.",
+            "zh": "我的生日在下個月。"
+          },
+          {
+            "en": "We stay here for a month.",
+            "zh": "我們在這裡待一個月。"
+          }
+        ]
+      }
+    ]
+  },
+  "WEEK": {
+    "pos": "n.",
+    "meaning": "週；星期",
+    "example": "I work five days a week.",
+    "exampleZh": "我一週工作五天。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "週；星期",
+        "examples": [
+          {
+            "en": "I work five days a week.",
+            "zh": "我一週工作五天。"
+          },
+          {
+            "en": "See you next week.",
+            "zh": "下週見。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRIP": {
+    "pos": "n.",
+    "meaning": "旅行",
+    "example": "Have a good trip!",
+    "exampleZh": "祝你旅途愉快！",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "旅行",
+        "examples": [
+          {
+            "en": "Have a good trip!",
+            "zh": "祝你旅途愉快！"
+          },
+          {
+            "en": "My trip to Taipei was fun.",
+            "zh": "我去台北的旅行很有趣。"
+          }
+        ]
+      }
+    ]
+  },
+  "CARD": {
+    "pos": "n.",
+    "meaning": "卡片",
+    "example": "Can I pay by card?",
+    "exampleZh": "我可以用信用卡付錢嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "卡片",
+        "examples": [
+          {
+            "en": "Can I pay by card?",
+            "zh": "我可以用信用卡付錢嗎？"
+          },
+          {
+            "en": "This is my room card.",
+            "zh": "這是我的房卡。"
+          }
+        ]
+      }
+    ]
+  },
+  "NAME": {
+    "pos": "n.",
+    "meaning": "名字",
+    "example": "What is your name?",
+    "exampleZh": "你叫什麼名字？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "名字",
+        "examples": [
+          {
+            "en": "What is your name?",
+            "zh": "你叫什麼名字？"
+          },
+          {
+            "en": "My name is John.",
+            "zh": "我的名字是約翰。"
+          }
+        ]
+      }
+    ]
+  },
+  "NUMBER": {
+    "pos": "n.",
+    "meaning": "號碼；數字",
+    "example": "What is your phone number?",
+    "exampleZh": "你的電話號碼是多少？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "號碼；數字",
+        "examples": [
+          {
+            "en": "What is your phone number?",
+            "zh": "你的電話號碼是多少？"
+          },
+          {
+            "en": "Room number three is here.",
+            "zh": "三號房在這裡。"
+          }
+        ]
+      }
+    ]
+  },
+  "DINNER": {
+    "pos": "n.",
+    "meaning": "晚餐",
+    "example": "It is time for dinner.",
+    "exampleZh": "晚餐時間到了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "晚餐",
+        "examples": [
+          {
+            "en": "It is time for dinner.",
+            "zh": "晚餐時間到了。"
+          },
+          {
+            "en": "Let's have dinner together.",
+            "zh": "我們一起吃晚餐吧。"
+          }
+        ]
+      }
+    ]
+  },
+  "JOB": {
+    "pos": "n.",
+    "meaning": "工作",
+    "example": "He has a good job.",
+    "exampleZh": "他有一份好工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "工作",
+        "examples": [
+          {
+            "en": "He has a good job.",
+            "zh": "他有一份好工作。"
+          },
+          {
+            "en": "I love my new job.",
+            "zh": "我喜歡我的新工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOSS": {
+    "pos": "n.",
+    "meaning": "老闆",
+    "example": "My boss is very nice.",
+    "exampleZh": "我的老闆人很好。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "老闆",
+        "examples": [
+          {
+            "en": "My boss is very nice.",
+            "zh": "我的老闆人很好。"
+          },
+          {
+            "en": "I need to talk to the boss.",
+            "zh": "我需要跟老闆談談。"
+          }
+        ]
+      }
+    ]
+  },
+  "PEN": {
+    "pos": "n.",
+    "meaning": "筆",
+    "example": "Can I use your pen?",
+    "exampleZh": "我可以用你的筆嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "筆",
+        "examples": [
+          {
+            "en": "Can I use your pen?",
+            "zh": "我可以用你的筆嗎？"
+          },
+          {
+            "en": "I write with a black pen.",
+            "zh": "我用黑筆寫字。"
+          }
+        ]
+      }
+    ]
+  },
+  "BUS": {
+    "pos": "n.",
+    "meaning": "公車",
+    "example": "I go to work by bus.",
+    "exampleZh": "我搭公車去上班。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公車",
+        "examples": [
+          {
+            "en": "I go to work by bus.",
+            "zh": "我搭公車去上班。"
+          },
+          {
+            "en": "The bus is late today.",
+            "zh": "今天公車遲到了。"
+          }
+        ]
+      }
+    ]
+  },
+  "CAR": {
+    "pos": "n.",
+    "meaning": "汽車",
+    "example": "I wash my car on Sunday.",
+    "exampleZh": "我在星期天洗車。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "汽車",
+        "examples": [
+          {
+            "en": "I wash my car on Sunday.",
+            "zh": "我在星期天洗車。"
+          },
+          {
+            "en": "She drives a red car.",
+            "zh": "她開一輛紅色的車。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOY": {
+    "pos": "n.",
+    "meaning": "男孩",
+    "example": "The boy is playing in the park.",
+    "exampleZh": "那個男孩正在公園裡玩。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "男孩",
+        "examples": [
+          {
+            "en": "The boy is playing in the park.",
+            "zh": "那個男孩正在公園裡玩。"
+          },
+          {
+            "en": "He is a smart boy.",
+            "zh": "他是一個聰明的男孩。"
+          }
+        ]
+      }
+    ]
+  },
+  "DAY": {
+    "pos": "n.",
+    "meaning": "日子；白天",
+    "example": "Have a nice day!",
+    "exampleZh": "祝你有美好的一天！",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "日子；白天",
+        "examples": [
+          {
+            "en": "Have a nice day!",
+            "zh": "祝你有美好的一天！"
+          },
+          {
+            "en": "I work every day.",
+            "zh": "我每天工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "PAPER": {
+    "pos": "n.",
+    "meaning": "紙",
+    "example": "I need some paper to write on.",
+    "exampleZh": "我需要一些紙來寫字。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "紙",
+        "examples": [
+          {
+            "en": "I need some paper to write on.",
+            "zh": "我需要一些紙來寫字。"
+          },
+          {
+            "en": "Please give me a piece of paper.",
+            "zh": "請給我一張紙。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARTY": {
+    "pos": "n.",
+    "meaning": "派對",
+    "example": "We have a party tonight.",
+    "exampleZh": "我們今晚有個派對。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "派對",
+        "examples": [
+          {
+            "en": "We have a party tonight.",
+            "zh": "我們今晚有個派對。"
+          },
+          {
+            "en": "It is my birthday party.",
+            "zh": "這是我的生日派對。"
+          }
+        ]
+      }
+    ]
+  },
+  "MUSIC": {
+    "pos": "n.",
+    "meaning": "音樂",
+    "example": "Do you like pop music?",
+    "exampleZh": "你喜歡流行音樂嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "音樂",
+        "examples": [
+          {
+            "en": "Do you like pop music?",
+            "zh": "你喜歡流行音樂嗎？"
+          },
+          {
+            "en": "I listen to music in my room.",
+            "zh": "我在房間裡聽音樂。"
+          }
+        ]
+      }
+    ]
+  },
+  "MOVIE": {
+    "pos": "n.",
+    "meaning": "電影",
+    "example": "Let's watch a movie.",
+    "exampleZh": "我們來看電影吧。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "電影",
+        "examples": [
+          {
+            "en": "Let's watch a movie.",
+            "zh": "我們來看電影吧。"
+          },
+          {
+            "en": "The movie is very good.",
+            "zh": "這部電影很好看。"
+          }
+        ]
+      }
+    ]
+  },
+  "STORE": {
+    "pos": "n.",
+    "meaning": "商店",
+    "example": "I go to the store to buy milk.",
+    "exampleZh": "我去商店買牛奶。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "商店",
+        "examples": [
+          {
+            "en": "I go to the store to buy milk.",
+            "zh": "我去商店買牛奶。"
+          },
+          {
+            "en": "What time does the store open?",
+            "zh": "這家店幾點開門？"
+          }
+        ]
+      }
+    ]
+  },
+  "LUNCH": {
+    "pos": "n.",
+    "meaning": "午餐",
+    "example": "What do you want for lunch?",
+    "exampleZh": "你午餐想吃什麼？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "午餐",
+        "examples": [
+          {
+            "en": "What do you want for lunch?",
+            "zh": "你午餐想吃什麼？"
+          },
+          {
+            "en": "I eat lunch at twelve.",
+            "zh": "我在十二點吃午餐。"
+          }
+        ]
+      }
+    ]
+  },
+  "PHOTO": {
+    "pos": "n.",
+    "meaning": "照片",
+    "example": "Can you take a photo of us?",
+    "exampleZh": "你可以幫我們拍張照片嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "照片",
+        "examples": [
+          {
+            "en": "Can you take a photo of us?",
+            "zh": "你可以幫我們拍張照片嗎？"
+          },
+          {
+            "en": "This is a photo of my family.",
+            "zh": "這是我家人的照片。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPUTER": {
+    "pos": "n.",
+    "meaning": "電腦",
+    "example": "I use a computer at work.",
+    "exampleZh": "我上班時使用電腦。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "電腦",
+        "examples": [
+          {
+            "en": "I use a computer at work.",
+            "zh": "我上班時使用電腦。"
+          },
+          {
+            "en": "My computer is old.",
+            "zh": "我的電腦很舊了。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPANY": {
+    "pos": "n.",
+    "meaning": "公司",
+    "example": "She works for a big company.",
+    "exampleZh": "她在一家大公司工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公司",
+        "examples": [
+          {
+            "en": "She works for a big company.",
+            "zh": "她在一家大公司工作。"
+          },
+          {
+            "en": "It is a good company.",
+            "zh": "這是一家好公司。"
+          }
+        ]
+      }
+    ]
+  },
+  "GIRL": {
+    "pos": "n.",
+    "meaning": "女孩",
+    "example": "The girl is my sister.",
+    "exampleZh": "那個女孩是我妹妹。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "女孩",
+        "examples": [
+          {
+            "en": "The girl is my sister.",
+            "zh": "那個女孩是我妹妹。"
+          },
+          {
+            "en": "A young girl is singing.",
+            "zh": "一個年輕的女孩正在唱歌。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAN": {
+    "pos": "n.",
+    "meaning": "男人",
+    "example": "That man is very tall.",
+    "exampleZh": "那個男人很高。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "男人",
+        "examples": [
+          {
+            "en": "That man is very tall.",
+            "zh": "那個男人很高。"
+          },
+          {
+            "en": "He is a good man.",
+            "zh": "他是個好男人。"
+          }
+        ]
+      }
+    ]
+  },
+  "WOMAN": {
+    "pos": "n.",
+    "meaning": "女人",
+    "example": "The woman in red is my boss.",
+    "exampleZh": "穿紅衣服的女人是我的老闆。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "女人",
+        "examples": [
+          {
+            "en": "The woman in red is my boss.",
+            "zh": "穿紅衣服的女人是我的老闆。"
+          },
+          {
+            "en": "She is a beautiful woman.",
+            "zh": "她是一位美麗的女人。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHILD": {
+    "pos": "n.",
+    "meaning": "小孩",
+    "example": "The child is playing outside.",
+    "exampleZh": "小孩在外面玩。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "小孩",
+        "examples": [
+          {
+            "en": "The child is playing outside.",
+            "zh": "小孩在外面玩。"
+          },
+          {
+            "en": "She has one child.",
+            "zh": "她有一個小孩。"
+          }
+        ]
+      }
+    ]
+  },
+  "NURSE": {
+    "pos": "n.",
+    "meaning": "護士",
+    "example": "The nurse helps the doctor.",
+    "exampleZh": "護士協助醫生。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "護士",
+        "examples": [
+          {
+            "en": "The nurse helps the doctor.",
+            "zh": "護士協助醫生。"
+          },
+          {
+            "en": "She works as a nurse.",
+            "zh": "她的職業是護士。"
+          }
+        ]
+      }
+    ]
+  },
+  "BANK": {
+    "pos": "n.",
+    "meaning": "銀行",
+    "example": "I need to go to the bank.",
+    "exampleZh": "我需要去銀行。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "銀行",
+        "examples": [
+          {
+            "en": "I need to go to the bank.",
+            "zh": "我需要去銀行。"
+          },
+          {
+            "en": "The bank opens at nine.",
+            "zh": "銀行九點開門。"
+          }
+        ]
+      }
+    ]
+  },
+  "ROAD": {
+    "pos": "n.",
+    "meaning": "路",
+    "example": "This road is very long.",
+    "exampleZh": "這條路很長。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "路",
+        "examples": [
+          {
+            "en": "This road is very long.",
+            "zh": "這條路很長。"
+          },
+          {
+            "en": "Be careful crossing the road.",
+            "zh": "過馬路要小心。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOAT": {
+    "pos": "n.",
+    "meaning": "船",
+    "example": "We take a boat to the island.",
+    "exampleZh": "我們搭船去那座島。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "船",
+        "examples": [
+          {
+            "en": "We take a boat to the island.",
+            "zh": "我們搭船去那座島。"
+          },
+          {
+            "en": "Look at the small boat.",
+            "zh": "看那艘小船。"
+          }
+        ]
+      }
+    ]
+  },
+  "BIKE": {
+    "pos": "n.",
+    "meaning": "腳踏車",
+    "example": "I ride my bike to work.",
+    "exampleZh": "我騎腳踏車去上班。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "腳踏車",
+        "examples": [
+          {
+            "en": "I ride my bike to work.",
+            "zh": "我騎腳踏車去上班。"
+          },
+          {
+            "en": "He bought a new bike.",
+            "zh": "他買了一台新腳踏車。"
+          }
+        ]
+      }
+    ]
+  },
+  "MEAT": {
+    "pos": "n.",
+    "meaning": "肉",
+    "example": "I don't eat meat.",
+    "exampleZh": "我不吃肉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "肉",
+        "examples": [
+          {
+            "en": "I don't eat meat.",
+            "zh": "我不吃肉。"
+          },
+          {
+            "en": "We had meat for dinner.",
+            "zh": "我們晚餐吃了肉。"
+          }
+        ]
+      }
+    ]
+  },
+  "FRUIT": {
+    "pos": "n.",
+    "meaning": "水果",
+    "example": "Apples and bananas are fruit.",
+    "exampleZh": "蘋果和香蕉是水果。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "水果",
+        "examples": [
+          {
+            "en": "Apples and bananas are fruit.",
+            "zh": "蘋果和香蕉是水果。"
+          },
+          {
+            "en": "Eat more fresh fruit.",
+            "zh": "多吃新鮮水果。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPORT": {
+    "pos": "n.",
+    "meaning": "運動",
+    "example": "My favorite sport is tennis.",
+    "exampleZh": "我最喜歡的運動是網球。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "運動",
+        "examples": [
+          {
+            "en": "My favorite sport is tennis.",
+            "zh": "我最喜歡的運動是網球。"
+          },
+          {
+            "en": "Do you play any sport?",
+            "zh": "你有做任何運動嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "WATCH": {
+    "pos": "n.",
+    "meaning": "手錶",
+    "example": "I have a new watch.",
+    "exampleZh": "我有一支新手錶。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "手錶",
+        "examples": [
+          {
+            "en": "I have a new watch.",
+            "zh": "我有一支新手錶。"
+          },
+          {
+            "en": "What time is it on your watch?",
+            "zh": "你的手錶現在幾點？"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "觀看",
+        "examples": [
+          {
+            "en": "I watch TV every night.",
+            "zh": "我每天晚上看電視。"
+          },
+          {
+            "en": "Let's watch a movie.",
+            "zh": "我們來看電影吧。"
+          }
+        ]
+      }
+    ]
+  },
+  "DATE": {
+    "pos": "n.",
+    "meaning": "日期",
+    "example": "What is the date today?",
+    "exampleZh": "今天幾號（日期）？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "日期",
+        "examples": [
+          {
+            "en": "What is the date today?",
+            "zh": "今天幾號（日期）？"
+          },
+          {
+            "en": "Write the date on the board.",
+            "zh": "把日期寫在黑板上。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "約會",
+        "examples": [
+          {
+            "en": "I have a date tonight.",
+            "zh": "我今晚有個約會。"
+          },
+          {
+            "en": "We can set a date for the meeting.",
+            "zh": "我們可以為會議訂個日期（或約定時間）。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORM": {
+    "pos": "n.",
+    "meaning": "表格",
+    "example": "Please fill out this form.",
+    "exampleZh": "請填寫這份表格。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表格",
+        "examples": [
+          {
+            "en": "Please fill out this form.",
+            "zh": "請填寫這份表格。"
+          },
+          {
+            "en": "Write your name on the form.",
+            "zh": "在表格上寫下你的名字。"
+          }
+        ]
+      }
+    ]
+  },
+  "TEXT": {
+    "pos": "n.",
+    "meaning": "文字；簡訊",
+    "example": "Send me a text later.",
+    "exampleZh": "晚點傳簡訊給我。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "文字；簡訊",
+        "examples": [
+          {
+            "en": "Send me a text later.",
+            "zh": "晚點傳簡訊給我。"
+          },
+          {
+            "en": "Read the text on page five.",
+            "zh": "閱讀第五頁的文字。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "傳簡訊",
+        "examples": [
+          {
+            "en": "I will text you when I arrive.",
+            "zh": "我到了會傳簡訊給你。"
+          },
+          {
+            "en": "He texted his friend.",
+            "zh": "他傳簡訊給他的朋友。"
+          }
+        ]
+      }
+    ]
+  },
+  "LINE": {
+    "pos": "n.",
+    "meaning": "線；隊伍",
+    "example": "Please wait in line.",
+    "exampleZh": "請排隊等候。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "線；隊伍",
+        "examples": [
+          {
+            "en": "Please wait in line.",
+            "zh": "請排隊等候。"
+          },
+          {
+            "en": "Draw a straight line.",
+            "zh": "畫一條直線。"
+          }
+        ]
+      }
+    ]
+  },
+  "TEST": {
+    "pos": "n.",
+    "meaning": "考試；測驗",
+    "example": "We have an English test today.",
+    "exampleZh": "我們今天有英文考試。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "考試；測驗",
+        "examples": [
+          {
+            "en": "We have an English test today.",
+            "zh": "我們今天有英文考試。"
+          },
+          {
+            "en": "The math test is very easy.",
+            "zh": "這場數學考試很簡單。"
+          }
+        ]
+      }
+    ]
+  },
+  "GAME": {
+    "pos": "n.",
+    "meaning": "遊戲；比賽",
+    "example": "Do you want to play a game?",
+    "exampleZh": "你想玩遊戲嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "遊戲；比賽",
+        "examples": [
+          {
+            "en": "Do you want to play a game?",
+            "zh": "你想玩遊戲嗎？"
+          },
+          {
+            "en": "The baseball game is on TV.",
+            "zh": "電視上在播棒球比賽。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAIR": {
+    "pos": "n.",
+    "meaning": "頭髮",
+    "example": "She has long black hair.",
+    "exampleZh": "她有一頭烏黑的長髮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "頭髮",
+        "examples": [
+          {
+            "en": "She has long black hair.",
+            "zh": "她有一頭烏黑的長髮。"
+          },
+          {
+            "en": "Brush your hair before going out.",
+            "zh": "出門前梳一下頭髮。"
+          }
+        ]
+      }
+    ]
+  },
+  "COST": {
+    "pos": "n.",
+    "meaning": "花費；成本",
+    "example": "What is the cost of the ticket?",
+    "exampleZh": "這張票的花費是多少？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "花費；成本",
+        "examples": [
+          {
+            "en": "What is the cost of the ticket?",
+            "zh": "這張票的花費是多少？"
+          },
+          {
+            "en": "The cost of living is high here.",
+            "zh": "這裡的生活花費很高。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "花費",
+        "examples": [
+          {
+            "en": "The car costs a lot of money.",
+            "zh": "這輛車花了很多錢。"
+          },
+          {
+            "en": "How much does it cost?",
+            "zh": "這要花多少錢？"
+          }
+        ]
+      }
+    ]
+  },
+  "SALE": {
+    "pos": "n.",
+    "meaning": "銷售；特賣",
+    "example": "These shoes are on sale.",
+    "exampleZh": "這些鞋子在特價。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "銷售；特賣",
+        "examples": [
+          {
+            "en": "These shoes are on sale.",
+            "zh": "這些鞋子在特價。"
+          },
+          {
+            "en": "He works in car sales.",
+            "zh": "他做汽車銷售的工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "SIGN": {
+    "pos": "n.",
+    "meaning": "標誌",
+    "example": "Look at the stop sign.",
+    "exampleZh": "看那個停車標誌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "標誌",
+        "examples": [
+          {
+            "en": "Look at the stop sign.",
+            "zh": "看那個停車標誌。"
+          },
+          {
+            "en": "The sign says open.",
+            "zh": "標誌寫著營業中。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "簽名",
+        "examples": [
+          {
+            "en": "Please sign your name here.",
+            "zh": "請在這裡簽名。"
+          },
+          {
+            "en": "I need to sign the form.",
+            "zh": "我需要在這張表上簽名。"
+          }
+        ]
+      }
+    ]
+  },
+  "NEWS": {
+    "pos": "n.",
+    "meaning": "新聞；消息",
+    "example": "I watch the news every night.",
+    "exampleZh": "我每天晚上看新聞。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "新聞；消息",
+        "examples": [
+          {
+            "en": "I watch the news every night.",
+            "zh": "我每天晚上看新聞。"
+          },
+          {
+            "en": "I have some good news for you.",
+            "zh": "我有個好消息要告訴你。"
+          }
+        ]
+      }
+    ]
+  },
+  "RULE": {
+    "pos": "n.",
+    "meaning": "規則",
+    "example": "You must follow the rules.",
+    "exampleZh": "你必須遵守規則。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "規則",
+        "examples": [
+          {
+            "en": "You must follow the rules.",
+            "zh": "你必須遵守規則。"
+          },
+          {
+            "en": "It is a new rule at work.",
+            "zh": "這是工作上的新規定。"
+          }
+        ]
+      }
+    ]
+  },
+  "BATH": {
+    "pos": "n.",
+    "meaning": "沐浴；浴缸",
+    "example": "I want to take a hot bath.",
+    "exampleZh": "我想要泡個熱水澡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "沐浴；浴缸",
+        "examples": [
+          {
+            "en": "I want to take a hot bath.",
+            "zh": "我想要泡個熱水澡。"
+          },
+          {
+            "en": "The baby is in the bath.",
+            "zh": "寶寶正在浴缸裡洗澡。"
+          }
+        ]
+      }
+    ]
+  },
+  "DRIVER": {
+    "pos": "n.",
+    "meaning": "司機；駕駛",
+    "example": "He is a bus driver.",
+    "exampleZh": "他是一名公車司機。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "司機；駕駛",
+        "examples": [
+          {
+            "en": "He is a bus driver.",
+            "zh": "他是一名公車司機。"
+          },
+          {
+            "en": "She is a good driver.",
+            "zh": "她是個好駕駛。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERNET": {
+    "pos": "n.",
+    "meaning": "網路",
+    "example": "I use the internet every day.",
+    "exampleZh": "我每天使用網路。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "網路",
+        "examples": [
+          {
+            "en": "I use the internet every day.",
+            "zh": "我每天使用網路。"
+          },
+          {
+            "en": "You can find the map on the internet.",
+            "zh": "你可以在網路上找到地圖。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUESTION": {
+    "pos": "n.",
+    "meaning": "問題",
+    "example": "I have a question.",
+    "exampleZh": "我有一個問題。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "問題",
+        "examples": [
+          {
+            "en": "I have a question.",
+            "zh": "我有一個問題。"
+          },
+          {
+            "en": "Can I ask you a question?",
+            "zh": "我可以問你一個問題嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "PROBLEM": {
+    "pos": "n.",
+    "meaning": "問題；困難",
+    "example": "This math problem is hard.",
+    "exampleZh": "這個數學問題很難。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "問題；困難",
+        "examples": [
+          {
+            "en": "This math problem is hard.",
+            "zh": "這個數學問題很難。"
+          },
+          {
+            "en": "I have a problem with my car.",
+            "zh": "我的車有點問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "COUNTRY": {
+    "pos": "n.",
+    "meaning": "國家",
+    "example": "Taiwan is a beautiful country.",
+    "exampleZh": "台灣是一個美麗的國家。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家",
+        "examples": [
+          {
+            "en": "Taiwan is a beautiful country.",
+            "zh": "台灣是一個美麗的國家。"
+          },
+          {
+            "en": "Which country are you from?",
+            "zh": "你來自哪個國家？"
+          }
+        ]
+      }
+    ]
+  },
+  "WALL": {
+    "pos": "n.",
+    "meaning": "牆壁",
+    "example": "The clock is on the wall.",
+    "exampleZh": "時鐘在牆上。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "牆壁",
+        "examples": [
+          {
+            "en": "The clock is on the wall.",
+            "zh": "時鐘在牆上。"
+          },
+          {
+            "en": "They paint the wall white.",
+            "zh": "他們把牆壁漆成白色。"
+          }
+        ]
+      }
+    ]
+  },
+  "TREE": {
+    "pos": "n.",
+    "meaning": "樹",
+    "example": "There is a big tree in the garden.",
+    "exampleZh": "花園裡有一棵大樹。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "樹",
+        "examples": [
+          {
+            "en": "There is a big tree in the garden.",
+            "zh": "花園裡有一棵大樹。"
+          },
+          {
+            "en": "Birds are singing in the tree.",
+            "zh": "鳥兒們在樹上唱歌。"
+          }
+        ]
+      }
+    ]
+  },
+  "STAR": {
+    "pos": "n.",
+    "meaning": "星星",
+    "example": "Look at the stars in the sky.",
+    "exampleZh": "看天空中的星星。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "星星",
+        "examples": [
+          {
+            "en": "Look at the stars in the sky.",
+            "zh": "看天空中的星星。"
+          },
+          {
+            "en": "She draws a star on the paper.",
+            "zh": "她在紙上畫了一顆星星。"
+          }
+        ]
+      }
+    ]
+  },
+  "SONG": {
+    "pos": "n.",
+    "meaning": "歌曲",
+    "example": "I like this song very much.",
+    "exampleZh": "我非常喜歡這首歌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "歌曲",
+        "examples": [
+          {
+            "en": "I like this song very much.",
+            "zh": "我非常喜歡這首歌。"
+          },
+          {
+            "en": "She sings a beautiful song.",
+            "zh": "她唱了一首美妙的歌曲。"
+          }
+        ]
+      }
+    ]
+  },
+  "FILM": {
+    "pos": "n.",
+    "meaning": "電影；底片",
+    "example": "Let's watch a film tonight.",
+    "exampleZh": "我們今晚來看電影吧。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "電影；底片",
+        "examples": [
+          {
+            "en": "Let's watch a film tonight.",
+            "zh": "我們今晚來看電影吧。"
+          },
+          {
+            "en": "It is a good film.",
+            "zh": "這是一部好電影。"
+          }
+        ]
+      }
+    ]
+  },
+  "WIND": {
+    "pos": "n.",
+    "meaning": "風",
+    "example": "The wind is cold today.",
+    "exampleZh": "今天的風很冷。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "風",
+        "examples": [
+          {
+            "en": "The wind is cold today.",
+            "zh": "今天的風很冷。"
+          },
+          {
+            "en": "I can hear the wind.",
+            "zh": "我能聽見風聲。"
+          }
+        ]
+      }
+    ]
+  },
+  "FIRE": {
+    "pos": "n.",
+    "meaning": "火",
+    "example": "Do not play with fire.",
+    "exampleZh": "不要玩火。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "火",
+        "examples": [
+          {
+            "en": "Do not play with fire.",
+            "zh": "不要玩火。"
+          },
+          {
+            "en": "The fire is very hot.",
+            "zh": "火非常燙。"
+          }
+        ]
+      }
+    ]
+  },
+  "WIFE": {
+    "pos": "n.",
+    "meaning": "妻子",
+    "example": "This is my wife, Mary.",
+    "exampleZh": "這是我的妻子，瑪麗。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "妻子",
+        "examples": [
+          {
+            "en": "This is my wife, Mary.",
+            "zh": "這是我的妻子，瑪麗。"
+          },
+          {
+            "en": "His wife is a doctor.",
+            "zh": "他的妻子是一位醫生。"
+          }
+        ]
+      }
+    ]
+  },
+  "CLASS": {
+    "pos": "n.",
+    "meaning": "班級；課程",
+    "example": "I have an English class this morning.",
+    "exampleZh": "我今天早上有一堂英文課。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "班級；課程",
+        "examples": [
+          {
+            "en": "I have an English class this morning.",
+            "zh": "我今天早上有一堂英文課。"
+          },
+          {
+            "en": "There are ten students in the class.",
+            "zh": "班上有十名學生。"
+          }
+        ]
+      }
+    ]
+  },
+  "DRESS": {
+    "pos": "n.",
+    "meaning": "洋裝",
+    "example": "She wears a red dress.",
+    "exampleZh": "她穿著一件紅色的洋裝。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "洋裝",
+        "examples": [
+          {
+            "en": "She wears a red dress.",
+            "zh": "她穿著一件紅色的洋裝。"
+          },
+          {
+            "en": "I want to buy a new dress.",
+            "zh": "我想買一件新洋裝。"
+          }
+        ]
+      }
+    ]
+  },
+  "GLASS": {
+    "pos": "n.",
+    "meaning": "玻璃；杯子",
+    "example": "Can I have a glass of water?",
+    "exampleZh": "可以給我一杯水嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "玻璃；杯子",
+        "examples": [
+          {
+            "en": "Can I have a glass of water?",
+            "zh": "可以給我一杯水嗎？"
+          },
+          {
+            "en": "The window is made of glass.",
+            "zh": "這扇窗戶是玻璃做的。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLANT": {
+    "pos": "n.",
+    "meaning": "植物",
+    "example": "I water the plant every day.",
+    "exampleZh": "我每天澆這盆植物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "植物",
+        "examples": [
+          {
+            "en": "I water the plant every day.",
+            "zh": "我每天澆這盆植物。"
+          },
+          {
+            "en": "There are many green plants in the office.",
+            "zh": "辦公室裡有很多綠色植物。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOUND": {
+    "pos": "n.",
+    "meaning": "聲音",
+    "example": "What is that sound?",
+    "exampleZh": "那是什麼聲音？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音",
+        "examples": [
+          {
+            "en": "What is that sound?",
+            "zh": "那是什麼聲音？"
+          },
+          {
+            "en": "I hear a strange sound.",
+            "zh": "我聽到一個奇怪的聲音。"
+          }
+        ]
+      }
+    ]
+  },
+  "SKIRT": {
+    "pos": "n.",
+    "meaning": "裙子",
+    "example": "The skirt is too long.",
+    "exampleZh": "這件裙子太長了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "裙子",
+        "examples": [
+          {
+            "en": "The skirt is too long.",
+            "zh": "這件裙子太長了。"
+          },
+          {
+            "en": "She looks good in that black skirt.",
+            "zh": "她穿那件黑裙子很好看。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANIMAL": {
+    "pos": "n.",
+    "meaning": "動物",
+    "example": "The dog is a cute animal.",
+    "exampleZh": "狗是一種可愛的動物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "動物",
+        "examples": [
+          {
+            "en": "The dog is a cute animal.",
+            "zh": "狗是一種可愛的動物。"
+          },
+          {
+            "en": "What is your favorite animal?",
+            "zh": "你最喜歡的動物是什麼？"
+          }
+        ]
+      }
+    ]
+  },
+  "CLOTHES": {
+    "pos": "n.",
+    "meaning": "衣服",
+    "example": "Put on your warm clothes.",
+    "exampleZh": "穿上你保暖的衣服。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "衣服",
+        "examples": [
+          {
+            "en": "Put on your warm clothes.",
+            "zh": "穿上你保暖的衣服。"
+          },
+          {
+            "en": "I need to wash my clothes.",
+            "zh": "我需要洗衣服。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARENT": {
+    "pos": "n.",
+    "meaning": "父母",
+    "example": "My parents live in Taipei.",
+    "exampleZh": "我的父母住在台北。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "父母",
+        "examples": [
+          {
+            "en": "My parents live in Taipei.",
+            "zh": "我的父母住在台北。"
+          },
+          {
+            "en": "His parent is a teacher.",
+            "zh": "他的父親（或母親）是一位老師。"
+          }
+        ]
+      }
+    ]
+  },
+  "GUITAR": {
+    "pos": "n.",
+    "meaning": "吉他",
+    "example": "He plays the guitar very well.",
+    "exampleZh": "他吉他彈得很好。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "吉他",
+        "examples": [
+          {
+            "en": "He plays the guitar very well.",
+            "zh": "他吉他彈得很好。"
+          },
+          {
+            "en": "She has a new guitar.",
+            "zh": "她有一把新吉他。"
+          }
+        ]
+      }
+    ]
+  },
+  "CUP": {
+    "pos": "n.",
+    "meaning": "杯子",
+    "example": "I want a cup of coffee.",
+    "exampleZh": "我想要一杯咖啡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "杯子",
+        "examples": [
+          {
+            "en": "I want a cup of coffee.",
+            "zh": "我想要一杯咖啡。"
+          },
+          {
+            "en": "Put the cup on the table.",
+            "zh": "把杯子放在桌上。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOX": {
+    "pos": "n.",
+    "meaning": "箱子；盒子",
+    "example": "This box is very heavy.",
+    "exampleZh": "這個箱子很重。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "箱子；盒子",
+        "examples": [
+          {
+            "en": "This box is very heavy.",
+            "zh": "這個箱子很重。"
+          },
+          {
+            "en": "What is in the box?",
+            "zh": "盒子裡面是什麼？"
+          }
+        ]
+      }
+    ]
+  },
+  "WAY": {
+    "pos": "n.",
+    "meaning": "方法；道路",
+    "example": "Which way is the station?",
+    "exampleZh": "車站是哪一條路？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "道路",
+        "examples": [
+          {
+            "en": "Which way is the station?",
+            "zh": "車站是哪一條路？"
+          },
+          {
+            "en": "He is on his way home.",
+            "zh": "他正在回家的路上。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "方法",
+        "examples": [
+          {
+            "en": "This is a good way to learn.",
+            "zh": "這是一個學習的好方法。"
+          },
+          {
+            "en": "Can we do it another way?",
+            "zh": "我們能用別的方法做嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "SKY": {
+    "pos": "n.",
+    "meaning": "天空",
+    "example": "The sky is blue today.",
+    "exampleZh": "今天的天空很藍。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "天空",
+        "examples": [
+          {
+            "en": "The sky is blue today.",
+            "zh": "今天的天空很藍。"
+          },
+          {
+            "en": "Look at the birds in the sky.",
+            "zh": "看天空中的那些鳥。"
+          }
+        ]
+      }
+    ]
+  },
+  "ART": {
+    "pos": "n.",
+    "meaning": "藝術",
+    "example": "I like to look at art.",
+    "exampleZh": "我喜歡欣賞藝術。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "藝術",
+        "examples": [
+          {
+            "en": "I like to look at art.",
+            "zh": "我喜歡欣賞藝術。"
+          },
+          {
+            "en": "She studies art at school.",
+            "zh": "她在學校學習藝術。"
+          }
+        ]
+      }
+    ]
+  },
+  "SYSTEM": {
+    "pos": "n.",
+    "meaning": "系統",
+    "example": "The new computer system is fast.",
+    "exampleZh": "新的電腦系統很快。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "系統",
+        "examples": [
+          {
+            "en": "The new computer system is fast.",
+            "zh": "新的電腦系統很快。"
+          },
+          {
+            "en": "We need a better system.",
+            "zh": "我們需要一個更好的系統。"
+          }
+        ]
+      }
+    ]
+  },
+  "CENTER": {
+    "pos": "n.",
+    "meaning": "中心",
+    "example": "The office is in the city center.",
+    "exampleZh": "辦公室在市中心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "中心",
+        "examples": [
+          {
+            "en": "The office is in the city center.",
+            "zh": "辦公室在市中心。"
+          },
+          {
+            "en": "Please put it in the center.",
+            "zh": "請把它放在正中心。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOTTLE": {
+    "pos": "n.",
+    "meaning": "瓶子",
+    "example": "Give me a bottle of water, please.",
+    "exampleZh": "請給我一瓶水。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "瓶子",
+        "examples": [
+          {
+            "en": "Give me a bottle of water, please.",
+            "zh": "請給我一瓶水。"
+          },
+          {
+            "en": "The baby is drinking from a bottle.",
+            "zh": "寶寶正在用奶瓶喝奶。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEASON": {
+    "pos": "n.",
+    "meaning": "季節",
+    "example": "Spring is my favorite season.",
+    "exampleZh": "春天是我最喜歡的季節。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "季節",
+        "examples": [
+          {
+            "en": "Spring is my favorite season.",
+            "zh": "春天是我最喜歡的季節。"
+          },
+          {
+            "en": "There are four seasons in a year.",
+            "zh": "一年有四個季節。"
+          }
+        ]
+      }
+    ]
+  },
+  "MIRROR": {
+    "pos": "n.",
+    "meaning": "鏡子",
+    "example": "She looks at herself in the mirror.",
+    "exampleZh": "她照著鏡子看自己。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "鏡子",
+        "examples": [
+          {
+            "en": "She looks at herself in the mirror.",
+            "zh": "她照著鏡子看自己。"
+          },
+          {
+            "en": "The mirror is broken.",
+            "zh": "鏡子破了。"
+          }
+        ]
+      }
+    ]
+  },
+  "POCKET": {
+    "pos": "n.",
+    "meaning": "口袋",
+    "example": "I have some money in my pocket.",
+    "exampleZh": "我的口袋裡有一些錢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "口袋",
+        "examples": [
+          {
+            "en": "I have some money in my pocket.",
+            "zh": "我的口袋裡有一些錢。"
+          },
+          {
+            "en": "Put your phone in your pocket.",
+            "zh": "把你的手機放進口袋裡。"
+          }
+        ]
+      }
+    ]
+  },
+  "NATURE": {
+    "pos": "n.",
+    "meaning": "自然",
+    "example": "We love to take photos of nature.",
+    "exampleZh": "我們喜歡拍攝大自然的照片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "自然",
+        "examples": [
+          {
+            "en": "We love to take photos of nature.",
+            "zh": "我們喜歡拍攝大自然的照片。"
+          },
+          {
+            "en": "It is beautiful out in nature.",
+            "zh": "在大自然中非常美麗。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECORD": {
+    "pos": "n.",
+    "meaning": "紀錄；唱片",
+    "example": "This is a new record.",
+    "exampleZh": "這是一項新紀錄。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "紀錄；唱片",
+        "examples": [
+          {
+            "en": "This is a new record.",
+            "zh": "這是一項新紀錄。"
+          },
+          {
+            "en": "I love listening to old records.",
+            "zh": "我喜歡聽老唱片。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "記錄；錄音",
+        "examples": [
+          {
+            "en": "Let's record the meeting.",
+            "zh": "我們把會議記錄下來吧。"
+          },
+          {
+            "en": "She is recording a song.",
+            "zh": "她正在錄製一首歌。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERSON": {
+    "pos": "n.",
+    "meaning": "人",
+    "example": "He is a very nice person.",
+    "exampleZh": "他是一個非常好的人。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "人",
+        "examples": [
+          {
+            "en": "He is a very nice person.",
+            "zh": "他是一個非常好的人。"
+          },
+          {
+            "en": "Who is that person?",
+            "zh": "那個人是誰？"
+          }
+        ]
+      }
+    ]
+  },
+  "LANGUAGE": {
+    "pos": "n.",
+    "meaning": "語言",
+    "example": "How many languages do you speak?",
+    "exampleZh": "你會說幾種語言？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "語言",
+        "examples": [
+          {
+            "en": "How many languages do you speak?",
+            "zh": "你會說幾種語言？"
+          },
+          {
+            "en": "English is a beautiful language.",
+            "zh": "英文是一種美麗的語言。"
+          }
+        ]
+      }
+    ]
+  },
+  "BUILDING": {
+    "pos": "n.",
+    "meaning": "建築物",
+    "example": "That is a very tall building.",
+    "exampleZh": "那是一棟非常高的建築物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建築物",
+        "examples": [
+          {
+            "en": "That is a very tall building.",
+            "zh": "那是一棟非常高的建築物。"
+          },
+          {
+            "en": "Our office is in this building.",
+            "zh": "我們的辦公室在這棟建築物裡。"
+          }
+        ]
+      }
+    ]
+  },
+  "DAUGHTER": {
+    "pos": "n.",
+    "meaning": "女兒",
+    "example": "My daughter is ten years old.",
+    "exampleZh": "我的女兒十歲了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "女兒",
+        "examples": [
+          {
+            "en": "My daughter is ten years old.",
+            "zh": "我的女兒十歲了。"
+          },
+          {
+            "en": "She went shopping with her daughter.",
+            "zh": "她和女兒去購物了。"
+          }
+        ]
+      }
+    ]
+  },
+  "HUSBAND": {
+    "pos": "n.",
+    "meaning": "丈夫",
+    "example": "Her husband is a teacher.",
+    "exampleZh": "她的丈夫是一名老師。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "丈夫",
+        "examples": [
+          {
+            "en": "Her husband is a teacher.",
+            "zh": "她的丈夫是一名老師。"
+          },
+          {
+            "en": "My husband cooks dinner every night.",
+            "zh": "我丈夫每天晚上做晚餐。"
+          }
+        ]
+      }
+    ]
+  },
+  "BUSINESS": {
+    "pos": "n.",
+    "meaning": "商業；生意",
+    "example": "She travels for business.",
+    "exampleZh": "她為了公事（出差）旅行。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "商業；生意",
+        "examples": [
+          {
+            "en": "She travels for business.",
+            "zh": "她為了公事（出差）旅行。"
+          },
+          {
+            "en": "He wants to start a new business.",
+            "zh": "他想開始一門新生意。"
+          }
+        ]
+      }
+    ]
+  },
+  "EYE": {
+    "pos": "n.",
+    "meaning": "眼睛",
+    "example": "Close your eyes.",
+    "exampleZh": "閉上你的眼睛。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "眼睛",
+        "examples": [
+          {
+            "en": "Close your eyes.",
+            "zh": "閉上你的眼睛。"
+          },
+          {
+            "en": "She has blue eyes.",
+            "zh": "她有一雙藍色的眼睛。"
+          }
+        ]
+      }
+    ]
+  },
+  "FACE": {
+    "pos": "n.",
+    "meaning": "臉",
+    "example": "Wash your face every morning.",
+    "exampleZh": "每天早上洗臉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "臉",
+        "examples": [
+          {
+            "en": "Wash your face every morning.",
+            "zh": "每天早上洗臉。"
+          },
+          {
+            "en": "He has a happy face.",
+            "zh": "他有一張開心的臉龐。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAND": {
+    "pos": "n.",
+    "meaning": "手",
+    "example": "Please wash your hands.",
+    "exampleZh": "請洗手。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "手",
+        "examples": [
+          {
+            "en": "Please wash your hands.",
+            "zh": "請洗手。"
+          },
+          {
+            "en": "Raise your right hand.",
+            "zh": "舉起你的右手。"
+          }
+        ]
+      }
+    ]
+  },
+  "FOOT": {
+    "pos": "n.",
+    "meaning": "腳",
+    "example": "My right foot hurts.",
+    "exampleZh": "我的右腳很痛。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "腳",
+        "examples": [
+          {
+            "en": "My right foot hurts.",
+            "zh": "我的右腳很痛。"
+          },
+          {
+            "en": "He goes to work on foot.",
+            "zh": "他走路（徒步）去上班。"
+          }
+        ]
+      }
+    ]
+  },
+  "MIND": {
+    "pos": "n.",
+    "meaning": "心智；頭腦",
+    "example": "I changed my mind.",
+    "exampleZh": "我改變主意了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "心智；頭腦",
+        "examples": [
+          {
+            "en": "I changed my mind.",
+            "zh": "我改變主意了。"
+          },
+          {
+            "en": "Keep that in mind.",
+            "zh": "把那件事記在心裡。"
+          }
+        ]
+      }
+    ]
+  },
+  "IDEA": {
+    "pos": "n.",
+    "meaning": "主意；想法",
+    "example": "That is a good idea.",
+    "exampleZh": "那是一個好主意。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主意；想法",
+        "examples": [
+          {
+            "en": "That is a good idea.",
+            "zh": "那是一個好主意。"
+          },
+          {
+            "en": "I have no idea.",
+            "zh": "我不知道（我沒有想法）。"
+          }
+        ]
+      }
+    ]
+  },
+  "LIFE": {
+    "pos": "n.",
+    "meaning": "生活；生命",
+    "example": "City life is very busy.",
+    "exampleZh": "城市生活非常忙碌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "生活；生命",
+        "examples": [
+          {
+            "en": "City life is very busy.",
+            "zh": "城市生活非常忙碌。"
+          },
+          {
+            "en": "Life is beautiful.",
+            "zh": "生命是美好的。"
+          }
+        ]
+      }
+    ]
+  },
+  "LOVE": {
+    "pos": "v.",
+    "meaning": "愛",
+    "example": "I love my family.",
+    "exampleZh": "我愛我的家人。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "愛",
+        "examples": [
+          {
+            "en": "I love my family.",
+            "zh": "我愛我的家人。"
+          },
+          {
+            "en": "Do you love music?",
+            "zh": "你熱愛音樂嗎？"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "愛",
+        "examples": [
+          {
+            "en": "Their love is very strong.",
+            "zh": "他們的愛非常堅定。"
+          },
+          {
+            "en": "Send him my love.",
+            "zh": "代我向他問候。"
+          }
+        ]
+      }
+    ]
+  },
+  "FACT": {
+    "pos": "n.",
+    "meaning": "事實",
+    "example": "That is a fact.",
+    "exampleZh": "那是個事實。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "事實",
+        "examples": [
+          {
+            "en": "That is a fact.",
+            "zh": "那是個事實。"
+          },
+          {
+            "en": "Tell me the facts.",
+            "zh": "把事實告訴我。"
+          }
+        ]
+      }
+    ]
+  },
+  "STORY": {
+    "pos": "n.",
+    "meaning": "故事",
+    "example": "Tell me a story.",
+    "exampleZh": "說個故事給我聽。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "故事",
+        "examples": [
+          {
+            "en": "Tell me a story.",
+            "zh": "說個故事給我聽。"
+          },
+          {
+            "en": "This is a true story.",
+            "zh": "這是一個真實的故事。"
+          }
+        ]
+      }
+    ]
+  },
+  "DREAM": {
+    "pos": "n.",
+    "meaning": "夢想；夢",
+    "example": "I had a bad dream last night.",
+    "exampleZh": "我昨晚做了一個惡夢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "夢想；夢",
+        "examples": [
+          {
+            "en": "I had a bad dream last night.",
+            "zh": "我昨晚做了一個惡夢。"
+          },
+          {
+            "en": "It is my dream to visit Japan.",
+            "zh": "去日本旅遊是我的夢想。"
+          }
+        ]
+      }
+    ]
+  },
+  "VOICE": {
+    "pos": "n.",
+    "meaning": "聲音；嗓音",
+    "example": "She has a beautiful voice.",
+    "exampleZh": "她有一副好嗓音。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音；嗓音",
+        "examples": [
+          {
+            "en": "She has a beautiful voice.",
+            "zh": "她有一副好嗓音。"
+          },
+          {
+            "en": "I can hear his voice.",
+            "zh": "我能聽見他的聲音。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEART": {
+    "pos": "n.",
+    "meaning": "心；心臟",
+    "example": "He has a good heart.",
+    "exampleZh": "他有一顆善良的心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "心；心臟",
+        "examples": [
+          {
+            "en": "He has a good heart.",
+            "zh": "他有一顆善良的心。"
+          },
+          {
+            "en": "My heart is beating fast.",
+            "zh": "我的心跳得很快。"
+          }
+        ]
+      }
+    ]
+  },
+  "WORLD": {
+    "pos": "n.",
+    "meaning": "世界",
+    "example": "The world is very big.",
+    "exampleZh": "世界非常大。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "世界",
+        "examples": [
+          {
+            "en": "The world is very big.",
+            "zh": "世界非常大。"
+          },
+          {
+            "en": "They travel around the world.",
+            "zh": "他們環遊世界。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLACE": {
+    "pos": "n.",
+    "meaning": "地方；地點",
+    "example": "This is a nice place.",
+    "exampleZh": "這是一個好地方。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "地方；地點",
+        "examples": [
+          {
+            "en": "This is a nice place.",
+            "zh": "這是一個好地方。"
+          },
+          {
+            "en": "What is this place?",
+            "zh": "這是什麼地方？"
+          }
+        ]
+      }
+    ]
+  },
+  "AFTERNOON": {
+    "pos": "n.",
+    "meaning": "下午",
+    "example": "See you this afternoon.",
+    "exampleZh": "今天下午見。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "下午",
+        "examples": [
+          {
+            "en": "See you this afternoon.",
+            "zh": "今天下午見。"
+          },
+          {
+            "en": "I sleep in the afternoon.",
+            "zh": "我在下午睡覺。"
+          }
+        ]
+      }
+    ]
+  },
+  "FACTORY": {
+    "pos": "n.",
+    "meaning": "工廠",
+    "example": "He works in a car factory.",
+    "exampleZh": "他在一家汽車工廠工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "工廠",
+        "examples": [
+          {
+            "en": "He works in a car factory.",
+            "zh": "他在一家汽車工廠工作。"
+          },
+          {
+            "en": "The factory is very noisy.",
+            "zh": "這間工廠非常吵雜。"
+          }
+        ]
+      }
+    ]
+  },
+  "VILLAGE": {
+    "pos": "n.",
+    "meaning": "村莊",
+    "example": "They live in a small village.",
+    "exampleZh": "他們住在一個小村莊裡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "村莊",
+        "examples": [
+          {
+            "en": "They live in a small village.",
+            "zh": "他們住在一個小村莊裡。"
+          },
+          {
+            "en": "The village is very quiet.",
+            "zh": "這座村莊非常安靜。"
+          }
+        ]
+      }
+    ]
+  }
+}

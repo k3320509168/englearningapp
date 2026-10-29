@@ -11,8 +11,10 @@ import { sfx } from './sfx';
 
 // 世界地圖：背景使用玩家目前所在區域的風景，五面旗幟代表五個區域
 
+// 九個區域的旗幟位置（左下往右上，高低交錯）
 const NODES = [
-  { x: 85, y: 330 }, { x: 210, y: 282 }, { x: 335, y: 320 }, { x: 460, y: 270 }, { x: 590, y: 312 }, { x: 715, y: 262 },
+  { x: 60, y: 334 }, { x: 145, y: 288 }, { x: 230, y: 326 }, { x: 315, y: 278 }, { x: 400, y: 318 },
+  { x: 485, y: 270 }, { x: 570, y: 310 }, { x: 655, y: 262 }, { x: 740, y: 300 },
 ];
 
 export default class MapScene extends Phaser.Scene {
@@ -63,7 +65,7 @@ export default class MapScene extends Phaser.Scene {
       if (!locked) this.tweens.add({ targets: flag, scaleX: 4.6, yoyo: true, repeat: -1, duration: 700 + index * 90, ease: 'Sine.easeInOut' });
       if (locked) this.add.image(x + 14, y - 36, 'lock').setScale(4);
 
-      this.add.text(x, y + 50, region.name, textStyle(17, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
+      this.add.text(x, y + 50, region.name, textStyle(14, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
 
       if (current) {
         // 英雄站在目前可挑戰的旗幟旁

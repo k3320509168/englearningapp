@@ -153,7 +153,7 @@ describe('經驗值曲線', () => {
 });
 
 describe('裝備品階', () => {
-  it('品階讓效果與強化上限提高，稀有度不變；龍晶只在第 4 區以後掉', async () => {
+  it('品階讓效果與強化上限提高，稀有度不變；龍晶只在極光雪嶺（第 6 區）以後掉', async () => {
     const { equipMods, maxPlus, rollDrops, sellValue, gradeMaterial, gradeRefund, equipDef } = await import('./equipment');
     const base = { uid: 'a', defId: 'blade_training', plus: 0 };
     expect(equipMods({ ...base, grade: 2 }).atk).toBeCloseTo(0.1 * 1.4);
@@ -165,8 +165,8 @@ describe('裝備品階', () => {
     expect(gradeRefund({ uid: 'b', defId: 'blade_training', plus: 3 })).toBe(Math.floor((1 + 2 + 3) * 0.65));
     // 升過品階的裝備賣出時，打造成本按份數計算
     expect(sellValue({ ...base, grade: 1 }, 'fire').gold).toBe(Math.floor(200 * 0.65));
-    expect(rollDrops('boss', 'fire', () => 0.1, 2).dragon).toBeUndefined();
-    expect(rollDrops('boss', 'fire', () => 0.1, 3).dragon).toBe(1);
+    expect(rollDrops('boss', 'fire', () => 0.1, 4).dragon).toBeUndefined();
+    expect(rollDrops('boss', 'fire', () => 0.1, 5).dragon).toBe(1);
   });
 
   it('每種屬性都有護符，用該屬性的結晶打造', async () => {

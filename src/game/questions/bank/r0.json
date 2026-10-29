@@ -1,4 +1,3334 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：O F F _ C _ (辦公室)",
+      "ans": "IE",
+      "speak": "office"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：書桌；辦公桌",
+      "ans": "DESK",
+      "speak": "desk"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D _ S K (書桌；辦公桌)",
+      "ans": "E",
+      "speak": "desk"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：電子郵件",
+      "ans": "EMAIL",
+      "speak": "email"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E M _ _ L (電子郵件)",
+      "ans": "AI",
+      "speak": "email"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：時間",
+      "ans": "TIME",
+      "speak": "time"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T _ M E (時間)",
+      "ans": "I",
+      "speak": "time"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：年",
+      "ans": "YEAR",
+      "speak": "year"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：Y _ _ R (年)",
+      "ans": "EA",
+      "speak": "year"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：月",
+      "ans": "MONTH",
+      "speak": "month"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ N T _ (月)",
+      "ans": "OH",
+      "speak": "month"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：週；星期",
+      "ans": "WEEK",
+      "speak": "week"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：W _ _ K (週；星期)",
+      "ans": "EE",
+      "speak": "week"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：火車",
+      "ans": "TRAIN",
+      "speak": "train"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T R _ _ N (火車)",
+      "ans": "AI",
+      "speak": "train"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：計程車",
+      "ans": "TAXI",
+      "speak": "taxi"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T A _ _ (計程車)",
+      "ans": "XI",
+      "speak": "taxi"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：旅館；飯店",
+      "ans": "HOTEL",
+      "speak": "hotel"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H _ T E _ (旅館；飯店)",
+      "ans": "OL",
+      "speak": "hotel"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T R _ P (旅行)",
+      "ans": "I",
+      "speak": "trip"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：卡片",
+      "ans": "CARD",
+      "speak": "card"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C A _ D (卡片)",
+      "ans": "R",
+      "speak": "card"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C _ S H (現金)",
+      "ans": "A",
+      "speak": "cash"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：商店",
+      "ans": "SHOP",
+      "speak": "shop"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：名字",
+      "ans": "NAME",
+      "speak": "name"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：N A M _ (名字)",
+      "ans": "E",
+      "speak": "name"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：工作",
+      "ans": "JOB",
+      "speak": "job"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：J _ B (工作)",
+      "ans": "O",
+      "speak": "job"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：老闆",
+      "ans": "BOSS",
+      "speak": "boss"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ S S (老闆)",
+      "ans": "O",
+      "speak": "boss"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：筆",
+      "ans": "PEN",
+      "speak": "pen"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P _ N (筆)",
+      "ans": "E",
+      "speak": "pen"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：公車",
+      "ans": "BUS",
+      "speak": "bus"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ S (公車)",
+      "ans": "U",
+      "speak": "bus"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：地圖",
+      "ans": "MAP",
+      "speak": "map"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：汽車",
+      "ans": "CAR",
+      "speak": "car"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C _ R (汽車)",
+      "ans": "A",
+      "speak": "car"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：男孩",
+      "ans": "BOY",
+      "speak": "boy"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ Y (男孩)",
+      "ans": "O",
+      "speak": "boy"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：日子；白天",
+      "ans": "DAY",
+      "speak": "day"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D _ Y (日子；白天)",
+      "ans": "A",
+      "speak": "day"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：紙",
+      "ans": "PAPER",
+      "speak": "paper"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ P _ R (紙)",
+      "ans": "AE",
+      "speak": "paper"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：派對",
+      "ans": "PARTY",
+      "speak": "party"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ R T _ (派對)",
+      "ans": "AY",
+      "speak": "party"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：音樂",
+      "ans": "MUSIC",
+      "speak": "music"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ S _ C (音樂)",
+      "ans": "UI",
+      "speak": "music"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：電影",
+      "ans": "MOVIE",
+      "speak": "movie"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ V _ E (電影)",
+      "ans": "OI",
+      "speak": "movie"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S T _ R _ (商店)",
+      "ans": "OE",
+      "speak": "store"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：午餐",
+      "ans": "LUNCH",
+      "speak": "lunch"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：L _ N C _ (午餐)",
+      "ans": "UH",
+      "speak": "lunch"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：照片",
+      "ans": "PHOTO",
+      "speak": "photo"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P H _ T _ (照片)",
+      "ans": "OO",
+      "speak": "photo"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：女孩",
+      "ans": "GIRL",
+      "speak": "girl"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：G _ R L (女孩)",
+      "ans": "I",
+      "speak": "girl"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：男人",
+      "ans": "MAN",
+      "speak": "man"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M _ N (男人)",
+      "ans": "A",
+      "speak": "man"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：女人",
+      "ans": "WOMAN",
+      "speak": "woman"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：W _ M _ N (女人)",
+      "ans": "OA",
+      "speak": "woman"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：小孩",
+      "ans": "CHILD",
+      "speak": "child"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C H _ L _ (小孩)",
+      "ans": "ID",
+      "speak": "child"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D _ C T _ R (醫生)",
+      "ans": "OO",
+      "speak": "doctor"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：護士",
+      "ans": "NURSE",
+      "speak": "nurse"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：N _ R S _ (護士)",
+      "ans": "UE",
+      "speak": "nurse"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：銀行",
+      "ans": "BANK",
+      "speak": "bank"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ N K (銀行)",
+      "ans": "A",
+      "speak": "bank"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：路",
+      "ans": "ROAD",
+      "speak": "road"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R _ A D (路)",
+      "ans": "O",
+      "speak": "road"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：船",
+      "ans": "BOAT",
+      "speak": "boat"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ A T (船)",
+      "ans": "O",
+      "speak": "boat"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：腳踏車",
+      "ans": "BIKE",
+      "speak": "bike"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ K E (腳踏車)",
+      "ans": "I",
+      "speak": "bike"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S _ A T (座位)",
+      "ans": "E",
+      "speak": "seat"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：肉",
+      "ans": "MEAT",
+      "speak": "meat"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M _ A T (肉)",
+      "ans": "E",
+      "speak": "meat"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：水果",
+      "ans": "FRUIT",
+      "speak": "fruit"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F R _ _ T (水果)",
+      "ans": "UI",
+      "speak": "fruit"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：運動",
+      "ans": "SPORT",
+      "speak": "sport"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S P _ R _ (運動)",
+      "ans": "OT",
+      "speak": "sport"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：手錶；觀看",
+      "ans": "WATCH",
+      "speak": "watch"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：W _ T C _ (手錶；觀看)",
+      "ans": "AH",
+      "speak": "watch"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：日期",
+      "ans": "DATE",
+      "speak": "date"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D _ T E (日期)",
+      "ans": "A",
+      "speak": "date"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：表格",
+      "ans": "FORM",
+      "speak": "form"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F _ R M (表格)",
+      "ans": "O",
+      "speak": "form"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：尺寸",
+      "ans": "SIZE",
+      "speak": "size"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S _ Z E (尺寸)",
+      "ans": "I",
+      "speak": "size"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：文字；簡訊",
+      "ans": "TEXT",
+      "speak": "text"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T _ X T (文字；簡訊)",
+      "ans": "E",
+      "speak": "text"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：線；隊伍",
+      "ans": "LINE",
+      "speak": "line"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：L _ N E (線；隊伍)",
+      "ans": "I",
+      "speak": "line"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：考試；測驗",
+      "ans": "TEST",
+      "speak": "test"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T _ S T (考試；測驗)",
+      "ans": "E",
+      "speak": "test"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：遊戲；比賽",
+      "ans": "GAME",
+      "speak": "game"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：G A _ E (遊戲；比賽)",
+      "ans": "M",
+      "speak": "game"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：頭髮",
+      "ans": "HAIR",
+      "speak": "hair"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H _ I R (頭髮)",
+      "ans": "A",
+      "speak": "hair"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：花費；成本",
+      "ans": "COST",
+      "speak": "cost"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C _ S _ (花費；成本)",
+      "ans": "OT",
+      "speak": "cost"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：銷售；特賣",
+      "ans": "SALE",
+      "speak": "sale"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ L _ (銷售；特賣)",
+      "ans": "AE",
+      "speak": "sale"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：標誌",
+      "ans": "SIGN",
+      "speak": "sign"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ G _ (標誌)",
+      "ans": "IN",
+      "speak": "sign"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：新聞；消息",
+      "ans": "NEWS",
+      "speak": "news"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：N _ W _ (新聞；消息)",
+      "ans": "ES",
+      "speak": "news"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：規則",
+      "ans": "RULE",
+      "speak": "rule"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R _ L _ (規則)",
+      "ans": "UE",
+      "speak": "rule"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：沐浴；浴缸",
+      "ans": "BATH",
+      "speak": "bath"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B _ T _ (沐浴；浴缸)",
+      "ans": "AH",
+      "speak": "bath"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：司機；駕駛",
+      "ans": "DRIVER",
+      "speak": "driver"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D R _ V _ R (司機；駕駛)",
+      "ans": "IE",
+      "speak": "driver"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：牆壁",
+      "ans": "WALL",
+      "speak": "wall"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：W _ L L (牆壁)",
+      "ans": "A",
+      "speak": "wall"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：樹",
+      "ans": "TREE",
+      "speak": "tree"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T R _ E (樹)",
+      "ans": "E",
+      "speak": "tree"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：星星",
+      "ans": "STAR",
+      "speak": "star"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S T _ R (星星)",
+      "ans": "A",
+      "speak": "star"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：歌曲",
+      "ans": "SONG",
+      "speak": "song"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S _ N G (歌曲)",
+      "ans": "O",
+      "speak": "song"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：電影；底片",
+      "ans": "FILM",
+      "speak": "film"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F _ L M (電影；底片)",
+      "ans": "I",
+      "speak": "film"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：風",
+      "ans": "WIND",
+      "speak": "wind"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：W _ N D (風)",
+      "ans": "I",
+      "speak": "wind"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：火",
+      "ans": "FIRE",
+      "speak": "fire"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F _ R E (火)",
+      "ans": "I",
+      "speak": "fire"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：妻子",
+      "ans": "WIFE",
+      "speak": "wife"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：W _ F E (妻子)",
+      "ans": "I",
+      "speak": "wife"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：班級；課程",
+      "ans": "CLASS",
+      "speak": "class"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C L _ _ S (班級；課程)",
+      "ans": "AS",
+      "speak": "class"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：洋裝",
+      "ans": "DRESS",
+      "speak": "dress"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D R _ _ S (洋裝)",
+      "ans": "ES",
+      "speak": "dress"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：玻璃；杯子",
+      "ans": "GLASS",
+      "speak": "glass"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：G L _ S _ (玻璃；杯子)",
+      "ans": "AS",
+      "speak": "glass"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：植物",
+      "ans": "PLANT",
+      "speak": "plant"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P L _ N _ (植物)",
+      "ans": "AT",
+      "speak": "plant"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：聲音",
+      "ans": "SOUND",
+      "speak": "sound"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ _ N D (聲音)",
+      "ans": "OU",
+      "speak": "sound"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：裙子",
+      "ans": "SKIRT",
+      "speak": "skirt"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S K _ R _ (裙子)",
+      "ans": "IT",
+      "speak": "skirt"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：海灘",
+      "ans": "BEACH",
+      "speak": "beach"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B _ _ C H (海灘)",
+      "ans": "EA",
+      "speak": "beach"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：杯子",
+      "ans": "CUP",
+      "speak": "cup"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C _ P (杯子)",
+      "ans": "U",
+      "speak": "cup"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：箱子；盒子",
+      "ans": "BOX",
+      "speak": "box"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B _ X (箱子；盒子)",
+      "ans": "O",
+      "speak": "box"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：方法；道路",
+      "ans": "WAY",
+      "speak": "way"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：W _ Y (方法；道路)",
+      "ans": "A",
+      "speak": "way"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：天空",
+      "ans": "SKY",
+      "speak": "sky"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S _ Y (天空)",
+      "ans": "K",
+      "speak": "sky"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：藝術",
+      "ans": "ART",
+      "speak": "art"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：_ R T (藝術)",
+      "ans": "A",
+      "speak": "art"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：市場",
+      "ans": "MARKET",
+      "speak": "market"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ R K _ T (市場)",
+      "ans": "AE",
+      "speak": "market"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：系統",
+      "ans": "SYSTEM",
+      "speak": "system"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ S T _ M (系統)",
+      "ans": "YE",
+      "speak": "system"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：中心",
+      "ans": "CENTER",
+      "speak": "center"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C _ N T _ R (中心)",
+      "ans": "EE",
+      "speak": "center"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：瓶子",
+      "ans": "BOTTLE",
+      "speak": "bottle"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B _ T T L _ (瓶子)",
+      "ans": "OE",
+      "speak": "bottle"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：季節",
+      "ans": "SEASON",
+      "speak": "season"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ _ S O N (季節)",
+      "ans": "EA",
+      "speak": "season"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：鏡子",
+      "ans": "MIRROR",
+      "speak": "mirror"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ R R _ R (鏡子)",
+      "ans": "IO",
+      "speak": "mirror"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：口袋",
+      "ans": "POCKET",
+      "speak": "pocket"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ C K _ T (口袋)",
+      "ans": "OE",
+      "speak": "pocket"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：自然",
+      "ans": "NATURE",
+      "speak": "nature"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：N _ T _ R E (自然)",
+      "ans": "AU",
+      "speak": "nature"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：紀錄；唱片",
+      "ans": "RECORD",
+      "speak": "record"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R _ C _ R D (紀錄；唱片)",
+      "ans": "EO",
+      "speak": "record"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：人",
+      "ans": "PERSON",
+      "speak": "person"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ R S _ N (人)",
+      "ans": "EO",
+      "speak": "person"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：眼睛",
+      "ans": "EYE",
+      "speak": "eye"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：_ Y E (眼睛)",
+      "ans": "E",
+      "speak": "eye"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：臉",
+      "ans": "FACE",
+      "speak": "face"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F _ C E (臉)",
+      "ans": "A",
+      "speak": "face"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：手",
+      "ans": "HAND",
+      "speak": "hand"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H _ N D (手)",
+      "ans": "A",
+      "speak": "hand"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：腳",
+      "ans": "FOOT",
+      "speak": "foot"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F _ _ T (腳)",
+      "ans": "OO",
+      "speak": "foot"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：心智；頭腦",
+      "ans": "MIND",
+      "speak": "mind"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M _ N D (心智；頭腦)",
+      "ans": "I",
+      "speak": "mind"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：主意；想法",
+      "ans": "IDEA",
+      "speak": "idea"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：_ D E A (主意；想法)",
+      "ans": "I",
+      "speak": "idea"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：生活；生命",
+      "ans": "LIFE",
+      "speak": "life"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：L _ F E (生活；生命)",
+      "ans": "I",
+      "speak": "life"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：愛",
+      "ans": "LOVE",
+      "speak": "love"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：L _ V E (愛)",
+      "ans": "O",
+      "speak": "love"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：事實",
+      "ans": "FACT",
+      "speak": "fact"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F _ C T (事實)",
+      "ans": "A",
+      "speak": "fact"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：故事",
+      "ans": "STORY",
+      "speak": "story"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S T _ R _ (故事)",
+      "ans": "OY",
+      "speak": "story"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：夢想；夢",
+      "ans": "DREAM",
+      "speak": "dream"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D R _ _ M (夢想；夢)",
+      "ans": "EA",
+      "speak": "dream"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：聲音；嗓音",
+      "ans": "VOICE",
+      "speak": "voice"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：V _ _ C E (聲音；嗓音)",
+      "ans": "OI",
+      "speak": "voice"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：心；心臟",
+      "ans": "HEART",
+      "speak": "heart"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H _ _ R T (心；心臟)",
+      "ans": "EA",
+      "speak": "heart"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：世界",
+      "ans": "WORLD",
+      "speak": "world"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：W _ R L _ (世界)",
+      "ans": "OD",
+      "speak": "world"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：地方；地點",
+      "ans": "PLACE",
+      "speak": "place"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P L _ C _ (地方；地點)",
+      "ans": "AE",
+      "speak": "place"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Office",
+      "options": [
+        "A. 辦公室",
+        "B. 餐廳",
+        "C. 機場",
+        "D. 飯店"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Office」，意思是「辦公室」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Ticket",
+      "options": [
+        "A. 護照",
+        "B. 票券",
+        "C. 地圖",
+        "D. 行李"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Ticket」，意思是「票券、車票」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Hotel",
+      "options": [
+        "A. 醫院",
+        "B. 銀行",
+        "C. 飯店",
+        "D. 超市"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Hotel」，意思是「飯店、旅館」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Bus",
+      "options": [
+        "A. 計程車",
+        "B. 火車",
+        "C. 飛機",
+        "D. 公車"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Bus」，意思是「公車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Computer",
+      "options": [
+        "A. 電腦",
+        "B. 手機",
+        "C. 電視",
+        "D. 收音機"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Computer」，意思是「電腦」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Coffee",
+      "options": [
+        "A. 牛奶",
+        "B. 咖啡",
+        "C. 果汁",
+        "D. 開水"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Coffee」，意思是「咖啡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Receipt",
+      "options": [
+        "A. 名片",
+        "B. 菜單",
+        "C. 收據",
+        "D. 報告"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Receipt」，意思是「收據、發票」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Passport",
+      "options": [
+        "A. 鑰匙",
+        "B. 錢包",
+        "C. 信件",
+        "D. 護照"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Passport」，意思是「護照」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Airport",
+      "options": [
+        "A. 機場",
+        "B. 車站",
+        "C. 港口",
+        "D. 捷運站"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Airport」，意思是「機場」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Manager",
+      "options": [
+        "A. 客戶",
+        "B. 經理",
+        "C. 助理",
+        "D. 警衛"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Manager」，意思是「經理、主管」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Menu",
+      "options": [
+        "A. 帳單",
+        "B. 地圖",
+        "C. 菜單",
+        "D. 書本"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Menu」，意思是「菜單」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Email",
+      "options": [
+        "A. 報紙",
+        "B. 筆記",
+        "C. 雜誌",
+        "D. 電子郵件"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Email」，意思是「電子郵件」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Check in",
+      "options": [
+        "A. 辦理登記／入住",
+        "B. 結帳退房",
+        "C. 登機起飛",
+        "D. 詢問價格"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Check in」，意思是「辦理報到／入住」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "By taxi",
+      "options": [
+        "A. 搭公車",
+        "B. 搭計程車",
+        "C. 搭捷運",
+        "D. 走路"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「By taxi」，意思是「搭乘計程車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Sign here",
+      "options": [
+        "A. 在這裡等",
+        "B. 請看這裡",
+        "C. 在這裡簽名",
+        "D. 在這裡付款"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Sign here」，意思是「在這裡簽名」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Next week",
+      "options": [
+        "A. 昨天",
+        "B. 明天",
+        "C. 上週",
+        "D. 下週"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Next week」，意思是「下週」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "In the meeting room",
+      "options": [
+        "A. 在會議室裡",
+        "B. 在茶水間裡",
+        "C. 在大廳裡",
+        "D. 在辦公桌旁"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「In the meeting room」，意思是「在會議室裡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "How much is it?",
+      "options": [
+        "A. 現在幾點了？",
+        "B. 這個多少錢？",
+        "C. 車站有多遠？",
+        "D. 今天星期幾？"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「How much is it?」，意思是「這個多少錢？」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Open the door",
+      "options": [
+        "A. 關上窗戶",
+        "B. 關掉電燈",
+        "C. 打開門",
+        "D. 打開電腦"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Open the door」，意思是「打開門」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Good afternoon",
+      "options": [
+        "A. 早安",
+        "B. 晚安（睡前）",
+        "C. 再見",
+        "D. 午安"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Good afternoon」，意思是「午安」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "At nine o'clock",
+      "options": [
+        "A. 在九點鐘",
+        "B. 在七點鐘",
+        "C. 在十點鐘",
+        "D. 在八點鐘"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「At nine o'clock」，意思是「在九點鐘」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Where is the station?",
+      "options": [
+        "A. I am fine, thank you.",
+        "B. It is near the park.",
+        "C. Yes, I do.",
+        "D. At ten o'clock."
+      ],
+      "ans": "B",
+      "explain": "題目詢問地點「Where is the station? (車站站在哪裡？)」，回答「It is near the park. (它在公園附近)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Nice to meet you.",
+      "options": [
+        "A. Good night.",
+        "B. See you yesterday.",
+        "C. Nice to meet you too.",
+        "D. You are welcome."
+      ],
+      "ans": "C",
+      "explain": "對方說「Nice to meet you. (很高興認識你)」，最禮貌的回應是「Nice to meet you too. (我也很高興認識你)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you need help?",
+      "options": [
+        "A. I am forty years old.",
+        "B. He is my manager.",
+        "C. It is on the desk.",
+        "D. Yes, please."
+      ],
+      "ans": "D",
+      "explain": "對方詢問「Do you need help? (需要幫忙嗎？)」，接受協助時可回答「Yes, please. (好的，麻煩你)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time is the meeting?",
+      "options": [
+        "A. It is at two p.m.",
+        "B. In the office.",
+        "C. With Mr. Wang.",
+        "D. Yes, it is."
+      ],
+      "ans": "A",
+      "explain": "題目詢問時間「What time is the meeting? (會議幾點開始？)」，回答「It is at two p.m. (下午兩點)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can I pay by credit card?",
+      "options": [
+        "A. I have two brothers.",
+        "B. Yes, we take credit cards.",
+        "C. It is five dollars.",
+        "D. My name is David."
+      ],
+      "ans": "B",
+      "explain": "詢問付款方式「Can I pay by credit card? (我可以用信用卡付款嗎？)」，適當回答為「Yes, we take credit cards. (是的，我們接受信用卡)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Thank you for your help.",
+      "options": [
+        "A. I am sorry.",
+        "B. No problem, you're welcome.",
+        "C. Nice car.",
+        "D. Goodbye tomorrow."
+      ],
+      "ans": "B",
+      "explain": "對方表達感謝「Thank you for your help. (謝謝你的幫忙)」，最適合的回應是「No problem, you're welcome. (不客氣)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is this seat free?",
+      "options": [
+        "A. I like coffee.",
+        "B. She is in Taipei.",
+        "C. Yes, nobody is here.",
+        "D. It is five o'clock."
+      ],
+      "ans": "C",
+      "explain": "詢問座位是否有人「Is this seat free? (這個座位有人坐嗎？／是空的嗎？)」，回答「Yes, nobody is here. (可以坐，這裡沒人)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "When will you arrive?",
+      "options": [
+        "A. By bus.",
+        "B. At the airport.",
+        "C. To buy a ticket.",
+        "D. At around six o'clock."
+      ],
+      "ans": "D",
+      "explain": "題目詢問到達時間「When will you arrive? (你何時會到達？)」，回答時間點「At around six o'clock. (大約六點鐘)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Take a seat",
+      "options": [
+        "A. 請坐",
+        "B. 請稍等",
+        "C. 請起立",
+        "D. 請離開"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Take a seat」，意思是「請坐」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Taxi",
+      "options": [
+        "A. 計程車",
+        "B. 飛機",
+        "C. 腳踏車",
+        "D. 船"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Taxi」，意思是「計程車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Train",
+      "options": [
+        "A. 公車",
+        "B. 火車",
+        "C. 捷運",
+        "D. 計程車"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Train」，意思是「火車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Station",
+      "options": [
+        "A. 醫院",
+        "B. 銀行",
+        "C. 車站",
+        "D. 學校"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Station」，意思是「車站」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Restaurant",
+      "options": [
+        "A. 辦公室",
+        "B. 廁所",
+        "C. 臥室",
+        "D. 餐廳"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Restaurant」，意思是「餐廳」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Meeting",
+      "options": [
+        "A. 會議",
+        "B. 派對",
+        "C. 晚餐",
+        "D. 運動"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Meeting」，意思是「會議」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Desk",
+      "options": [
+        "A. 椅子",
+        "B. 書桌／辦公桌",
+        "C. 沙發",
+        "D. 床鋪"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Desk」，意思是「書桌、辦公桌」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Card",
+      "options": [
+        "A. 錢包",
+        "B. 鑰匙",
+        "C. 卡片",
+        "D. 零錢"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Card」，意思是「卡片」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Money",
+      "options": [
+        "A. 水",
+        "B. 時間",
+        "C. 食物",
+        "D. 金錢"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Money」，意思是「金錢、錢」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Water",
+      "options": [
+        "A. 水",
+        "B. 茶",
+        "C. 咖啡",
+        "D. 牛奶"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Water」，意思是「水」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Phone",
+      "options": [
+        "A. 電腦",
+        "B. 電話／手機",
+        "C. 相機",
+        "D. 電視"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Phone」，意思是「電話、手機」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Clock",
+      "options": [
+        "A. 鏡子",
+        "B. 窗戶",
+        "C. 時鐘",
+        "D. 門"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Clock」，意思是「時鐘」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Company",
+      "options": [
+        "A. 公園",
+        "B. 超市",
+        "C. 博物館",
+        "D. 公司"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Company」，意思是「公司」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "At the station",
+      "options": [
+        "A. 在車站",
+        "B. 在學校",
+        "C. 在家裡",
+        "D. 在公司"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「At the station」，意思是「在車站」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "In the morning",
+      "options": [
+        "A. 在晚上",
+        "B. 在早上",
+        "C. 在下午",
+        "D. 在午夜"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「In the morning」，意思是「在早上」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "On the table",
+      "options": [
+        "A. 在椅子下",
+        "B. 在房間裡",
+        "C. 在桌子上",
+        "D. 在包包裡"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「On the table」，意思是「在桌子上」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Turn left",
+      "options": [
+        "A. 直走",
+        "B. 向右轉",
+        "C. 停下來",
+        "D. 向左轉"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Turn left」，意思是「向左轉」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Call me back",
+      "options": [
+        "A. 回電給我",
+        "B. 寫信給我",
+        "C. 過來找我",
+        "D. 請等一下"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Call me back」，意思是「回電給我」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Go straight",
+      "options": [
+        "A. 向後退",
+        "B. 一直走／直走",
+        "C. 右轉",
+        "D. 左轉"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Go straight」，意思是「一直走、直走」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Here you are",
+      "options": [
+        "A. 你在哪裡",
+        "B. 歡迎光臨",
+        "C. 這是給你的／在這裡",
+        "D. 很高興見到你"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Here you are」，遞東西給別人時常用，意思是「這是給你的／拿去吧」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "See you tomorrow",
+      "options": [
+        "A. 昨天見",
+        "B. 下週見",
+        "C. 晚安",
+        "D. 明天見"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「See you tomorrow」，意思是「明天見」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A glass of water",
+      "options": [
+        "A. 一杯水",
+        "B. 一瓶牛奶",
+        "C. 一杯咖啡",
+        "D. 一碗湯"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「A glass of water」，意思是「一杯水」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What is your name?",
+      "options": [
+        "A. I am thirty years old.",
+        "B. My name is John.",
+        "C. I live in Taipei.",
+        "D. It is a nice day."
+      ],
+      "ans": "B",
+      "explain": "詢問名字「What is your name? (你的名字是什麼？)」，回答「My name is John. (我的名字是約翰)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How are you?",
+      "options": [
+        "A. I am a doctor.",
+        "B. I like apples.",
+        "C. I am fine, thank you.",
+        "D. She is my sister."
+      ],
+      "ans": "C",
+      "explain": "這是一般的問候「How are you? (你好嗎？)」，最標準的回應是「I am fine, thank you. (我很好，謝謝)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Where are you from?",
+      "options": [
+        "A. At ten o'clock.",
+        "B. Yes, I do.",
+        "C. In the meeting room.",
+        "D. I am from Taiwan."
+      ],
+      "ans": "D",
+      "explain": "詢問來自哪裡「Where are you from? (你來自哪裡？)」，回答「I am from Taiwan. (我來自台灣)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What do you do?",
+      "options": [
+        "A. I am a teacher.",
+        "B. I am cooking.",
+        "C. I have two dogs.",
+        "D. It is on the desk."
+      ],
+      "ans": "A",
+      "explain": "詢問職業「What do you do? (你的職業是什麼？)」，回答「I am a teacher. (我是一名老師)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you have a map?",
+      "options": [
+        "A. I like traveling.",
+        "B. Yes, here it is.",
+        "C. By bus.",
+        "D. See you later."
+      ],
+      "ans": "B",
+      "explain": "詢問是否有地圖「Do you have a map? (你有地圖嗎？)」，遞出地圖並回答「Yes, here it is. (有的，在這裡)」最自然。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can I help you?",
+      "options": [
+        "A. I am twenty.",
+        "B. My name is Mary.",
+        "C. Yes, I am looking for my room.",
+        "D. He is my manager."
+      ],
+      "ans": "C",
+      "explain": "服務人員常問「Can I help you? (需要幫忙嗎？)」，回答「Yes, I am looking for my room. (是的，我在找我的房間)」很合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Where is the toilet?",
+      "options": [
+        "A. At five o'clock.",
+        "B. I want a cup of tea.",
+        "C. Yes, it is.",
+        "D. It is on the second floor."
+      ],
+      "ans": "D",
+      "explain": "詢問地點「Where is the toilet? (廁所在哪裡？)」，回答「It is on the second floor. (在二樓)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you ready to order?",
+      "options": [
+        "A. Yes, I want a hamburger.",
+        "B. He is tall.",
+        "C. The meeting is now.",
+        "D. My passport is here."
+      ],
+      "ans": "A",
+      "explain": "餐廳點餐時服務生會問「Are you ready to order? (您準備好點餐了嗎？)」，回答「Yes, I want a hamburger. (是的，我要一個漢堡)」很合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is it raining outside?",
+      "options": [
+        "A. The door is closed.",
+        "B. No, it is sunny.",
+        "C. I like to read books.",
+        "D. Yes, I can."
+      ],
+      "ans": "B",
+      "explain": "詢問天氣「Is it raining outside? (外面在下雨嗎？)」，回答天氣狀況「No, it is sunny. (沒有，現在是晴天)」最合適。"
+    }
+  ],
+  "boss": [
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：號碼；數字",
+      "ans": "NUMBER",
+      "speak": "number"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：N _ M _ _ R (號碼；數字)",
+      "ans": "UBE",
+      "speak": "number"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S T _ _ _ T (街道)",
+      "ans": "REE",
+      "speak": "street"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A I R _ _ _ T (機場)",
+      "ans": "POR",
+      "speak": "airport"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：晚餐",
+      "ans": "DINNER",
+      "speak": "dinner"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D _ _ _ E R (晚餐)",
+      "ans": "INN",
+      "speak": "dinner"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：票；入場券",
+      "ans": "TICKET",
+      "speak": "ticket"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：T _ _ K _ T (票；入場券)",
+      "ans": "ICE",
+      "speak": "ticket"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：班機；飛行",
+      "ans": "FLIGHT",
+      "speak": "flight"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F L _ _ _ T (班機；飛行)",
+      "ans": "IGH",
+      "speak": "flight"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：電腦",
+      "ans": "COMPUTER",
+      "speak": "computer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ M P _ T _ R (電腦)",
+      "ans": "OUE",
+      "speak": "computer"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：會議",
+      "ans": "MEETING",
+      "speak": "meeting"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M _ _ T I _ G (會議)",
+      "ans": "EEN",
+      "speak": "meeting"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：公司",
+      "ans": "COMPANY",
+      "speak": "company"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ M P _ N _ (公司)",
+      "ans": "OAY",
+      "speak": "company"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：訊息",
+      "ans": "MESSAGE",
+      "speak": "message"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M _ S S _ G _ (訊息)",
+      "ans": "EAE",
+      "speak": "message"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ S S P _ _ T (護照)",
+      "ans": "AOR",
+      "speak": "passport"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：餐廳",
+      "ans": "RESTAURANT",
+      "speak": "restaurant"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ S T _ _ R _ N T (餐廳)",
+      "ans": "EAUA",
+      "speak": "restaurant"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：醫院",
+      "ans": "HOSPITAL",
+      "speak": "hospital"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H _ S P _ T _ L (醫院)",
+      "ans": "OIA",
+      "speak": "hospital"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：經理",
+      "ans": "MANAGER",
+      "speak": "manager"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M _ N _ G _ R (經理)",
+      "ans": "AAE",
+      "speak": "manager"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V _ C _ T I _ N (假期)",
+      "ans": "AAO",
+      "speak": "vacation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：網路",
+      "ans": "INTERNET",
+      "speak": "internet"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N T _ _ N _ T (網路)",
+      "ans": "ERE",
+      "speak": "internet"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：問題",
+      "ans": "QUESTION",
+      "speak": "question"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：Q _ _ S T _ _ N (問題)",
+      "ans": "UEIO",
+      "speak": "question"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：問題；困難",
+      "ans": "PROBLEM",
+      "speak": "problem"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ _ L _ M (問題；困難)",
+      "ans": "OBE",
+      "speak": "problem"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：國家",
+      "ans": "COUNTRY",
+      "speak": "country"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ _ N T _ Y (國家)",
+      "ans": "OUR",
+      "speak": "country"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：W _ _ T H _ R (天氣)",
+      "ans": "EAE",
+      "speak": "weather"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：相機",
+      "ans": "CAMERA",
+      "speak": "camera"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ M _ R _ (相機)",
+      "ans": "AEA",
+      "speak": "camera"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：動物",
+      "ans": "ANIMAL",
+      "speak": "animal"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A N _ M _ _ (動物)",
+      "ans": "IAL",
+      "speak": "animal"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：衣服",
+      "ans": "CLOTHES",
+      "speak": "clothes"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C L _ T _ _ S (衣服)",
+      "ans": "OHE",
+      "speak": "clothes"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：父母",
+      "ans": "PARENT",
+      "speak": "parent"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ R _ N _ (父母)",
+      "ans": "AET",
+      "speak": "parent"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：吉他",
+      "ans": "GUITAR",
+      "speak": "guitar"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：G _ _ T _ R (吉他)",
+      "ans": "UIA",
+      "speak": "guitar"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：語言",
+      "ans": "LANGUAGE",
+      "speak": "language"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：L _ N G _ _ G E (語言)",
+      "ans": "AUA",
+      "speak": "language"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：建築物",
+      "ans": "BUILDING",
+      "speak": "building"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：B _ _ L D _ N G (建築物)",
+      "ans": "UII",
+      "speak": "building"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：女兒",
+      "ans": "DAUGHTER",
+      "speak": "daughter"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D _ _ G H T _ R (女兒)",
+      "ans": "AUE",
+      "speak": "daughter"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：丈夫",
+      "ans": "HUSBAND",
+      "speak": "husband"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H _ S B _ N _ (丈夫)",
+      "ans": "UAD",
+      "speak": "husband"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：商業；生意",
+      "ans": "BUSINESS",
+      "speak": "business"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：B _ S _ N _ S S (商業；生意)",
+      "ans": "UIE",
+      "speak": "business"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：下午",
+      "ans": "AFTERNOON",
+      "speak": "afternoon"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A F T _ _ N _ _ N (下午)",
+      "ans": "EROO",
+      "speak": "afternoon"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：工廠",
+      "ans": "FACTORY",
+      "speak": "factory"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F _ C T _ R _ (工廠)",
+      "ans": "AOY",
+      "speak": "factory"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：村莊",
+      "ans": "VILLAGE",
+      "speak": "village"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V _ L L _ G _ (村莊)",
+      "ans": "IAE",
+      "speak": "village"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：行李",
+      "ans": "LUGGAGE",
+      "speak": "luggage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：L _ G G _ G _ (行李)",
+      "ans": "UAE",
+      "speak": "luggage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M _ S _ _ M (博物館)",
+      "ans": "UEU",
+      "speak": "museum"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Schedule",
+      "options": [
+        "A. 合約",
+        "B. 行程表",
+        "C. 價格",
+        "D. 報告"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Schedule」，意思是「行程表、時刻表」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Luggage",
+      "options": [
+        "A. 機票",
+        "B. 旅館",
+        "C. 行李",
+        "D. 錢包"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Luggage」，意思是「行李」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Customer",
+      "options": [
+        "A. 經理",
+        "B. 同事",
+        "C. 助理",
+        "D. 顧客"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Customer」，意思是「顧客、客戶」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Invoice",
+      "options": [
+        "A. 發票／請款單",
+        "B. 員工證",
+        "C. 筆記本",
+        "D. 行李吊牌"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Invoice」，意思是「發票、請款單據」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Out of the office",
+      "options": [
+        "A. 在辦公室裡",
+        "B. 不在辦公室／外出",
+        "C. 在會議室開會",
+        "D. 正在打電話"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Out of the office」，意思是「不在辦公室、公出」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Boarding pass",
+      "options": [
+        "A. 行李收據",
+        "B. 飯店房卡",
+        "C. 登機證",
+        "D. 交通卡"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Boarding pass」，意思是「登機證」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Could you please send me the file?",
+      "options": [
+        "A. I am going home.",
+        "B. It is a large room.",
+        "C. We had lunch at noon.",
+        "D. Sure, I will email it now."
+      ],
+      "ans": "D",
+      "explain": "對方提出請求「Could you please send me the file? (能否請你寄檔案給我？)」，適當回答為「Sure, I will email it now. (沒問題，我現在寄電子郵件給你)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How would you like your coffee?",
+      "options": [
+        "A. Black with no sugar, please.",
+        "B. In thirty minutes.",
+        "C. At the corner shop.",
+        "D. Yes, I do."
+      ],
+      "ans": "A",
+      "explain": "服務生或同事詢問咖啡喜好「How would you like your coffee? (你的咖啡想要怎麼調配？)」，回答「Black with no sugar, please. (請給我黑咖啡，不要糖)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Who is responsible for this project?",
+      "options": [
+        "A. Next Friday.",
+        "B. Mr. Chen is leading it.",
+        "C. It is very expensive.",
+        "D. In Taipei office."
+      ],
+      "ans": "B",
+      "explain": "題目詢問負責人「Who is responsible for this project? (誰負責這個專案？)」，回答人選「Mr. Chen is leading it. (陳先生正在主導它)」最切合句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Would you like some tea or water?",
+      "options": [
+        "A. At the train station.",
+        "B. Tomorrow morning.",
+        "C. Water would be great, thank you.",
+        "D. I am fine with his car."
+      ],
+      "ans": "C",
+      "explain": "對方提供飲品選擇「Would you like some tea or water? (你想要喝茶還是水？)」，回答「Water would be great, thank you. (開水就好，謝謝你)」最自然合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Flight",
+      "options": [
+        "A. 班機／航班",
+        "B. 船隻",
+        "C. 護照",
+        "D. 行李箱"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Flight」，意思是「班機、航班」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Message",
+      "options": [
+        "A. 信封",
+        "B. 訊息／留言",
+        "C. 電話",
+        "D. 報紙"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Message」，意思是「訊息、留言」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Password",
+      "options": [
+        "A. 帳號",
+        "B. 護照",
+        "C. 密碼",
+        "D. 鑰匙"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Password」，意思是「密碼」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Boss",
+      "options": [
+        "A. 同事",
+        "B. 客戶",
+        "C. 朋友",
+        "D. 老闆"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Boss」，意思是「老闆、上司」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Have a nice day",
+      "options": [
+        "A. 祝你生日快樂",
+        "B. 祝你有美好的一天",
+        "C. 週末愉快",
+        "D. 新年快樂"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Have a nice day」，意思是「祝你有美好的一天」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Credit card",
+      "options": [
+        "A. 現金",
+        "B. 名片",
+        "C. 信用卡",
+        "D. 提款機"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Credit card」，意思是「信用卡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Business trip",
+      "options": [
+        "A. 家族旅遊",
+        "B. 畢業旅行",
+        "C. 員工聚餐",
+        "D. 出差"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Business trip」，意思是「出差」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is there a bank near here?",
+      "options": [
+        "A. Yes, next to the hotel.",
+        "B. I have some money.",
+        "C. Tomorrow morning.",
+        "D. It is a big hospital."
+      ],
+      "ans": "A",
+      "explain": "詢問附近有無銀行「Is there a bank near here? (這附近有銀行嗎？)」，回答地點「Yes, next to the hotel. (有的，在飯店旁邊)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Could you repeat that?",
+      "options": [
+        "A. It is raining.",
+        "B. I am taking a bus.",
+        "C. Sure, no problem.",
+        "D. He is my brother."
+      ],
+      "ans": "C",
+      "explain": "請求對方重述「Could you repeat that? (你可以再說一次嗎？)」，答覆「Sure, no problem. (當然，沒問題)」最禮貌合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time does the train leave?",
+      "options": [
+        "A. I have a ticket.",
+        "B. To Taipei station.",
+        "C. Yes, it is very fast.",
+        "D. At five thirty."
+      ],
+      "ans": "D",
+      "explain": "詢問火車發車時間「What time does the train leave? (火車幾點開？)」，回答時間「At five thirty. (五點半)」最正確。"
+    }
+  ]
 }

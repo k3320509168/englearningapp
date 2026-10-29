@@ -35,8 +35,8 @@ export function materialIcon(id: string): string {
   return '💎';
 }
 
-// 龍晶：第 4 個區域（regionIdx 3）以後才會掉
-export const DRAGON_REGION = 3;
+// 龍晶：極光雪嶺（regionIdx 5）以後才會掉
+export const DRAGON_REGION = 5;
 
 // 打倒怪物的掉落（rand 讓測試可以固定）
 export function rollDrops(kind: 'normal' | 'elite' | 'boss' | 'treasure', el: Element, rand: () => number, regionIdx = 0): Record<string, number> {
@@ -93,23 +93,23 @@ export const EQUIPMENT: EquipDef[] = [
   // 武器
   { id: 'blade_training', name: '見習之刃', slot: 'weapon', rarity: 'N', desc: '剛入門的武器', mods: { atk: 0.1 }, cost: { gold: 100, materials: { ore: 3 } } },
   { id: 'blade_steel', name: '精鋼武器', slot: 'weapon', rarity: 'R', desc: '可靠的精鋼打造', mods: { atk: 0.2 }, cost: { gold: 300, materials: { ore: 8 } }, requires: { regionsCleared: 1 } },
-  { id: 'blade_element', name: '元素之刃', slot: 'weapon', rarity: 'SR', desc: '注入你的屬性，剋制時更強', mods: { atk: 0.3, elementBonus: 0.1 }, cost: { gold: 800, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 2 } },
-  { id: 'blade_legend', name: '傳說武器', slot: 'weapon', rarity: 'SSR', desc: '以魔核鍛造的傳說之刃', mods: { atk: 0.55 }, cost: { gold: 2000, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'blade_element', name: '元素之刃', slot: 'weapon', rarity: 'SR', desc: '注入你的屬性，剋制時更強', mods: { atk: 0.3, elementBonus: 0.1 }, cost: { gold: 800, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'blade_legend', name: '傳說武器', slot: 'weapon', rarity: 'SSR', desc: '以魔核鍛造的傳說之刃', mods: { atk: 0.55 }, cost: { gold: 2000, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 5 } },
   { id: 'signature', name: '專屬武器', slot: 'weapon', rarity: 'UR', desc: '只有二轉後的勇者才能駕馭', mods: { atk: 0.8, crit: 0.1 }, cost: { gold: 5000, materials: { core: 5, crystal_own: 5 } }, requires: { classTier: 2 } },
   // 防具
   { id: 'armor_cloth', name: '旅人布甲', slot: 'armor', rarity: 'N', desc: '輕便的布甲', mods: { hp: 0.1 }, cost: { gold: 100, materials: { ore: 3 } } },
   { id: 'armor_chain', name: '鎖子甲', slot: 'armor', rarity: 'R', desc: '鍊環編成的護甲', mods: { hp: 0.2 }, cost: { gold: 300, materials: { ore: 8 } }, requires: { regionsCleared: 1 } },
-  { id: 'armor_mithril', name: '秘銀甲', slot: 'armor', rarity: 'SR', desc: '輕巧又堅固', mods: { hp: 0.35 }, cost: { gold: 800, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 2 } },
-  { id: 'armor_dragon', name: '龍鱗甲', slot: 'armor', rarity: 'SSR', desc: '冰龍的鱗片打造', mods: { hp: 0.55 }, cost: { gold: 2000, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'armor_mithril', name: '秘銀甲', slot: 'armor', rarity: 'SR', desc: '輕巧又堅固', mods: { hp: 0.35 }, cost: { gold: 800, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'armor_dragon', name: '龍鱗甲', slot: 'armor', rarity: 'SSR', desc: '冰龍的鱗片打造', mods: { hp: 0.55 }, cost: { gold: 2000, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 5 } },
   // 飾品
   { id: 'acc_charm', name: '幸運符', slot: 'accessory', rarity: 'N', desc: '帶來一點好運', mods: { crit: 0.05 }, cost: { gold: 150, materials: { ore: 3 } } },
   { id: 'acc_hourglass', name: '時之沙漏', slot: 'accessory', rarity: 'R', desc: '讓思考的時間變長', mods: { timeMs: 2000 }, cost: { gold: 400, materials: { ore: 8 } }, requires: { regionsCleared: 1 } },
-  { id: 'acc_elf', name: '精靈耳環', slot: 'accessory', rarity: 'SR', desc: '精靈的祝福', mods: { crit: 0.1, timeMs: 2000 }, cost: { gold: 900, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 2 } },
-  { id: 'acc_king', name: '王者之戒', slot: 'accessory', rarity: 'SSR', desc: '古代國王的戒指', mods: { atk: 0.2, crit: 0.1 }, cost: { gold: 2500, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'acc_elf', name: '精靈耳環', slot: 'accessory', rarity: 'SR', desc: '精靈的祝福', mods: { crit: 0.1, timeMs: 2000 }, cost: { gold: 900, materials: { ore: 10, crystal_own: 3 } }, requires: { regionsCleared: 3 } },
+  { id: 'acc_king', name: '王者之戒', slot: 'accessory', rarity: 'SSR', desc: '古代國王的戒指', mods: { atk: 0.2, crit: 0.1 }, cost: { gold: 2500, materials: { ore: 15, core: 3 } }, requires: { regionsCleared: 5 } },
   // 後期區域：用龍晶打造
-  { id: 'blade_star', name: '星辰之刃', slot: 'weapon', rarity: 'SSR', desc: '極光雪嶺的星光凝成的刀刃', mods: { atk: 0.7 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 4 } },
-  { id: 'armor_star', name: '星辰鎧甲', slot: 'armor', rarity: 'SSR', desc: '映著極光的鎧甲', mods: { hp: 0.7 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 4 } },
-  { id: 'acc_star', name: '星辰耳墜', slot: 'accessory', rarity: 'SSR', desc: '聽得見星星的低語', mods: { atk: 0.25, crit: 0.12 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 4 } },
+  { id: 'blade_star', name: '星辰之刃', slot: 'weapon', rarity: 'SSR', desc: '極光雪嶺的星光凝成的刀刃', mods: { atk: 0.7 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 7 } },
+  { id: 'armor_star', name: '星辰鎧甲', slot: 'armor', rarity: 'SSR', desc: '映著極光的鎧甲', mods: { hp: 0.7 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 7 } },
+  { id: 'acc_star', name: '星辰耳墜', slot: 'accessory', rarity: 'SSR', desc: '聽得見星星的低語', mods: { atk: 0.25, crit: 0.12 }, cost: { gold: 3500, materials: { ore: 20, core: 4, dragon: 3 } }, requires: { regionsCleared: 7 } },
   { id: 'blade_flame', name: '熔岩魔劍', slot: 'weapon', rarity: 'UR', desc: '在熔岩魔域鍛造的魔劍', mods: { atk: 0.9, critDmg: 0.2 }, cost: { gold: 6000, materials: { ore: 25, core: 6, dragon: 6 } }, requires: { regionsCleared: 5 } },
   { id: 'armor_flame', name: '熔岩戰甲', slot: 'armor', rarity: 'UR', desc: '連魔王的火焰都擋得住', mods: { hp: 0.9, guardEvery: 12 }, cost: { gold: 6000, materials: { ore: 25, core: 6, dragon: 6 } }, requires: { regionsCleared: 5 } },
   { id: 'acc_flame', name: '熔岩之心', slot: 'accessory', rarity: 'UR', desc: '還在跳動的熔岩結晶', mods: { atk: 0.3, crit: 0.15, timeMs: 1000 }, cost: { gold: 6000, materials: { ore: 25, core: 6, dragon: 6 } }, requires: { regionsCleared: 5 } },

@@ -7,16 +7,16 @@ import { SAVE_KEY, exportBackupFile, exportSaveCode, parseSaveCode, summarize } 
 
 describe('存檔碼', () => {
   it('匯出後可以原樣讀回（含中文）', () => {
-    const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350 }, version: 14 };
+    const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350 }, version: 15 };
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
     const back = parseSaveCode(exportSaveCode());
-    expect(back?.version).toBe(14);
+    expect(back?.version).toBe(15);
     expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 7, regions: 2, gold: 350 });
   });
 
   it('備份檔（JSON）可以讀回，很大的存檔也沒問題', () => {
     const codex = Object.fromEntries(Array.from({ length: 2000 }, (_, i) => [`WORD${i}`, { correct: 3, wrong: 1 }]));
-    const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350, codex }, version: 14 };
+    const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350, codex }, version: 15 };
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
     const file = exportBackupFile();
     expect(file.name).toMatch(/^english-rpg-backup-\d{8}-\d{4}\.json$/);
@@ -43,7 +43,7 @@ describe('登入連結失敗', () => {
 
 describe('匯入壞掉的存檔碼', () => {
   it('欄位型別錯誤會改回預設值，不會讓遊戲當掉', () => {
-    const bad = { state: { heroes: null, gold: 'abc', party: 'x', character: { name: '測試' }, player: { level: 'nine' }, equipment: [null, { uid: 1 }] }, version: 14 };
+    const bad = { state: { heroes: null, gold: 'abc', party: 'x', character: { name: '測試' }, player: { level: 'nine' }, equipment: [null, { uid: 1 }] }, version: 15 };
     const code = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(bad))));
     const back = parseSaveCode(code)!;
     const s = back.state as { heroes: string[]; gold: number; party: string[]; player: { level: number }; equipment: unknown[] };
@@ -58,7 +58,7 @@ describe('匯入壞掉的存檔碼', () => {
 
 describe('匯入存檔的數值與物件檢查（N2）', () => {
   it('負數改成 0、等級至少 1、字串型的物件欄位改回預設值', () => {
-    const bad = { state: { character: { name: '測試' }, tickets: -50, gold: -3, player: 'oops', materials: { ore: -5, core: 'x' }, heroLevel: { knight: -2 } }, version: 14 };
+    const bad = { state: { character: { name: '測試' }, tickets: -50, gold: -3, player: 'oops', materials: { ore: -5, core: 'x' }, heroLevel: { knight: -2 } }, version: 15 };
     const code = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(bad))));
     const s = parseSaveCode(code)!.state as { tickets: number; gold: number; player: Record<string, unknown>; materials: Record<string, number>; heroLevel: Record<string, number> };
     expect(s.tickets).toBe(0);

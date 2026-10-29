@@ -1,6 +1,6 @@
 import type { Question, QuestionSkill, VocabEntry, VocabSense } from './types';
 import type { QuestionPool } from './QuestionData';
-import { validateQuestion } from './validateQuestions';
+import { questionKey, validateQuestion } from './validateQuestions';
 import type { ValidationIssue } from './validateQuestions';
 
 // 題庫自動擴充流程（純函式部分）：產生給 Gemini 的提示詞 → 解析回傳的 JSON → 逐題驗證與去重。
@@ -40,9 +40,15 @@ export function buildPrompt(levelKey: string, count: number, existingDescs: stri
 ${existingDescs.slice(0, 200).map(d => `  - ${d}`).join('\n')}`;
 }
 
-// ---------- CEFR 題庫（聽說讀寫各 250 題）----------
-export const SKILL_TARGET = 250;
+// ---------- CEFR 題庫 ----------
+// 各區題庫目標（和 Gemini 討論後定案）：初級少、高級多，越高級需要越多語境練習。
+// 比例：聽 30%、讀 30%、說 20%、寫 20%（文法與字彙併在閱讀、寫作裡）。
+export const SKILL_TARGET = 250; // 舊的「每項 250 題」，只給沒指定區域時用
+export const BANK_TARGETS = [1000, 1000, 1000, 1300, 1300, 1500, 1800, 2000, 2000];
 export const BANK_SKILLS: QuestionSkill[] = ['listening', 'speaking', 'reading', 'writing'];
+const SKILL_SHARE: Record<QuestionSkill, number> = { listening: 0.3, reading: 0.3, speaking: 0.2, writing: 0.2 };
+export const skillTarget = (levelIdx: number, skill: QuestionSkill) =>
+  Math.round((BANK_TARGETS[levelIdx] ?? SKILL_TARGET * 4) * SKILL_SHARE[skill]);
 
 const SKILL_RULES: Record<QuestionSkill, string> = {
   listening: `聽力題（全部用選擇題，玩家只聽得到聲音、看不到英文）：
@@ -58,7 +64,8 @@ const SKILL_RULES: Record<QuestionSkill, string> = {
   writing: `寫作題（拼寫題與填空題各一半）：
   - 拼寫：{ "type": "spell", "skill": "writing", "difficulty": 1, "desc": "請拼出：中文意思", "ans": "全大寫單字（只能有 A-Z）", "speak": "小寫單字" }
   - 填空：{ "type": "fill", "skill": "writing", "difficulty": 1, "desc": "填空題：W O R _ (中文)", "ans": "空格中的大寫字母", "speak": "完整小寫單字" }（字母之間用空格隔開，空格用 _ 表示）
-  - 難度越高單字越長、越不常見，填空的空格越多。`,
+  - 難度越高單字越長、越不常見，填空的空格越多：難度 1 挖 1 個字母、難度 2 挖 2 個、難度 3 挖 3 個以上（ans 依空格順序連在一起）。
+  - 難度依「單字在這個等級裡有多常見、多好拼」判斷，不是依主題；同一個字的拼寫題與填空題可以都出。`,
 };
 
 export function buildSkillPrompt(levelKey: string, skill: QuestionSkill, count: number, existingDescs: string[], existingWords: string[]): string {
@@ -126,13 +133,13 @@ export function parseBatch(text: string): GeneratedBatch {
 
 // 逐題驗證：有 error 的題目或與現有題目重複的題目會被丟掉；warning 保留下來讓人工抽查
 export function reviewBatch(batch: GeneratedBatch, existing: Question[]): Reviewed {
-  const seen = new Set(existing.map(q => `${q.type}|${q.desc}`));
+  const seen = new Set(existing.map(questionKey));
   const result: Reviewed = { accepted: [], rejected: [] };
   for (const deck of ['normal', 'boss'] as const) {
     batch[deck].forEach((q, i) => {
       const issues: ValidationIssue[] = q && typeof q === 'object' ? validateQuestion(q, `${deck}[${i}]`) : [{ level: 'error', where: deck, message: '不是物件' }];
       const errors = issues.filter(x => x.level === 'error').map(x => x.message);
-      const key = `${q?.type}|${q?.desc}`;
+      const key = questionKey(q ?? {});
       if (seen.has(key)) errors.push('與現有題目重複');
       if (errors.length) {
         result.rejected.push({ question: q, reasons: errors });

@@ -160,7 +160,7 @@ export const childrenOf = (parent: string) => CLASS_NODES.filter(n => n.parent =
 export const ADVANCE_REQ: Record<1 | 2 | 3, { level: number; regionsCleared: number; label: string }> = {
   1: { level: 10, regionsCleared: 1, label: 'Lv 10＋通關第 1 個區域' },
   2: { level: 30, regionsCleared: 3, label: 'Lv 30＋通關第 3 個區域' },
-  3: { level: 60, regionsCleared: 5, label: 'Lv 60＋通關第 5 個區域' },
+  3: { level: 60, regionsCleared: 6, label: 'Lv 60＋通關第 6 個區域' },
 };
 
 // 目前路線的下一階選項（已到覺醒則為空）

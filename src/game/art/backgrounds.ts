@@ -45,6 +45,14 @@ export const THEMES: Theme[] = [
     groundTop: '#4fb36a', groundEdge: '#358c50', ground: '#5c3f2c', groundDark: '#43301f', speck: '#74533a',
   },
   {
+    // A2+ 碧藍海岸：晴朗的海邊丘陵
+    name: '碧藍海岸', terrain: 'hills',
+    sky: ['#2f8fe8', '#45a6f0', '#62bdf5', '#8fd4f8', '#c4ecfb'],
+    sun: { x: 150, y: 20, r: 10, color: '#fffbd0', glow: '#ffeaa0' }, cloud: '#ffffff',
+    far: '#3fa6c8', near: '#e6cf8f', nearShade: '#c9b070',
+    groundTop: '#f3dfa0', groundEdge: '#d9bf78', ground: '#3f9fb0', groundDark: '#2c7f8e', speck: '#7fd0d8',
+  },
+  {
     name: '黃金沙漠', terrain: 'dunes',
     sky: ['#ff6f5a', '#ff8c5f', '#ffab6b', '#ffca85', '#ffe6b0'],
     sun: { x: 140, y: 30, r: 14, color: '#fff3c4', glow: '#ffd98a' },
@@ -52,11 +60,27 @@ export const THEMES: Theme[] = [
     groundTop: '#f6cf86', groundEdge: '#e0ad62', ground: '#d69c58', groundDark: '#b97f44', speck: '#e9b876',
   },
   {
+    // B1+ 赤岩峽谷：紅色岩壁與夕陽
+    name: '赤岩峽谷', terrain: 'dunes',
+    sky: ['#4a2a6a', '#7a3a6a', '#b4505a', '#e07a52', '#f6b07a'],
+    sun: { x: 60, y: 34, r: 12, color: '#ffe0a0', glow: '#ff9a5a' },
+    far: '#9a3f32', near: '#c4583a', nearShade: '#a0452c',
+    groundTop: '#d9784a', groundEdge: '#b45a36', ground: '#8a3f2a', groundDark: '#6a2f1f', speck: '#e09060',
+  },
+  {
     name: '極光雪嶺', terrain: 'peaks',
     sky: ['#1c1d52', '#2e2d72', '#4d4596', '#7a62b4', '#b88ccc'],
     sun: { x: 50, y: 20, r: 6, color: '#f4f6ff', glow: '#c9cdf5' }, stars: 40,
     far: '#6f72c4', farCap: '#eef1ff', near: '#4c4f9c', nearShade: '#3b3d80',
     groundTop: '#f4f7ff', groundEdge: '#c9d3f2', ground: '#8e9fd0', groundDark: '#7383b8', speck: '#b3c1e8',
+  },
+  {
+    // B2+ 雷鳴高原：烏雲與閃電下的高山
+    name: '雷鳴高原', terrain: 'peaks',
+    sky: ['#14182a', '#222a44', '#343f60', '#4c5a80', '#7a88a8'],
+    stars: 8, cloud: '#5a6688',
+    far: '#3a4668', farCap: '#c8d8ff', near: '#2a3350', nearShade: '#1e2540',
+    groundTop: '#6a7890', groundEdge: '#4a5670', ground: '#343c50', groundDark: '#262c3c', speck: '#9fb4ff',
   },
   {
     name: '熔岩魔域', terrain: 'volcano',

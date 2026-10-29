@@ -457,7 +457,8 @@ describe('save migration', () => {
       unlockedIndex: 2, tutorialDone: true, settings: { speechRate: 1.1 },
       mistakes: { [questionKey(q)]: { question: q, wrongCount: 2, lastWrongAt: 500 } },
     }, 2);
-    expect(migrated.unlockedIndex).toBe(2);
+    // 舊的第 3 區（B1）在九區域順序是第 4 個
+    expect(migrated.unlockedIndex).toBe(3);
     expect(migrated.gold).toBe(0);
     expect(migrated.party).toEqual(['player', 'knight']);
     expect(migrated.settings.speechRate).toBe(1.1);

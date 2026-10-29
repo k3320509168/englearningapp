@@ -10,7 +10,7 @@ import {
   ADVANCE_REQ, MAX_LEVEL, canAdvance, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
-  EQUIPMENT, MAX_GRADE, SLOTS, displayName, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
+  DRAGON_REGION, EQUIPMENT, MAX_GRADE, SLOTS, displayName, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
 } from '../game/equipment';
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
@@ -53,7 +53,7 @@ export default function GrowthModal() {
   const materialBar = (
     <p className="material-bar">
       <span>🪙 <b>{gold}</b></span>
-      {['ore', 'core', ...((materials.dragon ?? 0) > 0 || unlockedIndex >= 3 ? ['dragon'] : []), `crystal_${character.element}`].map(id => (
+      {['ore', 'core', ...((materials.dragon ?? 0) > 0 || unlockedIndex >= DRAGON_REGION ? ['dragon'] : []), `crystal_${character.element}`].map(id => (
         <span key={id} title={materialName(id)}>{materialIcon(id)} {materialName(id)} <b>{materials[id] ?? 0}</b></span>
       ))}
     </p>

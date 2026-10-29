@@ -27,7 +27,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 14;
+export const SAVE_VERSION = 15;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -247,6 +247,9 @@ export function conform<T>(fallback: T, value: unknown): T {
   return value as T;
 }
 
+// 第四輪之前的 6 個區域在新順序中的位置（第 6 個 = 全部通關）
+const OLD_REGION_TO_NEW = [0, 1, 3, 5, 7, 8, 9];
+
 export function migrateSave(persisted: unknown, version: number): SaveData {
   const data = (isPlainObject(persisted) ? persisted : {}) as Partial<SaveData> & { hero?: HeroId };
   // 每次升級都只「新增欄位」，所以用預設值補齊即可。
@@ -263,6 +266,8 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v11 → v12：黃金之路紀錄與稱號（預設值補齊）。
   // v12 → v13：每日任務、背景音樂音量、擴充魔王紀錄（預設值補齊）。
   // v13 → v14：戰鬥情境提示、動態效果與文字大小設定；已看過新手引導的舊玩家視為看過全部提示。
+  // v14 → v15：區域從 6 個變 9 個（插入 A2+、B1+、B2+），unlockedIndex 換成新順序的位置；
+  //   新插入、還沒玩過的區域一併開放（不讓老玩家倒退）。關卡進度與星星以區域名稱為 key，不受影響。
   // 物件欄位先確認真的是物件再合併（不然字串會被展開成 {"0": …, "1": …}）
   const obj = <K extends keyof SaveData>(k: K) => (isPlainObject(data[k]) ? data[k] : {}) as Partial<SaveData[K]>;
   const migrated: SaveData = {
@@ -291,6 +296,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.heroTier = counts(migrated.heroTier);
   migrated.heroLevel = counts(migrated.heroLevel, 1);
   migrated.levelProgress = counts(migrated.levelProgress);
+  if (version >= 1 && version < 15) migrated.unlockedIndex = OLD_REGION_TO_NEW[Math.min(6, Math.max(0, Math.floor(migrated.unlockedIndex)))];
   migrated.bestStage = counts(migrated.bestStage);
   migrated.player = { ...migrated.player, level: Math.min(MAX_LEVEL, Math.max(1, Math.floor(migrated.player.level))) };
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];

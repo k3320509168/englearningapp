@@ -6,7 +6,7 @@ import { checkTypedAnswer, shuffleArray, shuffleChoice, voiceFallback } from './
 // 不送等級；守門試煉需要主角達到一定等級才能挑戰。最後一個區域（王城）有主線結局，不能跳過。
 
 // 守門試煉的等級門檻（依區域順序）；王城沒有試煉
-export const GATE_LEVEL = [5, 10, 20, 25, 30];
+export const GATE_LEVEL = [5, 10, 15, 20, 25, 30, 35, 40];
 export const GATE_QUESTIONS = 10;
 export const GATE_PASS = 8;
 export const SKIPPABLE_REGIONS = LEVELS.length - 1;

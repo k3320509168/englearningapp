@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { emptyRunStats, evaluateStars, mergeStars, starConditions } from './stars';
 import { REGIONS, mapName, stageLabel } from './regions';
-import { STORIES } from './story';
+import { STORIES, clearStoryId, regionStoryId } from './story';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 import { setBattleRandom, useBattleStore } from '../store/battleStore';
 import { DEFAULT_CHARACTER } from './character';
@@ -16,8 +16,8 @@ describe('regions and maps', () => {
 
   it('has an intro and a clear story for every region', () => {
     REGIONS.forEach((_, i) => {
-      expect(STORIES[`region-${i}`]?.length).toBeGreaterThan(0);
-      expect(STORIES[`clear-${i}`]?.length).toBeGreaterThan(0);
+      expect(STORIES[regionStoryId(i)]?.length).toBeGreaterThan(0);
+      expect(STORIES[clearStoryId(i)]?.length).toBeGreaterThan(0);
     });
     expect(STORIES.prologue.length).toBeGreaterThan(0);
   });

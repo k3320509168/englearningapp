@@ -71,6 +71,8 @@ export default function MapToolbar() {
           </button>
           {moreOpen && (
             <div className="more-menu" role="menu">
+              <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('rush')}>⚡ 每日素材本</button>
+              <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('tower')}>🗼 英雄時空之塔</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('shop')}>🏪 商店</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('codex')}>📚 圖鑑</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('tutorial')}>❓ 說明</button>

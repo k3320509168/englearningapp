@@ -1589,3 +1589,12 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .power-hint.power-hard b { color: #ff8a8a; }
 
 .shard-quiz-btn { width: 100%; margin-bottom: 12px; }
+
+/* 每日素材本：60 秒狂熱快答 */
+.rush { padding: 4px 0; transition: background 0.15s; border-radius: 8px; }
+.rush-ok { background: rgba(110, 231, 168, 0.12); }
+.rush-ng { background: rgba(255, 90, 110, 0.12); }
+.rush-bar { height: 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+.rush-bar span { display: block; height: 100%; background: linear-gradient(90deg, #ffcd4b, #ff7a3d); transition: width 0.1s linear; }
+.rush-score { margin: 8px 0; font-weight: 700; }
+.rush-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }

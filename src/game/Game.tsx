@@ -28,6 +28,8 @@ import PlacementModal from '../components/PlacementModal';
 import GateTrialModal from '../components/GateTrialModal';
 import ShardQuizModal from '../components/ShardQuizModal';
 import HolyForgeModal from '../components/HolyForgeModal';
+import RushModal from '../components/RushModal';
+import TowerModal from '../components/TowerModal';
 import { CloudConflict } from '../components/CloudSave';
 import SaveRecoveryNotice from '../components/SaveRecoveryNotice';
 import { initCloud } from '../cloud/cloudSave';
@@ -187,6 +189,8 @@ export default function Game() {
       {modal === 'gateTrial' && <GateTrialModal />}
       {modal === 'shardQuiz' && <ShardQuizModal />}
       {modal === 'holyForge' && <HolyForgeModal />}
+      {modal === 'rush' && <RushModal />}
+      {modal === 'tower' && <TowerModal />}
       <CelebrationOverlay />
       <CloudConflict />
       <SaveRecoveryNotice />

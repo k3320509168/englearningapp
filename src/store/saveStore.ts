@@ -11,6 +11,7 @@ import {
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
+import { towerReward } from '../game/modes';
 import { HERO_LEVEL_CAPS, MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, playerLevelCap, xpScale } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
@@ -84,6 +85,9 @@ interface SaveData {
   heroStars: Record<HeroId, number>; // SSR 升星（0～4 星）
   wishShards: number;                // 願望碎片：任何英雄都能用來補不足的碎片
   shardQuizDay: string;              // 每日碎片英文題最後完成的日期（一天一次）
+  rushDay: string;                   // 每日素材本：今天的日期與已挑戰次數
+  rushRuns: number;
+  towerFloor: number;                // 英雄時空之塔：已通過的最高層
   heroTier: Record<HeroId, number>;
   // 世界：每張地圖的最佳三星紀錄（key 為 regionId#mapIdx）、每個區域打到過的最遠關卡、看過的劇情
   mapStars: Record<string, boolean[]>;
@@ -136,6 +140,9 @@ interface SaveActions {
   tierUp: (id: HeroId) => boolean;
   starUp: (id: HeroId) => boolean;
   finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
+  startRush: () => void;
+  grantRush: (reward: { gold: number; xp: number; ore: number }) => void;
+  clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number } | null; // 第一次通過才有獎勵
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
@@ -187,6 +194,9 @@ export const initialSave: SaveData = {
   heroStars: {},
   wishShards: 0,
   shardQuizDay: '',
+  rushDay: '',
+  rushRuns: 0,
+  towerFloor: 0,
   heroTier: {},
   mapStars: {},
   bestStage: {},
@@ -738,6 +748,30 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return purchase(STAR_GOLD(stars), () => ({ ...pay, heroStars: { ...get().heroStars, [id]: stars + 1 } }));
         },
 
+        // 每日素材本：一天 3 次
+        startRush: () => set(s => {
+          const today = new Date().toDateString();
+          return { rushDay: today, rushRuns: (s.rushDay === today ? s.rushRuns : 0) + 1 };
+        }),
+        grantRush: (reward) => {
+          get().addGold(reward.gold);
+          get().addMaterials({ ore: reward.ore });
+          get().gainXp(reward.xp);
+        },
+
+        // 英雄時空之塔：照順序往上爬，第一次通過的那一層才給獎勵
+        clearTowerFloor: (floor, heroId) => {
+          const s = get();
+          if (floor !== s.towerFloor + 1) return null;
+          const reward = towerReward(floor);
+          set(st => ({
+            towerFloor: floor,
+            ...(heroId ? { heroShards: { ...st.heroShards, [heroId]: (st.heroShards[heroId] ?? 0) + reward.shards } } : { wishShards: st.wishShards + reward.shards }),
+          }));
+          get().addGold(reward.gold);
+          return reward;
+        },
+
         // 每日碎片英文題：每答對一題 2 片願望碎片（一天一次，最多 10 片）
         finishShardQuiz: (correct) => {
           const today = new Date().toDateString();
@@ -776,7 +810,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
-        heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay,
+        heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,

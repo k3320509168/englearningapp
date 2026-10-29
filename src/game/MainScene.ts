@@ -4,7 +4,8 @@ import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, assaultFor, comboMultiplier, monsterLevel, skillEffect } from './progression';
+import { SKILLS, comboMultiplier, monsterLevel, skillEffect } from './progression';
+import { TELEGRAPH_AT, patternOf, upcomingMove } from './enemyPatterns';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -82,6 +83,9 @@ export default class MainScene extends Phaser.Scene {
   private playerHpText!: Phaser.GameObjects.Text;
   private monsterNameText!: Phaser.GameObjects.Text;
   private armorText!: Phaser.GameObjects.Text;
+  private gaugeFill!: Phaser.GameObjects.Rectangle;
+  private gaugeBg!: Phaser.GameObjects.Rectangle;
+  private telegraphText!: Phaser.GameObjects.Text;
   private stageText!: Phaser.GameObjects.Text;
   private comboNum!: Phaser.GameObjects.Text;
   private comboLabel!: Phaser.GameObjects.Text;
@@ -196,7 +200,11 @@ export default class MainScene extends Phaser.Scene {
     this.elementBadge = this.add.container(0, 0).setDepth(81);
     this.monsterBar = new PixelBar(this, width - 274, 54, 250, 16, true);
     // 首領戰的破甲進度／一般關的第幾隻怪物
-    this.armorText = this.add.text(width - 24, 76, '', textStyle(16, '#ffcd4b', 4)).setOrigin(1, 0).setDepth(80);
+    // 敵人行動條：滿了就出招（答對打中會讓它往後退）
+    this.gaugeBg = this.add.rectangle(width - 24, 76, 250, 8, 0x1a1226, 0.9).setOrigin(1, 0).setDepth(80).setStrokeStyle(2, 0x1a1226);
+    this.gaugeFill = this.add.rectangle(width - 274, 76, 250, 8, 0xff9a4d).setOrigin(0, 0).setDepth(81).setScale(0, 1);
+    this.telegraphText = this.add.text(width - 24, 88, '', textStyle(15, '#ff8a8a', 4)).setOrigin(1, 0).setDepth(80);
+    this.armorText = this.add.text(width - 24, 108, '', textStyle(16, '#ffcd4b', 4)).setOrigin(1, 0).setDepth(80);
     this.stageText = this.add.text(width / 2, 88, '', labelStyle(20)).setOrigin(0.5, 0).setDepth(80);
 
     this.comboNum = this.add.text(36, 150, '', numStyle(40)).setOrigin(0, 0.5).setDepth(85);
@@ -234,8 +242,8 @@ export default class MainScene extends Phaser.Scene {
     s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
-    this.armorText.setText(this.armorLabel(s)).setColor(s.charging || (s.bossGate > 0 && s.combo < s.bossGate) ? '#ff8a8a' : '#ffcd4b');
-    if (s.charging && !prev?.charging) this.chargeWarning();
+    this.armorText.setText(this.armorLabel(s)).setColor(s.bossGate > 0 && s.combo < s.bossGate ? '#ff8a8a' : '#ffcd4b');
+    this.syncGauge(s);
     if (s.bossCast && s.bossCast.seq !== prev?.bossCast?.seq) {
       sfx.boss();
       popText(this, 400, 205, s.bossCast.text, 20, '#ffcd4b', { rise: 12, dur: 2200 });
@@ -301,6 +309,7 @@ export default class MainScene extends Phaser.Scene {
       case 'stage': return this.enterStage(s);
       case 'attack': return this.playAttack(event, s);
       case 'hurt': return this.playHurt(event, s);
+      case 'enemyMove': return this.playEnemyMove(event, s);
       case 'skill': return this.playSkill(event);
       case 'shieldHit': return this.playAttack(event, s);
       case 'overtime':
@@ -444,14 +453,6 @@ export default class MainScene extends Phaser.Scene {
       burst(this, f.homeX, f.homeY - 60, [0xffcd4b, 0xffffff, 0x4cc9f0], 24, { up: true, gravity: -80, speed: 180 });
       popText(this, f.homeX, f.homeY - 200, `LEVEL UP!  Lv ${event.levelUp}`, 30, '#ffcd4b', { rise: 40, dur: 1400 });
     });
-    if (event.interrupted) this.time.delayedCall(300, () => {
-      sfx.crit(1.3);
-      popText(this, MONSTER_X, GROUND_Y - 230, '⚡ 打斷！敵人暈眩', 30, '#7fe8ff', { rise: 24, dur: 1200 });
-    });
-    if (event.counter) {
-      const counter = event.counter;
-      this.time.delayedCall(700, () => this.playHurt({ id: -1, kind: 'hurt', member: counter.member, amount: counter.amount }, useBattleStore.getState()));
-    }
     if (event.guardGained) this.time.delayedCall(350, () => popText(this, PLAYER_X, GROUND_Y - 220, '🛡️ 守護觸發', 22, '#7fffd4', { rise: 20, dur: 900 }));
     if (event.drops && Object.keys(event.drops).length) {
       const text = Object.entries(event.drops).map(([k, v]) => `${materialIcon(k)}+${v}`).join(' ');
@@ -779,10 +780,6 @@ export default class MainScene extends Phaser.Scene {
   }
 
   private armorLabel(s: State): string {
-    if (s.charging && s.phase === 'answering') {
-      const a = assaultFor(s.levelIdx);
-      return a && a.window > 0 ? `⚡ 敵人蓄力中！${a.window / 1000} 秒內答對可打斷` : '⚡ 敵人蓄力重擊！答錯傷害加倍';
-    }
     if (s.bossGate > 0) {
       const armor = s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
       const status = [
@@ -820,12 +817,45 @@ ${status}` : armor;
     }, classId, tier, ultimateEchoes(combo)));
   }
 
-  // 敵人開始蓄力：怪物發紅光、跳出警告
-  private chargeWarning() {
+  // 行動條與下一招預告（快滿時顯示招式名稱，給玩家心理準備）
+  private syncGauge(s: State) {
+    const active = s.mode === 'normal' && !!patternOf(s) && s.stages[s.stageIdx]?.kind !== 'treasure' && s.phase !== 'monsterDown';
+    this.gaugeBg.setVisible(active);
+    this.gaugeFill.setVisible(active).setScale(Phaser.Math.Clamp(s.enemyGauge, 0, 1), 1);
+    const warn = active && s.enemyGauge >= TELEGRAPH_AT;
+    this.gaugeFill.setFillStyle(warn ? 0xff5a6e : 0xff9a4d);
+    const next = warn ? upcomingMove(s) : null;
+    this.telegraphText.setText(next ? `⚠ 下一招：${next.icon} ${next.name}` : '');
+    const statuses = [
+      s.poison.length > 0 && `☠️ 中毒 ${s.poison.map(p => s.party.find(m => m.id === p.member)?.name).join('、')}`,
+      s.weakenLeft > 0 && `💢 虛弱 −${Math.round(s.weaken * 100)}%`,
+      s.slowNext > 0 && '🐌 下一題時間變短',
+    ].filter(Boolean).join('  ');
+    if (!next && statuses) this.telegraphText.setText(statuses).setColor('#c9a8ff');
+    else this.telegraphText.setColor('#ff8a8a');
+  }
+
+  // 敵人依攻擊模式出招：撲向隊伍，被打中的隊員依序受傷
+  private playEnemyMove(event: BattleEvent, s: State) {
+    const move = event.move;
+    if (!move) return;
     sfx.boss();
-    this.monsterSprite.setTint(0xff7a7a);
-    this.time.delayedCall(500, () => this.monsterSprite.clearTint());
-    popText(this, MONSTER_X, GROUND_Y - 220, '⚡ 蓄力中！', 30, '#ff8a8a', { rise: 20, dur: 1100 });
+    popText(this, MONSTER_X, GROUND_Y - 230, `${move.icon} ${move.name}！`, 28, '#ff8a8a', { rise: 20, dur: 1200 });
+    this.monsterLunge(() => {
+      sfx.hurt();
+      shake(this, 160 + move.hits.length * 30, 0.012);
+      screenFlash(this, 0xff2a4a, 0.25, 260);
+      move.hits.forEach((h, i) => this.time.delayedCall(i * 120, () => {
+        const f = this.fighterFor(h.member);
+        const target = s.party.find(m => m.id === h.member);
+        f.sprite.setTexture(`${f.idleKey}_flash`).setTint(0xff5a6e);
+        this.time.delayedCall(120, () => { if (!f.down) f.sprite.setTexture(f.idleKey).clearTint(); else f.sprite.setTexture(f.idleKey).setTint(0x666677); });
+        this.tweens.add({ targets: f.container, x: f.homeX - 24, duration: 70, yoyo: true });
+        burst(this, f.homeX + 20, f.homeY - 50, [0xff5a6e, 0xffffff], 8, { speed: 150 });
+        popText(this, f.homeX, f.homeY - 120 - (i % 2) * 24, `-${h.amount}`, 32, '#ff5a6e', { numeric: true });
+        if (target && target.hp <= 0) popText(this, f.homeX, f.homeY - 170, `${target.name} 倒下了`, 20, '#ffb0b8', { rise: 20, dur: 800 });
+      }));
+    });
   }
 
   // 首領戰：combo 剛好達到門檻，盔甲碎裂

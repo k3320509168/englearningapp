@@ -519,51 +519,6 @@ describe('stage progress', () => {
   });
 });
 
-describe('enemy assaults (A2+)', () => {
-  const startAt = (levelIdx: number) => {
-    resetSave({ unlockedIndex: levelIdx });
-    state().startLevel(LEVELS[levelIdx]);
-    if (state().phase === 'lesson') state().startBattle();
-    // 不讓怪物倒下，專心看蓄力
-    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
-  };
-  const untilCharging = () => {
-    for (let i = 0; i < 10 && !state().charging; i++) answerCurrent();
-  };
-
-  it('A1 and A2 never charge', () => {
-    startAt(1);
-    for (let i = 0; i < 8; i++) answerCurrent();
-    expect(state().charging).toBe(false);
-  });
-
-  it('A2+: a fast correct answer interrupts and stuns (next hit ×1.5)', () => {
-    startAt(2);
-    untilCharging();
-    expect(state().charging).toBe(true);
-    const hp = state().playerHp;
-    answerCurrent(); // 測試裡作答時間是 0，算快答
-    expect(state().event?.interrupted).toBe(true);
-    expect(state().charge).toBe(1.5);
-    expect(state().playerHp).toBe(hp);
-  });
-
-  it('A2+: a slow correct answer still takes the charged hit; a wrong answer takes 1.5×', () => {
-    startAt(2);
-    untilCharging();
-    useBattleStore.setState({ questionLeft: state().questionLimit - 8000 });
-    const hp = state().playerHp;
-    answerCurrent();
-    expect(state().event?.counter?.amount).toBe(monsterAttack(false, 2, 0));
-    expect(state().playerHp).toBe(hp - monsterAttack(false, 2, 0));
-
-    untilCharging();
-    const before = state().playerHp;
-    answerWrong();
-    expect(before - state().playerHp).toBe(Math.round(monsterAttack(false, 2, 0) * 1.5));
-  });
-});
-
 describe('region boss skills', () => {
   const startBoss = (levelIdx: number) => {
     resetSave({ unlockedIndex: levelIdx });
@@ -644,19 +599,61 @@ describe('gate boss and elite skills (A2+)', () => {
   });
 });
 
-describe('enemy charge still lands when the monster dies', () => {
-  it('B1+: one-hit waves still hit back on their charge turn', () => {
-    resetSave({ unlockedIndex: 4 });
-    state().startLevel(LEVELS[4]);
+describe('enemy attack patterns (action gauge)', () => {
+  const startAt = (levelIdx: number, fromStage?: number) => {
+    resetSave({ unlockedIndex: levelIdx });
+    state().startLevel(LEVELS[levelIdx], undefined, fromStage);
     if (state().phase === 'lesson') state().startBattle();
-    let hurt = false;
-    for (let i = 0; i < 6 && !hurt; i++) {
-      const before = state().playerHp;
-      useBattleStore.setState({ monsterHp: 1 }); // 這一擊一定打倒
-      answerCurrent();
-      if (state().playerHp < before) hurt = true;
-      if (state().phase === 'monsterDown') state().nextStage();
-    }
-    expect(hurt).toBe(true);
+  };
+
+  it('attacks on its own when the gauge fills, even if the player never answers wrong', () => {
+    startAt(4);
+    const hp = state().playerHp;
+    state().tick(9_000); // 赤岩峽谷的史萊姆約 8 秒集滿（還沒超過 20 秒的答題時間）
+    expect(state().event?.kind).toBe('enemyMove');
+    expect(state().playerHp).toBeLessThan(hp);
+    expect(state().enemyGauge).toBe(0);
+  });
+
+  it('A1 enemies attack far less often than later regions', () => {
+    startAt(0);
+    state().tick(10_000);
+    expect(state().event?.kind).not.toBe('enemyMove');
+    expect(state().enemyGauge).toBeGreaterThan(0);
+  });
+
+  it('a correct answer pushes the gauge back, a fast one even more', () => {
+    startAt(4);
+    useBattleStore.setState({ enemyGauge: 0.6, monsterHp: 1e9, monsterMaxHp: 1e9 });
+    answerCurrent(); // 測試裡作答時間是 0，算快答
+    expect(state().enemyGauge).toBeCloseTo(0.3);
+  });
+
+  it('region bosses use their own move list, and a shield blocks a whole move', () => {
+    startAt(2, 49); // 碧藍海岸的深海巨獸：觸手拍擊 → 漩渦 → 噴水連擊
+    useBattleStore.setState({ shield: true, enemyGauge: 0.999 });
+    state().tick(100);
+    expect(state().shield).toBe(false);
+    expect(state().event?.kind).toBe('shield');
+    useBattleStore.setState({ enemyGauge: 0.999 });
+    state().tick(100);
+    expect(state().event?.move?.name).toBe('漩渦');
+  });
+
+  it('a monk heals the whole party when it attacks', () => {
+    startAt(0);
+    resetSave({ character: { ...DEFAULT_CHARACTER, classId: 'monk' }, party: ['player', 'knight'] });
+    state().startLevel(LEVELS[0]);
+    useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9, party: state().party.map(m => ({ ...m, hp: Math.round(m.maxHp / 2) })) });
+    answerCurrent();
+    expect(state().party.every(m => m.hp > m.maxHp / 2)).toBe(true);
+  });
+
+  it('golden road has no action gauge', () => {
+    resetSave();
+    state().startGoldenRoad();
+    const hp = state().playerHp;
+    state().tick(15_000);
+    expect(state().playerHp).toBe(hp);
   });
 });

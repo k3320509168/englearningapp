@@ -18,7 +18,7 @@ import type { AnswerRecord } from '../game/lesson';
 import {
   BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
   bossStep, computeDamage, goldWithBonus, skillEffect, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
-  ARMOR_DAMAGE, SKILL_ENERGY, STUN_DAMAGE, assaultFor, BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossComboGate, bossMaxHp, waveMaxHp,
+  ARMOR_DAMAGE, SKILL_ENERGY, BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossComboGate, bossMaxHp, waveMaxHp,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -27,6 +27,10 @@ import { buildMember, buildParty, gainEnergy, isAlive, leaderIndex, nextAlive, p
 import type { PartyOptions } from '../game/party';
 import type { Member, MemberId } from '../game/party';
 import { talentValue } from '../game/talents';
+import {
+  ELITE_POWER, FAST_STAGGER, POISON_TURNS, STAGGER, WEAKEN_TURNS, gaugeSeconds, monkHeal, monsterKindFor, patternOf,
+} from '../game/enemyPatterns';
+import type { EnemyMove, MonsterKind } from '../game/enemyPatterns';
 import type { TalentId } from '../game/talents';
 import { FINISHERS, TAUNT_CHANCE, TAUNT_REDUCTION, advanceChain, finisherMultiplier, relayFor } from '../game/synergy';
 import type { Relay } from '../game/synergy';
@@ -55,7 +59,7 @@ export type BattlePhase =
 
 export interface BattleEvent {
   id: number;
-  kind: 'attack' | 'hurt' | 'stage' | 'assist' | 'shield' | 'heal' | 'guard' | 'skill' | 'overtime' | 'shieldHit' | 'escape';
+  kind: 'attack' | 'hurt' | 'enemyMove' | 'stage' | 'assist' | 'shield' | 'heal' | 'guard' | 'skill' | 'overtime' | 'shieldHit' | 'escape';
   amount?: number;
   gold?: number;
   crit?: boolean;
@@ -71,9 +75,8 @@ export interface BattleEvent {
   taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
   waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
   armorBroken?: boolean;            // 首領戰：combo 剛好達到破甲門檻
-  interrupted?: boolean;            // 快答打斷了敵人的蓄力（敵人暈眩）
   finisher?: string;                // 連攜技名稱（依最後出手的職業）
-  counter?: { member: MemberId; amount: number }; // 答對但沒打斷：攻擊後敵人的蓄力一擊
+  move?: { icon: string; name: string; hits: { member: MemberId; amount: number }[] }; // 敵人依攻擊模式出招
 }
 
 // 地圖結算：這張地圖拿到的星星（與先前最佳紀錄合併前）、這次新拿到幾顆
@@ -165,7 +168,14 @@ interface BattleState {
   bombLeft: number;    // 灰燼炸彈：倒數
   sealed: boolean;     // 全知封印：技能被封印
   foeSkill: FoeSkillId | null; // 守門頭目／菁英怪的技能
-  charging: boolean;  // 敵人正在蓄力：這一題答完就會出手
+  // 敵人攻擊模式（見 game/enemyPatterns.ts）
+  monsterKind: MonsterKind;
+  enemyGauge: number;   // 行動條 0～1，滿了就出招
+  enemyMoveIdx: number; // 出到第幾招
+  poison: { member: MemberId; left: number; dmg: number }[];
+  weakenLeft: number;   // 虛弱：剩幾題全隊傷害降低
+  weaken: number;
+  slowNext: number;     // 減速：下一題少幾毫秒
 
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
@@ -394,7 +404,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         : monsterElement(stageIdx, golden ? goldenTier(stageIdx) : s.levelIdx, stage.revenge || stage.kind === 'final'),
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
       stageHits: 0,
-      wave: 1, waves, bossGate, blessed, enemyTurn: 0, charging: false,
+      wave: 1, waves, bossGate, blessed, enemyTurn: 0,
+      monsterKind: monsterKindFor(stageIdx, stage.bossMode, !!stage.revenge, stage.kind === 'treasure', stage.kind === 'final'),
+      // 一般關 5 隻怪共用行動條：只有換關才歸零
+      enemyGauge: 0, enemyMoveIdx: 0, poison: [], weakenLeft: 0, weaken: 0, slowNext: 0,
       ...bossSkillState(s.mode === 'normal' && stage.bossMode && isFinalBoss && !stage.revenge ? bossSkillFor(s.levelIdx).id : null),
       ...(foe ? { foeSkill: foe.id, bossCast: cast(`${foe.icon} ${foe.name}：${foe.desc}`) } : {}),
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
@@ -464,16 +477,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       original = repeat ?? takeEasy(stage)
         ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss(s.stageIdx) : decks!.normal(s.stageIdx)));
     }
-    // A2+ 敵人主動攻擊：每 every 題蓄力一次（寶箱怪不攻擊）
-    const assault = s.mode === 'normal' && stage.kind !== 'treasure' ? assaultFor(s.levelIdx) : null;
     const enemyTurn = s.enemyTurn + 1;
+    const statuses = tickStatuses();
     const boss = bossTurn(enemyTurn);
     const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0));
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
       retrying: false, ...timer,
       ...(boss.frostLeft > 0 ? { questionLimit: FROST_LIMIT, questionLeft: FROST_LIMIT } : {}),
-      enemyTurn, charging: !!assault && enemyTurn % assault.every === 0,
+      // 減速：這一題少幾秒（最少留 6 秒）
+      ...(s.slowNext > 0 ? { questionLimit: Math.max(6000, timer.questionLimit - s.slowNext), questionLeft: Math.max(6000, timer.questionLimit - s.slowNext), slowNext: 0 } : {}),
+      enemyTurn, ...statuses,
       ...boss,
     };
   };
@@ -509,18 +523,88 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     };
   };
 
-  // 蓄力那一題答對：快答打斷（敵人暈眩），太慢就吃一記蓄力攻擊（護盾可擋）
-  const resolveCharge = (party: Member[], elapsed: number): Partial<BattleState> & { counter?: { member: MemberId; amount: number }; interrupted?: boolean; wiped?: boolean } => {
+  // ---------- 敵人攻擊模式 ----------
+  // 行動條是否運作：一般模式、A2+、會攻擊的怪物（寶箱怪不攻擊）
+  // 區域最終魔王用專屬的攻擊模式，其他依怪物種類
+  const patternFor = (s: BattleState) => patternOf(s);
+  const gaugeActive = (s: BattleState) => s.mode === 'normal' && !!patternFor(s) && s.stages[s.stageIdx]?.kind !== 'treasure';
+
+  // 每出一題：中毒扣血（不會扣到倒下）、虛弱倒數
+  const tickStatuses = (): Partial<BattleState> => {
     const s = get();
-    const a = assaultFor(s.levelIdx);
-    if (!s.charging || !a) return {};
-    if (a.window > 0 && elapsed <= a.window) return { charging: false, interrupted: true, charge: STUN_DAMAGE };
-    if (s.shield) return { charging: false, shield: false };
-    const strike = enemyStrike(party, a.hitMult);
+    if (!s.poison.length && !s.weakenLeft) return {};
+    let party = s.party;
+    for (const p of s.poison) party = party.map(m => (m.id === p.member && isAlive(m) ? { ...m, hp: Math.max(1, m.hp - p.dmg) } : m));
     return {
-      charging: false, ...withTotals(strike.party), attackerIdx: strike.attackerIdx, mapStats: strike.mapStats,
-      counter: { member: strike.event.member!, amount: strike.event.amount! }, wiped: strike.wiped,
+      ...withTotals(party),
+      poison: s.poison.map(p => ({ ...p, left: p.left - 1 })).filter(p => p.left > 0),
+      weakenLeft: Math.max(0, s.weakenLeft - 1),
     };
+  };
+
+  // 敵人出一招：依招式打一人、連擊或全體，附帶吸血、中毒、減速、虛弱、吸能量
+  const performMove = (move: EnemyMove) => {
+    const s = get();
+    const stage = s.stages[s.stageIdx];
+    const base = monsterAttack(stage.bossMode, s.levelIdx, s.stageIdx) * (stage.kind === 'elite' ? ELITE_POWER : 1);
+    // 護盾擋下這一招（不分單體或全體）
+    if (s.shield) {
+      set({ shield: false, enemyGauge: 0, enemyMoveIdx: s.enemyMoveIdx + 1, event: nextEvent('shield') });
+      return;
+    }
+    let party = s.party;
+    const hits: { member: MemberId; amount: number }[] = [];
+    const alive = () => party.map((m, i) => (isAlive(m) ? i : -1)).filter(i => i >= 0);
+    const hitOne = (idx: number, mult: number) => {
+      const target = party[idx];
+      const iron = random() < talentOf(target, 'ironWill') ? 0.5 : 1;
+      const amount = Math.max(1, Math.round(base * mult * iron));
+      party = party.map((m, i) => (i === idx ? { ...m, hp: Math.max(0, m.hp - amount) } : m));
+      hits.push({ member: target.id, amount });
+    };
+    const targets = alive();
+    if (!targets.length) return;
+    if (move.kind === 'aoe') targets.forEach(i => hitOne(i, move.power));
+    else if (move.kind === 'multi') {
+      for (let k = 0; k < (move.hits ?? 2); k++) {
+        const t = alive();
+        if (t.length) hitOne(t[Math.floor(random() * t.length)], move.power);
+      }
+    } else {
+      // 單體：戰士有機會挑釁、替隊友擋下
+      const warriors = targets.filter(i => party[i].classId === 'warrior');
+      const taunt = warriors.length > 0 && targets.length > 1 && random() < TAUNT_CHANCE;
+      hitOne(taunt ? warriors[0] : targets[Math.floor(random() * targets.length)], move.power * (taunt ? 1 - TAUNT_REDUCTION : 1));
+    }
+    const hitIds = [...new Set(hits.map(h => h.member))];
+    if (move.sapEnergy) party = party.map(m => (hitIds.includes(m.id) ? { ...m, energy: Math.max(0, m.energy - move.sapEnergy!) } : m));
+    const poison = move.poison
+      ? [...s.poison.filter(p => !hitIds.includes(p.member)),
+        ...hitIds.map(id => ({ member: id, left: POISON_TURNS, dmg: Math.max(1, Math.round((party.find(m => m.id === id)?.maxHp ?? 0) * move.poison!)) }))]
+      : s.poison;
+    const knockouts = party.filter((m, i) => isAlive(s.party[i]) && !isAlive(m)).length;
+    const wiped = party.every(m => !isAlive(m));
+    const attackerIdx = isAlive(party[s.attackerIdx] ?? party[0]) ? s.attackerIdx : Math.max(0, nextAlive(party, s.attackerIdx));
+    set({
+      ...withTotals(party), attackerIdx, poison,
+      monsterHp: move.drain ? Math.min(s.monsterMaxHp, s.monsterHp + Math.round(s.monsterMaxHp * move.drain)) : s.monsterHp,
+      ...(move.slow ? { slowNext: move.slow } : {}),
+      ...(move.weaken ? { weakenLeft: WEAKEN_TURNS, weaken: move.weaken } : {}),
+      enemyGauge: 0, enemyMoveIdx: s.enemyMoveIdx + 1,
+      mapStats: { ...s.mapStats, knockouts: s.mapStats.knockouts + knockouts },
+      event: nextEvent('enemyMove', { move: { icon: move.icon, name: move.name, hits } }),
+      ...(wiped ? { phase: 'gameOver' as const } : {}),
+    });
+    if (wiped) {
+      const key = failKey(s.levelKey, s.stageIdx);
+      stageFails.set(key, (stageFails.get(key) ?? 0) + 1);
+    }
+  };
+
+  // 下一招（給畫面預告用）
+  const nextMove = (s: BattleState) => {
+    const pattern = patternFor(s);
+    return pattern ? pattern.moves[s.enemyMoveIdx % pattern.moves.length] : null;
   };
 
   const earn = (amount: number, combo: number) => {
@@ -612,6 +696,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     * (1 + Math.min(1, Math.floor(combo / 10) * talentOf(m, 'resonance')))
     * (1 + (boss ? talentOf(m, 'giantSlayer') : 0));
 
+  // 答對時行動條往後退
+  const staggered = (elapsed: number) => Math.max(0, get().enemyGauge - (elapsed <= 3000 ? FAST_STAGGER : STAGGER));
+
   const onCorrect = () => {
     const s = get();
     if (!s.original || !s.question) return;
@@ -637,6 +724,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const crit = s.critLeft > 0 || (chainStep.triggered && !!FINISHERS[attacker.classId].crit) || random() < attacker.crit + (relayFx?.crit ?? 0);
     const regionScale = xpScale(s.levelIdx);
     let party = gainEnergy(s.party);
+    // 僧侶出手：攻擊之外，全隊回血
+    if (attacker.classId === 'monk') {
+      const heal = monkHeal(attacker.skillPower);
+      party = party.map(m => (isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.round(m.maxHp * heal)) } : m));
+    }
     // 運氣大師：最後 3 秒才答對，有機率技能能量直接集滿
     if (!s.overtime && s.questionLeft <= 3000 && random() < talentOf(attacker, 'luckyStar')) {
       party = party.map((m, i) => (i === attackerIdx ? { ...m, energy: Math.max(m.energy, SKILL_ENERGY) } : m));
@@ -682,12 +774,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const monsterShield = s.monsterShield - 1;
       const gold = earn(GOLD.correct, combo);
       const { xp, levelUp } = gainXp('none');
-      const { counter, interrupted, wiped, ...charged } = resolveCharge(party, elapsed);
       set({
         ...base, ...withTotals(party), ...nextQuestion(), monsterShield, runGold: s.runGold + gold, runXp: s.runXp + xp,
-        ...charged, mapStats: { ...base.mapStats, knockouts: charged.mapStats?.knockouts ?? base.mapStats.knockouts },
-        ...(wiped ? { phase: 'gameOver' as const } : {}),
-        event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion, levelUp, guardGained, counter, interrupted }),
+        enemyGauge: staggered(elapsed),
+        event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion, levelUp, guardGained }),
       });
       return;
     }
@@ -714,7 +804,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
         element: em > 1 ? em + attacker.mods.elementBonus : em,
         critMult: 2 + attacker.mods.critDmg,
-        extra: firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossGate ? BLESSING_DAMAGE : 1) * talentDamage(attacker, combo, stage.bossMode),
+        extra: (s.weakenLeft > 0 ? 1 - s.weaken : 1) * firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossGate ? BLESSING_DAMAGE : 1) * talentDamage(attacker, combo, stage.bossMode),
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     // 吸血：傷害的一部分轉為出手隊員的生命（每擊最多回復最大生命的 10%）
@@ -757,22 +847,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         finisher: finisher ? `${finisher.icon} ${finisher.name}` : undefined,
       }),
     };
-    // 敵人的蓄力攻擊在這一題結束時出手：就算這一擊把怪物打倒也一樣（只有快答能打斷）。
-    // 以前打倒怪物就取消蓄力，結果一擊倒的小怪永遠不會攻擊
-    const { counter, interrupted, wiped, ...charged } = resolveCharge(common.party, elapsed);
-    const after = {
-      ...common, ...charged,
-      mapStats: { ...common.mapStats, knockouts: charged.mapStats?.knockouts ?? common.mapStats.knockouts },
-      ...(counter || interrupted ? { event: { ...common.event, counter, interrupted } } : {}),
-    };
-    if (wiped) {
-      set({ ...after, phase: 'gameOver' });
-      if (s.mode === 'normal') {
-        const key = failKey(s.levelKey, s.stageIdx);
-        stageFails.set(key, (stageFails.get(key) ?? 0) + 1);
-      }
-      return;
-    }
+    // 答對打中：敵人的行動條往後退（快答退更多）
+    const after = { ...common, enemyGauge: staggered(elapsed) };
     if (!killed) {
       set({ ...after, ...nextQuestion() });
       return;
@@ -818,13 +894,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     // 護盾（援軍、道具或技能），或不會攻擊的寶箱怪：不受傷
     if (s.shield || stage.kind === 'treasure') {
-      set({ ...base, charging: false, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
+      set({ ...base, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
       return;
     }
     // 蓄力那一題答錯：吃到加倍的蓄力攻擊；魔王的分身與靜電再加倍
     const bossMultWrong = (s.mirageLeft > 0 ? 2 : 1) * (s.bossSkill === 'static' ? 1 + STATIC_STEP * s.staticStacks : 1)
       * (s.foeSkill === 'berserkFoe' && s.monsterHp < s.monsterMaxHp * 0.3 ? BERSERK_FOE_MULT : 1);
-    let strike = enemyStrike(s.party, (s.charging ? assaultFor(s.levelIdx)?.wrongMult ?? 1 : 1) * bossMultWrong);
+    let strike = enemyStrike(s.party, bossMultWrong);
     // 灰燼炸彈：倒數中答錯就爆炸，全隊各扣最大生命的 30%
     const exploded = s.bombLeft > 0;
     // 吸血鬼：攻擊隊員時回復生命
@@ -838,7 +914,6 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       mapStats: { ...base.mapStats, knockouts: strike.mapStats.knockouts },
       ...withTotals(strike.party),
       attackerIdx: strike.attackerIdx,
-      charging: false,
       mirageStreak: 0,
       staticStacks: s.bossSkill === 'static' ? s.staticStacks + 1 : 0,
       ...(vampHeal ? { monsterHp: Math.min(s.monsterMaxHp, s.monsterHp + vampHeal) } : {}),
@@ -938,7 +1013,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     stageHits: 0,
     enemyTurn: 0,
     ...bossSkillState(null),
-    charging: false,
+    monsterKind: 'slime',
+    enemyGauge: 0,
+    enemyMoveIdx: 0,
+    poison: [],
+    weakenLeft: 0,
+    weaken: 0,
+    slowNext: 0,
     wave: 1,
     waves: 1,
     bossGate: 0,
@@ -1030,6 +1111,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
             return;
           }
           set({ treasureLeft });
+        }
+        // 敵人行動條：集滿就依攻擊模式出招
+        if (gaugeActive(s)) {
+          const gauge = s.enemyGauge + ms / (gaugeSeconds(patternFor(s)!, s.levelIdx, s.stages[s.stageIdx].kind === 'elite') * 1000);
+          if (gauge >= 1) {
+            const move = nextMove(s);
+            if (move) performMove(move);
+            if (get().phase !== 'answering') return;
+          } else set({ enemyGauge: gauge });
         }
         if (s.overtime) return;
         const questionLeft = Math.max(0, s.questionLeft - ms);

@@ -129,7 +129,8 @@ const DEMON = [
 ];
 const DEMON_COLORS = { M: '#2a1a3a', R: '#ff2a4a', D: '#120a18', G: '#ffcd4b', A: '#3a2a52', L: '#6a4fa0', C: '#8f1f2e' };
 
-export type MonsterKind = 'slime' | 'bat' | 'mushroom' | 'king' | 'ghost' | 'chest' | 'demon';
+export type { MonsterKind } from '../enemyPatterns';
+import type { MonsterKind } from '../enemyPatterns';
 
 const MONSTER_ART: Record<MonsterKind, string[]> = {
   slime: SLIME, bat: BAT, mushroom: MUSHROOM, king: KING_SLIME, ghost: GHOST, chest: CHEST, demon: DEMON,
@@ -341,14 +342,8 @@ export function registerSprites(scene: Phaser.Scene) {
   register(scene, 'heart', HEART, ICON_FIXED);
 }
 
-// 一般關卡輪流出現三種怪物，Boss 是史萊姆王，復仇魔王是幽靈，寶箱關是寶箱怪
-export function monsterKindFor(stageIdx: number, isBoss: boolean, isRevenge: boolean, isTreasure = false, isFinal = false): MonsterKind {
-  if (isFinal) return 'demon';
-  if (isRevenge) return 'ghost';
-  if (isTreasure) return 'chest';
-  if (isBoss) return 'king';
-  return (['slime', 'bat', 'mushroom'] as MonsterKind[])[stageIdx % 3];
-}
+// 怪物種類的決定放在 enemyPatterns.ts（戰鬥邏輯也要用，不能依賴 Phaser）
+export { monsterKindFor } from '../enemyPatterns';
 
 export const MONSTER_NAMES: Record<MonsterKind, string> = {
   slime: '史萊姆', bat: '夜蝠', mushroom: '毒菇怪', king: '史萊姆王', ghost: '復仇魔王', chest: '寶箱怪', demon: '沉默魔王',

@@ -13,12 +13,12 @@ import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { towerReward } from '../game/modes';
 import { HERO_LEVEL_CAPS, MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, playerLevelCap, xpScale } from '../game/growth';
-import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
+import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
 import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weeklyDef } from '../game/daily';
 import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
-import { normalizeCharacter } from '../game/character';
+import { ELEMENTS, normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
 import { MAP_SIZE, REGIONS } from '../game/regions';
 import { clearStoryId, regionStoryId } from '../game/story';
@@ -88,6 +88,9 @@ interface SaveData {
   rushDay: string;                   // 每日素材本：今天的日期與已挑戰次數
   rushRuns: number;
   towerFloor: number;                // 英雄時空之塔：已通過的最高層
+  sweepTickets: number;              // 掃蕩券：三星地圖直接領獎勵（錯題修煉場取得）
+  trainingDay: string;               // 錯題修煉場今天已送出的掃蕩券數（每天上限）
+  trainingGiven: number;
   heroTier: Record<HeroId, number>;
   // 世界：每張地圖的最佳三星紀錄（key 為 regionId#mapIdx）、每個區域打到過的最遠關卡、看過的劇情
   mapStars: Record<string, boolean[]>;
@@ -143,6 +146,8 @@ interface SaveActions {
   startRush: () => void;
   grantRush: (reward: { gold: number; xp: number; ore: number }) => void;
   clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number } | null; // 第一次通過才有獎勵
+  earnSweepTickets: () => number;    // 修煉場連對 5 題：回傳實際拿到的張數（每天上限）
+  sweepMap: (regionIdx: number, rand?: () => number) => { gold: number; xp: number; drops: Record<string, number> } | null;
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
@@ -197,6 +202,9 @@ export const initialSave: SaveData = {
   rushDay: '',
   rushRuns: 0,
   towerFloor: 0,
+  sweepTickets: 0,
+  trainingDay: '',
+  trainingGiven: 0,
   heroTier: {},
   mapStars: {},
   bestStage: {},
@@ -275,6 +283,9 @@ function payShards(s: SaveData, id: HeroId, need: number): Partial<SaveData> | n
   if (fromWish > s.wishShards) return null;
   return { heroShards: { ...s.heroShards, [id]: own - (need - fromWish) }, wishShards: s.wishShards - fromWish };
 }
+export const SWEEP_PER_STREAK = 3;
+export const SWEEP_STREAK = 5;
+export const SWEEP_DAILY_MAX = 15;
 export const SHARD_QUIZ_COUNT = 5;
 export const SHARD_QUIZ_PER = 2;
 export const SHARD_QUIZ_MAX = 10;
@@ -772,6 +783,31 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return reward;
         },
 
+        // 錯題修煉場：連續答對 5 題送 3 張掃蕩券（每天最多 15 張）
+        earnSweepTickets: () => {
+          const s = get();
+          const today = new Date().toDateString();
+          const given = s.trainingDay === today ? s.trainingGiven : 0;
+          const n = Math.max(0, Math.min(SWEEP_PER_STREAK, SWEEP_DAILY_MAX - given));
+          if (n > 0) set({ sweepTickets: s.sweepTickets + n, trainingDay: today, trainingGiven: given + n });
+          return n;
+        },
+
+        // 掃蕩：用一張掃蕩券直接拿到一張三星地圖的獎勵（金幣、經驗、素材），不用再手動打一次
+        sweepMap: (regionIdx, rand = Math.random) => {
+          const s = get();
+          if (s.sweepTickets <= 0) return null;
+          const gold = Math.round(400 * (1 + regionIdx * 0.3));
+          const xp = Math.round(150 * xpScale(regionIdx));
+          const drops = rollDrops('boss', ELEMENTS[Math.floor(rand() * ELEMENTS.length)].id, rand, regionIdx);
+          drops.ore = (drops.ore ?? 0) + 5;
+          set({ sweepTickets: s.sweepTickets - 1 });
+          get().addGold(gold);
+          get().addMaterials(drops);
+          get().gainXp(xp);
+          return { gold, xp, drops };
+        },
+
         // 每日碎片英文題：每答對一題 2 片願望碎片（一天一次，最多 10 片）
         finishShardQuiz: (correct) => {
           const today = new Date().toDateString();
@@ -811,6 +847,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,
+        sweepTickets: s.sweepTickets, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,

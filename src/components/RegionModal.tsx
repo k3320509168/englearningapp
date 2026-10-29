@@ -12,13 +12,14 @@ import { keepFocus } from './keepFocus';
 import { GATE_LEVEL, SKIPPABLE_REGIONS, canChallengeGate } from '../game/placement';
 import { STAGES_PER_REGION, powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../game/progression';
 import { previewParty } from '../store/battleStore';
+import { materialIcon } from '../game/equipment';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
 // 點一張已解鎖的地圖，主角會跑過去，然後進入那張地圖的第 1 關。
 export default function RegionModal() {
   const regionIdx = useUiStore(s => s.regionIdx);
   const { closeModal, openStory } = useUiStore.getState();
-  const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex } = useSaveStore();
+  const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex, sweepTickets } = useSaveStore();
   const level = useSaveStore(s => s.player.level);
   const region = REGIONS[regionIdx] ?? REGIONS[0];
   const progress = levelProgress[region.id] ?? 0;
@@ -85,6 +86,16 @@ export default function RegionModal() {
                 {[0, 1, 2].map(k => <i key={k} className={stars?.[k] ? 'on' : ''}>★</i>)}
               </span>
               {isCurrent && <small className="route-progress">進行到第 {(progress % MAP_SIZE) + 1} 關</small>}
+              {countStars(stars) === 3 && (
+                <button className="level-restart" onMouseDown={keepFocus} disabled={running || sweepTickets <= 0}
+                  title={sweepTickets > 0 ? '用 1 張掃蕩券直接領這張地圖的獎勵' : '掃蕩券可以在「今日複習 → 錯題修煉場」取得'}
+                  onClick={() => {
+                    const r = useSaveStore.getState().sweepMap(regionIdx);
+                    if (!r) return;
+                    sfx.coin();
+                    useUiStore.getState().celebrate({ icon: '🎟️', title: `掃蕩「${name}」`, sub: `🪙 ${r.gold}・經驗 ${r.xp}・${Object.entries(r.drops).map(([k, v]) => `${materialIcon(k)}${v}`).join(' ')}`, color: '#ffcd4b' });
+                  }}>🎟️ 掃蕩（{sweepTickets}）</button>
+              )}
               {isCurrent && (
                 <button className="level-restart" onMouseDown={keepFocus} disabled={running} onClick={() => go(i, i * MAP_SIZE)}>↺ 從頭開始</button>
               )}

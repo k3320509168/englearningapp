@@ -70,7 +70,7 @@ export interface EquipDef {
 
 // 專屬武器：依職業不同名字，需要二轉
 const SIGNATURE: Record<ClassId, string> = {
-  mage: '古代咒語法杖', swordsman: '誓約之劍', warrior: '破城巨斧', archer: '風神長弓',
+  mage: '古代咒語法杖', swordsman: '誓約之劍', warrior: '破城巨斧', archer: '風神長弓', monk: '聖光權杖',
 };
 export const signatureName = (cls: ClassId) => SIGNATURE[cls];
 

@@ -11,6 +11,7 @@ export interface RelayDef {
   dmg: number;          // 傷害 +%
   crit: number;         // 暴擊率 +
   ignoreWeak: boolean;  // 不受屬性被剋制的減傷
+  guard?: boolean;      // 這一題答錯也保住 combo
 }
 
 export const RELAY: Record<ClassId, RelayDef> = {
@@ -18,6 +19,7 @@ export const RELAY: Record<ClassId, RelayDef> = {
   archer: { icon: '🎯', name: '瞄準', desc: '下一位隊員的暴擊率 +25%', dmg: 0, crit: 0.25, ignoreWeak: false },
   mage: { icon: '🔮', name: '元素共鳴', desc: '下一位隊員的攻擊 +15%，而且不會因為屬性被剋制而減傷', dmg: 0.15, crit: 0, ignoreWeak: true },
   warrior: { icon: '📣', name: '戰吼', desc: '下一位隊員的攻擊 +15%', dmg: 0.15, crit: 0, ignoreWeak: false },
+  monk: { icon: '🙏', name: '心靈祥和', desc: '下一位隊員的攻擊 +20%，而且那一題答錯也保住 combo', dmg: 0.2, crit: 0, ignoreWeak: false, guard: true },
 };
 
 // 連攜攻擊：站著的隊員每多一位，傷害再 +25%

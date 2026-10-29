@@ -17,6 +17,7 @@ const CLASS_COLORS: Record<ClassId, { A: string; a: string }> = {
   swordsman: { A: '#2f6fc4', a: '#1f4c8a' },
   warrior: { A: '#9c3b2e', a: '#6b2620' },
   archer: { A: '#3f8f4f', a: '#2a6236' },
+  monk: { A: '#ece4cc', a: '#b8ab88' },
 };
 
 const FIXED = {
@@ -226,6 +227,15 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
       g.rect(l, ty0 + 4, r, ty0 + 4, 'd'); g.set(cx, ty0 + 4, 'Q');
       g.set(r - 1, ty0 + 1, 'D'); g.set(r - 2, ty0 + 2, 'D'); g.set(r - 3, ty0 + 3, 'D');
       break;
+    case 'monk':
+      // 白色長袍到腳踝，金色領口、腰帶與胸前的聖印
+      g.rect(l, ty1, r, 23, 'A'); g.rect(l, ty1, l, 23, 'a');
+      g.rect(l - 1, 22, r + 1, 23, 'A'); g.rect(l - 1, 22, l - 1, 23, 'a');
+      g.rect(l - 1, 23, r + 1, 23, 'T');
+      g.rect(l + 1, ty0, r - 1, ty0, 'T');
+      g.rect(l, ty0 + 4, r, ty0 + 4, 'T'); g.set(cx, ty0 + 4, 'Q');
+      g.rect(cx, ty0 + 1, cx, ty0 + 3, 'Q'); g.set(cx - 1, ty0 + 2, 'Q'); g.set(cx + 1, ty0 + 2, 'Q');
+      break;
   }
 
   // 圓潤：腰帶繞過整個肚子，看得出肚子的弧度
@@ -306,6 +316,12 @@ export function composeAvatar(c: Character, frame: AvatarFrame, tier = 0): { row
 
 function drawIdleWeapon(g: Grid, cls: ClassId, wx: number, hy: number) {
   switch (cls) {
+    case 'monk':
+      // 聖杖：木杖頂端是金色環與屬性寶石
+      g.rect(wx, hy - 10, wx, hy + 5, 'D');
+      g.rect(wx - 1, hy - 14, wx + 2, hy - 14, 'T'); g.rect(wx - 1, hy - 13, wx - 1, hy - 11, 'T'); g.rect(wx + 2, hy - 13, wx + 2, hy - 11, 'T');
+      g.rect(wx, hy - 13, wx + 1, hy - 12, 'Q'); g.set(wx + 1, hy - 13, 'L');
+      break;
     case 'mage':
       g.rect(wx, hy - 10, wx, hy + 5, 'D');
       g.rect(wx, hy - 13, wx + 1, hy - 11, 'Q'); g.set(wx + 1, hy - 13, 'L');
@@ -332,6 +348,12 @@ function drawIdleWeapon(g: Grid, cls: ClassId, wx: number, hy: number) {
 
 function drawAttackWeapon(g: Grid, cls: ClassId, hx: number, hy: number) {
   switch (cls) {
+    case 'monk':
+      g.rect(hx - 2, hy, hx + 8, hy, 'D');
+      g.rect(hx + 9, hy - 2, hx + 9, hy + 2, 'T'); g.rect(hx + 12, hy - 2, hx + 12, hy + 2, 'T');
+      g.rect(hx + 10, hy - 2, hx + 11, hy - 2, 'T'); g.rect(hx + 10, hy + 2, hx + 11, hy + 2, 'T');
+      g.rect(hx + 10, hy - 1, hx + 11, hy + 1, 'Q'); g.set(hx + 11, hy - 1, 'L');
+      break;
     case 'mage':
       g.rect(hx - 2, hy, hx + 8, hy, 'D');
       g.rect(hx + 9, hy - 1, hx + 11, hy + 1, 'Q'); g.set(hx + 10, hy - 1, 'L'); g.set(hx + 12, hy - 2, 'L');

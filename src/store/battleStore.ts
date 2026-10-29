@@ -592,7 +592,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const s = get();
     if (!s.question || !s.original) return;
     save().recordAnswer(s.original, false, false);
-    const guarded = s.comboGuard;
+    // 守護之盾，或僧侶的「心靈祥和」接力：這一題答錯也保住 combo
+    const guarded = s.comboGuard || !!relayFor(s.relay, s.party[s.attackerIdx]?.id ?? '')?.guard;
     const stage = s.stages[s.stageIdx];
     const base = {
       combo: guarded ? s.combo : s.blessed ? Math.floor(s.combo * BLESSED_COMBO_KEEP) : 0,

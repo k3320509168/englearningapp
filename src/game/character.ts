@@ -1,7 +1,7 @@
 // 主角（玩家自創角色）：職業、屬性、外觀與名字。
 // 外觀只存「選項編號」，像素圖在 art/avatar.ts 依編號分層組合出來。
 
-export type ClassId = 'mage' | 'swordsman' | 'warrior' | 'archer';
+export type ClassId = 'mage' | 'swordsman' | 'warrior' | 'archer' | 'monk';
 export type Element = 'metal' | 'wood' | 'water' | 'fire' | 'earth' | 'light' | 'dark';
 export type Gender = 'male' | 'female';
 
@@ -35,6 +35,8 @@ export const CLASSES: ClassDef[] = [
   { id: 'swordsman', name: '劍士', weapon: '長劍', role: '攻守平衡', desc: '各項能力平均，適合第一次玩的人。', stats: { hp: 1.0, atk: 1.0, crit: 0.1 } },
   { id: 'warrior', name: '戰士', weapon: '戰斧', role: '耐打坦克', desc: '血量最厚，答錯也撐得住，傷害穩定。', stats: { hp: 1.3, atk: 0.85, crit: 0.05 } },
   { id: 'archer', name: '弓箭手', weapon: '長弓', role: '暴擊射手', desc: '暴擊率最高，連續答對時常常打出會心一擊。', stats: { hp: 0.9, atk: 0.95, crit: 0.2 } },
+  // 第四輪新增：補血與增益，攻擊較低但讓隊伍更不容易倒
+  { id: 'monk', name: '僧侶', weapon: '聖杖', role: '治療增益', desc: '會補血、給隊友增益並保住 combo，攻擊較低但讓隊伍很難倒下。', stats: { hp: 1.1, atk: 0.75, crit: 0.05 } },
 ];
 
 export interface ElementDef {

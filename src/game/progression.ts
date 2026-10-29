@@ -55,6 +55,7 @@ export type SkillId =
   | 'focus' | 'arrowRain' | 'pierce'     // 弓箭手
   | 'amplify' | 'heal' | 'fireball'      // 魔法師
   | 'haste' | 'quake' | 'fortify'        // 戰士
+  | 'prayer' | 'blessing' | 'angelWing'  // 僧侶
   | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora'; // SSR 專屬
 
 // 技能效果的組成（數值已經套用威力）
@@ -97,6 +98,9 @@ export const SKILLS: Record<SkillId, SkillDef> = {
   haste: { id: 'haste', icon: '⏩', name: '加速之歌', effect: p => ({ timeThis: r(8 * p) }) },
   quake: { id: 'quake', icon: '🪨', name: '大地震擊', effect: p => ({ charge: r1(1 + 1.2 * p), bossCharge: true }) },
   fortify: { id: 'fortify', icon: '🧱', name: '鋼鐵意志', effect: p => ({ shield: true, heal: r(15 * p) }) },
+  prayer: { id: 'prayer', icon: '🙏', name: '祈禱', effect: p => ({ shield: true, heal: r(22 * p) }) },
+  blessing: { id: 'blessing', icon: '🌟', name: '聖光祝福', effect: p => ({ amplify: r(2 * p), combo: r(2 * p) }) },
+  angelWing: { id: 'angelWing', icon: '👼', name: '天使之翼', effect: p => ({ revive: true, heal: r(18 * p), timeThis: 5 }) },
   rebirth: { id: 'rebirth', icon: '🐦‍🔥', name: '浴火重生', signature: true, effect: p => ({ revive: true, heal: r(30 * p) }) },
   eclipse: { id: 'eclipse', icon: '🌑', name: '日蝕斬', signature: true, effect: p => ({ charge: r1(2 + 2 * p) }) },
   storm: { id: 'storm', icon: '🌪️', name: '暴風連射', signature: true, effect: p => ({ crits: r(2 * p) + 1, charge: r1(1 + 0.4 * p) }) },
@@ -113,9 +117,10 @@ export const CLASS_SKILLS: Record<ClassId, SkillId[]> = {
   archer: ['focus', 'arrowRain', 'pierce'],
   mage: ['amplify', 'heal', 'fireball'],
   warrior: ['haste', 'quake', 'fortify'],
+  monk: ['prayer', 'blessing', 'angelWing'],
 };
 export const CLASS_SKILL: Record<ClassId, SkillId> = {
-  mage: 'amplify', swordsman: 'guard', warrior: 'haste', archer: 'focus',
+  mage: 'amplify', swordsman: 'guard', warrior: 'haste', archer: 'focus', monk: 'prayer',
 };
 
 // 技能威力：N 最弱，UR 最強

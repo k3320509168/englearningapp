@@ -30,6 +30,7 @@ export interface HeroDef {
 
 type Entry = [word: string, meaning: string, rarity: Rarity, classId: ClassId, element: Element, gender?: Gender];
 
+// 第四輪：牛奶、書、吟遊詩人、蠟燭、和諧、燈籠、聖域、寧靜改為僧侶（補血與增益）
 const ROSTER: Entry[] = [
   // N（A1 單字）
   ['knight', '騎士', 'N', 'swordsman', 'light', 'male'],
@@ -42,8 +43,8 @@ const ROSTER: Entry[] = [
   ['tree', '樹', 'N', 'warrior', 'wood'],
   ['fish', '魚', 'N', 'archer', 'water'],
   ['bird', '鳥', 'N', 'archer', 'wood', 'female'],
-  ['book', '書', 'N', 'mage', 'light'],
-  ['milk', '牛奶', 'N', 'swordsman', 'light', 'female'],
+  ['book', '書', 'N', 'monk', 'light'],
+  ['milk', '牛奶', 'N', 'monk', 'light', 'female'],
   ['star', '星星', 'N', 'mage', 'light', 'female'],
   ['rain', '雨', 'N', 'archer', 'water', 'female'],
   ['rose', '玫瑰', 'N', 'swordsman', 'wood', 'female'],
@@ -51,7 +52,7 @@ const ROSTER: Entry[] = [
   // R（A2 單字）
   ['archer', '弓箭手', 'R', 'archer', 'wood', 'male'],
   ['mage', '法師', 'R', 'mage', 'fire', 'female'],
-  ['bard', '吟遊詩人', 'R', 'mage', 'water', 'male'],
+  ['bard', '吟遊詩人', 'R', 'monk', 'water', 'male'],
   ['river', '河流', 'R', 'swordsman', 'water'],
   ['forest', '森林', 'R', 'archer', 'wood'],
   ['island', '島嶼', 'R', 'warrior', 'water'],
@@ -61,7 +62,7 @@ const ROSTER: Entry[] = [
   ['shadow', '影子', 'R', 'archer', 'dark'],
   ['silver', '白銀', 'R', 'swordsman', 'metal'],
   ['hunter', '獵人', 'R', 'archer', 'earth', 'male'],
-  ['candle', '蠟燭', 'R', 'mage', 'fire'],
+  ['candle', '蠟燭', 'R', 'monk', 'fire'],
   ['ocean', '海洋', 'R', 'mage', 'water'],
   // SR（B1 單字）
   ['dragon', '龍', 'SR', 'warrior', 'fire', 'male'],
@@ -70,19 +71,19 @@ const ROSTER: Entry[] = [
   ['warrior', '戰士', 'SR', 'warrior', 'earth'],
   ['journey', '旅程', 'SR', 'archer', 'wood'],
   ['courage', '勇氣', 'SR', 'swordsman', 'fire'],
-  ['harmony', '和諧', 'SR', 'mage', 'water', 'female'],
+  ['harmony', '和諧', 'SR', 'monk', 'water', 'female'],
   ['volcano', '火山', 'SR', 'warrior', 'fire'],
   ['glacier', '冰河', 'SR', 'archer', 'water'],
   ['compass', '羅盤', 'SR', 'archer', 'metal'],
-  ['lantern', '燈籠', 'SR', 'mage', 'light'],
+  ['lantern', '燈籠', 'SR', 'monk', 'light'],
   ['guardian', '守護者', 'SR', 'warrior', 'light'],
   // SSR（B2～C1 單字）
   ['phoenix', '鳳凰', 'SSR', 'mage', 'fire', 'female'],
   ['eclipse', '日蝕', 'SSR', 'swordsman', 'dark'],
   ['tempest', '暴風', 'SSR', 'archer', 'water'],
-  ['sanctuary', '聖域', 'SSR', 'swordsman', 'light', 'female'],
+  ['sanctuary', '聖域', 'SSR', 'monk', 'light', 'female'],
   ['valor', '英勇', 'SSR', 'warrior', 'metal', 'male'],
-  ['serenity', '寧靜', 'SSR', 'mage', 'water', 'female'],
+  ['serenity', '寧靜', 'SSR', 'monk', 'water', 'female'],
   ['labyrinth', '迷宮', 'SSR', 'archer', 'earth'],
   ['aurora', '極光', 'SSR', 'mage', 'light', 'female'],
 ];

@@ -33,7 +33,7 @@ describe('class tree', () => {
         second.forEach(t2 => expect(nextOptions(c.id, [t1.id, t2.id])).toHaveLength(1));
       }
     }
-    expect(CLASS_NODES.length).toBe(4 * 2 * (1 + 2 + 2));
+    expect(CLASS_NODES.length).toBe(CLASSES.length * 2 * (1 + 2 + 2));
   });
 
   it('requires level and cleared regions', () => {

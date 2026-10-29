@@ -134,6 +134,15 @@ const TREE: Record<ClassId, { first: Branch; second: [Branch, Branch] }[]> = {
       second: [['elf_ranger', '精靈遊俠', 'Elf Ranger', '森林賜予的時間', { timeMs: 2000, firstHit: 0.5 }],
         ['wind_bard', '風之詩人', 'Wind Bard', '開場的一箭最致命', { firstHit: 1.5 }]] },
   ],
+  // 僧侶（第四輪新增，和 Gemini 討論）：牧師線偏守護，詩人線偏時間與命中
+  monk: [
+    { first: ['priest', '牧師', 'Priest', '守護更頻繁、血量更厚', { hp: 0.2, guardEvery: 6 }],
+      second: [['bishop', '主教', 'Bishop', '全隊的堅實後盾', { hp: 0.3, guardEvery: 5 }],
+        ['saint', '聖徒', 'Saint', '神聖守護幾乎不間斷', { hp: 0.15, guardEvery: 4 }]] },
+    { first: ['bard', '吟遊詩人', 'Bard', '歌聲讓隊伍思考更從容', { timeMs: 2500 }],
+      second: [['prophet', '先知', 'Prophet', '預見答案，時間更充裕', { timeMs: 3000, crit: 0.05 }],
+        ['oracle', '神諭者', 'Oracle', '神諭讓攻擊更精準', { timeMs: 1500, crit: 0.15 }]] },
+  ],
 };
 
 const node = ([id, name, en, desc, mods]: Branch, tier: 1 | 2, parent: string): ClassNode => ({

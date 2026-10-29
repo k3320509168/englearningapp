@@ -643,3 +643,20 @@ describe('gate boss and elite skills (A2+)', () => {
     expect(state().foeSkill).toBeNull();
   });
 });
+
+describe('enemy charge still lands when the monster dies', () => {
+  it('B1+: one-hit waves still hit back on their charge turn', () => {
+    resetSave({ unlockedIndex: 4 });
+    state().startLevel(LEVELS[4]);
+    if (state().phase === 'lesson') state().startBattle();
+    let hurt = false;
+    for (let i = 0; i < 6 && !hurt; i++) {
+      const before = state().playerHp;
+      useBattleStore.setState({ monsterHp: 1 }); // 這一擊一定打倒
+      answerCurrent();
+      if (state().playerHp < before) hurt = true;
+      if (state().phase === 'monsterDown') state().nextStage();
+    }
+    expect(hurt).toBe(true);
+  });
+});

@@ -757,27 +757,33 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         finisher: finisher ? `${finisher.icon} ${finisher.name}` : undefined,
       }),
     };
-    if (!killed) {
-      const { counter, interrupted, wiped, ...charged } = resolveCharge(common.party, elapsed);
-      set({
-        ...common, ...nextQuestion(), ...charged,
-        mapStats: { ...common.mapStats, knockouts: charged.mapStats?.knockouts ?? common.mapStats.knockouts },
-        ...(wiped ? { phase: 'gameOver' as const } : {}),
-        ...(counter || interrupted ? { event: { ...common.event, counter, interrupted } } : {}),
-      });
-      if (wiped) {
+    // 敵人的蓄力攻擊在這一題結束時出手：就算這一擊把怪物打倒也一樣（只有快答能打斷）。
+    // 以前打倒怪物就取消蓄力，結果一擊倒的小怪永遠不會攻擊
+    const { counter, interrupted, wiped, ...charged } = resolveCharge(common.party, elapsed);
+    const after = {
+      ...common, ...charged,
+      mapStats: { ...common.mapStats, knockouts: charged.mapStats?.knockouts ?? common.mapStats.knockouts },
+      ...(counter || interrupted ? { event: { ...common.event, counter, interrupted } } : {}),
+    };
+    if (wiped) {
+      set({ ...after, phase: 'gameOver' });
+      if (s.mode === 'normal') {
         const key = failKey(s.levelKey, s.stageIdx);
         stageFails.set(key, (stageFails.get(key) ?? 0) + 1);
       }
       return;
     }
+    if (!killed) {
+      set({ ...after, ...nextQuestion() });
+      return;
+    }
     if (waveKill) {
       // 下一隻怪物馬上登場（血量回滿），題目接著出
-      set({ ...common, monsterHp: s.monsterMaxHp, wave: s.wave + 1, ...nextQuestion() });
+      set({ ...after, monsterHp: s.monsterMaxHp, wave: s.wave + 1, ...nextQuestion() });
       return;
     }
     if (s.mode === 'normal') stageFails.delete(failKey(s.levelKey, s.stageIdx));
-    finishStage(common);
+    finishStage(after);
   };
 
   const onWrong = (given: string, timeout = false) => {

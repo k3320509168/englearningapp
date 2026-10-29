@@ -1,4 +1,4 @@
-// 三星評價：每張地圖（10 關）結算時評分，條件依區域難度分三級。
+// 三星評價：每張地圖（10 關）結算時評分。
 // 條件刻意引導好的學習行為（穩定答對、複習錯題），不只比速度。
 
 export interface MapRunStats {
@@ -24,29 +24,20 @@ export interface StarCondition {
 const accuracy = (s: MapRunStats) => (s.answered ? s.correct / s.answered : 0);
 const avgMs = (s: MapRunStats) => (s.correct ? s.correctTimeMs / s.correct : Infinity);
 
-// 初級：建立信心
-const EASY: StarCondition[] = [
-  { label: '通關這張地圖', met: () => true },
-  { label: '打出 5 combo 以上', met: s => s.maxCombo >= 5 },
-  { label: '正確率 70% 以上', met: s => accuracy(s) >= 0.7 },
-];
-// 中級：複習與熟練
-const MEDIUM: StarCondition[] = [
-  { label: '沒有隊員倒下', met: s => s.knockouts === 0 },
-  { label: '答對 2 題魔王題（錯題複習）', met: s => s.bossQuestionsCorrect >= 2 },
-  { label: '答對的題目平均 5 秒內完成', met: s => avgMs(s) <= 5_000 },
-];
-// 高級：精確
-const HARD: StarCondition[] = [
-  { label: '結算時隊伍 HP 50% 以上', met: s => s.hpRatio >= 0.5 },
-  { label: '正確率 100%', met: s => s.answered > 0 && s.correct === s.answered },
-  { label: '頭目戰一題都沒答錯', met: s => s.bossFlawless },
-];
+// 第四輪（和 Gemini 討論）：原本的條件太容易拿滿。改成三個方向各一顆：
+// 生存（沒有隊員倒下）、英文準度（正確率 85%）、爽度與極限（最大 combo 達到該區門檻，或答對平均 3.5 秒內）。
+// combo 門檻每區提高，讓三星一直有挑戰性。
+export const STAR_COMBO = [8, 10, 12, 15, 18, 20, 25, 30, 35];
+export const STAR_ACCURACY = 0.85;
+export const STAR_FAST_MS = 3_500;
 
 export function starConditions(regionIdx: number): StarCondition[] {
-  if (regionIdx <= 1) return EASY;
-  if (regionIdx <= 3) return MEDIUM;
-  return HARD;
+  const combo = STAR_COMBO[Math.min(Math.max(0, regionIdx), STAR_COMBO.length - 1)];
+  return [
+    { label: '通關且沒有隊員倒下', met: s => s.knockouts === 0 },
+    { label: `正確率 ${Math.round(STAR_ACCURACY * 100)}% 以上`, met: s => accuracy(s) >= STAR_ACCURACY },
+    { label: `最大 combo 達 ${combo}，或答對平均 ${STAR_FAST_MS / 1000} 秒內`, met: s => s.maxCombo >= combo || avgMs(s) <= STAR_FAST_MS },
+  ];
 }
 
 export function evaluateStars(regionIdx: number, stats: MapRunStats): boolean[] {

@@ -206,6 +206,37 @@ export function monsterGrowth(stageIdx: number, levelIdx: number): number {
   return REGION_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION);
 }
 
+// ---------- 第四輪：關卡長度、魔王破甲、祝福（和 Gemini 討論後定案） ----------
+// 一般關：連續 WAVES 隻怪物，每隻約 1～2 擊。combo 高時一擊一隻、一路秒殺很爽；
+// 程度還不夠時每隻多打一兩下，一關大約 5～8 題。
+export const NORMAL_WAVES = 5;
+export const WAVE_HITS = 1.3;
+export const waveMaxHp = (stageIdx: number, levelIdx: number) =>
+  Math.round(BASE_DAMAGE * WAVE_HITS * monsterGrowth(stageIdx, levelIdx));
+
+// 首領戰「連擊破甲」：combo 沒達到門檻時傷害只剩 10%；門檻每區提高（區域最終魔王用全額，守門頭目用 6 成）。
+// combo 從整張地圖一路延續進首領戰，所以門檻是「這張地圖要穩穩答對多少題」。
+export const REGION_BOSS_COMBO = [15, 22, 30, 40, 50, 60, 72, 85, 100];
+export const ARMOR_DAMAGE = 0.1;
+export const bossComboGate = (levelIdx: number, final: boolean) => {
+  const full = REGION_BOSS_COMBO[Math.min(levelIdx, REGION_BOSS_COMBO.length - 1)];
+  return final ? full : Math.round(full * 0.6);
+};
+// 首領的血量：剛好達到門檻的隊伍，大約要答對 hits 題（守門 13、區域魔王 22）才打得倒
+export const BOSS_HITS = { gate: 13, final: 22 };
+export function bossMaxHp(stageIdx: number, levelIdx: number, final: boolean): number {
+  const gate = bossComboGate(levelIdx, final);
+  const hits = final ? BOSS_HITS.final : BOSS_HITS.gate;
+  let units = 0;
+  for (let k = 0; k < hits; k++) units += comboMultiplier(gate + k);
+  return Math.round(BASE_DAMAGE * units * monsterGrowth(stageIdx, levelIdx));
+}
+// 魔王祝福：首領戰（以及觸發祝福的一般關）答錯時 combo 只扣 30%，不會歸零
+export const BLESSED_COMBO_KEEP = 0.7;
+export const BLESSING_DAMAGE = 1.2; // 一般關失敗後的祝福：全隊傷害 +20%
+// 同一關失敗幾次後有多少機率得到祝福：失敗 1 次 50%、2 次以上必定
+export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ? 0.5 : 0);
+
 // 關卡變化：菁英怪有護盾，要答對 ELITE_SHIELD 題打破才會受傷（答錯會恢復一層）；
 // 寶箱怪不會攻擊，限時內每次命中都掉金幣，打開寶箱有大獎，時間到就逃走
 export const ELITE_SHIELD = 3;

@@ -24,15 +24,17 @@ describe('regions and maps', () => {
 });
 
 describe('three-star rating', () => {
-  it('uses easier conditions in early regions', () => {
-    expect(starConditions(0)[0].label).toBe('通關這張地圖');
-    expect(starConditions(4)).not.toEqual(starConditions(0));
+  it('raises the combo goal in later regions', () => {
+    expect(starConditions(0)[2].label).toContain('combo 達 8');
+    expect(starConditions(8)[2].label).toContain('combo 達 35');
   });
 
-  it('evaluates a run', () => {
-    const good = { ...emptyRunStats(), answered: 10, correct: 9, maxCombo: 6 };
+  it('evaluates a run: survive, 85% accuracy, combo or speed', () => {
+    const good = { ...emptyRunStats(), answered: 20, correct: 18, maxCombo: 9, correctTimeMs: 18 * 6000 };
     expect(evaluateStars(0, good)).toEqual([true, true, true]);
-    expect(evaluateStars(0, { ...good, correct: 5, maxCombo: 2 })).toEqual([true, false, false]);
+    expect(evaluateStars(0, { ...good, correct: 16, maxCombo: 2, knockouts: 1 })).toEqual([false, false, false]);
+    // combo 不夠，但答得很快也能拿第三顆
+    expect(evaluateStars(0, { ...good, maxCombo: 2, correctTimeMs: 18 * 3000 })[2]).toBe(true);
   });
 
   it('keeps the best record per condition', () => {

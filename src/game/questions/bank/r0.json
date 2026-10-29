@@ -2515,6 +2515,1356 @@
       ],
       "ans": "B",
       "explain": "詢問天氣「Is it raining outside? (外面在下雨嗎？)」，回答天氣狀況「No, it is sunny. (沒有，現在是晴天)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Map",
+      "options": [
+        "A. 地圖",
+        "B. 書本",
+        "C. 卡片",
+        "D. 鉛筆"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Map」，意思是「地圖」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Bag",
+      "options": [
+        "A. 衣服",
+        "B. 袋子／包包",
+        "C. 鞋子",
+        "D. 帽子"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Bag」，意思是「袋子、包包」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Key",
+      "options": [
+        "A. 錢包",
+        "B. 車票",
+        "C. 鑰匙",
+        "D. 電話"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Key」，意思是「鑰匙」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Room",
+      "options": [
+        "A. 電梯",
+        "B. 樓梯",
+        "C. 花園",
+        "D. 房間"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Room」，意思是「房間」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Breakfast",
+      "options": [
+        "A. 早餐",
+        "B. 午餐",
+        "C. 晚餐",
+        "D. 點心"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Breakfast」，意思是「早餐」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Price",
+      "options": [
+        "A. 尺寸",
+        "B. 價格",
+        "C. 顏色",
+        "D. 數量"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Price」，意思是「價格」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Name",
+      "options": [
+        "A. 國家",
+        "B. 公司",
+        "C. 名字",
+        "D. 工作"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Name」，意思是「名字」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Number",
+      "options": [
+        "A. 字母",
+        "B. 句子",
+        "C. 問題",
+        "D. 數字／號碼"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Number」，意思是「數字、號碼」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "At the airport",
+      "options": [
+        "A. 在機場",
+        "B. 在港口",
+        "C. 在車站",
+        "D. 在公車站"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「At the airport」，意思是「在機場」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "On the first floor",
+      "options": [
+        "A. 在地下室",
+        "B. 在一樓",
+        "C. 在二樓",
+        "D. 在頂樓"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「On the first floor」，意思是「在一樓」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Next to the bank",
+      "options": [
+        "A. 在醫院裡面",
+        "B. 在郵局對面",
+        "C. 在銀行旁邊",
+        "D. 在超市後面"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Next to the bank」，意思是「在銀行旁邊」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Half past two",
+      "options": [
+        "A. 一點半",
+        "B. 兩點整",
+        "C. 兩點十五分",
+        "D. 兩點半"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Half past two」，意思是「兩點半」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A cup of tea",
+      "options": [
+        "A. 一杯茶",
+        "B. 一杯咖啡",
+        "C. 一碗湯",
+        "D. 一瓶水"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「A cup of tea」，意思是「一杯茶」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Wait a minute",
+      "options": [
+        "A. 跟我來",
+        "B. 等一下",
+        "C. 快一點",
+        "D. 往這邊走"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Wait a minute」，意思是「等一下、稍等」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Ready to go",
+      "options": [
+        "A. 準備吃飯",
+        "B. 準備睡覺",
+        "C. 準備出發",
+        "D. 準備開會"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Ready to go」，意思是「準備出發」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Pay in cash",
+      "options": [
+        "A. 刷卡付款",
+        "B. 行動支付",
+        "C. 貨到付款",
+        "D. 付現金"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Pay in cash」，意思是「付現金」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Near the window",
+      "options": [
+        "A. 靠近窗戶",
+        "B. 靠近門口",
+        "C. 在角落裡",
+        "D. 在電梯旁"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Near the window」，意思是「靠近窗戶」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Have a seat",
+      "options": [
+        "A. 請喝水",
+        "B. 請坐",
+        "C. 請進",
+        "D. 請排隊"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Have a seat」，意思是「請坐」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "In the lobby",
+      "options": [
+        "A. 在餐廳裡",
+        "B. 在房間裡",
+        "C. 在大廳裡",
+        "D. 在走廊上"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「In the lobby」，意思是「在大廳裡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What is your phone number?",
+      "options": [
+        "A. I have two phones.",
+        "B. It is very expensive.",
+        "C. Call me tomorrow.",
+        "D. It is 555-1234."
+      ],
+      "ans": "D",
+      "explain": "詢問電話號碼「What is your phone number?」，回答「It is 555-1234. (是 555-1234)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How old are you?",
+      "options": [
+        "A. I am twenty-five years old.",
+        "B. I am fine, thank you.",
+        "C. I have three brothers.",
+        "D. It is five o'clock."
+      ],
+      "ans": "A",
+      "explain": "詢問年紀「How old are you?」，回答「I am twenty-five years old. (我 25 歲)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "When is your birthday?",
+      "options": [
+        "A. At the hotel.",
+        "B. It is in July.",
+        "C. I like cake.",
+        "D. Yes, I do."
+      ],
+      "ans": "B",
+      "explain": "詢問生日月份/日期「When is your birthday? (你的生日是何時？)」，回答「It is in July. (在七月)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Where do you live?",
+      "options": [
+        "A. I leave at six.",
+        "B. By taking a bus.",
+        "C. I live in Kaohsiung.",
+        "D. It is a big house."
+      ],
+      "ans": "C",
+      "explain": "詢問居住地「Where do you live? (你住在哪裡？)」，回答「I live in Kaohsiung. (我住在高雄)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How do you go to work?",
+      "options": [
+        "A. I work in an office.",
+        "B. With my manager.",
+        "C. At nine in the morning.",
+        "D. I take the MRT."
+      ],
+      "ans": "D",
+      "explain": "詢問通勤方式「How do you go to work? (你怎麼去上班？)」，回答「I take the MRT. (我搭捷運)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time do you wake up?",
+      "options": [
+        "A. At seven in the morning.",
+        "B. I am sleepy.",
+        "C. No, I don't.",
+        "D. For thirty minutes."
+      ],
+      "ans": "A",
+      "explain": "詢問起床時間「What time do you wake up? (你幾點起床？)」，回答「At seven in the morning. (早上七點)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you want some sugar?",
+      "options": [
+        "A. I like sweet food.",
+        "B. No, thanks.",
+        "C. It is on the table.",
+        "D. The coffee is hot."
+      ],
+      "ans": "B",
+      "explain": "詢問是否需要加糖「Do you want some sugar? (你需要一點糖嗎？)」，禮貌回絕「No, thanks. (不用，謝謝)」很自然合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you a student?",
+      "options": [
+        "A. Yes, I like reading.",
+        "B. I study English.",
+        "C. No, I work in a bank.",
+        "D. My teacher is nice."
+      ],
+      "ans": "C",
+      "explain": "詢問身分「Are you a student? (你是一名學生嗎？)」，回答「No, I work in a bank. (不是，我在銀行工作)」十分符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can you speak English?",
+      "options": [
+        "A. I am from Taiwan.",
+        "B. He speaks very fast.",
+        "C. Nice to meet you.",
+        "D. Yes, a little bit."
+      ],
+      "ans": "D",
+      "explain": "詢問語言能力「Can you speak English? (你會說英文嗎？)」，回答「Yes, a little bit. (會，會一點點)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What is she doing?",
+      "options": [
+        "A. She is reading a book.",
+        "B. She is my sister.",
+        "C. She likes music.",
+        "D. She will go to Taipei."
+      ],
+      "ans": "A",
+      "explain": "詢問對方正在做什麼「What is she doing? (她正在做什麼？)」，回答現在進行的動作「She is reading a book. (她正在看書)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Who is that man?",
+      "options": [
+        "A. He is very tall.",
+        "B. He is my new colleague.",
+        "C. In the meeting room.",
+        "D. About thirty years old."
+      ],
+      "ans": "B",
+      "explain": "詢問人物身分「Who is that man? (那個男人是誰？)」，回答「He is my new colleague. (他是我的新同事)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Doctor",
+      "options": [
+        "A. 醫生",
+        "B. 警察",
+        "C. 律師",
+        "D. 司機"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Doctor」，意思是「醫生」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Teacher",
+      "options": [
+        "A. 護理師",
+        "B. 老師",
+        "C. 學生",
+        "D. 廚師"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Teacher」，意思是「老師」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Weekend",
+      "options": [
+        "A. 昨天",
+        "B. 早上",
+        "C. 週末",
+        "D. 下午"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Weekend」，意思是「週末」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Today",
+      "options": [
+        "A. 明天",
+        "B. 後天",
+        "C. 昨天",
+        "D. 今天"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Today」，意思是「今天」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "City",
+      "options": [
+        "A. 城市",
+        "B. 鄉村",
+        "C. 國家",
+        "D. 海邊"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「City」，意思是「城市」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Car",
+      "options": [
+        "A. 飛機",
+        "B. 汽車",
+        "C. 公車",
+        "D. 機車"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Car」，意思是「汽車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Pen",
+      "options": [
+        "A. 橡皮擦",
+        "B. 尺",
+        "C. 鋼筆／原子筆",
+        "D. 鉛筆盒"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Pen」，意思是「鋼筆、原子筆」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Book",
+      "options": [
+        "A. 報紙",
+        "B. 雜誌",
+        "C. 信件",
+        "D. 書本"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Book」，意思是「書本」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Chair",
+      "options": [
+        "A. 椅子",
+        "B. 桌子",
+        "C. 沙發",
+        "D. 櫃子"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Chair」，意思是「椅子」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Job",
+      "options": [
+        "A. 興趣",
+        "B. 工作／職業",
+        "C. 公司",
+        "D. 老闆"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Job」，意思是「工作、職業」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Good morning",
+      "options": [
+        "A. 午安",
+        "B. 晚安",
+        "C. 早安",
+        "D. 再見"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Good morning」，意思是「早安」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "See you later",
+      "options": [
+        "A. 明天見",
+        "B. 下週見",
+        "C. 很高興認識你",
+        "D. 待會見"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「See you later」，意思是「待會見」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "On the desk",
+      "options": [
+        "A. 在書桌上",
+        "B. 在椅子下",
+        "C. 在抽屜裡",
+        "D. 在門後面"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「On the desk」，意思是「在書桌上」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "In the car",
+      "options": [
+        "A. 在火車上",
+        "B. 在汽車裡",
+        "C. 在公車站",
+        "D. 在計程車旁"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「In the car」，意思是「在汽車裡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "At work",
+      "options": [
+        "A. 在家裡",
+        "B. 在學校",
+        "C. 在工作中／上班中",
+        "D. 在餐廳"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「At work」，意思是「在工作中、上班中」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Go home",
+      "options": [
+        "A. 去上班",
+        "B. 去購物",
+        "C. 去旅行",
+        "D. 回家"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Go home」，意思是「回家」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Watch TV",
+      "options": [
+        "A. 看電視",
+        "B. 聽音樂",
+        "C. 看報紙",
+        "D. 玩電腦"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Watch TV」，意思是「看電視」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Drive a car",
+      "options": [
+        "A. 騎腳踏車",
+        "B. 開汽車",
+        "C. 搭公車",
+        "D. 走路"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Drive a car」，意思是「開汽車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Take a break",
+      "options": [
+        "A. 開始工作",
+        "B. 拿走杯子",
+        "C. 休息一下",
+        "D. 打破杯子"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Take a break」，意思是「休息一下」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Eat lunch",
+      "options": [
+        "A. 喝咖啡",
+        "B. 吃早餐",
+        "C. 吃晚餐",
+        "D. 吃午餐"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Eat lunch」，意思是「吃午餐」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Where are you going?",
+      "options": [
+        "A. I am a student.",
+        "B. Yes, I am.",
+        "C. I am going to the bank.",
+        "D. At ten o'clock."
+      ],
+      "ans": "C",
+      "explain": "對方詢問「Where are you going? (你要去哪裡？)」，回答目的地「I am going to the bank. (我要去銀行)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What are you doing?",
+      "options": [
+        "A. It is on the table.",
+        "B. She is my friend.",
+        "C. Tomorrow morning.",
+        "D. I am reading an email."
+      ],
+      "ans": "D",
+      "explain": "對方詢問「What are you doing? (你正在做什麼？)」，回答正在進行的動作「I am reading an email. (我正在讀一封電子郵件)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Who is she?",
+      "options": [
+        "A. She is my manager.",
+        "B. He is very tall.",
+        "C. I like this room.",
+        "D. By driving a car."
+      ],
+      "ans": "A",
+      "explain": "對方詢問「Who is she? (她是誰？)」，回答她的身分「She is my manager. (她是我的經理)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is this your pen?",
+      "options": [
+        "A. I have a brother.",
+        "B. Yes, it is mine.",
+        "C. The pen is red.",
+        "D. In the office."
+      ],
+      "ans": "B",
+      "explain": "對方詢問「Is this your pen? (這是你的筆嗎？)」，回答「Yes, it is mine. (是的，它是我的)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can I use your computer?",
+      "options": [
+        "A. The screen is big.",
+        "B. I bought it yesterday.",
+        "C. Sorry, I am using it.",
+        "D. He is an engineer."
+      ],
+      "ans": "C",
+      "explain": "對方詢問「Can I use your computer? (我能用你的電腦嗎？)」，禮貌拒絕「Sorry, I am using it. (抱歉，我正在用它)」很合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you like coffee?",
+      "options": [
+        "A. Two cups, please.",
+        "B. It is very hot today.",
+        "C. She drinks tea.",
+        "D. Yes, I drink it every day."
+      ],
+      "ans": "D",
+      "explain": "對方詢問喜好「Do you like coffee? (你喜歡咖啡嗎？)」，回答「Yes, I drink it every day. (是的，我每天都喝)」最自然。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How is the weather?",
+      "options": [
+        "A. It is very hot.",
+        "B. At five o'clock.",
+        "C. I like this book.",
+        "D. Near the window."
+      ],
+      "ans": "A",
+      "explain": "對方詢問天氣「How is the weather? (天氣如何？)」，回答天氣狀況「It is very hot. (非常熱)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "When will he arrive?",
+      "options": [
+        "A. By the train.",
+        "B. In ten minutes.",
+        "C. Yes, he will.",
+        "D. At the station."
+      ],
+      "ans": "B",
+      "explain": "對方詢問抵達時間「When will he arrive? (他何時會抵達？)」，回答時間點「In ten minutes. (十分鐘後)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are they from Japan?",
+      "options": [
+        "A. They are reading.",
+        "B. I went to Tokyo.",
+        "C. No, they are from Taiwan.",
+        "D. Yes, I am."
+      ],
+      "ans": "C",
+      "explain": "對方詢問國籍「Are they from Japan? (他們來自日本嗎？)」，回答「No, they are from Taiwan. (不，他們來自台灣)」最符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time do you go to bed?",
+      "options": [
+        "A. The bed is big.",
+        "B. In my room.",
+        "C. Yes, I am tired.",
+        "D. At eleven o'clock."
+      ],
+      "ans": "D",
+      "explain": "對方詢問就寢時間「What time do you go to bed? (你幾點上床睡覺？)」，回答時間「At eleven o'clock. (十一點鐘)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Supermarket",
+      "options": [
+        "A. 超市",
+        "B. 銀行",
+        "C. 郵局",
+        "D. 公園"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Supermarket」，意思是「超級市場、超市」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Store",
+      "options": [
+        "A. 學校",
+        "B. 商店",
+        "C. 飯店",
+        "D. 機場"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Store」，意思是「商店、店鋪」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Size",
+      "options": [
+        "A. 顏色",
+        "B. 價格",
+        "C. 尺寸",
+        "D. 數量"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Size」，意思是「尺寸、大小」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Cheap",
+      "options": [
+        "A. 昂貴的",
+        "B. 快速的",
+        "C. 緩慢的",
+        "D. 便宜的"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Cheap」，意思是「便宜的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Beef",
+      "options": [
+        "A. 牛肉",
+        "B. 豬肉",
+        "C. 雞肉",
+        "D. 魚肉"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Beef」，意思是「牛肉」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Chicken",
+      "options": [
+        "A. 羊肉",
+        "B. 雞肉",
+        "C. 青菜",
+        "D. 水果"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Chicken」，意思是「雞肉、雞」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Apple",
+      "options": [
+        "A. 香蕉",
+        "B. 橘子",
+        "C. 蘋果",
+        "D. 葡萄"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Apple」，意思是「蘋果」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Boat",
+      "options": [
+        "A. 飛機",
+        "B. 機車",
+        "C. 汽車",
+        "D. 船"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Boat」，意思是「船、小船」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Bicycle",
+      "options": [
+        "A. 腳踏車",
+        "B. 卡車",
+        "C. 捷運",
+        "D. 公車"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Bicycle」，意思是「腳踏車、自行車」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Street",
+      "options": [
+        "A. 橋樑",
+        "B. 街道",
+        "C. 廣場",
+        "D. 隧道"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Street」，意思是「街道、馬路」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Rain",
+      "options": [
+        "A. 雪",
+        "B. 太陽",
+        "C. 雨",
+        "D. 雲"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Rain」，意思是「雨、下雨」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Cold",
+      "options": [
+        "A. 炎熱的",
+        "B. 溫暖的",
+        "C. 涼爽的",
+        "D. 寒冷的"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Cold」，意思是「寒冷的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Try it on",
+      "options": [
+        "A. 試穿看看",
+        "B. 把它脫掉",
+        "C. 買下它",
+        "D. 包裝起來"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Try it on」，意思是「試穿看看」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Too expensive",
+      "options": [
+        "A. 太便宜了",
+        "B. 太貴了",
+        "C. 尺寸太大",
+        "D. 尺寸太小"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Too expensive」，意思是「太貴了」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Eat some rice",
+      "options": [
+        "A. 喝一碗湯",
+        "B. 吃一顆蘋果",
+        "C. 吃一些飯",
+        "D. 切一塊肉"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Eat some rice」，意思是「吃一些飯」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Drink juice",
+      "options": [
+        "A. 喝熱水",
+        "B. 喝咖啡",
+        "C. 喝牛奶",
+        "D. 喝果汁"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Drink juice」，意思是「喝果汁」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A table for two",
+      "options": [
+        "A. 兩人的位子",
+        "B. 兩杯水",
+        "C. 兩份菜單",
+        "D. 兩份甜點"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「A table for two」，意思是「（餐廳）兩人的位子」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Cross the street",
+      "options": [
+        "A. 等紅綠燈",
+        "B. 越過街道／過馬路",
+        "C. 沿著路走",
+        "D. 轉角處"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Cross the street」，意思是「越過街道、過馬路」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A sunny day",
+      "options": [
+        "A. 陰天",
+        "B. 雨天",
+        "C. 晴朗的一天",
+        "D. 下雪的一天"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「A sunny day」，意思是「晴朗的一天」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Five months ago",
+      "options": [
+        "A. 五天前",
+        "B. 五週前",
+        "C. 五年後",
+        "D. 五個月前"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Five months ago」，意思是「五個月前」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Just a minute",
+      "options": [
+        "A. 只要一分鐘／稍等一下",
+        "B. 一個小時",
+        "C. 還有時間",
+        "D. 時間到了"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Just a minute」，意思是「只要一分鐘」或「稍等一下」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How much are these shoes?",
+      "options": [
+        "A. I wear size ten.",
+        "B. They are fifty dollars.",
+        "C. The store is closed.",
+        "D. It is a rainy day."
+      ],
+      "ans": "B",
+      "explain": "詢問鞋子的價格「How much are these shoes? (這雙鞋多少錢？)」，回答價格「They are fifty dollars. (它們五十元)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you have a small size?",
+      "options": [
+        "A. I like the big one.",
+        "B. They are cheap.",
+        "C. Yes, let me check.",
+        "D. He is in the office."
+      ],
+      "ans": "C",
+      "explain": "在商店詢問尺寸「Do you have a small size? (你們有小號的嗎？)」，店員回答「Yes, let me check. (有的，讓我查一下)」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What would you like to eat?",
+      "options": [
+        "A. It is very cold.",
+        "B. The street is long.",
+        "C. I like to drink water.",
+        "D. I will have the chicken."
+      ],
+      "ans": "D",
+      "explain": "詢問想吃什麼「What would you like to eat? (你想要吃點什麼？)」，回答食物「I will have the chicken. (我要吃雞肉)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How can I get to the supermarket?",
+      "options": [
+        "A. Take bus number five.",
+        "B. I like to buy apples.",
+        "C. She goes to the store.",
+        "D. It is one hundred."
+      ],
+      "ans": "A",
+      "explain": "詢問交通方式「How can I get to the supermarket? (我要怎麼去超市？)」，指示搭乘公車「Take bus number five. (搭五號公車)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is it cold outside?",
+      "options": [
+        "A. The door is white.",
+        "B. Yes, wear a coat.",
+        "C. We eat breakfast.",
+        "D. No, I am fine."
+      ],
+      "ans": "B",
+      "explain": "詢問外面天氣「Is it cold outside? (外面很冷嗎？)」，回答並給予建議「Yes, wear a coat. (是的，穿件外套吧)」最貼切。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What time is the movie?",
+      "options": [
+        "A. I have a ticket.",
+        "B. Next to the bank.",
+        "C. It starts at seven.",
+        "D. The movie is good."
+      ],
+      "ans": "C",
+      "explain": "詢問電影放映時間「What time is the movie? (電影幾點播？)」，回答時間點「It starts at seven. (它七點開始)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How many apples do you want?",
+      "options": [
+        "A. I like bananas.",
+        "B. They are red.",
+        "C. From the supermarket.",
+        "D. Three, please."
+      ],
+      "ans": "D",
+      "explain": "詢問數量「How many apples do you want? (你想要幾顆蘋果？)」，回答數字「Three, please. (請給我三顆)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is the station far from here?",
+      "options": [
+        "A. No, just a five-minute walk.",
+        "B. The train is fast.",
+        "C. It is very expensive.",
+        "D. Yes, they are from Japan."
+      ],
+      "ans": "A",
+      "explain": "詢問距離「Is the station far from here? (車站離這裡很遠嗎？)」，回答時間距離「No, just a five-minute walk. (不遠，只要走五分鐘)」很自然合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Will it rain today?",
+      "options": [
+        "A. I have a car.",
+        "B. No, the sun is shining.",
+        "C. He runs very fast.",
+        "D. It is my first time."
+      ],
+      "ans": "B",
+      "explain": "詢問今日是否下雨「Will it rain today? (今天會下雨嗎？)」，回答天氣現況「No, the sun is shining. (不會，太陽正在發光呢)」最正確。"
     }
   ],
   "boss": [
@@ -3329,6 +4679,456 @@
       ],
       "ans": "D",
       "explain": "詢問火車發車時間「What time does the train leave? (火車幾點開？)」，回答時間「At five thirty. (五點半)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Address",
+      "options": [
+        "A. 郵票",
+        "B. 名字",
+        "C. 地址",
+        "D. 密碼"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Address」，意思是「地址」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Bill",
+      "options": [
+        "A. 菜單",
+        "B. 收據",
+        "C. 零錢",
+        "D. 帳單"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Bill」，意思是「帳單」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Sign your name",
+      "options": [
+        "A. 簽上你的名字",
+        "B. 說出你的名字",
+        "C. 拼出你的名字",
+        "D. 忘記你的名字"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Sign your name」，意思是「簽上你的名字」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Keep the change",
+      "options": [
+        "A. 請找零錢",
+        "B. 不用找零",
+        "C. 換一點錢",
+        "D. 準備零錢"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Keep the change」，意思是「不用找零了」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Wait in line",
+      "options": [
+        "A. 等待電話",
+        "B. 等待公車",
+        "C. 排隊等候",
+        "D. 在線等候"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Wait in line」，意思是「排隊等候」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Late for work",
+      "options": [
+        "A. 準時下班",
+        "B. 提早下班",
+        "C. 請假一天",
+        "D. 上班遲到"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Late for work」，意思是「上班遲到」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How long is the meeting?",
+      "options": [
+        "A. About an hour.",
+        "B. In room 201.",
+        "C. With the boss.",
+        "D. Tomorrow morning."
+      ],
+      "ans": "A",
+      "explain": "詢問時間長度「How long is the meeting? (會議有多長？)」，回答時間長度「About an hour. (大約一小時)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Why are you late?",
+      "options": [
+        "A. At nine o'clock.",
+        "B. The traffic was bad.",
+        "C. I am going home.",
+        "D. Yes, I am."
+      ],
+      "ans": "B",
+      "explain": "詢問原因「Why are you late? (你為什麼遲到了？)」，回答原因「The traffic was bad. (交通狀況很糟／塞車)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Which one is your bag?",
+      "options": [
+        "A. I have a bag.",
+        "B. It is very heavy.",
+        "C. The black one.",
+        "D. On the desk."
+      ],
+      "ans": "C",
+      "explain": "詢問哪一個是特定物品「Which one is your bag? (哪一個是你的包包？)」，回答物品特徵「The black one. (黑色的那一個)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you have any questions?",
+      "options": [
+        "A. I don't know the answer.",
+        "B. This is a question.",
+        "C. Ask me tomorrow.",
+        "D. No, everything is clear."
+      ],
+      "ans": "D",
+      "explain": "會議或解說後詢問「Do you have any questions? (你有任何問題嗎？)」，回答「No, everything is clear. (沒有，一切都很清楚)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Interview",
+      "options": [
+        "A. 面試",
+        "B. 開會",
+        "C. 辭職",
+        "D. 升遷"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Interview」，意思是「面試、採訪」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Colleague",
+      "options": [
+        "A. 老闆",
+        "B. 同事",
+        "C. 客戶",
+        "D. 學生"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Colleague」，意思是「同事」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Out of order",
+      "options": [
+        "A. 已經出貨",
+        "B. 沒有存貨",
+        "C. 故障／待修",
+        "D. 超出預算"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Out of order」，意思是「故障、待修」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "On vacation",
+      "options": [
+        "A. 在開會中",
+        "B. 在出差中",
+        "C. 在通勤中",
+        "D. 休假中"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「On vacation」，意思是「休假中」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Sold out",
+      "options": [
+        "A. 賣完／售罄",
+        "B. 正在打折",
+        "C. 新品上市",
+        "D. 買一送一"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Sold out」，意思是「賣完、售罄」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Fill out the form",
+      "options": [
+        "A. 影印這份文件",
+        "B. 填寫表單",
+        "C. 寄出包裹",
+        "D. 繳交報告"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「Fill out the form」，意思是「填寫表單」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Why did you call me?",
+      "options": [
+        "A. He is a doctor.",
+        "B. About twenty dollars.",
+        "C. I need your help with a file.",
+        "D. By taking a taxi."
+      ],
+      "ans": "C",
+      "explain": "對方詢問「Why did you call me? (你為什麼打給我？)」，回答原因「I need your help with a file. (我需要你幫忙處理一個檔案)」最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How was your weekend?",
+      "options": [
+        "A. Tomorrow is Monday.",
+        "B. In the meeting room.",
+        "C. I bought a new pen.",
+        "D. It was great, I went to Taipei."
+      ],
+      "ans": "D",
+      "explain": "對方詢問「How was your weekend? (你週末過得如何？)」，回答「It was great, I went to Taipei. (很棒，我去了台北)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Whose bag is this?",
+      "options": [
+        "A. It belongs to Mr. Lin.",
+        "B. The bag is black.",
+        "C. It is very heavy.",
+        "D. At the airport."
+      ],
+      "ans": "A",
+      "explain": "對方詢問物品擁有者「Whose bag is this? (這是誰的包包？)」，回答「It belongs to Mr. Lin. (這是林先生的)」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Would you like to join us for dinner?",
+      "options": [
+        "A. I ate an apple.",
+        "B. I'd love to, thank you.",
+        "C. The dinner is at six.",
+        "D. Yes, they are coming."
+      ],
+      "ans": "B",
+      "explain": "對方提出邀請「Would you like to join us for dinner? (你想和我們一起吃晚餐嗎？)」，欣然接受「I'd love to, thank you. (我很樂意，謝謝)」最禮貌合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Month",
+      "options": [
+        "A. 年",
+        "B. 星期",
+        "C. 月份",
+        "D. 季節"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Month」，意思是「月份」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Minute",
+      "options": [
+        "A. 小時",
+        "B. 秒鐘",
+        "C. 一半",
+        "D. 分鐘"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Minute」，意思是「分鐘」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Hundred",
+      "options": [
+        "A. 一百",
+        "B. 一千",
+        "C. 一萬",
+        "D. 零"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Hundred」，意思是「一百」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "First",
+      "options": [
+        "A. 最後的",
+        "B. 第一的",
+        "C. 第二的",
+        "D. 唯一的"
+      ],
+      "ans": "B",
+      "explain": "英文原句為「First」，意思是「第一的、首先」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Walk slowly",
+      "options": [
+        "A. 跑得快",
+        "B. 走得快",
+        "C. 慢慢走",
+        "D. 停下來"
+      ],
+      "ans": "C",
+      "explain": "英文原句為「Walk slowly」，意思是「慢慢走」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Very fast",
+      "options": [
+        "A. 很遙遠",
+        "B. 很靠近",
+        "C. 很大聲",
+        "D. 非常快"
+      ],
+      "ans": "D",
+      "explain": "英文原句為「Very fast」，意思是「非常快」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Cold wind",
+      "options": [
+        "A. 刺骨寒風",
+        "B. 溫暖微風",
+        "C. 大雨",
+        "D. 濃霧"
+      ],
+      "ans": "A",
+      "explain": "英文原句為「Cold wind」，意思是「冷風、寒風」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can we have a table for two?",
+      "options": [
+        "A. The chair is broken.",
+        "B. Right this way, please.",
+        "C. The food is cold.",
+        "D. I like the menu."
+      ],
+      "ans": "B",
+      "explain": "在餐廳門口詢問「Can we have a table for two? (我們能有兩個人的位子嗎？)」，服務生回答「Right this way, please. (請走這邊)」最標準。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you want to buy it?",
+      "options": [
+        "A. I have a bike.",
+        "B. It is raining.",
+        "C. Yes, it is very cheap.",
+        "D. No, I am cooking."
+      ],
+      "ans": "C",
+      "explain": "詢問購買意願「Do you want to buy it? (你想買它嗎？)」，回答意願與理由「Yes, it is very cheap. (想，它很便宜)」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Which color do you like?",
+      "options": [
+        "A. The store is big.",
+        "B. It is a good price.",
+        "C. Next month.",
+        "D. I like the red one."
+      ],
+      "ans": "D",
+      "explain": "詢問顏色偏好「Which color do you like? (你喜歡哪一個顏色？)」，回答「I like the red one. (我喜歡紅色的那一個)」最正確。"
     }
   ]
 }

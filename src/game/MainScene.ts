@@ -78,6 +78,7 @@ export default class MainScene extends Phaser.Scene {
   private monsterBar!: PixelBar;
   private playerHpText!: Phaser.GameObjects.Text;
   private monsterNameText!: Phaser.GameObjects.Text;
+  private armorText!: Phaser.GameObjects.Text;
   private stageText!: Phaser.GameObjects.Text;
   private comboNum!: Phaser.GameObjects.Text;
   private comboLabel!: Phaser.GameObjects.Text;
@@ -191,6 +192,8 @@ export default class MainScene extends Phaser.Scene {
     this.monsterNameText = this.add.text(width - 24, 12, '', textStyle(22)).setOrigin(1, 0).setDepth(80);
     this.elementBadge = this.add.container(0, 0).setDepth(81);
     this.monsterBar = new PixelBar(this, width - 274, 54, 250, 16, true);
+    // 首領戰的破甲進度／一般關的第幾隻怪物
+    this.armorText = this.add.text(width - 24, 76, '', textStyle(16, '#ffcd4b', 4)).setOrigin(1, 0).setDepth(80);
     this.stageText = this.add.text(width / 2, 88, '', labelStyle(20)).setOrigin(0.5, 0).setDepth(80);
 
     this.comboNum = this.add.text(36, 150, '', numStyle(40)).setOrigin(0, 0.5).setDepth(85);
@@ -228,6 +231,7 @@ export default class MainScene extends Phaser.Scene {
     s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
+    this.armorText.setText(this.armorLabel(s)).setColor(s.bossGate > 0 && s.combo < s.bossGate ? '#ff8a8a' : '#ffcd4b');
     if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
     if (!prev) this.showCombo(s, 0);
@@ -417,7 +421,7 @@ export default class MainScene extends Phaser.Scene {
   // ---------- 攻擊 ----------
   private playAttack(event: BattleEvent, s: State) {
     const damage = event.amount ?? 0;
-    const killed = s.monsterHp <= 0;
+    const killed = s.monsterHp <= 0 || !!event.waveKill;
     const crit = event.crit ?? false;
     const member = s.party.find(m => m.id === event.member);
     const f = this.fighterFor(event.member);
@@ -616,9 +620,11 @@ export default class MainScene extends Phaser.Scene {
       this.time.delayedCall(160, () => this.cameras.main.zoomTo(1, 200, 'Quad.easeOut', true));
     }
 
-    if (sameStage()) this.monsterBar.set(s.monsterHp / Math.max(1, s.monsterMaxHp));
+    const waveKill = !!s.event?.waveKill;
+    if (sameStage()) this.monsterBar.set(waveKill ? 0 : s.monsterHp / Math.max(1, s.monsterMaxHp));
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
-    if (killed && sameStage()) this.time.delayedCall(140, () => this.playKill(s));
+    if (s.event?.armorBroken) this.armorBreak();
+    if (killed && sameStage()) this.time.delayedCall(140, () => { this.playKill(s); if (waveKill) this.time.delayedCall(420, () => this.nextWave(s)); });
     else if (killed) this.busy = false;
   }
 
@@ -748,6 +754,34 @@ export default class MainScene extends Phaser.Scene {
     this.time.delayedCall(650, () => {
       this.tweens.add({ targets: [band, label], alpha: 0, duration: 200, onComplete: () => { band.destroy(); label.destroy(); } });
     });
+  }
+
+  private armorLabel(s: State): string {
+    if (s.bossGate > 0) return s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
+    if (s.waves > 1) return `第 ${s.wave}/${s.waves} 隻${s.blessed ? '  ✨ 祝福中' : ''}`;
+    return s.blessed ? '✨ 祝福中' : '';
+  }
+
+  // 首領戰：combo 剛好達到門檻，盔甲碎裂
+  private armorBreak() {
+    sfx.crit(1.5);
+    screenFlash(this, 0xffcd4b, 0.35, 300);
+    shockwave(this, MONSTER_X, GROUND_Y - this.monsterSprite.displayHeight / 2, 0xffcd4b, 220, 8);
+    popText(this, 400, 170, '💥 破甲！傷害全開', 44, '#ffcd4b', { rise: 30, dur: 1400 });
+  }
+
+  // 一般關的下一隻怪物：從右邊跳進場（同一關，不換背景）
+  private nextWave(s: State) {
+    const now = useBattleStore.getState();
+    if (now.stageIdx !== s.stageIdx || !now.active) return;
+    this.tweens.killTweensOf([this.monsterSprite, this.monster]);
+    this.monsterIdle?.stop();
+    this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.monsterEl)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0).setVisible(true);
+    this.monsterShadow.setVisible(true).setScale(1);
+    this.monsterBar.set(1, true);
+    this.monster.setPosition(MONSTER_X + 260, GROUND_Y);
+    this.tweens.add({ targets: this.monster, x: MONSTER_X, duration: 260, ease: 'Quad.easeOut' });
+    this.tweens.add({ targets: this.monsterSprite, y: -50, duration: 150, yoyo: true, ease: 'Quad.easeOut', onComplete: () => this.startMonsterIdle() });
   }
 
   private playKill(s: State) {

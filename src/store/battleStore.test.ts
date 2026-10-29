@@ -300,7 +300,7 @@ describe('skills', () => {
 
   it('amplify (mage) doubles damage for the next hits', () => {
     startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'mage' }, party: ['player'] });
-    useBattleStore.setState({ combo: 0, questionCount: 1, party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
+    useBattleStore.setState({ combo: 0, questionCount: 1, monsterHp: 1e9, monsterMaxHp: 1e9, party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
     const before = state().monsterHp;
     answerCurrent();
     const normal = before - state().monsterHp;

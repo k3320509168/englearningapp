@@ -12,6 +12,7 @@ import type { AnswerRecord } from '../game/lesson';
 import {
   BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
   bossStep, computeDamage, goldWithBonus, skillEffect, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
+  ARMOR_DAMAGE, BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossComboGate, bossMaxHp, waveMaxHp,
 } from '../game/progression';
 import type { ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -60,6 +61,8 @@ export interface BattleEvent {
   relay?: string;                   // 這一擊吃到的接力加成（例如「⚔️ 劍氣接力」）
   chain?: number;                   // 觸發連攜攻擊：參與的隊員數
   taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
+  waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
+  armorBroken?: boolean;            // 首領戰：combo 剛好達到破甲門檻
 }
 
 // 地圖結算：這張地圖拿到的星星（與先前最佳紀錄合併前）、這次新拿到幾顆
@@ -134,6 +137,10 @@ interface BattleState {
   runXp: number;
   runDrops: Record<string, number>;
   stageHits: number; // 這一關打出的攻擊數（每關第一擊加成用）
+  wave: number;       // 一般關：第幾隻怪物（1 起算）
+  waves: number;      // 一般關：總共幾隻
+  bossGate: number;   // 首領戰：破甲需要的 combo（0 = 不是首領戰）
+  blessed: boolean;   // 祝福：答錯 combo 只扣 30%（首領戰固定有；一般關失敗後有機率）
 
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
@@ -170,6 +177,10 @@ let goldenDecks: Decks[] | null = null; // 黃金之路：每個區域一份題�
 const EASY_START = 3;
 let easyQueue: Question[] = [];
 // 只用在一般關卡（頭目、菁英、寶箱、復仇魔王照常出題）
+// 同一關失敗的次數（祝福觸發用）：key = 區域#關卡，通過那一關就清掉
+const stageFails = new Map<string, number>();
+const failKey = (levelKey: string, stageIdx: number) => `${levelKey}#${stageIdx}`;
+
 const takeEasy = (stage: Stage) => (stage.bossMode || stage.revenge || stage.kind ? undefined : easyQueue.shift());
 // 暴擊與敵人攻擊目標用的亂數（測試可替換）
 let random: () => number = Math.random;
@@ -281,6 +292,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     else if (s.mode === 'normal') save().setLevelProgress(s.levelKey, stageIdx);
     const stage = s.mode === 'normal' ? withRevenge(s.stages[stageIdx], stageIdx, s.stages.length) : s.stages[stageIdx];
     const stages = s.stages.map((st, i) => (i === stageIdx ? stage : st));
+    // 首領戰（一般模式）：連擊破甲＋魔王祝福；一般關連續 NORMAL_WAVES 隻怪物
+    const isFinalBoss = stage.kind === 'final' || stageIdx === s.stages.length - 1;
+    const bossGate = s.mode === 'normal' && stage.bossMode && !stage.revenge ? bossComboGate(s.levelIdx, isFinalBoss) : 0;
+    const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? NORMAL_WAVES : 1;
+    const fails = s.mode === 'normal' ? stageFails.get(failKey(s.levelKey, stageIdx)) ?? 0 : 0;
+    const blessed = bossGate > 0 || (fails > 0 && random() < blessingChance(fails));
+    if (bossGate > 0) {
+      useUiStore.getState().celebrate({ icon: '👑', title: '首領戰：連擊破甲', sub: `combo 未達 ${bossGate} 時傷害只有 ${Math.round(ARMOR_DAMAGE * 100)}%｜魔王祝福：答錯 combo 只扣 30%`, color: '#ff8a8a' });
+    } else if (blessed) {
+      useUiStore.getState().celebrate({ icon: '✨', title: '女神的祝福', sub: '這一關答錯不會中斷 combo（只扣 30%），全隊傷害 +20%', color: '#7fe8ff' });
+    }
     // 復仇魔王：每答對一題扣固定血量，要把到期的錯題全部答對才會倒下
     const maxHp = stage.revenge
       ? stage.questions.length * BASE_DAMAGE * 2
@@ -288,7 +310,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         ? Math.round(BASE_DAMAGE * TREASURE_HITS * monsterGrowth(stageIdx, s.levelIdx))
         : golden ? goldenMonsterHp(stageIdx, stage)
         : s.mode === 'skill' ? Math.round(BASE_DAMAGE * SKILL_BOSS_HITS * monsterGrowth(25, s.levelIdx))
-        : Math.round(monsterMaxHp(stageIdx, s.levelIdx, stage.bossMode) * (stage.kind === 'elite' ? ELITE_HP_MULT : stage.kind === 'final' ? 3 : 1));
+        : stage.bossMode ? bossMaxHp(stageIdx, s.levelIdx, isFinalBoss)
+        : stage.kind === 'elite' ? Math.round(monsterMaxHp(stageIdx, s.levelIdx, false) * ELITE_HP_MULT)
+        : waveMaxHp(stageIdx, s.levelIdx);
     // 區段開頭，或從中途繼續時，先預習這一段的內容
     const showLesson = !golden && s.mode !== 'skill' && (stageIdx % SEGMENT_SIZE === 0 || isFirst) && save().settings.showLessons;
     // 新地圖：combo 與戰績重新計算（combo 只在同一張地圖內延續）
@@ -315,6 +339,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         : monsterElement(stageIdx, golden ? goldenTier(stageIdx) : s.levelIdx, stage.revenge || stage.kind === 'final'),
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
       stageHits: 0,
+      wave: 1, waves, bossGate, blessed,
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
@@ -505,32 +530,38 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const rawEm = stage.kind === 'treasure' ? 1 : elementMultiplier(attacker.element, s.monsterElement);
     const em = relayFx?.ignoreWeak && rawEm < 1 ? 1 : rawEm;
     const teamwork = (1 + (relayFx?.dmg ?? 0)) * (chainStep.triggered ? chainMultiplier(aliveIds.length) : 1);
+    // 首領戰：combo 沒達到門檻時是「刮痧」，達到後全額
+    const armor = s.bossGate > 0 && combo < s.bossGate ? ARMOR_DAMAGE : 1;
+    const armorBroken = s.bossGate > 0 && combo === s.bossGate;
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
       : computeDamage({
         atk: attacker.atk, combo, comboStep: s.stats.comboStep, bossMult, speed, crit, amplify,
         element: em > 1 ? em + attacker.mods.elementBonus : em,
         critMult: 2 + attacker.mods.critDmg,
-        extra: firstHit * lowHp * teamwork * s.charge,
+        extra: firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossGate ? BLESSING_DAMAGE : 1),
       });
     const monsterHp = Math.max(0, s.monsterHp - damage);
     const killed = monsterHp <= 0;
+    // 一般關還有下一隻：只是這一波倒下，關卡繼續
+    const waveKill = killed && s.wave < s.waves;
+    const stageDone = killed && !waveKill;
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
 
     let goldBase = stage.kind === 'treasure' ? GOLD.treasureHit : GOLD.correct;
     if (killed) goldBase += stage.revenge ? GOLD.revengeKill : stage.bossMode ? GOLD.bossKill : stage.kind === 'treasure' ? GOLD.treasureOpen : GOLD.kill;
-    if (killed && isLastStage) goldBase += GOLD.levelClear;
+    if (stageDone && isLastStage) goldBase += GOLD.levelClear;
     const gold = earn(goldBase, combo);
     // 打倒頭目、通關可以拿到召喚券
-    const tickets = !killed ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
+    const tickets = !stageDone ? 0 : (stage.revenge ? TICKETS.revengeKill : stage.bossMode ? TICKETS.bossKill : 0) + (isLastStage ? TICKETS.levelClear : 0);
     if (tickets > 0 && s.mode === 'normal') save().addTickets(tickets);
 
     // 擊倒：經驗值與素材掉落
     const dropKind = stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : stage.kind === 'treasure' ? 'treasure' : 'normal';
     const { xp, levelUp } = gainXp(!killed ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
-    const drops = killed && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random, s.mode === 'normal' ? s.levelIdx : 0) : {};
-    if (killed) save().addMaterials(drops);
-    if (killed && stage.bossMode && s.mode !== 'golden') save().trackDaily('boss');
+    const drops = stageDone && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random, s.mode === 'normal' ? s.levelIdx : 0) : {};
+    if (stageDone) save().addMaterials(drops);
+    if (stageDone && stage.bossMode && s.mode !== 'golden') save().trackDaily('boss');
 
     const common = {
       ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
@@ -539,7 +570,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
         amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion,
-        levelUp, guardGained, drops: killed ? drops : undefined,
+        levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill, armorBroken,
         relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
         chain: chainStep.triggered ? aliveIds.length : undefined,
       }),
@@ -548,6 +579,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ ...common, ...nextQuestion() });
       return;
     }
+    if (waveKill) {
+      // 下一隻怪物馬上登場（血量回滿），題目接著出
+      set({ ...common, monsterHp: s.monsterMaxHp, wave: s.wave + 1, ...nextQuestion() });
+      return;
+    }
+    if (s.mode === 'normal') stageFails.delete(failKey(s.levelKey, s.stageIdx));
     finishStage(common);
   };
 
@@ -558,7 +595,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const guarded = s.comboGuard;
     const stage = s.stages[s.stageIdx];
     const base = {
-      combo: guarded ? s.combo : 0,
+      combo: guarded ? s.combo : s.blessed ? Math.floor(s.combo * BLESSED_COMBO_KEEP) : 0,
       bossMult: guarded ? s.bossMult : 1,
       bossChain: guarded ? s.bossChain : 0,
       comboGuard: false,
@@ -594,6 +631,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       event: strike.event,
       phase: strike.wiped ? 'gameOver' : 'feedback',
     });
+    if (strike.wiped && s.mode === 'normal') {
+      const key = failKey(s.levelKey, s.stageIdx);
+      stageFails.set(key, (stageFails.get(key) ?? 0) + 1);
+    }
   };
 
   const canAnswer = () => get().phase === 'answering' && get().question !== null;
@@ -680,6 +721,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     runXp: 0,
     runDrops: {},
     stageHits: 0,
+    wave: 1,
+    waves: 1,
+    bossGate: 0,
+    blessed: false,
 
     startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);

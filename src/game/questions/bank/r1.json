@@ -1,4 +1,1843 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O L L E A G U _ (同事)",
+      "ans": "E",
+      "speak": "colleague"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：經理；主管",
+      "ans": "MANAGER",
+      "speak": "manager"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M A N A G _ R (經理；主管)",
+      "ans": "E",
+      "speak": "manager"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M E E T I N _ (會議)",
+      "ans": "G",
+      "speak": "meeting"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：專案；計畫",
+      "ans": "PROJECT",
+      "speak": "project"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O J E C _ (專案；計畫)",
+      "ans": "T",
+      "speak": "project"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：客戶；顧客",
+      "ans": "CUSTOMER",
+      "speak": "customer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C U S T O M _ R (客戶；顧客)",
+      "ans": "E",
+      "speak": "customer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P A S S P O R _ (護照)",
+      "ans": "T",
+      "speak": "passport"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：L U G G A G _ (行李)",
+      "ans": "E",
+      "speak": "luggage"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：航班；飛行",
+      "ans": "FLIGHT",
+      "speak": "flight"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F L I G _ _ (航班；飛行)",
+      "ans": "HT",
+      "speak": "flight"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：預訂；預約",
+      "ans": "RESERVATION",
+      "speak": "reservation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E S E R V A T I _ _ (預訂；預約)",
+      "ans": "ON",
+      "speak": "reservation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：公寓",
+      "ans": "APARTMENT",
+      "speak": "apartment"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A P A R T M E _ _ (公寓)",
+      "ans": "NT",
+      "speak": "apartment"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：超市",
+      "ans": "SUPERMARKET",
+      "speak": "supermarket"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S U P E R M A R K _ _ (超市)",
+      "ans": "ET",
+      "speak": "supermarket"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：N E I G H B _ _ (鄰居)",
+      "ans": "OR",
+      "speak": "neighbor"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：活動；行動",
+      "ans": "ACTIVITY",
+      "speak": "activity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A C T I V I _ _ (活動；行動)",
+      "ans": "TY",
+      "speak": "activity"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：日曆；行事曆",
+      "ans": "CALENDAR",
+      "speak": "calendar"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C A L E N D _ _ (日曆；行事曆)",
+      "ans": "AR",
+      "speak": "calendar"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：收據；發票",
+      "ans": "RECEIPT",
+      "speak": "receipt"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E C E I _ _ (收據；發票)",
+      "ans": "PT",
+      "speak": "receipt"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C A N C _ _ (取消)",
+      "ans": "EL",
+      "speak": "cancel"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：確認",
+      "ans": "CONFIRM",
+      "speak": "confirm"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C O N F I _ _ (確認)",
+      "ans": "RM",
+      "speak": "confirm"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：解釋；說明",
+      "ans": "EXPLAIN",
+      "speak": "explain"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E X P L A _ _ (解釋；說明)",
+      "ans": "IN",
+      "speak": "explain"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：舒服的；舒適的",
+      "ans": "COMFORTABLE",
+      "speak": "comfortable"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O M F O R T _ _ _ _ (舒服的；舒適的)",
+      "ans": "ABLE",
+      "speak": "comfortable"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "luggage",
+      "options": [
+        "A. 行李",
+        "B. 機票",
+        "C. 護照",
+        "D. 乘客"
+      ],
+      "ans": "A",
+      "explain": "luggage (名詞) 意思是「行李」。屬於旅行常見單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "expensive",
+      "options": [
+        "A. 便宜的",
+        "B. 昂貴的",
+        "C. 快速的",
+        "D. 破舊的"
+      ],
+      "ans": "B",
+      "explain": "expensive (形容詞) 意思是「昂貴的」。常用於比較商品價格。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "manager",
+      "options": [
+        "A. 顧客",
+        "B. 員工",
+        "C. 經理",
+        "D. 秘書"
+      ],
+      "ans": "C",
+      "explain": "manager (名詞) 意思是「經理」。屬於工作日常單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "cloudy",
+      "options": [
+        "A. 晴朗的",
+        "B. 下雨的",
+        "C. 颳風的",
+        "D. 多雲的"
+      ],
+      "ans": "D",
+      "explain": "cloudy (形容詞) 意思是「多雲的」。描述天氣變化。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "recommend",
+      "options": [
+        "A. 推薦",
+        "B. 抱怨",
+        "C. 點餐",
+        "D. 結帳"
+      ],
+      "ans": "A",
+      "explain": "recommend (動詞) 意思是「推薦」。在餐廳或購物時常聽到。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "receipt",
+      "options": [
+        "A. 菜單",
+        "B. 收據",
+        "C. 零錢",
+        "D. 信用卡"
+      ],
+      "ans": "B",
+      "explain": "receipt (名詞) 意思是「收據、發票」。購物後常見單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "customer",
+      "options": [
+        "A. 老闆",
+        "B. 警衛",
+        "C. 顧客",
+        "D. 導遊"
+      ],
+      "ans": "C",
+      "explain": "customer (名詞) 意思是「顧客」。購物與工作日常單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "umbrella",
+      "options": [
+        "A. 雨衣",
+        "B. 外套",
+        "C. 太陽眼鏡",
+        "D. 雨傘"
+      ],
+      "ans": "D",
+      "explain": "umbrella (名詞) 意思是「雨傘」。天氣相關單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "preparing",
+      "options": [
+        "A. 正在準備",
+        "B. 正在睡覺",
+        "C. 正在旅行",
+        "D. 正在購物"
+      ],
+      "ans": "A",
+      "explain": "preparing (動詞現在分詞) 意思是「正在準備」，用於現在進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "heavier",
+      "options": [
+        "A. 更快的",
+        "B. 更重的",
+        "C. 更輕的",
+        "D. 更貴的"
+      ],
+      "ans": "B",
+      "explain": "heavier (形容詞) 意思是「更重的」，為 heavy 的比較級。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "cancelled",
+      "options": [
+        "A. 延期的",
+        "B. 預訂的",
+        "C. 取消的",
+        "D. 確認的"
+      ],
+      "ans": "C",
+      "explain": "cancelled (動詞過去式/過去分詞) 意思是「取消了」。與計畫邀約相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "busiest",
+      "options": [
+        "A. 最閒的",
+        "B. 最早的",
+        "C. 最晚的",
+        "D. 最忙的"
+      ],
+      "ans": "D",
+      "explain": "busiest (形容詞) 意思是「最忙的」，為 busy 的最高級。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I visited my grandparents last weekend.",
+      "options": [
+        "A. 我上週末去拜訪了祖父母。",
+        "B. 我下週末要去拜訪祖父母。",
+        "C. 我這個週末正在拜訪祖父母。",
+        "D. 我每個週末都會拜訪祖父母。"
+      ],
+      "ans": "A",
+      "explain": "原句意思為「我上週末去拜訪了祖父母。」使用過去簡單式 (visited) 表示過去發生的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She is buying a new laptop now.",
+      "options": [
+        "A. 她昨天買了一台新筆電。",
+        "B. 她正在買一台新筆電。",
+        "C. 她明天會買一台新筆電。",
+        "D. 她一直想買一台新筆電。"
+      ],
+      "ans": "B",
+      "explain": "原句意思為「她現在正在買一台新筆電。」使用現在進行式 (is buying)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This jacket is cheaper than that one.",
+      "options": [
+        "A. 這件外套跟那件一樣便宜。",
+        "B. 那件外套比較便宜。",
+        "C. 這件外套比那件便宜。",
+        "D. 這件外套是最便宜的。"
+      ],
+      "ans": "C",
+      "explain": "原句意思為「這件外套比那件便宜。」使用比較級 (cheaper than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Yesterday was the hottest day of the year.",
+      "options": [
+        "A. 今天是一年中最熱的一天。",
+        "B. 昨天是一年中最冷的一天。",
+        "C. 明天將是一年中最熱的一天。",
+        "D. 昨天是一年中最熱的一天。"
+      ],
+      "ans": "D",
+      "explain": "原句意思為「昨天是一年中最熱的一天。」使用最高級 (the hottest) 及過去式 (was)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you enjoy your trip to Japan?",
+      "options": [
+        "A. Yes, it was amazing!",
+        "B. Yes, I am going to Japan.",
+        "C. No, I will not go.",
+        "D. Japan is a country."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「你喜歡你的日本之旅嗎？」(過去式 Did)。最適合的回應是 A「是的，非常棒！」(過去式 was)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What are you eating?",
+      "options": [
+        "A. I ate a sandwich.",
+        "B. I am having a sandwich.",
+        "C. I will eat a sandwich.",
+        "D. Sandwiches are delicious."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你正在吃什麼？」(現在進行式 are you eating)。回應應選 B「我正在吃三明治」(am having)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Which phone is better?",
+      "options": [
+        "A. I have a phone.",
+        "B. The black one is calling.",
+        "C. The black one is faster.",
+        "D. My phone is broken."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「哪一支手機比較好？」(比較級 better)。回應應選 C「黑色的那支比較快」(比較級 faster)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Who is the tallest in your family?",
+      "options": [
+        "A. My brother is taller.",
+        "B. My brother is tall.",
+        "C. My brother is not here.",
+        "D. My brother is the tallest."
+      ],
+      "ans": "D",
+      "explain": "原句意思：「你們家誰最高？」(最高級 the tallest)。回應應選 D「我哥哥是最高的」(the tallest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are planning a trip to Tainan.",
+      "options": [
+        "A. 我們正在計畫去台南的旅行。",
+        "B. 我們昨天去了台南旅行。",
+        "C. 我們不打算去台南旅行。",
+        "D. 我們已經完成了台南的旅行。"
+      ],
+      "ans": "A",
+      "explain": "原句意思為「我們正在計畫一趟去台南的旅行。」使用現在進行式 (are planning)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I stayed at home and watched TV.",
+      "options": [
+        "A. 我現在正在家裡看電視。",
+        "B. 我待在家裡看電視。",
+        "C. 我明天打算待在家看電視。",
+        "D. 我不喜歡待在家看電視。"
+      ],
+      "ans": "B",
+      "explain": "原句意思為「我待在家裡並看了電視。」使用過去簡單式 (stayed, watched) 表達上週末的活動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "It is raining harder than yesterday.",
+      "options": [
+        "A. 昨天的雨下得比較大。",
+        "B. 今天的天氣比昨天好。",
+        "C. 今天的雨下得比昨天大。",
+        "D. 這兩天的雨一樣大。"
+      ],
+      "ans": "C",
+      "explain": "原句意思為「現在雨下得比昨天大。」使用現在進行式 (is raining) 和比較級 (harder than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This is the most expensive dish on the menu.",
+      "options": [
+        "A. 這是菜單上最便宜的菜。",
+        "B. 這道菜比其他菜好吃。",
+        "C. 這道菜不夠貴。",
+        "D. 這是菜單上最貴的菜。"
+      ],
+      "ans": "D",
+      "explain": "原句意思為「這是菜單上最昂貴的菜。」使用最高級 (the most expensive)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you working right now?",
+      "options": [
+        "A. Yes, I am checking my emails.",
+        "B. Yes, I checked my emails.",
+        "C. No, I am not a worker.",
+        "D. No, I didn't work."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「你現在正在工作嗎？」(現在進行式 Are you working)。最佳回應是 A「是的，我正在收發電子郵件」(am checking)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you buy the red shirt?",
+      "options": [
+        "A. I am buying it.",
+        "B. No, the blue one was cheaper.",
+        "C. Yes, the blue one is cheaper.",
+        "D. No, I don't wear shirts."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你買了那件紅襯衫嗎？」(過去式 Did you buy)。最佳回應是 B「沒有，藍色的比較便宜」(was cheaper)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The sun is shining brightly today.",
+      "options": [
+        "A. 今天天氣很陰暗。",
+        "B. 昨天陽光很明媚。",
+        "C. 今天陽光燦爛地照耀著。",
+        "D. 明天會有大太陽。"
+      ],
+      "ans": "C",
+      "explain": "原句意思為「今天陽光燦爛地照耀著。」描述天氣，使用現在進行式 (is shining)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I wanted to go hiking last Sunday, but it rained heavily.",
+      "options": [
+        "A. 我上星期天去爬山了，雖然下著大雨。",
+        "B. 我上星期天很想去爬山，但是下大雨了。",
+        "C. 我這個星期天要去爬山，希望不要下雨。",
+        "D. 我正在大雨中爬山。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「我上星期天想去爬山，但下大雨了。」句中使用過去簡單式 (wanted, rained) 描述週末計畫被打斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My new office is bigger and brighter than the old one.",
+      "options": [
+        "A. 我的舊辦公室比較大也比較明亮。",
+        "B. 我正在尋找更大更明亮的辦公室。",
+        "C. 我的新辦公室比舊的更大更明亮。",
+        "D. 這是我待過最大最明亮的辦公室。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「我的新辦公室比舊的更大、更明亮。」使用比較級 (bigger, brighter)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are having a special discount on all winter coats today.",
+      "options": [
+        "A. 我們的冬裝外套明天會有特別折扣。",
+        "B. 所有的冬裝外套昨天都打折了。",
+        "C. 我們不提供冬裝外套的折扣。",
+        "D. 我們今天所有的冬季外套都有特別折扣。"
+      ],
+      "ans": "D",
+      "explain": "原句意思：「我們今天所有的冬季外套都有特別折扣。」使用現在進行式 (are having) 表達目前的狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Hi, I am looking for a pair of running shoes. Do you have anything lighter?",
+      "options": [
+        "A. Yes, these are the lightest shoes in our store.",
+        "B. No, we are closed today.",
+        "C. I run every morning.",
+        "D. The shoes were too expensive."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「嗨，我正在找一雙跑步鞋。你們有更輕的嗎？」(比較級 lighter)。最佳回應是 A「有的，這些是我們店裡最輕的鞋」(最高級 the lightest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What did you do after work yesterday?",
+      "options": [
+        "A. I am going to a restaurant.",
+        "B. I met some friends for dinner.",
+        "C. I usually work late.",
+        "D. It is raining outside."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你昨天工作後做了什麼？」(過去式 did you do)。最佳回應是 B「我和一些朋友碰面吃晚餐」(過去式 met)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The flight was delayed because the weather was terrible.",
+      "options": [
+        "A. 因為天氣太差，班機被延誤了。",
+        "B. 班機準時起飛，天氣很好。",
+        "C. 天氣很差，所以我們取消了旅行。",
+        "D. 我們正在等天氣變好再訂機票。"
+      ],
+      "ans": "A",
+      "explain": "原句意思：「因為天氣很糟，班機延誤了。」使用過去簡單式 (was delayed, was terrible) 描述旅行經驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She is carrying the heaviest box because she is the strongest.",
+      "options": [
+        "A. 她不想搬最重的箱子。",
+        "B. 她正在搬最重的箱子，因為她是最強壯的。",
+        "C. 她搬的箱子比我的重。",
+        "D. 她昨天搬了最重的箱子。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「她正在搬最重的箱子，因為她是最強壯的。」結合現在進行式 (is carrying) 與最高級 (the heaviest, the strongest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you joining us for lunch?",
+      "options": [
+        "A. I joined them yesterday.",
+        "B. Yes, but this restaurant is worse than the other one.",
+        "C. Yes, I am finishing this report first.",
+        "D. No, I am not hungry yesterday."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「你要和我們一起吃午餐嗎？」(現在進行式表未來 Are you joining)。最佳回應是 C「是的，我正在先把這份報告做完」(am finishing)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How was the hotel you stayed at in Tokyo?",
+      "options": [
+        "A. I am staying in Tokyo.",
+        "B. It was great, and the room was bigger than I expected.",
+        "C. Tokyo is the biggest city.",
+        "D. I will book a hotel."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你在東京住的飯店如何？」(過去式 was, stayed)。最佳回應是 B「很棒，而且房間比我預期的更大」(過去式 was, 比較級 bigger)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I am writing an email to invite him to the party.",
+      "options": [
+        "A. 我昨天寫信邀請他來派對了。",
+        "B. 我不打算邀請他來派對。",
+        "C. 我正在寫一封電子郵件邀請他來派對。",
+        "D. 他寫信邀請我參加派對。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「我正在寫一封電子郵件邀請他參加派對。」使用現在進行式 (am writing) 表達計畫與邀約。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The seafood pasta was more delicious than the steak.",
+      "options": [
+        "A. 牛排比海鮮義大利麵好吃。",
+        "B. 兩道菜都非常美味。",
+        "C. 海鮮義大利麵是最難吃的。",
+        "D. 海鮮義大利麵比牛排更美味。"
+      ],
+      "ans": "D",
+      "explain": "原句意思：「海鮮義大利麵比牛排更美味。」使用過去簡單式 (was) 和比較級 (more delicious than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "medicine",
+      "options": [
+        "A. 藥物",
+        "B. 醫院",
+        "C. 醫生",
+        "D. 護士"
+      ],
+      "ans": "A",
+      "explain": "medicine (名詞) 意思是「藥物」。與健康看醫生主題相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "stomachache",
+      "options": [
+        "A. 頭痛",
+        "B. 胃痛",
+        "C. 感冒",
+        "D. 發燒"
+      ],
+      "ans": "B",
+      "explain": "stomachache (名詞) 意思是「胃痛、肚子痛」。常見的健康單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "straight",
+      "options": [
+        "A. 右轉",
+        "B. 左轉",
+        "C. 直走",
+        "D. 停止"
+      ],
+      "ans": "C",
+      "explain": "straight (副詞/形容詞) 在交通問路中常指「直走」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "message",
+      "options": [
+        "A. 信件",
+        "B. 報紙",
+        "C. 雜誌",
+        "D. 留言"
+      ],
+      "ans": "D",
+      "explain": "message (名詞) 意思是「訊息、留言」。與電話留言主題相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "concert",
+      "options": [
+        "A. 演唱會",
+        "B. 電影院",
+        "C. 博物館",
+        "D. 圖書館"
+      ],
+      "ans": "A",
+      "explain": "concert (名詞) 意思是「演唱會、音樂會」。屬於休閒活動單字。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "furniture",
+      "options": [
+        "A. 電器",
+        "B. 傢俱",
+        "C. 餐具",
+        "D. 文具"
+      ],
+      "ans": "B",
+      "explain": "furniture (名詞) 意思是「傢俱」。與居家環境相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "vacuuming",
+      "options": [
+        "A. 正在煮飯",
+        "B. 正在洗衣",
+        "C. 正在吸地",
+        "D. 正在洗碗"
+      ],
+      "ans": "C",
+      "explain": "vacuuming (動詞現在分詞) 意思是「正在用吸塵器打掃」。用於現在進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "dictionary",
+      "options": [
+        "A. 筆記本",
+        "B. 黑板",
+        "C. 考卷",
+        "D. 字典"
+      ],
+      "ans": "D",
+      "explain": "dictionary (名詞) 意思是「字典」。與學校課程相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "cleanest",
+      "options": [
+        "A. 最乾淨的",
+        "B. 最髒的",
+        "C. 最快的",
+        "D. 最慢的"
+      ],
+      "ans": "A",
+      "explain": "cleanest (形容詞) 意思是「最乾淨的」，為 clean 的最高級。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "worse",
+      "options": [
+        "A. 更好的",
+        "B. 更糟的",
+        "C. 更多的",
+        "D. 更少的"
+      ],
+      "ans": "B",
+      "explain": "worse (形容詞) 意思是「更糟的」，為 bad 的比較級。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "coughing",
+      "options": [
+        "A. 正在流鼻水",
+        "B. 正在頭痛",
+        "C. 正在咳嗽",
+        "D. 正在發燒"
+      ],
+      "ans": "C",
+      "explain": "coughing (動詞現在分詞) 意思是「正在咳嗽」。用於現在進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I broke my leg last month.",
+      "options": [
+        "A. 我這個月腿摔斷了。",
+        "B. 我上個月腿摔斷了。",
+        "C. 我昨天腿摔斷了。",
+        "D. 我的腿一直都斷著。"
+      ],
+      "ans": "B",
+      "explain": "原句意思為「我上個月摔斷了腿。」使用過去簡單式 (broke)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She is taking medicine for her cold.",
+      "options": [
+        "A. 她明天要吃感冒藥。",
+        "B. 她昨天吃了感冒藥。",
+        "C. 她正在吃感冒藥。",
+        "D. 她拒絕吃感冒藥。"
+      ],
+      "ans": "C",
+      "explain": "原句意思為「她正在為感冒吃藥。」使用現在進行式 (is taking)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This dictionary is heavier than that book.",
+      "options": [
+        "A. 那本書比較重。",
+        "B. 這本字典和那本書一樣重。",
+        "C. 這本字典是最重的。",
+        "D. 這本字典比那本書重。"
+      ],
+      "ans": "D",
+      "explain": "原句意思為「這本字典比那本書重。」使用比較級 (heavier than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He is the smartest student in our math class.",
+      "options": [
+        "A. 他是我們數學課裡最聰明的學生。",
+        "B. 他數學考得比我好。",
+        "C. 他的數學成績最差。",
+        "D. 他昨天沒有上數學課。"
+      ],
+      "ans": "A",
+      "explain": "原句意思為「他是我們數學課裡最聰明的學生。」使用最高級 (the smartest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you leave a message on his phone?",
+      "options": [
+        "A. He left a message.",
+        "B. Yes, I told him to call me back.",
+        "C. I am listening to a message.",
+        "D. No, I don't have a phone."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你有在他的手機留言嗎？」(過去式 Did you leave)。最適合的回應是 B「有，我叫他回電給我」(過去式 told)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What are you doing in the kitchen?",
+      "options": [
+        "A. I cooked dinner yesterday.",
+        "B. The kitchen is clean.",
+        "C. I am washing the dishes.",
+        "D. I will buy a new kitchen."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「你在廚房裡做什麼？」(現在進行式 are you doing)。回應應選 C「我正在洗碗」(am washing)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Which way is faster to the train station?",
+      "options": [
+        "A. The train station is very big.",
+        "B. I missed the train.",
+        "C. Taking the bus is slower.",
+        "D. Walking straight is faster."
+      ],
+      "ans": "D",
+      "explain": "原句意思：「哪條路去火車站比較快？」(比較級 faster)。回應應選 D「直走比較快」(比較級 faster)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We played tennis last weekend.",
+      "options": [
+        "A. 我們上週末打了網球。",
+        "B. 我們正在打網球。",
+        "C. 我們每個週末都打網球。",
+        "D. 我們下週末要打網球。"
+      ],
+      "ans": "A",
+      "explain": "原句意思為「我們上週末打了網球。」使用過去簡單式 (played) 表示過去的休閒活動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They are studying for the English exam now.",
+      "options": [
+        "A. 他們昨天考了英文。",
+        "B. 他們現在正在準備英文考試。",
+        "C. 他們英文考得最好。",
+        "D. 他們不打算準備英文考試。"
+      ],
+      "ans": "B",
+      "explain": "原句意思為「他們現在正在準備英文考試。」使用現在進行式 (are studying)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My cold is worse than yesterday.",
+      "options": [
+        "A. 我的感冒昨天比較嚴重。",
+        "B. 我昨天沒有感冒。",
+        "C. 我的感冒比昨天更嚴重了。",
+        "D. 我的感冒快要好了。"
+      ],
+      "ans": "C",
+      "explain": "原句意思為「我的感冒比昨天更嚴重了。」使用比較級 (worse than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This is the dirtiest shirt in the basket.",
+      "options": [
+        "A. 這是籃子裡最乾淨的襯衫。",
+        "B. 這件襯衫比其他衣服乾淨。",
+        "C. 籃子裡的襯衫都很髒。",
+        "D. 這是籃子裡最髒的襯衫。"
+      ],
+      "ans": "D",
+      "explain": "原句意思為「這是籃子裡最髒的襯衫。」使用最高級 (the dirtiest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Were you listening to music when I called?",
+      "options": [
+        "A. Yes, I am listening to a song.",
+        "B. No, I listen to music every day.",
+        "C. Yes, I was enjoying a concert online.",
+        "D. Music is very popular."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「我打電話時你正在聽音樂嗎？」(過去進行式 Were you listening)。最佳回應是 C「是的，我當時正在線上看演唱會」(was enjoying)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is she cleaning the living room?",
+      "options": [
+        "A. She cleaned the bathroom yesterday.",
+        "B. No, she is sleeping in her bedroom.",
+        "C. The living room is the biggest.",
+        "D. She wants to clean."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「她正在打掃客廳嗎？」(現在進行式 Is she cleaning)。最佳回應是 B「沒有，她正在臥室睡覺」(is sleeping)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The doctor gave me some medicine yesterday.",
+      "options": [
+        "A. 醫生正在給我開藥。",
+        "B. 醫生昨天開了一些藥給我。",
+        "C. 醫生給我開了最貴的藥。",
+        "D. 醫生明天會給我藥。"
+      ],
+      "ans": "B",
+      "explain": "原句意思為「醫生昨天給我開了一些藥。」使用過去簡單式 (gave)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I am riding my bike to school today.",
+      "options": [
+        "A. 我今天騎腳踏車去學校。",
+        "B. 我昨天騎腳踏車去學校。",
+        "C. 我不喜歡騎腳踏車去學校。",
+        "D. 我的腳踏車比你的快。"
+      ],
+      "ans": "A",
+      "explain": "原句意思為「我今天正在騎腳踏車去學校。」描述當下的交通方式，使用現在進行式 (am riding)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I went to the hospital because my stomachache was terrible.",
+      "options": [
+        "A. 我正在去醫院的路上，因為胃痛。",
+        "B. 我去了醫院，因為我的胃痛非常嚴重。",
+        "C. 醫院裡的醫生治好了我的胃痛。",
+        "D. 我肚子不痛了，所以沒去醫院。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「我去了醫院，因為我的胃痛非常嚴重。」句中使用過去簡單式 (went, was) 描述看醫生的經驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The subway is faster and cleaner than the bus.",
+      "options": [
+        "A. 公車比地鐵快也比較乾淨。",
+        "B. 地鐵是最快最乾淨的交通工具。",
+        "C. 地鐵比公車更快、更乾淨。",
+        "D. 我正在搭更快更乾淨的地鐵。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「地鐵比公車更快也更乾淨。」使用比較級 (faster, cleaner)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I am looking for my keys because I lost them this morning.",
+      "options": [
+        "A. 我今天早上找到了鑰匙。",
+        "B. 我把鑰匙弄丟在客廳最暗的角落。",
+        "C. 我比昨天更急著找鑰匙。",
+        "D. 我正在找鑰匙，因為我今天早上弄丟了。"
+      ],
+      "ans": "D",
+      "explain": "原句意思：「我正在找鑰匙，因為我今天早上把它們弄丟了。」結合現在進行式 (am looking) 與過去簡單式 (lost)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you finish the homework for the history class?",
+      "options": [
+        "A. History is the most difficult subject.",
+        "B. No, I am writing it right now.",
+        "C. The teacher was late yesterday.",
+        "D. I finished my dinner."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你完成歷史課的作業了嗎？」(過去式 Did you finish)。最佳回應是 B「還沒，我現在正在寫」(現在進行式 am writing)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How was the rock concert you went to last night?",
+      "options": [
+        "A. I am playing the guitar.",
+        "B. Rock music is louder than pop music.",
+        "C. It was amazing, the best show ever!",
+        "D. I will buy a ticket tomorrow."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「你昨晚去的搖滾演唱會怎麼樣？」(過去式 was, went)。最佳回應是 C「太棒了，是有史以來最好的表演！」(過去式 was, 最高級 the best)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "When I arrived at the station, the train was already leaving.",
+      "options": [
+        "A. 當我抵達車站時，火車才剛進站。",
+        "B. 當我抵達車站時，火車已經正在駛離。",
+        "C. 火車比我預期的更早離開。",
+        "D. 我正在搭乘駛離車站的火車。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「當我抵達車站時，火車已經正在駛離。」使用過去簡單式 (arrived) 與過去進行式 (was leaving) 描述交通經驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This is the most comfortable sofa in the living room.",
+      "options": [
+        "A. 客廳裡的沙發都不太舒服。",
+        "B. 這是客廳裡最舒服的沙發。",
+        "C. 這是最便宜的沙發。",
+        "D. 我正在客廳最舒服的沙發上休息。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「這是客廳裡最舒服的沙發。」使用最高級 (the most comfortable) 描述居家家具。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you watching a movie right now?",
+      "options": [
+        "A. Yes, it is scarier than the one we watched last week.",
+        "B. I watched it yesterday.",
+        "C. The movie was very long.",
+        "D. No, I didn't see him."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「你現在正在看電影嗎？」(現在進行式 Are you watching)。最佳回應是 A「是的，這部比我們上週看的那部更可怕」(比較級 scarier than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Who took the trash out this morning?",
+      "options": [
+        "A. I am taking the trash out.",
+        "B. The trash can is full.",
+        "C. My brother did it before he went to school.",
+        "D. Trash bags are cheaper here."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「今天早上誰去倒垃圾的？」(過去式 took)。最佳回應是 C「我弟弟去上學前倒的」(過去式 did, went)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I missed the call because I was taking a shower.",
+      "options": [
+        "A. 我正在洗澡，所以沒辦法接電話。",
+        "B. 我洗完澡後回撥了電話。",
+        "C. 這通電話比上一通更重要。",
+        "D. 我錯過了那通電話，因為我當時正在洗澡。"
+      ],
+      "ans": "D",
+      "explain": "原句意思：「我錯過了電話，因為我當時正在洗澡。」使用過去簡單式 (missed) 與過去進行式 (was taking)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She plays the piano much better than her sister.",
+      "options": [
+        "A. 她鋼琴彈得比她妹妹好很多。",
+        "B. 她和妹妹正在一起彈鋼琴。",
+        "C. 她是全家彈鋼琴最好的。",
+        "D. 她的妹妹昨天教她彈鋼琴。"
+      ],
+      "ans": "A",
+      "explain": "原句意思：「她鋼琴彈得比她妹妹好很多。」使用比較級 (better than)。"
+    }
+  ],
+  "boss": [
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：方便的",
+      "ans": "CONVENIENT",
+      "speak": "convenient"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O N V E N I _ _ _ (方便的)",
+      "ans": "ENT",
+      "speak": "convenient"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：目的地",
+      "ans": "DESTINATION",
+      "speak": "destination"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E S T I N A T _ _ _ (目的地)",
+      "ans": "ION",
+      "speak": "destination"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：紀念品",
+      "ans": "SOUVENIR",
+      "speak": "souvenir"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S O U V E _ _ _ (紀念品)",
+      "ans": "NIR",
+      "speak": "souvenir"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：觀光客；遊客",
+      "ans": "TOURIST",
+      "speak": "tourist"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：T O U R _ _ _ (觀光客；遊客)",
+      "ans": "IST",
+      "speak": "tourist"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：昂貴的",
+      "ans": "EXPENSIVE",
+      "speak": "expensive"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X P E N S _ _ _ (昂貴的)",
+      "ans": "IVE",
+      "speak": "expensive"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：著名的；出名的",
+      "ans": "FAMOUS",
+      "speak": "famous"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F A M _ _ _ (著名的；出名的)",
+      "ans": "OUS",
+      "speak": "famous"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "delicious",
+      "options": [
+        "A. 美味的",
+        "B. 糟糕的",
+        "C. 忙碌的",
+        "D. 疲倦的"
+      ],
+      "ans": "A",
+      "explain": "delicious (形容詞) 意思是「美味的」。與餐廳主題相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "inviting",
+      "options": [
+        "A. 抱怨",
+        "B. 邀請",
+        "C. 取消",
+        "D. 付款"
+      ],
+      "ans": "B",
+      "explain": "inviting (動詞現在分詞) 意思是「正在邀請」。與計畫邀約相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "discussing",
+      "options": [
+        "A. 清潔",
+        "B. 睡覺",
+        "C. 討論",
+        "D. 烹飪"
+      ],
+      "ans": "C",
+      "explain": "discussing (動詞現在分詞) 意思是「正在討論」。常見於工作日常。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Our team is working on the most difficult project right now.",
+      "options": [
+        "A. 我們團隊已經完成了這個專案。",
+        "B. 這個專案是所有專案中最簡單的。",
+        "C. 我們的團隊現在正在處理一個最困難的專案。",
+        "D. 其他團隊正在處理更難的專案。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「我們團隊現在正在進行最困難的專案。」使用現在進行式 (is working) 和最高級 (the most difficult)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I bought this bag because it was the cheapest.",
+      "options": [
+        "A. 我買這個包包是因為它比較好看。",
+        "B. 我沒買這個包包因為它太貴了。",
+        "C. 這個包包不是最便宜的。",
+        "D. 我買這個包包是因為它是最便宜的。"
+      ],
+      "ans": "D",
+      "explain": "原句意思：「我買了這個包包，因為它是最便宜的。」使用過去簡單式 (bought, was) 和最高級 (the cheapest)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Why are you wearing a thick coat?",
+      "options": [
+        "A. Because it is getting colder outside.",
+        "B. Because it was very hot yesterday.",
+        "C. I wore a coat last week.",
+        "D. The coat is cheaper."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「你為什麼穿著厚外套？」(現在進行式 are you wearing)。最佳回應為 A「因為外面天氣變得更冷了」(比較級 colder)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did the manager approve our plan?",
+      "options": [
+        "A. He is talking to a customer.",
+        "B. Yes, he thought it was the best idea.",
+        "C. He approves plans every day.",
+        "D. The manager is taller."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「經理批准我們的計畫了嗎？」(過去式 Did)。最佳回應是 B「是的，他認為這是最棒的主意」(過去式 thought, 最高級 the best)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They are comparing prices online before going shopping.",
+      "options": [
+        "A. 他們購物完後在網路上比較價格。",
+        "B. 他們正在網路上購物，因為比較便宜。",
+        "C. 他們去購物前，正在網路上比較價格。",
+        "D. 他們昨天在網路上比較了價格。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「他們在去購物前，正在網路上比較價格。」使用現在進行式 (are comparing)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I thought the first movie was good, but the second one was more exciting.",
+      "options": [
+        "A. 我覺得第一部電影比第二部好看。",
+        "B. 我覺得兩部電影都很無聊。",
+        "C. 我覺得第一部電影不錯，但第二部更刺激。",
+        "D. 這是我看過最刺激的電影。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「我覺得第一部電影不錯，但第二部更刺激。」使用過去式 (thought, was) 與比較級 (more exciting)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "While I was walking to the station, it started raining, so I bought an umbrella.",
+      "options": [
+        "A. 我在車站買了一把傘，然後開始下雨。",
+        "B. 走到車站的途中開始下雨，所以我買了一把傘。",
+        "C. 雖然下著雨，我還是沒買傘就走到車站。",
+        "D. 我正拿著一把更便宜的傘走向車站。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「當我正走向車站時，開始下雨了，所以我買了一把傘。」複合了過去進行式與過去簡單式 (started, bought)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you still discussing the schedule with the client?",
+      "options": [
+        "A. We discussed it last month.",
+        "B. Yes, it is taking longer than we expected.",
+        "C. The client is the most important person.",
+        "D. No, I will call the client tomorrow."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「你還在跟客戶討論時程表嗎？」(現在進行式 Are you discussing)。最佳回應是 B「是的，這花的時間比我們預期的還要長」(比較級 longer than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How did you feel about the customer service at that restaurant?",
+      "options": [
+        "A. I am a customer here.",
+        "B. It is raining outside.",
+        "C. It was the worst service I have ever experienced.",
+        "D. I am serving food right now."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「你覺得那家餐廳的客服如何？」(過去式 did you feel)。最佳回應是 C「這是我經歷過最糟糕的服務」(最高級 the worst)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "broken",
+      "options": [
+        "A. 完整的",
+        "B. 新的",
+        "C. 昂貴的",
+        "D. 損壞的"
+      ],
+      "ans": "D",
+      "explain": "broken (形容詞) 意思是「損壞的、破掉的」。可用於物品或身體受傷(如斷骨)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "semester",
+      "options": [
+        "A. 學期",
+        "B. 考試",
+        "C. 成績",
+        "D. 作業"
+      ],
+      "ans": "A",
+      "explain": "semester (名詞) 意思是「學期」。與學校與課程相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "traffic",
+      "options": [
+        "A. 天氣",
+        "B. 交通",
+        "C. 旅遊",
+        "D. 餐廳"
+      ],
+      "ans": "B",
+      "explain": "traffic (名詞) 意思是「交通、車流」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "hobby",
+      "options": [
+        "A. 工作",
+        "B. 運動",
+        "C. 嗜好",
+        "D. 習慣"
+      ],
+      "ans": "C",
+      "explain": "hobby (名詞) 意思是「嗜好」。與休閒活動相關。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The dentist is cleaning my teeth now.",
+      "options": [
+        "A. 牙醫昨天幫我洗牙了。",
+        "B. 牙醫現在正在幫我清潔牙齒。",
+        "C. 我的牙齒是最乾淨的。",
+        "D. 牙醫的診所非常乾淨。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「牙醫現在正在幫我清潔牙齒。」使用現在進行式 (is cleaning)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He drove carefully because the traffic was terrible.",
+      "options": [
+        "A. 他開車很小心，因為交通非常糟。",
+        "B. 他正在塞車中小心地開車。",
+        "C. 這是他遇過最糟的交通狀況。",
+        "D. 昨天的交通比今天糟。"
+      ],
+      "ans": "A",
+      "explain": "原句意思：「他開車很小心，因為交通非常糟。」使用過去簡單式 (drove, was)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you fixing the broken window?",
+      "options": [
+        "A. I fixed it last year.",
+        "B. The window is very big.",
+        "C. Yes, I am trying to repair it.",
+        "D. It is the most beautiful window."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「你正在修理那扇破掉的窗戶嗎？」(現在進行式 Are you fixing)。最佳回應為 C「是的，我正在試著修復它」(am trying)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you enjoy the art class this semester?",
+      "options": [
+        "A. Yes, it was my favorite class.",
+        "B. Art is more expensive.",
+        "C. I am drawing a picture.",
+        "D. The teacher is taller."
+      ],
+      "ans": "A",
+      "explain": "原句意思：「你喜歡這學期的美術課嗎？」(過去式 Did you enjoy)。最佳回應是 A「喜歡，這是我最愛的一門課」(過去式 was)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "This medicine is more effective than the old one.",
+      "options": [
+        "A. 這種藥和舊的一樣有效。",
+        "B. 這種藥是所有藥裡面最有效的。",
+        "C. 這種藥比舊的更有效。",
+        "D. 醫生昨天開了這種藥給我。"
+      ],
+      "ans": "C",
+      "explain": "原句意思：「這種藥比舊的更有效。」使用比較級 (more effective than)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was checking my emails when she left a message on my desk.",
+      "options": [
+        "A. 我正在檢查電子郵件，然後就在她桌上留了紙條。",
+        "B. 當她在我桌上留紙條時，我正在檢查電子郵件。",
+        "C. 我比她更常檢查電子郵件。",
+        "D. 她留下了最重要的一條訊息。"
+      ],
+      "ans": "B",
+      "explain": "原句意思：「當她在我桌上留言(放紙條)時，我正在檢查電子郵件。」複合了過去進行式 (was checking) 與過去簡單式 (left)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Why is the baby crying louder than before?",
+      "options": [
+        "A. He cried yesterday.",
+        "B. I think he is getting hungry.",
+        "C. He is the quietest baby.",
+        "D. The baby is smaller."
+      ],
+      "ans": "B",
+      "explain": "原句意思：「為什麼寶寶哭得比剛才還大聲？」(現在進行式 is crying, 比較級 louder)。最佳回應是 B「我想他開始肚子餓了」(現在進行式 is getting)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Which subject did you find the most difficult last year?",
+      "options": [
+        "A. I am studying math right now.",
+        "B. English is easier than science.",
+        "C. Science was definitely the hardest one for me.",
+        "D. I passed all my exams."
+      ],
+      "ans": "C",
+      "explain": "原句意思：「去年你覺得哪一科最困難？」(過去式 did you find, 最高級 the most difficult)。最佳回應是 C「科學絕對對我來說是最難的」(過去式 was, 最高級 the hardest)。"
+    }
+  ]
 }

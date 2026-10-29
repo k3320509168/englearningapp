@@ -120,9 +120,23 @@ export function tagBatch(batch: GeneratedBatch, skill: QuestionSkill): Generated
 export const countSkill = (file: { normal: Question[]; boss: Question[] }, skill: QuestionSkill) =>
   [...file.normal, ...file.boss].filter(q => q.skill === skill).length;
 
+// 模型偶爾會在字串裡直接換行（JSON 不允許），把字串內的控制字元改成跳脫寫法
+export function escapeControlChars(json: string): string {
+  let out = '';
+  let inString = false;
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (inString && ch === '\\') { out += ch + (json[i + 1] ?? ''); i++; continue; }
+    if (ch === '"') inString = !inString;
+    if (inString && ch < ' ') { out += ch === '\n' ? '\\n' : ch === '\t' ? '\\t' : ch === '\r' ? '' : ''; continue; }
+    out += ch;
+  }
+  return out;
+}
+
 // 解析模型回傳：容許包在 ```json 區塊裡
 export function parseBatch(text: string): GeneratedBatch {
-  const cleaned = text.trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
+  const cleaned = escapeControlChars(text.trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, ''));
   const data = JSON.parse(cleaned) as Partial<GeneratedBatch>;
   return {
     normal: Array.isArray(data.normal) ? data.normal : [],

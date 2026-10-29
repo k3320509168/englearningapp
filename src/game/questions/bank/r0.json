@@ -1944,7 +1944,7 @@
         "D. At ten o'clock."
       ],
       "ans": "B",
-      "explain": "題目詢問地點「Where is the station? (車站站在哪裡？)」，回答「It is near the park. (它在公園附近)」最合適。"
+      "explain": "題目詢問地點「Where is the station? (車站在哪裡？)」，回答「It is near the park. (它在公園附近)」最合適。"
     },
     {
       "type": "choice",
@@ -1954,7 +1954,7 @@
       "speak": "Nice to meet you.",
       "options": [
         "A. Good night.",
-        "B. See you yesterday.",
+        "B. See you later.",
         "C. Nice to meet you too.",
         "D. You are welcome."
       ],
@@ -2016,7 +2016,7 @@
         "A. I am sorry.",
         "B. No problem, you're welcome.",
         "C. Nice car.",
-        "D. Goodbye tomorrow."
+        "D. See you tomorrow."
       ],
       "ans": "B",
       "explain": "對方表達感謝「Thank you for your help. (謝謝你的幫忙)」，最適合的回應是「No problem, you're welcome. (不客氣)」。"
@@ -4405,6 +4405,1438 @@
       ],
       "ans": "C",
       "explain": "原句：What time do you get up?（你幾點起床？）最適合的回應是 I get up at seven o'clock. (我七點起床。)"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：早晨；上午",
+      "ans": "MORNING",
+      "speak": "morning"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：再見",
+      "ans": "GOODBYE",
+      "speak": "goodbye"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：水",
+      "ans": "WATER",
+      "speak": "water"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：咖啡",
+      "ans": "COFFEE",
+      "speak": "coffee"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：蘋果",
+      "ans": "APPLE",
+      "speak": "apple"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：香蕉",
+      "ans": "BANANA",
+      "speak": "banana"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：七",
+      "ans": "SEVEN",
+      "speak": "seven"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：十一",
+      "ans": "ELEVEN",
+      "speak": "eleven"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：黃色",
+      "ans": "YELLOW",
+      "speak": "yellow"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：紫色",
+      "ans": "PURPLE",
+      "speak": "purple"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：家庭；家人",
+      "ans": "FAMILY",
+      "speak": "family"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：姊妹",
+      "ans": "SISTER",
+      "speak": "sister"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：兄弟",
+      "ans": "BROTHER",
+      "speak": "brother"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：醫生",
+      "ans": "DOCTOR",
+      "speak": "doctor"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：辦公室",
+      "ans": "OFFICE",
+      "speak": "office"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：早安",
+      "ans": "GOOD MORNING",
+      "speak": "good morning"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：謝謝你",
+      "ans": "THANK YOU",
+      "speak": "thank you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：不客氣",
+      "ans": "YOU'RE WELCOME",
+      "speak": "you're welcome"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：不好意思；抱歉",
+      "ans": "EXCUSE ME",
+      "speak": "excuse me"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：待會見",
+      "ans": "SEE YOU LATER",
+      "speak": "see you later"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：祝你有美好的一天",
+      "ans": "HAVE A NICE DAY",
+      "speak": "have a nice day"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：沒問題",
+      "ans": "NO PROBLEM",
+      "speak": "no problem"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：晚安",
+      "ans": "GOOD NIGHT",
+      "speak": "good night"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：請稍等",
+      "ans": "WAIT A MINUTE",
+      "speak": "wait a minute"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：小心",
+      "ans": "BE CAREFUL",
+      "speak": "be careful"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：快點",
+      "ans": "HURRY UP",
+      "speak": "hurry up"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：你今天好嗎？",
+      "ans": "HOW ARE YOU TODAY",
+      "speak": "how are you today"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：很高興認識你。",
+      "ans": "NICE TO MEET YOU",
+      "speak": "nice to meet you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我來自台灣。",
+      "ans": "I AM FROM TAIWAN",
+      "speak": "i am from taiwan"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我是一名工程師。",
+      "ans": "I AM AN ENGINEER",
+      "speak": "i am an engineer"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：請問洗手間在哪裡？",
+      "ans": "WHERE IS THE RESTROOM",
+      "speak": "where is the restroom"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：請給我一杯水。",
+      "ans": "A GLASS OF WATER PLEASE",
+      "speak": "a glass of water please"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我喜歡熱咖啡。",
+      "ans": "I LIKE HOT COFFEE",
+      "speak": "i like hot coffee"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：這個多少錢？",
+      "ans": "HOW MUCH IS THIS",
+      "speak": "how much is this"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：請買單。",
+      "ans": "THE CHECK PLEASE",
+      "speak": "the check please"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：你能幫我嗎？",
+      "ans": "CAN YOU HELP ME",
+      "speak": "can you help me"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我今天很忙。",
+      "ans": "I AM BUSY TODAY",
+      "speak": "i am busy today"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】David ___ an engineer at a tech company in Taipei.",
+      "options": [
+        "A. is",
+        "B. are",
+        "C. am",
+        "D. be"
+      ],
+      "ans": "A",
+      "explain": "主詞 David 為單數第三人稱，現在式 be 動詞應使用 is。(B) are 用於複數或 you；(C) am 僅用於 I；(D) be 為原形動詞，在此不可直接作為主要動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活介系詞】I usually meet my friends for coffee ___ Saturday mornings.",
+      "options": [
+        "A. at",
+        "B. on",
+        "C. in",
+        "D. to"
+      ],
+      "ans": "B",
+      "explain": "特定某一天的早晨或星期幾前面介系詞須用 on。(A) at 用於精確鐘點；(C) in 用於一般的 in the morning 或月份年份；(D) to 表示方向或目的地。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】Our team members ___ in the office from 9 a.m. to 6 p.m. every day.",
+      "options": [
+        "A. works",
+        "B. working",
+        "C. work",
+        "D. is work"
+      ],
+      "ans": "C",
+      "explain": "主詞 Our team members 為複數名詞，現在簡單式動詞用原形 work。(A) works 用於單數第三人稱；(B) working 缺少 be 動詞不能作主要動詞；(D) is work 文法結構錯誤且 be 動詞與複數不合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【旅遊字彙】Excuse me, where can I buy a train ___ to Taichung?",
+      "options": [
+        "A. menu",
+        "B. passport",
+        "C. bill",
+        "D. ticket"
+      ],
+      "ans": "D",
+      "explain": "買火車「票」應使用 ticket。(A) menu 菜單；(B) passport 護照；(C) bill 帳單。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】Sarah loves animals. She ___ a cute dog and two cats.",
+      "options": [
+        "A. has",
+        "B. have",
+        "C. having",
+        "D. haves"
+      ],
+      "ans": "A",
+      "explain": "主詞 She 是單數第三人稱，have 的第三人稱單數現在式形式為 has。(B) have 用於複數或 I/you；(C) having 缺少 be 動詞；(D) 英語無 haves 這個字形。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【日常對話】A: What is your favorite season? B: I like spring ___ the weather is warm and nice.",
+      "options": [
+        "A. but",
+        "B. because",
+        "C. so",
+        "D. or"
+      ],
+      "ans": "B",
+      "explain": "後句是喜歡春天的原因，表原因的連接詞用 because。(A) but 表轉折；(C) so 表結果；(D) or 表或者選擇。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場介系詞】The department meeting starts ___ 2:30 p.m. in room 402.",
+      "options": [
+        "A. on",
+        "B. in",
+        "C. at",
+        "D. of"
+      ],
+      "ans": "C",
+      "explain": "具體鐘點時間前介系詞用 at。(A) on 用於星期或特定日期；(B) in 用於月份、季節、年份；(D) of 表所有格或部分關係。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【旅遊文法】Look at the map! ___ two famous night markets near our hotel.",
+      "options": [
+        "A. There has",
+        "B. There is",
+        "C. There have",
+        "D. There are"
+      ],
+      "ans": "D",
+      "explain": "表示「有」且後方主詞 two famous night markets 為複數名詞，應用 There are。(A)、(C) 英語中不可用 there has/have 表存在；(B) There is 用於單數名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】This is not my laptop. ___ laptop is on the desk by the window.",
+      "options": [
+        "A. My",
+        "B. Me",
+        "C. I",
+        "D. Mine"
+      ],
+      "ans": "A",
+      "explain": "修飾名詞 laptop 需要用所有格形容詞 My。(B) Me 是受格；(C) I 是主格；(D) Mine 是所有格代名詞，後面不接名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場字彙】Please send me an ___ with the project report before Friday.",
+      "options": [
+        "A. airport",
+        "B. email",
+        "C. umbrella",
+        "D. envelope"
+      ],
+      "ans": "B",
+      "explain": "寄送專案報告通常透過「電子郵件」email。(A) airport 機場；(C) umbrella 雨傘；(D) envelope 實體信封，常與實體信件搭配且與寄送專案報告語境不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】Ken doesn't drink coffee. He ___ hot tea every morning.",
+      "options": [
+        "A. drinks",
+        "B. drink",
+        "C. drinking",
+        "D. to drink"
+      ],
+      "ans": "A",
+      "explain": "主詞 He 為單數第三人稱，現在簡單式肯定句動詞字尾加 -s 成為 drinks。(B) drink 為原形動詞；(C) drinking 缺少助動詞；(D) to drink 為不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【旅遊文法】The museum is closed today, so visitors ___ enter the building.",
+      "options": [
+        "A. can",
+        "B. cannot",
+        "C. are",
+        "D. must to"
+      ],
+      "ans": "B",
+      "explain": "因博物館今天休館，故參觀者「無法/不能」進入，填 cannot。(A) can 能夠，與前文語意矛盾；(C) are enter 文法結構錯誤；(D) 助動詞 must 後接原形動詞，不可加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活文法】A: Do you and your brother cook dinner on weekends? B: No, we don't. We usually ___ dinner at a restaurant near our home.",
+      "options": [
+        "A. eat",
+        "B. eats",
+        "C. eating",
+        "D. are eat"
+      ],
+      "ans": "A",
+      "explain": "主詞 We 為第一人稱複數，現在簡單式動詞用原形 eat。(B) eats 用於第三人稱單數；(C) eating 缺少 be 動詞；(D) are eat 文法結構錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場對話】A: Good morning, Mr. Lin. Is this your jacket? B: No, it isn't. That is Peter's jacket, and ___ is over there on the chair.",
+      "options": [
+        "A. he",
+        "B. mine",
+        "C. my",
+        "D. me"
+      ],
+      "ans": "B",
+      "explain": "此處需要所有格代名詞 mine 代替 my jacket 作為後句的主詞。(A) he 是主格人稱代名詞；(C) my 是所有格形容詞，後面必須接名詞；(D) me 是受格代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【旅遊介系詞】A: When do we arrive in Tokyo? B: The airplane lands ___ 4:00 p.m. ___ Friday afternoon.",
+      "options": [
+        "A. on; in",
+        "B. in; at",
+        "C. at; on",
+        "D. at; in"
+      ],
+      "ans": "C",
+      "explain": "具體時間點 4:00 p.m. 前用 at；特定日期的下午 Friday afternoon 前用 on。(A)、(B)、(D) 的介系詞搭配皆不正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【日常對話】A: Excuse me, ___ can I get to the nearest convenience store? B: Just walk straight for two minutes. It is next to the bank.",
+      "options": [
+        "A. Who",
+        "B. How",
+        "C. Why",
+        "D. What"
+      ],
+      "ans": "B",
+      "explain": "詢問前往某處的方法或路線，使用疑問詞 How。(A) Who 問人；(C) Why 問原因；(D) What 問事物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場文法】Ms. Wang is very busy today. She ___ many business emails and reports to finish before leaving.",
+      "options": [
+        "A. has",
+        "B. have",
+        "C. is having",
+        "D. does have"
+      ],
+      "ans": "A",
+      "explain": "主詞 Ms. Wang 為單數第三人稱，表示「擁有/有」使用 has。(B) have 用於複數主詞；(C) 表示擁有時 have 為狀態動詞，通常不用現在進行式；(D) does have 在無強調語氣的陳述中不自然且 A 選項最直接正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活字彙】A: I want to make a fruit salad for the party tonight. B: Great! Let's go to the ___ to buy some fresh apples and bananas.",
+      "options": [
+        "A. library",
+        "B. hospital",
+        "C. supermarket",
+        "D. hotel"
+      ],
+      "ans": "C",
+      "explain": "購買蘋果與香蕉等食材應去超市 supermarket。(A) library 圖書館；(B) hospital 醫院；(D) hotel 飯店。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【旅遊文法】A: Can we take pictures inside the art museum? B: No, visitors ___ take pictures here. It is not allowed.",
+      "options": [
+        "A. don't",
+        "B. aren't",
+        "C. cannot",
+        "D. can"
+      ],
+      "ans": "C",
+      "explain": "回答問句 Can we... 的否定句，表示不被允許或不能，使用 cannot (或 can't)。(A) don't 後面接原形但對應 can 的問句應使用情態助詞；(B) aren't 為 be 動詞無法直接修飾動詞 take；(D) can 與後文 not allowed 語意相反。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場對話】A: What time ___ the new manager arrive at the company? B: She usually arrives at 8:45 every morning.",
+      "options": [
+        "A. do",
+        "B. does",
+        "C. is",
+        "D. are"
+      ],
+      "ans": "B",
+      "explain": "主詞 the new manager 為第三人稱單數，一般動詞 arrive 的現在簡單式疑問句應使用助動詞 does。(A) do 用於複數或 I/you；(C) is 後面不可直接接一般動詞原形 arrive；(D) are 為複數 be 動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活文法】Tom is a doctor. He works in a big hospital, and ___ wife works in a school as an English teacher.",
+      "options": [
+        "A. his",
+        "B. her",
+        "C. its",
+        "D. their"
+      ],
+      "ans": "A",
+      "explain": "先行詞 Tom 為男性，對應的男性單數所有格形容詞為 his。(B) her 為女性所有格；(C) its 為非人所有格；(D) their 為複數所有格。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Office Notice] Please turn off the lights and air conditioners before you leave the meeting room. Also, remember to take your cups and pens with you. Thank you for your help.\nQ: What should workers do before leaving the room?",
+      "options": [
+        "A. Clean the floor.",
+        "B. Turn off the lights.",
+        "C. Buy new cups.",
+        "D. Close all windows."
+      ],
+      "ans": "B",
+      "explain": "告示第一句明白寫道「Please turn off the lights...」，因此選 B。(A)、(C)、(D) 內容皆未在告示中提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Kevin! I am at the café across from the train station. The coffee here is great and they have free Wi-Fi. What time will you arrive?\nQ: Where is the writer right now?",
+      "options": [
+        "A. Inside a train.",
+        "B. At the airport.",
+        "C. In a café.",
+        "D. At home."
+      ],
+      "ans": "C",
+      "explain": "文中第二句「I am at the café across from the train station.」直接指出作者目前在咖啡廳。(A) 在火車上；(B) 在機場；(D) 在家，均與短文不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Restaurant Menu Note] Lunch Special: Monday to Friday, 11:30 a.m. to 2:00 p.m. All pasta dishes come with a free cup of black tea or green tea.\nQ: What can a customer get for free with pasta on Wednesday at noon?",
+      "options": [
+        "A. A fruit salad.",
+        "B. A slice of cake.",
+        "C. A bottle of water.",
+        "D. A cup of tea."
+      ],
+      "ans": "D",
+      "explain": "週三中午屬於週一到週五的商業午餐時段，點義大利麵送一杯免費的紅茶或綠茶 (a free cup of black tea or green tea)，故選 D。(A)、(B)、(C) 皆不是隨餐附送的項目。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Hotel Information] Welcome to Sun Hotel. Breakfast is from 7:00 to 9:30 on the second floor. The swimming pool on the roof is open every day from 8:00 a.m. to 8:00 p.m.\nQ: Where can guests have breakfast in the morning?",
+      "options": [
+        "A. On the second floor.",
+        "B. On the roof.",
+        "C. Next to the pool.",
+        "D. In the hotel lobby."
+      ],
+      "ans": "A",
+      "explain": "文中提及「Breakfast is from 7:00 to 9:30 on the second floor.」，早餐在二樓供應。(B) 屋頂是游泳池；(C)、(D) 與內文不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Email to Team] Dear all, our client from Japan will visit our office at 10:00 a.m. tomorrow. Please wear formal clothes and prepare the new product pictures.\nQ: Why should the workers dress formally tomorrow?",
+      "options": [
+        "A. They have an exam.",
+        "B. A client is visiting.",
+        "C. It is a holiday.",
+        "D. They have a party."
+      ],
+      "ans": "B",
+      "explain": "信中提到「our client from Japan will visit our office at 10:00 a.m. tomorrow」，因此大家需要穿著正式服裝接見客戶。(A) 考試；(C) 節日；(D) 派對，皆與信件原因不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Store Announcement] Fresh Bakery is open from 8 a.m. to 8 p.m. everyday except Sunday. We have fresh bread every morning and delicious cakes in the afternoon.\nQ: On which day is Fresh Bakery closed?",
+      "options": [
+        "A. Monday.",
+        "B. Friday.",
+        "C. Sunday.",
+        "D. Saturday."
+      ],
+      "ans": "C",
+      "explain": "文中明確說明「except Sunday」（除了週日以外），代表週日公休。(A)、(B)、(D) 皆為正常營業日。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Travel Card Note] You can use this travel card for the MRT, city buses, and local trains. You can add money to your card at any convenience store or MRT station.\nQ: Where CANNOT you add money to this card according to the note?",
+      "options": [
+        "A. At an MRT station.",
+        "B. At a convenience store.",
+        "C. At a hospital.",
+        "D. Inside the station."
+      ],
+      "ans": "C",
+      "explain": "文中僅列出便利商店與捷運站可以加值，沒有提到醫院 (hospital)，因此醫院是無法加值的地方。(A)、(B)、(D) 皆符合文中提及的地點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Amy, I cannot go to the gym with you tonight. I have a bad headache, so I want to go to bed early. Let's exercise together next week.\nQ: Why does the writer cancel the gym plan?",
+      "options": [
+        "A. She is sick.",
+        "B. She is working late.",
+        "C. She lost her gym card.",
+        "D. She is traveling."
+      ],
+      "ans": "A",
+      "explain": "作者提到「I have a bad headache」（頭很痛），說明生病不舒服是取消運動的原因。(B) 加班；(C) 遺失會員卡；(D) 正在旅行，皆與內文不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Sign at the Library] Quiet, please! Do not talk loudly on your mobile phone in the reading area. If you need to make a call, please walk outside to the garden.\nQ: What should people do if they need to speak on the phone?",
+      "options": [
+        "A. Go to the garden.",
+        "B. Stay in the reading room.",
+        "C. Speak very fast.",
+        "D. Turn off the phone."
+      ],
+      "ans": "A",
+      "explain": "告示最後一句指出「If you need to make a call, please walk outside to the garden.」，因此應前往花園。(B) 留在閱覽室違反規定；(C)、(D) 不是文中所指示的行動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】My supervisor ___ two languages: English and Japanese.",
+      "options": [
+        "A. speaks",
+        "B. speak",
+        "C. is speak",
+        "D. speaking"
+      ],
+      "ans": "A",
+      "explain": "主詞 My supervisor 是單數第三人稱，現在簡單式動詞字尾加 -s 寫作 speaks。(B) speak 用於複數或 I/you；(C) is speak 文法錯誤；(D) speaking 缺少助動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活介系詞】My family usually visits my grandparents in Tainan ___ October.",
+      "options": [
+        "A. on",
+        "B. in",
+        "C. at",
+        "D. to"
+      ],
+      "ans": "B",
+      "explain": "月份（如 October）前面介系詞習慣使用 in。(A) on 用於具體日期或星期；(C) at 用於精確鐘點；(D) to 表示方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【旅遊文法】Look at the street sign. You ___ turn left here because it is a one-way street.",
+      "options": [
+        "A. can",
+        "B. must to",
+        "C. cannot",
+        "D. are not"
+      ],
+      "ans": "C",
+      "explain": "因是單行道（one-way street），此處表示禁止或「不能」左轉，用 cannot。(A) can 能夠，與單行道情境矛盾；(B) must 後面不接 to；(D) are not 無法直接修飾動詞原形 turn。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】This isn't Susan's bag. ___ bag is black, but this one is brown.",
+      "options": [
+        "A. She",
+        "B. Hers",
+        "C. Him",
+        "D. Her"
+      ],
+      "ans": "D",
+      "explain": "修飾名詞 bag 需要使用所有格形容詞 Her。(A) She 是主格；(B) Hers 是所有格代名詞，後方不可直接加名詞；(C) Him 是男性受格代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【旅遊字彙】Please have your passport and boarding ___ ready before you enter the gate.",
+      "options": [
+        "A. pass",
+        "B. card",
+        "C. ticket",
+        "D. bill"
+      ],
+      "ans": "A",
+      "explain": "機場登機證的標準固定搭配是 boarding pass。(B) card 不與 boarding 組合成登機證；(C) boarding ticket 非標準用法；(D) bill 帳單。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【日常對話】A: ___ do you go to work every morning? B: I usually take the MRT.",
+      "options": [
+        "A. What",
+        "B. How",
+        "C. Where",
+        "D. Who"
+      ],
+      "ans": "B",
+      "explain": "根據回答「搭乘捷運」，可知提問在詢問交通方式或手段，使用疑問詞 How。(A) What 問事物；(C) Where 問地點；(D) Who 問人。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場介系詞】Please put the printed contract ___ the manager's desk before 5 p.m.",
+      "options": [
+        "A. in",
+        "B. at",
+        "C. on",
+        "D. to"
+      ],
+      "ans": "C",
+      "explain": "放置在桌面上，表面接觸的介系詞使用 on。(A) in 是在抽屜或物體內部；(B) at 表點；(D) to 表方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】___ a new supermarket near my apartment, so shopping is very convenient.",
+      "options": [
+        "A. It has",
+        "B. There have",
+        "C. There is are",
+        "D. There is"
+      ],
+      "ans": "D",
+      "explain": "表示某地存在某物，且後方主詞 a new supermarket 為單數，使用 There is。(A) It has 表主詞自身擁有，非客觀存在；(B) There have 文法錯誤；(C) is are 雙動詞矛盾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【日常對話】A: Is that blue water bottle ___? B: Yes, it is mine! Thank you for finding it.",
+      "options": [
+        "A. yours",
+        "B. your",
+        "C. you",
+        "D. yourself"
+      ],
+      "ans": "A",
+      "explain": "此處需要所有格代名詞 yours 代替 your water bottle 作為形容詞或補語結尾。(B) your 是所有格形容詞，後面必須接名詞；(C) you 是主格/受格；(D) yourself 是反身代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場對話】A: When does the video conference start? B: It begins ___ 10:30 a.m. ___ Monday morning.",
+      "options": [
+        "A. on; in",
+        "B. at; on",
+        "C. in; at",
+        "D. at; in"
+      ],
+      "ans": "B",
+      "explain": "具體時間點 10:30 a.m. 前用 at；特定日期的早晨 Monday morning 前用 on。(A)、(C)、(D) 介系詞搭配均不正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活文法】My parents ___ coffee in the evening because it keeps them awake all night.",
+      "options": [
+        "A. doesn't drink",
+        "B. isn't drinking",
+        "C. don't drink",
+        "D. not drink"
+      ],
+      "ans": "C",
+      "explain": "主詞 My parents 為複數名詞，現在簡單式動詞否定句應使用 don't + 原形動詞 drink。(A) doesn't 用於單數第三人稱；(B) isn't 為單數 be 動詞且時態不符習慣性敘述；(D) not drink 缺乏助動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【旅遊對話】A: Excuse me, ___ a post office around here? B: Yes, walk straight and it is on your left.",
+      "options": [
+        "A. are there",
+        "B. has there",
+        "C. there is",
+        "D. is there"
+      ],
+      "ans": "D",
+      "explain": "詢問單數名詞 a post office 是否存在，疑問句需倒裝為 Is there...?(A) are there 用於複數名詞；(B) 英語無 has there 句型；(C) there is 為肯定句語序。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Office Notice] The second-floor coffee machine is broken today. The repair person will fix it tomorrow morning. In the meantime, please use the machine in the break room on the fourth floor.\nQ: Where can employees get coffee today?",
+      "options": [
+        "A. On the fourth floor.",
+        "B. On the second floor.",
+        "C. At a convenience store outside.",
+        "D. In the parking lot."
+      ],
+      "ans": "A",
+      "explain": "告示說明二樓咖啡機故障，臨時方案是「please use the machine in the break room on the fourth floor」（請使用四樓休息室的機器）。(B) 二樓咖啡機壞了；(C)、(D) 未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Leo, I am still in a client meeting. It will end around 6:30 p.m. Can we meet for dinner at 7:00 at the noodle shop near our company?\nQ: Why does the sender want to meet at 7:00 instead of earlier?",
+      "options": [
+        "A. The noodle shop opens at 7:00.",
+        "B. The client meeting ends around 6:30.",
+        "C. The sender is stuck in traffic.",
+        "D. The sender is feeling sick."
+      ],
+      "ans": "B",
+      "explain": "簡訊提到「I am still in a client meeting. It will end around 6:30 p.m.」，客戶會議到 6:30 才結束，因此改約 7:00。(A)、(C)、(D) 與簡訊內容不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Restaurant Menu] Daily Lunch Set (11:00-14:00): Chicken sandwich with fries and a cup of black coffee for $150. Add $20 to change your black coffee to hot milk tea or orange juice.\nQ: How much is the sandwich set if you change the coffee to orange juice?",
+      "options": [
+        "A. $130.",
+        "B. $150.",
+        "C. $170.",
+        "D. $190."
+      ],
+      "ans": "C",
+      "explain": "套餐原價 150 元，換柳橙汁需加價 20 元（Add $20），總計 150 + 20 = $170。(A)、(B)、(D) 計算皆錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Bus Timetable Note] Bus Route 5: Bus arrives every 15 minutes on weekdays. On weekends and national holidays, the bus runs once every 30 minutes from 6:00 a.m. to 10:00 p.m.\nQ: How often does Route 5 run on Sunday afternoon?",
+      "options": [
+        "A. Every 10 minutes.",
+        "B. Every 15 minutes.",
+        "C. Every 20 minutes.",
+        "D. Every 30 minutes."
+      ],
+      "ans": "D",
+      "explain": "週日屬於週末（weekends），文中明確指出「On weekends... the bus runs once every 30 minutes」，因此為每 30 分鐘一班。(B) 是平日班距；(A)、(C) 與文意不合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Postcard from Kyoto] Dear Helen, Greeting from Japan! The weather here is cool and sunny. We visited two old temples yesterday and took hundreds of photos. Tomorrow we are taking a bullet train to Osaka. Best, Mark.\nQ: Where will Mark go tomorrow?",
+      "options": [
+        "A. To Osaka.",
+        "B. To Taipei.",
+        "C. To Tokyo.",
+        "D. To a hospital."
+      ],
+      "ans": "A",
+      "explain": "明信片中寫道「Tomorrow we are taking a bullet train to Osaka.」（明天我們要搭新幹線去大阪），故選 A。(B)、(C)、(D) 皆與文末計畫不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Hotel Reception Sign] Breakfast is served from 6:30 a.m. to 10:00 a.m. in the dining room on the 1st floor. If you need early check-out before 6:00 a.m., please inform the front desk tonight.\nQ: What should guests do if they want to check out at 5:30 tomorrow morning?",
+      "options": [
+        "A. Eat breakfast quickly.",
+        "B. Tell the front desk tonight.",
+        "C. Leave the key inside the room.",
+        "D. Pay extra money."
+      ],
+      "ans": "B",
+      "explain": "文中說明如果需要在早上六點前退房（early check-out before 6:00 a.m.），請「inform the front desk tonight」（今晚告知櫃檯），故選 B。(A)、(C)、(D) 均非告示所列要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Company Memo] To all staff: The building elevator will be inspected this Saturday from 9:00 a.m. to 1:00 p.m. During this time, the elevator will stop working. Please use the stairs if you come to the office.\nQ: What should people use to go upstairs on Saturday morning?",
+      "options": [
+        "A. The parking ramp.",
+        "B. The emergency window.",
+        "C. The stairs.",
+        "D. The front elevator."
+      ],
+      "ans": "C",
+      "explain": "文中提到電梯停用期間「Please use the stairs if you come to the office.」（請走樓梯），故選 C。(D) 電梯停工中；(A)、(B) 均屬不合邏輯且文內未指示之選項。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Tina, our boss said we have to hand in the sales report by 11:30 a.m. today. I am almost done with my part. Can you send me your sales numbers in ten minutes?\nQ: What does the writer need from Tina?",
+      "options": [
+        "A. Her laptop computer.",
+        "B. A cup of coffee.",
+        "C. The boss's phone number.",
+        "D. Her sales numbers."
+      ],
+      "ans": "D",
+      "explain": "文中問句明確寫出「Can you send me your sales numbers in ten minutes?」，需要的是業務數字，故選 D。(A)、(B)、(C) 皆不是對方索取的項目。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Café Board] Today's Special: Buy any large hot drink and get a chocolate donut for only $10. Offer valid until 12:00 noon. Cash and Line Pay only.\nQ: Which is true about the special offer?",
+      "options": [
+        "A. It ends at 12:00 noon.",
+        "B. You can pay by credit card.",
+        "C. Customers get a free donut.",
+        "D. It is for cold drinks only."
+      ],
+      "ans": "A",
+      "explain": "文中提到「Offer valid until 12:00 noon.」（優惠有效至中午十二點止），因此 A 正確。(B) 僅收現金與 Line Pay；(C) 甜甜圈需加價 10 元並非免費；(D) 是買大杯熱飲 (large hot drink)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Flight Schedule Screen] Flight CI100 to Tokyo Narita: Gate B4. Status: Delayed. Scheduled Departure: 08:50. New Departure: 10:10. Please stay near Gate B4 for updates.\nQ: What is the new departure time for Flight CI100?",
+      "options": [
+        "A. 08:50.",
+        "B. 10:10.",
+        "C. 04:00.",
+        "D. 12:00."
+      ],
+      "ans": "B",
+      "explain": "螢幕資訊顯示「New Departure: 10:10」，因此新出發時間為 10:10。(A) 是原定時間；(C) 是登機門編號干擾項；(D) 未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Notice at Fitness Center] Clean towels are available at the front counter. Please put used towels into the blue bin next to the shower room after you finish exercising. Thank you for keeping our gym clean.\nQ: Where should members put their towels after exercising?",
+      "options": [
+        "A. On the gym floor.",
+        "B. At the front counter.",
+        "C. In the blue bin.",
+        "D. Inside the locker."
+      ],
+      "ans": "C",
+      "explain": "文中指出「put used towels into the blue bin next to the shower room」，毛巾用完應放入藍色收集桶。(A)、(D) 未提及；(B) 櫃檯是領取乾淨毛巾的地方。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Postcard from Kenting] Hi Jack, Kenting is amazing! We are staying at a small hotel near the beach. Every morning we go swimming, and in the evening we eat seafood at the night market. See you next Monday! Emily.\nQ: What does Emily do in Kenting in the evening?",
+      "options": [
+        "A. She swims in the sea.",
+        "B. She works online.",
+        "C. She takes a train.",
+        "D. She eats at the night market."
+      ],
+      "ans": "D",
+      "explain": "文中提到「in the evening we eat seafood at the night market」，傍晚在夜市吃海鮮，故選 D。(A) 是早上的活動；(B)、(C) 文中均未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Supermarket Receipt Note] Thank you for shopping at WellMart! Spend over $500 today to get a $50 discount coupon for your next visit. The coupon is valid until November 30.\nQ: What can a customer get by spending more than $500 today?",
+      "options": [
+        "A. A $50 discount coupon.",
+        "B. Free fruits.",
+        "C. A shopping bag.",
+        "D. Cash back of $500."
+      ],
+      "ans": "A",
+      "explain": "收據註記載明「Spend over $500 today to get a $50 discount coupon...」，可獲得 50 元折價券，選 A。(B)、(C)、(D) 均不符合文意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Museum Ticket Notice] General admission: $200. Senior citizens (over 65) and students with ID: $100. Children under 6: Free admission. Audio guide rental: $50 per person.\nQ: How much does a university student with a valid ID pay to enter?",
+      "options": [
+        "A. Free.",
+        "B. $100.",
+        "C. $150.",
+        "D. $200."
+      ],
+      "ans": "B",
+      "explain": "學生出示學生證（students with ID）票價為 $100，故選 B。(A) 是 6 歲以下幼童；(C) 價格未列出；(D) 是全票成人價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Ben, the train from Hsinchu is 20 minutes late due to heavy rain. I will probably arrive at Taipei Main Station around 7:40 p.m. You don't need to wait for me for dinner.\nQ: Why is the train delayed?",
+      "options": [
+        "A. Bad traffic on the road.",
+        "B. The train is broken.",
+        "C. Heavy rain.",
+        "D. A problem with the tickets."
+      ],
+      "ans": "C",
+      "explain": "簡訊開頭寫道「due to heavy rain」（由於大雨），故誤點原因選 C。(A) 這是火車非公路交通；(B)、(D) 文中均未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Office Sign] Welcome to the New Media Department. All visitors must register at the reception desk on the 1st floor and get a guest badge before going up to the 5th floor.\nQ: What must a visitor get on the 1st floor before going upstairs?",
+      "options": [
+        "A. A cup of water.",
+        "B. An interview question list.",
+        "C. A department gift.",
+        "D. A guest badge."
+      ],
+      "ans": "D",
+      "explain": "告示最後指明訪客必須「get a guest badge before going up」（取得訪客證證件），故選 D。(A)、(B)、(C) 文中皆未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Menu at Green Bowl] Salad Options: Classic Caesar Salad ($120), Tuna Salad ($140), Chicken Salad ($160). Dressing choices: Italian, Ranch, or Thousand Island. Bread is included with all salads.\nQ: What comes with every salad for free?",
+      "options": [
+        "A. Bread.",
+        "B. Soup.",
+        "C. Tea.",
+        "D. Cheese."
+      ],
+      "ans": "A",
+      "explain": "菜單末句指出「Bread is included with all salads.」（所有沙拉均附麵包），故選 A。(B)、(C)、(D) 皆非隨餐附送項目。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Notice in Hotel Room] Dear Guest: Our hotel cares about nature. If you want us to change your bedsheets and towels, please put this green card on your bed before 10:00 a.m. Otherwise, we will not change them today.\nQ: What should a guest do if they want fresh bedsheets?",
+      "options": [
+        "A. Call the front desk at noon.",
+        "B. Put the green card on the bed.",
+        "C. Bring bedsheets to the lobby.",
+        "D. Wash them in the bathroom."
+      ],
+      "ans": "B",
+      "explain": "說明提到「please put this green card on your bed before 10:00 a.m.」，想換床單需將綠色卡片放在床上，故選 B。(A)、(C)、(D) 皆不符合內文規定。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：雨；下雨",
+      "ans": "RAIN",
+      "speak": "rain"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：星期日",
+      "ans": "SUNDAY",
+      "speak": "sunday"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：火車",
+      "ans": "TRAIN",
+      "speak": "train"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：廚房",
+      "ans": "KITCHEN",
+      "speak": "kitchen"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：窗戶",
+      "ans": "WINDOW",
+      "speak": "window"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：肩膀",
+      "ans": "SHOULDER",
+      "speak": "shoulder"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：手指",
+      "ans": "FINGER",
+      "speak": "finger"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：護理師",
+      "ans": "NURSE",
+      "speak": "nurse"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：廚師；煮飯",
+      "ans": "COOK",
+      "speak": "cook"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：網球",
+      "ans": "TENNIS",
+      "speak": "tennis"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：音樂",
+      "ans": "MUSIC",
+      "speak": "music"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：相機",
+      "ans": "CAMERA",
+      "speak": "camera"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：夾克；外套",
+      "ans": "JACKET",
+      "speak": "jacket"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：菜單",
+      "ans": "MENU",
+      "speak": "menu"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：三明治",
+      "ans": "SANDWICH",
+      "speak": "sandwich"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：天氣晴朗",
+      "ans": "SUNNY DAY",
+      "speak": "sunny day"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：週末愉快",
+      "ans": "HAVE A GOOD WEEKEND",
+      "speak": "have a good weekend"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：搭乘公車",
+      "ans": "TAKE THE BUS",
+      "speak": "take the bus"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：捷運站",
+      "ans": "METRO STATION",
+      "speak": "metro station"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：客廳",
+      "ans": "LIVING ROOM",
+      "speak": "living room"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：洗手",
+      "ans": "WASH YOUR HANDS",
+      "speak": "wash your hands"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：去慢跑",
+      "ans": "GO JOGGING",
+      "speak": "go jogging"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：聽音樂",
+      "ans": "LISTEN TO MUSIC",
+      "speak": "listen to music"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：試穿",
+      "ans": "TRY IT ON",
+      "speak": "try it on"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：現金付款",
+      "ans": "PAY IN CASH",
+      "speak": "pay in cash"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：熱綠茶",
+      "ans": "HOT GREEN TEA",
+      "speak": "hot green tea"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：今天天氣很熱。",
+      "ans": "IT IS HOT TODAY",
+      "speak": "it is hot today"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：現在幾點了？",
+      "ans": "WHAT TIME IS IT",
+      "speak": "what time is it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：現在是下午兩點整。",
+      "ans": "IT IS TWO O'CLOCK",
+      "speak": "it is two o'clock"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我每天騎腳踏車。",
+      "ans": "I RIDE A BIKE EVERY DAY",
+      "speak": "i ride a bike every day"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：打開窗戶好嗎？",
+      "ans": "PLEASE OPEN THE WINDOW",
+      "speak": "please open the window"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我頭很痛。",
+      "ans": "MY HEAD HURTS",
+      "speak": "my head hurts"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：他是一位好老師。",
+      "ans": "HE IS A GOOD TEACHER",
+      "speak": "he is a good teacher"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我們去游泳吧。",
+      "ans": "LET US GO SWIMMING",
+      "speak": "let us go swimming"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：你有一件大尺碼嗎？",
+      "ans": "DO YOU HAVE A LARGE SIZE",
+      "speak": "do you have a large size"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：請給我菜單。",
+      "ans": "THE MENU PLEASE",
+      "speak": "the menu please"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我準備好點餐了。",
+      "ans": "I AM READY TO ORDER",
+      "speak": "i am ready to order"
     }
   ],
   "boss": [
@@ -5804,6 +7236,486 @@
       ],
       "ans": "B",
       "explain": "原句：I want to buy a new jacket. 意思是我想要買一件新外套(夾克)。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：護照",
+      "ans": "PASSPORT",
+      "speak": "passport"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：機場",
+      "ans": "AIRPORT",
+      "speak": "airport"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：旅館；飯店",
+      "ans": "HOTEL",
+      "speak": "hotel"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：超市",
+      "ans": "SUPERMARKET",
+      "speak": "supermarket"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：登機證",
+      "ans": "BOARDING PASS",
+      "speak": "boarding pass"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：請進",
+      "ans": "PLEASE COME IN",
+      "speak": "please come in"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：信用卡",
+      "ans": "CREDIT CARD",
+      "speak": "credit card"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：直走",
+      "ans": "GO STRAIGHT AHEAD",
+      "speak": "go straight ahead"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：請出示您的護照。",
+      "ans": "YOUR PASSPORT PLEASE",
+      "speak": "your passport please"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我有一場會議。",
+      "ans": "I HAVE A MEETING",
+      "speak": "i have a meeting"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：你可以再說一次嗎？",
+      "ans": "CAN YOU SAY THAT AGAIN",
+      "speak": "can you say that again"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我可以用信用卡付款嗎？",
+      "ans": "CAN I PAY BY CARD",
+      "speak": "can i pay by card"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場文法】Mr. and Mrs. Smith work in the same company, but they ___ work in the same department.",
+      "options": [
+        "A. don't",
+        "B. doesn't",
+        "C. isn't",
+        "D. aren't"
+      ],
+      "ans": "A",
+      "explain": "主詞 they 是第三人稱複數，現在簡單式一般動詞 work 的否定句助動詞應使用 don't。(B) doesn't 用於單數第三人稱；(C)、(D) 為 be 動詞，不能直接接一般動詞原形 work。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【旅遊文法】A: Excuse me, ___ any good coffee shops near this bus stop? B: Yes, there is a very famous one across the street.",
+      "options": [
+        "A. is there",
+        "B. are there",
+        "C. have there",
+        "D. there are"
+      ],
+      "ans": "B",
+      "explain": "問句修飾複數名詞 good coffee shops，疑問句形式須將 be 動詞倒裝，故使用 Are there。(A) is there 用於單數名詞；(C) 英語無 have there 句型；(D) there are 為肯定句語序，非問句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活字彙】Emily is an assistant. She ___ calls from customers and writes emails every afternoon.",
+      "options": [
+        "A. answers",
+        "B. makes",
+        "C. listens",
+        "D. speaks"
+      ],
+      "ans": "A",
+      "explain": "接聽電話在英語中習慣搭配「answer calls/phones」，主詞為單數第三人稱故用 answers。(B) makes calls 是撥打電話，與文意中助理處理客戶進線不合；(C) listens 後須加 to 且不用於接聽電話；(D) speaks 後面不直接加 calls。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【職場介系詞】Our company is on the fifth floor, and the staff cafeteria is ___ the basement.",
+      "options": [
+        "A. on",
+        "B. at",
+        "C. to",
+        "D. in"
+      ],
+      "ans": "D",
+      "explain": "地下室空間通常使用介系詞 in the basement。(A) on 一般用於樓層如 on the first/second floor，但地下室習慣用 in；(B) at 常用於特定地址或點；(C) to 表示方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Notice on Office Fridge] All food in this refrigerator must have a name tag with today's date. The cleaning staff cleans the fridge every Friday at 5:00 p.m. Any food without a name will be thrown away.\nQ: What will happen to an apple without a name on Friday evening?",
+      "options": [
+        "A. The staff will throw it away.",
+        "B. It will stay in the fridge.",
+        "C. Someone will eat it.",
+        "D. It will go to the office desk."
+      ],
+      "ans": "A",
+      "explain": "文中最後一句「Any food without a name will be thrown away.」說明沒有標示名字的食物會在週五清掃時被丟掉。(B)、(C)、(D) 皆與規定不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Flight Ticket Message] Flight BR28 to San Francisco is delayed. The new departure time is 11:45 p.m. Passengers can wait at Gate 12 and get a free drink voucher from the service desk.\nQ: What should passengers do if they want a free drink?",
+      "options": [
+        "A. Board the plane now.",
+        "B. Go to the service desk.",
+        "C. Pay at Gate 12.",
+        "D. Change their ticket."
+      ],
+      "ans": "B",
+      "explain": "文末指出旅客可以「get a free drink voucher from the service desk」（在服務台領取免費飲料兌換券），故選 B。(A) 班機延誤尚未登機；(C) 兌換券是免費的無須付費；(D) 文中並未要求更換機票。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Apartment Rules] Welcome to your new home. Please do not play loud music after 10:00 p.m. Put your trash bags in the collection area on the first floor before 8:00 a.m. every morning except Sunday.\nQ: Which of the following is true according to the rules?",
+      "options": [
+        "A. You can play loud music at midnight.",
+        "B. There is no trash collection on Sunday.",
+        "C. The trash area is on the roof.",
+        "D. You must move out before 8:00 a.m."
+      ],
+      "ans": "B",
+      "explain": "文中「every morning except Sunday」表示星期日沒有垃圾清運，故選 B。(A) 晚上十點後不可大聲放音樂；(C) 垃圾放置區在一樓而非屋頂；(D) 8:00 a.m. 是丟垃圾的截止時間，不是搬家時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Business Email] Dear Team, John is sick today and cannot lead the marketing meeting at 3 p.m. Mary will take his place today. Please send your weekly reports to Mary before 2 p.m.\nQ: Who will lead the marketing meeting today?",
+      "options": [
+        "A. The client.",
+        "B. John.",
+        "C. The doctor.",
+        "D. Mary."
+      ],
+      "ans": "D",
+      "explain": "文中明確提到「Mary will take his place today」（瑪麗今天將代替他主持），因此今天由 Mary 主持會議。(A)、(C) 文中未提及；(B) John 今天生病請假無法主持。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Train Station Broadcast] Attention all passengers: The 9:15 train to Hualien is full. If you do not have a reserved seat, please buy a ticket for the next train at 10:00 at ticket window 3.\nQ: What can a person without a ticket do to go to Hualien?",
+      "options": [
+        "A. Wait for the 10:00 train.",
+        "B. Take the 9:15 train without a seat.",
+        "C. Walk to Hualien.",
+        "D. Call the police."
+      ],
+      "ans": "A",
+      "explain": "廣播說明 9:15 的火車已客滿，沒有劃位的旅客應購買 10:00 的下一班車，故選 A。(B) 9:15 已客滿無法無票上車；(C)、(D) 皆不合理且未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Job Advertisement] Star Coffee Shop is looking for a weekend waiter. Working hours are from 10 a.m. to 6 p.m. on Saturdays and Sundays. Good English communication skills are welcome. Please call Mr. Wu at 0912-345-678.\nQ: Who can apply for this job?",
+      "options": [
+        "A. A person who can only work on Mondays.",
+        "B. A person who wants to work on weekends.",
+        "C. A person looking for a night shift.",
+        "D. A person who wants to cook in a hotel."
+      ],
+      "ans": "B",
+      "explain": "該職缺為「weekend waiter」，工作時間為「Saturdays and Sundays」，因此適合能在週末工作的人。(A) 只能在週一工作不合；(C) 工作時間為白天 10:00 至 18:00，非大夜班；(D) 應徵的是咖啡店服務生而非飯店廚師。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Office Kitchen Notice] Please label your lunchbox with your name and department. Any box without a name will be removed every Friday at 4:30 p.m. Please do not leave dirty forks or bowls in the sink overnight.\nQ: What will the cleaner do to an unlabeled lunchbox on Friday at 5:00 p.m.?",
+      "options": [
+        "A. Wash it and put it away.",
+        "B. Move it to the 4th floor.",
+        "C. Throw it away or remove it.",
+        "D. Send an email to the owner."
+      ],
+      "ans": "C",
+      "explain": "文中說明「Any box without a name will be removed every Friday at 4:30 p.m.」（沒有標註名字的餐盒會在週五下午四點半被清除丟棄），故選 C。(A)、(B)、(D) 皆非清潔人員的處置方式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Express Train Schedule] Train 105: Leaves Taipei at 07:15, arrives in Taichung at 08:20, arrives in Zuoying at 09:10. Train 107: Leaves Taipei at 07:45, does NOT stop in Taichung, arrives in Zuoying at 09:20.\nQ: If Mr. Lin takes Train 107 in Taipei, can he get off at Taichung?",
+      "options": [
+        "A. Yes, at 08:20.",
+        "B. Yes, at 09:20.",
+        "C. No, because Train 107 is canceled.",
+        "D. No, because Train 107 does not stop there."
+      ],
+      "ans": "D",
+      "explain": "時刻表明確說明 Train 107「does NOT stop in Taichung」（不停靠台中），因此林先生無法在台中下車，故選 D。(A) 是 105 車次的台中抵達時間；(B) 是左營抵達時間；(C) 班車未取消。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message Chain] John: 'Hey Lisa, the manager wants us to finish the presentation slides before our 3:00 meeting.' Lisa: 'I already finished the charts. Can you write the summary page?' John: 'Sure, I can do that now.'\nQ: What will John do next?",
+      "options": [
+        "A. Write the summary page.",
+        "B. Finish the charts.",
+        "C. Cancel the 3:00 meeting.",
+        "D. Leave the company."
+      ],
+      "ans": "A",
+      "explain": "Lisa 詢問 John 能否寫總結頁面（Can you write the summary page?），John 回答「Sure, I can do that now.」，表示他接下來會去寫總結頁面，故選 A。(B) Lisa 已經做完了圖表；(C)、(D) 與簡訊對話內容無關。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Restaurant Policy Note] Table reservations are held for 10 minutes only. If all guests are not present within 10 minutes after the reserved time, your table will be given to waiting walk-in customers.\nQ: What happens if a group of four arrives 15 minutes late for their reservation?",
+      "options": [
+        "A. They get a discount.",
+        "B. Their table may be given away.",
+        "C. They must pay double price.",
+        "D. The restaurant will be closed."
+      ],
+      "ans": "B",
+      "explain": "規定說明座位僅保留 10 分鐘，若逾時「table will be given to waiting walk-in customers」（桌位將轉讓給現場候位客人），遲到 15 分鐘桌位可能不保，故選 B。(A)、(C)、(D) 均不符合內文事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Postcard from Hualien] Dear Eric, Taroko Gorge is breathtaking! Yesterday we walked along the Shakadang Trail. My sister was tired, but she finished the entire walk. Tomorrow we will ride bicycles along the coast before heading home. See you Tuesday! Ken.\nQ: What is Ken's plan for tomorrow?",
+      "options": [
+        "A. Walk the mountain trail again.",
+        "B. Rest at the hotel all day.",
+        "C. Ride bicycles along the coast.",
+        "D. Visit a museum in Taipei."
+      ],
+      "ans": "C",
+      "explain": "文中「Tomorrow we will ride bicycles along the coast before heading home.」直接點出明天的行程是沿海岸騎腳踏車，故選 C。(A) 是昨天的行程；(B)、(D) 與內文明確計畫矛盾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Dentist Clinic Notice] Clinic Hours: Monday to Friday 9:00 a.m. to 8:30 p.m. Saturday: 9:00 a.m. to 12:00 noon. Sunday: Closed. For urgent tooth pain outside opening hours, please call emergency line 0988-111-222.\nQ: When is the clinic open on Saturday afternoon?",
+      "options": [
+        "A. From 1:00 p.m. to 5:00 p.m.",
+        "B. From 2:00 p.m. to 8:30 p.m.",
+        "C. All afternoon.",
+        "D. It is not open in the afternoon."
+      ],
+      "ans": "D",
+      "explain": "告示說明週六營業時間僅到中午十二點（Saturday: 9:00 a.m. to 12:00 noon），因此週六下午並未開診，選 D。(A)、(B)、(C) 皆違反告示中的看診時段。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Airport Announcement] Attention passengers on flight JL802 to Tokyo: The boarding gate has changed from Gate A7 to Gate C3. Boarding will start at 14:15. Please go directly to Terminal 2, Gate C3 now.\nQ: What should passengers on flight JL802 do right now?",
+      "options": [
+        "A. Go to Gate C3.",
+        "B. Wait at Gate A7.",
+        "C. Buy new flight tickets.",
+        "D. Go to the luggage area."
+      ],
+      "ans": "A",
+      "explain": "廣播指出登機門已更換為 C3，並指示「Please go directly to Terminal 2, Gate C3 now.」，故選 A。(B) 原登機門已更改；(C)、(D) 未提及且非廣播要求之動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Email Invitation] Dear Colleagues, We invite you to the company annual dinner on Friday, December 18 at Grand Palace Hotel. Dinner starts at 6:30 p.m. Please reply to this email before next Wednesday to choose beef, fish, or vegetarian.\nQ: What must employees do by next Wednesday?",
+      "options": [
+        "A. Pay for the dinner ticket.",
+        "B. Choose their meal choice by email.",
+        "C. Arrive at Grand Palace Hotel.",
+        "D. Prepare an English speech."
+      ],
+      "ans": "B",
+      "explain": "信中指出「Please reply to this email before next Wednesday to choose beef, fish, or vegetarian.」（請在下週三前以回信選擇餐點種類：牛、魚或素食），故選 B。(A) 晚宴由公司舉辦未提及收費；(C) 聚餐日期在 12 月 18 日；(D) 未提及演講。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Notice on Boarding School / Hostel Washroom] The hot water system operates daily from 6:00 a.m. to 10:00 a.m., and from 6:00 p.m. to 11:30 p.m. During other hours, only cold water is available in all bathrooms.\nQ: Can a resident take a hot shower at 2:00 p.m.?",
+      "options": [
+        "A. Yes, in any bathroom.",
+        "B. Yes, if they pay extra fee.",
+        "C. No, hot water is not available at 2:00 p.m.",
+        "D. No, because all bathrooms are locked."
+      ],
+      "ans": "C",
+      "explain": "熱水供應時段為 06:00-10:00 與 18:00-23:30，其餘時段僅有冷水（only cold water is available），因此下午 2 點沒有熱水，選 C。(A)、(B) 不符合規定；(D) 浴室未上鎖，只是沒有熱水。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text Message] Hi Kelly! I bought two tickets for the pop concert this Saturday night at 7:00 p.m. My brother cannot come with me because of his work. Would you like to come with me? The ticket is free for you!\nQ: Why does the writer invite Kelly to the concert?",
+      "options": [
+        "A. Kelly wants to sell concert tickets.",
+        "B. The writer's brother cannot go.",
+        "C. Kelly is the singer of the concert.",
+        "D. The concert is on Sunday afternoon."
+      ],
+      "ans": "B",
+      "explain": "文中說明「My brother cannot come with me because of his work. Would you like to come with me?」（哥哥因為工作無法去，因此詢問 Kelly 是否願意同行），選 B。(A) 不是要賣票而是免費贈送同行；(C) Kelly 是朋友不是歌手；(D) 演唱會是週六晚上。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：十二月",
+      "ans": "DECEMBER",
+      "speak": "december"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：直升機",
+      "ans": "HELICOPTER",
+      "speak": "helicopter"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：冰箱",
+      "ans": "REFRIGERATOR",
+      "speak": "refrigerator"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：經理；主管",
+      "ans": "MANAGER",
+      "speak": "manager"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：收據；發票",
+      "ans": "RECEIPT",
+      "speak": "receipt"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：高鐵",
+      "ans": "HIGH SPEED RAIL",
+      "speak": "high speed rail"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：外帶還是內用",
+      "ans": "FOR HERE OR TO GO",
+      "speak": "for here or to go"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：兩人的桌位",
+      "ans": "A TABLE FOR TWO",
+      "speak": "a table for two"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：下著大雨",
+      "ans": "HEAVY RAIN",
+      "speak": "heavy rain"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：下一班公車什麼時候來？",
+      "ans": "WHEN IS THE NEXT BUS",
+      "speak": "when is the next bus"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：這件外套太貴了。",
+      "ans": "THIS COAT IS TOO EXPENSIVE",
+      "speak": "this coat is too expensive"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我們明天早上見面吧。",
+      "ans": "LET US MEET TOMORROW MORNING",
+      "speak": "let us meet tomorrow morning"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出短句：我想要喝一杯熱茶。",
+      "ans": "I WOULD LIKE A CUP OF TEA",
+      "speak": "i would like a cup of tea"
     }
   ]
 }

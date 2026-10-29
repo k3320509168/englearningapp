@@ -68,3 +68,11 @@ describe('CEFR 題庫', () => {
     expect(r.accepted).toHaveLength(0);
   });
 });
+
+describe('escapeControlChars', () => {
+  it('fixes raw newlines inside strings so the batch still parses', () => {
+    const broken = '{"normal":[{"type":"spell","desc":"請拼出：\n書","ans":"BOOK"}],"boss":[],"vocab":{}}';
+    expect(() => JSON.parse(broken)).toThrow();
+    expect(parseBatch(broken).normal[0].desc).toBe('請拼出：\n書');
+  });
+});

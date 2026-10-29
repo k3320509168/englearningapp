@@ -6,7 +6,7 @@ import { questionKey } from '../game/battle';
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
 import type { ItemId, UpgradeId } from '../game/progression';
 import {
-  DUPLICATE_SHARDS, SPARK_COST, STARTER_TICKETS, TICKET_GOLD_PRICE, TIER_UP_GOLD, TIER_UP_SHARDS,
+  DUPLICATE_SHARDS, MAX_STARS, SPARK_COST, STAR_COSTS, STAR_GOLD, STARTER_TICKETS, TICKET_GOLD_PRICE, TIER_UP_GOLD, TIER_UP_SHARDS,
   currentRarity, heroDef, isHeroId, summon,
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
@@ -81,6 +81,9 @@ interface SaveData {
   tickets: number;
   summonCounter: SummonCounter;
   heroShards: Record<HeroId, number>;
+  heroStars: Record<HeroId, number>; // SSR 升星（0～4 星）
+  wishShards: number;                // 願望碎片：任何英雄都能用來補不足的碎片
+  shardQuizDay: string;              // 每日碎片英文題最後完成的日期（一天一次）
   heroTier: Record<HeroId, number>;
   // 世界：每張地圖的最佳三星紀錄（key 為 regionId#mapIdx）、每個區域打到過的最遠關卡、看過的劇情
   mapStars: Record<string, boolean[]>;
@@ -131,6 +134,8 @@ interface SaveActions {
   summonHeroes: (count: number, rand?: () => number) => SummonOutcome[] | null;
   exchangeSpark: (id: HeroId) => SummonOutcome | null;
   tierUp: (id: HeroId) => boolean;
+  starUp: (id: HeroId) => boolean;
+  finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
@@ -179,6 +184,9 @@ export const initialSave: SaveData = {
   tickets: STARTER_TICKETS,
   summonCounter: { sinceSsr: 0, spark: 0 },
   heroShards: {},
+  heroStars: {},
+  wishShards: 0,
+  shardQuizDay: '',
   heroTier: {},
   mapStars: {},
   bestStage: {},
@@ -250,6 +258,17 @@ export function conform<T>(fallback: T, value: unknown): T {
 // 第四輪之前的 6 個區域在新順序中的位置（第 6 個 = 全部通關）
 const OLD_REGION_TO_NEW = [0, 1, 3, 5, 7, 8, 9];
 
+// 付碎片：先用這位英雄自己的碎片，不夠的用願望碎片補；付不起回傳 null
+function payShards(s: SaveData, id: HeroId, need: number): Partial<SaveData> | null {
+  const own = s.heroShards[id] ?? 0;
+  const fromWish = Math.max(0, need - own);
+  if (fromWish > s.wishShards) return null;
+  return { heroShards: { ...s.heroShards, [id]: own - (need - fromWish) }, wishShards: s.wishShards - fromWish };
+}
+export const SHARD_QUIZ_COUNT = 5;
+export const SHARD_QUIZ_PER = 2;
+export const SHARD_QUIZ_MAX = 10;
+
 export function migrateSave(persisted: unknown, version: number): SaveData {
   const data = (isPlainObject(persisted) ? persisted : {}) as Partial<SaveData> & { hero?: HeroId };
   // 每次升級都只「新增欄位」，所以用預設值補齊即可。
@@ -294,6 +313,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.materials = counts(migrated.materials);
   migrated.heroShards = counts(migrated.heroShards);
   migrated.heroTier = counts(migrated.heroTier);
+  migrated.heroStars = counts(migrated.heroStars);
   migrated.heroLevel = counts(migrated.heroLevel, 1);
   migrated.levelProgress = counts(migrated.levelProgress);
   if (version >= 1 && version < 15) migrated.unlockedIndex = OLD_REGION_TO_NEW[Math.min(6, Math.max(0, Math.floor(migrated.unlockedIndex)))];
@@ -691,18 +711,37 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return outcome;
         },
 
-        // 升品階：每位英雄最多升一階（例如 SSR → UR）
+        // 升品階：每位英雄最多升一階（例如 SSR → UR）；SSR 要先升到四星
         tierUp: (id) => {
           const s = get();
           const rarity = heroDef(id).rarity;
           const need = TIER_UP_SHARDS[rarity];
-          if (!s.heroes.includes(id) || (s.heroTier[id] ?? 0) >= 1 || (s.heroShards[id] ?? 0) < need) return false;
+          if (!s.heroes.includes(id) || (s.heroTier[id] ?? 0) >= 1) return false;
+          if (rarity === 'SSR' && (s.heroStars[id] ?? 0) < MAX_STARS) return false;
+          const pay = payShards(s, id, need);
+          if (!pay) return false;
           // 升品階也需要真名進度：至少完成幾項考驗
           if (trialsDone(s.trueName[id]) < TIER_UP_TRIALS) return false;
-          return purchase(TIER_UP_GOLD[rarity], st => ({
-            heroShards: { ...st.heroShards, [id]: st.heroShards[id] - need },
-            heroTier: { ...st.heroTier, [id]: 1 },
-          }));
+          return purchase(TIER_UP_GOLD[rarity], () => ({ ...pay, heroTier: { ...get().heroTier, [id]: 1 } }));
+        },
+
+        // SSR 升星：一星～四星，碎片不夠時用願望碎片補
+        starUp: (id) => {
+          const s = get();
+          const stars = s.heroStars[id] ?? 0;
+          if (!s.heroes.includes(id) || heroDef(id).rarity !== 'SSR' || (s.heroTier[id] ?? 0) >= 1 || stars >= MAX_STARS) return false;
+          const pay = payShards(s, id, STAR_COSTS[stars]);
+          if (!pay) return false;
+          return purchase(STAR_GOLD(stars), () => ({ ...pay, heroStars: { ...get().heroStars, [id]: stars + 1 } }));
+        },
+
+        // 每日碎片英文題：每答對一題 2 片願望碎片（一天一次，最多 10 片）
+        finishShardQuiz: (correct) => {
+          const today = new Date().toDateString();
+          if (get().shardQuizDay === today) return 0;
+          const gained = Math.min(SHARD_QUIZ_MAX, correct * SHARD_QUIZ_PER);
+          set(st => ({ wishShards: st.wishShards + gained, shardQuizDay: today }));
+          return gained;
         },
 
         // 加入或移出隊伍：最多 4 人、至少留 1 人
@@ -734,6 +773,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
+        heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,

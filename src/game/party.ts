@@ -48,6 +48,7 @@ export function playerMods(g: PlayerGrowth): Mods {
 
 export interface PartyOptions {
   tiers?: Record<HeroId, number>;
+  stars?: Record<HeroId, number>;
   heroLevels?: Record<HeroId, number>;
   trueName?: Record<HeroId, boolean[]>;
   growth?: PlayerGrowth;
@@ -67,7 +68,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     };
   }
   const h = heroDef(id);
-  const hs = heroStats(h, opts.tiers?.[id] ?? 0);
+  const hs = heroStats(h, opts.tiers?.[id] ?? 0, opts.stars?.[id] ?? 0);
   // 真名英雄：基礎能力 +50%
   const named = isTrueName(opts.trueName?.[id]) ? TRUE_NAME_BONUS : 0;
   const mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1), { hp: named, atk: named });

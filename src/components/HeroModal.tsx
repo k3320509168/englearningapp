@@ -6,7 +6,7 @@ import { useUiStore } from '../store/uiStore';
 import { CLASS_SKILL, SKILLS, playerSkillPower, skillDesc } from '../game/progression';
 import { classDef, elementDef } from '../game/character';
 import {
-  HEROES, RARITIES, RARITY_INFO, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroSkillPower, heroStats, heroTitle, heroWord,
+  HEROES, MAX_STARS, RARITIES, RARITY_INFO, STAR_BONUS, STAR_COSTS, STAR_GOLD, TIER_UP_GOLD, TIER_UP_SHARDS, currentRarity, heroDef, heroSkill, heroSkillPower, heroStats, heroTitle, heroWord,
 } from '../game/heroes';
 import type { Rarity } from '../game/heroes';
 import { PARTY_MAX } from '../game/party';
@@ -27,7 +27,7 @@ type Filter = 'owned' | 'all' | Rarity;
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroLevel, player, tickets, trueName, toggleMember, setLeader, clearParty, tierUp, trainHero, sellHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, toggleMember, setLeader, clearParty, tierUp, starUp, trainHero, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
@@ -150,13 +150,18 @@ export default function HeroModal() {
     const owned = heroes.includes(id);
     const tier = heroTier[id] ?? 0;
     const rarity = currentRarity(h, tier);
-    const stats = heroStats(h, tier);
+    const stars = heroStars[id] ?? 0;
+    const stats = heroStats(h, tier, stars);
     const el = elementDef(h.element);
     const skill = SKILLS[heroSkill(h)];
     const shards = heroShards[id] ?? 0;
     const need = TIER_UP_SHARDS[h.rarity];
     const trials = trialsDone(trueName[id]);
-    const canTierUp = owned && tier === 0 && shards >= need && gold >= TIER_UP_GOLD[h.rarity] && trials >= TIER_UP_TRIALS;
+    // 碎片不夠時用願望碎片補；SSR 要先四星才能升 UR
+    const starsReady = h.rarity !== 'SSR' || stars >= MAX_STARS;
+    const canTierUp = owned && tier === 0 && starsReady && shards + wishShards >= need && gold >= TIER_UP_GOLD[h.rarity] && trials >= TIER_UP_TRIALS;
+    const starNeed = STAR_COSTS[stars] ?? 0;
+    const canStarUp = owned && h.rarity === 'SSR' && tier === 0 && stars < MAX_STARS && shards + wishShards >= starNeed && gold >= STAR_GOLD(stars);
     const level = heroLevel[id] ?? 1;
     const levelMult = (1 + (level - 1) * LEVEL_STAT) * (isTrueName(trueName[id]) ? 1 + TRUE_NAME_BONUS : 1);
     const cost = trainCost(level, ['N', 'R', 'SR', 'SSR'].indexOf(h.rarity));
@@ -176,9 +181,18 @@ export default function HeroModal() {
           <TalentLines talent={heroTalent(h.id)} power={heroSkillPower(h, tier)} classId={h.classId} />
           {owned ? (
             <>
+              {h.rarity === 'SSR' && tier === 0 && (
+                <p className="tier-line">
+                  升星 {'★'.repeat(stars)}{'☆'.repeat(MAX_STARS - stars)}{stars < MAX_STARS && `：碎片 ◆${shards}/${starNeed}（願望碎片 ${wishShards}）、🪙 ${STAR_GOLD(stars)}（每星生命與攻擊 +${Math.round(STAR_BONUS * 100)}%）`}
+                  {stars < MAX_STARS && <>{' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => {
+                    if (!starUp(id)) return;
+                    useUiStore.getState().celebrate({ icon: '⭐', title: `升星：${stars + 1} 星`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO.SSR.color });
+                  }} disabled={!canStarUp}>升星</button></>}
+                </p>
+              )}
               {tier === 0 ? (
                 <p className="tier-line">
-                  升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}、真名考驗 {Math.min(trials, TIER_UP_TRIALS)}/{TIER_UP_TRIALS}
+                  升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：{starsReady ? '' : '先升到四星、'}碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}、真名考驗 {Math.min(trials, TIER_UP_TRIALS)}/{TIER_UP_TRIALS}
                   {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => {
                     if (!tierUp(id)) return;
                     const r = currentRarity(h, 1);

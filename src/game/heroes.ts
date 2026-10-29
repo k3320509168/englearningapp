@@ -144,9 +144,9 @@ export function currentRarity(h: HeroDef, tier: number): Rarity {
   return RARITIES[Math.min(RARITIES.indexOf(h.rarity) + (tier > 0 ? 1 : 0), RARITIES.length - 1)];
 }
 
-export function heroStats(h: HeroDef, tier = 0) {
+export function heroStats(h: HeroDef, tier = 0, stars = 0) {
   const cls = classDef(h.classId).stats;
-  const mult = RARITY_INFO[currentRarity(h, tier)].statMult;
+  const mult = RARITY_INFO[currentRarity(h, tier)].statMult * (1 + STAR_BONUS * stars);
   return { hp: cls.hp * mult, atk: cls.atk * mult, crit: cls.crit };
 }
 
@@ -170,7 +170,14 @@ export const TICKET_GOLD_PRICE = 200;
 
 // 重複抽到：轉成該英雄的碎片；碎片＋金幣可以升一個品階
 export const DUPLICATE_SHARDS: Record<Rarity, number> = { N: 5, R: 8, SR: 15, SSR: 30, UR: 30 };
-export const TIER_UP_SHARDS: Record<Rarity, number> = { N: 20, R: 30, SR: 45, SSR: 60, UR: 0 };
+export const TIER_UP_SHARDS: Record<Rarity, number> = { N: 20, R: 30, SR: 45, SSR: 150, UR: 0 };
+
+// SSR 升星（第四輪，和 Gemini 討論）：一星～四星各要 20／40／80／100 片，四星後再用 150 片升 UR（共 390 片）。
+// 每顆星：生命與攻擊 +8%。碎片不夠時可以用「願望碎片」（每日碎片英文題取得，任何英雄都能用）補。
+export const STAR_COSTS = [20, 40, 80, 100];
+export const MAX_STARS = STAR_COSTS.length;
+export const STAR_BONUS = 0.08;
+export const STAR_GOLD = (stars: number) => 500 * (stars + 1);
 export const TIER_UP_GOLD: Record<Rarity, number> = { N: 200, R: 400, SR: 800, SSR: 1500, UR: 0 };
 
 export interface SummonCounter {

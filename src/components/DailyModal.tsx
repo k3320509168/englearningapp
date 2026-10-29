@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Modal from './Modal';
-import { useSaveStore } from '../store/saveStore';
+import { SHARD_QUIZ_MAX, useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { STREAK_MILESTONES, claimableMilestones, nextMilestone, taskDef } from '../game/daily';
 import type { DailyTask } from '../game/daily';
@@ -38,6 +38,7 @@ export default function DailyModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const daily = useSaveStore(s => s.daily);
   const weekly = useSaveStore(s => s.weekly);
+  const shardQuizDone = useSaveStore(s => s.shardQuizDay === new Date().toDateString());
   const { ensureDaily, claimDaily, claimStreak, claimWeekly } = useSaveStore.getState();
   useEffect(() => { ensureDaily(); }, [ensureDaily]);
   if (!daily) return null;
@@ -46,6 +47,10 @@ export default function DailyModal() {
 
   return (
     <Modal title="📅 每日・每週任務" onClose={closeModal}>
+      <button className="btn btn-primary shard-quiz-btn" onMouseDown={keepFocus}
+        onClick={() => useUiStore.getState().openModal('shardQuiz')}>
+        💎 每日碎片英文題{shardQuizDone ? '（今天已完成）' : `（答對最多拿 ${SHARD_QUIZ_MAX} 片）`}
+      </button>
       <section className="streak" aria-label="連續登入">
         <p className="shop-gold">🔥 連續登入 <b>{daily.streak}</b> 天
           {next && <span className="muted">・再 {next.days - daily.streak} 天領 🪙{next.gold} 🎫×{next.tickets}</span>}

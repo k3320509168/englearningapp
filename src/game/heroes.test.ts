@@ -74,11 +74,20 @@ describe('summon in the save', () => {
     expect(got.isNew).toBe(true);
     expect(useSaveStore.getState().heroes).toContain('aurora');
     expect(useSaveStore.getState().exchangeSpark('aurora')).toBeNull(); // 點數不夠了
-    useSaveStore.setState({ heroShards: { aurora: 60 } });
+    // SSR 要先升到四星（20／40／80／100 片），再用 150 片升 UR
+    useSaveStore.setState({ heroShards: { aurora: 150 }, gold: 99999 });
+    expect(useSaveStore.getState().tierUp('aurora')).toBe(false); // 還沒四星
+    useSaveStore.setState({ heroShards: { aurora: 240 }, wishShards: 0 });
+    for (let i = 0; i < 4; i++) expect(useSaveStore.getState().starUp('aurora')).toBe(true);
+    expect(useSaveStore.getState().heroStars.aurora).toBe(4);
+    expect(useSaveStore.getState().heroShards.aurora).toBe(0);
+    // 自己的碎片不夠時用願望碎片補
+    useSaveStore.setState({ heroShards: { aurora: 100 }, wishShards: 50 });
     expect(useSaveStore.getState().tierUp('aurora')).toBe(false); // 還沒有真名進度
     useSaveStore.setState({ trueName: { aurora: [true, true, true, false, false] } });
     expect(useSaveStore.getState().tierUp('aurora')).toBe(true);
     expect(useSaveStore.getState().heroTier.aurora).toBe(1);
+    expect(useSaveStore.getState().wishShards).toBe(0);
     expect(useSaveStore.getState().tierUp('aurora')).toBe(false); // 只能升一次
   });
 

@@ -275,6 +275,7 @@ function partyOptions(): PartyOptions {
   const sv = save();
   return {
     tiers: sv.heroTier,
+    stars: sv.heroStars,
     heroLevels: sv.heroLevel,
     trueName: sv.trueName,
     growth: {

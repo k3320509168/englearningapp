@@ -1776,9 +1776,9 @@
   },
   "SUBTEXT": {
     "pos": "n.",
-    "meaning": "表面對話背後未明說的意思",
-    "example": "The pause changes the subtext of the exchange.",
-    "exampleZh": "停頓改變了對話的潛台詞。",
+    "meaning": "字面下隱含而未明說的意思",
+    "example": "The actor makes the subtext audible through tone.",
+    "exampleZh": "演員以語氣讓潛台詞可感。",
     "senses": [
       {
         "pos": "n.",
@@ -1791,6 +1791,16 @@
           {
             "en": "The subtext is clearer than the character’s polite words.",
             "zh": "潛台詞比角色禮貌的字句更清楚。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "字面下隱含而未明說的意思",
+        "examples": [
+          {
+            "en": "The actor makes the subtext audible through tone.",
+            "zh": "演員以語氣讓潛台詞可感。"
           }
         ]
       }
@@ -1930,9 +1940,9 @@
   },
   "NUANCE": {
     "pos": "n.",
-    "meaning": "意思或感受上的細微差異",
-    "example": "The translation preserves the nuance of the refusal.",
-    "exampleZh": "翻譯保留了拒絕中的細微差異。",
+    "meaning": "意思或表達中細微的差異",
+    "example": "A change of pace adds a nuance to the reply.",
+    "exampleZh": "節奏改變為回答增添細微意味。",
     "senses": [
       {
         "pos": "n.",
@@ -1947,8 +1957,19 @@
             "zh": "重音略變就能改變細微意思。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "意思或表達中細微的差異",
+        "examples": [
+          {
+            "en": "A change of pace adds a nuance to the reply.",
+            "zh": "節奏改變為回答增添細微意味。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "nuance"
   },
   "ALLEGORY": {
     "pos": "n.",
@@ -6835,6 +6856,669 @@
       }
     ]
   },
+  "AFFORDANCE": {
+    "word": "affordance",
+    "pos": "n.",
+    "meaning": "環境或物件提供或暗示的可用方式",
+    "example": "The handle provides a visual affordance for pulling.",
+    "exampleZh": "把手提供可拉的視覺提示。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "環境或物件提供或暗示的可用方式",
+        "examples": [
+          {
+            "en": "The handle provides a visual affordance for pulling.",
+            "zh": "把手提供可拉的視覺提示。"
+          }
+        ]
+      }
+    ]
+  },
+  "THRESHOLD": {
+    "word": "threshold",
+    "pos": "n.",
+    "meaning": "進入某活動或空間前需跨過的門檻",
+    "example": "Unclear instructions create an unnecessary threshold.",
+    "exampleZh": "不清楚指示造成不必要門檻。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "進入某活動或空間前需跨過的門檻",
+        "examples": [
+          {
+            "en": "Unclear instructions create an unnecessary threshold.",
+            "zh": "不清楚指示造成不必要門檻。"
+          }
+        ]
+      }
+    ]
+  },
+  "A LEGIBLE SPATIAL HIERARCHY": {
+    "word": "a legible spatial hierarchy",
+    "pos": "phr.",
+    "meaning": "容易理解的空間層級",
+    "example": "The lobby has a legible spatial hierarchy.",
+    "exampleZh": "大廳空間層級易理解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容易理解的空間層級",
+        "examples": [
+          {
+            "en": "The lobby has a legible spatial hierarchy.",
+            "zh": "大廳空間層級易理解。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN INSTITUTIONAL VOCABULARY": {
+    "word": "an institutional vocabulary",
+    "pos": "phr.",
+    "meaning": "某機構內部慣用的詞彙",
+    "example": "Visitors may not know the institutional vocabulary.",
+    "exampleZh": "遊客未必熟悉機構用語。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "某機構內部慣用的詞彙",
+        "examples": [
+          {
+            "en": "Visitors may not know the institutional vocabulary.",
+            "zh": "遊客未必熟悉機構用語。"
+          }
+        ]
+      }
+    ]
+  },
+  "A READILY DISCOVERABLE ALTERNATIVE": {
+    "word": "a readily discoverable alternative",
+    "pos": "phr.",
+    "meaning": "容易找到資訊的替代選項",
+    "example": "The staffed desk should be a readily discoverable alternative.",
+    "exampleZh": "人工櫃台應是容易發現的替代選項。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容易找到資訊的替代選項",
+        "examples": [
+          {
+            "en": "The staffed desk should be a readily discoverable alternative.",
+            "zh": "人工櫃台應是容易發現的替代選項。"
+          }
+        ]
+      }
+    ]
+  },
+  "PHYSICAL ENTRY DOES NOT GUARANTEE A SENSE OF WELCOME": {
+    "word": "physical entry does not guarantee a sense of welcome",
+    "pos": "phr.",
+    "meaning": "能實際進入不保證感到被歡迎",
+    "example": "Physical entry does not guarantee a sense of welcome.",
+    "exampleZh": "能實際進入不保證感到被歡迎。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能實際進入不保證感到被歡迎",
+        "examples": [
+          {
+            "en": "Physical entry does not guarantee a sense of welcome.",
+            "zh": "能實際進入不保證感到被歡迎。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE SAME ROUTE CAN IMPOSE DIFFERENT DEMANDS ON DIFFERENT USERS": {
+    "word": "the same route can impose different demands on different users",
+    "pos": "phr.",
+    "meaning": "同路線可對不同使用者造成不同負擔",
+    "example": "The same route can impose different demands on different users.",
+    "exampleZh": "同路線可對不同使用者造成不同負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同路線可對不同使用者造成不同負擔",
+        "examples": [
+          {
+            "en": "The same route can impose different demands on different users.",
+            "zh": "同路線可對不同使用者造成不同負擔。"
+          }
+        ]
+      }
+    ]
+  },
+  "INFORMATION MUST BE DISCOVERABLE WITHOUT PRIOR FAMILIARITY": {
+    "word": "information must be discoverable without prior familiarity",
+    "pos": "phr.",
+    "meaning": "資訊應不靠事先熟悉就能找到",
+    "example": "Information must be discoverable without prior familiarity.",
+    "exampleZh": "資訊應不靠事先熟悉就能找到。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "資訊應不靠事先熟悉就能找到",
+        "examples": [
+          {
+            "en": "Information must be discoverable without prior familiarity.",
+            "zh": "資訊應不靠事先熟悉就能找到。"
+          }
+        ]
+      }
+    ]
+  },
+  "A NAVIGATIONAL CUE": {
+    "pos": "phr.",
+    "meaning": "幫助判斷方向的線索",
+    "example": "The coloured wall acts as a navigational cue.",
+    "exampleZh": "彩牆作為方向線索。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "幫助判斷方向的線索",
+        "examples": [
+          {
+            "en": "The coloured wall acts as a navigational cue.",
+            "zh": "彩牆作為方向線索。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNIMPEDED ROUTE": {
+    "pos": "phr.",
+    "meaning": "沒有阻礙而可順暢通行的路線",
+    "example": "The plan identifies an unimpeded route.",
+    "exampleZh": "計畫標出無阻路線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "沒有阻礙而可順暢通行的路線",
+        "examples": [
+          {
+            "en": "The plan identifies an unimpeded route.",
+            "zh": "計畫標出無阻路線。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MISLEADING AFFORDANCE": {
+    "pos": "phr.",
+    "meaning": "外觀暗示的用途與實際可用方式不符",
+    "example": "A pull handle on a push door is a misleading affordance.",
+    "exampleZh": "推門裝拉把手造成誤導提示。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "外觀暗示的用途與實際可用方式不符",
+        "examples": [
+          {
+            "en": "A pull handle on a push door is a misleading affordance.",
+            "zh": "推門裝拉把手造成誤導提示。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNIMPEDED": {
+    "pos": "adj.",
+    "meaning": "未受到妨礙而可順暢進行的",
+    "example": "The design provides an unimpeded route.",
+    "exampleZh": "設計提供無阻路線。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未受到妨礙而可順暢進行的",
+        "examples": [
+          {
+            "en": "The design provides an unimpeded route.",
+            "zh": "設計提供無阻路線。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONVOLUTED": {
+    "pos": "adj.",
+    "meaning": "過於複雜曲折而難理解的",
+    "example": "The directions are unnecessarily convoluted.",
+    "exampleZh": "方向說明過度曲折複雜。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "過於複雜曲折而難理解的",
+        "examples": [
+          {
+            "en": "The directions are unnecessarily convoluted.",
+            "zh": "方向說明過度曲折複雜。"
+          }
+        ]
+      }
+    ]
+  },
+  "FINDABILITY": {
+    "pos": "n.",
+    "meaning": "資訊或物件容易被找到的程度",
+    "example": "The review considers findability as well as accuracy.",
+    "exampleZh": "評估兼顧可尋性與準確性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資訊或物件容易被找到的程度",
+        "examples": [
+          {
+            "en": "The review considers findability as well as accuracy.",
+            "zh": "評估兼顧可尋性與準確性。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISORIENTATE": {
+    "pos": "v.",
+    "meaning": "使人失去方向感",
+    "example": "Repeated identical corridors can disorientate visitors.",
+    "exampleZh": "重複相同走廊可能使人迷向。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使人失去方向感",
+        "examples": [
+          {
+            "en": "Repeated identical corridors can disorientate visitors.",
+            "zh": "重複相同走廊可能使人迷向。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOTTLENECK": {
+    "pos": "n.",
+    "meaning": "限制通行流量的瓶頸位置",
+    "example": "The narrow doorway creates a bottleneck.",
+    "exampleZh": "狹窄門口形成瓶頸。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "限制通行流量的瓶頸位置",
+        "examples": [
+          {
+            "en": "The narrow doorway creates a bottleneck.",
+            "zh": "狹窄門口形成瓶頸。"
+          }
+        ]
+      }
+    ]
+  },
+  "CIRCUITOUS": {
+    "pos": "adj.",
+    "meaning": "路線迂迴而不直接的",
+    "example": "The alternative route is circuitous.",
+    "exampleZh": "替代路線迂迴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "路線迂迴而不直接的",
+        "examples": [
+          {
+            "en": "The alternative route is circuitous.",
+            "zh": "替代路線迂迴。"
+          }
+        ]
+      }
+    ]
+  },
+  "SECLUDED": {
+    "pos": "adj.",
+    "meaning": "遠離他人而較隱密的",
+    "example": "The waiting room is secluded.",
+    "exampleZh": "等候室較隱密。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "遠離他人而較隱密的",
+        "examples": [
+          {
+            "en": "The waiting room is secluded.",
+            "zh": "等候室較隱密。"
+          }
+        ]
+      }
+    ]
+  },
+  "ORIENTATION": {
+    "pos": "n.",
+    "meaning": "相對周遭的位置方向",
+    "example": "The map’s orientation matches the viewer’s position.",
+    "exampleZh": "地圖朝向符合觀看者位置。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "相對周遭的位置方向",
+        "examples": [
+          {
+            "en": "The map’s orientation matches the viewer’s position.",
+            "zh": "地圖朝向符合觀看者位置。"
+          }
+        ]
+      }
+    ]
+  },
+  "CADENCE": {
+    "word": "cadence",
+    "pos": "n.",
+    "meaning": "說話或聲音的節奏起伏",
+    "example": "The cadence makes the line sound uncertain.",
+    "exampleZh": "語調節奏使台詞顯得不確定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "說話或聲音的節奏起伏",
+        "examples": [
+          {
+            "en": "The cadence makes the line sound uncertain.",
+            "zh": "語調節奏使台詞顯得不確定。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DELIBERATELY SPARE SETTING": {
+    "word": "a deliberately spare setting",
+    "pos": "phr.",
+    "meaning": "刻意簡約的場景布置",
+    "example": "The actors work within a deliberately spare setting.",
+    "exampleZh": "演員在刻意簡約的布景中表演。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意簡約的場景布置",
+        "examples": [
+          {
+            "en": "The actors work within a deliberately spare setting.",
+            "zh": "演員在刻意簡約的布景中表演。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FINELY JUDGED TRANSITION": {
+    "word": "a finely judged transition",
+    "pos": "phr.",
+    "meaning": "拿捏精準的轉換",
+    "example": "The scene ends with a finely judged transition.",
+    "exampleZh": "場景以精準轉換結束。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拿捏精準的轉換",
+        "examples": [
+          {
+            "en": "The scene ends with a finely judged transition.",
+            "zh": "場景以精準轉換結束。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SUSTAINED EMOTIONAL TENSION": {
+    "word": "a sustained emotional tension",
+    "pos": "phr.",
+    "meaning": "持續維持的情感張力",
+    "example": "The pauses create a sustained emotional tension.",
+    "exampleZh": "停頓創造持續情感張力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "持續維持的情感張力",
+        "examples": [
+          {
+            "en": "The pauses create a sustained emotional tension.",
+            "zh": "停頓創造持續情感張力。"
+          }
+        ]
+      }
+    ]
+  },
+  "AMBIGUITY NEED NOT OBSCURE WHO IS SPEAKING": {
+    "word": "ambiguity need not obscure who is speaking",
+    "pos": "phr.",
+    "meaning": "歧義不必模糊誰在說話",
+    "example": "Ambiguity need not obscure who is speaking.",
+    "exampleZh": "歧義不必模糊誰在說話。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "歧義不必模糊誰在說話",
+        "examples": [
+          {
+            "en": "Ambiguity need not obscure who is speaking.",
+            "zh": "歧義不必模糊誰在說話。"
+          }
+        ]
+      }
+    ]
+  },
+  "PREPARATION CAN SUPPORT THE IMPRESSION OF SPONTANEOUS DISCOVERY": {
+    "word": "preparation can support the impression of spontaneous discovery",
+    "pos": "phr.",
+    "meaning": "準備可支撐自發發現的觀感",
+    "example": "Preparation can support the impression of spontaneous discovery.",
+    "exampleZh": "準備可支撐自發發現的觀感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "準備可支撐自發發現的觀感",
+        "examples": [
+          {
+            "en": "Preparation can support the impression of spontaneous discovery.",
+            "zh": "準備可支撐自發發現的觀感。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE SAME WORDS CAN CHANGE FUNCTION WITH DIFFERENT LISTENERS": {
+    "word": "the same words can change function with different listeners",
+    "pos": "phr.",
+    "meaning": "同樣字句可因聽者不同改變作用",
+    "example": "The same words can change function with different listeners.",
+    "exampleZh": "同樣字句可因聽者不同改變作用。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同樣字句可因聽者不同改變作用",
+        "examples": [
+          {
+            "en": "The same words can change function with different listeners.",
+            "zh": "同樣字句可因聽者不同改變作用。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNDERSTATED DELIVERY": {
+    "pos": "phr.",
+    "meaning": "以克制方式說出台詞",
+    "example": "The joke benefits from an understated delivery.",
+    "exampleZh": "笑話因克制說法而更有效。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以克制方式說出台詞",
+        "examples": [
+          {
+            "en": "The joke benefits from an understated delivery.",
+            "zh": "笑話因克制說法而更有效。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TOUR DE FORCE": {
+    "pos": "phr.",
+    "meaning": "展現高超技巧的傑出表現",
+    "example": "The final monologue is a tour de force.",
+    "exampleZh": "最後獨白是技巧傑作。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "展現高超技巧的傑出表現",
+        "examples": [
+          {
+            "en": "The final monologue is a tour de force.",
+            "zh": "最後獨白是技巧傑作。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DISCORDANT NOTE": {
+    "pos": "phr.",
+    "meaning": "與整體氣氛不協調的成分",
+    "example": "The abrupt music adds a discordant note.",
+    "exampleZh": "突兀音樂添不協調成分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "與整體氣氛不協調的成分",
+        "examples": [
+          {
+            "en": "The abrupt music adds a discordant note.",
+            "zh": "突兀音樂添不協調成分。"
+          }
+        ]
+      }
+    ]
+  },
+  "POIGNANT": {
+    "pos": "adj.",
+    "meaning": "使人深受觸動而帶酸楚的",
+    "example": "The final image is poignant.",
+    "exampleZh": "最後畫面感人酸楚。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "使人深受觸動而帶酸楚的",
+        "examples": [
+          {
+            "en": "The final image is poignant.",
+            "zh": "最後畫面感人酸楚。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESONANT": {
+    "pos": "adj.",
+    "meaning": "能引發深刻情感聯想的",
+    "example": "The line becomes resonant after the final scene.",
+    "exampleZh": "最後一場後那句台詞引起深刻共鳴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能引發深刻情感聯想的",
+        "examples": [
+          {
+            "en": "The line becomes resonant after the final scene.",
+            "zh": "最後一場後那句台詞引起深刻共鳴。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPERCEPTIBLE": {
+    "pos": "adj.",
+    "meaning": "細微到幾乎無法察覺的",
+    "example": "Her expression changes by an imperceptible degree.",
+    "exampleZh": "她神情以近乎不可察覺程度改變。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "細微到幾乎無法察覺的",
+        "examples": [
+          {
+            "en": "Her expression changes by an imperceptible degree.",
+            "zh": "她神情以近乎不可察覺程度改變。"
+          }
+        ]
+      }
+    ]
+  },
+  "MODULATION": {
+    "pos": "n.",
+    "meaning": "聲音語氣等有控制的調整變化",
+    "example": "A slight modulation changes the line’s meaning.",
+    "exampleZh": "細微語調調整改變台詞意味。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音語氣等有控制的調整變化",
+        "examples": [
+          {
+            "en": "A slight modulation changes the line’s meaning.",
+            "zh": "細微語調調整改變台詞意味。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENSEMBLE": {
+    "pos": "n.",
+    "meaning": "共同演出的表演者群體",
+    "example": "The ensemble responds to each change of pace.",
+    "exampleZh": "全體表演者回應節奏變化。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "共同演出的表演者群體",
+        "examples": [
+          {
+            "en": "The ensemble responds to each change of pace.",
+            "zh": "全體表演者回應節奏變化。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESTRAINT": {
+    "pos": "n.",
+    "meaning": "對表達或行動程度的克制",
+    "example": "The scene gains power from restraint.",
+    "exampleZh": "場景因克制而有力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對表達或行動程度的克制",
+        "examples": [
+          {
+            "en": "The scene gains power from restraint.",
+            "zh": "場景因克制而有力。"
+          }
+        ]
+      }
+    ]
+  },
+  "DELIBERATION": {
+    "pos": "n.",
+    "meaning": "在選擇前仔細思考的過程",
+    "example": "The pause conveys deliberation.",
+    "exampleZh": "停頓傳達斟酌思考。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在選擇前仔細思考的過程",
+        "examples": [
+          {
+            "en": "The pause conveys deliberation.",
+            "zh": "停頓傳達斟酌思考。"
+          }
+        ]
+      }
+    ]
+  },
   "R7:CORROBORATION": {
     "word": "corroboration",
     "pos": "n.",
@@ -8134,9 +8818,9 @@
   },
   "R7:NUANCE": {
     "pos": "n.",
-    "meaning": "意思或感受上的細微差異",
-    "example": "The translation preserves the nuance of the refusal.",
-    "exampleZh": "翻譯保留了拒絕中的細微差異。",
+    "meaning": "意思或表達中細微的差異",
+    "example": "A change of pace adds a nuance to the reply.",
+    "exampleZh": "節奏改變為回答增添細微意味。",
     "senses": [
       {
         "pos": "n.",
@@ -8149,6 +8833,16 @@
           {
             "en": "A small change in emphasis can alter the nuance.",
             "zh": "重音略變就能改變細微意思。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "意思或表達中細微的差異",
+        "examples": [
+          {
+            "en": "A change of pace adds a nuance to the reply.",
+            "zh": "節奏改變為回答增添細微意味。"
           }
         ]
       }
@@ -11309,6 +12003,457 @@
     ],
     "word": "asymmetry"
   },
+  "R7:AFFORDANCE": {
+    "word": "affordance",
+    "pos": "n.",
+    "meaning": "環境或物件提供或暗示的可用方式",
+    "example": "The handle provides a visual affordance for pulling.",
+    "exampleZh": "把手提供可拉的視覺提示。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "環境或物件提供或暗示的可用方式",
+        "examples": [
+          {
+            "en": "The handle provides a visual affordance for pulling.",
+            "zh": "把手提供可拉的視覺提示。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:THRESHOLD": {
+    "word": "threshold",
+    "pos": "n.",
+    "meaning": "進入某活動或空間前需跨過的門檻",
+    "example": "Unclear instructions create an unnecessary threshold.",
+    "exampleZh": "不清楚指示造成不必要門檻。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "進入某活動或空間前需跨過的門檻",
+        "examples": [
+          {
+            "en": "Unclear instructions create an unnecessary threshold.",
+            "zh": "不清楚指示造成不必要門檻。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A LEGIBLE SPATIAL HIERARCHY": {
+    "word": "a legible spatial hierarchy",
+    "pos": "phr.",
+    "meaning": "容易理解的空間層級",
+    "example": "The lobby has a legible spatial hierarchy.",
+    "exampleZh": "大廳空間層級易理解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容易理解的空間層級",
+        "examples": [
+          {
+            "en": "The lobby has a legible spatial hierarchy.",
+            "zh": "大廳空間層級易理解。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A READILY DISCOVERABLE ALTERNATIVE": {
+    "word": "a readily discoverable alternative",
+    "pos": "phr.",
+    "meaning": "容易找到資訊的替代選項",
+    "example": "The staffed desk should be a readily discoverable alternative.",
+    "exampleZh": "人工櫃台應是容易發現的替代選項。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容易找到資訊的替代選項",
+        "examples": [
+          {
+            "en": "The staffed desk should be a readily discoverable alternative.",
+            "zh": "人工櫃台應是容易發現的替代選項。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PHYSICAL ENTRY DOES NOT GUARANTEE A SENSE OF WELCOME": {
+    "word": "physical entry does not guarantee a sense of welcome",
+    "pos": "phr.",
+    "meaning": "能實際進入不保證感到被歡迎",
+    "example": "Physical entry does not guarantee a sense of welcome.",
+    "exampleZh": "能實際進入不保證感到被歡迎。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能實際進入不保證感到被歡迎",
+        "examples": [
+          {
+            "en": "Physical entry does not guarantee a sense of welcome.",
+            "zh": "能實際進入不保證感到被歡迎。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:THE SAME ROUTE CAN IMPOSE DIFFERENT DEMANDS ON DIFFERENT USERS": {
+    "word": "the same route can impose different demands on different users",
+    "pos": "phr.",
+    "meaning": "同路線可對不同使用者造成不同負擔",
+    "example": "The same route can impose different demands on different users.",
+    "exampleZh": "同路線可對不同使用者造成不同負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同路線可對不同使用者造成不同負擔",
+        "examples": [
+          {
+            "en": "The same route can impose different demands on different users.",
+            "zh": "同路線可對不同使用者造成不同負擔。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:UNIMPEDED": {
+    "pos": "adj.",
+    "meaning": "未受到妨礙而可順暢進行的",
+    "example": "The design provides an unimpeded route.",
+    "exampleZh": "設計提供無阻路線。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未受到妨礙而可順暢進行的",
+        "examples": [
+          {
+            "en": "The design provides an unimpeded route.",
+            "zh": "設計提供無阻路線。"
+          }
+        ]
+      }
+    ],
+    "word": "unimpeded"
+  },
+  "R7:CONVOLUTED": {
+    "pos": "adj.",
+    "meaning": "過於複雜曲折而難理解的",
+    "example": "The directions are unnecessarily convoluted.",
+    "exampleZh": "方向說明過度曲折複雜。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "過於複雜曲折而難理解的",
+        "examples": [
+          {
+            "en": "The directions are unnecessarily convoluted.",
+            "zh": "方向說明過度曲折複雜。"
+          }
+        ]
+      }
+    ],
+    "word": "convoluted"
+  },
+  "R7:FINDABILITY": {
+    "pos": "n.",
+    "meaning": "資訊或物件容易被找到的程度",
+    "example": "The review considers findability as well as accuracy.",
+    "exampleZh": "評估兼顧可尋性與準確性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資訊或物件容易被找到的程度",
+        "examples": [
+          {
+            "en": "The review considers findability as well as accuracy.",
+            "zh": "評估兼顧可尋性與準確性。"
+          }
+        ]
+      }
+    ],
+    "word": "findability"
+  },
+  "R7:BOTTLENECK": {
+    "pos": "n.",
+    "meaning": "限制通行流量的瓶頸位置",
+    "example": "The narrow doorway creates a bottleneck.",
+    "exampleZh": "狹窄門口形成瓶頸。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "限制通行流量的瓶頸位置",
+        "examples": [
+          {
+            "en": "The narrow doorway creates a bottleneck.",
+            "zh": "狹窄門口形成瓶頸。"
+          }
+        ]
+      }
+    ],
+    "word": "bottleneck"
+  },
+  "R7:CIRCUITOUS": {
+    "pos": "adj.",
+    "meaning": "路線迂迴而不直接的",
+    "example": "The alternative route is circuitous.",
+    "exampleZh": "替代路線迂迴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "路線迂迴而不直接的",
+        "examples": [
+          {
+            "en": "The alternative route is circuitous.",
+            "zh": "替代路線迂迴。"
+          }
+        ]
+      }
+    ],
+    "word": "circuitous"
+  },
+  "R7:SECLUDED": {
+    "pos": "adj.",
+    "meaning": "遠離他人而較隱密的",
+    "example": "The waiting room is secluded.",
+    "exampleZh": "等候室較隱密。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "遠離他人而較隱密的",
+        "examples": [
+          {
+            "en": "The waiting room is secluded.",
+            "zh": "等候室較隱密。"
+          }
+        ]
+      }
+    ],
+    "word": "secluded"
+  },
+  "R7:CADENCE": {
+    "word": "cadence",
+    "pos": "n.",
+    "meaning": "說話或聲音的節奏起伏",
+    "example": "The cadence makes the line sound uncertain.",
+    "exampleZh": "語調節奏使台詞顯得不確定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "說話或聲音的節奏起伏",
+        "examples": [
+          {
+            "en": "The cadence makes the line sound uncertain.",
+            "zh": "語調節奏使台詞顯得不確定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A DELIBERATELY SPARE SETTING": {
+    "word": "a deliberately spare setting",
+    "pos": "phr.",
+    "meaning": "刻意簡約的場景布置",
+    "example": "The actors work within a deliberately spare setting.",
+    "exampleZh": "演員在刻意簡約的布景中表演。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意簡約的場景布置",
+        "examples": [
+          {
+            "en": "The actors work within a deliberately spare setting.",
+            "zh": "演員在刻意簡約的布景中表演。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SUSTAINED EMOTIONAL TENSION": {
+    "word": "a sustained emotional tension",
+    "pos": "phr.",
+    "meaning": "持續維持的情感張力",
+    "example": "The pauses create a sustained emotional tension.",
+    "exampleZh": "停頓創造持續情感張力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "持續維持的情感張力",
+        "examples": [
+          {
+            "en": "The pauses create a sustained emotional tension.",
+            "zh": "停頓創造持續情感張力。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AMBIGUITY NEED NOT OBSCURE WHO IS SPEAKING": {
+    "word": "ambiguity need not obscure who is speaking",
+    "pos": "phr.",
+    "meaning": "歧義不必模糊誰在說話",
+    "example": "Ambiguity need not obscure who is speaking.",
+    "exampleZh": "歧義不必模糊誰在說話。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "歧義不必模糊誰在說話",
+        "examples": [
+          {
+            "en": "Ambiguity need not obscure who is speaking.",
+            "zh": "歧義不必模糊誰在說話。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PREPARATION CAN SUPPORT THE IMPRESSION OF SPONTANEOUS DISCOVERY": {
+    "word": "preparation can support the impression of spontaneous discovery",
+    "pos": "phr.",
+    "meaning": "準備可支撐自發發現的觀感",
+    "example": "Preparation can support the impression of spontaneous discovery.",
+    "exampleZh": "準備可支撐自發發現的觀感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "準備可支撐自發發現的觀感",
+        "examples": [
+          {
+            "en": "Preparation can support the impression of spontaneous discovery.",
+            "zh": "準備可支撐自發發現的觀感。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:POIGNANT": {
+    "pos": "adj.",
+    "meaning": "使人深受觸動而帶酸楚的",
+    "example": "The final image is poignant.",
+    "exampleZh": "最後畫面感人酸楚。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "使人深受觸動而帶酸楚的",
+        "examples": [
+          {
+            "en": "The final image is poignant.",
+            "zh": "最後畫面感人酸楚。"
+          }
+        ]
+      }
+    ],
+    "word": "poignant"
+  },
+  "R7:RESONANT": {
+    "pos": "adj.",
+    "meaning": "能引發深刻情感聯想的",
+    "example": "The line becomes resonant after the final scene.",
+    "exampleZh": "最後一場後那句台詞引起深刻共鳴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能引發深刻情感聯想的",
+        "examples": [
+          {
+            "en": "The line becomes resonant after the final scene.",
+            "zh": "最後一場後那句台詞引起深刻共鳴。"
+          }
+        ]
+      }
+    ],
+    "word": "resonant"
+  },
+  "R7:IMPERCEPTIBLE": {
+    "pos": "adj.",
+    "meaning": "細微到幾乎無法察覺的",
+    "example": "Her expression changes by an imperceptible degree.",
+    "exampleZh": "她神情以近乎不可察覺程度改變。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "細微到幾乎無法察覺的",
+        "examples": [
+          {
+            "en": "Her expression changes by an imperceptible degree.",
+            "zh": "她神情以近乎不可察覺程度改變。"
+          }
+        ]
+      }
+    ],
+    "word": "imperceptible"
+  },
+  "R7:SUBTEXT": {
+    "pos": "n.",
+    "meaning": "字面下隱含而未明說的意思",
+    "example": "The actor makes the subtext audible through tone.",
+    "exampleZh": "演員以語氣讓潛台詞可感。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表面對話背後未明說的意思",
+        "examples": [
+          {
+            "en": "The pause changes the subtext of the exchange.",
+            "zh": "停頓改變了對話的潛台詞。"
+          },
+          {
+            "en": "The subtext is clearer than the character’s polite words.",
+            "zh": "潛台詞比角色禮貌的字句更清楚。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "字面下隱含而未明說的意思",
+        "examples": [
+          {
+            "en": "The actor makes the subtext audible through tone.",
+            "zh": "演員以語氣讓潛台詞可感。"
+          }
+        ]
+      }
+    ],
+    "word": "subtext"
+  },
+  "R7:ENSEMBLE": {
+    "pos": "n.",
+    "meaning": "共同演出的表演者群體",
+    "example": "The ensemble responds to each change of pace.",
+    "exampleZh": "全體表演者回應節奏變化。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "共同演出的表演者群體",
+        "examples": [
+          {
+            "en": "The ensemble responds to each change of pace.",
+            "zh": "全體表演者回應節奏變化。"
+          }
+        ]
+      }
+    ],
+    "word": "ensemble"
+  },
+  "R7:RESTRAINT": {
+    "pos": "n.",
+    "meaning": "對表達或行動程度的克制",
+    "example": "The scene gains power from restraint.",
+    "exampleZh": "場景因克制而有力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對表達或行動程度的克制",
+        "examples": [
+          {
+            "en": "The scene gains power from restraint.",
+            "zh": "場景因克制而有力。"
+          }
+        ]
+      }
+    ],
+    "word": "restraint"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
@@ -12683,5 +13828,157 @@
       }
     ],
     "word": "configuration"
+  },
+  "R7:AN INSTITUTIONAL VOCABULARY": {
+    "word": "an institutional vocabulary",
+    "pos": "phr.",
+    "meaning": "某機構內部慣用的詞彙",
+    "example": "Visitors may not know the institutional vocabulary.",
+    "exampleZh": "遊客未必熟悉機構用語。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "某機構內部慣用的詞彙",
+        "examples": [
+          {
+            "en": "Visitors may not know the institutional vocabulary.",
+            "zh": "遊客未必熟悉機構用語。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INFORMATION MUST BE DISCOVERABLE WITHOUT PRIOR FAMILIARITY": {
+    "word": "information must be discoverable without prior familiarity",
+    "pos": "phr.",
+    "meaning": "資訊應不靠事先熟悉就能找到",
+    "example": "Information must be discoverable without prior familiarity.",
+    "exampleZh": "資訊應不靠事先熟悉就能找到。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "資訊應不靠事先熟悉就能找到",
+        "examples": [
+          {
+            "en": "Information must be discoverable without prior familiarity.",
+            "zh": "資訊應不靠事先熟悉就能找到。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DISORIENTATE": {
+    "pos": "v.",
+    "meaning": "使人失去方向感",
+    "example": "Repeated identical corridors can disorientate visitors.",
+    "exampleZh": "重複相同走廊可能使人迷向。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使人失去方向感",
+        "examples": [
+          {
+            "en": "Repeated identical corridors can disorientate visitors.",
+            "zh": "重複相同走廊可能使人迷向。"
+          }
+        ]
+      }
+    ],
+    "word": "disorientate"
+  },
+  "R7:ORIENTATION": {
+    "pos": "n.",
+    "meaning": "相對周遭的位置方向",
+    "example": "The map’s orientation matches the viewer’s position.",
+    "exampleZh": "地圖朝向符合觀看者位置。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "相對周遭的位置方向",
+        "examples": [
+          {
+            "en": "The map’s orientation matches the viewer’s position.",
+            "zh": "地圖朝向符合觀看者位置。"
+          }
+        ]
+      }
+    ],
+    "word": "orientation"
+  },
+  "R7:A FINELY JUDGED TRANSITION": {
+    "word": "a finely judged transition",
+    "pos": "phr.",
+    "meaning": "拿捏精準的轉換",
+    "example": "The scene ends with a finely judged transition.",
+    "exampleZh": "場景以精準轉換結束。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拿捏精準的轉換",
+        "examples": [
+          {
+            "en": "The scene ends with a finely judged transition.",
+            "zh": "場景以精準轉換結束。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:THE SAME WORDS CAN CHANGE FUNCTION WITH DIFFERENT LISTENERS": {
+    "word": "the same words can change function with different listeners",
+    "pos": "phr.",
+    "meaning": "同樣字句可因聽者不同改變作用",
+    "example": "The same words can change function with different listeners.",
+    "exampleZh": "同樣字句可因聽者不同改變作用。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同樣字句可因聽者不同改變作用",
+        "examples": [
+          {
+            "en": "The same words can change function with different listeners.",
+            "zh": "同樣字句可因聽者不同改變作用。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:MODULATION": {
+    "pos": "n.",
+    "meaning": "聲音語氣等有控制的調整變化",
+    "example": "A slight modulation changes the line’s meaning.",
+    "exampleZh": "細微語調調整改變台詞意味。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音語氣等有控制的調整變化",
+        "examples": [
+          {
+            "en": "A slight modulation changes the line’s meaning.",
+            "zh": "細微語調調整改變台詞意味。"
+          }
+        ]
+      }
+    ],
+    "word": "modulation"
+  },
+  "R7:DELIBERATION": {
+    "pos": "n.",
+    "meaning": "在選擇前仔細思考的過程",
+    "example": "The pause conveys deliberation.",
+    "exampleZh": "停頓傳達斟酌思考。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在選擇前仔細思考的過程",
+        "examples": [
+          {
+            "en": "The pause conveys deliberation.",
+            "zh": "停頓傳達斟酌思考。"
+          }
+        ]
+      }
+    ],
+    "word": "deliberation"
   }
 }

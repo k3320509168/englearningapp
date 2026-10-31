@@ -9,6 +9,7 @@ const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL'],RACKE
 for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
  for(const [r,d] of Object.entries(data)) {
+  for(const kind of ['words','spells','fills'])for(const [word] of d[kind]??[])if(!/^[A-Z]+$/.test(word))throw Error(`${source}: r${r} ${kind}: expected one uppercase word, received ${JSON.stringify(word)}`);
   const lexicalTargets=new Set((d.lexicon??[]).map(row=>row[0].toLowerCase()));
   const questions=[]; const dest=regions.get(Number(r)); if(!dest)throw Error(`Unknown region ${r}`);
   // 跨情境複習同一詞時保留原例句；不以最後一批覆寫先前教學內容。
@@ -56,6 +57,7 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   for(const skill of ['listening','reading','speaking','writing'])questions.filter(q=>q.skill===skill).forEach((q,i)=>dest[i%4===3?'boss':'normal'].push(q));
  }
 }
+const artifacts=[];
 for(const [r,{normal,boss,vocab}] of regions){
  const all=[...normal,...boss];const keys=all.map(q=>`${q.type}|${q.desc}|${q.speak??''}`);
  if(new Set(keys).size!==keys.length){const seen=new Set();const duplicates=keys.filter(k=>seen.has(k)?true:(seen.add(k),false));throw Error(`r${r}: duplicate questions: ${duplicates.join(' / ')}`);}
@@ -68,7 +70,13 @@ for(const [r,{normal,boss,vocab}] of regions){
  }
  const path=`src/game/questions/bank/r${r}.json`;const vp=`src/game/questions/bank/vocab-r${r}.json`;
  const encoded=JSON.stringify({normal,boss},null,2)+'\n';const venc=JSON.stringify(vocab,null,2)+'\n';
- if(process.argv.includes('--check')) {if(readFileSync(path,'utf8')!==encoded||readFileSync(vp,'utf8')!==venc)throw Error(`r${r}: stale build`);}
- else {writeFileSync(path,encoded);writeFileSync(vp,venc);}
+ artifacts.push([path,encoded],[vp,venc]);
  console.log(`r${r}: ${all.length} questions (${normal.length}/${boss.length}), ${Object.keys(vocab).length} vocabulary entries`);
+}
+
+// 全區驗證完才寫出；任何區域有壞資料都不留下混合新舊版本的題庫。
+if(process.argv.includes('--check')) {
+ for(const [path,contents] of artifacts)if(readFileSync(path,'utf8')!==contents)throw Error(`${path}: stale build`);
+} else {
+ for(const [path,contents] of artifacts)writeFileSync(path,contents);
 }

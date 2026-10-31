@@ -6860,6 +6860,706 @@
       }
     ]
   },
+  "WAYFINDING": {
+    "word": "wayfinding",
+    "pos": "n.",
+    "meaning": "理解空間並找到路線的過程",
+    "example": "Clear signs improve wayfinding.",
+    "exampleZh": "清楚標示改善尋路。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "理解空間並找到路線的過程",
+        "examples": [
+          {
+            "en": "Clear signs improve wayfinding.",
+            "zh": "清楚標示改善尋路。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORECOURT": {
+    "word": "forecourt",
+    "pos": "n.",
+    "meaning": "建築前方的開放區域",
+    "example": "We met in the forecourt.",
+    "exampleZh": "我們在建物前庭相會。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建築前方的開放區域",
+        "examples": [
+          {
+            "en": "We met in the forecourt.",
+            "zh": "我們在建物前庭相會。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CLEARLY MARKED ENTRANCE": {
+    "word": "a clearly marked entrance",
+    "pos": "phr.",
+    "meaning": "標示清楚的入口",
+    "example": "The hall has a clearly marked entrance.",
+    "exampleZh": "大廳入口標示清楚。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "標示清楚的入口",
+        "examples": [
+          {
+            "en": "The hall has a clearly marked entrance.",
+            "zh": "大廳入口標示清楚。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TEMPORARY DIVERSION": {
+    "word": "a temporary diversion",
+    "pos": "phr.",
+    "meaning": "暫時改行的路線安排",
+    "example": "Follow the temporary diversion today.",
+    "exampleZh": "今天依暫時改道走。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "暫時改行的路線安排",
+        "examples": [
+          {
+            "en": "Follow the temporary diversion today.",
+            "zh": "今天依暫時改道走。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ADJACENT WAITING AREA": {
+    "word": "an adjacent waiting area",
+    "pos": "phr.",
+    "meaning": "緊鄰的等候區",
+    "example": "Please use the adjacent waiting area.",
+    "exampleZh": "請用旁邊等候區。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "緊鄰的等候區",
+        "examples": [
+          {
+            "en": "Please use the adjacent waiting area.",
+            "zh": "請用旁邊等候區。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE ARRIVAL WINDOW DIFFERS FROM THE PERMITTED LENGTH OF STAY": {
+    "word": "the arrival window differs from the permitted length of stay",
+    "pos": "phr.",
+    "meaning": "到場時段不同於允許停留長度",
+    "example": "The arrival window differs from the permitted length of stay.",
+    "exampleZh": "到場時段不同於允許停留長度。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "到場時段不同於允許停留長度",
+        "examples": [
+          {
+            "en": "The arrival window differs from the permitted length of stay.",
+            "zh": "到場時段不同於允許停留長度。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE SHORTEST ROUTE NEED NOT GIVE THE SHORTEST WAITING TIME": {
+    "word": "the shortest route need not give the shortest waiting time",
+    "pos": "phr.",
+    "meaning": "最短路線未必等候最短",
+    "example": "The shortest route need not give the shortest waiting time.",
+    "exampleZh": "最短路線未必等候最短。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "最短路線未必等候最短",
+        "examples": [
+          {
+            "en": "The shortest route need not give the shortest waiting time.",
+            "zh": "最短路線未必等候最短。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIRECTIONS SHOULD BE VISIBLE BEFORE A CHOICE IS MADE": {
+    "word": "directions should be visible before a choice is made",
+    "pos": "phr.",
+    "meaning": "作選擇前應能看見指引",
+    "example": "Directions should be visible before a choice is made.",
+    "exampleZh": "作選擇前應能看見指引。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "作選擇前應能看見指引",
+        "examples": [
+          {
+            "en": "Directions should be visible before a choice is made.",
+            "zh": "作選擇前應能看見指引。"
+          }
+        ]
+      }
+    ]
+  },
+  "AROUND THE CORNER": {
+    "pos": "phr.",
+    "meaning": "轉過附近街角的位置",
+    "example": "The entrance is around the corner.",
+    "exampleZh": "入口轉過街角就到。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "轉過附近街角的位置",
+        "examples": [
+          {
+            "en": "The entrance is around the corner.",
+            "zh": "入口轉過街角就到。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DESIGNATED MEETING POINT": {
+    "pos": "phr.",
+    "meaning": "指定集合地點",
+    "example": "Wait at the designated meeting point.",
+    "exampleZh": "在指定集合點等候。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "指定集合地點",
+        "examples": [
+          {
+            "en": "Wait at the designated meeting point.",
+            "zh": "在指定集合點等候。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DIVERSION ROUTE": {
+    "pos": "phr.",
+    "meaning": "因原路受阻而改行的路線",
+    "example": "The notice gives a diversion route.",
+    "exampleZh": "公告提供改道路線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "因原路受阻而改行的路線",
+        "examples": [
+          {
+            "en": "The notice gives a diversion route.",
+            "zh": "公告提供改道路線。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADJACENT": {
+    "pos": "adj.",
+    "meaning": "在旁而緊鄰的",
+    "example": "The desk is in the adjacent room.",
+    "exampleZh": "櫃台在隔壁房。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在旁而緊鄰的",
+        "examples": [
+          {
+            "en": "The desk is in the adjacent room.",
+            "zh": "櫃台在隔壁房。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONCOURSE": {
+    "pos": "n.",
+    "meaning": "車站等供人通行集合的大廳",
+    "example": "The signs lead to the main concourse.",
+    "exampleZh": "標示通往主要大廳。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "車站等供人通行集合的大廳",
+        "examples": [
+          {
+            "en": "The signs lead to the main concourse.",
+            "zh": "標示通往主要大廳。"
+          }
+        ]
+      }
+    ]
+  },
+  "PEDESTRIAN": {
+    "pos": "n.",
+    "meaning": "步行而不乘車的行人",
+    "example": "A pedestrian can use the footbridge.",
+    "exampleZh": "行人可走天橋。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "步行而不乘車的行人",
+        "examples": [
+          {
+            "en": "A pedestrian can use the footbridge.",
+            "zh": "行人可走天橋。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERSECTION": {
+    "pos": "n.",
+    "meaning": "道路或線路相交的位置",
+    "example": "The meeting point is beyond the intersection.",
+    "exampleZh": "集合點在路口另一邊。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "道路或線路相交的位置",
+        "examples": [
+          {
+            "en": "The meeting point is beyond the intersection.",
+            "zh": "集合點在路口另一邊。"
+          }
+        ]
+      }
+    ]
+  },
+  "FOOTBRIDGE": {
+    "pos": "n.",
+    "meaning": "供行人跨越障礙的橋",
+    "example": "The footbridge links the two paths.",
+    "exampleZh": "天橋連接兩步道。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供行人跨越障礙的橋",
+        "examples": [
+          {
+            "en": "The footbridge links the two paths.",
+            "zh": "天橋連接兩步道。"
+          }
+        ]
+      }
+    ]
+  },
+  "SIGNPOST": {
+    "pos": "n.",
+    "meaning": "標示方向或位置的路牌",
+    "example": "A signpost stands at the turning.",
+    "exampleZh": "轉彎處有路牌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "標示方向或位置的路牌",
+        "examples": [
+          {
+            "en": "A signpost stands at the turning.",
+            "zh": "轉彎處有路牌。"
+          }
+        ]
+      }
+    ]
+  },
+  "PASSAGEWAY": {
+    "pos": "n.",
+    "meaning": "建物中供通行的狹長通道",
+    "example": "The passageway leads to the courtyard.",
+    "exampleZh": "通道通往庭院。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建物中供通行的狹長通道",
+        "examples": [
+          {
+            "en": "The passageway leads to the courtyard.",
+            "zh": "通道通往庭院。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOLLARD": {
+    "pos": "n.",
+    "meaning": "路旁用以限制車輛通行的矮柱",
+    "example": "A bollard marks the edge of the vehicle route.",
+    "exampleZh": "矮柱標示車輛路線邊緣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "路旁用以限制車輛通行的矮柱",
+        "examples": [
+          {
+            "en": "A bollard marks the edge of the vehicle route.",
+            "zh": "矮柱標示車輛路線邊緣。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNDERSTUDY": {
+    "word": "understudy",
+    "pos": "n.",
+    "meaning": "必要時可替另一演員上場的代演者",
+    "example": "The understudy knows the whole role.",
+    "exampleZh": "代演者熟悉整個角色。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "必要時可替另一演員上場的代演者",
+        "examples": [
+          {
+            "en": "The understudy knows the whole role.",
+            "zh": "代演者熟悉整個角色。"
+          }
+        ]
+      }
+    ]
+  },
+  "BACKDROP": {
+    "word": "backdrop",
+    "pos": "n.",
+    "meaning": "舞台後方形成場景的背景",
+    "example": "The backdrop suggests a winter street.",
+    "exampleZh": "背景暗示冬日街道。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞台後方形成場景的背景",
+        "examples": [
+          {
+            "en": "The backdrop suggests a winter street.",
+            "zh": "背景暗示冬日街道。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WELL TIMED PAUSE": {
+    "word": "a well-timed pause",
+    "pos": "phr.",
+    "meaning": "時機掌握恰當的停頓",
+    "example": "A well-timed pause lets the joke land.",
+    "exampleZh": "恰當停頓使笑點發揮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "時機掌握恰當的停頓",
+        "examples": [
+          {
+            "en": "A well-timed pause lets the joke land.",
+            "zh": "恰當停頓使笑點發揮。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONVINCING PERFORMANCE": {
+    "word": "a convincing performance",
+    "pos": "phr.",
+    "meaning": "令人信服的表演",
+    "example": "She gave a convincing performance.",
+    "exampleZh": "她作出令人信服的表演。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "令人信服的表演",
+        "examples": [
+          {
+            "en": "She gave a convincing performance.",
+            "zh": "她作出令人信服的表演。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN IMPROVISED RESPONSE": {
+    "word": "an improvised response",
+    "pos": "phr.",
+    "meaning": "臨場即興的回應",
+    "example": "The actor added an improvised response.",
+    "exampleZh": "演員加了即興回應。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "臨場即興的回應",
+        "examples": [
+          {
+            "en": "The actor added an improvised response.",
+            "zh": "演員加了即興回應。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FAMILIAR ENDING CAN STILL FEEL FRESH IN PERFORMANCE": {
+    "word": "a familiar ending can still feel fresh in performance",
+    "pos": "phr.",
+    "meaning": "熟悉結局演出時仍可新鮮",
+    "example": "A familiar ending can still feel fresh in performance.",
+    "exampleZh": "熟悉結局演出時仍可新鮮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "熟悉結局演出時仍可新鮮",
+        "examples": [
+          {
+            "en": "A familiar ending can still feel fresh in performance.",
+            "zh": "熟悉結局演出時仍可新鮮。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE MUSIC DROWNED OUT THE OPENING WORDS": {
+    "word": "the music drowned out the opening words",
+    "pos": "phr.",
+    "meaning": "音樂蓋過開頭台詞",
+    "example": "The music drowned out the opening words.",
+    "exampleZh": "音樂蓋過開頭台詞。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "音樂蓋過開頭台詞",
+        "examples": [
+          {
+            "en": "The music drowned out the opening words.",
+            "zh": "音樂蓋過開頭台詞。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE PAUSE SHOULD ALLOW A LAUGH WITHOUT DEMANDING ONE": {
+    "word": "the pause should allow a laugh without demanding one",
+    "pos": "phr.",
+    "meaning": "停頓應容納笑聲而非強求它",
+    "example": "The pause should allow a laugh without demanding one.",
+    "exampleZh": "停頓應容納笑聲而非強求它。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "停頓應容納笑聲而非強求它",
+        "examples": [
+          {
+            "en": "The pause should allow a laugh without demanding one.",
+            "zh": "停頓應容納笑聲而非強求它。"
+          }
+        ]
+      }
+    ]
+  },
+  "BEHIND THE SCENES": {
+    "pos": "phr.",
+    "meaning": "在觀眾看不見的幕後",
+    "example": "Much of the work happens behind the scenes.",
+    "exampleZh": "大量工作在幕後進行。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在觀眾看不見的幕後",
+        "examples": [
+          {
+            "en": "Much of the work happens behind the scenes.",
+            "zh": "大量工作在幕後進行。"
+          }
+        ]
+      }
+    ]
+  },
+  "STEAL THE SHOW": {
+    "pos": "phr.",
+    "meaning": "以精彩表現搶走全場注意",
+    "example": "The smallest role can steal the show.",
+    "exampleZh": "最小角色也能搶走全場注意。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以精彩表現搶走全場注意",
+        "examples": [
+          {
+            "en": "The smallest role can steal the show.",
+            "zh": "最小角色也能搶走全場注意。"
+          }
+        ]
+      }
+    ]
+  },
+  "ON CUE": {
+    "pos": "phr.",
+    "meaning": "在預定提示出現時準確行動",
+    "example": "The light came on exactly on cue.",
+    "exampleZh": "燈依提示準確亮起。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在預定提示出現時準確行動",
+        "examples": [
+          {
+            "en": "The light came on exactly on cue.",
+            "zh": "燈依提示準確亮起。"
+          }
+        ]
+      }
+    ]
+  },
+  "REHEARSAL": {
+    "pos": "n.",
+    "meaning": "為正式演出預先練習的排練",
+    "example": "The rehearsal focuses on scene changes.",
+    "exampleZh": "排練重點是轉場。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為正式演出預先練習的排練",
+        "examples": [
+          {
+            "en": "The rehearsal focuses on scene changes.",
+            "zh": "排練重點是轉場。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUDITORIUM": {
+    "pos": "n.",
+    "meaning": "供觀眾觀看演出的大廳",
+    "example": "The auditorium was quiet before the music began.",
+    "exampleZh": "音樂前觀眾廳很安靜。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供觀眾觀看演出的大廳",
+        "examples": [
+          {
+            "en": "The auditorium was quiet before the music began.",
+            "zh": "音樂前觀眾廳很安靜。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPOTLIGHT": {
+    "pos": "n.",
+    "meaning": "集中照亮舞台一小區域的燈光",
+    "example": "A spotlight lit the empty chair.",
+    "exampleZh": "聚光燈照亮空椅。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "集中照亮舞台一小區域的燈光",
+        "examples": [
+          {
+            "en": "A spotlight lit the empty chair.",
+            "zh": "聚光燈照亮空椅。"
+          }
+        ]
+      }
+    ]
+  },
+  "APPLAUSE": {
+    "pos": "n.",
+    "meaning": "觀眾以拍手表示讚賞的掌聲",
+    "example": "The applause continued after the curtain fell.",
+    "exampleZh": "落幕後掌聲繼續。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "觀眾以拍手表示讚賞的掌聲",
+        "examples": [
+          {
+            "en": "The applause continued after the curtain fell.",
+            "zh": "落幕後掌聲繼續。"
+          }
+        ]
+      }
+    ]
+  },
+  "CURTAIN": {
+    "pos": "n.",
+    "meaning": "舞台前可開合的布幕",
+    "example": "The curtain remained closed.",
+    "exampleZh": "布幕保持關閉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞台前可開合的布幕",
+        "examples": [
+          {
+            "en": "The curtain remained closed.",
+            "zh": "布幕保持關閉。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROP": {
+    "pos": "n.",
+    "meaning": "演出中使用的可移動道具",
+    "example": "The letter is an important prop.",
+    "exampleZh": "信是重要道具。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "演出中使用的可移動道具",
+        "examples": [
+          {
+            "en": "The letter is an important prop.",
+            "zh": "信是重要道具。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERVAL": {
+    "pos": "n.",
+    "meaning": "演出兩部分之間的休息時間",
+    "example": "The talk takes place after the interval.",
+    "exampleZh": "談話在中場後舉行。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "演出兩部分之間的休息時間",
+        "examples": [
+          {
+            "en": "The talk takes place after the interval.",
+            "zh": "談話在中場後舉行。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHOREOGRAPHY": {
+    "pos": "n.",
+    "meaning": "舞蹈動作與順序的編排",
+    "example": "The choreography gives each dancer room to move.",
+    "exampleZh": "舞蹈編排讓每位舞者有活動空間。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞蹈動作與順序的編排",
+        "examples": [
+          {
+            "en": "The choreography gives each dancer room to move.",
+            "zh": "舞蹈編排讓每位舞者有活動空間。"
+          }
+        ]
+      }
+    ]
+  },
   "R6:CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
@@ -11248,6 +11948,462 @@
     ],
     "word": "duplicate"
   },
+  "R6:WAYFINDING": {
+    "word": "wayfinding",
+    "pos": "n.",
+    "meaning": "理解空間並找到路線的過程",
+    "example": "Clear signs improve wayfinding.",
+    "exampleZh": "清楚標示改善尋路。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "理解空間並找到路線的過程",
+        "examples": [
+          {
+            "en": "Clear signs improve wayfinding.",
+            "zh": "清楚標示改善尋路。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:FORECOURT": {
+    "word": "forecourt",
+    "pos": "n.",
+    "meaning": "建築前方的開放區域",
+    "example": "We met in the forecourt.",
+    "exampleZh": "我們在建物前庭相會。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建築前方的開放區域",
+        "examples": [
+          {
+            "en": "We met in the forecourt.",
+            "zh": "我們在建物前庭相會。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A CLEARLY MARKED ENTRANCE": {
+    "word": "a clearly marked entrance",
+    "pos": "phr.",
+    "meaning": "標示清楚的入口",
+    "example": "The hall has a clearly marked entrance.",
+    "exampleZh": "大廳入口標示清楚。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "標示清楚的入口",
+        "examples": [
+          {
+            "en": "The hall has a clearly marked entrance.",
+            "zh": "大廳入口標示清楚。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:AN ADJACENT WAITING AREA": {
+    "word": "an adjacent waiting area",
+    "pos": "phr.",
+    "meaning": "緊鄰的等候區",
+    "example": "Please use the adjacent waiting area.",
+    "exampleZh": "請用旁邊等候區。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "緊鄰的等候區",
+        "examples": [
+          {
+            "en": "Please use the adjacent waiting area.",
+            "zh": "請用旁邊等候區。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE ARRIVAL WINDOW DIFFERS FROM THE PERMITTED LENGTH OF STAY": {
+    "word": "the arrival window differs from the permitted length of stay",
+    "pos": "phr.",
+    "meaning": "到場時段不同於允許停留長度",
+    "example": "The arrival window differs from the permitted length of stay.",
+    "exampleZh": "到場時段不同於允許停留長度。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "到場時段不同於允許停留長度",
+        "examples": [
+          {
+            "en": "The arrival window differs from the permitted length of stay.",
+            "zh": "到場時段不同於允許停留長度。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE SHORTEST ROUTE NEED NOT GIVE THE SHORTEST WAITING TIME": {
+    "word": "the shortest route need not give the shortest waiting time",
+    "pos": "phr.",
+    "meaning": "最短路線未必等候最短",
+    "example": "The shortest route need not give the shortest waiting time.",
+    "exampleZh": "最短路線未必等候最短。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "最短路線未必等候最短",
+        "examples": [
+          {
+            "en": "The shortest route need not give the shortest waiting time.",
+            "zh": "最短路線未必等候最短。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:ADJACENT": {
+    "pos": "adj.",
+    "meaning": "在旁而緊鄰的",
+    "example": "The desk is in the adjacent room.",
+    "exampleZh": "櫃台在隔壁房。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在旁而緊鄰的",
+        "examples": [
+          {
+            "en": "The desk is in the adjacent room.",
+            "zh": "櫃台在隔壁房。"
+          }
+        ]
+      }
+    ],
+    "word": "adjacent"
+  },
+  "R6:CONCOURSE": {
+    "pos": "n.",
+    "meaning": "車站等供人通行集合的大廳",
+    "example": "The signs lead to the main concourse.",
+    "exampleZh": "標示通往主要大廳。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "車站等供人通行集合的大廳",
+        "examples": [
+          {
+            "en": "The signs lead to the main concourse.",
+            "zh": "標示通往主要大廳。"
+          }
+        ]
+      }
+    ],
+    "word": "concourse"
+  },
+  "R6:PEDESTRIAN": {
+    "pos": "n.",
+    "meaning": "步行而不乘車的行人",
+    "example": "A pedestrian can use the footbridge.",
+    "exampleZh": "行人可走天橋。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "步行而不乘車的行人",
+        "examples": [
+          {
+            "en": "A pedestrian can use the footbridge.",
+            "zh": "行人可走天橋。"
+          }
+        ]
+      }
+    ],
+    "word": "pedestrian"
+  },
+  "R6:FOOTBRIDGE": {
+    "pos": "n.",
+    "meaning": "供行人跨越障礙的橋",
+    "example": "The footbridge links the two paths.",
+    "exampleZh": "天橋連接兩步道。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供行人跨越障礙的橋",
+        "examples": [
+          {
+            "en": "The footbridge links the two paths.",
+            "zh": "天橋連接兩步道。"
+          }
+        ]
+      }
+    ],
+    "word": "footbridge"
+  },
+  "R6:SIGNPOST": {
+    "pos": "n.",
+    "meaning": "標示方向或位置的路牌",
+    "example": "A signpost stands at the turning.",
+    "exampleZh": "轉彎處有路牌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "標示方向或位置的路牌",
+        "examples": [
+          {
+            "en": "A signpost stands at the turning.",
+            "zh": "轉彎處有路牌。"
+          }
+        ]
+      }
+    ],
+    "word": "signpost"
+  },
+  "R6:PASSAGEWAY": {
+    "pos": "n.",
+    "meaning": "建物中供通行的狹長通道",
+    "example": "The passageway leads to the courtyard.",
+    "exampleZh": "通道通往庭院。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建物中供通行的狹長通道",
+        "examples": [
+          {
+            "en": "The passageway leads to the courtyard.",
+            "zh": "通道通往庭院。"
+          }
+        ]
+      }
+    ],
+    "word": "passageway"
+  },
+  "R6:UNDERSTUDY": {
+    "word": "understudy",
+    "pos": "n.",
+    "meaning": "必要時可替另一演員上場的代演者",
+    "example": "The understudy knows the whole role.",
+    "exampleZh": "代演者熟悉整個角色。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "必要時可替另一演員上場的代演者",
+        "examples": [
+          {
+            "en": "The understudy knows the whole role.",
+            "zh": "代演者熟悉整個角色。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:BACKDROP": {
+    "word": "backdrop",
+    "pos": "n.",
+    "meaning": "舞台後方形成場景的背景",
+    "example": "The backdrop suggests a winter street.",
+    "exampleZh": "背景暗示冬日街道。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞台後方形成場景的背景",
+        "examples": [
+          {
+            "en": "The backdrop suggests a winter street.",
+            "zh": "背景暗示冬日街道。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A WELL TIMED PAUSE": {
+    "word": "a well-timed pause",
+    "pos": "phr.",
+    "meaning": "時機掌握恰當的停頓",
+    "example": "A well-timed pause lets the joke land.",
+    "exampleZh": "恰當停頓使笑點發揮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "時機掌握恰當的停頓",
+        "examples": [
+          {
+            "en": "A well-timed pause lets the joke land.",
+            "zh": "恰當停頓使笑點發揮。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:AN IMPROVISED RESPONSE": {
+    "word": "an improvised response",
+    "pos": "phr.",
+    "meaning": "臨場即興的回應",
+    "example": "The actor added an improvised response.",
+    "exampleZh": "演員加了即興回應。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "臨場即興的回應",
+        "examples": [
+          {
+            "en": "The actor added an improvised response.",
+            "zh": "演員加了即興回應。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A FAMILIAR ENDING CAN STILL FEEL FRESH IN PERFORMANCE": {
+    "word": "a familiar ending can still feel fresh in performance",
+    "pos": "phr.",
+    "meaning": "熟悉結局演出時仍可新鮮",
+    "example": "A familiar ending can still feel fresh in performance.",
+    "exampleZh": "熟悉結局演出時仍可新鮮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "熟悉結局演出時仍可新鮮",
+        "examples": [
+          {
+            "en": "A familiar ending can still feel fresh in performance.",
+            "zh": "熟悉結局演出時仍可新鮮。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE MUSIC DROWNED OUT THE OPENING WORDS": {
+    "word": "the music drowned out the opening words",
+    "pos": "phr.",
+    "meaning": "音樂蓋過開頭台詞",
+    "example": "The music drowned out the opening words.",
+    "exampleZh": "音樂蓋過開頭台詞。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "音樂蓋過開頭台詞",
+        "examples": [
+          {
+            "en": "The music drowned out the opening words.",
+            "zh": "音樂蓋過開頭台詞。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:REHEARSAL": {
+    "pos": "n.",
+    "meaning": "為正式演出預先練習的排練",
+    "example": "The rehearsal focuses on scene changes.",
+    "exampleZh": "排練重點是轉場。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為正式演出預先練習的排練",
+        "examples": [
+          {
+            "en": "The rehearsal focuses on scene changes.",
+            "zh": "排練重點是轉場。"
+          }
+        ]
+      }
+    ],
+    "word": "rehearsal"
+  },
+  "R6:AUDITORIUM": {
+    "pos": "n.",
+    "meaning": "供觀眾觀看演出的大廳",
+    "example": "The auditorium was quiet before the music began.",
+    "exampleZh": "音樂前觀眾廳很安靜。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供觀眾觀看演出的大廳",
+        "examples": [
+          {
+            "en": "The auditorium was quiet before the music began.",
+            "zh": "音樂前觀眾廳很安靜。"
+          }
+        ]
+      }
+    ],
+    "word": "auditorium"
+  },
+  "R6:SPOTLIGHT": {
+    "pos": "n.",
+    "meaning": "集中照亮舞台一小區域的燈光",
+    "example": "A spotlight lit the empty chair.",
+    "exampleZh": "聚光燈照亮空椅。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "集中照亮舞台一小區域的燈光",
+        "examples": [
+          {
+            "en": "A spotlight lit the empty chair.",
+            "zh": "聚光燈照亮空椅。"
+          }
+        ]
+      }
+    ],
+    "word": "spotlight"
+  },
+  "R6:CURTAIN": {
+    "pos": "n.",
+    "meaning": "舞台前可開合的布幕",
+    "example": "The curtain remained closed.",
+    "exampleZh": "布幕保持關閉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞台前可開合的布幕",
+        "examples": [
+          {
+            "en": "The curtain remained closed.",
+            "zh": "布幕保持關閉。"
+          }
+        ]
+      }
+    ],
+    "word": "curtain"
+  },
+  "R6:PROP": {
+    "pos": "n.",
+    "meaning": "演出中使用的可移動道具",
+    "example": "The letter is an important prop.",
+    "exampleZh": "信是重要道具。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "演出中使用的可移動道具",
+        "examples": [
+          {
+            "en": "The letter is an important prop.",
+            "zh": "信是重要道具。"
+          }
+        ]
+      }
+    ],
+    "word": "prop"
+  },
+  "R6:INTERVAL": {
+    "pos": "n.",
+    "meaning": "演出兩部分之間的休息時間",
+    "example": "The talk takes place after the interval.",
+    "exampleZh": "談話在中場後舉行。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "演出兩部分之間的休息時間",
+        "examples": [
+          {
+            "en": "The talk takes place after the interval.",
+            "zh": "談話在中場後舉行。"
+          }
+        ]
+      }
+    ],
+    "word": "interval"
+  },
   "R6:ON CLOSER INSPECTION": {
     "word": "on closer inspection",
     "pos": "phr.",
@@ -12645,5 +13801,157 @@
       }
     ],
     "word": "dimension"
+  },
+  "R6:A TEMPORARY DIVERSION": {
+    "word": "a temporary diversion",
+    "pos": "phr.",
+    "meaning": "暫時改行的路線安排",
+    "example": "Follow the temporary diversion today.",
+    "exampleZh": "今天依暫時改道走。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "暫時改行的路線安排",
+        "examples": [
+          {
+            "en": "Follow the temporary diversion today.",
+            "zh": "今天依暫時改道走。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:DIRECTIONS SHOULD BE VISIBLE BEFORE A CHOICE IS MADE": {
+    "word": "directions should be visible before a choice is made",
+    "pos": "phr.",
+    "meaning": "作選擇前應能看見指引",
+    "example": "Directions should be visible before a choice is made.",
+    "exampleZh": "作選擇前應能看見指引。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "作選擇前應能看見指引",
+        "examples": [
+          {
+            "en": "Directions should be visible before a choice is made.",
+            "zh": "作選擇前應能看見指引。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:INTERSECTION": {
+    "pos": "n.",
+    "meaning": "道路或線路相交的位置",
+    "example": "The meeting point is beyond the intersection.",
+    "exampleZh": "集合點在路口另一邊。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "道路或線路相交的位置",
+        "examples": [
+          {
+            "en": "The meeting point is beyond the intersection.",
+            "zh": "集合點在路口另一邊。"
+          }
+        ]
+      }
+    ],
+    "word": "intersection"
+  },
+  "R6:BOLLARD": {
+    "pos": "n.",
+    "meaning": "路旁用以限制車輛通行的矮柱",
+    "example": "A bollard marks the edge of the vehicle route.",
+    "exampleZh": "矮柱標示車輛路線邊緣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "路旁用以限制車輛通行的矮柱",
+        "examples": [
+          {
+            "en": "A bollard marks the edge of the vehicle route.",
+            "zh": "矮柱標示車輛路線邊緣。"
+          }
+        ]
+      }
+    ],
+    "word": "bollard"
+  },
+  "R6:A CONVINCING PERFORMANCE": {
+    "word": "a convincing performance",
+    "pos": "phr.",
+    "meaning": "令人信服的表演",
+    "example": "She gave a convincing performance.",
+    "exampleZh": "她作出令人信服的表演。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "令人信服的表演",
+        "examples": [
+          {
+            "en": "She gave a convincing performance.",
+            "zh": "她作出令人信服的表演。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE PAUSE SHOULD ALLOW A LAUGH WITHOUT DEMANDING ONE": {
+    "word": "the pause should allow a laugh without demanding one",
+    "pos": "phr.",
+    "meaning": "停頓應容納笑聲而非強求它",
+    "example": "The pause should allow a laugh without demanding one.",
+    "exampleZh": "停頓應容納笑聲而非強求它。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "停頓應容納笑聲而非強求它",
+        "examples": [
+          {
+            "en": "The pause should allow a laugh without demanding one.",
+            "zh": "停頓應容納笑聲而非強求它。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:APPLAUSE": {
+    "pos": "n.",
+    "meaning": "觀眾以拍手表示讚賞的掌聲",
+    "example": "The applause continued after the curtain fell.",
+    "exampleZh": "落幕後掌聲繼續。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "觀眾以拍手表示讚賞的掌聲",
+        "examples": [
+          {
+            "en": "The applause continued after the curtain fell.",
+            "zh": "落幕後掌聲繼續。"
+          }
+        ]
+      }
+    ],
+    "word": "applause"
+  },
+  "R6:CHOREOGRAPHY": {
+    "pos": "n.",
+    "meaning": "舞蹈動作與順序的編排",
+    "example": "The choreography gives each dancer room to move.",
+    "exampleZh": "舞蹈編排讓每位舞者有活動空間。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "舞蹈動作與順序的編排",
+        "examples": [
+          {
+            "en": "The choreography gives each dancer room to move.",
+            "zh": "舞蹈編排讓每位舞者有活動空間。"
+          }
+        ]
+      }
+    ],
+    "word": "choreography"
   }
 }

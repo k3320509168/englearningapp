@@ -7472,6 +7472,792 @@
       "ans": "PIA",
       "speak": "duplicate",
       "vocabId": "R6:DUPLICATE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "around the corner",
+      "options": [
+        "A. 沿圓形路線走完一整圈",
+        "B. 建築最遠端的房間",
+        "C. 地圖任何邊角上的地方",
+        "D. 轉過附近街角的位置"
+      ],
+      "ans": "D",
+      "explain": "around the corner 描述在附近拐角另一側，可引申即將到來。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a designated meeting point",
+      "options": [
+        "A. 指定集合地點",
+        "B. 任何人可臨時自行選的地點",
+        "C. 仍在討論而完全未定的位置",
+        "D. 只供遺失物品存放的櫃台"
+      ],
+      "ans": "A",
+      "explain": "designated 表已指定用途或角色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a diversion route",
+      "options": [
+        "A. 只准單一職業使用的通道",
+        "B. 因原路受阻而改行的路線",
+        "C. 為娛樂而刻意安排的行程",
+        "D. 永遠最短且不會改變的捷徑"
+      ],
+      "ans": "B",
+      "explain": "diversion 在交通語境指改道。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The desk is open until four, but the last collection is at half past three.",
+      "options": [
+        "A. 櫃台開到四點，最後領取三點半。",
+        "B. 櫃台三點半關，但可以領取到四點。",
+        "C. 最後領取四點半，櫃台四點才開。",
+        "D. 四點前任何時候都已保證可領取。"
+      ],
+      "ans": "A",
+      "explain": "櫃台營業與服務截止不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You can enter through either gate, though only the west gate has somewhere to leave a bicycle.",
+      "options": [
+        "A. 西門不能進人，僅供存放單車。",
+        "B. 兩道門都可進，只有西門有停單車處。",
+        "C. 只有西門可進，其餘門只准單車通過。",
+        "D. 兩門都有停單車處，只是西門較大。"
+      ],
+      "ans": "B",
+      "explain": "either gate 准入，only west 限定停車設施。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hall is directly above us, but the public stairs are at the far end of this corridor.",
+      "options": [
+        "A. 公用樓梯正好在我們腳下的大廳內。",
+        "B. 大廳已不對外，所以樓梯也不能使用。",
+        "C. 大廳在正上方，但公用樓梯在走廊遠端。",
+        "D. 大廳就在走廊盡頭且與我們同層。"
+      ],
+      "ans": "C",
+      "explain": "垂直位置與實際到達路線不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The room numbers continue along the next corridor; they do not start again when you turn the corner.",
+      "options": [
+        "A. 房號只用於目前走廊，轉角後全不適用。",
+        "B. 房號到下條走廊接續，不會轉角後重新起算。",
+        "C. 每轉一角房號都回到一號。",
+        "D. 下條走廊沒有房號，只有房間名稱。"
+      ],
+      "ans": "B",
+      "explain": "continue rather than start again 表連續編號。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The nearest entrance on the map is not necessarily the quickest way in if you arrive when the main queue is longest.",
+      "options": [
+        "A. 說話者確認所有入口必須排相同長度隊伍。",
+        "B. 只要主隊長，最近入口就會正式關閉。",
+        "C. 主隊最長時，地圖最近入口不一定最快。",
+        "D. 地圖最近入口無論排隊多久都一定最快。"
+      ],
+      "ans": "C",
+      "explain": "距離與等待時間共同影響總時間，不推關閉。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We moved the sign to where people actually make the choice, rather than where they first discover they have chosen wrongly.",
+      "options": [
+        "A. 標示移到錯路盡頭，讓人先體驗再改道。",
+        "B. 人們已不需選路，所以標示全部撤下。",
+        "C. 說話者只比較標示字體，沒有改變位置。",
+        "D. 標示移到人們選路處，不是走錯後才發現之處。"
+      ],
+      "ans": "D",
+      "explain": "資訊要在決策點可見，而非事後補知。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The entrance ___ you are looking for is on the other side of the building.",
+      "options": [
+        "A. where",
+        "B. whose",
+        "C. what",
+        "D. that"
+      ],
+      "ans": "D",
+      "explain": "looking for 的受詞是 entrance，用 that；where 不能直接作 for 受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which adjective means readily noticeable?",
+      "options": [
+        "A. conspicuous",
+        "B. temporary",
+        "C. adjacent",
+        "D. optional"
+      ],
+      "ans": "A",
+      "explain": "此題 conspicuous 指顯眼；其他為暫時、相鄰、可選。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【路線】The library is between the station and the park. Starting at the station, you reach the library before the park. What comes next along that route?",
+      "options": [
+        "A. The library for a second time.",
+        "B. The park.",
+        "C. The station again.",
+        "D. A building behind the station."
+      ],
+      "ans": "B",
+      "explain": "沿指定路線依序 station/library/park，圖內資訊已完整。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】A sign says the upper floor is closed until noon. What does it establish?",
+      "options": [
+        "A. Access is restricted for a stated period.",
+        "B. The whole building is closed for the day.",
+        "C. The upper floor will never reopen.",
+        "D. Every room downstairs is already occupied."
+      ],
+      "ans": "A",
+      "explain": "告示只限制樓上至中午，不擴及全部建物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A sign says collections at the side counter and returns at the main counter. A visitor goes to the side counter to return a borrowed item. What has been confused?",
+      "options": [
+        "A. A side entrance with a staff-only exit.",
+        "B. Two services assigned to different counters.",
+        "C. The opening time with the closing time.",
+        "D. A borrowed item with an item already purchased."
+      ],
+      "ans": "B",
+      "explain": "collections 領取、returns 歸還；兩窗口功能不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The signs are being replaced so that visitors ___ find the entrance more easily.",
+      "options": [
+        "A. are",
+        "B. have",
+        "C. can",
+        "D. had"
+      ],
+      "ans": "C",
+      "explain": "so that 引目的，can + 原形 find。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The booking page offers fifteen-minute arrival slots, but says visitors may stay for an hour after entering. A visitor thinks the visit lasts only fifteen minutes. What has been mistaken?",
+      "options": [
+        "A. The closing hour for a fixed departure slot.",
+        "B. The arrival window for the permitted length of stay.",
+        "C. The admission price for the time of arrival.",
+        "D. The time spent inside for the waiting time outside."
+      ],
+      "ans": "B",
+      "explain": "到場時段與可停留時間為兩種時間限制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】It is only a short walk, provided you use the footbridge rather than follow the road all the way round. What qualifies the claim?",
+      "options": [
+        "A. The footbridge is open only to staff.",
+        "B. The speaker guarantees the bridge is suitable for every visitor.",
+        "C. The route chosen affects the distance.",
+        "D. Every route has exactly the same length."
+      ],
+      "ans": "C",
+      "explain": "短路程依賴行人橋路線，未保證普遍可及性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A centre advertises step-free access. Its notice explains that this entrance is at the back and closes earlier than the front one. What should a visitor check?",
+      "options": [
+        "A. Whether the front entrance is closer to every possible starting point.",
+        "B. Whether closing the back entrance automatically closes the whole centre.",
+        "C. Whether step-free access guarantees that no visitor will need directions.",
+        "D. Whether the relevant entrance will be open at the planned arrival time."
+      ],
+      "ans": "D",
+      "explain": "有免階梯入口仍需核對開放時間，不預測個人行動能力。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：理解空間並找到路線的過程",
+      "ans": "WAYFINDING",
+      "speak": "wayfinding",
+      "vocabId": "R6:WAYFINDING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：建築前方的開放區域",
+      "ans": "FORECOURT",
+      "speak": "forecourt",
+      "vocabId": "R6:FORECOURT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：標示清楚的入口",
+      "ans": "A CLEARLY MARKED ENTRANCE",
+      "speak": "a clearly marked entrance",
+      "vocabId": "R6:A CLEARLY MARKED ENTRANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：緊鄰的等候區",
+      "ans": "AN ADJACENT WAITING AREA",
+      "speak": "an adjacent waiting area",
+      "vocabId": "R6:AN ADJACENT WAITING AREA"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：到場時段不同於允許停留長度",
+      "ans": "THE ARRIVAL WINDOW DIFFERS FROM THE PERMITTED LENGTH OF STAY",
+      "speak": "the arrival window differs from the permitted length of stay",
+      "vocabId": "R6:THE ARRIVAL WINDOW DIFFERS FROM THE PERMITTED LENGTH OF STAY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：最短路線未必等候最短",
+      "ans": "THE SHORTEST ROUTE NEED NOT GIVE THE SHORTEST WAITING TIME",
+      "speak": "the shortest route need not give the shortest waiting time",
+      "vocabId": "R6:THE SHORTEST ROUTE NEED NOT GIVE THE SHORTEST WAITING TIME"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在旁而緊鄰的（A 開頭，8 個字母）",
+      "ans": "ADJACENT",
+      "speak": "adjacent",
+      "vocabId": "R6:ADJACENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：車站等供人通行集合的大廳（C 開頭，9 個字母）",
+      "ans": "CONCOURSE",
+      "speak": "concourse",
+      "vocabId": "R6:CONCOURSE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：步行而不乘車的行人（P 開頭，10 個字母）",
+      "ans": "PEDESTRIAN",
+      "speak": "pedestrian",
+      "vocabId": "R6:PEDESTRIAN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F O O T B _ I D G E (供行人跨越障礙的橋)",
+      "ans": "R",
+      "speak": "footbridge",
+      "vocabId": "R6:FOOTBRIDGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S I _ N P _ S T (標示方向或位置的路牌)",
+      "ans": "GO",
+      "speak": "signpost",
+      "vocabId": "R6:SIGNPOST"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P A _ S A _ E _ A Y (建物中供通行的狹長通道)",
+      "ans": "SGW",
+      "speak": "passageway",
+      "vocabId": "R6:PASSAGEWAY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "behind the scenes",
+      "options": [
+        "A. 在觀眾看不見的幕後",
+        "B. 坐在最後一排看演出",
+        "C. 等所有場景結束之後",
+        "D. 將每幅布景反面展示"
+      ],
+      "ans": "A",
+      "explain": "behind the scenes 指幕後工作或不公開的過程。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "steal the show",
+      "options": [
+        "A. 偷偷複製節目所有台詞",
+        "B. 以精彩表現搶走全場注意",
+        "C. 未經允許把道具帶走",
+        "D. 在開演前取消整齣戲"
+      ],
+      "ans": "B",
+      "explain": "steal the show 是成為最受矚目者的比喻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "on cue",
+      "options": [
+        "A. 由觀眾自行決定何時開始",
+        "B. 完全沒有任何提示便任意行動",
+        "C. 在預定提示出現時準確行動",
+        "D. 在等候隊伍中依次排好"
+      ],
+      "ans": "C",
+      "explain": "cue 是提示信號，on cue 應提示而準時。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The seats are numbered, but the rows are letters, so B twelve is in the second row.",
+      "options": [
+        "A. 座位號碼只適用第一排，其餘可任意坐。",
+        "B. 座位用數字、排用字母，B十二在第二排。",
+        "C. B十二代表第十二排的第二個座位。",
+        "D. 排和座都用數字，B只是票種名稱。"
+      ],
+      "ans": "B",
+      "explain": "提供明確標記系統，不需外部座位慣例。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The microphone was working; the problem was that the music drowned out the first few words.",
+      "options": [
+        "A. 最初幾個字太大聲，反而讓音樂聽不到。",
+        "B. 說話者確定台詞根本沒有被說出。",
+        "C. 麥克風有作用，問題是音樂蓋掉最初幾個字。",
+        "D. 麥克風壞了，所以音樂也完全沒有聲音。"
+      ],
+      "ans": "C",
+      "explain": "設備可運作仍有音量平衡問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We need the pause to feel natural, not to last exactly the same number of seconds every night.",
+      "options": [
+        "A. 停頓只要秒數一致，自然與否並不重要。",
+        "B. 說話者要求每晚完全刪除所有停頓。",
+        "C. 每晚秒數必須不同，才算符合唯一規則。",
+        "D. 停頓要自然，不是每晚固定同樣秒數。"
+      ],
+      "ans": "D",
+      "explain": "反對機械固定，不等於必須刻意每晚改秒數。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Do not rush the exit; the next entrance is timed from when the door actually closes.",
+      "options": [
+        "A. 門必須一直開，否則沒人能再上場。",
+        "B. 退場越快，下一次入場就越一定正確。",
+        "C. 別急著退場，下次入場依門實際關上起算。",
+        "D. 下次入場按固定鐘點，與門何時關無關。"
+      ],
+      "ans": "C",
+      "explain": "計時起點是事件觸發，不是催退出時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I admired the acting more than I enjoyed the play, if that makes sense.",
+      "options": [
+        "A. 我很喜歡戲本身，但認為演技無可取之處。",
+        "B. 我完全不懂表演，所以不願作任何評價。",
+        "C. 演技與戲本身在我看來得到相同程度肯定。",
+        "D. 我較欣賞演技，對戲本身享受較少。"
+      ],
+      "ans": "D",
+      "explain": "不同評價面向可不一致，more than 非全盤否定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The ending did not surprise me, but the way the actor reached it made it feel new.",
+      "options": [
+        "A. 結局不意外，但演員演到結局的方式帶來新鮮感。",
+        "B. 結局被完全改寫，所以我無法認出原故事。",
+        "C. 演員只因忘詞而使結局看來不同。",
+        "D. 我認為熟悉的結局不可能帶來任何新感受。"
+      ],
+      "ans": "A",
+      "explain": "內容熟悉與詮釋新意可並存。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The rehearsal will begin as soon as everyone ___ ready.",
+      "options": [
+        "A. is",
+        "B. will being",
+        "C. are being",
+        "D. have been"
+      ],
+      "ans": "A",
+      "explain": "everyone 單數；未來時間子句用現在式 is ready。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】An understudy is a performer who ___.",
+      "options": [
+        "A. has bought a cheaper ticket for the last row",
+        "B. learns a role in order to replace another performer if needed",
+        "C. watches a performance from below the stage",
+        "D. writes every word spoken by the leading actor"
+      ],
+      "ans": "B",
+      "explain": "understudy 是準備必要時代演的人，不是看台下方的人。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The show is sold out, but returned tickets may become available. What is possible?",
+      "options": [
+        "A. The performance has been cancelled and refunded.",
+        "B. New seats will certainly be added to the hall.",
+        "C. A cancelled booking might release a ticket.",
+        "D. Everyone who waits is guaranteed a ticket."
+      ],
+      "ans": "C",
+      "explain": "sold out 不排除後續退票，may 不保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】The lights dimmed before the music started, while the curtain remained closed. What had happened when the music began?",
+      "options": [
+        "A. The lights had returned to full brightness.",
+        "B. The lights had already become less bright.",
+        "C. The curtain had already been raised.",
+        "D. The audience had already left the room."
+      ],
+      "ans": "B",
+      "explain": "before 指先變暗；curtain remained closed 排除升幕。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The ticket includes admission to the performance but not the optional talk afterwards. A visitor assumes the talk is part of the ticket because it is on the same evening. What should be checked?",
+      "options": [
+        "A. Whether the performance and talk use the same language.",
+        "B. Which speaker has bought a ticket for the performance.",
+        "C. Which activities the stated admission covers.",
+        "D. Whether the evening contains enough hours for both events."
+      ],
+      "ans": "C",
+      "explain": "同晚不等於同票涵蓋，題幹已限不含talk。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I wish the audience ___ their phones on silent before the show began.",
+      "options": [
+        "A. have putting",
+        "B. will put",
+        "C. would put yesterday",
+        "D. had put"
+      ],
+      "ans": "D",
+      "explain": "對過去未做的事遺憾，用 wish + 過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】During a rehearsal, an actor skips a speech so the team can practise the scene change. A visitor thinks the speech has been removed from the final show. What has been overlooked?",
+      "options": [
+        "A. The visitor has already been given the final revised script.",
+        "B. The speech can be performed only after the audience has left.",
+        "C. The immediate purpose of this rehearsal may differ from a full performance.",
+        "D. Every rehearsal must include every word in its final order."
+      ],
+      "ans": "C",
+      "explain": "練轉場可暫略台詞，不能直接推永久刪除。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The play was shorter than I expected, though I would not have wanted it any longer. What is the evaluation?",
+      "options": [
+        "A. It was too brief to include the ending.",
+        "B. The speaker wanted a longer version of the same performance.",
+        "C. The speaker had expected no performance at all.",
+        "D. Its length was surprising but suited the experience."
+      ],
+      "ans": "D",
+      "explain": "較預期短但不想加長，非必嫌短。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The audience laughs before a character finishes a sentence. The actor waits, then delivers the last few words when the room is quiet. What is the likely reason?",
+      "options": [
+        "A. To allow the remaining words to be heard.",
+        "B. To signal that the forgotten ending has been replaced.",
+        "C. To ask the audience to leave before the next scene.",
+        "D. To show that the character has stopped speaking permanently."
+      ],
+      "ans": "A",
+      "explain": "等笑聲退以免蓋台詞，未給忘詞證據。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：必要時可替另一演員上場的代演者",
+      "ans": "UNDERSTUDY",
+      "speak": "understudy",
+      "vocabId": "R6:UNDERSTUDY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：舞台後方形成場景的背景",
+      "ans": "BACKDROP",
+      "speak": "backdrop",
+      "vocabId": "R6:BACKDROP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：時機掌握恰當的停頓",
+      "ans": "A WELL TIMED PAUSE",
+      "speak": "a well timed pause",
+      "vocabId": "R6:A WELL TIMED PAUSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：臨場即興的回應",
+      "ans": "AN IMPROVISED RESPONSE",
+      "speak": "an improvised response",
+      "vocabId": "R6:AN IMPROVISED RESPONSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：熟悉結局演出時仍可新鮮",
+      "ans": "A FAMILIAR ENDING CAN STILL FEEL FRESH IN PERFORMANCE",
+      "speak": "a familiar ending can still feel fresh in performance",
+      "vocabId": "R6:A FAMILIAR ENDING CAN STILL FEEL FRESH IN PERFORMANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：音樂蓋過開頭台詞",
+      "ans": "THE MUSIC DROWNED OUT THE OPENING WORDS",
+      "speak": "the music drowned out the opening words",
+      "vocabId": "R6:THE MUSIC DROWNED OUT THE OPENING WORDS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：為正式演出預先練習的排練（R 開頭，9 個字母）",
+      "ans": "REHEARSAL",
+      "speak": "rehearsal",
+      "vocabId": "R6:REHEARSAL"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：供觀眾觀看演出的大廳（A 開頭，10 個字母）",
+      "ans": "AUDITORIUM",
+      "speak": "auditorium",
+      "vocabId": "R6:AUDITORIUM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：集中照亮舞台一小區域的燈光（S 開頭，9 個字母）",
+      "ans": "SPOTLIGHT",
+      "speak": "spotlight",
+      "vocabId": "R6:SPOTLIGHT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C U R _ A I N (舞台前可開合的布幕)",
+      "ans": "T",
+      "speak": "curtain",
+      "vocabId": "R6:CURTAIN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ _ P (演出中使用的可移動道具)",
+      "ans": "RO",
+      "speak": "prop",
+      "vocabId": "R6:PROP"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ E _ V _ L (演出兩部分之間的休息時間)",
+      "ans": "TRA",
+      "speak": "interval",
+      "vocabId": "R6:INTERVAL"
     }
   ],
   "boss": [
@@ -9963,6 +10749,268 @@
       "ans": "MNI",
       "speak": "dimension",
       "vocabId": "R6:DIMENSION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Go past the desk, then take the first door on your left, not the door beside the desk.",
+      "options": [
+        "A. 走到櫃台旁門就進去，不需再往前。",
+        "B. 經過櫃台後改向右，再找唯一出口。",
+        "C. 經過櫃台後左側第一門，不是櫃台旁那道。",
+        "D. 在到櫃台之前先進左側第一門。"
+      ],
+      "ans": "C",
+      "explain": "past/then/left 與 not 明確界定動線。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The queue on the right is for people who have already booked, even if they still need to collect a ticket.",
+      "options": [
+        "A. 右隊只給手上已持票且不需領取者。",
+        "B. 還沒預約者應去右邊排隊先拿票。",
+        "C. 兩條隊伍都不接受需要領票的人。",
+        "D. 右隊給已預約者，即使還需要領票。"
+      ],
+      "ans": "D",
+      "explain": "分類依預約狀態，非是否拿到實體票。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not describe the route as inaccessible, but I would explain the steep section before letting people assume it is an easy stroll.",
+      "options": [
+        "A. 我不會稱路線無法到達，但會先說明陡坡，免得以為輕鬆散步。",
+        "B. 路線已被正式封閉，所以不應再提供任何說明。",
+        "C. 說話者確認陡坡對任何人都不構成困難。",
+        "D. 只要能走到，就已保證整段路對人人輕鬆。"
+      ],
+      "ans": "A",
+      "explain": "可到達與輕鬆程度不同，提前明示地形資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could you point me towards the information desk? What help is requested?",
+      "options": [
+        "A. A written complaint about the desk’s location.",
+        "B. Permission to move the desk nearer the door.",
+        "C. An indication of which way to go.",
+        "D. A reservation at the desk for a later visit."
+      ],
+      "ans": "C",
+      "explain": "point towards 是指引方向，不必親自帶路。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【空間】The lift is opposite the reception desk, while the stairs are immediately behind the desk. Which statement follows?",
+      "options": [
+        "A. The stairs are inside the lift.",
+        "B. The lift is behind the stairs and cannot be seen.",
+        "C. The reception desk is on a different floor from both.",
+        "D. The stairs and lift are on different sides of the desk."
+      ],
+      "ans": "D",
+      "explain": "opposite 與 behind 相對桌的位置不同，不能推能見度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The map marks a nearby exit, but a temporary notice says it is closed today and gives another route. Which information should govern today’s departure?",
+      "options": [
+        "A. The current notice about the temporary closure.",
+        "B. The map alone because printed routes cannot change.",
+        "C. The shortest line on the map regardless of access.",
+        "D. The location of the exit used on a previous visit."
+      ],
+      "ans": "A",
+      "explain": "暫時告示直接更新今日通行，非一般地圖永遠錯誤。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：暫時改行的路線安排",
+      "ans": "A TEMPORARY DIVERSION",
+      "speak": "a temporary diversion",
+      "vocabId": "R6:A TEMPORARY DIVERSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：作選擇前應能看見指引",
+      "ans": "DIRECTIONS SHOULD BE VISIBLE BEFORE A CHOICE IS MADE",
+      "speak": "directions should be visible before a choice is made",
+      "vocabId": "R6:DIRECTIONS SHOULD BE VISIBLE BEFORE A CHOICE IS MADE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：道路或線路相交的位置（I 開頭，12 個字母）",
+      "ans": "INTERSECTION",
+      "speak": "intersection",
+      "vocabId": "R6:INTERSECTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：B _ L _ A _ D (路旁用以限制車輛通行的矮柱)",
+      "ans": "OLR",
+      "speak": "bollard",
+      "vocabId": "R6:BOLLARD"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Are we starting from the beginning? No, from the moment she opens the letter.",
+      "options": [
+        "A. 從最初場景開始，一直演到她拆信。",
+        "B. 拆信場景已取消，所以由下一場開始。",
+        "C. 所有人先讀完信，再決定從哪開始。",
+        "D. 不是從頭，從她拆信那刻開始。"
+      ],
+      "ans": "D",
+      "explain": "No 修正開始位置，不是設定結束位置。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The spare costume is ready, though we hope nobody will need it.",
+      "options": [
+        "A. 備用服裝已備妥，但希望不會用到。",
+        "B. 因不希望用到，所以沒有準備任何備服。",
+        "C. 備用服已被要求每位演員輪流穿一次。",
+        "D. 說話者確認原服已全部不能使用。"
+      ],
+      "ans": "A",
+      "explain": "準備備案不等於預測必需使用。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We should leave room for a laugh without making the audience feel that we are waiting for one.",
+      "options": [
+        "A. 說話者認為只有完全不停頓才會自然。",
+        "B. 要留笑聲空間，但別讓觀眾覺得我們在等他們笑。",
+        "C. 要停到每位觀眾都笑才繼續，不論多久。",
+        "D. 觀眾若開始笑，就應立刻跳過剩下台詞。"
+      ],
+      "ans": "B",
+      "explain": "表演節奏兼顧反應與不強求反應，非機械指令。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could we try that line once more, a little less quickly? What is requested?",
+      "options": [
+        "A. Removing the line from the script.",
+        "B. Making the line longer before speaking it.",
+        "C. Reading the next line without a pause.",
+        "D. Repeating the line at a slower pace."
+      ],
+      "ans": "D",
+      "explain": "once more 重複，less quickly 放慢。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】Her voice carried to the back of the room. What does carried mean here?",
+      "options": [
+        "A. It could be heard at the back.",
+        "B. It was recorded only behind the room.",
+        "C. It became quieter whenever she moved.",
+        "D. It repeated words spoken by the audience."
+      ],
+      "ans": "A",
+      "explain": "voice carried 指聲音傳得到，不是實體搬運。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A review calls a performance polished but not lifeless. What combination is praised?",
+      "options": [
+        "A. An absence of emotion that keeps the technique hidden.",
+        "B. Technical control together with energy or feeling.",
+        "C. A lack of preparation disguised by loud speaking.",
+        "D. An unchanging pace that prevents any surprise."
+      ],
+      "ans": "B",
+      "explain": "polished 精熟流暢，not lifeless 保留活力與情感。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：令人信服的表演",
+      "ans": "A CONVINCING PERFORMANCE",
+      "speak": "a convincing performance",
+      "vocabId": "R6:A CONVINCING PERFORMANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：停頓應容納笑聲而非強求它",
+      "ans": "THE PAUSE SHOULD ALLOW A LAUGH WITHOUT DEMANDING ONE",
+      "speak": "the pause should allow a laugh without demanding one",
+      "vocabId": "R6:THE PAUSE SHOULD ALLOW A LAUGH WITHOUT DEMANDING ONE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：觀眾以拍手表示讚賞的掌聲（A 開頭，8 個字母）",
+      "ans": "APPLAUSE",
+      "speak": "applause",
+      "vocabId": "R6:APPLAUSE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C H O _ E O _ R A _ H Y (舞蹈動作與順序的編排)",
+      "ans": "RGP",
+      "speak": "choreography",
+      "vocabId": "R6:CHOREOGRAPHY"
     }
   ]
 }

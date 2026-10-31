@@ -7466,6 +7466,792 @@
       "ans": "YMT",
       "speak": "asymmetry",
       "vocabId": "R7:ASYMMETRY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a navigational cue",
+      "options": [
+        "A. 要求停止移動的每項命令",
+        "B. 只在船上才可見的裝飾",
+        "C. 列出付款總額的收據",
+        "D. 幫助判斷方向的線索"
+      ],
+      "ans": "D",
+      "explain": "navigational cue 可指陸上空間尋路提示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an unimpeded route",
+      "options": [
+        "A. 沒有阻礙而可順暢通行的路線",
+        "B. 全程受到遮蔽但不能通行的路線",
+        "C. 距離最短而不論有無障礙的路線",
+        "D. 只因名稱相同而被合併的路線"
+      ],
+      "ans": "A",
+      "explain": "unimpeded 無阻，不保證最短或遮雨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a misleading affordance",
+      "options": [
+        "A. 已測量且明白標出的路線距離",
+        "B. 外觀暗示的用途與實際可用方式不符",
+        "C. 完全看不見而毫無提示的資訊",
+        "D. 由所有使用者共同同意的新規則"
+      ],
+      "ans": "B",
+      "explain": "affordance 此處指物件暗示可如何使用；misleading 為提示誤導。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The alternative entrance is open, though it is not listed under the name most visitors would think to search for.",
+      "options": [
+        "A. 替代入口開著，但列名不是多數遊客會想到查的名稱。",
+        "B. 替代入口已關，只有原入口的名稱列在目錄。",
+        "C. 入口名稱人人熟悉，所以完全不需再做說明。",
+        "D. 說話者確認遊客不准搜尋其他入口名稱。"
+      ],
+      "ans": "A",
+      "explain": "實際可用與資訊可發現性不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have removed a physical barrier, not necessarily the uncertainty that makes people hesitate before entering.",
+      "options": [
+        "A. 說話者認為只有熟客才應獲准進入。",
+        "B. 我們移除實體障礙，未必消除讓人進門前猶豫的不確定。",
+        "C. 實體障礙一移除，所有猶豫原因就已確定消失。",
+        "D. 不確定是由新障礙造成，因此原障礙從未移除。"
+      ],
+      "ans": "B",
+      "explain": "物理改善與資訊/心理門檻可分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The map assumes that people know which service they need by its official title, rather than by the problem they want solved.",
+      "options": [
+        "A. 服務因沒有官方名稱，所以完全無法標在地圖。",
+        "B. 地圖只提供建物外觀，未曾提到任何服務。",
+        "C. 地圖預設人們知道服務官方名稱，而不是按待解問題尋找。",
+        "D. 地圖已依使用者問題分類，不需要任何官方名稱。"
+      ],
+      "ans": "C",
+      "explain": "institution-centred 與 user-purpose 尋找差異。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The new queueing system reduces standing, though some users now find it harder to know when their turn is approaching.",
+      "options": [
+        "A. 說話者認為站立減少就代表制度沒有任何缺點。",
+        "B. 新排隊制少站立，但部分人較難知道何時快輪到。",
+        "C. 新制度增加站立，卻讓每人都清楚自己次序。",
+        "D. 部分人完全不能領號，所以已正式被拒絕服務。"
+      ],
+      "ans": "B",
+      "explain": "改善某負擔與引入資訊需求並存。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The problem is not that the information is absent, but that finding it requires the very familiarity the information is supposed to provide.",
+      "options": [
+        "A. 所有資訊都缺漏，無論熟客新客都沒有任何可用線索。",
+        "B. 說話者只在質疑熟客是否應被提供更多優惠。",
+        "C. 問題非沒有資訊，而是找它先要具備它原本應提供的熟悉度。",
+        "D. 資訊已放在初訪者一眼可見處，所以只剩讀者不肯閱讀。"
+      ],
+      "ans": "C",
+      "explain": "找指引先需懂空間，形成取得資訊的循環門檻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A route described as direct can still involve a considerable detour for someone whose starting point the designer has not considered.",
+      "options": [
+        "A. 路線只要名叫直接，就對所有起點同樣最短。",
+        "B. 設計者已逐一比較所有起點，所以不可能有繞路。",
+        "C. 起點不同已使每條路都永遠無法比較長度。",
+        "D. 設計者未考慮起點者，走所謂直接路線仍可能大繞路。"
+      ],
+      "ans": "D",
+      "explain": "direct 的相對參照範圍要看起點，不否定可量比較。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The route is legible to regular users but opaque to first-time visitors. What is being contrasted?",
+      "options": [
+        "A. How clearly the map’s ink can be seen in different lighting.",
+        "B. How much regular users pay compared with first-time visitors.",
+        "C. How frequently the route is cleaned for each group of users.",
+        "D. How readily different users can understand the spatial arrangement."
+      ],
+      "ans": "D",
+      "explain": "legible/opaque 比喻空間可理解度，非印刷光線。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The information should be placed where visitors ___ to choose between routes.",
+      "options": [
+        "A. have",
+        "B. having",
+        "C. are have",
+        "D. had being"
+      ],
+      "ans": "A",
+      "explain": "have to choose 表必須作選擇，where 引地點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The designer says the building encourages exploration. A visitor replies, I was trying to find the appointment I was already late for. What is challenged?",
+      "options": [
+        "A. The visitor’s right to arrive before the appointment begins.",
+        "B. Treating difficulty in navigation as a benefit for every purpose.",
+        "C. The claim that appointments may be held in the building.",
+        "D. The possibility that some visitors enjoy exploring an unfamiliar place."
+      ],
+      "ans": "B",
+      "explain": "探索優點依目的而異，趕預約者需要直接尋路。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Not until visitors reach the junction ___ visible.",
+      "options": [
+        "A. does the sign become",
+        "B. the sign becomes",
+        "C. becomes the sign does",
+        "D. the sign does becomes"
+      ],
+      "ans": "A",
+      "explain": "Not until 前置引主句倒裝，does 後用 become。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The map is accurate but oriented differently from the viewer’s position. Visitors repeatedly turn the wrong way. What revision addresses that specific difficulty?",
+      "options": [
+        "A. Changing the names of rooms without changing the map’s orientation.",
+        "B. Aligning the map’s orientation with the viewer’s perspective.",
+        "C. Adding opening hours to every destination on the map.",
+        "D. Increasing the number of destinations listed alphabetically."
+      ],
+      "ans": "B",
+      "explain": "錯在參照朝向，調朝向直接回應；準確標物件仍可能難用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】Assistance is available on request rather than automatically provided. What follows?",
+      "options": [
+        "A. The service is unavailable to anyone who has booked.",
+        "B. Visitors must supply assistance to staff in return.",
+        "C. Visitors may need to ask before receiving it.",
+        "D. Every visitor will receive it without taking action."
+      ],
+      "ans": "C",
+      "explain": "on request 需提出要求，非主動自動提供。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A directory groups services by department names. Visitors know what they need but not which department provides it. What information gap remains?",
+      "options": [
+        "A. A description of how the building looked before it opened.",
+        "B. A connection between users’ purposes and institutional categories.",
+        "C. A complete list of department names in alphabetical order.",
+        "D. A record of how many staff work in each department."
+      ],
+      "ans": "B",
+      "explain": "使用需求到部門名稱的映射不足，而非單純未列名稱。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A centre measures route efficiency by distance alone. It omits queueing, locked gates and the time needed to locate the start. What should be reconsidered?",
+      "options": [
+        "A. Whether every user should be required to arrive at the same time.",
+        "B. Whether the centre should remove every sign to reduce visual clutter.",
+        "C. Whether the measure captures the whole journey users must make.",
+        "D. Whether route distance can ever be measured consistently."
+      ],
+      "ans": "C",
+      "explain": "效率量度漏掉實際時間要素，非距離毫無價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The report supports a common route for all users but cautions against confusing identical routing with equivalent effort. What is the caution?",
+      "options": [
+        "A. Any common route must be longer than every alternative route.",
+        "B. Equivalent effort requires everyone to move at the same speed.",
+        "C. Separate routes are always preferable regardless of their quality.",
+        "D. The same path may impose different demands on different people."
+      ],
+      "ans": "D",
+      "explain": "同路線不保證同負擔，不先定共用或分離皆必優。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：環境或物件提供或暗示的可用方式",
+      "ans": "AFFORDANCE",
+      "speak": "affordance",
+      "vocabId": "R7:AFFORDANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：進入某活動或空間前需跨過的門檻",
+      "ans": "THRESHOLD",
+      "speak": "threshold",
+      "vocabId": "R7:THRESHOLD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：容易理解的空間層級",
+      "ans": "A LEGIBLE SPATIAL HIERARCHY",
+      "speak": "a legible spatial hierarchy",
+      "vocabId": "R7:A LEGIBLE SPATIAL HIERARCHY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：容易找到資訊的替代選項",
+      "ans": "A READILY DISCOVERABLE ALTERNATIVE",
+      "speak": "a readily discoverable alternative",
+      "vocabId": "R7:A READILY DISCOVERABLE ALTERNATIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：能實際進入不保證感到被歡迎",
+      "ans": "PHYSICAL ENTRY DOES NOT GUARANTEE A SENSE OF WELCOME",
+      "speak": "physical entry does not guarantee a sense of welcome",
+      "vocabId": "R7:PHYSICAL ENTRY DOES NOT GUARANTEE A SENSE OF WELCOME"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：同路線可對不同使用者造成不同負擔",
+      "ans": "THE SAME ROUTE CAN IMPOSE DIFFERENT DEMANDS ON DIFFERENT USERS",
+      "speak": "the same route can impose different demands on different users",
+      "vocabId": "R7:THE SAME ROUTE CAN IMPOSE DIFFERENT DEMANDS ON DIFFERENT USERS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：未受到妨礙而可順暢進行的（U 開頭，9 個字母）",
+      "ans": "UNIMPEDED",
+      "speak": "unimpeded",
+      "vocabId": "R7:UNIMPEDED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：過於複雜曲折而難理解的（C 開頭，10 個字母）",
+      "ans": "CONVOLUTED",
+      "speak": "convoluted",
+      "vocabId": "R7:CONVOLUTED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：資訊或物件容易被找到的程度（F 開頭，11 個字母）",
+      "ans": "FINDABILITY",
+      "speak": "findability",
+      "vocabId": "R7:FINDABILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B O T T L _ N E C K (限制通行流量的瓶頸位置)",
+      "ans": "E",
+      "speak": "bottleneck",
+      "vocabId": "R7:BOTTLENECK"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C I R _ U I _ O U S (路線迂迴而不直接的)",
+      "ans": "CT",
+      "speak": "circuitous",
+      "vocabId": "R7:CIRCUITOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S E _ L _ D _ D (遠離他人而較隱密的)",
+      "ans": "CUE",
+      "speak": "secluded",
+      "vocabId": "R7:SECLUDED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an understated delivery",
+      "options": [
+        "A. 以克制方式說出台詞",
+        "B. 把每句都大幅誇張說出的方式",
+        "C. 因音響故障而完全無聲",
+        "D. 只用書面而不作任何表演"
+      ],
+      "ans": "A",
+      "explain": "understated 是低調節制，不等於聽不見。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tour de force",
+      "options": [
+        "A. 一律由最大聲者取得的角色",
+        "B. 展現高超技巧的傑出表現",
+        "C. 讓演出團隊巡迴的交通安排",
+        "D. 因體力不支而中斷的場次"
+      ],
+      "ans": "B",
+      "explain": "tour de force 指令人讚嘆的技巧成就。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a discordant note",
+      "options": [
+        "A. 演出前依序發出的正式公告",
+        "B. 每位觀眾都一致同意的結論",
+        "C. 與整體氣氛不協調的成分",
+        "D. 逐字準確記下的整頁筆記"
+      ],
+      "ans": "C",
+      "explain": "discordant note 可比喻不搭調，不必是樂音。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The comic timing is precise, though it never feels as though the actors are counting the seconds.",
+      "options": [
+        "A. 演員只要數秒就必然能使每位觀眾發笑。",
+        "B. 喜劇時機精準，但不讓人覺得演員在數秒。",
+        "C. 時機不精準，因演員每次都刻意數秒。",
+        "D. 表演自然已證明沒有任何計時或排練。"
+      ],
+      "ans": "B",
+      "explain": "精準與自然感並存，不推實際從未數秒。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I found the scene moving without quite believing the reconciliation it was supposed to portray.",
+      "options": [
+        "A. 場景只是人物移動，所以不涉及和解。",
+        "B. 說話者因不信和解而否認演出有任何感染力。",
+        "C. 場景感人，但我未完全相信它所呈現的和解。",
+        "D. 我相信和解成立，但對場景完全沒有情感反應。"
+      ],
+      "ans": "C",
+      "explain": "情感感染與情節可信度可分離。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The actor makes the hesitation seem like a thought occurring now, not a pause learned on Tuesday.",
+      "options": [
+        "A. 演員只在週二會停頓，其餘場次都直接答。",
+        "B. 遲疑是因演員忘詞，與角色思考無關。",
+        "C. 說話者要求週二停演，免得出現相同停頓。",
+        "D. 演員讓遲疑像此刻思緒，而非週二背好的停頓。"
+      ],
+      "ans": "D",
+      "explain": "幽默區分自然當下效果與排練製程。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The final laugh is less a release of tension than a recognition of how much tension the characters will carry away with them.",
+      "options": [
+        "A. 角色離場時已向觀眾明說彼此不再有誤會。",
+        "B. 說話者認為笑聲必然表示觀眾沒理解劇情。",
+        "C. 最後笑聲較像認出角色仍帶走張力，而非張力已解除。",
+        "D. 最後笑聲證明角色間的所有緊張都已解決。"
+      ],
+      "ans": "C",
+      "explain": "less ... than ... 指複雜笑聲功能，不是單純宣洩。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The production is clearest when it resists explaining itself, though that should not be mistaken for leaving the audience without anything to follow.",
+      "options": [
+        "A. 演出越讓觀眾毫無線索，就越能保證清楚易懂。",
+        "B. 說話者要求把所有對話刪掉，只留下節目冊解說。",
+        "C. 演出已逐項說明全部象徵，所以沒有理解空間。",
+        "D. 演出不急著自我解說時反而最清楚，但不表示讓觀眾毫無線索。"
+      ],
+      "ans": "D",
+      "explain": "避免過度解說與提供可跟隨資訊並非互斥。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She never asks us to like the character, but she makes it difficult to dismiss the character as merely unpleasant.",
+      "options": [
+        "A. 她不求我們喜歡角色，卻讓人難把角色簡化為討厭。",
+        "B. 她把角色寫得討喜，所以觀眾必須原諒所有行為。",
+        "C. 角色只有令人不快一面，演員也刻意不加層次。",
+        "D. 說話者認為不喜歡角色就不可能理解角色。"
+      ],
+      "ans": "A",
+      "explain": "理解人物複雜性不等於喜歡或替其開脫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The performance is assured without being predictable. What combination is praised?",
+      "options": [
+        "A. Control that still allows surprise.",
+        "B. Confidence based on repeating every gesture identically.",
+        "C. Uncertainty that prevents any clear characterisation.",
+        "D. A familiar plot presented without variation in delivery."
+      ],
+      "ans": "A",
+      "explain": "assured 有把握穩健，不等於 predictable 可預料。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The director asked that the final gesture ___ almost imperceptible.",
+      "options": [
+        "A. to remain",
+        "B. remain",
+        "C. remains",
+        "D. remaining"
+      ],
+      "ans": "B",
+      "explain": "asked that 虛擬式原形 remain，gesture 作單數主詞不加s。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The critic says the actor lets us discover the joke rather than announcing where it is. What is praised?",
+      "options": [
+        "A. A decision to remove every potentially funny line.",
+        "B. A habit of explaining the joke immediately after speaking.",
+        "C. An understated delivery that trusts the audience to infer.",
+        "D. A delivery so indistinct that the words cannot be heard."
+      ],
+      "ans": "C",
+      "explain": "不明示笑點的克制詮釋，非含糊不清。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The more restrained the opening, ___ the later outburst becomes.",
+      "options": [
+        "A. the most striking of",
+        "B. the more striking",
+        "C. more striking than",
+        "D. so striking"
+      ],
+      "ans": "B",
+      "explain": "the more ..., the more ... 表程度連動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The actor smiles while delivering a threat. The review argues that the smile does not soften the words but makes their courtesy unsettling. What effect is identified?",
+      "options": [
+        "A. The smile proves that the character has no hostile intention.",
+        "B. The audience is instructed to ignore the spoken words.",
+        "C. A mismatch between manner and content intensifies unease.",
+        "D. The threat has been replaced by an explicit reassurance."
+      ],
+      "ans": "C",
+      "explain": "禮貌與威脅的反差可加劇不安，不確定實際角色動機。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The set is spare rather than unfinished. What distinction is made?",
+      "options": [
+        "A. Missing scenery is excused because nobody has noticed it.",
+        "B. The set uses more objects than any previous production.",
+        "C. The performance has been cancelled before construction ends.",
+        "D. Deliberate economy is distinguished from incomplete work."
+      ],
+      "ans": "D",
+      "explain": "spare 簡約可為刻意選擇，不是未完工。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An actor pauses after a question but before the reply. The director asks her to let the decision happen during the pause rather than signal a decision already made. What should change?",
+      "options": [
+        "A. The question should be removed so no decision is required.",
+        "B. The actor should speak more loudly throughout the scene.",
+        "C. The pause should reveal deliberation, not merely delay delivery.",
+        "D. The actor should move the pause to after the spoken reply."
+      ],
+      "ans": "C",
+      "explain": "停頓作當下思考與既定答案等待的表演差別。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A production keeps the original words but changes who overhears them. A critic argues that this alters their dramatic function without rewriting the script. What supports the argument?",
+      "options": [
+        "A. Dramatic function depends only on the number of words spoken.",
+        "B. Every change in staging necessarily introduces a new spoken line.",
+        "C. The identity of listeners matters only when they interrupt aloud.",
+        "D. The same speech can have different consequences depending on its listeners."
+      ],
+      "ans": "D",
+      "explain": "聽者配置影響行動後果，不必改文字。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The critic welcomes ambiguity while objecting to confusion about which character is speaking. What distinction is maintained?",
+      "options": [
+        "A. Interpretive openness need not require basic information to be unclear.",
+        "B. Every uncertain detail should be explained in the programme.",
+        "C. A clear speaker identity guarantees a single possible interpretation.",
+        "D. Ambiguity is valuable only when the dialogue cannot be heard."
+      ],
+      "ans": "A",
+      "explain": "意思開放與辨識基本敘事資訊不同。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：意思或表達中細微的差異",
+      "ans": "NUANCE",
+      "speak": "nuance",
+      "vocabId": "R7:NUANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：說話或聲音的節奏起伏",
+      "ans": "CADENCE",
+      "speak": "cadence",
+      "vocabId": "R7:CADENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：刻意簡約的場景布置",
+      "ans": "A DELIBERATELY SPARE SETTING",
+      "speak": "a deliberately spare setting",
+      "vocabId": "R7:A DELIBERATELY SPARE SETTING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：持續維持的情感張力",
+      "ans": "A SUSTAINED EMOTIONAL TENSION",
+      "speak": "a sustained emotional tension",
+      "vocabId": "R7:A SUSTAINED EMOTIONAL TENSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：歧義不必模糊誰在說話",
+      "ans": "AMBIGUITY NEED NOT OBSCURE WHO IS SPEAKING",
+      "speak": "ambiguity need not obscure who is speaking",
+      "vocabId": "R7:AMBIGUITY NEED NOT OBSCURE WHO IS SPEAKING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：準備可支撐自發發現的觀感",
+      "ans": "PREPARATION CAN SUPPORT THE IMPRESSION OF SPONTANEOUS DISCOVERY",
+      "speak": "preparation can support the impression of spontaneous discovery",
+      "vocabId": "R7:PREPARATION CAN SUPPORT THE IMPRESSION OF SPONTANEOUS DISCOVERY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：使人深受觸動而帶酸楚的（P 開頭，8 個字母）",
+      "ans": "POIGNANT",
+      "speak": "poignant",
+      "vocabId": "R7:POIGNANT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：能引發深刻情感聯想的（R 開頭，8 個字母）",
+      "ans": "RESONANT",
+      "speak": "resonant",
+      "vocabId": "R7:RESONANT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：細微到幾乎無法察覺的（I 開頭，13 個字母）",
+      "ans": "IMPERCEPTIBLE",
+      "speak": "imperceptible",
+      "vocabId": "R7:IMPERCEPTIBLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S U B _ E X T (字面下隱含而未明說的意思)",
+      "ans": "T",
+      "speak": "subtext",
+      "vocabId": "R7:SUBTEXT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E N _ E M _ L E (共同演出的表演者群體)",
+      "ans": "SB",
+      "speak": "ensemble",
+      "vocabId": "R7:ENSEMBLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ T _ A _ N T (對表達或行動程度的克制)",
+      "ans": "SRI",
+      "speak": "restraint",
+      "vocabId": "R7:RESTRAINT"
     }
   ],
   "boss": [
@@ -9957,6 +10743,268 @@
       "ans": "FUT",
       "speak": "configuration",
       "vocabId": "R7:CONFIGURATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The sign is visible from the entrance, but the choice it refers to is three turns further on.",
+      "options": [
+        "A. 標示直接設在選路點，所以不需記住方向。",
+        "B. 三個轉彎都通同入口，因此標示沒有目的地。",
+        "C. 標示入口就看得到，但它指的選擇在再轉三彎後。",
+        "D. 標示只有轉三彎後才見，而選擇其實在入口。"
+      ],
+      "ans": "C",
+      "explain": "資訊出現時點與實際決策點分離，未直接判斷好壞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A shorter route is useful only if people can identify it before committing themselves to the longer one.",
+      "options": [
+        "A. 只要長路入口較顯眼，捷徑就不需任何提示。",
+        "B. 說話者主張走完長路後才應告知捷徑位置。",
+        "C. 捷徑距離較短已保證所有人都先發現它。",
+        "D. 捷徑要在人們已走長路前可辨識，才有用。"
+      ],
+      "ans": "D",
+      "explain": "選擇前資訊可用性影響捷徑實際價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The personal assistance works well for those who ask, but that tells us little about those who leave because they cannot tell whether asking is welcome.",
+      "options": [
+        "A. 主動詢問者獲良好協助，不能據此了解不確定可否問而離開者。",
+        "B. 協助效果已由所有到訪者一致評為良好。",
+        "C. 離開者都明確拒絕幫忙，所以不需再了解原因。",
+        "D. 說話者認為只要有人沒問，所有協助就沒有作用。"
+      ],
+      "ans": "A",
+      "explain": "服務使用者樣本無法直接代表未進入服務者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A bottleneck in a pedestrian route is ___.",
+      "options": [
+        "A. a route chosen because it has no turns",
+        "B. a large space where people can disperse freely",
+        "C. a narrow or constrained point that limits movement",
+        "D. a sign listing every possible destination"
+      ],
+      "ans": "C",
+      "explain": "bottleneck 為通行量受限處，非自由分散空間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The entrance is physically accessible but institutionally unwelcoming. What distinction is suggested?",
+      "options": [
+        "A. A welcoming atmosphere guarantees that every physical barrier is absent.",
+        "B. The building is easy to recognise but impossible to enter.",
+        "C. Institutional approval is identical to the width of the doorway.",
+        "D. Ease of entry is not the same as feeling entitled or encouraged to enter."
+      ],
+      "ans": "D",
+      "explain": "物理進入與心理制度感受區分，不推實際法律權利。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The most prominent sign directs visitors to a booking screen; the option to speak to a person appears only after several screens. What is foregrounded by the design?",
+      "options": [
+        "A. A particular mode of access rather than a neutral list of equal options.",
+        "B. The right to speak to a person before using any digital service.",
+        "C. Evidence that every visitor prefers booking without staff assistance.",
+        "D. A guarantee that the screen is faster for every type of enquiry."
+      ],
+      "ans": "A",
+      "explain": "資訊先後突出預設數位管道，未證人人偏好或等速。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：某機構內部慣用的詞彙",
+      "ans": "AN INSTITUTIONAL VOCABULARY",
+      "speak": "an institutional vocabulary",
+      "vocabId": "R7:AN INSTITUTIONAL VOCABULARY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：資訊應不靠事先熟悉就能找到",
+      "ans": "INFORMATION MUST BE DISCOVERABLE WITHOUT PRIOR FAMILIARITY",
+      "speak": "information must be discoverable without prior familiarity",
+      "vocabId": "R7:INFORMATION MUST BE DISCOVERABLE WITHOUT PRIOR FAMILIARITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：使人失去方向感（D 開頭，12 個字母）",
+      "ans": "DISORIENTATE",
+      "speak": "disorientate",
+      "vocabId": "R7:DISORIENTATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O R _ E N _ A T _ O N (相對周遭的位置方向)",
+      "ans": "ITI",
+      "speak": "orientation",
+      "vocabId": "R7:ORIENTATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The gesture is small enough to miss, which is why the lighting needs to draw our attention to it.",
+      "options": [
+        "A. 動作太大使人分心，所以需熄燈遮掩。",
+        "B. 燈光已確定完全無法幫人看到動作。",
+        "C. 說話者要求刪去動作以縮短演出。",
+        "D. 動作小得容易漏看，因此需燈光引導注意。"
+      ],
+      "ans": "D",
+      "explain": "小細節需要可見性支援，不否定動作價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The set gives us just enough information to locate the scene without telling us exactly how to feel about it.",
+      "options": [
+        "A. 布景足以定位場景，卻不預先規定我們該有何感受。",
+        "B. 布景連場所都無法辨認，因此沒有任何引導。",
+        "C. 布景已清楚規定每位觀眾必須作相同評價。",
+        "D. 場景資訊只在節目冊上，台上沒有任何提示。"
+      ],
+      "ans": "A",
+      "explain": "基本定位可清楚，情感詮釋仍開放。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The performance seems effortless partly because the work of making each transition possible has been so carefully concealed.",
+      "options": [
+        "A. 說話者認為隱藏工作代表製作團隊沒有付出。",
+        "B. 表演看似輕鬆，部分因支撐轉場的工作被巧妙隱藏。",
+        "C. 表演從未準備轉場，所以自然沒有任何費力痕跡。",
+        "D. 轉場全部公開解釋，因此觀眾確切知道每項工作。"
+      ],
+      "ans": "B",
+      "explain": "舞台流暢感可來自精心工作而非無工作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A nuance is ___.",
+      "options": [
+        "A. a complete reversal of the central plot",
+        "B. an error repeated without correction",
+        "C. a rule requiring every gesture to be large",
+        "D. a subtle difference in meaning or expression"
+      ],
+      "ans": "D",
+      "explain": "nuance 細微差異或意味，不是全面轉折。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The review praises the final scene, not the production without reservation. Which paraphrase is faithful?",
+      "options": [
+        "A. Approval is directed at one part and does not establish unqualified approval of the whole.",
+        "B. Approval of the ending proves that every earlier scene is equally successful.",
+        "C. The reviewer has rejected the final scene but remains positive about the rest.",
+        "D. The production is approved only because the reviewer has not seen its opening."
+      ],
+      "ans": "A",
+      "explain": "讚最後一場不能擴成全劇無保留好評。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A highly controlled rehearsal produces a performance described as spontaneous. The reviewer says this is not necessarily a contradiction. Why?",
+      "options": [
+        "A. A rehearsed performance must be identical in every physical detail.",
+        "B. Careful preparation can support an impression of immediate discovery.",
+        "C. Spontaneity proves that the actors did not rehearse any of the scene.",
+        "D. Control can be measured only by checking whether every audience laughs."
+      ],
+      "ans": "B",
+      "explain": "排練可培養自然呈現，不把觀感直接當製程無準備。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：拿捏精準的轉換",
+      "ans": "A FINELY JUDGED TRANSITION",
+      "speak": "a finely judged transition",
+      "vocabId": "R7:A FINELY JUDGED TRANSITION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：同樣字句可因聽者不同改變作用",
+      "ans": "THE SAME WORDS CAN CHANGE FUNCTION WITH DIFFERENT LISTENERS",
+      "speak": "the same words can change function with different listeners",
+      "vocabId": "R7:THE SAME WORDS CAN CHANGE FUNCTION WITH DIFFERENT LISTENERS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：聲音語氣等有控制的調整變化（M 開頭，10 個字母）",
+      "ans": "MODULATION",
+      "speak": "modulation",
+      "vocabId": "R7:MODULATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E L _ B E _ A T _ O N (在選擇前仔細思考的過程)",
+      "ans": "IRI",
+      "speak": "deliberation",
+      "vocabId": "R7:DELIBERATION"
     }
   ]
 }

@@ -175,11 +175,12 @@ export const CLASS_NODES: ClassNode[] = (Object.keys(TREE) as ClassId[]).flatMap
 export const classNode = (id: string) => CLASS_NODES.find(n => n.id === id);
 export const childrenOf = (parent: string) => CLASS_NODES.filter(n => n.parent === parent);
 
-// 轉職條件：等級＋通關區域數（unlockedIndex = 已通關的區域數）
-export const ADVANCE_REQ: Record<1 | 2 | 3, { level: number; regionsCleared: number; label: string }> = {
-  1: { level: 20, regionsCleared: 1, label: 'Lv 20＋通關 A1' },
-  2: { level: 60, regionsCleared: 3, label: 'Lv 60＋通關 A2+' },
-  3: { level: 120, regionsCleared: 6, label: 'Lv 120＋通關 B2' },
+// 轉職條件（第二十一輪）：只看等級，不再要求通關區域。A1 打完約 Lv20 不會馬上轉職；
+// 一轉約在 A2、二轉約在 B1 後段、覺醒約在 C1 初期。程度測驗的臨時等級不能拿來轉職（只看存檔等級）
+export const ADVANCE_REQ: Record<1 | 2 | 3, { level: number; label: string }> = {
+  1: { level: 30, label: 'Lv 30' },
+  2: { level: 80, label: 'Lv 80' },
+  3: { level: 150, label: 'Lv 150' },
 };
 
 // 主角換職業（第十三輪）：五種職業共用等級，轉職路線各自保留；戰鬥外免費切換。
@@ -195,9 +196,8 @@ export function nextOptions(classId: ClassId, path: string[]): ClassNode[] {
   return childrenOf(path.length ? path[path.length - 1] : classId);
 }
 
-export function canAdvance(tier: 1 | 2 | 3, level: number, regionsCleared: number): boolean {
-  const req = ADVANCE_REQ[tier];
-  return level >= req.level && regionsCleared >= req.regionsCleared;
+export function canAdvance(tier: 1 | 2 | 3, level: number): boolean {
+  return level >= ADVANCE_REQ[tier].level;
 }
 
 // 目前的職業名稱（例如「元素魔法師」），沒有轉職就是基礎職業名

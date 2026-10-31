@@ -37,11 +37,12 @@ describe('class tree', () => {
   });
 
   it('requires level and cleared regions', () => {
-    expect(canAdvance(1, 20, 1)).toBe(true);
-    expect(canAdvance(1, 19, 1)).toBe(false);
-    expect(canAdvance(1, 20, 0)).toBe(false);
-    expect(canAdvance(2, 60, 3)).toBe(true);
-    expect(canAdvance(3, 120, 6)).toBe(true);
+    // 第二十一輪：只看等級 Lv30／80／150
+    expect(canAdvance(1, 30)).toBe(true);
+    expect(canAdvance(1, 29)).toBe(false);
+    expect(canAdvance(2, 80)).toBe(true);
+    expect(canAdvance(2, 79)).toBe(false);
+    expect(canAdvance(3, 150)).toBe(true);
   });
 
   it('class passives combine along the path', () => {
@@ -88,7 +89,7 @@ describe('growth in the save', () => {
     expect(sv().equipment[0].plus).toBe(1);
 
     expect(sv().advanceClass('squire')).toBe(false);
-    useSaveStore.setState({ player: { level: 20, xp: 0, classPath: [] }, unlockedIndex: 1 });
+    useSaveStore.setState({ player: { level: 30, xp: 0, classPath: [] }, unlockedIndex: 0 });
     expect(sv().advanceClass('elementalist')).toBe(false); // 不是劍士的路線
     expect(sv().advanceClass('squire')).toBe(true);
     expect(sv().player.classPath).toEqual(['squire']);

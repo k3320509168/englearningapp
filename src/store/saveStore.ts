@@ -669,7 +669,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const n = classNode(nodeId);
           if (!n || !s.character) return false;
           const options = nextOptions(s.character.classId, s.player.classPath);
-          if (!options.some(o => o.id === nodeId) || !canAdvance(n.tier, s.player.level, s.unlockedIndex)) return false;
+          if (!options.some(o => o.id === nodeId) || !canAdvance(n.tier, s.player.level)) return false;
           const cost = s.character.classId === (s.homeClass ?? s.character.classId) ? 0 : BADGE_COST[n.tier];
           if (s.classBadges < cost) return false;
           const classPath = [...s.player.classPath, nodeId];

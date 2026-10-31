@@ -22,9 +22,9 @@ import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art
 import { modStatus } from './bossMods';
 import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
-import { ultimateEchoes, ultimateName, ultimateTier } from './ultimates';
+import { MILLION_COMBO, ultimateEchoes, ultimateName, ultimateRank, ultimateTier } from './ultimates';
 import { FOE_SKILLS, SEAL_BREAK_COMBO, SEAL_BREAK_TOTAL } from './bossSkills';
-import { playUltimate } from './ultimateFx';
+import { playMillion, playUltimate } from './ultimateFx';
 import { sfx } from './sfx';
 
 // 戰鬥畫面：只負責顯示、動畫與音效。作答邏輯在 battleStore，作答介面在 React (BattleHUD)。
@@ -867,12 +867,13 @@ export default class MainScene extends Phaser.Scene {
 
   // Combo 大招：和一般攻擊同時播放；剛升到新的大招等級時打出大招名稱
   private lastUltTier = 0;
+  private millionShown = false;
   private castUltimate(f: Fighter, classId: ClassId, element: Element, tier: number, combo: number) {
     const el = elementDef(element);
     if (tier > this.lastUltTier) {
       sfx.combo(combo);
       const band = this.add.rectangle(400, 240, 800, 56, 0x1a1226, 0.8).setDepth(88).setScale(1, 0);
-      const label = this.add.text(400, 240, `${ultimateName(classId, tier)}！`, textStyle(34, el.light, 7)).setOrigin(0.5).setDepth(89).setScale(2).setAlpha(0);
+      const label = this.add.text(400, 240, `${ultimateRank(tier)}・${ultimateName(classId, tier)}！`, textStyle(30, el.light, 7)).setOrigin(0.5).setDepth(89).setScale(2).setAlpha(0);
       this.tweens.add({ targets: band, scaleY: 1, duration: 140 });
       this.tweens.add({ targets: label, scale: 1, alpha: 1, duration: 220, ease: 'Back.easeOut' });
       this.time.delayedCall(1100, () => this.tweens.add({ targets: [band, label], alpha: 0, duration: 260, onComplete: () => { band.destroy(); label.destroy(); } }));
@@ -880,8 +881,16 @@ export default class MainScene extends Phaser.Scene {
     this.lastUltTier = tier;
     this.time.delayedCall(120, () => playUltimate({
       scene: this, from: { x: f.homeX, y: f.homeY }, to: { x: MONSTER_X, y: GROUND_Y - this.monsterSprite.displayHeight / 2 },
-      ground: GROUND_Y, color: hex(el.color), light: hex(el.light),
+      ground: GROUND_Y, color: hex(el.color), light: hex(el.light), element,
     }, classId, tier, ultimateEchoes(combo)));
+    // 百萬 Combo：一場戰鬥只演一次
+    if (combo >= MILLION_COMBO && !this.millionShown) {
+      this.millionShown = true;
+      this.time.delayedCall(300, () => {
+        playMillion(this, hex(el.light));
+        popText(this, 400, 200, '百萬 COMBO！', 40, '#ffd15c', { rise: 40, dur: 1600, depth: 95 });
+      });
+    }
   }
 
   // 行動條與下一招預告（快滿時顯示招式名稱，給玩家心理準備）

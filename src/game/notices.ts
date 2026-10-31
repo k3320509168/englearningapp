@@ -49,7 +49,7 @@ export function computeNotices(s: NoticeInput, now = Date.now()): Notices {
   const tier = (s.player.classPath.length + 1) as 1 | 2 | 3;
   const classAdvance = !!s.character && tier <= 3
     && nextOptions(s.character.classId, s.player.classPath).length > 0
-    && canAdvance(tier, s.player.level, s.unlockedIndex);
+    && canAdvance(tier, s.player.level);
 
   const owned = new Set(s.equipment.map(e => e.defId));
   const forge = !!s.character && EQUIPMENT.some(def => {

@@ -31,9 +31,9 @@ describe('地圖提醒', () => {
     expect(nextStep(n).action).toBe('continue');
   });
 
-  it('達到等級與突破條件時提醒轉職', () => {
-    expect(computeNotices({ ...base(), player: { level: 20, classPath: [] }, unlockedIndex: 1 }).classAdvance).toBe(true);
-    expect(computeNotices({ ...base(), player: { level: 20, classPath: [] }, unlockedIndex: 0 }).classAdvance).toBe(false);
+  it('達到等級時提醒轉職（第二十一輪：只看等級 Lv30）', () => {
+    expect(computeNotices({ ...base(), player: { level: 30, classPath: [] }, unlockedIndex: 0 }).classAdvance).toBe(true);
+    expect(computeNotices({ ...base(), player: { level: 29, classPath: [] }, unlockedIndex: 5 }).classAdvance).toBe(false);
   });
 
   it('材料與金幣夠、而且還沒擁有時才提醒鍛造', () => {

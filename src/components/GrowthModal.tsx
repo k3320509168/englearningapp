@@ -248,11 +248,11 @@ export default function GrowthModal() {
     const tier = options[0].tier;
     const req = ADVANCE_REQ[tier];
     const badgeCost = character!.classId === (sv.homeClass ?? character!.classId) ? 0 : BADGE_COST[tier];
-    const ok = canAdvance(tier, player.level, unlockedIndex) && sv.classBadges >= badgeCost;
+    const ok = canAdvance(tier, player.level) && sv.classBadges >= badgeCost;
     return (
       <>
         <p className={ok ? 'req-ok' : 'muted'}>
-          {tier === 3 ? '覺醒' : tier === 2 ? '二轉' : '一轉'}條件：{req.label}{badgeCost ? `＋🎖️ ${badgeCost}` : ''}（目前 Lv {player.level}、已通關 {unlockedIndex} 個區域{badgeCost ? `、徽章 ${sv.classBadges}` : ''}）
+          {tier === 3 ? '覺醒' : tier === 2 ? '二轉' : '一轉'}條件：{req.label}{badgeCost ? `＋🎖️ ${badgeCost}` : ''}（目前 Lv {player.level}{badgeCost ? `、徽章 ${sv.classBadges}` : ''}）
         </p>
         <div className="advance-options">
           {options.map(o => {

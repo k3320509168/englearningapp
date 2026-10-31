@@ -2066,9 +2066,9 @@
   },
   "MORDANT": {
     "pos": "adj.",
-    "meaning": "幽默或評論尖刻而有批判力的",
-    "example": "The essay combines mordant wit with sympathy.",
-    "exampleZh": "文章結合尖刻機智與同情。",
+    "meaning": "幽默或批評尖銳帶諷刺的",
+    "example": "The narrator has a mordant wit.",
+    "exampleZh": "敘述者有尖銳諷刺的機智。",
     "senses": [
       {
         "pos": "adj.",
@@ -2081,6 +2081,16 @@
           {
             "en": "A mordant observation exposes the gap between claim and conduct.",
             "zh": "尖刻的觀察揭露說法與行為的落差。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "幽默或批評尖銳帶諷刺的",
+        "examples": [
+          {
+            "en": "The narrator has a mordant wit.",
+            "zh": "敘述者有尖銳諷刺的機智。"
           }
         ]
       }
@@ -2493,9 +2503,9 @@
   "SOLICITUDE": {
     "word": "solicitude",
     "pos": "n.",
-    "meaning": "對他人狀況周到而關切的態度",
-    "example": "Her solicitude was appreciated but sometimes overwhelming.",
-    "exampleZh": "她的周到關切受到感謝，有時卻令人難以承受。",
+    "meaning": "對他人的殷切關心",
+    "example": "His solicitude seemed genuine.",
+    "exampleZh": "他的關心似乎真誠。",
     "senses": [
       {
         "pos": "n.",
@@ -2504,6 +2514,16 @@
           {
             "en": "Her solicitude was appreciated but sometimes overwhelming.",
             "zh": "她的周到關切受到感謝，有時卻令人難以承受。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "對他人的殷切關心",
+        "examples": [
+          {
+            "en": "His solicitude seemed genuine.",
+            "zh": "他的關心似乎真誠。"
           }
         ]
       }
@@ -3236,9 +3256,9 @@
   },
   "PROVISO": {
     "pos": "n.",
-    "meaning": "附在同意或承諾上的限制條件",
-    "example": "The final proviso narrows the assurance considerably.",
-    "exampleZh": "最後的附帶條件大幅縮小保證。",
+    "meaning": "附於許可或協議上的限制條件",
+    "example": "The offer contains a proviso about materials.",
+    "exampleZh": "提議附有材料限制條件。",
     "senses": [
       {
         "pos": "n.",
@@ -3251,6 +3271,16 @@
           {
             "en": "A proviso should be read alongside the main promise.",
             "zh": "附帶條件應與主承諾一起讀。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "附於許可或協議上的限制條件",
+        "examples": [
+          {
+            "en": "The offer contains a proviso about materials.",
+            "zh": "提議附有材料限制條件。"
           }
         ]
       }
@@ -6139,6 +6169,651 @@
       }
     ]
   },
+  "WASPISH": {
+    "word": "waspish",
+    "pos": "adj.",
+    "meaning": "尖刻易怒而帶刺的",
+    "example": "She made a waspish comment.",
+    "exampleZh": "她說了句尖刻話。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "尖刻易怒而帶刺的",
+        "examples": [
+          {
+            "en": "She made a waspish comment.",
+            "zh": "她說了句尖刻話。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN INGRATIATING MANNER": {
+    "word": "an ingratiating manner",
+    "pos": "phr.",
+    "meaning": "試圖討好他人的態度",
+    "example": "His ingratiating manner irritated the host.",
+    "exampleZh": "他的討好態度惹惱主人。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "試圖討好他人的態度",
+        "examples": [
+          {
+            "en": "His ingratiating manner irritated the host.",
+            "zh": "他的討好態度惹惱主人。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CEREMONIOUS SHOW OF GENEROSITY": {
+    "word": "a ceremonious show of generosity",
+    "pos": "phr.",
+    "meaning": "以隆重姿態展現的慷慨",
+    "example": "The offer was a ceremonious show of generosity.",
+    "exampleZh": "提議是隆重展現慷慨。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以隆重姿態展現的慷慨",
+        "examples": [
+          {
+            "en": "The offer was a ceremonious show of generosity.",
+            "zh": "提議是隆重展現慷慨。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROPRIETORIAL CONCERN FOR ANOTHER PERSON": {
+    "word": "a proprietorial concern for another person",
+    "pos": "phr.",
+    "meaning": "對他人帶有佔有意味的關心",
+    "example": "Her care shades into a proprietorial concern for another person.",
+    "exampleZh": "她的關懷漸帶佔有意味。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對他人帶有佔有意味的關心",
+        "examples": [
+          {
+            "en": "Her care shades into a proprietorial concern for another person.",
+            "zh": "她的關懷漸帶佔有意味。"
+          }
+        ]
+      }
+    ]
+  },
+  "A RECONCILIATION MAY LEAVE SOME DISTRUST INTACT": {
+    "word": "a reconciliation may leave some distrust intact",
+    "pos": "phr.",
+    "meaning": "和解仍可能留下部分不信任",
+    "example": "A reconciliation may leave some distrust intact.",
+    "exampleZh": "和解仍可能留下部分不信任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "和解仍可能留下部分不信任",
+        "examples": [
+          {
+            "en": "A reconciliation may leave some distrust intact.",
+            "zh": "和解仍可能留下部分不信任。"
+          }
+        ]
+      }
+    ]
+  },
+  "HIS APPARENT MODESTY ENSURES THAT THE PRAISE RETURNS TO HIM": {
+    "word": "his apparent modesty ensures that the praise returns to him",
+    "pos": "phr.",
+    "meaning": "他表面謙虛確保讚美回到自己",
+    "example": "His apparent modesty ensures that the praise returns to him.",
+    "exampleZh": "他表面謙虛確保讚美回到自己。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "他表面謙虛確保讚美回到自己",
+        "examples": [
+          {
+            "en": "His apparent modesty ensures that the praise returns to him.",
+            "zh": "他表面謙虛確保讚美回到自己。"
+          }
+        ]
+      }
+    ]
+  },
+  "AVOIDING THE SUBJECT MAKES ITS PRESENCE HARDER TO IGNORE": {
+    "word": "avoiding the subject makes its presence harder to ignore",
+    "pos": "phr.",
+    "meaning": "避談主題反使它更難被忽略",
+    "example": "Avoiding the subject makes its presence harder to ignore.",
+    "exampleZh": "避談主題反使它更難被忽略。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "避談主題反使它更難被忽略",
+        "examples": [
+          {
+            "en": "Avoiding the subject makes its presence harder to ignore.",
+            "zh": "避談主題反使它更難被忽略。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ARCH OBSERVATION": {
+    "pos": "phr.",
+    "meaning": "帶狡黠玩笑意味的評論",
+    "example": "The narrator adds an arch observation.",
+    "exampleZh": "敘述者補上一句俏皮評論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "帶狡黠玩笑意味的評論",
+        "examples": [
+          {
+            "en": "The narrator adds an arch observation.",
+            "zh": "敘述者補上一句俏皮評論。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WASPISH ASIDE": {
+    "pos": "phr.",
+    "meaning": "尖刻而帶刺的插話",
+    "example": "The guest could not resist a waspish aside.",
+    "exampleZh": "客人忍不住尖刻插話。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尖刻而帶刺的插話",
+        "examples": [
+          {
+            "en": "The guest could not resist a waspish aside.",
+            "zh": "客人忍不住尖刻插話。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN INGRATIATING SMILE": {
+    "pos": "phr.",
+    "meaning": "刻意討好對方的微笑",
+    "example": "He offered an ingratiating smile.",
+    "exampleZh": "他露出討好微笑。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意討好對方的微笑",
+        "examples": [
+          {
+            "en": "He offered an ingratiating smile.",
+            "zh": "他露出討好微笑。"
+          }
+        ]
+      }
+    ]
+  },
+  "INGRATIATING": {
+    "pos": "adj.",
+    "meaning": "刻意討好以獲人好感的",
+    "example": "He adopted an ingratiating tone.",
+    "exampleZh": "他採取討好口吻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "刻意討好以獲人好感的",
+        "examples": [
+          {
+            "en": "He adopted an ingratiating tone.",
+            "zh": "他採取討好口吻。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPLACENCY": {
+    "pos": "n.",
+    "meaning": "對現狀自滿而缺少警覺的心態",
+    "example": "His modest manner conceals a degree of complacency.",
+    "exampleZh": "他謙虛的態度掩藏某種自滿。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對現狀自滿而缺少警覺的心態",
+        "examples": [
+          {
+            "en": "His modest manner conceals a degree of complacency.",
+            "zh": "他謙虛的態度掩藏某種自滿。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROPRIETORIAL": {
+    "pos": "adj.",
+    "meaning": "顯示把事物或他人當成自己所有的",
+    "example": "The host’s concern became proprietorial.",
+    "exampleZh": "主人的關心變得有佔有意味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "顯示把事物或他人當成自己所有的",
+        "examples": [
+          {
+            "en": "The host’s concern became proprietorial.",
+            "zh": "主人的關心變得有佔有意味。"
+          }
+        ]
+      }
+    ]
+  },
+  "ARCH": {
+    "pos": "adj.",
+    "meaning": "故作狡黠而帶玩笑意味的",
+    "example": "She gave him an arch look.",
+    "exampleZh": "她狡黠地看他一眼。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "故作狡黠而帶玩笑意味的",
+        "examples": [
+          {
+            "en": "She gave him an arch look.",
+            "zh": "她狡黠地看他一眼。"
+          }
+        ]
+      }
+    ]
+  },
+  "TACTLESS": {
+    "pos": "adj.",
+    "meaning": "未顧及他人感受而不得體的",
+    "example": "The timing made the remark tactless.",
+    "exampleZh": "時機使那句話不得體。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未顧及他人感受而不得體的",
+        "examples": [
+          {
+            "en": "The timing made the remark tactless.",
+            "zh": "時機使那句話不得體。"
+          }
+        ]
+      }
+    ]
+  },
+  "FELICITOUS": {
+    "pos": "adj.",
+    "meaning": "措辭或行動貼切而巧妙的",
+    "example": "The reply was unusually felicitous.",
+    "exampleZh": "回覆格外貼切。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "措辭或行動貼切而巧妙的",
+        "examples": [
+          {
+            "en": "The reply was unusually felicitous.",
+            "zh": "回覆格外貼切。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNSPARING": {
+    "pos": "adj.",
+    "meaning": "批評或揭露時不留情面的",
+    "example": "The portrait is unsparing but not cruel.",
+    "exampleZh": "描寫不留情卻不殘酷。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "批評或揭露時不留情面的",
+        "examples": [
+          {
+            "en": "The portrait is unsparing but not cruel.",
+            "zh": "描寫不留情卻不殘酷。"
+          }
+        ]
+      }
+    ]
+  },
+  "STIPULATION": {
+    "word": "stipulation",
+    "pos": "n.",
+    "meaning": "作為要求明確提出的條件",
+    "example": "The permission comes with a stipulation.",
+    "exampleZh": "許可附有明定條件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "作為要求明確提出的條件",
+        "examples": [
+          {
+            "en": "The permission comes with a stipulation.",
+            "zh": "許可附有明定條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEFEASIBLE": {
+    "word": "defeasible",
+    "pos": "adj.",
+    "meaning": "可能被進一步資訊推翻的",
+    "example": "The inference is defeasible.",
+    "exampleZh": "推論可被後續資訊推翻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "可能被進一步資訊推翻的",
+        "examples": [
+          {
+            "en": "The inference is defeasible.",
+            "zh": "推論可被後續資訊推翻。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN OPERATIONALLY MEANINGFUL DISTINCTION": {
+    "word": "an operationally meaningful distinction",
+    "pos": "phr.",
+    "meaning": "實際操作上有意義的區分",
+    "example": "The two labels mark an operationally meaningful distinction.",
+    "exampleZh": "兩標籤標示操作上有意義的區分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際操作上有意義的區分",
+        "examples": [
+          {
+            "en": "The two labels mark an operationally meaningful distinction.",
+            "zh": "兩標籤標示操作上有意義的區分。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PRAGMATICALLY INADEQUATE INSTRUCTION": {
+    "word": "a pragmatically inadequate instruction",
+    "pos": "phr.",
+    "meaning": "實際使用情境中不夠充分的指示",
+    "example": "The text gives a pragmatically inadequate instruction.",
+    "exampleZh": "文本給出實用上不足的指示。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際使用情境中不夠充分的指示",
+        "examples": [
+          {
+            "en": "The text gives a pragmatically inadequate instruction.",
+            "zh": "文本給出實用上不足的指示。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNARTICULATED PREREQUISITE": {
+    "word": "an unarticulated prerequisite",
+    "pos": "phr.",
+    "meaning": "未明確說出的先決條件",
+    "example": "The first step assumes an unarticulated prerequisite.",
+    "exampleZh": "第一步預設未明說的前提。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明確說出的先決條件",
+        "examples": [
+          {
+            "en": "The first step assumes an unarticulated prerequisite.",
+            "zh": "第一步預設未明說的前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERMISSION DOES NOT BECOME OBLIGATION WHEN ITS CONDITION IS MET": {
+    "word": "permission does not become obligation when its condition is met",
+    "pos": "phr.",
+    "meaning": "條件達成不會把許可變成義務",
+    "example": "Permission does not become obligation when its condition is met.",
+    "exampleZh": "條件達成不會把許可變成義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "條件達成不會把許可變成義務",
+        "examples": [
+          {
+            "en": "Permission does not become obligation when its condition is met.",
+            "zh": "條件達成不會把許可變成義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "TACIT EXPERTISE MAY COMPENSATE FOR GAPS IN THE INSTRUCTIONS": {
+    "word": "tacit expertise may compensate for gaps in the instructions",
+    "pos": "phr.",
+    "meaning": "內隱專業可能補償指示缺漏",
+    "example": "Tacit expertise may compensate for gaps in the instructions.",
+    "exampleZh": "內隱專業可能補償指示缺漏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內隱專業可能補償指示缺漏",
+        "examples": [
+          {
+            "en": "Tacit expertise may compensate for gaps in the instructions.",
+            "zh": "內隱專業可能補償指示缺漏。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE FUNCTION DETERMINES WHETHER A SMALL DEVIATION MATTERS": {
+    "word": "the function determines whether a small deviation matters",
+    "pos": "phr.",
+    "meaning": "功能決定微小偏差是否重要",
+    "example": "The function determines whether a small deviation matters.",
+    "exampleZh": "功能決定微小偏差是否重要。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "功能決定微小偏差是否重要",
+        "examples": [
+          {
+            "en": "The function determines whether a small deviation matters.",
+            "zh": "功能決定微小偏差是否重要。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PRESCRIPTIVE SPECIFICATION": {
+    "pos": "phr.",
+    "meaning": "規定應如何達成要求的規格",
+    "example": "The diagram accompanies a prescriptive specification.",
+    "exampleZh": "圖附於規範性規格旁。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "規定應如何達成要求的規格",
+        "examples": [
+          {
+            "en": "The diagram accompanies a prescriptive specification.",
+            "zh": "圖附於規範性規格旁。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DEFEASIBLE ASSUMPTION": {
+    "pos": "phr.",
+    "meaning": "可因新資訊而被推翻的假設",
+    "example": "The method begins with a defeasible assumption.",
+    "exampleZh": "方法始於可推翻假設。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可因新資訊而被推翻的假設",
+        "examples": [
+          {
+            "en": "The method begins with a defeasible assumption.",
+            "zh": "方法始於可推翻假設。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN OPERATIONAL CRITERION": {
+    "pos": "phr.",
+    "meaning": "可用具體操作判斷是否符合的標準",
+    "example": "The instruction needs an operational criterion for suitable.",
+    "exampleZh": "指示需給適合一詞可操作的判準。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可用具體操作判斷是否符合的標準",
+        "examples": [
+          {
+            "en": "The instruction needs an operational criterion for suitable.",
+            "zh": "指示需給適合一詞可操作的判準。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRESCRIPTIVE": {
+    "pos": "adj.",
+    "meaning": "規定應如何行動而非只描述的",
+    "example": "The specification is prescriptive about sequence.",
+    "exampleZh": "規格對順序有明定要求。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "規定應如何行動而非只描述的",
+        "examples": [
+          {
+            "en": "The specification is prescriptive about sequence.",
+            "zh": "規格對順序有明定要求。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISAMBIGUATE": {
+    "pos": "v.",
+    "meaning": "釐清有多種解讀的意思",
+    "example": "The example should disambiguate the instruction.",
+    "exampleZh": "範例應釐清指示歧義。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "釐清有多種解讀的意思",
+        "examples": [
+          {
+            "en": "The example should disambiguate the instruction.",
+            "zh": "範例應釐清指示歧義。"
+          }
+        ]
+      }
+    ]
+  },
+  "ARTICULATE": {
+    "pos": "v.",
+    "meaning": "明確表達原本隱含的想法或要求",
+    "example": "The author should articulate the missing condition.",
+    "exampleZh": "作者應明說遺漏條件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "明確表達原本隱含的想法或要求",
+        "examples": [
+          {
+            "en": "The author should articulate the missing condition.",
+            "zh": "作者應明說遺漏條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDETERMINACY": {
+    "pos": "n.",
+    "meaning": "尚未能唯一確定的狀態",
+    "example": "The wording leaves an indeterminacy about sequence.",
+    "exampleZh": "措辭使順序仍未確定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尚未能唯一確定的狀態",
+        "examples": [
+          {
+            "en": "The wording leaves an indeterminacy about sequence.",
+            "zh": "措辭使順序仍未確定。"
+          }
+        ]
+      }
+    ]
+  },
+  "PREREQUISITE": {
+    "pos": "n.",
+    "meaning": "使後續事情可行所需的先決條件",
+    "example": "The manual omits an important prerequisite.",
+    "exampleZh": "手冊漏掉重要前提。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使後續事情可行所需的先決條件",
+        "examples": [
+          {
+            "en": "The manual omits an important prerequisite.",
+            "zh": "手冊漏掉重要前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUFFICIENCY": {
+    "pos": "n.",
+    "meaning": "足以達成某條件或目的的性質",
+    "example": "The paragraph establishes necessity, not sufficiency.",
+    "exampleZh": "段落建立必要性而非充分性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "足以達成某條件或目的的性質",
+        "examples": [
+          {
+            "en": "The paragraph establishes necessity, not sufficiency.",
+            "zh": "段落建立必要性而非充分性。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXHAUSTIVENESS": {
+    "pos": "n.",
+    "meaning": "將相關項目完全涵蓋的性質",
+    "example": "Exhaustiveness alone does not make the guide usable.",
+    "exampleZh": "僅涵蓋完整不使指南自動可用。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將相關項目完全涵蓋的性質",
+        "examples": [
+          {
+            "en": "Exhaustiveness alone does not make the guide usable.",
+            "zh": "僅涵蓋完整不使指南自動可用。"
+          }
+        ]
+      }
+    ]
+  },
   "R8:DISINGENUOUS": {
     "word": "disingenuous",
     "pos": "adj.",
@@ -7810,9 +8485,9 @@
   "R8:SOLICITUDE": {
     "word": "solicitude",
     "pos": "n.",
-    "meaning": "對他人狀況周到而關切的態度",
-    "example": "Her solicitude was appreciated but sometimes overwhelming.",
-    "exampleZh": "她的周到關切受到感謝，有時卻令人難以承受。",
+    "meaning": "對他人的殷切關心",
+    "example": "His solicitude seemed genuine.",
+    "exampleZh": "他的關心似乎真誠。",
     "senses": [
       {
         "pos": "n.",
@@ -7821,6 +8496,16 @@
           {
             "en": "Her solicitude was appreciated but sometimes overwhelming.",
             "zh": "她的周到關切受到感謝，有時卻令人難以承受。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "對他人的殷切關心",
+        "examples": [
+          {
+            "en": "His solicitude seemed genuine.",
+            "zh": "他的關心似乎真誠。"
           }
         ]
       }
@@ -8278,9 +8963,9 @@
   },
   "R8:PROVISO": {
     "pos": "n.",
-    "meaning": "附在同意或承諾上的限制條件",
-    "example": "The final proviso narrows the assurance considerably.",
-    "exampleZh": "最後的附帶條件大幅縮小保證。",
+    "meaning": "附於許可或協議上的限制條件",
+    "example": "The offer contains a proviso about materials.",
+    "exampleZh": "提議附有材料限制條件。",
     "senses": [
       {
         "pos": "n.",
@@ -8293,6 +8978,16 @@
           {
             "en": "A proviso should be read alongside the main promise.",
             "zh": "附帶條件應與主承諾一起讀。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "附於許可或協議上的限制條件",
+        "examples": [
+          {
+            "en": "The offer contains a proviso about materials.",
+            "zh": "提議附有材料限制條件。"
           }
         ]
       }
@@ -10107,6 +10802,424 @@
     ],
     "word": "incidental"
   },
+  "R8:WASPISH": {
+    "word": "waspish",
+    "pos": "adj.",
+    "meaning": "尖刻易怒而帶刺的",
+    "example": "She made a waspish comment.",
+    "exampleZh": "她說了句尖刻話。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "尖刻易怒而帶刺的",
+        "examples": [
+          {
+            "en": "She made a waspish comment.",
+            "zh": "她說了句尖刻話。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN INGRATIATING MANNER": {
+    "word": "an ingratiating manner",
+    "pos": "phr.",
+    "meaning": "試圖討好他人的態度",
+    "example": "His ingratiating manner irritated the host.",
+    "exampleZh": "他的討好態度惹惱主人。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "試圖討好他人的態度",
+        "examples": [
+          {
+            "en": "His ingratiating manner irritated the host.",
+            "zh": "他的討好態度惹惱主人。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A PROPRIETORIAL CONCERN FOR ANOTHER PERSON": {
+    "word": "a proprietorial concern for another person",
+    "pos": "phr.",
+    "meaning": "對他人帶有佔有意味的關心",
+    "example": "Her care shades into a proprietorial concern for another person.",
+    "exampleZh": "她的關懷漸帶佔有意味。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對他人帶有佔有意味的關心",
+        "examples": [
+          {
+            "en": "Her care shades into a proprietorial concern for another person.",
+            "zh": "她的關懷漸帶佔有意味。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A RECONCILIATION MAY LEAVE SOME DISTRUST INTACT": {
+    "word": "a reconciliation may leave some distrust intact",
+    "pos": "phr.",
+    "meaning": "和解仍可能留下部分不信任",
+    "example": "A reconciliation may leave some distrust intact.",
+    "exampleZh": "和解仍可能留下部分不信任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "和解仍可能留下部分不信任",
+        "examples": [
+          {
+            "en": "A reconciliation may leave some distrust intact.",
+            "zh": "和解仍可能留下部分不信任。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HIS APPARENT MODESTY ENSURES THAT THE PRAISE RETURNS TO HIM": {
+    "word": "his apparent modesty ensures that the praise returns to him",
+    "pos": "phr.",
+    "meaning": "他表面謙虛確保讚美回到自己",
+    "example": "His apparent modesty ensures that the praise returns to him.",
+    "exampleZh": "他表面謙虛確保讚美回到自己。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "他表面謙虛確保讚美回到自己",
+        "examples": [
+          {
+            "en": "His apparent modesty ensures that the praise returns to him.",
+            "zh": "他表面謙虛確保讚美回到自己。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:INGRATIATING": {
+    "pos": "adj.",
+    "meaning": "刻意討好以獲人好感的",
+    "example": "He adopted an ingratiating tone.",
+    "exampleZh": "他採取討好口吻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "刻意討好以獲人好感的",
+        "examples": [
+          {
+            "en": "He adopted an ingratiating tone.",
+            "zh": "他採取討好口吻。"
+          }
+        ]
+      }
+    ],
+    "word": "ingratiating"
+  },
+  "R8:COMPLACENCY": {
+    "pos": "n.",
+    "meaning": "對現狀自滿而缺少警覺的心態",
+    "example": "His modest manner conceals a degree of complacency.",
+    "exampleZh": "他謙虛的態度掩藏某種自滿。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對現狀自滿而缺少警覺的心態",
+        "examples": [
+          {
+            "en": "His modest manner conceals a degree of complacency.",
+            "zh": "他謙虛的態度掩藏某種自滿。"
+          }
+        ]
+      }
+    ],
+    "word": "complacency"
+  },
+  "R8:PROPRIETORIAL": {
+    "pos": "adj.",
+    "meaning": "顯示把事物或他人當成自己所有的",
+    "example": "The host’s concern became proprietorial.",
+    "exampleZh": "主人的關心變得有佔有意味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "顯示把事物或他人當成自己所有的",
+        "examples": [
+          {
+            "en": "The host’s concern became proprietorial.",
+            "zh": "主人的關心變得有佔有意味。"
+          }
+        ]
+      }
+    ],
+    "word": "proprietorial"
+  },
+  "R8:ARCH": {
+    "pos": "adj.",
+    "meaning": "故作狡黠而帶玩笑意味的",
+    "example": "She gave him an arch look.",
+    "exampleZh": "她狡黠地看他一眼。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "故作狡黠而帶玩笑意味的",
+        "examples": [
+          {
+            "en": "She gave him an arch look.",
+            "zh": "她狡黠地看他一眼。"
+          }
+        ]
+      }
+    ],
+    "word": "arch"
+  },
+  "R8:TACTLESS": {
+    "pos": "adj.",
+    "meaning": "未顧及他人感受而不得體的",
+    "example": "The timing made the remark tactless.",
+    "exampleZh": "時機使那句話不得體。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未顧及他人感受而不得體的",
+        "examples": [
+          {
+            "en": "The timing made the remark tactless.",
+            "zh": "時機使那句話不得體。"
+          }
+        ]
+      }
+    ],
+    "word": "tactless"
+  },
+  "R8:FELICITOUS": {
+    "pos": "adj.",
+    "meaning": "措辭或行動貼切而巧妙的",
+    "example": "The reply was unusually felicitous.",
+    "exampleZh": "回覆格外貼切。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "措辭或行動貼切而巧妙的",
+        "examples": [
+          {
+            "en": "The reply was unusually felicitous.",
+            "zh": "回覆格外貼切。"
+          }
+        ]
+      }
+    ],
+    "word": "felicitous"
+  },
+  "R8:STIPULATION": {
+    "word": "stipulation",
+    "pos": "n.",
+    "meaning": "作為要求明確提出的條件",
+    "example": "The permission comes with a stipulation.",
+    "exampleZh": "許可附有明定條件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "作為要求明確提出的條件",
+        "examples": [
+          {
+            "en": "The permission comes with a stipulation.",
+            "zh": "許可附有明定條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DEFEASIBLE": {
+    "word": "defeasible",
+    "pos": "adj.",
+    "meaning": "可能被進一步資訊推翻的",
+    "example": "The inference is defeasible.",
+    "exampleZh": "推論可被後續資訊推翻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "可能被進一步資訊推翻的",
+        "examples": [
+          {
+            "en": "The inference is defeasible.",
+            "zh": "推論可被後續資訊推翻。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN OPERATIONALLY MEANINGFUL DISTINCTION": {
+    "word": "an operationally meaningful distinction",
+    "pos": "phr.",
+    "meaning": "實際操作上有意義的區分",
+    "example": "The two labels mark an operationally meaningful distinction.",
+    "exampleZh": "兩標籤標示操作上有意義的區分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際操作上有意義的區分",
+        "examples": [
+          {
+            "en": "The two labels mark an operationally meaningful distinction.",
+            "zh": "兩標籤標示操作上有意義的區分。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN UNARTICULATED PREREQUISITE": {
+    "word": "an unarticulated prerequisite",
+    "pos": "phr.",
+    "meaning": "未明確說出的先決條件",
+    "example": "The first step assumes an unarticulated prerequisite.",
+    "exampleZh": "第一步預設未明說的前提。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明確說出的先決條件",
+        "examples": [
+          {
+            "en": "The first step assumes an unarticulated prerequisite.",
+            "zh": "第一步預設未明說的前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PERMISSION DOES NOT BECOME OBLIGATION WHEN ITS CONDITION IS MET": {
+    "word": "permission does not become obligation when its condition is met",
+    "pos": "phr.",
+    "meaning": "條件達成不會把許可變成義務",
+    "example": "Permission does not become obligation when its condition is met.",
+    "exampleZh": "條件達成不會把許可變成義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "條件達成不會把許可變成義務",
+        "examples": [
+          {
+            "en": "Permission does not become obligation when its condition is met.",
+            "zh": "條件達成不會把許可變成義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:TACIT EXPERTISE MAY COMPENSATE FOR GAPS IN THE INSTRUCTIONS": {
+    "word": "tacit expertise may compensate for gaps in the instructions",
+    "pos": "phr.",
+    "meaning": "內隱專業可能補償指示缺漏",
+    "example": "Tacit expertise may compensate for gaps in the instructions.",
+    "exampleZh": "內隱專業可能補償指示缺漏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內隱專業可能補償指示缺漏",
+        "examples": [
+          {
+            "en": "Tacit expertise may compensate for gaps in the instructions.",
+            "zh": "內隱專業可能補償指示缺漏。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PRESCRIPTIVE": {
+    "pos": "adj.",
+    "meaning": "規定應如何行動而非只描述的",
+    "example": "The specification is prescriptive about sequence.",
+    "exampleZh": "規格對順序有明定要求。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "規定應如何行動而非只描述的",
+        "examples": [
+          {
+            "en": "The specification is prescriptive about sequence.",
+            "zh": "規格對順序有明定要求。"
+          }
+        ]
+      }
+    ],
+    "word": "prescriptive"
+  },
+  "R8:DISAMBIGUATE": {
+    "pos": "v.",
+    "meaning": "釐清有多種解讀的意思",
+    "example": "The example should disambiguate the instruction.",
+    "exampleZh": "範例應釐清指示歧義。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "釐清有多種解讀的意思",
+        "examples": [
+          {
+            "en": "The example should disambiguate the instruction.",
+            "zh": "範例應釐清指示歧義。"
+          }
+        ]
+      }
+    ],
+    "word": "disambiguate"
+  },
+  "R8:ARTICULATE": {
+    "pos": "v.",
+    "meaning": "明確表達原本隱含的想法或要求",
+    "example": "The author should articulate the missing condition.",
+    "exampleZh": "作者應明說遺漏條件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "明確表達原本隱含的想法或要求",
+        "examples": [
+          {
+            "en": "The author should articulate the missing condition.",
+            "zh": "作者應明說遺漏條件。"
+          }
+        ]
+      }
+    ],
+    "word": "articulate"
+  },
+  "R8:PREREQUISITE": {
+    "pos": "n.",
+    "meaning": "使後續事情可行所需的先決條件",
+    "example": "The manual omits an important prerequisite.",
+    "exampleZh": "手冊漏掉重要前提。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使後續事情可行所需的先決條件",
+        "examples": [
+          {
+            "en": "The manual omits an important prerequisite.",
+            "zh": "手冊漏掉重要前提。"
+          }
+        ]
+      }
+    ],
+    "word": "prerequisite"
+  },
+  "R8:SUFFICIENCY": {
+    "pos": "n.",
+    "meaning": "足以達成某條件或目的的性質",
+    "example": "The paragraph establishes necessity, not sufficiency.",
+    "exampleZh": "段落建立必要性而非充分性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "足以達成某條件或目的的性質",
+        "examples": [
+          {
+            "en": "The paragraph establishes necessity, not sufficiency.",
+            "zh": "段落建立必要性而非充分性。"
+          }
+        ]
+      }
+    ],
+    "word": "sufficiency"
+  },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
     "pos": "phr.",
@@ -10462,9 +11575,9 @@
   },
   "R8:MORDANT": {
     "pos": "adj.",
-    "meaning": "幽默或評論尖刻而有批判力的",
-    "example": "The essay combines mordant wit with sympathy.",
-    "exampleZh": "文章結合尖刻機智與同情。",
+    "meaning": "幽默或批評尖銳帶諷刺的",
+    "example": "The narrator has a mordant wit.",
+    "exampleZh": "敘述者有尖銳諷刺的機智。",
     "senses": [
       {
         "pos": "adj.",
@@ -10477,6 +11590,16 @@
           {
             "en": "A mordant observation exposes the gap between claim and conduct.",
             "zh": "尖刻的觀察揭露說法與行為的落差。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "幽默或批評尖銳帶諷刺的",
+        "examples": [
+          {
+            "en": "The narrator has a mordant wit.",
+            "zh": "敘述者有尖銳諷刺的機智。"
           }
         ]
       }
@@ -11288,5 +12411,138 @@
       }
     ],
     "word": "commemorate"
+  },
+  "R8:A CEREMONIOUS SHOW OF GENEROSITY": {
+    "word": "a ceremonious show of generosity",
+    "pos": "phr.",
+    "meaning": "以隆重姿態展現的慷慨",
+    "example": "The offer was a ceremonious show of generosity.",
+    "exampleZh": "提議是隆重展現慷慨。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以隆重姿態展現的慷慨",
+        "examples": [
+          {
+            "en": "The offer was a ceremonious show of generosity.",
+            "zh": "提議是隆重展現慷慨。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AVOIDING THE SUBJECT MAKES ITS PRESENCE HARDER TO IGNORE": {
+    "word": "avoiding the subject makes its presence harder to ignore",
+    "pos": "phr.",
+    "meaning": "避談主題反使它更難被忽略",
+    "example": "Avoiding the subject makes its presence harder to ignore.",
+    "exampleZh": "避談主題反使它更難被忽略。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "避談主題反使它更難被忽略",
+        "examples": [
+          {
+            "en": "Avoiding the subject makes its presence harder to ignore.",
+            "zh": "避談主題反使它更難被忽略。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:UNSPARING": {
+    "pos": "adj.",
+    "meaning": "批評或揭露時不留情面的",
+    "example": "The portrait is unsparing but not cruel.",
+    "exampleZh": "描寫不留情卻不殘酷。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "批評或揭露時不留情面的",
+        "examples": [
+          {
+            "en": "The portrait is unsparing but not cruel.",
+            "zh": "描寫不留情卻不殘酷。"
+          }
+        ]
+      }
+    ],
+    "word": "unsparing"
+  },
+  "R8:A PRAGMATICALLY INADEQUATE INSTRUCTION": {
+    "word": "a pragmatically inadequate instruction",
+    "pos": "phr.",
+    "meaning": "實際使用情境中不夠充分的指示",
+    "example": "The text gives a pragmatically inadequate instruction.",
+    "exampleZh": "文本給出實用上不足的指示。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際使用情境中不夠充分的指示",
+        "examples": [
+          {
+            "en": "The text gives a pragmatically inadequate instruction.",
+            "zh": "文本給出實用上不足的指示。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:THE FUNCTION DETERMINES WHETHER A SMALL DEVIATION MATTERS": {
+    "word": "the function determines whether a small deviation matters",
+    "pos": "phr.",
+    "meaning": "功能決定微小偏差是否重要",
+    "example": "The function determines whether a small deviation matters.",
+    "exampleZh": "功能決定微小偏差是否重要。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "功能決定微小偏差是否重要",
+        "examples": [
+          {
+            "en": "The function determines whether a small deviation matters.",
+            "zh": "功能決定微小偏差是否重要。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:INDETERMINACY": {
+    "pos": "n.",
+    "meaning": "尚未能唯一確定的狀態",
+    "example": "The wording leaves an indeterminacy about sequence.",
+    "exampleZh": "措辭使順序仍未確定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尚未能唯一確定的狀態",
+        "examples": [
+          {
+            "en": "The wording leaves an indeterminacy about sequence.",
+            "zh": "措辭使順序仍未確定。"
+          }
+        ]
+      }
+    ],
+    "word": "indeterminacy"
+  },
+  "R8:EXHAUSTIVENESS": {
+    "pos": "n.",
+    "meaning": "將相關項目完全涵蓋的性質",
+    "example": "Exhaustiveness alone does not make the guide usable.",
+    "exampleZh": "僅涵蓋完整不使指南自動可用。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將相關項目完全涵蓋的性質",
+        "examples": [
+          {
+            "en": "Exhaustiveness alone does not make the guide usable.",
+            "zh": "僅涵蓋完整不使指南自動可用。"
+          }
+        ]
+      }
+    ],
+    "word": "exhaustiveness"
   }
 }

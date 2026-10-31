@@ -6683,6 +6683,792 @@
       "ans": "CET",
       "speak": "incidental",
       "vocabId": "R8:INCIDENTAL"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an arch observation",
+      "options": [
+        "A. 完全不含立場的測量紀錄",
+        "B. 帶狡黠玩笑意味的評論",
+        "C. 只描述建築拱門的任何句子",
+        "D. 不顧語氣而直接發怒的指責"
+      ],
+      "ans": "B",
+      "explain": "arch 描述知情而俏皮的口吻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a waspish aside",
+      "options": [
+        "A. 專門用來講解昆蟲的教材",
+        "B. 因沒聽清而重複提出的問題",
+        "C. 尖刻而帶刺的插話",
+        "D. 熱情鼓勵對方的正式致詞"
+      ],
+      "ans": "C",
+      "explain": "waspish 比喻易怒尖酸，aside 插話。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an ingratiating smile",
+      "options": [
+        "A. 不經意露出的驚訝表情",
+        "B. 因疼痛而產生的苦笑",
+        "C. 不願再與任何人交談的沉默",
+        "D. 刻意討好對方的微笑"
+      ],
+      "ans": "D",
+      "explain": "ingratiating 指意圖獲人好感，可含負面做作。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She congratulated him with a warmth that made his earlier attempts to belittle her look rather small.",
+      "options": [
+        "A. 她只勉強道賀，所以他先前的批評顯得更有道理。",
+        "B. 她把祝賀改成批評，因此雙方繼續互相貶低。",
+        "C. 她熱情祝賀，使他先前貶低她的做法顯得小氣。",
+        "D. 她因祝賀而承認他先前貶低她完全合理。"
+      ],
+      "ans": "C",
+      "explain": "warmth 與 belittle 對比，small 為小家子氣非體型。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The narrator’s modesty has the curious effect of ensuring that every compliment eventually finds its way back to him.",
+      "options": [
+        "A. 敘述者真誠拒絕每項讚美，從不談自己的貢獻。",
+        "B. 每項讚美因敘述者沉默而轉向其他人。",
+        "C. 說話者認為敘述者只是忘記誰曾讚美自己。",
+        "D. 敘述者的謙虛奇妙地讓每項讚美最後都回到自己。"
+      ],
+      "ans": "D",
+      "explain": "謙虛姿態可能為自我讚揚安排迂迴路徑。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her silence is not empty; it leaves him to supply the accusation she has tactfully refrained from making.",
+      "options": [
+        "A. 她的沉默不是沒意思，而是讓他自己補出她未明說的指責。",
+        "B. 她沉默因不知發生何事，所以請他提供全部資訊。",
+        "C. 她已明白說出指責，他只需逐字重複。",
+        "D. 沉默已證明她同意他先前每項辯解。"
+      ],
+      "ans": "A",
+      "explain": "不明說仍可引發內疚或預設指責，不斷言她真的掌握證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The anecdote is ostensibly at his own expense, though he emerges from it looking remarkably considerate.",
+      "options": [
+        "A. 軼事直接承認自己不體貼，沒有任何自我美化。",
+        "B. 故事由別人付錢出版，因此他沒付任何成本。",
+        "C. 說話者主要關心講故事的人是否收到出場費。",
+        "D. 軼事表面拿自己開玩笑，結果卻顯得自己格外體貼。"
+      ],
+      "ans": "D",
+      "explain": "at own expense 在此自嘲，ostensibly 暗示實際自我稱許。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The scene’s comedy lies in the discrepancy between the freedom the host ceremoniously grants and the gratitude with which he expects it to be returned unused.",
+      "options": [
+        "A. 喜劇落差在主人隆重給自由，卻期待客人感謝並不去用它。",
+        "B. 主人真正希望客人用自由作任何決定，只要求事後告知。",
+        "C. 客人已明確要求取消自由，主人卻拒絕接受。",
+        "D. 場景只嘲笑主人說話太慢，與實際選擇無關。"
+      ],
+      "ans": "A",
+      "explain": "grants/returned unused 揭露形式大方與實際期待矛盾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The narrator does not quite lie; he merely arranges the facts so that the most flattering explanation seems to arrive without his assistance.",
+      "options": [
+        "A. 說話者認為只要沒有明說謊言，任何選材都必然公正。",
+        "B. 敘述者未必說謊，只安排事實讓最有利自身的解釋看似自然出現。",
+        "C. 敘述者直接捏造全部事實，並明言自己在創作虛構。",
+        "D. 最有利他的解釋已由外人獨立查證，與敘事安排無關。"
+      ],
+      "ans": "B",
+      "explain": "選材可引導讀者，未必需要逐項造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator’s self-deprecation is oddly self-congratulatory. What tension is conveyed?",
+      "options": [
+        "A. His criticism of himself leaves no room for any sense of achievement.",
+        "B. His apparent modesty becomes a way of praising himself.",
+        "C. His praise of others prevents him from discussing himself.",
+        "D. His modesty is consistently unnoticed by every other character."
+      ],
+      "ans": "B",
+      "explain": "自嘲姿態反而彰顯自身優點，是看似謙虛實則自誇。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Such ___ the delicacy of the subject that even the silence seemed tactless.",
+      "options": [
+        "A. had",
+        "B. being",
+        "C. was",
+        "D. were"
+      ],
+      "ans": "C",
+      "explain": "Such was + 單數名詞組 + that ...，表程度結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】He was, she assured us, entirely free to decide, provided he arrived at the decision she had already announced. What is exposed?",
+      "options": [
+        "A. The decision has genuinely been delegated without any expectation about the result.",
+        "B. The speaker has changed her mind because he refuses to accept her advice.",
+        "C. The group has agreed to postpone announcing a decision until he returns.",
+        "D. The purported freedom is emptied by a predetermined acceptable outcome."
+      ],
+      "ans": "D",
+      "explain": "表面自由附帶只能選既定答案的條件，形成反諷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The portrait is unsparing without being gratuitously cruel. What distinction is maintained?",
+      "options": [
+        "A. It invents faults in order to make the person appear admirable.",
+        "B. It excuses needless hurt whenever the description is entertaining.",
+        "C. It exposes faults frankly without inflicting needless hurt.",
+        "D. It avoids any fault that might upset the person portrayed."
+      ],
+      "ans": "C",
+      "explain": "unsparing 不留情揭短；否認 gratuitously cruel 無故殘酷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A character rehearses a spontaneous apology several times, then criticises his companion for failing to respond naturally. What contradiction structures the scene?",
+      "options": [
+        "A. He prefers a written apology because his companion cannot hear him clearly.",
+        "B. His companion has rehearsed the apology without telling him about it.",
+        "C. He has forgotten the words and therefore cannot make any apology.",
+        "D. He demands an unplanned response to an encounter he has carefully scripted."
+      ],
+      "ans": "D",
+      "explain": "自發要求與自編劇本形成矛盾，不是單純忘詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator’s solicitude shades into proprietorial concern. What shift is suggested?",
+      "options": [
+        "A. Care begins to resemble a claim to control.",
+        "B. Concern gradually gives way to complete indifference.",
+        "C. Fear about property replaces interest in another person’s feelings.",
+        "D. The narrator stops caring because the property has been sold."
+      ],
+      "ans": "A",
+      "explain": "solicitude 關心，proprietorial 帶佔有/主控，shades into 漸變。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The guest was welcomed so elaborately that declining the invitation became a public performance. What is implied?",
+      "options": [
+        "A. The guest has requested a theatrical role as part of the event.",
+        "B. The invitation has been withdrawn before the guest can respond.",
+        "C. The host has made a private refusal easier by keeping it confidential.",
+        "D. The welcome makes a nominally free refusal socially difficult."
+      ],
+      "ans": "D",
+      "explain": "過度歡迎增加拒絕的公開壓力，未定為正式強迫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The narrator describes himself as the only person who understood the quarrel, yet quotes each participant only where their words support his own grievance. What should a reader scrutinise?",
+      "options": [
+        "A. The selection through which his claim to superior understanding is constructed.",
+        "B. Whether understanding a quarrel requires never having a personal grievance.",
+        "C. Whether every participant used the exact same vocabulary during the argument.",
+        "D. The possibility that any quotation can preserve the wording of spoken speech."
+      ],
+      "ans": "A",
+      "explain": "優越理解可能由偏向選材建立，非因有怨即不可能理解。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】The hostess’s tact is described as leaving every awkward subject untouched and everyone acutely aware of its location. What is the effect?",
+      "options": [
+        "A. The physical arrangement of the room prevents private conversation.",
+        "B. Avoidance paradoxically makes the subjects more conspicuous.",
+        "C. The narrator confirms that nobody knows what the subjects are.",
+        "D. Tact has resolved the disagreement by making the subjects irrelevant."
+      ],
+      "ans": "B",
+      "explain": "untouched/location 隱喻避談反使禁區顯眼。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對他人的殷切關心",
+      "ans": "SOLICITUDE",
+      "speak": "solicitude",
+      "vocabId": "R8:SOLICITUDE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：尖刻易怒而帶刺的",
+      "ans": "WASPISH",
+      "speak": "waspish",
+      "vocabId": "R8:WASPISH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：試圖討好他人的態度",
+      "ans": "AN INGRATIATING MANNER",
+      "speak": "an ingratiating manner",
+      "vocabId": "R8:AN INGRATIATING MANNER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：對他人帶有佔有意味的關心",
+      "ans": "A PROPRIETORIAL CONCERN FOR ANOTHER PERSON",
+      "speak": "a proprietorial concern for another person",
+      "vocabId": "R8:A PROPRIETORIAL CONCERN FOR ANOTHER PERSON"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：和解仍可能留下部分不信任",
+      "ans": "A RECONCILIATION MAY LEAVE SOME DISTRUST INTACT",
+      "speak": "a reconciliation may leave some distrust intact",
+      "vocabId": "R8:A RECONCILIATION MAY LEAVE SOME DISTRUST INTACT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：他表面謙虛確保讚美回到自己",
+      "ans": "HIS APPARENT MODESTY ENSURES THAT THE PRAISE RETURNS TO HIM",
+      "speak": "his apparent modesty ensures that the praise returns to him",
+      "vocabId": "R8:HIS APPARENT MODESTY ENSURES THAT THE PRAISE RETURNS TO HIM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：刻意討好以獲人好感的（I 開頭，12 個字母）",
+      "ans": "INGRATIATING",
+      "speak": "ingratiating",
+      "vocabId": "R8:INGRATIATING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：對現狀自滿而缺少警覺的心態（C 開頭，11 個字母）",
+      "ans": "COMPLACENCY",
+      "speak": "complacency",
+      "vocabId": "R8:COMPLACENCY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：顯示把事物或他人當成自己所有的（P 開頭，13 個字母）",
+      "ans": "PROPRIETORIAL",
+      "speak": "proprietorial",
+      "vocabId": "R8:PROPRIETORIAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A R _ H (故作狡黠而帶玩笑意味的)",
+      "ans": "C",
+      "speak": "arch",
+      "vocabId": "R8:ARCH"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T A _ T L _ S S (未顧及他人感受而不得體的)",
+      "ans": "CE",
+      "speak": "tactless",
+      "vocabId": "R8:TACTLESS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F E _ I C _ T _ U S (措辭或行動貼切而巧妙的)",
+      "ans": "LIO",
+      "speak": "felicitous",
+      "vocabId": "R8:FELICITOUS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a prescriptive specification",
+      "options": [
+        "A. 讓每個人任選標準的建議",
+        "B. 沒有任何條件的正式許可",
+        "C. 規定應如何達成要求的規格",
+        "D. 只記錄已發生狀況的摘要"
+      ],
+      "ans": "C",
+      "explain": "prescriptive 有規範應然性，非純描述。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a defeasible assumption",
+      "options": [
+        "A. 由定義保證永遠成立的定理",
+        "B. 刻意設計得無法理解的暗號",
+        "C. 已被證明矛盾的每項結論",
+        "D. 可因新資訊而被推翻的假設"
+      ],
+      "ans": "D",
+      "explain": "defeasible 指可被足夠反證推翻，不等於已推翻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an operational criterion",
+      "options": [
+        "A. 可用具體操作判斷是否符合的標準",
+        "B. 只以抽象稱讚而不提供判斷方式",
+        "C. 只能由詞源而不能由行動理解的名稱",
+        "D. 不論結果如何都無法檢驗的立場"
+      ],
+      "ans": "A",
+      "explain": "operational criterion 需可實際用於判斷，不只漂亮用語。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The example is meant to disambiguate the instruction, not introduce a second requirement that the text never states.",
+      "options": [
+        "A. 範例有意取代文字，所以未寫要求一律以圖為準。",
+        "B. 文字已完整列出第二要求，範例只是重複它。",
+        "C. 說話者認為只要例子與文字同時存在，就必定矛盾。",
+        "D. 範例用來釐清指示，不是新增文字未提的另一要求。"
+      ],
+      "ans": "D",
+      "explain": "解釋範例功能不等於無限制加條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The instruction is unambiguous once one has already decided which of its two possible readings the author intended.",
+      "options": [
+        "A. 先決定作者要哪種讀法才不歧義，這其實沒解決原有歧義。",
+        "B. 指示本身已排除第二種讀法，不需任何意圖判斷。",
+        "C. 作者已明示兩種讀法都可用，所以不再有選擇問題。",
+        "D. 說話者只在說不同字體會使人看不清文字。"
+      ],
+      "ans": "A",
+      "explain": "帶反諷的循環條件，需先解歧才能說無歧。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A tolerance is meaningful only in relation to the function it protects; describing a deviation as small does not establish that it is harmless.",
+      "options": [
+        "A. 說話者認為每個微小偏差都必定造成嚴重損壞。",
+        "B. 容差要對照保護的功能，偏離數字小不保證影響無害。",
+        "C. 只要偏差數字小，就不需要再看物件實際用途。",
+        "D. 功能已確定不受影響，所以任何容差都應取消。"
+      ],
+      "ans": "B",
+      "explain": "相對功能判斷，拒絕無條件小即無害，也不說小必有害。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The result may vindicate the choice in this instance without establishing a rule that the same choice will serve every instance.",
+      "options": [
+        "A. 這次結果可支持此選擇，未證明每次都同樣適用。",
+        "B. 這次結果已建立普遍規則，之後不必看任何條件。",
+        "C. 說話者因單次成功而認為選擇反倒不值得採用。",
+        "D. 相同選擇已在每種情況逐一獨立試驗成功。"
+      ],
+      "ans": "A",
+      "explain": "單例成效與普遍外推不同，保留有限支持。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apparent simplicity comes from omitting the decisions an experienced maker supplies automatically; it is not necessarily a property a novice can inherit by reading the same page.",
+      "options": [
+        "A. 說話者認為新手永遠不可能透過指示學到任何技能。",
+        "B. 表面簡單靠熟手自動補足決策，新手讀同頁未必同樣容易。",
+        "C. 熟手與新手只要讀相同頁，就會自動具備相同判斷。",
+        "D. 說明已把所有決策完整寫出，只是熟手讀得較慢。"
+      ],
+      "ans": "B",
+      "explain": "熟練者內隱補足不可直接外推新手，同時不否認可學習。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The exception is framed as though it merely clarifies the rule, yet it removes precisely the cases in which compliance would test the rule’s adequacy.",
+      "options": [
+        "A. 規則本來沒有任何適用案例，例外才讓它開始可用。",
+        "B. 說話者只質疑例外句子比主規則句子更長。",
+        "C. 例外看似只釐清規則，卻排除最能檢驗規則是否足夠的案例。",
+        "D. 例外增加最困難案例，所以規則受到更嚴格測試。"
+      ],
+      "ans": "C",
+      "explain": "排例外可能讓規則免於關鍵反證，未說所有例外不合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The instruction is permissive about materials but prescriptive about sequence. What follows?",
+      "options": [
+        "A. Both materials and sequence must follow the example exactly.",
+        "B. Neither materials nor sequence has any bearing on the result.",
+        "C. Materials may vary, while the order of steps is constrained.",
+        "D. Materials are fixed, while the order of steps is left open."
+      ],
+      "ans": "C",
+      "explain": "permissive 容許變通，prescriptive 規定應做方式；適用不同面向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The instruction is no clearer for ___ repeated in a larger font.",
+      "options": [
+        "A. to be",
+        "B. been",
+        "C. it being has",
+        "D. being"
+      ],
+      "ans": "D",
+      "explain": "for 後動名詞，no clearer for being repeated 表重複未改善清晰。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】A component may be replaced only if both dimensions remain within tolerance. Which interpretation is warranted?",
+      "options": [
+        "A. Acceptable dimensions are necessary for replacement, not necessarily sufficient.",
+        "B. Acceptable dimensions guarantee that replacement is required.",
+        "C. One acceptable dimension is sufficient even if the other falls outside tolerance.",
+        "D. Replacement is prohibited whenever both dimensions satisfy the stated limits."
+      ],
+      "ans": "A",
+      "explain": "only if 設必要條件，both 要兩者；未排除其他必要要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The manual is admirably exact about what to do once the preliminary arrangements are complete, and serenely silent about how to complete them. What is implied?",
+      "options": [
+        "A. Its silence confirms that the preliminary arrangements require no work.",
+        "B. Its exactness makes any preliminary arrangement unnecessary.",
+        "C. Its preliminary section is more detailed than its main instructions.",
+        "D. Its procedural precision leaves an important prerequisite unexplained."
+      ],
+      "ans": "D",
+      "explain": "反諷精細主流程卻略過前提如何達成。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The diagram gains simplicity by omitting information about reversibility: its arrows no longer show which steps can be undone. What is sacrificed?",
+      "options": [
+        "A. Information about whether earlier operations can be reversed.",
+        "B. The ability to reverse the physical direction in which the page is held.",
+        "C. Evidence that every operation should be performed twice.",
+        "D. The distinction between written instructions and printed arrows."
+      ],
+      "ans": "A",
+      "explain": "economy 簡化代價在可逆性資訊，非紙可否旋轉。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The warning qualifies the permission, not the obligation. What should a reader examine?",
+      "options": [
+        "A. Whether permission and obligation have been defined as identical.",
+        "B. The conditions under which an allowed action may be taken.",
+        "C. The conditions under which a required action may be ignored.",
+        "D. Whether the warning withdraws every earlier requirement."
+      ],
+      "ans": "B",
+      "explain": "permission 允許，obligation 義務；限定許可不等於豁免義務。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The critic does not demand exhaustive instructions, but objects to presenting omissions as though they were freedoms deliberately granted to the user. What is challenged?",
+      "options": [
+        "A. The rebranding of insufficient guidance as intentional flexibility.",
+        "B. The possibility that concise instructions can be useful to an experienced user.",
+        "C. The user’s right to choose between more than one acceptable method.",
+        "D. The inclusion of any example that omits irrelevant decorative details."
+      ],
+      "ans": "A",
+      "explain": "資訊缺漏被美化成自由，非要求全部百科式說明。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A procedure says any suitable material may be used, then defines suitable as whatever makes the procedure work. It offers no test available before the attempt. What is the practical limitation?",
+      "options": [
+        "A. The procedure prevents users from evaluating the outcome after making an attempt.",
+        "B. The criterion does not guide selection independently of the outcome it is meant to secure.",
+        "C. The procedure establishes that every available material will produce the same result.",
+        "D. The criterion excludes materials solely because they have not been used previously."
+      ],
+      "ans": "B",
+      "explain": "適合與成功循環定義，無法事前選材；非不能事後評估。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A manual instructs users to preserve the original orientation while reversing the assembly. It does not specify whether reversing means undoing the steps or turning the object over. What needs clarifying?",
+      "options": [
+        "A. Whether the assembly contains the same number of parts as the illustration.",
+        "B. Which brand of material is recommended for a more durable result.",
+        "C. Which sense of reversing is intended and how it relates to orientation.",
+        "D. Whether original refers to the first printed edition of the manual."
+      ],
+      "ans": "C",
+      "explain": "多義動詞與朝向指示有歧義，應先區分操作反做與翻轉。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：作為要求明確提出的條件",
+      "ans": "STIPULATION",
+      "speak": "stipulation",
+      "vocabId": "R8:STIPULATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可能被進一步資訊推翻的",
+      "ans": "DEFEASIBLE",
+      "speak": "defeasible",
+      "vocabId": "R8:DEFEASIBLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實際操作上有意義的區分",
+      "ans": "AN OPERATIONALLY MEANINGFUL DISTINCTION",
+      "speak": "an operationally meaningful distinction",
+      "vocabId": "R8:AN OPERATIONALLY MEANINGFUL DISTINCTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未明確說出的先決條件",
+      "ans": "AN UNARTICULATED PREREQUISITE",
+      "speak": "an unarticulated prerequisite",
+      "vocabId": "R8:AN UNARTICULATED PREREQUISITE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：條件達成不會把許可變成義務",
+      "ans": "PERMISSION DOES NOT BECOME OBLIGATION WHEN ITS CONDITION IS MET",
+      "speak": "permission does not become obligation when its condition is met",
+      "vocabId": "R8:PERMISSION DOES NOT BECOME OBLIGATION WHEN ITS CONDITION IS MET"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：內隱專業可能補償指示缺漏",
+      "ans": "TACIT EXPERTISE MAY COMPENSATE FOR GAPS IN THE INSTRUCTIONS",
+      "speak": "tacit expertise may compensate for gaps in the instructions",
+      "vocabId": "R8:TACIT EXPERTISE MAY COMPENSATE FOR GAPS IN THE INSTRUCTIONS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：規定應如何行動而非只描述的（P 開頭，12 個字母）",
+      "ans": "PRESCRIPTIVE",
+      "speak": "prescriptive",
+      "vocabId": "R8:PRESCRIPTIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：釐清有多種解讀的意思（D 開頭，12 個字母）",
+      "ans": "DISAMBIGUATE",
+      "speak": "disambiguate",
+      "vocabId": "R8:DISAMBIGUATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：明確表達原本隱含的想法或要求（A 開頭，10 個字母）",
+      "ans": "ARTICULATE",
+      "speak": "articulate",
+      "vocabId": "R8:ARTICULATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R E R E Q _ I S I T E (使後續事情可行所需的先決條件)",
+      "ans": "U",
+      "speak": "prerequisite",
+      "vocabId": "R8:PREREQUISITE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R _ V _ S O (附於許可或協議上的限制條件)",
+      "ans": "OI",
+      "speak": "proviso",
+      "vocabId": "R8:PROVISO"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U _ F I _ I E _ C Y (足以達成某條件或目的的性質)",
+      "ans": "FCN",
+      "speak": "sufficiency",
+      "vocabId": "R8:SUFFICIENCY"
     }
   ],
   "boss": [
@@ -8912,6 +9698,268 @@
       "ans": "MMA",
       "speak": "commemorate",
       "vocabId": "R8:COMMEMORATE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "His apology was so eloquent that one almost forgot how carefully it avoided naming what he had done.",
+      "options": [
+        "A. 道歉雄辯到讓人幾乎忘了它謹慎避說所作何事。",
+        "B. 他詳細說明所作何事，因此道歉不需任何修辭。",
+        "C. 他道歉太簡短，所以每個人都立刻指出問題。",
+        "D. 說話者確認他根本沒有開口向任何人道歉。"
+      ],
+      "ans": "A",
+      "explain": "語言技巧可能掩蓋未承認具體行為。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He is punctilious about giving everyone a choice, less so about allowing a choice he would not himself have made.",
+      "options": [
+        "A. 他把全部決策交給別人，從不表達自身偏好。",
+        "B. 他細心給人選擇，卻較不能容許別人選他不會選的答案。",
+        "C. 他根本不提供選擇，所以沒有任何表面自由。",
+        "D. 他接受每種答案，只對選擇過程的禮節有疑問。"
+      ],
+      "ans": "B",
+      "explain": "提供形式選擇與容忍實際分歧不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What passes for forgiveness in the final exchange may be no more than a mutually convenient agreement not to specify what remains unforgiven.",
+      "options": [
+        "A. 說話者確定兩人從未有過分歧，所以不需原諒。",
+        "B. 雙方已明確宣布永不見面，且沒有任何方便安排。",
+        "C. 最後互動看似原諒，也可能只是雙方方便地不說明尚未原諒之事。",
+        "D. 最後互動已列明所有過錯，且雙方確認完全原諒。"
+      ],
+      "ans": "C",
+      "explain": "may 保留表面和解背後的迴避解釋，不確證永不原諒。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】An arch remark is typically ___.",
+      "options": [
+        "A. knowingly playful or teasing rather than straightforward",
+        "B. structurally complex because it describes an old building",
+        "C. angrily direct and indifferent to the listener’s response",
+        "D. so obscure that the speaker does not understand it"
+      ],
+      "ans": "A",
+      "explain": "arch 用於語氣可指故作俏皮、狡黠，不是建築拱形。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The pleasure he took in appearing reluctant was greater than ___ he took in refusing.",
+      "options": [
+        "A. whose",
+        "B. that",
+        "C. what",
+        "D. which"
+      ],
+      "ans": "B",
+      "explain": "that 代替前述 pleasure，作比較對象。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A story ends with an apology accepted aloud and a cup quietly moved beyond the visitor’s reach. What does the paired action permit the reader to infer?",
+      "options": [
+        "A. The visitor has explicitly asked the host to move the cup.",
+        "B. The apology concerned only where the cup should be placed.",
+        "C. Verbal reconciliation may coexist with a residual lack of trust.",
+        "D. Acceptance has necessarily restored the relationship to its former state."
+      ],
+      "ans": "C",
+      "explain": "口頭接受與防範動作並存，may 不確證犯罪或未來破裂。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：以隆重姿態展現的慷慨",
+      "ans": "A CEREMONIOUS SHOW OF GENEROSITY",
+      "speak": "a ceremonious show of generosity",
+      "vocabId": "R8:A CEREMONIOUS SHOW OF GENEROSITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：避談主題反使它更難被忽略",
+      "ans": "AVOIDING THE SUBJECT MAKES ITS PRESENCE HARDER TO IGNORE",
+      "speak": "avoiding the subject makes its presence harder to ignore",
+      "vocabId": "R8:AVOIDING THE SUBJECT MAKES ITS PRESENCE HARDER TO IGNORE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：幽默或批評尖銳帶諷刺的（M 開頭，7 個字母）",
+      "ans": "MORDANT",
+      "speak": "mordant",
+      "vocabId": "R8:MORDANT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N _ P _ R _ N G (批評或揭露時不留情面的)",
+      "ans": "SAI",
+      "speak": "unsparing",
+      "vocabId": "R8:UNSPARING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The permission is conditional, although the condition does not by itself require you to take the permitted action.",
+      "options": [
+        "A. 說話者確認條件尚未成立，因此行動已永遠不准進行。",
+        "B. 許可是有條件的，但條件成立不表示你必須採取該行動。",
+        "C. 條件一成立，原先許可就自動變成必須執行的義務。",
+        "D. 許可不附條件，所有條件都只對禁止行為適用。"
+      ],
+      "ans": "B",
+      "explain": "有條件准做與必須做不同，不能把許可推成義務。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The manual silently transfers a judgement from the designer to the user, while retaining the tone of a procedure that leaves nothing to judgement.",
+      "options": [
+        "A. 設計者已替使用者完成全部判斷，只剩機械重複。",
+        "B. 說話者反對使用者在任何情況作出自主決定。",
+        "C. 手冊暗中把判斷交給使用者，語氣卻像完全不需裁量。",
+        "D. 手冊明白標出所有判斷點，所以使用者知道何時選擇。"
+      ],
+      "ans": "C",
+      "explain": "隱藏需要判斷處與無裁量表象之落差。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "An instruction can be formally complete and pragmatically inadequate if following it requires knowing which of its stated steps do not apply here.",
+      "options": [
+        "A. 指示只要形式完整，就足以保證任何人能判斷所有例外。",
+        "B. 所有步驟在本例都已被明示適用，使用者只需依序操作。",
+        "C. 說話者認為完整指示的字數必須少於未完整指示。",
+        "D. 若使用者仍需知道本例哪些步驟不適用，形式完整仍可能實用不足。"
+      ],
+      "ans": "D",
+      "explain": "有列步驟不等於交代適用判斷，形式/語用充分性不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A stipulation is ___.",
+      "options": [
+        "A. a preliminary guess made without specifying what would follow",
+        "B. a condition explicitly required as part of an agreement or instruction",
+        "C. an accidental result noticed only after a procedure has finished",
+        "D. an illustration whose details have no connection with the procedure"
+      ],
+      "ans": "B",
+      "explain": "stipulation 是明定條件，不是事後結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】So far from ___ the ambiguity, the added example reproduces it in another form.",
+      "options": [
+        "A. to resolve",
+        "B. having resolve",
+        "C. resolving",
+        "D. resolved"
+      ],
+      "ans": "C",
+      "explain": "So far from + 動名詞 ... 表非但未解決反而重現。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】An expert calls the procedure intuitive after supplying, without noticing, several judgements the instructions never articulate. What should be considered?",
+      "options": [
+        "A. The expert’s success proves that no additional judgement was involved.",
+        "B. The instructions must be clear because an experienced user followed them.",
+        "C. A procedure cannot be described in language if any judgement is required.",
+        "D. Tacit expertise may be doing work attributed to the instructions’ clarity."
+      ],
+      "ans": "D",
+      "explain": "成功可能靠內隱知識補洞，不能直接代表新手可用。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實際使用情境中不夠充分的指示",
+      "ans": "A PRAGMATICALLY INADEQUATE INSTRUCTION",
+      "speak": "a pragmatically inadequate instruction",
+      "vocabId": "R8:A PRAGMATICALLY INADEQUATE INSTRUCTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：功能決定微小偏差是否重要",
+      "ans": "THE FUNCTION DETERMINES WHETHER A SMALL DEVIATION MATTERS",
+      "speak": "the function determines whether a small deviation matters",
+      "vocabId": "R8:THE FUNCTION DETERMINES WHETHER A SMALL DEVIATION MATTERS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：尚未能唯一確定的狀態（I 開頭，13 個字母）",
+      "ans": "INDETERMINACY",
+      "speak": "indeterminacy",
+      "vocabId": "R8:INDETERMINACY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X H _ U S T _ V E _ E S S (將相關項目完全涵蓋的性質)",
+      "ans": "AIN",
+      "speak": "exhaustiveness",
+      "vocabId": "R8:EXHAUSTIVENESS"
     }
   ]
 }

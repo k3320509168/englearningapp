@@ -6686,6 +6686,792 @@
       "ans": "ILO",
       "speak": "heirloom",
       "vocabId": "R6:HEIRLOOM"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "out of the blue",
+      "options": [
+        "A. 照先前安排準時出現",
+        "B. 出乎意料地發生",
+        "C. 從藍色房間走出",
+        "D. 因天氣轉晴而延遲"
+      ],
+      "ans": "B",
+      "explain": "out of the blue 指意外突然。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "do a double take",
+      "options": [
+        "A. 向兩人同時要求幫忙",
+        "B. 把物品直接拿走兩件",
+        "C. 因驚訝而再看一眼",
+        "D. 把相同工作重做兩次"
+      ],
+      "ans": "C",
+      "explain": "double take 是驚訝後再看以確認。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "within earshot",
+      "options": [
+        "A. 只看得見但聽不到",
+        "B. 靠近耳朵的傷口",
+        "C. 超出任何人視線之外",
+        "D. 在能聽見的距離內"
+      ],
+      "ans": "D",
+      "explain": "earshot 指聲音可及的距離。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Is that your coat? It used to be, until my sister decided it suited her better.",
+      "options": [
+        "A. 我與妹妹都確認外套不是我們任何人的。",
+        "B. 妹妹不喜歡這外套，所以一直由我穿。",
+        "C. 原本是我的，後來妹妹認為更適合她而拿去穿了。",
+        "D. 這件外套是妹妹買來後特地送給我的。"
+      ],
+      "ans": "C",
+      "explain": "used to be 搭玩笑敘述暗示衣服被妹妹占用。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I was about to knock when the door opened, so I never found out whether the bell worked.",
+      "options": [
+        "A. 我按鈴後門才開，所以確定門鈴正常。",
+        "B. 我敲了很久沒人開，因此確定門鈴壞了。",
+        "C. 門一直開著，所以我進去修好門鈴。",
+        "D. 我正要敲門時門開了，所以沒弄清門鈴是否可用。"
+      ],
+      "ans": "D",
+      "explain": "about to 尚未做，從未測試門鈴不能推它好壞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He said the walk was five minutes, but I suspect he meant five minutes for someone who knew where they were going.",
+      "options": [
+        "A. 他說走五分鐘，我猜是對熟路的人而言。",
+        "B. 他明確表示我們必須在五分鐘內返回。",
+        "C. 說話者確認每個人都能五分鐘走完。",
+        "D. 說話者認為走錯路才會比較快抵達。"
+      ],
+      "ans": "A",
+      "explain": "質疑時間估計隱含熟路前提，不否定任何人五分鐘可達。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She offered me the last seat, though from the way she was holding her ankle I thought she needed it more.",
+      "options": [
+        "A. 她因腳踝不舒服而要求我讓出最後座位。",
+        "B. 我確認她沒有任何不適，所以接受座位。",
+        "C. 她把座位留給另一人，沒有向我提議。",
+        "D. 她讓我最後座位，但看她扶腳踝，我覺得她更需要。"
+      ],
+      "ans": "D",
+      "explain": "offer 與需求推測同時存在，不診斷傷勢。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I said it was a quiet village, not that nothing ever happened there. Those are not quite the same thing.",
+      "options": [
+        "A. 我說村子安靜，不是從不發生事情，兩者不相同。",
+        "B. 我確認村子毫無事件，所以沒有故事可說。",
+        "C. 說話者撤回安靜的描述，改稱村子很吵。",
+        "D. 安靜在此被明確定義為沒有人居住。"
+      ],
+      "ans": "A",
+      "explain": "quiet 不等於缺少任何事件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He looked relieved when I laughed, which made me wonder whether the remark had been intended as a joke at all.",
+      "options": [
+        "A. 他顯得失望，因為說話者沒有理解那句笑話。",
+        "B. 我笑後他顯得鬆口氣，使我懷疑那句原本是否算玩笑。",
+        "C. 他先笑所以我才鬆口氣，確認雙方都只在開玩笑。",
+        "D. 說話者已證實那句話原本故意用來傷害人。"
+      ],
+      "ans": "B",
+      "explain": "反應引出對原意的疑問，非確定惡意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I recognised the woman ___ dog had followed us into the shop.",
+      "options": [
+        "A. which",
+        "B. whose",
+        "C. who her",
+        "D. whom"
+      ],
+      "ans": "B",
+      "explain": "whose dog 表那位女士的狗，為所有格關係詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which verb means to look quickly at something?",
+      "options": [
+        "A. stumble",
+        "B. wander",
+        "C. glance",
+        "D. linger"
+      ],
+      "ans": "C",
+      "explain": "glance 一瞥；linger 逗留、stumble 踉蹌、wander 閒逛。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【空間】Mara stood beside the door while Ben waited on the opposite side of the room. Where was Ben in relation to Mara?",
+      "options": [
+        "A. Immediately beside her at the door.",
+        "B. Outside the room behind the door.",
+        "C. Between her and the door she stood beside.",
+        "D. Across the room from her."
+      ],
+      "ans": "D",
+      "explain": "opposite side of room 指隔著房間對面，不是都在門邊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】The light went out just as Nina reached for the handle. Which sequence is described?",
+      "options": [
+        "A. The light failed long before Nina approached the door.",
+        "B. Nina waited until the light returned before moving.",
+        "C. The two events occurred at roughly the same time.",
+        "D. Nina had already opened the door before the light failed."
+      ],
+      "ans": "C",
+      "explain": "just as 表幾乎同時，未說已開門。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Owen put the letter in his pocket, then searched the desk for it. His sister watched without speaking until he checked the pocket. What had he apparently forgotten?",
+      "options": [
+        "A. Who had written the letter.",
+        "B. Why his sister had come into the room.",
+        "C. Which desk belonged to him.",
+        "D. Where he had just put the letter."
+      ],
+      "ans": "D",
+      "explain": "行動先後顯示忘了自己放入口袋，未交代作者或來意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】She spoke as though she ___ the place before, although she later admitted it was her first visit.",
+      "options": [
+        "A. had visited",
+        "B. has visiting",
+        "C. will visit",
+        "D. was visit"
+      ],
+      "ans": "A",
+      "explain": "與實情不符的先前經驗用 as though + had visited。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The shopkeeper wrapped the parcel twice. When asked why, he pointed at the rain. What is the likely purpose?",
+      "options": [
+        "A. To make the parcel seem more expensive than it was.",
+        "B. To hide the fact that the parcel contained nothing.",
+        "C. To show that the shop had run out of bags.",
+        "D. To give the parcel extra protection during the journey."
+      ],
+      "ans": "D",
+      "explain": "雨提供重包裝目的線索，其他動機未受支持。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】At dinner, Leo announced that he never misplaced anything. His mother slid his keys across the table without comment. What effect does her action have?",
+      "options": [
+        "A. It quietly undercuts his claim.",
+        "B. It confirms that he has kept the keys with him.",
+        "C. It asks him to leave before dinner is finished.",
+        "D. It shows she wants to borrow his car."
+      ],
+      "ans": "A",
+      "explain": "遞回他未留在身邊的鑰匙形成不必明說的反證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator says, The village was smaller than I remembered, or perhaps I had finally grown. What is left open?",
+      "options": [
+        "A. Whether growing older prevents people from recognising places.",
+        "B. Whether the difference lies in the place or the observer’s perspective.",
+        "C. Whether the narrator had ever visited the village before.",
+        "D. Whether the village has become too small for any residents."
+      ],
+      "ans": "B",
+      "explain": "or perhaps 提供視角成長的替代解釋，不否認記憶曾有地方。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：短暫看一眼的動作",
+      "ans": "GLANCE",
+      "speak": "glance",
+      "vocabId": "R6:GLANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：因不確定而短暫遲疑",
+      "ans": "HESITATION",
+      "speak": "hesitation",
+      "vocabId": "R6:HESITATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：讓人不自在的停頓",
+      "ans": "AN AWKWARD PAUSE",
+      "speak": "an awkward pause",
+      "vocabId": "R6:AN AWKWARD PAUSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：看來熟悉的人影",
+      "ans": "A FAMILIAR FIGURE",
+      "speak": "a familiar figure",
+      "vocabId": "R6:A FAMILIAR FIGURE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：她接受提議但未完全放下戒心",
+      "ans": "SHE ACCEPTED THE OFFER WITHOUT ENTIRELY RELAXING HER GUARD",
+      "speak": "she accepted the offer without entirely relaxing her guard",
+      "vocabId": "R6:SHE ACCEPTED THE OFFER WITHOUT ENTIRELY RELAXING HER GUARD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：安靜地方仍可有多事的歷史",
+      "ans": "A QUIET PLACE CAN STILL HAVE AN EVENTFUL HISTORY",
+      "speak": "a quiet place can still have an eventful history",
+      "vocabId": "R6:A QUIET PLACE CAN STILL HAVE AN EVENTFUL HISTORY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：因腳步不穩而踉蹌（S 開頭，7 個字母）",
+      "ans": "STUMBLE",
+      "speak": "stumble",
+      "vocabId": "R6:STUMBLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在某處逗留而未立即離開（L 開頭，6 個字母）",
+      "ans": "LINGER",
+      "speak": "linger",
+      "vocabId": "R6:LINGER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：因不願意而有所猶豫的（R 開頭，9 個字母）",
+      "ans": "RELUCTANT",
+      "speak": "reluctant",
+      "vocabId": "R6:RELUCTANT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D O O R _ T E P (房門外的階梯或門前位置)",
+      "ans": "S",
+      "speak": "doorstep",
+      "vocabId": "R6:DOORSTEP"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ R _ P (用來攜帶固定物品的帶子)",
+      "ans": "TA",
+      "speak": "strap",
+      "vocabId": "R6:STRAP"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F _ M _ _ E (笨拙地摸索或操作物品)",
+      "ans": "UBL",
+      "speak": "fumble",
+      "vocabId": "R6:FUMBLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "the right way round",
+      "options": [
+        "A. 位於右邊的所有物件",
+        "B. 採用最長的一條路線",
+        "C. 方向擺放正確",
+        "D. 剛好完成一整圈"
+      ],
+      "ans": "C",
+      "explain": "right way round 指正確朝向，不等於右側。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "allow for shrinkage",
+      "options": [
+        "A. 強迫物件立刻縮到最小",
+        "B. 忽略所有尺寸變動",
+        "C. 只准使用已經縮小的材料",
+        "D. 把縮小的可能性計入安排"
+      ],
+      "ans": "D",
+      "explain": "allow for 是預留考量，shrinkage 收縮。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a trial run",
+      "options": [
+        "A. 正式執行前的試做",
+        "B. 為比賽名次進行的衝刺",
+        "C. 已被判定失敗的唯一嘗試",
+        "D. 完成後才撰寫的檢討"
+      ],
+      "ans": "A",
+      "explain": "trial run 測試流程，不必是跑步。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "This piece is a spare, so do not assume you have missed a step just because it is left over.",
+      "options": [
+        "A. 剩下的零件已證明前面有一步做錯。",
+        "B. 這片必須最後裝上，否則不能算完成。",
+        "C. 備件用完後才可以開始正式步驟。",
+        "D. 這是備件，剩下不代表漏了步驟。"
+      ],
+      "ans": "D",
+      "explain": "spare 備用，left over 非必然錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The picture shows the finished front; you will need to turn the card over to see where the ends are attached.",
+      "options": [
+        "A. 圖示完成正面，要翻過卡片才看到尾端固定處。",
+        "B. 圖示背面，所以翻面才能看到完成正面。",
+        "C. 尾端只在卡片打開時才會顯示於正面。",
+        "D. 正反兩面在圖片中已同時完整展示。"
+      ],
+      "ans": "A",
+      "explain": "front 與 turn over 指向背面隱藏的連接位置。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The measurement includes the border, which means the picture itself needs to be smaller than that.",
+      "options": [
+        "A. 邊框有多寬都不會影響圖案可用空間。",
+        "B. 尺寸含邊框，所以圖案本身需更小。",
+        "C. 尺寸只量圖案，邊框需另外加上去。",
+        "D. 圖案本身應與含邊框總尺寸相等。"
+      ],
+      "ans": "B",
+      "explain": "總尺寸與內部可用尺寸不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is the distance between the holes that needs to match, not the distance from each hole to the outside edge.",
+      "options": [
+        "A. 要相同的是孔與孔間距，不是每孔到外緣距離。",
+        "B. 要相同的是每孔到外緣距離，孔距無關。",
+        "C. 每個孔的直徑與孔距必須相同。",
+        "D. 說話者要求孔距與邊距兩種數值都相等。"
+      ],
+      "ans": "A",
+      "explain": "明確對比兩個測量位置。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The instructions give a minimum drying time, so reaching that time does not mean every piece will be ready under all conditions.",
+      "options": [
+        "A. 說話者確認每件材料本來需要相同時間。",
+        "B. 說明給最低乾燥時間，到時不保證所有條件下每件都乾。",
+        "C. 到最低時間即保證任何環境每件都已乾。",
+        "D. 最低時間代表超過之後不能再等待。"
+      ],
+      "ans": "B",
+      "explain": "minimum 是下限，不是各條件充分保證；非施工安全指南。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would keep the template until you have checked the first copy; otherwise you may reproduce the same small error several times.",
+      "options": [
+        "A. 先做完所有複本，再看第一份是否有錯。",
+        "B. 說話者已確定第一份有錯，所以禁止繼續試做。",
+        "C. 先核對第一份再丟模板，否則可能複製同一小錯多次。",
+        "D. 模板只要保留，就不需要核對任何複本。"
+      ],
+      "ans": "C",
+      "explain": "保留模板便利核對修正，may 只是風險可能。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Make sure the label ___ outwards before closing the box.",
+      "options": [
+        "A. has facing",
+        "B. face it",
+        "C. faces",
+        "D. is face"
+      ],
+      "ans": "C",
+      "explain": "the label 單數，指示子句用 faces，outwards 朝外。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which adjective describes a mark that can be read clearly?",
+      "options": [
+        "A. portable",
+        "B. flexible",
+        "C. reversible",
+        "D. legible"
+      ],
+      "ans": "D",
+      "explain": "legible 指字跡可辨讀；其他為可攜、可彎、可逆。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【尺寸】The card must be at least ten centimetres wide. Which width meets that requirement?",
+      "options": [
+        "A. Ten centimetres.",
+        "B. Nine centimetres.",
+        "C. Eight and a half centimetres.",
+        "D. Any width below ten centimetres."
+      ],
+      "ans": "A",
+      "explain": "at least 包含等於下限，未說一定大於十。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】Fold the card before adding the ribbon. What should happen first?",
+      "options": [
+        "A. The ribbon is added.",
+        "B. The ribbon is removed.",
+        "C. The folded card is discarded.",
+        "D. The card is folded."
+      ],
+      "ans": "D",
+      "explain": "before 明確指定折卡在加緞帶前。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The kit contains enough paper for four cards. The instructions explain how to make one card. A learner concludes that the kit can produce only one. What has been confused?",
+      "options": [
+        "A. The example’s scope with the quantity of supplied material.",
+        "B. The number of cards with the number of printed instructions.",
+        "C. The size of the paper with the length of the ribbon.",
+        "D. The cost of a kit with the price of a finished card."
+      ],
+      "ans": "A",
+      "explain": "示範一張不等於材料只能做一張；題內明給四張。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The design allows the cover ___ without removing the pages.",
+      "options": [
+        "A. change itself",
+        "B. to be changed",
+        "C. being change",
+        "D. to changing"
+      ],
+      "ans": "B",
+      "explain": "allow + 受詞 + to be changed，封面被換。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A label says washable, while the note below asks users to remove the paper insert first. A person washes the item with the insert inside. What was missed?",
+      "options": [
+        "A. The condition accompanying the washing instruction.",
+        "B. A requirement to replace the whole item after each use.",
+        "C. A warning that the item must never come into contact with water.",
+        "D. A promise that the paper insert would become stronger when wet."
+      ],
+      "ans": "A",
+      "explain": "可洗標示附先取紙片條件，不能只讀主標籤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The pieces should fit snugly, without needing to be forced. Which description fits?",
+      "options": [
+        "A. They are deliberately left loose enough to fall apart.",
+        "B. They sit closely together with little free movement.",
+        "C. They remain far apart so neither touches the other.",
+        "D. They can be joined only by applying substantial pressure."
+      ],
+      "ans": "B",
+      "explain": "snugly 緊密合適，後句排除強壓。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The instructions say the two strips should be equal in length, not necessarily equal in width. A learner trims the widths to match. Which requirement has the learner added?",
+      "options": [
+        "A. A rule that all dimensions must be measured in different units.",
+        "B. A requirement that the strips come from different sheets.",
+        "C. A second dimension that the instructions did not require to match.",
+        "D. A condition that the strips must have different lengths."
+      ],
+      "ans": "C",
+      "explain": "長相等不強制寬相等，修寬增加未規定條件。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：供照樣複製或定位的樣板",
+      "ans": "TEMPLATE",
+      "speak": "template",
+      "vocabId": "R6:TEMPLATE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：物件位置彼此對齊的狀態",
+      "ans": "ALIGNMENT",
+      "speak": "alignment",
+      "vocabId": "R6:ALIGNMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：額外備用的組件",
+      "ans": "A SPARE COMPONENT",
+      "speak": "a spare component",
+      "vocabId": "R6:A SPARE COMPONENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：能恢復原狀的第一步",
+      "ans": "A REVERSIBLE FIRST STEP",
+      "speak": "a reversible first step",
+      "vocabId": "R6:A REVERSIBLE FIRST STEP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：邊框包含在總尺寸內",
+      "ans": "THE BORDER IS INCLUDED IN THE TOTAL MEASUREMENT",
+      "speak": "the border is included in the total measurement",
+      "vocabId": "R6:THE BORDER IS INCLUDED IN THE TOTAL MEASUREMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：範例展示一種可能配色",
+      "ans": "THE EXAMPLE ILLUSTRATES ONE POSSIBLE COLOUR CHOICE",
+      "speak": "the example illustrates one possible colour choice",
+      "vocabId": "R6:THE EXAMPLE ILLUSTRATES ONE POSSIBLE COLOUR CHOICE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：字跡清楚可辨讀的（L 開頭，7 個字母）",
+      "ans": "LEGIBLE",
+      "speak": "legible",
+      "vocabId": "R6:LEGIBLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：物件外緣形成的輪廓（O 開頭，7 個字母）",
+      "ans": "OUTLINE",
+      "speak": "outline",
+      "vocabId": "R6:OUTLINE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：彼此成直角的（P 開頭，13 個字母）",
+      "ans": "PERPENDICULAR",
+      "speak": "perpendicular",
+      "vocabId": "R6:PERPENDICULAR"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B O R _ E R (圍繞圖案或表面的邊框)",
+      "ans": "D",
+      "speak": "border",
+      "vocabId": "R6:BORDER"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R I _ B _ N (用於裝飾繫結的緞帶)",
+      "ans": "BO",
+      "speak": "ribbon",
+      "vocabId": "R6:RIBBON"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D U _ L _ C _ T E (與原件相同的另一份複本)",
+      "ans": "PIA",
+      "speak": "duplicate",
+      "vocabId": "R6:DUPLICATE"
     }
   ],
   "boss": [
@@ -8915,6 +9701,268 @@
       "ans": "RGL",
       "speak": "fragile",
       "vocabId": "R6:FRAGILE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I thought you were waiting outside. No, I said I would wait by the window.",
+      "options": [
+        "A. 一人以為對方在外面，對方澄清說的是窗邊。",
+        "B. 雙方都同意原先說好在室外窗邊等。",
+        "C. 一人取消等候，另一人要求把窗打開。",
+        "D. 對方已承認自己把外面誤說成窗邊。"
+      ],
+      "ans": "A",
+      "explain": "第二人修正等候位置的理解，未承認自己說錯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You found the note, then? Eventually. It was under the very book I had been looking through.",
+      "options": [
+        "A. 便條先找到，書則後來才被人借走。",
+        "B. 終於找到便條，就在一直翻的那本書下面。",
+        "C. 便條在書裡，他翻到最後一頁才找到。",
+        "D. 他已看完書，卻仍不知道便條在哪。"
+      ],
+      "ans": "B",
+      "explain": "under book 與 looking through book 對比搜尋焦點。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We arrived too late for the beginning, but just in time to hear everyone arguing about how it had ended.",
+      "options": [
+        "A. 爭論是在活動開始前，大家預測可能結局。",
+        "B. 我們完整看過活動，後來才參與爭論。",
+        "C. 我們錯過開頭，抵達時正好聽見大家爭論結局。",
+        "D. 我們及時看到開頭，卻在結局前離開。"
+      ],
+      "ans": "C",
+      "explain": "late for beginning + arguing ended 暗示事件已結束但討論持續。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A guest looks at the empty plate and says, I take it the cake was popular. What is inferred?",
+      "options": [
+        "A. People have eaten the cake.",
+        "B. The cake has not yet been served.",
+        "C. The plate was too small to hold a cake.",
+        "D. The guests have asked for a different dessert."
+      ],
+      "ans": "A",
+      "explain": "由空盤推蛋糕受歡迎的幽默推論；不是確證所有人喜歡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】You might have mentioned the stairs, said the visitor, looking at the suitcase she had carried up four floors. What is conveyed?",
+      "options": [
+        "A. Gratitude for a detailed description of the stairs.",
+        "B. Mild reproach for not being warned.",
+        "C. Certainty that the stairs have just been installed.",
+        "D. A request to remove the suitcase from the building."
+      ],
+      "ans": "B",
+      "explain": "might have mentioned 在此責怪未提前提醒，以情境確定語氣。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A stranger offered to carry Jo’s bag. She thanked him but kept her hand on the strap until they reached the crowded platform. What is the strongest supported reading?",
+      "options": [
+        "A. She was unable to carry the bag without him.",
+        "B. She intended to give him the bag permanently.",
+        "C. She accepted the help with some caution.",
+        "D. She had known the stranger for many years."
+      ],
+      "ans": "C",
+      "explain": "感謝配合不放手顯示有保留接受，不能據此確定有犯罪。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：使人較安心的微笑",
+      "ans": "A REASSURING SMILE",
+      "speak": "a reassuring smile",
+      "vocabId": "R6:A REASSURING SMILE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：不見的便條一直在書下",
+      "ans": "THE MISSING NOTE LAY BENEATH THE BOOK ALL ALONG",
+      "speak": "the missing note lay beneath the book all along",
+      "vocabId": "R6:THE MISSING NOTE LAY BENEATH THE BOOK ALL ALONG"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：看似相關而偶然同時發生的巧合（C 開頭，11 個字母）",
+      "ans": "COINCIDENCE",
+      "speak": "coincidence",
+      "vocabId": "R6:COINCIDENCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：B E _ I L _ E _ E D (因不理解發生何事而困惑的)",
+      "ans": "WDR",
+      "speak": "bewildered",
+      "vocabId": "R6:BEWILDERED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I said leave the top edge open, not leave the lid off.",
+      "options": [
+        "A. 我已說好封住頂邊，再另做一個蓋子。",
+        "B. 我說留頂邊開口，不是不要蓋子。",
+        "C. 我要求移除整個蓋子而不是只留邊緣。",
+        "D. 頂邊與蓋子被明確定義成同一部分。"
+      ],
+      "ans": "B",
+      "explain": "否定範圍區分局部開口與整蓋移除。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Try the arrangement without attaching anything first; it is much easier to change your mind at that stage.",
+      "options": [
+        "A. 只要開始試擺，後來就不准再改。",
+        "B. 說話者認為排列方式不需要任何選擇。",
+        "C. 先試擺別固定，那時改主意較容易。",
+        "D. 先把每件都固定，才決定排列方式。"
+      ],
+      "ans": "C",
+      "explain": "without attaching + first 設可逆試做階段。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A close match is enough here; trying to make it exact would add work without changing whether the pieces fit.",
+      "options": [
+        "A. 只有完全一致才可合上，近似一定無法使用。",
+        "B. 兩片是否合上與尺寸毫無關係。",
+        "C. 說話者認為應不比較就隨意拿兩片。",
+        "D. 此處近似就夠，追求完全一致只加工作而不改能否合上。"
+      ],
+      "ans": "D",
+      "explain": "本步驟精度需求有限，不泛化所有組件要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could you leave a little space between the labels so I can cut them apart? What is requested?",
+      "options": [
+        "A. A second copy of the same sheet.",
+        "B. A gap separating adjacent labels.",
+        "C. A blank label before the first printed one.",
+        "D. A larger font on every label."
+      ],
+      "ans": "B",
+      "explain": "between labels 為裁開留間隔，非空白標籤或字體大小。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【空間】Place the blue card between the red card and the green card, all in one row. Which order fits?",
+      "options": [
+        "A. Red, green, blue.",
+        "B. Blue, green, red.",
+        "C. Red, blue, green.",
+        "D. Blue, red, green."
+      ],
+      "ans": "C",
+      "explain": "blue 須在 red/green 中間，正答為其中一個方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An example uses a green ribbon. The note says any colour may be used as long as the ribbon is narrow enough to pass through the hole. What matters for this step?",
+      "options": [
+        "A. Using the same colour as the example.",
+        "B. Matching the ribbon’s length to the hole’s width.",
+        "C. Choosing a ribbon before checking whether there is a hole.",
+        "D. The ribbon’s width rather than its colour."
+      ],
+      "ans": "D",
+      "explain": "any colour 排除色限制，narrow enough 指寬度適配。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：緊密合適而不鬆動的配合",
+      "ans": "A SNUG FIT",
+      "speak": "a snug fit",
+      "vocabId": "R6:A SNUG FIT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：備件不表示漏做步驟",
+      "ans": "A SPARE PIECE DOES NOT IMPLY A MISSING STEP",
+      "speak": "a spare piece does not imply a missing step",
+      "vocabId": "R6:A SPARE PIECE DOES NOT IMPLY A MISSING STEP"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：尺寸或數量收縮減少的現象（S 開頭，9 個字母）",
+      "ans": "SHRINKAGE",
+      "speak": "shrinkage",
+      "vocabId": "R6:SHRINKAGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ E _ S _ O N (長寬高等可測量的尺寸方向)",
+      "ans": "MNI",
+      "speak": "dimension",
+      "vocabId": "R6:DIMENSION"
     }
   ]
 }

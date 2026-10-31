@@ -41,6 +41,7 @@ import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
 import { PROLOGUE_XP, allowedTypes, prologueGuard, gaugeScale, isPrologue, minAnswers, stageInMap, stageRole, startWaves, untimedStage } from '../game/stageLayout';
 import { BONUS_GOLD, BONUS_GOLD_CAP, canExecute, executeKindOf } from '../game/execute';
+import { WRONG_COMBO_KEEP, applyHardBonus, decayCombo, grantSkillCombo, skillWindowOf } from '../game/combo';
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
@@ -75,7 +76,7 @@ export interface BattleEvent {
   fast?: number;           // 快答加成倍率（> 1 時顯示 FAST!）
   member?: MemberId;       // 出手或受傷的隊員
   bossQuestion?: boolean;  // 這一擊來自困難題
-  bonus?: { mult: number; from: number; to: number }; // 困難題 Bonus：combo from × mult → to
+  bonus?: { mult: number; from: number; to: number; gain: number }; // 困難題 Bonus：抽中 ×mult，原生 combo 實際增加 gain（單次最多 +15 萬）
   skill?: SkillId;
   levelUp?: number;                 // 主角升到第幾級
   guardGained?: boolean;            // 被動守護觸發
@@ -122,7 +123,11 @@ interface BattleState {
   isBossQuestion: boolean;
   typed: string;
   retrying: boolean; // 看完正確答案後的重答，不算 SRS 複習
-  combo: number;
+  combo: number;      // 顯示與傷害用的 combo＝原生 combo＋技能 combo（規格 v2.0）
+  skillCombo: number; // 其中由技能加的部分：不參與困難題 Bonus 乘法
+  skillWindow: number;     // 技能加 combo 的 8 題視窗編號
+  skillWindowGain: number; // 這個視窗已經由技能加了多少
+  runAnswers: number;      // 這張地圖（這趟冒險）實際作答幾題
   maxCombo: number;
   bossBoost: boolean; // 英勇號令：下一次困難題 Bonus 保底
   party: Member[];
@@ -505,7 +510,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
     const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined, s.levelKey)) : takeEasy(stage) ?? stage.questions[0];
     set({
-      ...(newMap ? { combo: 0, streak: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
+      ...(newMap ? { combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, streak: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
       stageIdx,
       qIdx: isBossQuestion ? -1 : 0,
@@ -940,8 +945,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 第一次遇到困難題（情境提示還沒看過）固定 ×2，讓新玩家看懂這個玩法；之後照正常機率
     const firstBonus = !save().hintsSeen.includes('boss');
     const bonusMult = s.isBossQuestion && !s.overtime ? (firstBonus ? 2 : rollBossBonus(random, s.bossBoost ? BOSS_BONUS_FLOOR : 1)) : 0;
-    const combo = s.overtime ? 0 : (bonusMult ? s.combo * bonusMult : s.combo) + gain;
-    const bonus = bonusMult ? { mult: bonusMult, from: s.combo, to: combo } : undefined;
+    // 困難題 Bonus 只乘原生 combo（技能加的不被乘），單次最多 +15 萬；超過 20 秒才答對：這題不累積 combo
+    const organic = s.combo - s.skillCombo;
+    const lucky = bonusMult ? applyHardBonus(organic, bonusMult) : null;
+    const combo = s.overtime ? s.combo : (lucky ? lucky.organic : organic) + s.skillCombo + gain;
+    const bonus = bonusMult ? { mult: bonusMult, from: s.combo, to: combo, gain: lucky?.gain ?? 0 } : undefined;
     // 真的連續答對幾題（超時答對不算）：三星與首領技能看這個，不會被 Bonus 一次乘上去
     const streak = s.overtime ? 0 : s.streak + 1;
     const stageAnswers = s.stageAnswers + 1;
@@ -981,7 +989,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const base = {
       mapStats,
       attackerIdx: s.isBossQuestion ? s.attackerIdx : nextAttacker(party, attackerIdx + 1),
-      combo, streak, stageAnswers, maxCombo: Math.max(s.maxCombo, combo), bossBoost: bonusMult ? false : s.bossBoost,
+      combo, streak, stageAnswers, runAnswers: s.runAnswers + 1, maxCombo: Math.max(s.maxCombo, combo), bossBoost: bonusMult ? false : s.bossBoost,
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
       wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
@@ -1128,7 +1136,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const guarded = s.comboGuard || !!relayFor(s.relay, s.party[s.attackerIdx]?.id ?? '')?.guard;
     const stage = s.stages[s.stageIdx];
     const base = {
-      combo: guarded ? s.combo : s.blessed ? Math.floor(s.combo * BLESSED_COMBO_KEEP) : 0,
+      // 答錯：combo 保留 50%（女神祝福 70%、守護 100%，互斥不疊乘）；真實連對另外歸零
+      ...decayCombo(s.combo, s.skillCombo, guarded ? 1 : s.blessed ? BLESSED_COMBO_KEEP : WRONG_COMBO_KEEP),
+      runAnswers: s.runAnswers + 1,
       comboGuard: false,
       // 答錯：接力與連攜中斷（守護保住 combo 時也保住接力）
       relay: guarded ? s.relay : null,
@@ -1226,7 +1236,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (e.amplify) patch.amplifyLeft = Math.max(s.amplifyLeft, e.amplify);
     if (e.charge) patch.charge = Math.max(s.charge, e.charge * (e.bossCharge && s.stages[s.stageIdx]?.bossMode ? 1.5 : 1));
     if (e.crits) patch.critLeft = Math.max(s.critLeft, e.crits);
-    if (e.combo) Object.assign(patch, { combo: s.combo + e.combo, maxCombo: Math.max(s.maxCombo, s.combo + e.combo) });
+    // 技能加 combo：同一個 8 題視窗合計最多 +40，記在技能 combo（之後的困難題不會乘到）
+    if (e.combo) {
+      const win = skillWindowOf(s.runAnswers);
+      const used = win === s.skillWindow ? s.skillWindowGain : 0;
+      const add = grantSkillCombo(used, e.combo);
+      Object.assign(patch, { combo: s.combo + add, skillCombo: s.skillCombo + add, skillWindow: win, skillWindowGain: used + add, maxCombo: Math.max(s.maxCombo, s.combo + add) });
+    }
     if (e.bossStep) patch.bossBoost = true;
     if (e.breakShield && s.monsterShield > 0) patch.monsterShield = Math.max(0, s.monsterShield - e.breakShield);
     return patch;
@@ -1249,6 +1265,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     typed: '',
     retrying: false,
     combo: 0,
+    skillCombo: 0,
+    skillWindow: 0,
+    skillWindowGain: 0,
+    runAnswers: 0,
     maxCombo: 0,
     bossBoost: false,
     party: [],
@@ -1321,7 +1341,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions(LEVELS.indexOf(levelKey))));
       set({
         active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
-        combo: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
+        combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runRunes: 0, runXp: 0, runDrops: {},
       });
@@ -1345,7 +1365,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const party = buildParty([character ? 'player' : heroes[0]], heroes, character, stats);
       set({
         active: true, mode: 'golden', skillBoss: null, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
-        combo: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
+        combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runRunes: 0, runXp: 0, runDrops: {},
       });
@@ -1368,7 +1388,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({
         active: true, mode: 'skill', skillBoss: id, levelKey: `skill-${id}`, levelIdx,
         stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],
-        combo: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
+        combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runRunes: 0, runXp: 0, runDrops: {},
       });
@@ -1420,7 +1440,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
           // 前 25 關：超時不算答錯，只是 combo 中斷，繼續作答同一題。
           // 有守護（護盾、守護技能）時用掉守護，combo 保住
           if (s.comboGuard) set({ questionLeft: 0, overtime: true, comboGuard: false, shield: false, event: nextEvent('overtime') });
-          else set({ questionLeft: 0, overtime: true, combo: 0, event: nextEvent('overtime') });
+          else set({ questionLeft: 0, overtime: true, ...decayCombo(s.combo, s.skillCombo, s.blessed ? BLESSED_COMBO_KEEP : WRONG_COMBO_KEEP), event: nextEvent('overtime') });
         } else {
           set({ questionLeft: 0 });
           onWrong('', true);

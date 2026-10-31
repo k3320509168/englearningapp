@@ -1,0 +1,387 @@
+{
+  "date": "2026-11-01",
+  "status": "draft",
+  "limits": [
+    "Format and oracle simulations do not establish semantic correctness or CEFR proficiency.",
+    "Reading speed assumptions are planning inputs, not measured learner performance."
+  ],
+  "regions": [
+    {
+      "region": 6,
+      "questions": 120,
+      "target": 1800,
+      "normal": 90,
+      "boss": 30,
+      "quotas": {
+        "listening": {
+          "count": 36,
+          "target": 540
+        },
+        "reading": {
+          "count": 36,
+          "target": 540
+        },
+        "speaking": {
+          "count": 24,
+          "target": 360
+        },
+        "writing": {
+          "count": 24,
+          "target": 360
+        }
+      },
+      "lexicalPoints": 30,
+      "vocabEntries": 39,
+      "issues": [],
+      "reading": {
+        "maxWords": 79,
+        "over20SecondsAt180Wpm": 17,
+        "over20SecondsAt240Wpm": 8
+      },
+      "drawStats": [
+        {
+          "stage": 0,
+          "draws": 1000,
+          "legacy": 0,
+          "distribution": {
+            "listening:d1": 310,
+            "speaking:d1": 196,
+            "reading:d1": 309,
+            "writing:d1": 185
+          }
+        },
+        {
+          "stage": 80,
+          "draws": 1000,
+          "legacy": 0,
+          "distribution": {
+            "reading:d1": 116,
+            "speaking:d1": 73,
+            "listening:d1": 113,
+            "listening:d2": 208,
+            "reading:d2": 211,
+            "writing:d2": 122,
+            "writing:d1": 69,
+            "speaking:d2": 88
+          }
+        },
+        {
+          "stage": 160,
+          "draws": 1000,
+          "legacy": 0,
+          "distribution": {
+            "reading:d3": 152,
+            "listening:d1": 58,
+            "speaking:d3": 151,
+            "writing:d3": 132,
+            "listening:d3": 151,
+            "reading:d1": 62,
+            "speaking:d1": 41,
+            "listening:d2": 73,
+            "writing:d2": 39,
+            "reading:d2": 72,
+            "speaking:d2": 32,
+            "writing:d1": 37
+          }
+        }
+      ]
+    },
+    {
+      "region": 7,
+      "questions": 120,
+      "target": 2000,
+      "normal": 90,
+      "boss": 30,
+      "quotas": {
+        "listening": {
+          "count": 36,
+          "target": 600
+        },
+        "reading": {
+          "count": 36,
+          "target": 600
+        },
+        "speaking": {
+          "count": 24,
+          "target": 400
+        },
+        "writing": {
+          "count": 24,
+          "target": 400
+        }
+      },
+      "lexicalPoints": 30,
+      "vocabEntries": 39,
+      "issues": [],
+      "reading": {
+        "maxWords": 81,
+        "over20SecondsAt180Wpm": 21,
+        "over20SecondsAt240Wpm": 6
+      },
+      "drawStats": [
+        {
+          "stage": 0,
+          "draws": 1000,
+          "legacy": 21,
+          "distribution": {
+            "writing:d1": 202,
+            "listening:d1": 302,
+            "speaking:d1": 193,
+            "reading:d1": 303
+          }
+        },
+        {
+          "stage": 80,
+          "draws": 1000,
+          "legacy": 379,
+          "distribution": {
+            "writing:d1": 83,
+            "writing:d2": 234,
+            "speaking:d1": 78,
+            "reading:d2": 240,
+            "reading:d1": 126,
+            "listening:d1": 123,
+            "speaking:d2": 44,
+            "listening:d2": 72
+          }
+        },
+        {
+          "stage": 160,
+          "draws": 1000,
+          "legacy": 504,
+          "distribution": {
+            "reading:d1": 54,
+            "writing:d3": 415,
+            "speaking:d3": 92,
+            "listening:d1": 55,
+            "speaking:d1": 36,
+            "reading:d2": 72,
+            "reading:d3": 63,
+            "listening:d3": 64,
+            "writing:d2": 72,
+            "listening:d2": 24,
+            "writing:d1": 37,
+            "speaking:d2": 16
+          }
+        }
+      ]
+    },
+    {
+      "region": 8,
+      "questions": 120,
+      "target": 2000,
+      "normal": 90,
+      "boss": 30,
+      "quotas": {
+        "listening": {
+          "count": 36,
+          "target": 600
+        },
+        "reading": {
+          "count": 36,
+          "target": 600
+        },
+        "speaking": {
+          "count": 24,
+          "target": 400
+        },
+        "writing": {
+          "count": 24,
+          "target": 400
+        }
+      },
+      "lexicalPoints": 30,
+      "vocabEntries": 39,
+      "issues": [],
+      "reading": {
+        "maxWords": 88,
+        "over20SecondsAt180Wpm": 25,
+        "over20SecondsAt240Wpm": 7
+      },
+      "drawStats": [
+        {
+          "stage": 0,
+          "draws": 1000,
+          "legacy": 0,
+          "distribution": {
+            "listening:d1": 309,
+            "reading:d1": 310,
+            "speaking:d1": 197,
+            "writing:d1": 184
+          }
+        },
+        {
+          "stage": 90,
+          "draws": 1000,
+          "legacy": 377,
+          "distribution": {
+            "listening:d2": 83,
+            "reading:d1": 116,
+            "writing:d2": 202,
+            "reading:d2": 298,
+            "speaking:d1": 74,
+            "writing:d1": 69,
+            "listening:d1": 116,
+            "speaking:d2": 42
+          }
+        },
+        {
+          "stage": 180,
+          "draws": 1000,
+          "legacy": 539,
+          "distribution": {
+            "reading:d2": 101,
+            "writing:d3": 421,
+            "reading:d1": 61,
+            "speaking:d3": 82,
+            "listening:d1": 57,
+            "listening:d3": 49,
+            "writing:d2": 68,
+            "reading:d3": 47,
+            "writing:d1": 35,
+            "listening:d2": 29,
+            "speaking:d1": 36,
+            "speaking:d2": 14
+          }
+        }
+      ]
+    }
+  ],
+  "placement": [
+    {
+      "assumedAbility": 0,
+      "runs": 100,
+      "outcomes": {
+        "0": 90,
+        "1": 8,
+        "2": 1,
+        "3": 1
+      },
+      "duplicates": 0,
+      "maxAnswers": 31,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 1,
+      "runs": 100,
+      "outcomes": {
+        "0": 18,
+        "1": 75,
+        "2": 5,
+        "3": 2
+      },
+      "duplicates": 0,
+      "maxAnswers": 34,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 2,
+      "runs": 100,
+      "outcomes": {
+        "0": 1,
+        "1": 17,
+        "2": 73,
+        "3": 9
+      },
+      "duplicates": 0,
+      "maxAnswers": 34,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 3,
+      "runs": 100,
+      "outcomes": {
+        "2": 20,
+        "3": 78,
+        "4": 2
+      },
+      "duplicates": 0,
+      "maxAnswers": 29,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 4,
+      "runs": 100,
+      "outcomes": {
+        "3": 15,
+        "4": 77,
+        "5": 8
+      },
+      "duplicates": 0,
+      "maxAnswers": 29,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 5,
+      "runs": 100,
+      "outcomes": {
+        "4": 17,
+        "5": 77,
+        "6": 6
+      },
+      "duplicates": 0,
+      "maxAnswers": 34,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 6,
+      "runs": 100,
+      "outcomes": {
+        "5": 23,
+        "6": 69,
+        "7": 8
+      },
+      "duplicates": 0,
+      "maxAnswers": 36,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 7,
+      "runs": 100,
+      "outcomes": {
+        "4": 1,
+        "6": 18,
+        "7": 78,
+        "8": 3
+      },
+      "duplicates": 0,
+      "maxAnswers": 36,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 8,
+      "runs": 100,
+      "outcomes": {
+        "3": 2,
+        "5": 1,
+        "7": 19,
+        "8": 73,
+        "9": 5
+      },
+      "duplicates": 0,
+      "maxAnswers": 36,
+      "unfinished": 0
+    },
+    {
+      "assumedAbility": 9,
+      "runs": 100,
+      "outcomes": {
+        "3": 1,
+        "4": 1,
+        "5": 2,
+        "7": 2,
+        "8": 2,
+        "9": 92
+      },
+      "duplicates": 0,
+      "maxAnswers": 36,
+      "unfinished": 0
+    }
+  ],
+  "golden": {
+    "stages": 45,
+    "regions": 9,
+    "finalKind": "final"
+  },
+  "assertions": 17864
+}

@@ -10,6 +10,7 @@ export interface Question {
   explain?: string;
   skill?: QuestionSkill; // 聽說讀寫分類（CEFR 題庫才有；舊題目依題型推斷）
   difficulty?: 1 | 2 | 3; // 同一個區域內的難度：1 前段、2 中段、3 後段（沒有時依題目推斷）
+  knowledgeType?: 'lexical' | 'discourse'; // 題庫明示：詞彙/固定表達，或整句/篇章；避免長句被當成一個新單字
   grammar?: string[];     // 文法標籤（第一個是主要考點，見 game/grammar.ts）
   grammarReview?: 'pending' | 'approved' | 'rejected'; // 自動標籤要人工確認後才算進文法進度
 }

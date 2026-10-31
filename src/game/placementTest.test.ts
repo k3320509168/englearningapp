@@ -88,3 +88,22 @@ describe('口說跳過', () => {
     expect(s.confirm.writing.total).toBe(4);
   });
 });
+
+
+describe('真實診斷題的重複隔離', () => {
+  it('多批補題與降級再測都不重出已回答的聽力或閱讀題', () => {
+    for (let seed = 1; seed <= 200; seed++) {
+      const rand = seeded(seed);
+      let s = startPlacement(4, { rand, now: 0 });
+      const seen = new Set<string>();
+      for (let i = 0; i < 100 && s.phase !== 'done'; i++) {
+        const q = currentQuestion(s)!;
+        const key = `${q.type}|${q.desc}|${q.speak ?? ''}`;
+        expect(seen.has(key), `seed ${seed}: ${key}`).toBe(false);
+        seen.add(key);
+        s = answerPlacement(s, rand() < 0.4, { rand, now: 0 });
+      }
+      expect(s.phase).toBe('done');
+    }
+  });
+});

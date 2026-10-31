@@ -150,3 +150,15 @@ describe('文法知識點（第八輪）', () => {
     expect(tag('【短文理解】What is it?', ['A cat', 'A dog', 'A bird', 'A fish'], 'A')).toEqual([]);
   });
 });
+
+
+describe('明示詞彙與篇章知識點', () => {
+  it('長句跟讀不虛增單字數；四詞固定表達仍可明示為詞彙', () => {
+    const sentence: Question = { type: 'voice', skill: 'speaking', difficulty: 3, knowledgeType: 'discourse', desc: '請唸出：我們應核實說法', ans: 'WE SHOULD VERIFY THE CLAIM', speak: 'we should verify the claim' };
+    expect(knowledgeKey(sentence)).toMatch(/^q:/);
+    const phrase: Question = { ...sentence, difficulty: 2, knowledgeType: 'lexical', desc: '請唸出：應優先處理的事', ans: 'A MATTER OF PRIORITY', speak: 'a matter of priority' };
+    expect(knowledgeKey(phrase)).toBe('w:a matter of priority');
+    // 舊題仍使用原先推斷，避免不必要地改寫已存在的存檔知識點。
+    expect(knowledgeKey({type:'spell',desc:'請拼出：書',ans:'BOOK',speak:'book'})).toBe('w:book');
+  });
+});

@@ -95,3 +95,13 @@
 - 影片閱讀題（看影片回答問題）。
 - 雅思、托福等考試的擴充。
 - 其他持續更新的內容。
+
+
+### 2026-11-01 題庫獨立副本（Codex，進行中）
+- 製作人要求：獨立副本補 B2+ 1800／C1 2000／C2 2000 題；先理解全作與本地實玩截圖，一般題庫與額外模式各至少五輪深度審查、修正、模擬。
+- 專用分支 codex/advanced-question-banks，基底 9144de9，未帶入 Claude 未提交的平衡修改。計畫與證據：docs/question-bank-qa/PLAN.md。
+- 授權完成後 commit 並 push 此專用分支；不動 main、不部署。
+
+- 題庫第一個工作存檔點：三區各120題草稿（總360/5800）；來源與可重建工具 scripts/question-bank；五輪紙上反證紀錄 docs/question-bank-qa/PAPER_REVIEW.md，完整驗收尚未完成。
+- 本地已用真實 BattleHUD 回答 B2+ 與 C2 題並截圖。全庫驗證修正 PRE 誤報與一題填空顯示問題；新題以 knowledgeType 區分詞彙/篇章，避免長句虛增單字封印。
+- 1000次程度測驗模擬發現聽力未登記已使用導致重題，修正並加入200seed回歸。Node22：tsc、300 tests、eslint通過。

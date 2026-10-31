@@ -75,6 +75,8 @@ function probeBatch(level: number, batchNo: number, size: number, used: Set<stri
   const r = take(list.filter(isReading), reading, used, rand);
   r.forEach(q => used.add(key(q)));
   const l = take(list.filter(isListening), size - r.length, used, rand);
+  // 聽力也要立即記錄，否則後續同級批次可能重出已經回答過的題目。
+  l.forEach(q => used.add(key(q)));
   return shuffleArray([...r, ...l], rand);
 }
 

@@ -33,6 +33,11 @@ export function knowledgeKey(q: Question): string {
   const grammar = primaryGrammar(q);
   if (grammar) return `g:${grammar}`;
   const speak = q.speak?.trim();
+  if (q.knowledgeType === 'discourse') return `q:${questionKey(q)}`;
+  if (q.knowledgeType === 'lexical') {
+    const target = speak || q.ans;
+    return `w:${target.toLowerCase().replace(/\s+/g, ' ').trim()}`;
+  }
   const word = speak && WORD.test(speak) && speak.split(/\s+/).length <= 3 ? speak
     : (q.type === 'spell' || q.type === 'voice') ? q.ans : null;
   return word ? `w:${word.toLowerCase().replace(/\s+/g, ' ')}` : `q:${questionKey(q)}`;

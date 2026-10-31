@@ -2,6 +2,7 @@ import type { Question } from './types';
 import type { QuestionPool } from './QuestionData';
 import { VOCAB, vocabKey } from './vocab';
 import { grammarTagDef } from './grammar';
+import { PROLOGUE_KEY } from './stageLayout';
 
 // 題庫驗證：檢查資料格式是否符合 MainScene 的判讀規則。
 // error = 遊戲中會壞掉或無法作答；warning = 可以玩，但值得人工檢查。
@@ -23,7 +24,7 @@ const CHOICE_LETTERS = ['A', 'B', 'C', 'D'];
 const MIN_QUESTIONS_PER_LEVEL = 3;
 const SKILLS = ['listening', 'speaking', 'reading', 'writing'];
 
-export function validateQuestion(q: Question, where: string): ValidationIssue[] {
+export function validateQuestion(q: Question, where: string, options: { allowPicturePrompt?: boolean } = {}): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const error = (message: string) => issues.push({ level: 'error', where, message });
   const warn = (message: string) => issues.push({ level: 'warning', where, message });
@@ -39,6 +40,7 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
   const key = vocabKey(q);
   if (key && !VOCAB[key]) warn(`單字 ${key} 缺少中文與例句（請補到 vocab.ts）`);
   if (q.type === 'choice' && !q.explain?.trim()) warn('選擇題缺少 explain（文法解說）');
+  if (q.knowledgeType !== undefined && !['lexical', 'discourse'].includes(q.knowledgeType)) error('knowledgeType 只能是 lexical 或 discourse');
   if (q.skill !== undefined && !SKILLS.includes(q.skill)) error(`skill 只能是 ${SKILLS.join(' / ')}："${q.skill}"`);
   if (q.difficulty !== undefined && ![1, 2, 3].includes(q.difficulty)) error(`difficulty 只能是 1、2、3："${q.difficulty}"`);
   // 文法標籤：最多 3 個、都要是已定義的標籤
@@ -64,8 +66,10 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
     case 'fill': {
       if (!LETTERS_ONLY.test(q.ans)) error(`fill 答案只能是大寫 A-Z："${q.ans}"`);
       // desc 格式：「填空題：B U D G _ T (預算)」— 把底線依序換成答案，應拼回 speak 的單字
-      const pattern = q.desc.split('：').pop()!.split('(')[0].replace(/\s/g, '');
-      const blanks = (pattern.match(/_/g) || []).length;
+      const rawPattern = q.desc.split('：').pop()!.split(/[(（]/)[0];
+      // 和 answerSlots 相同：只有獨立的 _ token 才是可輸入欄位。
+      const blanks = rawPattern.trim().split(/\s+/).filter(token => token === '_').length;
+      const pattern = rawPattern.toUpperCase().replace(/[^A-Z_]/g, '');
       if (blanks !== q.ans.length) {
         error(`空格數 (${blanks}) 與答案長度 (${q.ans.length}) 不符`);
       } else if (q.speak) {
@@ -90,7 +94,7 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
       // 出題模型偶爾把題型說明（例如「【生活文法】含有名詞單複數的英文句子」）當成題目，句子本身不見了
       // 正常的中翻英題（「紅色」的英文是？）沒有英文，但一定有「」
       const body = q.desc.replace(/【[^】]*】/g, '').trim();
-      const metaOnly = /^含有/.test(body) || (!q.speak && !q.desc.includes('「') && !/[A-Za-z]{2,}/.test(body));
+      const metaOnly = /^含有/.test(body) || (!options.allowPicturePrompt && !q.speak && !q.desc.includes('「') && !/[A-Za-z]{2,}/.test(body));
       if (!q.desc.startsWith('🎧') && metaOnly) error('題目沒有英文句子（只有題型說明），玩家看不到要作答的內容');
       break;
     }
@@ -120,7 +124,7 @@ export function validateQuestionPool(pool: QuestionPool, levels: string[]): Vali
     }
   }
   for (const levelKey of Object.keys(pool)) {
-    if (!levels.includes(levelKey)) {
+    if (!levels.includes(levelKey) && levelKey !== PROLOGUE_KEY) {
       issues.push({ level: 'error', where: levelKey, message: '題庫的等級名稱不在 LEVELS 中，永遠不會被使用' });
     }
   }
@@ -130,7 +134,7 @@ export function validateQuestionPool(pool: QuestionPool, levels: string[]): Vali
       if (deck.length < MIN_QUESTIONS_PER_LEVEL) {
         issues.push({ level: 'warning', where: `${levelKey} / ${deckName}`, message: `只有 ${deck.length} 題，玩家很快會看到重複題目` });
       }
-      deck.forEach((q, i) => issues.push(...validateQuestion(q, `${levelKey} / ${deckName}[${i}]`)));
+      deck.forEach((q, i) => issues.push(...validateQuestion(q, `${levelKey} / ${deckName}[${i}]`, { allowPicturePrompt: levelKey === PROLOGUE_KEY })));
     }
 
     const all = [...normal, ...boss];
@@ -140,13 +144,17 @@ export function validateQuestionPool(pool: QuestionPool, levels: string[]): Vali
       }
     }
 
-    const seen = new Map<string, number>();
-    all.forEach(q => {
-      const key = questionKey(q);
-      seen.set(key, (seen.get(key) ?? 0) + 1);
-    });
-    for (const [key, count] of seen) {
-      if (count > 1) issues.push({ level: 'error', where: levelKey, message: `重複題目 ×${count}：${key.split('|').slice(1).join(' ')}` });
+    // PRE 的 boss 故意重用 normal 中的 difficulty 2，並非新增了一份內容。
+    // 只允許這個跨牌組重用；同牌組內的重複仍拒絕。
+    for (const deck of levelKey === PROLOGUE_KEY ? [normal, boss] : [all]) {
+      const seen = new Map<string, number>();
+      deck.forEach(q => {
+        const key = questionKey(q);
+        seen.set(key, (seen.get(key) ?? 0) + 1);
+      });
+      for (const [key, count] of seen) {
+        if (count > 1) issues.push({ level: 'error', where: levelKey, message: `重複題目 ×${count}：${key.split('|').slice(1).join(' ')}` });
+      }
     }
   }
   return issues;

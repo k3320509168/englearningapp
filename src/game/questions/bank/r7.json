@@ -1,4 +1,1530 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The distinction is subtle but by no means trivial.",
+      "options": [
+        "A. 這個差別雖細微，卻絕非無關緊要。",
+        "B. 這個差別既明顯又毫無意義。",
+        "C. 根本不存在任何差別。",
+        "D. 說話者拒絕區分任何事情。"
+      ],
+      "ans": "A",
+      "explain": "by no means trivial 強調絕不瑣碎，不能因 subtle 就當作不重要。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I take issue with the premise rather than the conclusion.",
+      "options": [
+        "A. 我只是在領取會議文件。",
+        "B. 我質疑的是前提，而不是結論。",
+        "C. 我同意前提，卻拒絕結論。",
+        "D. 我認為兩者都已獲充分證明。"
+      ],
+      "ans": "B",
+      "explain": "take issue with 是提出異議；rather than 明確指出異議對象是前提。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The findings should be interpreted with caution.",
+      "options": [
+        "A. 任何人都不應閱讀研究結果。",
+        "B. 研究結果可以無條件推廣。",
+        "C. 解讀研究結果時應謹慎。",
+        "D. 研究結果已被證明全是造假。"
+      ],
+      "ans": "C",
+      "explain": "with caution 是審慎解讀，沒有直接判定結果虛假。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We must distinguish a plausible explanation from a demonstrated cause.",
+      "options": [
+        "A. 我們必須區分看似合理的解釋和已證實的原因。",
+        "B. 合理解釋必定等於已證實的原因。",
+        "C. 只要有原因，就完全不需要證據。",
+        "D. 所有看似合理的解釋都不可能成立。"
+      ],
+      "ans": "A",
+      "explain": "plausible 不等於 demonstrated，重點是證據強度的差別。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The proposal is not without merit, but its supporters have glossed over the costs.",
+      "options": [
+        "A. 提案的所有成本都已消失。",
+        "B. 提案有可取之處，但支持者淡化了成本問題。",
+        "C. 提案毫無優點，支持者卻詳細揭露成本。",
+        "D. 提案已獲無條件支持。"
+      ],
+      "ans": "B",
+      "explain": "not without merit 是有限肯定；gloss over 是輕描淡寫帶過。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Had the implications been made explicit, the committee might have reached a different decision.",
+      "options": [
+        "A. 所有影響都已在會後消除。",
+        "B. 委員會現在必須重新投票。",
+        "C. 若當時清楚說明影響，委員會可能作出不同決定。",
+        "D. 委員會因影響已充分說明而確定改變決定。"
+      ],
+      "ans": "C",
+      "explain": "Had...been 是過去反事實條件倒裝；might 只表示可能，沒有保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her account is broadly consistent with the records, save for one significant discrepancy.",
+      "options": [
+        "A. 她的說法大致符合紀錄，但有一項重要出入。",
+        "B. 她的說法與所有紀錄完全相反。",
+        "C. 她的說法沒有任何出入。",
+        "D. 她已刪除所有重要紀錄。"
+      ],
+      "ans": "A",
+      "explain": "save for 表示除了；broadly consistent 不等於完全一致。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If the recommendation sounds measured, that is because the evidence is suggestive rather than definitive.",
+      "options": [
+        "A. 建議的重點是測量儀器的尺寸。",
+        "B. 建議措辭審慎，因為證據只提供線索，尚未定論。",
+        "C. 建議措辭強硬，因為證據已完全確定。",
+        "D. 研究者認為所有證據毫無價值。"
+      ],
+      "ans": "B",
+      "explain": "measured 指審慎克制；suggestive rather than definitive 表示證據尚不足以定論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apparent consensus masks substantial disagreement about how the policy should be implemented.",
+      "options": [
+        "A. 所有人已就執行細節完全一致。",
+        "B. 政策因沒有任何共識而已被撤回。",
+        "C. 表面的共識掩蓋了執行方式上的重大分歧。",
+        "D. 大家連政策是否存在都完全不知情。"
+      ],
+      "ans": "C",
+      "explain": "apparent consensus 與 masks disagreement 形成表面一致、實質仍有歧見的對照。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Only after the audit ___ the scale of the discrepancy.",
+      "options": [
+        "A. did the board recognise",
+        "B. the board recognised",
+        "C. the board did recognise",
+        "D. recognised the board did"
+      ],
+      "ans": "A",
+      "explain": "Only after 置於句首時，主要子句需助動詞倒裝：did＋主詞＋原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【強調】It was the lack of consultation ___ angered local residents.",
+      "options": [
+        "A. where",
+        "B. that",
+        "C. what",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "It was X that... 是強調句；此處強調引起不滿的是缺乏諮詢。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The witness gave a ___ account of events, with each detail fitting the next.",
+      "options": [
+        "A. coincident",
+        "B. coastal",
+        "C. coherent",
+        "D. coercive"
+      ],
+      "ans": "C",
+      "explain": "coherent 指前後連貫一致；其他字分別是強制的、同時發生的及沿海的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which sentence is most appropriate for a formal report acknowledging limited evidence?",
+      "options": [
+        "A. The available evidence does not yet warrant a firm conclusion.",
+        "B. This totally proves everything beyond any possible doubt.",
+        "C. Trust me, everyone knows the answer already.",
+        "D. The evidence is whatever, so let us forget it."
+      ],
+      "ans": "A",
+      "explain": "does not yet warrant a firm conclusion 是正式且審慎的證據表述；其他選項過度斷言或過於口語。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The minister’s statement was conspicuous for what it omitted. What is the writer suggesting?",
+      "options": [
+        "A. The minister explicitly identified each omission.",
+        "B. The missing information was especially noticeable.",
+        "C. The statement listed every relevant fact.",
+        "D. The omissions made the statement impossible to hear."
+      ],
+      "ans": "B",
+      "explain": "conspicuous for what it omitted 強調未提到的部分特別引人注意，不是內容完整。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A company calls its new packaging recyclable. The material can be processed, but only by a facility that does not operate in most customers’ areas. What distinction matters?",
+      "options": [
+        "A. Most customers already use the required facility.",
+        "B. Recyclable packaging never needs to be collected.",
+        "C. Technical recyclability differs from practical access to recycling.",
+        "D. The packaging cannot be processed by any facility."
+      ],
+      "ans": "C",
+      "explain": "文章區分技術上可回收與實際可取得回收服務；不支持完全不能回收或普遍已可使用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【連貫】Which connector explicitly presents a contrasting possible consequence? The measure may reduce traffic in the centre. ___, it could increase congestion on surrounding roads.",
+      "options": [
+        "A. Conversely",
+        "B. Accordingly",
+        "C. For instance",
+        "D. In other words"
+      ],
+      "ans": "A",
+      "explain": "題目明確要求對比標記，因此選 Conversely；Accordingly 標記結果，For instance 例示，In other words 改述。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Researchers found that people who used a sleep app reported better rest. Participants had chosen whether to use it, and the users also exercised more. The authors describe the result as encouraging rather than conclusive. Why?",
+      "options": [
+        "A. The study establishes that everyone needs the same amount of sleep.",
+        "B. Other differences between the groups could help explain the reported benefit.",
+        "C. Choosing an app automatically makes self-reports false.",
+        "D. Exercise proves that the app cannot have any effect."
+      ],
+      "ans": "B",
+      "explain": "自選參與和運動差異提供其他解釋，限制因果推論；不能因此斷言 app 無效或所有自陳不實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The policy is less a break with the past than a repackaging of familiar priorities. What is the writer’s position?",
+      "options": [
+        "A. The policy has no identifiable priorities at all.",
+        "B. The writer welcomes a complete reversal of direction.",
+        "C. The presentation is new, but the underlying priorities largely persist.",
+        "D. The policy abandons every earlier priority."
+      ],
+      "ans": "C",
+      "explain": "less A than B 是與其說 A 不如說 B；作者認為是舊優先事項的新包裝。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：佐證",
+      "ans": "CORROBORATION",
+      "speak": "corroboration"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：模稜兩可的",
+      "ans": "EQUIVOCAL",
+      "speak": "equivocal"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有所保留的支持",
+      "ans": "A QUALIFIED ENDORSEMENT",
+      "speak": "a qualified endorsement"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：乍看之下",
+      "ans": "ON THE FACE OF IT",
+      "speak": "on the face of it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：證據值得更細緻的解讀",
+      "ans": "THE EVIDENCE WARRANTS A MORE NUANCED INTERPRETATION",
+      "speak": "the evidence warrants a more nuanced interpretation"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我們必須區分相關與因果",
+      "ans": "WE MUST DISTINGUISH CORRELATION FROM CAUSATION",
+      "speak": "we must distinguish correlation from causation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：支持說法的獨立佐證（C 開頭，13 個字母）",
+      "ans": "CORROBORATION",
+      "speak": "corroboration"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O R R O B _ R A T I O N (支持說法的獨立佐證)",
+      "ans": "O",
+      "speak": "corroboration"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：說法或證據不明確而有多種解讀的（E 開頭，9 個字母）",
+      "ans": "EQUIVOCAL",
+      "speak": "equivocal"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：做某事必須先具備的條件（P 開頭，12 個字母）",
+      "ans": "PREREQUISITE",
+      "speak": "prerequisite"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R E R _ Q U I _ I T E (做某事必須先具備的條件)",
+      "ans": "ES",
+      "speak": "prerequisite"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：做事極為仔細且守規矩的（S 開頭，10 個字母）",
+      "ans": "SCRUPULOUS",
+      "speak": "scrupulous"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are open to negotiation, but that should not be read as a blank cheque.",
+      "options": [
+        "A. 我們願協商，但不代表會無條件接受任何要求。",
+        "B. 我們已同意支付一張未填金額的支票。",
+        "C. 我們拒絕繼續任何形式的協商。",
+        "D. 我們保證對方可以自行決定所有條件。"
+      ],
+      "ans": "A",
+      "explain": "blank cheque 在此比喻不設限制的授權；開放協商仍有底線。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The gesture was well intentioned, if somewhat ill judged.",
+      "options": [
+        "A. 這個舉動已由法院裁定違法。",
+        "B. 這個舉動出於好意，但判斷不太妥當。",
+        "C. 這個舉動用意惡劣，執行卻非常成功。",
+        "D. 這個舉動尚未發生，無從評論。"
+      ],
+      "ans": "B",
+      "explain": "if 在此引入讓步保留，ill judged 是欠缺妥善判斷，不是法院判決。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is a fine line between preserving tradition and resisting any change.",
+      "options": [
+        "A. 說話者認為傳統完全不值得保存。",
+        "B. 說話者只在討論畫線的技巧。",
+        "C. 保存傳統與抗拒一切改變之間界線很微妙。",
+        "D. 保存傳統必定代表接受所有改變。"
+      ],
+      "ans": "C",
+      "explain": "a fine line 指難以拿捏的細微界線，並未把兩者完全等同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would hesitate to describe the consultation as anything approaching genuine collaboration.",
+      "options": [
+        "A. 我很難把這次諮詢稱為接近真正的合作。",
+        "B. 我確定這是毫無保留的共同決策。",
+        "C. 我認為合作已完成，只欠宣布。",
+        "D. 我不知道是否曾舉辦諮詢。"
+      ],
+      "ans": "A",
+      "explain": "would hesitate...anything approaching 是否定合作程度，並非否認諮詢存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The revised offer goes some way towards addressing our concerns, but leaves the central issue unresolved.",
+      "options": [
+        "A. 核心問題已由另一方無條件撤回。",
+        "B. 新提案回應了部分顧慮，但核心問題仍未解決。",
+        "C. 新提案已徹底解決所有問題。",
+        "D. 新提案與原本的顧慮完全無關。"
+      ],
+      "ans": "B",
+      "explain": "goes some way 表部分進展，but...unresolved 限定核心仍未解決。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can see why the tradition matters, even if I am less convinced by the claim that it must remain unchanged.",
+      "options": [
+        "A. 我同意這項傳統永遠不能改變。",
+        "B. 我主張每年都必須全面廢除傳統。",
+        "C. 我理解傳統的重要，但不太認同它必須原封不動。",
+        "D. 我否認這項傳統對任何人有意義。"
+      ],
+      "ans": "C",
+      "explain": "even if 分開理解價值與接受不變主張兩件事；不能推論主張廢除。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The policy is presented as a safeguard, though those affected may experience it as an intrusion.",
+      "options": [
+        "A. 政策被說成保護措施，受影響者卻可能覺得受到干涉。",
+        "B. 所有受影響者都已一致承認政策很有幫助。",
+        "C. 政策已被法院宣布完全失效。",
+        "D. 政策的目的和所有人的感受已被證明相同。"
+      ],
+      "ans": "A",
+      "explain": "presented as 與 may experience 對照政策說法和可能的主觀體驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What troubles me is not that the exhibition takes a position, but that it presents that position as if no reasonable alternative existed.",
+      "options": [
+        "A. 我只是在質疑展品是否擺放整齊。",
+        "B. 我擔心的不是展覽有立場，而是它讓人以為沒有其他合理觀點。",
+        "C. 我認為展覽應完全避免任何解讀。",
+        "D. 我同意展覽已公平呈現所有合理觀點。"
+      ],
+      "ans": "B",
+      "explain": "not that...but that 精準定位批評在排除合理替代觀點，不是有立場本身。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The compromise may hold for now, but its durability depends on expectations that neither side has made explicit.",
+      "options": [
+        "A. 妥協已破裂，沒有任何維持的可能。",
+        "B. 只有其中一方的期待尚未說明。",
+        "C. 妥協目前或可維持，但長久與否取決於雙方尚未明說的期待。",
+        "D. 雙方已詳列所有期待，因此妥協必定長久。"
+      ],
+      "ans": "C",
+      "explain": "may hold for now 保留短期可能，neither side 表雙方均未明示；不保證長久。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A host says: You are very welcome to stay, though I should mention we leave at six. What is the most reasonable interpretation?",
+      "options": [
+        "A. The invitation is sincere but subject to a practical time constraint.",
+        "B. The host has withdrawn the invitation without saying so.",
+        "C. The guest is being required to leave precisely at midnight.",
+        "D. The departure time has been changed for the guest’s benefit."
+      ],
+      "ans": "A",
+      "explain": "歡迎留下與六點離開的限制同時成立；不能推論邀請已撤回或時間已為客人調整。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The redevelopment has become a ___ of contention between residents and the council.",
+      "options": [
+        "A. leaf",
+        "B. bone",
+        "C. frame",
+        "D. grain"
+      ],
+      "ans": "B",
+      "explain": "a bone of contention 是爭論焦點；其他詞不構成此慣用搭配。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【分詞構句】___ in considerable detail, the itinerary left little room for spontaneous changes.",
+      "options": [
+        "A. Being plan",
+        "B. Had been planning",
+        "C. Having been planned",
+        "D. Having planned"
+      ],
+      "ans": "C",
+      "explain": "itinerary 是被規劃的對象，需被動 Having been planned；主動 Having planned 會誤把行程當成規劃者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】No sooner ___ the revised opening hours than customers began asking for clarification.",
+      "options": [
+        "A. had the shop announced",
+        "B. the shop had announced",
+        "C. has the shop announcing",
+        "D. did the shop announced"
+      ],
+      "ans": "A",
+      "explain": "No sooner 置首，過去完成式倒裝為 had＋主詞＋過去分詞，並與 than 搭配。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An art festival describes itself as community-led. Local residents select the programme, but sponsors retain the right to veto works that conflict with their brand policies. What limits the description?",
+      "options": [
+        "A. The festival refuses all forms of outside financial support.",
+        "B. Community control is constrained by sponsors’ final power to exclude works.",
+        "C. Residents have no role at all in selecting the programme.",
+        "D. Sponsors are required to exhibit every work residents propose."
+      ],
+      "ans": "B",
+      "explain": "居民有選擇權，但贊助者有否決權，因此自主權受限制；不能說居民完全沒角色。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The review calls the production accessible without being patronising. What is the praise?",
+      "options": [
+        "A. It simplifies the material by treating the audience as incapable.",
+        "B. It avoids presenting any demanding ideas to any audience.",
+        "C. It is easy to engage with while respecting the audience’s intelligence.",
+        "D. It requires specialised knowledge that only experts possess."
+      ],
+      "ans": "C",
+      "explain": "accessible 是容易親近理解，without being patronising 表示沒有居高臨下地低估觀眾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A hotel’s sustainability statement lists reductions per guest-night, while total guest-nights have doubled. What additional information is needed to assess the total environmental impact?",
+      "options": [
+        "A. The size of the per-night reduction relative to the increase in guest-nights.",
+        "B. The colour used to print the sustainability statement.",
+        "C. The number of pages in the hotel’s promotional brochure.",
+        "D. Whether the hotel’s name contains the word green."
+      ],
+      "ans": "A",
+      "explain": "每單位減少與總使用量增加須一起考量，才可判斷總影響；其餘資訊無法解決這個比較。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A city promotes a district as an authentic alternative to tourist hotspots. Small independent shops soon give way to chains selling a standardised version of local culture. What tension does the account highlight?",
+      "options": [
+        "A. The city has stopped promoting the district altogether.",
+        "B. Promoting local distinctiveness can help erode the conditions that sustain it.",
+        "C. Independent shops and chain retailers are defined as the same business model.",
+        "D. Tourism invariably preserves every aspect of local culture."
+      ],
+      "ans": "B",
+      "explain": "以在地獨特性吸引人潮，卻促成標準化與店家替換，形成推廣與侵蝕的矛盾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The committee’s willingness to listen should not be mistaken for readiness to concede. Which inference is justified?",
+      "options": [
+        "A. Listening to objections proves that the committee is insincere.",
+        "B. The committee has refused to hear any alternative views.",
+        "C. Hearing objections does not itself imply agreement to change position.",
+        "D. The committee has already agreed with every objection."
+      ],
+      "ans": "C",
+      "explain": "listen 與 concede 是不同程度的承諾；願意聽不必然代表讓步，也不能直接推論不真誠。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對同一事物同時抱有矛盾感受",
+      "ans": "AMBIVALENCE",
+      "speak": "ambivalence"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：未經適當同意而取用他人事物的行為",
+      "ans": "APPROPRIATION",
+      "speak": "appropriation"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：持續引起爭議的焦點",
+      "ans": "A BONE OF CONTENTION",
+      "speak": "a bone of contention"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：毫無保留的支持",
+      "ans": "AN UNQUALIFIED ENDORSEMENT",
+      "speak": "an unqualified endorsement"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：這項舉動出於好意卻方向有誤",
+      "ans": "THE GESTURE WAS WELL INTENTIONED BUT MISGUIDED",
+      "speak": "the gesture was well intentioned but misguided"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：真正的合作需要的不只是象徵性諮詢",
+      "ans": "GENUINE COLLABORATION REQUIRES MORE THAN TOKEN CONSULTATION",
+      "speak": "genuine collaboration requires more than token consultation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：同時具有互相衝突的感受或態度（A 開頭，11 個字母）",
+      "ans": "AMBIVALENCE",
+      "speak": "ambivalence"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A M B I V _ L E N C E (同時具有互相衝突的感受或態度)",
+      "ans": "A",
+      "speak": "ambivalence"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：未經適當同意而取用他人事物的行為（A 開頭，13 個字母）",
+      "ans": "APPROPRIATION",
+      "speak": "appropriation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：為平息爭執而願意和解的（C 開頭，12 個字母）",
+      "ans": "CONCILIATORY",
+      "speak": "conciliatory"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C O N C _ L I A _ O R Y (為平息爭執而願意和解的)",
+      "ans": "IT",
+      "speak": "conciliatory"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：自認替人著想而限制其自主的（P 開頭，13 個字母）",
+      "ans": "PATERNALISTIC",
+      "speak": "paternalistic"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "provenance",
+      "options": [
+        "A. 事物可追查的來源與沿革",
+        "B. 事物在市場上的受歡迎程度",
+        "C. 事物被更換的固定頻率",
+        "D. 事物的預期使用壽命"
+      ],
+      "ans": "A",
+      "explain": "provenance 指來源與來歷，尤其涉及能否追查與驗證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "obsolescence",
+      "options": [
+        "A. 因資料公開而增加透明度的狀態",
+        "B. 因技術或需求改變而過時的狀態",
+        "C. 因外觀出眾而受到注意的狀態",
+        "D. 因使用過度而立即損毀的狀態"
+      ],
+      "ans": "B",
+      "explain": "obsolescence 是過時，不必表示已物理損壞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "by the same token",
+      "options": [
+        "A. 只在拿到同一枚代幣後",
+        "B. 直到所有證據都被否定時",
+        "C. 基於相同的理由或邏輯",
+        "D. 無論先前理由為何都相反"
+      ],
+      "ans": "C",
+      "explain": "by the same token 表依同樣道理，不是字面代幣。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The recommendation is provisional, pending a more thorough assessment.",
+      "options": [
+        "A. 建議是暫定的，尚待更完整的評估。",
+        "B. 建議已成為無法更改的最終決定。",
+        "C. 評估已全部完成且沒有任何保留。",
+        "D. 所有建議都被禁止在評估前提出。"
+      ],
+      "ans": "A",
+      "explain": "provisional 暫定，pending 表等待某事完成。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am wary of treating the absence of reported failures as proof that the system is robust.",
+      "options": [
+        "A. 我主張只有失敗越多才表示系統越可靠。",
+        "B. 我對把沒有失敗通報當成系統穩健的證明抱持戒心。",
+        "C. 我確定系統從未在任何情況下失敗。",
+        "D. 我認為所有失敗通報都已證明是虛構的。"
+      ],
+      "ans": "B",
+      "explain": "absence of reported failures 不等於 absence of failures，更不足以單獨證明穩健。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The interface makes refusal possible in theory, but considerably more cumbersome than acceptance in practice.",
+      "options": [
+        "A. 拒絕和接受的操作步驟完全相同。",
+        "B. 接受必須經過比拒絕更繁瑣的程序。",
+        "C. 介面理論上可拒絕，實際操作卻比接受麻煩得多。",
+        "D. 介面完全沒有拒絕選項。"
+      ],
+      "ans": "C",
+      "explain": "possible in theory 與 cumbersome in practice 區分名義選擇與操作阻力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What looks like a change in behaviour may partly reflect a change in what the software records.",
+      "options": [
+        "A. 看似行為改變，可能有部分只是軟體記錄方式改了。",
+        "B. 軟體記錄方式改變足以證明行為完全沒變。",
+        "C. 所有行為變化都能直接由單一數字確定。",
+        "D. 軟體已停止記錄所有使用者行為。"
+      ],
+      "ans": "A",
+      "explain": "may partly 保留多重成因，不否定真實行為也可能改變。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The problem with the metric is not that it measures nothing, but that what it measures has quietly become a substitute for what we actually care about.",
+      "options": [
+        "A. 只要指標能測量，就一定等於我們真正關心的事。",
+        "B. 問題不是指標毫無測量作用，而是它衡量的東西悄悄取代了真正關注的目標。",
+        "C. 指標已完全無法產生任何資料。",
+        "D. 真正關注的目標已由所有人明確同意改變。"
+      ],
+      "ans": "B",
+      "explain": "區分可測量性與目標替代，quietly 暗示未充分檢視的轉移。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We should be sceptical of an account that treats the technology as inevitable while leaving the choices behind its design unexamined.",
+      "options": [
+        "A. 懷疑某種說法等於證明所有技術都有害。",
+        "B. 設計選擇既已充分檢視，就必須接受必然性。",
+        "C. 若把技術說成必然卻不檢視設計選擇，就應保持懷疑。",
+        "D. 所有技術設計都不包含任何人為選擇。"
+      ],
+      "ans": "C",
+      "explain": "批評敘事忽略人為選擇，不是全面拒絕技術。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The platform’s popularity should not be conflated with its reliability. What distinction is required?",
+      "options": [
+        "A. Widespread use and trustworthiness are separate properties.",
+        "B. Widespread use is sufficient evidence of trustworthiness.",
+        "C. Reliable services cannot attract large numbers of users.",
+        "D. Only unpopular services require any verification."
+      ],
+      "ans": "A",
+      "explain": "conflate 是混為一談；普及與可靠應分開評估。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【分詞構句】___ of its original context, the quotation appeared to support the opposite view.",
+      "options": [
+        "A. To have stripping",
+        "B. Stripped",
+        "C. Stripping",
+        "D. Having stripping"
+      ],
+      "ans": "B",
+      "explain": "quotation 被剝離語境，用過去分詞 Stripped；主動形式會誤將引文當成施動者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which sentence appropriately flags a limitation without dismissing the analysis altogether?",
+      "options": [
+        "A. Every assumption has been verified beyond possible doubt.",
+        "B. No scrutiny could add anything to our understanding.",
+        "C. The analysis is informative, though its assumptions require closer scrutiny.",
+        "D. The analysis has no informational value under any interpretation."
+      ],
+      "ans": "C",
+      "explain": "肯定 informative 並保留 assumptions 需審視，避免全盤否定或過度保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The vendor’s broad assurances are no ___ for independent testing.",
+      "options": [
+        "A. substitute",
+        "B. substitutional",
+        "C. substituting",
+        "D. substituted"
+      ],
+      "ans": "A",
+      "explain": "no substitute for 是「不能取代」的固定結構，此處需要名詞 substitute。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A search tool ranks results partly by popularity. A researcher notes that frequently repeated claims may therefore appear authoritative even when they share a single unsupported source. What is the concern?",
+      "options": [
+        "A. Independent sources necessarily use different vocabulary.",
+        "B. Repetition may be mistaken for independent corroboration.",
+        "C. Every popular result must be factually incorrect.",
+        "D. The ranking system excludes all unsupported material."
+      ],
+      "ans": "B",
+      "explain": "多次重複可能都來自同一未證實來源，不等於獨立佐證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A company reports fewer security incidents after redefining which events count as incidents. What complicates comparison with earlier years?",
+      "options": [
+        "A. Every earlier incident has been retrospectively investigated.",
+        "B. A lower count always indicates a lower underlying risk.",
+        "C. The measurement criterion has changed alongside the reported count.",
+        "D. The company has established that security is now perfect."
+      ],
+      "ans": "C",
+      "explain": "定義改變會影響計數，可比性受限；下降不直接證明風險降低。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The report distinguishes what the model reproduces from what it explains. What contrast is intended?",
+      "options": [
+        "A. Matching an observed pattern is different from accounting for why it occurs.",
+        "B. An explanation is defined as any repeated output.",
+        "C. Reproducing a pattern proves that its cause is known.",
+        "D. Observed patterns cannot be described in words."
+      ],
+      "ans": "A",
+      "explain": "reproduce 指重現，explain 指解釋成因；重現本身不足以證明理解原因。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An app displays a precise score for well-being. The score combines self-reports, movement data and assumptions about what counts as a good day. The interface does not disclose the weighting. What is the key limitation?",
+      "options": [
+        "A. A disclosed weighting would guarantee universal agreement about well-being.",
+        "B. Numerical precision may obscure value judgements embedded in the score.",
+        "C. The use of numbers proves that all underlying observations are false.",
+        "D. Self-reports can never contribute to any useful assessment."
+      ],
+      "ans": "B",
+      "explain": "精確外觀可能掩蓋指標選擇與權重中的價值判斷；公開也不保證人人同意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A newsroom corrects an inaccurate article but leaves the original headline unchanged in social media previews. Many readers see only the preview. What does this illustrate?",
+      "options": [
+        "A. Readers who see previews must also have read the full correction.",
+        "B. The newsroom has proved that the original headline was accurate.",
+        "C. A correction’s effectiveness depends on how information continues to circulate.",
+        "D. Publishing a correction erases every earlier version from public memory."
+      ],
+      "ans": "C",
+      "explain": "更正存在不等於已接觸舊訊息的人都看到更正，傳播路徑影響效果。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：不同系統能互相配合運作的特性",
+      "ans": "INTEROPERABILITY",
+      "speak": "interoperability"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：資料或描述細分的程度",
+      "ans": "GRANULARITY",
+      "speak": "granularity"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍可能修訂的暫定評估",
+      "ans": "A PROVISIONAL ASSESSMENT",
+      "speak": "a provisional assessment"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：讓人誤以為確定無疑的印象",
+      "ans": "A MISLEADING IMPRESSION OF CERTAINTY",
+      "speak": "a misleading impression of certainty"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：數字精確可能掩蓋假設的不確定性",
+      "ans": "NUMERICAL PRECISION CAN CONCEAL UNCERTAINTY IN ASSUMPTIONS",
+      "speak": "numerical precision can conceal uncertainty in assumptions"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：聲譽無法取代獨立查證",
+      "ans": "REPUTATION CANNOT SUBSTITUTE FOR INDEPENDENT VERIFICATION",
+      "speak": "reputation cannot substitute for independent verification"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：系統在不同條件下維持表現的穩健程度（R 開頭，10 個字母）",
+      "ans": "ROBUSTNESS",
+      "speak": "robustness"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：並非故意而是不慎造成的（I 開頭，11 個字母）",
+      "ans": "INADVERTENT",
+      "speak": "inadvertent"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：程序或理由不易看清了解的特性（O 開頭，7 個字母）",
+      "ans": "OPACITY",
+      "speak": "opacity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A N O N _ M I T Y (個人身分不被揭露或辨識的狀態)",
+      "ans": "Y",
+      "speak": "anonymity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E X T R _ P O L _ T I O N (由已知資料推估其他範圍的過程)",
+      "ans": "AA",
+      "speak": "extrapolation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ R E _ A T _ O N (兩種變化彼此相關的關係)",
+      "ans": "RLI",
+      "speak": "correlation"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That assurance rings rather hollow in light of recent events.",
+      "options": [
+        "A. 最近的事件讓保證更可信。",
+        "B. 那個保證是由空心物體發出的聲音。",
+        "C. 說話者沒有對保證作出評價。",
+        "D. 考量最近發生的事，那個保證顯得缺乏說服力。"
+      ],
+      "ans": "D",
+      "explain": "ring hollow 是聽來空洞、不可信；in light of 是考量某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am reluctant to endorse a solution that merely shifts the burden elsewhere.",
+      "options": [
+        "A. 我支持任何能把問題藏起來的做法。",
+        "B. 我認為負擔已完全解除。",
+        "C. 我只擔心搬運物品的速度。",
+        "D. 我不願支持只把負擔轉移到別處的解法。"
+      ],
+      "ans": "D",
+      "explain": "reluctant to endorse 是不願背書，merely shifts 強調沒有真正解決。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It would be premature to attribute the decline solely to the new rules, given that demand had already begun to fall.",
+      "options": [
+        "A. 新規則已被證明是下降的唯一原因。",
+        "B. 需求直到規則取消後才開始下降。",
+        "C. 說話者確定新規則完全沒有影響。",
+        "D. 需求早已下降，因此現在把跌幅全歸因於新規則還太早。"
+      ],
+      "ans": "D",
+      "explain": "solely 是關鍵；反對唯一歸因，不等於主張新規則完全無效。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】___ the potential risks, the team decided to postpone the launch.",
+      "options": [
+        "A. Have assessed",
+        "B. Having been assess",
+        "C. Had assessing",
+        "D. Having assessed"
+      ],
+      "ans": "D",
+      "explain": "Having assessed 是完成式分詞構句，表示團隊先評估風險再決定延期；其餘形式不成立。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】The editor writes: I would be inclined to accept the argument, were it not for the missing data. What prevents acceptance?",
+      "options": [
+        "A. The editor’s unconditional rejection of all arguments.",
+        "B. The presence of too many independent datasets.",
+        "C. The editor’s lack of interest in reading anything.",
+        "D. The absence of data that the argument needs."
+      ],
+      "ans": "D",
+      "explain": "were it not for 相當於 if it were not for；缺少資料是接受論點的障礙。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A museum removed entry fees, and attendance doubled. Its director welcomed the increase but noted that the visitor profile remained largely unchanged. What qualification is being made?",
+      "options": [
+        "A. The number of visitors did not change.",
+        "B. The director believes removing fees was illegal.",
+        "C. All previous visitors stopped attending.",
+        "D. Higher attendance has not necessarily brought a more diverse audience."
+      ],
+      "ans": "D",
+      "explain": "人數增加不代表觀眾組成更多元；director 的保留針對 profile，而非否定數量成長。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：歸根究柢",
+      "ans": "IN THE FINAL ANALYSIS",
+      "speak": "in the final analysis"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：他們表面的共識掩藏了根本分歧",
+      "ans": "THEIR APPARENT CONSENSUS CONCEALS FUNDAMENTAL DISAGREEMENTS",
+      "speak": "their apparent consensus conceals fundamental disagreements"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E Q U I _ O C A L (說法或證據不明確而有多種解讀的)",
+      "ans": "V",
+      "speak": "equivocal"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S C _ U P _ L _ U S (做事極為仔細且守規矩的)",
+      "ans": "RUO",
+      "speak": "scrupulous"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The arrangement is workable, albeit at considerable inconvenience to the volunteers.",
+      "options": [
+        "A. 這個安排完全不可行，因此已取消。",
+        "B. 志工認為這個安排沒有任何不便。",
+        "C. 所有不便都由付費觀眾承擔。",
+        "D. 這個安排可行，但會給志工帶來很大不便。"
+      ],
+      "ans": "D",
+      "explain": "albeit 引入讓步，保留可行但代價不小的評價。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The attraction of the scheme lies as much in the sense of ownership it creates as in the money it saves.",
+      "options": [
+        "A. 方案的唯一優點是省錢。",
+        "B. 方案已把所有資產的法律所有權轉移。",
+        "C. 方案完全無法節省任何費用。",
+        "D. 方案的吸引力既在省錢，也在讓人產生參與和認同感。"
+      ],
+      "ans": "D",
+      "explain": "as much A as B 表兩者皆重要；sense of ownership 是認同與責任感，不一定指法律產權。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is no denying the event has raised the town’s profile; whether residents regard that as an unqualified benefit is another matter.",
+      "options": [
+        "A. 活動沒有提高知名度，所以居民一致反對。",
+        "B. 居民已無條件支持所有活動影響。",
+        "C. 說話者否認居民有權對活動表達意見。",
+        "D. 活動確實提高知名度，但居民是否認為全是好處仍是另一回事。"
+      ],
+      "ans": "D",
+      "explain": "先承認曝光效果，再區分居民對淨利益的評價；unqualified 是不附帶保留的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The organiser described the compromise as pragmatic rather than ideal. What distinction is being made?",
+      "options": [
+        "A. It is based entirely on theory and ignores practical needs.",
+        "B. It has been rejected because no one could implement it.",
+        "C. It satisfies every participant’s original preference.",
+        "D. It meets practical needs without being the preferred solution in every respect."
+      ],
+      "ans": "D",
+      "explain": "pragmatic 側重可行，rather than ideal 保留它不盡理想的部分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which wording politely maintains a contractual limit rather than granting an exception?",
+      "options": [
+        "A. Given the circumstances, we will waive the cancellation charge.",
+        "B. The cancellation terms have been suspended for this booking.",
+        "C. We agree that the contract no longer governs this reservation.",
+        "D. I appreciate the circumstances; nevertheless, the cancellation terms still apply."
+      ],
+      "ans": "D",
+      "explain": "nevertheless...still apply 保留規定效力；其餘都同意豁免或停止適用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A restaurant’s tasting menu is praised for invention but criticised for obscuring the ingredients it claims to celebrate. What is the reviewer’s reservation?",
+      "options": [
+        "A. The restaurant uses only ingredients that are unavailable locally.",
+        "B. The menu contains no original ideas whatsoever.",
+        "C. The reviewer believes ingredients should never be cooked.",
+        "D. The elaborate treatment can distract from the qualities of the ingredients."
+      ],
+      "ans": "D",
+      "explain": "肯定創意，保留是處理方式掩蓋食材本質；不是全盤否定烹調或創意。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：參與者對事務的認同與責任感",
+      "ans": "A SENSE OF OWNERSHIP",
+      "speak": "a sense of ownership"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：在地特色無法按需求訂製",
+      "ans": "LOCAL DISTINCTIVENESS CANNOT BE MANUFACTURED TO ORDER",
+      "speak": "local distinctiveness cannot be manufactured to order"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A P P R O P _ I A T I O N (未經適當同意而取用他人事物的行為)",
+      "ans": "R",
+      "speak": "appropriation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P A T _ R N _ L I _ T I C (自認替人著想而限制其自主的)",
+      "ans": "EAS",
+      "speak": "paternalistic"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apparent precision of the estimate should not distract us from the uncertainty of its assumptions.",
+      "options": [
+        "A. 估值精確已證明所有假設確定無疑。",
+        "B. 只要有假設，就不可能進行任何估算。",
+        "C. 我們應停止檢查估值，因為數字已經出現。",
+        "D. 估值看似精確，不應讓我們忽略假設的不確定性。"
+      ],
+      "ans": "D",
+      "explain": "精確的數字形式與基礎假設的可靠程度不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The source is reputable, but that does not exempt this particular claim from verification.",
+      "options": [
+        "A. 有聲譽的來源永遠不可能出錯。",
+        "B. 只要某項說法需查證，整個來源就必定不可靠。",
+        "C. 這項說法已被獨立證實為假。",
+        "D. 來源雖有聲譽，這項具體說法仍需查證。"
+      ],
+      "ans": "D",
+      "explain": "來源聲譽和單項主張的驗證責任應分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The safeguards are reassuring as far as they go; the difficulty is that they apply only after the information has already been collected.",
+      "options": [
+        "A. 保護措施在收集前就已涵蓋所有風險。",
+        "B. 資料從未被收集，所以保護措施毫無用處。",
+        "C. 說話者已證明資料收集後不可能提供任何保護。",
+        "D. 保護措施在適用範圍內令人安心，但限制是資料收集後才生效。"
+      ],
+      "ans": "D",
+      "explain": "as far as they go 有限肯定，焦點是保護生效時點與涵蓋範圍。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Rarely ___ such a marked difference between the advertised and actual performance.",
+      "options": [
+        "A. reviewers have observed",
+        "B. reviewers observed have",
+        "C. have observed reviewers",
+        "D. have reviewers observed"
+      ],
+      "ans": "D",
+      "explain": "Rarely 置首，現在完成式助動詞提前，主詞 reviewers 在 have 與 observed 之間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The convenience is real; the claim that it comes at no cost is rather less convincing. What does the writer accept?",
+      "options": [
+        "A. The service has neither benefits nor disadvantages.",
+        "B. Every cost has already been calculated and disclosed.",
+        "C. Convenience necessarily outweighs any possible concern.",
+        "D. The service offers convenience, while its wider trade-offs remain in question."
+      ],
+      "ans": "D",
+      "explain": "先肯定便利，再質疑無代價主張；不能推成已判定利大於弊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The question is not whether automation can assist judgement, but which judgements we are content to delegate. What is the focus?",
+      "options": [
+        "A. Whether assistance from automation is technically possible at all.",
+        "B. Whether every human decision should be automated immediately.",
+        "C. Whether delegation eliminates responsibility in every case.",
+        "D. The acceptable boundaries of delegating decisions."
+      ],
+      "ans": "D",
+      "explain": "句子把焦點由能否協助移到願意委託哪些判斷，不是全面支持或拒絕自動化。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：內含於設計或說法中的價值判斷",
+      "ans": "AN EMBEDDED VALUE JUDGEMENT",
+      "speak": "an embedded value judgement"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：便利不會自動使無限制收集變得合理",
+      "ans": "CONVENIENCE DOES NOT AUTOMATICALLY JUSTIFY UNRESTRICTED COLLECTION",
+      "speak": "convenience does not automatically justify unrestricted collection"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：仔細且帶有檢驗目的的審視（S 開頭，8 個字母）",
+      "ans": "SCRUTINY",
+      "speak": "scrutiny"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O V _ R _ I _ H T (對機構或程序進行監督的責任)",
+      "ans": "ESG",
+      "speak": "oversight"
+    }
+  ]
 }

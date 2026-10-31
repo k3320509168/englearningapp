@@ -1,4 +1,1530 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are still weighing up the alternatives.",
+      "options": [
+        "A. 我們仍在權衡各種選擇。",
+        "B. 我們已排除所有替代方案。",
+        "C. 我們只是在測量物品重量。",
+        "D. 我們已決定不再考慮這件事。"
+      ],
+      "ans": "A",
+      "explain": "weigh up the alternatives 表示比較選項利弊，still 表示尚未結束。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The figures are subject to revision.",
+      "options": [
+        "A. 這些數字只供學生複習。",
+        "B. 這些數字之後可能修正。",
+        "C. 這些數字絕對不能修改。",
+        "D. 這些數字已證明完全錯誤。"
+      ],
+      "ans": "B",
+      "explain": "subject to revision 表示仍可能修訂，並非已確定錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would rather we kept this between ourselves.",
+      "options": [
+        "A. 我已經把這件事公開。",
+        "B. 我不想再和你討論任何事。",
+        "C. 我比較希望這件事只留在我們之間。",
+        "D. 我希望你把消息傳給每個人。"
+      ],
+      "ans": "C",
+      "explain": "keep this between ourselves 是保密的委婉要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We need to take the maintenance costs into account.",
+      "options": [
+        "A. 我們必須把維護費用納入考量。",
+        "B. 我們必須把維護費存進銀行。",
+        "C. 我們決定忽略維護費用。",
+        "D. 我們已經付清所有維護費。"
+      ],
+      "ans": "A",
+      "explain": "take into account 是納入考量，不是付款或存款。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not opposed to the idea; I just doubt whether we can afford it.",
+      "options": [
+        "A. 說話者已經批准所有支出。",
+        "B. 說話者不反對構想，但質疑預算是否足夠。",
+        "C. 說話者認為構想本身毫無價值。",
+        "D. 說話者保證經費完全沒有問題。"
+      ],
+      "ans": "B",
+      "explain": "not opposed 與 doubt whether we can afford it 分別交代態度及財務顧慮。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You need not have printed the report. We already had a digital copy.",
+      "options": [
+        "A. 數位版本已遺失，必須補印。",
+        "B. 印報告是唯一可行的方法。",
+        "C. 你其實不必印報告，但已經印了。",
+        "D. 你還沒印報告，而且必須立即印。"
+      ],
+      "ans": "C",
+      "explain": "need not have done 表示事情已做，但原本不必要。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The consultant was supposed to have sent the revised estimate by now.",
+      "options": [
+        "A. 顧問照理現在應已寄出修正估價。",
+        "B. 顧問被禁止寄出修正估價。",
+        "C. 說話者確認估價已經收到。",
+        "D. 修正估價預定明年才開始製作。"
+      ],
+      "ans": "A",
+      "explain": "was supposed to have sent 表達截至現在應完成的期待，並未確認收到。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not rule it out, but I would not count on it either.",
+      "options": [
+        "A. 說話者要求立刻停止計數。",
+        "B. 這件事有可能，但不值得當成可靠指望。",
+        "C. 這件事已經確定會發生。",
+        "D. 這件事完全不可能發生。"
+      ],
+      "ans": "B",
+      "explain": "not rule out 是不排除，not count on 是不要寄望；兩者共同保留不確定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The cheaper option would save us money initially, though repairs could wipe out those savings.",
+      "options": [
+        "A. 較貴方案已被證明不需要維修。",
+        "B. 說話者只比較兩個方案的顏色。",
+        "C. 初期省下的錢可能被後續維修費抵銷。",
+        "D. 便宜方案保證終身沒有維修費。"
+      ],
+      "ans": "C",
+      "explain": "initially 限定初期，wipe out those savings 表示抵銷節省金額。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【推測】The laboratory was locked all night, but the window was open this morning. Someone ___ left it open before locking up.",
+      "options": [
+        "A. must have",
+        "B. must",
+        "C. has to",
+        "D. is to"
+      ],
+      "ans": "A",
+      "explain": "must have＋過去分詞表示根據線索推測過去；其餘結構無法接 left 表達這個意思。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【被動】The bridge is thought ___ during the storm last week.",
+      "options": [
+        "A. to damaging",
+        "B. to have been damaged",
+        "C. to have damaged",
+        "D. having damaged"
+      ],
+      "ans": "B",
+      "explain": "is thought to have been damaged 表示「被認為先前已受損」；橋是受損者，需完成式被動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The company agreed to ___ responsibility for the error rather than blame the supplier.",
+      "options": [
+        "A. resume",
+        "B. presume",
+        "C. assume",
+        "D. consume"
+      ],
+      "ans": "C",
+      "explain": "assume responsibility 是承擔責任；consume 消耗、resume 恢復、presume 推定均不符合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【時態】The trial is still under way. Researchers ___ the new coating for six months now.",
+      "options": [
+        "A. have been testing",
+        "B. had tested",
+        "C. will have tested",
+        "D. were to test"
+      ],
+      "ans": "A",
+      "explain": "still under way 與 for six months now 表示從過去持續至今的測試，用現在完成進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The hotel advertises free parking. However, its underground garage is reserved for guests who book directly; other guests must use a paid public car park. What is the limitation?",
+      "options": [
+        "A. The public car park is free for every guest.",
+        "B. Free parking depends on how the booking is made.",
+        "C. All hotel guests must pay for parking.",
+        "D. Only guests without cars can book directly."
+      ],
+      "ans": "B",
+      "explain": "限制是訂房管道；直接向飯店訂房才可用免費車庫。不是所有人都付費，也未說公共停車場免費。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【句意】The manager stopped short of promising a refund. What did the manager avoid doing?",
+      "options": [
+        "A. Rejecting every possibility of a refund.",
+        "B. Returning less money than had been promised.",
+        "C. Making a definite commitment to return the money.",
+        "D. Explaining why the meeting ended early."
+      ],
+      "ans": "C",
+      "explain": "stop short of doing 表示沒有做到某一步；未承諾退款不等於排除退款。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The report refers to a single incident: you lent me your access card yesterday. I cannot find my own now. If you ___ me your card yesterday, I would be unable to enter today.",
+      "options": [
+        "A. had not lent",
+        "B. did not lend",
+        "C. have not lent",
+        "D. would not lend"
+      ],
+      "ans": "A",
+      "explain": "過去事件造成現在結果，混合條件句用 If＋過去完成式、would＋原形。這裡假設昨天沒有借卡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A city extended library hours for a three-month trial. Evening visits increased, but staff overtime also rose. The council requested a cost review before deciding whether to continue. What can be concluded?",
+      "options": [
+        "A. Staff overtime proves that all evening visits were unnecessary.",
+        "B. The extension attracted users, but its financial viability remains under review.",
+        "C. The council has already approved permanent evening hours.",
+        "D. The trial failed to attract any additional visitors."
+      ],
+      "ans": "B",
+      "explain": "人次增加與成本上升都有證據，是否繼續仍待評估；其餘選項加入未獲支持的結論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The proposal is workable in principle, though several practical obstacles remain. Which summary is most accurate?",
+      "options": [
+        "A. The basic idea is impossible regardless of practical details.",
+        "B. The obstacles have already been removed.",
+        "C. The basic idea could work, but implementation is not yet straightforward.",
+        "D. The proposal is fully ready to implement without changes."
+      ],
+      "ans": "C",
+      "explain": "in principle 肯定原則可行，though 保留實務障礙；不能推論已準備完成或完全不可能。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：應變措施",
+      "ans": "CONTINGENCY",
+      "speak": "contingency"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可行性",
+      "ans": "FEASIBILITY",
+      "speak": "feasibility"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：互利的",
+      "ans": "MUTUALLY BENEFICIAL",
+      "speak": "mutually beneficial"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：應優先處理的事",
+      "ans": "A MATTER OF PRIORITY",
+      "speak": "a matter of priority"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我們應重新考慮背後的假設",
+      "ans": "WE SHOULD RECONSIDER THE UNDERLYING ASSUMPTIONS",
+      "speak": "we should reconsider the underlying assumptions"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：好處大於潛在缺點",
+      "ans": "THE BENEFITS OUTWEIGH THE POTENTIAL DRAWBACKS",
+      "speak": "the benefits outweigh the potential drawbacks"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：須對決策負責的責任（A 開頭，14 個字母）",
+      "ans": "ACCOUNTABILITY",
+      "speak": "accountability"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A C C O U N T _ B I L I T Y (須對決策負責的責任)",
+      "ans": "A",
+      "speak": "accountability"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：可能發生而須預作準備的意外情況（C 開頭，11 個字母）",
+      "ans": "CONTINGENCY",
+      "speak": "contingency"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：計畫能否實行的可行性（F 開頭，11 個字母）",
+      "ans": "FEASIBILITY",
+      "speak": "feasibility"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F E A _ I B I _ I T Y (計畫能否實行的可行性)",
+      "ans": "SL",
+      "speak": "feasibility"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：事件帶來的間接負面後果（R 開頭，12 個字母）",
+      "ans": "REPERCUSSION",
+      "speak": "repercussion"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Could you give me a rough idea of the cost before I commit?",
+      "options": [
+        "A. 說話者想先知道大約費用，再決定是否答應。",
+        "B. 說話者已接受任何費用，不需再估價。",
+        "C. 說話者要求精確到最後一分錢才聽說明。",
+        "D. 說話者要在已付款後才討論價格。"
+      ],
+      "ans": "A",
+      "explain": "rough idea 是大致概念，before I commit 表示承諾前先了解。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am happy to cover your shift, as long as we can swap next week.",
+      "options": [
+        "A. 說話者只願幫忙遮蓋制服。",
+        "B. 只要下週能交換班次，說話者願意代班。",
+        "C. 說話者不願在任何條件下代班。",
+        "D. 說話者已決定下週永久離職。"
+      ],
+      "ans": "B",
+      "explain": "cover your shift 是代班；as long as 連接交換班次的條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The exhibition has been extended due to popular demand.",
+      "options": [
+        "A. 展覽場地已確定增加一倍。",
+        "B. 所有觀眾都被要求延後入場。",
+        "C. 因廣受歡迎，展覽延長了展期。",
+        "D. 因無人參觀，展覽提早關閉。"
+      ],
+      "ans": "C",
+      "explain": "extended 在展覽語境指延長展期，popular demand 是觀眾熱烈要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is no point in setting off now; the last ferry has already left.",
+      "options": [
+        "A. 現在出發已沒有意義，因為末班渡輪已開走。",
+        "B. 現在出發才能趕上即將離港的末班渡輪。",
+        "C. 現在出發沒有明確的目的地。",
+        "D. 渡輪公司還沒決定今天是否開船。"
+      ],
+      "ans": "A",
+      "explain": "no point in 是沒有意義；has already left 確認末班船已離開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I do not mind paying a deposit, but I would like to know under what circumstances it is refundable.",
+      "options": [
+        "A. 說話者只想知道訂金要用哪種顏色的信封。",
+        "B. 說話者願付訂金，但想先了解哪些情況可以退。",
+        "C. 說話者堅持不論任何情況都不得收訂金。",
+        "D. 說話者已確認訂金絕對不能退。"
+      ],
+      "ans": "B",
+      "explain": "do not mind paying 與 would like to know 分別表示接受付款及詢問退款條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The venue is a little out of the way, but the shuttle service should make up for that.",
+      "options": [
+        "A. 接駁車會把場地移到市中心。",
+        "B. 說話者認為接駁服務一定會使交通更糟。",
+        "C. 場地稍偏遠，但接駁服務應能彌補不便。",
+        "D. 場地交通便利，因此接駁服務已停駛。"
+      ],
+      "ans": "C",
+      "explain": "out of the way 是偏遠；make up for 是補償某項缺點。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are trying to strike a balance between preserving the building and making it accessible.",
+      "options": [
+        "A. 我們正試著兼顧建物保存與無障礙使用。",
+        "B. 我們只打算拆除建物，不考慮其他因素。",
+        "C. 我們已決定禁止公眾進入以方便維修。",
+        "D. 我們認為保存建物和使用便利完全沒有關係。"
+      ],
+      "ans": "A",
+      "explain": "strike a balance 是在兩項需求間取得平衡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not say the performance was bad; it just did not live up to the expectations created by the reviews.",
+      "options": [
+        "A. 說話者沒有看演出，只讀了評論。",
+        "B. 演出不算差，但未達評論讓人產生的期待。",
+        "C. 評論已警告演出很差，而說話者完全同意。",
+        "D. 說話者認為演出比所有評論說的都更出色。"
+      ],
+      "ans": "B",
+      "explain": "not bad 與 did not live up to expectations 是有限肯定加期待落差，不能簡化為全盤否定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The organiser said we could bring guests, but stopped short of saying that their meals would be included.",
+      "options": [
+        "A. 主辦方禁止帶人，只供應個人餐點。",
+        "B. 主辦方明確要求每位來賓付同一筆固定費用。",
+        "C. 主辦方允許帶人，卻未承諾餐費也包含在內。",
+        "D. 主辦方已保證所有來賓的餐費全免。"
+      ],
+      "ans": "C",
+      "explain": "stopped short of saying 表示沒有進一步承諾，並非已確定收費或免費。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The gallery hopes to ___ a wider audience without changing its focus on local artists.",
+      "options": [
+        "A. reach",
+        "B. arrive",
+        "C. attend",
+        "D. extend"
+      ],
+      "ans": "A",
+      "explain": "reach an audience 是觸及觀眾；arrive 後通常接 at/in，attend 是出席，extend 是延長或擴展某物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The guide advised us to allow for delays at the border. What should we do?",
+      "options": [
+        "A. Arrive without making any travel arrangements.",
+        "B. Include possible delays in our travel plans.",
+        "C. Ask border staff to make the delay longer.",
+        "D. Assume that the crossing will certainly be closed."
+      ],
+      "ans": "B",
+      "explain": "allow for 是考量某因素、預留餘裕；不是允許對方刻意延誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The rooms ___ at the moment, so guests are using the west entrance.",
+      "options": [
+        "A. are renovated being",
+        "B. are been renovated",
+        "C. are being renovated",
+        "D. have renovating"
+      ],
+      "ans": "C",
+      "explain": "at the moment 強調正在進行的被動，形式為 are being renovated。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【對話】A colleague asks for feedback, but you need time to review the draft. Which reply agrees to help without promising immediate feedback?",
+      "options": [
+        "A. I can look it over and get back to you tomorrow.",
+        "B. I have already approved every part of it.",
+        "C. I cannot help at any point this week.",
+        "D. You should send it without anyone reviewing it."
+      ],
+      "ans": "A",
+      "explain": "look it over 並約定明天回覆，表示願意協助但不立刻提供意見；其他選項不保留這個意思。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A rail pass covers regional trains but excludes services that require a reservation. Lina plans to use a fast train for which a seat must be booked. What should she check?",
+      "options": [
+        "A. Whether passengers can reserve a seat after leaving the train.",
+        "B. Whether a separate ticket is needed for that service.",
+        "C. Whether every regional train requires a seat booking.",
+        "D. Whether her pass includes all trains without exception."
+      ],
+      "ans": "B",
+      "explain": "須預約的車種被排除，Lina 的車次符合此限制，因此應查是否另購車票。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】We can accommodate your request, provided it does not affect the other bookings. What is being offered?",
+      "options": [
+        "A. A refusal to consider any change.",
+        "B. Confirmation that all other bookings have been cancelled.",
+        "C. Conditional agreement to meet the request.",
+        "D. An apology for an error that has already occurred."
+      ],
+      "ans": "C",
+      "explain": "provided 提出條件；accommodate a request 是配合要求，非已取消其他訂單。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The workshop is advertised as suitable for beginners, but participants must bring a laptop with the software installed. What does being a beginner not remove?",
+      "options": [
+        "A. The need to prepare the required equipment.",
+        "B. The right to ask questions during the workshop.",
+        "C. The possibility of learning a new skill.",
+        "D. The requirement to have completed an advanced course."
+      ],
+      "ans": "A",
+      "explain": "初學者也要自備已安裝軟體的筆電；沒有要求先完成進階課。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A theatre offers discounted seats just before a performance. Tickets cannot be reserved, and availability depends on unsold seats. Nia needs six adjacent seats for a family celebration. Why is the offer risky for her?",
+      "options": [
+        "A. The tickets become more expensive when a performance begins.",
+        "B. It does not guarantee the seating arrangement her group needs.",
+        "C. The discount is available only to people attending alone.",
+        "D. The theatre has announced that no seats remain."
+      ],
+      "ans": "B",
+      "explain": "不能預訂且視剩餘座位決定，無法保證六個連座；其餘限制未被提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【推論】The manager said the new schedule was intended to give staff more flexibility, not to reduce the total hours worked. Which change would conflict with that stated intention?",
+      "options": [
+        "A. Allowing the same hours to be spread differently.",
+        "B. Keeping the total hours while offering different start times.",
+        "C. Using the schedule to cut the contracted weekly hours.",
+        "D. Letting staff start earlier and finish earlier."
+      ],
+      "ans": "C",
+      "explain": "明說不是減少總工時，因此減少約定週工時與此意圖衝突；其他選項可以符合彈性排班。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可供不同需求者便利使用的程度",
+      "ans": "ACCESSIBILITY",
+      "speak": "accessibility"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：相互給予或回應的互惠原則",
+      "ans": "RECIPROCITY",
+      "speak": "reciprocity"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：視供應或空位情況而定",
+      "ans": "SUBJECT TO AVAILABILITY",
+      "speak": "subject to availability"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：雙方都能接受的安排",
+      "ans": "A MUTUALLY ACCEPTABLE ARRANGEMENT",
+      "speak": "a mutually acceptable arrangement"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：在合理範圍內我們可以配合你的要求",
+      "ans": "WE CAN ACCOMMODATE YOUR REQUEST WITHIN REASON",
+      "speak": "we can accommodate your request within reason"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：修訂後的時程已預留意外延誤的餘裕",
+      "ans": "THE REVISED SCHEDULE ALLOWS FOR UNEXPECTED DELAYS",
+      "speak": "the revised schedule allows for unexpected delays"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：場所或服務可便利使用的程度（A 開頭，13 個字母）",
+      "ans": "ACCESSIBILITY",
+      "speak": "accessibility"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A C C E S S _ B I L I T Y (場所或服務可便利使用的程度)",
+      "ans": "I",
+      "speak": "accessibility"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：相互給予或回應的互惠原則（R 開頭，11 個字母）",
+      "ans": "RECIPROCITY",
+      "speak": "reciprocity"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：配合或滿足某人的需要（A 開頭，11 個字母）",
+      "ans": "ACCOMMODATE",
+      "speak": "accommodate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A C C _ M M O _ A T E (配合或滿足某人的需要)",
+      "ans": "OD",
+      "speak": "accommodate"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：建築或設備的翻新整修（R 開頭，13 個字母）",
+      "ans": "REFURBISHMENT",
+      "speak": "refurbishment"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "compatibility",
+      "options": [
+        "A. 相容性，能一起正常運作的程度",
+        "B. 競爭力，能勝過對手的程度",
+        "C. 強制性，必須遵守的程度",
+        "D. 可攜性，能隨身帶走的程度"
+      ],
+      "ans": "A",
+      "explain": "compatibility 指軟硬體等能否配合運作，不是 competitiveness、compulsion 或 portability。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "discrepancy",
+      "options": [
+        "A. 一份資料公開發表的日期",
+        "B. 兩份資料或說法之間的出入",
+        "C. 某種產品供不應求的情況",
+        "D. 一項政策持續不變的時間"
+      ],
+      "ans": "B",
+      "explain": "discrepancy 是原本應相符的事物之間的差異或不一致。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "contingent on",
+      "options": [
+        "A. 發生在另一件事之前",
+        "B. 與某項條件毫不相關",
+        "C. 取決於某項條件",
+        "D. 完全不受條件影響"
+      ],
+      "ans": "C",
+      "explain": "contingent on 表依某條件而定；不是時間先後或無條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would prefer to keep a local copy as a precaution.",
+      "options": [
+        "A. 我比較希望保留本機副本以防萬一。",
+        "B. 我已決定刪除所有本機和遠端副本。",
+        "C. 我只想把檔案寄給當地報紙。",
+        "D. 我認為預防措施沒有任何必要。"
+      ],
+      "ans": "A",
+      "explain": "local copy 在數位語境是本機副本；as a precaution 是預防性措施。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The service claims to be free, but some essential features are only available through a paid subscription.",
+      "options": [
+        "A. 服務只接受紙本申請，不提供數位功能。",
+        "B. 服務標榜免費，但部分必要功能須付費訂閱才能用。",
+        "C. 所有功能都可以免費使用，沒有任何限制。",
+        "D. 只要下載 app 就已付清終身訂閱費。"
+      ],
+      "ans": "B",
+      "explain": "claims to be free 與 paid subscription 呈現免費宣傳的限制。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not suggesting the review is dishonest; I just want to know whether the writer received the product for free.",
+      "options": [
+        "A. 我認為免費取得產品必然讓評論虛假。",
+        "B. 我只是在詢問讀者是否能免費閱讀評論。",
+        "C. 我沒有斷言評論不誠實，只想了解作者是否免費取得產品。",
+        "D. 我已證明作者收錢寫假評論。"
+      ],
+      "ans": "C",
+      "explain": "not suggesting 限制指控強度；詢問取得產品方式是了解可能的利益關係。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "By the time we realised the settings had changed, several files had already been shared publicly.",
+      "options": [
+        "A. 發現設定改變時，已有幾個檔案公開分享。",
+        "B. 設定在所有檔案刪除後才改變。",
+        "C. 我們在任何檔案公開前就已發現並阻止。",
+        "D. 所有檔案都確定從未對外分享。"
+      ],
+      "ans": "A",
+      "explain": "兩個過去完成式交代發現前已發生的設定變化和公開分享。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "An improvement in average performance does not necessarily mean that every user will notice a difference.",
+      "options": [
+        "A. 只要有人沒察覺差異，平均數就一定是錯的。",
+        "B. 平均表現提升不代表每位使用者都會察覺差異。",
+        "C. 每位使用者的表現都已被證明完全相同。",
+        "D. 平均表現提升必定代表任何人都受益。"
+      ],
+      "ans": "B",
+      "explain": "not necessarily 阻止從平均推到每一個個體的過度概括。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would be more comfortable recommending it if the company were clearer about how long the data is retained.",
+      "options": [
+        "A. 我只關心裝置的外觀，資料政策不重要。",
+        "B. 公司已承諾完全不收集任何資料。",
+        "C. 若公司更清楚說明資料保留多久，我會更願意推薦。",
+        "D. 公司已清楚說明保留時間，所以我無條件推薦。"
+      ],
+      "ans": "C",
+      "explain": "假設語氣表達推薦的保留條件；沒有斷言公司不收集資料。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The two devices are fully ___, so the same charger can be used for both.",
+      "options": [
+        "A. compatible",
+        "B. competitive",
+        "C. compulsory",
+        "D. comparable"
+      ],
+      "ans": "A",
+      "explain": "compatible 指能相容使用；competitive 有競爭力、compulsory 強制、comparable 可比較均不表相容性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The password should ___ before anyone outside the team is given access.",
+      "options": [
+        "A. change it",
+        "B. be changed",
+        "C. have changing",
+        "D. be changing by"
+      ],
+      "ans": "B",
+      "explain": "password 是被更改的對象，should 後接 be＋過去分詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【句意】The update is optional rather than mandatory. Which statement is accurate?",
+      "options": [
+        "A. Users are forbidden to install it.",
+        "B. Users must uninstall the existing version.",
+        "C. Users may choose whether to install it.",
+        "D. Users are required to install it immediately."
+      ],
+      "ans": "C",
+      "explain": "optional 是可選擇的，mandatory 是強制的；沒有安裝或移除的絕對要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【條件】The backup runs automatically unless the computer is switched off. When would the stated exception apply?",
+      "options": [
+        "A. When the computer is not powered on.",
+        "B. When the user opens another document.",
+        "C. Whenever the user forgets to start the backup manually.",
+        "D. Whenever the computer has an internet connection."
+      ],
+      "ans": "A",
+      "explain": "unless 引入例外；電腦關機才符合所述例外，不代表其他狀況的備份一定成功。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A fitness app offers a free trial, then charges a monthly fee unless users cancel. Removing the app from a phone does not cancel the subscription. What should a user do to avoid the fee?",
+      "options": [
+        "A. Wait for the first bill before deciding whether the trial was free.",
+        "B. Cancel the subscription through the required process before billing begins.",
+        "C. Remove the app and assume that this ends the subscription.",
+        "D. Stop opening the app after the trial ends."
+      ],
+      "ans": "B",
+      "explain": "文中明說移除 app 不等於取消訂閱；避免計費須在開始扣款前依流程取消。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The system is reliable on the whole, though occasional interruptions are inevitable. Which summary preserves the qualification?",
+      "options": [
+        "A. It works perfectly whenever anyone uses it.",
+        "B. Its reliability depends entirely on the colour of the device.",
+        "C. It generally works well but cannot be expected to operate without any interruption.",
+        "D. Its interruptions happen so often that it never works."
+      ],
+      "ans": "C",
+      "explain": "on the whole 是整體而言，occasional interruptions 保留偶發中斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A navigation app marks a route as fastest based on normal traffic. It has not received live updates since the morning. Which factor could make the recommendation less useful now?",
+      "options": [
+        "A. Traffic conditions may have changed since the data was last updated.",
+        "B. The route is necessarily longer than every alternative.",
+        "C. The app has promised that no road can ever close.",
+        "D. Normal traffic data cannot contain any information about routes."
+      ],
+      "ans": "A",
+      "explain": "缺乏即時更新表示可能未反映當前路況；不是已證明路線最長或完全沒有資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A shop reports that a new checkout page increased sales. The same week, it also cut prices and ran a major advertising campaign. What prevents a firm conclusion about the page alone?",
+      "options": [
+        "A. Advertising proves that the sales figures were invented.",
+        "B. Other changes could also have influenced the sales increase.",
+        "C. A checkout page cannot influence sales under any circumstances.",
+        "D. A price cut always reduces the number of purchases."
+      ],
+      "ans": "B",
+      "explain": "同時改變價格與廣告，無法將銷售增長單獨歸因於頁面；其他選項都是過強或無根據的說法。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】A reviewer says: The device is not so much difficult to use as difficult to justify at that price. What is the main reservation?",
+      "options": [
+        "A. Its complete inability to perform its advertised functions.",
+        "B. Its ease of use as the only reason to buy it.",
+        "C. Its value for money rather than its usability.",
+        "D. Its screen brightness rather than its battery life."
+      ],
+      "ans": "C",
+      "explain": "not so much A as B 把主要疑慮放在價格是否值得，而非操作難度。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：彼此依賴而互相影響的",
+      "ans": "INTERDEPENDENT",
+      "speak": "interdependent"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：能追查來源與歷程的特性",
+      "ans": "TRACEABILITY",
+      "speak": "traceability"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在缺乏證據的情況下",
+      "ans": "IN THE ABSENCE OF EVIDENCE",
+      "speak": "in the absence of evidence"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：可能的利益衝突",
+      "ans": "A POTENTIAL CONFLICT OF INTEREST",
+      "speak": "a potential conflict of interest"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：標題誇大了證據的強度",
+      "ans": "THE HEADLINE OVERSTATES THE STRENGTH OF THE EVIDENCE",
+      "speak": "the headline overstates the strength of the evidence"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：分享之前我們應先核實說法",
+      "ans": "WE SHOULD VERIFY THE CLAIM BEFORE SHARING IT",
+      "speak": "we should verify the claim before sharing it"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：系統或資訊值得信賴的可靠程度（R 開頭，11 個字母）",
+      "ans": "RELIABILITY",
+      "speak": "reliability"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：決策或程序可被清楚了解的透明程度（T 開頭，12 個字母）",
+      "ans": "TRANSPARENCY",
+      "speak": "transparency"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：在了解情況下給予的同意（C 開頭，7 個字母）",
+      "ans": "CONSENT",
+      "speak": "consent"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D I S C L _ S U R E (將原本未公開資訊揭露的行為)",
+      "ans": "O",
+      "speak": "disclosure"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E T _ N T _ O N (將資料或物品持續保留)",
+      "ans": "EI",
+      "speak": "retention"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A U T _ E N _ I C _ T Y (事物為真而非偽造的特性)",
+      "ans": "HTI",
+      "speak": "authenticity"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The delay was beyond our control.",
+      "options": [
+        "A. 我們故意拖延了進度。",
+        "B. 我們完全掌控了延誤時間。",
+        "C. 我們已取消整個計畫。",
+        "D. 延誤不是我們能控制的。"
+      ],
+      "ans": "D",
+      "explain": "beyond our control 指超出控制範圍，沒有表示取消計畫。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Unless we hear otherwise, we will proceed as planned.",
+      "options": [
+        "A. 只有收到不同指示才會照原計畫進行。",
+        "B. 我們已決定無條件取消計畫。",
+        "C. 我們不會理會任何後續指示。",
+        "D. 若未收到不同指示，我們會照原計畫進行。"
+      ],
+      "ans": "D",
+      "explain": "unless 是「除非」，otherwise 指不同消息或指示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have been assured that no jobs will be lost, although the details of the restructuring have yet to be announced.",
+      "options": [
+        "A. 重組細節已公布，並確定裁掉所有員工。",
+        "B. 說話者保證重組永遠不會發生。",
+        "C. 公司已公布每個職位的調動細節。",
+        "D. 已獲不裁員的保證，但重組細節仍未公布。"
+      ],
+      "ans": "D",
+      "explain": "have been assured 是收到保證，have yet to be announced 是尚未公布。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】Which reply accepts an invitation while making attendance conditional on finishing a report?",
+      "options": [
+        "A. I would love to come, even if I never finish the report.",
+        "B. I cannot come because the report is already finished.",
+        "C. I will come instead of finishing the report.",
+        "D. I would love to come, provided I finish the report."
+      ],
+      "ans": "D",
+      "explain": "provided 表示「只要」，保留出席條件；其他選項取消條件、拒絕出席或選擇不寫報告。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A supplier says the shipment is unlikely to arrive before Friday. Which statement preserves that degree of certainty?",
+      "options": [
+        "A. Arrival before Friday is completely impossible.",
+        "B. Arrival on Friday is guaranteed.",
+        "C. Arrival before Friday is more likely than not.",
+        "D. Arrival before Friday is possible but not expected."
+      ],
+      "ans": "D",
+      "explain": "unlikely 是機率低而非不可能，也沒有保證週五到貨。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An online course reports that its graduates earn more than non-graduates. Yet applicants already had above-average salaries before enrolling. Which concern most directly challenges the implied benefit?",
+      "options": [
+        "A. The course must have lowered every graduate’s salary.",
+        "B. Non-graduates cannot learn online.",
+        "C. Graduates necessarily worked fewer hours.",
+        "D. The salary difference may predate participation in the course."
+      ],
+      "ans": "D",
+      "explain": "入學前薪資差異可能造成結果，不能直接把較高薪資歸因於課程；其他敘述都沒有證據。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仔細檢視後",
+      "ans": "ON CLOSER INSPECTION",
+      "speak": "on closer inspection"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：仍有很大的改善空間",
+      "ans": "THERE IS CONSIDERABLE ROOM FOR IMPROVEMENT",
+      "speak": "there is considerable room for improvement"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O N T I _ G E N C Y (可能發生而須預作準備的意外情況)",
+      "ans": "N",
+      "speak": "contingency"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E P _ R C _ S S _ O N (事件帶來的間接負面後果)",
+      "ans": "EUI",
+      "speak": "repercussion"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can hold the room for you until tomorrow afternoon.",
+      "options": [
+        "A. 你必須在明天下午前搬出已入住的房間。",
+        "B. 房間要到下個月才會完工。",
+        "C. 你已經預付了全部房費。",
+        "D. 我們可以替你保留房間到明天下午。"
+      ],
+      "ans": "D",
+      "explain": "hold the room 是暫時保留訂房機會，沒有說已付款或必須退房。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I had been looking forward to the concert, so finding out it had been cancelled was a real letdown.",
+      "options": [
+        "A. 說話者原本就不想參加，因此很高興取消。",
+        "B. 說話者直到演出結束才知道有演唱會。",
+        "C. 演唱會只是延期，日期已經確定。",
+        "D. 因原本很期待演唱會，得知取消令說話者失望。"
+      ],
+      "ans": "D",
+      "explain": "look forward to 是期待，letdown 是令人失望的事；cancelled 不等於已確定延期。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If we had booked the direct service, we would not be changing trains now, but at least we saved a fair amount.",
+      "options": [
+        "A. 訂了直達車，所以現在不用換車且費用較低。",
+        "B. 說話者正在討論明年才可能發生的行程。",
+        "C. 說話者認為轉乘和票價都與訂票選擇無關。",
+        "D. 選了較便宜的轉乘路線，現在得換車，但省了不少錢。"
+      ],
+      "ans": "D",
+      "explain": "混合條件句把過去未選直達與現在轉乘連起來；at least 保留省錢這個好處。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The union and management finally reached a ___ after weeks of negotiation.",
+      "options": [
+        "A. compression",
+        "B. comparison",
+        "C. composition",
+        "D. compromise"
+      ],
+      "ans": "D",
+      "explain": "reach a compromise 是達成妥協；其餘分別是壓縮、比較及構成或作品。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The museum opened ten years ago. By the time it closes for renovation next June, it ___ visitors for eleven years.",
+      "options": [
+        "A. will welcome",
+        "B. has been welcomed",
+        "C. would have welcoming",
+        "D. will have welcomed"
+      ],
+      "ans": "D",
+      "explain": "By...next June 設定未來完成的時間點，用 will have＋過去分詞；museum 是接待者，不是被接待者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A restaurant says its menu is seasonal. When a customer complains that a favourite dish has disappeared, the owner explains that its main ingredient is no longer locally available. Which response follows the restaurant’s stated approach?",
+      "options": [
+        "A. Promising to serve every dish unchanged throughout the year.",
+        "B. Claiming that seasonal menus must contain only cold food.",
+        "C. Removing all local ingredients from future menus.",
+        "D. Offering a different dish made with ingredients currently available locally."
+      ],
+      "ans": "D",
+      "explain": "隨季節與當地食材調整菜單，提供當季替代菜色符合原則；不是全年固定不變。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在你方便時儘早",
+      "ans": "AT YOUR EARLIEST CONVENIENCE",
+      "speak": "at your earliest convenience"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：保存這棟建物仍是我們最優先的事",
+      "ans": "PRESERVING THE BUILDING REMAINS OUR OVERRIDING PRIORITY",
+      "speak": "preserving the building remains our overriding priority"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E C I P _ O C I T Y (相互給予或回應的互惠原則)",
+      "ans": "R",
+      "speak": "reciprocity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E F _ R B _ S H _ E N T (建築或設備的翻新整修)",
+      "ans": "UIM",
+      "speak": "refurbishment"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The update is designed to address the issue, not merely hide it.",
+      "options": [
+        "A. 更新只會把問題藏起來，而且沒有其他目的。",
+        "B. 問題已不存在，所以不需要更新。",
+        "C. 更新的唯一作用是隱藏使用者姓名。",
+        "D. 更新是為了解決問題，而不只是把它藏起來。"
+      ],
+      "ans": "D",
+      "explain": "address the issue 是處理問題；not merely 表示不只停留在掩蓋。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The new tool saves time on routine tasks, although checking the results still requires human judgement.",
+      "options": [
+        "A. 工具已完全取代任何人工判斷。",
+        "B. 人工檢查只會讓所有結果變錯。",
+        "C. 工具只能用來測量人類反應時間。",
+        "D. 工具能省下例行工作的時間，但檢查結果仍需人工判斷。"
+      ],
+      "ans": "D",
+      "explain": "although 保留人工驗證需求；save time 不等於免除責任或判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The screenshot may be genuine, but without the surrounding conversation we cannot be sure what the message was responding to.",
+      "options": [
+        "A. 截圖真實就能保證所有解讀都正確。",
+        "B. 缺少前後文足以證明截圖是偽造的。",
+        "C. 我們已經完整掌握對話中的每個細節。",
+        "D. 截圖可能是真的，但缺少前後文就難以確定訊息回應的是什麼。"
+      ],
+      "ans": "D",
+      "explain": "區分影像真實性與語境完整性；缺脈絡不直接證明造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】Please ___ your sources before sharing a claim that could affect other people’s decisions.",
+      "options": [
+        "A. notify",
+        "B. satisfy",
+        "C. amplify",
+        "D. verify"
+      ],
+      "ans": "D",
+      "explain": "verify 是核實；notify 通知、satisfy 滿足、amplify 放大均不合此目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推測】The file was encrypted, and only Mara had the key. If someone read it without asking her, they ___ another way to access it.",
+      "options": [
+        "A. must find",
+        "B. will have been finding",
+        "C. are finding",
+        "D. must have found"
+      ],
+      "ans": "D",
+      "explain": "已讀取是過去事件，根據線索推測應用 must have found；不表達現在或未來。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An article links to an original study, but its headline replaces a possible association with a claim of proven cause. Why should the reader check the study itself?",
+      "options": [
+        "A. Linking to a study guarantees that every headline is accurate.",
+        "B. A possible association always proves a direct cause.",
+        "C. The original study must reach the opposite conclusion to the headline.",
+        "D. The headline may overstate what the research supports."
+      ],
+      "ans": "D",
+      "explain": "possible association 與 proven cause 的證據強度不同；需要核對，不能先斷定原研究一定相反。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶有若干保留地",
+      "ans": "WITH CERTAIN RESERVATIONS",
+      "speak": "with certain reservations"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：這項建議取決於你的具體需求",
+      "ans": "THE RECOMMENDATION DEPENDS ON YOUR PARTICULAR REQUIREMENTS",
+      "speak": "the recommendation depends on your particular requirements"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：容易受攻擊或傷害的弱點（V 開頭，13 個字母）",
+      "ans": "VULNERABILITY",
+      "speak": "vulnerability"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V E R _ F I _ A T _ O N (核對說法或資料是否正確的過程)",
+      "ans": "ICI",
+      "speak": "verification"
+    }
+  ]
 }

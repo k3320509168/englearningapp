@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
@@ -12,6 +12,7 @@ import { keepFocus } from './keepFocus';
 // 動畫只是演出（重新整理也不能重抽）。轉的時候點一下可以跳過動畫
 const SEG = 360 / WHEEL_PRIZES.length;
 const SPIN_MS = 3200;
+const BULBS = 16;
 
 export default function TicketWheel() {
   const pending = useSaveStore(s => s.wheelPending);
@@ -25,6 +26,20 @@ export default function TicketWheel() {
   const [prize, setPrize] = useState(-1);
   const [instant, setInstant] = useState(false);
   const [timer, setTimer] = useState<number | undefined>(undefined);
+
+  // 鍵盤：Enter／空白鍵＝轉、跳過、收下（或再轉一次）
+  const visible = !((pending <= 0 && state === 'ready') || hidden || busy || celebrating);
+  useEffect(() => {
+    if (!visible) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      // 按下畫面上的主要按鈕（轉／跳過／收下／再轉一次）
+      document.querySelector<HTMLButtonElement>('.wheel-card .wheel-go')?.click();
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  }, [visible]);
 
   // 按下「轉！」時次數就扣掉了：轉動中（spinning）也要繼續顯示，不然最後一次會直接跳到結果
   if ((pending <= 0 && state === 'ready') || hidden || busy || celebrating) return null;
@@ -72,11 +87,15 @@ export default function TicketWheel() {
 
   return (
     <div className="wheel-overlay" role="dialog" aria-label="獎勵轉盤">
-      <div className="wheel-card">
-        <p className="wheel-title">🎡 獎勵轉盤{pending > 0 && state !== 'done' ? ` ×${pending}` : ''}</p>
-        <p className="muted wheel-sub">破關獎勵！轉轉看能拿到什麼</p>
+      <div className={`wheel-card is-${state}`}>
+        <p className="wheel-title"><span>🎡 獎勵轉盤{pending > 0 && state !== 'done' ? ` ×${pending}` : ''}</span></p>
+        <p className="wheel-sub">破關獎勵！轉轉看能拿到什麼</p>
         <div className="wheel-stage" onClick={state === 'spinning' ? spin : undefined}>
-          <span className="wheel-pointer" aria-hidden>▼</span>
+          {/* 外圈的跑馬燈：轉的時候跑得快、停下來一起閃 */}
+          <div className="wheel-bulbs" aria-hidden>
+            {Array.from({ length: BULBS }, (_, i) => <i key={i} style={{ '--b': `${(i * 360) / BULBS}deg`, '--i': i } as CSSProperties} />)}
+          </div>
+          <span className="wheel-pointer" aria-hidden />
           <div className="wheel" style={{ ...style, background: gradient }}>
             {WHEEL_PRIZES.map((p, i) => (
               <span key={p.id} className="wheel-label" style={{ '--a': `${i * SEG + SEG / 2}deg` } as CSSProperties}>
@@ -87,25 +106,25 @@ export default function TicketWheel() {
           </div>
           <span className="wheel-hub" aria-hidden>★</span>
         </div>
-        {state === 'done' && won ? (
-          <div className={`wheel-result ${won.id === 'none' ? '' : 'is-win'}`}>
-            <p className="wheel-prize">{won.id === 'none' ? `${won.icon} 銘謝惠顧，送你 🪙 ${won.gold}` : `🎉 抽中 ${won.icon} ${won.label}！`}</p>
-            <p className="muted">🎫 召喚券 {tickets} 張{toTen > 0 ? `，再 ${toTen} 張就能十連` : '，可以十連召喚了！'}</p>
-            <div className="tutorial-actions">
+        <div className="wheel-bottom">
+          {state === 'done' && won ? (
+            <div className={`wheel-result ${won.id === 'none' ? '' : 'is-win'}`}>
+              <p className="wheel-prize">{won.id === 'none' ? `${won.icon} 銘謝惠顧・送你 🪙 ${won.gold}` : `${won.icon} ${won.label}！`}</p>
+              <p className="wheel-note">🎫 召喚券 {tickets} 張{toTen > 0 ? `・再 ${toTen} 張就能十連` : '・可以十連召喚了！'}</p>
               {pending > 0
-                ? <button className="btn btn-primary" onMouseDown={keepFocus} onClick={again}>再轉一次（還有 {pending} 次）</button>
-                : <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>收下</button>}
+                ? <button className="btn btn-primary wheel-go" onMouseDown={keepFocus} onClick={again}>再轉一次（還有 {pending} 次）</button>
+                : <button className="btn btn-primary wheel-go" onMouseDown={keepFocus} onClick={close}>收下 ⏎</button>}
+              {won.id !== 'none' && Array.from({ length: 16 }, (_, i) => (
+                <i key={i} className="confetti" aria-hidden style={{ '--x': `${(i * 41) % 100}%`, '--d': `${(i % 5) * 0.1}s`, '--c': ['#ffcd4b', '#ff5af0', '#7fe8ff', '#5fd36b'][i % 4] } as CSSProperties} />
+              ))}
             </div>
-            {won.id !== 'none' && Array.from({ length: 16 }, (_, i) => (
-              <i key={i} className="confetti" aria-hidden style={{ '--x': `${(i * 41) % 100}%`, '--d': `${(i % 5) * 0.1}s`, '--c': ['#ffcd4b', '#ff5af0', '#7fe8ff', '#5fd36b'][i % 4] } as CSSProperties} />
-            ))}
-          </div>
-        ) : (
-          <div className="tutorial-actions">
-            {state === 'ready' && <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={close}>稍後再轉</button>}
-            <button className="btn btn-primary wheel-go" onMouseDown={keepFocus} onClick={spin}>{state === 'spinning' ? '跳過 ⏭' : '轉！'}</button>
-          </div>
-        )}
+          ) : (
+            <div className="wheel-actions">
+              <button className="btn btn-primary wheel-go" onMouseDown={keepFocus} onClick={spin}>{state === 'spinning' ? '跳過 ⏭' : '轉！'}</button>
+              {state === 'ready' && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={close}>稍後再轉</button>}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

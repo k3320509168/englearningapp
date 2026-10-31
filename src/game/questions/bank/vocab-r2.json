@@ -404,5 +404,359 @@
         ]
       }
     ]
+  },
+  "SICK": {
+    "pos": "adj.",
+    "meaning": "生病的",
+    "example": "He is feeling sick today.",
+    "exampleZh": "他今天覺得生病了。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "生病的",
+        "examples": [
+          {
+            "en": "He is feeling sick today.",
+            "zh": "他今天覺得生病了。"
+          },
+          {
+            "en": "You should go home if you are sick.",
+            "zh": "如果你生病了，你應該回家。"
+          }
+        ]
+      }
+    ]
+  },
+  "STRAIGHT": {
+    "pos": "adv.",
+    "meaning": "直直地",
+    "example": "Go straight and then turn left.",
+    "exampleZh": "直走然後左轉。",
+    "senses": [
+      {
+        "pos": "adv.",
+        "meaning": "直直地",
+        "examples": [
+          {
+            "en": "Go straight and then turn left.",
+            "zh": "直走然後左轉。"
+          },
+          {
+            "en": "He usually goes straight home after work.",
+            "zh": "他下班後通常直接回家。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "直的",
+        "examples": [
+          {
+            "en": "She has long straight hair.",
+            "zh": "她有一頭直長髮。"
+          }
+        ]
+      }
+    ]
+  },
+  "BITTER": {
+    "pos": "adj.",
+    "meaning": "苦的",
+    "example": "This medicine is very bitter, but you have to take it.",
+    "exampleZh": "這藥很苦，但你必須吃。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "苦的",
+        "examples": [
+          {
+            "en": "This medicine is very bitter, but you have to take it.",
+            "zh": "這藥很苦，但你必須吃。"
+          },
+          {
+            "en": "He never drinks bitter coffee.",
+            "zh": "他從不喝苦咖啡。"
+          }
+        ]
+      }
+    ]
+  },
+  "GARBAGE": {
+    "pos": "n.",
+    "meaning": "垃圾",
+    "example": "You must take out the garbage now.",
+    "exampleZh": "你現在必須把垃圾拿出去。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "垃圾",
+        "examples": [
+          {
+            "en": "You must take out the garbage now.",
+            "zh": "你現在必須把垃圾拿出去。"
+          },
+          {
+            "en": "Who is going to take out the garbage?",
+            "zh": "誰要去倒垃圾？"
+          }
+        ]
+      }
+    ]
+  },
+  "HABIT": {
+    "pos": "n.",
+    "meaning": "習慣",
+    "example": "Reading before bed is a good habit.",
+    "exampleZh": "睡前閱讀是個好習慣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "習慣",
+        "examples": [
+          {
+            "en": "Reading before bed is a good habit.",
+            "zh": "睡前閱讀是個好習慣。"
+          },
+          {
+            "en": "I will try to change this bad habit.",
+            "zh": "我會試著改變這個壞習慣。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIET": {
+    "pos": "n.",
+    "meaning": "飲食",
+    "example": "You should eat a healthy diet.",
+    "exampleZh": "你應該吃健康的飲食。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "飲食",
+        "examples": [
+          {
+            "en": "You should eat a healthy diet.",
+            "zh": "你應該吃健康的飲食。"
+          },
+          {
+            "en": "He will start a new diet next week.",
+            "zh": "他下週將開始新的飲食計畫。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEALTHY": {
+    "pos": "adj.",
+    "meaning": "健康的",
+    "example": "We are going to cook a healthy meal.",
+    "exampleZh": "我們打算煮一頓健康的餐點。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "健康的",
+        "examples": [
+          {
+            "en": "We are going to cook a healthy meal.",
+            "zh": "我們打算煮一頓健康的餐點。"
+          },
+          {
+            "en": "You must exercise to stay healthy.",
+            "zh": "你必須運動才能保持健康。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENERGY": {
+    "pos": "n.",
+    "meaning": "精力",
+    "example": "I have no energy today, so I will rest.",
+    "exampleZh": "我今天沒有精力，所以我會休息。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "精力",
+        "examples": [
+          {
+            "en": "I have no energy today, so I will rest.",
+            "zh": "我今天沒有精力，所以我會休息。"
+          },
+          {
+            "en": "You should sleep more to get more energy.",
+            "zh": "你應該多睡覺以獲得更多精力。"
+          }
+        ]
+      }
+    ]
+  },
+  "AFFORD": {
+    "pos": "v.",
+    "meaning": "負擔得起",
+    "example": "I cannot afford this car, so I will buy a cheaper one.",
+    "exampleZh": "我買不起這輛車，所以我會買便宜一點的。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "負擔得起",
+        "examples": [
+          {
+            "en": "I cannot afford this car, so I will buy a cheaper one.",
+            "zh": "我買不起這輛車，所以我會買便宜一點的。"
+          },
+          {
+            "en": "You should save money if you want to afford a house.",
+            "zh": "如果你想買得起房子，你應該存錢。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHARGE": {
+    "pos": "v.",
+    "meaning": "收費",
+    "example": "How much will you charge for this service?",
+    "exampleZh": "這項服務你們將收費多少？",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "收費",
+        "examples": [
+          {
+            "en": "How much will you charge for this service?",
+            "zh": "這項服務你們將收費多少？"
+          },
+          {
+            "en": "They usually charge fifty dollars.",
+            "zh": "他們通常收費五十元。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNIFORM": {
+    "pos": "n.",
+    "meaning": "制服",
+    "example": "You must wear a uniform at school.",
+    "exampleZh": "你在學校必須穿制服。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "制服",
+        "examples": [
+          {
+            "en": "You must wear a uniform at school.",
+            "zh": "你在學校必須穿制服。"
+          },
+          {
+            "en": "We are going to buy new uniforms tomorrow.",
+            "zh": "我們明天打算買新制服。"
+          }
+        ]
+      }
+    ]
+  },
+  "STRICT": {
+    "pos": "adj.",
+    "meaning": "嚴格的",
+    "example": "Our boss is always very strict.",
+    "exampleZh": "我們的老闆總是很嚴格。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "嚴格的",
+        "examples": [
+          {
+            "en": "Our boss is always very strict.",
+            "zh": "我們的老闆總是很嚴格。"
+          },
+          {
+            "en": "You have to follow these strict rules.",
+            "zh": "你必須遵守這些嚴格的規定。"
+          }
+        ]
+      }
+    ]
+  },
+  "ROUTINE": {
+    "pos": "n.",
+    "meaning": "例行公事",
+    "example": "Exercise is always part of my daily routine.",
+    "exampleZh": "運動總是我日常生活的一部分。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "例行公事",
+        "examples": [
+          {
+            "en": "Exercise is always part of my daily routine.",
+            "zh": "運動總是我日常生活的一部分。"
+          },
+          {
+            "en": "You should establish a good routine.",
+            "zh": "你應該建立良好的生活習慣。"
+          }
+        ]
+      }
+    ]
+  },
+  "BARGAIN": {
+    "pos": "v.",
+    "meaning": "討價還價",
+    "example": "You should bargain with the seller.",
+    "exampleZh": "你應該和賣家討價還價。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "討價還價",
+        "examples": [
+          {
+            "en": "You should bargain with the seller.",
+            "zh": "你應該和賣家討價還價。"
+          },
+          {
+            "en": "They often bargain at the night market.",
+            "zh": "他們經常在夜市討價還價。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "便宜貨",
+        "examples": [
+          {
+            "en": "This shirt is a real bargain!",
+            "zh": "這件襯衫真是個便宜貨！"
+          },
+          {
+            "en": "I will buy it because it is a bargain.",
+            "zh": "我會買它，因為它很划算。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUALITY": {
+    "pos": "n.",
+    "meaning": "品質",
+    "example": "We must improve the quality of our products.",
+    "exampleZh": "我們必須提高產品的品質。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "品質",
+        "examples": [
+          {
+            "en": "We must improve the quality of our products.",
+            "zh": "我們必須提高產品的品質。"
+          },
+          {
+            "en": "This jacket has excellent quality and will last a long time.",
+            "zh": "這件外套品質極佳，可以穿很久。"
+          }
+        ]
+      }
+    ]
   }
 }

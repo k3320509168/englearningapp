@@ -1,4 +1,726 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "refund",
+      "options": [
+        "A. 退款",
+        "B. 資金",
+        "C. 收據",
+        "D. 費用"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 refund，意思是「退款」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "symptom",
+      "options": [
+        "A. 疾病",
+        "B. 治療",
+        "C. 症狀",
+        "D. 預防"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 symptom，意思是「症狀」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "insurance",
+      "options": [
+        "A. 保險",
+        "B. 保證",
+        "C. 政策",
+        "D. 索賠"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 insurance，意思是「保險」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "guarantee",
+      "options": [
+        "A. 條件",
+        "B. 保證",
+        "C. 退貨",
+        "D. 服務"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 guarantee，意思是「保證」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "assignment",
+      "options": [
+        "A. 考試",
+        "B. 成績",
+        "C. 作業",
+        "D. 課程"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 assignment，意思是「作業」或「任務」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "professor",
+      "options": [
+        "A. 學生",
+        "B. 校長",
+        "C. 助理",
+        "D. 教授"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 professor，意思是「教授」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "strategy",
+      "options": [
+        "A. 策略",
+        "B. 結構",
+        "C. 標準",
+        "D. 狀態"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 strategy，意思是「策略」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "profit",
+      "options": [
+        "A. 收入",
+        "B. 利潤",
+        "C. 成本",
+        "D. 價格"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 profit，意思是「利潤」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "contract",
+      "options": [
+        "A. 聯絡",
+        "B. 控制",
+        "C. 合約",
+        "D. 衝突"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 contract，意思是「合約」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "agreement",
+      "options": [
+        "A. 爭論",
+        "B. 建議",
+        "C. 拒絕",
+        "D. 協議"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 agreement，意思是「協議」或「同意」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "proposal",
+      "options": [
+        "A. 提案",
+        "B. 目的",
+        "C. 過程",
+        "D. 保護"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 proposal，意思是「提案」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "solution",
+      "options": [
+        "A. 選擇",
+        "B. 解決方案",
+        "C. 資源",
+        "D. 系統"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 solution，意思是「解決方案」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "progress",
+      "options": [
+        "A. 程式",
+        "B. 問題",
+        "C. 進度",
+        "D. 壓力"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 progress，意思是「進度」或「進展」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you feel sick, you should see a doctor.",
+      "options": [
+        "A. 你應該多喝水。",
+        "B. 你應該請假休息。",
+        "C. 你應該吃藥。",
+        "D. 如果你覺得不舒服，應該去看醫生。"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 If you feel sick, you should see a doctor. 意思是「如果你覺得不舒服，應該去看醫生。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The room has been cleaned.",
+      "options": [
+        "A. 房間已經打掃過了。",
+        "B. 房間正在打掃。",
+        "C. 房間還沒打掃。",
+        "D. 房間需要打掃。"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 The room has been cleaned. 使用現在完成被動態，意思是「房間已經打掃過了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Have you finished the reading assignment?",
+      "options": [
+        "A. 你開始閱讀了嗎？",
+        "B. 你完成閱讀作業了嗎？",
+        "C. 你喜歡這篇閱讀嗎？",
+        "D. 你想要閱讀什麼？"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 Have you finished the reading assignment? 意思是「你完成閱讀作業了嗎？」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the price drops, I will buy it.",
+      "options": [
+        "A. 如果價格上漲，我就不買。",
+        "B. 我已經買了特價品。",
+        "C. 如果價格下降，我就會買。",
+        "D. 價格太高了，我買不起。"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 If the price drops, I will buy it. 意思是「如果價格下降，我就會買。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The flight was delayed by heavy rain.",
+      "options": [
+        "A. 航班被取消了。",
+        "B. 航班準時起飛。",
+        "C. 航班提前抵達。",
+        "D. 航班因為大雨而延誤了。"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 The flight was delayed by heavy rain. 意思是「航班因為大雨而延誤了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Has the new strategy been tested?",
+      "options": [
+        "A. 新策略已經測試過了嗎？",
+        "B. 新策略失敗了嗎？",
+        "C. 新策略開始執行了嗎？",
+        "D. 新策略是誰提出的？"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 Has the new strategy been tested? 意思是「新策略已經測試過了嗎？」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I have never tried this medicine before.",
+      "options": [
+        "A. 我總是吃這種藥。",
+        "B. 我以前從來沒有吃過這種藥。",
+        "C. 我覺得這種藥很有用。",
+        "D. 我忘記吃藥了。"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 I have never tried this medicine before. 意思是「我以前從來沒有吃過這種藥。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you study hard, you will pass the exam.",
+      "options": [
+        "A. 你已經通過考試了。",
+        "B. 如果你通過考試，我會很高興。",
+        "C. 如果你努力學習，你就會通過考試。",
+        "D. 雖然你努力學習，但還是沒有通過。"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 If you study hard, you will pass the exam. 意思是「如果你努力學習，你就會通過考試。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The proposal was accepted yesterday.",
+      "options": [
+        "A. 提案明天會被接受。",
+        "B. 提案已經被拒絕了。",
+        "C. 提案還在審查中。",
+        "D. 提案昨天被接受了。"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 The proposal was accepted yesterday. 意思是「提案昨天被接受了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Have they reached an agreement yet?",
+      "options": [
+        "A. 他們已經達成協議了嗎？",
+        "B. 他們取消協議了嗎？",
+        "C. 他們還沒開始談判嗎？",
+        "D. 他們為什麼拒絕協議？"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 Have they reached an agreement yet? 意思是「他們已經達成協議了嗎？」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If we reduce costs, profits will increase.",
+      "options": [
+        "A. 如果我們增加成本，利潤會下降。",
+        "B. 如果我們降低成本，利潤就會增加。",
+        "C. 我們的利潤因為成本增加而減少。",
+        "D. 我們必須維持利潤。"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 If we reduce costs, profits will increase. 意思是「如果我們降低成本，利潤就會增加。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The contract will be signed tomorrow.",
+      "options": [
+        "A. 合約已經簽名了。",
+        "B. 合約明天會被取消。",
+        "C. 合約明天將會被簽署。",
+        "D. 合約需要修改。"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 The contract will be signed tomorrow. 意思是「合約明天將會被簽署。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you ever traveled to Europe?",
+      "options": [
+        "A. Yes, I go there every day.",
+        "B. No, I am not in Europe.",
+        "C. I will travel next week.",
+        "D. Yes, I have been there twice."
+      ],
+      "ans": "D",
+      "explain": "聽到「你曾經去過歐洲嗎？」最適合回答「是的，我去過兩次。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the device is broken, will you fix it?",
+      "options": [
+        "A. Yes, I will fix it tomorrow.",
+        "B. It is not broken.",
+        "C. The device is very expensive.",
+        "D. I don't need a new device."
+      ],
+      "ans": "A",
+      "explain": "聽到「如果設備壞了，你會修理它嗎？」最適合回答「是的，我明天會修理。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The new books have already been sold out.",
+      "options": [
+        "A. We should buy some books.",
+        "B. Oh no, we are too late.",
+        "C. The books are very cheap.",
+        "D. I don't like reading."
+      ],
+      "ans": "B",
+      "explain": "聽到「新書已經全部賣完了。」最適合回應「噢不，我們太晚了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If you need a refund, you must bring the item back.",
+      "options": [
+        "A. I don't want a refund.",
+        "B. The item is very heavy.",
+        "C. Okay, I will bring it with me.",
+        "D. I paid by credit card."
+      ],
+      "ans": "C",
+      "explain": "聽到「如果你需要退款，必須把物品帶回來。」最適合回答「好的，我會帶著它。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the final grade been announced?",
+      "options": [
+        "A. The class is very interesting.",
+        "B. I got a bad grade.",
+        "C. Yes, I am a good student.",
+        "D. Not yet, we are still waiting."
+      ],
+      "ans": "D",
+      "explain": "聽到「最終成績公布了嗎？」最適合回答「還沒，我們還在等。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If your symptoms get worse, what will you do?",
+      "options": [
+        "A. I will go back to the hospital.",
+        "B. The symptoms are mild.",
+        "C. I have never been sick.",
+        "D. Yes, they are getting worse."
+      ],
+      "ans": "A",
+      "explain": "聽到「如果你的症狀變嚴重，你會怎麼做？」最適合回答「我會回醫院看診。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you bought travel insurance for the trip?",
+      "options": [
+        "A. The trip was wonderful.",
+        "B. Yes, I bought it online yesterday.",
+        "C. I don't like traveling.",
+        "D. Insurance is not important."
+      ],
+      "ans": "B",
+      "explain": "聽到「你買了這趟旅行的旅遊平安險了嗎？」最適合回答「是的，我昨天在網路上買了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The marketing strategy has been changed.",
+      "options": [
+        "A. Who is the manager?",
+        "B. The market is very big.",
+        "C. Really? What is the new plan?",
+        "D. I want to change my job."
+      ],
+      "ans": "C",
+      "explain": "聽到「行銷策略已經改變了。」最適合回應「真的嗎？新的計畫是什麼？」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If we offer a discount, will more people buy it?",
+      "options": [
+        "A. The discount is ten percent.",
+        "B. I don't have enough money.",
+        "C. People love shopping.",
+        "D. Yes, I think sales will increase."
+      ],
+      "ans": "D",
+      "explain": "聽到「如果我們提供折扣，會有更多人買嗎？」最適合回答「是的，我認為銷量會增加。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the business proposal been approved by the investor?",
+      "options": [
+        "A. Yes, they signed it this morning.",
+        "B. The investor is very rich.",
+        "C. I don't know the business.",
+        "D. The proposal is too long."
+      ],
+      "ans": "A",
+      "explain": "聽到「商業提案已經被投資人批准了嗎？」最適合回答「是的，他們今天早上簽署了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If you miss the flight, you will have to wait for the next one.",
+      "options": [
+        "A. I am at the airport now.",
+        "B. I understand. I will run to the gate!",
+        "C. The flight was delayed.",
+        "D. I have a lot of luggage."
+      ],
+      "ans": "B",
+      "explain": "聽到「如果你錯過航班，就必須等下一班。」最適合回應「我了解，我會用跑的去登機門！」"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "accommodation",
+      "options": [
+        "A. 交通",
+        "B. 觀光",
+        "C. 住宿",
+        "D. 娛樂"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 accommodation，意思是「住宿」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "prescription",
+      "options": [
+        "A. 描述",
+        "B. 預約",
+        "C. 診斷",
+        "D. 處方"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 prescription，意思是「處方」或「處方箋」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "negotiate",
+      "options": [
+        "A. 談判",
+        "B. 妥協",
+        "C. 拒絕",
+        "D. 抱怨"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 negotiate，意思是「談判」或「協商」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "scholarship",
+      "options": [
+        "A. 學費",
+        "B. 獎學金",
+        "C. 學位",
+        "D. 成績單"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 scholarship，意思是「獎學金」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "evaluate",
+      "options": [
+        "A. 估計",
+        "B. 演變",
+        "C. 評估",
+        "D. 提升"
+      ],
+      "ans": "C",
+      "explain": "英文原句為 evaluate，意思是「評估」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The performance will be evaluated next month.",
+      "options": [
+        "A. 表現不好會被開除。",
+        "B. 表演下個月開始。",
+        "C. 這個月的表現很好。",
+        "D. 下個月將會評估工作表現。"
+      ],
+      "ans": "D",
+      "explain": "英文原句為 The performance will be evaluated next month. 意思是「下個月將會評估工作表現。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you do not take the medicine, the infection will not heal.",
+      "options": [
+        "A. 如果你不吃藥，感染就不會痊癒。",
+        "B. 如果你吃藥，感染就會變嚴重。",
+        "C. 感染已經因為吃藥而痊癒了。",
+        "D. 你必須吃藥才能預防感染。"
+      ],
+      "ans": "A",
+      "explain": "英文原句為 If you do not take the medicine, the infection will not heal. 意思是「如果你不吃藥，感染就不會痊癒。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My luggage has been lost at the airport.",
+      "options": [
+        "A. 我在機場找到了行李。",
+        "B. 我的行李在機場遺失了。",
+        "C. 我忘記帶行李去機場。",
+        "D. 行李在機場被偷了。"
+      ],
+      "ans": "B",
+      "explain": "英文原句為 My luggage has been lost at the airport. 意思是「我的行李在機場遺失了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you negotiated a better price for the accommodation?",
+      "options": [
+        "A. I prefer to stay in a hotel.",
+        "B. The accommodation is expensive.",
+        "C. Yes, I got a ten percent discount.",
+        "D. I haven't found a place to stay."
+      ],
+      "ans": "C",
+      "explain": "聽到「你已經為住宿談判到更好的價格了嗎？」最適合回答「是的，我拿到了九折優惠。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If you win the scholarship, which university will you choose?",
+      "options": [
+        "A. The university is very famous.",
+        "B. I study hard every day.",
+        "C. I didn't win the competition.",
+        "D. I haven't decided yet."
+      ],
+      "ans": "D",
+      "explain": "聽到「如果你贏得獎學金，你會選擇哪一所大學？」最適合回答「我還沒決定。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the doctor given you a prescription for your cough?",
+      "options": [
+        "A. Yes, I need to go to the pharmacy.",
+        "B. The doctor is very professional.",
+        "C. My cough is getting worse.",
+        "D. I don't have a prescription."
+      ],
+      "ans": "A",
+      "explain": "聽到「醫生已經給你治咳嗽的處方箋了嗎？」最適合回答「是的，我需要去一趟藥局。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the contract is broken, we will take legal action.",
+      "options": [
+        "A. The contract is broken.",
+        "B. Let's hope they keep their promise.",
+        "C. The legal action is expensive.",
+        "D. We need to sign a new contract."
+      ],
+      "ans": "B",
+      "explain": "聽到「如果合約被打破，我們將採取法律行動。」最適合回應「希望他們信守承諾。」"
+    }
+  ]
 }

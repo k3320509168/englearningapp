@@ -236,12 +236,13 @@ export default function HeroModal() {
             </div>
             {owned ? (
               <div className="hd-actions">
-                {renderMemberButtons(id, inParty, pos, full)}
+                {/* 第十五輪：一鍵訓練是主要按鈕，其他次要；離隊移到養成分頁最下面 */}
                 <span className="hd-train">
-                  <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.coin(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
-                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.coin(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
+                  <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.coin(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
+                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.coin(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
                   {(levelCap || gold < cost) && <small className="req-no">{levelCap ? `最高到主角 Lv ${player.level}` : `還差 🪙${cost - gold}`}</small>}
                 </span>
+                {renderMemberButtons(id, inParty, pos, full)}
               </div>
             ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}
           </div>
@@ -293,7 +294,14 @@ export default function HeroModal() {
   // 送別英雄（賣出）：隊伍中的英雄要先離隊；有升品階或真名進度時特別提醒會失去
   function renderSell(id: string, inParty: boolean, level: number, tier: number, trials: number) {
     if (heroes.length <= 1) return null;
-    if (inParty) return <p className="muted sell-note">想送別這位英雄，請先讓這位英雄離隊。</p>;
+    if (inParty) {
+      return (
+        <p className="muted sell-note">
+          {party.length > 1 && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)}>離隊</button>}
+          想送別這位英雄，請先讓這位英雄離隊。
+        </p>
+      );
+    }
     const value = heroSellValue(id, level, tier);
     if (selling !== id) {
       return <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setSelling(id)}>👋 送別（賣出 🪙{value}）</button>;
@@ -313,12 +321,10 @@ export default function HeroModal() {
       <span className="hero-actions">
         {inParty ? (
           <>
-            {pos > 0 && <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => setLeader(id)}>設為隊長</button>}
-            {/* 只剩一位隊員時不能離隊，直接不顯示 */}
-            {party.length > 1 && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)}>離隊</button>}
+            {pos > 0 && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setLeader(id)}>設為隊長</button>}
           </>
         ) : (
-          <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => toggleMember(id)} disabled={full}>{full ? '隊伍已滿' : '加入隊伍'}</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)} disabled={full}>{full ? '隊伍已滿' : '加入隊伍'}</button>
         )}
       </span>
     );

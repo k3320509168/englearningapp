@@ -53,7 +53,7 @@ Mac 相容性：遊戲本身、測試、`chat-batch.ts`、`review-batch.ts` 都�
 npm install
 npm run dev                  # 本地預覽 http://localhost:5173/englearningapp/
 npx tsc -b                   # 型別檢查
-npx vitest run               # 測試（目前 267 個全過）
+npx vitest run               # 測試（目前 269 個全過）
 npx eslint src --quiet
 npm run validate:questions   # 題庫格式檢查
 ```

@@ -1,5 +1,4 @@
-import { useMemo, useState } from 'react';
-import Modal from './Modal';
+import { useEffect, useMemo, useState } from 'react';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { SPEAKERS, STORIES } from '../game/story';
@@ -7,8 +6,15 @@ import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
-// 劇情對話：一句一句播放，可以跳過。看完後依劇情決定接下來開啟什麼
-// （序章 → 新手引導／麥克風；區域開場 → 回到區域地圖）。
+// 打字機速度與標點停頓（第十六輪 v1.6：每秒 28 字、標點多停 150ms）
+export const TYPE_CPS = 28;
+export const PUNCT_PAUSE_MS = 150;
+const PUNCT = /[，。！？、…；：,.!?]/;
+const reduceMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+// 劇情對話：畫面底部的像素對話框，一句一句打字播放。點對話框：還在打字就整句顯示，再點下一句；
+// 空白鍵／Enter 也可以。右上角略過整段（略過也算看過）。看完後依劇情決定接下來開啟什麼
+// （序章 → 程度測驗；區域開場 → 回到區域地圖）。
 export default function StoryModal() {
   const storyId = useUiStore(s => s.storyId);
   const regionIdx = useUiStore(s => s.regionIdx);
@@ -33,32 +39,71 @@ export default function StoryModal() {
     closeModal();
   };
 
+  const line = lines[step];
+  const text = line ? fill(line.text) : '';
+  // 打到第幾個字（換句時重新從 0 開始；系統偏好減少動畫時直接整句）
+  const [typed, setTyped] = useState({ step: -1, n: 0 });
+  const shown = reduceMotion() ? text.length : typed.step === step ? typed.n : 0;
+  const typing = shown < text.length;
+  const showAll = () => setTyped({ step, n: text.length });
+
+  // 打字機：每個字 1000/28ms，遇到標點多停一下
+  useEffect(() => {
+    if (reduceMotion()) return;
+    let i = 0;
+    let timer = 0;
+    const tick = () => {
+      i += 1;
+      setTyped(t => (t.step === step && t.n >= text.length ? t : { step, n: i }));
+      if (i < text.length) timer = window.setTimeout(tick, 1000 / TYPE_CPS + (PUNCT.test(text[i - 1]) ? PUNCT_PAUSE_MS : 0));
+    };
+    timer = window.setTimeout(tick, 1000 / TYPE_CPS);
+    return () => window.clearTimeout(timer);
+  }, [text, step]);
+
   const next = () => {
+    if (typing) return showAll();
     sfx.click();
     if (step + 1 >= lines.length) finish();
     else setStep(step + 1);
   };
 
-  const line = lines[step];
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); finish(); return; }
+      if (e.key !== ' ' && e.key !== 'Enter') return;
+      e.preventDefault(); e.stopImmediatePropagation();
+      next();
+    };
+    // capture：比戰鬥介面的鍵盤處理先收到
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  });
+
   if (!line) return null;
   const speaker = SPEAKERS[line.speaker];
 
   return (
-    <Modal title="📜 故事" onClose={finish}>
-      <div className={`story-line speaker-${line.speaker}`} key={step} onClick={next}>
+    <div className="story-backdrop">
+      <div className={`story-box speaker-${line.speaker}`} role="dialog" aria-modal="true" aria-label="故事" onClick={next}>
+        <button className="btn btn-ghost btn-small story-skip" onMouseDown={keepFocus} onClick={e => { e.stopPropagation(); finish(); }}>略過整段 ⏭</button>
         <div className="story-portrait" aria-hidden="true">
           {line.speaker === 'hero' && heroPortrait ? <img src={heroPortrait} alt="" /> : <span>{speaker.icon}</span>}
         </div>
         <div className="story-bubble">
-          {speaker.name && <b>{fill(speaker.name)}</b>}
-          <p>{fill(line.text)}</p>
+          <div className="story-head">
+            {speaker.name && <b>{fill(speaker.name)}</b>}
+            <small className="muted">{step + 1}／{lines.length}</small>
+          </div>
+          <p aria-live="polite">{text.slice(0, shown)}<span className="story-rest" aria-hidden="true">{text.slice(shown)}</span></p>
+          <div className="story-actions">
+            <small className="muted">{typing ? '點一下顯示整句' : '點一下繼續'}</small>
+            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={e => { e.stopPropagation(); next(); }}>
+              {step + 1 >= lines.length && !typing ? '繼續' : '下一句 ⏎'}
+            </button>
+          </div>
         </div>
       </div>
-      <div className="tutorial-actions">
-        <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={finish}>跳過</button>
-        <span className="muted">{step + 1} / {lines.length}</span>
-        <button className="btn btn-primary" onMouseDown={keepFocus} onClick={next} autoFocus>{step + 1 >= lines.length ? '繼續' : '下一句 ⏎'}</button>
-      </div>
-    </Modal>
+    </div>
   );
 }

@@ -1,0 +1,1629 @@
+{
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "請選出大寫字母 A。",
+      "options": [
+        "A. M",
+        "B. S",
+        "C. T",
+        "D. A"
+      ],
+      "ans": "D",
+      "explain": "A 是英文字母表的第一個字母，小寫是 a。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🐶 dog（狗）的第一個字母是？",
+      "options": [
+        "A. D",
+        "B. M",
+        "C. R",
+        "D. G"
+      ],
+      "ans": "A",
+      "explain": "dog 的第一個字母是 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "請選出小寫字母 b。",
+      "options": [
+        "A. d",
+        "B. q",
+        "C. p",
+        "D. b"
+      ],
+      "ans": "D",
+      "explain": "小寫 b 對應大寫 B，注意它和 d 的方向不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "letter",
+      "desc": "☀️ sun（太陽）的第一個字母是？",
+      "options": [
+        "A. M",
+        "B. R",
+        "C. S",
+        "D. T"
+      ],
+      "ans": "C",
+      "explain": "sun 的第一個字母是 S。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出正確的字母。",
+      "speak": "B, ball",
+      "options": [
+        "A. F",
+        "B. B",
+        "C. P",
+        "D. T"
+      ],
+      "ans": "B",
+      "explain": "B 是英文字母，ball（球）以 B 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出聽到的字母。",
+      "speak": "M, moon",
+      "options": [
+        "A. K",
+        "B. M",
+        "C. N",
+        "D. S"
+      ],
+      "ans": "B",
+      "explain": "M 是英文字母，moon（月亮）以 M 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，哪個字母是正確答案？",
+      "speak": "S, sun",
+      "options": [
+        "A. F",
+        "B. S",
+        "C. T",
+        "D. L"
+      ],
+      "ans": "B",
+      "explain": "S 是英文字母，sun（太陽）以 S 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出正確的字母。",
+      "speak": "T, tiger",
+      "options": [
+        "A. T",
+        "B. B",
+        "C. P",
+        "D. M"
+      ],
+      "ans": "A",
+      "explain": "T 是英文字母，tiger（老虎）以 T 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，哪個字母是正確答案？",
+      "speak": "F, fish",
+      "options": [
+        "A. R",
+        "B. F",
+        "C. S",
+        "D. H"
+      ],
+      "ans": "B",
+      "explain": "F 是英文字母，fish（魚）以 F 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "數字 2 的英文是什麼？",
+      "options": [
+        "A. one",
+        "B. five",
+        "C. two",
+        "D. red"
+      ],
+      "ans": "C",
+      "explain": "two 是數字 2，one 是 1，five 是 5。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "🍌 香蕉通常是什麼顏色？",
+      "options": [
+        "A. yellow",
+        "B. green",
+        "C. pink",
+        "D. blue"
+      ],
+      "ans": "A",
+      "explain": "yellow 是黃色，成熟的香蕉通常是黃色的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "color",
+      "desc": "🌱 綠色的小葉子，英文的顏色是？",
+      "options": [
+        "A. black",
+        "B. white",
+        "C. brown",
+        "D. green"
+      ],
+      "ans": "D",
+      "explain": "green 是綠色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "🎧 聽一聽，選出正確的數字。",
+      "speak": "three",
+      "options": [
+        "A. 4",
+        "B. 3",
+        "C. 9",
+        "D. 7"
+      ],
+      "ans": "B",
+      "explain": "three 是數字 3。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "🎧 聽到的是哪個數字？",
+      "speak": "five",
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 8",
+        "D. 5"
+      ],
+      "ans": "D",
+      "explain": "five 是數字 5。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "🎧 聽一聽，選出正確的顏色。",
+      "speak": "blue",
+      "options": [
+        "A. 🟡",
+        "B. 🔴",
+        "C. 🔵",
+        "D. 🟢"
+      ],
+      "ans": "C",
+      "explain": "blue 是藍色，對應 🔵。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "color",
+      "desc": "🎧 聽到的顏色是什麼？",
+      "speak": "pink",
+      "options": [
+        "A. 黑色",
+        "B. 藍色",
+        "C. 綠色",
+        "D. 粉紅色"
+      ],
+      "ans": "D",
+      "explain": "pink 是粉紅色。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "請拼出：紅色",
+      "ans": "RED",
+      "speak": "red"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "請唸出數字：一",
+      "ans": "ONE",
+      "speak": "one",
+      "accept": [
+        "WON",
+        "WAN"
+      ]
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "遇到朋友，想說「你好」，可以用哪個英文？",
+      "options": [
+        "A. stop",
+        "B. chair",
+        "C. sleep",
+        "D. hello"
+      ],
+      "ans": "D",
+      "explain": "hello 是你好，可以用來和別人打招呼。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "command",
+      "desc": "老師說「Stand up.」，你應該做什麼？",
+      "options": [
+        "A. 關門",
+        "B. 站起來",
+        "C. 睡覺",
+        "D. 坐下"
+      ],
+      "ans": "B",
+      "explain": "Stand up. 是「站起來」的意思。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "greeting",
+      "desc": "要和朋友道別，哪一句最適合？",
+      "options": [
+        "A. Thank you",
+        "B. Goodbye",
+        "C. Good morning",
+        "D. Sit down"
+      ],
+      "ans": "B",
+      "explain": "Goodbye 是再見，用來和別人道別。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "🎧 聽到這個指令，你應該做什麼？",
+      "speak": "Sit down",
+      "options": [
+        "A. 坐下",
+        "B. 站起來",
+        "C. 拍手",
+        "D. 開門"
+      ],
+      "ans": "A",
+      "explain": "Sit down. 的意思是「坐下」。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "請拼出：再見",
+      "ans": "BYE",
+      "speak": "bye"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "請拼出：停下",
+      "ans": "STOP",
+      "speak": "stop"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "topic": "command",
+      "desc": "填空題：O _ E N (打開)",
+      "ans": "P",
+      "speak": "open"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "請唸出：早安",
+      "ans": "GOOD MORNING",
+      "speak": "good morning"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "請唸出：謝謝",
+      "ans": "THANK YOU",
+      "speak": "thank you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "請唸出：晚安",
+      "ans": "GOOD NIGHT",
+      "speak": "good night"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "command",
+      "desc": "請唸出：請",
+      "ans": "PLEASE",
+      "speak": "please"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "請唸出：走",
+      "ans": "GO",
+      "speak": "go",
+      "accept": [
+        "GOAL",
+        "GOES"
+      ]
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼？ 🍎",
+      "options": [
+        "A. red",
+        "B. dog",
+        "C. apple",
+        "D. one"
+      ],
+      "ans": "C",
+      "explain": "🍎 是 apple（蘋果）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼動物？ 🐱",
+      "options": [
+        "A. cow",
+        "B. cat",
+        "C. bird",
+        "D. fish"
+      ],
+      "ans": "B",
+      "explain": "🐱 是 cat（貓）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼動物？ 🐦",
+      "options": [
+        "A. sheep",
+        "B. bird",
+        "C. horse",
+        "D. frog"
+      ],
+      "ans": "B",
+      "explain": "🐦 是 bird（鳥）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "📕 這個東西可以用來閱讀，英文是？",
+      "options": [
+        "A. car",
+        "B. hat",
+        "C. bag",
+        "D. book"
+      ],
+      "ans": "D",
+      "explain": "book 是書，可以用來閱讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🥛 杯子裡的白色飲品是什麼？",
+      "options": [
+        "A. milk",
+        "B. water",
+        "C. tea",
+        "D. juice"
+      ],
+      "ans": "A",
+      "explain": "milk 是牛奶，通常是白色的飲品。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼交通工具？ 🚗",
+      "options": [
+        "A. bus",
+        "B. bike",
+        "C. car",
+        "D. boat"
+      ],
+      "ans": "C",
+      "explain": "🚗 是 car（汽車）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "夜空中閃亮的 ⭐，英文是什麼？",
+      "options": [
+        "A. cloud",
+        "B. star",
+        "C. moon",
+        "D. tree"
+      ],
+      "ans": "B",
+      "explain": "star 是星星，夜晚可以在天空中看到。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼？ ⚽",
+      "options": [
+        "A. ball",
+        "B. cup",
+        "C. chair",
+        "D. pen"
+      ],
+      "ans": "A",
+      "explain": "⚽ 是 ball（球）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🚪 這個可以打開或關上，英文是？",
+      "options": [
+        "A. egg",
+        "B. bed",
+        "C. door",
+        "D. shoe"
+      ],
+      "ans": "C",
+      "explain": "door 是門，可以打開或關上。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的動物。",
+      "speak": "cow",
+      "options": [
+        "A. 🐔",
+        "B. 🐷",
+        "C. 🐰",
+        "D. 🐮"
+      ],
+      "ans": "D",
+      "explain": "cow 是牛，對應 🐮。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的圖。",
+      "speak": "fish",
+      "options": [
+        "A. 🐦",
+        "B. 🐶",
+        "C. 🐱",
+        "D. 🐟"
+      ],
+      "ans": "D",
+      "explain": "fish 是魚，對應 🐟。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽到的是哪個東西？",
+      "speak": "tree",
+      "options": [
+        "A. 🌳",
+        "B. 🪨",
+        "C. 🏠",
+        "D. 🌷"
+      ],
+      "ans": "A",
+      "explain": "tree 是樹，對應 🌳。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的身體部位。",
+      "speak": "hand",
+      "options": [
+        "A. 耳朵",
+        "B. 腳",
+        "C. 手",
+        "D. 頭"
+      ],
+      "ans": "C",
+      "explain": "hand 是手。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的圖。",
+      "speak": "egg",
+      "options": [
+        "A. 🥚",
+        "B. 🧀",
+        "C. 🍞",
+        "D. 🍌"
+      ],
+      "ans": "A",
+      "explain": "egg 是蛋，對應 🥚。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的天氣圖片。",
+      "speak": "rain",
+      "options": [
+        "A. ☀️",
+        "B. 🌈",
+        "C. ❄️",
+        "D. 🌧️"
+      ],
+      "ans": "D",
+      "explain": "rain 是雨、下雨，對應 🌧️。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽到的是哪一種家具？",
+      "speak": "bed",
+      "options": [
+        "A. 🪑",
+        "B. 🛋️",
+        "C. 🚪",
+        "D. 🛏️"
+      ],
+      "ans": "D",
+      "explain": "bed 是床，對應 🛏️。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的圖。",
+      "speak": "shoe",
+      "options": [
+        "A. 👕",
+        "B. 👟",
+        "C. 🧤",
+        "D. 🧢"
+      ],
+      "ans": "B",
+      "explain": "shoe 是鞋子，對應 👟。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，哪個東西可以用來開鎖？",
+      "speak": "key",
+      "options": [
+        "A. 🔑",
+        "B. 📕",
+        "C. ✏️",
+        "D. 🥄"
+      ],
+      "ans": "A",
+      "explain": "key 是鑰匙，對應 🔑，可以用來開鎖。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請拼出：帽子",
+      "ans": "HAT",
+      "speak": "hat"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "填空題：P _ N (筆)",
+      "ans": "E",
+      "speak": "pen"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "請拼出：盒子",
+      "ans": "BOX",
+      "speak": "box"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請唸出單字：狗",
+      "ans": "DOG",
+      "speak": "dog"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請唸出單字：牛奶",
+      "ans": "MILK",
+      "speak": "milk"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "請唸出單字：書",
+      "ans": "BOOK",
+      "speak": "book"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "I am Tom. 這句英文是什麼意思？",
+      "options": [
+        "A. 我認識湯姆。",
+        "B. 我喜歡湯姆。",
+        "C. 我是湯姆。",
+        "D. 湯姆在哪裡？"
+      ],
+      "ans": "C",
+      "explain": "I am Tom. 的意思是「我是湯姆」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "sentence",
+      "desc": "It is red. 這句英文是在說什麼？",
+      "options": [
+        "A. 它是藍色的。",
+        "B. 它是紅色的。",
+        "C. 它很大。",
+        "D. 它很小。"
+      ],
+      "ans": "B",
+      "explain": "It is red. 的意思是「它是紅色的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "🎧 聽一聽，選出正確的句子意思。",
+      "speak": "I am happy.",
+      "options": [
+        "A. 我很餓。",
+        "B. 我很開心。",
+        "C. 我很累。",
+        "D. 我很生氣。"
+      ],
+      "ans": "B",
+      "explain": "I am happy. 的意思是「我很開心」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "sentence",
+      "desc": "🎧 聽一聽，這句話在描述什麼？",
+      "speak": "The cat is big.",
+      "options": [
+        "A. 貓在跑步。",
+        "B. 貓很小。",
+        "C. 貓很大。",
+        "D. 貓在睡覺。"
+      ],
+      "ans": "C",
+      "explain": "The cat is big. 的意思是「這隻貓很大」。"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "填空題：I a _ Tom. (我是湯姆)",
+      "ans": "M",
+      "speak": "I am Tom."
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "topic": "sentence",
+      "desc": "填空題：It is ho _. (它是熱的)",
+      "ans": "T",
+      "speak": "It is hot."
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "請選出大寫字母 C。",
+      "options": [
+        "A. C",
+        "B. O",
+        "C. G",
+        "D. Q"
+      ],
+      "ans": "A",
+      "explain": "C 是英文字母，小寫是 c。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "大寫字母 E 對應哪個小寫字母？",
+      "options": [
+        "A. a",
+        "B. o",
+        "C. e",
+        "D. i"
+      ],
+      "ans": "C",
+      "explain": "大寫 E 對應小寫 e。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "letter",
+      "desc": "🪁 kite（風箏）的第一個字母是？",
+      "options": [
+        "A. K",
+        "B. F",
+        "C. T",
+        "D. P"
+      ],
+      "ans": "A",
+      "explain": "kite 的第一個字母是 K。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🍃 leaf（葉子）的第一個字母是？",
+      "options": [
+        "A. B",
+        "B. M",
+        "C. R",
+        "D. L"
+      ],
+      "ans": "D",
+      "explain": "leaf 的第一個字母是 L。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出正確的字母。",
+      "speak": "P, panda",
+      "options": [
+        "A. T",
+        "B. B",
+        "C. P",
+        "D. D"
+      ],
+      "ans": "C",
+      "explain": "P 是英文字母，panda（貓熊）以 P 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出聽到的字母。",
+      "speak": "H, house",
+      "options": [
+        "A. S",
+        "B. H",
+        "C. P",
+        "D. F"
+      ],
+      "ans": "B",
+      "explain": "H 是英文字母，house（房子）以 H 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，哪個字母是正確答案？",
+      "speak": "R, rabbit",
+      "options": [
+        "A. N",
+        "B. L",
+        "C. R",
+        "D. B"
+      ],
+      "ans": "C",
+      "explain": "R 是英文字母，rabbit（兔子）以 R 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出正確的字母。",
+      "speak": "N, nest",
+      "options": [
+        "A. T",
+        "B. N",
+        "C. M",
+        "D. S"
+      ],
+      "ans": "B",
+      "explain": "N 是英文字母，nest（鳥巢）以 N 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "letter",
+      "desc": "🎧 聽一聽，選出聽到的字母。",
+      "speak": "V, violin",
+      "options": [
+        "A. B",
+        "B. E",
+        "C. V",
+        "D. D"
+      ],
+      "ans": "C",
+      "explain": "V 是英文字母，violin（小提琴）以 V 開頭。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "數字 6 的英文是什麼？",
+      "options": [
+        "A. blue",
+        "B. chair",
+        "C. six",
+        "D. cat"
+      ],
+      "ans": "C",
+      "explain": "six 是數字 6。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "number",
+      "desc": "數字 9 的英文是什麼？",
+      "options": [
+        "A. milk",
+        "B. nine",
+        "C. door",
+        "D. yellow"
+      ],
+      "ans": "B",
+      "explain": "nine 是數字 9。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "🎧 聽一聽，選出正確的數字。",
+      "speak": "seven",
+      "options": [
+        "A. 9",
+        "B. 3",
+        "C. 5",
+        "D. 7"
+      ],
+      "ans": "D",
+      "explain": "seven 是數字 7。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "🎧 聽到的是哪個數字？",
+      "speak": "ten",
+      "options": [
+        "A. 2",
+        "B. 4",
+        "C. 6",
+        "D. 10"
+      ],
+      "ans": "D",
+      "explain": "ten 是數字 10。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "number",
+      "desc": "請拼出：零",
+      "ans": "ZERO",
+      "speak": "zero"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "topic": "number",
+      "desc": "填空題：E I G H _ (八)",
+      "ans": "T",
+      "speak": "eight"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "白色的英文是哪一個？",
+      "options": [
+        "A. brown",
+        "B. pink",
+        "C. white",
+        "D. green"
+      ],
+      "ans": "C",
+      "explain": "white 是白色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "🎧 聽一聽，選出正確的顏色。",
+      "speak": "black",
+      "options": [
+        "A. 🟡",
+        "B. 🟢",
+        "C. 🔵",
+        "D. ⚫"
+      ],
+      "ans": "D",
+      "explain": "black 是黑色，對應 ⚫。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "color",
+      "desc": "請拼出：灰色",
+      "ans": "GRAY",
+      "speak": "gray",
+      "spellAccept": [
+        "GREY"
+      ]
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "color",
+      "desc": "請唸出：紫色",
+      "ans": "PURPLE",
+      "speak": "purple"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "朋友問你「How are you?」，他想知道什麼？",
+      "options": [
+        "A. 你好嗎？",
+        "B. 你叫什麼名字？",
+        "C. 你住哪裡？",
+        "D. 你幾歲？"
+      ],
+      "ans": "A",
+      "explain": "How are you? 是「你好嗎？」，用來關心對方的近況。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "greeting",
+      "desc": "有人對你說 Thank you，你可以怎麼回答？",
+      "options": [
+        "A. Good night.",
+        "B. Please sit.",
+        "C. I'm tired.",
+        "D. You're welcome."
+      ],
+      "ans": "D",
+      "explain": "You're welcome. 是「不客氣」，適合回應別人的感謝。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "🎧 聽一聽，這句招呼語適合什麼時段？",
+      "speak": "Good afternoon.",
+      "options": [
+        "A. 下午",
+        "B. 睡前",
+        "C. 凌晨",
+        "D. 晚上"
+      ],
+      "ans": "A",
+      "explain": "Good afternoon. 是「午安」，通常在下午使用。"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "填空題：H E _ (嗨)",
+      "ans": "Y",
+      "speak": "hey"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "greeting",
+      "desc": "請唸出：對不起",
+      "ans": "SORRY",
+      "speak": "sorry"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "greeting",
+      "desc": "請唸出：再見",
+      "ans": "SEE YOU",
+      "speak": "see you"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "老師說「Clap your hands.」，你應該做什麼？",
+      "options": [
+        "A. 向前跑",
+        "B. 蹲下",
+        "C. 拍手",
+        "D. 閉上眼睛"
+      ],
+      "ans": "C",
+      "explain": "Clap your hands. 是「拍手」的意思。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "command",
+      "desc": "「Turn left.」是什麼意思？",
+      "options": [
+        "A. 向右轉",
+        "B. 向左轉",
+        "C. 停下來",
+        "D. 向前跑"
+      ],
+      "ans": "B",
+      "explain": "Turn left. 是「向左轉」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "🎧 聽到這個指令，你應該做什麼？",
+      "speak": "Jump.",
+      "options": [
+        "A. 拍手",
+        "B. 跳起來",
+        "C. 關門",
+        "D. 坐下"
+      ],
+      "ans": "B",
+      "explain": "Jump. 的意思是「跳起來」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "🎧 聽一聽，選出正確的動作。",
+      "speak": "Close the door.",
+      "options": [
+        "A. 打開窗戶",
+        "B. 拿起書本",
+        "C. 把門關上",
+        "D. 洗手"
+      ],
+      "ans": "C",
+      "explain": "Close the door. 是「把門關上」。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "command",
+      "desc": "請拼出：走路",
+      "ans": "WALK",
+      "speak": "walk"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "topic": "command",
+      "desc": "填空題：R _ N (跑步)",
+      "ans": "U",
+      "speak": "run"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼水果？ 🍌",
+      "options": [
+        "A. banana",
+        "B. grape",
+        "C. orange",
+        "D. apple"
+      ],
+      "ans": "A",
+      "explain": "🍌 是 banana（香蕉）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "這是什麼動物？ 🐰",
+      "options": [
+        "A. tiger",
+        "B. cow",
+        "C. duck",
+        "D. rabbit"
+      ],
+      "ans": "D",
+      "explain": "🐰 是 rabbit（兔子）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼交通工具？ 🚌",
+      "options": [
+        "A. plane",
+        "B. bus",
+        "C. ship",
+        "D. train"
+      ],
+      "ans": "B",
+      "explain": "🚌 是 bus（公車）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🕒 可以用來看時間的東西，英文是？",
+      "options": [
+        "A. table",
+        "B. shoe",
+        "C. clock",
+        "D. bag"
+      ],
+      "ans": "C",
+      "explain": "clock 是時鐘，可以用來看時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "這是什麼食物？ 🍕",
+      "options": [
+        "A. rice",
+        "B. soup",
+        "C. pizza",
+        "D. bread"
+      ],
+      "ans": "C",
+      "explain": "🍕 是 pizza（披薩）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "這是什麼植物？ 🌸",
+      "options": [
+        "A. grass",
+        "B. flower",
+        "C. leaf",
+        "D. tree"
+      ],
+      "ans": "B",
+      "explain": "🌸 是 flower（花朵）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "📱 這個可以用來打電話，英文是？",
+      "options": [
+        "A. plate",
+        "B. bottle",
+        "C. phone",
+        "D. pillow"
+      ],
+      "ans": "C",
+      "explain": "phone 是電話，📱 是手機。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的食物。",
+      "speak": "bread",
+      "options": [
+        "A. 🧀",
+        "B. 🥚",
+        "C. 🍎",
+        "D. 🍞"
+      ],
+      "ans": "D",
+      "explain": "bread 是麵包，對應 🍞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的交通工具。",
+      "speak": "train",
+      "options": [
+        "A. 🚢",
+        "B. 🚲",
+        "C. 🚗",
+        "D. 🚆"
+      ],
+      "ans": "D",
+      "explain": "train 是火車，對應 🚆。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的動物。",
+      "speak": "duck",
+      "options": [
+        "A. 🐮",
+        "B. 🐱",
+        "C. 🐶",
+        "D. 🦆"
+      ],
+      "ans": "D",
+      "explain": "duck 是鴨子，對應 🦆。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的圖。",
+      "speak": "house",
+      "options": [
+        "A. 🚌",
+        "B. 🏠",
+        "C. 🌳",
+        "D. 🚗"
+      ],
+      "ans": "B",
+      "explain": "house 是房子，對應 🏠。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的意思。",
+      "speak": "water",
+      "options": [
+        "A. 石頭",
+        "B. 火",
+        "C. 沙子",
+        "D. 水"
+      ],
+      "ans": "D",
+      "explain": "water 是水。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的文具。",
+      "speak": "pencil",
+      "options": [
+        "A. 📕",
+        "B. ✂️",
+        "C. ✏️",
+        "D. 📏"
+      ],
+      "ans": "C",
+      "explain": "pencil 是鉛筆，對應 ✏️。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，選出正確的水果。",
+      "speak": "grapes",
+      "options": [
+        "A. 🍇",
+        "B. 🍌",
+        "C. 🍎",
+        "D. 🍓"
+      ],
+      "ans": "A",
+      "explain": "grapes 是葡萄，對應 🍇。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "🎧 聽一聽，這個英文是什麼家具？",
+      "speak": "table",
+      "options": [
+        "A. 沙發",
+        "B. 椅子",
+        "C. 桌子",
+        "D. 床"
+      ],
+      "ans": "C",
+      "explain": "table 是桌子。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請拼出：杯子",
+      "ans": "CUP",
+      "speak": "cup"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請拼出：袋子",
+      "ans": "BAG",
+      "speak": "bag"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請拼出：蛋糕",
+      "ans": "CAKE",
+      "speak": "cake"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "填空題：P I _ (豬)",
+      "ans": "G",
+      "speak": "pig"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "填空題：M A _ (地圖)",
+      "ans": "P",
+      "speak": "map"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "填空題：B O _ T (船)",
+      "ans": "A",
+      "speak": "boat"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "picture",
+      "desc": "請唸出：貓熊",
+      "ans": "PANDA",
+      "speak": "panda"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "請唸出：烏龜",
+      "ans": "TURTLE",
+      "speak": "turtle"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "topic": "picture",
+      "desc": "請唸出：大象",
+      "ans": "ELEPHANT",
+      "speak": "elephant"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "My name is Amy. 這句英文是什麼意思？",
+      "options": [
+        "A. 我正在找艾咪。",
+        "B. 艾咪是我的老師。",
+        "C. 我想跟艾咪玩。",
+        "D. 我的名字叫艾咪。"
+      ],
+      "ans": "D",
+      "explain": "My name is Amy. 的意思是「我的名字叫艾咪」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "topic": "sentence",
+      "desc": "We are friends. 這句英文是在說什麼？",
+      "options": [
+        "A. 我們是朋友。",
+        "B. 我們是學生。",
+        "C. 我們是老師。",
+        "D. 我們是家人。"
+      ],
+      "ans": "A",
+      "explain": "We are friends. 的意思是「我們是朋友」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "topic": "sentence",
+      "desc": "🎧 聽一聽，選出正確的句子意思。",
+      "speak": "I have a toy.",
+      "options": [
+        "A. 我有一本書。",
+        "B. 我有一隻狗。",
+        "C. 我有一個玩具。",
+        "D. 我有一台車。"
+      ],
+      "ans": "C",
+      "explain": "I have a toy. 的意思是「我有一個玩具」。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "請唸出：做得好",
+      "ans": "GOOD JOB",
+      "speak": "good job"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "topic": "sentence",
+      "desc": "請唸出：小心",
+      "ans": "BE CAREFUL",
+      "speak": "be careful"
+    }
+  ],
+  "boss": []
+}

@@ -1,0 +1,30 @@
+// 紙上模擬：只模擬 combo 的數學過程（不跑遊戲）。每張地圖 N 題，每 8 題一題困難題；答錯 combo 保留 keep
+const BONUS = [[1, 34], [2, 33], [3, 20], [5, 10], [10, 3]];
+const ADD = { 1: 0, 2: 6, 3: 15, 5: 30, 10: 60 };
+let seed = 7; const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const roll = () => { let r = rand() * 100; for (const [m, w] of BONUS) { if ((r -= w) < 0) return m; } return 1; };
+const models = {
+  '現行：整個相乘': (c, m) => c * m,
+  'GPT：固定加值': (c, m) => c + ADD[m],
+  // 遞減乘法：combo 越高，倍數的效果越小（1 萬時剩一半、100 萬時剩 15%）
+  '遞減乘法': (c, m) => c * (1 + (m - 1) * Math.max(0.15, 1 - Math.log10(Math.max(1, c)) / 7)),
+};
+const q = (a, p) => a.sort((x, y) => x - y)[Math.floor(p * (a.length - 1))];
+for (const [acc, n] of [[0.96, 100], [0.9, 100], [0.82, 110], [0.72, 140]]) {
+  for (const keep of [0, 0.5]) {
+    const row = [];
+    for (const [name, f] of Object.entries(models)) {
+      const ends = [], peaks = [];
+      for (let t = 0; t < 4000; t++) {
+        let c = 0, peak = 0;
+        for (let i = 1; i <= n; i++) {
+          if (rand() < acc) { c = (i % 8 === 0 ? f(c, roll()) : c) + 1; } else c = Math.floor(c * keep);
+          peak = Math.max(peak, c);
+        }
+        peaks.push(peak);
+      }
+      row.push(`${name} 最高combo 中位${Math.round(q(peaks, 0.5))} P90 ${Math.round(q(peaks, 0.9))} P99 ${Math.round(q(peaks, 0.99))}`);
+    }
+    console.log(`正確率${acc * 100}% 一張地圖${n}題 答錯保留${keep * 100}%\n  ` + row.join('\n  '));
+  }
+}

@@ -260,3 +260,6 @@
 - **音樂**（`musicData.ts`）：15 首主題＋10 首戰鬥變奏：世界地圖、十區、小 BOSS、大 BOSS、區域魔王、沉默君王。
 - **模擬（推薦等級、無裝備）**：90%：一般關 ≥99%、大 BOSS 83～100%、區域魔王 92～100%。80%：一般關 92～100%、大 BOSS 61～100%（後期 1.3～1.4 次）、C1 區域魔王 50%（1.6 次）。
 - **還沒做**：英雄擴充到 150 位（N48、R45、SR38、SSR15、UR4，分兩次各 39 位）、專武系統本體、工坊完整合併（鍛造搬出成長）、處決提早結算時三星的 95%／連對 12 條件。
+
+## 19. 全盤平衡最終規格 v2.0（2026-11-01，和 ChatGPT 五輪深度討論）
+完整規格：`docs/gpt/balance-r5-final-spec.md`；討論過程：`docs/gpt/balance-r1～r4.md`、紙上模擬 `docs/gpt/balance-paper-r3/r4.txt`、遊戲模擬 `docs/gpt/balance-sim-r2.txt`（`scripts/realsim2.mts`）。重點摘要見 `docs/DEV_LOG.md`「第 5 輪」。

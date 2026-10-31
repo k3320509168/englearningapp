@@ -1,7 +1,8 @@
 import type { Question, QuestionSkill, Stage } from './types';
 import { shuffleArray } from './battle';
-import { allowedTypes, regionStageCount, stageRole } from './stageLayout';
+import { PROLOGUE_ELITE, PROLOGUE_KEY, PROLOGUE_STAGES, allowedTypes, regionStageCount, stageRole } from './stageLayout';
 import generatedPool from './questions/generated.json';
+import prologueBank from './questions/bank/r-pre.json';
 import type { BankFile } from './questions/bank';
 
 // 九個細分等級。字串同時是存檔的 key（關卡進度、星星），舊的六個不能改名；
@@ -180,6 +181,10 @@ export function mergePools(base: QuestionPool, extra: Partial<QuestionPool>): Qu
 export const QUESTION_POOL: QuestionPool = mergePools(mergePools(BASE_POOL, generatedPool as Partial<QuestionPool>),
   Object.fromEntries(LEVELS.map(level => [level, { normal: [], boss: [] }])));
 
+// 前置區域「失語邊境」的 Pre-A1 題庫（ChatGPT 第十七輪，120 題，很小所以直接打包）；困難題用難度 2 的題目
+const prologueQuestions = prologueBank.normal as Question[];
+QUESTION_POOL[PROLOGUE_KEY] = { normal: prologueQuestions, boss: prologueQuestions.filter(q => q.difficulty === 2) };
+
 const loadedBanks = new Set<number>();
 export const isBankLoaded = (regionIdx: number) => loadedBanks.has(regionIdx);
 // 把一個區域的 CEFR 題庫加進題庫（直接加到原本的陣列，已經拿到 pool 的地方也看得到）
@@ -233,7 +238,7 @@ export interface Decks {
 export function createDecks(levelKey: string, rand: () => number = Math.random): Decks {
   const pool = getPool(levelKey);
   const levelIdx = Math.max(0, LEVELS.indexOf(levelKey));
-  const stageCount = regionStageCount(levelIdx);
+  const stageCount = levelKey === PROLOGUE_KEY ? PROLOGUE_STAGES : regionStageCount(levelIdx);
   const makeDraw = (original: Question[]) => {
     const tiers = ([1, 2, 3] as const).map(d => original.filter(q => questionDifficulty(q) === d));
     const decks: Question[][] = [[], [], [], []]; // 0 = 不分難度
@@ -253,7 +258,7 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
     // 新手關只出開放的題型（例如 1-1～1-10 只有選擇題）：抽到別的題型就再抽；
     // 這個難度剛好沒有該題型時，改從整個題庫挑符合題型的題目
     return (stageIdx?: number) => {
-      const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx);
+      const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx, levelKey);
       let q = draw(stageIdx);
       for (let i = 0; types && !types.includes(q.type) && i < 20; i++) q = draw(stageIdx);
       if (types && !types.includes(q.type)) {
@@ -271,6 +276,13 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
 
 // 一個區域：數張三星關卡 × 20 小關（第 5、10 關菁英、第 7 關寶箱、第 15 關小 BOSS、第 20 關大 BOSS），最後一關是區域最終魔王
 export function generateStages(levelKey: string, decks: Decks = createDecks(levelKey)): Stage[] {
+  // 前置區域：10 小關，P-5 菁英、P-10 追獵隊長（最終 BOSS）
+  if (levelKey === PROLOGUE_KEY) {
+    return Array.from({ length: PROLOGUE_STAGES }, (_, i): Stage => (i === PROLOGUE_STAGES - 1
+      ? { name: '追獵隊長', bossMode: true, kind: 'gate', questions: [decks.boss(i)] }
+      : i === PROLOGUE_ELITE ? { name: '追兵隊長', bossMode: false, kind: 'elite', questions: [decks.normal(i)] }
+      : { name: '魔王軍追兵', bossMode: false, questions: [decks.normal(i)] }));
+  }
   const levelIdx = Math.max(0, LEVELS.indexOf(levelKey));
   const count = regionStageCount(levelIdx);
   const stages: Stage[] = [];

@@ -9,7 +9,7 @@ import { LEVELS } from './QuestionData';
 // Combo 只在同一張地圖內延續。
 
 export { MAP_SIZE, REGION_CHAPTERS, chapterCount, regionStageCount, stageInMap } from './stageLayout';
-import { MAP_SIZE, chapterCount, regionStageCount } from './stageLayout';
+import { MAP_SIZE, PROLOGUE_KEY, chapterCount, regionStageCount } from './stageLayout';
 
 export interface RegionDef {
   id: string;     // 存檔用的 key（關卡進度）；目前與題庫 key 相同，保持舊存檔相容
@@ -40,12 +40,16 @@ export const REGIONS: RegionDef[] = LEVELS.map((pool, i) => ({
   maps: [...(DATA[i]?.maps ?? []).slice(0, chapterCount(i)), DATA[i]?.boss ?? '最終決戰'],
 }));
 
-export const regionOf = (id: string) => REGIONS.find(r => r.id === id) ?? REGIONS[0];
-export const regionName = (id: string) => REGIONS.find(r => r.id === id)?.name ?? '';
+// 前置區域「失語邊境」（Pre-A1）：不在九區之內，1 張地圖 × 10 小關；戰鬥數值和背景沿用 A1
+export const PROLOGUE: RegionDef = { id: PROLOGUE_KEY, name: '失語邊境', pool: PROLOGUE_KEY, theme: 0, maps: ['最後的逃亡'] };
+
+export const regionOf = (id: string) => (id === PROLOGUE_KEY ? PROLOGUE : REGIONS.find(r => r.id === id) ?? REGIONS[0]);
+export const regionName = (id: string) => (id === PROLOGUE_KEY ? PROLOGUE.name : REGIONS.find(r => r.id === id)?.name ?? '');
 
 export const mapIndexOf = (stageIdx: number) => Math.floor(stageIdx / MAP_SIZE);
 export const mapName = (regionId: string, stageIdx: number) => regionOf(regionId).maps[mapIndexOf(stageIdx)] ?? '';
 export const mapKey = (regionId: string, mapIdx: number) => `${regionId}#${mapIdx}`;
 // 地圖內的第幾關，例如「2-3」；區域最終魔王顯示「魔王」
-export const stageLabel = (stageIdx: number, levelIdx?: number) =>
-  levelIdx !== undefined && stageIdx >= regionStageCount(levelIdx) - 1 ? '魔王' : `${mapIndexOf(stageIdx) + 1}-${(stageIdx % MAP_SIZE) + 1}`;
+// 前置區域顯示「P-3」
+export const stageLabel = (stageIdx: number, levelIdx?: number, levelKey?: string) =>
+  levelKey === PROLOGUE_KEY ? `P-${stageIdx + 1}` : levelIdx !== undefined && stageIdx >= regionStageCount(levelIdx) - 1 ? '魔王' : `${mapIndexOf(stageIdx) + 1}-${(stageIdx % MAP_SIZE) + 1}`;

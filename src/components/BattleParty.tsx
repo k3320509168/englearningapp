@@ -22,7 +22,7 @@ export function TimerBars() {
   const { phase, questionLeft, questionLimit, overtime, stageIdx, treasureLeft, untimed } = useBattleStore(useShallow(s => ({
     phase: s.phase, questionLeft: s.questionLeft, questionLimit: s.questionLimit,
     overtime: s.overtime, stageIdx: s.stageIdx, treasureLeft: s.treasureLeft,
-    untimed: s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx),
+    untimed: s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx, s.levelKey),
   })));
   if (phase !== 'answering' && phase !== 'casting') return null;
   // 新手關不計時：只顯示快答加成，不顯示會讓人緊張的倒數

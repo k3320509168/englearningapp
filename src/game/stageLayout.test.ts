@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { MAP_SIZE, allowedTypes, gaugeScale, minAnswers, regionStageCount, stageRole, untimedStage } from './stageLayout';
+import { MAP_SIZE, PROLOGUE_ELITE, PROLOGUE_KEY, PROLOGUE_MIN, PROLOGUE_STAGES, allowedTypes, gaugeScale, minAnswers, regionStageCount, stageRole, untimedStage } from './stageLayout';
 import { LEVELS, generateStages } from './QuestionData';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 import { setBattleRandom, useBattleStore } from '../store/battleStore';
@@ -16,25 +16,32 @@ describe('三星關卡 20 小關', () => {
     expect(stages[14].bossMode && stages[19].bossMode && stages[stages.length - 1].bossMode).toBe(true);
   });
 
-  it('最低答題數：新手第 1 張從 3 題慢慢加，之後照九區表', () => {
-    expect([0, 1, 2, 19].map(i => minAnswers(0, i))).toEqual([3, 4, 5, 16]);
-    expect(minAnswers(0, 20)).toBe(6);
-    expect(minAnswers(0, 34)).toBe(12);
+  it('最低答題數：前置區域從 3 題慢慢加到追獵隊長 9 題；A1 第一關就照九區表', () => {
+    expect([0, 1, 2, 9].map(i => minAnswers(0, i, PROLOGUE_KEY))).toEqual([3, 4, 5, 9]);
+    expect(PROLOGUE_MIN.reduce((a, b) => a + b, 0)).toBe(53);
+    expect(minAnswers(0, 0)).toBe(6);
+    expect(minAnswers(0, 19)).toBe(16);
     expect(minAnswers(8, regionStageCount(8) - 1)).toBe(40);
   });
 
-  it('新手關：前 7 關不計時、前 10 關敵人不主動攻擊、題型慢慢開放', () => {
-    expect(untimedStage(0, 6)).toBe(true);
-    expect(untimedStage(0, 7)).toBe(false);
-    expect(gaugeScale(0, 9)).toBe(0);
-    expect(gaugeScale(0, 10)).toBe(0.5);
-    expect(gaugeScale(0, 40)).toBe(1);
-    expect(gaugeScale(1, 0)).toBe(1);
-    expect(allowedTypes(0, 0)).toEqual(['choice']);
-    expect(allowedTypes(0, 11)).not.toContain('voice');
-    expect(allowedTypes(0, 12)).toBeNull();
-    // 1-1～1-10 抽出來的題目都是選擇題
-    generateStages(LEVELS[0]).slice(0, 10).forEach(st => expect(st.questions[0].type).toBe('choice'));
+  it('前置區域：P-1～P-9 不計時、P-1～P-6 敵人不主動攻擊、題型慢慢開放；A1 是正式規則', () => {
+    expect(untimedStage(0, 8, PROLOGUE_KEY)).toBe(true);
+    expect(untimedStage(0, 9, PROLOGUE_KEY)).toBe(false);
+    expect(untimedStage(0, 0)).toBe(false);
+    expect(gaugeScale(0, 5, PROLOGUE_KEY)).toBe(0);
+    expect(gaugeScale(0, 6, PROLOGUE_KEY)).toBe(0.3);
+    expect(gaugeScale(0, 9, PROLOGUE_KEY)).toBe(0.7);
+    expect(gaugeScale(0, 0)).toBe(1);
+    expect(allowedTypes(0, 0, PROLOGUE_KEY)).toEqual(['choice']);
+    expect(allowedTypes(0, 5, PROLOGUE_KEY)).not.toContain('voice');
+    expect(allowedTypes(0, 7, PROLOGUE_KEY)).toBeNull();
+    expect(allowedTypes(0, 0)).toBeNull();
+    // P-1～P-5 抽出來的題目都是選擇題；P-5 菁英、P-10 追獵隊長（不是區域魔王）
+    const stages = generateStages(PROLOGUE_KEY);
+    expect(stages).toHaveLength(PROLOGUE_STAGES);
+    stages.slice(0, 5).forEach(st => expect(st.questions[0].type).toBe('choice'));
+    expect(stages[PROLOGUE_ELITE].kind).toBe('elite');
+    expect(stages[9]).toMatchObject({ bossMode: true, kind: 'gate' });
   });
 
   it('v15 存檔的關卡進度換算到新的 20 小關', () => {

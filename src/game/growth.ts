@@ -86,7 +86,8 @@ export function addXp(level: number, xp: number, gained: number, cap = MAX_LEVEL
 // 戰鬥中獲得的經驗：答對、擊倒。每區一個固定的校準係數（依模擬：90% 正確率的玩家打完一區，
 // 主線大約給到推薦等級需求的 85%，其餘靠副本），讓實際等級貼近推薦等級
 export const XP = { correct: 3, kill: 6, elite: 15, boss: 30 };
-export const REGION_XP = [0.65, 1.3, 1.45, 1.95, 1.95, 2.3, 2.7, 3.1, 3.5];
+// A1 從 Lv5 開始（前置區域打完約 Lv5）：Lv5→20 需要 3300，比原本 Lv1→20 的 3800 少，係數 0.65 × 3300/3800 ≈ 0.56
+export const REGION_XP = [0.56, 1.3, 1.45, 1.95, 1.95, 2.3, 2.7, 3.1, 3.5];
 export const xpScale = (regionIdx: number) => REGION_XP[Math.min(Math.max(0, regionIdx), REGION_XP.length - 1)];
 
 // ---------- 轉職樹 ----------

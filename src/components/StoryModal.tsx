@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { SPEAKERS, STORIES } from '../game/story';
+import { PROLOGUE_CLEAR_STORY, SPEAKERS, STORIES } from '../game/story';
 import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
@@ -14,7 +14,7 @@ const reduceMotion = () => typeof window !== 'undefined' && window.matchMedia?.(
 
 // 劇情對話：畫面底部的像素對話框，一句一句打字播放。點對話框：還在打字就整句顯示，再點下一句；
 // 空白鍵／Enter 也可以。右上角略過整段（略過也算看過）。看完後依劇情決定接下來開啟什麼
-// （序章 → 程度測驗；區域開場 → 回到區域地圖）。
+// （序章 → 程度測驗；區域開場 → 回到區域地圖；逃出失語邊境 → 翠綠草原）。
 export default function StoryModal() {
   const storyId = useUiStore(s => s.storyId);
   const regionIdx = useUiStore(s => s.regionIdx);
@@ -36,6 +36,8 @@ export default function StoryModal() {
       return useUiStore.getState().openModal('placement');
     }
     if (storyId.startsWith('region-')) return openRegion(regionIdx);
+    // 逃出失語邊境：前往翠綠草原（區域地圖會播 A1 開場）
+    if (storyId === PROLOGUE_CLEAR_STORY) return openRegion(0);
     closeModal();
   };
 

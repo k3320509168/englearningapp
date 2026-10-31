@@ -294,7 +294,8 @@ export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ?
 
 // ---------- 敵人等級與推薦戰力（第四輪） ----------
 // 第十三輪：九區的推薦等級（入區 → 通關），區內越後面越高；菁英 +2、小 BOSS +3、大 BOSS +4、區域魔王 +5
-export const REGION_LEVELS: [number, number][] = [[1, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
+// A1 從 Lv5 開始：Lv1～5 是前置區域「失語邊境」
+export const REGION_LEVELS: [number, number][] = [[5, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
 export const recommendedLevel = (levelIdx: number, stageIdx: number) => {
   const [from, to] = REGION_LEVELS[Math.min(Math.max(0, levelIdx), REGION_LEVELS.length - 1)];
   return Math.min(200, from + Math.floor((stageIdx / regionStageCount(levelIdx)) * (to - from)));

@@ -6,7 +6,8 @@ import { questionKey } from '../game/battle';
 import { WHEEL_PRIZES, rollWheel } from '../game/wheel';
 import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, updateKnowledge } from '../game/knowledge';
 import type { KnowledgeRecord } from '../game/knowledge';
-import { REGION_LEVELS } from '../game/progression';
+// v18 換算等級時用的推薦等級表（之後 A1 改從 Lv5 起，但舊存檔照當時的規則換算）
+const V18_REGION_LEVELS: [number, number][] = [[1, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
 import type { ItemId, UpgradeId } from '../game/progression';
 import {
@@ -36,7 +37,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 18;
+export const SAVE_VERSION = 19;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -73,6 +74,8 @@ interface SaveData {
   // 玩家自創的主角；null 代表還沒建立（第一次進入遊戲會先開角色創建）
   character: Character | null;
   unlockedIndex: number;
+  // 前置區域「失語邊境」打完了沒（或程度測驗直接跳過）；沒打完時「踏上征途」先去那裡
+  prologueDone: boolean;
   // 每個區域目前打到第幾關（stage index），離開後回來從這裡繼續
   levelProgress: Record<string, number>;
   micAsked: boolean;
@@ -165,6 +168,7 @@ interface SaveActions {
   recordStrictTrial: (regionIdx: number, at: number) => void;
   updateSettings: (patch: Partial<Settings>) => void;
   setTutorialDone: (done: boolean) => void;
+  finishPrologue: () => void;
   addGold: (amount: number) => void;
   buyUpgrade: (id: UpgradeId) => boolean;
   buyItem: (id: ItemId) => boolean;
@@ -222,6 +226,7 @@ interface SaveActions {
 export const initialSave: SaveData = {
   character: null,
   unlockedIndex: 0,
+  prologueDone: false,
   levelProgress: {},
   micAsked: false,
   mistakes: {},
@@ -410,6 +415,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   }
   // v17 → v18：等級從 1～100（每區約 11 級）改成 1～200（第十三輪）：依區域換算，不超過目前所在區域的通關等級
   if (version >= 1 && version < 18) {
+    const REGION_LEVELS = V18_REGION_LEVELS;
     const frontier = REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, Math.max(0, Math.floor(migrated.unlockedIndex)))][1];
     const remap = (old: number) => {
       const r = Math.min(REGION_LEVELS.length - 1, Math.floor((old - 1) / 11));
@@ -426,6 +432,11 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   if (migrated.character) {
     if (!migrated.homeClass) migrated.homeClass = migrated.character.classId;
     migrated.classPaths = { ...migrated.classPaths, [migrated.character.classId]: migrated.player.classPath };
+  }
+  // v18 → v19：新增前置區域；已經開始冒險的舊玩家不用再打
+  if (version >= 1 && version < 19) {
+    migrated.prologueDone = migrated.tutorialDone || migrated.unlockedIndex > 0
+      || Object.keys(migrated.levelProgress).length > 0 || Object.keys(migrated.codex).length > 0;
   }
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
   migrated.mistakes = Object.fromEntries(Object.entries(migrated.mistakes)
@@ -514,7 +525,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             bestStage[r.id] = Math.max(bestStage[r.id] ?? 0, regionStageCount(i) - 1);
             storySeen.add(regionStoryId(i)).add(clearStoryId(i));
           }
-          return { unlockedIndex: n, bestStage, storySeen: [...storySeen] };
+          return { unlockedIndex: n, prologueDone: true, bestStage, storySeen: [...storySeen] };
         }),
         setLevelProgress: (levelKey, stageIdx) => set(s => ({
           levelProgress: { ...s.levelProgress, [levelKey]: stageIdx },
@@ -583,6 +594,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
         setTutorialDone: (done) => set({ tutorialDone: done }),
+        finishPrologue: () => set({ prologueDone: true }),
         addGold: (amount) => set(s => ({ gold: s.gold + amount })),
 
         buyUpgrade: (id) => {
@@ -1030,7 +1042,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character,
-        unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,

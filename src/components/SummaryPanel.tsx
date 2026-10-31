@@ -6,6 +6,7 @@ import { questionKey } from '../game/battle';
 import { answerLabel } from '../game/answerLabel';
 import { useSpeak } from './useSpeak';
 import { MAP_SIZE, REGIONS, mapIndexOf, regionOf } from '../game/regions';
+import { isPrologue } from '../game/stageLayout';
 import { needsSeal } from '../game/knowledge';
 import { starConditions } from '../game/stars';
 import { finishBattle } from '../game/startLevel';
@@ -52,6 +53,7 @@ export default function SummaryPanel() {
   const summary = summarize(answers, from, stageIdx);
 
   const region = regionOf(levelKey);
+  const prologue = isPrologue(levelKey);
   const map = region.maps[mapIndexOf(stageIdx)] ?? '';
   const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
   const skillDef = mode === 'skill' ? skillBossDef(useBattleStore.getState().skillBoss ?? '') : undefined;
@@ -60,13 +62,15 @@ export default function SummaryPanel() {
     : golden
     ? (phase === 'levelClear' ? `👑 黃金之路通關！你就是「${GOLDEN_TITLE}」` : `👑 黃金之路：在第 ${stageIdx + 1} / ${stages.length} 關止步`)
     : phase === 'summary' ? `${bossName}！「${map}」通關`
+    : prologue && phase === 'levelClear' ? '🏃 逃出失語邊境！'
     : phase === 'levelClear' ? (unlockedNext ? '🎉 區域完全通關！' : '👑 擊敗區域魔王！') : '💀 體力耗盡';
 
   return (
     <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
       {skillDef && phase === 'levelClear' && <p>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</p>}
-      {phase === 'levelClear' && !golden && !skillDef && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}
+      {phase === 'levelClear' && prologue && <p>追獵隊長倒下了！穿過邊境，前方就是翠綠草原。從這裡開始是正式的冒險：combo、敵人行動條、技能與召喚全部開放。</p>}
+      {phase === 'levelClear' && !golden && !skillDef && !prologue && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}
       {runRunes > 0 && !golden && <p className="rune-gain">🔮 跨日複習答對 {runRunes} 個知識點：封印能量 +{runRunes}</p>}
       {golden && phase === 'gameOver' && <p>一次失誤就結束——這就是黃金之路。最佳紀錄：通過 {goldenBest} / {stages.length} 關。看看是哪一題，再挑戰一次吧！</p>}
       {golden && phase === 'levelClear' && <p>沒有夥伴、沒有裝備，只憑英文能力擊敗了沉默魔王。獲得召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS}！</p>}

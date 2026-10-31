@@ -38,7 +38,7 @@ import { dueMistakes, useSaveStore } from './saveStore';
 import { ADVANCE_REQ, XP, canAdvance, isMilestoneLevel, xpScale } from '../game/growth';
 import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
-import { allowedTypes, gaugeScale, minAnswers, stageInMap, stageRole, startWaves, untimedStage } from '../game/stageLayout';
+import { PROLOGUE_XP, allowedTypes, prologueGuard, gaugeScale, isPrologue, minAnswers, stageInMap, stageRole, startWaves, untimedStage } from '../game/stageLayout';
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
@@ -46,7 +46,7 @@ import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, isActive, chooseReflect, modDamag
 import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods';
 import { grammarName, primaryGrammar } from '../game/grammar';
 import { WHEEL_CHECKPOINTS, wheelKey } from '../game/wheel';
-import { STORIES, bossStoryId, mapStoryId } from '../game/story';
+import { PROLOGUE_STORY_AT, STORIES, bossStoryId, mapStoryId } from '../game/story';
 import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
 import type { SkillBossId } from '../game/skillBosses';
 import {
@@ -275,16 +275,16 @@ function withRevenge(stage: Stage, stageIdx: number, levelIdx: number): Stage {
 
 // 這一關的怪物強度（決定等級、攻擊與行動條速度）：菁英、小 BOSS（第 15 關）、大 BOSS（第 20 關）、區域魔王，一般怪是 undefined
 export function foeKindOf(stage: Stage, stageIdx: number, stageCount: number): FoeKind | undefined {
-  if (stage.bossMode) return stage.kind === 'final' || stageIdx === stageCount - 1 ? 'final' : stageInMap(stageIdx) === 20 ? 'boss' : 'gate';
+  if (stage.bossMode) return stage.kind === 'final' || (stageIdx === stageCount - 1 && stage.kind !== 'gate') ? 'final' : stageInMap(stageIdx) === 20 ? 'boss' : 'gate';
   return stage.kind === 'elite' ? 'elite' : undefined;
 }
 
 // 困難題：優先出到期的錯題，其次任何錯題，都沒有就出這個區域的 Boss 題。
 // 錯題中先考最不熟的（在不同天答對次數最少的），一樣不熟的隨機挑。
 // stageIdx：一般模式的關卡，新手關只出開放的題型（題庫的 boss 抽題也會照題型篩）
-function pickBossQuestion(exclude: Question | null, levelIdx: number, stageIdx?: number): Question {
+function pickBossQuestion(exclude: Question | null, levelIdx: number, stageIdx?: number, levelKey?: string): Question {
   const skip = exclude ? questionKey(exclude) : '';
-  const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx);
+  const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx, levelKey);
   const mistakes = Object.values(save().mistakes)
     .filter(m => questionKey(m.question) !== skip && (!types || types.includes(m.question.type)));
   const due = mistakes.filter(m => m.dueAt <= Date.now());
@@ -334,7 +334,7 @@ function preferNew(draw: (stageIdx?: number) => Question) {
     return q;
   };
 }
-// 新手引導：1-4 第一次技能、1-5 菁英打倒後第一次召喚（見 docs/STAGE_PLAN.md 第 7 節）
+// 新手引導（前置區域）：P-4 第一次技能、P-5 菁英打倒後第一次召喚（docs/STORY.md v1.6）
 export const ONBOARD_SKILL_STAGE = 3;
 export const ONBOARD_SUMMON_STAGE = 4;
 
@@ -394,7 +394,7 @@ const bossSkillState = (bossSkill: BossSkillId | null) => ({
 // 首領模組的環境：這一區（這一關開放的題型）有哪些題型、哪些文法考點
 let modEnv: ModContext = { skills: [], grammarTags: [], rand: () => random() };
 function buildModEnv(levelKey: string, levelIdx: number, stageIdx: number) {
-  const types = allowedTypes(levelIdx, stageIdx);
+  const types = allowedTypes(levelIdx, stageIdx, levelKey);
   const pool = getPool(levelKey);
   const all = [...pool.normal, ...pool.boss].filter(q => !types || types.includes(q.type));
   modEnv = {
@@ -437,9 +437,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const stages = s.stages.map((st, i) => (i === stageIdx ? stage : st));
     // 首領戰（一般模式）：魔王祝福＋各自的技能（沒有統一的護盾）；一般關連續 NORMAL_WAVES 隻怪物（新手前幾關少一點）。
     // 這些規則說明會停住計時，等玩家點一下（blocking），不然一閃而過看不懂
-    const isFinalBoss = stage.kind === 'final' || stageIdx === s.stages.length - 1;
+    const isFinalBoss = stage.kind === 'final' || (stageIdx === s.stages.length - 1 && stage.kind !== 'gate');
     const bossFight = s.mode === 'normal' && stage.bossMode && !stage.revenge;
-    const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? startWaves(s.levelIdx, stageIdx, NORMAL_WAVES) : 1;
+    const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? startWaves(s.levelIdx, stageIdx, NORMAL_WAVES, s.levelKey) : 1;
     const fails = s.mode === 'normal' ? stageFails.get(failKey(s.levelKey, stageIdx)) ?? 0 : 0;
     const blessed = bossFight || (fails > 0 && random() < blessingChance(fails));
     const aidRevive = fails >= AID_REVIVE_AFTER;
@@ -450,7 +450,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const foe = s.mode === 'normal' && s.levelIdx >= 2 && !stage.revenge && stage.kind === 'elite' ? foeSkillFor(stageIdx) : null;
     const role: ModRole = isFinalBoss ? 'final' : stageInMap(stageIdx) === MAP_SIZE ? 'boss' : 'gate';
     // 沉默君王的全知封印就是技能封印，不再另外疊一個 M11
-    const modIds = bossFight ? modsFor(s.levelIdx, mapIndexOf(stageIdx), role).filter(id => !(isFinalBoss && bossSkillFor(s.levelIdx).id === 'seal' && id === 'M11')) : [];
+    const modIds = bossFight && !isPrologue(s.levelKey) ? modsFor(s.levelIdx, mapIndexOf(stageIdx), role).filter(id => !(isFinalBoss && bossSkillFor(s.levelIdx).id === 'seal' && id === 'M11')) : [];
     modPool = bossFight ? buildModEnv(s.levelKey, s.levelIdx, stageIdx) : [];
     const started = startMods(modIds, s.levelIdx, modEnv);
     const modText = modIds.map(id => `${MOD_DEFS[id].icon} ${MOD_DEFS[id].name}（${MOD_DEFS[id].trigger}）：${MOD_DEFS[id].counter}`).join('｜');
@@ -463,7 +463,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     } else if (bossFight) {
       const big = stageInMap(stageIdx) === 20;
       useUiStore.getState().celebrate({
-        icon: big ? '👑' : '⚔️', title: big ? '關卡大 BOSS' : '小 BOSS',
+        icon: big ? '👑' : '⚔️', title: isPrologue(s.levelKey) ? stage.name : big ? '關卡大 BOSS' : '小 BOSS',
         sub: `${modText ? `${modText}｜` : ''}魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
       });
     } else if (blessed) {
@@ -486,7 +486,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 每第 5 題是困難題：剛好輪到這一關的第一題時也要出（之後再出這關準備好的題目）
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
-    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined)) : takeEasy(stage) ?? stage.questions[0];
+    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined, s.levelKey)) : takeEasy(stage) ?? stage.questions[0];
     set({
       ...(newMap ? { combo: 0, streak: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
@@ -508,7 +508,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       wave: 1, waves, bossFight, blessed, aidRevive, aidGuard, enemyTurn: 0,
       // 最低答題數：寶箱怪、復仇魔王、黃金之路與擴充魔王不限
       stageAnswers: 0, executing: false,
-      minAnswers: s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? minAnswers(s.levelIdx, stageIdx) : 0,
+      minAnswers: s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? minAnswers(s.levelIdx, stageIdx, s.levelKey) : 0,
       monsterKind: monsterKindFor(stageIdx, stage.bossMode, !!stage.revenge, stage.kind === 'treasure', stage.kind === 'final'),
       // 一般關 5 隻怪共用行動條：只有換關才歸零
       enemyGauge: 0, enemyMoveIdx: 0, poison: [], weakenLeft: 0, weaken: 0, slowNext: 0,
@@ -529,14 +529,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 技能封印只封隊長一個人
     if (get().sealed && !get().sealTarget) set({ sealTarget: get().party[Math.max(0, leaderIndex(get().party))]?.id ?? null });
     // 劇情：每張三星地圖第一次打第 1 關播開場、第 15／20 關 BOSS 各一句登場台詞；區域魔王登場也有劇情（看過就不再自動播放）
-    if (s.mode === 'normal') {
+    if (s.mode === 'normal' && isPrologue(s.levelKey)) {
+      const storyId = PROLOGUE_STORY_AT[stageIdx];
+      if (storyId && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
+    } else if (s.mode === 'normal') {
       const inMap = stageInMap(stageIdx);
       const part = inMap === 1 ? 'intro' : inMap === 15 ? 'mini' : inMap === 20 ? 'big' : null;
       const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : part ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), part) : '';
       if (storyId && STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
     }
-    // 新手 1-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次
-    if (s.mode === 'normal' && s.levelIdx === 0 && stageIdx === ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill')) {
+    // 前置區域 P-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次
+    if (s.mode === 'normal' && isPrologue(s.levelKey) && stageIdx === ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill')) {
       const party = get().party;
       const lead = Math.max(0, leaderIndex(party));
       set({ party: party.map((m, i) => (i === lead ? { ...m, energy: m.energyMax } : m)) });
@@ -594,12 +597,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     let qIdx = s.qIdx;
     let original: Question;
     if (isBossQuestion) {
-      original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original, s.levelIdx, s.mode === 'normal' ? s.stageIdx : undefined);
+      original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original, s.levelIdx, s.mode === 'normal' ? s.stageIdx : undefined, s.levelKey);
     } else {
       qIdx += 1;
       const pref = s.mode === 'normal' && !s.executing ? modPreference(s.mods) : null;
       const wanted = pref ? pickPreferred(pref, s.original) : null;
-      const repeat = wanted ?? (s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? pickDueReview(s.original, allowedTypes(s.levelIdx, s.stageIdx)) : null);
+      const repeat = wanted ?? (s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? pickDueReview(s.original, allowedTypes(s.levelIdx, s.stageIdx, s.levelKey)) : null);
       original = repeat ?? takeEasy(stage)
         ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss(s.stageIdx) : decks!.normal(s.stageIdx)));
     }
@@ -631,7 +634,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       : monsterAttack(stage.bossMode, s.levelIdx, s.stageIdx, foeKindOf(stage, s.stageIdx, s.stages.length));
     // 鋼鐵意志：有機率傷害減半
     const iron = random() < talentOf(party[target], 'ironWill') ? 0.5 : 1;
-    const damage = Math.round((taunt ? baseDamage * (1 - TAUNT_REDUCTION) : baseDamage) * mult * iron * s.aidGuard);
+    const damage = Math.round((taunt ? baseDamage * (1 - TAUNT_REDUCTION) : baseDamage) * mult * iron * s.aidGuard * prologueGuard(s.levelKey, s.stageIdx));
     let hurt = party.map((m, i) => (i === target ? { ...m, hp: Math.max(0, m.hp - damage) } : m));
     // 不死鳥之羽：倒下時有機率以 30% 生命站起來（每關一次）
     const victim = hurt[target];
@@ -657,7 +660,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const patternFor = (s: BattleState) => patternOf(s);
   // 新手關（A1 1-1～1-10）行動條關閉、之後慢慢加速；終結連擊中首領倒地，不會出招
   const gaugeActive = (s: BattleState) => s.mode === 'normal' && !!patternFor(s) && s.stages[s.stageIdx]?.kind !== 'treasure'
-    && !s.executing && gaugeScale(s.levelIdx, s.stageIdx) > 0;
+    && !s.executing && gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) > 0;
 
   // 每出一題：中毒扣血（不會扣到倒下）、虛弱倒數
   const tickStatuses = (): Partial<BattleState> => {
@@ -676,7 +679,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const performMove = (move: EnemyMove) => {
     const s = get();
     const stage = s.stages[s.stageIdx];
-    const base = monsterAttack(stage.bossMode, s.levelIdx, s.stageIdx, foeKindOf(stage, s.stageIdx, s.stages.length)) * (stage.kind === 'elite' ? ELITE_POWER : 1);
+    const base = monsterAttack(stage.bossMode, s.levelIdx, s.stageIdx, foeKindOf(stage, s.stageIdx, s.stages.length)) * (stage.kind === 'elite' ? ELITE_POWER : 1) * prologueGuard(s.levelKey, s.stageIdx);
     // 護盾擋下這一招（不分單體或全體）
     if (s.shield) {
       set({ shield: false, enemyGauge: 0, enemyMoveIdx: s.enemyMoveIdx + 1, event: nextEvent('shield') });
@@ -772,6 +775,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         save().addTickets(SKILL_BOSS_FIRST_TICKETS);
       }
       set({ ...patch, phase: 'levelClear' });
+      return;
+    }
+    // 前置區域：沒有三星與轉盤；打倒追獵隊長就完成，之後「踏上征途」前往翠綠草原
+    if (isPrologue(s.levelKey)) {
+      if (isLastStage) {
+        save().finishPrologue();
+        save().setLevelProgress(s.levelKey, 0);
+        set({ ...patch, phase: 'levelClear' });
+      } else set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
       return;
     }
     // 獎勵轉盤：每張地圖第一次破第 5、10、15、20 關各轉一次
@@ -904,9 +916,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const aliveIds = s.party.filter(isAlive).map(m => m.id);
     const chainStep = advanceChain(s.chain, attacker.id, aliveIds);
     const crit = s.critLeft > 0 || (chainStep.triggered && !!FINISHERS[attacker.classId].crit) || random() < attacker.crit + (relayFx?.crit ?? 0);
-    const regionScale = xpScale(s.levelIdx);
-    // 新手 1-1～1-3 先不累積技能能量：一次只教一件事（1-2 combo、1-3 困難題、1-4 技能）
-    const skillLocked = s.mode === 'normal' && s.levelIdx === 0 && s.stageIdx < ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill');
+    const regionScale = isPrologue(s.levelKey) ? PROLOGUE_XP : xpScale(s.levelIdx);
+    // 前置區域 P-1～P-3 先不累積技能能量：一次只教一件事（P-2 combo、P-3 困難題、P-4 技能）
+    const skillLocked = s.mode === 'normal' && isPrologue(s.levelKey) && s.stageIdx < ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill');
     let party = skillLocked ? s.party : gainEnergy(s.party);
     // 僧侶出手：攻擊之外，全隊回血
     if (attacker.classId === 'monk') {
@@ -1343,7 +1355,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         // 敵人行動條：集滿就依攻擊模式出招
         if (gaugeActive(s)) {
           const kind = foeKindOf(s.stages[s.stageIdx], s.stageIdx, s.stages.length) ?? 'normal';
-          const gauge = s.enemyGauge + (ms * gaugeScale(s.levelIdx, s.stageIdx) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
+          const gauge = s.enemyGauge + (ms * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
           if (gauge >= 1) {
             const move = nextMove(s);
             if (move) performMove(move);
@@ -1354,7 +1366,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         const questionLeft = Math.max(0, s.questionLeft - ms);
         if (questionLeft > 0) { set({ questionLeft }); return; }
         // 新手關（A1 1-1～1-7）不計時：時間到也不中斷 combo，慢慢想
-        if (s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx)) { set({ questionLeft: 0 }); return; }
+        if (s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx, s.levelKey)) { set({ questionLeft: 0 }); return; }
         if (s.mode !== 'golden' && isLenientStage(s.stageIdx)) {
           // 前 25 關：超時不算答錯，只是 combo 中斷，繼續作答同一題。
           // 有守護（護盾、守護技能）時用掉守護，combo 保住

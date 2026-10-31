@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import { foeKindOf, useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
-import { mapName, stageLabel } from './regions';
+import { PROLOGUE, mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
 import { SKILLS, comboMultiplier, monsterAttack, monsterLevel, skillEffect } from './progression';
 import { ELITE_POWER, TELEGRAPH_AT, patternOf, upcomingMove } from './enemyPatterns';
@@ -252,7 +252,7 @@ export default class MainScene extends Phaser.Scene {
     if (stage) this.stageText.setText(s.mode === 'skill' ? `魔王挑戰  ${stage.name}`
       : s.mode === 'golden'
       ? `黃金之路  第 ${s.stageIdx + 1} / ${s.stages.length} 關`
-      : `${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx, s.levelIdx)}`);
+      : `${s.levelKey === PROLOGUE.id ? PROLOGUE.name : themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx, s.levelIdx, s.levelKey)}`);
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);
@@ -383,7 +383,7 @@ export default class MainScene extends Phaser.Scene {
     const el = elementDef(s.monsterElement);
     this.monsterEl = isRevenge ? 'dark' : s.monsterElement;
     // 一般模式顯示敵人等級，方便和自己的隊伍比較
-    const finalBoss = isBoss && (stage.kind === 'final' || s.stageIdx === s.stages.length - 1);
+    const finalBoss = isBoss && (stage.kind === 'final' || (s.stageIdx === s.stages.length - 1 && stage.kind !== 'gate'));
     const lv = s.mode === 'normal' && !isRevenge ? `Lv ${monsterLevel(s.levelIdx, s.stageIdx, finalBoss ? 'final' : isBoss ? 'gate' : isElite ? 'elite' : undefined)} ` : '';
     const name = s.mode === 'skill' ? `👑 ${stage.name}` : `${lv}${isBoss ? '👑 ' : isElite ? '⭐ 菁英' : ''}${monsterName(this.monsterKind, this.monsterEl)}`;
     this.monsterNameText.setText(name).setColor(isRevenge ? '#c9a8ff' : isBoss ? '#ff8a8a' : isElite || this.monsterKind === 'chest' ? '#ffcd4b' : '#ffffff');

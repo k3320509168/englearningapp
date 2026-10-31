@@ -58,6 +58,30 @@ export const STORIES: Record<string, StoryLine[]> = {
     { speaker: 'spirit', text: '迷霧森林……看來我們下一站有地方去了。' },
   ],
   // ---------- 每張三星地圖的開場與通關（第十四輪，和 ChatGPT 一起寫）----------
+  // ---------- 前置區域「失語邊境｜最後的逃亡」（第十四、十六輪；docs/STORY.md） ----------
+  'pre-intro': [
+    { speaker: 'hero', text: '這裡怎麼回事？連酒館的招牌都變白了。' },
+    { speaker: 'elder', text: '噓！小聲點。那些黑盔甲的傢伙，正在找還能唸出古代文字的人。' },
+    { speaker: 'hero', text: '古代文字？你是說這個……Hello？' },
+    { speaker: 'spirit', text: '哇啊！誰把我叫醒的？等等，你居然唸得出來？' },
+  ],
+  'pre-ally': [
+    { speaker: 'spirit', text: '剛才那個字讓追兵的盔甲裂開了！我還以為真名魔法已經失傳了。' },
+    { speaker: 'hero', text: '先別管魔法了，後面還有人追！你知道哪裡能逃嗎？' },
+    { speaker: 'spirit', text: '知道！往東邊跑，穿過邊境就有一片大草原。至少那裡的空氣比較好聞！' },
+  ],
+  'pre-boss': [
+    { speaker: 'hero', text: '你不是說這條路很安全嗎？前面怎麼還有一座哨站？' },
+    { speaker: 'spirit', text: '我上次走這裡的時候，它還是空的！好吧……可能已經過了好幾十年。' },
+    { speaker: 'hunter', text: '找到你了。把那隻精靈交出來，跟我們回王城。' },
+    { speaker: 'hero', text: '如果我不答應呢？' },
+  ],
+  'pre-clear': [
+    { speaker: 'hunter', text: '不可能……你明明只是個普通人，怎麼能使用真名？' },
+    { speaker: 'spirit', text: '普通人才不會在逃命的時候還跟魔王軍頂嘴呢！' },
+    { speaker: 'hero', text: '前面那道光就是出口？走吧。我可不想再被追一整晚。' },
+    { speaker: 'spirit', text: '翠綠草原！我們終於到了。只是……這裡的樹，好像有點不對勁。' },
+  ],
   'map-0-0-intro': [
     { speaker: 'hero', text: '總算有村子了。奇怪，大家都站在店門口，怎麼沒人做生意？' },
     { speaker: 'spirit', text: '你看那些招牌，字都沒了。大家知道自己要做什麼，卻想不起來東西叫什麼名字。' },
@@ -463,6 +487,10 @@ for (const [map, line] of Object.entries(BOSS_LINES)) {
   STORIES[`${map}-big`] = [{ speaker: 'foe', text: line.big }];
 }
 
+// 前置區域：P-1 開場、P-6 第一個同伴、P-10 追獵隊長登場；通關播 pre-clear
+export const PROLOGUE_STORY_AT: Record<number, string> = { 0: 'pre-intro', 5: 'pre-ally', 9: 'pre-boss' };
+export const PROLOGUE_CLEAR_STORY = 'pre-clear';
+
 // 劇情 id 依區域固定：原本六個區域沿用舊 id（存檔裡記錄看過哪些），新增的三區用自己的 id
 const REGION_STORY_KEYS = ['0', '1', 'a2p', '2', 'b1p', '3', 'b2p', '4', '5'];
 const storyKey = (regionIdx: number) => REGION_STORY_KEYS[regionIdx] ?? String(regionIdx);
@@ -476,6 +504,8 @@ export const bossStoryId = (regionIdx: number) => `boss-${regionIdx}-intro`;
 // 劇情回顧的名稱
 export function storyTitle(id: string, regionName: (idx: number) => string, mapName: (regionIdx: number, mapIdx: number) => string): string {
   if (id === 'prologue') return '序章';
+  const pre = { 'pre-intro': '開場', 'pre-ally': '第一個同伴', 'pre-boss': '追獵隊長', 'pre-clear': '通往草原的光' }[id];
+  if (pre) return `失語邊境・${pre}`;
   if (id === 'golden-ending') return '黃金之路・結局';
   const map = id.match(/^map-(\d+)-(\d+)-(intro|clear|mini|big)$/);
   if (map) return `${regionName(+map[1])}・${mapName(+map[1], +map[2])}・${{ intro: '開場', clear: '通關', mini: '小 BOSS', big: '大 BOSS' }[map[3]]}`;

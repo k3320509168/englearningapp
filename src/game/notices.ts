@@ -7,7 +7,7 @@ import type { HeroId, SummonCounter } from './heroes';
 import { TIER_UP_TRIALS, trialsDone } from './trueName';
 import { claimable, claimableMilestones } from './daily';
 import type { DailyState, WeeklyState } from './daily';
-import { REGIONS } from './regions';
+import { PROLOGUE, REGIONS } from './regions';
 import { regionStoryId } from './story';
 
 // 地圖畫面的提醒：哪些入口有事可做（紅點），以及「繼續征途」該去哪裡、下一步建議做什麼。
@@ -16,6 +16,7 @@ import { regionStoryId } from './story';
 export interface NoticeInput {
   character: Character | null;
   unlockedIndex: number;
+  prologueDone: boolean;
   levelProgress: Record<string, number>;
   storySeen: string[];
   gold: number;
@@ -82,10 +83,13 @@ export function computeNotices(s: NoticeInput, now = Date.now()): Notices {
 // 「繼續征途」：目前最前線的區域；全部通關後改去黃金之路
 export type ContinueTarget =
   | { kind: 'region'; regionIdx: number; stage: number; needsStory: boolean }
+  | { kind: 'prologue'; stage: number }
   | { kind: 'golden' };
 
-export function continueTarget(s: Pick<NoticeInput, 'unlockedIndex' | 'levelProgress' | 'storySeen'>): ContinueTarget {
+export function continueTarget(s: Pick<NoticeInput, 'unlockedIndex' | 'prologueDone' | 'levelProgress' | 'storySeen'>): ContinueTarget {
   if (s.unlockedIndex >= REGIONS.length) return { kind: 'golden' };
+  // 還沒打完前置區域（也沒用程度測驗跳過）：先去失語邊境
+  if (!s.prologueDone && s.unlockedIndex === 0) return { kind: 'prologue', stage: s.levelProgress[PROLOGUE.id] ?? 0 };
   const regionIdx = Math.max(0, s.unlockedIndex);
   const region = REGIONS[regionIdx];
   return {

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { ONBOARD_SUMMON_STAGE, useBattleStore } from '../store/battleStore';
+import { isPrologue } from '../game/stageLayout';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { answerSlots, checkVoice, completedSentence, isVoiceFragment, questionAudio, questionHint } from '../game/battle';
@@ -41,7 +42,7 @@ export default function BattleHUD() {
     stageName: s.mode === 'skill' ? `⚔️ 魔王挑戰：${s.stages[0]?.name ?? ''}`
       : s.mode === 'golden'
       ? `👑 黃金之路・${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`
-      : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx, s.levelIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
+      : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx, s.levelIdx, s.levelKey)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
     stageNo: s.stageIdx + 1,
     stageCount: s.stages.length,
     shield: s.shield,
@@ -57,8 +58,8 @@ export default function BattleHUD() {
   // 新題目出現時自動播放發音（可在設定關閉）
   useEffect(() => {
     const { question: q, phase: p } = useBattleStore.getState();
-    // 第一次遇到口說題才詢問麥克風（視窗打開時戰鬥計時會暫停）
-    if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported()) openModal('mic');
+    // 第一次遇到口說題才詢問麥克風（視窗打開時戰鬥計時會暫停）；劇情等其他視窗開著時不蓋掉，下一題口說再問
+    if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported() && !useUiStore.getState().modal) openModal('mic');
     // 聽力題（題目只有聲音）不管設定都要播放
     // 魔王的「視覺剝奪」看不到題目時也一定要播放
     if (!q?.speak || p !== 'answering' || !(useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧') || useBattleStore.getState().blind)) return;
@@ -480,10 +481,10 @@ function FeedbackPanel() {
 }
 
 function StageClearPanel() {
-  const { nextStage, stageIdx, levelIdx, levelKey, mode } = useBattleStore(useShallow(s => ({ nextStage: s.nextStage, stageIdx: s.stageIdx, levelIdx: s.levelIdx, levelKey: s.levelKey, mode: s.mode })));
-  // 新手 1-5：打倒第一隻菁英、還沒召喚過 → 用開局的召喚券找第一批夥伴（回來從 1-6 繼續）
+  const { nextStage, stageIdx, levelKey, mode } = useBattleStore(useShallow(s => ({ nextStage: s.nextStage, stageIdx: s.stageIdx, levelKey: s.levelKey, mode: s.mode })));
+  // 前置區域 P-5：打倒第一隻菁英、還沒召喚過 → 用開局的召喚券找第一批夥伴（回來從 P-6 繼續）
   const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1 && s.tickets >= TEN_PULL)
-    && mode === 'normal' && levelIdx === 0 && stageIdx === ONBOARD_SUMMON_STAGE;
+    && mode === 'normal' && isPrologue(levelKey) && stageIdx === ONBOARD_SUMMON_STAGE;
   return (
     <div className="result">
       <p className="result-title">💥 擊敗怪獸！</p>

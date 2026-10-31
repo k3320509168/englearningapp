@@ -6,7 +6,8 @@ import { useUiStore } from '../store/uiStore';
 import { clearStoryId } from './story';
 import { LEVELS } from './QuestionData';
 import { GOLDEN_TITLE, MAIN_TITLE } from './golden';
-import { REGIONS } from './regions';
+import { PROLOGUE, REGIONS } from './regions';
+import { PROLOGUE_CLEAR_STORY } from './story';
 import { continueTarget } from './notices';
 import { loadBank, loadBanksFrom } from './questions/bank/loader';
 
@@ -25,7 +26,7 @@ export function beginGoldenRoad() {
 }
 
 export function beginLevel(levelKey: string, fromStage?: number) {
-  void loadBank(LEVELS.indexOf(levelKey)).then(() => useBattleStore.getState().startLevel(levelKey, voiceTransform(), fromStage));
+  void loadBank(Math.max(0, LEVELS.indexOf(levelKey))).then(() => useBattleStore.getState().startLevel(levelKey, voiceTransform(), fromStage));
 }
 
 // 區域通關：回到世界地圖，第一次通關時播放通關劇情
@@ -47,6 +48,7 @@ export function finishGoldenRoad() {
 export function continueJourney() {
   const target = continueTarget(useSaveStore.getState());
   if (target.kind === 'golden') return useUiStore.getState().openModal('golden');
+  if (target.kind === 'prologue') return beginLevel(PROLOGUE.id, target.stage);
   if (target.needsStory) return useUiStore.getState().openRegion(target.regionIdx);
   beginLevel(REGIONS[target.regionIdx].id, target.stage);
 }
@@ -56,6 +58,12 @@ export function finishBattle() {
   const s = useBattleStore.getState();
   if (s.mode === 'golden') return finishGoldenRoad();
   if (s.mode === 'skill') return s.exitToMap();
+  // 前置區域通關：播「通往草原的光」，看完前往翠綠草原
+  if (s.levelKey === PROLOGUE.id) {
+    s.exitToMap();
+    if (!useSaveStore.getState().storySeen.includes(PROLOGUE_CLEAR_STORY)) return useUiStore.getState().openStory(PROLOGUE_CLEAR_STORY);
+    return useUiStore.getState().openRegion(0);
+  }
   finishRegion(s.levelIdx);
 }
 

@@ -4,6 +4,7 @@ import { monsterGrowth,
   monsterAttack, monsterElement, monsterMaxHp, monsterLevel, playerStats, rollBossBonus, upgradeCost,
 } from './progression';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
+import { LEVEL_STAT } from './growth';
 import { regionStageCount } from './stageLayout';
 import { buildParty, gainEnergy, nextAlive, normalizeParty, partyHp } from './party';
 import { DEFAULT_CHARACTER } from './character';
@@ -59,8 +60,10 @@ describe('computeDamage', () => {
 
 describe('monsters', () => {
   it('are designed around answers needed with no combo', () => {
-    expect(monsterMaxHp(0, 0, false) / BASE_DAMAGE).toBeCloseTo(HITS_TO_KILL.normal);
-    expect(monsterMaxHp(0, 0, true) / BASE_DAMAGE).toBeCloseTo(HITS_TO_KILL.boss);
+    // A1 第一關的怪物是 Lv5（前置區域打完約 Lv5），比 Lv1 的基準多 4 級成長
+    const a1 = 1 + 4 * LEVEL_STAT;
+    expect(monsterMaxHp(0, 0, false) / BASE_DAMAGE).toBeCloseTo(HITS_TO_KILL.normal * a1, 1);
+    expect(monsterMaxHp(0, 0, true) / BASE_DAMAGE).toBeCloseTo(HITS_TO_KILL.boss * a1, 1);
     expect(monsterMaxHp(30, 0, false)).toBeGreaterThan(monsterMaxHp(0, 0, false));
     expect(monsterMaxHp(0, 4, false)).toBeGreaterThan(monsterMaxHp(0, 0, false));
   });
@@ -76,7 +79,7 @@ describe('monsters', () => {
   });
 
   it('are based on a hero of the same level, a little stronger each region (round 13)', () => {
-    expect(monsterMaxHp(0, 0, false)).toBe(BASE_DAMAGE * HITS_TO_KILL.normal);
+    expect(monsterMaxHp(0, 0, false)).toBe(Math.round(BASE_DAMAGE * HITS_TO_KILL.normal * (1 + 4 * LEVEL_STAT)));
     const lv = monsterLevel(5, 0);
     // 比沒裝備的同等級英雄強、比裝備全部跟上的英雄弱：裝備是加分，不是必備
     expect(monsterAttack(false, 5, 0) / 20).toBeGreaterThanOrEqual(heroScale(lv, 0));
@@ -86,8 +89,9 @@ describe('monsters', () => {
   });
 
   it('hit harder in later regions', () => {
-    expect(monsterAttack(false, 0, 0)).toBe(20);
-    expect(monsterAttack(true, 0, 0)).toBe(30);
+    // A1 第一關是 Lv5：比 Lv1 基準（20／30）多一點點
+    expect(monsterAttack(false, 0, 0)).toBe(21);
+    expect(monsterAttack(true, 0, 0)).toBe(31);
     expect(monsterAttack(false, 8, 49)).toBeGreaterThan(40);
   });
 

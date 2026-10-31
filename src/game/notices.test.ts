@@ -6,6 +6,7 @@ import { REGIONS } from './regions';
 const base = (): NoticeInput => ({
   character: { name: '測試', classId: 'mage', element: 'fire', gender: 'f', hair: 0, skin: 0, outfit: 0 } as unknown as NoticeInput['character'],
   unlockedIndex: 0,
+  prologueDone: true,
   levelProgress: {},
   storySeen: [],
   gold: 0,
@@ -64,5 +65,13 @@ describe('繼續征途', () => {
 
   it('全部區域通關後前往黃金之路', () => {
     expect(continueTarget({ ...base(), unlockedIndex: REGIONS.length }).kind).toBe('golden');
+  });
+});
+
+describe('前置區域', () => {
+  it('還沒打完失語邊境：踏上征途先去那裡；打完或已經往前走就去區域', () => {
+    expect(continueTarget({ ...base(), prologueDone: false })).toEqual({ kind: 'prologue', stage: 0 });
+    expect(continueTarget({ ...base(), prologueDone: false, levelProgress: { PRE: 4 } })).toEqual({ kind: 'prologue', stage: 4 });
+    expect(continueTarget({ ...base(), prologueDone: false, unlockedIndex: 2 }).kind).toBe('region');
   });
 });

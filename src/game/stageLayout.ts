@@ -32,38 +32,45 @@ export function stageRole(levelIdx: number, stageIdx: number): StageRole {
   return n === 20 ? 'boss' : n === 15 ? 'gate' : n === 5 || n === 10 ? 'elite' : n === 7 ? 'treasure' : 'normal';
 }
 
-// ---------- 新手上手（A1 第 1 張關卡，docs/STAGE_PLAN.md 第 7 節） ----------
-// 第 1 張：讓玩家覺得自己很強；題數從 3 題慢慢加，前幾關不計時、敵人不主動攻擊，題型由選擇、聽力慢慢加到拼寫、口說
-export const ONBOARDING_MIN = [3, 4, 5, 5, 6, 6, 5, 6, 6, 8, 7, 7, 8, 8, 12, 8, 8, 8, 9, 16];
-const onboarding = (levelIdx: number, stageIdx: number) => levelIdx === 0 && stageIdx < MAP_SIZE;
+// ---------- 前置區域「失語邊境」（Pre-A1，1 張 × 10 小關，docs/STORY.md v1.6） ----------
+// 新手教學都在這裡：題數從 3 題慢慢加，前幾關不計時、敵人不主動攻擊，題型由選擇、聽力慢慢加到拼寫、口說。
+// A1 從第一關就是正式規則。戰鬥數值沿用 A1（levelIdx 0），用關卡代號 PROLOGUE_KEY 區分。
+export const PROLOGUE_KEY = 'PRE';
+export const PROLOGUE_MIN = [3, 4, 5, 5, 5, 5, 6, 5, 6, 9];
+export const PROLOGUE_STAGES = PROLOGUE_MIN.length;
+export const PROLOGUE_ELITE = 4;  // P-5 第一次菁英（打倒後免費召喚）
+export const isPrologue = (levelKey?: string) => levelKey === PROLOGUE_KEY;
+// 前置區域的敵人傷害倍率：還沒召喚夥伴前（P-1～P-6）只有 50%，之後 70%，追獵隊長 80%（模擬：75% 正確率單人不會一直倒）
+const PROLOGUE_GUARD = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.7, 0.7, 0.7, 0.8];
+export const prologueGuard = (levelKey: string | undefined, stageIdx: number) =>
+  (isPrologue(levelKey) ? PROLOGUE_GUARD[Math.min(stageIdx, PROLOGUE_STAGES - 1)] : 1);
+// 經驗校準：90% 正確率打完 10 關約從 Lv1 升到 Lv5（需要 500 經驗；原始經驗約 430）
+export const PROLOGUE_XP = 1.2;
 
-export function minAnswers(levelIdx: number, stageIdx: number): number {
-  if (onboarding(levelIdx, stageIdx)) return ONBOARDING_MIN[stageIdx];
+export function minAnswers(levelIdx: number, stageIdx: number, levelKey?: string): number {
+  if (isPrologue(levelKey)) return PROLOGUE_MIN[Math.min(stageIdx, PROLOGUE_STAGES - 1)];
   const row = MIN_ANSWERS[Math.min(Math.max(0, levelIdx), MIN_ANSWERS.length - 1)];
   return row[ROLE_INDEX[stageRole(levelIdx, stageIdx)]];
 }
 
-// 一般關一開始放幾隻怪（新手前幾關少一點，打完不夠最低題數再補一波）
-export const startWaves = (levelIdx: number, stageIdx: number, normalWaves: number) =>
-  (onboarding(levelIdx, stageIdx) ? Math.min(normalWaves, ONBOARDING_MIN[stageIdx]) : normalWaves);
+// 一般關一開始放幾隻怪（前置區域少一點，打完不夠最低題數再補一波）
+export const startWaves = (_levelIdx: number, stageIdx: number, normalWaves: number, levelKey?: string) =>
+  (isPrologue(levelKey) ? Math.min(normalWaves, PROLOGUE_MIN[stageIdx] ?? normalWaves) : normalWaves);
 
-// A1 1-1～1-7 不計時（只有 combo 的快答加成，不會超時）
-export const untimedStage = (levelIdx: number, stageIdx: number) => levelIdx === 0 && stageIdx < 7;
+// 前置區域 P-1～P-9 不計時（只有 combo 的快答加成，不會超時）；最終 BOSS 才正常計時
+export const untimedStage = (_levelIdx: number, stageIdx: number, levelKey?: string) =>
+  isPrologue(levelKey) && stageIdx < PROLOGUE_STAGES - 1;
 
-// 敵人行動條速度倍率（0 = 不主動攻擊）：1-1～1-10 關閉，1-11～1-14 50%、1-15～1-19 70%、1-20 80%，第 2 張從 80% 慢慢回到 100%
-export function gaugeScale(levelIdx: number, stageIdx: number): number {
-  if (levelIdx !== 0 || stageIdx >= MAP_SIZE * 2) return 1;
-  if (stageIdx < 10) return 0;
-  if (stageIdx < 14) return 0.5;
-  if (stageIdx < 19) return 0.7;
-  if (stageIdx < MAP_SIZE) return 0.8;
-  return 0.8 + 0.2 * ((stageIdx - MAP_SIZE) / (MAP_SIZE - 1));
+// 敵人行動條速度倍率（0 = 不主動攻擊）：前置區域 P-1～P-6 關閉、P-7、P-8 30%、P-9 60%、最終 BOSS 70%；正式區域 100%
+const PROLOGUE_GAUGE = [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.6, 0.7];
+export function gaugeScale(_levelIdx: number, stageIdx: number, levelKey?: string): number {
+  return isPrologue(levelKey) ? PROLOGUE_GAUGE[Math.min(stageIdx, PROLOGUE_STAGES - 1)] : 1;
 }
 
-// 這一關可以出哪些題型：1-1～1-10 只有選擇題（看字選意思、聽力），1-11 開始拼寫與填空，1-13 開始口說
-export function allowedTypes(levelIdx: number, stageIdx: number): string[] | null {
-  if (levelIdx !== 0) return null;
-  if (stageIdx < 10) return ['choice'];
-  if (stageIdx < 12) return ['choice', 'spell', 'fill'];
+// 這一關可以出哪些題型：前置區域 P-1～P-5 只有選擇題（看圖選字、聽力），P-6 開始拼寫與填空，P-8 開始口說
+export function allowedTypes(_levelIdx: number, stageIdx: number, levelKey?: string): string[] | null {
+  if (!isPrologue(levelKey)) return null;
+  if (stageIdx < 5) return ['choice'];
+  if (stageIdx < 7) return ['choice', 'spell', 'fill'];
   return null;
 }

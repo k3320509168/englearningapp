@@ -1,5 +1,5 @@
 import { useSaveStore } from '../store/saveStore';
-import { REGIONS } from '../game/regions';
+import { PROLOGUE, REGIONS } from '../game/regions';
 import { useUiStore } from '../store/uiStore';
 import { continueJourney } from '../game/startLevel';
 import { continueTarget, nextStep } from '../game/notices';
@@ -17,10 +17,11 @@ export default function MapLevelBar() {
   const progress = useSaveStore(s => s.levelProgress);
   const goldenBest = useSaveStore(s => s.goldenBest);
   const storySeen = useSaveStore(s => s.storySeen);
+  const prologueDone = useSaveStore(s => s.prologueDone);
   const notices = useNotices();
   const daily = useSaveStore(s => s.daily);
   const tasksDone = daily?.tasks.filter(t => t.claimed || t.progress >= (dailyDef(t.id)?.goal ?? Infinity)).length ?? 0;
-  const target = continueTarget({ unlockedIndex, levelProgress: progress, storySeen });
+  const target = continueTarget({ unlockedIndex, prologueDone, levelProgress: progress, storySeen });
   // 最前線的魔王已經打倒、下一區還沒開：主按鈕帶玩家去找守門人（封印進度、區域試煉、回去複習）
   const atGate = useSaveStore(s => s.bossDown.includes(unlockedIndex)) && unlockedIndex < SKIPPABLE_REGIONS;
   const wheelPending = useSaveStore(s => s.wheelPending);
@@ -44,7 +45,9 @@ export default function MapLevelBar() {
         ) : (
           <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney}>
             <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
-            <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文' : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage, target.regionIdx)} 關`}</small>
+            <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文'
+              : target.kind === 'prologue' ? `${PROLOGUE.name}・${PROLOGUE.maps[0]}・第 P-${target.stage + 1} 關`
+              : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage, target.regionIdx)} 關`}</small>
           </button>
         )}
         {step.action !== 'continue' ? (

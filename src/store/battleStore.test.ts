@@ -1,3 +1,4 @@
+import { PROLOGUE_KEY } from '../game/stageLayout';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { FAST_STAGGER } from '../game/enemyPatterns';
 import { PLAYER_BASE_MULT } from '../game/party';
@@ -150,7 +151,9 @@ describe('party and upgrades', () => {
 describe('combo timer', () => {
   beforeEach(() => startLevel());
 
-  it('A1 1-1~1-7 are untimed: time running out changes nothing', () => {
+  it('前置區域 P-1～P-9 不計時: time running out changes nothing', () => {
+    state().startLevel(PROLOGUE_KEY);
+    if (state().phase === 'lesson') state().startBattle();
     useBattleStore.setState({ combo: 5 });
     state().tick(QUESTION_LIMIT + 1);
     expect(state().overtime).toBe(false);
@@ -165,7 +168,8 @@ describe('combo timer', () => {
     expect(state().phase).toBe('answering');
     expect(state().overtime).toBe(true);
     expect(state().combo).toBe(0);
-    expect(state().playerHp).toBe(state().playerMaxHp);
+    // A1 是正式規則，行動條會照常累積（敵人可能自己出手）；超時本身不算答錯、不記錯題
+    expect(state().feedback).toBeNull();
     expect(Object.keys(saved().mistakes)).toHaveLength(0);
     // 超時後答對：有攻擊，但這題不累積 combo
     answerCurrent();
@@ -718,13 +722,29 @@ describe('enemy attack patterns (action gauge)', () => {
 });
 
 describe('新手引導', () => {
-  it('1-1～1-3 不累積技能能量；1-4 開場隊長能量直接集滿', () => {
+  it('前置區域 P-1～P-3 不累積技能能量；P-4 開場隊長能量直接集滿', () => {
     startLevel({ hintsSeen: [] });
+    state().startLevel(PROLOGUE_KEY, undefined, 0);
     for (let i = 0; i < 4; i++) { playUntil(() => state().phase === 'answering'); answerCurrent(); }
     expect(state().party.every(m => m.energy === 0)).toBe(true);
-    state().startLevel(LEVELS[0], undefined, 3);
+    state().startLevel(PROLOGUE_KEY, undefined, 3);
     if (state().phase === 'lesson') state().startBattle();
     const lead = state().party[0];
     expect(lead.energy).toBe(lead.energyMax);
+  });
+});
+
+describe('前置區域「失語邊境」', () => {
+  it('打完 P-1～P-10：記成通關，不打倒 A1 魔王、不開下一區，也不算三星', () => {
+    resetSave({ prologueDone: false });
+    state().startLevel(PROLOGUE_KEY);
+    expect(state().stages).toHaveLength(10);
+    expect(state().levelIdx).toBe(0);
+    playUntil(() => state().phase === 'levelClear' || state().phase === 'gameOver', 5000);
+    expect(state().phase).toBe('levelClear');
+    expect(saved().prologueDone).toBe(true);
+    expect(saved().bossDown).not.toContain(0);
+    expect(saved().unlockedIndex).toBe(0);
+    expect(Object.keys(saved().mapStars).some(k => k.startsWith(PROLOGUE_KEY))).toBe(false);
   });
 });

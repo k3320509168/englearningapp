@@ -1800,3 +1800,6 @@ html[data-reduce-motion] .wheel { transition-duration: 0ms; }
 .tree-node.is-awake { padding: 3px 5px; font-size: 11px; }
 .tree-node.is-lit { border-color: #ffcd4b; color: #ffe9a8; background: rgba(255, 205, 75, 0.12); box-shadow: 0 0 6px rgba(255, 205, 75, 0.4); }
 @media (max-width: 640px) { .class-switch { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* 程度測驗：自評起點 */
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }

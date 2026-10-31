@@ -6,6 +6,7 @@ import { questionKey } from '../game/battle';
 import { WHEEL_PRIZES, rollWheel } from '../game/wheel';
 import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, updateKnowledge } from '../game/knowledge';
 import type { KnowledgeRecord } from '../game/knowledge';
+import { REGION_LEVELS } from '../game/progression';
 // v18 換算等級時用的推薦等級表（之後 A1 改從 Lv5 起，但舊存檔照當時的規則換算）
 const V18_REGION_LEVELS: [number, number][] = [[1, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
@@ -70,12 +71,24 @@ export interface Settings {
   slowRate?: number;        // 慢速按鈕的語速（和正常語速分開設定）
 }
 
+export interface PlacementRecord {
+  level: number;            // 0 Pre-A1 … 9 C2
+  region: number;           // 推薦的區域（level − 1）
+  at: number;
+  speakingVerified: boolean;
+  confidence: 'ok' | 'low';
+  weak: string[];
+  verified: boolean;        // 通過推薦區域的區域試煉
+}
+
 interface SaveData {
   // 玩家自創的主角；null 代表還沒建立（第一次進入遊戲會先開角色創建）
   character: Character | null;
   unlockedIndex: number;
   // 前置區域「失語邊境」打完了沒（或程度測驗直接跳過）；沒打完時「踏上征途」先去那裡
   prologueDone: boolean;
+  // 程度測驗 v1.6 的結果：跳級的玩家在該區（含之後）戰鬥時至少以該區最低推薦等級計算，通過區域試煉才正式補等級
+  placement: PlacementRecord | null;
   // 每個區域目前打到第幾關（stage index），離開後回來從這裡繼續
   levelProgress: Record<string, number>;
   micAsked: boolean;
@@ -169,6 +182,8 @@ interface SaveActions {
   updateSettings: (patch: Partial<Settings>) => void;
   setTutorialDone: (done: boolean) => void;
   finishPrologue: () => void;
+  setPlacement: (rec: PlacementRecord) => void;
+  verifyPlacement: (regionIdx: number) => void;
   addGold: (amount: number) => void;
   buyUpgrade: (id: UpgradeId) => boolean;
   buyItem: (id: ItemId) => boolean;
@@ -227,6 +242,7 @@ export const initialSave: SaveData = {
   character: null,
   unlockedIndex: 0,
   prologueDone: false,
+  placement: null,
   levelProgress: {},
   micAsked: false,
   mistakes: {},
@@ -393,6 +409,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // 型別檢查：壞掉的欄位改回預設值（每日任務可以是 null，其他物件要長得對）
   Object.assign(migrated, conform(initialSave, migrated));
   if (migrated.daily !== null && !(isPlainObject(migrated.daily) && Array.isArray(migrated.daily.tasks))) migrated.daily = null;
+  if (migrated.placement !== null && !(isPlainObject(migrated.placement) && Number.isFinite(migrated.placement.region))) migrated.placement = null;
   if (migrated.weekly !== null && !(isPlainObject(migrated.weekly) && Array.isArray(migrated.weekly.tasks))) migrated.weekly = null;
   // 數量類的紀錄：去掉不是數字的項目，負數改成 0；等級至少 1
   const counts = (rec: Record<string, number>, min = 0) => Object.fromEntries(Object.entries(rec)
@@ -595,6 +612,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
         setTutorialDone: (done) => set({ tutorialDone: done }),
         finishPrologue: () => set({ prologueDone: true }),
+        setPlacement: (rec) => set({ placement: rec }),
+        // 通過推薦區域（或之後）的區域試煉：跳級驗證完成，主角一次補到推薦區域的最低推薦等級
+        verifyPlacement: (regionIdx) => set(s => {
+          const p = s.placement;
+          if (!p || p.verified || regionIdx < p.region) return {};
+          const floor = REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, p.region)][0];
+          return { placement: { ...p, verified: true }, player: { ...s.player, level: Math.max(s.player.level, floor) } };
+        }),
         addGold: (amount) => set(s => ({ gold: s.gold + amount })),
 
         buyUpgrade: (id) => {
@@ -1042,7 +1067,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character,
-        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,

@@ -19,6 +19,7 @@ import {
   BOSS_QUESTION_EVERY, ELITE_HP_MULT, ELITE_SHIELD, GOLD, POTION_HEAL, TICKETS, TREASURE_HITS, TREASURE_TIME,
   BOSS_BONUS_FLOOR, rollBossBonus, computeDamage, goldWithBonus, skillEffect, monsterAttack, monsterElement, monsterGrowth, monsterMaxHp, playerStats,
   BLESSED_COMBO_KEEP, BLESSING_DAMAGE, NORMAL_WAVES, blessingChance, bossMaxHp, waveMaxHp,
+  REGION_LEVELS,
 } from '../game/progression';
 import type { FoeKind, ItemId, PlayerStats, SkillId } from '../game/progression';
 import { elementMultiplier } from '../game/character';
@@ -348,15 +349,23 @@ export function previewParty(): Member[] {
   return buildParty(ids, heroes, character, playerStats({ upgrades }), partyOptions());
 }
 
-function partyOptions(): PartyOptions {
+// 程度測驗跳級、還沒通過區域試煉：在推薦區域（含之後）戰鬥時，主角和英雄至少以該區最低推薦等級計算（臨時戰力，不改存檔等級）
+export function placementFloor(regionIdx: number | undefined): number {
+  const p = save().placement;
+  if (!p || p.verified || regionIdx === undefined || regionIdx < p.region || p.region <= 0) return 0;
+  return REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, p.region)][0];
+}
+
+function partyOptions(regionIdx?: number): PartyOptions {
   const sv = save();
+  const floor = placementFloor(regionIdx);
   return {
     tiers: sv.heroTier,
     stars: sv.heroStars,
-    heroLevels: sv.heroLevel,
+    heroLevels: floor ? Object.fromEntries(sv.heroes.map(id => [id, Math.max(floor, sv.heroLevel[id] ?? 1)])) : sv.heroLevel,
     trueName: sv.trueName,
     growth: {
-      level: sv.player.level,
+      level: Math.max(floor, sv.player.level),
       classPath: sv.player.classPath,
       equipped: Object.values(sv.equipped).map(uid => sv.equipment.find(e => e.uid === uid)).filter(e => e !== undefined),
     },
@@ -367,7 +376,7 @@ function partyOptions(): PartyOptions {
 function refreshPlayer(party: Member[]): Member[] {
   return party.map(m => {
     if (m.id !== 'player') return m;
-    const fresh = buildMember('player', save().character, playerStats({ upgrades: save().upgrades }), partyOptions());
+    const fresh = buildMember('player', save().character, playerStats({ upgrades: save().upgrades }), partyOptions(useBattleStore.getState().levelIdx));
     return { ...fresh, hp: Math.max(0, Math.min(fresh.maxHp, m.hp + (fresh.maxHp - m.maxHp))), energy: m.energy };
   });
 }
@@ -1269,7 +1278,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       decks = { normal: preferNew(base.normal), boss: preferNew(base.boss) };
       const { upgrades, party: ids, character, heroes } = save();
       const stats = playerStats({ upgrades });
-      const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions()));
+      const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions(LEVELS.indexOf(levelKey))));
       set({
         active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, maxCombo: 0, bossBoost: false, questionCount: 0,

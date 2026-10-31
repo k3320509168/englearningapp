@@ -15,11 +15,13 @@ import { keepFocus } from './keepFocus';
 // 測驗作答：一題一題出，答完立刻顯示對錯與正確答案，按「下一題」繼續。
 // 沒有計時、不扣血；答錯的字一樣記進錯題本。聽力題一出就播放，可以重播、慢速。
 // 口說題：有麥克風就用說的（區域試煉），沒有或設定不用麥克風時改成拼寫（一樣要真的會才算對）
-export default function QuizRunner({ questions, label, onAnswer, lastLabel = '看結果' }: {
+export default function QuizRunner({ questions, label, onAnswer, lastLabel = '看結果', blind = false }: {
   questions: Question[];
   label: (idx: number) => string;   // 例如「第 3 / 10 題」
-  onAnswer: (correct: boolean) => void; // 按「下一題」時回報這一題的結果
+  // 按「下一題」時回報這一題的結果；viaSpelling：口說題改用拼寫作答
+  onAnswer: (correct: boolean, viaSpelling?: boolean) => void;
   lastLabel?: string;               // 最後一題按鈕的文字（程度測驗會繼續測下一區，用「繼續」）
+  blind?: boolean;                  // 程度測驗：不顯示對錯與正確答案、不記進圖鑑，答完直接下一題
 }) {
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState('');
@@ -37,7 +39,16 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   const listeningQ = !!q && q.type === 'choice' && !!q.speak && questionSkill(q) === 'listening';
   const recognizer = useRef<Recognizer | null>(null);
 
+  // 不顯示對錯：答完直接換下一題
+  const answerBlind = (correct: boolean) => {
+    sfx.click();
+    setInput('');
+    setIdx(i => i + 1);
+    onAnswer(correct, raw.type === 'voice' && q.type !== 'voice');
+  };
+
   const finish = (correct: boolean, heard?: string) => {
+    if (blind) return answerBlind(correct);
     recordAnswer(raw, correct, false, true);
     setResult({ correct, heard });
     if (correct) sfx.coin(); else sfx.wrong();
@@ -66,6 +77,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   const judge = (given: string) => {
     if (!q || result || !given.trim()) return;
     const correct = checkQuizAnswer(q, given);
+    if (blind) return answerBlind(correct);
     recordAnswer(raw, correct, false, true);
     setResult({ correct });
     if (correct) sfx.coin(); else sfx.wrong();
@@ -77,7 +89,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
     setResult(null);
     setInput('');
     setIdx(i => i + 1);
-    onAnswer(correct);
+    onAnswer(correct, raw.type === 'voice' && q.type !== 'voice');
   };
 
   // 鍵盤：選擇題按 A～D 作答，看完對錯按 Enter 下一題（和戰鬥中的操作一樣）
@@ -127,7 +139,10 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
           <button className={`mic-btn ${listening ? 'is-listening' : ''}`} onMouseDown={keepFocus} disabled={!!result || listening} onClick={() => recognizer.current?.start()}>
             {listening ? '🎤 聆聽中…' : '🎤 點我開始說'}
           </button>
-          {!result && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setTyped(idx)}>麥克風不方便？改用拼寫</button>}
+          {!result && (blind
+            // 程度測驗：口說題不改拼寫（題目會露出答案），直接跳過、記成口說未驗證
+            ? <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { sfx.click(); setIdx(i => i + 1); onAnswer(false, true); }}>麥克風不方便？跳過口說</button>
+            : <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setTyped(idx)}>麥克風不方便？改用拼寫</button>)}
         </div>
       ) : (
         <form className="trial-input" onSubmit={e => { e.preventDefault(); judge(input); }}>

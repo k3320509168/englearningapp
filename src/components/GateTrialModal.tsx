@@ -62,6 +62,7 @@ export default function GateTrialModal() {
     setAnswered(answered + 1);
     if (answered + 1 >= questions.length && trialPassed(s, strict)) {
       skipRegions(regionIdx + 1);
+      useSaveStore.getState().verifyPlacement(regionIdx);
       celebrate({ icon: '🗿', title: '區域試煉通過！', sub: `守門人讓開了道路${next ? `，「${next.name}」已解鎖` : ''}`, color: '#ffcd4b' });
     }
   };

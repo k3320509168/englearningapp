@@ -748,3 +748,36 @@ describe('前置區域「失語邊境」', () => {
     expect(Object.keys(saved().mapStars).some(k => k.startsWith(PROLOGUE_KEY))).toBe(false);
   });
 });
+
+describe('首領處決（第二十一輪 B）', () => {
+  it('大 BOSS：combo 3000 以上、真的連對 8 題、答滿 60% 最低題數 → 直接打倒，剩下的變成加成題', () => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, 19);
+    if (state().phase === 'lesson') state().startBattle();
+    useBattleStore.setState({ combo: 5000 });
+    const min = state().minAnswers;
+    playUntil(() => state().phase === 'summary' || state().phase === 'gameOver', 200);
+    expect(state().phase).toBe('summary');
+    expect(state().stageAnswers).toBe(Math.ceil(min * 0.6));
+    expect(state().bonusLeft).toBe(min - Math.ceil(min * 0.6));
+    // 繼續追擊：答完加成題回到結算，金幣有上限
+    state().startBonus();
+    expect(state().phase).toBe('answering');
+    expect(state().bonusRound).toBe(true);
+    playUntil(() => state().phase === 'summary', 100);
+    expect(state().bonusRound).toBe(false);
+    expect(state().bonusGold).toBeLessThanOrEqual(60);
+  });
+
+  it('combo 不夠：照原本規則答滿最低題數才結算，沒有加成題', () => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, 19);
+    if (state().phase === 'lesson') state().startBattle();
+    const min = state().minAnswers;
+    playUntil(() => state().phase === 'summary' || state().phase === 'gameOver', 400);
+    if (state().phase === 'summary') {
+      expect(state().stageAnswers).toBeGreaterThanOrEqual(min);
+      expect(state().bonusLeft).toBe(0);
+    }
+  });
+});

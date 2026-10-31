@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
+import { BONUS_GOLD } from '../game/execute';
 import { ONBOARD_SUMMON_STAGE, useBattleStore } from '../store/battleStore';
 import { isPrologue } from '../game/stageLayout';
 import { useSaveStore } from '../store/saveStore';
@@ -155,6 +156,7 @@ export default function BattleHUD() {
         </div>
       )}
       <PartyBar />
+      <BonusBar />
       <TimerBars />
       {phase === 'lesson' && <LessonPanel />}
       {phase === 'casting' && <CastConfirm />}
@@ -164,6 +166,27 @@ export default function BattleHUD() {
       {(phase === 'summary' || phase === 'levelClear' || phase === 'gameOver') && <SummaryPanel />}
       <DefeatModal />
     </section>
+  );
+}
+
+// 處決提早結算後的「繼續追擊」：結算畫面的按鈕，與加成題進行中的提示列
+export function BonusOffer() {
+  const left = useBattleStore(s => (s.bonusRound ? 0 : s.bonusLeft));
+  if (left <= 0) return null;
+  return (
+    <button className="btn bonus-offer" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().startBonus()}>
+      ⚔️ 繼續追擊：加練 {left} 題（每題 🪙+{BONUS_GOLD}）
+    </button>
+  );
+}
+function BonusBar() {
+  const { round, left } = useBattleStore(useShallow(s => ({ round: s.bonusRound, left: s.bonusLeft })));
+  if (!round) return null;
+  return (
+    <div className="bonus-bar">
+      <span>⚔️ 追擊加成題・還有 <b>{left}</b> 題（敵人已倒下，不會反擊）</span>
+      <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().endBonus()}>直接通關</button>
+    </div>
   );
 }
 
@@ -499,6 +522,7 @@ function StageClearPanel() {
           }}>去召喚</button>
         </div>
       )}
+      <BonusOffer />
       <button className={`btn ${firstSummon ? '' : 'btn-primary'}`} onMouseDown={keepFocus} onClick={nextStage}>前往下一關 ⏎</button>
     </div>
   );

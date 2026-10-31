@@ -1833,3 +1833,7 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
 /* 劇情回顧：依章節分組 */
 .story-chapter { margin-bottom: 14px; }
 .story-chapter h3 { margin: 0 0 6px; font-size: 15px; color: #ffd15c; }
+
+/* 處決後的追擊加成題 */
+.bonus-offer { margin: 6px 0; border-color: #ffd15c; color: #ffd15c; }
+.bonus-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 6px 0; padding: 6px 10px; border: 2px solid #ffd15c; background: color-mix(in srgb, #ffd15c 12%, #202448); font-size: 14px; }

@@ -471,6 +471,13 @@ export default class MainScene extends Phaser.Scene {
     // 終結連擊中首領還倒在原地（0 血），答滿題數的最後一擊才播擊倒
     const killed = (s.monsterHp <= 0 && !event.execution) || !!event.waveKill;
     if (event.execution) this.time.delayedCall(200, () => this.executionHit());
+    // 處決：combo 與答題表現夠了，這一擊直接打倒首領
+    if (event.slain) this.time.delayedCall(160, () => {
+      sfx.crit(1.6);
+      screenFlash(this, 0xffffff, 0.6, 360);
+      if (!reducedMotion()) shake(this, 260, 0.014);
+      popText(this, MONSTER_X, GROUND_Y - this.monsterSprite.displayHeight - 40, '處決！', 40, '#ffd15c', { rise: 34, dur: 1200, depth: 92 });
+    });
     const crit = event.crit ?? false;
     const member = s.party.find(m => m.id === event.member);
     const f = this.fighterFor(event.member);

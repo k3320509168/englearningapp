@@ -40,6 +40,7 @@ import { ADVANCE_REQ, XP, canAdvance, isMilestoneLevel, xpScale } from '../game/
 import { rollDrops } from '../game/equipment';
 import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
 import { PROLOGUE_XP, allowedTypes, prologueGuard, gaugeScale, isPrologue, minAnswers, stageInMap, stageRole, startWaves, untimedStage } from '../game/stageLayout';
+import { BONUS_GOLD, BONUS_GOLD_CAP, canExecute, executeKindOf } from '../game/execute';
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
@@ -84,6 +85,7 @@ export interface BattleEvent {
   taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
   waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
   execution?: boolean;              // 首領已經 0 血、還沒答滿最低題數：終結連擊中
+  slain?: boolean;                  // 處決：這一擊直接打倒首領／菁英（第二十一輪 B）
   finisher?: string;                // 連攜技名稱（依最後出手的職業）
   move?: { icon: string; name: string; hits: { member: MemberId; amount: number }[] }; // 敵人依攻擊模式出招
 }
@@ -167,6 +169,10 @@ interface BattleState {
   stageAnswers: number; // 這一關已經作答幾題（答對答錯都算）
   minAnswers: number;   // 這一關最少要答幾題（0 = 不限）
   executing: boolean;   // 首領 0 血但題數還沒答滿：終結連擊
+  bonusLeft: number;    // 處決提早結算後，還可以「繼續追擊」的加成題數
+  bonusRound: boolean;  // 正在做加成題（怪物已倒，不反擊、不影響結算）
+  bonusGold: number;    // 這場加成題拿到的金幣（上限 BONUS_GOLD_CAP）
+  bonusReturn: BattleState['phase'] | null; // 加成題做完回到哪個畫面
   // 同一關連續失敗的援助（第六輪）：失敗 3 次起有一次免費復活、5 次起承受傷害 −15%
   aidRevive: boolean;
   aidGuard: number;
@@ -212,6 +218,8 @@ interface BattleState {
   chooseOption: (letter: string) => void;
   submitVoice: (transcripts: string | string[]) => void;
   continueAfterFeedback: () => void;
+  startBonus: () => void;  // 處決後「繼續追擊」：把剩下的最低題數當加成題練
+  endBonus: () => void;    // 結束加成題，回到結算畫面
   requestSkill: (memberIdx: number) => void;
   chooseModSkill: (skill: QuestionSkill) => void;
   confirmSkill: () => void;
@@ -516,7 +524,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageHits: 0,
       wave: 1, waves, bossFight, blessed, aidRevive, aidGuard, enemyTurn: 0,
       // 最低答題數：寶箱怪、復仇魔王、黃金之路與擴充魔王不限
-      stageAnswers: 0, executing: false,
+      stageAnswers: 0, executing: false, bonusLeft: 0, bonusRound: false, bonusReturn: null,
       minAnswers: s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? minAnswers(s.levelIdx, stageIdx, s.levelKey) : 0,
       monsterKind: monsterKindFor(stageIdx, stage.bossMode, !!stage.revenge, stage.kind === 'treasure', stage.kind === 'final'),
       // 一般關 5 隻怪共用行動條：只有換關才歸零
@@ -900,6 +908,24 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ runRunes: s.runRunes + 1 });
     }
     const stage = s.stages[s.stageIdx];
+    // 加成題（處決後繼續追擊）：怪物已經倒了，只給經驗與少量金幣，不再結算關卡
+    if (s.bonusRound) {
+      const gold = Math.min(BONUS_GOLD, Math.max(0, BONUS_GOLD_CAP - s.bonusGold));
+      if (gold > 0) save().addGold(gold);
+      const xp = Math.round(XP.correct * (isPrologue(s.levelKey) ? PROLOGUE_XP : xpScale(s.levelIdx)));
+      const levels = save().gainXp(xp);
+      if (levels > 0) celebrateLevelUp(save().player.level);
+      const levelUp = levels > 0 ? save().player.level : undefined;
+      const bonusLeft = s.bonusLeft - 1;
+      const patch = {
+        combo: s.combo + 1, maxCombo: Math.max(s.maxCombo, s.combo + 1), streak: s.streak + 1,
+        bonusLeft, bonusGold: s.bonusGold + gold, runGold: s.runGold + gold, runXp: s.runXp + xp,
+        event: nextEvent('attack', { amount: 0, gold, member: s.party[s.attackerIdx]?.id, execution: true, levelUp }),
+      };
+      if (bonusLeft <= 0) set({ ...patch, bonusRound: false, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null });
+      else set({ ...patch, ...nextQuestion() });
+      return;
+    }
     // 超過 20 秒才答對：這題不累積 combo
     const elapsed = s.questionLimit - s.questionLeft;
     const speed = s.overtime ? 1 : speedMultiplier(elapsed);
@@ -1010,7 +1036,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         critMult: 2 + attacker.mods.critDmg,
         extra: (s.weakenLeft > 0 ? 1 - s.weaken : 1) * firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossFight ? BLESSING_DAMAGE : 1) * talentDamage(attacker, combo, stage.bossMode),
       });
-    const monsterHp = Math.max(0, s.monsterHp - damage);
+    // 處決：combo、真的連對、答題量與正確率都夠了，這一擊直接打倒（不管剩多少血）
+    const execKind = s.mode === 'normal' ? executeKindOf({
+      bossMode: stage.bossMode, kind: stage.kind, revenge: stage.revenge, inMap: stageInMap(s.stageIdx),
+      final: stage.kind === 'final' || (s.stageIdx === s.stages.length - 1 && stage.kind !== 'gate'), lastRegion: s.levelIdx === LEVELS.length - 1,
+    }) : null;
+    const slain = !!execKind && s.monsterHp > 0 && canExecute(execKind, { combo, streak, answered: stageAnswers, correct: s.stageHits + 1, minAnswers: s.minAnswers });
+    const finishNow = !!execKind && canExecute(execKind, { combo, streak, answered: stageAnswers, correct: s.stageHits + 1, minAnswers: s.minAnswers });
+    const monsterHp = slain ? 0 : Math.max(0, s.monsterHp - damage);
     // 吸血：傷害的一部分轉為出手隊員的生命（每擊最多回復最大生命的 10%）
     const steal = talentOf(attacker, 'lifesteal');
     if (steal > 0) party = party.map((m, i) => (i === attackerIdx && isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.min(Math.round(damage * steal), Math.round(m.maxHp * 0.1))) } : m));
@@ -1018,7 +1051,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 一般關還有下一隻：只是這一波倒下，關卡繼續
     const waveKill = killed && s.wave < s.waves;
     // 最低答題數還沒答滿：一般關再來一波怪（快速登場）；首領與菁英進入終結連擊，答完剩下的題目才倒下
-    const short = stageAnswers < s.minAnswers;
+    const short = stageAnswers < s.minAnswers && !finishNow;
+    // 提早結算時，原本還沒答完的最低題數變成可選的加成題
+    const bonusLeft = finishNow && stageAnswers < s.minAnswers ? s.minAnswers - stageAnswers : 0;
     const extraWave = killed && !waveKill && short && !stage.bossMode && !stage.kind;
     const execution = killed && !waveKill && short && !extraWave;
     const stageDone = killed && !waveKill && !short;
@@ -1056,7 +1091,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...(finisher?.heal ? { stunned: null, mirageLeft: 0, staticStacks: 0, frostLeft: 0 } : {}),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
-        amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion, bonus,
+        amount: slain ? s.monsterHp : damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion, bonus,
+        slain: slain || (finishNow && s.executing) || undefined,
         levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill: waveKill || extraWave, execution: execution || undefined,
         relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
         chain: chainStep.triggered ? aliveIds.length : undefined,
@@ -1081,7 +1117,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       return;
     }
     if (s.mode === 'normal') stageFails.delete(failKey(s.levelKey, s.stageIdx));
-    finishStage(after);
+    finishStage({ ...after, bonusLeft, bonusGold: 0 });
   };
 
   const onWrong = (given: string, timeout = false) => {
@@ -1268,6 +1304,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     stageAnswers: 0,
     minAnswers: 0,
     executing: false,
+    bonusLeft: 0,
+    bonusRound: false,
+    bonusGold: 0,
+    bonusReturn: null,
     aidRevive: false,
     aidGuard: 1,
     blessed: false,
@@ -1440,6 +1480,18 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     // 看完正確答案後，同一題重新作答一次（選項重新洗牌，避免只記位置）。
     // 連續答錯達門檻時，援軍登場：給提示並附上一次護盾
+    startBonus: () => {
+      const s = get();
+      if (s.bonusLeft <= 0 || s.bonusRound || !['monsterDown', 'summary', 'levelClear'].includes(s.phase)) return;
+      set({ bonusReturn: s.phase, bonusRound: true, executing: true, monsterHp: 0, enemyGauge: 0, phase: 'answering', ...nextQuestion() });
+    },
+
+    endBonus: () => {
+      const s = get();
+      if (!s.bonusRound) return;
+      set({ bonusRound: false, bonusLeft: 0, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null, feedback: null });
+    },
+
     continueAfterFeedback: () => {
       const s = get();
       if (s.phase !== 'feedback' || !s.original) return;

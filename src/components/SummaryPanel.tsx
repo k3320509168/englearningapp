@@ -1,3 +1,4 @@
+import { BonusOffer } from './BattleHUD';
 import { useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
@@ -147,6 +148,7 @@ export default function SummaryPanel() {
       )}
 
       <div className="feedback-actions">
+        {phase !== 'gameOver' && <BonusOffer />}
         {phase === 'summary' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={nextStage}>繼續冒險 ⏎</button>}
         {phase === 'levelClear' && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={finishBattle}>回到世界地圖 ⏎</button>}
         {phase === 'gameOver' && (

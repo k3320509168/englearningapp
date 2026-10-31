@@ -8252,6 +8252,792 @@
       "ans": "SRI",
       "speak": "restraint",
       "vocabId": "R7:RESTRAINT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a conciliatory tone",
+      "options": [
+        "A. 刻意提高衝突以促成決裂的表態",
+        "B. 意在和緩衝突的語氣",
+        "C. 不許對方再提異議的命令",
+        "D. 只在結算費用時使用的語氣"
+      ],
+      "ans": "B",
+      "explain": "conciliatory 是求和不挑釁，未必放棄立場。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a peremptory request",
+      "options": [
+        "A. 帶著深切感謝的結尾",
+        "B. 未向任何人送出的私人草稿",
+        "C. 口氣斷然且不留商量的要求",
+        "D. 允許對方自由改寫的試探提議"
+      ],
+      "ans": "C",
+      "explain": "peremptory request 可形式請求實質命令口吻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tactful demurral",
+      "options": [
+        "A. 毫無保留的同意並立即執行",
+        "B. 只因未收到訊息而沒有回覆",
+        "C. 公開斥責對方每項行為的聲明",
+        "D. 顧及對方感受的保留或異議"
+      ],
+      "ans": "D",
+      "explain": "demurral 是有保留反對，tactful 不生硬。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The letter sounds formal, though the closing line suggests they know each other rather well.",
+      "options": [
+        "A. 正式語氣已排除任何私人熟識關係。",
+        "B. 結尾要求雙方從此只用正式稱謂聯繫。",
+        "C. 信看來正式，但結尾暗示兩人相當熟。",
+        "D. 信只因兩人陌生而正式，結尾也證明從未見面。"
+      ],
+      "ans": "C",
+      "explain": "語域與關係可不一一對應，suggests 非身分確證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would rather decline clearly than leave you planning around a possibility I already know is remote.",
+      "options": [
+        "A. 我想保留模糊答覆，因為越難確定越方便對方安排。",
+        "B. 我已確定能去，只是故意不給對方明確時間。",
+        "C. 對方已取消安排，所以我不需再回覆。",
+        "D. 我寧可清楚婉拒，不讓你圍著我已知很低的可能性安排。"
+      ],
+      "ans": "D",
+      "explain": "清晰拒絕可比虛留可能性更體貼。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apology takes responsibility for the delay, but remains rather guarded about the decision that caused it.",
+      "options": [
+        "A. 道歉承擔延誤，對造成延誤的決策則較保留。",
+        "B. 道歉承認決策錯誤，但否認有任何延誤。",
+        "C. 道歉已公開完整說明所有決策細節並承擔全部責任。",
+        "D. 說話者認為只要延誤就不能再作任何決定。"
+      ],
+      "ans": "A",
+      "explain": "延誤結果與上游決策的承責程度不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The invitation leaves the date to us, but the repeated mention of Saturday makes the freedom feel somewhat qualified.",
+      "options": [
+        "A. 邀請已明令週六不得選，因此我們完全自由。",
+        "B. 反覆提週六已被確認只是日期印刷錯誤。",
+        "C. 說話者認為日期有任何建議就不可能協商。",
+        "D. 日期雖交我們選，反覆提週六讓自由似乎受限。"
+      ],
+      "ans": "D",
+      "explain": "明示自由與暗示偏好可有張力，somewhat 限程度。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The phrase at your convenience is courteous, but the deadline two lines later makes clear that convenience has a fairly narrow window.",
+      "options": [
+        "A. 方便時的客氣話受兩行後截止限制，實際時段不寬。",
+        "B. 信件讓對方任意決定何時答覆，完全沒有截止。",
+        "C. 截止只適用寄件者，所以收件者不需考慮。",
+        "D. 說話者要求把所有禮貌措辭從信中刪除。"
+      ],
+      "ans": "A",
+      "explain": "禮貌語句需與明示時間條件合讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He describes the request as a favour while referring to refusal as a failure to fulfil an obligation.",
+      "options": [
+        "A. 說話者只討論 favour 這個字的拼寫差異。",
+        "B. 他把要求稱幫忙，卻把拒絕說成未盡義務。",
+        "C. 他清楚承認可拒絕，所以沒附任何道德期待。",
+        "D. 對方已自願接下正式責任，之後才說是在幫忙。"
+      ],
+      "ans": "B",
+      "explain": "請託自由與義務框架矛盾，未證已接責任。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The reply is conciliatory without conceding the disputed point. What does it do?",
+      "options": [
+        "A. It avoids both a position and any attempt to ease the tension.",
+        "B. It seeks to reduce tension while retaining the writer’s position.",
+        "C. It withdraws the writer’s position and demands an apology in return.",
+        "D. It intensifies the disagreement by refusing any further exchange."
+      ],
+      "ans": "B",
+      "explain": "conciliatory 和緩尋求和解，不必讓步爭點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I would appreciate ___ informed before any announcement is made.",
+      "options": [
+        "A. be",
+        "B. been",
+        "C. being",
+        "D. to be"
+      ],
+      "ans": "C",
+      "explain": "appreciate 後動名詞，being informed 為被告知。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The writer says, I would not wish to impose, but leaves the recipient to propose several alternative dates. What might the recipient reasonably question?",
+      "options": [
+        "A. Whether the writer has explicitly withdrawn the wish to meet.",
+        "B. Whether alternative dates can ever be proposed through correspondence.",
+        "C. Whether the recipient is expected to choose the writer’s destination.",
+        "D. Whether the effort of avoiding imposition has itself been transferred to them."
+      ],
+      "ans": "D",
+      "explain": "不願打擾的表態仍可能把協調工作轉交對方；might 保留非必惡意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】If convenient, I ___ grateful if you could confirm by Friday.",
+      "options": [
+        "A. am been",
+        "B. will having",
+        "C. would be",
+        "D. had been"
+      ],
+      "ans": "C",
+      "explain": "半正式禮貌請求 I would be grateful if ...。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An invitation describes attendance as entirely optional, then says an unexplained absence will be taken as a lack of commitment. What makes the choice less straightforward?",
+      "options": [
+        "A. The date has been left open so no absence can be identified.",
+        "B. The writer has asked everyone to supply the same reason for attending.",
+        "C. The invitation has already been declined by all its recipients.",
+        "D. The stated freedom carries an implied negative judgement if exercised."
+      ],
+      "ans": "D",
+      "explain": "形式自選附上不來的負面人格推論，形成壓力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The writer acknowledges the inconvenience without accepting that it was avoidable. Which statement is compatible?",
+      "options": [
+        "A. The disruption mattered, but the writer does not concede it could have been prevented.",
+        "B. The disruption was preventable, but the writer denies that it affected anyone.",
+        "C. The writer accepts responsibility for preventing all future inconvenience.",
+        "D. The writer denies that the proposed arrangement ever changed."
+      ],
+      "ans": "A",
+      "explain": "承認後果與承認可預防性/責任不相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Perhaps I was not entirely clear is offered after the recipient objects to an ambiguous request. What is the most cautious interpretation?",
+      "options": [
+        "A. The writer admits deliberately concealing the request’s purpose.",
+        "B. The recipient has now agreed to carry out the original request.",
+        "C. The writer confirms that the request has been formally withdrawn.",
+        "D. The writer accepts some responsibility for lack of clarity."
+      ],
+      "ans": "D",
+      "explain": "perhaps/not entirely 限定承認程度，未證明蓄意或撤請求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A correspondent says she seeks advice, but describes every alternative to her preferred plan as impractical before asking for a response. What should the recipient notice?",
+      "options": [
+        "A. The apparent openness is narrowed by how the options are framed.",
+        "B. The writer has promised to adopt whichever plan the recipient proposes.",
+        "C. Every alternative has been independently tested under the same conditions.",
+        "D. The request is solely for information about the plans’ historical origins."
+      ],
+      "ans": "A",
+      "explain": "求建議卻先否定替代框架，不必證已完整測試。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The refusal applies to sharing the draft publicly, not to discussing its ideas privately. Which response respects that distinction?",
+      "options": [
+        "A. Publish a summary and describe it as the complete draft.",
+        "B. Arrange a private discussion without circulating the draft publicly.",
+        "C. Send the draft to a public group but ask them not to comment.",
+        "D. Assume the ideas may never be discussed in any setting."
+      ],
+      "ans": "B",
+      "explain": "明示區分公開流傳與私下討論，不新增絕對禁止。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對某提議提出的保留或異議",
+      "ans": "DEMURRAL",
+      "speak": "demurral",
+      "vocabId": "R7:DEMURRAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：以迂迴長句避開直接說法的表達",
+      "ans": "CIRCUMLOCUTION",
+      "speak": "circumlocution",
+      "vocabId": "R7:CIRCUMLOCUTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶保留而不全然放心的接受",
+      "ans": "A GUARDED ACCEPTANCE",
+      "speak": "a guarded acceptance",
+      "vocabId": "R7:A GUARDED ACCEPTANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：範圍被仔細限定的承諾",
+      "ans": "A CAREFULLY DELIMITED COMMITMENT",
+      "speak": "a carefully delimited commitment",
+      "vocabId": "R7:A CAREFULLY DELIMITED COMMITMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：確認收到不代表支持提案",
+      "ans": "ACKNOWLEDGING RECEIPT DOES NOT ENDORSE THE PROPOSAL",
+      "speak": "acknowledging receipt does not endorse the proposal",
+      "vocabId": "R7:ACKNOWLEDGING RECEIPT DOES NOT ENDORSE THE PROPOSAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：溫暖結尾未必解決實際問題",
+      "ans": "A WARM CLOSING NEED NOT SETTLE A PRACTICAL QUESTION",
+      "speak": "a warm closing need not settle a practical question",
+      "vocabId": "R7:A WARM CLOSING NEED NOT SETTLE A PRACTICAL QUESTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：意在和緩衝突促成和解的（C 開頭，12 個字母）",
+      "ans": "CONCILIATORY",
+      "speak": "conciliatory",
+      "vocabId": "R7:CONCILIATORY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：斷然命令而不容商量的（P 開頭，10 個字母）",
+      "ans": "PEREMPTORY",
+      "speak": "peremptory",
+      "vocabId": "R7:PEREMPTORY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不明確表態或承諾的（N 開頭，12 個字母）",
+      "ans": "NONCOMMITTAL",
+      "speak": "noncommittal",
+      "vocabId": "R7:NONCOMMITTAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S A L U T _ T I O N (信件開頭的稱呼語)",
+      "ans": "A",
+      "speak": "salutation",
+      "vocabId": "R7:SALUTATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E C _ P I _ N T (接收信件物品或訊息的人)",
+      "ans": "IE",
+      "speak": "recipient",
+      "vocabId": "R7:RECIPIENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I M _ O S _ T _ O N (對他人造成的額外負擔或打擾)",
+      "ans": "PII",
+      "speak": "imposition",
+      "vocabId": "R7:IMPOSITION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an undulating landscape",
+      "options": [
+        "A. 沒有任何高度差的平面",
+        "B. 只存在地圖比例中的虛線",
+        "C. 像波浪般緩緩起伏的地景",
+        "D. 每面都完全垂直的山壁"
+      ],
+      "ans": "C",
+      "explain": "undulating是連續起伏，非鋸齒式尖峰。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a muted palette",
+      "options": [
+        "A. 每色都極強烈對比的配色",
+        "B. 已完全無法辨認的黑影",
+        "C. 只用來降低聲音的設備",
+        "D. 色彩柔和而不張揚的配色"
+      ],
+      "ans": "D",
+      "explain": "palette色彩組合，muted低調柔和。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a fleeting luminosity",
+      "options": [
+        "A. 短暫閃現的明亮感",
+        "B. 永不變化的固定尺寸",
+        "C. 因完全無光而形成的黑暗",
+        "D. 只能用聲音辨識的變化"
+      ],
+      "ans": "A",
+      "explain": "fleeting轉瞬，luminosity亮度或發光感。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hills looked smooth at a distance, though the path under our feet told a rather different story.",
+      "options": [
+        "A. 遠處山丘崎嶇，腳下道路則已確定全平。",
+        "B. 小路上的文字明確記錄了山丘的歷史。",
+        "C. 說話者認為遠處與近處外觀必定完全一致。",
+        "D. 遠看山丘平滑，腳下路況卻不像那麼平順。"
+      ],
+      "ans": "D",
+      "explain": "told different story比喻近看地面與遠景差異。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would describe the scene as austere, not lifeless; the few movements seemed to matter more because there were so few.",
+      "options": [
+        "A. 場景簡樸冷峻而非無生氣，動作少使每個更顯重要。",
+        "B. 場景因動作少而被確定完全沒有生命存在。",
+        "C. 說話者主張加入更多人物才能讓畫面有意義。",
+        "D. 每個動作都太多，所以無法辨認任何變化。"
+      ],
+      "ans": "A",
+      "explain": "稀少不等於全無，節制可凸顯細節。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The sound was distant enough to be reassuringly ordinary, rather than something that required us to turn and look.",
+      "options": [
+        "A. 只有完全沒聲音，才可能感到日常的安心。",
+        "B. 聲音夠遠，像安心的日常背景，而非需回頭查看的事。",
+        "C. 聲音近到令人驚嚇，所以大家立刻回頭。",
+        "D. 說話者已查出聲音來源，保證任何時候都無風險。"
+      ],
+      "ans": "B",
+      "explain": "敘述當下感受，非客觀安全保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The path appeared to end at the wall, but a turn concealed by the hedge carried it on behind the houses.",
+      "options": [
+        "A. 路看似在牆邊止，樹籬遮住的彎其實通往房後。",
+        "B. 路確實止在牆邊，房後完全沒有延伸。",
+        "C. 樹籬已拆除，所以原來的路也被取消。",
+        "D. 說話者走進房內，才知道牆上畫著一條路。"
+      ],
+      "ans": "A",
+      "explain": "視線中斷不等於實際路線中斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What I remember as silence may be the absence of the sounds I was used to, rather than the absence of sound.",
+      "options": [
+        "A. 只要聲音不熟悉，就不可能留下記憶。",
+        "B. 記憶中的寂靜可能是沒有熟悉噪音，不是真無聲。",
+        "C. 地方已經儀器測量，證明沒有任何頻率聲響。",
+        "D. 說話者完全失去聽力，因此聽不見熟悉聲音。"
+      ],
+      "ans": "B",
+      "explain": "silence相對個人聲景，may保留反思。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The description becomes intimate just when the view becomes least extensive: we stop surveying the valley and notice the rain in a single leaf.",
+      "options": [
+        "A. 葉子把山谷擋住，所以作者無法再作任何描述。",
+        "B. 說話者認為任何親近描述都不應出現自然細節。",
+        "C. 視野不再遼闊時描寫反而親近，從山谷轉看單葉雨水。",
+        "D. 描述因視野愈廣才愈私人，最後仍只列山谷總面積。"
+      ],
+      "ans": "C",
+      "explain": "尺度由全景到近物，親密感不等同廣闊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The hills are undulating rather than sharply jagged. Which image fits?",
+      "options": [
+        "A. A perfectly level surface without any variation.",
+        "B. A single vertical wall cutting off the view.",
+        "C. A succession of gently rising and falling forms.",
+        "D. A row of abrupt pointed peaks with steep edges."
+      ],
+      "ans": "C",
+      "explain": "undulating 起伏如波，與jagged尖銳不規則對比。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The valley lay below us, its cottages ___ to small pale marks.",
+      "options": [
+        "A. reducing",
+        "B. had reduced",
+        "C. were reduce",
+        "D. reduced"
+      ],
+      "ans": "D",
+      "explain": "獨立結構 cottages reduced to...，在遠視中被縮成小點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【氣氛】The sun had gone, but the windows retained a last improbable gold. What does improbable contribute?",
+      "options": [
+        "A. The lingering brightness feels unexpectedly vivid.",
+        "B. The narrator has proved the windows are made of gold.",
+        "C. The sunset is denied as an event that could have occurred.",
+        "D. The cottages have been described as physically impossible to reach."
+      ],
+      "ans": "A",
+      "explain": "improbable修飾印象令人意外，不是判物理不可能。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Only after the wind dropped ___ how far the bell could be heard.",
+      "options": [
+        "A. we realised",
+        "B. had realised we",
+        "C. we did realised",
+        "D. did we realise"
+      ],
+      "ans": "D",
+      "explain": "Only after 前置，主句did倒裝接realise原形。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The traveller describes the sea as patient, returning to the same stones after each retreat. What does the personification foreground?",
+      "options": [
+        "A. Repetition that feels steady rather than hurried.",
+        "B. The traveller’s measurement of how long each wave lasts.",
+        "C. Evidence that the stones have consciously refused to move.",
+        "D. A promise that the sea will remain calm throughout the year."
+      ],
+      "ans": "A",
+      "explain": "patient以反覆回到石邊的規律賦情緒，非科學測量。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The colours are muted, but the scene is not dull. What distinction is preserved?",
+      "options": [
+        "A. The narrator finds both the colour and the experience monotonous.",
+        "B. Low colour intensity need not mean lack of interest.",
+        "C. A scene needs bright colour before it can contain detail.",
+        "D. The colours have been lost because the picture is damaged."
+      ],
+      "ans": "B",
+      "explain": "muted 柔和低飽和，dull可指乏味；兩者不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The mist was thin enough ___ the outline, but not the details, to emerge.",
+      "options": [
+        "A. for",
+        "B. that",
+        "C. as",
+        "D. of"
+      ],
+      "ans": "A",
+      "explain": "enough for + 名詞 + to emerge，明示輪廓可見細節未見。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A narrator calls a valley untouched, then notices terraces, repaired walls and paths worn into the grass. The description shifts from wilderness to long habitation. What changes?",
+      "options": [
+        "A. The paths are proved to have formed without people or animals ever passing.",
+        "B. The narrator recognises human work within what first appeared purely natural.",
+        "C. The landscape has been physically rebuilt during the few moments of observation.",
+        "D. The narrator concludes that no natural features remain anywhere in the valley."
+      ],
+      "ans": "B",
+      "explain": "新細節改解讀，非現場瞬間改建。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【氣氛】The station clock was the only thing in the village that seemed in a hurry. What does the contrast suggest?",
+      "options": [
+        "A. The village has formally abolished schedules for every resident.",
+        "B. Nobody in the village is able to read a clock face.",
+        "C. The place feels slow-paced despite the clock’s regular movement.",
+        "D. The clock has been measured and found to run dangerously fast."
+      ],
+      "ans": "C",
+      "explain": "擬人in a hurry反襯慢節奏印象，非檢測走快。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：較亮背景前顯出的深色輪廓",
+      "ans": "SILHOUETTE",
+      "speak": "silhouette",
+      "vocabId": "R7:SILHOUETTE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：寬廣延伸的一片空間",
+      "ans": "EXPANSE",
+      "speak": "expanse",
+      "vocabId": "R7:EXPANSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：如半透明薄紗般的霧",
+      "ans": "A TRANSLUCENT VEIL OF MIST",
+      "speak": "a translucent veil of mist",
+      "vocabId": "R7:A TRANSLUCENT VEIL OF MIST"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：不斷轉變的觀看角度",
+      "ans": "A SHIFTING PERSPECTIVE",
+      "speak": "a shifting perspective",
+      "vocabId": "R7:A SHIFTING PERSPECTIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：遠景平滑可能遮掉崎嶇小路",
+      "ans": "A DISTANT SMOOTHNESS MAY CONCEAL A ROUGH PATH",
+      "speak": "a distant smoothness may conceal a rough path",
+      "vocabId": "R7:A DISTANT SMOOTHNESS MAY CONCEAL A ROUGH PATH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：光留在高處窗戶",
+      "ans": "THE LIGHT LINGERED IN THE UPPER WINDOWS",
+      "speak": "the light lingered in the upper windows",
+      "vocabId": "R7:THE LIGHT LINGERED IN THE UPPER WINDOWS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：像波浪般上下起伏的（U 開頭，10 個字母）",
+      "ans": "UNDULATING",
+      "speak": "undulating",
+      "vocabId": "R7:UNDULATING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：可透光但不能清楚看穿的（T 開頭，11 個字母）",
+      "ans": "TRANSLUCENT",
+      "speak": "translucent",
+      "vocabId": "R7:TRANSLUCENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：明亮或彷彿發光的（L 開頭，8 個字母）",
+      "ans": "LUMINOUS",
+      "speak": "luminous",
+      "vocabId": "R7:LUMINOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H A _ E (使遠景不清楚的薄霧或濛氣)",
+      "ans": "Z",
+      "speak": "haze",
+      "vocabId": "R7:HAZE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M _ T _ D (色彩聲音等被減弱而不張揚的)",
+      "ans": "UE",
+      "speak": "muted",
+      "vocabId": "R7:MUTED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R A _ I _ N _ E (明亮而向外散發的光輝)",
+      "ans": "DAC",
+      "speak": "radiance",
+      "vocabId": "R7:RADIANCE"
     }
   ],
   "boss": [
@@ -11005,6 +11791,268 @@
       "ans": "IRI",
       "speak": "deliberation",
       "vocabId": "R7:DELIBERATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can acknowledge the message now, but I will need to check the dates before I can give you an answer.",
+      "options": [
+        "A. 現在可確認收到，但查日期後才能答覆。",
+        "B. 現在已同意日期，之後只需確認收到。",
+        "C. 尚未收到訊息，所以完全不能做任何回覆。",
+        "D. 查日期就是答應出席，兩者沒有差別。"
+      ],
+      "ans": "A",
+      "explain": "收悉與實質承諾分階段。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She has agreed to look at the proposal, which is encouraging, though it is not quite the endorsement your reply assumes.",
+      "options": [
+        "A. 說話者認為看提案等於已決定拒絕。",
+        "B. 她答應看提案值得鼓舞，但不是你回覆中假定的支持。",
+        "C. 她已正式背書，只是尚未閱讀具體提案。",
+        "D. 你回覆明確區分願看與支持，所以無需修正。"
+      ],
+      "ans": "B",
+      "explain": "接觸評估不等於endorsement，同意看也未定拒絕。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The warmest sentence is also the one that most carefully avoids saying whether the invitation has been accepted.",
+      "options": [
+        "A. 語氣冷淡只是因對方已在前文正式拒絕。",
+        "B. 信件只剩一句，沒有任何邀請相關內容。",
+        "C. 最溫暖那句也最小心避說是否接受邀請。",
+        "D. 最溫暖那句已明確答應出席並確認日期。"
+      ],
+      "ans": "C",
+      "explain": "熱情關係維持與實質答覆可分離。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A peremptory message is typically ___.",
+      "options": [
+        "A. abruptly authoritative and allowing little discussion",
+        "B. tentatively phrased and inviting correction",
+        "C. unnecessarily long and full of background detail",
+        "D. warmly appreciative of an earlier favour"
+      ],
+      "ans": "A",
+      "explain": "peremptory 斷然命令式，不給討論空間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】I can send the notes after the meeting, provided the chair agrees to their circulation. What does their refer to?",
+      "options": [
+        "A. The proposed meeting dates.",
+        "B. The notes.",
+        "C. The people attending the meeting.",
+        "D. The chair’s preferences."
+      ],
+      "ans": "B",
+      "explain": "circulation notes 指傳閱筆記，their 為notes所有格。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An email thanks a colleague for agreeing to a task that the colleague had merely offered to discuss. Why might the wording need revision?",
+      "options": [
+        "A. It fails to name every person who might attend the discussion.",
+        "B. It makes the task appear less demanding than its written specification.",
+        "C. It presents willingness to discuss as acceptance of responsibility.",
+        "D. It presents a completed task as though it had not yet started."
+      ],
+      "ans": "C",
+      "explain": "同意討論不等於接責任，感謝式措辭可能預置承諾。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未明說但暗示需回應的義務",
+      "ans": "AN IMPLIED OBLIGATION TO RESPOND",
+      "speak": "an implied obligation to respond",
+      "vocabId": "R7:AN IMPLIED OBLIGATION TO RESPOND"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：願意討論不應被轉述為同意",
+      "ans": "WILLINGNESS TO DISCUSS SHOULD NOT BE REPORTED AS CONSENT",
+      "speak": "willingness to discuss should not be reported as consent",
+      "vocabId": "R7:WILLINGNESS TO DISCUSS SHOULD NOT BE REPORTED AS CONSENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：明確界定某事的範圍（D 開頭，7 個字母）",
+      "ans": "DELIMIT",
+      "speak": "delimit",
+      "vocabId": "R7:DELIMIT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E _ E R _ N T _ A L (因尊重對方而顯得恭順的)",
+      "ans": "FEI",
+      "speak": "deferential",
+      "vocabId": "R7:DEFERENTIAL"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The water looked opaque from above, then suddenly translucent when the light came through from the side.",
+      "options": [
+        "A. 側光使水由透明變成完全黑暗而非半透明。",
+        "B. 水從上看不透，側光穿來時卻突然半透明。",
+        "C. 水一直完全不透光，側光也沒有任何影響。",
+        "D. 說話者把水換成玻璃，所以透明程度改變。"
+      ],
+      "ans": "B",
+      "explain": "視角與光照改變水的表觀，未改物質本身。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The evening did not darken evenly; the fields lost their colour while the upper windows seemed to hold the light.",
+      "options": [
+        "A. 田野保持明亮，而高處窗是最早全暗。",
+        "B. 說話者確認窗戶把太陽實體留在室內。",
+        "C. 天色非均勻暗下，田野失色而高處窗似留住光。",
+        "D. 所有地方同時變成同亮度，沒有任何局部差異。"
+      ],
+      "ans": "C",
+      "explain": "描述不均光影變化，hold light為比喻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The place feels remote, though the traffic we can just hear beyond the ridge prevents remoteness from becoming a claim that the world has disappeared.",
+      "options": [
+        "A. 地方被證實與所有道路斷絕，車聲只在記憶中。",
+        "B. 車聲太大已完全消除偏遠感，作者不再有任何距離感。",
+        "C. 說話者把山脊外世界描述為真實地從地球上消失。",
+        "D. 地方感覺偏遠，但山脊外微弱車聲仍提醒外界存在。"
+      ],
+      "ans": "D",
+      "explain": "遠隔感與外界提示共存，非絕對隔離。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A silhouette shows primarily ___.",
+      "options": [
+        "A. a coloured diagram with measurements marked",
+        "B. a dark outline against a lighter background",
+        "C. the precise texture of every visible surface",
+        "D. a reflection viewed only through moving water"
+      ],
+      "ans": "B",
+      "explain": "silhouette 逆光剪影或輪廓，非細部紋理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【視角】At first the distant shapes seemed to drift. When I leaned against the wall, they settled: it was the boat beneath me that had been moving. What is revised?",
+      "options": [
+        "A. The boat’s original destination.",
+        "B. The number of shapes visible in the distance.",
+        "C. The apparent source of motion.",
+        "D. The identity of the wall’s builder."
+      ],
+      "ans": "C",
+      "explain": "原以遠物動，後知自身船動造成相對視覺。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The account lingers on a gate’s worn latch while mentioning the famous view in a single sentence. Which reading is best supported?",
+      "options": [
+        "A. The traveller was unable to see any part of the view.",
+        "B. The latch is officially listed as the region’s most famous attraction.",
+        "C. The account has accidentally omitted the view from its pages.",
+        "D. The traveller’s attention favours intimate detail over the expected landmark."
+      ],
+      "ans": "D",
+      "explain": "敘述篇幅揭注意焦點，未證看不到景或官方評價。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：簡樸冷峻的美",
+      "ans": "AN AUSTERE BEAUTY",
+      "speak": "an austere beauty",
+      "vocabId": "R7:AN AUSTERE BEAUTY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：親近細節能取代遼闊景觀",
+      "ans": "AN INTIMATE DETAIL CAN REPLACE AN EXTENSIVE VIEW",
+      "speak": "an intimate detail can replace an extensive view",
+      "vocabId": "R7:AN INTIMATE DETAIL CAN REPLACE AN EXTENSIVE VIEW"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：帶有沉靜憂傷情緒的（M 開頭，10 個字母）",
+      "ans": "MELANCHOLY",
+      "speak": "melancholy",
+      "vocabId": "R7:MELANCHOLY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S P _ R S _ N _ S S (數量稀少且分布疏落的狀態)",
+      "ans": "AEE",
+      "speak": "sparseness",
+      "vocabId": "R7:SPARSENESS"
     }
   ]
 }

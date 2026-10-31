@@ -8258,6 +8258,792 @@
       "ans": "TRA",
       "speak": "interval",
       "vocabId": "R6:INTERVAL"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "drop me a line",
+      "options": [
+        "A. 替我把所有文件逐行抄好",
+        "B. 有空傳個短訊息給我",
+        "C. 把電線從樓上放下來",
+        "D. 在名單上把我的姓名刪除"
+      ],
+      "ans": "B",
+      "explain": "drop a line 指簡短聯繫。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "pencil it in",
+      "options": [
+        "A. 只准用鉛筆寫任何信件",
+        "B. 把該事項永久劃掉不再討論",
+        "C. 先暫定排進行程",
+        "D. 把安排確認為永不可改"
+      ],
+      "ans": "C",
+      "explain": "pencil in 表暫定，常仍可調整。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "leave it with me",
+      "options": [
+        "A. 把物品留著不要讓我碰",
+        "B. 等我回來前不准任何人決定",
+        "C. 正式宣布事情已處理完畢",
+        "D. 把這事交給我處理"
+      ],
+      "ans": "D",
+      "explain": "常用於承接調查或處理，未保證已完成。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Did you send the attachment? I thought I had, but I have just noticed it is still in my drafts.",
+      "options": [
+        "A. 說話者從未想寄附件，只準備空白信。",
+        "B. 草稿已收回，附件則由別人轉寄。",
+        "C. 以為已寄附件，但剛發現還在草稿。",
+        "D. 附件已寄，剛發現收件者刪掉了。"
+      ],
+      "ans": "C",
+      "explain": "thought vs just noticed 修正先前以為已完成的狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would rather hear that the date does not work than have you agree and struggle to make it.",
+      "options": [
+        "A. 我希望你先答應，之後再處理無法出席的問題。",
+        "B. 只要你無法出席，就不必告訴我任何原因或日期。",
+        "C. 說話者認為所有人都應取消其他安排來配合。",
+        "D. 我寧願知道日期不合，也不想你答應後勉強趕來。"
+      ],
+      "ans": "D",
+      "explain": "鼓勵誠實回應而非勉強承諾，非禁止出席。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The message sounded urgent, although the deadline at the bottom is not until next month.",
+      "options": [
+        "A. 訊息聽來急，但文末截止其實到下月。",
+        "B. 截止已過一個月，所以語氣不急也需立即處理。",
+        "C. 訊息已明說月底之前任何時間都不接受回覆。",
+        "D. 語氣與日期完全一致，沒有需要注意的落差。"
+      ],
+      "ans": "A",
+      "explain": "語氣急迫與實際時間資訊有反差，不判是否真緊急。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I did not mean to leave you out; I assumed the invitation had already reached you through Sam.",
+      "options": [
+        "A. 我故意只邀山姆，並要求他不准告訴你。",
+        "B. 我確認你收到了，所以現在撤回邀請。",
+        "C. 山姆已承認拒絕轉交，說話者也同意。",
+        "D. 不是有意漏你，我以為山姆已把邀請給你。"
+      ],
+      "ans": "D",
+      "explain": "說明自身假設與意圖，未證明Sam實際做了什麼。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I appreciate the reminder, though I would have preferred it before I had made the arrangements rather than afterwards.",
+      "options": [
+        "A. 謝謝提醒，但希望在我安排前而非之後告知。",
+        "B. 提醒來得太早，所以我還無法開始安排。",
+        "C. 我已因這次提醒取消所有安排，也不感謝對方。",
+        "D. 說話者認為提醒只在事情全部結束後才有用。"
+      ],
+      "ans": "A",
+      "explain": "肯定提醒功能但批評時機已晚。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The invitation is open-ended about when I visit, not about how long I stay once I arrive.",
+      "options": [
+        "A. 說話者認為不能決定日期就等於沒有邀請。",
+        "B. 邀請對何時來沒限定，不代表停留多久也無限。",
+        "C. 何時來固定，來後停留則完全不受限制。",
+        "D. 邀請已保證可永久住下，不需再確認。"
+      ],
+      "ans": "B",
+      "explain": "when versus how long，開放範圍不能外推。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Would you mind ___ me know if the date changes?",
+      "options": [
+        "A. having let to",
+        "B. letting",
+        "C. to let",
+        "D. let"
+      ],
+      "ans": "B",
+      "explain": "mind 後用動名詞 letting，let me know 為告知。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which verb means to accept that a message has been received?",
+      "options": [
+        "A. enclose",
+        "B. redirect",
+        "C. acknowledge",
+        "D. postpone"
+      ],
+      "ans": "C",
+      "explain": "acknowledge 在訊息語境可指確認收到，非一定贊同內容。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The letter says, Please reply by Monday, even if your answer is no. What is requested?",
+      "options": [
+        "A. A response only from people who accept the invitation.",
+        "B. An explanation of why Monday is an unsuitable date.",
+        "C. A decision to accept unless a reply arrives on Monday.",
+        "D. A response regardless of whether the invitation is accepted."
+      ],
+      "ans": "D",
+      "explain": "even if no 明示婉拒也需回覆。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】I can lend you the blue folder, but I need the red one back tonight. What does one refer to?",
+      "options": [
+        "A. A colour sample.",
+        "B. A loan application.",
+        "C. A folder.",
+        "D. A night."
+      ],
+      "ans": "C",
+      "explain": "one 代替前面的 folder，red one 為紅文件夾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A message reads, I am free on Tuesday after three, or on Thursday before noon. Which proposed meeting fits?",
+      "options": [
+        "A. Tuesday at two in the afternoon.",
+        "B. Thursday at one in the afternoon.",
+        "C. Thursday at twelve thirty.",
+        "D. Tuesday at four in the afternoon."
+      ],
+      "ans": "D",
+      "explain": "after three / before noon 分別限定不同日，不能跨用時段。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I would have replied sooner if your message ___ in the wrong folder.",
+      "options": [
+        "A. had not ended up",
+        "B. has not ending",
+        "C. would not end",
+        "D. was not end"
+      ],
+      "ans": "A",
+      "explain": "過去未回覆的反事實條件，用 had not ended up。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A friend writes, Bring anyone you like, but let me know how many are coming before I order food. What remains necessary?",
+      "options": [
+        "A. Having every guest order food separately.",
+        "B. Asking permission for each guest’s individual identity.",
+        "C. Waiting until the food arrives to choose guests.",
+        "D. Providing the number of guests in advance."
+      ],
+      "ans": "D",
+      "explain": "人選自由仍有先報人數條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Thanks for checking rather than just assuming, a writer replies after being asked whether an old plan still applies. What is appreciated?",
+      "options": [
+        "A. The decision to confirm a potentially outdated arrangement.",
+        "B. The other person’s promise never to change the old plan.",
+        "C. The absence of any need to discuss future arrangements.",
+        "D. The assumption that silence always means the plan is unchanged."
+      ],
+      "ans": "A",
+      "explain": "肯定查證，不保證原安排確實未變。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A message says, I can collect the parcel if it is still there at six. A recipient replies, Great, I will tell them you are definitely coming. What changed?",
+      "options": [
+        "A. The recipient has withdrawn permission to collect the parcel.",
+        "B. A conditional offer has been reported as a firm commitment.",
+        "C. A promise to deliver a parcel has become a promise to collect one.",
+        "D. The collection time has moved from six to an earlier hour."
+      ],
+      "ans": "B",
+      "explain": "if still there 的條件被刪去，確定度擴大。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：隨信附上的文件或物品",
+      "ans": "ENCLOSURE",
+      "speak": "enclosure",
+      "vocabId": "R6:ENCLOSURE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：收到信件物品或資訊的人",
+      "ans": "RECIPIENT",
+      "speak": "recipient",
+      "vocabId": "R6:RECIPIENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍有待確認的試探性邀請",
+      "ans": "A TENTATIVE INVITATION",
+      "speak": "a tentative invitation",
+      "vocabId": "R6:A TENTATIVE INVITATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：比應有時間更晚的回覆",
+      "ans": "AN OVERDUE REPLY",
+      "speak": "an overdue reply",
+      "vocabId": "R6:AN OVERDUE REPLY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：條件式提議不應變成無條件承諾",
+      "ans": "A CONDITIONAL OFFER SHOULD NOT BECOME AN UNCONDITIONAL PROMISE",
+      "speak": "a conditional offer should not become an unconditional promise",
+      "vocabId": "R6:A CONDITIONAL OFFER SHOULD NOT BECOME AN UNCONDITIONAL PROMISE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：邀請讓到訪日期保持開放",
+      "ans": "THE INVITATION LEAVES THE ARRIVAL DATE OPEN",
+      "speak": "the invitation leaves the arrival date open",
+      "vocabId": "R6:THE INVITATION LEAVES THE ARRIVAL DATE OPEN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：確認已收到訊息或物品（A 開頭，11 個字母）",
+      "ans": "ACKNOWLEDGE",
+      "speak": "acknowledge",
+      "vocabId": "R6:ACKNOWLEDGE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把收到的訊息轉寄他人（F 開頭，7 個字母）",
+      "ans": "FORWARD",
+      "speak": "forward",
+      "vocabId": "R6:FORWARD"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：以尊重他人的方式有禮貌的（C 開頭，9 個字母）",
+      "ans": "COURTEOUS",
+      "speak": "courteous",
+      "vocabId": "R6:COURTEOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P O S T S _ R I P T (信件結尾署名後補加的文字)",
+      "ans": "C",
+      "speak": "postscript",
+      "vocabId": "R6:POSTSCRIPT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A D D _ E S _ E E (信封或訊息上被指定接收的人)",
+      "ans": "RS",
+      "speak": "addressee",
+      "vocabId": "R6:ADDRESSEE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ C H _ D _ L E (把原訂事項另排時間)",
+      "ans": "SEU",
+      "speak": "reschedule",
+      "vocabId": "R6:RESCHEDULE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a break in the clouds",
+      "options": [
+        "A. 專為休息而設的山頂房間",
+        "B. 因看不到雲而取消行程",
+        "C. 雲層暫時出現空隙",
+        "D. 雲層變得完全不能分開"
+      ],
+      "ans": "C",
+      "explain": "break 指中斷或開口，這裡為雲隙。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a sheltered spot",
+      "options": [
+        "A. 必定沒有任何人的荒地",
+        "B. 只在地圖上標示的污點",
+        "C. 完全無遮蔽物的高地",
+        "D. 較不受風雨直接影響的地方"
+      ],
+      "ans": "D",
+      "explain": "sheltered 有遮護，不等於保證任何天氣都安全。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "on the horizon",
+      "options": [
+        "A. 位於視野遠方的地平線上",
+        "B. 緊貼在觀察者腳邊",
+        "C. 藏在不透光物件內部",
+        "D. 正位於頭頂且無法看見"
+      ],
+      "ans": "A",
+      "explain": "on horizon 此處空間義，也可比喻將發生。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We could hear the river long before we could see it through the trees.",
+      "options": [
+        "A. 先看見河很久後，才開始聽到聲音。",
+        "B. 河被樹遮住，因此完全無法發出聲音。",
+        "C. 說話者一直沒聽見也沒看見河。",
+        "D. 穿過樹間看見河之前很久，就聽到河聲。"
+      ],
+      "ans": "D",
+      "explain": "聲音先於視覺線索。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The light kept changing, so the same patch of hillside looked different every time I glanced back.",
+      "options": [
+        "A. 光一直變，每次回看同片山坡都不同。",
+        "B. 山坡每次回看都已移到另一個位置。",
+        "C. 光線從未改變，只有山坡顏色真的變了。",
+        "D. 說話者只看山坡一次，所以無法比較。"
+      ],
+      "ans": "A",
+      "explain": "光照改變表觀，不是地理位置移動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It was not raining under the trees, exactly; the rain had stopped, but the branches were still letting it go.",
+      "options": [
+        "A. 樹下完全沒水，所以不需區分來源。",
+        "B. 樹下不算正在下雨，是雨停後枝條仍落水。",
+        "C. 雨還持續，但樹枝已完全乾燥。",
+        "D. 說話者確認所有水都是河流濺上去的。"
+      ],
+      "ans": "B",
+      "explain": "修正下雨表象，擬人lettinggo指餘水滴落。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The view opens up after the bend; from here the wall hides most of it.",
+      "options": [
+        "A. 彎後視野才開闊，此處牆擋了大部分。",
+        "B. 此處已看見全部，彎後反而完全被牆擋。",
+        "C. 彎後沒有路，所以視野與路線無關。",
+        "D. 牆剛被拆掉，從這裡現在能看見全部。"
+      ],
+      "ans": "A",
+      "explain": "現在/後續位置對比，opensup指視野展開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The place was peaceful without feeling abandoned; someone had swept the step and left a mug beside the door.",
+      "options": [
+        "A. 說話者認為寧靜必定表示從未有人居住。",
+        "B. 地方寧靜卻不像廢棄，掃過階梯和門邊杯子有生活痕跡。",
+        "C. 地方完全廢棄，因門邊杯子證明多年沒有人。",
+        "D. 階梯與杯子已被確認只是遊客中心的佈景。"
+      ],
+      "ans": "B",
+      "explain": "微小照料痕跡建立有人氣的平和印象。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I remember the smell of wet stone more clearly than the view we had walked all that way to see.",
+      "options": [
+        "A. 說話者完全沒看到景，因而不可能記住任何畫面。",
+        "B. 氣味較清楚已證明整段行程沒有視覺經驗。",
+        "C. 我對濕石氣味的記憶，比走那麼遠要看的景更清楚。",
+        "D. 走那麼遠是為聞石頭，風景本來不是目的。"
+      ],
+      "ans": "C",
+      "explain": "實際記憶焦點與原定觀景目的不同，非否定看過。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】By the time we reached the ridge, the sun ___ behind the clouds.",
+      "options": [
+        "A. will disappear",
+        "B. was disappear",
+        "C. had disappeared",
+        "D. has disappearing"
+      ],
+      "ans": "C",
+      "explain": "過去抵達前已不見，用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which verb describes small drops of light rain falling?",
+      "options": [
+        "A. glitter",
+        "B. ripple",
+        "C. rustle",
+        "D. drizzle"
+      ],
+      "ans": "D",
+      "explain": "drizzle 下毛毛雨；其餘為閃爍、泛漣漪、沙沙作響。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【空間】The path ran along the river, with the hill to our left and the water to our right. What was immediately to the walkers’ right?",
+      "options": [
+        "A. The river.",
+        "B. The top of the hill.",
+        "C. The opposite side of the hill.",
+        "D. The path behind them."
+      ],
+      "ans": "A",
+      "explain": "water 與river同指，明示位於右側。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】The rain stopped before dawn, but the leaves were still dripping when the first light appeared. What persisted after the rain?",
+      "options": [
+        "A. Heavy rain beginning before sunrise.",
+        "B. Complete darkness after daylight arrived.",
+        "C. Dry leaves blowing across the road.",
+        "D. Water falling from wet leaves."
+      ],
+      "ans": "D",
+      "explain": "雨停後葉上餘水仍滴落，與雨繼續不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The guide called the lake calm. A child pointed to small waves near the shore. The guide explained that calm did not mean perfectly still. What is distinguished?",
+      "options": [
+        "A. A general condition from the complete absence of movement.",
+        "B. The lake’s depth from the height of the surrounding hills.",
+        "C. A child’s view from a photograph taken below the water.",
+        "D. The shore’s location from the direction of the path."
+      ],
+      "ans": "A",
+      "explain": "相對平靜仍可有小波，不必絕對靜止。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The further we walked from the road, ___ we heard.",
+      "options": [
+        "A. so few traffic",
+        "B. the less traffic",
+        "C. less than traffic",
+        "D. the least of traffic"
+      ],
+      "ans": "B",
+      "explain": "the further ..., the less ...；traffic 不可數。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A cottage looked deserted from the path. As the travellers approached, smoke rose from its chimney and a dog barked inside. What happens to the first impression?",
+      "options": [
+        "A. New details suggest that the cottage may be occupied.",
+        "B. The new details prove nobody has entered for years.",
+        "C. The travellers discover that they were looking at a photograph.",
+        "D. The chimney smoke shows that the path has changed direction."
+      ],
+      "ans": "A",
+      "explain": "初看空無人後有生活線索，may避免確證誰在家。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【氣氛】The road was familiar, but in the fading light every turning seemed to hesitate before revealing itself. What effect does the description create?",
+      "options": [
+        "A. Every turning is clearly marked by newly installed signs.",
+        "B. A known place feels uncertain as visibility decreases.",
+        "C. The road is described as physically changing its route.",
+        "D. The narrator has forgotten that the walk took place in daylight."
+      ],
+      "ans": "B",
+      "explain": "路口擬人化，暗光讓熟悉路也顯猶疑。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】We reached the viewpoint expecting a grand sunset. A cloud covered the sun, but its edge briefly shone like a silver thread. Why might the narrator mention the edge?",
+      "options": [
+        "A. The narrator has abandoned visual description for a map.",
+        "B. The travellers can now see every place they visited earlier.",
+        "C. A small unexpected detail replaces the anticipated spectacle.",
+        "D. The edge proves that the sun has stopped setting."
+      ],
+      "ans": "C",
+      "explain": "宏大期待被微小亮邊取代，關注轉移而非完全無景。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：細小而綿密的毛毛雨",
+      "ans": "DRIZZLE",
+      "speak": "drizzle",
+      "vocabId": "R6:DRIZZLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：微弱或短暫的一點亮光",
+      "ans": "GLIMMER",
+      "speak": "glimmer",
+      "vocabId": "R6:GLIMMER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：遠處低沉持續的聲響",
+      "ans": "A DISTANT RUMBLE",
+      "speak": "a distant rumble",
+      "vocabId": "R6:A DISTANT RUMBLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：蜿蜒曲折的人行小路",
+      "ans": "A WINDING FOOTPATH",
+      "speak": "a winding footpath",
+      "vocabId": "R6:A WINDING FOOTPATH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：光線變化使同片山坡看來不同",
+      "ans": "THE CHANGING LIGHT MADE THE SAME HILLSIDE LOOK DIFFERENT",
+      "speak": "the changing light made the same hillside look different",
+      "vocabId": "R6:THE CHANGING LIGHT MADE THE SAME HILLSIDE LOOK DIFFERENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看見河之前聲音已傳到",
+      "ans": "THE SOUND REACHED US BEFORE THE RIVER CAME INTO SIGHT",
+      "speak": "the sound reached us before the river came into sight",
+      "vocabId": "R6:THE SOUND REACHED US BEFORE THE RIVER CAME INTO SIGHT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：因潮濕等而閃出柔亮光澤（G 開頭，7 個字母）",
+      "ans": "GLISTEN",
+      "speak": "glisten",
+      "vocabId": "R6:GLISTEN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：天空與地面或海面看似相接的遠線（H 開頭，7 個字母）",
+      "ans": "HORIZON",
+      "speak": "horizon",
+      "vocabId": "R6:HORIZON"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：發出細碎沙沙聲（R 開頭，6 個字母）",
+      "ans": "RUSTLE",
+      "speak": "rustle",
+      "vocabId": "R6:RUSTLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R I _ G E (山脈或山丘頂部狹長的高線)",
+      "ans": "D",
+      "speak": "ridge",
+      "vocabId": "R6:RIDGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R I _ P _ E (水面細小的波紋)",
+      "ans": "PL",
+      "speak": "ripple",
+      "vocabId": "R6:RIPPLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：T W _ L _ G _ T (日出前或日落後的微光時段)",
+      "ans": "IIH",
+      "speak": "twilight",
+      "vocabId": "R6:TWILIGHT"
     }
   ],
   "boss": [
@@ -11011,6 +11797,268 @@
       "ans": "RGP",
       "speak": "choreography",
       "vocabId": "R6:CHOREOGRAPHY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can come on Friday, but only if you mean the evening; I am working until four.",
+      "options": [
+        "A. 週五可來，但只能晚上，四點前在工作。",
+        "B. 週五四點前有空，晚上則確定工作。",
+        "C. 說話者已確認週五整天都能參加。",
+        "D. 週五不能來，只願換到另一個工作日。"
+      ],
+      "ans": "A",
+      "explain": "only if evening 限制 Friday 的可用時段。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Please use the new address for the reply, not the old one from which this message was forwarded.",
+      "options": [
+        "A. 新舊地址都已停用，必須改成電話回覆。",
+        "B. 請回新地址，不是轉寄此訊息的舊地址。",
+        "C. 請回轉寄來源的舊地址，新地址僅作副本。",
+        "D. 訊息尚未轉寄，所以現在無法使用任何地址。"
+      ],
+      "ans": "B",
+      "explain": "回覆目標與轉寄來源分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not read too much into the short reply; she may have been answering between trains.",
+      "options": [
+        "A. 她已明說在車上，所以我們確知所有來由。",
+        "B. 說話者認為短訊息從來不會帶有任何態度。",
+        "C. 別過度解讀簡短回覆，她可能在轉車空檔回的。",
+        "D. 短回覆已證實她生氣，不可能有其他原因。"
+      ],
+      "ans": "C",
+      "explain": "may 提替代解釋，非證實行蹤或否定所有語氣。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I hope this is not too short notice, says a friend inviting you tomorrow. What is being recognised?",
+      "options": [
+        "A. The invitation gives little time to prepare.",
+        "B. The message may contain too few sentences.",
+        "C. The invitation has already been declined.",
+        "D. Tomorrow’s event will last only a few minutes."
+      ],
+      "ans": "A",
+      "explain": "short notice 指通知期短，非文字或活動長度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】That might be a little difficult is written in reply to a request for a favour. Which interpretation best fits the wording?",
+      "options": [
+        "A. The writer denies having received any request.",
+        "B. The writer is expressing a reservation politely.",
+        "C. The writer guarantees the favour will be completed.",
+        "D. The writer asks for a more difficult favour instead."
+      ],
+      "ans": "B",
+      "explain": "might/a little 緩和負面回應；未必最後拒絕，故用 reservation。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An email ends, No need to reply until you know. The recipient has not yet confirmed travel dates. What response is most consistent?",
+      "options": [
+        "A. Treat the lack of dates as a permanent refusal of the invitation.",
+        "B. Ask the sender to cancel the event before making any plans.",
+        "C. Wait for the dates to be confirmed before giving an answer.",
+        "D. Reply immediately with invented dates to avoid appearing impolite."
+      ],
+      "ans": "C",
+      "explain": "允許等知道後再回，不需虛構或把未定當拒絕。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有禮貌的婉拒",
+      "ans": "A COURTEOUS REFUSAL",
+      "speak": "a courteous refusal",
+      "vocabId": "R6:A COURTEOUS REFUSAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：短回覆可能反映時間不足而非惱怒",
+      "ans": "A SHORT REPLY MAY REFLECT LIMITED TIME RATHER THAN ANNOYANCE",
+      "speak": "a short reply may reflect limited time rather than annoyance",
+      "vocabId": "R6:A SHORT REPLY MAY REFLECT LIMITED TIME RATHER THAN ANNOYANCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：把某物放入同一信封或包裝（E 開頭，7 個字母）",
+      "ans": "ENCLOSE",
+      "speak": "enclose",
+      "vocabId": "R6:ENCLOSE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ O _ _ T (不拖延而及時的)",
+      "ans": "RMP",
+      "speak": "prompt",
+      "vocabId": "R6:PROMPT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hill is not much higher from here, though the last part of the path is steeper.",
+      "options": [
+        "A. 山路已結束，所以不需再往上走。",
+        "B. 從這裡山頂沒高多少，但末段路較陡。",
+        "C. 山頂高出很多，末段路則完全平坦。",
+        "D. 說話者確認剩餘高度與坡度意思相同。"
+      ],
+      "ans": "B",
+      "explain": "剩餘高度與局部坡度不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I had expected the road to feel empty at that hour, but the sound of a single cart seemed to fill the whole valley.",
+      "options": [
+        "A. 說話者看見整個山谷都停滿相同車輛。",
+        "B. 馬車只有影子沒有聲音，所以山谷更安靜。",
+        "C. 原以為那時路上空寂，一輛車聲卻彷彿充滿山谷。",
+        "D. 路上有很多車，因此每輛聲音都無法聽清。"
+      ],
+      "ans": "C",
+      "explain": "單聲在寂靜地景顯著，seemed非量測保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The clearing felt bright after the woods, though a few minutes later I realised how little daylight was actually left.",
+      "options": [
+        "A. 空地亮是因太陽剛升，天光只會越來越多。",
+        "B. 幾分鐘內空地被人蓋住，所以亮度突然無關日光。",
+        "C. 說話者確認林中比空地更亮，先前並無對比。",
+        "D. 出樹林覺得空地明亮，幾分鐘後才發現日光其實所剩不多。"
+      ],
+      "ans": "D",
+      "explain": "相對林中亮與絕對剩餘日光不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The village came into sight as the mist thinned. What changed?",
+      "options": [
+        "A. The walkers found that the village had been rebuilt.",
+        "B. The village became easier to see.",
+        "C. The village moved closer to the walkers.",
+        "D. The mist became thicker around the village."
+      ],
+      "ans": "B",
+      "explain": "能見度改善，非村落移動或改建。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The fields stretched as far as we could see. What is conveyed?",
+      "options": [
+        "A. There were no boundaries anywhere beyond the view.",
+        "B. The fields physically lengthened as the walkers watched.",
+        "C. Their visible extent seemed very large.",
+        "D. The walkers had measured every field exactly."
+      ],
+      "ans": "C",
+      "explain": "as far as could see 限於視野印象，不證世界無界。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The silence was broken only by a gate tapping in the wind. Which interpretation fits?",
+      "options": [
+        "A. The place is filled with constant overlapping noise.",
+        "B. There is no sound of any kind, including the gate.",
+        "C. The wind has stopped and the gate is being repaired.",
+        "D. The isolated sound makes the surrounding quiet noticeable."
+      ],
+      "ans": "D",
+      "explain": "一孤聲反襯大環境寂靜，不是絕對無聲。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：一小片陽光照亮的地方",
+      "ans": "A PATCH OF SUNLIGHT",
+      "speak": "a patch of sunlight",
+      "vocabId": "R6:A PATCH OF SUNLIGHT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：微小照料痕跡使地方顯得有人住",
+      "ans": "A SMALL SIGN OF CARE MADE THE PLACE FEEL INHABITED",
+      "speak": "a small sign of care made the place feel inhabited",
+      "vocabId": "R6:A SMALL SIGN OF CARE MADE THE PLACE FEEL INHABITED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：天空被雲層廣泛遮蔽的（O 開頭，8 個字母）",
+      "ans": "OVERCAST",
+      "speak": "overcast",
+      "vocabId": "R6:OVERCAST"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S T _ L _ N _ S S (沒有明顯移動或聲響的寂靜狀態)",
+      "ans": "ILE",
+      "speak": "stillness",
+      "vocabId": "R6:STILLNESS"
     }
   ]
 }

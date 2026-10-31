@@ -292,9 +292,9 @@
   "A STUDIED NONCHALANCE": {
     "word": "a studied nonchalance",
     "pos": "phr.",
-    "meaning": "刻意表現出的若無其事",
-    "example": "He greeted the announcement with a studied nonchalance.",
-    "exampleZh": "他刻意裝作若無其事地面對這項宣布。",
+    "meaning": "刻意表現得若無其事的態度",
+    "example": "He greeted the news with a studied nonchalance.",
+    "exampleZh": "他刻意若無其事地接收消息。",
     "senses": [
       {
         "pos": "phr.",
@@ -303,6 +303,16 @@
           {
             "en": "He greeted the announcement with a studied nonchalance.",
             "zh": "他刻意裝作若無其事地面對這項宣布。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "刻意表現得若無其事的態度",
+        "examples": [
+          {
+            "en": "He greeted the news with a studied nonchalance.",
+            "zh": "他刻意若無其事地接收消息。"
           }
         ]
       }
@@ -405,9 +415,9 @@
   },
   "NONCHALANCE": {
     "pos": "n.",
-    "meaning": "表現得不在意或若無其事的態度",
-    "example": "His apparent nonchalance masked considerable anxiety.",
-    "exampleZh": "他表面上若無其事，其實掩飾著相當大的焦慮。",
+    "meaning": "看似不在意而從容的態度",
+    "example": "She read the answer with studied nonchalance.",
+    "exampleZh": "她刻意若無其事地讀回答。",
     "senses": [
       {
         "pos": "n.",
@@ -418,8 +428,19 @@
             "zh": "他表面上若無其事，其實掩飾著相當大的焦慮。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "看似不在意而從容的態度",
+        "examples": [
+          {
+            "en": "She read the answer with studied nonchalance.",
+            "zh": "她刻意若無其事地讀回答。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "nonchalance"
   },
   "DISSEMBLE": {
     "pos": "v.",
@@ -2480,9 +2501,9 @@
   },
   "PLACATORY": {
     "pos": "adj.",
-    "meaning": "以安撫或平息不滿為目的的",
-    "example": "The statement adopted a placatory tone.",
-    "exampleZh": "聲明採取安撫語氣。",
+    "meaning": "旨在安撫對方減輕不滿的",
+    "example": "The note adopts a placatory tone.",
+    "exampleZh": "便條採安撫口吻。",
     "senses": [
       {
         "pos": "adj.",
@@ -2495,6 +2516,16 @@
           {
             "en": "A placatory assurance may still lack supporting evidence.",
             "zh": "安撫性的保證仍可能缺乏證據。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "旨在安撫對方減輕不滿的",
+        "examples": [
+          {
+            "en": "The note adopts a placatory tone.",
+            "zh": "便條採安撫口吻。"
           }
         ]
       }
@@ -7514,6 +7545,651 @@
       }
     ]
   },
+  "IMPORTUNATE": {
+    "word": "importunate",
+    "pos": "adj.",
+    "meaning": "持續纏求而令人困擾的",
+    "example": "The repeated request became importunate.",
+    "exampleZh": "重複要求變得纏人。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "持續纏求而令人困擾的",
+        "examples": [
+          {
+            "en": "The repeated request became importunate.",
+            "zh": "重複要求變得纏人。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN URBANE DISCLAIMER OF AUTHORITY": {
+    "word": "an urbane disclaimer of authority",
+    "pos": "phr.",
+    "meaning": "以圓融方式表明無權決定",
+    "example": "The reply begins with an urbane disclaimer of authority.",
+    "exampleZh": "回覆以圓融方式表明無權決定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以圓融方式表明無權決定",
+        "examples": [
+          {
+            "en": "The reply begins with an urbane disclaimer of authority.",
+            "zh": "回覆以圓融方式表明無權決定。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ASYMMETRY OF PERMISSIBLE DIRECTNESS": {
+    "word": "an asymmetry of permissible directness",
+    "pos": "phr.",
+    "meaning": "雙方可直接表態程度的不對稱",
+    "example": "The exchange reveals an asymmetry of permissible directness.",
+    "exampleZh": "往來顯露可直言程度不對稱。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "雙方可直接表態程度的不對稱",
+        "examples": [
+          {
+            "en": "The exchange reveals an asymmetry of permissible directness.",
+            "zh": "往來顯露可直言程度不對稱。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SCRUPULOUSLY CIRCUMSCRIBED APOLOGY": {
+    "word": "a scrupulously circumscribed apology",
+    "pos": "phr.",
+    "meaning": "範圍被極仔細限縮的道歉",
+    "example": "The letter offers a scrupulously circumscribed apology.",
+    "exampleZh": "信給出仔細限縮範圍的道歉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "範圍被極仔細限縮的道歉",
+        "examples": [
+          {
+            "en": "The letter offers a scrupulously circumscribed apology.",
+            "zh": "信給出仔細限縮範圍的道歉。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TRUTHFUL REMINDER MAY STILL MAKE REFUSAL SOCIALLY COSTLY": {
+    "word": "a truthful reminder may still make refusal socially costly",
+    "pos": "phr.",
+    "meaning": "真實提醒仍可能使拒絕有社會代價",
+    "example": "A truthful reminder may still make refusal socially costly.",
+    "exampleZh": "真實提醒仍可能使拒絕有社會代價。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實提醒仍可能使拒絕有社會代價",
+        "examples": [
+          {
+            "en": "A truthful reminder may still make refusal socially costly.",
+            "zh": "真實提醒仍可能使拒絕有社會代價。"
+          }
+        ]
+      }
+    ]
+  },
+  "AFFECTIONATE WORDING CAN OBSCURE A CAREFULLY LIMITED COMMITMENT": {
+    "word": "affectionate wording can obscure a carefully limited commitment",
+    "pos": "phr.",
+    "meaning": "溫情措辭可能遮住受限承諾",
+    "example": "Affectionate wording can obscure a carefully limited commitment.",
+    "exampleZh": "溫情措辭可能遮住受限承諾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "溫情措辭可能遮住受限承諾",
+        "examples": [
+          {
+            "en": "Affectionate wording can obscure a carefully limited commitment.",
+            "zh": "溫情措辭可能遮住受限承諾。"
+          }
+        ]
+      }
+    ]
+  },
+  "ASSUMED SYMPATHY CANNOT REPLACE AN EXPLANATION OF THE DECISION": {
+    "word": "assumed sympathy cannot replace an explanation of the decision",
+    "pos": "phr.",
+    "meaning": "預設體諒不能代替決策說明",
+    "example": "Assumed sympathy cannot replace an explanation of the decision.",
+    "exampleZh": "預設體諒不能代替決策說明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "預設體諒不能代替決策說明",
+        "examples": [
+          {
+            "en": "Assumed sympathy cannot replace an explanation of the decision.",
+            "zh": "預設體諒不能代替決策說明。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN URBANE REFUSAL": {
+    "pos": "phr.",
+    "meaning": "圓融文雅而世故的拒絕",
+    "example": "The message amounts to an urbane refusal.",
+    "exampleZh": "訊息相當於圓融婉拒。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "圓融文雅而世故的拒絕",
+        "examples": [
+          {
+            "en": "The message amounts to an urbane refusal.",
+            "zh": "訊息相當於圓融婉拒。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN IMPORTUNATE APPEAL": {
+    "pos": "phr.",
+    "meaning": "反覆纏求而造成困擾的請託",
+    "example": "The reminder became an importunate appeal.",
+    "exampleZh": "提醒變成纏求。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "反覆纏求而造成困擾的請託",
+        "examples": [
+          {
+            "en": "The reminder became an importunate appeal.",
+            "zh": "提醒變成纏求。"
+          }
+        ]
+      }
+    ]
+  },
+  "URBANE": {
+    "pos": "adj.",
+    "meaning": "文雅圓融而熟悉社交的",
+    "example": "The reply is urbane but unhelpful.",
+    "exampleZh": "回覆圓融卻無助。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "文雅圓融而熟悉社交的",
+        "examples": [
+          {
+            "en": "The reply is urbane but unhelpful.",
+            "zh": "回覆圓融卻無助。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPORTUNITY": {
+    "pos": "n.",
+    "meaning": "反覆纏求而使人困擾的行為",
+    "example": "Her patience was tested by his importunity.",
+    "exampleZh": "他的纏求考驗她耐心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "反覆纏求而使人困擾的行為",
+        "examples": [
+          {
+            "en": "Her patience was tested by his importunity.",
+            "zh": "他的纏求考驗她耐心。"
+          }
+        ]
+      }
+    ]
+  },
+  "CIRCUMLOCUTORY": {
+    "pos": "adj.",
+    "meaning": "用迂迴冗長措辭表達的",
+    "example": "The answer is circumlocutory rather than explicit.",
+    "exampleZh": "回答迂迴而未明說。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "用迂迴冗長措辭表達的",
+        "examples": [
+          {
+            "en": "The answer is circumlocutory rather than explicit.",
+            "zh": "回答迂迴而未明說。"
+          }
+        ]
+      }
+    ]
+  },
+  "EPISTOLARY": {
+    "pos": "adj.",
+    "meaning": "與書信形式或書信往來有關的",
+    "example": "The essay examines epistolary conventions.",
+    "exampleZh": "文章檢視書信慣例。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與書信形式或書信往來有關的",
+        "examples": [
+          {
+            "en": "The essay examines epistolary conventions.",
+            "zh": "文章檢視書信慣例。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISAVOW": {
+    "pos": "v.",
+    "meaning": "明確否認與某事有關或支持它",
+    "example": "The writer is careful to disavow any right to decide.",
+    "exampleZh": "作者謹慎否認有權決定。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "明確否認與某事有關或支持它",
+        "examples": [
+          {
+            "en": "The writer is careful to disavow any right to decide.",
+            "zh": "作者謹慎否認有權決定。"
+          }
+        ]
+      }
+    ]
+  },
+  "MOLLIFY": {
+    "pos": "v.",
+    "meaning": "安撫而減輕某人的怒氣或不滿",
+    "example": "The warm opening is intended to mollify the recipient.",
+    "exampleZh": "溫暖開頭旨在安撫收件者。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "安撫而減輕某人的怒氣或不滿",
+        "examples": [
+          {
+            "en": "The warm opening is intended to mollify the recipient.",
+            "zh": "溫暖開頭旨在安撫收件者。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRESUMPTUOUS": {
+    "pos": "adj.",
+    "meaning": "未有權限或未經同意就冒昧行事的",
+    "example": "The assumed acceptance seemed presumptuous.",
+    "exampleZh": "預設對方接受顯得冒昧。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未有權限或未經同意就冒昧行事的",
+        "examples": [
+          {
+            "en": "The assumed acceptance seemed presumptuous.",
+            "zh": "預設對方接受顯得冒昧。"
+          }
+        ]
+      }
+    ]
+  },
+  "IRIDESCENCE": {
+    "word": "iridescence",
+    "pos": "n.",
+    "meaning": "隨觀看或照光角度變化的虹彩",
+    "example": "The water has a faint iridescence.",
+    "exampleZh": "水有淡淡虹彩。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "隨觀看或照光角度變化的虹彩",
+        "examples": [
+          {
+            "en": "The water has a faint iridescence.",
+            "zh": "水有淡淡虹彩。"
+          }
+        ]
+      }
+    ]
+  },
+  "DESOLATION": {
+    "word": "desolation",
+    "pos": "n.",
+    "meaning": "荒寂空落而令人孤絕的狀態",
+    "example": "The empty platform suggests desolation.",
+    "exampleZh": "空月台令人感到荒寂。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "荒寂空落而令人孤絕的狀態",
+        "examples": [
+          {
+            "en": "The empty platform suggests desolation.",
+            "zh": "空月台令人感到荒寂。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SINUOUS PROGRESSION OF SHADOWS": {
+    "word": "a sinuous progression of shadows",
+    "pos": "phr.",
+    "meaning": "蜿蜒延展的一連串影子",
+    "example": "The wall carries a sinuous progression of shadows.",
+    "exampleZh": "牆上有蜿蜒延展的影子。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "蜿蜒延展的一連串影子",
+        "examples": [
+          {
+            "en": "The wall carries a sinuous progression of shadows.",
+            "zh": "牆上有蜿蜒延展的影子。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ESTRANGING CLARITY OF LIGHT": {
+    "word": "an estranging clarity of light",
+    "pos": "phr.",
+    "meaning": "使熟物陌生化的清晰光線",
+    "example": "The scene has an estranging clarity of light.",
+    "exampleZh": "景物光線清晰到令人陌生。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "使熟物陌生化的清晰光線",
+        "examples": [
+          {
+            "en": "The scene has an estranging clarity of light.",
+            "zh": "景物光線清晰到令人陌生。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNREDEEMED SENSE OF NEGLECT": {
+    "word": "an unredeemed sense of neglect",
+    "pos": "phr.",
+    "meaning": "未被化解的失修忽略感",
+    "example": "The room retains an unredeemed sense of neglect.",
+    "exampleZh": "房仍留未被化解的忽略感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未被化解的失修忽略感",
+        "examples": [
+          {
+            "en": "The room retains an unredeemed sense of neglect.",
+            "zh": "房仍留未被化解的忽略感。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN OPEN PROSPECT NEED NOT PROMISE A DIFFERENT FUTURE": {
+    "word": "an open prospect need not promise a different future",
+    "pos": "phr.",
+    "meaning": "開闊景象未必承諾不同未來",
+    "example": "An open prospect need not promise a different future.",
+    "exampleZh": "開闊景象未必承諾不同未來。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "開闊景象未必承諾不同未來",
+        "examples": [
+          {
+            "en": "An open prospect need not promise a different future.",
+            "zh": "開闊景象未必承諾不同未來。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE SMALLEST DETAIL MAY INTERRUPT A GRAND NARRATIVE": {
+    "word": "the smallest detail may interrupt a grand narrative",
+    "pos": "phr.",
+    "meaning": "最小細節可能打斷宏大敘事",
+    "example": "The smallest detail may interrupt a grand narrative.",
+    "exampleZh": "最小細節可能打斷宏大敘事。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "最小細節可能打斷宏大敘事",
+        "examples": [
+          {
+            "en": "The smallest detail may interrupt a grand narrative.",
+            "zh": "最小細節可能打斷宏大敘事。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAMILIARITY BECOMES NEWLY PERCEPTIBLE ON THE RETURN JOURNEY": {
+    "word": "familiarity becomes newly perceptible on the return journey",
+    "pos": "phr.",
+    "meaning": "返程中熟悉重新變得可感",
+    "example": "Familiarity becomes newly perceptible on the return journey.",
+    "exampleZh": "返程中熟悉重新變得可感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "返程中熟悉重新變得可感",
+        "examples": [
+          {
+            "en": "Familiarity becomes newly perceptible on the return journey.",
+            "zh": "返程中熟悉重新變得可感。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SINUOUS LINE": {
+    "pos": "phr.",
+    "meaning": "彎轉流動而蜿蜒的線條",
+    "example": "The path makes a sinuous line across the field.",
+    "exampleZh": "小路在田中畫出蜿蜒線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彎轉流動而蜿蜒的線條",
+        "examples": [
+          {
+            "en": "The path makes a sinuous line across the field.",
+            "zh": "小路在田中畫出蜿蜒線。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MOMENTARY REPRIEVE": {
+    "pos": "phr.",
+    "meaning": "暫時減輕或延緩不利狀態",
+    "example": "The light offers the room a momentary reprieve from gloom.",
+    "exampleZh": "光讓房間暫離陰沉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "暫時減輕或延緩不利狀態",
+        "examples": [
+          {
+            "en": "The light offers the room a momentary reprieve from gloom.",
+            "zh": "光讓房間暫離陰沉。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNPEOPLED EXPANSE": {
+    "pos": "phr.",
+    "meaning": "視野中未見人的遼闊空間",
+    "example": "The window frames an unpeopled expanse.",
+    "exampleZh": "窗框住無人遼闊景物。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "視野中未見人的遼闊空間",
+        "examples": [
+          {
+            "en": "The window frames an unpeopled expanse.",
+            "zh": "窗框住無人遼闊景物。"
+          }
+        ]
+      }
+    ]
+  },
+  "SINUOUS": {
+    "pos": "adj.",
+    "meaning": "形狀流暢蜿蜒而多曲折的",
+    "example": "The river forms a sinuous line.",
+    "exampleZh": "河形成蜿蜒線條。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "形狀流暢蜿蜒而多曲折的",
+        "examples": [
+          {
+            "en": "The river forms a sinuous line.",
+            "zh": "河形成蜿蜒線條。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMMENSITY": {
+    "pos": "n.",
+    "meaning": "尺度極為浩大遼闊的性質",
+    "example": "The account conveys the immensity of the sky.",
+    "exampleZh": "敘述傳達天空浩大。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尺度極為浩大遼闊的性質",
+        "examples": [
+          {
+            "en": "The account conveys the immensity of the sky.",
+            "zh": "敘述傳達天空浩大。"
+          }
+        ]
+      }
+    ]
+  },
+  "REVERBERATION": {
+    "pos": "n.",
+    "meaning": "聲音反射後持續迴響的現象",
+    "example": "A reverberation followed the bell.",
+    "exampleZh": "鐘後有餘響。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音反射後持續迴響的現象",
+        "examples": [
+          {
+            "en": "A reverberation followed the bell.",
+            "zh": "鐘後有餘響。"
+          }
+        ]
+      }
+    ]
+  },
+  "ESTRANGEMENT": {
+    "pos": "n.",
+    "meaning": "使原本熟悉之物顯得陌生的感受或效果",
+    "example": "The bright light creates an estrangement from the familiar scene.",
+    "exampleZh": "亮光使熟景產生陌生感。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使原本熟悉之物顯得陌生的感受或效果",
+        "examples": [
+          {
+            "en": "The bright light creates an estrangement from the familiar scene.",
+            "zh": "亮光使熟景產生陌生感。"
+          }
+        ]
+      }
+    ]
+  },
+  "LUMINOSITY": {
+    "pos": "n.",
+    "meaning": "明亮或散發光感的性質",
+    "example": "The windows retain a faint luminosity.",
+    "exampleZh": "窗留有微弱光亮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "明亮或散發光感的性質",
+        "examples": [
+          {
+            "en": "The windows retain a faint luminosity.",
+            "zh": "窗留有微弱光亮。"
+          }
+        ]
+      }
+    ]
+  },
+  "TENACIOUS": {
+    "pos": "adj.",
+    "meaning": "牢固持續而不易消退的",
+    "example": "A tenacious patch of mist remained in the hollow.",
+    "exampleZh": "窪處還留一片不散的霧。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "牢固持續而不易消退的",
+        "examples": [
+          {
+            "en": "A tenacious patch of mist remained in the hollow.",
+            "zh": "窪處還留一片不散的霧。"
+          }
+        ]
+      }
+    ]
+  },
+  "MINUTENESS": {
+    "pos": "n.",
+    "meaning": "極微小或細緻的性質",
+    "example": "The minuteness of the detail draws the reader closer.",
+    "exampleZh": "細節微小使讀者靠近。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "極微小或細緻的性質",
+        "examples": [
+          {
+            "en": "The minuteness of the detail draws the reader closer.",
+            "zh": "細節微小使讀者靠近。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONTEMPLATIVE": {
+    "pos": "adj.",
+    "meaning": "帶有安靜沉思意味的",
+    "example": "The final paragraph is contemplative.",
+    "exampleZh": "末段帶沉思意味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "帶有安靜沉思意味的",
+        "examples": [
+          {
+            "en": "The final paragraph is contemplative.",
+            "zh": "末段帶沉思意味。"
+          }
+        ]
+      }
+    ]
+  },
   "R8:DISINGENUOUS": {
     "word": "disingenuous",
     "pos": "adj.",
@@ -7771,9 +8447,9 @@
   "R8:A STUDIED NONCHALANCE": {
     "word": "a studied nonchalance",
     "pos": "phr.",
-    "meaning": "刻意表現出的若無其事",
-    "example": "He greeted the announcement with a studied nonchalance.",
-    "exampleZh": "他刻意裝作若無其事地面對這項宣布。",
+    "meaning": "刻意表現得若無其事的態度",
+    "example": "He greeted the news with a studied nonchalance.",
+    "exampleZh": "他刻意若無其事地接收消息。",
     "senses": [
       {
         "pos": "phr.",
@@ -7782,6 +8458,16 @@
           {
             "en": "He greeted the announcement with a studied nonchalance.",
             "zh": "他刻意裝作若無其事地面對這項宣布。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "刻意表現得若無其事的態度",
+        "examples": [
+          {
+            "en": "He greeted the news with a studied nonchalance.",
+            "zh": "他刻意若無其事地接收消息。"
           }
         ]
       }
@@ -7846,9 +8532,9 @@
   },
   "R8:NONCHALANCE": {
     "pos": "n.",
-    "meaning": "表現得不在意或若無其事的態度",
-    "example": "His apparent nonchalance masked considerable anxiety.",
-    "exampleZh": "他表面上若無其事，其實掩飾著相當大的焦慮。",
+    "meaning": "看似不在意而從容的態度",
+    "example": "She read the answer with studied nonchalance.",
+    "exampleZh": "她刻意若無其事地讀回答。",
     "senses": [
       {
         "pos": "n.",
@@ -7857,6 +8543,16 @@
           {
             "en": "His apparent nonchalance masked considerable anxiety.",
             "zh": "他表面上若無其事，其實掩飾著相當大的焦慮。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "看似不在意而從容的態度",
+        "examples": [
+          {
+            "en": "She read the answer with studied nonchalance.",
+            "zh": "她刻意若無其事地讀回答。"
           }
         ]
       }
@@ -12376,6 +13072,457 @@
     ],
     "word": "pathos"
   },
+  "R8:IMPORTUNATE": {
+    "word": "importunate",
+    "pos": "adj.",
+    "meaning": "持續纏求而令人困擾的",
+    "example": "The repeated request became importunate.",
+    "exampleZh": "重複要求變得纏人。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "持續纏求而令人困擾的",
+        "examples": [
+          {
+            "en": "The repeated request became importunate.",
+            "zh": "重複要求變得纏人。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN URBANE DISCLAIMER OF AUTHORITY": {
+    "word": "an urbane disclaimer of authority",
+    "pos": "phr.",
+    "meaning": "以圓融方式表明無權決定",
+    "example": "The reply begins with an urbane disclaimer of authority.",
+    "exampleZh": "回覆以圓融方式表明無權決定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以圓融方式表明無權決定",
+        "examples": [
+          {
+            "en": "The reply begins with an urbane disclaimer of authority.",
+            "zh": "回覆以圓融方式表明無權決定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A SCRUPULOUSLY CIRCUMSCRIBED APOLOGY": {
+    "word": "a scrupulously circumscribed apology",
+    "pos": "phr.",
+    "meaning": "範圍被極仔細限縮的道歉",
+    "example": "The letter offers a scrupulously circumscribed apology.",
+    "exampleZh": "信給出仔細限縮範圍的道歉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "範圍被極仔細限縮的道歉",
+        "examples": [
+          {
+            "en": "The letter offers a scrupulously circumscribed apology.",
+            "zh": "信給出仔細限縮範圍的道歉。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A TRUTHFUL REMINDER MAY STILL MAKE REFUSAL SOCIALLY COSTLY": {
+    "word": "a truthful reminder may still make refusal socially costly",
+    "pos": "phr.",
+    "meaning": "真實提醒仍可能使拒絕有社會代價",
+    "example": "A truthful reminder may still make refusal socially costly.",
+    "exampleZh": "真實提醒仍可能使拒絕有社會代價。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實提醒仍可能使拒絕有社會代價",
+        "examples": [
+          {
+            "en": "A truthful reminder may still make refusal socially costly.",
+            "zh": "真實提醒仍可能使拒絕有社會代價。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AFFECTIONATE WORDING CAN OBSCURE A CAREFULLY LIMITED COMMITMENT": {
+    "word": "affectionate wording can obscure a carefully limited commitment",
+    "pos": "phr.",
+    "meaning": "溫情措辭可能遮住受限承諾",
+    "example": "Affectionate wording can obscure a carefully limited commitment.",
+    "exampleZh": "溫情措辭可能遮住受限承諾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "溫情措辭可能遮住受限承諾",
+        "examples": [
+          {
+            "en": "Affectionate wording can obscure a carefully limited commitment.",
+            "zh": "溫情措辭可能遮住受限承諾。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:URBANE": {
+    "pos": "adj.",
+    "meaning": "文雅圓融而熟悉社交的",
+    "example": "The reply is urbane but unhelpful.",
+    "exampleZh": "回覆圓融卻無助。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "文雅圓融而熟悉社交的",
+        "examples": [
+          {
+            "en": "The reply is urbane but unhelpful.",
+            "zh": "回覆圓融卻無助。"
+          }
+        ]
+      }
+    ],
+    "word": "urbane"
+  },
+  "R8:IMPORTUNITY": {
+    "pos": "n.",
+    "meaning": "反覆纏求而使人困擾的行為",
+    "example": "Her patience was tested by his importunity.",
+    "exampleZh": "他的纏求考驗她耐心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "反覆纏求而使人困擾的行為",
+        "examples": [
+          {
+            "en": "Her patience was tested by his importunity.",
+            "zh": "他的纏求考驗她耐心。"
+          }
+        ]
+      }
+    ],
+    "word": "importunity"
+  },
+  "R8:PLACATORY": {
+    "pos": "adj.",
+    "meaning": "旨在安撫對方減輕不滿的",
+    "example": "The note adopts a placatory tone.",
+    "exampleZh": "便條採安撫口吻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "以安撫或平息不滿為目的的",
+        "examples": [
+          {
+            "en": "The statement adopted a placatory tone.",
+            "zh": "聲明採取安撫語氣。"
+          },
+          {
+            "en": "A placatory assurance may still lack supporting evidence.",
+            "zh": "安撫性的保證仍可能缺乏證據。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "旨在安撫對方減輕不滿的",
+        "examples": [
+          {
+            "en": "The note adopts a placatory tone.",
+            "zh": "便條採安撫口吻。"
+          }
+        ]
+      }
+    ],
+    "word": "placatory"
+  },
+  "R8:EPISTOLARY": {
+    "pos": "adj.",
+    "meaning": "與書信形式或書信往來有關的",
+    "example": "The essay examines epistolary conventions.",
+    "exampleZh": "文章檢視書信慣例。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與書信形式或書信往來有關的",
+        "examples": [
+          {
+            "en": "The essay examines epistolary conventions.",
+            "zh": "文章檢視書信慣例。"
+          }
+        ]
+      }
+    ],
+    "word": "epistolary"
+  },
+  "R8:DISAVOW": {
+    "pos": "v.",
+    "meaning": "明確否認與某事有關或支持它",
+    "example": "The writer is careful to disavow any right to decide.",
+    "exampleZh": "作者謹慎否認有權決定。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "明確否認與某事有關或支持它",
+        "examples": [
+          {
+            "en": "The writer is careful to disavow any right to decide.",
+            "zh": "作者謹慎否認有權決定。"
+          }
+        ]
+      }
+    ],
+    "word": "disavow"
+  },
+  "R8:MOLLIFY": {
+    "pos": "v.",
+    "meaning": "安撫而減輕某人的怒氣或不滿",
+    "example": "The warm opening is intended to mollify the recipient.",
+    "exampleZh": "溫暖開頭旨在安撫收件者。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "安撫而減輕某人的怒氣或不滿",
+        "examples": [
+          {
+            "en": "The warm opening is intended to mollify the recipient.",
+            "zh": "溫暖開頭旨在安撫收件者。"
+          }
+        ]
+      }
+    ],
+    "word": "mollify"
+  },
+  "R8:IRIDESCENCE": {
+    "word": "iridescence",
+    "pos": "n.",
+    "meaning": "隨觀看或照光角度變化的虹彩",
+    "example": "The water has a faint iridescence.",
+    "exampleZh": "水有淡淡虹彩。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "隨觀看或照光角度變化的虹彩",
+        "examples": [
+          {
+            "en": "The water has a faint iridescence.",
+            "zh": "水有淡淡虹彩。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DESOLATION": {
+    "word": "desolation",
+    "pos": "n.",
+    "meaning": "荒寂空落而令人孤絕的狀態",
+    "example": "The empty platform suggests desolation.",
+    "exampleZh": "空月台令人感到荒寂。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "荒寂空落而令人孤絕的狀態",
+        "examples": [
+          {
+            "en": "The empty platform suggests desolation.",
+            "zh": "空月台令人感到荒寂。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A SINUOUS PROGRESSION OF SHADOWS": {
+    "word": "a sinuous progression of shadows",
+    "pos": "phr.",
+    "meaning": "蜿蜒延展的一連串影子",
+    "example": "The wall carries a sinuous progression of shadows.",
+    "exampleZh": "牆上有蜿蜒延展的影子。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "蜿蜒延展的一連串影子",
+        "examples": [
+          {
+            "en": "The wall carries a sinuous progression of shadows.",
+            "zh": "牆上有蜿蜒延展的影子。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN UNREDEEMED SENSE OF NEGLECT": {
+    "word": "an unredeemed sense of neglect",
+    "pos": "phr.",
+    "meaning": "未被化解的失修忽略感",
+    "example": "The room retains an unredeemed sense of neglect.",
+    "exampleZh": "房仍留未被化解的忽略感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未被化解的失修忽略感",
+        "examples": [
+          {
+            "en": "The room retains an unredeemed sense of neglect.",
+            "zh": "房仍留未被化解的忽略感。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN OPEN PROSPECT NEED NOT PROMISE A DIFFERENT FUTURE": {
+    "word": "an open prospect need not promise a different future",
+    "pos": "phr.",
+    "meaning": "開闊景象未必承諾不同未來",
+    "example": "An open prospect need not promise a different future.",
+    "exampleZh": "開闊景象未必承諾不同未來。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "開闊景象未必承諾不同未來",
+        "examples": [
+          {
+            "en": "An open prospect need not promise a different future.",
+            "zh": "開闊景象未必承諾不同未來。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:THE SMALLEST DETAIL MAY INTERRUPT A GRAND NARRATIVE": {
+    "word": "the smallest detail may interrupt a grand narrative",
+    "pos": "phr.",
+    "meaning": "最小細節可能打斷宏大敘事",
+    "example": "The smallest detail may interrupt a grand narrative.",
+    "exampleZh": "最小細節可能打斷宏大敘事。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "最小細節可能打斷宏大敘事",
+        "examples": [
+          {
+            "en": "The smallest detail may interrupt a grand narrative.",
+            "zh": "最小細節可能打斷宏大敘事。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SINUOUS": {
+    "pos": "adj.",
+    "meaning": "形狀流暢蜿蜒而多曲折的",
+    "example": "The river forms a sinuous line.",
+    "exampleZh": "河形成蜿蜒線條。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "形狀流暢蜿蜒而多曲折的",
+        "examples": [
+          {
+            "en": "The river forms a sinuous line.",
+            "zh": "河形成蜿蜒線條。"
+          }
+        ]
+      }
+    ],
+    "word": "sinuous"
+  },
+  "R8:IMMENSITY": {
+    "pos": "n.",
+    "meaning": "尺度極為浩大遼闊的性質",
+    "example": "The account conveys the immensity of the sky.",
+    "exampleZh": "敘述傳達天空浩大。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尺度極為浩大遼闊的性質",
+        "examples": [
+          {
+            "en": "The account conveys the immensity of the sky.",
+            "zh": "敘述傳達天空浩大。"
+          }
+        ]
+      }
+    ],
+    "word": "immensity"
+  },
+  "R8:REVERBERATION": {
+    "pos": "n.",
+    "meaning": "聲音反射後持續迴響的現象",
+    "example": "A reverberation followed the bell.",
+    "exampleZh": "鐘後有餘響。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲音反射後持續迴響的現象",
+        "examples": [
+          {
+            "en": "A reverberation followed the bell.",
+            "zh": "鐘後有餘響。"
+          }
+        ]
+      }
+    ],
+    "word": "reverberation"
+  },
+  "R8:LUMINOSITY": {
+    "pos": "n.",
+    "meaning": "明亮或散發光感的性質",
+    "example": "The windows retain a faint luminosity.",
+    "exampleZh": "窗留有微弱光亮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "明亮或散發光感的性質",
+        "examples": [
+          {
+            "en": "The windows retain a faint luminosity.",
+            "zh": "窗留有微弱光亮。"
+          }
+        ]
+      }
+    ],
+    "word": "luminosity"
+  },
+  "R8:TENACIOUS": {
+    "pos": "adj.",
+    "meaning": "牢固持續而不易消退的",
+    "example": "A tenacious patch of mist remained in the hollow.",
+    "exampleZh": "窪處還留一片不散的霧。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "牢固持續而不易消退的",
+        "examples": [
+          {
+            "en": "A tenacious patch of mist remained in the hollow.",
+            "zh": "窪處還留一片不散的霧。"
+          }
+        ]
+      }
+    ],
+    "word": "tenacious"
+  },
+  "R8:MINUTENESS": {
+    "pos": "n.",
+    "meaning": "極微小或細緻的性質",
+    "example": "The minuteness of the detail draws the reader closer.",
+    "exampleZh": "細節微小使讀者靠近。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "極微小或細緻的性質",
+        "examples": [
+          {
+            "en": "The minuteness of the detail draws the reader closer.",
+            "zh": "細節微小使讀者靠近。"
+          }
+        ]
+      }
+    ],
+    "word": "minuteness"
+  },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
     "pos": "phr.",
@@ -12822,29 +13969,6 @@
       }
     ],
     "word": "supercilious"
-  },
-  "R8:PLACATORY": {
-    "pos": "adj.",
-    "meaning": "以安撫或平息不滿為目的的",
-    "example": "The statement adopted a placatory tone.",
-    "exampleZh": "聲明採取安撫語氣。",
-    "senses": [
-      {
-        "pos": "adj.",
-        "meaning": "以安撫或平息不滿為目的的",
-        "examples": [
-          {
-            "en": "The statement adopted a placatory tone.",
-            "zh": "聲明採取安撫語氣。"
-          },
-          {
-            "en": "A placatory assurance may still lack supporting evidence.",
-            "zh": "安撫性的保證仍可能缺乏證據。"
-          }
-        ]
-      }
-    ],
-    "word": "placatory"
   },
   "R8:A RUEFUL ACKNOWLEDGMENT": {
     "word": "a rueful acknowledgment",
@@ -13852,5 +14976,157 @@
       }
     ],
     "word": "sentimentality"
+  },
+  "R8:AN ASYMMETRY OF PERMISSIBLE DIRECTNESS": {
+    "word": "an asymmetry of permissible directness",
+    "pos": "phr.",
+    "meaning": "雙方可直接表態程度的不對稱",
+    "example": "The exchange reveals an asymmetry of permissible directness.",
+    "exampleZh": "往來顯露可直言程度不對稱。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "雙方可直接表態程度的不對稱",
+        "examples": [
+          {
+            "en": "The exchange reveals an asymmetry of permissible directness.",
+            "zh": "往來顯露可直言程度不對稱。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ASSUMED SYMPATHY CANNOT REPLACE AN EXPLANATION OF THE DECISION": {
+    "word": "assumed sympathy cannot replace an explanation of the decision",
+    "pos": "phr.",
+    "meaning": "預設體諒不能代替決策說明",
+    "example": "Assumed sympathy cannot replace an explanation of the decision.",
+    "exampleZh": "預設體諒不能代替決策說明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "預設體諒不能代替決策說明",
+        "examples": [
+          {
+            "en": "Assumed sympathy cannot replace an explanation of the decision.",
+            "zh": "預設體諒不能代替決策說明。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CIRCUMLOCUTORY": {
+    "pos": "adj.",
+    "meaning": "用迂迴冗長措辭表達的",
+    "example": "The answer is circumlocutory rather than explicit.",
+    "exampleZh": "回答迂迴而未明說。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "用迂迴冗長措辭表達的",
+        "examples": [
+          {
+            "en": "The answer is circumlocutory rather than explicit.",
+            "zh": "回答迂迴而未明說。"
+          }
+        ]
+      }
+    ],
+    "word": "circumlocutory"
+  },
+  "R8:PRESUMPTUOUS": {
+    "pos": "adj.",
+    "meaning": "未有權限或未經同意就冒昧行事的",
+    "example": "The assumed acceptance seemed presumptuous.",
+    "exampleZh": "預設對方接受顯得冒昧。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未有權限或未經同意就冒昧行事的",
+        "examples": [
+          {
+            "en": "The assumed acceptance seemed presumptuous.",
+            "zh": "預設對方接受顯得冒昧。"
+          }
+        ]
+      }
+    ],
+    "word": "presumptuous"
+  },
+  "R8:AN ESTRANGING CLARITY OF LIGHT": {
+    "word": "an estranging clarity of light",
+    "pos": "phr.",
+    "meaning": "使熟物陌生化的清晰光線",
+    "example": "The scene has an estranging clarity of light.",
+    "exampleZh": "景物光線清晰到令人陌生。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "使熟物陌生化的清晰光線",
+        "examples": [
+          {
+            "en": "The scene has an estranging clarity of light.",
+            "zh": "景物光線清晰到令人陌生。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FAMILIARITY BECOMES NEWLY PERCEPTIBLE ON THE RETURN JOURNEY": {
+    "word": "familiarity becomes newly perceptible on the return journey",
+    "pos": "phr.",
+    "meaning": "返程中熟悉重新變得可感",
+    "example": "Familiarity becomes newly perceptible on the return journey.",
+    "exampleZh": "返程中熟悉重新變得可感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "返程中熟悉重新變得可感",
+        "examples": [
+          {
+            "en": "Familiarity becomes newly perceptible on the return journey.",
+            "zh": "返程中熟悉重新變得可感。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ESTRANGEMENT": {
+    "pos": "n.",
+    "meaning": "使原本熟悉之物顯得陌生的感受或效果",
+    "example": "The bright light creates an estrangement from the familiar scene.",
+    "exampleZh": "亮光使熟景產生陌生感。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使原本熟悉之物顯得陌生的感受或效果",
+        "examples": [
+          {
+            "en": "The bright light creates an estrangement from the familiar scene.",
+            "zh": "亮光使熟景產生陌生感。"
+          }
+        ]
+      }
+    ],
+    "word": "estrangement"
+  },
+  "R8:CONTEMPLATIVE": {
+    "pos": "adj.",
+    "meaning": "帶有安靜沉思意味的",
+    "example": "The final paragraph is contemplative.",
+    "exampleZh": "末段帶沉思意味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "帶有安靜沉思意味的",
+        "examples": [
+          {
+            "en": "The final paragraph is contemplative.",
+            "zh": "末段帶沉思意味。"
+          }
+        ]
+      }
+    ],
+    "word": "contemplative"
   }
 }

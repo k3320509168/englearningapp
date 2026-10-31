@@ -42,6 +42,8 @@ import { useUiStore } from '../store/uiStore';
 import { setSfxVolume } from './sfx';
 import { stopSpeaking } from './speech';
 import { playMusic, setMusicVolume, unlockMusic } from './music';
+import { musicTrackFor, regionMusic } from './musicData';
+import { isPrologue, stageInMap } from './stageLayout';
 
 // 遊戲畫布固定 800x480 的邏輯座標，由 Phaser 依容器大小等比縮放（RWD）
 export const GAME_WIDTH = 800;
@@ -97,23 +99,34 @@ export default function Game() {
     return useSaveStore.subscribe(apply);
   }, []);
 
-  // 背景音樂：地圖、戰鬥、頭目各一首。瀏覽器要求使用者互動後才能播放聲音
+  // 背景音樂（第二十一輪）：世界地圖一首；打開區域地圖播該區的曲子；一般戰鬥是該區曲子的戰鬥變奏；
+  // 第 15 關小 BOSS、第 20 關大 BOSS、區域魔王、沉默君王各有專屬曲。瀏覽器要求使用者互動後才能播放聲音
   useEffect(() => {
     const pick = () => {
       const s = useBattleStore.getState();
-      if (!s.active) return playMusic('map');
+      const ui = useUiStore.getState();
+      if (!s.active) return playMusic(ui.modal === 'region' ? musicTrackFor(regionMusic(ui.regionIdx), 'map') : 'world');
       const stage = s.stages[s.stageIdx];
-      playMusic(stage?.bossMode ? 'boss' : 'battle');
+      const region = isPrologue(s.levelKey) ? 'pre' : regionMusic(s.levelIdx);
+      if (s.mode === 'skill') return playMusic('boss-big');
+      if (!stage?.bossMode || stage.revenge) return playMusic(musicTrackFor(region, 'normal'));
+      const final = s.mode === 'normal' && (stage.kind === 'final' || (s.stageIdx === s.stages.length - 1 && stage.kind !== 'gate'));
+      if (final) return playMusic(musicTrackFor(region, 'region'));
+      playMusic(musicTrackFor(region, isPrologue(s.levelKey) || stageInMap(s.stageIdx) === 20 ? 'big' : 'mini'));
     };
     pick();
     const unsubscribe = useBattleStore.subscribe((s, prev) => {
       if (s.active !== prev.active || s.stageIdx !== prev.stageIdx) pick();
+    });
+    const unsubscribeUi = useUiStore.subscribe((s, prev) => {
+      if (s.modal !== prev.modal || s.regionIdx !== prev.regionIdx) pick();
     });
     const unlock = () => unlockMusic();
     window.addEventListener('pointerdown', unlock);
     window.addEventListener('keydown', unlock);
     return () => {
       unsubscribe();
+      unsubscribeUi();
       window.removeEventListener('pointerdown', unlock);
       window.removeEventListener('keydown', unlock);
     };

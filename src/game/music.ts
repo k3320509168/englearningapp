@@ -1,52 +1,10 @@
 // 背景音樂：用 Web Audio 即時合成的史詩奇幻風格配樂（不需要音檔）。
-// 三首曲子：地圖（舒緩）、戰鬥（弦樂＋定音鼓）、頭目（緊張）。
+// 曲目在 musicData.ts：世界地圖、十區地圖與戰鬥變奏、小 BOSS、大 BOSS、區域魔王、沉默君王。
 // 音量刻意偏低；播放英文發音時自動壓低，避免干擾聽力。
 
-export type Track = 'map' | 'battle' | 'boss';
-
-interface Song {
-  bpm: number;
-  chords: number[][];  // 每小節的和弦（MIDI 音高）
-  bass: number[];      // 每小節的低音根音
-  melody: (number | null)[]; // 每個八分音符一格，null 為休止，循環播放
-  pad: { type: OscillatorType; cutoff: number; gain: number };
-  arp: boolean;        // 分散和弦
-  ostinato: 'none' | 'eighth' | 'sixteenth'; // 低音弦樂的固定音型
-  drums: 'none' | 'half' | 'beat';            // 定音鼓
-}
-
-const SONGS: Record<Track, Song> = {
-  // D 大調，I–V–vi–IV，慢板，豎琴般的分散和弦
-  map: {
-    bpm: 80,
-    chords: [[62, 66, 69], [61, 64, 69], [59, 62, 66], [59, 62, 67]],
-    bass: [38, 45, 47, 43],
-    melody: [74, null, 76, 78, 76, null, 74, null, 73, null, 76, null, 81, null, null, null,
-      78, null, 76, 74, 71, null, null, null, 74, null, 71, null, 69, null, null, null],
-    pad: { type: 'sawtooth', cutoff: 900, gain: 0.05 },
-    arp: true, ostinato: 'none', drums: 'none',
-  },
-  // D 小調，i–VI–III–VII，弦樂固定音型＋定音鼓
-  battle: {
-    bpm: 108,
-    chords: [[62, 65, 69], [58, 62, 65], [57, 60, 65], [60, 64, 67]],
-    bass: [38, 34, 41, 36],
-    melody: [74, null, 77, null, 76, 74, 72, null, 74, null, null, null, 69, null, 72, 74,
-      77, null, 79, null, 81, null, 79, 77, 76, null, 72, null, 74, null, null, null],
-    pad: { type: 'sawtooth', cutoff: 1300, gain: 0.045 },
-    arp: false, ostinato: 'eighth', drums: 'half',
-  },
-  // C 小調，i–VI–VII–V，十六分音符的急促弦樂
-  boss: {
-    bpm: 124,
-    chords: [[60, 63, 67], [56, 60, 63], [58, 62, 65], [55, 59, 62]],
-    bass: [36, 32, 34, 31],
-    melody: [72, null, 75, null, 79, null, 78, null, 75, null, 72, null, 71, null, null, null,
-      72, 75, 79, 84, 83, null, 79, null, 80, null, 79, null, 77, null, 75, null],
-    pad: { type: 'sawtooth', cutoff: 1600, gain: 0.05 },
-    arp: false, ostinato: 'sixteenth', drums: 'beat',
-  },
-};
+import { SONGS } from './musicData';
+import type { Song, Track } from './musicData';
+export type { Track } from './musicData';
 
 const freq = (midi: number) => 440 * 2 ** ((midi - 69) / 12);
 
@@ -173,9 +131,10 @@ function scheduleStep(song: Song, n: number, t: number, dur: number, out: GainNo
   }
   // 定音鼓
   if ((song.drums === 'half' && inBar % 4 === 0) || (song.drums === 'beat' && inBar % 2 === 0)) timpani(out, t, inBar === 0 ? 0.35 : 0.22);
-  // 主旋律（柔和的方波，像遠方的號角）
+  // 主旋律：每首曲子可以有自己的音色（沒有指定時是柔和的方波，像遠方的號角）
+  const lead = song.lead ?? { type: 'square' as OscillatorType, cutoff: 1800, gain: 0.022 };
   const m = song.melody[n % song.melody.length];
-  if (m !== null) note(out, t, dur * 1.8, freq(m), 'square', 0.022, 1800, 0.03, 0.3);
+  if (m !== null) note(out, t, dur * 1.8, freq(m), lead.type, lead.gain, lead.cutoff, 0.03, 0.3);
 }
 
 function note(out: GainNode, t: number, len: number, f: number, type: OscillatorType, gain: number, cutoff: number, attack: number, release: number, detune = 0) {

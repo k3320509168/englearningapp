@@ -2,7 +2,8 @@
 // {name} 會換成玩家主角的名字。
 
 export type Speaker = 'narrator' | 'hero' | 'elder' | 'spirit' | 'villain' | 'smith' | 'pathfinder' | 'ferryman' | 'courier' | 'treeheart' | 'hunter'
-  | 'forestkeeper' | 'forestchild' | 'mistwitch' | 'foe';
+  | 'forestkeeper' | 'forestchild' | 'mistwitch' | 'foe'
+  | 'lightkeeper' | 'fisher' | 'diver' | 'seabeast';
 
 export interface StoryLine {
   speaker: Speaker;
@@ -26,6 +27,11 @@ export const SPEAKERS: Record<Speaker, { name: string; icon: string }> = {
   forestkeeper: { name: '守林人洛恩', icon: '🌲' },
   forestchild: { name: '森林女孩', icon: '👧' },
   mistwitch: { name: '幻影魔女', icon: '🧙‍♀️' },
+  // A2+ 碧藍海岸（ChatGPT 第十九輪）
+  lightkeeper: { name: '燈塔守望人', icon: '🏮' },
+  fisher: { name: '漁夫阿海', icon: '⚓' },
+  diver: { name: '潛水員小嵐', icon: '🤿' },
+  seabeast: { name: '深海巨獸', icon: '🐋' },
   // 第 15 關小 BOSS、第 20 關大 BOSS 登場台詞的說話者
   foe: { name: '頭目', icon: '👹' },
 };
@@ -197,10 +203,6 @@ export const STORIES: Record<string, StoryLine[]> = {
     { speaker: 'spirit', text: '這裡的咒語要描述過去和未來：昨天發生了什麼、明天要去哪裡。' },
     { speaker: 'hero', text: '把時間說清楚，燈塔就會重新亮起來吧！' },
   ],
-  'clear-a2p': [
-    { speaker: 'narrator', text: '燈塔再次點亮，漁船一艘艘平安靠岸。' },
-    { speaker: 'spirit', text: '下一站是黃金沙漠。商人們因為說不出話，已經好久無法做生意了。' },
-  ],
   'region-2': [
     { speaker: 'spirit', text: '沙漠的商隊需要會談判的人。這裡的咒語更長，也更實用。' },
     { speaker: 'hero', text: '開會、寄信、談價錢……原來這些都是咒語！' },
@@ -262,6 +264,121 @@ export const STORIES: Record<string, StoryLine[]> = {
     { speaker: 'narrator', text: '時空因你的咒語而震動。你跨越了所有試煉，成為傳說中的存在——' },
     { speaker: 'narrator', text: '【特殊結局】你獲得了稱號「掌握古代咒語的超時空勇者」！' },
   ],
+  // ---------- A2+ 碧藍海岸（ChatGPT 第十九輪）
+  // 主線：失聯漁船 → 燈塔被奪光 → 港口受困
+  // → 發現寂靜鎖鏈 → 恢復潮汐神殿
+  // → 找回回聲貝 → 解放深海巨獸
+
+  // ===== 第 1 張：珊瑚灣 =====
+
+  'map-2-0-intro': [
+    { speaker: 'mistwitch', text: '霧只能送你們到這裡了。海上那片黑影……別急著相信第一眼看到的東西。' },
+    { speaker: 'fisher', text: '你們是從森林來的？太好了！我們有三艘船沒回港，燈塔也整晚沒亮！' },
+    { speaker: 'hero', text: '海灘上怎麼全是破帆？連珊瑚都變成灰色的了。' },
+    { speaker: 'spirit', text: '等等，海底有東西在一下一下發光。那不像燈，倒像有誰正在把光拖走。' },
+  ],
+
+  'map-2-0-clear': [
+    { speaker: 'fisher', text: '救生浮標找回來了！至少還有機會把落水的人救上岸。' },
+    { speaker: 'spirit', text: '那些發光的痕跡一路通向燈塔岬，像是有人在海底拖著一條長長的鎖鏈。' },
+    { speaker: 'hero', text: '先去燈塔看看。那些還在海上的人，不能一直等下去。' },
+  ],
+
+  // ===== 第 2 張：燈塔岬 =====
+
+  'map-2-1-intro': [
+    { speaker: 'lightkeeper', text: '我守這座燈塔三十年了，燈芯沒壞，鏡片也好好的，可光就是照不出去！' },
+    { speaker: 'spirit', text: '塔底多了一道黑色符文。每次燈光亮起，符文就把光往海底送。' },
+    { speaker: 'hero', text: '所以不是燈塔壞掉，是有人把它的光偷走了？' },
+    { speaker: 'lightkeeper', text: '如果你能讓它亮一下就好，哪怕只有幾秒，迷路的船也有機會看見！' },
+  ],
+
+  'map-2-1-clear': [
+    { speaker: 'lightkeeper', text: '亮了！真的亮了！快看，海上有船在用燈光回應我們！' },
+    { speaker: 'fisher', text: '是我們的人！可是船都停在港口外面，好像有什麼東西不讓他們進來。' },
+    { speaker: 'spirit', text: '黑色符文只是暫時停下來，光還是會被偷走。我們先去碼頭救人。' },
+  ],
+
+  // ===== 第 3 張：漁人碼頭 =====
+
+  'map-2-2-intro': [
+    { speaker: 'fisher', text: '船明明快靠岸了，卻突然被往後拉！你看，船底纏著那些黑色鐵鏈！' },
+    { speaker: 'diver', text: '我試著下水解開它們，可水底的方向全亂了，連航海圖上的字都在消失。' },
+    { speaker: 'hero', text: '先把岸邊的纜繩固定好，別讓船被拖走！' },
+    { speaker: 'spirit', text: '退潮時鐵鏈會露出水面。先救人，再順著鐵鏈找它的源頭。' },
+  ],
+
+  'map-2-2-clear': [
+    { speaker: 'diver', text: '船總算拉回來了！我還在船艙裡找到一本泡爛的航海日誌。' },
+    { speaker: 'fisher', text: '最後一頁寫著「海蝕洞，退潮可入」。船長失蹤前一直在調查那裡。' },
+    { speaker: 'hero', text: '那些鐵鏈不可能自己長出來。等潮退，我們進洞看看。' },
+  ],
+
+  // ===== 第 4 張：海蝕洞 =====
+
+  'map-2-3-intro': [
+    { speaker: 'diver', text: '小心腳下！洞裡的水忽然漲、忽然退，鐵鏈還會自己收緊。' },
+    { speaker: 'hero', text: '這麼粗的鐵鏈，居然一路穿過整座岩壁……到底在綁什麼？' },
+    { speaker: 'spirit', text: '我聽到聲音了。很低、很遠，像有人一直在說「放開我」。' },
+    { speaker: 'diver', text: '這裡有條舊水道，通往潮汐神殿！也許那裡有控制鐵鏈的機關。' },
+  ],
+
+  'map-2-3-clear': [
+    { speaker: 'diver', text: '固定在洞壁上的支鏈解開了！水流終於不再亂衝。' },
+    { speaker: 'hero', text: '你們看，水退下去以後，岩壁後面居然露出一整排石階。' },
+    { speaker: 'spirit', text: '石階上的符文還會發光。那個求救的聲音，就是從神殿另一邊傳來的。' },
+  ],
+
+  // ===== 第 5 張：潮汐神殿 =====
+
+  'map-2-4-intro': [
+    { speaker: 'lightkeeper', text: '我爺爺說過，這座神殿以前會傳出海獸的歌聲，提醒船隻哪裡有暗礁。' },
+    { speaker: 'spirit', text: '難怪！可碑文被改了，原本的「引導歸航」變成了「封鎖海路」。' },
+    { speaker: 'hero', text: '所以那頭巨獸不是在攻擊船隻，是有人利用鎖鏈逼牠這麼做？' },
+    { speaker: 'diver', text: '神殿能讓水道恢復正常，但要把歌聲送出去，還缺一枚被沖到貝殼沙灘的回聲貝。' },
+  ],
+
+  'map-2-4-clear': [
+    { speaker: 'lightkeeper', text: '潮汐鐘響了！好多年沒聽過這個聲音，我還以為它永遠不會再響了。' },
+    { speaker: 'diver', text: '水流恢復了！下一次退潮，通往深海裂口的沙路就會露出來。' },
+    { speaker: 'spirit', text: '還差最後一個聲音。去貝殼沙灘，把能傳到海底的回聲貝找回來！' },
+  ],
+
+  // ===== 第 6 張：貝殼沙灘 =====
+
+  'map-2-5-intro': [
+    { speaker: 'fisher', text: '整片沙灘都是貝殼！你們要找的到底是哪一顆？' },
+    { speaker: 'hero', text: '等一下……其他貝殼都沒聲音，只有遠處那顆一直跟著海浪震動。' },
+    { speaker: 'spirit', text: '就是它！上面刻著殘缺的真名符文。它一直在替海底的巨獸求救。' },
+    { speaker: 'lightkeeper', text: '可是魔王軍守住了最後一條沙路。要去深海裂口，就得先打敗那些守衛。' },
+  ],
+
+  'map-2-5-clear': [
+    { speaker: 'fisher', text: '聽見了嗎？回聲貝真的唱起來了！整片海都在跟著震動！' },
+    { speaker: 'spirit', text: '有回應！是海底那頭巨獸！牠聽到我們了！' },
+    { speaker: 'hero', text: '沙路已經露出來了。這次我們不只要救漁船，還要把牠一起救出來。' },
+  ],
+
+  // ===== 區域魔王：深海裂口／深海巨獸 =====
+
+  'boss-2-intro': [
+    { speaker: 'seabeast', text: '離……開……海……不准……通過……' },
+    { speaker: 'lightkeeper', text: '不對！我小時候聽過牠唱歌，牠還幫我們避開暗礁。牠以前不是這樣的！' },
+    { speaker: 'spirit', text: '看牠身上的鎖鏈！每一節都刻著「封鎖」的命令，連牠的聲音都被奪走了。' },
+    { speaker: 'hero', text: '難怪海嘯一直衝過來……鎖鏈正在逼牠攻擊所有靠近的船！' },
+    { speaker: 'seabeast', text: '別……靠近……我……控制不了……' },
+    { speaker: 'hero', text: '我們不是來傷害你的！撐住，我們會打斷那些鎖鏈！' },
+  ],
+
+  // ===== A2+ 區域通關 =====
+  // 注意：請替換 STORIES 內既有的 clear-a2p
+
+  'clear-a2p': [
+    { speaker: 'seabeast', text: '我……終於聽見自己的聲音了。那些鎖鏈，是王城送來的，封印卻來自黃沙深處。' },
+    { speaker: 'lightkeeper', text: '燈塔終於亮了！快看，失聯的漁船正一艘接著一艘回港！' },
+    { speaker: 'hero', text: '來自沙漠的封印？誰會把那種東西拿來鎖住海獸？' },
+    { speaker: 'spirit', text: '黃金沙漠的流沙法老，守著一座藏滿失落文字的金字塔。也許那裡有答案。' },
+  ],
 };
 
 // 第 15 關小 BOSS、第 20 關大 BOSS 第一次登場的一句台詞（ChatGPT 第十八輪起逐區補）
@@ -271,6 +388,75 @@ export const BOSS_LINES: Record<string, { mini: string; big: string }> = {
   'map-1-2': { mini: '我守著這座橋，真路假路都由我說了算！', big: '過橋的人都得留下影子！你們也不例外！' },
   'map-1-3': { mini: '別看泉水！我會讓你看見最不想記起的事！', big: '真相會刺痛人心，不如讓我替你們忘掉！' },
   'map-1-4': { mini: '祭壇的霧不能停！你們想讓追兵找到大家嗎？', big: '只要祭壇還亮著，整座森林就會繼續聽我的命令！' },
+  // A1 翠綠草原
+
+  // 新手村
+  'map-0-0': {
+    mini: '這些招牌上的字全歸我了！想拿回去？先過我這關！',
+    big: '只要村民叫不出東西的名字，整條街就會慢慢變成空白！',
+  },
+
+  // 風車丘
+  'map-0-1': {
+    mini: '風車的符文都被我吞了！葉片休想再轉起來！',
+    big: '黑霧會壓住每一陣風！這座風車就乖乖停著吧！',
+  },
+
+  // 草原小徑
+  'map-0-2': {
+    mini: '想走這條路？先問問我的樹根答不答應！',
+    big: '所有岔路都通向死路！你們會永遠繞在這裡！',
+  },
+
+  // 河岸渡口
+  'map-0-3': {
+    mini: '水流越亂，我就越有力氣！別想把船開過去！',
+    big: '通往北邊哨站的路已經封死！誰也不准過河！',
+  },
+
+  // 廢棄哨站
+  'map-0-4': {
+    mini: '奉黑石的命令，所有人都不准靠近哨站！',
+    big: '你們毀不了這道命令！巨樹會替我們把整片草原封死！',
+  },
+
+  // A2+ 碧藍海岸
+
+  // 珊瑚灣
+  'map-2-0': {
+    mini: '救生浮標全被我拖下海了！別想把那些人救回來！',
+    big: '珊瑚已經枯了，這片海也該跟著安靜下來！',
+  },
+
+  // 燈塔岬
+  'map-2-1': {
+    mini: '我的黑索會勒住每一道光！別想把燈塔點亮！',
+    big: '就算你們點起火，光也逃不出我的鎖！',
+  },
+
+  // 漁人碼頭
+  'map-2-2': {
+    mini: '鐵鏈一收，整排漁船都得跟著沉！',
+    big: '這座港口就是我的囚籠！海上的人都別想回家！',
+  },
+
+  // 海蝕洞
+  'map-2-3': {
+    mini: '這裡的每一道回聲，我都能用鐵鏈拴住！',
+    big: '敢碰鎖鏈的固定點？我就讓海水淹掉整座洞！',
+  },
+
+  // 潮汐神殿
+  'map-2-4': {
+    mini: '那些舊碑文早就沒用了！現在只准寫「封鎖」！',
+    big: '潮汐鐘只能聽王城的命令！誰敢把它還給海上的人？',
+  },
+
+  // 貝殼沙灘
+  'map-2-5': {
+    mini: '回聲貝是我的獵物！誰敢喚醒海底那傢伙？',
+    big: '通往深海裂口的最後一條路，由我看守！',
+  },
 };
 for (const [map, line] of Object.entries(BOSS_LINES)) {
   STORIES[`${map}-mini`] = [{ speaker: 'foe', text: line.mini }];

@@ -9038,6 +9038,792 @@
       "ans": "DAC",
       "speak": "radiance",
       "vocabId": "R7:RADIANCE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "on approval",
+      "options": [
+        "A. 已經過所有主管逐一簽核",
+        "B. 完全不許退回或再作選擇",
+        "C. 只要有人稱讚就必須購買",
+        "D. 先試看或檢視後再決定是否接受"
+      ],
+      "ans": "D",
+      "explain": "on approval在供貨語境指試看再決定，具體條件需另看約定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a part exchange",
+      "options": [
+        "A. 以舊物折抵部分新物價款的交易",
+        "B. 只買零件而不買完整物件",
+        "C. 兩人各持物品一半且不能移動",
+        "D. 把全部價款分配給運送者"
+      ],
+      "ans": "A",
+      "explain": "part exchange為舊物抵新物部分價，不指定真實交易規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "fit for the intended purpose",
+      "options": [
+        "A. 只能使用製造者最早的版本",
+        "B. 適合原先要達成的用途",
+        "C. 外觀必須符合每個人的喜好",
+        "D. 價格必須在所有選項中最低"
+      ],
+      "ans": "B",
+      "explain": "此處一般語意為用途適合，不下法律判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The sample was supplied for comparison, not as a promise that every unit would have exactly the same grain.",
+      "options": [
+        "A. 樣品供比較，不保證每件紋理完全同樣。",
+        "B. 樣品已被保證是所有單品紋理的精確複製。",
+        "C. 樣品只用秤重，所以不能比較任何外觀。",
+        "D. 每件紋理不同已證明所有物件都用不同材質。"
+      ],
+      "ans": "A",
+      "explain": "實物自然變異與示例保證範圍不同，未說材質種類。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The question is not whether the substitute is good, but whether the feature it lacks is the one that made the original useful to us.",
+      "options": [
+        "A. 說話者只關心替代品是否來自同一包裝。",
+        "B. 問題非替代品好不好，而是它缺的是否正是原品對我們有用之處。",
+        "C. 替代品既然評價好，就不必比較缺少的功能。",
+        "D. 原品已被證明完全沒有任何實用功能。"
+      ],
+      "ans": "B",
+      "explain": "按需求比較特徵，不用總評取代適配。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A longer list of features can make comparison harder, especially when the features we care about are described in different terms.",
+      "options": [
+        "A. 說話者認為比較只需數功能項目，不必看意思。",
+        "B. 所有功能表已被確認逐字相同，所以無從比較。",
+        "C. 功能表較長未必好比，尤其關鍵功能用不同詞描述時。",
+        "D. 功能愈多就已保證各品牌使用同樣詞彙。"
+      ],
+      "ans": "C",
+      "explain": "命名與資訊量可增比較負擔，非所有功能皆無用。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The exchange was equal by count, though one person gave away three things they no longer needed and received three they did.",
+      "options": [
+        "A. 說話者認為只要一方受益就必定另一方受害。",
+        "B. 件數相等，但一方把不需的三件換成需要的三件。",
+        "C. 件數不等，因有用物在規則中一律算兩件。",
+        "D. 雙方已確認每件物市場價完全相同。"
+      ],
+      "ans": "B",
+      "explain": "計件相等與主觀效益不同，不推零和。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Calling the extra item free overlooks the condition that we buy a set larger than we intended to own.",
+      "options": [
+        "A. 組合較大已證明每件都比原先品質差。",
+        "B. 說話者認為任何贈品都一定涉及違法。",
+        "C. 說加送免費忽略前提：需買比原想更多的一組。",
+        "D. 加送不附任何條件，所以與購買量完全無關。"
+      ],
+      "ans": "C",
+      "explain": "免費字面未含整體購買門檻，非真實購物建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The programme encourages reuse, but its success should not depend on passing unsuitable objects to someone who feels obliged to be grateful.",
+      "options": [
+        "A. 只要物件轉手，就已足以證明受贈者需要它。",
+        "B. 感謝已保證對方願意長期存放任何物件。",
+        "C. 說話者反對所有再利用，不論是否符合需求。",
+        "D. 鼓勵再用不應靠把不適合物件給覺得必須感謝的人。"
+      ],
+      "ans": "D",
+      "explain": "再利用目的與收受者適配/負擔並檢，不全盤否定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The alternative is comparable in price, not interchangeable in use. What is clarified?",
+      "options": [
+        "A. Identical functions guarantee an identical selling price.",
+        "B. The alternative has no price and no identifiable purpose.",
+        "C. The two items must be used together because they cost the same.",
+        "D. Similar cost does not establish functional equivalence."
+      ],
+      "ans": "D",
+      "explain": "comparableprice與interchangeableuse兩種比較尺度不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The assistant suggested ___ the smaller version before ordering a second set.",
+      "options": [
+        "A. trying",
+        "B. to trying",
+        "C. try it",
+        "D. that trying"
+      ],
+      "ans": "A",
+      "explain": "suggest後動名詞trying，before表示先試再訂。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The customer says, I need it to do less, but do it reliably. What preference is expressed?",
+      "options": [
+        "A. The lowest price without regard to the stated purpose.",
+        "B. Dependable core function over numerous extra features.",
+        "C. A larger range of features regardless of consistency.",
+        "D. A device that does nothing so it cannot fail."
+      ],
+      "ans": "B",
+      "explain": "少功能但穩定，非完全不用或只看價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The colour is the only respect in ___ the replacement differs.",
+      "options": [
+        "A. which",
+        "B. that",
+        "C. whose",
+        "D. what"
+      ],
+      "ans": "A",
+      "explain": "in which 接介系詞關係子句，respect為方面。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A buyer asks for a quieter model. The seller recommends one described as more powerful, without giving noise information. What gap remains?",
+      "options": [
+        "A. The recommendation can be assessed solely by comparing model names.",
+        "B. The recommendation has not addressed the buyer’s stated criterion.",
+        "C. The buyer has established that power and noise are the same property.",
+        "D. The seller has proved that the more powerful model is quieter."
+      ],
+      "ans": "B",
+      "explain": "用另一賣點回應未回答低噪需求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The offer is attractive in isolation but less so once the required accessories are included. What changes the assessment?",
+      "options": [
+        "A. The offer has been withdrawn before any comparison can be made.",
+        "B. The buyer is required to ignore accessories in calculating usefulness.",
+        "C. The relevant total extends beyond the advertised item.",
+        "D. The accessories remove the need to buy the main item."
+      ],
+      "ans": "C",
+      "explain": "完整成本/需求含必要配件，非只有主件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I am not questioning the quality; I am questioning whether it is the right answer to the problem we described. What is challenged?",
+      "options": [
+        "A. The need to describe the problem before selecting a product.",
+        "B. The relevance of the recommendation.",
+        "C. The possibility that the product was manufactured.",
+        "D. The honesty of everyone who has used it."
+      ],
+      "ans": "B",
+      "explain": "品質佳仍可能不適用特定問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A trial tests a container while it is empty, though the intended use involves carrying fragile objects. A review calls the trial reassuring but incomplete. Why?",
+      "options": [
+        "A. Fragile objects are guaranteed to break in every container.",
+        "B. The intended use has changed from storage to manufacturing.",
+        "C. The conditions omit a feature central to the intended use.",
+        "D. An empty container cannot provide any information about its physical form."
+      ],
+      "ans": "C",
+      "explain": "空箱試驗未涵實際載物情境，保留部分資訊價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The review treats repairability as distinct from the mere availability of replacement parts. What additional question matters?",
+      "options": [
+        "A. Whether replacement parts have names different from the original parts.",
+        "B. Whether the item is offered in more than one decorative colour.",
+        "C. Whether every owner purchased the item on the same calendar date.",
+        "D. Whether the parts can realistically be fitted by the intended users or service."
+      ],
+      "ans": "D",
+      "explain": "有配件還需能實際裝配維修，不推人人應自行修。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：一同寄往某地的一批貨物",
+      "ans": "CONSIGNMENT",
+      "speak": "consignment",
+      "vocabId": "R7:CONSIGNMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：物件實際可被修好的程度",
+      "ans": "REPAIRABILITY",
+      "speak": "repairability",
+      "vocabId": "R7:REPAIRABILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：功能上相當的替代品",
+      "ans": "A FUNCTIONALLY EQUIVALENT SUBSTITUTE",
+      "speak": "a functionally equivalent substitute",
+      "vocabId": "R7:A FUNCTIONALLY EQUIVALENT SUBSTITUTE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實際可行的修復可能性",
+      "ans": "A REALISTIC PROSPECT OF REPAIR",
+      "speak": "a realistic prospect of repair",
+      "vocabId": "R7:A REALISTIC PROSPECT OF REPAIR"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：價格相近不證成功能可互換",
+      "ans": "COMPARABLE PRICES DO NOT ESTABLISH INTERCHANGEABLE FUNCTIONS",
+      "speak": "comparable prices do not establish interchangeable functions",
+      "vocabId": "R7:COMPARABLE PRICES DO NOT ESTABLISH INTERCHANGEABLE FUNCTIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：備件適合相關版本才有用",
+      "ans": "A SPARE IS USEFUL ONLY WHEN IT FITS THE RELEVANT VERSION",
+      "speak": "a spare is useful only when it fits the relevant version",
+      "vocabId": "R7:A SPARE IS USEFUL ONLY WHEN IT FITS THE RELEVANT VERSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：能在同一用途下彼此替代的（I 開頭，15 個字母）",
+      "ans": "INTERCHANGEABLE",
+      "speak": "interchangeable",
+      "vocabId": "R7:INTERCHANGEABLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：以憑證換取約定物品或利益的兌換（R 開頭，10 個字母）",
+      "ans": "REDEMPTION",
+      "speak": "redemption",
+      "vocabId": "R7:REDEMPTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：整修使用過的物件使其恢復良好狀態（R 開頭，11 個字母）",
+      "ans": "RECONDITION",
+      "speak": "recondition",
+      "vocabId": "R7:RECONDITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E F U R B _ S H M E N T (為改善狀況而進行的翻新整修)",
+      "ans": "I",
+      "speak": "refurbishment",
+      "vocabId": "R7:REFURBISHMENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N D _ C E _ E N T (促使某人採取行動的誘因)",
+      "ans": "UM",
+      "speak": "inducement",
+      "vocabId": "R7:INDUCEMENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U B _ T I _ U T _ O N (以另一物代替原物的行為)",
+      "ans": "STI",
+      "speak": "substitution",
+      "vocabId": "R7:SUBSTITUTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a process of elimination",
+      "options": [
+        "A. 逐項排除不符可能性的過程",
+        "B. 把所有原始紀錄銷毀的程序",
+        "C. 只挑最喜歡答案而不比較的方法",
+        "D. 無論線索如何都維持首答的做法"
+      ],
+      "ans": "A",
+      "explain": "elimination在推理語境排除候選，不是刪紀錄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a working hypothesis",
+      "options": [
+        "A. 因設備正在運轉而不需查核的說法",
+        "B. 暫作推理依據而仍待檢驗的假設",
+        "C. 已由定義證明不可更改的結論",
+        "D. 只談工作時間的正式合約"
+      ],
+      "ans": "B",
+      "explain": "working表示暫供使用，不等於已確證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a piece of circumstantial evidence",
+      "options": [
+        "A. 已被承認是捏造的每項指控",
+        "B. 只因篇幅短就不需核對的便條",
+        "C. 支持間接推論的一項情況證據",
+        "D. 逐字錄下行為的直接影像"
+      ],
+      "ans": "C",
+      "explain": "間接不自動假，也不必由影像直接展示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We know the drawer was opened; the mark does not tell us whether that happened before or after the letter arrived.",
+      "options": [
+        "A. 信件到達已保證抽屜當時保持未開。",
+        "B. 知道抽屜開過，痕跡不告訴在信到前還後。",
+        "C. 痕跡已證抽屜只在信到之前開過一次。",
+        "D. 我們不知道抽屜曾否打開，但知道確切時刻。"
+      ],
+      "ans": "B",
+      "explain": "事件存在與順序資訊分離。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her knowledge is surprising only if we assume she had not read the announcement everyone else received.",
+      "options": [
+        "A. 公告內容已被確定與她知道的事完全無關。",
+        "B. 說話者確認她從未收到任何形式的資訊。",
+        "C. 只有假設她未讀別人都收到的公告，她知道才顯意外。",
+        "D. 她已承認讀過公告，所以知道反而證明說謊。"
+      ],
+      "ans": "C",
+      "explain": "意外程度依先備資訊假設，未證她確已讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The witness corrects the time, not the event; we should not turn a corrected detail into a withdrawal of the whole account.",
+      "options": [
+        "A. 改時間已等於承認事件從未發生。",
+        "B. 整份說法已正式撤回，只剩時間仍被保留。",
+        "C. 說話者要求所有更正都不需被記錄。",
+        "D. 目擊者改時間非事件，不應把細節更正當全部撤回。"
+      ],
+      "ans": "D",
+      "explain": "更正範圍與整段撤回不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The extra key explains how someone could enter, but not why the person who had it would choose to do so.",
+      "options": [
+        "A. 鑰匙已被確定無法使用，所以不解釋任何可能。",
+        "B. 說話者只在問鑰匙的製造材料。",
+        "C. 多一把鑰匙解釋能怎麼進，不解釋持有者為何會進。",
+        "D. 有鑰匙已充分證明持有者一定想進且進過。"
+      ],
+      "ans": "C",
+      "explain": "機會/能力與動機/實行分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The theory becomes less impressive once we notice how many facts it predicts only after they have been supplied.",
+      "options": [
+        "A. 理論在事前逐項正確預測，所以特別可靠。",
+        "B. 說話者否認事後解釋可有任何理解價值。",
+        "C. 事實從未被提供，所以理論無從調整。",
+        "D. 注意到多項預測是在事實給出後才作，理論便不那麼厲害。"
+      ],
+      "ans": "D",
+      "explain": "事後配合不等同事前預測力，非否認全部解釋價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We should preserve the difference between what the character could have known and what the story actually tells us she knew.",
+      "options": [
+        "A. 應保留角色可能知道與故事明說她知道的差別。",
+        "B. 角色有機會知道就已確定實際知道。",
+        "C. 故事沒說知道就已確定她不可能知道。",
+        "D. 說話者只在區分角色名字與作者名字。"
+      ],
+      "ans": "A",
+      "explain": "可能知情非必實際知情，也不因未明說就必不知。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The evidence is circumstantial rather than a direct account of the act. What does this mean?",
+      "options": [
+        "A. It supports an inference through surrounding facts.",
+        "B. It records the act through an eyewitness description.",
+        "C. It has been proved false by the person concerned.",
+        "D. It cannot be considered because it concerns a place."
+      ],
+      "ans": "A",
+      "explain": "circumstantial間接情況證據，不自動較弱到毫無價值或不真。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The note suggests that whoever left it ___ to return before dark.",
+      "options": [
+        "A. intend yesterday",
+        "B. intended",
+        "C. have intended",
+        "D. were intending"
+      ],
+      "ans": "B",
+      "explain": "whoever left it作單一未知行動者，過去敘事用intended。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】That is a neat explanation, says Mara, rather too neat to leave out the muddy shoes. What reservation is expressed?",
+      "options": [
+        "A. Mara believes every simple explanation must be false.",
+        "B. The explanation has already accounted for the shoes in full.",
+        "C. Its elegance depends on overlooking a relevant awkward detail.",
+        "D. The shoes have been proved unrelated to any part of the explanation."
+      ],
+      "ans": "C",
+      "explain": "rather too neat後線索指未涵反向細節，不全否定簡潔。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the note arrived before the parcel, the sequence ___ easier to explain.",
+      "options": [
+        "A. would to be",
+        "B. would have been",
+        "C. will have being",
+        "D. had been to"
+      ],
+      "ans": "B",
+      "explain": "過去反事實hadarrived對wouldhavebeen。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Only two people knew the new password. A message using it appeared later. The narrator says this narrows the possibilities but does not identify the sender. Why?",
+      "options": [
+        "A. The message was written before either person learned the password.",
+        "B. The narrator has already named the sender but withheld the name.",
+        "C. The shared knowledge fits more than one possible sender.",
+        "D. Knowledge of the password has been shown to prevent sending a message."
+      ],
+      "ans": "C",
+      "explain": "兩人皆知不足唯一定一人，依題內資料不另加洩密。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The absence of wet footprints rules out that particular route, given the story’s explicit rule that anyone using it would leave wet prints. What is not thereby ruled out?",
+      "options": [
+        "A. The presence of the route in the story.",
+        "B. The stated relation between that route and wet prints.",
+        "C. The fact that the floor was examined.",
+        "D. Entry by another route."
+      ],
+      "ans": "D",
+      "explain": "題內給必留痕規則，否定該路不等於所有進路。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A character remembers that the bell rang before the visitor arrived. Another recalls both events but not their order. What would misrepresent the second account?",
+      "options": [
+        "A. Acknowledging that its timing information is incomplete.",
+        "B. Comparing it with another record of the same events.",
+        "C. Treating it as confirmation of the first account’s sequence.",
+        "D. Saying it includes both a bell and a visitor."
+      ],
+      "ans": "C",
+      "explain": "無順序的記憶不能確認先後，仍可證事件兩項。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An explanation accounts for every clue, but so does an alternative involving fewer unstated events. The narrator prefers the alternative while calling it provisional. What is the position?",
+      "options": [
+        "A. Fewer unstated events prove the preferred account must be true.",
+        "B. Accounting for every clue makes all explanations equally economical.",
+        "C. A provisional account cannot be compared with any alternative.",
+        "D. Explanatory economy supports a preference without making it conclusive."
+      ],
+      "ans": "D",
+      "explain": "簡省可作暫偏好但非邏輯確證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The narrator doubts not that the visitor knew the answer, but that she knew it before seeing the note. What is disputed?",
+      "options": [
+        "A. The timing and possible source of her knowledge.",
+        "B. The claim that she was able to read any note.",
+        "C. The existence of an answer to the question.",
+        "D. The visitor’s identity as a person in the story."
+      ],
+      "ans": "A",
+      "explain": "焦點在beforenote知識來源時序，不是否認最終知道。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：由已知資訊推理得出的結論",
+      "ans": "DEDUCTION",
+      "speak": "deduction",
+      "vocabId": "R7:DEDUCTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：事情發生前已具備的先知資訊",
+      "ans": "FOREKNOWLEDGE",
+      "speak": "foreknowledge",
+      "vocabId": "R7:FOREKNOWLEDGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：對事件仍待修正的暫時說明",
+      "ans": "A PROVISIONAL ACCOUNT OF EVENTS",
+      "speak": "a provisional account of events",
+      "vocabId": "R7:A PROVISIONAL ACCOUNT OF EVENTS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：可由獨立資訊檢驗的預測",
+      "ans": "AN INDEPENDENTLY TESTABLE PREDICTION",
+      "speak": "an independently testable prediction",
+      "vocabId": "R7:AN INDEPENDENTLY TESTABLE PREDICTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：更正細節不必撤回整段說法",
+      "ans": "A CORRECTED DETAIL NEED NOT WITHDRAW THE ENTIRE ACCOUNT",
+      "speak": "a corrected detail need not withdraw the entire account",
+      "vocabId": "R7:A CORRECTED DETAIL NEED NOT WITHDRAW THE ENTIRE ACCOUNT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：有機會本身不證成動機",
+      "ans": "OPPORTUNITY DOES NOT BY ITSELF ESTABLISH MOTIVE",
+      "speak": "opportunity does not by itself establish motive",
+      "vocabId": "R7:OPPORTUNITY DOES NOT BY ITSELF ESTABLISH MOTIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：依周邊情況而需間接推論的（C 開頭，14 個字母）",
+      "ans": "CIRCUMSTANTIAL",
+      "speak": "circumstantial",
+      "vocabId": "R7:CIRCUMSTANTIAL"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：不足以作明確定論的（I 開頭，12 個字母）",
+      "ans": "INCONCLUSIVE",
+      "speak": "inconclusive",
+      "vocabId": "R7:INCONCLUSIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：兩項資料或說法間不一致之處（D 開頭，11 個字母）",
+      "ans": "DISCREPANCY",
+      "speak": "discrepancy",
+      "vocabId": "R7:DISCREPANCY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A N O _ A L Y (不符合預期或一般模式的事物)",
+      "ans": "M",
+      "speak": "anomaly",
+      "vocabId": "R7:ANOMALY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S U P _ O S I _ I O N (推理中暫當成立的假設)",
+      "ans": "PT",
+      "speak": "supposition",
+      "vocabId": "R7:SUPPOSITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ O _ I _ Y (在時間或重要性上居先的地位)",
+      "ans": "IRT",
+      "speak": "priority",
+      "vocabId": "R7:PRIORITY"
     }
   ],
   "boss": [
@@ -12053,6 +12839,268 @@
       "ans": "AEE",
       "speak": "sparseness",
       "vocabId": "R7:SPARSENESS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The accessory is optional for storage, but essential if you want to carry the case by its handle.",
+      "options": [
+        "A. 配件只為裝飾，無任何功能差別。",
+        "B. 說話者已取消所有帶把手版本。",
+        "C. 只存放不需配件，但要用把手提就必需。",
+        "D. 配件無論存放或提走都完全不需。"
+      ],
+      "ans": "C",
+      "explain": "optional/essential依用途條件不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would regard the spare as reassurance only if we know which version it fits; a spare we cannot use is simply another thing to store.",
+      "options": [
+        "A. 只要名叫備件就確保能用在每個版本。",
+        "B. 備件無法收納，因此任何時候都不應保留。",
+        "C. 說話者確認目前備件一定與所需版本不合。",
+        "D. 知道備件適用版本才安心，不能用的只多占收納。"
+      ],
+      "ans": "D",
+      "explain": "if為評估條件，未已確認不相容。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The cheaper version saves money only on the assumption that replacing it more often will not erase the initial difference.",
+      "options": [
+        "A. 較廉版本是否省錢取決於較常替換不會抵消初價差。",
+        "B. 初價低已保證任何期間的總成本都較低。",
+        "C. 較常替換已證明兩版本在每項功能都相同。",
+        "D. 說話者確認目前版本已壞，所以不能再比較價格。"
+      ],
+      "ans": "A",
+      "explain": "初價與累計成本條件區分，不提供真實財務結論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A consignment is ___.",
+      "options": [
+        "A. a discount applied automatically to every purchase",
+        "B. a request to repair an item without returning it",
+        "C. a quantity of goods sent together to a destination",
+        "D. a customer’s private opinion about a product"
+      ],
+      "ans": "C",
+      "explain": "consignment為一批託運/寄送貨物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The shop’s fictional notice allows exchange for another size only if the item is unworn and returned within seven days. Which case meets both stated conditions?",
+      "options": [
+        "A. A worn item returned after two days.",
+        "B. An unworn item returned after nine days.",
+        "C. A worn item kept for exactly seven days.",
+        "D. An unworn item returned after five days."
+      ],
+      "ans": "D",
+      "explain": "題內兩必要條件and連用，非真實退換貨法律說明。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A borrowing scheme counts success by how many items circulate, but not whether borrowers find suitable items or return repeatedly. What is the measurement’s limitation?",
+      "options": [
+        "A. Transaction volume does not fully describe the service’s usefulness.",
+        "B. More circulation necessarily makes a borrowing scheme less useful.",
+        "C. The scheme cannot record circulation without identifying every object’s maker.",
+        "D. Borrowers’ satisfaction can be inferred exactly from the number of labels."
+      ],
+      "ans": "A",
+      "explain": "流量不代表適配/長期效用全部，非流量毫無價值。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶條件保留的適用性保證",
+      "ans": "A QUALIFIED ASSURANCE OF SUITABILITY",
+      "speak": "a qualified assurance of suitability",
+      "vocabId": "R7:A QUALIFIED ASSURANCE OF SUITABILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：相同件數可能掩蓋不同效益",
+      "ans": "AN EQUAL COUNT CAN CONCEAL DIFFERENT KINDS OF BENEFIT",
+      "speak": "an equal count can conceal different kinds of benefit",
+      "vocabId": "R7:AN EQUAL COUNT CAN CONCEAL DIFFERENT KINDS OF BENEFIT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：逐漸過時而不再適用的狀態或過程（O 開頭，12 個字母）",
+      "ans": "OBSOLESCENCE",
+      "speak": "obsolescence",
+      "vocabId": "R7:OBSOLESCENCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U _ T A _ I L _ T Y (適合特定用途或情境的程度)",
+      "ans": "IBI",
+      "speak": "suitability",
+      "vocabId": "R7:SUITABILITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The detail is consistent with her account, but it is not distinctive enough to identify her as the only possible source.",
+      "options": [
+        "A. 細節已排除所有他人，所以來源確定唯一。",
+        "B. 細節完全與她矛盾，故她從未說過任何話。",
+        "C. 說話者認為只要一致就不可能再查來源。",
+        "D. 細節符合她說法，但不足獨特到確定唯一來源是她。"
+      ],
+      "ans": "D",
+      "explain": "相容與唯一識別力不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would call the result inconclusive, not exonerating: it leaves the question open rather than answering it in her favour.",
+      "options": [
+        "A. 結果未定論，非替她洗清；問題仍開放而非已判對她有利。",
+        "B. 結果已替她洗清，但只是缺少公開聲明。",
+        "C. 結果未定論就已證她一定做過此事。",
+        "D. 說話者確認不存在任何需要回答的問題。"
+      ],
+      "ans": "A",
+      "explain": "未確定與肯定無責任不同，也不等於有責任。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apparent contradiction disappears if the two accounts refer to different doors, but we still need evidence that they do.",
+      "options": [
+        "A. 說話者要求只保留最短說法以免出現矛盾。",
+        "B. 若兩說指不同門，矛盾可消；但仍需證據確有不同所指。",
+        "C. 既能想像不同門，就已證兩說必定一致。",
+        "D. 兩說已確認指同門，因此任何細節都無需再比。"
+      ],
+      "ans": "B",
+      "explain": "可調和假設與假設已成立分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A deduction is ___.",
+      "options": [
+        "A. a detail introduced solely to make a story more entertaining",
+        "B. a statement that cannot be revised under any circumstances",
+        "C. an object removed from a room without anyone noticing",
+        "D. a conclusion reached by reasoning from what is known"
+      ],
+      "ans": "D",
+      "explain": "deduction推理所得結論，此語境非扣款。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The new detail qualifies the explanation without overturning it. What happens?",
+      "options": [
+        "A. Its scope or certainty is reduced, but it is not wholly rejected.",
+        "B. Its central claim is replaced by the opposite claim.",
+        "C. Its wording is made more formal without any change of meaning.",
+        "D. Its author is confirmed as professionally qualified."
+      ],
+      "ans": "A",
+      "explain": "qualify限定，非資格或必推翻。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A character calls an unexpected clue a distraction because it does not fit his theory. He has not investigated it. What risks circular reasoning?",
+      "options": [
+        "A. Changing a theory after discovering an incompatible fact.",
+        "B. Using the theory to dismiss evidence, then citing the remaining fit as support.",
+        "C. Comparing the theory with facts that were recorded before it was proposed.",
+        "D. Keeping track of which details require further explanation."
+      ],
+      "ans": "B",
+      "explain": "用理論篩證再以被篩證自證，非所有刪細節皆循環。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：尚未解釋的不一致",
+      "ans": "AN UNEXPLAINED DISCREPANCY",
+      "speak": "an unexplained discrepancy",
+      "vocabId": "R7:AN UNEXPLAINED DISCREPANCY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：可能調和仍需支持證據",
+      "ans": "A POSSIBLE RECONCILIATION STILL REQUIRES SUPPORTING EVIDENCE",
+      "speak": "a possible reconciliation still requires supporting evidence",
+      "vocabId": "R7:A POSSIBLE RECONCILIATION STILL REQUIRES SUPPORTING EVIDENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：尚未充分證實的推測（C 開頭，10 個字母）",
+      "ans": "CONJECTURE",
+      "speak": "conjecture",
+      "vocabId": "R7:CONJECTURE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O V E _ S I _ P L _ F Y (把複雜情況解釋得過於簡單)",
+      "ans": "RMI",
+      "speak": "oversimplify",
+      "vocabId": "R7:OVERSIMPLIFY"
     }
   ]
 }

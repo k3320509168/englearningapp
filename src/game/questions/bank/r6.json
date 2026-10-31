@@ -9044,6 +9044,792 @@
       "ans": "IIH",
       "speak": "twilight",
       "vocabId": "R6:TWILIGHT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "shop around",
+      "options": [
+        "A. 在同一家店內繞行但不比較",
+        "B. 不經考慮就立即購買",
+        "C. 把商店搬到另一個地區",
+        "D. 比較不同賣家的選擇與價格"
+      ],
+      "ans": "D",
+      "explain": "shop around 是購前比較，非必真的繞圈。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "out of stock",
+      "options": [
+        "A. 目前沒有可供應的庫存",
+        "B. 永遠不會再生產的每件商品",
+        "C. 已購但尚未開箱的物品",
+        "D. 仍只在櫥窗裡展示而不標價"
+      ],
+      "ans": "A",
+      "explain": "out of stock只說當下無庫存，不保證永停產。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "wear and tear",
+      "options": [
+        "A. 製作時增加的裝飾布條",
+        "B. 正常使用逐漸造成的磨損",
+        "C. 由一次蓄意破壞造成的所有損害",
+        "D. 商品標示的穿衣尺寸"
+      ],
+      "ans": "B",
+      "explain": "wear and tear常指日常使用消耗痕跡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The price is for the pair, not for each one, though the stand is sold separately.",
+      "options": [
+        "A. 價格是一對，底座另售。",
+        "B. 每件都此價，底座已包含在內。",
+        "C. 一對只含其中一件，另一件必須借用。",
+        "D. 價格只給底座，成對物件完全不出售。"
+      ],
+      "ans": "A",
+      "explain": "pair/eacheone/stand三個範圍需分清。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would keep the receipt even if you are sure about the colour; it also records which version you bought.",
+      "options": [
+        "A. 說話者確認留下收據即保證可依任何制度退貨。",
+        "B. 即使確定喜歡顏色也留收據，因它記載購買版本。",
+        "C. 收據只記顏色，並不包含任何版本資訊。",
+        "D. 顏色確定後，版本就不可能再成為問題。"
+      ],
+      "ans": "B",
+      "explain": "保留資訊用途，不推真實消費法規。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The replacement looks the same, but the handle is on the opposite side, which matters for how I use it.",
+      "options": [
+        "A. 把手不同側已證明每位使用者都無法使用。",
+        "B. 說話者只比較照片大小，而未談實際用法。",
+        "C. 替代品外觀相似，但把手在反側，影響我的用法。",
+        "D. 替代品把手同側，所以使用差異只在顏色。"
+      ],
+      "ans": "C",
+      "explain": "外觀近似與功能適配可不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I borrowed it to see whether it would fit, not because I had already decided to keep it.",
+      "options": [
+        "A. 說話者承認自己從未得到借用許可。",
+        "B. 我借來試是否合適，不是已決定留下。",
+        "C. 我已決定留下，所以不會再測是否合適。",
+        "D. 借用已被雙方明訂為完成購買。"
+      ],
+      "ans": "B",
+      "explain": "試用/檢查與確定持有不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The cheaper one would save space on the shelf, but it would not hold everything we need it to hold.",
+      "options": [
+        "A. 容量足夠，但架子已被確認無法承重。",
+        "B. 說話者認為價格低就不可能有任何優點。",
+        "C. 較便宜那個省架上空間，卻裝不下所需物件。",
+        "D. 較便宜那個較大，所以一定更能滿足需求。"
+      ],
+      "ans": "C",
+      "explain": "優點省空間、限制容量並存，非承重事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not suggesting we replace something that works; I am asking whether it still works for the purpose we now have.",
+      "options": [
+        "A. 我確認物件完全壞了，所以任何用途都不能再用。",
+        "B. 如今用途已明示未變，換新只為追求流行。",
+        "C. 說話者認為只要能開動就滿足任何目的。",
+        "D. 我不是說換掉能用的，而是問是否仍合如今用途。"
+      ],
+      "ans": "D",
+      "explain": "運作正常與當前用途適合不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The size I need ___ currently out of stock.",
+      "options": [
+        "A. are",
+        "B. have",
+        "C. being",
+        "D. is"
+      ],
+      "ans": "D",
+      "explain": "主詞 the size 單數，I need 是修飾子句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which noun means an extra supply kept available for later use?",
+      "options": [
+        "A. reserve",
+        "B. sample",
+        "C. receipt",
+        "D. display"
+      ],
+      "ans": "A",
+      "explain": "reserve 是儲備；其他為樣品、收據、展示。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【數量】A box contains six cups. A customer needs eight cups and may buy individual cups as well as boxes. Which purchase supplies exactly eight?",
+      "options": [
+        "A. Three boxes without any individual cups.",
+        "B. One box and two individual cups.",
+        "C. Two boxes and two individual cups.",
+        "D. One box and one individual cup."
+      ],
+      "ans": "B",
+      "explain": "六加二等八；題內提供單購選項。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】A sign says the offer applies to marked items only. Which condition matters?",
+      "options": [
+        "A. The item must carry the relevant mark.",
+        "B. The customer must buy every item on the shelf.",
+        "C. The shop must close before the purchase is made.",
+        "D. The item must have the highest price in its category."
+      ],
+      "ans": "A",
+      "explain": "only限markeditems，題內未設價格高低門檻。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A stall lends tools for a day and asks borrowers to return them before closing. A visitor assumes a day means the following morning. What should govern the return?",
+      "options": [
+        "A. A general assumption that all stalls share the same policy.",
+        "B. The explicit closing-time condition.",
+        "C. The visitor’s usual waking time.",
+        "D. The time the tool was originally manufactured."
+      ],
+      "ans": "B",
+      "explain": "題內明訂截止，不以抽象一天代替。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I would rather ___ the one I already have than buy another.",
+      "options": [
+        "A. to repair",
+        "B. repaired",
+        "C. repair",
+        "D. repairing"
+      ],
+      "ans": "C",
+      "explain": "would rather 後原形repair，than buy平行。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A customer borrows a display sample to check its colour at home. The assistant says the boxed item may have a different surface finish. What still needs checking?",
+      "options": [
+        "A. Whether the customer has visited every shop selling similar items.",
+        "B. Whether the final item matches the desired finish as well as the colour.",
+        "C. Whether the sample can be counted as an additional boxed purchase.",
+        "D. Whether the shop’s walls are painted in the customer’s chosen colour."
+      ],
+      "ans": "B",
+      "explain": "樣品能查色但未保證表面處理同款，須核第二面向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】It is a bargain only if you were going to use it, says a friend about an unwanted discounted item. What is the point?",
+      "options": [
+        "A. The friend has promised to buy the item instead.",
+        "B. An item is useful only when sold at its original price.",
+        "C. A low price alone does not establish value for this buyer.",
+        "D. Every discounted item must be defective."
+      ],
+      "ans": "C",
+      "explain": "便宜與對個人有價值不同，不推瑕疵或原價必需。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An exchange table lets visitors take one item for each item they leave. Jo leaves three objects, takes two, and asks whether she has used the whole allowance. What follows from the rule?",
+      "options": [
+        "A. She must take three more items.",
+        "B. She has already exceeded the allowance.",
+        "C. She must retrieve one of her original objects.",
+        "D. She may take one more item."
+      ],
+      "ans": "D",
+      "explain": "三換三上限，已取二還可一，未說必須取滿。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：預留以備未來使用的一批物資",
+      "ans": "STOCKPILE",
+      "speak": "stockpile",
+      "vocabId": "R6:STOCKPILE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：用來替代另一物的替代品",
+      "ans": "SUBSTITUTE",
+      "speak": "substitute",
+      "vocabId": "R6:SUBSTITUTE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：只涉及外觀的差異",
+      "ans": "A COSMETIC DIFFERENCE",
+      "speak": "a cosmetic difference",
+      "vocabId": "R6:A COSMETIC DIFFERENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：能配合原系統使用的替換品",
+      "ans": "A COMPATIBLE REPLACEMENT",
+      "speak": "a compatible replacement",
+      "vocabId": "R6:A COMPATIBLE REPLACEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：低價不證成對個人有用",
+      "ans": "A LOW PRICE DOES NOT ESTABLISH PERSONAL USEFULNESS",
+      "speak": "a low price does not establish personal usefulness",
+      "vocabId": "R6:A LOW PRICE DOES NOT ESTABLISH PERSONAL USEFULNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：把手位置對預定用途重要",
+      "ans": "THE HANDLE POSITION MATTERS FOR THE INTENDED USE",
+      "speak": "the handle position matters for the intended use",
+      "vocabId": "R6:THE HANDLE POSITION MATTERS FOR THE INTENDED USE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：超過所需的剩餘量（S 開頭，7 個字母）",
+      "ans": "SURPLUS",
+      "speak": "surplus",
+      "vocabId": "R6:SURPLUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把耗去的存量補足（R 開頭，9 個字母）",
+      "ans": "REPLENISH",
+      "speak": "replenish",
+      "vocabId": "R6:REPLENISH"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：能與另一物共同適用而不衝突的（C 開頭，10 個字母）",
+      "ans": "COMPATIBLE",
+      "speak": "compatible",
+      "vocabId": "R6:COMPATIBLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B A _ C H (同次製作或處理的一批物品)",
+      "ans": "T",
+      "speak": "batch",
+      "vocabId": "R6:BATCH"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S A _ P _ E (供檢查品質或特徵的樣品)",
+      "ans": "ML",
+      "speak": "sample",
+      "vocabId": "R6:SAMPLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D U _ A B _ L _ T Y (物品長期使用仍維持良好的耐用性)",
+      "ans": "RII",
+      "speak": "durability",
+      "vocabId": "R6:DURABILITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "put two and two together",
+      "options": [
+        "A. 把線索連起來推知情況",
+        "B. 只做加法而不考慮情境",
+        "C. 把四件物平均分成兩袋",
+        "D. 要求兩人同時重做工作"
+      ],
+      "ans": "A",
+      "explain": "慣用指綜合資訊作推論，非一定算術。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "jump to conclusions",
+      "options": [
+        "A. 以跳躍動作參加比賽",
+        "B. 未充分考慮就急下結論",
+        "C. 將結論移到文章第一段",
+        "D. 因證據完整而結束查核"
+      ],
+      "ans": "B",
+      "explain": "jump to conclusions 帶過早判斷的負評。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a false alarm",
+      "options": [
+        "A. 故意不設置的提醒工具",
+        "B. 永遠不會發聲的每種鬧鐘",
+        "C. 以為出事而其實未出現該事的警報",
+        "D. 已確認且持續發生的事件"
+      ],
+      "ans": "C",
+      "explain": "false alarm 可非故意，核心誤報。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The window was open when I arrived; I cannot tell you who opened it.",
+      "options": [
+        "A. 窗一直沒有人開，所以不可能開著。",
+        "B. 我到時窗已開，不知誰開的。",
+        "C. 我親眼看見開窗者，但不願說姓名。",
+        "D. 我到時窗關著，後來才自己打開。"
+      ],
+      "ans": "B",
+      "explain": "觀察狀態與行動者知識分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I heard the door, not the footsteps, so I am sure someone came in but not sure it was Alex.",
+      "options": [
+        "A. 我沒聽到任何聲音，只憑便條猜有人。",
+        "B. 我確定沒人進來，因為未聽見腳步。",
+        "C. 聽到門而非腳步，所以知道有人進，不能確定是艾力克斯。",
+        "D. 腳步已清楚證明艾力克斯進門。"
+      ],
+      "ans": "C",
+      "explain": "轉述說話者的確定範圍，非替聽者驗證誰進門。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The label tells us whose box it used to be, not necessarily who is using it now.",
+      "options": [
+        "A. 標籤已確認現在使用者與舊主人相同。",
+        "B. 盒子無人使用，因標籤已被取下。",
+        "C. 現在使用者已把姓名直接寫在新標籤上。",
+        "D. 標籤說明舊主人，不一定是現使用者。"
+      ],
+      "ans": "D",
+      "explain": "曾持有與現使用兩種資訊不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She knew the room had been changed, but that does not mean she knew where each object had been moved.",
+      "options": [
+        "A. 她因不知物件位置而完全不知房間有改。",
+        "B. 每件物已回原位，所以問題不存在。",
+        "C. 她知房間改過，不代表知每件移去哪。",
+        "D. 知道房間改過已足以推知所有新位置。"
+      ],
+      "ans": "C",
+      "explain": "整體知情與具體細節知情不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The explanation accounts for the missing cup, but not for the extra one on the shelf.",
+      "options": [
+        "A. 解釋已把少一杯與多一杯完整連起來。",
+        "B. 架上沒有多杯，因解釋已取消這項觀察。",
+        "C. 說話者認為只要有一部分說得通就不需其他。",
+        "D. 解釋能說明杯子少一個，卻未說明架上多的那個。"
+      ],
+      "ans": "D",
+      "explain": "解釋覆蓋範圍有限，未說整個解釋全錯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Before we decide someone moved the sign, perhaps we should ask whether we approached it from the other side yesterday.",
+      "options": [
+        "A. 認定有人移牌前，先問昨天是否從另一側接近。",
+        "B. 昨天方向已被證實相同，所以牌一定移過。",
+        "C. 只要接近方向不同，任何位置都永遠不可能比較。",
+        "D. 說話者確認自己昨晚親手移了標示。"
+      ],
+      "ans": "A",
+      "explain": "提出觀察視角替代解釋，perhaps非確知。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Jo says she ___ away from home all week.",
+      "options": [
+        "A. has been",
+        "B. has being",
+        "C. is been",
+        "D. have been"
+      ],
+      "ans": "A",
+      "explain": "she單數，has been away 表本週持續不在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】To misplace an object is to ___.",
+      "options": [
+        "A. discover that it was never made",
+        "B. put it somewhere and then be unable to find it",
+        "C. deliberately give it to a new owner",
+        "D. repair it without changing its position"
+      ],
+      "ans": "B",
+      "explain": "misplace 是放錯/忘放哪，未必永久遺失。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】Ali saw the cup on the table before Beth entered. Beth then carried it to the shelf. Where was it immediately before Beth entered?",
+      "options": [
+        "A. In Beth’s bag.",
+        "B. Outside the room.",
+        "C. On the table.",
+        "D. On the shelf."
+      ],
+      "ans": "C",
+      "explain": "before entered時點明確，後移動不能倒推。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】Only Mina has the red key; both Mina and Tom have blue keys. Who definitely has a blue key?",
+      "options": [
+        "A. Only a person other than Mina.",
+        "B. Tom.",
+        "C. Every visitor.",
+        "D. Nobody."
+      ],
+      "ans": "B",
+      "explain": "both明確含Mina/Tom；正答Tom但非只有Tom。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A message says, The parcel arrived after lunch but before Eva left. Eva left at three. What is established?",
+      "options": [
+        "A. Lunch ended exactly one minute before three.",
+        "B. Eva left before the parcel arrived.",
+        "C. The parcel arrived before three.",
+        "D. The parcel arrived exactly at three."
+      ],
+      "ans": "C",
+      "explain": "afterlunch/beforeleft限定抵達三點前，未定精時。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】If Sam had taken the umbrella, it ___ beside the door now.",
+      "options": [
+        "A. will not been",
+        "B. had not being",
+        "C. would not to be",
+        "D. would not be"
+      ],
+      "ans": "D",
+      "explain": "過去假設影響現在結果，用had taken / would not be。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Two identical envelopes lie on a desk. One contains a map; the other is empty. Jo picks one up but does not open it. What can she know from the stated facts alone?",
+      "options": [
+        "A. The unopened envelope must be empty.",
+        "B. Both envelopes now contain a map.",
+        "C. The envelope she picked may contain the map.",
+        "D. The envelope she picked certainly contains the map."
+      ],
+      "ans": "C",
+      "explain": "未給外觀辨識線索，只知可能一種內容。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The room was quiet when the clock stopped. A visitor concludes that the clock had been making the only sound. Another visitor points out that they had not noticed the wind until the ticking ended. What changes?",
+      "options": [
+        "A. The wind began only after the clock stopped, as independently confirmed.",
+        "B. The clock has been proved to control the weather outside.",
+        "C. The visitors have established that no sound was ever present.",
+        "D. A less noticeable sound became apparent when the louder one stopped."
+      ],
+      "ans": "D",
+      "explain": "先前未注意與先前未存在不同；不補外部機制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I know where the spare key was yesterday; today is another question. What is the speaker limiting?",
+      "options": [
+        "A. The time to which their knowledge applies.",
+        "B. The number of keys that can ever exist.",
+        "C. The right of another person to ask a question.",
+        "D. The meaning of yesterday as a calendar term."
+      ],
+      "ans": "A",
+      "explain": "過去位置知識不能保證今日同處。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：協助理解或解開問題的線索",
+      "ans": "CLUE",
+      "speak": "clue",
+      "vocabId": "R6:CLUE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：錯誤理解文字或情況的解讀",
+      "ans": "MISREADING",
+      "speak": "misreading",
+      "vocabId": "R6:MISREADING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：與已知資訊相容而合理的解釋",
+      "ans": "A PLAUSIBLE EXPLANATION",
+      "speak": "a plausible explanation",
+      "vocabId": "R6:A PLAUSIBLE EXPLANATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：尚未查證的假設",
+      "ans": "AN UNTESTED ASSUMPTION",
+      "speak": "an untested assumption",
+      "vocabId": "R6:AN UNTESTED ASSUMPTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：知道舊位置不確定現在位置",
+      "ans": "KNOWING THE OLD POSITION DOES NOT ESTABLISH THE PRESENT ONE",
+      "speak": "knowing the old position does not establish the present one",
+      "vocabId": "R6:KNOWING THE OLD POSITION DOES NOT ESTABLISH THE PRESENT ONE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：解釋仍未交代多出那杯",
+      "ans": "THE EXPLANATION LEAVES THE EXTRA CUP UNACCOUNTED FOR",
+      "speak": "the explanation leaves the extra cup unaccounted for",
+      "vocabId": "R6:THE EXPLANATION LEAVES THE EXTRA CUP UNACCOUNTED FOR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把物放到某處後無法找到（M 開頭，8 個字母）",
+      "ans": "MISPLACE",
+      "speak": "misplace",
+      "vocabId": "R6:MISPLACE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：無意或偶然聽到他人談話（O 開頭，8 個字母）",
+      "ans": "OVERHEAR",
+      "speak": "overhear",
+      "vocabId": "R6:OVERHEAR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：手指接觸表面留下的紋路印記（F 開頭，11 個字母）",
+      "ans": "FINGERPRINT",
+      "speak": "fingerprint",
+      "vocabId": "R6:FINGERPRINT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：K E Y _ O L E (供鑰匙插入的鎖孔)",
+      "ans": "H",
+      "speak": "keyhole",
+      "vocabId": "R6:KEYHOLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E N _ E L _ P E (盛放信件文件的封套)",
+      "ans": "VO",
+      "speak": "envelope",
+      "vocabId": "R6:ENVELOPE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M I _ C _ U _ T (計算數量時出錯)",
+      "ans": "SON",
+      "speak": "miscount",
+      "vocabId": "R6:MISCOUNT"
     }
   ],
   "boss": [
@@ -12059,6 +12845,268 @@
       "ans": "ILE",
       "speak": "stillness",
       "vocabId": "R6:STILLNESS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can reserve the colour, but I cannot promise the larger size will arrive before Saturday.",
+      "options": [
+        "A. 說話者已取消所有尺寸的訂購。",
+        "B. 保留顏色就已等於保證大尺寸即時到貨。",
+        "C. 可保留顏色，但不能保證大尺寸週六前到。",
+        "D. 顏色不能選，但大尺寸已保證週六前到。"
+      ],
+      "ans": "C",
+      "explain": "不同規格/交期承諾不能合併外推。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have enough to make a set of four, provided you do not mind two slightly different shades.",
+      "options": [
+        "A. 四件全是完全相同色調，沒有任何條件。",
+        "B. 只有兩件可用，另兩件已被確定損壞。",
+        "C. 只要接受色差，就能免費取得任何數量。",
+        "D. 有足夠湊四件，只要不介意有兩種略不同色調。"
+      ],
+      "ans": "D",
+      "explain": "數量足夠附色調差異，未明定各色各幾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It feels like getting something for nothing until I count the time I spend finding somewhere to put it.",
+      "options": [
+        "A. 初覺白得，計入找地方收納時間才見代價。",
+        "B. 物品免費，所以存放確定不耗任何資源。",
+        "C. 說話者已付全價，只因忘帶收據才說免費。",
+        "D. 收納時間越多就已證明物品市場價越高。"
+      ],
+      "ans": "A",
+      "explain": "時間/空間可成非金錢成本，非購物建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could you put this aside until I check the measurements at home? What is requested?",
+      "options": [
+        "A. Sending the item home before the customer makes a decision.",
+        "B. Changing the item’s measurements to fit an unknown space.",
+        "C. Keeping the item temporarily without selling it to someone else.",
+        "D. Removing the item permanently from the shop’s range."
+      ],
+      "ans": "C",
+      "explain": "put aside 在此請暫留，未要求購買或配送。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The assistant described the difference as cosmetic rather than functional. What was meant?",
+      "options": [
+        "A. It changes the item’s main purpose but leaves its appearance unchanged.",
+        "B. It proves the item contains beauty products.",
+        "C. It means the two items cannot be compared in any way.",
+        "D. It concerns appearance rather than how the item works."
+      ],
+      "ans": "D",
+      "explain": "cosmetic在物件差異指外觀，非必化妝品。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A coat is described as hardly worn. A buyer later complains that it was not completely unused. Which distinction matters?",
+      "options": [
+        "A. Very little use is different from no use.",
+        "B. Hardly worn guarantees that the coat has never been tried on.",
+        "C. The description refers only to the coat’s physical weight.",
+        "D. A used coat cannot be accurately described in any words."
+      ],
+      "ans": "A",
+      "explain": "hardly worn 接近未穿但非完全零使用。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：略多於所需的小量剩餘",
+      "ans": "A MODEST SURPLUS",
+      "speak": "a modest surplus",
+      "vocabId": "R6:A MODEST SURPLUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：極少磨損不同於毫無磨損",
+      "ans": "VERY LITTLE WEAR IS DIFFERENT FROM NO WEAR",
+      "speak": "very little wear is different from no wear",
+      "vocabId": "R6:VERY LITTLE WEAR IS DIFFERENT FROM NO WEAR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：已停止供應或生產的（D 開頭，12 個字母）",
+      "ans": "DISCONTINUED",
+      "speak": "discontinued",
+      "vocabId": "R6:DISCONTINUED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ I L _ A _ L E (內容用完後可再填充的)",
+      "ans": "FLB",
+      "speak": "refillable",
+      "vocabId": "R6:REFILLABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I found the bag, but not where you said it would be; it was under the seat, not beside it.",
+      "options": [
+        "A. 包在座旁找到，所以你給的位置完全正確。",
+        "B. 包沒找到，只有座位下的一張便條。",
+        "C. 我把包從座旁移到座下後才開始找。",
+        "D. 包找到了，在座下而非你說的座旁。"
+      ],
+      "ans": "D",
+      "explain": "結果找到不等於預告位置正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It could have fallen behind the drawer, though we should look before saying that is what happened.",
+      "options": [
+        "A. 可能掉抽屜後，但要查看才說就是如此。",
+        "B. 已親眼看見掉落，所以不需再查。",
+        "C. 因尚未查就已證明不可能在後面。",
+        "D. 說話者要求把抽屜後所有物件都丟棄。"
+      ],
+      "ans": "A",
+      "explain": "couldhave可能過去，後句要求查證而非定論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not saying the story is wrong; I am saying the detail you have just added was not in the story we were given.",
+      "options": [
+        "A. 說話者要求只因新細節有趣就當既定事實。",
+        "B. 我沒說故事錯，只說你新加細節不在原故事。",
+        "C. 原故事已逐字包含新細節，所以不需區分。",
+        "D. 我確認故事每項資訊都假，因此所有細節都刪。"
+      ],
+      "ans": "B",
+      "explain": "來源界線與故事真偽分別，不能無證添設定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】That is one mystery solved, says Lee after finding his glasses on his head. What is the tone?",
+      "options": [
+        "A. A formal announcement of a police investigation.",
+        "B. Anger because someone has damaged the glasses.",
+        "C. Certainty that another person deliberately hid them.",
+        "D. Light amusement at an ordinary mistake."
+      ],
+      "ans": "D",
+      "explain": "普通忘物自嘲用mystery，非外部刑案背景。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The explanation is possible, but it is not the only one that fits the note. What follows?",
+      "options": [
+        "A. The note does not uniquely establish that explanation.",
+        "B. The explanation has been proved false.",
+        "C. The note contains no words that can be read.",
+        "D. Every possible explanation is equally likely."
+      ],
+      "ans": "A",
+      "explain": "非唯一支持不等於錯或等機率。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A cake is missing from the kitchen. Pat has flour on a sleeve, but says she baked bread elsewhere. No other information is given. Which conclusion is warranted?",
+      "options": [
+        "A. The missing cake must have been bread all along.",
+        "B. The flour alone does not establish that Pat took the cake.",
+        "C. The flour proves Pat ate the cake before anyone arrived.",
+        "D. Pat’s explanation proves she could not have entered the kitchen."
+      ],
+      "ans": "B",
+      "explain": "麵粉有替代來源，不足以唯一定案，也未證Pat必無關。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未被提供或未被注意的細節",
+      "ans": "A MISSING DETAIL",
+      "speak": "a missing detail",
+      "vocabId": "R6:A MISSING DETAIL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：應區分既給事實與新增猜測",
+      "ans": "WE SHOULD DISTINGUISH A SUPPLIED FACT FROM AN ADDED GUESS",
+      "speak": "we should distinguish a supplied fact from an added guess",
+      "vocabId": "R6:WE SHOULD DISTINGUISH A SUPPLIED FACT FROM AN ADDED GUESS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：使人形成錯誤理解或判斷（M 開頭，7 個字母）",
+      "ans": "MISLEAD",
+      "speak": "mislead",
+      "vocabId": "R6:MISLEAD"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N _ O _ I _ E D (沒有被察覺的)",
+      "ans": "NTC",
+      "speak": "unnoticed",
+      "vocabId": "R6:UNNOTICED"
     }
   ]
 }

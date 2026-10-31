@@ -626,9 +626,9 @@
   },
   "OBSOLESCENCE": {
     "pos": "n.",
-    "meaning": "因技術或需求改變而過時的狀態",
-    "example": "The design aims to reduce premature obsolescence.",
-    "exampleZh": "這項設計旨在減少過早淘汰。",
+    "meaning": "逐漸過時而不再適用的狀態或過程",
+    "example": "The essay examines obsolescence.",
+    "exampleZh": "文章檢視過時淘汰。",
     "senses": [
       {
         "pos": "n.",
@@ -641,6 +641,16 @@
           {
             "en": "Functional equipment can still face commercial obsolescence.",
             "zh": "仍能運作的設備也可能在商業上被淘汰。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "逐漸過時而不再適用的狀態或過程",
+        "examples": [
+          {
+            "en": "The essay examines obsolescence.",
+            "zh": "文章檢視過時淘汰。"
           }
         ]
       }
@@ -8211,6 +8221,688 @@
       }
     ]
   },
+  "CONSIGNMENT": {
+    "word": "consignment",
+    "pos": "n.",
+    "meaning": "一同寄往某地的一批貨物",
+    "example": "The consignment contains several versions.",
+    "exampleZh": "這批貨含數個版本。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "一同寄往某地的一批貨物",
+        "examples": [
+          {
+            "en": "The consignment contains several versions.",
+            "zh": "這批貨含數個版本。"
+          }
+        ]
+      }
+    ]
+  },
+  "REPAIRABILITY": {
+    "word": "repairability",
+    "pos": "n.",
+    "meaning": "物件實際可被修好的程度",
+    "example": "The review considers repairability.",
+    "exampleZh": "評估考量可維修性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物件實際可被修好的程度",
+        "examples": [
+          {
+            "en": "The review considers repairability.",
+            "zh": "評估考量可維修性。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FUNCTIONALLY EQUIVALENT SUBSTITUTE": {
+    "word": "a functionally equivalent substitute",
+    "pos": "phr.",
+    "meaning": "功能上相當的替代品",
+    "example": "The trial seeks a functionally equivalent substitute.",
+    "exampleZh": "試用旨在找功能相當替代品。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "功能上相當的替代品",
+        "examples": [
+          {
+            "en": "The trial seeks a functionally equivalent substitute.",
+            "zh": "試用旨在找功能相當替代品。"
+          }
+        ]
+      }
+    ]
+  },
+  "A QUALIFIED ASSURANCE OF SUITABILITY": {
+    "word": "a qualified assurance of suitability",
+    "pos": "phr.",
+    "meaning": "帶條件保留的適用性保證",
+    "example": "The note gives a qualified assurance of suitability.",
+    "exampleZh": "便條給有條件的適用保證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "帶條件保留的適用性保證",
+        "examples": [
+          {
+            "en": "The note gives a qualified assurance of suitability.",
+            "zh": "便條給有條件的適用保證。"
+          }
+        ]
+      }
+    ]
+  },
+  "A REALISTIC PROSPECT OF REPAIR": {
+    "word": "a realistic prospect of repair",
+    "pos": "phr.",
+    "meaning": "實際可行的修復可能性",
+    "example": "Parts availability creates a realistic prospect of repair.",
+    "exampleZh": "配件供應帶來實際維修可能。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際可行的修復可能性",
+        "examples": [
+          {
+            "en": "Parts availability creates a realistic prospect of repair.",
+            "zh": "配件供應帶來實際維修可能。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPARABLE PRICES DO NOT ESTABLISH INTERCHANGEABLE FUNCTIONS": {
+    "word": "comparable prices do not establish interchangeable functions",
+    "pos": "phr.",
+    "meaning": "價格相近不證成功能可互換",
+    "example": "Comparable prices do not establish interchangeable functions.",
+    "exampleZh": "價格相近不證成功能可互換。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "價格相近不證成功能可互換",
+        "examples": [
+          {
+            "en": "Comparable prices do not establish interchangeable functions.",
+            "zh": "價格相近不證成功能可互換。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SPARE IS USEFUL ONLY WHEN IT FITS THE RELEVANT VERSION": {
+    "word": "a spare is useful only when it fits the relevant version",
+    "pos": "phr.",
+    "meaning": "備件適合相關版本才有用",
+    "example": "A spare is useful only when it fits the relevant version.",
+    "exampleZh": "備件適合相關版本才有用。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "備件適合相關版本才有用",
+        "examples": [
+          {
+            "en": "A spare is useful only when it fits the relevant version.",
+            "zh": "備件適合相關版本才有用。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EQUAL COUNT CAN CONCEAL DIFFERENT KINDS OF BENEFIT": {
+    "word": "an equal count can conceal different kinds of benefit",
+    "pos": "phr.",
+    "meaning": "相同件數可能掩蓋不同效益",
+    "example": "An equal count can conceal different kinds of benefit.",
+    "exampleZh": "相同件數可能掩蓋不同效益。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同件數可能掩蓋不同效益",
+        "examples": [
+          {
+            "en": "An equal count can conceal different kinds of benefit.",
+            "zh": "相同件數可能掩蓋不同效益。"
+          }
+        ]
+      }
+    ]
+  },
+  "ON APPROVAL": {
+    "pos": "phr.",
+    "meaning": "先試看或檢視後再決定是否接受",
+    "example": "The shop offers this sample on approval under its stated terms.",
+    "exampleZh": "店依明示條件提供樣品試看。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "先試看或檢視後再決定是否接受",
+        "examples": [
+          {
+            "en": "The shop offers this sample on approval under its stated terms.",
+            "zh": "店依明示條件提供樣品試看。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PART EXCHANGE": {
+    "pos": "phr.",
+    "meaning": "以舊物折抵部分新物價款的交易",
+    "example": "The offer includes a part exchange.",
+    "exampleZh": "提議包含舊物折抵。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以舊物折抵部分新物價款的交易",
+        "examples": [
+          {
+            "en": "The offer includes a part exchange.",
+            "zh": "提議包含舊物折抵。"
+          }
+        ]
+      }
+    ]
+  },
+  "FIT FOR THE INTENDED PURPOSE": {
+    "pos": "phr.",
+    "meaning": "適合原先要達成的用途",
+    "example": "The test asks whether the item is fit for the intended purpose.",
+    "exampleZh": "測試問物件是否適合預定用途。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "適合原先要達成的用途",
+        "examples": [
+          {
+            "en": "The test asks whether the item is fit for the intended purpose.",
+            "zh": "測試問物件是否適合預定用途。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERCHANGEABLE": {
+    "pos": "adj.",
+    "meaning": "能在同一用途下彼此替代的",
+    "example": "The two parts are not interchangeable.",
+    "exampleZh": "兩零件不可互換。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能在同一用途下彼此替代的",
+        "examples": [
+          {
+            "en": "The two parts are not interchangeable.",
+            "zh": "兩零件不可互換。"
+          }
+        ]
+      }
+    ]
+  },
+  "REDEMPTION": {
+    "pos": "n.",
+    "meaning": "以憑證換取約定物品或利益的兌換",
+    "example": "The leaflet explains redemption of the voucher.",
+    "exampleZh": "傳單說明券的兌換。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以憑證換取約定物品或利益的兌換",
+        "examples": [
+          {
+            "en": "The leaflet explains redemption of the voucher.",
+            "zh": "傳單說明券的兌換。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECONDITION": {
+    "pos": "v.",
+    "meaning": "整修使用過的物件使其恢復良好狀態",
+    "example": "The workshop can recondition the donated item.",
+    "exampleZh": "工作坊能整修捐物。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "整修使用過的物件使其恢復良好狀態",
+        "examples": [
+          {
+            "en": "The workshop can recondition the donated item.",
+            "zh": "工作坊能整修捐物。"
+          }
+        ]
+      }
+    ]
+  },
+  "REFURBISHMENT": {
+    "pos": "n.",
+    "meaning": "為改善狀況而進行的翻新整修",
+    "example": "The scheme offers refurbishment of suitable items.",
+    "exampleZh": "方案提供適合物件翻修。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為改善狀況而進行的翻新整修",
+        "examples": [
+          {
+            "en": "The scheme offers refurbishment of suitable items.",
+            "zh": "方案提供適合物件翻修。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDUCEMENT": {
+    "pos": "n.",
+    "meaning": "促使某人採取行動的誘因",
+    "example": "The extra feature acts as an inducement.",
+    "exampleZh": "附加功能成為誘因。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "促使某人採取行動的誘因",
+        "examples": [
+          {
+            "en": "The extra feature acts as an inducement.",
+            "zh": "附加功能成為誘因。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBSTITUTION": {
+    "pos": "n.",
+    "meaning": "以另一物代替原物的行為",
+    "example": "The substitution changes how the handle works.",
+    "exampleZh": "替換改變把手運作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以另一物代替原物的行為",
+        "examples": [
+          {
+            "en": "The substitution changes how the handle works.",
+            "zh": "替換改變把手運作。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUITABILITY": {
+    "pos": "n.",
+    "meaning": "適合特定用途或情境的程度",
+    "example": "The trial assesses suitability rather than appearance alone.",
+    "exampleZh": "試用評估適配而非只看外觀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "適合特定用途或情境的程度",
+        "examples": [
+          {
+            "en": "The trial assesses suitability rather than appearance alone.",
+            "zh": "試用評估適配而非只看外觀。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEDUCTION": {
+    "word": "deduction",
+    "pos": "n.",
+    "meaning": "由已知資訊推理得出的結論",
+    "example": "The deduction depends on the timing.",
+    "exampleZh": "推論取決於時序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由已知資訊推理得出的結論",
+        "examples": [
+          {
+            "en": "The deduction depends on the timing.",
+            "zh": "推論取決於時序。"
+          }
+        ]
+      }
+    ]
+  },
+  "FOREKNOWLEDGE": {
+    "word": "foreknowledge",
+    "pos": "n.",
+    "meaning": "事情發生前已具備的先知資訊",
+    "example": "Her remark seemed to suggest foreknowledge.",
+    "exampleZh": "她的話似暗示事先知情。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "事情發生前已具備的先知資訊",
+        "examples": [
+          {
+            "en": "Her remark seemed to suggest foreknowledge.",
+            "zh": "她的話似暗示事先知情。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROVISIONAL ACCOUNT OF EVENTS": {
+    "word": "a provisional account of events",
+    "pos": "phr.",
+    "meaning": "對事件仍待修正的暫時說明",
+    "example": "The note offers a provisional account of events.",
+    "exampleZh": "便條提供暫時事件說明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對事件仍待修正的暫時說明",
+        "examples": [
+          {
+            "en": "The note offers a provisional account of events.",
+            "zh": "便條提供暫時事件說明。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNEXPLAINED DISCREPANCY": {
+    "word": "an unexplained discrepancy",
+    "pos": "phr.",
+    "meaning": "尚未解釋的不一致",
+    "example": "An unexplained discrepancy remains in the times.",
+    "exampleZh": "時間仍有未解不一致。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尚未解釋的不一致",
+        "examples": [
+          {
+            "en": "An unexplained discrepancy remains in the times.",
+            "zh": "時間仍有未解不一致。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN INDEPENDENTLY TESTABLE PREDICTION": {
+    "word": "an independently testable prediction",
+    "pos": "phr.",
+    "meaning": "可由獨立資訊檢驗的預測",
+    "example": "The theory needs an independently testable prediction.",
+    "exampleZh": "理論需要可獨立檢驗預測。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可由獨立資訊檢驗的預測",
+        "examples": [
+          {
+            "en": "The theory needs an independently testable prediction.",
+            "zh": "理論需要可獨立檢驗預測。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CORRECTED DETAIL NEED NOT WITHDRAW THE ENTIRE ACCOUNT": {
+    "word": "a corrected detail need not withdraw the entire account",
+    "pos": "phr.",
+    "meaning": "更正細節不必撤回整段說法",
+    "example": "A corrected detail need not withdraw the entire account.",
+    "exampleZh": "更正細節不必撤回整段說法。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "更正細節不必撤回整段說法",
+        "examples": [
+          {
+            "en": "A corrected detail need not withdraw the entire account.",
+            "zh": "更正細節不必撤回整段說法。"
+          }
+        ]
+      }
+    ]
+  },
+  "OPPORTUNITY DOES NOT BY ITSELF ESTABLISH MOTIVE": {
+    "word": "opportunity does not by itself establish motive",
+    "pos": "phr.",
+    "meaning": "有機會本身不證成動機",
+    "example": "Opportunity does not by itself establish motive.",
+    "exampleZh": "有機會本身不證成動機。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有機會本身不證成動機",
+        "examples": [
+          {
+            "en": "Opportunity does not by itself establish motive.",
+            "zh": "有機會本身不證成動機。"
+          }
+        ]
+      }
+    ]
+  },
+  "A POSSIBLE RECONCILIATION STILL REQUIRES SUPPORTING EVIDENCE": {
+    "word": "a possible reconciliation still requires supporting evidence",
+    "pos": "phr.",
+    "meaning": "可能調和仍需支持證據",
+    "example": "A possible reconciliation still requires supporting evidence.",
+    "exampleZh": "可能調和仍需支持證據。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可能調和仍需支持證據",
+        "examples": [
+          {
+            "en": "A possible reconciliation still requires supporting evidence.",
+            "zh": "可能調和仍需支持證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROCESS OF ELIMINATION": {
+    "pos": "phr.",
+    "meaning": "逐項排除不符可能性的過程",
+    "example": "They used a process of elimination to identify the drawer.",
+    "exampleZh": "他們以排除法找出抽屜。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "逐項排除不符可能性的過程",
+        "examples": [
+          {
+            "en": "They used a process of elimination to identify the drawer.",
+            "zh": "他們以排除法找出抽屜。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WORKING HYPOTHESIS": {
+    "pos": "phr.",
+    "meaning": "暫作推理依據而仍待檢驗的假設",
+    "example": "The missing note suggests a working hypothesis.",
+    "exampleZh": "遺失便條提示一個工作假設。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "暫作推理依據而仍待檢驗的假設",
+        "examples": [
+          {
+            "en": "The missing note suggests a working hypothesis.",
+            "zh": "遺失便條提示一個工作假設。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PIECE OF CIRCUMSTANTIAL EVIDENCE": {
+    "pos": "phr.",
+    "meaning": "支持間接推論的一項情況證據",
+    "example": "The old key is a piece of circumstantial evidence.",
+    "exampleZh": "舊鑰匙是一項間接證據。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "支持間接推論的一項情況證據",
+        "examples": [
+          {
+            "en": "The old key is a piece of circumstantial evidence.",
+            "zh": "舊鑰匙是一項間接證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "CIRCUMSTANTIAL": {
+    "pos": "adj.",
+    "meaning": "依周邊情況而需間接推論的",
+    "example": "The story provides circumstantial evidence.",
+    "exampleZh": "故事提供間接情況證據。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依周邊情況而需間接推論的",
+        "examples": [
+          {
+            "en": "The story provides circumstantial evidence.",
+            "zh": "故事提供間接情況證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCONCLUSIVE": {
+    "pos": "adj.",
+    "meaning": "不足以作明確定論的",
+    "example": "The comparison is inconclusive.",
+    "exampleZh": "比較不足定論。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不足以作明確定論的",
+        "examples": [
+          {
+            "en": "The comparison is inconclusive.",
+            "zh": "比較不足定論。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISCREPANCY": {
+    "pos": "n.",
+    "meaning": "兩項資料或說法間不一致之處",
+    "example": "The discrepancy concerns the time of arrival.",
+    "exampleZh": "不一致在抵達時間。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "兩項資料或說法間不一致之處",
+        "examples": [
+          {
+            "en": "The discrepancy concerns the time of arrival.",
+            "zh": "不一致在抵達時間。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONJECTURE": {
+    "pos": "n.",
+    "meaning": "尚未充分證實的推測",
+    "example": "The account remains a conjecture.",
+    "exampleZh": "說明仍是推測。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尚未充分證實的推測",
+        "examples": [
+          {
+            "en": "The account remains a conjecture.",
+            "zh": "說明仍是推測。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANOMALY": {
+    "pos": "n.",
+    "meaning": "不符合預期或一般模式的事物",
+    "example": "The extra cup is an anomaly in the account.",
+    "exampleZh": "多出的杯子是說明中的異常。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "不符合預期或一般模式的事物",
+        "examples": [
+          {
+            "en": "The extra cup is an anomaly in the account.",
+            "zh": "多出的杯子是說明中的異常。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUPPOSITION": {
+    "pos": "n.",
+    "meaning": "推理中暫當成立的假設",
+    "example": "The deduction rests on a supposition about the door.",
+    "exampleZh": "推論依門的假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "推理中暫當成立的假設",
+        "examples": [
+          {
+            "en": "The deduction rests on a supposition about the door.",
+            "zh": "推論依門的假設。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRIORITY": {
+    "pos": "n.",
+    "meaning": "在時間或重要性上居先的地位",
+    "example": "The question here is temporal priority.",
+    "exampleZh": "此問題在時間先後。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在時間或重要性上居先的地位",
+        "examples": [
+          {
+            "en": "The question here is temporal priority.",
+            "zh": "此問題在時間先後。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERSIMPLIFY": {
+    "pos": "v.",
+    "meaning": "把複雜情況解釋得過於簡單",
+    "example": "The summary tends to oversimplify the sequence.",
+    "exampleZh": "摘要傾向過度簡化順序。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把複雜情況解釋得過於簡單",
+        "examples": [
+          {
+            "en": "The summary tends to oversimplify the sequence.",
+            "zh": "摘要傾向過度簡化順序。"
+          }
+        ]
+      }
+    ]
+  },
   "R7:CORROBORATION": {
     "word": "corroboration",
     "pos": "n.",
@@ -13593,6 +14285,462 @@
     ],
     "word": "radiance"
   },
+  "R7:CONSIGNMENT": {
+    "word": "consignment",
+    "pos": "n.",
+    "meaning": "一同寄往某地的一批貨物",
+    "example": "The consignment contains several versions.",
+    "exampleZh": "這批貨含數個版本。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "一同寄往某地的一批貨物",
+        "examples": [
+          {
+            "en": "The consignment contains several versions.",
+            "zh": "這批貨含數個版本。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:REPAIRABILITY": {
+    "word": "repairability",
+    "pos": "n.",
+    "meaning": "物件實際可被修好的程度",
+    "example": "The review considers repairability.",
+    "exampleZh": "評估考量可維修性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物件實際可被修好的程度",
+        "examples": [
+          {
+            "en": "The review considers repairability.",
+            "zh": "評估考量可維修性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A FUNCTIONALLY EQUIVALENT SUBSTITUTE": {
+    "word": "a functionally equivalent substitute",
+    "pos": "phr.",
+    "meaning": "功能上相當的替代品",
+    "example": "The trial seeks a functionally equivalent substitute.",
+    "exampleZh": "試用旨在找功能相當替代品。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "功能上相當的替代品",
+        "examples": [
+          {
+            "en": "The trial seeks a functionally equivalent substitute.",
+            "zh": "試用旨在找功能相當替代品。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A REALISTIC PROSPECT OF REPAIR": {
+    "word": "a realistic prospect of repair",
+    "pos": "phr.",
+    "meaning": "實際可行的修復可能性",
+    "example": "Parts availability creates a realistic prospect of repair.",
+    "exampleZh": "配件供應帶來實際維修可能。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際可行的修復可能性",
+        "examples": [
+          {
+            "en": "Parts availability creates a realistic prospect of repair.",
+            "zh": "配件供應帶來實際維修可能。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:COMPARABLE PRICES DO NOT ESTABLISH INTERCHANGEABLE FUNCTIONS": {
+    "word": "comparable prices do not establish interchangeable functions",
+    "pos": "phr.",
+    "meaning": "價格相近不證成功能可互換",
+    "example": "Comparable prices do not establish interchangeable functions.",
+    "exampleZh": "價格相近不證成功能可互換。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "價格相近不證成功能可互換",
+        "examples": [
+          {
+            "en": "Comparable prices do not establish interchangeable functions.",
+            "zh": "價格相近不證成功能可互換。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SPARE IS USEFUL ONLY WHEN IT FITS THE RELEVANT VERSION": {
+    "word": "a spare is useful only when it fits the relevant version",
+    "pos": "phr.",
+    "meaning": "備件適合相關版本才有用",
+    "example": "A spare is useful only when it fits the relevant version.",
+    "exampleZh": "備件適合相關版本才有用。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "備件適合相關版本才有用",
+        "examples": [
+          {
+            "en": "A spare is useful only when it fits the relevant version.",
+            "zh": "備件適合相關版本才有用。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INTERCHANGEABLE": {
+    "pos": "adj.",
+    "meaning": "能在同一用途下彼此替代的",
+    "example": "The two parts are not interchangeable.",
+    "exampleZh": "兩零件不可互換。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能在同一用途下彼此替代的",
+        "examples": [
+          {
+            "en": "The two parts are not interchangeable.",
+            "zh": "兩零件不可互換。"
+          }
+        ]
+      }
+    ],
+    "word": "interchangeable"
+  },
+  "R7:REDEMPTION": {
+    "pos": "n.",
+    "meaning": "以憑證換取約定物品或利益的兌換",
+    "example": "The leaflet explains redemption of the voucher.",
+    "exampleZh": "傳單說明券的兌換。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以憑證換取約定物品或利益的兌換",
+        "examples": [
+          {
+            "en": "The leaflet explains redemption of the voucher.",
+            "zh": "傳單說明券的兌換。"
+          }
+        ]
+      }
+    ],
+    "word": "redemption"
+  },
+  "R7:RECONDITION": {
+    "pos": "v.",
+    "meaning": "整修使用過的物件使其恢復良好狀態",
+    "example": "The workshop can recondition the donated item.",
+    "exampleZh": "工作坊能整修捐物。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "整修使用過的物件使其恢復良好狀態",
+        "examples": [
+          {
+            "en": "The workshop can recondition the donated item.",
+            "zh": "工作坊能整修捐物。"
+          }
+        ]
+      }
+    ],
+    "word": "recondition"
+  },
+  "R7:REFURBISHMENT": {
+    "pos": "n.",
+    "meaning": "為改善狀況而進行的翻新整修",
+    "example": "The scheme offers refurbishment of suitable items.",
+    "exampleZh": "方案提供適合物件翻修。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為改善狀況而進行的翻新整修",
+        "examples": [
+          {
+            "en": "The scheme offers refurbishment of suitable items.",
+            "zh": "方案提供適合物件翻修。"
+          }
+        ]
+      }
+    ],
+    "word": "refurbishment"
+  },
+  "R7:INDUCEMENT": {
+    "pos": "n.",
+    "meaning": "促使某人採取行動的誘因",
+    "example": "The extra feature acts as an inducement.",
+    "exampleZh": "附加功能成為誘因。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "促使某人採取行動的誘因",
+        "examples": [
+          {
+            "en": "The extra feature acts as an inducement.",
+            "zh": "附加功能成為誘因。"
+          }
+        ]
+      }
+    ],
+    "word": "inducement"
+  },
+  "R7:SUBSTITUTION": {
+    "pos": "n.",
+    "meaning": "以另一物代替原物的行為",
+    "example": "The substitution changes how the handle works.",
+    "exampleZh": "替換改變把手運作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以另一物代替原物的行為",
+        "examples": [
+          {
+            "en": "The substitution changes how the handle works.",
+            "zh": "替換改變把手運作。"
+          }
+        ]
+      }
+    ],
+    "word": "substitution"
+  },
+  "R7:DEDUCTION": {
+    "word": "deduction",
+    "pos": "n.",
+    "meaning": "由已知資訊推理得出的結論",
+    "example": "The deduction depends on the timing.",
+    "exampleZh": "推論取決於時序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由已知資訊推理得出的結論",
+        "examples": [
+          {
+            "en": "The deduction depends on the timing.",
+            "zh": "推論取決於時序。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:FOREKNOWLEDGE": {
+    "word": "foreknowledge",
+    "pos": "n.",
+    "meaning": "事情發生前已具備的先知資訊",
+    "example": "Her remark seemed to suggest foreknowledge.",
+    "exampleZh": "她的話似暗示事先知情。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "事情發生前已具備的先知資訊",
+        "examples": [
+          {
+            "en": "Her remark seemed to suggest foreknowledge.",
+            "zh": "她的話似暗示事先知情。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A PROVISIONAL ACCOUNT OF EVENTS": {
+    "word": "a provisional account of events",
+    "pos": "phr.",
+    "meaning": "對事件仍待修正的暫時說明",
+    "example": "The note offers a provisional account of events.",
+    "exampleZh": "便條提供暫時事件說明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對事件仍待修正的暫時說明",
+        "examples": [
+          {
+            "en": "The note offers a provisional account of events.",
+            "zh": "便條提供暫時事件說明。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AN INDEPENDENTLY TESTABLE PREDICTION": {
+    "word": "an independently testable prediction",
+    "pos": "phr.",
+    "meaning": "可由獨立資訊檢驗的預測",
+    "example": "The theory needs an independently testable prediction.",
+    "exampleZh": "理論需要可獨立檢驗預測。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可由獨立資訊檢驗的預測",
+        "examples": [
+          {
+            "en": "The theory needs an independently testable prediction.",
+            "zh": "理論需要可獨立檢驗預測。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A CORRECTED DETAIL NEED NOT WITHDRAW THE ENTIRE ACCOUNT": {
+    "word": "a corrected detail need not withdraw the entire account",
+    "pos": "phr.",
+    "meaning": "更正細節不必撤回整段說法",
+    "example": "A corrected detail need not withdraw the entire account.",
+    "exampleZh": "更正細節不必撤回整段說法。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "更正細節不必撤回整段說法",
+        "examples": [
+          {
+            "en": "A corrected detail need not withdraw the entire account.",
+            "zh": "更正細節不必撤回整段說法。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:OPPORTUNITY DOES NOT BY ITSELF ESTABLISH MOTIVE": {
+    "word": "opportunity does not by itself establish motive",
+    "pos": "phr.",
+    "meaning": "有機會本身不證成動機",
+    "example": "Opportunity does not by itself establish motive.",
+    "exampleZh": "有機會本身不證成動機。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有機會本身不證成動機",
+        "examples": [
+          {
+            "en": "Opportunity does not by itself establish motive.",
+            "zh": "有機會本身不證成動機。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:CIRCUMSTANTIAL": {
+    "pos": "adj.",
+    "meaning": "依周邊情況而需間接推論的",
+    "example": "The story provides circumstantial evidence.",
+    "exampleZh": "故事提供間接情況證據。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依周邊情況而需間接推論的",
+        "examples": [
+          {
+            "en": "The story provides circumstantial evidence.",
+            "zh": "故事提供間接情況證據。"
+          }
+        ]
+      }
+    ],
+    "word": "circumstantial"
+  },
+  "R7:INCONCLUSIVE": {
+    "pos": "adj.",
+    "meaning": "不足以作明確定論的",
+    "example": "The comparison is inconclusive.",
+    "exampleZh": "比較不足定論。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不足以作明確定論的",
+        "examples": [
+          {
+            "en": "The comparison is inconclusive.",
+            "zh": "比較不足定論。"
+          }
+        ]
+      }
+    ],
+    "word": "inconclusive"
+  },
+  "R7:DISCREPANCY": {
+    "pos": "n.",
+    "meaning": "兩項資料或說法間不一致之處",
+    "example": "The discrepancy concerns the time of arrival.",
+    "exampleZh": "不一致在抵達時間。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "兩項資料或說法間不一致之處",
+        "examples": [
+          {
+            "en": "The discrepancy concerns the time of arrival.",
+            "zh": "不一致在抵達時間。"
+          }
+        ]
+      }
+    ],
+    "word": "discrepancy"
+  },
+  "R7:ANOMALY": {
+    "pos": "n.",
+    "meaning": "不符合預期或一般模式的事物",
+    "example": "The extra cup is an anomaly in the account.",
+    "exampleZh": "多出的杯子是說明中的異常。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "不符合預期或一般模式的事物",
+        "examples": [
+          {
+            "en": "The extra cup is an anomaly in the account.",
+            "zh": "多出的杯子是說明中的異常。"
+          }
+        ]
+      }
+    ],
+    "word": "anomaly"
+  },
+  "R7:SUPPOSITION": {
+    "pos": "n.",
+    "meaning": "推理中暫當成立的假設",
+    "example": "The deduction rests on a supposition about the door.",
+    "exampleZh": "推論依門的假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "推理中暫當成立的假設",
+        "examples": [
+          {
+            "en": "The deduction rests on a supposition about the door.",
+            "zh": "推論依門的假設。"
+          }
+        ]
+      }
+    ],
+    "word": "supposition"
+  },
+  "R7:PRIORITY": {
+    "pos": "n.",
+    "meaning": "在時間或重要性上居先的地位",
+    "example": "The question here is temporal priority.",
+    "exampleZh": "此問題在時間先後。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在時間或重要性上居先的地位",
+        "examples": [
+          {
+            "en": "The question here is temporal priority.",
+            "zh": "此問題在時間先後。"
+          }
+        ]
+      }
+    ],
+    "word": "priority"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
@@ -15271,5 +16419,171 @@
       }
     ],
     "word": "sparseness"
+  },
+  "R7:A QUALIFIED ASSURANCE OF SUITABILITY": {
+    "word": "a qualified assurance of suitability",
+    "pos": "phr.",
+    "meaning": "帶條件保留的適用性保證",
+    "example": "The note gives a qualified assurance of suitability.",
+    "exampleZh": "便條給有條件的適用保證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "帶條件保留的適用性保證",
+        "examples": [
+          {
+            "en": "The note gives a qualified assurance of suitability.",
+            "zh": "便條給有條件的適用保證。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AN EQUAL COUNT CAN CONCEAL DIFFERENT KINDS OF BENEFIT": {
+    "word": "an equal count can conceal different kinds of benefit",
+    "pos": "phr.",
+    "meaning": "相同件數可能掩蓋不同效益",
+    "example": "An equal count can conceal different kinds of benefit.",
+    "exampleZh": "相同件數可能掩蓋不同效益。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同件數可能掩蓋不同效益",
+        "examples": [
+          {
+            "en": "An equal count can conceal different kinds of benefit.",
+            "zh": "相同件數可能掩蓋不同效益。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:OBSOLESCENCE": {
+    "pos": "n.",
+    "meaning": "逐漸過時而不再適用的狀態或過程",
+    "example": "The essay examines obsolescence.",
+    "exampleZh": "文章檢視過時淘汰。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因技術或需求改變而過時的狀態",
+        "examples": [
+          {
+            "en": "The design aims to reduce premature obsolescence.",
+            "zh": "這項設計旨在減少過早淘汰。"
+          },
+          {
+            "en": "Functional equipment can still face commercial obsolescence.",
+            "zh": "仍能運作的設備也可能在商業上被淘汰。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "逐漸過時而不再適用的狀態或過程",
+        "examples": [
+          {
+            "en": "The essay examines obsolescence.",
+            "zh": "文章檢視過時淘汰。"
+          }
+        ]
+      }
+    ],
+    "word": "obsolescence"
+  },
+  "R7:SUITABILITY": {
+    "pos": "n.",
+    "meaning": "適合特定用途或情境的程度",
+    "example": "The trial assesses suitability rather than appearance alone.",
+    "exampleZh": "試用評估適配而非只看外觀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "適合特定用途或情境的程度",
+        "examples": [
+          {
+            "en": "The trial assesses suitability rather than appearance alone.",
+            "zh": "試用評估適配而非只看外觀。"
+          }
+        ]
+      }
+    ],
+    "word": "suitability"
+  },
+  "R7:AN UNEXPLAINED DISCREPANCY": {
+    "word": "an unexplained discrepancy",
+    "pos": "phr.",
+    "meaning": "尚未解釋的不一致",
+    "example": "An unexplained discrepancy remains in the times.",
+    "exampleZh": "時間仍有未解不一致。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尚未解釋的不一致",
+        "examples": [
+          {
+            "en": "An unexplained discrepancy remains in the times.",
+            "zh": "時間仍有未解不一致。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A POSSIBLE RECONCILIATION STILL REQUIRES SUPPORTING EVIDENCE": {
+    "word": "a possible reconciliation still requires supporting evidence",
+    "pos": "phr.",
+    "meaning": "可能調和仍需支持證據",
+    "example": "A possible reconciliation still requires supporting evidence.",
+    "exampleZh": "可能調和仍需支持證據。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可能調和仍需支持證據",
+        "examples": [
+          {
+            "en": "A possible reconciliation still requires supporting evidence.",
+            "zh": "可能調和仍需支持證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:CONJECTURE": {
+    "pos": "n.",
+    "meaning": "尚未充分證實的推測",
+    "example": "The account remains a conjecture.",
+    "exampleZh": "說明仍是推測。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "尚未充分證實的推測",
+        "examples": [
+          {
+            "en": "The account remains a conjecture.",
+            "zh": "說明仍是推測。"
+          }
+        ]
+      }
+    ],
+    "word": "conjecture"
+  },
+  "R7:OVERSIMPLIFY": {
+    "pos": "v.",
+    "meaning": "把複雜情況解釋得過於簡單",
+    "example": "The summary tends to oversimplify the sequence.",
+    "exampleZh": "摘要傾向過度簡化順序。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把複雜情況解釋得過於簡單",
+        "examples": [
+          {
+            "en": "The summary tends to oversimplify the sequence.",
+            "zh": "摘要傾向過度簡化順序。"
+          }
+        ]
+      }
+    ],
+    "word": "oversimplify"
   }
 }

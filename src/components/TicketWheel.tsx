@@ -10,7 +10,14 @@ import { keepFocus } from './keepFocus';
 
 // 獎勵轉盤：破第 5、10、15、20 關（第一次）後出現。結果在按下「轉！」的瞬間就決定並存檔，
 // 動畫只是演出（重新整理也不能重抽）。轉的時候點一下可以跳過動畫
-const SEG = 360 / WHEEL_PRIZES.length;
+// 扇區大小照實際機率（避免以為每一格都是 20%）；太小的格子只放圖示，名稱看下方圖例
+const TOTAL = WHEEL_PRIZES.reduce((sum, p) => sum + p.weight, 0);
+const SECTORS = WHEEL_PRIZES.reduce<{ from: number; to: number }[]>((acc, p) => {
+  const from = acc.length ? acc[acc.length - 1].to : 0;
+  return [...acc, { from, to: from + (p.weight / TOTAL) * 360 }];
+}, []);
+const mid = (i: number) => (SECTORS[i].from + SECTORS[i].to) / 2;
+const width = (i: number) => SECTORS[i].to - SECTORS[i].from;
 const SPIN_MS = 3200;
 const BULBS = 16;
 
@@ -66,8 +73,8 @@ export default function TicketWheel() {
     setPrize(idx);
     setInstant(false);
     // 指針在正上方：轉到這一格的中間，多轉幾圈；格子內稍微偏一點比較像真的
-    const wobble = (Math.random() - 0.5) * SEG * 0.6;
-    const target = 360 * 5 + (360 - (idx * SEG + SEG / 2)) + wobble;
+    const wobble = (Math.random() - 0.5) * width(idx) * 0.6;
+    const target = 360 * 5 + (360 - mid(idx)) + wobble;
     setAngle(a => a - (a % 360) + target);
     setState('spinning');
     setTimer(window.setTimeout(() => land(idx), SPIN_MS));
@@ -83,7 +90,8 @@ export default function TicketWheel() {
   const won = prize >= 0 ? WHEEL_PRIZES[prize] : null;
   const toTen = Math.max(0, TEN_PULL - tickets);
   const style = { '--angle': `${angle}deg`, '--spin-ms': instant ? '0ms' : `${SPIN_MS}ms` } as CSSProperties;
-  const gradient = `conic-gradient(${WHEEL_PRIZES.map((p, i) => `${p.color} ${i * SEG}deg ${(i + 1) * SEG}deg`).join(', ')})`;
+  // 每格之間留一條深色分隔線
+  const gradient = `conic-gradient(${WHEEL_PRIZES.map((p, i) => `#101127 ${SECTORS[i].from}deg ${SECTORS[i].from + 1.4}deg, ${p.color} ${SECTORS[i].from + 1.4}deg ${SECTORS[i].to}deg`).join(', ')})`;
 
   return (
     <div className="wheel-overlay" role="dialog" aria-label="獎勵轉盤">
@@ -98,14 +106,17 @@ export default function TicketWheel() {
           <span className="wheel-pointer" aria-hidden />
           <div className="wheel" style={{ ...style, background: gradient }}>
             {WHEEL_PRIZES.map((p, i) => (
-              <span key={p.id} className="wheel-label" style={{ '--a': `${i * SEG + SEG / 2}deg` } as CSSProperties}>
+              <span key={p.id} className="wheel-label" style={{ '--a': `${mid(i)}deg` } as CSSProperties}>
                 {/* 下半圈的字翻過來，停下時不會是倒的 */}
-                <span className={i * SEG + SEG / 2 > 90 && i * SEG + SEG / 2 < 270 ? 'wheel-text is-flip' : 'wheel-text'}><b>{p.icon}</b>{p.label}</span>
+                <span className={mid(i) > 90 && mid(i) < 270 ? 'wheel-text is-flip' : 'wheel-text'}><b>{p.icon}</b>{width(i) >= 40 && p.label}</span>
               </span>
             ))}
           </div>
           <span className="wheel-hub" aria-hidden>★</span>
         </div>
+        <ul className="wheel-legend">
+          {WHEEL_PRIZES.map(p => <li key={p.id}><i style={{ background: p.color }} />{p.icon} {p.id === 'none' ? `銘謝惠顧（🪙${p.gold}）` : p.label} <small>{Math.round((p.weight / TOTAL) * 100)}%</small></li>)}
+        </ul>
         <div className="wheel-bottom">
           {state === 'done' && won ? (
             <div className={`wheel-result ${won.id === 'none' ? '' : 'is-win'}`}>

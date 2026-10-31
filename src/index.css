@@ -95,7 +95,7 @@ button { font: inherit; color: inherit; }
   box-shadow: 0 0 0 2px var(--line), 0 10px 0 rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
-.is-map .game-canvas { max-width: max(320px, calc((100dvh - 250px) * 5 / 3)); }
+.is-map .game-canvas { max-width: max(320px, calc((100dvh - 330px) * 5 / 3)); } /* 下方操作區約 320px：1366×768 不用捲動就能開始主線 */
 .is-battle .game-canvas { max-width: min(860px, calc(48dvh * 5 / 3)); }
 
 @media (min-width: 1000px) and (orientation: landscape) {
@@ -778,8 +778,11 @@ button { font: inherit; color: inherit; }
 .member-name { font-family: var(--font-ui); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .member-hp { height: 7px; border: 2px solid var(--ink); background: var(--bg); }
 .member-hp span { display: block; height: 100%; background: var(--slot-color, var(--good)); transition: width 0.2s, background 0.2s; }
-/* 血條用出手順序的顏色；剩不到 30% 轉紅提醒 */
-.member-hp.is-low span { background: #ff5d6c; }
+/* 血條用出手順序的顏色；剩不到 30% 不改顏色（保留順序識別），改成閃爍的警示圖示 */
+.member-hp { position: relative; }
+.member-hp.is-low::after { content: '!'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; display: grid; place-items: center; background: #ff5d6c; color: #101127; font: 700 9px/1 var(--font-num); animation: hp-warn 0.8s steps(1) infinite; }
+@keyframes hp-warn { 50% { opacity: 0.2; } }
+html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .member-energy { display: flex; align-items: center; gap: 3px; }
 .member-energy i { width: 8px; height: 8px; border: 2px solid var(--ink); background: var(--bg); }
 .member-energy i.on { background: var(--accent); }
@@ -1341,23 +1344,9 @@ button { font: inherit; color: inherit; }
   0%, 100% { box-shadow: 0 0 0 rgba(255, 205, 75, 0); }
   50% { box-shadow: 0 0 18px rgba(255, 205, 75, 0.55); }
 }
-.next-step {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  border: 2px dashed var(--accent);
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--accent) 10%, var(--panel));
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 15px;
-  text-align: left;
-  cursor: pointer;
-}
+.next-step { display: flex; align-items: center; gap: 8px; width: 100%; padding: 4px 10px; border: 0; border-left: 4px solid var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--panel)); color: var(--text); font-family: var(--font-body); font-size: 14px; text-align: left; cursor: pointer; }
 .next-step:hover { background: color-mix(in srgb, var(--accent) 20%, var(--panel)); }
-.next-step small { display: block; color: var(--accent); font-size: 12px; font-weight: 700; }
-.next-step-icon { font-size: 24px; }
+.next-step small { color: var(--accent); font-size: 12px; font-weight: 700; }
 
 /* 手機：主要入口固定在畫面底部 */
 @media (max-width: 560px) {
@@ -1712,7 +1701,6 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .wheel-stage { position: relative; width: min(280px, 74vw); aspect-ratio: 1; margin: 18px auto 12px; }
 /* 轉盤本體：深色外框＋金框，格子之間有分隔線 */
 .wheel { position: absolute; inset: 24px; border-radius: 50%; border: 5px solid #101127; box-shadow: 0 0 0 4px #ffd15c, 0 0 0 9px #101127; transform: rotate(var(--angle)); transition: transform var(--spin-ms) cubic-bezier(0.15, 0.7, 0.12, 1); }
-.wheel::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(from 0deg, #101127 0deg 1.6deg, transparent 1.6deg 72deg); pointer-events: none; }
 .wheel-label { position: absolute; z-index: 1; left: 50%; top: 50%; width: 80px; margin-left: -40px; display: flex; flex-direction: column; align-items: center; font-family: var(--font-ui); font-size: 0.74rem; color: #fff; text-shadow: 2px 0 0 #101127, -2px 0 0 #101127, 0 2px 0 #101127, 0 -2px 0 #101127; transform: rotate(var(--a)) translateY(max(-64px, -16vw)) translateY(-50%); }
 .wheel-label b { font-size: 1.25rem; text-shadow: none; }
 .wheel-text { display: flex; flex-direction: column; align-items: center; }
@@ -1730,6 +1718,9 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .wheel-hub { position: absolute; z-index: 3; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; display: grid; place-items: center; background: #ffd15c; color: #5a3b00; font-size: 1.2rem; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); filter: drop-shadow(0 0 0 #101127); }
 .wheel-hub::before { content: ''; position: absolute; inset: 4px; z-index: -1; background: #ffe58a; clip-path: inherit; }
 /* 下方：高度固定，轉之前與結果切換時版面不跳 */
+.wheel-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 10px; margin: 0 0 6px; padding: 0; list-style: none; font-size: 12px; color: #a9b0ce; }
+.wheel-legend i { display: inline-block; width: 8px; height: 8px; margin-right: 4px; box-shadow: 0 0 0 2px #101127; vertical-align: middle; }
+.wheel-legend small { color: #ffd15c; }
 .wheel-bottom { position: relative; min-height: 118px; display: flex; flex-direction: column; justify-content: center; }
 .wheel-actions { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .wheel-go { min-width: 160px; min-height: 46px; font-size: 1.1rem; }
@@ -1837,3 +1828,20 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
 /* 處決後的追擊加成題 */
 .bonus-offer { margin: 6px 0; border-color: #ffd15c; color: #ffd15c; }
 .bonus-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 6px 0; padding: 6px 10px; border: 2px solid #ffd15c; background: color-mix(in srgb, #ffd15c 12%, #202448); font-size: 14px; }
+
+/* 地圖下方第二列：小按鈕一列（第二十一輪 E4） */
+.quick-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.today-chip.is-adventure { border-color: #ffd15c; color: #ffd15c; font-weight: 700; }
+.today-chip.is-placement { border-color: #7fe8ff; }
+.today-chip.is-wheel { border-color: #ff5af0; }
+@media (max-width: 560px) { .quick-row .today-chip { flex: 1 1 30%; justify-content: center; } }
+/* 副本與挑戰視窗：兩欄卡片（手機一欄） */
+.adventure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 600px) { .adventure-grid { grid-template-columns: 1fr; } }
+.adventure-card { display: flex; flex-direction: column; gap: 4px; padding: 12px; border: 2px solid #101127; background: #30365f; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06); }
+.adventure-card h3 { margin: 0; font-size: 16px; color: #f1f0f8; }
+.adventure-card p { margin: 0; font-size: 13px; }
+.adventure-reward { color: #ffd15c; }
+.adventure-card .btn { align-self: flex-start; margin-top: 4px; min-height: 40px; }
+.adventure-card.is-boss { border-color: #8f2a3a; }
+.adventure-card.is-golden { border-color: #ffd15c; background: color-mix(in srgb, #ffd15c 10%, #30365f); }

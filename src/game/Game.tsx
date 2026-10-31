@@ -7,6 +7,7 @@ import BattleHUD from '../components/BattleHUD';
 import MapToolbar from '../components/MapToolbar';
 import SettingsModal from '../components/SettingsModal';
 import StoryLogModal from '../components/StoryLogModal';
+import AdventureModal from '../components/AdventureModal';
 import TutorialModal from '../components/TutorialModal';
 import ShopModal from '../components/ShopModal';
 import HeroModal from '../components/HeroModal';
@@ -190,6 +191,7 @@ export default function Game() {
       {inBattle ? <BattleHUD /> : <MapLevelBar />}
       {modal === 'settings' && <SettingsModal />}
       {modal === 'storyLog' && <StoryLogModal />}
+      {modal === 'adventure' && <AdventureModal />}
       {modal === 'tutorial' && <TutorialModal />}
       {modal === 'shop' && <ShopModal />}
       {modal === 'heroes' && <HeroModal />}

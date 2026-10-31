@@ -1,4 +1,2037 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "boarding pass",
+      "options": [
+        "A. 行李標籤",
+        "B. 登機證",
+        "C. 護照",
+        "D. 車票"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：boarding pass。意思是「登機證」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "luggage claim",
+      "options": [
+        "A. 售票處",
+        "B. 登機門",
+        "C. 行李提領處",
+        "D. 候機室"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：luggage claim。意思是「行李提領處」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "platform three",
+      "options": [
+        "A. 第三月台",
+        "B. 三號出口",
+        "C. 三樓",
+        "D. 三號車廂"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：platform three。意思是「第三月台」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "delayed flight",
+      "options": [
+        "A. 準時的火車",
+        "B. 取消的會議",
+        "C. 客滿的巴士",
+        "D. 延誤的航班"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：delayed flight。意思是「延誤的航班」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The train will arrive in five minutes.",
+      "options": [
+        "A. 火車已經離開了五分鐘。",
+        "B. 我等火車等了五分鐘。",
+        "C. 火車還要五個小時才到。",
+        "D. 火車將在五分鐘後抵達。"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：The train will arrive in five minutes. 意思是「火車將在五分鐘後抵達。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You must show your passport at the gate.",
+      "options": [
+        "A. 你可以在登機門買護照。",
+        "B. 你必須在登機門出示護照。",
+        "C. 你的護照遺失在登機門。",
+        "D. 你不應該在登機門拿出護照。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：You must show your passport at the gate. 意思是「你必須在登機門出示護照。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "May I see your ticket and passport, please?",
+      "options": [
+        "A. Yes, here they are.",
+        "B. It is at two o'clock.",
+        "C. I will go to the station.",
+        "D. No, it is not my bag."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：May I see your ticket and passport, please?（請讓我看一下你的車票和護照好嗎？）適合的回應是 A：Yes, here they are.（好的，在這裡。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "menu, please",
+      "options": [
+        "A. 請給我菜單",
+        "B. 請給我帳單",
+        "C. 請給我水",
+        "D. 請給我收據"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：menu, please。意思是「請給我菜單」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "credit card",
+      "options": [
+        "A. 提款卡",
+        "B. 現金",
+        "C. 信用卡",
+        "D. 貴賓卡"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：credit card。意思是「信用卡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "a table for two",
+      "options": [
+        "A. 兩張椅子",
+        "B. 兩點營業",
+        "C. 兩人份餐點",
+        "D. 兩人桌"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：a table for two。意思是「兩人桌」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "sold out",
+      "options": [
+        "A. 賣完",
+        "B. 大拍賣",
+        "C. 新上市",
+        "D. 營業中"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：sold out。意思是「賣完」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I usually have a sandwich for lunch.",
+      "options": [
+        "A. 我今天午餐吃得很飽。",
+        "B. 我午餐通常吃三明治。",
+        "C. 我從不在午餐吃三明治。",
+        "D. 我總是忘記吃午餐。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：I usually have a sandwich for lunch. 意思是「我午餐通常吃三明治。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You can try this shirt on in the fitting room.",
+      "options": [
+        "A. 這裡不能試穿這件襯衫。",
+        "B. 你應該買這件襯衫。",
+        "C. 你可以在試衣間試穿這件襯衫。",
+        "D. 試衣間在襯衫區旁邊。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：You can try this shirt on in the fitting room. 意思是「你可以在試衣間試穿這件襯衫。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "leave a message",
+      "options": [
+        "A. 寫信",
+        "B. 離開",
+        "C. 休息",
+        "D. 留言"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：leave a message。意思是「留言」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "make an appointment",
+      "options": [
+        "A. 取消會議",
+        "B. 安排工作",
+        "C. 預約",
+        "D. 遲到"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：make an appointment。意思是「預約」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "call back later",
+      "options": [
+        "A. 稍後回電",
+        "B. 明天再來",
+        "C. 已經打過",
+        "D. 不要回撥"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：call back later。意思是「稍後回電」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "confirm the booking",
+      "options": [
+        "A. 取消預訂",
+        "B. 更改時間",
+        "C. 確認訂位",
+        "D. 支付訂金"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：confirm the booking。意思是「確認訂位」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I will call you back this afternoon.",
+      "options": [
+        "A. 我明天會再打給你。",
+        "B. 我今天下午會回電給你。",
+        "C. 請在下午打電話給我。",
+        "D. 我下午通常不接電話。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：I will call you back this afternoon. 意思是「我今天下午會回電給你。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She is not at her desk right now.",
+      "options": [
+        "A. 她的桌子不在這裡。",
+        "B. 她正在找她的桌子。",
+        "C. 她現在不在座位上。",
+        "D. 她現在很忙。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：She is not at her desk right now. 意思是「她現在不在座位上。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Hi, this is John. Please call me when you get this message.",
+      "options": [
+        "A. I will call him back soon.",
+        "B. He always calls me at night.",
+        "C. The message is too short.",
+        "D. I got a new phone yesterday."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：Hi, this is John. Please call me when you get this message.（嗨，我是約翰。收到這則留言請回電。）適合的回應是 A：I will call him back soon.（我會盡快回電給他。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "heavy rain",
+      "options": [
+        "A. 豪雨",
+        "B. 濃霧",
+        "C. 暴風雪",
+        "D. 冰雹"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：heavy rain。意思是「豪雨」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "sunny day",
+      "options": [
+        "A. 晴天",
+        "B. 雨天",
+        "C. 陰天",
+        "D. 颱風天"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：sunny day。意思是「晴天」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "strong wind",
+      "options": [
+        "A. 微風",
+        "B. 強風",
+        "C. 大雨",
+        "D. 打雷"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：strong wind。意思是「強風」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "temperature drop",
+      "options": [
+        "A. 氣溫上升",
+        "B. 氣溫不變",
+        "C. 氣溫測量",
+        "D. 氣溫下降"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：temperature drop。意思是「氣溫下降」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "It is going to rain tomorrow.",
+      "options": [
+        "A. 昨天下了雨。",
+        "B. 今天正在下雨。",
+        "C. 明天將會下雨。",
+        "D. 明天不會下雨。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：It is going to rain tomorrow. 意思是「明天將會下雨。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You must wear a coat because it is cold.",
+      "options": [
+        "A. 你可以脫掉外套，因為不冷。",
+        "B. 因為很冷，你必須穿件外套。",
+        "C. 雖然很冷，但你不必穿外套。",
+        "D. 你應該去買一件新外套。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：You must wear a coat because it is cold. 意思是「因為很冷，你必須穿件外套。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What will the weather be like this weekend?",
+      "options": [
+        "A. I like the weather here.",
+        "B. We are going to a park.",
+        "C. The weekend is over.",
+        "D. It will be hot and sunny."
+      ],
+      "ans": "D",
+      "explain": "聽力原文：What will the weather be like this weekend?（這個週末天氣會怎麼樣？）適合的回應是 D：It will be hot and sunny.（會很熱且晴朗。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "You should take an umbrella with you.",
+      "options": [
+        "A. Thanks, I will.",
+        "B. It is a nice umbrella.",
+        "C. I never take it back.",
+        "D. The sun is shining."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：You should take an umbrella with you.（你應該隨身帶把傘。）適合的回應是 A：Thanks, I will.（謝謝，我會的。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "sports day",
+      "options": [
+        "A. 畢業典禮",
+        "B. 園遊會",
+        "C. 運動會",
+        "D. 音樂會"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：sports day。意思是「運動會」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "final exam",
+      "options": [
+        "A. 期中考",
+        "B. 隨堂測驗",
+        "C. 入學考",
+        "D. 期末考"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：final exam。意思是「期末考」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "school trip",
+      "options": [
+        "A. 暑假",
+        "B. 校外教學",
+        "C. 留學",
+        "D. 補習班"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：school trip。意思是「校外教學」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "cancel the event",
+      "options": [
+        "A. 參加活動",
+        "B. 舉辦活動",
+        "C. 延期活動",
+        "D. 取消活動"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：cancel the event。意思是「取消活動」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The class will start at nine o'clock.",
+      "options": [
+        "A. 課程已經在九點結束。",
+        "B. 課程將在九點開始。",
+        "C. 九點鐘沒有課程。",
+        "D. 學生必須在九點前到。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：The class will start at nine o'clock. 意思是「課程將在九點開始。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Students must finish the homework by Friday.",
+      "options": [
+        "A. 學生必須在星期五前完成作業。",
+        "B. 學生可以在星期五寫作業。",
+        "C. 星期五會有很多作業。",
+        "D. 學生星期五不用寫作業。"
+      ],
+      "ans": "A",
+      "explain": "聽力原文：Students must finish the homework by Friday. 意思是「學生必須在星期五前完成作業。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "When are we going to visit the museum?",
+      "options": [
+        "A. It is a very big museum.",
+        "B. We should go by bus.",
+        "C. Next Thursday morning.",
+        "D. I always visit it alone."
+      ],
+      "ans": "C",
+      "explain": "聽力原文：When are we going to visit the museum?（我們什麼時候要去參觀博物館？）適合的回應是 C：Next Thursday morning.（下週四早上。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can you help me with this math problem?",
+      "options": [
+        "A. The math class is fun.",
+        "B. Sure, let me see it.",
+        "C. I have to go to school.",
+        "D. No, it is not a problem."
+      ],
+      "ans": "B",
+      "explain": "聽力原文：Can you help me with this math problem?（你能幫我解這道數學題嗎？）適合的回應是 B：Sure, let me see it.（沒問題，讓我看看。）"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】含有未來式 going to 的句子",
+      "options": [
+        "A. going",
+        "B. go",
+        "C. will",
+        "D. went"
+      ],
+      "ans": "A",
+      "explain": "be going to 表示未來的計畫。空格前有 am，後面有 to，因此填入 going。will 後面直接加原形動詞，不加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】含有 must 的句子",
+      "options": [
+        "A. can",
+        "B. must",
+        "C. might",
+        "D. may"
+      ],
+      "ans": "B",
+      "explain": "must 表示「必須」，是強烈的義務或規定。騎機車戴安全帽是規定，故選 must。can 僅表示「可以」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】含有 never 的句子",
+      "options": [
+        "A. always",
+        "B. usually",
+        "C. never",
+        "D. often"
+      ],
+      "ans": "C",
+      "explain": "後半句提到經理「總是（always）提早五分鐘到」，代表她「從不」遲到。never 意為從不。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 reserve 的句子",
+      "options": [
+        "A. happen",
+        "B. promise",
+        "C. reserve",
+        "D. guess"
+      ],
+      "ans": "C",
+      "explain": "reserve 意為「預訂」。句意為「如果您想在連假期間旅遊，請提早『預訂』飯店房間。」"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】含有未來式 will 的句子",
+      "options": [
+        "A. is",
+        "B. will",
+        "C. going to",
+        "D. are"
+      ],
+      "ans": "B",
+      "explain": "I think... 常用來表達對未來的預測，配合 will 加上原形動詞 be。若要用 going to，前面必須有 is，即 is going to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】含有 have to 的句子",
+      "options": [
+        "A. have to",
+        "B. can",
+        "C. may",
+        "D. used to"
+      ],
+      "ans": "A",
+      "explain": "have to 表示「必須」。句意：「我們『必須』在下午五點前完成報告，否則老闆會生氣。」"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 discount 的句子",
+      "options": [
+        "A. ticket",
+        "B. discount",
+        "C. receipt",
+        "D. menu"
+      ],
+      "ans": "B",
+      "explain": "discount 意為「折扣」。20% discount 相當於打八折。其他選項：ticket（票）、receipt（收據）、menu（菜單）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】含有 often 的句子",
+      "options": [
+        "A. never",
+        "B. hardly",
+        "C. seldom",
+        "D. often"
+      ],
+      "ans": "D",
+      "explain": "often 意為「經常」。為了慶祝週末，我們「經常」在星期五晚上外出用晚餐。其他三個選項皆為否定或半否定詞（從不、幾乎不）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 passport 的句子",
+      "options": [
+        "A. notebook",
+        "B. passport",
+        "C. dictionary",
+        "D. umbrella"
+      ],
+      "ans": "B",
+      "explain": "passport 意為「護照」。搭飛機出國必須攜帶護照，符合後文「否則你無法飛往日本」的語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】含有 should 的句子",
+      "options": [
+        "A. should",
+        "B. might",
+        "C. shouldn't",
+        "D. cannot"
+      ],
+      "ans": "A",
+      "explain": "should 表示「應該」，用來給予建議。「如果你想保持健康，你『應該』多喝水。」"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 schedules 的句子",
+      "options": [
+        "A. planes",
+        "B. plates",
+        "C. sizes",
+        "D. schedules"
+      ],
+      "ans": "D",
+      "explain": "schedules 意為「行程表；時間表」。travel schedules 即為「旅遊行程」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】含有 rarely 的句子",
+      "options": [
+        "A. always",
+        "B. rarely",
+        "C. usually",
+        "D. frequently"
+      ],
+      "ans": "B",
+      "explain": "rarely 意為「很少；難得」。後文說「所以不要期待他會快速回覆」，代表他週末「很少」收信。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 delayed 的句子",
+      "options": [
+        "A. prepared",
+        "B. invited",
+        "C. delayed",
+        "D. expected"
+      ],
+      "ans": "C",
+      "explain": "delayed 意為「延遲；延誤」。因為強烈颱風，飛往東京的航班被延誤了。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】含有未來式 going to 的疑問句",
+      "options": [
+        "A. do",
+        "B. did",
+        "C. are",
+        "D. will"
+      ],
+      "ans": "C",
+      "explain": "此為 be going to 的疑問句結構。主詞是 you，配合的 be 動詞應為 are，故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】含有 must not 的句子",
+      "options": [
+        "A. don't have to",
+        "B. must not",
+        "C. couldn't",
+        "D. wouldn't"
+      ],
+      "ans": "B",
+      "explain": "must not 表示「禁止、絕對不可」。辦公大樓內抽菸是違反規定的，因此是強烈禁止。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 medicine 的句子",
+      "options": [
+        "A. message",
+        "B. machine",
+        "C. medicine",
+        "D. member"
+      ],
+      "ans": "C",
+      "explain": "medicine 意為「藥物」。醫生建議他飯後一天服用兩次這個藥物。take medicine 為固定搭配。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】含有 usually 的句子",
+      "options": [
+        "A. never",
+        "B. hardly",
+        "C. seldom",
+        "D. usually"
+      ],
+      "ans": "D",
+      "explain": "usually 意為「通常」。因為搭捷運是最快的方式，所以我「通常」搭捷運上班。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】含有 assistant 的句子",
+      "options": [
+        "A. customer",
+        "B. passenger",
+        "C. assistant",
+        "D. doctor"
+      ],
+      "ans": "C",
+      "explain": "assistant 意為「助理」。公司正在尋找新的助理來幫忙接聽電話。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【對話】含有 should 的對話",
+      "options": [
+        "A. can't",
+        "B. shouldn't",
+        "C. should",
+        "D. don't have to"
+      ],
+      "ans": "C",
+      "explain": "A 說頭痛，B 給予建議：「你『應該』休息一下並停止看電腦螢幕。」should 表建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】含有未來式 is going to 的句子",
+      "options": [
+        "A. going to",
+        "B. will to",
+        "C. is going",
+        "D. is going to"
+      ],
+      "ans": "D",
+      "explain": "表達未來計畫時用 be going to + 原形動詞。主詞 our company 是單數，be 動詞用 is，後接 going to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【頻率副詞】含有 seldom 的句子",
+      "options": [
+        "A. always",
+        "B. usually",
+        "C. seldom",
+        "D. often"
+      ],
+      "ans": "C",
+      "explain": "seldom 意為「很少」。Sarah 想要保持健康體態，所以她「很少」吃速食。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】含有 customer 的句子",
+      "options": [
+        "A. passenger",
+        "B. patient",
+        "C. custom",
+        "D. customer"
+      ],
+      "ans": "D",
+      "explain": "customer service 意為「客服」。句意：「若您想更改訂單，請在線上聯繫我們的客服。」"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】含有 postponed 的句子",
+      "options": [
+        "A. canceled",
+        "B. postponed",
+        "C. attended",
+        "D. joined"
+      ],
+      "ans": "B",
+      "explain": "postpone 意為「延期」。對話提到會議改到「明天早上」，所以是被延期，而非取消 (canceled)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【情態動詞】含有 don't have to 的句子",
+      "options": [
+        "A. must not",
+        "B. don't have to",
+        "C. shouldn't",
+        "D. cannot"
+      ],
+      "ans": "B",
+      "explain": "don't have to 表示「不需要」。後文說 Wi-Fi 對所有房客都是免費的，所以「不需要」付費。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【頻率副詞】含有 hardly 的句子",
+      "options": [
+        "A. always",
+        "B. frequently",
+        "C. hardly",
+        "D. normally"
+      ],
+      "ans": "C",
+      "explain": "hardly 意為「幾乎不」。他非常忙於新專案，所以平日「幾乎沒有」時間看電視。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】含有 form 的句子",
+      "options": [
+        "A. firm",
+        "B. farm",
+        "C. form",
+        "D. frame"
+      ],
+      "ans": "C",
+      "explain": "application form 意為「申請表」。句意：「如果您想加入健身俱樂部，請填寫這份申請表。」"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】含有 have to 的句子",
+      "options": [
+        "A. can",
+        "B. may",
+        "C. used to",
+        "D. have to"
+      ],
+      "ans": "D",
+      "explain": "have to 表客觀事實的「必須」。B 回答還沒準備好出門，因為「必須」先整理行李。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】含有未來式 will 的條件句",
+      "options": [
+        "A. go to",
+        "B. is going",
+        "C. will",
+        "D. does"
+      ],
+      "ans": "C",
+      "explain": "在 if 引導的條件句中，主要子句常用未來式。My sister 將要前往歐洲，用 will travel。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】含有 quality 的句子",
+      "options": [
+        "A. quantity",
+        "B. quality",
+        "C. quarter",
+        "D. quiet"
+      ],
+      "ans": "B",
+      "explain": "quality 意為「品質」。這件冬季外套的「品質」很好，但對我來說有點貴。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】詢問頻率的回答",
+      "options": [
+        "A. two times",
+        "B. twice a week",
+        "C. for two weeks",
+        "D. since two weeks"
+      ],
+      "ans": "B",
+      "explain": "How often 詢問頻率。twice a week 表示「一週兩次」，是標準的頻率表達方式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】含有 screen 的句子",
+      "options": [
+        "A. scream",
+        "B. stream",
+        "C. street",
+        "D. screen"
+      ],
+      "ans": "D",
+      "explain": "screen 意為「螢幕」。我們需要一個更大的螢幕來向所有人展示簡報。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【情態動詞】含有 don't need to 的句子",
+      "options": [
+        "A. don't need to",
+        "B. must not",
+        "C. shouldn't to",
+        "D. cannot"
+      ],
+      "ans": "A",
+      "explain": "don't need to 意為「不需要」。既然昨天已經在網路上買好票了，就「不需要」擔心。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】職場消防演習郵件",
+      "options": [
+        "A. Take the elevator to the first floor.",
+        "B. Stay in the office and keep working.",
+        "C. Walk out of the building.",
+        "D. Call the fire department."
+      ],
+      "ans": "C",
+      "explain": "信中提到聽到警報時 must leave the building（必須離開建築物），且 do not use the elevator（不可使用電梯），因此選 (C) 走出建築物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】游泳池規定告示",
+      "options": [
+        "A. A 10-year-old boy.",
+        "B. A 15-year-old girl.",
+        "C. A child without a swimming cap.",
+        "D. A guest who didn't take a shower."
+      ],
+      "ans": "B",
+      "explain": "告示規定 12 歲以下兒童必須有大人陪同。因此 15 歲的女孩可以獨自游泳。所有人都要戴泳帽及沖澡，排除 (C) 和 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】綠茶促銷廣告",
+      "options": [
+        "A. It has a lot of sugar in it.",
+        "B. It is more expensive on Fridays.",
+        "C. You can get two for the price of one on Friday.",
+        "D. It will make you feel hot and tired."
+      ],
+      "ans": "C",
+      "explain": "廣告提到星期五 Buy one get one free（買一送一），也就是花一杯的錢可以拿到兩杯，符合選項 (C)。茶是無糖的（sugar-free）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】東京旅遊行程",
+      "options": [
+        "A. Resting in the hotel.",
+        "B. Seeing a famous mountain.",
+        "C. Buying gifts for friends.",
+        "D. Arriving at the airport."
+      ],
+      "ans": "B",
+      "explain": "行程第二天 (Day 2) 的計畫是 visit Mount Fuji（參觀富士山），即去看一座著名的山 (seeing a famous mountain)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】遲到通知簡訊",
+      "options": [
+        "A. He missed his bus to work.",
+        "B. He forgot about the meeting.",
+        "C. He is having breakfast with his kids.",
+        "D. He is taking his children to school."
+      ],
+      "ans": "D",
+      "explain": "簡訊中提到遲到的原因是 I have to drop my kids off at school（我必須載小孩去學校），符合選項 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】圖書館規定",
+      "options": [
+        "A. Drinking water.",
+        "B. Talking loudly on the phone.",
+        "C. Eating sandwiches.",
+        "D. Drinking coffee."
+      ],
+      "ans": "A",
+      "explain": "規定寫道 must not eat or drink... except for water（除水之外不可飲食），因此在圖書館內只允許喝水 (Drinking water)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】包裹配送郵件",
+      "options": [
+        "A. Go to the post office.",
+        "B. Stay home to get the package.",
+        "C. Send a package to a friend.",
+        "D. Pay for the delivery on Wednesday."
+      ],
+      "ans": "B",
+      "explain": "郵件要求客戶 please make sure someone is at home to receive it（請確保有人在家收件），因此星期二必須待在家裡等包裹。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】商業午餐菜單",
+      "options": [
+        "A. At 10 AM on Monday.",
+        "B. At 6 PM on Friday.",
+        "C. At noon on Wednesday.",
+        "D. At 1 PM on Saturday."
+      ],
+      "ans": "C",
+      "explain": "特餐供應時間為週一至週五的上午 11 點到下午 2 點。選項 (C) 星期三的中午 (at noon) 剛好在這個時段內。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】睡眠健康建議",
+      "options": [
+        "A. Drinking a lot of coffee in the evening.",
+        "B. Using a smartphone in bed.",
+        "C. Avoiding coffee in the late afternoon.",
+        "D. Reading a book after midnight."
+      ],
+      "ans": "C",
+      "explain": "建議中提到 you should not drink coffee... after 4 PM（下午四點後不該喝咖啡），即傍晚應避免喝咖啡 (Avoiding coffee)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】健身房休館公告",
+      "options": [
+        "A. This weekend.",
+        "B. Next Tuesday.",
+        "C. Every day at 6 AM.",
+        "D. Next Monday."
+      ],
+      "ans": "D",
+      "explain": "公告中明確指出 The company gym will be closed next Monday（公司健身房下週一將休館）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】日常通勤方式",
+      "options": [
+        "A. By bus.",
+        "B. By train.",
+        "C. On foot.",
+        "D. By car."
+      ],
+      "ans": "D",
+      "explain": "短文提到約翰通常搭公車，但「今天」因為下大雨 he is going to drive his car（他將要開車），故選 By car。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】尋找物品郵件",
+      "options": [
+        "A. Give him a ride to work.",
+        "B. Look for his keys in the office.",
+        "C. Clean his desk.",
+        "D. Buy a new car."
+      ],
+      "ans": "B",
+      "explain": "寄件人說找不到車鑰匙，可能留在辦公桌上，並問 Can you check for me?（妳能幫我查看嗎？），即請對方在辦公室找鑰匙。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：建議",
+      "ans": "ADVICE",
+      "speak": "advice"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：取消",
+      "ans": "CANCEL",
+      "speak": "cancel"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：延遲",
+      "ans": "DELAY",
+      "speak": "delay"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：票",
+      "ans": "TICKET",
+      "speak": "ticket"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：航班",
+      "ans": "FLIGHT",
+      "speak": "flight"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：會議",
+      "ans": "MEETING",
+      "speak": "meeting"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：行程",
+      "ans": "SCHEDULE",
+      "speak": "schedule"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：總是",
+      "ans": "ALWAYS",
+      "speak": "always"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：通常",
+      "ans": "USUALLY",
+      "speak": "usually"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：經常",
+      "ans": "OFTEN",
+      "speak": "often"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：從不",
+      "ans": "NEVER",
+      "speak": "never"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：未來",
+      "ans": "FUTURE",
+      "speak": "future"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：今晚",
+      "ans": "TONIGHT",
+      "speak": "tonight"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：應該去",
+      "ans": "SHOULD GO",
+      "speak": "should go"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：將要",
+      "ans": "GOING TO",
+      "speak": "going to"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：將會抵達",
+      "ans": "WILL ARRIVE",
+      "speak": "will arrive"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：我可以...嗎",
+      "ans": "CAN I",
+      "speak": "can i"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：我可以...嗎（較正式）",
+      "ans": "MAY I",
+      "speak": "may i"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：必須",
+      "ans": "HAVE TO",
+      "speak": "have to"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：訂房",
+      "ans": "BOOK A ROOM",
+      "speak": "book a room"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：稍後打電話",
+      "ans": "CALL LATER",
+      "speak": "call later"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：休息一下",
+      "ans": "TAKE A BREAK",
+      "speak": "take a break"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：刷卡付費",
+      "ans": "PAY BY CARD",
+      "speak": "pay by card"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：辦理入住",
+      "ans": "CHECK IN",
+      "speak": "check in"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你應該多休息",
+      "ans": "YOU SHOULD REST MORE",
+      "speak": "you should rest more"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她會打給你",
+      "ans": "SHE WILL CALL YOU",
+      "speak": "she will call you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我現在要走了",
+      "ans": "I AM GOING NOW",
+      "speak": "i am going now"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們經常工作到很晚",
+      "ans": "THEY OFTEN WORK LATE",
+      "speak": "they often work late"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他通常喝茶",
+      "ans": "HE USUALLY DRINKS TEA",
+      "speak": "he usually drinks tea"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你能幫我嗎",
+      "ans": "CAN YOU HELP ME",
+      "speak": "can you help me"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我必須工作",
+      "ans": "I HAVE TO WORK",
+      "speak": "i have to work"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們明天會開始",
+      "ans": "WE WILL START TOMORROW",
+      "speak": "we will start tomorrow"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你最好離開",
+      "ans": "YOU HAD BETTER LEAVE",
+      "speak": "you had better leave"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他從不遲到",
+      "ans": "HE IS NEVER LATE",
+      "speak": "he is never late"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們要回家了",
+      "ans": "THEY ARE GOING HOME",
+      "speak": "they are going home"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：接受",
+      "ans": "ACCEPT",
+      "speak": "accept"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A C C _ P T (接受)",
+      "ans": "E",
+      "speak": "accept"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N V I T _ (邀請)",
+      "ans": "E",
+      "speak": "invite"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M E S S _ G E (訊息)",
+      "ans": "A",
+      "speak": "message"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E P L _ (回覆)",
+      "ans": "Y",
+      "speak": "reply"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：原因",
+      "ans": "REASON",
+      "speak": "reason"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E A S _ N (原因)",
+      "ans": "O",
+      "speak": "reason"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：專案",
+      "ans": "PROJECT",
+      "speak": "project"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O J _ C T (專案)",
+      "ans": "E",
+      "speak": "project"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P A S S P _ R T (護照)",
+      "ans": "O",
+      "speak": "passport"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：決定",
+      "ans": "DECIDE",
+      "speak": "decide"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E C I D _ (決定)",
+      "ans": "E",
+      "speak": "decide"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R E P A R _ (準備)",
+      "ans": "E",
+      "speak": "prepare"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：拒絕",
+      "ans": "REFUSE",
+      "speak": "refuse"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R _ F U S _ (拒絕)",
+      "ans": "EE",
+      "speak": "refuse"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C _ N T _ C T (聯絡)",
+      "ans": "OA",
+      "speak": "contact"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：藉口",
+      "ans": "EXCUSE",
+      "speak": "excuse"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E X C _ S _ (藉口)",
+      "ans": "UE",
+      "speak": "excuse"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：很少",
+      "ans": "SELDOM",
+      "speak": "seldom"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ L D _ M (很少)",
+      "ans": "EO",
+      "speak": "seldom"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：幾乎不",
+      "ans": "HARDLY",
+      "speak": "hardly"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H _ R D L _ (幾乎不)",
+      "ans": "AY",
+      "speak": "hardly"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：顧客",
+      "ans": "CUSTOMER",
+      "speak": "customer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C _ S T O M _ R (顧客)",
+      "ans": "UE",
+      "speak": "customer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：L _ G G A G _ (行李)",
+      "ans": "UE",
+      "speak": "luggage"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：在國外",
+      "ans": "ABROAD",
+      "speak": "abroad"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A B R _ _ D (在國外)",
+      "ans": "OA",
+      "speak": "abroad"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：參加",
+      "ans": "ATTEND",
+      "speak": "attend"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A T T _ N _ (參加)",
+      "ans": "ED",
+      "speak": "attend"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S _ G G _ S T (建議)",
+      "ans": "UE",
+      "speak": "suggest"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Attention passengers, flight four zero two is going to board now.",
+      "options": [
+        "A. We should go to the gate.",
+        "B. The board is too small.",
+        "C. I never fly to that city.",
+        "D. It is very expensive."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：Attention passengers, flight 402 is going to board now.（各位乘客請注意，402 航班現在準備登機了。）適合的回應是 A：We should go to the gate.（我們應該去登機門了。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are going to change the gate to number seven.",
+      "options": [
+        "A. 我們正在七號門等候。",
+        "B. 我們必須去買七號的票。",
+        "C. 我們將把登機門改到七號。",
+        "D. 登機門七號已經關閉了。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：We are going to change the gate to number seven. 意思是「我們將把登機門改到七號。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How often do the trains leave for the airport?",
+      "options": [
+        "A. They will leave tomorrow.",
+        "B. From platform two.",
+        "C. It takes an hour.",
+        "D. Every thirty minutes."
+      ],
+      "ans": "D",
+      "explain": "聽力原文：How often do the trains leave for the airport?（開往機場的火車多久發一班？）適合的回應是 D：Every thirty minutes.（每三十分鐘一班。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How would you like to pay?",
+      "options": [
+        "A. By cash, please.",
+        "B. I like it very much.",
+        "C. It costs ten dollars.",
+        "D. I am going to buy it."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：How would you like to pay?（您想怎麼付款？）適合的回應是 A：By cash, please.（請用現金。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You should keep the receipt for a refund.",
+      "options": [
+        "A. 你必須退還這張收據。",
+        "B. 你應該保留收據以便退款。",
+        "C. 收到退款後請給收據。",
+        "D. 你不能用收據換退款。"
+      ],
+      "ans": "B",
+      "explain": "聽力原文：You should keep the receipt for a refund. 意思是「你應該保留收據以便退款。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Could you bring us some more water?",
+      "options": [
+        "A. The water is very cold.",
+        "B. Certainly, right away.",
+        "C. I brought my own bag.",
+        "D. We must leave right now."
+      ],
+      "ans": "B",
+      "explain": "聽力原文：Could you bring us some more water?（能給我們再拿些水來嗎？）適合的回應是 B：Certainly, right away.（好的，馬上來。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I would like to book a double room for two nights.",
+      "options": [
+        "A. It is a good book to read.",
+        "B. We have one available.",
+        "C. You should read it twice.",
+        "D. Two nights are too long."
+      ],
+      "ans": "B",
+      "explain": "聽力原文：I would like to book a double room for two nights.（我想訂一間雙人房，住兩晚。）適合的回應是 B：We have one available.（我們還有一間空房。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You have to press one to speak to the operator.",
+      "options": [
+        "A. 你必須先跟總機說話才能按一。",
+        "B. 你可以按一留言給總機。",
+        "C. 總機將會按一與你通話。",
+        "D. 你必須按一與總機通話。"
+      ],
+      "ans": "D",
+      "explain": "聽力原文：You have to press one to speak to the operator. 意思是「你必須按一與總機通話。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can we change our meeting to next Tuesday?",
+      "options": [
+        "A. The meeting was yesterday.",
+        "B. We met at the new office.",
+        "C. Yes, that works for me.",
+        "D. No, I am not Tuesday."
+      ],
+      "ans": "C",
+      "explain": "聽力原文：Can we change our meeting to next Tuesday?（我們可以把會議改到下週二嗎？）適合的回應是 C：Yes, that works for me.（可以，那個時間我行。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The snow will stop in the afternoon.",
+      "options": [
+        "A. 雪在下午開始下。",
+        "B. 下午不會有雪。",
+        "C. 雪將在下午停。",
+        "D. 下午雪會變大。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：The snow will stop in the afternoon. 意思是「雪將在下午停。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "It rarely snows in this part of the country.",
+      "options": [
+        "A. Yes, the winters are usually mild.",
+        "B. It is snowing heavily right now.",
+        "C. I want to see the whole country.",
+        "D. The snow is very beautiful."
+      ],
+      "ans": "A",
+      "explain": "聽力原文：It rarely snows in this part of the country.（這個地區很少下雪。）適合的回應是 A：Yes, the winters are usually mild.（是的，這裡的冬天通常很溫和。）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You should always listen to the teacher carefully.",
+      "options": [
+        "A. 你可以不用聽老師的話。",
+        "B. 老師總是仔細地聽我們說。",
+        "C. 你應該總是仔細聽老師說話。",
+        "D. 你有時候應該聽老師的話。"
+      ],
+      "ans": "C",
+      "explain": "聽力原文：You should always listen to the teacher carefully. 意思是「你應該總是仔細聽老師說話。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Don't forget to sign up for the guitar club.",
+      "options": [
+        "A. The guitar is broken.",
+        "B. I never sing in public.",
+        "C. The club is closed now.",
+        "D. I will do it today."
+      ],
+      "ans": "D",
+      "explain": "聽力原文：Don't forget to sign up for the guitar club.（別忘了報名吉他社。）適合的回應是 D：I will do it today.（我今天就會去報名。）"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：經理",
+      "ans": "MANAGER",
+      "speak": "manager"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：明天",
+      "ans": "TOMORROW",
+      "speak": "tomorrow"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：最好...",
+      "ans": "HAD BETTER",
+      "speak": "had better"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：必須完成",
+      "ans": "MUST FINISH",
+      "speak": "must finish"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：辦理退房",
+      "ans": "CHECK OUT",
+      "speak": "check out"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們現在必須離開",
+      "ans": "WE MUST LEAVE NOW",
+      "speak": "we must leave now"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我可以進來嗎",
+      "ans": "MAY I COME IN",
+      "speak": "may i come in"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你能幫我們嗎",
+      "ans": "COULD YOU HELP US",
+      "speak": "could you help us"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我有時走路回家",
+      "ans": "I SOMETIMES WALK HOME",
+      "speak": "i sometimes walk home"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：或許",
+      "ans": "PROBABLY",
+      "speak": "probably"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ B _ B L _ (或許)",
+      "ans": "OAY",
+      "speak": "probably"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O L L _ _ G U _ (同事)",
+      "ans": "EAE",
+      "speak": "colleague"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：乘客",
+      "ans": "PASSENGER",
+      "speak": "passenger"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ S S _ N G _ R (乘客)",
+      "ans": "AEE",
+      "speak": "passenger"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：收據",
+      "ans": "RECEIPT",
+      "speak": "receipt"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ C _ _ P T (收據)",
+      "ans": "EEI",
+      "speak": "receipt"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：預訂",
+      "ans": "RESERVE",
+      "speak": "reserve"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ S _ R V _ (預訂)",
+      "ans": "EEE",
+      "speak": "reserve"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：要求",
+      "ans": "REQUIRE",
+      "speak": "require"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ Q U _ R _ (要求)",
+      "ans": "EIE",
+      "speak": "require"
+    }
+  ]
 }

@@ -53,7 +53,7 @@ Mac 相容性：遊戲本身、測試、`chat-batch.ts`、`review-batch.ts` 都�
 npm install
 npm run dev                  # 本地預覽 http://localhost:5173/englearningapp/
 npx tsc -b                   # 型別檢查
-npx vitest run               # 測試（目前 269 個全過）
+npx vitest run               # 測試（目前 277 個全過）
 npx eslint src --quiet
 npm run validate:questions   # 題庫格式檢查
 ```
@@ -109,6 +109,8 @@ npm run validate:questions   # 題庫格式檢查
 **2026-10-31 第五批（Mac）**：戰鬥平衡 v0.9——正確率 90%、不穿裝備就能過關；裝備與轉職是讓英文差一點的玩家也能過的加分。怪物基準、行動條、後期首領、炎魔炸彈、沉默君王封印都有調整，模擬結果在 `docs/STAGE_PLAN.md` 第 12 節。
 
 **2026-10-31 第六批（Mac，進行中）**：發音不再打斷（Mac Chrome 打斷發音會讓整個瀏覽器卡死）、口說辨識持續收音、獎勵轉盤（第 13 節）、英雄畫面重設計（第 14 節）、等級 200 與主角換職業（第 15 節 P0）。專武、副本獎勵、前置區域「初始逃亡之地」與故事強化（第 15、16 節）還沒做。
+
+**2026-10-31 第七批（Mac）**：劇情對話框改版（底部像素對話框、打字機）、A2／A2+ 劇本與 BOSS 登場台詞、前置區域「失語邊境」（關卡代號 `PRE`，1 張 × 10 關，新手教學都搬過去，A1 改成正式規則、推薦 Lv5～20，存檔 v19 `prologueDone`）、自適應程度測驗 v1.6（`placementTest.ts`、診斷題 `diag.json` 九級各 22 題、跳級臨時戰力 `placement`）。ChatGPT 是同事：題庫、劇本、規格都外包給它（附件上傳專案文件讓它掌握狀況），Claude 審核整合。
 
 ## 下一步
 **完整任務清單在 `docs/TASKS.md`（2026-10-31 整理），照清單做、做完打勾。** 以下是較早的紀錄：

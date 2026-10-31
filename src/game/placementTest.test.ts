@@ -60,8 +60,16 @@ describe('自適應程度測驗 v1.6', () => {
     expect(s.result).toBe(2);
   });
 
-  it('真的題庫：A1、A2 已經有診斷題', () => {
-    expect(maxTestable()).toBeGreaterThanOrEqual(2);
+  it('真的題庫：九級診斷題都有，全對測到 C2、亂答落在 Pre-A1～A1', () => {
+    expect(maxTestable()).toBe(9);
+    let s = startPlacement(4, { rand: seeded(2), now: 0, voice: true });
+    for (let i = 0; i < 60 && s.phase !== 'done'; i++) s = answerPlacement(s, true, { rand: seeded(i), now: 0 });
+    expect(s.result).toBe(9);
+    expect(answeredCount(s)).toBeLessThanOrEqual(36);
+    const guess = seeded(9);
+    let g = startPlacement(4, { rand: guess, now: 0, voice: true });
+    for (let i = 0; i < 60 && g.phase !== 'done'; i++) g = answerPlacement(g, guess() < 0.25, { rand: guess, now: 0 });
+    expect(g.result).toBeLessThanOrEqual(1);
   });
 });
 

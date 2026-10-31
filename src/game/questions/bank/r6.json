@@ -3929,6 +3929,402 @@
       "ans": "NTA",
       "speak": "sanctuary",
       "vocabId": "R6:SANCTUARY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an acquired taste",
+      "options": [
+        "A. 只能透過購買取得的食材",
+        "B. 已經失去的味覺能力",
+        "C. 起初未必喜歡、逐漸才會欣賞的味道或事物",
+        "D. 一吃就必定人人喜歡的味道"
+      ],
+      "ans": "C",
+      "explain": "acquired taste 強調透過接觸逐漸欣賞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "take it with a pinch of salt",
+      "options": [
+        "A. 把那份食物徹底醃漬",
+        "B. 照字面完全相信那個說法",
+        "C. 先拒絕聽對方說完",
+        "D. 對那個說法持保留態度"
+      ],
+      "ans": "D",
+      "explain": "此慣用語指不要全盤照單全收。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "cater for different tastes",
+      "options": [
+        "A. 照顧不同喜好",
+        "B. 要求所有人改成同一口味",
+        "C. 測量每種食材的重量",
+        "D. 只向熟悉的人供餐"
+      ],
+      "ans": "A",
+      "explain": "cater for 表滿足需求，tastes 在此指喜好。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "not up to standard",
+      "options": [
+        "A. 比預期高出很多",
+        "B. 已被訂為唯一標準",
+        "C. 沒有使用標準尺寸餐具",
+        "D. 沒有達到應有水準"
+      ],
+      "ans": "D",
+      "explain": "up to standard 指達到品質要求，不是餐具尺寸。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The portions are smaller than they used to be, but the price includes a side dish now.",
+      "options": [
+        "A. 份量比以前小，不過現在價格包含一份配菜。",
+        "B. 價格變低而且主菜份量變大。",
+        "C. 配菜仍須額外付費且未改變。",
+        "D. 說話者只比較餐具大小。"
+      ],
+      "ans": "A",
+      "explain": "比較同時包含主菜縮小與配菜納入，不能漏一半。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I booked for eight, meaning eight people, not eight o’clock.",
+      "options": [
+        "A. 我訂了八張各坐一人的桌子。",
+        "B. 我訂的是八人位，不是八點鐘。",
+        "C. 我把八人預訂取消改成八點。",
+        "D. 我沒有提供人數也沒有提供時間。"
+      ],
+      "ans": "B",
+      "explain": "後句修正 for eight 的歧義；沒有說確切用餐時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The service was slow rather than unfriendly; the staff apologised and kept us informed.",
+      "options": [
+        "A. 服務速度慢，不是態度不友善；員工有道歉並說明情況。",
+        "B. 員工故意不理會我們且沒有說明。",
+        "C. 餐點很快送來，但服務態度差。",
+        "D. 說話者認為道歉代表完全沒有延誤。"
+      ],
+      "ans": "A",
+      "explain": "rather than 區分速度與態度，後句支持友善解讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would recommend it for a relaxed lunch, but perhaps not for a meeting where you need to hear every word.",
+      "options": [
+        "A. 推薦只適用於不需要吃飯的人。",
+        "B. 適合輕鬆午餐，但可能不適合需要聽清每句話的會議。",
+        "C. 說話者認為餐廳不適合任何午餐。",
+        "D. 餐廳已保證會議全程安靜。"
+      ],
+      "ans": "B",
+      "explain": "按使用目的作條件式推薦，暗示聲音環境限制。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The new menu gives vegetarians more choice, even though it has fewer dishes overall.",
+      "options": [
+        "A. 素食菜全部取消而其他菜增加。",
+        "B. 總菜數與素食菜數被明確說成相同。",
+        "C. 新菜單總菜數減少，素食者可選的卻增加。",
+        "D. 所有客人的選擇都必然同時增加。"
+      ],
+      "ans": "C",
+      "explain": "總量與特定分類可以反向變化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】The café can ___ guests who do not eat dairy products. Which expression means to provide suitable food for them?",
+      "options": [
+        "A. look into",
+        "B. break with",
+        "C. cater for",
+        "D. count on"
+      ],
+      "ans": "C",
+      "explain": "cater for 表示滿足某群人的飲食或其他需求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】It was the sauce, rather than the vegetables, ___ tasted unusually sweet.",
+      "options": [
+        "A. what",
+        "B. whose",
+        "C. where",
+        "D. that"
+      ],
+      "ans": "D",
+      "explain": "It was ... that ... 是強調句；強調主詞 the sauce。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The waiter says, We can move your table, although the window seats are all reserved. What is offered?",
+      "options": [
+        "A. A different table, without a promise of a window seat.",
+        "B. The particular window seat the customer requested.",
+        "C. A cancellation of someone else’s reservation.",
+        "D. A refund instead of any possibility of moving."
+      ],
+      "ans": "A",
+      "explain": "可以換桌，但靠窗座已預訂，不能把換桌解讀成保證靠窗。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The menu says that most dishes can be made without nuts. Which question remains unanswered?",
+      "options": [
+        "A. Whether any dish can be made without nuts.",
+        "B. Whether every dish normally contains nuts, as explicitly stated.",
+        "C. Whether the menu offers food at all.",
+        "D. Which dishes cannot be adapted in that way?"
+      ],
+      "ans": "D",
+      "explain": "most 不是 all，仍須確認例外；也未交代交叉接觸等安全資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The meal was filling without being heavy. What does the reviewer mean?",
+      "options": [
+        "A. It satisfied hunger without leaving an unpleasant feeling of fullness.",
+        "B. Its weight was measured but nobody ate it.",
+        "C. It provided little food and left the reviewer hungry.",
+        "D. It was difficult to carry from the kitchen."
+      ],
+      "ans": "A",
+      "explain": "filling 指有飽足感，heavy 在餐食語境指吃後負擔重。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I would prefer ___ the bill separately rather than ask everyone to transfer money later.",
+      "options": [
+        "A. having pay",
+        "B. to pay",
+        "C. paying to",
+        "D. that paying"
+      ],
+      "ans": "B",
+      "explain": "would prefer to do ... rather than do ...；兩個動作是付帳與事後轉帳。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語氣】The soup could do with a little more salt. Which response fits the strength of this comment?",
+      "options": [
+        "A. The speaker suggests a small improvement in seasoning.",
+        "B. The speaker says the soup cannot be eaten under any circumstances.",
+        "C. The speaker asks for all the salt to be removed.",
+        "D. The speaker praises the seasoning as already ideal."
+      ],
+      "ans": "A",
+      "explain": "could do with 是委婉表示需要；a little 限定調整幅度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A reviewer praises a restaurant for using local produce. The owner points out that two imported ingredients are essential to its best-known dish. Which revision is most accurate?",
+      "options": [
+        "A. Local produce cannot be used in a restaurant’s best-known dish.",
+        "B. The restaurant makes substantial use of local produce but does not use it exclusively.",
+        "C. The restaurant sources every ingredient locally.",
+        "D. The presence of two imports disproves any use of local produce."
+      ],
+      "ans": "B",
+      "explain": "保留主要趨勢並承認例外；不用全有或全無的推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The host says, There is plenty, but do leave some for the people coming later. How do the two parts work together?",
+      "options": [
+        "A. The host confirms that everyone has already eaten.",
+        "B. The host promises unlimited supplies regardless of portions.",
+        "C. The host offers reassurance while asking guests to consider later arrivals.",
+        "D. The host withdraws the invitation to eat anything."
+      ],
+      "ans": "C",
+      "explain": "plenty 給安心感，但後句仍要求分配時顧及他人。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：熱情接待客人的態度與做法",
+      "ans": "HOSPITALITY",
+      "speak": "hospitality",
+      "vocabId": "R6:HOSPITALITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：用來增添食物滋味的調味料",
+      "ans": "SEASONING",
+      "speak": "seasoning",
+      "vocabId": "R6:SEASONING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：相當大的一份食物",
+      "ans": "A GENEROUS HELPING",
+      "speak": "a generous helping",
+      "vocabId": "R6:A GENEROUS HELPING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：剛製作好的食物",
+      "ans": "FRESHLY PREPARED FOOD",
+      "speak": "freshly prepared food",
+      "vocabId": "R6:FRESHLY PREPARED FOOD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：價格包含一份小配菜",
+      "ans": "THE PRICE INCLUDES A SMALL SIDE DISH",
+      "speak": "the price includes a small side dish",
+      "vocabId": "R6:THE PRICE INCLUDES A SMALL SIDE DISH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：傳統食譜會隨地方而不同",
+      "ans": "TRADITIONAL RECIPES CAN VARY FROM PLACE TO PLACE",
+      "speak": "traditional recipes can vary from place to place",
+      "vocabId": "R6:TRADITIONAL RECIPES CAN VARY FROM PLACE TO PLACE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：想吃東西的食慾（A 開頭，8 個字母）",
+      "ans": "APPETITE",
+      "speak": "appetite",
+      "vocabId": "R6:APPETITE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：製作某道食物所用的一種食材（I 開頭，10 個字母）",
+      "ans": "INGREDIENT",
+      "speak": "ingredient",
+      "vocabId": "R6:INGREDIENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：滋味豐富而好吃的（F 開頭，10 個字母；以英式拼字提示，亦接受美式拼字）",
+      "ans": "FLAVOURFUL",
+      "speak": "flavourful",
+      "spellAccept": [
+        "FLAVORFUL"
+      ],
+      "vocabId": "R6:FLAVOURFUL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C U I _ I N E (某地區或文化的烹飪風格)",
+      "ans": "S",
+      "speak": "cuisine",
+      "vocabId": "R6:CUISINE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E S _ R V A _ I O N (預先訂妥座位或房間的安排)",
+      "ans": "ET",
+      "speak": "reservation",
+      "vocabId": "R6:RESERVATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ R _ I _ N (分給一人食用的一份食物)",
+      "ans": "OTO",
+      "speak": "portion",
+      "vocabId": "R6:PORTION"
     }
   ],
   "boss": [
@@ -5241,6 +5637,137 @@
       "ans": "GLN",
       "speak": "vigilance",
       "vocabId": "R6:VIGILANCE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "good value for money",
+      "options": [
+        "A. 品質完全不受價格影響",
+        "B. 以所付價格而言很划算",
+        "C. 價格必定是全市最低",
+        "D. 任何人都不用付錢"
+      ],
+      "ans": "B",
+      "explain": "value for money 評估價格與所得價值，不保證最低價。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We do have a quiet room, though it is upstairs and there is no lift.",
+      "options": [
+        "A. 所有房間都一樣吵且無法選擇。",
+        "B. 說話者保證每位客人都能輕鬆進入。",
+        "C. 確實有安靜房間，但在樓上且沒有電梯。",
+        "D. 安靜房間位於有電梯的地面層。"
+      ],
+      "ans": "C",
+      "explain": "承認優點並指出可及性限制，不作個人能力推斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her review is enthusiastic about the cooking, less so about what she considers an unnecessarily formal atmosphere.",
+      "options": [
+        "A. 她完全否定料理但喜歡正式氣氛。",
+        "B. 她宣稱所有客人都厭惡正式餐廳。",
+        "C. 料理與氣氛都被她同樣熱烈稱讚。",
+        "D. 她很欣賞料理，對自己認為過度正式的氣氛則較不熱衷。"
+      ],
+      "ans": "D",
+      "explain": "less so 承接 enthusiastic，作程度較低的評價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which adjective describes food that tastes pleasantly of strong spices, rather than food with no noticeable flavour?",
+      "options": [
+        "A. bland",
+        "B. flavourful",
+        "C. tasteless",
+        "D. unseasoned"
+      ],
+      "ans": "B",
+      "explain": "flavourful 是有豐富滋味；其餘描述少味或未調味。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A restaurant offers a cheaper set menu only before six. A guest arrives at six thirty with a photograph of the offer showing its time limit. Why may the advertised price not apply?",
+      "options": [
+        "A. The restaurant has necessarily changed its menu.",
+        "B. The offer is restricted to customers without photographs.",
+        "C. The guest has arrived outside the stated period.",
+        "D. The photograph must have been altered."
+      ],
+      "ans": "C",
+      "explain": "時間條件已明示；超過時段可解釋不適用，不推測造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A menu describes a dish as traditional. The chef explains that the recipe varies between neighbouring villages. What does this suggest?",
+      "options": [
+        "A. The dish has no connection with any established practice.",
+        "B. One village must have copied a recipe incorrectly.",
+        "C. The chef has proved that all versions taste identical.",
+        "D. A tradition can contain variation rather than a single fixed recipe."
+      ],
+      "ans": "D",
+      "explain": "traditional 不必等於唯一不變版本；地方差異不自動否定傳統。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：取決於個人喜好的事",
+      "ans": "A MATTER OF TASTE",
+      "speak": "a matter of taste",
+      "vocabId": "R6:A MATTER OF TASTE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：服務慢但員工很友善",
+      "ans": "THE SERVICE WAS SLOW BUT THE STAFF WERE FRIENDLY",
+      "speak": "the service was slow but the staff were friendly",
+      "vocabId": "R6:THE SERVICE WAS SLOW BUT THE STAFF WERE FRIENDLY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：與主菜一起供應的配菜或佐食（A 開頭，13 個字母）",
+      "ans": "ACCOMPANIMENT",
+      "speak": "accompaniment",
+      "vocabId": "R6:ACCOMPANIMENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H O _ E _ A _ E (在家製作或依家庭方式製作的)",
+      "ans": "MMD",
+      "speak": "homemade",
+      "vocabId": "R6:HOMEMADE"
     }
   ]
 }

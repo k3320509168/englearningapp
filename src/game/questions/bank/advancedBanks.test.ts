@@ -48,6 +48,10 @@ for (const [region, bank, vocab] of [[6, r6, v6], [7, r7, v7], [8, r8, v8]] as c
           expect(checkQuizAnswer(fallback, fallback.ans)).toBe(true);
         } else {
           expect(checkTypedAnswer(q, q.ans)).toBe(true);
+          for (const variant of q.spellAccept ?? []) {
+            expect(checkTypedAnswer(q, variant)).toBe(true);
+            expect(checkQuizAnswer(q, variant)).toBe(true);
+          }
           expect(checkTypedAnswer(q, q.ans + 'Z')).toBe(false);
           expect(checkQuizAnswer(q, q.ans)).toBe(true);
           if (q.type === 'fill') {

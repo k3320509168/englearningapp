@@ -3929,6 +3929,399 @@
       "ans": "LEG",
       "speak": "allege",
       "vocabId": "R7:ALLEGE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a discerning palate",
+      "options": [
+        "A. 不能分辨任何味道的狀態",
+        "B. 用來擺放餐具的托盤",
+        "C. 能敏銳辨別食物滋味好壞的味覺判斷力",
+        "D. 只願接受甜食的飲食限制"
+      ],
+      "ans": "C",
+      "explain": "palate 在此比喻味覺辨別與品味。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "unpretentious cooking",
+      "options": [
+        "A. 故意製造神祕感的料理",
+        "B. 完全沒有調理過的食物",
+        "C. 僅為炫耀昂貴食材而做的菜",
+        "D. 不故作高雅的料理"
+      ],
+      "ans": "D",
+      "explain": "unpretentious 指樸實不裝腔，不等於未烹調。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "to whet the appetite",
+      "options": [
+        "A. 激起食慾或期待",
+        "B. 使所有食物泡濕",
+        "C. 徹底消除想吃的念頭",
+        "D. 把進餐時間一再延後"
+      ],
+      "ans": "A",
+      "explain": "whet 是激起；不是同音 wet 的弄濕。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a convivial atmosphere",
+      "options": [
+        "A. 要求全程沉默的氣氛",
+        "B. 讓人感到敵意的氣氛",
+        "C. 刻意保持距離的氣氛",
+        "D. 便於愉快交談共處的氣氛"
+      ],
+      "ans": "D",
+      "explain": "convivial 指友善歡聚，常用於用餐社交。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The menu is concise, but I would hesitate to call it limited: almost every choice feels distinct.",
+      "options": [
+        "A. 菜單精簡，但我不太會稱它選擇受限，因為各選項幾乎都具特色。",
+        "B. 菜單篇幅很長且每道菜都相同。",
+        "C. 說話者認為菜少必定沒有選擇。",
+        "D. 每個選項已被廚師刪除。"
+      ],
+      "ans": "A",
+      "explain": "區分 concise 的正面精簡與 limited 的負面不足。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What disappointed me was not the simplicity of the dish, but the lack of care with which it had been prepared.",
+      "options": [
+        "A. 失望只因菜名不夠長。",
+        "B. 令我失望的是製作欠用心，不是料理簡單。",
+        "C. 說話者要求每道菜都必須複雜。",
+        "D. 簡單料理已被明確評為做得用心。"
+      ],
+      "ans": "B",
+      "explain": "not ... but ... 確定批評對象為用心程度。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can see why the dish attracts attention, though I suspect its novelty contributes more to its appeal than its flavour does.",
+      "options": [
+        "A. 我理解它為何引人注意，但懷疑吸引力更多來自新奇而非滋味。",
+        "B. 說話者完全無法理解料理受到注意的原因。",
+        "C. 說話者認為吸引力完全來自熟悉的味道。",
+        "D. 說話者只在抱怨上菜時間。"
+      ],
+      "ans": "A",
+      "explain": "承認料理引人注意，同時比較新奇與滋味對吸引力的貢獻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The claim of authenticity seems less a description of a stable tradition than an invitation to accept the chef’s preferred version of it.",
+      "options": [
+        "A. 正宗一詞被解釋成食材重量。",
+        "B. 正宗的主張較像邀請接受主廚偏好的版本，而非描述固定傳統。",
+        "C. 主廚已證明只有一個從未改變的版本。",
+        "D. 說話者否定這道菜與任何傳統有關。"
+      ],
+      "ans": "B",
+      "explain": "less ... than ... 重新界定話語功能，不證明全無傳統。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "For all the talk of innovation, the most convincing dish was the one that seemed least anxious to announce its originality.",
+      "options": [
+        "A. 說話者認為原創菜一概不能成功。",
+        "B. 沒有任何人談到創新。",
+        "C. 雖然一直談創新，最有說服力的卻是最不急於宣示原創性的那道菜。",
+        "D. 最成功的菜靠反覆宣告創新取勝。"
+      ],
+      "ans": "C",
+      "explain": "For all 表儘管；批評刻意宣示，不一概反對原創。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which description praises a restaurant’s lack of pretension rather than its luxury?",
+      "options": [
+        "A. An exclusive venue whose grandeur dominates the experience.",
+        "B. A lavish setting with conspicuously expensive fittings.",
+        "C. An unassuming dining room with carefully cooked food.",
+        "D. An opulent room designed to impress visitors."
+      ],
+      "ans": "C",
+      "explain": "unassuming 表不擺架子；其餘著重豪華或排場。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Much as I ___ the chef’s inventiveness, I found the combinations unbalanced.",
+      "options": [
+        "A. am admiring of",
+        "B. have admiration",
+        "C. admiring",
+        "D. admire"
+      ],
+      "ans": "D",
+      "explain": "Much as I admire ... 是讓步，承認欣賞但保留另一評價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The reviewer calls the menu coherent rather than merely comprehensive. What is praised?",
+      "options": [
+        "A. The dishes form a considered whole, beyond offering a wide range.",
+        "B. The menu contains every dish the reviewer can name.",
+        "C. The descriptions are long enough to prevent any omission.",
+        "D. The dishes are unrelated but numerous."
+      ],
+      "ans": "A",
+      "explain": "coherent 強調整體有連貫安排；comprehensive 強調涵蓋廣。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A discerning diner is especially able to ___.",
+      "options": [
+        "A. consume unusually large portions",
+        "B. prepare meals without a recipe",
+        "C. avoid expressing any preference",
+        "D. notice and judge differences in quality"
+      ],
+      "ans": "D",
+      "explain": "discerning 指有敏銳辨別與判斷力，非食量或烹飪能力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A review calls the restaurant authentic because its décor resembles the reviewer’s childhood home. The chef questions whether appearance alone can establish culinary authenticity. What is challenged?",
+      "options": [
+        "A. The criterion used to move from a personal visual association to a judgement about the food.",
+        "B. The reviewer’s right to remember a childhood home.",
+        "C. The possibility that décor affects any dining experience.",
+        "D. The claim that the chef has personal memories of the same house."
+      ],
+      "ans": "A",
+      "explain": "檢視判準的適切性，不否定記憶本身或所有環境影響。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The dessert is restrained, though hardly austere. What balance is conveyed?",
+      "options": [
+        "A. It is plain precisely because restraint and austerity are identical.",
+        "B. It avoids excess without feeling severely plain.",
+        "C. It is elaborate to the point of overwhelming the meal.",
+        "D. It lacks any discernible flavour or pleasure."
+      ],
+      "ans": "B",
+      "explain": "restrained 不過度，hardly austere 否認嚴苛簡陋；兩者非同義。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The bread arrived warm; the soup, regrettably, did not. What is omitted after did not?",
+      "options": [
+        "A. arrive warm",
+        "B. arrive at all",
+        "C. taste of bread",
+        "D. regret the delay"
+      ],
+      "ans": "A",
+      "explain": "省略承接 arrived warm；不能自行推為湯完全沒上桌。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A restaurant reduces the number of courses but keeps the price unchanged. The chef says the change allows more attention to each dish. Which evaluation addresses the chef’s claim directly?",
+      "options": [
+        "A. Whether an unchanged price proves that the dishes are unchanged.",
+        "B. Whether the greater attention produces an improvement diners can perceive.",
+        "C. Whether a higher course count is always preferable regardless of quality.",
+        "D. Whether the chef has ever visited another restaurant."
+      ],
+      "ans": "B",
+      "explain": "主張連結減少菜數與提升品質，應檢查可感知改善。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The critic concedes that nostalgia informs her judgement without treating nostalgia as a sufficient defence of an indifferent meal. What is her position?",
+      "options": [
+        "A. Nostalgia has been entirely excluded from her response.",
+        "B. An indifferent meal is preferable whenever it evokes no memories.",
+        "C. Personal attachment matters but does not settle the assessment of quality.",
+        "D. Personal attachment renders all criticism of the meal illegitimate."
+      ],
+      "ans": "C",
+      "explain": "承認影響，但不把情感當充分辯護。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：使人愉快交談共處的",
+      "ans": "CONVIVIAL",
+      "speak": "convivial",
+      "vocabId": "R7:CONVIVIAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：事物的來源或出處",
+      "ans": "PROVENANCE",
+      "speak": "provenance",
+      "vocabId": "R7:PROVENANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：能區分細節而不一概而論的評價",
+      "ans": "A NUANCED APPRAISAL",
+      "speak": "a nuanced appraisal",
+      "vocabId": "R7:A NUANCED APPRAISAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：食用後仍留在口中的餘味",
+      "ans": "A LINGERING AFTERTASTE",
+      "speak": "a lingering aftertaste",
+      "vocabId": "R7:A LINGERING AFTERTASTE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：簡單不必意味欠缺用心",
+      "ans": "SIMPLICITY NEED NOT IMPLY A LACK OF CARE",
+      "speak": "simplicity need not imply a lack of care",
+      "vocabId": "R7:SIMPLICITY NEED NOT IMPLY A LACK OF CARE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：個人情感不能決定品質判斷",
+      "ans": "PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY",
+      "speak": "personal attachment does not settle a judgement of quality",
+      "vocabId": "R7:PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：能敏銳辨別並判斷品質的（D 開頭，10 個字母）",
+      "ans": "DISCERNING",
+      "speak": "discerning",
+      "vocabId": "R7:DISCERNING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：味道可口而容易接受的（P 開頭，9 個字母）",
+      "ans": "PALATABLE",
+      "speak": "palatable",
+      "vocabId": "R7:PALATABLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：樸實而不故作高雅的（U 開頭，13 個字母）",
+      "ans": "UNPRETENTIOUS",
+      "speak": "unpretentious",
+      "vocabId": "R7:UNPRETENTIOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A F T E R _ A S T E (食用後留在口中的餘味)",
+      "ans": "T",
+      "speak": "aftertaste",
+      "vocabId": "R7:AFTERTASTE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S A _ O _ R (慢慢品味而充分享受)",
+      "ans": "VU",
+      "speak": "savour",
+      "vocabId": "R7:SAVOUR"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O _ U _ E _ T (富麗堂皇而奢華的)",
+      "ans": "PLN",
+      "speak": "opulent",
+      "vocabId": "R7:OPULENT"
     }
   ],
   "boss": [
@@ -5241,6 +5634,137 @@
       "ans": "NTO",
       "speak": "sanction",
       "vocabId": "R7:SANCTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an exercise in restraint",
+      "options": [
+        "A. 拒絕作任何選擇的狀態",
+        "B. 展現克制與節制的做法",
+        "C. 只用來訓練肌力的運動",
+        "D. 完全放任各種效果的嘗試"
+      ],
+      "ans": "B",
+      "explain": "此處 exercise 指實踐展現，不必是體能訓練。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The surroundings are informal without making the service feel casual about the details.",
+      "options": [
+        "A. 服務細心已迫使餐廳採正式服裝。",
+        "B. 說話者把輕鬆與粗心視為相同。",
+        "C. 環境輕鬆，但服務沒有因此對細節隨便。",
+        "D. 員工因環境輕鬆而忽略所有細節。"
+      ],
+      "ans": "C",
+      "explain": "informal 與 casual about details 在此分別是輕鬆、草率。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hospitality never felt calculated, which is not to say that the staff had left anything to chance.",
+      "options": [
+        "A. 自然接待證明員工完全沒有計畫。",
+        "B. 周到準備被說成必然帶有操弄。",
+        "C. 員工已承認所有細節都出於運氣。",
+        "D. 接待沒有刻意算計感，但不表示員工毫無準備、任憑偶然。"
+      ],
+      "ans": "D",
+      "explain": "自然感與周密準備可共存；not to say 排除錯誤推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The restaurant does ___ excellent bread, even if the main courses are inconsistent.",
+      "options": [
+        "A. serving",
+        "B. serve",
+        "C. serves",
+        "D. served"
+      ],
+      "ans": "B",
+      "explain": "強調助動詞 does 後接原形；even if 引入保留。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I am not sure the elaborate explanation added as much to the meal as the staff hoped. Which reading best preserves the understatement?",
+      "options": [
+        "A. The staff made no attempt to explain anything.",
+        "B. The speaker is asking for a longer version of the explanation.",
+        "C. The explanation may have contributed less than intended.",
+        "D. The explanation certainly ruined every guest’s evening."
+      ],
+      "ans": "C",
+      "explain": "not sure ... as much 是委婉降低評價，沒有斷言全然破壞體驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The menu lists the origins of imported ingredients in detail but describes nearby suppliers simply as local. A reader wonders why one category receives explanation while the other is assumed to speak for itself. What is being examined?",
+      "options": [
+        "A. Proof that the imported ingredients are better.",
+        "B. Evidence that the nearby suppliers do not exist.",
+        "C. A requirement that every ingredient travel the same distance.",
+        "D. An uneven use of provenance as a persuasive cue."
+      ],
+      "ans": "D",
+      "explain": "provenance 來源被不對稱地用來說服；問題不是直接判優劣。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：不張揚的優雅",
+      "ans": "AN UNDERSTATED ELEGANCE",
+      "speak": "an understated elegance",
+      "vocabId": "R7:AN UNDERSTATED ELEGANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：仔細準備能讓接待顯得自然",
+      "ans": "CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS",
+      "speak": "careful preparation can make hospitality feel effortless",
+      "vocabId": "R7:CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：研究或欣賞美食與烹飪的活動領域（G 開頭，10 個字母）",
+      "ans": "GASTRONOMY",
+      "speak": "gastronomy",
+      "vocabId": "R7:GASTRONOMY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E _ E C _ A _ L E (味道極其美味的)",
+      "ans": "LTB",
+      "speak": "delectable",
+      "vocabId": "R7:DELECTABLE"
     }
   ]
 }

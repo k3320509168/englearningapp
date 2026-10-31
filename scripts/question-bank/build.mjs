@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 const dir='scripts/question-bank/sources';
 const regions=new Map([6,7,8].map(r=>[r,{normal:[],boss:[],vocab:{}}]));
 const letters='ABCD';
-const spellingVariants={PRIORITISE:['PRIORITIZE']};
+const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL']};
 for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
  for(const [r,d] of Object.entries(data)) {
@@ -35,7 +35,7 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   (d.lexicon??[]).forEach(register);
   (d.spells??[]).forEach((row,i)=>{
    const [ans,,meaning]=row;register(row);
-   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
+   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母${spellingVariants[ans]?'；以英式拼字提示，亦接受美式拼字':''}）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
   });
   (d.fills??[]).forEach((row,i)=>{
    const [word,,meaning]=row;register(row);const n=[1,2,3,3][i%4];

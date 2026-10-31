@@ -284,26 +284,11 @@
     "exampleZh": "便利不會自動使無限制收集變得合理。"
   },
   "PROVENANCE": {
+    "word": "provenance",
     "pos": "n.",
-    "meaning": "可追查的來源與沿革",
-    "example": "The archive records the provenance of each document.",
-    "exampleZh": "檔案庫記錄每份文件的來源與沿革。",
-    "senses": [
-      {
-        "pos": "n.",
-        "meaning": "可追查的來源與沿革",
-        "examples": [
-          {
-            "en": "The archive records the provenance of each document.",
-            "zh": "檔案庫記錄每份文件的來源與沿革。"
-          },
-          {
-            "en": "Uncertain provenance makes the image harder to verify.",
-            "zh": "來源不明讓影像更難查證。"
-          }
-        ]
-      }
-    ]
+    "meaning": "事物的來源或出處",
+    "example": "The menu explains the provenance of the cheese.",
+    "exampleZh": "菜單交代起司的來源。"
   },
   "OBSOLESCENCE": {
     "pos": "n.",
@@ -2545,6 +2530,321 @@
       }
     ]
   },
+  "CONVIVIAL": {
+    "word": "convivial",
+    "pos": "adj.",
+    "meaning": "使人愉快交談共處的",
+    "example": "The supper had a convivial atmosphere.",
+    "exampleZh": "晚餐氣氛歡洽。"
+  },
+  "A NUANCED APPRAISAL": {
+    "word": "a nuanced appraisal",
+    "pos": "phr.",
+    "meaning": "能區分細節而不一概而論的評價",
+    "example": "Her review offers a nuanced appraisal of the menu.",
+    "exampleZh": "她的評論細緻評估菜單。"
+  },
+  "AN UNDERSTATED ELEGANCE": {
+    "word": "an understated elegance",
+    "pos": "phr.",
+    "meaning": "不張揚的優雅",
+    "example": "The room has an understated elegance.",
+    "exampleZh": "房間帶著低調優雅。"
+  },
+  "A LINGERING AFTERTASTE": {
+    "word": "a lingering aftertaste",
+    "pos": "phr.",
+    "meaning": "食用後仍留在口中的餘味",
+    "example": "The sauce leaves a lingering aftertaste.",
+    "exampleZh": "醬汁留下持續餘味。"
+  },
+  "SIMPLICITY NEED NOT IMPLY A LACK OF CARE": {
+    "word": "simplicity need not imply a lack of care",
+    "pos": "phr.",
+    "meaning": "簡單不必意味欠缺用心",
+    "example": "Simplicity need not imply a lack of care.",
+    "exampleZh": "簡單不必意味欠缺用心。"
+  },
+  "PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY": {
+    "word": "personal attachment does not settle a judgement of quality",
+    "pos": "phr.",
+    "meaning": "個人情感不能決定品質判斷",
+    "example": "Personal attachment does not settle a judgement of quality.",
+    "exampleZh": "個人情感不能決定品質判斷。"
+  },
+  "CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS": {
+    "word": "careful preparation can make hospitality feel effortless",
+    "pos": "phr.",
+    "meaning": "仔細準備能讓接待顯得自然",
+    "example": "Careful preparation can make hospitality feel effortless.",
+    "exampleZh": "仔細準備能讓接待顯得自然。"
+  },
+  "A DISCERNING PALATE": {
+    "pos": "phr.",
+    "meaning": "能敏銳辨別食物滋味好壞的味覺判斷力",
+    "example": "She has a discerning palate.",
+    "exampleZh": "她有敏銳的味覺判斷力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能敏銳辨別食物滋味好壞的味覺判斷力",
+        "examples": [
+          {
+            "en": "She has a discerning palate.",
+            "zh": "她有敏銳的味覺判斷力。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNPRETENTIOUS COOKING": {
+    "pos": "phr.",
+    "meaning": "不故作高雅的料理",
+    "example": "They are known for unpretentious cooking.",
+    "exampleZh": "他們以樸實料理聞名。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不故作高雅的料理",
+        "examples": [
+          {
+            "en": "They are known for unpretentious cooking.",
+            "zh": "他們以樸實料理聞名。"
+          }
+        ]
+      }
+    ]
+  },
+  "TO WHET THE APPETITE": {
+    "pos": "phr.",
+    "meaning": "激起食慾或期待",
+    "example": "The small starter was intended to whet the appetite.",
+    "exampleZh": "小前菜旨在開胃。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "激起食慾或期待",
+        "examples": [
+          {
+            "en": "The small starter was intended to whet the appetite.",
+            "zh": "小前菜旨在開胃。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EXERCISE IN RESTRAINT": {
+    "pos": "phr.",
+    "meaning": "展現克制與節制的做法",
+    "example": "The presentation was an exercise in restraint.",
+    "exampleZh": "擺盤展現了節制。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "展現克制與節制的做法",
+        "examples": [
+          {
+            "en": "The presentation was an exercise in restraint.",
+            "zh": "擺盤展現了節制。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONVIVIAL ATMOSPHERE": {
+    "pos": "phr.",
+    "meaning": "便於愉快交談共處的氣氛",
+    "example": "The shared tables create a convivial atmosphere.",
+    "exampleZh": "共用桌營造歡聚氣氛。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "便於愉快交談共處的氣氛",
+        "examples": [
+          {
+            "en": "The shared tables create a convivial atmosphere.",
+            "zh": "共用桌營造歡聚氣氛。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISCERNING": {
+    "pos": "adj.",
+    "meaning": "能敏銳辨別並判斷品質的",
+    "example": "The café attracts discerning diners.",
+    "exampleZh": "咖啡館吸引有鑑賞力的食客。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能敏銳辨別並判斷品質的",
+        "examples": [
+          {
+            "en": "The café attracts discerning diners.",
+            "zh": "咖啡館吸引有鑑賞力的食客。"
+          },
+          {
+            "en": "A discerning reader notices the qualification in the review.",
+            "zh": "有辨別力的讀者會注意評論中的保留。"
+          }
+        ]
+      }
+    ]
+  },
+  "PALATABLE": {
+    "pos": "adj.",
+    "meaning": "味道可口而容易接受的",
+    "example": "The sauce made the dish more palatable.",
+    "exampleZh": "醬汁讓菜更可口。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "味道可口而容易接受的",
+        "examples": [
+          {
+            "en": "The sauce made the dish more palatable.",
+            "zh": "醬汁讓菜更可口。"
+          },
+          {
+            "en": "Palatable does not necessarily mean memorable.",
+            "zh": "可口不一定令人難忘。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNPRETENTIOUS": {
+    "pos": "adj.",
+    "meaning": "樸實而不故作高雅的",
+    "example": "The restaurant serves unpretentious food.",
+    "exampleZh": "餐廳供應樸實料理。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "樸實而不故作高雅的",
+        "examples": [
+          {
+            "en": "The restaurant serves unpretentious food.",
+            "zh": "餐廳供應樸實料理。"
+          },
+          {
+            "en": "An unpretentious style can still involve considerable skill.",
+            "zh": "樸實風格仍可能需要高超技巧。"
+          }
+        ]
+      }
+    ]
+  },
+  "GASTRONOMY": {
+    "pos": "n.",
+    "meaning": "研究或欣賞美食與烹飪的活動領域",
+    "example": "The festival explores regional gastronomy.",
+    "exampleZh": "節慶探索地方美食文化。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "研究或欣賞美食與烹飪的活動領域",
+        "examples": [
+          {
+            "en": "The festival explores regional gastronomy.",
+            "zh": "節慶探索地方美食文化。"
+          },
+          {
+            "en": "Gastronomy involves more than the price of a meal.",
+            "zh": "美食文化涉及的不只是餐價。"
+          }
+        ]
+      }
+    ]
+  },
+  "AFTERTASTE": {
+    "pos": "n.",
+    "meaning": "食用後留在口中的餘味",
+    "example": "The tea has a gentle aftertaste.",
+    "exampleZh": "茶有柔和餘味。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "食用後留在口中的餘味",
+        "examples": [
+          {
+            "en": "The tea has a gentle aftertaste.",
+            "zh": "茶有柔和餘味。"
+          },
+          {
+            "en": "A bitter aftertaste can linger after the cup is empty.",
+            "zh": "杯子空了仍可能留苦餘味。"
+          }
+        ]
+      }
+    ]
+  },
+  "SAVOUR": {
+    "pos": "v.",
+    "meaning": "慢慢品味而充分享受",
+    "example": "Take time to savour the soup.",
+    "exampleZh": "花點時間慢慢品湯。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "慢慢品味而充分享受",
+        "examples": [
+          {
+            "en": "Take time to savour the soup.",
+            "zh": "花點時間慢慢品湯。"
+          },
+          {
+            "en": "She paused to savour the last mouthful.",
+            "zh": "她停下來細品最後一口。"
+          }
+        ]
+      }
+    ]
+  },
+  "OPULENT": {
+    "pos": "adj.",
+    "meaning": "富麗堂皇而奢華的",
+    "example": "The dining room is opulent.",
+    "exampleZh": "餐廳富麗堂皇。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "富麗堂皇而奢華的",
+        "examples": [
+          {
+            "en": "The dining room is opulent.",
+            "zh": "餐廳富麗堂皇。"
+          },
+          {
+            "en": "An opulent setting does not guarantee attentive service.",
+            "zh": "豪華環境不保證服務周到。"
+          }
+        ]
+      }
+    ]
+  },
+  "DELECTABLE": {
+    "pos": "adj.",
+    "meaning": "味道極其美味的",
+    "example": "The small pastries were delectable.",
+    "exampleZh": "小糕點非常美味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "味道極其美味的",
+        "examples": [
+          {
+            "en": "The small pastries were delectable.",
+            "zh": "小糕點非常美味。"
+          },
+          {
+            "en": "A delectable dessert can be simple to prepare.",
+            "zh": "極美味的甜點也可以做法簡單。"
+          }
+        ]
+      }
+    ]
+  },
   "R7:CORROBORATION": {
     "pos": "n.",
     "meaning": "支持說法的獨立佐證",
@@ -4193,6 +4493,186 @@
     ],
     "word": "allege"
   },
+  "R7:CONVIVIAL": {
+    "word": "convivial",
+    "pos": "adj.",
+    "meaning": "使人愉快交談共處的",
+    "example": "The supper had a convivial atmosphere.",
+    "exampleZh": "晚餐氣氛歡洽。"
+  },
+  "R7:PROVENANCE": {
+    "word": "provenance",
+    "pos": "n.",
+    "meaning": "事物的來源或出處",
+    "example": "The menu explains the provenance of the cheese.",
+    "exampleZh": "菜單交代起司的來源。"
+  },
+  "R7:A NUANCED APPRAISAL": {
+    "word": "a nuanced appraisal",
+    "pos": "phr.",
+    "meaning": "能區分細節而不一概而論的評價",
+    "example": "Her review offers a nuanced appraisal of the menu.",
+    "exampleZh": "她的評論細緻評估菜單。"
+  },
+  "R7:A LINGERING AFTERTASTE": {
+    "word": "a lingering aftertaste",
+    "pos": "phr.",
+    "meaning": "食用後仍留在口中的餘味",
+    "example": "The sauce leaves a lingering aftertaste.",
+    "exampleZh": "醬汁留下持續餘味。"
+  },
+  "R7:SIMPLICITY NEED NOT IMPLY A LACK OF CARE": {
+    "word": "simplicity need not imply a lack of care",
+    "pos": "phr.",
+    "meaning": "簡單不必意味欠缺用心",
+    "example": "Simplicity need not imply a lack of care.",
+    "exampleZh": "簡單不必意味欠缺用心。"
+  },
+  "R7:PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY": {
+    "word": "personal attachment does not settle a judgement of quality",
+    "pos": "phr.",
+    "meaning": "個人情感不能決定品質判斷",
+    "example": "Personal attachment does not settle a judgement of quality.",
+    "exampleZh": "個人情感不能決定品質判斷。"
+  },
+  "R7:DISCERNING": {
+    "pos": "adj.",
+    "meaning": "能敏銳辨別並判斷品質的",
+    "example": "The café attracts discerning diners.",
+    "exampleZh": "咖啡館吸引有鑑賞力的食客。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能敏銳辨別並判斷品質的",
+        "examples": [
+          {
+            "en": "The café attracts discerning diners.",
+            "zh": "咖啡館吸引有鑑賞力的食客。"
+          },
+          {
+            "en": "A discerning reader notices the qualification in the review.",
+            "zh": "有辨別力的讀者會注意評論中的保留。"
+          }
+        ]
+      }
+    ],
+    "word": "discerning"
+  },
+  "R7:PALATABLE": {
+    "pos": "adj.",
+    "meaning": "味道可口而容易接受的",
+    "example": "The sauce made the dish more palatable.",
+    "exampleZh": "醬汁讓菜更可口。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "味道可口而容易接受的",
+        "examples": [
+          {
+            "en": "The sauce made the dish more palatable.",
+            "zh": "醬汁讓菜更可口。"
+          },
+          {
+            "en": "Palatable does not necessarily mean memorable.",
+            "zh": "可口不一定令人難忘。"
+          }
+        ]
+      }
+    ],
+    "word": "palatable"
+  },
+  "R7:UNPRETENTIOUS": {
+    "pos": "adj.",
+    "meaning": "樸實而不故作高雅的",
+    "example": "The restaurant serves unpretentious food.",
+    "exampleZh": "餐廳供應樸實料理。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "樸實而不故作高雅的",
+        "examples": [
+          {
+            "en": "The restaurant serves unpretentious food.",
+            "zh": "餐廳供應樸實料理。"
+          },
+          {
+            "en": "An unpretentious style can still involve considerable skill.",
+            "zh": "樸實風格仍可能需要高超技巧。"
+          }
+        ]
+      }
+    ],
+    "word": "unpretentious"
+  },
+  "R7:AFTERTASTE": {
+    "pos": "n.",
+    "meaning": "食用後留在口中的餘味",
+    "example": "The tea has a gentle aftertaste.",
+    "exampleZh": "茶有柔和餘味。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "食用後留在口中的餘味",
+        "examples": [
+          {
+            "en": "The tea has a gentle aftertaste.",
+            "zh": "茶有柔和餘味。"
+          },
+          {
+            "en": "A bitter aftertaste can linger after the cup is empty.",
+            "zh": "杯子空了仍可能留苦餘味。"
+          }
+        ]
+      }
+    ],
+    "word": "aftertaste"
+  },
+  "R7:SAVOUR": {
+    "pos": "v.",
+    "meaning": "慢慢品味而充分享受",
+    "example": "Take time to savour the soup.",
+    "exampleZh": "花點時間慢慢品湯。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "慢慢品味而充分享受",
+        "examples": [
+          {
+            "en": "Take time to savour the soup.",
+            "zh": "花點時間慢慢品湯。"
+          },
+          {
+            "en": "She paused to savour the last mouthful.",
+            "zh": "她停下來細品最後一口。"
+          }
+        ]
+      }
+    ],
+    "word": "savour"
+  },
+  "R7:OPULENT": {
+    "pos": "adj.",
+    "meaning": "富麗堂皇而奢華的",
+    "example": "The dining room is opulent.",
+    "exampleZh": "餐廳富麗堂皇。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "富麗堂皇而奢華的",
+        "examples": [
+          {
+            "en": "The dining room is opulent.",
+            "zh": "餐廳富麗堂皇。"
+          },
+          {
+            "en": "An opulent setting does not guarantee attentive service.",
+            "zh": "豪華環境不保證服務周到。"
+          }
+        ]
+      }
+    ],
+    "word": "opulent"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
@@ -4700,5 +5180,65 @@
       }
     ],
     "word": "sanction"
+  },
+  "R7:AN UNDERSTATED ELEGANCE": {
+    "word": "an understated elegance",
+    "pos": "phr.",
+    "meaning": "不張揚的優雅",
+    "example": "The room has an understated elegance.",
+    "exampleZh": "房間帶著低調優雅。"
+  },
+  "R7:CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS": {
+    "word": "careful preparation can make hospitality feel effortless",
+    "pos": "phr.",
+    "meaning": "仔細準備能讓接待顯得自然",
+    "example": "Careful preparation can make hospitality feel effortless.",
+    "exampleZh": "仔細準備能讓接待顯得自然。"
+  },
+  "R7:GASTRONOMY": {
+    "pos": "n.",
+    "meaning": "研究或欣賞美食與烹飪的活動領域",
+    "example": "The festival explores regional gastronomy.",
+    "exampleZh": "節慶探索地方美食文化。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "研究或欣賞美食與烹飪的活動領域",
+        "examples": [
+          {
+            "en": "The festival explores regional gastronomy.",
+            "zh": "節慶探索地方美食文化。"
+          },
+          {
+            "en": "Gastronomy involves more than the price of a meal.",
+            "zh": "美食文化涉及的不只是餐價。"
+          }
+        ]
+      }
+    ],
+    "word": "gastronomy"
+  },
+  "R7:DELECTABLE": {
+    "pos": "adj.",
+    "meaning": "味道極其美味的",
+    "example": "The small pastries were delectable.",
+    "exampleZh": "小糕點非常美味。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "味道極其美味的",
+        "examples": [
+          {
+            "en": "The small pastries were delectable.",
+            "zh": "小糕點非常美味。"
+          },
+          {
+            "en": "A delectable dessert can be simple to prepare.",
+            "zh": "極美味的甜點也可以做法簡單。"
+          }
+        ]
+      }
+    ],
+    "word": "delectable"
   }
 }

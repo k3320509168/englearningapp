@@ -5,12 +5,23 @@ import { resolve } from 'node:path';
 const dir='scripts/question-bank/sources';
 const regions=new Map([6,7,8].map(r=>[r,{normal:[],boss:[],vocab:{}}]));
 const letters='ABCD';
-const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL']};
+const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL'],RACKET:['RACQUET']};
 for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
  for(const [r,d] of Object.entries(data)) {
   const lexicalTargets=new Set((d.lexicon??[]).map(row=>row[0].toLowerCase()));
   const questions=[]; const dest=regions.get(Number(r)); if(!dest)throw Error(`Unknown region ${r}`);
+  // 跨情境複習同一詞時保留原例句；不以最後一批覆寫先前教學內容。
+  const addVocab=(key,entry)=>{
+   const previous=dest.vocab[key];
+   const senses=[];
+   for(const item of [previous,entry].filter(Boolean))for(const sense of item.senses??[{pos:item.pos,meaning:item.meaning,examples:[{en:item.example,zh:item.exampleZh}]}]) {
+    let target=senses.find(s=>s.pos===sense.pos&&s.meaning===sense.meaning);
+    if(!target){target={pos:sense.pos,meaning:sense.meaning,examples:[]};senses.push(target);}
+    for(const example of sense.examples)if(!target.examples.some(e=>e.en===example.en&&e.zh===example.zh))target.examples.push(example);
+   }
+   dest.vocab[key]={...previous,...entry,senses};
+  };
   for(const skill of ['reading','listening']) (d[skill]??[]).forEach(([difficulty,body,opts,explain],i)=>{
    const a=opts.split('|'); if(a.length!==4)throw Error(body);
    const at=(i+Math.floor(i/4)+sourceIndex)%4;const options=a.map((_,j)=>`${letters[j]}. ${a[(j-at+4)%4]}`);
@@ -20,22 +31,22 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
    const speak=text.toLowerCase();
    questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak});
    const examples=voiceExamples[text];
-   dest.vocab[text.toUpperCase()]={word:display??speak,pos:pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.')),meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'};
+   addVocab(text.toUpperCase(),{word:display??speak,pos:pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.')),meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'});
   });
   (d.words??[]).forEach(([ans,pos,meaning,example,exampleZh,secondExample,secondZh],i)=>{
    const speak=ans.toLowerCase();
    questions.push({type:'spell',skill:'writing',difficulty:i===0?1:i===1?2:3,desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak});
    const n=i<2?1:i===2?2:3;const positions=new Set(Array.from({length:n},(_,j)=>Math.floor((j+1)*ans.length/(n+1))));const chars=[...ans];
    questions.push({type:'fill',skill:'writing',difficulty:n,desc:`填空題：${chars.map((c,j)=>positions.has(j)?'_':c).join(' ')} (${meaning})`,ans:chars.filter((_,j)=>positions.has(j)).join(''),speak});
-   dest.vocab[ans]={pos,meaning,example,exampleZh,senses:[{pos,meaning,examples:[{en:example,zh:exampleZh},...(secondExample?[{en:secondExample,zh:secondZh}]:[])]}]};
+   addVocab(ans,{pos,meaning,example,exampleZh,senses:[{pos,meaning,examples:[{en:example,zh:exampleZh},...(secondExample?[{en:secondExample,zh:secondZh}]:[])]}]});
   });
   const register = ([ans,pos,meaning,example,exampleZh,secondExample,secondZh]) => {
-   dest.vocab[ans]={pos,meaning,example,exampleZh,senses:[{pos,meaning,examples:[{en:example,zh:exampleZh},...(secondExample?[{en:secondExample,zh:secondZh}]:[])]}]};
+   addVocab(ans,{pos,meaning,example,exampleZh,senses:[{pos,meaning,examples:[{en:example,zh:exampleZh},...(secondExample?[{en:secondExample,zh:secondZh}]:[])]}]});
   };
   (d.lexicon??[]).forEach(register);
   (d.spells??[]).forEach((row,i)=>{
    const [ans,,meaning]=row;register(row);
-   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母${spellingVariants[ans]?'；以英式拼字提示，亦接受美式拼字':''}）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
+   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母${spellingVariants[ans]?'；字數依主要拼字，亦接受標準變體':''}）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
   });
   (d.fills??[]).forEach((row,i)=>{
    const [word,,meaning]=row;register(row);const n=[1,2,3,3][i%4];

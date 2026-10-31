@@ -1,10 +1,21 @@
 {
   "CORROBORATION": {
+    "word": "corroboration",
     "pos": "n.",
-    "meaning": "支持說法的獨立佐證",
-    "example": "The allegation requires independent corroboration.",
-    "exampleZh": "這項指控需要獨立的佐證。",
+    "meaning": "支持某說法的其他佐證",
+    "example": "The sighting needs independent corroboration.",
+    "exampleZh": "目擊需要獨立佐證。",
     "senses": [
+      {
+        "pos": "n.",
+        "meaning": "佐證",
+        "examples": [
+          {
+            "en": "Corroboration.",
+            "zh": "佐證。"
+          }
+        ]
+      },
       {
         "pos": "n.",
         "meaning": "支持說法的獨立佐證",
@@ -14,15 +25,36 @@
             "zh": "這項指控需要獨立的佐證。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "支持某說法的其他佐證",
+        "examples": [
+          {
+            "en": "The sighting needs independent corroboration.",
+            "zh": "目擊需要獨立佐證。"
+          }
+        ]
       }
     ]
   },
   "EQUIVOCAL": {
+    "word": "equivocal",
     "pos": "adj.",
     "meaning": "說法或證據不明確而有多種解讀的",
     "example": "The evidence remained equivocal despite further analysis.",
     "exampleZh": "即使進一步分析，證據仍不明確。",
     "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "模稜兩可的",
+        "examples": [
+          {
+            "en": "Equivocal.",
+            "zh": "模稜兩可的。"
+          }
+        ]
+      },
       {
         "pos": "adj.",
         "meaning": "說法或證據不明確而有多種解讀的",
@@ -40,42 +72,114 @@
     "pos": "phr.",
     "meaning": "有所保留的支持",
     "example": "The committee offered a qualified endorsement of the plan.",
-    "exampleZh": "委員會對計畫給予有所保留的支持。"
+    "exampleZh": "委員會對計畫給予有所保留的支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有所保留的支持",
+        "examples": [
+          {
+            "en": "The committee offered a qualified endorsement of the plan.",
+            "zh": "委員會對計畫給予有所保留的支持。"
+          }
+        ]
+      }
+    ]
   },
   "IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
     "meaning": "歸根究柢",
     "example": "In the final analysis, the decision rests with the residents.",
-    "exampleZh": "歸根究柢，決定權在居民手中。"
+    "exampleZh": "歸根究柢，決定權在居民手中。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "歸根究柢",
+        "examples": [
+          {
+            "en": "In the final analysis, the decision rests with the residents.",
+            "zh": "歸根究柢，決定權在居民手中。"
+          }
+        ]
+      }
+    ]
   },
   "ON THE FACE OF IT": {
     "word": "on the face of it",
     "pos": "phr.",
     "meaning": "乍看之下",
     "example": "On the face of it, the two proposals seem similar.",
-    "exampleZh": "乍看之下，這兩項提案似乎很相近。"
+    "exampleZh": "乍看之下，這兩項提案似乎很相近。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "乍看之下",
+        "examples": [
+          {
+            "en": "On the face of it, the two proposals seem similar.",
+            "zh": "乍看之下，這兩項提案似乎很相近。"
+          }
+        ]
+      }
+    ]
   },
   "THE EVIDENCE WARRANTS A MORE NUANCED INTERPRETATION": {
     "word": "the evidence warrants a more nuanced interpretation",
     "pos": "phr.",
     "meaning": "證據值得更細緻的解讀",
     "example": "The evidence warrants a more nuanced interpretation.",
-    "exampleZh": "證據值得更細緻的解讀。"
+    "exampleZh": "證據值得更細緻的解讀。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "證據值得更細緻的解讀",
+        "examples": [
+          {
+            "en": "The evidence warrants a more nuanced interpretation.",
+            "zh": "證據值得更細緻的解讀。"
+          }
+        ]
+      }
+    ]
   },
   "WE MUST DISTINGUISH CORRELATION FROM CAUSATION": {
     "word": "we must distinguish correlation from causation",
     "pos": "phr.",
     "meaning": "我們必須區分相關與因果",
     "example": "We must distinguish correlation from causation.",
-    "exampleZh": "我們必須區分相關與因果。"
+    "exampleZh": "我們必須區分相關與因果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "我們必須區分相關與因果",
+        "examples": [
+          {
+            "en": "We must distinguish correlation from causation.",
+            "zh": "我們必須區分相關與因果。"
+          }
+        ]
+      }
+    ]
   },
   "THEIR APPARENT CONSENSUS CONCEALS FUNDAMENTAL DISAGREEMENTS": {
     "word": "their apparent consensus conceals fundamental disagreements",
     "pos": "phr.",
     "meaning": "他們表面的共識掩藏了根本分歧",
     "example": "Their apparent consensus conceals fundamental disagreements.",
-    "exampleZh": "他們表面的共識掩藏了根本分歧。"
+    "exampleZh": "他們表面的共識掩藏了根本分歧。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "他們表面的共識掩藏了根本分歧",
+        "examples": [
+          {
+            "en": "Their apparent consensus conceals fundamental disagreements.",
+            "zh": "他們表面的共識掩藏了根本分歧。"
+          }
+        ]
+      }
+    ]
   },
   "PREREQUISITE": {
     "pos": "n.",
@@ -114,11 +218,22 @@
     ]
   },
   "AMBIVALENCE": {
+    "word": "ambivalence",
     "pos": "n.",
     "meaning": "同時具有互相衝突的感受或態度",
     "example": "His ambivalence made an immediate decision difficult.",
     "exampleZh": "他的矛盾心情使他難以立即決定。",
     "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對同一事物同時抱有矛盾感受",
+        "examples": [
+          {
+            "en": "Her ambivalence about tourism reflects both pride and concern.",
+            "zh": "她對觀光既自豪又擔心，抱持矛盾感受。"
+          }
+        ]
+      },
       {
         "pos": "n.",
         "meaning": "同時具有互相衝突的感受或態度",
@@ -132,6 +247,7 @@
     ]
   },
   "APPROPRIATION": {
+    "word": "appropriation",
     "pos": "n.",
     "meaning": "未經適當同意而取用他人事物的行為",
     "example": "The artist questioned the commercial appropriation of the motif.",
@@ -141,6 +257,10 @@
         "pos": "n.",
         "meaning": "未經適當同意而取用他人事物的行為",
         "examples": [
+          {
+            "en": "The debate concerned the appropriation of local cultural symbols.",
+            "zh": "辯論涉及取用當地文化符號的問題。"
+          },
           {
             "en": "The artist questioned the commercial appropriation of the motif.",
             "zh": "藝術家質疑把該圖樣取作商業用途的行為。"
@@ -154,42 +274,114 @@
     "pos": "phr.",
     "meaning": "持續引起爭議的焦點",
     "example": "The closing time remains a bone of contention.",
-    "exampleZh": "關門時間仍是爭議焦點。"
+    "exampleZh": "關門時間仍是爭議焦點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "持續引起爭議的焦點",
+        "examples": [
+          {
+            "en": "The closing time remains a bone of contention.",
+            "zh": "關門時間仍是爭議焦點。"
+          }
+        ]
+      }
+    ]
   },
   "A SENSE OF OWNERSHIP": {
     "word": "a sense of ownership",
     "pos": "phr.",
     "meaning": "參與者對事務的認同與責任感",
     "example": "Residents developed a sense of ownership of the project.",
-    "exampleZh": "居民對計畫產生了認同與責任感。"
+    "exampleZh": "居民對計畫產生了認同與責任感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "參與者對事務的認同與責任感",
+        "examples": [
+          {
+            "en": "Residents developed a sense of ownership of the project.",
+            "zh": "居民對計畫產生了認同與責任感。"
+          }
+        ]
+      }
+    ]
   },
   "AN UNQUALIFIED ENDORSEMENT": {
     "word": "an unqualified endorsement",
     "pos": "phr.",
     "meaning": "毫無保留的支持",
     "example": "The review was far from an unqualified endorsement.",
-    "exampleZh": "這則評論遠稱不上毫無保留的支持。"
+    "exampleZh": "這則評論遠稱不上毫無保留的支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "毫無保留的支持",
+        "examples": [
+          {
+            "en": "The review was far from an unqualified endorsement.",
+            "zh": "這則評論遠稱不上毫無保留的支持。"
+          }
+        ]
+      }
+    ]
   },
   "THE GESTURE WAS WELL INTENTIONED BUT MISGUIDED": {
     "word": "the gesture was well intentioned but misguided",
     "pos": "phr.",
     "meaning": "這項舉動出於好意卻方向有誤",
     "example": "The gesture was well intentioned but misguided.",
-    "exampleZh": "這項舉動出於好意卻方向有誤。"
+    "exampleZh": "這項舉動出於好意卻方向有誤。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這項舉動出於好意卻方向有誤",
+        "examples": [
+          {
+            "en": "The gesture was well intentioned but misguided.",
+            "zh": "這項舉動出於好意卻方向有誤。"
+          }
+        ]
+      }
+    ]
   },
   "GENUINE COLLABORATION REQUIRES MORE THAN TOKEN CONSULTATION": {
     "word": "genuine collaboration requires more than token consultation",
     "pos": "phr.",
     "meaning": "真正的合作需要的不只是象徵性諮詢",
     "example": "Genuine collaboration requires more than token consultation.",
-    "exampleZh": "真正的合作需要的不只是象徵性諮詢。"
+    "exampleZh": "真正的合作需要的不只是象徵性諮詢。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真正的合作需要的不只是象徵性諮詢",
+        "examples": [
+          {
+            "en": "Genuine collaboration requires more than token consultation.",
+            "zh": "真正的合作需要的不只是象徵性諮詢。"
+          }
+        ]
+      }
+    ]
   },
   "LOCAL DISTINCTIVENESS CANNOT BE MANUFACTURED TO ORDER": {
     "word": "local distinctiveness cannot be manufactured to order",
     "pos": "phr.",
     "meaning": "在地特色無法按需求訂製",
     "example": "Local distinctiveness cannot be manufactured to order.",
-    "exampleZh": "在地特色無法按需求訂製。"
+    "exampleZh": "在地特色無法按需求訂製。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在地特色無法按需求訂製",
+        "examples": [
+          {
+            "en": "Local distinctiveness cannot be manufactured to order.",
+            "zh": "在地特色無法按需求訂製。"
+          }
+        ]
+      }
+    ]
   },
   "CONCILIATORY": {
     "pos": "adj.",
@@ -232,63 +424,185 @@
     "pos": "n.",
     "meaning": "不同系統能互相配合運作的特性",
     "example": "Interoperability allows the two services to exchange data.",
-    "exampleZh": "互通性讓兩項服務可以交換資料。"
+    "exampleZh": "互通性讓兩項服務可以交換資料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "不同系統能互相配合運作的特性",
+        "examples": [
+          {
+            "en": "Interoperability allows the two services to exchange data.",
+            "zh": "互通性讓兩項服務可以交換資料。"
+          }
+        ]
+      }
+    ]
   },
   "GRANULARITY": {
     "word": "granularity",
     "pos": "n.",
     "meaning": "資料或描述細分的程度",
     "example": "The report lacks the granularity needed for local decisions.",
-    "exampleZh": "報告缺少地方決策所需的細緻程度。"
+    "exampleZh": "報告缺少地方決策所需的細緻程度。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資料或描述細分的程度",
+        "examples": [
+          {
+            "en": "The report lacks the granularity needed for local decisions.",
+            "zh": "報告缺少地方決策所需的細緻程度。"
+          }
+        ]
+      }
+    ]
   },
   "A PROVISIONAL ASSESSMENT": {
     "word": "a provisional assessment",
     "pos": "phr.",
     "meaning": "仍可能修訂的暫定評估",
     "example": "This is a provisional assessment rather than a final verdict.",
-    "exampleZh": "這是暫定評估，而非最終判斷。"
+    "exampleZh": "這是暫定評估，而非最終判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可能修訂的暫定評估",
+        "examples": [
+          {
+            "en": "This is a provisional assessment rather than a final verdict.",
+            "zh": "這是暫定評估，而非最終判斷。"
+          }
+        ]
+      }
+    ]
   },
   "AN EMBEDDED VALUE JUDGEMENT": {
     "word": "an embedded value judgement",
     "pos": "phr.",
     "meaning": "內含於設計或說法中的價值判斷",
     "example": "The ranking reflects an embedded value judgement.",
-    "exampleZh": "這項排名反映了內含的價值判斷。"
+    "exampleZh": "這項排名反映了內含的價值判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內含於設計或說法中的價值判斷",
+        "examples": [
+          {
+            "en": "The ranking reflects an embedded value judgement.",
+            "zh": "這項排名反映了內含的價值判斷。"
+          }
+        ]
+      }
+    ]
   },
   "A MISLEADING IMPRESSION OF CERTAINTY": {
     "word": "a misleading impression of certainty",
     "pos": "phr.",
     "meaning": "讓人誤以為確定無疑的印象",
     "example": "Precise figures can create a misleading impression of certainty.",
-    "exampleZh": "精確數字可能讓人誤以為確定無疑。"
+    "exampleZh": "精確數字可能讓人誤以為確定無疑。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "讓人誤以為確定無疑的印象",
+        "examples": [
+          {
+            "en": "Precise figures can create a misleading impression of certainty.",
+            "zh": "精確數字可能讓人誤以為確定無疑。"
+          }
+        ]
+      }
+    ]
   },
   "NUMERICAL PRECISION CAN CONCEAL UNCERTAINTY IN ASSUMPTIONS": {
     "word": "numerical precision can conceal uncertainty in assumptions",
     "pos": "phr.",
     "meaning": "數字精確可能掩蓋假設的不確定性",
     "example": "Numerical precision can conceal uncertainty in assumptions.",
-    "exampleZh": "數字精確可能掩蓋假設的不確定性。"
+    "exampleZh": "數字精確可能掩蓋假設的不確定性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "數字精確可能掩蓋假設的不確定性",
+        "examples": [
+          {
+            "en": "Numerical precision can conceal uncertainty in assumptions.",
+            "zh": "數字精確可能掩蓋假設的不確定性。"
+          }
+        ]
+      }
+    ]
   },
   "REPUTATION CANNOT SUBSTITUTE FOR INDEPENDENT VERIFICATION": {
     "word": "reputation cannot substitute for independent verification",
     "pos": "phr.",
     "meaning": "聲譽無法取代獨立查證",
     "example": "Reputation cannot substitute for independent verification.",
-    "exampleZh": "聲譽無法取代獨立查證。"
+    "exampleZh": "聲譽無法取代獨立查證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "聲譽無法取代獨立查證",
+        "examples": [
+          {
+            "en": "Reputation cannot substitute for independent verification.",
+            "zh": "聲譽無法取代獨立查證。"
+          }
+        ]
+      }
+    ]
   },
   "CONVENIENCE DOES NOT AUTOMATICALLY JUSTIFY UNRESTRICTED COLLECTION": {
     "word": "convenience does not automatically justify unrestricted collection",
     "pos": "phr.",
     "meaning": "便利不會自動使無限制收集變得合理",
     "example": "Convenience does not automatically justify unrestricted collection.",
-    "exampleZh": "便利不會自動使無限制收集變得合理。"
+    "exampleZh": "便利不會自動使無限制收集變得合理。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "便利不會自動使無限制收集變得合理",
+        "examples": [
+          {
+            "en": "Convenience does not automatically justify unrestricted collection.",
+            "zh": "便利不會自動使無限制收集變得合理。"
+          }
+        ]
+      }
+    ]
   },
   "PROVENANCE": {
-    "word": "provenance",
     "pos": "n.",
     "meaning": "事物的來源或出處",
     "example": "The menu explains the provenance of the cheese.",
-    "exampleZh": "菜單交代起司的來源。"
+    "exampleZh": "菜單交代起司的來源。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "可追查的來源與沿革",
+        "examples": [
+          {
+            "en": "The archive records the provenance of each document.",
+            "zh": "檔案庫記錄每份文件的來源與沿革。"
+          },
+          {
+            "en": "Uncertain provenance makes the image harder to verify.",
+            "zh": "來源不明讓影像更難查證。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "事物的來源或出處",
+        "examples": [
+          {
+            "en": "The menu explains the provenance of the cheese.",
+            "zh": "菜單交代起司的來源。"
+          }
+        ]
+      }
+    ],
+    "word": "provenance"
   },
   "OBSOLESCENCE": {
     "pos": "n.",
@@ -515,56 +829,152 @@
     "pos": "adj.",
     "meaning": "涉及不同世代之間的",
     "example": "The decision raises questions of intergenerational fairness.",
-    "exampleZh": "這項決定涉及世代公平問題。"
+    "exampleZh": "這項決定涉及世代公平問題。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "涉及不同世代之間的",
+        "examples": [
+          {
+            "en": "The decision raises questions of intergenerational fairness.",
+            "zh": "這項決定涉及世代公平問題。"
+          }
+        ]
+      }
+    ]
   },
   "REDISTRIBUTION": {
     "word": "redistribution",
     "pos": "n.",
     "meaning": "將資源或利益重新分配",
     "example": "The policy involves redistribution between districts.",
-    "exampleZh": "這項政策涉及區域之間的重新分配。"
+    "exampleZh": "這項政策涉及區域之間的重新分配。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將資源或利益重新分配",
+        "examples": [
+          {
+            "en": "The policy involves redistribution between districts.",
+            "zh": "這項政策涉及區域之間的重新分配。"
+          }
+        ]
+      }
+    ]
   },
   "AN UNINTENDED CONSEQUENCE": {
     "word": "an unintended consequence",
     "pos": "phr.",
     "meaning": "非原本預期的後果",
     "example": "Higher demand was an unintended consequence of the subsidy.",
-    "exampleZh": "需求增加是補助未預期的後果。"
+    "exampleZh": "需求增加是補助未預期的後果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "非原本預期的後果",
+        "examples": [
+          {
+            "en": "Higher demand was an unintended consequence of the subsidy.",
+            "zh": "需求增加是補助未預期的後果。"
+          }
+        ]
+      }
+    ]
   },
   "THE DISTRIBUTION OF BENEFITS": {
     "word": "the distribution of benefits",
     "pos": "phr.",
     "meaning": "利益如何分配",
     "example": "The review examines the distribution of benefits.",
-    "exampleZh": "檢討檢視利益如何分配。"
+    "exampleZh": "檢討檢視利益如何分配。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "利益如何分配",
+        "examples": [
+          {
+            "en": "The review examines the distribution of benefits.",
+            "zh": "檢討檢視利益如何分配。"
+          }
+        ]
+      }
+    ]
   },
   "A DISPROPORTIONATE BURDEN": {
     "word": "a disproportionate burden",
     "pos": "phr.",
     "meaning": "不成比例的沉重負擔",
     "example": "Small businesses faced a disproportionate burden.",
-    "exampleZh": "小型企業承受了不成比例的負擔。"
+    "exampleZh": "小型企業承受了不成比例的負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不成比例的沉重負擔",
+        "examples": [
+          {
+            "en": "Small businesses faced a disproportionate burden.",
+            "zh": "小型企業承受了不成比例的負擔。"
+          }
+        ]
+      }
+    ]
   },
   "AGGREGATE GAINS CAN OBSCURE UNEQUAL INDIVIDUAL OUTCOMES": {
     "word": "aggregate gains can obscure unequal individual outcomes",
     "pos": "phr.",
     "meaning": "總體收益可能掩蓋個人結果的不均",
     "example": "Aggregate gains can obscure unequal individual outcomes.",
-    "exampleZh": "總體收益可能掩蓋個人結果的不均。"
+    "exampleZh": "總體收益可能掩蓋個人結果的不均。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "總體收益可能掩蓋個人結果的不均",
+        "examples": [
+          {
+            "en": "Aggregate gains can obscure unequal individual outcomes.",
+            "zh": "總體收益可能掩蓋個人結果的不均。"
+          }
+        ]
+      }
+    ]
   },
   "EFFICIENCY ALONE DOES NOT ESTABLISH OVERALL SUSTAINABILITY": {
     "word": "efficiency alone does not establish overall sustainability",
     "pos": "phr.",
     "meaning": "效率本身無法確立整體永續性",
     "example": "Efficiency alone does not establish overall sustainability.",
-    "exampleZh": "效率本身無法確立整體永續性。"
+    "exampleZh": "效率本身無法確立整體永續性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "效率本身無法確立整體永續性",
+        "examples": [
+          {
+            "en": "Efficiency alone does not establish overall sustainability.",
+            "zh": "效率本身無法確立整體永續性。"
+          }
+        ]
+      }
+    ]
   },
   "THE CALCULATION EXCLUDES COSTS BORNE BY RESIDENTS": {
     "word": "the calculation excludes costs borne by residents",
     "pos": "phr.",
     "meaning": "計算排除了由居民承擔的成本",
     "example": "The calculation excludes costs borne by residents.",
-    "exampleZh": "計算排除了由居民承擔的成本。"
+    "exampleZh": "計算排除了由居民承擔的成本。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "計算排除了由居民承擔的成本",
+        "examples": [
+          {
+            "en": "The calculation excludes costs borne by residents.",
+            "zh": "計算排除了由居民承擔的成本。"
+          }
+        ]
+      }
+    ]
   },
   "EXTERNALITY": {
     "pos": "n.",
@@ -813,56 +1223,152 @@
     "pos": "n.",
     "meaning": "教學的方法與實踐原則",
     "example": "The course links pedagogy with classroom observation.",
-    "exampleZh": "課程把教學原則與課堂觀察相連。"
+    "exampleZh": "課程把教學原則與課堂觀察相連。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "教學的方法與實踐原則",
+        "examples": [
+          {
+            "en": "The course links pedagogy with classroom observation.",
+            "zh": "課程把教學原則與課堂觀察相連。"
+          }
+        ]
+      }
+    ]
   },
   "REFLEXIVITY": {
     "word": "reflexivity",
     "pos": "n.",
     "meaning": "對自身觀點與角色進行反思的能力",
     "example": "Reflexivity helps researchers examine their own assumptions.",
-    "exampleZh": "反思自身立場有助研究者檢視自己的假設。"
+    "exampleZh": "反思自身立場有助研究者檢視自己的假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對自身觀點與角色進行反思的能力",
+        "examples": [
+          {
+            "en": "Reflexivity helps researchers examine their own assumptions.",
+            "zh": "反思自身立場有助研究者檢視自己的假設。"
+          }
+        ]
+      }
+    ]
   },
   "A DEFENSIBLE INTERPRETATION": {
     "word": "a defensible interpretation",
     "pos": "phr.",
     "meaning": "有充分理由可辯護的解讀",
     "example": "The evidence supports more than one defensible interpretation.",
-    "exampleZh": "證據支持不只一種有理可據的解讀。"
+    "exampleZh": "證據支持不只一種有理可據的解讀。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有充分理由可辯護的解讀",
+        "examples": [
+          {
+            "en": "The evidence supports more than one defensible interpretation.",
+            "zh": "證據支持不只一種有理可據的解讀。"
+          }
+        ]
+      }
+    ]
   },
   "THE LIMITS OF GENERALISATION": {
     "word": "the limits of generalisation",
     "pos": "phr.",
     "meaning": "推廣結論的適用界線",
     "example": "The discussion addressed the limits of generalisation.",
-    "exampleZh": "討論處理結論推廣的界線。"
+    "exampleZh": "討論處理結論推廣的界線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "推廣結論的適用界線",
+        "examples": [
+          {
+            "en": "The discussion addressed the limits of generalisation.",
+            "zh": "討論處理結論推廣的界線。"
+          }
+        ]
+      }
+    ]
   },
   "A DISTINCTION WORTH PRESERVING": {
     "word": "a distinction worth preserving",
     "pos": "phr.",
     "meaning": "值得保留的重要區分",
     "example": "That is a distinction worth preserving in the summary.",
-    "exampleZh": "摘要中值得保留那個區分。"
+    "exampleZh": "摘要中值得保留那個區分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "值得保留的重要區分",
+        "examples": [
+          {
+            "en": "That is a distinction worth preserving in the summary.",
+            "zh": "摘要中值得保留那個區分。"
+          }
+        ]
+      }
+    ]
   },
   "CONCEPTUAL CLARITY REQUIRES MORE THAN FLUENT TERMINOLOGY": {
     "word": "conceptual clarity requires more than fluent terminology",
     "pos": "phr.",
     "meaning": "概念清楚需要的不只是熟練使用術語",
     "example": "Conceptual clarity requires more than fluent terminology.",
-    "exampleZh": "概念清楚需要的不只是熟練使用術語。"
+    "exampleZh": "概念清楚需要的不只是熟練使用術語。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "概念清楚需要的不只是熟練使用術語",
+        "examples": [
+          {
+            "en": "Conceptual clarity requires more than fluent terminology.",
+            "zh": "概念清楚需要的不只是熟練使用術語。"
+          }
+        ]
+      }
+    ]
   },
   "THE TASK SHOULD REVEAL RATHER THAN CONCEAL MISUNDERSTANDING": {
     "word": "the task should reveal rather than conceal misunderstanding",
     "pos": "phr.",
     "meaning": "任務應揭露而非掩蓋誤解",
     "example": "The task should reveal rather than conceal misunderstanding.",
-    "exampleZh": "任務應揭露而非掩蓋誤解。"
+    "exampleZh": "任務應揭露而非掩蓋誤解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "任務應揭露而非掩蓋誤解",
+        "examples": [
+          {
+            "en": "The task should reveal rather than conceal misunderstanding.",
+            "zh": "任務應揭露而非掩蓋誤解。"
+          }
+        ]
+      }
+    ]
   },
   "UNIFORM PROCEDURES CAN STILL PRODUCE UNEQUAL OPPORTUNITIES": {
     "word": "uniform procedures can still produce unequal opportunities",
     "pos": "phr.",
     "meaning": "一致程序仍可能造成不均等機會",
     "example": "Uniform procedures can still produce unequal opportunities.",
-    "exampleZh": "一致程序仍可能造成不均等機會。"
+    "exampleZh": "一致程序仍可能造成不均等機會。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "一致程序仍可能造成不均等機會",
+        "examples": [
+          {
+            "en": "Uniform procedures can still produce unequal opportunities.",
+            "zh": "一致程序仍可能造成不均等機會。"
+          }
+        ]
+      }
+    ]
   },
   "DISCERNMENT": {
     "pos": "n.",
@@ -1111,56 +1617,152 @@
     "pos": "n.",
     "meaning": "間接提及另一作品或事物的手法",
     "example": "The title contains an allusion to an older story.",
-    "exampleZh": "標題間接引用了一個較古老的故事。"
+    "exampleZh": "標題間接引用了一個較古老的故事。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "間接提及另一作品或事物的手法",
+        "examples": [
+          {
+            "en": "The title contains an allusion to an older story.",
+            "zh": "標題間接引用了一個較古老的故事。"
+          }
+        ]
+      }
+    ]
   },
   "JUXTAPOSITION": {
     "word": "juxtaposition",
     "pos": "n.",
     "meaning": "把不同事物並置以形成關係或對比",
     "example": "The juxtaposition of the images changes their effect.",
-    "exampleZh": "意象並置改變了它們的效果。"
+    "exampleZh": "意象並置改變了它們的效果。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把不同事物並置以形成關係或對比",
+        "examples": [
+          {
+            "en": "The juxtaposition of the images changes their effect.",
+            "zh": "意象並置改變了它們的效果。"
+          }
+        ]
+      }
+    ]
   },
   "A SHIFT IN PERSPECTIVE": {
     "word": "a shift in perspective",
     "pos": "phr.",
     "meaning": "觀點的轉換",
     "example": "The ending depends on a shift in perspective.",
-    "exampleZh": "結局仰賴觀點轉換。"
+    "exampleZh": "結局仰賴觀點轉換。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "觀點的轉換",
+        "examples": [
+          {
+            "en": "The ending depends on a shift in perspective.",
+            "zh": "結局仰賴觀點轉換。"
+          }
+        ]
+      }
+    ]
   },
   "A SUSTAINED METAPHOR": {
     "word": "a sustained metaphor",
     "pos": "phr.",
     "meaning": "貫穿一段作品的延伸隱喻",
     "example": "The journey functions as a sustained metaphor.",
-    "exampleZh": "旅程作為一個貫穿作品的隱喻。"
+    "exampleZh": "旅程作為一個貫穿作品的隱喻。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "貫穿一段作品的延伸隱喻",
+        "examples": [
+          {
+            "en": "The journey functions as a sustained metaphor.",
+            "zh": "旅程作為一個貫穿作品的隱喻。"
+          }
+        ]
+      }
+    ]
   },
   "AN UNRESOLVED TENSION": {
     "word": "an unresolved tension",
     "pos": "phr.",
     "meaning": "尚未解決的張力",
     "example": "The unresolved tension gives the final scene its force.",
-    "exampleZh": "未解的張力賦予最後一幕力量。"
+    "exampleZh": "未解的張力賦予最後一幕力量。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尚未解決的張力",
+        "examples": [
+          {
+            "en": "The unresolved tension gives the final scene its force.",
+            "zh": "未解的張力賦予最後一幕力量。"
+          }
+        ]
+      }
+    ]
   },
   "THE NARRATOR REVEALS MORE THAN SHE INTENDS": {
     "word": "the narrator reveals more than she intends",
     "pos": "phr.",
     "meaning": "敘事者透露的比她意圖的更多",
     "example": "The narrator reveals more than she intends.",
-    "exampleZh": "敘事者透露的比她意圖的更多。"
+    "exampleZh": "敘事者透露的比她意圖的更多。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "敘事者透露的比她意圖的更多",
+        "examples": [
+          {
+            "en": "The narrator reveals more than she intends.",
+            "zh": "敘事者透露的比她意圖的更多。"
+          }
+        ]
+      }
+    ]
   },
   "THE IMAGE INVITES INTERPRETATION WITHOUT DICTATING A CONCLUSION": {
     "word": "the image invites interpretation without dictating a conclusion",
     "pos": "phr.",
     "meaning": "意象邀請解讀卻不指定結論",
     "example": "The image invites interpretation without dictating a conclusion.",
-    "exampleZh": "意象邀請解讀卻不指定結論。"
+    "exampleZh": "意象邀請解讀卻不指定結論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意象邀請解讀卻不指定結論",
+        "examples": [
+          {
+            "en": "The image invites interpretation without dictating a conclusion.",
+            "zh": "意象邀請解讀卻不指定結論。"
+          }
+        ]
+      }
+    ]
   },
   "NARRATIVE AUTHORITY IS UNEVENLY DISTRIBUTED BETWEEN VOICES": {
     "word": "narrative authority is unevenly distributed between voices",
     "pos": "phr.",
     "meaning": "敘事權威在不同聲音間分配不均",
     "example": "Narrative authority is unevenly distributed between voices.",
-    "exampleZh": "敘事權威在不同聲音間分配不均。"
+    "exampleZh": "敘事權威在不同聲音間分配不均。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "敘事權威在不同聲音間分配不均",
+        "examples": [
+          {
+            "en": "Narrative authority is unevenly distributed between voices.",
+            "zh": "敘事權威在不同聲音間分配不均。"
+          }
+        ]
+      }
+    ]
   },
   "SUBTEXT": {
     "pos": "n.",
@@ -1409,56 +2011,152 @@
     "pos": "n.",
     "meaning": "透過和解態度平息衝突的過程",
     "example": "The chair favoured conciliation over confrontation.",
-    "exampleZh": "主席偏好和解而非對抗。"
+    "exampleZh": "主席偏好和解而非對抗。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過和解態度平息衝突的過程",
+        "examples": [
+          {
+            "en": "The chair favoured conciliation over confrontation.",
+            "zh": "主席偏好和解而非對抗。"
+          }
+        ]
+      }
+    ]
   },
   "EQUANIMITY": {
     "word": "equanimity",
     "pos": "n.",
     "meaning": "在壓力下保持沉著的心態",
     "example": "She received the criticism with equanimity.",
-    "exampleZh": "她沉著地接受批評。"
+    "exampleZh": "她沉著地接受批評。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在壓力下保持沉著的心態",
+        "examples": [
+          {
+            "en": "She received the criticism with equanimity.",
+            "zh": "她沉著地接受批評。"
+          }
+        ]
+      }
+    ]
   },
   "A RECIPROCAL CONCESSION": {
     "word": "a reciprocal concession",
     "pos": "phr.",
     "meaning": "雙方相互對應的讓步",
     "example": "The offer depends on a reciprocal concession.",
-    "exampleZh": "提議取決於對方相應讓步。"
+    "exampleZh": "提議取決於對方相應讓步。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "雙方相互對應的讓步",
+        "examples": [
+          {
+            "en": "The offer depends on a reciprocal concession.",
+            "zh": "提議取決於對方相應讓步。"
+          }
+        ]
+      }
+    ]
   },
   "WITHIN THE STATED REMIT": {
     "word": "within the stated remit",
     "pos": "phr.",
     "meaning": "在已說明的職權範圍內",
     "example": "The review remains within the stated remit.",
-    "exampleZh": "檢討仍在已說明的職權範圍內。"
+    "exampleZh": "檢討仍在已說明的職權範圍內。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在已說明的職權範圍內",
+        "examples": [
+          {
+            "en": "The review remains within the stated remit.",
+            "zh": "檢討仍在已說明的職權範圍內。"
+          }
+        ]
+      }
+    ]
   },
   "A COMMENSURATE DEGREE OF AUTHORITY": {
     "word": "a commensurate degree of authority",
     "pos": "phr.",
     "meaning": "相稱程度的權限",
     "example": "Responsibility requires a commensurate degree of authority.",
-    "exampleZh": "責任需要相稱的權限。"
+    "exampleZh": "責任需要相稱的權限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相稱程度的權限",
+        "examples": [
+          {
+            "en": "Responsibility requires a commensurate degree of authority.",
+            "zh": "責任需要相稱的權限。"
+          }
+        ]
+      }
+    ]
   },
   "THE AGREEMENT LEAVES THE CENTRAL AMBIGUITY UNRESOLVED": {
     "word": "the agreement leaves the central ambiguity unresolved",
     "pos": "phr.",
     "meaning": "協議仍未解決核心歧義",
     "example": "The agreement leaves the central ambiguity unresolved.",
-    "exampleZh": "協議仍未解決核心歧義。"
+    "exampleZh": "協議仍未解決核心歧義。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "協議仍未解決核心歧義",
+        "examples": [
+          {
+            "en": "The agreement leaves the central ambiguity unresolved.",
+            "zh": "協議仍未解決核心歧義。"
+          }
+        ]
+      }
+    ]
   },
   "A FORMAL INVITATION DOES NOT GUARANTEE GENUINE INFLUENCE": {
     "word": "a formal invitation does not guarantee genuine influence",
     "pos": "phr.",
     "meaning": "正式邀請不保證有實質影響力",
     "example": "A formal invitation does not guarantee genuine influence.",
-    "exampleZh": "正式邀請不保證有實質影響力。"
+    "exampleZh": "正式邀請不保證有實質影響力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "正式邀請不保證有實質影響力",
+        "examples": [
+          {
+            "en": "A formal invitation does not guarantee genuine influence.",
+            "zh": "正式邀請不保證有實質影響力。"
+          }
+        ]
+      }
+    ]
   },
   "THE CONCESSION MUST NOT BE INTERPRETED AS UNCONDITIONAL": {
     "word": "the concession must not be interpreted as unconditional",
     "pos": "phr.",
     "meaning": "這項讓步不應被解讀為無條件",
     "example": "The concession must not be interpreted as unconditional.",
-    "exampleZh": "這項讓步不應被解讀為無條件。"
+    "exampleZh": "這項讓步不應被解讀為無條件。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這項讓步不應被解讀為無條件",
+        "examples": [
+          {
+            "en": "The concession must not be interpreted as unconditional.",
+            "zh": "這項讓步不應被解讀為無條件。"
+          }
+        ]
+      }
+    ]
   },
   "PREROGATIVE": {
     "pos": "n.",
@@ -1707,56 +2405,152 @@
     "pos": "adj.",
     "meaning": "不輕易表露想法感受的",
     "example": "She was reticent about the reasons for leaving.",
-    "exampleZh": "她不願多談離開的原因。"
+    "exampleZh": "她不願多談離開的原因。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不輕易表露想法感受的",
+        "examples": [
+          {
+            "en": "She was reticent about the reasons for leaving.",
+            "zh": "她不願多談離開的原因。"
+          }
+        ]
+      }
+    ]
   },
   "INCONGRUOUS": {
     "word": "incongruous",
     "pos": "adj.",
     "meaning": "與周遭情境不相稱的",
     "example": "The cheerful reply seemed incongruous in the tense room.",
-    "exampleZh": "房間氣氛緊張，歡快回覆顯得不相稱。"
+    "exampleZh": "房間氣氛緊張，歡快回覆顯得不相稱。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與周遭情境不相稱的",
+        "examples": [
+          {
+            "en": "The cheerful reply seemed incongruous in the tense room.",
+            "zh": "房間氣氛緊張，歡快回覆顯得不相稱。"
+          }
+        ]
+      }
+    ]
   },
   "A TACIT UNDERSTANDING": {
     "word": "a tacit understanding",
     "pos": "phr.",
     "meaning": "沒有明說卻彼此默認的理解",
     "example": "They had a tacit understanding about privacy.",
-    "exampleZh": "他們對隱私有默契。"
+    "exampleZh": "他們對隱私有默契。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "沒有明說卻彼此默認的理解",
+        "examples": [
+          {
+            "en": "They had a tacit understanding about privacy.",
+            "zh": "他們對隱私有默契。"
+          }
+        ]
+      }
+    ]
   },
   "AN UNSPOKEN EXPECTATION": {
     "word": "an unspoken expectation",
     "pos": "phr.",
     "meaning": "未曾明說的期待",
     "example": "The disagreement revealed an unspoken expectation.",
-    "exampleZh": "分歧揭露了未明說的期待。"
+    "exampleZh": "分歧揭露了未明說的期待。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未曾明說的期待",
+        "examples": [
+          {
+            "en": "The disagreement revealed an unspoken expectation.",
+            "zh": "分歧揭露了未明說的期待。"
+          }
+        ]
+      }
+    ]
   },
   "A LEGITIMATE RESERVATION": {
     "word": "a legitimate reservation",
     "pos": "phr.",
     "meaning": "有合理根據的保留",
     "example": "A legitimate reservation should not be treated as disloyalty.",
-    "exampleZh": "合理保留不應被當成不忠。"
+    "exampleZh": "合理保留不應被當成不忠。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有合理根據的保留",
+        "examples": [
+          {
+            "en": "A legitimate reservation should not be treated as disloyalty.",
+            "zh": "合理保留不應被當成不忠。"
+          }
+        ]
+      }
+    ]
   },
   "APPARENT HARMONY CAN CONCEAL AN UNEQUAL BURDEN": {
     "word": "apparent harmony can conceal an unequal burden",
     "pos": "phr.",
     "meaning": "表面和諧可能掩蓋不均等負擔",
     "example": "Apparent harmony can conceal an unequal burden.",
-    "exampleZh": "表面和諧可能掩蓋不均等負擔。"
+    "exampleZh": "表面和諧可能掩蓋不均等負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "表面和諧可能掩蓋不均等負擔",
+        "examples": [
+          {
+            "en": "Apparent harmony can conceal an unequal burden.",
+            "zh": "表面和諧可能掩蓋不均等負擔。"
+          }
+        ]
+      }
+    ]
   },
   "A PRACTICAL BOUNDARY NEED NOT IMPLY EMOTIONAL WITHDRAWAL": {
     "word": "a practical boundary need not imply emotional withdrawal",
     "pos": "phr.",
     "meaning": "實際界線不必意味感情退縮",
     "example": "A practical boundary need not imply emotional withdrawal.",
-    "exampleZh": "實際界線不必意味感情退縮。"
+    "exampleZh": "實際界線不必意味感情退縮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際界線不必意味感情退縮",
+        "examples": [
+          {
+            "en": "A practical boundary need not imply emotional withdrawal.",
+            "zh": "實際界線不必意味感情退縮。"
+          }
+        ]
+      }
+    ]
   },
   "CANDOUR REQUIRES ROOM FOR AN UNWELCOME ANSWER": {
     "word": "candour requires room for an unwelcome answer",
     "pos": "phr.",
     "meaning": "坦誠需要容納不受歡迎答案的空間",
     "example": "Candour requires room for an unwelcome answer.",
-    "exampleZh": "坦誠需要容納不受歡迎答案的空間。"
+    "exampleZh": "坦誠需要容納不受歡迎答案的空間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "坦誠需要容納不受歡迎答案的空間",
+        "examples": [
+          {
+            "en": "Candour requires room for an unwelcome answer.",
+            "zh": "坦誠需要容納不受歡迎答案的空間。"
+          }
+        ]
+      }
+    ]
   },
   "A QUALIFIED APOLOGY": {
     "pos": "phr.",
@@ -1961,56 +2755,152 @@
     "pos": "adj.",
     "meaning": "與問題直接相關而切題的",
     "example": "That distinction is pertinent to the complaint.",
-    "exampleZh": "那個區分與申訴直接相關。"
+    "exampleZh": "那個區分與申訴直接相關。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與問題直接相關而切題的",
+        "examples": [
+          {
+            "en": "That distinction is pertinent to the complaint.",
+            "zh": "那個區分與申訴直接相關。"
+          }
+        ]
+      }
+    ]
   },
   "REDRESS": {
     "word": "redress",
     "pos": "n.",
     "meaning": "針對損害或不公所作的補救",
     "example": "The notice explains the available routes to redress.",
-    "exampleZh": "公告說明可用補救途徑。"
+    "exampleZh": "公告說明可用補救途徑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "針對損害或不公所作的補救",
+        "examples": [
+          {
+            "en": "The notice explains the available routes to redress.",
+            "zh": "公告說明可用補救途徑。"
+          }
+        ]
+      }
+    ]
   },
   "A DISCRETIONARY EXCEPTION": {
     "word": "a discretionary exception",
     "pos": "phr.",
     "meaning": "須依個案裁量的例外",
     "example": "The policy allows a discretionary exception.",
-    "exampleZh": "政策允許依個案裁量的例外。"
+    "exampleZh": "政策允許依個案裁量的例外。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "須依個案裁量的例外",
+        "examples": [
+          {
+            "en": "The policy allows a discretionary exception.",
+            "zh": "政策允許依個案裁量的例外。"
+          }
+        ]
+      }
+    ]
   },
   "A PROCEDURALLY COMPLETE RESPONSE": {
     "word": "a procedurally complete response",
     "pos": "phr.",
     "meaning": "程序上已完成的回覆",
     "example": "A procedurally complete response may still leave the problem unresolved.",
-    "exampleZh": "程序完成的回覆仍可能未解決問題。"
+    "exampleZh": "程序完成的回覆仍可能未解決問題。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序上已完成的回覆",
+        "examples": [
+          {
+            "en": "A procedurally complete response may still leave the problem unresolved.",
+            "zh": "程序完成的回覆仍可能未解決問題。"
+          }
+        ]
+      }
+    ]
   },
   "A SUBSTANTIVELY ADEQUATE REMEDY": {
     "word": "a substantively adequate remedy",
     "pos": "phr.",
     "meaning": "實質上充分的補救",
     "example": "The review asks whether there is a substantively adequate remedy.",
-    "exampleZh": "審查檢視補救在實質上是否充分。"
+    "exampleZh": "審查檢視補救在實質上是否充分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實質上充分的補救",
+        "examples": [
+          {
+            "en": "The review asks whether there is a substantively adequate remedy.",
+            "zh": "審查檢視補救在實質上是否充分。"
+          }
+        ]
+      }
+    ]
   },
   "CURRENT AVAILABILITY IS NOT AN IRREVOCABLE COMMITMENT": {
     "word": "current availability is not an irrevocable commitment",
     "pos": "phr.",
     "meaning": "目前可用不等於不可撤回的承諾",
     "example": "Current availability is not an irrevocable commitment.",
-    "exampleZh": "目前可用不等於不可撤回的承諾。"
+    "exampleZh": "目前可用不等於不可撤回的承諾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "目前可用不等於不可撤回的承諾",
+        "examples": [
+          {
+            "en": "Current availability is not an irrevocable commitment.",
+            "zh": "目前可用不等於不可撤回的承諾。"
+          }
+        ]
+      }
+    ]
   },
   "THE PROCEDURE MUST ACCOMMODATE CIRCUMSTANCES BEYOND ROUTINE CASES": {
     "word": "the procedure must accommodate circumstances beyond routine cases",
     "pos": "phr.",
     "meaning": "程序必須容納常規以外的情況",
     "example": "The procedure must accommodate circumstances beyond routine cases.",
-    "exampleZh": "程序必須容納常規以外的情況。"
+    "exampleZh": "程序必須容納常規以外的情況。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序必須容納常規以外的情況",
+        "examples": [
+          {
+            "en": "The procedure must accommodate circumstances beyond routine cases.",
+            "zh": "程序必須容納常規以外的情況。"
+          }
+        ]
+      }
+    ]
   },
   "RESPONSIBILITY IS FRAGMENTED ACROSS THE CONNECTING SERVICES": {
     "word": "responsibility is fragmented across the connecting services",
     "pos": "phr.",
     "meaning": "責任分散在各段銜接服務之間",
     "example": "Responsibility is fragmented across the connecting services.",
-    "exampleZh": "責任分散在各段銜接服務之間。"
+    "exampleZh": "責任分散在各段銜接服務之間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "責任分散在各段銜接服務之間",
+        "examples": [
+          {
+            "en": "Responsibility is fragmented across the connecting services.",
+            "zh": "責任分散在各段銜接服務之間。"
+          }
+        ]
+      }
+    ]
   },
   "CONTINGENCY PLAN": {
     "pos": "phr.",
@@ -2237,56 +3127,152 @@
     "pos": "v.",
     "meaning": "未經正當授權而奪取權位",
     "example": "The steward tried to usurp the council’s authority.",
-    "exampleZh": "管事試圖奪取議會權力。"
+    "exampleZh": "管事試圖奪取議會權力。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "未經正當授權而奪取權位",
+        "examples": [
+          {
+            "en": "The steward tried to usurp the council’s authority.",
+            "zh": "管事試圖奪取議會權力。"
+          }
+        ]
+      }
+    ]
   },
   "DISAVOWAL": {
     "word": "disavowal",
     "pos": "n.",
     "meaning": "否認與某行為主張有關的表態",
     "example": "The letter contained a formal disavowal of the threat.",
-    "exampleZh": "信中正式否認與威脅有關。"
+    "exampleZh": "信中正式否認與威脅有關。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "否認與某行為主張有關的表態",
+        "examples": [
+          {
+            "en": "The letter contained a formal disavowal of the threat.",
+            "zh": "信中正式否認與威脅有關。"
+          }
+        ]
+      }
+    ]
   },
   "A CLAIM TO LEGITIMACY": {
     "word": "a claim to legitimacy",
     "pos": "phr.",
     "meaning": "對自身正當性的主張",
     "example": "The ruler’s claim to legitimacy was challenged.",
-    "exampleZh": "統治者的正當性主張遭質疑。"
+    "exampleZh": "統治者的正當性主張遭質疑。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對自身正當性的主張",
+        "examples": [
+          {
+            "en": "The ruler’s claim to legitimacy was challenged.",
+            "zh": "統治者的正當性主張遭質疑。"
+          }
+        ]
+      }
+    ]
   },
   "A BINDING OBLIGATION": {
     "word": "a binding obligation",
     "pos": "phr.",
     "meaning": "具有約束力的義務",
     "example": "The oath created a binding obligation to protect the village.",
-    "exampleZh": "誓言形成保護村落的約束義務。"
+    "exampleZh": "誓言形成保護村落的約束義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具有約束力的義務",
+        "examples": [
+          {
+            "en": "The oath created a binding obligation to protect the village.",
+            "zh": "誓言形成保護村落的約束義務。"
+          }
+        ]
+      }
+    ]
   },
   "A REVOCABLE GUARANTEE": {
     "word": "a revocable guarantee",
     "pos": "phr.",
     "meaning": "可以被撤回的保證",
     "example": "A revocable guarantee may offer limited reassurance.",
-    "exampleZh": "可撤回的保證提供的安心有限。"
+    "exampleZh": "可撤回的保證提供的安心有限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可以被撤回的保證",
+        "examples": [
+          {
+            "en": "A revocable guarantee may offer limited reassurance.",
+            "zh": "可撤回的保證提供的安心有限。"
+          }
+        ]
+      }
+    ]
   },
   "FORMAL SYMMETRY CAN CONCEAL UNEQUAL POWERS OF INTERPRETATION": {
     "word": "formal symmetry can conceal unequal powers of interpretation",
     "pos": "phr.",
     "meaning": "形式對稱可能掩蓋不均等的解釋權",
     "example": "Formal symmetry can conceal unequal powers of interpretation.",
-    "exampleZh": "形式對稱可能掩蓋不均等的解釋權。"
+    "exampleZh": "形式對稱可能掩蓋不均等的解釋權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式對稱可能掩蓋不均等的解釋權",
+        "examples": [
+          {
+            "en": "Formal symmetry can conceal unequal powers of interpretation.",
+            "zh": "形式對稱可能掩蓋不均等的解釋權。"
+          }
+        ]
+      }
+    ]
   },
   "A GENUINE DANGER DOES NOT JUSTIFY UNRELATED RESTRICTIONS": {
     "word": "a genuine danger does not justify unrelated restrictions",
     "pos": "phr.",
     "meaning": "真實危險不能證成無關限制",
     "example": "A genuine danger does not justify unrelated restrictions.",
-    "exampleZh": "真實危險不能證成無關限制。"
+    "exampleZh": "真實危險不能證成無關限制。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實危險不能證成無關限制",
+        "examples": [
+          {
+            "en": "A genuine danger does not justify unrelated restrictions.",
+            "zh": "真實危險不能證成無關限制。"
+          }
+        ]
+      }
+    ]
   },
   "THE EXCEPTION THREATENS TO SWALLOW THE STATED RULE": {
     "word": "the exception threatens to swallow the stated rule",
     "pos": "phr.",
     "meaning": "例外可能吞掉已明定的規則",
     "example": "The exception threatens to swallow the stated rule.",
-    "exampleZh": "例外可能吞掉已明定的規則。"
+    "exampleZh": "例外可能吞掉已明定的規則。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "例外可能吞掉已明定的規則",
+        "examples": [
+          {
+            "en": "The exception threatens to swallow the stated rule.",
+            "zh": "例外可能吞掉已明定的規則。"
+          }
+        ]
+      }
+    ]
   },
   "A CONTESTED CLAIM": {
     "pos": "phr.",
@@ -2535,49 +3521,133 @@
     "pos": "adj.",
     "meaning": "使人愉快交談共處的",
     "example": "The supper had a convivial atmosphere.",
-    "exampleZh": "晚餐氣氛歡洽。"
+    "exampleZh": "晚餐氣氛歡洽。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "使人愉快交談共處的",
+        "examples": [
+          {
+            "en": "The supper had a convivial atmosphere.",
+            "zh": "晚餐氣氛歡洽。"
+          }
+        ]
+      }
+    ]
   },
   "A NUANCED APPRAISAL": {
     "word": "a nuanced appraisal",
     "pos": "phr.",
     "meaning": "能區分細節而不一概而論的評價",
     "example": "Her review offers a nuanced appraisal of the menu.",
-    "exampleZh": "她的評論細緻評估菜單。"
+    "exampleZh": "她的評論細緻評估菜單。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能區分細節而不一概而論的評價",
+        "examples": [
+          {
+            "en": "Her review offers a nuanced appraisal of the menu.",
+            "zh": "她的評論細緻評估菜單。"
+          }
+        ]
+      }
+    ]
   },
   "AN UNDERSTATED ELEGANCE": {
     "word": "an understated elegance",
     "pos": "phr.",
     "meaning": "不張揚的優雅",
     "example": "The room has an understated elegance.",
-    "exampleZh": "房間帶著低調優雅。"
+    "exampleZh": "房間帶著低調優雅。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不張揚的優雅",
+        "examples": [
+          {
+            "en": "The room has an understated elegance.",
+            "zh": "房間帶著低調優雅。"
+          }
+        ]
+      }
+    ]
   },
   "A LINGERING AFTERTASTE": {
     "word": "a lingering aftertaste",
     "pos": "phr.",
     "meaning": "食用後仍留在口中的餘味",
     "example": "The sauce leaves a lingering aftertaste.",
-    "exampleZh": "醬汁留下持續餘味。"
+    "exampleZh": "醬汁留下持續餘味。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "食用後仍留在口中的餘味",
+        "examples": [
+          {
+            "en": "The sauce leaves a lingering aftertaste.",
+            "zh": "醬汁留下持續餘味。"
+          }
+        ]
+      }
+    ]
   },
   "SIMPLICITY NEED NOT IMPLY A LACK OF CARE": {
     "word": "simplicity need not imply a lack of care",
     "pos": "phr.",
     "meaning": "簡單不必意味欠缺用心",
     "example": "Simplicity need not imply a lack of care.",
-    "exampleZh": "簡單不必意味欠缺用心。"
+    "exampleZh": "簡單不必意味欠缺用心。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "簡單不必意味欠缺用心",
+        "examples": [
+          {
+            "en": "Simplicity need not imply a lack of care.",
+            "zh": "簡單不必意味欠缺用心。"
+          }
+        ]
+      }
+    ]
   },
   "PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY": {
     "word": "personal attachment does not settle a judgement of quality",
     "pos": "phr.",
     "meaning": "個人情感不能決定品質判斷",
     "example": "Personal attachment does not settle a judgement of quality.",
-    "exampleZh": "個人情感不能決定品質判斷。"
+    "exampleZh": "個人情感不能決定品質判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "個人情感不能決定品質判斷",
+        "examples": [
+          {
+            "en": "Personal attachment does not settle a judgement of quality.",
+            "zh": "個人情感不能決定品質判斷。"
+          }
+        ]
+      }
+    ]
   },
   "CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS": {
     "word": "careful preparation can make hospitality feel effortless",
     "pos": "phr.",
     "meaning": "仔細準備能讓接待顯得自然",
     "example": "Careful preparation can make hospitality feel effortless.",
-    "exampleZh": "仔細準備能讓接待顯得自然。"
+    "exampleZh": "仔細準備能讓接待顯得自然。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仔細準備能讓接待顯得自然",
+        "examples": [
+          {
+            "en": "Careful preparation can make hospitality feel effortless.",
+            "zh": "仔細準備能讓接待顯得自然。"
+          }
+        ]
+      }
+    ]
   },
   "A DISCERNING PALATE": {
     "pos": "phr.",
@@ -2845,12 +3915,776 @@
       }
     ]
   },
-  "R7:CORROBORATION": {
-    "pos": "n.",
-    "meaning": "支持說法的獨立佐證",
-    "example": "The allegation requires independent corroboration.",
-    "exampleZh": "這項指控需要獨立的佐證。",
+  "CRYPTIC": {
+    "word": "cryptic",
+    "pos": "adj.",
+    "meaning": "隱晦而不易辨認的",
+    "example": "The markings form a cryptic pattern.",
+    "exampleZh": "斑紋構成難辨的圖案。",
     "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "隱晦而不易辨認的",
+        "examples": [
+          {
+            "en": "The markings form a cryptic pattern.",
+            "zh": "斑紋構成難辨的圖案。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROVISIONAL CLASSIFICATION": {
+    "word": "a provisional classification",
+    "pos": "phr.",
+    "meaning": "仍可修改的暫定分類",
+    "example": "We used a provisional classification.",
+    "exampleZh": "我們採用暫定分類。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可修改的暫定分類",
+        "examples": [
+          {
+            "en": "We used a provisional classification.",
+            "zh": "我們採用暫定分類。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MARKED DISCREPANCY": {
+    "word": "a marked discrepancy",
+    "pos": "phr.",
+    "meaning": "明顯的差異或不一致",
+    "example": "There is a marked discrepancy between the records.",
+    "exampleZh": "紀錄間有明顯差異。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明顯的差異或不一致",
+        "examples": [
+          {
+            "en": "There is a marked discrepancy between the records.",
+            "zh": "紀錄間有明顯差異。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SYSTEMATIC OBSERVATION BIAS": {
+    "word": "a systematic observation bias",
+    "pos": "phr.",
+    "meaning": "觀察方式造成的系統性偏差",
+    "example": "The timing may create a systematic observation bias.",
+    "exampleZh": "時段可能造成系統性觀察偏差。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "觀察方式造成的系統性偏差",
+        "examples": [
+          {
+            "en": "The timing may create a systematic observation bias.",
+            "zh": "時段可能造成系統性觀察偏差。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPATIBILITY WITH AN EXPLANATION DOES NOT ESTABLISH ITS TRUTH": {
+    "word": "compatibility with an explanation does not establish its truth",
+    "pos": "phr.",
+    "meaning": "符合某解釋不證成它為真",
+    "example": "Compatibility with an explanation does not establish its truth.",
+    "exampleZh": "符合某解釋不證成它為真。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "符合某解釋不證成它為真",
+        "examples": [
+          {
+            "en": "Compatibility with an explanation does not establish its truth.",
+            "zh": "符合某解釋不證成它為真。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE APPARENT BOUNDARY MAY REFLECT WHERE OBSERVERS HAVE LOOKED": {
+    "word": "the apparent boundary may reflect where observers have looked",
+    "pos": "phr.",
+    "meaning": "表面界線可能反映觀察者搜尋範圍",
+    "example": "The apparent boundary may reflect where observers have looked.",
+    "exampleZh": "表面界線可能反映觀察者搜尋範圍。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "表面界線可能反映觀察者搜尋範圍",
+        "examples": [
+          {
+            "en": "The apparent boundary may reflect where observers have looked.",
+            "zh": "表面界線可能反映觀察者搜尋範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPARABLE RECORDS REQUIRE ATTENTION TO HOW OBSERVATIONS WERE MADE": {
+    "word": "comparable records require attention to how observations were made",
+    "pos": "phr.",
+    "meaning": "可比較紀錄需要留意觀察方法",
+    "example": "Comparable records require attention to how observations were made.",
+    "exampleZh": "可比較紀錄需要留意觀察方法。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可比較紀錄需要留意觀察方法",
+        "examples": [
+          {
+            "en": "Comparable records require attention to how observations were made.",
+            "zh": "可比較紀錄需要留意觀察方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TENTATIVE IDENTIFICATION": {
+    "pos": "phr.",
+    "meaning": "可以隨證據修正的暫定辨識",
+    "example": "The note gives a tentative identification.",
+    "exampleZh": "筆記給出暫定辨識。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可以隨證據修正的暫定辨識",
+        "examples": [
+          {
+            "en": "The note gives a tentative identification.",
+            "zh": "筆記給出暫定辨識。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONSPICUOUS ABSENCE": {
+    "pos": "phr.",
+    "meaning": "明顯而引人注意的缺席",
+    "example": "The survey noted a conspicuous absence of records from the valley.",
+    "exampleZh": "調查指出山谷紀錄明顯缺乏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明顯而引人注意的缺席",
+        "examples": [
+          {
+            "en": "The survey noted a conspicuous absence of records from the valley.",
+            "zh": "調查指出山谷紀錄明顯缺乏。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNOBTRUSIVE OBSERVER": {
+    "pos": "phr.",
+    "meaning": "不顯眼且盡量不打擾的觀察者",
+    "example": "She tried to remain an unobtrusive observer.",
+    "exampleZh": "她盡量當個不干擾的觀察者。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不顯眼且盡量不打擾的觀察者",
+        "examples": [
+          {
+            "en": "She tried to remain an unobtrusive observer.",
+            "zh": "她盡量當個不干擾的觀察者。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PLAUSIBLE INFERENCE": {
+    "pos": "phr.",
+    "meaning": "合理但不等於已證實的推論",
+    "example": "The explanation is a plausible inference from the tracks.",
+    "exampleZh": "解釋是由足跡作出的合理推論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "合理但不等於已證實的推論",
+        "examples": [
+          {
+            "en": "The explanation is a plausible inference from the tracks.",
+            "zh": "解釋是由足跡作出的合理推論。"
+          }
+        ]
+      }
+    ]
+  },
+  "IN THE ABSENCE OF CORROBORATION": {
+    "pos": "phr.",
+    "meaning": "缺乏其他佐證時",
+    "example": "In the absence of corroboration, we kept the label provisional.",
+    "exampleZh": "缺乏佐證時我們保留暫定標籤。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "缺乏其他佐證時",
+        "examples": [
+          {
+            "en": "In the absence of corroboration, we kept the label provisional.",
+            "zh": "缺乏佐證時我們保留暫定標籤。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONSPICUOUS": {
+    "pos": "adj.",
+    "meaning": "明顯而引人注意的",
+    "example": "The bird has a conspicuous white patch.",
+    "exampleZh": "鳥有醒目白斑。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "明顯而引人注意的",
+        "examples": [
+          {
+            "en": "The bird has a conspicuous white patch.",
+            "zh": "鳥有醒目白斑。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNOBTRUSIVE": {
+    "pos": "adj.",
+    "meaning": "不引人注意或不造成干擾的",
+    "example": "The shelter is deliberately unobtrusive.",
+    "exampleZh": "觀察棚刻意做得不顯眼。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不引人注意或不造成干擾的",
+        "examples": [
+          {
+            "en": "The shelter is deliberately unobtrusive.",
+            "zh": "觀察棚刻意做得不顯眼。"
+          }
+        ]
+      }
+    ]
+  },
+  "FLUCTUATION": {
+    "pos": "n.",
+    "meaning": "數量或程度上升下降的波動",
+    "example": "The report records a fluctuation in sightings.",
+    "exampleZh": "報告記錄目擊數量的波動。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "數量或程度上升下降的波動",
+        "examples": [
+          {
+            "en": "The report records a fluctuation in sightings.",
+            "zh": "報告記錄目擊數量的波動。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERMITTENT": {
+    "pos": "adj.",
+    "meaning": "時有時無而非連續的",
+    "example": "Rain made observation intermittent.",
+    "exampleZh": "雨使觀察斷斷續續。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "時有時無而非連續的",
+        "examples": [
+          {
+            "en": "Rain made observation intermittent.",
+            "zh": "雨使觀察斷斷續續。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESIDENT": {
+    "pos": "adj.",
+    "meaning": "在某地長期居住或常駐的",
+    "example": "The survey distinguishes resident birds from visitors.",
+    "exampleZh": "調查區分留鳥與訪客。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在某地長期居住或常駐的",
+        "examples": [
+          {
+            "en": "The survey distinguishes resident birds from visitors.",
+            "zh": "調查區分留鳥與訪客。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISPERSAL": {
+    "pos": "n.",
+    "meaning": "由原處向不同地點散布的過程",
+    "example": "The study tracks seed dispersal.",
+    "exampleZh": "研究追蹤種子散布。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由原處向不同地點散布的過程",
+        "examples": [
+          {
+            "en": "The study tracks seed dispersal.",
+            "zh": "研究追蹤種子散布。"
+          }
+        ]
+      }
+    ]
+  },
+  "ABUNDANCE": {
+    "pos": "n.",
+    "meaning": "大量存在的狀態或數量",
+    "example": "Recorded abundance varied between sites.",
+    "exampleZh": "所記錄的豐度因地點不同。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "大量存在的狀態或數量",
+        "examples": [
+          {
+            "en": "Recorded abundance varied between sites.",
+            "zh": "所記錄的豐度因地點不同。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNDERREPORTED": {
+    "pos": "adj.",
+    "meaning": "被通報或記錄得比實際少的",
+    "example": "The species may be underreported.",
+    "exampleZh": "這物種可能通報不足。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "被通報或記錄得比實際少的",
+        "examples": [
+          {
+            "en": "The species may be underreported.",
+            "zh": "這物種可能通報不足。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPOSURE": {
+    "word": "composure",
+    "pos": "n.",
+    "meaning": "壓力下保持冷靜的鎮定",
+    "example": "She regained her composure before serving.",
+    "exampleZh": "發球前她恢復鎮定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "壓力下保持冷靜的鎮定",
+        "examples": [
+          {
+            "en": "She regained her composure before serving.",
+            "zh": "發球前她恢復鎮定。"
+          }
+        ]
+      }
+    ]
+  },
+  "GAMESMANSHIP": {
+    "word": "gamesmanship",
+    "pos": "n.",
+    "meaning": "利用規則邊緣手段取得心理或競賽優勢",
+    "example": "The delay was criticised as gamesmanship.",
+    "exampleZh": "拖延被批為利用邊緣手段佔優。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用規則邊緣手段取得心理或競賽優勢",
+        "examples": [
+          {
+            "en": "The delay was criticised as gamesmanship.",
+            "zh": "拖延被批為利用邊緣手段佔優。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DISCRETIONARY DECISION": {
+    "word": "a discretionary decision",
+    "pos": "phr.",
+    "meaning": "容許判斷空間的裁量決定",
+    "example": "The official made a discretionary decision.",
+    "exampleZh": "裁判作了裁量決定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容許判斷空間的裁量決定",
+        "examples": [
+          {
+            "en": "The official made a discretionary decision.",
+            "zh": "裁判作了裁量決定。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DISPROPORTIONATE PENALTY": {
+    "word": "a disproportionate penalty",
+    "pos": "phr.",
+    "meaning": "與行為嚴重程度不相稱的處罰",
+    "example": "They appealed against a disproportionate penalty.",
+    "exampleZh": "他們對不成比例的處罰申訴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "與行為嚴重程度不相稱的處罰",
+        "examples": [
+          {
+            "en": "They appealed against a disproportionate penalty.",
+            "zh": "他們對不成比例的處罰申訴。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DEMANDING COMMITMENT": {
+    "word": "a demanding commitment",
+    "pos": "phr.",
+    "meaning": "需要投入不少時間精力的承諾",
+    "example": "Weekly training is a demanding commitment.",
+    "exampleZh": "每週訓練需要相當投入。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "需要投入不少時間精力的承諾",
+        "examples": [
+          {
+            "en": "Weekly training is a demanding commitment.",
+            "zh": "每週訓練需要相當投入。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPOSURE SHOULD NOT BE CONFUSED WITH INDIFFERENCE": {
+    "word": "composure should not be confused with indifference",
+    "pos": "phr.",
+    "meaning": "鎮定不應與漠不關心混淆",
+    "example": "Composure should not be confused with indifference.",
+    "exampleZh": "鎮定不應與漠不關心混淆。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鎮定不應與漠不關心混淆",
+        "examples": [
+          {
+            "en": "Composure should not be confused with indifference.",
+            "zh": "鎮定不應與漠不關心混淆。"
+          }
+        ]
+      }
+    ]
+  },
+  "A GOOD DECISION CAN STILL HAVE AN UNFORTUNATE OUTCOME": {
+    "word": "a good decision can still have an unfortunate outcome",
+    "pos": "phr.",
+    "meaning": "好決策仍可能得到不幸結果",
+    "example": "A good decision can still have an unfortunate outcome.",
+    "exampleZh": "好決策仍可能得到不幸結果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "好決策仍可能得到不幸結果",
+        "examples": [
+          {
+            "en": "A good decision can still have an unfortunate outcome.",
+            "zh": "好決策仍可能得到不幸結果。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCLUSION DEPENDS ON PRACTICAL ACCESS AS WELL AS INVITATION": {
+    "word": "inclusion depends on practical access as well as invitation",
+    "pos": "phr.",
+    "meaning": "包容既靠邀請也靠實際參與條件",
+    "example": "Inclusion depends on practical access as well as invitation.",
+    "exampleZh": "包容既靠邀請也靠實際參與條件。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "包容既靠邀請也靠實際參與條件",
+        "examples": [
+          {
+            "en": "Inclusion depends on practical access as well as invitation.",
+            "zh": "包容既靠邀請也靠實際參與條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SPORTING GESTURE": {
+    "pos": "phr.",
+    "meaning": "展現公平尊重對手精神的舉動",
+    "example": "Helping the opponent was a sporting gesture.",
+    "exampleZh": "幫對手是有運動精神的舉動。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "展現公平尊重對手精神的舉動",
+        "examples": [
+          {
+            "en": "Helping the opponent was a sporting gesture.",
+            "zh": "幫對手是有運動精神的舉動。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FOREGONE CONCLUSION": {
+    "pos": "phr.",
+    "meaning": "結果早已被視為可預知的事",
+    "example": "The result was far from a foregone conclusion.",
+    "exampleZh": "結果遠非早有定論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "結果早已被視為可預知的事",
+        "examples": [
+          {
+            "en": "The result was far from a foregone conclusion.",
+            "zh": "結果遠非早有定論。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PYRRHIC VICTORY": {
+    "pos": "phr.",
+    "meaning": "代價過大而得不償失的勝利",
+    "example": "The exhausting win proved a Pyrrhic victory.",
+    "exampleZh": "耗盡精力的勝利結果得不償失。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "代價過大而得不償失的勝利",
+        "examples": [
+          {
+            "en": "The exhausting win proved a Pyrrhic victory.",
+            "zh": "耗盡精力的勝利結果得不償失。"
+          }
+        ]
+      }
+    ]
+  },
+  "TO CONCEDE DEFEAT": {
+    "pos": "phr.",
+    "meaning": "承認落敗",
+    "example": "The captain was ready to concede defeat.",
+    "exampleZh": "隊長準備承認落敗。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "承認落敗",
+        "examples": [
+          {
+            "en": "The captain was ready to concede defeat.",
+            "zh": "隊長準備承認落敗。"
+          }
+        ]
+      }
+    ]
+  },
+  "IN CONTENTION": {
+    "pos": "phr.",
+    "meaning": "仍有爭取勝利或資格的機會",
+    "example": "The team remains in contention.",
+    "exampleZh": "球隊仍有競逐機會。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍有爭取勝利或資格的機會",
+        "examples": [
+          {
+            "en": "The team remains in contention.",
+            "zh": "球隊仍有競逐機會。"
+          }
+        ]
+      }
+    ]
+  },
+  "GRACIOUS": {
+    "pos": "adj.",
+    "meaning": "對他人有禮大方而體諒的",
+    "example": "She was gracious after the defeat.",
+    "exampleZh": "落敗後她仍大方有禮。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "對他人有禮大方而體諒的",
+        "examples": [
+          {
+            "en": "She was gracious after the defeat.",
+            "zh": "落敗後她仍大方有禮。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONTENDER": {
+    "pos": "n.",
+    "meaning": "有機會爭取勝利或職位的競逐者",
+    "example": "The club is a serious contender.",
+    "exampleZh": "該俱樂部是有力競爭者。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "有機會爭取勝利或職位的競逐者",
+        "examples": [
+          {
+            "en": "The club is a serious contender.",
+            "zh": "該俱樂部是有力競爭者。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPORTING": {
+    "pos": "adj.",
+    "meaning": "展現公平競爭精神的",
+    "example": "It was a sporting response to an unlucky result.",
+    "exampleZh": "對不幸結果的反應展現運動精神。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "展現公平競爭精神的",
+        "examples": [
+          {
+            "en": "It was a sporting response to an unlucky result.",
+            "zh": "對不幸結果的反應展現運動精神。"
+          }
+        ]
+      }
+    ]
+  },
+  "INVINCIBLE": {
+    "pos": "adj.",
+    "meaning": "強大到似乎無法被打敗的",
+    "example": "The team had once seemed invincible.",
+    "exampleZh": "球隊曾顯得無敵。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "強大到似乎無法被打敗的",
+        "examples": [
+          {
+            "en": "The team had once seemed invincible.",
+            "zh": "球隊曾顯得無敵。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEEDING": {
+    "pos": "n.",
+    "meaning": "依實力排名安排賽事位置的做法",
+    "example": "The seeding affects the early rounds.",
+    "exampleZh": "種子排序影響前幾輪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依實力排名安排賽事位置的做法",
+        "examples": [
+          {
+            "en": "The seeding affects the early rounds.",
+            "zh": "種子排序影響前幾輪。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORFEIT": {
+    "pos": "v.",
+    "meaning": "因違規或未履行條件而喪失權利或比賽",
+    "example": "A late team may forfeit the match.",
+    "exampleZh": "遲到隊伍可能被判棄權。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "因違規或未履行條件而喪失權利或比賽",
+        "examples": [
+          {
+            "en": "A late team may forfeit the match.",
+            "zh": "遲到隊伍可能被判棄權。"
+          }
+        ]
+      }
+    ]
+  },
+  "OUTPLAY": {
+    "pos": "v.",
+    "meaning": "在比賽表現上勝過對手",
+    "example": "They hoped to outplay the visiting team.",
+    "exampleZh": "他們希望在表現上勝過客隊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "在比賽表現上勝過對手",
+        "examples": [
+          {
+            "en": "They hoped to outplay the visiting team.",
+            "zh": "他們希望在表現上勝過客隊。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESURGENCE": {
+    "pos": "n.",
+    "meaning": "衰退後重新增強或活躍",
+    "example": "The club enjoyed a resurgence.",
+    "exampleZh": "俱樂部重新振作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "衰退後重新增強或活躍",
+        "examples": [
+          {
+            "en": "The club enjoyed a resurgence.",
+            "zh": "俱樂部重新振作。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:CORROBORATION": {
+    "word": "corroboration",
+    "pos": "n.",
+    "meaning": "支持某說法的其他佐證",
+    "example": "The sighting needs independent corroboration.",
+    "exampleZh": "目擊需要獨立佐證。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "佐證",
+        "examples": [
+          {
+            "en": "Corroboration.",
+            "zh": "佐證。"
+          }
+        ]
+      },
       {
         "pos": "n.",
         "meaning": "支持說法的獨立佐證",
@@ -2860,16 +4694,36 @@
             "zh": "這項指控需要獨立的佐證。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "支持某說法的其他佐證",
+        "examples": [
+          {
+            "en": "The sighting needs independent corroboration.",
+            "zh": "目擊需要獨立佐證。"
+          }
+        ]
       }
-    ],
-    "word": "corroboration"
+    ]
   },
   "R7:EQUIVOCAL": {
+    "word": "equivocal",
     "pos": "adj.",
     "meaning": "說法或證據不明確而有多種解讀的",
     "example": "The evidence remained equivocal despite further analysis.",
     "exampleZh": "即使進一步分析，證據仍不明確。",
     "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "模稜兩可的",
+        "examples": [
+          {
+            "en": "Equivocal.",
+            "zh": "模稜兩可的。"
+          }
+        ]
+      },
       {
         "pos": "adj.",
         "meaning": "說法或證據不明確而有多種解讀的",
@@ -2880,36 +4734,83 @@
           }
         ]
       }
-    ],
-    "word": "equivocal"
+    ]
   },
   "R7:A QUALIFIED ENDORSEMENT": {
     "word": "a qualified endorsement",
     "pos": "phr.",
     "meaning": "有所保留的支持",
     "example": "The committee offered a qualified endorsement of the plan.",
-    "exampleZh": "委員會對計畫給予有所保留的支持。"
+    "exampleZh": "委員會對計畫給予有所保留的支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有所保留的支持",
+        "examples": [
+          {
+            "en": "The committee offered a qualified endorsement of the plan.",
+            "zh": "委員會對計畫給予有所保留的支持。"
+          }
+        ]
+      }
+    ]
   },
   "R7:ON THE FACE OF IT": {
     "word": "on the face of it",
     "pos": "phr.",
     "meaning": "乍看之下",
     "example": "On the face of it, the two proposals seem similar.",
-    "exampleZh": "乍看之下，這兩項提案似乎很相近。"
+    "exampleZh": "乍看之下，這兩項提案似乎很相近。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "乍看之下",
+        "examples": [
+          {
+            "en": "On the face of it, the two proposals seem similar.",
+            "zh": "乍看之下，這兩項提案似乎很相近。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE EVIDENCE WARRANTS A MORE NUANCED INTERPRETATION": {
     "word": "the evidence warrants a more nuanced interpretation",
     "pos": "phr.",
     "meaning": "證據值得更細緻的解讀",
     "example": "The evidence warrants a more nuanced interpretation.",
-    "exampleZh": "證據值得更細緻的解讀。"
+    "exampleZh": "證據值得更細緻的解讀。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "證據值得更細緻的解讀",
+        "examples": [
+          {
+            "en": "The evidence warrants a more nuanced interpretation.",
+            "zh": "證據值得更細緻的解讀。"
+          }
+        ]
+      }
+    ]
   },
   "R7:WE MUST DISTINGUISH CORRELATION FROM CAUSATION": {
     "word": "we must distinguish correlation from causation",
     "pos": "phr.",
     "meaning": "我們必須區分相關與因果",
     "example": "We must distinguish correlation from causation.",
-    "exampleZh": "我們必須區分相關與因果。"
+    "exampleZh": "我們必須區分相關與因果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "我們必須區分相關與因果",
+        "examples": [
+          {
+            "en": "We must distinguish correlation from causation.",
+            "zh": "我們必須區分相關與因果。"
+          }
+        ]
+      }
+    ]
   },
   "R7:PREREQUISITE": {
     "pos": "n.",
@@ -2950,11 +4851,22 @@
     "word": "scrupulous"
   },
   "R7:AMBIVALENCE": {
+    "word": "ambivalence",
     "pos": "n.",
     "meaning": "同時具有互相衝突的感受或態度",
     "example": "His ambivalence made an immediate decision difficult.",
     "exampleZh": "他的矛盾心情使他難以立即決定。",
     "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對同一事物同時抱有矛盾感受",
+        "examples": [
+          {
+            "en": "Her ambivalence about tourism reflects both pride and concern.",
+            "zh": "她對觀光既自豪又擔心，抱持矛盾感受。"
+          }
+        ]
+      },
       {
         "pos": "n.",
         "meaning": "同時具有互相衝突的感受或態度",
@@ -2965,10 +4877,10 @@
           }
         ]
       }
-    ],
-    "word": "ambivalence"
+    ]
   },
   "R7:APPROPRIATION": {
+    "word": "appropriation",
     "pos": "n.",
     "meaning": "未經適當同意而取用他人事物的行為",
     "example": "The artist questioned the commercial appropriation of the motif.",
@@ -2979,41 +4891,92 @@
         "meaning": "未經適當同意而取用他人事物的行為",
         "examples": [
           {
+            "en": "The debate concerned the appropriation of local cultural symbols.",
+            "zh": "辯論涉及取用當地文化符號的問題。"
+          },
+          {
             "en": "The artist questioned the commercial appropriation of the motif.",
             "zh": "藝術家質疑把該圖樣取作商業用途的行為。"
           }
         ]
       }
-    ],
-    "word": "appropriation"
+    ]
   },
   "R7:A BONE OF CONTENTION": {
     "word": "a bone of contention",
     "pos": "phr.",
     "meaning": "持續引起爭議的焦點",
     "example": "The closing time remains a bone of contention.",
-    "exampleZh": "關門時間仍是爭議焦點。"
+    "exampleZh": "關門時間仍是爭議焦點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "持續引起爭議的焦點",
+        "examples": [
+          {
+            "en": "The closing time remains a bone of contention.",
+            "zh": "關門時間仍是爭議焦點。"
+          }
+        ]
+      }
+    ]
   },
   "R7:AN UNQUALIFIED ENDORSEMENT": {
     "word": "an unqualified endorsement",
     "pos": "phr.",
     "meaning": "毫無保留的支持",
     "example": "The review was far from an unqualified endorsement.",
-    "exampleZh": "這則評論遠稱不上毫無保留的支持。"
+    "exampleZh": "這則評論遠稱不上毫無保留的支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "毫無保留的支持",
+        "examples": [
+          {
+            "en": "The review was far from an unqualified endorsement.",
+            "zh": "這則評論遠稱不上毫無保留的支持。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE GESTURE WAS WELL INTENTIONED BUT MISGUIDED": {
     "word": "the gesture was well intentioned but misguided",
     "pos": "phr.",
     "meaning": "這項舉動出於好意卻方向有誤",
     "example": "The gesture was well intentioned but misguided.",
-    "exampleZh": "這項舉動出於好意卻方向有誤。"
+    "exampleZh": "這項舉動出於好意卻方向有誤。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這項舉動出於好意卻方向有誤",
+        "examples": [
+          {
+            "en": "The gesture was well intentioned but misguided.",
+            "zh": "這項舉動出於好意卻方向有誤。"
+          }
+        ]
+      }
+    ]
   },
   "R7:GENUINE COLLABORATION REQUIRES MORE THAN TOKEN CONSULTATION": {
     "word": "genuine collaboration requires more than token consultation",
     "pos": "phr.",
     "meaning": "真正的合作需要的不只是象徵性諮詢",
     "example": "Genuine collaboration requires more than token consultation.",
-    "exampleZh": "真正的合作需要的不只是象徵性諮詢。"
+    "exampleZh": "真正的合作需要的不只是象徵性諮詢。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真正的合作需要的不只是象徵性諮詢",
+        "examples": [
+          {
+            "en": "Genuine collaboration requires more than token consultation.",
+            "zh": "真正的合作需要的不只是象徵性諮詢。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CONCILIATORY": {
     "pos": "adj.",
@@ -3058,42 +5021,114 @@
     "pos": "n.",
     "meaning": "不同系統能互相配合運作的特性",
     "example": "Interoperability allows the two services to exchange data.",
-    "exampleZh": "互通性讓兩項服務可以交換資料。"
+    "exampleZh": "互通性讓兩項服務可以交換資料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "不同系統能互相配合運作的特性",
+        "examples": [
+          {
+            "en": "Interoperability allows the two services to exchange data.",
+            "zh": "互通性讓兩項服務可以交換資料。"
+          }
+        ]
+      }
+    ]
   },
   "R7:GRANULARITY": {
     "word": "granularity",
     "pos": "n.",
     "meaning": "資料或描述細分的程度",
     "example": "The report lacks the granularity needed for local decisions.",
-    "exampleZh": "報告缺少地方決策所需的細緻程度。"
+    "exampleZh": "報告缺少地方決策所需的細緻程度。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資料或描述細分的程度",
+        "examples": [
+          {
+            "en": "The report lacks the granularity needed for local decisions.",
+            "zh": "報告缺少地方決策所需的細緻程度。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A PROVISIONAL ASSESSMENT": {
     "word": "a provisional assessment",
     "pos": "phr.",
     "meaning": "仍可能修訂的暫定評估",
     "example": "This is a provisional assessment rather than a final verdict.",
-    "exampleZh": "這是暫定評估，而非最終判斷。"
+    "exampleZh": "這是暫定評估，而非最終判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可能修訂的暫定評估",
+        "examples": [
+          {
+            "en": "This is a provisional assessment rather than a final verdict.",
+            "zh": "這是暫定評估，而非最終判斷。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A MISLEADING IMPRESSION OF CERTAINTY": {
     "word": "a misleading impression of certainty",
     "pos": "phr.",
     "meaning": "讓人誤以為確定無疑的印象",
     "example": "Precise figures can create a misleading impression of certainty.",
-    "exampleZh": "精確數字可能讓人誤以為確定無疑。"
+    "exampleZh": "精確數字可能讓人誤以為確定無疑。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "讓人誤以為確定無疑的印象",
+        "examples": [
+          {
+            "en": "Precise figures can create a misleading impression of certainty.",
+            "zh": "精確數字可能讓人誤以為確定無疑。"
+          }
+        ]
+      }
+    ]
   },
   "R7:NUMERICAL PRECISION CAN CONCEAL UNCERTAINTY IN ASSUMPTIONS": {
     "word": "numerical precision can conceal uncertainty in assumptions",
     "pos": "phr.",
     "meaning": "數字精確可能掩蓋假設的不確定性",
     "example": "Numerical precision can conceal uncertainty in assumptions.",
-    "exampleZh": "數字精確可能掩蓋假設的不確定性。"
+    "exampleZh": "數字精確可能掩蓋假設的不確定性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "數字精確可能掩蓋假設的不確定性",
+        "examples": [
+          {
+            "en": "Numerical precision can conceal uncertainty in assumptions.",
+            "zh": "數字精確可能掩蓋假設的不確定性。"
+          }
+        ]
+      }
+    ]
   },
   "R7:REPUTATION CANNOT SUBSTITUTE FOR INDEPENDENT VERIFICATION": {
     "word": "reputation cannot substitute for independent verification",
     "pos": "phr.",
     "meaning": "聲譽無法取代獨立查證",
     "example": "Reputation cannot substitute for independent verification.",
-    "exampleZh": "聲譽無法取代獨立查證。"
+    "exampleZh": "聲譽無法取代獨立查證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "聲譽無法取代獨立查證",
+        "examples": [
+          {
+            "en": "Reputation cannot substitute for independent verification.",
+            "zh": "聲譽無法取代獨立查證。"
+          }
+        ]
+      }
+    ]
   },
   "R7:ROBUSTNESS": {
     "pos": "n.",
@@ -3238,42 +5273,114 @@
     "pos": "adj.",
     "meaning": "涉及不同世代之間的",
     "example": "The decision raises questions of intergenerational fairness.",
-    "exampleZh": "這項決定涉及世代公平問題。"
+    "exampleZh": "這項決定涉及世代公平問題。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "涉及不同世代之間的",
+        "examples": [
+          {
+            "en": "The decision raises questions of intergenerational fairness.",
+            "zh": "這項決定涉及世代公平問題。"
+          }
+        ]
+      }
+    ]
   },
   "R7:REDISTRIBUTION": {
     "word": "redistribution",
     "pos": "n.",
     "meaning": "將資源或利益重新分配",
     "example": "The policy involves redistribution between districts.",
-    "exampleZh": "這項政策涉及區域之間的重新分配。"
+    "exampleZh": "這項政策涉及區域之間的重新分配。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將資源或利益重新分配",
+        "examples": [
+          {
+            "en": "The policy involves redistribution between districts.",
+            "zh": "這項政策涉及區域之間的重新分配。"
+          }
+        ]
+      }
+    ]
   },
   "R7:AN UNINTENDED CONSEQUENCE": {
     "word": "an unintended consequence",
     "pos": "phr.",
     "meaning": "非原本預期的後果",
     "example": "Higher demand was an unintended consequence of the subsidy.",
-    "exampleZh": "需求增加是補助未預期的後果。"
+    "exampleZh": "需求增加是補助未預期的後果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "非原本預期的後果",
+        "examples": [
+          {
+            "en": "Higher demand was an unintended consequence of the subsidy.",
+            "zh": "需求增加是補助未預期的後果。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A DISPROPORTIONATE BURDEN": {
     "word": "a disproportionate burden",
     "pos": "phr.",
     "meaning": "不成比例的沉重負擔",
     "example": "Small businesses faced a disproportionate burden.",
-    "exampleZh": "小型企業承受了不成比例的負擔。"
+    "exampleZh": "小型企業承受了不成比例的負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不成比例的沉重負擔",
+        "examples": [
+          {
+            "en": "Small businesses faced a disproportionate burden.",
+            "zh": "小型企業承受了不成比例的負擔。"
+          }
+        ]
+      }
+    ]
   },
   "R7:AGGREGATE GAINS CAN OBSCURE UNEQUAL INDIVIDUAL OUTCOMES": {
     "word": "aggregate gains can obscure unequal individual outcomes",
     "pos": "phr.",
     "meaning": "總體收益可能掩蓋個人結果的不均",
     "example": "Aggregate gains can obscure unequal individual outcomes.",
-    "exampleZh": "總體收益可能掩蓋個人結果的不均。"
+    "exampleZh": "總體收益可能掩蓋個人結果的不均。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "總體收益可能掩蓋個人結果的不均",
+        "examples": [
+          {
+            "en": "Aggregate gains can obscure unequal individual outcomes.",
+            "zh": "總體收益可能掩蓋個人結果的不均。"
+          }
+        ]
+      }
+    ]
   },
   "R7:EFFICIENCY ALONE DOES NOT ESTABLISH OVERALL SUSTAINABILITY": {
     "word": "efficiency alone does not establish overall sustainability",
     "pos": "phr.",
     "meaning": "效率本身無法確立整體永續性",
     "example": "Efficiency alone does not establish overall sustainability.",
-    "exampleZh": "效率本身無法確立整體永續性。"
+    "exampleZh": "效率本身無法確立整體永續性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "效率本身無法確立整體永續性",
+        "examples": [
+          {
+            "en": "Efficiency alone does not establish overall sustainability.",
+            "zh": "效率本身無法確立整體永續性。"
+          }
+        ]
+      }
+    ]
   },
   "R7:MITIGATION": {
     "pos": "n.",
@@ -3418,42 +5525,114 @@
     "pos": "n.",
     "meaning": "教學的方法與實踐原則",
     "example": "The course links pedagogy with classroom observation.",
-    "exampleZh": "課程把教學原則與課堂觀察相連。"
+    "exampleZh": "課程把教學原則與課堂觀察相連。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "教學的方法與實踐原則",
+        "examples": [
+          {
+            "en": "The course links pedagogy with classroom observation.",
+            "zh": "課程把教學原則與課堂觀察相連。"
+          }
+        ]
+      }
+    ]
   },
   "R7:REFLEXIVITY": {
     "word": "reflexivity",
     "pos": "n.",
     "meaning": "對自身觀點與角色進行反思的能力",
     "example": "Reflexivity helps researchers examine their own assumptions.",
-    "exampleZh": "反思自身立場有助研究者檢視自己的假設。"
+    "exampleZh": "反思自身立場有助研究者檢視自己的假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對自身觀點與角色進行反思的能力",
+        "examples": [
+          {
+            "en": "Reflexivity helps researchers examine their own assumptions.",
+            "zh": "反思自身立場有助研究者檢視自己的假設。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A DEFENSIBLE INTERPRETATION": {
     "word": "a defensible interpretation",
     "pos": "phr.",
     "meaning": "有充分理由可辯護的解讀",
     "example": "The evidence supports more than one defensible interpretation.",
-    "exampleZh": "證據支持不只一種有理可據的解讀。"
+    "exampleZh": "證據支持不只一種有理可據的解讀。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有充分理由可辯護的解讀",
+        "examples": [
+          {
+            "en": "The evidence supports more than one defensible interpretation.",
+            "zh": "證據支持不只一種有理可據的解讀。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A DISTINCTION WORTH PRESERVING": {
     "word": "a distinction worth preserving",
     "pos": "phr.",
     "meaning": "值得保留的重要區分",
     "example": "That is a distinction worth preserving in the summary.",
-    "exampleZh": "摘要中值得保留那個區分。"
+    "exampleZh": "摘要中值得保留那個區分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "值得保留的重要區分",
+        "examples": [
+          {
+            "en": "That is a distinction worth preserving in the summary.",
+            "zh": "摘要中值得保留那個區分。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CONCEPTUAL CLARITY REQUIRES MORE THAN FLUENT TERMINOLOGY": {
     "word": "conceptual clarity requires more than fluent terminology",
     "pos": "phr.",
     "meaning": "概念清楚需要的不只是熟練使用術語",
     "example": "Conceptual clarity requires more than fluent terminology.",
-    "exampleZh": "概念清楚需要的不只是熟練使用術語。"
+    "exampleZh": "概念清楚需要的不只是熟練使用術語。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "概念清楚需要的不只是熟練使用術語",
+        "examples": [
+          {
+            "en": "Conceptual clarity requires more than fluent terminology.",
+            "zh": "概念清楚需要的不只是熟練使用術語。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE TASK SHOULD REVEAL RATHER THAN CONCEAL MISUNDERSTANDING": {
     "word": "the task should reveal rather than conceal misunderstanding",
     "pos": "phr.",
     "meaning": "任務應揭露而非掩蓋誤解",
     "example": "The task should reveal rather than conceal misunderstanding.",
-    "exampleZh": "任務應揭露而非掩蓋誤解。"
+    "exampleZh": "任務應揭露而非掩蓋誤解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "任務應揭露而非掩蓋誤解",
+        "examples": [
+          {
+            "en": "The task should reveal rather than conceal misunderstanding.",
+            "zh": "任務應揭露而非掩蓋誤解。"
+          }
+        ]
+      }
+    ]
   },
   "R7:ELUCIDATE": {
     "pos": "v.",
@@ -3598,42 +5777,114 @@
     "pos": "n.",
     "meaning": "間接提及另一作品或事物的手法",
     "example": "The title contains an allusion to an older story.",
-    "exampleZh": "標題間接引用了一個較古老的故事。"
+    "exampleZh": "標題間接引用了一個較古老的故事。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "間接提及另一作品或事物的手法",
+        "examples": [
+          {
+            "en": "The title contains an allusion to an older story.",
+            "zh": "標題間接引用了一個較古老的故事。"
+          }
+        ]
+      }
+    ]
   },
   "R7:JUXTAPOSITION": {
     "word": "juxtaposition",
     "pos": "n.",
     "meaning": "把不同事物並置以形成關係或對比",
     "example": "The juxtaposition of the images changes their effect.",
-    "exampleZh": "意象並置改變了它們的效果。"
+    "exampleZh": "意象並置改變了它們的效果。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把不同事物並置以形成關係或對比",
+        "examples": [
+          {
+            "en": "The juxtaposition of the images changes their effect.",
+            "zh": "意象並置改變了它們的效果。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A SHIFT IN PERSPECTIVE": {
     "word": "a shift in perspective",
     "pos": "phr.",
     "meaning": "觀點的轉換",
     "example": "The ending depends on a shift in perspective.",
-    "exampleZh": "結局仰賴觀點轉換。"
+    "exampleZh": "結局仰賴觀點轉換。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "觀點的轉換",
+        "examples": [
+          {
+            "en": "The ending depends on a shift in perspective.",
+            "zh": "結局仰賴觀點轉換。"
+          }
+        ]
+      }
+    ]
   },
   "R7:AN UNRESOLVED TENSION": {
     "word": "an unresolved tension",
     "pos": "phr.",
     "meaning": "尚未解決的張力",
     "example": "The unresolved tension gives the final scene its force.",
-    "exampleZh": "未解的張力賦予最後一幕力量。"
+    "exampleZh": "未解的張力賦予最後一幕力量。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尚未解決的張力",
+        "examples": [
+          {
+            "en": "The unresolved tension gives the final scene its force.",
+            "zh": "未解的張力賦予最後一幕力量。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE NARRATOR REVEALS MORE THAN SHE INTENDS": {
     "word": "the narrator reveals more than she intends",
     "pos": "phr.",
     "meaning": "敘事者透露的比她意圖的更多",
     "example": "The narrator reveals more than she intends.",
-    "exampleZh": "敘事者透露的比她意圖的更多。"
+    "exampleZh": "敘事者透露的比她意圖的更多。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "敘事者透露的比她意圖的更多",
+        "examples": [
+          {
+            "en": "The narrator reveals more than she intends.",
+            "zh": "敘事者透露的比她意圖的更多。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE IMAGE INVITES INTERPRETATION WITHOUT DICTATING A CONCLUSION": {
     "word": "the image invites interpretation without dictating a conclusion",
     "pos": "phr.",
     "meaning": "意象邀請解讀卻不指定結論",
     "example": "The image invites interpretation without dictating a conclusion.",
-    "exampleZh": "意象邀請解讀卻不指定結論。"
+    "exampleZh": "意象邀請解讀卻不指定結論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意象邀請解讀卻不指定結論",
+        "examples": [
+          {
+            "en": "The image invites interpretation without dictating a conclusion.",
+            "zh": "意象邀請解讀卻不指定結論。"
+          }
+        ]
+      }
+    ]
   },
   "R7:FORESHADOWING": {
     "pos": "n.",
@@ -3778,42 +6029,114 @@
     "pos": "n.",
     "meaning": "透過和解態度平息衝突的過程",
     "example": "The chair favoured conciliation over confrontation.",
-    "exampleZh": "主席偏好和解而非對抗。"
+    "exampleZh": "主席偏好和解而非對抗。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過和解態度平息衝突的過程",
+        "examples": [
+          {
+            "en": "The chair favoured conciliation over confrontation.",
+            "zh": "主席偏好和解而非對抗。"
+          }
+        ]
+      }
+    ]
   },
   "R7:EQUANIMITY": {
     "word": "equanimity",
     "pos": "n.",
     "meaning": "在壓力下保持沉著的心態",
     "example": "She received the criticism with equanimity.",
-    "exampleZh": "她沉著地接受批評。"
+    "exampleZh": "她沉著地接受批評。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在壓力下保持沉著的心態",
+        "examples": [
+          {
+            "en": "She received the criticism with equanimity.",
+            "zh": "她沉著地接受批評。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A RECIPROCAL CONCESSION": {
     "word": "a reciprocal concession",
     "pos": "phr.",
     "meaning": "雙方相互對應的讓步",
     "example": "The offer depends on a reciprocal concession.",
-    "exampleZh": "提議取決於對方相應讓步。"
+    "exampleZh": "提議取決於對方相應讓步。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "雙方相互對應的讓步",
+        "examples": [
+          {
+            "en": "The offer depends on a reciprocal concession.",
+            "zh": "提議取決於對方相應讓步。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A COMMENSURATE DEGREE OF AUTHORITY": {
     "word": "a commensurate degree of authority",
     "pos": "phr.",
     "meaning": "相稱程度的權限",
     "example": "Responsibility requires a commensurate degree of authority.",
-    "exampleZh": "責任需要相稱的權限。"
+    "exampleZh": "責任需要相稱的權限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相稱程度的權限",
+        "examples": [
+          {
+            "en": "Responsibility requires a commensurate degree of authority.",
+            "zh": "責任需要相稱的權限。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE AGREEMENT LEAVES THE CENTRAL AMBIGUITY UNRESOLVED": {
     "word": "the agreement leaves the central ambiguity unresolved",
     "pos": "phr.",
     "meaning": "協議仍未解決核心歧義",
     "example": "The agreement leaves the central ambiguity unresolved.",
-    "exampleZh": "協議仍未解決核心歧義。"
+    "exampleZh": "協議仍未解決核心歧義。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "協議仍未解決核心歧義",
+        "examples": [
+          {
+            "en": "The agreement leaves the central ambiguity unresolved.",
+            "zh": "協議仍未解決核心歧義。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A FORMAL INVITATION DOES NOT GUARANTEE GENUINE INFLUENCE": {
     "word": "a formal invitation does not guarantee genuine influence",
     "pos": "phr.",
     "meaning": "正式邀請不保證有實質影響力",
     "example": "A formal invitation does not guarantee genuine influence.",
-    "exampleZh": "正式邀請不保證有實質影響力。"
+    "exampleZh": "正式邀請不保證有實質影響力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "正式邀請不保證有實質影響力",
+        "examples": [
+          {
+            "en": "A formal invitation does not guarantee genuine influence.",
+            "zh": "正式邀請不保證有實質影響力。"
+          }
+        ]
+      }
+    ]
   },
   "R7:DISCRETION": {
     "pos": "n.",
@@ -3958,42 +6281,114 @@
     "pos": "adj.",
     "meaning": "不輕易表露想法感受的",
     "example": "She was reticent about the reasons for leaving.",
-    "exampleZh": "她不願多談離開的原因。"
+    "exampleZh": "她不願多談離開的原因。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不輕易表露想法感受的",
+        "examples": [
+          {
+            "en": "She was reticent about the reasons for leaving.",
+            "zh": "她不願多談離開的原因。"
+          }
+        ]
+      }
+    ]
   },
   "R7:INCONGRUOUS": {
     "word": "incongruous",
     "pos": "adj.",
     "meaning": "與周遭情境不相稱的",
     "example": "The cheerful reply seemed incongruous in the tense room.",
-    "exampleZh": "房間氣氛緊張，歡快回覆顯得不相稱。"
+    "exampleZh": "房間氣氛緊張，歡快回覆顯得不相稱。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與周遭情境不相稱的",
+        "examples": [
+          {
+            "en": "The cheerful reply seemed incongruous in the tense room.",
+            "zh": "房間氣氛緊張，歡快回覆顯得不相稱。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A TACIT UNDERSTANDING": {
     "word": "a tacit understanding",
     "pos": "phr.",
     "meaning": "沒有明說卻彼此默認的理解",
     "example": "They had a tacit understanding about privacy.",
-    "exampleZh": "他們對隱私有默契。"
+    "exampleZh": "他們對隱私有默契。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "沒有明說卻彼此默認的理解",
+        "examples": [
+          {
+            "en": "They had a tacit understanding about privacy.",
+            "zh": "他們對隱私有默契。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A LEGITIMATE RESERVATION": {
     "word": "a legitimate reservation",
     "pos": "phr.",
     "meaning": "有合理根據的保留",
     "example": "A legitimate reservation should not be treated as disloyalty.",
-    "exampleZh": "合理保留不應被當成不忠。"
+    "exampleZh": "合理保留不應被當成不忠。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "有合理根據的保留",
+        "examples": [
+          {
+            "en": "A legitimate reservation should not be treated as disloyalty.",
+            "zh": "合理保留不應被當成不忠。"
+          }
+        ]
+      }
+    ]
   },
   "R7:APPARENT HARMONY CAN CONCEAL AN UNEQUAL BURDEN": {
     "word": "apparent harmony can conceal an unequal burden",
     "pos": "phr.",
     "meaning": "表面和諧可能掩蓋不均等負擔",
     "example": "Apparent harmony can conceal an unequal burden.",
-    "exampleZh": "表面和諧可能掩蓋不均等負擔。"
+    "exampleZh": "表面和諧可能掩蓋不均等負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "表面和諧可能掩蓋不均等負擔",
+        "examples": [
+          {
+            "en": "Apparent harmony can conceal an unequal burden.",
+            "zh": "表面和諧可能掩蓋不均等負擔。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A PRACTICAL BOUNDARY NEED NOT IMPLY EMOTIONAL WITHDRAWAL": {
     "word": "a practical boundary need not imply emotional withdrawal",
     "pos": "phr.",
     "meaning": "實際界線不必意味感情退縮",
     "example": "A practical boundary need not imply emotional withdrawal.",
-    "exampleZh": "實際界線不必意味感情退縮。"
+    "exampleZh": "實際界線不必意味感情退縮。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際界線不必意味感情退縮",
+        "examples": [
+          {
+            "en": "A practical boundary need not imply emotional withdrawal.",
+            "zh": "實際界線不必意味感情退縮。"
+          }
+        ]
+      }
+    ]
   },
   "R7:MISGIVING": {
     "pos": "n.",
@@ -4138,42 +6533,114 @@
     "pos": "adj.",
     "meaning": "與問題直接相關而切題的",
     "example": "That distinction is pertinent to the complaint.",
-    "exampleZh": "那個區分與申訴直接相關。"
+    "exampleZh": "那個區分與申訴直接相關。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與問題直接相關而切題的",
+        "examples": [
+          {
+            "en": "That distinction is pertinent to the complaint.",
+            "zh": "那個區分與申訴直接相關。"
+          }
+        ]
+      }
+    ]
   },
   "R7:REDRESS": {
     "word": "redress",
     "pos": "n.",
     "meaning": "針對損害或不公所作的補救",
     "example": "The notice explains the available routes to redress.",
-    "exampleZh": "公告說明可用補救途徑。"
+    "exampleZh": "公告說明可用補救途徑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "針對損害或不公所作的補救",
+        "examples": [
+          {
+            "en": "The notice explains the available routes to redress.",
+            "zh": "公告說明可用補救途徑。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A DISCRETIONARY EXCEPTION": {
     "word": "a discretionary exception",
     "pos": "phr.",
     "meaning": "須依個案裁量的例外",
     "example": "The policy allows a discretionary exception.",
-    "exampleZh": "政策允許依個案裁量的例外。"
+    "exampleZh": "政策允許依個案裁量的例外。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "須依個案裁量的例外",
+        "examples": [
+          {
+            "en": "The policy allows a discretionary exception.",
+            "zh": "政策允許依個案裁量的例外。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A SUBSTANTIVELY ADEQUATE REMEDY": {
     "word": "a substantively adequate remedy",
     "pos": "phr.",
     "meaning": "實質上充分的補救",
     "example": "The review asks whether there is a substantively adequate remedy.",
-    "exampleZh": "審查檢視補救在實質上是否充分。"
+    "exampleZh": "審查檢視補救在實質上是否充分。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實質上充分的補救",
+        "examples": [
+          {
+            "en": "The review asks whether there is a substantively adequate remedy.",
+            "zh": "審查檢視補救在實質上是否充分。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CURRENT AVAILABILITY IS NOT AN IRREVOCABLE COMMITMENT": {
     "word": "current availability is not an irrevocable commitment",
     "pos": "phr.",
     "meaning": "目前可用不等於不可撤回的承諾",
     "example": "Current availability is not an irrevocable commitment.",
-    "exampleZh": "目前可用不等於不可撤回的承諾。"
+    "exampleZh": "目前可用不等於不可撤回的承諾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "目前可用不等於不可撤回的承諾",
+        "examples": [
+          {
+            "en": "Current availability is not an irrevocable commitment.",
+            "zh": "目前可用不等於不可撤回的承諾。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE PROCEDURE MUST ACCOMMODATE CIRCUMSTANCES BEYOND ROUTINE CASES": {
     "word": "the procedure must accommodate circumstances beyond routine cases",
     "pos": "phr.",
     "meaning": "程序必須容納常規以外的情況",
     "example": "The procedure must accommodate circumstances beyond routine cases.",
-    "exampleZh": "程序必須容納常規以外的情況。"
+    "exampleZh": "程序必須容納常規以外的情況。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序必須容納常規以外的情況",
+        "examples": [
+          {
+            "en": "The procedure must accommodate circumstances beyond routine cases.",
+            "zh": "程序必須容納常規以外的情況。"
+          }
+        ]
+      }
+    ]
   },
   "R7:RECOURSE": {
     "pos": "n.",
@@ -4318,42 +6785,114 @@
     "pos": "v.",
     "meaning": "未經正當授權而奪取權位",
     "example": "The steward tried to usurp the council’s authority.",
-    "exampleZh": "管事試圖奪取議會權力。"
+    "exampleZh": "管事試圖奪取議會權力。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "未經正當授權而奪取權位",
+        "examples": [
+          {
+            "en": "The steward tried to usurp the council’s authority.",
+            "zh": "管事試圖奪取議會權力。"
+          }
+        ]
+      }
+    ]
   },
   "R7:DISAVOWAL": {
     "word": "disavowal",
     "pos": "n.",
     "meaning": "否認與某行為主張有關的表態",
     "example": "The letter contained a formal disavowal of the threat.",
-    "exampleZh": "信中正式否認與威脅有關。"
+    "exampleZh": "信中正式否認與威脅有關。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "否認與某行為主張有關的表態",
+        "examples": [
+          {
+            "en": "The letter contained a formal disavowal of the threat.",
+            "zh": "信中正式否認與威脅有關。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A CLAIM TO LEGITIMACY": {
     "word": "a claim to legitimacy",
     "pos": "phr.",
     "meaning": "對自身正當性的主張",
     "example": "The ruler’s claim to legitimacy was challenged.",
-    "exampleZh": "統治者的正當性主張遭質疑。"
+    "exampleZh": "統治者的正當性主張遭質疑。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "對自身正當性的主張",
+        "examples": [
+          {
+            "en": "The ruler’s claim to legitimacy was challenged.",
+            "zh": "統治者的正當性主張遭質疑。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A REVOCABLE GUARANTEE": {
     "word": "a revocable guarantee",
     "pos": "phr.",
     "meaning": "可以被撤回的保證",
     "example": "A revocable guarantee may offer limited reassurance.",
-    "exampleZh": "可撤回的保證提供的安心有限。"
+    "exampleZh": "可撤回的保證提供的安心有限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可以被撤回的保證",
+        "examples": [
+          {
+            "en": "A revocable guarantee may offer limited reassurance.",
+            "zh": "可撤回的保證提供的安心有限。"
+          }
+        ]
+      }
+    ]
   },
   "R7:FORMAL SYMMETRY CAN CONCEAL UNEQUAL POWERS OF INTERPRETATION": {
     "word": "formal symmetry can conceal unequal powers of interpretation",
     "pos": "phr.",
     "meaning": "形式對稱可能掩蓋不均等的解釋權",
     "example": "Formal symmetry can conceal unequal powers of interpretation.",
-    "exampleZh": "形式對稱可能掩蓋不均等的解釋權。"
+    "exampleZh": "形式對稱可能掩蓋不均等的解釋權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式對稱可能掩蓋不均等的解釋權",
+        "examples": [
+          {
+            "en": "Formal symmetry can conceal unequal powers of interpretation.",
+            "zh": "形式對稱可能掩蓋不均等的解釋權。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A GENUINE DANGER DOES NOT JUSTIFY UNRELATED RESTRICTIONS": {
     "word": "a genuine danger does not justify unrelated restrictions",
     "pos": "phr.",
     "meaning": "真實危險不能證成無關限制",
     "example": "A genuine danger does not justify unrelated restrictions.",
-    "exampleZh": "真實危險不能證成無關限制。"
+    "exampleZh": "真實危險不能證成無關限制。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實危險不能證成無關限制",
+        "examples": [
+          {
+            "en": "A genuine danger does not justify unrelated restrictions.",
+            "zh": "真實危險不能證成無關限制。"
+          }
+        ]
+      }
+    ]
   },
   "R7:RESCIND": {
     "pos": "v.",
@@ -4498,42 +7037,128 @@
     "pos": "adj.",
     "meaning": "使人愉快交談共處的",
     "example": "The supper had a convivial atmosphere.",
-    "exampleZh": "晚餐氣氛歡洽。"
+    "exampleZh": "晚餐氣氛歡洽。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "使人愉快交談共處的",
+        "examples": [
+          {
+            "en": "The supper had a convivial atmosphere.",
+            "zh": "晚餐氣氛歡洽。"
+          }
+        ]
+      }
+    ]
   },
   "R7:PROVENANCE": {
-    "word": "provenance",
     "pos": "n.",
     "meaning": "事物的來源或出處",
     "example": "The menu explains the provenance of the cheese.",
-    "exampleZh": "菜單交代起司的來源。"
+    "exampleZh": "菜單交代起司的來源。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "可追查的來源與沿革",
+        "examples": [
+          {
+            "en": "The archive records the provenance of each document.",
+            "zh": "檔案庫記錄每份文件的來源與沿革。"
+          },
+          {
+            "en": "Uncertain provenance makes the image harder to verify.",
+            "zh": "來源不明讓影像更難查證。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "事物的來源或出處",
+        "examples": [
+          {
+            "en": "The menu explains the provenance of the cheese.",
+            "zh": "菜單交代起司的來源。"
+          }
+        ]
+      }
+    ],
+    "word": "provenance"
   },
   "R7:A NUANCED APPRAISAL": {
     "word": "a nuanced appraisal",
     "pos": "phr.",
     "meaning": "能區分細節而不一概而論的評價",
     "example": "Her review offers a nuanced appraisal of the menu.",
-    "exampleZh": "她的評論細緻評估菜單。"
+    "exampleZh": "她的評論細緻評估菜單。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能區分細節而不一概而論的評價",
+        "examples": [
+          {
+            "en": "Her review offers a nuanced appraisal of the menu.",
+            "zh": "她的評論細緻評估菜單。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A LINGERING AFTERTASTE": {
     "word": "a lingering aftertaste",
     "pos": "phr.",
     "meaning": "食用後仍留在口中的餘味",
     "example": "The sauce leaves a lingering aftertaste.",
-    "exampleZh": "醬汁留下持續餘味。"
+    "exampleZh": "醬汁留下持續餘味。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "食用後仍留在口中的餘味",
+        "examples": [
+          {
+            "en": "The sauce leaves a lingering aftertaste.",
+            "zh": "醬汁留下持續餘味。"
+          }
+        ]
+      }
+    ]
   },
   "R7:SIMPLICITY NEED NOT IMPLY A LACK OF CARE": {
     "word": "simplicity need not imply a lack of care",
     "pos": "phr.",
     "meaning": "簡單不必意味欠缺用心",
     "example": "Simplicity need not imply a lack of care.",
-    "exampleZh": "簡單不必意味欠缺用心。"
+    "exampleZh": "簡單不必意味欠缺用心。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "簡單不必意味欠缺用心",
+        "examples": [
+          {
+            "en": "Simplicity need not imply a lack of care.",
+            "zh": "簡單不必意味欠缺用心。"
+          }
+        ]
+      }
+    ]
   },
   "R7:PERSONAL ATTACHMENT DOES NOT SETTLE A JUDGEMENT OF QUALITY": {
     "word": "personal attachment does not settle a judgement of quality",
     "pos": "phr.",
     "meaning": "個人情感不能決定品質判斷",
     "example": "Personal attachment does not settle a judgement of quality.",
-    "exampleZh": "個人情感不能決定品質判斷。"
+    "exampleZh": "個人情感不能決定品質判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "個人情感不能決定品質判斷",
+        "examples": [
+          {
+            "en": "Personal attachment does not settle a judgement of quality.",
+            "zh": "個人情感不能決定品質判斷。"
+          }
+        ]
+      }
+    ]
   },
   "R7:DISCERNING": {
     "pos": "adj.",
@@ -4673,47 +7298,556 @@
     ],
     "word": "opulent"
   },
+  "R7:CRYPTIC": {
+    "word": "cryptic",
+    "pos": "adj.",
+    "meaning": "隱晦而不易辨認的",
+    "example": "The markings form a cryptic pattern.",
+    "exampleZh": "斑紋構成難辨的圖案。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "隱晦而不易辨認的",
+        "examples": [
+          {
+            "en": "The markings form a cryptic pattern.",
+            "zh": "斑紋構成難辨的圖案。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A PROVISIONAL CLASSIFICATION": {
+    "word": "a provisional classification",
+    "pos": "phr.",
+    "meaning": "仍可修改的暫定分類",
+    "example": "We used a provisional classification.",
+    "exampleZh": "我們採用暫定分類。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可修改的暫定分類",
+        "examples": [
+          {
+            "en": "We used a provisional classification.",
+            "zh": "我們採用暫定分類。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SYSTEMATIC OBSERVATION BIAS": {
+    "word": "a systematic observation bias",
+    "pos": "phr.",
+    "meaning": "觀察方式造成的系統性偏差",
+    "example": "The timing may create a systematic observation bias.",
+    "exampleZh": "時段可能造成系統性觀察偏差。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "觀察方式造成的系統性偏差",
+        "examples": [
+          {
+            "en": "The timing may create a systematic observation bias.",
+            "zh": "時段可能造成系統性觀察偏差。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:COMPATIBILITY WITH AN EXPLANATION DOES NOT ESTABLISH ITS TRUTH": {
+    "word": "compatibility with an explanation does not establish its truth",
+    "pos": "phr.",
+    "meaning": "符合某解釋不證成它為真",
+    "example": "Compatibility with an explanation does not establish its truth.",
+    "exampleZh": "符合某解釋不證成它為真。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "符合某解釋不證成它為真",
+        "examples": [
+          {
+            "en": "Compatibility with an explanation does not establish its truth.",
+            "zh": "符合某解釋不證成它為真。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:THE APPARENT BOUNDARY MAY REFLECT WHERE OBSERVERS HAVE LOOKED": {
+    "word": "the apparent boundary may reflect where observers have looked",
+    "pos": "phr.",
+    "meaning": "表面界線可能反映觀察者搜尋範圍",
+    "example": "The apparent boundary may reflect where observers have looked.",
+    "exampleZh": "表面界線可能反映觀察者搜尋範圍。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "表面界線可能反映觀察者搜尋範圍",
+        "examples": [
+          {
+            "en": "The apparent boundary may reflect where observers have looked.",
+            "zh": "表面界線可能反映觀察者搜尋範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:CONSPICUOUS": {
+    "pos": "adj.",
+    "meaning": "明顯而引人注意的",
+    "example": "The bird has a conspicuous white patch.",
+    "exampleZh": "鳥有醒目白斑。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "明顯而引人注意的",
+        "examples": [
+          {
+            "en": "The bird has a conspicuous white patch.",
+            "zh": "鳥有醒目白斑。"
+          }
+        ]
+      }
+    ],
+    "word": "conspicuous"
+  },
+  "R7:UNOBTRUSIVE": {
+    "pos": "adj.",
+    "meaning": "不引人注意或不造成干擾的",
+    "example": "The shelter is deliberately unobtrusive.",
+    "exampleZh": "觀察棚刻意做得不顯眼。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不引人注意或不造成干擾的",
+        "examples": [
+          {
+            "en": "The shelter is deliberately unobtrusive.",
+            "zh": "觀察棚刻意做得不顯眼。"
+          }
+        ]
+      }
+    ],
+    "word": "unobtrusive"
+  },
+  "R7:FLUCTUATION": {
+    "pos": "n.",
+    "meaning": "數量或程度上升下降的波動",
+    "example": "The report records a fluctuation in sightings.",
+    "exampleZh": "報告記錄目擊數量的波動。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "數量或程度上升下降的波動",
+        "examples": [
+          {
+            "en": "The report records a fluctuation in sightings.",
+            "zh": "報告記錄目擊數量的波動。"
+          }
+        ]
+      }
+    ],
+    "word": "fluctuation"
+  },
+  "R7:RESIDENT": {
+    "pos": "adj.",
+    "meaning": "在某地長期居住或常駐的",
+    "example": "The survey distinguishes resident birds from visitors.",
+    "exampleZh": "調查區分留鳥與訪客。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在某地長期居住或常駐的",
+        "examples": [
+          {
+            "en": "The survey distinguishes resident birds from visitors.",
+            "zh": "調查區分留鳥與訪客。"
+          }
+        ]
+      }
+    ],
+    "word": "resident"
+  },
+  "R7:DISPERSAL": {
+    "pos": "n.",
+    "meaning": "由原處向不同地點散布的過程",
+    "example": "The study tracks seed dispersal.",
+    "exampleZh": "研究追蹤種子散布。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由原處向不同地點散布的過程",
+        "examples": [
+          {
+            "en": "The study tracks seed dispersal.",
+            "zh": "研究追蹤種子散布。"
+          }
+        ]
+      }
+    ],
+    "word": "dispersal"
+  },
+  "R7:ABUNDANCE": {
+    "pos": "n.",
+    "meaning": "大量存在的狀態或數量",
+    "example": "Recorded abundance varied between sites.",
+    "exampleZh": "所記錄的豐度因地點不同。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "大量存在的狀態或數量",
+        "examples": [
+          {
+            "en": "Recorded abundance varied between sites.",
+            "zh": "所記錄的豐度因地點不同。"
+          }
+        ]
+      }
+    ],
+    "word": "abundance"
+  },
+  "R7:COMPOSURE": {
+    "word": "composure",
+    "pos": "n.",
+    "meaning": "壓力下保持冷靜的鎮定",
+    "example": "She regained her composure before serving.",
+    "exampleZh": "發球前她恢復鎮定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "壓力下保持冷靜的鎮定",
+        "examples": [
+          {
+            "en": "She regained her composure before serving.",
+            "zh": "發球前她恢復鎮定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:GAMESMANSHIP": {
+    "word": "gamesmanship",
+    "pos": "n.",
+    "meaning": "利用規則邊緣手段取得心理或競賽優勢",
+    "example": "The delay was criticised as gamesmanship.",
+    "exampleZh": "拖延被批為利用邊緣手段佔優。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用規則邊緣手段取得心理或競賽優勢",
+        "examples": [
+          {
+            "en": "The delay was criticised as gamesmanship.",
+            "zh": "拖延被批為利用邊緣手段佔優。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A DISCRETIONARY DECISION": {
+    "word": "a discretionary decision",
+    "pos": "phr.",
+    "meaning": "容許判斷空間的裁量決定",
+    "example": "The official made a discretionary decision.",
+    "exampleZh": "裁判作了裁量決定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "容許判斷空間的裁量決定",
+        "examples": [
+          {
+            "en": "The official made a discretionary decision.",
+            "zh": "裁判作了裁量決定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A DEMANDING COMMITMENT": {
+    "word": "a demanding commitment",
+    "pos": "phr.",
+    "meaning": "需要投入不少時間精力的承諾",
+    "example": "Weekly training is a demanding commitment.",
+    "exampleZh": "每週訓練需要相當投入。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "需要投入不少時間精力的承諾",
+        "examples": [
+          {
+            "en": "Weekly training is a demanding commitment.",
+            "zh": "每週訓練需要相當投入。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:COMPOSURE SHOULD NOT BE CONFUSED WITH INDIFFERENCE": {
+    "word": "composure should not be confused with indifference",
+    "pos": "phr.",
+    "meaning": "鎮定不應與漠不關心混淆",
+    "example": "Composure should not be confused with indifference.",
+    "exampleZh": "鎮定不應與漠不關心混淆。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鎮定不應與漠不關心混淆",
+        "examples": [
+          {
+            "en": "Composure should not be confused with indifference.",
+            "zh": "鎮定不應與漠不關心混淆。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A GOOD DECISION CAN STILL HAVE AN UNFORTUNATE OUTCOME": {
+    "word": "a good decision can still have an unfortunate outcome",
+    "pos": "phr.",
+    "meaning": "好決策仍可能得到不幸結果",
+    "example": "A good decision can still have an unfortunate outcome.",
+    "exampleZh": "好決策仍可能得到不幸結果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "好決策仍可能得到不幸結果",
+        "examples": [
+          {
+            "en": "A good decision can still have an unfortunate outcome.",
+            "zh": "好決策仍可能得到不幸結果。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:GRACIOUS": {
+    "pos": "adj.",
+    "meaning": "對他人有禮大方而體諒的",
+    "example": "She was gracious after the defeat.",
+    "exampleZh": "落敗後她仍大方有禮。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "對他人有禮大方而體諒的",
+        "examples": [
+          {
+            "en": "She was gracious after the defeat.",
+            "zh": "落敗後她仍大方有禮。"
+          }
+        ]
+      }
+    ],
+    "word": "gracious"
+  },
+  "R7:CONTENDER": {
+    "pos": "n.",
+    "meaning": "有機會爭取勝利或職位的競逐者",
+    "example": "The club is a serious contender.",
+    "exampleZh": "該俱樂部是有力競爭者。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "有機會爭取勝利或職位的競逐者",
+        "examples": [
+          {
+            "en": "The club is a serious contender.",
+            "zh": "該俱樂部是有力競爭者。"
+          }
+        ]
+      }
+    ],
+    "word": "contender"
+  },
+  "R7:SPORTING": {
+    "pos": "adj.",
+    "meaning": "展現公平競爭精神的",
+    "example": "It was a sporting response to an unlucky result.",
+    "exampleZh": "對不幸結果的反應展現運動精神。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "展現公平競爭精神的",
+        "examples": [
+          {
+            "en": "It was a sporting response to an unlucky result.",
+            "zh": "對不幸結果的反應展現運動精神。"
+          }
+        ]
+      }
+    ],
+    "word": "sporting"
+  },
+  "R7:SEEDING": {
+    "pos": "n.",
+    "meaning": "依實力排名安排賽事位置的做法",
+    "example": "The seeding affects the early rounds.",
+    "exampleZh": "種子排序影響前幾輪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依實力排名安排賽事位置的做法",
+        "examples": [
+          {
+            "en": "The seeding affects the early rounds.",
+            "zh": "種子排序影響前幾輪。"
+          }
+        ]
+      }
+    ],
+    "word": "seeding"
+  },
+  "R7:FORFEIT": {
+    "pos": "v.",
+    "meaning": "因違規或未履行條件而喪失權利或比賽",
+    "example": "A late team may forfeit the match.",
+    "exampleZh": "遲到隊伍可能被判棄權。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "因違規或未履行條件而喪失權利或比賽",
+        "examples": [
+          {
+            "en": "A late team may forfeit the match.",
+            "zh": "遲到隊伍可能被判棄權。"
+          }
+        ]
+      }
+    ],
+    "word": "forfeit"
+  },
+  "R7:OUTPLAY": {
+    "pos": "v.",
+    "meaning": "在比賽表現上勝過對手",
+    "example": "They hoped to outplay the visiting team.",
+    "exampleZh": "他們希望在表現上勝過客隊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "在比賽表現上勝過對手",
+        "examples": [
+          {
+            "en": "They hoped to outplay the visiting team.",
+            "zh": "他們希望在表現上勝過客隊。"
+          }
+        ]
+      }
+    ],
+    "word": "outplay"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
     "meaning": "歸根究柢",
     "example": "In the final analysis, the decision rests with the residents.",
-    "exampleZh": "歸根究柢，決定權在居民手中。"
+    "exampleZh": "歸根究柢，決定權在居民手中。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "歸根究柢",
+        "examples": [
+          {
+            "en": "In the final analysis, the decision rests with the residents.",
+            "zh": "歸根究柢，決定權在居民手中。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THEIR APPARENT CONSENSUS CONCEALS FUNDAMENTAL DISAGREEMENTS": {
     "word": "their apparent consensus conceals fundamental disagreements",
     "pos": "phr.",
     "meaning": "他們表面的共識掩藏了根本分歧",
     "example": "Their apparent consensus conceals fundamental disagreements.",
-    "exampleZh": "他們表面的共識掩藏了根本分歧。"
+    "exampleZh": "他們表面的共識掩藏了根本分歧。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "他們表面的共識掩藏了根本分歧",
+        "examples": [
+          {
+            "en": "Their apparent consensus conceals fundamental disagreements.",
+            "zh": "他們表面的共識掩藏了根本分歧。"
+          }
+        ]
+      }
+    ]
   },
   "R7:A SENSE OF OWNERSHIP": {
     "word": "a sense of ownership",
     "pos": "phr.",
     "meaning": "參與者對事務的認同與責任感",
     "example": "Residents developed a sense of ownership of the project.",
-    "exampleZh": "居民對計畫產生了認同與責任感。"
+    "exampleZh": "居民對計畫產生了認同與責任感。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "參與者對事務的認同與責任感",
+        "examples": [
+          {
+            "en": "Residents developed a sense of ownership of the project.",
+            "zh": "居民對計畫產生了認同與責任感。"
+          }
+        ]
+      }
+    ]
   },
   "R7:LOCAL DISTINCTIVENESS CANNOT BE MANUFACTURED TO ORDER": {
     "word": "local distinctiveness cannot be manufactured to order",
     "pos": "phr.",
     "meaning": "在地特色無法按需求訂製",
     "example": "Local distinctiveness cannot be manufactured to order.",
-    "exampleZh": "在地特色無法按需求訂製。"
+    "exampleZh": "在地特色無法按需求訂製。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在地特色無法按需求訂製",
+        "examples": [
+          {
+            "en": "Local distinctiveness cannot be manufactured to order.",
+            "zh": "在地特色無法按需求訂製。"
+          }
+        ]
+      }
+    ]
   },
   "R7:AN EMBEDDED VALUE JUDGEMENT": {
     "word": "an embedded value judgement",
     "pos": "phr.",
     "meaning": "內含於設計或說法中的價值判斷",
     "example": "The ranking reflects an embedded value judgement.",
-    "exampleZh": "這項排名反映了內含的價值判斷。"
+    "exampleZh": "這項排名反映了內含的價值判斷。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內含於設計或說法中的價值判斷",
+        "examples": [
+          {
+            "en": "The ranking reflects an embedded value judgement.",
+            "zh": "這項排名反映了內含的價值判斷。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CONVENIENCE DOES NOT AUTOMATICALLY JUSTIFY UNRESTRICTED COLLECTION": {
     "word": "convenience does not automatically justify unrestricted collection",
     "pos": "phr.",
     "meaning": "便利不會自動使無限制收集變得合理",
     "example": "Convenience does not automatically justify unrestricted collection.",
-    "exampleZh": "便利不會自動使無限制收集變得合理。"
+    "exampleZh": "便利不會自動使無限制收集變得合理。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "便利不會自動使無限制收集變得合理",
+        "examples": [
+          {
+            "en": "Convenience does not automatically justify unrestricted collection.",
+            "zh": "便利不會自動使無限制收集變得合理。"
+          }
+        ]
+      }
+    ]
   },
   "R7:SCRUTINY": {
     "pos": "n.",
@@ -4766,14 +7900,38 @@
     "pos": "phr.",
     "meaning": "利益如何分配",
     "example": "The review examines the distribution of benefits.",
-    "exampleZh": "檢討檢視利益如何分配。"
+    "exampleZh": "檢討檢視利益如何分配。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "利益如何分配",
+        "examples": [
+          {
+            "en": "The review examines the distribution of benefits.",
+            "zh": "檢討檢視利益如何分配。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE CALCULATION EXCLUDES COSTS BORNE BY RESIDENTS": {
     "word": "the calculation excludes costs borne by residents",
     "pos": "phr.",
     "meaning": "計算排除了由居民承擔的成本",
     "example": "The calculation excludes costs borne by residents.",
-    "exampleZh": "計算排除了由居民承擔的成本。"
+    "exampleZh": "計算排除了由居民承擔的成本。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "計算排除了由居民承擔的成本",
+        "examples": [
+          {
+            "en": "The calculation excludes costs borne by residents.",
+            "zh": "計算排除了由居民承擔的成本。"
+          }
+        ]
+      }
+    ]
   },
   "R7:PROPORTIONALITY": {
     "pos": "n.",
@@ -4826,14 +7984,38 @@
     "pos": "phr.",
     "meaning": "推廣結論的適用界線",
     "example": "The discussion addressed the limits of generalisation.",
-    "exampleZh": "討論處理結論推廣的界線。"
+    "exampleZh": "討論處理結論推廣的界線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "推廣結論的適用界線",
+        "examples": [
+          {
+            "en": "The discussion addressed the limits of generalisation.",
+            "zh": "討論處理結論推廣的界線。"
+          }
+        ]
+      }
+    ]
   },
   "R7:UNIFORM PROCEDURES CAN STILL PRODUCE UNEQUAL OPPORTUNITIES": {
     "word": "uniform procedures can still produce unequal opportunities",
     "pos": "phr.",
     "meaning": "一致程序仍可能造成不均等機會",
     "example": "Uniform procedures can still produce unequal opportunities.",
-    "exampleZh": "一致程序仍可能造成不均等機會。"
+    "exampleZh": "一致程序仍可能造成不均等機會。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "一致程序仍可能造成不均等機會",
+        "examples": [
+          {
+            "en": "Uniform procedures can still produce unequal opportunities.",
+            "zh": "一致程序仍可能造成不均等機會。"
+          }
+        ]
+      }
+    ]
   },
   "R7:INTROSPECTION": {
     "pos": "n.",
@@ -4886,14 +8068,38 @@
     "pos": "phr.",
     "meaning": "貫穿一段作品的延伸隱喻",
     "example": "The journey functions as a sustained metaphor.",
-    "exampleZh": "旅程作為一個貫穿作品的隱喻。"
+    "exampleZh": "旅程作為一個貫穿作品的隱喻。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "貫穿一段作品的延伸隱喻",
+        "examples": [
+          {
+            "en": "The journey functions as a sustained metaphor.",
+            "zh": "旅程作為一個貫穿作品的隱喻。"
+          }
+        ]
+      }
+    ]
   },
   "R7:NARRATIVE AUTHORITY IS UNEVENLY DISTRIBUTED BETWEEN VOICES": {
     "word": "narrative authority is unevenly distributed between voices",
     "pos": "phr.",
     "meaning": "敘事權威在不同聲音間分配不均",
     "example": "Narrative authority is unevenly distributed between voices.",
-    "exampleZh": "敘事權威在不同聲音間分配不均。"
+    "exampleZh": "敘事權威在不同聲音間分配不均。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "敘事權威在不同聲音間分配不均",
+        "examples": [
+          {
+            "en": "Narrative authority is unevenly distributed between voices.",
+            "zh": "敘事權威在不同聲音間分配不均。"
+          }
+        ]
+      }
+    ]
   },
   "R7:RESONANCE": {
     "pos": "n.",
@@ -4946,14 +8152,38 @@
     "pos": "phr.",
     "meaning": "在已說明的職權範圍內",
     "example": "The review remains within the stated remit.",
-    "exampleZh": "檢討仍在已說明的職權範圍內。"
+    "exampleZh": "檢討仍在已說明的職權範圍內。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在已說明的職權範圍內",
+        "examples": [
+          {
+            "en": "The review remains within the stated remit.",
+            "zh": "檢討仍在已說明的職權範圍內。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE CONCESSION MUST NOT BE INTERPRETED AS UNCONDITIONAL": {
     "word": "the concession must not be interpreted as unconditional",
     "pos": "phr.",
     "meaning": "這項讓步不應被解讀為無條件",
     "example": "The concession must not be interpreted as unconditional.",
-    "exampleZh": "這項讓步不應被解讀為無條件。"
+    "exampleZh": "這項讓步不應被解讀為無條件。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這項讓步不應被解讀為無條件",
+        "examples": [
+          {
+            "en": "The concession must not be interpreted as unconditional.",
+            "zh": "這項讓步不應被解讀為無條件。"
+          }
+        ]
+      }
+    ]
   },
   "R7:IMPARTIALITY": {
     "pos": "n.",
@@ -5006,14 +8236,38 @@
     "pos": "phr.",
     "meaning": "未曾明說的期待",
     "example": "The disagreement revealed an unspoken expectation.",
-    "exampleZh": "分歧揭露了未明說的期待。"
+    "exampleZh": "分歧揭露了未明說的期待。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未曾明說的期待",
+        "examples": [
+          {
+            "en": "The disagreement revealed an unspoken expectation.",
+            "zh": "分歧揭露了未明說的期待。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CANDOUR REQUIRES ROOM FOR AN UNWELCOME ANSWER": {
     "word": "candour requires room for an unwelcome answer",
     "pos": "phr.",
     "meaning": "坦誠需要容納不受歡迎答案的空間",
     "example": "Candour requires room for an unwelcome answer.",
-    "exampleZh": "坦誠需要容納不受歡迎答案的空間。"
+    "exampleZh": "坦誠需要容納不受歡迎答案的空間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "坦誠需要容納不受歡迎答案的空間",
+        "examples": [
+          {
+            "en": "Candour requires room for an unwelcome answer.",
+            "zh": "坦誠需要容納不受歡迎答案的空間。"
+          }
+        ]
+      }
+    ]
   },
   "R7:IMPLICIT": {
     "pos": "adj.",
@@ -5066,14 +8320,38 @@
     "pos": "phr.",
     "meaning": "程序上已完成的回覆",
     "example": "A procedurally complete response may still leave the problem unresolved.",
-    "exampleZh": "程序完成的回覆仍可能未解決問題。"
+    "exampleZh": "程序完成的回覆仍可能未解決問題。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序上已完成的回覆",
+        "examples": [
+          {
+            "en": "A procedurally complete response may still leave the problem unresolved.",
+            "zh": "程序完成的回覆仍可能未解決問題。"
+          }
+        ]
+      }
+    ]
   },
   "R7:RESPONSIBILITY IS FRAGMENTED ACROSS THE CONNECTING SERVICES": {
     "word": "responsibility is fragmented across the connecting services",
     "pos": "phr.",
     "meaning": "責任分散在各段銜接服務之間",
     "example": "Responsibility is fragmented across the connecting services.",
-    "exampleZh": "責任分散在各段銜接服務之間。"
+    "exampleZh": "責任分散在各段銜接服務之間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "責任分散在各段銜接服務之間",
+        "examples": [
+          {
+            "en": "Responsibility is fragmented across the connecting services.",
+            "zh": "責任分散在各段銜接服務之間。"
+          }
+        ]
+      }
+    ]
   },
   "R7:SUBSTANTIVE": {
     "pos": "adj.",
@@ -5126,14 +8404,38 @@
     "pos": "phr.",
     "meaning": "具有約束力的義務",
     "example": "The oath created a binding obligation to protect the village.",
-    "exampleZh": "誓言形成保護村落的約束義務。"
+    "exampleZh": "誓言形成保護村落的約束義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具有約束力的義務",
+        "examples": [
+          {
+            "en": "The oath created a binding obligation to protect the village.",
+            "zh": "誓言形成保護村落的約束義務。"
+          }
+        ]
+      }
+    ]
   },
   "R7:THE EXCEPTION THREATENS TO SWALLOW THE STATED RULE": {
     "word": "the exception threatens to swallow the stated rule",
     "pos": "phr.",
     "meaning": "例外可能吞掉已明定的規則",
     "example": "The exception threatens to swallow the stated rule.",
-    "exampleZh": "例外可能吞掉已明定的規則。"
+    "exampleZh": "例外可能吞掉已明定的規則。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "例外可能吞掉已明定的規則",
+        "examples": [
+          {
+            "en": "The exception threatens to swallow the stated rule.",
+            "zh": "例外可能吞掉已明定的規則。"
+          }
+        ]
+      }
+    ]
   },
   "R7:SOVEREIGNTY": {
     "pos": "n.",
@@ -5186,14 +8488,38 @@
     "pos": "phr.",
     "meaning": "不張揚的優雅",
     "example": "The room has an understated elegance.",
-    "exampleZh": "房間帶著低調優雅。"
+    "exampleZh": "房間帶著低調優雅。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不張揚的優雅",
+        "examples": [
+          {
+            "en": "The room has an understated elegance.",
+            "zh": "房間帶著低調優雅。"
+          }
+        ]
+      }
+    ]
   },
   "R7:CAREFUL PREPARATION CAN MAKE HOSPITALITY FEEL EFFORTLESS": {
     "word": "careful preparation can make hospitality feel effortless",
     "pos": "phr.",
     "meaning": "仔細準備能讓接待顯得自然",
     "example": "Careful preparation can make hospitality feel effortless.",
-    "exampleZh": "仔細準備能讓接待顯得自然。"
+    "exampleZh": "仔細準備能讓接待顯得自然。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仔細準備能讓接待顯得自然",
+        "examples": [
+          {
+            "en": "Careful preparation can make hospitality feel effortless.",
+            "zh": "仔細準備能讓接待顯得自然。"
+          }
+        ]
+      }
+    ]
   },
   "R7:GASTRONOMY": {
     "pos": "n.",
@@ -5240,5 +8566,157 @@
       }
     ],
     "word": "delectable"
+  },
+  "R7:A MARKED DISCREPANCY": {
+    "word": "a marked discrepancy",
+    "pos": "phr.",
+    "meaning": "明顯的差異或不一致",
+    "example": "There is a marked discrepancy between the records.",
+    "exampleZh": "紀錄間有明顯差異。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明顯的差異或不一致",
+        "examples": [
+          {
+            "en": "There is a marked discrepancy between the records.",
+            "zh": "紀錄間有明顯差異。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:COMPARABLE RECORDS REQUIRE ATTENTION TO HOW OBSERVATIONS WERE MADE": {
+    "word": "comparable records require attention to how observations were made",
+    "pos": "phr.",
+    "meaning": "可比較紀錄需要留意觀察方法",
+    "example": "Comparable records require attention to how observations were made.",
+    "exampleZh": "可比較紀錄需要留意觀察方法。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可比較紀錄需要留意觀察方法",
+        "examples": [
+          {
+            "en": "Comparable records require attention to how observations were made.",
+            "zh": "可比較紀錄需要留意觀察方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INTERMITTENT": {
+    "pos": "adj.",
+    "meaning": "時有時無而非連續的",
+    "example": "Rain made observation intermittent.",
+    "exampleZh": "雨使觀察斷斷續續。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "時有時無而非連續的",
+        "examples": [
+          {
+            "en": "Rain made observation intermittent.",
+            "zh": "雨使觀察斷斷續續。"
+          }
+        ]
+      }
+    ],
+    "word": "intermittent"
+  },
+  "R7:UNDERREPORTED": {
+    "pos": "adj.",
+    "meaning": "被通報或記錄得比實際少的",
+    "example": "The species may be underreported.",
+    "exampleZh": "這物種可能通報不足。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "被通報或記錄得比實際少的",
+        "examples": [
+          {
+            "en": "The species may be underreported.",
+            "zh": "這物種可能通報不足。"
+          }
+        ]
+      }
+    ],
+    "word": "underreported"
+  },
+  "R7:A DISPROPORTIONATE PENALTY": {
+    "word": "a disproportionate penalty",
+    "pos": "phr.",
+    "meaning": "與行為嚴重程度不相稱的處罰",
+    "example": "They appealed against a disproportionate penalty.",
+    "exampleZh": "他們對不成比例的處罰申訴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "與行為嚴重程度不相稱的處罰",
+        "examples": [
+          {
+            "en": "They appealed against a disproportionate penalty.",
+            "zh": "他們對不成比例的處罰申訴。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INCLUSION DEPENDS ON PRACTICAL ACCESS AS WELL AS INVITATION": {
+    "word": "inclusion depends on practical access as well as invitation",
+    "pos": "phr.",
+    "meaning": "包容既靠邀請也靠實際參與條件",
+    "example": "Inclusion depends on practical access as well as invitation.",
+    "exampleZh": "包容既靠邀請也靠實際參與條件。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "包容既靠邀請也靠實際參與條件",
+        "examples": [
+          {
+            "en": "Inclusion depends on practical access as well as invitation.",
+            "zh": "包容既靠邀請也靠實際參與條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INVINCIBLE": {
+    "pos": "adj.",
+    "meaning": "強大到似乎無法被打敗的",
+    "example": "The team had once seemed invincible.",
+    "exampleZh": "球隊曾顯得無敵。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "強大到似乎無法被打敗的",
+        "examples": [
+          {
+            "en": "The team had once seemed invincible.",
+            "zh": "球隊曾顯得無敵。"
+          }
+        ]
+      }
+    ],
+    "word": "invincible"
+  },
+  "R7:RESURGENCE": {
+    "pos": "n.",
+    "meaning": "衰退後重新增強或活躍",
+    "example": "The club enjoyed a resurgence.",
+    "exampleZh": "俱樂部重新振作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "衰退後重新增強或活躍",
+        "examples": [
+          {
+            "en": "The club enjoyed a resurgence.",
+            "zh": "俱樂部重新振作。"
+          }
+        ]
+      }
+    ],
+    "word": "resurgence"
   }
 }

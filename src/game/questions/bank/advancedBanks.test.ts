@@ -5,7 +5,7 @@ import r8 from './r8.json';
 import v6 from './vocab-r6.json';
 import v7 from './vocab-r7.json';
 import v8 from './vocab-r8.json';
-import { addBankVocab, vocabFor, vocabKey } from '../../vocab';
+import { addBankVocab, vocabFor, vocabKey, vocabSenses } from '../../vocab';
 import { validateQuestion, questionKey } from '../../validateQuestions';
 import { checkChoice, checkTypedAnswer, checkVoice, shuffleChoice, voiceFallback, answerSlots } from '../../battle';
 import { checkQuizAnswer } from '../../placement';
@@ -83,4 +83,14 @@ describe('advanced vocabulary sense isolation', () => {
     expect(vocabFor(literary)?.display).toBe('adaptation');
     expect(vocabFor(environmental)?.display).toBe('adaptation');
   });
+});
+
+// 同詞跨情境出現時，後來的跟讀詞條不得把先前拼寫題的例句吃掉。
+it('retains examples from earlier contexts when a later batch reuses a word', () => {
+  addBankVocab(v7);
+  const q = [...r7.normal, ...r7.boss].find(q => q.type === 'spell' && q.ans === 'CORROBORATION') as Question;
+  const entry = vocabFor(q)!;
+  const examples = vocabSenses(entry).flatMap(s => s.examples.map(e => e.en));
+  expect(examples).toContain('The allegation requires independent corroboration.');
+  expect(examples).toContain('The sighting needs independent corroboration.');
 });

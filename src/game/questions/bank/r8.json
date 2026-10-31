@@ -4322,6 +4322,792 @@
       "ans": "EAS",
       "speak": "repast",
       "vocabId": "R8:REPAST"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an evanescent impression",
+      "options": [
+        "A. 經多次獨立確認的穩定結論",
+        "B. 可永久保存的實體標本",
+        "C. 刻意逐字複製的文字",
+        "D. 很快消逝而難以留住的印象"
+      ],
+      "ans": "D",
+      "explain": "evanescent 指短暫而很快消失，偏正式文學語域。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a fallible observer",
+      "options": [
+        "A. 可能犯錯的觀察者",
+        "B. 故意造假的觀察者",
+        "C. 從不可能犯錯的觀察者",
+        "D. 完全無法接收感官資訊的人"
+      ],
+      "ans": "A",
+      "explain": "fallible 是會犯錯，不包含故意欺騙。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an anomalous sighting",
+      "options": [
+        "A. 所有觀察者同時撤回的紀錄",
+        "B. 與預期模式不符的目擊",
+        "C. 已被定義為典型的目擊",
+        "D. 完全沒有發生的目擊"
+      ],
+      "ans": "B",
+      "explain": "anomalous 指異於常態，不自動代表虛假。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an epistemic limitation",
+      "options": [
+        "A. 可知或可證成程度的限制",
+        "B. 只能攜帶一件行李的限制",
+        "C. 通往觀察地點的路障",
+        "D. 儀器的外觀尺寸"
+      ],
+      "ans": "A",
+      "explain": "epistemic 是關於知識，不是物流或物理尺寸。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The account is not implausible; it is simply more determinate than the observations warrant.",
+      "options": [
+        "A. 說話者只嫌描述字數不足。",
+        "B. 說明並非不合理，只是比觀察足以支持的更為確定。",
+        "C. 說明已被判定不可能且完全荒謬。",
+        "D. 觀察已唯一確定每個細節。"
+      ],
+      "ans": "B",
+      "explain": "接受可能性，同時批評定論程度過高。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The observer’s candour about uncertainty makes the record more trustworthy, without making the identification any less provisional.",
+      "options": [
+        "A. 暫定辨識表示紀錄必定不誠實。",
+        "B. 紀錄可信就不需要任何佐證。",
+        "C. 坦承不確定讓紀錄較可信，但辨識仍是暫定。",
+        "D. 誠實已使辨識成為不可修正的事實。"
+      ],
+      "ans": "C",
+      "explain": "來源誠實度與分類確定度可分開評價。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To describe the boundary as natural is already to interpret the pattern, not merely to reproduce it.",
+      "options": [
+        "A. 重現圖案與理解圖案被定義為相同。",
+        "B. 稱界線為自然形成，已在解釋模式，而非只是重現。",
+        "C. 自然一詞不可能包含任何解釋。",
+        "D. 說話者確認所有界線都是人為製造。"
+      ],
+      "ans": "B",
+      "explain": "指出描述語言含解釋，不據此斷言界線必然人造。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The elegance of the account lies in what it unifies; its vulnerability lies in how readily inconvenient cases become exceptions to be explained away.",
+      "options": [
+        "A. 說明善於處理不符案例，弱點只在未能提出統整架構。",
+        "B. 說明承認例外過多，因此作者已決定放棄整個統整架構。",
+        "C. 說明能統整現象，但太容易藉例外消解不符案例的挑戰。",
+        "D. 說明雖有不符案例，仍因統整優雅而已排除所有重要弱點。"
+      ],
+      "ans": "C",
+      "explain": "兼評統整價值與排除反例的風險；explain away 有消解質疑之意。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What the report calls independent confirmation is not wholly independent of the expectations that determined where its observers stood.",
+      "options": [
+        "A. 所謂獨立確認是指不同觀察者曾站在相同位置。",
+        "B. 搜尋位置雖受預期影響，紀錄量已排除這種影響。",
+        "C. 搜尋位置與預期一致，已構成另一份獨立確認。",
+        "D. 所謂獨立確認仍受決定搜尋位置的預期影響。"
+      ],
+      "ans": "D",
+      "explain": "資料取得受預期引導，質疑獨立性，不等於全部無效。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The report’s apparent precision belies the uncertainty of its underlying categories. What does belies indicate?",
+      "options": [
+        "A. The precise appearance openly explains every uncertainty.",
+        "B. The categories have been proved unnecessary.",
+        "C. The figures are explicitly rounded to avoid any precision.",
+        "D. The precise appearance gives a misleading impression of what supports it."
+      ],
+      "ans": "D",
+      "explain": "belies 指表象未如實呈現；此處精確外表掩飾分類不確定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Were the same search conducted at night, its findings ___ substantially.",
+      "options": [
+        "A. might differ",
+        "B. had differing",
+        "C. might to differ",
+        "D. would have differ"
+      ],
+      "ans": "A",
+      "explain": "Were ... conducted 是假設條件倒裝，主句用 might + 原形。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The account is scrupulous about distinguishing observation from inference. What is praised?",
+      "options": [
+        "A. Its certainty that the distinction has no practical value.",
+        "B. Its careful adherence to that distinction.",
+        "C. Its refusal to offer any interpretation at all.",
+        "D. Its preference for elaborate descriptions over accurate ones."
+      ],
+      "ans": "B",
+      "explain": "scrupulous 指嚴謹細心遵循，不等於全面拒絕推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The species is elusive, not necessarily scarce. What distinction is preserved?",
+      "options": [
+        "A. Difficulty of detection does not by itself establish low abundance.",
+        "B. Every elusive animal must be abundant.",
+        "C. Scarcity makes detection impossible in principle.",
+        "D. The species has been identified incorrectly."
+      ],
+      "ans": "A",
+      "explain": "elusive 難發現，scarce 數量稀少，兩者不等同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】The report treats the map’s blank spaces as though nature, rather than the survey, had left them empty. What is the criticism?",
+      "options": [
+        "A. Natural features cannot be represented on a map.",
+        "B. A gap in observation is being presented as a property of the observed world.",
+        "C. The map has been printed with insufficient ink.",
+        "D. The survey explicitly marks every blank as uncertain."
+      ],
+      "ans": "B",
+      "explain": "反諷把認知上的空白實體化為自然界不存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The conclusion depends on a distinction, the stability ___ the report never examines.",
+      "options": [
+        "A. that of",
+        "B. which of",
+        "C. of which",
+        "D. of whose"
+      ],
+      "ans": "C",
+      "explain": "the stability of which 為關係子句結構，which 指 distinction。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The critic objects less to the categories themselves than to their being mistaken for self-evident divisions in nature. What is the objection?",
+      "options": [
+        "A. Nature has been proved to contain no differences.",
+        "B. A useful classification is being treated as if its boundaries needed no justification.",
+        "C. All classification is said to be impossible and pointless.",
+        "D. The categories have not been used in the report."
+      ],
+      "ans": "B",
+      "explain": "less ... than ... 將批評對準把分類自然化，非廢除分類。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Surveyors search intensively where a model predicts a species, then cite the concentration of sightings in those areas as independent confirmation of the model. Which issue requires scrutiny?",
+      "options": [
+        "A. The confirmation would be independent if more observers used the same plan.",
+        "B. The confirmation shows the model caused the species to favour those areas.",
+        "C. The confirmation may partly reflect a search pattern shaped by the model.",
+        "D. The confirmation is weakened because the observed animals moved too often."
+      ],
+      "ans": "C",
+      "explain": "證據的生成受被驗模型引導，獨立性不足；不否定目擊真實性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A report acknowledges uncertainty in every individual record but presents the combined total without qualification. No account is given of how the uncertainties interact. What is missing?",
+      "options": [
+        "A. An account of why combining records necessarily increases uncertainty.",
+        "B. A demonstration that every individual record concerns a different species.",
+        "C. A demonstration that the number of records exceeds the number of observers.",
+        "D. An account of how the individual uncertainties affect the combined total."
+      ],
+      "ans": "D",
+      "explain": "聚合可能增減不確定，需說明機制；不能自動抹除或斷言必然線性增加。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：短暫而迅速消逝的",
+      "ans": "EVANESCENT",
+      "speak": "evanescent",
+      "vocabId": "R8:EVANESCENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：關於知識及其可證成程度的",
+      "ans": "EPISTEMIC",
+      "speak": "epistemic",
+      "vocabId": "R8:EPISTEMIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：難以納入解釋的頑強反例",
+      "ans": "A RECALCITRANT COUNTEREXAMPLE",
+      "speak": "a recalcitrant counterexample",
+      "vocabId": "R8:A RECALCITRANT COUNTEREXAMPLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在方法上審慎而不過度推論的結論",
+      "ans": "A METHODOLOGICALLY CIRCUMSPECT CONCLUSION",
+      "speak": "a methodologically circumspect conclusion",
+      "vocabId": "R8:A METHODOLOGICALLY CIRCUMSPECT CONCLUSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：誠實觀察者仍可能辨識錯誤",
+      "ans": "AN HONEST OBSERVER MAY STILL MAKE A MISTAKEN IDENTIFICATION",
+      "speak": "an honest observer may still make a mistaken identification",
+      "vocabId": "R8:AN HONEST OBSERVER MAY STILL MAKE A MISTAKEN IDENTIFICATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：建構的分類不必是任意的",
+      "ans": "A CONSTRUCTED CATEGORY NEED NOT BE AN ARBITRARY ONE",
+      "speak": "a constructed category need not be an arbitrary one",
+      "vocabId": "R8:A CONSTRUCTED CATEGORY NEED NOT BE AN ARBITRARY ONE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：可能犯錯而非絕對可靠的（F 開頭，8 個字母）",
+      "ans": "FALLIBLE",
+      "speak": "fallible",
+      "vocabId": "R8:FALLIBLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：嚴謹細心而恪守標準的（S 開頭，10 個字母）",
+      "ans": "SCRUPULOUS",
+      "speak": "scrupulous",
+      "vocabId": "R8:SCRUPULOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：將抽象概念視為具體實體的做法（R 開頭，11 個字母）",
+      "ans": "REIFICATION",
+      "speak": "reification",
+      "vocabId": "R8:REIFICATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E L U _ I V E (難以找到辨認或掌握的)",
+      "ans": "S",
+      "speak": "elusive",
+      "vocabId": "R8:ELUSIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A N O _ A L _ U S (不符合通常模式或預期的)",
+      "ans": "MO",
+      "speak": "anomalous",
+      "vocabId": "R8:ANOMALOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C I _ C U _ S P _ C T (仔細考量而審慎的)",
+      "ans": "RME",
+      "speak": "circumspect",
+      "vocabId": "R8:CIRCUMSPECT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an ignominious defeat",
+      "options": [
+        "A. 令人蒙羞的失敗",
+        "B. 雖敗猶榮的結果",
+        "C. 不分勝負的平手",
+        "D. 未經爭奪的勝利"
+      ],
+      "ans": "A",
+      "explain": "ignominious 帶羞辱不光彩，非僅分差大小。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "magnanimous in victory",
+      "options": [
+        "A. 要求敗者承擔獎盃費用",
+        "B. 獲勝後對敗者寬厚大方",
+        "C. 獲勝後反覆羞辱敗者",
+        "D. 因不確定獲勝而拒絕慶祝"
+      ],
+      "ans": "B",
+      "explain": "magnanimous 指寬宏大度，尤其面對對手。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a churlish response",
+      "options": [
+        "A. 熱烈鼓勵對手的反應",
+        "B. 僅以書面提出的回應",
+        "C. 無禮而欠缺大方的反應",
+        "D. 謹慎而不失體諒的反應"
+      ],
+      "ans": "C",
+      "explain": "churlish 指粗魯小氣，不是正式書面語域。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a specious justification",
+      "options": [
+        "A. 只因過於簡短而無法理解的句子",
+        "B. 貌似有理卻站不住腳的辯解",
+        "C. 經獨立查核而成立的理由",
+        "D. 坦白承認沒有理由的表態"
+      ],
+      "ans": "B",
+      "explain": "specious 指表面可信但實質不成立。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apology was punctilious about etiquette and curiously evasive about the conduct that had made an apology necessary.",
+      "options": [
+        "A. 說話者因道歉禮貌而認為已充分交代行為。",
+        "B. 道歉的問題只在於使用了過多正式稱謂。",
+        "C. 道歉對禮節一絲不苟，對導致需道歉的行為卻迴避。",
+        "D. 道歉詳細承認行為，但對禮節顯得粗魯隨便。"
+      ],
+      "ans": "C",
+      "explain": "程序禮數與承擔實質行為責任不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "His equanimity is admirable, though the commentators seem determined to make it evidence that the defeat did not hurt.",
+      "options": [
+        "A. 他的鎮定已充分證實他對失敗毫無情緒。",
+        "B. 評論者拒絕承認他在失敗後保持鎮定。",
+        "C. 說話者認為在意輸贏就不可能有任何自制。",
+        "D. 他的鎮定值得欣賞，但評論者硬把它當成失敗不令他難過的證據。"
+      ],
+      "ans": "D",
+      "explain": "外在平靜不直接證明內在不痛苦。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The rivalry gives the event its energy; the mythology of mutual hatred is largely a promotional embellishment.",
+      "options": [
+        "A. 競爭本身是宣傳捏造，雙方從未交手。",
+        "B. 說話者認為只要宣傳就能讓雙方真正敵視。",
+        "C. 競爭帶來活力；彼此仇恨的傳說多半是宣傳加油添醋。",
+        "D. 彼此仇恨已被確認是活動活力的唯一來源。"
+      ],
+      "ans": "C",
+      "explain": "承認 rivalry，區分其與宣傳誇大的 hatred。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is a peculiar meritocracy that treats the advantages required to enter the contest as though they were achievements secured by winning it.",
+      "options": [
+        "A. 這種唯才觀承認入場優勢，並已在計分時充分補償。",
+        "B. 說話者認為勝者在入場前不可能有任何能力。",
+        "C. 比賽只看入場時間先後，並未評估競賽表現。",
+        "D. 這種唯才觀把入場前所需優勢，當成獲勝後才掙得的成就，令人質疑。"
+      ],
+      "ans": "D",
+      "explain": "揭露先備條件被追認為勝利應得的循環正當化。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The memoir allows disappointment to remain disappointment, rather than conscripting it into an uplifting account of inevitable personal growth.",
+      "options": [
+        "A. 回憶錄讓失望保有失望本身，不硬納入必然成長的勵志敘事。",
+        "B. 回憶錄主張失望已被後來成就證明毫無損失。",
+        "C. 作者否認任何人曾經因挫折而獲得成長。",
+        "D. 作者把每次失望都當成下一次勝利的可靠預兆。"
+      ],
+      "ans": "A",
+      "explain": "拒絕必然救贖框架，不否認有時成長。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The victory was emphatic without being vindictive. What distinction is made?",
+      "options": [
+        "A. The win was decisive, but not pursued or celebrated as revenge.",
+        "B. The win was narrow, but the celebrations were unusually prolonged.",
+        "C. The win was accidental, but the players claimed it as deserved.",
+        "D. The win was disputed, but the officials refused to review it."
+      ],
+      "ans": "A",
+      "explain": "emphatic 決定性明顯；vindictive 帶報復惡意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】He would sooner ___ the point than win it through a disputed call.",
+      "options": [
+        "A. to concede",
+        "B. concede",
+        "C. conceded",
+        "D. conceding"
+      ],
+      "ans": "B",
+      "explain": "would sooner 後接原形；than 後 win 與之對應。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The commentator calls the player remarkably selective in his respect for tradition after he invokes it only when it benefits him. What is implied?",
+      "options": [
+        "A. His respect for tradition is strongest when it costs him an advantage.",
+        "B. His selective memory has made him forget every established practice.",
+        "C. His appeal to tradition is opportunistic rather than consistent.",
+        "D. His knowledge of tradition is unusually detailed and comprehensive."
+      ],
+      "ans": "C",
+      "explain": "selective 搭配只在有利時援引，諷刺原則隨利益選擇。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which reply declines to turn a sporting setback into a moral judgement about the player?",
+      "options": [
+        "A. His good record means that the decision cannot properly be described as poor.",
+        "B. It was a poor decision under pressure, rather than evidence of poor character.",
+        "C. It tells us more about his character than any previous success ever could.",
+        "D. Pressure reveals character, so the decision settles what sort of person he is."
+      ],
+      "ans": "B",
+      "explain": "正答承認差決定但拒絕概括人格；其他過度評斷或替決定開脫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The critic finds the celebration triumphalist rather than merely triumphant. What is criticised?",
+      "options": [
+        "A. The uncertainty about whether the official result was final.",
+        "B. The decision to celebrate privately rather than with spectators.",
+        "C. The display of superiority over the defeated, beyond pleasure in winning.",
+        "D. The fact that the winners showed any pleasure in the result."
+      ],
+      "ans": "C",
+      "explain": "triumphalist 含炫耀優越、使敗者難堪意味，不只是 triumphant 勝利喜悅。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The club’s egalitarian rhetoric sits uneasily with its deference to star players. What tension is identified?",
+      "options": [
+        "A. Its equal treatment of players conflicts with the crowd’s preference for stars.",
+        "B. Its opposition to star status prevents any member from becoming well known.",
+        "C. Its preference for experienced members is openly stated as its guiding ideal.",
+        "D. Its language of equality conflicts with the special authority it grants some members."
+      ],
+      "ans": "D",
+      "explain": "宣稱平等與實際對明星特殊服從有張力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The organisers insist that everyone is welcome, provided everyone can behave like the people already there. What is the criticism implicit in this formulation?",
+      "options": [
+        "A. The welcome is limited solely by the physical capacity of the venue.",
+        "B. The group’s norms are being described as unknown to existing members.",
+        "C. The welcome may depend on conformity to an existing group’s norms.",
+        "D. The organisers have promised to revise norms for every newcomer."
+      ],
+      "ans": "C",
+      "explain": "表面人人歡迎，實際以既有群體同化為條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A club describes every demand for accommodation as special treatment while treating its existing arrangements as neutral. A member questions that neutrality. What is the strongest reading of the challenge?",
+      "options": [
+        "A. Any existing arrangement is necessarily more unfair than a proposed alternative.",
+        "B. Accommodation can be assessed only after all existing members have left.",
+        "C. Special treatment is justified whenever a member uses that description.",
+        "D. Existing arrangements may already favour some needs, so neutrality itself needs examination."
+      ],
+      "ans": "D",
+      "explain": "質疑預設的中立基準，不預先判斷所有新方案必優。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The commentator attributes a win to character but a loss to circumstance. No reason is given for the different explanatory standards. What should a reader examine?",
+      "options": [
+        "A. Whether favourable and unfavourable results are being explained asymmetrically.",
+        "B. Whether character can ever influence performance under difficult circumstances.",
+        "C. Whether the winning and losing matches followed exactly the same rules.",
+        "D. Whether the commentator had access to the official score before speaking."
+      ],
+      "ans": "A",
+      "explain": "同一解釋標準是否因好壞結果而變，是核心問題。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：面對壓力起伏仍保持平靜的心態",
+      "ans": "EQUANIMITY",
+      "speak": "equanimity",
+      "vocabId": "R8:EQUANIMITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：無禮小氣而欠缺大方的",
+      "ans": "CHURLISH",
+      "speak": "churlish",
+      "vocabId": "R8:CHURLISH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：對不同情況使用不對稱的判準",
+      "ans": "AN ASYMMETRICAL STANDARD OF JUDGEMENT",
+      "speak": "an asymmetrical standard of judgement",
+      "vocabId": "R8:AN ASYMMETRICAL STANDARD OF JUDGEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶偏向地訴諸公平的說法",
+      "ans": "A TENDENTIOUS APPEAL TO FAIRNESS",
+      "speak": "a tendentious appeal to fairness",
+      "vocabId": "R8:A TENDENTIOUS APPEAL TO FAIRNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：形式一致不能決定實質公平",
+      "ans": "FORMAL UNIFORMITY DOES NOT SETTLE SUBSTANTIVE FAIRNESS",
+      "speak": "formal uniformity does not settle substantive fairness",
+      "vocabId": "R8:FORMAL UNIFORMITY DOES NOT SETTLE SUBSTANTIVE FAIRNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：冷靜接受不必表示沒有失望",
+      "ans": "CALM ACCEPTANCE NEED NOT IMPLY AN ABSENCE OF DISAPPOINTMENT",
+      "speak": "calm acceptance need not imply an absence of disappointment",
+      "vocabId": "R8:CALM ACCEPTANCE NEED NOT IMPLY AN ABSENCE OF DISAPPOINTMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：對他人尤其對手寬宏大度的（M 開頭，11 個字母）",
+      "ans": "MAGNANIMOUS",
+      "speak": "magnanimous",
+      "vocabId": "R8:MAGNANIMOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：令人蒙羞而不光彩的（I 開頭，11 個字母）",
+      "ans": "IGNOMINIOUS",
+      "speak": "ignominious",
+      "vocabId": "R8:IGNOMINIOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：對禮節或細節一絲不苟的（P 開頭，11 個字母）",
+      "ans": "PUNCTILIOUS",
+      "speak": "punctilious",
+      "vocabId": "R8:PUNCTILIOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E G A L I _ A R I A N (主張人人享有平等權利機會的)",
+      "ans": "T",
+      "speak": "egalitarian",
+      "vocabId": "R8:EGALITARIAN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P A _ T I _ A N (偏袒自己支持一方的)",
+      "ans": "RS",
+      "speak": "partisan",
+      "vocabId": "R8:PARTISAN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S P _ C _ O _ S (貌似可信卻不成立的)",
+      "ans": "EIU",
+      "speak": "specious",
+      "vocabId": "R8:SPECIOUS"
     }
   ],
   "boss": [
@@ -5765,6 +6551,268 @@
       "ans": "MTB",
       "speak": "comestible",
       "vocabId": "R8:COMESTIBLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a scrupulous account",
+      "options": [
+        "A. 只求簡短而省略查核的敘述",
+        "B. 完全無法辨讀的字跡",
+        "C. 嚴謹細心的敘述",
+        "D. 故意捏造的敘述"
+      ],
+      "ans": "C",
+      "explain": "scrupulous 表細心嚴守準確等標準。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The anomaly may expose a weakness in the category, or merely a limitation in the observation; the report prematurely settles on the latter.",
+      "options": [
+        "A. 報告已全面比較並排除所有解釋。",
+        "B. 說話者斷言分類必須立即廢除。",
+        "C. 異常被描述為完全符合既有預期。",
+        "D. 異常可能暴露分類弱點，也可能只是觀察限制；報告過早選定後者。"
+      ],
+      "ans": "D",
+      "explain": "the latter 指觀察限制；批評過早排除另一可能。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is a difference between acknowledging that a category is constructed and assuming that it is therefore arbitrary; the report slides from one to the other.",
+      "options": [
+        "A. 分類經建構不表示它任意，報告卻混淆這兩種判斷。",
+        "B. 分類只要有根據就不算建構，報告卻未否定建構性。",
+        "C. 分類既由人建構就需隨意更改，報告卻固定使用它。",
+        "D. 分類未必是任意的，因此報告已證明它完全非人為。"
+      ],
+      "ans": "A",
+      "explain": "constructed 不必 arbitrary；兩者之間需另有論證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which expression most clearly signals a deliberately cautious interpretation rather than a categorical finding?",
+      "options": [
+        "A. The hypothesis is now beyond dispute.",
+        "B. No alternative account remains possible.",
+        "C. The observations lend qualified support to the hypothesis.",
+        "D. The observations conclusively establish the hypothesis."
+      ],
+      "ans": "C",
+      "explain": "qualified support 為有保留的支持；其餘排除不確定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The observer’s hesitation is epistemic rather than logistical. Which question concerns that hesitation?",
+      "options": [
+        "A. How will the equipment be carried uphill?",
+        "B. Where should the group leave its vehicle?",
+        "C. Who will distribute the lunch supplies?",
+        "D. What does the evidence entitle us to claim?"
+      ],
+      "ans": "D",
+      "explain": "epistemic 涉及知識與可知程度，logistical 涉及安排執行。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The report’s caveats are so diligently confined to footnotes that its headline acquires a confidence the evidence never quite possesses. What is implied?",
+      "options": [
+        "A. The hierarchy of presentation lets the headline imply unwarranted confidence.",
+        "B. The care taken over the footnotes makes the headline’s confidence justified.",
+        "C. The headline’s confidence is warranted, but the footnotes are unduly hesitant.",
+        "D. The qualifications undermine the evidence because they appear so prominently."
+      ],
+      "ans": "A",
+      "explain": "資訊層級使讀者先接收過強確定性；非否定註腳本身。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：欠缺根據地將抽象概念當作實體",
+      "ans": "AN UNWARRANTED REIFICATION",
+      "speak": "an unwarranted reification",
+      "vocabId": "R8:AN UNWARRANTED REIFICATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：表面確認反映搜尋中預設的期待",
+      "ans": "THE APPARENT CONFIRMATION REFLECTS EXPECTATIONS BUILT INTO THE SEARCH",
+      "speak": "the apparent confirmation reflects expectations built into the search",
+      "vocabId": "R8:THE APPARENT CONFIRMATION REFLECTS EXPECTATIONS BUILT INTO THE SEARCH"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：無法僅靠現有證據唯一確定的（U 開頭，15 個字母）",
+      "ans": "UNDERDETERMINED",
+      "speak": "underdetermined",
+      "vocabId": "R8:UNDERDETERMINED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N C _ M M E _ S U R _ B L E (缺乏共同尺度而無法直接相比的)",
+      "ans": "ONA",
+      "speak": "incommensurable",
+      "vocabId": "R8:INCOMMENSURABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a partisan account",
+      "options": [
+        "A. 平均分配篇幅就必然中立的敘述",
+        "B. 只介紹比賽地點的資訊",
+        "C. 完全不涉及立場的計分表",
+        "D. 偏向所支持一方的敘述"
+      ],
+      "ans": "D",
+      "explain": "partisan 指偏向一方；篇幅平均亦不自動中立。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The rule’s admirers call it impartial because it is worded uniformly, rather than because they have examined whom it disadvantages.",
+      "options": [
+        "A. 支持者因措辭一致稱規則公正，而非因檢查了誰受不利影響。",
+        "B. 支持者已比較各方影響後才認定規則公正。",
+        "C. 說話者認為規則必須對每個人寫不同文字。",
+        "D. 規則已被承認專為某位參賽者量身訂定。"
+      ],
+      "ans": "A",
+      "explain": "形式一致與實質影響不同；不預先斷言規則必不公。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He invokes the spirit of the game with an eloquence that would be more persuasive had he shown comparable concern when the disputed tactic favoured his side.",
+      "options": [
+        "A. 有爭議招數曾有利對方，所以他現在首次提出反對。",
+        "B. 他雄辯訴諸遊戲精神，但若先前招數有利己方時也同樣在意，會更有說服力。",
+        "C. 他一貫關心同一招數，因此這次雄辯更有說服力。",
+        "D. 說話者因他措辭優美而不再考慮先前立場。"
+      ],
+      "ans": "B",
+      "explain": "反事實條件點出立場一致性的欠缺，不單批評說話技巧。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The captain’s equanimity survived the defeat. What remained?",
+      "options": [
+        "A. A conviction that the official result would be reversed.",
+        "B. A reluctance to admit that the match had ended.",
+        "C. An expectation that the next opponent would be weaker.",
+        "D. An evenness of temper despite an unwelcome outcome."
+      ],
+      "ans": "D",
+      "explain": "equanimity 指面對起伏仍平靜沉著，不是改判信念。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The rule was intended to curb precisely the behaviour ___ it is now invoked to excuse.",
+      "options": [
+        "A. that",
+        "B. whose",
+        "C. where",
+        "D. of which"
+      ],
+      "ans": "A",
+      "explain": "behaviour 作 excuse 受詞，關係代名詞 that；precisely 強調原針對的就是此行為。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The memoir refuses the consolation of treating every defeat as a lesson whose value retrospectively justifies it. What is withheld?",
+      "options": [
+        "A. The admission that a result can matter to someone after a match has ended.",
+        "B. The assurance that an unhappy outcome must acquire redeeming value through later learning.",
+        "C. The possibility that any player might learn something useful after a defeat.",
+        "D. The distinction between remembering a defeat and reporting it when it occurred."
+      ],
+      "ans": "B",
+      "explain": "拒絕每次失敗都被學習價值救贖的必然敘事，不否認可能學到。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：替自己卸責的敘事",
+      "ans": "A SELF EXCULPATORY NARRATIVE",
+      "speak": "a self exculpatory narrative",
+      "vocabId": "R8:A SELF EXCULPATORY NARRATIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：同種招數應接受相同判準",
+      "ans": "THE SAME TACTIC SHOULD INVITE THE SAME STANDARD OF JUDGEMENT",
+      "speak": "the same tactic should invite the same standard of judgement",
+      "vocabId": "R8:THE SAME TACTIC SHOULD INVITE THE SAME STANDARD OF JUDGEMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：以勝利炫耀優越而自滿的（T 開頭，12 個字母）",
+      "ans": "TRIUMPHALIST",
+      "speak": "triumphalist",
+      "vocabId": "R8:TRIUMPHALIST"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V I _ D I _ T _ V E (懷有報復心而想使人受苦的)",
+      "ans": "NCI",
+      "speak": "vindictive",
+      "vocabId": "R8:VINDICTIVE"
     }
   ]
 }

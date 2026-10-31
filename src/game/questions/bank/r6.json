@@ -4291,7 +4291,7 @@
       "type": "spell",
       "skill": "writing",
       "difficulty": 2,
-      "desc": "請拼出：滋味豐富而好吃的（F 開頭，10 個字母；以英式拼字提示，亦接受美式拼字）",
+      "desc": "請拼出：滋味豐富而好吃的（F 開頭，10 個字母；字數依主要拼字，亦接受標準變體）",
       "ans": "FLAVOURFUL",
       "speak": "flavourful",
       "spellAccept": [
@@ -4325,6 +4325,795 @@
       "ans": "OTO",
       "speak": "portion",
       "vocabId": "R6:PORTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "at first light",
+      "options": [
+        "A. 熄燈後的深夜",
+        "B. 第一次打開手電筒時",
+        "C. 正午光線最強時",
+        "D. 黎明天剛亮時"
+      ],
+      "ans": "D",
+      "explain": "at first light 是黎明時段。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "keep your distance",
+      "options": [
+        "A. 保持距離",
+        "B. 把行程距離縮短",
+        "C. 走到對方緊貼身旁",
+        "D. 把位置交給別人"
+      ],
+      "ans": "A",
+      "explain": "keep your distance 指不要靠得太近。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "off the beaten track",
+      "options": [
+        "A. 因為遲到而離開比賽",
+        "B. 遠離一般人常走的路線",
+        "C. 緊貼熱門主幹道",
+        "D. 已被踩成完全平坦的跑道"
+      ],
+      "ans": "B",
+      "explain": "此表達指偏僻或不常被遊訪的地方。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "come into view",
+      "options": [
+        "A. 進入視野而看得見",
+        "B. 逐漸被所有人同意",
+        "C. 完全從記憶中消失",
+        "D. 在討論中改變意見"
+      ],
+      "ans": "A",
+      "explain": "come into view 描述開始可見。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The clearing is sheltered from the wind, though the ground stays wet long after the rain has stopped.",
+      "options": [
+        "A. 說話者表示空地完全沒有下過雨。",
+        "B. 空地避風，但雨停很久後地面仍濕。",
+        "C. 空地很乾燥卻始終強風不斷。",
+        "D. 雨一停地面就立刻變乾。"
+      ],
+      "ans": "B",
+      "explain": "優點與限制並存，sheltered 不表示地面乾燥。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Please record what you actually see, and put any guesses in a separate column.",
+      "options": [
+        "A. 只要猜測合理就當作親眼所見。",
+        "B. 所有欄位都必須填同一句話。",
+        "C. 請記錄實際所見，把推測放另一欄。",
+        "D. 請刪掉全部觀察只留下猜測。"
+      ],
+      "ans": "C",
+      "explain": "要求區分觀察與推測，不是完全禁止推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That sound could be a bird, but I would rather check than put a name to it yet.",
+      "options": [
+        "A. 說話者拒絕記錄任何聲音。",
+        "B. 那可能是鳥聲，但我想確認後再辨認名稱。",
+        "C. 說話者已確定是哪一種鳥。",
+        "D. 只要聽到聲音就不必檢查。"
+      ],
+      "ans": "B",
+      "explain": "could 表可能；暫緩定名而非否認聲音存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The visitor centre is nearby as the crow flies, but the path follows the river, so allow more time than the map suggests.",
+      "options": [
+        "A. 中心只准烏鴉進入而不接待人。",
+        "B. 說話者建議忽略步道直接涉水。",
+        "C. 遊客中心直線距離近，但步道沿河，應預留比地圖觀感更多的時間。",
+        "D. 步道與直線距離完全相同。"
+      ],
+      "ans": "C",
+      "explain": "as the crow flies 是直線距離，不等於可走路程。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Seeing fewer birds today does not necessarily mean there are fewer in the area; they may simply be harder to spot.",
+      "options": [
+        "A. 今天的觀察已證明鳥數必然下降。",
+        "B. 鳥只要存在就一定會被看見。",
+        "C. 說話者確定區內的鳥已全部離開。",
+        "D. 今天看見較少鳥，不一定代表區內鳥較少，也可能比較難發現。"
+      ],
+      "ans": "D",
+      "explain": "區分可偵測性與實際數量，may 提供替代可能。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】By the time we reached the clearing, the mist ___.",
+      "options": [
+        "A. has lifting",
+        "B. was lift",
+        "C. did lifted",
+        "D. had lifted"
+      ],
+      "ans": "D",
+      "explain": "抵達是過去時間點，霧在此前已散，用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which verb means to blend into the surroundings so that something is less easily seen?",
+      "options": [
+        "A. camouflage",
+        "B. illuminate",
+        "C. isolate",
+        "D. display"
+      ],
+      "ans": "A",
+      "explain": "camouflage 是偽裝以融入環境；其他詞分別照亮、隔離、展示。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The path is slippery in places. What does in places tell walkers?",
+      "options": [
+        "A. Every section is equally slippery.",
+        "B. Some sections of the path are slippery.",
+        "C. The whole path has been closed.",
+        "D. The path is slippery only on a map."
+      ],
+      "ans": "B",
+      "explain": "in places 指某些地段，不是全線同樣情況。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The notice says that access is restricted during the nesting season. What does it explicitly establish?",
+      "options": [
+        "A. There are limits on access during a particular period.",
+        "B. The reserve is permanently closed throughout the year.",
+        "C. Every species nests at the same time.",
+        "D. Walking outside the reserve is prohibited."
+      ],
+      "ans": "A",
+      "explain": "during 限定期間；restricted 不必是完全封閉。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Two groups visit the same pond. One watches at dawn, the other at midday. They report different numbers of birds. What should be considered before concluding that one group counted badly?",
+      "options": [
+        "A. A difference in counts proves that neither group saw birds.",
+        "B. The time of observation may affect which birds are present.",
+        "C. Both groups must have used the same counting method.",
+        "D. The pond must have changed its location."
+      ],
+      "ans": "B",
+      "explain": "觀察時段不同可影響出現數，不能直接歸因計數失誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I wish I ___ the camera before leaving home; the battery is flat.",
+      "options": [
+        "A. have charging",
+        "B. was charge",
+        "C. had charged",
+        "D. would charge yesterday"
+      ],
+      "ans": "C",
+      "explain": "對已發生的過去表遺憾，用 wish + 過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A volunteer marks a flower on a map but does not pick it. Later, another visitor assumes that the absence of a specimen means no record exists. What has the visitor overlooked?",
+      "options": [
+        "A. A record counts only if the plant has been moved.",
+        "B. An observation can be documented without removing the plant.",
+        "C. The volunteer has explicitly denied seeing the flower.",
+        "D. Every map must include a pressed flower."
+      ],
+      "ans": "B",
+      "explain": "地圖標註也是紀錄，未採集不等於未記錄。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】After a week of rain, a stream is deeper than it was on the group’s previous visit. The guide warns against calling this its normal depth. Why?",
+      "options": [
+        "A. Rainfall proves that all earlier measurements were false.",
+        "B. A stream has exactly the same depth at every location and time.",
+        "C. A recent unusual condition may make the current observation unrepresentative.",
+        "D. The current depth cannot be observed at all."
+      ],
+      "ans": "C",
+      "explain": "近期降雨可能影響代表性，未否認當下深度真實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I have not seen a fox here, which is different from saying there are none. What distinction is made?",
+      "options": [
+        "A. The speaker has confirmed a fox lives in every nearby field.",
+        "B. The speaker cannot remember the name of the animal.",
+        "C. Any claim about animal presence must be false.",
+        "D. Not observing an animal does not establish that it is absent."
+      ],
+      "ans": "D",
+      "explain": "未觀察到與證明不存在不同。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：樹木下方密生的灌木與植物",
+      "ans": "UNDERGROWTH",
+      "speak": "undergrowth",
+      "vocabId": "R6:UNDERGROWTH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：實際看見某物的紀錄或事件",
+      "ans": "SIGHTING",
+      "speak": "sighting",
+      "vocabId": "R6:SIGHTING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有遮蔽而較不受風侵襲的林間空地",
+      "ans": "A SHELTERED CLEARING",
+      "speak": "a sheltered clearing",
+      "vocabId": "R6:A SHELTERED CLEARING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：短暫而不清楚的一瞥",
+      "ans": "A FLEETING GLIMPSE",
+      "speak": "a fleeting glimpse",
+      "vocabId": "R6:A FLEETING GLIMPSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：推測應與觀察分開",
+      "ans": "A GUESS SHOULD BE KEPT SEPARATE FROM AN OBSERVATION",
+      "speak": "a guess should be kept separate from an observation",
+      "vocabId": "R6:A GUESS SHOULD BE KEPT SEPARATE FROM AN OBSERVATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：步道沿河而非走直線",
+      "ans": "THE PATH FOLLOWS THE RIVER RATHER THAN A STRAIGHT LINE",
+      "speak": "the path follows the river rather than a straight line",
+      "vocabId": "R6:THE PATH FOLLOWS THE RIVER RATHER THAN A STRAIGHT LINE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：使事物融入周遭而不易被察覺（C 開頭，10 個字母）",
+      "ans": "CAMOUFLAGE",
+      "speak": "camouflage",
+      "vocabId": "R6:CAMOUFLAGE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：腳踩在地面留下的印痕（F 開頭，9 個字母）",
+      "ans": "FOOTPRINT",
+      "speak": "footprint",
+      "vocabId": "R6:FOOTPRINT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：植物的葉子總稱（F 開頭，7 個字母）",
+      "ans": "FOLIAGE",
+      "speak": "foliage",
+      "vocabId": "R6:FOLIAGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H A B _ T A T (某種生物自然生活的環境)",
+      "ans": "I",
+      "speak": "habitat",
+      "vocabId": "R6:HABITAT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C L _ A R _ N G (林間沒有樹木的空地)",
+      "ans": "EI",
+      "speak": "clearing",
+      "vocabId": "R6:CLEARING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M I _ R _ T _ O N (動物季節性或定期遷移的行為)",
+      "ans": "GAI",
+      "speak": "migration",
+      "vocabId": "R6:MIGRATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a level playing field",
+      "options": [
+        "A. 各方有公平競爭條件",
+        "B. 只能在平坦草地比賽",
+        "C. 所有參賽者實力相同",
+        "D. 比賽必須以平手結束"
+      ],
+      "ans": "A",
+      "explain": "比喻公平條件，不保證實力或結果相等。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "out of practice",
+      "options": [
+        "A. 已正式退出所屬球隊",
+        "B. 因久未練習而生疏",
+        "C. 練習量多到過度疲勞",
+        "D. 正在場外觀看練習"
+      ],
+      "ans": "B",
+      "explain": "out of practice 指技巧生疏，不等於退隊。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "get the hang of it",
+      "options": [
+        "A. 決定不再嘗試",
+        "B. 等別人替自己完成",
+        "C. 逐漸掌握做法",
+        "D. 把東西掛到架上"
+      ],
+      "ans": "C",
+      "explain": "get the hang of 是掌握操作或技巧。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "take turns",
+      "options": [
+        "A. 在場地轉彎",
+        "B. 輪流進行",
+        "C. 一起同時開始",
+        "D. 改變活動方向"
+      ],
+      "ans": "B",
+      "explain": "take turns 是輪替，不是一起做。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You do not need to be fast, but you do need to be comfortable cycling for an hour.",
+      "options": [
+        "A. 只要騎得快就不必騎滿時段。",
+        "B. 活動只有一小時的騎車教學。",
+        "C. 不用騎得快，但需能自在騎一小時。",
+        "D. 必須以最快速度騎完一小時。"
+      ],
+      "ans": "C",
+      "explain": "速度非條件，持續騎乘的適應程度才是條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We lost on points, though we won more individual games than they did.",
+      "options": [
+        "A. 我們總分較高，但贏的場次較少。",
+        "B. 雙方總分與勝場都一樣。",
+        "C. 比賽只有一場而我們輸了。",
+        "D. 我們總分輸了，儘管贏的個別場次較多。"
+      ],
+      "ans": "D",
+      "explain": "總分與勝場數是不同計分層次。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The booking is for the court, not for a lesson, so nobody will be there to coach us.",
+      "options": [
+        "A. 只有教練能用我們預約的場地。",
+        "B. 教練已取消原本包含的課程。",
+        "C. 預約的是場地而非課程，所以不會有教練教我們。",
+        "D. 預約包括場地和一堂教練課。"
+      ],
+      "ans": "C",
+      "explain": "not for a lesson 說明原安排，非臨時取消。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She makes it look easy, which is probably why people underestimate how much practice goes into it.",
+      "options": [
+        "A. 她不用練習，所以表現總是輕鬆。",
+        "B. 旁人認為她練太多而影響表現。",
+        "C. 她刻意讓技巧看起來比實際更難。",
+        "D. 她做得看似輕鬆，可能使人低估背後練習量。"
+      ],
+      "ans": "D",
+      "explain": "表現自然不等於不需練習；probably 保留推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not call it cheating, but I can see why the others felt it went against the spirit of the game.",
+      "options": [
+        "A. 我不會稱為作弊，但理解其他人為何覺得違背遊戲精神。",
+        "B. 我確認對方違反明文規則，理應受罰。",
+        "C. 我認為其他人已接受這種做法。",
+        "D. 我無法理解其他人為何在意此事。"
+      ],
+      "ans": "A",
+      "explain": "區分明文作弊定性與精神層面的不滿。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】Which expression means to stop playing fairly because the result seems impossible to change? The team must not ___ before the final whistle.",
+      "options": [
+        "A. give up",
+        "B. warm up",
+        "C. turn up",
+        "D. sign up"
+      ],
+      "ans": "A",
+      "explain": "give up 放棄；warm up 暖身、turn up 出現、sign up 報名。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】You can borrow a racket as long as you ___ it before closing time.",
+      "options": [
+        "A. have return",
+        "B. return",
+        "C. will returning",
+        "D. returned it"
+      ],
+      "ans": "B",
+      "explain": "as long as 表條件，談未來用現在式 return。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The club welcomes beginners but asks players to bring their own shoes. What is provided by this statement?",
+      "options": [
+        "A. A restriction to experienced competitors.",
+        "B. A requirement to buy shoes from the club.",
+        "C. An invitation with a practical requirement.",
+        "D. A promise to lend all necessary clothing."
+      ],
+      "ans": "C",
+      "explain": "歡迎初學者並不取消自備鞋子的要求，也未限定購買處。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which adjective means decided beforehand rather than arranged at the last moment?",
+      "options": [
+        "A. improvised",
+        "B. prearranged",
+        "C. unplanned",
+        "D. spontaneous"
+      ],
+      "ans": "B",
+      "explain": "prearranged 指預先安排；其他詞表示未先規劃。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A club charges an entry fee but lends equipment at no extra cost. A visitor assumes that borrowing a racket makes the whole visit free. What has been confused?",
+      "options": [
+        "A. The right to borrow with the right to buy.",
+        "B. The opening time with the booking period.",
+        "C. The cost of equipment with the cost of entry.",
+        "D. The entry charge with a refundable deposit."
+      ],
+      "ans": "C",
+      "explain": "器材免加價不等於入場免費。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】If I had known the session was outdoors, I ___ a warmer jacket.",
+      "options": [
+        "A. will have brought",
+        "B. had bringing",
+        "C. would bring yesterday",
+        "D. would have brought"
+      ],
+      "ans": "D",
+      "explain": "對過去未實現條件，用 if had known / would have brought。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A competition ranks teams by points. If points are equal, fewer penalties decides the order. Two teams have equal points, but one has fewer penalties. Which rule applies?",
+      "options": [
+        "A. Ignore penalties because the points are equal.",
+        "B. Ask which team joined the competition first.",
+        "C. Use the penalty count to break the tie.",
+        "D. Award extra points for the lower penalty count."
+      ],
+      "ans": "C",
+      "explain": "題幹給同分排序規則；不是改寫得分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I am happy to take part, provided nobody expects me to keep up with the regular runners. What is the speaker doing?",
+      "options": [
+        "A. Declining until the regular runners leave the club.",
+        "B. Promising to match the fastest regular runner.",
+        "C. Asking the club to stop recording everyone’s times.",
+        "D. Agreeing while setting a limit on expectations."
+      ],
+      "ans": "D",
+      "explain": "同意參與但要求調整對自身表現的期待。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The organisers say the event is not a race, yet display everyone’s finishing order on a large screen. Some participants feel competitive pressure. What explains their reaction?",
+      "options": [
+        "A. The public comparison may conflict with the stated emphasis on participation.",
+        "B. The organisers have announced that slower participants cannot return.",
+        "C. The participants have misunderstood the difference between screens and clocks.",
+        "D. The event must have awarded cash prizes according to finishing order."
+      ],
+      "ans": "A",
+      "explain": "公開排名可產生競爭壓力，不必已有獎金或淘汰規則。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：競賽中公平尊重他人的運動精神",
+      "ans": "SPORTSMANSHIP",
+      "speak": "sportsmanship",
+      "vocabId": "R6:SPORTSMANSHIP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：持續進行體力或心力活動的耐力",
+      "ans": "STAMINA",
+      "speak": "stamina",
+      "vocabId": "R6:STAMINA"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：彼此友善但有競爭的關係",
+      "ans": "A FRIENDLY RIVALRY",
+      "speak": "a friendly rivalry",
+      "vocabId": "R6:A FRIENDLY RIVALRY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：兼顧雙方的公平折衷",
+      "ans": "A FAIR COMPROMISE",
+      "speak": "a fair compromise",
+      "vocabId": "R6:A FAIR COMPROMISE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：公平結果不必是相等結果",
+      "ans": "A FAIR RESULT NEED NOT BE AN EQUAL RESULT",
+      "speak": "a fair result need not be an equal result",
+      "vocabId": "R6:A FAIR RESULT NEED NOT BE AN EQUAL RESULT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：定期練習能讓難技巧看似容易",
+      "ans": "REGULAR PRACTICE CAN MAKE A DIFFICULT SKILL LOOK EASY",
+      "speak": "regular practice can make a difficult skill look easy",
+      "vocabId": "R6:REGULAR PRACTICE CAN MAKE A DIFFICULT SKILL LOOK EASY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：用來擊球的球拍（R 開頭，6 個字母；字數依主要拼字，亦接受標準變體）",
+      "ans": "RACKET",
+      "speak": "racket",
+      "spellAccept": [
+        "RACQUET"
+      ],
+      "vocabId": "R6:RACKET"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：由多場比賽組成的錦標賽（T 開頭，10 個字母）",
+      "ans": "TOURNAMENT",
+      "speak": "tournament",
+      "vocabId": "R6:TOURNAMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：使身體動作配合的協調能力（C 開頭，12 個字母）",
+      "ans": "COORDINATION",
+      "speak": "coordination",
+      "vocabId": "R6:COORDINATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：U M P _ R E (某些運動中執行規則的裁判)",
+      "ans": "I",
+      "speak": "umpire",
+      "vocabId": "R6:UMPIRE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S P E _ T A _ O R (觀看活動或比賽的觀眾)",
+      "ans": "CT",
+      "speak": "spectator",
+      "vocabId": "R6:SPECTATOR"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F _ X _ U _ E (預定舉行的一場體育賽事)",
+      "ans": "ITR",
+      "speak": "fixture",
+      "vocabId": "R6:FIXTURE"
     }
   ],
   "boss": [
@@ -5768,6 +6557,268 @@
       "ans": "MMD",
       "speak": "homemade",
       "vocabId": "R6:HOMEMADE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a telltale sign",
+      "options": [
+        "A. 禁止說話的標誌",
+        "B. 完全不能提供線索的記號",
+        "C. 能透露某事存在的跡象",
+        "D. 故意編造的故事標題"
+      ],
+      "ans": "C",
+      "explain": "telltale 作形容詞指洩露情況的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are unlikely to see much from here unless the fog clears.",
+      "options": [
+        "A. 即使霧很濃也確定能看清一切。",
+        "B. 霧散後仍已確定不能看到任何東西。",
+        "C. 說話者要求大家立即停止觀察。",
+        "D. 除非霧散，否則從這裡大概看不到太多。"
+      ],
+      "ans": "D",
+      "explain": "unless 提出能見度改善的必要條件，unlikely 留機率。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The guide described the walk as gentle, but that was before she knew how much of the path had been washed away.",
+      "options": [
+        "A. 導遊先說路程輕鬆，當時還不知道步道有多少被沖毀。",
+        "B. 導遊是在充分了解損壞後保證輕鬆。",
+        "C. 步道損壞已被確認完全不影響路程。",
+        "D. 導遊只是在形容說話聲音柔和。"
+      ],
+      "ans": "A",
+      "explain": "before she knew 限定最初評估的資訊狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】You might want to bring a notebook, says the guide before a birdwatching walk. What is the likely function?",
+      "options": [
+        "A. A prediction that notebooks will be sold out.",
+        "B. A statement that the listener already owns a notebook.",
+        "C. A suggestion to prepare for recording observations.",
+        "D. A demand to hand over all existing notes."
+      ],
+      "ans": "C",
+      "explain": "You might want to ... 在此是委婉建議，而非宣告對方欲望。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The guide could identify the tree by its bark alone. What information was sufficient?",
+      "options": [
+        "A. The sound made by a dog nearby.",
+        "B. The shape of every leaf and flower together.",
+        "C. The place where the guide had bought the tree.",
+        "D. The appearance of the tree’s outer covering."
+      ],
+      "ans": "D",
+      "explain": "bark 在樹木語境指樹皮，alone 表只靠這項特徵。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The leaflet calls the route easy, but gives no distance or description of the ground. A walker who uses a stick asks for more detail. What is the issue?",
+      "options": [
+        "A. A general label may not provide enough information for an individual’s needs.",
+        "B. The leaflet has explicitly forbidden walking sticks.",
+        "C. The walker has already completed the route without difficulty.",
+        "D. An easy route must be suitable for everyone in the same way."
+      ],
+      "ans": "A",
+      "explain": "easy 的相對評價不能代替距離、地面等可用資訊。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：可供信賴的野外辨識手冊",
+      "ans": "A RELIABLE FIELD GUIDE",
+      "speak": "a reliable field guide",
+      "vocabId": "R6:A RELIABLE FIELD GUIDE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：沒看見動物不證明牠不存在",
+      "ans": "NOT SEEING AN ANIMAL DOES NOT PROVE ITS ABSENCE",
+      "speak": "not seeing an animal does not prove its absence",
+      "vocabId": "R6:NOT SEEING AN ANIMAL DOES NOT PROVE ITS ABSENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：主要在夜間活動的（N 開頭，9 個字母）",
+      "ans": "NOCTURNAL",
+      "speak": "nocturnal",
+      "vocabId": "R6:NOCTURNAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：W A _ E R _ R _ O F (能防止水穿透的)",
+      "ans": "TPO",
+      "speak": "waterproof",
+      "vocabId": "R6:WATERPROOF"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a close call",
+      "options": [
+        "A. 裁判已把比賽正式取消",
+        "B. 隔著近距離打電話",
+        "C. 提早結束且毫無懸念的比賽",
+        "D. 差一點出事或結果難分的驚險情況"
+      ],
+      "ans": "D",
+      "explain": "close call 可指險些出事或難定的判斷，重點在接近界線。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would rather play a shorter match properly than rush through a full one.",
+      "options": [
+        "A. 我寧可好好打一場較短比賽，也不願匆忙打完整場。",
+        "B. 我寧可匆忙打完規定全程也不縮短。",
+        "C. 我想取消比賽改成討論規則。",
+        "D. 我只願看短比賽而不想參與。"
+      ],
+      "ans": "A",
+      "explain": "rather 比較兩個參與方式，不是拒絕打球。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The results matter to me, just not enough to make me give up enjoying the afternoon.",
+      "options": [
+        "A. 我願意為了贏而放棄任何休閒活動。",
+        "B. 我在意結果，但不至於犧牲下午的樂趣。",
+        "C. 我只要輸就會認定下午毫無價值。",
+        "D. 我對結果完全不感興趣也不會查看。"
+      ],
+      "ans": "B",
+      "explain": "just not enough 限制程度，非否定在意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Would you mind keeping the score while I play? What is requested?",
+      "options": [
+        "A. Explaining how to improve technique.",
+        "B. Changing the number of points needed.",
+        "C. Playing in place of the speaker.",
+        "D. Recording points during the game."
+      ],
+      "ans": "D",
+      "explain": "keep the score 是記分，不是保存球具。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The coach praised her effort, if not her accuracy. What is the assessment?",
+      "options": [
+        "A. Her effort deserved praise, but her accuracy did not receive the same approval.",
+        "B. Her accuracy deserved praise, but her effort did not receive the same approval.",
+        "C. Her effort would deserve praise only if she first improved her accuracy.",
+        "D. Her accuracy was praised because the coach considered effort irrelevant."
+      ],
+      "ans": "A",
+      "explain": "if not 在此限制讚美範圍，努力受肯定而準確性有所保留。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A player wins a match after her opponent slips. She says the result was welcome but not a fair measure of their usual abilities. What distinction does she make?",
+      "options": [
+        "A. Her opponent’s footwear versus the condition of her own equipment.",
+        "B. Winning this match versus demonstrating greater skill overall.",
+        "C. Being pleased with a win versus wanting to play the match again.",
+        "D. Following the rules versus receiving permission to enter the event."
+      ],
+      "ans": "B",
+      "explain": "單次結果可能受意外影響，不能直接代表平常實力。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：穩定逐步的進步",
+      "ans": "A STEADY IMPROVEMENT",
+      "speak": "a steady improvement",
+      "vocabId": "R6:A STEADY IMPROVEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我重視結果但不讓它毀掉一天",
+      "ans": "I VALUE THE RESULT WITHOUT LETTING IT SPOIL THE DAY",
+      "speak": "i value the result without letting it spoil the day",
+      "vocabId": "R6:I VALUE THE RESULT WITHOUT LETTING IT SPOIL THE DAY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：遇困難仍持續努力的毅力（P 開頭，12 個字母）",
+      "ans": "PERSEVERANCE",
+      "speak": "perseverance",
+      "vocabId": "R6:PERSEVERANCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D _ _ _ (雙方得分相同的平手結果)",
+      "ans": "RAW",
+      "speak": "draw",
+      "vocabId": "R6:DRAW"
     }
   ]
 }

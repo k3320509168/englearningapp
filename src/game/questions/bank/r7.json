@@ -4322,6 +4322,792 @@
       "ans": "PLN",
       "speak": "opulent",
       "vocabId": "R7:OPULENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tentative identification",
+      "options": [
+        "A. 已排除所有異議的定論",
+        "B. 完全沒有觀察就作的虛構",
+        "C. 正式撤回所有分類的方法",
+        "D. 可以隨證據修正的暫定辨識"
+      ],
+      "ans": "D",
+      "explain": "tentative 是暫定而非無根據虛構。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a conspicuous absence",
+      "options": [
+        "A. 明顯而引人注意的缺席",
+        "B. 無人察覺的短暫出現",
+        "C. 不容易看清的斑點",
+        "D. 刻意增加的觀察次數"
+      ],
+      "ans": "A",
+      "explain": "conspicuous 指醒目可注意；可修飾 absence。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an unobtrusive observer",
+      "options": [
+        "A. 只觀察自己倒影的人",
+        "B. 不顯眼且盡量不打擾的觀察者",
+        "C. 以大聲呼喊引人注意的觀察者",
+        "D. 完全沒有記錄的遊客"
+      ],
+      "ans": "B",
+      "explain": "unobtrusive 強調不引人注意或造成干擾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "in the absence of corroboration",
+      "options": [
+        "A. 缺乏其他佐證時",
+        "B. 所有獨立證據一致確認後",
+        "C. 觀察者全數到齊之際",
+        "D. 不准保存原始資料的情況"
+      ],
+      "ans": "A",
+      "explain": "corroboration 指增加可信度的佐證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have a convincing description of one event, not yet a convincing account of how often it occurs.",
+      "options": [
+        "A. 描述細節越多就必然發生越頻繁。",
+        "B. 我們有一次事件的可信描述，尚無其發生頻率的可信說明。",
+        "C. 一次記錄已足以確定全年頻率。",
+        "D. 事件本身已被證明未曾發生。"
+      ],
+      "ans": "B",
+      "explain": "事件存在與頻率推斷是不同層次。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The features are compatible with that identification, though none is distinctive enough to settle it on its own.",
+      "options": [
+        "A. 所有特徵與辨識完全矛盾。",
+        "B. 沒有任何特徵曾被記錄。",
+        "C. 特徵符合那個辨識，但沒有一項單獨足以定案。",
+        "D. 每項特徵都單獨唯一確定該種類。"
+      ],
+      "ans": "C",
+      "explain": "相容不等於有獨特鑑別力；on its own 限定單一特徵。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The label is useful as a starting point, provided we do not let it dictate which details we notice.",
+      "options": [
+        "A. 每個細節都已被證明同樣重要。",
+        "B. 標籤可當起點，只要不讓它決定我們留意哪些細節。",
+        "C. 標籤應先決定哪些不符細節必須刪掉。",
+        "D. 說話者拒絕使用任何標籤。"
+      ],
+      "ans": "B",
+      "explain": "分類的用途附有不讓預期篩掉觀察的條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What appears to be a boundary in the distribution may be a boundary in where people have thought it worth looking.",
+      "options": [
+        "A. 物種已因觀察者到訪而開始往搜尋區域內遷移。",
+        "B. 地圖上的界線主要反映不同觀察者辨認能力的差異。",
+        "C. 看似物種分布界線，可能反映人們選擇搜尋的範圍。",
+        "D. 人們選擇搜尋範圍，已證實跟隨物種真實分布界線。"
+      ],
+      "ans": "C",
+      "explain": "資料空白可能反映搜尋分布，而非生物真實邊界。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The report is strongest where it describes the observations, and weakest where it quietly turns their interpretation into an established fact.",
+      "options": [
+        "A. 報告細節太多而薄弱，刪除觀察才能凸顯解釋的優點。",
+        "B. 報告的解釋已有充分證據，只是描述觀察的文筆較弱。",
+        "C. 報告觀察本身不可信，但它提出的解釋可彌補這個問題。",
+        "D. 報告描述觀察較有力，把解釋當既定事實則削弱可信度。"
+      ],
+      "ans": "D",
+      "explain": "評價不同層次的證據強弱，非禁止推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The more closely we observed the markings, ___ it became that the two birds were different.",
+      "options": [
+        "A. clearer than",
+        "B. so clearly",
+        "C. the most clearly",
+        "D. the clearer"
+      ],
+      "ans": "D",
+      "explain": "the more ..., the clearer ... 表相關程度變化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A tentative identification should be understood as ___.",
+      "options": [
+        "A. a provisional judgement open to revision",
+        "B. a deliberate attempt to mislead",
+        "C. a classification accepted without qualification",
+        "D. a refusal to make any observation"
+      ],
+      "ans": "A",
+      "explain": "tentative 是暫定而可能修正，不等於捏造。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The report distinguishes a resident population from occasional visitors. What distinction is central?",
+      "options": [
+        "A. Living organisms versus preserved specimens.",
+        "B. Regular presence in the area versus intermittent appearance.",
+        "C. Large animals versus animals too small to observe.",
+        "D. Animals seen by experts versus those seen by volunteers."
+      ],
+      "ans": "B",
+      "explain": "resident 與 occasional visitors 對比在地持續性與偶爾出現。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The observer writes, consistent with nesting activity, rather than, proof of nesting. What is achieved?",
+      "options": [
+        "A. The interpretation remains compatible with alternatives.",
+        "B. The observation is withdrawn as fabricated.",
+        "C. The observer asserts a stronger level of certainty.",
+        "D. All possible explanations are listed exhaustively."
+      ],
+      "ans": "A",
+      "explain": "consistent with 是符合但非唯一證明，保留替代解釋。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Volunteers report more sightings after an observation platform opens. The report treats this as a possible change in reporting effort rather than immediate evidence of population growth. What is being controlled conceptually?",
+      "options": [
+        "A. The assumption that volunteers cannot keep records.",
+        "B. The distinction between how much observers look and how many animals exist.",
+        "C. The distinction between platform construction costs and admission prices.",
+        "D. The claim that no animals can be observed from a platform."
+      ],
+      "ans": "B",
+      "explain": "觀察努力變化會影響紀錄量，不等同族群增長。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The pattern is suggestive of seasonal movement, though the observations do not cover a full year. Which qualification matters?",
+      "options": [
+        "A. The report denies any pattern in the recorded period.",
+        "B. Seasonal movement has been ruled out by definition.",
+        "C. The available period may be too narrow to establish the proposed seasonal pattern.",
+        "D. The observations explicitly cover every season."
+      ],
+      "ans": "C",
+      "explain": "suggestive 保留推測；全年不足限制季節性論證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A rare plant is found beside a heavily used path. A commentator calls this proof that foot traffic benefits the species. Which untested possibility is most relevant?",
+      "options": [
+        "A. Every visitor may have arrived by a different route.",
+        "B. The plant may persist there despite disturbance, rather than because of it.",
+        "C. The plant must be a different colour from those elsewhere.",
+        "D. The observers may have used a printed rather than digital map."
+      ],
+      "ans": "B",
+      "explain": "共存不證明受益；despite 與 because 的差別是核心。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A field guide offers sharply separated categories, while several observed birds show features associated with more than one category. The observer records the mixed features rather than forcing a label. What principle is illustrated?",
+      "options": [
+        "A. The guide’s categories should take priority over uncertain observations.",
+        "B. A mixed appearance supports whichever category is most familiar.",
+        "C. Classification should preserve features that complicate its boundaries.",
+        "D. Mixed features should be recorded only once a new category is agreed."
+      ],
+      "ans": "C",
+      "explain": "分類有用但不應刪去不吻合的資訊，沒有否定所有分類。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The absence of a sighting is informative only in relation to the likelihood that a present animal would have been detected. What follows?",
+      "options": [
+        "A. A failed search is stronger evidence when the species is difficult to see.",
+        "B. The length of a species name determines the weight of a failed search.",
+        "C. Search conditions affect successful sightings but not unsuccessful ones.",
+        "D. A failed search is stronger evidence when detection would have been likely."
+      ],
+      "ans": "D",
+      "explain": "未發現的證據力與偵測機率有關，不是全無意義。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：隱晦而不易辨認的",
+      "ans": "CRYPTIC",
+      "speak": "cryptic",
+      "vocabId": "R7:CRYPTIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：支持某說法的其他佐證",
+      "ans": "CORROBORATION",
+      "speak": "corroboration",
+      "vocabId": "R7:CORROBORATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍可修改的暫定分類",
+      "ans": "A PROVISIONAL CLASSIFICATION",
+      "speak": "a provisional classification",
+      "vocabId": "R7:A PROVISIONAL CLASSIFICATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：觀察方式造成的系統性偏差",
+      "ans": "A SYSTEMATIC OBSERVATION BIAS",
+      "speak": "a systematic observation bias",
+      "vocabId": "R7:A SYSTEMATIC OBSERVATION BIAS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：符合某解釋不證成它為真",
+      "ans": "COMPATIBILITY WITH AN EXPLANATION DOES NOT ESTABLISH ITS TRUTH",
+      "speak": "compatibility with an explanation does not establish its truth",
+      "vocabId": "R7:COMPATIBILITY WITH AN EXPLANATION DOES NOT ESTABLISH ITS TRUTH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：表面界線可能反映觀察者搜尋範圍",
+      "ans": "THE APPARENT BOUNDARY MAY REFLECT WHERE OBSERVERS HAVE LOOKED",
+      "speak": "the apparent boundary may reflect where observers have looked",
+      "vocabId": "R7:THE APPARENT BOUNDARY MAY REFLECT WHERE OBSERVERS HAVE LOOKED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：明顯而引人注意的（C 開頭，11 個字母）",
+      "ans": "CONSPICUOUS",
+      "speak": "conspicuous",
+      "vocabId": "R7:CONSPICUOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：不引人注意或不造成干擾的（U 開頭，11 個字母）",
+      "ans": "UNOBTRUSIVE",
+      "speak": "unobtrusive",
+      "vocabId": "R7:UNOBTRUSIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：數量或程度上升下降的波動（F 開頭，11 個字母）",
+      "ans": "FLUCTUATION",
+      "speak": "fluctuation",
+      "vocabId": "R7:FLUCTUATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E S I _ E N T (在某地長期居住或常駐的)",
+      "ans": "D",
+      "speak": "resident",
+      "vocabId": "R7:RESIDENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D I S _ E R _ A L (由原處向不同地點散布的過程)",
+      "ans": "PS",
+      "speak": "dispersal",
+      "vocabId": "R7:DISPERSAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A B _ N _ A _ C E (大量存在的狀態或數量)",
+      "ans": "UDN",
+      "speak": "abundance",
+      "vocabId": "R7:ABUNDANCE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a sporting gesture",
+      "options": [
+        "A. 展現公平尊重對手精神的舉動",
+        "B. 刻意挑釁對方的動作",
+        "C. 正式登記比賽成績的程序",
+        "D. 提高個人訓練負荷的方法"
+      ],
+      "ans": "A",
+      "explain": "sporting 可指大方公平而有運動精神。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a foregone conclusion",
+      "options": [
+        "A. 賽後才出現的新證據",
+        "B. 結果早已被視為可預知的事",
+        "C. 需要再三申訴的判決",
+        "D. 尚未訂定的賽事規則"
+      ],
+      "ans": "B",
+      "explain": "foregone conclusion 指被視為必然的結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a Pyrrhic victory",
+      "options": [
+        "A. 不經比賽直接取得的資格",
+        "B. 敗方獲得額外積分的安排",
+        "C. 代價過大而得不償失的勝利",
+        "D. 實力相近所形成的平手"
+      ],
+      "ans": "C",
+      "explain": "Pyrrhic victory 關鍵是勝利代價，非單指險勝。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "in contention",
+      "options": [
+        "A. 正在討論是否練習",
+        "B. 仍有爭取勝利或資格的機會",
+        "C. 已確定獲得最終冠軍",
+        "D. 因爭議而被禁止參賽"
+      ],
+      "ans": "B",
+      "explain": "in contention 指仍在競逐，未必領先。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "His reaction was understandable, though that does not make the way he spoke to the official acceptable.",
+      "options": [
+        "A. 說話者無法理解反應，因此反對所有申訴。",
+        "B. 裁判已因他的反應而正式改判。",
+        "C. 能理解他的反應，不代表能接受他對裁判的說話方式。",
+        "D. 說話者因理解原因而接受了他對裁判的態度。"
+      ],
+      "ans": "C",
+      "explain": "理解動機與認可行為可區分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The format rewards taking risks, but only within a framework that limits how much one failed attempt can cost.",
+      "options": [
+        "A. 賽制鼓勵冒險，並讓單次失敗決定全部結果。",
+        "B. 賽制只獎勵不冒風險而穩定完成的人。",
+        "C. 賽制已取消失敗紀錄以免影響結果。",
+        "D. 賽制鼓勵冒險，但框架限制單次失敗的代價。"
+      ],
+      "ans": "D",
+      "explain": "風險回報與損失限制並存。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would distinguish making the competition accessible from making every match equally easy to win.",
+      "options": [
+        "A. 說話者認為應以難以報名來維持比賽品質。",
+        "B. 比賽的參與條件已被改成只接受優勝者。",
+        "C. 我會區分讓比賽容易參與與讓每場都同樣容易贏。",
+        "D. 比賽容易參與就應確保每個人同樣容易獲勝。"
+      ],
+      "ans": "C",
+      "explain": "可及性與勝負難度是不同目標。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The impressive result may owe something to the system, but the system was introduced just as several unusually strong players joined.",
+      "options": [
+        "A. 強手加入已證明制度對成績沒有任何作用。",
+        "B. 制度早已推出多年，強手加入與結果毫無關聯。",
+        "C. 好成績已被確定完全是新制度造成。",
+        "D. 好成績可能部分來自制度，但制度推出時恰有幾位強手加入。"
+      ],
+      "ans": "D",
+      "explain": "同時發生的人員變動是替代影響，不排除制度部分功勞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What looks like a failure of commitment may be a failure to offer a schedule that people with other commitments can actually manage.",
+      "options": [
+        "A. 看似投入不足，可能是時程未顧及人們其他責任。",
+        "B. 參加者已承認缺席只是因為不喜歡活動。",
+        "C. 時程安排合理與否可由出席低直接證明。",
+        "D. 人們只要足夠投入就能取消任何其他責任。"
+      ],
+      "ans": "A",
+      "explain": "commitment 的投入/既有責任雙義形成重評，不確定指責個人。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The team’s dominance was short-lived. Which account matches this?",
+      "options": [
+        "A. They led briefly before other teams caught up.",
+        "B. They remained unbeaten throughout several seasons.",
+        "C. They entered few events but won every one.",
+        "D. They improved gradually without ever taking the lead."
+      ],
+      "ans": "A",
+      "explain": "short-lived 指維持不久；dominance 是優勢地位。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】So evenly ___ that no side led by more than a point.",
+      "options": [
+        "A. the teams were matching",
+        "B. matched were the teams",
+        "C. the teams matched were",
+        "D. were matched the teams"
+      ],
+      "ans": "B",
+      "explain": "So evenly matched were the teams that ... 程度詞前置倒裝；matched 作分詞形容狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語域】Which comment concedes defeat without diminishing the winners’ achievement?",
+      "options": [
+        "A. They won, although anyone could have done so in those conditions.",
+        "B. Their victory owes more to our mistakes than to their play.",
+        "C. We had opportunities, but they made better use of theirs.",
+        "D. The result says more about our bad luck than their ability."
+      ],
+      "ans": "C",
+      "explain": "正答承認雙方機會與對手較佳把握；其餘將勝利貶為幸運或對方失誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】He insisted on ___ as a beginner, despite his previous experience.",
+      "options": [
+        "A. having treat",
+        "B. being treated",
+        "C. treating him",
+        "D. be treated"
+      ],
+      "ans": "B",
+      "explain": "insist on 後用動名詞；主詞 he 接受對待，用 being treated。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A club removes rankings to reduce pressure but still allocates its best time slots according to recent results. What tension remains?",
+      "options": [
+        "A. The best time slots are now distributed without considering results.",
+        "B. Removing rankings has necessarily made players more competitive.",
+        "C. Competitive outcomes still determine access to a desirable benefit.",
+        "D. The club has eliminated every practical consequence of performance."
+      ],
+      "ans": "C",
+      "explain": "明面排名取消，資源分配仍依成績；不推論心理必然更競爭。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】Her composure should not be mistaken for indifference. What is being distinguished?",
+      "options": [
+        "A. Remaining calm from being able to understand the rules.",
+        "B. Caring about the outcome from following the rules.",
+        "C. Showing disappointment from having practised regularly.",
+        "D. Remaining calm from caring little about the outcome."
+      ],
+      "ans": "D",
+      "explain": "composure 是鎮定，不等於不在乎。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I am not convinced the new format rewards consistency quite as much as its designers suggest. What is the speaker questioning?",
+      "options": [
+        "A. The designers’ willingness to describe the format publicly.",
+        "B. Whether any player has ever performed consistently.",
+        "C. The extent to which the format favours steady performance.",
+        "D. Whether the format contains any scoring rules at all."
+      ],
+      "ans": "C",
+      "explain": "not ... quite as much 降低程度，非否定一致表現存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A coach praises a risky move when it succeeds and condemns the same decision when it fails, without considering the information available beforehand. What distinction would improve the assessment?",
+      "options": [
+        "A. A player’s willingness to listen versus the coach’s experience.",
+        "B. The complexity of a move versus the time available after the match.",
+        "C. The crowd’s reaction versus the official record of the score.",
+        "D. The quality of a decision versus the outcome of a single attempt."
+      ],
+      "ans": "D",
+      "explain": "評估決策應看當時資訊，不只以單次成敗倒推。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The captain accepts that a rule was technically followed while disputing that the action was sporting. What does she preserve?",
+      "options": [
+        "A. A distinction between formal compliance and fair conduct.",
+        "B. A claim that the official score must therefore be incorrect.",
+        "C. A requirement that every sporting action produce a close result.",
+        "D. A distinction between individual and team competitions."
+      ],
+      "ans": "A",
+      "explain": "規則符合與運動精神判斷不同，不自動推翻比數。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：壓力下保持冷靜的鎮定",
+      "ans": "COMPOSURE",
+      "speak": "composure",
+      "vocabId": "R7:COMPOSURE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：利用規則邊緣手段取得心理或競賽優勢",
+      "ans": "GAMESMANSHIP",
+      "speak": "gamesmanship",
+      "vocabId": "R7:GAMESMANSHIP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：容許判斷空間的裁量決定",
+      "ans": "A DISCRETIONARY DECISION",
+      "speak": "a discretionary decision",
+      "vocabId": "R7:A DISCRETIONARY DECISION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：需要投入不少時間精力的承諾",
+      "ans": "A DEMANDING COMMITMENT",
+      "speak": "a demanding commitment",
+      "vocabId": "R7:A DEMANDING COMMITMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：鎮定不應與漠不關心混淆",
+      "ans": "COMPOSURE SHOULD NOT BE CONFUSED WITH INDIFFERENCE",
+      "speak": "composure should not be confused with indifference",
+      "vocabId": "R7:COMPOSURE SHOULD NOT BE CONFUSED WITH INDIFFERENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：好決策仍可能得到不幸結果",
+      "ans": "A GOOD DECISION CAN STILL HAVE AN UNFORTUNATE OUTCOME",
+      "speak": "a good decision can still have an unfortunate outcome",
+      "vocabId": "R7:A GOOD DECISION CAN STILL HAVE AN UNFORTUNATE OUTCOME"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：對他人有禮大方而體諒的（G 開頭，8 個字母）",
+      "ans": "GRACIOUS",
+      "speak": "gracious",
+      "vocabId": "R7:GRACIOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：有機會爭取勝利或職位的競逐者（C 開頭，9 個字母）",
+      "ans": "CONTENDER",
+      "speak": "contender",
+      "vocabId": "R7:CONTENDER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：展現公平競爭精神的（S 開頭，8 個字母）",
+      "ans": "SPORTING",
+      "speak": "sporting",
+      "vocabId": "R7:SPORTING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S E E _ I N G (依實力排名安排賽事位置的做法)",
+      "ans": "D",
+      "speak": "seeding",
+      "vocabId": "R7:SEEDING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F O _ F _ I T (因違規或未履行條件而喪失權利或比賽)",
+      "ans": "RE",
+      "speak": "forfeit",
+      "vocabId": "R7:FORFEIT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O _ T _ L _ Y (在比賽表現上勝過對手)",
+      "ans": "UPA",
+      "speak": "outplay",
+      "vocabId": "R7:OUTPLAY"
     }
   ],
   "boss": [
@@ -5765,6 +6551,268 @@
       "ans": "LTB",
       "speak": "delectable",
       "vocabId": "R7:DELECTABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a plausible inference",
+      "options": [
+        "A. 明知矛盾而提出的假話",
+        "B. 不包含解釋的原始照片",
+        "C. 合理但不等於已證實的推論",
+        "D. 由定義保證必然為真的結論"
+      ],
+      "ans": "C",
+      "explain": "plausible 是看來合理，並非確證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would be wary of calling the trend a recovery until we know whether the way sightings are collected has changed.",
+      "options": [
+        "A. 說話者確認蒐集方法從未改變。",
+        "B. 趨勢已證明族群永久復甦。",
+        "C. 所有目擊紀錄都被斷定毫無價值。",
+        "D. 在知道目擊蒐集方式是否改變前，我會謹慎使用復甦來描述趨勢。"
+      ],
+      "ans": "D",
+      "explain": "保留針對趨勢的解釋，不是拒絕所有紀錄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A comparison with earlier records is only as persuasive as our confidence that comparable things were recorded in comparable ways.",
+      "options": [
+        "A. 與舊紀錄比較的說服力取決於事物與記錄方法是否可比。",
+        "B. 比較的說服力主要取決於舊紀錄是否比新紀錄更詳盡。",
+        "C. 只要記錄同種動物，不同方法造成的影響就已被排除。",
+        "D. 若使用相同方法，就能保證不同年代記錄的事物相同。"
+      ],
+      "ans": "A",
+      "explain": "可比性是跨時比較的前提，不等於格式表面相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】We need not have carried the heavy guidebook; a copy ___ at the centre all along.",
+      "options": [
+        "A. was been available",
+        "B. had available",
+        "C. had been available",
+        "D. has being available"
+      ],
+      "ans": "C",
+      "explain": "過去才發現先前一直可取得，用 had been available。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The survey may have missed the species, ___ that it is most active after observers leave.",
+      "options": [
+        "A. despite",
+        "B. whereas",
+        "C. unless",
+        "D. given"
+      ],
+      "ans": "D",
+      "explain": "given that 引入可能解釋；其他連接不符合此因果推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A reserve’s report credits its new policy for a rise in sightings. Nearby sites without the policy show a similar rise. Why does the comparison matter?",
+      "options": [
+        "A. It suggests that a wider influence may contribute to the local increase.",
+        "B. It suggests that the local policy has influenced neighbouring sites too.",
+        "C. It establishes that changing the policy would reverse the local increase.",
+        "D. It establishes that the same birds were counted at each nearby site."
+      ],
+      "ans": "A",
+      "explain": "外部相似趨勢提供共同因素解釋，但不證明政策毫無影響。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：明顯的差異或不一致",
+      "ans": "A MARKED DISCREPANCY",
+      "speak": "a marked discrepancy",
+      "vocabId": "R7:A MARKED DISCREPANCY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：可比較紀錄需要留意觀察方法",
+      "ans": "COMPARABLE RECORDS REQUIRE ATTENTION TO HOW OBSERVATIONS WERE MADE",
+      "speak": "comparable records require attention to how observations were made",
+      "vocabId": "R7:COMPARABLE RECORDS REQUIRE ATTENTION TO HOW OBSERVATIONS WERE MADE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：時有時無而非連續的（I 開頭，12 個字母）",
+      "ans": "INTERMITTENT",
+      "speak": "intermittent",
+      "vocabId": "R7:INTERMITTENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N D _ R R _ P O _ T E D (被通報或記錄得比實際少的)",
+      "ans": "EER",
+      "speak": "underreported",
+      "vocabId": "R7:UNDERREPORTED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "to concede defeat",
+      "options": [
+        "A. 要求對手認輸",
+        "B. 宣布比賽延期",
+        "C. 撤回賽前報名",
+        "D. 承認落敗"
+      ],
+      "ans": "D",
+      "explain": "concede defeat 是承認自己已輸。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She was gracious in defeat without pretending that the result meant nothing to her.",
+      "options": [
+        "A. 她落敗仍有風度，卻沒假裝自己不在乎結果。",
+        "B. 她靠表現不在乎結果才取得勝利。",
+        "C. 她因重視結果而拒絕承認對手獲勝。",
+        "D. 她明白表示勝負對自己已毫無意義。"
+      ],
+      "ans": "A",
+      "explain": "gracious 不等於 indifference，兩者可分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The team has become more consistent, if less spectacular, and I suspect the captain regards that as progress rather than compromise.",
+      "options": [
+        "A. 說話者認為隊長尚未注意表現有任何改變。",
+        "B. 球隊較穩定但較不華麗，隊長可能視此為進步而非妥協。",
+        "C. 球隊較華麗但較不穩定，隊長因此決定妥協。",
+        "D. 隊長已確定穩定表現不可能帶來進步。"
+      ],
+      "ans": "B",
+      "explain": "if less spectacular 是讓步，suspect 不等於確定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A rule described as discretionary leaves room for ___.",
+      "options": [
+        "A. automatic application without judgement",
+        "B. a public vote by every spectator",
+        "C. retroactive changes to the recorded score",
+        "D. judgement about whether or how to apply it"
+      ],
+      "ans": "D",
+      "explain": "discretionary 指裁量空間，未指定由觀眾投票。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The rules allow a player to appeal only after a point ends. A player interrupts play to make an appeal and argues that appeals are permitted. What has been overlooked?",
+      "options": [
+        "A. Permission is limited by a condition governing its timing.",
+        "B. The appeal procedure applies only to players who win the point.",
+        "C. A permitted appeal guarantees that the original call will change.",
+        "D. The rules require every disputed point to be replayed."
+      ],
+      "ans": "A",
+      "explain": "允許申訴但有時機條件，不能僅引用許可忽略限制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A recreational league promotes inclusion but requires availability on evenings when many carers cannot attend. Which criticism most closely addresses the practical barrier?",
+      "options": [
+        "A. Evening competitions inevitably create an unfair scoring system.",
+        "B. Formal openness is weakened by a schedule that excludes some intended participants.",
+        "C. Inclusion requires identical skill levels among all league participants.",
+        "D. The league’s participants should be selected by caregiving experience."
+      ],
+      "ans": "B",
+      "explain": "名義開放不保證時程可參與；沒有要求同實力或改記分。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：與行為嚴重程度不相稱的處罰",
+      "ans": "A DISPROPORTIONATE PENALTY",
+      "speak": "a disproportionate penalty",
+      "vocabId": "R7:A DISPROPORTIONATE PENALTY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：包容既靠邀請也靠實際參與條件",
+      "ans": "INCLUSION DEPENDS ON PRACTICAL ACCESS AS WELL AS INVITATION",
+      "speak": "inclusion depends on practical access as well as invitation",
+      "vocabId": "R7:INCLUSION DEPENDS ON PRACTICAL ACCESS AS WELL AS INVITATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：強大到似乎無法被打敗的（I 開頭，10 個字母）",
+      "ans": "INVINCIBLE",
+      "speak": "invincible",
+      "vocabId": "R7:INVINCIBLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ U R _ E _ C E (衰退後重新增強或活躍)",
+      "ans": "SGN",
+      "speak": "resurgence",
+      "vocabId": "R7:RESURGENCE"
     }
   ]
 }

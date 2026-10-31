@@ -1,1 +1,692 @@
-{}
+{
+  "ACHIEVE": {
+    "pos": "v.",
+    "meaning": "達成",
+    "example": "We aim to achieve our sales goals this year.",
+    "exampleZh": "我們目標在今年達成銷售目標。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "達成、實現",
+        "examples": [
+          {
+            "en": "She finally achieved her dream.",
+            "zh": "她終於實現了夢想。"
+          },
+          {
+            "en": "We must work hard to achieve success.",
+            "zh": "我們必須努力工作以取得成功。"
+          }
+        ]
+      }
+    ]
+  },
+  "GUARANTEE": {
+    "pos": "v.",
+    "meaning": "保證",
+    "example": "We guarantee the quality of our products.",
+    "exampleZh": "我們保證產品的品質。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "保證、擔保",
+        "examples": [
+          {
+            "en": "I cannot guarantee that it will work.",
+            "zh": "我無法保證它會起作用。"
+          },
+          {
+            "en": "The company guarantees a full refund.",
+            "zh": "公司保證全額退款。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "保證書、擔保",
+        "examples": [
+          {
+            "en": "The TV comes with a two-year guarantee.",
+            "zh": "這台電視附有兩年保固。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPLAINT": {
+    "pos": "n.",
+    "meaning": "客訴",
+    "example": "We received a complaint from a customer.",
+    "exampleZh": "我們收到了一位顧客的客訴。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "抱怨、投訴",
+        "examples": [
+          {
+            "en": "How do you handle customer complaints?",
+            "zh": "你們如何處理顧客投訴？"
+          },
+          {
+            "en": "I want to make a complaint about the service.",
+            "zh": "我想對這項服務提出投訴。"
+          }
+        ]
+      }
+    ]
+  },
+  "INVEST": {
+    "pos": "v.",
+    "meaning": "投資",
+    "example": "It is wise to invest in education.",
+    "exampleZh": "投資教育是明智的。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "投資、投入",
+        "examples": [
+          {
+            "en": "They plan to invest more money in the project.",
+            "zh": "他們計畫在這個專案上投資更多資金。"
+          },
+          {
+            "en": "He invested his time heavily in learning English.",
+            "zh": "他投入了大量時間學習英文。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAINTENANCE": {
+    "pos": "n.",
+    "meaning": "維護",
+    "example": "The machine needs regular maintenance.",
+    "exampleZh": "這台機器需要定期維護。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "維護、保養",
+        "examples": [
+          {
+            "en": "Maintenance costs can be very high.",
+            "zh": "維修費用可能會非常高。"
+          },
+          {
+            "en": "The building is undergoing maintenance.",
+            "zh": "這棟大樓正在進行維護。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESOLVE": {
+    "pos": "v.",
+    "meaning": "解決",
+    "example": "We must resolve this issue quickly.",
+    "exampleZh": "我們必須盡快解決這個問題。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "解決、解除",
+        "examples": [
+          {
+            "en": "The manager resolved the conflict.",
+            "zh": "經理排解了衝突。"
+          },
+          {
+            "en": "They are trying to resolve the problem.",
+            "zh": "他們正試圖解決問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "UPGRADE": {
+    "pos": "v.",
+    "meaning": "升級",
+    "example": "You can upgrade to first class for free.",
+    "exampleZh": "你可以免費升等至頭等艙。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "升級、提升",
+        "examples": [
+          {
+            "en": "We need to upgrade our computer system.",
+            "zh": "我們需要升級電腦系統。"
+          },
+          {
+            "en": "My phone has been upgraded.",
+            "zh": "我的手機已經升級了。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "升級",
+        "examples": [
+          {
+            "en": "This is a major software upgrade.",
+            "zh": "這是一次重大的軟體升級。"
+          }
+        ]
+      }
+    ]
+  },
+  "MANUFACTURE": {
+    "pos": "v.",
+    "meaning": "製造",
+    "example": "They manufacture clothes in this factory.",
+    "exampleZh": "他們在這家工廠製造衣服。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "製造、生產",
+        "examples": [
+          {
+            "en": "The company manufactures toys.",
+            "zh": "這家公司生產玩具。"
+          },
+          {
+            "en": "Most of the parts are manufactured abroad.",
+            "zh": "大部分零件都是在國外製造的。"
+          }
+        ]
+      }
+    ]
+  },
+  "REPLACE": {
+    "pos": "v.",
+    "meaning": "替換",
+    "example": "The old machine was replaced last week.",
+    "exampleZh": "舊機器上週已被替換。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "替換",
+        "examples": [
+          {
+            "en": "The old machine was replaced last week.",
+            "zh": "舊機器上週已被替換。"
+          },
+          {
+            "en": "If it is broken, we will replace it immediately.",
+            "zh": "如果它壞了，我們將會立刻替換它。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORWARD": {
+    "pos": "v.",
+    "meaning": "轉發",
+    "example": "The email was forwarded to the correct department.",
+    "exampleZh": "這封電子郵件已被轉發到正確的部門。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "轉發",
+        "examples": [
+          {
+            "en": "The email was forwarded to the correct department.",
+            "zh": "這封電子郵件已被轉發到正確的部門。"
+          },
+          {
+            "en": "If I receive the news, I will forward it to you.",
+            "zh": "如果我收到消息，我會轉發給您。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPROVE": {
+    "pos": "v.",
+    "meaning": "改善",
+    "example": "Customer service has been improved recently.",
+    "exampleZh": "客戶服務最近已經得到改善。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "改善",
+        "examples": [
+          {
+            "en": "Customer service has been improved recently.",
+            "zh": "客戶服務最近已經得到改善。"
+          },
+          {
+            "en": "If we improve our skills, we will work faster.",
+            "zh": "如果我們改善技能，我們的工作速度將會變快。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEVELOP": {
+    "pos": "v.",
+    "meaning": "開發",
+    "example": "A new system has been developed by the team.",
+    "exampleZh": "團隊已經開發出一個新系統。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "開發",
+        "examples": [
+          {
+            "en": "A new system has been developed by the team.",
+            "zh": "團隊已經開發出一個新系統。"
+          },
+          {
+            "en": "If we develop this idea, it will be a great product.",
+            "zh": "如果我們開發這個想法，它將會是一個很棒的產品。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONSIDER": {
+    "pos": "v.",
+    "meaning": "考慮",
+    "example": "Your request has been considered carefully.",
+    "exampleZh": "您的請求已經過仔細考慮。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "考慮",
+        "examples": [
+          {
+            "en": "Your request has been considered carefully.",
+            "zh": "您的請求已經過仔細考慮。"
+          },
+          {
+            "en": "If you consider this option, you will save money.",
+            "zh": "如果您考慮這個選項，您將會省錢。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECENTLY": {
+    "pos": "adv.",
+    "meaning": "最近",
+    "example": "We have recently changed our return policy.",
+    "exampleZh": "我們最近已經更改了退貨政策。",
+    "senses": [
+      {
+        "pos": "adv.",
+        "meaning": "最近",
+        "examples": [
+          {
+            "en": "We have recently changed our return policy.",
+            "zh": "我們最近已經更改了退貨政策。"
+          },
+          {
+            "en": "Has she visited the new office recently?",
+            "zh": "她最近有參觀過新辦公室嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLVE": {
+    "pos": "v.",
+    "meaning": "解決",
+    "example": "The problem has already been solved.",
+    "exampleZh": "這個問題已經被解決了。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "解決",
+        "examples": [
+          {
+            "en": "The problem has already been solved.",
+            "zh": "這個問題已經被解決了。"
+          },
+          {
+            "en": "If we find the cause, we will solve it quickly.",
+            "zh": "如果我們找到原因，我們將會迅速解決它。"
+          }
+        ]
+      }
+    ]
+  },
+  "REVIEW": {
+    "pos": "v.",
+    "meaning": "評論/審查",
+    "example": "The document has been reviewed by the manager.",
+    "exampleZh": "這份文件已經由經理審查過了。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "審查",
+        "examples": [
+          {
+            "en": "The document has been reviewed by the manager.",
+            "zh": "這份文件已經由經理審查過了。"
+          },
+          {
+            "en": "If you review the report, you will find the mistakes.",
+            "zh": "如果你審查這份報告，你會發現錯誤。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "評論",
+        "examples": [
+          {
+            "en": "We have received many good reviews online.",
+            "zh": "我們已經在網路上收到了許多好評。"
+          }
+        ]
+      }
+    ]
+  },
+  "DECISION": {
+    "pos": "n.",
+    "meaning": "決定",
+    "example": "The final decision hasn't been made yet.",
+    "exampleZh": "最終決定還沒有做出來。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "決定",
+        "examples": [
+          {
+            "en": "The final decision hasn't been made yet.",
+            "zh": "最終決定還沒有做出來。"
+          },
+          {
+            "en": "If you make a decision, please let me know.",
+            "zh": "如果您做出了決定，請讓我知道。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESPONSE": {
+    "pos": "n.",
+    "meaning": "回覆",
+    "example": "We haven't received a response yet.",
+    "exampleZh": "我們還沒有收到回覆。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "回覆",
+        "examples": [
+          {
+            "en": "We haven't received a response yet.",
+            "zh": "我們還沒有收到回覆。"
+          },
+          {
+            "en": "If you need help, our team will give a quick response.",
+            "zh": "如果您需要協助，我們的團隊會給予快速回覆。"
+          }
+        ]
+      }
+    ]
+  },
+  "ORGANIZE": {
+    "pos": "v.",
+    "meaning": "組織/安排",
+    "example": "The meeting has been organized for tomorrow.",
+    "exampleZh": "會議已經安排在明天舉行。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "組織/安排",
+        "examples": [
+          {
+            "en": "The meeting has been organized for tomorrow.",
+            "zh": "會議已經安排在明天舉行。"
+          },
+          {
+            "en": "If you organize your files, you will find them easily.",
+            "zh": "如果你把檔案整理好，你會很容易找到它們。"
+          }
+        ]
+      }
+    ]
+  },
+  "MATERIAL": {
+    "pos": "n.",
+    "meaning": "材料",
+    "example": "All materials have been prepared for the workshop.",
+    "exampleZh": "工作坊的所有材料都已經準備好了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "材料",
+        "examples": [
+          {
+            "en": "All materials have been prepared for the workshop.",
+            "zh": "工作坊的所有材料都已經準備好了。"
+          },
+          {
+            "en": "If we need more materials, I will order them today.",
+            "zh": "如果我們需要更多材料，我今天就會訂購。"
+          }
+        ]
+      }
+    ]
+  },
+  "SATISFIED": {
+    "pos": "adj.",
+    "meaning": "滿意的",
+    "example": "Customers have been very satisfied with the new product.",
+    "exampleZh": "顧客對這款新產品一直感到非常滿意。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "滿意的",
+        "examples": [
+          {
+            "en": "Customers have been very satisfied with the new product.",
+            "zh": "顧客對這款新產品一直感到非常滿意。"
+          },
+          {
+            "en": "If you are not satisfied, we will refund your money.",
+            "zh": "如果您不滿意，我們將會退款給您。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUCCESSFUL": {
+    "pos": "adj.",
+    "meaning": "成功的",
+    "example": "The event was successfully organized by the team.",
+    "exampleZh": "這次活動已由團隊成功舉辦。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "成功的",
+        "examples": [
+          {
+            "en": "The event was successfully organized by the team.",
+            "zh": "這次活動已由團隊成功舉辦。"
+          },
+          {
+            "en": "If we work together, the project will be successful.",
+            "zh": "如果我們合作，這個專案將會很成功。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSTRUCTION": {
+    "pos": "n.",
+    "meaning": "指示/說明",
+    "example": "The instructions were written in English.",
+    "exampleZh": "這些說明是以英文撰寫的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "指示/說明",
+        "examples": [
+          {
+            "en": "The instructions were written in English.",
+            "zh": "這些說明是以英文撰寫的。"
+          },
+          {
+            "en": "If you follow the instructions, you will finish the task easily.",
+            "zh": "如果你遵循指示，你將會輕鬆完成這項任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUGGESTION": {
+    "pos": "n.",
+    "meaning": "建議",
+    "example": "Do you have any suggestions for improving the design?",
+    "exampleZh": "你有什麼改進設計的建議嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "建議",
+        "examples": [
+          {
+            "en": "Can I make a suggestion?",
+            "zh": "我可以提個建議嗎？"
+          },
+          {
+            "en": "We are open to any suggestions you might have.",
+            "zh": "我們願意聽取您可能有的任何建議。"
+          }
+        ]
+      }
+    ]
+  },
+  "AGREEMENT": {
+    "pos": "n.",
+    "meaning": "同意；協議",
+    "example": "They finally reached an agreement after a long discussion.",
+    "exampleZh": "經過長時間的討論，他們終於達成了協議。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "同意；協議",
+        "examples": [
+          {
+            "en": "Please sign the agreement before Friday.",
+            "zh": "請在星期五之前簽署協議。"
+          },
+          {
+            "en": "I am in agreement with your proposal.",
+            "zh": "我同意你的提案。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHOICE": {
+    "pos": "n.",
+    "meaning": "選擇",
+    "example": "We have a choice between going out or staying home.",
+    "exampleZh": "我們可以選擇出去還是待在家裡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "選擇",
+        "examples": [
+          {
+            "en": "It is a difficult choice to make.",
+            "zh": "這是一個很難做的選擇。"
+          },
+          {
+            "en": "The restaurant offers a wide choice of desserts.",
+            "zh": "這家餐廳提供多種甜點選擇。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLAN": {
+    "pos": "n.",
+    "meaning": "計畫",
+    "example": "Do you have any plans for the weekend?",
+    "exampleZh": "你週末有什麼計畫嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "計畫",
+        "examples": [
+          {
+            "en": "We need to come up with a new plan.",
+            "zh": "我們需要想出一個新計畫。"
+          },
+          {
+            "en": "Everything went according to plan.",
+            "zh": "一切都按照計畫進行。"
+          }
+        ]
+      }
+    ]
+  },
+  "ISSUE": {
+    "pos": "n.",
+    "meaning": "問題；議題",
+    "example": "We need to discuss this issue at the next meeting.",
+    "exampleZh": "我們需要在下次會議上討論這個問題。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "問題；議題",
+        "examples": [
+          {
+            "en": "The article raises an important issue.",
+            "zh": "這篇文章提出了一個重要的議題。"
+          },
+          {
+            "en": "How will you resolve this issue?",
+            "zh": "你將如何解決這個問題？"
+          }
+        ]
+      }
+    ]
+  },
+  "HANDLE": {
+    "pos": "v.",
+    "meaning": "處理",
+    "example": "She knows how to handle difficult customers.",
+    "exampleZh": "她知道如何處理難纏的顧客。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "處理",
+        "examples": [
+          {
+            "en": "I will handle the complaints.",
+            "zh": "我會處理這些投訴。"
+          },
+          {
+            "en": "This situation is hard to handle.",
+            "zh": "這個情況很難處理。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISAGREE": {
+    "pos": "v.",
+    "meaning": "不同意",
+    "example": "I strongly disagree with your opinion.",
+    "exampleZh": "我強烈反對你的意見。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "不同意",
+        "examples": [
+          {
+            "en": "He often disagrees with his manager.",
+            "zh": "他經常與他的經理意見不合。"
+          },
+          {
+            "en": "We can agree to disagree.",
+            "zh": "我們可以保留各自不同的意見。"
+          }
+        ]
+      }
+    ]
+  }
+}

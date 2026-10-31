@@ -11,6 +11,9 @@ import { heroDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
+// 專武池解鎖：打倒 B1 黃金沙漠（區域索引 3）的區域魔王
+const WEAPON_UNLOCK_REGION = 3;
+
 // 召喚：用遊戲內的召喚券抽英雄（不付費）。
 // 保底：第 50 抽內必出 SSR；累積：每抽 1 點，100 點可任選一位 SSR；十連至少一位 SR 以上。
 export default function SummonModal() {
@@ -19,6 +22,9 @@ export default function SummonModal() {
   const { closeModal, openModal } = useUiStore();
   const [results, setResults] = useState<SummonOutcome[] | null>(null);
   const [picking, setPicking] = useState(false);
+  // 召喚池分頁（第二十一輪 D2）：英雄池／專武池。專武池在打倒 B1 黃金沙漠的區域魔王後解鎖
+  const [pool, setPool] = useState<'hero' | 'weapon'>('hero');
+  const weaponUnlocked = useSaveStore(s => s.bossDown.includes(WEAPON_UNLOCK_REGION));
   const ssr = useMemo(() => HEROES.filter(h => h.rarity === 'SSR'), []);
 
   const pull = (count: number) => {
@@ -51,7 +57,20 @@ export default function SummonModal() {
   const pityLeft = PITY_SSR - summonCounter.sinceSsr;
 
   return (
-    <Modal title="🔮 英雄召喚" onClose={closeModal} wide>
+    <Modal title="🔮 召喚" onClose={closeModal} wide>
+      <div className="tabs" role="tablist">
+        <button role="tab" aria-selected={pool === 'hero'} className={`tab ${pool === 'hero' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('hero')}>🧙 英雄召喚</button>
+        <button role="tab" aria-selected={pool === 'weapon'} className={`tab ${pool === 'weapon' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('weapon')}>{weaponUnlocked ? '⚔️' : '🔒'} 專武召喚</button>
+      </div>
+      {pool === 'weapon' ? (
+        <section className="summon-banner is-weapon">
+          <p className="summon-title">真名鍛爐</p>
+          {weaponUnlocked
+            ? <p>專武召喚即將開放：SSR 英雄與主角二轉職業的專屬武器，專武機率 5%、30 抽保底、60 抽自選，使用專武召喚券。</p>
+            : <p>🔒 打倒 B1「黃金沙漠」的區域魔王「流沙法老」後解鎖，解鎖時送專武召喚券 ×10。</p>}
+          <p className="muted">專武召喚券和英雄召喚券分開，保底也分開計算。</p>
+        </section>
+      ) : (<>
       <section className="summon-banner">
         <p className="summon-title">古代咒語的召喚陣</p>
         <p className="muted">召喚出以英文單字為名的英雄。稀有度越高，名字的單字越進階。</p>
@@ -118,6 +137,7 @@ export default function SummonModal() {
           </div>
         </section>
       )}
+      </>)}
     </Modal>
   );
 }

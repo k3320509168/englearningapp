@@ -4,7 +4,7 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { RARITY_INFO, currentRarity, heroDef, heroTitle, heroWord } from '../game/heroes';
-import { TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_BONUS, checkTyped, isTrueName, trialQuestion, trialsDone } from '../game/trueName';
+import { TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_BONUS, TRUE_NAME_REWARD, checkTyped, isTrueName, trialQuestion, trialsDone } from '../game/trueName';
 import { NameGlow } from './HeroBits';
 import type { TrialQuestion } from '../game/trueName';
 import { checkVoice } from '../game/battle';
@@ -77,7 +77,9 @@ export default function TrueNameModal() {
             // 五項全部完成：真名英雄誕生
             if (isTrueName(useSaveStore.getState().trueName[heroId])) {
               const h = heroDef(heroId);
-              useUiStore.getState().celebrate({ icon: '✨', title: `真名覺醒：${heroWord(h)}`, sub: `${heroTitle(h)}的基礎能力 +${Math.round(TRUE_NAME_BONUS * 100)}%`, img: heroDataUrl(heroId, 4), color: '#ffcd4b' });
+              const reward = TRUE_NAME_REWARD[h.rarity];
+              const gift = reward?.tickets ? `，獲得召喚券 🎫×${reward.tickets}` : reward?.sweep ? `，獲得掃蕩券 🧹×${reward.sweep}` : '';
+              useUiStore.getState().celebrate({ icon: '✨', title: `真名覺醒：${heroWord(h)}`, sub: `${heroTitle(h)}的基礎能力 +${Math.round(TRUE_NAME_BONUS * 100)}%${gift}`, img: heroDataUrl(heroId, 4), color: '#ffcd4b' });
             }
             window.setTimeout(() => setActive(null), 900);
           }}

@@ -64,3 +64,9 @@ export function trialQuestion(id: HeroId, trialIdx: number, rand: () => number =
 
 // 打字作答：不分大小寫、忽略前後空白
 export const checkTyped = (answer: string, input: string) => input.trim().toUpperCase() === answer.trim().toUpperCase();
+
+// 真名考驗全部完成的獎勵（第二十一輪 D4，看英雄原生稀有度）：SSR 召喚券 ×3（專武系統做好後再加對應專武）、SR 掃蕩券 ×3
+export const TRUE_NAME_REWARD: Partial<Record<string, { tickets?: number; sweep?: number }>> = {
+  SSR: { tickets: 3 },
+  SR: { sweep: 3 },
+};

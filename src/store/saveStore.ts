@@ -21,7 +21,7 @@ import { towerReward } from '../game/modes';
 import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, nextOptions, pathBadgeCost, playerLevelCap, xpScale } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
-import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
+import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_REWARD, trialsDone } from '../game/trueName';
 import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weeklyDef } from '../game/daily';
 import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
 import { ELEMENTS, normalizeCharacter } from '../game/character';
@@ -146,6 +146,8 @@ interface SaveData {
   equipped: Partial<Record<Slot, string>>;
   // 真名考驗：每位英雄五項考驗是否完成
   trueName: Record<HeroId, boolean[]>;
+  // 已經領過「真名考驗全部完成」獎勵的英雄（賣掉再抽回來也不重領）
+  trueNameRewarded: HeroId[];
   // 黃金之路最多通過幾關（全部通關為關卡總數）、獲得的稱號
   goldenBest: number;
   titles: string[];
@@ -288,6 +290,7 @@ export const initialSave: SaveData = {
   equipment: [],
   equipped: {},
   trueName: {},
+  trueNameRewarded: [],
   goldenBest: 0,
   titles: [],
   daily: null,
@@ -796,9 +799,16 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const prev = s.trueName[id] ?? Array<boolean>(TRIAL_COUNT).fill(false);
           if (prev[trialIdx]) return false;
           const next = prev.map((v, i) => v || i === trialIdx);
+          // 五項全部完成（第二十一輪 D4）：看英雄原生稀有度，SSR 送召喚券 ×3、SR 送掃蕩券 ×3，每位英雄只領一次
+          const reward = trialsDone(next) >= TRIAL_COUNT && !s.trueNameRewarded.includes(id) ? TRUE_NAME_REWARD[heroDef(id).rarity] : undefined;
           set({
             trueName: { ...s.trueName, [id]: next },
             heroShards: { ...s.heroShards, [id]: (s.heroShards[id] ?? 0) + TRIAL_SHARDS },
+            ...(reward ? {
+              trueNameRewarded: [...s.trueNameRewarded, id],
+              tickets: s.tickets + (reward.tickets ?? 0),
+              sweepTickets: s.sweepTickets + (reward.sweep ?? 0),
+            } : {}),
           });
           get().trackDaily('trial');
           return true;
@@ -1074,7 +1084,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
+        trueName: s.trueName, trueNameRewarded: s.trueNameRewarded, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),
     },
   ),

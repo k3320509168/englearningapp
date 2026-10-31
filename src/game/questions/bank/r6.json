@@ -5114,6 +5114,792 @@
       "ans": "ITR",
       "speak": "fixture",
       "vocabId": "R6:FIXTURE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "off the record",
+      "options": [
+        "A. 必須逐字公開播出的內容",
+        "B. 不供公開引用或報導",
+        "C. 已正式列入公開紀錄",
+        "D. 因錄音結束而停止說話"
+      ],
+      "ans": "B",
+      "explain": "off the record 是消息使用條件，不只錄音開關狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "take it at face value",
+      "options": [
+        "A. 估算紙張印刷所需的價格",
+        "B. 核對說話者的臉部照片",
+        "C. 依表面意思接受而不多作懷疑",
+        "D. 從未明說的地方推敲隱意"
+      ],
+      "ans": "C",
+      "explain": "take at face value 指照表面價值或意思接受。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "put the record straight",
+      "options": [
+        "A. 把錄音檔排成直線",
+        "B. 刪掉所有原始紀錄",
+        "C. 正式結束一場比賽",
+        "D. 澄清已被誤解的事實"
+      ],
+      "ans": "D",
+      "explain": "put the record straight 指釐清事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a mixed message",
+      "options": [
+        "A. 由兩種語言組成的每一則訊息",
+        "B. 因檔案格式不同而不能開啟的信",
+        "C. 傳達彼此不一致暗示的訊息",
+        "D. 同時寄給不同人的同一封信"
+      ],
+      "ans": "C",
+      "explain": "mixed message 核心是訊號或立場不一致，不是混合語言。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I meant to warn you that the time might change, not tell you that the event had been cancelled.",
+      "options": [
+        "A. 我已宣布活動取消，只是尚未決定退款時間。",
+        "B. 活動時間確定不變，只有場地可能更換。",
+        "C. 我原想取消活動，但現在決定照常舉行。",
+        "D. 我想提醒時間可能變，不是說活動已取消。"
+      ],
+      "ans": "D",
+      "explain": "區分可能改期與已取消，兩者確定度與內容不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The quotation is accurate as far as it goes, but the next sentence changes how I would understand it.",
+      "options": [
+        "A. 引文所引部分正確，但下一句會改變我對它的理解。",
+        "B. 引文有字詞錯誤，下一句則逐字正確。",
+        "C. 下一句已證明被引述的人沒有說過這些話。",
+        "D. 引文和下一句完全無關，只是格式不同。"
+      ],
+      "ans": "A",
+      "explain": "字面引用正確仍可能脈絡不足。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The update confirms the venue, but we are still waiting for a definite starting time.",
+      "options": [
+        "A. 更新已確認時間，地點則仍在商議。",
+        "B. 更新宣布時間地點一律依原訂安排。",
+        "C. 地點已取消，時間則由參加者自行選擇。",
+        "D. 更新確認了地點，但確定開始時間仍待通知。"
+      ],
+      "ans": "D",
+      "explain": "確認事項僅場地，時間未定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not assume she agrees just because she has not replied; she may not have seen the message.",
+      "options": [
+        "A. 別因她未回覆就認定同意，她可能沒看見訊息。",
+        "B. 她未回覆已表明反對，只是不好意思直說。",
+        "C. 她已看過訊息，所以沉默必定表示同意。",
+        "D. 說話者確認她看過後決定不再參加。"
+      ],
+      "ans": "A",
+      "explain": "提出未讀作替代解釋，沒有斷言她必定未讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It sounds more definite in the summary than it did when he actually said it.",
+      "options": [
+        "A. 原話與摘要用相同措辭表達同等確定度。",
+        "B. 摘要的語氣比他原本說話更確定。",
+        "C. 原話比摘要更堅定，摘要加入太多保留。",
+        "D. 摘要新增的細節已使原話得到證實。"
+      ],
+      "ans": "B",
+      "explain": "比較表達確定度，不是判斷內容真假已定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The presenter said that the interview ___ the previous evening.",
+      "options": [
+        "A. was been recorded",
+        "B. had been recorded",
+        "C. has been recording",
+        "D. will record"
+      ],
+      "ans": "B",
+      "explain": "轉述中 the previous evening 指過去另一事件前，用過去完成式被動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which verb means to publicly withdraw a statement because it is no longer supported?",
+      "options": [
+        "A. illustrate",
+        "B. circulate",
+        "C. retract",
+        "D. repeat"
+      ],
+      "ans": "C",
+      "explain": "retract 是撤回聲明；repeat 重複、illustrate 說明、circulate 流傳。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The editor asks for a brief account of the meeting. What is requested?",
+      "options": [
+        "A. A detailed record of every spoken word.",
+        "B. A prediction of what the next meeting will decide.",
+        "C. A list of people who refused to attend.",
+        "D. A concise description of what happened."
+      ],
+      "ans": "D",
+      "explain": "brief account 是簡短敘述，不是逐字稿或未來預測。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】A notice says the service may be interrupted on Friday. Which paraphrase preserves its certainty?",
+      "options": [
+        "A. The service will stop for the whole of Friday.",
+        "B. The service has already stopped this Friday.",
+        "C. An interruption is possible on Friday.",
+        "D. An interruption is scheduled for every Friday."
+      ],
+      "ans": "C",
+      "explain": "may 是可能，未說必然、整天或每週。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A headline says a proposal has been approved. The article says only that a committee has agreed to discuss it. What needs correcting?",
+      "options": [
+        "A. The committee has been presented as a single person.",
+        "B. A completed discussion has been presented as a future one.",
+        "C. The proposal has been presented as already rejected.",
+        "D. Discussion has been presented as approval."
+      ],
+      "ans": "D",
+      "explain": "agree to discuss 不等於 approve，標題提高決策進度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The email was so badly worded that I could not tell ___ the request was urgent.",
+      "options": [
+        "A. whether",
+        "B. which",
+        "C. whose",
+        "D. unless"
+      ],
+      "ans": "A",
+      "explain": "tell whether ... 表辨別是否；urgent 是待判定狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A photograph shows a crowded hall, but its caption gives neither the event nor the date. A reader uses it to support a claim about yesterday’s meeting. What is missing?",
+      "options": [
+        "A. Evidence that a hall can accommodate a crowd.",
+        "B. A count of the chairs visible in the background.",
+        "C. The names of everyone who attended yesterday.",
+        "D. Confirmation that the photograph depicts that meeting."
+      ],
+      "ans": "D",
+      "explain": "需先確認照片對應所稱事件；其他資訊非此關鍵。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I can see why you read it that way, though I am not sure that is what she intended. What is the speaker doing?",
+      "options": [
+        "A. Acknowledging a reading while questioning the intended meaning.",
+        "B. Accepting that the writer deliberately chose to offend the reader.",
+        "C. Denying that the reader could reasonably interpret the words that way.",
+        "D. Asking the writer to use exactly the same words in a new message."
+      ],
+      "ans": "A",
+      "explain": "理解讀者解讀有由，不代表確定作者意圖如此。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A presenter calls a clip unedited. The clip is continuous, but begins after the speaker has explained the condition attached to an offer. What distinction matters?",
+      "options": [
+        "A. An unedited extract is necessarily longer than the original.",
+        "B. An uninterrupted extract may still omit relevant context.",
+        "C. A continuous extract must show a different speaker.",
+        "D. An omitted condition proves the offer was withdrawn."
+      ],
+      "ans": "B",
+      "explain": "片段內未剪接不等於包含前後全部脈絡。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：為圖片提供說明的文字",
+      "ans": "CAPTION",
+      "speak": "caption",
+      "vocabId": "R6:CAPTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：正式撤回先前聲明的行動",
+      "ans": "RETRACTION",
+      "speak": "retraction",
+      "vocabId": "R6:RETRACTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：容易使人誤解內容的標題",
+      "ans": "A MISLEADING HEADLINE",
+      "speak": "a misleading headline",
+      "vocabId": "R6:A MISLEADING HEADLINE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：理解內容所需的完整脈絡",
+      "ans": "THE FULL CONTEXT",
+      "speak": "the full context",
+      "vocabId": "R6:THE FULL CONTEXT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：禮貌回覆不一定表示同意",
+      "ans": "A POLITE REPLY DOES NOT NECESSARILY EXPRESS AGREEMENT",
+      "speak": "a polite reply does not necessarily express agreement",
+      "vocabId": "R6:A POLITE REPLY DOES NOT NECESSARILY EXPRESS AGREEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：摘要聽起來比原文確定",
+      "ans": "THE SUMMARY SOUNDS MORE DEFINITE THAN THE ORIGINAL",
+      "speak": "the summary sounds more definite than the original",
+      "vocabId": "R6:THE SUMMARY SOUNDS MORE DEFINITE THAN THE ORIGINAL"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：正式撤回先前說法（R 開頭，7 個字母）",
+      "ans": "RETRACT",
+      "speak": "retract",
+      "vocabId": "R6:RETRACT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：向大眾播送的節目（B 開頭，9 個字母）",
+      "ans": "BROADCAST",
+      "speak": "broadcast",
+      "vocabId": "R6:BROADCAST"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：避免明確表態或承諾的（N 開頭，12 個字母）",
+      "ans": "NONCOMMITTAL",
+      "speak": "noncommittal",
+      "vocabId": "R6:NONCOMMITTAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R U M _ U R (流傳但未獲證實的說法)",
+      "ans": "O",
+      "speak": "rumour",
+      "vocabId": "R6:RUMOUR"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T R A _ S C _ I P T (將口頭內容寫下的逐字紀錄)",
+      "ans": "NR",
+      "speak": "transcript",
+      "vocabId": "R6:TRANSCRIPT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P U _ L _ C _ T Y (使人或事受到大眾注意的宣傳)",
+      "ans": "BII",
+      "speak": "publicity",
+      "vocabId": "R6:PUBLICITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "make yourself at home",
+      "options": [
+        "A. 把房子改建成新樣式",
+        "B. 獨自負擔全部家務",
+        "C. 像在自己家般自在",
+        "D. 立刻返回自己的住處"
+      ],
+      "ans": "C",
+      "explain": "招待客人時意為放輕鬆自在。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "room for improvement",
+      "options": [
+        "A. 專門進行裝修的房間",
+        "B. 已達到不需修改的程度",
+        "C. 因房間太大而無法維護",
+        "D. 仍有可以改善之處"
+      ],
+      "ans": "D",
+      "explain": "room 比喻空間或餘地，不必是實體房間。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a temporary fix",
+      "options": [
+        "A. 暫時解決問題的辦法",
+        "B. 一次完成的永久翻新",
+        "C. 固定不再更動的規則",
+        "D. 仍未開始討論的計畫"
+      ],
+      "ans": "A",
+      "explain": "temporary fix 緩解眼前問題，不保證長久處理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "under one roof",
+      "options": [
+        "A. 共用一把遮雨傘",
+        "B. 屋頂只能使用一種材料",
+        "C. 所有人都睡同一張床",
+        "D. 住在或位於同一建築內"
+      ],
+      "ans": "D",
+      "explain": "under one roof 指同一屋簷下，不必同房。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can move the desk, but I would check that the door still opens fully before settling on that corner.",
+      "options": [
+        "A. 可搬桌子，但選定那個角落前我會確認門能全開。",
+        "B. 桌子已搬好，所以門現在確定能全開。",
+        "C. 說話者主張不管門是否受阻都用那個角落。",
+        "D. 說話者要求拆門之後才能討論搬桌子。"
+      ],
+      "ans": "A",
+      "explain": "建議先檢查空間相容性，非已確認結果或施工要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I agreed to look after the plants while you were away, not to reorganise the whole balcony.",
+      "options": [
+        "A. 我已把植物重新擺好，只剩陽台地板。",
+        "B. 我答應你不在時照顧植物，不是重整整個陽台。",
+        "C. 我答應重整陽台，但沒有答應碰植物。",
+        "D. 我原本拒絕幫忙，現在才同意照顧植物。"
+      ],
+      "ans": "B",
+      "explain": "區分同意任務的範圍。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The repair looks neat, though we have not yet had enough rain to see whether it has solved the leak.",
+      "options": [
+        "A. 修補外觀看來整齊，但雨還不夠多，未能驗證是否止漏。",
+        "B. 修補已經歷大雨，因此確認完全不漏。",
+        "C. 修補因外觀不整齊而被確定無效。",
+        "D. 只要外觀整齊，就不必再看下雨情況。"
+      ],
+      "ans": "A",
+      "explain": "外觀品質與功能驗證不同，未提供施工建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is not the mess itself that bothers me so much as never knowing who is expected to deal with it.",
+      "options": [
+        "A. 我已決定只要不是自己整理就不再介意。",
+        "B. 比起凌亂本身，更困擾我的是不知該由誰處理。",
+        "C. 最困擾我的是東西多，責任分配倒很清楚。",
+        "D. 我不在意由誰處理，只要求立刻購買新收納櫃。"
+      ],
+      "ans": "B",
+      "explain": "not ... so much as ... 比較困擾來源，重點在責任不明。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The room feels more spacious now, even though we have actually added a small table.",
+      "options": [
+        "A. 多放桌子使房間比以前更擁擠。",
+        "B. 房間只是看來更大，家具其實全移除了。",
+        "C. 房間現在感覺更寬敞，儘管實際多放一張小桌。",
+        "D. 房間擴建後才有空間放原來那張大桌。"
+      ],
+      "ans": "C",
+      "explain": "空間感與家具件數不必反向連動，未說擴建。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】Which expression means to delay starting a task? We cannot ___ cleaning the storeroom any longer.",
+      "options": [
+        "A. set up",
+        "B. take over",
+        "C. put off",
+        "D. clear out"
+      ],
+      "ans": "C",
+      "explain": "put off 延後；clear out 清空、set up 設立、take over 接手。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I would rather you ___ before moving my things next time.",
+      "options": [
+        "A. will ask",
+        "B. have asking",
+        "C. to ask",
+        "D. asked"
+      ],
+      "ans": "D",
+      "explain": "would rather + 不同主詞 + 過去式，表對現在或未來的偏好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The room is compact rather than cramped. What is the intended positive distinction?",
+      "options": [
+        "A. It is small but does not feel uncomfortably crowded.",
+        "B. It is large but has been filled with too much furniture.",
+        "C. It is small because it has not yet been decorated.",
+        "D. It is crowded but easier to heat than a larger room."
+      ],
+      "ans": "A",
+      "explain": "compact 緊湊可含正面意味；cramped 是擁擠侷促。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which adjective describes a surface that is not level or smooth?",
+      "options": [
+        "A. upright",
+        "B. unoccupied",
+        "C. waterproof",
+        "D. uneven"
+      ],
+      "ans": "D",
+      "explain": "uneven 不平整；upright 直立、unoccupied 無人用、waterproof 防水。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A notice asks residents not to leave bicycles in the hallway, but provides a rack in the courtyard. A resident says bicycles have been banned from the building’s grounds. What is overstated?",
+      "options": [
+        "A. A location-specific restriction has become a general ban.",
+        "B. An optional storage suggestion has become a required purchase.",
+        "C. A rule about bicycles has become a rule about cars.",
+        "D. A temporary closure has become a permanent repair."
+      ],
+      "ans": "A",
+      "explain": "走廊禁放不等於全院禁止，另有停車架。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The cupboard needs ___, but we can leave the painting until later.",
+      "options": [
+        "A. repair itself",
+        "B. repairing",
+        "C. to repairing",
+        "D. have repaired"
+      ],
+      "ans": "B",
+      "explain": "need doing 表某物需要被處理，cupboard needs repairing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】One housemate agrees to clean the kitchen if another clears the table first. The table remains covered. What is the most accurate description?",
+      "options": [
+        "A. The condition attached to the cleaning agreement has not been met.",
+        "B. The housemate has refused to do any cleaning under any circumstances.",
+        "C. The table must be cleared only after the kitchen has been cleaned.",
+        "D. The agreement gives the second housemate responsibility for every room."
+      ],
+      "ans": "A",
+      "explain": "if ... first 設先行條件，不是無條件拒絕清潔。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I do not mind the music, just not at a volume that fills every room. What is being challenged?",
+      "options": [
+        "A. The use of speakers rather than headphones specifically.",
+        "B. Its loudness rather than its presence.",
+        "C. Its musical style rather than its loudness.",
+        "D. The time it starts rather than the room it fills."
+      ],
+      "ans": "B",
+      "explain": "不反對音樂本身，只反對音量影響全部房間；未限定器材。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A flat is described as newly decorated. The visitor notices freshly painted walls but worn plumbing fittings. Which conclusion is warranted?",
+      "options": [
+        "A. The worn fittings establish that none of the walls has been repainted.",
+        "B. The visitor has proved that the flat has never undergone any maintenance.",
+        "C. The description does not by itself establish that every fitting has been replaced.",
+        "D. The description guarantees that all hidden systems have been renewed."
+      ],
+      "ans": "C",
+      "explain": "裝飾翻新不等於所有設備更換；不推論隱藏系統狀態。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：凌亂堆放而使空間擁擠的物品",
+      "ans": "CLUTTER",
+      "speak": "clutter",
+      "vocabId": "R6:CLUTTER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：使建物或物品維持良好狀態的保養",
+      "ans": "UPKEEP",
+      "speak": "upkeep",
+      "vocabId": "R6:UPKEEP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：由多人共同承擔的責任",
+      "ans": "A SHARED RESPONSIBILITY",
+      "speak": "a shared responsibility",
+      "vocabId": "R6:A SHARED RESPONSIBILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：令人高興的改變",
+      "ans": "A WELCOME CHANGE",
+      "speak": "a welcome change",
+      "vocabId": "R6:A WELCOME CHANGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：整齊外觀不證明修補有效",
+      "ans": "A TIDY APPEARANCE DOES NOT PROVE THE REPAIR WORKS",
+      "speak": "a tidy appearance does not prove the repair works",
+      "vocabId": "R6:A TIDY APPEARANCE DOES NOT PROVE THE REPAIR WORKS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：搬東西前應先同意改動",
+      "ans": "WE SHOULD AGREE ON CHANGES BEFORE MOVING THINGS",
+      "speak": "we should agree on changes before moving things",
+      "vocabId": "R6:WE SHOULD AGREE ON CHANGES BEFORE MOVING THINGS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：維持設備建物良好狀態的保養（M 開頭，11 個字母）",
+      "ans": "MAINTENANCE",
+      "speak": "maintenance",
+      "vocabId": "R6:MAINTENANCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：有門的收納櫃（C 開頭，8 個字母）",
+      "ans": "CUPBOARD",
+      "speak": "cupboard",
+      "vocabId": "R6:CUPBOARD"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：讓空氣流通的換氣（V 開頭，11 個字母）",
+      "ans": "VENTILATION",
+      "speak": "ventilation",
+      "vocabId": "R6:VENTILATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F U R N I _ H I N G (家具或窗簾等室內擺設物)",
+      "ans": "S",
+      "speak": "furnishing",
+      "vocabId": "R6:FURNISHING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T H R _ S H _ L D (門口下方跨過的門檻)",
+      "ans": "EO",
+      "speak": "threshold",
+      "vocabId": "R6:THRESHOLD"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：W _ R _ T _ P (廚房等供作業使用的檯面)",
+      "ans": "OKO",
+      "speak": "worktop",
+      "vocabId": "R6:WORKTOP"
     }
   ],
   "boss": [
@@ -6819,6 +7605,268 @@
       "ans": "RAW",
       "speak": "draw",
       "vocabId": "R6:DRAW"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "word of mouth",
+      "options": [
+        "A. 透過人們口頭相傳",
+        "B. 按照書面逐字朗讀",
+        "C. 由新聞機構正式公告",
+        "D. 用嘴形而不發聲表達"
+      ],
+      "ans": "A",
+      "explain": "word of mouth 指人際口頭傳播。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Could you make clear which part is your opinion and which part you heard from someone else?",
+      "options": [
+        "A. 請把所有人的名字換成相同的稱呼。",
+        "B. 請分清哪些是你的看法、哪些是聽別人說的。",
+        "C. 請把別人的看法改寫成自己的親身經歷。",
+        "D. 請只留下你贊成而刪除你不同意的部分。"
+      ],
+      "ans": "B",
+      "explain": "要求區分資訊來源與個人判斷，不是篩選立場。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apology explains how the error happened, but it does not quite acknowledge the trouble it caused.",
+      "options": [
+        "A. 道歉把全部原因歸給受影響的人。",
+        "B. 道歉確認錯誤並未帶來任何不便。",
+        "C. 道歉解釋錯誤如何發生，卻未充分承認造成的困擾。",
+        "D. 道歉承認造成困擾，但拒絕說明錯誤原因。"
+      ],
+      "ans": "C",
+      "explain": "原因說明與承認後果不同；not quite 是有保留的批評。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could you send me the original message rather than a screenshot of part of it? What does the speaker want?",
+      "options": [
+        "A. Access to the complete message in its original form.",
+        "B. A clearer photograph of the same selected sentence.",
+        "C. Permission to forward the selected sentence publicly.",
+        "D. A summary replacing both the message and the screenshot."
+      ],
+      "ans": "A",
+      "explain": "original rather than screenshot of part 強調取得原文完整脈絡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The reply was polite but noncommittal. What remained unclear?",
+      "options": [
+        "A. Whether the request had been written in a message.",
+        "B. Whether the sender was agreeing to the request.",
+        "C. Whether the sender had used courteous language.",
+        "D. Whether the message had been sent as a reply."
+      ],
+      "ans": "B",
+      "explain": "noncommittal 不明確承諾或表態；禮貌不等於同意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A newsletter corrects a false date but leaves an accusation that depended on that date unchanged. A reader asks whether the correction goes far enough. What should be reconsidered?",
+      "options": [
+        "A. The need to preserve the newsletter’s original publication time.",
+        "B. The reader’s ability to remember the earlier date accurately.",
+        "C. The accusation’s basis once the date has changed.",
+        "D. The size of the font used to print the corrected date."
+      ],
+      "ans": "C",
+      "explain": "若推論依錯誤日期而成立，改日期後須重評推論。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：尚未獲證實的報導",
+      "ans": "AN UNCONFIRMED REPORT",
+      "speak": "an unconfirmed report",
+      "vocabId": "R6:AN UNCONFIRMED REPORT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：正確引文仍可能漏掉重要脈絡",
+      "ans": "AN ACCURATE QUOTATION CAN STILL OMIT IMPORTANT CONTEXT",
+      "speak": "an accurate quotation can still omit important context",
+      "vocabId": "R6:AN ACCURATE QUOTATION CAN STILL OMIT IMPORTANT CONTEXT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：錯誤理解某事的意思（M 開頭，12 個字母）",
+      "ans": "MISINTERPRET",
+      "speak": "misinterpret",
+      "vocabId": "R6:MISINTERPRET"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A T _ R I _ U T _ O N (交代言論或作品來源的做法)",
+      "ans": "TBI",
+      "speak": "attribution",
+      "vocabId": "R6:ATTRIBUTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "clear the air",
+      "options": [
+        "A. 把所有東西搬到戶外",
+        "B. 把誤會或緊張談開",
+        "C. 把窗戶玻璃擦乾淨",
+        "D. 正式宣布結束租約"
+      ],
+      "ans": "B",
+      "explain": "clear the air 慣用指化解緊張誤會。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The spare room is available, provided you do not need it before the boxes have been collected.",
+      "options": [
+        "A. 空房只能在箱子被取走前暫時使用。",
+        "B. 說話者已確認箱子今天一定會被取走。",
+        "C. 空房可用，前提是你不需要在箱子被取走前用。",
+        "D. 箱子留在空房多久都不會影響使用。"
+      ],
+      "ans": "C",
+      "explain": "條件限定可使用時間，未給取件確切日期。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I appreciate the offer to help; I would just rather decide together what needs changing before anyone starts.",
+      "options": [
+        "A. 我會接受幫忙，但只有你自行決定改動才有效率。",
+        "B. 我拒絕任何改動，也不願再討論是否幫忙。",
+        "C. 我希望你先做完，之後我再說哪些不該改。",
+        "D. 謝謝願意幫忙，只希望開始前先一起決定改什麼。"
+      ],
+      "ans": "D",
+      "explain": "接受善意並要求先共同決策，非全盤拒絕。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could we keep this shelf for things we both use? What is proposed?",
+      "options": [
+        "A. Replacing both people’s belongings with new ones.",
+        "B. Reserving the shelf for shared items.",
+        "C. Dividing the shelf into two private sections.",
+        "D. Removing the shelf to make more floor space."
+      ],
+      "ans": "B",
+      "explain": "keep ... for things we both use 指保留作共同用途。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The new layout makes better use of the available space. What is claimed?",
+      "options": [
+        "A. The room now contains more space than any other room.",
+        "B. The furniture has been removed rather than rearranged.",
+        "C. The existing space is used more effectively.",
+        "D. The total floor area has been physically enlarged."
+      ],
+      "ans": "C",
+      "explain": "更有效使用原空間，不必代表擴建或家具全移除。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A resident labels a chair unused because nobody sat in it during his visit. Another resident says it is used on other evenings. What was the first resident assuming?",
+      "options": [
+        "A. A chair must be occupied continuously to remain safe.",
+        "B. The other resident was responsible for buying the chair.",
+        "C. The visit had taken place on the same evening every week.",
+        "D. A short observation represented the chair’s usual use."
+      ],
+      "ans": "D",
+      "explain": "單次未用被當成通常未用，觀察範圍不足。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實際可行的安排",
+      "ans": "A PRACTICAL ARRANGEMENT",
+      "speak": "a practical arrangement",
+      "vocabId": "R6:A PRACTICAL ARRANGEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：地板面積未增但房間感覺更大",
+      "ans": "THE ROOM FEELS LARGER WITHOUT ANY EXTRA FLOOR SPACE",
+      "speak": "the room feels larger without any extra floor space",
+      "vocabId": "R6:THE ROOM FEELS LARGER WITHOUT ANY EXTRA FLOOR SPACE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：改變物品原有排列位置（R 開頭，9 個字母）",
+      "ans": "REARRANGE",
+      "speak": "rearrange",
+      "vocabId": "R6:REARRANGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S O _ N D _ R _ O F (能阻隔聲音傳入或傳出的)",
+      "ans": "UPO",
+      "speak": "soundproof",
+      "vocabId": "R6:SOUNDPROOF"
     }
   ]
 }

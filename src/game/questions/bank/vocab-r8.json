@@ -2,9 +2,9 @@
   "DISINGENUOUS": {
     "word": "disingenuous",
     "pos": "adj.",
-    "meaning": "不坦誠而故意裝作不知情的",
-    "example": "It is disingenuous to present that choice as unavoidable.",
-    "exampleZh": "把那項選擇說成無可避免並不坦誠。",
+    "meaning": "假裝坦誠或無知而實不誠懇的",
+    "example": "The carefully narrow reply seemed disingenuous.",
+    "exampleZh": "刻意狹窄的回覆顯得不坦誠。",
     "senses": [
       {
         "pos": "adj.",
@@ -23,6 +23,16 @@
           {
             "en": "It is disingenuous to present that choice as unavoidable.",
             "zh": "把那項選擇說成無可避免並不坦誠。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "假裝坦誠或無知而實不誠懇的",
+        "examples": [
+          {
+            "en": "The carefully narrow reply seemed disingenuous.",
+            "zh": "刻意狹窄的回覆顯得不坦誠。"
           }
         ]
       }
@@ -422,9 +432,9 @@
   "TENDENTIOUS": {
     "word": "tendentious",
     "pos": "adj.",
-    "meaning": "以推動特定立場為目的而有偏向的",
-    "example": "The summary was criticised as tendentious.",
-    "exampleZh": "這份摘要被批評帶有推動特定立場的偏向。",
+    "meaning": "為特定立場服務而偏頗的",
+    "example": "The summary is tendentious rather than neutral.",
+    "exampleZh": "摘要偏頗而非中立。",
     "senses": [
       {
         "pos": "adj.",
@@ -435,15 +445,25 @@
             "zh": "這份摘要被批評帶有推動特定立場的偏向。"
           }
         ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "為特定立場服務而偏頗的",
+        "examples": [
+          {
+            "en": "The summary is tendentious rather than neutral.",
+            "zh": "摘要偏頗而非中立。"
+          }
+        ]
       }
     ]
   },
   "PRESUPPOSITION": {
     "word": "presupposition",
     "pos": "n.",
-    "meaning": "說話時預先視為成立的前提",
-    "example": "The question contains a presupposition that deserves scrutiny.",
-    "exampleZh": "這個問題帶有值得審視的預設前提。",
+    "meaning": "未先證明便被當作成立的前提",
+    "example": "The guest rejected the question’s presupposition.",
+    "exampleZh": "來賓拒絕問題的預設。",
     "senses": [
       {
         "pos": "n.",
@@ -452,6 +472,16 @@
           {
             "en": "The question contains a presupposition that deserves scrutiny.",
             "zh": "這個問題帶有值得審視的預設前提。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "未先證明便被當作成立的前提",
+        "examples": [
+          {
+            "en": "The guest rejected the question’s presupposition.",
+            "zh": "來賓拒絕問題的預設。"
           }
         ]
       }
@@ -573,9 +603,9 @@
   },
   "EQUIVOCATION": {
     "pos": "n.",
-    "meaning": "利用用語含糊或多義來避免明確表態",
-    "example": "The reply relied on equivocation about what counted as approval.",
-    "exampleZh": "回覆對何者算是核准含糊其詞。",
+    "meaning": "以含糊措辭迴避明確立場的做法",
+    "example": "The reply was criticised for equivocation.",
+    "exampleZh": "回覆因模稜兩可而受批評。",
     "senses": [
       {
         "pos": "n.",
@@ -588,6 +618,16 @@
           {
             "en": "The argument collapses once the equivocation is exposed.",
             "zh": "一旦揭露詞義偷換，論證就站不住腳。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "以含糊措辭迴避明確立場的做法",
+        "examples": [
+          {
+            "en": "The reply was criticised for equivocation.",
+            "zh": "回覆因模稜兩可而受批評。"
           }
         ]
       }
@@ -2859,9 +2899,9 @@
   "INTRANSIGENT": {
     "word": "intransigent",
     "pos": "adj.",
-    "meaning": "固守立場而不願妥協的",
-    "example": "The reply remained intransigent despite the new evidence.",
-    "exampleZh": "即使有新證據，回覆仍毫不讓步。",
+    "meaning": "拒絕妥協而不肯改變的",
+    "example": "Both sides became intransigent.",
+    "exampleZh": "雙方都變得不願妥協。",
     "senses": [
       {
         "pos": "adj.",
@@ -2870,6 +2910,16 @@
           {
             "en": "The reply remained intransigent despite the new evidence.",
             "zh": "即使有新證據，回覆仍毫不讓步。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "拒絕妥協而不肯改變的",
+        "examples": [
+          {
+            "en": "Both sides became intransigent.",
+            "zh": "雙方都變得不願妥協。"
           }
         ]
       }
@@ -3123,9 +3173,9 @@
   },
   "OBFUSCATION": {
     "pos": "n.",
-    "meaning": "使原本可清楚理解的事情變模糊",
-    "example": "The reply added obfuscation rather than clarification.",
-    "exampleZh": "回覆增添混淆，而非釐清。",
+    "meaning": "使問題變得難以理解的混淆",
+    "example": "The statement adds obfuscation rather than clarity.",
+    "exampleZh": "聲明增加混淆而非清晰。",
     "senses": [
       {
         "pos": "n.",
@@ -3138,6 +3188,16 @@
           {
             "en": "Complexity should not become a pretext for obfuscation.",
             "zh": "複雜不應成為混淆視聽的藉口。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "使問題變得難以理解的混淆",
+        "examples": [
+          {
+            "en": "The statement adds obfuscation rather than clarity.",
+            "zh": "聲明增加混淆而非清晰。"
           }
         ]
       }
@@ -4703,12 +4763,676 @@
       }
     ]
   },
+  "INSINUATION": {
+    "word": "insinuation",
+    "pos": "n.",
+    "meaning": "以不直接方式提出的負面暗示",
+    "example": "The juxtaposition creates an insinuation.",
+    "exampleZh": "並列造成負面影射。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以不直接方式提出的負面暗示",
+        "examples": [
+          {
+            "en": "The juxtaposition creates an insinuation.",
+            "zh": "並列造成負面影射。"
+          }
+        ]
+      }
+    ]
+  },
+  "REPUDIATION": {
+    "word": "repudiation",
+    "pos": "n.",
+    "meaning": "明確拒絕接受或與之切割的表態",
+    "example": "The note stops short of a repudiation.",
+    "exampleZh": "附註尚未明確否認切割。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "明確拒絕接受或與之切割的表態",
+        "examples": [
+          {
+            "en": "The note stops short of a repudiation.",
+            "zh": "附註尚未明確否認切割。"
+          }
+        ]
+      }
+    ]
+  },
+  "A STUDIED SHOW OF CANDOUR": {
+    "word": "a studied show of candour",
+    "pos": "phr.",
+    "meaning": "刻意展現的坦誠姿態",
+    "example": "The interview opens with a studied show of candour.",
+    "exampleZh": "訪談以刻意坦誠姿態開始。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意展現的坦誠姿態",
+        "examples": [
+          {
+            "en": "The interview opens with a studied show of candour.",
+            "zh": "訪談以刻意坦誠姿態開始。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ARTFULLY CIRCUMSCRIBED DENIAL": {
+    "word": "an artfully circumscribed denial",
+    "pos": "phr.",
+    "meaning": "巧妙限定範圍的否認",
+    "example": "The reply offers an artfully circumscribed denial.",
+    "exampleZh": "回覆巧妙限定否認範圍。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "巧妙限定範圍的否認",
+        "examples": [
+          {
+            "en": "The reply offers an artfully circumscribed denial.",
+            "zh": "回覆巧妙限定否認範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PRESUPPOSITION DISGUISED AS A QUESTION": {
+    "word": "a presupposition disguised as a question",
+    "pos": "phr.",
+    "meaning": "偽裝成問題的預設",
+    "example": "The opening line is a presupposition disguised as a question.",
+    "exampleZh": "開場句是偽裝成問題的預設。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "偽裝成問題的預設",
+        "examples": [
+          {
+            "en": "The opening line is a presupposition disguised as a question.",
+            "zh": "開場句是偽裝成問題的預設。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ABSENCE OF STATED PREFERENCE NEED NOT CONSTITUTE NEUTRALITY": {
+    "word": "an absence of stated preference need not constitute neutrality",
+    "pos": "phr.",
+    "meaning": "未表明偏好不必構成中立",
+    "example": "An absence of stated preference need not constitute neutrality.",
+    "exampleZh": "未表明偏好不必構成中立。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未表明偏好不必構成中立",
+        "examples": [
+          {
+            "en": "An absence of stated preference need not constitute neutrality.",
+            "zh": "未表明偏好不必構成中立。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE CORRECTION LEAVES THE CENTRAL INFERENCE INSUFFICIENTLY EXAMINED": {
+    "word": "the correction leaves the central inference insufficiently examined",
+    "pos": "phr.",
+    "meaning": "修正仍未充分檢視核心推論",
+    "example": "The correction leaves the central inference insufficiently examined.",
+    "exampleZh": "修正仍未充分檢視核心推論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "修正仍未充分檢視核心推論",
+        "examples": [
+          {
+            "en": "The correction leaves the central inference insufficiently examined.",
+            "zh": "修正仍未充分檢視核心推論。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PRECISE QUOTATION CAN ACQUIRE A TENDENTIOUS FRAMING": {
+    "word": "a precise quotation can acquire a tendentious framing",
+    "pos": "phr.",
+    "meaning": "精確引文可能被置於偏頗框架",
+    "example": "A precise quotation can acquire a tendentious framing.",
+    "exampleZh": "精確引文可能被置於偏頗框架。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "精確引文可能被置於偏頗框架",
+        "examples": [
+          {
+            "en": "A precise quotation can acquire a tendentious framing.",
+            "zh": "精確引文可能被置於偏頗框架。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TENDENTIOUS PARAPHRASE": {
+    "pos": "phr.",
+    "meaning": "重述時帶有偏向的改寫",
+    "example": "The quotation was replaced by a tendentious paraphrase.",
+    "exampleZh": "引文被偏向性改寫取代。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "重述時帶有偏向的改寫",
+        "examples": [
+          {
+            "en": "The quotation was replaced by a tendentious paraphrase.",
+            "zh": "引文被偏向性改寫取代。"
+          }
+        ]
+      }
+    ]
+  },
+  "A STUDIED AMBIGUITY": {
+    "pos": "phr.",
+    "meaning": "刻意營造的模稜兩可",
+    "example": "The response maintains a studied ambiguity.",
+    "exampleZh": "回覆維持刻意的模稜兩可。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意營造的模稜兩可",
+        "examples": [
+          {
+            "en": "The response maintains a studied ambiguity.",
+            "zh": "回覆維持刻意的模稜兩可。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TACIT PRESUPPOSITION": {
+    "pos": "phr.",
+    "meaning": "未明說而被預先當真的前提",
+    "example": "The question contains a tacit presupposition.",
+    "exampleZh": "問題含有未明說的預設。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明說而被預先當真的前提",
+        "examples": [
+          {
+            "en": "The question contains a tacit presupposition.",
+            "zh": "問題含有未明說的預設。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PERFUNCTORY RETRACTION": {
+    "pos": "phr.",
+    "meaning": "敷衍而未充分處理問題的撤回",
+    "example": "The publisher issued a perfunctory retraction.",
+    "exampleZh": "出版者敷衍刊登撤回聲明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "敷衍而未充分處理問題的撤回",
+        "examples": [
+          {
+            "en": "The publisher issued a perfunctory retraction.",
+            "zh": "出版者敷衍刊登撤回聲明。"
+          }
+        ]
+      }
+    ]
+  },
+  "A DISINGENUOUS DISCLAIMER": {
+    "pos": "phr.",
+    "meaning": "假裝坦誠而有所迴避的免責聲明",
+    "example": "The note reads like a disingenuous disclaimer.",
+    "exampleZh": "附註讀來像不坦誠的免責聲明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "假裝坦誠而有所迴避的免責聲明",
+        "examples": [
+          {
+            "en": "The note reads like a disingenuous disclaimer.",
+            "zh": "附註讀來像不坦誠的免責聲明。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSINUATE": {
+    "pos": "v.",
+    "meaning": "以暗示方式傳達通常不利的意思",
+    "example": "The article seems to insinuate dishonesty.",
+    "exampleZh": "文章似乎影射不誠實。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以暗示方式傳達通常不利的意思",
+        "examples": [
+          {
+            "en": "The article seems to insinuate dishonesty.",
+            "zh": "文章似乎影射不誠實。"
+          }
+        ]
+      }
+    ]
+  },
+  "CIRCUMSCRIBE": {
+    "pos": "v.",
+    "meaning": "嚴格限制某事的範圍",
+    "example": "The wording serves to circumscribe the admission.",
+    "exampleZh": "措辭用以限定承認範圍。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "嚴格限制某事的範圍",
+        "examples": [
+          {
+            "en": "The wording serves to circumscribe the admission.",
+            "zh": "措辭用以限定承認範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXPURGATE": {
+    "pos": "v.",
+    "meaning": "刪除作品中被認為不宜的內容",
+    "example": "The editor refused to expurgate the disputed passage.",
+    "exampleZh": "編輯拒絕刪去被爭議的段落。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "刪除作品中被認為不宜的內容",
+        "examples": [
+          {
+            "en": "The editor refused to expurgate the disputed passage.",
+            "zh": "編輯拒絕刪去被爭議的段落。"
+          }
+        ]
+      }
+    ]
+  },
+  "RAMSHACKLE": {
+    "word": "ramshackle",
+    "pos": "adj.",
+    "meaning": "破舊不穩固而欠維護的",
+    "example": "A ramshackle shed stood behind the house.",
+    "exampleZh": "屋後有破舊棚屋。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "破舊不穩固而欠維護的",
+        "examples": [
+          {
+            "en": "A ramshackle shed stood behind the house.",
+            "zh": "屋後有破舊棚屋。"
+          }
+        ]
+      }
+    ]
+  },
+  "OFFICIOUS": {
+    "word": "officious",
+    "pos": "adj.",
+    "meaning": "過分熱心而愛干涉他人事務的",
+    "example": "The neighbour’s advice became officious.",
+    "exampleZh": "鄰居的建議變得多管閒事。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "過分熱心而愛干涉他人事務的",
+        "examples": [
+          {
+            "en": "The neighbour’s advice became officious.",
+            "zh": "鄰居的建議變得多管閒事。"
+          }
+        ]
+      }
+    ]
+  },
+  "A GRUDGING ACCOMMODATION": {
+    "word": "a grudging accommodation",
+    "pos": "phr.",
+    "meaning": "勉強作出的遷就安排",
+    "example": "The agreement felt like a grudging accommodation.",
+    "exampleZh": "協議像是不情願的遷就。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "勉強作出的遷就安排",
+        "examples": [
+          {
+            "en": "The agreement felt like a grudging accommodation.",
+            "zh": "協議像是不情願的遷就。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROPRIETARY CLAIM OVER SHARED SPACE": {
+    "word": "a proprietary claim over shared space",
+    "pos": "phr.",
+    "meaning": "把共用空間視為自己所有的主張",
+    "example": "The shelves implied a proprietary claim over shared space.",
+    "exampleZh": "架子的安排暗示對共用空間的佔有主張。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "把共用空間視為自己所有的主張",
+        "examples": [
+          {
+            "en": "The shelves implied a proprietary claim over shared space.",
+            "zh": "架子的安排暗示對共用空間的佔有主張。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN AESTHETIC AT ODDS WITH HABITATION": {
+    "word": "an aesthetic at odds with habitation",
+    "pos": "phr.",
+    "meaning": "與日常居住使用不協調的美學",
+    "example": "The room embodied an aesthetic at odds with habitation.",
+    "exampleZh": "房間呈現與居住使用不協調的美學。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "與日常居住使用不協調的美學",
+        "examples": [
+          {
+            "en": "The room embodied an aesthetic at odds with habitation.",
+            "zh": "房間呈現與居住使用不協調的美學。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERSONAL TASTE SHOULD NOT MASQUERADE AS A NEUTRAL STANDARD": {
+    "word": "personal taste should not masquerade as a neutral standard",
+    "pos": "phr.",
+    "meaning": "個人品味不應偽裝成中立標準",
+    "example": "Personal taste should not masquerade as a neutral standard.",
+    "exampleZh": "個人品味不應偽裝成中立標準。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "個人品味不應偽裝成中立標準",
+        "examples": [
+          {
+            "en": "Personal taste should not masquerade as a neutral standard.",
+            "zh": "個人品味不應偽裝成中立標準。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WORKABLE COMPROMISE MAY LACK VISUAL UNIFORMITY": {
+    "word": "a workable compromise may lack visual uniformity",
+    "pos": "phr.",
+    "meaning": "可行折衷可能欠缺視覺一致",
+    "example": "A workable compromise may lack visual uniformity.",
+    "exampleZh": "可行折衷可能欠缺視覺一致。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可行折衷可能欠缺視覺一致",
+        "examples": [
+          {
+            "en": "A workable compromise may lack visual uniformity.",
+            "zh": "可行折衷可能欠缺視覺一致。"
+          }
+        ]
+      }
+    ]
+  },
+  "SHARED OWNERSHIP REQUIRES MORE THAN THE ABSENCE OF PERSONAL BELONGINGS": {
+    "word": "shared ownership requires more than the absence of personal belongings",
+    "pos": "phr.",
+    "meaning": "共有不只需要沒有個人物品",
+    "example": "Shared ownership requires more than the absence of personal belongings.",
+    "exampleZh": "共有不只需要沒有個人物品。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "共有不只需要沒有個人物品",
+        "examples": [
+          {
+            "en": "Shared ownership requires more than the absence of personal belongings.",
+            "zh": "共有不只需要沒有個人物品。"
+          }
+        ]
+      }
+    ]
+  },
+  "A RAMSHACKLE EXTENSION": {
+    "pos": "phr.",
+    "meaning": "建造或維護欠佳而搖搖欲墜的增建部分",
+    "example": "The photograph showed a ramshackle extension.",
+    "exampleZh": "照片顯示破舊不穩的增建。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "建造或維護欠佳而搖搖欲墜的增建部分",
+        "examples": [
+          {
+            "en": "The photograph showed a ramshackle extension.",
+            "zh": "照片顯示破舊不穩的增建。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PRISTINE INTERIOR": {
+    "pos": "phr.",
+    "meaning": "未受破壞或髒污而如新的室內",
+    "example": "The brochure shows a pristine interior.",
+    "exampleZh": "手冊展示無瑕如新的室內。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未受破壞或髒污而如新的室內",
+        "examples": [
+          {
+            "en": "The brochure shows a pristine interior.",
+            "zh": "手冊展示無瑕如新的室內。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN OFFICIOUS INTERVENTION": {
+    "pos": "phr.",
+    "meaning": "過分熱心干預他人事務的介入",
+    "example": "The help became an officious intervention.",
+    "exampleZh": "幫忙變成多管閒事。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "過分熱心干預他人事務的介入",
+        "examples": [
+          {
+            "en": "The help became an officious intervention.",
+            "zh": "幫忙變成多管閒事。"
+          }
+        ]
+      }
+    ]
+  },
+  "A GRUDGING CONCESSION": {
+    "pos": "phr.",
+    "meaning": "不太情願地作出的讓步",
+    "example": "The extra shelf was a grudging concession.",
+    "exampleZh": "多出的架子是勉強讓步。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不太情願地作出的讓步",
+        "examples": [
+          {
+            "en": "The extra shelf was a grudging concession.",
+            "zh": "多出的架子是勉強讓步。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROPRIETARY ATTITUDE": {
+    "pos": "phr.",
+    "meaning": "把事物當成自己所有般的態度",
+    "example": "She challenged his proprietary attitude to the garden.",
+    "exampleZh": "她質疑他把花園當私有的態度。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "把事物當成自己所有般的態度",
+        "examples": [
+          {
+            "en": "She challenged his proprietary attitude to the garden.",
+            "zh": "她質疑他把花園當私有的態度。"
+          }
+        ]
+      }
+    ]
+  },
+  "DILAPIDATED": {
+    "pos": "adj.",
+    "meaning": "年久或失修而破敗的",
+    "example": "The room was part of a dilapidated building.",
+    "exampleZh": "房間位於失修破敗建物中。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "年久或失修而破敗的",
+        "examples": [
+          {
+            "en": "The room was part of a dilapidated building.",
+            "zh": "房間位於失修破敗建物中。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRISTINE": {
+    "pos": "adj.",
+    "meaning": "未受破壞髒污而如新的",
+    "example": "The display room remained pristine.",
+    "exampleZh": "展示房維持無瑕如新。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未受破壞髒污而如新的",
+        "examples": [
+          {
+            "en": "The display room remained pristine.",
+            "zh": "展示房維持無瑕如新。"
+          }
+        ]
+      }
+    ]
+  },
+  "INHOSPITABLE": {
+    "pos": "adj.",
+    "meaning": "不令人舒適或不友善的",
+    "example": "The immaculate room still felt inhospitable.",
+    "exampleZh": "無瑕房間仍讓人不自在。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不令人舒適或不友善的",
+        "examples": [
+          {
+            "en": "The immaculate room still felt inhospitable.",
+            "zh": "無瑕房間仍讓人不自在。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROPRIETARY": {
+    "pos": "adj.",
+    "meaning": "顯示把事物當成自己所有的",
+    "example": "He spoke with a proprietary air about the common room.",
+    "exampleZh": "他說起共用房時一副主人口氣。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "顯示把事物當成自己所有的",
+        "examples": [
+          {
+            "en": "He spoke with a proprietary air about the common room.",
+            "zh": "他說起共用房時一副主人口氣。"
+          }
+        ]
+      }
+    ]
+  },
+  "HABITATION": {
+    "pos": "n.",
+    "meaning": "居住的行為或供人居住的狀態",
+    "example": "The room was designed for display rather than habitation.",
+    "exampleZh": "房間為展示而非居住設計。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "居住的行為或供人居住的狀態",
+        "examples": [
+          {
+            "en": "The room was designed for display rather than habitation.",
+            "zh": "房間為展示而非居住設計。"
+          }
+        ]
+      }
+    ]
+  },
+  "SANCTIFY": {
+    "pos": "v.",
+    "meaning": "使某事被當成神聖不可質疑的",
+    "example": "Habit alone should not sanctify an arrangement.",
+    "exampleZh": "習慣本身不應使安排變得不可質疑。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使某事被當成神聖不可質疑的",
+        "examples": [
+          {
+            "en": "Habit alone should not sanctify an arrangement.",
+            "zh": "習慣本身不應使安排變得不可質疑。"
+          }
+        ]
+      }
+    ]
+  },
+  "AESTHETICISE": {
+    "pos": "v.",
+    "meaning": "以美學方式呈現或美化某事",
+    "example": "The project tends to aestheticise everyday hardship.",
+    "exampleZh": "計畫傾向美化日常困苦。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以美學方式呈現或美化某事",
+        "examples": [
+          {
+            "en": "The project tends to aestheticise everyday hardship.",
+            "zh": "計畫傾向美化日常困苦。"
+          }
+        ]
+      }
+    ]
+  },
   "R8:DISINGENUOUS": {
     "word": "disingenuous",
     "pos": "adj.",
-    "meaning": "不坦誠而故意裝作不知情的",
-    "example": "It is disingenuous to present that choice as unavoidable.",
-    "exampleZh": "把那項選擇說成無可避免並不坦誠。",
+    "meaning": "假裝坦誠或無知而實不誠懇的",
+    "example": "The carefully narrow reply seemed disingenuous.",
+    "exampleZh": "刻意狹窄的回覆顯得不坦誠。",
     "senses": [
       {
         "pos": "adj.",
@@ -4727,6 +5451,16 @@
           {
             "en": "It is disingenuous to present that choice as unavoidable.",
             "zh": "把那項選擇說成無可避免並不坦誠。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "假裝坦誠或無知而實不誠懇的",
+        "examples": [
+          {
+            "en": "The carefully narrow reply seemed disingenuous.",
+            "zh": "刻意狹窄的回覆顯得不坦誠。"
           }
         ]
       }
@@ -5054,9 +5788,9 @@
   "R8:TENDENTIOUS": {
     "word": "tendentious",
     "pos": "adj.",
-    "meaning": "以推動特定立場為目的而有偏向的",
-    "example": "The summary was criticised as tendentious.",
-    "exampleZh": "這份摘要被批評帶有推動特定立場的偏向。",
+    "meaning": "為特定立場服務而偏頗的",
+    "example": "The summary is tendentious rather than neutral.",
+    "exampleZh": "摘要偏頗而非中立。",
     "senses": [
       {
         "pos": "adj.",
@@ -5067,15 +5801,25 @@
             "zh": "這份摘要被批評帶有推動特定立場的偏向。"
           }
         ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "為特定立場服務而偏頗的",
+        "examples": [
+          {
+            "en": "The summary is tendentious rather than neutral.",
+            "zh": "摘要偏頗而非中立。"
+          }
+        ]
       }
     ]
   },
   "R8:PRESUPPOSITION": {
     "word": "presupposition",
     "pos": "n.",
-    "meaning": "說話時預先視為成立的前提",
-    "example": "The question contains a presupposition that deserves scrutiny.",
-    "exampleZh": "這個問題帶有值得審視的預設前提。",
+    "meaning": "未先證明便被當作成立的前提",
+    "example": "The guest rejected the question’s presupposition.",
+    "exampleZh": "來賓拒絕問題的預設。",
     "senses": [
       {
         "pos": "n.",
@@ -5084,6 +5828,16 @@
           {
             "en": "The question contains a presupposition that deserves scrutiny.",
             "zh": "這個問題帶有值得審視的預設前提。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "未先證明便被當作成立的前提",
+        "examples": [
+          {
+            "en": "The guest rejected the question’s presupposition.",
+            "zh": "來賓拒絕問題的預設。"
           }
         ]
       }
@@ -6619,9 +7373,9 @@
   "R8:INTRANSIGENT": {
     "word": "intransigent",
     "pos": "adj.",
-    "meaning": "固守立場而不願妥協的",
-    "example": "The reply remained intransigent despite the new evidence.",
-    "exampleZh": "即使有新證據，回覆仍毫不讓步。",
+    "meaning": "拒絕妥協而不肯改變的",
+    "example": "Both sides became intransigent.",
+    "exampleZh": "雙方都變得不願妥協。",
     "senses": [
       {
         "pos": "adj.",
@@ -6630,6 +7384,16 @@
           {
             "en": "The reply remained intransigent despite the new evidence.",
             "zh": "即使有新證據，回覆仍毫不讓步。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "拒絕妥協而不肯改變的",
+        "examples": [
+          {
+            "en": "Both sides became intransigent.",
+            "zh": "雙方都變得不願妥協。"
           }
         ]
       }
@@ -7766,6 +8530,419 @@
     ],
     "word": "partisan"
   },
+  "R8:INSINUATION": {
+    "word": "insinuation",
+    "pos": "n.",
+    "meaning": "以不直接方式提出的負面暗示",
+    "example": "The juxtaposition creates an insinuation.",
+    "exampleZh": "並列造成負面影射。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以不直接方式提出的負面暗示",
+        "examples": [
+          {
+            "en": "The juxtaposition creates an insinuation.",
+            "zh": "並列造成負面影射。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:REPUDIATION": {
+    "word": "repudiation",
+    "pos": "n.",
+    "meaning": "明確拒絕接受或與之切割的表態",
+    "example": "The note stops short of a repudiation.",
+    "exampleZh": "附註尚未明確否認切割。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "明確拒絕接受或與之切割的表態",
+        "examples": [
+          {
+            "en": "The note stops short of a repudiation.",
+            "zh": "附註尚未明確否認切割。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A STUDIED SHOW OF CANDOUR": {
+    "word": "a studied show of candour",
+    "pos": "phr.",
+    "meaning": "刻意展現的坦誠姿態",
+    "example": "The interview opens with a studied show of candour.",
+    "exampleZh": "訪談以刻意坦誠姿態開始。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "刻意展現的坦誠姿態",
+        "examples": [
+          {
+            "en": "The interview opens with a studied show of candour.",
+            "zh": "訪談以刻意坦誠姿態開始。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A PRESUPPOSITION DISGUISED AS A QUESTION": {
+    "word": "a presupposition disguised as a question",
+    "pos": "phr.",
+    "meaning": "偽裝成問題的預設",
+    "example": "The opening line is a presupposition disguised as a question.",
+    "exampleZh": "開場句是偽裝成問題的預設。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "偽裝成問題的預設",
+        "examples": [
+          {
+            "en": "The opening line is a presupposition disguised as a question.",
+            "zh": "開場句是偽裝成問題的預設。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN ABSENCE OF STATED PREFERENCE NEED NOT CONSTITUTE NEUTRALITY": {
+    "word": "an absence of stated preference need not constitute neutrality",
+    "pos": "phr.",
+    "meaning": "未表明偏好不必構成中立",
+    "example": "An absence of stated preference need not constitute neutrality.",
+    "exampleZh": "未表明偏好不必構成中立。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未表明偏好不必構成中立",
+        "examples": [
+          {
+            "en": "An absence of stated preference need not constitute neutrality.",
+            "zh": "未表明偏好不必構成中立。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:THE CORRECTION LEAVES THE CENTRAL INFERENCE INSUFFICIENTLY EXAMINED": {
+    "word": "the correction leaves the central inference insufficiently examined",
+    "pos": "phr.",
+    "meaning": "修正仍未充分檢視核心推論",
+    "example": "The correction leaves the central inference insufficiently examined.",
+    "exampleZh": "修正仍未充分檢視核心推論。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "修正仍未充分檢視核心推論",
+        "examples": [
+          {
+            "en": "The correction leaves the central inference insufficiently examined.",
+            "zh": "修正仍未充分檢視核心推論。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:INSINUATE": {
+    "pos": "v.",
+    "meaning": "以暗示方式傳達通常不利的意思",
+    "example": "The article seems to insinuate dishonesty.",
+    "exampleZh": "文章似乎影射不誠實。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以暗示方式傳達通常不利的意思",
+        "examples": [
+          {
+            "en": "The article seems to insinuate dishonesty.",
+            "zh": "文章似乎影射不誠實。"
+          }
+        ]
+      }
+    ],
+    "word": "insinuate"
+  },
+  "R8:CIRCUMSCRIBE": {
+    "pos": "v.",
+    "meaning": "嚴格限制某事的範圍",
+    "example": "The wording serves to circumscribe the admission.",
+    "exampleZh": "措辭用以限定承認範圍。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "嚴格限制某事的範圍",
+        "examples": [
+          {
+            "en": "The wording serves to circumscribe the admission.",
+            "zh": "措辭用以限定承認範圍。"
+          }
+        ]
+      }
+    ],
+    "word": "circumscribe"
+  },
+  "R8:OBFUSCATION": {
+    "pos": "n.",
+    "meaning": "使問題變得難以理解的混淆",
+    "example": "The statement adds obfuscation rather than clarity.",
+    "exampleZh": "聲明增加混淆而非清晰。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使原本可清楚理解的事情變模糊",
+        "examples": [
+          {
+            "en": "The reply added obfuscation rather than clarification.",
+            "zh": "回覆增添混淆，而非釐清。"
+          },
+          {
+            "en": "Complexity should not become a pretext for obfuscation.",
+            "zh": "複雜不應成為混淆視聽的藉口。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "使問題變得難以理解的混淆",
+        "examples": [
+          {
+            "en": "The statement adds obfuscation rather than clarity.",
+            "zh": "聲明增加混淆而非清晰。"
+          }
+        ]
+      }
+    ],
+    "word": "obfuscation"
+  },
+  "R8:RAMSHACKLE": {
+    "word": "ramshackle",
+    "pos": "adj.",
+    "meaning": "破舊不穩固而欠維護的",
+    "example": "A ramshackle shed stood behind the house.",
+    "exampleZh": "屋後有破舊棚屋。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "破舊不穩固而欠維護的",
+        "examples": [
+          {
+            "en": "A ramshackle shed stood behind the house.",
+            "zh": "屋後有破舊棚屋。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:OFFICIOUS": {
+    "word": "officious",
+    "pos": "adj.",
+    "meaning": "過分熱心而愛干涉他人事務的",
+    "example": "The neighbour’s advice became officious.",
+    "exampleZh": "鄰居的建議變得多管閒事。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "過分熱心而愛干涉他人事務的",
+        "examples": [
+          {
+            "en": "The neighbour’s advice became officious.",
+            "zh": "鄰居的建議變得多管閒事。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A GRUDGING ACCOMMODATION": {
+    "word": "a grudging accommodation",
+    "pos": "phr.",
+    "meaning": "勉強作出的遷就安排",
+    "example": "The agreement felt like a grudging accommodation.",
+    "exampleZh": "協議像是不情願的遷就。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "勉強作出的遷就安排",
+        "examples": [
+          {
+            "en": "The agreement felt like a grudging accommodation.",
+            "zh": "協議像是不情願的遷就。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AN AESTHETIC AT ODDS WITH HABITATION": {
+    "word": "an aesthetic at odds with habitation",
+    "pos": "phr.",
+    "meaning": "與日常居住使用不協調的美學",
+    "example": "The room embodied an aesthetic at odds with habitation.",
+    "exampleZh": "房間呈現與居住使用不協調的美學。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "與日常居住使用不協調的美學",
+        "examples": [
+          {
+            "en": "The room embodied an aesthetic at odds with habitation.",
+            "zh": "房間呈現與居住使用不協調的美學。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PERSONAL TASTE SHOULD NOT MASQUERADE AS A NEUTRAL STANDARD": {
+    "word": "personal taste should not masquerade as a neutral standard",
+    "pos": "phr.",
+    "meaning": "個人品味不應偽裝成中立標準",
+    "example": "Personal taste should not masquerade as a neutral standard.",
+    "exampleZh": "個人品味不應偽裝成中立標準。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "個人品味不應偽裝成中立標準",
+        "examples": [
+          {
+            "en": "Personal taste should not masquerade as a neutral standard.",
+            "zh": "個人品味不應偽裝成中立標準。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A WORKABLE COMPROMISE MAY LACK VISUAL UNIFORMITY": {
+    "word": "a workable compromise may lack visual uniformity",
+    "pos": "phr.",
+    "meaning": "可行折衷可能欠缺視覺一致",
+    "example": "A workable compromise may lack visual uniformity.",
+    "exampleZh": "可行折衷可能欠缺視覺一致。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可行折衷可能欠缺視覺一致",
+        "examples": [
+          {
+            "en": "A workable compromise may lack visual uniformity.",
+            "zh": "可行折衷可能欠缺視覺一致。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DILAPIDATED": {
+    "pos": "adj.",
+    "meaning": "年久或失修而破敗的",
+    "example": "The room was part of a dilapidated building.",
+    "exampleZh": "房間位於失修破敗建物中。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "年久或失修而破敗的",
+        "examples": [
+          {
+            "en": "The room was part of a dilapidated building.",
+            "zh": "房間位於失修破敗建物中。"
+          }
+        ]
+      }
+    ],
+    "word": "dilapidated"
+  },
+  "R8:PRISTINE": {
+    "pos": "adj.",
+    "meaning": "未受破壞髒污而如新的",
+    "example": "The display room remained pristine.",
+    "exampleZh": "展示房維持無瑕如新。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未受破壞髒污而如新的",
+        "examples": [
+          {
+            "en": "The display room remained pristine.",
+            "zh": "展示房維持無瑕如新。"
+          }
+        ]
+      }
+    ],
+    "word": "pristine"
+  },
+  "R8:INHOSPITABLE": {
+    "pos": "adj.",
+    "meaning": "不令人舒適或不友善的",
+    "example": "The immaculate room still felt inhospitable.",
+    "exampleZh": "無瑕房間仍讓人不自在。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不令人舒適或不友善的",
+        "examples": [
+          {
+            "en": "The immaculate room still felt inhospitable.",
+            "zh": "無瑕房間仍讓人不自在。"
+          }
+        ]
+      }
+    ],
+    "word": "inhospitable"
+  },
+  "R8:HABITATION": {
+    "pos": "n.",
+    "meaning": "居住的行為或供人居住的狀態",
+    "example": "The room was designed for display rather than habitation.",
+    "exampleZh": "房間為展示而非居住設計。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "居住的行為或供人居住的狀態",
+        "examples": [
+          {
+            "en": "The room was designed for display rather than habitation.",
+            "zh": "房間為展示而非居住設計。"
+          }
+        ]
+      }
+    ],
+    "word": "habitation"
+  },
+  "R8:SANCTIFY": {
+    "pos": "v.",
+    "meaning": "使某事被當成神聖不可質疑的",
+    "example": "Habit alone should not sanctify an arrangement.",
+    "exampleZh": "習慣本身不應使安排變得不可質疑。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使某事被當成神聖不可質疑的",
+        "examples": [
+          {
+            "en": "Habit alone should not sanctify an arrangement.",
+            "zh": "習慣本身不應使安排變得不可質疑。"
+          }
+        ]
+      }
+    ],
+    "word": "sanctify"
+  },
+  "R8:AESTHETICISE": {
+    "pos": "v.",
+    "meaning": "以美學方式呈現或美化某事",
+    "example": "The project tends to aestheticise everyday hardship.",
+    "exampleZh": "計畫傾向美化日常困苦。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以美學方式呈現或美化某事",
+        "examples": [
+          {
+            "en": "The project tends to aestheticise everyday hardship.",
+            "zh": "計畫傾向美化日常困苦。"
+          }
+        ]
+      }
+    ],
+    "word": "aestheticise"
+  },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
     "pos": "phr.",
@@ -8371,29 +9548,6 @@
       }
     ]
   },
-  "R8:OBFUSCATION": {
-    "pos": "n.",
-    "meaning": "使原本可清楚理解的事情變模糊",
-    "example": "The reply added obfuscation rather than clarification.",
-    "exampleZh": "回覆增添混淆，而非釐清。",
-    "senses": [
-      {
-        "pos": "n.",
-        "meaning": "使原本可清楚理解的事情變模糊",
-        "examples": [
-          {
-            "en": "The reply added obfuscation rather than clarification.",
-            "zh": "回覆增添混淆，而非釐清。"
-          },
-          {
-            "en": "Complexity should not become a pretext for obfuscation.",
-            "zh": "複雜不應成為混淆視聽的藉口。"
-          }
-        ]
-      }
-    ],
-    "word": "obfuscation"
-  },
   "R8:ATTRITION": {
     "pos": "n.",
     "meaning": "在持續阻力下逐漸流失或減少",
@@ -8694,5 +9848,152 @@
       }
     ],
     "word": "vindictive"
+  },
+  "R8:AN ARTFULLY CIRCUMSCRIBED DENIAL": {
+    "word": "an artfully circumscribed denial",
+    "pos": "phr.",
+    "meaning": "巧妙限定範圍的否認",
+    "example": "The reply offers an artfully circumscribed denial.",
+    "exampleZh": "回覆巧妙限定否認範圍。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "巧妙限定範圍的否認",
+        "examples": [
+          {
+            "en": "The reply offers an artfully circumscribed denial.",
+            "zh": "回覆巧妙限定否認範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A PRECISE QUOTATION CAN ACQUIRE A TENDENTIOUS FRAMING": {
+    "word": "a precise quotation can acquire a tendentious framing",
+    "pos": "phr.",
+    "meaning": "精確引文可能被置於偏頗框架",
+    "example": "A precise quotation can acquire a tendentious framing.",
+    "exampleZh": "精確引文可能被置於偏頗框架。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "精確引文可能被置於偏頗框架",
+        "examples": [
+          {
+            "en": "A precise quotation can acquire a tendentious framing.",
+            "zh": "精確引文可能被置於偏頗框架。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:EQUIVOCATION": {
+    "pos": "n.",
+    "meaning": "以含糊措辭迴避明確立場的做法",
+    "example": "The reply was criticised for equivocation.",
+    "exampleZh": "回覆因模稜兩可而受批評。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用用語含糊或多義來避免明確表態",
+        "examples": [
+          {
+            "en": "The reply relied on equivocation about what counted as approval.",
+            "zh": "回覆對何者算是核准含糊其詞。"
+          },
+          {
+            "en": "The argument collapses once the equivocation is exposed.",
+            "zh": "一旦揭露詞義偷換，論證就站不住腳。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "以含糊措辭迴避明確立場的做法",
+        "examples": [
+          {
+            "en": "The reply was criticised for equivocation.",
+            "zh": "回覆因模稜兩可而受批評。"
+          }
+        ]
+      }
+    ],
+    "word": "equivocation"
+  },
+  "R8:EXPURGATE": {
+    "pos": "v.",
+    "meaning": "刪除作品中被認為不宜的內容",
+    "example": "The editor refused to expurgate the disputed passage.",
+    "exampleZh": "編輯拒絕刪去被爭議的段落。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "刪除作品中被認為不宜的內容",
+        "examples": [
+          {
+            "en": "The editor refused to expurgate the disputed passage.",
+            "zh": "編輯拒絕刪去被爭議的段落。"
+          }
+        ]
+      }
+    ],
+    "word": "expurgate"
+  },
+  "R8:A PROPRIETARY CLAIM OVER SHARED SPACE": {
+    "word": "a proprietary claim over shared space",
+    "pos": "phr.",
+    "meaning": "把共用空間視為自己所有的主張",
+    "example": "The shelves implied a proprietary claim over shared space.",
+    "exampleZh": "架子的安排暗示對共用空間的佔有主張。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "把共用空間視為自己所有的主張",
+        "examples": [
+          {
+            "en": "The shelves implied a proprietary claim over shared space.",
+            "zh": "架子的安排暗示對共用空間的佔有主張。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SHARED OWNERSHIP REQUIRES MORE THAN THE ABSENCE OF PERSONAL BELONGINGS": {
+    "word": "shared ownership requires more than the absence of personal belongings",
+    "pos": "phr.",
+    "meaning": "共有不只需要沒有個人物品",
+    "example": "Shared ownership requires more than the absence of personal belongings.",
+    "exampleZh": "共有不只需要沒有個人物品。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "共有不只需要沒有個人物品",
+        "examples": [
+          {
+            "en": "Shared ownership requires more than the absence of personal belongings.",
+            "zh": "共有不只需要沒有個人物品。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PROPRIETARY": {
+    "pos": "adj.",
+    "meaning": "顯示把事物當成自己所有的",
+    "example": "He spoke with a proprietary air about the common room.",
+    "exampleZh": "他說起共用房時一副主人口氣。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "顯示把事物當成自己所有的",
+        "examples": [
+          {
+            "en": "He spoke with a proprietary air about the common room.",
+            "zh": "他說起共用房時一副主人口氣。"
+          }
+        ]
+      }
+    ],
+    "word": "proprietary"
   }
 }

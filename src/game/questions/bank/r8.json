@@ -5108,6 +5108,792 @@
       "ans": "EIU",
       "speak": "specious",
       "vocabId": "R8:SPECIOUS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tendentious paraphrase",
+      "options": [
+        "A. 只修正標點而不改措辭",
+        "B. 重述時帶有偏向的改寫",
+        "C. 忠實保留所有限定的改寫",
+        "D. 為學習發音而逐字跟讀"
+      ],
+      "ans": "B",
+      "explain": "tendentious 是為特定立場服務而偏頗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a studied ambiguity",
+      "options": [
+        "A. 不經思考而造成的混亂",
+        "B. 只有讀者知識不足才產生的誤會",
+        "C. 刻意維持的模稜兩可",
+        "D. 經研究後消除的歧義"
+      ],
+      "ans": "C",
+      "explain": "studied 指經刻意設計，不是已研究消除。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tacit presupposition",
+      "options": [
+        "A. 經反覆驗證的最終結論",
+        "B. 公開拒絕接受的假設",
+        "C. 特意逐字引用的警告",
+        "D. 未明說而被預先當真的前提"
+      ],
+      "ans": "D",
+      "explain": "presupposition 是預設，tacit 是未明說。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a disingenuous disclaimer",
+      "options": [
+        "A. 因缺乏資訊而明白承認不知道的聲明",
+        "B. 因術語複雜而需要專業解說的文件",
+        "C. 佯裝坦誠的免責聲明",
+        "D. 坦承全部責任而未保留的正式聲明"
+      ],
+      "ans": "C",
+      "explain": "disingenuous 涉不坦誠的姿態，不只難讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The disclaimer disowns an intention to mislead without addressing whether the presentation was misleading.",
+      "options": [
+        "A. 聲明雖承認可能有誤導意圖，但保證未影響呈現。",
+        "B. 聲明已說明呈現不會誤導，卻保留是否故意的問題。",
+        "C. 聲明承認呈現有誤導效果，因此也承認原本意圖。",
+        "D. 聲明否認有意誤導，卻沒有回答呈現方式是否會造成誤導。"
+      ],
+      "ans": "D",
+      "explain": "動機與效果不同，否認前者未回答後者。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The presenter’s neutrality consists in declining to state a preference, not in refraining from shaping the alternatives between which a preference can be expressed.",
+      "options": [
+        "A. 主持人不明說自己偏好哪方，但仍影響哪些立場可供選擇。",
+        "B. 主持人雖公開支持一方，仍讓他人決定討論選項。",
+        "C. 主持人的中立既包括不表態，也包括不設定議題框架。",
+        "D. 主持人未表態，是因為來賓已先同意只有一種合理選項。"
+      ],
+      "ans": "A",
+      "explain": "不表態與不影響議題選項框架不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The quotation acquires its insinuating force from the sentence beside it, which the defence of its literal accuracy conveniently ignores.",
+      "options": [
+        "A. 影射來自引文本身的字詞錯誤，相鄰句已提供足以釐清的說明。",
+        "B. 辯護雖未強調字面正確，已充分承認相鄰句造成負面印象。",
+        "C. 說話者認為相鄰句改變了引文字詞，因此引文不再是逐字引用。",
+        "D. 引文因相鄰句而帶有影射，只強調逐字正確便略過這項脈絡。"
+      ],
+      "ans": "D",
+      "explain": "逐字真實與相鄰框架造成的暗示不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The report does not so much silence the alternative view as admit it on terms that make it sound like a response to a question nobody sensible would ask.",
+      "options": [
+        "A. 報告讓異見出現，卻用問題框架削弱它的合理性，而非直接禁聲。",
+        "B. 報告直接禁止異見者發言，再以主流意見代替他們可能提出的答案。",
+        "C. 報告承認異見同樣合理，但質疑讀者是否有足夠背景理解它。",
+        "D. 報告要求各方回答同樣合理的問題，只因異見答案較短而顯得薄弱。"
+      ],
+      "ans": "A",
+      "explain": "容納不等於公平呈現，框架仍可貶低異見的合理性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The headline’s certainty is not a faithful compression of the argument but a redistribution of its doubts to places a hurried reader is unlikely to reach.",
+      "options": [
+        "A. 標題把疑慮放得比結論更顯眼，因此讀者容易低估論證的確定度。",
+        "B. 標題把保留疑慮移到匆忙讀者難以看到的地方，並非忠實濃縮論證。",
+        "C. 標題已完整交代疑慮，但讀者因匆忙閱讀而把它誤當成完全確定。",
+        "D. 疑慮經論證後已被排除，只是較後段文字尚未反映這個改變。"
+      ],
+      "ans": "B",
+      "explain": "資訊層級轉移保留，造成只讀醒目部分者高估確定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The article is suggestive without being explicit. What characterises its method?",
+      "options": [
+        "A. It gives exhaustive evidence before offering a conclusion.",
+        "B. It encourages an inference without stating it directly.",
+        "C. It states the accusation directly but supplies no evidence.",
+        "D. It avoids both implication and any identifiable subject."
+      ],
+      "ans": "B",
+      "explain": "suggestive 在此是暗示性，與 explicit 明說形成對比。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Little ___ that her tentative remark would become the headline.",
+      "options": [
+        "A. had anticipate she",
+        "B. she anticipated did",
+        "C. did she anticipate",
+        "D. she did anticipate"
+      ],
+      "ans": "C",
+      "explain": "Little 前置表否定，引發 did + 主詞 + 原形倒裝。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The editor calls the headline economical with the qualifications. The article contained several important caveats. What is the implication?",
+      "options": [
+        "A. The headline has preserved each reservation in unusually concise language.",
+        "B. The headline’s shortness is being praised without any concern about meaning.",
+        "C. The article’s caveats have been rejected as too expensive to investigate.",
+        "D. The headline has omitted reservations that matter to its accuracy."
+      ],
+      "ans": "D",
+      "explain": "economical with qualifications 委婉諷刺省掉必要保留，不是成本。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The correction stops short of repudiating the inference drawn from the original claim. What remains?",
+      "options": [
+        "A. The correction has been withdrawn from publication.",
+        "B. The inference has been replaced by a new allegation.",
+        "C. The inference has not been expressly disowned.",
+        "D. The original claim has been independently verified."
+      ],
+      "ans": "C",
+      "explain": "stops short of 表未做到某一步；未 repudiating 不等於證實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The interview’s ostensible openness is belied by the questions it makes impossible to ask. What is questioned?",
+      "options": [
+        "A. Whether open questions are longer than questions requiring brief answers.",
+        "B. Whether the interviewer is willing to publish questions after the interview.",
+        "C. Whether an interview can be conducted without agreeing on a subject.",
+        "D. Whether an appearance of openness matches the permitted scope of discussion."
+      ],
+      "ans": "D",
+      "explain": "公開姿態與可問範圍有落差；不是問題字數。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The statement denied that the omission was deliberate, not that it was consequential. Which position remains compatible?",
+      "options": [
+        "A. The omission may have mattered even if it was accidental.",
+        "B. The omission was deliberate but did not affect the meaning.",
+        "C. The statement denied that any omission had occurred.",
+        "D. The statement accepted responsibility for every consequence."
+      ],
+      "ans": "A",
+      "explain": "否定故意，不否定有影響；沒有明示完全承擔後果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The apology scrupulously expresses regret for the offence taken while remaining silent about the judgement that produced the offending remark. What distinction is exploited?",
+      "options": [
+        "A. The speaker’s judgement is examined while the audience’s reaction is dismissed as irrelevant.",
+        "B. The offending remark is withdrawn while its public reception is described as favourable.",
+        "C. The audience’s interpretation is endorsed while the original remark is declared misquoted.",
+        "D. The audience’s reaction is acknowledged while the speaker’s underlying judgement escapes examination."
+      ],
+      "ans": "D",
+      "explain": "遺憾停留於他人受冒犯，不觸及造成言論的自身判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A headline is softened after criticism, but the original wording survives in notifications already sent. The publisher calls the matter corrected. Which limitation should be examined?",
+      "options": [
+        "A. Whether revising the page repairs the impressions created in channels the revision does not reach.",
+        "B. Whether notifications should contain every paragraph of an article before they can be distributed.",
+        "C. Whether the revised wording is less concise than the wording that originally attracted attention.",
+        "D. Whether readers who saw both versions can remember the exact time each notification arrived."
+      ],
+      "ans": "A",
+      "explain": "修頁面不必觸及已發出的其他管道，修正效力有範圍。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The interviewer asks when the guest stopped concealing the figures. The guest disputes having concealed them at all. Why is a direct date an inadequate response to the objection?",
+      "options": [
+        "A. The interviewer has asked for a numerical estimate rather than a date.",
+        "B. Answering with a date would accept the contested presupposition.",
+        "C. Answering with a date would establish that the figures were never collected.",
+        "D. The objection concerns whether dates can be used in spoken interviews."
+      ],
+      "ans": "B",
+      "explain": "when stopped 預設曾隱瞞；客人挑戰的就是此預設。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：以不直接方式提出的負面暗示",
+      "ans": "INSINUATION",
+      "speak": "insinuation",
+      "vocabId": "R8:INSINUATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：明確拒絕接受或與之切割的表態",
+      "ans": "REPUDIATION",
+      "speak": "repudiation",
+      "vocabId": "R8:REPUDIATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：刻意展現的坦誠姿態",
+      "ans": "A STUDIED SHOW OF CANDOUR",
+      "speak": "a studied show of candour",
+      "vocabId": "R8:A STUDIED SHOW OF CANDOUR"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：偽裝成問題的預設",
+      "ans": "A PRESUPPOSITION DISGUISED AS A QUESTION",
+      "speak": "a presupposition disguised as a question",
+      "vocabId": "R8:A PRESUPPOSITION DISGUISED AS A QUESTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：未表明偏好不必構成中立",
+      "ans": "AN ABSENCE OF STATED PREFERENCE NEED NOT CONSTITUTE NEUTRALITY",
+      "speak": "an absence of stated preference need not constitute neutrality",
+      "vocabId": "R8:AN ABSENCE OF STATED PREFERENCE NEED NOT CONSTITUTE NEUTRALITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：修正仍未充分檢視核心推論",
+      "ans": "THE CORRECTION LEAVES THE CENTRAL INFERENCE INSUFFICIENTLY EXAMINED",
+      "speak": "the correction leaves the central inference insufficiently examined",
+      "vocabId": "R8:THE CORRECTION LEAVES THE CENTRAL INFERENCE INSUFFICIENTLY EXAMINED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：假裝坦誠或無知而實不誠懇的（D 開頭，12 個字母）",
+      "ans": "DISINGENUOUS",
+      "speak": "disingenuous",
+      "vocabId": "R8:DISINGENUOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：以暗示方式傳達通常不利的意思（I 開頭，9 個字母）",
+      "ans": "INSINUATE",
+      "speak": "insinuate",
+      "vocabId": "R8:INSINUATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：嚴格限制某事的範圍（C 開頭，12 個字母）",
+      "ans": "CIRCUMSCRIBE",
+      "speak": "circumscribe",
+      "vocabId": "R8:CIRCUMSCRIBE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T E N D E _ T I O U S (為特定立場服務而偏頗的)",
+      "ans": "N",
+      "speak": "tendentious",
+      "vocabId": "R8:TENDENTIOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R E S _ P P O S _ T I O N (未先證明便被當作成立的前提)",
+      "ans": "UI",
+      "speak": "presupposition",
+      "vocabId": "R8:PRESUPPOSITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O B _ U S _ A T _ O N (使問題變得難以理解的混淆)",
+      "ans": "FCI",
+      "speak": "obfuscation",
+      "vocabId": "R8:OBFUSCATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a ramshackle extension",
+      "options": [
+        "A. 臨時借用但狀況完好的房間",
+        "B. 只在圖紙上存在的擴建方案",
+        "C. 建造或維護欠佳而搖搖欲墜的增建部分",
+        "D. 依原樣精細修復的附屬建築"
+      ],
+      "ans": "C",
+      "explain": "ramshackle 指破舊不穩固，不只是非正式用途。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a pristine interior",
+      "options": [
+        "A. 保留大量明顯磨損的室內",
+        "B. 尚未清空施工殘料的空間",
+        "C. 混合多種舊家具的室內",
+        "D. 未受破壞或髒污而如新的室內"
+      ],
+      "ans": "D",
+      "explain": "pristine 指原始純淨或如新狀態，語境為室內狀況。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an officious intervention",
+      "options": [
+        "A. 過分熱心干預他人事務的介入",
+        "B. 受明確委託且限於職責的協助",
+        "C. 沒有任何人注意到的偶然變化",
+        "D. 由所有住戶共同提出的需求"
+      ],
+      "ans": "A",
+      "explain": "officious 指多管閒事，不等於 official 正式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a proprietary attitude",
+      "options": [
+        "A. 只願維護而不想擁有的態度",
+        "B. 對任何財物都不感興趣的態度",
+        "C. 主動邀請他人共同管理的態度",
+        "D. 把事物當成自己所有般的態度"
+      ],
+      "ans": "D",
+      "explain": "proprietary 可描述彷彿有所有權的佔有心態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The room has the immaculate air of somewhere intended to be admired rather than inhabited.",
+      "options": [
+        "A. 房間整潔得像供人欣賞而非生活。",
+        "B. 房間因日常使用痕跡而顯得比展示空間更有吸引力。",
+        "C. 房間雖供展示，設計者仍以居住舒適為首要考量。",
+        "D. 說話者認為房間凌亂失修，已不適合居住或參觀。"
+      ],
+      "ans": "A",
+      "explain": "反諷無瑕展示感與生活使用感的落差。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "His offer to organise the shelves would be more welcome if it did not carry the assumption that his idea of order must become everyone else’s.",
+      "options": [
+        "A. 只要願意幫忙整理，就足以取得決定大家秩序觀的權利。",
+        "B. 若不預設他的秩序觀應由大家接受，整理提議會更受歡迎。",
+        "C. 大家其實接受他的秩序觀，只因整理工作太多而拒絕提議。",
+        "D. 提議不受歡迎，是因他拒絕提出任何具體整理方式。"
+      ],
+      "ans": "B",
+      "explain": "幫忙善意與強加個人標準有別，批評附帶預設。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The redesign removes the signs of wear without quite considering that some residents regard them as signs of belonging.",
+      "options": [
+        "A. 改造抹掉磨損痕跡，未充分考慮住戶可能視其為歸屬記憶。",
+        "B. 改造保留所有磨損，但未注意新住戶想要全新環境。",
+        "C. 住戶已一致同意磨損只代表疏於保養，沒有其他意義。",
+        "D. 改造者先取得住戶對歸屬感的共識，才決定保留磨損。"
+      ],
+      "ans": "A",
+      "explain": "同一痕跡可被讀為損耗或共同歷史，not quite 表未充分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The language of shared space does a remarkable amount of work in a proposal that gives one resident the final say over what everyone shares.",
+      "options": [
+        "A. 說話者只批評共用空間的名稱太長，不涉及誰有決策權。",
+        "B. 提案高談共用，實際卻讓一人決定大家共用什麼。",
+        "C. 提案已把決策平均分配，所以共用一詞有充分實質根據。",
+        "D. 住戶先一致決定共用項目，才選一人執行已達成的共識。"
+      ],
+      "ans": "B",
+      "explain": "remarkable amount of work 反諷修辭掩護實際權力不對等。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "One can question the sanctification of household routines without treating the disruption of those routines as an achievement in itself.",
+      "options": [
+        "A. 說話者把任何打破慣例的行為都視為比維持更有價值。",
+        "B. 家務慣例因存在已久而不需接受任何實際效果的檢視。",
+        "C. 可質疑把家務慣例神聖化，也不必把破壞慣例本身當成成就。",
+        "D. 質疑家務慣例只有在立即提出全新慣例時才算合理。"
+      ],
+      "ans": "C",
+      "explain": "拒絕不可質疑與為反而反兩端，未要求即刻另立規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The interior is immaculate but curiously inhospitable. What tension is conveyed?",
+      "options": [
+        "A. An unfinished room is nevertheless ready for public use.",
+        "B. A crowded room has been mistaken for an empty one.",
+        "C. Faultless order coexists with a lack of welcome.",
+        "D. Visible wear coexists with an unusually warm atmosphere."
+      ],
+      "ans": "C",
+      "explain": "immaculate 無瑕整潔，inhospitable 不友善舒適；非物理髒亂。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The room might have remained untouched, ___ not the residents insisted on keeping it in use.",
+      "options": [
+        "A. were",
+        "B. should",
+        "C. did",
+        "D. had"
+      ],
+      "ans": "D",
+      "explain": "had not the residents insisted ... 是 if residents had not insisted 的倒裝形式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Our belongings have apparently failed to meet the room’s new aesthetic standards, says a resident whose books were removed without consultation. What is implied?",
+      "options": [
+        "A. A design preference has been allowed to override the resident’s say.",
+        "B. The resident has voluntarily agreed that the books should be discarded.",
+        "C. The books were moved solely because they were damaged beyond use.",
+        "D. The resident welcomes a neutral assessment of the books’ market value."
+      ],
+      "ans": "A",
+      "explain": "apparently 與擬人化 failed standards 反諷美學壓過協商權。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The renovation is not without merit, though its merits are not those advertised. What is conceded?",
+      "options": [
+        "A. It has the advertised benefits, though fewer people recognise them.",
+        "B. It has no benefits, despite an effective advertising campaign.",
+        "C. Its benefits are apparent only to those who designed the advertisement.",
+        "D. It has benefits, but different ones from the claimed benefits."
+      ],
+      "ans": "D",
+      "explain": "雙重否定承認有優點，後句區分實際與宣稱。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The design aestheticises austerity while leaving the inconvenience to its occupants. What is criticised?",
+      "options": [
+        "A. A visual ideal of spareness is pursued while users bear its practical costs.",
+        "B. A comfortable design is dismissed because it does not look sufficiently spare.",
+        "C. Occupants are choosing inconvenience in order to reduce the designer’s costs.",
+        "D. The design’s spare appearance disguises an unusually high level of comfort."
+      ],
+      "ans": "A",
+      "explain": "aestheticises 把簡樸美化，實際不便由使用者承擔。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The resident did not object to the shelves being moved so much as to not being asked. What is the principal objection?",
+      "options": [
+        "A. The amount of time required to move the books.",
+        "B. The absence of consultation before the move.",
+        "C. The shelves’ new position relative to the window.",
+        "D. The person chosen to carry out the physical work."
+      ],
+      "ans": "B",
+      "explain": "not so much ... as ... 定位主不滿於程序而非結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】We have preserved its character, says the designer; You have preserved the part that photographs well, replies a resident. What is challenged?",
+      "options": [
+        "A. The completeness of the designer’s account of what has been preserved.",
+        "B. The resident’s right to take photographs of the newly renovated room.",
+        "C. The claim that any original feature remains visible after the renovation.",
+        "D. The technical quality of the photographs used to document the project."
+      ],
+      "ans": "A",
+      "explain": "回覆暗示保留偏重可展示視覺部分，質疑 character 被窄化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A room is called communal because nobody may personalise it. Residents consequently use it only for brief visits. A critic asks whether the policy protects shared ownership or merely prevents anyone from feeling at home. What is at issue?",
+      "options": [
+        "A. Whether communal ownership requires each resident to receive an identical room.",
+        "B. Whether the restriction defeats part of the communal purpose it is meant to protect.",
+        "C. Whether short visits establish that the building has insufficient structural capacity.",
+        "D. Whether personal decoration should replace every rule governing communal use."
+      ],
+      "ans": "B",
+      "explain": "保護共同空間的手段可能削弱歸屬感，是目的與手段張力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The essay declines to equate domestic order with moral worth, without denying that disorder can impose burdens on others. What balance is maintained?",
+      "options": [
+        "A. It treats disorder as a moral failing whenever another person notices it.",
+        "B. It accepts order as the sole reliable measure of consideration for others.",
+        "C. It rejects a judgement of character while retaining concern for practical effects.",
+        "D. It rejects any shared standards because domestic habits are entirely private."
+      ],
+      "ans": "C",
+      "explain": "不道德化個人，但保留對他人實際影響的責任考量。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：破舊不穩固而欠維護的",
+      "ans": "RAMSHACKLE",
+      "speak": "ramshackle",
+      "vocabId": "R8:RAMSHACKLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：過分熱心而愛干涉他人事務的",
+      "ans": "OFFICIOUS",
+      "speak": "officious",
+      "vocabId": "R8:OFFICIOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：勉強作出的遷就安排",
+      "ans": "A GRUDGING ACCOMMODATION",
+      "speak": "a grudging accommodation",
+      "vocabId": "R8:A GRUDGING ACCOMMODATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：與日常居住使用不協調的美學",
+      "ans": "AN AESTHETIC AT ODDS WITH HABITATION",
+      "speak": "an aesthetic at odds with habitation",
+      "vocabId": "R8:AN AESTHETIC AT ODDS WITH HABITATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：個人品味不應偽裝成中立標準",
+      "ans": "PERSONAL TASTE SHOULD NOT MASQUERADE AS A NEUTRAL STANDARD",
+      "speak": "personal taste should not masquerade as a neutral standard",
+      "vocabId": "R8:PERSONAL TASTE SHOULD NOT MASQUERADE AS A NEUTRAL STANDARD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：可行折衷可能欠缺視覺一致",
+      "ans": "A WORKABLE COMPROMISE MAY LACK VISUAL UNIFORMITY",
+      "speak": "a workable compromise may lack visual uniformity",
+      "vocabId": "R8:A WORKABLE COMPROMISE MAY LACK VISUAL UNIFORMITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：年久或失修而破敗的（D 開頭，11 個字母）",
+      "ans": "DILAPIDATED",
+      "speak": "dilapidated",
+      "vocabId": "R8:DILAPIDATED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：未受破壞髒污而如新的（P 開頭，8 個字母）",
+      "ans": "PRISTINE",
+      "speak": "pristine",
+      "vocabId": "R8:PRISTINE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不令人舒適或不友善的（I 開頭，12 個字母）",
+      "ans": "INHOSPITABLE",
+      "speak": "inhospitable",
+      "vocabId": "R8:INHOSPITABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H A B I T _ T I O N (居住的行為或供人居住的狀態)",
+      "ans": "A",
+      "speak": "habitation",
+      "vocabId": "R8:HABITATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S A _ C T _ F Y (使某事被當成神聖不可質疑的)",
+      "ans": "NI",
+      "speak": "sanctify",
+      "vocabId": "R8:SANCTIFY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A E S _ H E _ I C _ S E (以美學方式呈現或美化某事)",
+      "ans": "TTI",
+      "speak": "aestheticise",
+      "vocabId": "R8:AESTHETICISE"
     }
   ],
   "boss": [
@@ -6813,6 +7599,268 @@
       "ans": "NCI",
       "speak": "vindictive",
       "vocabId": "R8:VINDICTIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a perfunctory retraction",
+      "options": [
+        "A. 敷衍而未充分處理問題的撤回",
+        "B. 充分查核後提出的新指控",
+        "C. 含詳細理由的全面道歉",
+        "D. 尚未發表便決定刪去的草稿"
+      ],
+      "ans": "A",
+      "explain": "perfunctory 表草率例行而欠用心。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The correction is admirably precise about the error and notably imprecise about how far the original conclusion depended on it.",
+      "options": [
+        "A. 說話者肯定修正內容完整，只批評採用的語言難以閱讀。",
+        "B. 修正說清了哪項資訊有誤，卻模糊處理原結論受影響的程度。",
+        "C. 修正已詳細交代結論如何改變，卻未指出哪項資訊有誤。",
+        "D. 修正雖不精確，仍已清楚證明原結論不依賴錯誤資訊。"
+      ],
+      "ans": "B",
+      "explain": "交代錯誤與重評它對推論的影響是兩回事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What is offered as an explanation of the misunderstanding subtly becomes a prescription for how the audience ought to have understood the message in the first place.",
+      "options": [
+        "A. 觀眾已同意誤會原因，只要求作者重寫當初應採用的訊息內容。",
+        "B. 說話者認為作者只是描述誤會發生過程，並未要求任何特定解讀。",
+        "C. 原本對誤會如何發生的解釋，悄悄成為對觀眾當初應如何理解的要求。",
+        "D. 作者原本要求觀眾依指定方式理解，後來才承認其他解讀也合理。"
+      ],
+      "ans": "C",
+      "explain": "由描述如何誤解滑向規範應如何理解，話語功能改變。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A disingenuous reply is one that ___.",
+      "options": [
+        "A. affects candour while withholding what the speaker knows to be relevant",
+        "B. openly acknowledges uncertainty about information the speaker lacks",
+        "C. uses unfamiliar terminology while attempting to explain a difficult subject",
+        "D. declines to answer and explicitly gives the reason for doing so"
+      ],
+      "ans": "A",
+      "explain": "disingenuous 涉裝作坦誠或無知，非單純術語複雜或公開拒答。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The speaker objected to the certainty with ___ her remarks had been reported.",
+      "options": [
+        "A. whose",
+        "B. which",
+        "C. that",
+        "D. whom"
+      ],
+      "ans": "B",
+      "explain": "with which 表報導以何種確定程度；介系詞後用 which。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The essay locates the bias less in what the report asserts than in what it renders unremarkable. What is the focus?",
+      "options": [
+        "A. The failure to give ordinary events a sufficiently dramatic headline.",
+        "B. The number of explicit opinions expressed by named contributors.",
+        "C. Assumptions made to seem natural rather than claims stated openly.",
+        "D. Factual inaccuracies in the report’s most prominent direct assertions."
+      ],
+      "ans": "C",
+      "explain": "renders unremarkable 指使某些前提不被當作值得質疑，非誇張不夠。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：巧妙限定範圍的否認",
+      "ans": "AN ARTFULLY CIRCUMSCRIBED DENIAL",
+      "speak": "an artfully circumscribed denial",
+      "vocabId": "R8:AN ARTFULLY CIRCUMSCRIBED DENIAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：精確引文可能被置於偏頗框架",
+      "ans": "A PRECISE QUOTATION CAN ACQUIRE A TENDENTIOUS FRAMING",
+      "speak": "a precise quotation can acquire a tendentious framing",
+      "vocabId": "R8:A PRECISE QUOTATION CAN ACQUIRE A TENDENTIOUS FRAMING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：以含糊措辭迴避明確立場的做法（E 開頭，12 個字母）",
+      "ans": "EQUIVOCATION",
+      "speak": "equivocation",
+      "vocabId": "R8:EQUIVOCATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X _ U _ G _ T E (刪除作品中被認為不宜的內容)",
+      "ans": "PRA",
+      "speak": "expurgate",
+      "vocabId": "R8:EXPURGATE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a grudging concession",
+      "options": [
+        "A. 經眾人一致讚賞的提案",
+        "B. 不太情願地作出的讓步",
+        "C. 主動熱情提出的額外贈與",
+        "D. 私下撤回而未告知的承諾"
+      ],
+      "ans": "B",
+      "explain": "grudging 指勉強不情願，concession 為讓步。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The compromise is not especially elegant, but its inelegance is partly what permits several incompatible preferences to coexist.",
+      "options": [
+        "A. 不相容偏好使折衷毫無作用，所以應立即恢復原狀。",
+        "B. 說話者認為折衷的價值僅在改善室內視覺一致性。",
+        "C. 折衷不算優雅，但這種不整齊正容納了不同偏好。",
+        "D. 折衷之所以優雅，是因為所有人已放棄原先偏好。"
+      ],
+      "ans": "C",
+      "explain": "視覺不完美可來自容納差異，非自動失敗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The dispute would be easier to resolve if each side did not present its preferred inconvenience as the natural condition to which the other ought to adapt.",
+      "options": [
+        "A. 雙方已承認各自偏好都有代價，只是仍無法決定哪方先讓步。",
+        "B. 只要其中一方證明自己較常待在家，就能確定自然應由對方適應。",
+        "C. 爭議只在如何稱呼不便，雙方對實際安排及適應責任已完全一致。",
+        "D. 若雙方不把自己偏好的不便當成對方理應適應的自然狀態，較容易解決爭議。"
+      ],
+      "ans": "D",
+      "explain": "將偏好自然化會阻礙協商，反事實條件暗示目前雙方都有此問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A dilapidated building is one that ___.",
+      "options": [
+        "A. has been deliberately left undecorated for flexible use",
+        "B. has deteriorated through age or neglect",
+        "C. has been newly built in a traditional style",
+        "D. has an unconventional but carefully maintained layout"
+      ],
+      "ans": "B",
+      "explain": "dilapidated 是年久或失修而破敗，不是簡約或特殊格局。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The arrangement leaves the least space to those ___ possessions are most difficult to store.",
+      "options": [
+        "A. which",
+        "B. who their",
+        "C. whose",
+        "D. whom"
+      ],
+      "ans": "C",
+      "explain": "whose possessions 表所有格；those 指人。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A resident calls every object she dislikes clutter and every object she values character. Another resident asks for criteria they could both apply. What is sought?",
+      "options": [
+        "A. A complete removal of objects with sentimental value.",
+        "B. A way to count objects without discussing their uses.",
+        "C. A rule allowing whoever speaks first to decide the labels.",
+        "D. A standard less dependent on one person’s preferences."
+      ],
+      "ans": "D",
+      "explain": "要求可共同適用的判準，不等於禁止情感物或只計數。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：把共用空間視為自己所有的主張",
+      "ans": "A PROPRIETARY CLAIM OVER SHARED SPACE",
+      "speak": "a proprietary claim over shared space",
+      "vocabId": "R8:A PROPRIETARY CLAIM OVER SHARED SPACE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：共有不只需要沒有個人物品",
+      "ans": "SHARED OWNERSHIP REQUIRES MORE THAN THE ABSENCE OF PERSONAL BELONGINGS",
+      "speak": "shared ownership requires more than the absence of personal belongings",
+      "vocabId": "R8:SHARED OWNERSHIP REQUIRES MORE THAN THE ABSENCE OF PERSONAL BELONGINGS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：顯示把事物當成自己所有的（P 開頭，11 個字母）",
+      "ans": "PROPRIETARY",
+      "speak": "proprietary",
+      "vocabId": "R8:PROPRIETARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N T _ A N _ I G _ N T (拒絕妥協而不肯改變的)",
+      "ans": "RSE",
+      "speak": "intransigent",
+      "vocabId": "R8:INTRANSIGENT"
     }
   ]
 }

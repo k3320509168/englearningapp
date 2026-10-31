@@ -58,7 +58,7 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
 }
 for(const [r,{normal,boss,vocab}] of regions){
  const all=[...normal,...boss];const keys=all.map(q=>`${q.type}|${q.desc}|${q.speak??''}`);
- if(new Set(keys).size!==keys.length)throw Error(`r${r}: duplicate questions`);
+ if(new Set(keys).size!==keys.length){const seen=new Set();const duplicates=keys.filter(k=>seen.has(k)?true:(seen.add(k),false));throw Error(`r${r}: duplicate questions: ${duplicates.join(' / ')}`);}
  for(const q of all)if(q.type!=='choice'&&!vocab[q.type==='fill'?q.speak.toUpperCase():q.ans])throw Error(`r${r}: missing vocabulary ${q.ans}`);
  // 保留通用詞條供舊流程使用；新題綁定此區的明確詞義，不依賴載入順序。
  for(const q of all.filter(q=>q.type!=='choice')) {

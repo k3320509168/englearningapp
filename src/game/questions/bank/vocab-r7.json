@@ -70,9 +70,9 @@
   "A QUALIFIED ENDORSEMENT": {
     "word": "a qualified endorsement",
     "pos": "phr.",
-    "meaning": "有所保留的支持",
-    "example": "The committee offered a qualified endorsement of the plan.",
-    "exampleZh": "委員會對計畫給予有所保留的支持。",
+    "meaning": "附有條件或保留的支持",
+    "example": "The review gives a qualified endorsement.",
+    "exampleZh": "評論給予有保留的支持。",
     "senses": [
       {
         "pos": "phr.",
@@ -81,6 +81,16 @@
           {
             "en": "The committee offered a qualified endorsement of the plan.",
             "zh": "委員會對計畫給予有所保留的支持。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "附有條件或保留的支持",
+        "examples": [
+          {
+            "en": "The review gives a qualified endorsement.",
+            "zh": "評論給予有保留的支持。"
           }
         ]
       }
@@ -2441,9 +2451,9 @@
   "A TACIT UNDERSTANDING": {
     "word": "a tacit understanding",
     "pos": "phr.",
-    "meaning": "沒有明說卻彼此默認的理解",
-    "example": "They had a tacit understanding about privacy.",
-    "exampleZh": "他們對隱私有默契。",
+    "meaning": "未明說但彼此理解的默契",
+    "example": "They had a tacit understanding about publication.",
+    "exampleZh": "他們對刊登有未明說的默契。",
     "senses": [
       {
         "pos": "phr.",
@@ -2452,6 +2462,16 @@
           {
             "en": "They had a tacit understanding about privacy.",
             "zh": "他們對隱私有默契。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "未明說但彼此理解的默契",
+        "examples": [
+          {
+            "en": "They had a tacit understanding about publication.",
+            "zh": "他們對刊登有未明說的默契。"
           }
         ]
       }
@@ -2620,9 +2640,9 @@
   },
   "AMBIVALENT": {
     "pos": "adj.",
-    "meaning": "同時懷有矛盾感受的",
-    "example": "She felt ambivalent about accepting the offer.",
-    "exampleZh": "她對是否接受提議感到矛盾。",
+    "meaning": "同時有互相矛盾感受或立場的",
+    "example": "Her response was ambivalent rather than hostile.",
+    "exampleZh": "她的回應是矛盾複雜而非敵意。",
     "senses": [
       {
         "pos": "adj.",
@@ -2635,6 +2655,16 @@
           {
             "en": "An ambivalent response may reflect competing needs.",
             "zh": "矛盾回應可能反映互相衝突的需要。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "同時有互相矛盾感受或立場的",
+        "examples": [
+          {
+            "en": "Her response was ambivalent rather than hostile.",
+            "zh": "她的回應是矛盾複雜而非敵意。"
           }
         ]
       }
@@ -4668,6 +4698,723 @@
       }
     ]
   },
+  "INNUENDO": {
+    "word": "innuendo",
+    "pos": "n.",
+    "meaning": "以含蓄暗示傳達負面指控的話",
+    "example": "The article relies on innuendo rather than a stated accusation.",
+    "exampleZh": "文章依賴影射而非明示指控。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以含蓄暗示傳達負面指控的話",
+        "examples": [
+          {
+            "en": "The article relies on innuendo rather than a stated accusation.",
+            "zh": "文章依賴影射而非明示指控。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISCLAIMER": {
+    "word": "disclaimer",
+    "pos": "n.",
+    "meaning": "限制責任或適用範圍的聲明",
+    "example": "The notice includes a disclaimer.",
+    "exampleZh": "公告附有免責聲明。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "限制責任或適用範圍的聲明",
+        "examples": [
+          {
+            "en": "The notice includes a disclaimer.",
+            "zh": "公告附有免責聲明。"
+          }
+        ]
+      }
+    ]
+  },
+  "A QUALIFIED ADMISSION": {
+    "word": "a qualified admission",
+    "pos": "phr.",
+    "meaning": "附帶保留或限制的承認",
+    "example": "The statement contains a qualified admission.",
+    "exampleZh": "聲明含有保留的承認。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "附帶保留或限制的承認",
+        "examples": [
+          {
+            "en": "The statement contains a qualified admission.",
+            "zh": "聲明含有保留的承認。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONSPICUOUS OMISSION": {
+    "word": "a conspicuous omission",
+    "pos": "phr.",
+    "meaning": "明顯而值得注意的遺漏",
+    "example": "The missing condition is a conspicuous omission.",
+    "exampleZh": "少掉條件是明顯遺漏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明顯而值得注意的遺漏",
+        "examples": [
+          {
+            "en": "The missing condition is a conspicuous omission.",
+            "zh": "少掉條件是明顯遺漏。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE DENIAL ADDRESSES THE SIGNATURE RATHER THAN THE AUTHORISATION": {
+    "word": "the denial addresses the signature rather than the authorisation",
+    "pos": "phr.",
+    "meaning": "否認針對簽名而非授權",
+    "example": "The denial addresses the signature rather than the authorisation.",
+    "exampleZh": "否認針對簽名而非授權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "否認針對簽名而非授權",
+        "examples": [
+          {
+            "en": "The denial addresses the signature rather than the authorisation.",
+            "zh": "否認針對簽名而非授權。"
+          }
+        ]
+      }
+    ]
+  },
+  "EQUAL AIRTIME NEED NOT MEAN EQUIVALENT FRAMING": {
+    "word": "equal airtime need not mean equivalent framing",
+    "pos": "phr.",
+    "meaning": "相同播出時間不必表示相同框架",
+    "example": "Equal airtime need not mean equivalent framing.",
+    "exampleZh": "相同播出時間不必表示相同框架。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同播出時間不必表示相同框架",
+        "examples": [
+          {
+            "en": "Equal airtime need not mean equivalent framing.",
+            "zh": "相同播出時間不必表示相同框架。"
+          }
+        ]
+      }
+    ]
+  },
+  "A GENUINE QUOTATION MAY STILL CREATE A MISLEADING IMPRESSION": {
+    "word": "a genuine quotation may still create a misleading impression",
+    "pos": "phr.",
+    "meaning": "真實引文仍可能造成誤導印象",
+    "example": "A genuine quotation may still create a misleading impression.",
+    "exampleZh": "真實引文仍可能造成誤導印象。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實引文仍可能造成誤導印象",
+        "examples": [
+          {
+            "en": "A genuine quotation may still create a misleading impression.",
+            "zh": "真實引文仍可能造成誤導印象。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TACIT ADMISSION": {
+    "pos": "phr.",
+    "meaning": "未明說卻隱含承認",
+    "example": "The change was read as a tacit admission of error.",
+    "exampleZh": "改變被解讀為默認出錯。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明說卻隱含承認",
+        "examples": [
+          {
+            "en": "The change was read as a tacit admission of error.",
+            "zh": "改變被解讀為默認出錯。"
+          }
+        ]
+      }
+    ]
+  },
+  "A LOADED QUESTION": {
+    "pos": "phr.",
+    "meaning": "帶有未獲接受預設的問題",
+    "example": "She challenged the premise of a loaded question.",
+    "exampleZh": "她質疑帶預設問題的前提。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "帶有未獲接受預設的問題",
+        "examples": [
+          {
+            "en": "She challenged the premise of a loaded question.",
+            "zh": "她質疑帶預設問題的前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SELECTIVE DISCLOSURE": {
+    "pos": "phr.",
+    "meaning": "只揭露部分選定資訊",
+    "example": "The letter amounts to a selective disclosure.",
+    "exampleZh": "那封信相當於選擇性揭露。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "只揭露部分選定資訊",
+        "examples": [
+          {
+            "en": "The letter amounts to a selective disclosure.",
+            "zh": "那封信相當於選擇性揭露。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CAREFULLY WORDED DISCLAIMER": {
+    "pos": "phr.",
+    "meaning": "措辭謹慎的免責或限制聲明",
+    "example": "The page carries a carefully worded disclaimer.",
+    "exampleZh": "頁面附有措辭謹慎的免責聲明。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "措辭謹慎的免責或限制聲明",
+        "examples": [
+          {
+            "en": "The page carries a carefully worded disclaimer.",
+            "zh": "頁面附有措辭謹慎的免責聲明。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARAPHRASE": {
+    "pos": "v.",
+    "meaning": "以不同措辭重述同一意思",
+    "example": "Please paraphrase the request without changing its conditions.",
+    "exampleZh": "請換句話說請求但不改條件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以不同措辭重述同一意思",
+        "examples": [
+          {
+            "en": "Please paraphrase the request without changing its conditions.",
+            "zh": "請換句話說請求但不改條件。"
+          }
+        ]
+      }
+    ]
+  },
+  "EDITORIAL": {
+    "pos": "n.",
+    "meaning": "表達刊物立場的社論",
+    "example": "The editorial supports the proposal with reservations.",
+    "exampleZh": "社論有保留地支持提案。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表達刊物立場的社論",
+        "examples": [
+          {
+            "en": "The editorial supports the proposal with reservations.",
+            "zh": "社論有保留地支持提案。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPUTE": {
+    "pos": "v.",
+    "meaning": "把某行為或動機歸於某人",
+    "example": "Do not impute a motive without evidence.",
+    "exampleZh": "不要無證據地歸給別人某種動機。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把某行為或動機歸於某人",
+        "examples": [
+          {
+            "en": "Do not impute a motive without evidence.",
+            "zh": "不要無證據地歸給別人某種動機。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISSEMINATE": {
+    "pos": "v.",
+    "meaning": "廣泛傳播資訊",
+    "example": "The group aims to disseminate reliable information.",
+    "exampleZh": "團體旨在傳播可靠資訊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "廣泛傳播資訊",
+        "examples": [
+          {
+            "en": "The group aims to disseminate reliable information.",
+            "zh": "團體旨在傳播可靠資訊。"
+          }
+        ]
+      }
+    ]
+  },
+  "DENIAL": {
+    "pos": "n.",
+    "meaning": "聲稱某事不屬實或與己無關的否認",
+    "example": "The denial addressed only one part of the allegation.",
+    "exampleZh": "否認只回應指控的一部分。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲稱某事不屬實或與己無關的否認",
+        "examples": [
+          {
+            "en": "The denial addressed only one part of the allegation.",
+            "zh": "否認只回應指控的一部分。"
+          }
+        ]
+      }
+    ]
+  },
+  "CAVEAT": {
+    "pos": "n.",
+    "meaning": "對某說法附加的警告或限制",
+    "example": "The conclusion comes with an important caveat.",
+    "exampleZh": "結論附有重要限制。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對某說法附加的警告或限制",
+        "examples": [
+          {
+            "en": "The conclusion comes with an important caveat.",
+            "zh": "結論附有重要限制。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXCERPT": {
+    "pos": "n.",
+    "meaning": "由較長作品摘出的片段",
+    "example": "The excerpt omits the question that prompted the answer.",
+    "exampleZh": "節錄漏掉引出回答的問題。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由較長作品摘出的片段",
+        "examples": [
+          {
+            "en": "The excerpt omits the question that prompted the answer.",
+            "zh": "節錄漏掉引出回答的問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "HABITABLE": {
+    "word": "habitable",
+    "pos": "adj.",
+    "meaning": "適合人居住的",
+    "example": "The upper room is now habitable.",
+    "exampleZh": "樓上房間現在適合居住。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "適合人居住的",
+        "examples": [
+          {
+            "en": "The upper room is now habitable.",
+            "zh": "樓上房間現在適合居住。"
+          }
+        ]
+      }
+    ]
+  },
+  "AMENITY": {
+    "word": "amenity",
+    "pos": "n.",
+    "meaning": "提升使用舒適便利的設施",
+    "example": "The shared garden is a valued amenity.",
+    "exampleZh": "共用花園是受重視的便利設施。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "提升使用舒適便利的設施",
+        "examples": [
+          {
+            "en": "The shared garden is a valued amenity.",
+            "zh": "共用花園是受重視的便利設施。"
+          }
+        ]
+      }
+    ]
+  },
+  "A REVERSIBLE INTERVENTION": {
+    "word": "a reversible intervention",
+    "pos": "phr.",
+    "meaning": "可恢復原狀的介入改動",
+    "example": "The design favours a reversible intervention.",
+    "exampleZh": "設計偏好可復原的改動。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可恢復原狀的介入改動",
+        "examples": [
+          {
+            "en": "The design favours a reversible intervention.",
+            "zh": "設計偏好可復原的改動。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EQUITABLE DIVISION OF LABOUR": {
+    "word": "an equitable division of labour",
+    "pos": "phr.",
+    "meaning": "較公平的工作分配",
+    "example": "The rota aims for an equitable division of labour.",
+    "exampleZh": "輪值表旨在公平分工。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "較公平的工作分配",
+        "examples": [
+          {
+            "en": "The rota aims for an equitable division of labour.",
+            "zh": "輪值表旨在公平分工。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TACIT CLAIM TO OWNERSHIP": {
+    "word": "a tacit claim to ownership",
+    "pos": "phr.",
+    "meaning": "未明說的所有權主張",
+    "example": "Leaving items there became a tacit claim to ownership.",
+    "exampleZh": "長期放物品變成默示所有權主張。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明說的所有權主張",
+        "examples": [
+          {
+            "en": "Leaving items there became a tacit claim to ownership.",
+            "zh": "長期放物品變成默示所有權主張。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRACTICAL FLEXIBILITY DEPENDS ON WHAT USERS CAN ACTUALLY CHANGE": {
+    "word": "practical flexibility depends on what users can actually change",
+    "pos": "phr.",
+    "meaning": "實用彈性取決於使用者實際能改什麼",
+    "example": "Practical flexibility depends on what users can actually change.",
+    "exampleZh": "實用彈性取決於使用者實際能改什麼。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實用彈性取決於使用者實際能改什麼",
+        "examples": [
+          {
+            "en": "Practical flexibility depends on what users can actually change.",
+            "zh": "實用彈性取決於使用者實際能改什麼。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EQUAL TASK COUNT MAY CONCEAL UNEQUAL DEMANDS": {
+    "word": "an equal task count may conceal unequal demands",
+    "pos": "phr.",
+    "meaning": "同等任務數可能掩蓋不等負擔",
+    "example": "An equal task count may conceal unequal demands.",
+    "exampleZh": "同等任務數可能掩蓋不等負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同等任務數可能掩蓋不等負擔",
+        "examples": [
+          {
+            "en": "An equal task count may conceal unequal demands.",
+            "zh": "同等任務數可能掩蓋不等負擔。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SHARED SPACE STILL REQUIRES AGREEMENT ABOUT PERSONAL BOUNDARIES": {
+    "word": "a shared space still requires agreement about personal boundaries",
+    "pos": "phr.",
+    "meaning": "共用空間仍需商定個人界線",
+    "example": "A shared space still requires agreement about personal boundaries.",
+    "exampleZh": "共用空間仍需商定個人界線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "共用空間仍需商定個人界線",
+        "examples": [
+          {
+            "en": "A shared space still requires agreement about personal boundaries.",
+            "zh": "共用空間仍需商定個人界線。"
+          }
+        ]
+      }
+    ]
+  },
+  "A STOPGAP MEASURE": {
+    "pos": "phr.",
+    "meaning": "正式解方到位前的權宜措施",
+    "example": "The curtain is a stopgap measure.",
+    "exampleZh": "窗簾是權宜措施。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "正式解方到位前的權宜措施",
+        "examples": [
+          {
+            "en": "The curtain is a stopgap measure.",
+            "zh": "窗簾是權宜措施。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SYMPATHETIC RESTORATION": {
+    "pos": "phr.",
+    "meaning": "尊重原有特色的修復",
+    "example": "The hall underwent a sympathetic restoration.",
+    "exampleZh": "廳堂經尊重原特色的修復。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尊重原有特色的修復",
+        "examples": [
+          {
+            "en": "The hall underwent a sympathetic restoration.",
+            "zh": "廳堂經尊重原特色的修復。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PIECEMEAL APPROACH": {
+    "pos": "phr.",
+    "meaning": "分次零碎處理的方式",
+    "example": "They questioned a piecemeal approach to the redesign.",
+    "exampleZh": "他們質疑零碎處理重新設計的方式。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "分次零碎處理的方式",
+        "examples": [
+          {
+            "en": "They questioned a piecemeal approach to the redesign.",
+            "zh": "他們質疑零碎處理重新設計的方式。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MUTUALLY ACCEPTABLE ARRANGEMENT": {
+    "pos": "phr.",
+    "meaning": "雙方都能接受的安排",
+    "example": "They reached a mutually acceptable arrangement.",
+    "exampleZh": "他們達成雙方可接受安排。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "雙方都能接受的安排",
+        "examples": [
+          {
+            "en": "They reached a mutually acceptable arrangement.",
+            "zh": "他們達成雙方可接受安排。"
+          }
+        ]
+      }
+    ]
+  },
+  "A POINT OF CONTENTION": {
+    "pos": "phr.",
+    "meaning": "引起爭議的問題",
+    "example": "Storage remains a point of contention.",
+    "exampleZh": "收納仍是爭點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "引起爭議的問題",
+        "examples": [
+          {
+            "en": "Storage remains a point of contention.",
+            "zh": "收納仍是爭點。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAKESHIFT": {
+    "pos": "adj.",
+    "meaning": "以現有物品臨時拼湊的",
+    "example": "A box became a makeshift table.",
+    "exampleZh": "箱子成了臨時桌。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "以現有物品臨時拼湊的",
+        "examples": [
+          {
+            "en": "A box became a makeshift table.",
+            "zh": "箱子成了臨時桌。"
+          }
+        ]
+      }
+    ]
+  },
+  "REFURBISH": {
+    "pos": "v.",
+    "meaning": "整修翻新以改善狀況",
+    "example": "They plan to refurbish the shared room.",
+    "exampleZh": "他們計畫整修共用房間。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "整修翻新以改善狀況",
+        "examples": [
+          {
+            "en": "They plan to refurbish the shared room.",
+            "zh": "他們計畫整修共用房間。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENCROACH": {
+    "pos": "v.",
+    "meaning": "逐漸侵入他人空間或權益",
+    "example": "Stored boxes began to encroach on the walkway.",
+    "exampleZh": "堆箱逐漸占用走道。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "逐漸侵入他人空間或權益",
+        "examples": [
+          {
+            "en": "Stored boxes began to encroach on the walkway.",
+            "zh": "堆箱逐漸占用走道。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECONFIGURE": {
+    "pos": "v.",
+    "meaning": "改變系統或空間的配置",
+    "example": "The partitions allow residents to reconfigure the room.",
+    "exampleZh": "隔板讓住戶能重新配置房間。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "改變系統或空間的配置",
+        "examples": [
+          {
+            "en": "The partitions allow residents to reconfigure the room.",
+            "zh": "隔板讓住戶能重新配置房間。"
+          }
+        ]
+      }
+    ]
+  },
+  "UPHOLSTERY": {
+    "pos": "n.",
+    "meaning": "家具表面的布料填充與包覆物",
+    "example": "The chair needs new upholstery.",
+    "exampleZh": "椅子需要重換包覆布料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "家具表面的布料填充與包覆物",
+        "examples": [
+          {
+            "en": "The chair needs new upholstery.",
+            "zh": "椅子需要重換包覆布料。"
+          }
+        ]
+      }
+    ]
+  },
+  "HABITABILITY": {
+    "pos": "n.",
+    "meaning": "適合居住的程度或狀態",
+    "example": "The report considers habitability as well as appearance.",
+    "exampleZh": "報告兼看宜居性與外觀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "適合居住的程度或狀態",
+        "examples": [
+          {
+            "en": "The report considers habitability as well as appearance.",
+            "zh": "報告兼看宜居性與外觀。"
+          }
+        ]
+      }
+    ]
+  },
+  "RETROFIT": {
+    "pos": "v.",
+    "meaning": "為舊設備或建物加裝新功能",
+    "example": "The proposal is to retrofit the existing system.",
+    "exampleZh": "提案是改裝既有系統。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "為舊設備或建物加裝新功能",
+        "examples": [
+          {
+            "en": "The proposal is to retrofit the existing system.",
+            "zh": "提案是改裝既有系統。"
+          }
+        ]
+      }
+    ]
+  },
+  "PIECEMEAL": {
+    "pos": "adj.",
+    "meaning": "分次零碎而非整體處理的",
+    "example": "Piecemeal changes made the layout inconsistent.",
+    "exampleZh": "零碎改動讓格局不一致。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "分次零碎而非整體處理的",
+        "examples": [
+          {
+            "en": "Piecemeal changes made the layout inconsistent.",
+            "zh": "零碎改動讓格局不一致。"
+          }
+        ]
+      }
+    ]
+  },
   "R7:CORROBORATION": {
     "word": "corroboration",
     "pos": "n.",
@@ -4739,9 +5486,9 @@
   "R7:A QUALIFIED ENDORSEMENT": {
     "word": "a qualified endorsement",
     "pos": "phr.",
-    "meaning": "有所保留的支持",
-    "example": "The committee offered a qualified endorsement of the plan.",
-    "exampleZh": "委員會對計畫給予有所保留的支持。",
+    "meaning": "附有條件或保留的支持",
+    "example": "The review gives a qualified endorsement.",
+    "exampleZh": "評論給予有保留的支持。",
     "senses": [
       {
         "pos": "phr.",
@@ -4750,6 +5497,16 @@
           {
             "en": "The committee offered a qualified endorsement of the plan.",
             "zh": "委員會對計畫給予有所保留的支持。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "附有條件或保留的支持",
+        "examples": [
+          {
+            "en": "The review gives a qualified endorsement.",
+            "zh": "評論給予有保留的支持。"
           }
         ]
       }
@@ -6317,9 +7074,9 @@
   "R7:A TACIT UNDERSTANDING": {
     "word": "a tacit understanding",
     "pos": "phr.",
-    "meaning": "沒有明說卻彼此默認的理解",
-    "example": "They had a tacit understanding about privacy.",
-    "exampleZh": "他們對隱私有默契。",
+    "meaning": "未明說但彼此理解的默契",
+    "example": "They had a tacit understanding about publication.",
+    "exampleZh": "他們對刊登有未明說的默契。",
     "senses": [
       {
         "pos": "phr.",
@@ -6328,6 +7085,16 @@
           {
             "en": "They had a tacit understanding about privacy.",
             "zh": "他們對隱私有默契。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "未明說但彼此理解的默契",
+        "examples": [
+          {
+            "en": "They had a tacit understanding about publication.",
+            "zh": "他們對刊登有未明說的默契。"
           }
         ]
       }
@@ -6438,9 +7205,9 @@
   },
   "R7:AMBIVALENT": {
     "pos": "adj.",
-    "meaning": "同時懷有矛盾感受的",
-    "example": "She felt ambivalent about accepting the offer.",
-    "exampleZh": "她對是否接受提議感到矛盾。",
+    "meaning": "同時有互相矛盾感受或立場的",
+    "example": "Her response was ambivalent rather than hostile.",
+    "exampleZh": "她的回應是矛盾複雜而非敵意。",
     "senses": [
       {
         "pos": "adj.",
@@ -6453,6 +7220,16 @@
           {
             "en": "An ambivalent response may reflect competing needs.",
             "zh": "矛盾回應可能反映互相衝突的需要。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "同時有互相矛盾感受或立場的",
+        "examples": [
+          {
+            "en": "Her response was ambivalent rather than hostile.",
+            "zh": "她的回應是矛盾複雜而非敵意。"
           }
         ]
       }
@@ -7735,6 +8512,443 @@
     ],
     "word": "outplay"
   },
+  "R7:INNUENDO": {
+    "word": "innuendo",
+    "pos": "n.",
+    "meaning": "以含蓄暗示傳達負面指控的話",
+    "example": "The article relies on innuendo rather than a stated accusation.",
+    "exampleZh": "文章依賴影射而非明示指控。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "以含蓄暗示傳達負面指控的話",
+        "examples": [
+          {
+            "en": "The article relies on innuendo rather than a stated accusation.",
+            "zh": "文章依賴影射而非明示指控。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DISCLAIMER": {
+    "word": "disclaimer",
+    "pos": "n.",
+    "meaning": "限制責任或適用範圍的聲明",
+    "example": "The notice includes a disclaimer.",
+    "exampleZh": "公告附有免責聲明。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "限制責任或適用範圍的聲明",
+        "examples": [
+          {
+            "en": "The notice includes a disclaimer.",
+            "zh": "公告附有免責聲明。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A CONSPICUOUS OMISSION": {
+    "word": "a conspicuous omission",
+    "pos": "phr.",
+    "meaning": "明顯而值得注意的遺漏",
+    "example": "The missing condition is a conspicuous omission.",
+    "exampleZh": "少掉條件是明顯遺漏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明顯而值得注意的遺漏",
+        "examples": [
+          {
+            "en": "The missing condition is a conspicuous omission.",
+            "zh": "少掉條件是明顯遺漏。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:THE DENIAL ADDRESSES THE SIGNATURE RATHER THAN THE AUTHORISATION": {
+    "word": "the denial addresses the signature rather than the authorisation",
+    "pos": "phr.",
+    "meaning": "否認針對簽名而非授權",
+    "example": "The denial addresses the signature rather than the authorisation.",
+    "exampleZh": "否認針對簽名而非授權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "否認針對簽名而非授權",
+        "examples": [
+          {
+            "en": "The denial addresses the signature rather than the authorisation.",
+            "zh": "否認針對簽名而非授權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:EQUAL AIRTIME NEED NOT MEAN EQUIVALENT FRAMING": {
+    "word": "equal airtime need not mean equivalent framing",
+    "pos": "phr.",
+    "meaning": "相同播出時間不必表示相同框架",
+    "example": "Equal airtime need not mean equivalent framing.",
+    "exampleZh": "相同播出時間不必表示相同框架。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同播出時間不必表示相同框架",
+        "examples": [
+          {
+            "en": "Equal airtime need not mean equivalent framing.",
+            "zh": "相同播出時間不必表示相同框架。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PARAPHRASE": {
+    "pos": "v.",
+    "meaning": "以不同措辭重述同一意思",
+    "example": "Please paraphrase the request without changing its conditions.",
+    "exampleZh": "請換句話說請求但不改條件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以不同措辭重述同一意思",
+        "examples": [
+          {
+            "en": "Please paraphrase the request without changing its conditions.",
+            "zh": "請換句話說請求但不改條件。"
+          }
+        ]
+      }
+    ],
+    "word": "paraphrase"
+  },
+  "R7:EDITORIAL": {
+    "pos": "n.",
+    "meaning": "表達刊物立場的社論",
+    "example": "The editorial supports the proposal with reservations.",
+    "exampleZh": "社論有保留地支持提案。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表達刊物立場的社論",
+        "examples": [
+          {
+            "en": "The editorial supports the proposal with reservations.",
+            "zh": "社論有保留地支持提案。"
+          }
+        ]
+      }
+    ],
+    "word": "editorial"
+  },
+  "R7:IMPUTE": {
+    "pos": "v.",
+    "meaning": "把某行為或動機歸於某人",
+    "example": "Do not impute a motive without evidence.",
+    "exampleZh": "不要無證據地歸給別人某種動機。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把某行為或動機歸於某人",
+        "examples": [
+          {
+            "en": "Do not impute a motive without evidence.",
+            "zh": "不要無證據地歸給別人某種動機。"
+          }
+        ]
+      }
+    ],
+    "word": "impute"
+  },
+  "R7:DENIAL": {
+    "pos": "n.",
+    "meaning": "聲稱某事不屬實或與己無關的否認",
+    "example": "The denial addressed only one part of the allegation.",
+    "exampleZh": "否認只回應指控的一部分。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "聲稱某事不屬實或與己無關的否認",
+        "examples": [
+          {
+            "en": "The denial addressed only one part of the allegation.",
+            "zh": "否認只回應指控的一部分。"
+          }
+        ]
+      }
+    ],
+    "word": "denial"
+  },
+  "R7:CAVEAT": {
+    "pos": "n.",
+    "meaning": "對某說法附加的警告或限制",
+    "example": "The conclusion comes with an important caveat.",
+    "exampleZh": "結論附有重要限制。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對某說法附加的警告或限制",
+        "examples": [
+          {
+            "en": "The conclusion comes with an important caveat.",
+            "zh": "結論附有重要限制。"
+          }
+        ]
+      }
+    ],
+    "word": "caveat"
+  },
+  "R7:EXCERPT": {
+    "pos": "n.",
+    "meaning": "由較長作品摘出的片段",
+    "example": "The excerpt omits the question that prompted the answer.",
+    "exampleZh": "節錄漏掉引出回答的問題。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由較長作品摘出的片段",
+        "examples": [
+          {
+            "en": "The excerpt omits the question that prompted the answer.",
+            "zh": "節錄漏掉引出回答的問題。"
+          }
+        ]
+      }
+    ],
+    "word": "excerpt"
+  },
+  "R7:HABITABLE": {
+    "word": "habitable",
+    "pos": "adj.",
+    "meaning": "適合人居住的",
+    "example": "The upper room is now habitable.",
+    "exampleZh": "樓上房間現在適合居住。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "適合人居住的",
+        "examples": [
+          {
+            "en": "The upper room is now habitable.",
+            "zh": "樓上房間現在適合居住。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AMENITY": {
+    "word": "amenity",
+    "pos": "n.",
+    "meaning": "提升使用舒適便利的設施",
+    "example": "The shared garden is a valued amenity.",
+    "exampleZh": "共用花園是受重視的便利設施。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "提升使用舒適便利的設施",
+        "examples": [
+          {
+            "en": "The shared garden is a valued amenity.",
+            "zh": "共用花園是受重視的便利設施。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A REVERSIBLE INTERVENTION": {
+    "word": "a reversible intervention",
+    "pos": "phr.",
+    "meaning": "可恢復原狀的介入改動",
+    "example": "The design favours a reversible intervention.",
+    "exampleZh": "設計偏好可復原的改動。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可恢復原狀的介入改動",
+        "examples": [
+          {
+            "en": "The design favours a reversible intervention.",
+            "zh": "設計偏好可復原的改動。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A TACIT CLAIM TO OWNERSHIP": {
+    "word": "a tacit claim to ownership",
+    "pos": "phr.",
+    "meaning": "未明說的所有權主張",
+    "example": "Leaving items there became a tacit claim to ownership.",
+    "exampleZh": "長期放物品變成默示所有權主張。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未明說的所有權主張",
+        "examples": [
+          {
+            "en": "Leaving items there became a tacit claim to ownership.",
+            "zh": "長期放物品變成默示所有權主張。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PRACTICAL FLEXIBILITY DEPENDS ON WHAT USERS CAN ACTUALLY CHANGE": {
+    "word": "practical flexibility depends on what users can actually change",
+    "pos": "phr.",
+    "meaning": "實用彈性取決於使用者實際能改什麼",
+    "example": "Practical flexibility depends on what users can actually change.",
+    "exampleZh": "實用彈性取決於使用者實際能改什麼。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實用彈性取決於使用者實際能改什麼",
+        "examples": [
+          {
+            "en": "Practical flexibility depends on what users can actually change.",
+            "zh": "實用彈性取決於使用者實際能改什麼。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AN EQUAL TASK COUNT MAY CONCEAL UNEQUAL DEMANDS": {
+    "word": "an equal task count may conceal unequal demands",
+    "pos": "phr.",
+    "meaning": "同等任務數可能掩蓋不等負擔",
+    "example": "An equal task count may conceal unequal demands.",
+    "exampleZh": "同等任務數可能掩蓋不等負擔。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "同等任務數可能掩蓋不等負擔",
+        "examples": [
+          {
+            "en": "An equal task count may conceal unequal demands.",
+            "zh": "同等任務數可能掩蓋不等負擔。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:MAKESHIFT": {
+    "pos": "adj.",
+    "meaning": "以現有物品臨時拼湊的",
+    "example": "A box became a makeshift table.",
+    "exampleZh": "箱子成了臨時桌。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "以現有物品臨時拼湊的",
+        "examples": [
+          {
+            "en": "A box became a makeshift table.",
+            "zh": "箱子成了臨時桌。"
+          }
+        ]
+      }
+    ],
+    "word": "makeshift"
+  },
+  "R7:REFURBISH": {
+    "pos": "v.",
+    "meaning": "整修翻新以改善狀況",
+    "example": "They plan to refurbish the shared room.",
+    "exampleZh": "他們計畫整修共用房間。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "整修翻新以改善狀況",
+        "examples": [
+          {
+            "en": "They plan to refurbish the shared room.",
+            "zh": "他們計畫整修共用房間。"
+          }
+        ]
+      }
+    ],
+    "word": "refurbish"
+  },
+  "R7:ENCROACH": {
+    "pos": "v.",
+    "meaning": "逐漸侵入他人空間或權益",
+    "example": "Stored boxes began to encroach on the walkway.",
+    "exampleZh": "堆箱逐漸占用走道。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "逐漸侵入他人空間或權益",
+        "examples": [
+          {
+            "en": "Stored boxes began to encroach on the walkway.",
+            "zh": "堆箱逐漸占用走道。"
+          }
+        ]
+      }
+    ],
+    "word": "encroach"
+  },
+  "R7:UPHOLSTERY": {
+    "pos": "n.",
+    "meaning": "家具表面的布料填充與包覆物",
+    "example": "The chair needs new upholstery.",
+    "exampleZh": "椅子需要重換包覆布料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "家具表面的布料填充與包覆物",
+        "examples": [
+          {
+            "en": "The chair needs new upholstery.",
+            "zh": "椅子需要重換包覆布料。"
+          }
+        ]
+      }
+    ],
+    "word": "upholstery"
+  },
+  "R7:HABITABILITY": {
+    "pos": "n.",
+    "meaning": "適合居住的程度或狀態",
+    "example": "The report considers habitability as well as appearance.",
+    "exampleZh": "報告兼看宜居性與外觀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "適合居住的程度或狀態",
+        "examples": [
+          {
+            "en": "The report considers habitability as well as appearance.",
+            "zh": "報告兼看宜居性與外觀。"
+          }
+        ]
+      }
+    ],
+    "word": "habitability"
+  },
+  "R7:RETROFIT": {
+    "pos": "v.",
+    "meaning": "為舊設備或建物加裝新功能",
+    "example": "The proposal is to retrofit the existing system.",
+    "exampleZh": "提案是改裝既有系統。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "為舊設備或建物加裝新功能",
+        "examples": [
+          {
+            "en": "The proposal is to retrofit the existing system.",
+            "zh": "提案是改裝既有系統。"
+          }
+        ]
+      }
+    ],
+    "word": "retrofit"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
@@ -8718,5 +9932,138 @@
       }
     ],
     "word": "resurgence"
+  },
+  "R7:A QUALIFIED ADMISSION": {
+    "word": "a qualified admission",
+    "pos": "phr.",
+    "meaning": "附帶保留或限制的承認",
+    "example": "The statement contains a qualified admission.",
+    "exampleZh": "聲明含有保留的承認。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "附帶保留或限制的承認",
+        "examples": [
+          {
+            "en": "The statement contains a qualified admission.",
+            "zh": "聲明含有保留的承認。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A GENUINE QUOTATION MAY STILL CREATE A MISLEADING IMPRESSION": {
+    "word": "a genuine quotation may still create a misleading impression",
+    "pos": "phr.",
+    "meaning": "真實引文仍可能造成誤導印象",
+    "example": "A genuine quotation may still create a misleading impression.",
+    "exampleZh": "真實引文仍可能造成誤導印象。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真實引文仍可能造成誤導印象",
+        "examples": [
+          {
+            "en": "A genuine quotation may still create a misleading impression.",
+            "zh": "真實引文仍可能造成誤導印象。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DISSEMINATE": {
+    "pos": "v.",
+    "meaning": "廣泛傳播資訊",
+    "example": "The group aims to disseminate reliable information.",
+    "exampleZh": "團體旨在傳播可靠資訊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "廣泛傳播資訊",
+        "examples": [
+          {
+            "en": "The group aims to disseminate reliable information.",
+            "zh": "團體旨在傳播可靠資訊。"
+          }
+        ]
+      }
+    ],
+    "word": "disseminate"
+  },
+  "R7:AN EQUITABLE DIVISION OF LABOUR": {
+    "word": "an equitable division of labour",
+    "pos": "phr.",
+    "meaning": "較公平的工作分配",
+    "example": "The rota aims for an equitable division of labour.",
+    "exampleZh": "輪值表旨在公平分工。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "較公平的工作分配",
+        "examples": [
+          {
+            "en": "The rota aims for an equitable division of labour.",
+            "zh": "輪值表旨在公平分工。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SHARED SPACE STILL REQUIRES AGREEMENT ABOUT PERSONAL BOUNDARIES": {
+    "word": "a shared space still requires agreement about personal boundaries",
+    "pos": "phr.",
+    "meaning": "共用空間仍需商定個人界線",
+    "example": "A shared space still requires agreement about personal boundaries.",
+    "exampleZh": "共用空間仍需商定個人界線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "共用空間仍需商定個人界線",
+        "examples": [
+          {
+            "en": "A shared space still requires agreement about personal boundaries.",
+            "zh": "共用空間仍需商定個人界線。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:RECONFIGURE": {
+    "pos": "v.",
+    "meaning": "改變系統或空間的配置",
+    "example": "The partitions allow residents to reconfigure the room.",
+    "exampleZh": "隔板讓住戶能重新配置房間。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "改變系統或空間的配置",
+        "examples": [
+          {
+            "en": "The partitions allow residents to reconfigure the room.",
+            "zh": "隔板讓住戶能重新配置房間。"
+          }
+        ]
+      }
+    ],
+    "word": "reconfigure"
+  },
+  "R7:PIECEMEAL": {
+    "pos": "adj.",
+    "meaning": "分次零碎而非整體處理的",
+    "example": "Piecemeal changes made the layout inconsistent.",
+    "exampleZh": "零碎改動讓格局不一致。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "分次零碎而非整體處理的",
+        "examples": [
+          {
+            "en": "Piecemeal changes made the layout inconsistent.",
+            "zh": "零碎改動讓格局不一致。"
+          }
+        ]
+      }
+    ],
+    "word": "piecemeal"
   }
 }

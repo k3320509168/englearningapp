@@ -528,9 +528,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     });
     // 技能封印只封隊長一個人
     if (get().sealed && !get().sealTarget) set({ sealTarget: get().party[Math.max(0, leaderIndex(get().party))]?.id ?? null });
-    // 劇情：每張三星地圖第一次打第 1 關播開場；區域魔王登場也有劇情（看過就不再自動播放）
+    // 劇情：每張三星地圖第一次打第 1 關播開場、第 15／20 關 BOSS 各一句登場台詞；區域魔王登場也有劇情（看過就不再自動播放）
     if (s.mode === 'normal') {
-      const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : stageInMap(stageIdx) === 1 ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), 'intro') : '';
+      const inMap = stageInMap(stageIdx);
+      const part = inMap === 1 ? 'intro' : inMap === 15 ? 'mini' : inMap === 20 ? 'big' : null;
+      const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : part ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), part) : '';
       if (storyId && STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
     }
     // 新手 1-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次

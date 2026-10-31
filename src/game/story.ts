@@ -1,7 +1,8 @@
 // 主線劇情：失去家園的勇士，靠「古代咒語」（英文）奪回被沉默魔王奪走語言的王國。
 // {name} 會換成玩家主角的名字。
 
-export type Speaker = 'narrator' | 'hero' | 'elder' | 'spirit' | 'villain' | 'smith' | 'pathfinder' | 'ferryman' | 'courier' | 'treeheart' | 'hunter';
+export type Speaker = 'narrator' | 'hero' | 'elder' | 'spirit' | 'villain' | 'smith' | 'pathfinder' | 'ferryman' | 'courier' | 'treeheart' | 'hunter'
+  | 'forestkeeper' | 'forestchild' | 'mistwitch' | 'foe';
 
 export interface StoryLine {
   speaker: Speaker;
@@ -21,6 +22,12 @@ export const SPEAKERS: Record<Speaker, { name: string; icon: string }> = {
   courier: { name: '送貨青年', icon: '📦' },
   treeheart: { name: '巨樹之心', icon: '🌳' },
   hunter: { name: '追獵隊長', icon: '🗡️' },
+  // A2 迷霧森林（ChatGPT 第十八輪）
+  forestkeeper: { name: '守林人洛恩', icon: '🌲' },
+  forestchild: { name: '森林女孩', icon: '👧' },
+  mistwitch: { name: '幻影魔女', icon: '🧙‍♀️' },
+  // 第 15 關小 BOSS、第 20 關大 BOSS 登場台詞的說話者
+  foe: { name: '頭目', icon: '👹' },
 };
 
 export const STORIES: Record<string, StoryLine[]> = {
@@ -115,8 +122,75 @@ export const STORIES: Record<string, StoryLine[]> = {
     { speaker: 'hero', text: '單字之外，還要會組句子……我試試看！' },
   ],
   'clear-1': [
-    { speaker: 'narrator', text: '濃霧散去，森林裡再次響起歌聲。' },
-    { speaker: 'spirit', text: '霧的另一邊是碧藍海岸。燈塔熄了，船隻找不到回家的路。' },
+    { speaker: 'mistwitch', text: '霧散了……原來我守住的，早就不是大家想過的生活。草原那塊黑石，我會親自向巨樹賠罪。' },
+    { speaker: 'hero', text: '先幫大家找回路吧。保護一個地方，不該靠把所有人關起來。' },
+    { speaker: 'mistwitch', text: '我從魔王軍那裡聽到消息：碧藍海岸的燈塔熄了，海底還鎖著一頭巨獸。你們得小心。' },
+    { speaker: 'spirit', text: '那就去海岸！先把迷路的船帶回家，再查清楚那條鎖鏈。' },
+  ],
+  // ---------- A2 迷霧森林（ChatGPT 第十八輪）：追查幻象 → 居民受困 → 魔女救人的過去 → 黑石交易 → 面對自己的選擇 ----------
+  'map-1-0-intro': [
+    { speaker: 'hero', text: '巨樹說的紫斗篷女人，就住在這座森林裡？' },
+    { speaker: 'spirit', text: '應該沒錯。但這裡的路標一會兒向左、一會兒向右……霧也太會騙人了吧！' },
+    { speaker: 'forestkeeper', text: '別跟著路標走！我是守林人洛恩，連我都被困在入口三天了。' },
+    { speaker: 'hero', text: '先找到真正的路。洛恩，跟緊我們。' },
+  ],
+  'map-1-0-clear': [
+    { speaker: 'forestkeeper', text: '出口總算出現了。這片霧以前會藏住村民，現在連村民都走不出去。' },
+    { speaker: 'spirit', text: '霧裡有紫色的咒文碎光，和草原那塊黑石的痕跡很像。' },
+    { speaker: 'hero', text: '沿著碎光走。它正飄向前面的蘑菇谷。' },
+  ],
+  'map-1-1-intro': [
+    { speaker: 'forestchild', text: '你們有看見我媽媽嗎？她說桌上有熱湯，可我摸到的只有冷石頭。' },
+    { speaker: 'hero', text: '連食物也是假的？這樣下去大家會餓壞的。' },
+    { speaker: 'spirit', text: '幻象做得太真了，連飢餓的感覺都能暫時騙過。可肚子不會被騙一輩子。' },
+    { speaker: 'forestkeeper', text: '谷裡的霧是從古橋吹來的。先讓大家看清楚眼前的東西吧。' },
+  ],
+  'map-1-1-clear': [
+    { speaker: 'forestchild', text: '真的蘑菇回來了！我終於能分出什麼可以吃、什麼只是石頭。' },
+    { speaker: 'hero', text: '有人原本想保護你們，卻把日子弄成這樣。' },
+    { speaker: 'forestkeeper', text: '古橋那邊還有人被困著。我認得一條近路，快走。' },
+  ],
+  'map-1-2-intro': [
+    { speaker: 'forestkeeper', text: '停！我明明記得橋在右邊，怎麼現在變成兩座了？' },
+    { speaker: 'hero', text: '左邊那座沒有倒影。要是有人踩上去，會直接掉進河裡。' },
+    { speaker: 'spirit', text: '這是有人刻意畫出的假橋。露出真路之前，誰都別亂走。' },
+    { speaker: 'forestchild', text: '對岸有人在叫救命！我們快幫他們！' },
+  ],
+  'map-1-2-clear': [
+    { speaker: 'forestkeeper', text: '人都救上來了。以前魔女用假路騙走魔王軍，從沒想過會害到我們。' },
+    { speaker: 'hero', text: '所以她真的救過這裡的人……但幻象為什麼失控？' },
+    { speaker: 'spirit', text: '橋下這股泉水帶著舊記憶。去精靈泉，也許能看見她當時做了什麼。' },
+  ],
+  'map-1-3-intro': [
+    { speaker: 'forestchild', text: '水裡有一群黑盔甲的人！還有一位穿紫斗篷的姐姐……' },
+    { speaker: 'spirit', text: '那是泉水留下的記憶。魔王軍追進森林時，她用霧把村民藏了起來。' },
+    { speaker: 'forestkeeper', text: '我們原本都感謝她。可她說「再躲一晚」，一晚卻變成了好幾年。' },
+    { speaker: 'hero', text: '先讓泉水恢復原樣。我想知道後來發生了什麼。' },
+  ],
+  'map-1-3-clear': [
+    { speaker: 'spirit', text: '我看到了！她把一塊黑石交給魔王軍，換他們不再追進森林。' },
+    { speaker: 'hero', text: '那塊石頭後來困住了草原的巨樹。她是知道後果還這麼做的嗎？' },
+    { speaker: 'forestkeeper', text: '深林祭壇一直在供應迷霧。魔女就在那裡，這次得當面問清楚。' },
+  ],
+  'map-1-4-intro': [
+    { speaker: 'mistwitch', text: '終於找到這裡了？你們一路拆掉我的霧，知道追兵回來會發生什麼嗎？' },
+    { speaker: 'hero', text: '我們知道你救過村民。但草原的黑石，也是你送出去的。' },
+    { speaker: 'mistwitch', text: '是我送的。我以為只要犧牲幾條路，就能換這座森林平安。' },
+    { speaker: 'spirit', text: '可現在孩子認不出家，大家連真正的路都找不到。這樣還算平安嗎？' },
+  ],
+  'map-1-4-clear': [
+    { speaker: 'mistwitch', text: '祭壇被你們停下了。沒有這層霧，王城的追兵遲早會找到這裡。' },
+    { speaker: 'hero', text: '那就把真正的路守住，而不是讓所有人永遠迷路。' },
+    { speaker: 'mistwitch', text: '你說得倒容易。來我的庭院，讓我看看你能不能做到。' },
+    { speaker: 'spirit', text: '她沒打算逃。小心，她在庭院裡藏著最強的幻象。' },
+  ],
+  'boss-1-intro': [
+    { speaker: 'mistwitch', text: '當年如果沒有我的霧，這座森林早就被魔王軍抓得一個人都不剩。' },
+    { speaker: 'forestkeeper', text: '我們記得你救過我們，也記得有人被假路困住、差點沒命。' },
+    { speaker: 'hero', text: '你可以害怕追兵，但不能替所有人決定一輩子都躲著。' },
+    { speaker: 'mistwitch', text: '我把黑石送去草原，是我做的選擇。這份責任，我不會否認。' },
+    { speaker: 'spirit', text: '她把真身藏進幻象了！先辨出真正的魔女，才有機會喚醒庭院。' },
+    { speaker: 'mistwitch', text: '那就證明給我看吧。沒有迷霧，你們真的能守住這片森林嗎？' },
   ],
   'region-a2p': [
     { speaker: 'elder', text: '漁夫們說，海怪把燈塔的訊號全吃掉了，現在誰也看不懂航海日誌。' },
@@ -190,6 +264,19 @@ export const STORIES: Record<string, StoryLine[]> = {
   ],
 };
 
+// 第 15 關小 BOSS、第 20 關大 BOSS 第一次登場的一句台詞（ChatGPT 第十八輪起逐區補）
+export const BOSS_LINES: Record<string, { mini: string; big: string }> = {
+  'map-1-0': { mini: '我是霧中的哨兵！沒有魔女的允許，誰也別想找到出口！', big: '所有路標都聽我的！你們只會走回原點！' },
+  'map-1-1': { mini: '別碰我的孢子！只要吸一口，就會忘記自己來做什麼！', big: '這座谷是我編出來的美夢！誰准你們把它叫醒？' },
+  'map-1-2': { mini: '我守著這座橋，真路假路都由我說了算！', big: '過橋的人都得留下影子！你們也不例外！' },
+  'map-1-3': { mini: '別看泉水！我會讓你看見最不想記起的事！', big: '真相會刺痛人心，不如讓我替你們忘掉！' },
+  'map-1-4': { mini: '祭壇的霧不能停！你們想讓追兵找到大家嗎？', big: '只要祭壇還亮著，整座森林就會繼續聽我的命令！' },
+};
+for (const [map, line] of Object.entries(BOSS_LINES)) {
+  STORIES[`${map}-mini`] = [{ speaker: 'foe', text: line.mini }];
+  STORIES[`${map}-big`] = [{ speaker: 'foe', text: line.big }];
+}
+
 // 劇情 id 依區域固定：原本六個區域沿用舊 id（存檔裡記錄看過哪些），新增的三區用自己的 id
 const REGION_STORY_KEYS = ['0', '1', 'a2p', '2', 'b1p', '3', 'b2p', '4', '5'];
 const storyKey = (regionIdx: number) => REGION_STORY_KEYS[regionIdx] ?? String(regionIdx);
@@ -197,15 +284,15 @@ export const regionStoryId = (regionIdx: number) => `region-${storyKey(regionIdx
 export const clearStoryId = (regionIdx: number) => `clear-${storyKey(regionIdx)}`;
 
 // 每張三星地圖的開場／通關劇情、區域魔王登場劇情的 id（沒有寫劇本的地圖就沒有）
-export const mapStoryId = (regionIdx: number, mapIdx: number, part: 'intro' | 'clear') => `map-${regionIdx}-${mapIdx}-${part}`;
+export const mapStoryId = (regionIdx: number, mapIdx: number, part: 'intro' | 'clear' | 'mini' | 'big') => `map-${regionIdx}-${mapIdx}-${part}`;
 export const bossStoryId = (regionIdx: number) => `boss-${regionIdx}-intro`;
 
 // 劇情回顧的名稱
 export function storyTitle(id: string, regionName: (idx: number) => string, mapName: (regionIdx: number, mapIdx: number) => string): string {
   if (id === 'prologue') return '序章';
   if (id === 'golden-ending') return '黃金之路・結局';
-  const map = id.match(/^map-(\d+)-(\d+)-(intro|clear)$/);
-  if (map) return `${regionName(+map[1])}・${mapName(+map[1], +map[2])}・${map[3] === 'intro' ? '開場' : '通關'}`;
+  const map = id.match(/^map-(\d+)-(\d+)-(intro|clear|mini|big)$/);
+  if (map) return `${regionName(+map[1])}・${mapName(+map[1], +map[2])}・${{ intro: '開場', clear: '通關', mini: '小 BOSS', big: '大 BOSS' }[map[3]]}`;
   const boss = id.match(/^boss-(\d+)-intro$/);
   if (boss) return `${regionName(+boss[1])}・魔王登場`;
   const [kind, key] = id.split('-');

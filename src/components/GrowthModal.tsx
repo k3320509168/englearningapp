@@ -5,9 +5,10 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import type { GrowthTab } from '../store/uiStore';
 import { useNotices } from './useNotices';
-import { classDef, elementDef } from '../game/character';
+import { CLASSES, classDef, elementDef } from '../game/character';
+import type { ClassId } from '../game/character';
 import {
-  ADVANCE_REQ, MAX_LEVEL, canAdvance, playerLevelCap, childrenOf, classNode, currentClassName, describeMods, nextOptions, xpToNext,
+  ADVANCE_REQ, BADGE_COST, MAX_LEVEL, bestTier, canAdvance, pathBadgeCost, playerLevelCap, childrenOf, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
   DRAGON_REGION, EQUIPMENT, HOLY_FORGE_QUESTIONS, MAX_GRADE, SLOTS, displayName, enhanceChance, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
@@ -46,6 +47,8 @@ export default function GrowthModal() {
   const member = buildMember('player', character, playerStats({ upgrades }), { growth });
   const mods = playerMods(growth);
   const cls = classDef(character.classId);
+  // 等級上限看所有職業裡轉得最高的那一個
+  const levelCap = playerLevelCap(bestTier({ ...sv.classPaths, current: player.classPath }));
   const el = elementDef(character.element);
   const className = currentClassName(cls.name, player.classPath);
   const skill = SKILLS[CLASS_SKILL[character.classId]];
@@ -74,12 +77,12 @@ export default function GrowthModal() {
           <section className="growth-head" style={{ '--el': el.color } as CSSProperties}>
             <img src={avatarDataUrl(character, 'idle', 3, player.classPath.length)} alt="" />
             <div>
-              <h3>Lv {player.level} <span className="muted">/ {playerLevelCap(player.classPath.length)}</span></h3>
+              <h3>Lv {player.level} <span className="muted">/ {levelCap}</span></h3>
               {sv.titles.length > 0 && <p className="title-badges">{sv.titles.map(t => <span key={t}>🏅 {t}</span>)}</p>}
-              {player.level >= playerLevelCap(player.classPath.length) && player.level < MAX_LEVEL && (
+              {player.level >= levelCap && player.level < MAX_LEVEL && (
                 <p className="muted">已達等級上限，轉職後上限提高（覺醒後最高 Lv {MAX_LEVEL}）</p>
               )}
-              {player.level < playerLevelCap(player.classPath.length) && (
+              {player.level < levelCap && (
                 <div className="xp-bar" title="答對題目、打倒怪物都能得到經驗值">
                   <span style={{ width: `${(player.xp / xpToNext(player.level)) * 100}%` }} />
                   <small>EXP {player.xp} / {xpToNext(player.level)}</small>
@@ -95,12 +98,30 @@ export default function GrowthModal() {
           </section>
 
           <section className="class-path">
-            <p className="summary-label">轉職路線</p>
-            <ol className="path-steps">
-              <li className="is-done">{cls.name}</li>
-              {player.classPath.map(id => <li key={id} className="is-done">{classNode(id)?.name}</li>)}
-            </ol>
+            {/* 換職業：五種職業共用等級、各自保留轉職路線，戰鬥外免費切換 */}
+            <div className="class-switch-head">
+              <p className="summary-label">職業</p>
+              <span className="muted">🎖️ 職業徽章 {sv.classBadges}</span>
+            </div>
+            <div className="class-switch" role="group" aria-label="切換職業">
+              {CLASSES.map(c => {
+                const path = c.id === character.classId ? player.classPath : sv.classPaths[c.id] ?? [];
+                const tierName = ['未轉職', '一轉', '二轉', '覺醒'][path.length];
+                return (
+                  <button key={c.id} className={`class-chip ${c.id === character.classId ? 'is-on' : ''}`} onMouseDown={keepFocus}
+                    onClick={() => { if (sv.switchClass(c.id)) sfx.coin(); }} aria-pressed={c.id === character.classId}>
+                    <b>{c.name}</b><small>{c.id === (sv.homeClass ?? character.classId) ? '★ ' : ''}{tierName}</small>
+                  </button>
+                );
+              })}
+            </div>
+            <ClassTree classId={character.classId} path={player.classPath} />
             {renderAdvance()}
+            {player.classPath.length > 0 && (
+              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => sv.resetClassPath()}>
+                ↺ 重置這個職業的路線{character.classId !== (sv.homeClass ?? character.classId) ? `（退回 🎖️ ${pathBadgeCost(player.classPath)}）` : ''}
+              </button>
+            )}
           </section>
         </>
       )}
@@ -226,11 +247,12 @@ export default function GrowthModal() {
     if (options.length === 0) return <p className="muted">已經覺醒，到達這條路線的最終形態！</p>;
     const tier = options[0].tier;
     const req = ADVANCE_REQ[tier];
-    const ok = canAdvance(tier, player.level, unlockedIndex);
+    const badgeCost = character!.classId === (sv.homeClass ?? character!.classId) ? 0 : BADGE_COST[tier];
+    const ok = canAdvance(tier, player.level, unlockedIndex) && sv.classBadges >= badgeCost;
     return (
       <>
         <p className={ok ? 'req-ok' : 'muted'}>
-          {tier === 3 ? '覺醒' : tier === 2 ? '二轉' : '一轉'}條件：{req.label}（目前 Lv {player.level}、已通關 {unlockedIndex} 個區域）
+          {tier === 3 ? '覺醒' : tier === 2 ? '二轉' : '一轉'}條件：{req.label}{badgeCost ? `＋🎖️ ${badgeCost}` : ''}（目前 Lv {player.level}、已通關 {unlockedIndex} 個區域{badgeCost ? `、徽章 ${sv.classBadges}` : ''}）
         </p>
         <div className="advance-options">
           {options.map(o => {
@@ -253,4 +275,27 @@ export default function GrowthModal() {
       </>
     );
   }
+}
+
+// 轉職樹：這個職業的兩條路線（一轉 → 兩個二轉 → 各自的覺醒），走過的節點點亮
+function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
+  const lit = (id: string) => path.includes(id);
+  return (
+    <div className="class-tree">
+      {childrenOf(classId).map(first => (
+        <div key={first.id} className="tree-branch">
+          <span className={`tree-node ${lit(first.id) ? 'is-lit' : ''}`} title={first.desc}>{first.name}</span>
+          <span className="tree-arrow" aria-hidden>→</span>
+          <span className="tree-seconds">
+            {childrenOf(first.id).map(second => (
+              <span key={second.id} className="tree-pair">
+                <span className={`tree-node ${lit(second.id) ? 'is-lit' : ''}`} title={second.desc}>{second.name}</span>
+                {childrenOf(second.id).map(a => <span key={a.id} className={`tree-node is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={a.desc}>覺醒</span>)}
+              </span>
+            ))}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
 }

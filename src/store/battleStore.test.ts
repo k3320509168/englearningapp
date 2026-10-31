@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { FAST_STAGGER } from '../game/enemyPatterns';
+import { PLAYER_BASE_MULT } from '../game/party';
 import { REVENGE_MAX_QUESTIONS, RUNE_GOLD, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
@@ -118,10 +119,10 @@ describe('battle flow', () => {
 });
 
 describe('party and upgrades', () => {
-  it('sums the party HP with upgrades (swordsman x1.0 + knight x1.0)', () => {
+  it('sums the party HP with upgrades (swordsman ×1.45 protagonist + knight ×1.0)', () => {
     startLevel({ upgrades: { hp: 2, atk: 0, combo: 0, gold: 0 } });
     const hp = PLAYER_MAX_HP + 20;
-    expect(state().playerMaxHp).toBe(hp * 2);
+    expect(state().playerMaxHp).toBe(Math.round(hp * PLAYER_BASE_MULT) + hp);
     expect(state().playerHp).toBe(state().playerMaxHp);
   });
 

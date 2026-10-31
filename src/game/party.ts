@@ -55,6 +55,10 @@ export interface PartyOptions {
   growth?: PlayerGrowth;
 }
 
+// 主角的基礎數值和 SSR 英雄同級（第十三輪）：主角多出來的只有轉職與裝備，全程大約在 SSR 英雄的 ±15% 內，
+// 不會「主角絕對最強」
+export const PLAYER_BASE_MULT = 1.45;
+
 // 出戰時的能量：搶攻型技能一開場就是滿的
 const skillEnergy = (id: SkillId) => ({ energy: SKILLS[id].opening ? SKILLS[id].cost : 0, energyMax: SKILLS[id].cost });
 
@@ -63,10 +67,11 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     const c = character!;
     const cls = classDef(c.classId);
     const mods = opts.growth ? playerMods(opts.growth) : { ...NO_MODS };
-    const maxHp = Math.round(stats.maxHp * cls.stats.hp * (1 + mods.hp));
+    const base = opts.growth ? PLAYER_BASE_MULT : 1; // 黃金之路只用最基礎的主角
+    const maxHp = Math.round(stats.maxHp * cls.stats.hp * base * (1 + mods.hp));
     return {
       id, name: c.name, element: c.element, maxHp, hp: maxHp,
-      atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
+      atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * base * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
       skill: CLASS_SKILL[c.classId], skillPower: playerSkillPower(opts.growth?.classPath.length ?? 0), ...skillEnergy(CLASS_SKILL[c.classId]), mods, classId: c.classId,
       talent: CLASS_TALENT[c.classId],
     };

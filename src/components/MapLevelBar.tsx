@@ -1,7 +1,7 @@
 import { useSaveStore } from '../store/saveStore';
 import { REGIONS } from '../game/regions';
 import { useUiStore } from '../store/uiStore';
-import { beginLevel, continueJourney } from '../game/startLevel';
+import { continueJourney } from '../game/startLevel';
 import { continueTarget, nextStep } from '../game/notices';
 import { useNotices } from './useNotices';
 import { dailyDef } from '../game/daily';
@@ -23,6 +23,7 @@ export default function MapLevelBar() {
   const target = continueTarget({ unlockedIndex, levelProgress: progress, storySeen });
   // 最前線的魔王已經打倒、下一區還沒開：主按鈕帶玩家去找守門人（封印進度、區域試煉、回去複習）
   const atGate = useSaveStore(s => s.bossDown.includes(unlockedIndex)) && unlockedIndex < SKIPPABLE_REGIONS;
+  const wheelPending = useSaveStore(s => s.wheelPending);
   const step = nextStep(notices);
   const { openModal, openGrowth } = useUiStore.getState();
   // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
@@ -59,6 +60,11 @@ export default function MapLevelBar() {
           🧭 英文不錯？<b>做程度測驗</b>，直接跳到適合你的區域
         </button>
       )}
+      {wheelPending > 0 && (
+        <button className="placement-entry wheel-entry" onMouseDown={keepFocus} onClick={() => useUiStore.getState().setWheelHidden(false)}>
+          🎡 還有 <b>{wheelPending}</b> 次獎勵轉盤沒轉，點我轉！
+        </button>
+      )}
       {daily && (
         <div className="today-card" aria-label="今天的冒險">
           <span className="today-title">📅 今天的冒險 <small className="muted">約 5 分鐘</small></span>
@@ -73,36 +79,24 @@ export default function MapLevelBar() {
           </button>
         </div>
       )}
-      <p className="muted level-bar-hint">或選擇區域（也可以直接點地圖上的旗幟）</p>
-      <div className="level-buttons">
-        {REGIONS.map(({ id: levelKey, name }, i) => {
-          const locked = i > unlockedIndex;
-          const stage = progress[levelKey] ?? 0;
-          return (
-            <div key={levelKey} className="level-cell">
-              <button
-                className={`btn level-btn ${i === unlockedIndex ? 'btn-primary' : ''}`}
-                onMouseDown={keepFocus} onClick={() => useUiStore.getState().openRegion(i)} disabled={locked}
-                aria-label={locked ? `${name}（尚未解鎖）` : stage > 0 ? `繼續 ${name} 第 ${stage + 1} 關` : `開始 ${name}`}>
-                <b>{locked ? '🔒' : '▶'} {name}</b>
-                {!locked && stage > 0 && <small className="level-progress">{mapName(levelKey, stage)}</small>}
-              </button>
-              {!locked && stage > 0 && (
-                <button className="level-restart" onMouseDown={keepFocus} onClick={() => beginLevel(levelKey, 0)}>
-                  ↺ 從第 1 關開始
-                </button>
-              )}
-            </div>
-          );
-        })}
-      </div>
-      <div className="challenge-row">
-      <button className="btn skill-boss-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openModal('skillBoss')}>
-        ⚔️ 魔王挑戰<small>聽・說・讀・寫</small>
-      </button>
-      <button className="btn golden-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openModal('golden')}>
-        👑 黃金之路<small>{goldenBest > 0 ? `最佳：通過 ${goldenBest} / ${GOLDEN_STAGE_COUNT} 關` : '只憑英文能力挑戰沉默魔王'}</small>
-      </button>
+      {/* 副本：區域請直接點上面地圖的旗幟。這裡放邊複習邊賺資源的副本與挑戰 */}
+      <p className="muted level-bar-hint">⚔️ 副本與挑戰</p>
+      <div className="side-modes">
+        <button className="side-mode" onMouseDown={keepFocus} onClick={() => openModal('rush')}>
+          <b>⚡ 每日素材本</b><small>60 秒快速複習，賺金幣與素材</small>
+        </button>
+        <button className="side-mode" onMouseDown={keepFocus} onClick={() => openModal('review')}>
+          <b>📕 錯題修煉場</b><small>練熟答錯的字，拿掃蕩券</small>
+        </button>
+        <button className="side-mode" onMouseDown={keepFocus} onClick={() => openModal('tower')}>
+          <b>🗼 英雄時空之塔</b><small>一層層往上，拿英雄碎片</small>
+        </button>
+        <button className="side-mode is-boss" onMouseDown={keepFocus} onClick={() => openModal('skillBoss')}>
+          <b>⚔️ 魔王挑戰</b><small>聽・說・讀・寫</small>
+        </button>
+        <button className="side-mode is-golden" onMouseDown={keepFocus} onClick={() => openModal('golden')}>
+          <b>👑 黃金之路</b><small>{goldenBest > 0 ? `最佳：${goldenBest} / ${GOLDEN_STAGE_COUNT} 關` : '只憑英文挑戰沉默魔王'}</small>
+        </button>
       </div>
     </section>
   );

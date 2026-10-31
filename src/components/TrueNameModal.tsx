@@ -4,7 +4,8 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { RARITY_INFO, currentRarity, heroDef, heroTitle, heroWord } from '../game/heroes';
-import { TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_BONUS, checkTyped, isTrueName, revealedName, trialQuestion, trialsDone } from '../game/trueName';
+import { TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_BONUS, checkTyped, isTrueName, trialQuestion, trialsDone } from '../game/trueName';
+import { NameGlow } from './HeroBits';
 import type { TrialQuestion } from '../game/trueName';
 import { checkVoice } from '../game/battle';
 import { createRecognizer, isSpeechRecognitionSupported } from '../game/speech';
@@ -27,7 +28,6 @@ export default function TrueNameModal() {
   const [round, setRound] = useState(0); // 重新出題（答錯後再試一次）
   const h = heroDef(heroId);
   const rarity = currentRarity(h, tier);
-  const letters = revealedName(heroId, progress);
   const done = trialsDone(progress);
   const named = isTrueName(progress);
   const portrait = useMemo(() => heroDataUrl(heroId, 3), [heroId]);
@@ -42,9 +42,7 @@ export default function TrueNameModal() {
       <section className={`truename-head ${named ? 'is-named' : ''}`} style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}>
         <img src={portrait} alt="" />
         <div>
-          <div className="name-slots" aria-label={named ? `真名 ${h.id}` : `已解開 ${done} / ${TRIAL_COUNT}`}>
-            {letters.map((ch, i) => <span key={i} className={ch ? 'is-filled' : ''}>{ch}</span>)}
-          </div>
+          <div className="name-glow-big"><NameGlow id={heroId} progress={progress} /></div>
           <p className="muted">{heroTitle(h)}・{h.meaning}</p>
           <p className={named ? 'req-ok' : 'muted'}>
             {named ? `✦ 真名英雄：基礎能力 +${TRUE_NAME_BONUS * 100}%` : `完成 ${done} / ${TRIAL_COUNT} 項。全部完成後基礎能力 +${TRUE_NAME_BONUS * 100}%，每項送碎片 ◆${TRIAL_SHARDS}`}
@@ -113,6 +111,7 @@ function TrialPanel({ question, onPass, onRetry }: { question: TrialQuestion; on
     if (question.kind !== 'voice' || dictation) return;
     recognizer.current = createRecognizer({
       onStart: () => setListening(true),
+      accept: (t) => checkVoice({ type: 'voice', desc: '', ans: question.answer }, t),
       onResult: (t) => judge(t[0] ?? '', checkVoice({ type: 'voice', desc: '', ans: question.answer }, t)),
       onError: () => setListening(false),
       onEnd: () => setListening(false),

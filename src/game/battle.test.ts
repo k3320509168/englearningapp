@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from './types';
-import {
+import { isVoiceFragment, questionAudio,
   applyLetter, checkChoice, checkVoice, isLenientStage,
   questionHint, sentenceMatchRatio, shuffleChoice, speedMultiplier,
 } from './battle';
@@ -48,6 +48,18 @@ describe('voice', () => {
     expect(checkVoice(q, 'start')).toBe(true);
     expect(checkVoice(q, 'a star')).toBe(true);
     expect(checkVoice(q, 'restart')).toBe(false);
+  });
+
+  it('長單字容許電腦麥克風常見的誤聽：差兩個字母、或被拆成幾個詞', () => {
+    const q: Question = { type: 'voice', desc: '請唸出單字：直升機', ans: 'HELICOPTER', speak: 'helicopter' };
+    expect(checkVoice(q, 'Helicopter')).toBe(true);
+    expect(checkVoice(q, 'hellicopter')).toBe(true);
+    expect(checkVoice(q, 'a helicopters')).toBe(true);
+    expect(checkVoice(q, 'heli copter')).toBe(true);
+    expect(checkVoice(q, 'helly copter')).toBe(true);
+    expect(checkVoice(q, 'apple')).toBe(false);
+    expect(checkVoice(q, 'hello')).toBe(false);
+    expect(checkVoice({ type: 'voice', desc: '', ans: 'APPLE' }, 'apply')).toBe(false);
   });
 
   it('passes sentences at 80% of words in order', () => {
@@ -115,5 +127,31 @@ describe('口說轉拼寫：辨識容錯不能當成正確拼法（N1）', () =>
     const start = { type: 'voice', desc: '請唸出單字：開始', ans: 'START', speak: 'start', accept: ['STAR'] };
     expect(checkVoice(start, 'star')).toBe(true);
     expect(checkTypedAnswer(voiceFallback(start), 'STAR')).toBe(false);
+  });
+});
+
+describe('questionAudio：答案要唸的英文', () => {
+  it('聽力題唸題目播放的英文，不唸中文選項或空白', () => {
+    const word = { type: 'choice', skill: 'listening' as const, desc: '🎧 聽一聽，選出正確的意思', speak: 'Office', options: ['A. 辦公室', 'B. 餐廳', 'C. 機場', 'D. 飯店'], ans: 'A' };
+    expect(questionAudio(word)).toBe('Office');
+    const reply = { type: 'choice', skill: 'listening' as const, desc: '🎧 聽到這句話，最適合的回應是？', speak: 'Whose bag is this?', options: ['A. It belongs to Mr. Lin.', 'B. x', 'C. y', 'D. z'], ans: 'A' };
+    expect(questionAudio(reply)).toBe('Whose bag is this?');
+  });
+
+  it('有空格的句子唸完整句子；選項是英文就唸選項；都沒有就不唸', () => {
+    expect(questionAudio({ type: 'choice', desc: '【生活文法】She ___ a teacher.', options: ['A. is', 'B. am'], ans: 'A' })).toBe('She is a teacher.');
+    expect(questionAudio({ type: 'choice', desc: '早餐的英文是？', options: ['A. breakfast', 'B. lunch'], ans: 'A' })).toBe('breakfast');
+    expect(questionAudio({ type: 'choice', desc: '【短文理解】How much?', options: ['A. $120', 'B. $90'], ans: 'A' })).toBe('');
+    expect(questionAudio({ type: 'spell', desc: '請拼出：書', ans: 'BOOK', speak: 'book' })).toBe('book');
+  });
+});
+
+describe('isVoiceFragment：收音被切斷', () => {
+  const heli = { type: 'voice', desc: '請唸出單字：直升機', ans: 'HELICOPTER', speak: 'helicopter' };
+  it('只聽到開頭一小段算被切斷（免費重唸）；唸成別的字不算', () => {
+    expect(isVoiceFragment(heli, ['Hel'])).toBe(true);
+    expect(isVoiceFragment(heli, [''])).toBe(true);
+    expect(isVoiceFragment(heli, ['apple'])).toBe(false);
+    expect(isVoiceFragment(heli, ['helicopter'])).toBe(false);
   });
 });

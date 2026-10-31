@@ -20,7 +20,7 @@ function renderTasks(tasks: DailyTask[], claim: (id: string) => boolean) {
             <div className="daily-info">
               <b>{def.label}</b>
               <span className="daily-track"><span style={{ width: `${Math.min(100, (t.progress / def.goal) * 100)}%` }} /></span>
-              <small className="muted">{t.progress} / {def.goal}・獎勵 🪙{def.reward.gold}{def.reward.tickets ? ` 🎫×${def.reward.tickets}` : ''}</small>
+              <small className="muted">{t.progress} / {def.goal}・獎勵 🪙{def.reward.gold}{def.reward.tickets ? ` 🎫×${def.reward.tickets}` : ''}{'badges' in def.reward && def.reward.badges ? ` 🎖️×${def.reward.badges}` : ''}</small>
             </div>
             {t.claimed ? <span className="hero-tag">已領取</span> : (
               <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!done}

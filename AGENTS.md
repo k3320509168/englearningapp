@@ -15,6 +15,7 @@ GitHub：`k3320509168/englearningapp`；`main` 會由 GitHub Actions 自動部�
 - **好玩第一、爽度第二、英文第三。** 英文是讓角色變強、打關更輕鬆的捷徑，遊戲要給人「大方」的感覺。
 - 目標：玩到 C1 區的玩家，英文至少 B2～B2+。
 - 工作方式：細節由 AI 和 Gemini 討論後直接決定；只有大改動、影響整體平衡、明顯不合理或和使用者指令衝突時，才回來問使用者。
+- **分工（2026-10-31）**：Claude 是主要製作者（決策、整合、程式、測試）；ChatGPT（對話「ENG RPG遊戲」）是同事，多外包給它：發想、深入研究、寫題庫與劇本、分析程式問題，並依工作挑合適的模型。
 - 完整設計與完成狀態：**`docs/ROUND4_DESIGN.md`**（接手先讀這份）。
 
 ## 協作方式（給使用者看的白話版）
@@ -52,7 +53,7 @@ Mac 相容性：遊戲本身、測試、`chat-batch.ts`、`review-batch.ts` 都�
 npm install
 npm run dev                  # 本地預覽 http://localhost:5173/englearningapp/
 npx tsc -b                   # 型別檢查
-npx vitest run               # 測試（目前 255 個全過）
+npx vitest run               # 測試（目前 267 個全過）
 npx eslint src --quiet
 npm run validate:questions   # 題庫格式檢查
 ```
@@ -60,7 +61,7 @@ npm run validate:questions   # 題庫格式檢查
 ## 程式地圖
 | 位置 | 內容 |
 |---|---|
-| `src/store/saveStore.ts` | 存檔（Zustand persist，`SAVE_VERSION` 17）。新欄位要加進 `partialize`；`migrateSave` 用 `conform` 補預設值 |
+| `src/store/saveStore.ts` | 存檔（Zustand persist，`SAVE_VERSION` 18）。新欄位要加進 `partialize`；`migrateSave` 用 `conform` 補預設值 |
 | `src/store/battleStore.ts` | 戰鬥邏輯：答題、傷害、combo、首領破甲、魔王技能、天賦、連攜技、波次、**敵人行動條** |
 | `src/store/uiStore.ts` | 視窗（`ModalName`） |
 | `src/game/MainScene.ts`、`MapScene.ts` | Phaser 場景，訂閱 store 變化做動畫 |
@@ -107,7 +108,12 @@ npm run validate:questions   # 題庫格式檢查
 
 **2026-10-31 第五批（Mac）**：戰鬥平衡 v0.9——正確率 90%、不穿裝備就能過關；裝備與轉職是讓英文差一點的玩家也能過的加分。怪物基準、行動條、後期首領、炎魔炸彈、沉默君王封印都有調整，模擬結果在 `docs/STAGE_PLAN.md` 第 12 節。
 
-## 下一步（照順序）
+**2026-10-31 第六批（Mac，進行中）**：發音不再打斷（Mac Chrome 打斷發音會讓整個瀏覽器卡死）、口說辨識持續收音、獎勵轉盤（第 13 節）、英雄畫面重設計（第 14 節）、等級 200 與主角換職業（第 15 節 P0）。專武、副本獎勵、前置區域「初始逃亡之地」與故事強化（第 15、16 節）還沒做。
+
+## 下一步
+**完整任務清單在 `docs/TASKS.md`（2026-10-31 整理），照清單做、做完打勾。** 以下是較早的紀錄：
+
+### 舊的下一步（2026-10-29）
 1. commit 行動條系統（如果還沒）。
 2. 請 Gemini（Pro）審查整套敵我攻擊機制，調數值：出手頻率、傷害、僧侶治療量、技能使用率、緊張感但不會一下就輸。改完跑測試並本地實玩。
 3. 繼續出題、審題；處理 `D:\Game_q_storege\pending`。

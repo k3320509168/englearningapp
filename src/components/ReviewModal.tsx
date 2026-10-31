@@ -33,6 +33,7 @@ export default function ReviewModal() {
     setStreak(0);
   };
   const onTrain = (correct: boolean) => {
+    if (correct) useSaveStore.getState().earnTrainingGold();
     const next = correct ? streak + 1 : 0;
     setStreak(next);
     if (next > 0 && next % SWEEP_STREAK === 0) {

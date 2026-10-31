@@ -34,7 +34,8 @@ export const TOWER_FLOORS = 30;
 export const TOWER_QUESTIONS = 5;
 export const TOWER_PASS = 4;
 export const towerRegion = (floor: number) => Math.min(LEVELS.length - 1, Math.floor((floor - 1) / 3));
-export const towerReward = (floor: number) => ({ shards: floor % 5 === 0 ? 15 : 5, gold: 100 * floor });
+// 每一層第一次通過：碎片、金幣，和 2 個職業徽章（主角換職業後點亮轉職用）
+export const towerReward = (floor: number) => ({ shards: floor % 5 === 0 ? 15 : 5, gold: 100 * floor, badges: 2 });
 
 export function towerQuestions(floor: number, rand: () => number = Math.random): Question[] {
   const pool = getPool(LEVELS[towerRegion(floor)]);

@@ -5,9 +5,12 @@ const voice = (name: string, localService = true, lang = 'en-US') => ({ name, lo
 const IPHONE_VOICES = [voice('Samantha (Enhanced)'), voice('Samantha'), voice('Ava (Premium)'), voice('Bubbles'), voice('Daniel', true, 'en-GB')];
 // 記錄每次送進語音引擎的語速
 const spoken: { text: string; rate: number }[] = [];
-const synth = { getVoices: () => IPHONE_VOICES, speaking: false, pending: false, paused: false, cancel() {}, resume() {}, speak(u: { text: string; rate: number }) { spoken.push({ text: u.text, rate: u.rate }); } };
+// autoEnd：送進去就馬上唸完（觸發 onend）；關掉時模擬「還在唸」
+const synth = { autoEnd: true, getVoices: () => IPHONE_VOICES, speaking: false, pending: false, paused: false, cancel() {}, resume() {},
+  speak(u: { text: string; rate: number; onend?: () => void }) { spoken.push({ text: u.text, rate: u.rate }); if (this.autoEnd) u.onend?.(); } };
 vi.stubGlobal('window', { speechSynthesis: synth, setTimeout: () => 0, clearTimeout: () => undefined });
-vi.stubGlobal('SpeechSynthesisUtterance', class { text: string; rate = 1; volume = 1; lang = ''; voice: unknown = null; onend: unknown; onerror: unknown; constructor(t: string) { this.text = t; } });
+vi.stubGlobal('SpeechSynthesisUtterance', class { text: string; rate = 1; volume = 1; lang = ''; voice: unknown = null; onend: unknown; onerror: unknown;
+  constructor(t: string) { this.text = t; (globalThis as unknown as { lastUtterance?: unknown }).lastUtterance = this; } });
 
 const { pickVoice, slowText, honorsRate, speak } = await import('./speech');
 
@@ -38,21 +41,26 @@ describe('正常語速與慢速語速分開', () => {
     spoken.length = 0;
     speak('rice', 1.2, 1, false, undefined, 0.4);
     speak('rice', 1.2, 1, true, undefined, 0.4);
-    speak('rice', 0.7, 1, true, undefined, 0.4);
+    speak('bread', 0.7, 1, true, undefined, 0.4);
     expect(spoken.map(x => x.rate)).toEqual([1.2, 0.4, 0.4]);
   });
 });
 
 describe('Mac Chrome 的發音穩定性', () => {
-  it('沒有在唸的時候不呼叫 cancel（Chrome 在 cancel 後立刻 speak 容易卡住）', () => {
+  it('從不呼叫 cancel：上一句還在唸時，新的句子排隊（只留最新的一句），唸完才送出', () => {
     const cancel = vi.spyOn(synth, 'cancel');
-    synth.speaking = false;
-    speak('rice');
+    spoken.length = 0;
+    synth.autoEnd = false;
+    speak('first sentence');
+    const first = (globalThis as unknown as { lastUtterance?: unknown }).lastUtterance;
+    speak('second sentence');
+    speak('third sentence');
+    expect(spoken.map(x => x.text)).toEqual(['First sentence.']);
     expect(cancel).not.toHaveBeenCalled();
-    synth.speaking = true;
-    speak('rice');
-    expect(cancel).toHaveBeenCalledTimes(1);
-    synth.speaking = false;
+    synth.autoEnd = true;
+    // 第一句唸完：送出排隊中最新的一句（第二句已經被丟掉）
+    (first as { onend: () => void }).onend();
+    expect(spoken.map(x => x.text)).toEqual(['First sentence.', 'Third sentence.']);
     cancel.mockRestore();
   });
 

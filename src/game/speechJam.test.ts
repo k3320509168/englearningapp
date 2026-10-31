@@ -10,6 +10,7 @@ class FakeUtterance {
   onstart: (() => void) | null = null;
   onend: (() => void) | null = null;
   onerror: ((e: unknown) => void) | null = null;
+  onboundary: (() => void) | null = null;
   constructor(text: string) { this.text = text; }
 }
 
@@ -46,19 +47,49 @@ describe('speak', () => {
     return { synth, speech };
   }
 
-  it('retries a stuck engine with a new utterance, then reports it as jammed', async () => {
+  // 完全不 cancel（Mac Chrome 打斷發音會讓整個瀏覽器卡死）；一直沒有任何事件，等估計的時間到才通知畫面
+  it('never cancels or re-sends; reports silence only after the estimated speaking time', async () => {
     const { synth, speech } = await setup(false);
+    const cancel = vi.spyOn(synth, 'cancel');
     const seen: boolean[] = [];
     speech.onSpeechJam(j => seen.push(j));
-    speech.speak('apple');
-    expect(synth.spoken).toHaveLength(1);
-    vi.advanceTimersByTime(2100);
-    expect(synth.spoken).toHaveLength(2);
-    expect(synth.spoken[1]).not.toBe(synth.spoken[0]); // 不重複使用被取消的 utterance
-    vi.advanceTimersByTime(2000);
+    speech.speak('Whose bag is this?');
+    expect(synth.resume).toHaveBeenCalled();
+    vi.advanceTimersByTime(3000);
+    expect(speech.isSpeechJammed()).toBe(false);
+    speech.speak('Next question.');
+    expect(synth.spoken).toHaveLength(1); // 排隊，不打斷
+    vi.advanceTimersByTime(3000);
+    expect(cancel).not.toHaveBeenCalled();
     expect(speech.isSpeechJammed()).toBe(true);
     expect(seen).toEqual([true]);
-    expect(synth.resume).not.toHaveBeenCalled(); // 沒有暫停就不呼叫 resume
+    expect(synth.spoken).toHaveLength(2); // 估計時間到，當作唸完，送出下一句
+  });
+
+  it('a boundary or end event counts as speaking even without onstart', async () => {
+    const { synth, speech } = await setup(false);
+    speech.speak('Whose bag is this?');
+    synth.spoken[0].onboundary?.();
+    vi.advanceTimersByTime(9000);
+    expect(speech.isSpeechJammed()).toBe(false);
+  });
+
+  it('the same sentence asked twice right away is spoken once, without cancelling the first', async () => {
+    const { synth, speech } = await setup(false);
+    const cancel = vi.spyOn(synth, 'cancel');
+    speech.speak('Whose bag is this?');
+    speech.speak('Whose bag is this?');
+    vi.advanceTimersByTime(300);
+    expect(synth.spoken).toHaveLength(1);
+    expect(cancel).not.toHaveBeenCalled();
+  });
+
+  it('empty text or text without English letters is never sent to the engine', async () => {
+    const { synth, speech } = await setup(false);
+    speech.speak('');
+    speech.speak('辦公室');
+    vi.advanceTimersByTime(300);
+    expect(synth.spoken).toHaveLength(0);
   });
 
   it('a working engine speaks once and is not jammed', async () => {

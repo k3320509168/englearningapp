@@ -88,11 +88,16 @@ export function speakableText(text: string): string {
   return /[.!?]$/.test(capitalized) ? capitalized : `${capitalized}.`;
 }
 
-// Chrome 的已知問題：cancel() 後立刻 speak()，開頭常會被吃掉（例如「thank」只剩「ank」），
-// Mac 版甚至可能讓語音引擎卡住、之後都不出聲。所以只有正在播放時才取消，而且取消後等一下再唸。
-let pending: number | undefined;
-// 保留目前的 utterance，避免被回收後播到一半中斷
-let current: SpeechSynthesisUtterance | null = null;
+// 發音佇列（2026-10-31，和 ChatGPT 第十輪討論後定案）：
+// Mac 的 Chrome 上「打斷正在唸或還沒開始的發音」（speechSynthesis.cancel）會讓整個瀏覽器的發音卡死，
+// 要把 Chrome 完全結束才會恢復——玩家答得越快越容易踩到。所以遊戲完全不呼叫 cancel：
+// - 上一句還在唸，新的一句先排隊，等唸完再送出；排隊只留最新的一句（舊的還沒輪到就丟掉，不會越積越多）。
+// - 每一句都用新的 utterance，唸完之前一直保留參考（被回收的話 Chrome 的事件會不見、佇列跟著卡住）。
+// - 收不到「唸完」的通知時，依句子長度估計時間，到了就當作唸完、繼續下一句；完全沒有任何事件才通知畫面。
+interface SpeakRequest { text: string; rate: number; volume: number; slow: boolean; voiceName?: string; slowRate: number }
+let playing: SpeechSynthesisUtterance | null = null;
+let queued: SpeakRequest | null = null;
+const keepAlive = new Set<SpeechSynthesisUtterance>();
 
 // 瀏覽器的發音引擎卡死（Mac 的 Chrome 曾發生：speaking 一直是 true，卻永遠不開始唸，同一個瀏覽器的所有分頁都一樣）。
 // 偵測到時通知畫面：聽力題改成直接顯示英文，並提示重新整理或重開瀏覽器。成功唸出一句就解除
@@ -108,7 +113,6 @@ function setJammed(value: boolean) {
   jammed = value;
   jamListeners.forEach(fn => fn(value));
 }
-const START_TIMEOUT_MS = 1800;
 
 // 瀏覽器規定頁面被點過之前不能發音（例如一進戰鬥就自動唸題目）：被擋下的那一句，等第一次點擊或按鍵時補唸
 let blocked: { replay: () => void; at: number } | null = null;
@@ -123,60 +127,86 @@ if (typeof window !== 'undefined') {
   window.addEventListener?.('keydown', replay, true);
 }
 
-// rate：正常語速；slowRate：慢速語速（兩個分開設定，調其中一個不會影響另一個）
-export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string, slowRate = SLOW_RATE) {
-  if (!('speechSynthesis' in window)) return;
+// 估計唸完要多久（毫秒）：約每個字元 90ms，語速越慢越久，再加 3 秒緩衝
+const estimateMs = (text: string, rate: number) => 3000 + (text.length * 90) / Math.max(0.3, rate);
+
+function play(r: SpeakRequest) {
   const synth = window.speechSynthesis;
-  const busy = synth.speaking || synth.pending;
-  if (busy) synth.cancel();
-  // 引擎卡在暫停狀態時先恢復（只在真的暫停時呼叫；多餘的 resume 在 Mac Chrome 上可能讓佇列卡住）
+  // Chrome（尤其 Mac）的已知問題：語音引擎有時卡在暫停狀態，之後按什麼都不會唸，先恢復
   if (synth.paused) synth.resume();
-  window.clearTimeout(pending);
-  const voice = pickVoice(slow, voiceName);
-  // 每次（包含重試）都建立新的 utterance：被 cancel 過的 utterance 再丟回 speak，會讓 Chrome 的發音佇列卡死
-  const make = () => {
-    const u = new SpeechSynthesisUtterance(speakableText(slow ? slowText(text) : text));
-    u.lang = 'en-US';
-    if (voice) u.voice = voice;
-    u.rate = slow ? slowRate : rate;
-    u.volume = volume;
-    return u;
-  };
+  const text = speakableText(r.slow ? slowText(r.text) : r.text);
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US';
+  const voice = pickVoice(r.slow, r.voiceName);
+  if (voice) u.voice = voice;
+  u.rate = r.slow ? r.slowRate : r.rate;
+  u.volume = r.volume;
+  playing = u;
+  keepAlive.add(u);
   // 發音時壓低背景音樂，唸完再恢復
   duckMusic(true);
-  const attempt = (retry: boolean) => {
-    const utterance = make();
-    current = utterance;
-    // 用 onstart 判斷「真的開始唸了」：不能只看 synth.speaking，短字很快就唸完
-    let started = false;
-    utterance.onstart = () => { started = true; setJammed(false); };
-    utterance.onend = () => { if (current === utterance) duckMusic(false); };
-    utterance.onerror = (e: SpeechSynthesisErrorEvent) => {
-      if (current !== utterance) return;
-      duckMusic(false);
-      // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
-      if (e?.error === 'not-allowed') blocked = { replay: () => speak(text, rate, volume, slow, voiceName, slowRate), at: Date.now() };
-    };
-    synth.speak(utterance);
-    window.setTimeout(() => {
-      if (current !== utterance || started || blocked) return;
-      synth.cancel();
-      // 第一次沒開始：重設引擎、隔一下用新的 utterance 再試；再沒開始就判定卡死
-      if (!retry) pending = window.setTimeout(() => { if (current === utterance) attempt(true); }, 250);
-      else { duckMusic(false); setJammed(true); }
-    }, START_TIMEOUT_MS);
+  // Mac Chrome 有時不觸發 onstart，但有在唸：開始、字詞邊界、結束任一個事件都算「有聲音」
+  let alive = false;
+  const heard = () => { alive = true; setJammed(false); };
+  let done = false;
+  const finish = () => {
+    if (done) return;
+    done = true;
+    keepAlive.delete(u);
+    if (playing !== u) return;
+    playing = null;
+    if (queued) { const next = queued; queued = null; play(next); }
+    else duckMusic(false);
   };
-  if (busy) pending = window.setTimeout(() => attempt(false), 120);
-  else attempt(false);
+  u.onstart = heard;
+  u.onboundary = heard;
+  u.onend = () => { heard(); finish(); };
+  u.onerror = (e: SpeechSynthesisErrorEvent) => {
+    // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
+    if (e?.error === 'not-allowed') blocked = { replay: () => speak(r.text, r.rate, r.volume, r.slow, r.voiceName, r.slowRate), at: Date.now() };
+    finish();
+  };
+  synth.speak(u);
+  // 和 main 版一樣：speak 之後 resume（Mac Chrome 引擎停在暫停時需要；沒暫停時沒有作用）
+  synth.resume();
+  window.setTimeout(() => {
+    if (done) return;
+    // 一直沒有任何事件：通知畫面（聽力題改顯示英文）。不取消，直接當作唸完，讓下一句可以送出
+    if (!alive && !blocked) setJammed(true);
+    finish();
+  }, estimateMs(text, u.rate));
 }
 
-// 開始錄音前停止發音，避免麥克風把遊戲自己的語音也收進去
-export function stopSpeaking() {
+// rate：正常語速；slowRate：慢速語速（兩個分開設定，調其中一個不會影響另一個）
+// 同一句話在很短的時間內又被要求唸一次（開發模式 React StrictMode 會把效果執行兩次、玩家連點按鈕）：直接忽略
+const REPEAT_IGNORE_MS = 400;
+let lastRequest = { key: '', at: 0 };
+
+export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string, slowRate = SLOW_RATE) {
   if (!('speechSynthesis' in window)) return;
-  window.clearTimeout(pending);
-  current = null;
-  window.speechSynthesis.cancel();
-  duckMusic(false);
+  // 空白或沒有英文字母（例如中文選項）：不送出。英文語音唸不出來，Chrome 也不會觸發任何事件
+  if (!/[A-Za-z]/.test(text ?? '')) return;
+  const key = `${slow ? 'slow' : 'normal'}|${text}`;
+  const now = Date.now();
+  if (key === lastRequest.key && now - lastRequest.at < REPEAT_IGNORE_MS) return;
+  lastRequest = { key, at: now };
+  const request = { text, rate, volume, slow, voiceName, slowRate };
+  // 上一句還在唸：排隊（只留最新的一句），不打斷
+  if (playing) { queued = request; return; }
+  play(request);
+}
+
+// 不要再唸排隊中的句子（切換分頁、開始錄音時）。正在唸的那一句讓它唸完，不打斷
+export function stopSpeaking() {
+  queued = null;
+}
+
+// 等目前這一句唸完（最多 maxWait 毫秒）再做事：開始錄音前用，避免麥克風收到遊戲自己的語音
+export function whenSilent(fn: () => void, maxWait = 3000) {
+  if (!playing) { fn(); return; }
+  const until = Date.now() + maxWait;
+  const check = () => (!playing || Date.now() >= until ? fn() : window.setTimeout(check, 100));
+  window.setTimeout(check, 100);
 }
 
 // 語音辨識錯誤的說明（給玩家看）；aborted 是自己停止的，不用顯示
@@ -200,25 +230,62 @@ export function isSpeechRecognitionSupported(): boolean {
   return getRecognitionCtor() !== null;
 }
 
+// 收音：Chrome 電腦版預設「一停頓就結束」，唸長字（helicopter）時常只送出開頭的 "Hel"。
+// 改成持續收音、累積所有結果：停下來 SILENCE_MS 沒有新聲音才結束，最長 MAX_LISTEN_MS；
+// 一聽到對的答案（accept）就立刻結束、回報答對，不用等停頓
+export const SILENCE_MS = 1300;
+export const MAX_LISTEN_MS = 7000;
+
 export function createRecognizer(handlers: {
   onStart: () => void;
-  onResult: (transcripts: string[]) => void; // 辨識結果的所有候選（第一個最可能）
+  onResult: (transcripts: string[]) => void; // 辨識結果的所有候選（第一個是整段最可能的內容）
   onError: (error: string) => void;
   onEnd: () => void;
+  accept?: (transcripts: string[]) => boolean; // 聽到對的答案就提早結束
 }): Recognizer | null {
   const Ctor = getRecognitionCtor();
   if (!Ctor) return null;
   const recognition = new Ctor();
   recognition.lang = 'en-US';
-  recognition.interimResults = false;
+  recognition.continuous = true;
+  recognition.interimResults = true;
   // 多拿幾個候選：發音正確但被辨識成相近的字時，其他候選常常就是正確答案
   recognition.maxAlternatives = 5;
-  recognition.onstart = handlers.onStart;
-  recognition.onresult = (event: any) => {
-    const result = event.results[0];
-    const list: string[] = [];
-    for (let i = 0; i < result.length; i++) list.push(result[i].transcript);
+  // 這一次收音聽到的內容：每一段結果的所有候選
+  let segments: string[][] = [];
+  let delivered = false;
+  let silence: number | undefined;
+  let limit: number | undefined;
+  const candidates = () => {
+    const whole = segments.map(alts => alts[0] ?? '').join(' ').trim();
+    return [whole, ...segments.flat()].filter((t, i, all) => t && all.indexOf(t) === i);
+  };
+  const deliver = () => {
+    if (delivered) return;
+    const list = candidates();
+    if (!list.length) return;
+    delivered = true;
     handlers.onResult(list);
+  };
+  const clearTimers = () => { window.clearTimeout(silence); window.clearTimeout(limit); };
+  const finish = () => { clearTimers(); try { recognition.stop(); } catch { /* 已經停了 */ } };
+  recognition.onstart = () => {
+    segments = [];
+    delivered = false;
+    limit = window.setTimeout(finish, MAX_LISTEN_MS);
+    handlers.onStart();
+  };
+  recognition.onresult = (event: any) => {
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      const result = event.results[i];
+      const alts: string[] = [];
+      for (let k = 0; k < result.length; k++) alts.push(result[k].transcript.trim());
+      segments[i] = alts;
+    }
+    if (handlers.accept?.(candidates())) { deliver(); finish(); return; }
+    // 還在講：等停頓夠久才結束
+    window.clearTimeout(silence);
+    silence = window.setTimeout(finish, SILENCE_MS);
   };
   // 聆聽時背景音樂與音效靜音：Mac 的喇叭就在麥克風旁邊，音樂會一起被收進去，辨識就會錯
   let holding = false;
@@ -228,14 +295,23 @@ export function createRecognizer(handlers: {
     holdMusic(on);
     muteSfx(on);
   };
-  recognition.onerror = (event: any) => { hold(false); handlers.onError(event.error); };
-  recognition.onend = () => { hold(false); handlers.onEnd(); };
+  recognition.onerror = (event: any) => {
+    clearTimers();
+    hold(false);
+    // 有聽到東西就照常判斷（例如講完之後才逾時）；什麼都沒聽到才回報錯誤
+    if (candidates().length && event.error !== 'aborted') deliver();
+    else handlers.onError(event.error);
+  };
+  recognition.onend = () => { clearTimers(); hold(false); deliver(); handlers.onEnd(); };
   return {
     start: () => {
+      // 不打斷遊戲正在唸的句子：清掉排隊的，等這一句唸完（最多 3 秒）再開始收音
       stopSpeaking();
-      hold(true);
-      try { recognition.start(); } catch { /* 已在錄音中 */ }
+      whenSilent(() => {
+        hold(true);
+        try { recognition.start(); } catch { /* 已在錄音中 */ }
+      });
     },
-    stop: () => { hold(false); recognition.stop(); },
+    stop: () => { clearTimers(); hold(false); delivered = true; try { recognition.stop(); } catch { /* 已經停了 */ } },
   };
 }

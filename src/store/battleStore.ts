@@ -45,6 +45,8 @@ import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '.
 import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, isActive, chooseReflect, modDamageMult, modGaugeMult, modPreference, modSealed, modsFor, skillName, startMods } from '../game/bossMods';
 import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods';
 import { grammarName, primaryGrammar } from '../game/grammar';
+import { WHEEL_CHECKPOINTS, wheelKey } from '../game/wheel';
+import { STORIES, bossStoryId, mapStoryId } from '../game/story';
 import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
 import type { SkillBossId } from '../game/skillBosses';
 import {
@@ -526,6 +528,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     });
     // 技能封印只封隊長一個人
     if (get().sealed && !get().sealTarget) set({ sealTarget: get().party[Math.max(0, leaderIndex(get().party))]?.id ?? null });
+    // 劇情：每張三星地圖第一次打第 1 關播開場；區域魔王登場也有劇情（看過就不再自動播放）
+    if (s.mode === 'normal') {
+      const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : stageInMap(stageIdx) === 1 ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), 'intro') : '';
+      if (storyId && STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
+    }
     // 新手 1-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次
     if (s.mode === 'normal' && s.levelIdx === 0 && stageIdx === ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill')) {
       const party = get().party;
@@ -764,6 +771,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       }
       set({ ...patch, phase: 'levelClear' });
       return;
+    }
+    // 獎勵轉盤：每張地圖第一次破第 5、10、15、20 關各轉一次
+    if (s.mode === 'normal' && WHEEL_CHECKPOINTS.includes(stageInMap(s.stageIdx)) && save().grantWheel(wheelKey(s.levelKey, s.stageIdx))) useUiStore.getState().setWheelHidden(false);
+    // 打完一張地圖（第 20 關）：播這張地圖的通關劇情
+    if (s.mode === 'normal' && stageInMap(s.stageIdx) === MAP_SIZE) {
+      const storyId = mapStoryId(s.levelIdx, mapIndexOf(s.stageIdx), 'clear');
+      if (STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
     }
     // 三星關卡的第 20 關（大 BOSS）或區域最終魔王：三星評價（第 15 關的小 BOSS 不結算）
     if (stageInMap(s.stageIdx) === MAP_SIZE || isLastStage) {

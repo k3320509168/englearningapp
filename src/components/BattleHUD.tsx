@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { ONBOARD_SUMMON_STAGE, useBattleStore } from '../store/battleStore';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { answerSlots, completedSentence, questionHint } from '../game/battle';
+import { answerSlots, checkVoice, completedSentence, isVoiceFragment, questionAudio, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
 import type { Question, QuestionSkill } from '../game/types';
 import { skillName } from '../game/bossMods';
@@ -375,6 +375,7 @@ function switchVoiceToSpelling() {
   useBattleStore.getState().switchToSpelling();
 }
 
+const FREE_RETRIES = 2;
 function VoiceAnswer({ question }: { question: Question }) {
   const [listening, setListening] = useState(false);
   const [error, setError] = useState('');
@@ -382,10 +383,23 @@ function VoiceAnswer({ question }: { question: Question }) {
   const recognizer = useRef<Recognizer | null>(null);
   const say = useSpeak();
 
+  // 收音被切斷、只聽到開頭一小段：免費再唸（每題最多 FREE_RETRIES 次，之後照常判定）
+  const retries = useRef(0);
+
   useEffect(() => {
     recognizer.current = createRecognizer({
       onStart: () => { setListening(true); setError(''); },
-      onResult: (t) => useBattleStore.getState().submitVoice(t),
+      // 一聽到對的答案就提早結束收音
+      accept: (t) => { const q = useBattleStore.getState().question; return !!q && q.type === 'voice' && checkVoice(q, t); },
+      onResult: (t) => {
+        const q = useBattleStore.getState().question;
+        if (q && q.type === 'voice' && !checkVoice(q, t) && isVoiceFragment(q, t) && retries.current < FREE_RETRIES) {
+          retries.current += 1;
+          setError(t[0] ? `只聽到「${t[0]}」，好像被切斷了，再唸一次（不算錯）` : '沒有聽清楚，再唸一次（不算錯）');
+          return;
+        }
+        useBattleStore.getState().submitVoice(t);
+      },
       onError: (err) => {
         // 玩家拒絕使用麥克風：口說題改成拼寫，之後的關卡也是（設定可以再改回來）。
         // 其他錯誤（麥克風暫時被占用、網路、辨識服務）只是這一次失敗，說明原因讓玩家再試，不自動改設定
@@ -429,7 +443,7 @@ function FeedbackPanel() {
   const q = feedback?.question;
 
   useEffect(() => {
-    if (q) say(q.type === 'choice' ? completedSentence(q) : q.speak ?? q.ans);
+    if (q) say(questionAudio(q));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q]);
 
@@ -438,7 +452,7 @@ function FeedbackPanel() {
   const hint = vocab?.meaning ?? questionHint(q);
   const sentence = completedSentence(q);
   const correctOption = q.options?.find(o => o.startsWith(`${q.ans}.`));
-  const audioText = q.type === 'choice' ? sentence : q.speak ?? q.ans;
+  const audioText = questionAudio(q);
 
   return (
     <div className="feedback" role="alert">
@@ -454,8 +468,8 @@ function FeedbackPanel() {
         {vocab && (<><dt>例句</dt><dd><span className="sentence">{vocab.example}</span><br /><span className="muted">{vocab.exampleZh}</span></dd></>)}
       </dl>
       <div className="feedback-actions">
-        <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 再聽一次</button>
-        <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
+        {audioText && <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 再聽一次</button>}
+        {audioText && <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>}
         {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => say(vocab.example)}>🔊 例句</button>}
         {vocab && <button className="btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocab.key)}>📖 學這個字</button>}
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().continueAfterFeedback()}>記住了，再試一次 ⏎</button>

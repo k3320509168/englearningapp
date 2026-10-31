@@ -3,8 +3,10 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { StateStorage } from 'zustand/middleware';
 import type { Question } from '../game/types';
 import { questionKey } from '../game/battle';
+import { WHEEL_PRIZES, rollWheel } from '../game/wheel';
 import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, updateKnowledge } from '../game/knowledge';
 import type { KnowledgeRecord } from '../game/knowledge';
+import { REGION_LEVELS } from '../game/progression';
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
 import type { ItemId, UpgradeId } from '../game/progression';
 import {
@@ -14,7 +16,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { towerReward } from '../game/modes';
-import { HERO_LEVEL_CAPS, MAX_LEVEL, addXp, canAdvance, classNode, nextOptions, playerLevelCap, xpScale } from '../game/growth';
+import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, nextOptions, pathBadgeCost, playerLevelCap, xpScale } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, trialsDone } from '../game/trueName';
@@ -28,13 +30,13 @@ import { MAP_SIZE, REGIONS, regionStageCount } from '../game/regions';
 const OLD_MAP_SIZE = 10;
 const OLD_STAGES_PER_REGION = 50;
 import { clearStoryId, regionStoryId } from '../game/story';
-import type { Character } from '../game/character';
+import type { Character, ClassId } from '../game/character';
 import { PARTY_MAX } from '../game/party';
 import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 17;
+export const SAVE_VERSION = 18;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -100,7 +102,15 @@ interface SaveData {
   rushDay: string;                   // 每日素材本：今天的日期與已挑戰次數
   rushRuns: number;
   towerFloor: number;                // 英雄時空之塔：已通過的最高層
-  sweepTickets: number;              // 掃蕩券：三星地圖直接領獎勵（錯題修煉場取得）
+  sweepTickets: number;              // 掃蕩券：三星地圖直接領獎勵（錯題修煉場、獎勵轉盤取得）
+  // 獎勵轉盤：已經給過轉盤的關卡（只有第一次破關給）、還沒轉的次數、連續銘謝惠顧幾次
+  wheelClaimed: string[];
+  // 金幣買召喚券的本週數量；錯題修煉場今天已經給了幾題的金幣
+  ticketBuys: { week: string; count: number };
+  trainingGoldDay: string;
+  trainingGoldCount: number;
+  wheelPending: number;
+  wheelDry: number;
   trainingDay: string;               // 錯題修煉場今天已送出的掃蕩券數（每天上限）
   trainingGiven: number;
   heroTier: Record<HeroId, number>;
@@ -110,6 +120,10 @@ interface SaveData {
   storySeen: string[];
   // 成長：主角等級與轉職路線、英雄等級、素材、裝備
   player: { level: number; xp: number; classPath: string[] };
+  // 主角換職業：每個職業各自的轉職路線（目前職業的路線也同步在 player.classPath）、創角時的職業、職業徽章
+  classPaths: Record<string, string[]>;
+  homeClass: ClassId | null;
+  classBadges: number;
   heroLevel: Record<HeroId, number>;
   materials: Record<string, number>;
   equipment: OwnedEquip[];
@@ -144,6 +158,10 @@ interface SaveActions {
   // counted：算不算知識點的無提示成功（預設同 review）。回傳 true＝這次是跨日成功（封印能量）
   recordAnswer: (q: Question, correct: boolean, review: boolean, counted?: boolean) => boolean;
   defeatRegionBoss: (regionIdx: number) => void;
+  // 第一次破這一關：給一次轉盤（回傳有沒有給）
+  grantWheel: (key: string) => boolean;
+  // 轉一次：回傳抽中的獎品序號（沒有轉盤機會時是 -1）
+  spinWheel: (rand?: () => number) => number;
   recordStrictTrial: (regionIdx: number, at: number) => void;
   updateSettings: (patch: Partial<Settings>) => void;
   setTutorialDone: (done: boolean) => void;
@@ -153,6 +171,7 @@ interface SaveActions {
   consumeItem: (id: ItemId) => boolean;
   addTickets: (n: number) => void;
   buyTicket: () => boolean;
+  earnTrainingGold: () => number;
   summonHeroes: (count: number, rand?: () => number) => SummonOutcome[] | null;
   exchangeSpark: (id: HeroId) => SummonOutcome | null;
   tierUp: (id: HeroId) => boolean;
@@ -168,6 +187,9 @@ interface SaveActions {
   markStorySeen: (id: string) => void;
   gainXp: (n: number) => number; // 回傳升了幾級
   advanceClass: (nodeId: string) => boolean;
+  // 換職業（戰鬥外、免費）；重置目前職業的路線（退回徽章）
+  switchClass: (classId: ClassId) => boolean;
+  resetClassPath: () => boolean;
   addMaterials: (drops: Record<string, number>) => void;
   forge: (defId: string) => boolean;
   enhance: (uid: string, holy?: boolean, rand?: () => number) => 'ok' | 'fail' | false; // 失敗只扣材料
@@ -177,6 +199,8 @@ interface SaveActions {
   equip: (uid: string) => void;
   unequip: (slot: Slot) => void;
   trainHero: (id: HeroId) => boolean;
+  // 一鍵訓練：金幣夠就一直升，直到上限；回傳升了幾級
+  trainHeroMax: (id: HeroId) => number;
   // 完成一項真名考驗，第一次完成時送碎片；回傳是否第一次完成
   completeTrial: (id: HeroId, trialIdx: number) => boolean;
   recordGolden: (stagesReached: number) => void;
@@ -222,6 +246,12 @@ export const initialSave: SaveData = {
   rushRuns: 0,
   towerFloor: 0,
   sweepTickets: 0,
+  wheelClaimed: [],
+  ticketBuys: { week: '', count: 0 },
+  trainingGoldDay: '',
+  trainingGoldCount: 0,
+  wheelPending: 0,
+  wheelDry: 0,
   trainingDay: '',
   trainingGiven: 0,
   heroTier: {},
@@ -229,6 +259,9 @@ export const initialSave: SaveData = {
   bestStage: {},
   storySeen: [],
   player: { level: 1, xp: 0, classPath: [] },
+  classPaths: {},
+  homeClass: null,
+  classBadges: 0,
   heroLevel: {},
   materials: {},
   equipment: [],
@@ -241,6 +274,10 @@ export const initialSave: SaveData = {
   skillBossCleared: [],
   hintsSeen: [],
 };
+
+export const TICKET_BUY_WEEKLY = 5;
+export const TRAINING_GOLD = 10;
+export const TRAINING_GOLD_MAX = 20;
 
 // 英雄訓練的金幣：等級越高、稀有度越高越貴
 export const trainCost = (level: number, rarityIdx: number) => 30 * level * (rarityIdx + 1);
@@ -258,16 +295,19 @@ export function heroSellValue(id: HeroId, level: number, tier: number): number {
 }
 
 // 把召喚到的英雄加進存檔：新英雄直接擁有（隊伍有空位就加入），重複的轉成碎片
-function grantHero(s: SaveData, r: SummonResult): { patch: Pick<SaveData, 'heroes' | 'party' | 'heroShards'>; outcome: SummonOutcome } {
+function grantHero(s: SaveData, r: SummonResult): { patch: Pick<SaveData, 'heroes' | 'party' | 'heroShards' | 'heroLevel'>; outcome: SummonOutcome } {
   if (!s.heroes.includes(r.id)) {
     return {
-      patch: { heroes: [...s.heroes, r.id], party: s.party.length < PARTY_MAX ? [...s.party, r.id] : s.party, heroShards: s.heroShards },
+      patch: {
+        heroes: [...s.heroes, r.id], party: s.party.length < PARTY_MAX ? [...s.party, r.id] : s.party, heroShards: s.heroShards,
+        heroLevel: s.heroLevel,
+      },
       outcome: { ...r, isNew: true, shards: 0 },
     };
   }
   const shards = DUPLICATE_SHARDS[heroDef(r.id).rarity];
   return {
-    patch: { heroes: s.heroes, party: s.party, heroShards: { ...s.heroShards, [r.id]: (s.heroShards[r.id] ?? 0) + shards } },
+    patch: { heroes: s.heroes, party: s.party, heroShards: { ...s.heroShards, [r.id]: (s.heroShards[r.id] ?? 0) + shards }, heroLevel: s.heroLevel },
     outcome: { ...r, isNew: false, shards },
   };
 }
@@ -368,7 +408,25 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     migrated.levelProgress = remap(migrated.levelProgress);
     migrated.bestStage = remap(migrated.bestStage);
   }
+  // v17 → v18：等級從 1～100（每區約 11 級）改成 1～200（第十三輪）：依區域換算，不超過目前所在區域的通關等級
+  if (version >= 1 && version < 18) {
+    const frontier = REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, Math.max(0, Math.floor(migrated.unlockedIndex)))][1];
+    const remap = (old: number) => {
+      const r = Math.min(REGION_LEVELS.length - 1, Math.floor((old - 1) / 11));
+      const frac = Math.min(1, ((old - 1) - 11 * r) / 11);
+      const [from, to] = REGION_LEVELS[r];
+      return Math.max(1, Math.min(frontier, Math.round(from + frac * (to - from))));
+    };
+    const playerLevel = remap(Math.floor(migrated.player.level || 1));
+    migrated.player = { ...migrated.player, level: playerLevel, xp: 0 };
+    migrated.heroLevel = Object.fromEntries(Object.entries(migrated.heroLevel).map(([id, lv]) => [id, Math.min(playerLevel, remap(lv))]));
+  }
   migrated.player = { ...migrated.player, level: Math.min(MAX_LEVEL, Math.max(1, Math.floor(migrated.player.level))) };
+  // 換職業：舊存檔把目前的職業當成第一個職業
+  if (migrated.character) {
+    if (!migrated.homeClass) migrated.homeClass = migrated.character.classId;
+    migrated.classPaths = { ...migrated.classPaths, [migrated.character.classId]: migrated.player.classPath };
+  }
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
   migrated.mistakes = Object.fromEntries(Object.entries(migrated.mistakes)
     .filter(([, m]) => isPlainObject(m) && isPlainObject(m.question))
@@ -444,7 +502,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
       return {
         ...initialSave,
-        setCharacter: (c) => set({ character: normalizeCharacter(c) }),
+        setCharacter: (c) => set(s => { const character = normalizeCharacter(c); return { character, homeClass: s.homeClass ?? character?.classId ?? null }; }),
         unlockLevel: (index) => set(s => ({ unlockedIndex: Math.max(s.unlockedIndex, index) })),
         skipRegions: (count) => set(s => {
           const n = Math.min(count, REGIONS.length - 1);
@@ -502,6 +560,25 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         return crossDay;
       },
         recordStrictTrial: (regionIdx, at) => set(s => ({ strictTrials: { ...s.strictTrials, [regionIdx]: [...(s.strictTrials[regionIdx] ?? []), at].slice(-STRICT_TRIALS_PER_DAY) } })),
+        grantWheel: (key) => {
+          if (get().wheelClaimed.includes(key)) return false;
+          set(s => ({ wheelClaimed: [...s.wheelClaimed, key], wheelPending: s.wheelPending + 1 }));
+          return true;
+        },
+        spinWheel: (rand = Math.random) => {
+          const s = get();
+          if (s.wheelPending <= 0) return -1;
+          const idx = rollWheel(rand, s.wheelDry);
+          const prize = WHEEL_PRIZES[idx];
+          set({
+            wheelPending: s.wheelPending - 1,
+            wheelDry: prize.id === 'none' ? s.wheelDry + 1 : 0,
+            tickets: s.tickets + (prize.tickets ?? 0),
+            sweepTickets: s.sweepTickets + (prize.sweep ?? 0),
+            gold: s.gold + (prize.gold ?? 0),
+          });
+          return idx;
+        },
         defeatRegionBoss: (regionIdx) => set(s => (s.bossDown.includes(regionIdx) ? {} : { bossDown: [...s.bossDown, regionIdx] })),
 
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
@@ -543,7 +620,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         gainXp: (n) => {
           const p = get().player;
-          const r = addXp(p.level, p.xp, n, playerLevelCap(p.classPath.length));
+          const r = addXp(p.level, p.xp, n, playerLevelCap(bestTier({ ...get().classPaths, current: p.classPath })));
           set({ player: { ...p, level: r.level, xp: r.xp } });
           if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
           return r.levelsGained;
@@ -556,7 +633,29 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (!n || !s.character) return false;
           const options = nextOptions(s.character.classId, s.player.classPath);
           if (!options.some(o => o.id === nodeId) || !canAdvance(n.tier, s.player.level, s.unlockedIndex)) return false;
-          set({ player: { ...s.player, classPath: [...s.player.classPath, nodeId] } });
+          const cost = s.character.classId === (s.homeClass ?? s.character.classId) ? 0 : BADGE_COST[n.tier];
+          if (s.classBadges < cost) return false;
+          const classPath = [...s.player.classPath, nodeId];
+          set({ player: { ...s.player, classPath }, classPaths: { ...s.classPaths, [s.character.classId]: classPath }, classBadges: s.classBadges - cost });
+          return true;
+        },
+        switchClass: (classId) => {
+          const s = get();
+          if (!s.character || s.character.classId === classId) return false;
+          const classPaths = { ...s.classPaths, [s.character.classId]: s.player.classPath };
+          set({
+            character: { ...s.character, classId },
+            classPaths,
+            homeClass: s.homeClass ?? s.character.classId,
+            player: { ...s.player, classPath: classPaths[classId] ?? [] },
+          });
+          return true;
+        },
+        resetClassPath: () => {
+          const s = get();
+          if (!s.character || !s.player.classPath.length) return false;
+          const refund = s.character.classId === (s.homeClass ?? s.character.classId) ? 0 : pathBadgeCost(s.player.classPath);
+          set({ player: { ...s.player, classPath: [] }, classPaths: { ...s.classPaths, [s.character.classId]: [] }, classBadges: s.classBadges + refund });
           return true;
         },
 
@@ -698,6 +797,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           set({
             gold: s.gold + def.reward.gold,
             tickets: s.tickets + def.reward.tickets,
+            classBadges: s.classBadges + (def.reward.badges ?? 0),
             weekly: { ...s.weekly!, tasks: s.weekly!.tasks.map(t => (t.id === id ? { ...t, claimed: true } : t)) },
           });
           return true;
@@ -755,7 +855,28 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (ok) get().trackDaily('levelup');
           return ok;
         },
-        buyTicket: () => purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1 })),
+        trainHeroMax: (id) => {
+          let n = 0;
+          while (n < 200 && get().trainHero(id)) n++;
+          return n;
+        },
+        // 金幣買召喚券：每週最多 TICKET_BUY_WEEKLY 張（第十三輪：不讓金幣副本變成無限抽卡）
+        buyTicket: () => {
+          get().ensureDaily();
+          const week = get().weekly?.week ?? '';
+          const bought = get().ticketBuys.week === week ? get().ticketBuys.count : 0;
+          if (bought >= TICKET_BUY_WEEKLY) return false;
+          return purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1, ticketBuys: { week, count: bought + 1 } }));
+        },
+        // 錯題修煉場：每天前 TRAINING_GOLD_MAX 題答對，每題 TRAINING_GOLD 金幣
+        earnTrainingGold: () => {
+          const s = get();
+          const today = new Date().toDateString();
+          const n = s.trainingGoldDay === today ? s.trainingGoldCount : 0;
+          if (n >= TRAINING_GOLD_MAX) return 0;
+          set({ gold: s.gold + TRAINING_GOLD, trainingGoldDay: today, trainingGoldCount: n + 1 });
+          return TRAINING_GOLD;
+        },
 
         // 召喚：每抽 1 張券；有保底與累積點數
         summonHeroes: (count, rand) => {
@@ -768,7 +889,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             state = { ...state, ...patch };
             return outcome;
           });
-          set({ tickets: state.tickets, summonCounter: state.summonCounter, heroes: state.heroes, party: state.party, heroShards: state.heroShards });
+          set({ tickets: state.tickets, summonCounter: state.summonCounter, heroes: state.heroes, party: state.party, heroShards: state.heroShards, heroLevel: state.heroLevel });
           get().trackDaily('summon');
           return outcomes;
         },
@@ -825,6 +946,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const reward = towerReward(floor);
           set(st => ({
             towerFloor: floor,
+            classBadges: st.classBadges + reward.badges,
             ...(heroId ? { heroShards: { ...st.heroShards, [heroId]: (st.heroShards[heroId] ?? 0) + reward.shards } } : { wishShards: st.wishShards + reward.shards }),
           }));
           get().addGold(reward.gold);
@@ -912,9 +1034,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,
-        sweepTickets: s.sweepTickets, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
+        sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
-        player: s.player, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
+        player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),
     },

@@ -8,21 +8,12 @@ import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { useSpeechJam } from './useSpeechJam';
-import { STORIES } from '../game/story';
+import { storyTitle, STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
 import { CloudLoginError, CloudSection, BackupSection } from './CloudSave';
 import { forgetCloudForReset } from '../cloud/cloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
-
-// 劇情名稱：序章、各區域的開場與通關、黃金之路結局
-function storyTitle(id: string): string {
-  if (id === 'prologue') return '序章';
-  if (id === 'golden-ending') return '黃金之路・結局';
-  const [kind, idx] = id.split('-');
-  const name = REGIONS[Number(idx)]?.name ?? '';
-  return kind === 'region' ? `${name}・開場` : `${name}・通關`;
-}
 
 export default function SettingsModal() {
   const settings = useSaveStore(s => s.settings);
@@ -107,7 +98,7 @@ export default function SettingsModal() {
         {storySeen.length === 0 ? <p className="muted">還沒有看過的劇情。</p> : (
           <div className="story-list">
             {Object.keys(STORIES).filter(id => storySeen.includes(id)).map(id => (
-              <button key={id} className="btn btn-small" onMouseDown={keepFocus} onClick={() => openStory(id, true)}>{storyTitle(id)}</button>
+              <button key={id} className="btn btn-small" onMouseDown={keepFocus} onClick={() => openStory(id, true)}>{storyTitle(id, i => REGIONS[i]?.name ?? '', (r, m) => REGIONS[r]?.maps[m] ?? '')}</button>
             ))}
           </div>
         )}

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
-import { useSaveStore } from '../store/saveStore';
+import { TICKET_BUY_WEEKLY, useSaveStore } from '../store/saveStore';
 import type { SummonOutcome } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import {
@@ -15,6 +15,7 @@ import { keepFocus } from './keepFocus';
 // 保底：第 50 抽內必出 SSR；累積：每抽 1 點，100 點可任選一位 SSR；十連至少一位 SR 以上。
 export default function SummonModal() {
   const { tickets, gold, summonCounter, buyTicket, summonHeroes, exchangeSpark } = useSaveStore();
+  const boughtThisWeek = useSaveStore(s => (s.ticketBuys.week === s.weekly?.week ? s.ticketBuys.count : 0));
   const { closeModal, openModal } = useUiStore();
   const [results, setResults] = useState<SummonOutcome[] | null>(null);
   const [picking, setPicking] = useState(false);
@@ -69,7 +70,7 @@ export default function SummonModal() {
 
       <div className="summon-actions">
         <span className="ticket-count">🎫 召喚券 <b>{tickets}</b></span>
-        <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={buyTicket} disabled={gold < TICKET_GOLD_PRICE}>用 🪙<b className="num">{TICKET_GOLD_PRICE}</b> 買 1 張</button>
+        <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={buyTicket} disabled={gold < TICKET_GOLD_PRICE || boughtThisWeek >= TICKET_BUY_WEEKLY}>用 🪙<b className="num">{TICKET_GOLD_PRICE}</b> 買 1 張（本週 {boughtThisWeek}/{TICKET_BUY_WEEKLY}）</button>
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => pull(1)} disabled={tickets < 1}>召喚 ×1</button>
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => pull(TEN_PULL)} disabled={tickets < TEN_PULL}>十連召喚 ×10</button>
       </div>

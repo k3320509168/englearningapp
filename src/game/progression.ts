@@ -1,4 +1,5 @@
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
+import { LEVEL_STAT } from './growth';
 import { regionStageCount } from './stageLayout';
 import type { ClassId, Element } from './character';
 
@@ -234,20 +235,21 @@ export function computeDamage(d: DamageInput): number {
 // 第九輪平衡（製作人：正確率 90% 以上、combo 接得好，就要能過關）：怪物改以「推薦等級、裝備只跟上一半」的英雄為基準，
 // 每區的「更強一點」係數也降低。裝備、轉職、天賦是讓英文還不夠好的玩家也能過關的加分，不是必備
 export const HITS_TO_KILL = { normal: 3, boss: 14 };
-export const HERO_LEVEL_STAT = 0.03;
-export const EQUIP_PER_REGION = 0.12;
-export const MONSTER_GEAR_SHARE = 0.5;
-export const MONSTER_EDGE = 1;
+// 第十三輪：等級改成 200 級、每級 +0.65%。怪物 = 同等級英雄 ×（1 + 每區一點點）——比沒穿裝備的英雄強一點，
+// 裝備跟上的英雄就輕鬆（裝備每區約 +EQUIP_PER_REGION）
+export const HERO_LEVEL_STAT = LEVEL_STAT;
+export const EQUIP_PER_REGION = 0.06;
+export const MONSTER_EDGE_PER_REGION = 0.015;
 export type FoeKind = 'elite' | 'gate' | 'boss' | 'final';
 
 // 推薦等級、跟上裝備的英雄，能力是 Lv 1 的幾倍（progress = 區域 + 區內進度，例如 B1 中段 = 3.5）
 export const heroScale = (level: number, progress: number) =>
-  1 + HERO_LEVEL_STAT * (level - 1) + EQUIP_PER_REGION * progress;
+  (1 + HERO_LEVEL_STAT * (level - 1)) * (1 + EQUIP_PER_REGION * progress);
 export const regionProgress = (levelIdx: number, stageIdx: number) => levelIdx + stageIdx / regionStageCount(levelIdx);
 
 export function monsterGrowth(stageIdx: number, levelIdx: number, kind?: FoeKind): number {
   const progress = regionProgress(levelIdx, stageIdx);
-  return (1 + HERO_LEVEL_STAT * (monsterLevel(levelIdx, stageIdx, kind) - 1) + EQUIP_PER_REGION * progress * MONSTER_GEAR_SHARE) * MONSTER_EDGE ** progress;
+  return (1 + HERO_LEVEL_STAT * (monsterLevel(levelIdx, stageIdx, kind) - 1)) * (1 + MONSTER_EDGE_PER_REGION * progress);
 }
 
 // ---------- 關卡長度、首領、祝福（第四輪與 Gemini、第五輪與 ChatGPT 討論後定案） ----------
@@ -291,10 +293,12 @@ export const BLESSING_DAMAGE = 1.2; // 一般關失敗後的祝福：全隊傷�
 export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ? 0.5 : 0);
 
 // ---------- 敵人等級與推薦戰力（第四輪） ----------
-// 九區平均分配 Lv 1～100：每區約 11 級，區內越後面越高；菁英 +2、小 BOSS +3、大 BOSS +4、區域魔王 +5
-export const LEVELS_PER_REGION = 11;
-export const recommendedLevel = (levelIdx: number, stageIdx: number) =>
-  Math.min(100, 1 + levelIdx * LEVELS_PER_REGION + Math.floor((stageIdx / regionStageCount(levelIdx)) * (LEVELS_PER_REGION - 1)));
+// 第十三輪：九區的推薦等級（入區 → 通關），區內越後面越高；菁英 +2、小 BOSS +3、大 BOSS +4、區域魔王 +5
+export const REGION_LEVELS: [number, number][] = [[1, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
+export const recommendedLevel = (levelIdx: number, stageIdx: number) => {
+  const [from, to] = REGION_LEVELS[Math.min(Math.max(0, levelIdx), REGION_LEVELS.length - 1)];
+  return Math.min(200, from + Math.floor((stageIdx / regionStageCount(levelIdx)) * (to - from)));
+};
 export function monsterLevel(levelIdx: number, stageIdx: number, kind?: FoeKind): number {
   return recommendedLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'boss' ? 4 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
 }

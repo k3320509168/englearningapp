@@ -26,6 +26,7 @@ interface UiState {
   growthTab: GrowthTab;
   celebrations: Celebration[];
   hintOpen: boolean; // 戰鬥中的情境提示還沒按「知道了」：計時暫停
+  wheelHidden: boolean; // 獎勵轉盤按了「稍後再轉」（地圖上的按鈕可以再打開）
   studyWord: string | null; // 單字學習視窗：正在看的單字（VOCAB 的 key），可以疊在其他視窗上
   openStudy: (key: string) => void;
   closeStudy: () => void;
@@ -34,6 +35,7 @@ interface UiState {
   imeWarning: boolean; // 偵測到中文輸入法（注音）：英文字母打不進去
   setImeWarning: (on: boolean) => void;
   setHintOpen: (open: boolean) => void;
+  setWheelHidden: (hidden: boolean) => void;
   celebrate: (c: Celebration) => void;
   dismissCelebration: () => void;
   openModal: (name: ModalName) => void;
@@ -56,11 +58,13 @@ export const useUiStore = create<UiState>()((set) => ({
   growthTab: 'hero',
   celebrations: [],
   hintOpen: false,
+  wheelHidden: false,
   retreatAsk: false,
   setRetreatAsk: (on) => set({ retreatAsk: on }),
   imeWarning: false,
   setImeWarning: (on) => set(s => (s.imeWarning === on ? s : { imeWarning: on })),
   setHintOpen: (open) => set({ hintOpen: open }),
+  setWheelHidden: (hidden) => set({ wheelHidden: hidden }),
   celebrate: (c) => set(s => ({ celebrations: [...s.celebrations, c] })),
   dismissCelebration: () => set(s => ({ celebrations: s.celebrations.slice(1) })),
   openModal: (name) => set(name === 'growth' ? { modal: name, growthTab: 'hero' } : { modal: name }),

@@ -23,17 +23,21 @@ import type { MemberId } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { keepFocus } from './keepFocus';
 import { usePartyDrag } from './usePartyDrag';
+import { NameGlow, StarBadge } from './HeroBits';
+import { PITY_SSR } from '../game/heroes';
 
 type Filter = 'owned' | 'all' | Rarity;
 
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, sellHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, summonCounter, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, trainHeroMax, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
+  const [tab, setTab] = useState<'skills' | 'growth'>('skills');
+  const [help, setHelp] = useState(false);
 
   const portraits = useMemo(() => {
     const map: Record<string, string> = Object.fromEntries(HEROES.map(h => [h.id, heroDataUrl(h.id, 2)]));
@@ -56,11 +60,16 @@ export default function HeroModal() {
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
       <section className="party-slots">
         <div className="collection-head">
-          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">數字是出手順序，1 號是隊長（先出手、負責困難題）。把英雄卡拖到格子裡就能換人</span></p>
-          {party.length > 1 && (
-            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
-          )}
+          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b></p>
+          <span className="hero-head-actions">
+            <span className="shop-gold">🪙 {gold}</span>
+            {party.length > 1 && (
+              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
+            )}
+            <button className={`btn btn-small help-btn ${help ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus} onClick={() => setHelp(h => !h)} aria-expanded={help} aria-label="說明">?</button>
+          </span>
         </div>
+        {help && <HeroHelp />}
         <div className="party-row">
           {Array.from({ length: PARTY_MAX }, (_, i) => {
             const id = party[i];
@@ -77,6 +86,7 @@ export default function HeroModal() {
                 {i === 0 && <span className="party-pos">👑</span>}
                 <img src={portraits[id]} alt="" draggable={false} />
                 <span>{name}</span>
+                {id !== 'player' && <StarBadge id={id} compact />}
               </button>
             );
           })}
@@ -87,17 +97,18 @@ export default function HeroModal() {
 
       <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
         <div className="collection-head">
-          <p className="shop-gold">收集 <b>{heroes.length}/{HEROES.length}</b></p>
-          <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚（🎫 {tickets}）</button>
+          <p className="shop-gold">📖 英雄圖鑑 <b>{heroes.length}/{HEROES.length}</b></p>
+          <button className="btn btn-primary summon-entry" onMouseDown={keepFocus} onClick={() => openModal('summon')}>
+            🔮 召喚 <small>🎫 {tickets}・SSR 保底 {summonCounter.sinceSsr}/{PITY_SSR}</small>
+          </button>
         </div>
-        <label className="hero-filter">
-          顯示
-          <select value={filter} onChange={e => setFilter(e.target.value as Filter)}>
-            {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
-              <option key={f} value={f}>{f === 'owned' ? '已擁有' : f === 'all' ? '全部英雄' : `${f} 品階`}</option>
-            ))}
-          </select>
-        </label>
+        <div className="hero-filter" role="group" aria-label="篩選英雄">
+          {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
+            <button key={f} className={`pill ${filter === f ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)} aria-pressed={filter === f}>
+              {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
+            </button>
+          ))}
+        </div>
         <ul className="hero-tiles">
           {character && filter === 'owned' && (
             <li>
@@ -127,6 +138,7 @@ export default function HeroModal() {
                   <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
                   <small>{owned ? heroTitle(h) : h.meaning}</small>
                   {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
+                  {owned && <StarBadge id={h.id} compact />}
                 </button>
               </li>
             );
@@ -134,10 +146,11 @@ export default function HeroModal() {
         </ul>
       </section>
       {drag && createPortal(<img className="drag-ghost" src={drag.img} alt="" style={{ left: drag.x, top: drag.y }} />, document.body)}
-      <p className="muted party-note">持有金幣 🪙 {gold}。重複召喚到的英雄會變成碎片，集滿可以升一個品階（每位英雄只能升一次）。</p>
     </Modal>
   );
 
+  // 詳細資料（第十二輪重設計）：主卡（立繪、名字、星星、屬性、等級、三個數值、常用按鈕）＋「技能／養成」分頁。
+  // 條件不足的按鈕不消失，直接顯示還缺什麼
   function renderDetail(id: MemberId) {
     const pics = portraits;
     const inParty = party.includes(id);
@@ -149,17 +162,24 @@ export default function HeroModal() {
       const cls = classDef(character.classId);
       const skill = SKILLS[CLASS_SKILL[character.classId]];
       const el = elementDef(character.element);
+      const power = playerSkillPower(player.classPath.length);
       return (
-        <section className="hero-detail">
-          <img src={pics.player} alt="" />
-          <div>
-            <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
-            <p className="muted">主角・{cls.name}（{cls.role}）</p>
-            <p className="skill-line">{skill.icon} {skill.name}：{skillDesc(skill.id, playerSkillPower(player.classPath.length))}</p>
-            <p className="skill-line relay-line">接力 {RELAY[character.classId].icon} {RELAY[character.classId].name}：{RELAY[character.classId].desc}</p>
-            <TalentLines talent={CLASS_TALENT[character.classId]} power={playerSkillPower(player.classPath.length)} classId={character.classId} />
-            {renderMemberButtons(id, inParty, pos, full)}
+        <section className="hero-detail hd">
+          <div className="hd-main">
+            <img src={pics.player} alt="" />
+            <div className="hd-info">
+              <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
+              <p className="muted">主角・{cls.name}・Lv {player.level}</p>
+              {renderMemberButtons(id, inParty, pos, full)}
+            </div>
+            <WeaponSlot />
           </div>
+          <SkillList rows={[
+            { icon: skill.icon, label: '技能', name: skill.name, desc: skillDesc(skill.id, power) },
+            { icon: RELAY[character.classId].icon, label: '接力', name: RELAY[character.classId].name, desc: RELAY[character.classId].desc },
+            ...talentRows(CLASS_TALENT[character.classId], power, character.classId),
+          ]} />
+          <p className="muted hd-note">主角的升級、轉職與裝備在「成長」。<button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openGrowth('hero')}>前往成長</button></p>
         </section>
       );
     }
@@ -175,63 +195,97 @@ export default function HeroModal() {
     const shards = heroShards[id] ?? 0;
     const need = TIER_UP_SHARDS[h.rarity];
     const trials = trialsDone(trueName[id]);
-    // 碎片不夠時用願望碎片補；SSR 要先四星才能升 UR
-    const starsReady = h.rarity !== 'SSR' || stars >= MAX_STARS;
-    const canTierUp = owned && tier === 0 && starsReady && shards + wishShards >= need && gold >= TIER_UP_GOLD[h.rarity] && trials >= TIER_UP_TRIALS;
-    const starNeed = STAR_COSTS[stars] ?? 0;
-    const canStarUp = owned && h.rarity === 'SSR' && tier === 0 && stars < MAX_STARS && shards + wishShards >= starNeed && gold >= STAR_GOLD(stars);
+    const named = isTrueName(trueName[id]);
     const level = heroLevel[id] ?? 1;
-    const levelMult = (1 + (level - 1) * LEVEL_STAT) * (isTrueName(trueName[id]) ? 1 + TRUE_NAME_BONUS : 1);
+    const levelMult = (1 + (level - 1) * LEVEL_STAT) * (named ? 1 + TRUE_NAME_BONUS : 1);
     const cost = trainCost(level, ['N', 'R', 'SR', 'SSR'].indexOf(h.rarity));
     const levelCap = level >= player.level;
+    const power = heroSkillPower(h, tier);
+
+    // 升星（SSR）與升品階的條件：哪些達成、哪些還缺
+    const starNeed = STAR_COSTS[stars] ?? 0;
+    const canStar = h.rarity === 'SSR' && tier === 0 && stars < MAX_STARS;
+    const starReqs = canStar ? [
+      { ok: shards + wishShards >= starNeed, text: `碎片 ◆${shards}/${starNeed}${wishShards ? `（＋願望 ${wishShards}）` : ''}` },
+      { ok: gold >= STAR_GOLD(stars), text: `🪙 ${STAR_GOLD(stars)}` },
+    ] : [];
+    const tierReqs = tier === 0 ? [
+      ...(h.rarity === 'SSR' ? [{ ok: stars >= MAX_STARS, text: '四星' }] : []),
+      { ok: shards + wishShards >= need, text: `碎片 ◆${shards}/${need}` },
+      { ok: gold >= TIER_UP_GOLD[h.rarity], text: `🪙 ${TIER_UP_GOLD[h.rarity]}` },
+      { ok: trials >= TIER_UP_TRIALS, text: `真名 ${Math.min(trials, TIER_UP_TRIALS)}/${TIER_UP_TRIALS}` },
+    ] : [];
+    const nextRarity = RARITIES[RARITIES.indexOf(h.rarity) + 1];
+
     return (
-      <section className="hero-detail" style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}>
-        <img src={pics[id]} alt="" className={owned ? '' : 'is-locked'} />
-        <div>
-          <h3>
-            <span className="rarity-tag inline">{rarity}</span> {heroWord(h)}
-            {' '}<span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span>
-          </h3>
-          <p className="muted">{h.id}：{h.meaning}・{heroTitle(h)}（{classDef(h.classId).role}）</p>
-          <p className="hero-stats">Lv {level} ・ HP ×{(stats.hp * levelMult).toFixed(2)} ・ 攻擊 ×{(stats.atk * levelMult).toFixed(2)} ・ 暴擊 {Math.round(stats.crit * 100)}%</p>
-          <p className="skill-line">{skill.signature && <span className="rarity-tag inline">專屬</span>} {skill.icon} {skill.name}：{skillDesc(skill.id, heroSkillPower(h, tier))}</p>
-          <p className="skill-line relay-line">接力 {RELAY[h.classId].icon} {RELAY[h.classId].name}：{RELAY[h.classId].desc}{h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}</p>
-          <TalentLines talent={heroTalent(h.id)} power={heroSkillPower(h, tier)} classId={h.classId} />
-          {owned ? (
-            <>
-              {h.rarity === 'SSR' && tier === 0 && (
-                <p className="tier-line">
-                  升星 {'★'.repeat(stars)}{'☆'.repeat(MAX_STARS - stars)}{stars < MAX_STARS && `：碎片 ◆${shards}/${starNeed}（願望碎片 ${wishShards}）、🪙 ${STAR_GOLD(stars)}（每星生命與攻擊 +${Math.round(STAR_BONUS * 100)}%）`}
-                  {stars < MAX_STARS && <>{' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => {
-                    if (!starUp(id)) return;
-                    useUiStore.getState().celebrate({ icon: '⭐', title: `升星：${stars + 1} 星`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO.SSR.color });
-                  }} disabled={!canStarUp}>升星</button></>}
-                </p>
-              )}
-              {tier === 0 ? (
-                <p className="tier-line">
-                  升品階 {h.rarity} → {RARITIES[RARITIES.indexOf(h.rarity) + 1]}：{starsReady ? '' : '先升到四星、'}碎片 ◆{shards}/{need}、🪙 {TIER_UP_GOLD[h.rarity]}、真名考驗 {Math.min(trials, TIER_UP_TRIALS)}/{TIER_UP_TRIALS}
-                  {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => {
-                    if (!tierUp(id)) return;
-                    const r = currentRarity(h, 1);
-                    useUiStore.getState().celebrate({ icon: '🌟', title: `升品階：${r}`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO[r].color });
-                  }} disabled={!canTierUp}>升品階</button>
-                </p>
-              ) : <p className="tier-line">✨ 已升品階（{rarity}）</p>}
-              <p className="tier-line">
-                ✦ 真名考驗 {trials}/{TRIAL_COUNT}{isTrueName(trueName[id]) ? `（真名英雄：能力 +${TRUE_NAME_BONUS * 100}%）` : ''}
-                {' '}<button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => openTrueName(id)}>{isTrueName(trueName[id]) ? '查看' : '挑戰'}</button>
-              </p>
-              <p className="tier-line">
-                訓練 Lv {level} → {level + 1}：🪙 {cost}
-                {' '}<button className="btn btn-small" onMouseDown={keepFocus} onClick={() => trainHero(id)} disabled={levelCap || gold < cost}>訓練</button>
-                {levelCap && <small className="muted">（英雄等級不能超過主角 Lv {player.level}）</small>}
-              </p>
-              {renderMemberButtons(id, inParty, pos, full)}
-              {renderSell(id, inParty, level, tier, trials)}
-            </>
-          ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}
+      <section className="hero-detail hd" style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}>
+        <div className="hd-main">
+          <img src={pics[id]} alt="" className={owned ? '' : 'is-locked'} />
+          <div className="hd-info">
+            <h3>
+              <span className="rarity-tag inline">{rarity}</span>{' '}
+              {owned ? <NameGlow id={id} progress={trueName[id]} /> : heroWord(h)}{' '}
+              {owned && <StarBadge id={id} />}{' '}
+              <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span>
+            </h3>
+            <p className="muted">{h.meaning}・{heroTitle(h)}・{classDef(h.classId).role}{owned && `・Lv ${level}`}</p>
+            <div className="hd-stats">
+              <span title="生命">❤️ ×{(stats.hp * levelMult).toFixed(2)}</span>
+              <span title="攻擊">⚔️ ×{(stats.atk * levelMult).toFixed(2)}</span>
+              <span title="暴擊率">🎯 {Math.round(stats.crit * 100)}%</span>
+            </div>
+            {owned ? (
+              <div className="hd-actions">
+                {renderMemberButtons(id, inParty, pos, full)}
+                <span className="hd-train">
+                  <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.coin(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
+                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.coin(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
+                  {(levelCap || gold < cost) && <small className="req-no">{levelCap ? `最高到主角 Lv ${player.level}` : `還差 🪙${cost - gold}`}</small>}
+                </span>
+              </div>
+            ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}
+          </div>
+          {h.rarity === 'SSR' && <WeaponSlot />}
         </div>
+
+        <div className="hd-tabs" role="tablist">
+          <button role="tab" aria-selected={tab === 'skills'} className={`pill ${tab === 'skills' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('skills')}>技能</button>
+          {owned && <button role="tab" aria-selected={tab === 'growth'} className={`pill ${tab === 'growth' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('growth')}>養成{(canStar && starReqs.every(r => r.ok)) || (tier === 0 && tierReqs.every(r => r.ok)) ? ' ●' : ''}</button>}
+        </div>
+
+        {(tab === 'skills' || !owned) ? (
+          <SkillList rows={[
+            { icon: skill.icon, label: skill.signature ? '專屬' : '技能', name: skill.name, desc: skillDesc(skill.id, power) },
+            { icon: RELAY[h.classId].icon, label: '接力', name: RELAY[h.classId].name, desc: `${RELAY[h.classId].desc}${h.classId === 'warrior' ? '；戰士會替隊友擋攻擊' : ''}` },
+            ...talentRows(heroTalent(h.id), power, h.classId),
+          ]} />
+        ) : (
+          <div className="hd-growth">
+            {canStar && (
+              <GrowthRow title={`升星 ${'★'.repeat(stars + 1)}`} effect={`生命與攻擊 +${Math.round(STAR_BONUS * 100)}%`} reqs={starReqs}
+                action="升星" onAction={() => {
+                  if (!starUp(id)) return;
+                  useUiStore.getState().celebrate({ icon: '⭐', title: `升星：${stars + 1} 星`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO.SSR.color });
+                }} />
+            )}
+            {tier === 0 ? (
+              <GrowthRow title={`升品階 ${h.rarity} → ${nextRarity}`} effect="能力大幅提升、等級上限提高" reqs={tierReqs}
+                action="升品階" onAction={() => {
+                  if (!tierUp(id)) return;
+                  const r = currentRarity(h, 1);
+                  useUiStore.getState().celebrate({ icon: '🌟', title: `升品階：${r}`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO[r].color });
+                }} />
+            ) : <p className="growth-row is-done">✨ 已升品階（{rarity}）</p>}
+            <div className="growth-row">
+              <div>
+                <b>✦ 真名考驗 {trials}/{TRIAL_COUNT}</b>
+                <small className="muted">{named ? `真名英雄：能力 +${TRUE_NAME_BONUS * 100}%` : `完成五項考驗：能力 +${TRUE_NAME_BONUS * 100}%，每項送碎片`}</small>
+              </div>
+              <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => openTrueName(id)}>{named ? '查看' : '挑戰'}</button>
+            </div>
+            {renderSell(id, inParty, level, tier, trials)}
+          </div>
+        )}
       </section>
     );
   }
@@ -272,13 +326,71 @@ export default function HeroModal() {
 }
 
 // 被動天賦與連攜技（收尾時發動的大招）
-function TalentLines({ talent, power, classId }: { talent: TalentId; power: number; classId: ClassId }) {
+function talentRows(talent: TalentId, power: number, classId: ClassId): SkillRow[] {
   const t = TALENTS[talent];
   const f = FINISHERS[classId];
+  return [
+    { icon: t.icon, label: '天賦', name: t.name, desc: talentDesc(talent, power) },
+    { icon: f.icon, label: '連攜', name: f.name, desc: '所有隊員輪流答對一次後，由這位隊員收尾時發動的大招' },
+  ];
+}
+
+interface SkillRow { icon: string; label: string; name: string; desc: string }
+// 技能一行一項（圖示＋名稱＋一句效果），點一下展開完整說明
+function SkillList({ rows }: { rows: SkillRow[] }) {
+  const [open, setOpen] = useState<number | null>(null);
   return (
-    <>
-      <p className="skill-line relay-line">天賦 {t.icon} {t.name}：{talentDesc(talent, power)}</p>
-      <p className="skill-line relay-line">連攜技 {f.icon} {f.name}：由這位隊員收尾時發動</p>
-    </>
+    <ul className="hd-skills">
+      {rows.map((r, i) => (
+        <li key={r.label}>
+          <button className={`hd-skill ${open === i ? 'is-open' : ''}`} onMouseDown={keepFocus} onClick={() => setOpen(o => (o === i ? null : i))} aria-expanded={open === i}>
+            <span className="hd-skill-tag">{r.label}</span>
+            <span aria-hidden>{r.icon}</span>
+            <b>{r.name}</b>
+            <span className="hd-skill-desc">{r.desc}</span>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// 養成一項：標題、效果、條件（✔ 達成／✘ 還缺）、按鈕
+function GrowthRow({ title, effect, reqs, action, onAction }: { title: string; effect: string; reqs: { ok: boolean; text: string }[]; action: string; onAction: () => void }) {
+  const ready = reqs.every(r => r.ok);
+  return (
+    <div className={`growth-row ${ready ? 'is-ready' : ''}`}>
+      <div>
+        <b>{title}</b>
+        <small className="muted">{effect}</small>
+        <span className="growth-reqs">{reqs.map(r => <span key={r.text} className={r.ok ? 'req-ok' : 'req-no'}>{r.ok ? '✔' : '✘'} {r.text}</span>)}</span>
+      </div>
+      <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={onAction} disabled={!ready}>{action}</button>
+    </div>
+  );
+}
+
+// 專武欄位（預告）：SSR 英雄與主角才有，專武系統之後開放（B1 區通關後解鎖專武池）
+function WeaponSlot() {
+  return (
+    <aside className="hd-weapon" title="專武：B1 區通關後，召喚畫面會開放專武池">
+      <span className="hd-weapon-slot" aria-hidden>🗡️</span>
+      <b>專武</b>
+      <small className="muted">B1 通關後開放</small>
+    </aside>
+  );
+}
+
+// 說明（按「?」打開）：取代畫面上的長篇文字
+function HeroHelp() {
+  return (
+    <ul className="hero-help">
+      <li><b>出手順序</b>：格子上的數字就是出手順序，1 號是隊長（先出手、負責困難題）。把英雄卡拖進格子就能換人，拖回圖鑑就是離隊。</li>
+      <li><b>星星</b>：SSR 英雄可以用碎片升星，每顆星生命與攻擊 +8%。滑鼠移到星星上（手機點一下）看還差多少碎片。</li>
+      <li><b>碎片</b>：重複抽到的英雄會變成碎片；願望碎片（每日碎片題）可以補任何英雄。</li>
+      <li><b>升品階</b>：碎片＋金幣＋真名考驗，每位英雄可以升一次（SSR 要先四星），能力大幅提升。</li>
+      <li><b>真名考驗</b>：用英雄名字這個英文字出的五道題，每完成一項名字就亮起幾個字母，全部完成能力 +50%。</li>
+      <li><b>訓練</b>：用金幣升級，最高到主角等級。金幣可以在每日素材本、時空之塔、錯題修煉場邊複習邊賺。</li>
+    </ul>
   );
 }

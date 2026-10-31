@@ -1,6 +1,6 @@
 import { getPool } from './QuestionData';
 import { vocabFor, vocabKey } from './vocab';
-import { completedSentence, questionKey } from './battle';
+import { completedSentence, questionAudio, questionKey } from './battle';
 import { masteryStars } from './progression';
 import type { Question } from './types';
 
@@ -52,7 +52,7 @@ export function codexItems(
       subtitle: v?.meaning ?? q.explain ?? '',
       pos: v?.pos ?? '',
       example: v ? `${v.example}\n${v.exampleZh}` : '',
-      audio: v?.display ?? completedSentence(q),
+      audio: v?.display ?? questionAudio(q),
       correct: 0, wrong: 0, seen: false, stars: 0, needsReview: false,
     };
     item.correct += stats?.correct ?? 0;

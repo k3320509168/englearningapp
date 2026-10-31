@@ -1,7 +1,7 @@
 // 主線劇情：失去家園的勇士，靠「古代咒語」（英文）奪回被沉默魔王奪走語言的王國。
 // {name} 會換成玩家主角的名字。
 
-export type Speaker = 'narrator' | 'hero' | 'elder' | 'spirit' | 'villain';
+export type Speaker = 'narrator' | 'hero' | 'elder' | 'spirit' | 'villain' | 'smith' | 'pathfinder' | 'ferryman' | 'courier' | 'treeheart' | 'hunter';
 
 export interface StoryLine {
   speaker: Speaker;
@@ -12,8 +12,15 @@ export const SPEAKERS: Record<Speaker, { name: string; icon: string }> = {
   narrator: { name: '', icon: '📜' },
   hero: { name: '{name}', icon: '' },
   elder: { name: '村長', icon: '👴' },
-  spirit: { name: '語言精靈', icon: '🧚' },
+  // 語言精靈露米（第十四輪世界觀）：王國的「真名記錄者」，活潑、嘴快、愛吐槽
+  spirit: { name: '露米', icon: '🧚' },
   villain: { name: '沉默魔王', icon: '👿' },
+  smith: { name: '風車工匠', icon: '🔧' },
+  pathfinder: { name: '巡路人', icon: '🧭' },
+  ferryman: { name: '船夫', icon: '🛶' },
+  courier: { name: '送貨青年', icon: '📦' },
+  treeheart: { name: '巨樹之心', icon: '🌳' },
+  hunter: { name: '追獵隊長', icon: '🗡️' },
 };
 
 export const STORIES: Record<string, StoryLine[]> = {
@@ -30,9 +37,78 @@ export const STORIES: Record<string, StoryLine[]> = {
     { speaker: 'spirit', text: '牠們只怕古代咒語。從最簡單的單字開始就好，一個一個來。' },
     { speaker: 'hero', text: '好，先從草原開始！' },
   ],
+  // 區域魔王通關（打倒巨樹之心）：伏筆是迷霧森林的紫斗篷女人
   'clear-0': [
-    { speaker: 'elder', text: '招牌上的字回來了！孩子們又能念故事書了。' },
-    { speaker: 'spirit', text: '{name}，前方的森林被濃霧籠罩，聽說那裡藏著失落的歌謠。' },
+    { speaker: 'treeheart', text: '我……想起來了。我應該替旅人遮風擋雨，而不是將他們困住。' },
+    { speaker: 'hero', text: '草原已經安全了。你還記得是誰把黑石放進哨站的嗎？' },
+    { speaker: 'treeheart', text: '披著紫色斗篷的女人……從迷霧森林而來。她說，唯有沉默才能讓森林不再受傷。' },
+    { speaker: 'spirit', text: '迷霧森林……看來我們下一站有地方去了。' },
+  ],
+  // ---------- 每張三星地圖的開場與通關（第十四輪，和 ChatGPT 一起寫）----------
+  'map-0-0-intro': [
+    { speaker: 'hero', text: '總算有村子了。奇怪，大家都站在店門口，怎麼沒人做生意？' },
+    { speaker: 'spirit', text: '你看那些招牌，字都沒了。大家知道自己要做什麼，卻想不起來東西叫什麼名字。' },
+    { speaker: 'elder', text: '你們是從邊境來的？如果還能讀懂文字，拜託幫幫我們。村裡已經亂成一團了。' },
+    { speaker: 'hero', text: '可以。我們先從哪裡開始？' },
+  ],
+  'map-0-0-clear': [
+    { speaker: 'elder', text: '太好了！雜貨店的招牌回來了，大家也終於能看懂自己的貨物。' },
+    { speaker: 'spirit', text: '看吧，名字一回來，東西就不會亂成一團了。我就說你有點本事！' },
+    { speaker: 'hero', text: '先別誇我。村外那座風車怎麼一動也不動？' },
+  ],
+  'map-0-1-intro': [
+    { speaker: 'smith', text: '我修了三天，風車明明沒壞，卻怎麼也轉不起來。' },
+    { speaker: 'spirit', text: '不是風車壞了，是控制風向的古代符文消失了。你看，塔頂那塊石板空空的。' },
+    { speaker: 'hero', text: '那我把文字找回來，風車就會動了？' },
+    { speaker: 'smith', text: '拜託你了。沒有風車，村裡連麵粉都磨不出來。' },
+  ],
+  'map-0-1-clear': [
+    { speaker: 'smith', text: '動了！真的動了！我都快忘記風吹過葉片是什麼聲音了。' },
+    { speaker: 'spirit', text: '不過那股黑霧沒有散，它正往草原小徑流過去。' },
+    { speaker: 'hero', text: '看來不只是風車出問題。走，我們去看看源頭在哪。' },
+  ],
+  'map-0-2-intro': [
+    { speaker: 'hero', text: '剛剛那條路是不是自己動了？' },
+    { speaker: 'spirit', text: '你沒看錯。這些樹根原本會替迷路的人指路，現在卻把每條路都封死了。' },
+    { speaker: 'pathfinder', text: '我弟弟昨天去河岸送貨，到現在還沒回來。拜託你們幫我找找。' },
+    { speaker: 'hero', text: '先把路打通。我們會順路去找他。' },
+  ],
+  'map-0-2-clear': [
+    { speaker: 'pathfinder', text: '這是我弟弟留下的背包！他一定已經走到河岸了。' },
+    { speaker: 'spirit', text: '而且你看，背包上有一片黑色樹葉。這股力量不是自然長出來的。' },
+    { speaker: 'hero', text: '風車的黑霧、會動的樹根……看來有人故意把整片草原封住。' },
+  ],
+  'map-0-3-intro': [
+    { speaker: 'ferryman', text: '你們也要過河？那可不巧。渡船的符文失效了，水流又突然變急，誰都過不去。' },
+    { speaker: 'hero', text: '我們在找一個送貨的年輕人，你有看見嗎？' },
+    { speaker: 'ferryman', text: '有！他躲在對岸的倉庫裡，暫時沒事。可是那邊還有魔王軍的人。' },
+    { speaker: 'spirit', text: '果然。他們不是路過，是在守著通往巨樹的道路。' },
+  ],
+  'map-0-3-clear': [
+    { speaker: 'courier', text: '謝謝你們！我躲在倉庫裡，差點以為回不了家。' },
+    { speaker: 'hero', text: '你有看見魔王軍在這裡做什麼嗎？' },
+    { speaker: 'courier', text: '他們把一塊刻滿文字的黑石，運進了北邊廢棄的哨站。運走以後，河水就開始不對勁了。' },
+    { speaker: 'spirit', text: '黑石……我好像在哪裡見過。走，去哨站確認一下。' },
+  ],
+  'map-0-4-intro': [
+    { speaker: 'hero', text: '這裡不是早就廢棄了嗎？怎麼到處都有新留下的腳印？' },
+    { speaker: 'spirit', text: '看那塊黑石！上面的符文不是用來攻擊，而是一直重複同一道命令。' },
+    { speaker: 'hero', text: '什麼命令？' },
+    { speaker: 'spirit', text: '「不准任何人離開草原。」巨樹恐怕不是自己想攻擊村民的。' },
+  ],
+  'map-0-4-clear': [
+    { speaker: 'spirit', text: '黑石碎了！你看，纏住整座哨站的樹根開始退開了。' },
+    { speaker: 'hero', text: '可是最粗的那幾條還在往森林深處伸。我們得找到它們的主人。' },
+    { speaker: 'spirit', text: '是巨樹之心。以前它會保護草原，現在卻被命令困在自己的根裡。' },
+    { speaker: 'hero', text: '那就去把它叫醒，而不是把它砍倒。' },
+  ],
+  // 區域魔王登場
+  'boss-0-intro': [
+    { speaker: 'treeheart', text: '退下……任何人……不得離開……' },
+    { speaker: 'spirit', text: '它一直在重複黑石上的命令。連自己原本的聲音都快忘了。' },
+    { speaker: 'hero', text: '巨樹！我們不是來傷害你的。草原上的人還在等你回去！' },
+    { speaker: 'treeheart', text: '保護……草原……封閉……所有道路！' },
+    { speaker: 'spirit', text: '它聽不見了。先打碎那些黑色的根，才能讓真正的巨樹醒過來！' },
   ],
   'region-1': [
     { speaker: 'spirit', text: '霧裡傳來的聲音都是破碎的句子，要用正確的文法才能把它們拼回來。' },
@@ -119,3 +195,20 @@ const REGION_STORY_KEYS = ['0', '1', 'a2p', '2', 'b1p', '3', 'b2p', '4', '5'];
 const storyKey = (regionIdx: number) => REGION_STORY_KEYS[regionIdx] ?? String(regionIdx);
 export const regionStoryId = (regionIdx: number) => `region-${storyKey(regionIdx)}`;
 export const clearStoryId = (regionIdx: number) => `clear-${storyKey(regionIdx)}`;
+
+// 每張三星地圖的開場／通關劇情、區域魔王登場劇情的 id（沒有寫劇本的地圖就沒有）
+export const mapStoryId = (regionIdx: number, mapIdx: number, part: 'intro' | 'clear') => `map-${regionIdx}-${mapIdx}-${part}`;
+export const bossStoryId = (regionIdx: number) => `boss-${regionIdx}-intro`;
+
+// 劇情回顧的名稱
+export function storyTitle(id: string, regionName: (idx: number) => string, mapName: (regionIdx: number, mapIdx: number) => string): string {
+  if (id === 'prologue') return '序章';
+  if (id === 'golden-ending') return '黃金之路・結局';
+  const map = id.match(/^map-(\d+)-(\d+)-(intro|clear)$/);
+  if (map) return `${regionName(+map[1])}・${mapName(+map[1], +map[2])}・${map[3] === 'intro' ? '開場' : '通關'}`;
+  const boss = id.match(/^boss-(\d+)-intro$/);
+  if (boss) return `${regionName(+boss[1])}・魔王登場`;
+  const [kind, key] = id.split('-');
+  const idx = REGION_STORY_KEYS.indexOf(key);
+  return `${regionName(idx)}・${kind === 'region' ? '開場' : '通關'}`;
+}

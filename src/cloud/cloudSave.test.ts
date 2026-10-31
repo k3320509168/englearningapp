@@ -12,7 +12,8 @@ describe('存檔碼', () => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
     const back = parseSaveCode(exportSaveCode());
     expect(back?.version).toBe(SAVE_VERSION);
-    expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 7, regions: 2, gold: 350 });
+    // v18 起等級改成 1～200：舊存檔的 Lv 7 換算成 Lv 11
+    expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 11, regions: 2, gold: 350 });
   });
 
   it('備份檔（JSON）可以讀回，很大的存檔也沒問題', () => {
@@ -22,7 +23,8 @@ describe('存檔碼', () => {
     const file = exportBackupFile();
     expect(file.name).toMatch(/^english-rpg-backup-\d{8}-\d{4}\.json$/);
     const back = parseSaveCode(file.text);
-    expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 7, regions: 2, gold: 350 });
+    // v18 起等級改成 1～200：舊存檔的 Lv 7 換算成 Lv 11
+    expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 11, regions: 2, gold: 350 });
   });
 
   it('亂貼的文字不會被當成存檔', () => {

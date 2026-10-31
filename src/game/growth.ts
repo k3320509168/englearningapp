@@ -51,17 +51,18 @@ export function describeMods(m: Partial<Mods>): string[] {
 }
 
 // ---------- 等級 ----------
-// 等級上限（第四輪）：主角每轉職一次上限提高，覺醒後可以突破到 100；
-// 英雄依目前稀有度（含升階）最高 N 40、R 50、SR 60、SSR 70、UR 80，也不能超過主角
-export const MAX_LEVEL = 100;
-export const PLAYER_LEVEL_CAPS = [40, 60, 80, 100];
+// 等級（第十三輪，和 ChatGPT 討論）：主角最高 Lv 200，每轉職一次上限提高（未轉職 40、一轉 100、二轉 160、覺醒 200）；
+// 英雄最高 180（UR 200），也不能超過主角。每級 HP 與攻擊 +0.65%（線性，Lv 200 約 ×2.29）——
+// 等級讓人有感，但不會比英文（combo）更重要
+export const MAX_LEVEL = 200;
+export const PLAYER_LEVEL_CAPS = [40, 100, 160, 200];
 export const playerLevelCap = (classTier: number) => PLAYER_LEVEL_CAPS[Math.min(Math.max(0, classTier), PLAYER_LEVEL_CAPS.length - 1)];
-export const HERO_LEVEL_CAPS: Record<string, number> = { N: 40, R: 50, SR: 60, SSR: 70, UR: 80 };
-export const LEVEL_STAT = 0.03; // 每級 HP 與攻擊 +3%
+export const HERO_LEVEL_CAPS: Record<string, number> = { N: 180, R: 180, SR: 180, SSR: 180, UR: 200 };
+export const LEVEL_STAT = 0.0065;
+export const levelMult = (level: number) => 1 + (level - 1) * LEVEL_STAT;
 
-// Lv 1～9 每級需求接近（約 100），前期不會一張地圖連升好幾級；
-// Lv 1→10 的總量與原本相同（1035），一轉的時間點不變。Lv 10 以後維持 40 + 15×Lv
-export const xpToNext = (level: number) => (level < 10 ? 100 + level * 3 : 40 + level * 15);
+// 升級需求：100 + 10×Lv（Lv 1→20 共 3,800、Lv 1→200 共 218,900）
+export const xpToNext = (level: number) => 100 + 10 * level;
 
 // 全螢幕慶祝只留給里程碑等級（每 5 級），其他升級在戰鬥畫面跳字就好
 export const isMilestoneLevel = (level: number) => level % 5 === 0;
@@ -82,9 +83,11 @@ export function addXp(level: number, xp: number, gained: number, cap = MAX_LEVEL
   return { level: lv, xp: cur, levelsGained: lv - level };
 }
 
-// 戰鬥中獲得的經驗：答對、擊倒；後面的區域給更多
-export const XP = { correct: 4, kill: 10, elite: 25, boss: 40 };
-export const xpScale = (regionIdx: number) => 1 + regionIdx * 0.5;
+// 戰鬥中獲得的經驗：答對、擊倒。每區一個固定的校準係數（依模擬：90% 正確率的玩家打完一區，
+// 主線大約給到推薦等級需求的 85%，其餘靠副本），讓實際等級貼近推薦等級
+export const XP = { correct: 3, kill: 6, elite: 15, boss: 30 };
+export const REGION_XP = [0.65, 1.3, 1.45, 1.95, 1.95, 2.3, 2.7, 3.1, 3.5];
+export const xpScale = (regionIdx: number) => REGION_XP[Math.min(Math.max(0, regionIdx), REGION_XP.length - 1)];
 
 // ---------- 轉職樹 ----------
 export interface ClassNode {
@@ -98,10 +101,11 @@ export interface ClassNode {
 }
 
 // 每一階的基礎能力加成
+// 第十三輪：固定加成下修（8%／10%／12%），職業差異主要靠特色效果
 const TIER_STATS: Record<1 | 2 | 3, Partial<Mods>> = {
-  1: { hp: 0.15, atk: 0.15 },
-  2: { hp: 0.15, atk: 0.15 },
-  3: { hp: 0.2, atk: 0.2 },
+  1: { hp: 0.08, atk: 0.08 },
+  2: { hp: 0.1, atk: 0.1 },
+  3: { hp: 0.12, atk: 0.12 },
 };
 
 type Branch = [id: string, name: string, en: string, desc: string, mods: Partial<Mods>];
@@ -172,10 +176,18 @@ export const childrenOf = (parent: string) => CLASS_NODES.filter(n => n.parent =
 
 // 轉職條件：等級＋通關區域數（unlockedIndex = 已通關的區域數）
 export const ADVANCE_REQ: Record<1 | 2 | 3, { level: number; regionsCleared: number; label: string }> = {
-  1: { level: 10, regionsCleared: 1, label: 'Lv 10＋通關第 1 個區域' },
-  2: { level: 30, regionsCleared: 3, label: 'Lv 30＋通關第 3 個區域' },
-  3: { level: 60, regionsCleared: 6, label: 'Lv 60＋通關第 6 個區域' },
+  1: { level: 20, regionsCleared: 1, label: 'Lv 20＋通關 A1' },
+  2: { level: 60, regionsCleared: 3, label: 'Lv 60＋通關 A2+' },
+  3: { level: 120, regionsCleared: 6, label: 'Lv 120＋通關 B2' },
 };
+
+// 主角換職業（第十三輪）：五種職業共用等級，轉職路線各自保留；戰鬥外免費切換。
+// 創角時選的第一個職業轉職不用徽章；其他職業點亮轉職要職業徽章（時空之塔、每週任務取得，不能抽）
+export const BADGE_COST: Record<1 | 2 | 3, number> = { 1: 10, 2: 25, 3: 50 };
+// 已花在這條路線上的徽章（重置時退回）
+export const pathBadgeCost = (path: string[]) => path.reduce((sum, id) => sum + BADGE_COST[classNode(id)?.tier ?? 1], 0);
+// 等級上限看所有職業裡轉得最高的那一個
+export const bestTier = (paths: Record<string, string[]>) => Math.max(0, ...Object.values(paths).map(p => p.length));
 
 // 目前路線的下一階選項（已到覺醒則為空）
 export function nextOptions(classId: ClassId, path: string[]): ClassNode[] {

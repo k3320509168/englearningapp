@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CLASS_NODES, MAX_LEVEL, addXp, canAdvance, combineMods, nextOptions, pathMods, xpToNext } from './growth';
+import { LEVEL_STAT, CLASS_NODES, MAX_LEVEL, addXp, canAdvance, combineMods, nextOptions, pathMods, xpToNext } from './growth';
 import { EQUIPMENT, enhanceCost, equipMods, resolveCost, rollDrops } from './equipment';
 import { buildMember, playerMods, teamGuardEvery } from './party';
 import { DEFAULT_CHARACTER, CLASSES } from './character';
@@ -18,7 +18,7 @@ describe('levels', () => {
   it('each level makes the protagonist stronger', () => {
     const lv1 = buildMember('player', DEFAULT_CHARACTER, base, { growth: { level: 1, classPath: [], equipped: [] } });
     const lv11 = buildMember('player', DEFAULT_CHARACTER, base, { growth: { level: 11, classPath: [], equipped: [] } });
-    expect(lv11.atk / lv1.atk).toBeCloseTo(1.3);
+    expect(lv11.atk / lv1.atk).toBeCloseTo(1 + 10 * LEVEL_STAT);
   });
 });
 
@@ -37,16 +37,17 @@ describe('class tree', () => {
   });
 
   it('requires level and cleared regions', () => {
-    expect(canAdvance(1, 10, 1)).toBe(true);
-    expect(canAdvance(1, 9, 1)).toBe(false);
-    expect(canAdvance(1, 10, 0)).toBe(false);
-    expect(canAdvance(2, 30, 3)).toBe(true);
+    expect(canAdvance(1, 20, 1)).toBe(true);
+    expect(canAdvance(1, 19, 1)).toBe(false);
+    expect(canAdvance(1, 20, 0)).toBe(false);
+    expect(canAdvance(2, 60, 3)).toBe(true);
+    expect(canAdvance(3, 120, 6)).toBe(true);
   });
 
   it('class passives combine along the path', () => {
     const m = pathMods(['squire', 'paladin']);
     expect(m.guardEvery).toBe(4);
-    expect(m.hp).toBeCloseTo(0.15 + 0.15 + 0.1);
+    expect(m.hp).toBeCloseTo(0.08 + 0.1 + 0.1);
     expect(combineMods({ guardEvery: 5 }, { guardEvery: 8 }).guardEvery).toBe(5);
   });
 
@@ -87,7 +88,7 @@ describe('growth in the save', () => {
     expect(sv().equipment[0].plus).toBe(1);
 
     expect(sv().advanceClass('squire')).toBe(false);
-    useSaveStore.setState({ player: { level: 10, xp: 0, classPath: [] }, unlockedIndex: 1 });
+    useSaveStore.setState({ player: { level: 20, xp: 0, classPath: [] }, unlockedIndex: 1 });
     expect(sv().advanceClass('elementalist')).toBe(false); // 不是劍士的路線
     expect(sv().advanceClass('squire')).toBe(true);
     expect(sv().player.classPath).toEqual(['squire']);
@@ -143,12 +144,11 @@ describe('賣出裝備', () => {
 });
 
 describe('經驗值曲線', () => {
-  it('前期每級需求接近，Lv 1→10 總量與舊曲線相同', () => {
-    let total = 0;
-    for (let l = 1; l < 10; l++) total += xpToNext(l);
-    expect(total).toBe(1035);
-    expect(xpToNext(1)).toBeGreaterThanOrEqual(100);
-    expect(xpToNext(10)).toBe(190);
+  it('升級需求 100＋10×Lv：Lv 1→20 共 3,800、Lv 1→200 共 218,900', () => {
+    let to20 = 0, to200 = 0;
+    for (let l = 1; l < 200; l++) { to200 += xpToNext(l); if (l < 20) to20 += xpToNext(l); }
+    expect(to20).toBe(3800);
+    expect(to200).toBe(218900);
   });
 });
 

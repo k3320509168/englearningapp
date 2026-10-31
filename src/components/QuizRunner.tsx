@@ -54,6 +54,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = 'çœ
     if (q?.type !== 'voice') return;
     recognizer.current = createRecognizer({
       onStart: () => setListening(true),
+      accept: (t) => checkVoice(q, t),
       onResult: (t) => finish(checkVoice(q, t), t[0] ?? ''),
       onError: () => setListening(false),
       onEnd: () => setListening(false),

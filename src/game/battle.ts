@@ -107,10 +107,25 @@ function editDistance(a: string, b: string): number {
 
 // 辨識出來的字算不算唸對：完全一樣、單複數（reservation / reservations），
 // 或長字只差一個字母（辨識引擎常見的小誤差，例如 luggage → luggages）
+// 長單字容許的誤差：電腦的麥克風收音比手機差，辨識常差一兩個字母（例如 helicopter 聽成 hellicopter）。
+// 短字維持嚴格，避免唸錯也算對（restart 不能算 start）
+const wordTolerance = (len: number) => (len >= 9 ? 2 : len >= 6 ? 1 : 0);
 function wordMatches(heard: string, target: string): boolean {
   if (heard === target) return true;
   if (heard === `${target}S` || heard === `${target}ES` || `${heard}S` === target) return true;
-  return target.length >= 6 && editDistance(heard, target) <= 1;
+  const tol = wordTolerance(target.length);
+  return tol > 0 && Math.abs(heard.length - target.length) <= tol && editDistance(heard, target) <= tol;
+}
+// 辨識結果把一個字拆成幾個詞（例如 heli copter）：相鄰 1～3 個詞合起來比對
+function anySpanMatches(words: string[], target: string): boolean {
+  for (let i = 0; i < words.length; i++) {
+    let joined = '';
+    for (let j = i; j < Math.min(words.length, i + 3); j++) {
+      joined += words[j];
+      if (wordMatches(joined, target)) return true;
+    }
+  }
+  return false;
 }
 
 // transcripts：辨識引擎給的所有候選，任何一個唸對就算對
@@ -121,10 +136,18 @@ export function checkVoice(q: Question, transcripts: string | string[]): boolean
   return heardList.some(transcript => {
     if (isSentence) return candidates.some(c => sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO);
     const words = normalizeWords(transcript);
-    // 片語（例如 thank you）也可能被辨識成連在一起的一個字
+    // 片語（例如 thank you）也可能被辨識成連在一起的一個字；一個長字也可能被拆成幾個詞
     const joined = words.join('');
-    return candidates.some(c => words.some(w => wordMatches(w, c.toUpperCase())) || joined === c.toUpperCase());
+    return candidates.some(c => anySpanMatches(words, c.toUpperCase()) || joined === c.toUpperCase().replace(/[^A-Z]/g, ''));
   });
+}
+
+// 只聽到開頭一小段（例如 helicopter 只聽到 "Hel"）：收音被提早切斷，不是唸錯，讓玩家免費再唸一次
+export function isVoiceFragment(q: Question, transcripts: string[]): boolean {
+  const target = (q.speak ?? q.ans).toUpperCase().replace(/[^A-Z]/g, '');
+  const heard = (transcripts[0] ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+  if (!heard) return true;
+  return heard.length <= target.length * 0.6 && target.startsWith(heard.slice(0, 2));
 }
 
 // 從題目描述取出中文提示，例如「請拼出：書本」→「書本」、「填空題：B U D G _ T (預算)」→「預算」
@@ -174,6 +197,18 @@ export function completedSentence(q: Question): string {
   const answer = q.options.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? '';
   const sentence = q.desc.replace(/^【[^】]*】/, '').trim();
   return sentence.includes('___') ? sentence.replace('___', answer) : '';
+}
+
+// 這一題「答案」要唸的英文（答錯回饋、錯題本、圖鑑共用）：
+// 聽力題唸題目播放的英文；有空格的句子唸填好答案的完整句子；正確選項是英文就唸選項；
+// 都沒有就是空字串（不要把中文選項或空白交給英文語音去唸——會沒有聲音）
+export function questionAudio(q: Question): string {
+  const sentence = completedSentence(q);
+  if (sentence) return sentence;
+  if (q.speak?.trim()) return q.speak;
+  if (q.type !== 'choice') return q.ans;
+  const option = q.options?.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? '';
+  return /[A-Za-z]/.test(option) ? option : '';
 }
 
 // 援軍：連續答錯幾次後出現

@@ -13,113 +13,147 @@ import { forgetCloudForReset } from '../cloud/cloudSave';
 
 const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '特大']];
 
+// 設定分成五類（第二十一輪 E6）：桌機左側分類、手機上方一排；標題與關閉按鈕固定，只有內容捲動
+type SettingTab = 'sound' | 'voice' | 'display' | 'save' | 'advanced';
+const SETTING_TABS: { id: SettingTab; icon: string; label: string }[] = [
+  { id: 'sound', icon: '🔊', label: '聲音' },
+  { id: 'voice', icon: '🗣️', label: '語音與學習' },
+  { id: 'display', icon: '👁️', label: '顯示與操作' },
+  { id: 'save', icon: '💾', label: '存檔與帳號' },
+  { id: 'advanced', icon: '⚠️', label: '進階' },
+];
+
 export default function SettingsModal() {
   const settings = useSaveStore(s => s.settings);
   const updateSettings = useSaveStore(s => s.updateSettings);
   const resetProgress = useSaveStore(s => s.resetProgress);
   const { closeModal, openModal } = useUiStore();
   const [confirmReset, setConfirmReset] = useState(false);
+  const [tab, setTab] = useState<SettingTab>('sound');
 
   return (
-    <Modal title="設定" onClose={closeModal}>
+    <Modal title="⚙️ 設定" onClose={closeModal} wide>
       <CloudLoginError />
-      <section className="settings-group">
-        <h3>🔊 聲音</h3>
-        <label className="range">
-          <span>正常語速 <b>{settings.speechRate.toFixed(1)}x</b></span>
-          <input type="range" min={0.5} max={1.3} step={0.1} value={settings.speechRate}
-            onChange={e => updateSettings({ speechRate: Number(e.target.value) })} />
-        </label>
-        <label className="range">
-          <span>慢速語速（🐢 按鈕）<b>{(settings.slowRate ?? SLOW_RATE).toFixed(2)}x</b></span>
-          <input type="range" min={0.3} max={0.9} step={0.05} value={settings.slowRate ?? SLOW_RATE}
-            onChange={e => updateSettings({ slowRate: Number(e.target.value) })} />
-        </label>
-        <label className="range">
-          <span>發音音量 <b>{Math.round(settings.volume * 100)}%</b></span>
-          <input type="range" min={0} max={1} step={0.1} value={settings.volume}
-            onChange={e => updateSettings({ volume: Number(e.target.value) })} />
-        </label>
-        <label className="range">
-          <span>打擊音效 <b>{Math.round(settings.sfxVolume * 100)}%</b></span>
-          <input type="range" min={0} max={1} step={0.1} value={settings.sfxVolume}
-            onChange={e => { updateSettings({ sfxVolume: Number(e.target.value) }); sfx.hit(); }} />
-        </label>
-        <label className="range">
-          <span>背景音樂 <b>{Math.round(settings.musicVolume * 100)}%</b></span>
-          <input type="range" min={0} max={1} step={0.05} value={settings.musicVolume}
-            onChange={e => updateSettings({ musicVolume: Number(e.target.value) })} />
-        </label>
-        <VoicePicker />
-        <label className="check">
-          <input type="checkbox" checked={settings.autoSpeak} onChange={e => updateSettings({ autoSpeak: e.target.checked })} />
-          出題時自動播放發音
-        </label>
-      </section>
-
-      <section className="settings-group">
-        <h3>🎤 麥克風測試</h3>
-        <MicTest />
-        <label className="check">
-          <input type="checkbox" checked={settings.voiceAsSpelling} onChange={e => updateSettings({ voiceAsSpelling: e.target.checked })} />
-          暫時不用麥克風：口說題改成拼寫題（下一次進入關卡生效）
-        </label>
-      </section>
-
-      <section className="settings-group">
-        <h3>👁️ 顯示</h3>
-        <div className="text-scale" role="radiogroup" aria-label="文字大小">
-          <span>文字大小</span>
-          {TEXT_SCALES.map(([v, label]) => (
-            <button key={v} role="radio" aria-checked={settings.textScale === v} className={`btn btn-small ${settings.textScale === v ? 'btn-primary' : ''}`}
-              onMouseDown={keepFocus} onClick={() => updateSettings({ textScale: v })}>{label}</button>
+      <div className="settings-layout">
+        <nav className="settings-nav" aria-label="設定分類">
+          {SETTING_TABS.map(t => (
+            <button key={t.id} className={`settings-tab ${tab === t.id ? 'is-on' : ''}`} aria-current={tab === t.id} onMouseDown={keepFocus} onClick={() => setTab(t.id)}>
+              <span aria-hidden>{t.icon}</span>{t.label}
+            </button>
           ))}
+        </nav>
+        <div className="settings-content">
+          {tab === 'sound' && (
+            <section className="settings-group">
+              <h3>🔊 聲音</h3>
+            <label className="range">
+              <span>正常語速 <b>{settings.speechRate.toFixed(1)}x</b></span>
+              <input type="range" min={0.5} max={1.3} step={0.1} value={settings.speechRate}
+                onChange={e => updateSettings({ speechRate: Number(e.target.value) })} />
+            </label>
+            <label className="range">
+              <span>慢速語速（🐢 按鈕）<b>{(settings.slowRate ?? SLOW_RATE).toFixed(2)}x</b></span>
+              <input type="range" min={0.3} max={0.9} step={0.05} value={settings.slowRate ?? SLOW_RATE}
+                onChange={e => updateSettings({ slowRate: Number(e.target.value) })} />
+            </label>
+            <label className="range">
+              <span>發音音量 <b>{Math.round(settings.volume * 100)}%</b></span>
+              <input type="range" min={0} max={1} step={0.1} value={settings.volume}
+                onChange={e => updateSettings({ volume: Number(e.target.value) })} />
+            </label>
+            <label className="range">
+              <span>打擊音效 <b>{Math.round(settings.sfxVolume * 100)}%</b></span>
+              <input type="range" min={0} max={1} step={0.1} value={settings.sfxVolume}
+                onChange={e => { updateSettings({ sfxVolume: Number(e.target.value) }); sfx.hit(); }} />
+            </label>
+            <label className="range">
+              <span>背景音樂 <b>{Math.round(settings.musicVolume * 100)}%</b></span>
+              <input type="range" min={0} max={1} step={0.05} value={settings.musicVolume}
+                onChange={e => updateSettings({ musicVolume: Number(e.target.value) })} />
+            </label>
+            </section>
+          )}
+          {tab === 'voice' && (
+            <>
+              <section className="settings-group">
+                <h3>🗣️ 發音語音</h3>
+                <VoicePicker />
+                <label className="check">
+                  <input type="checkbox" checked={settings.autoSpeak} onChange={e => updateSettings({ autoSpeak: e.target.checked })} />
+                  出題時自動播放發音
+                </label>
+              </section>
+              <section className="settings-group">
+                <h3>🎤 麥克風</h3>
+                <MicTest />
+                <label className="check">
+                  <input type="checkbox" checked={settings.voiceAsSpelling} onChange={e => updateSettings({ voiceAsSpelling: e.target.checked })} />
+                  暫時不用麥克風：口說題改成拼寫題（下一次進入關卡生效）
+                </label>
+              </section>
+              <section className="settings-group">
+                <h3>📖 學習</h3>
+                <label className="check">
+                  <input type="checkbox" checked={settings.showLessons} onChange={e => updateSettings({ showLessons: e.target.checked })} />
+                  每 10 關開始前自動顯示戰前預習
+                </label>
+                <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('tutorial')}>❓ 重看遊戲說明</button>
+              </section>
+            </>
+          )}
+          {tab === 'display' && (
+            <section className="settings-group">
+              <h3>👁️ 顯示與操作</h3>
+            <div className="text-scale" role="radiogroup" aria-label="文字大小">
+              <span>文字大小</span>
+              {TEXT_SCALES.map(([v, label]) => (
+                <button key={v} role="radio" aria-checked={settings.textScale === v} className={`btn btn-small ${settings.textScale === v ? 'btn-primary' : ''}`}
+                  onMouseDown={keepFocus} onClick={() => updateSettings({ textScale: v })}>{label}</button>
+              ))}
+            </div>
+            <label className="check">
+              <input type="checkbox" checked={settings.reduceMotion} onChange={e => updateSettings({ reduceMotion: e.target.checked })} />
+              減少動態效果（不震動、不閃光，適合容易頭暈的人）
+            </label>
+              <p className="muted">鍵盤：選擇題按 A～D、Enter 下一步、Esc 關閉視窗或撤退；拼寫題直接打字。</p>
+            </section>
+          )}
+          {tab === 'save' && (
+            <>
+              <section className="settings-group">
+                <h3>☁️ 雲端存檔</h3>
+                <CloudSection />
+              </section>
+              <section className="settings-group">
+                <h3>💾 存檔備份</h3>
+                <BackupSection />
+              </section>
+            </>
+          )}
+          {tab === 'advanced' && (
+            <section className="settings-group danger">
+              <h3>⚠️ 重置進度</h3>
+            <p className="muted">全部歸零：主角、區域進度、金幣、英雄、裝備、錯題本、圖鑑、劇情與設定都會清除，從建立主角重新開始。此動作無法復原。
+              有登入雲端存檔的話會先登出，雲端上的舊存檔不會被覆蓋（之後重新登入時可以選擇要保留哪一份）。</p>
+            {confirmReset ? (
+              <div className="feedback-actions">
+                <button className="btn btn-danger" onMouseDown={keepFocus} onClick={() => {
+                  void forgetCloudForReset().finally(() => {
+                    resetProgress();
+                    setConfirmReset(false);
+                    // 重新載入：回到建立主角的畫面
+                    window.location.reload();
+                  });
+                }}>確定全部重置</button>
+                <button className="btn" onMouseDown={keepFocus} onClick={() => setConfirmReset(false)}>取消</button>
+              </div>
+            ) : (
+              <button className="btn" onMouseDown={keepFocus} onClick={() => setConfirmReset(true)}>重置進度…</button>
+            )}
+            </section>
+          )}
         </div>
-        <label className="check">
-          <input type="checkbox" checked={settings.reduceMotion} onChange={e => updateSettings({ reduceMotion: e.target.checked })} />
-          減少動態效果（不震動、不閃光，適合容易頭暈的人）
-        </label>
-      </section>
-
-      <section className="settings-group">
-        <h3>📖 學習</h3>
-        <label className="check">
-          <input type="checkbox" checked={settings.showLessons} onChange={e => updateSettings({ showLessons: e.target.checked })} />
-          每 10 關開始前自動顯示戰前預習
-        </label>
-        <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('tutorial')}>❓ 重看遊戲說明</button>
-      </section>
-
-      <section className="settings-group">
-        <h3>☁️ 雲端存檔</h3>
-        <CloudSection />
-      </section>
-
-      <section className="settings-group">
-        <h3>💾 存檔備份</h3>
-        <BackupSection />
-      </section>
-
-      <section className="settings-group danger">
-        <h3>⚠️ 重置進度</h3>
-        <p className="muted">全部歸零：主角、區域進度、金幣、英雄、裝備、錯題本、圖鑑、劇情與設定都會清除，從建立主角重新開始。此動作無法復原。
-          有登入雲端存檔的話會先登出，雲端上的舊存檔不會被覆蓋（之後重新登入時可以選擇要保留哪一份）。</p>
-        {confirmReset ? (
-          <div className="feedback-actions">
-            <button className="btn btn-danger" onMouseDown={keepFocus} onClick={() => {
-              void forgetCloudForReset().finally(() => {
-                resetProgress();
-                setConfirmReset(false);
-                // 重新載入：回到建立主角的畫面
-                window.location.reload();
-              });
-            }}>確定全部重置</button>
-            <button className="btn" onMouseDown={keepFocus} onClick={() => setConfirmReset(false)}>取消</button>
-          </div>
-        ) : (
-          <button className="btn" onMouseDown={keepFocus} onClick={() => setConfirmReset(true)}>重置進度…</button>
-        )}
-      </section>
+      </div>
     </Modal>
   );
 }

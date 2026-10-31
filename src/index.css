@@ -1845,3 +1845,17 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
 .adventure-card .btn { align-self: flex-start; margin-top: 4px; min-height: 40px; }
 .adventure-card.is-boss { border-color: #8f2a3a; }
 .adventure-card.is-golden { border-color: #ffd15c; background: color-mix(in srgb, #ffd15c 10%, #30365f); }
+
+/* 設定：左側分類＋右側內容（手機改成上方一排） */
+.settings-layout { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 14px; min-height: 360px; }
+.settings-nav { display: flex; flex-direction: column; gap: 4px; }
+.settings-tab { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 10px; border: 2px solid transparent; background: transparent; color: #a9b0ce; font: inherit; font-size: 15px; text-align: left; cursor: pointer; }
+.settings-tab:hover { color: #f1f0f8; background: #30365f; }
+.settings-tab.is-on { color: #101127; background: #ffd15c; border-color: #101127; font-weight: 700; }
+.settings-content { min-width: 0; }
+.settings-content .settings-group:first-child { margin-top: 0; }
+@media (max-width: 640px) {
+  .settings-layout { grid-template-columns: 1fr; min-height: 0; }
+  .settings-nav { flex-direction: row; flex-wrap: wrap; }
+  .settings-tab { flex: 1 1 30%; justify-content: center; font-size: 13px; min-height: 40px; padding: 4px; }
+}

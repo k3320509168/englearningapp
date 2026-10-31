@@ -12,11 +12,13 @@ export default function ShopModal() {
   const [tab, setTab] = useState<'upgrades' | 'items'>('upgrades');
 
   return (
-    <Modal title="🏪 商店" onClose={closeModal}>
+    <Modal title="🔨 工坊" onClose={closeModal}>
       <p className="shop-gold">持有金幣 <b>🪙 {gold}</b></p>
       <div className="tabs" role="tablist">
         <button role="tab" aria-selected={tab === 'upgrades'} className={`tab ${tab === 'upgrades' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('upgrades')}>永久升級</button>
         <button role="tab" aria-selected={tab === 'items'} className={`tab ${tab === 'items' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('items')}>戰鬥道具</button>
+        {/* 工坊（第二十一輪 E3）：商店與鍛造放在一起；鍛造目前還在「成長」裡，點了直接開鍛造坊 */}
+        <button role="tab" aria-selected={false} className="tab" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openGrowth('forge')}>⚒️ 鍛造</button>
       </div>
 
       {tab === 'upgrades' ? (

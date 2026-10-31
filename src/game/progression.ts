@@ -58,7 +58,7 @@ export type SkillId =
   | 'amplify' | 'heal' | 'fireball'      // 魔法師
   | 'haste' | 'quake' | 'fortify'        // 戰士
   | 'prayer' | 'blessing' | 'angelWing'  // 僧侶
-  | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora'; // SSR 專屬
+  | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora' | 'tenacity'; // SSR 專屬
 
 // 技能效果的組成（數值已經套用威力）
 export interface SkillEffect {
@@ -115,6 +115,8 @@ export const SKILLS: Record<SkillId, SkillDef> = {
   calm: { id: 'calm', icon: '🍃', name: '寧靜之心', signature: true, cost: 6, opening: true, effect: p => ({ timeStage: r(5 * p), heal: r(12 * p) }) },
   maze: { id: 'maze', icon: '🌀', name: '迷宮困敵', signature: true, cost: 5, effect: p => ({ breakShield: 3, charge: r1(1 + p) }) },
   aurora: { id: 'aurora', icon: '🌌', name: '極光祝福', signature: true, cost: 6, effect: p => ({ heal: r(25 * p), amplify: 3 }) },
+  // 堅韌（第二十二輪）：攻守兼備的土屬性劍士——下一擊 ×3.6（SSR）並得到一次守護（答錯不扣血、不斷 combo）
+  tenacity: { id: 'tenacity', icon: '🪨', name: '磐岩誓斬', signature: true, cost: 6, effect: p => ({ charge: r1(1.2 + 1.5 * p), shield: true }) },
 };
 
 // 各職業的技能池；第一個是主角的技能

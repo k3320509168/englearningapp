@@ -165,7 +165,7 @@ describe('skills', () => {
     const swords = new Set(HEROES.filter(h => h.classId === 'swordsman' && h.rarity !== 'SSR').map(heroSkill));
     expect(swords.size).toBeGreaterThan(1);
     for (const h of HEROES.filter(h => h.rarity === 'SSR')) expect(SKILLS[heroSkill(h)].signature).toBe(true);
-    expect(new Set(HEROES.filter(h => h.rarity === 'SSR').map(heroSkill)).size).toBe(8);
+    expect(new Set(HEROES.filter(h => h.rarity === 'SSR').map(heroSkill)).size).toBe(9);
   });
 });
 

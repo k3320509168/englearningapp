@@ -9,21 +9,21 @@ import { useSaveStore, initialSave, migrateSave } from '../store/saveStore';
 const seq = (...values: number[]) => { let i = 0; return () => values[i++ % values.length]; };
 
 describe('hero roster', () => {
-  it('has 50 heroes with unique English-word names', () => {
-    expect(HEROES).toHaveLength(50);
-    expect(new Set(HEROES.map(h => h.id)).size).toBe(50);
+  it('has 88 heroes with unique English-word names（第二十二輪擴充 +38）', () => {
+    expect(HEROES).toHaveLength(88);
+    expect(new Set(HEROES.map(h => h.id)).size).toBe(88);
     HEROES.forEach(h => expect(h.id).toMatch(/^[a-z]+$/));
   });
 
-  it('spreads heroes across rarities (N 16, R 14, SR 12, SSR 8)', () => {
+  it('spreads heroes across rarities (N 29, R 27, SR 23, SSR 9)', () => {
     const count = (r: string) => HEROES.filter(h => h.rarity === r).length;
-    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([16, 14, 12, 8]);
+    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([29, 27, 23, 9]);
   });
 
   it('gives each hero a valid, stable look', () => {
     HEROES.forEach(h => expect(normalizeCharacter(heroCharacter(h))).toEqual(heroCharacter(h)));
     const looks = new Set(HEROES.map(h => JSON.stringify(h.look) + h.classId + h.element));
-    expect(looks.size).toBe(50);
+    expect(looks.size).toBe(HEROES.length);
   });
 
   it('tiering up raises rarity by exactly one step and boosts stats', () => {

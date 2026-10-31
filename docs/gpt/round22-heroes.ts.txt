@@ -1,0 +1,111 @@
+
+  // ==========================================
+  // 英雄擴充第一批：39 位
+  // N 13 / R 13 / SR 11 / SSR 1 / UR 1
+  // 已確認不與附件 heroes.ts 的 50 位重複
+  // ==========================================
+
+  // ===== N：A1 基礎單字（13 位） =====
+
+  ['rock', '岩石', 'N', 'swordsman', 'earth', 'male'],
+  ['sword', '劍', 'N', 'swordsman', 'metal', 'male'],
+  ['night', '夜晚', 'N', 'swordsman', 'dark', 'female'],
+
+  ['snow', '雪', 'N', 'mage', 'water', 'female'],
+  ['cloud', '雲', 'N', 'mage', 'light', 'female'],
+  ['fire', '火', 'N', 'mage', 'fire', 'male'],
+
+  ['bear', '熊', 'N', 'warrior', 'wood', 'male'],
+  ['wolf', '狼', 'N', 'warrior', 'dark', 'male'],
+
+  ['fox', '狐狸', 'N', 'archer', 'dark', 'female'],
+  ['light', '光', 'N', 'archer', 'light', 'female'],
+
+  ['flower', '花', 'N', 'monk', 'wood', 'female'],
+  ['bell', '鈴鐺', 'N', 'monk', 'metal', 'female'],
+  ['smile', '微笑', 'N', 'monk', 'light', 'female'],
+
+  // ===== R：A2 常用單字（13 位） =====
+
+  ['bridge', '橋', 'R', 'swordsman', 'earth', 'male'],
+  ['iron', '鐵', 'R', 'swordsman', 'metal', 'male'],
+  ['smoke', '煙', 'R', 'swordsman', 'dark', 'female'],
+
+  ['mirror', '鏡子', 'R', 'mage', 'metal', 'female'],
+  ['cave', '洞穴', 'R', 'mage', 'earth', 'female'],
+  ['spark', '火花', 'R', 'mage', 'fire', 'male'],
+
+  ['ash', '灰燼', 'R', 'warrior', 'dark', 'male'],
+  ['torch', '火炬', 'R', 'warrior', 'fire', 'male'],
+
+  ['sunrise', '日出', 'R', 'archer', 'light', 'female'],
+  ['flame', '火焰', 'R', 'archer', 'fire', 'female'],
+
+  ['root', '樹根', 'R', 'monk', 'wood', 'male'],
+  ['moss', '苔蘚', 'R', 'monk', 'wood', 'female'],
+  ['shield', '盾牌', 'R', 'monk', 'metal', 'male'],
+
+  // ===== SR：B1～B2 進階單字（11 位） =====
+
+  ['rift', '裂隙', 'SR', 'swordsman', 'dark', 'male'],
+  ['tremor', '震動', 'SR', 'swordsman', 'earth', 'male'],
+
+  ['alloy', '合金', 'SR', 'mage', 'metal', 'female'],
+  ['drought', '乾旱', 'SR', 'mage', 'earth', 'female'],
+  ['inferno', '烈焰', 'SR', 'mage', 'fire', 'male'],
+
+  ['midnight', '午夜', 'SR', 'warrior', 'dark', 'female'],
+  ['fortress', '要塞', 'SR', 'warrior', 'earth', 'male'],
+  ['fury', '狂怒', 'SR', 'warrior', 'fire', 'male'],
+
+  ['phantom', '幻影', 'SR', 'archer', 'dark', 'female'],
+
+  ['bloom', '綻放', 'SR', 'monk', 'wood', 'female'],
+  ['anchor', '船錨', 'SR', 'monk', 'metal', 'male'],
+
+  // ===== SSR：B2～C1 抽象真名（1 位） =====
+
+  ['tenacity', '堅韌', 'SSR', 'swordsman', 'earth', 'female'],
+
+  // SSR 專屬技能構想
+  // TENACITY — 磐岩誓斬
+  // 下一次答對攻擊傷害 ×3.6，
+  // 並獲得一次守護：抵擋下一次答錯傷害，
+  // 同時保護 Combo 不被中斷。
+  //
+  // 建議 SkillEffect：
+  // { charge: 3.6, shield: true }
+  //
+  // 數值參考既有 eclipse 的蓄力攻擊、
+  // guard 的一次性守護。
+  // 定位：土屬性攻守兼備劍士，
+  // 傷害低於純攻擊 SSR，但多一層保護。
+  //
+  // 實作提醒：
+  // 需在 SkillId、SKILLS、SIGNATURE
+  // 分別新增 tenacity 專屬技能，
+  // 否則會落回一般劍士技能池。
+
+  // ===== UR：C1～C2 高階抽象真名（1 位） =====
+
+  ['oblivion', '湮滅', 'UR', 'monk', 'dark', 'male'],
+
+  // UR 專屬技能構想
+  // OBLIVION — 虛無聖言
+  // 全隊恢復最大 HP 的 30%，
+  // 獲得一次守護（答錯不扣血、不斷 Combo），
+  // 接下來 2 次攻擊傷害翻倍。
+  //
+  // 建議 SkillEffect：
+  // { heal: 30, shield: true, amplify: 2 }
+  //
+  // 數值參考既有 prayer、sanctum、
+  // blessing 的治療、護盾與增幅效果。
+  // 定位：暗屬性支援型僧侶，
+  // 以虛無之力吸收傷害並轉化為反擊力量。
+  //
+  // 實作提醒：
+  // 同樣要擴充 SkillId、SKILLS、SIGNATURE。
+  // 目前 SUMMON_RATES 沒有 UR；
+  // 建議先作為限定取得英雄，不直接改動
+  // SSR 3% 和 50 抽保底的既有經濟。

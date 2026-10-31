@@ -86,6 +86,94 @@ const ROSTER: Entry[] = [
   ['serenity', '寧靜', 'SSR', 'monk', 'water', 'female'],
   ['labyrinth', '迷宮', 'SSR', 'archer', 'earth'],
   ['aurora', '極光', 'SSR', 'mage', 'light', 'female'],
+
+
+  // ==========================================
+  // 英雄擴充第一批（ChatGPT 第二十二輪）：38 位
+  // N 13 / R 13 / SR 11 / SSR 1
+  // 不與原本 50 位重複；UR 的 oblivion（湮滅）先保留，等限定取得方式設計好再加入
+  // ==========================================
+
+  // ===== N：A1 基礎單字（13 位） =====
+
+  ['rock', '岩石', 'N', 'swordsman', 'earth', 'male'],
+  ['sword', '劍', 'N', 'swordsman', 'metal', 'male'],
+  ['night', '夜晚', 'N', 'swordsman', 'dark', 'female'],
+
+  ['snow', '雪', 'N', 'mage', 'water', 'female'],
+  ['cloud', '雲', 'N', 'mage', 'light', 'female'],
+  ['fire', '火', 'N', 'mage', 'fire', 'male'],
+
+  ['bear', '熊', 'N', 'warrior', 'wood', 'male'],
+  ['wolf', '狼', 'N', 'warrior', 'dark', 'male'],
+
+  ['fox', '狐狸', 'N', 'archer', 'dark', 'female'],
+  ['light', '光', 'N', 'archer', 'light', 'female'],
+
+  ['flower', '花', 'N', 'monk', 'wood', 'female'],
+  ['bell', '鈴鐺', 'N', 'monk', 'metal', 'female'],
+  ['smile', '微笑', 'N', 'monk', 'light', 'female'],
+
+  // ===== R：A2 常用單字（13 位） =====
+
+  ['bridge', '橋', 'R', 'swordsman', 'earth', 'male'],
+  ['iron', '鐵', 'R', 'swordsman', 'metal', 'male'],
+  ['smoke', '煙', 'R', 'swordsman', 'dark', 'female'],
+
+  ['mirror', '鏡子', 'R', 'mage', 'metal', 'female'],
+  ['cave', '洞穴', 'R', 'mage', 'earth', 'female'],
+  ['spark', '火花', 'R', 'mage', 'fire', 'male'],
+
+  ['ash', '灰燼', 'R', 'warrior', 'dark', 'male'],
+  ['torch', '火炬', 'R', 'warrior', 'fire', 'male'],
+
+  ['sunrise', '日出', 'R', 'archer', 'light', 'female'],
+  ['flame', '火焰', 'R', 'archer', 'fire', 'female'],
+
+  ['root', '樹根', 'R', 'monk', 'wood', 'male'],
+  ['moss', '苔蘚', 'R', 'monk', 'wood', 'female'],
+  ['shield', '盾牌', 'R', 'monk', 'metal', 'male'],
+
+  // ===== SR：B1～B2 進階單字（11 位） =====
+
+  ['rift', '裂隙', 'SR', 'swordsman', 'dark', 'male'],
+  ['tremor', '震動', 'SR', 'swordsman', 'earth', 'male'],
+
+  ['alloy', '合金', 'SR', 'mage', 'metal', 'female'],
+  ['drought', '乾旱', 'SR', 'mage', 'earth', 'female'],
+  ['inferno', '烈焰', 'SR', 'mage', 'fire', 'male'],
+
+  ['midnight', '午夜', 'SR', 'warrior', 'dark', 'female'],
+  ['fortress', '要塞', 'SR', 'warrior', 'earth', 'male'],
+  ['fury', '狂怒', 'SR', 'warrior', 'fire', 'male'],
+
+  ['phantom', '幻影', 'SR', 'archer', 'dark', 'female'],
+
+  ['bloom', '綻放', 'SR', 'monk', 'wood', 'female'],
+  ['anchor', '船錨', 'SR', 'monk', 'metal', 'male'],
+
+  // ===== SSR：B2～C1 抽象真名（1 位） =====
+
+  ['tenacity', '堅韌', 'SSR', 'swordsman', 'earth', 'female'],
+
+  // SSR 專屬技能構想
+  // TENACITY — 磐岩誓斬
+  // 下一次答對攻擊傷害 ×3.6，
+  // 並獲得一次守護：抵擋下一次答錯傷害，
+  // 同時保護 Combo 不被中斷。
+  //
+  // 建議 SkillEffect：
+  // { charge: 3.6, shield: true }
+  //
+  // 數值參考既有 eclipse 的蓄力攻擊、
+  // guard 的一次性守護。
+  // 定位：土屬性攻守兼備劍士，
+  // 傷害低於純攻擊 SSR，但多一層保護。
+  //
+  // 實作提醒：
+  // 需在 SkillId、SKILLS、SIGNATURE
+  // 分別新增 tenacity 專屬技能，
+  // 否則會落回一般劍士技能池。
 ];
 
 // 依單字產生固定的亂數（每次開遊戲外觀都一樣）
@@ -125,6 +213,7 @@ export const heroWord = (h: HeroDef) => h.id.toUpperCase();
 const SIGNATURE: Record<HeroId, SkillId> = {
   phoenix: 'rebirth', eclipse: 'eclipse', tempest: 'storm', sanctuary: 'sanctum',
   valor: 'valor', serenity: 'calm', labyrinth: 'maze', aurora: 'aurora',
+  tenacity: 'tenacity',
 };
 
 // 英雄的技能：SSR 用專屬技，其他依名字固定分到職業技能池的其中一種（同職業的英雄技能不一定一樣）

@@ -8,8 +8,6 @@ import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { useSpeechJam } from './useSpeechJam';
-import { storyTitle, STORIES } from '../game/story';
-import { REGIONS } from '../game/regions';
 import { CloudLoginError, CloudSection, BackupSection } from './CloudSave';
 import { forgetCloudForReset } from '../cloud/cloudSave';
 
@@ -19,8 +17,7 @@ export default function SettingsModal() {
   const settings = useSaveStore(s => s.settings);
   const updateSettings = useSaveStore(s => s.updateSettings);
   const resetProgress = useSaveStore(s => s.resetProgress);
-  const { closeModal, openModal, openStory } = useUiStore();
-  const storySeen = useSaveStore(s => s.storySeen);
+  const { closeModal, openModal } = useUiStore();
   const [confirmReset, setConfirmReset] = useState(false);
 
   return (
@@ -91,17 +88,6 @@ export default function SettingsModal() {
           每 10 關開始前自動顯示戰前預習
         </label>
         <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('tutorial')}>❓ 重看遊戲說明</button>
-      </section>
-
-      <section className="settings-group">
-        <h3>📜 劇情回顧</h3>
-        {storySeen.length === 0 ? <p className="muted">還沒有看過的劇情。</p> : (
-          <div className="story-list">
-            {Object.keys(STORIES).filter(id => storySeen.includes(id)).map(id => (
-              <button key={id} className="btn btn-small" onMouseDown={keepFocus} onClick={() => openStory(id, true)}>{storyTitle(id, i => REGIONS[i]?.name ?? '', (r, m) => REGIONS[r]?.maps[m] ?? '')}</button>
-            ))}
-          </div>
-        )}
       </section>
 
       <section className="settings-group">

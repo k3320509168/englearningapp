@@ -501,6 +501,16 @@ export const clearStoryId = (regionIdx: number) => `clear-${storyKey(regionIdx)}
 export const mapStoryId = (regionIdx: number, mapIdx: number, part: 'intro' | 'clear' | 'mini' | 'big') => `map-${regionIdx}-${mapIdx}-${part}`;
 export const bossStoryId = (regionIdx: number) => `boss-${regionIdx}-intro`;
 
+// 劇情回顧的分組：-1 序章與失語邊境、0～8 九區、99 黃金之路
+export function storyRegion(id: string): number {
+  if (id === 'prologue' || id.startsWith('pre-')) return -1;
+  if (id === 'golden-ending') return 99;
+  const m = id.match(/^(?:map|boss)-(\d+)-/);
+  if (m) return +m[1];
+  const idx = REGION_STORY_KEYS.indexOf(id.split('-').slice(1).join('-'));
+  return idx >= 0 ? idx : 99;
+}
+
 // 劇情回顧的名稱
 export function storyTitle(id: string, regionName: (idx: number) => string, mapName: (regionIdx: number, mapIdx: number) => string): string {
   if (id === 'prologue') return '序章';

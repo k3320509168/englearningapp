@@ -26,7 +26,8 @@ export default function TicketWheel() {
   const [instant, setInstant] = useState(false);
   const [timer, setTimer] = useState<number | undefined>(undefined);
 
-  if ((pending <= 0 && state !== 'done') || hidden || busy || celebrating) return null;
+  // 按下「轉！」時次數就扣掉了：轉動中（spinning）也要繼續顯示，不然最後一次會直接跳到結果
+  if ((pending <= 0 && state === 'ready') || hidden || busy || celebrating) return null;
 
   const land = (idx: number) => {
     setState('done');

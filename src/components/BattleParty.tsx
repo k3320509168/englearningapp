@@ -110,7 +110,7 @@ export function PartyBar() {
               </span>
               <span className="member-info">
                 <span className="member-name">{m.name}</span>
-                <span className="member-hp"><span style={{ width: `${(m.hp / m.maxHp) * 100}%` }} /></span>
+                <span className={`member-hp ${m.hp > 0 && m.hp < m.maxHp * 0.3 ? 'is-low' : ''}`}><span style={{ width: `${(m.hp / m.maxHp) * 100}%` }} /></span>
                 <span className="member-energy" aria-hidden="true">
                   {Array.from({ length: m.energyMax }, (_, k) => <i key={k} className={k < m.energy ? 'on' : ''} />)}
                 </span>

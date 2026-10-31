@@ -777,7 +777,9 @@ button { font: inherit; color: inherit; }
 .member-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .member-name { font-family: var(--font-ui); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .member-hp { height: 7px; border: 2px solid var(--ink); background: var(--bg); }
-.member-hp span { display: block; height: 100%; background: var(--good); transition: width 0.2s; }
+.member-hp span { display: block; height: 100%; background: var(--slot-color, var(--good)); transition: width 0.2s, background 0.2s; }
+/* 血條用出手順序的顏色；剩不到 30% 轉紅提醒 */
+.member-hp.is-low span { background: #ff5d6c; }
 .member-energy { display: flex; align-items: center; gap: 3px; }
 .member-energy i { width: 8px; height: 8px; border: 2px solid var(--ink); background: var(--bg); }
 .member-energy i.on { background: var(--accent); }
@@ -1803,3 +1805,7 @@ html[data-reduce-motion] .wheel { transition-duration: 0ms; }
 
 /* 程度測驗：自評起點 */
 .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+
+/* 劇情回顧：依章節分組 */
+.story-chapter { margin-bottom: 14px; }
+.story-chapter h3 { margin: 0 0 6px; font-size: 15px; color: #ffd15c; }

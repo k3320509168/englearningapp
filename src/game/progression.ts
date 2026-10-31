@@ -1,4 +1,5 @@
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
+import { regionStageCount } from './stageLayout';
 import type { ClassId, Element } from './character';
 
 // 成長系統的數值設定（純資料＋純函式）：永久升級、道具、英雄、技能、傷害、怪物強度、金幣、SRS 間隔。
@@ -65,12 +66,12 @@ export interface SkillEffect {
   revive?: boolean;     // 倒下的隊員復活（回復 heal %）
   timeThis?: number;    // 這一題多幾秒
   timeStage?: number;   // 這一關每題多幾秒
-  amplify?: number;     // 接下來幾次攻擊傷害與魔王題倍率翻倍
+  amplify?: number;     // 接下來幾次攻擊傷害翻倍
   charge?: number;      // 下一次答對的傷害倍率
   bossCharge?: boolean; // 頭目關時 charge 再 ×1.5
   crits?: number;       // 接下來幾次攻擊必定暴擊
   combo?: number;       // Combo 直接增加
-  bossStep?: boolean;   // 魔王題倍率直接進一階
+  bossStep?: boolean;   // 下一次困難題 Bonus 保底
   breakShield?: number; // 削掉菁英怪幾層護盾
 }
 
@@ -79,36 +80,40 @@ export interface SkillDef {
   icon: string;
   name: string;
   signature?: boolean; // SSR 專屬技
+  cost: number;        // 技能 CD：答對幾題能量才集滿（每位隊員答對一題全隊各 +1）
+  opening?: boolean;   // 搶攻：出戰時能量就是滿的，一開場就能施放
   effect: (power: number) => SkillEffect;
 }
 
 const r = Math.round;
 const r1 = (n: number) => Math.round(n * 10) / 10;
 
+// 技能 CD 的原則：輔助型 3～4 題、攻擊型 4～5 題、治療復活與 SSR 專屬 5～7 題；
+// 搶攻型（戰意高昂、專注、英勇號令、寧靜之心）開場就能放，放完才進 CD
 export const SKILLS: Record<SkillId, SkillDef> = {
-  guard: { id: 'guard', icon: '🛡️', name: '守護之盾', effect: p => ({ shield: true, heal: r(8 * p) }) },
-  slash: { id: 'slash', icon: '⚔️', name: '劍氣斬', effect: p => ({ charge: r1(1.5 + 1.5 * p) }) },
-  rally: { id: 'rally', icon: '📯', name: '戰意高昂', effect: p => ({ combo: r(2 * p) }) },
-  focus: { id: 'focus', icon: '🎯', name: '專注', effect: p => ({ timeStage: r(4 * p) }) },
-  arrowRain: { id: 'arrowRain', icon: '🏹', name: '箭雨', effect: p => ({ crits: r(2 * p) }) },
-  pierce: { id: 'pierce', icon: '🪡', name: '破甲箭', effect: p => ({ breakShield: p >= 1.35 ? 3 : 2, charge: r1(1 + 0.5 * p) }) },
-  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', effect: p => ({ amplify: r(2.5 * p) }) },
-  heal: { id: 'heal', icon: '💚', name: '治癒之光', effect: p => ({ heal: r(25 * p) }) },
-  fireball: { id: 'fireball', icon: '🔥', name: '元素爆裂', effect: p => ({ charge: r1(1.2 + 1.5 * p), crits: 1 }) },
-  haste: { id: 'haste', icon: '⏩', name: '加速之歌', effect: p => ({ timeThis: r(8 * p) }) },
-  quake: { id: 'quake', icon: '🪨', name: '大地震擊', effect: p => ({ charge: r1(1 + 1.2 * p), bossCharge: true }) },
-  fortify: { id: 'fortify', icon: '🧱', name: '鋼鐵意志', effect: p => ({ shield: true, heal: r(15 * p) }) },
-  prayer: { id: 'prayer', icon: '🙏', name: '祈禱', effect: p => ({ shield: true, heal: r(22 * p) }) },
-  blessing: { id: 'blessing', icon: '🌟', name: '聖光祝福', effect: p => ({ amplify: r(2 * p), combo: r(2 * p) }) },
-  angelWing: { id: 'angelWing', icon: '👼', name: '天使之翼', effect: p => ({ revive: true, heal: r(18 * p), timeThis: 5 }) },
-  rebirth: { id: 'rebirth', icon: '🐦‍🔥', name: '浴火重生', signature: true, effect: p => ({ revive: true, heal: r(30 * p) }) },
-  eclipse: { id: 'eclipse', icon: '🌑', name: '日蝕斬', signature: true, effect: p => ({ charge: r1(2 + 2 * p) }) },
-  storm: { id: 'storm', icon: '🌪️', name: '暴風連射', signature: true, effect: p => ({ crits: r(2 * p) + 1, charge: r1(1 + 0.4 * p) }) },
-  sanctum: { id: 'sanctum', icon: '⛪', name: '聖域結界', signature: true, effect: p => ({ shield: true, heal: r(25 * p), timeThis: 5 }) },
-  valor: { id: 'valor', icon: '🎖️', name: '英勇號令', signature: true, effect: p => ({ combo: r(3 * p), bossStep: true }) },
-  calm: { id: 'calm', icon: '🍃', name: '寧靜之心', signature: true, effect: p => ({ timeStage: r(5 * p), heal: r(12 * p) }) },
-  maze: { id: 'maze', icon: '🌀', name: '迷宮困敵', signature: true, effect: p => ({ breakShield: 3, charge: r1(1 + p) }) },
-  aurora: { id: 'aurora', icon: '🌌', name: '極光祝福', signature: true, effect: p => ({ heal: r(25 * p), amplify: 3 }) },
+  guard: { id: 'guard', icon: '🛡️', name: '守護之盾', cost: 4, effect: p => ({ shield: true, heal: r(8 * p) }) },
+  slash: { id: 'slash', icon: '⚔️', name: '劍氣斬', cost: 4, effect: p => ({ charge: r1(1.5 + 1.5 * p) }) },
+  rally: { id: 'rally', icon: '📯', name: '戰意高昂', cost: 4, opening: true, effect: p => ({ combo: r(5 * p) }) },
+  focus: { id: 'focus', icon: '🎯', name: '專注', cost: 5, opening: true, effect: p => ({ timeStage: r(4 * p) }) },
+  arrowRain: { id: 'arrowRain', icon: '🏹', name: '箭雨', cost: 4, effect: p => ({ crits: r(2 * p) }) },
+  pierce: { id: 'pierce', icon: '🪡', name: '破甲箭', cost: 4, effect: p => ({ breakShield: p >= 1.35 ? 3 : 2, charge: r1(1 + 0.5 * p) }) },
+  amplify: { id: 'amplify', icon: '✨', name: '魔力增幅', cost: 4, effect: p => ({ amplify: r(2.5 * p) }) },
+  heal: { id: 'heal', icon: '💚', name: '治癒之光', cost: 5, effect: p => ({ heal: r(25 * p) }) },
+  fireball: { id: 'fireball', icon: '🔥', name: '元素爆裂', cost: 5, effect: p => ({ charge: r1(1.2 + 1.5 * p), crits: 1 }) },
+  haste: { id: 'haste', icon: '⏩', name: '加速之歌', cost: 3, effect: p => ({ timeThis: r(8 * p) }) },
+  quake: { id: 'quake', icon: '🪨', name: '大地震擊', cost: 5, effect: p => ({ charge: r1(1 + 1.2 * p), bossCharge: true }) },
+  fortify: { id: 'fortify', icon: '🧱', name: '鋼鐵意志', cost: 5, effect: p => ({ shield: true, heal: r(15 * p) }) },
+  prayer: { id: 'prayer', icon: '🙏', name: '祈禱', cost: 5, effect: p => ({ shield: true, heal: r(22 * p) }) },
+  blessing: { id: 'blessing', icon: '🌟', name: '聖光祝福', cost: 4, effect: p => ({ amplify: r(2 * p), combo: r(2 * p) }) },
+  angelWing: { id: 'angelWing', icon: '👼', name: '天使之翼', cost: 6, effect: p => ({ revive: true, heal: r(18 * p), timeThis: 5 }) },
+  rebirth: { id: 'rebirth', icon: '🐦‍🔥', name: '浴火重生', signature: true, cost: 7, effect: p => ({ revive: true, heal: r(30 * p) }) },
+  eclipse: { id: 'eclipse', icon: '🌑', name: '日蝕斬', signature: true, cost: 6, effect: p => ({ charge: r1(2 + 2 * p) }) },
+  storm: { id: 'storm', icon: '🌪️', name: '暴風連射', signature: true, cost: 5, effect: p => ({ crits: r(2 * p) + 1, charge: r1(1 + 0.4 * p) }) },
+  sanctum: { id: 'sanctum', icon: '⛪', name: '聖域結界', signature: true, cost: 6, effect: p => ({ shield: true, heal: r(25 * p), timeThis: 5 }) },
+  valor: { id: 'valor', icon: '🎖️', name: '英勇號令', signature: true, cost: 6, opening: true, effect: p => ({ combo: r(12 * p), bossStep: true }) },
+  calm: { id: 'calm', icon: '🍃', name: '寧靜之心', signature: true, cost: 6, opening: true, effect: p => ({ timeStage: r(5 * p), heal: r(12 * p) }) },
+  maze: { id: 'maze', icon: '🌀', name: '迷宮困敵', signature: true, cost: 5, effect: p => ({ breakShield: 3, charge: r1(1 + p) }) },
+  aurora: { id: 'aurora', icon: '🌌', name: '極光祝福', signature: true, cost: 6, effect: p => ({ heal: r(25 * p), amplify: 3 }) },
 };
 
 // 各職業的技能池；第一個是主角的技能
@@ -139,17 +144,20 @@ export function skillDesc(id: SkillId, power: number): string {
   if (e.heal) parts.push(`全隊回復 ${e.heal}% HP`);
   if (e.charge) parts.push(`下一次答對傷害 ×${e.charge}${e.bossCharge ? '（頭目再 ×1.5）' : ''}`);
   if (e.crits) parts.push(`接下來 ${e.crits} 次攻擊必定暴擊`);
-  if (e.amplify) parts.push(`接下來 ${e.amplify} 次攻擊傷害與魔王題倍率翻倍`);
+  if (e.amplify) parts.push(`接下來 ${e.amplify} 次攻擊傷害翻倍`);
   if (e.combo) parts.push(`Combo +${e.combo}`);
-  if (e.bossStep) parts.push('魔王題倍率直接進一階');
+  if (e.bossStep) parts.push(`下一次困難題 Bonus 保底 ×${BOSS_BONUS_FLOOR}`);
   if (e.breakShield) parts.push(e.breakShield >= ELITE_SHIELD ? '菁英怪護盾全破' : `菁英怪護盾 -${e.breakShield} 層`);
   if (e.timeThis) parts.push(`這一題多 ${e.timeThis} 秒`);
   if (e.timeStage) parts.push(`這一關每題多 ${e.timeStage} 秒`);
   return parts.join('，');
 }
 
-// 每答對一題，全隊每人 +1 能量；集滿就能施放技能
+// 每答對一題，全隊每人 +1 能量；集滿（技能的 CD）就能施放技能。SKILL_ENERGY 是一般技能的 CD
 export const SKILL_ENERGY = 4;
+export const skillCost = (id: SkillId) => SKILLS[id].cost;
+// 技能的 CD 說明，例如「CD 答對 4 題・開場就能施放」
+export const skillTiming = (id: SkillId) => `CD 答對 ${SKILLS[id].cost} 題${SKILLS[id].opening ? '・開場就能施放（搶攻）' : ''}`;
 
 // ---------- 玩家能力（商店升級） ----------
 export interface PlayerStats {
@@ -168,24 +176,43 @@ export function playerStats({ upgrades }: { upgrades: Record<UpgradeId, number> 
   };
 }
 
-// Combo 加成：每層 +10%（可升級），沒有上限——英文越好傷害越高
+// Combo 加成：前 10 層每層 +10%（可升級），之後邊際遞減（對數成長）——combo 越高永遠越痛，但不會爆炸。
+// 每層 10% 時：10 combo ×2.0、20 ×2.8、50 ×4.2、100 ×5.4、300 ×7.5、1000 ×9.8
+export const COMBO_LINEAR = 10;
+export const COMBO_SOFT = 20;
 export function comboMultiplier(combo: number, step = 0.1): number {
-  return 1 + step * Math.max(0, combo);
+  const c = Math.max(0, combo);
+  const layers = c <= COMBO_LINEAR ? c : COMBO_LINEAR + COMBO_SOFT * Math.log(1 + (c - COMBO_LINEAR) / COMBO_SOFT);
+  return 1 + step * layers;
 }
 
-// 魔王題倍率：依序答對 ×2 → ×3 → ×5，之後每題 ×5，全部連乘
-export const BOSS_QUESTION_STEPS = [2, 3, 5];
-export const BOSS_QUESTION_EVERY = 5;
-
-export function bossStep(chain: number): number {
-  return BOSS_QUESTION_STEPS[Math.min(chain, BOSS_QUESTION_STEPS.length - 1)];
+// 困難題 Bonus：每 8 題出一題困難題（優先出你答錯過的題目），答對時「目前的 combo × 隨機倍數」。
+// ×1、×2 最常見，×10 很稀有（期望值約 ×2.4）；倍數只加在 combo 上，傷害由上面的遞減曲線控制
+export const BOSS_QUESTION_EVERY = 8;
+export const BOSS_BONUS_TABLE: { mult: number; weight: number }[] = [
+  { mult: 1, weight: 34 },
+  { mult: 2, weight: 33 },
+  { mult: 3, weight: 20 },
+  { mult: 5, weight: 10 },
+  { mult: 10, weight: 3 },
+];
+// floor：英勇號令等技能保底的最低倍數（只從 ≥ floor 的倍數裡抽）
+export function rollBossBonus(rand: () => number, floor = 1): number {
+  const table = BOSS_BONUS_TABLE.filter(b => b.mult >= floor);
+  const total = table.reduce((sum, b) => sum + b.weight, 0);
+  let x = rand() * total;
+  for (const b of table) {
+    x -= b.weight;
+    if (x < 0) return b.mult;
+  }
+  return table[table.length - 1].mult;
 }
+export const BOSS_BONUS_FLOOR = 3;
 
 export interface DamageInput {
   atk: number;
   combo: number;
   comboStep: number;
-  bossMult: number;
   element: number; // 屬性相剋倍率
   amplify: boolean;
   crit: boolean;
@@ -195,23 +222,32 @@ export interface DamageInput {
 }
 
 export function computeDamage(d: DamageInput): number {
-  const mult = comboMultiplier(d.combo, d.comboStep) * d.bossMult * d.element * (d.amplify ? 2 : 1) * (d.crit ? d.critMult ?? 2 : 1) * (d.speed ?? 1) * (d.extra ?? 1);
+  const mult = comboMultiplier(d.combo, d.comboStep) * d.element * (d.amplify ? 2 : 1) * (d.crit ? d.critMult ?? 2 : 1) * (d.speed ?? 1) * (d.extra ?? 1);
   return Math.max(1, Math.round(d.atk * mult));
 }
 
 // ---------- 怪物強度 ----------
 // 以「區域第一關、沒有 Combo、沒有升級時要答對幾題」來設計：一般怪約 3 題、頭目約 14 題。
-// 之後每一關都比前一關硬一點，打完一整個區域（50 關）強度 ×1.4，下一個區域再接著往上。
-// 主角升級只能追上一部分，越後面越需要升級攻擊力、裝備、轉職、技能與 Combo 才打得動。
+// 怪物的數值以「同等級英雄」為基底：英雄每級 +3%、裝備每區約 +12%（和遊戲裡加總能力的方式一樣）；
+// 怪物用自己的等級（菁英 +2、守門頭目 +3、區域魔王 +5）套同一個公式，再乘上「比單一英雄更強一點」的係數，
+// 這個係數每區 +8%：A1、A2 和英雄差不多，越後面越需要 combo、轉職、天賦和技能才打得動。
 export const HITS_TO_KILL = { normal: 3, boss: 14 };
-export const REGION_GROWTH = 1.3; // 九區之後調低：跟上推薦等級與裝備的成長（原本 6 區時是 1.4）
-export const STAGES_PER_REGION = 50;
+export const HERO_LEVEL_STAT = 0.03;
+export const EQUIP_PER_REGION = 0.12;
+export const MONSTER_EDGE = 1.08;
+export type FoeKind = 'elite' | 'gate' | 'boss' | 'final';
 
-export function monsterGrowth(stageIdx: number, levelIdx: number): number {
-  return REGION_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION);
+// 推薦等級、跟上裝備的英雄，能力是 Lv 1 的幾倍（progress = 區域 + 區內進度，例如 B1 中段 = 3.5）
+export const heroScale = (level: number, progress: number) =>
+  1 + HERO_LEVEL_STAT * (level - 1) + EQUIP_PER_REGION * progress;
+export const regionProgress = (levelIdx: number, stageIdx: number) => levelIdx + stageIdx / regionStageCount(levelIdx);
+
+export function monsterGrowth(stageIdx: number, levelIdx: number, kind?: FoeKind): number {
+  const progress = regionProgress(levelIdx, stageIdx);
+  return heroScale(monsterLevel(levelIdx, stageIdx, kind), progress) * MONSTER_EDGE ** progress;
 }
 
-// ---------- 第四輪：關卡長度、魔王破甲、祝福（和 Gemini 討論後定案） ----------
+// ---------- 關卡長度、首領、祝福（第四輪與 Gemini、第五輪與 ChatGPT 討論後定案） ----------
 // 一般關：連續 WAVES 隻怪物，每隻約 1～2 擊。combo 高時一擊一隻、一路秒殺很爽；
 // 程度還不夠時每隻多打一兩下，一關大約 5～8 題。
 export const NORMAL_WAVES = 5;
@@ -219,22 +255,30 @@ export const WAVE_HITS = 1.3;
 export const waveMaxHp = (stageIdx: number, levelIdx: number) =>
   Math.round(BASE_DAMAGE * WAVE_HITS * monsterGrowth(stageIdx, levelIdx));
 
-// 首領戰「連擊破甲」：combo 沒達到門檻時傷害只剩 10%；門檻每區提高（區域最終魔王用全額，守門頭目用 6 成）。
-// combo 從整張地圖一路延續進首領戰，所以門檻是「這張地圖要穩穩答對多少題」。
+// 首領沒有統一的護盾（第五輪和 ChatGPT 定案）：不同首領靠各自的技能變化（bossSkills.ts），
+// 傷害再高也要答完最低題數（stageLayout.ts），提前打到 0 血就進入終結連擊。
+// 首領的血量：以「打到這裡時一般玩家的 combo」打 hits 擊來設計（小 BOSS 12、大 BOSS 16、區域魔王 22）。
+// combo 從整張地圖延續進首領戰，參考 combo 每區提高（區域魔王用全額、大 BOSS 8 成、小 BOSS 6 成）
 export const REGION_BOSS_COMBO = [15, 22, 30, 40, 50, 60, 72, 85, 100];
-export const ARMOR_DAMAGE = 0.1;
-export const bossComboGate = (levelIdx: number, final: boolean) => {
+export const BOSS_HITS = { gate: 12, boss: 16, final: 22 };
+export type BossRole = keyof typeof BOSS_HITS;
+export const bossReferenceCombo = (levelIdx: number, role: BossRole) => {
   const full = REGION_BOSS_COMBO[Math.min(levelIdx, REGION_BOSS_COMBO.length - 1)];
-  return final ? full : Math.round(full * 0.6);
+  return Math.round(full * (role === 'final' ? 1 : role === 'boss' ? 0.8 : 0.6));
 };
-// 首領的血量：剛好達到門檻的隊伍，大約要答對 hits 題（守門 13、區域魔王 22）才打得倒
-export const BOSS_HITS = { gate: 13, final: 22 };
-export function bossMaxHp(stageIdx: number, levelIdx: number, final: boolean): number {
-  const gate = bossComboGate(levelIdx, final);
-  const hits = final ? BOSS_HITS.final : BOSS_HITS.gate;
+// 大 BOSS 平衡（第六輪：模擬發現答對率較低的玩家在 B1+ 以後的大 BOSS 突然撞牆）：
+// 大 BOSS 與區域魔王的血量與攻擊照下表打折，小 BOSS 只打一半的折扣。一般怪不變
+const BOSS_HP_SCALE = [1, 1, 0.95, 0.92, 0.88, 0.9, 0.9, 0.9, 0.88];
+const BOSS_ATK_SCALE = [1, 1, 0.95, 0.9, 0.85, 0.88, 0.88, 0.85, 0.82];
+const regionScale = (table: number[], levelIdx: number, role: BossRole) => {
+  const v = table[Math.min(Math.max(0, levelIdx), table.length - 1)];
+  return role === 'gate' ? 1 - (1 - v) / 2 : v;
+};
+export function bossMaxHp(stageIdx: number, levelIdx: number, role: BossRole): number {
+  const ref = bossReferenceCombo(levelIdx, role);
   let units = 0;
-  for (let k = 0; k < hits; k++) units += comboMultiplier(gate + k);
-  return Math.round(BASE_DAMAGE * units * monsterGrowth(stageIdx, levelIdx));
+  for (let k = 0; k < BOSS_HITS[role]; k++) units += comboMultiplier(ref + k);
+  return Math.round(BASE_DAMAGE * units * monsterGrowth(stageIdx, levelIdx, role) * regionScale(BOSS_HP_SCALE, levelIdx, role));
 }
 // 魔王祝福：首領戰（以及觸發祝福的一般關）答錯時 combo 只扣 30%，不會歸零
 export const BLESSED_COMBO_KEEP = 0.7;
@@ -243,12 +287,12 @@ export const BLESSING_DAMAGE = 1.2; // 一般關失敗後的祝福：全隊傷�
 export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ? 0.5 : 0);
 
 // ---------- 敵人等級與推薦戰力（第四輪） ----------
-// 九區平均分配 Lv 1～100：每區約 11 級，區內越後面越高；菁英 +2、守門頭目 +3、區域魔王 +5
+// 九區平均分配 Lv 1～100：每區約 11 級，區內越後面越高；菁英 +2、小 BOSS +3、大 BOSS +4、區域魔王 +5
 export const LEVELS_PER_REGION = 11;
 export const recommendedLevel = (levelIdx: number, stageIdx: number) =>
-  Math.min(100, 1 + levelIdx * LEVELS_PER_REGION + Math.floor((stageIdx / STAGES_PER_REGION) * (LEVELS_PER_REGION - 1)));
-export function monsterLevel(levelIdx: number, stageIdx: number, kind?: 'elite' | 'gate' | 'final'): number {
-  return recommendedLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
+  Math.min(100, 1 + levelIdx * LEVELS_PER_REGION + Math.floor((stageIdx / regionStageCount(levelIdx)) * (LEVELS_PER_REGION - 1)));
+export function monsterLevel(levelIdx: number, stageIdx: number, kind?: FoeKind): number {
+  return recommendedLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'boss' ? 4 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
 }
 
 // 戰力：每位隊員「攻擊 × 10 ＋ 生命」，隊伍加總
@@ -256,8 +300,7 @@ export const memberPower = (m: { atk: number; maxHp: number }) => Math.round(m.a
 export const teamPower = (party: { atk: number; maxHp: number }[]) => party.reduce((sum, m) => sum + memberPower(m), 0);
 // 推薦戰力：4 位隊員都在推薦等級、裝備跟上區域進度時的戰力
 export function recommendedPower(levelIdx: number, stageIdx: number): number {
-  const lv = recommendedLevel(levelIdx, stageIdx);
-  const member = (BASE_DAMAGE * 10 + PLAYER_MAX_HP) * (1 + 0.03 * (lv - 1)) * (1 + 0.12 * levelIdx);
+  const member = (BASE_DAMAGE * 10 + PLAYER_MAX_HP) * heroScale(recommendedLevel(levelIdx, stageIdx), regionProgress(levelIdx, stageIdx));
   return Math.round(member * 4);
 }
 // 戰力比較：綠色（輕鬆）、黃色（有挑戰）、紅色（很吃力）
@@ -271,19 +314,19 @@ export const ELITE_HP_MULT = 1.5;
 export const TREASURE_TIME = 30_000;
 export const TREASURE_HITS = 6;
 
-export function monsterMaxHp(stageIdx: number, levelIdx: number, isBoss: boolean): number {
+export function monsterMaxHp(stageIdx: number, levelIdx: number, isBoss: boolean, kind?: FoeKind): number {
   const hits = isBoss ? HITS_TO_KILL.boss : HITS_TO_KILL.normal;
-  return Math.round(BASE_DAMAGE * hits * monsterGrowth(stageIdx, levelIdx));
+  return Math.round(BASE_DAMAGE * hits * monsterGrowth(stageIdx, levelIdx, kind));
 }
 
 // 打倒頭目可得到召喚券（抽英雄用）
 export const TICKETS = { bossKill: 1, revengeKill: 2, levelClear: 5 };
 
-// 怪物攻擊（答錯時打一位隊員）：同樣隨區域與關卡變強。
-// 第一區約 20 次答錯才會全滅（4 人隊伍），最後一區沒升級生命時約 9 次，所以生命升級與藥水越後面越重要
-export const ATTACK_GROWTH = 1.3;
-export const monsterAttack = (isBoss: boolean, levelIdx = 0, stageIdx = 0) =>
-  Math.round((isBoss ? 30 : 20) * ATTACK_GROWTH ** (levelIdx + stageIdx / STAGES_PER_REGION));
+// 怪物攻擊（答錯或行動條集滿時打隊員）：和血量用同一個成長。
+// 一般怪一擊約同等級英雄生命的 20%、首領 30%；每區的「更強一點」係數讓後期一擊越來越痛
+export const monsterAttack = (isBoss: boolean, levelIdx = 0, stageIdx = 0, kind?: FoeKind) =>
+  Math.round((isBoss ? 30 : 20) * monsterGrowth(stageIdx, levelIdx, kind)
+    * (isBoss && (kind === 'gate' || kind === 'boss' || kind === 'final') ? regionScale(BOSS_ATK_SCALE, levelIdx, kind) : 1));
 
 // 怪物屬性：依區域與關卡輪替，讓玩家有機會換隊伍打剋制
 const ELEMENT_ORDER: Element[] = ['wood', 'water', 'fire', 'earth', 'metal', 'light', 'dark'];

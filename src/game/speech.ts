@@ -94,6 +94,22 @@ let pending: number | undefined;
 // 保留目前的 utterance，避免被回收後播到一半中斷
 let current: SpeechSynthesisUtterance | null = null;
 
+// 瀏覽器的發音引擎卡死（Mac 的 Chrome 曾發生：speaking 一直是 true，卻永遠不開始唸，同一個瀏覽器的所有分頁都一樣）。
+// 偵測到時通知畫面：聽力題改成直接顯示英文，並提示重新整理或重開瀏覽器。成功唸出一句就解除
+let jammed = false;
+const jamListeners = new Set<(jammed: boolean) => void>();
+export const isSpeechJammed = () => jammed;
+export function onSpeechJam(fn: (jammed: boolean) => void): () => void {
+  jamListeners.add(fn);
+  return () => { jamListeners.delete(fn); };
+}
+function setJammed(value: boolean) {
+  if (jammed === value) return;
+  jammed = value;
+  jamListeners.forEach(fn => fn(value));
+}
+const START_TIMEOUT_MS = 1800;
+
 // 瀏覽器規定頁面被點過之前不能發音（例如一進戰鬥就自動唸題目）：被擋下的那一句，等第一次點擊或按鍵時補唸
 let blocked: { replay: () => void; at: number } | null = null;
 const BLOCKED_REPLAY_MS = 10_000;
@@ -113,42 +129,45 @@ export function speak(text: string, rate = 1, volume = 1, slow = false, voiceNam
   const synth = window.speechSynthesis;
   const busy = synth.speaking || synth.pending;
   if (busy) synth.cancel();
-  // Chrome（尤其 Mac）的已知問題：語音引擎有時卡在暫停狀態，之後按什麼都不會唸，先恢復
+  // 引擎卡在暫停狀態時先恢復（只在真的暫停時呼叫；多餘的 resume 在 Mac Chrome 上可能讓佇列卡住）
   if (synth.paused) synth.resume();
   window.clearTimeout(pending);
-  const utterance = new SpeechSynthesisUtterance(speakableText(slow ? slowText(text) : text));
-  utterance.lang = 'en-US';
   const voice = pickVoice(slow, voiceName);
-  if (voice) utterance.voice = voice;
-  utterance.rate = slow ? slowRate : rate;
-  utterance.volume = volume;
-  current = utterance;
+  // 每次（包含重試）都建立新的 utterance：被 cancel 過的 utterance 再丟回 speak，會讓 Chrome 的發音佇列卡死
+  const make = () => {
+    const u = new SpeechSynthesisUtterance(speakableText(slow ? slowText(text) : text));
+    u.lang = 'en-US';
+    if (voice) u.voice = voice;
+    u.rate = slow ? slowRate : rate;
+    u.volume = volume;
+    return u;
+  };
   // 發音時壓低背景音樂，唸完再恢復
   duckMusic(true);
-  // 用 onstart 判斷「真的開始唸了」：不能只看 synth.speaking，短字 1.5 秒內早就唸完，會被誤判而唸兩次
-  let started = false;
-  utterance.onstart = () => { started = true; };
-  utterance.onend = () => { if (current === utterance) duckMusic(false); };
-  utterance.onerror = (e: SpeechSynthesisErrorEvent) => {
-    if (current !== utterance) return;
-    duckMusic(false);
-    // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
-    if (e?.error === 'not-allowed') blocked = { replay: () => speak(text, rate, volume, slow, voiceName, slowRate), at: Date.now() };
-  };
-  const start = () => {
-    if (current !== utterance) return;
+  const attempt = (retry: boolean) => {
+    const utterance = make();
+    current = utterance;
+    // 用 onstart 判斷「真的開始唸了」：不能只看 synth.speaking，短字很快就唸完
+    let started = false;
+    utterance.onstart = () => { started = true; setJammed(false); };
+    utterance.onend = () => { if (current === utterance) duckMusic(false); };
+    utterance.onerror = (e: SpeechSynthesisErrorEvent) => {
+      if (current !== utterance) return;
+      duckMusic(false);
+      // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
+      if (e?.error === 'not-allowed') blocked = { replay: () => speak(text, rate, volume, slow, voiceName, slowRate), at: Date.now() };
+    };
     synth.speak(utterance);
-    // Chrome（尤其 Mac）的已知問題：引擎有時停在暫停狀態，speak 之後要 resume 才會出聲
-    synth.resume();
-    // 保險：1.5 秒後還沒開始唸（引擎卡住），重設引擎、隔一下再唸一次
     window.setTimeout(() => {
       if (current !== utterance || started || blocked) return;
       synth.cancel();
-      window.setTimeout(() => { if (current === utterance && !started) { synth.speak(utterance); synth.resume(); } }, 150);
-    }, 1500);
+      // 第一次沒開始：重設引擎、隔一下用新的 utterance 再試；再沒開始就判定卡死
+      if (!retry) pending = window.setTimeout(() => { if (current === utterance) attempt(true); }, 250);
+      else { duckMusic(false); setJammed(true); }
+    }, START_TIMEOUT_MS);
   };
-  if (busy) pending = window.setTimeout(start, 120);
-  else start();
+  if (busy) pending = window.setTimeout(() => attempt(false), 120);
+  else attempt(false);
 }
 
 // 開始錄音前停止發音，避免麥克風把遊戲自己的語音也收進去

@@ -9,9 +9,9 @@ export const HINTS: Record<HintId, { icon: string; text: string }> = {
   voice: { icon: '🎤', text: '口說題：按麥克風按鈕，對著麥克風唸出單字就能攻擊。' },
   combo: { icon: '🔥', text: '連續答對會累積 Combo，傷害越來越高，特效也會越來越華麗！' },
   timer: { icon: '⏱️', text: 'Combo 計時條：每題 20 秒內答對才能延續 Combo，5 秒內答對傷害還有加成。' },
-  boss: { icon: '😈', text: '魔王題！答對傷害倍率大增。以前答錯的字也會在這裡出現，讓你複習。' },
+  boss: { icon: '🔥', text: '困難題 Bonus！答對時 combo 會乘上 ×1～×10。以前答錯的字會在這裡出現，讓你複習。' },
   relay: { icon: '🔗', text: '隊員會輪流出手：每個職業出手後幫下一位加成，所有隊員輪流答對一次就觸發「連攜攻擊」！看隊伍列上方的連攜進度。' },
-  skill: { icon: '✨', text: '隊員的能量滿了！按下方的技能按鈕（電腦可按數字鍵 1～4）就能施放，施放前有 5 秒可以確認。' },
+  skill: { icon: '✨', text: '隊員頭上的技能亮了！點那位隊員（或下方隊伍列的技能球），看完效果按「施放」；確認時計時會暫停。' },
 };
 
 export const ALL_HINTS = Object.keys(HINTS) as HintId[];

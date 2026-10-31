@@ -26,24 +26,14 @@ function ItemButtons({ onUse }: { onUse?: () => void }) {
           disabled={!canUse || items[it.id] <= 0 || disabledReason[it.id]}
           title={`${it.name}：${it.desc}`} aria-label={`使用${it.name}，剩 ${items[it.id]} 個`}>
           {it.icon}<small>{items[it.id]}</small>
+          <span className="item-name">{it.name}</span>
         </button>
       ))}
     </>
   );
 }
 
-// 戰鬥中的狀態列：本趟金幣、可使用的道具（手機上隱藏，改用 ItemMenu）
-export function BattleStatusBar() {
-  const runGold = useBattleStore(s => s.runGold);
-  return (
-    <div className="status-bar">
-      <span className="gold-badge" title="這趟冒險獲得的金幣（已存入，可到商店兌換）">🪙 +{runGold}</span>
-      <span className="item-bar"><ItemButtons /></span>
-    </div>
-  );
-}
-
-// 手機：道具收成一顆按鈕，點開才顯示，省下一整列的高度
+// 道具（在商店買）收成上方工具列的一顆 🎒 按鈕，點開才顯示，省下一整列給題目
 export function ItemMenu() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -55,11 +45,11 @@ export function ItemMenu() {
     return () => window.removeEventListener('pointerdown', onDown);
   }, [open]);
   return (
-    <div className="item-menu only-mobile" ref={ref}>
-      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setOpen(v => !v)} aria-expanded={open} aria-label={`道具，共 ${total} 個`}>
+    <div className="item-menu" ref={ref}>
+      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setOpen(v => !v)} aria-expanded={open} aria-label={`道具，共 ${total} 個`} title="道具：藥水、提示卷軸、護盾（在商店購買）">
         🎒{total > 0 && <small className="item-count">{total}</small>}
       </button>
-      {open && <div className="item-pop"><ItemButtons onUse={() => setOpen(false)} /></div>}
+      {open && <div className="item-pop" role="menu" aria-label="道具"><ItemButtons onUse={() => setOpen(false)} /></div>}
     </div>
   );
 }

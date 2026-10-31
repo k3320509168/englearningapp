@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { MAP_SIZE, REGIONS, mapIndexOf, mapKey } from '../game/regions';
+import { MAP_SIZE, REGIONS, mapIndexOf, mapKey, regionStageCount } from '../game/regions';
 import { countStars, starConditions } from '../game/stars';
 import { regionStoryId } from '../game/story';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
@@ -10,9 +10,12 @@ import { beginLevel } from '../game/startLevel';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { GATE_LEVEL, SKIPPABLE_REGIONS, canChallengeGate } from '../game/placement';
-import { STAGES_PER_REGION, powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../game/progression';
+import { powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../game/progression';
 import { previewParty } from '../store/battleStore';
 import { materialIcon } from '../game/equipment';
+import { regionMastery } from '../game/knowledge';
+import { loadBank } from '../game/questions/bank/loader';
+import { SealPanel } from './GateTrialModal';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
 // 點一張已解鎖的地圖，主角會跑過去，然後進入那張地圖的第 1 關。
@@ -21,6 +24,7 @@ export default function RegionModal() {
   const { closeModal, openStory } = useUiStore.getState();
   const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex, sweepTickets } = useSaveStore();
   const level = useSaveStore(s => s.player.level);
+  const beaten = useSaveStore(s => s.bossDown.includes(regionIdx));
   const region = REGIONS[regionIdx] ?? REGIONS[0];
   const progress = levelProgress[region.id] ?? 0;
   const best = bestStage[region.id] ?? 0;
@@ -57,14 +61,16 @@ export default function RegionModal() {
       <div className="region-head">
         <span>⭐ <b>{totalStars}</b> / {region.maps.length * 3}</span>
         <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => openStory(regionStoryId(regionIdx))}>📜 重看劇情</button>
-        {/* 目前的最前線區域（王城以外）可以挑戰守門試煉直接通關 */}
-        {regionIdx === unlockedIndex && regionIdx < SKIPPABLE_REGIONS && (
+        {/* 目前的最前線區域（王城以外）：打倒魔王後找守門人；還沒打倒也可以挑戰跳級試煉 */}
+        {regionIdx === unlockedIndex && regionIdx < SKIPPABLE_REGIONS && !beaten && (
           <button className={`btn btn-small ${canChallengeGate(regionIdx, level) ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus}
-            onClick={() => useUiStore.getState().openGate(regionIdx)} title="答對 8/10 題就能直接通關這個區域">
-            🏰 守門試煉{canChallengeGate(regionIdx, level) ? '' : `（Lv ${GATE_LEVEL[regionIdx]}）`}
+            onClick={() => useUiStore.getState().openGate(regionIdx)} title="通過區域試煉就能直接跳過這個區域">
+            🗿 跳級試煉{canChallengeGate(regionIdx, level) ? '' : `（Lv ${GATE_LEVEL[regionIdx]}）`}
           </button>
         )}
       </div>
+
+      {beaten && regionIdx === unlockedIndex && regionIdx < SKIPPABLE_REGIONS && <GateKeeper regionIdx={regionIdx} />}
 
       <PowerHint regionIdx={regionIdx} stageIdx={progress} />
 
@@ -112,12 +118,30 @@ export default function RegionModal() {
   );
 }
 
+// 守門人：魔王打倒了、下一區還沒開——顯示封印進度和區域試煉的入口
+function GateKeeper({ regionIdx }: { regionIdx: number }) {
+  const knowledge = useSaveStore(s => s.knowledge);
+  const [ready, setReady] = useState(false);
+  const [now] = useState(() => Date.now());
+  useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
+  if (!ready) return null;
+  const mastery = regionMastery(regionIdx, knowledge, now);
+  return (
+    <div className="gatekeeper">
+      <SealPanel mastery={mastery} />
+      <button className={`btn ${mastery.sealMet ? 'btn-primary' : ''}`} onMouseDown={keepFocus} onClick={() => useUiStore.getState().openGate(regionIdx)}>
+        🗿 挑戰區域試煉{mastery.sealMet ? '' : '（標準較高）'}
+      </button>
+    </div>
+  );
+}
+
 // 推薦等級與戰力：和目前隊伍比較，讓玩家知道要強化到什麼程度
 function PowerHint({ regionIdx, stageIdx }: { regionIdx: number; stageIdx: number }) {
   const save = useSaveStore();
   const mine = useMemo(() => teamPower(previewParty()), [save.party, save.player, save.heroLevel, save.heroTier, save.equipped, save.upgrades, save.trueName]);
   const lvFrom = recommendedLevel(regionIdx, 0);
-  const lvTo = recommendedLevel(regionIdx, STAGES_PER_REGION - 1);
+  const lvTo = recommendedLevel(regionIdx, regionStageCount(regionIdx) - 1);
   const rec = recommendedPower(regionIdx, stageIdx);
   const verdict = powerVerdict(mine, rec);
   const label = verdict === 'easy' ? '輕鬆' : verdict === 'fair' ? '有挑戰' : '很吃力';

@@ -1,11 +1,12 @@
 import Phaser from 'phaser';
-import { useBattleStore } from '../store/battleStore';
+import { foeKindOf, useBattleStore } from '../store/battleStore';
 import type { BattleEvent } from '../store/battleStore';
 import { LEVELS } from './QuestionData';
 import { mapName, stageLabel } from './regions';
 import { BASE_DAMAGE } from './battle';
-import { SKILLS, comboMultiplier, monsterLevel, skillEffect } from './progression';
-import { TELEGRAPH_AT, patternOf, upcomingMove } from './enemyPatterns';
+import { SKILLS, comboMultiplier, monsterAttack, monsterLevel, skillEffect } from './progression';
+import { ELITE_POWER, TELEGRAPH_AT, patternOf, upcomingMove } from './enemyPatterns';
+import { skillReady } from './party';
 import type { Member, MemberId } from './party';
 import {
   ELEMENT_MONSTER_COLORS, GHOST_COLORS, heroKey, monsterKey, monsterKindFor, monsterName, registerAvatar, registerHero, registerSprites,
@@ -21,7 +22,7 @@ import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art
 import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
 import { ultimateEchoes, ultimateName, ultimateTier } from './ultimates';
-import { FOE_SKILLS } from './bossSkills';
+import { FOE_SKILLS, SEAL_BREAK_COMBO } from './bossSkills';
 import { playUltimate } from './ultimateFx';
 import { sfx } from './sfx';
 
@@ -59,6 +60,11 @@ interface Fighter {
 const hex = (c: string) => Phaser.Display.Color.HexStringToColor(c).color;
 // 傷害可能高達數億：加上千分位
 const formatDamage = (n: number) => Math.round(n).toLocaleString('en-US');
+// 出手順序的顏色：和隊伍列、隊伍視窗 1～4 號格子一樣（1 金＝隊長、2 藍、3 綠、4 紫）
+const ORDER_COLORS = [0xffcd4b, 0x4cc9f0, 0x6ee7a8, 0xc4a8ff];
+
+// 困難題 Bonus 的倍數顏色：×1 白、×2 綠、×3 藍、×5 紫、×10 金
+const BONUS_COLORS: Record<number, string> = { 1: '#e8e6ff', 2: '#6ee7a8', 3: '#4cc9f0', 5: '#c77dff', 10: '#ffcd4b' };
 
 
 export default class MainScene extends Phaser.Scene {
@@ -66,7 +72,7 @@ export default class MainScene extends Phaser.Scene {
   private fighters: Fighter[] = [];
   private character: Character | null = null;
   private tier = 0; // 主角轉職階段（外觀）
-  private bossMultText!: Phaser.GameObjects.Text;
+  private monsterHpText!: Phaser.GameObjects.Text;
   private monster!: Phaser.GameObjects.Container;
   private monsterSprite!: Phaser.GameObjects.Image;
   private monsterShadow!: Phaser.GameObjects.Ellipse;
@@ -82,7 +88,7 @@ export default class MainScene extends Phaser.Scene {
   private monsterBar!: PixelBar;
   private playerHpText!: Phaser.GameObjects.Text;
   private monsterNameText!: Phaser.GameObjects.Text;
-  private armorText!: Phaser.GameObjects.Text;
+  private statusText!: Phaser.GameObjects.Text;
   private gaugeFill!: Phaser.GameObjects.Rectangle;
   private gaugeBg!: Phaser.GameObjects.Rectangle;
   private telegraphText!: Phaser.GameObjects.Text;
@@ -103,7 +109,7 @@ export default class MainScene extends Phaser.Scene {
     return this.fighters.find(f => f.id === id) ?? this.fighters[0];
   }
 
-  // 接下來要出手的隊員（魔王題由隊長出手）
+  // 接下來要出手的隊員（困難題由隊長出手）
   private striker(s: State): Fighter {
     const idx = s.isBossQuestion ? 0 : s.attackerIdx;
     return this.fighterFor(s.party[idx]?.id);
@@ -118,12 +124,21 @@ export default class MainScene extends Phaser.Scene {
     const homeY = GROUND_Y + pos.dy;
     // 腳下的影子與屬性光環
     this.add.ellipse(pos.x, homeY + 2, 80, 14, 0x000000, 0.3).setDepth(10 + slot);
-    const aura = this.add.ellipse(pos.x, homeY + 2, 96, 20, hex(elementDef(m.element).color), 0.3).setDepth(10 + slot);
-    this.tweens.add({ targets: aura, scaleX: 1.15, alpha: 0.12, yoyo: true, repeat: -1, duration: 900, delay: slot * 150, ease: 'Sine.easeInOut' });
+    // 出手順序的光圈：淡淡的順序色光暈＋細黑邊，對應下方隊伍列的編號顏色
+    const order = ORDER_COLORS[slot] ?? ORDER_COLORS[0];
+    this.add.ellipse(pos.x, homeY + 2, 90, 20).setStrokeStyle(4, 0x14152b, 0.35).setDepth(10 + slot);
+    const aura = this.add.ellipse(pos.x, homeY + 2, 88, 18, order, 0.22).setStrokeStyle(2, order, 0.7).setDepth(10 + slot);
+    this.tweens.add({ targets: aura, fillAlpha: 0.08, yoyo: true, repeat: -1, duration: 900, delay: slot * 150, ease: 'Sine.easeInOut' });
     const sprite = this.add.image(0, 0, frame('idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(scale);
     // 越前面（y 越大）畫在越上層
     const container = this.add.container(pos.x, homeY, [sprite]).setDepth(20 + pos.dy / 100 + (FORMATION.length - slot) * 0.01);
     const idle = this.tweens.add({ targets: sprite, scaleY: scale * 0.96, scaleX: scale * 1.02, yoyo: true, repeat: -1, duration: 600, delay: slot * 120, ease: 'Sine.easeInOut' });
+    // 點角色：能量集滿時打開技能視窗（battleStore 會檢查能不能放）
+    const cast = () => {
+      const idx = useBattleStore.getState().party.findIndex(p => p.id === m.id);
+      if (idx >= 0) useBattleStore.getState().requestSkill(idx);
+    };
+    sprite.setInteractive({ useHandCursor: false }).on('pointerdown', cast);
     return { id: m.id, container, sprite, idle, scale, homeX: pos.x, homeY, idleKey: frame('idle'), attackKey: frame('attack'), down: false };
   }
 
@@ -171,7 +186,8 @@ export default class MainScene extends Phaser.Scene {
       speed,
     }));
 
-    // 隊伍全員：隊長在最前面
+    // 隊伍全員：隊長在最前面。角色圖框會互相重疊，點擊要讓疊在下面的隊員也收到（技能沒準備好的會直接略過）
+    this.input.topOnly = false;
     this.fighters = s.party.map((m, i) => this.createFighter(m, i));
     this.shieldBubble = this.add.circle(PLAYER_X - 40, GROUND_Y - 48, 110).setStrokeStyle(4, 0x7fffd4, 0.9).setFillStyle(0x7fffd4, 0.12).setDepth(21).setVisible(false);
     this.tweens.add({ targets: this.shieldBubble, scale: 1.06, yoyo: true, repeat: -1, duration: 500 });
@@ -188,28 +204,29 @@ export default class MainScene extends Phaser.Scene {
     this.tweens.add({ targets: this.helper, y: GROUND_Y - 124, yoyo: true, repeat: -1, duration: 700, ease: 'Sine.easeInOut' });
 
     // ---------- 畫面上方 HUD（格鬥遊戲式） ----------
-    this.add.image(28, 30, 'heart').setScale(4).setDepth(80);
-    // 上方血條是全隊 HP 合計；每位隊員的血量在下方隊伍列
-    this.add.text(52, 12, s.party.length > 1 ? `隊伍總 HP（${s.party.length} 人）` : (s.party[0]?.name ?? ''), textStyle(20)).setDepth(80);
+    // 上方左右對稱：左邊是隊伍（小心形＋名稱＋血量數字＋血條），右邊是怪物（屬性＋名稱＋血量攻擊＋血條）。
+    // 總血條是全隊合計（單色）；每位隊員自己的血量在角色腳下的狀態牌
+    this.add.image(32, 26, 'heart').setScale(2.5).setDepth(80);
+    this.add.text(50, 14, s.party.length > 1 ? `隊伍總 HP（${s.party.length} 人）` : (s.party[0]?.name ?? ''), textStyle(16)).setDepth(80);
     this.playerBar = new PixelBar(this, 24, 54, 250, 16);
-    this.playerHpText = this.add.text(274, 32, '', numStyle(12)).setOrigin(1, 0).setDepth(81);
+    this.playerHpText = this.add.text(274, 36, '', numStyle(11)).setOrigin(1, 0).setDepth(81);
     this.add.image(32, 96, 'coin').setScale(4).setDepth(80);
     this.goldText = this.add.text(54, 84, `${s.runGold}`, numStyle(18, '#ffcd4b')).setDepth(80);
 
-    this.monsterNameText = this.add.text(width - 24, 12, '', textStyle(22)).setOrigin(1, 0).setDepth(80);
-    this.elementBadge = this.add.container(0, 0).setDepth(81);
+    this.monsterNameText = this.add.text(width - 50, 14, '', textStyle(16)).setOrigin(1, 0).setDepth(80);
+    this.elementBadge = this.add.container(width - 32, 26).setDepth(81);
     this.monsterBar = new PixelBar(this, width - 274, 54, 250, 16, true);
-    // 首領戰的破甲進度／一般關的第幾隻怪物
+    this.monsterHpText = this.add.text(width - 274, 36, '', numStyle(11)).setDepth(81);
+    // 這一關的答題進度、一般關的第幾隻怪物、首領技能與祝福
     // 敵人行動條：滿了就出招（答對打中會讓它往後退）
     this.gaugeBg = this.add.rectangle(width - 24, 76, 250, 8, 0x1a1226, 0.9).setOrigin(1, 0).setDepth(80).setStrokeStyle(2, 0x1a1226);
     this.gaugeFill = this.add.rectangle(width - 274, 76, 250, 8, 0xff9a4d).setOrigin(0, 0).setDepth(81).setScale(0, 1);
     this.telegraphText = this.add.text(width - 24, 88, '', textStyle(15, '#ff8a8a', 4)).setOrigin(1, 0).setDepth(80);
-    this.armorText = this.add.text(width - 24, 108, '', textStyle(16, '#ffcd4b', 4)).setOrigin(1, 0).setDepth(80);
+    this.statusText = this.add.text(width - 24, 108, '', textStyle(16, '#ffcd4b', 4)).setOrigin(1, 0).setDepth(80);
     this.stageText = this.add.text(width / 2, 88, '', labelStyle(20)).setOrigin(0.5, 0).setDepth(80);
 
     this.comboNum = this.add.text(36, 150, '', numStyle(40)).setOrigin(0, 0.5).setDepth(85);
     this.comboLabel = this.add.text(40, 190, '', textStyle(18, '#ffcd4b')).setOrigin(0, 0.5).setDepth(85);
-    this.bossMultText = this.add.text(40, 222, '', textStyle(18, '#ff5af0')).setOrigin(0, 0.5).setDepth(85);
 
     const unsubscribe = useBattleStore.subscribe((state, prev) => this.sync(state, prev));
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
@@ -234,21 +251,29 @@ export default class MainScene extends Phaser.Scene {
     if (stage) this.stageText.setText(s.mode === 'skill' ? `魔王挑戰  ${stage.name}`
       : s.mode === 'golden'
       ? `黃金之路  第 ${s.stageIdx + 1} / ${s.stages.length} 關`
-      : `${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx)}`);
+      : `${themeName(this.region)}・${mapName(s.levelKey, s.stageIdx)}  ${stageLabel(s.stageIdx, s.levelIdx)}`);
     this.playerHpText.setText(`${s.playerHp}/${s.playerMaxHp}`);
     if (!prev || s.playerHp !== prev.playerHp) this.playerBar.set(s.playerHp / Math.max(1, s.playerMaxHp), !prev);
     this.shieldBubble.setVisible(s.shield);
     this.monsterShieldBubble.setVisible(s.monsterShield > 0 && s.phase !== 'monsterDown');
-    s.party.forEach(m => { const f = this.fighters.find(x => x.id === m.id); if (f) this.setDown(f, m.hp <= 0); });
+    s.party.forEach(m => {
+      const f = this.fighters.find(x => x.id === m.id);
+      if (!f) return;
+      this.setDown(f, m.hp <= 0);
+      const ready = skillReady(m) && (s.phase === 'answering' || s.phase === 'casting') && !s.sealed;
+      f.sprite.input!.cursor = ready ? 'pointer' : 'default';
+    });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
 
-    this.armorText.setText(this.armorLabel(s)).setColor(s.bossGate > 0 && s.combo < s.bossGate ? '#ff8a8a' : '#ffcd4b');
+    this.statusText.setText(this.stageStatus(s)).setColor(s.executing && s.stageAnswers < s.minAnswers ? '#ff8a8a' : '#ffcd4b');
     this.syncGauge(s);
     if (s.bossCast && s.bossCast.seq !== prev?.bossCast?.seq) {
       sfx.boss();
       popText(this, 400, 205, s.bossCast.text, 20, '#ffcd4b', { rise: 12, dur: 2200 });
     }
-    if (!prev || s.bossMult !== prev.bossMult) this.bossMultText.setText(s.bossMult > 1 ? `魔王倍率 ×${formatDamage(s.bossMult)}` : '');
+    // 跨日複習答對：封印能量
+    if (prev && s.runRunes > prev.runRunes) popText(this, 400, 125, '🔮 跨日複習！封印能量 +1', 20, '#c9a7ff', { rise: 16, dur: 1400 });
+    if (!prev || s.monsterHp !== prev.monsterHp || s.monsterMaxHp !== prev.monsterMaxHp || s.stageIdx !== prev.stageIdx) this.monsterHpText.setText(this.monsterStats(s));
     if (prev && s.combo !== prev.combo) this.showCombo(s, prev.combo);
     if (ultimateTier(s.combo) < this.lastUltTier) this.lastUltTier = ultimateTier(s.combo);
     if (!prev) this.showCombo(s, 0);
@@ -270,6 +295,7 @@ export default class MainScene extends Phaser.Scene {
     if (prev && (s.question !== prev.question || s.typed.length < prev.typed.length)) this.setCharge(null, 0, 0);
 
     if (s.event && s.event !== prev?.event) this.playEvent(s.event, s);
+    if (prev && s.questionSeq !== prev.questionSeq) this.time.delayedCall(700, () => this.returnHome());
 
     if (s.phase === 'gameOver' && prev?.phase !== 'gameOver') this.playDefeat();
     if (s.phase === 'levelClear' && prev?.phase !== 'levelClear') {
@@ -369,7 +395,7 @@ export default class MainScene extends Phaser.Scene {
       // 停掉上一隻怪物還沒播完的擊倒動畫，避免它把新怪物藏起來
       this.tweens.killTweensOf([this.monsterSprite, this.monster]);
       this.monsterIdle?.stop();
-      this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.monsterEl)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0);
+      this.monsterSprite.setTexture(monsterKey(this.monsterKind, this.monsterEl)).setScale(this.monsterScale).setAngle(0).setAlpha(1).setY(0).clearTint();
       this.monsterSprite.setVisible(true);
       this.monsterShadow.setVisible(true).setScale(isBoss ? 1.6 : 1);
       // 從右邊跳進場
@@ -404,11 +430,10 @@ export default class MainScene extends Phaser.Scene {
   // 怪物名字左邊的屬性徽章：屬性色的寶石＋屬性字，登場時彈出
   private showElementBadge(el: ElementDef) {
     this.elementBadge.removeAll(true);
-    const x = this.scale.width - 24 - this.monsterNameText.width - 26;
-    const gem = this.add.rectangle(0, 0, 30, 30, hex(el.color)).setAngle(45).setStrokeStyle(3, 0x1a1226);
-    const shine = this.add.rectangle(-5, -5, 8, 8, hex(el.light)).setAngle(45);
-    const label = this.add.text(0, 1, el.name, textStyle(16, '#1a1226', 0)).setOrigin(0.5);
-    this.elementBadge.add([gem, shine, label]).setPosition(x, 27).setScale(0);
+    const gem = this.add.rectangle(0, 0, 22, 22, hex(el.color)).setAngle(45).setStrokeStyle(3, 0x1a1226);
+    const shine = this.add.rectangle(-4, -4, 6, 6, hex(el.light)).setAngle(45);
+    const label = this.add.text(0, 1, el.name, textStyle(12, '#1a1226', 0)).setOrigin(0.5);
+    this.elementBadge.add([gem, shine, label]).setScale(0);
     this.tweens.add({ targets: this.elementBadge, scale: 1, duration: 300, ease: 'Back.easeOut' });
   }
 
@@ -442,12 +467,14 @@ export default class MainScene extends Phaser.Scene {
   // ---------- 攻擊 ----------
   private playAttack(event: BattleEvent, s: State) {
     const damage = event.amount ?? 0;
-    const killed = s.monsterHp <= 0 || !!event.waveKill;
+    // 終結連擊中首領還倒在原地（0 血），答滿題數的最後一擊才播擊倒
+    const killed = (s.monsterHp <= 0 && !event.execution) || !!event.waveKill;
+    if (event.execution) this.time.delayedCall(200, () => this.executionHit());
     const crit = event.crit ?? false;
     const member = s.party.find(m => m.id === event.member);
     const f = this.fighterFor(event.member);
     if (member && s.party.length > 1) popText(this, f.homeX, f.homeY - 140, member.name, 20, elementDef(member.element).light, { rise: 24, dur: 600 });
-    if (event.bossQuestion) this.bossQuestionHit(s.bossMult);
+    if (event.bonus) this.bossBonusHit(event.bonus);
     if (event.levelUp) this.time.delayedCall(250, () => {
       sfx.victory();
       burst(this, f.homeX, f.homeY - 60, [0xffcd4b, 0xffffff, 0x4cc9f0], 24, { up: true, gravity: -80, speed: 180 });
@@ -523,6 +550,22 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
+  // 保險：沒在播動畫、卻不在原位的隊員走回原位（被打的後退、連續出手等動畫互相打斷時，角色曾經卡在怪物旁邊）
+  private returnHome() {
+    for (const f of this.fighters) {
+      if (this.tweens.isTweening(f.container)) continue;
+      if (f.sprite.x !== 0 && !this.tweens.isTweening(f.sprite)) f.sprite.setX(0);
+      if (Math.abs(f.container.x - f.homeX) < 1 && Math.abs(f.container.y - f.homeY) < 1) continue;
+      this.tweens.add({ targets: f.container, x: f.homeX, y: f.homeY, duration: 200, ease: 'Quad.easeOut',
+        onComplete: () => {
+          f.sprite.setTexture(f.idleKey);
+          f.container.setDepth(20 + (f.homeY - GROUND_Y) / 100);
+          if (!f.down) f.idle?.resume();
+        },
+      });
+    }
+  }
+
   // 攻擊結束：回到待機姿勢；最後一擊時保持 busy，讓擊倒動畫播完
   private settle(f: Fighter, killed: boolean) {
     f.sprite.setTexture(f.idleKey);
@@ -571,7 +614,7 @@ export default class MainScene extends Phaser.Scene {
     const endY = GROUND_Y - this.monsterSprite.displayHeight * 0.5;
     const dur = kind === 'arrow' ? 170 : 260;
     // 出手時往後退一點的後座力
-    this.tweens.add({ targets: f.container, x: f.homeX - 12, duration: 80, yoyo: true, ease: 'Quad.easeOut' });
+    this.tweens.add({ targets: f.sprite, x: -12, duration: 80, yoyo: true, ease: 'Quad.easeOut' });
     let shot: Phaser.GameObjects.Shape;
     if (kind === 'arrow') {
       sfx.slash();
@@ -646,7 +689,6 @@ export default class MainScene extends Phaser.Scene {
     const waveKill = !!s.event?.waveKill;
     if (sameStage()) this.monsterBar.set(waveKill ? 0 : s.monsterHp / Math.max(1, s.monsterMaxHp));
     if (s.event?.gold) this.flyCoins(s.event.gold, hitX, hitY, s.runGold);
-    if (s.event?.armorBroken) this.armorBreak();
     if (killed && sameStage()) this.time.delayedCall(140, () => { this.playKill(s); if (waveKill) this.time.delayedCall(420, () => this.nextWave(s)); });
     else if (killed) this.busy = false;
   }
@@ -748,11 +790,32 @@ export default class MainScene extends Phaser.Scene {
     this.busy = false;
   }
 
-  // 魔王題答對：大字顯示累積倍率
-  private bossQuestionHit(mult: number) {
-    sfx.combo(20);
-    screenFlash(this, 0xff5af0, 0.35, 400);
-    popText(this, 400, 200, `魔王題 ×${formatDamage(mult)}!`, 44, '#ff5af0', { rise: 30, dur: 1000 });
+  // 困難題 Bonus：畫面暗下來，正中央跳出抽到的倍數；每種倍數一個顏色，×10 金色加震動
+  private bossBonusHit(bonus: NonNullable<BattleEvent['bonus']>) {
+    const color = BONUS_COLORS[bonus.mult] ?? '#ffffff';
+    const big = bonus.mult >= 5;
+    sfx.combo(big ? 50 : 20);
+    const { width, height } = this.scale;
+    const dim = this.add.rectangle(0, 0, width, height, 0x000000, 0).setOrigin(0).setDepth(200);
+    this.tweens.add({ targets: dim, fillAlpha: 0.6, duration: 150, hold: 800, yoyo: true, onComplete: () => dim.destroy() });
+    if (bonus.mult >= 10) shake(this, 400, 0.012);
+    if (big) screenFlash(this, hex(color), 0.35, 300);
+    const title = this.add.text(width / 2, height / 2 - 70, '困難題 Bonus', textStyle(26, '#ffffff')).setOrigin(0.5).setDepth(201);
+    const mult = this.add.text(width / 2, height / 2, `×${bonus.mult}`, numStyle(40 + Math.min(bonus.mult, 10) * 4, color)).setOrigin(0.5).setDepth(201).setScale(0.3);
+    mult.setShadow(0, 0, color, 16, true, true);
+    const line = this.add.text(width / 2, height / 2 + 66, `Combo ${bonus.from} → ${bonus.to}`, textStyle(22, color)).setOrigin(0.5).setDepth(201);
+    this.tweens.add({ targets: mult, scale: 1, duration: 260, ease: 'Back.easeOut' });
+    this.tweens.add({ targets: [title, mult, line], alpha: 0, delay: 950, duration: 250, onComplete: () => { title.destroy(); mult.destroy(); line.destroy(); } });
+  }
+
+  // 敵人的血量與攻擊力（一般模式才顯示攻擊力，方便和自己的隊伍比較）
+  private monsterStats(s: State): string {
+    const stage = s.stages[s.stageIdx];
+    if (!stage) return '';
+    const hp = `HP ${formatDamage(s.monsterHp)}/${formatDamage(s.monsterMaxHp)}`;
+    if (s.mode !== 'normal' || stage.revenge || stage.kind === 'treasure') return hp;
+    const atk = monsterAttack(stage.bossMode, s.levelIdx, s.stageIdx, foeKindOf(stage, s.stageIdx, s.stages.length)) * (stage.kind === 'elite' ? ELITE_POWER : 1);
+    return `${hp}  ATK ${Math.round(atk)}`;
   }
 
   private playSkill(event: BattleEvent) {
@@ -779,24 +842,24 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
-  private armorLabel(s: State): string {
-    if (s.bossGate > 0) {
-      const armor = s.combo >= s.bossGate ? `💥 已破甲  combo ${s.combo}` : `🛡 連擊破甲 ${s.combo}/${s.bossGate}`;
-      const status = [
-        s.frostLeft > 0 && `❄️ 極寒 ${s.frostLeft}`, s.mirageLeft > 0 && `🏜️ 分身 ${s.mirageLeft}`,
-        s.bombLeft > 0 && `💣 炸彈 ${s.bombLeft}`, s.staticStacks > 0 && `⚡ 靜電 ×${s.staticStacks}`,
-        s.sealed && `🔇 技能封印（${s.combo}/50）`, s.foeSkill && FOE_SKILLS.find(f => f.id === s.foeSkill)?.name, s.stunned && `🪨 ${s.party.find(m => m.id === s.stunned?.member)?.name ?? ''} 被震飛`,
-      ].filter(Boolean).join('  ');
-      return status ? `${armor}
-${status}` : armor;
-    }
-    if (s.waves > 1) return `第 ${s.wave}/${s.waves} 隻${s.blessed ? '  ✨ 祝福中' : ''}`;
-    if (s.foeSkill) {
-      const foe = FOE_SKILLS.find(f => f.id === s.foeSkill);
-      return foe ? `${foe.icon} ${foe.name}` : '';
-    }
-    return s.blessed ? '✨ 祝福中' : '';
+  // 怪物血條下方的狀態：這一關的答題進度、一般關第幾隻、首領技能、祝福
+  private stageStatus(s: State): string {
+    const progress = s.minAnswers > 0 ? `題 ${Math.min(s.stageAnswers, s.minAnswers)}/${s.minAnswers}` : '';
+    if (s.executing && s.stageAnswers < s.minAnswers) return `⚔️ 終結連擊  ${progress}`;
+    if (s.executing || s.phase === 'monsterDown' || s.phase === 'summary' || s.phase === 'levelClear') return progress && `✔ ${progress}`;
+    const status = [
+      progress,
+      s.waves > 1 && `第 ${s.wave}/${s.waves} 隻`,
+      s.frostLeft > 0 && `❄️ 極寒 ${s.frostLeft}`, s.mirageLeft > 0 && `🏜️ 分身 ${s.mirageLeft}`,
+      s.bombLeft > 0 && `💣 炸彈 ${s.bombLeft}`, s.staticStacks > 0 && `⚡ 靜電 ×${s.staticStacks}`,
+      s.sealed && `🔇 技能封印（連對 ${s.streak}/${SEAL_BREAK_COMBO}）`,
+      s.foeSkill && (() => { const foe = FOE_SKILLS.find(f => f.id === s.foeSkill); return foe ? `${foe.icon} ${foe.name}` : ''; })(),
+      s.stunned && `🪨 ${s.party.find(m => m.id === s.stunned?.member)?.name ?? ''} 被震飛`,
+      s.blessed && '✨ 祝福中',
+    ].filter(Boolean);
+    return status.join('  ');
   }
+
 
   // Combo 大招：和一般攻擊同時播放；剛升到新的大招等級時打出大招名稱
   private lastUltTier = 0;
@@ -850,7 +913,7 @@ ${status}` : armor;
         const target = s.party.find(m => m.id === h.member);
         f.sprite.setTexture(`${f.idleKey}_flash`).setTint(0xff5a6e);
         this.time.delayedCall(120, () => { if (!f.down) f.sprite.setTexture(f.idleKey).clearTint(); else f.sprite.setTexture(f.idleKey).setTint(0x666677); });
-        this.tweens.add({ targets: f.container, x: f.homeX - 24, duration: 70, yoyo: true });
+        this.tweens.add({ targets: f.sprite, x: -24, duration: 70, yoyo: true });
         burst(this, f.homeX + 20, f.homeY - 50, [0xff5a6e, 0xffffff], 8, { speed: 150 });
         popText(this, f.homeX, f.homeY - 120 - (i % 2) * 24, `-${h.amount}`, 32, '#ff5a6e', { numeric: true });
         if (target && target.hp <= 0) popText(this, f.homeX, f.homeY - 170, `${target.name} 倒下了`, 20, '#ffb0b8', { rise: 20, dur: 800 });
@@ -859,13 +922,13 @@ ${status}` : armor;
   }
 
   // 首領戰：combo 剛好達到門檻，盔甲碎裂
-  private armorBreak() {
-    sfx.crit(1.5);
-    screenFlash(this, 0xffcd4b, 0.35, 300);
-    shockwave(this, MONSTER_X, GROUND_Y - this.monsterSprite.displayHeight / 2, 0xffcd4b, 220, 8);
-    popText(this, 400, 170, '💥 破甲！傷害全開', 44, '#ffcd4b', { rise: 30, dur: 1400 });
+  // 終結連擊：首領倒地，剩下的題目每答對一題就再補一擊處決
+  private executionHit() {
+    sfx.crit(1.3);
+    screenFlash(this, 0xff5a6e, 0.25, 260);
+    this.monsterSprite.setTint(0xff8a8a);
+    popText(this, MONSTER_X, GROUND_Y - this.monsterSprite.displayHeight - 30, '終結連擊！', 30, '#ffcd4b', { rise: 26, dur: 900 });
   }
-
   // 一般關的下一隻怪物：從右邊跳進場（同一關，不換背景）
   private nextWave(s: State) {
     const now = useBattleStore.getState();
@@ -962,7 +1025,7 @@ ${status}` : armor;
       const knockedOut = (target?.hp ?? 1) <= 0;
       f.sprite.setTexture(`${f.idleKey}_flash`).setTint(0xff5a6e);
       this.time.delayedCall(120, () => { if (!f.down) f.sprite.setTexture(f.idleKey).clearTint(); else f.sprite.setTexture(f.idleKey).setTint(0x666677); });
-      this.tweens.add({ targets: f.container, x: f.homeX - 30, duration: 80, yoyo: true });
+      this.tweens.add({ targets: f.sprite, x: -30, duration: 80, yoyo: true });
       burst(this, f.homeX + 20, f.homeY - 50, [0xff5a6e, 0xffffff], 10, { speed: 160 });
       popText(this, f.homeX, f.homeY - 120, `-${event.amount}`, 38, '#ff5a6e', { numeric: true });
       if (event.taunt) popText(this, f.homeX, f.homeY - 200, '🛡️ 挑釁！替隊友擋下', 20, '#ffcd4b', { rise: 20, dur: 1000 });

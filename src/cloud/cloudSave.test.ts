@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 // 測試環境沒有 localStorage：用記憶體版代替
 const mem = new Map<string, string>();
 vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => void mem.set(k, v), removeItem: (k: string) => void mem.delete(k) });
+import { SAVE_VERSION } from '../store/saveStore';
 import { SAVE_KEY, exportBackupFile, exportSaveCode, parseSaveCode, summarize } from './cloudSave';
 
 describe('存檔碼', () => {
@@ -10,7 +11,7 @@ describe('存檔碼', () => {
     const save = { state: { character: { name: '小夢' }, player: { level: 7 }, unlockedIndex: 2, gold: 350 }, version: 15 };
     localStorage.setItem(SAVE_KEY, JSON.stringify(save));
     const back = parseSaveCode(exportSaveCode());
-    expect(back?.version).toBe(15);
+    expect(back?.version).toBe(SAVE_VERSION);
     expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 7, regions: 2, gold: 350 });
   });
 

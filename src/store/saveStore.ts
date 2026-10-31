@@ -3,6 +3,8 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { StateStorage } from 'zustand/middleware';
 import type { Question } from '../game/types';
 import { questionKey } from '../game/battle';
+import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, updateKnowledge } from '../game/knowledge';
+import type { KnowledgeRecord } from '../game/knowledge';
 import { ITEMS, SRS_INTERVALS, SRS_MASTERED_BOX, UPGRADES, upgradeCost } from '../game/progression';
 import type { ItemId, UpgradeId } from '../game/progression';
 import {
@@ -20,7 +22,11 @@ import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily
 import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
 import { ELEMENTS, normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
-import { MAP_SIZE, REGIONS } from '../game/regions';
+import { MAP_SIZE, REGIONS, regionStageCount } from '../game/regions';
+
+// v15 以前：每區 5 張地圖 × 10 關
+const OLD_MAP_SIZE = 10;
+const OLD_STAGES_PER_REGION = 50;
 import { clearStoryId, regionStoryId } from '../game/story';
 import type { Character } from '../game/character';
 import { PARTY_MAX } from '../game/party';
@@ -28,7 +34,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 15;
+export const SAVE_VERSION = 17;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -70,6 +76,12 @@ interface SaveData {
   micAsked: boolean;
   mistakes: Record<string, MistakeRecord>;
   codex: Record<string, CodexEntry>;
+  // 知識點：哪幾天無提示答對（跨日穩定、守門人封印用，見 game/knowledge.ts）
+  knowledge: Record<string, KnowledgeRecord>;
+  // 打倒過區域最終魔王的區域（之後要完成守門人封印＋區域試煉才開下一區）
+  bossDown: number[];
+  // 高標準區域試煉（封印未完成或跳級）的挑戰時間，每區 24 小時內最多 2 次
+  strictTrials: Record<string, number[]>;
   settings: Settings;
   tutorialDone: boolean;
   gold: number;
@@ -129,7 +141,10 @@ interface SaveActions {
   setLevelProgress: (levelKey: string, stageIdx: number) => void;
   setMicAsked: () => void;
   // review：這次作答是否算一次 SRS 複習（看完正確答案後的重答不算）
-  recordAnswer: (q: Question, correct: boolean, review: boolean) => void;
+  // counted：算不算知識點的無提示成功（預設同 review）。回傳 true＝這次是跨日成功（封印能量）
+  recordAnswer: (q: Question, correct: boolean, review: boolean, counted?: boolean) => boolean;
+  defeatRegionBoss: (regionIdx: number) => void;
+  recordStrictTrial: (regionIdx: number, at: number) => void;
   updateSettings: (patch: Partial<Settings>) => void;
   setTutorialDone: (done: boolean) => void;
   addGold: (amount: number) => void;
@@ -175,6 +190,7 @@ interface SaveActions {
   addTitle: (title: string) => boolean;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
+  placeMember: (id: MemberId, slot: number) => void; // 拖拉英雄到第 slot 格（0 = 隊長）：換位、替換或補上空位
   clearParty: () => void; // 一鍵撤下：只留主角當隊長
   resetProgress: () => void; // 全部歸零，從建立主角重新開始
 }
@@ -186,6 +202,9 @@ export const initialSave: SaveData = {
   micAsked: false,
   mistakes: {},
   codex: {},
+  knowledge: {},
+  bossDown: [],
+  strictTrials: {},
   settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35, reduceMotion: false, textScale: 1 },
   tutorialDone: false,
   gold: 0,
@@ -308,6 +327,8 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // v13 → v14：戰鬥情境提示、動態效果與文字大小設定；已看過新手引導的舊玩家視為看過全部提示。
   // v14 → v15：區域從 6 個變 9 個（插入 A2+、B1+、B2+），unlockedIndex 換成新順序的位置；
   //   新插入、還沒玩過的區域一併開放（不讓老玩家倒退）。關卡進度與星星以區域名稱為 key，不受影響。
+  // v15 → v16：每張地圖從 10 關變 20 關、每區的地圖數依區域不同、區域最終魔王獨立一關。
+  //   關卡進度換算成新位置：第 m 張地圖的第 s 關 → 第 m 張的第 2s 關；打到舊的最後一關（區域魔王）→ 新的區域魔王。地圖星星的 key 不變
   // 物件欄位先確認真的是物件再合併（不然字串會被展開成 {"0": …, "1": …}）
   const obj = <K extends keyof SaveData>(k: K) => (isPlainObject(data[k]) ? data[k] : {}) as Partial<SaveData[K]>;
   const migrated: SaveData = {
@@ -339,12 +360,31 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.levelProgress = counts(migrated.levelProgress);
   if (version >= 1 && version < 15) migrated.unlockedIndex = OLD_REGION_TO_NEW[Math.min(6, Math.max(0, Math.floor(migrated.unlockedIndex)))];
   migrated.bestStage = counts(migrated.bestStage);
+  if (version >= 1 && version < 16) {
+    const remap = (rec: Record<string, number>) => Object.fromEntries(Object.entries(rec).map(([id, p]) => {
+      const last = regionStageCount(Math.max(0, REGIONS.findIndex(r => r.id === id))) - 1;
+      return [id, p >= OLD_STAGES_PER_REGION - 1 ? last : Math.min(last, Math.floor(p / OLD_MAP_SIZE) * MAP_SIZE + (p % OLD_MAP_SIZE) * 2)];
+    }));
+    migrated.levelProgress = remap(migrated.levelProgress);
+    migrated.bestStage = remap(migrated.bestStage);
+  }
   migrated.player = { ...migrated.player, level: Math.min(MAX_LEVEL, Math.max(1, Math.floor(migrated.player.level))) };
   if (!data.hintsSeen) migrated.hintsSeen = version >= 1 && migrated.tutorialDone ? [...ALL_HINTS] : [];
   migrated.mistakes = Object.fromEntries(Object.entries(migrated.mistakes)
     .filter(([, m]) => isPlainObject(m) && isPlainObject(m.question))
     .map(([key, m]) => [key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 }]));
   migrated.codex = Object.fromEntries(Object.entries(migrated.codex).filter(([, c]) => isPlainObject(c) && isPlainObject(c.question)));
+  migrated.knowledge = Object.fromEntries(Object.entries(migrated.knowledge)
+    .filter(([, r]) => isPlainObject(r) && Array.isArray(r.wins) && r.wins.every(Number.isFinite) && Number.isFinite(r.dueAt)));
+  // v17 之前沒有知識點：圖鑑裡答對過的都算「已學」（第一次見到的時間算一次成功）；已開放的區域視為打倒過魔王
+  if (version >= 1 && version < 17) {
+    for (const c of Object.values(migrated.codex)) {
+      const k = knowledgeKey(c.question);
+      if (c.correct > 0 && !migrated.knowledge[k]) migrated.knowledge[k] = { wins: [c.firstSeenAt ?? 0], dueAt: (c.firstSeenAt ?? 0) + STABLE_GAP };
+    }
+    migrated.bossDown = Array.from({ length: Math.max(0, Math.floor(migrated.unlockedIndex)) }, (_, i) => i);
+  }
+  migrated.bossDown = migrated.bossDown.filter(n => Number.isInteger(n) && n >= 0);
   // 舊玩家補發已打過關卡的經驗值（每關約 20，後面的區域較多）
   if (version >= 1 && version < 10 && !data.player) {
     const regionIds = Object.keys(migrated.bestStage);
@@ -412,7 +452,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const storySeen = new Set(s.storySeen);
           for (let i = 0; i < n; i++) {
             const r = REGIONS[i];
-            bestStage[r.id] = Math.max(bestStage[r.id] ?? 0, r.maps.length * MAP_SIZE - 1);
+            bestStage[r.id] = Math.max(bestStage[r.id] ?? 0, regionStageCount(i) - 1);
             storySeen.add(regionStoryId(i)).add(clearStoryId(i));
           }
           return { unlockedIndex: n, bestStage, storySeen: [...storySeen] };
@@ -423,8 +463,9 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         })),
         setMicAsked: () => set({ micAsked: true }),
 
-        recordAnswer: (q, correct, review) => {
+        recordAnswer: (q, correct, review, counted = review) => {
           let reviewed = false;
+          let crossDay = false;
           set(s => {
           const key = questionKey(q);
           const now = Date.now();
@@ -451,10 +492,16 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             if (box >= SRS_MASTERED_BOX) delete mistakes[key];
             else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box + 1] };
           }
-          return { codex, mistakes };
+          const kKey = knowledgeKey(q);
+          const k = updateKnowledge(s.knowledge[kKey], correct, counted, now);
+          crossDay = !!k?.crossDay;
+          return { codex, mistakes, ...(k ? { knowledge: { ...s.knowledge, [kKey]: k.rec } } : {}) };
         });
         if (reviewed) get().trackDaily('review');
+        return crossDay;
       },
+        recordStrictTrial: (regionIdx, at) => set(s => ({ strictTrials: { ...s.strictTrials, [regionIdx]: [...(s.strictTrials[regionIdx] ?? []), at].slice(-STRICT_TRIALS_PER_DAY) } })),
+        defeatRegionBoss: (regionIdx) => set(s => (s.bossDown.includes(regionIdx) ? {} : { bossDown: [...s.bossDown, regionIdx] })),
 
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
         setTutorialDone: (done) => set({ tutorialDone: done }),
@@ -826,6 +873,22 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         setLeader: (id) => set(s => (s.party.includes(id) ? { party: [id, ...s.party.filter(m => m !== id)] } : {})),
 
+        // 隊伍裡的英雄拖到另一格：兩人交換（拖到空格就排到最後）；
+        // 隊伍外的英雄拖到有人的格子：替換那位；拖到空格：加入隊伍
+        placeMember: (id, slot) => set(s => {
+          const owned = id === 'player' ? s.character !== null : s.heroes.includes(id);
+          if (!owned || slot < 0 || slot >= PARTY_MAX) return {};
+          const party = [...s.party];
+          const from = party.indexOf(id);
+          if (from >= 0) {
+            if (slot >= party.length) party.push(...party.splice(from, 1));
+            else [party[from], party[slot]] = [party[slot], party[from]];
+          } else if (slot < party.length) party[slot] = id;
+          else if (party.length < PARTY_MAX) party.push(id);
+          else return {};
+          return { party };
+        }),
+
         // 隊伍至少要有一人：有主角就留主角，否則留目前的隊長
         clearParty: () => set(s => ({ party: s.character ? ['player'] : s.party.slice(0, 1) })),
 
@@ -840,10 +903,11 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       storage: createJSONStorage(() => safeStorage),
       migrate: migrateSave,
       // 版本相同時也做型別檢查（migrate 只在版本不同時才會執行）
-      merge: (persisted, current) => ({ ...current, ...migrateSave(persisted, SAVE_VERSION) }),
+      // 沒有存檔（新玩家）時 persisted 是 undefined：直接用預設值，不能當成舊存檔轉換（不然會被當成看過新手引導與全部提示）
+      merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character,
-        unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,

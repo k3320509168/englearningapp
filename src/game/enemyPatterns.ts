@@ -60,11 +60,15 @@ export const REGION_BOSS_PATTERNS: EnemyPattern[] = [
   { speed: 6.5, moves: [m('shadow', '🗡️', '暗影斬', 'single', 1.4), m('silence', '🔇', '靜默波動', 'aoe', 0.6, { sapEnergy: 2 }), m('abyss', '🌑', '深淵連斬', 'multi', 0.6, { hits: 4 }), m('end', '💀', '終焉', 'aoe', 1)] },
 ];
 
-// 出手頻率：A1、A2 新手區很久才主動攻擊一次（×2.5），A2+ 起 ×1.0、越後面越快（C2 ×0.65）；菁英再快 15%、傷害 +20%
-export const NEWBIE_REGIONS = 2;
-export function gaugeSeconds(pattern: EnemyPattern, levelIdx: number, elite: boolean): number {
-  const region = levelIdx < NEWBIE_REGIONS ? 2.5 : Math.max(0.65, 1 - 0.05 * (levelIdx - NEWBIE_REGIONS));
-  return pattern.speed * region * (elite ? 0.85 : 1);
+// 出手頻率（行動條集滿的秒數 = 怪物基準 × 區域 × 強度）：
+// 區域：A1 很久才主動攻擊一次（主要還是答錯才反擊），之後一區比一區快，C2 最快。
+// 強度：越強的怪物行動條越快——一般怪 ×1、菁英 ×0.85（傷害 +20%）、小 BOSS ×0.9、大 BOSS ×0.85；區域魔王用自己的專屬頻率
+// 第六輪：B1+～B2+ 再放慢 10%、C1～C2 放慢 15%（手機玩家要讀題、聽音檔，不能在作答途中被打太多下）
+export const REGION_GAUGE = [2.5, 1.8, 1.3, 1.1, 1.11, 1.0, 0.89, 0.85, 0.76];
+export const KIND_GAUGE = { normal: 1, elite: 0.85, gate: 0.9, boss: 0.85, final: 1 } as const;
+export type GaugeKind = keyof typeof KIND_GAUGE;
+export function gaugeSeconds(pattern: EnemyPattern, levelIdx: number, kind: GaugeKind = 'normal'): number {
+  return pattern.speed * REGION_GAUGE[Math.min(Math.max(0, levelIdx), REGION_GAUGE.length - 1)] * KIND_GAUGE[kind];
 }
 export const ELITE_POWER = 1.2;
 

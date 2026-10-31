@@ -6,13 +6,13 @@ import { REGIONS } from './regions';
 
 // 黃金之路：只用初始角色（Lv 1、沒有轉職、沒有裝備、沒有夥伴）挑戰。
 // 題目從第一個區域一路升到最後一個區域，每個區域 5 關（最後一關是守門頭目），終點是沉默魔王。
-// 不能答錯、不能超時；combo 與魔王題倍率一路累乘，英文夠強才能打出擊倒魔王的數億傷害。
+// 不能答錯、不能超時；combo 一路累積、困難題 Bonus 讓 combo 翻倍，英文夠強才打得倒魔王。
 
 export const GOLDEN_STAGES_PER_TIER = 5;
 export const GOLDEN_TIERS = LEVELS.length;
 export const GOLDEN_STAGE_COUNT = GOLDEN_STAGES_PER_TIER * GOLDEN_TIERS;
 export const GOLDEN_LEVEL_KEY = 'golden-road';
-export const GOLDEN_FINAL_HP = 200_000_000; // 沉默魔王：兩億
+export const GOLDEN_FINAL_HP = 50_000; // 沉默魔王：約 15 擊
 
 export const goldenTier = (stageIdx: number) => Math.min(GOLDEN_TIERS - 1, Math.floor(stageIdx / GOLDEN_STAGES_PER_TIER));
 
@@ -35,11 +35,13 @@ export function generateGoldenStages(decks: Decks[]): Stage[] {
   return stages;
 }
 
-// 怪物血量：越後面成長越快，沒有 combo 與魔王題倍率根本打不倒
+// 怪物血量：照「完美玩家打到這裡時一擊的傷害」設計（模擬約 100 → 3,300，combo 與困難題 Bonus 一路疊上去）。
+// 一般關約 2 擊、守門者約 5 擊、沉默魔王約 15 擊，完美通關大約 120 題；中途 combo 斷掉就打不動
+export const goldenHitDamage = (tier: number) => BASE_DAMAGE * (2 + 8 * tier);
 export function goldenMonsterHp(stageIdx: number, stage: Stage): number {
   if (stage.kind === 'final') return GOLDEN_FINAL_HP;
-  const tier = goldenTier(stageIdx);
-  return Math.round(stage.bossMode ? BASE_DAMAGE * 12 * 4 ** tier : BASE_DAMAGE * 2.5 * 1.7 ** tier);
+  const hit = goldenHitDamage(goldenTier(stageIdx));
+  return Math.round(stage.bossMode ? hit * 5 : hit * 1.5);
 }
 
 export const GOLDEN_TITLE = '掌握古代咒語的超時空勇者';

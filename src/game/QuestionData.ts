@@ -1,5 +1,6 @@
 import type { Question, QuestionSkill, Stage } from './types';
 import { shuffleArray } from './battle';
+import { allowedTypes, regionStageCount, stageRole } from './stageLayout';
 import generatedPool from './questions/generated.json';
 import type { BankFile } from './questions/bank';
 
@@ -207,8 +208,9 @@ export function questionSkill(q: Question): QuestionSkill {
   return 'writing';
 }
 
-// 區域內第幾關可以出到哪個難度：前 1/3 只出 1、中段出到 2、後段全部（50 關一個區域）
-export const maxDifficultyAt = (stageIdx: number) => Math.min(3, 1 + Math.floor(stageIdx / 17)) as 1 | 2 | 3;
+// 區域內第幾關可以出到哪個難度：前 1/3 只出 1、中段出到 2、後段全部（依該區的關卡數）
+export const maxDifficultyAt = (stageIdx: number, stageCount = 50) =>
+  Math.min(3, 1 + Math.floor((stageIdx * 3) / Math.max(3, stageCount))) as 1 | 2 | 3;
 
 // 題庫還沒準備好的等級（新增的 A2+／B1+／B2+ 在題庫補齊前）先借用前一個有題目的等級
 export function getPool(levelKey: string) {
@@ -230,6 +232,8 @@ export interface Decks {
 
 export function createDecks(levelKey: string, rand: () => number = Math.random): Decks {
   const pool = getPool(levelKey);
+  const levelIdx = Math.max(0, LEVELS.indexOf(levelKey));
+  const stageCount = regionStageCount(levelIdx);
   const makeDraw = (original: Question[]) => {
     const tiers = ([1, 2, 3] as const).map(d => original.filter(q => questionDifficulty(q) === d));
     const decks: Question[][] = [[], [], [], []]; // 0 = 不分難度
@@ -237,36 +241,52 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
       if (decks[i].length === 0) decks[i].push(...shuffleArray(from, rand));
       return decks[i].pop()!;
     };
-    return (stageIdx?: number) => {
+    const draw = (stageIdx?: number) => {
       if (stageIdx === undefined) return take(0, original);
-      const max = maxDifficultyAt(stageIdx);
+      const max = maxDifficultyAt(stageIdx, stageCount);
       const allowed = [1, 2, 3].filter(d => d <= max && tiers[d - 1].length > 0);
       if (allowed.length === 0) return take(0, original);
       const top = allowed[allowed.length - 1];
       const d = allowed.length === 1 || rand() < 0.6 ? top : allowed[Math.floor(rand() * (allowed.length - 1))];
       return take(d, tiers[d - 1]);
     };
+    // 新手關只出開放的題型（例如 1-1～1-10 只有選擇題）：抽到別的題型就再抽；
+    // 這個難度剛好沒有該題型時，改從整個題庫挑符合題型的題目
+    return (stageIdx?: number) => {
+      const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx);
+      let q = draw(stageIdx);
+      for (let i = 0; types && !types.includes(q.type) && i < 20; i++) q = draw(stageIdx);
+      if (types && !types.includes(q.type)) {
+        const fit = original.filter(x => types.includes(x.type));
+        // 符合題型的題目裡挑最簡單的那一級（新手關）
+        const easiest = Math.min(...fit.map(questionDifficulty));
+        const pick = fit.filter(x => questionDifficulty(x) === easiest);
+        if (pick.length) q = pick[Math.floor(rand() * pick.length)];
+      }
+      return q;
+    };
   };
   return { normal: makeDraw(pool.normal), boss: makeDraw(pool.boss) };
 }
 
+// 一個區域：數張三星關卡 × 20 小關（第 5、10 關菁英、第 7 關寶箱、第 15 關小 BOSS、第 20 關大 BOSS），最後一關是區域最終魔王
 export function generateStages(levelKey: string, decks: Decks = createDecks(levelKey)): Stage[] {
-  const generatedStages: Stage[] = [];
-  for (let i = 1; i <= 50; i++) {
-    if (i === 50 && levelKey === LEVELS[LEVELS.length - 1]) {
-      // 最後一個區域的終點：沉默魔王
-      generatedStages.push({ name: `第 ${i} 關：沉默魔王`, bossMode: true, kind: 'final', questions: [decks.boss(i - 1), decks.boss(i - 1), decks.boss(i - 1)] });
-    } else if (i === 50) {
-      generatedStages.push({ name: `第 ${i} 關：星球最終試煉`, bossMode: true, questions: [decks.boss(i - 1), decks.boss(i - 1)] });
-    } else if (i % 10 === 0) {
-      generatedStages.push({ name: `第 ${i} 關：守門菁英`, bossMode: true, questions: [decks.boss(i - 1)] });
-    } else if (i % 10 === 5) {
-      generatedStages.push({ name: `第 ${i} 關：菁英怪`, bossMode: false, kind: 'elite', questions: [decks.normal(i - 1)] });
-    } else if (i % 10 === 7) {
-      generatedStages.push({ name: `第 ${i} 關：寶箱怪`, bossMode: false, kind: 'treasure', questions: [decks.normal(i - 1)] });
-    } else {
-      generatedStages.push({ name: `第 ${i} 關：持續推進`, bossMode: false, questions: [decks.normal(i - 1)] });
+  const levelIdx = Math.max(0, LEVELS.indexOf(levelKey));
+  const count = regionStageCount(levelIdx);
+  const stages: Stage[] = [];
+  for (let i = 0; i < count; i++) {
+    switch (stageRole(levelIdx, i)) {
+      case 'final':
+        stages.push(levelKey === LEVELS[LEVELS.length - 1]
+          ? { name: '沉默魔王', bossMode: true, kind: 'final', questions: [decks.boss(i), decks.boss(i), decks.boss(i)] }
+          : { name: '區域最終魔王', bossMode: true, questions: [decks.boss(i), decks.boss(i)] });
+        break;
+      case 'boss': stages.push({ name: '關卡大 BOSS', bossMode: true, questions: [decks.boss(i)] }); break;
+      case 'gate': stages.push({ name: '小 BOSS', bossMode: true, questions: [decks.boss(i)] }); break;
+      case 'elite': stages.push({ name: '菁英怪', bossMode: false, kind: 'elite', questions: [decks.normal(i)] }); break;
+      case 'treasure': stages.push({ name: '寶箱怪', bossMode: false, kind: 'treasure', questions: [decks.normal(i)] }); break;
+      default: stages.push({ name: '持續推進', bossMode: false, questions: [decks.normal(i)] });
     }
   }
-  return generatedStages;
+  return stages;
 }

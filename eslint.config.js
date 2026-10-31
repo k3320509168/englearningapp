@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', '**/._*']), // exFAT 外接碟上 macOS 產生的 ._ 檔
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

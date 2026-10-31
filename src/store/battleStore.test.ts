@@ -1,11 +1,12 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { REVENGE_MAX_QUESTIONS, setBattleRandom, useBattleStore } from './battleStore';
+import { REVENGE_MAX_QUESTIONS, RUNE_GOLD, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
-import { ASSIST_STREAK, CAST_CONFIRM_TIME, LENIENT_STAGE_COUNT, PLAYER_MAX_HP, QUESTION_LIMIT, questionKey, voiceFallback } from '../game/battle';
+import { ASSIST_STREAK, LENIENT_STAGE_COUNT, PLAYER_MAX_HP, QUESTION_LIMIT, questionKey, voiceFallback } from '../game/battle';
 import { ELITE_SHIELD, GOLD, SKILL_ENERGY, skillEffect, SRS_INTERVALS, TREASURE_TIME, monsterAttack } from '../game/progression';
 import { DEFAULT_CHARACTER } from '../game/character';
 import type { Question } from '../game/types';
+import { chapterCount, regionStageCount } from '../game/regions';
 
 const state = () => useBattleStore.getState();
 const saved = () => useSaveStore.getState();
@@ -37,10 +38,10 @@ const playUntil = (stop: () => boolean, guard = 2000) => {
   }
 };
 
-// 預設：劍士主角＋騎士；亂數固定為 0.99（不暴擊、敵人打最後一位）
+// 預設：劍士主角＋騎士；亂數固定為 0.99（不暴擊、敵人打最後一位）；已看過困難題提示（不觸發第一次固定 ×2 的教學）
 const resetSave = (patch: Partial<ReturnType<typeof saved>> = {}) => {
   setBattleRandom(() => 0.99);
-  useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, settings: { ...initialSave.settings, showLessons: false }, ...patch });
+  useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, settings: { ...initialSave.settings, showLessons: false }, hintsSeen: ['boss', 'skill'], ...patch });
 };
 
 const startLevel = (patch: Partial<ReturnType<typeof saved>> = {}) => {
@@ -83,7 +84,7 @@ describe('battle flow', () => {
     expect(saved().gold).toBe(goldBefore);
   });
 
-  it('clears all 50 stages with boss summaries, then unlocks the next level', () => {
+  it('clears the whole region (20-stage maps + region boss) with boss summaries; the next region waits for the gatekeeper', () => {
     let summaries = 0;
     for (let i = 0; i < 2000 && state().phase !== 'levelClear'; i++) {
       const s = state();
@@ -92,14 +93,17 @@ describe('battle flow', () => {
       else answerCurrent();
     }
     expect(state().phase).toBe('levelClear');
-    expect(summaries).toBe(4);
-    expect(saved().unlockedIndex).toBe(1);
+    // 每張三星關卡的第 15、20 關各一次（區域魔王直接通關）
+    expect(summaries).toBe(chapterCount(0) * 2);
+    // 魔王倒下了，但下一區要等守門人封印＋區域試煉
+    expect(saved().bossDown).toContain(0);
+    expect(saved().unlockedIndex).toBe(0);
     expect(saved().gold).toBeGreaterThan(GOLD.levelClear);
   });
 
   it('needs more than one hit on later monsters without Combo', () => {
     playUntil(() => state().stageIdx === 35 && state().phase === 'answering');
-    useBattleStore.setState({ combo: 0, bossMult: 1 });
+    useBattleStore.setState({ combo: 0 });
     answerCurrent();
     expect(state().monsterHp).toBeGreaterThan(0);
     expect(state().phase).toBe('answering');
@@ -144,7 +148,16 @@ describe('party and upgrades', () => {
 describe('combo timer', () => {
   beforeEach(() => startLevel());
 
+  it('A1 1-1~1-7 are untimed: time running out changes nothing', () => {
+    useBattleStore.setState({ combo: 5 });
+    state().tick(QUESTION_LIMIT + 1);
+    expect(state().overtime).toBe(false);
+    expect(state().combo).toBe(5);
+  });
+
   it('first 25 stages: a timeout only breaks combo — no damage, no mistake, keep answering', () => {
+    state().startLevel(LEVELS[0], undefined, 10);
+    if (state().phase === 'lesson') state().startBattle();
     useBattleStore.setState({ combo: 5 });
     state().tick(QUESTION_LIMIT + 1);
     expect(state().phase).toBe('answering');
@@ -223,29 +236,39 @@ describe('stage variations', () => {
 describe('boss questions', () => {
   beforeEach(() => startLevel());
 
-  it('every 5th question is a boss question; multipliers chain x2 then x3', () => {
+  it('every 8th question is a boss question; a correct answer multiplies the combo', () => {
     playUntil(() => state().isBossQuestion);
-    expect(state().questionCount % 5).toBe(0);
-    answerCurrent();
-    expect(state().bossMult).toBe(2);
+    expect(state().questionCount % 8).toBe(0);
+    const before = state().combo;
+    answerCurrent(); // 測試的亂數固定 0.99 → 抽到最稀有的 ×10
     expect(state().event?.bossQuestion).toBe(true);
-    playUntil(() => state().isBossQuestion);
-    answerCurrent();
-    expect(state().bossMult).toBe(6);
+    expect(state().event?.bonus).toEqual({ mult: 10, from: before, to: before * 10 + 1 });
+    expect(state().combo).toBe(before * 10 + 1);
   });
 
-  it('a wrong answer resets combo and the multiplier', () => {
+  it('the very first hard question is a fixed ×2 so new players see how it works', () => {
+    startLevel({ hintsSeen: [] });
     playUntil(() => state().isBossQuestion);
+    const before = state().combo;
     answerCurrent();
-    playUntil(() => state().phase === 'answering' && !state().isBossQuestion);
-    answerWrong();
-    expect(state().combo).toBe(0);
-    expect(state().bossMult).toBe(1);
+    expect(state().event?.bonus).toEqual({ mult: 2, from: before, to: before * 2 + 1 });
+  });
+
+  it('valor guarantees at least ×3', () => {
+    playUntil(() => state().isBossQuestion);
+    setBattleRandom(() => 0);
+    useBattleStore.setState({ combo: 4, bossBoost: true });
+    answerCurrent();
+    expect(state().event?.bonus?.mult).toBe(3);
+    expect(state().combo).toBe(13);
+    expect(state().bossBoost).toBe(false);
   });
 
   it('prefers past mistakes', () => {
     const q: Question = { type: 'spell', desc: '請拼出：測試', ans: 'MISTAKEWORD' };
     startLevel({ mistakes: { [questionKey(q)]: { question: q, wrongCount: 1, lastWrongAt: 0, box: 0, dueAt: 0 } } });
+    // 從 2-1 開始（1-1～1-10 新手關只出選擇題，拼寫的錯題要等之後）
+    state().startLevel(LEVELS[0], undefined, 20);
     playUntil(() => state().isBossQuestion);
     expect(state().original?.ans).toBe('MISTAKEWORD');
   });
@@ -255,7 +278,7 @@ describe('skills', () => {
   beforeEach(() => startLevel());
 
   const fillEnergy = () => {
-    for (let i = 0; i < SKILL_ENERGY; i++) {
+    for (let i = 0; i < SKILL_ENERGY + 3 && state().party[0].energy < state().party[0].energyMax; i++) {
       playUntil(() => state().phase === 'answering');
       answerCurrent();
     }
@@ -271,9 +294,26 @@ describe('skills', () => {
     expect(state().phase).toBe('casting');
     state().tick(1000);
     expect(state().questionLeft).toBe(left);
-    state().tick(CAST_CONFIRM_TIME);
+    // 不會自動關閉：一直等到玩家按施放或取消
+    state().tick(60_000);
+    expect(state().phase).toBe('casting');
+    expect(state().questionLeft).toBe(left);
+    state().cancelSkill();
     expect(state().phase).toBe('answering');
-    expect(state().party[0].energy).toBe(SKILL_ENERGY);
+    // 取消不會用掉能量，之後還能再放
+    expect(state().party[0].energy).toBe(state().party[0].energyMax);
+    state().requestSkill(0);
+    state().confirmSkill();
+    expect(state().party[0].energy).toBe(0);
+  });
+
+  it('opening (搶攻) skills are ready from the start', () => {
+    // 弓箭手主角的「專注」是搶攻型：一開場能量就是滿的
+    startLevel({ character: { ...DEFAULT_CHARACTER, classId: 'archer' } });
+    playUntil(() => state().phase === 'answering');
+    expect(state().party[0].energy).toBe(state().party[0].energyMax);
+    state().requestSkill(0);
+    expect(state().phase).toBe('casting');
   });
 
   it('haste (warrior) adds time to this question', () => {
@@ -365,7 +405,7 @@ describe('revenge boss (SRS)', () => {
   const q1: Question = { type: 'spell', desc: '請拼出：測試一', ans: 'REVENGEONE' };
   const q2: Question = { type: 'spell', desc: '請拼出：測試二', ans: 'REVENGETWO' };
 
-  it('replaces the stage 10 boss with due mistakes and promotes them when answered', () => {
+  it('replaces the 15th-stage mini boss with due mistakes and promotes them when answered', () => {
     const now = Date.now();
     startLevel({
       mistakes: {
@@ -373,9 +413,9 @@ describe('revenge boss (SRS)', () => {
         [questionKey(q2)]: { question: q2, wrongCount: 1, lastWrongAt: now, box: 0, dueAt: now + 60_000 }, // 還沒到期
       },
     });
-    // 從第 10 關開始，避免錯題在前面的魔王題就先被複習掉
-    state().startLevel(LEVELS[0], undefined, 9);
-    const boss = state().stages[9];
+    // 從 1-15 開始，避免錯題在前面的困難題就先被複習掉
+    state().startLevel(LEVELS[0], undefined, 14);
+    const boss = state().stages[14];
     expect(boss.revenge).toBe(true);
     expect(boss.questions.map(q => q.ans)).toEqual(['REVENGEONE']);
 
@@ -421,16 +461,23 @@ describe('revenge boss (SRS)', () => {
     expect(saved().mistakes[key]).toBeUndefined();
   });
 
-  it('mixes in learned-but-not-mastered words now and then', () => {
+  it('mixes in knowledge points that are due for their cross-day review', () => {
     const q: Question = { type: 'spell', desc: '請拼出：重複練習', ans: 'REPEATWORD' };
-    startLevel({ codex: { [questionKey(q)]: { question: q, correct: 1, wrong: 0, firstSeenAt: 0 } } });
+    startLevel({
+      codex: { [questionKey(q)]: { question: q, correct: 1, wrong: 0, firstSeenAt: 0 } },
+      knowledge: { 'w:repeatword': { wins: [0], dueAt: 0 } },
+    });
+    state().startLevel(LEVELS[0], undefined, 20);
     useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
-    setBattleRandom(() => 0); // 每次都抽中重複練習
+    setBattleRandom(() => 0); // 每次都抽中到期複習
     answerCurrent();
-    // 抽到的是答對過、還沒熟練的字（剛答對的那題或 REPEATWORD）
-    const c = saved().codex[questionKey(state().original!)];
-    expect(c.correct).toBeGreaterThan(0);
-    expect(c.correct).toBeLessThan(5);
+    expect(state().original?.ans).toBe('REPEATWORD');
+    // 隔了 20 小時以上答對：跨日成功，封印能量 +1
+    const gold = saved().gold;
+    answerCurrent();
+    expect(saved().knowledge['w:repeatword'].wins).toHaveLength(2);
+    expect(state().runRunes).toBe(1);
+    expect(saved().gold).toBeGreaterThanOrEqual(gold + RUNE_GOLD);
     setBattleRandom(() => 0.99);
   });
 
@@ -522,7 +569,7 @@ describe('stage progress', () => {
 describe('region boss skills', () => {
   const startBoss = (levelIdx: number) => {
     resetSave({ unlockedIndex: levelIdx });
-    state().startLevel(LEVELS[levelIdx], undefined, 49);
+    state().startLevel(LEVELS[levelIdx], undefined, regionStageCount(levelIdx) - 1);
     if (state().phase === 'lesson') state().startBattle();
     useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9 });
   };
@@ -534,10 +581,10 @@ describe('region boss skills', () => {
     expect(state().bossSkill).toBe('seal');
   });
 
-  it('A1 tree regrows 10% every 3 questions unless combo is 5+', () => {
+  it('A1 tree regrows 10% every 3 questions unless the player answers 5 in a row', () => {
     startBoss(0);
     useBattleStore.setState({ monsterHp: 5e8 });
-    for (let i = 0; i < 3; i++) { useBattleStore.setState({ combo: 0 }); answerCurrent(); }
+    for (let i = 0; i < 3; i++) { useBattleStore.setState({ streak: 0 }); answerCurrent(); }
     expect(state().bossCast?.text).toContain('瘋狂生長');
     expect(state().monsterHp).toBeGreaterThan(5e8);
   });
@@ -551,12 +598,15 @@ describe('region boss skills', () => {
     expect(state().party.every((m, i) => m.hp < before[i])).toBe(true);
   });
 
-  it('C2 seal blocks skills until 50 combo', () => {
+  it('C2 seal blocks skills until 20 correct answers in a row (a huge Bonus combo alone does not break it)', () => {
     startBoss(8);
-    useBattleStore.setState({ party: state().party.map(m => ({ ...m, energy: SKILL_ENERGY })) });
+    useBattleStore.setState({ party: state().party.map(m => ({ ...m, energy: m.energyMax })) });
     state().requestSkill(0);
     expect(state().phase).toBe('answering');
-    useBattleStore.setState({ combo: 49 });
+    useBattleStore.setState({ combo: 5000, streak: 3 });
+    answerCurrent();
+    expect(state().sealed).toBe(true);
+    useBattleStore.setState({ streak: 19 });
     answerCurrent();
     expect(state().sealed).toBe(false);
   });
@@ -609,14 +659,21 @@ describe('enemy attack patterns (action gauge)', () => {
   it('attacks on its own when the gauge fills, even if the player never answers wrong', () => {
     startAt(4);
     const hp = state().playerHp;
-    state().tick(9_000); // 赤岩峽谷的史萊姆約 8 秒集滿（還沒超過 20 秒的答題時間）
+    state().tick(11_000); // 赤岩峽谷的史萊姆約 10 秒集滿（還沒超過 20 秒的答題時間）
     expect(state().event?.kind).toBe('enemyMove');
     expect(state().playerHp).toBeLessThan(hp);
     expect(state().enemyGauge).toBe(0);
   });
 
-  it('A1 enemies attack far less often than later regions', () => {
+  it('A1 1-1~1-10 enemies never attack on their own (onboarding)', () => {
     startAt(0);
+    state().tick(60_000);
+    expect(state().event?.kind).not.toBe('enemyMove');
+    expect(state().enemyGauge).toBe(0);
+  });
+
+  it('A1 enemies attack far less often than later regions', () => {
+    startAt(0, 60);
     state().tick(10_000);
     expect(state().event?.kind).not.toBe('enemyMove');
     expect(state().enemyGauge).toBeGreaterThan(0);
@@ -630,7 +687,7 @@ describe('enemy attack patterns (action gauge)', () => {
   });
 
   it('region bosses use their own move list, and a shield blocks a whole move', () => {
-    startAt(2, 49); // 碧藍海岸的深海巨獸：觸手拍擊 → 漩渦 → 噴水連擊
+    startAt(2, regionStageCount(2) - 1); // 碧藍海岸的深海巨獸：觸手拍擊 → 漩渦 → 噴水連擊
     useBattleStore.setState({ shield: true, enemyGauge: 0.999 });
     state().tick(100);
     expect(state().shield).toBe(false);
@@ -655,5 +712,17 @@ describe('enemy attack patterns (action gauge)', () => {
     const hp = state().playerHp;
     state().tick(15_000);
     expect(state().playerHp).toBe(hp);
+  });
+});
+
+describe('新手引導', () => {
+  it('1-1～1-3 不累積技能能量；1-4 開場隊長能量直接集滿', () => {
+    startLevel({ hintsSeen: [] });
+    for (let i = 0; i < 4; i++) { playUntil(() => state().phase === 'answering'); answerCurrent(); }
+    expect(state().party.every(m => m.energy === 0)).toBe(true);
+    state().startLevel(LEVELS[0], undefined, 3);
+    if (state().phase === 'lesson') state().startBattle();
+    const lead = state().party[0];
+    expect(lead.energy).toBe(lead.energyMax);
   });
 });

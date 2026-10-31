@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
@@ -21,13 +22,14 @@ import { TIER_UP_TRIALS, TRIAL_COUNT, TRUE_NAME_BONUS, isTrueName, trialsDone } 
 import type { MemberId } from '../game/party';
 import { avatarDataUrl, heroDataUrl } from '../game/art/sprites';
 import { keepFocus } from './keepFocus';
+import { usePartyDrag } from './usePartyDrag';
 
 type Filter = 'owned' | 'all' | Rarity;
 
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
 // 點英雄看詳細資料、加入／離開隊伍、升品階。
 export default function HeroModal() {
-  const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, toggleMember, setLeader, clearParty, tierUp, starUp, trainHero, sellHero } = useSaveStore();
+  const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [selected, setSelected] = useState<MemberId | null>(null);
@@ -39,6 +41,13 @@ export default function HeroModal() {
     return map;
   }, [character, player.classPath.length]);
 
+  // 拖拉換隊：拖到隊伍格子＝上場／換位／替換；隊伍裡的英雄拖回圖鑑＝離隊
+  const { drag, start, guardClick } = usePartyDrag((id, target) => {
+    if (target === 'bench') { if (party.includes(id) && party.length > 1) toggleMember(id); }
+    else placeMember(id, target);
+    sfx.coin();
+  });
+
   const list = HEROES
     .filter(h => filter === 'all' || (filter === 'owned' ? heroes.includes(h.id) : currentRarity(h, heroTier[h.id] ?? 0) === filter))
     .sort((a, b) => RARITIES.indexOf(currentRarity(b, heroTier[b.id] ?? 0)) - RARITIES.indexOf(currentRarity(a, heroTier[a.id] ?? 0)));
@@ -47,7 +56,7 @@ export default function HeroModal() {
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
       <section className="party-slots">
         <div className="collection-head">
-          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">第一位是隊長，負責魔王題</span></p>
+          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b> <span className="muted">數字是出手順序，1 號是隊長（先出手、負責困難題）。把英雄卡拖到格子裡就能換人</span></p>
           {party.length > 1 && (
             <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
           )}
@@ -55,12 +64,18 @@ export default function HeroModal() {
         <div className="party-row">
           {Array.from({ length: PARTY_MAX }, (_, i) => {
             const id = party[i];
-            if (!id) return <div key={i} className="party-slot is-empty">空位</div>;
+            const over = drag?.over === i ? 'is-drop' : '';
+            // 每一格都有出手順序的數字與底色，英雄放上去時數字還在、只是被英雄擋住一部分
+            const order = <span className="slot-num" aria-hidden>{i + 1}</span>;
+            if (!id) return <div key={i} data-slot={i} className={`party-slot slot-${i + 1} is-empty ${over}`}>{order}<small>拖曳英雄到這裡</small></div>;
             const name = id === 'player' ? character?.name ?? '' : heroWord(heroDef(id));
             return (
-              <button key={id} className={`party-slot ${selected === id ? 'is-selected' : ''}`} onMouseDown={keepFocus} onClick={() => setSelected(id)}>
+              <button key={id} data-slot={i} className={`party-slot slot-${i + 1} ${selected === id ? 'is-selected' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
+                onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => setSelected(id))}
+                aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}>
+                {order}
                 {i === 0 && <span className="party-pos">👑</span>}
-                <img src={portraits[id]} alt="" />
+                <img src={portraits[id]} alt="" draggable={false} />
                 <span>{name}</span>
               </button>
             );
@@ -70,7 +85,7 @@ export default function HeroModal() {
 
       {selected && renderDetail(selected)}
 
-      <section className="hero-collection">
+      <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
         <div className="collection-head">
           <p className="shop-gold">收集 <b>{heroes.length}/{HEROES.length}</b></p>
           <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => openModal('summon')}>🔮 召喚（🎫 {tickets}）</button>
@@ -86,8 +101,9 @@ export default function HeroModal() {
         <ul className="hero-tiles">
           {character && filter === 'owned' && (
             <li>
-              <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus} onClick={() => setSelected('player')}>
-                <img src={portraits.player} alt="" />
+              <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
+                onPointerDown={start('player', portraits.player)} onClick={guardClick(() => setSelected('player'))}>
+                <img src={portraits.player} alt="" draggable={false} />
                 <b>{character.name}</b>
                 <small>主角</small>
               </button>
@@ -102,11 +118,12 @@ export default function HeroModal() {
                   className={`hero-tile ${owned ? '' : 'is-locked'} ${party.includes(h.id) ? 'in-party' : ''}`}
                   style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}
                   onMouseDown={keepFocus}
-                  onClick={() => setSelected(h.id)}
+                  onPointerDown={owned ? start(h.id, portraits[h.id]) : undefined}
+                  onClick={guardClick(() => setSelected(h.id))}
                   aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
                 >
                   <span className="rarity-tag">{rarity}</span>
-                  <img src={portraits[h.id]} alt="" />
+                  <img src={portraits[h.id]} alt="" draggable={false} />
                   <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
                   <small>{owned ? heroTitle(h) : h.meaning}</small>
                   {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
@@ -116,6 +133,7 @@ export default function HeroModal() {
           })}
         </ul>
       </section>
+      {drag && createPortal(<img className="drag-ghost" src={drag.img} alt="" style={{ left: drag.x, top: drag.y }} />, document.body)}
       <p className="muted party-note">持有金幣 🪙 {gold}。重複召喚到的英雄會變成碎片，集滿可以升一個品階（每位英雄只能升一次）。</p>
     </Modal>
   );

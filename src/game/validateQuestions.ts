@@ -80,6 +80,11 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
         if (new Set(texts).size !== texts.length) error('選項內容重複');
       }
       if (!CHOICE_LETTERS.includes(q.ans)) error(`choice 答案必須是 A-D："${q.ans}"`);
+      // 出題模型偶爾把題型說明（例如「【生活文法】含有名詞單複數的英文句子」）當成題目，句子本身不見了
+      // 正常的中翻英題（「紅色」的英文是？）沒有英文，但一定有「」
+      const body = q.desc.replace(/【[^】]*】/g, '').trim();
+      const metaOnly = /^含有/.test(body) || (!q.speak && !q.desc.includes('「') && !/[A-Za-z]{2,}/.test(body));
+      if (!q.desc.startsWith('🎧') && metaOnly) error('題目沒有英文句子（只有題型說明），玩家看不到要作答的內容');
       break;
     }
     case 'voice': {

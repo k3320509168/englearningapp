@@ -19,3 +19,9 @@ createRoot(document.getElementById('root')!).render(
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => { void navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`); });
 }
+
+// 本機開發：把 store 掛到 window，方便在瀏覽器主控台測試（正式版不會有）
+if (import.meta.env.DEV) {
+  void Promise.all([import('./store/battleStore'), import('./store/saveStore'), import('./store/uiStore')])
+    .then(([b, s, u]) => Object.assign(window, { __battle: b.useBattleStore, __save: s.useSaveStore, __ui: u.useUiStore }));
+}

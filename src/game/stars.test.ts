@@ -1,17 +1,21 @@
 import { describe, expect, it } from 'vitest';
 import { emptyRunStats, evaluateStars, mergeStars, starConditions } from './stars';
-import { REGIONS, mapName, stageLabel } from './regions';
+import { REGIONS, chapterCount, mapName, regionStageCount, stageLabel } from './regions';
 import { STORIES, clearStoryId, regionStoryId } from './story';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 import { setBattleRandom, useBattleStore } from '../store/battleStore';
 import { DEFAULT_CHARACTER } from './character';
+import { BOSS_QUESTION_EVERY } from './progression';
 
 describe('regions and maps', () => {
-  it('splits each region into 5 named maps of 10 stages', () => {
-    REGIONS.forEach(r => expect(r.maps).toHaveLength(5));
+  it('splits each region into three-star maps of 20 stages plus the region boss', () => {
+    REGIONS.forEach((r, i) => expect(r.maps).toHaveLength(chapterCount(i) + 1));
+    expect(REGIONS[0].maps).toHaveLength(6);
+    expect(REGIONS[8].maps).toHaveLength(10);
     expect(mapName(REGIONS[0].id, 0)).toBe('新手村');
-    expect(mapName(REGIONS[0].id, 14)).toBe('風車丘');
-    expect(stageLabel(14)).toBe('2-5');
+    expect(mapName(REGIONS[0].id, 24)).toBe('風車丘');
+    expect(stageLabel(24)).toBe('2-5');
+    expect(stageLabel(regionStageCount(0) - 1, 0)).toBe('魔王');
   });
 
   it('has an intro and a clear story for every region', () => {
@@ -25,16 +29,18 @@ describe('regions and maps', () => {
 
 describe('three-star rating', () => {
   it('raises the combo goal in later regions', () => {
-    expect(starConditions(0)[2].label).toContain('combo 達 8');
-    expect(starConditions(8)[2].label).toContain('combo 達 35');
+    expect(starConditions(0)[2].label).toContain('連續答對 8 題');
+    expect(starConditions(8)[2].label).toContain('連續答對 35 題');
   });
 
   it('evaluates a run: survive, 85% accuracy, combo or speed', () => {
-    const good = { ...emptyRunStats(), answered: 20, correct: 18, maxCombo: 9, correctTimeMs: 18 * 6000 };
+    const good = { ...emptyRunStats(), answered: 20, correct: 18, maxStreak: 9, correctTimeMs: 18 * 6000 };
     expect(evaluateStars(0, good)).toEqual([true, true, true]);
-    expect(evaluateStars(0, { ...good, correct: 16, maxCombo: 2, knockouts: 1 })).toEqual([false, false, false]);
-    // combo 不夠，但答得很快也能拿第三顆
-    expect(evaluateStars(0, { ...good, maxCombo: 2, correctTimeMs: 18 * 3000 })[2]).toBe(true);
+    expect(evaluateStars(0, { ...good, correct: 16, maxStreak: 2, knockouts: 1 })).toEqual([false, false, false]);
+    // 連對不夠，但答得很快也能拿第三顆
+    expect(evaluateStars(0, { ...good, maxStreak: 2, correctTimeMs: 18 * 3000 })[2]).toBe(true);
+    // 困難題 Bonus 把 combo 乘很大也不算：看的是真的連續答對
+    expect(evaluateStars(0, { ...good, maxStreak: 2, maxCombo: 500 })[2]).toBe(false);
   });
 
   it('keeps the best record per condition', () => {
@@ -59,23 +65,24 @@ describe('maps in battle', () => {
     else { q.ans.slice(st().typed.length).split('').forEach(c => st().inputLetter(c)); st().submitTyped(); }
   };
 
-  it('rates the map at its boss, then resets combo on the next map', () => {
+  it('rates the map at its 20th-stage boss (not the 15th), then resets combo on the next map', () => {
     setBattleRandom(() => 0.99);
     useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, settings: { ...initialSave.settings, showLessons: false } });
     st().startLevel(REGIONS[0].id);
-    for (let i = 0; i < 500 && st().phase !== 'summary'; i++) {
-      if (st().phase === 'monsterDown') st().nextStage(); else answer();
+    for (let i = 0; i < 2000 && !st().mapResult; i++) {
+      if (st().phase === 'monsterDown' || st().phase === 'summary') st().nextStage(); else answer();
     }
+    expect(st().stageIdx).toBe(19);
     expect(st().mapResult?.mapIdx).toBe(0);
     expect(st().mapResult?.stars[0]).toBe(true);
     expect(useSaveStore.getState().mapStars[`${REGIONS[0].id}#0`]).toBeTruthy();
     expect(st().combo).toBeGreaterThan(0);
     st().nextStage();
     expect(st().combo).toBe(0);
-    expect(useSaveStore.getState().bestStage[REGIONS[0].id]).toBe(10);
+    expect(useSaveStore.getState().bestStage[REGIONS[0].id]).toBe(20);
   });
 
-  it('every 5th question is a boss question, even at the start of a stage', () => {
+  it('every 8th question is a boss question, even at the start of a stage', () => {
     setBattleRandom(() => 0.99);
     useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, settings: { ...initialSave.settings, showLessons: false } });
     st().startLevel(REGIONS[0].id);
@@ -83,7 +90,7 @@ describe('maps in battle', () => {
     for (let i = 0; i < 60; i++) {
       if (st().phase === 'monsterDown' || st().phase === 'summary') { st().nextStage(); continue; }
       const stage = st().stages[st().stageIdx];
-      if (st().questionCount % 5 === 0 && !stage.revenge && stage.kind !== 'treasure') seen.push(st().isBossQuestion);
+      if (st().questionCount % BOSS_QUESTION_EVERY === 0 && !stage.revenge && stage.kind !== 'treasure') seen.push(st().isBossQuestion);
       answer();
     }
     expect(seen.length).toBeGreaterThan(3);
@@ -94,7 +101,8 @@ describe('maps in battle', () => {
 describe('save v9 migration', () => {
   it('fills best stage from progress and treats old players as having seen the prologue', () => {
     const m = migrateSave({ levelProgress: { a: 12 } }, 8);
-    expect(m.bestStage).toEqual({ a: 12 });
+    // 舊的第 2 張地圖第 3 關（12）→ 新的每張 20 關：第 2 張第 5 關（24）
+    expect(m.bestStage).toEqual({ a: 24 });
     expect(m.storySeen).toContain('prologue');
     expect(migrateSave(undefined, 0).storySeen).toEqual([]);
   });

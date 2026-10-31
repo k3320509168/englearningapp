@@ -1,7 +1,7 @@
 import { BASE_DAMAGE } from './battle';
 import { classDef } from './character';
 import type { Character, ClassId, Element } from './character';
-import { CLASS_SKILL, SKILL_ENERGY, playerSkillPower } from './progression';
+import { CLASS_SKILL, SKILLS, playerSkillPower } from './progression';
 import type { PlayerStats, SkillId } from './progression';
 import { heroDef, heroSkill, heroSkillPower, heroStats, heroWord } from './heroes';
 import type { HeroId } from './heroes';
@@ -14,7 +14,7 @@ import { CLASS_TALENT, heroTalent } from './talents';
 import type { TalentId } from './talents';
 
 // 隊伍：主角＋夥伴英雄，最多 4 人，可以不派主角。
-// 每題由隊伍輪流出手；魔王題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
+// 每題由隊伍輪流出手；困難題由隊長（第一位）出手；敵人回合隨機攻擊一位隊員。
 
 export type MemberId = 'player' | HeroId;
 export const PARTY_MAX = 4;
@@ -30,6 +30,7 @@ export interface Member {
   skill: SkillId;
   skillPower: number; // 技能威力：稀有度（主角看轉職）越高越強
   energy: number;
+  energyMax: number; // 技能 CD：能量集滿才能施放
   mods: Mods; // 等級、轉職、裝備帶來的被動效果
   classId: ClassId; // 職業：決定出手後給下一位隊員的接力加成
   talent: TalentId; // 被動天賦（數值跟著 skillPower 成長）
@@ -54,6 +55,9 @@ export interface PartyOptions {
   growth?: PlayerGrowth;
 }
 
+// 出戰時的能量：搶攻型技能一開場就是滿的
+const skillEnergy = (id: SkillId) => ({ energy: SKILLS[id].opening ? SKILLS[id].cost : 0, energyMax: SKILLS[id].cost });
+
 export function buildMember(id: MemberId, character: Character | null, stats: PlayerStats, opts: PartyOptions = {}): Member {
   if (id === 'player') {
     const c = character!;
@@ -63,7 +67,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
     return {
       id, name: c.name, element: c.element, maxHp, hp: maxHp,
       atk: BASE_DAMAGE * stats.atkMult * cls.stats.atk * (1 + mods.atk), crit: cls.stats.crit + mods.crit,
-      skill: CLASS_SKILL[c.classId], skillPower: playerSkillPower(opts.growth?.classPath.length ?? 0), energy: 0, mods, classId: c.classId,
+      skill: CLASS_SKILL[c.classId], skillPower: playerSkillPower(opts.growth?.classPath.length ?? 0), ...skillEnergy(CLASS_SKILL[c.classId]), mods, classId: c.classId,
       talent: CLASS_TALENT[c.classId],
     };
   }
@@ -76,7 +80,7 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
   return {
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,
     atk: BASE_DAMAGE * stats.atkMult * hs.atk * (1 + mods.atk), crit: hs.crit,
-    skill: heroSkill(h), skillPower: heroSkillPower(h, opts.tiers?.[id] ?? 0), energy: 0, mods, classId: h.classId,
+    skill: heroSkill(h), skillPower: heroSkillPower(h, opts.tiers?.[id] ?? 0), ...skillEnergy(heroSkill(h)), mods, classId: h.classId,
     talent: heroTalent(h.id),
   };
 }
@@ -126,9 +130,9 @@ export function partyHp(party: Member[]) {
   };
 }
 
-export const skillReady = (m: Member) => isAlive(m) && m.energy >= SKILL_ENERGY;
+export const skillReady = (m: Member) => isAlive(m) && m.energy >= m.energyMax;
 
 // 答對一題：站著的隊員各 +1 能量
 export function gainEnergy(party: Member[]): Member[] {
-  return party.map(m => (isAlive(m) ? { ...m, energy: Math.min(SKILL_ENERGY, m.energy + 1) } : m));
+  return party.map(m => (isAlive(m) ? { ...m, energy: Math.min(m.energyMax, m.energy + 1) } : m));
 }

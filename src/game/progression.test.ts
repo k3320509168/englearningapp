@@ -1,15 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
-  BOSS_QUESTION_STEPS, HITS_TO_KILL, UPGRADES, bossStep, comboMultiplier, computeDamage, goldWithBonus,
-  monsterAttack, monsterElement, monsterMaxHp, playerStats, upgradeCost,
+  BOSS_BONUS_TABLE, HITS_TO_KILL, UPGRADES, comboMultiplier, computeDamage, goldWithBonus, heroScale,
+  monsterAttack, monsterElement, monsterMaxHp, monsterLevel, playerStats, rollBossBonus, upgradeCost,
 } from './progression';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
+import { regionStageCount } from './stageLayout';
 import { buildParty, gainEnergy, nextAlive, normalizeParty, partyHp } from './party';
 import { DEFAULT_CHARACTER } from './character';
 
 const noUpgrades = { hp: 0, atk: 0, combo: 0, gold: 0 };
 const base = playerStats({ upgrades: noUpgrades });
-const plain = { atk: BASE_DAMAGE, combo: 0, comboStep: 0.1, bossMult: 1, element: 1, amplify: false, crit: false };
+const plain = { atk: BASE_DAMAGE, combo: 0, comboStep: 0.1, element: 1, amplify: false, crit: false };
 
 describe('playerStats', () => {
   it('applies shop upgrades', () => {
@@ -27,25 +28,32 @@ describe('computeDamage', () => {
     expect(computeDamage(plain)).toBe(BASE_DAMAGE);
   });
 
-  it('combo has no cap: +10% per combo', () => {
+  it('combo: +10% per layer up to 10, then diminishing but always growing', () => {
     expect(comboMultiplier(10)).toBeCloseTo(2);
-    expect(comboMultiplier(100)).toBeCloseTo(11);
     expect(computeDamage({ ...plain, combo: 10 })).toBe(BASE_DAMAGE * 2);
+    expect(comboMultiplier(50)).toBeCloseTo(4.2, 1);
+    expect(comboMultiplier(100)).toBeCloseTo(5.4, 1);
+    expect(comboMultiplier(1000)).toBeLessThan(10);
+    for (const c of [10, 50, 100, 300, 1000]) expect(comboMultiplier(c + 1)).toBeGreaterThan(comboMultiplier(c));
   });
 
-  it('multiplies element, boss multiplier, amplify and crit together', () => {
+  it('multiplies element, amplify and crit together', () => {
     expect(computeDamage({ ...plain, element: 1.5 })).toBe(75);
-    expect(computeDamage({ ...plain, bossMult: 30, amplify: true, crit: true })).toBe(BASE_DAMAGE * 30 * 2 * 2);
+    expect(computeDamage({ ...plain, amplify: true, crit: true })).toBe(BASE_DAMAGE * 2 * 2);
   });
 
-  it('can reach hundreds of millions with a long run', () => {
-    const mult = 2 * 3 * 5 ** 8; // 10 道魔王題
-    expect(computeDamage({ ...plain, combo: 50, bossMult: mult })).toBeGreaterThan(1e8);
+  it('stays sane on the first stage even with a huge combo', () => {
+    expect(computeDamage({ ...plain, combo: 1000, crit: true, speed: 1.5 })).toBeLessThan(2000);
   });
 
-  it('boss question steps go ×2, ×3, then ×5', () => {
-    expect([0, 1, 2, 3, 9].map(bossStep)).toEqual([2, 3, 5, 5, 5]);
-    expect(BOSS_QUESTION_STEPS).toEqual([2, 3, 5]);
+  it('boss bonus rolls ×1/×2 most often and ×10 rarely', () => {
+    expect(BOSS_BONUS_TABLE.map(b => b.mult)).toEqual([1, 2, 3, 5, 10]);
+    const total = BOSS_BONUS_TABLE.reduce((sum, b) => sum + b.weight, 0);
+    expect(total).toBe(100);
+    expect(rollBossBonus(() => 0)).toBe(1);
+    expect(rollBossBonus(() => 0.5)).toBe(2);
+    expect(rollBossBonus(() => 0.99)).toBe(10);
+    expect(rollBossBonus(() => 0, 3)).toBe(3);
   });
 });
 
@@ -58,18 +66,26 @@ describe('monsters', () => {
   });
 
   it('get harder every stage and every region, without a jump between regions', () => {
-    for (let r = 0; r < 6; r++) {
-      for (let st = 1; st < 50; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
-      if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(49, r - 1, false)).toBeLessThan(1.05);
+    for (let r = 0; r < 9; r++) {
+      const n = regionStageCount(r);
+      for (let st = 1; st < n; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
+      if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(regionStageCount(r - 1) - 1, r - 1, false)).toBeLessThan(1.08);
     }
-    // 最後一區（C2）的最後一關：沒升級時約要 3 × 1.3^9 ≈ 32 題的傷害
-    expect(monsterMaxHp(49, 8, false) / BASE_DAMAGE).toBeGreaterThan(30);
+    // 最後一區（C2）的最後一關：沒升級時約要 20 題以上的傷害
+    expect(monsterMaxHp(49, 8, false) / BASE_DAMAGE).toBeGreaterThan(20);
+  });
+
+  it('are based on a hero of the same level, a bit stronger in later regions', () => {
+    expect(monsterMaxHp(0, 0, false)).toBe(BASE_DAMAGE * HITS_TO_KILL.normal);
+    const lv = monsterLevel(5, 0);
+    expect(monsterAttack(false, 5, 0) / 20).toBeGreaterThan(heroScale(lv, 5));
+    expect(monsterAttack(false, 5, 0, 'final')).toBeGreaterThan(monsterAttack(false, 5, 0, 'elite'));
   });
 
   it('hit harder in later regions', () => {
     expect(monsterAttack(false, 0, 0)).toBe(20);
     expect(monsterAttack(true, 0, 0)).toBe(30);
-    expect(monsterAttack(false, 8, 49)).toBeGreaterThan(200);
+    expect(monsterAttack(false, 8, 49)).toBeGreaterThan(150);
   });
 
   it('have an element; revenge bosses are dark', () => {
@@ -149,7 +165,8 @@ describe('skills', () => {
 describe('question difficulty within a region', () => {
   it('early stages only draw easy questions, later stages reach harder ones', async () => {
     const { createDecks, questionDifficulty, maxDifficultyAt, LEVELS } = await import('./QuestionData');
-    const decks = createDecks(LEVELS[0]);
+    // A2（A1 的 1-1～1-10 新手關另外限定只出選擇題）
+    const decks = createDecks(LEVELS[1]);
     for (let i = 0; i < 40; i++) expect(questionDifficulty(decks.normal(0))).toBeLessThanOrEqual(1);
     expect(maxDifficultyAt(0)).toBe(1);
     expect(maxDifficultyAt(20)).toBe(2);

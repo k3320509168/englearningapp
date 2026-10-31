@@ -27,8 +27,9 @@ describe('final region', () => {
     expect(LEVELS).toHaveLength(9);
     expect(REGIONS[8].name).toBe('王城');
     const stages = generateStages(LEVELS[8]);
-    expect(stages[49].kind).toBe('final');
-    expect(generateStages(LEVELS[7])[49].kind).toBeUndefined();
+    expect(stages[stages.length - 1].kind).toBe('final');
+    const c1 = generateStages(LEVELS[7]);
+    expect(c1[c1.length - 1].kind).toBeUndefined();
     expect(STORIES['region-5'].length).toBeGreaterThan(0);
     expect(STORIES['clear-5'].length).toBeGreaterThan(0);
   });

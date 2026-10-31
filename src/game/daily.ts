@@ -14,7 +14,7 @@ export interface DailyDef {
 export const DAILY_POOL: DailyDef[] = [
   { id: 'correct20', event: 'correct', goal: 20, label: '答對 20 題', reward: { gold: 80, tickets: 1 } },
   { id: 'correct50', event: 'correct', goal: 50, label: '答對 50 題', reward: { gold: 150, tickets: 1 } },
-  { id: 'review3', event: 'review', goal: 3, label: '複習 3 個錯題（在魔王題或復仇魔王答對）', reward: { gold: 100, tickets: 1 } },
+  { id: 'review3', event: 'review', goal: 3, label: '複習 3 個錯題（在困難題或復仇魔王答對）', reward: { gold: 100, tickets: 1 } },
   { id: 'boss1', event: 'boss', goal: 1, label: '打倒 1 隻地圖頭目', reward: { gold: 100, tickets: 1 } },
   { id: 'star1', event: 'star', goal: 1, label: '拿到 1 顆新星星', reward: { gold: 80, tickets: 1 } },
   { id: 'trial1', event: 'trial', goal: 1, label: '完成 1 項英雄真名考驗', reward: { gold: 60, tickets: 1 } },

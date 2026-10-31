@@ -56,6 +56,12 @@ describe('voice', () => {
     expect(checkVoice(q, 'please send me a report today')).toBe(true); // 5/6 ≈ 83%
     expect(checkVoice(q, 'please send report')).toBe(false); // 3/6
   });
+
+  it('treats contractions from speech recognition as the full form', () => {
+    expect(checkVoice({ type: 'voice', desc: '', ans: 'I AM AN ENGINEER' }, "I'm an engineer")).toBe(true);
+    expect(checkVoice({ type: 'voice', desc: '', ans: 'DO NOT WORRY ABOUT IT' }, 'don’t worry about it')).toBe(true);
+    expect(checkVoice({ type: 'voice', desc: '', ans: 'LET US GO SWIMMING' }, "let's go swimming")).toBe(true);
+  });
 });
 
 describe('combo timer rules', () => {

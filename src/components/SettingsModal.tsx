@@ -7,6 +7,7 @@ import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { useSpeechJam } from './useSpeechJam';
 import { STORIES } from '../game/story';
 import { REGIONS } from '../game/regions';
 import { CloudLoginError, CloudSection, BackupSection } from './CloudSave';
@@ -151,6 +152,7 @@ function VoicePicker() {
   const voiceName = useSaveStore(s => s.settings.voiceName ?? '');
   const updateSettings = useSaveStore(s => s.updateSettings);
   const say = useSpeak();
+  const jammed = useSpeechJam();
   const [voices, setVoices] = useState(() => englishVoices());
   // 語音清單是非同步載入的，載好後更新
   useEffect(() => {
@@ -173,6 +175,7 @@ function VoicePicker() {
       <div className="feedback-actions">
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
+        {jammed && <p className="q-silent">⚠️ 瀏覽器的發音引擎卡住了，按試聽也不會出聲。請重新整理頁面；還是不行，請完全關閉瀏覽器（Mac 按 Cmd+Q）再打開。</p>}
       </div>
       {voices.length === 0 && <p className="voice-error">這台裝置找不到英文語音，聽力題會改成顯示單字。可以到系統設定安裝英文語音（Mac：系統設定 → 輔助使用 → 語音內容；Windows：設定 → 時間與語言 → 語音）。</p>}
       <p className="muted voice-note">聽起來不自然的話，換一個語音試試。Mac 推薦 Samantha，Windows 推薦 Microsoft Aria／Jenny。</p>

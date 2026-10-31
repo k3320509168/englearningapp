@@ -12,6 +12,7 @@ export interface Celebration {
   sub?: string;
   img?: string;   // 角色圖（data URL）
   color?: string; // 光芒顏色
+  blocking?: boolean; // 戰鬥中的規則說明（祝福、首領登場）：作答中也立刻顯示，計時暫停，要玩家點一下才繼續
 }
 
 interface UiState {

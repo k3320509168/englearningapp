@@ -76,7 +76,7 @@
       "type": "spell",
       "skill": "writing",
       "difficulty": 2,
-      "desc": "請拼出：月",
+      "desc": "請拼出：月份",
       "ans": "MONTH",
       "speak": "month"
     },
@@ -84,7 +84,7 @@
       "type": "fill",
       "skill": "writing",
       "difficulty": 2,
-      "desc": "填空題：M _ N T _ (月)",
+      "desc": "填空題：M _ N T _ (月份)",
       "ans": "OH",
       "speak": "month"
     },
@@ -558,7 +558,10 @@
       "difficulty": 1,
       "desc": "請拼出：船",
       "ans": "BOAT",
-      "speak": "boat"
+      "speak": "boat",
+      "spellAccept": [
+        "SHIP"
+      ]
     },
     {
       "type": "fill",
@@ -742,7 +745,10 @@
       "difficulty": 1,
       "desc": "請拼出：考試；測驗",
       "ans": "TEST",
-      "speak": "test"
+      "speak": "test",
+      "spellAccept": [
+        "EXAM"
+      ]
     },
     {
       "type": "fill",
@@ -1094,7 +1100,10 @@
       "difficulty": 2,
       "desc": "請拼出：聲音",
       "ans": "SOUND",
-      "speak": "sound"
+      "speak": "sound",
+      "spellAccept": [
+        "VOICE"
+      ]
     },
     {
       "type": "fill",
@@ -1366,7 +1375,10 @@
       "difficulty": 2,
       "desc": "請拼出：人",
       "ans": "PERSON",
-      "speak": "person"
+      "speak": "person",
+      "spellAccept": [
+        "PEOPLE"
+      ]
     },
     {
       "type": "fill",
@@ -1558,7 +1570,10 @@
       "difficulty": 2,
       "desc": "請拼出：聲音；嗓音",
       "ans": "VOICE",
-      "speak": "voice"
+      "speak": "voice",
+      "spellAccept": [
+        "SOUND"
+      ]
     },
     {
       "type": "fill",
@@ -2030,11 +2045,11 @@
       "options": [
         "A. I like coffee.",
         "B. She is in Taipei.",
-        "C. Yes, nobody is here.",
+        "C. Yes, nobody is sitting here.",
         "D. It is five o'clock."
       ],
       "ans": "C",
-      "explain": "詢問座位是否有人「Is this seat free? (這個座位有人坐嗎？／是空的嗎？)」，回答「Yes, nobody is here. (可以坐，這裡沒人)」最正確。"
+      "explain": "詢問座位有沒有人坐「Is this seat free?（這個位子有人坐嗎？）」，回答「Yes, nobody is sitting here.（可以坐，這裡沒人坐）」最合適。"
     },
     {
       "type": "choice",
@@ -3723,13 +3738,13 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Just a minute",
       "options": [
-        "A. 只要一分鐘／稍等一下",
+        "A. 稍等一下",
         "B. 一個小時",
         "C. 還有時間",
         "D. 時間到了"
       ],
       "ans": "A",
-      "explain": "英文原句為「Just a minute」，意思是「只要一分鐘」或「稍等一下」。"
+      "explain": "「Just a minute」是請對方等一下的常用說法，意思是「稍等一下」。"
     },
     {
       "type": "choice",
@@ -4056,7 +4071,7 @@
         "A. 早安",
         "B. 午安",
         "C. 晚安",
-        "D. 晚安（道別）"
+        "D. 再見"
       ],
       "ans": "B",
       "explain": "原句：Good afternoon. 意思是午安。"
@@ -4918,13 +4933,13 @@
       "difficulty": 2,
       "desc": "【日常對話】A: Excuse me, ___ can I get to the nearest convenience store? B: Just walk straight for two minutes. It is next to the bank.",
       "options": [
-        "A. Who",
-        "B. How",
-        "C. Why",
-        "D. What"
+        "A. who",
+        "B. how",
+        "C. why",
+        "D. what"
       ],
       "ans": "B",
-      "explain": "詢問前往某處的方法或路線，使用疑問詞 How。(A) Who 問人；(C) Why 問原因；(D) What 問事物。"
+      "explain": "詢問前往某處的方法或路線，使用疑問詞 how。(A) who 問人；(C) why 問原因；(D) what 問事物。"
     },
     {
       "type": "choice",
@@ -5070,7 +5085,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 3,
-      "desc": "【短文理解】[Store Announcement] Fresh Bakery is open from 8 a.m. to 8 p.m. everyday except Sunday. We have fresh bread every morning and delicious cakes in the afternoon.\nQ: On which day is Fresh Bakery closed?",
+      "desc": "【短文理解】[Store Announcement] Fresh Bakery is open from 8 a.m. to 8 p.m. every day except Sunday. We have fresh bread every morning and delicious cakes in the afternoon.\nQ: On which day is Fresh Bakery closed?",
       "options": [
         "A. Monday.",
         "B. Friday.",
@@ -5100,10 +5115,10 @@
       "difficulty": 3,
       "desc": "【短文理解】[Text Message] Hi Amy, I cannot go to the gym with you tonight. I have a bad headache, so I want to go to bed early. Let's exercise together next week.\nQ: Why does the writer cancel the gym plan?",
       "options": [
-        "A. She is sick.",
-        "B. She is working late.",
-        "C. She lost her gym card.",
-        "D. She is traveling."
+        "A. The writer is sick.",
+        "B. The writer is working late.",
+        "C. The writer lost a gym card.",
+        "D. The writer is traveling."
       ],
       "ans": "A",
       "explain": "作者提到「I have a bad headache」（頭很痛），說明生病不舒服是取消運動的原因。(B) 加班；(C) 遺失會員卡；(D) 正在旅行，皆與內文不符。"
@@ -5350,7 +5365,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 3,
-      "desc": "【短文理解】[Postcard from Kyoto] Dear Helen, Greeting from Japan! The weather here is cool and sunny. We visited two old temples yesterday and took hundreds of photos. Tomorrow we are taking a bullet train to Osaka. Best, Mark.\nQ: Where will Mark go tomorrow?",
+      "desc": "【短文理解】[Postcard from Kyoto] Dear Helen, Greetings from Japan! The weather here is cool and sunny. We visited two old temples yesterday and took hundreds of photos. Tomorrow we are taking a bullet train to Osaka. Best, Mark.\nQ: Where will Mark go tomorrow?",
       "options": [
         "A. To Osaka.",
         "B. To Taipei.",
@@ -5908,7 +5923,10 @@
       "difficulty": 1,
       "desc": "請唸出單字：禮物",
       "ans": "PRESENT",
-      "speak": "present"
+      "speak": "present",
+      "accept": [
+        "GIFT"
+      ]
     },
     {
       "type": "voice",
@@ -5986,7 +6004,7 @@
       "type": "voice",
       "skill": "speaking",
       "difficulty": 2,
-      "desc": "請唸吃：退房手續",
+      "desc": "請唸出：退房手續",
       "ans": "CHECK OUT",
       "speak": "check out"
     },
@@ -6578,7 +6596,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【天氣字彙】It is very ___ today, so you need to take an umbrella with you.",
+      "desc": "【天氣字彙】It is very ___ today, and the streets are wet. Take an umbrella with you.",
       "options": [
         "A. sunny",
         "B. hot",
@@ -6586,7 +6604,7 @@
         "D. quiet"
       ],
       "ans": "C",
-      "explain": "後文提醒需要帶傘（take an umbrella），可知天氣是下雨的 rainy。(A) sunny 晴朗的；(B) hot 炎熱的；(D) quiet 安靜的。"
+      "explain": "街道是濕的（the streets are wet），又要帶傘，可知天氣是下雨的 rainy。(A) sunny 晴朗的；(B) hot 炎熱的；(D) quiet 安靜的。"
     },
     {
       "type": "choice",
@@ -6804,10 +6822,10 @@
       "difficulty": 3,
       "desc": "【短文理解】[Text Message] Hi Mom, the company meeting will finish late tonight. I cannot join the family dinner at 6:30. Please don't wait for me and eat first.\nQ: Why will the sender miss the family dinner?",
       "options": [
-        "A. He is buying groceries.",
-        "B. He missed the bus.",
-        "C. His meeting finishes late.",
-        "D. He wants to watch a movie."
+        "A. The sender is buying groceries.",
+        "B. The sender missed the bus.",
+        "C. The company meeting finishes late.",
+        "D. The sender wants to watch a movie."
       ],
       "ans": "C",
       "explain": "簡訊開頭解釋「the company meeting will finish late tonight」（公司會議今晚會很晚結束），故選 C。(A)、(B)、(D) 皆非簡訊所述原因。"
@@ -6986,7 +7004,7 @@
       "type": "voice",
       "skill": "speaking",
       "difficulty": 1,
-      "desc": "請唸出單字：攜帶；拿著",
+      "desc": "請唸出單字：帶來；拿來",
       "ans": "BRING",
       "speak": "bring"
     },
@@ -7156,7 +7174,10 @@
       "difficulty": 2,
       "desc": "請唸出：星期一見",
       "ans": "SEE YOU MONDAY",
-      "speak": "see you monday"
+      "speak": "see you monday",
+      "accept": [
+        "SEE YOU ON MONDAY"
+      ]
     },
     {
       "type": "voice",
@@ -7242,9 +7263,9 @@
       "type": "voice",
       "skill": "speaking",
       "difficulty": 3,
-      "desc": "請唸出短句：這道菜不辣嗎？",
-      "ans": "IS THIS DISH NOT SPICY",
-      "speak": "is this dish not spicy"
+      "desc": "請唸出短句：這道菜會辣嗎？",
+      "ans": "IS THIS DISH SPICY",
+      "speak": "is this dish spicy"
     },
     {
       "type": "voice",
@@ -7298,7 +7319,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活文法】含有名詞單複數的英文句子",
+      "desc": "【生活文法】The ___ is on the desk.",
       "options": [
         "A. pen",
         "B. pens",
@@ -7312,7 +7333,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場文法】含有現在簡單式的英文句子",
+      "desc": "【職場文法】She ___ an email to her boss every day.",
       "options": [
         "A. write",
         "B. writes",
@@ -7326,7 +7347,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【旅遊介系詞】含有地點介系詞的英文句子",
+      "desc": "【旅遊介系詞】The taxi is waiting ___ the bank.",
       "options": [
         "A. of",
         "B. with",
@@ -7334,27 +7355,27 @@
         "D. to"
       ],
       "ans": "C",
-      "explain": "表達「在某個特定地點（銀行）」使用介系詞 at。The taxi is at the bank. 表示計程車在銀行那裡。"
+      "explain": "表達「在某個特定地點（銀行）」使用介系詞 at。(A) of 表示「…的」；(B) with 表示「和…一起」；(D) to 表示方向，不能和 is waiting 表示所在位置。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活文法】含有 there is/are 的英文句子",
+      "desc": "【生活文法】___ are two birds in the park.",
       "options": [
         "A. They",
         "B. Their",
         "C. There",
         "D. These"
       ],
-      "ans": "D",
-      "explain": "這裡的空格在 ___ are two cats on the sofa. 中，其實應該填 There，但選項 D 設為 There 才對，等一下，題目是 ___ are two cats. 這裡我們設計 D 是 There？不對，重新調整。題目：___ are two birds in the park. 選項 D 是 There。答案 D。解說：There are 表示「有」，後面接複數名詞 two birds。"
+      "ans": "C",
+      "explain": "There are 表示「有」，後面接複數名詞 two birds，所以選 There。(A) They 是「他們」；(B) Their 是所有格「他們的」；(D) These 是「這些」，後面要接名詞。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場字彙】含有辦公室用品的英文句子",
+      "desc": "【職場字彙】My computer is on the ___ in the office.",
       "options": [
         "A. desk",
         "B. park",
@@ -7368,7 +7389,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活文法】含有助動詞 can 的英文句子",
+      "desc": "【生活文法】He can ___ very well.",
       "options": [
         "A. to sing",
         "B. sing",
@@ -7382,7 +7403,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【旅遊文法】含有所有格的英文句子",
+      "desc": "【旅遊文法】___ flight is late, so we wait at the airport.",
       "options": [
         "A. We",
         "B. Us",
@@ -7396,7 +7417,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場介系詞】含有時間介系詞的英文句子",
+      "desc": "【職場介系詞】The meeting is ___ Monday.",
       "options": [
         "A. on",
         "B. in",
@@ -7410,7 +7431,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活字彙】含有動物的英文句子",
+      "desc": "【生活字彙】The ___ is flying in the sky.",
       "options": [
         "A. sofa",
         "B. bird",
@@ -7424,7 +7445,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【旅遊文法】含有疑問詞的英文句子",
+      "desc": "【旅遊文法】A: ___ is the bank? B: It is next to the park.",
       "options": [
         "A. Who",
         "B. When",
@@ -7438,7 +7459,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活介系詞】含有地點介系詞的英文句子",
+      "desc": "【生活介系詞】He lives ___ Taipei.",
       "options": [
         "A. in",
         "B. on",
@@ -7452,7 +7473,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場文法】含有否定句的英文句子",
+      "desc": "【職場文法】Mr. Lin ___ work here.",
       "options": [
         "A. don't",
         "B. doesn't",
@@ -7466,7 +7487,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活字彙】含有交通工具的英文句子",
+      "desc": "【生活字彙】I take a ___ to the bank.",
       "options": [
         "A. milk",
         "B. desk",
@@ -7480,21 +7501,21 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【旅遊對話】含有 be 動詞的英文對話",
+      "desc": "【旅遊對話】A: Where ___ the bus? B: It is here.",
       "options": [
         "A. am",
         "B. are",
         "C. is",
         "D. be"
       ],
-      "ans": "D",
-      "explain": "這題應該是 A: Where ___ the bus? B: It is here. 答案應該是 is。修改選項答案為 C。Where is the bus? 主詞 the bus 是單數，be 動詞用 is。"
+      "ans": "C",
+      "explain": "主詞 the bus 是單數，be 動詞用 is。(A) am 只用在 I；(B) are 用在複數或 you；(D) be 是原形，不能直接當主要動詞。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場對話】含有所有格代名詞的英文對話",
+      "desc": "【職場對話】A: Is this pen mine? B: Yes, it is ___.",
       "options": [
         "A. yours",
         "B. your",
@@ -7502,13 +7523,13 @@
         "D. yourself"
       ],
       "ans": "A",
-      "explain": "A: Is this my pen? B: No, it is ___. 空格處需要名詞性，表示「你的（筆）」，故選 yours。"
+      "explain": "空格要表示「你的（筆）」，後面沒有名詞，要用所有格代名詞 yours。(B) your 後面一定要接名詞；(C) you 是主格／受格；(D) yourself 是反身代名詞。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活對話】含有現在簡單式的英文對話",
+      "desc": "【生活對話】A: What does your friend do at night? B: He usually ___ a movie.",
       "options": [
         "A. watch",
         "B. watches",
@@ -7522,7 +7543,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【旅遊文法】含有情態助動詞的長句",
+      "desc": "【旅遊文法】We can ___ a car to the park on Sunday.",
       "options": [
         "A. drive",
         "B. drives",
@@ -7536,7 +7557,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【職場文法】含有連詞的長句",
+      "desc": "【職場文法】She has a pen, ___ she does not have any paper.",
       "options": [
         "A. so",
         "B. but",
@@ -7550,7 +7571,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活文法】含有不定冠詞的英文長句",
+      "desc": "【生活文法】There is ___ egg on the table.",
       "options": [
         "A. a",
         "B. an",
@@ -7558,13 +7579,13 @@
         "D. any"
       ],
       "ans": "B",
-      "explain": "I want to eat ___ apple. (注意：題目不可用 apple，改為 egg)。I eat ___ egg every morning. egg 的發音以母音開頭，需用 an。"
+      "explain": "egg 的發音以母音開頭，不定冠詞用 an。There is 用來介紹新出現的東西，不用 the；any 不和單數可數名詞連用。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【旅遊對話】含有 There is/are 的對話",
+      "desc": "【旅遊對話】A: ___ a bank near here? B: Yes, there is. It is on this street.",
       "options": [
         "A. Is there",
         "B. Are there",
@@ -7578,7 +7599,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【職場介系詞】含有時間表達的對話",
+      "desc": "【職場介系詞】A: When is the meeting? B: It is ___ 10:00.",
       "options": [
         "A. on",
         "B. in",
@@ -7592,7 +7613,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活對話】含有祈使句的對話",
+      "desc": "【生活對話】A: It is cold. B: Please ___ the door.",
       "options": [
         "A. closing",
         "B. closes",
@@ -7606,7 +7627,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【旅遊字彙】含有交通與行程的句子",
+      "desc": "【旅遊字彙】We ride a ___ in the park.",
       "options": [
         "A. bicycle",
         "B. desk",
@@ -7620,7 +7641,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【職場文法】含有頻率副詞的長句",
+      "desc": "【職場文法】The clerk ___ busy on Mondays.",
       "options": [
         "A. is always",
         "B. always is",
@@ -7634,7 +7655,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活文法】含有指示代名詞的長句",
+      "desc": "【生活文法】___ pens are red, and those pens are blue.",
       "options": [
         "A. This",
         "B. These",
@@ -7648,7 +7669,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【旅遊對話】含有疑問詞與交通的對話",
+      "desc": "【旅遊對話】A: ___ do you go to the bank? B: By taxi.",
       "options": [
         "A. What",
         "B. When",
@@ -7662,7 +7683,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【職場對話】含有第三人稱代名詞受格的對話",
+      "desc": "【職場對話】A: Where is Mr. Lin? B: I do not see ___.",
       "options": [
         "A. he",
         "B. his",
@@ -7676,7 +7697,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活介系詞】含有地點關係的長句",
+      "desc": "【生活介系詞】The cat is sleeping ___ the sofa.",
       "options": [
         "A. under",
         "B. to",
@@ -8160,7 +8181,7 @@
       "type": "spell",
       "skill": "writing",
       "difficulty": 3,
-      "desc": "請拼出：父母",
+      "desc": "請拼出：家長（父親或母親）",
       "ans": "PARENT",
       "speak": "parent"
     },
@@ -8168,7 +8189,7 @@
       "type": "fill",
       "skill": "writing",
       "difficulty": 3,
-      "desc": "填空題：P _ R _ N _ (父母)",
+      "desc": "填空題：P _ R _ N _ (家長)",
       "ans": "AET",
       "speak": "parent"
     },
@@ -9037,7 +9058,7 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Cold wind",
       "options": [
-        "A. 刺骨寒風",
+        "A. 冷風",
         "B. 溫暖微風",
         "C. 大雨",
         "D. 濃霧"
@@ -9773,7 +9794,7 @@
       "type": "voice",
       "skill": "speaking",
       "difficulty": 3,
-      "desc": "請唸出短句：你可以在黑板上拼出來嗎？",
+      "desc": "請唸出短句：可以請你拼出來嗎？",
       "ans": "CAN YOU SPELL THAT PLEASE",
       "speak": "can you spell that please"
     },
@@ -10197,7 +10218,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場文法】含有雙主詞的現在簡單式",
+      "desc": "【職場文法】My friend and I ___ in this bank.",
       "options": [
         "A. works",
         "B. work",
@@ -10211,7 +10232,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活文法】含有 There is/are 與不可數名詞",
+      "desc": "【生活文法】There ___ some milk on the table.",
       "options": [
         "A. is",
         "B. are",
@@ -10225,7 +10246,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【旅遊文法】含有助動詞的否定句",
+      "desc": "【旅遊文法】You ___ park your bicycle here.",
       "options": [
         "A. not can",
         "B. don't can",
@@ -10239,7 +10260,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【職場字彙】含有相似拼字的選項",
+      "desc": "【職場字彙】The clerk writes and sends many ___ to the boss every day.",
       "options": [
         "A. emails",
         "B. smiles",
@@ -10253,7 +10274,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【生活文法】含有疑問詞與頻率",
+      "desc": "【生活文法】___ birds are there in the park?",
       "options": [
         "A. How much",
         "B. How many",
@@ -10267,7 +10288,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【旅遊對話】含有介系詞與交通工具",
+      "desc": "【旅遊對話】A: How do you go to school? B: I go there ___ foot.",
       "options": [
         "A. by",
         "B. on",
@@ -10281,7 +10302,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【職場對話】含有代名詞與所有格的混淆",
+      "desc": "【職場對話】A: Is this desk yours? B: Yes, it is ___.",
       "options": [
         "A. me",
         "B. my",
@@ -10295,7 +10316,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【生活文法】含有附屬子句的時態",
+      "desc": "【生活文法】When the taxi ___, we can go to the movies.",
       "options": [
         "A. arrives",
         "B. arrive",

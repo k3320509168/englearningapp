@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useBattleStore } from '../store/battleStore';
-import { segmentRange, summarize } from '../game/lesson';
+import { summarize } from '../game/lesson';
 import { questionKey } from '../game/battle';
 import { answerLabel } from '../game/answerLabel';
 import { useSpeak } from './useSpeak';
-import { regionOf } from '../game/regions';
+import { MAP_SIZE, REGIONS, mapIndexOf, regionOf } from '../game/regions';
+import { needsSeal } from '../game/knowledge';
 import { starConditions } from '../game/stars';
 import { finishBattle } from '../game/startLevel';
 import { useSaveStore } from '../store/saveStore';
@@ -20,8 +21,8 @@ import { keepFocus } from './keepFocus';
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
 
 export default function SummaryPanel() {
-  const { phase, answers, stageIdx, stages, maxCombo, runGold, mapResult, levelKey, levelIdx, runXp, runDrops, mode } = useBattleStore(useShallow(s => ({
-    phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold,
+  const { phase, answers, stageIdx, stages, maxCombo, runGold, runRunes, mapResult, levelKey, levelIdx, runXp, runDrops, mode } = useBattleStore(useShallow(s => ({
+    phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold, runRunes: s.runRunes,
     mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
   })));
   const goldenBest = useSaveStore(s => s.goldenBest);
@@ -35,6 +36,7 @@ export default function SummaryPanel() {
   }));
   const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1) && tickets >= TEN_PULL;
   const golden = mode === 'golden';
+  const unlockedNext = useSaveStore(s => s.unlockedIndex > levelIdx) || !needsSeal(levelIdx);
   const { nextStage, exitToMap, retryLevel } = useBattleStore.getState();
   const say = useSpeak();
   const ref = useRef<HTMLDivElement>(null);
@@ -45,12 +47,12 @@ export default function SummaryPanel() {
     return () => window.clearTimeout(t);
   }, [phase]);
 
-  // 區段結算只看這 10 關；通關與失敗看整個區域
-  const [from] = phase === 'summary' ? segmentRange(stageIdx, stages.length) : [0];
+  // 首領結算看這張三星關卡（1-1 起）；通關與失敗看整個區域
+  const from = phase === 'summary' ? stageIdx - (stageIdx % MAP_SIZE) : 0;
   const summary = summarize(answers, from, stageIdx);
 
   const region = regionOf(levelKey);
-  const map = region.maps[Math.floor(stageIdx / 10)] ?? '';
+  const map = region.maps[mapIndexOf(stageIdx)] ?? '';
   const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
   const skillDef = mode === 'skill' ? skillBossDef(useBattleStore.getState().skillBoss ?? '') : undefined;
   const title = skillDef
@@ -58,13 +60,14 @@ export default function SummaryPanel() {
     : golden
     ? (phase === 'levelClear' ? `👑 黃金之路通關！你就是「${GOLDEN_TITLE}」` : `👑 黃金之路：在第 ${stageIdx + 1} / ${stages.length} 關止步`)
     : phase === 'summary' ? `${bossName}！「${map}」通關`
-    : phase === 'levelClear' ? '🎉 區域完全通關！' : '💀 體力耗盡';
+    : phase === 'levelClear' ? (unlockedNext ? '🎉 區域完全通關！' : '👑 擊敗區域魔王！') : '💀 體力耗盡';
 
   return (
     <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
       {skillDef && phase === 'levelClear' && <p>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</p>}
-      {phase === 'levelClear' && !golden && !skillDef && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : '下一個區域已解鎖'}</p>}
+      {phase === 'levelClear' && !golden && !skillDef && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}
+      {runRunes > 0 && !golden && <p className="rune-gain">🔮 跨日複習答對 {runRunes} 個知識點：封印能量 +{runRunes}</p>}
       {golden && phase === 'gameOver' && <p>一次失誤就結束——這就是黃金之路。最佳紀錄：通過 {goldenBest} / {stages.length} 關。看看是哪一題，再挑戰一次吧！</p>}
       {golden && phase === 'levelClear' && <p>沒有夥伴、沒有裝備，只憑英文能力擊敗了沉默魔王。獲得召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS}！</p>}
       {mapResult && phase !== 'gameOver' && (

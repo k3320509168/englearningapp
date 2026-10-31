@@ -15,7 +15,7 @@ describe('職業合作', () => {
     s = advanceChain(s.chain, 'knight', alive);
     s = advanceChain(s.chain, 'apple', alive);
     expect(s).toEqual({ chain: [], triggered: true });
-    // 同一位隊員連續出手（例如魔王題由隊長出手）就重新開始
+    // 同一位隊員連續出手（例如困難題由隊長出手）就重新開始
     expect(advanceChain(['player', 'knight'], 'player', alive)).toEqual({ chain: ['player'], triggered: false });
     // 只有一位隊員時不會觸發
     expect(advanceChain([], 'player', ['player']).triggered).toBe(false);

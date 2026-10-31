@@ -52,7 +52,7 @@ Mac 相容性：遊戲本身、測試、`chat-batch.ts`、`review-batch.ts` 都�
 npm install
 npm run dev                  # 本地預覽 http://localhost:5173/englearningapp/
 npx tsc -b                   # 型別檢查
-npx vitest run               # 測試（目前 211 個全過）
+npx vitest run               # 測試（目前 241 個全過）
 npx eslint src --quiet
 npm run validate:questions   # 題庫格式檢查
 ```
@@ -60,7 +60,7 @@ npm run validate:questions   # 題庫格式檢查
 ## 程式地圖
 | 位置 | 內容 |
 |---|---|
-| `src/store/saveStore.ts` | 存檔（Zustand persist，`SAVE_VERSION` 15）。新欄位要加進 `partialize`；`migrateSave` 用 `conform` 補預設值 |
+| `src/store/saveStore.ts` | 存檔（Zustand persist，`SAVE_VERSION` 17）。新欄位要加進 `partialize`；`migrateSave` 用 `conform` 補預設值 |
 | `src/store/battleStore.ts` | 戰鬥邏輯：答題、傷害、combo、首領破甲、魔王技能、天賦、連攜技、波次、**敵人行動條** |
 | `src/store/uiStore.ts` | 視窗（`ModalName`） |
 | `src/game/MainScene.ts`、`MapScene.ts` | Phaser 場景，訂閱 store 變化做動畫 |
@@ -96,6 +96,12 @@ npm run validate:questions   # 題庫格式檢查
 - A1：聽 245/300、說 202/200、讀 211/300、寫 266/200
 - A2：聽 199/300、寫 145/200、說 0、讀 0
 - A2+～C2：0。已審 160 題。
+
+**2026-10-31（Mac）**：困難題 Bonus、Combo 遞減曲線、怪物以英雄為基底、行動條分級、技能 CD／點角色施放、隊伍拖拉。細節見 `docs/ROUND4_DESIGN.md` 第 11 節。專案放在 exFAT 外接碟時 macOS 會產生 `._*` 檔，vitest／eslint 會讀到而報錯，先跑 `dot_clean -m .`。
+
+**2026-10-31 第二批（Mac）**：關卡改成每張 20 小關（1-15 小 BOSS、1-20 大 BOSS）＋獨立區域魔王、各區 5～9 張；最低答題數與終結連擊；取消連擊破甲與 combo 上限，streak 判三星／首領技能／金幣；新手第 1 張上手規格；大 BOSS 平衡、連敗援助、失敗診斷；發音卡死偵測與修正。規格與討論：`docs/STAGE_PLAN.md`（和 ChatGPT「ENG RPG遊戲」六輪討論）、`docs/GEMINI_DISCUSSION.md`。尚未做：知識點跨日排題、守門人封印與區域試煉、12 種 BOSS 機制模組。
+
+**2026-10-31 第三批（Mac）**：知識點追蹤與跨日排題（`src/game/knowledge.ts`，存檔 v17）、守門人封印＋區域試煉（打倒區域魔王後要通過試煉才開下一區，取代舊的「守門試煉 8/10」）、新手 1-4 技能／1-5 召喚引導、測驗的聽力題自動播放與口說題麥克風。修了一個舊 bug：新玩家沒有存檔時被當成舊玩家（`tutorialDone`、全部提示已看過），新手提示和第一次困難題 ×2 都不會出現。開發模式下 `window.__battle`／`__save`／`__ui` 可在主控台操作 store。eslint／vitest 已設定忽略 `._*`。細節見 `docs/STAGE_PLAN.md` 第 8 節。
 
 ## 下一步（照順序）
 1. commit 行動條系統（如果還沒）。

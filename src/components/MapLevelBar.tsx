@@ -8,6 +8,7 @@ import { dailyDef } from '../game/daily';
 import { MAP_SIZE, mapName, stageLabel } from '../game/regions';
 import { GOLDEN_STAGE_COUNT } from '../game/golden';
 import { keepFocus } from './keepFocus';
+import { SKIPPABLE_REGIONS } from '../game/placement';
 
 // 地圖下方的區域按鈕：比點畫布上的旗幟更明顯，手機上也好點。
 // 有進度的區域顯示「繼續 第 N 關」，另附一個從第 1 關重新開始的小按鈕。
@@ -20,6 +21,8 @@ export default function MapLevelBar() {
   const daily = useSaveStore(s => s.daily);
   const tasksDone = daily?.tasks.filter(t => t.claimed || t.progress >= (dailyDef(t.id)?.goal ?? Infinity)).length ?? 0;
   const target = continueTarget({ unlockedIndex, levelProgress: progress, storySeen });
+  // 最前線的魔王已經打倒、下一區還沒開：主按鈕帶玩家去找守門人（封印進度、區域試煉、回去複習）
+  const atGate = useSaveStore(s => s.bossDown.includes(unlockedIndex)) && unlockedIndex < SKIPPABLE_REGIONS;
   const step = nextStep(notices);
   const { openModal, openGrowth } = useUiStore.getState();
   // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
@@ -32,10 +35,17 @@ export default function MapLevelBar() {
   return (
     <section className="level-bar" aria-label="選擇區域開始冒險">
       <div className="journey">
-        <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney}>
-          <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
-          <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文' : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage)} 關`}</small>
-        </button>
+        {atGate ? (
+          <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openRegion(unlockedIndex)}>
+            <b>🗿 守門人的考驗</b>
+            <small>重建封印、挑戰區域試煉，前往「{REGIONS[unlockedIndex + 1]?.name}」</small>
+          </button>
+        ) : (
+          <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney}>
+            <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
+            <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文' : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage, target.regionIdx)} 關`}</small>
+          </button>
+        )}
         {step.action !== 'continue' ? (
           <button className="next-step" onMouseDown={keepFocus} onClick={doStep}>
             <span className="next-step-icon" aria-hidden>{step.icon}</span>

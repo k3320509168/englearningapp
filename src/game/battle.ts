@@ -15,7 +15,6 @@ export const SENTENCE_PASS_RATIO = 0.8;
 // 第 26 關之後超時就算答錯。
 export const QUESTION_LIMIT = 20_000;
 export const LENIENT_STAGE_COUNT = 25;
-export const CAST_CONFIRM_TIME = 5_000;
 export const FAST_TIME = 5_000;   // 5 秒內答對：傷害 ×1.5
 export const QUICK_TIME = 10_000; // 10 秒內答對：傷害 ×1.2
 
@@ -66,8 +65,18 @@ export function checkChoice(q: Question, letter: string): boolean {
   return letter.toUpperCase() === q.ans;
 }
 
+// 語音辨識常把 I am、do not 寫成縮寫（I'm、don't），題目答案多半是完整寫法：比對前兩邊都展開
+const CONTRACTIONS: Record<string, string> = {
+  "I'M": 'I AM', "YOU'RE": 'YOU ARE', "WE'RE": 'WE ARE', "THEY'RE": 'THEY ARE',
+  "IT'S": 'IT IS', "HE'S": 'HE IS', "SHE'S": 'SHE IS', "THAT'S": 'THAT IS', "WHAT'S": 'WHAT IS', "WHERE'S": 'WHERE IS', "THERE'S": 'THERE IS',
+  "LET'S": 'LET US', "DON'T": 'DO NOT', "DOESN'T": 'DOES NOT', "DIDN'T": 'DID NOT', "ISN'T": 'IS NOT', "AREN'T": 'ARE NOT',
+  "CAN'T": 'CANNOT', "WON'T": 'WILL NOT', "I'LL": 'I WILL', "YOU'LL": 'YOU WILL', "WE'LL": 'WE WILL',
+  "I'D": 'I WOULD', "I'VE": 'I HAVE', "WE'VE": 'WE HAVE', "COULDN'T": 'COULD NOT', "SHOULDN'T": 'SHOULD NOT',
+};
+
 function normalizeWords(text: string): string[] {
-  return text.toUpperCase().replace(/[^A-Z' ]/g, ' ').split(/\s+/).filter(Boolean);
+  return text.toUpperCase().replace(/[’]/g, "'").replace(/[^A-Z' ]/g, ' ').split(/\s+/).filter(Boolean)
+    .flatMap(w => (CONTRACTIONS[w] ?? w).split(' '));
 }
 
 // 依序比對（最長共同子序列），計算玩家唸對的單字比例

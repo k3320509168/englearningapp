@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
-import { useBattleStore } from '../store/battleStore';
+import { ONBOARD_SUMMON_STAGE, useBattleStore } from '../store/battleStore';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
@@ -13,13 +13,16 @@ import { skillReady } from '../game/party';
 import type { Recognizer } from '../game/speech';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
+import { useSpeechJam } from './useSpeechJam';
 import LessonPanel from './LessonPanel';
 import SummaryPanel from './SummaryPanel';
-import { BattleStatusBar, ItemMenu } from './BattleExtras';
+import { ItemMenu } from './BattleExtras';
+import DefeatModal from './DefeatModal';
 import { mapName, stageLabel } from '../game/regions';
-import { BossQuestionTag, CastConfirm, PartyBar, SkillButtons, TimerBars } from './BattleParty';
+import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty';
 import { useBattleClock } from './useBattleClock';
 import { finishBattle } from '../game/startLevel';
+import { TEN_PULL } from '../game/heroes';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -37,7 +40,7 @@ export default function BattleHUD() {
     stageName: s.mode === 'skill' ? `⚔️ 魔王挑戰：${s.stages[0]?.name ?? ''}`
       : s.mode === 'golden'
       ? `👑 黃金之路・${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`
-      : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
+      : `${mapName(s.levelKey, s.stageIdx)} ${stageLabel(s.stageIdx, s.levelIdx)}：${(s.stages[s.stageIdx]?.name ?? '').replace(/^第 \d+ 關：/, '')}`,
     stageNo: s.stageIdx + 1,
     stageCount: s.stages.length,
     shield: s.shield,
@@ -53,17 +56,29 @@ export default function BattleHUD() {
   // 新題目出現時自動播放發音（可在設定關閉）
   useEffect(() => {
     const { question: q, phase: p } = useBattleStore.getState();
-    // 聽力題（題目只有聲音）不管設定都要播放
-    // 魔王的「視覺剝奪」看不到題目時也一定要播放
-    if (q?.speak && p === 'answering' && (useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧') || useBattleStore.getState().blind)) say(q.speak);
     // 第一次遇到口說題才詢問麥克風（視窗打開時戰鬥計時會暫停）
     if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported()) openModal('mic');
+    // 聽力題（題目只有聲音）不管設定都要播放
+    // 魔王的「視覺剝奪」看不到題目時也一定要播放
+    if (!q?.speak || p !== 'answering' || !(useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧') || useBattleStore.getState().blind)) return;
+    // 女神的祝福、情境提示等暫停用的視窗開著時先不唸（不然玩家還在看說明就唸完了），關掉後才唸
+    const paused = (ui: ReturnType<typeof useUiStore.getState>) => !!(ui.modal || ui.hintOpen || ui.studyWord || ui.celebrations[0]?.blocking);
+    if (!paused(useUiStore.getState())) { say(q.speak); return; }
+    const seq = questionSeq;
+    const unsubscribe = useUiStore.subscribe(ui => {
+      if (paused(ui)) return;
+      unsubscribe();
+      const b = useBattleStore.getState();
+      if (b.questionSeq === seq && b.phase === 'answering') say(q.speak);
+    });
+    return unsubscribe;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionSeq]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey || useUiStore.getState().modal) return;
+      // 視窗開著，或女神的祝福等說明還沒點掉（計時暫停中）時，鍵盤不作答
+      if (e.ctrlKey || e.metaKey || e.altKey || useUiStore.getState().modal || useUiStore.getState().celebrations[0]?.blocking) return;
       // 注音等中文輸入法開著時，瀏覽器給的是 Process 而不是字母：提示玩家切換成英文
       if (e.key === 'Process' || e.isComposing) { useUiStore.getState().setImeWarning(true); return; }
       const s = useBattleStore.getState();
@@ -137,7 +152,6 @@ export default function BattleHUD() {
           <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { setRetreatAsk(false); useBattleStore.getState().exitToMap(); }}>撤退 ⏎</button>
         </div>
       )}
-      <BattleStatusBar />
       <PartyBar />
       <TimerBars />
       {phase === 'lesson' && <LessonPanel />}
@@ -146,6 +160,7 @@ export default function BattleHUD() {
       {phase === 'feedback' && <FeedbackPanel />}
       {phase === 'monsterDown' && <StageClearPanel />}
       {(phase === 'summary' || phase === 'levelClear' || phase === 'gameOver') && <SummaryPanel />}
+      <DefeatModal />
     </section>
   );
 }
@@ -166,16 +181,35 @@ function QuestionCard({ question }: { question: Question }) {
   const extra = spellingExtra(question);
   // 聽力題（題目只有聲音）：這台裝置沒有英文語音時改成顯示單字，不然完全無法作答
   const englishVoice = useEnglishVoice();
-  const silent = question.desc.startsWith('🎧') && !englishVoice;
+  // 瀏覽器發音卡死時也一樣：直接顯示要聽的英文，玩家還能繼續作答
+  const jammed = useSpeechJam();
+  const silent = question.desc.startsWith('🎧') && (!englishVoice || jammed);
   // 魔王「視覺剝奪」：有發音的題目把題目文字藏起來，只能用聽的（沒有英文語音的裝置照常顯示）
   const blind = useBattleStore(s => s.blind) && !!question.speak && englishVoice;
+  // 聽力題：標籤寫「聽力」（不是一般的選擇題），旁邊放大的重播按鈕——瀏覽器的語音偶爾會沒播出來
+  const listening = question.desc.startsWith('🎧') && !!question.speak && englishVoice;
+  const say = useSpeak();
   return (
     <div className="question-card">
-      <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>
+      {listening
+        ? <span className="q-tag q-listen">🎧 聽力</span>
+        : <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>}
       {blind
         ? <p className="q-desc">🌫️ 迷霧遮住了題目，仔細聽發音！</p>
         : <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>}
-      {silent && question.speak && <p className="q-silent">這台裝置沒有英文語音，改成顯示單字：<b>{question.speak}</b></p>}
+      {(listening || blind) && (
+        <span className="q-replay">
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(question.speak)}>🔊 再聽一次</button>
+          <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => say(question.speak, true)}>🐢 慢速</button>
+          <small className="muted only-desktop">（空白鍵也可以重播）</small>
+        </span>
+      )}
+      {silent && question.speak && (
+        <p className="q-silent">
+          {jammed ? '瀏覽器的發音卡住了（請重新整理頁面，還不行就完全關閉瀏覽器再開），先改成顯示英文：' : '這台裝置沒有英文語音，改成顯示單字：'}
+          <b>{question.speak}</b>
+        </p>
+      )}
     </div>
   );
 }
@@ -239,7 +273,6 @@ function AnswerPanel({ question }: { question: Question }) {
     <>
       <ImeWarning />
       <BattleHint question={question} />
-      <SkillButtons />
       <AssistBanner question={question} />
       <BossQuestionTag />
       <QuestionCard question={question} />
@@ -414,11 +447,25 @@ function FeedbackPanel() {
 }
 
 function StageClearPanel() {
-  const nextStage = useBattleStore(s => s.nextStage);
+  const { nextStage, stageIdx, levelIdx, levelKey, mode } = useBattleStore(useShallow(s => ({ nextStage: s.nextStage, stageIdx: s.stageIdx, levelIdx: s.levelIdx, levelKey: s.levelKey, mode: s.mode })));
+  // 新手 1-5：打倒第一隻菁英、還沒召喚過 → 用開局的召喚券找第一批夥伴（回來從 1-6 繼續）
+  const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1 && s.tickets >= TEN_PULL)
+    && mode === 'normal' && levelIdx === 0 && stageIdx === ONBOARD_SUMMON_STAGE;
   return (
     <div className="result">
       <p className="result-title">💥 擊敗怪獸！</p>
-      <button className="btn btn-primary" onMouseDown={keepFocus} onClick={nextStage}>前往下一關 ⏎</button>
+      {firstSummon && (
+        <div className="first-summon">
+          <span aria-hidden>🔮</span>
+          <p>打倒菁英了！你有開局送的召喚券，現在就召喚第一批夥伴，一起戰鬥更輕鬆。回來會從下一關繼續。</p>
+          <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => {
+            useSaveStore.getState().setLevelProgress(levelKey, stageIdx + 1);
+            useBattleStore.getState().exitToMap();
+            useUiStore.getState().openModal('summon');
+          }}>去召喚</button>
+        </div>
+      )}
+      <button className={`btn ${firstSummon ? '' : 'btn-primary'}`} onMouseDown={keepFocus} onClick={nextStage}>前往下一關 ⏎</button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { GATE_LEVEL, GATE_QUESTIONS, PLACEMENT_PER_LEVEL, SKIPPABLE_REGIONS, canChallengeGate, checkQuizAnswer, gateQuestions, placementQuestions } from './placement';
-import { REGIONS } from './regions';
+import { REGIONS, regionStageCount } from './regions';
 import { initialSave, useSaveStore } from '../store/saveStore';
 
 describe('跳級：守門試煉與程度測驗', () => {
@@ -33,7 +33,7 @@ describe('跳級：守門試煉與程度測驗', () => {
     const s = useSaveStore.getState();
     expect(s.unlockedIndex).toBe(2);
     expect(s.player.level).toBe(1);
-    expect(s.bestStage[REGIONS[1].id]).toBe(REGIONS[1].maps.length * 10 - 1);
+    expect(s.bestStage[REGIONS[1].id]).toBe(regionStageCount(1) - 1);
     expect(s.storySeen).toEqual(expect.arrayContaining(['region-0', 'clear-0', 'region-1', 'clear-1']));
     expect(s.storySeen).not.toContain('region-2');
     useSaveStore.getState().skipRegions(1); // 不會倒退

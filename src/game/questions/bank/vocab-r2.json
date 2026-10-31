@@ -758,5 +758,989 @@
         ]
       }
     ]
+  },
+  "HOBBY": {
+    "pos": "n.",
+    "meaning": "嗜好",
+    "example": "My favorite hobby is reading.",
+    "exampleZh": "我最喜歡的嗜好是閱讀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "嗜好",
+        "examples": [
+          {
+            "en": "My favorite hobby is reading.",
+            "zh": "我最喜歡的嗜好是閱讀。"
+          },
+          {
+            "en": "He has a new hobby now.",
+            "zh": "他現在有一個新嗜好。"
+          }
+        ]
+      }
+    ]
+  },
+  "NOVEL": {
+    "pos": "n.",
+    "meaning": "小說",
+    "example": "This novel is very interesting.",
+    "exampleZh": "這本小說很有趣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "小說",
+        "examples": [
+          {
+            "en": "This novel is very interesting.",
+            "zh": "這本小說很有趣。"
+          },
+          {
+            "en": "She will read a novel tonight.",
+            "zh": "她今晚將會看小說。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNCLE": {
+    "pos": "n.",
+    "meaning": "叔叔",
+    "example": "My uncle lives in Taipei.",
+    "exampleZh": "我叔叔住在台北。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "叔叔",
+        "examples": [
+          {
+            "en": "My uncle lives in Taipei.",
+            "zh": "我叔叔住在台北。"
+          },
+          {
+            "en": "We are going to visit my uncle.",
+            "zh": "我們將去拜訪我叔叔。"
+          }
+        ]
+      }
+    ]
+  },
+  "WINDY": {
+    "pos": "adj.",
+    "meaning": "多風的",
+    "example": "It is very windy outside.",
+    "exampleZh": "外面風很大。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "多風的",
+        "examples": [
+          {
+            "en": "It is very windy outside.",
+            "zh": "外面風很大。"
+          },
+          {
+            "en": "We cannot go out on a windy day.",
+            "zh": "在多風的日子我們不能出去。"
+          }
+        ]
+      }
+    ]
+  },
+  "WINTER": {
+    "pos": "n.",
+    "meaning": "冬天",
+    "example": "It is cold in winter.",
+    "exampleZh": "冬天很冷。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "冬天",
+        "examples": [
+          {
+            "en": "It is cold in winter.",
+            "zh": "冬天很冷。"
+          },
+          {
+            "en": "We are going to ski this winter.",
+            "zh": "我們今年冬天將去滑雪。"
+          }
+        ]
+      }
+    ]
+  },
+  "AGREE": {
+    "pos": "v.",
+    "meaning": "同意",
+    "example": "I agree with you.",
+    "exampleZh": "我同意你的看法。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "同意",
+        "examples": [
+          {
+            "en": "I agree with you.",
+            "zh": "我同意你的看法。"
+          },
+          {
+            "en": "He will agree to the plan.",
+            "zh": "他將會同意這個計畫。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORGIVE": {
+    "pos": "v.",
+    "meaning": "原諒",
+    "example": "Please forgive me.",
+    "exampleZh": "請原諒我。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "原諒",
+        "examples": [
+          {
+            "en": "Please forgive me.",
+            "zh": "請原諒我。"
+          },
+          {
+            "en": "I hope you can forgive him.",
+            "zh": "我希望你能原諒他。"
+          }
+        ]
+      }
+    ]
+  },
+  "GRATEFUL": {
+    "pos": "adj.",
+    "meaning": "感激的",
+    "example": "I am grateful for your help.",
+    "exampleZh": "我很感激你的幫忙。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "感激的",
+        "examples": [
+          {
+            "en": "I am grateful for your help.",
+            "zh": "我很感激你的幫忙。"
+          },
+          {
+            "en": "We are very grateful.",
+            "zh": "我們非常感激。"
+          }
+        ]
+      }
+    ]
+  },
+  "TERRIBLE": {
+    "pos": "adj.",
+    "meaning": "糟糕的",
+    "example": "The weather is terrible today.",
+    "exampleZh": "今天的天氣很糟糕。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "糟糕的",
+        "examples": [
+          {
+            "en": "The weather is terrible today.",
+            "zh": "今天的天氣很糟糕。"
+          },
+          {
+            "en": "I feel terrible about the mistake.",
+            "zh": "我對這個錯誤感到很糟糕。"
+          }
+        ]
+      }
+    ]
+  },
+  "HELPFUL": {
+    "pos": "adj.",
+    "meaning": "有幫助的",
+    "example": "Your advice is very helpful.",
+    "exampleZh": "你的建議非常有幫助。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "有幫助的",
+        "examples": [
+          {
+            "en": "Your advice is very helpful.",
+            "zh": "你的建議非常有幫助。"
+          },
+          {
+            "en": "He is always helpful to others.",
+            "zh": "他總是樂於助人。"
+          }
+        ]
+      }
+    ]
+  },
+  "APOLOGIZE": {
+    "pos": "v.",
+    "meaning": "道歉",
+    "example": "I must apologize to him.",
+    "exampleZh": "我必須向他道歉。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "道歉",
+        "examples": [
+          {
+            "en": "I must apologize to him.",
+            "zh": "我必須向他道歉。"
+          },
+          {
+            "en": "She should apologize for being late.",
+            "zh": "她應該為遲到而道歉。"
+          }
+        ]
+      }
+    ]
+  },
+  "MICROPHONE": {
+    "pos": "n.",
+    "meaning": "麥克風",
+    "example": "Please turn on your microphone.",
+    "exampleZh": "請打開你的麥克風。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "麥克風",
+        "examples": [
+          {
+            "en": "Can you speak into the microphone?",
+            "zh": "你可以對著麥克風說話嗎？"
+          },
+          {
+            "en": "His microphone is not working.",
+            "zh": "他的麥克風沒有作用。"
+          }
+        ]
+      }
+    ]
+  },
+  "VOLUME": {
+    "pos": "n.",
+    "meaning": "音量",
+    "example": "Can you turn down the volume?",
+    "exampleZh": "你可以把音量調低嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "音量",
+        "examples": [
+          {
+            "en": "The volume is too loud.",
+            "zh": "音量太大了。"
+          },
+          {
+            "en": "She raised the volume on her computer.",
+            "zh": "她調高了電腦的音量。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOARDING": {
+    "pos": "n.",
+    "meaning": "登機",
+    "example": "Boarding will start in ten minutes.",
+    "exampleZh": "十分鐘後即將開始登機。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "登機",
+        "examples": [
+          {
+            "en": "What time is boarding?",
+            "zh": "幾點登機？"
+          },
+          {
+            "en": "Please show your boarding pass.",
+            "zh": "請出示你的登機證。"
+          }
+        ]
+      }
+    ]
+  },
+  "BAGGAGE": {
+    "pos": "n.",
+    "meaning": "行李",
+    "example": "Where can I find my baggage?",
+    "exampleZh": "我可以在哪裡找到我的行李？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "行李",
+        "examples": [
+          {
+            "en": "He carries a lot of baggage.",
+            "zh": "他帶了很多行李。"
+          },
+          {
+            "en": "You have to check your baggage here.",
+            "zh": "你必須在這裡托運行李。"
+          }
+        ]
+      }
+    ]
+  },
+  "SECURITY": {
+    "pos": "n.",
+    "meaning": "安檢",
+    "example": "We must go through security.",
+    "exampleZh": "我們必須通過安檢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "安全、安檢",
+        "examples": [
+          {
+            "en": "Security is very strict here.",
+            "zh": "這裡的安檢非常嚴格。"
+          },
+          {
+            "en": "He works as a security guard.",
+            "zh": "他是當一名保全。"
+          }
+        ]
+      }
+    ]
+  },
+  "PURPOSE": {
+    "pos": "n.",
+    "meaning": "目的",
+    "example": "What is the purpose of your trip?",
+    "exampleZh": "你的旅行目的是什麼？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "目的",
+        "examples": [
+          {
+            "en": "The purpose of the meeting is to share ideas.",
+            "zh": "會議的目的是分享想法。"
+          },
+          {
+            "en": "He did it on purpose.",
+            "zh": "他是故意的。"
+          }
+        ]
+      }
+    ]
+  },
+  "YOGA": {
+    "pos": "n.",
+    "meaning": "瑜珈",
+    "example": "She does yoga every morning.",
+    "exampleZh": "她每天早上做瑜珈。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "瑜珈",
+        "examples": [
+          {
+            "en": "Yoga helps me relax.",
+            "zh": "瑜珈幫助我放鬆。"
+          },
+          {
+            "en": "We will join a yoga class.",
+            "zh": "我們將會參加瑜珈課。"
+          }
+        ]
+      }
+    ]
+  },
+  "JOGGING": {
+    "pos": "n.",
+    "meaning": "慢跑",
+    "example": "I will go jogging later.",
+    "exampleZh": "我等一下將會去慢跑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "慢跑",
+        "examples": [
+          {
+            "en": "Jogging is good for your health.",
+            "zh": "慢跑對你的健康有益。"
+          },
+          {
+            "en": "He loves going jogging in the park.",
+            "zh": "他喜歡在公園慢跑。"
+          }
+        ]
+      }
+    ]
+  },
+  "GYM": {
+    "pos": "n.",
+    "meaning": "健身房",
+    "example": "He works out at the gym.",
+    "exampleZh": "他在健身房運動。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "健身房",
+        "examples": [
+          {
+            "en": "I go to the gym on weekends.",
+            "zh": "我週末會去健身房。"
+          },
+          {
+            "en": "The gym is open today.",
+            "zh": "健身房今天有開。"
+          }
+        ]
+      }
+    ]
+  },
+  "RENT": {
+    "pos": "v.",
+    "meaning": "租借",
+    "example": "We are going to rent a car.",
+    "exampleZh": "我們將要租一輛車。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "租用",
+        "examples": [
+          {
+            "en": "Can I rent a bike here?",
+            "zh": "我可以在這裡租腳踏車嗎？"
+          },
+          {
+            "en": "She will rent an apartment.",
+            "zh": "她將會租一間公寓。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "租金",
+        "examples": [
+          {
+            "en": "The rent is too high.",
+            "zh": "租金太高了。"
+          },
+          {
+            "en": "You have to pay the rent.",
+            "zh": "你必須支付租金。"
+          }
+        ]
+      }
+    ]
+  },
+  "GAS": {
+    "pos": "n.",
+    "meaning": "汽油",
+    "example": "We need to get some gas.",
+    "exampleZh": "我們需要加點汽油。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "汽油、瓦斯",
+        "examples": [
+          {
+            "en": "The car ran out of gas.",
+            "zh": "這輛車沒油了。"
+          },
+          {
+            "en": "How much is the gas?",
+            "zh": "汽油多少錢？"
+          }
+        ]
+      }
+    ]
+  },
+  "SPOON": {
+    "pos": "n.",
+    "meaning": "湯匙",
+    "example": "I need a spoon for my soup.",
+    "exampleZh": "我喝湯需要一支湯匙。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "湯匙",
+        "examples": [
+          {
+            "en": "Could I have a spoon?",
+            "zh": "可以給我一支湯匙嗎？"
+          },
+          {
+            "en": "He eats rice with a spoon.",
+            "zh": "他用湯匙吃飯。"
+          }
+        ]
+      }
+    ]
+  },
+  "ALLOW": {
+    "pos": "v.",
+    "meaning": "允許",
+    "example": "We will not allow taking photos here.",
+    "exampleZh": "我們將不允許在這裡拍照。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "允許",
+        "examples": [
+          {
+            "en": "We will not allow taking photos here.",
+            "zh": "我們將不允許在這裡拍照。"
+          },
+          {
+            "en": "You must not allow him to go alone.",
+            "zh": "你絕不能允許他一個人去。"
+          }
+        ]
+      }
+    ]
+  },
+  "BROKEN": {
+    "pos": "adj.",
+    "meaning": "破裂的；損壞的",
+    "example": "He will fix the broken window tomorrow.",
+    "exampleZh": "他明天會修理破掉的窗戶。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "破裂的；損壞的",
+        "examples": [
+          {
+            "en": "He will fix the broken window tomorrow.",
+            "zh": "他明天會修理破掉的窗戶。"
+          },
+          {
+            "en": "This machine is broken, so you cannot use it.",
+            "zh": "這台機器壞了，所以你不能用它。"
+          }
+        ]
+      }
+    ]
+  },
+  "DAMAGE": {
+    "pos": "v.",
+    "meaning": "損壞",
+    "example": "The heavy rain will damage the package.",
+    "exampleZh": "大雨將會損壞這個包裹。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "損壞",
+        "examples": [
+          {
+            "en": "The heavy rain will damage the package.",
+            "zh": "大雨將會損壞這個包裹。"
+          },
+          {
+            "en": "You should be careful not to damage the car.",
+            "zh": "你應該小心不要損壞這輛車。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "損害；損失",
+        "examples": [
+          {
+            "en": "You must pay for the damage.",
+            "zh": "你必須賠償這個損壞。"
+          }
+        ]
+      }
+    ]
+  },
+  "WARNING": {
+    "pos": "n.",
+    "meaning": "警告",
+    "example": "They will give you a warning next time.",
+    "exampleZh": "下次他們將會給你一個警告。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "警告",
+        "examples": [
+          {
+            "en": "They will give you a warning next time.",
+            "zh": "下次他們將會給你一個警告。"
+          },
+          {
+            "en": "You must pay attention to the warning sign.",
+            "zh": "你必須注意這個警告標誌。"
+          }
+        ]
+      }
+    ]
+  },
+  "RELAXING": {
+    "pos": "adj.",
+    "meaning": "令人放鬆的",
+    "example": "We are going to have a relaxing weekend.",
+    "exampleZh": "我們將會有個令人放鬆的週末。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "令人放鬆的",
+        "examples": [
+          {
+            "en": "We are going to have a relaxing weekend.",
+            "zh": "我們將會有個令人放鬆的週末。"
+          },
+          {
+            "en": "It is usually a relaxing trip for everyone.",
+            "zh": "對大家來說，這通常是一趟令人放鬆的旅行。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECOMMEND": {
+    "pos": "v.",
+    "meaning": "推薦",
+    "example": "I will recommend this book to my friends.",
+    "exampleZh": "我將會推薦這本書給我的朋友們。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "推薦",
+        "examples": [
+          {
+            "en": "I will recommend this book to my friends.",
+            "zh": "我將會推薦這本書給我的朋友們。"
+          },
+          {
+            "en": "Can you recommend a good hotel for me?",
+            "zh": "你能推薦我一家好的飯店嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "ABSENCE": {
+    "pos": "n.",
+    "meaning": "缺席",
+    "example": "He will explain his absence tomorrow.",
+    "exampleZh": "他明天將會解釋他缺席的原因。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "缺席",
+        "examples": [
+          {
+            "en": "He will explain his absence tomorrow.",
+            "zh": "他明天將會解釋他缺席的原因。"
+          },
+          {
+            "en": "You must inform us of your absence.",
+            "zh": "你必須通知我們你的缺席。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTENTION": {
+    "pos": "n.",
+    "meaning": "注意",
+    "example": "You should pay attention to the rules.",
+    "exampleZh": "你應該注意這些規定。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "注意",
+        "examples": [
+          {
+            "en": "You should pay attention to the rules.",
+            "zh": "你應該注意這些規定。"
+          },
+          {
+            "en": "I will bring this matter to his attention.",
+            "zh": "我將會讓他注意這件事。"
+          }
+        ]
+      }
+    ]
+  },
+  "CAREER": {
+    "pos": "n.",
+    "meaning": "職業生涯",
+    "example": "She will start a new career in marketing.",
+    "exampleZh": "她將會在行銷領域開始新的職業生涯。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "職業生涯",
+        "examples": [
+          {
+            "en": "She will start a new career in marketing.",
+            "zh": "她將會在行銷領域開始新的職業生涯。"
+          },
+          {
+            "en": "You should think about your future career.",
+            "zh": "你應該思考一下未來的職業生涯。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEMESTER": {
+    "pos": "n.",
+    "meaning": "學期",
+    "example": "I am going to take five classes this semester.",
+    "exampleZh": "這學期我將要修五門課。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "學期",
+        "examples": [
+          {
+            "en": "I am going to take five classes this semester.",
+            "zh": "這學期我將要修五門課。"
+          },
+          {
+            "en": "She usually gets good grades every semester.",
+            "zh": "她每學期通常都拿到好成績。"
+          }
+        ]
+      }
+    ]
+  },
+  "ASSIGNMENT": {
+    "pos": "n.",
+    "meaning": "作業",
+    "example": "You must finish your assignment by tomorrow.",
+    "exampleZh": "你明天前必須完成你的作業。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "作業",
+        "examples": [
+          {
+            "en": "You must finish your assignment by tomorrow.",
+            "zh": "你明天前必須完成你的作業。"
+          },
+          {
+            "en": "The teacher will give us a new assignment.",
+            "zh": "老師將會給我們一項新作業。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRADITION": {
+    "pos": "n.",
+    "meaning": "傳統",
+    "example": "We should respect our family traditions.",
+    "exampleZh": "我們應該尊重我們的家庭傳統。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "傳統",
+        "examples": [
+          {
+            "en": "We should respect our family traditions.",
+            "zh": "我們應該尊重我們的家庭傳統。"
+          },
+          {
+            "en": "It is a tradition that we will eat dumplings today.",
+            "zh": "今天我們將會吃水餃，這是一項傳統。"
+          }
+        ]
+      }
+    ]
+  },
+  "POLLUTION": {
+    "pos": "n.",
+    "meaning": "污染",
+    "example": "Air pollution will cause serious health problems.",
+    "exampleZh": "空氣污染將會造成嚴重的健康問題。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "污染",
+        "examples": [
+          {
+            "en": "Air pollution will cause serious health problems.",
+            "zh": "空氣污染將會造成嚴重的健康問題。"
+          },
+          {
+            "en": "We must work together to reduce water pollution.",
+            "zh": "我們必須一起努力來減少水污染。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECYCLE": {
+    "pos": "v.",
+    "meaning": "回收",
+    "example": "You should recycle these paper cups.",
+    "exampleZh": "你應該回收這些紙杯。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "回收",
+        "examples": [
+          {
+            "en": "You should recycle these paper cups.",
+            "zh": "你應該回收這些紙杯。"
+          },
+          {
+            "en": "They are going to recycle all the plastic bottles.",
+            "zh": "他們將要回收所有的塑膠瓶。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLASTIC": {
+    "pos": "adj.",
+    "meaning": "塑膠的",
+    "example": "We will stop using plastic bags.",
+    "exampleZh": "我們將會停止使用塑膠袋。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "塑膠的",
+        "examples": [
+          {
+            "en": "We will stop using plastic bags.",
+            "zh": "我們將會停止使用塑膠袋。"
+          },
+          {
+            "en": "You should not throw plastic bottles in the ocean.",
+            "zh": "你不應該把塑膠瓶丟進海裡。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "塑膠",
+        "examples": [
+          {
+            "en": "This toy is made of plastic.",
+            "zh": "這個玩具是塑膠做的。"
+          },
+          {
+            "en": "He seldom buys things wrapped in plastic.",
+            "zh": "他很少買用塑膠包裝的東西。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLANET": {
+    "pos": "n.",
+    "meaning": "星球",
+    "example": "We must take care of our planet.",
+    "exampleZh": "我們必須照顧我們的星球。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "星球",
+        "examples": [
+          {
+            "en": "We must take care of our planet.",
+            "zh": "我們必須照顧我們的星球。"
+          },
+          {
+            "en": "They will learn about the planets in class.",
+            "zh": "他們將會在課堂上學習關於星球的知識。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROTECT": {
+    "pos": "v.",
+    "meaning": "保護",
+    "example": "We have to protect the environment.",
+    "exampleZh": "我們必須保護環境。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "保護",
+        "examples": [
+          {
+            "en": "We have to protect the environment.",
+            "zh": "我們必須保護環境。"
+          },
+          {
+            "en": "A good password will protect your online account.",
+            "zh": "好的密碼將會保護你的線上帳號。"
+          }
+        ]
+      }
+    ]
+  },
+  "DELETE": {
+    "pos": "v.",
+    "meaning": "刪除",
+    "example": "I will delete the old files from my computer.",
+    "exampleZh": "我將會從我的電腦刪除舊檔案。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "刪除",
+        "examples": [
+          {
+            "en": "I will delete the old files from my computer.",
+            "zh": "我將會從我的電腦刪除舊檔案。"
+          },
+          {
+            "en": "You must not delete this important document.",
+            "zh": "你絕不可以刪除這份重要文件。"
+          }
+        ]
+      }
+    ]
+  },
+  "HIGHWAY": {
+    "pos": "n.",
+    "meaning": "高速公路",
+    "example": "We are going to drive on the highway.",
+    "exampleZh": "我們將要開在高速公路上。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "高速公路",
+        "examples": [
+          {
+            "en": "We are going to drive on the highway.",
+            "zh": "我們將要開在高速公路上。"
+          },
+          {
+            "en": "There is usually a lot of traffic on this highway.",
+            "zh": "這條高速公路上通常有很多車流。"
+          }
+        ]
+      }
+    ]
+  },
+  "VEHICLE": {
+    "pos": "n.",
+    "meaning": "車輛",
+    "example": "You cannot park your vehicle here.",
+    "exampleZh": "你不能把你的車輛停在這裡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "車輛",
+        "examples": [
+          {
+            "en": "You cannot park your vehicle here.",
+            "zh": "你不能把你的車輛停在這裡。"
+          },
+          {
+            "en": "The police will check every vehicle on the road.",
+            "zh": "警察將會檢查路上的每一輛車。"
+          }
+        ]
+      }
+    ]
   }
 }

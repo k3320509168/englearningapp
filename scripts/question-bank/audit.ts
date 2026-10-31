@@ -49,8 +49,17 @@ for(const r of [6,7,8]) {
   assertions+=5;
  }
  const reading=all.filter(q=>q.skill==='reading').map(q=>({key:questionKey(q),words:words(q.desc+' '+q.options!.join(' '))}));
- regions.push({region:r,questions:all.length,target:BANK_TARGETS[r],normal:b.normal.length,boss:b.boss.length,quotas,lexicalPoints:lexical.size,vocabEntries:Object.keys(v).length,issues,reading:{maxWords:Math.max(...reading.map(q=>q.words)),over20SecondsAt180Wpm:reading.filter(q=>q.words/3+3>20).length,over20SecondsAt240Wpm:reading.filter(q=>q.words/4+3>20).length},drawStats});
- if(process.argv.includes('--complete'))assert(all.length===BANK_TARGETS[r],`r${r}: not complete`);
+ regions.push({region:r,questions:all.length,target:BANK_TARGETS[r],normal:b.normal.length,boss:b.boss.length,quotas,lexicalPoints:lexical.size,dictionaryRecords:Object.keys(v).length,unscopedVocabEntries:Object.keys(v).filter(k=>!/^R[0-8]:/.test(k)).length,scopedAliases:Object.keys(v).filter(k=>/^R[0-8]:/.test(k)).length,issues,reading:{maxWords:Math.max(...reading.map(q=>q.words)),over20SecondsAt180Wpm:reading.filter(q=>q.words/3+3>20).length,over20SecondsAt240Wpm:reading.filter(q=>q.words/4+3>20).length},drawStats});
+ for(const deck of [b.normal,b.boss])for(const skill of ['listening','reading']) {
+  const choices=deck.filter(q=>q.type==='choice'&&q.skill===skill);
+  const positions=[... 'ABCD'].map(l=>choices.filter(q=>q.ans===l).length);
+  if(choices.length>=12)assert(Math.max(...positions)-Math.min(...positions)<=2,`r${r}: answer positions clustered`);
+ }
+ if(process.argv.includes('--complete')){
+  assert(all.length===BANK_TARGETS[r],`r${r}: not complete`);
+  for(const skill of TRIAL_SKILLS)assert(all.filter(q=>q.skill===skill).length===skillTarget(r,skill),`r${r}: wrong final skill quota`);
+  assert(all.filter(q=>q.type==='spell').length===all.filter(q=>q.type==='fill').length,`r${r}: writing split`);
+ }
 }
 report.regions=regions;
 const placement:unknown[]=[];

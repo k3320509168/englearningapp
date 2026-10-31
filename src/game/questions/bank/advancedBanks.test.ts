@@ -5,7 +5,7 @@ import r8 from './r8.json';
 import v6 from './vocab-r6.json';
 import v7 from './vocab-r7.json';
 import v8 from './vocab-r8.json';
-import { addBankVocab, vocabKey } from '../../vocab';
+import { addBankVocab, vocabFor, vocabKey } from '../../vocab';
 import { validateQuestion, questionKey } from '../../validateQuestions';
 import { checkChoice, checkTypedAnswer, checkVoice, shuffleChoice, voiceFallback, answerSlots } from '../../battle';
 import { checkQuizAnswer } from '../../placement';
@@ -66,3 +66,17 @@ for (const [region, bank, vocab] of [[6, r6, v6], [7, r7, v7], [8, r8, v8]] as c
     });
   });
 }
+
+
+describe('advanced vocabulary sense isolation', () => {
+  it('keeps literary and environmental senses of adaptation separate in the actual study lookup', () => {
+    addBankVocab(v6);
+    addBankVocab(v7);
+    const literary = [...r6.normal, ...r6.boss].find(q => q.type === 'fill' && q.speak === 'adaptation') as Question;
+    const environmental = [...r7.normal, ...r7.boss].find(q => q.type === 'spell' && q.ans === 'ADAPTATION') as Question;
+    expect(vocabFor(literary)?.meaning).toContain('另一種形式');
+    expect(vocabFor(environmental)?.meaning).toContain('新條件');
+    expect(vocabFor(literary)?.display).toBe('adaptation');
+    expect(vocabFor(environmental)?.display).toBe('adaptation');
+  });
+});

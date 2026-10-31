@@ -121,6 +121,7 @@ export const vocabByKey = (key: string) => {
 };
 
 export function vocabKey(q: Question): string | null {
+  if (q.vocabId) return q.vocabId;
   if (q.type === 'spell' || q.type === 'voice') return q.ans;
   if (q.type === 'fill') return q.speak ? q.speak.toUpperCase().replace(/[^A-Z]/g, '') : null;
   return null;

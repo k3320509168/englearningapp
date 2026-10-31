@@ -40,6 +40,7 @@ export function validateQuestion(q: Question, where: string, options: { allowPic
   const key = vocabKey(q);
   if (key && !VOCAB[key]) warn(`單字 ${key} 缺少中文與例句（請補到 vocab.ts）`);
   if (q.type === 'choice' && !q.explain?.trim()) warn('選擇題缺少 explain（文法解說）');
+  if (q.vocabId !== undefined && !/^R[0-8]:[A-Z']+( [A-Z']+)*$/.test(q.vocabId)) error('vocabId 必須是區域前綴與大寫英文詞條');
   if (q.knowledgeType !== undefined && !['lexical', 'discourse'].includes(q.knowledgeType)) error('knowledgeType 只能是 lexical 或 discourse');
   if (q.skill !== undefined && !SKILLS.includes(q.skill)) error(`skill 只能是 ${SKILLS.join(' / ')}："${q.skill}"`);
   if (q.difficulty !== undefined && ![1, 2, 3].includes(q.difficulty)) error(`difficulty 只能是 1、2、3："${q.difficulty}"`);

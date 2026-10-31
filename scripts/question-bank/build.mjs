@@ -5,21 +5,22 @@ import { resolve } from 'node:path';
 const dir='scripts/question-bank/sources';
 const regions=new Map([6,7,8].map(r=>[r,{normal:[],boss:[],vocab:{}}]));
 const letters='ABCD';
-for(const source of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort()) {
+const spellingVariants={PRIORITISE:['PRIORITIZE']};
+for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
  for(const [r,d] of Object.entries(data)) {
   const lexicalTargets=new Set((d.lexicon??[]).map(row=>row[0].toLowerCase()));
   const questions=[]; const dest=regions.get(Number(r)); if(!dest)throw Error(`Unknown region ${r}`);
   for(const skill of ['reading','listening']) (d[skill]??[]).forEach(([difficulty,body,opts,explain],i)=>{
    const a=opts.split('|'); if(a.length!==4)throw Error(body);
-   const at=i%4;const options=a.map((_,j)=>`${letters[j]}. ${a[(j-at+4)%4]}`);
+   const at=(i+Math.floor(i/4)+sourceIndex)%4;const options=a.map((_,j)=>`${letters[j]}. ${a[(j-at+4)%4]}`);
    questions.push({type:'choice',skill,difficulty,knowledgeType:skill==='listening'&&lexicalTargets.has(body.toLowerCase())?'lexical':'discourse',desc:skill==='listening'?'🎧 聽一聽，選出最符合說話者意思的解讀':body,...(skill==='listening'?{speak:body}:{}),options,ans:letters[at],explain});
   });
-  (d.voices??[]).forEach(([text,meaning,difficulty,pos,example,exampleZh],i)=>{
+  (d.voices??[]).forEach(([text,meaning,difficulty,pos,example,exampleZh,display],i)=>{
    const speak=text.toLowerCase();
    questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak});
    const examples=voiceExamples[text];
-   dest.vocab[text.toUpperCase()]={word:speak,pos:pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.')),meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'};
+   dest.vocab[text.toUpperCase()]={word:display??speak,pos:pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.')),meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'};
   });
   (d.words??[]).forEach(([ans,pos,meaning,example,exampleZh,secondExample,secondZh],i)=>{
    const speak=ans.toLowerCase();
@@ -34,7 +35,7 @@ for(const source of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort()) {
   (d.lexicon??[]).forEach(register);
   (d.spells??[]).forEach((row,i)=>{
    const [ans,,meaning]=row;register(row);
-   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak:ans.toLowerCase()});
+   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
   });
   (d.fills??[]).forEach((row,i)=>{
    const [word,,meaning]=row;register(row);const n=[1,2,3,3][i%4];
@@ -48,6 +49,12 @@ for(const [r,{normal,boss,vocab}] of regions){
  const all=[...normal,...boss];const keys=all.map(q=>`${q.type}|${q.desc}|${q.speak??''}`);
  if(new Set(keys).size!==keys.length)throw Error(`r${r}: duplicate questions`);
  for(const q of all)if(q.type!=='choice'&&!vocab[q.type==='fill'?q.speak.toUpperCase():q.ans])throw Error(`r${r}: missing vocabulary ${q.ans}`);
+ // 保留通用詞條供舊流程使用；新題綁定此區的明確詞義，不依賴載入順序。
+ for(const q of all.filter(q=>q.type!=='choice')) {
+  const canonical=q.type==='fill'?q.speak.toUpperCase().replace(/[^A-Z]/g,''):q.ans;
+  q.vocabId=`R${r}:${canonical}`;
+  vocab[q.vocabId]={...vocab[canonical],word:vocab[canonical].word??canonical.toLowerCase()};
+ }
  const path=`src/game/questions/bank/r${r}.json`;const vp=`src/game/questions/bank/vocab-r${r}.json`;
  const encoded=JSON.stringify({normal,boss},null,2)+'\n';const venc=JSON.stringify(vocab,null,2)+'\n';
  if(process.argv.includes('--check')) {if(readFileSync(path,'utf8')!==encoded||readFileSync(vp,'utf8')!==venc)throw Error(`r${r}: stale build`);}

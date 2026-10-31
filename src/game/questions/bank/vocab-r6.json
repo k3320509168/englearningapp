@@ -2,9 +2,9 @@
   "CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
-    "meaning": "可能發生而須預作準備的意外情況",
-    "example": "We have a contingency plan for a power failure.",
-    "exampleZh": "我們有停電時的應變計畫。",
+    "meaning": "可能發生而需要預作準備的情況",
+    "example": "Rain is one contingency we should consider.",
+    "exampleZh": "下雨是應考慮的可能情況。",
     "senses": [
       {
         "pos": "n.",
@@ -23,6 +23,16 @@
           {
             "en": "We have a contingency plan for a power failure.",
             "zh": "我們有停電時的應變計畫。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "可能發生而需要預作準備的情況",
+        "examples": [
+          {
+            "en": "Rain is one contingency we should consider.",
+            "zh": "下雨是應考慮的可能情況。"
           }
         ]
       }
@@ -2313,9 +2323,9 @@
   },
   "DELEGATE": {
     "pos": "v.",
-    "meaning": "把責任或權限交付他人",
-    "example": "She learned to delegate routine decisions.",
-    "exampleZh": "她學會把例行決策交付他人。",
+    "meaning": "把工作或權限委派他人",
+    "example": "The organiser will delegate the smaller tasks.",
+    "exampleZh": "主辦者會委派較小任務。",
     "senses": [
       {
         "pos": "v.",
@@ -2328,6 +2338,16 @@
           {
             "en": "Managers must explain what they delegate.",
             "zh": "主管必須說明所交付的事項。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "把工作或權限委派他人",
+        "examples": [
+          {
+            "en": "The organiser will delegate the smaller tasks.",
+            "zh": "主辦者會委派較小任務。"
           }
         ]
       }
@@ -5449,12 +5469,711 @@
       }
     ]
   },
+  "ROSTER": {
+    "word": "roster",
+    "pos": "n.",
+    "meaning": "列出人員與工作安排的名單",
+    "example": "Please check your shift on the roster.",
+    "exampleZh": "請核對名單上的班次。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "列出人員與工作安排的名單",
+        "examples": [
+          {
+            "en": "Please check your shift on the roster.",
+            "zh": "請核對名單上的班次。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MANAGEABLE WORKLOAD": {
+    "word": "a manageable workload",
+    "pos": "phr.",
+    "meaning": "能力範圍內可應付的工作量",
+    "example": "Each volunteer needs a manageable workload.",
+    "exampleZh": "每位志工需有可負擔工作量。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能力範圍內可應付的工作量",
+        "examples": [
+          {
+            "en": "Each volunteer needs a manageable workload.",
+            "zh": "每位志工需有可負擔工作量。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CLEAR HANDOVER": {
+    "word": "a clear handover",
+    "pos": "phr.",
+    "meaning": "交代清楚的工作交接",
+    "example": "A clear handover prevents confusion.",
+    "exampleZh": "清楚交接可免混亂。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "交代清楚的工作交接",
+        "examples": [
+          {
+            "en": "A clear handover prevents confusion.",
+            "zh": "清楚交接可免混亂。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROVISIONAL TIMETABLE": {
+    "word": "a provisional timetable",
+    "pos": "phr.",
+    "meaning": "仍可能調整的暫定時程",
+    "example": "We circulated a provisional timetable.",
+    "exampleZh": "我們傳閱暫定時程。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可能調整的暫定時程",
+        "examples": [
+          {
+            "en": "We circulated a provisional timetable.",
+            "zh": "我們傳閱暫定時程。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WILLING VOLUNTEER HAS NOT AGREED TO EVERY TASK": {
+    "word": "a willing volunteer has not agreed to every task",
+    "pos": "phr.",
+    "meaning": "願幫忙的志工未同意所有任務",
+    "example": "A willing volunteer has not agreed to every task.",
+    "exampleZh": "願幫忙的志工未同意所有任務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "願幫忙的志工未同意所有任務",
+        "examples": [
+          {
+            "en": "A willing volunteer has not agreed to every task.",
+            "zh": "願幫忙的志工未同意所有任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE BOOKING PERIOD INCLUDES THE TIME NEEDED FOR CLEARING UP": {
+    "word": "the booking period includes the time needed for clearing up",
+    "pos": "phr.",
+    "meaning": "預訂時段包含所需清場時間",
+    "example": "The booking period includes the time needed for clearing up.",
+    "exampleZh": "預訂時段包含所需清場時間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "預訂時段包含所需清場時間",
+        "examples": [
+          {
+            "en": "The booking period includes the time needed for clearing up.",
+            "zh": "預訂時段包含所需清場時間。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLEASE KEEP THE REPLY COUNT SEPARATE FROM THE ATTENDANCE COUNT": {
+    "word": "please keep the reply count separate from the attendance count",
+    "pos": "phr.",
+    "meaning": "請把回覆數與出席人數分開",
+    "example": "Please keep the reply count separate from the attendance count.",
+    "exampleZh": "請把回覆數與出席人數分開。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "請把回覆數與出席人數分開",
+        "examples": [
+          {
+            "en": "Please keep the reply count separate from the attendance count.",
+            "zh": "請把回覆數與出席人數分開。"
+          }
+        ]
+      }
+    ]
+  },
+  "LEND A HAND": {
+    "pos": "phr.",
+    "meaning": "幫忙出一份力",
+    "example": "Could you lend a hand with the tables?",
+    "exampleZh": "能幫忙搬桌子嗎？",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "幫忙出一份力",
+        "examples": [
+          {
+            "en": "Could you lend a hand with the tables?",
+            "zh": "能幫忙搬桌子嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "ON STANDBY": {
+    "pos": "phr.",
+    "meaning": "隨時準備在需要時接手",
+    "example": "Two volunteers remained on standby.",
+    "exampleZh": "兩位志工留守待命。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "隨時準備在需要時接手",
+        "examples": [
+          {
+            "en": "Two volunteers remained on standby.",
+            "zh": "兩位志工留守待命。"
+          }
+        ]
+      }
+    ]
+  },
+  "ON THE DAY": {
+    "pos": "phr.",
+    "meaning": "在活動舉行當天",
+    "example": "Tickets will also be available on the day.",
+    "exampleZh": "活動當天也會供應票券。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在活動舉行當天",
+        "examples": [
+          {
+            "en": "Tickets will also be available on the day.",
+            "zh": "活動當天也會供應票券。"
+          }
+        ]
+      }
+    ]
+  },
+  "KEEP SOMEONE POSTED": {
+    "pos": "phr.",
+    "meaning": "隨時告知某人最新進展",
+    "example": "To keep someone posted is to share updates as they arrive.",
+    "exampleZh": "隨時告知就是有新進展時分享。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "隨時告知某人最新進展",
+        "examples": [
+          {
+            "en": "To keep someone posted is to share updates as they arrive.",
+            "zh": "隨時告知就是有新進展時分享。"
+          }
+        ]
+      }
+    ]
+  },
+  "A ROUGH HEADCOUNT": {
+    "pos": "phr.",
+    "meaning": "大約的人數統計",
+    "example": "We need a rough headcount before ordering food.",
+    "exampleZh": "訂餐前需大約人數。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "大約的人數統計",
+        "examples": [
+          {
+            "en": "We need a rough headcount before ordering food.",
+            "zh": "訂餐前需大約人數。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTENDEE": {
+    "pos": "n.",
+    "meaning": "活動的出席者",
+    "example": "Each attendee received a name badge.",
+    "exampleZh": "每位出席者收到名牌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動的出席者",
+        "examples": [
+          {
+            "en": "Each attendee received a name badge.",
+            "zh": "每位出席者收到名牌。"
+          }
+        ]
+      }
+    ]
+  },
+  "REIMBURSE": {
+    "pos": "v.",
+    "meaning": "償還他人已代墊的費用",
+    "example": "The club will reimburse agreed expenses.",
+    "exampleZh": "俱樂部會報銷議定支出。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "償還他人已代墊的費用",
+        "examples": [
+          {
+            "en": "The club will reimburse agreed expenses.",
+            "zh": "俱樂部會報銷議定支出。"
+          }
+        ]
+      }
+    ]
+  },
+  "LOGISTICS": {
+    "pos": "n.",
+    "meaning": "活動所需人員物品移動與安排工作",
+    "example": "She coordinates the logistics of the event.",
+    "exampleZh": "她協調活動的後勤安排。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動所需人員物品移動與安排工作",
+        "examples": [
+          {
+            "en": "She coordinates the logistics of the event.",
+            "zh": "她協調活動的後勤安排。"
+          }
+        ]
+      }
+    ]
+  },
+  "BADGE": {
+    "pos": "n.",
+    "meaning": "表示身份或角色的小牌子",
+    "example": "The badge shows her role.",
+    "exampleZh": "名牌顯示她的角色。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表示身份或角色的小牌子",
+        "examples": [
+          {
+            "en": "The badge shows her role.",
+            "zh": "名牌顯示她的角色。"
+          }
+        ]
+      }
+    ]
+  },
+  "VENUE": {
+    "pos": "n.",
+    "meaning": "活動舉行的場地",
+    "example": "The venue closes at five.",
+    "exampleZh": "場地五點關閉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動舉行的場地",
+        "examples": [
+          {
+            "en": "The venue closes at five.",
+            "zh": "場地五點關閉。"
+          }
+        ]
+      }
+    ]
+  },
+  "REGISTRATION": {
+    "pos": "n.",
+    "meaning": "登記參加的程序",
+    "example": "Registration opens next week.",
+    "exampleZh": "下週開放登記。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "登記參加的程序",
+        "examples": [
+          {
+            "en": "Registration opens next week.",
+            "zh": "下週開放登記。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERSIGHT": {
+    "pos": "n.",
+    "meaning": "因疏忽而遺漏或犯下的錯誤",
+    "example": "Leaving her name off the list was an oversight.",
+    "exampleZh": "名單漏她姓名是疏忽。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因疏忽而遺漏或犯下的錯誤",
+        "examples": [
+          {
+            "en": "Leaving her name off the list was an oversight.",
+            "zh": "名單漏她姓名是疏忽。"
+          }
+        ]
+      }
+    ]
+  },
+  "KEEPSAKE": {
+    "word": "keepsake",
+    "pos": "n.",
+    "meaning": "使人記起某人或某事的紀念物",
+    "example": "The ticket became a keepsake.",
+    "exampleZh": "票成了紀念物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使人記起某人或某事的紀念物",
+        "examples": [
+          {
+            "en": "The ticket became a keepsake.",
+            "zh": "票成了紀念物。"
+          }
+        ]
+      }
+    ]
+  },
+  "REPLICA": {
+    "word": "replica",
+    "pos": "n.",
+    "meaning": "仿照原物製作的複本",
+    "example": "Visitors can hold the replica.",
+    "exampleZh": "遊客可拿取複本。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "仿照原物製作的複本",
+        "examples": [
+          {
+            "en": "Visitors can hold the replica.",
+            "zh": "遊客可拿取複本。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FADED INSCRIPTION": {
+    "word": "a faded inscription",
+    "pos": "phr.",
+    "meaning": "已褪色而不易看清的題字",
+    "example": "A faded inscription appears on the back.",
+    "exampleZh": "背面有褪色題字。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "已褪色而不易看清的題字",
+        "examples": [
+          {
+            "en": "A faded inscription appears on the back.",
+            "zh": "背面有褪色題字。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FAMILY HEIRLOOM": {
+    "word": "a family heirloom",
+    "pos": "phr.",
+    "meaning": "家族代代相傳的物品",
+    "example": "The bowl is a family heirloom.",
+    "exampleZh": "碗是家傳物。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "家族代代相傳的物品",
+        "examples": [
+          {
+            "en": "The bowl is a family heirloom.",
+            "zh": "碗是家傳物。"
+          }
+        ]
+      }
+    ]
+  },
+  "A VIVID RECOLLECTION": {
+    "word": "a vivid recollection",
+    "pos": "phr.",
+    "meaning": "鮮明清楚的回憶",
+    "example": "She has a vivid recollection of the room.",
+    "exampleZh": "她對房間有鮮明回憶。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鮮明清楚的回憶",
+        "examples": [
+          {
+            "en": "She has a vivid recollection of the room.",
+            "zh": "她對房間有鮮明回憶。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE GIFT DATE MAY DIFFER FROM THE DATE OF MANUFACTURE": {
+    "word": "the gift date may differ from the date of manufacture",
+    "pos": "phr.",
+    "meaning": "贈送日期可能不同於製造日期",
+    "example": "The gift date may differ from the date of manufacture.",
+    "exampleZh": "贈送日期可能不同於製造日期。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "贈送日期可能不同於製造日期",
+        "examples": [
+          {
+            "en": "The gift date may differ from the date of manufacture.",
+            "zh": "贈送日期可能不同於製造日期。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ORDINARY OBJECT CAN CARRY A PERSONAL HISTORY": {
+    "word": "an ordinary object can carry a personal history",
+    "pos": "phr.",
+    "meaning": "普通物件可以承載個人歷史",
+    "example": "An ordinary object can carry a personal history.",
+    "exampleZh": "普通物件可以承載個人歷史。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "普通物件可以承載個人歷史",
+        "examples": [
+          {
+            "en": "An ordinary object can carry a personal history.",
+            "zh": "普通物件可以承載個人歷史。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE ORIGINAL REMAINS UPSTAIRS WHILE VISITORS HANDLE THE COPY": {
+    "word": "the original remains upstairs while visitors handle the copy",
+    "pos": "phr.",
+    "meaning": "原件留樓上而遊客觸摸複本",
+    "example": "The original remains upstairs while visitors handle the copy.",
+    "exampleZh": "原件留樓上而遊客觸摸複本。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原件留樓上而遊客觸摸複本",
+        "examples": [
+          {
+            "en": "The original remains upstairs while visitors handle the copy.",
+            "zh": "原件留樓上而遊客觸摸複本。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TRIP DOWN MEMORY LANE": {
+    "pos": "phr.",
+    "meaning": "回想過往的懷舊經驗",
+    "example": "Sorting the photographs was a trip down memory lane.",
+    "exampleZh": "整理照片是一趟懷舊之旅。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "回想過往的懷舊經驗",
+        "examples": [
+          {
+            "en": "Sorting the photographs was a trip down memory lane.",
+            "zh": "整理照片是一趟懷舊之旅。"
+          }
+        ]
+      }
+    ]
+  },
+  "SHOW SIGNS OF WEAR": {
+    "pos": "phr.",
+    "meaning": "出現使用磨損的痕跡",
+    "example": "The handles show signs of wear.",
+    "exampleZh": "把手有使用痕跡。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "出現使用磨損的痕跡",
+        "examples": [
+          {
+            "en": "The handles show signs of wear.",
+            "zh": "把手有使用痕跡。"
+          }
+        ]
+      }
+    ]
+  },
+  "IN MINT CONDITION": {
+    "pos": "phr.",
+    "meaning": "保存完好而幾乎如新",
+    "example": "The unused ticket is in mint condition.",
+    "exampleZh": "未用的票保存如新。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "保存完好而幾乎如新",
+        "examples": [
+          {
+            "en": "The unused ticket is in mint condition.",
+            "zh": "未用的票保存如新。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSCRIPTION": {
+    "pos": "n.",
+    "meaning": "刻寫或題寫在物上的文字",
+    "example": "The inscription gives a name but no date.",
+    "exampleZh": "題字有姓名卻無日期。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "刻寫或題寫在物上的文字",
+        "examples": [
+          {
+            "en": "The inscription gives a name but no date.",
+            "zh": "題字有姓名卻無日期。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTIC": {
+    "pos": "n.",
+    "meaning": "屋頂下方的閣樓空間",
+    "example": "The suitcase was found in the attic.",
+    "exampleZh": "行李箱在閣樓被發現。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "屋頂下方的閣樓空間",
+        "examples": [
+          {
+            "en": "The suitcase was found in the attic.",
+            "zh": "行李箱在閣樓被發現。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECOLLECTION": {
+    "pos": "n.",
+    "meaning": "對過往事件的回想或記憶",
+    "example": "Her recollection differed from the diary.",
+    "exampleZh": "她的回憶與日記不同。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對過往事件的回想或記憶",
+        "examples": [
+          {
+            "en": "Her recollection differed from the diary.",
+            "zh": "她的回憶與日記不同。"
+          }
+        ]
+      }
+    ]
+  },
+  "SENTIMENTAL": {
+    "pos": "adj.",
+    "meaning": "因個人情感與回憶而珍重的",
+    "example": "The object has sentimental value.",
+    "exampleZh": "物件有情感價值。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "因個人情感與回憶而珍重的",
+        "examples": [
+          {
+            "en": "The object has sentimental value.",
+            "zh": "物件有情感價值。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISPLAY": {
+    "pos": "n.",
+    "meaning": "供人觀看的展品安排",
+    "example": "The display includes letters and photographs.",
+    "exampleZh": "展覽安排包含信件與照片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供人觀看的展品安排",
+        "examples": [
+          {
+            "en": "The display includes letters and photographs.",
+            "zh": "展覽安排包含信件與照片。"
+          }
+        ]
+      }
+    ]
+  },
+  "DONATION": {
+    "pos": "n.",
+    "meaning": "捐出的物品或金錢",
+    "example": "The donation included a box of postcards.",
+    "exampleZh": "捐贈包括一箱明信片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "捐出的物品或金錢",
+        "examples": [
+          {
+            "en": "The donation included a box of postcards.",
+            "zh": "捐贈包括一箱明信片。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEIRLOOM": {
+    "pos": "n.",
+    "meaning": "家族世代相傳的物品",
+    "example": "The watch is an heirloom rather than a recent purchase.",
+    "exampleZh": "手錶是家傳物而非新購品。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "家族世代相傳的物品",
+        "examples": [
+          {
+            "en": "The watch is an heirloom rather than a recent purchase.",
+            "zh": "手錶是家傳物而非新購品。"
+          }
+        ]
+      }
+    ]
+  },
+  "FRAGILE": {
+    "pos": "adj.",
+    "meaning": "容易破損而需小心處理的",
+    "example": "The paper is fragile after years in storage.",
+    "exampleZh": "紙存放多年後脆弱易損。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "容易破損而需小心處理的",
+        "examples": [
+          {
+            "en": "The paper is fragile after years in storage.",
+            "zh": "紙存放多年後脆弱易損。"
+          }
+        ]
+      }
+    ]
+  },
   "R6:CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
-    "meaning": "可能發生而須預作準備的意外情況",
-    "example": "We have a contingency plan for a power failure.",
-    "exampleZh": "我們有停電時的應變計畫。",
+    "meaning": "可能發生而需要預作準備的情況",
+    "example": "Rain is one contingency we should consider.",
+    "exampleZh": "下雨是應考慮的可能情況。",
     "senses": [
       {
         "pos": "n.",
@@ -5473,6 +6192,16 @@
           {
             "en": "We have a contingency plan for a power failure.",
             "zh": "我們有停電時的應變計畫。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "可能發生而需要預作準備的情況",
+        "examples": [
+          {
+            "en": "Rain is one contingency we should consider.",
+            "zh": "下雨是應考慮的可能情況。"
           }
         ]
       }
@@ -6990,9 +7719,9 @@
   },
   "R6:DELEGATE": {
     "pos": "v.",
-    "meaning": "把責任或權限交付他人",
-    "example": "She learned to delegate routine decisions.",
-    "exampleZh": "她學會把例行決策交付他人。",
+    "meaning": "把工作或權限委派他人",
+    "example": "The organiser will delegate the smaller tasks.",
+    "exampleZh": "主辦者會委派較小任務。",
     "senses": [
       {
         "pos": "v.",
@@ -7005,6 +7734,16 @@
           {
             "en": "Managers must explain what they delegate.",
             "zh": "主管必須說明所交付的事項。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "把工作或權限委派他人",
+        "examples": [
+          {
+            "en": "The organiser will delegate the smaller tasks.",
+            "zh": "主辦者會委派較小任務。"
           }
         ]
       }
@@ -8952,6 +9691,424 @@
     ],
     "word": "worktop"
   },
+  "R6:ROSTER": {
+    "word": "roster",
+    "pos": "n.",
+    "meaning": "列出人員與工作安排的名單",
+    "example": "Please check your shift on the roster.",
+    "exampleZh": "請核對名單上的班次。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "列出人員與工作安排的名單",
+        "examples": [
+          {
+            "en": "Please check your shift on the roster.",
+            "zh": "請核對名單上的班次。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A MANAGEABLE WORKLOAD": {
+    "word": "a manageable workload",
+    "pos": "phr.",
+    "meaning": "能力範圍內可應付的工作量",
+    "example": "Each volunteer needs a manageable workload.",
+    "exampleZh": "每位志工需有可負擔工作量。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能力範圍內可應付的工作量",
+        "examples": [
+          {
+            "en": "Each volunteer needs a manageable workload.",
+            "zh": "每位志工需有可負擔工作量。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A PROVISIONAL TIMETABLE": {
+    "word": "a provisional timetable",
+    "pos": "phr.",
+    "meaning": "仍可能調整的暫定時程",
+    "example": "We circulated a provisional timetable.",
+    "exampleZh": "我們傳閱暫定時程。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "仍可能調整的暫定時程",
+        "examples": [
+          {
+            "en": "We circulated a provisional timetable.",
+            "zh": "我們傳閱暫定時程。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A WILLING VOLUNTEER HAS NOT AGREED TO EVERY TASK": {
+    "word": "a willing volunteer has not agreed to every task",
+    "pos": "phr.",
+    "meaning": "願幫忙的志工未同意所有任務",
+    "example": "A willing volunteer has not agreed to every task.",
+    "exampleZh": "願幫忙的志工未同意所有任務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "願幫忙的志工未同意所有任務",
+        "examples": [
+          {
+            "en": "A willing volunteer has not agreed to every task.",
+            "zh": "願幫忙的志工未同意所有任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE BOOKING PERIOD INCLUDES THE TIME NEEDED FOR CLEARING UP": {
+    "word": "the booking period includes the time needed for clearing up",
+    "pos": "phr.",
+    "meaning": "預訂時段包含所需清場時間",
+    "example": "The booking period includes the time needed for clearing up.",
+    "exampleZh": "預訂時段包含所需清場時間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "預訂時段包含所需清場時間",
+        "examples": [
+          {
+            "en": "The booking period includes the time needed for clearing up.",
+            "zh": "預訂時段包含所需清場時間。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:ATTENDEE": {
+    "pos": "n.",
+    "meaning": "活動的出席者",
+    "example": "Each attendee received a name badge.",
+    "exampleZh": "每位出席者收到名牌。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動的出席者",
+        "examples": [
+          {
+            "en": "Each attendee received a name badge.",
+            "zh": "每位出席者收到名牌。"
+          }
+        ]
+      }
+    ],
+    "word": "attendee"
+  },
+  "R6:REIMBURSE": {
+    "pos": "v.",
+    "meaning": "償還他人已代墊的費用",
+    "example": "The club will reimburse agreed expenses.",
+    "exampleZh": "俱樂部會報銷議定支出。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "償還他人已代墊的費用",
+        "examples": [
+          {
+            "en": "The club will reimburse agreed expenses.",
+            "zh": "俱樂部會報銷議定支出。"
+          }
+        ]
+      }
+    ],
+    "word": "reimburse"
+  },
+  "R6:BADGE": {
+    "pos": "n.",
+    "meaning": "表示身份或角色的小牌子",
+    "example": "The badge shows her role.",
+    "exampleZh": "名牌顯示她的角色。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "表示身份或角色的小牌子",
+        "examples": [
+          {
+            "en": "The badge shows her role.",
+            "zh": "名牌顯示她的角色。"
+          }
+        ]
+      }
+    ],
+    "word": "badge"
+  },
+  "R6:VENUE": {
+    "pos": "n.",
+    "meaning": "活動舉行的場地",
+    "example": "The venue closes at five.",
+    "exampleZh": "場地五點關閉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動舉行的場地",
+        "examples": [
+          {
+            "en": "The venue closes at five.",
+            "zh": "場地五點關閉。"
+          }
+        ]
+      }
+    ],
+    "word": "venue"
+  },
+  "R6:REGISTRATION": {
+    "pos": "n.",
+    "meaning": "登記參加的程序",
+    "example": "Registration opens next week.",
+    "exampleZh": "下週開放登記。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "登記參加的程序",
+        "examples": [
+          {
+            "en": "Registration opens next week.",
+            "zh": "下週開放登記。"
+          }
+        ]
+      }
+    ],
+    "word": "registration"
+  },
+  "R6:KEEPSAKE": {
+    "word": "keepsake",
+    "pos": "n.",
+    "meaning": "使人記起某人或某事的紀念物",
+    "example": "The ticket became a keepsake.",
+    "exampleZh": "票成了紀念物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使人記起某人或某事的紀念物",
+        "examples": [
+          {
+            "en": "The ticket became a keepsake.",
+            "zh": "票成了紀念物。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:REPLICA": {
+    "word": "replica",
+    "pos": "n.",
+    "meaning": "仿照原物製作的複本",
+    "example": "Visitors can hold the replica.",
+    "exampleZh": "遊客可拿取複本。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "仿照原物製作的複本",
+        "examples": [
+          {
+            "en": "Visitors can hold the replica.",
+            "zh": "遊客可拿取複本。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A FADED INSCRIPTION": {
+    "word": "a faded inscription",
+    "pos": "phr.",
+    "meaning": "已褪色而不易看清的題字",
+    "example": "A faded inscription appears on the back.",
+    "exampleZh": "背面有褪色題字。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "已褪色而不易看清的題字",
+        "examples": [
+          {
+            "en": "A faded inscription appears on the back.",
+            "zh": "背面有褪色題字。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A VIVID RECOLLECTION": {
+    "word": "a vivid recollection",
+    "pos": "phr.",
+    "meaning": "鮮明清楚的回憶",
+    "example": "She has a vivid recollection of the room.",
+    "exampleZh": "她對房間有鮮明回憶。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鮮明清楚的回憶",
+        "examples": [
+          {
+            "en": "She has a vivid recollection of the room.",
+            "zh": "她對房間有鮮明回憶。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE GIFT DATE MAY DIFFER FROM THE DATE OF MANUFACTURE": {
+    "word": "the gift date may differ from the date of manufacture",
+    "pos": "phr.",
+    "meaning": "贈送日期可能不同於製造日期",
+    "example": "The gift date may differ from the date of manufacture.",
+    "exampleZh": "贈送日期可能不同於製造日期。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "贈送日期可能不同於製造日期",
+        "examples": [
+          {
+            "en": "The gift date may differ from the date of manufacture.",
+            "zh": "贈送日期可能不同於製造日期。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:AN ORDINARY OBJECT CAN CARRY A PERSONAL HISTORY": {
+    "word": "an ordinary object can carry a personal history",
+    "pos": "phr.",
+    "meaning": "普通物件可以承載個人歷史",
+    "example": "An ordinary object can carry a personal history.",
+    "exampleZh": "普通物件可以承載個人歷史。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "普通物件可以承載個人歷史",
+        "examples": [
+          {
+            "en": "An ordinary object can carry a personal history.",
+            "zh": "普通物件可以承載個人歷史。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:INSCRIPTION": {
+    "pos": "n.",
+    "meaning": "刻寫或題寫在物上的文字",
+    "example": "The inscription gives a name but no date.",
+    "exampleZh": "題字有姓名卻無日期。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "刻寫或題寫在物上的文字",
+        "examples": [
+          {
+            "en": "The inscription gives a name but no date.",
+            "zh": "題字有姓名卻無日期。"
+          }
+        ]
+      }
+    ],
+    "word": "inscription"
+  },
+  "R6:ATTIC": {
+    "pos": "n.",
+    "meaning": "屋頂下方的閣樓空間",
+    "example": "The suitcase was found in the attic.",
+    "exampleZh": "行李箱在閣樓被發現。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "屋頂下方的閣樓空間",
+        "examples": [
+          {
+            "en": "The suitcase was found in the attic.",
+            "zh": "行李箱在閣樓被發現。"
+          }
+        ]
+      }
+    ],
+    "word": "attic"
+  },
+  "R6:RECOLLECTION": {
+    "pos": "n.",
+    "meaning": "對過往事件的回想或記憶",
+    "example": "Her recollection differed from the diary.",
+    "exampleZh": "她的回憶與日記不同。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對過往事件的回想或記憶",
+        "examples": [
+          {
+            "en": "Her recollection differed from the diary.",
+            "zh": "她的回憶與日記不同。"
+          }
+        ]
+      }
+    ],
+    "word": "recollection"
+  },
+  "R6:DISPLAY": {
+    "pos": "n.",
+    "meaning": "供人觀看的展品安排",
+    "example": "The display includes letters and photographs.",
+    "exampleZh": "展覽安排包含信件與照片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "供人觀看的展品安排",
+        "examples": [
+          {
+            "en": "The display includes letters and photographs.",
+            "zh": "展覽安排包含信件與照片。"
+          }
+        ]
+      }
+    ],
+    "word": "display"
+  },
+  "R6:DONATION": {
+    "pos": "n.",
+    "meaning": "捐出的物品或金錢",
+    "example": "The donation included a box of postcards.",
+    "exampleZh": "捐贈包括一箱明信片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "捐出的物品或金錢",
+        "examples": [
+          {
+            "en": "The donation included a box of postcards.",
+            "zh": "捐贈包括一箱明信片。"
+          }
+        ]
+      }
+    ],
+    "word": "donation"
+  },
+  "R6:HEIRLOOM": {
+    "pos": "n.",
+    "meaning": "家族世代相傳的物品",
+    "example": "The watch is an heirloom rather than a recent purchase.",
+    "exampleZh": "手錶是家傳物而非新購品。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "家族世代相傳的物品",
+        "examples": [
+          {
+            "en": "The watch is an heirloom rather than a recent purchase.",
+            "zh": "手錶是家傳物而非新購品。"
+          }
+        ]
+      }
+    ],
+    "word": "heirloom"
+  },
   "R6:ON CLOSER INSPECTION": {
     "word": "on closer inspection",
     "pos": "phr.",
@@ -10045,5 +11202,157 @@
       }
     ],
     "word": "soundproof"
+  },
+  "R6:A CLEAR HANDOVER": {
+    "word": "a clear handover",
+    "pos": "phr.",
+    "meaning": "交代清楚的工作交接",
+    "example": "A clear handover prevents confusion.",
+    "exampleZh": "清楚交接可免混亂。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "交代清楚的工作交接",
+        "examples": [
+          {
+            "en": "A clear handover prevents confusion.",
+            "zh": "清楚交接可免混亂。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:PLEASE KEEP THE REPLY COUNT SEPARATE FROM THE ATTENDANCE COUNT": {
+    "word": "please keep the reply count separate from the attendance count",
+    "pos": "phr.",
+    "meaning": "請把回覆數與出席人數分開",
+    "example": "Please keep the reply count separate from the attendance count.",
+    "exampleZh": "請把回覆數與出席人數分開。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "請把回覆數與出席人數分開",
+        "examples": [
+          {
+            "en": "Please keep the reply count separate from the attendance count.",
+            "zh": "請把回覆數與出席人數分開。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:LOGISTICS": {
+    "pos": "n.",
+    "meaning": "活動所需人員物品移動與安排工作",
+    "example": "She coordinates the logistics of the event.",
+    "exampleZh": "她協調活動的後勤安排。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "活動所需人員物品移動與安排工作",
+        "examples": [
+          {
+            "en": "She coordinates the logistics of the event.",
+            "zh": "她協調活動的後勤安排。"
+          }
+        ]
+      }
+    ],
+    "word": "logistics"
+  },
+  "R6:OVERSIGHT": {
+    "pos": "n.",
+    "meaning": "因疏忽而遺漏或犯下的錯誤",
+    "example": "Leaving her name off the list was an oversight.",
+    "exampleZh": "名單漏她姓名是疏忽。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因疏忽而遺漏或犯下的錯誤",
+        "examples": [
+          {
+            "en": "Leaving her name off the list was an oversight.",
+            "zh": "名單漏她姓名是疏忽。"
+          }
+        ]
+      }
+    ],
+    "word": "oversight"
+  },
+  "R6:A FAMILY HEIRLOOM": {
+    "word": "a family heirloom",
+    "pos": "phr.",
+    "meaning": "家族代代相傳的物品",
+    "example": "The bowl is a family heirloom.",
+    "exampleZh": "碗是家傳物。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "家族代代相傳的物品",
+        "examples": [
+          {
+            "en": "The bowl is a family heirloom.",
+            "zh": "碗是家傳物。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE ORIGINAL REMAINS UPSTAIRS WHILE VISITORS HANDLE THE COPY": {
+    "word": "the original remains upstairs while visitors handle the copy",
+    "pos": "phr.",
+    "meaning": "原件留樓上而遊客觸摸複本",
+    "example": "The original remains upstairs while visitors handle the copy.",
+    "exampleZh": "原件留樓上而遊客觸摸複本。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原件留樓上而遊客觸摸複本",
+        "examples": [
+          {
+            "en": "The original remains upstairs while visitors handle the copy.",
+            "zh": "原件留樓上而遊客觸摸複本。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:SENTIMENTAL": {
+    "pos": "adj.",
+    "meaning": "因個人情感與回憶而珍重的",
+    "example": "The object has sentimental value.",
+    "exampleZh": "物件有情感價值。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "因個人情感與回憶而珍重的",
+        "examples": [
+          {
+            "en": "The object has sentimental value.",
+            "zh": "物件有情感價值。"
+          }
+        ]
+      }
+    ],
+    "word": "sentimental"
+  },
+  "R6:FRAGILE": {
+    "pos": "adj.",
+    "meaning": "容易破損而需小心處理的",
+    "example": "The paper is fragile after years in storage.",
+    "exampleZh": "紙存放多年後脆弱易損。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "容易破損而需小心處理的",
+        "examples": [
+          {
+            "en": "The paper is fragile after years in storage.",
+            "zh": "紙存放多年後脆弱易損。"
+          }
+        ]
+      }
+    ],
+    "word": "fragile"
   }
 }

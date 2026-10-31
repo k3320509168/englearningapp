@@ -122,3 +122,13 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 新增 review-signals.mjs，無API費用，從手寫來源產生人工審查排程：正答長度排序、比其他選項長30%、多個絕對措辭、跨批重複詞彙。指令：node scripts/question-bank/review-signals.mjs --out /tmp/enggame-question-bank-review-signals.json。這些只是可能線索，絕非自動語意/CEFR驗證。
 - 現有1080道選擇題中376道出現上述排程線索，19個詞彙/表達跨批出現；須人工分辨合理限定、有效復習或需改題，不能冒稱376道均錯或已全部審好。同區本批重複義項已比對，中文描述不同但沒有新增明顯互斥義項。
 - 最新驗收：Node22 tsc、eslint、34 files/302 tests全過，建庫可重現；運作模擬47240次斷言通過，含舊庫3950題格式0 errors/173既有warnings。一般/模式各五輪完整語言與實玩驗收仍未完成，未push。
+
+## 第 16–17 批（2040/5800，進行中）
+
+- 新增活動協作/志工、物件/展覽/回憶240題，三區各680題（510 normal/170 boss）；每區聽讀各204、說寫各136。距目標仍缺B2+1120、C1/C2各1320。
+- 情境增加任務交接、值班、時程、場地、委託範圍、原件與複本、回憶時間視角、明信片幽默、實物史與展示。高階敘事包含諷刺、懷舊理想化、資料代表性，不只抽象論證。
+- 重複攔截：活動批的 at short notice 已在旅遊批使用，改成 on standby；同批聲音/缺字皆練 REMIT，缺字改 BRIEF；重複 ACQUIESCENCE 缺字改 INORDINATE。不是換中文描述避開同題去重。
+- 語域審查：C1罕用 PALIMPSEST 拼寫改為較通用的 MISATTRIBUTION；C2文章仍可在情境中接觸 palimpsest 的層疊比喻。RELIQUARY 詞條補回「存放聖物」的基本義與例句的家用比喻，避免只教模糊的珍物盒定義。
+- FETISHISATION 同時接受 FETISHIZATION；變體經既有實際輸入測試遍歷。尚須全量英美拼字與缺字義項審查。
+- 人工審查排程目前1224道選擇題中395道出現線索、25詞跨批重用。這不是錯題數，也不表示已審完；仍需檢查近似題與選項長度/措辭捷徑。沒有把警示自動清除或換算成通過率。
+- Node22：tsc、eslint、34 files/302 tests全過，建庫可重現。運作模擬52136次斷言通過；含舊庫4190題格式0 errors/173既有warnings。五輪一般/模式完整驗收尚未完成，未push。

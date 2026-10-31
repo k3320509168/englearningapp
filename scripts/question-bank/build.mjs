@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 const dir='scripts/question-bank/sources';
 const regions=new Map([6,7,8].map(r=>[r,{normal:[],boss:[],vocab:{}}]));
 const letters='ABCD';
-const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL'],RACKET:['RACQUET']};
+const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL'],RACKET:['RACQUET'],FETISHISATION:['FETISHIZATION']};
 for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
  for(const [r,d] of Object.entries(data)) {

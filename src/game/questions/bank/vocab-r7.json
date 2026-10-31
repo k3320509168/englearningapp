@@ -3132,9 +3132,9 @@
   },
   "REMIT": {
     "pos": "n.",
-    "meaning": "被授權處理的職責範圍",
-    "example": "The transfer fell outside either department’s stated remit.",
-    "exampleZh": "銜接問題落在兩個部門明定職權之外。",
+    "meaning": "被委派角色的職責範圍",
+    "example": "The task falls outside my remit.",
+    "exampleZh": "這任務超出我職責範圍。",
     "senses": [
       {
         "pos": "n.",
@@ -3149,8 +3149,19 @@
             "zh": "職權過窄可能使相連問題無人處理。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "被委派角色的職責範圍",
+        "examples": [
+          {
+            "en": "The task falls outside my remit.",
+            "zh": "這任務超出我職責範圍。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "remit"
   },
   "USURP": {
     "word": "usurp",
@@ -5410,6 +5421,723 @@
           {
             "en": "Piecemeal changes made the layout inconsistent.",
             "zh": "零碎改動讓格局不一致。"
+          }
+        ]
+      }
+    ]
+  },
+  "LIAISON": {
+    "word": "liaison",
+    "pos": "n.",
+    "meaning": "協助不同群體聯繫協調的人",
+    "example": "She acts as liaison between the two teams.",
+    "exampleZh": "她負責兩隊間的聯繫。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "協助不同群體聯繫協調的人",
+        "examples": [
+          {
+            "en": "She acts as liaison between the two teams.",
+            "zh": "她負責兩隊間的聯繫。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNFORESEEN DEMAND": {
+    "word": "an unforeseen demand",
+    "pos": "phr.",
+    "meaning": "原先未預料到的要求",
+    "example": "The change created an unforeseen demand on staff time.",
+    "exampleZh": "改動造成未料到的人力時間需求。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原先未預料到的要求",
+        "examples": [
+          {
+            "en": "The change created an unforeseen demand on staff time.",
+            "zh": "改動造成未料到的人力時間需求。"
+          }
+        ]
+      }
+    ]
+  },
+  "A TACIT EXPECTATION OF AVAILABILITY": {
+    "word": "a tacit expectation of availability",
+    "pos": "phr.",
+    "meaning": "默認他人隨時有空的期待",
+    "example": "The rota revealed a tacit expectation of availability.",
+    "exampleZh": "輪值表顯露默認大家有空的期待。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "默認他人隨時有空的期待",
+        "examples": [
+          {
+            "en": "The rota revealed a tacit expectation of availability.",
+            "zh": "輪值表顯露默認大家有空的期待。"
+          }
+        ]
+      }
+    ]
+  },
+  "A FINITE POOL OF VOLUNTEERS": {
+    "word": "a finite pool of volunteers",
+    "pos": "phr.",
+    "meaning": "人數有限的志工群",
+    "example": "The project draws on a finite pool of volunteers.",
+    "exampleZh": "計畫依靠有限志工群。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "人數有限的志工群",
+        "examples": [
+          {
+            "en": "The project draws on a finite pool of volunteers.",
+            "zh": "計畫依靠有限志工群。"
+          }
+        ]
+      }
+    ]
+  },
+  "IDENTICAL BRIEFINGS MAY NOT PREPARE PEOPLE FOR DIFFERENT ROLES": {
+    "word": "identical briefings may not prepare people for different roles",
+    "pos": "phr.",
+    "meaning": "相同簡報未必足以準備不同角色",
+    "example": "Identical briefings may not prepare people for different roles.",
+    "exampleZh": "相同簡報未必足以準備不同角色。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同簡報未必足以準備不同角色",
+        "examples": [
+          {
+            "en": "Identical briefings may not prepare people for different roles.",
+            "zh": "相同簡報未必足以準備不同角色。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SUCCESSFUL RESCUE DOES NOT VINDICATE THE ORIGINAL PLAN": {
+    "word": "a successful rescue does not vindicate the original plan",
+    "pos": "phr.",
+    "meaning": "成功救場不證成原計畫健全",
+    "example": "A successful rescue does not vindicate the original plan.",
+    "exampleZh": "成功救場不證成原計畫健全。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "成功救場不證成原計畫健全",
+        "examples": [
+          {
+            "en": "A successful rescue does not vindicate the original plan.",
+            "zh": "成功救場不證成原計畫健全。"
+          }
+        ]
+      }
+    ]
+  },
+  "DECLINING ONE TASK NEED NOT IMPLY WITHDRAWING SUPPORT": {
+    "word": "declining one task need not imply withdrawing support",
+    "pos": "phr.",
+    "meaning": "拒絕一項任務不必表示撤回支持",
+    "example": "Declining one task need not imply withdrawing support.",
+    "exampleZh": "拒絕一項任務不必表示撤回支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拒絕一項任務不必表示撤回支持",
+        "examples": [
+          {
+            "en": "Declining one task need not imply withdrawing support.",
+            "zh": "拒絕一項任務不必表示撤回支持。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONTINGENCY ARRANGEMENT": {
+    "pos": "phr.",
+    "meaning": "為可能變動預作的備援安排",
+    "example": "We need a contingency arrangement for rain.",
+    "exampleZh": "我們需要雨天備案。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "為可能變動預作的備援安排",
+        "examples": [
+          {
+            "en": "We need a contingency arrangement for rain.",
+            "zh": "我們需要雨天備案。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONSULTATIVE PROCESS": {
+    "pos": "phr.",
+    "meaning": "讓相關人士提供意見的程序",
+    "example": "The programme emerged from a consultative process.",
+    "exampleZh": "節目由諮詢程序形成。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "讓相關人士提供意見的程序",
+        "examples": [
+          {
+            "en": "The programme emerged from a consultative process.",
+            "zh": "節目由諮詢程序形成。"
+          }
+        ]
+      }
+    ]
+  },
+  "A THANKLESS TASK": {
+    "pos": "phr.",
+    "meaning": "費力而少獲感謝的工作",
+    "example": "Updating the roster can be a thankless task.",
+    "exampleZh": "更新輪值表可能吃力不討好。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "費力而少獲感謝的工作",
+        "examples": [
+          {
+            "en": "Updating the roster can be a thankless task.",
+            "zh": "更新輪值表可能吃力不討好。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNFORESEEN COMPLICATION": {
+    "pos": "phr.",
+    "meaning": "原先未料到的複雜狀況",
+    "example": "The venue change was an unforeseen complication.",
+    "exampleZh": "換場地是未料到的複雜狀況。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原先未料到的複雜狀況",
+        "examples": [
+          {
+            "en": "The venue change was an unforeseen complication.",
+            "zh": "換場地是未料到的複雜狀況。"
+          }
+        ]
+      }
+    ]
+  },
+  "A NOMINAL CONTRIBUTION": {
+    "pos": "phr.",
+    "meaning": "象徵性或金額很小的貢獻",
+    "example": "Participants were asked for a nominal contribution.",
+    "exampleZh": "參加者被請求付象徵性小額費用。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "象徵性或金額很小的貢獻",
+        "examples": [
+          {
+            "en": "Participants were asked for a nominal contribution.",
+            "zh": "參加者被請求付象徵性小額費用。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONSULTATIVE": {
+    "pos": "adj.",
+    "meaning": "透過詢問相關人士意見的",
+    "example": "The committee promises a consultative process.",
+    "exampleZh": "委員會承諾採諮詢程序。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "透過詢問相關人士意見的",
+        "examples": [
+          {
+            "en": "The committee promises a consultative process.",
+            "zh": "委員會承諾採諮詢程序。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDISPENSABLE": {
+    "pos": "adj.",
+    "meaning": "對某目的而言不可缺少的",
+    "example": "The coordinator is indispensable to the current plan.",
+    "exampleZh": "協調者對現行計畫不可或缺。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "對某目的而言不可缺少的",
+        "examples": [
+          {
+            "en": "The coordinator is indispensable to the current plan.",
+            "zh": "協調者對現行計畫不可或缺。"
+          }
+        ]
+      }
+    ]
+  },
+  "FACILITATE": {
+    "pos": "v.",
+    "meaning": "使某過程較容易或順利進行",
+    "example": "The briefing should facilitate cooperation.",
+    "exampleZh": "簡報應促進合作。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使某過程較容易或順利進行",
+        "examples": [
+          {
+            "en": "The briefing should facilitate cooperation.",
+            "zh": "簡報應促進合作。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERCOMMIT": {
+    "pos": "v.",
+    "meaning": "承諾超出自身可負擔範圍的事",
+    "example": "Do not overcommit before checking your availability.",
+    "exampleZh": "確認時間前別過度承諾。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "承諾超出自身可負擔範圍的事",
+        "examples": [
+          {
+            "en": "Do not overcommit before checking your availability.",
+            "zh": "確認時間前別過度承諾。"
+          }
+        ]
+      }
+    ]
+  },
+  "BRIEF": {
+    "pos": "n.",
+    "meaning": "對任務目的與要求的指示",
+    "example": "The team needs a clear brief.",
+    "exampleZh": "團隊需要清楚的任務指示。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對任務目的與要求的指示",
+        "examples": [
+          {
+            "en": "The team needs a clear brief.",
+            "zh": "團隊需要清楚的任務指示。"
+          }
+        ]
+      }
+    ]
+  },
+  "HONORARIUM": {
+    "pos": "n.",
+    "meaning": "為服務或演說致謝而付的酬金",
+    "example": "The speaker was offered a small honorarium.",
+    "exampleZh": "講者獲提供一筆小酬金。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為服務或演說致謝而付的酬金",
+        "examples": [
+          {
+            "en": "The speaker was offered a small honorarium.",
+            "zh": "講者獲提供一筆小酬金。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACKNOWLEDGEMENT": {
+    "pos": "n.",
+    "meaning": "對協助或貢獻公開致謝的表達",
+    "example": "The programme includes an acknowledgement of the volunteers.",
+    "exampleZh": "節目冊包含對志工致謝。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對協助或貢獻公開致謝的表達",
+        "examples": [
+          {
+            "en": "The programme includes an acknowledgement of the volunteers.",
+            "zh": "節目冊包含對志工致謝。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERSTRETCHED": {
+    "pos": "adj.",
+    "meaning": "因要求過多而超出可應付能力的",
+    "example": "The small team is already overstretched.",
+    "exampleZh": "小團隊已負擔過重。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "因要求過多而超出可應付能力的",
+        "examples": [
+          {
+            "en": "The small team is already overstretched.",
+            "zh": "小團隊已負擔過重。"
+          }
+        ]
+      }
+    ]
+  },
+  "FACSIMILE": {
+    "word": "facsimile",
+    "pos": "n.",
+    "meaning": "盡量逼近原件外觀的複製品",
+    "example": "The facsimile reproduces the handwriting.",
+    "exampleZh": "複本重現筆跡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "盡量逼近原件外觀的複製品",
+        "examples": [
+          {
+            "en": "The facsimile reproduces the handwriting.",
+            "zh": "複本重現筆跡。"
+          }
+        ]
+      }
+    ]
+  },
+  "PATINA": {
+    "word": "patina",
+    "pos": "n.",
+    "meaning": "物件表面因年代使用形成的色澤層",
+    "example": "The handle has a soft patina.",
+    "exampleZh": "把手有柔和歲月色澤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物件表面因年代使用形成的色澤層",
+        "examples": [
+          {
+            "en": "The handle has a soft patina.",
+            "zh": "把手有柔和歲月色澤。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EVOCATIVE JUXTAPOSITION": {
+    "word": "an evocative juxtaposition",
+    "pos": "phr.",
+    "meaning": "能喚起聯想的並置",
+    "example": "The apron and uniform form an evocative juxtaposition.",
+    "exampleZh": "圍裙與制服的並置引人聯想。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能喚起聯想的並置",
+        "examples": [
+          {
+            "en": "The apron and uniform form an evocative juxtaposition.",
+            "zh": "圍裙與制服的並置引人聯想。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONJECTURAL ATTRIBUTION": {
+    "word": "a conjectural attribution",
+    "pos": "phr.",
+    "meaning": "依推測而作的作者歸屬",
+    "example": "The label makes a conjectural attribution.",
+    "exampleZh": "標籤作推測性作者歸屬。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "依推測而作的作者歸屬",
+        "examples": [
+          {
+            "en": "The label makes a conjectural attribution.",
+            "zh": "標籤作推測性作者歸屬。"
+          }
+        ]
+      }
+    ]
+  },
+  "A RETROSPECTIVE IDEALISATION": {
+    "word": "a retrospective idealisation",
+    "pos": "phr.",
+    "meaning": "事後回看時的理想化",
+    "example": "The memoir may involve a retrospective idealisation.",
+    "exampleZh": "回憶錄可能有事後理想化。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "事後回看時的理想化",
+        "examples": [
+          {
+            "en": "The memoir may involve a retrospective idealisation.",
+            "zh": "回憶錄可能有事後理想化。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SINCERE MEMORY MAY CHANGE ITS EMPHASIS OVER TIME": {
+    "word": "a sincere memory may change its emphasis over time",
+    "pos": "phr.",
+    "meaning": "真誠記憶可能隨時間改變重點",
+    "example": "A sincere memory may change its emphasis over time.",
+    "exampleZh": "真誠記憶可能隨時間改變重點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真誠記憶可能隨時間改變重點",
+        "examples": [
+          {
+            "en": "A sincere memory may change its emphasis over time.",
+            "zh": "真誠記憶可能隨時間改變重點。"
+          }
+        ]
+      }
+    ]
+  },
+  "EMOTIONAL RESONANCE DOES NOT ESTABLISH HISTORICAL ACCURACY": {
+    "word": "emotional resonance does not establish historical accuracy",
+    "pos": "phr.",
+    "meaning": "情感共鳴不證成歷史準確性",
+    "example": "Emotional resonance does not establish historical accuracy.",
+    "exampleZh": "情感共鳴不證成歷史準確性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "情感共鳴不證成歷史準確性",
+        "examples": [
+          {
+            "en": "Emotional resonance does not establish historical accuracy.",
+            "zh": "情感共鳴不證成歷史準確性。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN ORDINARY OBJECT CAN MAKE OVERLOOKED WORK VISIBLE": {
+    "word": "an ordinary object can make overlooked work visible",
+    "pos": "phr.",
+    "meaning": "普通物件能讓被忽略勞動可見",
+    "example": "An ordinary object can make overlooked work visible.",
+    "exampleZh": "普通物件能讓被忽略勞動可見。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "普通物件能讓被忽略勞動可見",
+        "examples": [
+          {
+            "en": "An ordinary object can make overlooked work visible.",
+            "zh": "普通物件能讓被忽略勞動可見。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN EVOCATIVE FRAGMENT": {
+    "pos": "phr.",
+    "meaning": "能引起豐富聯想的片段",
+    "example": "The letter is an evocative fragment of daily life.",
+    "exampleZh": "信是引人聯想的生活片段。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能引起豐富聯想的片段",
+        "examples": [
+          {
+            "en": "The letter is an evocative fragment of daily life.",
+            "zh": "信是引人聯想的生活片段。"
+          }
+        ]
+      }
+    ]
+  },
+  "A CONJECTURAL RECONSTRUCTION": {
+    "pos": "phr.",
+    "meaning": "部分依推測完成的重建",
+    "example": "The missing handle required a conjectural reconstruction.",
+    "exampleZh": "缺失把手需要推測重建。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "部分依推測完成的重建",
+        "examples": [
+          {
+            "en": "The missing handle required a conjectural reconstruction.",
+            "zh": "缺失把手需要推測重建。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNBROKEN CHAIN OF OWNERSHIP": {
+    "pos": "phr.",
+    "meaning": "沒有已知中斷的所有權沿革",
+    "example": "The papers establish an unbroken chain of ownership.",
+    "exampleZh": "文件建立連續所有權沿革。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "沒有已知中斷的所有權沿革",
+        "examples": [
+          {
+            "en": "The papers establish an unbroken chain of ownership.",
+            "zh": "文件建立連續所有權沿革。"
+          }
+        ]
+      }
+    ]
+  },
+  "EVOCATIVE": {
+    "pos": "adj.",
+    "meaning": "能強烈引起感受或聯想的",
+    "example": "The photograph is evocative of a vanished routine.",
+    "exampleZh": "照片喚起已消失日常的聯想。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能強烈引起感受或聯想的",
+        "examples": [
+          {
+            "en": "The photograph is evocative of a vanished routine.",
+            "zh": "照片喚起已消失日常的聯想。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONJECTURAL": {
+    "pos": "adj.",
+    "meaning": "依推測而非確切證明的",
+    "example": "Some details of the reconstruction are conjectural.",
+    "exampleZh": "重建有些細節依推測。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依推測而非確切證明的",
+        "examples": [
+          {
+            "en": "Some details of the reconstruction are conjectural.",
+            "zh": "重建有些細節依推測。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANECDOTAL": {
+    "pos": "adj.",
+    "meaning": "根據個別經驗或故事而非系統資料的",
+    "example": "The label distinguishes anecdotal evidence from records.",
+    "exampleZh": "標籤區分軼事證據與紀錄。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "根據個別經驗或故事而非系統資料的",
+        "examples": [
+          {
+            "en": "The label distinguishes anecdotal evidence from records.",
+            "zh": "標籤區分軼事證據與紀錄。"
+          }
+        ]
+      }
+    ]
+  },
+  "MISATTRIBUTION": {
+    "pos": "n.",
+    "meaning": "把作品或言論錯歸給他人的情況",
+    "example": "The catalogue corrected a longstanding misattribution.",
+    "exampleZh": "目錄修正長期以來的錯誤歸屬。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把作品或言論錯歸給他人的情況",
+        "examples": [
+          {
+            "en": "The catalogue corrected a longstanding misattribution.",
+            "zh": "目錄修正長期以來的錯誤歸屬。"
+          }
+        ]
+      }
+    ]
+  },
+  "CATALOGUE": {
+    "pos": "n.",
+    "meaning": "有系統列舉收藏或項目的目錄",
+    "example": "The catalogue lists the letters by date.",
+    "exampleZh": "目錄按日期列出信件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "有系統列舉收藏或項目的目錄",
+        "examples": [
+          {
+            "en": "The catalogue lists the letters by date.",
+            "zh": "目錄按日期列出信件。"
+          }
+        ]
+      }
+    ]
+  },
+  "BEQUEST": {
+    "pos": "n.",
+    "meaning": "透過遺囑留下的財物或贈與",
+    "example": "The collection arrived as a bequest.",
+    "exampleZh": "收藏透過遺贈入館。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過遺囑留下的財物或贈與",
+        "examples": [
+          {
+            "en": "The collection arrived as a bequest.",
+            "zh": "收藏透過遺贈入館。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUTHENTICATE": {
+    "pos": "v.",
+    "meaning": "確認物件或文件真實性的行動",
+    "example": "The note alone cannot authenticate the painting.",
+    "exampleZh": "僅憑便條不能鑑定畫作真實性。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "確認物件或文件真實性的行動",
+        "examples": [
+          {
+            "en": "The note alone cannot authenticate the painting.",
+            "zh": "僅憑便條不能鑑定畫作真實性。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANTIQUE": {
+    "pos": "n.",
+    "meaning": "因年代而受收藏的古物",
+    "example": "The dealer described the chair as an antique.",
+    "exampleZh": "商人稱椅子為古物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因年代而受收藏的古物",
+        "examples": [
+          {
+            "en": "The dealer described the chair as an antique.",
+            "zh": "商人稱椅子為古物。"
           }
         ]
       }
@@ -8949,6 +9677,476 @@
     ],
     "word": "retrofit"
   },
+  "R7:LIAISON": {
+    "word": "liaison",
+    "pos": "n.",
+    "meaning": "協助不同群體聯繫協調的人",
+    "example": "She acts as liaison between the two teams.",
+    "exampleZh": "她負責兩隊間的聯繫。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "協助不同群體聯繫協調的人",
+        "examples": [
+          {
+            "en": "She acts as liaison between the two teams.",
+            "zh": "她負責兩隊間的聯繫。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:REMIT": {
+    "pos": "n.",
+    "meaning": "被委派角色的職責範圍",
+    "example": "The task falls outside my remit.",
+    "exampleZh": "這任務超出我職責範圍。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "被授權處理的職責範圍",
+        "examples": [
+          {
+            "en": "The transfer fell outside either department’s stated remit.",
+            "zh": "銜接問題落在兩個部門明定職權之外。"
+          },
+          {
+            "en": "A narrow remit can leave connected problems unaddressed.",
+            "zh": "職權過窄可能使相連問題無人處理。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "被委派角色的職責範圍",
+        "examples": [
+          {
+            "en": "The task falls outside my remit.",
+            "zh": "這任務超出我職責範圍。"
+          }
+        ]
+      }
+    ],
+    "word": "remit"
+  },
+  "R7:AN UNFORESEEN DEMAND": {
+    "word": "an unforeseen demand",
+    "pos": "phr.",
+    "meaning": "原先未預料到的要求",
+    "example": "The change created an unforeseen demand on staff time.",
+    "exampleZh": "改動造成未料到的人力時間需求。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原先未預料到的要求",
+        "examples": [
+          {
+            "en": "The change created an unforeseen demand on staff time.",
+            "zh": "改動造成未料到的人力時間需求。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A FINITE POOL OF VOLUNTEERS": {
+    "word": "a finite pool of volunteers",
+    "pos": "phr.",
+    "meaning": "人數有限的志工群",
+    "example": "The project draws on a finite pool of volunteers.",
+    "exampleZh": "計畫依靠有限志工群。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "人數有限的志工群",
+        "examples": [
+          {
+            "en": "The project draws on a finite pool of volunteers.",
+            "zh": "計畫依靠有限志工群。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:IDENTICAL BRIEFINGS MAY NOT PREPARE PEOPLE FOR DIFFERENT ROLES": {
+    "word": "identical briefings may not prepare people for different roles",
+    "pos": "phr.",
+    "meaning": "相同簡報未必足以準備不同角色",
+    "example": "Identical briefings may not prepare people for different roles.",
+    "exampleZh": "相同簡報未必足以準備不同角色。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "相同簡報未必足以準備不同角色",
+        "examples": [
+          {
+            "en": "Identical briefings may not prepare people for different roles.",
+            "zh": "相同簡報未必足以準備不同角色。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SUCCESSFUL RESCUE DOES NOT VINDICATE THE ORIGINAL PLAN": {
+    "word": "a successful rescue does not vindicate the original plan",
+    "pos": "phr.",
+    "meaning": "成功救場不證成原計畫健全",
+    "example": "A successful rescue does not vindicate the original plan.",
+    "exampleZh": "成功救場不證成原計畫健全。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "成功救場不證成原計畫健全",
+        "examples": [
+          {
+            "en": "A successful rescue does not vindicate the original plan.",
+            "zh": "成功救場不證成原計畫健全。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:CONSULTATIVE": {
+    "pos": "adj.",
+    "meaning": "透過詢問相關人士意見的",
+    "example": "The committee promises a consultative process.",
+    "exampleZh": "委員會承諾採諮詢程序。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "透過詢問相關人士意見的",
+        "examples": [
+          {
+            "en": "The committee promises a consultative process.",
+            "zh": "委員會承諾採諮詢程序。"
+          }
+        ]
+      }
+    ],
+    "word": "consultative"
+  },
+  "R7:INDISPENSABLE": {
+    "pos": "adj.",
+    "meaning": "對某目的而言不可缺少的",
+    "example": "The coordinator is indispensable to the current plan.",
+    "exampleZh": "協調者對現行計畫不可或缺。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "對某目的而言不可缺少的",
+        "examples": [
+          {
+            "en": "The coordinator is indispensable to the current plan.",
+            "zh": "協調者對現行計畫不可或缺。"
+          }
+        ]
+      }
+    ],
+    "word": "indispensable"
+  },
+  "R7:FACILITATE": {
+    "pos": "v.",
+    "meaning": "使某過程較容易或順利進行",
+    "example": "The briefing should facilitate cooperation.",
+    "exampleZh": "簡報應促進合作。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使某過程較容易或順利進行",
+        "examples": [
+          {
+            "en": "The briefing should facilitate cooperation.",
+            "zh": "簡報應促進合作。"
+          }
+        ]
+      }
+    ],
+    "word": "facilitate"
+  },
+  "R7:BRIEF": {
+    "pos": "n.",
+    "meaning": "對任務目的與要求的指示",
+    "example": "The team needs a clear brief.",
+    "exampleZh": "團隊需要清楚的任務指示。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對任務目的與要求的指示",
+        "examples": [
+          {
+            "en": "The team needs a clear brief.",
+            "zh": "團隊需要清楚的任務指示。"
+          }
+        ]
+      }
+    ],
+    "word": "brief"
+  },
+  "R7:HONORARIUM": {
+    "pos": "n.",
+    "meaning": "為服務或演說致謝而付的酬金",
+    "example": "The speaker was offered a small honorarium.",
+    "exampleZh": "講者獲提供一筆小酬金。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為服務或演說致謝而付的酬金",
+        "examples": [
+          {
+            "en": "The speaker was offered a small honorarium.",
+            "zh": "講者獲提供一筆小酬金。"
+          }
+        ]
+      }
+    ],
+    "word": "honorarium"
+  },
+  "R7:ACKNOWLEDGEMENT": {
+    "pos": "n.",
+    "meaning": "對協助或貢獻公開致謝的表達",
+    "example": "The programme includes an acknowledgement of the volunteers.",
+    "exampleZh": "節目冊包含對志工致謝。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對協助或貢獻公開致謝的表達",
+        "examples": [
+          {
+            "en": "The programme includes an acknowledgement of the volunteers.",
+            "zh": "節目冊包含對志工致謝。"
+          }
+        ]
+      }
+    ],
+    "word": "acknowledgement"
+  },
+  "R7:FACSIMILE": {
+    "word": "facsimile",
+    "pos": "n.",
+    "meaning": "盡量逼近原件外觀的複製品",
+    "example": "The facsimile reproduces the handwriting.",
+    "exampleZh": "複本重現筆跡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "盡量逼近原件外觀的複製品",
+        "examples": [
+          {
+            "en": "The facsimile reproduces the handwriting.",
+            "zh": "複本重現筆跡。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PATINA": {
+    "word": "patina",
+    "pos": "n.",
+    "meaning": "物件表面因年代使用形成的色澤層",
+    "example": "The handle has a soft patina.",
+    "exampleZh": "把手有柔和歲月色澤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物件表面因年代使用形成的色澤層",
+        "examples": [
+          {
+            "en": "The handle has a soft patina.",
+            "zh": "把手有柔和歲月色澤。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AN EVOCATIVE JUXTAPOSITION": {
+    "word": "an evocative juxtaposition",
+    "pos": "phr.",
+    "meaning": "能喚起聯想的並置",
+    "example": "The apron and uniform form an evocative juxtaposition.",
+    "exampleZh": "圍裙與制服的並置引人聯想。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "能喚起聯想的並置",
+        "examples": [
+          {
+            "en": "The apron and uniform form an evocative juxtaposition.",
+            "zh": "圍裙與制服的並置引人聯想。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A RETROSPECTIVE IDEALISATION": {
+    "word": "a retrospective idealisation",
+    "pos": "phr.",
+    "meaning": "事後回看時的理想化",
+    "example": "The memoir may involve a retrospective idealisation.",
+    "exampleZh": "回憶錄可能有事後理想化。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "事後回看時的理想化",
+        "examples": [
+          {
+            "en": "The memoir may involve a retrospective idealisation.",
+            "zh": "回憶錄可能有事後理想化。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:A SINCERE MEMORY MAY CHANGE ITS EMPHASIS OVER TIME": {
+    "word": "a sincere memory may change its emphasis over time",
+    "pos": "phr.",
+    "meaning": "真誠記憶可能隨時間改變重點",
+    "example": "A sincere memory may change its emphasis over time.",
+    "exampleZh": "真誠記憶可能隨時間改變重點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "真誠記憶可能隨時間改變重點",
+        "examples": [
+          {
+            "en": "A sincere memory may change its emphasis over time.",
+            "zh": "真誠記憶可能隨時間改變重點。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:EMOTIONAL RESONANCE DOES NOT ESTABLISH HISTORICAL ACCURACY": {
+    "word": "emotional resonance does not establish historical accuracy",
+    "pos": "phr.",
+    "meaning": "情感共鳴不證成歷史準確性",
+    "example": "Emotional resonance does not establish historical accuracy.",
+    "exampleZh": "情感共鳴不證成歷史準確性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "情感共鳴不證成歷史準確性",
+        "examples": [
+          {
+            "en": "Emotional resonance does not establish historical accuracy.",
+            "zh": "情感共鳴不證成歷史準確性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:EVOCATIVE": {
+    "pos": "adj.",
+    "meaning": "能強烈引起感受或聯想的",
+    "example": "The photograph is evocative of a vanished routine.",
+    "exampleZh": "照片喚起已消失日常的聯想。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能強烈引起感受或聯想的",
+        "examples": [
+          {
+            "en": "The photograph is evocative of a vanished routine.",
+            "zh": "照片喚起已消失日常的聯想。"
+          }
+        ]
+      }
+    ],
+    "word": "evocative"
+  },
+  "R7:CONJECTURAL": {
+    "pos": "adj.",
+    "meaning": "依推測而非確切證明的",
+    "example": "Some details of the reconstruction are conjectural.",
+    "exampleZh": "重建有些細節依推測。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依推測而非確切證明的",
+        "examples": [
+          {
+            "en": "Some details of the reconstruction are conjectural.",
+            "zh": "重建有些細節依推測。"
+          }
+        ]
+      }
+    ],
+    "word": "conjectural"
+  },
+  "R7:ANECDOTAL": {
+    "pos": "adj.",
+    "meaning": "根據個別經驗或故事而非系統資料的",
+    "example": "The label distinguishes anecdotal evidence from records.",
+    "exampleZh": "標籤區分軼事證據與紀錄。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "根據個別經驗或故事而非系統資料的",
+        "examples": [
+          {
+            "en": "The label distinguishes anecdotal evidence from records.",
+            "zh": "標籤區分軼事證據與紀錄。"
+          }
+        ]
+      }
+    ],
+    "word": "anecdotal"
+  },
+  "R7:CATALOGUE": {
+    "pos": "n.",
+    "meaning": "有系統列舉收藏或項目的目錄",
+    "example": "The catalogue lists the letters by date.",
+    "exampleZh": "目錄按日期列出信件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "有系統列舉收藏或項目的目錄",
+        "examples": [
+          {
+            "en": "The catalogue lists the letters by date.",
+            "zh": "目錄按日期列出信件。"
+          }
+        ]
+      }
+    ],
+    "word": "catalogue"
+  },
+  "R7:BEQUEST": {
+    "pos": "n.",
+    "meaning": "透過遺囑留下的財物或贈與",
+    "example": "The collection arrived as a bequest.",
+    "exampleZh": "收藏透過遺贈入館。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過遺囑留下的財物或贈與",
+        "examples": [
+          {
+            "en": "The collection arrived as a bequest.",
+            "zh": "收藏透過遺贈入館。"
+          }
+        ]
+      }
+    ],
+    "word": "bequest"
+  },
+  "R7:AUTHENTICATE": {
+    "pos": "v.",
+    "meaning": "確認物件或文件真實性的行動",
+    "example": "The note alone cannot authenticate the painting.",
+    "exampleZh": "僅憑便條不能鑑定畫作真實性。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "確認物件或文件真實性的行動",
+        "examples": [
+          {
+            "en": "The note alone cannot authenticate the painting.",
+            "zh": "僅憑便條不能鑑定畫作真實性。"
+          }
+        ]
+      }
+    ],
+    "word": "authenticate"
+  },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
     "pos": "phr.",
@@ -9590,29 +10788,6 @@
     ],
     "word": "substantive"
   },
-  "R7:REMIT": {
-    "pos": "n.",
-    "meaning": "被授權處理的職責範圍",
-    "example": "The transfer fell outside either department’s stated remit.",
-    "exampleZh": "銜接問題落在兩個部門明定職權之外。",
-    "senses": [
-      {
-        "pos": "n.",
-        "meaning": "被授權處理的職責範圍",
-        "examples": [
-          {
-            "en": "The transfer fell outside either department’s stated remit.",
-            "zh": "銜接問題落在兩個部門明定職權之外。"
-          },
-          {
-            "en": "A narrow remit can leave connected problems unaddressed.",
-            "zh": "職權過窄可能使相連問題無人處理。"
-          }
-        ]
-      }
-    ],
-    "word": "remit"
-  },
   "R7:A BINDING OBLIGATION": {
     "word": "a binding obligation",
     "pos": "phr.",
@@ -10065,5 +11240,157 @@
       }
     ],
     "word": "piecemeal"
+  },
+  "R7:A TACIT EXPECTATION OF AVAILABILITY": {
+    "word": "a tacit expectation of availability",
+    "pos": "phr.",
+    "meaning": "默認他人隨時有空的期待",
+    "example": "The rota revealed a tacit expectation of availability.",
+    "exampleZh": "輪值表顯露默認大家有空的期待。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "默認他人隨時有空的期待",
+        "examples": [
+          {
+            "en": "The rota revealed a tacit expectation of availability.",
+            "zh": "輪值表顯露默認大家有空的期待。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DECLINING ONE TASK NEED NOT IMPLY WITHDRAWING SUPPORT": {
+    "word": "declining one task need not imply withdrawing support",
+    "pos": "phr.",
+    "meaning": "拒絕一項任務不必表示撤回支持",
+    "example": "Declining one task need not imply withdrawing support.",
+    "exampleZh": "拒絕一項任務不必表示撤回支持。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拒絕一項任務不必表示撤回支持",
+        "examples": [
+          {
+            "en": "Declining one task need not imply withdrawing support.",
+            "zh": "拒絕一項任務不必表示撤回支持。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:OVERCOMMIT": {
+    "pos": "v.",
+    "meaning": "承諾超出自身可負擔範圍的事",
+    "example": "Do not overcommit before checking your availability.",
+    "exampleZh": "確認時間前別過度承諾。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "承諾超出自身可負擔範圍的事",
+        "examples": [
+          {
+            "en": "Do not overcommit before checking your availability.",
+            "zh": "確認時間前別過度承諾。"
+          }
+        ]
+      }
+    ],
+    "word": "overcommit"
+  },
+  "R7:OVERSTRETCHED": {
+    "pos": "adj.",
+    "meaning": "因要求過多而超出可應付能力的",
+    "example": "The small team is already overstretched.",
+    "exampleZh": "小團隊已負擔過重。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "因要求過多而超出可應付能力的",
+        "examples": [
+          {
+            "en": "The small team is already overstretched.",
+            "zh": "小團隊已負擔過重。"
+          }
+        ]
+      }
+    ],
+    "word": "overstretched"
+  },
+  "R7:A CONJECTURAL ATTRIBUTION": {
+    "word": "a conjectural attribution",
+    "pos": "phr.",
+    "meaning": "依推測而作的作者歸屬",
+    "example": "The label makes a conjectural attribution.",
+    "exampleZh": "標籤作推測性作者歸屬。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "依推測而作的作者歸屬",
+        "examples": [
+          {
+            "en": "The label makes a conjectural attribution.",
+            "zh": "標籤作推測性作者歸屬。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:AN ORDINARY OBJECT CAN MAKE OVERLOOKED WORK VISIBLE": {
+    "word": "an ordinary object can make overlooked work visible",
+    "pos": "phr.",
+    "meaning": "普通物件能讓被忽略勞動可見",
+    "example": "An ordinary object can make overlooked work visible.",
+    "exampleZh": "普通物件能讓被忽略勞動可見。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "普通物件能讓被忽略勞動可見",
+        "examples": [
+          {
+            "en": "An ordinary object can make overlooked work visible.",
+            "zh": "普通物件能讓被忽略勞動可見。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:MISATTRIBUTION": {
+    "pos": "n.",
+    "meaning": "把作品或言論錯歸給他人的情況",
+    "example": "The catalogue corrected a longstanding misattribution.",
+    "exampleZh": "目錄修正長期以來的錯誤歸屬。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把作品或言論錯歸給他人的情況",
+        "examples": [
+          {
+            "en": "The catalogue corrected a longstanding misattribution.",
+            "zh": "目錄修正長期以來的錯誤歸屬。"
+          }
+        ]
+      }
+    ],
+    "word": "misattribution"
+  },
+  "R7:ANTIQUE": {
+    "pos": "n.",
+    "meaning": "因年代而受收藏的古物",
+    "example": "The dealer described the chair as an antique.",
+    "exampleZh": "商人稱椅子為古物。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因年代而受收藏的古物",
+        "examples": [
+          {
+            "en": "The dealer described the chair as an antique.",
+            "zh": "商人稱椅子為古物。"
+          }
+        ]
+      }
+    ],
+    "word": "antique"
   }
 }

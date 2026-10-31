@@ -5894,6 +5894,795 @@
       "ans": "TTI",
       "speak": "aestheticise",
       "vocabId": "R8:AESTHETICISE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a munificent offer",
+      "options": [
+        "A. 勉強收回的先前承諾",
+        "B. 精密計算後的最低付款",
+        "C. 尚未透露內容的邀請",
+        "D. 十分慷慨的提議"
+      ],
+      "ans": "D",
+      "explain": "munificent 偏正式，指極慷慨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a perfunctory consultation",
+      "options": [
+        "A. 走過場而不夠用心的諮詢",
+        "B. 反覆聽取並細查意見的程序",
+        "C. 因無人出席而完全未發生的會議",
+        "D. 私下向唯一專家取得的正式批准"
+      ],
+      "ans": "A",
+      "explain": "perfunctory 指例行敷衍，不必會議未發生。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an invidious comparison",
+      "options": [
+        "A. 只比較兩張圖片尺寸的方法",
+        "B. 容易引起不滿而難堪的比較",
+        "C. 依共同尺度完成的中立測量",
+        "D. 為避免任何評價而作的描述"
+      ],
+      "ans": "B",
+      "explain": "invidious 涉令人反感、引發嫉怨或不公平，非所有比較。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a meticulously choreographed spontaneity",
+      "options": [
+        "A. 精心安排卻呈現自發感的效果",
+        "B. 沒有任何規劃的偶然互動",
+        "C. 只在舞蹈中才能出現的臨場動作",
+        "D. 因事前彩排不足而造成的混亂"
+      ],
+      "ans": "A",
+      "explain": "choreographed 比喻編排；與 spontaneity 組成刻意張力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The invitation flatters its recipients as indispensable while making remarkably little provision for their being unavailable.",
+      "options": [
+        "A. 說話者主要批評邀請沒有清楚列出活動場地。",
+        "B. 邀請稱受邀者不可或缺，卻少有為他們沒空作準備。",
+        "C. 邀請因預期受邀者沒空，已完整安排替補人選。",
+        "D. 受邀者因被認為可隨時替代，所以沒有收到邀請。"
+      ],
+      "ans": "B",
+      "explain": "奉承不可或缺與無備援的關係；未說確定誰不出席。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What the audience experiences as seamlessness may be the point at which the workers’ improvisation becomes invisible.",
+      "options": [
+        "A. 無縫順暢已證明活動從未需要臨場調整。",
+        "B. 說話者認為讓觀眾看見每項失誤是活動唯一目標。",
+        "C. 觀眾感到無縫順暢之處，可能正是工作人員應變被隱藏之處。",
+        "D. 觀眾看到明顯失誤，才會認為所有工作人員都沒有準備。"
+      ],
+      "ans": "C",
+      "explain": "順暢感可能由不可見的修補勞動支撐。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The thank-you is gracious; whether it substitutes for the consultation that should have preceded the request is rather more doubtful.",
+      "options": [
+        "A. 請求前已有完整諮詢，因此致謝反而顯得多餘。",
+        "B. 致謝很有禮，但能否代替請求前應有的諮詢很可疑。",
+        "C. 致謝不夠禮貌，所以先前諮詢內容也必定不可信。",
+        "D. 說話者確認只要充分感謝就不需事前徵詢。"
+      ],
+      "ans": "B",
+      "explain": "禮貌承認與事前知情同意的功能不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The celebration of resilience is convenient for a plan that can remain unchanged only if the same people repeatedly absorb its deficiencies.",
+      "options": [
+        "A. 說話者否認參與者在應付困難時展現任何能力。",
+        "B. 計畫維持不變是因參與者先共同決定不願作出修改。",
+        "C. 讚頌韌性讓計畫得以不改，代價是同些人反覆吸收缺陷。",
+        "D. 計畫已因大家的韌性改善，所以現在不再有任何缺陷。"
+      ],
+      "ans": "C",
+      "explain": "承認應變能力可能被用來免除改善計畫的責任。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The programme’s informality is not an absence of structure so much as a structure whose demands are most legible to those already familiar with it.",
+      "options": [
+        "A. 節目沒有結構，所以老參加者也無法理解任何要求。",
+        "B. 主辦者已把所有要求明列，新手與舊手同樣容易理解。",
+        "C. 說話者認為非正式活動應取消所有可能形成的規律。",
+        "D. 所謂非正式並非無結構，而是要求較易被熟悉它的人看懂。"
+      ],
+      "ans": "D",
+      "explain": "隱性結構可形成熟悉者優勢，非完全無規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The event’s inclusiveness is conditional in ways its publicity leaves tactfully unspecified. What is suggested?",
+      "options": [
+        "A. Its admission conditions are set out clearly but phrased with unusual politeness.",
+        "B. Its organisers have withdrawn the claim that anybody may attend.",
+        "C. Its publicity describes conditions that have not yet been approved.",
+        "D. Its welcome has limitations that promotional language avoids spelling out."
+      ],
+      "ans": "D",
+      "explain": "tactfully unspecified 帶批評暗示，有條件卻避談條件，非條件已清楚。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】However well ___, the invitation cannot supply the time its recipients lack.",
+      "options": [
+        "A. intentioned",
+        "B. intending",
+        "C. has intended",
+        "D. was intending"
+      ],
+      "ans": "A",
+      "explain": "well intentioned 是出於好意的形容詞組，省略 it is。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The organiser says the extra work is entirely voluntary, then asks each person to explain publicly why they cannot do it. What tension arises?",
+      "options": [
+        "A. Public explanations establish that everyone has the same amount of time.",
+        "B. Declining may carry social pressure despite the stated freedom.",
+        "C. The explanation requirement gives each person a confidential way to decline.",
+        "D. The extra work has been formally assigned only to those who volunteered."
+      ],
+      "ans": "B",
+      "explain": "可拒絕的形式自由受公開自辯壓力削弱，未必形式強制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The reviewer credits the improvisation without retrospectively dignifying the confusion that necessitated it. What is withheld?",
+      "options": [
+        "A. Approval of the avoidable disorder preceding the recovery.",
+        "B. Recognition of the team’s skill in responding to the difficulty.",
+        "C. A claim that any improvisation took place during the event.",
+        "D. An account of why the participants appreciated the final result."
+      ],
+      "ans": "A",
+      "explain": "肯定應變但不因此美化造成應變需求的混亂。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The invitation’s munificence rests on an unexamined economy of other people’s time. What is criticised?",
+      "options": [
+        "A. The event has failed because nobody is willing to devote any time to it.",
+        "B. Generosity to guests depends on labour whose costs are overlooked.",
+        "C. The guests are being charged for tasks they have already performed.",
+        "D. The organiser’s financial contribution has been exaggerated in the accounts."
+      ],
+      "ans": "B",
+      "explain": "慷慨以他人未受檢視的時間成本為基礎；economy 不是只指帳務。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The promise is one ___ fulfilment depends on people who were not consulted.",
+      "options": [
+        "A. which its",
+        "B. that of",
+        "C. whose",
+        "D. whom"
+      ],
+      "ans": "C",
+      "explain": "whose fulfilment 指承諾的實現；one 的所有格關係子句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The essay objects to the romanticisation of improvisation, not to improvisation as such. What is rejected?",
+      "options": [
+        "A. Comparing the practical outcomes of planned and improvised arrangements.",
+        "B. Treating emergency adaptation as inherently admirable regardless of its causes or costs.",
+        "C. Allowing people to adapt plans when unexpected circumstances require a response.",
+        "D. Recognising that some successful activities include unscheduled contributions."
+      ],
+      "ans": "B",
+      "explain": "romanticisation 是浪漫美化，與應變本身有用與否不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A festival claims to celebrate participation, yet credits only the people on stage and describes every supporting role as help. A volunteer questions the distinction. What is being examined?",
+      "options": [
+        "A. Whether the festival should replace performances with a list of backstage tasks.",
+        "B. Whether all audience members ought to be assigned a formal volunteering role.",
+        "C. Whether the language of contribution makes some indispensable work appear peripheral.",
+        "D. Whether performing on stage requires exactly the same skills as supporting the event."
+      ],
+      "ans": "C",
+      "explain": "命名與認可分配可能邊緣化必要工作，不要求角色完全相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The plan assumes volunteers will cover any shortfall. Its apparent completeness therefore depends on leaving one category of work deliberately unquantified. What is the problem?",
+      "options": [
+        "A. The plan’s detailed labour estimates prevent volunteers from choosing their roles.",
+        "B. The shortfall can be determined only after every volunteer has completed training.",
+        "C. The plan has counted voluntary labour twice in a published staffing total.",
+        "D. An unspecified reserve of labour conceals rather than resolves the planning gap."
+      ],
+      "ans": "D",
+      "explain": "未量化人力被當無限補位，使缺口被遮掩而非已解決。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：極其慷慨的給予或態度",
+      "ans": "MUNIFICENCE",
+      "speak": "munificence",
+      "vocabId": "R8:MUNIFICENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：容易引起不滿嫉怨或顯得不公的",
+      "ans": "INVIDIOUS",
+      "speak": "invidious",
+      "vocabId": "R8:INVIDIOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：將臨場應變美化的敘述",
+      "ans": "A ROMANTICISED ACCOUNT OF IMPROVISATION",
+      "speak": "a romanticised account of improvisation",
+      "vocabId": "R8:A ROMANTICISED ACCOUNT OF IMPROVISATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：由默示責任構成的交換運作方式",
+      "ans": "A TACIT ECONOMY OF OBLIGATION",
+      "speak": "a tacit economy of obligation",
+      "vocabId": "R8:A TACIT ECONOMY OF OBLIGATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：形式自願不消除拒絕的社會代價",
+      "ans": "FORMAL VOLUNTARINESS DOES NOT ELIMINATE THE SOCIAL COST OF REFUSAL",
+      "speak": "formal voluntariness does not eliminate the social cost of refusal",
+      "vocabId": "R8:FORMAL VOLUNTARINESS DOES NOT ELIMINATE THE SOCIAL COST OF REFUSAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：不可見勞動能支撐輕鬆接待的表象",
+      "ans": "INVISIBLE LABOUR CAN SUSTAIN AN APPEARANCE OF EFFORTLESS HOSPITALITY",
+      "speak": "invisible labour can sustain an appearance of effortless hospitality",
+      "vocabId": "R8:INVISIBLE LABOUR CAN SUSTAIN AN APPEARANCE OF EFFORTLESS HOSPITALITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：收入或地位優厚而工作很少的閒職（S 開頭，8 個字母）",
+      "ans": "SINECURE",
+      "speak": "sinecure",
+      "vocabId": "R8:SINECURE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：出於自願而非被強迫的性質（V 開頭，13 個字母）",
+      "ans": "VOLUNTARINESS",
+      "speak": "voluntariness",
+      "vocabId": "R8:VOLUNTARINESS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：用來使某人免責的（E 開頭，11 個字母）",
+      "ans": "EXCULPATORY",
+      "speak": "exculpatory",
+      "vocabId": "R8:EXCULPATORY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M A G N A _ I M I T Y (對人寬厚大度的品格或行為)",
+      "ans": "N",
+      "speak": "magnanimity",
+      "vocabId": "R8:MAGNANIMITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E C _ P R O _ I T Y (彼此相應給予或協助的互惠關係)",
+      "ans": "IC",
+      "speak": "reciprocity",
+      "vocabId": "R8:RECIPROCITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ R D _ N _ T E (超出合理程度而過多的)",
+      "ans": "OIA",
+      "speak": "inordinate",
+      "vocabId": "R8:INORDINATE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an elegiac tone",
+      "options": [
+        "A. 對逝去事物帶有哀思的語氣",
+        "B. 急於慶賀新成就的語氣",
+        "C. 只傳達計數而毫無情緒的口吻",
+        "D. 以命令要求立即行動的口吻"
+      ],
+      "ans": "A",
+      "explain": "elegiac 偏文學，含哀悼追憶。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a residual trace",
+      "options": [
+        "A. 另加而用來模仿舊貌的裝飾",
+        "B. 先前事物留下的殘餘痕跡",
+        "C. 為未來改造預留的空白",
+        "D. 剛製成且從未使用的物件"
+      ],
+      "ans": "B",
+      "explain": "residual 指殘存，不必出自刻意仿舊。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an apocryphal anecdote",
+      "options": [
+        "A. 由作者公開標成虛構的小說",
+        "B. 因過於私密而從未流傳的紀錄",
+        "C. 真實性可疑卻常被傳述的軼事",
+        "D. 已經完整獨立證實的事蹟"
+      ],
+      "ans": "C",
+      "explain": "apocryphal 指廣傳但可疑或不實，非明示創作小說。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The object is genuine; the account of its arrival is the part that remains apocryphal.",
+      "options": [
+        "A. 到來故事既流傳廣，物件就必定真實。",
+        "B. 物件真實，但其如何到來的故事仍真偽可疑。",
+        "C. 物件是仿品，但到來過程已完整證實。",
+        "D. 物件與來歷都已證明是同一人創作的小說。"
+      ],
+      "ans": "B",
+      "explain": "物件真偽與流傳故事真偽可分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The label makes the absence of luxury sound like a virtue, without asking how much choice the owner had in the matter.",
+      "options": [
+        "A. 標籤認為只有擁有奢侈物的人才具有美德。",
+        "B. 說話者只在比較收藏品目前的價格高低。",
+        "C. 標籤把沒有奢侈物說成美德，未問主人有多少選擇。",
+        "D. 主人自由拒絕奢華已獲證實，標籤只是轉述。"
+      ],
+      "ans": "C",
+      "explain": "自選節制與資源匱乏不同，評德需考慮選擇條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The recollection is affectionate, but its affection seems to depend on keeping certain members of the household conveniently out of focus.",
+      "options": [
+        "A. 回憶把每位家人都同樣清晰描述，因此特別溫情。",
+        "B. 照片因拍攝失焦而不能辨認，與敘事取捨無關。",
+        "C. 說話者認為記憶只要溫情就已證明其中人物虛構。",
+        "D. 回憶溫情，但似乎靠讓部分家人保持模糊而維持。"
+      ],
+      "ans": "D",
+      "explain": "out of focus 比喻敘事邊緣化，seems 留推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The catalogue is punctilious about dates and curiously incurious about whose work made those dates worth commemorating.",
+      "options": [
+        "A. 日期既準確，目錄便已完整回答所有歷史問題。",
+        "B. 說話者只批評目錄沒有列出每件物品的重量。",
+        "C. 目錄仔細交代日期，卻不太追問誰的工作讓它們值得紀念。",
+        "D. 目錄詳細介紹工作者，卻把相關日期全部記錯。"
+      ],
+      "ans": "C",
+      "explain": "形式年代精確與勞動人物可見性不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The universal appeal of the exhibit is purchased, in part, by stripping the object of the inconvenient specificity that made it someone’s possession rather than everyone’s metaphor.",
+      "options": [
+        "A. 展品因完整保留每項人生差異，所以完全沒有共同聯想空間。",
+        "B. 物件原本由所有人共同持有，展覽後才被誤認為私人財產。",
+        "C. 說話者主要質疑展品售價太高，讓一般人無法購買。",
+        "D. 展品普遍吸引力部分來自抹去特定人生，讓私人物件變成人人的比喻。"
+      ],
+      "ans": "D",
+      "explain": "purchase 為代價隱喻；普遍化可能犧牲具體歷史。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "One need not deny the comfort of nostalgia to question the retrospective tidiness with which it arranges lives that were considerably less tidy at the time.",
+      "options": [
+        "A. 可承認懷舊慰藉，同時質疑它把當年紛亂人生事後整理得過於整齊。",
+        "B. 只要懷舊提供慰藉，當年人生就已被證明沒有紛亂。",
+        "C. 說話者否定懷舊的所有安慰作用，所以拒絕看舊物。",
+        "D. 當年家庭已非常整潔，回憶反而把它描述得過度混亂。"
+      ],
+      "ans": "A",
+      "explain": "情感功能與敘事理想化可分開檢視。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The exhibition’s nostalgia is elegiac rather than celebratory. What tone predominates?",
+      "options": [
+        "A. A reflective sadness for what has passed.",
+        "B. An exuberant welcome for what is about to begin.",
+        "C. A detached inventory with no emotional colouring.",
+        "D. An angry demand that every earlier custom return."
+      ],
+      "ans": "A",
+      "explain": "elegiac 挽歌式哀思，不等於激烈要求復古。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The letter is all the more revealing for ___ intended for publication.",
+      "options": [
+        "A. never being have",
+        "B. never having been",
+        "C. having never to be",
+        "D. not to have"
+      ],
+      "ans": "B",
+      "explain": "for 後動名詞，never having been intended 表先前未打算公開。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The label calls the owner a man of simple tastes beside a cabinet full of expensive curiosities. What does the juxtaposition invite?",
+      "options": [
+        "A. Admiration for the owner’s refusal to collect any decorative objects.",
+        "B. A conclusion that simplicity can be measured by the cabinet’s dimensions.",
+        "C. Doubt about whether the flattering description fits the evidence.",
+        "D. Certainty that every object in the cabinet is a recent imitation."
+      ],
+      "ans": "C",
+      "explain": "文字稱簡樸與昂貴珍奇櫃形成反諷落差，非必證假貨。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The memoir does not so much falsify the past as render its discomforts incidental to the story it wishes to tell. What is the criticism?",
+      "options": [
+        "A. It refuses to select any details and therefore becomes unreadably long.",
+        "B. It subordinates awkward aspects rather than necessarily inventing events.",
+        "C. It openly invents every event while admitting none of it is historical.",
+        "D. It makes discomfort the central organising theme of the narrative."
+      ],
+      "ans": "B",
+      "explain": "not so much ... as ... 調整批評焦點到輕描淡寫與選擇框架。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】The room is described as untouched by time, though the illusion requires daily maintenance. What paradox is exposed?",
+      "options": [
+        "A. The maintenance proves that none of the displayed objects is old.",
+        "B. The description refers only to the absence of a clock in the room.",
+        "C. An appearance of timelessness depends on continuing intervention.",
+        "D. An untouched room necessarily requires less care than a renovated one."
+      ],
+      "ans": "C",
+      "explain": "自然未變的表象其實靠持續工作維持，不否定物件年齡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The curator disputes not the letter’s authenticity but its representativeness. What remains possible?",
+      "options": [
+        "A. The letter is forged yet typical of the owner’s actual views.",
+        "B. The letter’s date is false but its handwriting is genuine.",
+        "C. The curator has rejected the existence of any wider correspondence.",
+        "D. The letter is genuine yet atypical of the wider correspondence."
+      ],
+      "ans": "D",
+      "explain": "真實性與代表性不同，挑戰後者不必否定前者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The essay resists the fetishisation of the original without denying that a copy and an original have different histories. What balance is struck?",
+      "options": [
+        "A. It refuses to display copies because originals deserve unquestioned reverence.",
+        "B. It makes visual similarity the only criterion of historical significance.",
+        "C. It questions automatic reverence while preserving a historical distinction.",
+        "D. It treats every copy as possessing exactly the same historical identity."
+      ],
+      "ans": "C",
+      "explain": "不盲目崇原件，同時不抹平來源歷史差異。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The display calls the worn handle evidence of generations of use, but describes a polished repair as damage to authenticity. No distinction is made between the intentions behind either alteration. What should be examined?",
+      "options": [
+        "A. Whether every change to an object must be made by the same family member.",
+        "B. Whether a polished surface can ever reveal information about an object’s age.",
+        "C. Whether the worn handle and repaired surface belong to different exhibitions.",
+        "D. Why some changes acquire legitimacy as history while others are excluded from it."
+      ],
+      "ans": "D",
+      "explain": "質疑歷史變動被選擇性認可的判準，不預先否定所有真實性區分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The visitor says, How fortunate that the family preserved exactly the things that make them look so generous. What is implied?",
+      "options": [
+        "A. The surviving selection may favour a flattering account of the family.",
+        "B. The family’s generosity has been independently established by complete records.",
+        "C. Every surviving object must have been fabricated by a later collector.",
+        "D. The visitor wishes the family had sold the objects rather than preserved them."
+      ],
+      "ans": "A",
+      "explain": "反諷選擇留存如何美化形象，未證實蓄意偽造。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：大部分消失後留下的痕跡",
+      "ans": "VESTIGE",
+      "speak": "vestige",
+      "vocabId": "R8:VESTIGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：流傳卻真實性可疑的",
+      "ans": "APOCRYPHAL",
+      "speak": "apocryphal",
+      "vocabId": "R8:APOCRYPHAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶哀思追憶意味的回想",
+      "ans": "AN ELEGIAC RECOLLECTION",
+      "speak": "an elegiac recollection",
+      "vocabId": "R8:AN ELEGIAC RECOLLECTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未經檢視的重要性排序",
+      "ans": "AN UNEXAMINED HIERARCHY OF SIGNIFICANCE",
+      "speak": "an unexamined hierarchy of significance",
+      "vocabId": "R8:AN UNEXAMINED HIERARCHY OF SIGNIFICANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：留存物反映選擇保存什麼的決定",
+      "ans": "A SURVIVING OBJECT REFLECTS DECISIONS ABOUT WHAT TO PRESERVE",
+      "speak": "a surviving object reflects decisions about what to preserve",
+      "vocabId": "R8:A SURVIVING OBJECT REFLECTS DECISIONS ABOUT WHAT TO PRESERVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：懷舊可安慰而未必準確重現過去",
+      "ans": "NOSTALGIA CAN COMFORT WITHOUT ACCURATELY RECOVERING THE PAST",
+      "speak": "nostalgia can comfort without accurately recovering the past",
+      "vocabId": "R8:NOSTALGIA CAN COMFORT WITHOUT ACCURATELY RECOVERING THE PAST"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：帶有挽歌式哀悼追憶情感的（E 開頭，7 個字母）",
+      "ans": "ELEGIAC",
+      "speak": "elegiac",
+      "vocabId": "R8:ELEGIAC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：存放聖物的容器，亦比喻珍藏遺物之處（R 開頭，9 個字母）",
+      "ans": "RELIQUARY",
+      "speak": "reliquary",
+      "vocabId": "R8:RELIQUARY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：將某物過度崇敬而忽略其脈絡的做法（F 開頭，13 個字母；字數依主要拼字，亦接受標準變體）",
+      "ans": "FETISHISATION",
+      "speak": "fetishisation",
+      "spellAccept": [
+        "FETISHIZATION"
+      ],
+      "vocabId": "R8:FETISHISATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：V E S T _ G I A L (僅殘存少量痕跡或原功能的)",
+      "ans": "I",
+      "speak": "vestigial",
+      "vocabId": "R8:VESTIGIAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E _ I _ E (在敘述中省略或略去)",
+      "ans": "LD",
+      "speak": "elide",
+      "vocabId": "R8:ELIDE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ I D _ N _ A L (附帶而非主要的)",
+      "ans": "CET",
+      "speak": "incidental",
+      "vocabId": "R8:INCIDENTAL"
     }
   ],
   "boss": [
@@ -7861,6 +8650,268 @@
       "ans": "RSE",
       "speak": "intransigent",
       "vocabId": "R8:INTRANSIGENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a sinecure in name only",
+      "options": [
+        "A. 無工作也無報酬的志工機會",
+        "B. 確定人人願意接手的輕鬆職位",
+        "C. 名為閒職卻實際不清閒的職位",
+        "D. 連名稱都不存在的虛構工作"
+      ],
+      "ans": "C",
+      "explain": "in name only 限於名義，實質未符合 sinecure。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The appeal to community becomes less persuasive when the costs of sustaining it fall predictably on the same few people.",
+      "options": [
+        "A. 只要由固定少數人承擔代價，社群精神就更有說服力。",
+        "B. 成本已有公平輪替，所以訴求社群不再必要。",
+        "C. 說話者認為社群一詞只能用於沒有任何成本的活動。",
+        "D. 維繫社群代價總落同幾人時，社群訴求較難服人。"
+      ],
+      "ans": "D",
+      "explain": "批評持續不均的負擔，非否定社群或所有固定角色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To call the labour voluntary answers the question of formal compulsion without settling the subtler question of what it costs a person to refuse.",
+      "options": [
+        "A. 稱勞動自願只回答形式強迫，未解決拒絕的隱性代價。",
+        "B. 自願一詞已足以證明拒絕不會帶來任何人際負擔。",
+        "C. 說話者認為所有自願勞動在正式規定上都屬強迫。",
+        "D. 拒絕的代價已被量化，所以形式自願不再有任何意義。"
+      ],
+      "ans": "A",
+      "explain": "形式同意與社會壓力成本可分開檢視。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A sinecure is a position that ___.",
+      "options": [
+        "A. exists only until another employee returns",
+        "B. requires its holder to mediate between rival groups",
+        "C. provides income or status while requiring little work",
+        "D. demands intense work without offering recognition"
+      ],
+      "ans": "C",
+      "explain": "sinecure 指閒職，常帶貶義，不是吃力不討好職。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The chair praises the volunteers’ boundless energy while repeatedly declining to define the limits of their responsibilities. What relation deserves scrutiny?",
+      "options": [
+        "A. Praise establishes that volunteers have agreed to every additional task.",
+        "B. The chair’s praise is intended solely to describe physical fitness.",
+        "C. The volunteers’ responsibilities have been reduced because their energy is praised.",
+        "D. Praise may normalise an expectation of unlimited availability."
+      ],
+      "ans": "D",
+      "explain": "boundless rhetoric 可能讓無限付出被當理所當然，非已明示同意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The event is described as co-created, though the invitation to create arrives only after the decisions that shape possible contributions have been made. What is the qualification?",
+      "options": [
+        "A. Participation is invited within a framework participants had no part in setting.",
+        "B. Participants have been asked to decide every element without any organising support.",
+        "C. The event’s framework is still open because its publicity uses the term co-created.",
+        "D. The organisers have promised to discard the framework once contributions arrive."
+      ],
+      "ans": "A",
+      "explain": "共創範圍受先定框架限制，不等於全無貢獻空間。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未被量化的備援勞動力",
+      "ans": "AN UNQUANTIFIED RESERVE OF LABOUR",
+      "speak": "an unquantified reserve of labour",
+      "vocabId": "R8:AN UNQUANTIFIED RESERVE OF LABOUR"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：框架可能限制參與者實際可作的貢獻",
+      "ans": "A FRAMEWORK MAY CONSTRAIN WHAT PARTICIPANTS CAN MEANINGFULLY CONTRIBUTE",
+      "speak": "a framework may constrain what participants can meaningfully contribute",
+      "vocabId": "R8:A FRAMEWORK MAY CONSTRAIN WHAT PARTICIPANTS CAN MEANINGFULLY CONTRIBUTE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：持續努力而似不知疲倦的（I 開頭，13 個字母）",
+      "ans": "INDEFATIGABLE",
+      "speak": "indefatigable",
+      "vocabId": "R8:INDEFATIGABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ Q U _ T A _ L E (分配或對待不公平的)",
+      "ans": "EIB",
+      "speak": "inequitable",
+      "vocabId": "R8:INEQUITABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The room’s air of timelessness is an achievement of conservation, not evidence that time has somehow passed it by.",
+      "options": [
+        "A. 房間從未經保存，所以時間對它沒有影響。",
+        "B. 保存工作已把所有物件的實際年代改成同一年。",
+        "C. 說話者認為只要物件古老，房間就必然顯得永恆。",
+        "D. 房間的永恆感靠保存工作達成，不是時間真的沒留下作用。"
+      ],
+      "ans": "D",
+      "explain": "表象為工作成果，不是沒有變化的直接證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The fascination lies not in a pristine original but in the palimpsest of repairs through which the object remained useful.",
+      "options": [
+        "A. 迷人處不是無瑕原貌，而是讓物件持續有用的層疊修補。",
+        "B. 迷人處是所有修補都已移除而還原無瑕原件。",
+        "C. 修補紀錄之所以重要，只因能提高古物出售價格。",
+        "D. 說話者認為實用物件一旦修補就不能再被收藏。"
+      ],
+      "ans": "A",
+      "explain": "palimpsest 借喻多層改動可讀為歷史，不只是原貌。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The survivor’s authority is not absolute: what remains can testify to the past while also reflecting the decisions that allowed this object, and not another, to survive.",
+      "options": [
+        "A. 說話者在比較親歷者與物件，已決定只相信親歷者的口述。",
+        "B. 留存物可見證過去，也反映為何留它而非他物的選擇，證據權威非絕對。",
+        "C. 物件留存已保證它代表所有未留存物，無需檢視選擇過程。",
+        "D. 只要留存涉及選擇，物件便不可能提供任何過往資訊。"
+      ],
+      "ans": "B",
+      "explain": "留存證據與保存選擇偏差並存，不等於證據全無效。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A vestige is ___.",
+      "options": [
+        "A. a complete replacement for a damaged original",
+        "B. a future addition announced before it is made",
+        "C. an exact measurement taken during restoration",
+        "D. a surviving trace of something largely gone"
+      ],
+      "ans": "D",
+      "explain": "vestige 是殘留痕跡，非完整重建。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The story lends the object an importance it would not otherwise ___.",
+      "options": [
+        "A. possess",
+        "B. possessed",
+        "C. to possess",
+        "D. having possessed"
+      ],
+      "ans": "A",
+      "explain": "would not 後接原形 possess；otherwise 指若無該故事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A cracked cup is presented as a universal symbol of family life. A donor notes that it belonged to a worker who lived alone and used it at night shifts. What is at risk in the universal framing?",
+      "options": [
+        "A. The cup’s damage has made its physical function impossible to reconstruct.",
+        "B. A general emotional theme may eclipse the particular life the object records.",
+        "C. A specific ownership history necessarily prevents any visitor from relating to the cup.",
+        "D. The donor’s account proves that workers cannot form relationships outside the home."
+      ],
+      "ans": "B",
+      "explain": "普遍共鳴可能蓋掉具體人物差異，不表示無法產生任何共鳴。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：事後賦予敘事的連貫性",
+      "ans": "A RETROSPECTIVE NARRATIVE COHERENCE",
+      "speak": "a retrospective narrative coherence",
+      "vocabId": "R8:A RETROSPECTIVE NARRATIVE COHERENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：普遍比喻可能遮掩具體人生",
+      "ans": "A UNIVERSAL METAPHOR MAY OBSCURE A PARTICULAR LIFE",
+      "speak": "a universal metaphor may obscure a particular life",
+      "vocabId": "R8:A UNIVERSAL METAPHOR MAY OBSCURE A PARTICULAR LIFE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：回顧過往而作的（R 開頭，13 個字母）",
+      "ans": "RETROSPECTIVE",
+      "speak": "retrospective",
+      "vocabId": "R8:RETROSPECTIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ M E _ O R _ T E (以特定行動保存對人或事的紀念)",
+      "ans": "MMA",
+      "speak": "commemorate",
+      "vocabId": "R8:COMMEMORATE"
     }
   ]
 }

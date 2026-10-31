@@ -5900,6 +5900,792 @@
       "ans": "OKO",
       "speak": "worktop",
       "vocabId": "R6:WORKTOP"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "lend a hand",
+      "options": [
+        "A. 把工具正式借給別人",
+        "B. 要求別人接手全部工作",
+        "C. 把責任轉交而不再參與",
+        "D. 幫忙出一份力"
+      ],
+      "ans": "D",
+      "explain": "lend a hand 是提供協助。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "on standby",
+      "options": [
+        "A. 隨時準備在需要時接手",
+        "B. 已確定不再提供任何服務",
+        "C. 站在固定位置等待拍照",
+        "D. 正式接任全部工作直到結束"
+      ],
+      "ans": "A",
+      "explain": "on standby 是待命可用，不等於已接手。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "on the day",
+      "options": [
+        "A. 在預訂截止前的最後一天",
+        "B. 在活動舉行當天",
+        "C. 在公告發出的那一天固定時刻",
+        "D. 在任何白天而非夜晚"
+      ],
+      "ans": "B",
+      "explain": "活動語境的 on the day 通常指活動當天。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a rough headcount",
+      "options": [
+        "A. 大約的人數統計",
+        "B. 只計算主辦人而排除來賓",
+        "C. 已逐一核對身份的精確名單",
+        "D. 以身高排序而成的隊伍"
+      ],
+      "ans": "A",
+      "explain": "rough 表大略；headcount 人數。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have enough people to open the stalls, but not enough to keep every stall open all afternoon.",
+      "options": [
+        "A. 人數充足，所以每人都可以提早離開。",
+        "B. 人手足以開攤，但不足以讓每攤整個下午都開。",
+        "C. 每攤整個下午都有人，但無人負責開場。",
+        "D. 所有攤位已因人手不足取消。"
+      ],
+      "ans": "B",
+      "explain": "開始營運與持續覆蓋是不同人力要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can cover the first hour if someone takes over at eleven, because I cannot stay any later.",
+      "options": [
+        "A. 即使沒人接手，我也能留下直到活動結束。",
+        "B. 我已安排好十一點的接手人，無需再找。",
+        "C. 若十一點有人接手，我能顧第一小時，之後不能留。",
+        "D. 我會從十一點起接手，但只做最後一小時。"
+      ],
+      "ans": "C",
+      "explain": "條件是有人接班，未說已找到接班者。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The room is booked until five, which means we need to finish clearing up by then, not just finish the talk.",
+      "options": [
+        "A. 房間已續訂，所以演講可以晚些結束。",
+        "B. 房間訂到五點，代表收拾也要在那時完成。",
+        "C. 演講五點開始，收拾時間則另外計算。",
+        "D. 只要演講五點結束，收拾多久都不限。"
+      ],
+      "ans": "B",
+      "explain": "by then 的範圍包括清場，不只節目。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am glad everyone is willing to help; I would be even happier if we knew which jobs each person had actually agreed to do.",
+      "options": [
+        "A. 說話者認為願意幫忙就表示同意所有任務。",
+        "B. 說話者不信任任何人，因而取消全部分工。",
+        "C. 很高興大家肯幫忙，但更希望清楚每人已同意的工作。",
+        "D. 大家已分工清楚，所以現在只需再招更多人。"
+      ],
+      "ans": "C",
+      "explain": "肯定意願並指出任務承諾尚不明確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The plan works if the weather stays dry, so we should not describe it as settled until we have an alternative.",
+      "options": [
+        "A. 乾天方案已定，因此備案只需活動後再想。",
+        "B. 說話者確認天氣預報保證整天不下雨。",
+        "C. 備案必須與乾天方案內容完全一致。",
+        "D. 乾天才可行，沒有備案前不宜說計畫已定。"
+      ],
+      "ans": "D",
+      "explain": "有條件可行與整體準備完備不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配詞】Which expression means to take responsibility for a task? Could you ___ checking the guest list?",
+      "options": [
+        "A. make up for",
+        "B. put up with",
+        "C. look back on",
+        "D. take charge of"
+      ],
+      "ans": "D",
+      "explain": "take charge of 是負責；其餘為彌補、忍受、回顧。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Please let us know by Thursday whether you ___ to attend on Saturday.",
+      "options": [
+        "A. will be able",
+        "B. were being able",
+        "C. have able",
+        "D. will can"
+      ],
+      "ans": "A",
+      "explain": "未來能否出席用 will be able to；can 不能與 will 並用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】Volunteers may choose a morning or afternoon shift, but not both. What is offered?",
+      "options": [
+        "A. A guarantee that both periods have equal workloads.",
+        "B. A choice between two periods of duty.",
+        "C. Permission to split each shift into two halves.",
+        "D. A requirement to work throughout the whole day."
+      ],
+      "ans": "B",
+      "explain": "or ... but not both 明示二擇一，不保證工作量相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which noun refers to a person who is present at an event?",
+      "options": [
+        "A. attendee",
+        "B. applicant",
+        "C. organiser",
+        "D. nominee"
+      ],
+      "ans": "A",
+      "explain": "attendee 是出席者；其他為申請者、主辦者、被提名者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An invitation asks guests to reply even if they cannot attend. A guest says silence will be understood as a refusal. What has the guest overlooked?",
+      "options": [
+        "A. The invitation gives a different reply deadline to each guest.",
+        "B. The request includes people who will not attend.",
+        "C. The event requires every invitee to bring another guest.",
+        "D. The organisers have already assumed everyone will attend."
+      ],
+      "ans": "B",
+      "explain": "even if cannot attend 仍須回覆，不應以沉默代替。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】We will have the chairs ___ before the doors open.",
+      "options": [
+        "A. to arranging",
+        "B. arrange them",
+        "C. arranged",
+        "D. arranging"
+      ],
+      "ans": "C",
+      "explain": "have + 受詞 + 過去分詞 表安排某物被處理；chairs 被排好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A volunteer offers to distribute leaflets, not design them. The organiser later criticises her for failing to produce a layout. What should be checked?",
+      "options": [
+        "A. Whether distribution must always follow the same route.",
+        "B. Whether the expected task matches the task she accepted.",
+        "C. Whether leaflets are usually printed in colour.",
+        "D. Whether more than one person may attend the event."
+      ],
+      "ans": "B",
+      "explain": "分發與設計是不同任務，需核對承諾範圍。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】That should be manageable, as long as the numbers do not change again. How firm is the agreement?",
+      "options": [
+        "A. It confirms that further changes have already been approved.",
+        "B. It guarantees success even if attendance rises sharply.",
+        "C. It is positive but depends on the numbers remaining stable.",
+        "D. It is a refusal to manage the event regardless of numbers."
+      ],
+      "ans": "C",
+      "explain": "should 與 as long as 合成有條件的可行評估。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A workshop has ten places. The organiser keeps two for people unable to book online. A website shows eight bookable places. A visitor calls this evidence that two places have already been sold. What is missing?",
+      "options": [
+        "A. The total capacity must exclude all visitors who use the website.",
+        "B. The workshop has promised to increase capacity by two places.",
+        "C. The organiser has withdrawn the two places from the event entirely.",
+        "D. Not all unavailable places represent completed bookings."
+      ],
+      "ans": "D",
+      "explain": "保留名額與已售出不同；題幹已給保留原因。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：列出人員與工作安排的名單",
+      "ans": "ROSTER",
+      "speak": "roster",
+      "vocabId": "R6:ROSTER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可能發生而需要預作準備的情況",
+      "ans": "CONTINGENCY",
+      "speak": "contingency",
+      "vocabId": "R6:CONTINGENCY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：能力範圍內可應付的工作量",
+      "ans": "A MANAGEABLE WORKLOAD",
+      "speak": "a manageable workload",
+      "vocabId": "R6:A MANAGEABLE WORKLOAD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍可能調整的暫定時程",
+      "ans": "A PROVISIONAL TIMETABLE",
+      "speak": "a provisional timetable",
+      "vocabId": "R6:A PROVISIONAL TIMETABLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：願幫忙的志工未同意所有任務",
+      "ans": "A WILLING VOLUNTEER HAS NOT AGREED TO EVERY TASK",
+      "speak": "a willing volunteer has not agreed to every task",
+      "vocabId": "R6:A WILLING VOLUNTEER HAS NOT AGREED TO EVERY TASK"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：預訂時段包含所需清場時間",
+      "ans": "THE BOOKING PERIOD INCLUDES THE TIME NEEDED FOR CLEARING UP",
+      "speak": "the booking period includes the time needed for clearing up",
+      "vocabId": "R6:THE BOOKING PERIOD INCLUDES THE TIME NEEDED FOR CLEARING UP"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：活動的出席者（A 開頭，8 個字母）",
+      "ans": "ATTENDEE",
+      "speak": "attendee",
+      "vocabId": "R6:ATTENDEE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把工作或權限委派他人（D 開頭，8 個字母）",
+      "ans": "DELEGATE",
+      "speak": "delegate",
+      "vocabId": "R6:DELEGATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：償還他人已代墊的費用（R 開頭，9 個字母）",
+      "ans": "REIMBURSE",
+      "speak": "reimburse",
+      "vocabId": "R6:REIMBURSE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B A _ G E (表示身份或角色的小牌子)",
+      "ans": "D",
+      "speak": "badge",
+      "vocabId": "R6:BADGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：V _ N _ E (活動舉行的場地)",
+      "ans": "EU",
+      "speak": "venue",
+      "vocabId": "R6:VENUE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E G _ S T _ A T _ O N (登記參加的程序)",
+      "ans": "IRI",
+      "speak": "registration",
+      "vocabId": "R6:REGISTRATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a trip down memory lane",
+      "options": [
+        "A. 回想過往的懷舊經驗",
+        "B. 實際沿著名為記憶的小路散步",
+        "C. 對未來旅行作詳細預測",
+        "D. 完全忘記曾經到過的地方"
+      ],
+      "ans": "A",
+      "explain": "此慣用語指重溫往事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "show signs of wear",
+      "options": [
+        "A. 標示哪裡可以購買衣物",
+        "B. 出現使用磨損的痕跡",
+        "C. 展示穿衣服的操作步驟",
+        "D. 被確認從未使用過"
+      ],
+      "ans": "B",
+      "explain": "wear 作名詞可指磨損。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "in mint condition",
+      "options": [
+        "A. 已失去原有形狀",
+        "B. 只剩下零散配件",
+        "C. 保存完好而幾乎如新",
+        "D. 帶有薄荷味道"
+      ],
+      "ans": "C",
+      "explain": "mint condition 指狀態近全新，不是氣味。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The original is kept upstairs; this is the copy visitors are allowed to handle.",
+      "options": [
+        "A. 複本已遺失，所以改讓遊客觸摸原件。",
+        "B. 原件放樓上，這是讓遊客觸摸的複本。",
+        "C. 這是原件，樓上的複本禁止觸摸。",
+        "D. 遊客可把樓上原件帶走，複本則留此處。"
+      ],
+      "ans": "B",
+      "explain": "區分展示用複本與原件的存放用途。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I had remembered the room as enormous, but of course I was only six the last time I saw it.",
+      "options": [
+        "A. 說話者六年前才來，因此記憶必然完全準確。",
+        "B. 說話者已忘記房間，無法描述任何印象。",
+        "C. 我記得房間很大，不過上次看見時我才六歲。",
+        "D. 房間已被確定擴建，所以現在比記憶大。"
+      ],
+      "ans": "C",
+      "explain": "年齡視角可能影響大小記憶，未明說物理改建。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The date on the frame tells us when it was presented, not necessarily when the picture was painted.",
+      "options": [
+        "A. 框上日期已確定是畫作與框都製成的同一天。",
+        "B. 畫作年代比贈送日期晚，所以日期必定偽造。",
+        "C. 日期只說明照片沖洗時間，與贈送無關。",
+        "D. 框上的日期是贈送時間，不一定是畫作完成時間。"
+      ],
+      "ans": "D",
+      "explain": "同一物件可有不同相關日期，不能直接互代。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Please do not straighten the bent handle; the bend is part of the story we are trying to preserve.",
+      "options": [
+        "A. 故事證明把手本來就是直的，彎曲是誤會。",
+        "B. 說話者只反對拍攝把手，並未談修整。",
+        "C. 別把彎把手弄直，那彎曲是我們想保留的故事一部分。",
+        "D. 把手已被矯直，所以需要重新弄彎。"
+      ],
+      "ans": "C",
+      "explain": "保存使用痕跡而非只追求整齊，非實際維修建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I know it is not rare, but rarity is not really the point when it is the one I remember from our kitchen.",
+      "options": [
+        "A. 它必定非常稀有，所以我才記得家裡有它。",
+        "B. 只要新物件更罕見，就能完全取代原有回憶。",
+        "C. 說話者不記得來處，只在乎轉售價值。",
+        "D. 我知道它不罕見，但它是記憶中家裡那件，重點不在稀有。"
+      ],
+      "ans": "D",
+      "explain": "個人物件連結不同於市場稀有性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The label says unknown maker, which is more honest than attaching the name of someone whose work merely looks similar.",
+      "options": [
+        "A. 標籤寫作者不詳，比只因相似就冠上某人姓名更誠實。",
+        "B. 相似外觀已足以確認作者，因此不詳標籤不誠實。",
+        "C. 標籤承認作者不詳，表示物件沒有任何價值。",
+        "D. 說話者建議選最有名的相似作者來吸引遊客。"
+      ],
+      "ans": "A",
+      "explain": "相似不足以確定歸屬，承認未知可更準確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The photograph shows the house ___ my grandparents used to live.",
+      "options": [
+        "A. where",
+        "B. which in",
+        "C. whose",
+        "D. what"
+      ],
+      "ans": "A",
+      "explain": "where 引出居住地點；若用 which 應是 in which 或 which ... in。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Which noun means an object kept because it reminds someone of a person or occasion?",
+      "options": [
+        "A. receipt",
+        "B. keepsake",
+        "C. replica",
+        "D. toolkit"
+      ],
+      "ans": "B",
+      "explain": "keepsake 是紀念物；replica 複製品、toolkit 工具組、receipt 收據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The display contains a replica of the original key. What is on display?",
+      "options": [
+        "A. A photograph showing where the key was lost.",
+        "B. A damaged key whose shape cannot be recognised.",
+        "C. A copy made to resemble the original key.",
+        "D. The only key ever used to open the building."
+      ],
+      "ans": "C",
+      "explain": "replica 是仿製複本，不是原件保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The box had not been opened ___ it was put in the attic thirty years earlier.",
+      "options": [
+        "A. by",
+        "B. since",
+        "C. during",
+        "D. while"
+      ],
+      "ans": "B",
+      "explain": "since 接起始時間事件，配過去完成式表示至過去某時未開。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A visitor calls a repaired bowl worthless because it is no longer perfect. Its owner says the repair records how the family continued using it. What gives the bowl value to the owner?",
+      "options": [
+        "A. Its guaranteed selling price at a public auction.",
+        "B. Its similarity to a new bowl in a shop window.",
+        "C. Its connection with the family’s history of use.",
+        "D. Its ability to prove that no damage ever occurred."
+      ],
+      "ans": "C",
+      "explain": "價值來自使用與修補的家庭歷史，不以無損或價格為依據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The object is older than the label suggests. What is being questioned?",
+      "options": [
+        "A. The physical age of the printed label.",
+        "B. The position of the label beside the object.",
+        "C. The claim that the object has been repaired.",
+        "D. The age implied by the description."
+      ],
+      "ans": "D",
+      "explain": "label suggests 指標籤傳達物件年代，不是標籤紙本年齡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A diary describes a journey as uneventful. A later entry mentions missing a train and walking several miles. The owner laughs that she had forgotten to count that as an event. What is suggested?",
+      "options": [
+        "A. The later entry proves the journey never occurred.",
+        "B. The owner thinks a missed train is a form of transport.",
+        "C. The diary’s first description understates what happened.",
+        "D. The journey took place on two separate continents."
+      ],
+      "ans": "C",
+      "explain": "uneventful 與實際插曲有幽默反差，不推測造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】It is not much to look at, but I would not part with it. What is the contrast?",
+      "options": [
+        "A. Its high selling price versus the cost of repairing it.",
+        "B. Its impressive size versus the space available at home.",
+        "C. Its usefulness today versus the owner’s wish to replace it.",
+        "D. Its ordinary appearance versus its personal importance."
+      ],
+      "ans": "D",
+      "explain": "not much to look at 外表不起眼，not part with 不願割愛。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A room is arranged to look as it did before its owner moved away. One modern lamp was added so visitors can see the letters. Which description is most precise?",
+      "options": [
+        "A. The arrangement largely recreates an earlier setting with a practical addition.",
+        "B. The arrangement contains only objects that were present before the owner left.",
+        "C. The modern lamp proves that the letters were written after the owner moved.",
+        "D. The room has been redesigned without reference to its earlier appearance."
+      ],
+      "ans": "A",
+      "explain": "承認整體重現及實用例外，不以單件現代物否定全部。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：使人記起某人或某事的紀念物",
+      "ans": "KEEPSAKE",
+      "speak": "keepsake",
+      "vocabId": "R6:KEEPSAKE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：仿照原物製作的複本",
+      "ans": "REPLICA",
+      "speak": "replica",
+      "vocabId": "R6:REPLICA"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：已褪色而不易看清的題字",
+      "ans": "A FADED INSCRIPTION",
+      "speak": "a faded inscription",
+      "vocabId": "R6:A FADED INSCRIPTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：鮮明清楚的回憶",
+      "ans": "A VIVID RECOLLECTION",
+      "speak": "a vivid recollection",
+      "vocabId": "R6:A VIVID RECOLLECTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：贈送日期可能不同於製造日期",
+      "ans": "THE GIFT DATE MAY DIFFER FROM THE DATE OF MANUFACTURE",
+      "speak": "the gift date may differ from the date of manufacture",
+      "vocabId": "R6:THE GIFT DATE MAY DIFFER FROM THE DATE OF MANUFACTURE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：普通物件可以承載個人歷史",
+      "ans": "AN ORDINARY OBJECT CAN CARRY A PERSONAL HISTORY",
+      "speak": "an ordinary object can carry a personal history",
+      "vocabId": "R6:AN ORDINARY OBJECT CAN CARRY A PERSONAL HISTORY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：刻寫或題寫在物上的文字（I 開頭，11 個字母）",
+      "ans": "INSCRIPTION",
+      "speak": "inscription",
+      "vocabId": "R6:INSCRIPTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：屋頂下方的閣樓空間（A 開頭，5 個字母）",
+      "ans": "ATTIC",
+      "speak": "attic",
+      "vocabId": "R6:ATTIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：對過往事件的回想或記憶（R 開頭，12 個字母）",
+      "ans": "RECOLLECTION",
+      "speak": "recollection",
+      "vocabId": "R6:RECOLLECTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D I S _ L A Y (供人觀看的展品安排)",
+      "ans": "P",
+      "speak": "display",
+      "vocabId": "R6:DISPLAY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D O _ A T _ O N (捐出的物品或金錢)",
+      "ans": "NI",
+      "speak": "donation",
+      "vocabId": "R6:DONATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H E _ R _ O _ M (家族世代相傳的物品)",
+      "ans": "ILO",
+      "speak": "heirloom",
+      "vocabId": "R6:HEIRLOOM"
     }
   ],
   "boss": [
@@ -7867,6 +8653,268 @@
       "ans": "UPO",
       "speak": "soundproof",
       "vocabId": "R6:SOUNDPROOF"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "keep someone posted",
+      "options": [
+        "A. 把某人的職位永久保留",
+        "B. 將同一張公告反覆張貼",
+        "C. 隨時告知某人最新進展",
+        "D. 要求某人留在郵局"
+      ],
+      "ans": "C",
+      "explain": "keep posted 指持續提供近況。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Please count the replies, not the number of people mentioned in each reply; we need both figures separately.",
+      "options": [
+        "A. 每封回覆只代表一人，兩項數字必定相同。",
+        "B. 請把回覆提及人數刪掉，只留下郵件數。",
+        "C. 回覆數只能由參加者自己統計後提交。",
+        "D. 請統計回覆數而非每封提及人數，兩個數字要分開。"
+      ],
+      "ans": "D",
+      "explain": "要求分開兩種單位，不是永久忽略其中一項。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We do not need everyone to stay late, but we do need to know in advance who can.",
+      "options": [
+        "A. 不需要人人留晚，但需事先知道誰可以。",
+        "B. 每人都必須留晚，只是可自行決定何時告知。",
+        "C. 誰可留晚並不重要，人數足夠就不必記錄。",
+        "D. 留晚安排只能等活動結束後才開始詢問。"
+      ],
+      "ans": "A",
+      "explain": "全員要求與確定可用人力不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I can help set up, though I will need to leave before the guests arrive. What is the speaker doing?",
+      "options": [
+        "A. Asking the guests to arrive earlier than planned.",
+        "B. Declining to take part in any preparation.",
+        "C. Offering limited help with preparation.",
+        "D. Accepting responsibility for welcoming every guest."
+      ],
+      "ans": "C",
+      "explain": "同意布置並限定離開時間，非全盤拒絕。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The event is informal, but punctuality still matters. Which action best fits?",
+      "options": [
+        "A. Choosing any arrival time because there is no dress code.",
+        "B. Waiting outside until someone puts on formal clothes.",
+        "C. Arriving after the event because it is not a meeting.",
+        "D. Arriving at the stated time in relaxed clothing."
+      ],
+      "ans": "D",
+      "explain": "informal 未取消準時要求；服裝較輕鬆與時間明確可並存。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An organiser thanks the team for adapting to a late change but says it should not become the normal way of planning. What is distinguished?",
+      "options": [
+        "A. Appreciating flexibility from accepting avoidable disruption as routine.",
+        "B. Praising the team from accepting that any change occurred.",
+        "C. Welcoming new ideas from allowing team members to speak.",
+        "D. Rewarding preparation from requiring people to attend."
+      ],
+      "ans": "A",
+      "explain": "肯定應變不等於認可反覆臨時變動。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：交代清楚的工作交接",
+      "ans": "A CLEAR HANDOVER",
+      "speak": "a clear handover",
+      "vocabId": "R6:A CLEAR HANDOVER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：請把回覆數與出席人數分開",
+      "ans": "PLEASE KEEP THE REPLY COUNT SEPARATE FROM THE ATTENDANCE COUNT",
+      "speak": "please keep the reply count separate from the attendance count",
+      "vocabId": "R6:PLEASE KEEP THE REPLY COUNT SEPARATE FROM THE ATTENDANCE COUNT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：活動所需人員物品移動與安排工作（L 開頭，9 個字母）",
+      "ans": "LOGISTICS",
+      "speak": "logistics",
+      "vocabId": "R6:LOGISTICS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O V _ R _ I _ H T (因疏忽而遺漏或犯下的錯誤)",
+      "ans": "ESG",
+      "speak": "oversight",
+      "vocabId": "R6:OVERSIGHT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It belonged to my aunt before it came to me, though I cannot remember where she got it.",
+      "options": [
+        "A. 我知道阿姨買它的地點，卻不知現在屬於誰。",
+        "B. 這一直是我的，阿姨只曾暫時借用。",
+        "C. 我記得它曾屬阿姨，但確定不是她交給我的。",
+        "D. 這原屬阿姨後來給我，但我不記得她從哪取得。"
+      ],
+      "ans": "D",
+      "explain": "交代一段所有權沿革，對更早來源保留未知。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The collection began with one suitcase, and somehow the suitcase now takes up less room than everything we have added since.",
+      "options": [
+        "A. 收藏始於一只行李箱，如今後來新增的東西占空間更多。",
+        "B. 所有收藏現在仍能裝進最初那只行李箱。",
+        "C. 行李箱因後來縮小，所以看來比藏品小。",
+        "D. 說話者決定丟掉新增藏品，只留下行李箱。"
+      ],
+      "ans": "A",
+      "explain": "幽默敘述收藏擴增，未說縮小物件或決定丟棄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The letters are moving partly because they were never intended to explain a whole life to strangers.",
+      "options": [
+        "A. 說話者覺得私人信件不應含有任何生活細節。",
+        "B. 信件感人，部分因為它們本無意向陌生人解釋整個人生。",
+        "C. 信件原本專為陌生人寫完整傳記，所以令人感動。",
+        "D. 信件因所有字都會移動而難以閱讀。"
+      ],
+      "ans": "B",
+      "explain": "moving 在此感人；非公共完整自傳的片段感具有感染力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】You are welcome to take photographs, but please leave the flash off. What is permitted?",
+      "options": [
+        "A. Using the flash if no other visitor is nearby.",
+        "B. Taking pictures only of the written labels.",
+        "C. Borrowing a camera from any nearby visitor.",
+        "D. Taking pictures without using the flash."
+      ],
+      "ans": "D",
+      "explain": "明示允許拍照，限制在閃光燈，不加其他條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The guide showed us a drawer ___ with old tickets and letters.",
+      "options": [
+        "A. filled",
+        "B. filling",
+        "C. had filled",
+        "D. was filling"
+      ],
+      "ans": "A",
+      "explain": "drawer filled with ... 過去分詞作後置修飾，抽屜被裝滿。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A postcard says, We arrived safely, though our luggage has chosen a different holiday. What happened to the luggage?",
+      "options": [
+        "A. It was given to someone who wanted a holiday.",
+        "B. It did not arrive with the travellers.",
+        "C. It was deliberately sent ahead to the hotel.",
+        "D. It contained a second set of holiday tickets."
+      ],
+      "ans": "B",
+      "explain": "擬人化 chosen different holiday 幽默描述行李去了別處。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：家族代代相傳的物品",
+      "ans": "A FAMILY HEIRLOOM",
+      "speak": "a family heirloom",
+      "vocabId": "R6:A FAMILY HEIRLOOM"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：原件留樓上而遊客觸摸複本",
+      "ans": "THE ORIGINAL REMAINS UPSTAIRS WHILE VISITORS HANDLE THE COPY",
+      "speak": "the original remains upstairs while visitors handle the copy",
+      "vocabId": "R6:THE ORIGINAL REMAINS UPSTAIRS WHILE VISITORS HANDLE THE COPY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：因個人情感與回憶而珍重的（S 開頭，11 個字母）",
+      "ans": "SENTIMENTAL",
+      "speak": "sentimental",
+      "vocabId": "R6:SENTIMENTAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F _ A _ I _ E (容易破損而需小心處理的)",
+      "ans": "RGL",
+      "speak": "fragile",
+      "vocabId": "R6:FRAGILE"
     }
   ]
 }

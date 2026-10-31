@@ -14,6 +14,10 @@ const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 setBattleRandom(rand);
 const st = () => useBattleStore.getState();
 const PROFILES: Record<string, number> = { strong: 0.96, good: 0.9, average: 0.82, struggling: 0.72 };
+// SKILLS=1：能量滿就放技能；GROWTH=1：正常養成（攻擊 ×1.25、生命 ×1.2、受傷 −10%，約等於裝備＋轉職）
+const USE_SKILLS = process.env.SKILLS === '1';
+const GROWTH = process.env.GROWTH === '1';
+const grow = () => { if (!GROWTH) return; useBattleStore.setState(s => ({ party: s.party.map(m => ({ ...m, atk: Math.round(m.atk * 1.25), maxHp: Math.round(m.maxHp * 1.2), hp: Math.round(m.hp * 1.2) })), aidGuard: s.aidGuard * 0.9 })); };
 function setup(r: number, stage: number) {
   const lv = recommendedLevel(r, stage);
   useSaveStore.setState({ ...initialSave, character: DEFAULT_CHARACTER, heroes: ['knight', 'mage', 'castle', 'bard'], party: ['player', 'mage', 'castle', 'bard'], player: { level: lv, xp: 0, classPath: [] },
@@ -23,12 +27,18 @@ let m: Record<string, number> = {};
 const inc = (k: string, v = 1) => { m[k] = (m[k] ?? 0) + v; };
 function answer(base: number) {
   if (st().modChoice) st().chooseModSkill(st().modChoice![0]);
+  if (USE_SKILLS) {
+    const idx = st().party.findIndex(p => p.hp > 0 && p.energy >= p.energyMax);
+    if (idx >= 0) { st().requestSkill(idx); if (st().phase === 'casting') { st().confirmSkill(); inc('skills'); } if (st().phase !== 'answering') return; }
+  }
   const s0 = st();
   const q = s0.question!;
   const inMap = (s0.stageIdx % MAP_SIZE) / MAP_SIZE;
   const acc = Math.max(0.3, base - 0.06 * (questionDifficulty(q) - 1) - (s0.isBossQuestion ? 0.05 : 0) - 0.04 * inMap);
   const ok = rand() < acc;
-  st().tick(ok ? (rand() < 0.5 ? 3000 : 7000) : (rand() < 0.15 ? 21000 : 8000));
+  const ms = ok ? (rand() < 0.5 ? 3000 : 7000) : (rand() < 0.15 ? 21000 : 8000);
+  inc('ms', ms + 2500); // 每題另加約 2.5 秒動畫與看解說
+  st().tick(ms);
   if (st().phase !== 'answering') { inc('timeout'); return; }
   inc('answers');
   if (s0.executing && !s0.bonusRound) inc('stuckAnswers'); // 怪物已 0 血還被題數卡住
@@ -44,7 +54,7 @@ function answer(base: number) {
   else { st().inputLetter('Q'); st().submitTyped(); }
 }
 function run(r: number, from: number, to: number, base: number) {
-  setup(r, from); useUiStore.setState({ celebrations: [] }); st().startLevel(LEVELS[r], undefined, from);
+  setup(r, from); useUiStore.setState({ celebrations: [] }); st().startLevel(LEVELS[r], undefined, from); grow();
   const first: Record<number, boolean> = {}; const tries: Record<number, number> = {};
   for (let i = 0; i < 8000; i++) {
     useUiStore.setState({ celebrations: [] });
@@ -56,7 +66,7 @@ function run(r: number, from: number, to: number, base: number) {
     else if (s.phase === 'gameOver') {
       first[s.stageIdx] ??= false; tries[s.stageIdx] = (tries[s.stageIdx] ?? 1) + 1; inc('fails');
       if (tries[s.stageIdx] > 8) { inc('stuck'); return { first, tries }; }
-      setup(r, s.stageIdx); st().startLevel(LEVELS[r], undefined, s.stageIdx);
+      setup(r, s.stageIdx); st().startLevel(LEVELS[r], undefined, s.stageIdx); grow();
     } else if (s.phase === 'monsterDown' || s.phase === 'summary' || s.phase === 'levelClear') {
       first[s.stageIdx] ??= true; inc('maxCombo', 0); m.maxCombo = Math.max(m.maxCombo, s.maxCombo);
       if (s.stageIdx >= to || s.phase === 'levelClear') return { first, tries };
@@ -81,6 +91,6 @@ for (const name of (process.env.PROFILES ?? 'strong,good,average,struggling').sp
     for (let k = 0; k < 3; k++) { const last = regionStageCount(r) - 1; const res = run(r, last, last, base); add("final", res.first[last] ?? false, res.tries[last] ?? (res.first[last] ? 1 : 9)); }
     const pct = (k: string) => agg[k] ? `${k} ${Math.round(100 * agg[k].w / agg[k].n)}%/${(agg[k].t / agg[k].n).toFixed(1)}次` : '';
     const avgCombo = m.comboN ? m.comboSum / m.comboN : 0;
-    console.log(`r${r} ${['normal', 'elite', 'gate', 'boss', 'final'].map(pct).join(' ')} | 作答${m.answers} 失敗${m.fails ?? 0} 卡關${m.stuck ?? 0} 被題數卡住${Math.round(100 * (m.stuckAnswers ?? 0) / m.answers)}% 處決${m.slain ?? 0} 平均combo${Math.round(avgCombo)}（×${comboMultiplier(avgCombo).toFixed(1)}） 最高combo${m.maxCombo}`);
+    console.log(`r${r} ${['normal', 'elite', 'gate', 'boss', 'final'].map(pct).join(' ')} | 作答${m.answers} 失敗${m.fails ?? 0} 卡關${m.stuck ?? 0} 被題數卡住${Math.round(100 * (m.stuckAnswers ?? 0) / m.answers)}% 處決${m.slain ?? 0} 平均combo${Math.round(avgCombo)}（×${comboMultiplier(avgCombo).toFixed(1)}） 最高combo${m.maxCombo} 每張地圖約${Math.round((m.ms ?? 0) / 60000 / 4)}分鐘${USE_SKILLS ? ` 技能${m.skills ?? 0}` : ''}`);
   }
 }

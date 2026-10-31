@@ -23,7 +23,7 @@ import { modStatus } from './bossMods';
 import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
 import { ultimateEchoes, ultimateName, ultimateTier } from './ultimates';
-import { FOE_SKILLS, SEAL_BREAK_COMBO } from './bossSkills';
+import { FOE_SKILLS, SEAL_BREAK_COMBO, SEAL_BREAK_TOTAL } from './bossSkills';
 import { playUltimate } from './ultimateFx';
 import { sfx } from './sfx';
 
@@ -261,7 +261,7 @@ export default class MainScene extends Phaser.Scene {
       const f = this.fighters.find(x => x.id === m.id);
       if (!f) return;
       this.setDown(f, m.hp <= 0);
-      const ready = skillReady(m) && (s.phase === 'answering' || s.phase === 'casting') && !s.sealed;
+      const ready = skillReady(m) && (s.phase === 'answering' || s.phase === 'casting') && !(s.sealed && (!s.sealTarget || m.id === s.sealTarget));
       f.sprite.input!.cursor = ready ? 'pointer' : 'default';
     });
     this.helper.setVisible(s.assistSource === 'helper' || (s.shield && s.assist !== null));
@@ -855,7 +855,7 @@ export default class MainScene extends Phaser.Scene {
       s.waves > 1 && `第 ${s.wave}/${s.waves} 隻`,
       s.frostLeft > 0 && `❄️ 極寒 ${s.frostLeft}`, s.mirageLeft > 0 && `🏜️ 分身 ${s.mirageLeft}`,
       s.bombLeft > 0 && `💣 炸彈 ${s.bombLeft}`, s.staticStacks > 0 && `⚡ 靜電 ×${s.staticStacks}`,
-      s.sealed && `🔇 技能封印（連對 ${s.streak}/${SEAL_BREAK_COMBO}）`,
+      s.sealed && s.bossSkill === 'seal' && `🔇 封印（連對 ${s.streak}/${SEAL_BREAK_COMBO} 或累計 ${s.sealHits}/${SEAL_BREAK_TOTAL}）`,
       s.foeSkill && (() => { const foe = FOE_SKILLS.find(f => f.id === s.foeSkill); return foe ? `${foe.icon} ${foe.name}` : ''; })(),
       s.stunned && `🪨 ${s.party.find(m => m.id === s.stunned?.member)?.name ?? ''} 被震飛`,
       s.blessed && '✨ 祝福中',

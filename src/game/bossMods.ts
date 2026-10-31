@@ -159,7 +159,8 @@ export interface ModAnswer {
   streak: number;         // 答完這題後的真實連對數
 }
 // 戰況（作答之後）
-export interface ModBattle { hpRatio: number; answers: number; executing: boolean; levelIdx: number }
+// charging：魔王的炸彈正在倒數（限時追擊不同時蓄力）
+export interface ModBattle { hpRatio: number; answers: number; executing: boolean; levelIdx: number; charging?: boolean }
 
 // 作答後的效果，由 battleStore 套用
 export interface ModEffects {
@@ -276,7 +277,7 @@ export function afterAnswer(mods: ModState[], a: ModAnswer, b: ModBattle, ctx: M
       : m.id === 'M03' ? b.hpRatio <= 0.7
       : m.id === 'M04' ? b.hpRatio <= 0.4
       : m.id === 'M05' || m.id === 'M08' ? b.hpRatio <= 0.6
-      : m.id === 'M06' ? b.answers >= 5
+      : m.id === 'M06' ? b.answers >= 5 && !b.charging
       : m.id === 'M09' ? !a.correct
       : m.id === 'M10' ? b.hpRatio <= 0.5
       : false;

@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import type { Question, QuestionSkill, Stage } from '../game/types';
 import {
   BOMB_DAMAGE, BOMB_QUESTIONS, FROST_BLOCK_COMBO, FROST_LIMIT, FROST_QUESTIONS, MIRAGE_QUESTIONS, QUAKE_QUESTIONS, REGROW_BLOCK_COMBO, REGROW_HEAL,
-  SEAL_BREAK_COMBO, STATIC_STEP, bossSkillFor,
+  SEAL_BREAK_COMBO, SEAL_BREAK_TOTAL, STATIC_STEP, bossSkillFor,
   BERSERK_FOE_MULT, HARD_SHELL_DAMAGE, REFRACTION_DAMAGE, TIME_THIEF_MS, VAMPIRE_HEAL, foeSkillFor, refractionImmune,
 } from '../game/bossSkills';
 import type { BossSkillId, FoeSkillId } from '../game/bossSkills';
@@ -42,7 +42,7 @@ import { allowedTypes, gaugeScale, minAnswers, stageInMap, stageRole, startWaves
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
-import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, chooseReflect, modDamageMult, modGaugeMult, modPreference, modSealed, modsFor, skillName, startMods } from '../game/bossMods';
+import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, isActive, chooseReflect, modDamageMult, modGaugeMult, modPreference, modSealed, modsFor, skillName, startMods } from '../game/bossMods';
 import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods';
 import { grammarName, primaryGrammar } from '../game/grammar';
 import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
@@ -179,7 +179,9 @@ interface BattleState {
   stunned: { member: MemberId; left: number } | null; // 大地碎裂：被震飛的隊員
   staticStacks: number; // 靜電標記：連續答錯幾次
   bombLeft: number;    // 灰燼炸彈：倒數
-  sealed: boolean;     // 全知封印：技能被封印
+  sealed: boolean;     // 全知封印／技能封印：隊長的技能被封印
+  sealTarget: MemberId | null; // 被封印的隊員（第九輪：只封一個人的技能）
+  sealHits: number;    // 全知封印：累計答對幾題
   foeSkill: FoeSkillId | null; // 守門頭目／菁英怪的技能
   mods: ModState[];     // 首領的機制模組 M01～M11（見 game/bossMods.ts）
   modChoice: QuestionSkill[] | null; // M05 題型反射：等玩家選題型
@@ -383,7 +385,7 @@ const withSpring = (party: Member[]) => party.map(m => ({ ...m, energy: Math.min
 
 const bossSkillState = (bossSkill: BossSkillId | null) => ({
   bossSkill, bossCast: null, frostLeft: 0, blind: false, mirageLeft: 0, mirageStreak: 0, stunned: null,
-  staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal', foeSkill: null as FoeSkillId | null,
+  staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal', sealTarget: null as MemberId | null, sealHits: 0, foeSkill: null as FoeSkillId | null,
   mods: [] as ModState[], modChoice: null,
 });
 
@@ -522,6 +524,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       casting: null,
       event: nextEvent('stage'),
     });
+    // 技能封印只封隊長一個人
+    if (get().sealed && !get().sealTarget) set({ sealTarget: get().party[Math.max(0, leaderIndex(get().party))]?.id ?? null });
     // 新手 1-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次
     if (s.mode === 'normal' && s.levelIdx === 0 && stageIdx === ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill')) {
       const party = get().party;
@@ -563,6 +567,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         if (s.streak >= FROST_BLOCK_COMBO) return { ...left, bossCast: cast(`${head}，被連續答對的熱能抵消了！`) };
         return { ...left, frostLeft: FROST_QUESTIONS, bossCast: cast(`${head}：答題時間只剩 ${FROST_LIMIT / 1000} 秒`) };
       case 'bomb':
+        // 限時追擊（M06）蓄力中不丟炸彈：兩個倒數不同時進行
+        if (isActive(s.mods, 'M06')) return left;
         return { ...left, bombLeft: BOMB_QUESTIONS, bossCast: cast(`${head}：${BOMB_QUESTIONS} 題內不能答錯！`) };
       default:
         return left;
@@ -788,7 +794,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const r = afterAnswer(s.mods, {
       correct, skill: questionSkill(q), grammar: primaryGrammar(q), streak: b.streak,
       fast: correct && b.elapsed <= (CHASE_FAST_MS[q.type] ?? 8000),
-    }, { hpRatio: b.hpRatio, answers: b.answers, executing: b.executing, levelIdx: s.levelIdx }, modEnv, grammarName);
+    }, { hpRatio: b.hpRatio, answers: b.answers, executing: b.executing, levelIdx: s.levelIdx, charging: s.bombLeft > 0 }, modEnv, grammarName);
     set({ mods: r.mods, ...(r.fx.choice ? { modChoice: r.fx.choice } : {}), ...(b.executing ? { modChoice: null } : {}) });
     return { ...r.fx, mods: r.mods };
   };
@@ -831,7 +837,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       Object.assign(patch, { bombLeft }, bombLeft === 0 ? { charge: 3, bossCast: cast('💣 炸彈反丟回去！下一擊 ×3') } : {});
     }
     if (s.stunned && chained) Object.assign(patch, { stunned: null, bossCast: cast('🔗 連攜攻擊把隊友拉回來了！') });
-    if (s.sealed && streak >= SEAL_BREAK_COMBO) Object.assign(patch, { sealed: false, charge: 2, bossCast: cast('🔓 封印解除！Fever：下一擊 ×2') });
+    if (s.bossSkill === 'seal' && s.sealed) {
+      const sealHits = s.sealHits + 1;
+      Object.assign(patch, streak >= SEAL_BREAK_COMBO || sealHits >= SEAL_BREAK_TOTAL
+        ? { sealed: false, sealHits, charge: 2, bossCast: cast('🔓 封印解除！Fever：下一擊 ×2') }
+        : { sealHits });
+    }
     return patch;
   };
 
@@ -1422,7 +1433,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     requestSkill: (memberIdx) => {
       const s = get();
       const m = s.party[memberIdx];
-      if (s.phase !== 'answering' || !m || !skillReady(m) || s.sealed) return;
+      if (s.phase !== 'answering' || !m || !skillReady(m) || (s.sealed && (!s.sealTarget || m.id === s.sealTarget))) return;
       set({ phase: 'casting', casting: memberIdx, phaseLeft: 0 });
     },
 

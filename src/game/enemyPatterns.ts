@@ -56,15 +56,17 @@ export const REGION_BOSS_PATTERNS: EnemyPattern[] = [
   { speed: 8, moves: [m('fist', '🪨', '岩拳', 'single', 1.3), m('rocks', '☄️', '落石', 'aoe', 0.6), m('rage', '📢', '怒吼', 'aoe', 0.2, { weaken: 0.3 })] },
   { speed: 7.5, moves: [m('frostbreath', '❄️', '冰息', 'aoe', 0.6, { slow: 3000 }), m('claw', '🐾', '冰爪', 'multi', 0.6, { hits: 3 }), m('bite', '🦷', '寒霜之咬', 'single', 1.3)] },
   { speed: 7, moves: [m('bolt', '⚡', '雷擊', 'single', 1.3), m('storm', '🌩️', '雷暴', 'aoe', 0.6, { sapEnergy: 1 }), m('peck', '🪶', '疾風連啄', 'multi', 0.5, { hits: 4 })] },
-  { speed: 7, moves: [m('flame', '🔥', '烈焰斬', 'single', 1.4), m('lava', '🌋', '熔岩雨', 'aoe', 0.7, { poison: 0.04 }), m('hellfire', '☀️', '業火', 'single', 1.6)] },
-  { speed: 6.5, moves: [m('shadow', '🗡️', '暗影斬', 'single', 1.4), m('silence', '🔇', '靜默波動', 'aoe', 0.6, { sapEnergy: 2 }), m('abyss', '🌑', '深淵連斬', 'multi', 0.6, { hits: 4 }), m('end', '💀', '終焉', 'aoe', 1)] },
+  // C1 炎魔、C2 沉默君王：第九輪再放慢 20%（後期魔王戰大部分傷害來自行動條）
+  { speed: 8.75, moves: [m('flame', '🔥', '烈焰斬', 'single', 1.4), m('lava', '🌋', '熔岩雨', 'aoe', 0.7, { poison: 0.04 }), m('hellfire', '☀️', '業火', 'single', 1.6)] },
+  { speed: 8.1, moves: [m('shadow', '🗡️', '暗影斬', 'single', 1.4), m('silence', '🔇', '靜默波動', 'aoe', 0.6, { sapEnergy: 2 }), m('abyss', '🌑', '深淵連斬', 'multi', 0.6, { hits: 4 }), m('end', '💀', '終焉', 'aoe', 1)] },
 ];
 
 // 出手頻率（行動條集滿的秒數 = 怪物基準 × 區域 × 強度）：
 // 區域：A1 很久才主動攻擊一次（主要還是答錯才反擊），之後一區比一區快，C2 最快。
 // 強度：越強的怪物行動條越快——一般怪 ×1、菁英 ×0.85（傷害 +20%）、小 BOSS ×0.9、大 BOSS ×0.85；區域魔王用自己的專屬頻率
 // 第六輪：B1+～B2+ 再放慢 10%、C1～C2 放慢 15%（手機玩家要讀題、聽音檔，不能在作答途中被打太多下）
-export const REGION_GAUGE = [2.5, 1.8, 1.3, 1.1, 1.11, 1.0, 0.89, 0.85, 0.76];
+// 第九輪（正確率 90% 就要能過關）：模擬發現後期八成以上的傷害來自行動條，答得再好也被時間耗死，B1 以後再放慢
+export const REGION_GAUGE = [2.5, 1.8, 1.3, 1.2, 1.2, 1.15, 1.1, 1.05, 1.0];
 export const KIND_GAUGE = { normal: 1, elite: 0.85, gate: 0.9, boss: 0.85, final: 1 } as const;
 export type GaugeKind = keyof typeof KIND_GAUGE;
 export function gaugeSeconds(pattern: EnemyPattern, levelIdx: number, kind: GaugeKind = 'normal'): number {
@@ -76,8 +78,8 @@ export const ELITE_POWER = 1.2;
 export const monkHeal = (power: number) => 0.04 + 0.03 * Math.max(0, power - 1);
 
 // 答對打中：行動條往後退；3 秒內答對（快答）退更多
-export const STAGGER = 0.15;
-export const FAST_STAGGER = 0.3;
+export const STAGGER = 0.2;
+export const FAST_STAGGER = 0.35;
 export const POISON_TURNS = 3;
 export const WEAKEN_TURNS = 2;
 // 行動條超過這個比例時，顯示下一招的名稱

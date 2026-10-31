@@ -105,6 +105,8 @@ npm run validate:questions   # 題庫格式檢查
 
 **2026-10-31 第四批（Mac）**：文法標籤（`src/game/grammar.ts`、`scripts/tag-grammar.ts`；A1 核心十個考點各 ≥ 6 題，封印加上文法條件）、BOSS 機制模組 M01～M12（`src/game/bossMods.ts`，照 ChatGPT 第八輪分配表）。規格在 `docs/STAGE_PLAN.md` 第 10、11 節。新題目要標文法時：`npx tsx scripts/tag-grammar.ts --region N --write`，逐題確認後把 `grammarReview` 從 pending 改成 approved（或 rejected）。
 
+**2026-10-31 第五批（Mac）**：戰鬥平衡 v0.9——正確率 90%、不穿裝備就能過關；裝備與轉職是讓英文差一點的玩家也能過的加分。怪物基準、行動條、後期首領、炎魔炸彈、沉默君王封印都有調整，模擬結果在 `docs/STAGE_PLAN.md` 第 12 節。
+
 ## 下一步（照順序）
 1. commit 行動條系統（如果還沒）。
 2. 請 Gemini（Pro）審查整套敵我攻擊機制，調數值：出手頻率、傷害、僧侶治療量、技能使用率、緊張感但不會一下就輸。改完跑測試並本地實玩。

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
+import { FAST_STAGGER } from '../game/enemyPatterns';
 import { REVENGE_MAX_QUESTIONS, RUNE_GOLD, setBattleRandom, useBattleStore } from './battleStore';
 import { dueMistakes, initialSave, migrateSave, useSaveStore } from './saveStore';
 import { LEVELS } from '../game/QuestionData';
@@ -683,7 +684,7 @@ describe('enemy attack patterns (action gauge)', () => {
     startAt(4);
     useBattleStore.setState({ enemyGauge: 0.6, monsterHp: 1e9, monsterMaxHp: 1e9 });
     answerCurrent(); // 測試裡作答時間是 0，算快答
-    expect(state().enemyGauge).toBeCloseTo(0.3);
+    expect(state().enemyGauge).toBeCloseTo(0.6 - FAST_STAGGER);
   });
 
   it('region bosses use their own move list, and a shield blocks a whole move', () => {

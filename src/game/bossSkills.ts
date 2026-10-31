@@ -22,8 +22,8 @@ export const BOSS_SKILLS: BossSkillDef[] = [
   { id: 'quake', boss: '狂暴龍岩', icon: '🪨', name: '大地碎裂', every: 4, desc: '震飛一名隊員，接下來 2 題不能出手', counter: '觸發連攜攻擊可以把隊友拉回來' },
   { id: 'frost', boss: '冰霜巨龍', icon: '❄️', name: '極寒領域', every: 5, desc: '接下來 3 題的答題時間只剩 8 秒', counter: '連續答對 12 題以上的熱能可以抵消寒氣' },
   { id: 'static', boss: '雷暴獅鷲', icon: '⚡', name: '靜電標記', every: 0, desc: '連續答錯時，受到的傷害一次比一次高', counter: '答對就清除靜電；帶補師撐住' },
-  { id: 'bomb', boss: '炎魔之王', icon: '💣', name: '灰燼炸彈', every: 5, desc: '倒數 3 題，期間答錯一題炸彈就會爆炸傷害全隊', counter: '3 題全對可以把炸彈反丟回去（下一擊 ×3）' },
-  { id: 'seal', boss: '沉默君王', icon: '🔇', name: '全知封印', every: 0, desc: '封印全隊的技能', counter: '連續答對 20 題解除封印並進入 Fever（下一擊 ×2）' },
+  { id: 'bomb', boss: '炎魔之王', icon: '💣', name: '灰燼炸彈', every: 5, desc: '倒數 4 題，期間答錯一題炸彈就會爆炸傷害全隊', counter: '4 題全對可以把炸彈反丟回去（下一擊 ×3）' },
+  { id: 'seal', boss: '沉默君王', icon: '🔇', name: '全知封印', every: 0, desc: '封印隊長的技能', counter: '連續答對 6 題，或累計答對 10 題，解除封印並進入 Fever（下一擊 ×2）' },
 ];
 
 export const bossSkillFor = (levelIdx: number): BossSkillDef => BOSS_SKILLS[Math.min(Math.max(0, levelIdx), BOSS_SKILLS.length - 1)];
@@ -37,9 +37,11 @@ export const FROST_BLOCK_COMBO = 12;
 export const MIRAGE_QUESTIONS = 2;
 export const QUAKE_QUESTIONS = 2;
 export const STATIC_STEP = 0.7;   // 每多一次連續答錯，受到的傷害 +70%
-export const BOMB_QUESTIONS = 3;
-export const BOMB_DAMAGE = 0.3;   // 爆炸：全隊各扣最大生命 30%
-export const SEAL_BREAK_COMBO = 20;
+// 第九輪（ChatGPT）：炸彈倒數 3 → 4 題、傷害 30% → 20%；封印 20 連對 → 6 連對或累計 10 題（90% 的玩家連對 20 題的機率只有 12%）
+export const BOMB_QUESTIONS = 4;
+export const BOMB_DAMAGE = 0.2;   // 爆炸：全隊各扣最大生命 20%
+export const SEAL_BREAK_COMBO = 6;
+export const SEAL_BREAK_TOTAL = 10;
 
 // ---------- 守門頭目與菁英怪的共用技能（每隻抽一招，依關卡固定） ----------
 export type FoeSkillId = 'timeThief' | 'hardShell' | 'berserkFoe' | 'refraction' | 'vampire';

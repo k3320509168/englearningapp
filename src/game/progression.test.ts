@@ -71,21 +71,23 @@ describe('monsters', () => {
       for (let st = 1; st < n; st++) expect(monsterMaxHp(st, r, false)).toBeGreaterThanOrEqual(monsterMaxHp(st - 1, r, false));
       if (r > 0) expect(monsterMaxHp(0, r, false) / monsterMaxHp(regionStageCount(r - 1) - 1, r - 1, false)).toBeLessThan(1.08);
     }
-    // 最後一區（C2）的最後一關：沒升級時約要 20 題以上的傷害
-    expect(monsterMaxHp(49, 8, false) / BASE_DAMAGE).toBeGreaterThan(20);
+    // 最後一區（C2）的最後一關：沒升級時約要 10 題以上的傷害（第九輪：怪物以裝備跟上一半的英雄為基準）
+    expect(monsterMaxHp(49, 8, false) / BASE_DAMAGE).toBeGreaterThan(10);
   });
 
-  it('are based on a hero of the same level, a bit stronger in later regions', () => {
+  it('are based on a hero of the same level whose gear is half caught up (round 9)', () => {
     expect(monsterMaxHp(0, 0, false)).toBe(BASE_DAMAGE * HITS_TO_KILL.normal);
     const lv = monsterLevel(5, 0);
-    expect(monsterAttack(false, 5, 0) / 20).toBeGreaterThan(heroScale(lv, 5));
+    // 比沒裝備的同等級英雄強、比裝備全部跟上的英雄弱：裝備是加分，不是必備
+    expect(monsterAttack(false, 5, 0) / 20).toBeGreaterThan(heroScale(lv, 0));
+    expect(monsterAttack(false, 5, 0) / 20).toBeLessThan(heroScale(lv, 5));
     expect(monsterAttack(false, 5, 0, 'final')).toBeGreaterThan(monsterAttack(false, 5, 0, 'elite'));
   });
 
   it('hit harder in later regions', () => {
     expect(monsterAttack(false, 0, 0)).toBe(20);
     expect(monsterAttack(true, 0, 0)).toBe(30);
-    expect(monsterAttack(false, 8, 49)).toBeGreaterThan(150);
+    expect(monsterAttack(false, 8, 49)).toBeGreaterThan(80);
   });
 
   it('have an element; revenge bosses are dark', () => {

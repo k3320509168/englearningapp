@@ -231,10 +231,13 @@ export function computeDamage(d: DamageInput): number {
 // 怪物的數值以「同等級英雄」為基底：英雄每級 +3%、裝備每區約 +12%（和遊戲裡加總能力的方式一樣）；
 // 怪物用自己的等級（菁英 +2、守門頭目 +3、區域魔王 +5）套同一個公式，再乘上「比單一英雄更強一點」的係數，
 // 這個係數每區 +8%：A1、A2 和英雄差不多，越後面越需要 combo、轉職、天賦和技能才打得動。
+// 第九輪平衡（製作人：正確率 90% 以上、combo 接得好，就要能過關）：怪物改以「推薦等級、裝備只跟上一半」的英雄為基準，
+// 每區的「更強一點」係數也降低。裝備、轉職、天賦是讓英文還不夠好的玩家也能過關的加分，不是必備
 export const HITS_TO_KILL = { normal: 3, boss: 14 };
 export const HERO_LEVEL_STAT = 0.03;
 export const EQUIP_PER_REGION = 0.12;
-export const MONSTER_EDGE = 1.08;
+export const MONSTER_GEAR_SHARE = 0.5;
+export const MONSTER_EDGE = 1;
 export type FoeKind = 'elite' | 'gate' | 'boss' | 'final';
 
 // 推薦等級、跟上裝備的英雄，能力是 Lv 1 的幾倍（progress = 區域 + 區內進度，例如 B1 中段 = 3.5）
@@ -244,7 +247,7 @@ export const regionProgress = (levelIdx: number, stageIdx: number) => levelIdx +
 
 export function monsterGrowth(stageIdx: number, levelIdx: number, kind?: FoeKind): number {
   const progress = regionProgress(levelIdx, stageIdx);
-  return heroScale(monsterLevel(levelIdx, stageIdx, kind), progress) * MONSTER_EDGE ** progress;
+  return (1 + HERO_LEVEL_STAT * (monsterLevel(levelIdx, stageIdx, kind) - 1) + EQUIP_PER_REGION * progress * MONSTER_GEAR_SHARE) * MONSTER_EDGE ** progress;
 }
 
 // ---------- 關卡長度、首領、祝福（第四輪與 Gemini、第五輪與 ChatGPT 討論後定案） ----------
@@ -264,11 +267,12 @@ export const BOSS_HITS = { gate: 12, boss: 16, final: 22 };
 export type BossRole = keyof typeof BOSS_HITS;
 export const bossReferenceCombo = (levelIdx: number, role: BossRole) => {
   const full = REGION_BOSS_COMBO[Math.min(levelIdx, REGION_BOSS_COMBO.length - 1)];
-  return Math.round(full * (role === 'final' ? 1 : role === 'boss' ? 0.8 : 0.6));
+  // 區域魔王是新的一張地圖，從 0 combo 開打，所以參考 combo 比大 BOSS 低（第九輪）
+  return Math.round(full * (role === 'final' ? 0.8 : role === 'boss' ? 0.8 : 0.6));
 };
 // 大 BOSS 平衡（第六輪：模擬發現答對率較低的玩家在 B1+ 以後的大 BOSS 突然撞牆）：
 // 大 BOSS 與區域魔王的血量與攻擊照下表打折，小 BOSS 只打一半的折扣。一般怪不變
-const BOSS_HP_SCALE = [1, 1, 0.95, 0.92, 0.88, 0.9, 0.9, 0.9, 0.88];
+const BOSS_HP_SCALE = [1, 1, 0.95, 0.92, 0.88, 0.9, 0.82, 0.8, 0.78];
 const BOSS_ATK_SCALE = [1, 1, 0.95, 0.9, 0.85, 0.88, 0.88, 0.85, 0.82];
 const regionScale = (table: number[], levelIdx: number, role: BossRole) => {
   const v = table[Math.min(Math.max(0, levelIdx), table.length - 1)];

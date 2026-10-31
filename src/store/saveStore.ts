@@ -375,7 +375,8 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     .map(([key, m]) => [key, { ...m, box: m.box ?? 0, dueAt: m.dueAt ?? m.lastWrongAt ?? 0 }]));
   migrated.codex = Object.fromEntries(Object.entries(migrated.codex).filter(([, c]) => isPlainObject(c) && isPlainObject(c.question)));
   migrated.knowledge = Object.fromEntries(Object.entries(migrated.knowledge)
-    .filter(([, r]) => isPlainObject(r) && Array.isArray(r.wins) && r.wins.every(Number.isFinite) && Number.isFinite(r.dueAt)));
+    .filter(([, r]) => isPlainObject(r) && Array.isArray(r.wins) && r.wins.every(Number.isFinite) && Number.isFinite(r.dueAt)
+      && (r.items === undefined || (Array.isArray(r.items) && r.items.every(i => typeof i === 'string')))));
   // v17 之前沒有知識點：圖鑑裡答對過的都算「已學」（第一次見到的時間算一次成功）；已開放的區域視為打倒過魔王
   if (version >= 1 && version < 17) {
     for (const c of Object.values(migrated.codex)) {
@@ -493,7 +494,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             else mistakes[key] = { ...prev, box, dueAt: now + SRS_INTERVALS[box + 1] };
           }
           const kKey = knowledgeKey(q);
-          const k = updateKnowledge(s.knowledge[kKey], correct, counted, now);
+          const k = updateKnowledge(s.knowledge[kKey], correct, counted, now, kKey.startsWith('g:') ? key : undefined);
           crossDay = !!k?.crossDay;
           return { codex, mistakes, ...(k ? { knowledge: { ...s.knowledge, [kKey]: k.rec } } : {}) };
         });

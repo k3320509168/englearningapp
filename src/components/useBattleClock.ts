@@ -14,7 +14,8 @@ export function useBattleClock() {
       const dt = now - last;
       last = now;
       const ui = useUiStore.getState();
-      if (document.hidden || ui.modal || ui.studyWord || ui.hintOpen || ui.retreatAsk || ui.celebrations[0]?.blocking) return;
+      // 首領的題型反射（M05）等玩家選題型時也暫停
+      if (document.hidden || ui.modal || ui.studyWord || ui.hintOpen || ui.retreatAsk || ui.celebrations[0]?.blocking || useBattleStore.getState().modChoice) return;
       // 電腦休眠等極端情況，最多只算 1 秒
       useBattleStore.getState().tick(Math.min(1000, dt));
     }, TICK_MS);

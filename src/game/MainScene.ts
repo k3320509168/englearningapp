@@ -19,6 +19,7 @@ import { useSaveStore } from '../store/saveStore';
 import { materialIcon } from './equipment';
 import type { MonsterKind } from './art/sprites';
 import { BG_LAYERS, GROUND_Y, bgKey, registerBackground, themeName } from './art/backgrounds';
+import { modStatus } from './bossMods';
 import { PixelBar, afterimage, burst, gather, hitStop, labelStyle, lightning, numStyle, pillar, popText, reducedMotion, screenFlash, shake, shockwave, slashArc, slowMo, textStyle } from './fx';
 import { chargeColor, comboFx, hitPitch } from './comboFx';
 import { ultimateEchoes, ultimateName, ultimateTier } from './ultimates';
@@ -845,6 +846,8 @@ export default class MainScene extends Phaser.Scene {
   // 怪物血條下方的狀態：這一關的答題進度、一般關第幾隻、首領技能、祝福
   private stageStatus(s: State): string {
     const progress = s.minAnswers > 0 ? `題 ${Math.min(s.stageAnswers, s.minAnswers)}/${s.minAnswers}` : '';
+    // 終結連擊：最後一題要答對才處決（M12）
+    if (s.executing && s.stageAnswers === s.minAnswers - 1) return `⚔️ 終結題！答對就處決  ${progress}`;
     if (s.executing && s.stageAnswers < s.minAnswers) return `⚔️ 終結連擊  ${progress}`;
     if (s.executing || s.phase === 'monsterDown' || s.phase === 'summary' || s.phase === 'levelClear') return progress && `✔ ${progress}`;
     const status = [
@@ -856,6 +859,7 @@ export default class MainScene extends Phaser.Scene {
       s.foeSkill && (() => { const foe = FOE_SKILLS.find(f => f.id === s.foeSkill); return foe ? `${foe.icon} ${foe.name}` : ''; })(),
       s.stunned && `🪨 ${s.party.find(m => m.id === s.stunned?.member)?.name ?? ''} 被震飛`,
       s.blessed && '✨ 祝福中',
+      ...s.mods.map(modStatus),
     ].filter(Boolean);
     return status.join('  ');
   }

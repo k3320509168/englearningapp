@@ -13,6 +13,7 @@ import { questionKey } from '../game/battle';
 import { loadBank } from '../game/questions/bank/loader';
 import type { Question, QuestionSkill } from '../game/types';
 import { keepFocus } from './keepFocus';
+import { grammarName } from '../game/grammar';
 
 const SKILL_LABEL: Record<QuestionSkill, string> = { listening: '🎧 聽', reading: '📖 讀', speaking: '🗣️ 說', writing: '✍️ 寫' };
 
@@ -121,10 +122,23 @@ export function SealPanel({ mastery }: { mastery: ReturnType<typeof regionMaster
   return (
     <section className={`seal-panel ${mastery.sealMet ? 'is-done' : ''}`}>
       <p className="summary-label">🔮 守門人的封印{mastery.sealMet ? '：已重建 ✔' : ''}</p>
-      <p>已學會 <b>{Math.min(mastery.learned, mastery.learnTarget)}</b> / {mastery.learnTarget}{bar(mastery.learned, mastery.learnTarget)}</p>
-      <p>跨日穩定 <b>{Math.min(mastery.stable, mastery.stableTarget)}</b> / {mastery.stableTarget}{bar(mastery.stable, mastery.stableTarget)}</p>
+      <p>單字已學會 <b>{Math.min(mastery.learned, mastery.learnTarget)}</b> / {mastery.learnTarget}{bar(mastery.learned, mastery.learnTarget)}</p>
+      <p>單字跨日穩定 <b>{Math.min(mastery.stable, mastery.stableTarget)}</b> / {mastery.stableTarget}{bar(mastery.stable, mastery.stableTarget)}</p>
+      {mastery.grammarTotal > 0 && (
+        <>
+          <p>文法已學會 <b>{mastery.grammarLearned}</b> / {mastery.grammarTotal}{bar(mastery.grammarLearned, mastery.grammarTotal)}</p>
+          <p>文法跨日穩定 <b>{Math.min(mastery.grammarStable, mastery.grammarStableTarget)}</b> / {mastery.grammarStableTarget}{bar(mastery.grammarStable, mastery.grammarStableTarget)}</p>
+          <ul className="grammar-chips" aria-label="核心文法">
+            {mastery.grammar.filter(g => g.counted).map(g => (
+              <li key={g.id} className={g.stable ? 'is-stable' : g.learned ? 'is-learned' : ''} title={g.stable ? '跨日穩定' : g.learned ? '已學會' : '還沒學會'}>
+                {g.stable ? '✔' : g.learned ? '◐' : '○'} {grammarName(g.id)}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       <p className="muted">
-        同一個字在三個不同的日子答對，才算「穩定」。{mastery.due > 0 ? `現在有 ${mastery.due} 個到期，打主線就會出現，答對就是封印能量 🔮。` : '今天的複習都做完了，明天再回來，到期的字會出現在主線裡。'}
+        同一個字（或文法）在三個不同的日子答對，才算「穩定」；文法還要答對至少兩道不同的題。{mastery.due > 0 ? `現在有 ${mastery.due} 個到期，打主線就會出現，答對就是封印能量 🔮。` : '今天的複習都做完了，明天再回來，到期的會出現在主線裡。'}
       </p>
     </section>
   );

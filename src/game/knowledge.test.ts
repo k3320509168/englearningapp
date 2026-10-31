@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { STABLE_GAP, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
+import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
 import type { KnowledgeRecord } from './knowledge';
 import { addBank, questionDifficulty, questionSkill } from './QuestionData';
 import r0 from './questions/bank/r0.json';
 import type { BankFile } from './questions/bank';
+import { autoGrammarTags } from './grammar';
+import type { Question } from './types';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 
 const HOUR = 60 * 60 * 1000;
@@ -111,5 +113,40 @@ describe('高標準試煉冷卻', () => {
     expect(strictTrialWait([0], HOUR)).toBe(0);
     expect(strictTrialWait([0, HOUR], 2 * HOUR)).toBe(DAY - 2 * HOUR);
     expect(strictTrialWait([0, HOUR], DAY)).toBe(0);
+  });
+});
+
+describe('文法知識點（第八輪）', () => {
+  const grammarQ = (desc: string): Question => ({ type: 'choice', skill: 'reading', desc, options: ['A. is', 'B. am', 'C. are', 'D. be'], ans: 'A', grammar: ['be_verb'], grammarReview: 'approved' });
+
+  it('已審核的文法題依主要考點記錄；待審的不算', () => {
+    expect(knowledgeKey(grammarQ('【生活文法】He ___ tall.'))).toBe('g:be_verb');
+    expect(knowledgeKey({ ...grammarQ('【生活文法】He ___ tall.'), grammarReview: 'pending' })).toMatch(/^q:/);
+  });
+
+  it('三天都答對同一題不算穩定，要至少 2 道不同的題', () => {
+    let rec: KnowledgeRecord | undefined;
+    for (const day of [0, 1, 2]) rec = updateKnowledge(rec, true, true, day * STABLE_GAP, 'same')?.rec ?? rec;
+    expect(rec!.wins).toHaveLength(3);
+    expect(isStable(rec)).toBe(false);
+    rec = updateKnowledge(rec, true, true, 2 * STABLE_GAP + HOUR, 'other')?.rec ?? rec;
+    expect(isStable(rec)).toBe(true);
+  });
+
+  it('A1 的十個核心文法都有至少 6 題，列入封印', () => {
+    addBank(0, r0 as BankFile);
+    const m = regionMastery(0, {}, Date.now());
+    expect(m.grammarTotal).toBe(10);
+    expect(m.grammarStableTarget).toBe(8);
+    expect(m.sealMet).toBe(false);
+  });
+
+  it('自動標籤：be 動詞、there is、can、第三人稱；字彙題不標', () => {
+    const tag = (desc: string, opts: string[], ans: string) => autoGrammarTags({ type: 'choice', desc, options: opts.map((o, i) => `${'ABCD'[i]}. ${o}`), ans });
+    expect(tag('【生活文法】She ___ a teacher.', ['is', 'am', 'are', 'be'], 'A')).toEqual(['be_verb']);
+    expect(tag('【生活文法】___ two cats.', ['There is', 'There are', 'It is', 'They'], 'B')).toEqual(['there_is_are']);
+    expect(tag('【生活文法】He ___ swim.', ['can', 'cans', 'is', 'do'], 'A')[0]).toBe('can_cannot');
+    expect(tag('【職場文法】She ___ every day.', ['work', 'works', 'working', 'is work'], 'B')).toEqual(['present_simple_3s']);
+    expect(tag('【短文理解】What is it?', ['A cat', 'A dog', 'A bird', 'A fish'], 'A')).toEqual([]);
   });
 });

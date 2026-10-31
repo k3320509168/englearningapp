@@ -52,7 +52,7 @@ Mac 相容性：遊戲本身、測試、`chat-batch.ts`、`review-batch.ts` 都�
 npm install
 npm run dev                  # 本地預覽 http://localhost:5173/englearningapp/
 npx tsc -b                   # 型別檢查
-npx vitest run               # 測試（目前 241 個全過）
+npx vitest run               # 測試（目前 255 個全過）
 npx eslint src --quiet
 npm run validate:questions   # 題庫格式檢查
 ```
@@ -102,6 +102,8 @@ npm run validate:questions   # 題庫格式檢查
 **2026-10-31 第二批（Mac）**：關卡改成每張 20 小關（1-15 小 BOSS、1-20 大 BOSS）＋獨立區域魔王、各區 5～9 張；最低答題數與終結連擊；取消連擊破甲與 combo 上限，streak 判三星／首領技能／金幣；新手第 1 張上手規格；大 BOSS 平衡、連敗援助、失敗診斷；發音卡死偵測與修正。規格與討論：`docs/STAGE_PLAN.md`（和 ChatGPT「ENG RPG遊戲」六輪討論）、`docs/GEMINI_DISCUSSION.md`。尚未做：知識點跨日排題、守門人封印與區域試煉、12 種 BOSS 機制模組。
 
 **2026-10-31 第三批（Mac）**：知識點追蹤與跨日排題（`src/game/knowledge.ts`，存檔 v17）、守門人封印＋區域試煉（打倒區域魔王後要通過試煉才開下一區，取代舊的「守門試煉 8/10」）、新手 1-4 技能／1-5 召喚引導、測驗的聽力題自動播放與口說題麥克風。修了一個舊 bug：新玩家沒有存檔時被當成舊玩家（`tutorialDone`、全部提示已看過），新手提示和第一次困難題 ×2 都不會出現。開發模式下 `window.__battle`／`__save`／`__ui` 可在主控台操作 store。eslint／vitest 已設定忽略 `._*`。細節見 `docs/STAGE_PLAN.md` 第 8 節。
+
+**2026-10-31 第四批（Mac）**：文法標籤（`src/game/grammar.ts`、`scripts/tag-grammar.ts`；A1 核心十個考點各 ≥ 6 題，封印加上文法條件）、BOSS 機制模組 M01～M12（`src/game/bossMods.ts`，照 ChatGPT 第八輪分配表）。規格在 `docs/STAGE_PLAN.md` 第 10、11 節。新題目要標文法時：`npx tsx scripts/tag-grammar.ts --region N --write`，逐題確認後把 `grammarReview` 從 pending 改成 approved（或 rejected）。
 
 ## 下一步（照順序）
 1. commit 行動條系統（如果還沒）。

@@ -5,7 +5,8 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { answerSlots, completedSentence, questionHint } from '../game/battle';
 import { vocabFor } from '../game/vocab';
-import type { Question } from '../game/types';
+import type { Question, QuestionSkill } from '../game/types';
+import { skillName } from '../game/bossMods';
 import { VOICE_WAIT_MS, createRecognizer, hasEnglishVoice, isSpeechRecognitionSupported, recognitionErrorText } from '../game/speech';
 import { spellingExtra } from '../game/questionHelp';
 import { HINTS, pickHint } from '../game/hints';
@@ -268,12 +269,30 @@ function ImeWarning() {
   return <p className="ime-warning" role="alert">⌨️ 偵測到中文輸入法（注音），英文字母打不進去。請按 <b>Shift</b> 或切換成英文輸入再作答。</p>;
 }
 
+// 首領的題型反射（M05）：選一種題型，答對那種題就把攻擊反射回去。選的時候計時暫停
+const SKILL_ICON: Record<QuestionSkill, string> = { listening: '🎧', reading: '📖', speaking: '🗣️', writing: '✍️' };
+function ReflectChoice() {
+  const choice = useBattleStore(s => s.modChoice);
+  if (!choice) return null;
+  return (
+    <div className="reflect-choice" role="group" aria-label="選擇反射的題型">
+      <span>🪞 <b>題型反射</b>：選一種題型，答對就把攻擊反射回去（計時暫停中）</span>
+      {choice.map(k => (
+        <button key={k} className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => useBattleStore.getState().chooseModSkill(k)}>
+          {SKILL_ICON[k]} {skillName(k)}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function AnswerPanel({ question }: { question: Question }) {
   return (
     <>
       <ImeWarning />
       <BattleHint question={question} />
       <AssistBanner question={question} />
+      <ReflectChoice />
       <BossQuestionTag />
       <QuestionCard question={question} />
       {(question.type === 'spell' || question.type === 'fill') && <TypingAnswer question={question} />}

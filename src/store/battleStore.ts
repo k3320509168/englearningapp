@@ -1,12 +1,12 @@
 import { create } from 'zustand';
-import type { Question, Stage } from '../game/types';
+import type { Question, QuestionSkill, Stage } from '../game/types';
 import {
   BOMB_DAMAGE, BOMB_QUESTIONS, FROST_BLOCK_COMBO, FROST_LIMIT, FROST_QUESTIONS, MIRAGE_QUESTIONS, QUAKE_QUESTIONS, REGROW_BLOCK_COMBO, REGROW_HEAL,
   SEAL_BREAK_COMBO, STATIC_STEP, bossSkillFor,
   BERSERK_FOE_MULT, HARD_SHELL_DAMAGE, REFRACTION_DAMAGE, TIME_THIEF_MS, VAMPIRE_HEAL, foeSkillFor, refractionImmune,
 } from '../game/bossSkills';
 import type { BossSkillId, FoeSkillId } from '../game/bossSkills';
-import { LEVELS, createDecks, generateStages } from '../game/QuestionData';
+import { LEVELS, createDecks, generateStages, getPool, questionSkill } from '../game/QuestionData';
 import type { Decks } from '../game/QuestionData';
 import {
   ASSIST_STREAK, BASE_DAMAGE, QUESTION_LIMIT, shuffleArray,
@@ -42,6 +42,9 @@ import { allowedTypes, gaugeScale, minAnswers, stageInMap, stageRole, startWaves
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
+import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, chooseReflect, modDamageMult, modGaugeMult, modPreference, modSealed, modsFor, skillName, startMods } from '../game/bossMods';
+import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods';
+import { grammarName, primaryGrammar } from '../game/grammar';
 import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
 import type { SkillBossId } from '../game/skillBosses';
 import {
@@ -178,6 +181,8 @@ interface BattleState {
   bombLeft: number;    // 灰燼炸彈：倒數
   sealed: boolean;     // 全知封印：技能被封印
   foeSkill: FoeSkillId | null; // 守門頭目／菁英怪的技能
+  mods: ModState[];     // 首領的機制模組 M01～M11（見 game/bossMods.ts）
+  modChoice: QuestionSkill[] | null; // M05 題型反射：等玩家選題型
   // 敵人攻擊模式（見 game/enemyPatterns.ts）
   monsterKind: MonsterKind;
   enemyGauge: number;   // 行動條 0～1，滿了就出招
@@ -203,6 +208,7 @@ interface BattleState {
   submitVoice: (transcripts: string | string[]) => void;
   continueAfterFeedback: () => void;
   requestSkill: (memberIdx: number) => void;
+  chooseModSkill: (skill: QuestionSkill) => void;
   confirmSkill: () => void;
   cancelSkill: () => void;
   consumeItem: (id: ItemId) => void;
@@ -378,7 +384,28 @@ const withSpring = (party: Member[]) => party.map(m => ({ ...m, energy: Math.min
 const bossSkillState = (bossSkill: BossSkillId | null) => ({
   bossSkill, bossCast: null, frostLeft: 0, blind: false, mirageLeft: 0, mirageStreak: 0, stunned: null,
   staticStacks: 0, bombLeft: 0, sealed: bossSkill === 'seal', foeSkill: null as FoeSkillId | null,
+  mods: [] as ModState[], modChoice: null,
 });
+
+// 首領模組的環境：這一區（這一關開放的題型）有哪些題型、哪些文法考點
+let modEnv: ModContext = { skills: [], grammarTags: [], rand: () => random() };
+function buildModEnv(levelKey: string, levelIdx: number, stageIdx: number) {
+  const types = allowedTypes(levelIdx, stageIdx);
+  const pool = getPool(levelKey);
+  const all = [...pool.normal, ...pool.boss].filter(q => !types || types.includes(q.type));
+  modEnv = {
+    skills: [...new Set(all.map(questionSkill))],
+    grammarTags: [...new Set(all.map(primaryGrammar).filter((g): g is string => !!g))],
+    rand: () => random(),
+  };
+  return all;
+}
+let modPool: Question[] = [];
+// 模組指定題型或文法考點時，下一題從這一區的題庫挑符合的
+function pickPreferred(pref: { skill?: QuestionSkill; tag?: string }, exclude: Question | null): Question | null {
+  const fit = modPool.filter(q => q !== exclude && (pref.tag ? primaryGrammar(q) === pref.tag : questionSkill(q) === pref.skill));
+  return fit.length ? fit[Math.floor(random() * fit.length)] : null;
+}
 let castSeq = 0;
 const cast = (text: string) => ({ seq: ++castSeq, text });
 
@@ -415,18 +442,25 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const aidGuard = fails >= AID_GUARD_AFTER ? AID_GUARD : 1;
     const aidText = [aidRevive && '全滅時復活一次', aidGuard < 1 && `承受傷害 −${Math.round((1 - aidGuard) * 100)}%`].filter(Boolean).join('、');
     // 小 BOSS、大 BOSS 與菁英怪各帶一招共用技能（A2+ 開始，新手區不加難度）
-    const foe = s.mode === 'normal' && s.levelIdx >= 2 && !stage.revenge && ((stage.bossMode && !isFinalBoss) || stage.kind === 'elite') ? foeSkillFor(stageIdx) : null;
+    // 菁英怪帶一招共用技能（A2+ 開始）；首領改用機制模組（第八輪）
+    const foe = s.mode === 'normal' && s.levelIdx >= 2 && !stage.revenge && stage.kind === 'elite' ? foeSkillFor(stageIdx) : null;
+    const role: ModRole = isFinalBoss ? 'final' : stageInMap(stageIdx) === MAP_SIZE ? 'boss' : 'gate';
+    // 沉默君王的全知封印就是技能封印，不再另外疊一個 M11
+    const modIds = bossFight ? modsFor(s.levelIdx, mapIndexOf(stageIdx), role).filter(id => !(isFinalBoss && bossSkillFor(s.levelIdx).id === 'seal' && id === 'M11')) : [];
+    modPool = bossFight ? buildModEnv(s.levelKey, s.levelIdx, stageIdx) : [];
+    const started = startMods(modIds, s.levelIdx, modEnv);
+    const modText = modIds.map(id => `${MOD_DEFS[id].icon} ${MOD_DEFS[id].name}（${MOD_DEFS[id].trigger}）：${MOD_DEFS[id].counter}`).join('｜');
     if (bossFight && isFinalBoss) {
       const def = bossSkillFor(s.levelIdx);
       useUiStore.getState().celebrate({
         icon: def.icon, title: `區域魔王：${def.boss}`,
-        sub: `${def.name}：${def.desc}｜破解：${def.counter}｜魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
+        sub: `${def.name}：${def.desc}｜破解：${def.counter}${modText ? `｜${modText}` : ''}｜魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
       });
     } else if (bossFight) {
       const big = stageInMap(stageIdx) === 20;
       useUiStore.getState().celebrate({
         icon: big ? '👑' : '⚔️', title: big ? '關卡大 BOSS' : '小 BOSS',
-        sub: `${foe ? `${foe.icon} ${foe.name}：${foe.desc}｜` : ''}魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
+        sub: `${modText ? `${modText}｜` : ''}魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
       });
     } else if (blessed) {
       useUiStore.getState().celebrate({ icon: '✨', title: '女神的祝福', sub: `這一關答錯不會中斷 combo（只扣 30%），全隊傷害 +20%${aidText ? `，${aidText}` : ''}`, color: '#7fe8ff', blocking: true });
@@ -476,6 +510,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       enemyGauge: 0, enemyMoveIdx: 0, poison: [], weakenLeft: 0, weaken: 0, slowNext: 0,
       ...bossSkillState(s.mode === 'normal' && stage.bossMode && isFinalBoss && !stage.revenge ? bossSkillFor(s.levelIdx).id : null),
       ...(foe ? { foeSkill: foe.id, bossCast: cast(`${foe.icon} ${foe.name}：${foe.desc}`) } : {}),
+      ...(modIds.length ? { mods: started.mods, sealed: modSealed(started.mods) || (isFinalBoss && bossSkillFor(s.levelIdx).id === 'seal') } : {}),
+      ...(started.casts.length ? { bossCast: cast(started.casts.join('｜')) } : {}),
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
@@ -546,7 +582,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original, s.levelIdx, s.mode === 'normal' ? s.stageIdx : undefined);
     } else {
       qIdx += 1;
-      const repeat = s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? pickDueReview(s.original, allowedTypes(s.levelIdx, s.stageIdx)) : null;
+      const pref = s.mode === 'normal' && !s.executing ? modPreference(s.mods) : null;
+      const wanted = pref ? pickPreferred(pref, s.original) : null;
+      const repeat = wanted ?? (s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? pickDueReview(s.original, allowedTypes(s.levelIdx, s.stageIdx)) : null);
       original = repeat ?? takeEasy(stage)
         ?? (qIdx < stage.questions.length ? stage.questions[qIdx] : (stage.bossMode ? decks!.boss(s.stageIdx) : decks!.normal(s.stageIdx)));
     }
@@ -744,6 +782,30 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
   };
 
+  // 首領模組：作答後推進（先把新的模組狀態存起來，下一題才知道要指定什麼題型）
+  const progressMods = (s: BattleState, correct: boolean, b: { streak: number; elapsed: number; hpRatio: number; answers: number; executing: boolean }) => {
+    const q = s.original!;
+    const r = afterAnswer(s.mods, {
+      correct, skill: questionSkill(q), grammar: primaryGrammar(q), streak: b.streak,
+      fast: correct && b.elapsed <= (CHASE_FAST_MS[q.type] ?? 8000),
+    }, { hpRatio: b.hpRatio, answers: b.answers, executing: b.executing, levelIdx: s.levelIdx }, modEnv, grammarName);
+    set({ mods: r.mods, ...(r.fx.choice ? { modChoice: r.fx.choice } : {}), ...(b.executing ? { modChoice: null } : {}) });
+    return { ...r.fx, mods: r.mods };
+  };
+  // 把模組的結果併進這一題的狀態：下一擊倍率取高的、技能封印、首領宣告
+  const withModFx = (patch: Partial<BattleState>, fx: (ModEffects & { mods: ModState[] }) | null): Partial<BattleState> => {
+    if (!fx) return patch;
+    const s = get();
+    const texts = [patch.bossCast?.text, ...fx.casts].filter(Boolean);
+    return {
+      ...patch,
+      mods: fx.mods,
+      ...(fx.charge > 1 ? { charge: Math.max(patch.charge ?? 1, fx.charge) } : {}),
+      ...(s.bossSkill !== 'seal' ? { sealed: modSealed(fx.mods) } : {}),
+      ...(texts.length ? { bossCast: cast(texts.join('｜')) } : {}),
+    };
+  };
+
   // 魔王技能：答對時的破解與倒數
   const nextAttacker = (party: Member[], from: number) => {
     const stunned = get().stunned?.member;
@@ -890,7 +952,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const teamwork = (1 + (relayFx?.dmg ?? 0)) * (finisher ? finisherMultiplier(finisher, aliveIds.length) : 1);
     // 首領的技能：硬化護甲只吃暴擊或剋制、屬性折射免疫某些屬性
     const armor = (s.foeSkill === 'hardShell' && !crit && em <= 1 ? HARD_SHELL_DAMAGE : 1)
-      * (s.foeSkill === 'refraction' && refractionImmune(s.stageIdx).includes(attacker.element as never) ? REFRACTION_DAMAGE : 1);
+      * (s.foeSkill === 'refraction' && refractionImmune(s.stageIdx).includes(attacker.element as never) ? REFRACTION_DAMAGE : 1)
+      * modDamageMult(s.mods);
     const damage = stage.revenge
       ? BASE_DAMAGE * 2
       : computeDamage({
@@ -915,6 +978,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const kill = killed && !s.executing && !execution;
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
 
+    // 首領模組：推進破解進度、檢查新的觸發（倒地後全部取消）
+    const modFx = s.mods.length ? progressMods(s, true, { streak, elapsed, hpRatio: monsterHp / Math.max(1, s.monsterMaxHp), answers: stageAnswers, executing: killed || s.executing }) : null;
+    if (modFx?.partyHeal) party = party.map(m => (isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.round(m.maxHp * modFx.partyHeal)) } : m));
+
     let goldBase = stage.kind === 'treasure' ? GOLD.treasureHit : GOLD.correct;
     if (stageDone || (kill && !stage.bossMode && stage.kind !== 'treasure')) {
       goldBase += stage.revenge ? GOLD.revengeKill : stage.bossMode ? GOLD.bossKill : stage.kind === 'treasure' ? GOLD.treasureOpen : GOLD.kill;
@@ -936,7 +1003,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
       // 蓄力與必定暴擊在真正造成傷害時才用掉（打菁英怪護盾時保留）
       charge: 1, critLeft: Math.max(0, s.critLeft - 1),
-      ...bossOnCorrect(streak, chainStep.triggered),
+      ...withModFx(bossOnCorrect(streak, chainStep.triggered), modFx),
       ...(finisher?.shield ? { shield: true, comboGuard: true } : {}),
       ...(finisher?.heal ? { stunned: null, mirageLeft: 0, staticStacks: 0, frostLeft: 0 } : {}),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
@@ -1000,9 +1067,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       return;
     }
 
+    // 首領模組：答錯也會推進（例如連答鎖被打斷、吸血開始）
+    const modFx = s.mods.length && !s.executing
+      ? progressMods(s, false, { streak: 0, elapsed: 0, hpRatio: s.monsterHp / Math.max(1, s.monsterMaxHp), answers: base.stageAnswers, executing: false })
+      : null;
+    const modPatch = modFx ? withModFx({}, modFx) : {};
     // 護盾（援軍、道具或技能）、不會攻擊的寶箱怪、終結連擊中倒地的首領：不受傷
     if (s.shield || stage.kind === 'treasure' || s.executing) {
-      set({ ...base, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
+      set({ ...base, ...modPatch, shield: stage.kind === 'treasure' ? s.shield : false, phase: 'feedback', event: nextEvent('shield') });
       return;
     }
     // 蓄力那一題答錯：吃到加倍的蓄力攻擊；魔王的分身與靜電再加倍
@@ -1017,6 +1089,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const blasted = strike.party.map(m => (isAlive(m) ? { ...m, hp: Math.max(0, m.hp - Math.round(m.maxHp * BOMB_DAMAGE)) } : m));
       strike = { ...strike, ...withTotals(blasted), wiped: blasted.every(m => !isAlive(m)) };
     }
+    // 模組的懲罰（只取最重的一個）：加在被打的隊員身上
+    if (modFx?.penalty) {
+      const target = strike.event.member;
+      const hurt = strike.party.map(m => (m.id === target && isAlive(m) ? { ...m, hp: Math.max(0, m.hp - Math.round(m.maxHp * modFx.penalty * s.aidGuard)) } : m));
+      strike = { ...strike, ...withTotals(hurt), wiped: hurt.every(m => !isAlive(m)) };
+    }
     // 連敗援助：這次全滅改成全員以 30% 生命站起來（每次挑戰一次）
     const rescued = strike.wiped && s.aidRevive;
     if (rescued) strike = { ...strike, ...withTotals(reviveAll(strike.party)), wiped: false };
@@ -1027,7 +1105,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       attackerIdx: strike.attackerIdx,
       mirageStreak: 0,
       staticStacks: s.bossSkill === 'static' ? s.staticStacks + 1 : 0,
-      ...(vampHeal ? { monsterHp: Math.min(s.monsterMaxHp, s.monsterHp + vampHeal) } : {}),
+      ...modPatch,
+      ...(vampHeal || modFx?.bossHeal ? { monsterHp: Math.min(s.monsterMaxHp, s.monsterHp + vampHeal + Math.round(s.monsterMaxHp * (modFx?.bossHeal ?? 0))) } : {}),
       ...(exploded ? { bombLeft: 0, bossCast: cast('💥 灰燼炸彈爆炸了！全隊受到重創') } : {}),
       ...(rescued ? { aidRevive: false, bossCast: cast(REVIVE_TEXT) } : {}),
       // 答錯已經被反擊：行動條往後退一點，不會緊接著再挨一次主動攻擊
@@ -1237,7 +1316,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         // 敵人行動條：集滿就依攻擊模式出招
         if (gaugeActive(s)) {
           const kind = foeKindOf(s.stages[s.stageIdx], s.stageIdx, s.stages.length) ?? 'normal';
-          const gauge = s.enemyGauge + (ms * gaugeScale(s.levelIdx, s.stageIdx)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
+          const gauge = s.enemyGauge + (ms * gaugeScale(s.levelIdx, s.stageIdx) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
           if (gauge >= 1) {
             const move = nextMove(s);
             if (move) performMove(move);
@@ -1331,6 +1410,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     // 點隊員（戰鬥畫面上的角色或下方隊伍列）：能量滿時打開技能視窗，計時暫停到按下施放或取消；
     // 取消不會用掉能量，之後隨時可以再放
+    chooseModSkill: (skill) => {
+      const s = get();
+      if (!s.modChoice?.includes(skill)) return;
+      const mods = chooseReflect(s.mods, skill);
+      // 換成選好的題型，馬上就能反擊
+      const q = pickPreferred({ skill }, s.original);
+      set({ mods, modChoice: null, bossCast: cast(`🪞 題型反射：答對一題${skillName(skill)}題就反射回去！`), ...(q ? { original: q, question: prepare(q), questionSeq: s.questionSeq + 1, typed: '', assist: null, assistSource: null } : {}) });
+    },
+
     requestSkill: (memberIdx) => {
       const s = get();
       const m = s.party[memberIdx];

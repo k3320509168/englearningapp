@@ -1,6 +1,7 @@
 import type { Question } from './types';
 import type { QuestionPool } from './QuestionData';
 import { VOCAB, vocabKey } from './vocab';
+import { grammarTagDef } from './grammar';
 
 // 題庫驗證：檢查資料格式是否符合 MainScene 的判讀規則。
 // error = 遊戲中會壞掉或無法作答；warning = 可以玩，但值得人工檢查。
@@ -40,6 +41,12 @@ export function validateQuestion(q: Question, where: string): ValidationIssue[] 
   if (q.type === 'choice' && !q.explain?.trim()) warn('選擇題缺少 explain（文法解說）');
   if (q.skill !== undefined && !SKILLS.includes(q.skill)) error(`skill 只能是 ${SKILLS.join(' / ')}："${q.skill}"`);
   if (q.difficulty !== undefined && ![1, 2, 3].includes(q.difficulty)) error(`difficulty 只能是 1、2、3："${q.difficulty}"`);
+  // 文法標籤：最多 3 個、都要是已定義的標籤
+  if (q.grammar !== undefined) {
+    if (!Array.isArray(q.grammar) || q.grammar.length === 0 || q.grammar.length > 3) error('grammar 要有 1～3 個標籤');
+    else q.grammar.filter(g => !grammarTagDef(g)).forEach(g => error(`未定義的文法標籤：${g}`));
+    if (!['pending', 'approved', 'rejected'].includes(q.grammarReview ?? '')) error('有 grammar 時 grammarReview 要是 pending／approved／rejected');
+  }
   // 聽力題：題目只用聲音，一定要有 speak 才播得出來
   if ((q.skill === 'listening' || q.desc?.startsWith('🎧')) && !q.speak?.trim()) error('聽力題缺少 speak（要播放的英文）');
   if (q.skill === 'listening' && !q.desc.startsWith('🎧')) error('聽力題的 desc 要以 🎧 開頭（遊戲會自動播放聲音）');

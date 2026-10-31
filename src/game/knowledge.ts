@@ -1,6 +1,7 @@
 import type { Question, QuestionSkill } from './types';
 import { LEVELS, QUESTION_POOL, questionDifficulty, questionSkill } from './QuestionData';
 import { questionKey, shuffleArray } from './battle';
+import { GRAMMAR_STABLE_RATIO, GRAMMAR_TAGS, MIN_GRAMMAR_ITEMS, primaryGrammar } from './grammar';
 
 // 知識點追蹤（和 ChatGPT 第四輪定案，見 docs/STAGE_PLAN.md 第 5、6 節）：
 // 記錄的是「知識點」在哪幾天無提示答對，不是某一題答對幾次。
@@ -20,11 +21,17 @@ const MAX_WINS = 5;
 export interface KnowledgeRecord {
   wins: number[]; // 算數的成功時間（彼此間隔 ≥ 20 小時）
   dueAt: number;  // 下一次該複習的時間
+  items?: string[]; // 文法：每次成功是哪一題（穩定要至少 2 道不同的題）
 }
 
-// 知識點：單字類（拼寫、口說、填空、聽單字）用英文單字本身；句子、文法、短文題每題各自是一個知識點
+// 知識點（第八輪）：
+// - w:單字——拼寫、口說、填空、聽單字都算同一個字（列入封印）。
+// - g:文法——已審核的文法題依主要考點（例如 g:be_verb，列入封印）。
+// - q:其他——句子、對話、短文題每題各自記錄，但不列入封印（不然 100 道句子題就變成 100 個知識點）。
 const WORD = /^[A-Za-z][A-Za-z' -]*$/;
 export function knowledgeKey(q: Question): string {
+  const grammar = primaryGrammar(q);
+  if (grammar) return `g:${grammar}`;
   const speak = q.speak?.trim();
   const word = speak && WORD.test(speak) && speak.split(/\s+/).length <= 3 ? speak
     : (q.type === 'spell' || q.type === 'voice') ? q.ans : null;
@@ -32,20 +39,27 @@ export function knowledgeKey(q: Question): string {
 }
 
 export const isLearned = (r?: KnowledgeRecord) => !!r && r.wins.length > 0;
-export const isStable = (r?: KnowledgeRecord) => !!r && r.wins.length >= STABLE_WINS;
+// 文法要至少 2 道不同的題（避免只背熟同一題）
+export const isStable = (r?: KnowledgeRecord) => !!r && r.wins.length >= STABLE_WINS && (!r.items || new Set(r.items).size >= 2);
 
 // 作答後更新知識點；回傳 null 表示沒有變化。crossDay：這次是「跨日成功」（第 2 次以後算數的答對），給封印能量
-export function updateKnowledge(prev: KnowledgeRecord | undefined, correct: boolean, counted: boolean, now: number): { rec: KnowledgeRecord; crossDay: boolean } | null {
+// item：文法題傳入這一題的 key，記錄成功來自哪些題
+export function updateKnowledge(prev: KnowledgeRecord | undefined, correct: boolean, counted: boolean, now: number, item?: string): { rec: KnowledgeRecord; crossDay: boolean } | null {
   const wins = prev?.wins ?? [];
   const last = wins[wins.length - 1];
   if (!correct) {
     if (!prev || !wins.length) return null;
     // 答錯：等可以再算數的時候（離上次成功 20 小時）就排進複習
-    return { rec: { wins, dueAt: Math.min(prev.dueAt, last + STABLE_GAP) }, crossDay: false };
+    return { rec: { ...prev, dueAt: Math.min(prev.dueAt, last + STABLE_GAP) }, crossDay: false };
+  }
+  // 文法：今天已經算過一次，但換了一道沒成功過的題，也記下來（之後才湊得到 2 道不同的題）
+  if (item && prev && last !== undefined && now - last < STABLE_GAP && counted && !(prev.items ?? []).includes(item)) {
+    return { rec: { ...prev, items: [...(prev.items ?? []), item].slice(-MAX_WINS) }, crossDay: false };
   }
   if (!counted || (last !== undefined && now - last < STABLE_GAP)) return null;
   const next = [...wins, now].slice(-MAX_WINS);
-  return { rec: { wins: next, dueAt: now + REVIEW_AFTER[Math.min(next.length, REVIEW_AFTER.length - 1)] }, crossDay: next.length >= 2 };
+  const items = item ? [...(prev?.items ?? []), item].slice(-MAX_WINS) : prev?.items;
+  return { rec: { wins: next, dueAt: now + REVIEW_AFTER[Math.min(next.length, REVIEW_AFTER.length - 1)], ...(items ? { items } : {}) }, crossDay: next.length >= 2 };
 }
 
 // 到期的知識點：越不熟（成功次數越少）越先，一樣熟的看誰先到期
@@ -75,34 +89,63 @@ export function regionIndex(levelIdx: number): Map<string, Question[]> {
 }
 
 // ---------- 守門人封印 ----------
-// A1：已學 360、跨日穩定 300（約 400 個單字的 90%／75%）；之後每區多 40 個已學。題庫比較小時改用題庫的 90%／75%
+// 單字：A1 已學 360、跨日穩定 300（約 400 個單字的 90%／75%）；之後每區多 40 個已學。題庫比較小時改用題庫的 90%／75%
 export function sealTargets(levelIdx: number, poolSize: number) {
   const learn = Math.min(Math.round(poolSize * 0.9), 360 + 40 * levelIdx);
   return { learn, stable: Math.round(learn * 5 / 6) };
 }
 
+// 文法：這一區的核心標籤裡，題目夠多（≥ 6 題）的才列入；全部已學、至少 80% 穩定
+export interface GrammarProgress { id: string; items: number; learned: boolean; stable: boolean; counted: boolean }
+
+export function regionGrammar(levelIdx: number, knowledge: Record<string, KnowledgeRecord>): GrammarProgress[] {
+  const index = regionIndex(levelIdx);
+  return (GRAMMAR_TAGS[levelIdx] ?? []).filter(t => t.core).map(t => {
+    const r = knowledge[`g:${t.id}`];
+    const items = index.get(`g:${t.id}`)?.length ?? 0;
+    return { id: t.id, items, learned: isLearned(r), stable: isStable(r), counted: items >= MIN_GRAMMAR_ITEMS };
+  });
+}
+
 export interface RegionMastery {
-  pool: number;
+  pool: number;          // 這區的單字數
   learned: number;
   stable: number;
-  due: number;
+  due: number;           // 到期該複習的（單字＋文法）
   learnTarget: number;
   stableTarget: number;
+  grammar: GrammarProgress[];
+  grammarLearned: number;
+  grammarStable: number;
+  grammarTotal: number;      // 列入封印的核心文法數
+  grammarStableTarget: number;
   sealMet: boolean;
 }
 
 export function regionMastery(levelIdx: number, knowledge: Record<string, KnowledgeRecord>, now: number): RegionMastery {
   const index = regionIndex(levelIdx);
-  let learned = 0, stable = 0, due = 0;
+  let pool = 0, learned = 0, stable = 0, due = 0;
   for (const k of index.keys()) {
     const r = knowledge[k];
+    if (k.startsWith('g:') && isLearned(r) && !isStable(r) && r.dueAt <= now) due++;
+    if (!k.startsWith('w:')) continue;
+    pool++;
     if (!isLearned(r)) continue;
     learned++;
     if (isStable(r)) stable++;
     else if (r.dueAt <= now) due++;
   }
-  const { learn, stable: stableTarget } = sealTargets(levelIdx, index.size);
-  return { pool: index.size, learned, stable, due, learnTarget: learn, stableTarget, sealMet: learned >= learn && stable >= stableTarget };
+  const { learn, stable: stableTarget } = sealTargets(levelIdx, pool);
+  const grammar = regionGrammar(levelIdx, knowledge);
+  const counted = grammar.filter(g => g.counted);
+  const grammarLearned = counted.filter(g => g.learned).length;
+  const grammarStable = counted.filter(g => g.stable).length;
+  const grammarStableTarget = Math.ceil(counted.length * GRAMMAR_STABLE_RATIO);
+  return {
+    pool, learned, stable, due, learnTarget: learn, stableTarget,
+    grammar, grammarLearned, grammarStable, grammarTotal: counted.length, grammarStableTarget,
+    sealMet: learned >= learn && stable >= stableTarget && grammarLearned >= counted.length && grammarStable >= grammarStableTarget,
+  };
 }
 
 // 這個區域要不要守門人封印：最後一區（王城）有主線結局；題庫還沒出的區域先不擋

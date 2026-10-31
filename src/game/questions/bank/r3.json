@@ -2387,6 +2387,1311 @@
       "desc": "請唸出：你的經驗將會非常有幫助。",
       "ans": "YOUR EXPERIENCE WILL BE VERY HELPFUL",
       "speak": "your experience will be very helpful"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：好處",
+      "ans": "BENEFIT",
+      "speak": "benefit"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B E _ E F _ T (好處)",
+      "ans": "NI",
+      "speak": "benefit"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D _ M A _ E (損壞)",
+      "ans": "AG",
+      "speak": "damage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D _ T A I _ (細節)",
+      "ans": "EL",
+      "speak": "detail"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E _ P L A _ N (解釋)",
+      "ans": "XI",
+      "speak": "explain"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：表達",
+      "ans": "EXPRESS",
+      "speak": "express"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：包含",
+      "ans": "INCLUDE",
+      "speak": "include"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N C L _ D E (包含)",
+      "ans": "U",
+      "speak": "include"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：通知",
+      "ans": "INFORM",
+      "speak": "inform"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N F _ R _ (通知)",
+      "ans": "OM",
+      "speak": "inform"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：提及",
+      "ans": "MENTION",
+      "speak": "mention"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M E N T I O _ (提及)",
+      "ans": "N",
+      "speak": "mention"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：提供",
+      "ans": "PROVIDE",
+      "speak": "provide"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O V _ D E (提供)",
+      "ans": "I",
+      "speak": "provide"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：目的",
+      "ans": "PURPOSE",
+      "speak": "purpose"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P U R P O _ E (目的)",
+      "ans": "S",
+      "speak": "purpose"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：預防",
+      "ans": "PREVENT",
+      "speak": "prevent"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R E V E _ T (預防)",
+      "ans": "N",
+      "speak": "prevent"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：請求",
+      "ans": "REQUEST",
+      "speak": "request"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E Q U _ S T (請求)",
+      "ans": "E",
+      "speak": "request"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：結果",
+      "ans": "RESULT",
+      "speak": "result"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E _ U L T (結果)",
+      "ans": "S",
+      "speak": "result"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D E _ C R I _ E (描述)",
+      "ans": "SB",
+      "speak": "describe"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：涉及",
+      "ans": "INVOLVE",
+      "speak": "involve"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N V _ L V _ (涉及)",
+      "ans": "OE",
+      "speak": "involve"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：L _ G G A _ E (行李)",
+      "ans": "UG",
+      "speak": "luggage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P U _ C H A _ E (購買)",
+      "ans": "RS",
+      "speak": "purchase"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：意識到",
+      "ans": "REALIZE",
+      "speak": "realize"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E _ L I Z _ (意識到)",
+      "ans": "AE",
+      "speak": "realize"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "faulty",
+      "options": [
+        "A. 有缺陷的",
+        "B. 完美的",
+        "C. 昂貴的",
+        "D. 便宜的"
+      ],
+      "ans": "A",
+      "explain": "原字為 faulty (adj.)，意思是「有缺陷的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "exchange",
+      "options": [
+        "A. 借用",
+        "B. 更換",
+        "C. 偷竊",
+        "D. 購買"
+      ],
+      "ans": "B",
+      "explain": "原字為 exchange (v./n.)，意思是「更換、交換」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "apologize",
+      "options": [
+        "A. 拒絕",
+        "B. 承認",
+        "C. 道歉",
+        "D. 邀請"
+      ],
+      "ans": "C",
+      "explain": "原字為 apologize (v.)，意思是「道歉」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "compensation",
+      "options": [
+        "A. 競爭",
+        "B. 抱怨",
+        "C. 建議",
+        "D. 補償"
+      ],
+      "ans": "D",
+      "explain": "原字為 compensation (n.)，意思是「補償、賠償」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "boarding",
+      "options": [
+        "A. 登機",
+        "B. 降落",
+        "C. 延誤",
+        "D. 轉機"
+      ],
+      "ans": "A",
+      "explain": "原字為 boarding (n.)，意思是「登機」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "departure",
+      "options": [
+        "A. 抵達",
+        "B. 出發",
+        "C. 等候",
+        "D. 飛行"
+      ],
+      "ans": "B",
+      "explain": "原字為 departure (n.)，意思是「出發、起飛」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "baggage",
+      "options": [
+        "A. 座位",
+        "B. 機票",
+        "C. 行李",
+        "D. 護照"
+      ],
+      "ans": "C",
+      "explain": "原字為 baggage (n.)，意思是「行李」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "announcement",
+      "options": [
+        "A. 秘密",
+        "B. 討論",
+        "C. 遊戲",
+        "D. 公告"
+      ],
+      "ans": "D",
+      "explain": "原字為 announcement (n.)，意思是「公告、廣播」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "terminal",
+      "options": [
+        "A. 航廈",
+        "B. 公車站",
+        "C. 火車站",
+        "D. 港口"
+      ],
+      "ans": "A",
+      "explain": "原字為 terminal (n.)，意思是「航廈」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "qualification",
+      "options": [
+        "A. 缺點",
+        "B. 資格",
+        "C. 數量",
+        "D. 品質"
+      ],
+      "ans": "B",
+      "explain": "原字為 qualification (n.)，意思是「資格」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "strength",
+      "options": [
+        "A. 壓力",
+        "B. 弱點",
+        "C. 優勢",
+        "D. 奇怪"
+      ],
+      "ans": "C",
+      "explain": "原字為 strength (n.)，意思是「優勢、長處」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "appointment",
+      "options": [
+        "A. 失望",
+        "B. 爭吵",
+        "C. 點子",
+        "D. 預約"
+      ],
+      "ans": "D",
+      "explain": "原字為 appointment (n.)，意思是「預約」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "treatment",
+      "options": [
+        "A. 治療",
+        "B. 疾病",
+        "C. 藥物",
+        "D. 醫生"
+      ],
+      "ans": "A",
+      "explain": "原字為 treatment (n.)，意思是「治療」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "recover",
+      "options": [
+        "A. 覆蓋",
+        "B. 康復",
+        "C. 發現",
+        "D. 破壞"
+      ],
+      "ans": "B",
+      "explain": "原字為 recover (v.)，意思是「康復、恢復」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you are late, the gate will be closed.",
+      "options": [
+        "A. 如果你遲到，登機門將會關閉。",
+        "B. 登機門已經因為遲到而關閉。",
+        "C. 就算你遲到，登機門也不會關閉。",
+        "D. 如果你早到，登機門會打開。"
+      ],
+      "ans": "A",
+      "explain": "原句：If you are late, the gate will be closed. 意思是「如果你遲到，登機門將會關閉。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The baggage has been checked by security.",
+      "options": [
+        "A. 保全正在檢查行李。",
+        "B. 行李已經被安檢人員檢查過了。",
+        "C. 行李還沒有被檢查。",
+        "D. 行李被保全弄丟了。"
+      ],
+      "ans": "B",
+      "explain": "原句：The baggage has been checked by security. 意思是「行李已經被安檢人員檢查過了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If she takes the pills, she will recover soon.",
+      "options": [
+        "A. 她已經康復了，所以不用吃藥。",
+        "B. 雖然她吃了藥，但沒有康復。",
+        "C. 如果她吃藥，她很快就會康復。",
+        "D. 她拒絕吃藥，所以好不了。"
+      ],
+      "ans": "C",
+      "explain": "原句：If she takes the pills, she will recover soon. 意思是「如果她吃藥，她很快就會康復。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Your appointment has been adjusted.",
+      "options": [
+        "A. 你的預約被取消了。",
+        "B. 你的預約還沒有確認。",
+        "C. 你的預約已經過期了。",
+        "D. 你的預約已經被調整了。"
+      ],
+      "ans": "D",
+      "explain": "原句：Your appointment has been adjusted. 意思是「你的預約已經被調整了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the item is faulty, it will be exchanged.",
+      "options": [
+        "A. 如果物品有瑕疵，將會被更換。",
+        "B. 這件有瑕疵的物品已經被更換了。",
+        "C. 就算物品有瑕疵也不能更換。",
+        "D. 我們正在檢查物品是否有瑕疵。"
+      ],
+      "ans": "A",
+      "explain": "原句：If the item is faulty, it will be exchanged. 意思是「如果物品有瑕疵，將會被更換。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have apologized for the long delay.",
+      "options": [
+        "A. 我們正在為延誤道歉。",
+        "B. 我們已經為漫長的延誤道過歉了。",
+        "C. 我們不打算為延誤道歉。",
+        "D. 延誤的原因已經被解釋了。"
+      ],
+      "ans": "B",
+      "explain": "原句：We have apologized for the long delay. 意思是「我們已經為漫長的延誤道過歉了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Has the departure time been announced?",
+      "options": [
+        "A. 起飛時間改變了嗎？",
+        "B. 起飛時間會被推遲嗎？",
+        "C. 起飛時間已經公布了嗎？",
+        "D. 你知道起飛時間嗎？"
+      ],
+      "ans": "C",
+      "explain": "原句：Has the departure time been announced? 意思是「起飛時間已經公布了嗎？」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The treatment has been finished completely.",
+      "options": [
+        "A. 治療才剛開始。",
+        "B. 治療失敗了。",
+        "C. 治療將在明天進行。",
+        "D. 治療已經完全結束了。"
+      ],
+      "ans": "D",
+      "explain": "原句：The treatment has been finished completely. 意思是「治療已經完全結束了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you feel sick, we will go to the clinic.",
+      "options": [
+        "A. 如果你覺得不舒服，我們會去診所。",
+        "B. 我們已經去過診所了。",
+        "C. 雖然你不舒服，但我們不去診所。",
+        "D. 診所裡有很多生病的人。"
+      ],
+      "ans": "A",
+      "explain": "原句：If you feel sick, we will go to the clinic. 意思是「如果你覺得不舒服，我們會去診所。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They have examined all the potential risks.",
+      "options": [
+        "A. 他們忽略了所有潛在風險。",
+        "B. 他們已經檢查了所有潛在風險。",
+        "C. 他們將會檢查所有潛在風險。",
+        "D. 他們找不到任何潛在風險。"
+      ],
+      "ans": "B",
+      "explain": "原句：They have examined all the potential risks. 意思是「他們已經檢查了所有潛在風險。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The announcement has just been made.",
+      "options": [
+        "A. 公告將在稍後發布。",
+        "B. 公告還沒有準備好。",
+        "C. 公告剛剛已經發布了。",
+        "D. 公告被取消了。"
+      ],
+      "ans": "C",
+      "explain": "原句：The announcement has just been made. 意思是「公告剛剛已經發布了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you attended the online gathering yet?",
+      "options": [
+        "A. Yes, I will attend it tomorrow.",
+        "B. No, the gathering was yesterday.",
+        "C. Yes, it is very far from here.",
+        "D. Not yet, I will join it in ten minutes."
+      ],
+      "ans": "D",
+      "explain": "原句：Have you attended the online gathering yet? (你參加線上聚會了嗎？) (A) 我明天會參加。(B) 聚會是昨天。(C) 是的，這裡離那很遠。(D) 還沒，我十分鐘後加入。故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If we miss the boarding time, what will happen?",
+      "options": [
+        "A. We will have to wait for the next flight.",
+        "B. The boarding time is at six o'clock.",
+        "C. We have already missed the bus.",
+        "D. Yes, I missed the boarding time."
+      ],
+      "ans": "A",
+      "explain": "原句：If we miss the boarding time, what will happen? (如果我們錯過登機時間，會發生什麼事？) (A) 我們將不得不等下一班航班。(B) 登機時間是六點。(C) 我們已經錯過公車了。(D) 是的，我錯過了。故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has your responsibility been explained clearly by the boss?",
+      "options": [
+        "A. No, I am not responsible for the boss.",
+        "B. Yes, she has told me exactly what to do.",
+        "C. The boss will explain it tomorrow.",
+        "D. I have a lot of responsibilities."
+      ],
+      "ans": "B",
+      "explain": "原句：Has your responsibility been explained clearly by the boss? (老闆有沒有清楚說明你的職責？) (A) 我不對老闆負責。(B) 有的，她準確地告訴了我該做什麼。(C) 老闆明天會解釋。(D) 我有很多責任。故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the item is damaged, can it be exchanged?",
+      "options": [
+        "A. Yes, it was broken when I got it.",
+        "B. No, I don't want to exchange it.",
+        "C. Yes, you can exchange it within seven days.",
+        "D. The item is very expensive."
+      ],
+      "ans": "C",
+      "explain": "原句：If the item is damaged, can it be exchanged? (如果物品損壞了，可以更換嗎？) (A) 它來的時候就壞了。(B) 我不想換。(C) 可以，您可以在七天內更換。(D) 物品很貴。故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the new venue been selected for tomorrow?",
+      "options": [
+        "A. Tomorrow is a good day.",
+        "B. The venue is very beautiful.",
+        "C. We will choose it next week.",
+        "D. Yes, we have picked a larger room."
+      ],
+      "ans": "D",
+      "explain": "原句：Has the new venue been selected for tomorrow? (明天的新場地選好了嗎？) (A) 明天是個好日子。(B) 場地很美。(C) 我們下週會選。(D) 是的，我們挑了一間更大的房間。故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the surgery goes well, when will he wake up?",
+      "options": [
+        "A. The doctor says he will wake up in an hour.",
+        "B. He has already woken up.",
+        "C. The surgery was very dangerous.",
+        "D. Yes, the surgery goes well."
+      ],
+      "ans": "A",
+      "explain": "原句：If the surgery goes well, when will he wake up? (如果手術順利，他什麼時候會醒來？) (A) 醫生說他一小時後會醒。(B) 他已經醒了。(C) 手術很危險。(D) 是的，手術順利。故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the compensation been paid to the injured worker?",
+      "options": [
+        "A. He is a very hard worker.",
+        "B. Yes, the money was sent to his bank this morning.",
+        "C. The compensation will be paid next month.",
+        "D. No, he hasn't been injured."
+      ],
+      "ans": "B",
+      "explain": "原句：Has the compensation been paid to the injured worker? (賠償金已經付給受傷的工人了嗎？) (A) 他是很認真的工人。(B) 是的，錢今天早上已經匯入他的銀行。(C) 賠償金下個月會付。(D) 他沒有受傷。故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I forget my passport, will I be stopped at security?",
+      "options": [
+        "A. I have never forgotten my passport.",
+        "B. The security check is very fast.",
+        "C. Yes, you will not be allowed to fly.",
+        "D. Your passport is in your bag."
+      ],
+      "ans": "C",
+      "explain": "原句：If I forget my passport, will I be stopped at security? (如果我忘記帶護照，會在安檢被攔下嗎？) (A) 我從未忘記帶護照。(B) 安檢很快。(C) 是的，你將不被允許登機。(D) 護照在你的包包裡。故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have the qualifications been checked by the HR team?",
+      "options": [
+        "A. Yes, the HR team is checking.",
+        "B. The qualifications are very high.",
+        "C. No, I haven't checked the HR team.",
+        "D. Yes, they have reviewed all the details."
+      ],
+      "ans": "D",
+      "explain": "原句：Have the qualifications been checked by the HR team? (人資團隊檢查過這些資格條件了嗎？) (A) 人資團隊正在檢查。(B) 資格要求很高。(C) 我沒檢查人資團隊。(D) 是的，他們已經審核過所有細節了。故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the terminal is changed, how will we know?",
+      "options": [
+        "A. They will make an announcement over the speakers.",
+        "B. The terminal is very crowded today.",
+        "C. We have already changed the terminal.",
+        "D. Yes, the terminal has been changed."
+      ],
+      "ans": "A",
+      "explain": "原句：If the terminal is changed, how will we know? (如果航廈更改了，我們怎麼會知道？) (A) 他們會透過廣播發布公告。(B) 今天航廈很擁擠。(C) 我們已經換航廈了。(D) 航廈已更改。故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the appointment been made with the dentist?",
+      "options": [
+        "A. The dentist is very busy.",
+        "B. Yes, I have booked a time for next Tuesday.",
+        "C. No, the appointment was yesterday.",
+        "D. I don't like going to the dentist."
+      ],
+      "ans": "B",
+      "explain": "原句：Has the appointment been made with the dentist? (已經跟牙醫預約了嗎？) (A) 牙醫很忙。(B) 是的，我已經訂了下週二的時間。(C) 預約是昨天。(D) 我不喜歡看牙醫。故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the pain continues, will you visit the pharmacy?",
+      "options": [
+        "A. The pharmacy is closed on Sundays.",
+        "B. Yes, I visited the pharmacy yesterday.",
+        "C. Yes, I will go there to get some painkillers.",
+        "D. The pain has stopped completely."
+      ],
+      "ans": "C",
+      "explain": "原句：If the pain continues, will you visit the pharmacy? (如果疼痛持續，你會去藥局嗎？) (A) 藥局週日沒開。(B) 我昨天去了藥局。(C) 是的，我會去那裡拿一些止痛藥。(D) 疼痛已經完全停止了。故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】I ___ three online courses on digital marketing this year.",
+      "options": [
+        "A. have completed",
+        "B. was completing",
+        "C. am completing",
+        "D. to complete"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗現在完成式。句尾的 this year 搭配現在完成式，表示從過去到現在的經驗或已完成的動作，故選 (A)。選項 (B) 為過去進行式，(C) 為現在進行式，皆不符合語意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】She ___ to five different countries in Europe to study their cultures.",
+      "options": [
+        "A. is traveling",
+        "B. has traveled",
+        "C. will travel",
+        "D. travels"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗現在完成式。強調從過去到現在累積的經驗（已經去過五個國家），必須使用 have/has + 過去分詞，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】We ___ a lot of progress in our fitness journey since January.",
+      "options": [
+        "A. are made",
+        "B. makes",
+        "C. have made",
+        "D. will make"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：本題測驗現在完成式。關鍵字 since January (自從一月起) 表示動作從過去持續到現在，需搭配現在完成式 (have/has + V-en)，故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】They ___ enough money to buy a second-hand bicycle for commuting.",
+      "options": [
+        "A. to save",
+        "B. saves",
+        "C. are saved",
+        "D. have saved"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：本題測驗現在完成式。表示到目前為止「已經存夠了錢」，影響現在可以買腳踏車的狀態，故選 (D) have saved。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If we clean the beach together, we ___ the sea turtles.",
+      "options": [
+        "A. will protect",
+        "B. protected",
+        "C. have protected",
+        "D. protecting"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 子句使用現在簡單式 (clean)，主要子句應使用未來式 (will + 原形動詞) 表示可能發生的結果，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If you visit Japan in spring, you ___ the beautiful cherry blossoms.",
+      "options": [
+        "A. saw",
+        "B. will see",
+        "C. seeing",
+        "D. have seen"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 子句用現在式 (visit) 表達未來的條件，主要子句要用未來式表示結果，故選 (B) will see。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If the online lecture ___ too difficult, I will watch the video again.",
+      "options": [
+        "A. will be",
+        "B. being",
+        "C. is",
+        "D. has been"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：本題測驗第一類條件句。在 If 條件子句中，必須以現在簡單式代替未來式，主詞 the online lecture 為單數，故選 (C) is。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】Many cheap clothes ___ in other countries to keep the prices low.",
+      "options": [
+        "A. making",
+        "B. makes",
+        "C. have made",
+        "D. are made"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：本題測驗被動語態。主詞 clothes (衣服) 無法自己「製造」，必須是被製造。現在簡單式的被動結構為 am/is/are + V-en，故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The local sports center ___ by hundreds of young people every weekend.",
+      "options": [
+        "A. is visited",
+        "B. visits",
+        "C. visiting",
+        "D. to visit"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗被動語態。運動中心 (sports center) 是被造訪的地方，加上句尾 every weekend 表常態，需用現在簡單式被動語態，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】Plastic bags ___ from supermarkets to reduce ocean waste.",
+      "options": [
+        "A. remove",
+        "B. are removed",
+        "C. removed",
+        "D. removing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗被動語態。主詞 Plastic bags (塑膠袋) 無法自己移除，必須是「被移除」。複數主詞搭配 are + V-en，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Eating dumplings during the Lunar New Year is a common ___ in Taiwan.",
+      "options": [
+        "A. habit",
+        "B. behavior",
+        "C. tradition",
+        "D. memory"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗名詞字彙。在農曆新年吃水餃是台灣常見的「傳統 (tradition)」。選項 (A) 習慣，通常指個人的小動作；選項 (B) 行為，皆不如 (C) 貼切。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】If you want to build strong ___, you should eat enough protein.",
+      "options": [
+        "A. bones",
+        "B. skin",
+        "C. blood",
+        "D. muscles"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗名詞字彙。攝取足夠的蛋白質是為了練出強壯的「肌肉 (muscles)」，故選 (D)。選項 (A) 骨頭，(B) 皮膚，(C) 血液，皆不符語意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Buying these shoes at half price was a real ___ for me.",
+      "options": [
+        "A. bargain",
+        "B. value",
+        "C. trade",
+        "D. ticket"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗名詞字彙。以半價買到鞋子，形容買到物超所值的「便宜貨、划算的交易」，英文為 bargain，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The professor gave an interesting ___ on modern history yesterday.",
+      "options": [
+        "A. silence",
+        "B. lecture",
+        "C. theater",
+        "D. picture"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：測驗名詞字彙。教授昨天給了一場關於現代史的有趣「講座、授課 (lecture)」，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Cutting down trees destroys the natural ___ of many wild animals.",
+      "options": [
+        "A. cage",
+        "B. factory",
+        "C. habitat",
+        "D. museum"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗名詞字彙。砍伐樹木會破壞許多野生動物天然的「棲息地 (habitat)」，故選 (C)。選項 (A) 籠子，(B) 工廠，皆不符常理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Please make sure you have all your ___ before leaving the train.",
+      "options": [
+        "A. furniture",
+        "B. vehicles",
+        "C. tickets",
+        "D. luggage"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗名詞字彙。下火車前應該確認帶走所有的「行李 (luggage)」，故選 (D)。選項 (A) 傢俱，(B) 車輛，皆不合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If you ___ your own coffee, you will save a lot of cash every month.",
+      "options": [
+        "A. make",
+        "B. will make",
+        "C. making",
+        "D. made"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 條件子句須用現在簡單式代替未來式，主詞 you 搭配原形動詞 make，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If he ___ eating junk food, he will feel much better and healthier.",
+      "options": [
+        "A. will stop",
+        "B. stops",
+        "C. stopped",
+        "D. stopping"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 引導的條件子句中，主詞 he 為第三人稱單數，動詞需加 s 以現在式代替未來式，故選 (B) stops。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】Over the last few years, global temperatures ___ significantly due to greenhouse gases.",
+      "options": [
+        "A. rise",
+        "B. are rising",
+        "C. have risen",
+        "D. to rise"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：本題測驗現在完成式。片語 Over the last few years (在過去這幾年期間) 常用來搭配現在完成式，表示動作持續到現在，故選 (C) have risen。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】She is very excited because she ___ her final assignment for the coding class.",
+      "options": [
+        "A. finishes",
+        "B. to finish",
+        "C. finishing",
+        "D. has finished"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：本題測驗現在完成式。前半句 She is 表示現在的狀態，原因是她「剛剛已經完成」了作業，動作的結果影響到現在，故選 (D) has finished。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】Since he moved to Italy, he ___ a lot about local art and architecture.",
+      "options": [
+        "A. has learned",
+        "B. learns",
+        "C. will learn",
+        "D. learned"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗現在完成式。Since 子句接過去式 (moved)，主要子句必須使用現在完成式，表示從那時起持續到現在的動作或經驗累積，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【條件句】If you stretch your body after running, your legs ___ so sore the next day.",
+      "options": [
+        "A. don't feel",
+        "B. won't feel",
+        "C. haven't felt",
+        "D. wouldn't feel"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 子句用現在式 stretch，表示真實可能發生的條件；主要子句應搭配未來式表示隔天 (the next day) 的結果，故選 (B) won't feel。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【條件句】If we want to understand their customs, we ___ to talk to the local elders.",
+      "options": [
+        "A. needed",
+        "B. needing",
+        "C. will need",
+        "D. have needed"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：本題測驗第一類條件句。If 子句為現在簡單式 (want)，主要子句表達未來的需求與結果，使用未來式 will need，故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】The new language courses ___ by the university to help international students.",
+      "options": [
+        "A. offer",
+        "B. offering",
+        "C. have offered",
+        "D. are offered"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：本題測驗被動語態。課程 (courses) 不會自己提供，而是「被提供」，需使用 be 動詞加上過去分詞，故選 (D) are offered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】Several endangered animals ___ in the national park by special guards.",
+      "options": [
+        "A. are protected",
+        "B. protect",
+        "C. have protected",
+        "D. to protect"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：本題測驗被動語態。動物 (animals) 是「被」守衛保護的對象。複數主詞需搭配 are + protected，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】A 20% extra charge ___ to your bill if you dine at that fancy restaurant.",
+      "options": [
+        "A. adds",
+        "B. is added",
+        "C. to add",
+        "D. has added"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗被動語態與條件句。額外費用 (charge) 是「被加」到帳單上的，單數主詞搭配 is + added，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】Our yoga ___ told us to focus on our breathing during the difficult poses.",
+      "options": [
+        "A. captain",
+        "B. dentist",
+        "C. instructor",
+        "D. engineer"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗名詞字彙。在瑜珈課中，指導我們呼吸的應該是瑜珈「指導教練 (instructor)」，故選 (C)。選項 (A) 隊長，(B) 牙醫，(D) 工程師，皆不合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The art museum is hosting a special ___ of paintings from the 19th century.",
+      "options": [
+        "A. station",
+        "B. dictionary",
+        "C. newspaper",
+        "D. exhibition"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗名詞字彙。美術館舉辦的通常是畫作的「展覽 (exhibition)」，故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】We went on a trip to Africa because we wanted to see the amazing ___.",
+      "options": [
+        "A. wildlife",
+        "B. machines",
+        "C. buildings",
+        "D. pollution"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗名詞字彙。去非洲旅行主要是為了觀賞令人驚嘆的「野生動植物 (wildlife)」，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Have you found a cheap flight to Paris yet? B: Yes, but if I book it today, I ___ a lot of money.",
+      "options": [
+        "A. saved",
+        "B. will save",
+        "C. have saved",
+        "D. was saving"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗第一類條件句。B 的回答中，If 子句用現在式 (book)，表示未來可能發生的狀況，主要子句要用未來式表達結果，故選 (B) will save。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】The cultural festival celebrates traditional music and dance. It has become very popular over the years. If you buy tickets online, you will avoid the long waiting lines at the entrance. Question: How can a visitor avoid waiting in long lines?",
+      "options": [
+        "A. By arriving very early in the morning",
+        "B. By watching the dances on television",
+        "C. By purchasing the tickets on the internet",
+        "D. By bringing a traditional instrument"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗短文細節理解。文章提到 If you buy tickets online, you will avoid the long waiting lines。線上買票即為選項 (C) purchasing the tickets on the internet。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Recent studies show that short but intense workouts can be highly effective. If you exercise for just twenty minutes daily, your heart health will improve. Many busy adults have already changed their routines based on this research. Question: What has influenced busy adults to change their routines?",
+      "options": [
+        "A. New heart medicines",
+        "B. A lack of free time",
+        "C. Twenty-minute videos",
+        "D. Recent scientific studies"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗推論理解。文中提到「許多忙碌的成人基於這項研究改變了習慣 (based on this research)」，指的是開頭提到的 recent studies (最近的研究)，故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Second-hand stores have become trendy again. They offer clothes that are donated by the community. If you shop here, you will not only save cash but also reduce fashion waste. Question: What is one reason to shop at these stores according to the text?",
+      "options": [
+        "A. It helps cut down on fashion waste.",
+        "B. The clothes are designed by famous people.",
+        "C. They give free cash to shoppers.",
+        "D. It takes less time than online shopping."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗短文細節。文章最後一句說在這邊購物可以省錢並 reduce fashion waste (減少快時尚浪費)，與選項 (A) 的 cut down on fashion waste 意思相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】The online platform provides free tutorials on web design. If you finish all the lessons, a digital certificate is sent to your email. Thousands of users have found jobs using this platform. Question: What happens after a user completes the lessons?",
+      "options": [
+        "A. They receive a computer for free.",
+        "B. A digital certificate is emailed to them.",
+        "C. They must teach other new students.",
+        "D. A job offer is given immediately."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：測驗短文細節。文中提到 If you finish all the lessons, a digital certificate is sent to your email。意思完全符合選項 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Tigers are considered an endangered species. Much of their forest land has been destroyed by human activity. If we do not act quickly, they will disappear forever. Question: What is the main threat to tigers mentioned here?",
+      "options": [
+        "A. A lack of food",
+        "B. Climate change",
+        "C. Human destruction of forests",
+        "D. Other wild animals"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗主旨與細節理解。文章指出老虎面臨的危機是 forest land has been destroyed by human activity (森林被人類活動破壞)，故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】In some cultures, leaving a tip at a restaurant is considered rude. However, in North America, a 15% tip is expected. You should research local customs before you travel abroad. Question: What does the text suggest travelers should do?",
+      "options": [
+        "A. Leave a 15% tip in every country.",
+        "B. Bring enough cash for restaurants.",
+        "C. Never tip if they feel it is rude.",
+        "D. Learn about local habits before visiting."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗短文推論。文章結論提到 You should research local customs before you travel (旅行前應研究當地習俗)，與選項 (D) Learn about local habits 語意相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Drinking plenty of water is essential for your body. The water is lost through sweat when you exercise. If you stay hydrated, your muscles will recover much faster. Question: What is a benefit of staying hydrated?",
+      "options": [
+        "A. It helps muscles recover quickly.",
+        "B. It prevents you from sweating.",
+        "C. It makes you run much faster.",
+        "D. It reduces the need to sleep."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗短文細節。文中明確保指出 If you stay hydrated, your muscles will recover much faster (保持水分能讓肌肉恢復更快)，故選 (A)。"
     }
   ],
   "boss": [
@@ -3193,6 +4498,480 @@
       "desc": "請唸出：這是我人生中做過最困難的決定。",
       "ans": "THIS IS THE MOST DIFFICULT DECISION I HAVE MADE IN MY LIFE",
       "speak": "this is the most difficult decision i have made in my life"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：感到失望的",
+      "ans": "DISAPPOINTED",
+      "speak": "disappointed"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ A P P O I _ T _ D (感到失望的)",
+      "ans": "SNE",
+      "speak": "disappointed"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：機會",
+      "ans": "OPPORTUNITY",
+      "speak": "opportunity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O P P _ R T _ N I _ _ (機會)",
+      "ans": "OUTY",
+      "speak": "opportunity"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：表現",
+      "ans": "PERFORMANCE",
+      "speak": "performance"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P E R F _ R M A N _ _ (表現)",
+      "ans": "OCE",
+      "speak": "performance"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：情況",
+      "ans": "SITUATION",
+      "speak": "situation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S _ T U _ T I O _ (情況)",
+      "ans": "IAN",
+      "speak": "situation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：道歉",
+      "ans": "APOLOGIZE",
+      "speak": "apologize"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A P _ L O _ I _ E (道歉)",
+      "ans": "OGZ",
+      "speak": "apologize"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：鼓勵",
+      "ans": "ENCOURAGE",
+      "speak": "encourage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E N _ O U R _ G _ (鼓勵)",
+      "ans": "CAE",
+      "speak": "encourage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X P _ E _ _ (表達)",
+      "ans": "RSS",
+      "speak": "express"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F _ C I _ I T _ (設施)",
+      "ans": "ALY",
+      "speak": "facility"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "adjust",
+      "options": [
+        "A. 破壞",
+        "B. 隱藏",
+        "C. 放棄",
+        "D. 調整"
+      ],
+      "ans": "D",
+      "explain": "原字為 adjust (v.)，意思是「調整」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "attend",
+      "options": [
+        "A. 出席",
+        "B. 離開",
+        "C. 忽視",
+        "D. 創造"
+      ],
+      "ans": "A",
+      "explain": "原字為 attend (v.)，意思是「出席、參加」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "venue",
+      "options": [
+        "A. 菜單",
+        "B. 場地",
+        "C. 衣服",
+        "D. 車輛"
+      ],
+      "ans": "B",
+      "explain": "原字為 venue (n.)，意思是「場地」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "emergency",
+      "options": [
+        "A. 能量",
+        "B. 娛樂",
+        "C. 緊急情況",
+        "D. 情感"
+      ],
+      "ans": "C",
+      "explain": "原字為 emergency (n.)，意思是「緊急情況」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "purchase",
+      "options": [
+        "A. 追逐",
+        "B. 賣出",
+        "C. 借入",
+        "D. 購買"
+      ],
+      "ans": "D",
+      "explain": "原字為 purchase (v./n.)，意思是「購買」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you have the qualification, you will get the job.",
+      "options": [
+        "A. 你已經得到這份工作了。",
+        "B. 你的資格不符合這份工作。",
+        "C. 就算有資格也不一定能得到工作。",
+        "D. 如果你有資格，你就會得到這份工作。"
+      ],
+      "ans": "D",
+      "explain": "原句：If you have the qualification, you will get the job. 意思是「如果你有資格，你就會得到這份工作。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "My body temperature has been measured twice.",
+      "options": [
+        "A. 我的體溫已經被量過兩次了。",
+        "B. 我的體溫很高。",
+        "C. 我量了兩次體重。",
+        "D. 我的體溫還沒有被量過。"
+      ],
+      "ans": "A",
+      "explain": "原句：My body temperature has been measured twice. 意思是「我的體溫已經被量過兩次了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If he rests well, he will recover quickly.",
+      "options": [
+        "A. 他因為沒有休息所以恢復得很慢。",
+        "B. 如果他好好休息，他會恢復得很快。",
+        "C. 即使他休息了，也無法恢復。",
+        "D. 他已經恢復得很快了。"
+      ],
+      "ans": "B",
+      "explain": "原句：If he rests well, he will recover quickly. 意思是「如果他好好休息，他會恢復得很快。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The venue has been selected for our gathering.",
+      "options": [
+        "A. 我們的聚會取消了場地。",
+        "B. 我們還沒找到聚會的場地。",
+        "C. 我們聚會的場地已經被選定了。",
+        "D. 場地對我們的聚會來說太小了。"
+      ],
+      "ans": "C",
+      "explain": "原句：The venue has been selected for our gathering. 意思是「我們聚會的場地已經被選定了。」"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you ever bought a faulty item online?",
+      "options": [
+        "A. I buy things online all the time.",
+        "B. The product is not faulty.",
+        "C. Yes, I will buy it online.",
+        "D. Yes, I once received a broken cup."
+      ],
+      "ans": "D",
+      "explain": "原句：Have you ever bought a faulty item online? (你曾在網路上買過有瑕疵的物品嗎？) (A) 我經常上網買東西。(B) 產品沒有瑕疵。(C) 是的，我會上網買。(D) 是的，我有一次收到破掉的杯子。故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If they change the topic, what will we talk about?",
+      "options": [
+        "A. We will just follow their new direction.",
+        "B. The topic is very interesting.",
+        "C. They haven't changed the topic.",
+        "D. Yes, we will talk about the topic."
+      ],
+      "ans": "A",
+      "explain": "原句：If they change the topic, what will we talk about? (如果他們改變主題，我們將談論什麼？) (A) 我們就跟隨他們的新方向。(B) 這主題很有趣。(C) 他們還沒改主題。(D) 是的，我們會談論這主題。故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the background check been finished by the company?",
+      "options": [
+        "A. The company has a good background.",
+        "B. Not yet, they are still checking my history.",
+        "C. Yes, the background check will finish soon.",
+        "D. I have finished the company check."
+      ],
+      "ans": "B",
+      "explain": "原句：Has the background check been finished by the company? (公司完成背景調查了嗎？) (A) 公司背景良好。(B) 還沒，他們還在查我的經歷。(C) 背景調查很快會完成。(D) 我已經完成公司調查。故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】He ___ any new clothes since he started his minimalist lifestyle last year.",
+      "options": [
+        "A. doesn't buy",
+        "B. hasn't bought",
+        "C. didn't buy",
+        "D. won't buy"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：本題測驗現在完成式的否定型態。關鍵字 since (自從) 接過去時間，表示從去年開始直到現在都「沒有買」新衣服，必須使用現在完成式，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【條件句】The ocean will become more polluted if we ___ the use of plastic bottles.",
+      "options": [
+        "A. won't reduce",
+        "B. to reduce",
+        "C. don't reduce",
+        "D. didn't reduce"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：本題測驗第一類條件句。主要子句使用未來式 (will become)，If 條件子句應使用現在簡單式代替未來式。依照語意「如果我們不減少使用塑膠瓶」，故選 (C) don't reduce。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】All the final essays must ___ by Friday evening, or the teacher will not grade them.",
+      "options": [
+        "A. finish",
+        "B. finishing",
+        "C. finished",
+        "D. be finished"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：本題測驗助動詞的被動語態。主詞為 essays (論文)，無法自己完成動作，必須被完成。助動詞 must 後面接原形動詞 be 加上過去分詞 (V-en)，故選 (D) be finished。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】Finding cheap ___ in this popular tourist city can be very difficult during the summer.",
+      "options": [
+        "A. accommodation",
+        "B. communication",
+        "C. conversation",
+        "D. exhibition"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗名詞字彙。在旅遊熱門城市，夏天要找到便宜的「住宿 (accommodation)」是很困難的。選項 (B) 溝通，(C) 對話，(D) 展覽，皆不符句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The government has started a new ___ project to protect the rare birds in the mountains.",
+      "options": [
+        "A. conversation",
+        "B. conservation",
+        "C. definition",
+        "D. tradition"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：測驗名詞字彙。為了保護稀有鳥類，政府啟動了新的「保育 (conservation)」計畫。注意不要與選項 (A) conversation (對話) 混淆。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】To encourage eco-friendly shopping, the grocery store is offering a special promotion. If you bring your own reusable bags, a small amount of money is deducted from your total bill. Many shoppers have praised this clever idea. Question: How does the store reward eco-friendly shoppers?",
+      "options": [
+        "A. By giving them free reusable bags",
+        "B. By praising them on social media",
+        "C. By taking a little money off their bill",
+        "D. By offering them free groceries"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗短文推論。文中提到 money is deducted from your total bill (從帳單中扣除一小筆錢)，與選項 (C) taking a little money off their bill 意義完全相同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】A fitness tracker is worn on the wrist to monitor physical activity. It counts your steps and estimates the calories you have burned. If you connect it to your phone, you will see a detailed chart of your daily progress. Question: How can a user view a detailed chart of their progress?",
+      "options": [
+        "A. By pressing the button on the tracker",
+        "B. By visiting the doctor every day",
+        "C. By counting their steps carefully",
+        "D. By linking the device to a smartphone"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗短文細節。文章說明 If you connect it to your phone, you will see a detailed chart (如果連接手機，就可以看到詳細圖表)，link the device (連結裝置) 即為 connect 的同義改寫，故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Distance learning allows you to study from anywhere in the world. However, it requires a lot of self-discipline. If you do not plan your schedule well, you will easily fall behind in your classes. Question: What is a disadvantage of distance learning mentioned in the text?",
+      "options": [
+        "A. It is easy to fall behind if you are not organized.",
+        "B. It costs a lot more than regular classes.",
+        "C. The teachers are usually very strict.",
+        "D. You have to travel a lot to take exams."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗主旨推論。文中指出遠距教學需要自律，如果不妥善規劃時間就會落後 (fall behind)，選項 (A) 中 not organized (沒有組織/規劃) 完美對應文意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】In Spain, taking a short nap after lunch, known as a siesta, was once very common. Today, modern work schedules have changed this habit. Most businesses in big cities are no longer closed in the afternoon. Question: What has changed about the siesta in modern Spain?",
+      "options": [
+        "A. It has become popular all over the world.",
+        "B. It is less common because of modern work hours.",
+        "C. It is only practiced by people in big cities.",
+        "D. It has been completely forbidden by the law."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：測驗短文推論。文中提到現代的上班時間改變了午睡習慣，多數大城市商家下午不再關門，這代表午睡習慣因為工作時間變得較不普及，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Coral reefs are often called the rainforests of the sea because they are home to thousands of species. Sadly, they are threatened by warming waters. If the temperature rises further, many corals will die. Question: Why are coral reefs compared to rainforests?",
+      "options": [
+        "A. Because they need a lot of fresh rain",
+        "B. Because they are located near the equator",
+        "C. Because they support a wide variety of life",
+        "D. Because they have green plants growing on them"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：測驗推論理解。文章首句提到珊瑚礁被稱為海中的雨林，是因為 they are home to thousands of species (是成千上萬物種的家)，表示其生態豐富度高，與選項 (C) support a wide variety of life 意思相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Buying items in bulk can seem like a great way to save cash. However, if you buy too much fresh food, it might go bad before you can eat it. You should only buy dry goods like rice and pasta in large quantities. Question: What is the text's advice on buying things in bulk?",
+      "options": [
+        "A. Always buy fresh food in large amounts.",
+        "B. Stop buying bulk items to save space.",
+        "C. Only buy things that are on sale today.",
+        "D. Limit bulk purchases to dry foods that last longer."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：測驗短文主旨。文章建議生鮮食品買太多會壞掉，所以應該只大量購買米和義大利麵等乾貨。選項 (D) 限制大量購買僅限於保存較久的乾貨，最符合文意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Language barriers can be challenging when you travel alone. A simple translation app on your phone can solve most communication problems. If you learn a few basic greetings, the locals will be very friendly to you. Question: How should a traveler make a good impression on locals?",
+      "options": [
+        "A. By learning some simple local greetings",
+        "B. By traveling with a large group of people",
+        "C. By buying them a new smartphone",
+        "D. By speaking English very slowly"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：測驗短文細節。文章提到 If you learn a few basic greetings, the locals will be very friendly (如果你學幾句基本的問候語，當地人會對你很友善)，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Adults returning to education often worry about their ability to learn new things. Research shows that older brains are actually better at connecting different ideas. If you take your time, you will find that learning is a lifelong joy. Question: What advantage do older learners have according to research?",
+      "options": [
+        "A. They learn to use new computers much faster.",
+        "B. They are better at linking various concepts together.",
+        "C. They do not need to study as much as young people.",
+        "D. They have more free time to attend classes."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：測驗短文細節。文中提到 older brains are actually better at connecting different ideas (較年長的大腦其實更擅長連結不同的想法)，connecting ideas 的同義改寫即為 linking concepts，故選 (B)。"
     }
   ]
 }

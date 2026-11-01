@@ -22,7 +22,7 @@
 
 **大腦安排（到 Claude 週額度重置前）**：**Codex 當執行大腦**（排程、拆工作、叫 Antigravity 做審查／第二意見、自己實作）；Claude 只做「規格定案、合併到 feat/round4、最後驗收」三件事。Claude 額度重置後再評估是否收回。
 - Codex 叫 Antigravity：`cd /Users/dzzz/agy-worktrees/EngGame && agy -p "<任務>" --model gemini-4-argon-medium --mode accept-edits`（agy 路徑 `/Applications/Gemini.app/Contents/Helpers/agy`）。
-- **Antigravity 目前不能執行終端機指令**（背景模式會自動拒絕），只能讀寫檔。任務要寫「不要執行指令，只讀寫檔」，輸入檔先複製到它資料夾的 `.agy-input/`（已被 git 排除），commit 由 Codex 或 Claude 代做。
+- **Antigravity 權限（2026-11-01 製作人已開）**：可執行 git status/diff/log/show/add/commit、npx tsc/vitest/eslint/tsx、npm run/install、node、ls/cat/grep、dot_clean；**禁止 git push／reset／rm**。其他指令仍會被自動拒絕。舊說明：任務要寫「不要執行指令，只讀寫檔」，輸入檔先複製到它資料夾的 `.agy-input/`（已被 git 排除），commit 由 Codex 或 Claude 代做。
 - 要開放 Antigravity 執行指令：製作人自己建立 `~/.gemini/antigravity-cli/settings.json`（Claude 的安全規則不允許自己改其他 AI 的權限）。建議內容（只允許測試、git 讀取與 commit，禁止 push／reset／rm）：
   ```json
   {"permissions":{"allow":["command(git status)","command(git diff)","command(git log)","command(git add)","command(git commit)","command(npx tsc)","command(npx vitest)","command(npx eslint)","command(npx tsx)","command(npm run)","command(node)","command(dot_clean)","command(ls)","command(cat)","command(grep)"],"deny":["command(git push)","command(git reset)","command(rm)"]}}
@@ -51,6 +51,17 @@ Codex 的 C7 實測（`docs/gpt/c7-experience-pool-review.md`）：主線 85% �
 6. **BOSS 數值先不動**。修完重跑 r0/r4/r8 MC；吃力玩家 C2 終王首過低於 55% 才再調援助（不調 BOSS 血量）。
 7. 交付前由 Antigravity（`gemini-4-argon-high`）讀規格與結果做第二意見紙上審查；有重大異議寫進 COLLAB，PM 裁決。
 
+### 2.2 C7 修正規格 v2.2（PM 2026-11-01 定案，取代 2.1 的第 2、3、6 點）
+Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summary.json 精確帳推算，v2.1 照字面做會在 fast（Lv186～187）、normal、mastery（+16）三處壓線失敗，另抓到援助真空帶與轉職吞經驗。PM 全部採納如下：
+1. **追趕曲線（只套非主線 EXP：素材本、塔、掃蕩、錯題修煉、已首通關卡重刷）**，基準＝玩家**最前線進度**的推薦等級 `frontierRecLv`，Δ＝Lv−frontierRecLv：Δ≤−4 ×1.25（顯示「追趕祝福 +25%」）／−3～+3 ×1.0／+4～+7 ×0.7／+8～+10 ×0.4／+11～+12 ×0.2／≥+13 ×0（單次不得把等級推過 +13）。被扣掉的 EXP 按 8:1 轉「修練津貼」金幣，每日上限 150＋50×已解鎖區序，不轉素材。
+2. **副本 EXP**：素材本每答對 6→**8**×xpScale；時空之塔首通補 EXP `120×xpScale`（每 5 層首領層 ×1.5）。
+3. **模擬作息**：fast＝主線＋每天 1 次素材本；normal＝主線＋每 3 張複習 1 次＋每天 2 次素材本＋每 3 天 1 次塔；mastery 照舊。驗收門檻不變（fast ≥ −12、normal ≥ −6、mastery ≤ +15、不連續 3 張低於下限）。
+4. **首領援助階梯（不改 BOSS 血量／攻擊）**：第 2 戰＝開場技能能量 50%＋1 層守護護盾；第 3 戰＝再加全滅免費復活 1 次（回 40% HP）；第 4 戰起＝再加承受傷害 −15%（第 6 戰起 −25%）＋思考時間 +2 秒。沉默君王第 3 戰起累計解封 10→8 題。
+5. **P0 轉職吞經驗**：等級卡在轉職上限（40／100／160）時，EXP 不歸零，暫存最多 10 級份量，轉職後立刻補入；距上限 3 級內且可轉職時，地圖與結算醒目提示「可免費轉職突破上限」。
+6. **掃蕩券**：每日上限 15→**5**，掃蕩 EXP 套用第 1 點曲線。
+7. 「戰敗熱身」按鈕（複習本場錯的 3 題→下一場首擊 ×2＋護盾）列入 T9 介面，非 C7 範圍。
+8. 英雄訓練金幣二次方牆（練滿 3 位 SSR 需 580 萬金幣，全期收入 12～25 萬）→ 併入 T7 經濟驗收（Q7）。
+
 ## 3. 目前進度（2026-11-01）
 - ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
 - 🟡 C7：程式交付（Codex `1acb617`，存檔 v21），**平衡未過** → 照 2.1 修正中。
@@ -66,15 +77,16 @@ Codex 的 C7 實測（`docs/gpt/c7-experience-pool-review.md`）：主線 85% �
 | Q3 | 召喚券是否太多（ChatGPT 提醒接近每天十連） | Codex 算經濟帳、Antigravity 第二意見 | 經濟驗收時 |
 | Q4 | 主角與英雄同等投入，主角強 10～15% 是否成立 | Codex 模擬 | 全盤驗收時 |
 | Q5 | C5 語音：TTS 沒有精確音長，故障上限用字數估 | 需真人裝置實測（製作人） | 實玩時 |
+| Q7 | 英雄訓練金幣二次方牆 vs 全期收入、推薦戰力顯示失真 | Codex 算帳、Antigravity 審 | T7 |
 | Q6 | 題庫只能證明「認得」，不能證明 C1/C2 自由表達；能力聲明要保守 | Antigravity 審文案 | 題庫完成時 |
 
 ## 5. 任務佇列（照順序；負責人／模型）
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
-| T1 | C7 照 2.1 修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 第 2.1 節第 4 點；tsc/vitest/eslint |
-| T2 | C7 修正規格與結果第二意見（**進行中** 15:20 派出；先審規格，Codex 實作後再審結果） | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |
-| T3 | 修 r6 的 152 題（報告：`/Users/dzzz/agy-worktrees/EngGame/docs/question-bank-qa/agy-review-r6.md`，agy/work `d8d8690`） | Codex | low～medium | 每題對照 agy-review-r6.md 處理或寫不改理由 |
-| T4 | 審 r7（C1）、r8（C2）（**進行中** 15:20 派出） | Antigravity | argon-medium | 同 r6 格式 |
+| T1 | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
+| T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |
+| T3 | 修 r6 的 152 題、r7 139 題、r8 202 題次（報告：`/Users/dzzz/agy-worktrees/EngGame/docs/question-bank-qa/agy-review-r6.md`，agy/work `d8d8690`） | Codex | low～medium | 每題對照 agy-review-r6.md 處理或寫不改理由 |
+| T4 | 審 r7 ✅ 139 題、r8 ✅ 202 題次（`agy-review-r7.md`／`r8.md`，agy/work）；兩區都多 1 批（normal 930／boss 310），Codex 決定裁減或保留 | Antigravity | argon-medium | 同 r6 格式 |
 | T5 | 補題到目標量（r6 +600、r7/r8 各 +800），A2～B2 缺口由 Antigravity 出題 | Codex（B2+～C2）／Antigravity（A2～B2） | medium | 去重鍵 `type|desc|speak`、聽讀說寫 30/30/20/20 |
 | T6 | C8 手機／電腦版面（TASKS「介面」P0、P1） | Codex | medium | **三尺寸截圖**，Antigravity 對照截圖審 |
 | T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |

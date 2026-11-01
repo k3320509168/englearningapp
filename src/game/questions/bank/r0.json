@@ -7532,7 +7532,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
       "desc": "【生活文法】The ___ is on the desk.",
       "options": [
         "A. pen",
@@ -7588,9 +7587,6 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】___ are two birds in the park.",
-=======
-      "desc": "【生活文法】含有 there is/are 的英文句子",
->>>>>>> origin/feat/round4
       "options": [
         "A. They",
         "B. Their",
@@ -7608,7 +7604,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
       "desc": "【職場字彙】My computer is on the ___ in the office.",
       "options": [
         "A. desk",
@@ -7624,9 +7619,6 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】He can ___ very well.",
-=======
-      "desc": "【生活文法】含有助動詞 can 的英文句子",
->>>>>>> origin/feat/round4
       "options": [
         "A. to sing",
         "B. sing",
@@ -7643,7 +7635,6 @@
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【旅遊文法】___ flight is late, so we wait at the airport.",
       "options": [
@@ -7870,8 +7861,6 @@
     {
       "type": "choice",
       "skill": "reading",
-=======
->>>>>>> origin/feat/round4
       "difficulty": 2,
       "desc": "【旅遊對話】A: ___ a bank near here? B: Yes, there is. It is on this street.",
       "options": [
@@ -7890,7 +7879,6 @@
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
       "difficulty": 2,
       "desc": "【職場介系詞】A: When is the meeting? B: It is ___ 10:00.",
       "options": [
@@ -8023,8 +8011,6 @@
     {
       "type": "choice",
       "skill": "reading",
-=======
->>>>>>> origin/feat/round4
       "difficulty": 3,
       "desc": "【短文理解】[Note] Please put the paper on the desk. Do not put it on the sofa.\nQ: Where does the paper go?",
       "options": [
@@ -8166,7 +8152,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
       "desc": "【生活文法】I ___ hungry. Can we eat lunch now?",
       "options": [
         "A. is",
@@ -8180,7 +8165,354 @@
         "be_verb"
       ],
       "grammarReview": "approved"
-=======
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】My classmates ___ very friendly.",
+      "options": [
+        "A. is",
+        "B. am",
+        "C. are",
+        "D. be"
+      ],
+      "ans": "C",
+      "explain": "主詞 My classmates 是複數，be 動詞用 are。(A) is 用於單數；(B) am 只用於 I；(D) be 是原形。",
+      "grammar": [
+        "be_verb"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家庭文法】My grandmother ___ seventy years old.",
+      "options": [
+        "A. are",
+        "B. am",
+        "C. be",
+        "D. is"
+      ],
+      "ans": "D",
+      "explain": "主詞 My grandmother 是單數第三人稱，be 動詞用 is。(A) are 用於複數；(B) am 只用於 I；(C) be 是原形。",
+      "grammar": [
+        "be_verb"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】This is my brother. ___ is a student.",
+      "options": [
+        "A. He",
+        "B. She",
+        "C. They",
+        "D. We"
+      ],
+      "ans": "A",
+      "explain": "my brother（我的哥哥／弟弟）是男生、單數，代名詞用 He。(B) She 指女生；(C) They、(D) We 是複數。",
+      "grammar": [
+        "subject_pronouns"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家庭文法】My mother is a nurse. ___ works at a hospital.",
+      "options": [
+        "A. He",
+        "B. She",
+        "C. It",
+        "D. They"
+      ],
+      "ans": "B",
+      "explain": "my mother 是女生、單數，代名詞用 She。(A) He 指男生；(C) It 指東西或動物；(D) They 是複數。",
+      "grammar": [
+        "subject_pronouns"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】Tom and I are in the same class. ___ are good friends.",
+      "options": [
+        "A. They",
+        "B. He",
+        "C. We",
+        "D. You"
+      ],
+      "ans": "C",
+      "explain": "Tom and I（湯姆和我）包含「我」，代名詞用 We。(A) They 不包含說話的人；(B) He 是單數；(D) You 指聽話的人。",
+      "grammar": [
+        "subject_pronouns"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】Look at the cat! ___ is very cute.",
+      "options": [
+        "A. It",
+        "B. He",
+        "C. They",
+        "D. She"
+      ],
+      "ans": "A",
+      "explain": "動物（不知道性別時）用 It 代替。(B) He、(D) She 通常指人；(C) They 是複數。",
+      "grammar": [
+        "subject_pronouns"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】Anna and Ben work here. ___ are very busy today.",
+      "options": [
+        "A. We",
+        "B. She",
+        "C. He",
+        "D. They"
+      ],
+      "ans": "D",
+      "explain": "Anna and Ben 是兩個人、不包含說話的人，代名詞用 They。(A) We 包含「我」；(B) She、(C) He 是單數。",
+      "grammar": [
+        "subject_pronouns"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活對話】A: Are you a teacher? B: Yes, ___ am.",
+      "options": [
+        "A. you",
+        "B. I",
+        "C. he",
+        "D. we"
+      ],
+      "ans": "B",
+      "explain": "對方問 Are you…?，回答自己的事要用 I，所以是 Yes, I am。(A) you 是對方；(C) he、(D) we 和 am 不搭配。",
+      "grammar": [
+        "subject_pronouns",
+        "be_verb"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】I have ___ apple in my bag.",
+      "options": [
+        "A. a",
+        "B. an",
+        "C. two",
+        "D. many"
+      ],
+      "ans": "B",
+      "explain": "apple 開頭是母音的發音，單數可數名詞前用 an。(A) a 用於子音開頭；(C) two、(D) many 後面要接複數 apples。",
+      "grammar": [
+        "articles_a_an"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】My father drives ___ car to work.",
+      "options": [
+        "A. an",
+        "B. a",
+        "C. two",
+        "D. many"
+      ],
+      "ans": "B",
+      "explain": "car 開頭是子音的發音，單數名詞前用 a。(A) an 用於母音開頭（如 an egg）；(C)(D) 後面要接複數。",
+      "grammar": [
+        "articles_a_an"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】She is ___ engineer.",
+      "options": [
+        "A. a",
+        "B. an",
+        "C. the two",
+        "D. many"
+      ],
+      "ans": "B",
+      "explain": "engineer 開頭是母音的發音，前面用 an。(A) a 用於子音開頭；(C)(D) 和單數 engineer 不搭配。",
+      "grammar": [
+        "articles_a_an"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【旅遊文法】We stay in ___ hotel near the beach.",
+      "options": [
+        "A. an",
+        "B. a",
+        "C. some",
+        "D. two"
+      ],
+      "ans": "B",
+      "explain": "hotel 開頭的 h 有發音（子音），單數名詞前用 a。(A) an 用於母音發音開頭；(C) some、(D) two 後面要接複數 hotels。",
+      "grammar": [
+        "articles_a_an"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【學校文法】Please wait ___ hour. The teacher is in a meeting.",
+      "options": [
+        "A. a",
+        "B. an",
+        "C. two",
+        "D. many"
+      ],
+      "ans": "B",
+      "explain": "hour 的 h 不發音，開頭是母音的發音，所以用 an hour。(A) a 用於子音發音開頭；(C) two、(D) many 後面要接複數 hours。",
+      "grammar": [
+        "articles_a_an"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】I ___ to school by bus every day.",
+      "options": [
+        "A. go",
+        "B. goes",
+        "C. going",
+        "D. am go"
+      ],
+      "ans": "A",
+      "explain": "主詞 I 用動詞原形，一般現在式說 I go。(B) goes 用於 he/she/it；(C) going 前面缺 be 動詞；(D) am go 文法錯誤。",
+      "grammar": [
+        "present_simple"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家庭文法】We ___ breakfast at seven every morning.",
+      "options": [
+        "A. eats",
+        "B. eat",
+        "C. eating",
+        "D. is eat"
+      ],
+      "ans": "B",
+      "explain": "主詞 We 是複數，一般現在式用原形 eat。(A) eats 用於單數第三人稱；(C) eating 前面缺 be 動詞；(D) is eat 文法錯誤。",
+      "grammar": [
+        "present_simple"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【職場文法】They ___ English at work every day.",
+      "options": [
+        "A. speaks",
+        "B. speaking",
+        "C. speak",
+        "D. is speak"
+      ],
+      "ans": "C",
+      "explain": "主詞 They 是複數，一般現在式用原形 speak。(A) speaks 用於單數第三人稱；(B) speaking 前面缺 be 動詞；(D) is speak 文法錯誤。",
+      "grammar": [
+        "present_simple"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】I ___ like coffee. I like tea.",
+      "options": [
+        "A. don't",
+        "B. doesn't",
+        "C. isn't",
+        "D. am not"
+      ],
+      "ans": "A",
+      "explain": "主詞 I 的一般現在式否定用 don't + 原形動詞。(B) doesn't 用於 he/she/it；(C) isn't、(D) am not 是 be 動詞的否定，後面不能直接接動詞 like。",
+      "grammar": [
+        "present_simple_negation"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家庭文法】My sister ___ eat meat. She only eats vegetables.",
+      "options": [
+        "A. don't",
+        "B. isn't",
+        "C. doesn't",
+        "D. aren't"
+      ],
+      "ans": "C",
+      "explain": "主詞 My sister 是單數第三人稱，否定用 doesn't + 原形動詞。(A) don't 用於 I/you/we/they；(B) isn't、(D) aren't 是 be 動詞的否定。",
+      "grammar": [
+        "present_simple_negation"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】We ___ have class on Sunday.",
+      "options": [
+        "A. doesn't",
+        "B. don't",
+        "C. aren't",
+        "D. isn't"
+      ],
+      "ans": "B",
+      "explain": "主詞 We 用 don't + 原形動詞。(A) doesn't 用於單數第三人稱；(C) aren't、(D) isn't 是 be 動詞的否定，不能接 have。",
+      "grammar": [
+        "present_simple_negation"
+      ],
+      "grammarReview": "approved"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
       "desc": "【家庭文法】My uncle ___ a new car, and he drives it to work.",
       "options": [
         "A. having",
@@ -8414,18 +8746,11 @@
       ],
       "ans": "B",
       "explain": "本題測試 There is/are 句型。five pencils 為複數，be 動詞必須使用 are，故選 B。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【學校文法】My classmates ___ very friendly.",
-      "options": [
-        "A. is",
-        "B. am",
-=======
       "desc": "【學校介系詞】Please put your homework ___ the teacher's desk.",
       "options": [
         "A. on",
@@ -8850,18 +9175,10 @@
       "options": [
         "A. am",
         "B. is",
->>>>>>> origin/feat/round4
         "C. are",
         "D. be"
       ],
       "ans": "C",
-<<<<<<< HEAD
-      "explain": "主詞 My classmates 是複數，be 動詞用 are。(A) is 用於單數；(B) am 只用於 I；(D) be 是原形。",
-      "grammar": [
-        "be_verb"
-      ],
-      "grammarReview": "approved"
-=======
       "explain": "繁體中文解說：此題測試 be 動詞。主詞 Mary and Lisa 是兩個人（複數），所以 be 動詞必須用 are。選項 A 用於 I；B 用於單數主詞；D be 為原形，不符合現在式文法。"
     },
     {
@@ -8891,15 +9208,11 @@
       ],
       "ans": "A",
       "explain": "繁體中文解說：此題測試疑問詞。回答是「我的朋友 Ken」，表示在問「人」，因此疑問詞要用 Who（誰）。選項 B 問事物；C 問地點；D 問時間，皆不符合回答內容。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【家庭文法】My grandmother ___ seventy years old.",
-=======
       "desc": "【早餐】I eat bread ___ seven.",
       "options": [
         "A. at",
@@ -8943,7 +9256,6 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【午餐】The meat ___ very good.",
->>>>>>> origin/feat/round4
       "options": [
         "A. are",
         "B. am",
@@ -8951,35 +9263,11 @@
         "D. is"
       ],
       "ans": "D",
-<<<<<<< HEAD
-      "explain": "主詞 My grandmother 是單數第三人稱，be 動詞用 is。(A) are 用於複數；(B) am 只用於 I；(C) be 是原形。",
-      "grammar": [
-        "be_verb"
-      ],
-      "grammarReview": "approved"
-=======
       "explain": "繁體中文解說：此題測試不可數名詞的 be 動詞。meat（肉）是不可數名詞，在文法上視為單數，因此 be 動詞要用 is。選項 A are 用於複數；B am 專屬於 I；C be 是原形。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
-      "difficulty": 1,
-      "desc": "【生活文法】This is my brother. ___ is a student.",
-      "options": [
-        "A. He",
-        "B. She",
-        "C. They",
-        "D. We"
-      ],
-      "ans": "A",
-      "explain": "my brother（我的哥哥／弟弟）是男生、單數，代名詞用 He。(B) She 指女生；(C) They、(D) We 是複數。",
-      "grammar": [
-        "subject_pronouns"
-      ],
-      "grammarReview": "approved"
-=======
       "difficulty": 2,
       "desc": "【午餐】A: ___ they like fish? B: Yes, they do.",
       "options": [
@@ -8990,27 +9278,10 @@
       ],
       "ans": "A",
       "explain": "繁體中文解說：此題測試現在簡單式的疑問句。主詞是 they（他們），且句中有一般動詞 like，所以問句必須用助動詞 Do 開頭。選項 B Does 用於單數；C 和 D 是 be 動詞，不能與一般動詞連用。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
-      "difficulty": 1,
-      "desc": "【家庭文法】My mother is a nurse. ___ works at a hospital.",
-      "options": [
-        "A. He",
-        "B. She",
-        "C. It",
-        "D. They"
-      ],
-      "ans": "B",
-      "explain": "my mother 是女生、單數，代名詞用 She。(A) He 指男生；(C) It 指東西或動物；(D) They 是複數。",
-      "grammar": [
-        "subject_pronouns"
-      ],
-      "grammarReview": "approved"
-=======
       "difficulty": 2,
       "desc": "【午餐】A: ___ is your lunch? B: It is on the table.",
       "options": [
@@ -9021,27 +9292,10 @@
       ],
       "ans": "B",
       "explain": "繁體中文解說：此題測試疑問詞。回答是「on the table（在桌上）」，表示在問物品的位置（地點），因此疑問詞要用 Where（哪裡）。選項 A 問事物；C 問人；D 問時間。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
-      "difficulty": 1,
-      "desc": "【學校文法】Tom and I are in the same class. ___ are good friends.",
-      "options": [
-        "A. They",
-        "B. He",
-        "C. We",
-        "D. You"
-      ],
-      "ans": "C",
-      "explain": "Tom and I（湯姆和我）包含「我」，代名詞用 We。(A) They 不包含說話的人；(B) He 是單數；(D) You 指聽話的人。",
-      "grammar": [
-        "subject_pronouns"
-      ],
-      "grammarReview": "approved"
-=======
       "difficulty": 2,
       "desc": "【早餐】I do not ___ tea. I like hot milk.",
       "options": [
@@ -9052,27 +9306,11 @@
       ],
       "ans": "C",
       "explain": "繁體中文解說：此題測試助動詞與原形動詞。在否定助動詞 do not (don't) 之後，動詞必須恢復為原形 drink。選項 A drinks 有 s 是錯的；B drinking 和 D to drink 形態皆不符文法。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【生活文法】Look at the cat! ___ is very cute.",
-      "options": [
-        "A. It",
-        "B. He",
-        "C. They",
-        "D. She"
-      ],
-      "ans": "A",
-      "explain": "動物（不知道性別時）用 It 代替。(B) He、(D) She 通常指人；(C) They 是複數。",
-      "grammar": [
-        "subject_pronouns"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【城市】There are many shops ___ this town.",
       "options": [
         "A. at",
@@ -9082,27 +9320,11 @@
       ],
       "ans": "C",
       "explain": "繁體中文解說：此題測試地方介系詞。表示在一個城鎮或城市「裡面」時，介系詞通常使用 in（在...之中）。選項 A at 通常指特定的小地點；B to 表方向；D with 表伴隨。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【職場文法】Anna and Ben work here. ___ are very busy today.",
-      "options": [
-        "A. We",
-        "B. She",
-        "C. He",
-        "D. They"
-      ],
-      "ans": "D",
-      "explain": "Anna and Ben 是兩個人、不包含說話的人，代名詞用 They。(A) We 包含「我」；(B) She、(C) He 是單數。",
-      "grammar": [
-        "subject_pronouns"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【公園】The tree ___ very tall.",
       "options": [
         "A. am",
@@ -9112,28 +9334,11 @@
       ],
       "ans": "D",
       "explain": "繁體中文解說：此題測試 be 動詞。主詞 The tree 是一棵樹（單數），因此對應的 be 動詞是 is。選項 A am 用於 I；B are 用於複數；C be 為動詞原形。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【生活對話】A: Are you a teacher? B: Yes, ___ am.",
-      "options": [
-        "A. you",
-        "B. I",
-        "C. he",
-        "D. we"
-      ],
-      "ans": "B",
-      "explain": "對方問 Are you…?，回答自己的事要用 I，所以是 Yes, I am。(A) you 是對方；(C) he、(D) we 和 am 不搭配。",
-      "grammar": [
-        "subject_pronouns",
-        "be_verb"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【城市】Can you ___ the bank?",
       "options": [
         "A. see",
@@ -9143,63 +9348,11 @@
       ],
       "ans": "A",
       "explain": "繁體中文解說：此題測試助動詞的用法。Can 是助動詞，後面的主要動詞必須是原形。因此選 see。選項 B sees 有加 s；C 是現在分詞；D 是不定詞，均不符合文法規則。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【生活文法】I have ___ apple in my bag.",
-      "options": [
-        "A. a",
-        "B. an",
-        "C. two",
-        "D. many"
-      ],
-      "ans": "B",
-      "explain": "apple 開頭是母音的發音，單數可數名詞前用 an。(A) a 用於子音開頭；(C) two、(D) many 後面要接複數 apples。",
-      "grammar": [
-        "articles_a_an"
-      ],
-      "grammarReview": "approved"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【生活文法】My father drives ___ car to work.",
-      "options": [
-        "A. an",
-        "B. a",
-        "C. two",
-        "D. many"
-      ],
-      "ans": "B",
-      "explain": "car 開頭是子音的發音，單數名詞前用 a。(A) an 用於母音開頭（如 an egg）；(C)(D) 後面要接複數。",
-      "grammar": [
-        "articles_a_an"
-      ],
-      "grammarReview": "approved"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【職場文法】She is ___ engineer.",
-      "options": [
-        "A. a",
-        "B. an",
-        "C. the two",
-        "D. many"
-      ],
-      "ans": "B",
-      "explain": "engineer 開頭是母音的發音，前面用 an。(A) a 用於子音開頭；(C)(D) 和單數 engineer 不搭配。",
-      "grammar": [
-        "articles_a_an"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【公園】We run ___ the park.",
       "options": [
         "A. on",
@@ -9209,27 +9362,11 @@
       ],
       "ans": "B",
       "explain": "繁體中文解說：此題測試地方介系詞。表示在公園這片區域內活動，介系詞用 in（在...裡面）。選項 A on 是在表面上；C to 是往某個方向去；D from 是從某處來。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-<<<<<<< HEAD
-      "desc": "【旅遊文法】We stay in ___ hotel near the beach.",
-      "options": [
-        "A. an",
-        "B. a",
-        "C. some",
-        "D. two"
-      ],
-      "ans": "B",
-      "explain": "hotel 開頭的 h 有發音（子音），單數名詞前用 a。(A) an 用於母音發音開頭；(C) some、(D) two 後面要接複數 hotels。",
-      "grammar": [
-        "articles_a_an"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【城市】A: How do you go to the bank? B: I ___ by taxi.",
       "options": [
         "A. goes",
@@ -9239,27 +9376,11 @@
       ],
       "ans": "C",
       "explain": "繁體中文解說：此題測試現在簡單式。主詞是第一人稱 I，動詞必須使用原形 go。選項 A goes 用於第三人稱單數（如 He/She）；B going 為現在分詞；D to go 為不定詞，皆不合語法。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-<<<<<<< HEAD
-      "desc": "【學校文法】Please wait ___ hour. The teacher is in a meeting.",
-      "options": [
-        "A. a",
-        "B. an",
-        "C. two",
-        "D. many"
-      ],
-      "ans": "B",
-      "explain": "hour 的 h 不發音，開頭是母音的發音，所以用 an hour。(A) a 用於子音發音開頭；(C) two、(D) many 後面要接複數 hours。",
-      "grammar": [
-        "articles_a_an"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【公園】Look! The birds ___ in the tree.",
       "options": [
         "A. is",
@@ -9297,15 +9418,11 @@
       ],
       "ans": "B",
       "explain": "繁體中文解說：此題測試短文理解。告示牌提到「You cannot drive a car here.（你不能在這裡開車）」，因此這是在公園裡被禁止的事情。選項 A 和 C 都是可以做的。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【生活文法】I ___ to school by bus every day.",
-=======
       "desc": "【週末活動】I ___ books on the weekend.",
       "options": [
         "A. read",
@@ -9321,64 +9438,19 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【週末活動】She ___ to the movies on the weekend.",
->>>>>>> origin/feat/round4
       "options": [
         "A. go",
         "B. goes",
         "C. going",
-<<<<<<< HEAD
-        "D. am go"
-      ],
-      "ans": "A",
-      "explain": "主詞 I 用動詞原形，一般現在式說 I go。(B) goes 用於 he/she/it；(C) going 前面缺 be 動詞；(D) am go 文法錯誤。",
-      "grammar": [
-        "present_simple"
-      ],
-      "grammarReview": "approved"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【家庭文法】We ___ breakfast at seven every morning.",
-      "options": [
-        "A. eats",
-        "B. eat",
-        "C. eating",
-        "D. is eat"
-      ],
-      "ans": "B",
-      "explain": "主詞 We 是複數，一般現在式用原形 eat。(A) eats 用於單數第三人稱；(C) eating 前面缺 be 動詞；(D) is eat 文法錯誤。",
-      "grammar": [
-        "present_simple"
-      ],
-      "grammarReview": "approved"
-=======
         "D. to go"
       ],
       "ans": "B",
       "explain": "繁體中文解說：此題測試第三人稱單數動詞。主詞 She 是第三人稱單數，一般動詞 go 必須加上 es 成為 goes。選項 A go 少了 es；C 和 D 都不是正確的主要動詞形式。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【職場文法】They ___ English at work every day.",
-      "options": [
-        "A. speaks",
-        "B. speaking",
-        "C. speak",
-        "D. is speak"
-      ],
-      "ans": "C",
-      "explain": "主詞 They 是複數，一般現在式用原形 speak。(A) speaks 用於單數第三人稱；(B) speaking 前面缺 be 動詞；(D) is speak 文法錯誤。",
-      "grammar": [
-        "present_simple"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【週末活動】___ you play baseball?",
       "options": [
         "A. Is",
@@ -9388,27 +9460,11 @@
       ],
       "ans": "C",
       "explain": "繁體中文解說：此題測試助動詞。句中有一般動詞 play，且是在詢問「能力」，所以開頭要用助動詞 Can（你會...嗎？）。選項 A、B、D 都是 be 動詞，不能與原形動詞連用。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
-      "desc": "【生活文法】I ___ like coffee. I like tea.",
-      "options": [
-        "A. don't",
-        "B. doesn't",
-        "C. isn't",
-        "D. am not"
-      ],
-      "ans": "A",
-      "explain": "主詞 I 的一般現在式否定用 don't + 原形動詞。(B) doesn't 用於 he/she/it；(C) isn't、(D) am not 是 be 動詞的否定，後面不能直接接動詞 like。",
-      "grammar": [
-        "present_simple_negation"
-      ],
-      "grammarReview": "approved"
-=======
       "desc": "【週末活動】They ___ at the sports club.",
       "options": [
         "A. am",
@@ -9432,45 +9488,10 @@
       ],
       "ans": "A",
       "explain": "繁體中文解說：此題測試現在簡單式。回答句的主詞 He 是第三人稱單數，動詞 play 必須加上 s 變成 plays。選項 B 少了 s；C 和 D 不能作句子的主要動詞。"
->>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
-      "difficulty": 1,
-      "desc": "【家庭文法】My sister ___ eat meat. She only eats vegetables.",
-      "options": [
-        "A. don't",
-        "B. isn't",
-        "C. doesn't",
-        "D. aren't"
-      ],
-      "ans": "C",
-      "explain": "主詞 My sister 是單數第三人稱，否定用 doesn't + 原形動詞。(A) don't 用於 I/you/we/they；(B) isn't、(D) aren't 是 be 動詞的否定。",
-      "grammar": [
-        "present_simple_negation"
-      ],
-      "grammarReview": "approved"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【學校文法】We ___ have class on Sunday.",
-      "options": [
-        "A. doesn't",
-        "B. don't",
-        "C. aren't",
-        "D. isn't"
-      ],
-      "ans": "B",
-      "explain": "主詞 We 用 don't + 原形動詞。(A) doesn't 用於單數第三人稱；(C) aren't、(D) isn't 是 be 動詞的否定，不能接 have。",
-      "grammar": [
-        "present_simple_negation"
-      ],
-      "grammarReview": "approved"
-=======
       "difficulty": 2,
       "desc": "【週末活動】I want to ___ a movie.",
       "options": [
@@ -9509,7 +9530,6 @@
       ],
       "ans": "D",
       "explain": "繁體中文解說：此題測試短文細節理解。便條紙中寫到「We need a ball.（我們需要一顆球）」，所以他們需要的是球。其他選項皆未在文中提及。"
->>>>>>> origin/feat/round4
     }
   ],
   "boss": [
@@ -11894,7 +11914,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-<<<<<<< HEAD
       "desc": "【職場文法】My friend and I ___ in this bank.",
       "options": [
         "A. works",
@@ -11914,9 +11933,6 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】There ___ some milk on the table.",
-=======
-      "desc": "【生活文法】含有 There is/are 與不可數名詞",
->>>>>>> origin/feat/round4
       "options": [
         "A. is",
         "B. are",
@@ -11934,7 +11950,6 @@
     {
       "type": "choice",
       "skill": "reading",
-<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【旅遊文法】You ___ park your bicycle here.",
       "options": [
@@ -12035,8 +12050,6 @@
     {
       "type": "choice",
       "skill": "reading",
-=======
->>>>>>> origin/feat/round4
       "difficulty": 3,
       "desc": "【短文理解】[Email] Hello, the new desk is too big for my room. I want to put it in the hall. Can you help me move it at 15:00?\nQ: Why does the writer want to move the desk?",
       "options": [

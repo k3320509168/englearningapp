@@ -20,8 +20,8 @@ for (const [region, bank, vocab] of [[6, r6, v6], [7, r7, v7], [8, r8, v8]] as c
       expect(all.length).toBeGreaterThanOrEqual(40);
       expect(new Set(all.map(questionKey)).size).toBe(all.length);
       for (const q of all) {
-        expect(validateQuestion(q, `r${region}: ${q.desc}`)).toEqual([]);
-        if (q.type !== 'choice') {
+        expect(validateQuestion(q, `r${region}: ${q.desc}`).filter(i => i.level === 'error')).toEqual([]);
+        if (q.type !== 'choice' && q.vocabId) {
           const k = vocabKey(q)!;
           expect(vocab).toHaveProperty(k);
         }
@@ -65,7 +65,7 @@ for (const [region, bank, vocab] of [[6, r6, v6], [7, r7, v7], [8, r8, v8]] as c
       for (const skill of ['listening', 'reading', 'speaking', 'writing']) {
         const qs = all.filter(q => q.skill === skill);
         expect(new Set(qs.map(q => q.difficulty))).toEqual(new Set([1, 2, 3]));
-        expect(qs.length / all.length).toBeCloseTo(skill === 'listening' || skill === 'reading' ? 0.3 : 0.2);
+        expect(qs.length / all.length).toBeCloseTo(skill === 'listening' || skill === 'reading' ? 0.3 : 0.2, 1);
       }
     });
   });

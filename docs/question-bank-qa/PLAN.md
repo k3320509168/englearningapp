@@ -187,3 +187,10 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 驗收攔下彎引號所有格使voice答案/vocabId不合格式。建庫現將口說排版apostrophe統一為ASCII apostrophe，保持自然英文所有格，不再靠刪掉句型規避；新增隔離建庫測試，確認答案、speak及詞條查詢一致。a follow-up question聽力詞條改用a supplementary question，避免未支援的展示欄位誤教連字號字法。
 - Node22：tsc、eslint、37 files/330 tests全過；建庫可重現；76616次運作斷言通過，含舊庫5390題格式0 errors/172 warnings。題目仍為草稿，五輪全量一般/模式驗收未完成。
 - 新平衡協作C1/C2/C3分項commit為0b09a3c/55d4131/d61bd7a，待Claude模擬/整體驗收；C4～C7仍待實作。兩條任務線都保留，未push、未部署。
+
+## 第 28 批（3360/5800，進行中）
+- 製作人再次要求題庫持續；新增聲音/安靜/聆聽120題，三區各1120（840 normal/280 boss），聽讀各336、說寫各224。尚差B2+680、C1/C2各880；可再17個三區40題批次，再5個僅C1/C2批次補足。
+- B2+聚焦聽見/聽懂、間接請求、時序與局部否定；C1聚焦剪接對語氣的影響、容忍/支持及表象/內心；C2聚焦表面連續/歷史連續、修辭、暗示與媒介。閱讀所需證據在題內，不需聲學專業知識。
+- 初審將C1過冷僻的SUSURRATION改為較實用的INTERMITTENT。去重攔下within earshot/a pregnant pause/an understated delivery，改為有意義的完整情境而非僅改大小寫。這些詞仍屬跨情境複習，不能當全新知識點。
+- Node22：tsc、eslint、37 files/330 tests通過；建庫可重現；79064次運作斷言、1000次placement模擬通過。含舊庫5510題格式0 errors/172 warnings。這些是結構/程式運作驗證，非全量語意、CEFR或學習成效認證。
+- 一般與模式各五輪完整深審仍未完成；新120題仍草稿，C8介面優先及C9/C4～C7協作任務亦保留。

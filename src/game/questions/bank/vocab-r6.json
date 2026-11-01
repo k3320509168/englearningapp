@@ -6360,9 +6360,9 @@
   },
   "WITHIN EARSHOT": {
     "pos": "phr.",
-    "meaning": "在能聽見的距離內",
-    "example": "They waited until nobody else was within earshot.",
-    "exampleZh": "他們等到別人都聽不到才說。",
+    "meaning": "在能聽見說話聲的距離內",
+    "example": "Wait until the visitors are out of earshot.",
+    "exampleZh": "等訪客走到聽不見的地方。",
     "senses": [
       {
         "pos": "phr.",
@@ -6371,6 +6371,16 @@
           {
             "en": "They waited until nobody else was within earshot.",
             "zh": "他們等到別人都聽不到才說。"
+          }
+        ]
+      },
+      {
+        "pos": "phr.",
+        "meaning": "在能聽見說話聲的距離內",
+        "examples": [
+          {
+            "en": "Wait until the visitors are out of earshot.",
+            "zh": "等訪客走到聽不見的地方。"
           }
         ]
       }
@@ -8856,9 +8866,9 @@
   },
   "OVERHEAR": {
     "pos": "v.",
-    "meaning": "無意或偶然聽到他人談話",
-    "example": "She happened to overhear the question.",
-    "exampleZh": "她恰好聽見問題。",
+    "meaning": "無意間聽到別人的談話",
+    "example": "I did not mean to overhear your conversation.",
+    "exampleZh": "我不是故意聽到你們談話的。",
     "senses": [
       {
         "pos": "v.",
@@ -8867,6 +8877,16 @@
           {
             "en": "She happened to overhear the question.",
             "zh": "她恰好聽見問題。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "無意間聽到別人的談話",
+        "examples": [
+          {
+            "en": "I did not mean to overhear your conversation.",
+            "zh": "我不是故意聽到你們談話的。"
           }
         ]
       }
@@ -9639,6 +9659,320 @@
           {
             "en": "The recording includes laughter.",
             "zh": "錄音包含笑聲。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUDIBLE": {
+    "word": "audible",
+    "pos": "adj.",
+    "meaning": "能夠被聽見的",
+    "example": "The announcement was barely audible.",
+    "exampleZh": "廣播幾乎聽不見。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能夠被聽見的",
+        "examples": [
+          {
+            "en": "The announcement was barely audible.",
+            "zh": "廣播幾乎聽不見。"
+          }
+        ]
+      }
+    ]
+  },
+  "RUSTLING": {
+    "word": "rustling",
+    "pos": "n.",
+    "meaning": "紙張或樹葉摩擦的窸窣聲",
+    "example": "The rustling interrupted the interview.",
+    "exampleZh": "窸窣聲打斷訪談。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "紙張或樹葉摩擦的窸窣聲",
+        "examples": [
+          {
+            "en": "The rustling interrupted the interview.",
+            "zh": "窸窣聲打斷訪談。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNEXPECTED INTERRUPTION": {
+    "word": "an unexpected interruption",
+    "pos": "phr.",
+    "meaning": "出乎意料的打斷",
+    "example": "An unexpected interruption broke her concentration.",
+    "exampleZh": "意外打斷使她分心。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "出乎意料的打斷",
+        "examples": [
+          {
+            "en": "An unexpected interruption broke her concentration.",
+            "zh": "意外打斷使她分心。"
+          }
+        ]
+      }
+    ]
+  },
+  "A COMFORTABLE SILENCE": {
+    "word": "a comfortable silence",
+    "pos": "phr.",
+    "meaning": "彼此不感尷尬的一段沉默",
+    "example": "They sat together in a comfortable silence.",
+    "exampleZh": "他們自在而安靜地坐在一起。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彼此不感尷尬的一段沉默",
+        "examples": [
+          {
+            "en": "They sat together in a comfortable silence.",
+            "zh": "他們自在而安靜地坐在一起。"
+          }
+        ]
+      }
+    ]
+  },
+  "A BARELY AUDIBLE REPLY": {
+    "word": "a barely audible reply",
+    "pos": "phr.",
+    "meaning": "幾乎聽不見的回答",
+    "example": "He gave a barely audible reply.",
+    "exampleZh": "他輕聲作答，幾乎聽不見。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "幾乎聽不見的回答",
+        "examples": [
+          {
+            "en": "He gave a barely audible reply.",
+            "zh": "他輕聲作答，幾乎聽不見。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE SOUND WAS CLEAR BUT THE WORDS WERE UNFAMILIAR": {
+    "word": "the sound was clear but the words were unfamiliar",
+    "pos": "phr.",
+    "meaning": "聲音清楚但字詞不熟悉",
+    "example": "The sound was clear but the words were unfamiliar.",
+    "exampleZh": "聲音清楚但字詞不熟悉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "聲音清楚但字詞不熟悉",
+        "examples": [
+          {
+            "en": "The sound was clear but the words were unfamiliar.",
+            "zh": "聲音清楚但字詞不熟悉。"
+          }
+        ]
+      }
+    ]
+  },
+  "A QUIET ROOM IS NOT NECESSARILY A SILENT ROOM": {
+    "word": "a quiet room is not necessarily a silent room",
+    "pos": "phr.",
+    "meaning": "安靜房間不一定完全無聲",
+    "example": "A quiet room is not necessarily a silent room.",
+    "exampleZh": "安靜房間不一定完全無聲。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "安靜房間不一定完全無聲",
+        "examples": [
+          {
+            "en": "A quiet room is not necessarily a silent room.",
+            "zh": "安靜房間不一定完全無聲。"
+          }
+        ]
+      }
+    ]
+  },
+  "SHE WAITED UNTIL THE APPLAUSE HAD DIED DOWN": {
+    "word": "she waited until the applause had died down",
+    "pos": "phr.",
+    "meaning": "她等到掌聲漸漸平息",
+    "example": "She waited until the applause had died down.",
+    "exampleZh": "她等到掌聲漸漸平息。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "她等到掌聲漸漸平息",
+        "examples": [
+          {
+            "en": "She waited until the applause had died down.",
+            "zh": "她等到掌聲漸漸平息。"
+          }
+        ]
+      }
+    ]
+  },
+  "KEEP YOUR VOICE DOWN": {
+    "pos": "phr.",
+    "meaning": "把說話音量降低",
+    "example": "Please keep your voice down in the corridor.",
+    "exampleZh": "走廊上請小聲說話。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "把說話音量降低",
+        "examples": [
+          {
+            "en": "Please keep your voice down in the corridor.",
+            "zh": "走廊上請小聲說話。"
+          }
+        ]
+      }
+    ]
+  },
+  "A MUFFLED SOUND": {
+    "pos": "phr.",
+    "meaning": "被遮阻而低沉不清的聲音",
+    "example": "A muffled sound came through the wall.",
+    "exampleZh": "牆後傳來低沉不清的聲音。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "被遮阻而低沉不清的聲音",
+        "examples": [
+          {
+            "en": "A muffled sound came through the wall.",
+            "zh": "牆後傳來低沉不清的聲音。"
+          }
+        ]
+      }
+    ]
+  },
+  "RHYTHMIC": {
+    "pos": "adj.",
+    "meaning": "帶有規律節奏的",
+    "example": "We heard a rhythmic tapping at the window.",
+    "exampleZh": "我們聽到窗邊有節奏的輕敲。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "帶有規律節奏的",
+        "examples": [
+          {
+            "en": "We heard a rhythmic tapping at the window.",
+            "zh": "我們聽到窗邊有節奏的輕敲。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISTRACTION": {
+    "pos": "n.",
+    "meaning": "使人分心的事物或干擾",
+    "example": "The buzzing was a constant distraction.",
+    "exampleZh": "嗡嗡聲持續讓人分心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使人分心的事物或干擾",
+        "examples": [
+          {
+            "en": "The buzzing was a constant distraction.",
+            "zh": "嗡嗡聲持續讓人分心。"
+          }
+        ]
+      }
+    ]
+  },
+  "REASSURING": {
+    "pos": "adj.",
+    "meaning": "讓人放心或安心的",
+    "example": "Her reassuring voice helped him relax.",
+    "exampleZh": "她讓人安心的聲音使他放鬆。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "讓人放心或安心的",
+        "examples": [
+          {
+            "en": "Her reassuring voice helped him relax.",
+            "zh": "她讓人安心的聲音使他放鬆。"
+          }
+        ]
+      }
+    ]
+  },
+  "WHISPER": {
+    "pos": "v.",
+    "meaning": "刻意用很小的氣聲說話",
+    "example": "Please whisper while the baby is sleeping.",
+    "exampleZh": "嬰兒睡覺時請小聲說話。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "刻意用很小的氣聲說話",
+        "examples": [
+          {
+            "en": "Please whisper while the baby is sleeping.",
+            "zh": "嬰兒睡覺時請小聲說話。"
+          }
+        ]
+      }
+    ]
+  },
+  "VIBRATION": {
+    "pos": "n.",
+    "meaning": "物體來回快速移動的振動",
+    "example": "I felt a vibration through the floor.",
+    "exampleZh": "我感到地板傳來振動。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物體來回快速移動的振動",
+        "examples": [
+          {
+            "en": "I felt a vibration through the floor.",
+            "zh": "我感到地板傳來振動。"
+          }
+        ]
+      }
+    ]
+  },
+  "ECHOING": {
+    "pos": "adj.",
+    "meaning": "充滿聲音反射回響的",
+    "example": "Footsteps filled the echoing corridor.",
+    "exampleZh": "腳步聲在走廊回響。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "充滿聲音反射回響的",
+        "examples": [
+          {
+            "en": "Footsteps filled the echoing corridor.",
+            "zh": "腳步聲在走廊回響。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERRUPTION": {
+    "pos": "n.",
+    "meaning": "使原活動暫時中斷的事件",
+    "example": "The interruption made her lose her place.",
+    "exampleZh": "這次打斷使她忘了讀到哪裡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使原活動暫時中斷的事件",
+        "examples": [
+          {
+            "en": "The interruption made her lose her place.",
+            "zh": "這次打斷使她忘了讀到哪裡。"
           }
         ]
       }
@@ -15317,9 +15651,9 @@
   },
   "R6:OVERHEAR": {
     "pos": "v.",
-    "meaning": "無意或偶然聽到他人談話",
-    "example": "She happened to overhear the question.",
-    "exampleZh": "她恰好聽見問題。",
+    "meaning": "無意間聽到別人的談話",
+    "example": "I did not mean to overhear your conversation.",
+    "exampleZh": "我不是故意聽到你們談話的。",
     "senses": [
       {
         "pos": "v.",
@@ -15328,6 +15662,16 @@
           {
             "en": "She happened to overhear the question.",
             "zh": "她恰好聽見問題。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "無意間聽到別人的談話",
+        "examples": [
+          {
+            "en": "I did not mean to overhear your conversation.",
+            "zh": "我不是故意聽到你們談話的。"
           }
         ]
       }
@@ -15856,6 +16200,215 @@
       }
     ],
     "word": "response"
+  },
+  "R6:AUDIBLE": {
+    "word": "audible",
+    "pos": "adj.",
+    "meaning": "能夠被聽見的",
+    "example": "The announcement was barely audible.",
+    "exampleZh": "廣播幾乎聽不見。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "能夠被聽見的",
+        "examples": [
+          {
+            "en": "The announcement was barely audible.",
+            "zh": "廣播幾乎聽不見。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:RUSTLING": {
+    "word": "rustling",
+    "pos": "n.",
+    "meaning": "紙張或樹葉摩擦的窸窣聲",
+    "example": "The rustling interrupted the interview.",
+    "exampleZh": "窸窣聲打斷訪談。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "紙張或樹葉摩擦的窸窣聲",
+        "examples": [
+          {
+            "en": "The rustling interrupted the interview.",
+            "zh": "窸窣聲打斷訪談。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:AN UNEXPECTED INTERRUPTION": {
+    "word": "an unexpected interruption",
+    "pos": "phr.",
+    "meaning": "出乎意料的打斷",
+    "example": "An unexpected interruption broke her concentration.",
+    "exampleZh": "意外打斷使她分心。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "出乎意料的打斷",
+        "examples": [
+          {
+            "en": "An unexpected interruption broke her concentration.",
+            "zh": "意外打斷使她分心。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A BARELY AUDIBLE REPLY": {
+    "word": "a barely audible reply",
+    "pos": "phr.",
+    "meaning": "幾乎聽不見的回答",
+    "example": "He gave a barely audible reply.",
+    "exampleZh": "他輕聲作答，幾乎聽不見。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "幾乎聽不見的回答",
+        "examples": [
+          {
+            "en": "He gave a barely audible reply.",
+            "zh": "他輕聲作答，幾乎聽不見。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE SOUND WAS CLEAR BUT THE WORDS WERE UNFAMILIAR": {
+    "word": "the sound was clear but the words were unfamiliar",
+    "pos": "phr.",
+    "meaning": "聲音清楚但字詞不熟悉",
+    "example": "The sound was clear but the words were unfamiliar.",
+    "exampleZh": "聲音清楚但字詞不熟悉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "聲音清楚但字詞不熟悉",
+        "examples": [
+          {
+            "en": "The sound was clear but the words were unfamiliar.",
+            "zh": "聲音清楚但字詞不熟悉。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A QUIET ROOM IS NOT NECESSARILY A SILENT ROOM": {
+    "word": "a quiet room is not necessarily a silent room",
+    "pos": "phr.",
+    "meaning": "安靜房間不一定完全無聲",
+    "example": "A quiet room is not necessarily a silent room.",
+    "exampleZh": "安靜房間不一定完全無聲。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "安靜房間不一定完全無聲",
+        "examples": [
+          {
+            "en": "A quiet room is not necessarily a silent room.",
+            "zh": "安靜房間不一定完全無聲。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:RHYTHMIC": {
+    "pos": "adj.",
+    "meaning": "帶有規律節奏的",
+    "example": "We heard a rhythmic tapping at the window.",
+    "exampleZh": "我們聽到窗邊有節奏的輕敲。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "帶有規律節奏的",
+        "examples": [
+          {
+            "en": "We heard a rhythmic tapping at the window.",
+            "zh": "我們聽到窗邊有節奏的輕敲。"
+          }
+        ]
+      }
+    ],
+    "word": "rhythmic"
+  },
+  "R6:DISTRACTION": {
+    "pos": "n.",
+    "meaning": "使人分心的事物或干擾",
+    "example": "The buzzing was a constant distraction.",
+    "exampleZh": "嗡嗡聲持續讓人分心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使人分心的事物或干擾",
+        "examples": [
+          {
+            "en": "The buzzing was a constant distraction.",
+            "zh": "嗡嗡聲持續讓人分心。"
+          }
+        ]
+      }
+    ],
+    "word": "distraction"
+  },
+  "R6:WHISPER": {
+    "pos": "v.",
+    "meaning": "刻意用很小的氣聲說話",
+    "example": "Please whisper while the baby is sleeping.",
+    "exampleZh": "嬰兒睡覺時請小聲說話。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "刻意用很小的氣聲說話",
+        "examples": [
+          {
+            "en": "Please whisper while the baby is sleeping.",
+            "zh": "嬰兒睡覺時請小聲說話。"
+          }
+        ]
+      }
+    ],
+    "word": "whisper"
+  },
+  "R6:VIBRATION": {
+    "pos": "n.",
+    "meaning": "物體來回快速移動的振動",
+    "example": "I felt a vibration through the floor.",
+    "exampleZh": "我感到地板傳來振動。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物體來回快速移動的振動",
+        "examples": [
+          {
+            "en": "I felt a vibration through the floor.",
+            "zh": "我感到地板傳來振動。"
+          }
+        ]
+      }
+    ],
+    "word": "vibration"
+  },
+  "R6:ECHOING": {
+    "pos": "adj.",
+    "meaning": "充滿聲音反射回響的",
+    "example": "Footsteps filled the echoing corridor.",
+    "exampleZh": "腳步聲在走廊回響。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "充滿聲音反射回響的",
+        "examples": [
+          {
+            "en": "Footsteps filled the echoing corridor.",
+            "zh": "腳步聲在走廊回響。"
+          }
+        ]
+      }
+    ],
+    "word": "echoing"
   },
   "R6:ON CLOSER INSPECTION": {
     "word": "on closer inspection",
@@ -17843,5 +18396,81 @@
       }
     ],
     "word": "recording"
+  },
+  "R6:A COMFORTABLE SILENCE": {
+    "word": "a comfortable silence",
+    "pos": "phr.",
+    "meaning": "彼此不感尷尬的一段沉默",
+    "example": "They sat together in a comfortable silence.",
+    "exampleZh": "他們自在而安靜地坐在一起。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彼此不感尷尬的一段沉默",
+        "examples": [
+          {
+            "en": "They sat together in a comfortable silence.",
+            "zh": "他們自在而安靜地坐在一起。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:SHE WAITED UNTIL THE APPLAUSE HAD DIED DOWN": {
+    "word": "she waited until the applause had died down",
+    "pos": "phr.",
+    "meaning": "她等到掌聲漸漸平息",
+    "example": "She waited until the applause had died down.",
+    "exampleZh": "她等到掌聲漸漸平息。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "她等到掌聲漸漸平息",
+        "examples": [
+          {
+            "en": "She waited until the applause had died down.",
+            "zh": "她等到掌聲漸漸平息。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:REASSURING": {
+    "pos": "adj.",
+    "meaning": "讓人放心或安心的",
+    "example": "Her reassuring voice helped him relax.",
+    "exampleZh": "她讓人安心的聲音使他放鬆。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "讓人放心或安心的",
+        "examples": [
+          {
+            "en": "Her reassuring voice helped him relax.",
+            "zh": "她讓人安心的聲音使他放鬆。"
+          }
+        ]
+      }
+    ],
+    "word": "reassuring"
+  },
+  "R6:INTERRUPTION": {
+    "pos": "n.",
+    "meaning": "使原活動暫時中斷的事件",
+    "example": "The interruption made her lose her place.",
+    "exampleZh": "這次打斷使她忘了讀到哪裡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "使原活動暫時中斷的事件",
+        "examples": [
+          {
+            "en": "The interruption made her lose her place.",
+            "zh": "這次打斷使她忘了讀到哪裡。"
+          }
+        ]
+      }
+    ],
+    "word": "interruption"
   }
 }

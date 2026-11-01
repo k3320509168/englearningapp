@@ -10610,6 +10610,399 @@
       "ans": "ART",
       "speak": "paraphrastic",
       "vocabId": "R7:PARAPHRASTIC"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her answer was preceded by a pregnant pause",
+      "options": [
+        "A. 因錄音故障而遺失的一整段內容",
+        "B. 事先訂好的午餐休息時間",
+        "C. 沒有任何語境意義的背景聲",
+        "D. 意味深長且使人期待後話的停頓"
+      ],
+      "ans": "D",
+      "explain": "pregnant pause為充滿意味或期待的停頓，不是字面懷孕。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "drown out the speaker",
+      "options": [
+        "A. 聲音蓋過發言者而使人聽不清",
+        "B. 替發言者整理一份講稿",
+        "C. 把發言者介紹給在場觀眾",
+        "D. 降低背景聲使發言更清楚"
+      ],
+      "ans": "A",
+      "explain": "drown out以更大聲響蓋過另一聲音。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The ending gains its force from an understated delivery",
+      "options": [
+        "A. 改變原文內容的逐句翻譯",
+        "B. 不誇張而克制的表達方式",
+        "C. 把重要字詞刻意全部省略",
+        "D. 無法讓任何人聽見的音量"
+      ],
+      "ans": "B",
+      "explain": "understated指表現克制，不等於小到不可聞或刪意。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He sounded composed, though I would hesitate to infer that he felt composed.",
+      "options": [
+        "A. 語氣聽來鎮定，但不宜直接推定內心鎮定。",
+        "B. 內心鎮定已確定，只是語氣聽來慌張。",
+        "C. 說話者認為語氣無法提供任何資訊。",
+        "D. 對方已承認自己故意掩飾恐慌。"
+      ],
+      "ans": "A",
+      "explain": "區分表達表象與心理狀態，不宣稱確有掩飾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The complaint is not that the square is lively. It is that amplified announcements continue well after the event has ended.",
+      "options": [
+        "A. 要求把活動延長到廣播結束。",
+        "B. 抱怨的是活動結束很久仍有擴音廣播。",
+        "C. 抱怨的是廣場平日過於冷清。",
+        "D. 主張活動期間也不應有任何交談。"
+      ],
+      "ans": "B",
+      "explain": "否定一般熱鬧為抱怨對象，縮限到活動後擴音。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would keep that intake of breath. It tells us something about the effort behind what otherwise sounds effortless.",
+      "options": [
+        "A. 認為吸氣聲已使其餘錄音無法使用。",
+        "B. 要求加入原錄音沒有的呼吸聲。",
+        "C. 想保留吸氣聲，讓人聽見流暢背後的用力。",
+        "D. 想刪吸氣聲，以證明表演毫不費力。"
+      ],
+      "ans": "C",
+      "explain": "keep指保留既有聲音；otherwise說明刪去後可能造成的印象。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The recording sounds immediate, but that impression owes quite a lot to decisions made afterwards in the editing room.",
+      "options": [
+        "A. 錄音時在場的人都參與了剪輯。",
+        "B. 臨場感很大部分來自後製選擇。",
+        "C. 臨場感證明錄音從未經剪輯。",
+        "D. 所有原始聲音已被演員重錄。"
+      ],
+      "ans": "B",
+      "explain": "immediate為感受，後製能形塑感受，未說全替換。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If we remove every overlapping voice, we may produce a clearer account of what was said and a less faithful account of how the discussion unfolded.",
+      "options": [
+        "A. 清晰度與互動忠實度在這裡毫無關係。",
+        "B. 說話者主張完全放棄辨清發言內容。",
+        "C. 刪重疊發言可更清楚，卻可能失去討論進行方式。",
+        "D. 重疊發言使字句更清楚，也更忠實於互動。"
+      ],
+      "ans": "C",
+      "explain": "提出文字清楚與互動過程忠實之間的取捨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Her silence left room for disagreement; it did not, as the chair later suggested, amount to an endorsement.",
+      "options": [
+        "A. 她已清楚同意，主席只是照原話轉述。",
+        "B. 主席主動要求她公開表示反對。",
+        "C. 她的沉默足以證明已經提出替代方案。",
+        "D. 她的沉默仍容許不同意，不等於主席說的背書。"
+      ],
+      "ans": "D",
+      "explain": "not…endorsement否定將沉默等同支持，但未證她實際反對。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator describes the station as deserted, then mentions a cleaner working silently at the far end. How should deserted be understood?",
+      "options": [
+        "A. As confirming that the cleaner was not physically present.",
+        "B. As indicating that the station had permanently closed.",
+        "C. As describing the cleaner’s attitude towards the narrator.",
+        "D. As conveying near-emptiness rather than a literal absence of people."
+      ],
+      "ans": "D",
+      "explain": "後文例外限制deserted的字面範圍，主要營造近乎空無一人的感受。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】An obtrusive noise is one that ___.",
+      "options": [
+        "A. unpleasantly forces itself on your attention",
+        "B. is too faint to be detected",
+        "C. has been removed from a recording",
+        "D. can only be heard through headphones"
+      ],
+      "ans": "A",
+      "explain": "obtrusive指顯眼且令人困擾地介入注意力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Not until the ventilation stopped ___ how much noise it had been making.",
+      "options": [
+        "A. we did realised",
+        "B. did we realise",
+        "C. we realised",
+        "D. had we realise"
+      ],
+      "ans": "B",
+      "explain": "Not until置首後，主句倒裝did we realise；停止後才察覺先前噪音。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】A critic calls the delivery measured rather than hesitant. What is being distinguished?",
+      "options": [
+        "A. Deliberate pacing from apparent uncertainty.",
+        "B. Low volume from poor pronunciation.",
+        "C. Spontaneous speech from a written transcript.",
+        "D. A private conversation from a public lecture."
+      ],
+      "ans": "A",
+      "explain": "measured強調刻意節制的節奏，hesitant暗示不確定或遲疑。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Two recordings contain the same speech. One preserves pauses; the other removes them. A reviewer finds the edited version more assertive. What best accounts for the difference?",
+      "options": [
+        "A. Removing pauses necessarily improves the argument’s validity.",
+        "B. Editing can change the perceived stance without changing the spoken words.",
+        "C. The edited version must contain additional factual claims.",
+        "D. The unedited version proves the speaker lacked confidence."
+      ],
+      "ans": "B",
+      "explain": "刪停頓改變語氣感知，並不證明內在自信或論證更真。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The conductor would rather the audience ___ until the whole piece was over.",
+      "options": [
+        "A. has waited",
+        "B. to wait",
+        "C. waited",
+        "D. waits"
+      ],
+      "ans": "C",
+      "explain": "would rather後接不同主詞時，過去式waited表示現在或未來的偏好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The sound designer removes most background music from a tense scene, leaving a clock audible. The director says the absence now does the work. What does absence refer to?",
+      "options": [
+        "A. The failure of the recording equipment.",
+        "B. The withheld music, which makes the remaining sound more prominent.",
+        "C. The missing clock, which the audience must imagine.",
+        "D. The lack of actors in the scene."
+      ],
+      "ans": "B",
+      "explain": "背景音樂撤去、時鐘保留，缺席指音樂，不是所有聲音。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】An editor argues, We should retain the hesitation; fluency was not the point of this testimony. What editorial priority is implied?",
+      "options": [
+        "A. Removing all signs of the interviewer’s involvement.",
+        "B. Making the testimony conform to a fixed speaking speed.",
+        "C. Preserving how the account was given rather than polishing its delivery.",
+        "D. Replacing uncertain statements with more confident factual claims."
+      ],
+      "ans": "C",
+      "explain": "保留遲疑重視作證過程的呈現，不把順暢當唯一目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A city walk is advertised as an escape from noise. Its organiser later explains that participants will attend closely to footsteps, birds and distant voices. What has been reframed?",
+      "options": [
+        "A. Walking as an activity that requires recorded music.",
+        "B. Birdsong as proof that no human activity is nearby.",
+        "C. Silence as an acoustic condition measured by equipment.",
+        "D. Escape as attentive listening rather than the elimination of sound."
+      ],
+      "ans": "D",
+      "explain": "列舉聲音表示活動主張換一種聽法，而非消除一切聲響。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：令人困擾地侵入注意力的",
+      "ans": "OBTRUSIVE",
+      "speak": "obtrusive",
+      "vocabId": "R7:OBTRUSIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：說話或音樂中聲調起伏的節奏",
+      "ans": "CADENCE",
+      "speak": "cadence",
+      "vocabId": "R7:CADENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：令人不安的短暫平靜",
+      "ans": "AN UNEASY LULL",
+      "speak": "an uneasy lull",
+      "vocabId": "R7:AN UNEASY LULL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：聲音感受親近的場域",
+      "ans": "AN ACOUSTICALLY INTIMATE SETTING",
+      "speak": "an acoustically intimate setting",
+      "vocabId": "R7:AN ACOUSTICALLY INTIMATE SETTING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：聽得見的遲疑不一定表示缺乏信念",
+      "ans": "AUDIBLE HESITATION NEED NOT INDICATE A LACK OF CONVICTION",
+      "speak": "audible hesitation need not indicate a lack of conviction",
+      "vocabId": "R7:AUDIBLE HESITATION NEED NOT INDICATE A LACK OF CONVICTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：刪除交疊發言可能遮蔽討論的互動",
+      "ans": "REMOVING OVERLAP CAN OBSCURE THE DYNAMICS OF A DISCUSSION",
+      "speak": "removing overlap can obscure the dynamics of a discussion",
+      "vocabId": "R7:REMOVING OVERLAP CAN OBSCURE THE DYNAMICS OF A DISCUSSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：聲音深沉清亮且有回響的（R 開頭，8 個字母）",
+      "ans": "RESONANT",
+      "speak": "resonant",
+      "vocabId": "R7:RESONANT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：聲音不協和，亦可指觀念之間的不一致（D 開頭，10 個字母）",
+      "ans": "DISSONANCE",
+      "speak": "dissonance",
+      "vocabId": "R7:DISSONANCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：時而出現時而停止而非持續不斷的（I 開頭，12 個字母）",
+      "ans": "INTERMITTENT",
+      "speak": "intermittent",
+      "vocabId": "R7:INTERMITTENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N F L E _ T I O N (說話聲調或音高的變化)",
+      "ans": "C",
+      "speak": "inflection",
+      "vocabId": "R7:INFLECTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N T _ N A _ I O N (話語中整體音高升降的語調)",
+      "ans": "OT",
+      "speak": "intonation",
+      "vocabId": "R7:INTONATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O V _ R L _ P P _ N G (同時發生而彼此交疊的)",
+      "ans": "EAI",
+      "speak": "overlapping",
+      "vocabId": "R7:OVERLAPPING"
     }
   ],
   "boss": [
@@ -14149,6 +14542,137 @@
       "ans": "OXL",
       "speak": "recontextualise",
       "vocabId": "R7:RECONTEXTUALISE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It was not the volume that bothered me so much as the fact that I could not predict when it would start again.",
+      "options": [
+        "A. 因能預測再響時間，所以不覺得困擾。",
+        "B. 聲音從未停止，因此不存在等待。",
+        "C. 較困擾的是不知何時再響，而非音量本身。",
+        "D. 最困擾的是聲音太小，難以辨出內容。"
+      ],
+      "ans": "C",
+      "explain": "not…so much as…將重點移至不確定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "They described the library as hushed, which is not quite the same as saying that nobody was there.",
+      "options": [
+        "A. 館內無人，所以沒有其他解讀。",
+        "B. 館內擁擠吵雜，無法低聲交談。",
+        "C. 說話者主張圖書館應停止開放。",
+        "D. 低聲安靜不代表館內沒有人。"
+      ],
+      "ans": "D",
+      "explain": "hushed描述聲音氛圍，非人數斷言。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Calling it background noise makes it sound incidental, whereas for the people living above the venue it structures the whole evening.",
+      "options": [
+        "A. 對住樓上的人，所謂背景噪音其實支配整晚。",
+        "B. 對住樓上的人，噪音只是無關痛癢的小事。",
+        "C. 場地把居民的生活聲當成表演配樂。",
+        "D. 居民已同意用音樂安排每晚活動。"
+      ],
+      "ans": "A",
+      "explain": "whereas對照旁觀命名與受影響者經驗；structures不是自願安排。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The speaker says, If we could hear the soloist, that would be lovely, while looking towards a noisy group. What is the likely function?",
+      "options": [
+        "A. An offer to introduce the group to the soloist.",
+        "B. An expression of doubt that a soloist has been booked.",
+        "C. A politely pointed request for the group to be quieter.",
+        "D. A request for the soloist to describe the instrument."
+      ],
+      "ans": "C",
+      "explain": "情境目光與條件句共同構成委婉但帶提醒意味的請求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The report says residents tolerated the noise, not that they welcomed it. Which inference is justified?",
+      "options": [
+        "A. They actively requested an increase in volume.",
+        "B. They failed to notice that any noise existed.",
+        "C. They agreed that the noise should never be discussed.",
+        "D. They put up with it, but approval is not established."
+      ],
+      "ans": "D",
+      "explain": "tolerate容忍，不等於喜歡；後半明確限制推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator reports a silence that felt accusatory, while admitting that the other person may simply have been tired. What remains unresolved?",
+      "options": [
+        "A. Whether the silence expressed blame or was interpreted that way.",
+        "B. Whether the narrator noticed any pause in the conversation.",
+        "C. Whether the other person had spoken earlier that day.",
+        "D. Whether the narrator heard a specific accusation clearly."
+      ],
+      "ans": "A",
+      "explain": "felt描述主觀感受，may simply have been tired提供未排除的替代解釋。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：刻意克制的表達方式",
+      "ans": "A DELIBERATELY RESTRAINED DELIVERY",
+      "speak": "a deliberately restrained delivery",
+      "vocabId": "R7:A DELIBERATELY RESTRAINED DELIVERY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看似附帶的聲音可能支配他人的晚上",
+      "ans": "AN APPARENTLY INCIDENTAL SOUND MAY DOMINATE SOMEONE ELSE'S EVENING",
+      "speak": "an apparently incidental sound may dominate someone else's evening",
+      "vocabId": "R7:AN APPARENTLY INCIDENTAL SOUND MAY DOMINATE SOMEONE ELSE'S EVENING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：不引人注意也不造成干擾的（U 開頭，11 個字母）",
+      "ans": "UNOBTRUSIVE",
+      "speak": "unobtrusive",
+      "vocabId": "R7:UNOBTRUSIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E V _ R B _ R A _ I O N (聲音反射後持續的回響)",
+      "ans": "EET",
+      "speak": "reverberation",
+      "vocabId": "R7:REVERBERATION"
     }
   ]
 }

@@ -10613,6 +10613,399 @@
       "ans": "LTI",
       "speak": "selectivity",
       "vocabId": "R8:SELECTIVITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a plangent refrain",
+      "options": [
+        "A. 語意毫不含糊的公開聲明",
+        "B. 音高完全固定的機械提示",
+        "C. 刻意避開重複的即興片段",
+        "D. 帶哀傷回響感的反覆樂句"
+      ],
+      "ans": "D",
+      "explain": "plangent常指響亮回盪且哀婉，refrain為反覆樂句。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an orchestrated hush",
+      "options": [
+        "A. 經刻意安排形成的寂靜",
+        "B. 因設備故障而偶然中斷的聲音",
+        "C. 未經協調而互相搶話的狀態",
+        "D. 將管弦樂改編成獨奏的版本"
+      ],
+      "ans": "A",
+      "explain": "orchestrated可比喻刻意策劃，不必真有管弦樂。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a disembodied voice",
+      "options": [
+        "A. 現場每個人一起合唱的聲音",
+        "B. 聽得到卻看不到發聲者的聲音",
+        "C. 確定由已故人物親口發出的聲音",
+        "D. 只存在紙面而未被讀出的文字"
+      ],
+      "ans": "B",
+      "explain": "disembodied voice指聲源身體不在眼前，非證實超自然身分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What sounds like an unguarded moment may be no less carefully framed than the formal statement that precedes it.",
+      "options": [
+        "A. 看似不設防的片刻，也可能像正式聲明般經過安排。",
+        "B. 不設防片刻已證明先前正式聲明是假的。",
+        "C. 正式聲明的構圖一定比片刻更隨意。",
+        "D. 說話者確定兩段都是未剪輯的直播。"
+      ],
+      "ans": "A",
+      "explain": "may be no less提出可能同樣精心安排，不宣稱已證造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not arguing for leaving every cough intact. I am questioning the presumption that removing it is interpretatively neutral.",
+      "options": [
+        "A. 要求用旁白解釋每一次咳嗽的病因。",
+        "B. 不是要求每聲咳嗽都留，而是質疑刪除沒有詮釋作用。",
+        "C. 主張每聲咳嗽都應保留，否則紀錄無效。",
+        "D. 認為咳嗽與聽者理解毫無關係。"
+      ],
+      "ans": "B",
+      "explain": "區分個別編輯決定與對編輯中立性的預設。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The authority resides partly in the cadence: the sentence seems to have settled the matter before its evidence has even been considered.",
+      "options": [
+        "A. 句子內容因節奏不規則而無法被聽見。",
+        "B. 說話者支持只靠聲調判斷證據效力。",
+        "C. 語調節奏先造成定論感，證據尚未被衡量。",
+        "D. 證據已經審核完，所以語調不影響判斷。"
+      ],
+      "ans": "C",
+      "explain": "seems與before指出形式先行產生權威印象，不是論證已充分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is a difference between granting the audience interpretative space and arranging a silence so that only one suspicion seems available.",
+      "options": [
+        "A. 寂靜已證明被訪者承認某項指控。",
+        "B. 給觀眾詮釋空間，與用寂靜誘向單一懷疑不同。",
+        "C. 單一懷疑正是所有開放詮釋的必要條件。",
+        "D. 說話者要求刪去任何容許思考的停頓。"
+      ],
+      "ans": "B",
+      "explain": "比較開放性與限制推論方向的安排，未指明實際罪責。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The ambient sound is doing more than locating us. It lends the testimony a world, and thereby a credibility the words alone might not command.",
+      "options": [
+        "A. 只有移除環境聲，證詞才可能被理解。",
+        "B. 說話者認為地點與可信感毫無關係。",
+        "C. 環境聲不只定位，也賦予證詞情境感與可信印象。",
+        "D. 環境聲已獨立查證證詞每個事實。"
+      ],
+      "ans": "C",
+      "explain": "credibility在此為被相信的效果，不等於查證為真。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To describe the voice as timeless is flattering, but it risks erasing the very historical inflections that make it distinctive.",
+      "options": [
+        "A. 稱聲音過時會保證聽者注意其歷史。",
+        "B. 聲音有特色就不可能與歷史背景有關。",
+        "C. 說話者認為所有對聲音的讚美都應撤回。",
+        "D. 稱聲音超越時代雖是讚美，卻可能抹去其歷史特色。"
+      ],
+      "ans": "D",
+      "explain": "flattering承認讚意；but風險是抽離造就獨特性的歷史痕跡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The essay calls the silence eloquent, then warns against translating it into a single definite proposition. What is the position?",
+      "options": [
+        "A. Silence is meaningful only when it can be replaced by a precise sentence.",
+        "B. The participants had already agreed on an explicit statement.",
+        "C. The essay regards every interpretation of silence as equally well supported.",
+        "D. Silence can communicate powerfully without yielding one unambiguous verbal equivalent."
+      ],
+      "ans": "D",
+      "explain": "eloquent與警告並置：可有表達力，但不可硬解成唯一命題；也未承認所有解釋等價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A stentorian voice is notably ___.",
+      "options": [
+        "A. loud and powerful",
+        "B. delicate and wavering",
+        "C. deliberately impersonal",
+        "D. difficult to distinguish from whispering"
+      ],
+      "ans": "A",
+      "explain": "stentorian形容洪亮有力，不直接評斷內容或態度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】So insistently ___ beneath the dialogue that the critic began to hear the room itself as a character.",
+      "options": [
+        "A. the hum persisted did",
+        "B. did the hum persist",
+        "C. the hum did persist",
+        "D. persisted did the hum"
+      ],
+      "ans": "B",
+      "explain": "So加副詞置首，引起主句倒裝did the hum persist。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The critic distinguishes acoustic fidelity from fidelity to an encounter. What possibility does this distinction permit?",
+      "options": [
+        "A. Technically accurate sound may still misrepresent the interaction in which it occurred.",
+        "B. Any technically accurate recording must preserve the participants’ relationships.",
+        "C. An encounter can be faithfully represented only without using recorded sound.",
+        "D. Technical distortion necessarily makes an account more truthful."
+      ],
+      "ans": "A",
+      "explain": "兩種忠實度分開，容許聲音準確而互動呈現失真，非必然反比。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A curator suppresses the audience noise in an archival performance. The notes call the result the work as it was meant to be heard. A critic objects that the intervention has quietly promoted an interpretation into an origin. What is the objection?",
+      "options": [
+        "A. The critic believes listeners should be forbidden to prefer the edited version.",
+        "B. An editorial ideal is being presented as if it were the historical starting point.",
+        "C. The curator has admitted that the audience noise was louder than the performance.",
+        "D. The notes fail to list the microphones used during restoration."
+      ],
+      "ans": "B",
+      "explain": "as meant to be heard把後來理想化版本置換成原初意圖；批評並非禁止偏好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the pauses been merely accidental, their recurrence at precisely these moments ___ so readily explicable.",
+      "options": [
+        "A. had not been",
+        "B. would not being",
+        "C. would not have been",
+        "D. will not have been"
+      ],
+      "ans": "C",
+      "explain": "過去反事實條件Had…been搭配would not have been；並非單純過去事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】In a film, a crowd falls silent when a character enters. Later, the same image is replayed with the crowd’s chatter restored, revealing that the first sequence represented the character’s perception. What changes?",
+      "options": [
+        "A. The proposition that the character entered a room containing other people.",
+        "B. The status of the earlier silence, from apparent event to subjective presentation.",
+        "C. The time at which the character physically entered the room.",
+        "D. The identity of every person visible in the crowd."
+      ],
+      "ans": "B",
+      "explain": "後次重播重新定位先前無聲為主觀表現，不必改變客觀進門事件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】An essay says, To call these voices marginal is already to imagine a centre from which they might be admitted. What assumption is being examined?",
+      "options": [
+        "A. The claim that every participant wants a louder microphone.",
+        "B. The historical fact that the venue once had a central platform.",
+        "C. The spatial hierarchy implicit in the language used to describe exclusion.",
+        "D. The measurable distance between speakers in the recording room."
+      ],
+      "ans": "C",
+      "explain": "marginal/centre/admitted檢視論述中的中心邊緣結構，非字面空間史。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A documentary lets an unanswered question hang over unrelated street sounds. The editor calls this openness; a critic calls it insinuation. Where do they differ?",
+      "options": [
+        "A. Whether the street sounds were recorded before or after the interview.",
+        "B. Whether the question was grammatically complete.",
+        "C. Whether the film contains any sound after the question.",
+        "D. Whether the unresolved juxtaposition invites reflection or steers suspicion without stating a claim."
+      ],
+      "ans": "D",
+      "explain": "雙方評價相同剪接手法的語用效果：開放或暗示；不是事實時序爭議。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：聲響回盪而帶哀婉感的",
+      "ans": "PLANGENT",
+      "speak": "plangent",
+      "vocabId": "R8:PLANGENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：聲音洪亮而有力的",
+      "ans": "STENTORIAN",
+      "speak": "stentorian",
+      "vocabId": "R8:STENTORIAN"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：具有強烈修辭作用的沉默",
+      "ans": "A RHETORICALLY CHARGED SILENCE",
+      "speak": "a rhetorically charged silence",
+      "vocabId": "R8:A RHETORICALLY CHARGED SILENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：明顯被處理得毫無接縫的聲景",
+      "ans": "A CONSPICUOUSLY SEAMLESS SOUNDSCAPE",
+      "speak": "a conspicuously seamless soundscape",
+      "vocabId": "R8:A CONSPICUOUSLY SEAMLESS SOUNDSCAPE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：聲音連續不一定證明歷史過程連續",
+      "ans": "ACOUSTIC CONTINUITY NEED NOT ESTABLISH HISTORICAL CONTINUITY",
+      "speak": "acoustic continuity need not establish historical continuity",
+      "vocabId": "R8:ACOUSTIC CONTINUITY NEED NOT ESTABLISH HISTORICAL CONTINUITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看似不設防的話語也可能被精心安排",
+      "ans": "AN APPARENTLY UNGUARDED UTTERANCE CAN BE METICULOUSLY FRAMED",
+      "speak": "an apparently unguarded utterance can be meticulously framed",
+      "vocabId": "R8:AN APPARENTLY UNGUARDED UTTERANCE CAN BE METICULOUSLY FRAMED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：聲音深沉洪亮而悅耳的（S 開頭，8 個字母）",
+      "ans": "SONOROUS",
+      "speak": "sonorous",
+      "vocabId": "R8:SONOROUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：帶有如s音般嘶聲的（S 開頭，8 個字母）",
+      "ans": "SIBILANT",
+      "speak": "sibilant",
+      "vocabId": "R8:SIBILANT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不明顯動嘴而使聲音似來自別處的腹語術（V 開頭，13 個字母）",
+      "ans": "VENTRILOQUISM",
+      "speak": "ventriloquism",
+      "vocabId": "R8:VENTRILOQUISM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P O L Y P _ O N I C (同時結合多條獨立旋律或多種聲音的)",
+      "ans": "H",
+      "speak": "polyphonic",
+      "vocabId": "R8:POLYPHONIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A C O _ S M _ T I C (聲音可聽見但其來源不可見的)",
+      "ans": "UA",
+      "speak": "acousmatic",
+      "vocabId": "R8:ACOUSMATIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E U _ H O _ I _ U S (聲音悅耳和諧的)",
+      "ans": "PNO",
+      "speak": "euphonious",
+      "vocabId": "R8:EUPHONIOUS"
     }
   ],
   "boss": [
@@ -14152,6 +14545,137 @@
       "ans": "AOI",
       "speak": "dialogic",
       "vocabId": "R8:DIALOGIC"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hush is not an absence of rhetoric; it is the point at which the rhetoric ceases to announce itself as such.",
+      "options": [
+        "A. 說話者認為修辭只能由大聲宣告構成。",
+        "B. 說話者要求在安靜處朗讀修辭定義。",
+        "C. 寂靜仍有修辭作用，只是不再顯露為修辭。",
+        "D. 寂靜使一切說服或呈現手法停止存在。"
+      ],
+      "ans": "C",
+      "explain": "not…absence否定修辭消失；ceases to announce指其不顯著。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Restoring the room tone does not restore the encounter. It may merely give a seamless surface to an account assembled from quite separate moments.",
+      "options": [
+        "A. 補回底聲保證各段原本是連續發生。",
+        "B. 只要能聽見底聲，就表示沒有任何剪輯。",
+        "C. 說話者否認室內錄音會有環境聲。",
+        "D. 補回環境底聲不等於還原互動，可能只讓拼接顯得連續。"
+      ],
+      "ans": "D",
+      "explain": "聲音表面連續與歷史互動連續分開，may不斷定此例必然拼接。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The final pause offers no reconciliation. What it withholds is precisely the assurance that the preceding eloquence might have led us to expect.",
+      "options": [
+        "A. 最後停頓不提供和解，反而不給先前雄辯使人期待的保證。",
+        "B. 最後停頓明確證實雙方已經和解。",
+        "C. 先前的話語毫無說服力，也未形成期待。",
+        "D. 說話者指最後一句因錄音故障而遺失。"
+      ],
+      "ans": "A",
+      "explain": "no reconciliation與withholds明示未提供保證；might保留期待的推論性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A reviewer writes, The score is admirably determined to leave no emotion to chance. In a review criticising manipulation, what does admirably convey?",
+      "options": [
+        "A. A factual claim that audience reactions were measured in advance.",
+        "B. A concession that the score contains no recognisable emotional cues.",
+        "C. Ironic praise of a controlling tendency the reviewer actually questions.",
+        "D. Unqualified approval of the composer’s emotional sensitivity."
+      ],
+      "ans": "C",
+      "explain": "批評操控的語境使表面讚語帶反諷，不能當毫無保留的認同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator supplies no reply. The essay calls this withholding a response but leaves open whether the silence is strategic. Which distinction is preserved?",
+      "options": [
+        "A. Speaking inaudibly versus failing to speak the expected language.",
+        "B. Answering a different question versus forgetting the original one.",
+        "C. Knowing the answer versus being unaware that a question was asked.",
+        "D. Not giving a reply versus deliberately using that absence to achieve an end."
+      ],
+      "ans": "D",
+      "explain": "withholding在此描寫不給答覆，strategic則另問是否策略性使用；不由用詞直接判定動機。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The author values the recording’s grain not as a certificate of authenticity but as a reminder that access is mediated. What follows?",
+      "options": [
+        "A. Audible texture can foreground the means of presentation without guaranteeing historical truth.",
+        "B. Noise establishes that no editorial intervention has taken place.",
+        "C. A polished recording must be historically false.",
+        "D. Mediation prevents listeners from making any warranted judgement."
+      ],
+      "ans": "A",
+      "explain": "不把質地當真實保證，而用它提醒媒介存在；不推成所有判斷不可能。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：表面上似乎未經中介安排的聲音",
+      "ans": "AN OSTENSIBLY UNMEDIATED VOICE",
+      "speak": "an ostensibly unmediated voice",
+      "vocabId": "R8:AN OSTENSIBLY UNMEDIATED VOICE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：最後沉默不給先前使人期待的安心保證",
+      "ans": "THE FINAL SILENCE WITHHOLDS THE REASSURANCE WE HAVE BEEN LED TO EXPECT",
+      "speak": "the final silence withholds the reassurance we have been led to expect",
+      "vocabId": "R8:THE FINAL SILENCE WITHHOLDS THE REASSURANCE WE HAVE BEEN LED TO EXPECT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：聲音小到無法被聽見的狀態（I 開頭，12 個字母）",
+      "ans": "INAUDIBILITY",
+      "speak": "inaudibility",
+      "vocabId": "R8:INAUDIBILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ S E _ B L _ N G (掩飾真實感受或意圖而裝出別的樣子)",
+      "ans": "SMI",
+      "speak": "dissembling",
+      "vocabId": "R8:DISSEMBLING"
     }
   ]
 }

@@ -3,6 +3,14 @@
 像素風英文學習 RPG。React 19 + Phaser 4 + Zustand + TypeScript + Vite，Node 22。
 GitHub：`k3320509168/englearningapp`；`main` 會由 GitHub Actions 自動部署到 https://k3320509168.github.io/englearningapp/ 。
 
+## 🔴 製作人共同指令（2026-11-01，Claude／Codex／Antigravity 三方都要遵守）
+- **大腦**：Claude 是 PM，直接操作 Codex（`codex exec`）與 Antigravity（`agy -p`）；只有真的需要製作人決定的事才問製作人。
+- **額度**：先看每週剩餘，再看 5 小時剩餘；快滿的一方少做、多派給另外兩方。**Claude 額度快用完時，最後一件事是把指令寫進 `docs/PM_STATUS.md`，由 Codex 接任大腦**，和 Antigravity 邊討論邊處理邊執行。
+- **文件**：所有討論（含和 ChatGPT、彼此之間）的結論、進度、未解決問題都寫進 `docs/PM_STATUS.md`（總表）與 `docs/COLLAB.md`（留言）。
+- **介面一律同時適配手機與電腦**（1366×768、1920×1080、375×812 三尺寸截圖驗收）。介面、整體平衡、合理性是製作人最重視的。
+- **上下文快滿時自己壓縮**（Claude `/compact`；Codex、Antigravity 完成任務後接近極限也要壓縮或開新對話，並先把進度寫進文件）。
+- 目前進度、決策、任務佇列：**`docs/PM_STATUS.md`**（開工必讀）。
+
 ## 一定要遵守
 - **一律用繁體中文回覆**，專業術語保留英文。
 - **不准 push 到 `main`、不准部署**，除非使用者明確同意。功能都在分支上做（目前是 `feat/round4`）。

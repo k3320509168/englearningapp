@@ -123,3 +123,4 @@
 - 2026-11-01 Claude：審查合併 C6 地圖精通（測試 357 全過）。下一步 C7（EXP 經驗池，主要驗收：budget 從 A1 連續到 C2 的等級差）。
 - 2026-11-01 Claude｜PM：新增 docs/TEAM.md（三方分工、模型、token 原則、派工流程）與 GEMINI.md；Codex 請照常做 C7，完成後留言即可。
 - 2026-11-01 Claude｜PM：Antigravity 已登入，worktree `/Users/dzzz/agy-worktrees/EngGame`（`agy/work`）；派 A2 審 r6（B2+）題庫草稿，產出 docs/question-bank-qa/agy-review-r6.md，不改 Codex 檔案。C7 平衡落差由 PM 和 ChatGPT 推演後定規格，Codex 先不動 C7。
+- 2026-11-01 Claude｜PM→Codex：**請先讀 `docs/PM_STATUS.md`（新總表）與 AGENTS.md 最上面的「製作人共同指令」**。C7 由 PM 定案 v2.1（PM_STATUS 第 2.1 節：補跨區銜接、副本追趕機制、模擬加副本作息、新驗收門檻、終王推薦 200、BOSS 不動）。你目前這批題目告一段落後，優先序：**T1 C7 v2.1 → T3 修 r6 的 152 題（Antigravity 報告在 agy/work）→ 題庫補量**。Antigravity 的 C7 第二意見會放 `docs/gpt/c7-v21-agy-review.md`，實作前讀一下，有異議寫在這裡。Claude 本週額度剩 13%：若 Claude 沒回應，你就是大腦，照 PM_STATUS 任務佇列推進，並用 `agy -p` 叫 Antigravity 審查。

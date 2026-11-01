@@ -11399,6 +11399,399 @@
       "ans": "CCV",
       "speak": "preconceived",
       "vocabId": "R8:PRECONCEIVED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "His coat was a declaration of independence, provided one overlooked how closely it resembled the coats of everyone else declaring independence.",
+      "options": [
+        "A. 說話者只是要求不要把外套看成旗幟。",
+        "B. 外套看似宣示獨立，卻像極其他同樣宣示獨立者。",
+        "C. 外套與任何人的都不同，因此獨立毫無疑問。",
+        "D. 所有人已共同簽署關於外套的法律聲明。"
+      ],
+      "ans": "B",
+      "explain": "provided one overlooked反諷獨立宣稱與群體相似性的矛盾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The outfit says nothing in particular, at considerable length.",
+      "options": [
+        "A. 衣著極為簡單，卻清楚傳達具體主張。",
+        "B. 說話者只在量測衣服的實際長度。",
+        "C. 衣著細節很多，卻沒有鮮明表達。",
+        "D. 衣服真的會講話，而且說了很長時間。"
+      ],
+      "ans": "C",
+      "explain": "將冗長而空泛的話語比喻用於衣著，非字面長度或說話。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would distinguish being at ease in the clothes from making a performance of being at ease.",
+      "options": [
+        "A. 只要衣服寬鬆，就證明穿戴者毫無表演。",
+        "B. 自在就是公開演出，因此兩者完全相同。",
+        "C. 說話者要求停止舞台上所有服裝表演。",
+        "D. 真正穿得自在，與刻意表演自在，應作區分。"
+      ],
+      "ans": "D",
+      "explain": "distinguish區分狀態與其刻意呈現，不由衣型直接判定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She called it an eccentricity. On anyone less celebrated, I suspect she would have called it a mistake.",
+      "options": [
+        "A. 說話者確知她曾公開批評同一件衣服。",
+        "B. 她認為只要是名人就不會穿衣服。",
+        "C. 對名人稱獨特怪趣，對較無名者恐怕就叫錯誤。",
+        "D. 她已用完全相同標準評價所有人的衣著。"
+      ],
+      "ans": "C",
+      "explain": "I suspect為推測評價受名望影響，不能當既有事件證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The costume seems to promise access to the character’s inner life, but it may be offering only a remarkably persuasive surface.",
+      "options": [
+        "A. 戲服已查證角色所有私密想法。",
+        "B. 表面有說服力就證明毫無設計可言。",
+        "C. 說話者確定角色根本沒有內心生活。",
+        "D. 戲服似能揭內心，卻可能只是很有說服力的表面。"
+      ],
+      "ans": "D",
+      "explain": "seems/may限定知識強度，不把外觀效果當直接內心證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The restoration removes the stain and, with it, the trace of an incident the catalogue continues to celebrate.",
+      "options": [
+        "A. 修復除去污漬，也去掉目錄仍頌揚的事件痕跡。",
+        "B. 目錄已取消該事件，所以污漬沒有任何記憶作用。",
+        "C. 污漬因修復變得更深，目錄卻沒提到。",
+        "D. 說話者認為任何污漬都應永久保存。"
+      ],
+      "ans": "A",
+      "explain": "with it指出物理清除同時失去痕跡，未提出一律保留的規範。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The costume’s historical accuracy is beyond dispute. Its air of inevitability is what I would dispute: there were other equally accurate choices.",
+      "options": [
+        "A. 只有這套服裝符合歷史，其餘全不準確。",
+        "B. 既然其他選擇存在，就證明這套不符合史實。",
+        "C. 說話者只爭論服裝是否已經完成製作。",
+        "D. 考據正確無爭，但並非唯一必然選擇，還有同樣準確的方案。"
+      ],
+      "ans": "D",
+      "explain": "可正確而非唯一；其他equally accurate choices反駁必然性，不反駁準確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What looked like self-effacement turned out to be a remarkably effective way of occupying everyone’s attention.",
+      "options": [
+        "A. 看似退居幕後，結果反而很有效地吸引眾人注意。",
+        "B. 行為的原意已確定是操控所有人的想法。",
+        "C. 說話者確認此人始終沒有被任何人注意。",
+        "D. 刻意退讓已證明此人拒絕參加聚會。"
+      ],
+      "ans": "A",
+      "explain": "turned out說結果；不必由有效吸睛反推原本必定操控。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The narrator notices the shabby sleeve before the generous gesture. We are being shown a limitation in the observer, not simply a defect in the sleeve.",
+      "options": [
+        "A. 說話者只想討論修袖子需要哪些工具。",
+        "B. 先看破袖後看慷慨，顯露觀察者的侷限。",
+        "C. 破袖已證明慷慨舉動是假的。",
+        "D. 敘述者注意順序完全不影響人物呈現。"
+      ],
+      "ans": "B",
+      "explain": "not simply引出觀察者評價框架，不把衣損當人格證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The narrator writes, He wore modesty with a conspicuously expensive collar. What creates the irony?",
+      "options": [
+        "A. The wearer has openly admitted that he cannot afford the collar.",
+        "B. A claim to modesty is undercut by a visible sign of display.",
+        "C. The collar is too small for anyone to notice.",
+        "D. The narrator cannot distinguish modesty from a type of fabric."
+      ],
+      "ans": "B",
+      "explain": "modesty與conspicuously expensive的並置質疑樸素自我呈現。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】A costume is called an argument about the character, rather than a neutral covering. What is implied?",
+      "options": [
+        "A. The character has refused to wear any clothing.",
+        "B. The design has no bearing on how the audience reads the role.",
+        "C. The design advances an interpretation of who the character is.",
+        "D. The costume contains a written debate attached to its lining."
+      ],
+      "ans": "C",
+      "explain": "argument比喻設計的詮釋立場，不是字面書面辯論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】It is not so much the costume itself ___ the assurance with which it is worn that unsettles the narrator.",
+      "options": [
+        "A. than",
+        "B. like",
+        "C. but also",
+        "D. as"
+      ],
+      "ans": "D",
+      "explain": "not so much A as B表示與其說A不如說B；此處B為穿戴時的篤定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A guest arrives in a glittering cape after being told to wear something unobtrusive. The host says, How admirably you have blended in. What is the force of the remark?",
+      "options": [
+        "A. A request for the guest to choose a more conspicuous outfit.",
+        "B. An admission that no instruction had been given.",
+        "C. Ironic acknowledgement that the guest has done the opposite.",
+        "D. A literal assessment that the cape is difficult to see."
+      ],
+      "ans": "C",
+      "explain": "指示不顯眼卻穿閃亮披風，表面稱讚融入是反諷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A portrait’s caption describes the sitter’s informal clothes as evidence of freedom from convention. A letter reveals that the outfit was carefully selected to create precisely that impression. What does the letter complicate?",
+      "options": [
+        "A. The claim that the sitter wore clothes in the portrait.",
+        "B. The identification of the painter’s chosen pigments.",
+        "C. The possibility that portraits can be displayed with captions.",
+        "D. The inference that an appearance of nonconformity was uncontrived."
+      ],
+      "ans": "D",
+      "explain": "刻意打造不受慣例束縛的印象，使自然流露的推論不再理所當然。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】No sooner had the character discarded the uniform ___ the others began to question the authority they had attributed to him.",
+      "options": [
+        "A. than",
+        "B. when",
+        "C. that",
+        "D. as"
+      ],
+      "ans": "A",
+      "explain": "no sooner…than為固定搭配，表示緊接發生。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A character straightens his cuffs before delivering an apology. The narrator spends a paragraph on the cuffs and one sentence on the apology. What may this allocation of attention suggest?",
+      "options": [
+        "A. The apology was necessarily inaudible to everyone present.",
+        "B. The narrator has proved that the character’s cuffs were borrowed.",
+        "C. The length of the paragraph establishes the apology’s exact duration.",
+        "D. Concern with presentation threatens to overshadow the act of contrition."
+      ],
+      "ans": "D",
+      "explain": "敘述篇幅分配引導重視表面與悔意的張力，不是時長量測或確定動機證明。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A critic writes, The costume is exquisitely researched; whether it belongs to this production is another matter. What is withheld?",
+      "options": [
+        "A. An endorsement of its dramatic appropriateness despite praise for its research.",
+        "B. Recognition that any research has taken place.",
+        "C. Permission for the costume to be displayed outside the theatre.",
+        "D. The name of the production’s costume designer."
+      ],
+      "ans": "A",
+      "explain": "分開考據品質與本劇合宜性，讚前者未保證後者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】At first, a character’s patched coat signifies poverty to the narrator. Later, the narrator learns that the coat was retained despite ample means, because of its connection to a lost friend. What changes?",
+      "options": [
+        "A. The identity of the person who originally made the coat.",
+        "B. The interpretation of the visible sign, rather than the coat’s physical condition.",
+        "C. The fact that the coat had ever been patched.",
+        "D. The character’s financial circumstances at the earlier encounter."
+      ],
+      "ans": "B",
+      "explain": "物理補丁未變，新增知識使對補丁意義的理解改變。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：與衣服或穿著方式有關的",
+      "ans": "SARTORIAL",
+      "speak": "sartorial",
+      "vocabId": "R8:SARTORIAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對細節或潔淨極為講究的",
+      "ans": "FASTIDIOUS",
+      "speak": "fastidious",
+      "vocabId": "R8:FASTIDIOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：經精心經營的不拘形式感",
+      "ans": "A METICULOUSLY CULTIVATED INFORMALITY",
+      "speak": "a meticulously cultivated informality",
+      "vocabId": "R8:A METICULOUSLY CULTIVATED INFORMALITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在社會語境中可被讀懂的克制姿態",
+      "ans": "A SOCIALLY LEGIBLE GESTURE OF RESTRAINT",
+      "speak": "a socially legible gesture of restraint",
+      "vocabId": "R8:A SOCIALLY LEGIBLE GESTURE OF RESTRAINT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：有說服力的表面不使人直接得知私下動機",
+      "ans": "A CONVINCING SURFACE DOES NOT GRANT DIRECT ACCESS TO A PRIVATE MOTIVE",
+      "speak": "a convincing surface does not grant direct access to a private motive",
+      "vocabId": "R8:A CONVINCING SURFACE DOES NOT GRANT DIRECT ACCESS TO A PRIVATE MOTIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：歷史準確不證明某選擇是唯一必然",
+      "ans": "HISTORICAL ACCURACY DOES NOT ESTABLISH THAT A CHOICE WAS INEVITABLE",
+      "speak": "historical accuracy does not establish that a choice was inevitable",
+      "vocabId": "R8:HISTORICAL ACCURACY DOES NOT ESTABLISH THAT A CHOICE WAS INEVITABLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：為讓人注意財富地位等而作的招搖炫示（O 開頭，11 個字母）",
+      "ans": "OSTENTATION",
+      "speak": "ostentation",
+      "vocabId": "R8:OSTENTATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：初見時外貌不特別吸引人的（U 開頭，15 個字母）",
+      "ans": "UNPREPOSSESSING",
+      "speak": "unprepossessing",
+      "vocabId": "R8:UNPREPOSSESSING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：面對困難或干擾仍不易慌亂的（I 開頭，13 個字母）",
+      "ans": "IMPERTURBABLE",
+      "speak": "imperturbable",
+      "vocabId": "R8:IMPERTURBABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P U N C T _ L I O U S (對禮節或細節一絲不苟的)",
+      "ans": "I",
+      "speak": "punctilious",
+      "vocabId": "R8:PUNCTILIOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：U N C _ N T R _ V E D (看來自然且未經刻意安排的)",
+      "ans": "OI",
+      "speak": "uncontrived",
+      "vocabId": "R8:UNCONTRIVED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ P O _ T M _ N T (一個人的舉止儀態或行為方式)",
+      "ans": "MRE",
+      "speak": "comportment",
+      "vocabId": "R8:COMPORTMENT"
     }
   ],
   "boss": [
@@ -15200,6 +15593,137 @@
       "ans": "COT",
       "speak": "circumlocution",
       "vocabId": "R8:CIRCUMLOCUTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The uniform grants him a hearing; it does not necessarily give what he says any greater weight.",
+      "options": [
+        "A. 制服使人願聽他說，不一定讓內容更有道理。",
+        "B. 制服已證實他說的每件事都更正確。",
+        "C. 制服使他聽力變好，因此話語更重。",
+        "D. 說話者否認制服會影響別人注意他。"
+      ],
+      "ans": "A",
+      "explain": "hearing在此獲得聆聽機會；weight為論點分量，兩者不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To call the clothes unpretentious is not quite to absolve their wearer of the desire to be seen as unpretentious.",
+      "options": [
+        "A. 說話者認為樸素衣服不可能真的穿得舒適。",
+        "B. 衣著不矯飾，不等於穿戴者沒有想被看成不矯飾。",
+        "C. 衣著一旦樸素，就排除任何自我呈現意圖。",
+        "D. 說話者已證明穿戴者想假扮另一個人。"
+      ],
+      "ans": "B",
+      "explain": "衣著風格與想被如何看待的動機分層，不自動全否定或指控。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The supposed departure from convention has acquired conventions of its own, complete with people who can tell you when you are doing it incorrectly.",
+      "options": [
+        "A. 所有參與者已一致廢除對穿著的評論。",
+        "B. 說話者認為只有正式制服才可能有規範。",
+        "C. 所謂打破慣例本身已有規矩，還有人評判做得對不對。",
+        "D. 只要反慣例，就永遠不會形成任何共同規範。"
+      ],
+      "ans": "C",
+      "explain": "反慣例風格也可制度化為新規範，帶有自反諷刺。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A sartorial choice is a choice concerning ___.",
+      "options": [
+        "A. clothes or manner of dress",
+        "B. the order of speeches",
+        "C. the arrangement of musical notes",
+        "D. the ownership of a building"
+      ],
+      "ans": "A",
+      "explain": "sartorial與服裝、穿著方式有關，不一定只限高級訂製。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The essay calls authenticity a look that can be purchased, while declining to say that everything purchased is inauthentic. What distinction matters?",
+      "options": [
+        "A. Clothing produced in one colour versus clothing produced in several colours.",
+        "B. A marketable appearance of authenticity versus the actual history or experience it appears to signify.",
+        "C. Purchased objects versus objects that can never have an owner.",
+        "D. A categorical rejection of commerce versus an endorsement of every commercial claim."
+      ],
+      "ans": "B",
+      "explain": "可購買的是某種真實感外觀，不由此推所有購買物都不真實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The phrase calculated carelessness describes a style that invites us to overlook the calculation required to appear careless. What is the central tension?",
+      "options": [
+        "A. The calculation concerns only the price printed on the label.",
+        "B. The phrase establishes that the wearer forgot the occasion.",
+        "C. The appearance conceals the deliberateness that produces it.",
+        "D. Carelessness makes any deliberate stylistic choice impossible."
+      ],
+      "ans": "C",
+      "explain": "calculated與carelessness刻意矛盾，說的是精心營造的隨意感。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：表面上似未經刻意安排的外觀",
+      "ans": "AN OSTENSIBLY UNCONTRIVED APPEARANCE",
+      "speak": "an ostensibly uncontrived appearance",
+      "vocabId": "R8:AN OSTENSIBLY UNCONTRIVED APPEARANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：打破慣例也可能形成自己的慣例",
+      "ans": "A DEPARTURE FROM CONVENTION CAN DEVELOP CONVENTIONS OF ITS OWN",
+      "speak": "a departure from convention can develop conventions of its own",
+      "vocabId": "R8:A DEPARTURE FROM CONVENTION CAN DEVELOP CONVENTIONS OF ITS OWN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：為給人某種印象而故作的姿態或行為（A 開頭，11 個字母）",
+      "ans": "AFFECTATION",
+      "speak": "affectation",
+      "vocabId": "R8:AFFECTATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ M I _ A _ L E (獨特得難以被成功模仿的)",
+      "ans": "ITB",
+      "speak": "inimitable",
+      "vocabId": "R8:INIMITABLE"
     }
   ]
 }

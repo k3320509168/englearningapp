@@ -11396,6 +11396,399 @@
       "ans": "CMT",
       "speak": "uncommitted",
       "vocabId": "R7:UNCOMMITTED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She dressed down for the occasion, but certainly not carelessly.",
+      "options": [
+        "A. 她穿得比平常正式得多。",
+        "B. 她刻意穿得較隨便，但絕不是不用心。",
+        "C. 她被要求脫掉外套，因衣著違規。",
+        "D. 她隨便穿了一套，完全沒作選擇。"
+      ],
+      "ans": "B",
+      "explain": "dress down在此穿著較休閒，not carelessly否定不用心。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The costume should suggest authority without making him look like a caricature of authority.",
+      "options": [
+        "A. 只要誇張到像漫畫，權威就一定可信。",
+        "B. 說話者要求把角色改成戲服設計師。",
+        "C. 戲服要顯權威，卻別變成誇張的權威漫畫形象。",
+        "D. 戲服必須完全抹去角色的權威感。"
+      ],
+      "ans": "C",
+      "explain": "without設定限度：可傳達權威但不過度誇張。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would call it understated, not unfinished.",
+      "options": [
+        "A. 它還沒做完，所以不能談設計風格。",
+        "B. 它過度華麗，毫無克制可言。",
+        "C. 設計者已正式放棄完成這件作品。",
+        "D. 我會說它克制低調，而非尚未做完。"
+      ],
+      "ans": "D",
+      "explain": "not unfinished區分刻意克制與缺工未完。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is not the expense I object to. It is the idea that expense alone makes it appropriate.",
+      "options": [
+        "A. 只要足夠昂貴，就認為所有場合都適用。",
+        "B. 說話者在問衣服目前是否特價。",
+        "C. 反對的是單靠價格判合宜，不是花費本身。",
+        "D. 反對任何花費，即使服裝適合場合。"
+      ],
+      "ans": "C",
+      "explain": "it is…the idea強調判準問題，不等同價格偏好。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The absence of decoration is not an absence of decisions. Someone has chosen what not to put there.",
+      "options": [
+        "A. 沒有裝飾證明設計者完全沒有參與。",
+        "B. 只要加上裝飾，就能取消先前所有選擇。",
+        "C. 說話者認為裝飾是唯一可討論的設計。",
+        "D. 沒有裝飾不等於沒作設計選擇。"
+      ],
+      "ans": "D",
+      "explain": "省略本身可為刻意選擇，不用是否有裝飾判定是否設計。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "He seemed effortlessly elegant, although I later discovered that he had tried on almost everything he owned.",
+      "options": [
+        "A. 看似毫不費力地優雅，實際試了幾乎全部衣服。",
+        "B. 他隨手拿第一件衣服，後來才買其他衣服。",
+        "C. 他認為衣服越多，優雅就越不可能。",
+        "D. 說話者原先就目睹他試遍所有衣服。"
+      ],
+      "ans": "A",
+      "explain": "although/ later discovered對照原印象與後來得知的準備。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Calling it timeless can be a compliment, but it can also spare us the trouble of asking whose idea of good taste it preserves.",
+      "options": [
+        "A. 稱經典已查明所有人的品味完全相同。",
+        "B. 說話者認為任何讚美都應取消。",
+        "C. 設計已證明來自一個沒有品味差異的時代。",
+        "D. 稱經典可讚美，也可能略過它保留誰的品味標準。"
+      ],
+      "ans": "D",
+      "explain": "can also提出命名可能遮蔽的問題，非全面否定timeless或讚美。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I do not want a costume that explains the whole character before she has spoken. Give her room to surprise us.",
+      "options": [
+        "A. 別讓戲服在她開口前就把角色定死，保留驚喜空間。",
+        "B. 戲服應事先揭露每個秘密，避免角色有意外。",
+        "C. 演員不應說話，角色只能由戲服解釋。",
+        "D. 設計師完全不准透過衣著提供線索。"
+      ],
+      "ans": "A",
+      "explain": "不要求毫無線索，而是避免服裝把角色過度簡化預定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The patch makes the damage visible, but it also records that somebody decided the garment was worth keeping.",
+      "options": [
+        "A. 說話者主張補丁必須保持完全隱形。",
+        "B. 補丁既顯破損，也留下有人認為衣服值得保留的痕跡。",
+        "C. 補丁證明衣服已被原主人丟棄。",
+        "D. 可見破損使保留衣服的意圖無從判斷。"
+      ],
+      "ans": "B",
+      "explain": "also增加對保留與修復意義的解讀，不只看缺損。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The costume is suggestive of a period rather than a meticulous reconstruction of it. What is claimed?",
+      "options": [
+        "A. It can only be understood by the original costume maker.",
+        "B. It evokes the period without reproducing every detail.",
+        "C. It reproduces every detail while avoiding any period association.",
+        "D. Its period has been established through laboratory testing."
+      ],
+      "ans": "B",
+      "explain": "suggestive of喚起聯想，rather than排除逐項精確重建。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The actor objected to ___ recognisable only by his costume.",
+      "options": [
+        "A. have been",
+        "B. to be",
+        "C. being",
+        "D. be"
+      ],
+      "ans": "C",
+      "explain": "object to的to為介系詞，後接being recognisable。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】An inconspicuous outfit is one that ___.",
+      "options": [
+        "A. is difficult to put on without assistance",
+        "B. has no practical fastening",
+        "C. is unsuitable for the weather",
+        "D. does not readily attract attention"
+      ],
+      "ans": "D",
+      "explain": "inconspicuous描述不顯眼，不推定難穿或不實用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The outfit was chosen for comfort, with elegance a welcome by-product. What was prioritised?",
+      "options": [
+        "A. A compromise in which neither comfort nor elegance mattered.",
+        "B. The appearance of discomfort as part of the design.",
+        "C. Comfort, with elegance as an additional benefit.",
+        "D. Elegance, regardless of any effect on comfort."
+      ],
+      "ans": "C",
+      "explain": "by-product是附帶結果，不是首要目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A director rejects a lavish costume because it draws attention away from the character’s attempt to pass unnoticed. What is the conflict?",
+      "options": [
+        "A. The character is meant to display wealth but the costume looks modest.",
+        "B. The audience has been instructed to ignore all clothing.",
+        "C. The costume is too fragile for the actor to wear safely.",
+        "D. The costume’s visual prominence undermines the dramatic intention."
+      ],
+      "ans": "D",
+      "explain": "lavish與pass unnoticed矛盾：外觀吸睛損低調角色目的，無材質證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Such ___ the costume’s transformation of the actor that his colleagues initially failed to recognise him.",
+      "options": [
+        "A. was",
+        "B. were",
+        "C. had",
+        "D. did"
+      ],
+      "ans": "A",
+      "explain": "Such was…that引出程度結果，主詞transformation單數用was。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The exhibition places a uniform beside the wearer’s letters, which reveal doubts about the institution it represented. What does the pairing discourage?",
+      "options": [
+        "A. Believing that the uniform belonged to someone who could write.",
+        "B. Distinguishing the institution from an individual wearer.",
+        "C. Reading the letters as evidence of the writer’s expressed doubts.",
+        "D. Assuming that wearing the uniform proves complete personal allegiance."
+      ],
+      "ans": "D",
+      "explain": "信中疑慮限制由制服直接推定內心完全效忠，非否定制服存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The host says, You need not dress for anyone’s benefit but your own, then spends the evening commenting on guests’ clothes. What is the tension?",
+      "options": [
+        "A. The expressed freedom conflicts with the pressure created by the host’s attention.",
+        "B. The host has explicitly required every guest to wear the same colour.",
+        "C. The guests have agreed that personal preference is irrelevant.",
+        "D. The comments establish that the host designed every outfit."
+      ],
+      "ans": "A",
+      "explain": "口頭自由與持續衣著評論形成潛在壓力，未明說制服或設計者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A repaired sleeve is described as honest because the repair is visible. A reviewer accepts the aesthetic choice but questions whether invisibly repaired clothes are therefore dishonest. What is questioned?",
+      "options": [
+        "A. The reviewer’s own ability to appreciate any deliberate design.",
+        "B. The moral judgement implied by a description of appearance.",
+        "C. The possibility of repairing a sleeve without replacing the coat.",
+        "D. The claim that this particular repair can be seen."
+      ],
+      "ans": "B",
+      "explain": "由可見修補延伸到honest的道德隱喻可被質疑，並不反對設計本身。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：不容易引人注意的",
+      "ans": "INCONSPICUOUS",
+      "speak": "inconspicuous",
+      "vocabId": "R7:INCONSPICUOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：刻意炫耀財富或地位而顯得招搖的",
+      "ans": "OSTENTATIOUS",
+      "speak": "ostentatious",
+      "vocabId": "R7:OSTENTATIOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有意採克制手法的設計",
+      "ans": "A CONSCIOUSLY RESTRAINED DESIGN",
+      "speak": "a consciously restrained design",
+      "vocabId": "R7:A CONSCIOUSLY RESTRAINED DESIGN"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：以視覺方式清楚呈現的關聯",
+      "ans": "AN ASSOCIATION MADE VISUALLY LEGIBLE",
+      "speak": "an association made visually legible",
+      "vocabId": "R7:AN ASSOCIATION MADE VISUALLY LEGIBLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：制服未必揭示穿戴者內心的效忠",
+      "ans": "A UNIFORM NEED NOT REVEAL THE WEARER'S PRIVATE ALLEGIANCE",
+      "speak": "a uniform need not reveal the wearer's private allegiance",
+      "vocabId": "R7:A UNIFORM NEED NOT REVEAL THE WEARER'S PRIVATE ALLEGIANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：克制可以是有意識的美學選擇",
+      "ans": "RESTRAINT CAN BE A DELIBERATE AESTHETIC CHOICE",
+      "speak": "restraint can be a deliberate aesthetic choice",
+      "vocabId": "R7:RESTRAINT CAN BE A DELIBERATE AESTHETIC CHOICE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：依循群體規範而使自己與他人相同的行為（C 開頭，10 個字母）",
+      "ans": "CONFORMITY",
+      "speak": "conformity",
+      "vocabId": "R7:CONFORMITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：符合場合或社會慣例的合宜行為（P 開頭，9 個字母）",
+      "ans": "PROPRIETY",
+      "speak": "propriety",
+      "vocabId": "R7:PROPRIETY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：與周圍情境不協調而顯得突兀的（I 開頭，11 個字母）",
+      "ans": "INCONGRUOUS",
+      "speak": "incongruous",
+      "vocabId": "R7:INCONGRUOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：U N A S S _ M I N G (態度謙遜而不刻意引人注意的)",
+      "ans": "U",
+      "speak": "unassuming",
+      "vocabId": "R7:UNASSUMING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C O N S _ I C U _ U S L Y (以明顯而引人注意的方式)",
+      "ans": "PO",
+      "speak": "conspicuously",
+      "vocabId": "R7:CONSPICUOUSLY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N D _ R S T _ T E _ E N T (以較輕淡或克制措辭表達而產生效果)",
+      "ans": "EAM",
+      "speak": "understatement",
+      "vocabId": "R7:UNDERSTATEMENT"
     }
   ],
   "boss": [
@@ -15197,6 +15590,137 @@
       "ans": "ODT",
       "speak": "reconsideration",
       "vocabId": "R7:RECONSIDERATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The uniform tells you what role she has been assigned, not necessarily how she feels about it.",
+      "options": [
+        "A. 制服可示被分派的角色，未必反映她的感受。",
+        "B. 制服足以證明她熱愛所有被分派工作。",
+        "C. 制服只反映內心感受，與角色無關。",
+        "D. 制服證明角色是她未經同意自行宣稱的。"
+      ],
+      "ans": "A",
+      "explain": "assigned role與personal feeling不同，not necessarily限制推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have kept enough of the old design to make the connection legible, without asking the actor to move in a museum exhibit.",
+      "options": [
+        "A. 要求演員在博物館外完全不能移動。",
+        "B. 保留足夠舊設計讓人辨識關聯，但不要求演員穿上博物館展品。",
+        "C. 保留每項舊設計，活動方便完全不列考量。",
+        "D. 刪掉所有舊設計，避免觀眾認出來源。"
+      ],
+      "ans": "B",
+      "explain": "connection legible是可辨關聯；後半以museum exhibit對照表演所用服裝，並非要求在館內不能移動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can question the dress code without pretending that wearing clothes has no social meaning at all.",
+      "options": [
+        "A. 只要衣著有意義，所有規範就一定合理。",
+        "B. 說話者要求禁止討論穿著和場合的關係。",
+        "C. 可質疑衣著規範，不必否認穿著帶有社會意義。",
+        "D. 質疑規範就必須認定衣服沒有任何社會意義。"
+      ],
+      "ans": "C",
+      "explain": "without排除假兩難：承認意義仍能批判特定規範。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A guest says, I seem to have interpreted informal rather generously. Everyone else is wearing a suit. What is conveyed?",
+      "options": [
+        "A. A tactful acknowledgement of being less formally dressed than the others.",
+        "B. A complaint that the others have deliberately copied the guest’s clothes.",
+        "C. A claim that no dress guidance was supplied.",
+        "D. A request for the gathering to become a costume competition."
+      ],
+      "ans": "A",
+      "explain": "看別人穿西裝而自評對informal解得太寬，委婉承認自己較隨便。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The review praises the restraint of the design without calling it plain. Which distinction is preserved?",
+      "options": [
+        "A. Plainness has been established as the designer’s sole objective.",
+        "B. Deliberate moderation need not imply a lack of visual interest.",
+        "C. A lack of decoration necessarily makes a design unsuccessful.",
+        "D. Restraint refers only to the physical restriction of the actor."
+      ],
+      "ans": "B",
+      "explain": "restraint指克制選擇，不必等同乏味或缺乏趣味。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator admired the character’s apparent nonchalance, while describing how carefully the effect had been rehearsed. What is highlighted?",
+      "options": [
+        "A. The narrator believes rehearsal prevents any convincing performance.",
+        "B. The character’s clothing was selected by chance.",
+        "C. An impression of effortlessness may itself require effort.",
+        "D. The character made no preparation for the occasion."
+      ],
+      "ans": "C",
+      "explain": "表面隨意與仔細排練並存，指出自然感也可經營。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：彷彿毫不費力的誤導印象",
+      "ans": "A MISLEADING IMPRESSION OF EFFORTLESSNESS",
+      "speak": "a misleading impression of effortlessness",
+      "vocabId": "R7:A MISLEADING IMPRESSION OF EFFORTLESSNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看似毫不費力的風格可能經仔細排練",
+      "ans": "AN APPARENTLY EFFORTLESS STYLE MAY BE CAREFULLY REHEARSED",
+      "speak": "an apparently effortless style may be carefully rehearsed",
+      "vocabId": "R7:AN APPARENTLY EFFORTLESS STYLE MAY BE CAREFULLY REHEARSED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：看似放鬆、不在意或不擔心的態度（N 開頭，11 個字母）",
+      "ans": "NONCHALANCE",
+      "speak": "nonchalance",
+      "vocabId": "R7:NONCHALANCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A P P _ E H _ N S _ V E (對將發生的事感到不安或擔心的)",
+      "ans": "REI",
+      "speak": "apprehensive",
+      "vocabId": "R7:APPREHENSIVE"
     }
   ]
 }

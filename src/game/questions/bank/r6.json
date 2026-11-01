@@ -11402,6 +11402,399 @@
       "ans": "AJS",
       "speak": "readjust",
       "vocabId": "R6:READJUST"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am keeping the coat, but I am having the lining replaced.",
+      "options": [
+        "A. 外套已經換好，現在不需處理。",
+        "B. 外套保留，內裡要更換。",
+        "C. 整件外套都退掉，內裡另行保留。",
+        "D. 只換外套顏色，內裡完全不動。"
+      ],
+      "ans": "B",
+      "explain": "have something replaced表示請人更換該部分，keeping保留整體。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The label is at the back. I think you have put it on the wrong way round.",
+      "options": [
+        "A. 標籤被剪掉，因此無法知道衣服材質。",
+        "B. 標籤要求把衣服倒掛而不是穿上。",
+        "C. 標籤應在後面，可能把前後穿反了。",
+        "D. 標籤在後面，所以肯定把衣服穿在外套外。"
+      ],
+      "ans": "C",
+      "explain": "wrong way round在前後定位語境是方向穿反，非inside out裡外反。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is a loose fit by design; it is not meant to cling to you.",
+      "options": [
+        "A. 衣服因洗壞而縮小，已無法穿。",
+        "B. 寬鬆只是標籤錯誤，應把它改緊。",
+        "C. 說話者要求所有衣服都穿同一尺寸。",
+        "D. 原本就設計成寬鬆，不是要貼身。"
+      ],
+      "ans": "D",
+      "explain": "by design表有意設計；not meant to cling否定貼身目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I recognised the hat before I recognised the person wearing it.",
+      "options": [
+        "A. 只認出帽子，始終沒認出戴者。",
+        "B. 認出的是帽子製作者，不是戴帽者。",
+        "C. 先認出帽子，才認出戴帽的人。",
+        "D. 先認出人，才知道帽子是誰的。"
+      ],
+      "ans": "C",
+      "explain": "before提供認出兩者的先後，不是否定後來認出人。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "They are not identical costumes. The differences are just hard to see from the back of the hall.",
+      "options": [
+        "A. 戲服完全相同，只有座位顏色不同。",
+        "B. 戲服太破舊，所以不准觀眾坐後排。",
+        "C. 坐後排的人比前排更容易辨識細節。",
+        "D. 戲服不同，只是坐廳後不易看出差別。"
+      ],
+      "ans": "D",
+      "explain": "not identical否定相同，just解釋觀察距離造成難辨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would keep the original buttons. They are part of what makes the coat recognisable in the old photographs.",
+      "options": [
+        "A. 想保留原鈕扣，因是舊照片中辨識外套的特徵。",
+        "B. 想把鈕扣全換掉，讓外套更像照片原貌。",
+        "C. 舊照片看不到外套，所以沒有可保留的特徵。",
+        "D. 鈕扣已全部遺失，只能根據照片重買。"
+      ],
+      "ans": "A",
+      "explain": "keep與recognisable指出保留辨識特徵，未說鈕扣遺失。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The pockets are decorative. If you put your keys in there, they will fall straight through.",
+      "options": [
+        "A. 口袋專為收鑰匙設計，比其他位置安全。",
+        "B. 鑰匙太重，應先把口袋拉鍊拉上。",
+        "C. 口袋內已有鑰匙，所以不能放別的。",
+        "D. 口袋只是裝飾，放鑰匙會直接掉下。"
+      ],
+      "ans": "D",
+      "explain": "decorative與fall through否定實用收納功能。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She said the dress was striking, which I took as a compliment, though she stopped short of saying she liked it.",
+      "options": [
+        "A. 她說洋裝醒目，我當成讚美，但她沒明說喜歡。",
+        "B. 她明說喜歡，並要求買一件相同洋裝。",
+        "C. 她說洋裝不顯眼，所以我認為是在批評。",
+        "D. 她說話中斷，因有人拿走了洋裝。"
+      ],
+      "ans": "A",
+      "explain": "striking醒目不自動等同喜歡；stopped short of在此是未進一步表示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We do not need to make the costume historically exact. We do need the audience to understand who the character is.",
+      "options": [
+        "A. 說話者認為戲服對角色理解沒有幫助。",
+        "B. 不求戲服歷史細節全準，但要讓觀眾理解角色。",
+        "C. 角色辨識不重要，只求每個歷史細節都對。",
+        "D. 只要衣服昂貴，就能保證觀眾理解角色。"
+      ],
+      "ans": "B",
+      "explain": "do not need與do need對照兩種優先條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The jacket fits across the shoulders, but the sleeves need shortening. What is the problem?",
+      "options": [
+        "A. The fabric has lost its colour.",
+        "B. The sleeves are too long.",
+        "C. The shoulders are too narrow.",
+        "D. The jacket cannot be fastened."
+      ],
+      "ans": "B",
+      "explain": "need shortening表示袖長過長，肩部尺寸合適已明說。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I wish I ___ the coat on before buying it; it is much heavier than I expected.",
+      "options": [
+        "A. have try",
+        "B. was try",
+        "C. had tried",
+        "D. would have trying"
+      ],
+      "ans": "C",
+      "explain": "對已完成購買的過去遺憾，用wish加過去完成式had tried。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A reversible jacket can be ___.",
+      "options": [
+        "A. returned to the shop without a receipt",
+        "B. stretched to fit any size",
+        "C. washed only by hand",
+        "D. worn with either side facing out"
+      ],
+      "ans": "D",
+      "explain": "reversible指正反兩面皆可穿，不涉及退貨權或洗法。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The scarf was tucked inside the collar so that it would not trail across the wet bench. What does it refer to?",
+      "options": [
+        "A. The bench.",
+        "B. The weather.",
+        "C. The scarf.",
+        "D. The collar."
+      ],
+      "ans": "C",
+      "explain": "it承接被收進領口、可能拖到椅面的圍巾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The boots need ___ before they are comfortable enough for a long walk.",
+      "options": [
+        "A. to breaking in",
+        "B. break in",
+        "C. to have break in",
+        "D. breaking in"
+      ],
+      "ans": "D",
+      "explain": "need doing可表被動需要；break in鞋靴指穿到適腳。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The notice says costumes are welcome but not compulsory. Which visitor meets the stated rule?",
+      "options": [
+        "A. A visitor arriving in ordinary clothes.",
+        "B. Only a visitor wearing a complete costume.",
+        "C. Only a visitor who has hired a costume.",
+        "D. A visitor who refuses to enter without changing the rule."
+      ],
+      "ans": "A",
+      "explain": "welcome不等於必須，not compulsory明許一般衣著。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Before you buy another size, have you checked whether the waist can be adjusted? What is suggested?",
+      "options": [
+        "A. Buying another size is forbidden.",
+        "B. The garment has already been altered permanently.",
+        "C. The speaker knows the current size is unavailable.",
+        "D. An existing feature may solve the fit problem."
+      ],
+      "ans": "D",
+      "explain": "問腰部能否調整，提供先查現有功能的替代步驟。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A repair café advertises visible mending. Its organiser explains that repairs may become part of the design rather than being hidden. What should a participant expect?",
+      "options": [
+        "A. The repair can be deliberately noticeable.",
+        "B. Every repair will be impossible to detect.",
+        "C. Only undamaged clothes will be accepted.",
+        "D. The original garment must be replaced entirely."
+      ],
+      "ans": "A",
+      "explain": "visible及rather than hidden明示可把修補痕跡當設計。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The actor looked older in the costume, although nothing about his actual age had changed. What distinction is made?",
+      "options": [
+        "A. A comfortable garment versus an expensive one.",
+        "B. An impression created by appearance versus a personal fact.",
+        "C. An actor’s identity versus the identity of the costume maker.",
+        "D. A planned costume versus a completed performance."
+      ],
+      "ans": "B",
+      "explain": "looked older是外觀印象，不是實際年齡改變。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：正反兩面皆可使用或穿著的",
+      "ans": "REVERSIBLE",
+      "speak": "reversible",
+      "vocabId": "R6:REVERSIBLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對衣物尺寸或樣式所作的修改",
+      "ans": "ALTERATIONS",
+      "speak": "alterations",
+      "vocabId": "R6:ALTERATIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：刻意設計的寬鬆版型",
+      "ans": "A DELIBERATELY LOOSE FIT",
+      "speak": "a deliberately loose fit",
+      "vocabId": "R6:A DELIBERATELY LOOSE FIT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：適合實際活動的替換衣物",
+      "ans": "A PRACTICAL CHANGE OF CLOTHES",
+      "speak": "a practical change of clothes",
+      "vocabId": "R6:A PRACTICAL CHANGE OF CLOTHES"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：修補可以成為設計的一部分",
+      "ans": "THE REPAIR CAN BECOME PART OF THE DESIGN",
+      "speak": "the repair can become part of the design",
+      "vocabId": "R6:THE REPAIR CAN BECOME PART OF THE DESIGN"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看起來較老不等於實際年齡較大",
+      "ans": "LOOKING OLDER IS NOT THE SAME AS BEING OLDER",
+      "speak": "looking older is not the same as being older",
+      "vocabId": "R6:LOOKING OLDER IS NOT THE SAME AS BEING OLDER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：一個人擁有的全部衣物（W 開頭，8 個字母）",
+      "ans": "WARDROBE",
+      "speak": "wardrobe",
+      "vocabId": "R6:WARDROBE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：能阻止水滲透的（W 開頭，10 個字母）",
+      "ans": "WATERPROOF",
+      "speak": "waterproof",
+      "vocabId": "R6:WATERPROOF"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：可依需要改變位置或尺寸的（A 開頭，10 個字母）",
+      "ans": "ADJUSTABLE",
+      "speak": "adjustable",
+      "vocabId": "R6:ADJUSTABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F A S T _ N I N G (把衣物或物品扣合的扣件)",
+      "ans": "E",
+      "speak": "fastening",
+      "vocabId": "R6:FASTENING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E M B _ O I _ E R Y (在布料上用針線繡出的圖樣)",
+      "ans": "RD",
+      "speak": "embroidery",
+      "vocabId": "R6:EMBROIDERY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N _ U I _ A _ L E (不適合某用途或場合的)",
+      "ans": "STB",
+      "speak": "unsuitable",
+      "vocabId": "R6:UNSUITABLE"
     }
   ],
   "boss": [
@@ -15203,6 +15596,137 @@
       "ans": "FEE",
       "speak": "unforeseen",
       "vocabId": "R6:UNFORESEEN"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Do I need a tie? No, just something reasonably smart.",
+      "options": [
+        "A. 不必領帶，穿得適度整齊即可。",
+        "B. 一定要領帶，而且只能選黑色。",
+        "C. 完全沒有衣著要求，任何穿著都可以。",
+        "D. 只有領帶需要整齊，其他衣服不重要。"
+      ],
+      "ans": "A",
+      "explain": "否定領帶必要性，但reasonably smart仍有整齊程度要求。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It only looks black under this lighting. Take it by the window and you will see the green.",
+      "options": [
+        "A. 燈光已證明這衣服完全沒有固定顏色。",
+        "B. 這種燈下才像黑色，到窗邊會看出綠色。",
+        "C. 到窗邊會把衣服永久染成綠色。",
+        "D. 衣服是黑色，綠色只是窗戶標籤。"
+      ],
+      "ans": "B",
+      "explain": "looks與see區分光線下的色彩呈現，不是實際染色。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not throw it away just because it is out of fashion. The question is whether you still enjoy wearing it.",
+      "options": [
+        "A. 只要仍然流行，就代表穿起來一定舒適。",
+        "B. 說話者要求所有舊衣都必須永久留下。",
+        "C. 別只因過時丟掉，應問自己是否仍喜歡穿。",
+        "D. 既然過時就該丟，即使自己仍愛穿也一樣。"
+      ],
+      "ans": "C",
+      "explain": "質疑單以流行判斷取捨，不是無條件留每件舊衣。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】It is lovely, though I am not sure I would wear it to a muddy outdoor event. What is being questioned?",
+      "options": [
+        "A. Its suitability for that occasion.",
+        "B. Its attractiveness in general.",
+        "C. Whether outdoor events can be enjoyable.",
+        "D. Whether the speaker owns any other clothes."
+      ],
+      "ans": "A",
+      "explain": "lovely認可好看，though後限制特定場合的適用性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A theatre uses the same grey coat for two characters. Each wears a different badge, allowing the audience to distinguish them. What identifies the characters?",
+      "options": [
+        "A. The order in which audience members entered.",
+        "B. The badges rather than the coat alone.",
+        "C. The colour of two different coats.",
+        "D. The actors’ spoken explanations of the costume budget."
+      ],
+      "ans": "B",
+      "explain": "同件灰外套不獨立區分角色，不同徽章才是指定線索。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A walker packs two thin layers instead of one thick jumper because she wants to remove one when she warms up. What advantage matters to her?",
+      "options": [
+        "A. Avoiding the need to carry any spare clothing.",
+        "B. Ensuring that the walk takes less time.",
+        "C. Being able to adjust how much warmth the clothing provides.",
+        "D. Keeping the same amount of clothing on throughout the walk."
+      ],
+      "ans": "C",
+      "explain": "題內理由是可脫一層調節，不添加步行時間或零負重。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：具有鮮明辨識特徵的衣物",
+      "ans": "A DISTINCTIVE PIECE OF CLOTHING",
+      "speak": "a distinctive piece of clothing",
+      "vocabId": "R6:A DISTINCTIVE PIECE OF CLOTHING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：戲服應幫助觀眾辨識角色",
+      "ans": "THE COSTUME SHOULD HELP THE AUDIENCE RECOGNISE THE CHARACTER",
+      "speak": "the costume should help the audience recognise the character",
+      "vocabId": "R6:THE COSTUME SHOULD HELP THE AUDIENCE RECOGNISE THE CHARACTER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：為隱藏身分而作的外表改裝（D 開頭，8 個字母）",
+      "ans": "DISGUISE",
+      "speak": "disguise",
+      "vocabId": "R6:DISGUISE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ T I _ C T _ V E (特徵鮮明而容易辨認的)",
+      "ans": "SNI",
+      "speak": "distinctive",
+      "vocabId": "R6:DISTINCTIVE"
     }
   ]
 }

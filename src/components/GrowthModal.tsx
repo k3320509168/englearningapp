@@ -31,6 +31,7 @@ export default function GrowthModal() {
   const [tab, setTab] = useState<Tab>(() => useUiStore.getState().growthTab);
   const notices = useNotices();
   const [selling, setSelling] = useState<string | null>(null); // 正在確認賣出的裝備
+  const [forgeSlot, setForgeSlot] = useState<'all' | 'weapon' | 'armor'>('all');
   const equippedItems = useMemo(
     () => Object.values(equipped).map(uid => equipment.find(e => e.uid === uid)).filter((e): e is OwnedEquip => e !== undefined),
     [equipped, equipment],
@@ -213,33 +214,49 @@ export default function GrowthModal() {
       {tab === 'forge' && (
         <>
           {materialBar}
-          <p className="muted party-note">素材來源：一般怪掉礦石，菁英怪與頭目掉屬性結晶，頭目掉魔核，第 4 區以後的菁英與頭目掉龍晶，寶箱怪掉一大堆。重複打造的同名裝備可以拿來「升品階」：效果 +20%、強化上限 +2（最多 ★3，稀有度不變）。</p>
+          <div className="forge-toolbar">
+            <div className="forge-filter-tabs">
+              {([['all', '全部'], ['weapon', '⚔️ 武器'], ['armor', '🛡️ 防具']] as const).map(([id, label]) => (
+                <button
+                  key={id}
+                  className={`pill ${forgeSlot === id ? 'is-on' : ''}`}
+                  onMouseDown={keepFocus}
+                  onClick={() => setForgeSlot(id)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <p className="forge-tip">💡 擊倒怪物可獲取鍛造素材；重複打造同名裝備可「升品階」大幅提升威力！</p>
+          </div>
           <ul className="gear-list">
-            {EQUIPMENT.map(def => {
-              const need = resolveCost(def, character.element);
-              const regionOk = (def.requires?.regionsCleared ?? 0) <= unlockedIndex;
-              const tierOk = (def.requires?.classTier ?? 0) <= player.classPath.length;
-              const enough = Object.entries(need).every(([k, v]) => (materials[k] ?? 0) >= v) && gold >= def.cost.gold;
-              const lockText = !regionOk ? `通關 ${def.requires!.regionsCleared} 個區域後解鎖` : !tierOk ? '二轉後解鎖' : '';
-              return (
-                <li key={def.id} className={`gear-item ${lockText ? 'is-locked' : ''}`} style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
-                  <span className="rarity-tag inline">{def.rarity}</span>
-                  <div className="gear-info">
-                    <b>{SLOTS.find(sl => sl.id === def.slot)?.icon} {displayName(def, character.classId)}{ownedCount(def.id) > 0 && <small className="muted"> 已擁有 {ownedCount(def.id)} 件</small>}</b>
-                    <small className="muted">{describeMods(def.mods).join('、')}</small>
-                    <small className="cost-line">
-                      🪙{def.cost.gold}
-                      {Object.entries(need).map(([k, v]) => (
-                        <span key={k} className={(materials[k] ?? 0) >= v ? '' : 'short'}> {materialIcon(k)}{materialName(k)}×{v}</span>
-                      ))}
-                    </small>
-                  </div>
-                  {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
-                    : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
-                      onClick={() => { if (sv.forge(def.id)) sfx.victory(); }}>鍛造</button>}
-                </li>
-              );
-            })}
+            {EQUIPMENT
+              .filter(def => forgeSlot === 'all' || (forgeSlot === 'weapon' ? def.slot === 'weapon' : def.slot !== 'weapon'))
+              .map(def => {
+                const need = resolveCost(def, character.element);
+                const regionOk = (def.requires?.regionsCleared ?? 0) <= unlockedIndex;
+                const tierOk = (def.requires?.classTier ?? 0) <= player.classPath.length;
+                const enough = Object.entries(need).every(([k, v]) => (materials[k] ?? 0) >= v) && gold >= def.cost.gold;
+                const lockText = !regionOk ? `通關 ${def.requires!.regionsCleared} 個區域後解鎖` : !tierOk ? '二轉後解鎖' : '';
+                return (
+                  <li key={def.id} className={`gear-item ${lockText ? 'is-locked' : ''}`} style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
+                    <span className="rarity-tag inline">{def.rarity}</span>
+                    <div className="gear-info">
+                      <b>{SLOTS.find(sl => sl.id === def.slot)?.icon} {displayName(def, character.classId)}{ownedCount(def.id) > 0 && <small className="muted"> 已擁有 {ownedCount(def.id)} 件</small>}</b>
+                      <small className="muted">{describeMods(def.mods).join('、')}</small>
+                      <small className="cost-line">
+                        🪙{def.cost.gold}
+                        {Object.entries(need).map(([k, v]) => (
+                          <span key={k} className={(materials[k] ?? 0) >= v ? '' : 'short'}> {materialIcon(k)}{materialName(k)}×{v}</span>
+                        ))}
+                      </small>
+                    </div>
+                    {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
+                      : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
+                        onClick={() => { if (sv.forge(def.id)) sfx.victory(); }}>鍛造</button>}
+                  </li>
+                );
+              })}
           </ul>
         </>
       )}
@@ -285,21 +302,40 @@ export default function GrowthModal() {
 function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
   const lit = (id: string) => path.includes(id);
   return (
-    <div className="class-tree">
-      {childrenOf(classId).map(first => (
-        <div key={first.id} className="tree-branch">
-          <span className={`tree-node ${lit(first.id) ? 'is-lit' : ''}`} title={first.desc}>{first.name}</span>
-          <span className="tree-arrow" aria-hidden>→</span>
-          <span className="tree-seconds">
-            {childrenOf(first.id).map(second => (
-              <span key={second.id} className="tree-pair">
-                <span className={`tree-node ${lit(second.id) ? 'is-lit' : ''}`} title={second.desc}>{second.name}</span>
-                {childrenOf(second.id).map(a => <span key={a.id} className={`tree-node is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={a.desc}>覺醒</span>)}
-              </span>
-            ))}
-          </span>
-        </div>
-      ))}
+    <div className="class-tree-panel">
+      <div className="class-tree-title">★ 轉職路線軌跡 ★</div>
+      <div className="class-tree">
+        {childrenOf(classId).map(first => (
+          <div key={first.id} className="tree-branch">
+            <div className={`tree-node-wrapper ${lit(first.id) ? 'is-lit' : ''}`} title={first.desc}>
+              <span className="tree-tier-tag">一轉</span>
+              <span className="tree-node">{first.name}</span>
+            </div>
+            <span className={`tree-connector ${lit(first.id) ? 'is-active' : ''}`} aria-hidden>══▶</span>
+            <div className="tree-seconds">
+              {childrenOf(first.id).map(second => {
+                const awakens = childrenOf(second.id);
+                return (
+                  <div key={second.id} className="tree-pair">
+                    <div className={`tree-node-wrapper ${lit(second.id) ? 'is-lit' : ''}`} title={second.desc}>
+                      <span className="tree-tier-tag">二轉</span>
+                      <span className="tree-node">{second.name}</span>
+                    </div>
+                    {awakens.map(a => (
+                      <div key={a.id} className="tree-awake-group">
+                        <span className={`tree-sub-connector ${lit(second.id) ? 'is-active' : ''}`} aria-hidden>─▶</span>
+                        <div className={`tree-node-wrapper is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={`${a.name}: ${a.desc}`}>
+                          <span className="tree-node">👑 覺醒</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

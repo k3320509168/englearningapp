@@ -172,7 +172,7 @@ export default function HeroModal() {
               <p className="muted">主角・{cls.name}・Lv {player.level}</p>
               {renderMemberButtons(id, inParty, pos, full)}
             </div>
-            <WeaponSlot />
+            <WeaponSlot classId={character.classId} />
           </div>
           <SkillList rows={[
             { icon: skill.icon, label: '技能', name: skill.name, desc: skillDesc(skill.id, power) },
@@ -377,12 +377,32 @@ function GrowthRow({ title, effect, reqs, action, onAction }: { title: string; e
 }
 
 // 專武欄位（預告）：SSR 英雄與主角才有，專武系統之後開放（B1 區通關後解鎖專武池）
-function WeaponSlot() {
+const CLASS_WEAPON_INFO: Record<ClassId, { icon: string; name: string; title: string; color: string }> = {
+  swordsman: { icon: '🗡️', name: '誓約聖劍・艾爾德', title: '劍聖專武', color: '#f97316' },
+  warrior: { icon: '🪓', name: '滅世戰斧・巴薩卡', title: '狂戰專武', color: '#eab308' },
+  archer: { icon: '🏹', name: '天穹逐影弓・伊卡洛', title: '神射專武', color: '#22c55e' },
+  mage: { icon: '🔮', name: '深淵星象法杖・克羅諾', title: '賢者專武', color: '#a855f7' },
+  monk: { icon: '✨', name: '晨曦庇護聖杯・歐若拉', title: '聖者專武', color: '#38bdf8' },
+};
+
+function WeaponSlot({ classId = 'swordsman' }: { classId?: ClassId }) {
+  const info = CLASS_WEAPON_INFO[classId] ?? CLASS_WEAPON_INFO.swordsman;
   return (
-    <aside className="hd-weapon" title="專武：B1 區通關後，召喚畫面會開放專武池">
-      <span className="hd-weapon-slot" aria-hidden>🗡️</span>
-      <b>專武</b>
-      <small className="muted">B1 通關後開放</small>
+    <aside
+      className="hd-weapon-anticipation"
+      style={{ '--wp-color': info.color } as CSSProperties}
+      title={`真名專武【${info.name}】：通關 B1 區魔王後於召喚畫面開放專武鍛爐！`}
+    >
+      <div className="hd-weapon-halo" aria-hidden />
+      <div className="hd-weapon-box">
+        <span className="hd-weapon-icon" aria-hidden>{info.icon}</span>
+        <span className="hd-weapon-lock">🔒</span>
+      </div>
+      <div className="hd-weapon-details">
+        <b className="hd-weapon-title">{info.name}</b>
+        <span className="hd-weapon-role">【{info.title}】</span>
+        <small className="hd-weapon-status">B1 通關後開放召喚</small>
+      </div>
     </aside>
   );
 }

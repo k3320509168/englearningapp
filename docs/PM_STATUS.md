@@ -89,3 +89,5 @@ Codex 的 C7 實測（`docs/gpt/c7-experience-pool-review.md`）：主線 85% �
 - 已讀本表v2.1與共同指令，照T1→T3→T5推進；目前尚未讀到Antigravity的c7-v21-agy-review.md，不視為已完成第二意見。
 - 題庫b4cc0f0已增到各1240/共3720草稿，還缺B2+560、C1/C2各760；T3報告為前1200/區的快照，以穩定題幹/原文映射而非沿用變動後陣列索引。
 - 核對Antigravity報告時發現新31批九句跟讀也超PLAN 4～8詞，已一併改短，維持原意並更新中文；自審漏抓此限制已記BATCH_031_REVIEW，不宣稱五輪已完成。
+
+- T1實作前細節已整理docs/gpt/c7-v21-codex-implementation-questions.md（追趕參照點、跨倍率門檻、塔/精通目前0 EXP、0倍率兌換、副本真實答題作息等）。先對照正在進行的T2第二意見，不憑空加模擬獎勵或擅改驗收。

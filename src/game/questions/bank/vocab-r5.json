@@ -890,5 +890,557 @@
         ]
       }
     ]
+  },
+  "SETTLE": {
+    "pos": "v.",
+    "meaning": "解決；安頓",
+    "example": "We need to settle this argument before the meeting.",
+    "exampleZh": "我們需要在會議前解決這個爭論。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "解決",
+        "examples": [
+          {
+            "en": "We need to settle this argument before the meeting.",
+            "zh": "我們需要在會議前解決這個爭論。"
+          },
+          {
+            "en": "The company has finally settled the lawsuit.",
+            "zh": "公司終於解決了這起訴訟。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONFESS": {
+    "pos": "v.",
+    "meaning": "坦白；承認",
+    "example": "He decided to confess his mistakes to the supervisor.",
+    "exampleZh": "他決定向主管坦承自己的錯誤。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "坦白",
+        "examples": [
+          {
+            "en": "He decided to confess his mistakes to the supervisor.",
+            "zh": "他決定向主管坦承自己的錯誤。"
+          },
+          {
+            "en": "I must confess that I haven't read the report yet.",
+            "zh": "我必須承認我還沒讀過那份報告。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERLOOK": {
+    "pos": "v.",
+    "meaning": "忽略",
+    "example": "We shouldn't overlook these minor details.",
+    "exampleZh": "我們不應該忽略這些小細節。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "忽略",
+        "examples": [
+          {
+            "en": "We shouldn't overlook these minor details.",
+            "zh": "我們不應該忽略這些小細節。"
+          },
+          {
+            "en": "It's easy to overlook a spelling mistake in your own work.",
+            "zh": "在自己的作品中很容易忽略拼字錯誤。"
+          }
+        ]
+      }
+    ]
+  },
+  "MISUNDERSTAND": {
+    "pos": "v.",
+    "meaning": "誤解",
+    "example": "I think you might misunderstand my intentions.",
+    "exampleZh": "我想你可能誤解了我的意圖。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "誤解",
+        "examples": [
+          {
+            "en": "I think you might misunderstand my intentions.",
+            "zh": "我想你可能誤解了我的意圖。"
+          },
+          {
+            "en": "Please don't misunderstand me, I just want to help.",
+            "zh": "請不要誤解我，我只是想幫忙。"
+          }
+        ]
+      }
+    ]
+  },
+  "REASONING": {
+    "pos": "n.",
+    "meaning": "推理；推論",
+    "example": "The logic behind his reasoning is hard to follow.",
+    "exampleZh": "他推論背後的邏輯很難理解。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "推理；推論",
+        "examples": [
+          {
+            "en": "The logic behind his reasoning is hard to follow.",
+            "zh": "他推論背後的邏輯很難理解。"
+          },
+          {
+            "en": "She explained the reasoning behind her decision.",
+            "zh": "她解釋了她決定背後的原因。"
+          }
+        ]
+      }
+    ]
+  },
+  "STRESS": {
+    "pos": "v.",
+    "meaning": "強調",
+    "example": "The manager stressed the importance of teamwork.",
+    "exampleZh": "經理強調了團隊合作的重要性。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "強調",
+        "examples": [
+          {
+            "en": "The manager stressed the importance of teamwork.",
+            "zh": "經理強調了團隊合作的重要性。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "壓力",
+        "examples": [
+          {
+            "en": "She has been under a lot of stress lately.",
+            "zh": "她最近承受了很大的壓力。"
+          }
+        ]
+      }
+    ]
+  },
+  "STRUGGLE": {
+    "pos": "v.",
+    "meaning": "掙扎；奮鬥",
+    "example": "Many businesses struggle to survive in a difficult economy.",
+    "exampleZh": "許多企業在艱難的經濟環境中努力求生。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "掙扎；努力",
+        "examples": [
+          {
+            "en": "Many businesses struggle to survive in a difficult economy.",
+            "zh": "許多企業在艱難的經濟環境中努力求生。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "奮鬥",
+        "examples": [
+          {
+            "en": "It was a real struggle to finish the project on time.",
+            "zh": "要按時完成這個專案真是一番苦戰。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTEMPT": {
+    "pos": "v.",
+    "meaning": "嘗試",
+    "example": "He will attempt to resolve the issue tomorrow.",
+    "exampleZh": "他明天將嘗試解決這個問題。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "嘗試",
+        "examples": [
+          {
+            "en": "He will attempt to resolve the issue tomorrow.",
+            "zh": "他明天將嘗試解決這個問題。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "企圖；嘗試",
+        "examples": [
+          {
+            "en": "Her first attempt at the exam was unsuccessful.",
+            "zh": "她第一次的考試嘗試並未成功。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERPRET": {
+    "pos": "v.",
+    "meaning": "解釋；口譯",
+    "example": "How do you interpret these survey results?",
+    "exampleZh": "你如何解釋這些調查結果？",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "解釋",
+        "examples": [
+          {
+            "en": "How do you interpret these survey results?",
+            "zh": "你如何解釋這些調查結果？"
+          },
+          {
+            "en": "His silence could be interpreted as agreement.",
+            "zh": "他的沉默可以被解釋為同意。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACCOMPLISHMENT": {
+    "pos": "n.",
+    "meaning": "成就",
+    "example": "Finishing the project ahead of schedule was a major accomplishment.",
+    "exampleZh": "提前完成專案是一項重大成就。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "成就",
+        "examples": [
+          {
+            "en": "Finishing the project ahead of schedule was a major accomplishment.",
+            "zh": "提前完成專案是一項重大成就。"
+          },
+          {
+            "en": "She is proud of all her academic accomplishments.",
+            "zh": "她對自己所有的學術成就感到自豪。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPLICATION": {
+    "pos": "n.",
+    "meaning": "含意；影響",
+    "example": "We need to consider the financial implications of this choice.",
+    "exampleZh": "我們需要考慮這個選擇帶來的財務影響。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "影響",
+        "examples": [
+          {
+            "en": "We need to consider the financial implications of this choice.",
+            "zh": "我們需要考慮這個選擇帶來的財務影響。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "含意",
+        "examples": [
+          {
+            "en": "The implication was that they were dissatisfied with the service.",
+            "zh": "其含意是他們對服務感到不滿。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERSUASIVE": {
+    "pos": "adj.",
+    "meaning": "有說服力的",
+    "example": "He gave a very persuasive presentation to the clients.",
+    "exampleZh": "他向客戶做了一次非常有說服力的簡報。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "有說服力的",
+        "examples": [
+          {
+            "en": "He gave a very persuasive presentation to the clients.",
+            "zh": "他向客戶做了一次非常有說服力的簡報。"
+          },
+          {
+            "en": "Her arguments were quite persuasive during the debate.",
+            "zh": "在辯論中她的論點相當具說服力。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENCLOSE": {
+    "pos": "v.",
+    "meaning": "隨信附上",
+    "example": "He said he had enclosed the receipt in the package.",
+    "exampleZh": "他說他已經將收據隨信附在包裹裡了。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "隨信附上",
+        "examples": [
+          {
+            "en": "He said he had enclosed the receipt in the package.",
+            "zh": "他說他已經將收據隨信附在包裹裡了。"
+          },
+          {
+            "en": "If she had enclosed her resume, we would have reviewed her application.",
+            "zh": "如果她有附上履歷，我們就會審查她的申請了。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACCOMPLISH": {
+    "pos": "v.",
+    "meaning": "完成；實現",
+    "example": "She told her boss she had accomplished all her tasks for the week.",
+    "exampleZh": "她告訴老闆她已經完成了這週所有的任務。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "完成；實現",
+        "examples": [
+          {
+            "en": "She told her boss she had accomplished all her tasks for the week.",
+            "zh": "她告訴老闆她已經完成了這週所有的任務。"
+          },
+          {
+            "en": "If we worked together closely, we could accomplish so much more.",
+            "zh": "如果我們密切合作，我們就能完成更多事情。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERVIEW": {
+    "pos": "n.",
+    "meaning": "概述；概觀",
+    "example": "He mentioned that he had read the project overview before the meeting.",
+    "exampleZh": "他提到他在會議前已經讀過專案概述了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "概述；概觀",
+        "examples": [
+          {
+            "en": "He mentioned that he had read the project overview before the meeting.",
+            "zh": "他提到他在會議前已經讀過專案概述了。"
+          },
+          {
+            "en": "If you gave me a brief overview, I would understand the plan much better.",
+            "zh": "如果你給我一個簡短的概述，我就會更了解這個計畫。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAULTY": {
+    "pos": "adj.",
+    "meaning": "有缺陷的；有錯誤的",
+    "example": "She claimed that the item she had received was faulty.",
+    "exampleZh": "她聲稱她收到的商品是有缺陷的。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "有缺陷的；有錯誤的",
+        "examples": [
+          {
+            "en": "She claimed that the item she had received was faulty.",
+            "zh": "她聲稱她收到的商品是有缺陷的。"
+          },
+          {
+            "en": "If the engine hadn't been faulty, the flight would have departed on time.",
+            "zh": "如果引擎沒有故障，航班就會準時起飛了。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPENSATE": {
+    "pos": "v.",
+    "meaning": "補償；賠償",
+    "example": "The company promised they would compensate us for the massive loss.",
+    "exampleZh": "公司承諾他們會為這巨大的損失補償我們。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "補償；賠償",
+        "examples": [
+          {
+            "en": "The company promised they would compensate us for the massive loss.",
+            "zh": "公司承諾他們會為這巨大的損失補償我們。"
+          },
+          {
+            "en": "If they hadn't compensated the clients, they would have faced severe legal action.",
+            "zh": "如果他們沒有賠償客戶，就會面臨嚴厲的法律行動。"
+          }
+        ]
+      }
+    ]
+  },
+  "APOLOGY": {
+    "pos": "n.",
+    "meaning": "道歉",
+    "example": "He told me he had already written an official apology letter.",
+    "exampleZh": "他告訴我他已經寫了一封正式的道歉信。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "道歉",
+        "examples": [
+          {
+            "en": "He told me he had already written an official apology letter.",
+            "zh": "他告訴我他已經寫了一封正式的道歉信。"
+          },
+          {
+            "en": "If she offered a sincere apology, I would certainly forgive her.",
+            "zh": "如果她真誠地道歉，我一定會原諒她。"
+          }
+        ]
+      }
+    ]
+  },
+  "CRITICISM": {
+    "pos": "n.",
+    "meaning": "批評；評論",
+    "example": "He admitted that he had previously ignored their constructive criticism.",
+    "exampleZh": "他承認他之前忽視了他們具建設性的批評。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "批評；評論",
+        "examples": [
+          {
+            "en": "He admitted that he had previously ignored their constructive criticism.",
+            "zh": "他承認他之前忽視了他們具建設性的批評。"
+          },
+          {
+            "en": "If you accepted criticism more openly, you would improve much faster.",
+            "zh": "如果你能更敞開心胸接受批評，你就會進步得更快。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUMMARIZE": {
+    "pos": "v.",
+    "meaning": "總結；概述",
+    "example": "She summarized what they had extensively discussed in the morning meeting.",
+    "exampleZh": "她總結了他們在早會上廣泛討論的內容。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "總結；概述",
+        "examples": [
+          {
+            "en": "She summarized what they had extensively discussed in the morning meeting.",
+            "zh": "她總結了他們在早會上廣泛討論的內容。"
+          },
+          {
+            "en": "If you could summarize the whole article in one paragraph, it would be great.",
+            "zh": "如果你能將整篇文章總結成一個段落，那就太好了。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPECIFY": {
+    "pos": "v.",
+    "meaning": "具體說明；明確指出",
+    "example": "The client complained that we hadn't specified the delivery date.",
+    "exampleZh": "客戶抱怨我們沒有明確指出交貨日期。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "具體說明；明確指出",
+        "examples": [
+          {
+            "en": "The client complained that we hadn't specified the delivery date.",
+            "zh": "客戶抱怨我們沒有明確指出交貨日期。"
+          },
+          {
+            "en": "If the contract specified the terms clearly, there would be no confusion.",
+            "zh": "如果合約有明確說明條款，就不會產生混淆了。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNACCEPTABLE": {
+    "pos": "adj.",
+    "meaning": "不能接受的",
+    "example": "They declared that the sudden delay had been completely unacceptable.",
+    "exampleZh": "他們宣稱那次突然的延誤是完全無法接受的。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不能接受的",
+        "examples": [
+          {
+            "en": "They declared that the sudden delay had been completely unacceptable.",
+            "zh": "他們宣稱那次突然的延誤是完全無法接受的。"
+          },
+          {
+            "en": "If the overall quality were this poor, it would be unacceptable to our clients.",
+            "zh": "如果整體品質這麼差，對我們的客戶來說將是無法接受的。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCONVENIENCE": {
+    "pos": "n.",
+    "meaning": "不便；麻煩",
+    "example": "They apologized for the inconvenience they had caused.",
+    "exampleZh": "他們為所造成的不便道歉。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "不便；麻煩",
+        "examples": [
+          {
+            "en": "They apologized for the inconvenience they had caused.",
+            "zh": "他們為所造成的不便道歉。"
+          },
+          {
+            "en": "If we had informed them earlier, it wouldn't have caused such a huge inconvenience.",
+            "zh": "如果我們早點通知他們，就不會造成這麼大的不便了。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISSATISFIED": {
+    "pos": "adj.",
+    "meaning": "不滿意的",
+    "example": "The customer wrote that he had been dissatisfied with the service.",
+    "exampleZh": "那位顧客寫道他對這項服務一直很不滿意。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不滿意的",
+        "examples": [
+          {
+            "en": "The customer wrote that he had been dissatisfied with the service.",
+            "zh": "那位顧客寫道他對這項服務一直很不滿意。"
+          },
+          {
+            "en": "If I were dissatisfied with the product, I would demand a full refund.",
+            "zh": "如果我對這個產品不滿意，我會要求全額退款。"
+          }
+        ]
+      }
+    ]
   }
 }

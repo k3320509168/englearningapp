@@ -5,3 +5,4 @@
 4. 若本次使用的是 Flash 級模型，出題產出只能放 pending，並在 AGY_LOG 註明。
 5. 完成一段就 git add 你的檔案並 git commit（中文、docs: 前綴，結尾加 Co-Authored-By: Antigravity <noreply@google.com>），在 docs/AGY_LOG.md 最後追加一行「日期｜模型｜做了什麼｜下一步」。不要 push。
 6. 一次只做一項，做完就結束（下次喚醒再做下一項）。
+7. 【指令權限】背景模式只允許：git status／diff／log／show／add／commit、npx tsc -b、npx vitest run、npx eslint src --quiet、npx tsx、npm run、npm install、node、dot_clean -m .、ls、cat、grep；**一次只執行一個，不要用 &&、|、;、cd、重新導向**。其他指令會被拒絕並讓整個任務失敗，改用讀檔／寫檔／搜尋工具。

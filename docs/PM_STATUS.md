@@ -101,7 +101,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | T5 | 補題到目標量（r6 +600、r7/r8 各 +800），A2～B2 缺口由 Antigravity 出題 | Codex（B2+～C2）／Antigravity（A2～B2） | medium | 去重鍵 `type|desc|speak`、聽讀說寫 30/30/20/20 |
 | T6 | C8 手機／電腦版面（TASKS「介面」P0、P1） | Codex | medium | **三尺寸截圖**，Antigravity 對照截圖審 |
 | T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |
-| T8 | B1～C2 劇本（每張地圖開場／通關、區域魔王登場） | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
+| T8 | B1～C2 劇本：初稿 ✅（`docs/story-drafts/b1-c2-draft.md`，agy/work `0f72110`）；PM 裁決：地圖順序不改、16 位新角色全收、反派統一「沉默君王 👑」、45 張頭目台詞全收、風味選項每區 2 組、`{name}`；**T8b 匯入 story.ts 進行中** | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
 | T9 | 調味選項 UI、劇情回顧全頁、工坊合併 | Codex | medium | 三尺寸截圖 |
 | T10 | 專武系統（TASKS「專武」整段） | Codex 規格草案＋Antigravity 審 → Claude 定案 → Codex 實作 | high | — |
 | T11 | 跳級 7 天回顧、A2 以後文法題標籤 | Codex | medium | — |

@@ -2146,5 +2146,539 @@
         ]
       }
     ]
+  },
+  "DRAWBACK": {
+    "pos": "n.",
+    "meaning": "缺點；不利條件",
+    "example": "The only drawback to this plan is the high cost.",
+    "exampleZh": "這個計畫唯一的缺點是成本很高。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "缺點；不利條件",
+        "examples": [
+          {
+            "en": "The only drawback to this plan is the high cost.",
+            "zh": "這個計畫唯一的缺點是成本很高。"
+          },
+          {
+            "en": "One major drawback of the system is its slow speed.",
+            "zh": "這個系統的一個主要缺點是速度很慢。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNDERESTIMATE": {
+    "pos": "v.",
+    "meaning": "低估",
+    "example": "We should not underestimate the difficulty of this task.",
+    "exampleZh": "我們不應該低估這項任務的難度。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "低估",
+        "examples": [
+          {
+            "en": "We should not underestimate the difficulty of this task.",
+            "zh": "我們不應該低估這項任務的難度。"
+          },
+          {
+            "en": "He underestimated the time needed to complete the project.",
+            "zh": "他低估了完成該專案所需的時間。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPLICATION": {
+    "pos": "n.",
+    "meaning": "複雜情況；併發症",
+    "example": "The bad weather added a complication to our travel plans.",
+    "exampleZh": "惡劣的天氣為我們的旅行計畫增添了變數。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "複雜情況；併發症",
+        "examples": [
+          {
+            "en": "The bad weather added a complication to our travel plans.",
+            "zh": "惡劣的天氣為我們的旅行計畫增添了變數。"
+          },
+          {
+            "en": "If any complications arise, please inform me immediately.",
+            "zh": "如果出現任何複雜情況，請立即通知我。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRANSITION": {
+    "pos": "n.",
+    "meaning": "過渡；轉變",
+    "example": "The transition to the new system was surprisingly smooth.",
+    "exampleZh": "轉換到新系統的過程出乎意料地順利。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "過渡；轉變",
+        "examples": [
+          {
+            "en": "The transition to the new system was surprisingly smooth.",
+            "zh": "轉換到新系統的過程出乎意料地順利。"
+          },
+          {
+            "en": "We are currently in a period of transition.",
+            "zh": "我們目前正處於過渡期。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEQUENCE": {
+    "pos": "n.",
+    "meaning": "順序",
+    "example": "Please explain the sequence of events that led to the error.",
+    "exampleZh": "請解釋導致這個錯誤的事件順序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "順序；一連串",
+        "examples": [
+          {
+            "en": "Please explain the sequence of events that led to the error.",
+            "zh": "請解釋導致這個錯誤的事件順序。"
+          },
+          {
+            "en": "The chapters in the book follow a logical sequence.",
+            "zh": "書中的章節遵循著合理的順序。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENFORCE": {
+    "pos": "v.",
+    "meaning": "執行；強制實行",
+    "example": "The security team will enforce the new parking rules strictly.",
+    "exampleZh": "保全團隊將嚴格執行新的停車規定。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "執行；強制實行",
+        "examples": [
+          {
+            "en": "The security team will enforce the new parking rules strictly.",
+            "zh": "保全團隊將嚴格執行新的停車規定。"
+          },
+          {
+            "en": "It is difficult to enforce this policy without enough staff.",
+            "zh": "沒有足夠的員工，很難落實這項政策。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADVANTAGEOUS": {
+    "pos": "adj.",
+    "meaning": "有利的",
+    "example": "The new contract is highly advantageous to our company.",
+    "exampleZh": "這份新合約對我們公司非常有利。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "有利的",
+        "examples": [
+          {
+            "en": "The new contract is highly advantageous to our company.",
+            "zh": "這份新合約對我們公司非常有利。"
+          },
+          {
+            "en": "It would be advantageous to arrive early for the interview.",
+            "zh": "提早到達面試現場會比較有利。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUPERIOR": {
+    "pos": "adj.",
+    "meaning": "優越的；較好的",
+    "example": "This model is technically superior to its competitors.",
+    "exampleZh": "這個型號在技術上優於其競爭對手。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "優越的；較好的",
+        "examples": [
+          {
+            "en": "This model is technically superior to its competitors.",
+            "zh": "這個型號在技術上優於其競爭對手。"
+          },
+          {
+            "en": "She proved to be a superior candidate during the interview.",
+            "zh": "她在面試中證明了自己是更優秀的候選人。"
+          }
+        ]
+      }
+    ]
+  },
+  "SETBACK": {
+    "pos": "n.",
+    "meaning": "挫折；阻礙",
+    "example": "The team experienced a major setback when the funding was cut.",
+    "exampleZh": "當資金被削減時，該團隊遭遇了重大挫折。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "挫折；阻礙",
+        "examples": [
+          {
+            "en": "The team experienced a major setback when the funding was cut.",
+            "zh": "當資金被削減時，該團隊遭遇了重大挫折。"
+          },
+          {
+            "en": "Despite the initial setback, they completed the project on time.",
+            "zh": "儘管起初遭遇阻礙，他們還是準時完成了專案。"
+          }
+        ]
+      }
+    ]
+  },
+  "MISCALCULATE": {
+    "pos": "v.",
+    "meaning": "計算錯誤；估計錯誤",
+    "example": "I miscalculated the amount of time required for the trip.",
+    "exampleZh": "我估錯了這趟旅行所需的時間。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "計算錯誤；估計錯誤",
+        "examples": [
+          {
+            "en": "I miscalculated the amount of time required for the trip.",
+            "zh": "我估錯了這趟旅行所需的時間。"
+          },
+          {
+            "en": "They miscalculated the risks involved in the investment.",
+            "zh": "他們誤判了這項投資所涉及的風險。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESILIENCE": {
+    "pos": "n.",
+    "meaning": "韌性；恢復力",
+    "example": "He showed great resilience in overcoming the recent challenges.",
+    "exampleZh": "他在克服近期挑戰時展現了極大的韌性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "韌性；恢復力",
+        "examples": [
+          {
+            "en": "He showed great resilience in overcoming the recent challenges.",
+            "zh": "他在克服近期挑戰時展現了極大的韌性。"
+          },
+          {
+            "en": "The company's resilience helped it survive the economic crisis.",
+            "zh": "這家公司的韌性幫助它度過了經濟危機。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNFORESEEN": {
+    "pos": "adj.",
+    "meaning": "無法預料的",
+    "example": "Due to unforeseen circumstances, the event has been canceled.",
+    "exampleZh": "由於無法預料的情況，活動已被取消。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "無法預料的",
+        "examples": [
+          {
+            "en": "Due to unforeseen circumstances, the event has been canceled.",
+            "zh": "由於無法預料的情況，活動已被取消。"
+          },
+          {
+            "en": "We must prepare for any unforeseen delays.",
+            "zh": "我們必須為任何不可預見的延誤做好準備。"
+          }
+        ]
+      }
+    ]
+  },
+  "MODERATE": {
+    "pos": "v.",
+    "meaning": "主持；減輕",
+    "example": "She was invited to moderate the panel discussion.",
+    "exampleZh": "她受邀主持這場座談會。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "主持；減輕",
+        "examples": [
+          {
+            "en": "She was invited to moderate the panel discussion.",
+            "zh": "她受邀主持這場座談會。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "中等的；適度的",
+        "examples": [
+          {
+            "en": "The hotel offers moderate prices for its rooms.",
+            "zh": "這家飯店的客房價格適中。"
+          }
+        ]
+      }
+    ]
+  },
+  "OBLIGATION": {
+    "pos": "n.",
+    "meaning": "義務；責任",
+    "example": "We have a legal obligation to protect your privacy.",
+    "exampleZh": "我們有法律義務保護你的隱私。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "義務；責任",
+        "examples": [
+          {
+            "en": "We have a legal obligation to protect your privacy.",
+            "zh": "我們有法律義務保護你的隱私。"
+          },
+          {
+            "en": "He felt a strong sense of obligation to help his team.",
+            "zh": "他覺得自己有強烈的責任感去幫助他的團隊。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUTHORIZE": {
+    "pos": "v.",
+    "meaning": "授權",
+    "example": "The director said he had already authorized the payment.",
+    "exampleZh": "主管說他已經批准了這筆付款。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "授權；批准",
+        "examples": [
+          {
+            "en": "The director said he had already authorized the payment.",
+            "zh": "主管說他已經批准了這筆付款。"
+          },
+          {
+            "en": "If they authorized the project, we could begin immediately.",
+            "zh": "如果他們批准這個專案，我們就可以馬上開始。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROHIBIT": {
+    "pos": "v.",
+    "meaning": "禁止",
+    "example": "The sign indicated that smoking had been strictly prohibited.",
+    "exampleZh": "標誌顯示嚴格禁止吸菸。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "禁止",
+        "examples": [
+          {
+            "en": "The sign indicated that smoking had been strictly prohibited.",
+            "zh": "標誌顯示嚴格禁止吸菸。"
+          },
+          {
+            "en": "If the rules prohibited casual clothes, I wouldn't wear jeans.",
+            "zh": "如果規定禁止穿便服，我就不會穿牛仔褲。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMMITMENT": {
+    "pos": "n.",
+    "meaning": "承諾",
+    "example": "They noticed that his commitment to the team had increased significantly.",
+    "exampleZh": "他們注意到他對團隊的投入顯著增加了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "承諾；投入",
+        "examples": [
+          {
+            "en": "They noticed that his commitment to the team had increased significantly.",
+            "zh": "他們注意到他對團隊的投入顯著增加了。"
+          },
+          {
+            "en": "If you made a firm commitment, they would trust you more.",
+            "zh": "如果你做出堅定的承諾，他們會更信任你。"
+          }
+        ]
+      }
+    ]
+  },
+  "INQUIRE": {
+    "pos": "v.",
+    "meaning": "詢問",
+    "example": "The client inquired if we had received the updated document.",
+    "exampleZh": "客戶詢問我們是否收到了更新的文件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "詢問；調查",
+        "examples": [
+          {
+            "en": "The client inquired if we had received the updated document.",
+            "zh": "客戶詢問我們是否收到了更新的文件。"
+          },
+          {
+            "en": "If I hadn't inquired about the schedule, I would have missed the flight.",
+            "zh": "如果我沒有詢問行程，我就會錯過航班。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXECUTE": {
+    "pos": "v.",
+    "meaning": "執行",
+    "example": "The team reported that they had executed the plan flawlessly.",
+    "exampleZh": "團隊報告說他們已經完美地執行了該計畫。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "執行；實行",
+        "examples": [
+          {
+            "en": "The team reported that they had executed the plan flawlessly.",
+            "zh": "團隊報告說他們已經完美地執行了該計畫。"
+          },
+          {
+            "en": "If we had executed the strategy better, sales would have doubled.",
+            "zh": "如果我們更好地執行了該策略，銷售額將會翻倍。"
+          }
+        ]
+      }
+    ]
+  },
+  "LOGICAL": {
+    "pos": "adj.",
+    "meaning": "合乎邏輯的",
+    "example": "He argued that her conclusion hadn't been entirely logical.",
+    "exampleZh": "他爭辯說她的結論並不完全合乎邏輯。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "合乎邏輯的",
+        "examples": [
+          {
+            "en": "He argued that her conclusion hadn't been entirely logical.",
+            "zh": "他爭辯說她的結論並不完全合乎邏輯。"
+          },
+          {
+            "en": "If the explanation were logical, everyone would accept it easily.",
+            "zh": "如果解釋合乎邏輯，大家都會輕易接受。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBSTITUTE": {
+    "pos": "n.",
+    "meaning": "替代品",
+    "example": "She said they had found a substitute for the missing ingredient.",
+    "exampleZh": "她說他們已經找到了缺少食材的替代品。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "替代品；替代者",
+        "examples": [
+          {
+            "en": "She said they had found a substitute for the missing ingredient.",
+            "zh": "她說他們已經找到了缺少食材的替代品。"
+          },
+          {
+            "en": "If we didn't have a substitute, the production line would stop.",
+            "zh": "如果我們沒有替代品，生產線將會停止。"
+          }
+        ]
+      }
+    ]
+  },
+  "REFLECTION": {
+    "pos": "n.",
+    "meaning": "反思",
+    "example": "He wrote that his trip had been a period of deep reflection.",
+    "exampleZh": "他寫道他的旅行是一段深刻反思的時期。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "反思；反映",
+        "examples": [
+          {
+            "en": "He wrote that his trip had been a period of deep reflection.",
+            "zh": "他寫道他的旅行是一段深刻反思的時期。"
+          },
+          {
+            "en": "If you spent more time on reflection, you would make wiser choices.",
+            "zh": "如果你花更多時間反思，你會做出更明智的選擇。"
+          }
+        ]
+      }
+    ]
+  },
+  "SIGNIFICANCE": {
+    "pos": "n.",
+    "meaning": "重要性",
+    "example": "She realized she hadn't understood the significance of the event.",
+    "exampleZh": "她意識到她並未了解該事件的重要性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "重要性；意義",
+        "examples": [
+          {
+            "en": "She realized she hadn't understood the significance of the event.",
+            "zh": "她意識到她並未了解該事件的重要性。"
+          },
+          {
+            "en": "If they grasped the significance of the policy, they would follow it.",
+            "zh": "如果他們了解這項政策的重要性，他們就會遵守。"
+          }
+        ]
+      }
+    ]
+  },
+  "MODIFICATION": {
+    "pos": "n.",
+    "meaning": "修改",
+    "example": "He confirmed that no major modification had been made.",
+    "exampleZh": "他確認沒有進行重大的修改。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "修改；變更",
+        "examples": [
+          {
+            "en": "He confirmed that no major modification had been made.",
+            "zh": "他確認沒有進行重大的修改。"
+          },
+          {
+            "en": "If a modification were required, we would notify you immediately.",
+            "zh": "如果需要修改，我們會立即通知您。"
+          }
+        ]
+      }
+    ]
   }
 }

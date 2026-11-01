@@ -6602,6 +6602,1108 @@
       "desc": "填空題：N O T _ F Y (通知)",
       "ans": "I",
       "speak": "notify"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If I were you, I would meet all the criteria before applying.",
+      "options": [
+        "A. 申請後再確認條件也沒關係。",
+        "B. 這些準則不適用於目前的申請。",
+        "C. 我建議你在申請前先符合所有標準。",
+        "D. 你已經符合了所有的申請資格。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「如果我是你，我會在申請前符合所有的標準。」（If I were you, I would meet all the criteria before applying.），這是一個第二類條件句，表達假設性的建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The director said she had finalized the assessment.",
+      "options": [
+        "A. 總監說她剛開始進行評估。",
+        "B. 總監提到評估報告遺失了。",
+        "C. 總監拒絕參與這次的評估。",
+        "D. 總監表示她已經完成了評估。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「總監說她已經完成了評估。」（The director said she had finalized the assessment.），運用了過去完成式表示在說話之前已經完成的動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Had he delegated the tasks, the project would have finished early.",
+      "options": [
+        "A. 因為他把工作分派出去，專案提早結束了。",
+        "B. 如果他有把任務分派出去，專案早就完成了。",
+        "C. 他正在考慮是否要把專案的工作分派給別人。",
+        "D. 他把任務分派出去後，專案卻延遲了。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果他當時有把任務分派出去，專案早就提早完成了。」（Had he delegated the tasks, the project would have finished early.），這是第三類條件句的倒裝用法，表示與過去事實相反。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She asked if the new incentive program had boosted morale.",
+      "options": [
+        "A. 她肯定新的獎勵計畫會帶來好處。",
+        "B. 她問新的獎勵計畫是否提升了士氣。",
+        "C. 她宣布新的獎勵計畫已經取消。",
+        "D. 她懷疑員工的士氣是否過於低落。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「她問新的獎勵計畫是否提升了士氣。」（She asked if the new incentive program had boosted morale.），是包含過去完成式的間接問句。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the candidate had given his consent, we would have run the background check.",
+      "options": [
+        "A. 因為候選人同意了，我們進行了背景調查。",
+        "B. 候選人正在考慮是否同意接受背景調查。",
+        "C. 如果候選人當初同意，我們就會進行背景調查。",
+        "D. 如果候選人不同意，我們還是會進行調查。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「如果候選人當初有同意，我們就會進行背景調查了。」（If the candidate had given his consent, we would have run the background check.），為第三類條件句，代表事實上對方並未同意。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "He mentioned that he had felt overwhelmed during the final assessment.",
+      "options": [
+        "A. He will start the assessment tomorrow.",
+        "B. The criteria were exceptionally easy.",
+        "C. She delegates tasks very well.",
+        "D. Yes, he seemed very stressed out that day."
+      ],
+      "ans": "D",
+      "explain": "原句意為「他提到他在最終評估時感到不勝負荷。」（He mentioned that he had felt overwhelmed during the final assessment.）；(D) 回應「是的，那天他看起來壓力很大。」最符合情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the management offered better incentives, would you stay longer?",
+      "options": [
+        "A. Yes, a bonus would definitely convince me.",
+        "B. I have already offered my resignation.",
+        "C. The management had finalized it.",
+        "D. They are leaving early today."
+      ],
+      "ans": "A",
+      "explain": "原句意為「如果管理層提供更好的獎勵，你會留久一點嗎？」這是一個假設語氣；(A) 回應「是的，獎金絕對能說服我。」最為合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The guide stated that the itinerary had been completely modified.",
+      "options": [
+        "A. 導遊說行程已經稍微調整過。",
+        "B. 導遊認為行程沒有修改的必要。",
+        "C. 導遊表示行程已經完全修改了。",
+        "D. 導遊提到大家都很滿意新行程。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「導遊表示行程已經完全被修改了。」（The guide stated that the itinerary had been completely modified.），運用間接引語與過去完成被動態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the excursion had not been canceled, we would have seen the ruins.",
+      "options": [
+        "A. 短途旅行雖然取消了，我們還是看到了遺跡。",
+        "B. 既然短途旅行沒有取消，我們應該去看遺跡。",
+        "C. 我們是因為不想看遺跡才取消旅行的。",
+        "D. 如果短途旅行沒有取消，我們就會看到遺跡了。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果這趟短途旅行沒有被取消，我們就會看到遺跡了。」（If the excursion had not been canceled, we would have seen the ruins.），這是一個與過去事實相反的第三類條件句。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They announced that a substitute bus had arrived at the station.",
+      "options": [
+        "A. 他們宣布車站正在進行公車維修。",
+        "B. 他們宣布替代公車已經抵達車站。",
+        "C. 他們提醒大家公車即將延誤。",
+        "D. 他們表示不需要安排替代公車。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「他們宣布一輛替代公車已經抵達車站。」（They announced that a substitute bus had arrived at the station.），運用了間接引語和過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He warned us that smoking was strictly prohibited on the premises.",
+      "options": [
+        "A. 他提醒我們建築物內允許吸菸。",
+        "B. 他警告我們該場所內嚴禁吸菸。",
+        "C. 他建議我們到室外去吸菸。",
+        "D. 他表示這裡沒有吸菸區的規定。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「他警告我們在該場所（建築物內）嚴禁吸菸。」（He warned us that smoking was strictly prohibited on the premises.），premises 指建築及附屬場地。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If there were less congestion, the transfer would be much faster.",
+      "options": [
+        "A. 因為沒有塞車，轉乘非常順利。",
+        "B. 如果交通比較不壅塞，轉乘就會快很多。",
+        "C. 就算塞車，轉乘速度也不受影響。",
+        "D. 這裡一直都很壅塞，所以無法轉乘。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果交通比較不壅塞，轉乘就會快很多。」（If there were less congestion, the transfer would be much faster.），這是與現在事實相反的第二類條件句。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She explained that the sudden storm had ruined the outdoor excursion.",
+      "options": [
+        "A. 她說短途旅行並未受到暴風雨的影響。",
+        "B. 她表示大家在暴風雨中玩得很開心。",
+        "C. 她解釋突然的暴風雨毀了這趟戶外短途旅行。",
+        "D. 她提醒大家明天可能會有暴風雨。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「她解釋突然的暴風雨毀了這趟戶外的短途旅行。」（She explained that the sudden storm had ruined the outdoor excursion.），間接引語中描述已發生的事件用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the agency had provided a substitute flight, we wouldn't have complained.",
+      "options": [
+        "A. 旅行社提供了替代航班，所以我們沒有抱怨。",
+        "B. 就算旅行社提供替代航班，我們還是會抱怨。",
+        "C. 我們向旅行社抱怨為何沒有取消航班。",
+        "D. 如果旅行社有提供替代航班，我們就不會抱怨了。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果旅行社當時有提供替代航班，我們就不會抱怨了。」（If the agency had provided a substitute flight, we wouldn't have complained.），代表實際上並沒有提供，所以大家抱怨了。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The host explained that the phenomenon had puzzled scientists for decades.",
+      "options": [
+        "A. 主持人解釋這個現象讓科學家困惑了數十年。",
+        "B. 主持人說科學家已經完全破解了這個現象。",
+        "C. 主持人認為這個現象一點也不特別。",
+        "D. 主持人提到科學家對這個現象不感興趣。"
+      ],
+      "ans": "A",
+      "explain": "這句話的意思是「主持人解釋說這個現象已經讓科學家困惑了數十年。」（The host explained that the phenomenon had puzzled scientists for decades.）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If we could simulate the environment, we would understand the process.",
+      "options": [
+        "A. 因為我們已經模擬了環境，所以完全了解過程。",
+        "B. 如果我們能模擬那個環境，我們就會了解整個過程。",
+        "C. 我們不想模擬環境，所以不了解過程。",
+        "D. 即使模擬了環境，過程依然難以理解。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果我們能模擬那個環境，我們就會了解整個過程。」（If we could simulate the environment, we would understand the process.），表示現階段還無法模擬。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He testified that sustainable energy had significantly reduced pollution.",
+      "options": [
+        "A. 他認為永續能源對減少汙染沒有幫助。",
+        "B. 他懷疑永續能源是否真的能減少汙染。",
+        "C. 他作證表示永續能源大幅減少了汙染。",
+        "D. 他指出汙染主要是由永續能源造成的。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「他作證表示永續能源已經大幅減少了汙染。」（He testified that sustainable energy had significantly reduced pollution.），這裡 testifiy 指提出證詞或證明。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She noted that the genetic mutation had occurred quite rapidly.",
+      "options": [
+        "A. 她提到基因突變發生得非常緩慢。",
+        "B. 她發現這個基因並未發生任何突變。",
+        "C. 她指出基因突變發生得相當快速。",
+        "D. 她認為基因突變的發生是可以預測的。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「她指出該基因突變發生得相當快速。」（She noted that the genetic mutation had occurred quite rapidly.），note 在此有特別指出、注意到的意思。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the ecological balance had been maintained, the species would have survived.",
+      "options": [
+        "A. 因為生態平衡得以維持，該物種存活了下來。",
+        "B. 如果生態平衡有維持住，該物種就會存活下來。",
+        "C. 無論生態是否平衡，該物種都會滅絕。",
+        "D. 該物種的存活破壞了當地的生態平衡。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果生態平衡當時有維持住，該物種就會存活下來了。」（If the ecological balance had been maintained, the species would have survived.），事實是生態失衡導致物種未能存活。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The professor stated that they had successfully simulated a black hole.",
+      "options": [
+        "A. I didn't know they had that kind of technology.",
+        "B. Black holes are completely theoretical.",
+        "C. The environment is heavily polluted.",
+        "D. He is studying ecological balance."
+      ],
+      "ans": "A",
+      "explain": "原句意為「教授表示他們已經成功模擬了黑洞。」（The professor stated that they had successfully simulated a black hole.）；(A) 回應「我不知道他們有那種技術」是針對此成就的自然反應。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If this phenomenon were common, researchers wouldn't be so surprised.",
+      "options": [
+        "A. 因為這個現象很常見，所以研究人員非常驚訝。",
+        "B. 如果這個現象很常見，研究人員就不會這麼驚訝了。",
+        "C. 研究人員對這個常見的現象感到十分驚訝。",
+        "D. 這個現象非常罕見，但研究人員一點也不驚訝。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果這個現象很常見，研究人員就不會這麼驚訝了。」（If this phenomenon were common, researchers wouldn't be so surprised.），表示此現象其實並不常見。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The lawyer confirmed that the clause had been removed from the document.",
+      "options": [
+        "A. 律師建議在文件中加入新條款。",
+        "B. 律師表示該條款仍保留在文件中。",
+        "C. 律師確認該條款已從文件中刪除。",
+        "D. 律師指出文件中的條款有錯誤。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「律師確認該條款已從文件中被刪除。」（The lawyer confirmed that the clause had been removed from the document.），clause 指合約或法律文件中的條款。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If they had committed a breach, we would have sued them.",
+      "options": [
+        "A. 因為他們違約了，所以我們已經提告。",
+        "B. 就算他們違約，我們也不打算提告。",
+        "C. 我們即將因為違約而面臨對方的提告。",
+        "D. 如果他們當時有違約，我們就會對他們提告。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果他們當時有違約，我們就會對他們提告了。」（If they had committed a breach, we would have sued them.），表示事實上對方並未違約。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She asked if the verbal agreement was legally binding.",
+      "options": [
+        "A. 她確認口頭協議已經正式生效。",
+        "B. 她問口頭協議是否具有法律約束力。",
+        "C. 她認為口頭協議沒有任何法律效力。",
+        "D. 她要求將口頭協議改為書面文件。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「她問口頭協議是否具有法律約束力。」（She asked if the verbal agreement was legally binding.），binding 指具約束力的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He admitted that the lawsuit had drained all his savings.",
+      "options": [
+        "A. 他承認這場訴訟讓他賺了不少錢。",
+        "B. 他否認這場訴訟對他造成經濟影響。",
+        "C. 他承認這場訴訟耗盡了他所有的積蓄。",
+        "D. 他表示他為了訴訟正在努力存錢。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「他承認這場訴訟耗盡了他所有的積蓄。」（He admitted that the lawsuit had drained all his savings.），lawsuit 即為訴訟，drain 指耗盡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the regulation were stricter, this breach would not happen.",
+      "options": [
+        "A. 由於規定很嚴格，所以沒有發生違約。",
+        "B. 雖然規定很嚴格，但違約還是發生了。",
+        "C. 規定已經放寬，因此違約行為增加。",
+        "D. 如果規定更嚴格一點，就不會發生這種違約行為。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果規定更嚴格一點，就不會發生這種違約行為了。」（If the regulation were stricter, this breach would not happen.），暗指現在的規定不夠嚴格。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The attorney warned that ignoring the clause would lead to severe consequences.",
+      "options": [
+        "A. Yes, we should review the document carefully.",
+        "B. He won the lawsuit yesterday.",
+        "C. The verbal agreement is binding.",
+        "D. They are drafting a new regulation."
+      ],
+      "ans": "A",
+      "explain": "原句意為「律師警告說，忽略這個條款將會導致嚴重的後果。」；(A) 回應「是的，我們應該仔細審查這份文件。」最為合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the document were truly binding, they wouldn't dare to challenge it.",
+      "options": [
+        "A. 因為這份文件具約束力，所以他們不敢挑戰。",
+        "B. 即使文件具約束力，他們還是不斷挑戰。",
+        "C. 如果這份文件真的具有約束力，他們就不敢去挑戰它了。",
+        "D. 這份文件完全沒有約束力，所以大家都來挑戰。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「如果這份文件真的具有約束力，他們就不敢去挑戰它了。」（If the document were truly binding, they wouldn't dare to challenge it.），暗示這份文件的約束力可能備受質疑。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The mayor stated that the infrastructure had been severely neglected.",
+      "options": [
+        "A. 市長表示基礎設施受到了妥善的維護。",
+        "B. 市長說基礎設施已經嚴重被忽視。",
+        "C. 市長承諾將投資更多的基礎設施。",
+        "D. 市長認為基礎設施的狀況良好。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「市長表示基礎設施已經嚴重被忽視。」（The mayor stated that the infrastructure had been severely neglected.），infrastructure 為基礎設施，neglect 是忽視。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the new ordinance were passed, parking would be restricted.",
+      "options": [
+        "A. 因為新法令通過了，停車已被全面禁止。",
+        "B. 新法令的目的是為了解除停車限制。",
+        "C. 儘管新法令通過，停車依然不受影響。",
+        "D. 如果新法令通過，停車將會受到限制。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果新法令通過，停車將會受到限制。」（If the new ordinance were passed, parking would be restricted.），這是在討論未來的假設情況。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He promised that they had secured funds to restore the park.",
+      "options": [
+        "A. 他提到修復公園的資金目前嚴重不足。",
+        "B. 他保證他們已經確保了修復公園的資金。",
+        "C. 他希望大家能踴躍捐款來修復公園。",
+        "D. 他否認政府有編列預算修復公園。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「他保證他們已經確保了修復公園的資金。」（He promised that they had secured funds to restore the park.），restore 意指修復或恢復原狀。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She complained that her daily commute had become a nightmare.",
+      "options": [
+        "A. 她覺得她每天的通勤非常輕鬆愉快。",
+        "B. 她表示最近通勤的時間縮短了許多。",
+        "C. 她抱怨說她的日常通勤已經變成一場惡夢。",
+        "D. 她考慮搬到離公司近一點的地方通勤。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「她抱怨說她的日常通勤已經變成一場惡夢。」（She complained that her daily commute had become a nightmare.），commute 是指上下班的通勤。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the neighborhood had better amenities, property values would rise.",
+      "options": [
+        "A. 因為社區有更好的便利設施，所以房價上漲了。",
+        "B. 就算社區增加便利設施，房價也不會改變。",
+        "C. 社區缺乏便利設施是房價下跌的主因。",
+        "D. 如果社區有更好的便利設施，房地產價值就會上升。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果社區有更好的便利設施，房地產價值就會上升。」（If the neighborhood had better amenities, property values would rise.），amenities 指生活便利設施。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The council announced that they had upgraded the local infrastructure.",
+      "options": [
+        "A. 議會考慮明年才升級當地的基礎設施。",
+        "B. 議會對當地基礎設施的落後感到抱歉。",
+        "C. 議會宣布他們已經升級了當地的基礎設施。",
+        "D. 議會表示基礎設施的升級計畫已經取消。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「議會宣布他們已經升級了當地的基礎設施。」（The council announced that they had upgraded the local infrastructure.），這是間接引語的用法。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the old theater had been restored, it would have attracted more tourists.",
+      "options": [
+        "A. 老劇院已經修復完畢，並吸引了許多遊客。",
+        "B. 如果當初有修復那座老劇院，就會吸引更多遊客了。",
+        "C. 即使修復了老劇院，也不會吸引遊客。",
+        "D. 遊客們抱怨老劇院沒有得到妥善修復。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果當初有修復那座老劇院，就會吸引更多遊客了。」（If the old theater had been restored, it would have attracted more tourists.），表示老劇院最終並未被修復。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I heard the recruiter had already verified all the academic credentials.",
+      "options": [
+        "A. She wants to commute by train.",
+        "B. That's great, it means we can hire her soon.",
+        "C. The incentive program is successful.",
+        "D. He restored the building beautifully."
+      ],
+      "ans": "B",
+      "explain": "原句意為「我聽說招募人員已經核實了所有的學歷證明。」（I heard the recruiter had already verified all the academic credentials.）；(B) 回應「太好了，這意味著我們很快就能錄用她。」最符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did the receptionist say why the complimentary breakfast had been canceled?",
+      "options": [
+        "A. Yes, they had an issue with the kitchen staff.",
+        "B. The infrastructure needs an upgrade.",
+        "C. The lawsuit is still ongoing.",
+        "D. I always read the latest ordinance."
+      ],
+      "ans": "A",
+      "explain": "原句意為「櫃檯人員有說為什麼免費早餐被取消了嗎？」；(A) 回應「有，他們的廚房員工出了點狀況。」符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the radiation level had exceeded the limit, the alarm would have sounded.",
+      "options": [
+        "A. 因為輻射量超標，警報器響了起來。",
+        "B. 就算輻射量超標，警報器也不會響。",
+        "C. 我們不知道輻射量是否超標，但警報器沒響。",
+        "D. 如果當時輻射量有超過標準，警報器就會響了。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「如果當時輻射量有超過標準，警報器就會響了。」（If the radiation level had exceeded the limit, the alarm would have sounded.），因為警報器沒響，代表輻射量未超標。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【企業社會責任-時態】The corporation ___ a new recycling program before the environmental law was passed.",
+      "options": [
+        "A. has established",
+        "B. had established",
+        "C. will establish",
+        "D. establishes"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：句中有 before 引導的過去時間點，主要子句的動作發生在更早之前，需使用過去完成式 (had + p.p.)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【企業社會責任-假設】If the factory ___ its chemical waste properly, the local river would not have been polluted.",
+      "options": [
+        "A. manages",
+        "B. will manage",
+        "C. had managed",
+        "D. is managing"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：主要子句為 would not have been (與過去事實相反)，條件句應使用過去完成式 If + had + p.p.。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【企業社會責任-間接引語】The CEO stated that they ___ ten percent of their annual earnings to local charities the previous year.",
+      "options": [
+        "A. had donated",
+        "B. donate",
+        "C. have donated",
+        "D. will donate"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：間接引語中，主要動詞 stated 為過去式，且有 the previous year，表示動作發生在更早之前，應退一步使用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【企業社會責任-字彙】Implementing ___ practices ensures that a business can operate long-term without harming future generations.",
+      "options": [
+        "A. superficial",
+        "B. temporary",
+        "C. sustainable",
+        "D. outdated"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：sustainable 意為「永續的、可持續的」，符合企業長遠營運且不危害後代的主題。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【企業社會責任-對話】A: 「Did the company release the carbon footprint report?」 B: 「Yes, they ___ it before the annual board meeting started.」",
+      "options": [
+        "A. publish",
+        "B. are publishing",
+        "C. have published",
+        "D. had published"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：在 past tense 事件 (started) 發生前就已經完成的動作，須用過去完成式 had published。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【企業社會責任-對話】A: 「Their public image is ruined because of the scandal.」 B: 「If they were truly ethical, they ___ such toxic materials.」",
+      "options": [
+        "A. do not use",
+        "B. would not use",
+        "C. will not use",
+        "D. have not used"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：If 條件句使用過去式 (were) 表示與現在事實相反的假設，主要子句應配 would/could/might + 原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【企業社會責任-對話】A: 「What did the board decide regarding the labor dispute?」 B: 「The chairman announced that they ___ all ties with the controversial supplier.」",
+      "options": [
+        "A. sever",
+        "B. have severed",
+        "C. would sever",
+        "D. are severing"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：間接引語中，主要動詞 announced 為過去式，原本的未來式 will sever 要依時態一致性退成 would sever。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【數位隱私-時態】By the time the security breach was detected, the hackers ___ thousands of user passwords.",
+      "options": [
+        "A. had extracted",
+        "B. extract",
+        "C. have extracted",
+        "D. will extract"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：By the time + 過去式，表示在過去某時點前已完成的事，搭配過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【數位隱私-假設】If the messaging application ___ end-to-end encryption, our private conversations would be much safer.",
+      "options": [
+        "A. features",
+        "B. featured",
+        "C. had featured",
+        "D. is featuring"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：主要子句為 would be (與現在事實相反)，If 條件句需用過去簡單式 featured。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【數位隱私-間接引語】The developer warned the users that the outdated software ___ serious security vulnerabilities.",
+      "options": [
+        "A. contains",
+        "B. will contain",
+        "C. is containing",
+        "D. contained"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：引述動詞 warned 為過去式，名詞子句中的動詞也要隨之退成過去式 contained。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【數位隱私-字彙】Users must give explicit ___ before the application can legally access their microphone or camera.",
+      "options": [
+        "A. consent",
+        "B. obstacle",
+        "C. resistance",
+        "D. illusion"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：consent 意為「同意、許可」，符合應用程式存取硬體前需要取得使用者明確同意的情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【數位隱私-對話】A: 「Why was the central server taken offline so suddenly?」 B: 「Because the IT team found out that someone ___ the firewall overnight.」",
+      "options": [
+        "A. bypasses",
+        "B. has bypassed",
+        "C. had bypassed",
+        "D. is bypassing"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：發現 (found out) 已經是過去式，突破防火牆發生在發現之前，必須用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【數位隱私-對話】A: 「I lost all my personal photos after the hard drive crashed.」 B: 「If you had backed up your data to the cloud, you ___ them.」",
+      "options": [
+        "A. would not have lost",
+        "B. will not lose",
+        "C. do not lose",
+        "D. would not lose"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：條件句為 If you had backed up (與過去事實相反)，主要子句應配 would have + p.p.。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【數位隱私-對話】A: 「Is my personal data secure with this platform?」 B: 「The representative assured me that they ___ user information with third parties.」",
+      "options": [
+        "A. do not share",
+        "B. did not share",
+        "C. will not share",
+        "D. have not shared"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：assured 為過去式，依照時態一致性，名詞子句中的動作需轉換為過去式 did not share。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【運動科學-時態】The professional athlete ___ completely from her severe leg injury before she started training for the Olympics.",
+      "options": [
+        "A. recovers",
+        "B. has recovered",
+        "C. had recovered",
+        "D. will recover"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：在過去時間點 (started training) 之前已經完成的動作，需用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【運動科學-假設】If the coach had analyzed the biomechanical data carefully, he ___ the runner's awkward posture sooner.",
+      "options": [
+        "A. corrects",
+        "B. will correct",
+        "C. would correct",
+        "D. would have corrected"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：If 條件句使用 had analyzed (與過去相反)，主要子句需用 would have + p.p. 表過去可能的結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【運動科學-間接引語】The physiotherapist explained that a persistent lack of sleep ___ the natural muscle recovery process.",
+      "options": [
+        "A. hindered",
+        "B. hinders",
+        "C. will hinder",
+        "D. has hindered"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：引述動詞 explained 為過去式，子句動詞也應退一步成為過去式 hindered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【運動科學-字彙】Marathon runners need immense physical ___ to maintain a steady and fast pace for over two hours.",
+      "options": [
+        "A. hesitation",
+        "B. arrogance",
+        "C. compromise",
+        "D. endurance"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：endurance 意為「耐力、持久力」，適合描述馬拉松跑者維持步伐所需的身體素質。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【運動科學-對話】A: 「Did he pass the rigorous physical test?」 B: 「No, his stamina ___ significantly by the time the final round began.」",
+      "options": [
+        "A. decreases",
+        "B. had decreased",
+        "C. has decreased",
+        "D. is decreasing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：by the time + 過去式，表示在 final round 開始前，體力已經下降，故選過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【運動科學-對話】A: 「Her sprint times are already amazing.」 B: 「If she changed her daily diet slightly, she ___ even faster.」",
+      "options": [
+        "A. runs",
+        "B. ran",
+        "C. will run",
+        "D. could run"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：條件句用 changed (與現在事實相反)，主要子句配 would/could/might + 原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【運動科學-對話】A: 「What did the sports nutritionist say about my meal plan?」 B: 「She emphasized that athletes ___ to consume more protein after intense workouts.」",
+      "options": [
+        "A. needed",
+        "B. need",
+        "C. will need",
+        "D. have needed"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：emphasized 是過去式，因此子句的動詞需跟著轉換為過去式 needed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【移民與多元文化-時態】The suburban neighborhood ___ a vibrant cultural hub long before the city officially recognized it.",
+      "options": [
+        "A. becomes",
+        "B. had become",
+        "C. has become",
+        "D. will become"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：long before + 過去式 (recognized)，表示在政府認可前早已成為文化中心，使用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【移民與多元文化-假設】If the host country ___ more inclusive employment policies, the newcomers would feel much more welcome.",
+      "options": [
+        "A. promote",
+        "B. will promote",
+        "C. promoted",
+        "D. had promoted"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：主要子句為 would feel (與現在相反的假設)，條件句需使用過去式 promoted。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【移民與多元文化-間接引語】The sociologist observed that diverse communities ___ more creative solutions to local administrative problems.",
+      "options": [
+        "A. produce",
+        "B. will produce",
+        "C. have produced",
+        "D. produced"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：observed 為過去式引述動詞，子句需維持時態一致，使用過去式 produced。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【移民與多元文化-字彙】Language programs play a crucial role in helping children from different backgrounds ___ into the local society.",
+      "options": [
+        "A. manipulate",
+        "B. violate",
+        "C. assimilate",
+        "D. isolate"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：assimilate into 意指「融入、同化於」，符合幫助不同背景的孩童適應當地社會的語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【移民與多元文化-對話】A: 「Did she struggle with the language barrier when she relocated?」 B: 「Not really, she ___ fluent English before moving abroad.」",
+      "options": [
+        "A. had mastered",
+        "B. masters",
+        "C. has mastered",
+        "D. will master"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：在過去動作 (moving abroad) 之前已精通英文，須用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【移民與多元文化-對話】A: 「Social integration can be extremely challenging for new immigrants.」 B: 「If they had access to free language classes, the transition ___ much smoother.」",
+      "options": [
+        "A. is",
+        "B. will be",
+        "C. would be",
+        "D. would have been"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：If 條件句使用 had (過去式，表擁有)，這是與現在事實相反的假設，主要子句應配 would be。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【移民與多元文化-對話】A: 「What did the mayor promise the minority groups?」 B: 「He announced that the council ___ the annual multicultural festival next month.」",
+      "options": [
+        "A. fund",
+        "B. would fund",
+        "C. has funded",
+        "D. will fund"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：主要動詞 announced 是過去式，原本表示未來的 will fund 在間接引語中需退成 would fund。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【創業與新創公司-時態】The ambitious founders ___ their business model three times before they finally secured the initial funding.",
+      "options": [
+        "A. pivot",
+        "B. have pivoted",
+        "C. will pivot",
+        "D. had pivoted"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：before 引導過去式 (secured)，在獲得資金前已經轉換(pivot)過商業模式，用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【創業與新創公司-假設】If the startup had launched its mobile application in the summer, they ___ a significantly larger user base.",
+      "options": [
+        "A. might have captured",
+        "B. might capture",
+        "C. capture",
+        "D. will capture"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：If 子句用 had launched (與過去相反)，主要子句應搭配 might have + p.p. 表過去可能的推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【創業與新創公司-間接引語】The venture capitalist stated that he ___ in early-stage companies with strong and experienced leadership teams.",
+      "options": [
+        "A. only invests",
+        "B. only invested",
+        "C. will only invest",
+        "D. has only invested"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：stated 為過去式，引述的子句動詞也必須退一步成為過去式 invested。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【創業與新創公司-字彙】The young software engineer built a working ___ of her device to present to potential investors at the tech conference.",
+      "options": [
+        "A. prototype",
+        "B. illusion",
+        "C. liability",
+        "D. barrier"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：prototype 意為「原型」，指展示給投資人看的初期產品模型，符合新創募資情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【創業與新創公司-對話】A: 「Why did the highly anticipated tech startup fail so quickly?」 B: 「Because they ___ all their seed money before the final product was even finished.」",
+      "options": [
+        "A. spend",
+        "B. are spending",
+        "C. had spent",
+        "D. will spend"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：在產品完成(過去式)之前就把資金花光了，屬於過去的過去，必須用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【創業與新創公司-對話】A: 「We simply don't have enough capital to scale our operations globally.」 B: 「If our product were more unique, angel investors ___ us immediately.」",
+      "options": [
+        "A. would approach",
+        "B. will approach",
+        "C. approach",
+        "D. had approached"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：條件句用 were 表示與現在事實相反，主要子句應使用 would + 原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【創業與新創公司-對話】A: 「What did the marketing advisor suggest during the consultation?」 B: 「She recommended that we ___ our target audience before spending a fortune on digital ads.」",
+      "options": [
+        "A. narrowing",
+        "B. to narrow",
+        "C. will narrow",
+        "D. should narrow"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：recommended 引導的名詞子句表示建議，應使用 (should) + 原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Tech News Brief: A major cybersecurity firm reported that they had warned the social network about the critical flaw months before the massive data leak occurred. Unfortunately, the warning was largely ignored by the management team. Q: What happened before the data leak occurred?",
+      "options": [
+        "A. The management team fixed the critical flaw.",
+        "B. A massive data leak was successfully prevented.",
+        "C. The social network filed a lawsuit against the firm.",
+        "D. A cybersecurity firm issued a warning about a flaw."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：文章提到資安公司在資料外洩的數個月前就已經警告(had warned)了該社群網路，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Privacy Blog: Modern data collection is out of control. The author argues that if governments established stricter data protection laws globally, tech giants would not be able to exploit user profiles for targeted advertising without explicit permission. Q: What is necessary to stop tech giants from exploiting user profiles?",
+      "options": [
+        "A. Better targeted advertising.",
+        "B. Stricter data protection laws.",
+        "C. More modern data collection methods.",
+        "D. A global agreement on internet speeds."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：作者提出「如果政府建立更嚴格的資料保護法(stricter data protection laws)，科技巨頭就無法濫用用戶資料」，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Congressional Hearing Notes: The atmosphere was tense during yesterday's session. Under intense questioning, the tech executive finally admitted that his company had tracked users' geographical locations even when the mobile application was closed. Q: What did the tech executive confess?",
+      "options": [
+        "A. The company had lost thousands of user profiles.",
+        "B. The application was closed down permanently.",
+        "C. The company had monitored users' locations secretly.",
+        "D. The company refused to answer congressional questions."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：高層承認他們在應用程式關閉時，依然追蹤了用戶的地理位置(tracked users' geographical locations)，故選 C。"
     }
   ],
   "boss": [
@@ -8802,6 +9904,354 @@
       "desc": "填空題：R _ P R _ S _ N T A T I V E (代表)",
       "ans": "EEE",
       "speak": "representative"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The manager noted that his lack of punctuality had affected his assessment.",
+      "options": [
+        "A. 經理認為他的評估結果不受遲到影響。",
+        "B. 經理提醒他下次評估時務必要準時。",
+        "C. 經理表示他的表現優秀，完全彌補了不守時。",
+        "D. 經理指出他不守時的問題影響了他的評估。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「經理指出他不守時的問題已經影響了他的評估。」（The manager noted that his lack of punctuality had affected his assessment.），punctuality 是守時。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the criteria were more flexible, we would attract diverse talent.",
+      "options": [
+        "A. 因為標準很有彈性，我們已經吸引了許多人才。",
+        "B. 我們不想改變標準，因為那樣會流失人才。",
+        "C. 如果標準更有彈性，我們就能吸引多元的人才。",
+        "D. 就算標準再怎麼有彈性，也很難吸引到人才。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「如果標準更有彈性，我們就能吸引多元的人才。」（If the criteria were more flexible, we would attract diverse talent.），這表示目前的標準還不夠有彈性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The agent said she had already emailed the updated itinerary.",
+      "options": [
+        "A. 專員說她會盡快把更新版的行程寄出。",
+        "B. 專員說她已經將更新版的行程用電子郵件寄出了。",
+        "C. 專員表示更新版的行程還在確認中。",
+        "D. 專員忘記把更新版的行程寄給客戶了。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「專員說她已經將更新版的行程用電子郵件寄出了。」（The agent said she had already emailed the updated itinerary.），使用了過去完成式代表在說話前已寄出。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the premises were open to the public, the congestion would worsen.",
+      "options": [
+        "A. 因為場地對大眾開放，所以目前非常壅塞。",
+        "B. 如果這個場地對大眾開放，壅塞情況將會惡化。",
+        "C. 場地不對外開放是為了解決目前的壅塞。",
+        "D. 即使場地對外開放，壅塞情況也不會改變。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果這個場地對大眾開放，壅塞情況將會惡化。」（If the premises were open to the public, the congestion would worsen.），為假設情況，表示目前並未對外開放。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He argued that the genetic data had proven his theory.",
+      "options": [
+        "A. 他認為基因數據與他的理論互相矛盾。",
+        "B. 他懷疑那些基因數據的真實性。",
+        "C. 他正在尋找能證實他理論的基因數據。",
+        "D. 他主張那些基因數據已經證實了他的理論。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「他主張那些基因數據已經證實了他的理論。」（He argued that the genetic data had proven his theory.），genetic 為基因的，data 數據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the farming methods were sustainable, the ecological impact would be minimal.",
+      "options": [
+        "A. 由於耕作方式符合永續原則，對生態完全沒有影響。",
+        "B. 如果耕作方式是永續的，對生態的影響就會降到最低。",
+        "C. 即使採用永續的耕作方式，生態影響依然很大。",
+        "D. 傳統耕作方式比永續耕作方式更不影響生態。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果耕作方式是永續的，對生態的影響就會降到最低。」（If the farming methods were sustainable, the ecological impact would be minimal.），這表示目前的耕作方式可能不夠永續。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They mentioned that the latest regulation had complicated the lawsuit.",
+      "options": [
+        "A. 他們認為最新的規定有助於早日結束訴訟。",
+        "B. 他們表示這場訴訟促成了最新規定的頒布。",
+        "C. 他們提到最新的規定讓這場訴訟變得更加複雜。",
+        "D. 他們抱怨最新的規定完全不適用於這場訴訟。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「他們提到最新的規定讓這場訴訟變得更加複雜。」（They mentioned that the latest regulation had complicated the lawsuit.），complicate 當動詞為使複雜化。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If we had noticed the hidden clause, we would not have signed.",
+      "options": [
+        "A. 因為我們注意到了隱藏條款，所以拒絕簽名。",
+        "B. 如果我們當時有注意到那個隱藏條款，我們就不會簽名了。",
+        "C. 我們雖然看到了隱藏條款，但還是簽了名。",
+        "D. 那個隱藏條款對我們是否簽名沒有任何影響。"
+      ],
+      "ans": "B",
+      "explain": "這句話的意思是「如果我們當時有注意到那個隱藏條款，我們就不會簽名了。」（If we had noticed the hidden clause, we would not have signed.），代表當下並未注意到。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They realized that the local ordinance had forbidden commercial activities.",
+      "options": [
+        "A. 他們發現地方法令其實是鼓勵商業活動的。",
+        "B. 他們希望地方法令能放寬對商業活動的限制。",
+        "C. 他們因為違反地方法令進行商業活動而受罰。",
+        "D. 他們意識到地方法令已經禁止了商業活動。"
+      ],
+      "ans": "D",
+      "explain": "這句話的意思是「他們意識到地方法令已經禁止了商業活動。」（They realized that the local ordinance had forbidden commercial activities.），ordinance 指地方法令或條例。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the commute were shorter, people would have more free time.",
+      "options": [
+        "A. 因為通勤時間變短了，大家現在有很多空閒時間。",
+        "B. 人們為了縮短通勤時間，犧牲了自己的空閒時間。",
+        "C. 如果通勤時間更短，人們就會有更多的空閒時間。",
+        "D. 無論通勤時間長短，大家的空閒時間都不會改變。"
+      ],
+      "ans": "C",
+      "explain": "這句話的意思是「如果通勤時間更短，人們就會有更多的空閒時間。」（If the commute were shorter, people would have more free time.），表示大家目前的通勤時間其實偏長。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What did the judge say about the intellectual property dispute?",
+      "options": [
+        "A. They usually commute by the local subway.",
+        "B. He ruled that it was a clear breach of copyright.",
+        "C. The ecological environment is very vulnerable.",
+        "D. I think the infrastructure is too old."
+      ],
+      "ans": "B",
+      "explain": "原句意為「法官對這起智慧財產權糾紛說了什麼？」；(B) 回應「他裁定這是一起明顯的侵犯版權案件。」最為合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If you were unhappy with the zoning changes, how would you appeal?",
+      "options": [
+        "A. I would file a formal grievance with the city council.",
+        "B. I have already restored the entire park.",
+        "C. The itinerary was modified due to rain.",
+        "D. She testified about the sustainable farming."
+      ],
+      "ans": "A",
+      "explain": "原句意為「如果你對土地重劃（區劃變更）不滿意，你會如何申訴？」；(A) 回應「我會向市議會提出正式申訴。」符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Sustainability Report: The packaging division manager addressed the shareholders yesterday. He mentioned that the firm had explored several biodegradable materials before they ultimately settled on a corn-based solution. This transition has greatly reduced their plastic waste over the last two quarters. Q: What had the firm done before choosing the corn-based solution?",
+      "options": [
+        "A. They had investigated various biodegradable options.",
+        "B. They had increased their plastic production significantly.",
+        "C. They had reported a massive loss to the shareholders.",
+        "D. They had stopped packaging their products entirely."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：短文指出經理提及在決定使用玉米基材前，公司已探索(had explored)過幾種生物可分解材質，選項 A 為同義改寫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Climate Activism Review: The global dependency on fossil fuels remains a critical issue. An expert recently argued that if more multinational corporations adopted renewable energy voluntarily, global carbon emissions would drop significantly, mitigating the harshest effects of climate change. Q: According to the expert, what is the required condition for a significant drop in emissions?",
+      "options": [
+        "A. Eliminating all multinational corporations immediately.",
+        "B. Forcing citizens to reduce their personal carbon footprints.",
+        "C. Waiting for governments to draft new climate legislations.",
+        "D. More corporations choosing to use renewable energy."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：文章的條件句表示「如果更多跨國企業採用再生能源(adopted renewable energy)，全球碳排放將顯著下降」，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Corporate Press Release: Following the recent public relations crisis, the firm is trying to rebuild its reputation. The official spokesperson explained that the company had already launched a new ethical sourcing initiative to guarantee fair labor conditions across all their supply chains. Q: What did the spokesperson explain?",
+      "options": [
+        "A. The company had started a project to ensure fair labor.",
+        "B. The company was facing a massive labor strike.",
+        "C. The company had fired the previous supply chain manager.",
+        "D. The company intended to ignore the public relations crisis."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：發言人解釋公司「已啟動新的道德採購計畫來確保公平的勞動條件」，選項 A 的 started a project to ensure fair labor 符合文意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Sports Medicine Journal: Advanced gear can make a difference in competitive swimming. The research team discovered that the athletes who had worn the newly designed hydrodynamic suits shaved precious seconds off their personal records during the trials. Q: What was discovered about the athletes in the new suits?",
+      "options": [
+        "A. They suffered more muscular injuries than others.",
+        "B. They complained about the hydrodynamic design.",
+        "C. They achieved faster times than they previously had.",
+        "D. They refused to wear the suits during the final trials."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：文章提到穿新泳衣的運動員「在個人紀錄上削去了寶貴的秒數(shaved precious seconds off)」，意指游得更快，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Athletic Training Guide: Listening to one's body is fundamental to long-term success. The manual states that if athletes ignored the early warning signs of extreme fatigue, they would risk suffering from chronic injuries that could prematurely end their professional careers. Q: What might happen if athletes do not pay attention to their fatigue?",
+      "options": [
+        "A. They might sustain long-lasting physical damage.",
+        "B. They would easily set new world records.",
+        "C. Their professional careers would become much longer.",
+        "D. They could quickly recover without any medical help."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：如果忽略疲勞警訊，會有遭受慢性傷害(chronic injuries)的風險，這等同於選項 A 的「長期持續的身體損傷」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health Seminar Notes: There are many myths surrounding pre-workout routines. During the lecture, the renowned sports scientist clarified that static stretching before a heavy weightlifting session did not always prevent injury, completely contrary to popular belief among amateur gym-goers. Q: What did the scientist say about static stretching?",
+      "options": [
+        "A. It is the only way to build muscle mass safely.",
+        "B. It does not guarantee protection against injuries.",
+        "C. It is strictly forbidden for all amateur gym-goers.",
+        "D. It always prevents injuries if done correctly."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：科學家澄清靜態伸展「不見得總能防止受傷(did not always prevent injury)」，即選項 B「不保證免於受傷」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Immigration Policy Review: The historical context of the new bill is often overlooked. By the time the comprehensive immigration reform was finally passed in the senate, thousands of families had already waited for their visa approvals in uncertainty for over a decade. Q: What was the situation for many families prior to the bill's passage?",
+      "options": [
+        "A. They had been waiting a long time for their visas.",
+        "B. They had already returned to their home countries.",
+        "C. They had quickly received their citizenship status.",
+        "D. They had been working illegally without any visas."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：在法案通過前，數千個家庭「已經為了簽證核准等待超過十年(had already waited... for over a decade)」，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Sociology Essay Excerpt: Isolation rarely leads to progress. The academic paper argues that if modern societies embraced cultural differences rather than suppressing them, they would experience a much richer exchange of diverse art, cuisine, and innovative philosophical ideas. Q: What is the main argument of this excerpt?",
+      "options": [
+        "A. Suppressing cultural differences is necessary for progress.",
+        "B. Societies should isolate themselves to protect their art.",
+        "C. Innovation is impossible in a highly diverse environment.",
+        "D. Welcoming diversity brings valuable cultural benefits."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：文章主張如果社會能擁抱文化差異，就能獲得更豐富的藝術、美食與哲學思想交流，這對應到選項 D 的「歡迎多元能帶來有價值的文化益處」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Author Interview: In her critically acclaimed new memoir, the novelist explores the complexities of growing up as a second-generation immigrant. She wrote that she had felt constantly caught between two distinct identities during her turbulent teenage years. Q: How did the author describe her teenage years in the memoir?",
+      "options": [
+        "A. She felt entirely disconnected from her parents' culture.",
+        "B. She felt torn between two different cultural identities.",
+        "C. She found it very easy to blend into the local society.",
+        "D. She was never aware of any cultural differences."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：作者寫道她在青少年時期感到「一直夾在兩種不同的身分認同之間(caught between two distinct identities)」，選項 B 為同義表述。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Startup Success Story: The path to success is rarely a straight line. The successful entrepreneur explained at the conference that she had drafted dozens of flawed business plans before she finally found a truly viable strategy for her e-commerce platform. Q: What did the entrepreneur do before finding a viable strategy?",
+      "options": [
+        "A. She secured funding from a wealthy angel investor.",
+        "B. She wrote many unsuccessful business plans.",
+        "C. She launched multiple successful e-commerce platforms.",
+        "D. She hired a team of highly experienced managers."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：短文提到她在找到可行策略前，已經起草了數十份有缺陷的商業計畫(drafted dozens of flawed business plans)，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Business Case Study: The sudden collapse of the promising tech firm serves as a cautionary tale. Analysts point out that if the co-founders communicated more transparently with one another, the internal conflicts that ruined the company would not have escalated so quickly. Q: According to the analysts, what could have prevented the rapid escalation of conflicts?",
+      "options": [
+        "A. Hiring more external consultants.",
+        "B. Firing the aggressive co-founders.",
+        "C. Better and more open communication.",
+        "D. Securing a larger amount of seed money."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：分析師指出「如果共同創辦人之間有更透明的溝通(communicated more transparently)」，內部衝突就不會升級得那麼快，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Financial Advisory Report: A recent audit of the new startup revealed alarming spending habits. The financial consultant warned the founders that the enterprise would run out of cash entirely within six months if they didn't immediately cut all unnecessary operational expenses. Q: What was the consultant's warning based on?",
+      "options": [
+        "A. The founders were planning to sell the company soon.",
+        "B. The startup was generating too much profit to manage.",
+        "C. The team had successfully raised another round of funding.",
+        "D. The company was spending money too quickly and wastefully."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：顧問警告如果不削減開支，六個月內就會燒光現金(run out of cash)，這表示公司花錢太快且浪費，故選 D。"
     }
   ]
 }

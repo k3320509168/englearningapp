@@ -37,3 +37,31 @@ document.querySelector<HTMLButtonElement>('#qa-show')!.onclick=async()=>{
  index=0;show();
 };
 document.querySelector<HTMLButtonElement>('#qa-next')!.onclick=()=>{index++;show();};
+
+// 測試控制採實際 UI 按鈕；不以瀏覽器 evaluate 改動正式存檔或繞過互動。
+document.querySelector<HTMLButtonElement>('#qa-map')!.onclick=()=>{
+ useBattleStore.getState().exitToMap();
+ useUiStore.setState({modal:null,celebrations:[],hintOpen:false,retreatAsk:false});
+};
+document.querySelector<HTMLButtonElement>('#qa-settings')!.onclick=()=>useUiStore.getState().openModal('settings');
+document.querySelector<HTMLButtonElement>('#qa-hide')!.onclick=()=>{
+ document.querySelector<HTMLElement>('#qa-controls')!.style.display='none';
+ document.querySelector<HTMLElement>('#qa-restore')!.style.display='block';
+};
+document.querySelector<HTMLButtonElement>('#qa-restore')!.onclick=()=>{
+ document.querySelector<HTMLElement>('#qa-controls')!.style.display='flex';
+ document.querySelector<HTMLElement>('#qa-restore')!.style.display='none';
+};
+
+// 只校準結算 UI：獨立存檔的首領剩1HP，仍須在遊戲按鈕真正答對才結算。
+document.querySelector<HTMLButtonElement>('#qa-boss')!.onclick=async()=>{
+ const r=Number(region.value); await loadBank(r);
+ useBattleStore.getState().exitToMap();
+ await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));
+ useUiStore.setState({modal:null,celebrations:[],hintOpen:false,retreatAsk:false});
+ useBattleStore.getState().startLevel(LEVELS[r],voiceFallback,19);
+ const q=list[index%list.length]??useBattleStore.getState().question;
+ const stages=useBattleStore.getState().stages.map((stage,i)=>i===19?{...stage,hp:1}:stage);
+ useBattleStore.setState({stages,monsterHp:1,...(q?{question:voiceFallback(q)}:{}),phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:''});
+ status.textContent='版面專用：首領1HP，請真正答對後檢查結算；不作平衡驗收';
+};

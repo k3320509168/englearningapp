@@ -10223,6 +10223,792 @@
       "ans": "JCI",
       "speak": "objective",
       "vocabId": "R6:OBJECTIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "jog my memory",
+      "options": [
+        "A. 把所有舊紀錄正式刪除",
+        "B. 保證我回憶每項細節都正確",
+        "C. 幫我喚回一點記憶",
+        "D. 要求我跑步以代替回答"
+      ],
+      "ans": "C",
+      "explain": "jog memory喚起記憶，不保證記得精確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "in your own words",
+      "options": [
+        "A. 逐字照讀別人的原文",
+        "B. 只准使用你發明的新詞",
+        "C. 把任何資料都改成第一人稱",
+        "D. 用你自己的說法表達"
+      ],
+      "ans": "D",
+      "explain": "own words指換自己的措辭，不是自造詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a supplementary question",
+      "options": [
+        "A. 根據先前回答再作的追問",
+        "B. 與先前回答完全無關的新活動",
+        "C. 只在正式訪談前才問的問題",
+        "D. 由每位聽眾同時大聲重複的句子"
+      ],
+      "ans": "A",
+      "explain": "supplementary question 是在原問題外補充的提問。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I remember the room, though the wallpaper in the photograph is not how I remember it.",
+      "options": [
+        "A. 照片壁紙已證明說話者從未進過房。",
+        "B. 說話者確認照片與記憶每處完全相同。",
+        "C. 房間記憶全消失，只記得拍照者姓名。",
+        "D. 記得房間，但照片壁紙與記憶不同。"
+      ],
+      "ans": "D",
+      "explain": "局部不符與整體熟悉可共存。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Could you tell me what happened next before we go back to why you think it happened?",
+      "options": [
+        "A. 能先說接著發生什麼，再回來談你認為的原因嗎？",
+        "B. 請先證明每項原因，才准提任何後續事件。",
+        "C. 下一件事已無關緊要，所以只談原因就好。",
+        "D. 說話者要求把事件時間線全部刪掉。"
+      ],
+      "ans": "A",
+      "explain": "區分事件敘述與事後解釋，先後議程明確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I do not remember being afraid at the time, although it sounds frightening when I describe it now.",
+      "options": [
+        "A. 說話者從未經歷此事，只因聽故事而怕。",
+        "B. 不記得當時害怕，現在敘述卻聽來可怕。",
+        "C. 現在覺得可怕已證當時一定害怕。",
+        "D. 當時已明白說出恐懼，現在只是逐字讀紀錄。"
+      ],
+      "ans": "B",
+      "explain": "當下感受記憶與現在敘事效果不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She corrected herself without being prompted, which is worth keeping in the record rather than smoothing away.",
+      "options": [
+        "A. 她沒被提醒就自我修正，值得記下而非潤飾刪掉。",
+        "B. 修正是訪談者直接教她說的，所以應改成他發言。",
+        "C. 自我修正已證原故事每句都不可信。",
+        "D. 說話者認為紀錄只可留下從不遲疑的句子。"
+      ],
+      "ans": "A",
+      "explain": "自發修正是回憶過程資訊，不自動全否定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not turn every pause into uncertainty; sometimes she is choosing how much she wants to tell us.",
+      "options": [
+        "A. 說話者認為停頓永遠不可能表示回想困難。",
+        "B. 別把每次停頓都當不確定，有時她在選要說多少。",
+        "C. 停頓已確證她不知道發生過什麼。",
+        "D. 每次停頓都被她明說是因錄音機故障。"
+      ],
+      "ans": "B",
+      "explain": "提出揭露範圍選擇的替代，不排除某些停頓為不確定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The story has become funnier with retelling, though the speaker is quite clear that the event itself was not funny at the time.",
+      "options": [
+        "A. 只要重述變有趣，就證明事件完全沒發生。",
+        "B. 說話者確認每次重述字詞都完全相同。",
+        "C. 故事重述後較好笑，但說話者清楚說當時事件不好笑。",
+        "D. 事件當時就像現在一樣好笑，沒有感受變化。"
+      ],
+      "ans": "C",
+      "explain": "現在敘述語氣與當時體驗分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The interviewer asked me where I ___ when the old theatre closed.",
+      "options": [
+        "A. did living",
+        "B. have live",
+        "C. was living",
+        "D. am live"
+      ],
+      "ans": "C",
+      "explain": "間接問句用陳述語序，過去時背景為was living。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】To transcribe an interview is to ___.",
+      "options": [
+        "A. replace the speaker with another person",
+        "B. decide which account must be true",
+        "C. ask the same question more loudly",
+        "D. write down what was said"
+      ],
+      "ans": "D",
+      "explain": "transcribe將口語轉成書面，不必作真假判決。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The speaker remembers the journey clearly but cannot recall the exact date. What is uncertain?",
+      "options": [
+        "A. The calendar timing, rather than every detail of the journey.",
+        "B. Whether the speaker has any memory of travelling.",
+        "C. Whether the journey could have taken place at all.",
+        "D. The identity of every person who has heard the story."
+      ],
+      "ans": "A",
+      "explain": "記事件與記精時不同，不能將局部忘記擴大全忘。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】I showed the photograph to my uncle, and he recognised the woman beside the gate. Who recognised the woman?",
+      "options": [
+        "A. The photographer, whose identity is not given.",
+        "B. The woman beside the gate.",
+        "C. Every person in the photograph.",
+        "D. The uncle."
+      ],
+      "ans": "D",
+      "explain": "he指myuncle，非自添拍攝者身分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An interviewer asks how difficult the move was. The speaker says she had found it exciting rather than difficult. What did the speaker correct?",
+      "options": [
+        "A. An assumption built into the question.",
+        "B. The date when the interviewer arrived.",
+        "C. The number of homes visible in a photograph.",
+        "D. A mistake in the speaker’s own address."
+      ],
+      "ans": "A",
+      "explain": "how difficult預設困難，回答拒絕此框架。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】I remember ___ the door, but I cannot remember who opened it.",
+      "options": [
+        "A. having knock on",
+        "B. knocking on",
+        "C. to knock on",
+        "D. knock on"
+      ],
+      "ans": "B",
+      "explain": "remember doing回想已做事件，不是記得要做。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A speaker pauses to look at a photograph, then corrects the colour of a car in her story. The interviewer keeps the correction. What does it show?",
+      "options": [
+        "A. A detail was revised during the interview.",
+        "B. The entire story was withdrawn as invented.",
+        "C. The photograph proves every other detail is accurate.",
+        "D. The interviewer had supplied the car’s colour before the story."
+      ],
+      "ans": "A",
+      "explain": "局部修正不能推出全假或全真。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I can tell you what it felt like, though I cannot tell you exactly how long it lasted. What distinction is made?",
+      "options": [
+        "A. A completed journey versus a future plan.",
+        "B. Personal experience versus precise duration.",
+        "C. A refusal to speak versus permission to record.",
+        "D. A written story versus a photograph."
+      ],
+      "ans": "B",
+      "explain": "feltlike主觀感受與howlong量化時間不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A recording includes laughter after a speaker calls a disastrous picnic perfectly organised. A transcript prints only the words. What may be lost?",
+      "options": [
+        "A. The location of every person who attended the picnic.",
+        "B. Proof that the picnic actually took place indoors.",
+        "C. A cue that the praise is humorous rather than straightforward.",
+        "D. The fact that the speaker has used complete words."
+      ],
+      "ans": "C",
+      "explain": "laughter可示反諷，刪口語線索可能改讀法。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：透過提問蒐集想法或經驗的訪談",
+      "ans": "INTERVIEW",
+      "speak": "interview",
+      "vocabId": "R6:INTERVIEW"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：再次敘述同一事件的版本或行為",
+      "ans": "RETELLING",
+      "speak": "retelling",
+      "vocabId": "R6:RETELLING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：未經提醒的自發修正",
+      "ans": "A SPONTANEOUS CORRECTION",
+      "speak": "a spontaneous correction",
+      "vocabId": "R6:A SPONTANEOUS CORRECTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：尊重對方的接續追問",
+      "ans": "A RESPECTFUL FOLLOW UP",
+      "speak": "a respectful follow up",
+      "vocabId": "R6:A RESPECTFUL FOLLOW UP"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：停頓可能反映選擇透露什麼",
+      "ans": "A PAUSE MAY REFLECT A CHOICE ABOUT WHAT TO REVEAL",
+      "speak": "a pause may reflect a choice about what to reveal",
+      "vocabId": "R6:A PAUSE MAY REFLECT A CHOICE ABOUT WHAT TO REVEAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：現在敘述不同於原始體驗",
+      "ans": "THE PRESENT TELLING DIFFERS FROM THE ORIGINAL EXPERIENCE",
+      "speak": "the present telling differs from the original experience",
+      "vocabId": "R6:THE PRESENT TELLING DIFFERS FROM THE ORIGINAL EXPERIENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把口頭內容寫成文字（T 開頭，10 個字母）",
+      "ans": "TRANSCRIBE",
+      "speak": "transcribe",
+      "vocabId": "R6:TRANSCRIBE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：愉快地談起或回想往事（R 開頭，9 個字母）",
+      "ans": "REMINISCE",
+      "speak": "reminisce",
+      "vocabId": "R6:REMINISCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：事件發生的時間先後次序（C 開頭，10 個字母）",
+      "ans": "CHRONOLOGY",
+      "speak": "chronology",
+      "vocabId": "R6:CHRONOLOGY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O _ P T (引出回答或行動的提示)",
+      "ans": "M",
+      "speak": "prompt",
+      "vocabId": "R6:PROMPT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：N A _ R _ T E (以連貫方式講述事件)",
+      "ans": "RA",
+      "speak": "narrate",
+      "vocabId": "R6:NARRATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ P _ N _ E (對問題或刺激作出的回應)",
+      "ans": "SOS",
+      "speak": "response",
+      "vocabId": "R6:RESPONSE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Please wait until they are out of earshot before we discuss the surprise.",
+      "options": [
+        "A. 等他們回來一起決定如何取消驚喜。",
+        "B. 在他們看不見的地方放好禮物就行。",
+        "C. 先大聲說明驚喜，再請他們離開。",
+        "D. 等他們走到聽不見的地方再討論驚喜。"
+      ],
+      "ans": "D",
+      "explain": "out of earshot指超出可聽見的距離，避免讓當事人聽見。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "keep your voice down",
+      "options": [
+        "A. 說話小聲一些",
+        "B. 把你的想法記下來",
+        "C. 把聲音錄下保存",
+        "D. 慢慢把句子說完"
+      ],
+      "ans": "A",
+      "explain": "keep your voice down是降低說話音量。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a muffled sound",
+      "options": [
+        "A. 刻意模仿他人的語氣",
+        "B. 被遮阻而低沉不清的聲音",
+        "C. 逐字清晰傳達的訊息",
+        "D. 突然升高的尖銳聲響"
+      ],
+      "ans": "B",
+      "explain": "muffled表示聲音因遮阻而不清晰。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The music is fine; it is the conversation at the next table that I cannot ignore.",
+      "options": [
+        "A. 困擾的是鄰桌談話，不是音樂。",
+        "B. 音樂太大，蓋住鄰桌所有談話。",
+        "C. 說話者想加入鄰桌的討論。",
+        "D. 說話者認為餐廳需要更多音樂。"
+      ],
+      "ans": "A",
+      "explain": "it is…that強調真正干擾來源為鄰桌談話。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You can leave the window open if you like. The traffic usually dies down after nine.",
+      "options": [
+        "A. 說話者要求立即換一扇窗。",
+        "B. 可以開窗，九點後車流聲通常減弱。",
+        "C. 九點以前禁止任何人打開窗戶。",
+        "D. 九點後車流會開始變得更密集。"
+      ],
+      "ans": "B",
+      "explain": "dies down逐漸減弱；usually表示通常而非保證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I thought someone was knocking, but it turned out to be a loose branch against the glass.",
+      "options": [
+        "A. 敲門者帶來一根鬆脫的樹枝。",
+        "B. 玻璃破裂後，說話者才聽見腳步。",
+        "C. 原以為有人敲門，後來發現是樹枝碰玻璃。",
+        "D. 明知樹枝敲玻璃，仍請來者進屋。"
+      ],
+      "ans": "C",
+      "explain": "thought與turned out to be標示原判斷被修正。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The applause began before the final note had faded, which rather spoiled the ending for me.",
+      "options": [
+        "A. 說話者認為鼓掌改善了結尾效果。",
+        "B. 最後音符未消退就鼓掌，影響了結尾感受。",
+        "C. 音符早已結束，觀眾卻遲遲不鼓掌。",
+        "D. 演奏者因掌聲太小而重奏結尾。"
+      ],
+      "ans": "B",
+      "explain": "before與spoiled分別交代時序及負面感受。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She was not refusing to answer. She was waiting for the translation to finish before speaking.",
+      "options": [
+        "A. 她已搶先作答，翻譯還沒開始。",
+        "B. 她要求別人代替自己回答。",
+        "C. 她在等翻譯結束，並非拒答。",
+        "D. 她因不滿翻譯內容而拒絕回答。"
+      ],
+      "ans": "C",
+      "explain": "直接否定拒答，並提供等待原因。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not call it silent. You could hear the rain, but there was none of the usual machinery noise.",
+      "options": [
+        "A. 雨聲和機械聲都比平常更大。",
+        "B. 機械仍運轉，只有雨聲消失。",
+        "C. 說話者把沉默當成不願交談。",
+        "D. 不算無聲：有雨聲，但沒有平常的機械聲。"
+      ],
+      "ans": "D",
+      "explain": "區分無機械噪音與絕對無聲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The announcement was audible, but I could not make out the words. What was the problem?",
+      "options": [
+        "A. The speaker understood the words but disliked the message.",
+        "B. The announcement had not yet started.",
+        "C. The speaker could read the announcement clearly.",
+        "D. The speaker heard a voice without understanding its words."
+      ],
+      "ans": "D",
+      "explain": "audible指聽得到；make out the words指辨清字句，兩者不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】We closed the window so that the music ___ disturb the neighbours.",
+      "options": [
+        "A. would not",
+        "B. not would",
+        "C. was not to being",
+        "D. did not to"
+      ],
+      "ans": "A",
+      "explain": "過去情境的目的子句用so that…would not，表示避免打擾。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】If a sound fades away, it ___.",
+      "options": [
+        "A. moves closer to the listener",
+        "B. gradually becomes quieter",
+        "C. suddenly changes into speech",
+        "D. continues at the same volume"
+      ],
+      "ans": "B",
+      "explain": "fade away指逐漸消弱，不必涉及聲源移動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The bell rang after the choir finished, and its sound filled the hall. What does its refer to?",
+      "options": [
+        "A. The bell.",
+        "B. The choir’s conductor.",
+        "C. The audience.",
+        "D. The final song."
+      ],
+      "ans": "A",
+      "explain": "主句the bell rang後的its sound承接鈴聲；並未提指揮。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Hardly ___ the door when the alarm began to ring.",
+      "options": [
+        "A. we did open",
+        "B. had we opened",
+        "C. we had opened",
+        "D. did we opened"
+      ],
+      "ans": "B",
+      "explain": "Hardly置句首需倒裝；先開門後響鈴，用had we opened。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The guide waited for a passing train to disappear before describing the painting. What is the most likely reason?",
+      "options": [
+        "A. The guide wanted the group to board the train.",
+        "B. The painting had been removed from the room.",
+        "C. The train made it difficult to hear the guide.",
+        "D. The painting could only be seen from a train."
+      ],
+      "ans": "C",
+      "explain": "等列車通過再說明，最合理的情境推論是避開干擾聲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A guest says, I can hear the television from my room. The host replies, Sorry, I will lower it. How did the host interpret the remark?",
+      "options": [
+        "A. As an invitation to watch a programme together.",
+        "B. As an indirect request to reduce the volume.",
+        "C. As a request to move the television upstairs.",
+        "D. As praise for the television’s picture quality."
+      ],
+      "ans": "B",
+      "explain": "主人道歉並調低音量，顯示將陳述理解為間接請求。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A reviewer calls the concert intimate, despite its large audience, because the singer spoke as if addressing each listener personally. What explains intimate here?",
+      "options": [
+        "A. A performance given only to invited relatives.",
+        "B. The limited number of available seats.",
+        "C. A sense of personal connection rather than a small crowd.",
+        "D. The absence of conversation between songs."
+      ],
+      "ans": "C",
+      "explain": "because明示親近感來自說話方式，而非觀眾人數。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】Silence followed the question, but the tutor waited rather than answering it herself. Which interpretation requires the fewest assumptions?",
+      "options": [
+        "A. She knew that every student had misunderstood the question.",
+        "B. She had decided that the discussion was finished.",
+        "C. She was unable to remember her own question.",
+        "D. She allowed time for the students to formulate a response."
+      ],
+      "ans": "D",
+      "explain": "等候而不代答支持給思考時間，不能由沉默斷定所有人誤解。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：能夠被聽見的",
+      "ans": "AUDIBLE",
+      "speak": "audible",
+      "vocabId": "R6:AUDIBLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：紙張或樹葉摩擦的窸窣聲",
+      "ans": "RUSTLING",
+      "speak": "rustling",
+      "vocabId": "R6:RUSTLING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：出乎意料的打斷",
+      "ans": "AN UNEXPECTED INTERRUPTION",
+      "speak": "an unexpected interruption",
+      "vocabId": "R6:AN UNEXPECTED INTERRUPTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：幾乎聽不見的回答",
+      "ans": "A BARELY AUDIBLE REPLY",
+      "speak": "a barely audible reply",
+      "vocabId": "R6:A BARELY AUDIBLE REPLY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：聲音清楚但字詞不熟悉",
+      "ans": "THE SOUND WAS CLEAR BUT THE WORDS WERE UNFAMILIAR",
+      "speak": "the sound was clear but the words were unfamiliar",
+      "vocabId": "R6:THE SOUND WAS CLEAR BUT THE WORDS WERE UNFAMILIAR"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：安靜房間不一定完全無聲",
+      "ans": "A QUIET ROOM IS NOT NECESSARILY A SILENT ROOM",
+      "speak": "a quiet room is not necessarily a silent room",
+      "vocabId": "R6:A QUIET ROOM IS NOT NECESSARILY A SILENT ROOM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：無意間聽到別人的談話（O 開頭，8 個字母）",
+      "ans": "OVERHEAR",
+      "speak": "overhear",
+      "vocabId": "R6:OVERHEAR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：帶有規律節奏的（R 開頭，8 個字母）",
+      "ans": "RHYTHMIC",
+      "speak": "rhythmic",
+      "vocabId": "R6:RHYTHMIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：使人分心的事物或干擾（D 開頭，11 個字母）",
+      "ans": "DISTRACTION",
+      "speak": "distraction",
+      "vocabId": "R6:DISTRACTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：W H I _ P E R (刻意用很小的氣聲說話)",
+      "ans": "S",
+      "speak": "whisper",
+      "vocabId": "R6:WHISPER"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：V I B _ A T _ O N (物體來回快速移動的振動)",
+      "ans": "RI",
+      "speak": "vibration",
+      "vocabId": "R6:VIBRATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E _ H _ I _ G (充滿聲音反射回響的)",
+      "ans": "CON",
+      "speak": "echoing",
+      "vocabId": "R6:ECHOING"
     }
   ],
   "boss": [
@@ -13631,6 +14417,268 @@
       "ans": "ORI",
       "speak": "cooperative",
       "vocabId": "R6:COOPERATIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Was it your first job? My first paid job, yes; I had helped in the family shop before that.",
+      "options": [
+        "A. 說話者確認自己從未在家裡店幫忙。",
+        "B. 是第一份有薪工作，之前已幫家裡店。",
+        "C. 之前完全沒做過任何事，所以沒有區分。",
+        "D. 第一份工作在家裡店，而且已領同樣薪水。"
+      ],
+      "ans": "B",
+      "explain": "paid限定firstjob的範圍。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The interview runs for an hour, but the extract we are using includes only the part about the journey.",
+      "options": [
+        "A. 節錄比原訪談更長，因另加所有人的旅程。",
+        "B. 說話者已刪掉旅程，所以節錄不含它。",
+        "C. 訪談一小時，所用節錄只含旅程部分。",
+        "D. 整場訪談只有旅程主題，沒有任何其他部分。"
+      ],
+      "ans": "C",
+      "explain": "原件時長與選段範圍不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The question gave her two choices, and her answer began by explaining why neither described what she remembered.",
+      "options": [
+        "A. 她從兩項中選了一項，並確認另一項完全相反。",
+        "B. 訪談者未提供任何選項，所以她拒絕回想。",
+        "C. 說話者認為回憶只能依既定選項分類。",
+        "D. 問題給兩選項，她先說明兩者都不合記憶。"
+      ],
+      "ans": "D",
+      "explain": "回答可拒絕題問框架，不必勉選其一。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Take your time; we are not trying to fit the whole story into one minute. What is encouraged?",
+      "options": [
+        "A. Repeating the same sentence for a minute.",
+        "B. Answering without feeling rushed.",
+        "C. Giving only a one-word response.",
+        "D. Ending the interview immediately."
+      ],
+      "ans": "B",
+      "explain": "take your time允許從容，不是限更短。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The interviewer asks for an example rather than a general description. Which response fits?",
+      "options": [
+        "A. It was the kind of place where everyone seemed to know everyone.",
+        "B. The community was probably similar to many other communities.",
+        "C. One evening, our neighbours brought chairs into the street and we all ate together.",
+        "D. People were generally friendly and the area was pleasant."
+      ],
+      "ans": "C",
+      "explain": "具體一次場景為例子，其他仍概括描述。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A speaker says a shop was always open, then explains that the owner closed it every Sunday. Which interpretation best reconciles the remarks?",
+      "options": [
+        "A. The shop must have had a second owner who opened it on Sundays.",
+        "B. The speaker has proved the shop never existed.",
+        "C. Every Sunday refers to one particular Sunday only.",
+        "D. Always is being used loosely for regular availability, not literally every day."
+      ],
+      "ans": "D",
+      "explain": "口語always常概括，後文明示例外限制字面。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：鮮明的個人經驗敘述",
+      "ans": "A VIVID PERSONAL ACCOUNT",
+      "speak": "a vivid personal account",
+      "vocabId": "R6:A VIVID PERSONAL ACCOUNT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：具體例子可說清概括描述",
+      "ans": "A SPECIFIC EXAMPLE CAN CLARIFY A GENERAL DESCRIPTION",
+      "speak": "a specific example can clarify a general description",
+      "vocabId": "R6:A SPECIFIC EXAMPLE CAN CLARIFY A GENERAL DESCRIPTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：努力想起過去某事（R 開頭，9 個字母）",
+      "ans": "RECOLLECT",
+      "speak": "recollect",
+      "vocabId": "R6:RECOLLECT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ O _ D _ N G (把聲音影像保留下來的紀錄)",
+      "ans": "CRI",
+      "speak": "recording",
+      "vocabId": "R6:RECORDING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I heard the doorbell, but by the time I reached the door, whoever rang it had gone.",
+      "options": [
+        "A. 開門時來者仍在，於是一起走了。",
+        "B. 聽見的是電話，而不是門鈴。",
+        "C. 聽見門鈴，但開門前來者已離開。",
+        "D. 沒聽見門鈴，卻剛好在門外遇到來者。"
+      ],
+      "ans": "C",
+      "explain": "by the time…had gone確定先離開、後到門口。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Could you repeat the last part? I caught the date, just not the place.",
+      "options": [
+        "A. 請重說日期；地點已記下。",
+        "B. 日期和地點都已聽清，不必再說。",
+        "C. 最後一段沒有提到任何地點。",
+        "D. 請重說地點；日期已聽清。"
+      ],
+      "ans": "D",
+      "explain": "caught在此為聽懂；just not the place縮限未聽清部分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The microphone picked up every rustle of paper, yet somehow missed half of what the speaker actually said.",
+      "options": [
+        "A. 麥克風收進紙張窸窣，卻漏掉不少發言。",
+        "B. 發言收得完整，只有紙聲沒錄到。",
+        "C. 發言者故意以翻紙代替所有回答。",
+        "D. 錄音者事後加入紙聲遮掩發言。"
+      ],
+      "ans": "A",
+      "explain": "yet表對比；half口語概指大量遺漏，無故意造假證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Would you mind turning it down a little? The baby has just fallen asleep. What is requested?",
+      "options": [
+        "A. An explanation of how the speaker works.",
+        "B. An immediate end to the visit.",
+        "C. A modest reduction in volume.",
+        "D. A change to a different song."
+      ],
+      "ans": "C",
+      "explain": "turn it down降低音量；a little並未要求完全關掉。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The room was quieter after the carpet was laid, though voices from the corridor were still noticeable. Which claim is supported?",
+      "options": [
+        "A. The carpet increased noise from the corridor.",
+        "B. The corridor had become empty.",
+        "C. The room could no longer be used for conversation.",
+        "D. The carpet reduced some noise without making the room silent."
+      ],
+      "ans": "D",
+      "explain": "quieter是比較，不等於完全無聲；後句明示仍可聽見走廊人聲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The recording captures the crowd more clearly than the person speaking. A listener says it conveys the atmosphere better than the argument. What is the limitation?",
+      "options": [
+        "A. It preserves the setting more effectively than the speaker’s reasoning.",
+        "B. It contains no evidence that an audience was present.",
+        "C. It makes the speaker’s reasoning easier to follow than a transcript would.",
+        "D. It replaces the crowd’s reactions with invented sounds."
+      ],
+      "ans": "A",
+      "explain": "聽清群眾而非發言，能感受氣氛卻較難追隨論證；無剪造證據。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：彼此不感尷尬的一段沉默",
+      "ans": "A COMFORTABLE SILENCE",
+      "speak": "a comfortable silence",
+      "vocabId": "R6:A COMFORTABLE SILENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：她等到掌聲漸漸平息",
+      "ans": "SHE WAITED UNTIL THE APPLAUSE HAD DIED DOWN",
+      "speak": "she waited until the applause had died down",
+      "vocabId": "R6:SHE WAITED UNTIL THE APPLAUSE HAD DIED DOWN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：讓人放心或安心的（R 開頭，10 個字母）",
+      "ans": "REASSURING",
+      "speak": "reassuring",
+      "vocabId": "R6:REASSURING"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N T _ R R _ P T _ O N (使原活動暫時中斷的事件)",
+      "ans": "EUI",
+      "speak": "interruption",
+      "vocabId": "R6:INTERRUPTION"
     }
   ]
 }

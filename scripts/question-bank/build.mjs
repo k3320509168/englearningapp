@@ -28,7 +28,9 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
    const at=(i+Math.floor(i/4)+sourceIndex)%4;const options=a.map((_,j)=>`${letters[j]}. ${a[(j-at+4)%4]}`);
    questions.push({type:'choice',skill,difficulty,knowledgeType:skill==='listening'&&lexicalTargets.has(body.toLowerCase())?'lexical':'discourse',desc:skill==='listening'?'🎧 聽一聽，選出最符合說話者意思的解讀':body,...(skill==='listening'?{speak:body}:{}),options,ans:letters[at],explain});
   });
-  (d.voices??[]).forEach(([text,meaning,difficulty,pos,example,exampleZh,display],i)=>{
+  (d.voices??[]).forEach(([rawText,meaning,difficulty,pos,example,exampleZh,display],i)=>{
+   // 作者可用排版彎引號；輸入/辨識答案統一標準英文 apostrophe。
+   const text=rawText.replace(/[‘’]/g,"\'");
    const speak=text.toLowerCase();
    questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak});
    const examples=voiceExamples[text];

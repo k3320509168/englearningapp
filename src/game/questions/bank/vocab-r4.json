@@ -1088,5 +1088,323 @@
         ]
       }
     ]
+  },
+  "RESCHEDULE": {
+    "pos": "v.",
+    "meaning": "重新安排",
+    "example": "We need to reschedule the meeting for tomorrow.",
+    "exampleZh": "我們需要將會議重新安排到明天。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "重新安排",
+        "examples": [
+          {
+            "en": "We need to reschedule the meeting for tomorrow.",
+            "zh": "我們需要將會議重新安排到明天。"
+          },
+          {
+            "en": "Can we reschedule our appointment?",
+            "zh": "我們可以重新安排預約時間嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERRUPT": {
+    "pos": "v.",
+    "meaning": "打斷",
+    "example": "Please do not interrupt me while I am speaking.",
+    "exampleZh": "我說話時請不要打斷我。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "打斷",
+        "examples": [
+          {
+            "en": "Please do not interrupt me while I am speaking.",
+            "zh": "我說話時請不要打斷我。"
+          },
+          {
+            "en": "The sudden noise interrupted my work.",
+            "zh": "突然的噪音打斷了我的工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "SURFING": {
+    "pos": "n.",
+    "meaning": "衝浪",
+    "example": "He wants to try surfing this summer.",
+    "exampleZh": "他今年夏天想嘗試衝浪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "衝浪",
+        "examples": [
+          {
+            "en": "He wants to try surfing this summer.",
+            "zh": "他今年夏天想嘗試衝浪。"
+          },
+          {
+            "en": "Surfing is very popular in this town.",
+            "zh": "衝浪在這個小鎮非常受歡迎。"
+          }
+        ]
+      }
+    ]
+  },
+  "PHOTOGRAPHY": {
+    "pos": "n.",
+    "meaning": "攝影",
+    "example": "She took a course in digital photography.",
+    "exampleZh": "她上了一門數位攝影課程。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "攝影",
+        "examples": [
+          {
+            "en": "She took a course in digital photography.",
+            "zh": "她上了一門數位攝影課程。"
+          },
+          {
+            "en": "His passion for photography grew over the years.",
+            "zh": "這些年來他對攝影的熱情與日俱增。"
+          }
+        ]
+      }
+    ]
+  },
+  "PAPERWORK": {
+    "pos": "n.",
+    "meaning": "文書工作",
+    "example": "I have a lot of paperwork to do today.",
+    "exampleZh": "我今天有很多文書工作要做。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "文書工作",
+        "examples": [
+          {
+            "en": "I have a lot of paperwork to do today.",
+            "zh": "我今天有很多文書工作要做。"
+          },
+          {
+            "en": "She hates doing the office paperwork.",
+            "zh": "她討厭做辦公室的文書工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "COWORKER": {
+    "pos": "n.",
+    "meaning": "同事",
+    "example": "My coworker helped me finish the project.",
+    "exampleZh": "我的同事幫我完成了專案。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "同事",
+        "examples": [
+          {
+            "en": "My coworker helped me finish the project.",
+            "zh": "我的同事幫我完成了專案。"
+          },
+          {
+            "en": "He went to lunch with his coworkers.",
+            "zh": "他和同事們去吃午餐了。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTRACTION": {
+    "pos": "n.",
+    "meaning": "景點",
+    "example": "The museum is a popular tourist attraction.",
+    "exampleZh": "這間博物館是受歡迎的觀光景點。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "景點",
+        "examples": [
+          {
+            "en": "The museum is a popular tourist attraction.",
+            "zh": "這間博物館是受歡迎的觀光景點。"
+          },
+          {
+            "en": "What are the main attractions in this city?",
+            "zh": "這座城市的主要景點有哪些？"
+          }
+        ]
+      }
+    ]
+  },
+  "HISTORICAL": {
+    "pos": "adj.",
+    "meaning": "歷史的",
+    "example": "I want to visit the historical museum.",
+    "exampleZh": "我想去參觀那間歷史博物館。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "歷史的",
+        "examples": [
+          {
+            "en": "I want to visit the historical museum.",
+            "zh": "我想去參觀那間歷史博物館。"
+          },
+          {
+            "en": "This building has great historical value.",
+            "zh": "這棟建築具有很高的歷史價值。"
+          }
+        ]
+      }
+    ]
+  },
+  "DOWNTOWN": {
+    "pos": "n.",
+    "meaning": "市中心",
+    "example": "We work in downtown Taipei.",
+    "exampleZh": "我們在台北市中心工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "市中心",
+        "examples": [
+          {
+            "en": "We work in downtown Taipei.",
+            "zh": "我們在台北市中心工作。"
+          },
+          {
+            "en": "Parking is difficult in the downtown area.",
+            "zh": "市中心區域很難停車。"
+          }
+        ]
+      },
+      {
+        "pos": "adv.",
+        "meaning": "往市中心",
+        "examples": [
+          {
+            "en": "She took a bus downtown.",
+            "zh": "她搭公車去市中心。"
+          }
+        ]
+      }
+    ]
+  },
+  "HESITATE": {
+    "pos": "v.",
+    "meaning": "猶豫",
+    "example": "Please do not hesitate to contact us.",
+    "exampleZh": "請不要猶豫與我們聯繫。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "猶豫",
+        "examples": [
+          {
+            "en": "Please do not hesitate to contact us.",
+            "zh": "請不要猶豫與我們聯繫。"
+          },
+          {
+            "en": "She hesitated before accepting the offer.",
+            "zh": "她在接受這個提議前猶豫了一下。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAVOR": {
+    "pos": "n.",
+    "meaning": "幫忙",
+    "example": "Can I ask you for a favor?",
+    "exampleZh": "我可以請你幫個忙嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "幫忙",
+        "examples": [
+          {
+            "en": "Can I ask you for a favor?",
+            "zh": "我可以請你幫個忙嗎？"
+          },
+          {
+            "en": "He did me a huge favor yesterday.",
+            "zh": "他昨天幫了我一個大忙。"
+          }
+        ]
+      }
+    ]
+  },
+  "COURIER": {
+    "pos": "n.",
+    "meaning": "快遞",
+    "example": "I will send the documents by courier.",
+    "exampleZh": "我會用快遞寄送這些文件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "快遞",
+        "examples": [
+          {
+            "en": "I will send the documents by courier.",
+            "zh": "我會用快遞寄送這些文件。"
+          },
+          {
+            "en": "The courier just left a package for you.",
+            "zh": "快遞員剛留了一件包裹給你。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBURB": {
+    "pos": "n.",
+    "meaning": "郊區",
+    "example": "They bought a house in the suburbs.",
+    "exampleZh": "他們在郊區買了一棟房子。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "郊區",
+        "examples": [
+          {
+            "en": "They bought a house in the suburbs.",
+            "zh": "他們在郊區買了一棟房子。"
+          },
+          {
+            "en": "Life in the suburb is usually quieter.",
+            "zh": "郊區的生活通常比較安靜。"
+          }
+        ]
+      }
+    ]
+  },
+  "MECHANIC": {
+    "pos": "n.",
+    "meaning": "技師",
+    "example": "The mechanic who fixed my car is skilled.",
+    "exampleZh": "修理我車子的技師技術很好。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "技師",
+        "examples": [
+          {
+            "en": "The mechanic who fixed my car is skilled.",
+            "zh": "修理我車子的技師技術很好。"
+          },
+          {
+            "en": "We should take the car to a mechanic.",
+            "zh": "我們應該把車開去給技師看看。"
+          }
+        ]
+      }
+    ]
   }
 }

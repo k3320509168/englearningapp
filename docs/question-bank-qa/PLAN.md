@@ -201,3 +201,11 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 初審把EXIGENCY/TERGIVERSATION/QUALIFICATORY/VOLUNTARISM等偏冷僻或偏專門項換成較實用表達；移除C2文法明顯壞英文干擾項，補過去時點限制以排除混合條件句歧義；將無足夠根據的affectionately改成lightly，避免強加感情態度。
 - 跨來源逐項比對非選擇題詞條：發現兩個整段口說片語僅中文解釋不同，直接改為scope for a negotiated compromise與a conveniently elastic definition，不用改中文來躲去重。RESCHEDULE/CONTINGENCY/FEASIBILITY/CONTINGENT/PREVARICATION/CIRCUMLOCUTION為同義項跨情境/題型複習，不算獨立新詞。
 - 81512次運作斷言、1000次程度測驗模擬通過；含舊庫5630題格式0錯誤/172既有警告，建庫可重現。這些不驗證語言能力達級；本批仍草稿，兩類五輪完整深審仍未完成。C8限制及C9/C4～C7分工保留。
+
+## 模式判定修正：區域試煉完整性（進行中）
+- 實際讀取發現trialPassed(emptyTrialScore())原為true，因無題型時總門檻換算為0且every空集合為true。缺某種能力也會按比例降標，與介面聲稱四能力各6題不符。
+- 現要求四項total均為6，correct為0～6整數，再用原18/24且各4、21/24且各5條件。空、少答、缺能力、超額、負數、小數/NaN/Infinity均不通過；不調整正常完成者門檻。
+- 開考前completeTrial檢查24題/四項各6與各能力內知識點不重複。GateTrialModal先組題檢查再記高標準挑戰次數；不足顯示訊息、不開考、不扣次數。額外答案回呼在已結束時忽略。
+- 332測試、tsc、eslint通過。audit三區各100種子實際題組均完整（新增300完整性斷言），共81812運作斷言；此項為明確漏洞修復與模式初審證據，並非五輪模式全量審查完成。
+- 口說改拼寫是否應如何標記驗證、歷史錯誤通過紀錄等仍需後續整體規格與模式審查，不在此批任意改動存檔或撤銷玩家進度。
+- 已合併feat/round4最新87dd024與C8b審查，合併僅留言板衝突並保留雙方全部留言；C8b仍優先於C9，題庫3480/5800及五輪任務保留。

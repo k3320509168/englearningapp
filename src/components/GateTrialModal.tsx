@@ -6,7 +6,7 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { REGIONS } from '../game/regions';
 import { GATE_LEVEL, canChallengeGate } from '../game/placement';
-import { STRICT_TRIALS_PER_DAY, TRIAL_PASS, TRIAL_PER_SKILL, TRIAL_SKILLS, TRIAL_STRICT, emptyTrialScore, regionMastery, strictTrialWait, trialPassed, trialQuestions } from '../game/knowledge';
+import { STRICT_TRIALS_PER_DAY, TRIAL_PASS, TRIAL_PER_SKILL, TRIAL_SKILLS, TRIAL_STRICT, completeTrial, emptyTrialScore, regionMastery, strictTrialWait, trialPassed, trialQuestions } from '../game/knowledge';
 import type { TrialScore } from '../game/knowledge';
 import { questionSkill } from '../game/QuestionData';
 import { questionKey } from '../game/battle';
@@ -33,6 +33,7 @@ export default function GateTrialModal() {
   const [round, setRound] = useState(0);
   const [score, setScore] = useState<TrialScore>(emptyTrialScore);
   const [answered, setAnswered] = useState(0);
+  const [incomplete, setIncomplete] = useState(false);
 
   useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
 
@@ -47,15 +48,22 @@ export default function GateTrialModal() {
   const correct = TRIAL_SKILLS.reduce((n, s) => n + score[s].correct, 0);
 
   const start = () => {
+    if (!allowed) return;
+    const batch = trialQuestions(regionIdx, q => !!codex[questionKey(q)]);
+    if (!completeTrial(batch)) {
+      setIncomplete(true);
+      return;
+    }
+    setIncomplete(false);
     if (strict) useSaveStore.getState().recordStrictTrial(regionIdx, Date.now());
-    setQuestions(trialQuestions(regionIdx, q => !!codex[questionKey(q)]));
+    setQuestions(batch);
     setScore(emptyTrialScore());
     setAnswered(0);
     setRound(r => r + 1);
   };
 
   const onAnswer = (ok: boolean) => {
-    if (!questions) return;
+    if (!questions || answered >= questions.length) return;
     const skill = questionSkill(questions[answered]);
     const s = { ...score, [skill]: { correct: score[skill].correct + (ok ? 1 : 0), total: score[skill].total + 1 } };
     setScore(s);
@@ -86,6 +94,7 @@ export default function GateTrialModal() {
           </ul>
           {wait > 0 && <p>高標準試煉每天最多挑戰 {STRICT_TRIALS_PER_DAY} 次，約 <b>{Math.ceil(wait / 3600000)}</b> 小時後可以再來；完成封印後就沒有這個限制，標準也比較低。</p>}
           {!beaten && !canChallengeGate(regionIdx, level) && <p>主角達到 <b>Lv {GATE_LEVEL[regionIdx]}</b> 才能跳級挑戰（目前 Lv {level}）；或打倒這一區的魔王後再來。</p>}
+          {incomplete && <p role="alert">這一區目前無法湊齊四種能力的試煉題目，請稍後再試；這次沒有扣除挑戰次數。</p>}
           <div className="tutorial-actions">
             <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={closeModal}>先不要</button>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={start} disabled={!allowed}>開始試煉</button>
@@ -98,8 +107,8 @@ export default function GateTrialModal() {
           <p className="result-title">{passed ? '🗿 試煉通過！' : '試煉未通過'}</p>
           <p>答對 <b>{correct}</b> / {questions.length} 題（需要 {rule.total} 題、每種至少 {rule.each} 題）</p>
           <ul className="trial-skills">
-            {TRIAL_SKILLS.filter(s => score[s].total > 0).map(s => (
-              <li key={s} className={score[s].correct >= Math.ceil(rule.each * score[s].total / TRIAL_PER_SKILL) ? 'met' : ''}>
+            {TRIAL_SKILLS.map(s => (
+              <li key={s} className={score[s].total === TRIAL_PER_SKILL && score[s].correct >= rule.each ? 'met' : ''}>
                 {SKILL_LABEL[s]} {score[s].correct} / {score[s].total}
               </li>
             ))}

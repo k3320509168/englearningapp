@@ -5,7 +5,7 @@ import type { Question, VocabEntry } from '../../src/game/types';
 import { LEVELS, QUESTION_POOL, createDecks, questionDifficulty, questionSkill } from '../../src/game/QuestionData';
 import { checkChoice, checkTypedAnswer, checkVoice, shuffleChoice, voiceFallback } from '../../src/game/battle';
 import { validateQuestion, questionKey } from '../../src/game/validateQuestions';
-import { knowledgeKey, trialQuestions, TRIAL_SKILLS } from '../../src/game/knowledge';
+import { knowledgeKey, trialQuestions, completeTrial, TRIAL_SKILLS } from '../../src/game/knowledge';
 import { regionStageCount } from '../../src/game/stageLayout';
 import { startPlacement, answerPlacement, currentQuestion, PLACEMENT_LEVELS } from '../../src/game/placementTest';
 import { createGoldenDecks, generateGoldenStages } from '../../src/game/golden';
@@ -44,9 +44,9 @@ for(const r of [6,7,8]) {
   drawStats.push({stage:position,draws:1000,legacy,distribution:counts});
  }
  for(let seed=0;seed<100;seed++) {
-  const qs=trialQuestions(r,()=>false,rng(seed));assert(qs.length===24,`r${r}: short trial ${qs.length}`);
+  const qs=trialQuestions(r,()=>false,rng(seed));assert(qs.length===24,`r${r}: short trial ${qs.length}`);assert(completeTrial(qs),`r${r}: incomplete or duplicate trial`);
   for(const skill of TRIAL_SKILLS)assert(qs.filter(q=>questionSkill(q)===skill).length===6,`r${r}: wrong trial skill quota`);
-  assertions+=5;
+  assertions+=6;
  }
  const reading=all.filter(q=>q.skill==='reading').map(q=>({key:questionKey(q),words:words(q.desc+' '+q.options!.join(' '))}));
  regions.push({region:r,questions:all.length,target:BANK_TARGETS[r],normal:b.normal.length,boss:b.boss.length,quotas,lexicalPoints:lexical.size,dictionaryRecords:Object.keys(v).length,unscopedVocabEntries:Object.keys(v).filter(k=>!/^R[0-8]:/.test(k)).length,scopedAliases:Object.keys(v).filter(k=>/^R[0-8]:/.test(k)).length,issues,reading:{maxWords:Math.max(...reading.map(q=>q.words)),over20SecondsAt180Wpm:reading.filter(q=>q.words/3+3>20).length,over20SecondsAt240Wpm:reading.filter(q=>q.words/4+3>20).length},drawStats});

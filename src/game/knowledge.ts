@@ -202,12 +202,23 @@ export type TrialScore = Record<QuestionSkill, { correct: number; total: number 
 export const emptyTrialScore = (): TrialScore =>
   Object.fromEntries(TRIAL_SKILLS.map(s => [s, { correct: 0, total: 0 }])) as TrialScore;
 
+// 抽題不足時不可把缺少的能力視為已測完，也不以降低門檻替代完整測驗。
+export function completeTrial(questions: Question[]): boolean {
+  return questions.length === TRIAL_SKILLS.length * TRIAL_PER_SKILL
+    && TRIAL_SKILLS.every(skill => {
+      const group = questions.filter(q => questionSkill(q) === skill);
+      return group.length === TRIAL_PER_SKILL
+        && new Set(group.map(knowledgeKey)).size === TRIAL_PER_SKILL;
+    });
+}
+
 export function trialPassed(score: TrialScore, strict: boolean): boolean {
   const rule = strict ? TRIAL_STRICT : TRIAL_PASS;
-  const skills = TRIAL_SKILLS.filter(s => score[s].total > 0);
-  const total = skills.reduce((n, s) => n + score[s].correct, 0);
-  // 題庫缺某種題型時，按比例換算門檻
-  const max = skills.reduce((n, s) => n + score[s].total, 0);
-  return total >= Math.ceil(rule.total * max / (TRIAL_SKILLS.length * TRIAL_PER_SKILL))
-    && skills.every(s => score[s].correct >= Math.ceil(rule.each * score[s].total / TRIAL_PER_SKILL));
+  if (!TRIAL_SKILLS.every(skill => {
+    const item = score[skill];
+    return item && item.total === TRIAL_PER_SKILL
+      && Number.isInteger(item.correct) && item.correct >= 0 && item.correct <= item.total;
+  })) return false;
+  return TRIAL_SKILLS.reduce((sum, skill) => sum + score[skill].correct, 0) >= rule.total
+    && TRIAL_SKILLS.every(skill => score[skill].correct >= rule.each);
 }

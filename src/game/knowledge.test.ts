@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
+import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, completeTrial, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
 import type { KnowledgeRecord } from './knowledge';
 import { addBank, questionDifficulty, questionSkill } from './QuestionData';
 import r0 from './questions/bank/r0.json';
@@ -64,6 +64,37 @@ describe('區域試煉', () => {
       expect(n).toBeLessThanOrEqual(TRIAL_PER_SKILL);
     }
     expect(new Set(qs.map(knowledgeKey)).size).toBe(qs.length);
+  });
+
+  it('空白、缺能力、未答完與不合法成績不可換算成通過', () => {
+    for (const strict of [false, true]) {
+      expect(trialPassed(emptyTrialScore(), strict)).toBe(false);
+      for (const missing of TRIAL_SKILLS) {
+        for (const total of [0, 1, 5, 7]) {
+          const score = emptyTrialScore();
+          for (const skill of TRIAL_SKILLS) score[skill] = { correct: 6, total: 6 };
+          score[missing] = { correct: total, total };
+          expect(trialPassed(score, strict)).toBe(false);
+        }
+        for (const correct of [-1, 6.5, 7, NaN, Infinity]) {
+          const score = emptyTrialScore();
+          for (const skill of TRIAL_SKILLS) score[skill] = { correct: 6, total: 6 };
+          score[missing] = { correct, total: 6 };
+          expect(trialPassed(score, strict)).toBe(false);
+        }
+      }
+    }
+  });
+
+  it('開考前拒絕缺題型、少一題或重複知識點的題組', () => {
+    const batch = TRIAL_SKILLS.flatMap(skill => Array.from({ length: 6 }, (_, i): Question => ({
+      type: 'choice', skill, difficulty: 1, desc: `${skill} question ${i}`, ans: 'A', options: ['A. yes', 'B. no'],
+    })));
+    expect(completeTrial(batch)).toBe(true);
+    expect(completeTrial([])).toBe(false);
+    expect(completeTrial(batch.slice(1))).toBe(false);
+    expect(completeTrial([...batch.slice(1), batch[1]])).toBe(false);
+    expect(completeTrial(batch.map(q => ({ ...q, skill: 'reading' })))).toBe(false);
   });
 
   it('封印完成：18/24、每項 ≥ 4；沒完成：21/24、每項 ≥ 5', () => {

@@ -28,7 +28,12 @@
 | 設計決策、規格、驗收、合併 | Claude | Opus 5.5 |
 | 平衡推演、劇本發想 | ChatGPT 聊天室 | Thinking |
 
-Antigravity 的實際模型名稱：製作人登入 `agy` 後，由 Claude 執行 `agy models` 確認，再補進本表。
+Antigravity 實際可用模型（2026-11-01 `agy models`）：
+- **Pro 級**＝`gemini-4-argon-low／medium／high`：審題用 low～medium、出題用 medium、長文脈程式審查用 high。
+- **Flash 級**＝`gemini-3.8-flash-low／medium／high`：實玩測試、截圖、格式檢查。
+- 另外列有 Claude Opus／Sonnet 5.5 與 GPT-OSS 120B，**不使用**（Claude 的工作由 Claude Code 自己做，避免重複燒額度）。
+
+背景派工時要加 `--model <名稱>`，不要用預設模型。
 
 ## 3. Token 用量原則
 - **誰剩得多誰多做。** 用量吃緊時：Claude 只做決策、審查、驗收；寫程式全交 Codex；測試、審題、出題交 Antigravity。
@@ -50,15 +55,15 @@ Antigravity 的實際模型名稱：製作人登入 `agy` 後，由 Claude 執�
 |---|---|---|
 | Claude | `/Volumes/Dzzz_ssd/Files/Games/EngGame` | `feat/round4`（整合分支） |
 | Codex | `/Users/dzzz/.codex/worktrees/question-bank-advanced/EngGame` | `codex/advanced-question-banks` |
-| Antigravity | 製作人登入後由 PM 建立 `~/agy-worktrees/EngGame` | `agy/work` |
+| Antigravity | `/Users/dzzz/agy-worktrees/EngGame`（2026-11-01 建立） | `agy/work` |
 
 檔案負責人以 `COLLAB.md` 為準；要改別人的檔案，先在留言板說。
 
 ## 6. 目前派工（2026-11-01）
 | 編號 | 負責 | 內容 | 狀態 |
 |---|---|---|---|
-| C7 | Codex | EXP 池 70% 首通／30% 學習；預算模擬 A1→C2 連續跑，C2 最終魔王前等級差要在目標內（目前 Lv142～146、推薦 200） | 進行中 |
+| C7 | Codex | EXP 池 70% 首通／30% 學習；預算模擬 A1→C2 連續跑，C2 最終魔王前等級差要在目標內（目前 Lv142～146、推薦 200） | 已交件（1acb617），平衡未過，等 PM 定規格 |
 | A1 | Antigravity | 三尺寸實玩截圖：開場→序章→A1 第 1 張地圖，列出介面問題（只回報，不改程式） | 等登入 |
-| A2 | Antigravity | 審 Codex 的 B2+～C2 題庫草稿（答案正確性、難度、重複），輸出修正清單 | 等登入 |
+| A2 | Antigravity | 審 Codex 的 B2+～C2 題庫草稿（答案正確性、難度、重複），輸出修正清單；先審 r6（B2+），`gemini-4-argon-medium` | 進行中 |
 | P1 | Claude | C7 完成後整體驗收（4 種玩家 × 成長路線），結果寫進 DEV_LOG | 等 C7 |
 | P2 | Claude＋ChatGPT | B1～C2 劇本大綱 | 待排 |

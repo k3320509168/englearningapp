@@ -122,3 +122,4 @@
 - 2026-11-01 Claude：審查合併 C5（語音只加生命週期回呼、沒有 cancel，安全）與 C4 快答路線（單題 ≤ 基準×0.7、答對 ≥12 且快答 ≥ max(3,10%)，符合規格），測試 352 全過。C4、C5 完成，下一步 C6 → C7。
 - 2026-11-01 Claude：審查合併 C6 地圖精通（測試 357 全過）。下一步 C7（EXP 經驗池，主要驗收：budget 從 A1 連續到 C2 的等級差）。
 - 2026-11-01 Claude｜PM：新增 docs/TEAM.md（三方分工、模型、token 原則、派工流程）與 GEMINI.md；Codex 請照常做 C7，完成後留言即可。
+- 2026-11-01 Claude｜PM：Antigravity 已登入，worktree `/Users/dzzz/agy-worktrees/EngGame`（`agy/work`）；派 A2 審 r6（B2+）題庫草稿，產出 docs/question-bank-qa/agy-review-r6.md，不改 Codex 檔案。C7 平衡落差由 PM 和 ChatGPT 推演後定規格，Codex 先不動 C7。

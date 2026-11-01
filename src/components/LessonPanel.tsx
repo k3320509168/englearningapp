@@ -31,11 +31,15 @@ export default function LessonPanel() {
   const card = cards[index];
   const isLast = index >= cards.length - 1;
   const start = () => useBattleStore.getState().startBattle();
-  const audioText = card?.kind === 'word' ? card.word.display : card?.grammar.sentence;
+  const audioText = card?.kind === 'word' ? card.word.display : (card?.grammar.audio || card?.grammar.sentence);
 
-  // 翻到新卡片時自動唸出單字
+  // 翻到新卡片時自動唸出單字或聽力原句
   useEffect(() => {
-    if (card?.kind === 'word') say(card.word.display);
+    if (card?.kind === 'word') {
+      say(card.word.display);
+    } else if (card?.kind === 'grammar' && card.grammar.tag === '聽力' && card.grammar.audio) {
+      say(card.grammar.audio);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [card]);
 
@@ -73,14 +77,23 @@ export default function LessonPanel() {
             </>
           ) : (
             <>
-              <span className="q-tag q-choice">文法</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span className={`q-tag ${card.grammar.tag === '聽力' ? 'q-voice' : 'q-choice'}`}>
+                  {card.grammar.tag ?? '文法'}
+                </span>
+                {card.grammar.tag === '聽力' && (
+                  <span style={{ fontSize: '12px', color: '#ffd15c' }}>🎧 聽力題重點句型</span>
+                )}
+              </div>
               <p className="lesson-example">{card.grammar.sentence || card.grammar.desc}</p>
               <p className="lesson-explain">💡 {card.grammar.explain}</p>
             </>
           )}
           {audioText && (
             <div className="feedback-actions">
-              <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText)}>🔊 {card.kind === 'word' ? '單字' : '句子'}</button>
+              <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => say(audioText)}>
+                🔊 {card.kind === 'word' ? '單字發音' : (card.grammar.tag === '聽力' ? '播放聽力原音' : '播放句子')}
+              </button>
               <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
             </div>
           )}

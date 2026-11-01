@@ -1,6 +1,6 @@
 import type { Question, Stage, VocabEntry } from './types';
 import { vocabFor } from './vocab';
-import { completedSentence, questionKey } from './battle';
+import { completedSentence, questionAudio, questionKey } from './battle';
 
 // 戰前預習與結算的資料整理（純函式）。
 // 關卡以 10 關為一個區段（第 10、20… 關是 Boss），預習與結算都以區段為單位。
@@ -18,6 +18,8 @@ export interface LessonGrammar {
   desc: string;
   sentence: string;
   explain: string;
+  audio?: string;
+  tag?: string;
 }
 
 export interface Lesson {
@@ -34,7 +36,17 @@ export function buildLesson(stages: Stage[], stageIdx: number): Lesson {
     const v = vocabFor(q);
     if (v) words.set(v.key, v);
     if (q.type === 'choice' && q.explain) {
-      grammar.set(q.desc, { desc: q.desc, sentence: completedSentence(q), explain: q.explain });
+      const isListening = q.skill === 'listening' || Boolean(q.speak && q.desc?.startsWith('🎧'));
+      const sentence = completedSentence(q) || q.speak || q.desc;
+      const audio = questionAudio(q) || q.speak || '';
+      const key = q.speak ? `speak:${q.speak}` : (completedSentence(q) || q.desc);
+      grammar.set(key, {
+        desc: q.desc,
+        sentence,
+        explain: q.explain,
+        audio,
+        tag: isListening ? '聽力' : '文法',
+      });
     }
   }
   return { words: [...words.values()], grammar: [...grammar.values()] };

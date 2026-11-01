@@ -2628,6 +2628,830 @@
       "desc": "請唸出：謝謝你的邀請",
       "ans": "THANK YOU FOR YOUR INVITATION",
       "speak": "thank you for your invitation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：指導",
+      "ans": "GUIDANCE",
+      "speak": "guidance"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：觀眾",
+      "ans": "AUDIENCE",
+      "speak": "audience"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：慶典/慶祝",
+      "ans": "CELEBRATION",
+      "speak": "celebration"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：要求/必要條件",
+      "ans": "REQUIREMENT",
+      "speak": "requirement"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：允許",
+      "ans": "PERMISSION",
+      "speak": "permission"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：政策/規定",
+      "ans": "POLICY",
+      "speak": "policy"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：指示/說明",
+      "ans": "INSTRUCTION",
+      "speak": "instruction"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：規定",
+      "ans": "REGULATION",
+      "speak": "regulation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：貨幣",
+      "ans": "CURRENCY",
+      "speak": "currency"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：轉交/轉移",
+      "ans": "TRANSFER",
+      "speak": "transfer"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：進度",
+      "ans": "PROGRESS",
+      "speak": "progress"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：材料/資料",
+      "ans": "MATERIAL",
+      "speak": "material"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：G R A T E F U _ (感激的)",
+      "ans": "L",
+      "speak": "grateful"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E X C E L L _ N T (優秀的)",
+      "ans": "E",
+      "speak": "excellent"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R O P _ S A _ (提案)",
+      "ans": "OL",
+      "speak": "proposal"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：G U _ D _ N C E (指導)",
+      "ans": "IA",
+      "speak": "guidance"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S U C C _ S S F _ L (成功的)",
+      "ans": "EU",
+      "speak": "successful"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A _ D I E N C _ (觀眾)",
+      "ans": "UE",
+      "speak": "audience"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C E L E B R _ T I O _ (慶典/慶祝)",
+      "ans": "AN",
+      "speak": "celebration"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P E R M I S S I _ N (允許)",
+      "ans": "O",
+      "speak": "permission"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P _ L I C _ (政策/規定)",
+      "ans": "OY",
+      "speak": "policy"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N S T R _ C T I _ N (指示/說明)",
+      "ans": "UO",
+      "speak": "instruction"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A D V E N T _ R E (冒險)",
+      "ans": "U",
+      "speak": "adventure"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：B A C K P A C _ (背包)",
+      "ans": "K",
+      "speak": "backpack"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T R _ N S F _ R (轉交/轉移)",
+      "ans": "AE",
+      "speak": "transfer"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E A D L I N _ (截止日期)",
+      "ans": "E",
+      "speak": "deadline"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R _ G R E S S (進度)",
+      "ans": "O",
+      "speak": "progress"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：M A T _ R I A _ (材料/資料)",
+      "ans": "EL",
+      "speak": "material"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The professor canceled the lecture that was scheduled for today.",
+      "options": [
+        "A. 教授取消了今天安排的講座",
+        "B. 教授明天會舉行特別演講",
+        "C. 這堂課的教室被更改了",
+        "D. 學生們要求延後這場考試"
+      ],
+      "ans": "A",
+      "explain": "原句：The professor canceled the lecture that was scheduled for today. 意思：教授取消了今天安排的講座。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Are you planning to enroll in the advanced photography course?",
+      "options": [
+        "A. 你打算退選這門攝影課嗎？",
+        "B. 你打算註冊進階攝影課程嗎？",
+        "C. 你想成為攝影社的社長嗎？",
+        "D. 你準備好提交攝影作業了嗎？"
+      ],
+      "ans": "B",
+      "explain": "原句：Are you planning to enroll in the advanced photography course? 意思：你打算註冊進階攝影課程嗎？"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The student who won the scholarship is studying in the library.",
+      "options": [
+        "A. 在圖書館看書的學生非常有錢",
+        "B. 那位學生正在申請圖書館的工作",
+        "C. 獲得獎學金的學生正在圖書館讀書",
+        "D. 得到第一名的學生把書借走了"
+      ],
+      "ans": "C",
+      "explain": "原句：The student who won the scholarship is studying in the library. 意思：獲得獎學金的學生正在圖書館讀書。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was reviewing my notes when the teacher asked a question.",
+      "options": [
+        "A. 老師問問題時我正在睡覺",
+        "B. 我在看筆記之前老師就發問了",
+        "C. 老師一邊看筆記一邊問我們問題",
+        "D. 老師發問時我正在複習我的筆記"
+      ],
+      "ans": "D",
+      "explain": "原句：I was reviewing my notes when the teacher asked a question. 意思：老師發問時我正在複習我的筆記。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you enjoy participating in group projects?",
+      "options": [
+        "A. Yes, I find working together very helpful.",
+        "B. No, the group has already left.",
+        "C. I was looking at the project yesterday.",
+        "D. The professor is waiting for us."
+      ],
+      "ans": "A",
+      "explain": "原句：Do you enjoy participating in group projects? 意思：你喜歡參與小組專案嗎？最適合的回應是 A. 是的，我覺得一起工作很有幫助。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Don't forget to submit your assignment before midnight.",
+      "options": [
+        "A. 記得在午夜前離開圖書館",
+        "B. 不要忘記在午夜前提交作業",
+        "C. 明天半夜會公佈考試成績",
+        "D. 老師會在半夜前批改完考卷"
+      ],
+      "ans": "B",
+      "explain": "原句：Don't forget to submit your assignment before midnight. 意思：不要忘記在午夜前提交作業。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She decided to drop the class because it was too difficult.",
+      "options": [
+        "A. 因為課程太難，她決定找家教",
+        "B. 她決定挑戰自己完成這門課",
+        "C. 因為課程太難，她決定退選",
+        "D. 她不小心在上課的時候睡著了"
+      ],
+      "ans": "C",
+      "explain": "原句：She decided to drop the class because it was too difficult. 意思：因為課程太難，她決定退選。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The new library is located at the center of the campus.",
+      "options": [
+        "A. 新圖書館在市中心",
+        "B. 大學離市中心很近",
+        "C. 學生們在校園中心集合",
+        "D. 新圖書館位於校園的中心"
+      ],
+      "ans": "D",
+      "explain": "原句：The new library is located at the center of the campus. 意思：新圖書館位於校園的中心。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Our university team won the basketball tournament last night.",
+      "options": [
+        "A. 我們的球隊昨晚輸了比賽",
+        "B. 籃球隊昨晚進行了嚴格的訓練",
+        "C. 我們的大學校隊昨晚贏了籃球錦標賽",
+        "D. 大學籃球教練昨晚辭職了"
+      ],
+      "ans": "C",
+      "explain": "原句：Our university team won the basketball tournament last night. 意思：我們的大學校隊昨晚贏了籃球錦標賽。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The referee blew his whistle to stop the game.",
+      "options": [
+        "A. 教練在場邊大聲指導球員",
+        "B. 觀眾因為不滿而發出噓聲",
+        "C. 隊長要求暫停比賽以改變戰術",
+        "D. 裁判吹哨子停止了比賽"
+      ],
+      "ans": "D",
+      "explain": "原句：The referee blew his whistle to stop the game. 意思：裁判吹哨子停止了比賽。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The player who scored the winning goal is waving to the fans.",
+      "options": [
+        "A. 踢進致勝球的球員正在向粉絲揮手",
+        "B. 輸掉比賽的球員正在接受安慰",
+        "C. 向粉絲揮手的球員即將退休",
+        "D. 裁判正在警告進球的球員"
+      ],
+      "ans": "A",
+      "explain": "原句：The player who scored the winning goal is waving to the fans. 意思：踢進致勝球的球員正在向粉絲揮手。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The fans were cheering loudly as the runners crossed the finish line.",
+      "options": [
+        "A. 跑者衝線後粉絲才開始歡呼",
+        "B. 跑者越過終點線時，粉絲們正在大聲歡呼",
+        "C. 粉絲們跑過終點線時高興地尖叫",
+        "D. 跑者因為粉絲的歡呼而跑得更快"
+      ],
+      "ans": "B",
+      "explain": "原句：The fans were cheering loudly as the runners crossed the finish line. 意思：跑者越過終點線時，粉絲們正在大聲歡呼。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you interested in watching the tennis finals with us?",
+      "options": [
+        "A. I was playing tennis yesterday.",
+        "B. The finals were very exciting.",
+        "C. Sure, what time does it start?",
+        "D. He is a famous tennis player."
+      ],
+      "ans": "C",
+      "explain": "原句：Are you interested in watching the tennis finals with us? 意思：你有興趣跟我們一起看網球決賽嗎？正確回應是 C. 當然，幾點開始？"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The new stadium can hold up to fifty thousand people.",
+      "options": [
+        "A. 這個新體育館花了五千萬建造",
+        "B. 新球場今天開放五千人進場",
+        "C. 這個球場有五十個出口",
+        "D. 新的體育場能容納多達五萬人"
+      ],
+      "ans": "D",
+      "explain": "原句：The new stadium can hold up to fifty thousand people. 意思：新的體育場能容納多達五萬人。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He tried to break the world record in the swimming competition.",
+      "options": [
+        "A. 他試圖在游泳比賽中打破世界紀錄",
+        "B. 他在游泳比賽中成功衛冕了冠軍",
+        "C. 他在游泳比賽中受傷退賽了",
+        "D. 他管理著一個打破紀錄的游泳團隊"
+      ],
+      "ans": "A",
+      "explain": "原句：He tried to break the world record in the swimming competition. 意思：他試圖在游泳比賽中打破世界紀錄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Professional athletes spend hours training every day.",
+      "options": [
+        "A. 教練每天花數小時訓練球員",
+        "B. 職業運動員每天花數小時訓練",
+        "C. 運動員每天都要參加專業比賽",
+        "D. 專業運動員每天都有比賽"
+      ],
+      "ans": "B",
+      "explain": "原句：Professional athletes spend hours training every day. 意思：職業運動員每天花數小時訓練。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Please leave your room key at the reception when you check out.",
+      "options": [
+        "A. 退房時請把房間鑰匙留在櫃檯",
+        "B. 入住時請向櫃檯索取鑰匙",
+        "C. 請把鑰匙放在房間桌上再退房",
+        "D. 櫃檯人員會把鑰匙交給您"
+      ],
+      "ans": "A",
+      "explain": "原句：Please leave your room key at the reception when you check out. 意思：退房時請把房間鑰匙留在接待櫃檯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The hotel offers excellent amenities including a gym and a pool.",
+      "options": [
+        "A. 這家飯店的健身房和游泳池正在維修",
+        "B. 飯店提供包括健身房和游泳池等優質設施",
+        "C. 飯店的優點是附近有健身房和游泳池",
+        "D. 飯店的員工都可以免費使用游泳池"
+      ],
+      "ans": "B",
+      "explain": "原句：The hotel offers excellent amenities including a gym and a pool. 意思：飯店提供包括健身房和游泳池等優質設施。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The room that we booked has a beautiful view of the ocean.",
+      "options": [
+        "A. 我們住的房間看出去是美麗的山景",
+        "B. 我們正在尋找有海景的房間",
+        "C. 我們預訂的房間有美麗的海景",
+        "D. 這間有海景的房間已經被訂走了"
+      ],
+      "ans": "C",
+      "explain": "原句：The room that we booked has a beautiful view of the ocean. 意思：我們預訂的房間有美麗的海景。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The cleaning staff were changing the sheets when we returned to the room.",
+      "options": [
+        "A. 我們回到房間後，清潔人員才開始工作",
+        "B. 我們要求清潔人員立刻更換床單",
+        "C. 清潔人員忘記在我們回來前換床單",
+        "D. 我們回到房間時，清潔人員正在換床單"
+      ],
+      "ans": "D",
+      "explain": "原句：The cleaning staff were changing the sheets when we returned to the room. 意思：我們回到房間時，清潔人員正在換床單。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Would you mind bringing some extra pillows to room 405?",
+      "options": [
+        "A. Not at all, I will send someone up right away.",
+        "B. Yes, I mind sleeping without pillows.",
+        "C. The pillows are very comfortable.",
+        "D. I was bringing the pillows earlier."
+      ],
+      "ans": "A",
+      "explain": "原句：Would you mind bringing some extra pillows to room 405? 意思：你介意拿一些額外的枕頭到 405 號房嗎？正確回應是 A. 一點也不介意，我馬上派人送上去。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We would like to upgrade your room to a suite for free.",
+      "options": [
+        "A. 您的套房需要額外支付升級費用",
+        "B. 我們想免費將您的房間升級為套房",
+        "C. 我們很抱歉無法為您的房間升級",
+        "D. 如果要換套房，您必須馬上決定"
+      ],
+      "ans": "B",
+      "explain": "原句：We would like to upgrade your room to a suite for free. 意思：我們想免費將您的房間升級為套房。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They allowed us to check in early because our train got here in the morning.",
+      "options": [
+        "A. 他們拒絕讓我們提早辦理入住手續",
+        "B. 我們因為火車延誤而很晚才入住",
+        "C. 因為我們的火車早上到了，他們允許我們提早入住",
+        "D. 為了早點入住，我們特地改了早上的火車"
+      ],
+      "ans": "C",
+      "explain": "原句：They allowed us to check in early because our train got here in the morning. 意思：因為我們的火車早上到了，他們允許我們提早入住。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I would like to modify my booking for next weekend.",
+      "options": [
+        "A. 我想確認下週末的訂房紀錄",
+        "B. 我想取消下週末的預約",
+        "C. 下週末的訂房已經滿了",
+        "D. 我想要修改我下個週末的預訂"
+      ],
+      "ans": "D",
+      "explain": "原句：I would like to modify my booking for next weekend. 意思：我想要修改我下個週末的預訂。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "According to the weather forecast, it will snow heavily tomorrow.",
+      "options": [
+        "A. 氣象預報說明天會出大太陽",
+        "B. 因為明天會下大雪，所以新聞報得很大",
+        "C. 根據氣象預報，明天會下大雪",
+        "D. 氣象預報常常報得不準確"
+      ],
+      "ans": "C",
+      "explain": "原句：According to the weather forecast, it will snow heavily tomorrow. 意思：根據氣象預報，明天會下大雪。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Traffic congestion is expected on the highway during the holiday weekend.",
+      "options": [
+        "A. 假日時高速公路通常都很順暢",
+        "B. 高速公路在週末時全面封閉",
+        "C. 為了避免塞車，請不要在假日上高速公路",
+        "D. 預計連續假日期間高速公路會出現交通壅塞"
+      ],
+      "ans": "D",
+      "explain": "原句：Traffic congestion is expected on the highway during the holiday weekend. 意思：預計連續假日期間高速公路會出現交通壅塞。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The storm which hit the coastal area caused significant damage.",
+      "options": [
+        "A. 侵襲沿海地區的暴風雨造成了重大損害",
+        "B. 即將登陸的暴風雨可能會造成沿海地區損害",
+        "C. 沿海地區幸運地躲過了暴風雨的損害",
+        "D. 暴風雨讓沿海地區的交通完全中斷"
+      ],
+      "ans": "A",
+      "explain": "原句：The storm which hit the coastal area caused significant damage. 意思：侵襲沿海地區的暴風雨造成了重大損害。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They were painting the bridge when the heavy rain started.",
+      "options": [
+        "A. 下大雨導致橋樑嚴重受損",
+        "B. 開始下大雨時，他們正在為橋樑刷漆",
+        "C. 他們冒著大雨勉強把橋樑建好",
+        "D. 因為下大雨，造橋的工程暫停了"
+      ],
+      "ans": "B",
+      "explain": "原句：They were painting the bridge when the heavy rain started. 意思：開始下大雨時，他們正在為橋樑刷漆。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you advise taking the subway instead of driving today?",
+      "options": [
+        "A. The subway was very crowded yesterday.",
+        "B. I am driving to work right now.",
+        "C. Yes, the roads are completely blocked by the parade.",
+        "D. He advised taking a walk in the park."
+      ],
+      "ans": "C",
+      "explain": "原句：Do you advise taking the subway instead of driving today? 意思：你建議今天搭地鐵而不要開車嗎？正確回應是 C. 是的，道路被遊行隊伍完全堵住了。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Severe weather conditions forced the organizers to cancel all outdoor events.",
+      "options": [
+        "A. 由於天氣炎熱，主辦單位取消了部分活動",
+        "B. 主辦方因為設備故障取消了所有活動",
+        "C. 惡劣天氣導致公園關閉了一天",
+        "D. 嚴峻的天氣狀況迫使主辦單位取消所有戶外活動"
+      ],
+      "ans": "D",
+      "explain": "原句：Severe weather conditions forced the organizers to cancel all outdoor events. 意思：嚴峻的天氣狀況迫使主辦單位取消所有戶外活動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Drivers are advised to avoid the downtown area due to the marathon.",
+      "options": [
+        "A. 由於馬拉松比賽，建議駕駛人避開市區",
+        "B. 駕駛人被建議參加市區的馬拉松比賽",
+        "C. 市區正在舉辦馬拉松，請駕駛人減速慢行",
+        "D. 馬拉松跑者應該避開車多擁擠的市區"
+      ],
+      "ans": "A",
+      "explain": "原句：Drivers are advised to avoid the downtown area due to the marathon. 意思：由於馬拉松比賽，建議駕駛人避開市區。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "There was a major accident on the freeway this morning.",
+      "options": [
+        "A. 今天早上快速道路塞車很嚴重",
+        "B. 今天早上高速公路上發生了重大車禍",
+        "C. 高速公路上每天早上都有車禍",
+        "D. 今天早上發生車禍所以高速公路封閉"
+      ],
+      "ans": "B",
+      "explain": "原句：There was a major accident on the freeway this morning. 意思：今天早上高速公路上發生了重大車禍。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are having a small gathering at my place this Friday.",
+      "options": [
+        "A. 本週五我們要在我的住處舉行小型聚會",
+        "B. 我們這個星期五要去參加一個大型派對",
+        "C. 我們週五在朋友家有一個小型會議",
+        "D. 我週五會去參加一個小型的讀書會"
+      ],
+      "ans": "A",
+      "explain": "原句：We are having a small gathering at my place this Friday. 意思：本週五我們要在我的住處舉行小型聚會。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They went out for dinner to celebrate their wedding anniversary.",
+      "options": [
+        "A. 他們在結婚紀念日當天在家裡自己煮晚餐",
+        "B. 他們外出吃晚餐慶祝結婚紀念日",
+        "C. 他們邀請朋友一起來慶祝結婚紀念日",
+        "D. 他們為了慶祝升職而外出吃晚餐"
+      ],
+      "ans": "B",
+      "explain": "原句：They went out for dinner to celebrate their wedding anniversary. 意思：他們外出吃晚餐慶祝結婚紀念日。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The restaurant which you showed me last week was fantastic.",
+      "options": [
+        "A. 你上週帶我去的餐廳真是糟透了",
+        "B. 你推薦的餐廳我們下週會去吃",
+        "C. 你上週帶我去的餐廳棒極了",
+        "D. 那家很棒的餐廳是你上週發現的"
+      ],
+      "ans": "C",
+      "explain": "原句：The restaurant which you showed me last week was fantastic. 意思：你上週帶我去的餐廳棒極了。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was wondering if you wanted to join us for a movie tonight.",
+      "options": [
+        "A. 我想知道你今晚會不會去看電影",
+        "B. 我在想我們今晚要不要在家看電影",
+        "C. 我在猶豫今晚要不要自己去看電影",
+        "D. 我在想你今晚是否想和我們一起去看電影"
+      ],
+      "ans": "D",
+      "explain": "原句：I was wondering if you wanted to join us for a movie tonight. 意思：我在想你今晚是否想和我們一起去看電影。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you finish packing your bags for the weekend trip?",
+      "options": [
+        "A. Yes, I am completely ready to go.",
+        "B. The bag is very heavy.",
+        "C. I saw them looking at the stage.",
+        "D. The weekend is a very busy day for me."
+      ],
+      "ans": "A",
+      "explain": "原句：Did you finish packing your bags for the weekend trip? 意思：你打包好週末旅行的行李了嗎？正確回應是 A. 是的，我完全準備好出發了。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Thank you for the invitation to your graduation party.",
+      "options": [
+        "A. 謝謝你來參加我的畢業派對",
+        "B. 謝謝你邀請我參加你的畢業派對",
+        "C. 我很抱歉無法參加你的畢業派對",
+        "D. 你的畢業派對邀請函設計得很漂亮"
+      ],
+      "ans": "B",
+      "explain": "原句：Thank you for the invitation to your graduation party. 意思：謝謝你邀請我參加你的畢業派對。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He swore to buy the tickets as soon as they go on sale.",
+      "options": [
+        "A. 他保證買到的票會立刻拿去賣",
+        "B. 他答應一開賣就幫我們搶票",
+        "C. 他發誓門票一開賣就會去買",
+        "D. 他買了票之後就立刻答應我們了"
+      ],
+      "ans": "C",
+      "explain": "原句：He swore to buy the tickets as soon as they go on sale. 意思：他發誓門票一開賣就會去買。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "What are you doing this weekend with your family?",
+      "options": [
+        "A. 週末你要帶家人去哪裡玩？",
+        "B. 你的家人週末都在做什麼？",
+        "C. 你週末通常和家人做什麼？",
+        "D. 你這個週末要和家人做什麼？"
+      ],
+      "ans": "D",
+      "explain": "原句：What are you doing this weekend with your family? 意思：你這個週末要和家人做什麼？"
     }
   ],
   "boss": [
@@ -3602,6 +4426,276 @@
       "desc": "請唸出：他出國時正在學習法文",
       "ans": "HE WAS STUDYING FRENCH WHEN HE WENT ABROAD",
       "speak": "he was studying french when he went abroad"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：欣賞/感謝",
+      "ans": "APPRECIATE",
+      "speak": "appreciate"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：氣氛",
+      "ans": "ATMOSPHERE",
+      "speak": "atmosphere"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：難忘的",
+      "ans": "MEMORABLE",
+      "speak": "memorable"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：行程",
+      "ans": "ITINERARY",
+      "speak": "itinerary"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：觀光",
+      "ans": "SIGHTSEEING",
+      "speak": "sightseeing"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：責任",
+      "ans": "RESPONSIBILITY",
+      "speak": "responsibility"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A P P R _ C I _ T _ (欣賞/感謝)",
+      "ans": "EAE",
+      "speak": "appreciate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A T M _ S P H _ R _ (氣氛)",
+      "ans": "OEE",
+      "speak": "atmosphere"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M E M _ R _ B L _ (難忘的)",
+      "ans": "OAE",
+      "speak": "memorable"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ Q U I R _ M E N _ (要求/必要條件)",
+      "ans": "EET",
+      "speak": "requirement"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ G U L _ T I O _ (規定)",
+      "ans": "EAN",
+      "speak": "regulation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I T _ N _ R A R _ (行程)",
+      "ans": "IEY",
+      "speak": "itinerary"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S _ G H T S _ _ I N G (觀光)",
+      "ans": "IEE",
+      "speak": "sightseeing"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ R R _ N C _ (貨幣)",
+      "ans": "UEY",
+      "speak": "currency"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E S P _ N S I B _ L I T _ (責任)",
+      "ans": "OIY",
+      "speak": "responsibility"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is he the guest speaker who is giving the talk on economics?",
+      "options": [
+        "A. Yes, he just arrived from London.",
+        "B. He was speaking to the manager.",
+        "C. I think the economy is improving.",
+        "D. No, the microphone is broken."
+      ],
+      "ans": "A",
+      "explain": "原句：Is he the guest speaker who is giving the talk on economics? 意思：他是那位要進行經濟學演講的客座講者嗎？正確回應是 A. 是的，他剛從倫敦抵達。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We need to figure out how to operate this new projector.",
+      "options": [
+        "A. The project will be finished soon.",
+        "B. Let me ask the technician for help.",
+        "C. I was projecting the sales figures.",
+        "D. It operates on batteries only."
+      ],
+      "ans": "B",
+      "explain": "原句：We need to figure out how to operate this new projector. 意思：我們需要弄清楚怎麼操作這台新投影機。正確回應是 B. 讓我找技師幫忙。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is this the trophy that they won at the championship?",
+      "options": [
+        "A. The champion is very strong.",
+        "B. Yes, they are going to win.",
+        "C. Yes, it was presented to them yesterday.",
+        "D. No, the championship is next week."
+      ],
+      "ans": "C",
+      "explain": "原句：Is this the trophy that they won at the championship? 意思：這是他們在錦標賽贏得的獎盃嗎？正確回應是 C. 是的，這是昨天頒發給他們的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What were the coaches explaining before the second half started?",
+      "options": [
+        "A. They will discuss the strategy soon.",
+        "B. The second half is about to begin.",
+        "C. I discussed it with my team.",
+        "D. They were talking about changing the defensive strategy."
+      ],
+      "ans": "D",
+      "explain": "原句：What were the coaches explaining before the second half started? 意思：下半場開始前教練們在解說什麼？正確回應是 D. 他們正在談論改變防守策略。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can I speak to the staff member who handled my bags?",
+      "options": [
+        "A. He is currently on a break, but I can assist you.",
+        "B. The bags are very heavy.",
+        "C. I can handle the situation for you.",
+        "D. You spoke to the manager yesterday."
+      ],
+      "ans": "A",
+      "explain": "原句：Can I speak to the staff member who handled my bags? 意思：我可以和處理我行李的那位員工說話嗎？正確回應是 A. 他目前在休息，但我可以協助您。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is it possible to extend our stay for one more night?",
+      "options": [
+        "A. The night is very beautiful here.",
+        "B. Let me check if we have any rooms available.",
+        "C. You stayed here for three nights.",
+        "D. It is not possible to stay awake all night."
+      ],
+      "ans": "B",
+      "explain": "原句：Is it possible to extend our stay for one more night? 意思：我們有可能多住一晚嗎？正確回應是 B. 讓我查一下我們是否還有空房。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What is the best route that bypasses the construction on Main Street?",
+      "options": [
+        "A. The construction will finish next month.",
+        "B. I built that street a long time ago.",
+        "C. You should take First Avenue to bypass it completely.",
+        "D. Main Street is very beautiful in the spring."
+      ],
+      "ans": "C",
+      "explain": "原句：What is the best route that bypasses the construction on Main Street? 意思：避開主街施工的最佳路線是什麼？正確回應是 C. 你應該走第一大道來完全避開它。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "How long is it going to take to clear the road after the landslide?",
+      "options": [
+        "A. The road is very long and winding.",
+        "B. I took the road less traveled.",
+        "C. The landslide happened yesterday morning.",
+        "D. The authorities expect to have it open by tomorrow evening."
+      ],
+      "ans": "D",
+      "explain": "原句：How long is it going to take to clear the road after the landslide? 意思：土石流後清理道路需要多長時間？正確回應是 D. 當局預計明天傍晚能開放通行。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you know anyone who can help us set up the barbecue grill?",
+      "options": [
+        "A. My brother is pretty good at assembling things.",
+        "B. The barbecue was very delicious.",
+        "C. I know a place where we can buy a grill.",
+        "D. We set it up yesterday afternoon."
+      ],
+      "ans": "A",
+      "explain": "原句：Do you know anyone who can help us set up the barbecue grill? 意思：你認識能幫我們組裝烤肉架的人嗎？正確回應是 A. 我弟弟很擅長組裝東西。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Were you thinking of going hiking if the weather clears up?",
+      "options": [
+        "A. The weather is getting much worse.",
+        "B. Yes, but it looks like the rain won't stop.",
+        "C. I planned the entire trip carefully.",
+        "D. The hiking trail is closed for maintenance."
+      ],
+      "ans": "B",
+      "explain": "原句：Were you thinking of going hiking if the weather clears up? 意思：天氣放晴的話你有考慮去爬山嗎？正確回應是 B. 是的，但看起來雨是不會停了。"
     }
   ]
 }

@@ -1859,3 +1859,170 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
   .settings-nav { flex-direction: row; flex-wrap: wrap; }
   .settings-tab { flex: 1 1 30%; justify-content: center; font-size: 13px; min-height: 40px; padding: 4px; }
 }
+
+/* C8：地圖共用內容框；畫布在框內等比例置中，不再各列自行縮寬。 */
+.game-shell.is-map {
+  max-width: 1120px;
+  height: calc(100dvh - 32px);
+  min-height: 0;
+  gap: 10px;
+}
+.is-map .map-toolbar, .is-map .level-bar {
+  width: 100%;
+  max-width: none;
+  flex: 0 0 auto;
+}
+.is-map .game-canvas {
+  width: 100%;
+  max-width: none;
+  min-height: 180px;
+  flex: 1 1 0;
+  aspect-ratio: auto;
+  background: #14152b;
+}
+/* 關卡名獨立一列，撤退和工具列不再與名稱競爭寬度。 */
+.hud-top {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  row-gap: 6px;
+}
+.hud-stage {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+  text-align: left;
+}
+.hud-stage small { white-space: nowrap; }
+.hud-tools { justify-content: flex-end; }
+.hud-top .btn-small { min-width: 44px; min-height: 44px; }
+@media (max-width: 560px) {
+  .game-shell.is-map {
+    height: calc(100dvh - 32px - 76px - env(safe-area-inset-bottom));
+    padding-bottom: 0;
+    gap: 8px;
+  }
+  .is-map .game-canvas { min-height: 150px; }
+  .hud-stage { font-size: 15px; }
+}
+/* 很矮的視窗保留地圖的可點擊大小，容許文件捲動。 */
+@media (max-height: 580px) {
+  .game-shell.is-map { height: auto; min-height: calc(100dvh - 32px); }
+  .is-map .game-canvas { flex-basis: 240px; }
+}
+
+/* C8：戰鬥框固定為可用視窗；長題文在題卡內讀取，作答不再被推到頁底。 */
+.app:has(.is-battle) { height: 100dvh; min-height: 0; }
+.game-shell.is-battle {
+  max-width: 1760px;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+  align-items: stretch;
+}
+.is-battle .game-canvas {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+.is-battle .hud {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  gap: 10px;
+  scrollbar-gutter: stable;
+  padding-bottom: 6px;
+}
+.is-battle .hud > * { flex-shrink: 0; }
+.is-battle .answer-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 180px;
+}
+.is-battle .answer-panel .question-card {
+  min-height: 80px;
+  max-height: 34dvh;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  flex: 1 1 auto;
+}
+.is-battle .option-btn { min-height: 48px; }
+.is-battle .answer-panel .kbd-hint { margin-top: 0; }
+@media (max-width: 999px) and (min-height: 601px) {
+  .game-shell.is-battle {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(140px, min(32dvh, 55vw)) minmax(0, 1fr);
+    gap: 8px;
+  }
+  .is-battle .hud { gap: 6px; }
+  .is-battle .answer-panel { gap: 6px; }
+  .is-battle .answer-panel .question-card { max-height: 20dvh; min-height: 70px; padding: 8px 10px; }
+  .is-battle .options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .is-battle .option-btn { font-size: 16px; padding: 8px; min-height: 48px; overflow-wrap: anywhere; }
+  .is-battle .kbd-hint { display: none; }
+  .is-battle .hud-stage { font-size: 14px; }
+}
+@media (max-width: 560px) {
+  .is-battle .hud-top { row-gap: 4px; }
+  .is-battle .hud-top .btn-small { min-height: 44px; padding: 6px 10px; }
+  .is-battle .chain-line { margin: 0; font-size: 12px; }
+  .is-battle .member { min-height: 44px; }
+}
+.is-battle .hud > .summary {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.is-battle .summary .feedback-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  background: var(--panel);
+  padding: 10px 0 4px;
+  border-top: 2px solid var(--line);
+}
+@media (max-width: 560px) {
+  /* 直式窄畫面提供同一套鍵盤，不依賴裝置回報 pointer 類型。 */
+  .is-battle .vkbd {
+    display: flex;
+    position: static;
+    width: 100%;
+    padding: 6px 0 calc(4px + env(safe-area-inset-bottom));
+    border: 0;
+    box-shadow: none;
+    zoom: 1;
+  }
+  .is-battle .hud:has(.vkbd) { padding-bottom: 6px; }
+  .game-shell.is-battle:has(.vkbd) {
+    grid-template-rows: minmax(120px, min(22dvh, 45vw)) minmax(0, 1fr);
+  }
+  .is-battle:has(.vkbd) .game-canvas,
+  html[data-text-scale="large"] .is-battle:has(.vkbd) .game-canvas { max-width: none; }
+  .is-battle .vkbd-key { min-height: 44px; }
+}
+.is-battle .answer-panel .options { flex: 1 0 auto; align-content: stretch; }
+@media (min-width: 1000px) {
+  .is-battle .option-btn { font-size: 18px; line-height: 1.4; }
+}
+@media (max-width: 560px) and (min-height: 601px) {
+  /* 長篇閱讀多留幾行題文；不壓縮答案字級或點擊範圍。 */
+  .game-shell.is-battle:has(.answer-panel.is-long) {
+    grid-template-rows: minmax(120px, min(22dvh, 45vw)) minmax(0, 1fr);
+  }
+  .is-battle .member-portrait, .is-battle .member-portrait img { height: 22px; max-height: 22px; }
+  .is-battle .member { padding: 3px; gap: 2px; }
+  .is-battle .member-hp { height: 4px; }
+}

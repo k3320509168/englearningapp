@@ -312,7 +312,7 @@ function ReflectChoice() {
 
 function AnswerPanel({ question }: { question: Question }) {
   return (
-    <>
+    <div className={`answer-panel ${question.desc.length > 180 ? 'is-long' : ''}`}>
       <ImeWarning />
       <BattleHint question={question} />
       <AssistBanner question={question} />
@@ -322,7 +322,7 @@ function AnswerPanel({ question }: { question: Question }) {
       {(question.type === 'spell' || question.type === 'fill') && <TypingAnswer question={question} />}
       {question.type === 'choice' && <ChoiceAnswer question={question} />}
       {question.type === 'voice' && <VoiceAnswer key={question.desc} question={question} />}
-    </>
+    </div>
   );
 }
 

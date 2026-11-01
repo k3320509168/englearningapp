@@ -1,3 +1,5 @@
+import { emptyMapMastery, masteryReady, recordMastery, MASTERY_PACKS } from '../game/mapMastery';
+import type { MapMastery } from '../game/mapMastery';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import type { StateStorage } from 'zustand/middleware';
@@ -38,7 +40,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 19;
+export const SAVE_VERSION = 20;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -96,6 +98,7 @@ interface SaveData {
   codex: Record<string, CodexEntry>;
   // 知識點：哪幾天無提示答對（跨日穩定、守門人封印用，見 game/knowledge.ts）
   knowledge: Record<string, KnowledgeRecord>;
+  mapMastery: Record<string, MapMastery>;
   // 打倒過區域最終魔王的區域（之後要完成守門人封印＋區域試煉才開下一區）
   bossDown: number[];
   // 高標準區域試煉（封印未完成或跳級）的挑戰時間，每區 24 小時內最多 2 次
@@ -174,6 +177,9 @@ interface SaveActions {
   setMicAsked: () => void;
   // review：這次作答是否算一次 SRS 複習（看完正確答案後的重答不算）
   // counted：算不算知識點的無提示成功（預設同 review）。回傳 true＝這次是跨日成功（封印能量）
+  recordMapLearning: (map: string, q: Question, fallback: boolean) => void;
+  recordMapStage: (map: string, stageInMap: number) => void;
+  claimMapMastery: (region: number, mapIdx: number) => boolean;
   recordAnswer: (q: Question, correct: boolean, review: boolean, counted?: boolean) => boolean;
   defeatRegionBoss: (regionIdx: number) => void;
   // 第一次破這一關：給一次轉盤（回傳有沒有給）
@@ -250,6 +256,7 @@ export const initialSave: SaveData = {
   mistakes: {},
   codex: {},
   knowledge: {},
+  mapMastery: {},
   bossDown: [],
   strictTrials: {},
   settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35, reduceMotion: false, textScale: 1 },
@@ -553,6 +560,27 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         })),
         setMicAsked: () => set({ micAsked: true }),
 
+        recordMapLearning: (map, q, fallback) => set(s => {
+          const day = localDate(), key = knowledgeKey(q), item = `${q.type}|${q.desc}|${q.speak ?? ''}`;
+          const today = Object.values(s.mapMastery).filter(m => m.day === day);
+          if (today.reduce((n, m) => n + (m.dailyKnowledge[key] ?? 0), 0) >= 2 || today.some(m => m.dailyItems.includes(item))) return {};
+          return { mapMastery: { ...s.mapMastery, [map]: recordMastery(s.mapMastery[map], q, day, fallback) } };
+        }),
+        recordMapStage: (map, stageInMap) => set(s => {
+          if (!Number.isInteger(stageInMap) || stageInMap < 0 || stageInMap >= 20) return {};
+          const rec = s.mapMastery[map] ?? emptyMapMastery();
+          return { mapMastery: { ...s.mapMastery, [map]: { ...rec, cleared: rec.cleared | (1 << stageInMap) } } };
+        }),
+        claimMapMastery: (region, mapIdx) => {
+          const s = get(), r = REGIONS[region];
+          if (!r || !Number.isInteger(mapIdx) || mapIdx < 0 || mapIdx >= r.maps.length - 1) return false;
+          const key = `${r.id}#${mapIdx}`, rec = s.mapMastery[key];
+          if (!masteryReady(region, rec) || rec.claimed) return false;
+          const packs = MASTERY_PACKS[region];
+          const crystal = `crystal_${s.character?.element ?? 'fire'}`;
+          set({ gold: s.gold + 80 + 20 * region, materials: { ...s.materials, ore: (s.materials.ore ?? 0) + 2 * packs, [crystal]: (s.materials[crystal] ?? 0) + packs }, mapMastery: { ...s.mapMastery, [key]: { ...rec, claimed: true } } });
+          return true;
+        },
         recordAnswer: (q, correct, review, counted = review) => {
           let reviewed = false;
           let crossDay = false;
@@ -1077,7 +1105,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character,
-        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,

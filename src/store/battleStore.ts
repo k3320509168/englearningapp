@@ -810,6 +810,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       } else set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
       return;
     }
+    if (s.mode === 'normal' && !isLastStage) save().recordMapStage(mapKey(s.levelKey, mapIndexOf(s.stageIdx)), s.stageIdx % MAP_SIZE);
     // 獎勵轉盤：每張地圖第一次破第 5、10、15、20 關各轉一次
     if (s.mode === 'normal' && WHEEL_CHECKPOINTS.includes(stageInMap(s.stageIdx)) && save().grantWheel(wheelKey(s.levelKey, s.stageIdx))) useUiStore.getState().setWheelHidden(false);
     // 打完一張地圖（第 20 關）：播這張地圖的通關劇情
@@ -978,6 +979,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     save().trackDaily('correct');
     save().trackDaily('combo', combo);
     const eligible = !s.retrying && !s.assist && !s.overtime;
+    if (eligible && s.mode === 'normal' && !isPrologue(s.levelKey) && s.stageIdx < s.stages.length - 1) {
+      save().recordMapLearning(mapKey(s.levelKey, mapIndexOf(s.stageIdx)), s.original, s.original.type === 'voice' && s.question.type !== 'voice');
+    }
     const mapStats = {
       ...s.mapStats,
       eligibleCorrectAnswers: s.mapStats.eligibleCorrectAnswers + (eligible ? 1 : 0),

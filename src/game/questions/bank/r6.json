@@ -1,4 +1,2048 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The committee ___ the proposed tax reforms for three hours without reaching a consensus.",
+      "options": [
+        "A. discusses",
+        "B. has been discussing",
+        "C. is discussed",
+        "D. had discussed"
+      ],
+      "ans": "B",
+      "explain": "句中有「for three hours」強調動作持續進行且尚未結束，符合現在完成進行式的使用時機。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The controversial policy ___ by the board of directors during next month's meeting.",
+      "options": [
+        "A. expects to review",
+        "B. is expecting to review",
+        "C. is expected to be reviewed",
+        "D. has expected to review"
+      ],
+      "ans": "C",
+      "explain": "政策是「被預期將被審查」，需使用「is expected to be + V-p.p.」的複雜被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【推測語氣】The CEO's flight was delayed by a severe storm, so she ___ the opening speech.",
+      "options": [
+        "A. must have missed",
+        "B. should miss",
+        "C. can be missing",
+        "D. ought to have missed"
+      ],
+      "ans": "A",
+      "explain": "基於班機延誤的事實，對過去發生的事情作肯定推測，應使用「must have + V-p.p.」，表示「一定已經錯過了」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】To ___ the financial burden on small businesses, the government introduced a new subsidy program.",
+      "options": [
+        "A. aggravate",
+        "B. alleviate",
+        "C. allocate",
+        "D. alternate"
+      ],
+      "ans": "B",
+      "explain": "alleviate 意為「減輕、緩和」。政府推動補助計畫是為了減輕小型企業的財務負擔。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】Scientists ___ this rare phenomenon since 2015, yet its true origin remains a mystery.",
+      "options": [
+        "A. investigate",
+        "B. investigated",
+        "C. have been investigating",
+        "D. are investigating"
+      ],
+      "ans": "C",
+      "explain": "「since 2015」加上現在式「remains」，表示動作從過去持續到現在，應選現在完成進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】The latest software update ___ to have caused several system crashes across the network.",
+      "options": [
+        "A. believes",
+        "B. is believing",
+        "C. is believed",
+        "D. has believed"
+      ],
+      "ans": "C",
+      "explain": "「被認為」造成了當機，主詞是軟體更新，應使用被動語態 is believed (to have + V-p.p.)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【推測語氣】There was no forced entry, meaning the thief ___ a key to open the safe.",
+      "options": [
+        "A. might use",
+        "B. must have used",
+        "C. will have used",
+        "D. could use"
+      ],
+      "ans": "B",
+      "explain": "沒有強行破壞的痕跡，代表小偷過去「一定使用了」鑰匙，這是有強烈依據的過去推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The board reached a ___ after hours of intense negotiation regarding the merger.",
+      "options": [
+        "A. consensus",
+        "B. conflict",
+        "C. consequence",
+        "D. concept"
+      ],
+      "ans": "A",
+      "explain": "consensus 意為「共識」。經過數小時談判後，董事會終於達成共識。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Memo: The upcoming quarterly report is currently being drafted by the finance team. It is expected to be finalized by Friday. Since we have been experiencing a substantial deficit, all department heads must have prepared their cost-cutting strategies prior to the meeting. Q: What is implied about the company's financial status?",
+      "options": [
+        "A. It is generating record-breaking profits.",
+        "B. It has been losing money recently.",
+        "C. It is expanding into new markets.",
+        "D. It has finalized its budget for next year."
+      ],
+      "ans": "B",
+      "explain": "短文中提到「experiencing a substantial deficit」（經歷大幅虧損），因此暗示公司最近在賠錢。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Science Daily: Researchers have been attempting to replicate the results of the groundbreaking study on renewable energy for months. However, the initial findings are now believed to have been skewed by equipment malfunction. Q: Why are the initial findings questionable?",
+      "options": [
+        "A. The researchers lacked sufficient funding.",
+        "B. The data was deliberately falsified.",
+        "C. A flaw in the machinery likely affected the results.",
+        "D. The study was not published in a reputable journal."
+      ],
+      "ans": "C",
+      "explain": "文章指出初步結果被認為是受到設備故障（equipment malfunction）的影響（skewed），故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Our competitors ___ aggressively in artificial intelligence for the past few years to gain market share.",
+      "options": [
+        "A. have been investing",
+        "B. are invested",
+        "C. invest",
+        "D. will invest"
+      ],
+      "ans": "A",
+      "explain": "for the past few years 表示動作的持續性，需使用現在完成進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The new regulations are rumored ___ next week, although official confirmation is still pending.",
+      "options": [
+        "A. to announce",
+        "B. to be announced",
+        "C. announcing",
+        "D. announced"
+      ],
+      "ans": "B",
+      "explain": "be rumored to be + V-p.p. 表示「據傳將被...」，法規是被公布的對象。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【推測語氣】You submitted the report without the financial attachments; you ___ them in your hurry.",
+      "options": [
+        "A. must overlook",
+        "B. must have overlooked",
+        "C. should have overlooked",
+        "D. can overlook"
+      ],
+      "ans": "B",
+      "explain": "對於過去發生的失誤進行高度肯定的推測，「你當時一定是忽略了」，用 must have + V-p.p.。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The CEO's sudden resignation was completely ___; no one in the company saw it coming.",
+      "options": [
+        "A. unprecedented",
+        "B. unresolved",
+        "C. undeniable",
+        "D. unexpected"
+      ],
+      "ans": "D",
+      "explain": "unexpected 意為「出乎意料的」。沒有人預見這件事，代表它是未預期的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】The environmental group ___ for stricter carbon emission laws long before the recent climate summit.",
+      "options": [
+        "A. has been advocating",
+        "B. is advocating",
+        "C. had been advocating",
+        "D. will advocate"
+      ],
+      "ans": "C",
+      "explain": "在「過去的」氣候高峰會之前，就一直持續在倡議，屬於過去完成進行式的使用情境（比過去更早並持續）。若為現在完成進行式，後半句通常配合現在式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】The ancient manuscript ___ to have been written by a renowned scholar in the 12th century.",
+      "options": [
+        "A. thought",
+        "B. is thinking",
+        "C. has thought",
+        "D. is thought"
+      ],
+      "ans": "D",
+      "explain": "手稿「被認為」寫於12世紀，需用被動語態 is thought (to have been written)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【推測語氣】The sales figures are incredibly low this quarter. The marketing campaign ___ a total failure.",
+      "options": [
+        "A. must have been",
+        "B. should be",
+        "C. would have been",
+        "D. could be"
+      ],
+      "ans": "A",
+      "explain": "基於銷售額極低的強烈證據，推測過去的行銷活動「一定是」徹底失敗了。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】To remain competitive, the corporation must ___ substantial resources into research and development.",
+      "options": [
+        "A. allocate",
+        "B. aggregate",
+        "C. alleviate",
+        "D. alienate"
+      ],
+      "ans": "A",
+      "explain": "allocate 意為「分配、撥出」。公司必須分配資源到研發部門。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Case Study: TechNova Inc. has been struggling with employee retention for two years. Industry analysts speculate that the rigid corporate culture must have driven top talent away. To combat this, flexible working hours are expected to be implemented next quarter. Q: What is the proposed solution to TechNova's problem?",
+      "options": [
+        "A. Changing the corporate culture to be more strict.",
+        "B. Hiring more industry analysts.",
+        "C. Introducing flexible working schedules.",
+        "D. Increasing the salary of top talent."
+      ],
+      "ans": "C",
+      "explain": "文章最後提到「flexible working hours are expected to be implemented」（預計實施彈性工時）以解決問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Policy Brief: The new healthcare reform aims to alleviate the burden on public hospitals. It is widely acknowledged to have been drafted by a coalition of medical experts. However, critics argue that the policy is fundamentally flawed. Q: Who is believed to be the author of the reform?",
+      "options": [
+        "A. Critics and politicians.",
+        "B. Public hospital administrators.",
+        "C. A group of medical experts.",
+        "D. The general public."
+      ],
+      "ans": "C",
+      "explain": "文中指出「It is widely acknowledged to have been drafted by a coalition of medical experts」（公認由醫學專家聯盟起草）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The construction crew ___ on the new bridge since early this morning, despite the heavy rain.",
+      "options": [
+        "A. worked",
+        "B. have been working",
+        "C. had worked",
+        "D. are worked"
+      ],
+      "ans": "B",
+      "explain": "「since early this morning」表示從今天早上持續到現在，用現在完成進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The confidential documents are reported ___ from the executive's office last night.",
+      "options": [
+        "A. to steal",
+        "B. to be stealing",
+        "C. to have been stolen",
+        "D. stolen"
+      ],
+      "ans": "C",
+      "explain": "報導現在發生（are reported），但失竊發生在昨晚，需用 to have been stolen 表達過去完成的被動概念。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【推測語氣】You walked right past me without saying hello; you ___ daydreaming.",
+      "options": [
+        "A. might be",
+        "B. must have been",
+        "C. should have been",
+        "D. ought to be"
+      ],
+      "ans": "B",
+      "explain": "你走過去都沒打招呼，所以過去那個當下你「一定是在」做白日夢。must have been + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The manager's ___ to compromise led to the collapse of the trade negotiations.",
+      "options": [
+        "A. willingness",
+        "B. reluctance",
+        "C. capacity",
+        "D. tendency"
+      ],
+      "ans": "B",
+      "explain": "reluctance 意為「不情願」。經理不願妥協，導致談判破裂。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】Inflation ___ steadily over the past six months, causing widespread concern among consumers.",
+      "options": [
+        "A. is rising",
+        "B. rose",
+        "C. has been rising",
+        "D. will rise"
+      ],
+      "ans": "C",
+      "explain": "over the past six months 表達這半年來不斷進行的趨勢，選現在完成進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】The rare artifacts ___ to have been buried during a massive volcanic eruption.",
+      "options": [
+        "A. presume",
+        "B. are presumed",
+        "C. have presumed",
+        "D. are presuming"
+      ],
+      "ans": "B",
+      "explain": "文物「被推定」掩埋於火山爆發，文物是受詞，需用被動語態 are presumed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【推測語氣】The streets are completely flooded this morning. It ___ heavily last night.",
+      "options": [
+        "A. must have rained",
+        "B. should have rained",
+        "C. can rain",
+        "D. would have rained"
+      ],
+      "ans": "A",
+      "explain": "看到早上淹水的結果，推測昨晚「一定」下了大雨，用 must have + V-p.p.。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The startup's innovative approach has severely ___ the traditional banking industry.",
+      "options": [
+        "A. disrupted",
+        "B. distributed",
+        "C. discarded",
+        "D. dissolved"
+      ],
+      "ans": "A",
+      "explain": "disrupt 意為「擾亂、顛覆」。新創公司的做法顛覆了傳統銀行業。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Editorial: The mayor's decision to cut public transit funding is fundamentally flawed. Citizens have been complaining about service delays for months. This disastrous policy is guaranteed to be met with fierce protests. The administration must have severely underestimated the public's reliance on buses and trains. Q: What is the author's attitude toward the mayor's decision?",
+      "options": [
+        "A. Highly supportive and optimistic.",
+        "B. Critical and condemnatory.",
+        "C. Indifferent and neutral.",
+        "D. Confused and seeking clarification."
+      ],
+      "ans": "B",
+      "explain": "作者使用了 fundamentally flawed (根本上有缺陷), disastrous policy (災難性政策) 等詞彙，顯示其態度為強烈批評(Critical)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Email to Staff: We are pleased to announce that the software migration is scheduled to be completed this weekend. Our IT team has been working tirelessly to ensure a smooth transition. If you experience any login issues on Monday, your account credentials might have been reset automatically. Q: What should an employee do if they cannot log in on Monday?",
+      "options": [
+        "A. Contact the IT team immediately.",
+        "B. Wait for the software migration to finish.",
+        "C. Assume their password was reset automatically.",
+        "D. Complain about the transition process."
+      ],
+      "ans": "C",
+      "explain": "信件中提到如果週一遇到登入問題，憑證可能是被自動重設了 (might have been reset automatically)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The legal team ___ the contract details meticulously since the dispute arose.",
+      "options": [
+        "A. examines",
+        "B. has been examining",
+        "C. had examined",
+        "D. will be examining"
+      ],
+      "ans": "B",
+      "explain": "「since」引導的時間起點搭配「has been examining」，強調動作一直持續。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The new marketing strategy is considered ___ extremely successful in boosting sales.",
+      "options": [
+        "A. to be",
+        "B. being",
+        "C. to have been",
+        "D. having been"
+      ],
+      "ans": "C",
+      "explain": "被認為（現在）在提升銷量上非常成功（過去的成果），用 to have been。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【推測語氣】You left your umbrella at the office; you ___ drenched in that sudden downpour.",
+      "options": [
+        "A. must get",
+        "B. must have gotten",
+        "C. should have gotten",
+        "D. can get"
+      ],
+      "ans": "B",
+      "explain": "對過去已經發生的事情作推測，「你當時一定淋濕了」，用 must have gotten。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The company's primary ___ is to expand its operations into the European market by next year.",
+      "options": [
+        "A. obstacle",
+        "B. objective",
+        "C. obligation",
+        "D. objection"
+      ],
+      "ans": "B",
+      "explain": "objective 意為「目標」。公司的主要目標是拓展歐洲市場。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】Global temperatures ___ at an alarming rate, prompting immediate calls for climate action.",
+      "options": [
+        "A. fluctuate",
+        "B. have been fluctuating",
+        "C. fluctuated",
+        "D. will fluctuate"
+      ],
+      "ans": "B",
+      "explain": "描述近期不斷進行並持續中的變化趨勢，使用現在完成進行式最恰當。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【被動語態】The summit is scheduled ___ in Geneva, though the exact venue is yet to be confirmed.",
+      "options": [
+        "A. to hold",
+        "B. to be held",
+        "C. holding",
+        "D. held"
+      ],
+      "ans": "B",
+      "explain": "高峰會是「被舉辦」，因此在 scheduled 後方接不定詞的被動形式 to be held。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【推測語氣】The presentation slides are full of errors. He ___ them at the very last minute.",
+      "options": [
+        "A. must prepare",
+        "B. might prepare",
+        "C. must have prepared",
+        "D. should prepare"
+      ],
+      "ans": "C",
+      "explain": "簡報充滿錯誤，強烈推測他過去「一定是在最後一刻才準備的」，用 must have + V-p.p.。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】In order to finalize the deal, both parties must be willing to make ___.",
+      "options": [
+        "A. concessions",
+        "B. confessions",
+        "C. conversions",
+        "D. conclusions"
+      ],
+      "ans": "A",
+      "explain": "concession 意為「讓步」。雙方必須願意做出讓步才能完成交易。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The risks are expected to be mitigated by the new system.",
+      "options": [
+        "A. 預期新系統能減輕風險。",
+        "B. 預期新系統會增加整體成本。",
+        "C. 新系統已經消除了所有危險。",
+        "D. 風險是由新系統所造成的。"
+      ],
+      "ans": "A",
+      "explain": "The risks are expected to be mitigated by the new system. (預期新系統能減輕風險。) mitigate 意指「減輕」；此處使用複雜被動語態 (are expected to be mitigated)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The accountant must have noticed the discrepancy in the report.",
+      "options": [
+        "A. 會計師忽略了報告中的細節。",
+        "B. 會計師一定注意到了報告中的差異。",
+        "C. 會計師負責編寫這份差異報告。",
+        "D. 會計師要求修正所有的數字。"
+      ],
+      "ans": "B",
+      "explain": "The accountant must have noticed the discrepancy in the report. (會計師一定注意到了報告中的差異。) discrepancy 指「不一致、差異」；must have noticed 為情態動詞推測過去發生之事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have been implementing the updated guidelines all morning.",
+      "options": [
+        "A. 我們早上才剛開始閱讀新指南。",
+        "B. 新指南將在明天早上生效。",
+        "C. 我們整個早上都在實施更新後的指南。",
+        "D. 我們已經放棄實施這些新指南。"
+      ],
+      "ans": "C",
+      "explain": "We have been implementing the updated guidelines all morning. (我們整個早上都在實施更新後的指南。) implement 指「實施、執行」；此處為現在完成進行式，強調動作持續。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A tentative schedule has been drafted by the board of directors.",
+      "options": [
+        "A. 董事會已經取消了行程。",
+        "B. 董事會拒絕了這份草案。",
+        "C. 最終的行程表已經確認發布。",
+        "D. 董事會已經起草了一份暫定行程。"
+      ],
+      "ans": "D",
+      "explain": "A tentative schedule has been drafted by the board of directors. (董事會已經起草了一份暫定行程。) tentative 指「暫時的、未定的」；has been drafted 是現在完成式的被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The exclusive contract must have been extremely lucrative.",
+      "options": [
+        "A. 份獨家合約利潤一定非常豐厚。",
+        "B. 這份合約一定是無效的。",
+        "C. 簽訂這份合約帶來了巨大的風險。",
+        "D. 他們肯定拒絕了這份有利可圖的合約。"
+      ],
+      "ans": "A",
+      "explain": "The exclusive contract must have been extremely lucrative. (這份獨家合約利潤一定非常豐厚。) lucrative 指「賺錢的、有利可圖的」；must have been 表對過去狀態的肯定推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The annual budget is being subjected to intense public scrutiny.",
+      "options": [
+        "A. 年度預算已獲得公眾一致通過。",
+        "B. 年度預算正受到大眾嚴格的審查。",
+        "C. 大眾對預算的分配毫無興趣。",
+        "D. 預算審查已經在去年秘密完成。"
+      ],
+      "ans": "B",
+      "explain": "The annual budget is being subjected to intense public scrutiny. (年度預算正受到大眾嚴格的審查。) scrutiny 指「仔細審查」；is being subjected to 為現在進行被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The analysts have been compiling the survey results since Monday.",
+      "options": [
+        "A. 分析師在週一前就完成了調查。",
+        "B. 分析師預計在週一開始編譯數據。",
+        "C. 分析師從週一開始就一直在彙編調查結果。",
+        "D. 調查結果在週一被全數銷毀。"
+      ],
+      "ans": "C",
+      "explain": "The analysts have been compiling the survey results since Monday. (分析師從週一開始就一直在彙編調查結果。) compile 指「彙編、收集」；搭配現在完成進行式，表示從過去持續到現在。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A special committee has been convened to discuss the merger.",
+      "options": [
+        "A. 委員會已經解散並拒絕討論合併。",
+        "B. 委員會的決議導致了合併失敗。",
+        "C. 合併案已經不需要委員會來討論。",
+        "D. 已經召集了一個特別委員會來討論合併案。"
+      ],
+      "ans": "D",
+      "explain": "A special committee has been convened to discuss the merger. (已經召集了一個特別委員會來討論合併案。) convene 指「召集、開會」；使用現在完成式的被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They must have received a substantial bonus for that project.",
+      "options": [
+        "A. 他們那個專案一定拿到了豐厚的獎金。",
+        "B. 他們的專案獎金被大幅削減了。",
+        "C. 他們必須為專案支付巨額罰款。",
+        "D. 專案的獎金微乎其微。"
+      ],
+      "ans": "A",
+      "explain": "They must have received a substantial bonus for that project. (他們那個專案一定拿到了豐厚的獎金。) substantial 指「大量的、實質的」；must have received 表示對過去的強烈推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The potential repercussions are being evaluated by the legal team.",
+      "options": [
+        "A. 法律團隊拒絕評估任何風險。",
+        "B. 法律團隊正在評估潛在的不良影響。",
+        "C. 潛在的影響已經完全消除。",
+        "D. 法律團隊造成了嚴重的後果。"
+      ],
+      "ans": "B",
+      "explain": "The potential repercussions are being evaluated by the legal team. (法律團隊正在評估潛在的不良影響。) repercussion 指「負面影響、後果」；此處為現在進行被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The manager has been delegating tasks to the junior staff.",
+      "options": [
+        "A. 經理拒絕將工作交給資淺員工。",
+        "B. 經理已經完成了所有資淺員工的任務。",
+        "C. 經理一直把任務委派給初級員工。",
+        "D. 初級員工一直在指導經理。"
+      ],
+      "ans": "C",
+      "explain": "The manager has been delegating tasks to the junior staff. (經理一直把任務委派給初級員工。) delegate 指「委派、授權」；使用現在完成進行式強調動作的持續性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Small businesses are expected to be exempted from the new tax law.",
+      "options": [
+        "A. 預期小型企業將受到新稅法的嚴格審查。",
+        "B. 小型企業預計會被徵收更高的稅。",
+        "C. 新稅法將完全由小型企業承擔。",
+        "D. 預期小型企業將被豁免於新稅法。"
+      ],
+      "ans": "D",
+      "explain": "Small businesses are expected to be exempted from the new tax law. (預期小型企業將被豁免於新稅法。) exempt 指「免除、豁免」；句型使用了預期會發生某事的複雜被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The CEO must have endorsed the proposal privately before the meeting.",
+      "options": [
+        "A. 執行長一定在會議前私下背書了這項提案。",
+        "B. 執行長在會議上公開反對了這項提案。",
+        "C. 執行長根本沒有看過這份提案。",
+        "D. 執行長要求在會後重新評估提案。"
+      ],
+      "ans": "A",
+      "explain": "The CEO must have endorsed the proposal privately before the meeting. (執行長一定在會議前私下背書了這項提案。) endorse 指「贊同、背書」；must have endorsed 推測過去發生的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The stock market has been fluctuating wildly throughout this week.",
+      "options": [
+        "A. 股市本週一直保持穩定。",
+        "B. 股市整個星期都在劇烈波動。",
+        "C. 股市已經連續一週停盤。",
+        "D. 本週股市呈現穩定上升的趨勢。"
+      ],
+      "ans": "B",
+      "explain": "The stock market has been fluctuating wildly throughout this week. (股市整個星期都在劇烈波動。) fluctuate 指「波動、起伏」；現在完成進行式表達這週以來持續的狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The entire joint venture was nearly jeopardized by the sudden delay.",
+      "options": [
+        "A. 突然的延誤使得合資企業大獲成功。",
+        "B. 合資企業完全沒有受到延誤的影響。",
+        "C. 整個合資企業幾乎因突然的延誤而面臨危險。",
+        "D. 延誤是由合資企業主動提出的。"
+      ],
+      "ans": "C",
+      "explain": "The entire joint venture was nearly jeopardized by the sudden delay. (整個合資企業幾乎因突然的延誤而面臨危險。) jeopardize 指「危及、使受危險」；此處為被動語態表示受到威脅。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The safety briefing has been made mandatory for all site visitors.",
+      "options": [
+        "A. I prefer the optional tour, thanks.",
+        "B. The site is closed for renovation today.",
+        "C. Who is the mysterious visitor?",
+        "D. I'll make sure to attend it then."
+      ],
+      "ans": "D",
+      "explain": "The safety briefing has been made mandatory for all site visitors. (所有現場參觀者的安全簡報已改為強制性。) mandatory 指「強制的、必須的」；聽到強制性規定，回應「那我也一定會參加」最符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We must have taken a more pragmatic approach to solve this.",
+      "options": [
+        "A. 我們當時一定是採取了更務實的方法來解決這個問題。",
+        "B. 我們當時採取的方法太過理想化了。",
+        "C. 我們必須放棄所有務實的解決方案。",
+        "D. 這個方法完全無法解決我們的問題。"
+      ],
+      "ans": "A",
+      "explain": "We must have taken a more pragmatic approach to solve this. (我們當時一定是採取了更務實的方法來解決這個問題。) pragmatic 意為「務實的」；must have taken 是對過去事實的肯定推斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Stringent quality controls are being implemented as we speak.",
+      "options": [
+        "A. Quality doesn't really matter to our clients.",
+        "B. That should help reduce the defect rate significantly.",
+        "C. Please control the volume of the speakers.",
+        "D. Speaking is strictly prohibited in the factory."
+      ],
+      "ans": "B",
+      "explain": "Stringent quality controls are being implemented as we speak. (嚴格的品質管控正此時此刻實施中。) stringent 指「嚴格的」；回應「這應能顯著降低不良率」符合職場對話邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The team has been struggling to produce tangible results this quarter.",
+      "options": [
+        "A. 團隊本季已經取得了巨大的成功。",
+        "B. 團隊拒絕分享他們的研究成果。",
+        "C. 團隊本季度一直難以產出具體的成果。",
+        "D. 團隊的成果非常抽象且難以理解。"
+      ],
+      "ans": "C",
+      "explain": "The team has been struggling to produce tangible results this quarter. (團隊本季度一直難以產出具體的成果。) tangible 指「具體的、有形的」；has been struggling 顯示持續遭遇困難。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The board's decision to expand overseas must have been unanimous.",
+      "options": [
+        "A. They couldn't agree on a single location.",
+        "B. The expansion unfortunately failed last year.",
+        "C. It was a very narrow vote, actually.",
+        "D. Yes, everyone voted in favor of it without hesitation."
+      ],
+      "ans": "D",
+      "explain": "The board's decision to expand overseas must have been unanimous. (董事會向海外擴張的決定一定是一致通過的。) unanimous 指「全體一致的」；回應「是的，大家都毫不猶豫投了贊成票」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Crucial evidence is believed to have been withheld from the public.",
+      "options": [
+        "A. 據信有關鍵證據被對公眾隱瞞了。",
+        "B. 公眾已經交出了所有關鍵證據。",
+        "C. 關鍵證據已經完全公開透明化。",
+        "D. 根本沒有任何關鍵證據存在。"
+      ],
+      "ans": "A",
+      "explain": "Crucial evidence is believed to have been withheld from the public. (據信有關鍵證據被對公眾隱瞞了。) withhold 指「保留、隱瞞」；is believed to have been 為複雜被動語態，表示「被認為已經...」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We have been complying with all the new industry regulations.",
+      "options": [
+        "A. They are always breaking the law intentionally.",
+        "B. Good, that keeps us out of legal trouble.",
+        "C. Regulations are incredibly annoying to read.",
+        "D. Complaining won't help us finish the project."
+      ],
+      "ans": "B",
+      "explain": "We have been complying with all the new industry regulations. (我們一直遵守著所有新的行業法規。) comply (with) 指「遵守」；回應「很好，這能讓我們免於法律麻煩」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The speaker's controversial comments must have elicited a strong reaction.",
+      "options": [
+        "A. 演講者拒絕對評論發表任何回應。",
+        "B. 演講者的言論完全沒有引起注意。",
+        "C. 演講者具爭議的言論一定引起了強烈的反應。",
+        "D. 演講者強烈反對那些爭議性評論。"
+      ],
+      "ans": "C",
+      "explain": "The speaker's controversial comments must have elicited a strong reaction. (演講者具爭議的言論一定引起了強烈的反應。) elicit 指「引出、誘出」；must have elicited 表示肯定的推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "A culture of open innovation is being fostered within the department.",
+      "options": [
+        "A. The department is closing down next month.",
+        "B. The culture here is very traditional and strict.",
+        "C. Mr. Foster is not in the office today.",
+        "D. I've noticed people are sharing more creative ideas now."
+      ],
+      "ans": "D",
+      "explain": "A culture of open innovation is being fostered within the department. (部門內正在培養開放創新的文化。) foster 指「培養、促進」；回應「我注意到大家現在分享了更多創意點子」符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Doubts about the company's financial health have been lingering for months.",
+      "options": [
+        "A. 對公司財務狀況的疑慮這幾個月來一直揮之不去。",
+        "B. 公司在過去幾個月的財務狀況非常穩健。",
+        "C. 關於公司財務的疑慮已經在幾個月前消除了。",
+        "D. 公司每個月都會發布詳細的財務報告。"
+      ],
+      "ans": "A",
+      "explain": "Doubts about the company's financial health have been lingering for months. (對公司財務狀況的疑慮這幾個月來一直揮之不去。) linger 指「逗留、徘徊不散」；現在完成進行式強調狀態的持續。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The two regional departments are expected to be merged by next quarter.",
+      "options": [
+        "A. They are splitting up into three smaller teams.",
+        "B. Will there be any staff layoffs as a result?",
+        "C. The first quarter ended yesterday.",
+        "D. The profit margins are simply too low right now."
+      ],
+      "ans": "B",
+      "explain": "The two regional departments are expected to be merged by next quarter. (這兩個地區部門預計在下季前合併。) merge 指「合併」；聽到部門合併，詢問「結果會導致裁員嗎？」是常見的職場反應。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He must have relinquished his position on the board voluntarily.",
+      "options": [
+        "A. 他是被迫離開董事會的。",
+        "B. 他一直堅守著董事會的職位。",
+        "C. 他一定自願放棄了他在董事會的職位。",
+        "D. 他剛剛被選入董事會。"
+      ],
+      "ans": "C",
+      "explain": "He must have relinquished his position on the board voluntarily. (他一定自願放棄了他在董事會的職位。) relinquish 指「放棄、交出」；must have V-p.p. 用於強烈推測過去發生的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Our quarterly sales have been surpassing all initial projections.",
+      "options": [
+        "A. The sales are unfortunately dropping fast.",
+        "B. We need to try harder to meet the minimum quota.",
+        "C. Projections are usually completely useless anyway.",
+        "D. That's fantastic news for our long-term shareholders!"
+      ],
+      "ans": "D",
+      "explain": "Our quarterly sales have been surpassing all initial projections. (我們的季度銷售額一直超越所有最初的預測。) surpass 指「超越」；聽到業績超標，回答「這對股東來說是極好的消息」最為貼切。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The local startup ecosystem is said to have been thriving since the tax cuts.",
+      "options": [
+        "A. 據說自從減稅以來，當地的新創生態系統一直蓬勃發展。",
+        "B. 減稅政策徹底摧毀了當地的新創生態系統。",
+        "C. 當地新創生態系統一直要求政府增加稅收。",
+        "D. 據說減稅對當地生態系統沒有任何影響。"
+      ],
+      "ans": "A",
+      "explain": "The local startup ecosystem is said to have been thriving since the tax cuts. (據說自從減稅以來，當地的新創生態系統一直蓬勃發展。) thrive 指「繁榮、茁壯」；is said to have been... 是進階被動句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Her authority as a manager must have been undermined by the recent scandal.",
+      "options": [
+        "A. She was promoted to director very recently, actually.",
+        "B. Yes, people are openly questioning her leadership now.",
+        "C. The coal miners have been on strike for two weeks.",
+        "D. The scandal turned out to be completely fake."
+      ],
+      "ans": "B",
+      "explain": "Her authority as a manager must have been undermined by the recent scandal. (她身為經理的權威一定被最近的醜聞削弱了。) undermine 指「暗中破壞、削弱」；回應「是的，大家現在都在質疑她的領導能力」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We have been allocating additional resources to the new branch all month.",
+      "options": [
+        "A. Where exactly is the new branch located?",
+        "B. The new branch was permanently closed yesterday.",
+        "C. How much of the expansion budget is still left?",
+        "D. Allocation is definitely not needed at this stage."
+      ],
+      "ans": "C",
+      "explain": "We have been allocating additional resources to the new branch all month. (我們整個月份都在分配額外資源給新分公司。) allocate 指「分配、撥出」；回應詢問「擴張預算還剩多少？」延續了資源分配的話題。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The election results are expected to be conceded by the opposition tonight.",
+      "options": [
+        "A. 預期反對派會贏得今晚的選舉。",
+        "B. 選舉結果已被政府秘密隱瞞。",
+        "C. 今晚將全面重新計算所有選票。",
+        "D. 預期反對派今晚會承認敗選。"
+      ],
+      "ans": "D",
+      "explain": "The election results are expected to be conceded by the opposition tonight. (預期反對派今晚會承認選舉結果／承認敗選。) concede 指「讓步、承認失敗」；常與選舉結果搭配。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Consumer demand must have outstripped our supply much faster than anticipated.",
+      "options": [
+        "A. Yes, we completely ran out of stock by Tuesday.",
+        "B. Consumer demand is incredibly low right now.",
+        "C. The global supply chain has been severely broken.",
+        "D. Fast overnight delivery is guaranteed for all orders."
+      ],
+      "ans": "A",
+      "explain": "Consumer demand must have outstripped our supply much faster than anticipated. (消費者的需求超過我們供應的速度一定比預期的快很多。) outstrip 指「超過、勝過」；回答「是的，我們星期二就完全缺貨了」符合情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The financial issues we have been discussing pertain exclusively to the upcoming merger.",
+      "options": [
+        "A. 我們討論的財務問題與合併完全無關。",
+        "B. 我們一直討論的財務問題僅與即將到來的合併有關。",
+        "C. 這些嚴重的財務問題已經導致合併案被取消。",
+        "D. 所有會議討論的問題都與公司財務無關。"
+      ],
+      "ans": "B",
+      "explain": "The financial issues we have been discussing pertain exclusively to the upcoming merger. (我們一直討論的財務問題僅與即將到來的合併有關。) pertain to 指「關於、有關」；exclusively 意為「專門地」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The entire factory renovation process is being overseen by an external consultant.",
+      "options": [
+        "A. I haven't seen the new factory layout yet.",
+        "B. Total renovation is simply too expensive for us.",
+        "C. I hope they have relevant industrial experience.",
+        "D. The external consultant was just fired yesterday."
+      ],
+      "ans": "C",
+      "explain": "The entire factory renovation process is being overseen by an external consultant. (整個工廠的翻新過程正由一位外部顧問監督。) oversee 指「監督、管理」；回應「希望他們有相關的工業經驗」很自然。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The original employment contract must have stipulated a strict non-compete clause.",
+      "options": [
+        "A. 原始合約沒有包含任何工作限制。",
+        "B. 員工今天必須簽署新的競業禁止條款。",
+        "C. 原始合約的各項條款一直被員工違反。",
+        "D. 原始僱傭合約一定規定了嚴格的競業禁止條款。"
+      ],
+      "ans": "D",
+      "explain": "The original employment contract must have stipulated a strict non-compete clause. (原始僱傭合約一定規定了嚴格的競業禁止條款。) stipulate 指「規定、約定」；must have stipulated 是對合約內容的肯定推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We have been searching for a commercially viable alternative to plastic packaging.",
+      "options": [
+        "A. Have you found any promising biodegradable materials yet?",
+        "B. Plastic is absolutely the only option available to us.",
+        "C. The new television commercial was extremely successful.",
+        "D. We stopped searching for alternatives late last year."
+      ],
+      "ans": "A",
+      "explain": "We have been searching for a commercially viable alternative to plastic packaging. (我們一直在尋找商業上可行的塑膠包裝替代方案。) viable 指「可實行的、能存活的」；回應「你們有找到任何有潛力的生物可分解材料嗎？」最對題。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The preliminary research findings have been heavily criticized by the scientific community.",
+      "options": [
+        "A. 初步的研究結果受到了科學界的熱烈讚賞。",
+        "B. 初步的研究結果受到了科學界的嚴厲批評。",
+        "C. 科學界一致拒絕進行任何初步的研究調查。",
+        "D. 這項研究的結果已經是最終定案，無可更改。"
+      ],
+      "ans": "B",
+      "explain": "The preliminary research findings have been heavily criticized by the scientific community. (初步的研究結果受到了科學界的嚴厲批評。) preliminary 指「初步的」；have been criticized 是現在完成式的被動語態。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：抱怨",
+      "ans": "COMPLAINT",
+      "speak": "complaint"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：解決方案",
+      "ans": "RESOLUTION",
+      "speak": "resolution"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：進行中的",
+      "ans": "ONGOING",
+      "speak": "ongoing"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：核銷",
+      "ans": "REIMBURSE",
+      "speak": "reimburse"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：補償",
+      "ans": "COMPENSATION",
+      "speak": "compensation"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：進展",
+      "ans": "PROGRESS",
+      "speak": "progress"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：回饋",
+      "ans": "FEEDBACK",
+      "speak": "feedback"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：截止日期",
+      "ans": "DEADLINE",
+      "speak": "deadline"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：結果",
+      "ans": "OUTCOME",
+      "speak": "outcome"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直致力於",
+      "ans": "HAVE BEEN WORKING",
+      "speak": "have been working"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定忘記了",
+      "ans": "MUST HAVE FORGOTTEN",
+      "speak": "must have forgotten"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：處理疑慮",
+      "ans": "ADDRESS THE CONCERN",
+      "speak": "address the concern"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：可能誤解了",
+      "ans": "MIGHT HAVE MISUNDERSTOOD",
+      "speak": "might have misunderstood"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：已經被延遲了",
+      "ans": "HAS BEEN DELAYED",
+      "speak": "has been delayed"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定收到了",
+      "ans": "MUST HAVE RECEIVED",
+      "speak": "must have received"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：提供退款",
+      "ans": "OFFER A REFUND",
+      "speak": "offer a refund"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：評估結果",
+      "ans": "EVALUATE THE RESULTS",
+      "speak": "evaluate the results"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：調查此事",
+      "ans": "LOOK INTO IT",
+      "speak": "look into it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們一直致力於此",
+      "ans": "WE HAVE BEEN WORKING ON THIS",
+      "speak": "we have been working on this"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我為延遲道歉",
+      "ans": "I APOLOGIZE FOR THE DELAY",
+      "speak": "i apologize for the delay"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她一定已經完成了",
+      "ans": "SHE MUST HAVE FINISHED IT",
+      "speak": "she must have finished it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們可以提供折扣",
+      "ans": "WE CAN OFFER A DISCOUNT",
+      "speak": "we can offer a discount"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：讓我澄清我的觀點",
+      "ans": "LET ME CLARIFY MY POINT",
+      "speak": "let me clarify my point"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：實施",
+      "ans": "IMPLEMENT",
+      "speak": "implement"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I M P L _ M E N T (實施)",
+      "ans": "E",
+      "speak": "implement"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S T R _ T _ G Y (策略)",
+      "ans": "AE",
+      "speak": "strategy"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A L L O C _ T E (分配)",
+      "ans": "A",
+      "speak": "allocate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E V _ L _ A T E (評估)",
+      "ans": "AU",
+      "speak": "evaluate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：O P T I M I Z _ (最佳化)",
+      "ans": "E",
+      "speak": "optimize"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：整合",
+      "ans": "INTEGRATE",
+      "speak": "integrate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N T E G R _ T E (整合)",
+      "ans": "A",
+      "speak": "integrate"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：無法接受的",
+      "ans": "UNACCEPTABLE",
+      "speak": "unacceptable"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：U N _ C C _ P T _ B L E (無法接受的)",
+      "ans": "AEA",
+      "speak": "unacceptable"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C O M P _ N S _ T I O N (補償)",
+      "ans": "EA",
+      "speak": "compensation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：解決方案",
+      "ans": "RESOLUTION",
+      "speak": "resolution"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E S O L _ T I O N (解決方案)",
+      "ans": "U",
+      "speak": "resolution"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不便",
+      "ans": "INCONVENIENCE",
+      "speak": "inconvenience"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N V _ S T _ G A T E (調查)",
+      "ans": "EI",
+      "speak": "investigate"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：核銷；退款",
+      "ans": "REIMBURSE",
+      "speak": "reimburse"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R _ I M B _ R S _ (核銷；退款)",
+      "ans": "EUE",
+      "speak": "reimburse"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：有瑕疵的",
+      "ans": "DEFECTIVE",
+      "speak": "defective"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D _ F _ C T I V E (有瑕疵的)",
+      "ans": "EE",
+      "speak": "defective"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：申訴；抱怨",
+      "ans": "GRIEVANCE",
+      "speak": "grievance"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：G R _ _ V _ N C E (申訴；抱怨)",
+      "ans": "IEA",
+      "speak": "grievance"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I T _ N _ R _ R Y (行程)",
+      "ans": "IEA",
+      "speak": "itinerary"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：生產力",
+      "ans": "PRODUCTIVITY",
+      "speak": "productivity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R O D _ C T _ V I T Y (生產力)",
+      "ans": "UI",
+      "speak": "productivity"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：不斷地",
+      "ans": "CONSTANTLY",
+      "speak": "constantly"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O N S T _ N T L Y (不斷地)",
+      "ans": "A",
+      "speak": "constantly"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：徹底地",
+      "ans": "THOROUGHLY",
+      "speak": "thoroughly"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T H O R O _ G H L _ (徹底地)",
+      "ans": "UY",
+      "speak": "thoroughly"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Business Review: The retail giant's downfall is generally understood to have been triggered by its failure to adapt to e-commerce. For years, executives had been ignoring the digital shift, mistakenly believing their brick-and-mortar dominance was unassailable. They must have severely miscalculated consumer behavior. Now, large-scale layoffs are expected to be announced. Q: Which of the following best describes the executives' past mindset?",
+      "options": [
+        "A. They were overly confident in their physical stores.",
+        "B. They were pioneering the transition to digital sales.",
+        "C. They have been constantly restructuring the company.",
+        "D. They expected the layoffs to boost their stock price."
+      ],
+      "ans": "A",
+      "explain": "文中指出主管們誤以為他們的實體店優勢是無懈可擊的 (mistakenly believing their brick-and-mortar dominance was unassailable)，代表他們對實體店過度自信。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Science Journal: Anthropologists have been debating the purpose of the newly discovered ruins. The complex structure is hypothesized to have been utilized as a celestial observatory. Given the precision of the stonework, the builders must have possessed advanced mathematical knowledge. Q: What is the main conclusion drawn about the ancient builders?",
+      "options": [
+        "A. They struggled with complex architectural designs.",
+        "B. They were highly skilled in mathematics.",
+        "C. They used the ruins primarily for religious rituals.",
+        "D. They have been living in the region for centuries."
+      ],
+      "ans": "B",
+      "explain": "短文推論「the builders must have possessed advanced mathematical knowledge」（建造者一定具備先進的數學知識），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Policy Paper Summary: The proposed carbon tax has been facing fierce opposition from industrial sectors. Proponents argue that the measure is essential and is proven to have reduced emissions in neighboring countries. The government's failure to consult industry leaders beforehand must have exacerbated the backlash. Q: Why did the policy face a severe backlash according to the passage?",
+      "options": [
+        "A. It failed to reduce emissions in neighboring countries.",
+        "B. The government did not communicate with industry leaders in advance.",
+        "C. Industrial sectors have been demanding higher taxes.",
+        "D. Proponents did not believe the measure was essential."
+      ],
+      "ans": "B",
+      "explain": "文中提到「The government's failure to consult industry leaders beforehand must have exacerbated the backlash」（政府事前未諮詢業界領袖一定加劇了反彈）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Tech News: Developers have been working around the clock to patch a critical vulnerability. The security flaw is reported to have compromised the data of millions of users. The company's stock plummeted following the breach; investors must have panicked over the potential legal liabilities. Q: What was the consequence of the security flaw?",
+      "options": [
+        "A. The developers were sued by the investors.",
+        "B. Millions of users lost their internet connection.",
+        "C. The company's stock value dropped sharply.",
+        "D. The vulnerability was patched before any data was lost."
+      ],
+      "ans": "C",
+      "explain": "文章明確指出「The company's stock plummeted following the breach」（漏洞發生後公司股票暴跌）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Editorial Opinion: The housing crisis is often said to have been caused solely by foreign investors. However, domestic policies have been restricting urban development for decades. The city council must have ignored the growing population metrics when zoning the residential areas. Q: What does the author believe is a major factor in the housing crisis?",
+      "options": [
+        "A. An influx of foreign workers.",
+        "B. Restrictive domestic urban development policies.",
+        "C. Overdevelopment of residential areas.",
+        "D. Accurate tracking of population metrics."
+      ],
+      "ans": "B",
+      "explain": "作者認為雖然常被說是外國投資者造成的，但國內政策數十年來一直在限制都市發展 (domestic policies have been restricting...)，這才是真正的關鍵因素。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【語法結構】Not only ___ a profound impact on the local economy, but the new infrastructure is also expected to attract foreign investment.",
+      "options": [
+        "A. the project has had",
+        "B. has the project had",
+        "C. the project is having",
+        "D. is the project had"
+      ],
+      "ans": "B",
+      "explain": "否定副詞 Not only 放句首時，後方需接倒裝句型（助動詞移至主詞前），故選 has the project had。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Medical Breakthrough: A new synthetic compound is purported to have cured several autoimmune diseases in clinical trials. Researchers have been refining its chemical structure to minimize side effects. The initial funding agency must have recognized its immense potential early on, given their continuous financial support. Q: What are researchers currently trying to achieve?",
+      "options": [
+        "A. Secure more funding from the agency.",
+        "B. Reduce the side effects of the synthetic compound.",
+        "C. Prove that autoimmune diseases are incurable.",
+        "D. Patent the chemical structure globally."
+      ],
+      "ans": "B",
+      "explain": "文中指出「Researchers have been refining its chemical structure to minimize side effects」（研究人員一直在改良其化學結構以將副作用降至最低）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Corporate Memo: The merger with Apex Corp is anticipated to be finalized by the fourth quarter. Both legal teams have been scrutinizing the contractual obligations diligently. Any discrepancies found now must have been overlooked during the initial audit phase. Q: What is implied about the initial audit phase?",
+      "options": [
+        "A. It was conducted flawlessly without errors.",
+        "B. It was handled exclusively by Apex Corp.",
+        "C. It might not have been thorough enough.",
+        "D. It was deliberately delayed by the legal teams."
+      ],
+      "ans": "C",
+      "explain": "文中提到「現在發現的任何差異一定是在初步審計階段被忽略的」，暗示初步審計可能不夠徹底。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Travel Advisory: Travelers have been experiencing unprecedented delays at the international terminal due to a staff strike. The situation is estimated to be resolved within 48 hours. Passengers whose flights were cancelled must have been notified via email or text message. Q: What caused the delays at the international terminal?",
+      "options": [
+        "A. Severe weather conditions.",
+        "B. A malfunction in the booking system.",
+        "C. A work stoppage by employees.",
+        "D. Unprecedented passenger volume."
+      ],
+      "ans": "C",
+      "explain": "短文指出延誤是由於「staff strike」（員工罷工），即選項中的 work stoppage by employees。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【語法結構】Scarcely ___ the press conference when a reporter asked a provocative question about the scandal.",
+      "options": [
+        "A. had the CEO begun",
+        "B. the CEO had begun",
+        "C. has the CEO begun",
+        "D. the CEO began"
+      ],
+      "ans": "A",
+      "explain": "否定副詞 Scarcely 放句首時需倒裝，且配合 when 引導的過去式子句，主要子句應用過去完成式，故選 had the CEO begun。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Environmental Report: The shrinking of the ice caps is widely acknowledged to have accelerated over the last decade. Scientists have been urging policymakers to implement stringent regulations. The continuous dismissal of these warnings must have contributed significantly to the current ecological crisis. Q: What is the main point regarding policymakers?",
+      "options": [
+        "A. They have successfully implemented stringent regulations.",
+        "B. Their disregard of scientific warnings worsened the crisis.",
+        "C. They are widely acknowledged to have accelerated the research.",
+        "D. They have been urging scientists to collect more data."
+      ],
+      "ans": "B",
+      "explain": "文中提到「The continuous dismissal of these warnings must have contributed significantly...」（不斷忽視這些警告肯定大大促成了當前的危機），指出決策者的忽視使情況惡化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合】Art History Analysis: The stolen masterpiece is now believed to have been smuggled out of the country in a freight container. Detectives have been tracking a notorious art syndicate connected to the heist. Security guards at the museum must have been bribed, as the alarm system was manually disabled. Q: How did the thieves likely manage to disable the alarm system?",
+      "options": [
+        "A. By hacking into the main server.",
+        "B. By paying off the museum's security personnel.",
+        "C. By smuggling a device in a freight container.",
+        "D. By cutting the power supply to the building."
+      ],
+      "ans": "B",
+      "explain": "文中明確推測「Security guards at the museum must have been bribed」（保全一定被收買了），對應選項 B (paying off security personnel)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The true operational costs have been deliberately obscured by the accounting firm.",
+      "options": [
+        "A. 會計師事務所大幅降低了實際的營運成本。",
+        "B. 真實的營運成本已經被清晰且透明地公開。",
+        "C. 真實的營運成本已被會計師事務所蓄意掩蓋。",
+        "D. 會計師事務所發現了營運成本中的重大錯誤。"
+      ],
+      "ans": "C",
+      "explain": "The true operational costs have been deliberately obscured by the accounting firm. (真實的營運成本已被會計師事務所蓄意掩蓋。) obscure 作動詞指「掩蓋、使模糊」；deliberately 意為「蓄意地」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The domestic economy must have been more resilient to inflation than the experts predicted.",
+      "options": [
+        "A. 國內經濟對通貨膨脹的反應非常脆弱且敏感。",
+        "B. 經濟專家極度準確地預測了經濟的反彈趨勢。",
+        "C. 國內經濟完全沒有受到任何通貨膨脹的影響。",
+        "D. 國內經濟對通膨的抵抗力一定比專家預測的更強。"
+      ],
+      "ans": "D",
+      "explain": "The domestic economy must have been more resilient to inflation than the experts predicted. (國內經濟對通膨的抵抗力一定比專家預測的更強。) resilient 指「有韌性的、能迅速恢復的」；must have been 表強烈推測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The consistently high interest rates have been deterring potential foreign investors.",
+      "options": [
+        "A. 持續的高利率一直阻礙著潛在的外國投資者。",
+        "B. 持續的高利率成功吸引了大量的外國資金。",
+        "C. 潛在的投資者對目前的高利率狀態毫不在乎。",
+        "D. 外國投資者持續要求銀行提供更高的利率。"
+      ],
+      "ans": "A",
+      "explain": "The consistently high interest rates have been deterring potential foreign investors. (持續的高利率一直阻礙著潛在的外國投資者。) deter 指「阻嚇、使打消念頭」；使用現在完成進行式強調此現象持續發生。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "An intricate network of environmental sensors is being installed across the metropolitan area.",
+      "options": [
+        "A. 城市目前正在拆除原本極為複雜的感測器網路。",
+        "B. 一個複雜的環境感測器網路正在大都會區安裝中。",
+        "C. 一個簡易且基礎的感測器網路已經安裝完畢。",
+        "D. 大都會區嚴重缺乏用於監控環境的感測器硬體。"
+      ],
+      "ans": "B",
+      "explain": "An intricate network of environmental sensors is being installed across the metropolitan area. (一個複雜的環境感測器網路正在大都會區安裝中。) intricate 指「錯綜複雜的」；is being installed 為現在進行被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Several key financial details must have been omitted from the final quarterly report.",
+      "options": [
+        "A. 最終的季度報告完整包含了所有的財務細節。",
+        "B. 季度報告中的一些細節被刻意過度強調了。",
+        "C. 最終的季報中一定遺漏了幾個關鍵的財務細節。",
+        "D. 公司的最終財務報告尚未編寫完成。"
+      ],
+      "ans": "C",
+      "explain": "Several key financial details must have been omitted from the final quarterly report. (最終的季報中一定遺漏了幾個關鍵的財務細節。) omit 指「遺漏、省略」；must have been omitted 結合了情態動詞與被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "She has been taking a significantly more prominent role in the international trade negotiations.",
+      "options": [
+        "A. I heard she recently resigned from her corporate role.",
+        "B. International trade volumes are unfortunately declining.",
+        "C. The negotiations have been stalled for weeks anyway.",
+        "D. Her leadership has really helped push things forward."
+      ],
+      "ans": "D",
+      "explain": "She has been taking a significantly more prominent role in the international trade negotiations. (她在國際貿易談判中一直扮演著更為突出的角色。) prominent 指「突出的、顯著的」；回應讚賞她的領導能力推動了進展最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A rapid shift towards renewable energy sources is being strongly advocated by policy makers.",
+      "options": [
+        "A. 政策制定者正強烈主張迅速轉向再生能源。",
+        "B. 政策制定者極力反對在近期內使用再生能源。",
+        "C. 轉向再生能源的全球性政策轉型已經徹底完成。",
+        "D. 目前沒有任何政府官員支持再生能源的發展計畫。"
+      ],
+      "ans": "A",
+      "explain": "A rapid shift towards renewable energy sources is being strongly advocated by policy makers. (政策制定者正強烈主張迅速轉向再生能源。) advocate 作動詞指「提倡、主張」；is being strongly advocated 為被動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The emergency rescue efforts must have been severely hampered by the unexpected snowstorm.",
+      "options": [
+        "A. Luckily, the snowstorm cleared up very quickly.",
+        "B. Yes, it made reaching the remote site almost impossible.",
+        "C. The rescue operation was declared a complete success.",
+        "D. We unfortunately don't have enough rescue teams right now."
+      ],
+      "ans": "B",
+      "explain": "The emergency rescue efforts must have been severely hampered by the unexpected snowstorm. (緊急救援行動一定受到了意外暴風雪的嚴重阻礙。) hamper 指「妨礙、阻礙」；回答「是的，這讓抵達偏遠現場幾乎成為不可能」符合因果關係。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have been comprehensively analyzing the long-term implications of this major policy shift.",
+      "options": [
+        "A. 我們刻意忽略了這項重大政策轉變可能帶來的長期影響。",
+        "B. 專家認為這項重大政策轉變並不會帶來任何實際影響。",
+        "C. 我們一直在全面分析這項重大政策轉變的長期影響。",
+        "D. 公司高層認為短期的營利影響遠比長期的政策影響重要。"
+      ],
+      "ans": "C",
+      "explain": "We have been comprehensively analyzing the long-term implications of this major policy shift. (我們一直在全面分析這項重大政策轉變的長期影響。) implication 在此指「可能引發的後果、影響」；comprehensively 意為「全面地」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "A significant portion of the generated revenue is expected to be reinvested into research and development.",
+      "options": [
+        "A. We are actually losing a lot of money this fiscal year.",
+        "B. R&D has been entirely defunded by the new management.",
+        "C. The revenue was strictly set aside for paying off old debt.",
+        "D. That should really help us innovate faster for next year."
+      ],
+      "ans": "D",
+      "explain": "A significant portion of the generated revenue is expected to be reinvested into research and development. (產生的一大部分營收預計將重新投資於研發。) revenue 指「營收」；投資研發的回應「那應該能幫助我們明年加速創新」最恰當。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The engineering team must have worked for three consecutive weekends to meet that impossible deadline.",
+      "options": [
+        "A. 工程團隊一定連續工作了三個週末才趕上那個不可能的期限。",
+        "B. 即使工程團隊努力了，他們依然錯過了那個最後期限。",
+        "C. 為了保持效率，工程團隊在過去的幾個週末都在休息。",
+        "D. 工程團隊只花了一個週末的時間就完成了那項困難的工作。"
+      ],
+      "ans": "A",
+      "explain": "The engineering team must have worked for three consecutive weekends to meet that impossible deadline. (工程團隊一定連續工作了三個週末才趕上那個不可能的期限。) consecutive 指「連續的」；must have worked 推測過去已發生的努力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The current foreign exchange market situation is considered to be highly volatile at this particular moment.",
+      "options": [
+        "A. The market is completely stable right now, don't worry.",
+        "B. Perhaps we should delay our large currency conversion then.",
+        "C. Exchange rates basically never change in this region.",
+        "D. Volatility is just a myth invented by stock brokers."
+      ],
+      "ans": "B",
+      "explain": "The current foreign exchange market situation is considered to be highly volatile at this particular moment. (目前的匯市情況在此刻被認為是高度波動的。) volatile 指「易變的、波動大的」；回應「或許我們該延後大額外幣兌換」是明智的對策。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：列入考量",
+      "ans": "TAKE INTO CONSIDERATION",
+      "speak": "take into consideration"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在談判",
+      "ans": "HAVE BEEN NEGOTIATING",
+      "speak": "have been negotiating"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：為不便道歉",
+      "ans": "APOLOGIZE FOR THE INCONVENIENCE",
+      "speak": "apologize for the inconvenience"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們一定是送錯物品了",
+      "ans": "THEY MUST HAVE SENT THE WRONG ITEM",
+      "speak": "they must have sent the wrong item"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：專案一直進行得很順利",
+      "ans": "THE PROJECT HAS BEEN GOING WELL",
+      "speak": "the project has been going well"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你等了多久了",
+      "ans": "HOW LONG HAVE YOU BEEN WAITING",
+      "speak": "how long have you been waiting"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他可能錯過了航班",
+      "ans": "HE MIGHT HAVE MISSED THE FLIGHT",
+      "speak": "he might have missed the flight"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們需要找到妥協的方法",
+      "ans": "WE NEED TO FIND A COMPROMISE",
+      "speak": "we need to find a compromise"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：問題現在正在解決中",
+      "ans": "THE ISSUE IS BEING RESOLVED NOW",
+      "speak": "the issue is being resolved now"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我一直在審查這些資料",
+      "ans": "I HAVE BEEN REVIEWING THE DATA",
+      "speak": "i have been reviewing the data"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你一定一直非常忙碌",
+      "ans": "YOU MUST HAVE BEEN VERY BUSY",
+      "speak": "you must have been very busy"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們可以討論一下預算嗎",
+      "ans": "COULD WE DISCUSS THE BUDGET",
+      "speak": "could we discuss the budget"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：這個提案一定已經被批准了",
+      "ans": "THIS PROPOSAL MUST HAVE BEEN APPROVED",
+      "speak": "this proposal must have been approved"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：倡議；新計畫",
+      "ans": "INITIATIVE",
+      "speak": "initiative"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：F E _ S I B _ L _ T Y (可行性)",
+      "ans": "AII",
+      "speak": "feasibility"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：全面的；詳盡的",
+      "ans": "COMPREHENSIVE",
+      "speak": "comprehensive"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O M P R _ H _ N S _ V E (全面的；詳盡的)",
+      "ans": "EEI",
+      "speak": "comprehensive"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：正當理由",
+      "ans": "JUSTIFICATION",
+      "speak": "justification"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：J U S T _ F _ C _ T I O N (正當理由)",
+      "ans": "IIA",
+      "speak": "justification"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：不滿",
+      "ans": "DISSATISFACTION",
+      "speak": "dissatisfaction"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D _ S S A T _ S F _ C T I O N (不滿)",
+      "ans": "IIA",
+      "speak": "dissatisfaction"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：獲利能力",
+      "ans": "PROFITABILITY",
+      "speak": "profitability"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R O F _ T _ B _ L I T Y (獲利能力)",
+      "ans": "IAI",
+      "speak": "profitability"
+    }
+  ]
 }

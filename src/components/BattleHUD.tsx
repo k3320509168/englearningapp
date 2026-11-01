@@ -1,3 +1,4 @@
+import { answerTiming } from '../game/answerTiming';
 import { useEffect, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { BONUS_GOLD } from '../game/execute';
@@ -51,7 +52,7 @@ export default function BattleHUD() {
   const openModal = useUiStore(s => s.openModal);
   const retreatAsk = useUiStore(s => s.retreatAsk);
   const setRetreatAsk = useUiStore(s => s.setRetreatAsk);
-  const say = useSpeak();
+  const say = useSpeak(true);
   useBattleClock();
   // 離開戰鬥時關掉撤退確認
   useEffect(() => () => useUiStore.getState().setRetreatAsk(false), []);
@@ -224,7 +225,7 @@ function QuestionCard({ question }: { question: Question }) {
     observer.observe(el);
     return () => observer.disconnect();
   }, [question, blind]);
-  const say = useSpeak();
+  const say = useSpeak(true);
   return (
     <div className="question-card">
       {listening
@@ -325,6 +326,7 @@ function ReflectChoice() {
 }
 
 function AnswerPanel({ question }: { question: Question }) {
+  const seq = useBattleStore(s => s.questionSeq);
   return (
     <div className={`answer-panel ${question.desc.length > 180 ? 'is-long' : ''}`}>
       <ImeWarning />
@@ -335,7 +337,7 @@ function AnswerPanel({ question }: { question: Question }) {
       <QuestionCard question={question} />
       {(question.type === 'spell' || question.type === 'fill') && <TypingAnswer question={question} />}
       {question.type === 'choice' && <ChoiceAnswer question={question} />}
-      {question.type === 'voice' && <VoiceAnswer key={question.desc} question={question} />}
+      {question.type === 'voice' && <VoiceAnswer key={seq} question={question} />}
       {question.desc.length > 180 && <p className="long-question-note">↕ 長題模式：可上下捲動查看題目與選項</p>}
     </div>
   );
@@ -420,13 +422,16 @@ function VoiceAnswer({ question }: { question: Question }) {
   const [error, setError] = useState('');
   const showWord = useBattleStore(s => s.assist?.showWord ?? false);
   const recognizer = useRef<Recognizer | null>(null);
-  const say = useSpeak();
+  const say = useSpeak(true);
 
   // 收音被切斷、只聽到開頭一小段：免費再唸（每題最多 FREE_RETRIES 次，之後照常判定）
   const retries = useRef(0);
 
   useEffect(() => {
+    const b = useBattleStore.getState();
+    const timing = answerTiming(b.question, b.questionSeq);
     recognizer.current = createRecognizer({
+      onPhase: phase => timing.setWaiting(phase === 'waiting'),
       onStart: () => { setListening(true); setError(''); },
       // 一聽到對的答案就提早結束收音
       accept: (t) => { const q = useBattleStore.getState().question; return !!q && q.type === 'voice' && checkVoice(q, t); },
@@ -478,7 +483,7 @@ function VoiceAnswer({ question }: { question: Question }) {
 
 function FeedbackPanel() {
   const feedback = useBattleStore(s => s.feedback);
-  const say = useSpeak();
+  const say = useSpeak(true);
   const q = feedback?.question;
 
   useEffect(() => {

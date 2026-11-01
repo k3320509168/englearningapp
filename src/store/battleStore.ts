@@ -156,6 +156,7 @@ interface BattleState {
   critLeft: number;     // 箭雨類技能：接下來幾次攻擊必定暴擊
   questionLimit: number;
   questionLeft: number;
+  activeAnswerMs: number;
   overtime: boolean;    // 這題已超過 20 秒（前 25 關）：答對不加 combo
   phaseLeft: number;    // 施法確認剩餘時間
   casting: number | null; // 正在確認施放技能的隊員
@@ -215,7 +216,7 @@ interface BattleState {
   startSkillBoss: (id: SkillBossId) => void;
   startBattle: () => void;
   openLesson: () => void;
-  tick: (ms: number) => void;
+  tick: (ms: number, systemPauseMs?: number) => void;
   inputLetter: (letter: string) => void;
   backspace: () => void;
   submitTyped: () => void;
@@ -447,7 +448,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   // 新題目的計時：20 秒，專注技能每題再多 5 秒
   const freshTimer = (focusMs: number) => {
     const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party);
-    return { questionLimit: limit, questionLeft: limit, overtime: false };
+    return { questionLimit: limit, questionLeft: limit, activeAnswerMs: 0, overtime: false };
   };
 
   const loadStage = (stageIdx: number, isFirst = false) => {
@@ -1295,6 +1296,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     critLeft: 0,
     questionLimit: QUESTION_LIMIT,
     questionLeft: QUESTION_LIMIT,
+    activeAnswerMs: 0,
     overtime: false,
     phaseLeft: 0,
     casting: null,
@@ -1407,10 +1409,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     },
 
     // 由介面定時呼叫。只有作答與施法確認時計時，其他畫面（預習、解說、結算）都暫停
-    tick: (ms) => {
+    tick: (ms, systemPauseMs = 0) => {
       const s = get();
       if (!s.active || ms <= 0) return;
       if (s.phase === 'answering') {
+        const activeMs = Math.max(0, ms - Math.min(ms, Math.max(0, systemPauseMs)));
+        set({ activeAnswerMs: s.activeAnswerMs + activeMs });
         // 寶箱倒數照常結束，但不能靠待機或自動超時零作答推進小關。
         if (s.stages[s.stageIdx]?.kind === 'treasure') {
           const treasureLeft = Math.max(0, s.treasureLeft - ms);
@@ -1423,7 +1427,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         // 敵人行動條：集滿就依攻擊模式出招
         if (gaugeActive(s)) {
           const kind = foeKindOf(s.stages[s.stageIdx], s.stageIdx, s.stages.length) ?? 'normal';
-          const gauge = s.enemyGauge + (ms * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
+          const writing = s.question?.type === 'spell' || s.question?.type === 'fill';
+          const gauge = s.enemyGauge + (activeMs * (writing ? 0.7 : 1) * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
           if (gauge >= 1) {
             const move = nextMove(s);
             if (move) performMove(move);
@@ -1431,7 +1436,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
           } else set({ enemyGauge: gauge });
         }
         if (s.overtime) return;
-        const questionLeft = Math.max(0, s.questionLeft - ms);
+        const questionLeft = Math.max(0, s.questionLeft - activeMs);
         if (questionLeft > 0) { set({ questionLeft }); return; }
         // 新手關（A1 1-1～1-7）不計時：時間到也不中斷 combo，慢慢想
         if (s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx, s.levelKey)) { set({ questionLeft: 0 }); return; }
@@ -1462,7 +1467,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const converted = prepare(s.original);
       // 句子型的口說題沒辦法改成拼寫：直接換下一題（不算答錯）
       if (converted.type === 'voice') { set({ ...nextQuestion(), typed: '', assist: null, assistSource: null }); return; }
-      set({ question: converted, typed: '', assist: null, assistSource: null, questionSeq: s.questionSeq + 1 });
+      set({ question: converted, typed: '', assist: null, assistSource: null, questionSeq: s.questionSeq + 1, activeAnswerMs: 0 });
     },
 
     // 送出拼寫：按 Enter 或「送出」按鈕才判定
@@ -1535,7 +1540,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const mods = chooseReflect(s.mods, skill);
       // 換成選好的題型，馬上就能反擊
       const q = pickPreferred({ skill }, s.original);
-      set({ mods, modChoice: null, bossCast: cast(`🪞 題型反射：答對一題${skillName(skill)}題就反射回去！`), ...(q ? { original: q, question: prepare(q), questionSeq: s.questionSeq + 1, typed: '', assist: null, assistSource: null } : {}) });
+      set({ mods, modChoice: null, bossCast: cast(`🪞 題型反射：答對一題${skillName(skill)}題就反射回去！`), ...(q ? { original: q, question: prepare(q), questionSeq: s.questionSeq + 1, activeAnswerMs: 0, typed: '', assist: null, assistSource: null } : {}) });
     },
 
     requestSkill: (memberIdx) => {

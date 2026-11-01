@@ -35,6 +35,16 @@ Antigravity 實際可用模型（2026-11-01 `agy models`）：
 
 背景派工時要加 `--model <名稱>`，不要用預設模型。
 
+**模型依難度選、額度用完自動降級（製作人 2026-11-01 授權 PM 自行決定）**：
+| 難度 | 例子 | 首選 | 額度用完改用 |
+|---|---|---|---|
+| 高 | 劇本、平衡第二意見、長文脈程式審查 | argon-high | argon-medium → flash-high |
+| 中 | 審題、出題、規格審查 | argon-medium | argon-low → flash-high |
+| 低 | 實玩截圖、格式檢查、統計 | flash-medium | flash-low |
+降級產出照常使用，但**出題**降到 Flash 級時只能放 pending、要再審。派工時在 COLLAB 記下實際用的模型。
+**讓製作人看得到**：Antigravity 任務在 Claude Code 的終端機分頁用 `agy -i`（互動模式，可即時看到過程）執行；`agy -p` 只在結束時才印出結果。背景指令開的對話不會出現在 Antigravity App 的對話列表。
+**不要在 Antigravity App 的「EngGame」專案裡直接叫它做事**：那個專案指向 Claude 的主資料夾（feat/round4），會和整合分支互相覆蓋；App 只用來聊天或看狀態。
+
 ## 3. Token 用量原則
 - **誰剩得多誰多做。** 用量吃緊時：Claude 只做決策、審查、驗收；寫程式全交 Codex；測試、審題、出題交 Antigravity。
 - 每方開工時在 `COLLAB.md` 留言板寫一行狀態，例如「Codex｜額度約剩 60%｜C7 開工」；額度用完也留一行，PM 會改派。

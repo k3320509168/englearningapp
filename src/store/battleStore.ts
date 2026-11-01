@@ -1,3 +1,4 @@
+import { retryAid } from '../game/retryAid';
 import { create } from 'zustand';
 import type { Question, QuestionSkill, Stage } from '../game/types';
 import {
@@ -181,9 +182,12 @@ interface BattleState {
   bonusRound: boolean;  // 正在做加成題（怪物已倒，不反擊、不影響結算）
   bonusGold: number;    // 這場加成題拿到的金幣（上限 BONUS_GOLD_CAP）
   bonusReturn: BattleState['phase'] | null; // 加成題做完回到哪個畫面
-  // 同一關連續失敗的援助（第六輪）：失敗 3 次起有一次免費復活、5 次起承受傷害 −15%
+  // 同一關連敗援助，首領依v2.2第2/3/4/6戰逐階提供
   aidRevive: boolean;
   aidGuard: number;
+  aidTimeMs: number;
+  aidReviveRatio: number;
+  aidSealTotal: number;
   blessed: boolean;   // 祝福：答錯 combo 只扣 30%（首領戰固定有；一般關失敗後有機率）
   enemyTurn: number;  // A2+ 敵人主動攻擊的計數（每題 +1）
   // 區域最終魔王的特殊技能（見 game/bossSkills.ts）
@@ -251,6 +255,12 @@ let easyQueue: Question[] = [];
 // 只用在一般關卡（頭目、菁英、寶箱、復仇魔王照常出題）
 // 同一關失敗的次數（祝福觸發用）：key = 區域#關卡，通過那一關就清掉
 const stageFails = new Map<string, number>();
+// 離線獨立快照模擬用；一般遊戲重打保留原本記憶體內的連敗狀態。
+export const snapshotRetryState = () => [...stageFails.entries()];
+export function restoreRetryState(rows: readonly [string, number][]) {
+  stageFails.clear();
+  for (const [key, count] of rows) stageFails.set(key, count);
+}
 const failKey = (levelKey: string, stageIdx: number) => `${levelKey}#${stageIdx}`;
 
 const takeEasy = (stage: Stage) => (stage.bossMode || stage.revenge || stage.kind ? undefined : easyQueue.shift());
@@ -273,14 +283,11 @@ function celebrateLevelUp(level: number) {
   });
 }
 
-// 同一關連續失敗的援助：2 次必定女神祝福（blessingChance）、3 次起一次免費復活、5 次起承受傷害 −15%
-const AID_REVIVE_AFTER = 3;
-const AID_GUARD_AFTER = 5;
-const AID_GUARD = 0.85;
+// 首領與一般關的連敗援助由retryAid依失敗次數分級。
 const REVIVE_TEXT = '✨ 女神的祝福：全隊復活！';
 // 答錯被反擊後，行動條最多停在這裡（不會同一題連續挨兩次）
 const COUNTER_GAUGE_CAP = 0.6;
-const reviveAll = (party: Member[]) => party.map(m => ({ ...m, hp: Math.max(1, Math.round(m.maxHp * 0.3)) }));
+const reviveAll = (party: Member[], ratio: number) => party.map(m => ({ ...m, hp: Math.max(1, Math.round(m.maxHp * ratio)) }));
 
 // 每張三星關卡的第 15 關（小 BOSS）：如果有到期的錯題，換成「復仇魔王」
 function withRevenge(stage: Stage, stageIdx: number, levelIdx: number): Stage {
@@ -447,8 +454,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q), random);
 
   // 新題目的計時：20 秒，專注技能每題再多 5 秒
-  const freshTimer = (focusMs: number) => {
-    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party);
+  const freshTimer = (focusMs: number, aidMs = get().aidTimeMs) => {
+    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party) + aidMs;
     return { questionLimit: limit, questionLeft: limit, activeAnswerMs: 0, overtime: false };
   };
 
@@ -467,9 +474,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const waves = s.mode === 'normal' && !stage.bossMode && !stage.revenge && !stage.kind ? startWaves(s.levelIdx, stageIdx, NORMAL_WAVES, s.levelKey) : 1;
     const fails = s.mode === 'normal' ? stageFails.get(failKey(s.levelKey, stageIdx)) ?? 0 : 0;
     const blessed = bossFight || (fails > 0 && random() < blessingChance(fails));
-    const aidRevive = fails >= AID_REVIVE_AFTER;
-    const aidGuard = fails >= AID_GUARD_AFTER ? AID_GUARD : 1;
-    const aidText = [aidRevive && '全滅時復活一次', aidGuard < 1 && `承受傷害 −${Math.round((1 - aidGuard) * 100)}%`].filter(Boolean).join('、');
+    const aid = retryAid(fails, bossFight);
+    const aidRevive = aid.revive, aidGuard = aid.damage;
+    const aidText = [aid.energy && '開場技能能量至少50%＋守護護盾', aid.timeMs > 0 && '思考時間＋2秒', aidRevive && '全滅時復活一次', aidGuard < 1 && `承受傷害 −${Math.round((1 - aidGuard) * 100)}%`].filter(Boolean).join('、');
     // 小 BOSS、大 BOSS 與菁英怪各帶一招共用技能（A2+ 開始，新手區不加難度）
     // 菁英怪帶一招共用技能（A2+ 開始）；首領改用機制模組（第八輪）
     const foe = s.mode === 'normal' && s.levelIdx >= 2 && !stage.revenge && stage.kind === 'elite' ? foeSkillFor(stageIdx) : null;
@@ -483,7 +490,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const def = bossSkillFor(s.levelIdx);
       useUiStore.getState().celebrate({
         icon: def.icon, title: `區域魔王：${def.boss}`,
-        sub: `${def.name}：${def.desc}｜破解：${def.counter}${modText ? `｜${modText}` : ''}｜魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
+        sub: `${def.name}：${def.desc}｜破解：${def.id === 'seal' && aid.sealTotal === 8 ? def.counter.replace('10 題', '8 題') : def.counter}${modText ? `｜${modText}` : ''}｜魔王祝福：答錯 combo 只扣 30%${aidText ? `｜女神援助：${aidText}` : ''}`, color: '#ff8a8a', blocking: true,
       });
     } else if (bossFight) {
       const big = stageInMap(stageIdx) === 20;
@@ -531,6 +538,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       monsterShield: stage.kind === 'elite' ? ELITE_SHIELD : 0,
       stageHits: 0,
       wave: 1, waves, bossFight, blessed, aidRevive, aidGuard, enemyTurn: 0,
+      aidTimeMs: aid.timeMs, aidReviveRatio: aid.reviveRatio, aidSealTotal: aid.sealTotal,
+      ...(aid.guard ? { shield: true, comboGuard: true } : {}),
+      ...(aid.energy ? { party: s.party.map(m => ({ ...m, energy: Math.max(m.energy, Math.ceil(m.energyMax * .5)) })) } : {}),
       // 最低答題數：寶箱怪、復仇魔王、黃金之路與擴充魔王不限
       isReplayStage: !!save().firstClearXpClaimed[`${s.levelKey}:${stageIdx}`],
       stageAnswers: 0, stageSubmissions: 0, executing: false, bonusLeft: 0, bonusRound: false, bonusReturn: null,
@@ -548,7 +558,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       assist: null,
       assistSource: null,
       focusMs: 0,
-      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0),
+      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0, aid.timeMs),
       casting: null,
       event: nextEvent('stage'),
     });
@@ -639,9 +649,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
       retrying: false, ...timer,
-      ...(boss.frostLeft > 0 ? { questionLimit: FROST_LIMIT, questionLeft: FROST_LIMIT } : {}),
+      ...(boss.frostLeft > 0 ? { questionLimit: FROST_LIMIT + s.aidTimeMs, questionLeft: FROST_LIMIT + s.aidTimeMs } : {}),
       // 減速：這一題少幾秒（最少留 6 秒）
-      ...(s.slowNext > 0 ? { questionLimit: Math.max(6000, timer.questionLimit - s.slowNext), questionLeft: Math.max(6000, timer.questionLimit - s.slowNext), slowNext: 0 } : {}),
+      ...(s.slowNext > 0 ? { questionLimit: Math.max(6000 + s.aidTimeMs, timer.questionLimit - s.slowNext), questionLeft: Math.max(6000 + s.aidTimeMs, timer.questionLimit - s.slowNext), slowNext: 0 } : {}),
       enemyTurn, ...statuses,
       ...boss,
     };
@@ -743,7 +753,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       : s.poison;
     const knockouts = party.filter((m, i) => isAlive(s.party[i]) && !isAlive(m)).length;
     const rescued = party.every(m => !isAlive(m)) && s.aidRevive;
-    if (rescued) party = reviveAll(party);
+    if (rescued) party = reviveAll(party, s.aidReviveRatio);
     const wiped = party.every(m => !isAlive(m));
     const attackerIdx = isAlive(party[s.attackerIdx] ?? party[0]) ? s.attackerIdx : Math.max(0, nextAlive(party, s.attackerIdx));
     set({
@@ -904,7 +914,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (s.stunned && chained) Object.assign(patch, { stunned: null, bossCast: cast('🔗 連攜攻擊把隊友拉回來了！') });
     if (s.bossSkill === 'seal' && s.sealed) {
       const sealHits = s.sealHits + 1;
-      Object.assign(patch, streak >= SEAL_BREAK_COMBO || sealHits >= SEAL_BREAK_TOTAL
+      Object.assign(patch, streak >= SEAL_BREAK_COMBO || sealHits >= Math.min(SEAL_BREAK_TOTAL, s.aidSealTotal)
         ? { sealed: false, sealHits, charge: 2, bossCast: cast('🔓 封印解除！Fever：下一擊 ×2') }
         : { sealHits });
     }
@@ -1213,9 +1223,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const hurt = strike.party.map(m => (m.id === target && isAlive(m) ? { ...m, hp: Math.max(0, m.hp - Math.round(m.maxHp * modFx.penalty * s.aidGuard)) } : m));
       strike = { ...strike, ...withTotals(hurt), wiped: hurt.every(m => !isAlive(m)) };
     }
-    // 連敗援助：這次全滅改成全員以 30% 生命站起來（每次挑戰一次）
+    // 連敗援助：這次全滅按援助比例讓全員站起來（每次挑戰一次）
     const rescued = strike.wiped && s.aidRevive;
-    if (rescued) strike = { ...strike, ...withTotals(reviveAll(strike.party)), wiped: false };
+    if (rescued) strike = { ...strike, ...withTotals(reviveAll(strike.party, s.aidReviveRatio)), wiped: false };
     set({
       ...base,
       mapStats: { ...base.mapStats, knockouts: strike.mapStats.knockouts },
@@ -1357,6 +1367,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     bonusReturn: null,
     aidRevive: false,
     aidGuard: 1,
+    aidTimeMs: 0, aidReviveRatio: .3, aidSealTotal: SEAL_BREAK_TOTAL,
     blessed: false,
 
     startLevel: (levelKey, transform, fromStage) => {

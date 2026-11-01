@@ -13,7 +13,7 @@ import { assertBudget, assertBudgetLedger, budgetMaintenance, budgetReport, simu
 import type { BudgetLedger, BudgetSave } from './sim-budget';
 const ROOT = new URL('../src', import.meta.url).pathname;
 const { LEVELS, addBank, questionDifficulty, questionSkill } = await import(`${ROOT}/game/QuestionData`);
-const { useBattleStore, setBattleRandom } = await import(`${ROOT}/store/battleStore`);
+const { useBattleStore, setBattleRandom, snapshotRetryState, restoreRetryState } = await import(`${ROOT}/store/battleStore`);
 const { useSaveStore, initialSave } = await import(`${ROOT}/store/saveStore`);
 // 模擬只靠獨立快照保存；停用localStorage序列化I/O，不改store行為。SIM_PERSIST=1作等價對照。
 if (process.env.SIM_PERSIST !== '1') useSaveStore.persist.setOptions({ storage: { getItem: () => null, setItem: () => undefined, removeItem: () => undefined } });
@@ -41,7 +41,7 @@ const budgetEpoch = budgetClock?.now() ?? 0;
 if (budgetClock) process.once('exit', () => budgetClock.restore());
 let preparingBudget = false, budgetMapsCompleted = 0, budgetReviewDays = 0;
 let budgetLedger: BudgetLedger = {};
-const budgetSnapshots = new Map<string, { save: BudgetSave; wrong: string[]; at: number; ledger: BudgetLedger }>();
+const budgetSnapshots = new Map<string, { save: BudgetSave; wrong: string[]; retry: [string, number][]; at: number; ledger: BudgetLedger }>();
 const budgetPath: unknown[] = [];
 let budgetStop: string | null = null;
 const LEARN = Number(process.env.LEARN ?? 0.1);
@@ -65,12 +65,13 @@ function setup(r: number, stage: number) {
       if (!snap) throw new Error(`Unreached budget checkpoint r${r}:${stage}`);
       useSaveStore.setState(structuredClone(snap.save));
       wrongSeen.clear(); snap.wrong.forEach(key => wrongSeen.add(key));
+      restoreRetryState(snap.retry);
       budgetClock!.set(snap.at); budgetLedger = { ...snap.ledger };
       return;
     }
     budgetClock!.set(budgetEpoch + (Math.floor(budgetMapsCompleted / mapsPerDay) + budgetReviewDays) * 86400000);
     budgetMaintenance(rand, budgetLedger);
-    if (!budgetSnapshots.has(`${r}:${stage}`)) budgetSnapshots.set(`${r}:${stage}`, { save: snapshotSave(), wrong: [...wrongSeen], at: budgetClock!.now(), ledger: { ...budgetLedger } });
+    if (!budgetSnapshots.has(`${r}:${stage}`)) budgetSnapshots.set(`${r}:${stage}`, { save: snapshotSave(), wrong: [...wrongSeen], retry: snapshotRetryState(), at: budgetClock!.now(), ledger: { ...budgetLedger } });
     budgetPath.push({ region: r, stage, date: new Date().toISOString(), xpLedger: { ...sv().xpLedger }, ...budgetReport(budgetLedger) });
     return;
   }

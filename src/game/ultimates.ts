@@ -1,13 +1,13 @@
 // Combo 招式（第二十一輪，0～100 萬）：12 階＝普通攻擊＋11 段大招。combo 達到門檻時，攻擊換成職業專屬的招式演出，
 // 屬性決定顏色與粒子（見 ultimateFx.ts）。只影響畫面，不另外乘傷害（傷害由 comboMultiplier 決定）。
-// 第 12 階（30 萬）之後每多一段再多一層回響光環；到 100 萬播一次「百萬 Combo」成就演出。
+// 第 12 階（100 萬）之後每多一段再多一層回響光環；到 100 萬播一次「百萬 Combo」成就演出。
 import type { ClassId } from './character';
 
-export const ULTIMATE_THRESHOLDS = [10, 20, 50, 100, 300, 1000, 3000, 10000, 30000, 100000, 300000];
+export const ULTIMATE_THRESHOLDS = [5, 10, 20, 35, 50, 75, 200, 1000, 10000, 100000, 1000000];
 export const MILLION_COMBO = 1000000;
 
 // 各階的稱號（招式名稱前的分級，顯示在招式名旁）
-export const ULTIMATE_RANKS = ['初階技能', '戰技覺醒', '強化戰技', '奧義', '超奧義', '傳說技', '神話技', '領域技', '超領域', '神域降臨', '終極奧義'];
+export const ULTIMATE_RANKS = ['初階技能', '強化技能', '戰技覺醒', '進階戰技', '奧義', '超奧義', '傳說技', '神話技', '領域技', '神域降臨', '終極奧義'];
 
 export const ULTIMATE_NAMES: Record<ClassId, string[]> = {
   swordsman: ['雙月斬', '月牙劍氣', '天降巨劍斬', '勝利聖劍', '萬劍齊射', '一刀斬斷天地', '十字天斷', '無盡劍域', '時空斬界', '萬象劍神', '斬斷因果'],
@@ -25,8 +25,8 @@ export function ultimateTier(combo: number): number {
 }
 export const MAX_ULTIMATE_TIER = ULTIMATE_THRESHOLDS.length;
 
-// 30 萬以上的回響層數：每多 14 萬一層，最多 5 層（避免畫面太亂）
-export const ultimateEchoes = (combo: number) => (combo < 300000 ? 0 : Math.min(5, 1 + Math.floor((combo - 300000) / 140000)));
+// 100 萬以上的回響層數：每多 14 萬一層，最多 5 層（避免畫面太亂）
+export const ultimateEchoes = (combo: number) => (combo < MILLION_COMBO ? 0 : Math.min(5, 1 + Math.floor((combo - MILLION_COMBO) / 140000)));
 
 export const ultimateName = (classId: ClassId, tier: number) => (tier > 0 ? ULTIMATE_NAMES[classId][tier - 1] : '');
 export const ultimateRank = (tier: number) => (tier > 0 ? ULTIMATE_RANKS[tier - 1] : '');

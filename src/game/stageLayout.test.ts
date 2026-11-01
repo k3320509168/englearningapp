@@ -16,7 +16,7 @@ describe('三星關卡 20 小關', () => {
     expect(stages[14].bossMode && stages[19].bossMode && stages[stages.length - 1].bossMode).toBe(true);
   });
 
-  it('最低答題數：前置區域從 3 題慢慢加到追獵隊長 9 題；A1 第一關就照九區表', () => {
+  it('練習參考題數：前置區域從 3 題慢慢加到追獵隊長 9 題；A1 第一關就照九區表', () => {
     expect([0, 1, 2, 9].map(i => minAnswers(0, i, PROLOGUE_KEY))).toEqual([3, 4, 5, 9]);
     expect(PROLOGUE_MIN.reduce((a, b) => a + b, 0)).toBe(53);
     expect(minAnswers(0, 0)).toBe(6);
@@ -51,7 +51,7 @@ describe('三星關卡 20 小關', () => {
   });
 });
 
-describe('最低答題數在戰鬥中', () => {
+describe('C1：參考題數不阻擋戰鬥結算', () => {
   const st = () => useBattleStore.getState();
   const answer = () => {
     const q = st().question!;
@@ -66,32 +66,37 @@ describe('最低答題數在戰鬥中', () => {
     if (st().phase === 'lesson') st().startBattle();
   };
 
-  it('一般關把怪打光還不夠題數，就再來一隻', () => {
-    start(20); // A1 2-1：一般關最少 6 題、一開始 5 隻
+  it('下一張地圖一般關也只打固定五隻，不依參考題數補怪', () => {
+    start(20); // A1 2-1：參考 6 題，固定 5 隻
     useBattleStore.setState({ monsterHp: 1, monsterMaxHp: 1 });
     for (let i = 0; i < 5; i++) answer();
-    expect(st().phase).toBe('answering');
-    expect(st().waves).toBe(6);
-    answer();
-    expect(st().phase).not.toBe('answering');
-    expect(st().stageAnswers).toBe(6);
+    expect(st().phase).toBe('monsterDown');
+    expect(st().waves).toBe(5);
+    expect(st().stageAnswers).toBe(5);
+    st().nextStage();
+    expect(st().stageIdx).toBe(21);
   });
 
-  it('首領提前被打到 0 血：進入終結連擊，答滿題數才倒下，期間答錯不會被反擊', () => {
-    start(14); // 1-15 小 BOSS：最少 12 題
+  it('小首領首題致命直接結算，只有自行開始的追擊不會反擊', () => {
+    start(14); // 1-15 小 BOSS：參考 12 題
     useBattleStore.setState({ monsterHp: 1 });
     answer();
-    expect(st().executing).toBe(true);
+    expect(st().phase).toBe('summary');
+    expect(st().executing).toBe(false);
     expect(st().monsterHp).toBe(0);
-    expect(st().event?.execution).toBe(true);
+    expect(st().bonusLeft).toBe(11);
+    st().startBonus();
+    expect(st().executing).toBe(true);
     const hp = st().playerHp;
     const q = st().question!;
     if (q.type === 'choice') st().chooseOption(['A', 'B', 'C', 'D'].find(l => l !== q.ans)!);
-    else { st().inputLetter('Q'); st().submitTyped(); }
+    else if (q.type === 'voice') st().submitVoice('banana');
+    else { st().inputLetter(q.ans[0] === 'Q' ? 'Z' : 'Q'); st().submitTyped(); }
     expect(st().playerHp).toBe(hp);
     st().continueAfterFeedback();
-    for (let i = 0; i < 30 && st().phase === 'answering'; i++) answer();
-    expect(st().stageAnswers).toBeGreaterThanOrEqual(12);
-    expect(['summary', 'monsterDown']).toContain(st().phase);
+    st().endBonus();
+    expect(st().stageAnswers).toBeLessThan(12);
+    expect(st().phase).toBe('summary');
+    expect(st().executing).toBe(false);
   });
 });

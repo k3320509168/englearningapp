@@ -34,7 +34,7 @@ describe('computeDamage', () => {
     expect(computeDamage({ ...plain, combo: 10 })).toBe(BASE_DAMAGE * 2);
     expect(comboMultiplier(50)).toBeCloseTo(4.2, 1);
     expect(comboMultiplier(100)).toBeCloseTo(5.4, 1);
-    expect(comboMultiplier(1000)).toBeLessThan(10);
+    expect(comboMultiplier(1000)).toBe(12);
     for (const c of [10, 50, 100, 300, 1000]) expect(comboMultiplier(c + 1)).toBeGreaterThan(comboMultiplier(c));
   });
 
@@ -180,5 +180,24 @@ describe('question difficulty within a region', () => {
     expect(maxDifficultyAt(49)).toBe(3);
     const late = new Set(Array.from({ length: 200 }, () => questionDifficulty(decks.normal(49))));
     expect(late.has(3) || late.has(2)).toBe(true);
+  });
+});
+
+
+describe('C2：v2.0高階Combo曲線', () => {
+  it.each([[1000, 12], [3000, 16], [10000, 20], [100000, 34], [1000000, 50]])('錨點 %d 對應倍率 %d', (combo, multiplier) => {
+    expect(comboMultiplier(combo)).toBeCloseTo(multiplier);
+  });
+  it('百萬後緩增至60且高數值不溢位', () => {
+    expect(comboMultiplier(1e7)).toBeCloseTo(55);
+    expect(comboMultiplier(1e8)).toBeCloseTo(60);
+    expect(comboMultiplier(Number.MAX_VALUE)).toBe(60);
+    expect(comboMultiplier(Infinity)).toBe(60);
+    expect(comboMultiplier(NaN)).toBe(1);
+    expect(comboMultiplier(-1)).toBe(1);
+  });
+  it.each([[0.1, 50, 60], [0.2, 99, 119], [0.3, 148, 178]])('商店step=%s保留百萬與最終比例', (step, million, cap) => {
+    expect(comboMultiplier(1e6, step)).toBeCloseTo(million);
+    expect(comboMultiplier(1e12, step)).toBeCloseTo(cap);
   });
 });

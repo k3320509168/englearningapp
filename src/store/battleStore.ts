@@ -85,7 +85,7 @@ export interface BattleEvent {
   chain?: number;                   // 觸發連攜攻擊：參與的隊員數
   taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
   waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
-  execution?: boolean;              // 首領已經 0 血、還沒答滿最低題數：終結連擊中
+  execution?: boolean;              // 勝利後自選追擊練習的演出
   slain?: boolean;                  // 處決：這一擊直接打倒首領／菁英（第二十一輪 B）
   finisher?: string;                // 連攜技名稱（依最後出手的職業）
   move?: { icon: string; name: string; hits: { member: MemberId; amount: number }[] }; // 敵人依攻擊模式出招
@@ -171,9 +171,10 @@ interface BattleState {
   waves: number;      // 一般關：總共幾隻
   bossFight: boolean; // 首領戰（一般模式）：有魔王祝福，沒有女神祝福的傷害加成
   streak: number;     // 真的連續答對幾題（不受困難題 Bonus 乘法影響）：三星與首領技能的破解用
+  stageSubmissions: number; // 真正提交的答案，不包含自動超時
   stageAnswers: number; // 這一關已經作答幾題（答對答錯都算）
-  minAnswers: number;   // 這一關最少要答幾題（0 = 不限）
-  executing: boolean;   // 首領 0 血但題數還沒答滿：終結連擊
+  minAnswers: number;   // 勝利後追擊練習的參考題數（不限制擊殺）
+  executing: boolean;   // 僅自選追擊練習時為 true
   bonusLeft: number;    // 處決提早結算後，還可以「繼續追擊」的加成題數
   bonusRound: boolean;  // 正在做加成題（怪物已倒，不反擊、不影響結算）
   bonusGold: number;    // 這場加成題拿到的金幣（上限 BONUS_GOLD_CAP）
@@ -529,7 +530,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageHits: 0,
       wave: 1, waves, bossFight, blessed, aidRevive, aidGuard, enemyTurn: 0,
       // 最低答題數：寶箱怪、復仇魔王、黃金之路與擴充魔王不限
-      stageAnswers: 0, executing: false, bonusLeft: 0, bonusRound: false, bonusReturn: null,
+      stageAnswers: 0, stageSubmissions: 0, executing: false, bonusLeft: 0, bonusRound: false, bonusReturn: null,
       minAnswers: s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? minAnswers(s.levelIdx, stageIdx, s.levelKey) : 0,
       monsterKind: monsterKindFor(stageIdx, stage.bossMode, !!stage.revenge, stage.kind === 'treasure', stage.kind === 'final'),
       // 一般關 5 隻怪共用行動條：只有換關才歸零
@@ -924,6 +925,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const bonusLeft = s.bonusLeft - 1;
       const patch = {
         combo: s.combo + 1, maxCombo: Math.max(s.maxCombo, s.combo + 1), streak: s.streak + 1,
+        typed: '', assist: null, assistSource: null, retrying: false,
         bonusLeft, bonusGold: s.bonusGold + gold, runGold: s.runGold + gold, runXp: s.runXp + xp,
         event: nextEvent('attack', { amount: 0, gold, member: s.party[s.attackerIdx]?.id, execution: true, levelUp }),
       };
@@ -989,7 +991,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const base = {
       mapStats,
       attackerIdx: s.isBossQuestion ? s.attackerIdx : nextAttacker(party, attackerIdx + 1),
-      combo, streak, stageAnswers, runAnswers: s.runAnswers + 1, maxCombo: Math.max(s.maxCombo, combo), bossBoost: bonusMult ? false : s.bossBoost,
+      combo, streak, stageAnswers, stageSubmissions: s.stageSubmissions + 1, runAnswers: s.runAnswers + 1, maxCombo: Math.max(s.maxCombo, combo), bossBoost: bonusMult ? false : s.bossBoost,
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
       answers: [...s.answers, { stageIdx: s.stageIdx, question: s.original, correct: true }],
       wrongStreak: 0, assist: null, assistSource: null, typed: '', isBossQuestion: false,
@@ -1008,6 +1010,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       }
       return { xp, levelUp: levels > 0 ? save().player.level : undefined };
     };
+
+    // 已逾時的寶箱只等一次真正作答後離場，不追加逾時後的擊倒獎勵。
+    if (stage.kind === 'treasure' && s.treasureLeft <= 0) {
+      const { xp, levelUp } = gainXp('none');
+      finishStage({ ...base, ...withTotals(party), treasureLeft: 0, runXp: s.runXp + xp, event: nextEvent('escape', { levelUp }) });
+      return;
+    }
 
     // 菁英怪：護盾還在時，答對只會削掉一層護盾
     if (s.monsterShield > 0) {
@@ -1058,15 +1067,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const killed = monsterHp <= 0;
     // 一般關還有下一隻：只是這一波倒下，關卡繼續
     const waveKill = killed && s.wave < s.waves;
-    // 最低答題數還沒答滿：一般關再來一波怪（快速登場）；首領與菁英進入終結連擊，答完剩下的題目才倒下
-    const short = stageAnswers < s.minAnswers && !finishNow;
-    // 提早結算時，原本還沒答完的最低題數變成可選的加成題
-    const bonusLeft = finishNow && stageAnswers < s.minAnswers ? s.minAnswers - stageAnswers : 0;
-    const extraWave = killed && !waveKill && short && !stage.bossMode && !stage.kind;
-    const execution = killed && !waveKill && short && !extraWave;
-    const stageDone = killed && !waveKill && !short;
-    // 這一擊真的打倒一隻怪（終結連擊中的每一擊不重複算擊倒獎勵）
-    const kill = killed && !s.executing && !execution;
+    // 固定敵群全部倒下就結算；參考題數只產生菁英／首領的自選追擊。
+    const stageDone = killed && !waveKill;
+    const bonusLeft = stageDone && execKind ? Math.max(0, s.minAnswers - stageAnswers) : 0;
+    const kill = killed;
     const isLastStage = s.stageIdx + 1 >= s.stages.length;
 
     // 首領模組：推進破解進度、檢查新的觸發（倒地後全部取消）
@@ -1101,7 +1105,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       event: nextEvent('attack', {
         amount: slain ? s.monsterHp : damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion, bonus,
         slain: slain || (finishNow && s.executing) || undefined,
-        levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill: waveKill || extraWave, execution: execution || undefined,
+        levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill,
         relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
         chain: chainStep.triggered ? aliveIds.length : undefined,
         finisher: finisher ? `${finisher.icon} ${finisher.name}` : undefined,
@@ -1113,15 +1117,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ ...after, ...nextQuestion() });
       return;
     }
-    if (waveKill || extraWave) {
+    if (waveKill) {
       // 下一隻怪物馬上登場（血量回滿），題目接著出
-      set({ ...after, monsterHp: s.monsterMaxHp, wave: s.wave + 1, waves: extraWave ? s.waves + 1 : s.waves, ...nextQuestion() });
-      return;
-    }
-    if (execution) {
-      // 終結連擊：首領倒在地上，剩下的題目每答對一題就再補一擊華麗處決；這段期間不會反擊
-      // 下一題的首領技能（例如回血）不能蓋掉倒地的 0 血，所以放在 nextQuestion 之後
-      set({ ...after, ...nextQuestion(), monsterHp: 0, executing: true, enemyGauge: 0 });
+      set({ ...after, monsterHp: s.monsterMaxHp, wave: s.wave + 1, waves: s.waves, ...nextQuestion() });
       return;
     }
     if (s.mode === 'normal') stageFails.delete(failKey(s.levelKey, s.stageIdx));
@@ -1150,6 +1148,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       // 答錯：真的連續答對數歸零（祝福、護盾只保住 combo）；答錯也算作答過一題
       streak: 0,
       stageAnswers: s.stageAnswers + 1,
+      stageSubmissions: s.stageSubmissions + (!timeout && given.trim() ? 1 : 0),
       feedback: { question: s.question, given, timeout },
       mapStats: { ...s.mapStats, answered: s.mapStats.answered + 1, bossFlawless: s.mapStats.bossFlawless && !stage.bossMode },
     };
@@ -1322,6 +1321,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     bossFight: false,
     streak: 0,
     stageAnswers: 0,
+    stageSubmissions: 0,
     minAnswers: 0,
     executing: false,
     bonusLeft: 0,
@@ -1412,10 +1412,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const s = get();
       if (!s.active || ms <= 0) return;
       if (s.phase === 'answering') {
-        // 寶箱怪：時間到就帶著寶物逃走
-        if (s.treasureLeft > 0) {
-          const treasureLeft = s.treasureLeft - ms;
-          if (treasureLeft <= 0) {
+        // 寶箱倒數照常結束，但不能靠待機或自動超時零作答推進小關。
+        if (s.stages[s.stageIdx]?.kind === 'treasure') {
+          const treasureLeft = Math.max(0, s.treasureLeft - ms);
+          if (treasureLeft === 0 && s.stageSubmissions > 0) {
             finishStage({ treasureLeft: 0, event: nextEvent('escape') });
             return;
           }

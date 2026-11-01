@@ -53,7 +53,8 @@ Claude 本週額度將盡（已用約 90%，11/6 00:00 重置）→ **Codex 正�
 ### 1.4 改成「輪流制」（2026-11-01 23:20 製作人）
 - 三方互相對話確認很浪費 token → **一次只讓一個 AI 主做，做完交棒；製作人直接介入、即時回饋**。文件（本表、COLLAB）只用來交接，不再互相審來審去，除非製作人要求。
 - 自動接續迴圈建議暫停（`touch ~/.enggame-ai/paused`），由製作人決定現在輪到誰。
-- 目前輪到：**Antigravity**（製作人指定處理遊戲狀況）→ 下一棒 **Codex T0**（合併同事題庫）。
+- **主責＋諮詢制（製作人 2026-11-01）**：每段工作一個「主責 AI」負責修改、一個「諮詢 AI」參與設計與機制討論（只給意見不改檔）；誰額度快用完（先看每週再看 5 小時）就互換或換人。Claude 額度恢復前只當偶爾的諮詢。
+- 目前：**T14 詞彙與文法課綱** 主責 Antigravity（flash-high、effort high，產出 `docs/design/VOCAB_CURRICULUM.md`）→ 諮詢 Codex 看程式可行性 → 之後 **Codex 主責 T0／T13**、Antigravity 諮詢。
 
 ## 2. 已定案決策（和 ChatGPT「ENG RPG遊戲」討論的結論）
 完整原文都在 `docs/gpt/`，這裡只列結論與出處。
@@ -132,7 +133,8 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
 | **T0** | **最優先**（錯誤成因分類可先交 Antigravity flash-high 做，Codex 依結果修）：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
-| **T13**（照 2.5） | **詞彙跨級連貫**：① Antigravity flash-high 先做 `vocab-audit` 盤點（用同事 origin/feat/round4 的完整題庫：每區不同目標字數、重複率、跨級重疊、主題分布），② Codex 實作總字庫＋抽題比例＋防重複＋主題連貫，③ Antigravity 依缺口補題。原描述：**B1+ 題目太少、一直重複**（製作人實測）：本地 feat/round4 的 r4.json 是 **0 題**（同事的 origin 有 1,271 題，T0 合併後解決）。另外改出題規則：每區題池混入前面區域的題目（建議 70% 本區、30% 前區，玩家跳級或沒玩過前區時照樣混），讓 B1+ 程度的玩家也會遇到舊內容且不重複 | Codex | medium | 實玩 B1+ 連打 3 張圖不明顯重複 |
+| **T14** | 詞彙與文法課綱：各區標準字數（本區新字／累積）、必會核心字原則、文法清單、每張地圖／每幾關的新字與新文法引入節奏、螺旋複習、與 knowledge／精通／試煉／跳級的接法、題庫缺口 | Antigravity 主責、Codex 諮詢 | flash-high effort high | 製作人看過再定案；T13 依此實作 |
+| **T13**（照 2.5，T14 定案後） | **詞彙跨級連貫**：① Antigravity flash-high 先做 `vocab-audit` 盤點（用同事 origin/feat/round4 的完整題庫：每區不同目標字數、重複率、跨級重疊、主題分布），② Codex 實作總字庫＋抽題比例＋防重複＋主題連貫，③ Antigravity 依缺口補題。原描述：**B1+ 題目太少、一直重複**（製作人實測）：本地 feat/round4 的 r4.json 是 **0 題**（同事的 origin 有 1,271 題，T0 合併後解決）。另外改出題規則：每區題池混入前面區域的題目（建議 70% 本區、30% 前區，玩家跳級或沒玩過前區時照樣混），讓 B1+ 程度的玩家也會遇到舊內容且不重複 | Codex | medium | 實玩 B1+ 連打 3 張圖不明顯重複 |
 | T12 | T0 後重新整理遊戲現況：所有系統、參數（等級、EXP、怪物、BOSS、經濟、抽卡、題庫量）與設定，寫成 `docs/GAME_STATE.md`，標出不合理或互相矛盾的地方 | Antigravity | argon-high | Claude 審 |
 | T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
 | T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |

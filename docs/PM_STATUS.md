@@ -110,3 +110,5 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 - 已補八段跨區銜接，九區85%預算合計185640；區域終王推薦對齊各自終點（C2=200），怪物沿用原離散曲線。前後實算12290種配置，等級/HP/攻擊完全相同；369測試、tsc、eslint通過。
 - 已依三方分工實際派Antigravity做T2b：轉職上限暫存與frontier+13上限互動的專項紙上審查，gemini-4-argon-high，只讀寫檔、不改原碼/不執行指令。程序工具session=82501，輸入在agy worktree的 `.agy-input/c7-v22-growth-review/`，預期報告 `docs/gpt/c7-v22-xp-buffer-review.md`。正在執行時請勿重複派同一報告。
 - 追趕來源/日額津貼、素材本/塔作息、轉職暫存、首領援助及新12路徑/MC仍待完成；不得把這一步當T1完成。
+
+- 2026-11-01 Codex｜T1/P0轉職暫存：40/100/160銀行上限5450/11450/17450，轉職立即結算；補重設不刪舊銀行/不反覆多存與跳級EXP補差額。377測試/tsc/eslint通過，本地三尺寸地圖/銀行及1366/375實點轉職40→50截圖在screenshots/c7-xp-buffer；結算提示已串，尚待三尺寸戰鬥驗證。T2b argon-high已exit0，原報告與採否理由在docs/gpt/c7-v22-buffer-implementation.md。不採會刪合法舊銀行的夾限建議。T1其餘與題庫續作，未勾整體完成。

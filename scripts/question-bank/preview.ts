@@ -70,3 +70,13 @@ document.querySelector<HTMLButtonElement>('#qa-boss')!.onclick=async()=>{
  useBattleStore.setState({stages,monsterHp:1,...(q?{question:voiceFallback(q),original:q}:{}),phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:''});
  status.textContent='版面專用：首領1HP，請真正答對後檢查結算；不作平衡驗收';
 };
+
+
+// 以獨立測試存檔和真實gainXp建立Lv40暫存；轉職仍需實際按遊戲介面。
+document.querySelector<HTMLButtonElement>('#qa-xp-bank')!.onclick=()=>{
+ useBattleStore.getState().exitToMap();
+ useSaveStore.setState({character:{...DEFAULT_CHARACTER,name:'暫存 QA'},homeClass:DEFAULT_CHARACTER.classId,classPaths:{},classBadges:0,player:{level:40,xp:0,classPath:[]},xpLedger:{}});
+ useSaveStore.getState().gainXp(5450,'firstClear');
+ useUiStore.setState({modal:null,celebrations:[],hintOpen:false,retreatAsk:false});
+ status.textContent='Lv40 暫存5450EXP｜請從成長實際轉職，預期立即Lv50';
+};

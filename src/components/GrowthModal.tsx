@@ -8,7 +8,7 @@ import { useNotices } from './useNotices';
 import { CLASSES, classDef, elementDef } from '../game/character';
 import type { ClassId } from '../game/character';
 import {
-  ADVANCE_REQ, BADGE_COST, MAX_LEVEL, bestTier, canAdvance, pathBadgeCost, playerLevelCap, childrenOf, currentClassName, describeMods, nextOptions, xpToNext,
+  ADVANCE_REQ, BADGE_COST, MAX_LEVEL, classBufferLimit, bestTier, canAdvance, pathBadgeCost, playerLevelCap, childrenOf, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
   DRAGON_REGION, EQUIPMENT, HOLY_FORGE_QUESTIONS, MAX_GRADE, SLOTS, displayName, enhanceChance, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
@@ -80,7 +80,11 @@ export default function GrowthModal() {
               <h3>Lv {player.level} <span className="muted">/ {levelCap}</span></h3>
               {sv.titles.length > 0 && <p className="title-badges">{sv.titles.map(t => <span key={t}>🏅 {t}</span>)}</p>}
               {player.level >= levelCap && player.level < MAX_LEVEL && (
-                <p className="muted">已達等級上限，轉職後上限提高（覺醒後最高 Lv {MAX_LEVEL}）</p>
+                <div>
+                  <p className="muted">已達等級上限，轉職後上限提高（覺醒後最高 Lv {MAX_LEVEL}）</p>
+                  <p>暫存 EXP {player.xp}{classBufferLimit(player.level, levelCap) > 0 ? ` / ${classBufferLimit(player.level, levelCap)}` : ''}，轉職後立即結算。</p>
+                  {player.xp >= classBufferLimit(player.level, levelCap) && <p>暫存已滿，先轉職再繼續成長。</p>}
+                </div>
               )}
               {player.level < levelCap && (
                 <div className="xp-bar" title="答對題目、打倒怪物都能得到經驗值">

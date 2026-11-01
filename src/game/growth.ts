@@ -63,6 +63,7 @@ export const levelMult = (level: number) => 1 + (level - 1) * LEVEL_STAT;
 
 // 升級需求：100 + 10×Lv（Lv 1→20 共 3,800、Lv 1→200 共 218,900）
 export const xpToNext = (level: number) => 100 + 10 * level;
+export const cumulativeXpAtLevel = (level: number) => (level - 1) * (100 + 5 * level);
 
 // 全螢幕慶祝只留給里程碑等級（每 5 級），其他升級在戰鬥畫面跳字就好
 export const isMilestoneLevel = (level: number) => level % 5 === 0;
@@ -71,7 +72,15 @@ export function levelMods(level: number): Partial<Mods> {
   return { hp: (level - 1) * LEVEL_STAT, atk: (level - 1) * LEVEL_STAT };
 }
 
-// 加經驗值，處理連續升級；滿級後不再累積
+// 轉職上限暫存最多十級的實際需求；重設路線不降低已取得的等級或清掉銀行EXP。
+export function classBufferLimit(level: number, cap: number): number {
+  if (cap >= MAX_LEVEL || level >= MAX_LEVEL) return 0;
+  let sum = 0;
+  for (let lv = level; lv < Math.min(MAX_LEVEL, cap + 10); lv++) sum += xpToNext(lv);
+  return sum;
+}
+
+// 加經驗值，處理連續升級；只有真正Lv200不再累積，轉職上限保留有界暫存。
 export function addXp(level: number, xp: number, gained: number, cap = MAX_LEVEL): { level: number; xp: number; levelsGained: number } {
   let lv = level;
   let cur = xp + gained;
@@ -79,7 +88,12 @@ export function addXp(level: number, xp: number, gained: number, cap = MAX_LEVEL
     cur -= xpToNext(lv);
     lv += 1;
   }
-  if (lv >= cap) cur = 0;
+  if (lv >= cap) {
+    let consumed = 0;
+    for (let n = level; n < lv; n++) consumed += xpToNext(n);
+    const protectedExisting = Math.max(0, xp - consumed);
+    cur = lv >= MAX_LEVEL ? 0 : Math.max(protectedExisting, Math.min(cur, classBufferLimit(lv, cap)));
+  }
   return { level: lv, xp: cur, levelsGained: lv - level };
 }
 
@@ -206,3 +220,26 @@ export function currentClassName(baseName: string, path: string[]): string {
 }
 
 export const pathMods = (path: string[]) => combineMods(...path.map(id => classNode(id)?.mods ?? {}));
+
+
+// 只提示能提高全職業共享上限的路線；副職也能免費切回主職突破。
+export function classAdvanceOffer(classId: ClassId | undefined, player: { level: number; classPath: string[] }, paths: Record<string, string[]>, homeClass: ClassId | null, badges: number): { targetClass: ClassId; free: boolean; message: string } | null {
+  if (!classId || player.level >= MAX_LEVEL) return null;
+  const tier = bestTier({ ...paths, current: player.classPath });
+  const cap = playerLevelCap(tier);
+  if (cap >= MAX_LEVEL || player.level < cap - 3) return null;
+  const home = homeClass ?? classId;
+  const candidates: ClassId[] = [...new Set<ClassId>([home, classId, 'swordsman', 'mage', 'warrior', 'archer', 'monk'])];
+  for (const targetClass of candidates) {
+    const path = targetClass === classId ? player.classPath : paths[targetClass] ?? [];
+    const free = targetClass === home;
+    const available = nextOptions(targetClass, path).some(n => n.tier > tier && canAdvance(n.tier, player.level) && (free || badges >= BADGE_COST[n.tier]));
+    if (!available) continue;
+    const message = free ? targetClass === classId ? '可免費轉職突破上限' : '切回主職以免費轉職突破上限'
+      : targetClass === classId ? '可轉職突破等級上限' : '切換職業以轉職突破上限';
+    return { targetClass, free, message };
+  }
+  return null;
+}
+export const classAdvanceMessage = (classId: ClassId | undefined, player: { level: number; classPath: string[] }, paths: Record<string, string[]>, homeClass: ClassId | null, badges: number) =>
+  classAdvanceOffer(classId, player, paths, homeClass, badges)?.message ?? null;

@@ -21,7 +21,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { towerReward } from '../game/modes';
-import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, nextOptions, pathBadgeCost, playerLevelCap, xpScale, xpToNext } from '../game/growth';
+import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, cumulativeXpAtLevel, nextOptions, pathBadgeCost, playerLevelCap, xpScale, xpToNext } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_REWARD, trialsDone } from '../game/trueName';
@@ -672,7 +672,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const p = s.placement;
           if (!p || p.verified || regionIdx < p.region) return {};
           const floor = REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, p.region)][0];
-          return { placement: { ...p, verified: true }, player: { ...s.player, level: Math.max(s.player.level, floor) } };
+          const level = Math.max(s.player.level, floor);
+          const before = cumulativeXpAtLevel(s.player.level) + s.player.xp;
+          const grant = Math.max(0, cumulativeXpAtLevel(level) - before);
+          return { placement: { ...p, verified: true }, player: { ...s.player, level, xp: before + grant - cumulativeXpAtLevel(level) },
+            xpLedger: { ...s.xpLedger,
+              'offered:placement': (s.xpLedger['offered:placement'] ?? 0) + grant,
+              'accepted:placement': (s.xpLedger['accepted:placement'] ?? 0) + grant,
+            } };
         }),
         addGold: (amount) => set(s => ({ gold: s.gold + amount })),
 
@@ -750,6 +757,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (s.classBadges < cost) return false;
           const classPath = [...s.player.classPath, nodeId];
           set({ player: { ...s.player, classPath }, classPaths: { ...s.classPaths, [s.character.classId]: classPath }, classBadges: s.classBadges - cost });
+          get().gainXp(0, 'classUnlock');
           return true;
         },
         switchClass: (classId) => {
@@ -762,6 +770,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             homeClass: s.homeClass ?? s.character.classId,
             player: { ...s.player, classPath: classPaths[classId] ?? [] },
           });
+          get().gainXp(0, 'classUnlock');
           return true;
         },
         resetClassPath: () => {

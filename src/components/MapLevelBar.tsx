@@ -1,3 +1,5 @@
+import { openClassAdvance } from './openClassAdvance';
+import { classAdvanceMessage } from '../game/growth';
 import { useSaveStore } from '../store/saveStore';
 import { PROLOGUE, REGIONS } from '../game/regions';
 import { useUiStore } from '../store/uiStore';
@@ -17,6 +19,7 @@ export default function MapLevelBar() {
   const storySeen = useSaveStore(s => s.storySeen);
   const prologueDone = useSaveStore(s => s.prologueDone);
   const notices = useNotices();
+  const classHint = useSaveStore(s => classAdvanceMessage(s.character?.classId, s.player, s.classPaths, s.homeClass, s.classBadges));
   const daily = useSaveStore(s => s.daily);
   const tasksDone = daily?.tasks.filter(t => t.claimed || t.progress >= (dailyDef(t.id)?.goal ?? Infinity)).length ?? 0;
   const target = continueTarget({ unlockedIndex, prologueDone, levelProgress: progress, storySeen });
@@ -27,6 +30,7 @@ export default function MapLevelBar() {
   const { openModal, openGrowth } = useUiStore.getState();
   // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
   const doStep = () => {
+    if (classHint) return openClassAdvance();
     if (step.action === 'continue') return continueJourney();
     if (step.action === 'growth') return openGrowth(notices.classAdvance ? 'hero' : notices.forge ? 'forge' : 'gear');
     openModal(step.action);
@@ -49,9 +53,9 @@ export default function MapLevelBar() {
           </button>
         )}
         {/* 下一步：只佔一行的提示，點了直接去做 */}
-        {step.action !== 'continue' && (
+        {(classHint || step.action !== 'continue') && (
           <button className="next-step" onMouseDown={keepFocus} onClick={doStep}>
-            <span aria-hidden>{step.icon}</span><small>下一步</small><span>{step.text}</span>
+            <span aria-hidden>{classHint ? '⚡' : step.icon}</span><small>下一步</small><span>{classHint ?? step.text}</span>
           </button>
         )}
       </div>

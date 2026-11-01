@@ -1,3 +1,5 @@
+import { openClassAdvance } from './openClassAdvance';
+import { classAdvanceMessage } from '../game/growth';
 import { BonusOffer } from './BattleHUD';
 import { useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
@@ -27,6 +29,7 @@ export default function SummaryPanel() {
     phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold, runRunes: s.runRunes,
     mapStats: s.mapStats, mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
   })));
+  const classHint = useSaveStore(s => classAdvanceMessage(s.character?.classId, s.player, s.classPaths, s.homeClass, s.classBadges));
   const goldenBest = useSaveStore(s => s.goldenBest);
   const titles = useSaveStore(s => s.titles);
   // 新手引導：第一次打完地圖、還沒召喚過，而且召喚券夠十連
@@ -69,6 +72,7 @@ export default function SummaryPanel() {
   return (
     <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
+      {classHint && <button className="btn btn-primary" onClick={openClassAdvance}>⚡ {classHint}</button>}
       {skillDef && phase === 'levelClear' && <p>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</p>}
       {phase === 'levelClear' && prologue && <p>追獵隊長倒下了！穿過邊境，前方就是翠綠草原。從這裡開始是正式的冒險：combo、敵人行動條、技能與召喚全部開放。</p>}
       {phase === 'levelClear' && !golden && !skillDef && !prologue && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}

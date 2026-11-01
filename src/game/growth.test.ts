@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { LEVEL_STAT, CLASS_NODES, MAX_LEVEL, addXp, canAdvance, combineMods, nextOptions, pathMods, xpToNext } from './growth';
+import { LEVEL_STAT, CLASS_NODES, MAX_LEVEL, addXp, classBufferLimit, classAdvanceMessage, canAdvance, combineMods, nextOptions, pathMods, xpToNext } from './growth';
 import { EQUIPMENT, enhanceCost, equipMods, resolveCost, rollDrops } from './equipment';
 import { buildMember, playerMods, teamGuardEvery } from './party';
 import { DEFAULT_CHARACTER, CLASSES } from './character';
@@ -188,4 +188,84 @@ describe('enhance success rate and holy forging', () => {
     expect(useSaveStore.getState().enhance('w1', true)).toBe('ok');
     expect(useSaveStore.getState().equipment[0]).toMatchObject({ plus: 7, blessed: true });
   });
+});
+
+
+describe('C7 v2.2 class-cap XP bank', () => {
+  it('retains a partial award on reaching a temporary cap', () => {
+    expect(addXp(39, xpToNext(39) - 1, 102, 40)).toEqual({ level: 40, xp: 101, levelsGained: 1 });
+  });
+  it('banks ten real levels and flushes them on unlocking the next class cap', () => {
+    expect(classBufferLimit(40, 40)).toBe(5450);
+    expect(classBufferLimit(100, 100)).toBe(11450);
+    expect(classBufferLimit(160, 160)).toBe(17450);
+    expect(addXp(40, 0, 1e9, 40)).toEqual({ level: 40, xp: 5450, levelsGained: 0 });
+    expect(addXp(40, 5450, 0, 100)).toEqual({ level: 50, xp: 0, levelsGained: 10 });
+  });
+  it('preserves a bank after resetting to a lower class cap, without delevelling', () => {
+    expect(addXp(100, 8000, 0, 40)).toEqual({ level: 100, xp: 8000, levelsGained: 0 });
+    expect(addXp(200, 0, 5000, 200)).toEqual({ level: 200, xp: 0, levelsGained: 0 });
+  });
+  it('advancing the class immediately redeems banked XP and does not grant it twice', () => {
+    useSaveStore.setState({ ...structuredClone(initialSave), character: DEFAULT_CHARACTER, player: { ...initialSave.player, level: 40 } });
+    const sv = () => useSaveStore.getState();
+    sv().gainXp(5450, 'firstClear');
+    expect(sv().player).toMatchObject({ level: 40, xp: 5450 });
+    expect(sv().advanceClass('squire')).toBe(true);
+    expect(sv().player).toMatchObject({ level: 50, xp: 0 });
+    expect(sv().xpLedger['accepted:firstClear']).toBe(5450);
+    expect(sv().xpLedger['accepted:classUnlock']).toBe(0);
+    expect(sv().resetClassPath()).toBe(true);
+    sv().gainXp(1000);
+    expect(sv().player).toMatchObject({ level: 50, xp: 0 });
+    expect(sv().switchClass('mage')).toBe(true);
+    expect(sv().player).toMatchObject({ level: 50, xp: 0 });
+  });
+});
+
+
+it('only advertises a free cap breakthrough when it is actually available', () => {
+  const p = { level: 37, classPath: [] as string[] };
+  expect(classAdvanceMessage('swordsman', { ...p, level: 36 }, {}, 'swordsman', 0)).toBeNull();
+  expect(classAdvanceMessage('swordsman', p, {}, 'swordsman', 0)).toBe('可免費轉職突破上限');
+  expect(classAdvanceMessage('mage', p, {}, 'swordsman', 0)).toBe('切回主職以免費轉職突破上限');
+  expect(classAdvanceMessage('mage', p, {}, 'swordsman', 100)).toBe('切回主職以免費轉職突破上限');
+  expect(classAdvanceMessage('swordsman', { ...p, level: 200 }, {}, 'swordsman', 0)).toBeNull();
+});
+
+
+it('anchors reset buffering to the class cap, and never erases an older legitimate bank', () => {
+  expect(classBufferLimit(45, 40)).toBe(2850);
+  expect(addXp(45, 0, 99999, 40)).toEqual({ level: 45, xp: 2850, levelsGained: 0 });
+  expect(addXp(50, 0, 99999, 40)).toEqual({ level: 50, xp: 0, levelsGained: 0 });
+  expect(addXp(100, 8000, 1000, 40)).toEqual({ level: 100, xp: 8000, levelsGained: 0 });
+});
+
+
+it('placement grants only the missing cumulative XP and cannot double-count a class bank', () => {
+  const placement = { level: 5, region: 4, at: 0, speakingVerified: false, confidence: 'ok' as const, weak: [], verified: false };
+  useSaveStore.setState({ ...structuredClone(initialSave), character: DEFAULT_CHARACTER, placement,
+    player: { level: 40, xp: 5450, classPath: [] } });
+  const sv = () => useSaveStore.getState();
+  sv().verifyPlacement(3);
+  expect(sv().player).toMatchObject({ level: 40, xp: 5450 });
+  sv().verifyPlacement(4);
+  expect(sv().player).toMatchObject({ level: 81, xp: 0 });
+  expect(sv().xpLedger['accepted:placement']).toBe(40400 - 17150);
+  sv().verifyPlacement(4);
+  expect(sv().xpLedger['accepted:placement']).toBe(23250);
+  // A2 floor 21 is already covered by the earned bank: promote without a new grant.
+  useSaveStore.setState({ ...structuredClone(initialSave), character: DEFAULT_CHARACTER,
+    placement: { ...placement, region: 1 }, player: { level: 20, xp: 800, classPath: [] } });
+  sv().verifyPlacement(1);
+  expect(sv().player).toMatchObject({ level: 21, xp: 500 });
+  expect(sv().xpLedger['accepted:placement']).toBe(0);
+});
+
+it('keeps legitimate banks intact across same-version reloads after class reset', () => {
+  const s = { ...structuredClone(initialSave), character: DEFAULT_CHARACTER,
+    player: { level: 100, xp: 8000, classPath: [] } };
+  const once = migrateSave(JSON.parse(JSON.stringify(s)), 21);
+  expect(once.player).toEqual(s.player);
+  expect(migrateSave(JSON.parse(JSON.stringify(once)), 21).player).toEqual(s.player);
 });

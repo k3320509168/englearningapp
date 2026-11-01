@@ -63,10 +63,11 @@ describe('experience pools', () => {
     expect(m.firstClearXpClaimed[`${id}:20`]).toBeUndefined();
     expect(m.player).toEqual(initialSave.player); expect(m.gold).toBe(initialSave.gold);
   });
-  it('distinguishes offered XP from XP lost at the current class cap', () => {
+  it('banks XP at a temporary class cap instead of losing it', () => {
     useSaveStore.setState({ player: { ...initialSave.player, level: 40, xp: 0 } });
     useSaveStore.getState().gainXp(500, 'capCheck');
     expect(useSaveStore.getState().xpLedger['offered:capCheck']).toBe(500);
-    expect(useSaveStore.getState().xpLedger['accepted:capCheck']).toBe(0);
+    expect(useSaveStore.getState().xpLedger['accepted:capCheck']).toBe(500);
+    expect(useSaveStore.getState().player.xp).toBe(500);
   });
 });

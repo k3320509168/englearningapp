@@ -10793,6 +10793,842 @@
       ],
       "ans": "C",
       "explain": "The retail shop ___ on Sundays for cleaning. 商店在週日「被關閉/不營業」，描述常態用 is closed。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：語音信箱",
+      "ans": "VOICEMAIL",
+      "speak": "voicemail"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：食材",
+      "ans": "INGREDIENT",
+      "speak": "ingredient"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：素食者",
+      "ans": "VEGETARIAN",
+      "speak": "vegetarian"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：辛辣的",
+      "ans": "SPICY",
+      "speak": "spicy"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：捕捉",
+      "ans": "CAPTURE",
+      "speak": "capture"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：影子",
+      "ans": "SHADOW",
+      "speak": "shadow"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：出席",
+      "ans": "ATTEND",
+      "speak": "attend"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：後悔",
+      "ans": "REGRET",
+      "speak": "regret"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：渴望",
+      "ans": "DESIRE",
+      "speak": "desire"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：預訂",
+      "ans": "BOOKING",
+      "speak": "booking"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：前菜",
+      "ans": "STARTER",
+      "speak": "starter"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：甜點",
+      "ans": "DESSERT",
+      "speak": "dessert"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：口味",
+      "ans": "FLAVOR",
+      "speak": "flavor"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：收據",
+      "ans": "RECEIPT",
+      "speak": "receipt"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：聯絡",
+      "ans": "CONTACT",
+      "speak": "contact"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：查看我的語音信箱",
+      "ans": "CHECK MY VOICEMAIL",
+      "speak": "check my voicemail"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：回撥你的電話",
+      "ans": "RETURN YOUR CALL",
+      "speak": "return your call"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：留下你的號碼",
+      "ans": "LEAVE YOUR NUMBER",
+      "speak": "leave your number"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：在角落",
+      "ans": "IN THE CORNER",
+      "speak": "in the corner"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：在左邊",
+      "ans": "ON THE LEFT",
+      "speak": "on the left"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：深感遺憾",
+      "ans": "DEEPLY REGRET",
+      "speak": "deeply regret"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：希望我有",
+      "ans": "WISH I HAD",
+      "speak": "wish i had"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：參加派對",
+      "ans": "ATTEND THE PARTY",
+      "speak": "attend the party"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：不加洋蔥",
+      "ans": "WITHOUT ONIONS",
+      "speak": "without onions"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：冷盤上菜",
+      "ans": "SERVED COLD",
+      "speak": "served cold"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：訂一桌",
+      "ans": "BOOK A TABLE",
+      "speak": "book a table"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：如果我錯過它，我會回覆。",
+      "ans": "IF I MISS IT I WILL REPLY",
+      "speak": "if i miss it i will reply"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我還沒有聯絡他。",
+      "ans": "I HAVE NOT CONTACTED HIM YET",
+      "speak": "i have not contacted him yet"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：這張照片是在外面拍的。",
+      "ans": "THE PICTURE WAS TAKEN OUTSIDE",
+      "speak": "the picture was taken outside"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：如果你看，你就會看到它。",
+      "ans": "IF YOU LOOK YOU WILL SEE IT",
+      "speak": "if you look you will see it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：桌子已經被預訂了。",
+      "ans": "THE TABLE HAS ALREADY BEEN BOOKED",
+      "speak": "the table has already been booked"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：食材已經準備好了。",
+      "ans": "THE INGREDIENTS HAVE BEEN PREPARED",
+      "speak": "the ingredients have been prepared"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他已經對他的選擇感到後悔。",
+      "ans": "HE HAS REGRETTED HIS CHOICE",
+      "speak": "he has regretted his choice"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：甜點很快就會送上。",
+      "ans": "THE DESSERT WILL BE SERVED SOON",
+      "speak": "the dessert will be served soon"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我已經答應要回他電話。",
+      "ans": "I HAVE PROMISED TO CALL HIM BACK",
+      "speak": "i have promised to call him back"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我從來沒有嚐過這種口味。",
+      "ans": "I HAVE NEVER TASTED THIS FLAVOR",
+      "speak": "i have never tasted this flavor"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：收據是昨天印出來的。",
+      "ans": "THE RECEIPT WAS PRINTED YESTERDAY",
+      "speak": "the receipt was printed yesterday"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The ancient sculpture has been placed on the second floor.",
+      "options": [
+        "A. 古老的雕像已經被放置在二樓。",
+        "B. 博物館的二樓目前正在整修中。",
+        "C. 這些畫作很快就會被移到二樓。",
+        "D. 雕刻家明天會親自來二樓參觀。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The ancient sculpture has been placed on the second floor. 意思：古老的雕像已經被放置在二樓。（sculpture 雕像；has been placed 已經被放置）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you press the red button, the audio will stop.",
+      "options": [
+        "A. 如果你戴上耳機，語音就會開始播放。",
+        "B. 如果你按下紅色按鈕，語音就會停止。",
+        "C. 如果按鈕亮起紅燈，代表機器故障。",
+        "D. 如果你調整音量，聲音會變得更清晰。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you press the red button, the audio will stop. 意思：如果你按下紅色按鈕，語音就會停止。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the historical painting been carefully protected?",
+      "options": [
+        "A. Yes, it was painted hundreds of years ago.",
+        "B. No, I do not like historical stories.",
+        "C. Yes, the museum security guards watch it all day.",
+        "D. No, you cannot take photos in this area."
+      ],
+      "ans": "C",
+      "explain": "英文原句：Has the historical painting been carefully protected? 意思：這幅歷史畫作有被妥善保護嗎？選項 C「有，博物館保全整天都看守著它」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The art gallery has been rented for private events.",
+      "options": [
+        "A. 畫廊的私人活動已經圓滿結束。",
+        "B. 藝術畫廊的門票已經銷售一空。",
+        "C. 這間畫廊即將舉辦一場免費展覽。",
+        "D. 這間藝術畫廊已被租用來辦私人活動。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：The art gallery has been rented for private events. 意思：這間藝術畫廊已被租用來辦私人活動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The entire collection has been returned to the original owner.",
+      "options": [
+        "A. 整個收藏品已被這間博物館買下。",
+        "B. 所有的收藏品已經歸還給原主人。",
+        "C. 博物館拒絕展出這批私人收藏品。",
+        "D. 原主人要求博物館支付更多展覽費。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：The entire collection has been returned to the original owner. 意思：所有的收藏品已經歸還給原主人。（collection 收藏品；has been returned 已經被歸還）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you touch the display, the alarm will ring.",
+      "options": [
+        "A. 如果你打破玻璃，警報器會響起。",
+        "B. 如果你忘記關門，警報器會響起。",
+        "C. 如果你觸碰展示品，警報器就會響。",
+        "D. 如果你太靠近出口，警報就會啟動。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：If you touch the display, the alarm will ring. 意思：如果你觸碰展示品，警報器就會響。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have all the souvenirs been sold out in the gift shop?",
+      "options": [
+        "A. Yes, the entrance ticket is quite expensive.",
+        "B. No, I forgot to bring my credit card today.",
+        "C. Yes, the gift shop opens at nine in the morning.",
+        "D. No, there are still some keychains and mugs left."
+      ],
+      "ans": "D",
+      "explain": "英文原句：Have all the souvenirs been sold out in the gift shop? 意思：禮品店裡的所有紀念品都賣光了嗎？選項 D「沒有，還有剩下一些鑰匙圈和馬克杯」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A detailed guidebook has been published by the museum.",
+      "options": [
+        "A. 博物館剛剛發布了一項新的參觀規定。",
+        "B. 博物館已經出版了一本詳細的導覽手冊。",
+        "C. 這本導覽手冊詳細介紹了博物館的歷史。",
+        "D. 博物館建議遊客提前在網路上預約導覽。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：A detailed guidebook has been published by the museum. 意思：博物館已經出版了一本詳細的導覽手冊。（guidebook 導覽手冊；has been published 已經被出版）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The terrible storm has destroyed several houses in town.",
+      "options": [
+        "A. 鎮上的幾棟房子正準備進行整修。",
+        "B. 暴風雨過後，當地的房子變得更堅固了。",
+        "C. 可怕的暴風雨摧毀了鎮上的幾棟房子。",
+        "D. 鎮上的居民已經平安躲過這場暴風雨。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The terrible storm has destroyed several houses in town. 意思：可怕的暴風雨摧毀了鎮上的幾棟房子。（has destroyed 已經摧毀）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the wind blows too hard, the windows will break.",
+      "options": [
+        "A. 如果下大雨，窗戶就會漏水。",
+        "B. 如果太陽太大，我們就把窗簾拉上。",
+        "C. 如果風勢減弱，我們就可以打開窗戶。",
+        "D. 如果風吹得太大，窗戶就會破裂。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If the wind blows too hard, the windows will break. 意思：如果風吹得太大，窗戶就會破裂。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have the residents been warned about the heavy rain?",
+      "options": [
+        "A. Yes, the government sent messages to their phones.",
+        "B. No, the rain stopped pouring early this morning.",
+        "C. Yes, they enjoy walking in the heavy rain.",
+        "D. No, the warnings are usually correct."
+      ],
+      "ans": "A",
+      "explain": "英文原句：Have the residents been warned about the heavy rain? 意思：居民們已經收到大雨的警告了嗎？選項 A「有，政府傳了訊息到他們手機」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The outdoor event has been stopped because of the typhoon.",
+      "options": [
+        "A. 戶外活動在颱風過後已經重新開始。",
+        "B. 因為颱風即將來臨，戶外活動已經提前結束。",
+        "C. 因為颱風的關係，戶外活動已經被停止了。",
+        "D. 儘管有颱風，戶外活動依然按照計畫進行。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The outdoor event has been stopped because of the typhoon. 意思：因為颱風的關係，戶外活動已經被停止了。（has been stopped 已經被停止）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you do not wear a jacket, you will freeze outside.",
+      "options": [
+        "A. 如果你不帶雨傘，在外面就會淋濕。",
+        "B. 如果你穿太多衣服，在外面會覺得很熱。",
+        "C. 如果你不戴帽子，太陽會曬傷你的臉。",
+        "D. 如果你不穿外套，在外面就會冷僵。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If you do not wear a jacket, you will freeze outside. 意思：如果你不穿外套，在外面就會覺得冷僵（凍僵）。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the electricity been completely cut off?",
+      "options": [
+        "A. Yes, the whole building is totally dark now.",
+        "B. No, the electric car is still charging in the garage.",
+        "C. Yes, the electricity bill was very high this month.",
+        "D. No, we have cut the wire by mistake."
+      ],
+      "ans": "A",
+      "explain": "英文原句：Has the electricity been completely cut off? 意思：電力已經完全被切斷了嗎？選項 A「是的，現在整棟建築物全黑了」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The fallen trees have blocked the main road.",
+      "options": [
+        "A. 主要道路正在進行砍樹工程。",
+        "B. 倒塌的樹木已經被清理離開主要道路。",
+        "C. 倒塌的樹木已經堵住了主要道路。",
+        "D. 為了擴建道路，很多樹木被砍倒了。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The fallen trees have blocked the main road. 意思：倒塌的樹木已經堵住了主要道路。（have blocked 已經堵住）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The new semester has just started.",
+      "options": [
+        "A. 新的學期剛剛開始。",
+        "B. 新學期的課程已經結束了。",
+        "C. 上個學期的成績已經公布。",
+        "D. 學生們正在準備新學期的考試。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The new semester has just started. 意思：新的學期剛剛開始。（has started 已經開始）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you skip the first class, you will lose points.",
+      "options": [
+        "A. 如果你第一堂課遲到，老師會生氣。",
+        "B. 如果你跳過第一堂課，你就會被扣分。",
+        "C. 如果你沒帶課本，上課就無法得分。",
+        "D. 如果你第一堂課表現好，就會獲得加分。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you skip the first class, you will lose points. 意思：如果你跳過（翹掉）第一堂課，你就會被扣分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the reading list been given by the professor?",
+      "options": [
+        "A. Yes, he read a famous book last night.",
+        "B. No, the list of students is not ready yet.",
+        "C. Yes, he uploaded it to the school website yesterday.",
+        "D. No, I cannot read his handwriting."
+      ],
+      "ans": "C",
+      "explain": "英文原句：Has the reading list been given by the professor? 意思：教授已經給出閱讀書單了嗎？選項 C「有，他昨天已經把它上傳到學校網站了」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The campus map has been mailed to every freshman.",
+      "options": [
+        "A. 校園地圖已經郵寄給每位新生。",
+        "B. 每位新生都必須去辦公室領取校園地圖。",
+        "C. 學校官網上已經更新了最新的校園地圖。",
+        "D. 新生們正在校園裡尋找地圖上的建築物。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The campus map has been mailed to every freshman. 意思：校園地圖已經郵寄給每位新生。（has been mailed 已經被郵寄）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you want a locker, you will need to pay first.",
+      "options": [
+        "A. 如果你的置物櫃壞了，需要付費修理。",
+        "B. 如果你想要一個置物櫃，你需要先付費。",
+        "C. 如果你想換置物櫃，必須先填寫申請表。",
+        "D. 如果你不需要置物櫃，可以申請退費。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you want a locker, you will need to pay first. 意思：如果你想要一個置物櫃，你需要先付費。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have all the assignments been submitted online?",
+      "options": [
+        "A. Yes, the internet connection is very fast here.",
+        "B. No, the assignment is about international business.",
+        "C. Yes, the teacher has received everyone's work.",
+        "D. No, we have bought the materials online."
+      ],
+      "ans": "C",
+      "explain": "英文原句：Have all the assignments been submitted online? 意思：所有的作業都已經在網路上繳交了嗎？選項 C「是的，老師已經收到每個人的作品了」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The textbook has been chosen for this course.",
+      "options": [
+        "A. 這門課的教科書已經選定了。",
+        "B. 這門課不需要購買任何教科書。",
+        "C. 教授正在為這門課挑選教科書。",
+        "D. 學生們正在圖書館借閱這門課的教科書。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The textbook has been chosen for this course. 意思：這門課的教科書已經選定了。（has been chosen 已經被選擇）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The annual dinner has been held in a luxury hotel.",
+      "options": [
+        "A. 今年的年度晚宴因為經費不足被取消了。",
+        "B. 員工們正在期待即將在飯店舉辦的晚宴。",
+        "C. 年度晚宴已經在一間豪華飯店舉行過了。",
+        "D. 豪華飯店拒絕了公司舉辦晚宴的申請。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The annual dinner has been held in a luxury hotel. 意思：年度晚宴已經在一間豪華飯店舉行過了。（has been held 已經被舉辦）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If it pours outside, we will take a taxi.",
+      "options": [
+        "A. 如果外面出大太陽，我們就撐傘。",
+        "B. 如果外面塞車，我們就搭捷運。",
+        "C. 如果外面下雪，我們就走路回家。",
+        "D. 如果外面下傾盆大雨，我們就搭計程車。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If it pours outside, we will take a taxi. 意思：如果外面下傾盆大雨，我們就搭計程車。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have the dinner tables been set up properly?",
+      "options": [
+        "A. Yes, all the plates and glasses are in the right place.",
+        "B. No, the dinner was quite expensive for our team.",
+        "C. Yes, I sit at the front table near the stage.",
+        "D. No, the proper way to speak is standing up."
+      ],
+      "ans": "A",
+      "explain": "英文原句：Have the dinner tables been set up properly? 意思：餐桌都已經妥當佈置好了嗎？選項 A「是的，所有的盤子和玻璃杯都在正確的位置」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The opening speech has been given by the president.",
+      "options": [
+        "A. 總裁即將在台上發表開幕演說。",
+        "B. 開幕演說因為總裁遲到而延後。",
+        "C. 總裁已經發表了開幕演說。",
+        "D. 總裁拒絕發表今年的開幕演說。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The opening speech has been given by the president. 意思：總裁已經發表了開幕演說。（has been given 已經被給予/發表）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you wear casual clothes, you will not be allowed inside.",
+      "options": [
+        "A. 如果你穿休閒服，可以獲得免費飲料。",
+        "B. 如果你不穿制服，就必須待在後排。",
+        "C. 如果你穿得很正式，就會受到熱烈歡迎。",
+        "D. 如果你穿休閒服，你將不被允許進入。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If you wear casual clothes, you will not be allowed inside. 意思：如果你穿休閒服，你將不被允許進入。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has the final menu been created by the chef?",
+      "options": [
+        "A. Yes, he has prepared five amazing courses for us.",
+        "B. No, the chef is a very famous person in this city.",
+        "C. Yes, the menu is printed in French and English.",
+        "D. No, I usually cook my own dinner at home."
+      ],
+      "ans": "A",
+      "explain": "英文原句：Has the final menu been created by the chef? 意思：最終的菜單已經由主廚設計出來了嗎？選項 A「是的，他已經為我們準備了五道驚豔的菜色」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The lucky prize has been bought for tonight.",
+      "options": [
+        "A. 今晚的幸運大獎是由總經理提供的。",
+        "B. 今晚的幸運大獎已經被某個員工抽走了。",
+        "C. 今晚的幸運大獎已經買好了。",
+        "D. 今晚的幸運大獎還沒有決定要買什麼。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The lucky prize has been bought for tonight. 意思：今晚的幸運大獎已經買好了。（has been bought 已經被購買）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The membership fee has been collected this month.",
+      "options": [
+        "A. 這個月的會員費已經收了。",
+        "B. 會員費從下個月開始調漲。",
+        "C. 健身房已經暫停收取會員費。",
+        "D. 會員費必須在每個月底前繳交。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The membership fee has been collected this month. 意思：這個月的會員費已經收了。（has been collected 已經被收取）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you sign the paper, the first month will be free.",
+      "options": [
+        "A. 如果你填寫問卷，就能獲得一張免費體驗券。",
+        "B. 如果你在文件上簽名，第一個月將會是免費的。",
+        "C. 如果你帶朋友來報名，你就能免費運動一個月。",
+        "D. 如果你取消合約，第一個月的費用將不予退還。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you sign the paper, the first month will be free. 意思：如果你在文件上簽名，第一個月將會是免費的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Has your personal trainer been assigned yet?",
+      "options": [
+        "A. Yes, I always train by myself after work.",
+        "B. No, the train leaves the station at five.",
+        "C. Yes, a senior coach will help me from tomorrow.",
+        "D. No, my personal belongings are in the locker."
+      ],
+      "ans": "C",
+      "explain": "英文原句：Has your personal trainer been assigned yet? 意思：你的私人教練已經指派了嗎？選項 C「是的，一位資深教練明天開始會協助我」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The clean towels have been washed by the staff.",
+      "options": [
+        "A. 乾淨的毛巾已經由工作人員洗好了。",
+        "B. 工作人員正在幫會員發放乾淨的毛巾。",
+        "C. 健身房要求會員自己攜帶乾淨的毛巾。",
+        "D. 工作人員忘記把髒毛巾拿去清洗了。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The clean towels have been washed by the staff. 意思：乾淨的毛巾已經由工作人員洗好了。（have been washed 已經被清洗）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you lift heavy weights, your muscles will grow.",
+      "options": [
+        "A. 如果你每天跑步，心肺功能會變好。",
+        "B. 如果你舉重物，你的肌肉就會生長。",
+        "C. 如果你拉伸身體，肌肉就不會受傷。",
+        "D. 如果你吃太多，體重就會快速增加。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you lift heavy weights, your muscles will grow. 意思：如果你舉重物，你的肌肉就會生長。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you stretched your legs before the run?",
+      "options": [
+        "A. Yes, running is my favorite sport in the morning.",
+        "B. No, my legs are very long and strong.",
+        "C. Yes, I did a ten-minute warmup just now.",
+        "D. No, I usually stretch my arms after swimming."
+      ],
+      "ans": "C",
+      "explain": "英文原句：Have you stretched your legs before the run? 意思：你在跑步前有伸展雙腿了嗎？選項 C「有，我剛剛做了十分鐘的暖身」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A new workout routine has been designed for you.",
+      "options": [
+        "A. 已經為你設計了一套新的健身常規訓練。",
+        "B. 你必須按照這套新的健身計畫嚴格執行。",
+        "C. 健身房推出了一套適合所有人的新常規課程。",
+        "D. 你的健身教練要求你自行設計一套訓練常規。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：A new workout routine has been designed for you. 意思：已經為你設計了一套新的健身常規訓練。（has been designed 已經被設計）"
     }
   ],
   "boss": [
@@ -14596,6 +15432,312 @@
       ],
       "ans": "B",
       "explain": "短文：The updated medical coverage includes regular health check-ups and basic eye care. However, if you need dental surgery, it will not be covered by this plan. 根據文章，定期健檢包含在內，牙科手術則無，選 B。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：過敏的",
+      "ans": "ALLERGIC",
+      "speak": "allergic"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：但願",
+      "ans": "HOPEFULLY",
+      "speak": "hopefully"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：份量",
+      "ans": "PORTION",
+      "speak": "portion"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：承諾",
+      "ans": "PROMISE",
+      "speak": "promise"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：嚴重過敏",
+      "ans": "HIGHLY ALLERGIC",
+      "speak": "highly allergic"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：看起來很忙碌",
+      "ans": "LOOKS QUITE BUSY",
+      "speak": "looks quite busy"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：希望能見到你",
+      "ans": "HOPE TO SEE YOU",
+      "speak": "hope to see you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：樂意接受",
+      "ans": "GLADLY ACCEPT",
+      "speak": "gladly accept"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：語音信箱已經被查看過了嗎？",
+      "ans": "HAS THE VOICEMAIL BEEN CHECKED YET",
+      "speak": "has the voicemail been checked yet"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：如果湯很辣我就不喝了。",
+      "ans": "IF THE SOUP IS SPICY I CANNOT EAT IT",
+      "speak": "if the soup is spicy i cannot eat it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：如果你出席，我們會很高興。",
+      "ans": "IF YOU ATTEND WE WILL BE HAPPY",
+      "speak": "if you attend we will be happy"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：退款還沒有被給予。",
+      "ans": "THE REFUND HAS NOT BEEN GIVEN YET",
+      "speak": "the refund has not been given yet"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the earphone is broken, where should I go?",
+      "options": [
+        "A. Please return to the service desk for a new one.",
+        "B. I usually listen to classical music on my phone.",
+        "C. The volume is already turned up to the maximum.",
+        "D. We will finish the guided tour in ten minutes."
+      ],
+      "ans": "A",
+      "explain": "英文原句：If the earphone is broken, where should I go? 意思：如果耳機壞了，我該去哪裡？選項 A「請回到服務台換一個新的」最符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the guide speaks too quietly, what should we do?",
+      "options": [
+        "A. We can read the information in the guidebook instead.",
+        "B. The museum guide is very professional and friendly.",
+        "C. We should keep quiet while looking at the paintings.",
+        "D. The exhibition hall is going to close very soon."
+      ],
+      "ans": "A",
+      "explain": "英文原句：If the guide speaks too quietly, what should we do? 意思：如果導覽員說話太小聲，我們該怎麼辦？選項 A「我們可以改看導覽手冊裡的資訊」是合理的解決辦法。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the street is flooded, how will we get home?",
+      "options": [
+        "A. The street is very crowded on weekends.",
+        "B. We might have to take the underground subway.",
+        "C. I forgot my umbrella at the office today.",
+        "D. The flood has caused a lot of damage here."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If the street is flooded, how will we get home? 意思：如果街道淹水了，我們要怎麼回家？選項 B「我們可能得搭乘地下捷運」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A serious warning has been issued by the weather center.",
+      "options": [
+        "A. 氣象中心表示明天的天氣會非常晴朗。",
+        "B. 氣象中心已經發布了一項嚴重的警告。",
+        "C. 天氣警告已經被氣象中心悄悄撤回了。",
+        "D. 氣象中心警告大家不要前往山區活動。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：A serious warning has been issued by the weather center. 意思：氣象中心已經發布了一項嚴重的警告。（serious 嚴重的；has been issued 已經被發布）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the bridge is closed, which way should we drive?",
+      "options": [
+        "A. The bridge was built fifty years ago.",
+        "B. We must cross the bridge carefully.",
+        "C. The driver is very experienced.",
+        "D. We can take the mountain road instead."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If the bridge is closed, which way should we drive? 意思：如果橋關閉了，我們該開哪條路？選項 D「我們可以改走山路」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I fail the final exam, can I take it again?",
+      "options": [
+        "A. Yes, the exam was extremely difficult.",
+        "B. No, you passed the final exam with high marks.",
+        "C. Yes, the final exam takes two hours to finish.",
+        "D. No, you will have to retake the whole course next year."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If I fail the final exam, can I take it again? 意思：如果我期末考不及格，我可以重考嗎？選項 D「不行，你明年必須重修整門課」最符合情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The student ID card has been handed to you.",
+      "options": [
+        "A. 你的學生證已經遺失在辦公室了。",
+        "B. 學校要求你明天繳回學生證。",
+        "C. 你的學生證已經被系統註銷。",
+        "D. 學生證已經交到你的手上了。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：The student ID card has been handed to you. 意思：學生證已經交到你的手上了。（has been handed 已經被交出）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the cafeteria is full, where can we eat?",
+      "options": [
+        "A. The cafeteria serves delicious pasta on Fridays.",
+        "B. Let's buy some sandwiches and sit in the park.",
+        "C. I am not very hungry right now, to be honest.",
+        "D. The lunch break ends at one o'clock exactly."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If the cafeteria is full, where can we eat? 意思：如果自助餐廳客滿了，我們能在哪裡吃？選項 B「我們去買些三明治坐在公園吃吧」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I cannot eat seafood, will they offer other dishes?",
+      "options": [
+        "A. Seafood is the most popular dish tonight.",
+        "B. Yes, you can choose the chicken or vegetarian meal.",
+        "C. I also like eating fresh fish by the ocean.",
+        "D. No, the kitchen is fully closed on Sundays."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If I cannot eat seafood, will they offer other dishes? 意思：如果我不能吃海鮮，他們會提供其他菜餚嗎？選項 B「會，你可以選擇雞肉或素食餐」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The special rewards have been presented to the top salespeople.",
+      "options": [
+        "A. 最佳銷售員們即將上台領取特別獎勵。",
+        "B. 特別獎勵已經頒發給了最佳銷售員。",
+        "C. 只有最佳銷售員才有資格申請特別獎勵。",
+        "D. 公司取消了發給最佳銷售員的特別獎勵。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：The special rewards have been presented to the top salespeople. 意思：特別獎勵已經頒發給了最佳銷售員。（has been presented 已經被頒發/呈現）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If we drink alcohol, who will drive the car?",
+      "options": [
+        "A. The wine tastes perfectly sweet and fresh.",
+        "B. Driving a car in the city is extremely hard.",
+        "C. We can buy some alcohol at the supermarket.",
+        "D. I will call a driver to take us back to the hotel."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If we drink alcohol, who will drive the car? 意思：如果我們喝酒了，誰來開車？選項 D「我會叫司機載我們回飯店」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I want to cancel my plan, will I get a refund?",
+      "options": [
+        "A. The gym has a lot of new running machines.",
+        "B. Yes, you can change your plan at any time.",
+        "C. I plan to visit my grandparents this weekend.",
+        "D. No, you will only get your money back within seven days."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If I want to cancel my plan, will I get a refund? 意思：如果我想取消方案，可以獲得退款嗎？選項 D「不行，你只能在七天內退費」最符合情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The locker rooms have been locked for cleaning.",
+      "options": [
+        "A. 置物櫃的鎖已經全部更換為密碼鎖。",
+        "B. 因為發現失竊，更衣室的門被鎖上了。",
+        "C. 為了讓會員休息，更衣室目前對外開放。",
+        "D. 更衣室因為要進行清潔而鎖起來了。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：The locker rooms have been locked for cleaning. 意思：更衣室因為要進行清潔而鎖起來了。（has been locked 已經被鎖上）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the yoga class is full, can I join the next one?",
+      "options": [
+        "A. The yoga teacher is very famous around here.",
+        "B. Yes, I will put your name on the waiting list.",
+        "C. No, the classroom is not big enough for everyone.",
+        "D. Yoga is great for relaxing your body and mind."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If the yoga class is full, can I join the next one? 意思：如果瑜伽課滿了，我可以參加下一堂嗎？選項 B「可以，我會把你的名字放進候補名單」最合理。"
     }
   ]
 }

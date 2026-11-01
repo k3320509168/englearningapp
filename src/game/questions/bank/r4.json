@@ -9932,6 +9932,753 @@
       "desc": "填空題：S _ N C E R _ L Y (真誠地)",
       "ans": "IE",
       "speak": "sincerely"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The receptionist who greeted us was very polite.",
+      "options": [
+        "A. 迎接我們的司機很有禮貌。",
+        "B. 迎接我們的櫃檯接待員很有禮貌。",
+        "C. 迎接我們的經理很嚴格。",
+        "D. 迎接我們的廚師很親切。"
+      ],
+      "ans": "B",
+      "explain": "The receptionist who greeted us was very polite. (迎接我們的櫃檯接待員很有禮貌。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was checking my bill when I noticed they overcharged me.",
+      "options": [
+        "A. 我在核對帳單時發現他們少收錢了。",
+        "B. 我在核對帳單時發現他們超收費用了。",
+        "C. 我在付帳時發現忘了帶錢。",
+        "D. 我在看菜單時覺得價格太高。"
+      ],
+      "ans": "B",
+      "explain": "I was checking my bill when I noticed they overcharged me. (我在核對帳單時發現他們超收費用了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are considering booking a suite for our anniversary.",
+      "options": [
+        "A. 我們考慮預訂一間套房來慶祝週年。",
+        "B. 我們考慮買一輛新車來慶祝週年。",
+        "C. 我們考慮出國旅遊來慶祝週年。",
+        "D. 我們考慮訂一間餐廳來慶祝週年。"
+      ],
+      "ans": "A",
+      "explain": "We are considering booking a suite for our anniversary. (我們考慮預訂一間套房來慶祝週年。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is the breakfast in the lobby complimentary for all guests?",
+      "options": [
+        "A. Yes, the lobby is very spacious.",
+        "B. No, you have to pay an extra fee.",
+        "C. I am eating breakfast right now.",
+        "D. The guests are arriving tomorrow."
+      ],
+      "ans": "B",
+      "explain": "Is the breakfast in the lobby complimentary for all guests? (大廳的早餐對所有房客都是免費的嗎？) 回應 B (不，你需要額外付費) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The housekeeping staff that cleans this floor is on break.",
+      "options": [
+        "A. 負責打掃這層樓的房務人員正在休息。",
+        "B. 負責這層樓的保全正在巡邏。",
+        "C. 負責打掃的阿姨已經下班了。",
+        "D. 負責這層樓的維修工正在工作。"
+      ],
+      "ans": "A",
+      "explain": "The housekeeping staff that cleans this floor is on break. (負責打掃這層樓的房務人員正在休息。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Are there any vacant rooms left for tonight?",
+      "options": [
+        "A. 今晚還有空房嗎？",
+        "B. 今晚還有位子嗎？",
+        "C. 今晚還有剩菜嗎？",
+        "D. 今晚還有停車位嗎？"
+      ],
+      "ans": "A",
+      "explain": "Are there any vacant rooms left for tonight? (今晚還有空房嗎？)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was looking for my booking confirmation when you called.",
+      "options": [
+        "A. 你打來的時候，我正在找我的訂房確認信。",
+        "B. 你打來的時候，我正在確認航班。",
+        "C. 你打來的時候，我正在找我的護照。",
+        "D. 你打來的時候，我正在訂餐廳。"
+      ],
+      "ans": "A",
+      "explain": "I was looking for my booking confirmation when you called. (你打來的時候，我正在找我的訂房確認信。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "They require guests to pay a security deposit upon arrival.",
+      "options": [
+        "A. The security guard is at the door.",
+        "B. I will get my credit card ready then.",
+        "C. They arrived very late last night.",
+        "D. The deposit was refunded fully."
+      ],
+      "ans": "B",
+      "explain": "They require guests to pay a security deposit upon arrival. (他們要求房客在抵達時支付押金。) 回應 B (那把我的信用卡準備好) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She avoids using the hotel laundry service because it is pricey.",
+      "options": [
+        "A. 她避免使用飯店的客房服務，因為很慢。",
+        "B. 她避免使用飯店的洗衣服務，因為很貴。",
+        "C. 她喜歡使用飯店的健身房，因為很新。",
+        "D. 她避免去飯店的餐廳，因為不好吃。"
+      ],
+      "ans": "B",
+      "explain": "She avoids using the hotel laundry service because it is pricey. (她避免使用飯店的洗衣服務，因為很貴。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The aisle which contains baking supplies is blocked.",
+      "options": [
+        "A. 放烘焙用品的走道被堵住了。",
+        "B. 放清潔用品的走道被堵住了。",
+        "C. 結帳通道被堵住了。",
+        "D. 安全門被堵住了。"
+      ],
+      "ans": "A",
+      "explain": "The aisle which contains baking supplies is blocked. (放烘焙用品的走道被堵住了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was waiting for the cashier when the machine broke.",
+      "options": [
+        "A. 我在等經理時，電腦壞了。",
+        "B. 我在等收銀員時，機器壞了。",
+        "C. 我在等公車時，手機壞了。",
+        "D. 我在結帳時，錢包掉了。"
+      ],
+      "ans": "B",
+      "explain": "I was waiting for the cashier when the machine broke. (我在等收銀員時，機器壞了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Does this discount apply to the items that are already on sale?",
+      "options": [
+        "A. Yes, they are on sale tomorrow.",
+        "B. I am counting the items now.",
+        "C. No, it is only for regular-priced goods.",
+        "D. The discount was ten percent."
+      ],
+      "ans": "C",
+      "explain": "Does this discount apply to the items that are already on sale? (這個折扣適用於已經在特價的商品嗎？) 回應 C (不，只限原價商品) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The beverage that you ordered is currently out of stock.",
+      "options": [
+        "A. 你點的餐點目前賣完了。",
+        "B. 你點的飲料目前缺貨。",
+        "C. 你點的甜點還沒做好。",
+        "D. 你買的杯子缺貨了。"
+      ],
+      "ans": "B",
+      "explain": "The beverage that you ordered is currently out of stock. (你點的飲料目前缺貨。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He finished buying groceries and went straight home.",
+      "options": [
+        "A. 他買完衣服就直接回家了。",
+        "B. 他吃完晚餐就直接回家了。",
+        "C. 他買完食品雜貨就直接回家了。",
+        "D. 他看完電影就直接回家了。"
+      ],
+      "ans": "C",
+      "explain": "He finished buying groceries and went straight home. (他買完食品雜貨就直接回家了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Would you mind helping me unload the shopping trolley?",
+      "options": [
+        "A. Not at all, let me grab those bags for you.",
+        "B. The trolley is completely empty.",
+        "C. I prefer shopping online anyway.",
+        "D. We bought a lot of groceries today."
+      ],
+      "ans": "A",
+      "explain": "Would you mind helping me unload the shopping trolley? (你介意幫我卸下購物推車上的東西嗎？) 回應 A (一點也不，我來幫你拿那些袋子) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The counter which handles returns is on your left.",
+      "options": [
+        "A. 處理退貨的櫃檯在你的左邊。",
+        "B. 處理客訴的櫃檯在你的右邊。",
+        "C. 結帳櫃檯在你的左邊。",
+        "D. 詢問處在你的右邊。"
+      ],
+      "ans": "A",
+      "explain": "The counter which handles returns is on your left. (處理退貨的櫃檯在你的左邊。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are planning to renew our membership next month.",
+      "options": [
+        "A. 我們計畫下個月更新合約。",
+        "B. 我們計畫下個月續訂雜誌。",
+        "C. 我們計畫下個月更新會員資格。",
+        "D. 我們計畫下個月搬家。"
+      ],
+      "ans": "C",
+      "explain": "We are planning to renew our membership next month. (我們計畫下個月更新會員資格。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The deadline that the client set is quite strict.",
+      "options": [
+        "A. 客戶設定的預算非常嚴格。",
+        "B. 老闆設定的目標非常嚴格。",
+        "C. 客戶設定的截止日期非常嚴格。",
+        "D. 經理設定的規定非常嚴格。"
+      ],
+      "ans": "C",
+      "explain": "The deadline that the client set is quite strict. (客戶設定的截止日期非常嚴格。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I suggest delegating some tasks to the junior staff.",
+      "options": [
+        "A. 我建議把一些任務委派給資淺員工。",
+        "B. 我建議把一些任務交給老闆。",
+        "C. 我建議取消一些不必要的任務。",
+        "D. 我建議自己完成所有的任務。"
+      ],
+      "ans": "A",
+      "explain": "I suggest delegating some tasks to the junior staff. (我建議把一些任務委派給資淺員工。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We were analyzing the outcome when the director walked in.",
+      "options": [
+        "A. Did he have any comments on the results?",
+        "B. The outcome is very successful.",
+        "C. We walked into the office together.",
+        "D. He wants to analyze the data again."
+      ],
+      "ans": "A",
+      "explain": "We were analyzing the outcome when the director walked in. (我們正在分析結果時，主管走了進來。) 回應 A (他對結果有任何評論嗎？) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They decided to reject the proposal that I submitted.",
+      "options": [
+        "A. 他們決定接受我提交的提案。",
+        "B. 他們決定拒絕我提交的提案。",
+        "C. 他們決定修改我提交的提案。",
+        "D. 他們決定延後我提交的提案。"
+      ],
+      "ans": "B",
+      "explain": "They decided to reject the proposal that I submitted. (他們決定拒絕我提交的提案。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "It is important to implement the changes immediately.",
+      "options": [
+        "A. 立即實施這些改變很重要。",
+        "B. 立即停止這些改變很重要。",
+        "C. 立即討論這些改變很重要。",
+        "D. 立即報告這些改變很重要。"
+      ],
+      "ans": "A",
+      "explain": "It is important to implement the changes immediately. (立即實施這些改變很重要。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Reaching this milestone means we are ahead of schedule.",
+      "options": [
+        "A. I am glad we are making such great progress.",
+        "B. The schedule is printed on the wall.",
+        "C. We reached the office early today.",
+        "D. This stone is very heavy to move."
+      ],
+      "ans": "A",
+      "explain": "Reaching this milestone means we are ahead of schedule. (達成這個里程碑意味著我們進度超前。) 回應 A (我很高興我們取得了這麼好的進展) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are entering the final phase of the project.",
+      "options": [
+        "A. 我們即將進入專案的初始階段。",
+        "B. 我們即將進入專案的測試階段。",
+        "C. 我們即將進入專案的最後階段。",
+        "D. 我們即將進入專案的計畫階段。"
+      ],
+      "ans": "C",
+      "explain": "We are entering the final phase of the project. (我們即將進入專案的最後階段。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I enjoy collaborating with people who have different ideas.",
+      "options": [
+        "A. 我喜歡和想法相同的人合作。",
+        "B. 我喜歡和想法不同的人合作。",
+        "C. 我喜歡自己一個人工作。",
+        "D. 我喜歡教導沒有經驗的人。"
+      ],
+      "ans": "B",
+      "explain": "I enjoy collaborating with people who have different ideas. (我喜歡和想法不同的人合作。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The passport which I renewed last year is missing.",
+      "options": [
+        "A. 我去年更新的簽證不見了。",
+        "B. 我去年更新的護照不見了。",
+        "C. 我去年買的機票不見了。",
+        "D. 我去年辦的信用卡不見了。"
+      ],
+      "ans": "B",
+      "explain": "The passport which I renewed last year is missing. (我去年更新的護照不見了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "They were announcing the boarding time when I reached the gate.",
+      "options": [
+        "A. Did you manage to get on the plane in time?",
+        "B. The boarding gate is closed now.",
+        "C. I am waiting for the announcement.",
+        "D. He reached for his boarding pass."
+      ],
+      "ans": "A",
+      "explain": "They were announcing the boarding time when I reached the gate. (我到達登機門時，他們正在廣播登機時間。) 回應 A (你來得及上飛機嗎？) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Please avoid leaving your baggage unattended.",
+      "options": [
+        "A. 請避免將您的背包放在地上。",
+        "B. 請避免將您的行李無人看管。",
+        "C. 請避免攜帶過多行李。",
+        "D. 請避免打開您的行李箱。"
+      ],
+      "ans": "B",
+      "explain": "Please avoid leaving your baggage unattended. (請避免將您的行李無人看管。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The customs officer who checked my bag was very strict.",
+      "options": [
+        "A. 檢查我包包的警察很嚴格。",
+        "B. 檢查我包包的海關人員很嚴格。",
+        "C. 檢查我包包的保全很嚴格。",
+        "D. 檢查我包包的空服員很嚴格。"
+      ],
+      "ans": "B",
+      "explain": "The customs officer who checked my bag was very strict. (檢查我包包的海關人員很嚴格。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are heading to the terminal that handles international flights.",
+      "options": [
+        "A. 我們正前往處理國內航班的航廈。",
+        "B. 我們正前往處理國際航班的航廈。",
+        "C. 我們正前往處理貨運的航廈。",
+        "D. 我們正前往處理轉機的航廈。"
+      ],
+      "ans": "B",
+      "explain": "We are heading to the terminal that handles international flights. (我們正前往處理國際航班的航廈。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I recommend checking the departure board for any gate changes.",
+      "options": [
+        "A. The gate is made of wood.",
+        "B. Good idea, let me see if our flight is delayed.",
+        "C. I am checking out of the hotel.",
+        "D. They departed yesterday afternoon."
+      ],
+      "ans": "B",
+      "explain": "I recommend checking the departure board for any gate changes. (我建議查看出境看板以確認登機門是否有變動。) 回應 B (好主意，讓我看看我們的航班有沒有延誤) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The monument which honors the soldiers is located downtown.",
+      "options": [
+        "A. 紀念士兵的雕像位於市中心。",
+        "B. 紀念士兵的紀念碑位於市中心。",
+        "C. 紀念士兵的博物館位於市中心。",
+        "D. 紀念士兵的公園位於市中心。"
+      ],
+      "ans": "B",
+      "explain": "The monument which honors the soldiers is located downtown. (紀念士兵的紀念碑位於市中心。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We were taking photos of the statue when it started raining.",
+      "options": [
+        "A. 我們在拍風景時開始下雨了。",
+        "B. 我們在拍雕像時開始下雨了。",
+        "C. 我們在拍建築物時開始下雨了。",
+        "D. 我們在拍噴泉時開始下雨了。"
+      ],
+      "ans": "B",
+      "explain": "We were taking photos of the statue when it started raining. (我們在拍雕像時開始下雨了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The coach who leads the team is quite demanding.",
+      "options": [
+        "A. 帶領球隊的教練非常寬容。",
+        "B. 帶領球隊的教練非常幽默。",
+        "C. 帶領球隊的教練要求很高。",
+        "D. 帶領球隊的教練非常年輕。"
+      ],
+      "ans": "C",
+      "explain": "The coach who leads the team is quite demanding. (帶領球隊的教練要求很高。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We were warming up when the tournament officially began.",
+      "options": [
+        "A. 錦標賽正式開始時，我們正在休息。",
+        "B. 錦標賽正式開始時，我們正在暖身。",
+        "C. 錦標賽正式開始時，我們正在開會。",
+        "D. 錦標賽正式開始時，我們正在喝水。"
+      ],
+      "ans": "B",
+      "explain": "We were warming up when the tournament officially began. (錦標賽正式開始時，我們正在暖身。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "You need to focus on correcting your posture before running.",
+      "options": [
+        "A. I will try to stand straighter and relax my shoulders.",
+        "B. Running is my favorite sport.",
+        "C. I correct my homework every day.",
+        "D. The post office is closed today."
+      ],
+      "ans": "A",
+      "explain": "You need to focus on correcting your posture before running. (在跑步前，你需要專注於糾正你的姿勢。) 回應 A (我會盡量站直並放鬆肩膀) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Building stamina takes a lot of time and patience.",
+      "options": [
+        "A. 建立自信需要很多時間和耐心。",
+        "B. 建立肌肉需要很多時間和耐心。",
+        "C. 建立耐力需要很多時間和耐心。",
+        "D. 建立友誼需要很多時間和耐心。"
+      ],
+      "ans": "C",
+      "explain": "Building stamina takes a lot of time and patience. (建立耐力需要很多時間和耐心。)"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：挑戰",
+      "ans": "CHALLENGE",
+      "speak": "challenge"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：信封",
+      "ans": "ENVELOPE",
+      "speak": "envelope"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：指示",
+      "ans": "INSTRUCTION",
+      "speak": "instruction"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：出發",
+      "ans": "DEPARTURE",
+      "speak": "departure"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：收入",
+      "ans": "REVENUE",
+      "speak": "revenue"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：溫度",
+      "ans": "TEMPERATURE",
+      "speak": "temperature"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：助理",
+      "ans": "ASSISTANT",
+      "speak": "assistant"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：同意你",
+      "ans": "AGREE WITH YOU",
+      "speak": "agree with you"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：計畫學習",
+      "ans": "PLAN TO STUDY",
+      "speak": "plan to study"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：拒絕回答",
+      "ans": "REFUSE TO ANSWER",
+      "speak": "refuse to answer"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：想像住在那裡",
+      "ans": "IMAGINE LIVING THERE",
+      "speak": "imagine living there"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：需要確認",
+      "ans": "NEED TO CONFIRM",
+      "speak": "need to confirm"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：似乎是對的",
+      "ans": "SEEMS TO BE RIGHT",
+      "speak": "seems to be right"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：當時正在拍照",
+      "ans": "WAS TAKING PICTURES",
+      "speak": "was taking pictures"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：當時正在談論",
+      "ans": "WERE TALKING ABOUT",
+      "speak": "were talking about"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：比較價格",
+      "ans": "COMPARING THE PRICES",
+      "speak": "comparing the prices"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：解釋原因",
+      "ans": "EXPLAIN THE REASON",
+      "speak": "explain the reason"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：取決於天氣",
+      "ans": "DEPENDS ON THE WEATHER",
+      "speak": "depends on the weather"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：學習游泳",
+      "ans": "LEARN TO SWIM",
+      "speak": "learn to swim"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：正在說話的那個男人是我的老闆",
+      "ans": "THE MAN WHO IS SPEAKING IS MY BOSS",
+      "speak": "the man who is speaking is my boss"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們當時正在等那班誤點的航班",
+      "ans": "WE WERE WAITING FOR THE DELAYED FLIGHT",
+      "speak": "we were waiting for the delayed flight"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我計畫明年出國留學",
+      "ans": "I PLAN TO STUDY ABROAD NEXT YEAR",
+      "speak": "i plan to study abroad next year"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她昨天讀完了那份長文件",
+      "ans": "SHE FINISHED READING THE LONG DOCUMENT YESTERDAY",
+      "speak": "she finished reading the long document yesterday"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們當時正在看那幅美麗的畫",
+      "ans": "THEY WERE LOOKING AT THE BEAUTIFUL PAINTING",
+      "speak": "they were looking at the beautiful painting"
     }
   ],
   "boss": [
@@ -13508,6 +14255,305 @@
       "desc": "填空題：D I S T _ R B _ N C _ (打擾/干擾)",
       "ans": "UAE",
       "speak": "disturbance"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I was checking out when the receptionist told me about the extra charges.",
+      "options": [
+        "A. The receptionist is very busy now.",
+        "B. What were those extra fees for?",
+        "C. I charged my phone in the room.",
+        "D. You can check out anytime before noon."
+      ],
+      "ans": "B",
+      "explain": "I was checking out when the receptionist told me about the extra charges. (我在退房時，櫃檯接待員告訴我有額外的費用。) 回應 B (那些額外費用是做什麼的？) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The estimate that you provided seems slightly inaccurate.",
+      "options": [
+        "A. I am providing a new service.",
+        "B. Let me review the numbers and update it.",
+        "C. The estimate is very cheap.",
+        "D. You provided a great opportunity."
+      ],
+      "ans": "B",
+      "explain": "The estimate that you provided seems slightly inaccurate. (你提供的估計似乎有點不準確。) 回應 B (讓我重新審視數字並更新它) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She mentioned updating the project files before she left.",
+      "options": [
+        "A. 她提到離開前會備份專案檔案。",
+        "B. 她提到離開前會更新專案檔案。",
+        "C. 她提到離開前會刪除專案檔案。",
+        "D. 她提到離開前會印出專案檔案。"
+      ],
+      "ans": "B",
+      "explain": "She mentioned updating the project files before she left. (她提到離開前會更新專案檔案。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We are considering buying a guidebook for our trip to Italy.",
+      "options": [
+        "A. That is a smart idea to find hidden local spots.",
+        "B. The guide is waiting outside.",
+        "C. I am reading a book about history.",
+        "D. Italy is located in Europe."
+      ],
+      "ans": "A",
+      "explain": "We are considering buying a guidebook for our trip to Italy. (我們考慮買一本義大利旅遊指南。) 回應 A (找尋隱藏的當地景點是個聰明的主意) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The cruise that travels to Alaska departs next Sunday.",
+      "options": [
+        "A. 前往阿拉斯加的火車下週日出發。",
+        "B. 前往阿拉斯加的航班下週日出發。",
+        "C. 前往阿拉斯加的郵輪下週日出發。",
+        "D. 前往阿拉斯加的巴士下週日出發。"
+      ],
+      "ans": "C",
+      "explain": "The cruise that travels to Alaska departs next Sunday. (前往阿拉斯加的郵輪下週日出發。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I was practicing the new drill when I pulled a muscle.",
+      "options": [
+        "A. The drill is in the toolbox.",
+        "B. You should rest and apply some ice to it.",
+        "C. My muscles are very strong.",
+        "D. The practice starts at five."
+      ],
+      "ans": "B",
+      "explain": "I was practicing the new drill when I pulled a muscle. (我在練習新訓練動作時拉傷了肌肉。) 回應 B (你應該休息並冰敷一下) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "It is essential to stay hydrated during intense workouts.",
+      "options": [
+        "A. 在高強度訓練中保持溫暖很重要。",
+        "B. 在高強度訓練中保持清醒很重要。",
+        "C. 在高強度訓練中保持補充水分很重要。",
+        "D. 在高強度訓練中保持冷靜很重要。"
+      ],
+      "ans": "C",
+      "explain": "It is essential to stay hydrated during intense workouts. (在高強度訓練中保持補充水分很重要。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The tactic which we used in the first half isn't working anymore.",
+      "options": [
+        "A. Then we need to switch to a different strategy.",
+        "B. The first half was very exciting.",
+        "C. We are working at the office tonight.",
+        "D. The tactic is very simple."
+      ],
+      "ans": "A",
+      "explain": "The tactic which we used in the first half isn't working anymore. (我們在上半場使用的戰術已經不管用了。) 回應 A (那我們需要切換到不同的策略) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The referee who made the final call was heavily criticized.",
+      "options": [
+        "A. 做出最後判決的教練受到了嚴厲批評。",
+        "B. 做出最後判決的裁判受到了嚴厲批評。",
+        "C. 做出最後判決的球員受到了嚴厲批評。",
+        "D. 做出最後判決的觀眾受到了嚴厲批評。"
+      ],
+      "ans": "B",
+      "explain": "The referee who made the final call was heavily criticized. (做出最後判決的裁判受到了嚴厲批評。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He risks worsening his injury if he plays today.",
+      "options": [
+        "A. 如果他今天上場，可能會讓感冒惡化。",
+        "B. 如果他今天上場，可能會讓受傷惡化。",
+        "C. 如果他今天上場，可能會讓名聲惡化。",
+        "D. 如果他今天上場，可能會讓病情惡化。"
+      ],
+      "ans": "B",
+      "explain": "He risks worsening his injury if he plays today. (如果他今天上場，可能會讓受傷惡化。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I was checking the receipt when I realized they charged me twice.",
+      "options": [
+        "A. You should go back to the counter and ask for a refund.",
+        "B. The receipt is in my pocket.",
+        "C. I charged the battery completely.",
+        "D. They realized their mistake later."
+      ],
+      "ans": "A",
+      "explain": "I was checking the receipt when I realized they charged me twice. (我在核對收據時發現他們收了兩次錢。) 回應 A (你應該回到櫃檯要求退款) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The trolley that I grabbed has a broken wheel.",
+      "options": [
+        "A. 我拿的籃子提把斷了。",
+        "B. 我拿的推車輪子壞了。",
+        "C. 我拿的袋子破了。",
+        "D. 我拿的商品過期了。"
+      ],
+      "ans": "B",
+      "explain": "The trolley that I grabbed has a broken wheel. (我拿的推車輪子壞了。)"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She avoids going to the grocery store on weekends.",
+      "options": [
+        "A. 她避免在週末去百貨公司。",
+        "B. 她避免在週末去傳統市場。",
+        "C. 她避免在週末去食品雜貨店。",
+        "D. 她避免在週末去五金行。"
+      ],
+      "ans": "C",
+      "explain": "She avoids going to the grocery store on weekends. (她避免在週末去食品雜貨店。)"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：練習說西班牙文",
+      "ans": "PRACTICE SPEAKING SPANISH",
+      "speak": "practice speaking spanish"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：準備出發",
+      "ans": "PREPARE FOR DEPARTURE",
+      "speak": "prepare for departure"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：哪一個比較便宜",
+      "ans": "WHICH IS CHEAPER",
+      "speak": "which is cheaper"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他就是帶領這次旅行的導遊",
+      "ans": "HE IS THE GUIDE WHO LED THE TOUR",
+      "speak": "he is the guide who led the tour"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我需要一輛安全的車",
+      "ans": "I NEED A CAR WHICH IS SAFE",
+      "speak": "i need a car which is safe"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你同意這項新政策嗎",
+      "ans": "DO YOU AGREE WITH THE NEW POLICY",
+      "speak": "do you agree with the new policy"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我希望有一天能參觀那間博物館",
+      "ans": "I HOPE TO VISIT THAT MUSEUM SOMEDAY",
+      "speak": "i hope to visit that museum someday"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們遇到的那位女士是名醫生",
+      "ans": "THE WOMAN THAT WE MET IS A DOCTOR",
+      "speak": "the woman that we met is a doctor"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他避免回答這個直接的問題",
+      "ans": "HE AVOIDED ANSWERING THE DIRECT QUESTION",
+      "speak": "he avoided answering the direct question"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們當時正在審查季報",
+      "ans": "WE WERE REVIEWING THE QUARTERLY REPORT",
+      "speak": "we were reviewing the quarterly report"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我完全不同意你的決定",
+      "ans": "I COMPLETELY DISAGREE WITH YOUR DECISION",
+      "speak": "i completely disagree with your decision"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你能向我解釋原因嗎",
+      "ans": "COULD YOU EXPLAIN THE REASON TO ME",
+      "speak": "could you explain the reason to me"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你借給我的那本書很棒",
+      "ans": "THE BOOK WHICH YOU LENT ME IS GREAT",
+      "speak": "the book which you lent me is great"
     }
   ]
 }

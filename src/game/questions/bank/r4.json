@@ -1209,6 +1209,627 @@
       "desc": "請唸出：他決定換工作",
       "ans": "HE DECIDED TO CHANGE HIS JOB",
       "speak": "he decided to change his job"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N T E R V I _ W (面試)",
+      "ans": "E",
+      "speak": "interview"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P A S S _ N G E R (乘客)",
+      "ans": "E",
+      "speak": "passenger"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：包含/涉及",
+      "ans": "INVOLVE",
+      "speak": "involve"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N V _ L V E (包含/涉及)",
+      "ans": "O",
+      "speak": "involve"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：期待/預期",
+      "ans": "EXPECT",
+      "speak": "expect"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E X P _ C T (期待/預期)",
+      "ans": "E",
+      "speak": "expect"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：設法做到/管理",
+      "ans": "MANAGE",
+      "speak": "manage"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M _ N A G E (設法做到/管理)",
+      "ans": "A",
+      "speak": "manage"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：提到",
+      "ans": "MENTION",
+      "speak": "mention"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：M E N T I _ N (提到)",
+      "ans": "O",
+      "speak": "mention"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O M I S _ (承諾)",
+      "ans": "E",
+      "speak": "promise"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E A L I Z _ (意識到)",
+      "ans": "E",
+      "speak": "realize"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：航班",
+      "ans": "FLIGHT",
+      "speak": "flight"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F L I G H _ (航班)",
+      "ans": "T",
+      "speak": "flight"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：預約",
+      "ans": "APPOINTMENT",
+      "speak": "appointment"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A P P _ I N T M E N _ (預約)",
+      "ans": "OT",
+      "speak": "appointment"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R E S _ N T A T I _ N (簡報)",
+      "ans": "EO",
+      "speak": "presentation"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：附件",
+      "ans": "ATTACHMENT",
+      "speak": "attachment"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A T T _ C H M _ N T (附件)",
+      "ans": "AE",
+      "speak": "attachment"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：組織/籌備",
+      "ans": "ORGANIZE",
+      "speak": "organize"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：O R G _ N I Z _ (組織/籌備)",
+      "ans": "AE",
+      "speak": "organize"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E N C O U R _ G _ (鼓勵)",
+      "ans": "AE",
+      "speak": "encourage"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：假裝",
+      "ans": "PRETEND",
+      "speak": "pretend"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R _ T E N _ (假裝)",
+      "ans": "ED",
+      "speak": "pretend"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A R R _ N G _ (安排)",
+      "ans": "AE",
+      "speak": "arrange"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R _ C O M M _ N D (推薦)",
+      "ans": "EE",
+      "speak": "recommend"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E S _ R V A T I _ N (預訂)",
+      "ans": "EO",
+      "speak": "reservation"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "announce",
+      "options": [
+        "A. 發音",
+        "B. 宣布",
+        "C. 譴責",
+        "D. 允許"
+      ],
+      "ans": "B",
+      "explain": "聽力原字為 announce (v.) 宣布、播報。常見於車站廣播。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "delay",
+      "options": [
+        "A. 刪除",
+        "B. 傳遞",
+        "C. 延遲",
+        "D. 決定"
+      ],
+      "ans": "C",
+      "explain": "聽力原字為 delay (v./n.) 延遲、耽擱。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "interview",
+      "options": [
+        "A. 內部",
+        "B. 網路",
+        "C. 複習",
+        "D. 面試"
+      ],
+      "ans": "D",
+      "explain": "聽力原字為 interview (n./v.) 面試、訪談。常用於電台節目或求職。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "diagnose",
+      "options": [
+        "A. 診斷",
+        "B. 對話",
+        "C. 圖表",
+        "D. 發現"
+      ],
+      "ans": "A",
+      "explain": "聽力原字為 diagnose (v.) 診斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "transfer",
+      "options": [
+        "A. 翻譯",
+        "B. 運輸",
+        "C. 轉接",
+        "D. 交易"
+      ],
+      "ans": "C",
+      "explain": "聽力原字為 transfer (v./n.) 轉接（電話）、轉乘、調職。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "resolve",
+      "options": [
+        "A. 保留",
+        "B. 解決",
+        "C. 旋轉",
+        "D. 辭職"
+      ],
+      "ans": "B",
+      "explain": "聽力原字為 resolve (v.) 解決（問題、爭端）。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "approve",
+      "options": [
+        "A. 批准",
+        "B. 證明",
+        "C. 改善",
+        "D. 提供"
+      ],
+      "ans": "A",
+      "explain": "聽力原字為 approve (v.) 批准、贊成。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "commute",
+      "options": [
+        "A. 溝通",
+        "B. 通勤",
+        "C. 委員會",
+        "D. 比較"
+      ],
+      "ans": "B",
+      "explain": "聽力原字為 commute (v./n.) 通勤。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "estimate",
+      "options": [
+        "A. 建立",
+        "B. 估計",
+        "C. 財產",
+        "D. 逃跑"
+      ],
+      "ans": "B",
+      "explain": "聽力原字為 estimate (v./n.) 估計、估價。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was watching the news when the phone rang.",
+      "options": [
+        "A. 電話響的時候，我正在看新聞。",
+        "B. 我看完新聞後，打了一通電話。",
+        "C. 我在講電話的時候，剛好看到新聞。",
+        "D. 新聞播報結束時，電話響了。"
+      ],
+      "ans": "A",
+      "explain": "原句：I was watching the news when the phone rang. (電話響的時候，我正在看新聞。) 測試過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The woman who called earlier left a message.",
+      "options": [
+        "A. 那位女士打電話來留言說會早點到。",
+        "B. 剛才打電話來的那位女士留了言。",
+        "C. 留言的那位女士打電話來取消了。",
+        "D. 請那位早點打來的女士留個言。"
+      ],
+      "ans": "B",
+      "explain": "原句：The woman who called earlier left a message. (剛才打電話來的那位女士留了言。) 測試關係代名詞 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you want to reschedule the appointment?",
+      "options": [
+        "A. Yes, I paid for it yesterday.",
+        "B. No, the doctor is not here.",
+        "C. Yes, can we make it next Friday?",
+        "D. I have already read the schedule."
+      ],
+      "ans": "C",
+      "explain": "原句：Do you want to reschedule the appointment? (你想要重新安排預約時間嗎？) 回答 C (可以改到下週五嗎？) 最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are considering updating our software.",
+      "options": [
+        "A. 我們已經更新了所有的軟體。",
+        "B. 我們正在考慮更新我們的軟體。",
+        "C. 我們不打算升級目前的系統。",
+        "D. 更新軟體需要很多時間考量。"
+      ],
+      "ans": "B",
+      "explain": "原句：We are considering updating our software. (我們正在考慮更新我們的軟體。) 測試 consider + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The train that goes to the airport is arriving.",
+      "options": [
+        "A. 來自機場的火車已經出發了。",
+        "B. 我們必須趕上前往機場的火車。",
+        "C. 前往機場的火車即將進站。",
+        "D. 這班火車不會開往機場。"
+      ],
+      "ans": "C",
+      "explain": "原句：The train that goes to the airport is arriving. (前往機場的火車即將進站。) 測試關係代名詞 that。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He admitted losing the receipt.",
+      "options": [
+        "A. 他承認弄丟了收據。",
+        "B. 他答應會把收據找回來。",
+        "C. 他拒絕交出那張收據。",
+        "D. 他忘記把收據放在哪裡了。"
+      ],
+      "ans": "A",
+      "explain": "原句：He admitted losing the receipt. (他承認弄丟了收據。) 測試 admit + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was waiting for the bus at that time.",
+      "options": [
+        "A. 我那時候已經上公車了。",
+        "B. 我打算在那個時間等公車。",
+        "C. 我那時候正在等公車。",
+        "D. 公車在那個時候剛好抵達。"
+      ],
+      "ans": "C",
+      "explain": "原句：I was waiting for the bus at that time. (我那時候正在等公車。) 測試過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She promised to send the files by noon.",
+      "options": [
+        "A. 她答應會在中午前寄出檔案。",
+        "B. 她希望能在中午前收到檔案。",
+        "C. 這些檔案保證會在中午前完成。",
+        "D. 她中午的時候正在寄送檔案。"
+      ],
+      "ans": "A",
+      "explain": "原句：She promised to send the files by noon. (她答應會在中午前寄出檔案。) 測試 promise to + V。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The doctor who treated you is unavailable today.",
+      "options": [
+        "A. 你想看的醫生今天沒有上班。",
+        "B. 幫你治療的那位醫生今天沒空。",
+        "C. 醫生說你今天不需要來治療。",
+        "D. 今天那位醫生沒辦法幫你治療。"
+      ],
+      "ans": "B",
+      "explain": "原句：The doctor who treated you is unavailable today. (幫你治療的那位醫生今天沒空。) 測試關係代名詞 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you interested in joining our club?",
+      "options": [
+        "A. No, I am not interesting.",
+        "B. Yes, I would love to learn more.",
+        "C. I joined the meeting yesterday.",
+        "D. The club is very expensive."
+      ],
+      "ans": "B",
+      "explain": "原句：Are you interested in joining our club? (你有興趣加入我們的俱樂部嗎？) 回答 B 最恰當。測試 interested in + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They were fixing the elevator all morning.",
+      "options": [
+        "A. 他們整個早上都在修理電梯。",
+        "B. 電梯早上突然壞掉了。",
+        "C. 他們打算明天早上修理電梯。",
+        "D. 電梯已經修理了一整個早上。"
+      ],
+      "ans": "A",
+      "explain": "原句：They were fixing the elevator all morning. (他們整個早上都在修理電梯。) 測試過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Please remember to take your medicine.",
+      "options": [
+        "A. 請記得你已經吃過藥了。",
+        "B. 請提醒我去拿藥。",
+        "C. 請記得要按時吃藥。",
+        "D. 我忘記把藥放在哪裡了。"
+      ],
+      "ans": "C",
+      "explain": "原句：Please remember to take your medicine. (請記得要吃藥。) 測試 remember to + V (記得要去做...)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I was wondering if you could help me with this presentation.",
+      "options": [
+        "A. Yes, I was walking to the office.",
+        "B. Of course, what do you need?",
+        "C. I wonder why the presentation is late.",
+        "D. No, I didn't see the presentation."
+      ],
+      "ans": "B",
+      "explain": "原句：I was wondering if you could help me with this presentation. (我在想你是否能幫我準備這份簡報。) 這是委婉的請求，回答 B (當然，你需要什麼？) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "What were you doing when the power went out?",
+      "options": [
+        "A. I am going to buy some candles.",
+        "B. I was typing an email to a client.",
+        "C. The power will be back soon.",
+        "D. I went out for dinner yesterday."
+      ],
+      "ans": "B",
+      "explain": "原句：What were you doing when the power went out? (停電的時候你正在做什麼？) 詢問過去某時間點的動作，回答 B (我正在打字發信給客戶) 最符合過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Did you manage to find the meeting room?",
+      "options": [
+        "A. The manager is in the meeting room.",
+        "B. Yes, it was right down the hall.",
+        "C. I will manage the project next week.",
+        "D. No, I am looking for a job."
+      ],
+      "ans": "B",
+      "explain": "原句：Did you manage to find the meeting room? (你有順利找到會議室嗎？) 測試 manage to + V (設法完成)。回答 B (有，就在走廊盡頭) 最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The manager wants to know if we should proceed with the new campaign.",
+      "options": [
+        "A. We are processing the refund now.",
+        "B. Tell him we need a few more days to decide.",
+        "C. The manager knows the answer.",
+        "D. Yes, the campaign was very successful."
+      ],
+      "ans": "B",
+      "explain": "原句：The manager wants to know if we should proceed with the new campaign. (經理想知道我們是否該繼續進行新的活動。) 回答 B (告訴他我們還需要幾天決定) 邏輯正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you have any experience dealing with angry customers?",
+      "options": [
+        "A. Yes, I am very angry right now.",
+        "B. No, the customer service is closed.",
+        "C. Yes, I worked in retail for three years.",
+        "D. I experience pain in my stomach."
+      ],
+      "ans": "C",
+      "explain": "原句：Do you have any experience dealing with angry customers? (你有處理憤怒客人的經驗嗎？) 回答 C (有，我在零售業工作了三年) 展現相關經驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I forgot to bring the documents that you asked for.",
+      "options": [
+        "A. 我忘記帶你要求的那些文件了。",
+        "B. 我已經把你要的文件帶來了。",
+        "C. 你忘記向我要求那些文件了。",
+        "D. 我忘了告訴你要帶那些文件。"
+      ],
+      "ans": "A",
+      "explain": "原句：I forgot to bring the documents that you asked for. (我忘記帶你要求的那些文件了。) 測試 forget to + V 與關係代名詞 that。"
     }
   ],
   "boss": [
@@ -1669,6 +2290,242 @@
       "desc": "請唸出：他們建議去海灘",
       "ans": "THEY SUGGESTED GOING TO THE BEACH",
       "speak": "they suggested going to the beach"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：主管/監督者",
+      "ans": "SUPERVISOR",
+      "speak": "supervisor"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U P _ R V _ S _ R (主管/監督者)",
+      "ans": "EIO",
+      "speak": "supervisor"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ M M U N _ C A T _ (溝通)",
+      "ans": "OIE",
+      "speak": "communicate"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O P P _ R T U N _ T _ (機會)",
+      "ans": "OIY",
+      "speak": "opportunity"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A C C _ M M O D _ T I _ N (住宿)",
+      "ans": "OAO",
+      "speak": "accommodation"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A P _ L O G _ Z _ (道歉)",
+      "ans": "OIE",
+      "speak": "apologize"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D _ S T I N _ T I _ N (目的地)",
+      "ans": "EAO",
+      "speak": "destination"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The package which arrived today is for you.",
+      "options": [
+        "A. 你今天要寄出一個包裹。",
+        "B. 昨天抵達的包裹是給你的。",
+        "C. 今天送達的那個包裹是給你的。",
+        "D. 你必須今天去領取這個包裹。"
+      ],
+      "ans": "C",
+      "explain": "原句：The package which arrived today is for you. (今天送達的那個包裹是給你的。) 測試關係代名詞 which 較長句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I finished reading the report last night.",
+      "options": [
+        "A. 我昨晚把報告寫完了。",
+        "B. 我昨晚讀完了那份報告。",
+        "C. 昨晚的報告終於結束了。",
+        "D. 我打算今晚讀完這份報告。"
+      ],
+      "ans": "B",
+      "explain": "原句：I finished reading the report last night. (我昨晚讀完了那份報告。) 測試 finish + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We decided to hire a new assistant.",
+      "options": [
+        "A. 我們正在面試新的助理。",
+        "B. 助理決定要辭職了。",
+        "C. 我們決定要聘請一位新助理。",
+        "D. 新助理決定要接受這份工作。"
+      ],
+      "ans": "C",
+      "explain": "原句：We decided to hire a new assistant. (我們決定要聘請一位新助理。) 測試 decide to + V。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Thank you for calling customer service. How can I help you today?",
+      "options": [
+        "A. I called you yesterday morning.",
+        "B. I am trying to track a missing order.",
+        "C. The service here is excellent.",
+        "D. How do you help customers?"
+      ],
+      "ans": "B",
+      "explain": "原句：Thank you for calling customer service. How can I help you today? (感謝致電客服，今天能怎麼幫忙您？) 客戶常回答目的，故選 B (我正在試著追蹤一筆遺失的訂單)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Attention all passengers. Flight 808 is now boarding at gate twelve.",
+      "options": [
+        "A. 808 航班已經在十二號登機門起飛了。",
+        "B. 請注意，808 航班更改到十二號登機門。",
+        "C. 各位旅客請注意，808 航班現在於十二號登機門開始登機。",
+        "D. 808 航班的旅客請前往十二號登機門領取行李。"
+      ],
+      "ans": "C",
+      "explain": "原句：Attention all passengers. Flight 808 is now boarding at gate twelve. 機場廣播情境，boarding 意為「登機」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The pharmacy that is open 24 hours is located on Main Street.",
+      "options": [
+        "A. 位於主街的藥局今晚會開到 24 點。",
+        "B. 那間 24 小時營業的藥局位在主街上。",
+        "C. 主街上新開了一家 24 小時營業的藥局。",
+        "D. 藥局老闆在主街上開了 24 個小時的車。"
+      ],
+      "ans": "B",
+      "explain": "原句：The pharmacy that is open 24 hours is located on Main Street. (那間 24 小時營業的藥局位在主街上。) 測試關係代名詞 that。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I highly recommend taking a taxi if you are in a hurry.",
+      "options": [
+        "A. 如果你很趕時間，我強烈建議你搭計程車。",
+        "B. 我建議計程車司機開快一點，因為我很趕時間。",
+        "C. 雖然你很急，但我還是不建議你搭計程車。",
+        "D. 這位計程車司機非常推薦你慢慢來。"
+      ],
+      "ans": "A",
+      "explain": "原句：I highly recommend taking a taxi if you are in a hurry. (如果你很趕時間，我強烈建議你搭計程車。) 測試 recommend + V-ing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I apologize for the delay. We are currently experiencing high call volumes.",
+      "options": [
+        "A. 很抱歉讓您久等，我們正在調整通話音量。",
+        "B. 對於延遲感到抱歉，目前我們的進線量非常大。",
+        "C. 我為延遲道歉，請您大聲一點說話。",
+        "D. 因為電話數量不足，導致我們的服務延遲，請見諒。"
+      ],
+      "ans": "B",
+      "explain": "原句：I apologize for the delay. We are currently experiencing high call volumes. (對於延遲感到抱歉，目前我們的進線量非常大。) 常見客服用語。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They are planning to renovate the lobby next month.",
+      "options": [
+        "A. 他們上個月剛剛翻修完大廳。",
+        "B. 他們計畫在下個月翻修大廳。",
+        "C. 下個月的大廳會非常熱鬧。",
+        "D. 大廳的翻修計畫被延到下個月了。"
+      ],
+      "ans": "B",
+      "explain": "原句：They are planning to renovate the lobby next month. (他們計畫在下個月翻修大廳。) 測試 plan to + V。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Are you taking any medication for those symptoms?",
+      "options": [
+        "A. Yes, I take the train every day.",
+        "B. I am feeling much better now.",
+        "C. Yes, the doctor prescribed some pills.",
+        "D. No, I haven't meditated lately."
+      ],
+      "ans": "C",
+      "explain": "原句：Are you taking any medication for those symptoms? (你有針對那些症狀服用任何藥物嗎？) 詢問醫療狀況，回答 C (有，醫生開了一些藥丸) 最正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The guest who is staying in room 302 needs some extra towels.",
+      "options": [
+        "A. 住在 302 號房的客人需要一些額外的毛巾。",
+        "B. 302 號房的客人剛剛送來了一些毛巾。",
+        "C. 請問 302 號房的客人還需要毛巾嗎？",
+        "D. 客房服務正在為 302 號房準備毛巾。"
+      ],
+      "ans": "A",
+      "explain": "原句：The guest who is staying in room 302 needs some extra towels. (住在 302 號房的客人需要一些額外的毛巾。) 測試關係代名詞 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I would like to speak to the person who is in charge of marketing.",
+      "options": [
+        "A. I will charge your credit card now.",
+        "B. Speaking. How can I assist you?",
+        "C. He is charging his phone.",
+        "D. Marketing is a very difficult job."
+      ],
+      "ans": "B",
+      "explain": "原句：I would like to speak to the person who is in charge of marketing. (我想跟負責行銷的人說話。) 回答 B (我就是。能怎麼幫忙您？) 是商業通話中標準的接話方式。"
     }
   ]
 }

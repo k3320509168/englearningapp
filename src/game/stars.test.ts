@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { emptyRunStats, evaluateStars, mergeStars, requiredStreak, starConditions } from './stars';
+import { emptyRunStats, evaluateStars, mergeStars, requiredStreak, fastReferenceMs, fastRoutePassed, isFastAnswer, starConditions } from './stars';
 import { REGIONS, chapterCount, mapName, regionStageCount, stageLabel } from './regions';
 import { STORIES, clearStoryId, regionStoryId } from './story';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
@@ -44,11 +44,27 @@ describe('three-star rating', () => {
     expect(evaluateStars(0, good)).toEqual([true, true, true]);
     expect(evaluateStars(0, { ...good, correct: 16, maxStreak: 2, knockouts: 1 })).toEqual([false, false, false]);
     // 連對不夠，但答得很快也能拿第三顆
-    expect(evaluateStars(0, { ...good, maxStreak: 2, correctTimeMs: 18 * 3000 })[2]).toBe(true);
+    expect(evaluateStars(0, { ...good, maxStreak: 2, eligibleCorrectAnswers: 18, fastCorrectAnswers: 3 })[2]).toBe(true);
     // 困難題 Bonus 把 combo 乘很大也不算：看的是真的連續答對
     expect(evaluateStars(0, { ...good, maxStreak: 2, maxCombo: 500 })[2]).toBe(false);
   });
 
+  it('requires enough eligible correct answers, not merely one instant answer', () => {
+    expect(fastRoutePassed({ ...emptyRunStats(), eligibleCorrectAnswers: 11, fastCorrectAnswers: 11 })).toBe(false);
+    expect(fastRoutePassed({ ...emptyRunStats(), eligibleCorrectAnswers: 12, fastCorrectAnswers: 2 })).toBe(false);
+    expect(fastRoutePassed({ ...emptyRunStats(), eligibleCorrectAnswers: 31, fastCorrectAnswers: 3 })).toBe(false);
+    expect(fastRoutePassed({ ...emptyRunStats(), eligibleCorrectAnswers: 31, fastCorrectAnswers: 4 })).toBe(true);
+  });
+  it('adjusts fast-answer references by skill, difficulty and actual output length', () => {
+    const read = { type: 'choice' as const, desc: 'Read', ans: 'A', difficulty: 1 as const };
+    expect(fastReferenceMs(read)).toBe(5000);
+    expect(fastReferenceMs({ ...read, skill: 'listening', difficulty: 3 })).toBe(9000);
+    expect(isFastAnswer(read, 3500)).toBe(true);
+    expect(isFastAnswer(read, 3501)).toBe(false);
+    expect(isFastAnswer(read, NaN)).toBe(false);
+    expect(fastReferenceMs({ type: 'spell', desc: '', ans: 'INFRASTRUCTURE', difficulty: 1 })).toBe(10800);
+    expect(fastReferenceMs({ type: 'voice', desc: '', ans: '', speak: 'Please leave the parcel by the door', difficulty: 1 })).toBe(5700);
+  });
   it('keeps the best record per condition', () => {
     expect(mergeStars([true, false, true], [false, true, false])).toEqual([true, true, true]);
   });

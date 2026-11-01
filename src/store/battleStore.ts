@@ -43,7 +43,7 @@ import { PROLOGUE_XP, allowedTypes, prologueGuard, gaugeScale, isPrologue, minAn
 import { BONUS_GOLD, BONUS_GOLD_CAP, canExecute, executeKindOf } from '../game/execute';
 import { WRONG_COMBO_KEEP, applyHardBonus, decayCombo, grantSkillCombo, skillWindowOf } from '../game/combo';
 import { useUiStore } from './uiStore';
-import { emptyRunStats, evaluateStars } from '../game/stars';
+import { emptyRunStats, evaluateStars, isFastAnswer } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
 import { CHASE_FAST_MS, MOD_DEFS, afterAnswer, isActive, chooseReflect, modDamageMult, modGaugeMult, modPreference, modSealed, modsFor, skillName, startMods } from '../game/bossMods';
 import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods';
@@ -977,14 +977,17 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     }
     save().trackDaily('correct');
     save().trackDaily('combo', combo);
+    const eligible = !s.retrying && !s.assist && !s.overtime;
     const mapStats = {
       ...s.mapStats,
+      eligibleCorrectAnswers: s.mapStats.eligibleCorrectAnswers + (eligible ? 1 : 0),
+      fastCorrectAnswers: s.mapStats.fastCorrectAnswers + (eligible && isFastAnswer(s.question, s.activeAnswerMs) ? 1 : 0),
       answered: s.mapStats.answered + 1,
       correct: s.mapStats.correct + 1,
       maxCombo: Math.max(s.mapStats.maxCombo, combo),
       maxStreak: Math.max(s.mapStats.maxStreak, streak),
       bossQuestionsCorrect: s.mapStats.bossQuestionsCorrect + (s.isBossQuestion && !s.overtime ? 1 : 0),
-      correctTimeMs: s.mapStats.correctTimeMs + elapsed,
+      correctTimeMs: s.mapStats.correctTimeMs + s.activeAnswerMs,
     };
     // 見習騎士系的被動：每 N combo 得到一次守護
     const guardEvery = teamGuardEvery(party);

@@ -570,5 +570,717 @@
         ]
       }
     ]
+  },
+  "DIAGNOSIS": {
+    "pos": "n.",
+    "meaning": "診斷",
+    "example": "The doctor made an accurate diagnosis of her condition.",
+    "exampleZh": "醫生對她的病情做出了準確的診斷。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "診斷",
+        "examples": [
+          {
+            "en": "The doctor made an accurate diagnosis of her condition.",
+            "zh": "醫生對她的病情做出了準確的診斷。"
+          },
+          {
+            "en": "An early diagnosis can significantly improve the chances of recovery.",
+            "zh": "早期診斷可以顯著提高康復的機會。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRESCRIPTION": {
+    "pos": "n.",
+    "meaning": "處方",
+    "example": "These painkillers are only available by prescription.",
+    "exampleZh": "這些止痛藥必須憑處方才能購買。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "處方；處方藥",
+        "examples": [
+          {
+            "en": "These painkillers are only available by prescription.",
+            "zh": "這些止痛藥必須憑處方才能購買。"
+          },
+          {
+            "en": "The doctor wrote a prescription for antibiotics.",
+            "zh": "醫生開了抗生素的處方。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHRONIC": {
+    "pos": "adj.",
+    "meaning": "慢性的",
+    "example": "He suffers from chronic back pain.",
+    "exampleZh": "他患有慢性背痛。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "慢性的；長期的",
+        "examples": [
+          {
+            "en": "He suffers from chronic back pain.",
+            "zh": "他患有慢性背痛。"
+          },
+          {
+            "en": "There is a chronic shortage of medical staff in the hospital.",
+            "zh": "該醫院長期缺乏醫護人員。"
+          }
+        ]
+      }
+    ]
+  },
+  "FATIGUE": {
+    "pos": "n.",
+    "meaning": "疲勞",
+    "example": "She was suffering from extreme fatigue after the long flight.",
+    "exampleZh": "在長途飛行後，她感到極度疲勞。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "疲勞；勞累",
+        "examples": [
+          {
+            "en": "She was suffering from extreme fatigue after the long flight.",
+            "zh": "在長途飛行後，她感到極度疲勞。"
+          },
+          {
+            "en": "Mental fatigue can severely affect your decision-making abilities.",
+            "zh": "精神疲勞會嚴重影響你的決策能力。"
+          }
+        ]
+      }
+    ]
+  },
+  "PREMISES": {
+    "pos": "n.",
+    "meaning": "營業場所",
+    "example": "Smoking is strictly prohibited on the premises.",
+    "exampleZh": "該場所內嚴禁吸菸。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "營業場所；廠區",
+        "examples": [
+          {
+            "en": "Smoking is strictly prohibited on the premises.",
+            "zh": "該場所內嚴禁吸菸。"
+          },
+          {
+            "en": "The company has moved to new premises in the city center.",
+            "zh": "公司已經搬到了市中心的新辦公場所。"
+          }
+        ]
+      }
+    ]
+  },
+  "WITHHOLD": {
+    "pos": "v.",
+    "meaning": "扣留",
+    "example": "The client decided to withhold payment until the project was completed.",
+    "exampleZh": "客戶決定在專案完成前扣留款項。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "扣留；拒絕給予",
+        "examples": [
+          {
+            "en": "The client decided to withhold payment until the project was completed.",
+            "zh": "客戶決定在專案完成前扣留款項。"
+          },
+          {
+            "en": "She was accused of withholding crucial evidence from the court.",
+            "zh": "她被指控向法庭隱瞞關鍵證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "ONBOARDING": {
+    "pos": "n.",
+    "meaning": "入職培訓",
+    "example": "The new onboarding process helps employees adapt to the company culture quickly.",
+    "exampleZh": "新的入職培訓流程幫助員工快速適應公司文化。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "入職培訓；入職引導",
+        "examples": [
+          {
+            "en": "The new onboarding process helps employees adapt to the company culture quickly.",
+            "zh": "新的入職培訓流程幫助員工快速適應公司文化。"
+          },
+          {
+            "en": "We need to improve our onboarding materials for remote workers.",
+            "zh": "我們需要改進針對遠距工作者的入職培訓資料。"
+          }
+        ]
+      }
+    ]
+  },
+  "MENTORSHIP": {
+    "pos": "n.",
+    "meaning": "導師制度",
+    "example": "She attributes her professional success to the mentorship she received early in her career.",
+    "exampleZh": "她將自己的職業成功歸功於她在職業生涯早期得到的指導。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "導師制度；指導",
+        "examples": [
+          {
+            "en": "She attributes her professional success to the mentorship she received early in her career.",
+            "zh": "她將自己的職業成功歸功於她在職業生涯早期得到的指導。"
+          },
+          {
+            "en": "The company offers a mentorship program for young talent.",
+            "zh": "公司為年輕人才提供導師計畫。"
+          }
+        ]
+      }
+    ]
+  },
+  "METRICS": {
+    "pos": "n.",
+    "meaning": "指標",
+    "example": "We use various performance metrics to evaluate the team's efficiency.",
+    "exampleZh": "我們使用各種績效指標來評估團隊的效率。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "指標；衡量標準",
+        "examples": [
+          {
+            "en": "We use various performance metrics to evaluate the team's efficiency.",
+            "zh": "我們使用各種績效指標來評估團隊的效率。"
+          },
+          {
+            "en": "What are the key metrics for measuring customer satisfaction?",
+            "zh": "衡量客戶滿意度的關鍵指標是什麼？"
+          }
+        ]
+      }
+    ]
+  },
+  "MEDIATION": {
+    "pos": "n.",
+    "meaning": "調解",
+    "example": "The dispute was finally settled through mediation.",
+    "exampleZh": "這場糾紛最終透過調解解決了。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "調解；仲裁",
+        "examples": [
+          {
+            "en": "The dispute was finally settled through mediation.",
+            "zh": "這場糾紛最終透過調解解決了。"
+          },
+          {
+            "en": "They agreed to seek legal mediation to resolve their differences.",
+            "zh": "他們同意尋求法律調解來解決分歧。"
+          }
+        ]
+      }
+    ]
+  },
+  "FRICTION": {
+    "pos": "n.",
+    "meaning": "摩擦",
+    "example": "There has been a lot of friction between the two departments recently.",
+    "exampleZh": "最近這兩個部門之間有很多摩擦。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "摩擦；不和",
+        "examples": [
+          {
+            "en": "There has been a lot of friction between the two departments recently.",
+            "zh": "最近這兩個部門之間有很多摩擦。"
+          },
+          {
+            "en": "Constant friction in the workplace can ruin the team's morale.",
+            "zh": "職場中不斷的摩擦會破壞團隊士氣。"
+          }
+        ]
+      }
+    ]
+  },
+  "TENSION": {
+    "pos": "n.",
+    "meaning": "緊張局勢",
+    "example": "You could almost feel the tension in the meeting room.",
+    "exampleZh": "你幾乎可以感覺到會議室裡的緊張氣氛。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "緊張關係；緊張局勢",
+        "examples": [
+          {
+            "en": "You could almost feel the tension in the meeting room.",
+            "zh": "你幾乎可以感覺到會議室裡的緊張氣氛。"
+          },
+          {
+            "en": "Political tension has been escalating over the past few weeks.",
+            "zh": "在過去幾週裡，政治緊張局勢不斷升級。"
+          }
+        ]
+      }
+    ]
+  },
+  "ALIGNMENT": {
+    "pos": "n.",
+    "meaning": "一致",
+    "example": "We need to ensure alignment between our marketing strategy and business goals.",
+    "exampleZh": "我們需要確保行銷策略與商業目標之間保持一致。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "一致；對齊",
+        "examples": [
+          {
+            "en": "We need to ensure alignment between our marketing strategy and business goals.",
+            "zh": "我們需要確保行銷策略與商業目標之間保持一致。"
+          },
+          {
+            "en": "The lack of alignment among the board members delayed the project.",
+            "zh": "董事會成員之間缺乏共識導致了專案延遲。"
+          }
+        ]
+      }
+    ]
+  },
+  "HINDSIGHT": {
+    "pos": "n.",
+    "meaning": "後見之明",
+    "example": "With hindsight, I should have taken the job offer.",
+    "exampleZh": "事後看來，我應該接受那份工作邀請的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "後見之明；事後覺悟",
+        "examples": [
+          {
+            "en": "With hindsight, I should have taken the job offer.",
+            "zh": "事後看來，我應該接受那份工作邀請的。"
+          },
+          {
+            "en": "It's easy to criticize their mistakes in hindsight.",
+            "zh": "事後批評他們的錯誤是很容易的。"
+          }
+        ]
+      }
+    ]
+  },
+  "BLUNDER": {
+    "pos": "n.",
+    "meaning": "大錯",
+    "example": "Sending the email to the wrong client was a major blunder.",
+    "exampleZh": "把電子郵件寄錯客戶是一個重大失誤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "愚蠢的錯誤；大錯",
+        "examples": [
+          {
+            "en": "Sending the email to the wrong client was a major blunder.",
+            "zh": "把電子郵件寄錯客戶是一個重大失誤。"
+          },
+          {
+            "en": "The company's financial blunder cost them millions of dollars.",
+            "zh": "公司的財務失誤讓他們損失了數百萬美元。"
+          }
+        ]
+      }
+    ]
+  },
+  "APPENDIX": {
+    "pos": "n.",
+    "meaning": "附錄",
+    "example": "The detailed charts must have been added to the appendix after the meeting.",
+    "exampleZh": "詳細圖表一定是在會議後被加入附錄的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "附錄",
+        "examples": [
+          {
+            "en": "The detailed charts must have been added to the appendix after the meeting.",
+            "zh": "詳細圖表一定是在會議後被加入附錄的。"
+          },
+          {
+            "en": "You will find the supplementary data in the appendix.",
+            "zh": "你可以在附錄中找到補充資料。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPILE": {
+    "pos": "v.",
+    "meaning": "匯編；收集",
+    "example": "She has been compiling the survey data for three months.",
+    "exampleZh": "她三個月來一直在匯編調查數據。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "匯編；收集",
+        "examples": [
+          {
+            "en": "She has been compiling the survey data for three months.",
+            "zh": "她三個月來一直在匯編調查數據。"
+          },
+          {
+            "en": "The annual report is being compiled by our financial team.",
+            "zh": "年度報告正由我們的財務團隊匯編。"
+          }
+        ]
+      }
+    ]
+  },
+  "FINDINGS": {
+    "pos": "n.",
+    "meaning": "調查結果",
+    "example": "The research findings are expected to be published next week.",
+    "exampleZh": "研究調查結果預計將於下週發表。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "調查結果",
+        "examples": [
+          {
+            "en": "The research findings are expected to be published next week.",
+            "zh": "研究調查結果預計將於下週發表。"
+          },
+          {
+            "en": "The committee must have discussed the preliminary findings yesterday.",
+            "zh": "委員會昨天一定已經討論過初步調查結果了。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARAMETER": {
+    "pos": "n.",
+    "meaning": "參數；界限",
+    "example": "The budget parameters must have been set by the board of directors.",
+    "exampleZh": "預算界限一定是董事會設定的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "參數；界限",
+        "examples": [
+          {
+            "en": "The budget parameters must have been set by the board of directors.",
+            "zh": "預算界限一定是董事會設定的。"
+          },
+          {
+            "en": "The system has been operating within the designated parameters.",
+            "zh": "系統一直都在指定的參數範圍內運作。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUALITATIVE": {
+    "pos": "adj.",
+    "meaning": "質性的",
+    "example": "We have been conducting qualitative research to understand consumer behavior.",
+    "exampleZh": "我們一直在進行質性研究以了解消費者行為。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "質性的",
+        "examples": [
+          {
+            "en": "We have been conducting qualitative research to understand consumer behavior.",
+            "zh": "我們一直在進行質性研究以了解消費者行為。"
+          },
+          {
+            "en": "The qualitative difference between the two products is immediately noticeable.",
+            "zh": "這兩款產品之間在質性上的差異顯而易見。"
+          }
+        ]
+      }
+    ]
+  },
+  "RELEVANT": {
+    "pos": "adj.",
+    "meaning": "相關的",
+    "example": "Relevant information is believed to have been lost during the server crash.",
+    "exampleZh": "相關資訊據信已在伺服器當機期間遺失。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "相關的",
+        "examples": [
+          {
+            "en": "Relevant information is believed to have been lost during the server crash.",
+            "zh": "相關資訊據信已在伺服器當機期間遺失。"
+          },
+          {
+            "en": "Please forward any relevant documents to the legal department.",
+            "zh": "請將任何相關文件轉交給法務部門。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACCORDINGLY": {
+    "pos": "adv.",
+    "meaning": "相應地",
+    "example": "The team has been updating the schedule and notifying clients accordingly.",
+    "exampleZh": "團隊一直在更新時程表並相應地通知客戶。",
+    "senses": [
+      {
+        "pos": "adv.",
+        "meaning": "相應地",
+        "examples": [
+          {
+            "en": "The team has been updating the schedule and notifying clients accordingly.",
+            "zh": "團隊一直在更新時程表並相應地通知客戶。"
+          },
+          {
+            "en": "The guidelines have changed, and you are expected to act accordingly.",
+            "zh": "指導方針已更改，期望您能相應地採取行動。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERTAIN": {
+    "pos": "v.",
+    "meaning": "關於；附屬",
+    "example": "The lawyers have been reviewing documents pertaining to the merger.",
+    "exampleZh": "律師們一直在審查與合併案相關的文件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "關於；附屬",
+        "examples": [
+          {
+            "en": "The lawyers have been reviewing documents pertaining to the merger.",
+            "zh": "律師們一直在審查與合併案相關的文件。"
+          },
+          {
+            "en": "This regulation is considered to pertain primarily to heavy industry.",
+            "zh": "這項規定被認為主要與重工業相關。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEPRIVE": {
+    "pos": "v.",
+    "meaning": "剝奪",
+    "example": "The harsh regulations must have deprived them of their basic rights.",
+    "exampleZh": "嚴苛的規定一定剝奪了他們的基本權利。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "剝奪",
+        "examples": [
+          {
+            "en": "The harsh regulations must have deprived them of their basic rights.",
+            "zh": "嚴苛的規定一定剝奪了他們的基本權利。"
+          },
+          {
+            "en": "Long working hours have been depriving the staff of adequate rest.",
+            "zh": "漫長的工作時間一直剝奪員工的充足休息。"
+          }
+        ]
+      }
+    ]
+  },
+  "UTILIZE": {
+    "pos": "v.",
+    "meaning": "利用",
+    "example": "The marketing team has been utilizing AI tools to improve ad targeting.",
+    "exampleZh": "行銷團隊一直在利用人工智慧工具來改善廣告定位。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "利用",
+        "examples": [
+          {
+            "en": "The marketing team has been utilizing AI tools to improve ad targeting.",
+            "zh": "行銷團隊一直在利用人工智慧工具來改善廣告定位。"
+          },
+          {
+            "en": "Renewable energy sources are projected to be widely utilized by 2030.",
+            "zh": "再生能源預計到 2030 年將被廣泛利用。"
+          }
+        ]
+      }
+    ]
+  },
+  "ELABORATE": {
+    "pos": "v.",
+    "meaning": "詳細說明",
+    "example": "The CEO must have elaborated on the new strategy during the private session.",
+    "exampleZh": "執行長一定在閉門會議中詳細說明了新策略。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "詳細說明",
+        "examples": [
+          {
+            "en": "The CEO must have elaborated on the new strategy during the private session.",
+            "zh": "執行長一定在閉門會議中詳細說明了新策略。"
+          },
+          {
+            "en": "Could you elaborate on how this software improves efficiency?",
+            "zh": "您能詳細說明這款軟體如何提升效率嗎？"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "精心製作的",
+        "examples": [
+          {
+            "en": "An elaborate system of checks has been implemented.",
+            "zh": "一項精心製作的檢查系統已經實施。"
+          }
+        ]
+      }
+    ]
+  },
+  "REFRAIN": {
+    "pos": "v.",
+    "meaning": "克制；避免",
+    "example": "Passengers are politely requested to refrain from smoking on board.",
+    "exampleZh": "懇請乘客在機上克制吸菸。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "克制；避免",
+        "examples": [
+          {
+            "en": "Passengers are politely requested to refrain from smoking on board.",
+            "zh": "懇請乘客在機上克制吸菸。"
+          },
+          {
+            "en": "I must have refrained from commenting out of respect for him.",
+            "zh": "我一定是出於對他的尊重而忍住沒有發表評論。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESORT": {
+    "pos": "v.",
+    "meaning": "訴諸；求助",
+    "example": "They must have resorted to legal action after negotiations failed.",
+    "exampleZh": "談判破裂後，他們一定是訴諸了法律行動。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "訴諸；求助",
+        "examples": [
+          {
+            "en": "They must have resorted to legal action after negotiations failed.",
+            "zh": "談判破裂後，他們一定是訴諸了法律行動。"
+          },
+          {
+            "en": "We have been trying to solve this without resorting to penalties.",
+            "zh": "我們一直試圖在不訴諸罰款的情況下解決這個問題。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "最後手段",
+        "examples": [
+          {
+            "en": "Filing a lawsuit should be considered a last resort.",
+            "zh": "提起訴訟應被視為最後的手段。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUANTITATIVE": {
+    "pos": "adj.",
+    "meaning": "量化的",
+    "example": "Quantitative data must have been gathered to support the proposal.",
+    "exampleZh": "一定已經收集了量化數據來支持這項提案。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "量化的",
+        "examples": [
+          {
+            "en": "Quantitative data must have been gathered to support the proposal.",
+            "zh": "一定已經收集了量化數據來支持這項提案。"
+          },
+          {
+            "en": "They have been employing quantitative analysis to evaluate risk.",
+            "zh": "他們一直採用量化分析來評估風險。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENDEAVOR": {
+    "pos": "n.",
+    "meaning": "努力；盡力",
+    "example": "We have been endeavoring to expand our market share in Asia.",
+    "exampleZh": "我們一直努力在亞洲擴大市佔率。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "努力",
+        "examples": [
+          {
+            "en": "We have been endeavoring to expand our market share in Asia.",
+            "zh": "我們一直努力在亞洲擴大市佔率。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "努力；盡力",
+        "examples": [
+          {
+            "en": "The joint venture is widely considered a successful endeavor.",
+            "zh": "這家合資企業被廣泛認為是一次成功的努力。"
+          },
+          {
+            "en": "We appreciate your endeavor to resolve the technical issues.",
+            "zh": "我們感謝您為解決技術問題所作的努力。"
+          }
+        ]
+      }
+    ]
+  },
+  "HIERARCHY": {
+    "pos": "n.",
+    "meaning": "階層；等級制度",
+    "example": "The corporate hierarchy has been undergoing massive restructuring lately.",
+    "exampleZh": "企業階層最近一直在進行大規模的重組。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "階層；等級制度",
+        "examples": [
+          {
+            "en": "The corporate hierarchy has been undergoing massive restructuring lately.",
+            "zh": "企業階層最近一直在進行大規模的重組。"
+          },
+          {
+            "en": "He must have bypassed the standard hierarchy to get this approved.",
+            "zh": "他一定是繞過了標準的等級制度才讓這個獲得批准。"
+          }
+        ]
+      }
+    ]
   }
 }

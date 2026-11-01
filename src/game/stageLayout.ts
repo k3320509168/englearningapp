@@ -9,8 +9,8 @@ export const regionStageCount = (levelIdx: number) => chapterCount(levelIdx) * M
 export const stageInMap = (stageIdx: number) => (stageIdx % MAP_SIZE) + 1;
 
 
-// ---------- 每種小關的最低答題數（docs/STAGE_PLAN.md 第 2 節） ----------
-// 傷害再高也一定要答完的題數：一般關把怪打光還不夠就再來一波；首領提前打到 0 血就進入「終結連擊」把題目答完。
+// ---------- 每種小關的練習參考題數（v2.0） ----------
+// 不限制擊殺或補怪；菁英／首領提早倒下時，剩餘數量提供自選追擊練習。
 // 依序：一般、菁英、寶箱、小 BOSS（第 15 關）、大 BOSS（第 20 關）、區域最終魔王
 export type StageRole = 'normal' | 'elite' | 'treasure' | 'gate' | 'boss' | 'final';
 const ROLE_INDEX: Record<StageRole, number> = { normal: 0, elite: 1, treasure: 2, gate: 3, boss: 4, final: 5 };
@@ -53,7 +53,7 @@ export function minAnswers(levelIdx: number, stageIdx: number, levelKey?: string
   return row[ROLE_INDEX[stageRole(levelIdx, stageIdx)]];
 }
 
-// 一般關一開始放幾隻怪（前置區域少一點，打完不夠最低題數再補一波）
+// 一般關一開始放幾隻怪（前置區域少一點，不因題數不足補怪）
 export const startWaves = (_levelIdx: number, stageIdx: number, normalWaves: number, levelKey?: string) =>
   (isPrologue(levelKey) ? Math.min(normalWaves, PROLOGUE_MIN[stageIdx] ?? normalWaves) : normalWaves);
 

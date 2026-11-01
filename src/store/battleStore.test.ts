@@ -750,35 +750,69 @@ describe('前置區域「失語邊境」', () => {
   });
 });
 
-describe('首領處決（第二十一輪 B）', () => {
-  it('大 BOSS：combo 3000 以上、真的連對 8 題、答滿 60% 最低題數 → 直接打倒，剩下的變成加成題', () => {
+describe('C1：固定敵群與即時結算', () => {
+  it('一般關固定五隻，即使未達參考題數也不補怪', () => {
     startLevel();
-    state().startLevel(LEVELS[0], undefined, 19);
-    if (state().phase === 'lesson') state().startBattle();
-    useBattleStore.setState({ combo: 5000 });
-    const min = state().minAnswers;
-    playUntil(() => state().phase === 'summary' || state().phase === 'gameOver', 200);
-    expect(state().phase).toBe('summary');
-    expect(state().stageAnswers).toBe(Math.ceil(min * 0.6));
-    expect(state().bonusLeft).toBe(min - Math.ceil(min * 0.6));
-    // 繼續追擊：答完加成題回到結算，金幣有上限
-    state().startBonus();
-    expect(state().phase).toBe('answering');
-    expect(state().bonusRound).toBe(true);
-    playUntil(() => state().phase === 'summary', 100);
-    expect(state().bonusRound).toBe(false);
-    expect(state().bonusGold).toBeLessThanOrEqual(60);
+    expect(state().waves).toBe(5);
+    useBattleStore.setState({ monsterHp: 1, monsterMaxHp: 1, minAnswers: 99 });
+    for (let i = 0; i < 5; i++) answerCurrent();
+    expect(state().phase).toBe('monsterDown');
+    expect(state().wave).toBe(5);
+    expect(state().waves).toBe(5);
+    expect(state().stageAnswers).toBe(5);
+    expect(state().bonusLeft).toBe(0);
+    expect(state().executing).toBe(false);
   });
 
-  it('combo 不夠：照原本規則答滿最低題數才結算，沒有加成題', () => {
+  it.each([4, 14, 19])('菁英/首領第%d關首題致命即結算，追擊可跳過且不重發關卡獎勵', stageIdx => {
     startLevel();
-    state().startLevel(LEVELS[0], undefined, 19);
+    state().startLevel(LEVELS[0], undefined, stageIdx);
     if (state().phase === 'lesson') state().startBattle();
-    const min = state().minAnswers;
-    playUntil(() => state().phase === 'summary' || state().phase === 'gameOver', 400);
-    if (state().phase === 'summary') {
-      expect(state().stageAnswers).toBeGreaterThanOrEqual(min);
-      expect(state().bonusLeft).toBe(0);
+    useBattleStore.setState({ monsterHp: 1, monsterShield: 0, minAnswers: 20, combo: 0 });
+    answerCurrent();
+    const phase = state().phase;
+    expect(['monsterDown', 'summary']).toContain(phase);
+    expect(state().monsterHp).toBe(0);
+    expect(state().stageAnswers).toBe(1);
+    expect(state().stageSubmissions).toBe(1);
+    expect(state().bonusLeft).toBe(19);
+    expect(state().executing).toBe(false);
+    const tickets = saved().tickets;
+    const drops = { ...state().runDrops };
+    state().startBonus();
+    expect(state().bonusRound).toBe(true);
+    for (let i = 0; i < 16; i++) answerCurrent();
+    expect(state().bonusGold).toBe(60);
+    expect(saved().tickets).toBe(tickets);
+    expect(state().runDrops).toEqual(drops);
+    state().endBonus();
+    expect(state().phase).toBe(phase);
+    expect(state().executing).toBe(false);
+  });
+
+  it('技能不會在零作答時造成敵人傷害或自動通關', () => {
+    startLevel();
+    useBattleStore.setState({ monsterHp: 1, party: state().party.map(m => ({ ...m, energy: m.energyMax, cooldown: 0 })) });
+    for (let i = 0; i < state().party.length; i++) {
+      state().requestSkill(i);
+      if (state().phase === 'casting') state().confirmSkill();
+      expect(state().monsterHp).toBe(1);
+      expect(state().stageSubmissions).toBe(0);
+      expect(state().phase).toBe('answering');
     }
+  });
+
+  it.each([6, 26])('寶箱第%d關倒數與自動超時不能零作答通關；真實提交後逃走', stageIdx => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, stageIdx);
+    state().tick(TREASURE_TIME + QUESTION_LIMIT);
+    if (state().phase === 'feedback') state().continueAfterFeedback();
+    expect(state().phase).toBe('answering');
+    expect(state().treasureLeft).toBe(0);
+    expect(state().stageSubmissions).toBe(0);
+    answerCurrent();
+    expect(state().phase).toBe('monsterDown');
+    expect(state().event?.kind).toBe('escape');
+    expect(state().stageSubmissions).toBe(1);
   });
 });

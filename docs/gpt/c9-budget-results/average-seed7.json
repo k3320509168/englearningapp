@@ -1,0 +1,6294 @@
+{
+  "profile": "average",
+  "nominalAccuracy": 0.82,
+  "seed": 7,
+  "clockStepMs": 50,
+  "maps": 30,
+  "finals": 60,
+  "regions": [
+    0,
+    4,
+    8
+  ],
+  "policy": "affordable-equipment-now, ordinary-plus3, balanced-hero-training, no-UR-savings-reserve",
+  "mapsPerDay": 1,
+  "completedMaps": 61,
+  "stopped": null,
+  "path": [
+    {
+      "region": 0,
+      "stage": 0,
+      "date": "2026-11-01T04:00:00.000Z",
+      "playerLevel": 5,
+      "gold": 0,
+      "materials": {},
+      "party": [
+        {
+          "id": "player",
+          "level": 5,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 1,
+          "stars": 0
+        },
+        {
+          "id": "ash",
+          "level": 1,
+          "stars": 0
+        },
+        {
+          "id": "island",
+          "level": 1,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "無",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "無",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "無",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 0,
+        "weeklyGold": 0,
+        "summonTickets": 10,
+        "starGold": 0,
+        "forgeGold": 0,
+        "heroTrainingGold": 0
+      }
+    },
+    {
+      "region": 0,
+      "stage": 20,
+      "date": "2026-11-02T04:00:00.000Z",
+      "playerLevel": 7,
+      "gold": 76,
+      "materials": {
+        "ore": 1,
+        "crystal_water": 1,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 4,
+        "core": 2
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 7,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 3,
+          "stars": 0
+        },
+        {
+          "id": "warrior",
+          "level": 3,
+          "stars": 0
+        },
+        {
+          "id": "shield",
+          "level": 3,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+1",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 180,
+        "weeklyGold": 550,
+        "summonTickets": 20,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -810,
+        "mainlineGold": 1106,
+        "mainlineMaterial:ore": 23,
+        "mainlineMaterial:crystal_water": 1,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 4,
+        "mainlineMaterial:core": 2,
+        "wheelGold": 50,
+        "wheelSpins": 4,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -650,
+        "enhanceMaterial:ore": -13,
+        "enhanceAttempts": 7,
+        "heroLevelsBought": 6
+      }
+    },
+    {
+      "region": 0,
+      "stage": 40,
+      "date": "2026-11-03T04:00:00.000Z",
+      "playerLevel": 10,
+      "gold": 107,
+      "materials": {
+        "ore": 19,
+        "crystal_water": 2,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 8,
+        "core": 4,
+        "crystal_wood": 2,
+        "crystal_fire": 1
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 6,
+          "stars": 0
+        },
+        {
+          "id": "warrior",
+          "level": 5,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 2,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 360,
+        "weeklyGold": 1800,
+        "summonTickets": 50,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -3690,
+        "mainlineGold": 2687,
+        "mainlineMaterial:ore": 46,
+        "mainlineMaterial:crystal_water": 2,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 8,
+        "mainlineMaterial:core": 4,
+        "wheelGold": 100,
+        "wheelSpins": 8,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -900,
+        "enhanceMaterial:ore": -18,
+        "enhanceAttempts": 9,
+        "heroLevelsBought": 15,
+        "mainlineMaterial:crystal_wood": 2,
+        "mainlineMaterial:crystal_fire": 1,
+        "streakGold": 100
+      }
+    },
+    {
+      "region": 0,
+      "stage": 60,
+      "date": "2026-11-04T04:00:00.000Z",
+      "playerLevel": 12,
+      "gold": 19,
+      "materials": {
+        "ore": 42,
+        "crystal_water": 2,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 12,
+        "core": 6,
+        "crystal_wood": 3,
+        "crystal_fire": 2,
+        "crystal_light": 2
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 12,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 4,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 5,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 640,
+        "weeklyGold": 2900,
+        "summonTickets": 70,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -6780,
+        "mainlineGold": 4259,
+        "mainlineMaterial:ore": 69,
+        "mainlineMaterial:crystal_water": 2,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 12,
+        "mainlineMaterial:core": 6,
+        "wheelGold": 150,
+        "wheelSpins": 12,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -900,
+        "enhanceMaterial:ore": -18,
+        "enhanceAttempts": 9,
+        "heroLevelsBought": 23,
+        "mainlineMaterial:crystal_wood": 3,
+        "mainlineMaterial:crystal_fire": 2,
+        "streakGold": 100,
+        "mainlineMaterial:crystal_light": 2
+      }
+    },
+    {
+      "region": 0,
+      "stage": 80,
+      "date": "2026-11-05T04:00:00.000Z",
+      "playerLevel": 14,
+      "gold": 164,
+      "materials": {
+        "ore": 67,
+        "crystal_water": 2,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 16,
+        "core": 8,
+        "crystal_wood": 4,
+        "crystal_fire": 3,
+        "crystal_light": 4
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 14,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 9,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 6,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 6,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 850,
+        "weeklyGold": 3600,
+        "summonTickets": 90,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -9270,
+        "mainlineGold": 5984,
+        "mainlineMaterial:ore": 94,
+        "mainlineMaterial:crystal_water": 2,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 16,
+        "mainlineMaterial:core": 8,
+        "wheelGold": 150,
+        "wheelSpins": 16,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -900,
+        "enhanceMaterial:ore": -18,
+        "enhanceAttempts": 9,
+        "heroLevelsBought": 27,
+        "mainlineMaterial:crystal_wood": 4,
+        "mainlineMaterial:crystal_fire": 3,
+        "streakGold": 100,
+        "mainlineMaterial:crystal_light": 4
+      }
+    },
+    {
+      "region": 0,
+      "stage": 100,
+      "date": "2026-11-06T04:00:00.000Z",
+      "playerLevel": 16,
+      "gold": 632,
+      "materials": {
+        "ore": 89,
+        "crystal_water": 3,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 18,
+        "core": 10,
+        "crystal_wood": 5,
+        "crystal_fire": 3,
+        "crystal_light": 8
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 16,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 7,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 8,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1110,
+        "weeklyGold": 5200,
+        "summonTickets": 120,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -12240,
+        "mainlineGold": 7562,
+        "mainlineMaterial:ore": 116,
+        "mainlineMaterial:crystal_water": 3,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 18,
+        "mainlineMaterial:core": 10,
+        "wheelGold": 150,
+        "wheelSpins": 20,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -900,
+        "enhanceMaterial:ore": -18,
+        "enhanceAttempts": 9,
+        "heroLevelsBought": 31,
+        "mainlineMaterial:crystal_wood": 5,
+        "mainlineMaterial:crystal_fire": 3,
+        "streakGold": 100,
+        "mainlineMaterial:crystal_light": 8
+      }
+    },
+    {
+      "region": 1,
+      "stage": 0,
+      "date": "2026-11-06T04:00:00.000Z",
+      "playerLevel": 16,
+      "gold": 127,
+      "materials": {
+        "ore": 92,
+        "crystal_water": 3,
+        "crystal_metal": 2,
+        "crystal_earth": 1,
+        "crystal_dark": 18,
+        "core": 11,
+        "crystal_wood": 5,
+        "crystal_fire": 3,
+        "crystal_light": 10
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 16,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 8,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "見習之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "旅人布甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1160,
+        "weeklyGold": 5200,
+        "summonTickets": 130,
+        "starGold": 0,
+        "forgeGold": -350,
+        "heroTrainingGold": -13080,
+        "mainlineGold": 7847,
+        "mainlineMaterial:ore": 119,
+        "mainlineMaterial:crystal_water": 3,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 1,
+        "mainlineMaterial:crystal_dark": 18,
+        "mainlineMaterial:core": 11,
+        "wheelGold": 150,
+        "wheelSpins": 20,
+        "forgeMaterial:ore": -9,
+        "forges": 3,
+        "enhanceGold": -900,
+        "enhanceMaterial:ore": -18,
+        "enhanceAttempts": 9,
+        "heroLevelsBought": 32,
+        "mainlineMaterial:crystal_wood": 5,
+        "mainlineMaterial:crystal_fire": 3,
+        "streakGold": 100,
+        "mainlineMaterial:crystal_light": 10
+      }
+    },
+    {
+      "region": 1,
+      "stage": 20,
+      "date": "2026-11-07T04:00:00.000Z",
+      "playerLevel": 20,
+      "gold": 348,
+      "materials": {
+        "ore": 85,
+        "crystal_water": 5,
+        "crystal_metal": 2,
+        "crystal_earth": 2,
+        "crystal_dark": 20,
+        "core": 13,
+        "crystal_wood": 5,
+        "crystal_fire": 5,
+        "crystal_light": 11
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 20,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "anchor",
+          "level": 8,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "幸運符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1340,
+        "weeklyGold": 5200,
+        "summonTickets": 140,
+        "starGold": 0,
+        "forgeGold": -950,
+        "heroTrainingGold": -13080,
+        "mainlineGold": 9438,
+        "mainlineMaterial:ore": 140,
+        "mainlineMaterial:crystal_water": 5,
+        "mainlineMaterial:crystal_metal": 2,
+        "mainlineMaterial:crystal_earth": 2,
+        "mainlineMaterial:crystal_dark": 20,
+        "mainlineMaterial:core": 13,
+        "wheelGold": 200,
+        "wheelSpins": 24,
+        "forgeMaterial:ore": -25,
+        "forges": 5,
+        "enhanceGold": -2100,
+        "enhanceMaterial:ore": -30,
+        "enhanceAttempts": 15,
+        "heroLevelsBought": 32,
+        "mainlineMaterial:crystal_wood": 5,
+        "mainlineMaterial:crystal_fire": 5,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 11
+      }
+    },
+    {
+      "region": 1,
+      "stage": 40,
+      "date": "2026-11-08T04:00:00.000Z",
+      "playerLevel": 23,
+      "gold": 214,
+      "materials": {
+        "ore": 95,
+        "crystal_water": 7,
+        "crystal_metal": 3,
+        "crystal_earth": 3,
+        "crystal_dark": 22,
+        "core": 15,
+        "crystal_wood": 5,
+        "crystal_fire": 1,
+        "crystal_light": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 23,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 3,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1520,
+        "weeklyGold": 5200,
+        "summonTickets": 160,
+        "starGold": 0,
+        "forgeGold": -1550,
+        "heroTrainingGold": -13440,
+        "mainlineGold": 10984,
+        "mainlineMaterial:ore": 162,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 3,
+        "mainlineMaterial:crystal_earth": 3,
+        "mainlineMaterial:crystal_dark": 22,
+        "mainlineMaterial:core": 15,
+        "wheelGold": 200,
+        "wheelSpins": 28,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 34,
+        "mainlineMaterial:crystal_wood": 5,
+        "mainlineMaterial:crystal_fire": 5,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 13,
+        "forgeMaterial:crystal_fire": -4
+      }
+    },
+    {
+      "region": 1,
+      "stage": 60,
+      "date": "2026-11-09T04:00:00.000Z",
+      "playerLevel": 27,
+      "gold": 37,
+      "materials": {
+        "ore": 123,
+        "crystal_water": 7,
+        "crystal_metal": 4,
+        "crystal_earth": 5,
+        "crystal_dark": 24,
+        "core": 17,
+        "crystal_wood": 7,
+        "crystal_fire": 2,
+        "crystal_light": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 27,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 5,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1780,
+        "weeklyGold": 5200,
+        "summonTickets": 170,
+        "starGold": 0,
+        "forgeGold": -1550,
+        "heroTrainingGold": -15480,
+        "mainlineGold": 12587,
+        "mainlineMaterial:ore": 190,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 4,
+        "mainlineMaterial:crystal_earth": 5,
+        "mainlineMaterial:crystal_dark": 24,
+        "mainlineMaterial:core": 17,
+        "wheelGold": 200,
+        "wheelSpins": 32,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 37,
+        "mainlineMaterial:crystal_wood": 7,
+        "mainlineMaterial:crystal_fire": 6,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 13,
+        "forgeMaterial:crystal_fire": -4
+      }
+    },
+    {
+      "region": 1,
+      "stage": 80,
+      "date": "2026-11-10T04:00:00.000Z",
+      "playerLevel": 29,
+      "gold": 619,
+      "materials": {
+        "ore": 148,
+        "crystal_water": 7,
+        "crystal_metal": 5,
+        "crystal_earth": 7,
+        "crystal_dark": 26,
+        "core": 19,
+        "crystal_wood": 9,
+        "crystal_fire": 3,
+        "crystal_light": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 29,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 12,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 8,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 6,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 1940,
+        "weeklyGold": 5800,
+        "summonTickets": 190,
+        "starGold": 0,
+        "forgeGold": -1550,
+        "heroTrainingGold": -17400,
+        "mainlineGold": 14279,
+        "mainlineMaterial:ore": 215,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 5,
+        "mainlineMaterial:crystal_earth": 7,
+        "mainlineMaterial:crystal_dark": 26,
+        "mainlineMaterial:core": 19,
+        "wheelGold": 250,
+        "wheelSpins": 36,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 39,
+        "mainlineMaterial:crystal_wood": 9,
+        "mainlineMaterial:crystal_fire": 7,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 13,
+        "forgeMaterial:crystal_fire": -4
+      }
+    },
+    {
+      "region": 1,
+      "stage": 100,
+      "date": "2026-11-11T04:00:00.000Z",
+      "playerLevel": 32,
+      "gold": 502,
+      "materials": {
+        "ore": 167,
+        "crystal_water": 7,
+        "crystal_metal": 7,
+        "crystal_earth": 8,
+        "crystal_dark": 28,
+        "core": 21,
+        "crystal_wood": 11,
+        "crystal_fire": 4,
+        "crystal_light": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 32,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 13,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 9,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 7,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2150,
+        "weeklyGold": 6950,
+        "summonTickets": 210,
+        "starGold": 0,
+        "forgeGold": -1550,
+        "heroTrainingGold": -20520,
+        "mainlineGold": 15922,
+        "mainlineMaterial:ore": 234,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 7,
+        "mainlineMaterial:crystal_earth": 8,
+        "mainlineMaterial:crystal_dark": 28,
+        "mainlineMaterial:core": 21,
+        "wheelGold": 250,
+        "wheelSpins": 40,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 42,
+        "mainlineMaterial:crystal_wood": 11,
+        "mainlineMaterial:crystal_fire": 8,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 13,
+        "forgeMaterial:crystal_fire": -4
+      }
+    },
+    {
+      "region": 2,
+      "stage": 0,
+      "date": "2026-11-11T04:00:00.000Z",
+      "playerLevel": 32,
+      "gold": 765,
+      "materials": {
+        "ore": 170,
+        "crystal_water": 7,
+        "crystal_metal": 7,
+        "crystal_earth": 8,
+        "crystal_dark": 28,
+        "core": 22,
+        "crystal_wood": 13,
+        "crystal_fire": 4,
+        "crystal_light": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 32,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 13,
+          "stars": 0
+        },
+        {
+          "id": "tempest",
+          "level": 9,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 7,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2150,
+        "weeklyGold": 6950,
+        "summonTickets": 210,
+        "starGold": 0,
+        "forgeGold": -1550,
+        "heroTrainingGold": -20520,
+        "mainlineGold": 16185,
+        "mainlineMaterial:ore": 237,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 7,
+        "mainlineMaterial:crystal_earth": 8,
+        "mainlineMaterial:crystal_dark": 28,
+        "mainlineMaterial:core": 22,
+        "wheelGold": 250,
+        "wheelSpins": 40,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 42,
+        "mainlineMaterial:crystal_wood": 13,
+        "mainlineMaterial:crystal_fire": 8,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 13,
+        "forgeMaterial:crystal_fire": -4
+      }
+    },
+    {
+      "region": 2,
+      "stage": 20,
+      "date": "2026-11-12T04:00:00.000Z",
+      "playerLevel": 35,
+      "gold": 763,
+      "materials": {
+        "ore": 194,
+        "crystal_water": 7,
+        "crystal_metal": 7,
+        "crystal_earth": 10,
+        "crystal_dark": 30,
+        "core": 24,
+        "crystal_wood": 14,
+        "crystal_fire": 4,
+        "crystal_light": 16
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 35,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 14,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 10,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 7,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2330,
+        "weeklyGold": 7950,
+        "summonTickets": 230,
+        "starGold": -500,
+        "forgeGold": -1550,
+        "heroTrainingGold": -23160,
+        "mainlineGold": 18093,
+        "mainlineMaterial:ore": 261,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 7,
+        "mainlineMaterial:crystal_earth": 10,
+        "mainlineMaterial:crystal_dark": 30,
+        "mainlineMaterial:core": 24,
+        "wheelGold": 300,
+        "wheelSpins": 44,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 44,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 8,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 16,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 1
+      }
+    },
+    {
+      "region": 2,
+      "stage": 40,
+      "date": "2026-11-13T04:00:00.000Z",
+      "playerLevel": 38,
+      "gold": 336,
+      "materials": {
+        "ore": 214,
+        "crystal_water": 7,
+        "crystal_metal": 9,
+        "crystal_earth": 12,
+        "crystal_dark": 33,
+        "core": 26,
+        "crystal_wood": 14,
+        "crystal_fire": 4,
+        "crystal_light": 17
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 38,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 15,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 9,
+          "stars": 0
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2510,
+        "weeklyGold": 9850,
+        "summonTickets": 260,
+        "starGold": -500,
+        "forgeGold": -1550,
+        "heroTrainingGold": -27840,
+        "mainlineGold": 20216,
+        "mainlineMaterial:ore": 281,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 9,
+        "mainlineMaterial:crystal_earth": 12,
+        "mainlineMaterial:crystal_dark": 33,
+        "mainlineMaterial:core": 26,
+        "wheelGold": 350,
+        "wheelSpins": 48,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 48,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 8,
+        "streakGold": 300,
+        "mainlineMaterial:crystal_light": 17,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 1
+      }
+    },
+    {
+      "region": 2,
+      "stage": 60,
+      "date": "2026-11-14T04:00:00.000Z",
+      "playerLevel": 40,
+      "gold": 498,
+      "materials": {
+        "ore": 238,
+        "crystal_water": 7,
+        "crystal_metal": 10,
+        "crystal_earth": 12,
+        "crystal_dark": 38,
+        "core": 28,
+        "crystal_wood": 14,
+        "crystal_fire": 6,
+        "crystal_light": 17
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 40,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 16,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 9,
+          "stars": 1
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2820,
+        "weeklyGold": 9850,
+        "summonTickets": 280,
+        "starGold": -1000,
+        "forgeGold": -1550,
+        "heroTrainingGold": -29640,
+        "mainlineGold": 22068,
+        "mainlineMaterial:ore": 305,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 10,
+        "mainlineMaterial:crystal_earth": 12,
+        "mainlineMaterial:crystal_dark": 38,
+        "mainlineMaterial:core": 28,
+        "wheelGold": 350,
+        "wheelSpins": 52,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 49,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 10,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 17,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 2
+      }
+    },
+    {
+      "region": 2,
+      "stage": 80,
+      "date": "2026-11-15T04:00:00.000Z",
+      "playerLevel": 42,
+      "gold": 438,
+      "materials": {
+        "ore": 259,
+        "crystal_water": 7,
+        "crystal_metal": 13,
+        "crystal_earth": 12,
+        "crystal_dark": 41,
+        "core": 30,
+        "crystal_wood": 14,
+        "crystal_fire": 8,
+        "crystal_light": 17
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 42,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 17,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 9,
+          "stars": 1
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 2900,
+        "weeklyGold": 9850,
+        "summonTickets": 290,
+        "starGold": -1000,
+        "forgeGold": -1550,
+        "heroTrainingGold": -31560,
+        "mainlineGold": 23848,
+        "mainlineMaterial:ore": 326,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 13,
+        "mainlineMaterial:crystal_earth": 12,
+        "mainlineMaterial:crystal_dark": 41,
+        "mainlineMaterial:core": 30,
+        "wheelGold": 350,
+        "wheelSpins": 56,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 50,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 12,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 17,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 2
+      }
+    },
+    {
+      "region": 2,
+      "stage": 100,
+      "date": "2026-11-16T04:00:00.000Z",
+      "playerLevel": 45,
+      "gold": 496,
+      "materials": {
+        "ore": 281,
+        "crystal_water": 7,
+        "crystal_metal": 14,
+        "crystal_earth": 12,
+        "crystal_dark": 43,
+        "core": 32,
+        "crystal_wood": 14,
+        "crystal_fire": 12,
+        "crystal_light": 18
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 45,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 9,
+          "stars": 1
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 3080,
+        "weeklyGold": 9850,
+        "summonTickets": 290,
+        "starGold": -1000,
+        "forgeGold": -1550,
+        "heroTrainingGold": -33600,
+        "mainlineGold": 25716,
+        "mainlineMaterial:ore": 348,
+        "mainlineMaterial:crystal_water": 7,
+        "mainlineMaterial:crystal_metal": 14,
+        "mainlineMaterial:crystal_earth": 12,
+        "mainlineMaterial:crystal_dark": 43,
+        "mainlineMaterial:core": 32,
+        "wheelGold": 400,
+        "wheelSpins": 60,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 51,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 16,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 18,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 2
+      }
+    },
+    {
+      "region": 2,
+      "stage": 120,
+      "date": "2026-11-17T04:00:00.000Z",
+      "playerLevel": 47,
+      "gold": 184,
+      "materials": {
+        "ore": 304,
+        "crystal_water": 9,
+        "crystal_metal": 14,
+        "crystal_earth": 13,
+        "crystal_dark": 47,
+        "core": 34,
+        "crystal_wood": 14,
+        "crystal_fire": 12,
+        "crystal_light": 19
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 47,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 1
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "精鋼武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 3310,
+        "weeklyGold": 10450,
+        "summonTickets": 310,
+        "starGold": -1000,
+        "forgeGold": -1550,
+        "heroTrainingGold": -36840,
+        "mainlineGold": 27814,
+        "mainlineMaterial:ore": 371,
+        "mainlineMaterial:crystal_water": 9,
+        "mainlineMaterial:crystal_metal": 14,
+        "mainlineMaterial:crystal_earth": 13,
+        "mainlineMaterial:crystal_dark": 47,
+        "mainlineMaterial:core": 34,
+        "wheelGold": 400,
+        "wheelSpins": 64,
+        "forgeMaterial:ore": -31,
+        "forges": 6,
+        "enhanceGold": -3000,
+        "enhanceMaterial:ore": -36,
+        "enhanceAttempts": 18,
+        "heroLevelsBought": 53,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 16,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 19,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 2
+      }
+    },
+    {
+      "region": 3,
+      "stage": 0,
+      "date": "2026-11-17T04:00:00.000Z",
+      "playerLevel": 47,
+      "gold": 111,
+      "materials": {
+        "ore": 294,
+        "crystal_water": 9,
+        "crystal_metal": 14,
+        "crystal_earth": 13,
+        "crystal_dark": 47,
+        "core": 35,
+        "crystal_wood": 14,
+        "crystal_fire": 14,
+        "crystal_light": 16
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 47,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 1
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+2",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "鎖子甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 3570,
+        "weeklyGold": 10950,
+        "summonTickets": 320,
+        "starGold": -1000,
+        "forgeGold": -2350,
+        "heroTrainingGold": -36840,
+        "mainlineGold": 28231,
+        "mainlineMaterial:ore": 374,
+        "mainlineMaterial:crystal_water": 9,
+        "mainlineMaterial:crystal_metal": 14,
+        "mainlineMaterial:crystal_earth": 13,
+        "mainlineMaterial:crystal_dark": 47,
+        "mainlineMaterial:core": 35,
+        "wheelGold": 400,
+        "wheelSpins": 64,
+        "forgeMaterial:ore": -41,
+        "forges": 7,
+        "enhanceGold": -3450,
+        "enhanceMaterial:ore": -39,
+        "enhanceAttempts": 20,
+        "heroLevelsBought": 53,
+        "mainlineMaterial:crystal_wood": 14,
+        "mainlineMaterial:crystal_fire": 18,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 19,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 2,
+        "forgeMaterial:crystal_light": -3
+      }
+    },
+    {
+      "region": 3,
+      "stage": 20,
+      "date": "2026-11-18T04:00:00.000Z",
+      "playerLevel": 50,
+      "gold": 46,
+      "materials": {
+        "ore": 303,
+        "crystal_water": 9,
+        "crystal_metal": 14,
+        "crystal_earth": 15,
+        "crystal_dark": 49,
+        "core": 37,
+        "crystal_wood": 15,
+        "crystal_fire": 15,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 50,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+1",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "火之護符+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 3570,
+        "weeklyGold": 11600,
+        "summonTickets": 340,
+        "starGold": -2000,
+        "forgeGold": -3150,
+        "heroTrainingGold": -36840,
+        "mainlineGold": 29866,
+        "mainlineMaterial:ore": 397,
+        "mainlineMaterial:crystal_water": 9,
+        "mainlineMaterial:crystal_metal": 14,
+        "mainlineMaterial:crystal_earth": 15,
+        "mainlineMaterial:crystal_dark": 49,
+        "mainlineMaterial:core": 37,
+        "wheelGold": 450,
+        "wheelSpins": 68,
+        "forgeMaterial:ore": -51,
+        "forges": 8,
+        "enhanceGold": -4050,
+        "enhanceMaterial:ore": -43,
+        "enhanceAttempts": 22,
+        "heroLevelsBought": 53,
+        "mainlineMaterial:crystal_wood": 15,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 21,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 3,
+        "forgeMaterial:crystal_light": -6
+      }
+    },
+    {
+      "region": 3,
+      "stage": 40,
+      "date": "2026-11-19T04:00:00.000Z",
+      "playerLevel": 53,
+      "gold": 913,
+      "materials": {
+        "ore": 307,
+        "crystal_water": 10,
+        "crystal_metal": 14,
+        "crystal_earth": 15,
+        "crystal_dark": 51,
+        "core": 39,
+        "crystal_wood": 18,
+        "crystal_fire": 15,
+        "crystal_light": 14
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 53,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 11,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 3800,
+        "weeklyGold": 12900,
+        "summonTickets": 360,
+        "starGold": -2000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -36840,
+        "mainlineGold": 31753,
+        "mainlineMaterial:ore": 422,
+        "mainlineMaterial:crystal_water": 10,
+        "mainlineMaterial:crystal_metal": 14,
+        "mainlineMaterial:crystal_earth": 15,
+        "mainlineMaterial:crystal_dark": 51,
+        "mainlineMaterial:core": 39,
+        "wheelGold": 450,
+        "wheelSpins": 72,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 53,
+        "mainlineMaterial:crystal_wood": 18,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 23,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 3,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 3,
+      "stage": 60,
+      "date": "2026-11-20T04:00:00.000Z",
+      "playerLevel": 55,
+      "gold": 549,
+      "materials": {
+        "ore": 327,
+        "crystal_water": 11,
+        "crystal_metal": 16,
+        "crystal_earth": 15,
+        "crystal_dark": 54,
+        "core": 41,
+        "crystal_wood": 18,
+        "crystal_fire": 15,
+        "crystal_light": 14
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 55,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 20,
+          "stars": 1
+        },
+        {
+          "id": "tempest",
+          "level": 12,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4080,
+        "weeklyGold": 13900,
+        "summonTickets": 380,
+        "starGold": -2000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -40440,
+        "mainlineGold": 33609,
+        "mainlineMaterial:ore": 442,
+        "mainlineMaterial:crystal_water": 11,
+        "mainlineMaterial:crystal_metal": 16,
+        "mainlineMaterial:crystal_earth": 15,
+        "mainlineMaterial:crystal_dark": 54,
+        "mainlineMaterial:core": 41,
+        "wheelGold": 550,
+        "wheelSpins": 76,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 55,
+        "mainlineMaterial:crystal_wood": 18,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 23,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 3,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 3,
+      "stage": 80,
+      "date": "2026-11-21T04:00:00.000Z",
+      "playerLevel": 58,
+      "gold": 520,
+      "materials": {
+        "ore": 348,
+        "crystal_water": 14,
+        "crystal_metal": 18,
+        "crystal_earth": 15,
+        "crystal_dark": 57,
+        "core": 43,
+        "crystal_wood": 18,
+        "crystal_fire": 15,
+        "crystal_light": 14
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 58,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 20,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 13,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4260,
+        "weeklyGold": 14500,
+        "summonTickets": 390,
+        "starGold": -3000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -41880,
+        "mainlineGold": 35240,
+        "mainlineMaterial:ore": 463,
+        "mainlineMaterial:crystal_water": 14,
+        "mainlineMaterial:crystal_metal": 18,
+        "mainlineMaterial:crystal_earth": 15,
+        "mainlineMaterial:crystal_dark": 57,
+        "mainlineMaterial:core": 43,
+        "wheelGold": 550,
+        "wheelSpins": 80,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 56,
+        "mainlineMaterial:crystal_wood": 18,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 23,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 4,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 3,
+      "stage": 100,
+      "date": "2026-11-22T04:00:00.000Z",
+      "playerLevel": 60,
+      "gold": 153,
+      "materials": {
+        "ore": 368,
+        "crystal_water": 14,
+        "crystal_metal": 20,
+        "crystal_earth": 15,
+        "crystal_dark": 60,
+        "core": 45,
+        "crystal_wood": 21,
+        "crystal_fire": 15,
+        "crystal_light": 14
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 60,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 13,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4440,
+        "weeklyGold": 14500,
+        "summonTickets": 410,
+        "starGold": -3000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -44280,
+        "mainlineGold": 37093,
+        "mainlineMaterial:ore": 483,
+        "mainlineMaterial:crystal_water": 14,
+        "mainlineMaterial:crystal_metal": 20,
+        "mainlineMaterial:crystal_earth": 15,
+        "mainlineMaterial:crystal_dark": 60,
+        "mainlineMaterial:core": 45,
+        "wheelGold": 550,
+        "wheelSpins": 84,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 57,
+        "mainlineMaterial:crystal_wood": 21,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 23,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 4,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 3,
+      "stage": 120,
+      "date": "2026-11-23T04:00:00.000Z",
+      "playerLevel": 62,
+      "gold": 574,
+      "materials": {
+        "ore": 391,
+        "crystal_water": 14,
+        "crystal_metal": 20,
+        "crystal_earth": 19,
+        "crystal_dark": 62,
+        "core": 47,
+        "crystal_wood": 22,
+        "crystal_fire": 15,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 62,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 14,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 10,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4620,
+        "weeklyGold": 14500,
+        "summonTickets": 420,
+        "starGold": -3000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -45840,
+        "mainlineGold": 38894,
+        "mainlineMaterial:ore": 506,
+        "mainlineMaterial:crystal_water": 14,
+        "mainlineMaterial:crystal_metal": 20,
+        "mainlineMaterial:crystal_earth": 19,
+        "mainlineMaterial:crystal_dark": 62,
+        "mainlineMaterial:core": 47,
+        "wheelGold": 550,
+        "wheelSpins": 88,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 58,
+        "mainlineMaterial:crystal_wood": 22,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 4,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 0,
+      "date": "2026-11-23T04:00:00.000Z",
+      "playerLevel": 63,
+      "gold": 404,
+      "materials": {
+        "ore": 394,
+        "crystal_water": 14,
+        "crystal_metal": 22,
+        "crystal_earth": 19,
+        "crystal_dark": 62,
+        "core": 48,
+        "crystal_wood": 22,
+        "crystal_fire": 15,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 63,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 14,
+          "stars": 0
+        },
+        {
+          "id": "serenity",
+          "level": 11,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4800,
+        "weeklyGold": 14800,
+        "summonTickets": 430,
+        "starGold": -3000,
+        "forgeGold": -4050,
+        "heroTrainingGold": -47040,
+        "mainlineGold": 39444,
+        "mainlineMaterial:ore": 509,
+        "mainlineMaterial:crystal_water": 14,
+        "mainlineMaterial:crystal_metal": 22,
+        "mainlineMaterial:crystal_earth": 19,
+        "mainlineMaterial:crystal_dark": 62,
+        "mainlineMaterial:core": 48,
+        "wheelGold": 550,
+        "wheelSpins": 88,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 59,
+        "mainlineMaterial:crystal_wood": 22,
+        "mainlineMaterial:crystal_fire": 19,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 4,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 20,
+      "date": "2026-11-24T04:00:00.000Z",
+      "playerLevel": 65,
+      "gold": 1050,
+      "materials": {
+        "ore": 417,
+        "crystal_water": 16,
+        "crystal_metal": 23,
+        "crystal_earth": 19,
+        "crystal_dark": 64,
+        "core": 50,
+        "crystal_wood": 24,
+        "crystal_fire": 16,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 65,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 15,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 11,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 4800,
+        "weeklyGold": 15850,
+        "summonTickets": 450,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -48720,
+        "mainlineGold": 41220,
+        "mainlineMaterial:ore": 532,
+        "mainlineMaterial:crystal_water": 16,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 19,
+        "mainlineMaterial:crystal_dark": 64,
+        "mainlineMaterial:core": 50,
+        "wheelGold": 550,
+        "wheelSpins": 92,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 60,
+        "mainlineMaterial:crystal_wood": 24,
+        "mainlineMaterial:crystal_fire": 20,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 40,
+      "date": "2026-11-25T04:00:00.000Z",
+      "playerLevel": 67,
+      "gold": 1076,
+      "materials": {
+        "ore": 440,
+        "crystal_water": 16,
+        "crystal_metal": 23,
+        "crystal_earth": 20,
+        "crystal_dark": 66,
+        "core": 52,
+        "crystal_wood": 26,
+        "crystal_fire": 19,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 67,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 22,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 15,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 11,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 5080,
+        "weeklyGold": 16250,
+        "summonTickets": 470,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -51240,
+        "mainlineGold": 43036,
+        "mainlineMaterial:ore": 555,
+        "mainlineMaterial:crystal_water": 16,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 20,
+        "mainlineMaterial:crystal_dark": 66,
+        "mainlineMaterial:core": 52,
+        "wheelGold": 600,
+        "wheelSpins": 96,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 61,
+        "mainlineMaterial:crystal_wood": 26,
+        "mainlineMaterial:crystal_fire": 23,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 60,
+      "date": "2026-11-26T04:00:00.000Z",
+      "playerLevel": 69,
+      "gold": 331,
+      "materials": {
+        "ore": 461,
+        "crystal_water": 17,
+        "crystal_metal": 23,
+        "crystal_earth": 21,
+        "crystal_dark": 72,
+        "core": 54,
+        "crystal_wood": 26,
+        "crystal_fire": 19,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 69,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 23,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 16,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 11,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 5360,
+        "weeklyGold": 17550,
+        "summonTickets": 490,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -55680,
+        "mainlineGold": 45001,
+        "mainlineMaterial:ore": 576,
+        "mainlineMaterial:crystal_water": 17,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 21,
+        "mainlineMaterial:crystal_dark": 72,
+        "mainlineMaterial:core": 54,
+        "wheelGold": 750,
+        "wheelSpins": 100,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 63,
+        "mainlineMaterial:crystal_wood": 26,
+        "mainlineMaterial:crystal_fire": 23,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 80,
+      "date": "2026-11-27T04:00:00.000Z",
+      "playerLevel": 71,
+      "gold": 256,
+      "materials": {
+        "ore": 481,
+        "crystal_water": 18,
+        "crystal_metal": 23,
+        "crystal_earth": 22,
+        "crystal_dark": 76,
+        "core": 56,
+        "crystal_wood": 26,
+        "crystal_fire": 21,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 71,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 16,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 12,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 5540,
+        "weeklyGold": 19150,
+        "summonTickets": 510,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -59760,
+        "mainlineGold": 47176,
+        "mainlineMaterial:ore": 596,
+        "mainlineMaterial:crystal_water": 18,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 76,
+        "mainlineMaterial:core": 56,
+        "wheelGold": 800,
+        "wheelSpins": 104,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 65,
+        "mainlineMaterial:crystal_wood": 26,
+        "mainlineMaterial:crystal_fire": 25,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 100,
+      "date": "2026-11-28T04:00:00.000Z",
+      "playerLevel": 73,
+      "gold": 734,
+      "materials": {
+        "ore": 502,
+        "crystal_water": 19,
+        "crystal_metal": 23,
+        "crystal_earth": 22,
+        "crystal_dark": 80,
+        "core": 58,
+        "crystal_wood": 28,
+        "crystal_fire": 22,
+        "crystal_light": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 73,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 17,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 12,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 5720,
+        "weeklyGold": 19150,
+        "summonTickets": 530,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -61680,
+        "mainlineGold": 49394,
+        "mainlineMaterial:ore": 617,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 80,
+        "mainlineMaterial:core": 58,
+        "wheelGold": 800,
+        "wheelSpins": 108,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 66,
+        "mainlineMaterial:crystal_wood": 28,
+        "mainlineMaterial:crystal_fire": 26,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 24,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 120,
+      "date": "2026-11-29T04:00:00.000Z",
+      "playerLevel": 75,
+      "gold": 167,
+      "materials": {
+        "ore": 524,
+        "crystal_water": 19,
+        "crystal_metal": 23,
+        "crystal_earth": 22,
+        "crystal_dark": 82,
+        "core": 60,
+        "crystal_wood": 29,
+        "crystal_fire": 25,
+        "crystal_light": 17
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 75,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 17,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 14,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 5980,
+        "weeklyGold": 19150,
+        "summonTickets": 540,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -64680,
+        "mainlineGold": 51567,
+        "mainlineMaterial:ore": 639,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 82,
+        "mainlineMaterial:core": 60,
+        "wheelGold": 800,
+        "wheelSpins": 112,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 68,
+        "mainlineMaterial:crystal_wood": 29,
+        "mainlineMaterial:crystal_fire": 29,
+        "streakGold": 600,
+        "mainlineMaterial:crystal_light": 26,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 4,
+      "stage": 140,
+      "date": "2026-11-30T04:00:00.000Z",
+      "playerLevel": 77,
+      "gold": 1528,
+      "materials": {
+        "ore": 547,
+        "crystal_water": 19,
+        "crystal_metal": 23,
+        "crystal_earth": 22,
+        "crystal_dark": 86,
+        "core": 62,
+        "crystal_wood": 30,
+        "crystal_fire": 26,
+        "crystal_light": 19
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 77,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 14,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 6310,
+        "weeklyGold": 19150,
+        "summonTickets": 560,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -66720,
+        "mainlineGold": 53638,
+        "mainlineMaterial:ore": 662,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 86,
+        "mainlineMaterial:core": 62,
+        "wheelGold": 800,
+        "wheelSpins": 116,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 69,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 30,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 28,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 5,
+      "stage": 0,
+      "date": "2026-11-30T04:00:00.000Z",
+      "playerLevel": 77,
+      "gold": 116,
+      "materials": {
+        "ore": 550,
+        "crystal_water": 19,
+        "crystal_metal": 23,
+        "crystal_earth": 22,
+        "crystal_dark": 86,
+        "core": 63,
+        "crystal_wood": 30,
+        "crystal_fire": 26,
+        "crystal_light": 21
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 77,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 15,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "元素之刃+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 6310,
+        "weeklyGold": 19150,
+        "summonTickets": 570,
+        "starGold": -3500,
+        "forgeGold": -4050,
+        "heroTrainingGold": -68400,
+        "mainlineGold": 53906,
+        "mainlineMaterial:ore": 665,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 23,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 86,
+        "mainlineMaterial:core": 63,
+        "wheelGold": 800,
+        "wheelSpins": 116,
+        "forgeMaterial:ore": -61,
+        "forges": 9,
+        "enhanceGold": -5700,
+        "enhanceMaterial:ore": -54,
+        "enhanceAttempts": 27,
+        "heroLevelsBought": 70,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 30,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 30,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9
+      }
+    },
+    {
+      "region": 5,
+      "stage": 20,
+      "date": "2026-12-01T04:00:00.000Z",
+      "playerLevel": 80,
+      "gold": 556,
+      "materials": {
+        "ore": 555,
+        "crystal_water": 19,
+        "crystal_metal": 26,
+        "crystal_earth": 22,
+        "crystal_dark": 89,
+        "core": 62,
+        "crystal_wood": 30,
+        "crystal_fire": 28,
+        "crystal_light": 21,
+        "dragon": 2
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 80,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 15,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+2",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "秘銀甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 6390,
+        "weeklyGold": 20250,
+        "summonTickets": 580,
+        "starGold": -3500,
+        "forgeGold": -6050,
+        "heroTrainingGold": -68400,
+        "mainlineGold": 55666,
+        "mainlineMaterial:ore": 688,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 26,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 89,
+        "mainlineMaterial:core": 65,
+        "wheelGold": 900,
+        "wheelSpins": 120,
+        "forgeMaterial:ore": -76,
+        "forges": 10,
+        "enhanceGold": -6300,
+        "enhanceMaterial:ore": -57,
+        "enhanceAttempts": 29,
+        "heroLevelsBought": 70,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 32,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 30,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 2,
+        "forgeMaterial:core": -3
+      }
+    },
+    {
+      "region": 5,
+      "stage": 40,
+      "date": "2026-12-02T04:00:00.000Z",
+      "playerLevel": 82,
+      "gold": 88,
+      "materials": {
+        "ore": 563,
+        "crystal_water": 19,
+        "crystal_metal": 29,
+        "crystal_earth": 22,
+        "crystal_dark": 91,
+        "core": 61,
+        "crystal_wood": 30,
+        "crystal_fire": 30,
+        "crystal_light": 22,
+        "dragon": 4
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 82,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 15,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+0",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 6620,
+        "weeklyGold": 20500,
+        "summonTickets": 590,
+        "starGold": -3500,
+        "forgeGold": -8050,
+        "heroTrainingGold": -68400,
+        "mainlineGold": 57318,
+        "mainlineMaterial:ore": 714,
+        "mainlineMaterial:crystal_water": 19,
+        "mainlineMaterial:crystal_metal": 29,
+        "mainlineMaterial:crystal_earth": 22,
+        "mainlineMaterial:crystal_dark": 91,
+        "mainlineMaterial:core": 67,
+        "wheelGold": 900,
+        "wheelSpins": 124,
+        "forgeMaterial:ore": -91,
+        "forges": 11,
+        "enhanceGold": -6900,
+        "enhanceMaterial:ore": -60,
+        "enhanceAttempts": 30,
+        "heroLevelsBought": 70,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 34,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 31,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 4,
+        "forgeMaterial:core": -6
+      }
+    },
+    {
+      "region": 5,
+      "stage": 60,
+      "date": "2026-12-03T04:00:00.000Z",
+      "playerLevel": 84,
+      "gold": 1444,
+      "materials": {
+        "ore": 581,
+        "crystal_water": 21,
+        "crystal_metal": 29,
+        "crystal_earth": 23,
+        "crystal_dark": 93,
+        "core": 63,
+        "crystal_wood": 30,
+        "crystal_fire": 30,
+        "crystal_light": 25,
+        "dragon": 7
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 84,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 15,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "精靈耳環+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 6900,
+        "weeklyGold": 20900,
+        "summonTickets": 610,
+        "starGold": -3500,
+        "forgeGold": -8050,
+        "heroTrainingGold": -68400,
+        "mainlineGold": 59194,
+        "mainlineMaterial:ore": 738,
+        "mainlineMaterial:crystal_water": 21,
+        "mainlineMaterial:crystal_metal": 29,
+        "mainlineMaterial:crystal_earth": 23,
+        "mainlineMaterial:crystal_dark": 93,
+        "mainlineMaterial:core": 69,
+        "wheelGold": 900,
+        "wheelSpins": 128,
+        "forgeMaterial:ore": -91,
+        "forges": 11,
+        "enhanceGold": -8100,
+        "enhanceMaterial:ore": -66,
+        "enhanceAttempts": 33,
+        "heroLevelsBought": 70,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 34,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 34,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 7,
+        "forgeMaterial:core": -6
+      }
+    },
+    {
+      "region": 5,
+      "stage": 80,
+      "date": "2026-12-04T04:00:00.000Z",
+      "playerLevel": 86,
+      "gold": 16,
+      "materials": {
+        "ore": 583,
+        "crystal_water": 23,
+        "crystal_metal": 29,
+        "crystal_earth": 26,
+        "crystal_dark": 95,
+        "core": 62,
+        "crystal_wood": 30,
+        "crystal_fire": 30,
+        "crystal_light": 26,
+        "dragon": 10
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 86,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 16,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7180,
+        "weeklyGold": 22900,
+        "summonTickets": 640,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -70200,
+        "mainlineGold": 60936,
+        "mainlineMaterial:ore": 761,
+        "mainlineMaterial:crystal_water": 23,
+        "mainlineMaterial:crystal_metal": 29,
+        "mainlineMaterial:crystal_earth": 26,
+        "mainlineMaterial:crystal_dark": 95,
+        "mainlineMaterial:core": 71,
+        "wheelGold": 950,
+        "wheelSpins": 132,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 71,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 34,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 10,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 5,
+      "stage": 100,
+      "date": "2026-12-05T04:00:00.000Z",
+      "playerLevel": 88,
+      "gold": 134,
+      "materials": {
+        "ore": 607,
+        "crystal_water": 25,
+        "crystal_metal": 30,
+        "crystal_earth": 27,
+        "crystal_dark": 97,
+        "core": 64,
+        "crystal_wood": 30,
+        "crystal_fire": 32,
+        "crystal_light": 26,
+        "dragon": 13
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 88,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 18,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 17,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7360,
+        "weeklyGold": 22900,
+        "summonTickets": 650,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -72120,
+        "mainlineGold": 62744,
+        "mainlineMaterial:ore": 785,
+        "mainlineMaterial:crystal_water": 25,
+        "mainlineMaterial:crystal_metal": 30,
+        "mainlineMaterial:crystal_earth": 27,
+        "mainlineMaterial:crystal_dark": 97,
+        "mainlineMaterial:core": 73,
+        "wheelGold": 1000,
+        "wheelSpins": 136,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 72,
+        "mainlineMaterial:crystal_wood": 30,
+        "mainlineMaterial:crystal_fire": 36,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 13,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 5,
+      "stage": 120,
+      "date": "2026-12-06T04:00:00.000Z",
+      "playerLevel": 90,
+      "gold": 585,
+      "materials": {
+        "ore": 625,
+        "crystal_water": 25,
+        "crystal_metal": 31,
+        "crystal_earth": 27,
+        "crystal_dark": 99,
+        "core": 66,
+        "crystal_wood": 32,
+        "crystal_fire": 33,
+        "crystal_light": 26,
+        "dragon": 15
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 90,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 17,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7490,
+        "weeklyGold": 23500,
+        "summonTickets": 670,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -74280,
+        "mainlineGold": 64625,
+        "mainlineMaterial:ore": 803,
+        "mainlineMaterial:crystal_water": 25,
+        "mainlineMaterial:crystal_metal": 31,
+        "mainlineMaterial:crystal_earth": 27,
+        "mainlineMaterial:crystal_dark": 99,
+        "mainlineMaterial:core": 75,
+        "wheelGold": 1000,
+        "wheelSpins": 140,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 73,
+        "mainlineMaterial:crystal_wood": 32,
+        "mainlineMaterial:crystal_fire": 37,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 15,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 5,
+      "stage": 140,
+      "date": "2026-12-07T04:00:00.000Z",
+      "playerLevel": 92,
+      "gold": 739,
+      "materials": {
+        "ore": 645,
+        "crystal_water": 25,
+        "crystal_metal": 32,
+        "crystal_earth": 29,
+        "crystal_dark": 101,
+        "core": 68,
+        "crystal_wood": 34,
+        "crystal_fire": 34,
+        "crystal_light": 26,
+        "dragon": 18
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 92,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 18,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7570,
+        "weeklyGold": 23500,
+        "summonTickets": 670,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -76320,
+        "mainlineGold": 66689,
+        "mainlineMaterial:ore": 823,
+        "mainlineMaterial:crystal_water": 25,
+        "mainlineMaterial:crystal_metal": 32,
+        "mainlineMaterial:crystal_earth": 29,
+        "mainlineMaterial:crystal_dark": 101,
+        "mainlineMaterial:core": 77,
+        "wheelGold": 1050,
+        "wheelSpins": 144,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 74,
+        "mainlineMaterial:crystal_wood": 34,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 18,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 0,
+      "date": "2026-12-07T04:00:00.000Z",
+      "playerLevel": 93,
+      "gold": 1320,
+      "materials": {
+        "ore": 648,
+        "crystal_water": 25,
+        "crystal_metal": 32,
+        "crystal_earth": 29,
+        "crystal_dark": 101,
+        "core": 69,
+        "crystal_wood": 36,
+        "crystal_fire": 34,
+        "crystal_light": 26,
+        "dragon": 19
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 93,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 19,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 18,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7700,
+        "weeklyGold": 23500,
+        "summonTickets": 680,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -76320,
+        "mainlineGold": 67140,
+        "mainlineMaterial:ore": 826,
+        "mainlineMaterial:crystal_water": 25,
+        "mainlineMaterial:crystal_metal": 32,
+        "mainlineMaterial:crystal_earth": 29,
+        "mainlineMaterial:crystal_dark": 101,
+        "mainlineMaterial:core": 78,
+        "wheelGold": 1050,
+        "wheelSpins": 144,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 74,
+        "mainlineMaterial:crystal_wood": 36,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 19,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 20,
+      "date": "2026-12-08T04:00:00.000Z",
+      "playerLevel": 95,
+      "gold": 1706,
+      "materials": {
+        "ore": 667,
+        "crystal_water": 26,
+        "crystal_metal": 34,
+        "crystal_earth": 29,
+        "crystal_dark": 104,
+        "core": 71,
+        "crystal_wood": 36,
+        "crystal_fire": 34,
+        "crystal_light": 26,
+        "dragon": 22
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 95,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 2
+        },
+        {
+          "id": "tempest",
+          "level": 20,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 18,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7700,
+        "weeklyGold": 24600,
+        "summonTickets": 700,
+        "starGold": -3500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -78600,
+        "mainlineGold": 68706,
+        "mainlineMaterial:ore": 845,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 34,
+        "mainlineMaterial:crystal_earth": 29,
+        "mainlineMaterial:crystal_dark": 104,
+        "mainlineMaterial:core": 80,
+        "wheelGold": 1050,
+        "wheelSpins": 148,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 75,
+        "mainlineMaterial:crystal_wood": 36,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 5,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 22,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 40,
+      "date": "2026-12-09T04:00:00.000Z",
+      "playerLevel": 97,
+      "gold": 434,
+      "materials": {
+        "ore": 688,
+        "crystal_water": 26,
+        "crystal_metal": 36,
+        "crystal_earth": 29,
+        "crystal_dark": 109,
+        "core": 73,
+        "crystal_wood": 37,
+        "crystal_fire": 34,
+        "crystal_light": 26,
+        "dragon": 24
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 97,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 24,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 18,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 7980,
+        "weeklyGold": 25250,
+        "summonTickets": 720,
+        "starGold": -5000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -81000,
+        "mainlineGold": 70404,
+        "mainlineMaterial:ore": 866,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 36,
+        "mainlineMaterial:crystal_earth": 29,
+        "mainlineMaterial:crystal_dark": 109,
+        "mainlineMaterial:core": 82,
+        "wheelGold": 1050,
+        "wheelSpins": 152,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 76,
+        "mainlineMaterial:crystal_wood": 37,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 35,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 6,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 24,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 60,
+      "date": "2026-12-10T04:00:00.000Z",
+      "playerLevel": 99,
+      "gold": 486,
+      "materials": {
+        "ore": 712,
+        "crystal_water": 26,
+        "crystal_metal": 36,
+        "crystal_earth": 31,
+        "crystal_dark": 113,
+        "core": 75,
+        "crystal_wood": 38,
+        "crystal_fire": 34,
+        "crystal_light": 27,
+        "dragon": 27
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 99,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 25,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 1
+        },
+        {
+          "id": "serenity",
+          "level": 18,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 8210,
+        "weeklyGold": 26250,
+        "summonTickets": 740,
+        "starGold": -5000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -83880,
+        "mainlineGold": 72106,
+        "mainlineMaterial:ore": 890,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 36,
+        "mainlineMaterial:crystal_earth": 31,
+        "mainlineMaterial:crystal_dark": 113,
+        "mainlineMaterial:core": 84,
+        "wheelGold": 1050,
+        "wheelSpins": 156,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 77,
+        "mainlineMaterial:crystal_wood": 38,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 36,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 6,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 27,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 80,
+      "date": "2026-12-11T04:00:00.000Z",
+      "playerLevel": 101,
+      "gold": 292,
+      "materials": {
+        "ore": 734,
+        "crystal_water": 26,
+        "crystal_metal": 36,
+        "crystal_earth": 33,
+        "crystal_dark": 115,
+        "core": 77,
+        "crystal_wood": 41,
+        "crystal_fire": 34,
+        "crystal_light": 28,
+        "dragon": 30
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 101,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 25,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 8440,
+        "weeklyGold": 27250,
+        "summonTickets": 760,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -86040,
+        "mainlineGold": 73792,
+        "mainlineMaterial:ore": 912,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 36,
+        "mainlineMaterial:crystal_earth": 33,
+        "mainlineMaterial:crystal_dark": 115,
+        "mainlineMaterial:core": 86,
+        "wheelGold": 1100,
+        "wheelSpins": 160,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 78,
+        "mainlineMaterial:crystal_wood": 41,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 37,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 30,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 100,
+      "date": "2026-12-12T04:00:00.000Z",
+      "playerLevel": 103,
+      "gold": 32,
+      "materials": {
+        "ore": 759,
+        "crystal_water": 26,
+        "crystal_metal": 36,
+        "crystal_earth": 35,
+        "crystal_dark": 118,
+        "core": 79,
+        "crystal_wood": 43,
+        "crystal_fire": 34,
+        "crystal_light": 29,
+        "dragon": 33
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 103,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 26,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 8600,
+        "weeklyGold": 28150,
+        "summonTickets": 770,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -89040,
+        "mainlineGold": 75422,
+        "mainlineMaterial:ore": 937,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 36,
+        "mainlineMaterial:crystal_earth": 35,
+        "mainlineMaterial:crystal_dark": 118,
+        "mainlineMaterial:core": 88,
+        "wheelGold": 1150,
+        "wheelSpins": 164,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 79,
+        "mainlineMaterial:crystal_wood": 43,
+        "mainlineMaterial:crystal_fire": 38,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 38,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 33,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 120,
+      "date": "2026-12-13T04:00:00.000Z",
+      "playerLevel": 105,
+      "gold": 2100,
+      "materials": {
+        "ore": 779,
+        "crystal_water": 26,
+        "crystal_metal": 37,
+        "crystal_earth": 35,
+        "crystal_dark": 121,
+        "core": 81,
+        "crystal_wood": 43,
+        "crystal_fire": 38,
+        "crystal_light": 29,
+        "dragon": 35
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 105,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 26,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 8730,
+        "weeklyGold": 28150,
+        "summonTickets": 780,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -89040,
+        "mainlineGold": 77310,
+        "mainlineMaterial:ore": 957,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 37,
+        "mainlineMaterial:crystal_earth": 35,
+        "mainlineMaterial:crystal_dark": 121,
+        "mainlineMaterial:core": 90,
+        "wheelGold": 1200,
+        "wheelSpins": 168,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 79,
+        "mainlineMaterial:crystal_wood": 43,
+        "mainlineMaterial:crystal_fire": 42,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 38,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 35,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 140,
+      "date": "2026-12-14T04:00:00.000Z",
+      "playerLevel": 107,
+      "gold": 1012,
+      "materials": {
+        "ore": 802,
+        "crystal_water": 26,
+        "crystal_metal": 38,
+        "crystal_earth": 37,
+        "crystal_dark": 124,
+        "core": 83,
+        "crystal_wood": 43,
+        "crystal_fire": 40,
+        "crystal_light": 29,
+        "dragon": 37
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 107,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 27,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 21,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9010,
+        "weeklyGold": 28150,
+        "summonTickets": 790,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -92160,
+        "mainlineGold": 79012,
+        "mainlineMaterial:ore": 980,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 38,
+        "mainlineMaterial:crystal_earth": 37,
+        "mainlineMaterial:crystal_dark": 124,
+        "mainlineMaterial:core": 92,
+        "wheelGold": 1250,
+        "wheelSpins": 172,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 80,
+        "mainlineMaterial:crystal_wood": 43,
+        "mainlineMaterial:crystal_fire": 44,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 38,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 37,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 6,
+      "stage": 160,
+      "date": "2026-12-15T04:00:00.000Z",
+      "playerLevel": 109,
+      "gold": 1440,
+      "materials": {
+        "ore": 820,
+        "crystal_water": 26,
+        "crystal_metal": 39,
+        "crystal_earth": 37,
+        "crystal_dark": 126,
+        "core": 85,
+        "crystal_wood": 45,
+        "crystal_fire": 42,
+        "crystal_light": 30,
+        "dragon": 40
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 109,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 27,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9190,
+        "weeklyGold": 29000,
+        "summonTickets": 810,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -94680,
+        "mainlineGold": 80930,
+        "mainlineMaterial:ore": 998,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 39,
+        "mainlineMaterial:crystal_earth": 37,
+        "mainlineMaterial:crystal_dark": 126,
+        "mainlineMaterial:core": 94,
+        "wheelGold": 1250,
+        "wheelSpins": 176,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 81,
+        "mainlineMaterial:crystal_wood": 45,
+        "mainlineMaterial:crystal_fire": 46,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 39,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 40,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 0,
+      "date": "2026-12-15T04:00:00.000Z",
+      "playerLevel": 109,
+      "gold": 2095,
+      "materials": {
+        "ore": 823,
+        "crystal_water": 26,
+        "crystal_metal": 39,
+        "crystal_earth": 37,
+        "crystal_dark": 126,
+        "core": 86,
+        "crystal_wood": 45,
+        "crystal_fire": 44,
+        "crystal_light": 30,
+        "dragon": 41
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 109,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 27,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9370,
+        "weeklyGold": 29250,
+        "summonTickets": 820,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -94680,
+        "mainlineGold": 81155,
+        "mainlineMaterial:ore": 1001,
+        "mainlineMaterial:crystal_water": 26,
+        "mainlineMaterial:crystal_metal": 39,
+        "mainlineMaterial:crystal_earth": 37,
+        "mainlineMaterial:crystal_dark": 126,
+        "mainlineMaterial:core": 95,
+        "wheelGold": 1250,
+        "wheelSpins": 176,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 81,
+        "mainlineMaterial:crystal_wood": 45,
+        "mainlineMaterial:crystal_fire": 48,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 39,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 41,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 20,
+      "date": "2026-12-16T04:00:00.000Z",
+      "playerLevel": 111,
+      "gold": 1175,
+      "materials": {
+        "ore": 843,
+        "crystal_water": 27,
+        "crystal_metal": 39,
+        "crystal_earth": 38,
+        "crystal_dark": 132,
+        "core": 88,
+        "crystal_wood": 45,
+        "crystal_fire": 44,
+        "crystal_light": 30,
+        "dragon": 44
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 111,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 28,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9450,
+        "weeklyGold": 29900,
+        "summonTickets": 840,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -97920,
+        "mainlineGold": 82745,
+        "mainlineMaterial:ore": 1021,
+        "mainlineMaterial:crystal_water": 27,
+        "mainlineMaterial:crystal_metal": 39,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 132,
+        "mainlineMaterial:core": 97,
+        "wheelGold": 1250,
+        "wheelSpins": 180,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 82,
+        "mainlineMaterial:crystal_wood": 45,
+        "mainlineMaterial:crystal_fire": 48,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 39,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 44,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 40,
+      "date": "2026-12-17T04:00:00.000Z",
+      "playerLevel": 113,
+      "gold": 181,
+      "materials": {
+        "ore": 866,
+        "crystal_water": 28,
+        "crystal_metal": 39,
+        "crystal_earth": 38,
+        "crystal_dark": 136,
+        "core": 90,
+        "crystal_wood": 45,
+        "crystal_fire": 45,
+        "crystal_light": 32,
+        "dragon": 46
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 113,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 29,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 2
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9580,
+        "weeklyGold": 30500,
+        "summonTickets": 850,
+        "starGold": -6000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -101280,
+        "mainlineGold": 84331,
+        "mainlineMaterial:ore": 1044,
+        "mainlineMaterial:crystal_water": 28,
+        "mainlineMaterial:crystal_metal": 39,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 136,
+        "mainlineMaterial:core": 99,
+        "wheelGold": 1300,
+        "wheelSpins": 184,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 83,
+        "mainlineMaterial:crystal_wood": 45,
+        "mainlineMaterial:crystal_fire": 49,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 41,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 7,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 46,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 60,
+      "date": "2026-12-18T04:00:00.000Z",
+      "playerLevel": 115,
+      "gold": 1972,
+      "materials": {
+        "ore": 887,
+        "crystal_water": 28,
+        "crystal_metal": 41,
+        "crystal_earth": 38,
+        "crystal_dark": 138,
+        "core": 92,
+        "crystal_wood": 46,
+        "crystal_fire": 46,
+        "crystal_light": 34,
+        "dragon": 50
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 115,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 29,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9710,
+        "weeklyGold": 31900,
+        "summonTickets": 870,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -101280,
+        "mainlineGold": 85992,
+        "mainlineMaterial:ore": 1065,
+        "mainlineMaterial:crystal_water": 28,
+        "mainlineMaterial:crystal_metal": 41,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 138,
+        "mainlineMaterial:core": 101,
+        "wheelGold": 1400,
+        "wheelSpins": 188,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 83,
+        "mainlineMaterial:crystal_wood": 46,
+        "mainlineMaterial:crystal_fire": 50,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 43,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 50,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 80,
+      "date": "2026-12-19T04:00:00.000Z",
+      "playerLevel": 117,
+      "gold": 265,
+      "materials": {
+        "ore": 908,
+        "crystal_water": 30,
+        "crystal_metal": 41,
+        "crystal_earth": 38,
+        "crystal_dark": 140,
+        "core": 94,
+        "crystal_wood": 47,
+        "crystal_fire": 47,
+        "crystal_light": 36,
+        "dragon": 52
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 117,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 19,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 9840,
+        "weeklyGold": 31900,
+        "summonTickets": 880,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -104760,
+        "mainlineGold": 87585,
+        "mainlineMaterial:ore": 1086,
+        "mainlineMaterial:crystal_water": 30,
+        "mainlineMaterial:crystal_metal": 41,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 140,
+        "mainlineMaterial:core": 103,
+        "wheelGold": 1450,
+        "wheelSpins": 192,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 84,
+        "mainlineMaterial:crystal_wood": 47,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 45,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 52,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 100,
+      "date": "2026-12-20T04:00:00.000Z",
+      "playerLevel": 119,
+      "gold": 823,
+      "materials": {
+        "ore": 926,
+        "crystal_water": 31,
+        "crystal_metal": 41,
+        "crystal_earth": 38,
+        "crystal_dark": 142,
+        "core": 96,
+        "crystal_wood": 48,
+        "crystal_fire": 47,
+        "crystal_light": 38,
+        "dragon": 54
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 119,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 22,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 20,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10070,
+        "weeklyGold": 32800,
+        "summonTickets": 900,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -107040,
+        "mainlineGold": 89293,
+        "mainlineMaterial:ore": 1104,
+        "mainlineMaterial:crystal_water": 31,
+        "mainlineMaterial:crystal_metal": 41,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 142,
+        "mainlineMaterial:core": 105,
+        "wheelGold": 1450,
+        "wheelSpins": 196,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 85,
+        "mainlineMaterial:crystal_wood": 48,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 47,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 54,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 120,
+      "date": "2026-12-21T04:00:00.000Z",
+      "playerLevel": 122,
+      "gold": 414,
+      "materials": {
+        "ore": 946,
+        "crystal_water": 32,
+        "crystal_metal": 43,
+        "crystal_earth": 38,
+        "crystal_dark": 145,
+        "core": 98,
+        "crystal_wood": 50,
+        "crystal_fire": 47,
+        "crystal_light": 38,
+        "dragon": 57
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 122,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 20,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10300,
+        "weeklyGold": 32800,
+        "summonTickets": 910,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -109680,
+        "mainlineGold": 91244,
+        "mainlineMaterial:ore": 1124,
+        "mainlineMaterial:crystal_water": 32,
+        "mainlineMaterial:crystal_metal": 43,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 145,
+        "mainlineMaterial:core": 107,
+        "wheelGold": 1500,
+        "wheelSpins": 200,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 86,
+        "mainlineMaterial:crystal_wood": 50,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 47,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 57,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 140,
+      "date": "2026-12-22T04:00:00.000Z",
+      "playerLevel": 124,
+      "gold": 843,
+      "materials": {
+        "ore": 971,
+        "crystal_water": 33,
+        "crystal_metal": 45,
+        "crystal_earth": 38,
+        "crystal_dark": 150,
+        "core": 100,
+        "crystal_wood": 50,
+        "crystal_fire": 47,
+        "crystal_light": 38,
+        "dragon": 59
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 124,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 21,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10530,
+        "weeklyGold": 33650,
+        "summonTickets": 930,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -112080,
+        "mainlineGold": 92943,
+        "mainlineMaterial:ore": 1149,
+        "mainlineMaterial:crystal_water": 33,
+        "mainlineMaterial:crystal_metal": 45,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 150,
+        "mainlineMaterial:core": 109,
+        "wheelGold": 1550,
+        "wheelSpins": 204,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 87,
+        "mainlineMaterial:crystal_wood": 50,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 47,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 59,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 7,
+      "stage": 160,
+      "date": "2026-12-23T04:00:00.000Z",
+      "playerLevel": 125,
+      "gold": 524,
+      "materials": {
+        "ore": 994,
+        "crystal_water": 33,
+        "crystal_metal": 47,
+        "crystal_earth": 38,
+        "crystal_dark": 155,
+        "core": 102,
+        "crystal_wood": 51,
+        "crystal_fire": 47,
+        "crystal_light": 38,
+        "dragon": 61
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 125,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10660,
+        "weeklyGold": 34150,
+        "summonTickets": 940,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -114600,
+        "mainlineGold": 94514,
+        "mainlineMaterial:ore": 1172,
+        "mainlineMaterial:crystal_water": 33,
+        "mainlineMaterial:crystal_metal": 47,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 155,
+        "mainlineMaterial:core": 111,
+        "wheelGold": 1550,
+        "wheelSpins": 208,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 88,
+        "mainlineMaterial:crystal_wood": 51,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 47,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 61,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 8,
+      "stage": 0,
+      "date": "2026-12-23T04:00:00.000Z",
+      "playerLevel": 126,
+      "gold": 1476,
+      "materials": {
+        "ore": 997,
+        "crystal_water": 33,
+        "crystal_metal": 49,
+        "crystal_earth": 38,
+        "crystal_dark": 155,
+        "core": 103,
+        "crystal_wood": 51,
+        "crystal_fire": 47,
+        "crystal_light": 38,
+        "dragon": 62
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 126,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 2
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10840,
+        "weeklyGold": 34550,
+        "summonTickets": 950,
+        "starGold": -7500,
+        "forgeGold": -10550,
+        "heroTrainingGold": -114600,
+        "mainlineGold": 94886,
+        "mainlineMaterial:ore": 1175,
+        "mainlineMaterial:crystal_water": 33,
+        "mainlineMaterial:crystal_metal": 49,
+        "mainlineMaterial:crystal_earth": 38,
+        "mainlineMaterial:crystal_dark": 155,
+        "mainlineMaterial:core": 112,
+        "wheelGold": 1550,
+        "wheelSpins": 208,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 88,
+        "mainlineMaterial:crystal_wood": 51,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 47,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 8,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 62,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 8,
+      "stage": 20,
+      "date": "2026-12-24T04:00:00.000Z",
+      "playerLevel": 128,
+      "gold": 2342,
+      "materials": {
+        "ore": 1021,
+        "crystal_water": 35,
+        "crystal_metal": 49,
+        "crystal_earth": 41,
+        "crystal_dark": 157,
+        "core": 105,
+        "crystal_wood": 51,
+        "crystal_fire": 47,
+        "crystal_light": 39,
+        "dragon": 64
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 128,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "傳說武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 10840,
+        "weeklyGold": 35150,
+        "summonTickets": 960,
+        "starGold": -9000,
+        "forgeGold": -10550,
+        "heroTrainingGold": -114600,
+        "mainlineGold": 96602,
+        "mainlineMaterial:ore": 1199,
+        "mainlineMaterial:crystal_water": 35,
+        "mainlineMaterial:crystal_metal": 49,
+        "mainlineMaterial:crystal_earth": 41,
+        "mainlineMaterial:crystal_dark": 157,
+        "mainlineMaterial:core": 114,
+        "wheelGold": 1600,
+        "wheelSpins": 212,
+        "forgeMaterial:ore": -106,
+        "forges": 12,
+        "enhanceGold": -9300,
+        "enhanceMaterial:ore": -72,
+        "enhanceAttempts": 36,
+        "heroLevelsBought": 88,
+        "mainlineMaterial:crystal_wood": 51,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 48,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -9,
+        "mainlineMaterial:dragon": 64,
+        "forgeMaterial:core": -9
+      }
+    },
+    {
+      "region": 8,
+      "stage": 40,
+      "date": "2026-12-25T04:00:00.000Z",
+      "playerLevel": 130,
+      "gold": 153,
+      "materials": {
+        "ore": 1044,
+        "crystal_water": 37,
+        "crystal_metal": 50,
+        "crystal_earth": 42,
+        "crystal_dark": 159,
+        "core": 102,
+        "crystal_wood": 51,
+        "crystal_fire": 47,
+        "crystal_light": 36,
+        "dragon": 67
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 130,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+2",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11170,
+        "weeklyGold": 36550,
+        "summonTickets": 990,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -114600,
+        "mainlineGold": 98433,
+        "mainlineMaterial:ore": 1225,
+        "mainlineMaterial:crystal_water": 37,
+        "mainlineMaterial:crystal_metal": 50,
+        "mainlineMaterial:crystal_earth": 42,
+        "mainlineMaterial:crystal_dark": 159,
+        "mainlineMaterial:core": 116,
+        "wheelGold": 1600,
+        "wheelSpins": 216,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10050,
+        "enhanceMaterial:ore": -75,
+        "enhanceAttempts": 38,
+        "heroLevelsBought": 88,
+        "mainlineMaterial:crystal_wood": 51,
+        "mainlineMaterial:crystal_fire": 51,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 67,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 60,
+      "date": "2026-12-26T04:00:00.000Z",
+      "playerLevel": 132,
+      "gold": 1140,
+      "materials": {
+        "ore": 1066,
+        "crystal_water": 37,
+        "crystal_metal": 51,
+        "crystal_earth": 42,
+        "crystal_dark": 163,
+        "core": 104,
+        "crystal_wood": 53,
+        "crystal_fire": 48,
+        "crystal_light": 36,
+        "dragon": 69
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 132,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 23,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11250,
+        "weeklyGold": 36550,
+        "summonTickets": 1000,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -114600,
+        "mainlineGold": 100090,
+        "mainlineMaterial:ore": 1250,
+        "mainlineMaterial:crystal_water": 37,
+        "mainlineMaterial:crystal_metal": 51,
+        "mainlineMaterial:crystal_earth": 42,
+        "mainlineMaterial:crystal_dark": 163,
+        "mainlineMaterial:core": 118,
+        "wheelGold": 1600,
+        "wheelSpins": 220,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 88,
+        "mainlineMaterial:crystal_wood": 53,
+        "mainlineMaterial:crystal_fire": 52,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 69,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 80,
+      "date": "2026-12-27T04:00:00.000Z",
+      "playerLevel": 134,
+      "gold": 913,
+      "materials": {
+        "ore": 1089,
+        "crystal_water": 37,
+        "crystal_metal": 52,
+        "crystal_earth": 42,
+        "crystal_dark": 165,
+        "core": 106,
+        "crystal_wood": 55,
+        "crystal_fire": 51,
+        "crystal_light": 36,
+        "dragon": 72
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 134,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 24,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 22,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11430,
+        "weeklyGold": 37150,
+        "summonTickets": 1010,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -117360,
+        "mainlineGold": 101743,
+        "mainlineMaterial:ore": 1273,
+        "mainlineMaterial:crystal_water": 37,
+        "mainlineMaterial:crystal_metal": 52,
+        "mainlineMaterial:crystal_earth": 42,
+        "mainlineMaterial:crystal_dark": 165,
+        "mainlineMaterial:core": 120,
+        "wheelGold": 1700,
+        "wheelSpins": 224,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 89,
+        "mainlineMaterial:crystal_wood": 55,
+        "mainlineMaterial:crystal_fire": 55,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 72,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 100,
+      "date": "2026-12-28T04:00:00.000Z",
+      "playerLevel": 137,
+      "gold": 173,
+      "materials": {
+        "ore": 1114,
+        "crystal_water": 37,
+        "crystal_metal": 52,
+        "crystal_earth": 43,
+        "crystal_dark": 167,
+        "core": 108,
+        "crystal_wood": 59,
+        "crystal_fire": 52,
+        "crystal_light": 36,
+        "dragon": 74
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 137,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 24,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 23,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11560,
+        "weeklyGold": 37150,
+        "summonTickets": 1020,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -120000,
+        "mainlineGold": 103463,
+        "mainlineMaterial:ore": 1298,
+        "mainlineMaterial:crystal_water": 37,
+        "mainlineMaterial:crystal_metal": 52,
+        "mainlineMaterial:crystal_earth": 43,
+        "mainlineMaterial:crystal_dark": 167,
+        "mainlineMaterial:core": 122,
+        "wheelGold": 1750,
+        "wheelSpins": 228,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 90,
+        "mainlineMaterial:crystal_wood": 59,
+        "mainlineMaterial:crystal_fire": 56,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 74,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 120,
+      "date": "2026-12-29T04:00:00.000Z",
+      "playerLevel": 139,
+      "gold": 2742,
+      "materials": {
+        "ore": 1133,
+        "crystal_water": 38,
+        "crystal_metal": 54,
+        "crystal_earth": 44,
+        "crystal_dark": 171,
+        "core": 110,
+        "crystal_wood": 59,
+        "crystal_fire": 52,
+        "crystal_light": 36,
+        "dragon": 76
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 139,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 30,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 24,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 23,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11690,
+        "weeklyGold": 37750,
+        "summonTickets": 1040,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -120000,
+        "mainlineGold": 105252,
+        "mainlineMaterial:ore": 1317,
+        "mainlineMaterial:crystal_water": 38,
+        "mainlineMaterial:crystal_metal": 54,
+        "mainlineMaterial:crystal_earth": 44,
+        "mainlineMaterial:crystal_dark": 171,
+        "mainlineMaterial:core": 124,
+        "wheelGold": 1800,
+        "wheelSpins": 232,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 90,
+        "mainlineMaterial:crystal_wood": 59,
+        "mainlineMaterial:crystal_fire": 56,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 76,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 140,
+      "date": "2026-12-30T04:00:00.000Z",
+      "playerLevel": 141,
+      "gold": 2328,
+      "materials": {
+        "ore": 1155,
+        "crystal_water": 39,
+        "crystal_metal": 54,
+        "crystal_earth": 45,
+        "crystal_dark": 177,
+        "core": 112,
+        "crystal_wood": 59,
+        "crystal_fire": 52,
+        "crystal_light": 36,
+        "dragon": 79
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 141,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 31,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 24,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 23,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 11820,
+        "weeklyGold": 38900,
+        "summonTickets": 1060,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -123600,
+        "mainlineGold": 107108,
+        "mainlineMaterial:ore": 1339,
+        "mainlineMaterial:crystal_water": 39,
+        "mainlineMaterial:crystal_metal": 54,
+        "mainlineMaterial:crystal_earth": 45,
+        "mainlineMaterial:crystal_dark": 177,
+        "mainlineMaterial:core": 126,
+        "wheelGold": 1850,
+        "wheelSpins": 236,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 91,
+        "mainlineMaterial:crystal_wood": 59,
+        "mainlineMaterial:crystal_fire": 56,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 79,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 160,
+      "date": "2026-12-31T04:00:00.000Z",
+      "playerLevel": 143,
+      "gold": 1394,
+      "materials": {
+        "ore": 1178,
+        "crystal_water": 42,
+        "crystal_metal": 54,
+        "crystal_earth": 45,
+        "crystal_dark": 181,
+        "core": 114,
+        "crystal_wood": 59,
+        "crystal_fire": 53,
+        "crystal_light": 36,
+        "dragon": 81
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 143,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 31,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 25,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 23,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 12000,
+        "weeklyGold": 38900,
+        "summonTickets": 1060,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -126480,
+        "mainlineGold": 108774,
+        "mainlineMaterial:ore": 1362,
+        "mainlineMaterial:crystal_water": 42,
+        "mainlineMaterial:crystal_metal": 54,
+        "mainlineMaterial:crystal_earth": 45,
+        "mainlineMaterial:crystal_dark": 181,
+        "mainlineMaterial:core": 128,
+        "wheelGold": 1950,
+        "wheelSpins": 240,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 92,
+        "mainlineMaterial:crystal_wood": 59,
+        "mainlineMaterial:crystal_fire": 57,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 50,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 81,
+        "forgeMaterial:core": -14
+      }
+    },
+    {
+      "region": 8,
+      "stage": 180,
+      "date": "2027-01-01T04:00:00.000Z",
+      "playerLevel": 145,
+      "gold": 2354,
+      "materials": {
+        "ore": 1203,
+        "crystal_water": 42,
+        "crystal_metal": 54,
+        "crystal_earth": 45,
+        "crystal_dark": 183,
+        "core": 116,
+        "crystal_wood": 60,
+        "crystal_fire": 56,
+        "crystal_light": 38,
+        "dragon": 83
+      },
+      "party": [
+        {
+          "id": "player",
+          "level": 145,
+          "stars": 0
+        },
+        {
+          "id": "tenacity",
+          "level": 31,
+          "stars": 3
+        },
+        {
+          "id": "tempest",
+          "level": 26,
+          "stars": 3
+        },
+        {
+          "id": "serenity",
+          "level": 23,
+          "stars": 3
+        }
+      ],
+      "equipment": [
+        {
+          "slot": "weapon",
+          "item": "專屬武器+3",
+          "blessed": false
+        },
+        {
+          "slot": "armor",
+          "item": "龍鱗甲+3",
+          "blessed": false
+        },
+        {
+          "slot": "accessory",
+          "item": "王者之戒+3",
+          "blessed": false
+        }
+      ],
+      "ledger": {
+        "initialGold": 0,
+        "dailyGold": 12230,
+        "weeklyGold": 40900,
+        "summonTickets": 1090,
+        "starGold": -9000,
+        "forgeGold": -15550,
+        "heroTrainingGold": -129480,
+        "mainlineGold": 110504,
+        "mainlineMaterial:ore": 1387,
+        "mainlineMaterial:crystal_water": 42,
+        "mainlineMaterial:crystal_metal": 54,
+        "mainlineMaterial:crystal_earth": 45,
+        "mainlineMaterial:crystal_dark": 183,
+        "mainlineMaterial:core": 130,
+        "wheelGold": 1950,
+        "wheelSpins": 244,
+        "forgeMaterial:ore": -106,
+        "forges": 13,
+        "enhanceGold": -10800,
+        "enhanceMaterial:ore": -78,
+        "enhanceAttempts": 39,
+        "heroLevelsBought": 93,
+        "mainlineMaterial:crystal_wood": 60,
+        "mainlineMaterial:crystal_fire": 60,
+        "streakGold": 1600,
+        "mainlineMaterial:crystal_light": 52,
+        "forgeMaterial:crystal_fire": -4,
+        "starUps": 9,
+        "forgeMaterial:crystal_light": -14,
+        "mainlineMaterial:dragon": 83,
+        "forgeMaterial:core": -14
+      }
+    }
+  ],
+  "final": {
+    "playerLevel": 145,
+    "gold": 70,
+    "materials": {
+      "ore": 1206,
+      "crystal_water": 42,
+      "crystal_metal": 54,
+      "crystal_earth": 45,
+      "crystal_dark": 185,
+      "core": 117,
+      "crystal_wood": 60,
+      "crystal_fire": 56,
+      "crystal_light": 38,
+      "dragon": 84
+    },
+    "party": [
+      {
+        "id": "player",
+        "level": 145,
+        "stars": 0
+      },
+      {
+        "id": "tenacity",
+        "level": 31,
+        "stars": 3
+      },
+      {
+        "id": "tempest",
+        "level": 26,
+        "stars": 3
+      },
+      {
+        "id": "serenity",
+        "level": 24,
+        "stars": 3
+      }
+    ],
+    "equipment": [
+      {
+        "slot": "weapon",
+        "item": "專屬武器+3",
+        "blessed": false
+      },
+      {
+        "slot": "armor",
+        "item": "龍鱗甲+3",
+        "blessed": false
+      },
+      {
+        "slot": "accessory",
+        "item": "王者之戒+3",
+        "blessed": false
+      }
+    ],
+    "ledger": {
+      "initialGold": 0,
+      "dailyGold": 12430,
+      "weeklyGold": 40900,
+      "summonTickets": 1100,
+      "starGold": -9000,
+      "forgeGold": -15550,
+      "heroTrainingGold": -132240,
+      "mainlineGold": 110780,
+      "mainlineMaterial:ore": 1390,
+      "mainlineMaterial:crystal_water": 42,
+      "mainlineMaterial:crystal_metal": 54,
+      "mainlineMaterial:crystal_earth": 45,
+      "mainlineMaterial:crystal_dark": 185,
+      "mainlineMaterial:core": 131,
+      "wheelGold": 1950,
+      "wheelSpins": 244,
+      "forgeMaterial:ore": -106,
+      "forges": 13,
+      "enhanceGold": -10800,
+      "enhanceMaterial:ore": -78,
+      "enhanceAttempts": 39,
+      "heroLevelsBought": 94,
+      "mainlineMaterial:crystal_wood": 60,
+      "mainlineMaterial:crystal_fire": 60,
+      "streakGold": 1600,
+      "mainlineMaterial:crystal_light": 52,
+      "forgeMaterial:crystal_fire": -4,
+      "starUps": 9,
+      "forgeMaterial:crystal_light": -14,
+      "mainlineMaterial:dragon": 84,
+      "forgeMaterial:core": -14
+    }
+  }
+}

@@ -1,5 +1,6 @@
 #!/bin/zsh
-# 三方 AI 自動接續（每 30 分鐘由 launchd 執行一次，com.enggame.ai-tick）
+# 三方 AI 自動接續（每 30 分鐘執行一次）。
+# 執行方式：在 Claude Code 終端機分頁跑 scripts/ai-loop.sh（launchd 讀不到外接碟，已不用）
 # - Codex：閒置 15 分鐘以上、額度還夠（或已過重置時間）→ 用 codex exec 接續 PM_STATUS 佇列
 # - Antigravity：沒有任務在跑、不在冷卻中 → 用 agy -p 接續佇列；額度用完自動降級模型，全部用完冷卻 1 小時
 # - Claude 由 Claude Code 自己的排程喚醒，不在這裡處理
@@ -35,7 +36,7 @@ codex_tick() {
     if [ "$p" -ge 90 ] && [ "$now" -lt "$pr" ]; then log "Codex：5 小時已用 $p%，等 $(date -r $pr '+%H:%M') 重置"; return; fi
   fi
   log "Codex：喚醒接續佇列"
-  ( cd $CODEX_WT && $CODEX exec -s workspace-write --add-dir $AGY_WT "$(cat $MAIN/scripts/prompts/codex-tick.txt)" >> $STATE/codex-last.log 2>&1; log "Codex：本輪結束（exit $?）" ) &
+  ( cd $CODEX_WT && $CODEX exec -s workspace-write --add-dir $AGY_WT --add-dir $MAIN/.git "$(cat $MAIN/scripts/prompts/codex-tick.txt)" >> $STATE/codex-last.log 2>&1; log "Codex：本輪結束（exit $?）" ) &
 }
 
 # ---------- Antigravity ----------

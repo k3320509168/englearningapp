@@ -32,7 +32,7 @@
 
 
 ### 1.1 自動喚醒與接續機制（2026-11-01）
-- **Codex／Antigravity**：`scripts/ai-tick.sh` 每 30 分鐘由 launchd（`com.enggame.ai-tick`，製作人執行 `zsh scripts/install-ai-tick.sh` 安裝）跑一次：
+- **Codex／Antigravity**：`scripts/ai-tick.sh` 每 30 分鐘跑一次。**launchd 版讀不到外接碟（macOS 權限，2026-11-01 跑 10 次全失敗），改由製作人在終端機分頁執行 `zsh scripts/ai-loop.sh`**（Claude 的安全規則不允許自己啟動自動代理迴圈）：
   - Codex：15 分鐘內沒動作、且額度夠（5 小時 <90%、每週 <95%，或已過重置時間）→ `codex exec` 照 `scripts/prompts/codex-tick.txt` 接續佇列。
   - Antigravity：沒任務在跑、不在冷卻 → `agy -p` 照 `scripts/prompts/agy-tick.txt` 做下一項；額度用完自動降級 argon-high → argon-medium → flash-high，全部用完冷卻 1 小時。工作紀錄寫 `docs/AGY_LOG.md`。
   - 紀錄 `~/Library/Logs/enggame-ai-tick.log`；暫停 `touch ~/.enggame-ai/paused`，恢復 `rm ~/.enggame-ai/paused`。

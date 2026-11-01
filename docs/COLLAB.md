@@ -27,6 +27,7 @@
 | `src/game/questions/bank/r6～r8.json`、`vocab-r6～8.json`、題庫腳本、`validateQuestions*` | Codex |
 | `src/store/battleStore.ts`、`src/game/stageLayout.ts`、`src/game/progression.ts`、`src/game/ultimates.ts`、`src/game/ultimateFx.ts`、`src/game/execute.ts`、`src/game/stars.ts`、`src/game/enemyPatterns.ts`、`src/game/modes.ts` | **Codex（從 C1 開始）**；Claude 暫停修改 |
 | `src/game/combo.ts`（已完成 P0-1） | Claude 已完成，Codex 可以引用 |
+| `src/index.css`、`Game.tsx`、`MapLevelBar.tsx`、`BattleHUD.tsx`、`BattleParty.tsx`（C8 期間） | Codex |
 | 其他元件、劇情、文件 | Claude |
 
 ## 任務看板（平衡規格 v2.0，細節以 `docs/gpt/balance-r5-final-spec.md` 為準）
@@ -51,7 +52,19 @@
   - 每張地圖有效題次 A1 60 → C2 110（見規格 ⑨），完成給一次金幣與素材；不擋主線。
 - [ ] **C7（P2-1）EXP 經驗池 70／30**——Codex 實作、Claude 驗收
   - 公式見規格 ⑧；必須跑「從 A1 連續玩到 C2」的模擬，驗收等級差（規格 8.5）。
+- [ ] **C8（優先，製作人 2026-11-01 回報「比例跟整體配置怪怪的」）介面比例與版面**——Codex
+  - 地圖畫面（1366×768 實測）：
+    - 上方導覽列、地圖畫布、「繼續征途」、第二列小按鈕的寬度都不一樣，地圖兩側有大片空白，看起來沒對齊。
+    - 請統一成同一個內容寬度（例如 `min(1120px, 100% − 32px)`）；地圖在這個寬度內等比例顯示，高度不夠時用和背景同色的邊框置中，而不是讓地圖比其他元件窄。
+    - 1366×768 不用捲動就看得到「繼續征途」與第二列（Claude 之前把 `.is-map .game-canvas` 的 max-width 改成 `calc((100dvh − 330px) × 5/3)`，可以重新設計）。
+  - 戰鬥畫面（1366×768 實測）：
+    - 左邊戰鬥場景與右邊題目區只佔畫面上半部，下方約 40% 空白；右側題目區擠。
+    - 請讓桌機版用滿可用高度：左場景約 58%、右題目區約 42%，場景依高度等比例放大，題目字體與選項按鈕放大（主要按鈕高 ≥44px）。
+    - 手機（375×812）照第十五輪：上方場景約 35%、下方題目約 65%。
+  - 驗收：1366×768、1920×1080、375×812 三種尺寸都截圖確認（地圖、戰鬥、結算、彈出視窗），比例一致、沒有大片空白、不用捲動就能操作主要按鈕；保留像素風與配色（#101127／#202448／#30365F／#FFD15C）。
+  - 這項需要改 `src/index.css` 與版面元件（`Game.tsx`、`MapLevelBar.tsx`、`BattleHUD.tsx` 等），這些檔案在 C8 期間歸 Codex。
 - [ ] **驗收**——Claude：C1～C3 合併後跑 `scripts/realsim2.mts`（四種玩家 × 三種養成），對照規格 ⑪ 的目標區間。
 
 ## 留言板（新的寫在最下面）
 - 2026-11-01 Claude：建立看板。P0-1 已完成（`503ea53`）。從 C1 起由 Codex 接手 battleStore 等戰鬥檔案，Claude 暫停修改這些檔案。Codex 開工前請先 `git merge feat/round4`。完成一項就在這裡留言，並在 commit 訊息寫任務編號（例如「C1」）。
+- 2026-11-01 Claude：新增 C8（介面比例與版面，製作人回報），**優先於 C4 之後的項目**，建議順序 C1 → C2 → C3 → C8 → C4～C7。C8 期間 `index.css` 與版面元件歸 Codex。

@@ -1,3 +1,4 @@
+import { allowance, allowanceCap, catchupXp, frontierRecommendedLevel, isCatchupSource } from '../game/xpCatchup';
 import { firstClearXp, learningXp } from '../game/experiencePool';
 import { emptyMapMastery, masteryReady, recordMastery, MASTERY_PACKS } from '../game/mapMastery';
 import type { MapMastery } from '../game/mapMastery';
@@ -41,7 +42,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 21;
+export const SAVE_VERSION = 22;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -124,6 +125,9 @@ interface SaveData {
   shardQuizDay: string;              // 每日碎片英文題最後完成的日期（一天一次）
   rushDay: string;                   // 每日素材本：今天的日期與已挑戰次數
   rushRuns: number;
+  xpAllowanceDay: string;
+  xpAllowanceGold: number;
+  xpAllowanceRemainder: number;
   towerFloor: number;                // 英雄時空之塔：已通過的最高層
   sweepTickets: number;              // 掃蕩券：三星地圖直接領獎勵（錯題修煉場、獎勵轉盤取得）
   // 獎勵轉盤：已經給過轉盤的關卡（只有第一次破關給）、還沒轉的次數、連續銘謝惠顧幾次
@@ -209,15 +213,16 @@ interface SaveActions {
   starUp: (id: HeroId) => boolean;
   finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
   startRush: () => void;
-  grantRush: (reward: { gold: number; xp: number; ore: number }) => void;
-  clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number } | null; // 第一次通過才有獎勵
+  grantRush: (reward: { gold: number; xp: number; ore: number }) => { gold: number; xp: number; ore: number; bonus: number; allowanceGold: number };
+  clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number; xp: number; bonus: number; allowanceGold: number } | null; // 第一次通過才有獎勵
   earnSweepTickets: () => number;    // 修煉場連對 5 題：回傳實際拿到的張數（每天上限）
   sweepMap: (regionIdx: number, rand?: () => number) => { gold: number; xp: number; drops: Record<string, number> } | null;
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
   claimStageXp: (region: number, stage: number) => { xp: number; levels: number };
-  grantLearningXp: (region: number, q: Question, eligible: boolean) => { xp: number; levels: number };
+  grantLearningXp: (region: number, q: Question, eligible: boolean, replay?: boolean) => { xp: number; levels: number; allowanceGold: number; bonus: number };
+  awardXp: (n: number, source?: string) => { xp: number; levels: number; bonus: number; allowanceGold: number };
   gainXp: (n: number, source?: string) => number; // 回傳升了幾級
   advanceClass: (nodeId: string) => boolean;
   // 換職業（戰鬥外、免費）；重置目前職業的路線（退回徽章）
@@ -283,6 +288,7 @@ export const initialSave: SaveData = {
   shardQuizDay: '',
   rushDay: '',
   rushRuns: 0,
+  xpAllowanceDay: '', xpAllowanceGold: 0, xpAllowanceRemainder: 0,
   towerFloor: 0,
   sweepTickets: 0,
   wheelClaimed: [],
@@ -384,7 +390,7 @@ function payShards(s: SaveData, id: HeroId, need: number): Partial<SaveData> | n
 }
 export const SWEEP_PER_STREAK = 3;
 export const SWEEP_STREAK = 5;
-export const SWEEP_DAILY_MAX = 15;
+export const SWEEP_DAILY_MAX = 5;
 export const SHARD_QUIZ_COUNT = 5;
 export const SHARD_QUIZ_PER = 2;
 export const SHARD_QUIZ_MAX = 10;
@@ -433,6 +439,8 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   // 數量類的紀錄：去掉不是數字的項目，負數改成 0；等級至少 1
   const counts = (rec: Record<string, number>, min = 0) => Object.fromEntries(Object.entries(rec)
     .filter(([, v]) => typeof v === 'number' && Number.isFinite(v)).map(([k, v]) => [k, Math.max(min, v)]));
+  migrated.xpAllowanceGold = Math.min(allowanceCap(migrated.unlockedIndex), Math.max(0, Math.floor(migrated.xpAllowanceGold)));
+  migrated.xpAllowanceRemainder = Math.min(7, Math.max(0, Math.floor(migrated.xpAllowanceRemainder)));
   migrated.materials = counts(migrated.materials);
   migrated.heroShards = counts(migrated.heroShards);
   migrated.heroTier = counts(migrated.heroTier);
@@ -722,28 +730,46 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const key = `${r.id}:${stage}`;
           if (get().firstClearXpClaimed[key]) return { xp: 0, levels: 0 };
           set(s => ({ firstClearXpClaimed: { ...s.firstClearXpClaimed, [key]: true } }));
-          return { xp: amount, levels: get().gainXp(amount, 'firstClear') };
+          return get().awardXp(amount, 'firstClear');
         },
-        grantLearningXp: (region, q, eligible) => {
-          if (!Number.isInteger(region) || region < 0 || region >= REGIONS.length) return { xp: 0, levels: 0 };
+        grantLearningXp: (region, q, eligible, replay = false) => {
+          if (!Number.isInteger(region) || region < 0 || region >= REGIONS.length) return { xp: 0, levels: 0, allowanceGold: 0, bonus: 0 };
           const key = knowledgeKey(q), day = localDate();
-          const subsidy = eligible && get().learningXpDay[key] !== day;
+          const st = get();
+          const cap = playerLevelCap(bestTier({ ...st.classPaths, current: st.player.classPath }));
+          const room = !replay || (st.player.level < Math.min(cap, frontierRecommendedLevel(st) + 13) && st.player.xp < xpToNext(st.player.level));
+          const subsidy = eligible && room && get().learningXpDay[key] !== day;
           if (subsidy) set(s => ({ learningXpDay: { ...s.learningXpDay, [key]: day } }));
           const base = learningXp(region, false), total = learningXp(region, subsidy);
-          const levels = get().gainXp(base, 'learningBase') + (total > base ? get().gainXp(total - base, 'learningSubsidy') : 0);
-          return { xp: total, levels };
+          const a = get().awardXp(base, replay ? 'replay' : 'learningBase');
+          const b = total > base ? get().awardXp(total - base, replay ? 'replay' : 'learningSubsidy') : { xp: 0, levels: 0, allowanceGold: 0, bonus: 0 };
+          return { xp: a.xp + b.xp, levels: a.levels + b.levels, allowanceGold: a.allowanceGold + b.allowanceGold, bonus: a.bonus + b.bonus };
         },
-        gainXp: (n, source = 'other') => {
-          const p = get().player;
-          const r = addXp(p.level, p.xp, n, playerLevelCap(bestTier({ ...get().classPaths, current: p.classPath })));
-          let accepted = r.xp - p.xp;
-          for (let lv = p.level; lv < r.level; lv++) accepted += xpToNext(lv);
-          set(s => ({ player: { ...p, level: r.level, xp: r.xp }, xpLedger: { ...s.xpLedger,
-            [`offered:${source}`]: (s.xpLedger[`offered:${source}`] ?? 0) + n,
-            [`accepted:${source}`]: (s.xpLedger[`accepted:${source}`] ?? 0) + Math.max(0, accepted),
-          } }));
+        gainXp: (n, source = 'other') => get().awardXp(n, source).levels,
+        awardXp: (n, source = 'other') => {
+          const st = get(), p = st.player;
+          const raw = Number.isFinite(n) ? Math.max(0, Math.round(n)) : 0;
+          const cap = playerLevelCap(bestTier({ ...st.classPaths, current: p.classPath }));
+          const nonMainline = isCatchupSource(source);
+          const damped = nonMainline ? catchupXp(p.level, p.xp, raw, cap, frontierRecommendedLevel(st)) : null;
+          const r = damped ?? addXp(p.level, p.xp, raw, cap);
+          const accepted = Math.max(0, cumulativeXpAtLevel(r.level) + r.xp - cumulativeXpAtLevel(p.level) - p.xp);
+          const bonus = damped?.bonus ?? 0;
+          const deducted = damped?.deducted ?? 0;
+          const day = localDate(), sameDay = st.xpAllowanceDay === day;
+          const coins = allowance(deducted, sameDay ? st.xpAllowanceGold : 0, sameDay ? st.xpAllowanceRemainder : 0, allowanceCap(st.unlockedIndex));
+          set(s => ({ player: { ...p, level: r.level, xp: r.xp }, gold: s.gold + coins.gold,
+            xpAllowanceDay: day, xpAllowanceGold: coins.used, xpAllowanceRemainder: coins.remainder,
+            xpLedger: { ...s.xpLedger,
+              [`offered:${source}`]: (s.xpLedger[`offered:${source}`] ?? 0) + raw,
+              [`accepted:${source}`]: (s.xpLedger[`accepted:${source}`] ?? 0) + accepted,
+              [`bonus:${source}`]: (s.xpLedger[`bonus:${source}`] ?? 0) + bonus,
+              [`deducted:${source}`]: (s.xpLedger[`deducted:${source}`] ?? 0) + deducted,
+              [`overflow:${source}`]: (s.xpLedger[`overflow:${source}`] ?? 0) + (nonMainline ? 0 : Math.max(0, raw - accepted)),
+              [`allowanceGold:${source}`]: (s.xpLedger[`allowanceGold:${source}`] ?? 0) + coins.gold,
+            } }));
           if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
-          return r.levelsGained;
+          return { xp: accepted, levels: r.levelsGained, bonus, allowanceGold: coins.gold };
         },
 
         // 轉職：必須是目前路線的下一階，且達到等級與通關條件
@@ -1065,7 +1091,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         grantRush: (reward) => {
           get().addGold(reward.gold);
           get().addMaterials({ ore: reward.ore });
-          get().gainXp(reward.xp);
+          const a = get().awardXp(reward.xp, 'rush');
+          return { ...reward, xp: a.xp, gold: reward.gold + a.allowanceGold, bonus: a.bonus, allowanceGold: a.allowanceGold };
         },
 
         // 英雄時空之塔：照順序往上爬，第一次通過的那一層才給獎勵
@@ -1079,10 +1106,11 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             ...(heroId ? { heroShards: { ...st.heroShards, [heroId]: (st.heroShards[heroId] ?? 0) + reward.shards } } : { wishShards: st.wishShards + reward.shards }),
           }));
           get().addGold(reward.gold);
-          return reward;
+          const a = get().awardXp(reward.xp, 'tower');
+          return { ...reward, xp: a.xp, gold: reward.gold + a.allowanceGold, bonus: a.bonus, allowanceGold: a.allowanceGold };
         },
 
-        // 錯題修煉場：連續答對 5 題送 3 張掃蕩券（每天最多 15 張）
+        // 錯題修煉場：連續答對 5 題送 3 張掃蕩券（每天最多 5 張）
         earnSweepTickets: () => {
           const s = get();
           const today = new Date().toDateString();
@@ -1103,8 +1131,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           set({ sweepTickets: s.sweepTickets - 1 });
           get().addGold(gold);
           get().addMaterials(drops);
-          get().gainXp(xp);
-          return { gold, xp, drops };
+          const a = get().awardXp(xp, 'sweep');
+          return { gold: gold + a.allowanceGold, xp: a.xp, drops };
         },
 
         // 每日碎片英文題：每答對一題 2 片願望碎片（一天一次，最多 10 片）
@@ -1162,7 +1190,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
-        heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,
+        heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, xpAllowanceDay: s.xpAllowanceDay, xpAllowanceGold: s.xpAllowanceGold, xpAllowanceRemainder: s.xpAllowanceRemainder, towerFloor: s.towerFloor,
         sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
         player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,

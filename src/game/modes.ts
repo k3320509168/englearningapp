@@ -22,7 +22,7 @@ export function rushReward(correct: number, bestCombo: number, regionIdx: number
   const scale = 1 + regionIdx * 0.3;
   return {
     gold: Math.round((correct * 15 + bestCombo * 5) * scale),
-    xp: Math.round(correct * 6 * xpScale(regionIdx)),
+    xp: Math.round(correct * 8 * xpScale(regionIdx)),
     ore: Math.floor(correct / 3),
   };
 }
@@ -35,7 +35,7 @@ export const TOWER_QUESTIONS = 5;
 export const TOWER_PASS = 4;
 export const towerRegion = (floor: number) => Math.min(LEVELS.length - 1, Math.floor((floor - 1) / 3));
 // 每一層第一次通過：碎片、金幣，和 2 個職業徽章（主角換職業後點亮轉職用）
-export const towerReward = (floor: number) => ({ shards: floor % 5 === 0 ? 15 : 5, gold: 100 * floor, badges: 2 });
+export const towerReward = (floor: number) => ({ shards: floor % 5 === 0 ? 15 : 5, gold: 100 * floor, badges: 2, xp: Math.round(120 * xpScale(towerRegion(floor)) * (floor % 5 === 0 ? 1.5 : 1)) });
 
 export function towerQuestions(floor: number, rand: () => number = Math.random): Question[] {
   const pool = getPool(LEVELS[towerRegion(floor)]);

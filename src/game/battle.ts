@@ -168,7 +168,7 @@ export function voiceFallback(q: Question): Question {
   if (/^[A-Z]+$/.test(q.ans)) return { ...q, type: 'spell', desc: `請拼出：${questionHint(q)}`, accept: undefined };
   // 片語、短句（例如 GOOD MORNING）：鍵盤只能打字母，所以去掉空格與撇號連在一起拼
   const letters = q.ans.replace(/[^A-Z]/g, '');
-  return { ...q, type: 'spell', ans: letters, desc: `請拼出（不用打空格）：${questionHint(q)}`, accept: undefined, spellAccept: undefined };
+  return { ...q, type: 'spell', ans: letters, desc: `請先聽發音，再拼出英文（不用打空格）：${questionHint(q)}`, accept: undefined, spellAccept: undefined };
 }
 
 // 拼寫／填空的進度顯示：拼寫顯示字母格，填空把已輸入的字母填進題目的空格

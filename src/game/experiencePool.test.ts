@@ -51,8 +51,12 @@ describe('experience pools', () => {
     else if (q.type === 'voice') b.submitVoice(q.ans);
     else { q.ans.split('').forEach(c => useBattleStore.getState().inputLetter(c)); useBattleStore.getState().submitTyped(); }
     expect(useBattleStore.getState().phase).toBe('monsterDown');
+    expect(useBattleStore.getState().isReplayStage).toBe(false);
     expect(useBattleStore.getState().runXp).toBe(firstClearXp(0, 0) + learningXp(0, true));
     expect(useSaveStore.getState().xpLedger['offered:firstClear']).toBe(firstClearXp(0, 0));
+    // Reload the same stage: classification must reflect the entry snapshot, not change mid-win.
+    useBattleStore.getState().startLevel(REGIONS[0].id);
+    expect(useBattleStore.getState().isReplayStage).toBe(true);
     setBattleRandom(Math.random);
   });
   it('marks old cleared stages paid without granting new XP or gold', () => {

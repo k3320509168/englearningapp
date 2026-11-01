@@ -20,10 +20,12 @@ export default function TowerModal() {
   const finished = towerFloor >= TOWER_FLOORS;
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [score, setScore] = useState({ answered: 0, correct: 0 });
+  const [attemptFloor, setAttemptFloor] = useState(floor);
   const [result, setResult] = useState<'pass' | 'fail' | null>(null);
   const reward = towerReward(floor);
 
   const start = () => {
+    setAttemptFloor(floor);
     setQuestions(towerQuestions(floor));
     setScore({ answered: 0, correct: 0 });
     setResult(null);
@@ -33,11 +35,12 @@ export default function TowerModal() {
     const s = { answered: score.answered + 1, correct: score.correct + (correct ? 1 : 0) };
     setScore(s);
     if (!questions || s.answered < questions.length) return;
-    if (s.correct >= TOWER_PASS && clearTowerFloor(floor, hero)) {
+    const paid = s.correct >= TOWER_PASS ? clearTowerFloor(floor, hero) : null;
+    if (paid) {
       setResult('pass');
       useUiStore.getState().celebrate({
         icon: '🗼', title: `第 ${floor} 層通過！`,
-        sub: `${hero ? `${heroWord(heroDef(hero))} 碎片` : '願望碎片'} +${reward.shards}、🪙 ${reward.gold}`,
+        sub: `${hero ? `${heroWord(heroDef(hero))} 碎片` : '願望碎片'} +${reward.shards}、🪙 ${paid.gold}、EXP ${paid.xp}${paid.bonus > 0 ? `（追趕祝福 +25%，多得${paid.bonus}）` : ''}${paid.allowanceGold > 0 ? `（含修練津貼${paid.allowanceGold}）` : ''}`,
         img: hero ? heroDataUrl(hero, 4) : undefined, color: '#c9a8ff',
       });
     } else setResult(s.correct >= TOWER_PASS ? 'pass' : 'fail');
@@ -51,18 +54,18 @@ export default function TowerModal() {
           <p>今日主角英雄：<b>{hero ? heroWord(heroDef(hero)) : '（還沒有英雄，改送願望碎片）'}</b></p>
           {finished ? <p>🎉 已經登上第 {TOWER_FLOORS} 層頂端！</p> : (
             <>
-              <p className="muted">下一層：第 {floor} 層（{REGIONS[towerRegion(floor)].name}的題目）・獎勵碎片 {reward.shards}、🪙 {reward.gold}</p>
+              <p className="muted">下一層：第 {floor} 層（{REGIONS[towerRegion(floor)].name}的題目）・獎勵碎片 {reward.shards}、🪙 {reward.gold}、基礎EXP {reward.xp}（依追趕進度結算）</p>
               <button className="btn btn-primary" onMouseDown={keepFocus} onClick={start}>挑戰第 {floor} 層</button>
             </>
           )}
         </>
       )}
       {questions && result === null && (
-        <QuizRunner questions={questions} label={i => `第 ${floor} 層・第 ${i + 1} / ${questions.length} 題`} onAnswer={onAnswer} />
+        <QuizRunner questions={questions} label={i => `第 ${attemptFloor} 層・第 ${i + 1} / ${questions.length} 題`} onAnswer={onAnswer} />
       )}
       {result && (
         <>
-          <p>{result === 'pass' ? `✔ 答對 ${score.correct} 題，通過第 ${floor} 層！` : `答對 ${score.correct} 題，還差一點（要 ${TOWER_PASS} 題）。`}</p>
+          <p>{result === 'pass' ? `✔ 答對 ${score.correct} 題，通過第 ${attemptFloor} 層！` : `答對 ${score.correct} 題，還差一點（要 ${TOWER_PASS} 題）。`}</p>
           <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => { setQuestions(null); setResult(null); }}>{result === 'pass' ? '繼續往上' : '再挑戰一次'}</button>
         </>
       )}

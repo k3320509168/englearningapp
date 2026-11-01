@@ -6,6 +6,11 @@ import type { Question } from './types';
 export function answerLabel(q: Question): { text: string; audio: string; meaning: string } {
   const v = vocabFor(q);
   if (v) return { text: v.display, audio: v.display, meaning: v.meaning };
+  if (q.type === 'spell' || q.type === 'voice') {
+    const audio = q.speak || q.ans;
+    const letters = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
+    return { text: letters(audio) === letters(q.ans) ? audio : q.ans, audio, meaning: questionHint(q) };
+  }
   // 選擇題：有空格就顯示完整句子，否則（例如「早餐的英文是？」）顯示正確選項
   const sentence = completedSentence(q);
   const option = q.options?.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? '';

@@ -264,3 +264,5 @@
 - 已派Antigravity高模型做轉職暫存/追趕上限專項第二意見，只在自身worktree寫報告，沒有開放終端機權限、沒有修改金鑰或登入帳號。源碼實作仍由Codex負責。
 
 - 2026-11-01 Codex｜T1/P0轉職暫存：40/100/160銀行上限5450/11450/17450，轉職立即結算；補重設不刪舊銀行/不反覆多存與跳級EXP補差額。377測試/tsc/eslint通過，本地三尺寸地圖/銀行及1366/375實點轉職40→50截圖在screenshots/c7-xp-buffer；結算提示已串，尚待三尺寸戰鬥驗證。T2b argon-high已exit0，原報告與採否理由在docs/gpt/c7-v22-buffer-implementation.md。不採會刪合法舊銀行的夾限建議。T1其餘與題庫續作，未勾整體完成。
+
+- 2026-11-01 Codex｜T1第二批：六段非主線追趕/frontier+13/日額8:1津貼與v22、Rush8/塔首通EXP/每日掃蕩券5已串，重刷載關快照及實得獎勵對帳；389測試/tsc/eslint過。桌機塔實答4/5，無EXP容量時67→津貼8、實入108金幣。實玩另修塔結果層號與片語fallback答案回饋，修後視覺重驗及新12路徑/MC/援助待續。第二意見派工被auto-review拒絕外傳原碼/PM_STATUS，已請製作人明確授權，未繞過/未假稱AGY完成。詳docs/gpt/c7-v22-catchup-implementation.md。

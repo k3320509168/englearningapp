@@ -22,7 +22,7 @@ export default function RushModal() {
   const [stats, setStats] = useState({ correct: 0, combo: 0, best: 0 });
   const [flash, setFlash] = useState<'ok' | 'ng' | null>(null);
   const [input, setInput] = useState('');
-  const [done, setDone] = useState<ReturnType<typeof rushReward> | null>(null);
+  const [done, setDone] = useState<ReturnType<ReturnType<typeof useSaveStore.getState>['grantRush']> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const say = useSpeak();
   const q = questions?.[idx % (questions?.length || 1)];
@@ -50,8 +50,7 @@ export default function RushModal() {
       const { correct, best } = statsRef.current;
       const sv = useSaveStore.getState();
       const reward = rushReward(correct, best, sv.unlockedIndex);
-      sv.grantRush(reward);
-      setDone(reward);
+      setDone(sv.grantRush(reward));
       sfx.victory();
     }, 100);
     return () => window.clearInterval(t);
@@ -114,6 +113,8 @@ export default function RushModal() {
         <>
           <p>答對 <b>{stats.correct}</b> 題、最高 <b>{stats.best}</b> combo！</p>
           <p>得到 🪙 {done.gold}、⭐ 經驗 {done.xp}、🪨 礦石 {done.ore}</p>
+          {done.bonus > 0 && <p>追趕祝福 +25%：已多得 {done.bonus} EXP</p>}
+          {done.allowanceGold > 0 && <p>金幣包含修練津貼 {done.allowanceGold}</p>}
           <button className="btn btn-primary" onMouseDown={keepFocus} onClick={closeModal}>完成</button>
         </>
       )}

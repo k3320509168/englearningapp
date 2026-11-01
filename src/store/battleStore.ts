@@ -177,6 +177,7 @@ interface BattleState {
   minAnswers: number;   // 勝利後追擊練習的參考題數（不限制擊殺）
   executing: boolean;   // 僅自選追擊練習時為 true
   bonusLeft: number;    // 首領／菁英倒下後，還可自選追擊的參考題數
+  isReplayStage: boolean; // 載關時快照，勝利後追擊仍沿用原分類
   bonusRound: boolean;  // 正在做加成題（怪物已倒，不反擊、不影響結算）
   bonusGold: number;    // 這場加成題拿到的金幣（上限 BONUS_GOLD_CAP）
   bonusReturn: BattleState['phase'] | null; // 加成題做完回到哪個畫面
@@ -531,6 +532,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageHits: 0,
       wave: 1, waves, bossFight, blessed, aidRevive, aidGuard, enemyTurn: 0,
       // 最低答題數：寶箱怪、復仇魔王、黃金之路與擴充魔王不限
+      isReplayStage: !!save().firstClearXpClaimed[`${s.levelKey}:${stageIdx}`],
       stageAnswers: 0, stageSubmissions: 0, executing: false, bonusLeft: 0, bonusRound: false, bonusReturn: null,
       minAnswers: s.mode === 'normal' && !stage.revenge && stage.kind !== 'treasure' ? minAnswers(s.levelIdx, stageIdx, s.levelKey) : 0,
       monsterKind: monsterKindFor(stageIdx, stage.bossMode, !!stage.revenge, stage.kind === 'treasure', stage.kind === 'final'),
@@ -934,14 +936,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const gold = Math.min(BONUS_GOLD, Math.max(0, BONUS_GOLD_CAP - s.bonusGold));
       if (gold > 0) save().addGold(gold);
       const xp = Math.round(XP.correct * (isPrologue(s.levelKey) ? PROLOGUE_XP : xpScale(s.levelIdx)));
-      const levels = save().gainXp(xp);
+      const award = save().awardXp(xp, s.mode === 'skill' ? 'skill' : s.isReplayStage ? 'replay' : 'bonus');
+      const levels = award.levels;
       if (levels > 0) celebrateLevelUp(save().player.level);
       const levelUp = levels > 0 ? save().player.level : undefined;
       const bonusLeft = s.bonusLeft - 1;
       const patch = {
         combo: s.combo + 1, maxCombo: Math.max(s.maxCombo, s.combo + 1), streak: s.streak + 1,
         typed: '', assist: null, assistSource: null, retrying: false,
-        bonusLeft, bonusGold: s.bonusGold + gold, runGold: s.runGold + gold, runXp: s.runXp + xp,
+        bonusLeft, bonusGold: s.bonusGold + gold, runGold: s.runGold + gold + award.allowanceGold, runXp: s.runXp + award.xp,
         event: nextEvent('attack', { amount: 0, gold, member: s.party[s.attackerIdx]?.id, execution: true, levelUp }),
       };
       if (bonusLeft <= 0) set({ ...patch, bonusRound: false, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null });
@@ -1022,22 +1025,22 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     // 主線答對給學習EXP，首次通關池在finishStage發；其他模式保留原獎勵。升級立刻更新主角。
     const gainXp = (killedKind: 'none' | 'kill' | 'elite' | 'boss') => {
-      if (s.mode === 'golden') return { xp: 0, levelUp: undefined };
+      if (s.mode === 'golden') return { xp: 0, levelUp: undefined, allowanceGold: 0 };
       const pooled = s.mode === 'normal' && !isPrologue(s.levelKey);
-      const award = pooled ? save().grantLearningXp(s.levelIdx, s.original!, eligibleSubsidy) : null;
-      const xp = award?.xp ?? Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale);
-      const levels = award?.levels ?? save().gainXp(xp);
+      const award = pooled ? save().grantLearningXp(s.levelIdx, s.original!, eligibleSubsidy, s.isReplayStage)
+        : save().awardXp(Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale), s.mode === 'skill' ? 'skill' : 'prologue');
+      const xp = award.xp, levels = award.levels;
       if (levels > 0) {
         party = refreshPlayer(party);
         celebrateLevelUp(save().player.level);
       }
-      return { xp, levelUp: levels > 0 ? save().player.level : undefined };
+      return { xp, levelUp: levels > 0 ? save().player.level : undefined, allowanceGold: award?.allowanceGold ?? 0 };
     };
 
     // 已逾時的寶箱只等一次真正作答後離場，不追加逾時後的擊倒獎勵。
     if (stage.kind === 'treasure' && s.treasureLeft <= 0) {
-      const { xp, levelUp } = gainXp('none');
-      finishStage({ ...base, ...withTotals(party), treasureLeft: 0, runXp: s.runXp + xp, event: nextEvent('escape', { levelUp }) });
+      const { xp, levelUp, allowanceGold } = gainXp('none');
+      finishStage({ ...base, ...withTotals(party), treasureLeft: 0, runGold: s.runGold + allowanceGold, runXp: s.runXp + xp, event: nextEvent('escape', { levelUp }) });
       return;
     }
 
@@ -1045,9 +1048,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     if (s.monsterShield > 0) {
       const monsterShield = s.monsterShield - 1;
       const gold = earn(GOLD.correct, streak);
-      const { xp, levelUp } = gainXp('none');
+      const { xp, levelUp, allowanceGold } = gainXp('none');
       set({
-        ...base, ...withTotals(party), ...nextQuestion(), monsterShield, runGold: s.runGold + gold, runXp: s.runXp + xp,
+        ...base, ...withTotals(party), ...nextQuestion(), monsterShield, runGold: s.runGold + gold + allowanceGold, runXp: s.runXp + xp,
         enemyGauge: staggered(elapsed),
         event: nextEvent('shieldHit', { amount: monsterShield, member: attacker.id, gold, bossQuestion: s.isBossQuestion, bonus, levelUp, guardGained }),
       });
@@ -1111,13 +1114,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     // 擊倒：經驗值與素材掉落
     const dropKind = stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : stage.kind === 'treasure' ? 'treasure' : 'normal';
-    const { xp, levelUp } = gainXp(!(stageDone || kill) ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
+    const { xp, levelUp, allowanceGold } = gainXp(!(stageDone || kill) ? 'none' : stage.bossMode ? 'boss' : stage.kind === 'elite' ? 'elite' : 'kill');
     const drops = stageDone && s.mode !== 'golden' ? rollDrops(dropKind, s.monsterElement, random, s.mode === 'normal' ? s.levelIdx : 0) : {};
     if (stageDone) save().addMaterials(drops);
     if (stageDone && stage.bossMode && s.mode !== 'golden') save().trackDaily('boss');
 
     const common = {
-      ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold, runXp: s.runXp + xp,
+      ...base, ...withTotals(party), monsterHp, runGold: s.runGold + gold + allowanceGold, runXp: s.runXp + xp,
       // 蓄力與必定暴擊在真正造成傷害時才用掉（打菁英怪護盾時保留）
       charge: 1, critLeft: Math.max(0, s.critLeft - 1),
       ...withModFx(bossOnCorrect(streak, chainStep.triggered), modFx),
@@ -1348,6 +1351,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     minAnswers: 0,
     executing: false,
     bonusLeft: 0,
+    isReplayStage: false,
     bonusRound: false,
     bonusGold: 0,
     bonusReturn: null,

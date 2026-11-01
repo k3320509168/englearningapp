@@ -40,13 +40,13 @@ describe('hero tower', () => {
 });
 
 describe('training ground and sweeping', () => {
-  it('gives 3 sweep tickets per streak, up to 15 a day, and sweeping pays out', () => {
+  it('gives 3 sweep tickets per streak, up to 5 a day, and sweeping pays out', () => {
     useSaveStore.setState({ ...initialSave, gold: 0, sweepTickets: 0, trainingDay: '', trainingGiven: 0 });
     for (let i = 0; i < 6; i++) useSaveStore.getState().earnSweepTickets();
-    expect(useSaveStore.getState().sweepTickets).toBe(15);
+    expect(useSaveStore.getState().sweepTickets).toBe(5);
     const r = useSaveStore.getState().sweepMap(0, () => 0.5)!;
     expect(r.gold).toBeGreaterThan(0);
-    expect(useSaveStore.getState().sweepTickets).toBe(14);
+    expect(useSaveStore.getState().sweepTickets).toBe(4);
     expect(useSaveStore.getState().gold).toBe(r.gold);
   });
 });

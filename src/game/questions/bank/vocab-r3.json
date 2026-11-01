@@ -1892,5 +1892,165 @@
         ]
       }
     ]
+  },
+  "CONNECT": {
+    "pos": "v.",
+    "meaning": "連接",
+    "example": "Please connect your phone to the computer.",
+    "exampleZh": "請將你的手機連接到電腦。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "連接",
+        "examples": [
+          {
+            "en": "I cannot connect to the internet.",
+            "zh": "我無法連上網路。"
+          },
+          {
+            "en": "The two towns are connected by a bridge.",
+            "zh": "這兩個城鎮由一座橋連接起來。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONFUSED": {
+    "pos": "adj.",
+    "meaning": "困惑的",
+    "example": "I am confused by these instructions.",
+    "exampleZh": "這些指示讓我感到困惑。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "困惑的",
+        "examples": [
+          {
+            "en": "He looked completely confused.",
+            "zh": "他看起來完全不知所措。"
+          },
+          {
+            "en": "If you are confused, just ask me.",
+            "zh": "如果你感到困惑，儘管問我。"
+          }
+        ]
+      }
+    ]
+  },
+  "RELIEVED": {
+    "pos": "adj.",
+    "meaning": "鬆了一口氣的",
+    "example": "He felt relieved after hearing the good news.",
+    "exampleZh": "聽到好消息後，他鬆了一口氣。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "鬆了一口氣的",
+        "examples": [
+          {
+            "en": "I am so relieved that you are safe.",
+            "zh": "知道你安全，我鬆了一口氣。"
+          },
+          {
+            "en": "She gave a relieved smile.",
+            "zh": "她露出如釋重負的微笑。"
+          }
+        ]
+      }
+    ]
+  },
+  "UPSET": {
+    "pos": "adj.",
+    "meaning": "心煩的；生氣的",
+    "example": "Don't be upset about the mistake.",
+    "exampleZh": "不要因為這個錯誤而心煩。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "心煩的",
+        "examples": [
+          {
+            "en": "She was very upset when she lost her phone.",
+            "zh": "當她弄丟手機時，她非常心煩。"
+          },
+          {
+            "en": "It is normal to feel upset sometimes.",
+            "zh": "有時感到心煩意亂是正常的。"
+          }
+        ]
+      }
+    ]
+  },
+  "THEREFORE": {
+    "pos": "adv.",
+    "meaning": "因此",
+    "example": "It was raining; therefore, we stayed indoors.",
+    "exampleZh": "天下雨了，因此我們待在室內。",
+    "senses": [
+      {
+        "pos": "adv.",
+        "meaning": "因此",
+        "examples": [
+          {
+            "en": "He studied hard and therefore passed the test.",
+            "zh": "他努力學習，因此通過了考試。"
+          },
+          {
+            "en": "The store is closed; therefore, we can't buy it now.",
+            "zh": "商店關門了，因此我們現在不能買它。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEVICE": {
+    "pos": "n.",
+    "meaning": "裝置",
+    "example": "This device is easy to use.",
+    "exampleZh": "這個裝置很容易使用。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "裝置",
+        "examples": [
+          {
+            "en": "Please turn off all electronic devices during the flight.",
+            "zh": "飛行期間請關閉所有電子裝置。"
+          },
+          {
+            "en": "This smart device helps me track my health.",
+            "zh": "這款智慧裝置幫助我追蹤我的健康狀況。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONNECTION": {
+    "pos": "n.",
+    "meaning": "連線；關聯",
+    "example": "The internet connection is very slow here.",
+    "exampleZh": "這裡的網路連線很慢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "連線",
+        "examples": [
+          {
+            "en": "We lost our connection during the video call.",
+            "zh": "我們在視訊通話時斷線了。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "關聯",
+        "examples": [
+          {
+            "en": "Is there a connection between the two events?",
+            "zh": "這兩個事件之間有關聯嗎？"
+          }
+        ]
+      }
+    ]
   }
 }

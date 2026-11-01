@@ -6,6 +6,7 @@
 // budget：GROWTH=budget SEED=7 BUDGET_MAPS_PER_DAY=1；日期/資源來源與配裝輸出JSON
 // 用法：PROFILE=good VARIANT=A GROWTH=normal REGIONS=0,4,8 MAPS=30 FINALS=60 LEARN=0.1 npx tsx scripts/realsim2.mts
 import fs from 'node:fs';
+import { simulateSideDay } from './sim-side-modes';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { advanceAnswerTime } from './sim-clock';
@@ -44,6 +45,8 @@ let budgetLedger: BudgetLedger = {};
 const budgetSnapshots = new Map<string, { save: BudgetSave; wrong: string[]; retry: [string, number][]; at: number; ledger: BudgetLedger }>();
 const budgetPath: unknown[] = [];
 let budgetStop: string | null = null;
+const sideDays = new Set<number>();
+const sideModeLog: Record<string, unknown>[] = [];
 const LEARN = Number(process.env.LEARN ?? 0.1);
 const MAPS = Number(process.env.MAPS ?? 30);
 const FINALS = Number(process.env.FINALS ?? 60);
@@ -71,6 +74,15 @@ function setup(r: number, stage: number) {
     }
     budgetClock!.set(budgetEpoch + (Math.floor(budgetMapsCompleted / mapsPerDay) + budgetReviewDays) * 86400000);
     budgetMaintenance(rand, budgetLedger);
+    const day = Math.floor((budgetClock!.now() - budgetEpoch) / 86400000);
+    if (!sideDays.has(day)) {
+      sideDays.add(day);
+      const rows = simulateSideDay(ROUTE, day, BASE, LEARN, rand, wrongSeen, budgetLedger);
+      sideModeLog.push(...rows);
+      for (const row of rows) { inc('sideMs', Number(row.elapsedMs)); inc('sideAnswers', Number(row.answered)); inc('sideCorrect', Number(row.correct)); }
+      budgetMaintenance(rand, budgetLedger);
+      assertBudgetLedger(budgetLedger);
+    }
     if (!budgetSnapshots.has(`${r}:${stage}`)) budgetSnapshots.set(`${r}:${stage}`, { save: snapshotSave(), wrong: [...wrongSeen], retry: snapshotRetryState(), at: budgetClock!.now(), ledger: { ...budgetLedger } });
     budgetPath.push({ region: r, stage, date: new Date().toISOString(), xpLedger: { ...sv().xpLedger }, ...budgetReport(budgetLedger) });
     return;
@@ -257,7 +269,7 @@ if (isBudget) {
   prepareBudgetPath();
   const file = process.env.BUDGET_OUT ?? join(tmpdir(), 'enggame-question-qa', `budget-${PROFILE}.json`);
   fs.mkdirSync(dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify({ profile: PROFILE, route: ROUTE, pathMetrics: { ...m }, reviewDays: budgetReviewDays, xpLedger: sv().xpLedger, nominalAccuracy: BASE, seed: Number(process.env.SEED ?? 7), clockStepMs: 50, maps: MAPS, finals: FINALS, regions: REGIONS, policy: 'affordable-equipment-now, ordinary-plus3, balanced-hero-training, no-UR-savings-reserve', mapsPerDay, completedMaps: budgetMapsCompleted,
+  fs.writeFileSync(file, JSON.stringify({ spec: 'C7-v2.2', sideModes: sideModeLog, profile: PROFILE, route: ROUTE, pathMetrics: { ...m }, reviewDays: budgetReviewDays, xpLedger: sv().xpLedger, nominalAccuracy: BASE, seed: Number(process.env.SEED ?? 7), clockStepMs: 50, maps: MAPS, finals: FINALS, regions: REGIONS, policy: 'affordable-equipment-now, ordinary-plus3, balanced-hero-training, no-UR-savings-reserve', mapsPerDay, completedMaps: budgetMapsCompleted,
     stopped: budgetStop, path: budgetPath, final: budgetReport(budgetLedger) }, null, 2));
   console.log(`[budget-path] checkpoints=${budgetSnapshots.size}, completedMaps=${budgetMapsCompleted}, stopped=${budgetStop ?? 'none'}, report=${file}`);
 }

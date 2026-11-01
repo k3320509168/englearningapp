@@ -27,22 +27,28 @@ const avgMs = (s: MapRunStats) => (s.correct ? s.correctTimeMs / s.correct : Inf
 
 // 第四輪（和 Gemini 討論）：原本的條件太容易拿滿。改成三個方向各一顆：
 // 生存（沒有隊員倒下）、英文準度（正確率 85%）、爽度與極限（連續答對達到該區門檻，或答對平均 3.5 秒內）。
-// 連對門檻每區提高，讓三星一直有挑戰性；看的是真的連續答對題數，抽到困難題 Bonus ×10 不會直接達成。
+// C4：連對門檻依整張實際作答數調整，並以區域門檻封頂；困難題 Bonus 不影響真實連對。
+// 快答目前仍沿用舊平均時間路線，待 activeAnswerMs / C5 完整串接後取代。
 export const STAR_COMBO = [8, 10, 12, 15, 18, 20, 25, 30, 35];
 export const STAR_ACCURACY = 0.85;
 export const STAR_FAST_MS = 3_500;
 
-export function starConditions(regionIdx: number): StarCondition[] {
-  const combo = STAR_COMBO[Math.min(Math.max(0, regionIdx), STAR_COMBO.length - 1)];
+export function requiredStreak(regionIdx: number, actualAnswers: number): number {
+  const regionRequirement = STAR_COMBO[Math.min(Math.max(0, regionIdx), STAR_COMBO.length - 1)];
+  return Math.min(regionRequirement, Math.max(8, Math.ceil(Math.min(Math.max(0, actualAnswers), 90) * 0.15)));
+}
+
+export function starConditions(regionIdx: number, actualAnswers = 90): StarCondition[] {
+  const combo = requiredStreak(regionIdx, actualAnswers);
   return [
     { label: '通關且沒有隊員倒下', met: s => s.knockouts === 0 },
     { label: `正確率 ${Math.round(STAR_ACCURACY * 100)}% 以上`, met: s => accuracy(s) >= STAR_ACCURACY },
-    { label: `連續答對 ${combo} 題，或答對平均 ${STAR_FAST_MS / 1000} 秒內`, met: s => s.maxStreak >= combo || avgMs(s) <= STAR_FAST_MS },
+    { label: `連續答對 ${combo} 題，或答對平均 ${STAR_FAST_MS / 1000} 秒內`, met: s => s.maxStreak >= requiredStreak(regionIdx, s.answered) || avgMs(s) <= STAR_FAST_MS },
   ];
 }
 
 export function evaluateStars(regionIdx: number, stats: MapRunStats): boolean[] {
-  return starConditions(regionIdx).map(c => c.met(stats));
+  return starConditions(regionIdx, stats.answered).map(c => c.met(stats));
 }
 
 // 每顆新拿到的星星：+1 召喚券

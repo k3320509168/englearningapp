@@ -23,9 +23,9 @@ import { keepFocus } from './keepFocus';
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
 
 export default function SummaryPanel() {
-  const { phase, answers, stageIdx, stages, maxCombo, runGold, runRunes, mapResult, levelKey, levelIdx, runXp, runDrops, mode } = useBattleStore(useShallow(s => ({
+  const { phase, answers, stageIdx, stages, maxCombo, runGold, runRunes, mapResult, levelKey, levelIdx, runXp, runDrops, mode, mapStats } = useBattleStore(useShallow(s => ({
     phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold, runRunes: s.runRunes,
-    mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
+    mapStats: s.mapStats, mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
   })));
   const goldenBest = useSaveStore(s => s.goldenBest);
   const titles = useSaveStore(s => s.titles);
@@ -81,7 +81,7 @@ export default function SummaryPanel() {
             {mapResult.stars.map((on, i) => <span key={i} className={`big-star ${on ? 'on' : ''}`} style={{ animationDelay: `${i * 0.25}s` }}>★</span>)}
           </div>
           <ul>
-            {starConditions(levelIdx).map((c, i) => (
+            {starConditions(levelIdx, mapStats.answered).map((c, i) => (
               <li key={c.label} className={mapResult.stars[i] ? 'met' : ''}>{mapResult.stars[i] ? '✔' : '✘'} {c.label}</li>
             ))}
           </ul>

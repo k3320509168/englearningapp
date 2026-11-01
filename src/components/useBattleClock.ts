@@ -1,3 +1,4 @@
+import { answerTiming } from '../game/answerTiming';
 import { useEffect } from 'react';
 import { useBattleStore } from '../store/battleStore';
 import { useUiStore } from '../store/uiStore';
@@ -17,7 +18,10 @@ export function useBattleClock() {
       // 首領的題型反射（M05）等玩家選題型時也暫停
       if (document.hidden || ui.modal || ui.studyWord || ui.hintOpen || ui.retreatAsk || ui.celebrations[0]?.blocking || useBattleStore.getState().modChoice) return;
       // 電腦休眠等極端情況，最多只算 1 秒
-      useBattleStore.getState().tick(Math.min(1000, dt));
+      const b = useBattleStore.getState();
+      const ms = Math.min(1000, dt);
+      const pausedMs = b.phase === 'answering' ? answerTiming(b.question, b.questionSeq).advance(ms) : 0;
+      b.tick(ms, pausedMs);
     }, TICK_MS);
     return () => window.clearInterval(id);
   }, []);

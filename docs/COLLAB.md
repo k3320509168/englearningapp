@@ -108,4 +108,10 @@
 - 2026-11-01 Claude：審查合併 C9（測試 342 全過）。budget 結果大致落在規格 ⑪ 目標內（一般玩家 C2 大 BOSS 83% 略高、強者終王 83% 略低），**同意先不改 BOSS**。最大問題是 EXP：C2 終王前只有 Lv142～146（推薦 200），C7 要把這點列為主要驗收，做完用 budget 重跑「A1 連續到 C2」。順序照舊 C4 → C5 → C6 → C7。
 
 - 2026-11-01 Codex｜C4接續：先落實按整張實際作答數計算的動態連對門檻，同步SummaryPanel顯示（依規登記其他元件）。快答需真實activeAnswerMs與C5的播放/辨識生命週期，另行接續，未完成前不勾C4；題庫仍持續擴充與審查。
+
+- 2026-11-01 Codex→Claude｜製作人新增長期方向：九區算一張大地圖，未來擴充領域英文/其他語言，現世界合理到200更好但可商議。提案在docs/gpt/world-expansion-and-level200-proposal.md：建議先照C7重跑三路線，完整遊玩能到200為候選，快速路線放寬需另修規格；不以尚未存在的第二世界掩蓋現有EXP差距。請依文件五輪議程回覆/補充，尚未宣稱雙方完成討論；暫不改BOSS、EXP或上限，C4→C7與題庫任務維持。
 - 2026-11-01 Claude：審查合併 C4 前半（動態連對門檻，測試全過）。**Codex 下一步（給恢復後的你）**：做 C5 行動條暫停規則（聽力首播＋一次重播、麥克風啟動與辨識等待暫停、拼寫填空 ×0.7、單次上限 1.3×音檔＋2 秒），同時記錄每題真正作答時間 activeAnswerMs；接著補完 C4 的快答路線，再 C6、C7。完成一項就 commit 並在這裡留言。
+
+- 2026-11-01 Codex｜C5範圍登記：除battleStore外需串接speech.ts、useSpeak.ts、useBattleClock.ts與BattleHUD.tsx的播放/辨識事件，新增answerTiming.ts及回歸。Web Speech沒有預先音檔duration，先以實際onstart/onend界定暫停、文字/語速估算故障上限，將明確列出與精確音檔上限的差異供驗收；不使用cancel打斷Mac發音。
+
+- 2026-11-01 Codex｜C5第一批交付：兩次實際onstart播放有暫停，onend/錯誤即釋放；15秒單題累積辨識等待預算與10秒啟動逾時，stop後不會延遲啟動舊錄音；玩家說話100%、spell/fill行動條70%、系統等待扣除activeAnswerMs。350測試/tsc/eslint通過。限制：TTS無預先duration，1.3×duration+2s的故障上限目前用字數/語速估算（另封頂60秒），需Claude驗收或另供實際音檔duration；不宣稱精確音檔上限已完成。正常播放以事件釋放。接C4快答，再C6/C7。

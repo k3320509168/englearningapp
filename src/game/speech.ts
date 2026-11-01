@@ -94,7 +94,8 @@ export function speakableText(text: string): string {
 // - 上一句還在唸，新的一句先排隊，等唸完再送出；排隊只留最新的一句（舊的還沒輪到就丟掉，不會越積越多）。
 // - 每一句都用新的 utterance，唸完之前一直保留參考（被回收的話 Chrome 的事件會不見、佇列跟著卡住）。
 // - 收不到「唸完」的通知時，依句子長度估計時間，到了就當作唸完、繼續下一句；完全沒有任何事件才通知畫面。
-interface SpeakRequest { text: string; rate: number; volume: number; slow: boolean; voiceName?: string; slowRate: number }
+export interface SpeechLifecycle { onStart: (estimatedDurationMs: number) => void; onEnd: () => void }
+interface SpeakRequest { lifecycle?: SpeechLifecycle; text: string; rate: number; volume: number; slow: boolean; voiceName?: string; slowRate: number }
 let playing: SpeechSynthesisUtterance | null = null;
 let queued: SpeakRequest | null = null;
 const keepAlive = new Set<SpeechSynthesisUtterance>();
@@ -152,18 +153,19 @@ function play(r: SpeakRequest) {
   const finish = () => {
     if (done) return;
     done = true;
+    r.lifecycle?.onEnd();
     keepAlive.delete(u);
     if (playing !== u) return;
     playing = null;
     if (queued) { const next = queued; queued = null; play(next); }
     else duckMusic(false);
   };
-  u.onstart = heard;
+  u.onstart = () => { heard(); r.lifecycle?.onStart((text.length * 90) / Math.max(0.3, u.rate)); };
   u.onboundary = heard;
   u.onend = () => { heard(); finish(); };
   u.onerror = (e: SpeechSynthesisErrorEvent) => {
     // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
-    if (e?.error === 'not-allowed') blocked = { replay: () => speak(r.text, r.rate, r.volume, r.slow, r.voiceName, r.slowRate), at: Date.now() };
+    if (e?.error === 'not-allowed') blocked = { replay: () => speak(r.text, r.rate, r.volume, r.slow, r.voiceName, r.slowRate, r.lifecycle), at: Date.now() };
     finish();
   };
   synth.speak(u);
@@ -182,7 +184,7 @@ function play(r: SpeakRequest) {
 const REPEAT_IGNORE_MS = 400;
 let lastRequest = { key: '', at: 0 };
 
-export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string, slowRate = SLOW_RATE) {
+export function speak(text: string, rate = 1, volume = 1, slow = false, voiceName?: string, slowRate = SLOW_RATE, lifecycle?: SpeechLifecycle) {
   if (!('speechSynthesis' in window)) return;
   // 空白或沒有英文字母（例如中文選項）：不送出。英文語音唸不出來，Chrome 也不會觸發任何事件
   if (!/[A-Za-z]/.test(text ?? '')) return;
@@ -190,7 +192,7 @@ export function speak(text: string, rate = 1, volume = 1, slow = false, voiceNam
   const now = Date.now();
   if (key === lastRequest.key && now - lastRequest.at < REPEAT_IGNORE_MS) return;
   lastRequest = { key, at: now };
-  const request = { text, rate, volume, slow, voiceName, slowRate };
+  const request = { text, rate, volume, slow, voiceName, slowRate, lifecycle };
   // 上一句還在唸：排隊（只留最新的一句），不打斷
   if (playing) { queued = request; return; }
   play(request);
@@ -238,6 +240,7 @@ export const MAX_LISTEN_MS = 7000;
 
 export function createRecognizer(handlers: {
   onStart: () => void;
+  onPhase?: (phase: 'waiting' | 'speaking' | 'idle') => void;
   onResult: (transcripts: string[]) => void; // 辨識結果的所有候選（第一個是整段最可能的內容）
   onError: (error: string) => void;
   onEnd: () => void;
@@ -254,8 +257,10 @@ export function createRecognizer(handlers: {
   // 這一次收音聽到的內容：每一段結果的所有候選
   let segments: string[][] = [];
   let delivered = false;
+  let generation = 0;
   let silence: number | undefined;
   let limit: number | undefined;
+  let startup: number | undefined;
   const candidates = () => {
     const whole = segments.map(alts => alts[0] ?? '').join(' ').trim();
     return [whole, ...segments.flat()].filter((t, i, all) => t && all.indexOf(t) === i);
@@ -267,14 +272,18 @@ export function createRecognizer(handlers: {
     delivered = true;
     handlers.onResult(list);
   };
-  const clearTimers = () => { window.clearTimeout(silence); window.clearTimeout(limit); };
+  const clearTimers = () => { window.clearTimeout(silence); window.clearTimeout(limit); window.clearTimeout(startup); };
   const finish = () => { clearTimers(); try { recognition.stop(); } catch { /* 已經停了 */ } };
   recognition.onstart = () => {
+    window.clearTimeout(startup);
     segments = [];
     delivered = false;
     limit = window.setTimeout(finish, MAX_LISTEN_MS);
+    handlers.onPhase?.('speaking');
     handlers.onStart();
   };
+  recognition.onspeechstart = () => handlers.onPhase?.('speaking');
+  recognition.onspeechend = () => handlers.onPhase?.('waiting');
   recognition.onresult = (event: any) => {
     for (let i = event.resultIndex; i < event.results.length; i++) {
       const result = event.results[i];
@@ -298,20 +307,32 @@ export function createRecognizer(handlers: {
   recognition.onerror = (event: any) => {
     clearTimers();
     hold(false);
+    handlers.onPhase?.('idle');
     // 有聽到東西就照常判斷（例如講完之後才逾時）；什麼都沒聽到才回報錯誤
     if (candidates().length && event.error !== 'aborted') deliver();
     else handlers.onError(event.error);
   };
-  recognition.onend = () => { clearTimers(); hold(false); deliver(); handlers.onEnd(); };
+  recognition.onend = () => { clearTimers(); hold(false); handlers.onPhase?.('idle'); deliver(); handlers.onEnd(); };
   return {
     start: () => {
       // 不打斷遊戲正在唸的句子：清掉排隊的，等這一句唸完（最多 3 秒）再開始收音
+      const request = ++generation;
+      handlers.onPhase?.('waiting');
+      window.clearTimeout(startup);
+      startup = window.setTimeout(() => {
+        generation++;
+        clearTimers(); hold(false); delivered = true;
+        handlers.onPhase?.('idle');
+        try { recognition.stop(); } catch { /* 尚未啟動 */ }
+        handlers.onError('audio-capture');
+      }, 10_000);
       stopSpeaking();
       whenSilent(() => {
+        if (request !== generation) return;
         hold(true);
         try { recognition.start(); } catch { /* 已在錄音中 */ }
       });
     },
-    stop: () => { clearTimers(); hold(false); delivered = true; try { recognition.stop(); } catch { /* 已經停了 */ } },
+    stop: () => { generation++; handlers.onPhase?.('idle'); clearTimers(); hold(false); delivered = true; try { recognition.stop(); } catch { /* 已經停了 */ } },
   };
 }

@@ -665,6 +665,8 @@ describe('enemy attack patterns (action gauge)', () => {
 
   it('attacks on its own when the gauge fills, even if the player never answers wrong', () => {
     startAt(4);
+    // 寫作現在有0.7行動條係數；此例明確驗證一般讀題的100%速度。
+    useBattleStore.setState({ question: { ...state().question!, type: 'choice' } });
     const hp = state().playerHp;
     state().tick(11_000); // 赤岩峽谷的史萊姆約 10 秒集滿（還沒超過 20 秒的答題時間）
     expect(state().event?.kind).toBe('enemyMove');

@@ -45,6 +45,11 @@ Claude 本週額度將盡（已用約 90%，11/6 00:00 重置）→ **Codex 正�
 - **T0 的錯誤判斷**：374 個是 `npm run validate:questions` 的錯誤數、2 項是 `advancedBanks.test.ts` 失敗；Claude **沒有逐題檢查錯誤內容**。Codex 先分類確認是題目真的有問題、檢查規則太嚴、還是兩邊格式差異，再決定修題或修檢查（修檢查要在 COLLAB 寫理由）。同事的題目不要直接刪。
 - Claude 只在每日 21:07 巡檢（每週 ≥95% 時只記錄不動作）。
 
+### 1.3 Antigravity 額度與加重責任（2026-11-01 23:00 製作人截圖）
+- Gemini 一般額度剩 99%（每週、5 小時都是），**Gemini 4 Argon 每週只剩 3%**（約 11/8 重置）。AI Credit Overages 關閉（不會扣款，維持關閉）。
+- → Antigravity **主力改用 `gemini-3.8-flash-high`**（自動接續的模型順序已改為 flash-high → flash-medium → flash-low）；Argon 只留給大腦明確指定的高難度判斷。
+- Antigravity 多承擔：**T0 前半（分類 374 個驗證錯誤的成因、列修正建議）**、T12 遊戲現況參數表、T6 三尺寸實玩截圖與介面問題清單、題庫審查、A2～B2 補題（Flash 出題照規則先放 pending 再審）。Codex 專注寫程式、合併與 push。
+
 ## 2. 已定案決策（和 ChatGPT「ENG RPG遊戲」討論的結論）
 完整原文都在 `docs/gpt/`，這裡只列結論與出處。
 | 主題 | 結論 | 出處 |
@@ -111,7 +116,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 ## 5. 任務佇列（照順序；負責人／模型）
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
-| **T0** | **最優先**：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
+| **T0** | **最優先**（錯誤成因分類可先交 Antigravity flash-high 做，Codex 依結果修）：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
 | T12 | T0 後重新整理遊戲現況：所有系統、參數（等級、EXP、怪物、BOSS、經濟、抽卡、題庫量）與設定，寫成 `docs/GAME_STATE.md`，標出不合理或互相矛盾的地方 | Antigravity | argon-high | Claude 審 |
 | T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
 | T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |

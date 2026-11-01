@@ -49,7 +49,7 @@ agy_tick() {
   log "Antigravity：喚醒接續佇列"
   (
     cd $AGY_WT
-    for m in gemini-4-argon-high gemini-4-argon-medium gemini-3.8-flash-high; do
+    for m in gemini-3.8-flash-high gemini-3.8-flash-medium gemini-3.8-flash-low; do
       out=$($AGY -p "$(cat $MAIN/scripts/prompts/agy-tick.txt)
 
 （本次使用模型：$m）" --model $m --mode accept-edits 2>&1)

@@ -38,8 +38,8 @@ Antigravity 實際可用模型（2026-11-01 `agy models`）：
 **模型依難度選、額度用完自動降級（製作人 2026-11-01 授權 PM 自行決定）**：
 | 難度 | 例子 | 首選 | 額度用完改用 |
 |---|---|---|---|
-| 高 | 劇本、平衡第二意見、長文脈程式審查 | argon-high | argon-medium → flash-high |
-| 中 | 審題、出題、規格審查 | argon-medium | argon-low → flash-high |
+| 高 | 劇本、平衡第二意見、長文脈程式審查 | argon-high（本週剩 3%，大腦指定才用） | flash-high |
+| 中 | 審題、出題、規格審查 | flash-high | flash-medium |
 | 低 | 實玩截圖、格式檢查、統計 | flash-medium | flash-low |
 降級產出照常使用，但**出題**降到 Flash 級時只能放 pending、要再審。派工時在 COLLAB 記下實際用的模型。
 **讓製作人看得到**：Antigravity 任務在 Claude Code 的終端機分頁用 `agy -i`（互動模式，可即時看到過程）執行；`agy -p` 只在結束時才印出結果。背景指令開的對話不會出現在 Antigravity App 的對話列表。

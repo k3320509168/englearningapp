@@ -2092,3 +2092,11 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
     text-align: center;
     pointer-events: none;
 }
+
+/* C6：精通詳細資訊收在路線圖外，維持旗幟可讀性。 */
+.mastery-list { margin: 16px 0; color: #eeeaff; }
+.mastery-list summary { cursor: pointer; min-height: 44px; padding: 12px; background: #29284b; }
+.mastery-list > p { line-height: 1.6; }
+.mastery-card { margin: 10px 0; padding: 12px; border: 1px solid #646087; background: #222139; overflow-wrap: anywhere; }
+.mastery-card p { margin: 6px 0; line-height: 1.5; }
+.mastery-card button { min-height: 44px; max-width: 100%; white-space: normal; }

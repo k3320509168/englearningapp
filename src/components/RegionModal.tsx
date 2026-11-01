@@ -1,3 +1,4 @@
+import { MASTERY_TARGET, masteryReady } from '../game/mapMastery';
 import { useEffect, useMemo, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
@@ -12,7 +13,7 @@ import { keepFocus } from './keepFocus';
 import { GATE_LEVEL, SKIPPABLE_REGIONS, canChallengeGate } from '../game/placement';
 import { powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../game/progression';
 import { previewParty } from '../store/battleStore';
-import { materialIcon } from '../game/equipment';
+import { materialIcon, materialName } from '../game/equipment';
 import { regionMastery } from '../game/knowledge';
 import { loadBank } from '../game/questions/bank/loader';
 import { SealPanel } from './GateTrialModal';
@@ -22,7 +23,7 @@ import { SealPanel } from './GateTrialModal';
 export default function RegionModal() {
   const regionIdx = useUiStore(s => s.regionIdx);
   const { closeModal, openStory } = useUiStore.getState();
-  const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex, sweepTickets } = useSaveStore();
+  const { character, party, levelProgress, bestStage, mapStars, storySeen, unlockedIndex, sweepTickets, mapMastery } = useSaveStore();
   const level = useSaveStore(s => s.player.level);
   const beaten = useSaveStore(s => s.bossDown.includes(regionIdx));
   const region = REGIONS[regionIdx] ?? REGIONS[0];
@@ -109,6 +110,23 @@ export default function RegionModal() {
           );
         })}
       </ol>
+
+      <details className="mastery-list">
+        <summary>📖 地圖精通（可選，不影響主線前進）</summary>
+        <p>無提示答對才計入；同一知識點每天最多兩次，同題每天一次。不同題至少60%，聽／讀各15%，說／寫各10%。重打這張地圖可繼續累積。</p>
+        <p>每包素材：礦石×2＋{materialName(`crystal_${character?.element ?? 'fire'}`)}×1。每張地圖只領一次。</p>
+        {region.maps.slice(0, -1).map((name, i) => {
+          const m = mapMastery[mapKey(region.id, i)];
+          const denominator = Math.max(MASTERY_TARGET[regionIdx], m?.total ?? 0);
+          return <div className="mastery-card" key={name}>
+            <b>{name}・有效答對 {m?.total ?? 0}/{MASTERY_TARGET[regionIdx]}</b>
+            <p>不同題 {m?.items.length ?? 0}/{Math.ceil(denominator * 0.6)}・通關 {(m?.cleared ?? 0).toString(2).replace(/0/g, '').length}/20 小關</p>
+            <p>聽 {m?.skills.listening ?? 0}/{Math.ceil(denominator * 0.15)}・讀 {m?.skills.reading ?? 0}/{Math.ceil(denominator * 0.15)}・說 {m?.skills.speaking ?? 0}/{Math.ceil(denominator * 0.1)}・寫 {m?.skills.writing ?? 0}/{Math.ceil(denominator * 0.1)}</p>
+            <p>口說{(m?.spoken ?? 0) < Math.ceil(denominator * 0.1) ? '未驗證（替代拼寫可計入精通）' : '已實際作答（非程度認證）'}</p>
+            {m?.claimed ? <p>精通獎勵已領取</p> : <button className="btn btn-small" disabled={!masteryReady(regionIdx, m)} onClick={() => useSaveStore.getState().claimMapMastery(regionIdx, i)}>領取 🪙{80 + 20 * regionIdx}＋素材包×{regionIdx < 3 ? 2 : regionIdx < 6 ? 3 : 4}</button>}
+          </div>;
+        })}
+      </details>
 
       <section className="star-rules">
         <p className="summary-label">⭐ 這個區域的三星條件（每張地圖結算時評分，每顆新星星送 1 張召喚券）</p>

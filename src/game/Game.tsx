@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
 import MapScene from './MapScene';
 import MainScene from './MainScene';
+import { backgroundBackdrop } from './art/backgrounds';
 import { useBattleStore } from '../store/battleStore';
 import BattleHUD from '../components/BattleHUD';
 import MapToolbar from '../components/MapToolbar';
@@ -53,6 +54,12 @@ export const GAME_HEIGHT = 480;
 export default function Game() {
   const gameRef = useRef<HTMLDivElement>(null);
   const inBattle = useBattleStore(s => s.active);
+  const battleRegion = useBattleStore(s => s.levelIdx);
+  const mapRegion = useSaveStore(s => s.unlockedIndex);
+  useEffect(() => {
+    const parent = gameRef.current;
+    if (parent) parent.style.backgroundImage = `url("${backgroundBackdrop(inBattle ? battleRegion : mapRegion, parent.clientWidth / Math.max(1, parent.clientHeight))}")`;
+  }, [inBattle, battleRegion, mapRegion]);
   const modal = useUiStore(s => s.modal);
 
   // 地圖與戰鬥切換時回到頁面頂端，避免畫面上方（關卡名稱）被捲出畫面
@@ -173,6 +180,9 @@ export default function Game() {
       observer = new ResizeObserver(() => {
         g.scale.getParentBounds();
         g.scale.refresh();
+        const b = useBattleStore.getState();
+        const r = b.active ? b.levelIdx : useSaveStore.getState().unlockedIndex;
+        parent.style.backgroundImage = `url("${backgroundBackdrop(r, parent.clientWidth / Math.max(1, parent.clientHeight))}")`;
       });
       observer.observe(parent);
     });

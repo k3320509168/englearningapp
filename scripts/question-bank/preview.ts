@@ -28,7 +28,7 @@ async function show() {
  useUiStore.setState({modal:null,celebrations:[],hintOpen:false,retreatAsk:false});
  useBattleStore.getState().startLevel(LEVELS[r],voiceFallback,0);
  // 凍結題目時間以便量測版面，不模擬玩家速度；計時合理性另由紙上與程式模擬驗收。
- useBattleStore.setState({question:voiceFallback(q),phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:'',questionSeq:useBattleStore.getState().questionSeq+1});
+ useBattleStore.setState({question:voiceFallback(q),original:q,phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:'',questionSeq:useBattleStore.getState().questionSeq+1});
  status.textContent=`r${r} ${skill.value} ${index%list.length+1}/${list.length}｜原題 difficulty ${q.difficulty}｜版面檢查延長倒數`;
 }
 document.querySelector<HTMLButtonElement>('#qa-show')!.onclick=async()=>{
@@ -48,12 +48,15 @@ document.querySelector<HTMLButtonElement>('#qa-map')!.onclick=()=>{
 document.querySelector<HTMLButtonElement>('#qa-settings')!.onclick=()=>useUiStore.getState().openModal('settings');
 document.querySelector<HTMLButtonElement>('#qa-hide')!.onclick=()=>{
  document.querySelector<HTMLElement>('#qa-controls')!.style.display='none';
- document.querySelector<HTMLElement>('#qa-restore')!.style.display='block';
+ window.scrollTo(0,0);
 };
-document.querySelector<HTMLButtonElement>('#qa-restore')!.onclick=()=>{
- document.querySelector<HTMLElement>('#qa-controls')!.style.display='flex';
- document.querySelector<HTMLElement>('#qa-restore')!.style.display='none';
-};
+// 工具收起後不保留浮動按鈕，也不增加文件高度；僅本地QA頁有這個快捷鍵。
+window.addEventListener('keydown',event=>{
+ if(event.key!=='F8'&&!(event.ctrlKey&&event.altKey&&(event.code==='KeyQ'||event.key.toLowerCase()==='q')))return;
+ event.preventDefault();
+ const controls=document.querySelector<HTMLElement>('#qa-controls')!;
+ controls.style.display=controls.style.display==='none'?'flex':'none';
+});
 
 // 只校準結算 UI：獨立存檔的首領剩1HP，仍須在遊戲按鈕真正答對才結算。
 document.querySelector<HTMLButtonElement>('#qa-boss')!.onclick=async()=>{
@@ -64,6 +67,6 @@ document.querySelector<HTMLButtonElement>('#qa-boss')!.onclick=async()=>{
  useBattleStore.getState().startLevel(LEVELS[r],voiceFallback,19);
  const q=list[index%list.length]??useBattleStore.getState().question;
  const stages=useBattleStore.getState().stages.map((stage,i)=>i===19?{...stage,hp:1}:stage);
- useBattleStore.setState({stages,monsterHp:1,...(q?{question:voiceFallback(q)}:{}),phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:''});
+ useBattleStore.setState({stages,monsterHp:1,...(q?{question:voiceFallback(q),original:q}:{}),phase:'answering',questionLimit:3_600_000,questionLeft:3_600_000,typed:''});
  status.textContent='版面專用：首領1HP，請真正答對後檢查結算；不作平衡驗收';
 };

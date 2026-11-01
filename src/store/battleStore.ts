@@ -216,7 +216,7 @@ interface BattleState {
   startSkillBoss: (id: SkillBossId) => void;
   startBattle: () => void;
   openLesson: () => void;
-  tick: (ms: number, systemPauseMs?: number) => void;
+  tick: (ms: number, systemPauseMs?: number, activePauseMs?: number) => void;
   inputLetter: (letter: string) => void;
   backspace: () => void;
   submitTyped: () => void;
@@ -810,6 +810,16 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       } else set({ ...patch, phase: stage.bossMode ? 'summary' : 'monsterDown' });
       return;
     }
+    if (s.mode === 'normal') {
+      const award = save().claimStageXp(s.levelIdx, s.stageIdx);
+      if (award.xp) {
+        patch = { ...patch, runXp: (patch.runXp ?? s.runXp) + award.xp };
+        if (award.levels > 0) {
+          patch = { ...patch, ...withTotals(refreshPlayer(patch.party ?? s.party)) };
+          celebrateLevelUp(save().player.level);
+        }
+      }
+    }
     if (s.mode === 'normal' && !isLastStage) save().recordMapStage(mapKey(s.levelKey, mapIndexOf(s.stageIdx)), s.stageIdx % MAP_SIZE);
     // 獎勵轉盤：每張地圖第一次破第 5、10、15、20 關各轉一次
     if (s.mode === 'normal' && WHEEL_CHECKPOINTS.includes(stageInMap(s.stageIdx)) && save().grantWheel(wheelKey(s.levelKey, s.stageIdx))) useUiStore.getState().setWheelHidden(false);
@@ -911,7 +921,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const onCorrect = () => {
     const s = get();
     if (!s.original || !s.question) return;
-    if (save().recordAnswer(s.original, true, !s.retrying) && s.mode !== 'golden') {
+    const eligibleLearning = !s.retrying && !s.assist && !s.overtime;
+    const previousKnowledge = save().knowledge[knowledgeKey(s.original)];
+    const eligibleSubsidy = eligibleLearning && (!previousKnowledge?.wins.length || previousKnowledge.dueAt <= Date.now());
+    if (save().recordAnswer(s.original, true, !s.retrying, eligibleLearning) && s.mode !== 'golden') {
       save().addGold(RUNE_GOLD);
       set({ runRunes: s.runRunes + 1 });
     }
@@ -1007,11 +1020,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...(guardGained ? { shield: true, comboGuard: true } : {}),
     };
 
-    // 經驗值：每答對一題都有，擊倒另外加；升級時主角能力立刻更新
+    // 主線答對給學習EXP，首次通關池在finishStage發；其他模式保留原獎勵。升級立刻更新主角。
     const gainXp = (killedKind: 'none' | 'kill' | 'elite' | 'boss') => {
       if (s.mode === 'golden') return { xp: 0, levelUp: undefined };
-      const xp = Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale);
-      const levels = save().gainXp(xp);
+      const pooled = s.mode === 'normal' && !isPrologue(s.levelKey);
+      const award = pooled ? save().grantLearningXp(s.levelIdx, s.original!, eligibleSubsidy) : null;
+      const xp = award?.xp ?? Math.round((XP.correct + (killedKind === 'none' ? 0 : XP[killedKind])) * regionScale);
+      const levels = award?.levels ?? save().gainXp(xp);
       if (levels > 0) {
         party = refreshPlayer(party);
         celebrateLevelUp(save().player.level);
@@ -1416,11 +1431,12 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     },
 
     // 由介面定時呼叫。只有作答與施法確認時計時，其他畫面（預習、解說、結算）都暫停
-    tick: (ms, systemPauseMs = 0) => {
+    tick: (ms, systemPauseMs = 0, activePauseMs = systemPauseMs) => {
       const s = get();
       if (!s.active || ms <= 0) return;
       if (s.phase === 'answering') {
-        const activeMs = Math.max(0, ms - Math.min(ms, Math.max(0, systemPauseMs)));
+        const activeMs = Math.max(0, ms - Math.min(ms, Math.max(0, activePauseMs)));
+        const timerMs = Math.max(0, ms - Math.min(ms, Math.max(0, systemPauseMs)));
         set({ activeAnswerMs: s.activeAnswerMs + activeMs });
         // 寶箱倒數照常結束，但不能靠待機或自動超時零作答推進小關。
         if (s.stages[s.stageIdx]?.kind === 'treasure') {
@@ -1435,7 +1451,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         if (gaugeActive(s)) {
           const kind = foeKindOf(s.stages[s.stageIdx], s.stageIdx, s.stages.length) ?? 'normal';
           const writing = s.question?.type === 'spell' || s.question?.type === 'fill';
-          const gauge = s.enemyGauge + (activeMs * (writing ? 0.7 : 1) * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
+          const gauge = s.enemyGauge + (timerMs * (writing ? 0.7 : 1) * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
           if (gauge >= 1) {
             const move = nextMove(s);
             if (move) performMove(move);
@@ -1443,7 +1459,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
           } else set({ enemyGauge: gauge });
         }
         if (s.overtime) return;
-        const questionLeft = Math.max(0, s.questionLeft - activeMs);
+        const questionLeft = Math.max(0, s.questionLeft - timerMs);
         if (questionLeft > 0) { set({ questionLeft }); return; }
         // 新手關（A1 1-1～1-7）不計時：時間到也不中斷 combo，慢慢想
         if (s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx, s.levelKey)) { set({ questionLeft: 0 }); return; }

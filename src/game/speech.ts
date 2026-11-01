@@ -160,8 +160,15 @@ function play(r: SpeakRequest) {
     if (queued) { const next = queued; queued = null; play(next); }
     else duckMusic(false);
   };
-  u.onstart = () => { heard(); r.lifecycle?.onStart((text.length * 90) / Math.max(0.3, u.rate)); };
-  u.onboundary = heard;
+  let started = false;
+  const startedPlaying = () => {
+    heard();
+    if (started) return;
+    started = true;
+    r.lifecycle?.onStart((text.length * 90) / Math.max(0.3, u.rate));
+  };
+  u.onstart = startedPlaying;
+  u.onboundary = startedPlaying;
   u.onend = () => { heard(); finish(); };
   u.onerror = (e: SpeechSynthesisErrorEvent) => {
     // 頁面還沒被點過，瀏覽器不讓發音：等第一次點擊時補唸
@@ -215,6 +222,7 @@ export function whenSilent(fn: () => void, maxWait = 3000) {
 export function recognitionErrorText(err: string): string {
   switch (err) {
     case 'aborted': return '';
+    case 'startup-timeout': return '語音啟動等待逾時，請重試或改用拼寫作答';
     case 'no-speech': return '沒有聽到聲音，再試一次';
     case 'audio-capture': return '麥克風被其他程式或分頁占用（例如視訊會議），關掉後再試一次';
     case 'network': return '連不上語音辨識服務，請檢查網路後再試一次';
@@ -258,6 +266,7 @@ export function createRecognizer(handlers: {
   let segments: string[][] = [];
   let delivered = false;
   let generation = 0;
+  let requested = false;
   let silence: number | undefined;
   let limit: number | undefined;
   let startup: number | undefined;
@@ -275,6 +284,7 @@ export function createRecognizer(handlers: {
   const clearTimers = () => { window.clearTimeout(silence); window.clearTimeout(limit); window.clearTimeout(startup); };
   const finish = () => { clearTimers(); try { recognition.stop(); } catch { /* 已經停了 */ } };
   recognition.onstart = () => {
+    if (!requested) { try { recognition.stop(); } catch { /* 已停止 */ } return; }
     window.clearTimeout(startup);
     segments = [];
     delivered = false;
@@ -305,6 +315,7 @@ export function createRecognizer(handlers: {
     muteSfx(on);
   };
   recognition.onerror = (event: any) => {
+    requested = false;
     clearTimers();
     hold(false);
     handlers.onPhase?.('idle');
@@ -312,19 +323,21 @@ export function createRecognizer(handlers: {
     if (candidates().length && event.error !== 'aborted') deliver();
     else handlers.onError(event.error);
   };
-  recognition.onend = () => { clearTimers(); hold(false); handlers.onPhase?.('idle'); deliver(); handlers.onEnd(); };
+  recognition.onend = () => { requested = false; clearTimers(); hold(false); handlers.onPhase?.('idle'); deliver(); handlers.onEnd(); };
   return {
     start: () => {
       // 不打斷遊戲正在唸的句子：清掉排隊的，等這一句唸完（最多 3 秒）再開始收音
+      if (requested) return;
+      requested = true;
       const request = ++generation;
       handlers.onPhase?.('waiting');
       window.clearTimeout(startup);
       startup = window.setTimeout(() => {
-        generation++;
+        generation++; requested = false;
         clearTimers(); hold(false); delivered = true;
         handlers.onPhase?.('idle');
         try { recognition.stop(); } catch { /* 尚未啟動 */ }
-        handlers.onError('audio-capture');
+        handlers.onError('startup-timeout');
       }, 10_000);
       stopSpeaking();
       whenSilent(() => {
@@ -333,6 +346,6 @@ export function createRecognizer(handlers: {
         try { recognition.start(); } catch { /* 已在錄音中 */ }
       });
     },
-    stop: () => { generation++; handlers.onPhase?.('idle'); clearTimers(); hold(false); delivered = true; try { recognition.stop(); } catch { /* 已經停了 */ } },
+    stop: () => { generation++; requested = false; handlers.onPhase?.('idle'); clearTimers(); hold(false); delivered = true; try { recognition.stop(); } catch { /* 已經停了 */ } },
   };
 }

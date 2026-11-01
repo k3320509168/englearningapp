@@ -1,3 +1,4 @@
+import { firstClearXp, learningXp } from '../game/experiencePool';
 import { emptyMapMastery, masteryReady, recordMastery, MASTERY_PACKS } from '../game/mapMastery';
 import type { MapMastery } from '../game/mapMastery';
 import { create } from 'zustand';
@@ -20,7 +21,7 @@ import {
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
 import { towerReward } from '../game/modes';
-import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, nextOptions, pathBadgeCost, playerLevelCap, xpScale } from '../game/growth';
+import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, nextOptions, pathBadgeCost, playerLevelCap, xpScale, xpToNext } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_REWARD, trialsDone } from '../game/trueName';
@@ -40,7 +41,7 @@ import type { MemberId } from '../game/party';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 20;
+export const SAVE_VERSION = 21;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -99,6 +100,9 @@ interface SaveData {
   // 知識點：哪幾天無提示答對（跨日穩定、守門人封印用，見 game/knowledge.ts）
   knowledge: Record<string, KnowledgeRecord>;
   mapMastery: Record<string, MapMastery>;
+  firstClearXpClaimed: Record<string, boolean>;
+  learningXpDay: Record<string, string>;
+  xpLedger: Record<string, number>;
   // 打倒過區域最終魔王的區域（之後要完成守門人封印＋區域試煉才開下一區）
   bossDown: number[];
   // 高標準區域試煉（封印未完成或跳級）的挑戰時間，每區 24 小時內最多 2 次
@@ -212,7 +216,9 @@ interface SaveActions {
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
-  gainXp: (n: number) => number; // 回傳升了幾級
+  claimStageXp: (region: number, stage: number) => { xp: number; levels: number };
+  grantLearningXp: (region: number, q: Question, eligible: boolean) => { xp: number; levels: number };
+  gainXp: (n: number, source?: string) => number; // 回傳升了幾級
   advanceClass: (nodeId: string) => boolean;
   // 換職業（戰鬥外、免費）；重置目前職業的路線（退回徽章）
   switchClass: (classId: ClassId) => boolean;
@@ -257,6 +263,9 @@ export const initialSave: SaveData = {
   codex: {},
   knowledge: {},
   mapMastery: {},
+  firstClearXpClaimed: {},
+  learningXpDay: {},
+  xpLedger: {},
   bossDown: [],
   strictTrials: {},
   settings: { speechRate: 0.9, volume: 1, sfxVolume: 0.7, autoSpeak: true, showLessons: true, voiceAsSpelling: false, musicVolume: 0.35, reduceMotion: false, textScale: 1 },
@@ -495,6 +504,20 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   if (migrated.party.length === 0) migrated.party = [migrated.character ? 'player' : migrated.heroes[0]];
   migrated.equipment = migrated.equipment.filter(e => isPlainObject(e) && typeof e.uid === 'string' && !!equipDef(e.defId));
   migrated.equipped = Object.fromEntries(Object.entries(migrated.equipped).filter(([, uid]) => migrated.equipment.some(e => e.uid === uid)));
+  // v21：舊版已通關或跳級略過的主線不重發新首通池；不撤銷任何進度。
+  if (version < 21) {
+    migrated.firstClearXpClaimed = { ...migrated.firstClearXpClaimed };
+    REGIONS.forEach((r, idx) => {
+      const best = Math.min(regionStageCount(idx) - 1, migrated.bestStage[r.id] ?? 0);
+      for (let stage = 0; stage < best; stage++) migrated.firstClearXpClaimed[`${r.id}:${stage}`] = true;
+      Object.keys(migrated.mapStars).forEach(key => {
+        if (!key.startsWith(`${r.id}#`)) return;
+        const map = Number(key.slice(r.id.length + 1));
+        if (Number.isInteger(map) && map >= 0 && map < r.maps.length - 1) migrated.firstClearXpClaimed[`${r.id}:${map * 20 + 19}`] = true;
+      });
+      if (migrated.bossDown.includes(idx)) migrated.firstClearXpClaimed[`${r.id}:${regionStageCount(idx) - 1}`] = true;
+    });
+  }
   return migrated;
 }
 
@@ -686,10 +709,32 @@ export const useSaveStore = create<SaveData & SaveActions>()(
 
         markStorySeen: (id) => set(s => (s.storySeen.includes(id) ? {} : { storySeen: [...s.storySeen, id] })),
 
-        gainXp: (n) => {
+        claimStageXp: (region, stage) => {
+          const r = REGIONS[region], amount = firstClearXp(region, stage);
+          if (!r || amount <= 0) return { xp: 0, levels: 0 };
+          const key = `${r.id}:${stage}`;
+          if (get().firstClearXpClaimed[key]) return { xp: 0, levels: 0 };
+          set(s => ({ firstClearXpClaimed: { ...s.firstClearXpClaimed, [key]: true } }));
+          return { xp: amount, levels: get().gainXp(amount, 'firstClear') };
+        },
+        grantLearningXp: (region, q, eligible) => {
+          if (!Number.isInteger(region) || region < 0 || region >= REGIONS.length) return { xp: 0, levels: 0 };
+          const key = knowledgeKey(q), day = localDate();
+          const subsidy = eligible && get().learningXpDay[key] !== day;
+          if (subsidy) set(s => ({ learningXpDay: { ...s.learningXpDay, [key]: day } }));
+          const base = learningXp(region, false), total = learningXp(region, subsidy);
+          const levels = get().gainXp(base, 'learningBase') + (total > base ? get().gainXp(total - base, 'learningSubsidy') : 0);
+          return { xp: total, levels };
+        },
+        gainXp: (n, source = 'other') => {
           const p = get().player;
           const r = addXp(p.level, p.xp, n, playerLevelCap(bestTier({ ...get().classPaths, current: p.classPath })));
-          set({ player: { ...p, level: r.level, xp: r.xp } });
+          let accepted = r.xp - p.xp;
+          for (let lv = p.level; lv < r.level; lv++) accepted += xpToNext(lv);
+          set(s => ({ player: { ...p, level: r.level, xp: r.xp }, xpLedger: { ...s.xpLedger,
+            [`offered:${source}`]: (s.xpLedger[`offered:${source}`] ?? 0) + n,
+            [`accepted:${source}`]: (s.xpLedger[`accepted:${source}`] ?? 0) + Math.max(0, accepted),
+          } }));
           if (r.levelsGained > 0) get().trackDaily('levelup', r.levelsGained);
           return r.levelsGained;
         },
@@ -1105,7 +1150,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character,
-        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, towerFloor: s.towerFloor,

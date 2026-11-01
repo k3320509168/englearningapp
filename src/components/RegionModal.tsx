@@ -130,6 +130,7 @@ export default function RegionModal() {
 
       <section className="star-rules">
         <p className="summary-label">⭐ 這個區域的三星條件（每張地圖結算時評分，每顆新星星送 1 張召喚券）</p>
+        <p>連對門檻隨實際作答題數調整，下列顯示該區上限。</p>
         <ol>{conditions.map(c => <li key={c.label}>{c.label}</li>)}</ol>
       </section>
     </Modal>

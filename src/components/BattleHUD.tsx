@@ -1,3 +1,4 @@
+import { questionSkill } from '../game/QuestionData';
 import { answerTiming } from '../game/answerTiming';
 import { useEffect, useRef, useState } from 'react';
 import { useShallow } from 'zustand/react/shallow';
@@ -64,7 +65,7 @@ export default function BattleHUD() {
     if (q?.type === 'voice' && !useSaveStore.getState().micAsked && isSpeechRecognitionSupported() && !useUiStore.getState().modal) openModal('mic');
     // 聽力題（題目只有聲音）不管設定都要播放
     // 魔王的「視覺剝奪」看不到題目時也一定要播放
-    if (!q?.speak || p !== 'answering' || !(useSaveStore.getState().settings.autoSpeak || q.desc.startsWith('🎧') || useBattleStore.getState().blind)) return;
+    if (!q?.speak || p !== 'answering' || !(useSaveStore.getState().settings.autoSpeak || questionSkill(q) === 'listening' || useBattleStore.getState().blind)) return;
     // 女神的祝福、情境提示等暫停用的視窗開著時先不唸（不然玩家還在看說明就唸完了），關掉後才唸
     const paused = (ui: ReturnType<typeof useUiStore.getState>) => !!(ui.modal || ui.hintOpen || ui.studyWord || ui.celebrations[0]?.blocking);
     if (!paused(useUiStore.getState())) { say(q.speak); return; }
@@ -211,11 +212,11 @@ function QuestionCard({ question }: { question: Question }) {
   const englishVoice = useEnglishVoice();
   // 瀏覽器發音卡死時也一樣：直接顯示要聽的英文，玩家還能繼續作答
   const jammed = useSpeechJam();
-  const silent = question.desc.startsWith('🎧') && (!englishVoice || jammed);
+  const silent = questionSkill(question) === 'listening' && (!englishVoice || jammed);
   // 魔王「視覺剝奪」：有發音的題目把題目文字藏起來，只能用聽的（沒有英文語音的裝置照常顯示）
   const blind = useBattleStore(s => s.blind) && !!question.speak && englishVoice;
   // 聽力題：標籤寫「聽力」（不是一般的選擇題），旁邊放大的重播按鈕——瀏覽器的語音偶爾會沒播出來
-  const listening = question.desc.startsWith('🎧') && !!question.speak && englishVoice;
+  const listening = questionSkill(question) === 'listening' && !!question.speak && englishVoice;
   useEffect(() => {
     const el = copyRef.current;
     if (!el) return;

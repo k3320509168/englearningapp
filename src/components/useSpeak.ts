@@ -1,3 +1,4 @@
+import { questionSkill } from '../game/QuestionData';
 import { useBattleStore } from '../store/battleStore';
 import { answerTiming } from '../game/answerTiming';
 import { useSaveStore } from '../store/saveStore';
@@ -9,7 +10,7 @@ export function useSpeak(trackBattle = false) {
   return (text: string | undefined, slow = false) => {
     if (!text) return;
     const b = useBattleStore.getState();
-    const listening = trackBattle && b.phase === 'answering' && b.question?.desc.startsWith('🎧');
+    const listening = trackBattle && b.phase === 'answering' && !!b.question && questionSkill(b.question) === 'listening';
     const timing = listening ? answerTiming(b.question, b.questionSeq) : null;
     let end: (() => void) | undefined;
     speak(text, speechRate, volume, slow, voiceName || undefined, slowRate ?? SLOW_RATE,

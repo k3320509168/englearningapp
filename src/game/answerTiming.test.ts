@@ -14,6 +14,11 @@ describe('system time budgets', () => {
     expect(t.advance(4000)).toBe(3300);
     t.startAudio(1000); expect(t.advance(500)).toBe(0);
   });
+  it('third playback advances danger and countdown but is excluded from fast-answer time', () => {
+    const t = new AnswerTiming(); t.startAudio(1000)(); t.startAudio(1000)();
+    t.startAudio(1000);
+    expect(t.step(100)).toEqual({ systemPauseMs: 0, activePauseMs: 100 });
+  });
   it('cannot renew permission or recognition waits indefinitely', () => {
     const t = new AnswerTiming();
     t.setWaiting(true); expect(t.advance(10000)).toBe(10000);
@@ -49,6 +54,13 @@ describe('independent battle clocks', () => {
     expect(useBattleStore.getState().enemyGauge).toBeCloseTo(normal * 0.7);
     expect(useBattleStore.getState().questionLeft).toBe(before - 100);
     expect(useBattleStore.getState().activeAnswerMs).toBe(100);
+  });
+  it('keeps fast-answer time separate from unprotected replay time', () => {
+    setup('choice'); const before = useBattleStore.getState().questionLeft;
+    useBattleStore.getState().tick(100, 0, 100);
+    expect(useBattleStore.getState().activeAnswerMs).toBe(0);
+    expect(useBattleStore.getState().questionLeft).toBe(before - 100);
+    expect(useBattleStore.getState().enemyGauge).toBeGreaterThan(0);
   });
   it('excludes bounded system waiting from both active time and gauge advancement', () => {
     setup('choice'); const before = useBattleStore.getState().questionLeft;

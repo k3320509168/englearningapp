@@ -1,0 +1,67 @@
+{
+  "node": "v22.16.0",
+  "timezone": "Asia/Taipei",
+  "seed": 7,
+  "clockStepMs": 50,
+  "profiles": [
+    "strong",
+    "good",
+    "average",
+    "struggling"
+  ],
+  "routes": [
+    "fast",
+    "normal",
+    "mastery"
+  ],
+  "pathMaps": 61,
+  "rawDecodedSha256": {
+    "strong-fast-seed7.json.gz": "18d9c171adaff1fe1afb4511c0f28d2cc838decaca6a1b051e81d1d7b23e2d94",
+    "strong-normal-seed7.json.gz": "a1f89bbcc681f001301dfc157e64ee10ed9985d5be32643d01e055c4f1e52b0e",
+    "strong-mastery-seed7.json.gz": "7d7f757f58628adf9b5a0eac52b7e6bd5f39c365e691e4f000790491d7db2813",
+    "good-fast-seed7.json.gz": "4c265e4d6086b2ed9a16884092f638c46a98c35d37286ac52a18611b820f8c42",
+    "good-normal-seed7.json.gz": "df2e837148cb5215ad3e096dd7d6b89258301a3e9edea0e2a2f2b74c8e853eef",
+    "good-mastery-seed7.json.gz": "ae019aa8c3f4addbc04ce7fd1da482b953e2c1a3009ddd25ce01be1f2fca3f53",
+    "average-fast-seed7.json.gz": "eb702c6c47b6cb28aaf07dbd107cda38af6d721a673d27db38bebe26def6e256",
+    "average-normal-seed7.json.gz": "ec4fd9370b76ffc7f14148c8c0fdfa17d2abc751943d60c7a2cbee2e2e552e9d",
+    "average-mastery-seed7.json.gz": "bd6ef89420317b733b084b3ea55ce2b2335d8fee859f3f6b52df602ec2680a69",
+    "struggling-fast-seed7.json.gz": "317eed7e2e9f9b8eb0cc351e2c21c2d77ef5020ce8f51ea9f5a763fb8ec635bf",
+    "struggling-normal-seed7.json.gz": "9ef5dfc27fa8d6436816fe613d790ff22e70938f5e2fb391dfd3f0c2d9014674",
+    "struggling-mastery-seed7.json.gz": "ac28118781f4eb74b0de7ad994438940e6948057c964fc41e31e32f0d07dab4e"
+  },
+  "monteCarlo": {
+    "regions": [
+      0,
+      4,
+      8
+    ],
+    "maps": 30,
+    "finals": 60,
+    "pathEqualityVerified": true
+  },
+  "note": "Only corrected audited/acceptance runs. Some path-only stdout used old zero-MC wording; not delivered. Compressed JSON is full original output, not a summary. No banks changed. Current runner zero-MC wording and browser-only timing fixes do not change these path results.",
+  "sourceSha256": {
+    "scripts/realsim2.mts": "c34cd9a09bd7a23a281d9d86c97fdbbe0f3af91725ec8c1754efa3b10189e1bf",
+    "scripts/sim-budget.ts": "ea3a1b5abcbdff5e6e27e0afc52938c9d4b0848870e0d4104e61703058394da9",
+    "src/game/experiencePool.ts": "1ac1f01493ce17f8d203b064eef8b3710ce294102af576ce2bbe04b356230107",
+    "src/store/battleStore.ts": "82dac645a6014a154d2b3db86c60b813cd8d638091bb664a27b711cbe3b02dca",
+    "src/store/saveStore.ts": "2b73e37efad1848acec563ae54fc75832ef6b13ba89a69c40643274e5af7f791",
+    "src/game/answerTiming.ts": "f8f1de4e08450c98abac28c4485fd144ce2f41465dac1ed4732936dd5a0da717",
+    "src/game/speech.ts": "ac77bf72c0d75bff0cbb219e4a7fc8f1467bf17f726b4150da1c5845060a6e6f",
+    "src/components/useBattleClock.ts": "8aa67d8368f8f0e6a52896e374ae5687cdd48c1b56d6ec8b0c4f330f6fd38422",
+    "src/components/useSpeak.ts": "281cad85f169f46cb17bc68ba048cf9918144568c993dfd4a8d7bb4ff515fc40",
+    "src/game/mapMastery.ts": "983c13d85459cacea0a4359c5d54ad8fb370b00f48fdea7e1f1dfdfcee75d33b"
+  },
+  "latestCodeFullNormalPathRepeatEqual": true,
+  "bankSha256": {
+    "src/game/questions/bank/r0.json": "62b4b355c5a2e763ddd60f63a7c45083178a10b88310a8cdbc48f023bb31a257",
+    "src/game/questions/bank/r1.json": "75c8991219b52ebe2e67dcf4459c64f81ea2c5800f622693e4cbfc3a49eb447f",
+    "src/game/questions/bank/r2.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r3.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r4.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r5.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r6.json": "b1cd8670ac43381611d6b96a72c8fd999221fde13c6056a64a155c9941e33991",
+    "src/game/questions/bank/r7.json": "c1a87f89bd859068621335b9d8ec77e827946118ed07475bc2ccd22e5d689b50",
+    "src/game/questions/bank/r8.json": "0ead4ee19c8e03598793783b2e92852e725c4c91b2a99b015a52d4c4505fb49c"
+  }
+}

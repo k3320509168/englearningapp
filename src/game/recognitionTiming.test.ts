@@ -24,10 +24,17 @@ describe('recognition lifecycle', () => {
     engine.onspeechstart(); expect(onPhase).toHaveBeenLastCalledWith('speaking');
     r.stop(); expect(onPhase).toHaveBeenLastCalledWith('idle');
   });
+  it('ignores duplicate starts and stops permission results arriving after timeout', async () => {
+    const { r, engine, onPhase } = await setup();
+    r.start(); r.start(); expect(engine.start).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(10000); onPhase.mockClear();
+    engine.onstart(); expect(onPhase).not.toHaveBeenCalledWith('speaking');
+    expect(engine.stop).toHaveBeenCalled();
+  });
   it('reports a stuck initialization instead of waiting indefinitely', async () => {
     const { r, onError, onPhase } = await setup();
     r.start(); vi.advanceTimersByTime(10000);
-    expect(onError).toHaveBeenCalledWith('audio-capture');
+    expect(onError).toHaveBeenCalledWith('startup-timeout');
     expect(onPhase).toHaveBeenLastCalledWith('idle');
   });
 });

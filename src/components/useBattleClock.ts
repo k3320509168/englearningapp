@@ -20,8 +20,8 @@ export function useBattleClock() {
       // 電腦休眠等極端情況，最多只算 1 秒
       const b = useBattleStore.getState();
       const ms = Math.min(1000, dt);
-      const pausedMs = b.phase === 'answering' ? answerTiming(b.question, b.questionSeq).advance(ms) : 0;
-      b.tick(ms, pausedMs);
+      const waits = b.phase === 'answering' ? answerTiming(b.question, b.questionSeq).step(ms) : { systemPauseMs: 0, activePauseMs: 0 };
+      b.tick(ms, waits.systemPauseMs, waits.activePauseMs);
     }, TICK_MS);
     return () => window.clearInterval(id);
   }, []);

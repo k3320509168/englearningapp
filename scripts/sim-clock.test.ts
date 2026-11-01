@@ -67,3 +67,18 @@ it('每圖技能次數不混入額外區域魔王樣本', () => {
   expect(mapsOnly).toBeDefined();
   expect(run('1')).toBe(mapsOnly);
 }, 20000);
+
+
+it('停用模擬的localStorage序列化不改變戰鬥或資源路徑', () => {
+  const folder = mkdtempSync(join(tmpdir(), 'enggame-persistence-test-'));
+  const file = join(folder, 'budget.json');
+  try {
+    const run = (persist: string) => {
+      const output = execFileSync(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./realsim2.mts', import.meta.url))], {
+        env: { ...process.env, GROWTH: 'budget', PROFILE: 'good', ROUTE: 'fast', REGIONS: '0', MAPS: '0', FINALS: '0', SEED: '7', BUDGET_OUT: file, SIM_PERSIST: persist }, encoding: 'utf8',
+      });
+      return { output, report: readFileSync(file, 'utf8') };
+    };
+    expect(run('0')).toEqual(run('1'));
+  } finally { rmSync(folder, { recursive: true, force: true }); }
+}, 30000);

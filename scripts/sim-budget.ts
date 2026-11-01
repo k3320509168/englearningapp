@@ -113,7 +113,7 @@ export function budgetMaintenance(rand: () => number, ledger: BudgetLedger) {
 export function budgetReport(ledger: BudgetLedger) {
   const s = state();
   return {
-    playerLevel: s.player.level, gold: s.gold, materials: { ...s.materials },
+    playerLevel: s.player.level, playerXp: s.player.xp, gold: s.gold, materials: { ...s.materials },
     party: s.party.map(id => ({ id, level: id === 'player' ? s.player.level : s.heroLevel[id] ?? 1, stars: s.heroStars[id] ?? 0 })),
     equipment: SLOTS.map(({ id }) => {
       const item = s.equipment.find(e => e.uid === s.equipped[id]);

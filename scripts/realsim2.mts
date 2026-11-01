@@ -15,6 +15,9 @@ const ROOT = new URL('../src', import.meta.url).pathname;
 const { LEVELS, addBank, questionDifficulty, questionSkill } = await import(`${ROOT}/game/QuestionData`);
 const { useBattleStore, setBattleRandom } = await import(`${ROOT}/store/battleStore`);
 const { useSaveStore, initialSave } = await import(`${ROOT}/store/saveStore`);
+// 模擬只靠獨立快照保存；停用localStorage序列化I/O，不改store行為。SIM_PERSIST=1作等價對照。
+if (process.env.SIM_PERSIST !== '1') useSaveStore.persist.setOptions({ storage: { getItem: () => null, setItem: () => undefined, removeItem: () => undefined } });
+const masteryModule = await import(`${ROOT}/game/mapMastery`);
 const { DEFAULT_CHARACTER } = await import(`${ROOT}/game/character`);
 const { recommendedLevel, comboMultiplier } = await import(`${ROOT}/game/progression`);
 const { regionStageCount, chapterCount, MAP_SIZE } = await import(`${ROOT}/game/stageLayout`);
@@ -25,6 +28,8 @@ LEVELS.forEach((_: string, i: number) => addBank(i, JSON.parse(fs.readFileSync(`
 
 const PROFILES: Record<string, number> = { strong: 0.96, good: 0.9, average: 0.82, struggling: 0.72 };
 const PROFILE = process.env.PROFILE ?? 'good';
+const ROUTE = process.env.ROUTE ?? 'fast';
+if (!['fast', 'normal', 'mastery'].includes(ROUTE)) throw new Error('ROUTE must be fast, normal or mastery');
 const BASE = PROFILES[PROFILE];
 const VARIANT = process.env.VARIANT ?? 'A';
 const GROWTH = process.env.GROWTH ?? 'normal';
@@ -34,7 +39,7 @@ if (!Number.isInteger(mapsPerDay) || mapsPerDay < 1) throw new Error('BUDGET_MAP
 const budgetClock = isBudget ? simulationClock() : null;
 const budgetEpoch = budgetClock?.now() ?? 0;
 if (budgetClock) process.once('exit', () => budgetClock.restore());
-let preparingBudget = false, budgetMapsCompleted = 0;
+let preparingBudget = false, budgetMapsCompleted = 0, budgetReviewDays = 0;
 let budgetLedger: BudgetLedger = {};
 const budgetSnapshots = new Map<string, { save: BudgetSave; wrong: string[]; at: number; ledger: BudgetLedger }>();
 const budgetPath: unknown[] = [];
@@ -63,10 +68,10 @@ function setup(r: number, stage: number) {
       budgetClock!.set(snap.at); budgetLedger = { ...snap.ledger };
       return;
     }
-    budgetClock!.set(budgetEpoch + Math.floor(budgetMapsCompleted / mapsPerDay) * 86400000);
+    budgetClock!.set(budgetEpoch + (Math.floor(budgetMapsCompleted / mapsPerDay) + budgetReviewDays) * 86400000);
     budgetMaintenance(rand, budgetLedger);
-    budgetSnapshots.set(`${r}:${stage}`, { save: snapshotSave(), wrong: [...wrongSeen], at: budgetClock!.now(), ledger: { ...budgetLedger } });
-    budgetPath.push({ region: r, stage, date: new Date().toISOString(), ...budgetReport(budgetLedger) });
+    if (!budgetSnapshots.has(`${r}:${stage}`)) budgetSnapshots.set(`${r}:${stage}`, { save: snapshotSave(), wrong: [...wrongSeen], at: budgetClock!.now(), ledger: { ...budgetLedger } });
+    budgetPath.push({ region: r, stage, date: new Date().toISOString(), xpLedger: { ...sv().xpLedger }, ...budgetReport(budgetLedger) });
     return;
   }
   const lv = recommendedLevel(r, stage);
@@ -195,7 +200,11 @@ function run(r: number, from: number, to: number) {
       s.nextStage();
     }
   }
-  if (isBudget) { budgetMaintenance(rand, budgetLedger); assertBudgetLedger(budgetLedger); }
+  if (isBudget) {
+    budgetMaintenance(rand, budgetLedger); assertBudgetLedger(budgetLedger);
+    const acceptedXp = Object.entries(sv().xpLedger).filter(([key]) => key.startsWith('accepted:')).reduce((sum, [, n]) => sum + Number(n), 0);
+    if (Math.abs(acceptedXp - (totalXp(sv().player) - totalXp({ level: 5, xp: 0 }))) > 1e-6) throw new Error('XP ledger does not reconcile with actual player growth');
+  }
   inc('xp', totalXp(sv().player) - xp0); inc('gold', sv().gold - gold0);
   return cleared;
 }
@@ -213,10 +222,31 @@ function prepareBudgetPath() {
       const cleared = run(r, from, to);
       if (!cleared[to]) { budgetStop = `r${r} map${chapter + 1}, player Lv${sv().player.level}`; preparingBudget = false; return; }
       budgetMapsCompleted++;
+      if (process.env.SIM_PROGRESS === '1') console.log(`[path] ${PROFILE}/${ROUTE} r${r} map${chapter + 1} Lv${sv().player.level}`);
+      const mapKey = `${LEVELS[r]}#${chapter}`;
+      const { masteryReady } = masteryModule;
+      // 正常路線每第三張做一次可選整圖複習；精通路線最多額外六次，缺題如實保留未完成。
+      const reviewLimit = ROUTE === 'mastery' ? 6 : ROUTE === 'normal' && budgetMapsCompleted % 3 === 0 ? 1 : 0;
+      for (let review = 0; review < reviewLimit && (ROUTE !== 'mastery' || !masteryReady(r, sv().mapMastery[mapKey])); review++) {
+        const reviewClear = run(r, from, to);
+        budgetReviewDays++;
+        if (!reviewClear[to]) break;
+      }
+      const beforeGold = sv().gold, beforeMaterials = { ...sv().materials };
+      if (sv().claimMapMastery(r, chapter)) {
+        budgetLedger.masteryGold = (budgetLedger.masteryGold ?? 0) + sv().gold - beforeGold;
+        for (const [id, value] of Object.entries(sv().materials)) {
+          const key = `masteryMaterial:${id}`;
+          budgetLedger[key] = (budgetLedger[key] ?? 0) + Number(value) - (beforeMaterials[id] ?? 0);
+        }
+      }
+      assertBudgetLedger(budgetLedger);
+      budgetPath.push({ region: r, stage: to, checkpoint: 'afterMap', recommended: recommendedLevel(r, to), delta: sv().player.level - recommendedLevel(r, to), xpLedger: { ...sv().xpLedger }, mastery: sv().mapMastery[mapKey], ...budgetReport(budgetLedger), elapsedModelMs: m.ms ?? 0, submitted: m.answers ?? 0 });
     }
     const last = regionStageCount(r) - 1;
     const cleared = run(r, last, last);
     if (!cleared[last]) { budgetStop = `r${r} final, player Lv${sv().player.level}`; preparingBudget = false; return; }
+    budgetPath.push({ region: r, stage: last, checkpoint: 'afterFinal', recommended: recommendedLevel(r, last), delta: sv().player.level - recommendedLevel(r, last), xpLedger: { ...sv().xpLedger }, ...budgetReport(budgetLedger) });
     // 經濟模型條件：魔王已倒且守門人驗證完成；只開路，不發等級或金幣。
     sv().unlockLevel(Math.min(8, r + 1));
   }
@@ -226,7 +256,7 @@ if (isBudget) {
   prepareBudgetPath();
   const file = process.env.BUDGET_OUT ?? join(tmpdir(), 'enggame-question-qa', `budget-${PROFILE}.json`);
   fs.mkdirSync(dirname(file), { recursive: true });
-  fs.writeFileSync(file, JSON.stringify({ profile: PROFILE, nominalAccuracy: BASE, seed: Number(process.env.SEED ?? 7), clockStepMs: 50, maps: MAPS, finals: FINALS, regions: REGIONS, policy: 'affordable-equipment-now, ordinary-plus3, balanced-hero-training, no-UR-savings-reserve', mapsPerDay, completedMaps: budgetMapsCompleted,
+  fs.writeFileSync(file, JSON.stringify({ profile: PROFILE, route: ROUTE, pathMetrics: { ...m }, reviewDays: budgetReviewDays, xpLedger: sv().xpLedger, nominalAccuracy: BASE, seed: Number(process.env.SEED ?? 7), clockStepMs: 50, maps: MAPS, finals: FINALS, regions: REGIONS, policy: 'affordable-equipment-now, ordinary-plus3, balanced-hero-training, no-UR-savings-reserve', mapsPerDay, completedMaps: budgetMapsCompleted,
     stopped: budgetStop, path: budgetPath, final: budgetReport(budgetLedger) }, null, 2));
   console.log(`[budget-path] checkpoints=${budgetSnapshots.size}, completedMaps=${budgetMapsCompleted}, stopped=${budgetStop ?? 'none'}, report=${file}`);
 }
@@ -253,14 +283,14 @@ for (const r of REGIONS) {
   for (let k = 0; k < FINALS; k++) { const last = regionStageCount(r) - 1; if (isBudget && !budgetSnapshots.has(`${r}:${last}`)) { inc('unreachedFinals'); continue; } const res = run(r, last, last); add('final', res[last] ?? 9); }
   const line = (k: string) => {
     const t = agg[k] ?? [];
-    if (!t.length) return `${k} 未達（n=0）`;
+    if (!t.length) return `${k} 未測（n=0）`;
     return `${k} 首過${pct(t.filter(x => x === 1).length / t.length)} 平均${(t.reduce((a, b) => a + b, 0) / t.length).toFixed(2)}次 ≤3次${pct(t.filter(x => x <= 3).length / t.length)}(n=${t.length})`;
   };
   const acc = (s: string) => (m[`n_${s}`] ? pct((m[`ok_${s}`] ?? 0) / m[`n_${s}`]) : '-');
   out.push(`[${PROFILE}/${GROWTH}/${VARIANT}] r${r}`);
   if (isBudget) out.push(`  budget snapshots=${[...budgetSnapshots.keys()].filter(key => key.startsWith(`${r}:`)).join(',') || 'none'} 未達圖=${m.unreachedMaps ?? 0} 未達魔王=${m.unreachedFinals ?? 0}`);
   out.push('  ' + ['normal', 'elite', 'gate', 'boss', 'final'].map(line).join(' | '));
-  if (!m.answers) { out.push('  尚未抵達此區，沒有可測樣本；不計通過率、時間或成長。'); continue; }
+  if (!m.answers) { out.push(isBudget && [...budgetSnapshots.keys()].some(key => key.startsWith(`${r}:`)) ? '  連續路徑已抵達，此次沒有條件式抽樣樣本；主線成長見budget JSON。' : '  沒有可測樣本；不計通過率、時間或成長。'); continue; }
   out.push(`  實際正確率 ${pct(m.correct / m.answers)}（聽${acc('listening')} 讀${acc('reading')} 說${acc('speaking')} 寫${acc('writing')}）`
     + (measuredMaps ? ` 每張地圖 ${Math.round(mapStats.answers / measuredMaps)} 題、${Math.round(mapStats.ms / measuredMaps / 60000)} 分鐘、EXP ${Math.round(mapStats.xp / measuredMaps)}、金幣淨額 ${Math.round(mapStats.gold / measuredMaps)}${isBudget ? `、主線毛收入 ${Math.round((mapStats.mainlineGold ?? 0) / measuredMaps)}` : ''}` : ' 每張地圖未測（n=0）'));
   out.push(`  怪物0血後作答 ${pct((m.deadAnswers ?? 0) / m.answers)}（時間${pct((m.deadMs ?? 0) / m.ms)}） combo 中位${q(combos, 0.5)} P90 ${q(combos, 0.9)} P99 ${q(combos, 0.99)}`

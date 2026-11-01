@@ -816,3 +816,29 @@ describe('C1：固定敵群與即時結算', () => {
     expect(state().stageSubmissions).toBe(1);
   });
 });
+
+
+describe('C3：處決不代替實際傷害', () => {
+  it('即使Combo和舊條件足夠，非致命傷害仍不會強制擊殺', () => {
+    startLevel();
+    state().startLevel(LEVELS[0], undefined, 19);
+    useBattleStore.setState({ monsterHp: 1e12, monsterMaxHp: 1e12, combo: 5000, streak: 20, stageAnswers: 20, stageHits: 20 });
+    answerCurrent();
+    expect(state().phase).toBe('answering');
+    expect(state().monsterHp).toBeGreaterThan(0);
+    expect(state().event?.slain).toBeFalsy();
+    expect(state().executing).toBe(false);
+  });
+  it('沉默君王首題致命即可結束，M12無免死或最後一題', () => {
+    startLevel();
+    state().startLevel(LEVELS[8], undefined, regionStageCount(8) - 1);
+    useBattleStore.setState({ monsterHp: 1, monsterShield: 0, combo: 300, streak: 0, minAnswers: 40 });
+    answerCurrent();
+    expect(state().phase).toBe('levelClear');
+    expect(state().monsterHp).toBe(0);
+    expect(state().stageAnswers).toBe(1);
+    expect(state().event?.slain).toBe(true);
+    expect(state().event?.execution).toBeFalsy();
+    expect(state().mods.every(m => m.phase !== 'active' && m.phase !== 'idle')).toBe(true);
+  });
+});

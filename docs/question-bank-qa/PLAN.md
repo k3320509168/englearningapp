@@ -176,3 +176,7 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 新增自足的虛構遊戲規則/策略120題；三區各1040題，總3120。B2+尚差760、C1/C2各差960。TURNBASED 不作單字填空，改為標準單字 COOPERATIVE。
 - Node22 tsc、35 files/304 tests、eslint通過。題目仍為草稿，完整一般/模式各五輪深審未完成。
 - 製作人新增協作任務：讀主開發副本 COLLAB.md、DEV_LOG.md、balance-r5-final-spec.md，先合併 feat/round4 再按 C1～C7 實作；戰鬥檔案歸Codex，Claude負責審查/模擬/合併。此批先存檔以便乾淨合併，原題庫與五輪驗收任務繼續保留。
+
+## 協作任務銜接（C1～C3工作點）
+- 已合併feat/round4的P0-1/協作看板，分項完成C1即時結算、C2曲線、C3處決純演出，詳COLLAB留言。329測試/tsc/eslint通過；C4～C7及Claude全盤模擬/實玩仍待完成。
+- 製作人明確要求題庫也繼續，原5800題/五輪一般與模式深審未取消。現為3120草稿、各1040；餘B2+760、C1/C2各960。接下來可補19個三區批次再5個僅C1/C2批次。

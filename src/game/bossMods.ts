@@ -3,8 +3,8 @@ import type { QuestionSkill } from './types';
 // BOSS 機制模組 M01～M12（第八輪 ChatGPT 定案，見 docs/STAGE_PLAN.md 第 11 節）。
 // 九區魔王原本的專屬技能（bossSkills.ts）保留；小 BOSS、大 BOSS、區域魔王另外掛 1～3 個模組。
 // 規則：每個模組每場最多觸發 1 次；每場最多 1 個強制連答（M01）；一題答錯只結算最重的一個模組懲罰；
-// BOSS 提前 0 血（終結連擊）後，還沒處理完的模組全部取消，不再觸發新的。
-// M12 終結處決是所有首領共通的：終結連擊的最後一題要答對才處決（見 battleStore）。
+// BOSS 0 血後，還沒處理完的模組全部取消，不再觸發新的。
+// M12 終結演出附著當次致命攻擊；不生成最後一題，也不讓首領免死（見 battleStore）。
 
 export type ModId = 'M01' | 'M02' | 'M03' | 'M04' | 'M05' | 'M06' | 'M07' | 'M08' | 'M09' | 'M10' | 'M11';
 export type ModPhase = 'idle' | 'active' | 'done' | 'over';

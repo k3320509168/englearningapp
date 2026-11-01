@@ -86,7 +86,7 @@ export interface BattleEvent {
   taunt?: boolean;                  // 戰士挑釁，替隊友擋下這一擊
   waveKill?: boolean;               // 擊倒這一波，下一隻怪物馬上登場
   execution?: boolean;              // 勝利後自選追擊練習的演出
-  slain?: boolean;                  // 處決：這一擊直接打倒首領／菁英（第二十一輪 B）
+  slain?: boolean;                  // 高Combo的致命一擊特效，不額外改變傷害
   finisher?: string;                // 連攜技名稱（依最後出手的職業）
   move?: { icon: string; name: string; hits: { member: MemberId; amount: number }[] }; // 敵人依攻擊模式出招
 }
@@ -175,7 +175,7 @@ interface BattleState {
   stageAnswers: number; // 這一關已經作答幾題（答對答錯都算）
   minAnswers: number;   // 勝利後追擊練習的參考題數（不限制擊殺）
   executing: boolean;   // 僅自選追擊練習時為 true
-  bonusLeft: number;    // 處決提早結算後，還可以「繼續追擊」的加成題數
+  bonusLeft: number;    // 首領／菁英倒下後，還可自選追擊的參考題數
   bonusRound: boolean;  // 正在做加成題（怪物已倒，不反擊、不影響結算）
   bonusGold: number;    // 這場加成題拿到的金幣（上限 BONUS_GOLD_CAP）
   bonusReturn: BattleState['phase'] | null; // 加成題做完回到哪個畫面
@@ -914,7 +914,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ runRunes: s.runRunes + 1 });
     }
     const stage = s.stages[s.stageIdx];
-    // 加成題（處決後繼續追擊）：怪物已經倒了，只給經驗與少量金幣，不再結算關卡
+    // 加成題（勝利後自選追擊）：怪物已經倒了，只給經驗與少量金幣，不再結算關卡
     if (s.bonusRound) {
       const gold = Math.min(BONUS_GOLD, Math.max(0, BONUS_GOLD_CAP - s.bonusGold));
       if (gold > 0) save().addGold(gold);
@@ -1053,14 +1053,13 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         critMult: 2 + attacker.mods.critDmg,
         extra: (s.weakenLeft > 0 ? 1 - s.weaken : 1) * firstHit * lowHp * teamwork * s.charge * armor * (s.blessed && !s.bossFight ? BLESSING_DAMAGE : 1) * talentDamage(attacker, combo, stage.bossMode),
       });
-    // 處決：combo、真的連對、答題量與正確率都夠了，這一擊直接打倒（不管剩多少血）
+    // 處決僅附著於真正致命一擊；不再強制改HP或要求題數／連對。
     const execKind = s.mode === 'normal' ? executeKindOf({
       bossMode: stage.bossMode, kind: stage.kind, revenge: stage.revenge, inMap: stageInMap(s.stageIdx),
       final: stage.kind === 'final' || (s.stageIdx === s.stages.length - 1 && stage.kind !== 'gate'), lastRegion: s.levelIdx === LEVELS.length - 1,
     }) : null;
-    const slain = !!execKind && s.monsterHp > 0 && canExecute(execKind, { combo, streak, answered: stageAnswers, correct: s.stageHits + 1, minAnswers: s.minAnswers });
-    const finishNow = !!execKind && canExecute(execKind, { combo, streak, answered: stageAnswers, correct: s.stageHits + 1, minAnswers: s.minAnswers });
-    const monsterHp = slain ? 0 : Math.max(0, s.monsterHp - damage);
+    const monsterHp = Math.max(0, s.monsterHp - damage);
+    const slain = !!execKind && s.monsterHp > 0 && canExecute(execKind, { combo, lethal: monsterHp <= 0 });
     // 吸血：傷害的一部分轉為出手隊員的生命（每擊最多回復最大生命的 10%）
     const steal = talentOf(attacker, 'lifesteal');
     if (steal > 0) party = party.map((m, i) => (i === attackerIdx && isAlive(m) ? { ...m, hp: Math.min(m.maxHp, m.hp + Math.min(Math.round(damage * steal), Math.round(m.maxHp * 0.1))) } : m));
@@ -1103,8 +1102,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       ...(finisher?.heal ? { stunned: null, mirageLeft: 0, staticStacks: 0, frostLeft: 0 } : {}),
       runDrops: mergeDrops(s.runDrops, drops), stageHits: s.stageHits + 1,
       event: nextEvent('attack', {
-        amount: slain ? s.monsterHp : damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion, bonus,
-        slain: slain || (finishNow && s.executing) || undefined,
+        amount: damage, gold, crit, fast: speed > 1 ? speed : undefined, member: attacker.id, bossQuestion: s.isBossQuestion, bonus,
+        slain: slain || undefined,
         levelUp, guardGained, drops: stageDone ? drops : undefined, waveKill,
         relay: relayFx ? `${relayFx.icon} ${relayFx.name}` : undefined,
         chain: chainStep.triggered ? aliveIds.length : undefined,

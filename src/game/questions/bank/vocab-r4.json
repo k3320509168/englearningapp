@@ -1,1 +1,1938 @@
-{}
+{
+  "EXERCISE": {
+    "pos": "n.",
+    "meaning": "運動",
+    "example": "Regular exercise is good for your health.",
+    "exampleZh": "規律的運動對你的健康有益。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "運動",
+        "examples": [
+          {
+            "en": "Regular exercise is good for your health.",
+            "zh": "規律的運動對你的健康有益。"
+          },
+          {
+            "en": "Swimming is a great form of exercise.",
+            "zh": "游泳是很棒的運動形式。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "運動",
+        "examples": [
+          {
+            "en": "I exercise at the gym three times a week.",
+            "zh": "我每週在健身房運動三次。"
+          },
+          {
+            "en": "You should exercise more often.",
+            "zh": "你應該更常運動。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXPECT": {
+    "pos": "v.",
+    "meaning": "期待/預期",
+    "example": "I was expecting a package when the courier finally arrived.",
+    "exampleZh": "當快遞員終於抵達時，我正期待著一個包裹。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "期待/預期",
+        "examples": [
+          {
+            "en": "I was expecting a package when the courier finally arrived.",
+            "zh": "當快遞員終於抵達時，我正期待著一個包裹。"
+          },
+          {
+            "en": "We expect to finish the tasks which you assigned to us.",
+            "zh": "我們預期能完成你指派給我們的任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "MANAGE": {
+    "pos": "v.",
+    "meaning": "設法做到/管理",
+    "example": "He managed to catch the bus which was delayed.",
+    "exampleZh": "他設法趕上了那班誤點的公車。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "設法做到/管理",
+        "examples": [
+          {
+            "en": "He managed to catch the bus which was delayed.",
+            "zh": "他設法趕上了那班誤點的公車。"
+          },
+          {
+            "en": "The person who manages this department is currently on leave.",
+            "zh": "管理這個部門的人目前正在休假。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTACHMENT": {
+    "pos": "n.",
+    "meaning": "附件",
+    "example": "Please remember to open the attachment which I sent earlier.",
+    "exampleZh": "請記得打開我稍早寄出的附件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "附件",
+        "examples": [
+          {
+            "en": "Please remember to open the attachment which I sent earlier.",
+            "zh": "請記得打開我稍早寄出的附件。"
+          },
+          {
+            "en": "He was reading the attachment when the computer suddenly shut down.",
+            "zh": "當電腦突然關機時，他正在閱讀附件。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRETEND": {
+    "pos": "v.",
+    "meaning": "假裝",
+    "example": "He pretended not to know the person who just walked inside.",
+    "exampleZh": "他假裝不認識剛走進來的那個人。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "假裝",
+        "examples": [
+          {
+            "en": "He pretended not to know the person who just walked inside.",
+            "zh": "他假裝不認識剛走進來的那個人。"
+          },
+          {
+            "en": "She was pretending to sleep when her sister opened the door.",
+            "zh": "當她妹妹開門時，她正假裝在睡覺。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUPERVISOR": {
+    "pos": "n.",
+    "meaning": "主管/監督者",
+    "example": "The supervisor who trained me expects everyone to work efficiently.",
+    "exampleZh": "培訓我的主管期望每個人都能有效率地工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主管/監督者",
+        "examples": [
+          {
+            "en": "The supervisor who trained me expects everyone to work efficiently.",
+            "zh": "培訓我的主管期望每個人都能有效率地工作。"
+          },
+          {
+            "en": "My supervisor was talking to a client when the alarm went off.",
+            "zh": "警報響起時，我的主管正在與客戶交談。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPLAIN": {
+    "pos": "v.",
+    "meaning": "抱怨",
+    "example": "He complained about the noise.",
+    "exampleZh": "他抱怨噪音太大。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "抱怨",
+        "examples": [
+          {
+            "en": "He complained about the noise.",
+            "zh": "他抱怨噪音太大。"
+          },
+          {
+            "en": "Customers often complain about poor service.",
+            "zh": "顧客常抱怨服務不佳。"
+          }
+        ]
+      }
+    ]
+  },
+  "GUIDANCE": {
+    "pos": "n.",
+    "meaning": "指導",
+    "example": "The manager who gave me guidance is very experienced.",
+    "exampleZh": "給我指導的經理非常有經驗。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "指導",
+        "examples": [
+          {
+            "en": "I was asking for his guidance when he suddenly left the office.",
+            "zh": "我正在尋求他的指導時，他突然離開了辦公室。"
+          },
+          {
+            "en": "We need your guidance to finish this task smoothly.",
+            "zh": "我們需要你的指導才能順利完成這項任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "CURRENCY": {
+    "pos": "n.",
+    "meaning": "貨幣",
+    "example": "Exchanging foreign currency is easy at this airport.",
+    "exampleZh": "在這個機場兌換外國貨幣很容易。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "貨幣",
+        "examples": [
+          {
+            "en": "The currency that they use in Japan is the yen.",
+            "zh": "他們在日本使用的貨幣是日圓。"
+          },
+          {
+            "en": "She was calculating the currency exchange rate during the flight.",
+            "zh": "在飛行途中，她正在計算貨幣匯率。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRANSFER": {
+    "pos": "v.",
+    "meaning": "轉交/轉移",
+    "example": "I was transferring the files when the computer crashed.",
+    "exampleZh": "當電腦當機時，我正在轉移檔案。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "轉交/轉移",
+        "examples": [
+          {
+            "en": "To transfer to another department requires the manager's approval.",
+            "zh": "轉調到另一個部門需要經理的核准。"
+          },
+          {
+            "en": "Transferring the materials safely is our top priority.",
+            "zh": "安全地轉交這些資料是我們的首要任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATMOSPHERE": {
+    "pos": "n.",
+    "meaning": "氣氛",
+    "example": "They were enjoying the relaxing atmosphere when it started to rain.",
+    "exampleZh": "當開始下雨時，他們正在享受放鬆的氣氛。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "氣氛",
+        "examples": [
+          {
+            "en": "Creating a good atmosphere at work is very important.",
+            "zh": "在工作場所營造良好的氣氛非常重要。"
+          },
+          {
+            "en": "The restaurant which we chose has a great atmosphere.",
+            "zh": "我們選擇的那家餐廳氣氛很棒。"
+          }
+        ]
+      }
+    ]
+  },
+  "MEMORABLE": {
+    "pos": "adj.",
+    "meaning": "難忘的",
+    "example": "The trip that we took last month was truly memorable.",
+    "exampleZh": "我們上個月去的旅行真的是令人難忘的。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "難忘的",
+        "examples": [
+          {
+            "en": "Making the event memorable is our main goal this year.",
+            "zh": "讓這場活動令人難忘是我們今年的主要目標。"
+          },
+          {
+            "en": "He was describing a memorable experience from his childhood.",
+            "zh": "他當時正在描述他童年一次難忘的經歷。"
+          }
+        ]
+      }
+    ]
+  },
+  "ITINERARY": {
+    "pos": "n.",
+    "meaning": "行程",
+    "example": "Planning a detailed itinerary requires a lot of research.",
+    "exampleZh": "規劃一份詳細的行程需要做很多研究。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "行程",
+        "examples": [
+          {
+            "en": "The itinerary which the travel agent provided looks amazing.",
+            "zh": "旅行社提供的行程看起來很棒。"
+          },
+          {
+            "en": "We were changing the itinerary because of the heavy rain.",
+            "zh": "因為大雨，我們當時正在更改行程。"
+          }
+        ]
+      }
+    ]
+  },
+  "SIGHTSEEING": {
+    "pos": "n.",
+    "meaning": "觀光",
+    "example": "Going sightseeing is my favorite part of traveling.",
+    "exampleZh": "去觀光是我旅行中最喜歡的部分。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "觀光",
+        "examples": [
+          {
+            "en": "We were sightseeing in Paris when we met an old friend.",
+            "zh": "我們在巴黎觀光時遇到了一位老朋友。"
+          },
+          {
+            "en": "The sightseeing tour that they booked includes a boat ride.",
+            "zh": "他們預訂的觀光行程包含搭船。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESPONSIBILITY": {
+    "pos": "n.",
+    "meaning": "責任",
+    "example": "Taking responsibility for your actions is a sign of maturity.",
+    "exampleZh": "對自己的行為負起責任是成熟的表現。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "責任",
+        "examples": [
+          {
+            "en": "The new task which involves managing the team is my responsibility.",
+            "zh": "這項涉及管理團隊的新任務是我的責任。"
+          },
+          {
+            "en": "She was explaining the responsibility of the job to the new employee.",
+            "zh": "她當時正在向新員工說明這份工作的責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXCHANGE": {
+    "pos": "v.",
+    "meaning": "交換",
+    "example": "I want to exchange this shirt for a larger one.",
+    "exampleZh": "我想把這件襯衫換成大一點的。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "交換；換貨",
+        "examples": [
+          {
+            "en": "They exchanged business cards after the meeting.",
+            "zh": "他們在會議後交換了名片。"
+          },
+          {
+            "en": "Can I exchange this for a different color?",
+            "zh": "我可以把這個換成不同的顏色嗎？"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交換；交流",
+        "examples": [
+          {
+            "en": "We had a brief exchange of opinions.",
+            "zh": "我們進行了簡短的意見交流。"
+          }
+        ]
+      }
+    ]
+  },
+  "ASSIST": {
+    "pos": "v.",
+    "meaning": "協助",
+    "example": "The staff is always ready to assist you.",
+    "exampleZh": "工作人員隨時準備為您提供協助。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "協助",
+        "examples": [
+          {
+            "en": "Please let me know if you need someone to assist you.",
+            "zh": "如果你需要人幫忙，請讓我知道。"
+          },
+          {
+            "en": "Our team will assist with the preparation.",
+            "zh": "我們的團隊將協助準備工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "OPERATOR": {
+    "pos": "n.",
+    "meaning": "接線生",
+    "example": "The operator will transfer your call shortly.",
+    "exampleZh": "接線生稍後會幫您轉接電話。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "接線生",
+        "examples": [
+          {
+            "en": "I waited on the line for an operator.",
+            "zh": "我在線上等待接線生服務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "操作員",
+        "examples": [
+          {
+            "en": "He is an experienced machine operator.",
+            "zh": "他是一位經驗豐富的機器操作員。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADMIT": {
+    "pos": "v.",
+    "meaning": "承認",
+    "example": "He admitted making a mistake on the report.",
+    "exampleZh": "他承認在報告上犯了錯。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "承認",
+        "examples": [
+          {
+            "en": "I must admit that you were right.",
+            "zh": "我必須承認你是對的。"
+          },
+          {
+            "en": "She admitted breaking the glass by accident.",
+            "zh": "她承認不小心打破了玻璃杯。"
+          }
+        ]
+      }
+    ]
+  },
+  "DENY": {
+    "pos": "v.",
+    "meaning": "否認",
+    "example": "The manager denied knowing about the problem.",
+    "exampleZh": "經理否認知道這個問題。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "否認",
+        "examples": [
+          {
+            "en": "They deny that they caused the delay.",
+            "zh": "他們否認是他們造成了延誤。"
+          },
+          {
+            "en": "He denied taking the money from the desk.",
+            "zh": "他否認從桌上拿了錢。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAULT": {
+    "pos": "n.",
+    "meaning": "過失",
+    "example": "I apologize, it was my fault.",
+    "exampleZh": "我道歉，這是我的過失。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "過失；錯誤",
+        "examples": [
+          {
+            "en": "It is not your fault that the meeting was delayed.",
+            "zh": "會議延誤不是你的錯。"
+          },
+          {
+            "en": "The system crash was a technical fault.",
+            "zh": "系統當機是一個技術故障。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISAPPOINT": {
+    "pos": "v.",
+    "meaning": "使失望",
+    "example": "I don't want to disappoint my team.",
+    "exampleZh": "我不想讓我的團隊失望。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使失望",
+        "examples": [
+          {
+            "en": "I don't want to disappoint my team.",
+            "zh": "我不想讓我的團隊失望。"
+          },
+          {
+            "en": "The ending of the movie disappointed everyone.",
+            "zh": "電影的結局讓每個人都感到失望。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONDITION": {
+    "pos": "n.",
+    "meaning": "狀況/條件",
+    "example": "The device is in perfect condition.",
+    "exampleZh": "這台設備狀況完美。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "狀況/條件",
+        "examples": [
+          {
+            "en": "The device is in perfect condition.",
+            "zh": "這台設備狀況完美。"
+          },
+          {
+            "en": "They working under difficult conditions.",
+            "zh": "他們在困難的條件下工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "WANDER": {
+    "pos": "v.",
+    "meaning": "漫遊/遊蕩",
+    "example": "We like to wander around the old town.",
+    "exampleZh": "我們喜歡在老城區裡漫遊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "漫遊/遊蕩",
+        "examples": [
+          {
+            "en": "We like to wander around the old town.",
+            "zh": "我們喜歡在老城區裡漫遊。"
+          },
+          {
+            "en": "He recognized a friend while he was wandering outside.",
+            "zh": "他在外面漫遊時認出了一位朋友。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUDDENLY": {
+    "pos": "adv.",
+    "meaning": "突然地",
+    "example": "We were walking when it suddenly rained.",
+    "exampleZh": "我們散步時突然下雨了。",
+    "senses": [
+      {
+        "pos": "adv.",
+        "meaning": "突然地",
+        "examples": [
+          {
+            "en": "We were walking when it suddenly rained.",
+            "zh": "我們散步時突然下雨了。"
+          },
+          {
+            "en": "Suddenly, the lights went out.",
+            "zh": "突然間，燈全滅了。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECOGNIZE": {
+    "pos": "v.",
+    "meaning": "認出/承認",
+    "example": "I didn't recognize you in that hat.",
+    "exampleZh": "你戴那頂帽子我都認不出你來了。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "認出",
+        "examples": [
+          {
+            "en": "I didn't recognize you in that hat.",
+            "zh": "你戴那頂帽子我都認不出你來了。"
+          },
+          {
+            "en": "He recognized a friend on the street.",
+            "zh": "他在街上認出了一位朋友。"
+          }
+        ]
+      }
+    ]
+  },
+  "PASSIONATE": {
+    "pos": "adj.",
+    "meaning": "熱情的",
+    "example": "She is passionate about helping others.",
+    "exampleZh": "她對於幫助他人充滿熱情。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "熱情的",
+        "examples": [
+          {
+            "en": "She is passionate about helping others.",
+            "zh": "她對於幫助他人充滿熱情。"
+          },
+          {
+            "en": "I am a passionate traveler.",
+            "zh": "我是一個熱情的旅行者。"
+          }
+        ]
+      }
+    ]
+  },
+  "REWARD": {
+    "pos": "n.",
+    "meaning": "獎勵",
+    "example": "He received a reward for his hard work.",
+    "exampleZh": "他因為努力工作而獲得獎勵。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "獎勵；報酬",
+        "examples": [
+          {
+            "en": "There is a reward for finding the lost dog.",
+            "zh": "尋獲走失的狗有懸賞金。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "獎賞",
+        "examples": [
+          {
+            "en": "She rewarded herself with a good meal.",
+            "zh": "她用一頓大餐來犒賞自己。"
+          }
+        ]
+      }
+    ]
+  },
+  "PERSUADE": {
+    "pos": "v.",
+    "meaning": "說服",
+    "example": "I tried to persuade her to stay.",
+    "exampleZh": "我試著說服她留下來。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "說服",
+        "examples": [
+          {
+            "en": "He finally persuaded his boss to agree.",
+            "zh": "他最終說服了老闆同意。"
+          },
+          {
+            "en": "You cannot persuade me to buy it.",
+            "zh": "你無法說服我買它。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMPROMISE": {
+    "pos": "n.",
+    "meaning": "妥協",
+    "example": "We need to reach a compromise.",
+    "exampleZh": "我們需要達成妥協。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "妥協",
+        "examples": [
+          {
+            "en": "They finally reached a compromise.",
+            "zh": "他們最終達成了妥協。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "妥協；讓步",
+        "examples": [
+          {
+            "en": "Neither side is willing to compromise.",
+            "zh": "雙方都不願意妥協。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAINTAIN": {
+    "pos": "v.",
+    "meaning": "維持",
+    "example": "It is hard to maintain a balance.",
+    "exampleZh": "維持平衡是很困難的。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "維持；保養",
+        "examples": [
+          {
+            "en": "We must maintain high standards.",
+            "zh": "我們必須維持高標準。"
+          },
+          {
+            "en": "He maintains his car very well.",
+            "zh": "他把車保養得很好。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONCENTRATE": {
+    "pos": "v.",
+    "meaning": "專心",
+    "example": "Please concentrate on your work.",
+    "exampleZh": "請專心於你的工作。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "專心；集中",
+        "examples": [
+          {
+            "en": "I cannot concentrate because of the noise.",
+            "zh": "因為噪音我無法專心。"
+          },
+          {
+            "en": "She concentrated on reading the document.",
+            "zh": "她專心閱讀那份文件。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSTALL": {
+    "pos": "v.",
+    "meaning": "安裝",
+    "example": "I need to install this software.",
+    "exampleZh": "我需要安裝這個軟體。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "安裝",
+        "examples": [
+          {
+            "en": "They will install the new system tomorrow.",
+            "zh": "他們明天會安裝新系統。"
+          },
+          {
+            "en": "We hired someone to install the air conditioner.",
+            "zh": "我們請人來安裝冷氣機。"
+          }
+        ]
+      }
+    ]
+  },
+  "IDENTIFY": {
+    "pos": "v.",
+    "meaning": "識別；辨認",
+    "example": "Can you identify the man in the photo?",
+    "exampleZh": "你能認出照片中的男人嗎？",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "識別；確認",
+        "examples": [
+          {
+            "en": "We need to identify the core problem.",
+            "zh": "我們需要找出核心問題。"
+          },
+          {
+            "en": "Passengers must identify their luggage.",
+            "zh": "乘客必須指認自己的行李。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXAMINE": {
+    "pos": "v.",
+    "meaning": "檢查",
+    "example": "The doctor will examine you soon.",
+    "exampleZh": "醫生很快會為你檢查。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "檢查；審查",
+        "examples": [
+          {
+            "en": "They examined the contract carefully.",
+            "zh": "他們仔細檢查了合約。"
+          },
+          {
+            "en": "The police are examining the evidence.",
+            "zh": "警方正在檢查證據。"
+          }
+        ]
+      }
+    ]
+  },
+  "APPLICANT": {
+    "pos": "n.",
+    "meaning": "申請人",
+    "example": "There are many applicants for this job.",
+    "exampleZh": "這份工作有很多申請人。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "申請人",
+        "examples": [
+          {
+            "en": "The successful applicant will start next week.",
+            "zh": "錄取的申請人下週將開始工作。"
+          },
+          {
+            "en": "We interviewed three applicants yesterday.",
+            "zh": "我們昨天面試了三位申請人。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPACIOUS": {
+    "pos": "adj.",
+    "meaning": "寬敞的",
+    "example": "The room that we booked was very spacious.",
+    "exampleZh": "我們預訂的房間非常寬敞。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "寬敞的",
+        "examples": [
+          {
+            "en": "The room that we booked was very spacious.",
+            "zh": "我們預訂的房間非常寬敞。"
+          },
+          {
+            "en": "Finding a spacious apartment in the city is not easy.",
+            "zh": "在城市裡找到一間寬敞的公寓並不容易。"
+          }
+        ]
+      }
+    ]
+  },
+  "RENOVATE": {
+    "pos": "v.",
+    "meaning": "翻新",
+    "example": "They plan to renovate the office next month.",
+    "exampleZh": "他們計畫下個月翻新辦公室。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "翻新",
+        "examples": [
+          {
+            "en": "They plan to renovate the office next month.",
+            "zh": "他們計畫下個月翻新辦公室。"
+          },
+          {
+            "en": "We were renovating the kitchen when we discovered a leak.",
+            "zh": "我們在翻新廚房時發現了漏水。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSPECT": {
+    "pos": "v.",
+    "meaning": "檢查",
+    "example": "The officer who inspected our site was very professional.",
+    "exampleZh": "檢查我們場地的官員非常專業。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "檢查",
+        "examples": [
+          {
+            "en": "The officer who inspected our site was very professional.",
+            "zh": "檢查我們場地的官員非常專業。"
+          },
+          {
+            "en": "We need to inspect the vehicle before driving.",
+            "zh": "我們需要在駕駛前檢查車輛。"
+          }
+        ]
+      }
+    ]
+  },
+  "WITNESS": {
+    "pos": "v.",
+    "meaning": "目擊",
+    "example": "I was walking home when I witnessed the accident.",
+    "exampleZh": "我走路回家時目擊了這場意外。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "目擊",
+        "examples": [
+          {
+            "en": "I was walking home when I witnessed the accident.",
+            "zh": "我走路回家時目擊了這場意外。"
+          },
+          {
+            "en": "Anyone who witnessed the event should contact the police.",
+            "zh": "任何目擊該事件的人都應聯繫警方。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "目擊者",
+        "examples": [
+          {
+            "en": "The witness who saw the crash provided a detailed report.",
+            "zh": "看到碰撞的目擊者提供了一份詳細的報告。"
+          },
+          {
+            "en": "Being a witness to a crime can be stressful.",
+            "zh": "成為犯罪的目擊者可能會帶來壓力。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESPOND": {
+    "pos": "v.",
+    "meaning": "回應",
+    "example": "She was responding to emails when her laptop froze.",
+    "exampleZh": "她的筆記型電腦當機時，她正在回覆電子郵件。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "回應",
+        "examples": [
+          {
+            "en": "She was responding to emails when her laptop froze.",
+            "zh": "她的筆記型電腦當機時，她正在回覆電子郵件。"
+          },
+          {
+            "en": "The staff member who responded to my inquiry was very helpful.",
+            "zh": "回應我詢問的員工非常有幫助。"
+          }
+        ]
+      }
+    ]
+  },
+  "MOTIVATE": {
+    "pos": "v.",
+    "meaning": "激勵",
+    "example": "A good manager knows how to motivate employees.",
+    "exampleZh": "優秀的經理知道如何激勵員工。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "激勵",
+        "examples": [
+          {
+            "en": "A good manager knows how to motivate employees.",
+            "zh": "優秀的經理知道如何激勵員工。"
+          },
+          {
+            "en": "The speech that she delivered motivated everyone in the room.",
+            "zh": "她發表的演講激勵了房間裡的每個人。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESOURCE": {
+    "pos": "n.",
+    "meaning": "資源",
+    "example": "We need to allocate the resources that we have carefully.",
+    "exampleZh": "我們需要謹慎分配我們擁有的資源。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資源",
+        "examples": [
+          {
+            "en": "We need to allocate the resources that we have carefully.",
+            "zh": "我們需要謹慎分配我們擁有的資源。"
+          },
+          {
+            "en": "Managing human resources is a complex task.",
+            "zh": "管理人力資源是一項複雜的任務。"
+          }
+        ]
+      }
+    ]
+  },
+  "OBJECTIVE": {
+    "pos": "n.",
+    "meaning": "目標",
+    "example": "Our main objective is to satisfy our customers.",
+    "exampleZh": "我們的主要目標是讓客戶滿意。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "目標",
+        "examples": [
+          {
+            "en": "Our main objective is to satisfy our customers.",
+            "zh": "我們的主要目標是讓客戶滿意。"
+          },
+          {
+            "en": "The objective which we set was finally met.",
+            "zh": "我們設定的目標終於達成了。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCIDENT": {
+    "pos": "n.",
+    "meaning": "事件",
+    "example": "I was reporting the incident when the police arrived.",
+    "exampleZh": "警察抵達時，我正在報告這起事件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "事件",
+        "examples": [
+          {
+            "en": "I was reporting the incident when the police arrived.",
+            "zh": "警察抵達時，我正在報告這起事件。"
+          },
+          {
+            "en": "The incident that occurred yesterday is still under investigation.",
+            "zh": "昨天發生的事件仍在調查中。"
+          }
+        ]
+      }
+    ]
+  },
+  "NEIGHBORHOOD": {
+    "pos": "n.",
+    "meaning": "社區/鄰近地區",
+    "example": "We were exploring the neighborhood when we found this cafe.",
+    "exampleZh": "我們在探索這個社區時發現了這家咖啡館。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "社區/鄰近地區",
+        "examples": [
+          {
+            "en": "We were exploring the neighborhood when we found this cafe.",
+            "zh": "我們在探索這個社區時發現了這家咖啡館。"
+          },
+          {
+            "en": "This is a quiet neighborhood which is perfect for families.",
+            "zh": "這是一個非常適合家庭居住的寧靜社區。"
+          }
+        ]
+      }
+    ]
+  },
+  "AFFORDABLE": {
+    "pos": "adj.",
+    "meaning": "負擔得起的",
+    "example": "Finding affordable housing in the city is getting harder.",
+    "exampleZh": "在城市裡尋找負擔得起的住房變得越來越困難。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "負擔得起的",
+        "examples": [
+          {
+            "en": "Finding affordable housing in the city is getting harder.",
+            "zh": "在城市裡尋找負擔得起的住房變得越來越困難。"
+          },
+          {
+            "en": "The product that they launched is highly affordable.",
+            "zh": "他們推出的產品價格非常實惠。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESCHEDULE": {
+    "pos": "v.",
+    "meaning": "重新安排",
+    "example": "We need to reschedule the meeting for tomorrow.",
+    "exampleZh": "我們需要將會議重新安排到明天。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "重新安排",
+        "examples": [
+          {
+            "en": "We need to reschedule the meeting for tomorrow.",
+            "zh": "我們需要將會議重新安排到明天。"
+          },
+          {
+            "en": "Can we reschedule our appointment?",
+            "zh": "我們可以重新安排預約時間嗎？"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERRUPT": {
+    "pos": "v.",
+    "meaning": "打斷",
+    "example": "Please do not interrupt me while I am speaking.",
+    "exampleZh": "我說話時請不要打斷我。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "打斷",
+        "examples": [
+          {
+            "en": "Please do not interrupt me while I am speaking.",
+            "zh": "我說話時請不要打斷我。"
+          },
+          {
+            "en": "The sudden noise interrupted my work.",
+            "zh": "突然的噪音打斷了我的工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "SURFING": {
+    "pos": "n.",
+    "meaning": "衝浪",
+    "example": "He wants to try surfing this summer.",
+    "exampleZh": "他今年夏天想嘗試衝浪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "衝浪",
+        "examples": [
+          {
+            "en": "He wants to try surfing this summer.",
+            "zh": "他今年夏天想嘗試衝浪。"
+          },
+          {
+            "en": "Surfing is very popular in this town.",
+            "zh": "衝浪在這個小鎮非常受歡迎。"
+          }
+        ]
+      }
+    ]
+  },
+  "PHOTOGRAPHY": {
+    "pos": "n.",
+    "meaning": "攝影",
+    "example": "She took a course in digital photography.",
+    "exampleZh": "她上了一門數位攝影課程。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "攝影",
+        "examples": [
+          {
+            "en": "She took a course in digital photography.",
+            "zh": "她上了一門數位攝影課程。"
+          },
+          {
+            "en": "His passion for photography grew over the years.",
+            "zh": "這些年來他對攝影的熱情與日俱增。"
+          }
+        ]
+      }
+    ]
+  },
+  "PAPERWORK": {
+    "pos": "n.",
+    "meaning": "文書工作",
+    "example": "I have a lot of paperwork to do today.",
+    "exampleZh": "我今天有很多文書工作要做。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "文書工作",
+        "examples": [
+          {
+            "en": "I have a lot of paperwork to do today.",
+            "zh": "我今天有很多文書工作要做。"
+          },
+          {
+            "en": "She hates doing the office paperwork.",
+            "zh": "她討厭做辦公室的文書工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "COWORKER": {
+    "pos": "n.",
+    "meaning": "同事",
+    "example": "My coworker helped me finish the project.",
+    "exampleZh": "我的同事幫我完成了專案。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "同事",
+        "examples": [
+          {
+            "en": "My coworker helped me finish the project.",
+            "zh": "我的同事幫我完成了專案。"
+          },
+          {
+            "en": "He went to lunch with his coworkers.",
+            "zh": "他和同事們去吃午餐了。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTRACTION": {
+    "pos": "n.",
+    "meaning": "景點",
+    "example": "The museum is a popular tourist attraction.",
+    "exampleZh": "這間博物館是受歡迎的觀光景點。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "景點",
+        "examples": [
+          {
+            "en": "The museum is a popular tourist attraction.",
+            "zh": "這間博物館是受歡迎的觀光景點。"
+          },
+          {
+            "en": "What are the main attractions in this city?",
+            "zh": "這座城市的主要景點有哪些？"
+          }
+        ]
+      }
+    ]
+  },
+  "HISTORICAL": {
+    "pos": "adj.",
+    "meaning": "歷史的",
+    "example": "I want to visit the historical museum.",
+    "exampleZh": "我想去參觀那間歷史博物館。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "歷史的",
+        "examples": [
+          {
+            "en": "I want to visit the historical museum.",
+            "zh": "我想去參觀那間歷史博物館。"
+          },
+          {
+            "en": "This building has great historical value.",
+            "zh": "這棟建築具有很高的歷史價值。"
+          }
+        ]
+      }
+    ]
+  },
+  "DOWNTOWN": {
+    "pos": "n.",
+    "meaning": "市中心",
+    "example": "We work in downtown Taipei.",
+    "exampleZh": "我們在台北市中心工作。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "市中心",
+        "examples": [
+          {
+            "en": "We work in downtown Taipei.",
+            "zh": "我們在台北市中心工作。"
+          },
+          {
+            "en": "Parking is difficult in the downtown area.",
+            "zh": "市中心區域很難停車。"
+          }
+        ]
+      },
+      {
+        "pos": "adv.",
+        "meaning": "往市中心",
+        "examples": [
+          {
+            "en": "She took a bus downtown.",
+            "zh": "她搭公車去市中心。"
+          }
+        ]
+      }
+    ]
+  },
+  "HESITATE": {
+    "pos": "v.",
+    "meaning": "猶豫",
+    "example": "Please do not hesitate to contact us.",
+    "exampleZh": "請不要猶豫與我們聯繫。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "猶豫",
+        "examples": [
+          {
+            "en": "Please do not hesitate to contact us.",
+            "zh": "請不要猶豫與我們聯繫。"
+          },
+          {
+            "en": "She hesitated before accepting the offer.",
+            "zh": "她在接受這個提議前猶豫了一下。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAVOR": {
+    "pos": "n.",
+    "meaning": "幫忙",
+    "example": "Can I ask you for a favor?",
+    "exampleZh": "我可以請你幫個忙嗎？",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "幫忙",
+        "examples": [
+          {
+            "en": "Can I ask you for a favor?",
+            "zh": "我可以請你幫個忙嗎？"
+          },
+          {
+            "en": "He did me a huge favor yesterday.",
+            "zh": "他昨天幫了我一個大忙。"
+          }
+        ]
+      }
+    ]
+  },
+  "COURIER": {
+    "pos": "n.",
+    "meaning": "快遞",
+    "example": "I will send the documents by courier.",
+    "exampleZh": "我會用快遞寄送這些文件。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "快遞",
+        "examples": [
+          {
+            "en": "I will send the documents by courier.",
+            "zh": "我會用快遞寄送這些文件。"
+          },
+          {
+            "en": "The courier just left a package for you.",
+            "zh": "快遞員剛留了一件包裹給你。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBURB": {
+    "pos": "n.",
+    "meaning": "郊區",
+    "example": "They bought a house in the suburbs.",
+    "exampleZh": "他們在郊區買了一棟房子。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "郊區",
+        "examples": [
+          {
+            "en": "They bought a house in the suburbs.",
+            "zh": "他們在郊區買了一棟房子。"
+          },
+          {
+            "en": "Life in the suburb is usually quieter.",
+            "zh": "郊區的生活通常比較安靜。"
+          }
+        ]
+      }
+    ]
+  },
+  "MECHANIC": {
+    "pos": "n.",
+    "meaning": "技師",
+    "example": "The mechanic who fixed my car is skilled.",
+    "exampleZh": "修理我車子的技師技術很好。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "技師",
+        "examples": [
+          {
+            "en": "The mechanic who fixed my car is skilled.",
+            "zh": "修理我車子的技師技術很好。"
+          },
+          {
+            "en": "We should take the car to a mechanic.",
+            "zh": "我們應該把車開去給技師看看。"
+          }
+        ]
+      }
+    ]
+  },
+  "LANDSCAPE": {
+    "pos": "n.",
+    "meaning": "風景",
+    "example": "The landscape which you can see from the train is amazing.",
+    "exampleZh": "你從火車上能看到的風景非常驚人。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "風景",
+        "examples": [
+          {
+            "en": "The landscape which you can see from the train is amazing.",
+            "zh": "你從火車上能看到的風景非常驚人。"
+          },
+          {
+            "en": "We stopped to take pictures of the beautiful landscape.",
+            "zh": "我們停下來拍攝這美麗的風景。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUTHENTIC": {
+    "pos": "adj.",
+    "meaning": "道地的",
+    "example": "Finding authentic local food is my main goal when traveling.",
+    "exampleZh": "尋找道地的當地美食是我旅行時的主要目標。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "道地的",
+        "examples": [
+          {
+            "en": "Finding authentic local food is my main goal when traveling.",
+            "zh": "尋找道地的當地美食是我旅行時的主要目標。"
+          },
+          {
+            "en": "The restaurant that serves authentic Italian pasta is nearby.",
+            "zh": "那家提供道地義大利麵的餐廳就在附近。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTENTIVE": {
+    "pos": "adj.",
+    "meaning": "體貼的；專注的",
+    "example": "The waiter who served us was very attentive and polite.",
+    "exampleZh": "為我們服務的服務生非常體貼且有禮貌。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "體貼的；專注的",
+        "examples": [
+          {
+            "en": "The waiter who served us was very attentive and polite.",
+            "zh": "為我們服務的服務生非常體貼且有禮貌。"
+          },
+          {
+            "en": "It is important to be attentive when listening to the speaker.",
+            "zh": "聽講者說話時保持專注是很重要的。"
+          }
+        ]
+      }
+    ]
+  },
+  "REASONABLE": {
+    "pos": "adj.",
+    "meaning": "合理的",
+    "example": "We chose a hotel that offers a reasonable price.",
+    "exampleZh": "我們選擇了一家提供合理價格的飯店。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "合理的",
+        "examples": [
+          {
+            "en": "We chose a hotel that offers a reasonable price.",
+            "zh": "我們選擇了一家提供合理價格的飯店。"
+          },
+          {
+            "en": "Setting a reasonable timeframe is necessary for the task.",
+            "zh": "為這項任務設定合理的時間表是必要的。"
+          }
+        ]
+      }
+    ]
+  },
+  "CLARIFY": {
+    "pos": "v.",
+    "meaning": "澄清",
+    "example": "Could you clarify the details that you sent this morning?",
+    "exampleZh": "你可以澄清一下你今天早上寄來的細節嗎？",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "澄清",
+        "examples": [
+          {
+            "en": "Could you clarify the details that you sent this morning?",
+            "zh": "你可以澄清一下你今天早上寄來的細節嗎？"
+          },
+          {
+            "en": "I am writing to clarify some points about the upcoming event.",
+            "zh": "我寫信是為了澄清關於即將舉行的活動的一些重點。"
+          }
+        ]
+      }
+    ]
+  },
+  "APPROVAL": {
+    "pos": "n.",
+    "meaning": "批准；同意",
+    "example": "Getting the final approval from the boss took a long time.",
+    "exampleZh": "從老闆那裡獲得最終批准花了很多時間。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "批准；同意",
+        "examples": [
+          {
+            "en": "Getting the final approval from the boss took a long time.",
+            "zh": "從老闆那裡獲得最終批准花了很多時間。"
+          },
+          {
+            "en": "The budget plan that needs your approval is on your desk.",
+            "zh": "需要您批准的預算計畫在您的桌上。"
+          }
+        ]
+      }
+    ]
+  },
+  "REMINDER": {
+    "pos": "n.",
+    "meaning": "提醒",
+    "example": "I am sending this email to serve as a gentle reminder.",
+    "exampleZh": "我寄這封電子郵件是作為一個善意的提醒。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "提醒",
+        "examples": [
+          {
+            "en": "I am sending this email to serve as a gentle reminder.",
+            "zh": "我寄這封電子郵件是作為一個善意的提醒。"
+          },
+          {
+            "en": "The reminder that popped up on my phone helped me remember the meeting.",
+            "zh": "我手機上跳出的提醒幫我想起了這個會議。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATTENDANCE": {
+    "pos": "n.",
+    "meaning": "出席；出席率",
+    "example": "Checking attendance is the first thing the teacher does every class.",
+    "exampleZh": "點名（確認出席）是老師每堂課做的第一件事。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "出席；出席率",
+        "examples": [
+          {
+            "en": "Checking attendance is the first thing the teacher does every class.",
+            "zh": "點名（確認出席）是老師每堂課做的第一件事。"
+          },
+          {
+            "en": "The worker who had perfect attendance got a gift.",
+            "zh": "擁有全勤紀錄的員工獲得了一份禮物。"
+          }
+        ]
+      }
+    ]
+  },
+  "REGISTER": {
+    "pos": "v.",
+    "meaning": "註冊；登記",
+    "example": "You need to register for the course that starts next Monday.",
+    "exampleZh": "你需要註冊下週一開始的課程。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "註冊；登記",
+        "examples": [
+          {
+            "en": "You need to register for the course that starts next Monday.",
+            "zh": "你需要註冊下週一開始的課程。"
+          },
+          {
+            "en": "Registering early gives you an advantage in choosing a seat.",
+            "zh": "提早註冊讓你在選位上具有優勢。"
+          }
+        ]
+      }
+    ]
+  },
+  "OVERALL": {
+    "pos": "adj.",
+    "meaning": "整體的",
+    "example": "The overall experience that we had at the resort was wonderful.",
+    "exampleZh": "我們在度假村擁有的整體體驗非常棒。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "整體的",
+        "examples": [
+          {
+            "en": "The overall experience that we had at the resort was wonderful.",
+            "zh": "我們在度假村擁有的整體體驗非常棒。"
+          },
+          {
+            "en": "Reviewing the overall plan is what we hope to do today.",
+            "zh": "審查整體計畫是我們今天希望能做的事。"
+          }
+        ]
+      }
+    ]
+  },
+  "FASCINATING": {
+    "pos": "adj.",
+    "meaning": "迷人的",
+    "example": "The museum which we visited yesterday had a fascinating exhibition.",
+    "exampleZh": "我們昨天參觀的博物館有一個迷人的展覽。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "迷人的",
+        "examples": [
+          {
+            "en": "The museum which we visited yesterday had a fascinating exhibition.",
+            "zh": "我們昨天參觀的博物館有一個迷人的展覽。"
+          },
+          {
+            "en": "I find exploring new cities to be a fascinating experience.",
+            "zh": "我覺得探索新城市是一次迷人的體驗。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARTICIPATE": {
+    "pos": "v.",
+    "meaning": "參加",
+    "example": "I decided to participate in the workshop that the company hosted.",
+    "exampleZh": "我決定參加公司舉辦的工作坊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "參加",
+        "examples": [
+          {
+            "en": "I decided to participate in the workshop that the company hosted.",
+            "zh": "我決定參加公司舉辦的工作坊。"
+          },
+          {
+            "en": "They were participating in a group discussion when the fire alarm rang.",
+            "zh": "當火災警報響起時，他們正在參加小組討論。"
+          }
+        ]
+      }
+    ]
+  },
+  "PREFERENCE": {
+    "pos": "n.",
+    "meaning": "偏好",
+    "example": "Please let me know the preference that you have for the meeting time.",
+    "exampleZh": "請讓我知道你對會議時間的偏好。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "偏好",
+        "examples": [
+          {
+            "en": "Please let me know the preference that you have for the meeting time.",
+            "zh": "請讓我知道你對會議時間的偏好。"
+          },
+          {
+            "en": "Stating your dietary preferences in advance is always a good idea.",
+            "zh": "事先說明你的飲食偏好永遠是個好主意。"
+          }
+        ]
+      }
+    ]
+  },
+  "MANUAL": {
+    "pos": "n.",
+    "meaning": "手冊",
+    "example": "Reading the manual is necessary before using the machine.",
+    "exampleZh": "在使用機器之前閱讀手冊是必要的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "手冊",
+        "examples": [
+          {
+            "en": "Reading the manual is necessary before using the machine.",
+            "zh": "在使用機器之前閱讀手冊是必要的。"
+          },
+          {
+            "en": "I was looking for the manual that came with the product.",
+            "zh": "我當時正在尋找隨產品附上的手冊。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESIDENT": {
+    "pos": "n.",
+    "meaning": "居民",
+    "example": "The residents who live here are happy with the new rules.",
+    "exampleZh": "住在這兒的居民對新規定感到很滿意。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "居民",
+        "examples": [
+          {
+            "en": "The residents who live here are happy with the new rules.",
+            "zh": "住在這兒的居民對新規定感到很滿意。"
+          },
+          {
+            "en": "We were informing every resident about the temporary water shutoff.",
+            "zh": "我們當時正在通知每位居民關於暫時停水的事。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPRESSIVE": {
+    "pos": "adj.",
+    "meaning": "令人印象深刻的",
+    "example": "It was impressive to see so many people at the event.",
+    "exampleZh": "在活動中看到這麼多人真是令人印象深刻。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "令人印象深刻的",
+        "examples": [
+          {
+            "en": "It was impressive to see so many people at the event.",
+            "zh": "在活動中看到這麼多人真是令人印象深刻。"
+          },
+          {
+            "en": "The presentation that she gave was truly impressive.",
+            "zh": "她所做的簡報真的很令人印象深刻。"
+          }
+        ]
+      }
+    ]
+  },
+  "SHORTAGE": {
+    "pos": "n.",
+    "meaning": "短缺",
+    "example": "The shortage of materials is causing some delays.",
+    "exampleZh": "材料的短缺正在造成一些延誤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "短缺",
+        "examples": [
+          {
+            "en": "The shortage of materials is causing some delays.",
+            "zh": "材料的短缺正在造成一些延誤。"
+          },
+          {
+            "en": "We were experiencing a shortage when the supplier closed.",
+            "zh": "當供應商倒閉時，我們正在經歷物資短缺。"
+          }
+        ]
+      }
+    ]
+  },
+  "ESSENTIAL": {
+    "pos": "adj.",
+    "meaning": "基本的/不可或缺的",
+    "example": "It is essential to read the instructions carefully.",
+    "exampleZh": "仔細閱讀說明是不可或缺的。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "基本的/不可或缺的",
+        "examples": [
+          {
+            "en": "It is essential to read the instructions carefully.",
+            "zh": "仔細閱讀說明是不可或缺的。"
+          },
+          {
+            "en": "The skills that you learn here are essential for the job.",
+            "zh": "你在這裡學到的技能對這份工作是不可或缺的。"
+          }
+        ]
+      }
+    ]
+  },
+  "EMBARRASSED": {
+    "pos": "adj.",
+    "meaning": "尷尬的",
+    "example": "I felt embarrassed about making a mistake during the community meeting.",
+    "exampleZh": "對於在社區會議中犯錯，我感到很尷尬。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "尷尬的",
+        "examples": [
+          {
+            "en": "I felt embarrassed about making a mistake during the community meeting.",
+            "zh": "對於在社區會議中犯錯，我感到很尷尬。"
+          },
+          {
+            "en": "She was feeling embarrassed while she was reading the complaint.",
+            "zh": "當她閱讀投訴信時，她感到很尷尬。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECOMMENDATION": {
+    "pos": "n.",
+    "meaning": "推薦",
+    "example": "We are writing to give a recommendation for the new software.",
+    "exampleZh": "我們寫信是為了給這款新軟體提供推薦。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "推薦",
+        "examples": [
+          {
+            "en": "We are writing to give a recommendation for the new software.",
+            "zh": "我們寫信是為了給這款新軟體提供推薦。"
+          },
+          {
+            "en": "Following his recommendation is the best way to avoid problems.",
+            "zh": "聽從他的推薦是避免問題的最佳方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANNOUNCEMENT": {
+    "pos": "n.",
+    "meaning": "公告",
+    "example": "I am writing to make an announcement regarding the upcoming trip.",
+    "exampleZh": "我寫信是為了針對即將到來的旅行發布一則公告。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公告",
+        "examples": [
+          {
+            "en": "I am writing to make an announcement regarding the upcoming trip.",
+            "zh": "我寫信是為了針對即將到來的旅行發布一則公告。"
+          },
+          {
+            "en": "The manager who made the announcement answered our questions.",
+            "zh": "發布公告的經理回答了我們的問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONVENIENCE": {
+    "pos": "n.",
+    "meaning": "便利",
+    "example": "We are adding new features to increase your convenience.",
+    "exampleZh": "我們正在增加新功能以提升您的便利性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "便利",
+        "examples": [
+          {
+            "en": "We are adding new features to increase your convenience.",
+            "zh": "我們正在增加新功能以提升您的便利性。"
+          },
+          {
+            "en": "I was planning the trip for your convenience.",
+            "zh": "為了您的方便，我當時正在計畫這趟旅行。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISTURBANCE": {
+    "pos": "n.",
+    "meaning": "打擾/干擾",
+    "example": "We apologize for creating a disturbance during the renovation.",
+    "exampleZh": "我們對於在翻修期間造成的打擾深表歉意。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "打擾/干擾",
+        "examples": [
+          {
+            "en": "We apologize for creating a disturbance during the renovation.",
+            "zh": "我們對於在翻修期間造成的打擾深表歉意。"
+          },
+          {
+            "en": "The noise which caused the disturbance has stopped.",
+            "zh": "造成干擾的噪音已經停止了。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEPARTURE": {
+    "pos": "n.",
+    "meaning": "出發",
+    "example": "Our time of departure is 8 AM.",
+    "exampleZh": "我們的出發時間是早上八點。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "出發",
+        "examples": [
+          {
+            "en": "The departure was delayed due to heavy rain.",
+            "zh": "由於大雨，出發時間延遲了。"
+          },
+          {
+            "en": "Please check the departure board for your flight.",
+            "zh": "請查看航班出發時刻表。"
+          }
+        ]
+      }
+    ]
+  }
+}

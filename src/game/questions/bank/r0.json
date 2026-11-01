@@ -7532,6 +7532,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】The ___ is on the desk.",
       "options": [
         "A. pen",
@@ -7587,6 +7588,9 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】___ are two birds in the park.",
+=======
+      "desc": "【生活文法】含有 there is/are 的英文句子",
+>>>>>>> origin/feat/round4
       "options": [
         "A. They",
         "B. Their",
@@ -7604,6 +7608,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【職場字彙】My computer is on the ___ in the office.",
       "options": [
         "A. desk",
@@ -7619,6 +7624,9 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】He can ___ very well.",
+=======
+      "desc": "【生活文法】含有助動詞 can 的英文句子",
+>>>>>>> origin/feat/round4
       "options": [
         "A. to sing",
         "B. sing",
@@ -7635,6 +7643,7 @@
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【旅遊文法】___ flight is late, so we wait at the airport.",
       "options": [
@@ -7861,6 +7870,8 @@
     {
       "type": "choice",
       "skill": "reading",
+=======
+>>>>>>> origin/feat/round4
       "difficulty": 2,
       "desc": "【旅遊對話】A: ___ a bank near here? B: Yes, there is. It is on this street.",
       "options": [
@@ -7879,6 +7890,7 @@
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 2,
       "desc": "【職場介系詞】A: When is the meeting? B: It is ___ 10:00.",
       "options": [
@@ -8011,6 +8023,8 @@
     {
       "type": "choice",
       "skill": "reading",
+=======
+>>>>>>> origin/feat/round4
       "difficulty": 3,
       "desc": "【短文理解】[Note] Please put the paper on the desk. Do not put it on the sofa.\nQ: Where does the paper go?",
       "options": [
@@ -8152,6 +8166,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】I ___ hungry. Can we eat lunch now?",
       "options": [
         "A. is",
@@ -8165,30 +8180,770 @@
         "be_verb"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【家庭文法】My uncle ___ a new car, and he drives it to work.",
+      "options": [
+        "A. having",
+        "B. have",
+        "C. has",
+        "D. is have"
+      ],
+      "ans": "C",
+      "explain": "本題測試現在簡單式。主詞 My uncle 為第三人稱單數，動詞需用 has。選項 A 缺乏 be 動詞不能當本動詞，選項 B 用於複數，選項 D 文法錯誤，故選 C。"
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+      "desc": "【生活文法】His wife ___ English at a language school in Taipei.",
+      "options": [
+        "A. studies",
+        "B. study",
+        "C. studying",
+        "D. to study"
+      ],
+      "ans": "A",
+      "explain": "本題測試第三人稱單數動詞的變化。主詞 His wife 為單數，動詞 study 字尾為子音加 y，需去 y 加 ies，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家庭介系詞】My grandfather usually reads the newspaper ___ the evening.",
+      "options": [
+        "A. with",
+        "B. at",
+        "C. on",
+        "D. in"
+      ],
+      "ans": "D",
+      "explain": "本題測試時間介系詞。在早上、下午或傍晚的固定片語需使用 in（如 in the morning, in the evening），故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活文法】We ___ up at six o'clock every day.",
+      "options": [
+        "A. wakes",
+        "B. wake",
+        "C. waking",
+        "D. are wake"
+      ],
+      "ans": "B",
+      "explain": "本題測試現在簡單式。主詞 We 為第一人稱複數，描述每天發生的習慣時，動詞需用原形，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【生活字彙】Can you help me clean the ___? It is very dirty.",
+      "options": [
+        "A. moon",
+        "B. sky",
+        "C. house",
+        "D. wind"
+      ],
+      "ans": "C",
+      "explain": "本題測試生活字彙。句意為「你能幫我打掃房子嗎？它非常髒。」，只有 house 符合語境，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【家庭對話】A: ___ is that tall man over there? B: He is my uncle, David.",
+      "options": [
+        "A. What",
+        "B. Who",
+        "C. Where",
+        "D. When"
+      ],
+      "ans": "B",
+      "explain": "本題測試疑問詞。回答提到「他是我叔叔」，表示詢問的是「人」，必須使用 Who（誰），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【生活對話】A: ___ do you usually clean your house? B: I clean it every Saturday.",
+      "options": [
+        "A. Where",
+        "B. Who",
+        "C. What",
+        "D. When"
+      ],
+      "ans": "D",
+      "explain": "本題測試疑問詞。回答提到「每週六」，表示詢問的是「時間」，必須使用 When（何時），故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note on Fridge] Hi Leo, I am going to the market to buy some fish and tomatoes. Please help me wash the rice before I come back. Mom.\nQ: What does Mom want Leo to do?",
+      "options": [
+        "A. Go to the market",
+        "B. Wash the rice",
+        "C. Buy some fish",
+        "D. Eat the tomatoes"
+      ],
+      "ans": "B",
+      "explain": "本題測試短文理解。媽媽在便條紙中寫道「Please help me wash the rice before I come back.」（請在我回來前幫忙洗米），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Diary] October 12. It is my aunt's birthday. We are having a large meal in the garden. My cousin makes a beautiful chocolate cake. It is very sweet.\nQ: Where is the birthday meal?",
+      "options": [
+        "A. In the kitchen",
+        "B. At the school",
+        "C. In the garden",
+        "D. On the roof"
+      ],
+      "ans": "C",
+      "explain": "本題測試短文理解。日記中提到「We are having a large meal in the garden.」（我們正在花園裡吃大餐），故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【食物文法】___ there any cheese on the table?",
+      "options": [
+        "A. Is",
+        "B. Are",
+        "C. Do",
+        "D. Does"
+      ],
+      "ans": "A",
+      "explain": "本題測試 There is/are 句型。起司（cheese）為不可數名詞，需視為單數，搭配 be 動詞 Is，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【購物文法】I want to buy three red ___ from the market.",
+      "options": [
+        "A. tomato",
+        "B. tomatoing",
+        "C. tomatos",
+        "D. tomatoes"
+      ],
+      "ans": "D",
+      "explain": "本題測試名詞複數。數字 three 後面需接複數名詞，tomato 字尾為 o，複數形式需加上 es，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【食物文法】The fish in the bowl ___ very fresh.",
+      "options": [
+        "A. is",
+        "B. are",
+        "C. do",
+        "D. does"
+      ],
+      "ans": "A",
+      "explain": "本題測試 be 動詞與主詞一致性。這裡指碗裡的「魚肉」或單一一條魚，作為單一主體時搭配單數 be 動詞 is，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【購物介系詞】Look at the shoes ___ the box. They are beautiful.",
+      "options": [
+        "A. in",
+        "B. to",
+        "C. at",
+        "D. over"
+      ],
+      "ans": "A",
+      "explain": "本題測試空間介系詞。表示物品在某個容器「裡面」，需使用 in，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【食物字彙】Tom eats a lot of ___ for his lunch.",
+      "options": [
+        "A. rices",
+        "B. rice",
+        "C. a rice",
+        "D. ricing"
+      ],
+      "ans": "B",
+      "explain": "本題測試不可數名詞。米飯（rice）是不可數名詞，不能加 s 也不加不定冠詞 a，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【購物對話】A: ___ much is this black wallet? B: It is three hundred dollars.",
+      "options": [
+        "A. Why",
+        "B. What",
+        "C. How",
+        "D. Who"
+      ],
+      "ans": "C",
+      "explain": "本題測試疑問詞。詢問價格時固定使用片語 How much，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【食物對話】A: What do you want to eat? B: I would like a piece of ___.",
+      "options": [
+        "A. caking",
+        "B. cakes",
+        "C. cake",
+        "D. to cake"
+      ],
+      "ans": "C",
+      "explain": "本題測試量詞搭配。a piece of 後面接單數不可數狀態的名詞，表示「一塊蛋糕」，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】There ___ five pencils in my pencil case.",
+      "options": [
+        "A. am",
+        "B. are",
+        "C. is",
+        "D. be"
+      ],
+      "ans": "B",
+      "explain": "本題測試 There is/are 句型。five pencils 為複數，be 動詞必須使用 are，故選 B。"
+>>>>>>> origin/feat/round4
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【學校文法】My classmates ___ very friendly.",
       "options": [
         "A. is",
         "B. am",
+=======
+      "desc": "【學校介系詞】Please put your homework ___ the teacher's desk.",
+      "options": [
+        "A. on",
+        "B. in",
+        "C. with",
+        "D. at"
+      ],
+      "ans": "A",
+      "explain": "本題測試空間介系詞。表示將物品放在平面的物體「上面」（如桌面上），需使用 on，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】___ your friend play basketball after school?",
+      "options": [
+        "A. Is",
+        "B. Are",
+        "C. Does",
+        "D. Do"
+      ],
+      "ans": "C",
+      "explain": "本題測試一般動詞的疑問句。主詞 your friend 為第三人稱單數，助動詞需使用 Does，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】That is not ___ ruler. Mine is blue.",
+      "options": [
+        "A. you",
+        "B. your",
+        "C. yours",
+        "D. you're"
+      ],
+      "ans": "B",
+      "explain": "本題測試所有格形容詞。ruler 為名詞，前面需要加所有格 your（你的），選項 C 是所有格代名詞，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【學校文法】I ___ write with a pen because I make a lot of mistakes.",
+      "options": [
+        "A. does not",
+        "B. am not",
+        "C. cannot",
+        "D. is not"
+      ],
+      "ans": "C",
+      "explain": "本題測試助動詞。write 為原形動詞，前面需搭配助動詞，cannot 表示「無法/不能」，符合語境「我不能用原子筆寫，因為我常犯錯」，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【學校對話】A: ___ is my red pen? B: It is under your desk.",
+      "options": [
+        "A. When",
+        "B. Who",
+        "C. What",
+        "D. Where"
+      ],
+      "ans": "D",
+      "explain": "本題測試疑問詞。回答提到位置「在你的書桌下」，表示詢問的是「地點」，必須使用 Where，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【學校對話】A: ___ you read the words on the whiteboard? B: No, I cannot. They are too small.",
+      "options": [
+        "A. Are",
+        "B. Can",
+        "C. Do",
+        "D. Is"
+      ],
+      "ans": "B",
+      "explain": "本題測試助動詞。根據回答的「No, I cannot.」，可推知問句是用助動詞 Can 開頭，詢問能力，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[School Rules] 1. Do not eat or drink during the lesson. 2. Please turn off your phone. 3. Raise your hand if you want to speak.\nQ: What can a student do?",
+      "options": [
+        "A. Drink tea",
+        "B. Raise a hand to speak",
+        "C. Eat bread",
+        "D. Use a phone"
+      ],
+      "ans": "B",
+      "explain": "本題測試短文理解。規則中明確禁止上課飲食與使用手機，唯一允許且被要求的是「Raise your hand if you want to speak.」（發言前請舉手），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【季節介系詞】We like to play sports ___ summer.",
+      "options": [
+        "A. for",
+        "B. on",
+        "C. at",
+        "D. in"
+      ],
+      "ans": "D",
+      "explain": "本題測試時間介系詞。在某個季節（春夏秋冬）前面，介系詞必須使用 in，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【天氣字彙】Look at the dark clouds in the ___.",
+      "options": [
+        "A. ground",
+        "B. sky",
+        "C. dirt",
+        "D. earth"
+      ],
+      "ans": "B",
+      "explain": "本題測試天氣字彙。烏雲會出現在「天空」中，sky 意為天空，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【天氣文法】It ___ very windy right now, so please wear a coat.",
+      "options": [
+        "A. do",
+        "B. are",
+        "C. is",
+        "D. does"
+      ],
+      "ans": "C",
+      "explain": "本題測試 be 動詞。主詞為代名詞 It（指天氣），be 動詞需搭配 is，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【季節文法】The trees ___ beautiful in autumn.",
+      "options": [
+        "A. are",
+        "B. is",
+        "C. do",
+        "D. does"
+      ],
+      "ans": "A",
+      "explain": "本題測試 be 動詞。主詞 The trees 為複數，描述狀態需搭配 be 動詞 are，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【天氣文法】___ it get cold in Taiwan during winter?",
+      "options": [
+        "A. Is",
+        "B. Are",
+        "C. Does",
+        "D. Do"
+      ],
+      "ans": "C",
+      "explain": "本題測試一般動詞的疑問句。主詞為 it，動詞 get 是原形動詞，疑問句需使用助動詞 Does 開頭，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【天氣對話】A: Is it warm outside right now? B: No, it is very ___. You need a jacket.",
+      "options": [
+        "A. wind",
+        "B. star",
+        "C. cloudy",
+        "D. cool"
+      ],
+      "ans": "D",
+      "explain": "本題測試天氣形容詞。對方問是否溫暖，回答「No」表示不溫暖，且建議穿夾克，代表天氣偏涼（cool），故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[News Report] Tomorrow will be windy and cool in Taipei. In the evening, the temperature will drop to 15 degrees. Please remember to wear warm clothes if you go out.\nQ: What is Taipei like tomorrow?",
+      "options": [
+        "A. Windy and cool",
+        "B. Very hot",
+        "C. Wet and dark",
+        "D. Icy and cold"
+      ],
+      "ans": "A",
+      "explain": "本題測試短文理解。報導第一句話就提到「Tomorrow will be windy and cool in Taipei.」（明天台北將會起風且涼爽），故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【動物文法】The elephant ___ a very long trunk.",
+      "options": [
+        "A. are",
+        "B. has",
+        "C. have",
+        "D. is"
+      ],
+      "ans": "B",
+      "explain": "本題測試一般動詞。主詞 The elephant 為第三人稱單數，表示「擁有」時動詞必須用 has，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【顏色字彙】My favorite color is ___. It is the color of the sky.",
+      "options": [
+        "A. brown",
+        "B. red",
+        "C. blue",
+        "D. black"
+      ],
+      "ans": "C",
+      "explain": "本題測試顏色字彙。後句提示「這是天空的顏色」，天空的顏色為藍色（blue），故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【動物文法】Look at the cute pig! ___ tail is short and curly.",
+      "options": [
+        "A. Its'",
+        "B. It",
+        "C. It's",
+        "D. Its"
+      ],
+      "ans": "D",
+      "explain": "本題測試所有格。修飾名詞 tail（尾巴）需要所有格代名詞，動物的「牠的」寫法為 Its，沒有撇號，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【顏色文法】She wears a pink dress and two white ___.",
+      "options": [
+        "A. shoes",
+        "B. shoe",
+        "C. shoed",
+        "D. shoeing"
+      ],
+      "ans": "A",
+      "explain": "本題測試名詞複數。two 表示數量為二，後面的名詞 shoe（鞋子）需加上 s 變複數形式，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【動物介系詞】The cows are sleeping ___ the tall tree.",
+      "options": [
+        "A. on",
+        "B. under",
+        "C. in",
+        "D. at"
+      ],
+      "ans": "B",
+      "explain": "本題測試空間介系詞。牛群睡在高大的樹下，表示在物體正下方的遮蔽處，需使用 under，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【我的房間】There ___ a small bed in my house.",
+      "options": [
+        "A. is",
+        "B. are",
+        "C. am",
+        "D. be"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試 There is/are 句型。主詞 a small bed（一張小床）是單數名詞，因此 be 動詞必須使用 is。選項 B 用於複數；C 用於主詞 I；D 為原形動詞，不能直接放在這裡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【我的房間】The lamp is ___ the desk.",
+      "options": [
+        "A. in",
+        "B. on",
+        "C. of",
+        "D. to"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試地方介系詞。檯燈通常是放在書桌的「表面上」，因此使用 on（在...上面）。選項 A in 是在...裡面，不符合邏輯；C of 和 D to 不是表達位置的介系詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【家】I ___ in a small apartment.",
+      "options": [
+        "A. lives",
+        "B. living",
+        "C. live",
+        "D. to live"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試現在簡單式。主詞為第一人稱 I 時，後面的動詞要用原形 live。選項 A lives 用於第三人稱單數（如 He/She/It）；B living 為現在分詞；D to live 為不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【家】A: Where is your new book? B: It is ___ the bed.",
+      "options": [
+        "A. at",
+        "B. to",
+        "C. from",
+        "D. under"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試地方介系詞。回答物品的位置時，under 表示「在...下方」，符合句意（它在床底下）。選項 A、B、C 無法正確表達書和床的相對位置關係。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【我的房間】A: ___ this your pen? B: No, it is her pen.",
+      "options": [
+        "A. Is",
+        "B. Are",
+        "C. Do",
+        "D. Does"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試 be 動詞疑問句。主詞 this（這個）是單數，且句中沒有一般動詞，所以必須使用 be 動詞 Is 開頭。選項 B Are 用於複數；C 和 D 用於有一般動詞的句子中。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【我的房間】I have a clock. It ___ on the wall.",
+      "options": [
+        "A. are",
+        "B. is",
+        "C. am",
+        "D. do"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試主動詞一致性。第二句的主詞 It 代表前面提到的時鐘（單數），因此搭配的 be 動詞是 is。選項 A are 用於複數或 You；C am 專用於 I；D do 是助動詞不合語法。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【我的房間】My books are ___ the box.",
+      "options": [
+        "A. on",
+        "B. at",
+        "C. in",
+        "D. to"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試地方介系詞。書本通常是裝在箱子的「裡面」，因此正確的介系詞是 in（在...之中）。選項 A on 是在表面上；B at 指特定地點；D to 表示方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【朋友】Peter ___ a very good friend.",
+      "options": [
+        "A. be",
+        "B. are",
+        "C. is",
+        "D. am"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試 be 動詞。主詞 Peter 是第三人稱單數，現在式 be 動詞必須用 is。選項 A be 是原形；B are 用於複數或第二人稱；D am 用於第一人稱 I。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【寵物】She ___ a black cat.",
+      "options": [
+        "A. have",
+        "B. having",
+        "C. to have",
+        "D. has"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試現在簡單式動詞變化。主詞 She 為第三人稱單數，表示擁有的動詞 have 必須改為單數形式 has。選項 A have 用於 I/You/We/They；B 和 C 形式錯誤，不能作主要動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【寵物】The dog ___ fast.",
+      "options": [
+        "A. runs",
+        "B. run",
+        "C. running",
+        "D. to run"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試現在簡單式第三人稱單數。主詞 The dog 是一隻狗（單數），一般動詞字尾必須加 s，故選 runs。選項 B run 少了 s；C 和 D 不是完整的謂語動詞形式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【寵物】A: What is that? B: It is ___ white bird.",
+      "options": [
+        "A. an",
+        "B. a",
+        "C. two",
+        "D. some"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試冠詞用法。bird 是單數可數名詞，前面有形容詞 white，發音以子音開頭，因此不定冠詞要用 a。選項 A an 用於母音開頭；C two 和 D some 皆用於複數名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【朋友】Mary and Lisa ___ in the park.",
+      "options": [
+        "A. am",
+        "B. is",
+>>>>>>> origin/feat/round4
         "C. are",
         "D. be"
       ],
       "ans": "C",
+<<<<<<< HEAD
       "explain": "主詞 My classmates 是複數，be 動詞用 are。(A) is 用於單數；(B) am 只用於 I；(D) be 是原形。",
       "grammar": [
         "be_verb"
       ],
       "grammarReview": "approved"
+=======
+      "explain": "繁體中文解說：此題測試 be 動詞。主詞 Mary and Lisa 是兩個人（複數），所以 be 動詞必須用 are。選項 A 用於 I；B 用於單數主詞；D be 為原形，不符合現在式文法。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【寵物】Does your friend ___ a pet?",
+      "options": [
+        "A. has",
+        "B. having",
+        "C. had",
+        "D. have"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試助動詞與動詞原形。疑問句已經使用了助動詞 Does，後面的主要動詞必須恢復為原形 have。選項 A has 是第三人稱單數形態，在此不能重複使用；B 和 C 形式皆錯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【朋友】A: ___ do you play with? B: I play with my friend, Ken.",
+      "options": [
+        "A. Who",
+        "B. What",
+        "C. Where",
+        "D. When"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試疑問詞。回答是「我的朋友 Ken」，表示在問「人」，因此疑問詞要用 Who（誰）。選項 B 問事物；C 問地點；D 問時間，皆不符合回答內容。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【家庭文法】My grandmother ___ seventy years old.",
+=======
+      "desc": "【早餐】I eat bread ___ seven.",
+      "options": [
+        "A. at",
+        "B. in",
+        "C. on",
+        "D. to"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試時間介系詞。表示在具體的幾點鐘（seven 代表七點），前面必須搭配介系詞 at。選項 B in 通常用於月份或年份；C on 用於特定日期或星期；D to 表示方向。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【午餐】He ___ salad for lunch.",
+      "options": [
+        "A. eat",
+        "B. eats",
+        "C. eating",
+        "D. to eat"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試現在簡單式的動詞變化。主詞 He 是第三人稱單數，一般動詞 eat 必須在字尾加上 s 成為 eats。選項 A 缺少 s；C 和 D 不是可獨立存在的主要動詞形態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【早餐】Do you want some ___ in your tea?",
+      "options": [
+        "A. milks",
+        "B. a milk",
+        "C. milk",
+        "D. the milks"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試不可數名詞的用法。milk（牛奶）是不可數名詞，不能加上 a，字尾也不能加 s。因此只能選原形的 milk。選項 A、B、D 的用法都是錯誤的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【午餐】The meat ___ very good.",
+>>>>>>> origin/feat/round4
       "options": [
         "A. are",
         "B. am",
@@ -8196,15 +8951,20 @@
         "D. is"
       ],
       "ans": "D",
+<<<<<<< HEAD
       "explain": "主詞 My grandmother 是單數第三人稱，be 動詞用 is。(A) are 用於複數；(B) am 只用於 I；(C) be 是原形。",
       "grammar": [
         "be_verb"
       ],
       "grammarReview": "approved"
+=======
+      "explain": "繁體中文解說：此題測試不可數名詞的 be 動詞。meat（肉）是不可數名詞，在文法上視為單數，因此 be 動詞要用 is。選項 A are 用於複數；B am 專屬於 I；C be 是原形。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【生活文法】This is my brother. ___ is a student.",
       "options": [
@@ -8219,10 +8979,23 @@
         "subject_pronouns"
       ],
       "grammarReview": "approved"
+=======
+      "difficulty": 2,
+      "desc": "【午餐】A: ___ they like fish? B: Yes, they do.",
+      "options": [
+        "A. Do",
+        "B. Does",
+        "C. Are",
+        "D. Is"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試現在簡單式的疑問句。主詞是 they（他們），且句中有一般動詞 like，所以問句必須用助動詞 Do 開頭。選項 B Does 用於單數；C 和 D 是 be 動詞，不能與一般動詞連用。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【家庭文法】My mother is a nurse. ___ works at a hospital.",
       "options": [
@@ -8237,10 +9010,23 @@
         "subject_pronouns"
       ],
       "grammarReview": "approved"
+=======
+      "difficulty": 2,
+      "desc": "【午餐】A: ___ is your lunch? B: It is on the table.",
+      "options": [
+        "A. What",
+        "B. Where",
+        "C. Who",
+        "D. When"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試疑問詞。回答是「on the table（在桌上）」，表示在問物品的位置（地點），因此疑問詞要用 Where（哪裡）。選項 A 問事物；C 問人；D 問時間。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【學校文法】Tom and I are in the same class. ___ are good friends.",
       "options": [
@@ -8255,11 +9041,24 @@
         "subject_pronouns"
       ],
       "grammarReview": "approved"
+=======
+      "difficulty": 2,
+      "desc": "【早餐】I do not ___ tea. I like hot milk.",
+      "options": [
+        "A. drinks",
+        "B. drinking",
+        "C. drink",
+        "D. to drink"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試助動詞與原形動詞。在否定助動詞 do not (don't) 之後，動詞必須恢復為原形 drink。選項 A drinks 有 s 是錯的；B drinking 和 D to drink 形態皆不符文法。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】Look at the cat! ___ is very cute.",
       "options": [
         "A. It",
@@ -8273,11 +9072,23 @@
         "subject_pronouns"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【城市】There are many shops ___ this town.",
+      "options": [
+        "A. at",
+        "B. to",
+        "C. in",
+        "D. with"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試地方介系詞。表示在一個城鎮或城市「裡面」時，介系詞通常使用 in（在...之中）。選項 A at 通常指特定的小地點；B to 表方向；D with 表伴隨。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【職場文法】Anna and Ben work here. ___ are very busy today.",
       "options": [
         "A. We",
@@ -8291,11 +9102,23 @@
         "subject_pronouns"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【公園】The tree ___ very tall.",
+      "options": [
+        "A. am",
+        "B. are",
+        "C. be",
+        "D. is"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試 be 動詞。主詞 The tree 是一棵樹（單數），因此對應的 be 動詞是 is。選項 A am 用於 I；B are 用於複數；C be 為動詞原形。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活對話】A: Are you a teacher? B: Yes, ___ am.",
       "options": [
         "A. you",
@@ -8310,11 +9133,23 @@
         "be_verb"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【城市】Can you ___ the bank?",
+      "options": [
+        "A. see",
+        "B. sees",
+        "C. seeing",
+        "D. to see"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試助動詞的用法。Can 是助動詞，後面的主要動詞必須是原形。因此選 see。選項 B sees 有加 s；C 是現在分詞；D 是不定詞，均不符合文法規則。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】I have ___ apple in my bag.",
       "options": [
         "A. a",
@@ -8364,11 +9199,23 @@
         "articles_a_an"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【公園】We run ___ the park.",
+      "options": [
+        "A. on",
+        "B. in",
+        "C. to",
+        "D. from"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試地方介系詞。表示在公園這片區域內活動，介系詞用 in（在...裡面）。選項 A on 是在表面上；C to 是往某個方向去；D from 是從某處來。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
+<<<<<<< HEAD
       "desc": "【旅遊文法】We stay in ___ hotel near the beach.",
       "options": [
         "A. an",
@@ -8382,11 +9229,23 @@
         "articles_a_an"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【城市】A: How do you go to the bank? B: I ___ by taxi.",
+      "options": [
+        "A. goes",
+        "B. going",
+        "C. go",
+        "D. to go"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試現在簡單式。主詞是第一人稱 I，動詞必須使用原形 go。選項 A goes 用於第三人稱單數（如 He/She）；B going 為現在分詞；D to go 為不定詞，皆不合語法。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
+<<<<<<< HEAD
       "desc": "【學校文法】Please wait ___ hour. The teacher is in a meeting.",
       "options": [
         "A. a",
@@ -8400,16 +9259,74 @@
         "articles_a_an"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【公園】Look! The birds ___ in the tree.",
+      "options": [
+        "A. is",
+        "B. am",
+        "C. to be",
+        "D. are"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試 be 動詞。主詞 The birds（鳥）是複數名詞，所以搭配的 be 動詞必須是 are。選項 A is 用於單數；B am 用於 I；C to be 是不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【城市】A: ___ is the store open? B: At nine.",
+      "options": [
+        "A. When",
+        "B. Who",
+        "C. Where",
+        "D. What"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試疑問詞。B 的回答是「At nine（在九點）」，這是一個時間，因此疑問句必須用 When（何時）來提問。選項 B 問人；C 問地點；D 問事物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Sign] Welcome to Central Park. You can sit on the grass. You can read books. You cannot drive a car here. Q: What can you NOT do in this park?",
+      "options": [
+        "A. Read books",
+        "B. Drive a car",
+        "C. Sit on the grass",
+        "D. Run"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試短文理解。告示牌提到「You cannot drive a car here.（你不能在這裡開車）」，因此這是在公園裡被禁止的事情。選項 A 和 C 都是可以做的。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】I ___ to school by bus every day.",
+=======
+      "desc": "【週末活動】I ___ books on the weekend.",
+      "options": [
+        "A. read",
+        "B. reads",
+        "C. reading",
+        "D. to read"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試現在簡單式。主詞 I 代表第一人稱，後接的一般動詞需用原形 read。選項 B reads 適用於第三人稱單數（He/She/It）；C 為現在分詞；D 為不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【週末活動】She ___ to the movies on the weekend.",
+>>>>>>> origin/feat/round4
       "options": [
         "A. go",
         "B. goes",
         "C. going",
+<<<<<<< HEAD
         "D. am go"
       ],
       "ans": "A",
@@ -8436,11 +9353,18 @@
         "present_simple"
       ],
       "grammarReview": "approved"
+=======
+        "D. to go"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試第三人稱單數動詞。主詞 She 是第三人稱單數，一般動詞 go 必須加上 es 成為 goes。選項 A go 少了 es；C 和 D 都不是正確的主要動詞形式。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【職場文法】They ___ English at work every day.",
       "options": [
         "A. speaks",
@@ -8454,11 +9378,23 @@
         "present_simple"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【週末活動】___ you play baseball?",
+      "options": [
+        "A. Is",
+        "B. Are",
+        "C. Can",
+        "D. Am"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試助動詞。句中有一般動詞 play，且是在詢問「能力」，所以開頭要用助動詞 Can（你會...嗎？）。選項 A、B、D 都是 be 動詞，不能與原形動詞連用。"
+>>>>>>> origin/feat/round4
     },
     {
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【生活文法】I ___ like coffee. I like tea.",
       "options": [
         "A. don't",
@@ -8472,10 +9408,36 @@
         "present_simple_negation"
       ],
       "grammarReview": "approved"
+=======
+      "desc": "【週末活動】They ___ at the sports club.",
+      "options": [
+        "A. am",
+        "B. is",
+        "C. be",
+        "D. are"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試 be 動詞。主詞 They（他們）是複數代名詞，對應的 be 動詞必須是 are。選項 A 用於 I；B 用於第三人稱單數；C 為原形。"
     },
     {
       "type": "choice",
       "skill": "reading",
+      "difficulty": 2,
+      "desc": "【週末活動】A: What does he do on the weekend? B: He ___ games.",
+      "options": [
+        "A. plays",
+        "B. play",
+        "C. playing",
+        "D. to play"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試現在簡單式。回答句的主詞 He 是第三人稱單數，動詞 play 必須加上 s 變成 plays。選項 B 少了 s；C 和 D 不能作句子的主要動詞。"
+>>>>>>> origin/feat/round4
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【家庭文法】My sister ___ eat meat. She only eats vegetables.",
       "options": [
@@ -8508,6 +9470,46 @@
         "present_simple_negation"
       ],
       "grammarReview": "approved"
+=======
+      "difficulty": 2,
+      "desc": "【週末活動】I want to ___ a movie.",
+      "options": [
+        "A. watches",
+        "B. watch",
+        "C. watching",
+        "D. to watching"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試不定詞用法。want to 後面必須接「原形動詞」，表示想要做某事，因此選擇 watch。選項 A 有加 es；C 為現在分詞；D 格式錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【週末活動】A: ___ do you read books? B: At home.",
+      "options": [
+        "A. Who",
+        "B. What",
+        "C. Where",
+        "D. When"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試疑問詞。回答是「At home（在家）」，指的是地點，所以問句的疑問詞必須用 Where（在哪裡）。選項 A 問人；B 問事物；D 問時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] John, let's play sports on the weekend. We need a ball. We will meet at the park at ten. Q: What do they need?",
+      "options": [
+        "A. A book",
+        "B. A hat",
+        "C. A bat",
+        "D. A ball"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試短文細節理解。便條紙中寫到「We need a ball.（我們需要一顆球）」，所以他們需要的是球。其他選項皆未在文中提及。"
+>>>>>>> origin/feat/round4
     }
   ],
   "boss": [
@@ -10892,6 +11894,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
+<<<<<<< HEAD
       "desc": "【職場文法】My friend and I ___ in this bank.",
       "options": [
         "A. works",
@@ -10911,6 +11914,9 @@
       "skill": "reading",
       "difficulty": 1,
       "desc": "【生活文法】There ___ some milk on the table.",
+=======
+      "desc": "【生活文法】含有 There is/are 與不可數名詞",
+>>>>>>> origin/feat/round4
       "options": [
         "A. is",
         "B. are",
@@ -10928,6 +11934,7 @@
     {
       "type": "choice",
       "skill": "reading",
+<<<<<<< HEAD
       "difficulty": 1,
       "desc": "【旅遊文法】You ___ park your bicycle here.",
       "options": [
@@ -11028,6 +12035,8 @@
     {
       "type": "choice",
       "skill": "reading",
+=======
+>>>>>>> origin/feat/round4
       "difficulty": 3,
       "desc": "【短文理解】[Email] Hello, the new desk is too big for my room. I want to put it in the hall. Can you help me move it at 15:00?\nQ: Why does the writer want to move the desk?",
       "options": [
@@ -11094,6 +12103,384 @@
       ],
       "ans": "C",
       "explain": "9:00在銀行，11:00在公園，所以10:00時他應該還在銀行或是前往公園的路上。選項C最符合邏輯。（A、B、D皆不合時間）"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【家庭文法】My cousin and his wife ___ a beautiful house near the park.",
+      "options": [
+        "A. is have",
+        "B. having",
+        "C. has",
+        "D. have"
+      ],
+      "ans": "D",
+      "explain": "本題測試主詞與動詞一致。主詞為 My cousin and his wife，是兩個人（複數），因此動詞需使用原形 have，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【食物文法】How ___ sugar do you want in your tea?",
+      "options": [
+        "A. old",
+        "B. often",
+        "C. much",
+        "D. many"
+      ],
+      "ans": "C",
+      "explain": "本題測試數量形容詞。sugar（糖）是不可數名詞，詢問數量時必須搭配 How much，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【購物文法】The black shirt is nice, but I want to look at the blue ___.",
+      "options": [
+        "A. them",
+        "B. ones",
+        "C. it",
+        "D. one"
+      ],
+      "ans": "D",
+      "explain": "本題測試代名詞。這裡代替前面提過的單數名詞 shirt（襯衫），需使用不定代名詞 one，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Shopping List] Things to buy: 1. A box of rice 2. Three potatoes 3. A bottle of oil 4. Some fresh fish. Do not buy any cheese because we still have a lot.\nQ: Which item is NOT on the shopping list?",
+      "options": [
+        "A. Rice",
+        "B. Potatoes",
+        "C. Cheese",
+        "D. Fish"
+      ],
+      "ans": "C",
+      "explain": "本題測試短文細節。清單上明確指示「Do not buy any cheese」（不要買起司），代表它不在此次購買清單中，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【學校文法】Everyone in the school ___ listening to the principal right now.",
+      "options": [
+        "A. do",
+        "B. does",
+        "C. are",
+        "D. is"
+      ],
+      "ans": "D",
+      "explain": "本題測試不定代名詞的單複數。Everyone（每個人）在文法上視為單數，搭配進行式時，需使用 be 動詞 is，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Library Notice] Welcome to the Town Library. Books can be borrowed for 14 days. DVDs can be borrowed for 7 days. If you return items late, you must pay 5 dollars for each day.\nQ: How long can a person keep a DVD?",
+      "options": [
+        "A. 14 days",
+        "B. 7 days",
+        "C. 5 days",
+        "D. 21 days"
+      ],
+      "ans": "B",
+      "explain": "本題測試短文細節搜尋。告示牌中提到「DVDs can be borrowed for 7 days.」（DVD 可借 7 天），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【季節對話】A: Which season do you like? B: I like ___, because I enjoy seeing the beautiful flowers.",
+      "options": [
+        "A. spring",
+        "B. moon",
+        "C. autumn",
+        "D. winter"
+      ],
+      "ans": "A",
+      "explain": "本題測試季節字彙與語境推論。回答者提到喜歡看美麗的花朵，花朵通常在春季盛開，故選 A (春天)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【季節文法】In Taiwan, the air ___ very hot and humid in summer.",
+      "options": [
+        "A. getting",
+        "B. get",
+        "C. to get",
+        "D. gets"
+      ],
+      "ans": "D",
+      "explain": "本題測試現在簡單式。主詞 the air 為不可數名詞，視為第三人稱單數，動詞需加 s，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Travel Blog] We visited Kyoto last autumn. The red and brown leaves were stunning. It was a bit cold, but we had a great time visiting the old temples.\nQ: When did the writer visit Kyoto?",
+      "options": [
+        "A. In spring",
+        "B. In autumn",
+        "C. In summer",
+        "D. In winter"
+      ],
+      "ans": "B",
+      "explain": "本題測試短文細節。第一句話提到「We visited Kyoto last autumn.」（我們去年秋天拜訪了京都），故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【動物對話】A: Are those bears dangerous? B: Yes, ___ are. Please stay away from them.",
+      "options": [
+        "A. they",
+        "B. there",
+        "C. them",
+        "D. their"
+      ],
+      "ans": "A",
+      "explain": "本題測試主格代名詞。代替前面提過的複數名詞 those bears，在答句中擔任主詞，需使用 they，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【顏色對話】A: What color is your new car? B: It is ___, just like the dark night.",
+      "options": [
+        "A. black",
+        "B. red",
+        "C. pink",
+        "D. white"
+      ],
+      "ans": "A",
+      "explain": "本題測試顏色字彙。後句提示「就像黑夜一樣」，黑夜的顏色為黑色（black），故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【動物文法】There are three ___ sleeping under the tall tree.",
+      "options": [
+        "A. a sheep",
+        "B. sheeps",
+        "C. sheep",
+        "D. sheepes"
+      ],
+      "ans": "C",
+      "explain": "本題測試不規則複數名詞。綿羊（sheep）的單複數同形，前面有 three 時，仍維持 sheep，不加 s，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Farm Poster] Come to Happy Farm this weekend! You can ride a pony, feed the ducks, and pick fresh tomatoes. The price is 100 dollars for adults and 50 dollars for children under twelve.\nQ: How much is the cost for a man and his ten-year-old son?",
+      "options": [
+        "A. 100 dollars",
+        "B. 150 dollars",
+        "C. 50 dollars",
+        "D. 200 dollars"
+      ],
+      "ans": "B",
+      "explain": "本題測試短文資訊統整。成人票 100 元，十二歲以下孩童票 50 元。一位成年男子與他十歲的兒子總共是 100 + 50 = 150 元，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Zoo Sign] Welcome to the Lion Zone. Please stay behind the red line. Do not feed the lions. They sleep a lot, so please do not make loud sounds.\nQ: What should visitors NOT do?",
+      "options": [
+        "A. Watch them sleep",
+        "B. Stay behind the red line",
+        "C. Give food to the lions",
+        "D. Visit during the day"
+      ],
+      "ans": "C",
+      "explain": "本題測試短文細節。告示牌明確規定「Do not feed the lions.」（不要餵食獅子），give food 即為 feed 的同義代換，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] Hi Tom, your blue shirt is on the bed. Your black shoes are in the box. Dad. Q: Where are the black shoes?",
+      "options": [
+        "A. On the bed",
+        "B. In the hat",
+        "C. Under the desk",
+        "D. In the box"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試細節讀取。文中清楚提到「Your black shoes are in the box.（你的黑鞋子在箱子裡）」，因此選項 D 為正確答案。藍色襯衫才是在床上（A）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] I have a new apartment. It has one bedroom and a small bathroom. There is no TV in it. Q: What is NOT in the apartment?",
+      "options": [
+        "A. A TV",
+        "B. A bedroom",
+        "C. A bathroom",
+        "D. A door"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試否定訊息的理解。文章寫到「There is no TV in it.（裡面沒有電視）」，所以公寓裡沒有的東西是電視。臥室與浴室都有在文中被提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Diary] My house is very clean. The desk is near the door. My red hat is under the desk. Q: Where is the desk?",
+      "options": [
+        "A. Under the hat",
+        "B. Near the door",
+        "C. On the bed",
+        "D. In the box"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試相對位置的理解。日記提到「The desk is near the door.（書桌在門附近）」，故選 B。紅帽子是在書桌下，而不是書桌在帽子下（A）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Profile] Name: Leo. Pet: A small mouse. His mouse likes to eat cheese. It sleeps in a box. Q: What does the mouse like to eat?",
+      "options": [
+        "A. Fish",
+        "B. Cheese",
+        "C. Meat",
+        "D. Bread"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試短文理解。從寵物檔案中可以看到「His mouse likes to eat cheese.（他的老鼠喜歡吃起司）」，因此答案是起司。其他食物未被提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Text] Hi Jane, can you feed my fish? They are in the glass bowl. Give them food at night. Q: When should Jane feed the fish?",
+      "options": [
+        "A. At ten",
+        "B. At noon",
+        "C. At night",
+        "D. All day"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試時間細節。簡訊中指示「Give them food at night.（在晚上給牠們食物）」，因此餵魚的時間是晚上。選項 C 完全符合文章資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Email] Dear Ken, I have a new dog. His name is Max. He is brown and very strong. He likes to run in the park. Q: What color is the dog?",
+      "options": [
+        "A. Black",
+        "B. White",
+        "C. Red",
+        "D. Brown"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試基本形容詞（顏色）讀取。郵件裡提到這隻狗是「He is brown（他是棕色的）」，所以答案選 D。其他顏色都不正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Shop Sign] Breakfast Set: Bread and milk for 50 dollars. Salad and tea for 60 dollars. Q: How much is the salad and tea?",
+      "options": [
+        "A. 10 dollars",
+        "B. 30 dollars",
+        "C. 50 dollars",
+        "D. 60 dollars"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試價格資訊的配對。告示牌寫道「Salad and tea for 60 dollars（沙拉和茶賣 60 元）」，所以答案是 60 元。50 元是麵包加牛奶的價格。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] Dad, I do not want rice for lunch. I want some noodles and fish. I will come back at twelve. Q: What does the writer want for lunch?",
+      "options": [
+        "A. Noodles and fish",
+        "B. Rice and fish",
+        "C. Rice and meat",
+        "D. Bread and milk"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試食物細節。作者明確表示不要米飯（do not want rice），而是要「some noodles and fish（一些麵條和魚肉）」，所以答案選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] Please clean the fruit. Put the tomatoes on the table. Do not put them in the box. Q: Where do the tomatoes go?",
+      "options": [
+        "A. In the box",
+        "B. On the table",
+        "C. Under the table",
+        "D. In the hat"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試指令理解。紙條說「Put the tomatoes on the table.（把番茄放在桌上）」，並且強調不要放進箱子裡。因此正確位置是桌上（B）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Email] Hi Mary, I am in the town. The shops are very nice. I want to buy a hat. Bye. Q: What does the writer want to buy?",
+      "options": [
+        "A. A shirt",
+        "B. A bag",
+        "C. A hat",
+        "D. A shoe"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：此題測試購物意圖。郵件中清楚寫出「I want to buy a hat.（我想買一頂帽子）」，因此直接對應選項 C。其餘物品並未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Schedule] Town Bus Route: 08:00 Bank, 08:15 Park, 08:30 School, 08:45 Store. Q: Where is the bus at 08:30?",
+      "options": [
+        "A. At the bank",
+        "B. At the park",
+        "C. At the store",
+        "D. At the school"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：此題測試時間表查閱能力。根據時刻表，08:30 對應的地點是 School（學校），所以巴士當時在學校（D）。銀行是 08:00，商店是 08:45。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Note] We have a movie club on the weekend. We watch old movies. It is free for students. Q: Who can watch for free?",
+      "options": [
+        "A. Students",
+        "B. Teachers",
+        "C. Drivers",
+        "D. Doctors"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：此題測試特定對象的優惠條件。紙條寫「It is free for students.（對學生免費）」，因此只有學生可以免費觀看。老師、司機和醫生均未提及。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文理解】[Diary] May 5. I read a good book at home. Then I played a video game with my friend. We had a lot of fun. Q: What did the writer do after reading a book?",
+      "options": [
+        "A. Went to the park",
+        "B. Played a game",
+        "C. Cleaned the desk",
+        "D. Bought a hat"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：此題測試事件的先後順序。作者寫道在家看完好書後（Then），「played a video game（玩了電動遊戲）」，所以讀書後做的事是玩遊戲（B）。"
     }
   ]
 }

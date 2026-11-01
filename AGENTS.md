@@ -19,6 +19,7 @@ GitHub：`k3320509168/englearningapp`；`main` 會由 GitHub Actions 自動部�
 - **Claude × Codex 協作看板：`docs/COLLAB.md`（分工、檔案負責人、任務、留言板；兩邊開工前都要讀）。**
 - **開發日記與目前有效的最高原則：`docs/DEV_LOG.md`（接手第一份要讀的；「必要的內容」優先於其他文件）。**
 - 完整設計與完成狀態：**`docs/ROUND4_DESIGN.md`**。
+- **三方 AI 分工（2026-11-01）**：Claude 是 PM，Codex 是主工程師，Antigravity（Gemini）負責內容與測試。分工、模型與派工流程見 **`docs/TEAM.md`**，三方開工前都要先讀。
 
 ## 協作方式（給使用者看的白話版）
 - **commit**＝存檔點；**分支**＝工作副本（`main` 是正式版，改了會自動更新網站；`feat/round4` 是第四輪的工作副本，網站看不到）；**push**＝上傳到 GitHub；**clone**＝從 GitHub 下載整個專案；**pull**＝下載別人新推上去的進度。

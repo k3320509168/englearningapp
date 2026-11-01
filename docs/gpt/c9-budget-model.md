@@ -50,7 +50,7 @@ C2觀察值（大BOSS n=30，區域魔王 n=60）：
 - 三次內大BOSS觀察值符合一般≥90%/吃力≥80%的指定要求，但只限本種子/策略/模型；不推成所有玩家保證。
 - 沒有在此批調BOSS、英雄或經濟數值。Claude可審查C9實作與結果，再整合下一項。
 
-完整檔案在`docs/gpt/c9-budget-results/`，含四份經濟JSON與四份原始log，manifest記錄Node/TZ/參數與題庫指紋。只保留修正亂數後的verified結果；先前不穩定數字不納入表格。原始log中「技能／圖」舊欄位混入區域魔王樣本，未用於上述判斷；runner已改用mapStats.skills並新增加減FINALS不改每圖技能次數的回歸測試。
+完整檔案在`docs/gpt/c9-budget-results/`，含四份經濟JSON與四份原始輸出TXT，manifest記錄Node/TZ/參數與題庫指紋。只保留修正亂數後的verified結果；先前不穩定數字不納入表格。原始輸出中「技能／圖」舊欄位混入區域魔王樣本，未用於上述判斷；runner已改用mapStats.skills並新增加減FINALS不改每圖技能次數的回歸測試。
 
 重現（Node22，repo根目錄；路徑由BUDGET_OUT自訂或輸出至系統tmp）：
 

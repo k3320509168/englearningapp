@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { emptyRunStats, evaluateStars, mergeStars, starConditions } from './stars';
+import { emptyRunStats, evaluateStars, mergeStars, requiredStreak, starConditions } from './stars';
 import { REGIONS, chapterCount, mapName, regionStageCount, stageLabel } from './regions';
 import { STORIES, clearStoryId, regionStoryId } from './story';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
@@ -28,9 +28,15 @@ describe('regions and maps', () => {
 });
 
 describe('three-star rating', () => {
-  it('raises the combo goal in later regions', () => {
+  it('caps the streak by actual answers and the region threshold', () => {
     expect(starConditions(0)[2].label).toContain('連續答對 8 題');
-    expect(starConditions(8)[2].label).toContain('連續答對 35 題');
+    expect(starConditions(8, 20)[2].label).toContain('連續答對 8 題');
+    expect(requiredStreak(8, 60)).toBe(9);
+    expect(requiredStreak(8, 90)).toBe(14);
+    expect(requiredStreak(8, 900)).toBe(14);
+    expect(requiredStreak(0, 900)).toBe(8);
+    expect(evaluateStars(8, { ...emptyRunStats(), answered: 20, correct: 18, maxStreak: 8, correctTimeMs: 180000 })[2]).toBe(true);
+    expect(evaluateStars(8, { ...emptyRunStats(), answered: 90, correct: 80, maxStreak: 13, correctTimeMs: 800000 })[2]).toBe(false);
   });
 
   it('evaluates a run: survive, 85% accuracy, combo or speed', () => {

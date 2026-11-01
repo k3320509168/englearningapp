@@ -87,6 +87,12 @@
 
 ---
 
+### 2026-11-01（製作人：Codex 加入）
+- 製作人另外開了 Codex，在獨立 worktree（`codex/advanced-question-banks`）負責 B2+、C1、C2 題庫與挑戰副本。
+- **必要的內容**：兩個 AI 要互相協調分工、共享文件與任務、用 commit 溝通，減少重複的 token 消耗。協作規則與任務看板在 `docs/COLLAB.md`。
+- Claude 的週用量快用完，平衡規格 v2.0 剩下的實作（C1～C7）交給 Codex；Claude 負責審查、模擬驗收、和 ChatGPT 討論。
+- 製作人開啟 Remote Control，要能在手機上繼續和 Claude 對話。
+
 ## 🌱 未來藍圖（上線、有收入之後；製作人 2026-11-01 提出，先記錄）
 - 天梯（排名對戰或排行榜）。
 - 公會。

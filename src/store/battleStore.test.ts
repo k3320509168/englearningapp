@@ -167,14 +167,15 @@ describe('combo timer', () => {
     state().tick(QUESTION_LIMIT + 1);
     expect(state().phase).toBe('answering');
     expect(state().overtime).toBe(true);
-    expect(state().combo).toBe(0);
+    // 規格 v2.0：超時和答錯一樣只保留一半 combo
+    expect(state().combo).toBe(2);
     // A1 是正式規則，行動條會照常累積（敵人可能自己出手）；超時本身不算答錯、不記錯題
     expect(state().feedback).toBeNull();
     expect(Object.keys(saved().mistakes)).toHaveLength(0);
     // 超時後答對：有攻擊，但這題不累積 combo
     answerCurrent();
     expect(state().event?.kind).toBe('attack');
-    expect(state().combo).toBe(0);
+    expect(state().combo).toBe(2);
     expect(state().overtime).toBe(false);
   });
 
@@ -248,7 +249,7 @@ describe('boss questions', () => {
     const before = state().combo;
     answerCurrent(); // 測試的亂數固定 0.99 → 抽到最稀有的 ×10
     expect(state().event?.bossQuestion).toBe(true);
-    expect(state().event?.bonus).toEqual({ mult: 10, from: before, to: before * 10 + 1 });
+    expect(state().event?.bonus).toEqual({ mult: 10, from: before, to: before * 10 + 1, gain: before * 9 });
     expect(state().combo).toBe(before * 10 + 1);
   });
 
@@ -257,7 +258,7 @@ describe('boss questions', () => {
     playUntil(() => state().isBossQuestion);
     const before = state().combo;
     answerCurrent();
-    expect(state().event?.bonus).toEqual({ mult: 2, from: before, to: before * 2 + 1 });
+    expect(state().event?.bonus).toEqual({ mult: 2, from: before, to: before * 2 + 1, gain: before });
   });
 
   it('valor guarantees at least ×3', () => {

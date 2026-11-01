@@ -811,7 +811,7 @@ export default class MainScene extends Phaser.Scene {
     const title = this.add.text(width / 2, height / 2 - 70, '困難題 Bonus', textStyle(26, '#ffffff')).setOrigin(0.5).setDepth(201);
     const mult = this.add.text(width / 2, height / 2, `×${bonus.mult}`, numStyle(40 + Math.min(bonus.mult, 10) * 4, color)).setOrigin(0.5).setDepth(201).setScale(0.3);
     mult.setShadow(0, 0, color, 16, true, true);
-    const line = this.add.text(width / 2, height / 2 + 66, `Combo ${bonus.from} → ${bonus.to}`, textStyle(22, color)).setOrigin(0.5).setDepth(201);
+    const line = this.add.text(width / 2, height / 2 + 66, `Combo +${bonus.gain.toLocaleString()}（${bonus.from.toLocaleString()} → ${bonus.to.toLocaleString()}）`, textStyle(22, color)).setOrigin(0.5).setDepth(201);
     this.tweens.add({ targets: mult, scale: 1, duration: 260, ease: 'Back.easeOut' });
     this.tweens.add({ targets: [title, mult, line], alpha: 0, delay: 950, duration: 250, onComplete: () => { title.destroy(); mult.destroy(); line.destroy(); } });
   }

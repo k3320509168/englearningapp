@@ -11006,6 +11006,399 @@
       "ans": "PNO",
       "speak": "euphonious",
       "vocabId": "R8:EUPHONIOUS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That is a plan in the sense that a wish with numbered headings is a plan.",
+      "options": [
+        "A. 若把加了編號標題的願望也算計畫，那它才算。",
+        "B. 它是已具備資源與時程的周密計畫。",
+        "C. 編號弄錯了，所以只須重排標題。",
+        "D. 說話者要求在正式計畫內禁止寫願望。"
+      ],
+      "ans": "A",
+      "explain": "in the sense that以貶低比較限定認可，暗指缺少落實內容。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have secured a venue, if secured means that someone thinks they know the person with the key.",
+      "options": [
+        "A. 持鑰匙者已親自保證會準時開門。",
+        "B. 所謂搞定場地，其實只到有人以為認識持鑰匙者。",
+        "C. 場地已正式預訂且鑰匙已領取。",
+        "D. 場地確定無法使用，所有人都知道。"
+      ],
+      "ans": "B",
+      "explain": "if secured means以弱證據反諷強字眼，未確認場地可用。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I admire your optimism. I would admire a spare cable rather more.",
+      "options": [
+        "A. 已找到備用線，只是不想拿出來。",
+        "B. 正式要求對方停止提出任何想法。",
+        "C. 比起樂觀，更希望有備用線材。",
+        "D. 認為樂觀已足以取代任何器材。"
+      ],
+      "ans": "C",
+      "explain": "比較式委婉指出實際準備比樂觀更有幫助。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Let us not call it unanimous before we have asked the people who were not in the room.",
+      "options": [
+        "A. 說話者反對任何形式的意見徵詢。",
+        "B. 還沒問缺席者之前，別急著稱全體一致。",
+        "C. 所有缺席者已投票同意，不必再問。",
+        "D. 只要有人缺席，就永遠不能形成任何共識。"
+      ],
+      "ans": "B",
+      "explain": "質疑unanimous的涵蓋範圍，不是否定形成共識的可能。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Apparently, the backup was to remain calm. We have achieved the calm part; the projector remains magnificently blank.",
+      "options": [
+        "A. 投影空白是原本預定的表演內容。",
+        "B. 說話者確認備用投影機已準備妥當。",
+        "C. 備案似乎只有冷靜；人已冷靜，投影機仍一片空白。",
+        "D. 冷靜後已成功恢復投影，所以備案完整奏效。"
+      ],
+      "ans": "C",
+      "explain": "calm與blank並置諷刺態度並未解決設備問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I said I could live with it. That was not an invitation to quote me as its most ardent advocate.",
+      "options": [
+        "A. 原先熱烈支持，現在只是要求把名字拼對。",
+        "B. 無法接受任何部分，因此從未表示容忍。",
+        "C. 邀請對方代表自己重新提出整套方案。",
+        "D. 能接受不表示可把我說成最熱烈的支持者。"
+      ],
+      "ans": "D",
+      "explain": "live with容忍或勉接受，強度遠低ardent advocate。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can preserve the spirit of the original plan, provided nobody insists on identifying it with any of the original arrangements.",
+      "options": [
+        "A. 說話者保證會撤回每一項新安排。",
+        "B. 只要能認出原作者，就不需考慮目的。",
+        "C. 可保留原案精神，前提是別把精神綁在任何原安排上。",
+        "D. 原案全部細節已保留，所以精神無從改變。"
+      ],
+      "ans": "C",
+      "explain": "精神與具體安排分離，語氣可帶自嘲，未聲稱目的必定不變。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The minutes make us sound wonderfully decisive. You would never guess how much of the agreement consisted of agreeing not to decide yet.",
+      "options": [
+        "A. 紀錄忠實顯示每項實質決定都已定案。",
+        "B. 參加者從未就任何事情達成過任何共識。",
+        "C. 說話者反對會議留下書面紀錄本身。",
+        "D. 紀錄寫得果斷，掩住不少共識其實是暫不決定。"
+      ],
+      "ans": "D",
+      "explain": "程序共識與實質決斷不同，wonderfully decisive帶反諷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is an elegance to a solution that works only if the difficulty it is meant to solve has already disappeared. I would not confuse that elegance with usefulness.",
+      "options": [
+        "A. 若須等原難題消失才有效，再漂亮也未必實用。",
+        "B. 解法已經消除難題，因此美觀與實用兼備。",
+        "C. 說話者認為任何優雅解法都絕不實用。",
+        "D. 只要解法不美觀，就不必檢查效果。"
+      ],
+      "ans": "A",
+      "explain": "質疑此解法的前提架空問題，未將所有優雅解法一概否定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】After a plan fails for the third time, a character says, Well, at least we are becoming consistent. What gives the remark its humour?",
+      "options": [
+        "A. A normally positive quality is applied to repeated failure.",
+        "B. The speaker has misunderstood how many attempts were made.",
+        "C. The failures have produced the intended practical result.",
+        "D. The speaker reveals that consistency was the original goal."
+      ],
+      "ans": "A",
+      "explain": "consistent通常可稱讚，這裡將穩定性套在失敗上形成自嘲，非不懂次數。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator calls a last-minute improvisation an exercise in retrospective planning. What is suggested?",
+      "options": [
+        "A. The exercise required everyone to remember a written timetable.",
+        "B. Order was attributed afterwards to actions not fully planned in advance.",
+        "C. A detailed plan was completed before any action was taken.",
+        "D. The participants repeated an earlier plan without alteration."
+      ],
+      "ans": "B",
+      "explain": "retrospective與planning形成張力，暗示事後把即興說成有計畫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The objection, persuasive ___ in isolation, ignores the constraints under which the alternative would operate.",
+      "options": [
+        "A. as may be it",
+        "B. despite it may be",
+        "C. though it may be",
+        "D. though may it be"
+      ],
+      "ans": "C",
+      "explain": "形容詞置首的讓步結構persuasive though it may be，承認局部說服力後提出限制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】One friend says, Shall I bring a plan? The other replies, Bring two; the first can keep tradition by falling apart. What is implied?",
+      "options": [
+        "A. There is an actual rule requiring the first plan to fail.",
+        "B. Past plans have failed often enough to invite a teasing expectation.",
+        "C. The first plan has already been approved in writing.",
+        "D. Both friends want to abandon the gathering entirely."
+      ],
+      "ans": "B",
+      "explain": "keep tradition為戲謔慣例，不能把玩笑當明訂規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The host announces that the delay will give guests more time to enjoy the entrance hall. The narrator observes that this benefit had become apparent only after the kitchen flooded. What is the narrator doing?",
+      "options": [
+        "A. Establishing that guests had requested the delay beforehand.",
+        "B. Arguing that an enjoyable wait proves there was no disruption.",
+        "C. Exposing a compensatory description that recasts an unplanned problem as an advantage.",
+        "D. Disputing whether the building contains an entrance hall."
+      ],
+      "ans": "C",
+      "explain": "only after揭露好處是出事後才提出，用語帶對主人的善意包裝的觀察。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Looking back on yesterday’s exchange, had the assurance been less categorical, its withdrawal minutes later ___ quite so conspicuous at the time.",
+      "options": [
+        "A. might not seem",
+        "B. will not have seemed",
+        "C. has not seemed",
+        "D. might not have seemed"
+      ],
+      "ans": "D",
+      "explain": "原先保證及撤回均為已發生的情節，過去反事實結果用might not have seemed；其餘未對應這段已結束的往事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The narrator lists three abandoned routes, then writes, Our destination had remained admirably stable; everything else was open to negotiation. What is the tone?",
+      "options": [
+        "A. Entirely literal praise for a tightly controlled itinerary.",
+        "B. A detached technical account of navigation equipment.",
+        "C. Lightly ironic about disorder surrounding a constant aim.",
+        "D. Indignant that the destination itself changed repeatedly."
+      ],
+      "ans": "C",
+      "explain": "目的穩定對照其餘混亂，admirably略帶溫和反諷；非目的改三次。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A speaker says, I would not dream of standing in your way, immediately before listing conditions that make proceeding impossible. What is the effect?",
+      "options": [
+        "A. The speaker openly withdraws every condition previously proposed.",
+        "B. The conditions establish that proceeding has become easier.",
+        "C. The speaker is reporting an actual dream rather than expressing a stance.",
+        "D. A profession of non-interference is undermined by the practical force of the conditions."
+      ],
+      "ans": "D",
+      "explain": "口頭不阻擋與實際條件封死形成語用矛盾，非字面夢境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A meeting ends with everyone agreeing that the draft is a basis for further discussion. The minutes replace this with agreement in principle. A participant objects. What is the strongest basis for the objection?",
+      "options": [
+        "A. A readiness to discuss has been upgraded into provisional endorsement of the substance.",
+        "B. The minutes have understated a final and unconditional agreement.",
+        "C. The objection proves the participant rejected every sentence in the draft.",
+        "D. The phrase further discussion establishes that the meeting never took place."
+      ],
+      "ans": "A",
+      "explain": "討論起點不等於原則支持；修辭強度升級會誤表承諾。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在未預備完整方案下當場即興創作或應變",
+      "ans": "IMPROVISATION",
+      "speak": "improvisation",
+      "vocabId": "R8:IMPROVISATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對結果保持樂觀有信心的",
+      "ans": "SANGUINE",
+      "speak": "sanguine",
+      "vocabId": "R8:SANGUINE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：讓人保住顏面的重新表述",
+      "ans": "A FACE SAVING REFORMULATION",
+      "speak": "a face saving reformulation",
+      "vocabId": "R8:A FACE SAVING REFORMULATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：措辭蓋過實質內容的表面成功",
+      "ans": "A TRIUMPH OF WORDING OVER SUBSTANCE",
+      "speak": "a triumph of wording over substance",
+      "vocabId": "R8:A TRIUMPH OF WORDING OVER SUBSTANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：同意繼續不等於同意繼續所涉及的內容",
+      "ans": "AGREEMENT TO CONTINUE IS NOT AGREEMENT ON WHAT CONTINUATION ENTAILS",
+      "speak": "agreement to continue is not agreement on what continuation entails",
+      "vocabId": "R8:AGREEMENT TO CONTINUE IS NOT AGREEMENT ON WHAT CONTINUATION ENTAILS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：圓融的重述可能仍讓根本歧見原封不動",
+      "ans": "A TACTFUL REFORMULATION CAN LEAVE THE UNDERLYING DISAGREEMENT INTACT",
+      "speak": "a tactful reformulation can leave the underlying disagreement intact",
+      "vocabId": "R8:A TACTFUL REFORMULATION CAN LEAVE THE UNDERLYING DISAGREEMENT INTACT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：未預先備稿而即席進行的（E 開頭，14 個字母）",
+      "ans": "EXTEMPORANEOUS",
+      "speak": "extemporaneous",
+      "vocabId": "R8:EXTEMPORANEOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：遲遲無法作決斷的狀態（I 開頭，12 個字母）",
+      "ans": "IRRESOLUTION",
+      "speak": "irresolution",
+      "vocabId": "R8:IRRESOLUTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：事後追溯到先前時間而生效或套用地（R 開頭，13 個字母）",
+      "ans": "RETROACTIVELY",
+      "speak": "retroactively",
+      "vocabId": "R8:RETROACTIVELY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：U N F A L S _ F I A B L E (因不容任何反證而無法被證偽的)",
+      "ans": "I",
+      "speak": "unfalsifiable",
+      "vocabId": "R8:UNFALSIFIABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：U N Q _ A L I _ I E D (沒有附加限制條件或保留的)",
+      "ans": "UF",
+      "speak": "unqualified",
+      "vocabId": "R8:UNQUALIFIED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R E _ O N _ E I _ E D (在充分了解事實前就先形成的)",
+      "ans": "CCV",
+      "speak": "preconceived",
+      "vocabId": "R8:PRECONCEIVED"
     }
   ],
   "boss": [
@@ -14676,6 +15069,137 @@
       "ans": "SMI",
       "speak": "dissembling",
       "vocabId": "R8:DISSEMBLING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The itinerary is beautifully flexible. It has so far accommodated everything except the place we meant to visit.",
+      "options": [
+        "A. 行程準確遵守所有預訂景點與時間。",
+        "B. 彈性是為了避開早已不想去的地方。",
+        "C. 說話者在稱讚目的地特別容易抵達。",
+        "D. 行程彈性大到什麼都容納，唯獨沒到原定目的地。"
+      ],
+      "ans": "D",
+      "explain": "except揭露beautifully flexible為反諷，偏離原目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If the consultation can only alter the colour of the chairs, perhaps we should be more modest about what we are calling consultation.",
+      "options": [
+        "A. 若只能改椅子顏色，稱作徵詢時應別說得太大。",
+        "B. 能改椅色就已保證所有實質選擇都開放。",
+        "C. 說話者只反對目前選定的那種顏色。",
+        "D. 只要改稱另一名稱，所有程序問題就解決。"
+      ],
+      "ans": "A",
+      "explain": "以微小可改項目質疑consultation實質範圍，不只是顏色偏好。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have not so much resolved the disagreement as found a wording under which each of us can imagine having won it.",
+      "options": [
+        "A. 說話者確認雙方已交換所有實質立場。",
+        "B. 與其說解決歧見，不如說找到各自以為獲勝的措辭。",
+        "C. 歧見已被雙方以完全相同意思澄清。",
+        "D. 只有一方理解措辭，另一方已退出討論。"
+      ],
+      "ans": "B",
+      "explain": "not so much A as B把表面解決重述為容納相異解讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A proposal described as a nonstarter is regarded as ___.",
+      "options": [
+        "A. needing only a later starting time",
+        "B. being ready for immediate implementation",
+        "C. having succeeded without formal approval",
+        "D. having no realistic prospect of acceptance or success"
+      ],
+      "ans": "D",
+      "explain": "nonstarter比喻無望採用或成功的方案，不單指較晚開始。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】An agreement to keep talking is announced as agreement on a way forward. Which ambiguity matters?",
+      "options": [
+        "A. Continuing the process may be presented as agreement on its substantive direction.",
+        "B. The parties may be using different words for the same calendar date.",
+        "C. A discussion may take place in more than one physical room.",
+        "D. Participants may disagree about whether any speech occurred."
+      ],
+      "ans": "A",
+      "explain": "way forward可讓程序繼續聽來像實質方向已共識；問題在兩者被混同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The narrator says the plan survived, if survival includes being unrecognisable to its author. What does the qualification do?",
+      "options": [
+        "A. It makes the author’s recognition the official approval procedure.",
+        "B. It questions how much continuity remains beneath the claim of survival.",
+        "C. It confirms that every original detail has been preserved.",
+        "D. It identifies a different person as the plan’s original author."
+      ],
+      "ans": "B",
+      "explain": "if帶諷刺限定，原案面目全非使survived說法可疑，非訂正式程序。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：因方便而可隨意伸縮的定義",
+      "ans": "A CONVENIENTLY ELASTIC DEFINITION",
+      "speak": "a conveniently elastic definition",
+      "vocabId": "R8:A CONVENIENTLY ELASTIC DEFINITION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：保證原本令人印象深刻，直到限制條件被說明",
+      "ans": "THE ASSURANCE WAS IMPRESSIVE UNTIL ITS QUALIFICATIONS WERE MADE EXPLICIT",
+      "speak": "the assurance was impressive until its qualifications were made explicit",
+      "vocabId": "R8:THE ASSURANCE WAS IMPRESSIVE UNTIL ITS QUALIFICATIONS WERE MADE EXPLICIT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：刻意以含糊或迂迴說法避開真話（P 開頭，13 個字母）",
+      "ans": "PREVARICATION",
+      "speak": "prevarication",
+      "vocabId": "R8:PREVARICATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C I R _ U M L _ C U _ I O N (以冗長迂迴說法代替直接表達)",
+      "ans": "COT",
+      "speak": "circumlocution",
+      "vocabId": "R8:CIRCUMLOCUTION"
     }
   ]
 }

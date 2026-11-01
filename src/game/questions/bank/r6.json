@@ -11009,6 +11009,399 @@
       "ans": "CON",
       "speak": "echoing",
       "vocabId": "R6:ECHOING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We will have to play it by ear until we know how many people are coming.",
+      "options": [
+        "A. 人數未明，得先視情況應變。",
+        "B. 人數已定，所以每個細節都不會改。",
+        "C. 得先學會用耳朵辨認每位來賓。",
+        "D. 不論有多少人，都決定取消活動。"
+      ],
+      "ans": "A",
+      "explain": "play it by ear比喻不預先定死，依情況應變。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Can we leave that decision open for now?",
+      "options": [
+        "A. 能把先前決定的紀錄刪掉嗎？",
+        "B. 能先暫不決定那件事嗎？",
+        "C. 能現在正式宣布最後決定嗎？",
+        "D. 能把門打開讓大家直接進來嗎？"
+      ],
+      "ans": "B",
+      "explain": "leave a decision open暫不定案，不是宣告或刪紀錄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We need a fallback if the outdoor space is unavailable.",
+      "options": [
+        "A. 戶外場地已確定永遠停止使用。",
+        "B. 現在需要有人往後退才能入場。",
+        "C. 戶外場地不能用時，需要備案。",
+        "D. 只要戶外場地能用，也必須改期。"
+      ],
+      "ans": "C",
+      "explain": "fallback為第一方案不可行時的替代辦法。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are still going ahead; we are just moving the activity indoors.",
+      "options": [
+        "A. 只准原本就在室內的人參加。",
+        "B. 活動照辦，只是改到室內。",
+        "C. 活動已取消，室內場地也不用了。",
+        "D. 室內活動結束後才決定是否照辦。"
+      ],
+      "ans": "B",
+      "explain": "going ahead明示照辦，just限縮改動為地點。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Could we swap the two sessions? The person leading the first one is arriving late.",
+      "options": [
+        "A. 能刪掉第二場，因第一場已開始嗎？",
+        "B. 能讓所有人各帶一場，不必等帶領者嗎？",
+        "C. 能把兩場順序對調，因第一場帶領者晚到嗎？",
+        "D. 能把兩場都延長，因帶領者會提早到嗎？"
+      ],
+      "ans": "C",
+      "explain": "swap交換先後，不是增時或刪掉一場。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I had assumed you were bringing the equipment. No, I only said I could help carry it.",
+      "options": [
+        "A. 雙方已同意各自提供一套相同器材。",
+        "B. 一方承諾提供器材，現在承認忘了帶。",
+        "C. 雙方都只談過搬運，從未出現不同理解。",
+        "D. 一方誤以為對方備器材；對方只說能幫忙搬。"
+      ],
+      "ans": "D",
+      "explain": "提供器材與協助搬運是不同承諾；had assumed標示原誤解。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can shorten the introduction, but I would not take time away from the practical exercise.",
+      "options": [
+        "A. 兩部分都取消，改成自由討論。",
+        "B. 介紹已比實作短，所以不需調整。",
+        "C. 可縮短介紹，但不想壓縮實作。",
+        "D. 可縮短實作，介紹則完全不能動。"
+      ],
+      "ans": "C",
+      "explain": "but對比兩部分的調整優先次序。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am happy to try it once. That is not quite the same as agreeing to do it every week.",
+      "options": [
+        "A. 同意每週做，只是不願第一次參加。",
+        "B. 曾試過一次，所以已承諾每週參加。",
+        "C. 只要不是每週做，就拒絕任何試行。",
+        "D. 願試一次，不等於同意每週做。"
+      ],
+      "ans": "D",
+      "explain": "一次嘗試與持續承諾範圍不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We may have to make do with the smaller room, although it is not what we originally had in mind.",
+      "options": [
+        "A. 或得將就小房間，雖非原先理想。",
+        "B. 小房間就是原先最想要的選擇。",
+        "C. 已決定不使用任何室內空間。",
+        "D. 小房間比原本預訂的大得多。"
+      ],
+      "ans": "A",
+      "explain": "make do with在條件不足下將就，may保留未定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】If we had checked the opening hours, we ___ outside a locked door now.",
+      "options": [
+        "A. would not be standing",
+        "B. will not have stood",
+        "C. had not stood",
+        "D. would not have been stand"
+      ],
+      "ans": "A",
+      "explain": "過去未查時間造成現在困境，混合條件句用would not be standing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】We have kept the afternoon free in case the morning session runs over. What is the purpose?",
+      "options": [
+        "A. To ensure that the morning session finishes early.",
+        "B. To allow for a possible delay.",
+        "C. To confirm that the morning session has been cancelled.",
+        "D. To arrange two sessions at exactly the same time."
+      ],
+      "ans": "B",
+      "explain": "in case為預先防備可能狀況；不保證會延誤或一定提早結束。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A makeshift shelter is one that is ___.",
+      "options": [
+        "A. reserved for people who booked in advance",
+        "B. left empty until its official opening",
+        "C. put together temporarily from available materials",
+        "D. built according to a permanent design"
+      ],
+      "ans": "C",
+      "explain": "makeshift指用現有材料權宜搭成，不等於永久設計。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】We could use the hall or meet outside. The latter depends on the weather. Which option depends on the weather?",
+      "options": [
+        "A. Choosing an appointment time.",
+        "B. Meeting outside.",
+        "C. Using the hall.",
+        "D. Cancelling both options."
+      ],
+      "ans": "B",
+      "explain": "the latter指剛列舉的後者meet outside。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The room, ___ we had been assured would be available, was already occupied.",
+      "options": [
+        "A. what",
+        "B. whose",
+        "C. which",
+        "D. where"
+      ],
+      "ans": "C",
+      "explain": "關係代詞which作would be available的主詞；we had been assured是插入的轉述結構。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The replacement bus leaves at six, provided that enough passengers have booked. What is established?",
+      "options": [
+        "A. A six o’clock departure is guaranteed.",
+        "B. All passengers must arrive six hours early.",
+        "C. The original bus will also leave at six.",
+        "D. The departure depends on sufficient bookings."
+      ],
+      "ans": "D",
+      "explain": "provided that引出條件；時間已給但未無條件保證發車。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】That should work, as long as we can get the keys beforehand. Which reply addresses the condition?",
+      "options": [
+        "A. The room has a large window facing the garden.",
+        "B. I have never visited that part of town before.",
+        "C. I can collect them this evening and bring them with me.",
+        "D. Yes, I also think the plan sounds enjoyable."
+      ],
+      "ans": "C",
+      "explain": "條件是事前取得鑰匙；只有承諾先領鑰匙直接處理此條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A workshop leader brings extra paper but no spare projector. She explains that participants can draw their ideas if the slides fail. What does her preparation show?",
+      "options": [
+        "A. She expects every participant to repair the projector.",
+        "B. She has cancelled the visual part of the workshop.",
+        "C. She believes the projector is certain to fail.",
+        "D. She has prepared an alternative way to carry out the activity."
+      ],
+      "ans": "D",
+      "explain": "if表示備案，改用畫圖仍保留視覺活動，不代表確信故障。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】We will review the arrangement after two weeks; that does not mean it ends automatically then. What is the distinction?",
+      "options": [
+        "A. Reconsidering an arrangement versus bringing it to an end.",
+        "B. Starting an arrangement versus asking permission to discuss it.",
+        "C. Extending an arrangement versus refusing to evaluate it.",
+        "D. Changing the participants versus changing the location."
+      ],
+      "ans": "A",
+      "explain": "review是重新評估，不等於自動到期，題幹已明確區分。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：用現有材料權宜搭成的",
+      "ans": "MAKESHIFT",
+      "speak": "makeshift",
+      "vocabId": "R6:MAKESHIFT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：重新安排原定的時間",
+      "ans": "RESCHEDULE",
+      "speak": "reschedule",
+      "vocabId": "R6:RESCHEDULE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實際可行的替代方案",
+      "ans": "A WORKABLE ALTERNATIVE",
+      "speak": "a workable alternative",
+      "vocabId": "R6:A WORKABLE ALTERNATIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：出乎意料的場地變更",
+      "ans": "AN UNEXPECTED CHANGE OF VENUE",
+      "speak": "an unexpected change of venue",
+      "vocabId": "R6:AN UNEXPECTED CHANGE OF VENUE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：應先確認備選再取消原預約",
+      "ans": "WE SHOULD CONFIRM THE ALTERNATIVE BEFORE CANCELLING THE BOOKING",
+      "speak": "we should confirm the alternative before cancelling the booking",
+      "vocabId": "R6:WE SHOULD CONFIRM THE ALTERNATIVE BEFORE CANCELLING THE BOOKING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：願意試試與作固定承諾不同",
+      "ans": "BEING WILLING TO TRY IS DIFFERENT FROM MAKING A REGULAR COMMITMENT",
+      "speak": "being willing to try is different from making a regular commitment",
+      "vocabId": "R6:BEING WILLING TO TRY IS DIFFERENT FROM MAKING A REGULAR COMMITMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：可能發生而需要預作打算的狀況（C 開頭，11 個字母）",
+      "ans": "CONTINGENCY",
+      "speak": "contingency",
+      "vocabId": "R6:CONTINGENCY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：把原定事情延後舉行（P 開頭，12 個字母）",
+      "ans": "POSTPONEMENT",
+      "speak": "postponement",
+      "vocabId": "R6:POSTPONEMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：善用現有資源想辦法解決問題的（R 開頭，11 個字母）",
+      "ans": "RESOURCEFUL",
+      "speak": "resourceful",
+      "vocabId": "R6:RESOURCEFUL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：F L E X I _ I L I T Y (因情況不同而能調整的彈性)",
+      "ans": "B",
+      "speak": "flexibility",
+      "vocabId": "R6:FLEXIBILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：C O N _ I N _ E N T (取決於另一條件是否成立的)",
+      "ans": "TG",
+      "speak": "contingent",
+      "vocabId": "R6:CONTINGENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E _ D _ U _ T (因新情況再次作調整)",
+      "ans": "AJS",
+      "speak": "readjust",
+      "vocabId": "R6:READJUST"
     }
   ],
   "boss": [
@@ -14679,6 +15072,137 @@
       "ans": "EUI",
       "speak": "interruption",
       "vocabId": "R6:INTERRUPTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I can come on Friday, just not before four.",
+      "options": [
+        "A. 週五四點之前能來，之後不行。",
+        "B. 只有週四能來，週五沒有空。",
+        "C. 週五無法出席，所以要取消。",
+        "D. 週五能來，但四點以前不行。"
+      ],
+      "ans": "D",
+      "explain": "not before four限最早時間，不是否定週五出席。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Let us keep the original booking until the alternative is confirmed. There is no point losing both.",
+      "options": [
+        "A. 備選未確認前，先保留原預約，免得兩頭落空。",
+        "B. 立刻取消兩個預約，以免重複付款。",
+        "C. 備選一提出就算確定，可取消原預約。",
+        "D. 原預約已失效，所以無法保留。"
+      ],
+      "ans": "A",
+      "explain": "until提供保留期限條件；理由是避免兩方案都失去。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I do not mind a change of plan. I just need to know before I set off, rather than after I have arrived.",
+      "options": [
+        "A. 已抵達現場，所以要求立刻開始。",
+        "B. 不介意改計畫，只希望出發前得知。",
+        "C. 反對任何改動，即使事先通知也一樣。",
+        "D. 希望抵達後才知道有哪些改動。"
+      ],
+      "ans": "B",
+      "explain": "主訴求為通知時間，不是拒絕改動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I could move my appointment, but I would rather not unless it is necessary. What is the speaker saying?",
+      "options": [
+        "A. The appointment has already been moved.",
+        "B. A change is impossible under any circumstances.",
+        "C. The speaker wants someone else to cancel their appointment.",
+        "D. A change is possible but not preferred."
+      ],
+      "ans": "D",
+      "explain": "could表示可行，would rather not表示不偏好，unless保留必要時例外。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A group agrees to meet at the east gate. One member suggests the café instead because the gate is exposed to rain. The others accept without changing the time. What has changed?",
+      "options": [
+        "A. The meeting place, while the agreed time remains.",
+        "B. The meeting time, while the gate remains the venue.",
+        "C. The purpose of the meeting and everyone invited.",
+        "D. The route from the café to the east gate."
+      ],
+      "ans": "A",
+      "explain": "instead取代地點，without changing the time排除時間變更。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The original route was shorter, but the revised one avoids a steep hill. A walker with a heavy bag prefers the revision. What is the most plausible trade-off?",
+      "options": [
+        "A. A heavier bag in exchange for a more direct route.",
+        "B. A longer distance in exchange for an easier climb.",
+        "C. A steeper climb in exchange for a shorter distance.",
+        "D. An earlier departure in exchange for a cheaper ticket."
+      ],
+      "ans": "B",
+      "explain": "shorter屬原路，避陡坡屬新路；不添加票價或出發時間。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：還可能調整的暫定安排",
+      "ans": "A PROVISIONAL ARRANGEMENT",
+      "speak": "a provisional arrangement",
+      "vocabId": "R6:A PROVISIONAL ARRANGEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：可以調整活動而不放棄目的",
+      "ans": "WE CAN ADAPT THE ACTIVITY WITHOUT ABANDONING ITS PURPOSE",
+      "speak": "we can adapt the activity without abandoning its purpose",
+      "vocabId": "R6:WE CAN ADAPT THE ACTIVITY WITHOUT ABANDONING ITS PURPOSE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：計畫在實際條件下能否辦到的可行性（F 開頭，11 個字母）",
+      "ans": "FEASIBILITY",
+      "speak": "feasibility",
+      "vocabId": "R6:FEASIBILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N _ O R _ S _ E N (事前沒有預料到的)",
+      "ans": "FEE",
+      "speak": "unforeseen",
+      "vocabId": "R6:UNFORESEEN"
     }
   ]
 }

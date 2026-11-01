@@ -2,9 +2,9 @@
   "CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
-    "meaning": "可能發生而需要預作準備的情況",
-    "example": "Rain is one contingency we should consider.",
-    "exampleZh": "下雨是應考慮的可能情況。",
+    "meaning": "可能發生而需要預作打算的狀況",
+    "example": "We discussed a contingency plan for heavy rain.",
+    "exampleZh": "我們討論大雨備案。",
     "senses": [
       {
         "pos": "n.",
@@ -35,15 +35,25 @@
             "zh": "下雨是應考慮的可能情況。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "可能發生而需要預作打算的狀況",
+        "examples": [
+          {
+            "en": "We discussed a contingency plan for heavy rain.",
+            "zh": "我們討論大雨備案。"
+          }
+        ]
       }
     ]
   },
   "FEASIBILITY": {
     "word": "feasibility",
     "pos": "n.",
-    "meaning": "計畫能否實行的可行性",
-    "example": "The engineers questioned the feasibility of the design.",
-    "exampleZh": "工程師質疑這項設計的可行性。",
+    "meaning": "計畫在實際條件下能否辦到的可行性",
+    "example": "We checked the feasibility of an outdoor session.",
+    "exampleZh": "我們確認戶外場次的可行性。",
     "senses": [
       {
         "pos": "n.",
@@ -62,6 +72,16 @@
           {
             "en": "The engineers questioned the feasibility of the design.",
             "zh": "工程師質疑這項設計的可行性。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "計畫在實際條件下能否辦到的可行性",
+        "examples": [
+          {
+            "en": "We checked the feasibility of an outdoor session.",
+            "zh": "我們確認戶外場次的可行性。"
           }
         ]
       }
@@ -3062,9 +3082,9 @@
   },
   "CONTINGENT": {
     "pos": "adj.",
-    "meaning": "是否發生取決於某項條件的",
-    "example": "The departure is contingent on favourable conditions.",
-    "exampleZh": "是否出發取決於有利條件。",
+    "meaning": "取決於另一條件是否成立的",
+    "example": "The visit is contingent on the room being available.",
+    "exampleZh": "參訪取決於房間是否可用。",
     "senses": [
       {
         "pos": "adj.",
@@ -3077,6 +3097,16 @@
           {
             "en": "A contingent offer is not an unconditional guarantee.",
             "zh": "附條件提議不是無條件保證。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "取決於另一條件是否成立的",
+        "examples": [
+          {
+            "en": "The visit is contingent on the room being available.",
+            "zh": "參訪取決於房間是否可用。"
           }
         ]
       }
@@ -7896,9 +7926,9 @@
   },
   "RESCHEDULE": {
     "pos": "v.",
-    "meaning": "把原訂事項另排時間",
-    "example": "We may need to reschedule the visit.",
-    "exampleZh": "我們可能需改期到訪。",
+    "meaning": "重新安排原定的時間",
+    "example": "We need to reschedule the rehearsal.",
+    "exampleZh": "我們需要重排彩排時間。",
     "senses": [
       {
         "pos": "v.",
@@ -7909,8 +7939,19 @@
             "zh": "我們可能需改期到訪。"
           }
         ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "重新安排原定的時間",
+        "examples": [
+          {
+            "en": "We need to reschedule the rehearsal.",
+            "zh": "我們需要重排彩排時間。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "reschedule"
   },
   "PROMPT": {
     "pos": "n.",
@@ -9978,12 +10019,235 @@
       }
     ]
   },
+  "MAKESHIFT": {
+    "word": "makeshift",
+    "pos": "adj.",
+    "meaning": "用現有材料權宜搭成的",
+    "example": "They built a makeshift table from two boxes.",
+    "exampleZh": "他們用兩個箱子搭成臨時桌子。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "用現有材料權宜搭成的",
+        "examples": [
+          {
+            "en": "They built a makeshift table from two boxes.",
+            "zh": "他們用兩個箱子搭成臨時桌子。"
+          }
+        ]
+      }
+    ]
+  },
+  "A WORKABLE ALTERNATIVE": {
+    "word": "a workable alternative",
+    "pos": "phr.",
+    "meaning": "實際可行的替代方案",
+    "example": "The smaller room offers a workable alternative.",
+    "exampleZh": "小房間提供可行替代方案。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際可行的替代方案",
+        "examples": [
+          {
+            "en": "The smaller room offers a workable alternative.",
+            "zh": "小房間提供可行替代方案。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PROVISIONAL ARRANGEMENT": {
+    "word": "a provisional arrangement",
+    "pos": "phr.",
+    "meaning": "還可能調整的暫定安排",
+    "example": "This is a provisional arrangement for the first week.",
+    "exampleZh": "這是第一週暫定安排。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "還可能調整的暫定安排",
+        "examples": [
+          {
+            "en": "This is a provisional arrangement for the first week.",
+            "zh": "這是第一週暫定安排。"
+          }
+        ]
+      }
+    ]
+  },
+  "AN UNEXPECTED CHANGE OF VENUE": {
+    "word": "an unexpected change of venue",
+    "pos": "phr.",
+    "meaning": "出乎意料的場地變更",
+    "example": "We announced an unexpected change of venue.",
+    "exampleZh": "我們宣布意外的場地變更。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "出乎意料的場地變更",
+        "examples": [
+          {
+            "en": "We announced an unexpected change of venue.",
+            "zh": "我們宣布意外的場地變更。"
+          }
+        ]
+      }
+    ]
+  },
+  "WE SHOULD CONFIRM THE ALTERNATIVE BEFORE CANCELLING THE BOOKING": {
+    "word": "we should confirm the alternative before cancelling the booking",
+    "pos": "phr.",
+    "meaning": "應先確認備選再取消原預約",
+    "example": "We should confirm the alternative before cancelling the booking.",
+    "exampleZh": "應先確認備選再取消原預約。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "應先確認備選再取消原預約",
+        "examples": [
+          {
+            "en": "We should confirm the alternative before cancelling the booking.",
+            "zh": "應先確認備選再取消原預約。"
+          }
+        ]
+      }
+    ]
+  },
+  "BEING WILLING TO TRY IS DIFFERENT FROM MAKING A REGULAR COMMITMENT": {
+    "word": "being willing to try is different from making a regular commitment",
+    "pos": "phr.",
+    "meaning": "願意試試與作固定承諾不同",
+    "example": "Being willing to try is different from making a regular commitment.",
+    "exampleZh": "願意試試與作固定承諾不同。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "願意試試與作固定承諾不同",
+        "examples": [
+          {
+            "en": "Being willing to try is different from making a regular commitment.",
+            "zh": "願意試試與作固定承諾不同。"
+          }
+        ]
+      }
+    ]
+  },
+  "WE CAN ADAPT THE ACTIVITY WITHOUT ABANDONING ITS PURPOSE": {
+    "word": "we can adapt the activity without abandoning its purpose",
+    "pos": "phr.",
+    "meaning": "可以調整活動而不放棄目的",
+    "example": "We can adapt the activity without abandoning its purpose.",
+    "exampleZh": "可以調整活動而不放棄目的。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可以調整活動而不放棄目的",
+        "examples": [
+          {
+            "en": "We can adapt the activity without abandoning its purpose.",
+            "zh": "可以調整活動而不放棄目的。"
+          }
+        ]
+      }
+    ]
+  },
+  "POSTPONEMENT": {
+    "pos": "n.",
+    "meaning": "把原定事情延後舉行",
+    "example": "The postponement gives us another week to prepare.",
+    "exampleZh": "延期使我們多一週準備。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把原定事情延後舉行",
+        "examples": [
+          {
+            "en": "The postponement gives us another week to prepare.",
+            "zh": "延期使我們多一週準備。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESOURCEFUL": {
+    "pos": "adj.",
+    "meaning": "善用現有資源想辦法解決問題的",
+    "example": "The resourceful team found another place to meet.",
+    "exampleZh": "足智多謀的團隊找到別處開會。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "善用現有資源想辦法解決問題的",
+        "examples": [
+          {
+            "en": "The resourceful team found another place to meet.",
+            "zh": "足智多謀的團隊找到別處開會。"
+          }
+        ]
+      }
+    ]
+  },
+  "FLEXIBILITY": {
+    "pos": "n.",
+    "meaning": "因情況不同而能調整的彈性",
+    "example": "The timetable allows some flexibility.",
+    "exampleZh": "時間表容許一些彈性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因情況不同而能調整的彈性",
+        "examples": [
+          {
+            "en": "The timetable allows some flexibility.",
+            "zh": "時間表容許一些彈性。"
+          }
+        ]
+      }
+    ]
+  },
+  "READJUST": {
+    "pos": "v.",
+    "meaning": "因新情況再次作調整",
+    "example": "We can readjust the schedule tomorrow.",
+    "exampleZh": "我們明天可再次調整行程。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "因新情況再次作調整",
+        "examples": [
+          {
+            "en": "We can readjust the schedule tomorrow.",
+            "zh": "我們明天可再次調整行程。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNFORESEEN": {
+    "pos": "adj.",
+    "meaning": "事前沒有預料到的",
+    "example": "An unforeseen delay changed our plans.",
+    "exampleZh": "未料到的延誤改變我們的計畫。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "事前沒有預料到的",
+        "examples": [
+          {
+            "en": "An unforeseen delay changed our plans.",
+            "zh": "未料到的延誤改變我們的計畫。"
+          }
+        ]
+      }
+    ]
+  },
   "R6:CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
-    "meaning": "可能發生而需要預作準備的情況",
-    "example": "Rain is one contingency we should consider.",
-    "exampleZh": "下雨是應考慮的可能情況。",
+    "meaning": "可能發生而需要預作打算的狀況",
+    "example": "We discussed a contingency plan for heavy rain.",
+    "exampleZh": "我們討論大雨備案。",
     "senses": [
       {
         "pos": "n.",
@@ -10014,15 +10278,25 @@
             "zh": "下雨是應考慮的可能情況。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "可能發生而需要預作打算的狀況",
+        "examples": [
+          {
+            "en": "We discussed a contingency plan for heavy rain.",
+            "zh": "我們討論大雨備案。"
+          }
+        ]
       }
     ]
   },
   "R6:FEASIBILITY": {
     "word": "feasibility",
     "pos": "n.",
-    "meaning": "計畫能否實行的可行性",
-    "example": "The engineers questioned the feasibility of the design.",
-    "exampleZh": "工程師質疑這項設計的可行性。",
+    "meaning": "計畫在實際條件下能否辦到的可行性",
+    "example": "We checked the feasibility of an outdoor session.",
+    "exampleZh": "我們確認戶外場次的可行性。",
     "senses": [
       {
         "pos": "n.",
@@ -10041,6 +10315,16 @@
           {
             "en": "The engineers questioned the feasibility of the design.",
             "zh": "工程師質疑這項設計的可行性。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "計畫在實際條件下能否辦到的可行性",
+        "examples": [
+          {
+            "en": "We checked the feasibility of an outdoor session.",
+            "zh": "我們確認戶外場次的可行性。"
           }
         ]
       }
@@ -15043,9 +15327,9 @@
   },
   "R6:RESCHEDULE": {
     "pos": "v.",
-    "meaning": "把原訂事項另排時間",
-    "example": "We may need to reschedule the visit.",
-    "exampleZh": "我們可能需改期到訪。",
+    "meaning": "重新安排原定的時間",
+    "example": "We need to reschedule the rehearsal.",
+    "exampleZh": "我們需要重排彩排時間。",
     "senses": [
       {
         "pos": "v.",
@@ -15054,6 +15338,16 @@
           {
             "en": "We may need to reschedule the visit.",
             "zh": "我們可能需改期到訪。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "重新安排原定的時間",
+        "examples": [
+          {
+            "en": "We need to reschedule the rehearsal.",
+            "zh": "我們需要重排彩排時間。"
           }
         ]
       }
@@ -16410,6 +16704,210 @@
     ],
     "word": "echoing"
   },
+  "R6:MAKESHIFT": {
+    "word": "makeshift",
+    "pos": "adj.",
+    "meaning": "用現有材料權宜搭成的",
+    "example": "They built a makeshift table from two boxes.",
+    "exampleZh": "他們用兩個箱子搭成臨時桌子。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "用現有材料權宜搭成的",
+        "examples": [
+          {
+            "en": "They built a makeshift table from two boxes.",
+            "zh": "他們用兩個箱子搭成臨時桌子。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A WORKABLE ALTERNATIVE": {
+    "word": "a workable alternative",
+    "pos": "phr.",
+    "meaning": "實際可行的替代方案",
+    "example": "The smaller room offers a workable alternative.",
+    "exampleZh": "小房間提供可行替代方案。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實際可行的替代方案",
+        "examples": [
+          {
+            "en": "The smaller room offers a workable alternative.",
+            "zh": "小房間提供可行替代方案。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:AN UNEXPECTED CHANGE OF VENUE": {
+    "word": "an unexpected change of venue",
+    "pos": "phr.",
+    "meaning": "出乎意料的場地變更",
+    "example": "We announced an unexpected change of venue.",
+    "exampleZh": "我們宣布意外的場地變更。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "出乎意料的場地變更",
+        "examples": [
+          {
+            "en": "We announced an unexpected change of venue.",
+            "zh": "我們宣布意外的場地變更。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:WE SHOULD CONFIRM THE ALTERNATIVE BEFORE CANCELLING THE BOOKING": {
+    "word": "we should confirm the alternative before cancelling the booking",
+    "pos": "phr.",
+    "meaning": "應先確認備選再取消原預約",
+    "example": "We should confirm the alternative before cancelling the booking.",
+    "exampleZh": "應先確認備選再取消原預約。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "應先確認備選再取消原預約",
+        "examples": [
+          {
+            "en": "We should confirm the alternative before cancelling the booking.",
+            "zh": "應先確認備選再取消原預約。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:BEING WILLING TO TRY IS DIFFERENT FROM MAKING A REGULAR COMMITMENT": {
+    "word": "being willing to try is different from making a regular commitment",
+    "pos": "phr.",
+    "meaning": "願意試試與作固定承諾不同",
+    "example": "Being willing to try is different from making a regular commitment.",
+    "exampleZh": "願意試試與作固定承諾不同。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "願意試試與作固定承諾不同",
+        "examples": [
+          {
+            "en": "Being willing to try is different from making a regular commitment.",
+            "zh": "願意試試與作固定承諾不同。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:POSTPONEMENT": {
+    "pos": "n.",
+    "meaning": "把原定事情延後舉行",
+    "example": "The postponement gives us another week to prepare.",
+    "exampleZh": "延期使我們多一週準備。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把原定事情延後舉行",
+        "examples": [
+          {
+            "en": "The postponement gives us another week to prepare.",
+            "zh": "延期使我們多一週準備。"
+          }
+        ]
+      }
+    ],
+    "word": "postponement"
+  },
+  "R6:RESOURCEFUL": {
+    "pos": "adj.",
+    "meaning": "善用現有資源想辦法解決問題的",
+    "example": "The resourceful team found another place to meet.",
+    "exampleZh": "足智多謀的團隊找到別處開會。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "善用現有資源想辦法解決問題的",
+        "examples": [
+          {
+            "en": "The resourceful team found another place to meet.",
+            "zh": "足智多謀的團隊找到別處開會。"
+          }
+        ]
+      }
+    ],
+    "word": "resourceful"
+  },
+  "R6:FLEXIBILITY": {
+    "pos": "n.",
+    "meaning": "因情況不同而能調整的彈性",
+    "example": "The timetable allows some flexibility.",
+    "exampleZh": "時間表容許一些彈性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因情況不同而能調整的彈性",
+        "examples": [
+          {
+            "en": "The timetable allows some flexibility.",
+            "zh": "時間表容許一些彈性。"
+          }
+        ]
+      }
+    ],
+    "word": "flexibility"
+  },
+  "R6:CONTINGENT": {
+    "pos": "adj.",
+    "meaning": "取決於另一條件是否成立的",
+    "example": "The visit is contingent on the room being available.",
+    "exampleZh": "參訪取決於房間是否可用。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "是否發生取決於某項條件的",
+        "examples": [
+          {
+            "en": "The departure is contingent on favourable conditions.",
+            "zh": "是否出發取決於有利條件。"
+          },
+          {
+            "en": "A contingent offer is not an unconditional guarantee.",
+            "zh": "附條件提議不是無條件保證。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "取決於另一條件是否成立的",
+        "examples": [
+          {
+            "en": "The visit is contingent on the room being available.",
+            "zh": "參訪取決於房間是否可用。"
+          }
+        ]
+      }
+    ],
+    "word": "contingent"
+  },
+  "R6:READJUST": {
+    "pos": "v.",
+    "meaning": "因新情況再次作調整",
+    "example": "We can readjust the schedule tomorrow.",
+    "exampleZh": "我們明天可再次調整行程。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "因新情況再次作調整",
+        "examples": [
+          {
+            "en": "We can readjust the schedule tomorrow.",
+            "zh": "我們明天可再次調整行程。"
+          }
+        ]
+      }
+    ],
+    "word": "readjust"
+  },
   "R6:ON CLOSER INSPECTION": {
     "word": "on closer inspection",
     "pos": "phr.",
@@ -17004,29 +17502,6 @@
         ]
       }
     ]
-  },
-  "R6:CONTINGENT": {
-    "pos": "adj.",
-    "meaning": "是否發生取決於某項條件的",
-    "example": "The departure is contingent on favourable conditions.",
-    "exampleZh": "是否出發取決於有利條件。",
-    "senses": [
-      {
-        "pos": "adj.",
-        "meaning": "是否發生取決於某項條件的",
-        "examples": [
-          {
-            "en": "The departure is contingent on favourable conditions.",
-            "zh": "是否出發取決於有利條件。"
-          },
-          {
-            "en": "A contingent offer is not an unconditional guarantee.",
-            "zh": "附條件提議不是無條件保證。"
-          }
-        ]
-      }
-    ],
-    "word": "contingent"
   },
   "R6:ACCESSIBLE": {
     "pos": "adj.",
@@ -18472,5 +18947,62 @@
       }
     ],
     "word": "interruption"
+  },
+  "R6:A PROVISIONAL ARRANGEMENT": {
+    "word": "a provisional arrangement",
+    "pos": "phr.",
+    "meaning": "還可能調整的暫定安排",
+    "example": "This is a provisional arrangement for the first week.",
+    "exampleZh": "這是第一週暫定安排。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "還可能調整的暫定安排",
+        "examples": [
+          {
+            "en": "This is a provisional arrangement for the first week.",
+            "zh": "這是第一週暫定安排。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:WE CAN ADAPT THE ACTIVITY WITHOUT ABANDONING ITS PURPOSE": {
+    "word": "we can adapt the activity without abandoning its purpose",
+    "pos": "phr.",
+    "meaning": "可以調整活動而不放棄目的",
+    "example": "We can adapt the activity without abandoning its purpose.",
+    "exampleZh": "可以調整活動而不放棄目的。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "可以調整活動而不放棄目的",
+        "examples": [
+          {
+            "en": "We can adapt the activity without abandoning its purpose.",
+            "zh": "可以調整活動而不放棄目的。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:UNFORESEEN": {
+    "pos": "adj.",
+    "meaning": "事前沒有預料到的",
+    "example": "An unforeseen delay changed our plans.",
+    "exampleZh": "未料到的延誤改變我們的計畫。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "事前沒有預料到的",
+        "examples": [
+          {
+            "en": "An unforeseen delay changed our plans.",
+            "zh": "未料到的延誤改變我們的計畫。"
+          }
+        ]
+      }
+    ],
+    "word": "unforeseen"
   }
 }

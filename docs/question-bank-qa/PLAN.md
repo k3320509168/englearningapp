@@ -194,3 +194,10 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 初審將C1過冷僻的SUSURRATION改為較實用的INTERMITTENT。去重攔下within earshot/a pregnant pause/an understated delivery，改為有意義的完整情境而非僅改大小寫。這些詞仍屬跨情境複習，不能當全新知識點。
 - Node22：tsc、eslint、37 files/330 tests通過；建庫可重現；79064次運作斷言、1000次placement模擬通過。含舊庫5510題格式0 errors/172 warnings。這些是結構/程式運作驗證，非全量語意、CEFR或學習成效認證。
 - 一般與模式各五輪完整深審仍未完成；新120題仍草稿，C8介面優先及C9/C4～C7協作任務亦保留。
+
+## 第 29 批（3480/5800，進行中）
+- 新增改計畫/協商/即興120題，三區各1160（870 normal/290 boss），聽讀各348、說寫各232；餘B2+640、C1/C2各840。再16個三區批次與5個C1/C2批次可達原5800目標。
+- B2+包含混合條件、條件承諾、會議地點/時間、試一次/長期承諾；C1包含程序/實質認可、試行真正可改方向、權責；C2增加玩笑、反諷、敘述語氣與委婉反駁，避免只靠抽象名詞堆難度。
+- 初審把EXIGENCY/TERGIVERSATION/QUALIFICATORY/VOLUNTARISM等偏冷僻或偏專門項換成較實用表達；移除C2文法明顯壞英文干擾項，補過去時點限制以排除混合條件句歧義；將無足夠根據的affectionately改成lightly，避免強加感情態度。
+- 跨來源逐項比對非選擇題詞條：發現兩個整段口說片語僅中文解釋不同，直接改為scope for a negotiated compromise與a conveniently elastic definition，不用改中文來躲去重。RESCHEDULE/CONTINGENCY/FEASIBILITY/CONTINGENT/PREVARICATION/CIRCUMLOCUTION為同義項跨情境/題型複習，不算獨立新詞。
+- 81512次運作斷言、1000次程度測驗模擬通過；含舊庫5630題格式0錯誤/172既有警告，建庫可重現。這些不驗證語言能力達級；本批仍草稿，兩類五輪完整深審仍未完成。C8限制及C9/C4～C7分工保留。

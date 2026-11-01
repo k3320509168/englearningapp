@@ -11003,6 +11003,399 @@
       "ans": "EAI",
       "speak": "overlapping",
       "vocabId": "R7:OVERLAPPING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We should not paint ourselves into a corner by announcing a date we cannot change.",
+      "options": [
+        "A. 別宣布無法調整的日期，把自己逼到沒退路。",
+        "B. 應先替房間角落上漆，再討論日期。",
+        "C. 日期可以任意變，所以現在不需規畫。",
+        "D. 宣布日期後就已完成所有準備。"
+      ],
+      "ans": "A",
+      "explain": "paint ourselves into a corner比喻使自己失去變通空間。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "There is room for manoeuvre, but not on the budget.",
+      "options": [
+        "A. 已取消預算，所以沒有任何安排。",
+        "B. 仍有調整空間，但預算不能動。",
+        "C. 預算最有彈性，其他部分全已鎖定。",
+        "D. 需要更大的房間才可以討論預算。"
+      ],
+      "ans": "B",
+      "explain": "room for manoeuvre比喻調整餘地；but not限定預算例外。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am prepared to meet you halfway on the timing.",
+      "options": [
+        "A. 我已完全接受你提出的時程。",
+        "B. 我拒絕討論任何時間上的調整。",
+        "C. 時程方面我願意各退一步。",
+        "D. 我只願在路程的正中間碰面。"
+      ],
+      "ans": "C",
+      "explain": "meet halfway在協商情境為互相妥協，不必全盤接受。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would prefer a modest plan we can deliver to an impressive one we can only describe.",
+      "options": [
+        "A. 要求兩份計畫使用完全相同的標題。",
+        "B. 寧要做得到的小計畫，不要只說得漂亮的大計畫。",
+        "C. 寧要宏大描述，即使無法付諸行動。",
+        "D. 認為能執行的計畫都不可能有吸引力。"
+      ],
+      "ans": "B",
+      "explain": "prefer A to B比較可交付與僅有描述的規模。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can revisit the venue, provided we do not reopen every other decision at the same time.",
+      "options": [
+        "A. 已決定換場地，不接受任何討論。",
+        "B. 場地不能再談，只能重談其他部分。",
+        "C. 可重談場地，但別同時把其餘決定全翻出來。",
+        "D. 重談場地的前提是同時重談所有細節。"
+      ],
+      "ans": "C",
+      "explain": "provided條件限制重談範圍，不是否定場地可討論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Their objection was to being presented with a fait accompli, not necessarily to the venue itself.",
+      "options": [
+        "A. 已證他們完全贊同場地，只是不喜歡信紙。",
+        "B. 他們曾決定場地，現在卻否認參與。",
+        "C. 反對理由只在場地，與決策程序無關。",
+        "D. 反感的是被告知既成安排，未必反對場地本身。"
+      ],
+      "ans": "D",
+      "explain": "not necessarily保留實質立場未定；fait accompli指只能接受的既成事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The contingency has become the main plan, which means we now need a contingency for that.",
+      "options": [
+        "A. 備案從未可用，因而取消所有活動。",
+        "B. 說話者主張任何主案都不該有替代。",
+        "C. 備案成了主案，因此也得替新主案準備備案。",
+        "D. 主案已恢復，所以備案全部不需保留。"
+      ],
+      "ans": "C",
+      "explain": "that指成為主案的原備案；變換角色後仍需風險準備。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If we call this a pilot, we must be willing to learn something that changes our minds, not merely collect reasons to proceed.",
+      "options": [
+        "A. 試行的目的就是證明既定決定必定正確。",
+        "B. 任何試行結果都應導致永久取消。",
+        "C. 說話者反對在作決定前蒐集資料。",
+        "D. 既稱試行，就應容許結果改變決定，而非只找推進理由。"
+      ],
+      "ans": "D",
+      "explain": "learn something that changes our minds要求真有修正可能，不預定正負結論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not asking for a guarantee against every mishap. I am asking who has the authority to act when one occurs.",
+      "options": [
+        "A. 問的不是保證零意外，而是出事時誰有決策權。",
+        "B. 要求證明所有意外都已被消除。",
+        "C. 只想知道誰應在活動後寫報告。",
+        "D. 認為意外發生時不應有人採取行動。"
+      ],
+      "ans": "A",
+      "explain": "兩種需求對比為風險保證與事件發生後的權責。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The offer remains on the table, though neither party is committed to it. What is its status?",
+      "options": [
+        "A. It is still available for consideration.",
+        "B. It has become a binding agreement.",
+        "C. It has been withdrawn from discussion.",
+        "D. It can be accepted only by a third party."
+      ],
+      "ans": "A",
+      "explain": "on the table仍可考慮；未承諾不等於已撤回。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Were the alternative ___ impractical, we would retain the current arrangement.",
+      "options": [
+        "A. has proved",
+        "B. to prove",
+        "C. proving",
+        "D. proved"
+      ],
+      "ans": "B",
+      "explain": "Were…to prove為假設倒裝，相當於If the alternative were to prove…。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】To salvage a plan is to ___.",
+      "options": [
+        "A. withhold it until everyone has forgotten it",
+        "B. replace its aim with an unrelated ambition",
+        "C. save something useful from it despite difficulties",
+        "D. follow its original details without alteration"
+      ],
+      "ans": "C",
+      "explain": "salvage是在困境中挽救可用部分，不保證全部照舊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The group accepted the compromise reluctantly rather than enthusiastically. What is supported?",
+      "options": [
+        "A. They agreed that further compromise was impossible.",
+        "B. They agreed while retaining reservations.",
+        "C. They rejected it after initially expressing enthusiasm.",
+        "D. They had proposed every detail themselves."
+      ],
+      "ans": "B",
+      "explain": "reluctantly限制接受態度，不否定已接受。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A coordinator says everyone has been consulted. Asked whether anyone proposed changes, she replies that everyone was sent the finished timetable. What has not been established?",
+      "options": [
+        "A. Whether the coordinator knew how to contact the participants.",
+        "B. Whether the timetable contained more than one activity.",
+        "C. Whether participants had a meaningful opportunity to influence the arrangement.",
+        "D. Whether a timetable existed before the messages were sent."
+      ],
+      "ans": "C",
+      "explain": "寄出完成表不等於提供影響安排的機會；問的是consulted的實質。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】We agreed to the trial on the understanding that its results ___ before any permanent change was made.",
+      "options": [
+        "A. will have reviewing",
+        "B. had been review",
+        "C. would reviewing",
+        "D. would be reviewed"
+      ],
+      "ans": "D",
+      "explain": "過去agree後的未來被動為would be reviewed，review需過去分詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A committee reserves a room for a trial but tells participants not to cancel their other bookings until the trial is confirmed. Why is this advice consistent?",
+      "options": [
+        "A. Keeping alternatives means the committee has rejected the trial.",
+        "B. Participants are being asked to attend two events simultaneously.",
+        "C. Preparatory action need not amount to final confirmation.",
+        "D. Making a reservation proves the trial has already taken place."
+      ],
+      "ans": "C",
+      "explain": "準備與確認不同；保留其他選擇是應對未定狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The organiser says, I can promise you an answer by Tuesday, rather than an answer you will like. What is being limited?",
+      "options": [
+        "A. The response will be favourable, but its timing is uncertain.",
+        "B. The organiser refuses to provide a response of any kind.",
+        "C. Tuesday is the deadline for the listener to submit an answer.",
+        "D. The commitment concerns when a response will arrive, not its favourable content."
+      ],
+      "ans": "D",
+      "explain": "promise的範圍是回答時間，不保證結果合意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A revised plan is praised for being realistic, although it achieves less than the original ambition. The writer adds that retaining an impossible target would not preserve the ambition in practice. What is defended?",
+      "options": [
+        "A. Reducing the target so that some of the intended benefit can actually be achieved.",
+        "B. Measuring success solely by how ambitious the original wording sounded.",
+        "C. Abandoning the purpose because any revision invalidates it.",
+        "D. Treating the original target as already achieved."
+      ],
+      "ans": "A",
+      "explain": "辯護務實縮限以實現部分目的，不是無所作為或改口稱成功。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在困難中挽救仍可用的部分",
+      "ans": "SALVAGE",
+      "speak": "salvage",
+      "vocabId": "R7:SALVAGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：解決眼前問題但未必理想的權宜措施",
+      "ans": "EXPEDIENT",
+      "speak": "expedient",
+      "vocabId": "R7:EXPEDIENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：帶有限制或保留的接受",
+      "ans": "A QUALIFIED ACCEPTANCE",
+      "speak": "a qualified acceptance",
+      "vocabId": "R7:A QUALIFIED ACCEPTANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍可重新調整的安排",
+      "ans": "AN ARRANGEMENT OPEN TO REVISION",
+      "speak": "an arrangement open to revision",
+      "vocabId": "R7:AN ARRANGEMENT OPEN TO REVISION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：徵詢意見應容許有實質影響的回應",
+      "ans": "CONSULTATION SHOULD LEAVE ROOM FOR A MEANINGFUL RESPONSE",
+      "speak": "consultation should leave room for a meaningful response",
+      "vocabId": "R7:CONSULTATION SHOULD LEAVE ROOM FOR A MEANINGFUL RESPONSE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：試行必須容許改變方向的可能",
+      "ans": "A TRIAL MUST ALLOW THE POSSIBILITY OF CHANGING COURSE",
+      "speak": "a trial must allow the possibility of changing course",
+      "vocabId": "R7:A TRIAL MUST ALLOW THE POSSIBILITY OF CHANGING COURSE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：重新協商已討論或訂定的條件（R 開頭，11 個字母）",
+      "ans": "RENEGOTIATE",
+      "speak": "renegotiate",
+      "vocabId": "R7:RENEGOTIATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：暫且同意而仍待確認地（P 開頭，13 個字母）",
+      "ans": "PROVISIONALLY",
+      "speak": "provisionally",
+      "vocabId": "R7:PROVISIONALLY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：另一事情進行前必須先具備的條件（P 開頭，12 個字母）",
+      "ans": "PRECONDITION",
+      "speak": "precondition",
+      "vocabId": "R7:PRECONDITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A D J U S T _ B I L I T Y (能依需求改動設定或安排的性質)",
+      "ans": "A",
+      "speak": "adjustability",
+      "vocabId": "R7:ADJUSTABILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E X P _ D I _ N C Y (以眼前方便或實際利益而非長遠原則作考量)",
+      "ans": "EE",
+      "speak": "expediency",
+      "vocabId": "R7:EXPEDIENCY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：U N _ O M _ I T _ E D (尚未對某方案作出承諾的)",
+      "ans": "CMT",
+      "speak": "uncommitted",
+      "vocabId": "R7:UNCOMMITTED"
     }
   ],
   "boss": [
@@ -14673,6 +15066,137 @@
       "ans": "EET",
       "speak": "reverberation",
       "vocabId": "R7:REVERBERATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That is a useful starting point, rather than something I could sign off on today.",
+      "options": [
+        "A. 今天可正式核准，且不必再討論。",
+        "B. 方案完全沒用，連討論也不值得。",
+        "C. 說話者只是不知道在哪裡簽名。",
+        "D. 可作討論起點，但今天還不能核准。"
+      ],
+      "ans": "D",
+      "explain": "starting point保留價值，rather than sign off否定現時核可。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I took your silence as agreement. You should not have; I was still considering the implications.",
+      "options": [
+        "A. 一方把沉默當同意，另一方說當時仍在思考影響。",
+        "B. 雙方都確認沉默代表已正式同意。",
+        "C. 另一方當時已明確反對，卻沒有被記錄。",
+        "D. 雙方爭論的只是誰先離開會場。"
+      ],
+      "ans": "A",
+      "explain": "You should not have省略taken my silence as agreement，後句說明沉默原因。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have flexibility in theory. In practice, changing the time would mean excluding the very people the event is intended for.",
+      "options": [
+        "A. 說話者認為時間與參加便利完全無關。",
+        "B. 理論可調時間，實際會排除目標參加者。",
+        "C. 調時間已確認能讓目標參加者全數出席。",
+        "D. 活動目標已改，所以出席者身分無關。"
+      ],
+      "ans": "B",
+      "explain": "in theory/in practice指出形式彈性與實際代價差距。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I would be wary of describing this as settled. Which reply most directly respects the warning?",
+      "options": [
+        "A. Then I will announce that everyone has accepted it.",
+        "B. We can remove the consultation stage from the schedule.",
+        "C. I will tell the others they no longer need to reply.",
+        "D. Let us call it a proposal until the others have responded."
+      ],
+      "ans": "D",
+      "explain": "wary of settled提醒尚未定案，應保留proposal狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】A speaker accepts the proposal in principle but disputes its timetable. Which summary preserves the distinction?",
+      "options": [
+        "A. The underlying idea is acceptable, while implementation remains contested.",
+        "B. The timetable is acceptable, while the underlying idea has been rejected.",
+        "C. The proposal has been accepted without qualification.",
+        "D. The speaker declines to discuss how the proposal might work."
+      ],
+      "ans": "A",
+      "explain": "in principle認可基本想法，未接受執行時程。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The phrase for the time being appears three times in the agreement, but no review date is specified. What is the clearest unresolved issue?",
+      "options": [
+        "A. Which party has already requested permanent implementation.",
+        "B. When the temporary arrangement will be reconsidered.",
+        "C. Whether the document describes any arrangement at all.",
+        "D. Whether the parties have rejected temporary measures."
+      ],
+      "ans": "B",
+      "explain": "暫時性已寫明，未寫重審日期；不能自行添哪方要求永久。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：透過協商達成妥協的空間",
+      "ans": "SCOPE FOR A NEGOTIATED COMPROMISE",
+      "speak": "scope for a negotiated compromise",
+      "vocabId": "R7:SCOPE FOR A NEGOTIATED COMPROMISE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：關於時間的承諾不等於關於結果的承諾",
+      "ans": "A PROMISE ABOUT TIMING IS NOT A PROMISE ABOUT THE OUTCOME",
+      "speak": "a promise about timing is not a promise about the outcome",
+      "vocabId": "R7:A PROMISE ABOUT TIMING IS NOT A PROMISE ABOUT THE OUTCOME"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：可以被正式撤回或取消的（R 開頭，9 個字母）",
+      "ans": "REVOCABLE",
+      "speak": "revocable",
+      "vocabId": "R7:REVOCABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E C _ N S I _ E R A _ I O N (因新資訊而重新考慮一項決定)",
+      "ans": "ODT",
+      "speak": "reconsideration",
+      "vocabId": "R7:RECONSIDERATION"
     }
   ]
 }

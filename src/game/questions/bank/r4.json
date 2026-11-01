@@ -10679,6 +10679,524 @@
       "desc": "請唸出：他們當時正在看那幅美麗的畫",
       "ans": "THEY WERE LOOKING AT THE BEAUTIFUL PAINTING",
       "speak": "they were looking at the beautiful painting"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The new MONUMENT, ___ was built to honor the city's founders, attracts many visitors.",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. what",
+        "D. where"
+      ],
+      "ans": "A",
+      "explain": "本題考關係代名詞。先行詞是事物（MONUMENT 紀念碑），且為非限定子句（有逗號隔開），必須使用 which。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The city council intends ___ the old bridge before the rainy season begins.",
+      "options": [
+        "A. rebuild",
+        "B. to rebuild",
+        "C. rebuilding",
+        "D. rebuilt"
+      ],
+      "ans": "B",
+      "explain": "本題考不定詞用法。動詞 intend（打算）後面必須接不定詞 (to V) 當作受詞，表示未來的意圖。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The engineers ___ the soil when they discovered an underground pipe.",
+      "options": [
+        "A. test",
+        "B. have tested",
+        "C. were testing",
+        "D. will test"
+      ],
+      "ans": "C",
+      "explain": "本題考過去進行式。句中的 when 引導過去簡單式（discovered），表示在過去的某個時間點突然發生的事，主要子句應用過去進行式表示當時正在進行的動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Is this the STADIUM ___ the government plans to demolish?\nB: Yes, it is too old to be safe.",
+      "options": [
+        "A. that",
+        "B. who",
+        "C. whom",
+        "D. where"
+      ],
+      "ans": "A",
+      "explain": "本題考關係代名詞。先行詞 STADIUM（體育場）為事物，作為子句中 plans to demolish 的受詞，可使用 which 或 that，選項中僅 A 正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Did you see the accident at the PAVEMENT?\nB: Yes, I ___ for a taxi when the cars collided.",
+      "options": [
+        "A. wait",
+        "B. was waiting",
+        "C. am waiting",
+        "D. waited"
+      ],
+      "ans": "B",
+      "explain": "本題考過去進行式。when 帶出過去發生的瞬間動作 (collided)，前面應使用過去進行式 (was waiting) 表達當時正在進行的背景動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Urban Development: The mayor announced a project to expand the bike lanes. Citizens who cycle to work can expect a safer commute by next year.\nQ: What is the main purpose of the project?",
+      "options": [
+        "A. To reduce the cost of bicycles.",
+        "B. To ban cars from the city.",
+        "C. To provide a safer environment for cyclists.",
+        "D. To build more parking spaces."
+      ],
+      "ans": "C",
+      "explain": "閱讀理解題。文中提到專案目的是擴建自行車道，讓騎單車通勤的市民能有更安全的通勤環境（safer commute），故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The ARCHITECT ___ designed the new public library has won several international awards.",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. whom",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "本題考關係代名詞。先行詞是人（ARCHITECT 建築師），在關係子句中作主詞（發出 designed 的動作），故選 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The department manager tolerates ___ late occasionally, but she hates missed deadlines.",
+      "options": [
+        "A. arrive",
+        "B. to arrive",
+        "C. arriving",
+        "D. arrived"
+      ],
+      "ans": "C",
+      "explain": "本題考動名詞用法。動詞 tolerate（容忍）後面必須接動名詞 (V-ing) 當作受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】My SUPERIOR urged me ___ the conflict with my team member as soon as possible.",
+      "options": [
+        "A. resolve",
+        "B. resolving",
+        "C. resolved",
+        "D. to resolve"
+      ],
+      "ans": "D",
+      "explain": "本題考不定詞用法。urge 的用法為 urge someone to do something（敦促某人做某事），後接不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The board members ___ the new marketing budget when the fire alarm interrupted them.",
+      "options": [
+        "A. were debating",
+        "B. debate",
+        "C. has debated",
+        "D. is debating"
+      ],
+      "ans": "A",
+      "explain": "本題考過去進行式。when 引導過去簡單式（interrupted）表示突發事件，主要子句應使用過去進行式表示當時正在熱烈討論中。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Did the board approve the proposal?\nB: No, they postponed ___ a decision until the next quarter.",
+      "options": [
+        "A. make",
+        "B. to make",
+        "C. making",
+        "D. made"
+      ],
+      "ans": "C",
+      "explain": "本題考動名詞用法。動詞 postpone（延後）後面必須接動名詞 (V-ing) 作為受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why didn't you answer my call?\nB: I ___ with a difficult client when you called.",
+      "options": [
+        "A. deal",
+        "B. to deal",
+        "C. have dealt",
+        "D. was dealing"
+      ],
+      "ans": "D",
+      "explain": "本題考過去進行式。答句表達「當你打來時，我正在處理難搞的客戶」，背景動作應用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Office Memo: The HR department is organizing a workshop to help staff communicate better. Employees who struggle with teamwork are highly encouraged to attend.\nQ: Who is the primary target of this workshop?",
+      "options": [
+        "A. Staff members who have difficulty working with others.",
+        "B. Managers who want to fire underperforming staff.",
+        "C. Clients who need better communication skills.",
+        "D. New hires who just joined the company."
+      ],
+      "ans": "A",
+      "explain": "閱讀理解題。文中指出強烈鼓勵「在團隊合作上有困難的員工（Employees who struggle with teamwork）」參加，與選項 A 意思相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The new employee seems ___ a lot of experience in resolving customer complaints.",
+      "options": [
+        "A. have",
+        "B. having",
+        "C. had",
+        "D. to have"
+      ],
+      "ans": "D",
+      "explain": "本題考不定詞用法。動詞 seem（似乎）後面必須接不定詞 (to V)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The VACCINE ___ was developed last year has successfully reduced the spread of the virus.",
+      "options": [
+        "A. that",
+        "B. who",
+        "C. whom",
+        "D. whose"
+      ],
+      "ans": "A",
+      "explain": "本題考關係代名詞。先行詞 VACCINE（疫苗）為事物，且在子句中作主詞，應使用 which 或 that。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Many athletes practice ___ their breath underwater to improve their lung capacity.",
+      "options": [
+        "A. hold",
+        "B. holding",
+        "C. to hold",
+        "D. held"
+      ],
+      "ans": "B",
+      "explain": "本題考動名詞用法。動詞 practice（練習）後面必須接動名詞 (V-ing) 作為受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The doctor ___ my SYMPTOM when the clinic lost power.",
+      "options": [
+        "A. evaluates",
+        "B. has evaluated",
+        "C. was evaluating",
+        "D. evaluate"
+      ],
+      "ans": "C",
+      "explain": "本題考過去進行式。when 子句為過去式（lost power），表示停電發生的瞬間，醫生「正在」評估症狀，故用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are those the runners ___ won the MARATHON?\nB: No, those are the organizers of the event.",
+      "options": [
+        "A. who",
+        "B. which",
+        "C. whose",
+        "D. whom"
+      ],
+      "ans": "A",
+      "explain": "本題考關係代名詞。先行詞 runners（跑者）為人，且在關係子句中擔任主詞，故選 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: How did you injure your knee?\nB: I ___ for the TOURNAMENT when I tripped on the track.",
+      "options": [
+        "A. train",
+        "B. was training",
+        "C. am training",
+        "D. trained"
+      ],
+      "ans": "B",
+      "explain": "本題考過去進行式。tripped（絆倒）是過去發生的瞬間動作，當時正在進行的訓練動作應使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health Journal: Researchers advise eating more leafy greens. People who consume enough NUTRITION daily have a lower risk of chronic diseases.\nQ: According to the journal, what helps lower the risk of chronic diseases?",
+      "options": [
+        "A. Exercising twice a day.",
+        "B. Taking vitamin pills regularly.",
+        "C. Eating sufficient leafy greens.",
+        "D. Drinking plenty of water."
+      ],
+      "ans": "C",
+      "explain": "閱讀理解題。文中提到研究人員建議多吃葉菜類（leafy greens），攝取足夠營養的人患慢性病的風險較低，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】You should consider ___ up yoga if you want to improve your flexibility.",
+      "options": [
+        "A. take",
+        "B. taking",
+        "C. to take",
+        "D. taken"
+      ],
+      "ans": "B",
+      "explain": "本題考動名詞用法。動詞 consider（考慮）後面必須接動名詞 (V-ing) 當受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The director arranged ___ the rare SCULPTURE in the main hall of the museum.",
+      "options": [
+        "A. display",
+        "B. displaying",
+        "C. to display",
+        "D. displayed"
+      ],
+      "ans": "C",
+      "explain": "本題考不定詞用法。動詞 arrange（安排）後面必須接不定詞 (to V)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】We visited an art gallery ___ features works by independent local artists.",
+      "options": [
+        "A. who",
+        "B. whom",
+        "C. whose",
+        "D. which"
+      ],
+      "ans": "D",
+      "explain": "本題考關係代名詞。先行詞 art gallery（畫廊）為事物，且在關係子句中作主詞，應選 which。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The ORCHESTRA ___ a famous symphony when the lights suddenly went out.",
+      "options": [
+        "A. was performing",
+        "B. performs",
+        "C. has performed",
+        "D. to perform"
+      ],
+      "ans": "A",
+      "explain": "本題考過去進行式。燈光突然熄滅（went out）是過去的瞬間動作，樂團當時「正在表演」，應使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Did you enjoy the jazz concert?\nB: Absolutely, I couldn't resist ___ the CD after the show.",
+      "options": [
+        "A. buy",
+        "B. buying",
+        "C. to buy",
+        "D. bought"
+      ],
+      "ans": "B",
+      "explain": "本題考動名詞用法。片語 cannot resist（忍不住）後面必須接動名詞 (V-ing)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Who is the author of this LITERATURE?\nB: It was written by a poet ___ works mainly explore nature and love.",
+      "options": [
+        "A. who",
+        "B. which",
+        "C. whose",
+        "D. that"
+      ],
+      "ans": "C",
+      "explain": "本題考關係代名詞所有格。poet（詩人）和 works（作品）之間存在所屬關係（詩人的作品），必須使用 whose。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why didn't you talk to the painter?\nB: He ___ a portrait of a guest when I walked by, so I didn't want to disturb him.",
+      "options": [
+        "A. is painting",
+        "B. paints",
+        "C. has painted",
+        "D. was painting"
+      ],
+      "ans": "D",
+      "explain": "本題考過去進行式。when I walked by 為過去發生的事件，畫家當時正在畫肖像，需用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Cultural Festival: The annual film festival, which showcases movies from over fifty countries, will take place next month. Tickets are expected to sell out quickly.\nQ: What can be inferred about the film festival?",
+      "options": [
+        "A. It is very popular.",
+        "B. It only shows domestic movies.",
+        "C. It is free for everyone.",
+        "D. It is held every two years."
+      ],
+      "ans": "A",
+      "explain": "閱讀理解題。文中提到門票預計很快就會售罄（Tickets are expected to sell out quickly），可推論出該影展非常受歡迎，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The classical GENRE, ___ originated centuries ago, is still admired by many music lovers today.",
+      "options": [
+        "A. who",
+        "B. what",
+        "C. whom",
+        "D. which"
+      ],
+      "ans": "D",
+      "explain": "本題考關係代名詞。先行詞 GENRE（流派）為事物，且這裡是非限定子句（有逗號隔開），必須使用 which，不能用 that。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】I ___ my monthly BUDGET when I realized my expenses had doubled.",
+      "options": [
+        "A. was calculating",
+        "B. calculate",
+        "C. have calculated",
+        "D. to calculate"
+      ],
+      "ans": "A",
+      "explain": "本題考過去進行式。我意識到（realized）花費翻倍時，當時「正在計算」預算，故使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Before making a large INVESTMENT, you must prioritize ___ your high-interest debt.",
+      "options": [
+        "A. clear",
+        "B. clearing",
+        "C. to clear",
+        "D. cleared"
+      ],
+      "ans": "B",
+      "explain": "本題考動名詞用法。動詞 prioritize（優先處理）後面習慣接動名詞 (V-ing) 作為受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The government promised ___ financial aid to businesses affected by the INFLATION.",
+      "options": [
+        "A. provide",
+        "B. providing",
+        "C. to provide",
+        "D. provided"
+      ],
+      "ans": "C",
+      "explain": "本題考不定詞用法。動詞 promise（承諾）後面必須接不定詞 (to V) 表示承諾要去做的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Did you meet the financial advisor?\nB: Yes, he is the expert ___ helped my parents with their retirement plan.",
+      "options": [
+        "A. which",
+        "B. whom",
+        "C. whose",
+        "D. who"
+      ],
+      "ans": "D",
+      "explain": "本題考關係代名詞。先行詞 expert（專家）為人，在子句中作主詞，應使用 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why was your credit card declined?\nB: I ___ an online TRANSACTION overseas, and the bank flagged it as suspicious.",
+      "options": [
+        "A. was making",
+        "B. make",
+        "C. have made",
+        "D. am making"
+      ],
+      "ans": "A",
+      "explain": "本題考過去進行式。回答當時發生的情況：我當時「正在進行」一筆海外交易，結果被銀行標記為可疑。需用過去進行式表達當時的動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Can we afford this luxury car?\nB: I refuse ___ a loan for something that loses value so quickly.",
+      "options": [
+        "A. take",
+        "B. to take",
+        "C. taking",
+        "D. taken"
+      ],
+      "ans": "B",
+      "explain": "本題考不定詞用法。動詞 refuse（拒絕）後面必須接不定詞 (to V)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Financial Blog: Many consumers struggle with impulse shopping. Experts suggest waiting at least 24 hours before purchasing anything non-essential to control the urge.\nQ: What do experts advise consumers to do?",
+      "options": [
+        "A. Buy things immediately on sale.",
+        "B. Use credit cards for every purchase.",
+        "C. Delay non-essential purchases for a day.",
+        "D. Regret their past shopping habits."
+      ],
+      "ans": "C",
+      "explain": "閱讀理解題。文中專家建議買非必需品前至少等待 24 小時（waiting at least 24 hours），即延遲購買，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Some investors delay ___ shares in the stock market because they fear a sudden crash.",
+      "options": [
+        "A. buy",
+        "B. buying",
+        "C. to buy",
+        "D. bought"
+      ],
+      "ans": "B",
+      "explain": "本題考動名詞用法。動詞 delay（延遲）後面必須接動名詞 (V-ing) 當作受詞。"
     }
   ],
   "boss": [
@@ -14554,6 +15072,188 @@
       "desc": "請唸出：你借給我的那本書很棒",
       "ans": "THE BOOK WHICH YOU LENT ME IS GREAT",
       "speak": "the book which you lent me is great"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why are they blocking the intersection?\nB: They are discussing ___ a pedestrian zone in this area.",
+      "options": [
+        "A. to create",
+        "B. create",
+        "C. created",
+        "D. creating"
+      ],
+      "ans": "D",
+      "explain": "本題考動名詞用法。動詞 discuss（討論）後面必須直接加動名詞 (V-ing) 作為受詞，不可加 to V。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】City News: While the construction workers were digging near the harbor, they uncovered an unexploded bomb from the war. The entire district was evacuated immediately.\nQ: What happened while the workers were digging?",
+      "options": [
+        "A. They found a hidden treasure.",
+        "B. They accidentally triggered an explosion.",
+        "C. They discovered a new water pipe.",
+        "D. They found a dangerous explosive."
+      ],
+      "ans": "D",
+      "explain": "閱讀理解與字彙題。文中指出工人在挖掘時發現了一枚未爆彈（unexploded bomb），對應選項 D 的危險爆裂物（dangerous explosive）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Public Notice: We kindly request residents to avoid ___ their trash bins on the sidewalk during the weekend. The collection trucks only operate from Monday to Friday.\nQ: Fill in the blank with the correct grammar form.",
+      "options": [
+        "A. leaving",
+        "B. to leave",
+        "C. leave",
+        "D. left"
+      ],
+      "ans": "A",
+      "explain": "本題在短文中考動名詞用法。動詞 avoid（避免）後面必須接動名詞 (V-ing)，因此答案為 leaving。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Have you met the new MENTOR?\nB: Yes, she is the person ___ we hired to improve our team's productivity.",
+      "options": [
+        "A. which",
+        "B. whom",
+        "C. whose",
+        "D. what"
+      ],
+      "ans": "B",
+      "explain": "本題考關係代名詞。先行詞 person 為人，在關係子句中作動詞 hired 的受詞，因此應使用受格關係代名詞 whom（或 who/that）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Management Advice: When dealing with a DISPUTE, a good leader shouldn't pretend ___ everything. Listening to both sides is always the best approach.\nQ: Fill in the blank with the correct grammar form.",
+      "options": [
+        "A. know",
+        "B. to know",
+        "C. knowing",
+        "D. knew"
+      ],
+      "ans": "B",
+      "explain": "本題在短文中考不定詞用法。動詞 pretend（假裝）後面必須接不定詞 (to V)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Story: I was collaborating with the design team when I noticed a major flaw in the software. Thanks to that, we fixed it before the launch.\nQ: What was the narrator doing when they spotted the error?",
+      "options": [
+        "A. Launching the software.",
+        "B. Taking a break in the office.",
+        "C. Working together with the designers.",
+        "D. Arguing with the manager."
+      ],
+      "ans": "C",
+      "explain": "閱讀理解與時態題。文中提到 I was collaborating with the design team... 意即與設計團隊合作，與選項 C (Working together) 相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why did you hire a personal trainer?\nB: I was struggling ___ weight on my own.",
+      "options": [
+        "A. lose",
+        "B. losing",
+        "C. lost",
+        "D. to lose"
+      ],
+      "ans": "D",
+      "explain": "本題考不定詞用法。動詞 struggle（努力/掙扎）後面接不定詞 (to V) 表示努力去做某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Fitness Blog: I was lifting weights at the gym when I felt a sharp pain in my shoulder. My physical therapist suggested ___ heavy objects for at least two weeks.\nQ: Fill in the blank with the correct grammar form.",
+      "options": [
+        "A. to avoid",
+        "B. avoid",
+        "C. avoided",
+        "D. avoiding"
+      ],
+      "ans": "D",
+      "explain": "本題在短文中考動名詞用法。動詞 suggest（建議）後面必須直接接動名詞 (V-ing)，不能用 to V。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Medical News: A new THERAPY, which involves exposing patients to extreme cold, is gaining popularity among professional athletes. It claims to speed up muscle recovery.\nQ: What is true about the new therapy?",
+      "options": [
+        "A. It uses cold temperatures to help muscles recover.",
+        "B. It is only available to amateurs.",
+        "C. It requires patients to stay in a hot room.",
+        "D. It causes severe muscle damage."
+      ],
+      "ans": "A",
+      "explain": "閱讀理解題。文中描述這項療法將病患暴露在極度低溫中（extreme cold），並宣稱能加速肌肉恢復（speed up muscle recovery），故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Museum Rule: Visitors are strictly forbidden from touching the artworks. The museum management risks ___ its license if artifacts are damaged.\nQ: Fill in the blank with the correct grammar form.",
+      "options": [
+        "A. lose",
+        "B. losing",
+        "C. to lose",
+        "D. lost"
+      ],
+      "ans": "B",
+      "explain": "本題在短文中考動名詞用法。動詞 risk（冒...的風險）後面必須接動名詞 (V-ing) 作受詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Theater Review: While the lead actor was delivering his emotional monologue, a phone in the front row started ringing loudly. It ruined the entire mood of the play.\nQ: What happened during the emotional scene?",
+      "options": [
+        "A. The actor forgot his lines.",
+        "B. The lights suddenly went out.",
+        "C. Someone's phone interrupted the performance.",
+        "D. The audience started clapping."
+      ],
+      "ans": "C",
+      "explain": "閱讀理解題。文中提到主角在說獨白時，前排有電話大聲響起（a phone started ringing loudly），破壞了整體氣氛，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Banking Alert: Customers who notice any unusual charges on their statement should report them immediately. The bank claims ___ all fraudulent activities within a week.\nQ: Choose the correct grammar form.",
+      "options": [
+        "A. investigating",
+        "B. investigated",
+        "C. investigate",
+        "D. to investigate"
+      ],
+      "ans": "D",
+      "explain": "本題在短文中考不定詞用法。動詞 claim（宣稱）後接不定詞 (to V) 表示宣稱會做某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Market News: While the central bank was trying to control INFLATION, local retail sales dropped significantly. Consumers are now spending less on entertainment.\nQ: What occurred during the central bank's effort to control inflation?",
+      "options": [
+        "A. People bought fewer items at retail stores.",
+        "B. Entertainment expenses increased.",
+        "C. The bank went bankrupt.",
+        "D. Prices of essential goods dropped."
+      ],
+      "ans": "A",
+      "explain": "閱讀理解題。文中提到當央行試圖控制通膨時，本地零售銷售大幅下降（retail sales dropped significantly），這表示人們在零售店買的物品變少了，故選 A。"
     }
   ]
 }

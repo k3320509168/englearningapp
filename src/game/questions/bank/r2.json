@@ -8722,6 +8722,538 @@
       ],
       "ans": "A",
       "explain": "對方頭痛，給予適當的建議「應該」休息喝溫水，選 should。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】You ___ wake up early next week because it is a public holiday.",
+      "options": [
+        "A. don't have to",
+        "B. mustn't",
+        "C. couldn't",
+        "D. shouldn't"
+      ],
+      "ans": "A",
+      "explain": "本題考查情態動詞。don't have to 表示「不必須、不需要」，符合放假不需要早起的情境；mustn't 表示「禁止」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】My new ___ is very friendly and always helps me with my tasks at the office.",
+      "options": [
+        "A. COWORKER",
+        "B. DEVICE",
+        "C. NOISE",
+        "D. HABIT"
+      ],
+      "ans": "A",
+      "explain": "coworker 意為「同事」，符合在辦公室幫忙處理任務的情境。device 是裝置，noise 是噪音，habit 是習慣。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】I need to buy a new ___ because my phone loses power so fast.",
+      "options": [
+        "A. BATTERY",
+        "B. PASSPORT",
+        "C. COMMUNITY",
+        "D. LUGGAGE"
+      ],
+      "ans": "A",
+      "explain": "battery 意為「電池」。手機掉電很快，所以需要買新電池。其他選項不合句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Can you hear that music playing outside? B: Yes, I ___ hear it clearly from my bedroom.",
+      "options": [
+        "A. can",
+        "B. have to",
+        "C. might to",
+        "D. will be"
+      ],
+      "ans": "A",
+      "explain": "本題考查 can 表示「能力/能夠」。問句用 can 提問，答句也自然用 can 回應「我能聽得很清楚」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Do we have enough time to check our bags? B: Yes, let's take the ___ to the front counter now.",
+      "options": [
+        "A. LUGGAGE",
+        "B. NETWORK",
+        "C. HABIT",
+        "D. SUPERVISOR"
+      ],
+      "ans": "A",
+      "explain": "luggage 意為「行李」，對應前面的 bags。network 為網路，supervisor 為主管，皆不符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Does he play sports in the evening? B: Yes, he ___ plays basketball after work.",
+      "options": [
+        "A. usually",
+        "B. is usually",
+        "C. usually is",
+        "D. does usually"
+      ],
+      "ans": "A",
+      "explain": "頻率副詞通常放在一般動詞（plays）之前、be 動詞之後。因此直接填入 usually 即可。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Notice: All staff members must wear their name tags at all times. This helps customers know who is serving them. Q: Why do workers need to wear name tags?",
+      "options": [
+        "A. To let customers recognize them.",
+        "B. To get a higher pay.",
+        "C. To avoid working late.",
+        "D. To get free drinks."
+      ],
+      "ans": "A",
+      "explain": "短文提到戴名牌能讓顧客知道是誰在服務他們，選項 A「讓顧客能認出他們」符合文意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】System Message: The system will shut down for maintenance at midnight. It will be back online at 4 AM. Q: When will the system stop working?",
+      "options": [
+        "A. At 12:00 AM.",
+        "B. At 4:00 AM.",
+        "C. In the morning.",
+        "D. Next afternoon."
+      ],
+      "ans": "A",
+      "explain": "midnight 指的是午夜十二點（12:00 AM）。4 AM 是恢復上線的時間。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】He goes to the hospital for a ___ checkup every year to make sure his body is fine.",
+      "options": [
+        "A. PHYSICAL",
+        "B. MENTAL",
+        "C. STRICT",
+        "D. COMFORTABLE"
+      ],
+      "ans": "A",
+      "explain": "physical 意為「身體的」，physical checkup 即為「健康檢查」。mental 是心理的，strict 是嚴格的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What are those workers doing? B: They ___ paint the walls of our apartment building.",
+      "options": [
+        "A. are going to",
+        "B. going to",
+        "C. will be",
+        "D. to"
+      ],
+      "ans": "A",
+      "explain": "表達計畫或即將發生的事使用 be going to + 原形動詞，主詞 They 搭配 are。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】Don't forget to bring your ___ when you travel to another country by plane.",
+      "options": [
+        "A. NETWORK",
+        "B. PASSPORT",
+        "C. NOISE",
+        "D. ENERGY"
+      ],
+      "ans": "B",
+      "explain": "passport 意為「護照」，是出國旅行必備的證件。network 網路，energy 活力，不合句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The boss asked us to work ___ to finish the important project tonight.",
+      "options": [
+        "A. LUGGAGE",
+        "B. OVERTIME",
+        "C. DEVICE",
+        "D. BOOKING"
+      ],
+      "ans": "B",
+      "explain": "work overtime 是固定用法，意為「加班」。為了今晚完成專案，老闆要求加班。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】My computer ___ crashes when I open too many programs at the same time.",
+      "options": [
+        "A. is often",
+        "B. often",
+        "C. often is",
+        "D. has often"
+      ],
+      "ans": "B",
+      "explain": "頻率副詞 often 應放在一般動詞 crashes 之前，不需加上 be 動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why are you drinking so much coffee? B: I need more ___ to stay awake and work.",
+      "options": [
+        "A. HABIT",
+        "B. ENERGY",
+        "C. COWORKER",
+        "D. GUIDE"
+      ],
+      "ans": "B",
+      "explain": "energy 意為「活力、能量」。喝咖啡是為了獲得能量保持清醒。habit 為習慣，guide 為導遊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: The people next door are talking too loudly. B: We ___ ask them to lower their voices.",
+      "options": [
+        "A. have",
+        "B. should",
+        "C. must to",
+        "D. would to"
+      ],
+      "ans": "B",
+      "explain": "should 表示建議或應該採取的行動；選項 C、D 多了 to，選項 A 漏了 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are you ready for the trip? B: Almost! I ___ pack my bags tonight.",
+      "options": [
+        "A. will to",
+        "B. am going to",
+        "C. going to",
+        "D. should to"
+      ],
+      "ans": "B",
+      "explain": "表示已計畫好的未來行動用 am going to + 原形動詞；will 後面不加 to，should 後面也不加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Email: Please INSTALL the new software version by Friday. If you don't, your computer might not be safe. Q: What is the main action needed in the email?",
+      "options": [
+        "A. To buy a new computer.",
+        "B. To put the new software on the computer.",
+        "C. To send an email on Friday.",
+        "D. To change the user name."
+      ],
+      "ans": "B",
+      "explain": "install 意為「安裝」，因此信件的主要要求是將新版軟體放到電腦裡（put the new software on the computer）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Rule Book: Staff members must not use their personal phones during working hours. Please keep them in your lockers. Q: What is forbidden during work?",
+      "options": [
+        "A. Using the workplace phone.",
+        "B. Using personal mobile phones.",
+        "C. Putting things in lockers.",
+        "D. Talking to coworkers."
+      ],
+      "ans": "B",
+      "explain": "must not 表強烈禁止。文中提到員工上班時間禁止使用個人手機（personal phones）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The new ___ on the board says the water will be turned off next Monday.",
+      "options": [
+        "A. DEVICE",
+        "B. ANNOUNCEMENT",
+        "C. HABIT",
+        "D. NETWORK"
+      ],
+      "ans": "B",
+      "explain": "announcement 意為「公告」。佈告欄上的新公告寫著下週一會停水。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health Blog: Having good sleep habits is an important daily HABIT. It helps you stay focused and healthy. Q: What does the blog say about sleeping well?",
+      "options": [
+        "A. It takes a lot of time.",
+        "B. It is a good thing to do every day.",
+        "C. It makes you feel tired.",
+        "D. It is a strict rule."
+      ],
+      "ans": "B",
+      "explain": "habit 是日常習慣，文中提到良好的睡眠是重要的 daily habit，也就是每天都該做的好事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】I can't connect to the internet because the ___ is very weak in this room.",
+      "options": [
+        "A. PASSPORT",
+        "B. LUGGAGE",
+        "C. NETWORK",
+        "D. NOISE"
+      ],
+      "ans": "C",
+      "explain": "network 意為「網路/訊號網」。無法連線是因為網路訊號太弱。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】She ___ eats fast food because she wants to stay fit and healthy.",
+      "options": [
+        "A. is hardly ever",
+        "B. ever",
+        "C. hardly ever",
+        "D. hasn't ever"
+      ],
+      "ans": "C",
+      "explain": "hardly ever 意為「幾乎不」，是頻率副詞，放在一般動詞 eats 之前。不需要加 be 動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The boss ___ send you the information later this afternoon.",
+      "options": [
+        "A. going to",
+        "B. have to",
+        "C. will",
+        "D. must to"
+      ],
+      "ans": "C",
+      "explain": "will 用於陳述未來發生的事實。going to 缺少 is，must 後面不能加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Has the hotel accepted our reservation? B: Yes, I just received the ___ number in my email.",
+      "options": [
+        "A. ENERGY",
+        "B. BATTERY",
+        "C. BOOKING",
+        "D. RESIDENT"
+      ],
+      "ans": "C",
+      "explain": "booking 意為「預訂」。飯店接受了預約，並寄送了預訂代碼（booking number）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Who are the people gathering downstairs? B: They are the ___ of this building having a meeting.",
+      "options": [
+        "A. PASSPORTS",
+        "B. LUGGAGES",
+        "C. RESIDENTS",
+        "D. HABITS"
+      ],
+      "ans": "C",
+      "explain": "resident 意為「居民/住戶」。樓下聚集的是這棟大樓的住戶們。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: My screen is frozen. What should I do? B: You ___ try restarting the machine.",
+      "options": [
+        "A. are",
+        "B. must to",
+        "C. can",
+        "D. have"
+      ],
+      "ans": "C",
+      "explain": "can 可用來提出輕微的建議或表示選擇，意為「你可以試試看重開機」。must 不加 to，have 少了 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Article: Taking care of your MENTAL health is just as important as your physical health. If you feel stressed, talk to someone. Q: What is the main idea of the text?",
+      "options": [
+        "A. Physical exercise is the best.",
+        "B. You should not feel stressed.",
+        "C. Psychological health is very important.",
+        "D. Doctors are always busy."
+      ],
+      "ans": "C",
+      "explain": "mental 意為「心理的」。短文強調心理健康與身體健康一樣重要（psychological health）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Memo: The new SUPERVISOR will start working next Monday. Please get ready for a short introduction. Q: Who is starting next week?",
+      "options": [
+        "A. A new client.",
+        "B. A new customer.",
+        "C. A new boss.",
+        "D. A new security guard."
+      ],
+      "ans": "C",
+      "explain": "supervisor 意為「主管、管理者」，在此對應選項中的 a new boss。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Sign: Travelers don't have to print their boarding passes. You can show the digital ticket on your phone. Q: What does the sign mean?",
+      "options": [
+        "A. Printing the pass is strictly required.",
+        "B. You are not allowed to print the pass.",
+        "C. It is not necessary to print the ticket.",
+        "D. You must leave your phone in your bag."
+      ],
+      "ans": "C",
+      "explain": "don't have to 表示「不必須、沒必要」，意思是旅客沒有必要把登機證印出來。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The construction site next door makes too much ___ during the day.",
+      "options": [
+        "A. ENERGY",
+        "B. LUGGAGE",
+        "C. NETWORK",
+        "D. NOISE"
+      ],
+      "ans": "D",
+      "explain": "noise 意為「噪音」。隔壁工地在白天製造太多噪音。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】You need to plug in the cable to ___ your laptop.",
+      "options": [
+        "A. INSTALL",
+        "B. CONFIRM",
+        "C. COVER",
+        "D. CHARGE"
+      ],
+      "ans": "D",
+      "explain": "charge 意為「充電」。你需要插上線來幫筆記型電腦充電。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】We ___ take a taxi to the airport next Friday morning.",
+      "options": [
+        "A. will be",
+        "B. go to",
+        "C. are going",
+        "D. are going to"
+      ],
+      "ans": "D",
+      "explain": "表示未來的計畫用 are going to + 原形動詞 (take)。選項 A 多了 be，B/C 結構不完整。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: These chairs in the waiting room are very hard. B: I agree. They are not ___ at all.",
+      "options": [
+        "A. PHYSICAL",
+        "B. STRICT",
+        "C. MENTAL",
+        "D. COMFORTABLE"
+      ],
+      "ans": "D",
+      "explain": "comfortable 意為「舒適的」。椅子很硬，代表它們一點也不舒服。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Is it possible to finish this today? B: Yes, you ___ easily complete it before five.",
+      "options": [
+        "A. have",
+        "B. ought",
+        "C. must to",
+        "D. can"
+      ],
+      "ans": "D",
+      "explain": "can 表達「能夠」，符合「你可以輕鬆在五點前完成」的語境。ought, have 都少 to，must 不加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Is the park crowded? B: Well, people ___ go there in the early morning.",
+      "options": [
+        "A. hardly ever are",
+        "B. are hardly ever",
+        "C. do hardly ever",
+        "D. hardly ever"
+      ],
+      "ans": "D",
+      "explain": "hardly ever (幾乎不) 是頻率副詞，直接放在一般動詞 go 前面，不需加 be 或 do。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Instruction: This smart DEVICE can track your heart rate and sleep patterns. Wear it on your wrist day and night. Q: What is the text talking about?",
+      "options": [
+        "A. A computer screen.",
+        "B. A medical pill.",
+        "C. A heavy bag.",
+        "D. A piece of technology."
+      ],
+      "ans": "D",
+      "explain": "device 意為「裝置、設備」。文中的 smart device 戴在手腕上，屬於一種科技產品 (technology)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Email: We are happy to CONFIRM your flight to Tokyo. Your seat is 12A and departure is at 8 AM. Q: What is the purpose of this email?",
+      "options": [
+        "A. To cancel a trip.",
+        "B. To complain about a seat.",
+        "C. To change the flight times.",
+        "D. To make sure the flight details are set."
+      ],
+      "ans": "D",
+      "explain": "confirm 意為「確認」。信件目的是確認航班資訊，對應選項 D 的 make sure (確保/確認)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Forum Post: If you lose your keys in this neighborhood, you shouldn't panic. Just ask the security guard at the front gate. Q: What does the writer advise you to do if you lose keys?",
+      "options": [
+        "A. You should run away.",
+        "B. You must call the police.",
+        "C. You have to change the lock.",
+        "D. You should stay calm and ask for help."
+      ],
+      "ans": "D",
+      "explain": "文中建議 shouldn't panic (不該恐慌) 且向警衛詢問，對應選項 D (保持冷靜並尋求協助)。"
     }
   ],
   "boss": [
@@ -11222,6 +11754,174 @@
       ],
       "ans": "A",
       "explain": "牌子寫「員工專區」，表示我們「不應該/不被允許」進入。be not supposed to 類似於 must not，表示按規定不應做某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why are the workplace rules so ___? B: Because safety is their top priority.",
+      "options": [
+        "A. STRICT",
+        "B. COMFORTABLE",
+        "C. PHYSICAL",
+        "D. MENTAL"
+      ],
+      "ans": "A",
+      "explain": "strict 意為「嚴格的」。A 問為何規定這麼嚴格，B 回答因為安全最重要。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Community Rules: Residents must never leave their trash in the hallway. It attracts insects and creates bad smells. Q: What is true about leaving trash in the hallway?",
+      "options": [
+        "A. It is completely forbidden at all times.",
+        "B. It is allowed sometimes.",
+        "C. It is a good habit.",
+        "D. It must be done quickly."
+      ],
+      "ans": "A",
+      "explain": "must never 表達「絕對禁止」，因此選項 A 說完全被禁止是正確的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The ___ gave us a map and showed us the best places to visit in the city.",
+      "options": [
+        "A. GUIDE",
+        "B. NOISE",
+        "C. DEVICE",
+        "D. BATTERY"
+      ],
+      "ans": "A",
+      "explain": "guide 意為「導遊」。導遊給了地圖並介紹好玩的地點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】After the surgery, it will take him a few weeks to fully ___ and go back to work.",
+      "options": [
+        "A. CHARGE",
+        "B. RECOVER",
+        "C. INSTALL",
+        "D. CONFIRM"
+      ],
+      "ans": "B",
+      "explain": "recover 意為「康復、恢復」。手術後需要幾週才能完全康復。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: ___ sign in to use this application? B: Yes, you need an account.",
+      "options": [
+        "A. Have I to",
+        "B. Do I have to",
+        "C. Must I to",
+        "D. Am I having to"
+      ],
+      "ans": "B",
+      "explain": "have to 的疑問句需藉助助動詞 do/does/did。故選 Do I have to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Email: I am going to review the files tonight. I will send you the final version later this week. Q: What is the sender planning to do this evening?",
+      "options": [
+        "A. Send the final version.",
+        "B. Read and check the documents.",
+        "C. Take a day off.",
+        "D. Meet the coworker."
+      ],
+      "ans": "B",
+      "explain": "信中提到 am going to review the files tonight (今晚將審閱文件)，review (審閱) 相當於 read and check。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】The new apartment building has a large swimming pool for the ___.",
+      "options": [
+        "A. HABITS",
+        "B. LUGGAGES",
+        "C. COMMUNITY",
+        "D. SUPERVISORS"
+      ],
+      "ans": "C",
+      "explain": "community 指「社區/群體」。游泳池是給整個社區使用的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Do you travel by plane often? B: No, I ___ fly because I am afraid of heights.",
+      "options": [
+        "A. don't ever",
+        "B. ever not",
+        "C. hardly ever",
+        "D. ever hardly"
+      ],
+      "ans": "C",
+      "explain": "hardly ever 意為「幾乎從不」，本身已有否定意味，不需要再加 don't。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Pharmacy Note: Take one PILL twice a day after meals. Do not take it with hot tea or coffee. Q: How should someone take this medicine?",
+      "options": [
+        "A. With hot coffee.",
+        "B. Before eating.",
+        "C. Two times a day.",
+        "D. Three times a day."
+      ],
+      "ans": "C",
+      "explain": "pill 指藥丸。twice a day 意指「一天兩次 (two times a day)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】I forgot the login details for my online bank ___, so I can't check my money.",
+      "options": [
+        "A. NOISE",
+        "B. PASSPORT",
+        "C. LUGGAGE",
+        "D. ACCOUNT"
+      ],
+      "ans": "D",
+      "explain": "account 意為「帳戶/帳號」。忘記銀行帳號登入資訊所以無法查詢金錢。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: I typed the wrong number on the document. B: You ___ tell the boss before he finds out himself.",
+      "options": [
+        "A. might",
+        "B. don't have to",
+        "C. won't",
+        "D. really should"
+      ],
+      "ans": "D",
+      "explain": "really should 帶有強烈建議的意思：「你真的應該在老闆自己發現前告訴他」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Hotel Policy: Visitors are going to be charged an extra fee if they lose their room keys. You must return them to the front desk. Q: What happens if a visitor loses a key?",
+      "options": [
+        "A. They will get a free drink.",
+        "B. They must buy a new lock.",
+        "C. They can stay an extra night.",
+        "D. They have to pay more money."
+      ],
+      "ans": "D",
+      "explain": "charged an extra fee 指的是「被收取額外費用」，也就是必須付更多錢 (pay more money)。"
     }
   ]
 }

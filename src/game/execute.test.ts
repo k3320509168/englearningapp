@@ -1,14 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { canExecute, executeKindOf } from './execute';
 
-describe('處決條件', () => {
-  const ok = { combo: 5000, streak: 10, answered: 10, correct: 10, minAnswers: 16 };
-  it('四個條件都要達到', () => {
-    expect(canExecute('big', ok)).toBe(true);
-    expect(canExecute('big', { ...ok, combo: 2999 })).toBe(false);
-    expect(canExecute('big', { ...ok, streak: 7 })).toBe(false);
-    expect(canExecute('big', { ...ok, answered: 9, correct: 9 })).toBe(false);
-    expect(canExecute('big', { ...ok, answered: 12, correct: 10 })).toBe(false); // 83% < 85%
+describe('C3：處決僅為致命一擊演出', () => {
+  it.each([['elite', 300], ['mini', 1000], ['big', 3000], ['region', 100], ['silentKing', 300]] as const)('%s僅看致命與Combo門檻', (kind, combo) => {
+    expect(canExecute(kind, { combo, lethal: true })).toBe(true);
+    expect(canExecute(kind, { combo: combo - 1, lethal: true })).toBe(false);
+    expect(canExecute(kind, { combo: 1e10, lethal: false })).toBe(false);
   });
   it('普通關、寶箱、復仇魔王沒有處決；區域魔王與沉默君王分開', () => {
     const base = { bossMode: true, final: false, inMap: 20, lastRegion: false };

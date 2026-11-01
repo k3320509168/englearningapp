@@ -98,7 +98,7 @@ npm run validate:questions   # 題庫格式檢查
 - A2+：聽 297/300、說 211/200、讀 295/300、寫 206/200
 - B1：聽 397/390、說 281/260、讀 354/390、寫 254/260
 - B1+：聽 381/390、說 250/260、讀 403/390、寫 237/260
-- B2：聽 49/450、讀 50/450；B2+～C2：0。已審 160 題（10-31 起新增的題目還沒審）。
+- B2：聽 49/450、說 46/300、讀 50/450、寫 48/300；B2+～C2：0。已審 160 題（10-31 起新增的題目還沒審）。
 - 2026-11-01：移除 332 題「閱讀題 desc 只有說明、沒有英文句子」的壞題（所以各區閱讀變少，要補回）；匯入時已自動擋下這種題目（questionPipeline.ts 的 missingStem）。
 
 ## 下一步（照順序）
@@ -113,5 +113,6 @@ npm run validate:questions   # 題庫格式檢查
 - 收題：Chrome 每次頁面載入只放行一次下載 → 重新整理 → 捲到 code-block → 真實點擊下載鈕 → `npx tsx scripts/chat-batch.ts import --level L --skill S --download --archive D:/Game_q_storege`。
 - JS 點擊下載、剪貼簿、表單送出、跳轉到 localhost 都會被擋（跳 localhost 會讓分頁卡死）。
 - 審題：`review-batch.ts export` → 合併提示詞與題目上傳給 Pro → 存結果 → `apply`；套用前確認修正沒改壞答案位置。
+- 第二個有 Pro 的 Gemini 帳號在 `gemini.google.com/u/2/app`（/u/1 是免費帳號）；額度各自計算。新分頁預設 Flash，每個分頁都要自己切 Pro。
 - 模型：用 Pro、思考程度「低」。額度用完 Gemini 會自動降成 Flash-Lite，要停止，Flash-Lite 的產出只放 `pending`。
 - Chrome 下載設定要允許 `gemini.google.com` 自動下載多個檔案。

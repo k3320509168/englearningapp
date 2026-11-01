@@ -35,9 +35,9 @@ voices: [
 ['destination','行程的目的地',1,'n.','Our destination is visible, but the path winds around the hill.','目的地看得見，但小路繞著山丘走。'],
 ['uphill','朝上坡方向的',2,'adj.','The uphill section starts just beyond the cottages.','上坡路段從小屋再過去一點開始。'],
 ['retrace your steps','循原路回走',2,'phr.','If the lane ends here, we should retrace our steps.','若巷道到這裡就沒了，我們應循原路回走。'],
-['The entrance is on the far side of the courtyard','入口在庭院的另一側。',3],
-['Being able to see it does not mean we can get there directly','看得到它，不代表能直接走到。',3],
-['Let us return to the last junction we recognised','我們先回到最後一個認得的路口。',3]
+['The entrance is across the courtyard','入口在庭院另一側。',3],
+['Visible does not mean directly accessible','看得見，不代表能直接到達。',3],
+['Let us return to that familiar junction','我們先回到那個熟悉的路口。',3]
 ],
 spells: [
 ['SHORTCUT','n.','比一般路線更近的捷徑','The shortcut crosses a field rather than following the road.','這條捷徑穿越田地，不沿道路走。'],
@@ -87,9 +87,9 @@ voices: [
 ['disorientation','失去方向感的狀態',1,'n.','Identical corridors can create a sense of disorientation.','看起來相同的走廊可能讓人失去方向感。'],
 ['unobstructed','沒有被阻擋的',2,'adj.','The plan must preserve an unobstructed route to the exit.','規畫須保留一條通往出口、不受阻擋的路線。'],
 ['topography','地形的形狀與高低起伏',2,'n.','The map simplifies the topography but retains the steepest slopes.','地圖簡化了地形，但保留最陡的坡段。'],
-['The map assumes a level of familiarity that newcomers cannot be expected to have','這張圖預設了新來者不應被要求具備的熟悉程度。',3],
-['A clear label is of little use if it appears after the decision point','若清楚的標籤出現在決定路線之後，用處就很有限。',3],
-['We need to distinguish a route that exists from one that can actually be used','我們要區分路線的存在與實際可使用性。',3]
+['Prior familiarity can obscure a sign’s ambiguity','先前的熟悉感可能掩蓋標示的歧義。',3],
+['Clarity matters most at the decision point','清楚的資訊在作決定的位置尤其重要。',3],
+['Existence does not entail practical accessibility','存在不必然代表實際可達與可用。',3]
 ],
 spells: [
 ['DEMARCATION','n.','界線的劃分或標示','The demarcation between the public path and the work area is unclear.','公共小路與施工區之間的界線標示不清。'],
@@ -139,9 +139,9 @@ voices: [
 ['peripheral','位於邊緣或被視為次要的',1,'adj.','A district described as peripheral from one viewpoint may be central from another.','一個視角下被稱為邊緣的地區，換個視角可能居於中心。'],
 ['deictic','指涉依賴說話者所處語境的',2,'adj.','In the instruction, here is a deictic expression whose reference changes with the speaker’s position.','在這項指示中，here是指涉會隨說話者位置改變的語境指示表達。'],
 ['schematic','以簡化結構或關係示意的',2,'adj.','The schematic drawing preserves connections rather than geographical scale.','這張示意圖保留連接關係，而不是地理比例。'],
-['The absence of a name on the map is not evidence of an absence of attachment to the place','地圖未列名稱，不足以證明人們對該地沒有依附感。',3],
-['What appears peripheral depends on where the account chooses to place its centre','何者顯得邊緣，取決於敘述選擇把中心放在哪裡。',3],
-['We should distinguish the accuracy of the coordinates from the authority claimed for the account','我們應區分座標的準確性與敘述所宣稱的權威。',3]
+['Cartographic omission need not imply emotional detachment','製圖上的省略，未必表示情感上的疏離。',3],
+['Centrality depends on whose perspective we adopt','中心性取決於我們採用誰的視角。',3],
+['Accurate coordinates do not confer narrative authority','座標準確，不等於敘述因此具有權威。',3]
 ],
 spells: [
 ['CARTOGRAPHY','n.','地圖的繪製與製作研究','The exhibition presents cartography as both measurement and interpretation.','展覽把製圖呈現為兼具測量與詮釋的工作。'],

@@ -8204,6 +8204,524 @@
       ],
       "ans": "B",
       "explain": "短文指示「If your sewing machine makes a strange noise, turn it off immediately. Do not try to fix it yourself.」，所以聽到怪聲應該立刻關掉機器 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Our store ___ a huge sale next Friday.",
+      "options": [
+        "A. is going to have",
+        "B. had",
+        "C. has had",
+        "D. having"
+      ],
+      "ans": "A",
+      "explain": "句子中有 next Friday，表示未來的事情，因此使用 be going to 的未來式。其他時態不符合時間副詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】He ___ buys clothes online because he prefers to try them on.",
+      "options": [
+        "A. usually",
+        "B. hardly ever",
+        "C. always",
+        "D. often"
+      ],
+      "ans": "B",
+      "explain": "後半句說「他偏好試穿」，代表他「幾乎不」在網路上買衣服。hardly ever 表示頻率極低。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What time does the mall close? \nB: It closes at 10 PM. You ___ hurry if you want to buy that jacket.",
+      "options": [
+        "A. shouldn't",
+        "B. ought",
+        "C. had better",
+        "D. don't have to"
+      ],
+      "ans": "C",
+      "explain": "had better (最好) 用於給予強烈建議，若不這麼做可能會有不好的結果(買不到外套)。ought 後面需加 to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Special Offer: Buy two sweaters and get the third one for free. This PROMOTION ends on Sunday.\nQ: What will happen after Sunday?",
+      "options": [
+        "A. The sweaters will be free.",
+        "B. The store will close.",
+        "C. The special offer will end.",
+        "D. You must buy three sweaters."
+      ],
+      "ans": "C",
+      "explain": "短文提到「此促銷活動在週日結束」，因此週日過後，這個特別優惠(special offer)就會結束。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】Customers ___ keep the original box for any item EXCHANGE.",
+      "options": [
+        "A. can",
+        "B. must",
+        "C. might",
+        "D. may"
+      ],
+      "ans": "B",
+      "explain": "表示強烈義務或商店規定，顧客「必須」保留原包裝盒才能換貨，因此選 must。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】We offer free DELIVERY if your total order ___ over $50.",
+      "options": [
+        "A. was",
+        "B. will be",
+        "C. is",
+        "D. are"
+      ],
+      "ans": "C",
+      "explain": "條件句 if 子句中，若表達普遍事實或未來的條件，習慣用現在式代替未來式，因此選 is。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: The PAYMENT machine is not working.\nB: I ___ call the technician to fix it right away.",
+      "options": [
+        "A. have to",
+        "B. used to",
+        "C. will",
+        "D. am going"
+      ],
+      "ans": "C",
+      "explain": "對話中 B 是當下做出的決定(立刻打電話請人來修)，這種即時決定通常使用 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Dear customer, the CATALOG for next season is available now. You can view our new products online. \nQ: What is the purpose of this message?",
+      "options": [
+        "A. To ask for payment.",
+        "B. To announce a store closure.",
+        "C. To tell customers about new products.",
+        "D. To complain about a product."
+      ],
+      "ans": "C",
+      "explain": "文中提到「下季目錄已釋出，可在線上查看新產品」，因此目的是告知顧客新產品的資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The express train ___ from PLATFORM 3 at 9:15 AM.",
+      "options": [
+        "A. departs",
+        "B. departed",
+        "C. has departed",
+        "D. departing"
+      ],
+      "ans": "A",
+      "explain": "火車時刻表屬於固定行程，即使是未來發生的事，也常用現在簡單式表示，因此選 departs。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】Passengers ___ show their tickets before getting on the bus.",
+      "options": [
+        "A. should",
+        "B. have to",
+        "C. could",
+        "D. would"
+      ],
+      "ans": "B",
+      "explain": "這是客運公司的規定，乘客「必須」出示車票。have to 表示外在規定帶來的義務。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why are we moving so slowly? \nB: There is an accident ahead. We ___ be late for the meeting.",
+      "options": [
+        "A. can't",
+        "B. are going to",
+        "C. shouldn't",
+        "D. wouldn't"
+      ],
+      "ans": "B",
+      "explain": "根據眼前的跡象(前方有車禍且移動緩慢)做出的預測，使用 be going to 最為恰當。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Attention: The DEPARTURE of Flight 402 will be delayed by 30 minutes due to bad weather.\nQ: Why is the flight late?",
+      "options": [
+        "A. The plane is broken.",
+        "B. The weather is not good.",
+        "C. The pilot is sick.",
+        "D. The luggage is lost."
+      ],
+      "ans": "B",
+      "explain": "短文中提到「due to bad weather」(由於惡劣天氣)，因此班機延誤的原因是天氣不好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】To join the photography club, you must ___ online by Friday.",
+      "options": [
+        "A. registering",
+        "B. registered",
+        "C. register",
+        "D. to register"
+      ],
+      "ans": "C",
+      "explain": "情態動詞 must 後面必須接原形動詞，因此選 register (註冊)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are you going to the LECTURE tonight? \nB: I ___ usually go on weekdays, but this topic is very interesting.",
+      "options": [
+        "A. don't",
+        "B. didn't",
+        "C. won't",
+        "D. haven't"
+      ],
+      "ans": "A",
+      "explain": "B 在談論平常的習慣，usually 前面的否定助動詞需用現在簡單式的 don't。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Notice: The outdoor concert is POSTPONED to next week. Please check our website for updates.\nQ: What should people do to get more information?",
+      "options": [
+        "A. Call the singer.",
+        "B. Go to the concert now.",
+        "C. Check the website.",
+        "D. Buy new tickets."
+      ],
+      "ans": "C",
+      "explain": "短文中寫道「Please check our website for updates」(請查看我們的網站以獲取最新消息)，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Our teacher ___ give us a quiz next Monday.",
+      "options": [
+        "A. was going to",
+        "B. will be",
+        "C. is going to",
+        "D. has to be"
+      ],
+      "ans": "C",
+      "explain": "表示未來的計畫或即將發生的事，使用 is going to + 原形動詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】You ___ speak loudly in the library. People are studying.",
+      "options": [
+        "A. must not",
+        "B. do not have to",
+        "C. cannot be",
+        "D. will not"
+      ],
+      "ans": "A",
+      "explain": "圖書館禁止大聲喧嘩。must not 表示「千萬不可、禁止」，最符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What are we eating for lunch? \nB: I'm not sure. We ___ have sandwiches or noodles.",
+      "options": [
+        "A. must",
+        "B. might",
+        "C. had to",
+        "D. ought"
+      ],
+      "ans": "B",
+      "explain": "B 回答「我不確定」，因此接下來應該是表達「可能」會吃什麼，使用 might 最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Menu Note: Please tell our staff if you have any food ALLERGY before you order.\nQ: When should customers talk about their food problems?",
+      "options": [
+        "A. After they finish eating.",
+        "B. When they pay the bill.",
+        "C. Before they order food.",
+        "D. When they leave the restaurant."
+      ],
+      "ans": "C",
+      "explain": "Menu 上寫著「在點餐前(before you order)請告知員工是否對食物過敏」，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【頻率副詞】This restaurant is popular, so it is ___ crowded on weekends.",
+      "options": [
+        "A. never",
+        "B. rarely",
+        "C. always",
+        "D. seldom"
+      ],
+      "ans": "C",
+      "explain": "餐廳很受歡迎，所以週末「總是」很擁擠，只有 always 符合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】We offer a variety of hot and cold BEVERAGES, including tea and juice.",
+      "options": [
+        "A. foods",
+        "B. drinks",
+        "C. plates",
+        "D. chairs"
+      ],
+      "ans": "B",
+      "explain": "這裡考字義理解，beverages 的意思是飲料，與 drinks 同義，且後文提到 tea and juice 也是線索。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Would you like some DESSERT? \nB: No, thanks. I ___ completely full.",
+      "options": [
+        "A. am",
+        "B. will be",
+        "C. have been",
+        "D. was"
+      ],
+      "ans": "A",
+      "explain": "B 在描述現在的狀態（我現在很飽，所以不吃甜點了），使用現在簡單式 am。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Today's FORECAST: Heavy rain in the morning, but it will clear up by noon. Afternoon temperatures will reach 25 degrees.\nQ: How will the weather be in the afternoon?",
+      "options": [
+        "A. Very rainy.",
+        "B. Cold and snowy.",
+        "C. Clear and warm.",
+        "D. Dark and windy."
+      ],
+      "ans": "C",
+      "explain": "氣象預報說中午過後會放晴(clear up)且氣溫達到25度，因此下午的天氣是晴朗且溫暖的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【情態動詞】It is freezing outside. You ___ wear a thick coat and a hat.",
+      "options": [
+        "A. would",
+        "B. should",
+        "C. might",
+        "D. can't"
+      ],
+      "ans": "B",
+      "explain": "外面很冷，給予對方建議「應該」穿厚外套和戴帽子，使用 should。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】Take an UMBRELLA with you. It ___ later this evening.",
+      "options": [
+        "A. is going to rain",
+        "B. rained",
+        "C. has rained",
+        "D. raining"
+      ],
+      "ans": "A",
+      "explain": "提醒對方帶傘是因為預測「今晚稍晚會下雨」，表示未來的事情，用 is going to rain。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are we still going hiking tomorrow? \nB: The radio says there will be a storm. I think we must ___ the trip.",
+      "options": [
+        "A. start",
+        "B. join",
+        "C. CANCEL",
+        "D. continue"
+      ],
+      "ans": "C",
+      "explain": "因為有暴風雨，所以必須「取消(cancel)」行程，符合語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Activity Schedule: \n10:00 AM - Group Yoga\n12:00 PM - Lunch\n2:00 PM - City Tour\nNote: The City Tour requires comfortable shoes.\nQ: What should you bring for the activity at 2:00 PM?",
+      "options": [
+        "A. A yoga mat.",
+        "B. Some food.",
+        "C. Comfortable shoes.",
+        "D. A heavy jacket."
+      ],
+      "ans": "C",
+      "explain": "下午兩點的活動是 City Tour，備註說明此活動需要(requires)舒適的鞋子。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】We usually play basketball, but ___ we play volleyball instead.",
+      "options": [
+        "A. always",
+        "B. occasionally",
+        "C. rarely",
+        "D. never"
+      ],
+      "ans": "B",
+      "explain": "前句說「通常」打籃球，but 表示語氣轉折，因此選 occasionally(偶爾) 改打排球最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Don't worry about the heavy bags. I ___ help you carry them.",
+      "options": [
+        "A. will",
+        "B. am going",
+        "C. has to",
+        "D. might"
+      ],
+      "ans": "A",
+      "explain": "表示主動提供幫忙、給予承諾時，通常使用 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: How often do you check your email? \nB: I check it ___, usually three or four times a day.",
+      "options": [
+        "A. hardly",
+        "B. completely",
+        "C. frequently",
+        "D. rarely"
+      ],
+      "ans": "C",
+      "explain": "一天檢查三到四次，表示頻率很高，因此選 frequently(頻繁地)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Dear Students, the library will close early at 5:00 PM tomorrow for cleaning. Normal hours will return on Thursday.\nQ: Why is the library closing early tomorrow?",
+      "options": [
+        "A. For a student party.",
+        "B. To clean the building.",
+        "C. Because of the weather.",
+        "D. To repair the lights."
+      ],
+      "ans": "B",
+      "explain": "公告中寫明「for cleaning」(為了清潔)，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】Our company's AVERAGE sales have increased this year.",
+      "options": [
+        "A. average",
+        "B. to average",
+        "C. averaged",
+        "D. averaging"
+      ],
+      "ans": "A",
+      "explain": "這裡作為形容詞使用，average sales 表示「平均銷售額」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【單句】You ___ to sign the form before returning it to the office.",
+      "options": [
+        "A. should",
+        "B. must",
+        "C. have",
+        "D. may"
+      ],
+      "ans": "C",
+      "explain": "後面的動詞是 to sign，情態動詞中只有 have 搭配 to (have to) 表達必須。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Can we meet at 3 PM? \nB: I'm sorry, I ___ be in a meeting with a client at that time.",
+      "options": [
+        "A. would",
+        "B. will",
+        "C. did",
+        "D. was"
+      ],
+      "ans": "B",
+      "explain": "B 在談論下午三點未來的既定行程，使用 will be 配合 in a meeting。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Bus Route 12 is currently out of service because of road work on Main Street. Please take Route 15 instead.\nQ: Which bus should passengers take now?",
+      "options": [
+        "A. Route 12.",
+        "B. Route 15.",
+        "C. Main Street Bus.",
+        "D. Any bus."
+      ],
+      "ans": "B",
+      "explain": "公告說 12 號公車停駛，請改搭 15 號公車(take Route 15 instead)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Next summer, they ___ travel across Europe by train.",
+      "options": [
+        "A. is going to",
+        "B. are going to",
+        "C. has gone to",
+        "D. going to"
+      ],
+      "ans": "B",
+      "explain": "主詞是 they，搭配未來的時間 Next summer，應使用 are going to。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: I have a terrible headache. \nB: You ___ take a rest and drink some warm water.",
+      "options": [
+        "A. should",
+        "B. shouldn't",
+        "C. cannot",
+        "D. doesn't have to"
+      ],
+      "ans": "A",
+      "explain": "對方頭痛，給予適當的建議「應該」休息喝溫水，選 should。"
     }
   ],
   "boss": [
@@ -10522,6 +11040,188 @@
       ],
       "ans": "D",
       "explain": "文中提到「Please wear loose clothing so the nurse can put the medical sensors easily.」，即穿寬鬆衣物是為了讓護理師能順利放置醫療感應器 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Store Policy:\nItems bought on sale cannot be returned for a full refund. However, you may EXCHANGE them for a different size within 14 days.\nQ: What is true about sale items?",
+      "options": [
+        "A. You can get all your money back.",
+        "B. You have 30 days to return them.",
+        "C. You can trade them for another size.",
+        "D. You cannot bring them back to the store at all."
+      ],
+      "ans": "C",
+      "explain": "規定中說明特價品不可全額退費，但可在 14 天內換不同尺寸(EXCHANGE them for a different size)，因此 C 正確。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Hi Mark,\nI won't be able to attend the team meeting tomorrow morning because my train DELAY is worse than expected. Could you take notes for me?\nThanks, Jane\nQ: Why is Jane writing this message?",
+      "options": [
+        "A. To ask Mark to change the meeting time.",
+        "B. To complain about the train service.",
+        "C. To tell Mark she cannot make it to the meeting.",
+        "D. To share her meeting notes with Mark."
+      ],
+      "ans": "C",
+      "explain": "Jane 傳訊息的目的是告知 Mark 因為火車延誤，她明天無法出席會議，請他幫忙作筆記。因此 C 是主要目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Important Notice:\nAll members must renew their gym membership by December 31st. Members who do not renew will lose their locker space in January.\nQ: What will happen if someone forgets to renew?",
+      "options": [
+        "A. They will have to pay a fine.",
+        "B. They will not have a locker next year.",
+        "C. They must buy new gym equipment.",
+        "D. They can never use the gym again."
+      ],
+      "ans": "B",
+      "explain": "公告指出如果沒有在12月31日前續約，一月份就會失去置物櫃空間(lose their locker space)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Do we have enough chairs for the event tomorrow? \nB: I'm not sure. I ___ count them later to make sure.",
+      "options": [
+        "A. am going to",
+        "B. will",
+        "C. must be",
+        "D. have to be"
+      ],
+      "ans": "B",
+      "explain": "B 在對話當下才決定稍後去數椅子，對於說話瞬間所做的決定，習慣用 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Your sweater is beautiful! \nB: Thanks! My grandmother made it for me. I ___ wear it when the weather gets cold.",
+      "options": [
+        "A. completely",
+        "B. rarely",
+        "C. always",
+        "D. never"
+      ],
+      "ans": "C",
+      "explain": "收到奶奶做的毛衣且覺得很棒，天氣冷時「總是」會穿它，才符合正常語氣與對話邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Cooking Instructions:\nFirst, boil the water. Then, add the noodles and stir gently. You should cook them for exactly 5 minutes, or they will become too soft.\nQ: What might happen if you cook the noodles for 8 minutes?",
+      "options": [
+        "A. They will taste better.",
+        "B. They will not be soft enough.",
+        "C. They will become too soft.",
+        "D. They will cool down quickly."
+      ],
+      "ans": "C",
+      "explain": "說明書說「剛好煮5分鐘，否則會變得太軟」，因此若煮8分鐘，麵條將會太軟。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Due to an ENGINE problem on the tracks, all northbound trains are suspended until further notice. We apologize for the inconvenience.\nQ: What is the current situation?",
+      "options": [
+        "A. The trains are running faster.",
+        "B. The trains are moving south.",
+        "C. Northbound trains are not running.",
+        "D. Passengers must buy new tickets."
+      ],
+      "ans": "C",
+      "explain": "公告表示因為軌道上的引擎問題，所有北上列車皆暫停行駛(suspended)，因此 C 是正確描述。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: We need to finish this report by 5 PM. \nB: I know. We ___ waste any more time chatting.",
+      "options": [
+        "A. mustn't",
+        "B. wouldn't",
+        "C. don't have to",
+        "D. didn't"
+      ],
+      "ans": "A",
+      "explain": "既然五點前必須完成報告，他們「絕不可」再浪費時間聊天。mustn't 表強烈的禁止。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Student Club Fair:\nCome and see over 50 different clubs! The fair will be held in the main square from Wednesday to Friday. Registration for new members opens on Saturday.\nQ: When can students officially join a club?",
+      "options": [
+        "A. Wednesday.",
+        "B. Thursday.",
+        "C. Friday.",
+        "D. Saturday."
+      ],
+      "ans": "D",
+      "explain": "展覽是週三到週五，但新成員的註冊(Registration)是在週六(Saturday)開放，所以週六才能正式加入。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Restaurant Review:\nThe food was delicious, but the service was extremely slow. I don't think I am going to return anytime soon, even though the prices were reasonable.\nQ: Why doesn't the writer want to go back?",
+      "options": [
+        "A. The food was terrible.",
+        "B. It was too expensive.",
+        "C. The service was not fast enough.",
+        "D. The restaurant was too noisy."
+      ],
+      "ans": "C",
+      "explain": "評論者認為食物好吃、價格合理，但服務非常慢(service was extremely slow)，這是他不願再訪的原因。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【短文】A: Look at those dark clouds in the sky! \nB: Yes, you ___ bring the outdoor chairs inside before they get wet.",
+      "options": [
+        "A. had better",
+        "B. used to",
+        "C. wasn't going to",
+        "D. are going"
+      ],
+      "ans": "A",
+      "explain": "看到烏雲密布，B 建議 A「最好」趕快把椅子搬進來，否則會淋濕。用 had better 表達這類建議。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Weather Update:\nThe strong wind is going to drop the temperature significantly tonight. Please ensure all windows are closed securely to keep your apartment warm.\nQ: What does the update suggest people do?",
+      "options": [
+        "A. Turn on the fans.",
+        "B. Open the windows slightly.",
+        "C. Shut the windows completely.",
+        "D. Go outside for a walk."
+      ],
+      "ans": "C",
+      "explain": "氣象快報建議「確保所有窗戶都關緊」(ensure all windows are closed securely)以保持溫暖，與 C 選項意思相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【短文】A: Did you see the sign? \nB: Yes, it says 'Staff Only'. We ___ enter this room.",
+      "options": [
+        "A. are not supposed to",
+        "B. don't have to",
+        "C. wouldn't",
+        "D. hasn't"
+      ],
+      "ans": "A",
+      "explain": "牌子寫「員工專區」，表示我們「不應該/不被允許」進入。be not supposed to 類似於 must not，表示按規定不應做某事。"
     }
   ]
 }

@@ -10257,6 +10257,706 @@
       ],
       "ans": "A",
       "explain": "英文原句：A new workout routine has been designed for you. 意思：已經為你設計了一套新的健身常規訓練。（has been designed 已經被設計）"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Since he joined the team, he ___ three different marketing tasks.",
+      "options": [
+        "A. has managed",
+        "B. manages",
+        "C. is managing",
+        "D. will manage"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：句首有 Since 加上過去式，主要子句需用現在完成式 (has/have + p.p.)，表示從過去持續到現在的動作或經驗。因此選 has managed。其他選項時態不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】I ___ my password, so I cannot log into the system right now.",
+      "options": [
+        "A. forget",
+        "B. have forgotten",
+        "C. forgetting",
+        "D. was forgotten"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：忘記密碼是發生在過去但對「現在」造成影響（無法登入）的動作，應使用現在完成式。A 是現在簡單式，C 是動名詞/現在分詞，D 是被動語態（我被忘記），皆不符合句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If the train ___ late, we will take a taxi to the airport instead.",
+      "options": [
+        "A. will be",
+        "B. has been",
+        "C. is",
+        "D. was"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：If 條件句表示對未來可能發生的情況做假設時，If 子句應使用「現在簡單式」代替未來式，因此選 is。A 錯誤因為 If 條件句中不加 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】You will miss your flight if you ___ at the gate on time.",
+      "options": [
+        "A. not arrive",
+        "B. arrived",
+        "C. are not arriving",
+        "D. do not arrive"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：這是一般條件句（第一類條件句），主要子句用未來式 (will miss)，If 子句要用現在簡單式。否定寫法為 do not arrive。A 缺乏助動詞，B 是過去式，C 是現在進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The daily schedule ___ by the manager every morning before work begins.",
+      "options": [
+        "A. is updated",
+        "B. updates",
+        "C. has updated",
+        "D. updated"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：主詞 The daily schedule 是動作承受者（被更新），且由 every morning 可知是常態性動作，需用現在簡單式的被動語態 (is/are + p.p.)，故選 is updated。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】These smart devices ___ in Taiwan for the global market.",
+      "options": [
+        "A. produce",
+        "B. are produced",
+        "C. are producing",
+        "D. produced"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：主詞 devices（裝置）無法自己製造，必須「被製造」，因此要用被動語態 (are + produced)。A, C, D 均為主動語態，不合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】You need a valid passport to confirm your ___ at the airport desk.",
+      "options": [
+        "A. package",
+        "B. weather",
+        "C. identity",
+        "D. mistake"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：句意為「你需要有效的護照來確認你的身分」。identity 意為身分；package 是包裹，weather 是天氣，mistake 是錯誤，皆不合語意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】They ___ the new software on all office computers yet.",
+      "options": [
+        "A. install",
+        "B. are installing",
+        "C. will install",
+        "D. have not installed"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：句尾有 yet，通常搭配現在完成式的否定句或疑問句，表示「到目前為止尚未...」。因此正確答案為 have not installed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】She ___ as a freelance writer since she graduated from university.",
+      "options": [
+        "A. has worked",
+        "B. works",
+        "C. worked",
+        "D. is working"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：since + 過去時間點/子句，主要子句需搭配現在完成式，表示從過去某個時間點一直持續到現在的狀態。故選 has worked。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If you ___ this button, the machine will stop automatically.",
+      "options": [
+        "A. pressed",
+        "B. press",
+        "C. will press",
+        "D. are pressing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：第一類條件句中，主要子句用 will stop，If 子句用現在簡單式表示可能發生的條件。因此選 press。C 錯誤因為 If 子句不用 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If the customer ___ not like the color, she can return the shirt for a refund.",
+      "options": [
+        "A. do",
+        "B. is",
+        "C. does",
+        "D. has"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：If 子句用現在簡單式，主詞 the customer 是第三人稱單數，否定助動詞需用 does。A 的 do 用法錯誤，B 和 D 語法不合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】The final exam papers ___ by the teachers next week.",
+      "options": [
+        "A. will mark",
+        "B. are marking",
+        "C. mark",
+        "D. will be marked"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：主詞 exam papers 是被批改的對象，且時間是 next week（下週），所以需要未來式的被動語態 (will be + p.p.)，故選 will be marked。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】A confirmation email ___ to your inbox immediately after you pay.",
+      "options": [
+        "A. is sent",
+        "B. sends",
+        "C. has sent",
+        "D. sent"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：email 無法自己發送，必須「被發送」，所以需用被動語態 (is + sent)。這是一個陳述系統常態運作的句子，用現在簡單被動式最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The health expert ___ eating more vegetables to lower your blood pressure.",
+      "options": [
+        "A. forgets",
+        "B. suggests",
+        "C. designs",
+        "D. paints"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：健康專家「建議」多吃蔬菜以降低血壓。suggests 意為建議；forgets (忘記)、designs (設計)、paints (畫) 都不合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】We ___ a lot of positive feedback from our guests this month.",
+      "options": [
+        "A. receive",
+        "B. will receive",
+        "C. have received",
+        "D. are receiving"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：this month 指「這個月到目前為止」，常搭配現在完成式 (have/has + p.p.) 來表達目前為止的經驗或累積的結果。因此選 have received。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】He ___ all his tasks for today, so he can go home early.",
+      "options": [
+        "A. finishes",
+        "B. finished",
+        "C. is finishing",
+        "D. has finished"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：動作剛完成並對現在造成影響（可以提早回家），最適合用現在完成式 (has finished)。B 過去式缺乏明確過去時間點，且不如完成式能強調與現在的關聯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】If we buy the tickets online, they ___ much cheaper than at the station.",
+      "options": [
+        "A. will be",
+        "B. are being",
+        "C. were",
+        "D. have been"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：If 子句用現在式 (buy)，主要子句表示未來的結果，應使用未來式 (will + 原形動詞)。因此選 will be。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【條件句】The doctor will see you now if you ___ an appointment.",
+      "options": [
+        "A. had",
+        "B. have",
+        "C. will have",
+        "D. are having"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：條件句的主要子句為 will see，因此 if 子句需用現在簡單式表示條件。you 搭配動詞 have。C 錯在 if 子句不用 will。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】This beautiful wooden chair ___ by a local artist in the 1990s.",
+      "options": [
+        "A. makes",
+        "B. made",
+        "C. was made",
+        "D. has made"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：椅子是「被製作」的，且時間是過去的 1990 年代，故應使用過去簡單式的被動語態 (was/were + p.p.)。正確答案為 was made。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【被動語態】Some extra chairs ___ to the meeting room before the guests arrive.",
+      "options": [
+        "A. brought",
+        "B. bring",
+        "C. have brought",
+        "D. will be brought"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：主詞 chairs 是動作承受者，且由 before the guests arrive（在客人抵達前）可知動作發生在未來，需用未來被動語態 (will be + p.p.)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Have you sent the files? \nB: Not yet. If I finish editing them, I ___ them to you right away.",
+      "options": [
+        "A. will email",
+        "B. emailed",
+        "C. have emailed",
+        "D. email"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：B 回答中的 If 子句用現在式 (finish)，表示未來的假設條件，主要子句應搭配未來式 (will + 原形動詞)，表示「我將會寄給你」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Where is my package? \nB: It ___ by the delivery company yesterday afternoon.",
+      "options": [
+        "A. delivers",
+        "B. was delivered",
+        "C. has delivered",
+        "D. delivered"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：包裹是被運送的（被動語態），且時間是 yesterday afternoon（過去時間），所以要用過去簡單被動語態 (was delivered)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Is the report ready? \nB: Yes, I ___ it, and it is on your desk now.",
+      "options": [
+        "A. am printing",
+        "B. will print",
+        "C. have printed",
+        "D. print"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：B 表示已經印好了且報告在桌上，強調過去動作對現在造成的結果，使用現在完成式 (have printed) 最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why is the road closed? \nB: It ___ by the heavy rain last night.",
+      "options": [
+        "A. floods",
+        "B. flooded",
+        "C. is flooding",
+        "D. was flooded"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：道路是「被淹沒」的，時間是 last night，所以必須用過去簡單式的被動語態 (was flooded)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Can I still join the tour? \nB: Yes, if you pay the fee now, I ___ your name to the list.",
+      "options": [
+        "A. will add",
+        "B. added",
+        "C. have added",
+        "D. am adding"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：這是一般條件句，If 子句用現在式 (pay)，表示只要現在付費，主要子句就會發生，所以主要子句用未來式 (will add)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The hotel charges an extra ___ if you want to check out after 2:00 PM.",
+      "options": [
+        "A. menu",
+        "B. fee",
+        "C. flight",
+        "D. weather"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：飯店會收取額外的「費用 (fee)」。menu(菜單)、flight(航班)、weather(天氣)皆不符合上下文。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】If you have any unusual ___, you should see a doctor immediately.",
+      "options": [
+        "A. packages",
+        "B. collections",
+        "C. symptoms",
+        "D. tickets"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：句意為「如果有任何不尋常的症狀，你應該立刻看醫生」。symptoms 意思是症狀，符合醫療情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【綜合句型】The manager ___ the meeting because several key members were sick.",
+      "options": [
+        "A. cancels",
+        "B. is canceling",
+        "C. will cancel",
+        "D. has canceled"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：雖然 because 子句是過去式，但主要子句描述的「取消」這件事是已經發生且影響到現在的狀態，因此使用現在完成式 (has canceled) 是合理的。也可解釋為剛做的決定。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【綜合句型】If the weather ___ bad tomorrow, the outdoor concert will be moved indoors.",
+      "options": [
+        "A. is",
+        "B. will be",
+        "C. was",
+        "D. has been"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：條件句中，表示未來的假設情況時，If 子句必須用現在簡單式代替未來式，因此選 is。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【綜合句型】All the dirty dishes must ___ before we close the kitchen tonight.",
+      "options": [
+        "A. wash",
+        "B. be washed",
+        "C. washed",
+        "D. washing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：盤子必須「被洗」，助動詞 must 後面接原形動詞，因此被動語態的結構為 must + be + p.p.，故選 be washed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Have you ever visited Tokyo? \nB: Yes, I ___ there twice for business trips.",
+      "options": [
+        "A. travel",
+        "B. am traveling",
+        "C. have traveled",
+        "D. will travel"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：回答「曾經去過幾次」是表達從過去到現在累積的經驗，應使用現在完成式 (have traveled)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Will the shop be open on Sunday? \nB: No, it ___ on weekends.",
+      "options": [
+        "A. closes",
+        "B. is closing",
+        "C. closed",
+        "D. is closed"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：表達商店在週末「是不營業的/關閉的」狀態，習慣上用 be closed (這裡視為被動語態或形容詞皆可)，表示一種常態，故選 is closed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What happens if I lose my room key? \nB: If you lose it, you ___ a fine of fifty dollars.",
+      "options": [
+        "A. will pay",
+        "B. paid",
+        "C. pay",
+        "D. have paid"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：If 子句用現在式 (lose)，表示未來可能發生的狀況，主要子句則用未來式表示結果 (will pay)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are the documents ready for signing? \nB: Yes, they ___ by the legal team already.",
+      "options": [
+        "A. check",
+        "B. have been checked",
+        "C. will check",
+        "D. checked"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文件是「被檢查」，且句尾有 already，表示動作已經完成，要用現在完成式的被動語態 (have been + p.p.)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】Please keep your ___ with you at all times when you are at the airport.",
+      "options": [
+        "A. custom",
+        "B. identity",
+        "C. luggage",
+        "D. symptom"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：在機場隨時要帶在身邊的是「行李 (luggage)」。custom 是習俗，identity 是身分，symptom 是症狀。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The museum has a wonderful ___ of ancient Roman coins on the second floor.",
+      "options": [
+        "A. luggage",
+        "B. ticket",
+        "C. fee",
+        "D. collection"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：博物館在二樓有很棒的古羅馬硬幣「收藏 (collection)」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【綜合句型】If you want to access the fast internet, a password ___ by the staff.",
+      "options": [
+        "A. must be provided",
+        "B. provides",
+        "C. has provided",
+        "D. must provide"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：密碼是「被提供」的對象，所以需要被動語態 (must be provided)。B, C, D 都是主動語態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】We ___ working together on this new marketing strategy since January.",
+      "options": [
+        "A. are",
+        "B. have been",
+        "C. were",
+        "D. will be"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：有 since + 過去時間點，應搭配現在完成進行式或完成式。這裡填入 have been 形成 have been working，表示從一月一直合作到現在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Notice: The public pool will be closed for cleaning from Monday to Wednesday. If you wish to swim, visit the sports center nearby. Your membership card will be accepted there. \nQuestion: What should members do if they want to swim on Tuesday?",
+      "options": [
+        "A. Clean the public pool",
+        "B. Wait until Wednesday",
+        "C. Go to the sports center",
+        "D. Buy a new membership card"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：短文提到週一到週三游泳池關閉，如果想游泳可以去附近的運動中心 (visit the sports center nearby)。因此週二想游泳應該選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health News: Drinking coffee late in the day can ruin your sleep. Experts say that if you avoid caffeine after 2 PM, your sleep quality will improve. \nQuestion: What is the main advice given in the text?",
+      "options": [
+        "A. Sleep more in the afternoon",
+        "B. Stop drinking all beverages",
+        "C. Drink coffee before bedtime",
+        "D. Avoid coffee in the late afternoon"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：短文建議下午兩點後避免攝取咖啡因 (avoid caffeine after 2 PM) 以改善睡眠品質，因此最符合的建議是 D (避免在傍晚喝咖啡)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Rule: All workers must wear their ID cards inside the building. If you forget your card, a temporary one will be given at the front desk. \nQuestion: What happens if a worker forgets their ID card?",
+      "options": [
+        "A. They can get a temporary one",
+        "B. They must go back home",
+        "C. They have to pay a fine",
+        "D. They are not allowed to enter"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：短文中清楚說明，如果忘記帶卡，櫃台會發給一張臨時卡 (a temporary one will be given at the front desk)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Travel Tips: When traveling in Europe, carry some cash. Small local markets only take cash. If you buy fresh fruit from a street seller, you will need coins. \nQuestion: Why is it important to carry cash?",
+      "options": [
+        "A. Because credit cards are illegal",
+        "B. To buy things from small markets",
+        "C. Because banks are always closed",
+        "D. To pay for expensive hotels"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文中提到當地小市場只收現金 (Small local markets only take cash)，因此帶現金是為了在這些地方購物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Product Manual: Thank you for buying the Smart Blender. The blades are sharp and must be washed by hand. If you put them in the dishwasher, they will become dull. \nQuestion: How should the user clean the blades?",
+      "options": [
+        "A. With a smart machine",
+        "B. In the dishwasher",
+        "C. By washing them by hand",
+        "D. By leaving them in water"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：說明書中指出刀片必須用手洗 (must be washed by hand)，放進洗碗機 (dishwasher) 會變鈍。故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Community Event: We are hosting a bake sale this Saturday for the local library. Many cakes have been baked by our helpers. If it rains, the event will be moved to the school hall. \nQuestion: Where will the event be if the weather is bad?",
+      "options": [
+        "A. At the local library",
+        "B. Inside the community pool",
+        "C. In the downtown park",
+        "D. In the school hall"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：短文最後一句說：如果下雨，活動將移至學校大廳 (moved to the school hall)。壞天氣指的就是下雨，因此選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health Tips: Stretching before running is no longer suggested by some experts. They believe a light jog is better. If you start with a slow run, your body will warm up naturally. \nQuestion: What is a good warm-up activity?",
+      "options": [
+        "A. A light jog",
+        "B. Deep stretching",
+        "C. Drinking cold water",
+        "D. Sleeping for an hour"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：文中提到專家認為輕鬆慢跑 (a light jog) 是更好的暖身方式，不再建議跑前拉筋。故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Travel Info: The night train to Vienna departs at 10 PM. Travelers must board at least twenty minutes early. Once closed, the doors will not open again. \nQuestion: When is the latest time to board the train?",
+      "options": [
+        "A. 10:20 PM",
+        "B. 9:40 PM",
+        "C. 10:00 PM",
+        "D. 9:20 PM"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：火車晚上十點出發 (10 PM)，旅客必須至少提早二十分鐘上車，因此最晚的上車時間是晚上 9:40。故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Company Email: Our winter party is on December 15th. We will serve many foods, including vegetarian dishes. If you have other dietary needs, reply to this email by Friday. \nQuestion: What should a person do if they cannot eat certain foods?",
+      "options": [
+        "A. Bring their own food",
+        "B. Skip the winter party",
+        "C. Reply to the email by Friday",
+        "D. Call the restaurant directly"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：信中指出如果有其他的飲食需求 (dietary needs)，請在週五前回覆此電子郵件 (reply to this email by Friday)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Shopping Guide: Our store offers a price-match promise. If you find the same item for a lower price elsewhere, we will match it. Just show us the ad within seven days. \nQuestion: How can a customer get a lower price?",
+      "options": [
+        "A. By returning the item quickly",
+        "B. By writing a positive review",
+        "C. By buying two items at once",
+        "D. By showing a cheaper ad from elsewhere"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：商店承諾，只要出示別處較低價格的廣告 (show us the ad)，就可以獲得一樣的低價。因此選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】City News: A new glass recycling system has been launched downtown. Special bins have been placed everywhere. If this system is successful, it will be expanded next year. \nQuestion: What will happen if the system is successful?",
+      "options": [
+        "A. It will be expanded next year",
+        "B. The bins will be removed",
+        "C. The city will cancel the program",
+        "D. People will stop recycling"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：短文最後一句明確表示：如果系統成功，明年將會擴大實施 (it will be expanded next year)。故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Tech Update: The latest software update includes security fixes. It is highly recommended to install it. If you ignore it, your personal files might be at risk. \nQuestion: Why should users install the update?",
+      "options": [
+        "A. To make their computer faster",
+        "B. To protect their personal files",
+        "C. To download a new game",
+        "D. To get a free software license"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文中提到如果不更新，個人檔案可能會有風險 (your personal files might be at risk)，因此更新的目的是為了保護個人檔案。故選 B。"
     }
   ],
   "boss": [
@@ -13624,6 +14324,174 @@
       ],
       "ans": "B",
       "explain": "英文原句：If the yoga class is full, can I join the next one? 意思：如果瑜伽課滿了，我可以參加下一堂嗎？選項 B「可以，我會把你的名字放進候補名單」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【條件句與被動語態】If the online payment ___, the system will automatically generate an electronic receipt for you.",
+      "options": [
+        "A. confirms",
+        "B. confirmed",
+        "C. is confirmed",
+        "D. will be confirmed"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：這是稍微進階的融合題。If 條件句中須用現在簡單式，且主詞 online payment（線上付款）是被確認的對象，故須使用現在式被動語態 (is confirmed)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【時態與被動】Over the past few months, the old library ___ into a modern community center.",
+      "options": [
+        "A. transforms",
+        "B. transformed",
+        "C. has transformed",
+        "D. has been transformed"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：時間副詞 Over the past few months 需搭配現在完成式；而圖書館是「被改造」的，因此要用現在完成式的被動語態 (has been + p.p.)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合句型】If they ___ the issue immediately, the problem will only get worse.",
+      "options": [
+        "A. do not resolve",
+        "B. are not resolved",
+        "C. have not resolved",
+        "D. will not resolve"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：第一類條件句中，主要子句用未來式 (will get)，If 子句需用現在式。主詞 they 為主動解決問題，故選現在簡單主動的否定 (do not resolve)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合句型】Since the new manager arrived, communication between the teams ___ significantly.",
+      "options": [
+        "A. improves",
+        "B. has improved",
+        "C. was improved",
+        "D. will improve"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：Since 子句用過去式，主要子句須搭配現在完成式 (has/have + p.p.)，表示從過去持續到現在的進步。improve 在此作不及物動詞，主動即可。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Event Update: The outdoor festival has been canceled due to heavy storms. If you purchased your ticket online, a full refund will be processed within five days. \nQuestion: What will happen to online ticket buyers?",
+      "options": [
+        "A. They will receive new tickets",
+        "B. They must attend next week",
+        "C. They will get their money back",
+        "D. They have to call the organizer"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：文中提到如果線上購票，全額退款 (refund) 將在五天內處理。這表示他們會拿回買票的錢 (get their money back)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Library Rules: Books can be borrowed for two weeks. If a book is not returned on time, the member is charged a small fee. This rule has been strictly applied since last year. \nQuestion: What happens if a book is returned late?",
+      "options": [
+        "A. The book is thrown away",
+        "B. The member cannot borrow books again",
+        "C. The library closes early",
+        "D. The member must pay a fee"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：文中指出如果不按時歸還 (not returned on time)，會員將被收取一筆小費用 (charged a small fee)。因此選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【綜合句型】If you are traveling abroad, your passport must ___ before you book the flight.",
+      "options": [
+        "A. be checked",
+        "B. check",
+        "C. has checked",
+        "D. checking"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：護照是「被檢查」的對象，助動詞 must 後面接原形，因此被動語態為 must + be + p.p. (be checked)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Health Warning: Staring at screens for hours causes eye strain. If you look at a distant object every twenty minutes, your eyes will relax. This method is highly recommended by doctors. \nQuestion: How can one reduce eye strain?",
+      "options": [
+        "A. By staring closely at the screen",
+        "B. By looking at something far away",
+        "C. By closing the eyes for an hour",
+        "D. By visiting a doctor every day"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文中建議每二十分鐘看一次遠處的物體 (look at a distant object)，這能讓眼睛放鬆。distant object 即為 something far away。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【時態】The company ___ its target for this quarter, so everyone will receive a bonus.",
+      "options": [
+        "A. reaches",
+        "B. has reached",
+        "C. is reached",
+        "D. will reach"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：公司「已經達到」本季的目標，結果是大家會拿到獎金。強調動作完成並對現在/未來產生影響，使用現在完成式 (has reached) 最為合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【對話】A: Have you reviewed the document? \nB: Yes, but I found some errors. If they are not corrected, the document ___ tonight.",
+      "options": [
+        "A. is not sent",
+        "B. has not been sent",
+        "C. will not be sent",
+        "D. did not send"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：If 子句用現在式的被動語態 (are not corrected)，主要子句表示未來的結果，須用未來式的被動語態，文件「將不會被寄出」(will not be sent)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【字彙】The software will automatically ___ your personal data to prevent others from seeing it.",
+      "options": [
+        "A. protect",
+        "B. suggest",
+        "C. display",
+        "D. recognize"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：為了防止他人看見，軟體會自動「保護 (protect)」你的個人資料。其他選項：建議 (suggest)、展示 (display)、辨識 (recognize) 均不符合防護資料的情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【被動語態】The latest fashion trends ___ by social media more than ever before.",
+      "options": [
+        "A. influence",
+        "B. are influenced",
+        "C. have influenced",
+        "D. is influencing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：主詞 trends（趨勢）是複數，且是「被影響」的對象，所以要用現在式複數的被動語態 (are influenced)。"
     }
   ]
 }

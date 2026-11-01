@@ -115,3 +115,5 @@
 - 2026-11-01 Codex｜C5範圍登記：除battleStore外需串接speech.ts、useSpeak.ts、useBattleClock.ts與BattleHUD.tsx的播放/辨識事件，新增answerTiming.ts及回歸。Web Speech沒有預先音檔duration，先以實際onstart/onend界定暫停、文字/語速估算故障上限，將明確列出與精確音檔上限的差異供驗收；不使用cancel打斷Mac發音。
 
 - 2026-11-01 Codex｜C5第一批交付：兩次實際onstart播放有暫停，onend/錯誤即釋放；15秒單題累積辨識等待預算與10秒啟動逾時，stop後不會延遲啟動舊錄音；玩家說話100%、spell/fill行動條70%、系統等待扣除activeAnswerMs。350測試/tsc/eslint通過。限制：TTS無預先duration，1.3×duration+2s的故障上限目前用字數/語速估算（另封頂60秒），需Claude驗收或另供實際音檔duration；不宣稱精確音檔上限已完成。正常播放以事件釋放。接C4快答，再C6/C7。
+
+- 2026-11-01 Codex｜C4快答交付：改逐題activeAnswerMs≤題型/難度基準70%，無提示非重答且非超時答對至少12題、快答至少max(3,ceil(10%))；移除平均3.5秒路線，結算顯示新規則。長口說超過5詞每詞+350ms、長寫作超過8字母每字+300ms（規格未定係數，明列供審查）；補邊界回歸，352測試/tsc/eslint通過。C5精確音檔duration與實機音訊驗收限制仍保留，接C6。

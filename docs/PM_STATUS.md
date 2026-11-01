@@ -13,6 +13,8 @@
 7. 上下文快滿時自己壓縮（Claude `/compact`；Codex、Antigravity 完成任務後若接近極限也要壓縮或開新對話）。
 8. 介面、整體平衡、合理性是製作人最重視的事。
 
+**看三方即時狀態**：`zsh scripts/team-status.sh`（最新存檔點、是否工作中、Codex 額度、最後留言）。
+
 ## 1. 額度與大腦（2026-11-01 15:10 查）
 | 成員 | 每週 | 5 小時 | 判斷 |
 |---|---|---|---|
@@ -27,6 +29,15 @@
   ```json
   {"permissions":{"allow":["command(git status)","command(git diff)","command(git log)","command(git add)","command(git commit)","command(npx tsc)","command(npx vitest)","command(npx eslint)","command(npx tsx)","command(npm run)","command(node)","command(dot_clean)","command(ls)","command(cat)","command(grep)"],"deny":["command(git push)","command(git reset)","command(rm)"]}}
   ```
+
+
+### 1.1 自動喚醒與接續機制（2026-11-01）
+- **Codex／Antigravity**：`scripts/ai-tick.sh` 每 30 分鐘跑一次。**launchd 版讀不到外接碟（macOS 權限，2026-11-01 跑 10 次全失敗），改由製作人在終端機分頁執行 `zsh scripts/ai-loop.sh`**（Claude 的安全規則不允許自己啟動自動代理迴圈）：
+  - Codex：15 分鐘內沒動作、且額度夠（5 小時 <90%、每週 <95%，或已過重置時間）→ `codex exec` 照 `scripts/prompts/codex-tick.txt` 接續佇列。
+  - Antigravity：沒任務在跑、不在冷卻 → `agy -p` 照 `scripts/prompts/agy-tick.txt` 做下一項；額度用完自動降級 argon-high → argon-medium → flash-high，全部用完冷卻 1 小時。工作紀錄寫 `docs/AGY_LOG.md`。
+  - 紀錄 `~/Library/Logs/enggame-ai-tick.log`；暫停 `touch ~/.enggame-ai/paused`，恢復 `rm ~/.enggame-ai/paused`。
+- **Claude**：Claude Code 每天 21:07 巡檢（審查、合併、更新本表）；每週 ≥95% 時只記錄並交棒 Codex 當大腦。這個排程只在 Claude Code 開著時有效，7 天後要重設。
+- 額度原則：先看每週、再看 5 小時；誰快滿誰少做。
 
 ## 2. 已定案決策（和 ChatGPT「ENG RPG遊戲」討論的結論）
 完整原文都在 `docs/gpt/`，這裡只列結論與出處。
@@ -90,7 +101,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | T5 | 補題到目標量（r6 +600、r7/r8 各 +800），A2～B2 缺口由 Antigravity 出題 | Codex（B2+～C2）／Antigravity（A2～B2） | medium | 去重鍵 `type|desc|speak`、聽讀說寫 30/30/20/20 |
 | T6 | C8 手機／電腦版面（TASKS「介面」P0、P1） | Codex | medium | **三尺寸截圖**，Antigravity 對照截圖審 |
 | T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |
-| T8 | B1～C2 劇本（每張地圖開場／通關、區域魔王登場） | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
+| T8 | B1～C2 劇本：初稿 ✅（`docs/story-drafts/b1-c2-draft.md`，agy/work `0f72110`）；PM 裁決：地圖順序不改、16 位新角色全收、反派統一「沉默君王 👑」、45 張頭目台詞全收、風味選項每區 2 組、`{name}`；T8b 已匯入 story.ts／storyChoices.ts ✅（362 測試過，已合併 feat/round4）；**待 Claude 讀一遍語氣定稿**、選項 UI 歸 T9 | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
 | T9 | 調味選項 UI、劇情回顧全頁、工坊合併 | Codex | medium | 三尺寸截圖 |
 | T10 | 專武系統（TASKS「專武」整段） | Codex 規格草案＋Antigravity 審 → Claude 定案 → Codex 實作 | high | — |
 | T11 | 跳級 7 天回顧、A2 以後文法題標籤 | Codex | medium | — |

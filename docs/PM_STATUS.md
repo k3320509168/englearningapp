@@ -100,6 +100,16 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 - 試合併結果：只有 4 個檔衝突（AGENTS.md 保留我們版、r0／r6／vocab-r6 用 `scripts/merge-bank.mjs` 逐題合併：r6 兩份**零重複**→ 3,001 題，r0 → 1,044 題）。但同事的題庫有 **374 個驗證錯誤**（A2 129、A2+ 153、B1 92；我們這邊 0 錯），同事的 B2+ 也不符合 Codex 的 advancedBanks 檢查（缺 vocab 詞條、聽力比例 30.7% 超出 ±0.5%）。→ 交給 Codex 做 **T0**。
 - **push 規則（製作人 2026-11-01）**：每完成一個步驟、測試全過就 push，讓製作人與同事看到一樣的進度。T0 完成前推 `feat/round4-pm`；T0 完成後推 `feat/round4`。**永遠不推 main、不 force push。** Claude 額度不足時由 Codex 負責合併與 push。
 
+### 2.5 詞彙跨級連貫設計 v1（2026-11-01 製作人實測 B1+ 單字貧瘠、重複）
+**問題**：九區題庫各自獨立，像九本互不相干的單字書；高一級的區域既不重用低級單字，也沒有把同一個字「越用越難」。本地 B1+ 題庫甚至是 0 題。
+**原則**：以玩家**目前程度為主**，但詞彙是**累積的**——B1+ 的字庫＝B1+ 新字＋所有低級字；低級字在高級區要用**更難的方式**再出現（螺旋式）。
+1. **單一總字庫**：把 vocab-r0～r8 整合成一份總表，每個詞條標 CEFR 級別、詞族（decide／decision／decisive）、主題、常見搭配。每題標它考的目標字（現有 `vocab`／lexical 欄位延伸）。
+2. **每關抽題比例**（目前程度區）：**60% 本級新字**｜**25% 低級字放進本級難度的句子、聽力、閱讀**（例：A1 的 *book* 在 B1+ 變成 "book a table"、"by the book"）｜**15% 複習**（knowledge.ts 到期或答錯過的知識點優先，不限區域）。
+3. **防重複**：同一張地圖（20 小關）同一題不重出；同一個目標字 30 題內不重出；同一天同一題最多 1 次（沿用 C6 精通規則）。題不夠時先降級混題，不重複同題。
+4. **主題連貫**：每張地圖一個主題（例：沙漠商隊＝交易、談價），開場劇情裡出現的字要出現在該圖題目，小 BOSS／大 BOSS 考該圖累積的字；下一張圖保留上一張 20% 的字當複習。
+5. **詞族升級**：低級學過 *decide*，高級出 *decision／decisive／indecisive*，答對時顯示「詞族進化」小特效（爽度）。
+6. **量化驗收**（寫成腳本 `scripts/vocab-audit.ts`）：每區不同目標字數（B1+ 目標 ≥ 600 新字）、模擬連打 3 張圖的重複率（同字重出 < 10%）、跨級重用率（25% ± 5%）、每張圖主題字覆蓋。
+
 ## 3. 目前進度（2026-11-01）
 - ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
 - ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），驗收見 2.3。
@@ -122,7 +132,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
 | **T0** | **最優先**（錯誤成因分類可先交 Antigravity flash-high 做，Codex 依結果修）：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
-| **T13** | **B1+ 題目太少、一直重複**（製作人實測）：本地 feat/round4 的 r4.json 是 **0 題**（同事的 origin 有 1,271 題，T0 合併後解決）。另外改出題規則：每區題池混入前面區域的題目（建議 70% 本區、30% 前區，玩家跳級或沒玩過前區時照樣混），讓 B1+ 程度的玩家也會遇到舊內容且不重複 | Codex | medium | 實玩 B1+ 連打 3 張圖不明顯重複 |
+| **T13**（照 2.5） | **詞彙跨級連貫**：① Antigravity flash-high 先做 `vocab-audit` 盤點（用同事 origin/feat/round4 的完整題庫：每區不同目標字數、重複率、跨級重疊、主題分布），② Codex 實作總字庫＋抽題比例＋防重複＋主題連貫，③ Antigravity 依缺口補題。原描述：**B1+ 題目太少、一直重複**（製作人實測）：本地 feat/round4 的 r4.json 是 **0 題**（同事的 origin 有 1,271 題，T0 合併後解決）。另外改出題規則：每區題池混入前面區域的題目（建議 70% 本區、30% 前區，玩家跳級或沒玩過前區時照樣混），讓 B1+ 程度的玩家也會遇到舊內容且不重複 | Codex | medium | 實玩 B1+ 連打 3 張圖不明顯重複 |
 | T12 | T0 後重新整理遊戲現況：所有系統、參數（等級、EXP、怪物、BOSS、經濟、抽卡、題庫量）與設定，寫成 `docs/GAME_STATE.md`，標出不合理或互相矛盾的地方 | Antigravity | argon-high | Claude 審 |
 | T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
 | T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |

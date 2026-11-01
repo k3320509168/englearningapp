@@ -9827,6 +9827,399 @@
       "ans": "TMA",
       "speak": "determinacy",
       "vocabId": "R8:DETERMINACY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an adjudicative decision",
+      "options": [
+        "A. 未曾涉及任何爭點的私人筆記",
+        "B. 對爭議作權威裁決的決定",
+        "C. 只為引起討論而未表立場的提問",
+        "D. 隨機抽牌後的每個自動結果"
+      ],
+      "ans": "B",
+      "explain": "adjudicative關裁決，非純討論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a retroactive exception",
+      "options": [
+        "A. 因未到輪次而尚不能看的卡片",
+        "B. 永遠無法影響任何計分的裝飾",
+        "C. 對先前已做行動生效的例外",
+        "D. 只對未來新遊戲才適用的規則"
+      ],
+      "ans": "C",
+      "explain": "retroactive回溯適用，未評其一定公平。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a permissive default",
+      "options": [
+        "A. 未另說明時一律禁止的預設",
+        "B. 每次必須由旁觀者強迫執行的指令",
+        "C. 只能在最後一回合使用的獎勵",
+        "D. 未另限制時原則上允許的預設"
+      ],
+      "ans": "D",
+      "explain": "permissive允許，default原則設定，非義務。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The exception is available to either player, but not to both in the same round.",
+      "options": [
+        "A. 只有先加入遊戲的那人有資格用。",
+        "B. 兩人同時用時會自動加倍獎勵。",
+        "C. 任一方可用例外，但同輪不能雙方都用。",
+        "D. 例外必須同輪雙方一起使用才生效。"
+      ],
+      "ans": "C",
+      "explain": "either與notboth形成互斥單次資格。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The ruling may be sensible as a rule for next time without being fair as a rule invented after this move.",
+      "options": [
+        "A. 新規則內容合理已保證回溯用到任何過去都公平。",
+        "B. 說話者確認新規則無論何時都毫無道理。",
+        "C. 規則既能改，下次就不需在開始前告知。",
+        "D. 裁決作下次規則可能合理，作本次行動後新規則卻未必公平。"
+      ],
+      "ans": "D",
+      "explain": "實質可取與溯及適切性不同，may保留。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The game leaves room for interpretation, which need not mean it leaves the result to whoever argues most loudly.",
+      "options": [
+        "A. 遊戲留解釋空間，不等於結果應由最大聲者決定。",
+        "B. 只要有解釋空間，就沒有任何可用判準。",
+        "C. 每個解釋都必須相同，否則遊戲立即停止。",
+        "D. 說話者主張音量才是正式計分方式。"
+      ],
+      "ans": "A",
+      "explain": "裁量空間可有理由標準，非聲勢支配。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What looks like an exception to the limit may instead be an instruction about when the limit is measured.",
+      "options": [
+        "A. 限制已被正式永久取消，所以不需計量。",
+        "B. 例外與計量時點在規則裡已被定義為相同詞。",
+        "C. 說話者確認每次計量都一定發生在行動前。",
+        "D. 看似限制例外，也可能是在說何時計量限制。"
+      ],
+      "ans": "D",
+      "explain": "不同解讀須讀範圍/時點，may非定案。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The rule’s symmetry is formal: each player has the same permission, but only one currently has the resources needed to exercise it.",
+      "options": [
+        "A. 規則形式對稱，兩方同准，但目前只有一方有資源行使。",
+        "B. 兩人資源已完全同等，所以許可的實用性也同。",
+        "C. 只要資源不同，兩人的文字許可就必定不同。",
+        "D. 說話者要求取消資源系統以避免任何選擇。"
+      ],
+      "ans": "A",
+      "explain": "形式許可對稱不代表當下行使能力相同，不預定必不公。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A victory condition that can be redefined whenever it is met risks turning an achievable goal into an indefinitely receding one.",
+      "options": [
+        "A. 說話者認為遊戲只要有目標就不該設任何挑戰。",
+        "B. 每達成都重定勝利條件，可能使目標無限後移。",
+        "C. 勝利條件從未改動，只因玩家尚未得足分。",
+        "D. 目標可達已證明不論如何改條件都公平。"
+      ],
+      "ans": "B",
+      "explain": "風險來自移動門檻而非挑戰本身。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The ruling is retrospective in its effect: it changes how an earlier move is scored. What is affected?",
+      "options": [
+        "A. The physical order in which the earlier cards were drawn.",
+        "B. The assessment of an action already taken.",
+        "C. Only the wording used for future instructions.",
+        "D. The player’s knowledge before the earlier action occurred."
+      ],
+      "ans": "B",
+      "explain": "retrospective效力在先前一步的計分，非改真實過去順序。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The rule allows the move, ___ it does not require.",
+      "options": [
+        "A. whose",
+        "B. what",
+        "C. which",
+        "D. that"
+      ],
+      "ans": "C",
+      "explain": "非限定關係子句which作require受詞，it指rule。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The organiser calls the rule self-evident after spending ten minutes explaining which exceptions count as exceptions. What invites irony?",
+      "options": [
+        "A. The organiser has refused to give any explanation of the rule.",
+        "B. Every exception has been deleted from the written rule before play.",
+        "C. The length of an explanation establishes that its content is false.",
+        "D. The explanation’s burden sits uneasily with the claim of obviousness."
+      ],
+      "ans": "D",
+      "explain": "自明聲稱與大量解例外有張力，非長就假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The absence of a prohibition makes a move permissible under this game’s stated default, not obligatory. What follows?",
+      "options": [
+        "A. The move remains forbidden until a second rule requires it.",
+        "B. The player must change the default before making any choice.",
+        "C. The player may choose the move but need not take it.",
+        "D. The player must take the move whenever it becomes possible."
+      ],
+      "ans": "C",
+      "explain": "題內給default未禁可做，仍非必做。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【規則】A later rule expressly supersedes an earlier scoring rule, but only for team matches. An individual match is being played. What remains applicable on the stated facts?",
+      "options": [
+        "A. The later scoring rule for every kind of match.",
+        "B. Neither rule, because supersession always removes all previous text.",
+        "C. A new score agreed after seeing which player would benefit.",
+        "D. The earlier scoring rule for that individual match."
+      ],
+      "ans": "D",
+      "explain": "supersedes範圍限團體，不能外推個人賽。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The decision is discretionary but not therefore arbitrary. What distinction matters?",
+      "options": [
+        "A. Judgement can have reasons even when a rule leaves room for it.",
+        "B. Any decision not mechanically fixed must lack a rational basis.",
+        "C. A discretionary decision is one that cannot affect the outcome.",
+        "D. An arbitrary decision is always the only option allowed by a rule."
+      ],
+      "ans": "A",
+      "explain": "裁量非必恣意，理由可約束未機械化處。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The objection concerns changing the rule after the move, not the content of the rule as a possible rule for future games. Which response addresses it?",
+      "options": [
+        "A. Show that the revised rule would make future games more interesting.",
+        "B. Repeat the new rule more loudly so all players hear it.",
+        "C. Explain that the organiser personally prefers the new outcome.",
+        "D. Keep the earlier scoring basis for this move and discuss a revision before future play."
+      ],
+      "ans": "D",
+      "explain": "程序溯及爭點需保留行動時基準，非只辯新內容更好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A game rewards cooperation but reveals a private bonus for betrayal only after players have made binding promises. A critic asks whether surprise has displaced meaningful choice. What is questioned?",
+      "options": [
+        "A. Whether players had the information needed to understand the commitments they made.",
+        "B. Whether private information can ever be part of a well-designed game.",
+        "C. Whether every promise in a game must remain enforceable outside it.",
+        "D. Whether betrayal should always score fewer points than cooperation."
+      ],
+      "ans": "A",
+      "explain": "批評知情時點與承諾而非一概禁隱資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The organiser says the decision is final, then offers that finality as evidence that the decision must be correct. What is conflated?",
+      "options": [
+        "A. A player’s right to ask a question with a duty to agree.",
+        "B. Authority to end a dispute with the merits of its resolution.",
+        "C. A temporary ruling with the absence of any ruling.",
+        "D. The number of players with the number of disputed moves."
+      ],
+      "ans": "B",
+      "explain": "終局權限不等於判斷實質正確性。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對爭議作權威判定的程序",
+      "ans": "ADJUDICATION",
+      "speak": "adjudication",
+      "vocabId": "R8:ADJUDICATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：依條件而失去權利或資源的結果",
+      "ans": "FORFEITURE",
+      "speak": "forfeiture",
+      "vocabId": "R8:FORFEITURE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：事後回溯加上的條件",
+      "ans": "A RETROACTIVELY IMPOSED CONDITION",
+      "speak": "a retroactively imposed condition",
+      "vocabId": "R8:A RETROACTIVELY IMPOSED CONDITION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：形式上對稱的許可",
+      "ans": "A FORMALLY SYMMETRIC PERMISSION",
+      "speak": "a formally symmetric permission",
+      "vocabId": "R8:A FORMALLY SYMMETRIC PERMISSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：裁決終局性不證成其正確",
+      "ans": "FINALITY OF A RULING DOES NOT ESTABLISH ITS CORRECTNESS",
+      "speak": "finality of a ruling does not establish its correctness",
+      "vocabId": "R8:FINALITY OF A RULING DOES NOT ESTABLISH ITS CORRECTNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：可達目標不應每達成就後退",
+      "ans": "AN ACHIEVABLE GOAL SHOULD NOT RECEDE WHENEVER IT IS REACHED",
+      "speak": "an achievable goal should not recede whenever it is reached",
+      "vocabId": "R8:AN ACHIEVABLE GOAL SHOULD NOT RECEDE WHENEVER IT IS REACHED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：對爭議作具權威的裁定（A 開頭，10 個字母）",
+      "ans": "ADJUDICATE",
+      "speak": "adjudicate",
+      "vocabId": "R8:ADJUDICATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：取代先前規則或安排而優先適用（S 開頭，9 個字母）",
+      "ans": "SUPERSEDE",
+      "speak": "supersede",
+      "vocabId": "R8:SUPERSEDE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：對先前行動或事件回溯生效的性質（R 開頭，13 個字母）",
+      "ans": "RETROACTIVITY",
+      "speak": "retroactivity",
+      "vocabId": "R8:RETROACTIVITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P E R M I S S _ B I L I T Y (依規則被允許的性質)",
+      "ans": "I",
+      "speak": "permissibility",
+      "vocabId": "R8:PERMISSIBILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R O _ I B I _ I O N (明確禁止某行為的規定)",
+      "ans": "HT",
+      "speak": "prohibition",
+      "vocabId": "R8:PROHIBITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E V _ R S _ B I _ I T Y (能恢復先前狀態的性質)",
+      "ans": "EIL",
+      "speak": "reversibility",
+      "vocabId": "R8:REVERSIBILITY"
     }
   ],
   "boss": [
@@ -13104,6 +13497,137 @@
       "ans": "PAI",
       "speak": "imputation",
       "vocabId": "R8:IMPUTATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The rule makes the promise binding, though only within the scoring system, not as a claim about anyone’s character outside the game.",
+      "options": [
+        "A. 承諾只在計分系統有拘束，不等於判斷場外人格。",
+        "B. 計分系統已被用來正式決定每位玩家場外人格。",
+        "C. 規則沒有任何約束，所以承諾完全不影響計分。",
+        "D. 說話者認為玩家一旦承諾便無權再問規則。"
+      ],
+      "ans": "A",
+      "explain": "遊戲內機制與真人人格評價界線明示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The safeguard protects the option to decline an alliance; it does not protect the player from every strategic consequence of declining.",
+      "options": [
+        "A. 說話者確認玩家根本沒有拒絕結盟的權利。",
+        "B. 保障可拒結盟，非保障拒絕後沒有任何策略後果。",
+        "C. 拒絕結盟後所有對手都必須停止正常行動。",
+        "D. 選項保障意味拒絕者自動獲得最高分。"
+      ],
+      "ans": "B",
+      "explain": "可拒與免所有策略代價不同，限遊戲規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The question is not whether the move is ingenious, but whether its ingenuity depends on treating a missing definition as permission to invent a convenient one after the fact.",
+      "options": [
+        "A. 說話者反對玩家依明確定義設計任何策略。",
+        "B. 只要某詞沒定義，就必定只准採最不利自己的解讀。",
+        "C. 問題非這步巧不巧，而是是否靠事後替缺漏定義挑有利解。",
+        "D. 巧妙已保證定義在行動前寫得完整清楚。"
+      ],
+      "ans": "C",
+      "explain": "創意與利用事後定義權區分，不禁止所有巧思。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】To adjudicate a dispute is to ___.",
+      "options": [
+        "A. make an authoritative decision about the contested issue",
+        "B. repeat both positions without reaching any judgement",
+        "C. postpone the issue until no participants remain",
+        "D. change the subject so that no dispute is mentioned"
+      ],
+      "ans": "A",
+      "explain": "adjudicate裁決，遊戲情境非實際法律服務。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】So narrow is the exception that invoking it ___ alter the ordinary rule.",
+      "options": [
+        "A. have not materially",
+        "B. does not materially",
+        "C. do not material",
+        "D. not materially does"
+      ],
+      "ans": "B",
+      "explain": "invokingit動名詞單數，does not +原形alter。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A rule gives the losing player the right to define what counts as losing. It is described as a safeguard against unfair defeat. What needs scrutiny?",
+      "options": [
+        "A. Whether the losing player has received fewer tokens than the winner.",
+        "B. Whether defining a term always requires agreement outside the game.",
+        "C. Whether control over the classification empties the scoring constraint of force.",
+        "D. Whether any safeguard can be described without using a negative word."
+      ],
+      "ans": "C",
+      "explain": "控制輸的定義可掏空規則拘束，非單純詞彙爭議。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有裁量空間卻仍有理由的判斷",
+      "ans": "A DISCRETIONARY BUT REASONED JUDGEMENT",
+      "speak": "a discretionary but reasoned judgement",
+      "vocabId": "R8:A DISCRETIONARY BUT REASONED JUDGEMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：共同許可可能需僅一方有的資源",
+      "ans": "A SHARED PERMISSION MAY REQUIRE RESOURCES ONLY ONE PLAYER POSSESSES",
+      "speak": "a shared permission may require resources only one player possesses",
+      "vocabId": "R8:A SHARED PERMISSION MAY REQUIRE RESOURCES ONLY ONE PLAYER POSSESSES"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：缺乏一致理由而恣意決定的性質（A 開頭，13 個字母）",
+      "ans": "ARBITRARINESS",
+      "speak": "arbitrariness",
+      "vocabId": "R8:ARBITRARINESS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E N F _ R C E _ B I _ I T Y (某約定可由規則要求履行的程度)",
+      "ans": "OAL",
+      "speak": "enforceability",
+      "vocabId": "R8:ENFORCEABILITY"
     }
   ]
 }

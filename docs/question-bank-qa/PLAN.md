@@ -171,3 +171,8 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - B2+文法原句以一週不在推斷不可能寫便條，卻未交代傳送方式；刪除此無需的推論，改成單純陳述 has been away from home all week，仍保留原時態考點。
 - 審查線索目前1800道選擇題中464道、37詞跨批重用。資料庫詞條含 scoped aliases，不能把840/836/817筆記錄當成同數量獨立單字；各種統計仍依audit區分原始詞條/別名/知識點。
 - Node22：tsc、eslint、35 files/304 tests全過，建庫可重現；71720次運作斷言通過。含舊庫5150題格式0 errors/172 warnings。完整一般/模式各五輪深審仍未完成，未push。
+
+## 第 26 批與新協作交接（3120/5800，進行中）
+- 新增自足的虛構遊戲規則/策略120題；三區各1040題，總3120。B2+尚差760、C1/C2各差960。TURNBASED 不作單字填空，改為標準單字 COOPERATIVE。
+- Node22 tsc、35 files/304 tests、eslint通過。題目仍為草稿，完整一般/模式各五輪深審未完成。
+- 製作人新增協作任務：讀主開發副本 COLLAB.md、DEV_LOG.md、balance-r5-final-spec.md，先合併 feat/round4 再按 C1～C7 實作；戰鬥檔案歸Codex，Claude負責審查/模擬/合併。此批先存檔以便乾淨合併，原題庫與五輪驗收任務繼續保留。

@@ -9830,6 +9830,399 @@
       "ans": "SON",
       "speak": "miscount",
       "vocabId": "R6:MISCOUNT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "back to square one",
+      "options": [
+        "A. 把所有格子合成同一個",
+        "B. 回到起點而得重新開始",
+        "C. 直接升到最後一格",
+        "D. 只有一人可用的方形棋盤"
+      ],
+      "ans": "B",
+      "explain": "慣用指進度歸原點，不必真有格盤。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "play it safe",
+      "options": [
+        "A. 不讓任何其他人參與",
+        "B. 只在遊戲結束後作決定",
+        "C. 採較少風險的做法",
+        "D. 保證每次都能獲勝"
+      ],
+      "ans": "C",
+      "explain": "play safe著重避險，不等於保證結果。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "take a chance",
+      "options": [
+        "A. 把別人每次機會都取消",
+        "B. 依既定結果重複動作",
+        "C. 等到不確定性完全消失",
+        "D. 冒一次風險試試"
+      ],
+      "ans": "D",
+      "explain": "take chance接受不確定而行動。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Are we counting the bonus now? No, at the end of the round, after everyone has played.",
+      "options": [
+        "A. 只有還沒出過的人可以現在領獎。",
+        "B. 獎勵已取消，輪末只計基本分。",
+        "C. 獎勵輪末大家都出完後才算，不是現在。",
+        "D. 獎勵在輪首每人出牌前先算。"
+      ],
+      "ans": "C",
+      "explain": "No修正計算時點，未改取消獎勵。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You can trade with me if you like, though I would wait to see what the next card offers.",
+      "options": [
+        "A. 說話者已正式拒絕任何交易。",
+        "B. 下一張必定更好，所以現在交換違規。",
+        "C. 只要對方喜歡，交易就已自動完成。",
+        "D. 可和我換，但我會先看下一張提供什麼。"
+      ],
+      "ans": "D",
+      "explain": "提供許可加策略建議，非規則要求或確知下卡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I saved the token for later, which would have been sensible if there had been another round.",
+      "options": [
+        "A. 我留代幣到後面用，若還有下一輪才算明智。",
+        "B. 代幣已在下一輪成功使用，所以決策有效。",
+        "C. 說話者確定每次留代幣都一定錯。",
+        "D. 下一輪已取消只因代幣被保留。"
+      ],
+      "ans": "A",
+      "explain": "反事實條件暗示沒下輪，保留資源未派用場。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The pieces look identical, but the symbol underneath tells you which team each belongs to.",
+      "options": [
+        "A. 每隊外表不同，不需查看底部。",
+        "B. 棋子因看似同樣已被規定不分隊。",
+        "C. 符號只在盒上，棋子本身沒有辨識資訊。",
+        "D. 棋子外表相同，底下符號才示各屬哪隊。"
+      ],
+      "ans": "D",
+      "explain": "初看外形與隱藏標記不同，非完全無法分辨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We were cooperating until we realised the instructions said share information, not share the final score.",
+      "options": [
+        "A. 原本合作，後來發現規則是分享資訊不是共享最終分數。",
+        "B. 規則已要求共享分數，資訊則禁止交流。",
+        "C. 兩人已證實合作無論何時都違反規則。",
+        "D. 說話者明說資訊與分數在遊戲中定義相同。"
+      ],
+      "ans": "A",
+      "explain": "可分享的對象範圍不同，不必合作本身非法。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would not call it a bad move just because the next card made it fail; we did not know that card was coming.",
+      "options": [
+        "A. 任何不知道下一卡的選擇都自動算最佳策略。",
+        "B. 不能只因下張卡讓它失敗就說壞決策，當時不知道會來哪張。",
+        "C. 事後失敗已充分證明當時選擇必定不合理。",
+        "D. 說話者在落卡前已確知卡面而仍故意選錯。"
+      ],
+      "ans": "B",
+      "explain": "依當時資訊與結果區分，不保證決策原本必最佳。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Each player ___ two cards at the beginning of a round.",
+      "options": [
+        "A. are receiving",
+        "B. receives",
+        "C. receive",
+        "D. have received"
+      ],
+      "ans": "B",
+      "explain": "each player單數，用receives。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A move described as optional is one a player ___.",
+      "options": [
+        "A. may make only after losing",
+        "B. has already made without noticing",
+        "C. may choose to make or omit",
+        "D. must make before every other move"
+      ],
+      "ans": "C",
+      "explain": "optional可選，不指定勝負或必先做。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【規則】A token moves one space forward unless the space ahead is occupied. It is occupied now. What follows?",
+      "options": [
+        "A. The token must move two spaces forward instead.",
+        "B. The other token is automatically removed.",
+        "C. The token moves backwards to the starting space.",
+        "D. The stated condition for moving forward is not met."
+      ],
+      "ans": "D",
+      "explain": "unless被占據為例外，未另授跳格/擊退/倒退。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【順序】Draw a card, reveal it, and then move your piece. Which action immediately precedes moving?",
+      "options": [
+        "A. Returning the piece to the start.",
+        "B. Hiding the card again.",
+        "C. Revealing the card.",
+        "D. Drawing a second card."
+      ],
+      "ans": "C",
+      "explain": "三步明示，move前一步reveal。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A card lets its owner choose another player to draw one card. Lee chooses Jo and then draws the card himself. What has Lee misread?",
+      "options": [
+        "A. The owner must give away the card permanently.",
+        "B. The choice must be made by the youngest player.",
+        "C. The card applies only after the game has ended.",
+        "D. The chosen player is the one who draws."
+      ],
+      "ans": "D",
+      "explain": "choose another player to draw指被選者執行draw。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】You cannot move the piece until the previous player ___ their turn.",
+      "options": [
+        "A. has finished",
+        "B. will finishing",
+        "C. have finish",
+        "D. is finish"
+      ],
+      "ans": "A",
+      "explain": "until未來時間子句現在完成式；previousplayer單數。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【規則】A player may exchange two blue tokens for one red token. Jo has four blue tokens and no red tokens. She makes this exchange twice. What does she have from those exchanges?",
+      "options": [
+        "A. Four red tokens and two blue tokens left.",
+        "B. One red token and two blue tokens left.",
+        "C. Two blue tokens and no red tokens.",
+        "D. Two red tokens and no blue tokens left."
+      ],
+      "ans": "D",
+      "explain": "每次消二藍換一紅，兩次耗四藍得二紅。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I can see why that move is tempting, but it leaves the gate unguarded. What is being raised?",
+      "options": [
+        "A. A drawback of an otherwise attractive choice.",
+        "B. A claim that the move is prohibited by the written rules.",
+        "C. A guarantee that the opponent will choose a particular response.",
+        "D. A proposal to remove the gate from the board."
+      ],
+      "ans": "A",
+      "explain": "承認吸引力並指出代價，不另造規則禁令。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The winner is the player with the most points after five rounds, not the player who wins the most rounds. A player wins three rounds but has fewer total points. What follows?",
+      "options": [
+        "A. The player receives an extra point for every round already won.",
+        "B. Winning more rounds does not make that player the overall winner.",
+        "C. Winning three rounds automatically replaces the total-points rule.",
+        "D. The remaining rounds must be replayed until totals are equal."
+      ],
+      "ans": "B",
+      "explain": "依明示總分勝利條件，不加勝場紅利。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可依規則代表其他牌或角色的萬用牌",
+      "ans": "WILDCARD",
+      "speak": "wildcard",
+      "vocabId": "R6:WILDCARD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：使進展受阻或倒退的挫折",
+      "ans": "SETBACK",
+      "speak": "setback",
+      "vocabId": "R6:SETBACK"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：可自行選擇的額外一步",
+      "ans": "AN OPTIONAL EXTRA MOVE",
+      "speak": "an optional extra move",
+      "vocabId": "R6:AN OPTIONAL EXTRA MOVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：有人或防禦物守住的入口",
+      "ans": "A GUARDED ENTRANCE",
+      "speak": "a guarded entrance",
+      "vocabId": "R6:A GUARDED ENTRANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：合規一步未必有用",
+      "ans": "A LEGAL MOVE NEED NOT BE A USEFUL MOVE",
+      "speak": "a legal move need not be a useful move",
+      "vocabId": "R6:A LEGAL MOVE NEED NOT BE A USEFUL MOVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：護盾消失前擋一次攻擊",
+      "ans": "THE SHIELD BLOCKS ONE ATTACK BEFORE DISAPPEARING",
+      "speak": "the shield blocks one attack before disappearing",
+      "vocabId": "R6:THE SHIELD BLOCKS ONE ATTACK BEFORE DISAPPEARING"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：為達成長期目標安排的行動方式（S 開頭，8 個字母）",
+      "ans": "STRATEGY",
+      "speak": "strategy",
+      "vocabId": "R6:STRATEGY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：遊戲中用以記數或標位置的小物件（C 開頭，7 個字母）",
+      "ans": "COUNTER",
+      "speak": "counter",
+      "vocabId": "R6:COUNTER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：依規則失去某機會或權利（F 開頭，7 個字母）",
+      "ans": "FORFEIT",
+      "speak": "forfeit",
+      "vocabId": "R6:FORFEIT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T O _ E N (遊戲中表示資源位置等的代幣或棋片)",
+      "ans": "K",
+      "speak": "token",
+      "vocabId": "R6:TOKEN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D _ _ K (供遊戲使用的一副牌)",
+      "ans": "EC",
+      "speak": "deck",
+      "vocabId": "R6:DECK"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：O B _ E _ T _ V E (希望達成的目標)",
+      "ans": "JCI",
+      "speak": "objective",
+      "vocabId": "R6:OBJECTIVE"
     }
   ],
   "boss": [
@@ -13107,6 +13500,137 @@
       "ans": "NTC",
       "speak": "unnoticed",
       "vocabId": "R6:UNNOTICED"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The card says you may move again, not that you have to.",
+      "options": [
+        "A. 卡說可再移動，不是必須再移。",
+        "B. 卡要求立即再移，而且不能放棄。",
+        "C. 再移只在前一步非法時才適用。",
+        "D. 說話者要求取消卡片上的選擇。"
+      ],
+      "ans": "A",
+      "explain": "may許可不同於義務。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The move is legal; I am only asking whether it gets you closer to the goal.",
+      "options": [
+        "A. 說話者在要求改掉正式目標。",
+        "B. 這步合規，我只問是否更接近目標。",
+        "C. 這步已違規，所以不能討論策略。",
+        "D. 只要合規就已保證有助勝利。"
+      ],
+      "ans": "B",
+      "explain": "規則合法與策略有效分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The rules reward finishing quickly, but not so much that it is worth ignoring every side objective.",
+      "options": [
+        "A. 規則完全不獎速度，只計支線完成數。",
+        "B. 說話者已確認每個玩家每回合都必選同路。",
+        "C. 規則獎快完，但未高到值得忽略所有支線目標。",
+        "D. 速度分已高到任何支線都必無用。"
+      ],
+      "ans": "C",
+      "explain": "not so much限制速度收益，非否定其存在。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Could we go through one practice round before keeping score? What is proposed?",
+      "options": [
+        "A. Trying the rules before starting the scored game.",
+        "B. Counting the practice round as the final result.",
+        "C. Replacing the scoring rules with a different game.",
+        "D. Ending the game before anyone has taken a turn."
+      ],
+      "ans": "A",
+      "explain": "before keeping score設定先練不記正式分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The score carries over to the next round. What happens?",
+      "options": [
+        "A. The round ends before any score can be recorded.",
+        "B. The next round begins with the existing score retained.",
+        "C. The next round begins with everyone’s score reset to zero.",
+        "D. The score is given to the player sitting next to its owner."
+      ],
+      "ans": "B",
+      "explain": "carry over延續保留，不是轉交鄰座。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【規則】A shield prevents one attack and is then removed. A player with one shield faces two separate attacks in order. What does the shield itself do?",
+      "options": [
+        "A. It blocks only the second attack after ignoring the first.",
+        "B. It remains in place until the player chooses to discard it.",
+        "C. It blocks the first attack but not the second.",
+        "D. It blocks both attacks because they occur in the same turn."
+      ],
+      "ans": "C",
+      "explain": "preventsoneandthenremoved，順序先擋一再失去。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：大家共同要達成的目標",
+      "ans": "A SHARED OBJECTIVE",
+      "speak": "a shared objective",
+      "vocabId": "R6:A SHARED OBJECTIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：總分比贏輪數重要",
+      "ans": "THE FINAL SCORE MATTERS MORE THAN THE NUMBER OF ROUNDS WON",
+      "speak": "the final score matters more than the number of rounds won",
+      "vocabId": "R6:THE FINAL SCORE MATTERS MORE THAN THE NUMBER OF ROUNDS WON"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：逐漸收集而增加數量（A 開頭，10 個字母）",
+      "ans": "ACCUMULATE",
+      "speak": "accumulate",
+      "vocabId": "R6:ACCUMULATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ P E _ A T _ V E (由各方互相協助達成共同目標的)",
+      "ans": "ORI",
+      "speak": "cooperative",
+      "vocabId": "R6:COOPERATIVE"
     }
   ]
 }

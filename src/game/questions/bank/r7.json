@@ -9824,6 +9824,399 @@
       "ans": "IRT",
       "speak": "priority",
       "vocabId": "R7:PRIORITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a calculated risk",
+      "options": [
+        "A. 因計分錯誤才產生的額外回合",
+        "B. 考慮利弊後接受的風險",
+        "C. 已由公式保證絕不失敗的決定",
+        "D. 完全不看資訊的隨機動作"
+      ],
+      "ans": "B",
+      "explain": "calculated經考量，不等於無風險。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a tactical retreat",
+      "options": [
+        "A. 只因棋盤不平而滑動棋子",
+        "B. 正式取消所有移動規則",
+        "C. 為整體目的作的局部撤退",
+        "D. 直接宣布放棄整場比賽"
+      ],
+      "ans": "C",
+      "explain": "tactical retreat可能服務計畫，非必認輸。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a cumulative score",
+      "options": [
+        "A. 每輪全部歸零的分數",
+        "B. 只計最後一張牌的面值",
+        "C. 所有人都必相同的起始分",
+        "D. 跨數次逐步累加的分數"
+      ],
+      "ans": "D",
+      "explain": "cumulative累積，不是各輪重置。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have reached a deadlock, though the rules offer a way to restart without beginning the whole game again.",
+      "options": [
+        "A. 重新開始一定包括把總分和全部進度歸零。",
+        "B. 說話者確認目前仍有很多正常可選步驟。",
+        "C. 我們陷僵局，但規則可重啟局面而不重玩整局。",
+        "D. 僵局已使規則取消，必須換另一遊戲。"
+      ],
+      "ans": "C",
+      "explain": "局部重啟不同全部重來。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The strategy is robust to a bad draw, not immune to every possible sequence of bad draws.",
+      "options": [
+        "A. 策略只要有一次壞抽就已確定完全失效。",
+        "B. 所有可能抽牌順序都已測試且必勝。",
+        "C. 說話者認為抽牌順序與任何策略無關。",
+        "D. 策略可承受一次壞抽，不代表對所有連續壞抽免疫。"
+      ],
+      "ans": "D",
+      "explain": "robust的承受範圍不能無限外推。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The tiebreaker decides who wins when scores are equal; it does not add points to make the scores unequal.",
+      "options": [
+        "A. 同分決勝規則決定勝者，不是加分把同分改成不同。",
+        "B. 決勝規則一定先替勝者加一分。",
+        "C. 只要有決勝規則，遊戲就不可能同分。",
+        "D. 決勝只在所有人同時放棄時適用。"
+      ],
+      "ans": "A",
+      "explain": "排序決勝與改寫分數不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The move keeps our options open at the cost of giving the other team time to do the same.",
+      "options": [
+        "A. 這步保我方彈性且同時完全剝奪對方選項。",
+        "B. 對方因得時間就已確定會作同一選擇。",
+        "C. 說話者只在計算每個玩家讀說明所需時間。",
+        "D. 這步保留我方選項，代價是讓對方也有時間如此。"
+      ],
+      "ans": "D",
+      "explain": "策略取捨兩面，不保證對方後續行為。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The alliance is useful precisely because the goals overlap without being identical, so neither team should forget where the overlap ends.",
+      "options": [
+        "A. 聯盟有用在目標部分重疊但不完全同，需記清交集界線。",
+        "B. 兩隊目標完全同，所以無需再確認任何分歧。",
+        "C. 目標毫無重疊已使聯盟必定永遠無用。",
+        "D. 說話者要求兩隊從此合併分數與勝利條件。"
+      ],
+      "ans": "A",
+      "explain": "局部共同利基不等於整體永久一致。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A rule that permits negotiation does not tell us that every agreement negotiated will remain enforceable after the teams separate.",
+      "options": [
+        "A. 說話者確認遊戲明文禁止所有隊伍談話。",
+        "B. 准許協商，不等於團隊分開後每項協議仍可被規則強制執行。",
+        "C. 只要協商過，規則已保證所有承諾永久有效。",
+        "D. 團隊分開已使先前任何協商從未發生。"
+      ],
+      "ans": "B",
+      "explain": "許可協商與承諾後續約束不同，限虛構遊戲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The advantage is cumulative rather than immediate. What is suggested?",
+      "options": [
+        "A. It belongs only to the first player who notices it.",
+        "B. It builds through repeated gains over time.",
+        "C. It appears in full before the first move.",
+        "D. It disappears whenever another gain is made."
+      ],
+      "ans": "B",
+      "explain": "cumulative為逐漸累積，不是立刻全部拿到。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The rule requires that each player ___ the same information before choosing.",
+      "options": [
+        "A. receiving",
+        "B. to receive",
+        "C. receive",
+        "D. receives"
+      ],
+      "ans": "C",
+      "explain": "requires that後虛擬式原形receive。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The player says, I am happy to lose on my own mistakes, less happy to lose on a rule nobody mentioned. What is challenged?",
+      "options": [
+        "A. The possibility that the player could make a mistake.",
+        "B. The use of winning and losing as part of a game.",
+        "C. The right of other players to follow stated rules.",
+        "D. The completeness of the explanation before play."
+      ],
+      "ans": "D",
+      "explain": "區分自身選擇失誤與未告知規則的資訊公平性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Either the cards or the rulebook ___ missing from the box.",
+      "options": [
+        "A. are being",
+        "B. be",
+        "C. is",
+        "D. have"
+      ],
+      "ans": "C",
+      "explain": "either...or近主詞rulebook單數，is missing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【規則】A general rule limits movement to two spaces. A special card explicitly overrides that limit for one turn. What happens during that turn?",
+      "options": [
+        "A. The general rule makes the special card unusable.",
+        "B. The limit is permanently removed for every player.",
+        "C. The player must move exactly two spaces before reading the card.",
+        "D. The special permission takes priority over the general limit."
+      ],
+      "ans": "D",
+      "explain": "overridesforoneturn優先僅本輪，非永久刪除。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The retreat is tactical rather than an admission that the overall plan has failed. What is implied?",
+      "options": [
+        "A. A local withdrawal may support a broader aim.",
+        "B. Every withdrawn piece has been removed from the game permanently.",
+        "C. The player has abandoned every future attempt to score.",
+        "D. The plan’s success is guaranteed by retreating now."
+      ],
+      "ans": "A",
+      "explain": "局部退讓服務整體策略的可能，不承諾必勝。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】An unused bonus may be carried forward unless the player changes teams. A player changes teams. What can no longer be assumed?",
+      "options": [
+        "A. That the player has ever earned a bonus.",
+        "B. That teams are allowed under the rules.",
+        "C. That the previous round had ended.",
+        "D. That the unused bonus will carry forward."
+      ],
+      "ans": "D",
+      "explain": "unless例外已觸發，不能再以一般規則保留。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A player calls a move irrational after it fails. Before the move, all available information favoured it, and the failure depended on a hidden draw. What should an evaluation distinguish?",
+      "options": [
+        "A. Decision quality under available information from the realised outcome.",
+        "B. A hidden draw from any event that could affect the game.",
+        "C. The player’s score from the number printed on the instruction sheet.",
+        "D. Any uncertain choice from a choice that can be evaluated at all."
+      ],
+      "ans": "A",
+      "explain": "不以事後揭隱卡定當下必非理性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A rule is clear once the organiser explains which meaning of bank it uses. What remains a design issue?",
+      "options": [
+        "A. Whether all words with multiple meanings must be banned from games.",
+        "B. Whether the written rule supplies that distinction without the organiser.",
+        "C. Whether the organiser has ever used the same word in conversation.",
+        "D. Whether every player has visited a financial institution."
+      ],
+      "ans": "B",
+      "explain": "現場補充可消歧不代表文檔本身自足。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：各方無法再取得進展的僵局",
+      "ans": "STALEMATE",
+      "speak": "stalemate",
+      "vocabId": "R7:STALEMATE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：同分時用以決定勝負的規則或賽段",
+      "ans": "TIEBREAKER",
+      "speak": "tiebreaker",
+      "vocabId": "R7:TIEBREAKER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：與對方不完全相同的目標",
+      "ans": "AN ASYMMETRIC OBJECTIVE",
+      "speak": "an asymmetric objective",
+      "vocabId": "R7:AN ASYMMETRIC OBJECTIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：能依規則恢復原狀的一步",
+      "ans": "A REVERSIBLE MOVE",
+      "speak": "a reversible move",
+      "vocabId": "R7:A REVERSIBLE MOVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：戰術撤退不必放棄整體策略",
+      "ans": "A TACTICAL RETREAT NEED NOT ABANDON THE BROADER STRATEGY",
+      "speak": "a tactical retreat need not abandon the broader strategy",
+      "vocabId": "R7:A TACTICAL RETREAT NEED NOT ABANDON THE BROADER STRATEGY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：例外適用一步而非持有期間",
+      "ans": "THE EXCEPTION APPLIES TO ONE MOVE RATHER THAN CONTINUOUS POSSESSION",
+      "speak": "the exception applies to one move rather than continuous possession",
+      "vocabId": "R7:THE EXCEPTION APPLIES TO ONE MOVE RATHER THAN CONTINUOUS POSSESSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：服務具體局部目標的戰術性的（T 開頭，8 個字母）",
+      "ans": "TACTICAL",
+      "speak": "tactical",
+      "vocabId": "R7:TACTICAL"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：回應對方行動以反制的一步（C 開頭，11 個字母）",
+      "ans": "COUNTERMOVE",
+      "speak": "countermove",
+      "vocabId": "R7:COUNTERMOVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：逐次增加而累積的（C 開頭，10 個字母）",
+      "ans": "CUMULATIVE",
+      "speak": "cumulative",
+      "vocabId": "R7:CUMULATIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E A D _ O C K (因互相牽制而無進展的僵局)",
+      "ans": "L",
+      "speak": "deadlock",
+      "vocabId": "R7:DEADLOCK"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N C _ E M E _ T A L (透過一小步一小步逐漸進行的)",
+      "ans": "RN",
+      "speak": "incremental",
+      "vocabId": "R7:INCREMENTAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ C E _ E _ C E (在規則或順序上優先適用的地位)",
+      "ans": "EDN",
+      "speak": "precedence",
+      "vocabId": "R7:PRECEDENCE"
     }
   ],
   "boss": [
@@ -13101,6 +13494,137 @@
       "ans": "RMI",
       "speak": "oversimplify",
       "vocabId": "R7:OVERSIMPLIFY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The exception applies to the next move, not to every move you make while holding the card.",
+      "options": [
+        "A. 例外只適用下一步，不是持卡期間每步。",
+        "B. 例外持卡期間一直有效，沒有次數限制。",
+        "C. 卡不影響任何一步，只改最後分數。",
+        "D. 例外已追溯到玩家先前全部行動。"
+      ],
+      "ans": "A",
+      "explain": "next單一行動與持有狀態期間不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would call it an exploit of the wording rather than a strategy the examples appear designed to encourage.",
+      "options": [
+        "A. 只要能從文字讀出，就已等於設計者明確鼓勵。",
+        "B. 我會稱利用措辭漏洞，而非示例看來鼓勵的策略。",
+        "C. 這是示例已明示必須採取的唯一策略。",
+        "D. 說話者已證實該行動被明文禁止。"
+      ],
+      "ans": "B",
+      "explain": "文字可容與設計意圖推測不同，非直接定違規。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The extra move is valuable only if taking it does not trigger the penalty that makes stopping the better option.",
+      "options": [
+        "A. 說話者已明說每次多走都一定被處罰。",
+        "B. 停手在此被定義為立即取消整局勝利資格。",
+        "C. 額外步有價值的前提是不觸發讓停手更好的處罰。",
+        "D. 只要可多走，觸發任何處罰都不影響價值。"
+      ],
+      "ans": "C",
+      "explain": "需比較條件代價，非多一步無條件好。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】A countermove is ___.",
+      "options": [
+        "A. an action responding strategically to another action",
+        "B. a token removed because its colour has faded",
+        "C. a move made before the game’s rules are explained",
+        "D. an accidental action that has no effect on play"
+      ],
+      "ans": "A",
+      "explain": "countermove反制回應，不是桌面counter棋片之移動而已。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A game gives players unequal starting resources but different targets intended to balance the challenge. A reviewer asks whether the targets actually compensate. What is under examination?",
+      "options": [
+        "A. Whether the reviewer has memorised every possible game sequence.",
+        "B. The relation between initial advantages and the demands of winning.",
+        "C. Whether unequal resources must look identical in shape and colour.",
+        "D. The assumption that every player should draw the same card every turn."
+      ],
+      "ans": "B",
+      "explain": "起資源不等與勝利難度是否補償需實際評估，不預定平衡。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A team’s strategy depends on a promise another team can revoke without penalty. The promise has been sincere so far. What vulnerability remains?",
+      "options": [
+        "A. A revocable promise cannot ever be made sincerely.",
+        "B. The plan requires both teams to have identical scores.",
+        "C. The plan relies on cooperation that the rules do not secure.",
+        "D. Past sincerity proves that future withdrawal is impossible."
+      ],
+      "ans": "C",
+      "explain": "意圖真誠與制度約束穩定性不同。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：仍可能改變的暫時聯盟",
+      "ans": "A PROVISIONAL ALLIANCE",
+      "speak": "a provisional alliance",
+      "vocabId": "R7:A PROVISIONAL ALLIANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：真誠承諾依規則仍可能可撤回",
+      "ans": "A SINCERE PROMISE MAY REMAIN REVOCABLE UNDER THE RULES",
+      "speak": "a sincere promise may remain revocable under the rules",
+      "vocabId": "R7:A SINCERE PROMISE MAY REMAIN REVOCABLE UNDER THE RULES"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：使一般規則在特定情況讓位的凌駕（O 開頭，8 個字母）",
+      "ans": "OVERRIDE",
+      "speak": "override",
+      "vocabId": "R7:OVERRIDE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A L _ O C _ T _ O N (把資源分派給不同用途或對象的安排)",
+      "ans": "LAI",
+      "speak": "allocation",
+      "vocabId": "R7:ALLOCATION"
     }
   ]
 }

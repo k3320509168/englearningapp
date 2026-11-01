@@ -342,5 +342,153 @@
         ]
       }
     ]
+  },
+  "EXCHANGE": {
+    "pos": "v.",
+    "meaning": "交換",
+    "example": "I want to exchange this shirt for a larger one.",
+    "exampleZh": "我想把這件襯衫換成大一點的。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "交換；換貨",
+        "examples": [
+          {
+            "en": "They exchanged business cards after the meeting.",
+            "zh": "他們在會議後交換了名片。"
+          },
+          {
+            "en": "Can I exchange this for a different color?",
+            "zh": "我可以把這個換成不同的顏色嗎？"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交換；交流",
+        "examples": [
+          {
+            "en": "We had a brief exchange of opinions.",
+            "zh": "我們進行了簡短的意見交流。"
+          }
+        ]
+      }
+    ]
+  },
+  "ASSIST": {
+    "pos": "v.",
+    "meaning": "協助",
+    "example": "The staff is always ready to assist you.",
+    "exampleZh": "工作人員隨時準備為您提供協助。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "協助",
+        "examples": [
+          {
+            "en": "Please let me know if you need someone to assist you.",
+            "zh": "如果你需要人幫忙，請讓我知道。"
+          },
+          {
+            "en": "Our team will assist with the preparation.",
+            "zh": "我們的團隊將協助準備工作。"
+          }
+        ]
+      }
+    ]
+  },
+  "OPERATOR": {
+    "pos": "n.",
+    "meaning": "接線生",
+    "example": "The operator will transfer your call shortly.",
+    "exampleZh": "接線生稍後會幫您轉接電話。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "接線生",
+        "examples": [
+          {
+            "en": "I waited on the line for an operator.",
+            "zh": "我在線上等待接線生服務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "操作員",
+        "examples": [
+          {
+            "en": "He is an experienced machine operator.",
+            "zh": "他是一位經驗豐富的機器操作員。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADMIT": {
+    "pos": "v.",
+    "meaning": "承認",
+    "example": "He admitted making a mistake on the report.",
+    "exampleZh": "他承認在報告上犯了錯。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "承認",
+        "examples": [
+          {
+            "en": "I must admit that you were right.",
+            "zh": "我必須承認你是對的。"
+          },
+          {
+            "en": "She admitted breaking the glass by accident.",
+            "zh": "她承認不小心打破了玻璃杯。"
+          }
+        ]
+      }
+    ]
+  },
+  "DENY": {
+    "pos": "v.",
+    "meaning": "否認",
+    "example": "The manager denied knowing about the problem.",
+    "exampleZh": "經理否認知道這個問題。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "否認",
+        "examples": [
+          {
+            "en": "They deny that they caused the delay.",
+            "zh": "他們否認是他們造成了延誤。"
+          },
+          {
+            "en": "He denied taking the money from the desk.",
+            "zh": "他否認從桌上拿了錢。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAULT": {
+    "pos": "n.",
+    "meaning": "過失",
+    "example": "I apologize, it was my fault.",
+    "exampleZh": "我道歉，這是我的過失。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "過失；錯誤",
+        "examples": [
+          {
+            "en": "It is not your fault that the meeting was delayed.",
+            "zh": "會議延誤不是你的錯。"
+          },
+          {
+            "en": "The system crash was a technical fault.",
+            "zh": "系統當機是一個技術故障。"
+          }
+        ]
+      }
+    ]
   }
 }

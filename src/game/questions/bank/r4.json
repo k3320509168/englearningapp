@@ -3452,6 +3452,736 @@
       ],
       "ans": "D",
       "explain": "原句：What are you doing this weekend with your family? 意思：你這個週末要和家人做什麼？"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The chef ___ the soup when the power suddenly went out.",
+      "options": [
+        "A. was stirring",
+        "B. stirs",
+        "C. is stirring",
+        "D. has stirred"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：when 帶出的子句為過去簡單式（表示突發事件），主要子句應使用過去進行式，表示當時正在進行的動作。因此選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】We are looking for a reliable person ___ can lead the weekend charity event.",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. whom",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：先行詞為 person（人），且在關係子句中作主詞，因此必須使用關係代名詞 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The CEO decided ___ the launch date of the new product to ensure quality.",
+      "options": [
+        "A. delaying",
+        "B. delay",
+        "C. to delay",
+        "D. delayed"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：動詞 decide 後面固定接不定詞 (to V) 作為受詞，表示決定做某事。選 C 最符合文法。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】While I ___ the contract, I noticed a minor spelling mistake.",
+      "options": [
+        "A. am reviewing",
+        "B. review",
+        "C. have reviewed",
+        "D. was reviewing"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：While 引導的子句通常使用進行式，且主要子句為過去式 (noticed)，故搭配過去進行式 was reviewing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The novel, ___ became a bestseller, is based on a true story.",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. whom",
+        "D. whose"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：先行詞 The novel 是事物，非限定用法需要用 which 來補充說明該事物。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Our department risks ___ our biggest client if we miss this chance.",
+      "options": [
+        "A. lose",
+        "B. losing",
+        "C. to lose",
+        "D. lost"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：動詞 risk 後面必須接動名詞 (V-ing)，表示冒著做某事的風險。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The technician ___ the server when the alarm sounded.",
+      "options": [
+        "A. updates",
+        "B. is updating",
+        "C. was updating",
+        "D. to update"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：描述過去某個時間點正在發生的事，被另一個突發動作（警報響起）打斷，需使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Please send the documents to the accountant ___ handles our tax returns.",
+      "options": [
+        "A. which",
+        "B. whom",
+        "C. whose",
+        "D. who"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：先行詞 accountant（會計師）為人，在關係子句中作主詞（負責處理），需用 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】Management cannot afford ___ bonuses this year due to low profits.",
+      "options": [
+        "A. to pay",
+        "B. paying",
+        "C. pay",
+        "D. paid"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：afford 後方接動詞時，必須使用不定詞 (to V)，表示負擔得起去做某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】While the astronauts ___ the spacecraft, they lost connection with Earth.",
+      "options": [
+        "A. operate",
+        "B. were operating",
+        "C. are operating",
+        "D. to operate"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：背景事件發生在過去，While 引導的持續性動作需使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The software, ___ helps users track their expenses, is free to download.",
+      "options": [
+        "A. who",
+        "B. whom",
+        "C. which",
+        "D. what"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：先行詞為事物 (The software)，在非限定子句（有逗號隔開）中，只能使用 which 作為關係代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】She couldn't resist ___ a piece of chocolate cake after a long day at work.",
+      "options": [
+        "A. eat",
+        "B. to eat",
+        "C. ate",
+        "D. eating"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：resist (抗拒) 後面必須搭配動名詞 (V-ing)，表示無法抗拒做某事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】I ___ the quarterly financial report when you knocked on my door.",
+      "options": [
+        "A. was writing",
+        "B. write",
+        "C. written",
+        "D. to write"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：敲門是過去的瞬間動作，在此之前已經開始且正在進行的動作要用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The candidate ___ we met yesterday has excellent communication skills.",
+      "options": [
+        "A. which",
+        "B. that",
+        "C. what",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：先行詞為人，在關係子句中作受詞，可用 whom 或 that（也可省略），選項中僅 that 符合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】They aim ___ the construction of the new laboratory by next spring.",
+      "options": [
+        "A. completing",
+        "B. completed",
+        "C. to complete",
+        "D. complete"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：動詞 aim (目標在於) 後方需接不定詞 (to V)，表示未來的企圖或目標。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】While the volunteers ___ the beach, they collected fifty bags of trash.",
+      "options": [
+        "A. clean",
+        "B. to clean",
+        "C. are cleaning",
+        "D. were cleaning"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：過去進行的長動作 (cleaning) 配上過去發生的短動作或結論 (collected)，需用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】The camera, ___ has a waterproof feature, is perfect for diving.",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. what",
+        "D. whose"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：先行詞為相機 (事物)，非限定關係子句中作為主詞，必須使用 which。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】He admitted ___ the confidential data to a competitor.",
+      "options": [
+        "A. leak",
+        "B. leaking",
+        "C. to leak",
+        "D. leaked"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：admit (承認) 後面規定要接動名詞 (V-ing)，表示承認做過的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The singer ___ performing on stage when the lights went out.",
+      "options": [
+        "A. has",
+        "B. is",
+        "C. was",
+        "D. to be"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：停電 (went out) 是過去式，表示當時歌手「正在」表演，單數主詞搭配 was 形成過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【文法】We need to hire an assistant ___ is fluent in both English and Japanese.",
+      "options": [
+        "A. which",
+        "B. whom",
+        "C. what",
+        "D. who"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：先行詞是 assistant (人)，且為後面子句的主詞，必須使用關係代名詞 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why didn't you answer my call? \nB: I ___ a shower when the phone rang.",
+      "options": [
+        "A. was taking",
+        "B. take",
+        "C. taking",
+        "D. am taking"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：回答過去某個特定時間點正在進行的動作，使用過去進行式 (was taking)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Is this the smartphone ___ everyone is talking about? \nB: Yes, its camera is amazing.",
+      "options": [
+        "A. what",
+        "B. that",
+        "C. who",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：先行詞是事物 (smartphone)，關係代名詞可用 which 或 that，選項中只有 that 適用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: How did you fix the error? \nB: I simply stopped ___ the faulty code.",
+      "options": [
+        "A. to use",
+        "B. used",
+        "C. using",
+        "D. use"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：stop V-ing 表示「停止做某事」，stop to V 則是「停下來去做另一件事」。此處語意為停止使用錯誤程式碼，選 using。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What happened at the lab? \nB: We ___ the chemicals when the glass broke.",
+      "options": [
+        "A. mix",
+        "B. are mixing",
+        "C. to mix",
+        "D. were mixing"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：玻璃破裂 (broke) 是過去發生的瞬間，當時「我們正在混合化學物質」，故用過去進行式 were mixing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Who is the woman over there? \nB: She is the scientist ___ won the Nobel Prize last year.",
+      "options": [
+        "A. who",
+        "B. which",
+        "C. whose",
+        "D. whom"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：先行詞 scientist 是人，在關係子句中作主詞 (won 的發起者)，需使用 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Are you going to the party? \nB: No, I can't justify ___ money on expensive tickets right now.",
+      "options": [
+        "A. to spend",
+        "B. spending",
+        "C. spend",
+        "D. spent"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：justify (證明...是合理的) 後方接動詞時，通常搭配動名詞 (V-ing)，表示無法為花費找理由。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】The journalist ___ the celebrity when the celebrity suddenly got angry.",
+      "options": [
+        "A. is interviewing",
+        "B. interview",
+        "C. was interviewing",
+        "D. to interview"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：突然生氣 (got angry) 為過去式突發事件，前面正在進行的採訪動作需用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【文法】The new system, ___ takes effect on Monday, requires everyone to wear a badge.",
+      "options": [
+        "A. what",
+        "B. who",
+        "C. whom",
+        "D. which"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：先行詞為 system (事物)，在有逗號的非限定用法中只能使用 which 作為關係代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【文法】Many startup founders struggle ___ funding during their first year of business.",
+      "options": [
+        "A. to secure",
+        "B. securing",
+        "C. secure",
+        "D. secured"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：struggle to V 表示「努力/掙扎著去做某事」，需接不定詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【時態】While the locals ___ the festival, a sudden thunderstorm ruined the decorations.",
+      "options": [
+        "A. prepare",
+        "B. were preparing",
+        "C. preparing",
+        "D. are preparing"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：背景動作發生在過去 (ruined 為過去式)，表示當地人當時正在準備，因此用過去進行式 were preparing。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【文法】The museum guide ___ explained the history of the painting was very knowledgeable.",
+      "options": [
+        "A. which",
+        "B. whose",
+        "C. who",
+        "D. what"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：先行詞為 guide (導遊/解說員)，是人且在子句中作主詞，必須填入 who。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【文法】I don't recall ___ him at the charity gala last month.",
+      "options": [
+        "A. meet",
+        "B. to meet",
+        "C. met",
+        "D. meeting"
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：recall (回想起) 後方接動詞時，必須使用動名詞 (V-ing)，表示回想做過的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: What was John doing at 8 PM? \nB: He ___ a movie with his family.",
+      "options": [
+        "A. was watching",
+        "B. watch",
+        "C. watches",
+        "D. is watching"
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：問句使用了過去進行式詢問過去特定時間正在做什麼，回答也應一致使用過去進行式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Do you have the file ___ I sent you this morning? \nB: Yes, it is on my desktop.",
+      "options": [
+        "A. what",
+        "B. that",
+        "C. who",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：先行詞是 file (事物)，關係代名詞可用 which 或 that，選項中只有 that 符合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話】A: Why did she leave early? \nB: She intends ___ her daughter from school.",
+      "options": [
+        "A. picking",
+        "B. pick",
+        "C. to pick",
+        "D. picked"
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：intend (打算) 後面要接不定詞 (to V)，表示計畫要去做的事。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：交換",
+      "ans": "EXCHANGE",
+      "speak": "exchange"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：協助",
+      "ans": "ASSIST",
+      "speak": "assist"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：購買",
+      "ans": "PURCHASE",
+      "speak": "purchase"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：接線生",
+      "ans": "OPERATOR",
+      "speak": "operator"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：確認",
+      "ans": "CONFIRM",
+      "speak": "confirm"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：庫存",
+      "ans": "INVENTORY",
+      "speak": "inventory"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：承認",
+      "ans": "ADMIT",
+      "speak": "admit"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：否認",
+      "ans": "DENY",
+      "speak": "deny"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：收費",
+      "ans": "CHARGE",
+      "speak": "charge"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：解決",
+      "ans": "SOLVE",
+      "speak": "solve"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：選項",
+      "ans": "OPTION",
+      "speak": "option"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：過失",
+      "ans": "FAULT",
+      "speak": "fault"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：要求退款",
+      "ans": "ASK FOR A REFUND",
+      "speak": "ask for a refund"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：解釋程序",
+      "ans": "EXPLAIN THE PROCEDURE",
+      "speak": "explain the procedure"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：喜歡做菜",
+      "ans": "ENJOY COOKING MEALS",
+      "speak": "enjoy cooking meals"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：打電話尋求協助",
+      "ans": "CALL FOR ASSISTANCE",
+      "speak": "call for assistance"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：和經理說話",
+      "ans": "SPEAK TO THE MANAGER",
+      "speak": "speak to the manager"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：確認訂單",
+      "ans": "CONFIRM THE ORDER",
+      "speak": "confirm the order"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：當時正在網購",
+      "ans": "WERE SHOPPING ONLINE",
+      "speak": "were shopping online"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：去解決問題",
+      "ans": "TO FIX THE ISSUE",
+      "speak": "to fix the issue"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：喜歡出國旅遊",
+      "ans": "LOVE TRAVELING ABROAD",
+      "speak": "love traveling abroad"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：每天保持練習",
+      "ans": "KEEP PRACTICING EVERYDAY",
+      "speak": "keep practicing everyday"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我點的餐點不見了",
+      "ans": "THE MEAL THAT I ORDERED IS MISSING",
+      "speak": "the meal that i ordered is missing"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：服務生摔破盤子時我正在吃東西",
+      "ans": "I WAS EATING WHEN THE WAITER DROPPED THE PLATE",
+      "speak": "i was eating when the waiter dropped the plate"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你能告訴我如何操作這台機器嗎",
+      "ans": "COULD YOU TELL ME HOW TO OPERATE THIS MACHINE",
+      "speak": "could you tell me how to operate this machine"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我偏好坐在窗戶旁邊",
+      "ans": "I PREFER SITTING NEXT TO THE WINDOW",
+      "speak": "i prefer sitting next to the window"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：停電時我們正在看電影",
+      "ans": "WE WERE WATCHING A MOVIE WHEN THE POWER WENT OUT",
+      "speak": "we were watching a movie when the power went out"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：買了那件襯衫的顧客想要退貨",
+      "ans": "THE CUSTOMER WHO BOUGHT THE SHIRT WANTS TO RETURN IT",
+      "speak": "the customer who bought the shirt wants to return it"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他承認在帳單上犯了錯",
+      "ans": "HE ADMITTED MAKING A MISTAKE ON THE BILL",
+      "speak": "he admitted making a mistake on the bill"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我需要你派人來修理網路",
+      "ans": "I NEED YOU TO SEND SOMEONE TO FIX THE INTERNET",
+      "speak": "i need you to send someone to fix the internet"
     }
   ],
   "boss": [
@@ -4696,6 +5426,312 @@
       ],
       "ans": "B",
       "explain": "原句：Were you thinking of going hiking if the weather clears up? 意思：天氣放晴的話你有考慮去爬山嗎？正確回應是 B. 是的，但看起來雨是不會停了。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Travel Blog: Yesterday, while we were hiking up the mountain, my camera battery died. I couldn't take any pictures of the sunset.\nQ: What was the writer doing when the battery died?",
+      "options": [
+        "A. Hiking up the mountain.",
+        "B. Taking pictures.",
+        "C. Fixing the camera.",
+        "D. Watching the sunset."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：文章明確提到「while we were hiking up the mountain, my camera battery died (當我們正在爬山時，相機沒電了)」，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Science News: The new telescope, which was built in Chile, has captured clear images of distant galaxies. It took ten years to construct.\nQ: What is true about the telescope?",
+      "options": [
+        "A. It was built in ten months.",
+        "B. It took a decade to build.",
+        "C. It is located in space.",
+        "D. It takes blurry pictures."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：短文中提到 It took ten years (10年) to construct。ten years 也就是 a decade (十年)，因此選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Notice: All candidates who wish to apply for the senior marketing position must submit a portfolio. Submissions are due this Friday.\nQ: What is required from the applicants?",
+      "options": [
+        "A. A job offer.",
+        "B. A reference letter.",
+        "C. A portfolio of their work.",
+        "D. A marketing degree."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：公告中說明申請資深行銷職位的候選人必須提交作品集 (must submit a portfolio)，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Community Bulletin: The local library is recruiting volunteers to read stories to children on weekends. Anyone who enjoys working with kids is welcome.\nQ: What is the main purpose of this notice?",
+      "options": [
+        "A. To sell books.",
+        "B. To hire librarians.",
+        "C. To host a weekend party.",
+        "D. To find weekend volunteers."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：第一句提到圖書館正在招募週末講故事給小孩聽的志工 (recruiting volunteers)，故 D 為此公告的目的。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Celebrity Anecdote: The famous chef, whose restaurant recently earned three stars, admitted making a huge mistake in his early career.\nQ: What did the chef admit?",
+      "options": [
+        "A. Making an error in the past.",
+        "B. Losing his three stars.",
+        "C. Closing the restaurant.",
+        "D. Blaming his staff."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：短文中提到名廚承認在他職涯早期犯了一個大錯 (admitted making a huge mistake)。mistake 同義替換為 error，選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Travel Blog: While we were wandering through the night market, it began to pour. We had to seek shelter in a small dessert shop.\nQ: Why did they go into the dessert shop?",
+      "options": [
+        "A. Because they were hungry.",
+        "B. Because it started raining.",
+        "C. Because the market closed.",
+        "D. Because they wanted dessert."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文章提到天空開始傾盆大雨 (began to pour)，所以他們必須去甜點店躲雨 (seek shelter)。選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Science Report: Researchers plan to launch a satellite next month. It will track climate patterns that affect agricultural production.\nQ: What is the purpose of the new satellite?",
+      "options": [
+        "A. To monitor space junk.",
+        "B. To send humans to space.",
+        "C. To track weather patterns.",
+        "D. To improve internet speed."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：文中說明發射衛星的目的是要追蹤影響農業生產的氣候模式 (track climate patterns)，故選 C (weather patterns)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Case: To boost sales, the company risks alienating its loyal customers by changing the core recipe of its popular drink.\nQ: What is the company risking?",
+      "options": [
+        "A. Losing their jobs.",
+        "B. Changing the company name.",
+        "C. Going bankrupt immediately.",
+        "D. Upsetting their loyal customer base."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：公司為了提升銷量更改核心配方，冒著疏遠忠實顧客 (alienating its loyal customers) 的風險。alienate 有使人疏遠、不悅之意，對應 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Community Notice: The city council has decided to expand the recycling program. Residents who separate their plastics will receive a small tax reduction.\nQ: How can residents get a tax reduction?",
+      "options": [
+        "A. By separating plastic waste.",
+        "B. By paying more taxes.",
+        "C. By expanding the city council.",
+        "D. By buying new bins."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：文中提到將塑膠分類的居民 (Residents who separate their plastics) 將獲得小幅減稅，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Celebrity News: The musician, who started playing the piano at age four, released her autobiography last week. She shares the struggles she faced.\nQ: When did the musician start playing the piano?",
+      "options": [
+        "A. When she was in high school.",
+        "B. When she was a toddler.",
+        "C. After she released her book.",
+        "D. Ten years ago."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：文章指出她四歲 (at age four) 開始彈鋼琴。四歲屬於幼童時期 (toddler)，故選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Travel Guide: The temple, which was originally built as a fortress in the 12th century, is now open to the public as a museum.\nQ: What was the temple's original purpose?",
+      "options": [
+        "A. It was a royal palace.",
+        "B. It was a secret prison.",
+        "C. It served as a fortress.",
+        "D. It was built in the 20th century."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：文中提到這座廟宇最初被建為堡壘 (built as a fortress)，故選 C。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Science Article: The biologist was observing the monkeys when she noticed a rare behavior. They were using stones to crack open nuts.\nQ: What did the biologist observe?",
+      "options": [
+        "A. Monkeys fighting.",
+        "B. Monkeys eating bananas.",
+        "C. Monkeys climbing trees.",
+        "D. Monkeys using tools."
+      ],
+      "ans": "D",
+      "explain": "繁體中文解說：生物學家觀察到猴子正在用石頭砸開堅果 (using stones to crack open nuts)，石頭在此被當作工具使用 (tools)，故選 D。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Strategy: Management tends to hire candidates who have at least three years of overseas experience for the international department.\nQ: Who is management likely to hire?",
+      "options": [
+        "A. People with foreign work experience.",
+        "B. People with high salaries.",
+        "C. Fresh graduates.",
+        "D. Internal staff only."
+      ],
+      "ans": "A",
+      "explain": "繁體中文解說：文中提到管理層傾向聘用至少有三年海外經驗 (overseas experience) 的候選人。overseas 替換為 foreign，故選 A。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Community Update: The neighborhood watch committee, which was formed last year, has successfully reduced local crime rates by twenty percent.\nQ: What has the committee achieved?",
+      "options": [
+        "A. An increase in crime.",
+        "B. A decrease in crime.",
+        "C. A new neighborhood park.",
+        "D. Twenty new officers."
+      ],
+      "ans": "B",
+      "explain": "繁體中文解說：守望相助委員會成功將當地犯罪率降低了百分之二十 (reduced local crime rates by twenty percent)。reduce 對應 decrease，選 B。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Celebrity Interview: During the talk, the actress described struggling to balance her career and family life when she first moved to Hollywood.\nQ: What did the actress struggle with?",
+      "options": [
+        "A. Finding a good agent.",
+        "B. Moving to Hollywood.",
+        "C. Balancing work and family.",
+        "D. Learning her lines."
+      ],
+      "ans": "C",
+      "explain": "繁體中文解說：文章提到這位女演員在剛搬到好萊塢時，很難在事業與家庭生活間取得平衡 (struggling to balance her career and family life)。故選 C。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：討厭排隊",
+      "ans": "DISLIKE WAITING IN LINE",
+      "speak": "dislike waiting in line"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：退回物品",
+      "ans": "RETURN THE ITEM",
+      "speak": "return the item"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：檢查庫存",
+      "ans": "CHECK THE INVENTORY",
+      "speak": "check the inventory"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：介意幫我嗎",
+      "ans": "MIND HELPING ME",
+      "speak": "mind helping me"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：解決問題",
+      "ans": "SOLVE THE PROBLEM",
+      "speak": "solve the problem"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：那家賣鞋子的店今天沒開",
+      "ans": "THE STORE WHICH SELLS SHOES IS CLOSED TODAY",
+      "speak": "the store which sells shoes is closed today"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我試著睡覺時他們正大聲說話",
+      "ans": "THEY WERE TALKING LOUDLY WHILE I WAS TRYING TO SLEEP",
+      "speak": "they were talking loudly while i was trying to sleep"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我討厭在早上的尖峰時間搭地鐵",
+      "ans": "I DISLIKE TAKING THE SUBWAY DURING THE MORNING RUSH",
+      "speak": "i dislike taking the subway during the morning rush"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她打來確認我們會議的細節",
+      "ans": "SHE CALLED TO CONFIRM THE DETAILS OF OUR MEETING",
+      "speak": "she called to confirm the details of our meeting"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：接電話的人非常樂於助人",
+      "ans": "THE PERSON WHO ANSWERED THE PHONE WAS VERY HELPFUL",
+      "speak": "the person who answered the phone was very helpful"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我想要把這個換成不同的尺寸",
+      "ans": "I WOULD LIKE TO EXCHANGE THIS FOR A DIFFERENT SIZE",
+      "speak": "i would like to exchange this for a different size"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他正在檢查收據時注意到一個錯誤",
+      "ans": "HE WAS CHECKING THE RECEIPT WHEN HE NOTICED AN ERROR",
+      "speak": "he was checking the receipt when he noticed an error"
     }
   ]
 }

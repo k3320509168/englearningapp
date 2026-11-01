@@ -8264,6 +8264,1108 @@
       "desc": "請拼出：替代品",
       "ans": "SUBSTITUTE",
       "speak": "substitute"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I am sorry, I think my internet just disconnected for a second.",
+      "options": [
+        "A. 我的網路剛剛好像斷線了一秒鐘。",
+        "B. 我的麥克風剛剛壞了一秒鐘。",
+        "C. 我的檔案剛剛不小心刪除了。",
+        "D. 我的螢幕剛剛閃爍了一下。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：I am sorry, I think my internet just disconnected for a second. 意思：抱歉，我覺得我的網路剛剛好像斷線了一秒鐘。disconnect 表示「斷線」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He mentioned that the time zone difference had caused some confusion.",
+      "options": [
+        "A. 他說行程延誤造成了很大的損失。",
+        "B. 他提到時差造成了一些混淆。",
+        "C. 他認為文化差異導致了這次失敗。",
+        "D. 他抱怨氣候變遷影響了班機。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：He mentioned that the time zone difference had caused some confusion. 意思：他提到時差造成了一些混淆。使用過去完成式 (had caused) 表達在提及之前已經發生的事。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I had known your microphone was muted, I would have paused the presentation.",
+      "options": [
+        "A. I will present the slide tomorrow.",
+        "B. We had finished the report on time.",
+        "C. Yes, I forgot to click the unmute button.",
+        "D. No, I haven't seen the final version."
+      ],
+      "ans": "C",
+      "explain": "英文原句：If I had known your microphone was muted, I would have paused the presentation. 意思：如果我早知道你的麥克風被靜音了，我就會暫停簡報。選項 C「對，我忘了點擊取消靜音的按鈕」是最合理的回應。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She asked if we had downloaded the latest software update.",
+      "options": [
+        "A. 她確認我們已經刪除了舊檔案。",
+        "B. 她抱怨我們忘記儲存會議紀錄。",
+        "C. 她詢問我們是否重開了數據機。",
+        "D. 她問我們是否下載了最新的軟體更新。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：She asked if we had downloaded the latest software update. 意思：她問我們是否下載了最新的軟體更新。為間接引語句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Could you prepare some visual aids for the online conference?",
+      "options": [
+        "A. 你能為線上會議準備一些視覺輔助工具嗎？",
+        "B. 你能幫線上會議安排一些口譯人員嗎？",
+        "C. 你能為線上會議設計新的邀請函嗎？",
+        "D. 你能幫線上會議設定麥克風音量嗎？"
+      ],
+      "ans": "A",
+      "explain": "英文原句：Could you prepare some visual aids for the online conference? 意思：你能為線上會議準備一些視覺輔助工具嗎？visual aids 指「視覺輔助工具」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the connection were stable, we wouldn't hear that annoying echo.",
+      "options": [
+        "A. The agenda is on the second page.",
+        "B. Let me try rejoining the meeting.",
+        "C. She told us she had left the office.",
+        "D. I prefer working from home on Fridays."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If the connection were stable, we wouldn't hear that annoying echo. 意思：如果連線穩定，我們就不會聽到那個煩人的回音。選項 B「讓我嘗試重新加入會議」是為了解決連線問題的合理回應。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The host explained that a power outage had interrupted the broadcast.",
+      "options": [
+        "A. 主辦方承認預算不足導致了活動取消。",
+        "B. 主持人抱怨收音設備一直發出雜音。",
+        "C. 主持人解釋停電打斷了廣播。",
+        "D. 主辦方宣布天氣不佳延後了賽事。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The host explained that a power outage had interrupted the broadcast. 意思：主持人解釋停電打斷了廣播。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They told us that the virtual meeting had been recorded for future reference.",
+      "options": [
+        "A. 他們保證會議記錄會在明天早上前寄出。",
+        "B. 他們警告線上會議可能會面臨資安風險。",
+        "C. 他們要求我們把虛擬背景換成公司標誌。",
+        "D. 他們告訴我們虛擬會議已被錄下以供未來參考。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：They told us that the virtual meeting had been recorded for future reference. 意思：他們告訴我們虛擬會議已被錄下以供未來參考。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Please make sure your microphone is on mute when you are not speaking.",
+      "options": [
+        "A. 當你不發言時，請確保你的麥克風是靜音的。",
+        "B. 當你不發言時，請關閉你的視訊鏡頭。",
+        "C. 當你要發言時，請記得先舉手。",
+        "D. 當你要發言時，請靠近麥克風一點。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：Please make sure your microphone is on mute when you are not speaking. 意思：當你不發言時，請確保你的麥克風是靜音的。mute 指「靜音」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If he shared his screen, everyone would see the chart clearly.",
+      "options": [
+        "A. 如果他把檔案寄出，大家就能馬上閱讀。",
+        "B. 如果他分享螢幕，每個人就能看清楚圖表。",
+        "C. 如果他放大字體，後排的人就能看清楚。",
+        "D. 如果他打開鏡頭，我們就能看到他的表情。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If he shared his screen, everyone would see the chart clearly. 意思：如果他分享螢幕，每個人就能看清楚圖表。這是第二類條件句，表達與現在事實相反或假設的情況。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Customers who bought the defective batch can claim a full refund.",
+      "options": [
+        "A. 購買限量版產品的顧客可以獲得折扣。",
+        "B. 購買過季商品的顧客可以要求換貨。",
+        "C. 買到有缺陷批次產品的顧客可以申請全額退款。",
+        "D. 買到包裝破損產品的顧客可以免費退貨。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：Customers who bought the defective batch can claim a full refund. 意思：買到有缺陷批次產品的顧客可以申請全額退款。defective 表示「有缺陷的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The manufacturer admitted that they had ignored the initial warning signs.",
+      "options": [
+        "A. 供應商拒絕透露原物料的確切來源。",
+        "B. 經銷商否認他們曾收到顧客的投訴。",
+        "C. 零售商表示他們已經下架了所有商品。",
+        "D. 製造商承認他們忽略了最初的警告跡象。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：The manufacturer admitted that they had ignored the initial warning signs. 意思：製造商承認他們忽略了最初的警告跡象。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If the battery had not overheated, we wouldn't have recalled the entire batch.",
+      "options": [
+        "A. It was definitely a costly design flaw.",
+        "B. The shipment is scheduled for next week.",
+        "C. She told me she had ordered the wrong size.",
+        "D. We will install the new battery tomorrow."
+      ],
+      "ans": "A",
+      "explain": "英文原句：If the battery had not overheated, we wouldn't have recalled the entire batch. 意思：如果電池沒有過熱，我們就不會召回整批產品。選項 A「這絕對是一個代價高昂的設計瑕疵」是最合適的評論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She announced that the company had offered a full refund to all buyers.",
+      "options": [
+        "A. 她警告公司可能會因為這起事件破產。",
+        "B. 她宣布公司已向所有買家提供全額退款。",
+        "C. 她證實公司已經支付了所有的罰款。",
+        "D. 她透露公司將對所有供應商提起訴訟。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：She announced that the company had offered a full refund to all buyers. 意思：她宣布公司已向所有買家提供全額退款。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The software update caused a serious malfunction in the braking system.",
+      "options": [
+        "A. 軟體更新導致了導航系統嚴重延遲。",
+        "B. 軟體更新導致了儀表板顯示錯誤。",
+        "C. 軟體更新導致了煞車系統嚴重故障。",
+        "D. 軟體更新導致了警報系統誤報。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The software update caused a serious malfunction in the braking system. 意思：軟體更新導致了煞車系統嚴重故障。malfunction 指「故障」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If we ignored this safety hazard, our reputation would be completely destroyed.",
+      "options": [
+        "A. I have never used this product before.",
+        "B. The factory had closed down by then.",
+        "C. He asked if the delivery was on time.",
+        "D. You are right, we must act immediately."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If we ignored this safety hazard, our reputation would be completely destroyed. 意思：如果我們忽略這個安全隱患，我們的聲譽將被徹底毀滅。選項 D「你說得對，我們必須立刻採取行動」最為符合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They confirmed that a mechanical failure had caused the engine to stall.",
+      "options": [
+        "A. 他們確認機械故障導致引擎熄火。",
+        "B. 他們發現人為疏失導致了撞車意外。",
+        "C. 他們報告天氣惡劣導致了班機延誤。",
+        "D. 他們推測油料不足導致了系統停機。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：They confirmed that a mechanical failure had caused the engine to stall. 意思：他們確認機械故障導致引擎熄火。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The CEO stated that they had recalled the items voluntarily to ensure safety.",
+      "options": [
+        "A. 執行長否認產品曾對消費者造成傷害。",
+        "B. 執行長聲明他們為了確保安全而自願召回這些產品。",
+        "C. 執行長強調他們已經開除了負責這個專案的主管。",
+        "D. 執行長承諾未來會降低產品的售價以補償客戶。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：The CEO stated that they had recalled the items voluntarily to ensure safety. 意思：執行長聲明他們為了確保安全而自願召回這些產品。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The workers demanded fair compensation for the extra hours they worked.",
+      "options": [
+        "A. 工人們要求對危險的工作環境進行調查。",
+        "B. 工人們要求管理層給予更多的假期。",
+        "C. 工人們要求對他們額外加班的時間給予合理的賠償。",
+        "D. 工人們要求公司改善現有的醫療福利。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：The workers demanded fair compensation for the extra hours they worked. 意思：工人們要求對他們額外加班的時間給予合理的賠償或報酬。compensation 指「補償；賠償」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the factory had tested it thoroughly, this disaster would not have happened.",
+      "options": [
+        "A. 如果工廠提早交貨，我們就不會失去客戶。",
+        "B. 如果工廠能降低成本，這款產品就會大賣。",
+        "C. 如果工廠更換了零件，機器的壽命會更長。",
+        "D. 如果工廠有徹底測試，這場災難就不會發生。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If the factory had tested it thoroughly, this disaster would not have happened. 意思：如果工廠有徹底測試，這場災難就不會發生。這是第三類條件句，描述與過去事實相反的假設。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The company has a zero-tolerance policy for workplace harassment.",
+      "options": [
+        "A. 公司對職場騷擾採取零容忍政策。",
+        "B. 公司對遲到早退有嚴格的懲罰制度。",
+        "C. 公司不允許員工在辦公室內飲食。",
+        "D. 公司禁止員工隨意使用公務車輛。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The company has a zero-tolerance policy for workplace harassment. 意思：公司對職場騷擾採取零容忍政策。harassment 指「騷擾」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The victim reported that her supervisor had constantly belittled her efforts.",
+      "options": [
+        "A. 員工抱怨她的主管經常把工作推給她。",
+        "B. 受害者報告她的主管不斷貶低她的努力。",
+        "C. 助理指出她的主管總是忘記重要會議。",
+        "D. 新人提到她的主管從來不給予明確指示。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：The victim reported that her supervisor had constantly belittled her efforts. 意思：受害者報告她的主管不斷貶低她的努力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If HR had taken her complaint seriously, she wouldn't have sued the company.",
+      "options": [
+        "A. I think the new policy is quite effective.",
+        "B. She said she had forgotten the password.",
+        "C. They definitely mishandled the whole situation.",
+        "D. If I were you, I would ask for a raise."
+      ],
+      "ans": "C",
+      "explain": "英文原句：If HR had taken her complaint seriously, she wouldn't have sued the company. 意思：如果人資部門認真對待她的投訴，她就不會控告公司了。選項 C「他們絕對是處理失當了」最適當。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He claimed that his colleagues had deliberately excluded him from the project.",
+      "options": [
+        "A. 他坦承自己不小心洩漏了專案的機密。",
+        "B. 他抱怨同事們總是把最難的工作交給他。",
+        "C. 他認為他的主管對他有不公平的偏見。",
+        "D. 他聲稱同事們故意將他排除在專案之外。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：He claimed that his colleagues had deliberately excluded him from the project. 意思：他聲稱同事們故意將他排除在專案之外。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Working in such a hostile environment made her very depressed.",
+      "options": [
+        "A. 在如此充滿敵意的環境中工作讓她非常沮喪。",
+        "B. 在如此吵雜的環境中工作讓她無法專心。",
+        "C. 在如此封閉的空間裡工作讓她感到窒息。",
+        "D. 在如此競爭的業界裡工作讓她壓力很大。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：Working in such a hostile environment made her very depressed. 意思：在如此充滿敵意的環境中工作讓她非常沮喪。hostile 表示「充滿敵意的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I were the manager, I would never tolerate such toxic behavior in the office.",
+      "options": [
+        "A. Yes, she had finished the assignment early.",
+        "B. Unfortunately, he just turns a blind eye to it.",
+        "C. I will forward the email to the entire team.",
+        "D. The printer has been out of paper since morning."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If I were the manager, I would never tolerate such toxic behavior in the office. 意思：如果我是經理，我絕不會容忍辦公室裡有這種有毒的行為。選項 B「不幸的是，他對此只是視而不見」最合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She testified that the constant verbal abuse had ruined her mental health.",
+      "options": [
+        "A. 她作證說繁重的工作負擔壓垮了她的身體。",
+        "B. 她作證說長期的睡眠不足影響了她的判斷。",
+        "C. 她作證說不斷的言語暴力毀了她的心理健康。",
+        "D. 她作證說不公平的待遇讓她失去了工作熱情。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：She testified that the constant verbal abuse had ruined her mental health. 意思：她作證說不斷的言語暴力毀了她的心理健康。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "He asked if anyone had witnessed the argument in the break room.",
+      "options": [
+        "A. I think the coffee machine is broken again.",
+        "B. She said she would bring some snacks today.",
+        "C. The meeting was rescheduled to Friday afternoon.",
+        "D. I was there, but I only heard shouting."
+      ],
+      "ans": "D",
+      "explain": "英文原句：He asked if anyone had witnessed the argument in the break room. 意思：他問是否有人目擊了休息室裡的爭執。選項 D「當時我在場，但我只聽到大吼大叫」為最佳回應。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They tried to intimidate him into dropping the lawsuit.",
+      "options": [
+        "A. 他們試圖恐嚇他以迫使他撤回訴訟。",
+        "B. 他們試圖賄賂他以換取商業機密。",
+        "C. 他們試圖說服他接受這份新合約。",
+        "D. 他們試圖欺騙他以獲取更多資金。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：They tried to intimidate him into dropping the lawsuit. 意思：他們試圖恐嚇他以迫使他撤回訴訟。intimidate 指「恐嚇；威脅」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you had spoken up earlier, the bullying would have stopped sooner.",
+      "options": [
+        "A. 如果你早點出發，我們就不會遲到了。",
+        "B. 如果你早點發聲，霸凌就會更早停止。",
+        "C. 如果你早點交件，主管就會更高興。",
+        "D. 如果你早點拒絕，事情就不會這麼複雜。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you had spoken up earlier, the bullying would have stopped sooner. 意思：如果你早點發聲，霸凌就會更早停止。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We must find ways to reduce our carbon emission immediately.",
+      "options": [
+        "A. 我們必須立刻尋找降低生產成本的方法。",
+        "B. 我們必須立刻想辦法減少水資源浪費。",
+        "C. 我們必須立刻找到減少碳排放物的方法。",
+        "D. 我們必須立刻提出提高能源效率的方案。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：We must find ways to reduce our carbon emission immediately. 意思：我們必須立刻找到減少碳排放的方法。emission 指「排放；排放物」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The activist argued that our plastic usage had polluted the entire ocean.",
+      "options": [
+        "A. 專家認為工業廢水已經破壞了地下水層。",
+        "B. 教授警告農藥殘留已經影響了土壤肥力。",
+        "C. 官員表示空氣汙染已經危害了市民健康。",
+        "D. 倡議人士主張我們的塑膠用量已經汙染了整個海洋。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：The activist argued that our plastic usage had polluted the entire ocean. 意思：倡議人士主張我們的塑膠用量已經汙染了整個海洋。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If we invested more in renewable energy, we could slow down global warming.",
+      "options": [
+        "A. That's why solar panels are becoming popular.",
+        "B. He told us he had sold his old car yesterday.",
+        "C. The new marketing strategy was highly effective.",
+        "D. If I were a doctor, I would treat those patients."
+      ],
+      "ans": "A",
+      "explain": "英文原句：If we invested more in renewable energy, we could slow down global warming. 意思：如果我們在再生能源上投資更多，我們就能減緩全球暖化。選項 A「那就是為什麼太陽能板變得受歡迎」是合適的延伸討論。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She warned that illegal logging had destroyed countless natural habitats.",
+      "options": [
+        "A. 她強調過度捕撈已經讓許多魚類瀕臨絕種。",
+        "B. 她警告非法伐木已經摧毀了無數自然棲息地。",
+        "C. 她指出大量開發已經導致了嚴重的土石流。",
+        "D. 她聲明外來物種已經威脅了本地生態平衡。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：She warned that illegal logging had destroyed countless natural habitats. 意思：她警告非法伐木已經摧毀了無數自然棲息地。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Wildlife conservation requires a lot of funding and public support.",
+      "options": [
+        "A. 城市建設需要大量的勞動力與資金投入。",
+        "B. 醫療研究需要很多經費與政府補助。",
+        "C. 野生動物保育需要大量資金與大眾支持。",
+        "D. 森林復育需要很長的時間與專業技術。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：Wildlife conservation requires a lot of funding and public support. 意思：野生動物保育需要大量資金與大眾支持。conservation 指「保育；保護」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If they had protected the rainforest, those rare species would not have gone extinct.",
+      "options": [
+        "A. I think the presentation was too long.",
+        "B. They said the flight had been canceled due to rain.",
+        "C. We should print fewer documents in the office.",
+        "D. It is truly a tragic loss for biodiversity."
+      ],
+      "ans": "D",
+      "explain": "英文原句：If they had protected the rainforest, those rare species would not have gone extinct. 意思：如果他們當初有保護雨林，那些稀有物種就不會滅絕。選項 D「這對生物多樣性來說真是一大悲劇損失」最適當。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The scientist noted that the toxic waste had contaminated the local river.",
+      "options": [
+        "A. 科學家指出有毒廢棄物已汙染了當地河流。",
+        "B. 研究員發現化學肥料已滲入地下水源。",
+        "C. 檢驗員報告重金屬已超標嚴重。",
+        "D. 觀察員提到工業排放已影響了空氣品質。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The scientist noted that the toxic waste had contaminated the local river. 意思：科學家指出有毒廢棄物已汙染了當地河流。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "He explained that relying heavily on fossil fuels had led to a climate crisis.",
+      "options": [
+        "A. The museum was built three hundred years ago.",
+        "B. We really need to transition to green energy.",
+        "C. She asked if the engine was running smoothly.",
+        "D. If I were you, I would take the bus instead."
+      ],
+      "ans": "B",
+      "explain": "英文原句：He explained that relying heavily on fossil fuels had led to a climate crisis. 意思：他解釋過度依賴化石燃料已經導致了氣候危機。選項 B「我們真的需要轉型使用綠色能源」最合理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】A professional must maintain strict ___ when dealing with clients' sensitive financial data.",
+      "options": [
+        "A. integrity",
+        "B. integration",
+        "C. interaction",
+        "D. intellect"
+      ],
+      "ans": "A",
+      "explain": "本題測驗字彙。integrity 意為「誠實正直；操守」，符合處理敏感財務資料時應有的專業態度。integration (整合)、interaction (互動)、intellect (智力) 皆不符合語意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【假設語氣】If the director ___ about the illegal transactions, she would have fired the accountant immediately.",
+      "options": [
+        "A. knows",
+        "B. had known",
+        "C. knew",
+        "D. has known"
+      ],
+      "ans": "B",
+      "explain": "本題測驗 If 第三類條件句（與過去事實相反）。主要子句使用 would have fired，條件子句需使用過去完成式 had known，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【間接引語】The HR manager stated that the company ___ a zero-tolerance policy for harassment the previous year.",
+      "options": [
+        "A. implements",
+        "B. has implemented",
+        "C. had implemented",
+        "D. will implement"
+      ],
+      "ans": "C",
+      "explain": "本題測驗間接引語與時態。引述動詞 stated 為過去式，且句末有 the previous year (前一年)，表示該動作在 stated 之前已經發生，應使用過去完成式 had implemented。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】By the time the auditor arrived, the ambitious executive ___ all the questionable documents.",
+      "options": [
+        "A. shreds",
+        "B. is shredding",
+        "C. has shredded",
+        "D. had shredded"
+      ],
+      "ans": "D",
+      "explain": "本題測驗時態。By the time 引導的子句為過去式 (arrived)，表示在過去某個時間點之前已經完成的動作，主要子句需使用過去完成式 had shredded (已經銷毀)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Workplace Memo: To promote transparency, we have established a new whistleblowing channel. Employees can now report unethical behavior anonymously without fear of retaliation. All reports will be handled by an independent committee. Q: What is the main purpose of the new channel?",
+      "options": [
+        "A. To allow staff to report misconduct safely.",
+        "B. To help the independent committee find new members.",
+        "C. To announce the promotion of an ambitious executive.",
+        "D. To discourage employees from remaining anonymous."
+      ],
+      "ans": "A",
+      "explain": "本題測驗短文主旨。文中提到設立新管道是為了讓員工能匿名舉報不道德行為且免於報復 (without fear of retaliation)，故 (A) 讓員工安全地報告不當行為為正確答案。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】It is a huge ethical ___ to accept expensive gifts from suppliers right before a contract renewal.",
+      "options": [
+        "A. dimension",
+        "B. dilemma",
+        "C. diagnose",
+        "D. distribution"
+      ],
+      "ans": "B",
+      "explain": "本題測驗字彙。dilemma 意為「困境；進退兩難的局面」，ethical dilemma 指倫理上的兩難或道德爭議。dimension (維度)、diagnose (診斷，動詞)、distribution (分配) 皆不符合。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The board members held the CEO ___ for the severe environmental damage caused by the factory's chemical waste.",
+      "options": [
+        "A. absolute",
+        "B. accessible",
+        "C. accountable",
+        "D. affordable"
+      ],
+      "ans": "C",
+      "explain": "本題測驗字彙。hold someone accountable 為固定用法，意指「要求某人負責」。董事會要求執行長對環境破壞負責。absolute (絕對的)、accessible (可進入的)、affordable (負擔得起的) 語意不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話-間接引語】A: \"Why did he resign from the board of directors so suddenly?\" B: \"He told me that he ___ to sign the fraudulent financial report.\"",
+      "options": [
+        "A. refuses",
+        "B. had refused",
+        "C. is refusing",
+        "D. will refuse"
+      ],
+      "ans": "B",
+      "explain": "本題測驗間接引語與時態。B 的回答中 told me 為過去式，拒絕簽署這件事發生在告訴我之前，因此需使用過去完成式 had refused。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The astronomers used a powerful telescope to observe the distant ___ bodies in the newly discovered galaxy.",
+      "options": [
+        "A. central",
+        "B. casual",
+        "C. celestial",
+        "D. clinical"
+      ],
+      "ans": "C",
+      "explain": "本題測驗字彙。celestial bodies 意為「天體；星體」，與天文學家 (astronomers) 和星系 (galaxy) 的語境相符。central (中央的)、casual (休閒的)、clinical (臨床的) 皆不合邏輯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The spacecraft ___ the planet's orbit long before the ground control on Earth lost the communication signal.",
+      "options": [
+        "A. enters",
+        "B. is entering",
+        "C. will enter",
+        "D. had entered"
+      ],
+      "ans": "D",
+      "explain": "本題測驗時態。地面控制中心失去訊號 (lost) 是過去發生的事，太空船進入軌道發生在失去訊號之前 (long before)，故需使用過去完成式 had entered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【假設語氣】If the engineers had detected the fuel leak earlier, the rocket ___ during the launch sequence.",
+      "options": [
+        "A. would not have exploded",
+        "B. will not explode",
+        "C. does not explode",
+        "D. had not exploded"
+      ],
+      "ans": "A",
+      "explain": "本題測驗與過去事實相反的假設語氣 (If 第三類)。If 子句用 had detected，主要子句需用 would (not) have + p.p.，表示「當時就不會爆炸」，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【間接引語】The lead scientist proudly announced that his team ___ liquid water beneath the Martian surface the week before.",
+      "options": [
+        "A. discovers",
+        "B. had discovered",
+        "C. has discovered",
+        "D. will discover"
+      ],
+      "ans": "B",
+      "explain": "本題測驗間接引語。announced 為過去式，且句末有 the week before (前一週)，表示發現液態水發生在宣布之前，必須退一步時態使用過去完成式 had discovered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Space Weekly: Earth's orbit is becoming dangerously crowded. Millions of pieces of space debris, from old satellites to discarded rocket stages, pose a significant threat to functioning spacecraft. Researchers emphasize that tracking this junk is crucial for future missions. Q: What is the primary concern mentioned in the text?",
+      "options": [
+        "A. The high cost of launching new satellites into orbit.",
+        "B. The lack of funding for tracking discarded rockets.",
+        "C. The danger that orbiting trash poses to active missions.",
+        "D. The discovery of unknown satellites near Earth."
+      ],
+      "ans": "C",
+      "explain": "本題測驗主旨理解。短文主要討論地球軌道上大量的太空垃圾 (space debris) 對運作中的太空船構成威脅 (pose a significant threat)，故選 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Building a permanent, self-sustaining base on the Moon is a monumental ___ that requires global cooperation.",
+      "options": [
+        "A. encounter",
+        "B. envelope",
+        "C. equipment",
+        "D. endeavor"
+      ],
+      "ans": "D",
+      "explain": "本題測驗字彙。endeavor 意為「努力；艱鉅的任務或計畫」，符合在月球建立基地的語境。encounter (遭遇)、envelope (信封)、equipment (設備) 不符合句意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The unmanned probe was sent to ___ the thick atmosphere of Venus for signs of specific chemical elements.",
+      "options": [
+        "A. investigate",
+        "B. illustrate",
+        "C. interfere",
+        "D. install"
+      ],
+      "ans": "A",
+      "explain": "本題測驗字彙。investigate 意為「調查；探測」，太空探測器 (probe) 被送去探測金星的大氣層。illustrate (說明；畫插圖)、interfere (干涉)、install (安裝) 語意皆不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話-時態】A: \"Did she manage to take photos of the meteor shower last night?\" B: \"No, heavy clouds ___ the entire sky by the time she went outside.\"",
+      "options": [
+        "A. cover",
+        "B. are covering",
+        "C. have covered",
+        "D. had covered"
+      ],
+      "ans": "D",
+      "explain": "本題測驗時態。by the time she went outside (到她出門時) 為過去的時間點，烏雲遮住天空是在她出門前就已經完成的狀態，故使用過去完成式 had covered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】The government is raising the retirement age because the national ___ fund is rapidly running out of money.",
+      "options": [
+        "A. pension",
+        "B. penalty",
+        "C. passion",
+        "D. pattern"
+      ],
+      "ans": "A",
+      "explain": "本題測驗字彙。pension 意指「退休金；養老金」，pension fund (退休基金) 快要耗盡符合延後退休年齡的語境。penalty (罰款)、passion (熱情)、pattern (模式) 錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【假設語氣】If nursing homes ___ more affordable, many working-class families would not suffer from such heavy financial burdens.",
+      "options": [
+        "A. is",
+        "B. were",
+        "C. has been",
+        "D. will be"
+      ],
+      "ans": "B",
+      "explain": "本題測驗與現在事實相反的假設語氣 (If 第二類)。主要子句使用 would not suffer，If 子句中的動詞不論人稱皆應使用過去式 were，故選 (B)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【間接引語】The sociologist warned that the continuously declining birth rate ___ a severe labor shortage in the following decade.",
+      "options": [
+        "A. causes",
+        "B. has caused",
+        "C. would cause",
+        "D. to cause"
+      ],
+      "ans": "C",
+      "explain": "本題測驗間接引語與時態。warned 為過去式，原句的將來時態 (will cause) 轉為間接引語時需退一步成為過去未來式 would cause。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】Before the new healthcare bill was finally passed, many elderly citizens ___ to pay for their essential medications.",
+      "options": [
+        "A. struggle",
+        "B. are struggling",
+        "C. have struggled",
+        "D. had struggled"
+      ],
+      "ans": "D",
+      "explain": "本題測驗時態。法案通過 (was passed) 是過去發生的事，而老年人在此之前一直掙扎於支付藥費，發生在過去的過去，需使用過去完成式 had struggled。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Social News: Taiwan is experiencing a rapid demographic shift. With a growing proportion of senior citizens, urban planners must redesign public spaces to include more ramps, benches, and accessible restrooms. These changes are essential for creating an age-friendly environment. Q: What is the main reason for redesigning public spaces?",
+      "options": [
+        "A. The increasing number of elderly people in the population.",
+        "B. A sudden decrease in the overall birth rate in cities.",
+        "C. A new law that punishes cities without accessible restrooms.",
+        "D. The demand from young families for more urban parks."
+      ],
+      "ans": "A",
+      "explain": "本題測驗細節推論。文中指出由於「老年人口比例增加 (growing proportion of senior citizens)」，都市計畫者必須重新設計公共空間以建立高齡友善環境，故答案為 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Providing adequate daily care for seniors suffering from dementia requires a tremendous amount of patience and ___.",
+      "options": [
+        "A. compromise",
+        "B. compassion",
+        "C. competition",
+        "D. composition"
+      ],
+      "ans": "B",
+      "explain": "本題測驗字彙。compassion 意指「同情心；憐憫」，照顧失智症長者需要極大的耐心與同情心。compromise (妥協)、competition (競爭)、composition (成分；作文) 不符合題意。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】To prevent the elderly from feeling completely ___, the local community center organizes various weekly social events.",
+      "options": [
+        "A. identified",
+        "B. inflated",
+        "C. isolated",
+        "D. issued"
+      ],
+      "ans": "C",
+      "explain": "本題測驗字彙。isolated 意為「孤立的；感到孤獨的」，舉辦社交活動是為了防止老人感到孤立。identified (被認出的)、inflated (膨脹的)、issued (發行的) 語意不通。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話-間接引語】A: \"Did the doctor have any good news about your grandmother?\" B: \"Yes, he stated that her health ___ significantly since the previous checkup.\"",
+      "options": [
+        "A. improves",
+        "B. had improved",
+        "C. is improving",
+        "D. will improve"
+      ],
+      "ans": "B",
+      "explain": "本題測驗間接引語時態。stated 為過去式，而且自從上一次檢查 (since the previous checkup) 到醫生說話時，健康狀況已經改善，故應將現在完成式退一步轉為過去完成式 had improved。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Fast fashion encourages consumers to simply ___ clothing after wearing it only a few times, leading to massive textile waste.",
+      "options": [
+        "A. dismiss",
+        "B. dispute",
+        "C. discard",
+        "D. dissolve"
+      ],
+      "ans": "C",
+      "explain": "本題測驗字彙。discard 意為「丟棄；拋棄」，符合快時尚讓人穿幾次就丟掉衣服的描述。dismiss (解散；駁回)、dispute (爭論)、dissolve (溶解) 皆錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】The famous European brand ___ organic cotton for years before sustainability became a mainstream consumer trend.",
+      "options": [
+        "A. utilizes",
+        "B. is utilizing",
+        "C. has utilized",
+        "D. had utilized"
+      ],
+      "ans": "D",
+      "explain": "本題測驗時態。永續性成為主流趨勢 (became) 是過去式，而該品牌在此之前已經使用有機棉多年，屬於過去的過去，故選用過去完成式 had utilized。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【假設語氣】If the lead designer had known about the toxic synthetic dyes, he ___ them in his latest summer collection.",
+      "options": [
+        "A. would not have used",
+        "B. will not use",
+        "C. does not use",
+        "D. had not used"
+      ],
+      "ans": "A",
+      "explain": "本題測驗與過去事實相反的假設語氣。If 子句為 had known (過去完成式)，主要子句需使用 would/could/might (not) have + p.p.，表示「當時就不會使用」，故選 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【間接引語】The environmental activist claimed during the conference that the fashion industry ___ one of the biggest global polluters.",
+      "options": [
+        "A. is",
+        "B. was",
+        "C. has been",
+        "D. will be"
+      ],
+      "ans": "B",
+      "explain": "本題測驗間接引語時態一致性。引述動詞 claimed 為過去式，原句中的現在式 (is) 應退一步轉為過去式 was。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Style Blog: Second-hand shopping is more than just a passing trend. By purchasing thrifted clothes, you extend the lifespan of garments and reduce the demand for new production. It is a simple yet powerful way to build an eco-friendly wardrobe. Q: Why does the author encourage buying thrifted clothes?",
+      "options": [
+        "A. They are usually made of higher quality materials than new clothes.",
+        "B. They are the only way to find unique designer brands.",
+        "C. They help minimize environmental impact by reducing waste.",
+        "D. They guarantee that local charities receive financial support."
+      ],
+      "ans": "C",
+      "explain": "本題測驗短文細節。文中提到買二手衣可以延長衣物壽命並減少新製造的需求，是一種環保 (eco-friendly) 的做法，這與 (C) 減少浪費以降低環境影響的語意相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】To lower carbon emissions, the apparel company is heavily researching more ___ materials like hemp and bamboo.",
+      "options": [
+        "A. subjective",
+        "B. superficial",
+        "C. suspicious",
+        "D. sustainable"
+      ],
+      "ans": "D",
+      "explain": "本題測驗字彙。sustainable 意為「可持續的；環保的」，研發漢麻和竹子等永續材質以降低碳排放符合邏輯。subjective (主觀的)、superficial (表面的)、suspicious (可疑的) 皆不符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The award-winning documentary exposes the extremely harsh working conditions in overseas ___ factories where cheap garments are mass-produced.",
+      "options": [
+        "A. textile",
+        "B. terminal",
+        "C. terrain",
+        "D. texture"
+      ],
+      "ans": "A",
+      "explain": "本題測驗字彙。textile 意指「紡織品」，textile factories 即為紡織廠，與生產廉價衣物 (garments) 的語境吻合。terminal (終點站)、terrain (地形)、texture (質地) 錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Constant exposure to idealized and heavily edited images on social networks can severely damage a teenager's self-___.",
+      "options": [
+        "A. esteem",
+        "B. estate",
+        "C. estimate",
+        "D. escort"
+      ],
+      "ans": "A",
+      "explain": "本題測驗字彙與搭配詞。self-esteem 意為「自尊心」，過度接觸社群媒體上修圖過的照片會損害青少年的自尊心。estate (房地產)、estimate (估計)、escort (護送) 皆不通。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【假設語氣】If teenage users ___ their daily screen time, they would likely experience much better sleep quality and reduced anxiety.",
+      "options": [
+        "A. limit",
+        "B. limited",
+        "C. have limited",
+        "D. will limit"
+      ],
+      "ans": "B",
+      "explain": "本題測驗與現在事實相反的假設語氣。主要子句使用 would (likely) experience，條件句的動詞需使用過去式 limited。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【間接引語】The clinical psychologist explained that constant digital notifications ___ a state of chronic stress in many young adults.",
+      "options": [
+        "A. trigger",
+        "B. are triggering",
+        "C. had triggered",
+        "D. to trigger"
+      ],
+      "ans": "C",
+      "explain": "本題測驗間接引語。explained 為過去式，引述的內容發生在解釋之前或要維持時態退一步的原則，原為現在完成式或過去式的動作退為過去完成式 had triggered 最為恰當。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【時態】By the time the school authorities finally noticed the cyberbullying, the victim ___ all of his social media accounts.",
+      "options": [
+        "A. deletes",
+        "B. is deleting",
+        "C. has deleted",
+        "D. had deleted"
+      ],
+      "ans": "D",
+      "explain": "本題測驗過去完成式。校方注意到 (noticed) 是過去式，受害者刪除帳號發生在此之前，故使用過去完成式 had deleted。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Tech News: Social media platforms are designed to be addictive. The core algorithm constantly analyzes user behavior to serve content that triggers emotional reactions, keeping people scrolling for hours rather than interacting with the real world. Q: What is the main function of the platform's algorithm?",
+      "options": [
+        "A. To keep users engaged on the application for as long as possible.",
+        "B. To protect users from seeing emotionally distressing content.",
+        "C. To encourage people to spend more time outdoors.",
+        "D. To limit the amount of time users spend scrolling daily."
+      ],
+      "ans": "A",
+      "explain": "本題測驗主旨與細節。文中提到演算法不斷分析使用者行為以提供觸發情緒反應的內容，目的是「讓他們滑上好幾個小時 (keeping people scrolling for hours)」，即(A)盡可能讓用戶長時間停留在應用程式上。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【字彙】Many influencers portray a flawless lifestyle online simply to seek external ___ from their millions of anonymous followers.",
+      "options": [
+        "A. appeal",
+        "B. approval",
+        "C. approach",
+        "D. appetite"
+      ],
+      "ans": "B",
+      "explain": "本題測驗字彙。approval 意為「認可；贊同」，seek external approval 指尋求外界的認可。appeal (吸引力；呼籲)、approach (方法；接近)、appetite (胃口) 皆不符語境。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【字彙】The popular social platform uses massive amounts of behavioral data to ___ exactly what type of content keeps users engaged the longest.",
+      "options": [
+        "A. pretend",
+        "B. prevent",
+        "C. predict",
+        "D. precede"
+      ],
+      "ans": "C",
+      "explain": "本題測驗字彙。predict 意為「預測」，社群平台利用大量數據來「預測」哪種內容能讓用戶停留最久。pretend (假裝)、prevent (預防)、precede (在...之前) 皆不合邏輯。"
     }
   ],
   "boss": [
@@ -10988,6 +12090,354 @@
       "desc": "請拼出：授權",
       "ans": "AUTHORIZE",
       "speak": "authorize"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are currently looking for a sustainable alternative to plastic packaging.",
+      "options": [
+        "A. 我們正在尋找更便宜的紙張供應商。",
+        "B. 我們正在尋找能快速分解的化學物質。",
+        "C. 我們正在尋找塑膠包裝的永續替代方案。",
+        "D. 我們正在尋找提高生產效率的新機器。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：We are currently looking for a sustainable alternative to plastic packaging. 意思：我們正在尋找塑膠包裝的永續替代方案。alternative 指「替代方案」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If the factory stopped dumping chemicals, the water quality would improve rapidly.",
+      "options": [
+        "A. 如果政府提高罰款，工廠就不會再違法排放。",
+        "B. 如果居民減少用水，水庫的存量就會增加。",
+        "C. 如果公司引進新設備，產量就會大幅提升。",
+        "D. 如果工廠停止傾倒化學物質，水質會迅速改善。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：If the factory stopped dumping chemicals, the water quality would improve rapidly. 意思：如果工廠停止傾倒化學物質，水質會迅速改善。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The language barrier was the biggest challenge I faced in Germany.",
+      "options": [
+        "A. 語言障礙是我在德國面臨的最大挑戰。",
+        "B. 飲食習慣是我在法國遇到最大的問題。",
+        "C. 文化衝擊是我在日本感受最深的事情。",
+        "D. 交通不便是他在美國生活最大的困擾。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：The language barrier was the biggest challenge I faced in Germany. 意思：語言障礙是我在德國面臨的最大挑戰。barrier 指「障礙；隔閡」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He admitted that he had felt incredibly homesick during his first semester.",
+      "options": [
+        "A. 他坦承在入學考試時感到非常緊張。",
+        "B. 他承認在第一學期感到極度想家。",
+        "C. 他透露在準備畢業論文時壓力很大。",
+        "D. 他抱怨在學校宿舍裡一直睡不好。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：He admitted that he had felt incredibly homesick during his first semester. 意思：他承認在第一學期感到極度想家。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If she hadn't secured that scholarship, she wouldn't have gone to London.",
+      "options": [
+        "A. The university had accepted her application yesterday.",
+        "B. He told me that his luggage had been lost at the airport.",
+        "C. True, living expenses there are just too high to afford.",
+        "D. If you studied harder, you would pass the exam."
+      ],
+      "ans": "C",
+      "explain": "英文原句：If she hadn't secured that scholarship, she wouldn't have gone to London. 意思：如果她當初沒有拿到那筆獎學金，她就不會去倫敦了。選項 C「沒錯，那裡的生活費實在高到難以負擔」符合情境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She mentioned that learning the local slang had helped her make new friends.",
+      "options": [
+        "A. 她說參加社團活動讓她很快融入群體。",
+        "B. 她認為主動開口說話是交朋友的關鍵。",
+        "C. 她指出了解當地歷史能避免許多誤會。",
+        "D. 她提到學習當地俚語幫助她交到了新朋友。"
+      ],
+      "ans": "D",
+      "explain": "英文原句：She mentioned that learning the local slang had helped her make new friends. 意思：她提到學習當地俚語幫助她交到了新朋友。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "After living in Tokyo for three years, she became fluent in Japanese.",
+      "options": [
+        "A. 在東京住了三年後，她的日文變得非常流利。",
+        "B. 在紐約住了五年後，他的英文口音完全改變了。",
+        "C. 在巴黎待了半年後，她習慣了當地的生活步調。",
+        "D. 在倫敦讀完碩士後，他決定留在當地工作。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：After living in Tokyo for three years, she became fluent in Japanese. 意思：在東京住了三年後，她的日文變得非常流利。fluent 指「流利的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "If I had practiced speaking more, my accent wouldn't have been so obvious.",
+      "options": [
+        "A. The flight had already departed when I arrived.",
+        "B. You still sound perfectly natural and easy to understand to me.",
+        "C. If she were the teacher, she would assign more homework.",
+        "D. He asked if the final exam would be difficult."
+      ],
+      "ans": "B",
+      "explain": "英文原句：If I had practiced speaking more, my accent wouldn't have been so obvious. 意思：如果我當初多練習口說，我的口音就不會這麼明顯了。選項 B「對我來說，你聽起來還是非常自然且容易理解的」是最佳安慰語。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They observed that the diverse workforce had sparked many creative ideas.",
+      "options": [
+        "A. 他們發現跨部門合作減少了溝通上的摩擦。",
+        "B. 他們認為嚴格的管理制度限制了員工的潛力。",
+        "C. 他們觀察到多元的勞動力激發了許多創意。",
+        "D. 他們指出遠距工作模式提高了整體的效率。"
+      ],
+      "ans": "C",
+      "explain": "英文原句：They observed that the diverse workforce had sparked many creative ideas. 意思：他們觀察到多元的勞動力激發了許多創意。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "He told his parents that he had successfully adapted to the new lifestyle.",
+      "options": [
+        "A. The internet connection was really unstable today.",
+        "B. If I had known, I would have bought him a gift.",
+        "C. She mentioned that the project was highly successful.",
+        "D. That must be a huge relief for his family."
+      ],
+      "ans": "D",
+      "explain": "英文原句：He told his parents that he had successfully adapted to the new lifestyle. 意思：他告訴父母他已經成功適應了新的生活方式。選項 D「那對他的家人來說一定是一大安慰」最為合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Having overseas work experience is a big advantage for this position.",
+      "options": [
+        "A. 擁有海外工作經驗對這個職位來說是一大優勢。",
+        "B. 具備流利的外語能力是應徵這個職位的基本條件。",
+        "C. 能夠適應高壓環境是這個職缺最看重的特質。",
+        "D. 熟悉跨國法規對這份工作而言非常重要。"
+      ],
+      "ans": "A",
+      "explain": "英文原句：Having overseas work experience is a big advantage for this position. 意思：擁有海外工作經驗對這個職位來說是一大優勢。overseas 指「海外的」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "If you embraced the differences, you would find living abroad very rewarding.",
+      "options": [
+        "A. 如果你學會了獨立，你就不會覺得孤單。",
+        "B. 如果你擁抱這些差異，你會發現旅居國外非常有收穫。",
+        "C. 如果你提早做好規劃，你的留學生活會順利很多。",
+        "D. 如果你結交當地朋友，你的語言能力會進步很快。"
+      ],
+      "ans": "B",
+      "explain": "英文原句：If you embraced the differences, you would find living abroad very rewarding. 意思：如果你擁抱這些差異，你會發現旅居國外非常有收穫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Ethics Training Guide: Maintaining a positive corporate culture requires continuous effort. If the firm ___ strict ethical guidelines consistently, it would face fewer lawsuits from disgruntled clients. Q: Which word or phrase best fills in the blank?",
+      "options": [
+        "A. upholds",
+        "B. has upheld",
+        "C. to uphold",
+        "D. upheld"
+      ],
+      "ans": "D",
+      "explain": "本題測驗短文中的假設語氣填空。主要子句為 would face (would + 原形動詞)，表示與現在事實相反，If 條件句需使用過去式動詞 upheld，故選 (D)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Business Journal: A manager recently awarded a lucrative contract to a firm owned by his brother. Although he claimed that the bidding process was completely fair, critics argue that this obvious conflict of interest compromises the integrity of the entire organization. Q: What does the text suggest about the manager's decision?",
+      "options": [
+        "A. It is highly inappropriate and raises ethical concerns.",
+        "B. It was the only way to save the organization from bankruptcy.",
+        "C. It proves that the bidding process was conducted fairly.",
+        "D. It will ultimately increase the profits of the firm."
+      ],
+      "ans": "A",
+      "explain": "本題測驗推論能力。文章指出將合約給自己兄弟的公司是「明顯的利益衝突 (obvious conflict of interest)」且損害組織的操守 (compromises the integrity)，因此這決定是高度不適當且引發道德疑慮的 (A)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Science Blog: Colonizing other planets is no longer just science fiction. If humanity ___ a self-sustaining colony on Mars, it would secure the long-term survival of our species in case of a global catastrophe on Earth. Q: Which word best fills in the blank?",
+      "options": [
+        "A. establishes",
+        "B. established",
+        "C. has established",
+        "D. had established"
+      ],
+      "ans": "B",
+      "explain": "本題測驗假設語氣填空。主要子句為 would secure，表示針對未來或現在的不確定想像，If 子句應使用過去式 established (第二類條件句)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Astronaut Training Manual: Surviving in microgravity takes immense physical and mental endurance. During yesterday's simulation, several candidates panicked when the life support system went offline. As a result, they were immediately disqualified from the upcoming mission. Q: Why were the candidates disqualified?",
+      "options": [
+        "A. They failed to operate the microgravity equipment properly.",
+        "B. They suffered from severe physical injuries during training.",
+        "C. They lost their composure during a simulated emergency.",
+        "D. They refused to repair the offline life support system."
+      ],
+      "ans": "C",
+      "explain": "本題測驗短文推論。文中指出候選人因為在維生系統模擬故障時「恐慌 (panicked)」而被取消資格，這等同於 (C) 失去沉著/冷靜 (lost their composure)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Policy Review: The current financial strain on the healthcare system was predictable. If the politicians ___ decisive action sooner, the economic crisis regarding eldercare would have been easily avoided. Q: Which phrase best fills in the blank?",
+      "options": [
+        "A. take",
+        "B. are taking",
+        "C. took",
+        "D. had taken"
+      ],
+      "ans": "D",
+      "explain": "本題測驗與過去事實相反的假設語氣。主要子句為 would have been avoided，條件句必須用過去完成式 had taken 來表示過去未發生的動作。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Urban Living Journal: Intergenerational housing is gaining popularity. In these shared living spaces, university students receive cheaper rent in exchange for helping older residents with chores. This setup not only reduces costs but also bridges the gap between different age groups. Q: What is a key benefit of this housing arrangement?",
+      "options": [
+        "A. It fosters mutual support across different generations.",
+        "B. It completely eliminates the need for professional nursing homes.",
+        "C. It provides university students with free healthcare services.",
+        "D. It allows older residents to enroll in university courses for free."
+      ],
+      "ans": "A",
+      "explain": "本題測驗細節理解。文章提到學生幫忙做家事換取低廉租金，這不但降低成本還能彌合年齡代溝 (bridges the gap)，與 (A) 促進不同世代間的互助 語意最相符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Fashion Forward Magazine: The concept of rental fashion is revolutionizing the industry. If more people ___ formal clothes for special occasions instead of buying them, the overall textile waste in landfills would drop drastically. Q: Which word best fills in the blank?",
+      "options": [
+        "A. rent",
+        "B. rented",
+        "C. have rented",
+        "D. had rented"
+      ],
+      "ans": "B",
+      "explain": "本題測驗假設語氣。主要子句為 would drop (與現在/未來事實相反的假設)，因此 If 子句動詞需使用過去式 rented。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Design Monthly: Upcycling takes recycling a step further. Instead of breaking down materials to their base form, upcycling involves creatively transforming old products—like turning worn-out jeans into stylish tote bags—giving them a higher value than the original item. Q: How does upcycling differ from traditional recycling?",
+      "options": [
+        "A. It requires more energy and expensive machinery.",
+        "B. It only applies to items that cannot be broken down.",
+        "C. It increases the value of the discarded materials through creativity.",
+        "D. It is exclusively used for producing luxury denim products."
+      ],
+      "ans": "C",
+      "explain": "本題測驗短文細節。文中提到升級改造 (upcycling) 不只是將材料分解，而是透過創意將舊物轉化，賦予它們比原物更高的價值 (giving them a higher value)，對應 (C)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話-時態】A: \"Did you manage to buy that vintage leather jacket online?\" B: \"No, someone else ___ it before I even reached the checkout page.\"",
+      "options": [
+        "A. purchases",
+        "B. is purchasing",
+        "C. has purchased",
+        "D. had purchased"
+      ],
+      "ans": "D",
+      "explain": "本題測驗過去完成式。我到達結帳頁面 (reached) 為過去式，而「別人買走」這件事發生在那之前，因此必須使用過去完成式 had purchased。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Wellness Blog: Taking a digital detox can reset your mental state. Looking back at her experience, Jane realized that if she ___ the controversial app, she would not have regained her peace of mind so quickly. Q: Which phrase best fills in the blank?",
+      "options": [
+        "A. didn't delete",
+        "B. doesn't delete",
+        "C. hasn't deleted",
+        "D. had not deleted"
+      ],
+      "ans": "D",
+      "explain": "本題測驗與過去事實相反的假設語氣。主要子句為 would not have regained，條件句需用過去完成式 had not deleted (如果當時沒有刪除)。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "desc": "【短文】Psychology Today: The Fear of Missing Out (FOMO) is amplified by digital connectivity. When people see peers posting about exciting events, they often feel inadequate or excluded. This constant comparison fuels a cycle of dissatisfaction that is hard to break. Q: What psychological effect does the text describe?",
+      "options": [
+        "A. Feeling left out and dissatisfied after seeing others' highlight reels.",
+        "B. The joy of connecting with friends through online event pages.",
+        "C. The relief of staying home instead of attending crowded parties.",
+        "D. The fear of losing personal data on unsecure networks."
+      ],
+      "ans": "A",
+      "explain": "本題測驗主旨推論。文章描述人們在網路上看到同儕貼出精彩活動時會感到不足或被排擠 (feel inadequate or excluded)，並引發不滿的循環，這與 (A) 感到被冷落與不滿 的描述一致。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "【對話-間接引語】A: \"Why is Sarah completely offline this week?\" B: \"She mentioned that the flood of negative comments ___ her too much stress lately.\"",
+      "options": [
+        "A. causes",
+        "B. had caused",
+        "C. is causing",
+        "D. will cause"
+      ],
+      "ans": "B",
+      "explain": "本題測驗間接引語時態。mentioned 為過去式，大量的負面留言造成她的壓力發生在此之前 (或一直持續到她提及的時候)，在間接引語中需退一步使用過去完成式 had caused 最符合文法規範。"
     }
   ]
 }

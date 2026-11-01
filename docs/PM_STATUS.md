@@ -30,6 +30,15 @@
   {"permissions":{"allow":["command(git status)","command(git diff)","command(git log)","command(git add)","command(git commit)","command(npx tsc)","command(npx vitest)","command(npx eslint)","command(npx tsx)","command(npm run)","command(node)","command(dot_clean)","command(ls)","command(cat)","command(grep)"],"deny":["command(git push)","command(git reset)","command(rm)"]}}
   ```
 
+
+### 1.1 自動喚醒與接續機制（2026-11-01）
+- **Codex／Antigravity**：`scripts/ai-tick.sh` 每 30 分鐘由 launchd（`com.enggame.ai-tick`，製作人執行 `zsh scripts/install-ai-tick.sh` 安裝）跑一次：
+  - Codex：15 分鐘內沒動作、且額度夠（5 小時 <90%、每週 <95%，或已過重置時間）→ `codex exec` 照 `scripts/prompts/codex-tick.txt` 接續佇列。
+  - Antigravity：沒任務在跑、不在冷卻 → `agy -p` 照 `scripts/prompts/agy-tick.txt` 做下一項；額度用完自動降級 argon-high → argon-medium → flash-high，全部用完冷卻 1 小時。工作紀錄寫 `docs/AGY_LOG.md`。
+  - 紀錄 `~/Library/Logs/enggame-ai-tick.log`；暫停 `touch ~/.enggame-ai/paused`，恢復 `rm ~/.enggame-ai/paused`。
+- **Claude**：Claude Code 每天 21:07 巡檢（審查、合併、更新本表）；每週 ≥95% 時只記錄並交棒 Codex 當大腦。這個排程只在 Claude Code 開著時有效，7 天後要重設。
+- 額度原則：先看每週、再看 5 小時；誰快滿誰少做。
+
 ## 2. 已定案決策（和 ChatGPT「ENG RPG遊戲」討論的結論）
 完整原文都在 `docs/gpt/`，這裡只列結論與出處。
 | 主題 | 結論 | 出處 |

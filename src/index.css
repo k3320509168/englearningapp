@@ -2026,3 +2026,25 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
   .is-battle .member { padding: 3px; gap: 2px; }
   .is-battle .member-hp { height: 4px; }
 }
+/* C8：zoom已參與Grid尺寸計算，不再讓100%高度放大後超出所分配的列。 */
+.game-shell.is-battle > .hud {
+  width: auto;
+  height: auto;
+  align-self: stretch;
+  justify-self: stretch;
+}
+html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: none; }
+@media (max-width: 560px) {
+  /* 鍵帽仍維持44px觸控範圍；大字級只放大學習內容，不把三列鍵盤再放大。 */
+  .game-shell.is-battle .vkbd { zoom: calc(1 / var(--text-scale, 1)); }
+}
+@media (max-width: 560px) {
+  .game-shell.is-battle .slots { gap: 4px; }
+  .game-shell.is-battle .slot { width: 28px; height: 34px; font-size: 16px; }
+  .game-shell.is-battle .vkbd {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: var(--panel);
+  }
+}

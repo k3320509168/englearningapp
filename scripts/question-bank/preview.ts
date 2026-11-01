@@ -23,6 +23,8 @@ async function show() {
  const q=list[index%list.length];
  if(!q)return;
  const r=Number(region.value);
+ const four=document.querySelector<HTMLSelectElement>('#qa-team')!.value==='4';
+ useSaveStore.setState({heroes:four?['knight','cat','book']:['knight'],party:four?['player','knight','cat','book']:['player','knight']});
  useUiStore.setState({modal:null,celebrations:[],hintOpen:false,retreatAsk:false});
  useBattleStore.getState().startLevel(LEVELS[r],voiceFallback,0);
  // 凍結題目時間以便量測版面，不模擬玩家速度；計時合理性另由紙上與程式模擬驗收。

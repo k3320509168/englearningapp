@@ -179,16 +179,15 @@ export function playerStats({ upgrades }: { upgrades: Record<UpgradeId, number> 
   };
 }
 
-// Combo 加成（第二十一輪，0～100 萬）：在錨點之間做對數插值，combo 越高永遠越痛，但不會爆炸。
-// 沒有升級時：10 ×2.0、20 ×2.8、50 ×4.2、100 ×5.4、300 ×7.5、1000 ×9.8、1 萬 ×14.5、10 萬 ×21、100 萬 ×28。
-// 高 combo 的爽度主要交給 12 階招式演出與首領處決，而不是讓數值失控（含升級最多 ×40）
+// v2.0：低段線性／錨點間對數插值；百萬基礎 ×50，之後最高 ×60。
+// 商店升級按原比例放大整條曲線及上限，不對其他傷害來源施同一上限。
 export const COMBO_POINTS: readonly [number, number][] = [
-  [0, 1], [10, 2], [20, 2.8], [50, 4.2], [100, 5.4], [300, 7.5], [1000, 9.8], [3000, 11.8],
-  [10000, 14.5], [30000, 17.2], [100000, 21], [300000, 24.5], [1000000, 28],
+  [0, 1], [10, 2], [20, 2.8], [50, 4.2], [100, 5.4], [300, 7.5],
+  [1000, 12], [3000, 16], [10000, 20], [100000, 34], [1000000, 50],
 ];
-export const COMBO_MULT_CAP = 40;
+export const comboMultiplierCap = (step = 0.1) => 1 + 59 * (step / 0.1);
 function baseComboMultiplier(combo: number): number {
-  const c = Math.max(0, combo);
+  const c = Number.isNaN(combo) ? 0 : Math.max(0, combo);
   for (let i = 1; i < COMBO_POINTS.length; i++) {
     const [x1, y1] = COMBO_POINTS[i];
     if (c > x1) continue;
@@ -196,11 +195,11 @@ function baseComboMultiplier(combo: number): number {
     const t = x0 === 0 ? c / x1 : Math.log(c / x0) / Math.log(x1 / x0);
     return y0 + (y1 - y0) * t;
   }
-  return 28 + 1.5 * Math.log10(c / 1000000);
+  return Math.min(60, 50 + 5 * Math.log10(c / 1000000));
 }
 // step：每層加成（0.1，商店 Combo 升級每級 +0.02）。升級照原本的比例放大 combo 加成，已買的升級不會變弱
 export function comboMultiplier(combo: number, step = 0.1): number {
-  return Math.min(COMBO_MULT_CAP, 1 + (baseComboMultiplier(combo) - 1) * (step / 0.1));
+  return Math.min(comboMultiplierCap(step), 1 + (baseComboMultiplier(combo) - 1) * (step / 0.1));
 }
 
 // 困難題 Bonus：每 8 題出一題困難題（優先出你答錯過的題目），答對時「目前的 combo × 隨機倍數」。

@@ -12661,6 +12661,848 @@
       ],
       "ans": "C",
       "explain": "文中提到 The initial observation team must have calibrated their telescopes incorrectly (必定是錯誤校準了望遠鏡)，即設備設定不當。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：主持人",
+      "ans": "MODERATOR",
+      "speak": "moderator"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：指令",
+      "ans": "DIRECTIVE",
+      "speak": "directive"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：修改",
+      "ans": "MODIFICATION",
+      "speak": "modification"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：禮儀",
+      "ans": "ETIQUETTE",
+      "speak": "etiquette"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：婉轉的",
+      "ans": "TACTFUL",
+      "speak": "tactful"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：值得讚賞的",
+      "ans": "COMMENDABLE",
+      "speak": "commendable"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：表彰",
+      "ans": "RECOGNITION",
+      "speak": "recognition"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：承諾",
+      "ans": "COMMITMENT",
+      "speak": "commitment"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：動機",
+      "ans": "MOTIVE",
+      "speak": "motive"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：意圖",
+      "ans": "INTENTION",
+      "speak": "intention"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：推測",
+      "ans": "PRESUME",
+      "speak": "presume"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：推斷",
+      "ans": "DEDUCE",
+      "speak": "deduce"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：克制",
+      "ans": "RESTRAIN",
+      "speak": "restrain"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：不經意地",
+      "ans": "INADVERTENTLY",
+      "speak": "inadvertently"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：故意的",
+      "ans": "DELIBERATE",
+      "speak": "deliberate"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：全體一致的",
+      "ans": "UNANIMOUS",
+      "speak": "unanimous"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "請唸出單字：休會",
+      "ans": "ADJOURN",
+      "speak": "adjourn"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：正在被靜音",
+      "ans": "IS BEING MUTED",
+      "speak": "is being muted"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在引導",
+      "ans": "HAVE BEEN GUIDING",
+      "speak": "have been guiding"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定斷線了",
+      "ans": "MUST HAVE DISCONNECTED",
+      "speak": "must have disconnected"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：正在被修改",
+      "ans": "IS BEING MODIFIED",
+      "speak": "is being modified"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定假定了",
+      "ans": "MUST HAVE PRESUMED",
+      "speak": "must have presumed"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在過渡",
+      "ans": "HAVE BEEN TRANSITIONING",
+      "speak": "have been transitioning"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：正在受到讚揚",
+      "ans": "IS BEING COMMENDED",
+      "speak": "is being commended"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在貢獻",
+      "ans": "HAVE BEEN CONTRIBUTING",
+      "speak": "have been contributing"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：正在被表彰",
+      "ans": "ARE BEING RECOGNIZED",
+      "speak": "are being recognized"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定是指",
+      "ans": "MUST HAVE MEANT",
+      "speak": "must have meant"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在仔細討論",
+      "ans": "HAVE BEEN DELIBERATING",
+      "speak": "have been deliberating"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：正在被召集",
+      "ans": "IS BEING CONVENED",
+      "speak": "is being convened"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一定是打算",
+      "ans": "MUST HAVE INTENDED",
+      "speak": "must have intended"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "請唸出：一直在主持",
+      "ans": "HAVE BEEN MODERATING",
+      "speak": "have been moderating"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：現在會議正在被召集。",
+      "ans": "THE MEETING IS BEING CONVENED NOW",
+      "speak": "the meeting is being convened now"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他一定是不小心斷線了。",
+      "ans": "HE MUST HAVE DISCONNECTED BY ACCIDENT",
+      "speak": "he must have disconnected by accident"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們一直過渡得相當順利。",
+      "ans": "WE HAVE BEEN TRANSITIONING QUITE SMOOTHLY",
+      "speak": "we have been transitioning quite smoothly"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The replacement components are scheduled to be dispatched to your address.",
+      "options": [
+        "A. 替換零件預計將被發送到您的地址。",
+        "B. 損壞的零件必須退回到原廠。",
+        "C. 我們已經收到您的更換申請。",
+        "D. 零件庫存不足，無法安排配送。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：替換零件預計將被發送到您的地址。原句：The replacement components are scheduled to be dispatched to your address."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I have been trying to reach a human operator for over twenty minutes.",
+      "options": [
+        "A. Yes, the machine is operating properly.",
+        "B. I apologize for the unusually long wait time.",
+        "C. We have been trying to contact you as well.",
+        "D. You must have reached the wrong destination."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：我已經嘗試聯絡人工客服超過二十分鐘了。原句：I have been trying to reach a human operator for over twenty minutes. 選項 B「對這異常漫長的等待時間感到抱歉」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "You must have dialed the wrong extension for the billing department.",
+      "options": [
+        "A. 帳單部門的電話號碼已更改。",
+        "B. 你必須在帳單到期前完成繳費。",
+        "C. 你一定撥錯了帳單部門的分機號碼。",
+        "D. 帳單部門目前無法接聽您的電話。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：你一定撥錯了帳單部門的分機號碼。原句：You must have dialed the wrong extension for the billing department."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "A certified technician is expected to be assigned to your case shortly.",
+      "options": [
+        "A. Yes, I am expecting a package.",
+        "B. He has already certified the documents.",
+        "C. The case is too heavy to lift.",
+        "D. Great, I will wait for their call."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：預計很快就會指派一位認證技師來處理您的案件。原句：A certified technician is expected to be assigned to your case shortly. 選項 D「太好了，我會等他們的電話」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have been receiving numerous complaints regarding this faulty device.",
+      "options": [
+        "A. 我們一直收到許多關於這款瑕疵設備的投訴。",
+        "B. 許多客戶已經收到這款新設備的替換品。",
+        "C. 我們正努力修復這款設備的連線問題。",
+        "D. 這款設備的設計瑕疵引起了廣泛討論。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：我們一直收到許多關於這款瑕疵設備的投訴。原句：We have been receiving numerous complaints regarding this faulty device."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The customer must have forgotten to attach the receipt in the email.",
+      "options": [
+        "A. I attached it to the wall yesterday.",
+        "B. We should politely ask him to resend it.",
+        "C. The email was delivered successfully.",
+        "D. He forgot to bring his credit card."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：那位客戶一定忘記在電子郵件中附上收據了。原句：The customer must have forgotten to attach the receipt in the email. 選項 B「我們應該有禮貌地請他重新發送」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Your account is reported to be suspended due to unpaid fees.",
+      "options": [
+        "A. 您的帳戶目前處於欠費狀態，請盡快補繳。",
+        "B. 我們將在確認您的繳費紀錄後恢復帳戶。",
+        "C. 據報導，您的帳戶因為未繳費用而被停權。",
+        "D. 系統偵測到您的帳戶有異常的扣款情形。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：據報導，您的帳戶因為未繳費用而被停權。原句：Your account is reported to be suspended due to unpaid fees."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I have been overpaying for the premium subscription since July.",
+      "options": [
+        "A. The subscription was canceled in June.",
+        "B. You will receive a premium bonus soon.",
+        "C. Overpaying is always a good strategy.",
+        "D. Let me check your billing history right away."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：我從七月起就一直為尊爵訂閱方案多付錢。原句：I have been overpaying for the premium subscription since July. 選項 D「讓我馬上查看您的帳單紀錄」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He must have provided an incorrect serial number during the registration.",
+      "options": [
+        "A. 他一定在註冊過程中提供了一組錯誤的序號。",
+        "B. 系統拒絕了他的註冊，因為序號已經被使用。",
+        "C. 他忘了在註冊表單上填寫產品的正確序號。",
+        "D. 註冊程序要求必須提供購買證明的序號。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：他一定在註冊過程中提供了一組錯誤的序號。原句：He must have provided an incorrect serial number during the registration."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The ongoing dispute is projected to be settled by our legal team tomorrow.",
+      "options": [
+        "A. We need more disputes to solve.",
+        "B. That is a huge relief for all of us.",
+        "C. The legal team is projecting a movie.",
+        "D. Tomorrow is too early to start a dispute."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：持續進行中的糾紛預計明天會由我們的法務團隊解決。原句：The ongoing dispute is projected to be settled by our legal team tomorrow. 選項 B「這對我們所有人來說真是鬆了一口氣」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Heavy precipitation has been causing severe delays on the highway.",
+      "options": [
+        "A. 高速公路上的連環車禍導致了嚴重的交通回堵。",
+        "B. 施工路段讓高速公路的行車速度大幅降低。",
+        "C. 劇烈降水一直造成高速公路上嚴重的延誤。",
+        "D. 大霧使得高速公路上的能見度變得非常差。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：劇烈降水一直造成高速公路上嚴重的延誤。原句：Heavy precipitation has been causing severe delays on the highway."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The outbound lanes are reported to be completely blocked by debris.",
+      "options": [
+        "A. The flight is departing from lane two.",
+        "B. We should report the missing files.",
+        "C. I will completely block his number.",
+        "D. We'd better take an alternative route then."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：據報導，出城的車道被碎片完全堵塞了。原句：The outbound lanes are reported to be completely blocked by debris. 選項 D「那我們最好走替代路線」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Commuters must have experienced tremendous frustration this morning.",
+      "options": [
+        "A. 通勤者今早一定經歷了極大的挫折。",
+        "B. 通勤者明天將面臨嚴重的交通堵塞。",
+        "C. 今早的通勤時間比往常短了許多。",
+        "D. 許多通勤者決定今天在家工作。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：通勤者今早一定經歷了極大的挫折（沮喪）。原句：Commuters must have experienced tremendous frustration this morning."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We have been monitoring the approaching hurricane since late last night.",
+      "options": [
+        "A. The monitor is broken again.",
+        "B. Has its trajectory changed significantly?",
+        "C. Approaching strangers can be dangerous.",
+        "D. The night was surprisingly peaceful."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：我們從昨晚深夜就一直在監測逼近的颶風。原句：We have been monitoring the approaching hurricane since late last night. 選項 B「它的行進軌跡有大幅改變嗎？」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The bridge is scheduled to be closed for extensive renovations.",
+      "options": [
+        "A. 這座橋已經因為安全隱患被無限期關閉。",
+        "B. 橋樑的維修費用遠超出原本的預算。",
+        "C. 這座橋樑預計將關閉以進行大規模翻修。",
+        "D. 新的橋樑設計圖已經獲得市府批准。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：這座橋樑預計將關閉以進行大規模翻修。原句：The bridge is scheduled to be closed for extensive renovations."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The meteorologists must have underestimated the intensity of the storm.",
+      "options": [
+        "A. They are estimating the total cost.",
+        "B. The storm is getting weaker by the minute.",
+        "C. I have a degree in meteorology.",
+        "D. Yes, it is far more severe than predicted."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：氣象學家們一定低估了這場風暴的強度。原句：The meteorologists must have underestimated the intensity of the storm. 選項 D「對，它比預期的要嚴重得多」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Why are these secondary roads rumored to be restricted to local residents?",
+      "options": [
+        "A. 為什麼謠傳這些次要道路僅限當地居民通行？",
+        "B. 當地居民為何要求封鎖這些次要道路？",
+        "C. 誰決定將這些主要幹道留給當地居民使用？",
+        "D. 為什麼只有當地居民能夠獲得道路通行的許可？"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：為什麼謠傳這些次要道路僅限當地居民通行？原句：Why are these secondary roads rumored to be restricted to local residents?"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The new software modules are intended to be introduced to all entry-level staff.",
+      "options": [
+        "A. Software engineering is a complex field.",
+        "B. Will they receive adequate training beforehand?",
+        "C. The staff entrance is located at the back.",
+        "D. I haven't introduced myself to him yet."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：這些新的軟體模組打算被介紹給所有基層員工。原句：The new software modules are intended to be introduced to all entry-level staff. 選項 B「他們會事先接受足夠的訓練嗎？」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have been designing this leadership program to empower our junior managers.",
+      "options": [
+        "A. 我們的初階主管已經成功完成了領導力培訓。",
+        "B. 這個領導力課程旨在淘汰表現不佳的主管。",
+        "C. 我們一直設計這個領導力課程來賦權初階主管。",
+        "D. 初階主管們負責籌劃這次的企業內部培訓。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：我們一直設計這個領導力課程來賦予初階主管能力（賦權）。原句：We have been designing this leadership program to empower our junior managers."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "You must have skipped the most important section of the safety manual.",
+      "options": [
+        "A. The manual was written by an expert.",
+        "B. I will skip lunch today to finish the work.",
+        "C. Safety glasses are required in the lab.",
+        "D. I apologize, I will read it thoroughly right away."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：你一定跳過了安全手冊裡最重要的部分。原句：You must have skipped the most important section of the safety manual. 選項 D「我道歉，我會立刻仔細閱讀它」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Dynamic workshops are reported to be preferred by most employees.",
+      "options": [
+        "A. 據報導，充滿活力的工作坊較受多數員工青睞。",
+        "B. 大多數員工表示他們不想參加沉悶的工作坊。",
+        "C. 我們需要聘請更有活力的講師來帶領活動。",
+        "D. 員工問卷結果顯示，大家喜歡在戶外進行活動。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：據報導，充滿活力的工作坊較受多數員工青睞（喜好）。原句：Dynamic workshops are reported to be preferred by most employees."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I have been reflecting on the insightful feedback given by my mentor.",
+      "options": [
+        "A. The reflection in the mirror looks great.",
+        "B. It's always helpful to learn from their experience.",
+        "C. Your mentor is giving a presentation right now.",
+        "D. I will give you the feedback tomorrow."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：我一直在反思導師給我的深刻回饋。原句：I have been reflecting on the insightful feedback given by my mentor. 選項 B「從他們的經驗中學習總是有幫助的」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The guest speaker must have noticed that the audience was losing focus.",
+      "options": [
+        "A. 客座講者要求觀眾在演講過程中保持專注。",
+        "B. 觀眾抱怨客座講者的演講內容缺乏重點。",
+        "C. 客座講者一定注意到了觀眾正在失去注意力。",
+        "D. 因為麥克風故障，講者無法吸引觀眾的注意。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：客座講者一定注意到了觀眾正在失去注意力。原句：The guest speaker must have noticed that the audience was losing focus."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The revised onboarding materials are expected to be circulated by Friday.",
+      "options": [
+        "A. The circle is perfectly drawn on the board.",
+        "B. Friday is my favorite day of the week.",
+        "C. We revised the budget constraints yesterday.",
+        "D. Excellent, I will prepare the newcomers for it."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：修訂後的新人入職資料預計在週五前會傳閱發放。原句：The revised onboarding materials are expected to be circulated by Friday. 選項 D「太棒了，我會讓新進員工做好準備」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The curator has been collecting these rare artifacts for over two decades.",
+      "options": [
+        "A. 館長收藏這些稀有文物已經超過二十年了。",
+        "B. 這座博物館展示了過去二十年來出土的文物。",
+        "C. 策展人將在未來二十年內修復這些古老的藝術品。",
+        "D. 這些珍貴文物是兩位收藏家畢生的心血。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：館長（策展人）收藏這些稀有文物已經超過二十年了。原句：The curator has been collecting these rare artifacts for over two decades."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "This abstract painting is believed to have been completed in his final years.",
+      "options": [
+        "A. Yes, he painted the walls green.",
+        "B. That explains the profound sense of melancholy in it.",
+        "C. The final exam was completed yesterday.",
+        "D. It is hard to believe that the year is over."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：這幅抽象畫被認為是在他晚年時完成的。原句：This abstract painting is believed to have been completed in his final years. 選項 B「那就能解釋畫中深沉的憂鬱感了」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The ancient civilization must have flourished along this fertile riverbank.",
+      "options": [
+        "A. 這條肥沃的河岸曾經遭遇過嚴重的洪水氾濫。",
+        "B. 考古學家在這個河岸邊發現了許多古老的遺跡。",
+        "C. 這個古老文明一定曾沿著這條肥沃的河岸繁榮發展。",
+        "D. 古文明的衰亡與河岸土壤的枯竭有著密切關聯。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：這個古老文明一定曾沿著這條肥沃的河岸繁榮發展。原句：The ancient civilization must have flourished along this fertile riverbank."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We have been marveling at this magnificent sculpture for ten minutes.",
+      "options": [
+        "A. I know, the craftsmanship is simply breathtaking.",
+        "B. The sculptor hasn't arrived at the studio yet.",
+        "C. Ten minutes is not enough to walk there.",
+        "D. Marvel comics are very popular among teenagers."
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：我們驚嘆於這座宏偉的雕塑已經十分鐘了。原句：We have been marveling at this magnificent sculpture for ten minutes. 選項 A「我知道，其工藝簡直令人嘆為觀止」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The delicate ceramics are strictly forbidden to be photographed with a flash.",
+      "options": [
+        "A. 這些精緻的陶瓷器嚴禁使用閃光燈拍照。",
+        "B. 博物館內禁止攜帶相機以保護脆弱的陶瓷。",
+        "C. 攝影師們必須獲得許可才能拍攝這些陶瓷。",
+        "D. 在強光照射下，這些陶瓷的顏色會逐漸褪去。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：這些精緻的陶瓷器嚴禁被使用閃光燈拍照。原句：The delicate ceramics are strictly forbidden to be photographed with a flash."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The sculptors must have spent countless hours perfecting these intricate details.",
+      "options": [
+        "A. Time flies when you are having fun.",
+        "B. Exactly, the level of precision is absolutely stunning.",
+        "C. Details are often overlooked by modern artists.",
+        "D. They didn't spend any money on the materials."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：雕塑家們一定花了無數個小時來完美這些複雜的細節。原句：The sculptors must have spent countless hours perfecting these intricate details. 選項 B「沒錯，這精準度絕對令人驚豔」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A hidden doorway is rumored to be located behind this massive tapestry.",
+      "options": [
+        "A. 巨大的掛毯後方藏著一條通往地下的通道。",
+        "B. 聽說這塊華麗的掛毯曾經掛在皇宮的大門前。",
+        "C. 謠傳在這幅巨大的掛毯後面有一扇隱藏的門。",
+        "D. 博物館的設計師將門票隱藏在掛毯的圖案中。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：謠傳在這幅巨大的掛毯（壁毯）後面有一扇隱藏的門。原句：A hidden doorway is rumored to be located behind this massive tapestry."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Our competitors have been offering much lower prices to attract our clients.",
+      "options": [
+        "A. The price tag is missing from this item.",
+        "B. I am attracted to the beautiful scenery.",
+        "C. We are competing in a marathon next week.",
+        "D. We need to revise our promotional strategy then."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：我們的競爭對手一直提供低得多的價格來吸引我們的客戶。原句：Our competitors have been offering much lower prices to attract our clients. 選項 D「那我們需要修改我們的促銷策略了」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The proposed deadline is considered to be unrealistic by our production team.",
+      "options": [
+        "A. 我們的生產團隊認為提議的截止日期不切實際。",
+        "B. 生產團隊已經同意將截止日期延後一週。",
+        "C. 專案經理向生產團隊提出了新的時間表。",
+        "D. 生產團隊認為這個提案將無法如期完成。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：我們的生產團隊認為提議的截止日期不切實際。原句：The proposed deadline is considered to be unrealistic by our production team."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "They must have rejected our initial offer without even reading the terms.",
+      "options": [
+        "A. Reading books is a great hobby.",
+        "B. I agree; it was dismissed far too quickly.",
+        "C. The initial phase is complete now.",
+        "D. We rejected the flawed products."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：他們一定是連條款都沒看就拒絕了我們最初的報價。原句：They must have rejected our initial offer without even reading the terms. 選項 B「我同意；它被駁回得太快了」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We have been trying to break this deadlock since the morning session.",
+      "options": [
+        "A. 我們從早上就在試圖打破這扇鎖上的門。",
+        "B. 早上的會議已經成功解決了所有爭議。",
+        "C. 我們從上午的會議開始就一直試圖打破這個僵局。",
+        "D. 雙方的談判代表決定在上午暫停會談。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：我們從上午的會議開始就一直試圖打破這個僵局。原句：We have been trying to break this deadlock since the morning session."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Significant concessions are expected to be made by both parties today.",
+      "options": [
+        "A. I bought some snacks from the concession stand.",
+        "B. Let's party until the sun comes up.",
+        "C. The significance of this event cannot be denied.",
+        "D. Yes, otherwise we won't reach an agreement."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：預計今天雙方都會做出重大讓步。原句：Significant concessions are expected to be made by both parties today. 選項 D「對，否則我們將無法達成協議」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The foreign delegates must have been insulted by his aggressive tactics.",
+      "options": [
+        "A. 外國代表一定對他咄咄逼人的策略感到被侮辱了。",
+        "B. 他強勢的手段成功說服了所有的外國代表。",
+        "C. 外國代表們拒絕使用如此具有攻擊性的戰術。",
+        "D. 他對於外國代表的無禮行為感到非常憤怒。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：外國代表一定對他咄咄逼人的策略感到被侮辱了。原句：The foreign delegates must have been insulted by his aggressive tactics."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Your legal team has been pushing for a more lucrative compensation package.",
+      "options": [
+        "A. The package was delivered to the front door.",
+        "B. We believe our expertise justifies the higher rate.",
+        "C. Pushing heavy objects can cause back injuries.",
+        "D. The legal department is located on the third floor."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：您的法務團隊一直在爭取更優渥（利潤豐厚）的薪酬方案。原句：Your legal team has been pushing for a more lucrative compensation package. 選項 B「我們相信我們的專業知識配得上更高的費率」最適合。"
     }
   ],
   "boss": [
@@ -16915,6 +17757,282 @@
       ],
       "ans": "B",
       "explain": "文中明確寫出 to have collapsed completely due to the ongoing embargo (由於持續的禁運而完全崩潰)。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你的奉獻今天正在被表彰。",
+      "ans": "YOUR COMMITMENT IS BEING RECOGNIZED TODAY",
+      "speak": "your commitment is being recognized today"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她一定是無意中聽到了我們的對話。",
+      "ans": "SHE MUST HAVE OVERHEARD OUR CONVERSATION",
+      "speak": "she must have overheard our conversation"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：這項指令目前正在被修改。",
+      "ans": "THE DIRECTIVE IS BEING MODIFIED CURRENTLY",
+      "speak": "the directive is being modified currently"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們一直在討論好幾個小時了。",
+      "ans": "THEY HAVE BEEN DELIBERATING FOR HOURS",
+      "speak": "they have been deliberating for hours"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他一定是打算幫忙。",
+      "ans": "HE MUST HAVE INTENDED TO HELP",
+      "speak": "he must have intended to help"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：麥克風正在被遠端靜音。",
+      "ans": "THE MICROPHONE IS BEING MUTED REMOTELY",
+      "speak": "the microphone is being muted remotely"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：我們一直在推測他的動機。",
+      "ans": "WE HAVE BEEN PRESUMING HIS MOTIVES",
+      "speak": "we have been presuming his motives"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：她一定是推斷出了真相。",
+      "ans": "SHE MUST HAVE DEDUCED THE TRUTH",
+      "speak": "she must have deduced the truth"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：這個環節今天正在被主持。",
+      "ans": "THE SESSION IS BEING MODERATED TODAY",
+      "speak": "the session is being moderated today"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：他們一直表現出值得讚賞的行為。",
+      "ans": "THEY HAVE BEEN DISPLAYING COMMENDABLE BEHAVIOR",
+      "speak": "they have been displaying commendable behavior"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：規則正不經意地被違反。",
+      "ans": "THE RULES ARE BEING INADVERTENTLY VIOLATED",
+      "speak": "the rules are being inadvertently violated"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "desc": "請唸出：你一定是故意隱瞞它的。",
+      "ans": "YOU MUST HAVE DELIBERATELY CONCEALED IT",
+      "speak": "you must have deliberately concealed it"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The cleanup crews have been working tirelessly to restore power to the grid.",
+      "options": [
+        "A. 清潔人員已經完成了市區街道的垃圾清掃工作。",
+        "B. 發電廠正在努力增加電網系統的供電容量。",
+        "C. 清理小組一直不知疲倦地工作，以恢復電網的供電。",
+        "D. 由於持續的停電，工作人員被迫暫停所有的清理工作。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：清理小組一直不知疲倦地工作，以恢復電網的供電。原句：The cleanup crews have been working tirelessly to restore power to the grid."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The sudden flash flood must have caught many unaware drivers by surprise.",
+      "options": [
+        "A. Flash photography is not allowed here.",
+        "B. He was caught stealing from the store.",
+        "C. Driving at night requires more attention.",
+        "D. Absolutely, the water level rose incredibly fast."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：突如其來的山洪爆發一定讓許多毫無防備的駕駛措手不及。原句：The sudden flash flood must have caught many unaware drivers by surprise. 選項 D「絕對是，水位上升得快得難以置信」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "A strict curfew is highly likely to be imposed on the flooded regions.",
+      "options": [
+        "A. 極大可能會對淹水地區實施嚴格的宵禁。",
+        "B. 淹水地區的居民已經被要求立即撤離。",
+        "C. 警察正在淹水災區實施嚴格的交通管制。",
+        "D. 政府決定取消災區原本實施的夜間宵禁。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：極大可能會對淹水地區實施嚴格的宵禁。原句：A strict curfew is highly likely to be imposed on the flooded regions."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "They have been striving to master the core concepts of the new marketing strategy.",
+      "options": [
+        "A. The new market is located downtown.",
+        "B. It is a steep learning curve, but they will get there.",
+        "C. Mastering a musical instrument takes years.",
+        "D. The strategy was completely abandoned."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：他們一直努力掌握新行銷策略的核心概念。原句：They have been striving to master the core concepts of the new marketing strategy. 選項 B「這是一段陡峭的學習曲線（學習難度高），但他們會達成的」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The attendees must have been overwhelmed by the vast amount of technical jargon.",
+      "options": [
+        "A. 參加者抱怨會議中缺乏具體的技術細節。",
+        "B. 技術人員成功地向參加者解釋了複雜的術語。",
+        "C. 參加者一定是被大量專業的技術術語給壓垮（搞得不知所措）了。",
+        "D. 講者刻意減少了簡報中專業術語的使用量。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：參加者一定是被大量專業的技術術語給壓垮（搞得不知所措）了。原句：The attendees must have been overwhelmed by the vast amount of technical jargon."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The entire certification process is designed to be completed entirely online.",
+      "options": [
+        "A. I need to print out the physical certificate.",
+        "B. Online gaming has become very popular.",
+        "C. The designer won an award for the website.",
+        "D. That will certainly make it convenient for remote employees."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：整個認證流程被設計成完全在線上完成。原句：The entire certification process is designed to be completed entirely online. 選項 D「這肯定會為遠端員工帶來便利」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "Art historians have been disputing the true authenticity of this portrait.",
+      "options": [
+        "A. 藝術史學家們一直在爭論這幅肖像畫的真實性（真偽）。",
+        "B. 歷史學家們已經證實這幅肖像畫是偽造的。",
+        "C. 這幅肖像畫背後的歷史故事讓許多學者感到著迷。",
+        "D. 博物館決定無限期展出這幅備受爭議的畫作。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：藝術史學家們一直在爭論這幅肖像畫的真實性（真偽）。原句：Art historians have been disputing the true authenticity of this portrait."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The original colors must have faded significantly due to prolonged sunlight exposure.",
+      "options": [
+        "A. Sunlight is a great natural source of Vitamin D.",
+        "B. Yes, the ultraviolet rays can be incredibly damaging to pigments.",
+        "C. Colorful paintings are usually more expensive.",
+        "D. The gallery stays open until the sun goes down."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：由於長時間的陽光照射，原本的顏色一定已經明顯褪色了。原句：The original colors must have faded significantly due to prolonged sunlight exposure. 選項 B「對，紫外線對顏料的破壞力極強」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The newly discovered relics are slated to be exhibited in the grand hall.",
+      "options": [
+        "A. 新發現的遺跡將被永久保存在地下的儲藏室中。",
+        "B. 博物館大廳正在進行翻修以容納更多遊客。",
+        "C. 新發現的文物預計將在大廳進行展出。",
+        "D. 考古團隊在大廳底下發掘出了新的古物。"
+      ],
+      "ans": "C",
+      "explain": "正確答案是 C。句意：新發現的文物預計將在大廳展出。原句：The newly discovered relics are slated to be exhibited in the grand hall."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The final draft of the contract is supposed to be signed before midnight.",
+      "options": [
+        "A. I will draft a letter to the manager soon.",
+        "B. Midnight is the perfect time for stargazing.",
+        "C. The contract is full of grammatical errors.",
+        "D. Then we'd better review the terms one last time."
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。句意：合約的最終草案理應在午夜前簽署。原句：The final draft of the contract is supposed to be signed before midnight. 選項 D「那我們最好最後再檢查一次條款」最適合。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The counterpart must have realized that we hold the upper hand in this deal.",
+      "options": [
+        "A. 對方一定意識到了我們在這筆交易中佔了上風。",
+        "B. 我們的對手拒絕承認我們提出的所有交易條件。",
+        "C. 談判對手終於明白他們在這筆交易中握有優勢。",
+        "D. 我們必須讓對方相信這是一場公平的交易。"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。句意：對方（談判對手）一定意識到了我們在這筆交易中佔了上風。原句：The counterpart must have realized that we hold the upper hand in this deal."
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "A mutually beneficial alliance is believed to be favored by the board.",
+      "options": [
+        "A. The blackboard needs to be wiped clean.",
+        "B. That makes sense; a win-win scenario reduces long-term risks.",
+        "C. I don't believe in alien alliances at all.",
+        "D. They favored a much more aggressive approach last year."
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。句意：董事會據信傾向於建立互利互惠的聯盟。原句：A mutually beneficial alliance is believed to be favored by the board. 選項 B「這很合理；雙贏的局面能降低長期風險」最適合。"
     }
   ]
 }

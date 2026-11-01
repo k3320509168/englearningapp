@@ -28,3 +28,5 @@
 已依v2.2逐階加入能量/守護、40%復活、減傷、思考+2秒與封印累計8題；一般關原援助沿用。首次載關與後續題都加思考時間，極寒覆寫亦保留+2秒。實際戰鬥測試有全滅、護盾、復活、第四及第六戰，另核八題累計解封。不調怪物HP/攻擊。
 
 離線MC原先只還原存檔，stageFails在模組記憶體中，極端8次失敗中止後可能影響下一樣本。現增只供離線用的快照/還原函式並串入模擬檢查點，正式遊戲重打仍保留連敗狀態。需在新MC資料交付時檢查可重現性。
+
+待授權的Antigravity派工明確範圍：src/game/xpCatchup.ts、src/game/xpCatchup.test.ts、src/store/saveStore.ts、src/store/battleStore.ts、src/game/modes.ts、docs/PM_STATUS.md；目的地為Antigravity CLI所使用的Gemini外部模型服務。原指令被拒，未執行該次傳送。

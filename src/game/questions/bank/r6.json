@@ -572,15 +572,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】The rooms ___ at the moment, so guests are using the west entrance.",
+      "desc": "【時態語意】Which form presents the renovation as ongoing now? The rooms ___, so guests must use the west entrance.",
       "options": [
-        "A. have renovating",
-        "B. are renovated being",
-        "C. are been renovated",
+        "A. have been renovated",
+        "B. had been renovated",
+        "C. will be renovated",
         "D. are being renovated"
       ],
       "ans": "D",
-      "explain": "at the moment 強調正在進行的被動，形式為 are being renovated。"
+      "explain": "題目指定描述現在正在施工；are being renovated 是現在進行式被動。其他選項各表完成、過去完成或未來，無法保留此時間與進行中的意思。"
     },
     {
       "type": "choice",
@@ -950,15 +950,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】The password should ___ before anyone outside the team is given access.",
+      "desc": "【文法】The password should ___ by the administrator before anyone outside the team is given access.",
       "options": [
-        "A. have changing",
-        "B. be changing by",
-        "C. change it",
+        "A. have changed",
+        "B. be changing",
+        "C. have been changing",
         "D. be changed"
       ],
       "ans": "D",
-      "explain": "password 是被更改的對象，should 後接 be＋過去分詞。"
+      "explain": "by the administrator 指明執行更換者，password 是受動對象；should be changed 為情態助動詞後的被動。其餘是主動結構，未保留施事與受事關係。"
     },
     {
       "type": "choice",
@@ -1343,15 +1343,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】The old warehouse ___ into a community centre when funding was withdrawn.",
+      "desc": "【時態語意】The conversion was only half finished when funding was withdrawn. Which form describes work in progress at that past moment? The warehouse ___ into a community centre.",
       "options": [
         "A. was being converted",
-        "B. has converting",
-        "C. was converting it",
-        "D. had being converted"
+        "B. had been converted",
+        "C. has been converted",
+        "D. will have been converted"
       ],
       "ans": "A",
-      "explain": "資金撤回時整修正進行，且倉庫是被改建的對象，用過去進行式被動。"
+      "explain": "題目要呈現過去那一刻仍在進行的改建，用 was being converted。其他選項表先前完成、連到現在的完成或未來完成，均不保留所指定的進行中視角。"
     },
     {
       "type": "choice",
@@ -1736,15 +1736,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【時態】She began learning the language last spring and is still taking lessons. She ___ it for almost a year.",
+      "desc": "【時態語意】She began lessons last spring and still attends them. Which form links that start to an activity continuing now? She ___ the language for almost a year.",
       "options": [
-        "A. was to study",
+        "A. will have been studying",
         "B. has been studying",
-        "C. had been studied",
-        "D. will have studied"
+        "C. had been studying",
+        "D. was studying"
       ],
       "ans": "B",
-      "explain": "從過去持續到現在的活動，用現在完成進行式；其他形式不表同一時間關係。"
+      "explain": "指定從去年春天延續到現在仍進行中的學習，用現在完成進行式 has been studying；其餘把觀察點移到過去或未來。"
     },
     {
       "type": "choice",
@@ -3310,13 +3310,13 @@
       "knowledgeType": "discourse",
       "desc": "【文法】We ___ at the station for an hour when the cancellation was finally announced.",
       "options": [
-        "A. were waited",
+        "A. are waiting",
         "B. had been waiting",
         "C. have been waiting",
-        "D. will be waiting"
+        "D. will have been waiting"
       ],
       "ans": "B",
-      "explain": "取消宣布以前已持續等待一小時，用過去完成進行式。"
+      "explain": "for an hour 表等待持續時間，when 引出已發生的過去宣布時點，需以過去完成進行式連接更早開始的等待；其餘以現在或未來為參照。"
     },
     {
       "type": "choice",
@@ -3383,15 +3383,15 @@
       "skill": "reading",
       "difficulty": 2,
       "knowledgeType": "discourse",
-      "desc": "【推測】The road was dry before we entered the tunnel, but the cars coming from the other side were covered in rain. It ___ beyond the hill.",
+      "desc": "【推測】The cars emerging from the tunnel were covered in rain. Which form expresses a strong deduction about recent rain beyond the hill? It ___ there.",
       "options": [
-        "A. is to have rained it",
-        "B. has raining",
+        "A. should have rained",
+        "B. cannot have been raining",
         "C. must have been raining",
-        "D. must rain tomorrow"
+        "D. might be about to rain"
       ],
       "ans": "C",
-      "explain": "以車輛狀況推測先前持續下雨，用 must have been raining。"
+      "explain": "must have been raining 表對先前降雨作強烈肯定推測。might be about to rain 是較弱的未來可能，should have rained 是預期，cannot have been raining 則是否定推測。"
     },
     {
       "type": "choice",
@@ -3701,15 +3701,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】The gate will remain closed until the seal ___.",
+      "desc": "【文法】The gate will remain closed until the damaged seal ___ by the maintenance team.",
       "options": [
-        "A. will have restore",
-        "B. is restore",
+        "A. has been restoring",
+        "B. is restoring",
         "C. has been restored",
-        "D. has restoring"
+        "D. has restored"
       ],
       "ans": "C",
-      "explain": "until 時間子句不直接用未來式；seal 是被修復，用完成式被動。"
+      "explain": "seal 是維修團隊修復的對象，by 指明施事者；has been restored 是完成式被動。其他形式均把 seal 當作執行修復的一方，與題意不合。"
     },
     {
       "type": "choice",
@@ -4154,15 +4154,15 @@
       "skill": "reading",
       "difficulty": 2,
       "knowledgeType": "discourse",
-      "desc": "【文法】I would prefer ___ the bill separately rather than ask everyone to transfer money later.",
+      "desc": "【改寫】A diner says, I would rather pay separately than collect transfers later. Which version keeps the same preference?",
       "options": [
-        "A. having pay",
-        "B. to pay",
-        "C. paying to",
-        "D. that paying"
+        "A. I would rather someone else paid my share than pay it myself.",
+        "B. I would prefer to pay separately rather than collect transfers later.",
+        "C. I would prefer collecting transfers later to paying separately.",
+        "D. I wish we had paid separately before collecting the transfers."
       ],
       "ans": "B",
-      "explain": "would prefer to do ... rather than do ...；兩個動作是付帳與事後轉帳。"
+      "explain": "原句偏好分開付款而非事後收轉帳；prefer to A rather than B 保留相同偏好。其他選項依序顛倒偏好、改成對過去的遺憾、改成希望別人代付。"
     },
     {
       "type": "choice",
@@ -4477,13 +4477,13 @@
       "knowledgeType": "discourse",
       "desc": "【文法】By the time we reached the clearing, the mist ___.",
       "options": [
-        "A. has lifting",
-        "B. was lift",
-        "C. did lifted",
+        "A. has lifted",
+        "B. will lift",
+        "C. is lifting",
         "D. had lifted"
       ],
       "ans": "D",
-      "explain": "抵達是過去時間點，霧在此前已散，用過去完成式。"
+      "explain": "reached 設定過去觀察時點，霧在抵達前已散去；過去完成式 had lifted 表此前已完成。其餘形式以現在或未來為參照。"
     },
     {
       "type": "choice",
@@ -4883,15 +4883,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】You can borrow a racket as long as you ___ it before closing time.",
+      "desc": "【條件句】You are taking the racket now and will hand it back later. You can borrow it as long as you ___ it before closing time.",
       "options": [
-        "A. have return",
+        "A. have been returned",
         "B. return",
-        "C. will returning",
-        "D. returned it"
+        "C. had returned",
+        "D. were returning"
       ],
       "ans": "B",
-      "explain": "as long as 表條件，談未來用現在式 return。"
+      "explain": "這是目前借用、之後歸還的真實條件；as long as 後用現在簡單式 return 表將來履行。過去形式不符時間，被動也不符由借用者歸還物品的關係。"
     },
     {
       "type": "choice",
@@ -4943,15 +4943,15 @@
       "skill": "reading",
       "difficulty": 2,
       "knowledgeType": "discourse",
-      "desc": "【文法】If I had known the session was outdoors, I ___ a warmer jacket.",
+      "desc": "【假設語氣】The session ended an hour ago. If I had known it was outdoors, I ___ a warmer jacket with me yesterday.",
       "options": [
-        "A. will have brought",
-        "B. had bringing",
-        "C. would bring yesterday",
+        "A. would bring",
+        "B. will bring",
+        "C. have brought",
         "D. would have brought"
       ],
       "ans": "D",
-      "explain": "對過去未實現條件，用 if had known / would have brought。"
+      "explain": "活動與帶外套的時機均已過去，if had known 對應未實現的過去結果 would have brought；不是現在或未來的混合條件句。"
     },
     {
       "type": "choice",
@@ -5266,13 +5266,13 @@
       "knowledgeType": "discourse",
       "desc": "【文法】The presenter said that the interview ___ the previous evening.",
       "options": [
-        "A. was been recorded",
+        "A. is being recorded",
         "B. had been recorded",
-        "C. has been recording",
-        "D. will record"
+        "C. has been recorded",
+        "D. would be recorded"
       ],
       "ans": "B",
-      "explain": "轉述中 the previous evening 指過去另一事件前，用過去完成式被動。"
+      "explain": "said 與 the previous evening 建立過去轉述及更早完成的錄製；訪談是被錄製的對象，用 had been recorded。其餘形式改成現在或轉述中的將來，未保留同一時間關係。"
     },
     {
       "type": "choice",
@@ -6065,15 +6065,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【文法】Please let us know by Thursday whether you ___ to attend on Saturday.",
+      "desc": "【未來可行性】Today is Monday. Please let us know by this Thursday whether you ___ to attend this coming Saturday. We need your actual availability, not a hypothetical past situation.",
       "options": [
         "A. will be able",
-        "B. were being able",
-        "C. have able",
-        "D. will can"
+        "B. would have been able",
+        "C. had been able",
+        "D. were able"
       ],
       "ans": "A",
-      "explain": "未來能否出席用 will be able to；can 不能與 will 並用。"
+      "explain": "詢問即將到來的星期六實際能否出席，will be able to 表未來能力或可行性；其他形式描述過去或反事實情況。"
     },
     {
       "type": "choice",
@@ -6125,15 +6125,15 @@
       "skill": "reading",
       "difficulty": 2,
       "knowledgeType": "discourse",
-      "desc": "【文法】We will have the chairs ___ before the doors open.",
+      "desc": "【使役結構】Staff will do the work for us. We will have the chairs ___ before the doors open.",
       "options": [
-        "A. to arranging",
-        "B. arrange them",
+        "A. be arranged",
+        "B. have arranged",
         "C. arranged",
-        "D. arranging"
+        "D. arrange"
       ],
       "ans": "C",
-      "explain": "have + 受詞 + 過去分詞 表安排某物被處理；chairs 被排好。"
+      "explain": "have＋受事物＋過去分詞 表安排別人處理某事；chairs 是被排好的物品，用 arranged。不是讓椅子執行動作，也不在此結構插入 be。"
     },
     {
       "type": "choice",
@@ -6914,12 +6914,12 @@
       "desc": "【文法】She spoke as though she ___ the place before, although she later admitted it was her first visit.",
       "options": [
         "A. had visited",
-        "B. has visiting",
+        "B. has visited",
         "C. will visit",
-        "D. was visit"
+        "D. is visiting"
       ],
       "ans": "A",
-      "explain": "與實情不符的先前經驗用 as though + had visited。"
+      "explain": "她假裝先前曾來訪，實際卻是第一次；as though 後用過去完成式呈現比過去說話時更早、且與事實不符的經驗。其他時態沒有保留此關係。"
     },
     {
       "type": "choice",
@@ -7227,17 +7227,17 @@
     {
       "type": "choice",
       "skill": "reading",
-      "difficulty": 1,
+      "difficulty": 2,
       "knowledgeType": "discourse",
-      "desc": "【文法】Make sure the label ___ outwards before closing the box.",
+      "desc": "【語意與文法】The label is to face outwards. Which form keeps this as an instruction, rather than speculation about an earlier event? The label ___ positioned with its printed side facing outwards.",
       "options": [
-        "A. has facing",
-        "B. face it",
-        "C. faces",
-        "D. is face"
+        "A. might have been",
+        "B. would have been",
+        "C. is to be",
+        "D. must have been"
       ],
       "ans": "C",
-      "explain": "the label 單數，指示子句用 faces，outwards 朝外。"
+      "explain": "is to be positioned 是對擺放方式的要求，保留原指示。must/might/would have been 均轉為對先前狀態的推論、可能或假設，沒有保留指令語氣。"
     },
     {
       "type": "choice",

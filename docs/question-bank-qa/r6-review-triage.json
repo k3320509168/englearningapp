@@ -12,8 +12,8 @@
       "indexAtReview": 39,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[39]` | `【文法】Two of the galleries ___ this month,` | 干擾選項設計不良 | 干擾項 `A. have renovating`、`B. are renovated being`、`C. are been renovated` 皆為明顯不合英文語法的假英文，玩家無須理解進行式被動即可秒刪。 | 將干擾項改為具迷惑性的真實語法形式，例如 `are renovating`、`have renovated`、`were being renovated`。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/002-work-culture.mjs",
       "reportedPrefix": "【文法】Two of the galleries ___ this month,",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -33,15 +33,30 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】The gallery hopes to ___ a wider audience without changing its focus on local artists.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 41,
+          "hits": [
+            "have renovating",
+            "are renovated being",
+            "are been renovated"
+          ],
+          "desc": "【文法】The rooms ___ at the moment, so guests are using the west entrance."
+        }
+      ],
+      "resolvedActualIndex": 41,
+      "resolvedKey": "choice|【時態語意】Which form presents the renovation as ongoing now? The rooms ___, so guests must use the west entrance.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
       "indexAtReview": 69,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[69]` | `【文法】The lock is stiff; it may need ___ b` | 干擾選項設計不良 | 干擾項 `A. have changing`、`B. be changing by`、`C. change it` 語法結構明顯破碎，缺乏 B2+ 鑑別度。 | 改為 `to change`、`changed`、`to be changing` 等常見學習者易混淆結構。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/003-technology-decisions.mjs",
       "reportedPrefix": "【文法】The lock is stiff; it may need ___ b",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -61,15 +76,30 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】The two devices are fully ___, so the same charger can be used for both.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 70,
+          "hits": [
+            "have changing",
+            "be changing by",
+            "change it"
+          ],
+          "desc": "【文法】The password should ___ before anyone outside the team is given access."
+        }
+      ],
+      "resolvedActualIndex": 70,
+      "resolvedKey": "choice|【文法】The password should ___ by the administrator before anyone outside the team is given access.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
       "indexAtReview": 99,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[99]` | `【文法】The warehouse ___ into flats before ` | 干擾選項設計不良 | 干擾項 `B. has converting`、`C. was converting it`、`D. had being converted` 均為假英文或明顯多受詞。 | 改為 `was converted`、`has been converted`、`had converted` 以測驗過去完成被動與主動／時態之辨析。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/004-environment-urban.mjs",
       "reportedPrefix": "【文法】The warehouse ___ into flats before ",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -89,15 +119,30 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】The council introduced measures to ___ the impact of construction noise on residents.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 100,
+          "hits": [
+            "has converting",
+            "was converting it",
+            "had being converted"
+          ],
+          "desc": "【文法】The old warehouse ___ into a community centre when funding was withdrawn."
+        }
+      ],
+      "resolvedActualIndex": 100,
+      "resolvedKey": "choice|【時態語意】The conversion was only half finished when funding was withdrawn. Which form describes work in progress at that past moment? The warehouse ___ into a community centre.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
       "indexAtReview": 129,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[129]` | `【文法】Had the samples been labelled proper` | 干擾選項設計不良 | 題幹為第三類假設語氣倒裝，但干擾項 `A. was to study`、`C. had been studied` 與主詞 `the team` 搭配明顯不合理。 | 改為 `would compare`、`would have been compared`、`had compared` 等常見假設語氣混淆項。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/005-learning-education.mjs",
       "reportedPrefix": "【文法】Had the samples been labelled proper",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -117,7 +162,21 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】Students are encouraged to ___ on the feedback before submitting a revised draft.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 130,
+          "hits": [
+            "was to study",
+            "had been studied"
+          ],
+          "desc": "【時態】She began learning the language last spring and is still taking lessons. She ___ it for almost a year."
+        }
+      ],
+      "resolvedActualIndex": 130,
+      "resolvedKey": "choice|【時態語意】She began lessons last spring and still attends them. Which form links that start to an activity continuing now? She ___ the language for almost a year.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
@@ -152,8 +211,8 @@
       "indexAtReview": 250,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[250]` | `【文法】Had the train not been delayed, we _` | 干擾選項設計不良 | 干擾項 `A. were waited`、`C. have not waited`、`D. will not wait` 與 `Had ... not been` 倒裝結構差距過大，且 `were waited` 為假被動。 | 改為 `would not wait`、`had not been waiting`、`would not have waited`（調整語境區分進行與完成）。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/009-travel-logistics.mjs",
       "reportedPrefix": "【文法】Had the train not been delayed, we _",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -173,15 +232,29 @@
       "candidateKeyAtReportedIndex": "choice|【文法】We ___ at the station for an hour when the cancellation was finally announced.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 250,
+          "hits": [
+            "were waited",
+            "were waited"
+          ],
+          "desc": "【文法】We ___ at the station for an hour when the cancellation was finally announced."
+        }
+      ],
+      "resolvedActualIndex": 250,
+      "resolvedKey": "choice|【文法】We ___ at the station for an hour when the cancellation was finally announced.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
       "indexAtReview": 255,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[255]` | `【文法】The pavements are dry, so it ___ hea` | 干擾選項設計不良 | 干擾項 `A. is to have rained it`、`B. has raining`、`D. must rain tomorrow` 皆為不合語法或時態荒謬的假選項。 | 改為 `must have been raining`、`should not have rained`、`could have rained` 以真正考驗情態助動詞推測。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/009-travel-logistics.mjs",
       "reportedPrefix": "【文法】The pavements are dry, so it ___ hea",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -201,7 +274,23 @@
       "candidateKeyAtReportedIndex": "choice|【推測】The road was dry before we entered the tunnel, but the cars coming from the other side were covered in rain. It ___ beyond the hill.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 255,
+          "hits": [
+            "is to have rained it",
+            "has raining",
+            "must rain tomorrow",
+            "must have been raining"
+          ],
+          "desc": "【推測】The road was dry before we entered the tunnel, but the cars coming from the other side were covered in rain. It ___ beyond the hill."
+        }
+      ],
+      "resolvedActualIndex": 255,
+      "resolvedKey": "choice|【推測】The cars emerging from the tunnel were covered in rain. Which form expresses a strong deduction about recent rain beyond the hill? It ___ there.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
@@ -236,8 +325,8 @@
       "indexAtReview": 279,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[279]` | `【文法】By next autumn, the old theatre ___ ` | 干擾選項設計不良 | 干擾項 `A. will have restore`、`B. is restore`、`D. has restoring` 全數違反基本助動詞＋分詞規則。 | 改為 `will be restoring`、`will have restored`、`is being restored` 等真實語法干擾項。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/010-adventure-promises.mjs",
       "reportedPrefix": "【文法】By next autumn, the old theatre ___ ",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -257,7 +346,22 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】Which verb means to comply with the terms of a truce? The two camps agreed to ___ the truce.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 280,
+          "hits": [
+            "will have restore",
+            "is restore",
+            "has restoring"
+          ],
+          "desc": "【文法】The gate will remain closed until the seal ___."
+        }
+      ],
+      "resolvedActualIndex": 280,
+      "resolvedKey": "choice|【文法】The gate will remain closed until the damaged seal ___ by the maintenance team.|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
@@ -285,7 +389,18 @@
       "candidateKeyAtReportedIndex": "choice|【推測】The fire was out and the camp was empty, but the kettle was still warm. The travellers ___ recently.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 285,
+          "hits": [
+            "must have left",
+            "must have left"
+          ],
+          "desc": "【推測】The fire was out and the camp was empty, but the kettle was still warm. The travellers ___ recently."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -308,7 +423,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：承諾恢復自由而非給予特權|the promise restores a freedom rather than granting privilege",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -349,8 +465,8 @@
       "indexAtReview": 313,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[313]` | `【文法】The policy prevents staff from ___ f` | 干擾選項設計不良 | 干擾項 `A. having pay`、`C. paying to`、`D. that paying` 皆為明顯假英文。 | 改為 `to pay`、`pay`、`being paid` 等常見介系詞後動名詞混淆項。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/011-food-hospitality.mjs",
       "reportedPrefix": "【文法】The policy prevents staff from ___ f",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -370,7 +486,23 @@
       "candidateKeyAtReportedIndex": "choice|【語意】The meal was filling without being heavy. What does the reviewer mean?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 314,
+          "hits": [
+            "having pay",
+            "paying to",
+            "that paying",
+            "to pay"
+          ],
+          "desc": "【文法】I would prefer ___ the bill separately rather than ask everyone to transfer money later."
+        }
+      ],
+      "resolvedActualIndex": 314,
+      "resolvedKey": "choice|【改寫】A diner says, I would rather pay separately than collect transfers later. Which version keeps the same preference?|",
+      "decision": "以唯一選項原文定位並人工核對實際語境；不沿用報告虛構題幹。保留既定題型與正答概念，改用可成立的英文干擾形式；可能多解的時態題明訂所要呈現的時間/進行視角。"
     },
     {
       "section": "normal",
@@ -392,15 +524,16 @@
       "candidateKeyAtReportedIndex": "fill|填空題：P _ R _ I _ N (分給一人食用的一份食物)|portion",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 339,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[339]` | `【文法】Hardly ___ the curtain when the aud` | 干擾選項設計不良 | 干擾項 `A. has lifting`、`B. was lift`、`C. did lifted` 全為助動詞搭配錯誤的假英文。 | 改為 `the stagehand had lifted`、`did the stagehand lift`、`was the stagehand lifting` 以考驗 `Hardly ... when` 過去完成倒裝。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/012-observation-nature.mjs",
       "reportedPrefix": "【文法】Hardly ___ the curtain when the aud",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -420,7 +553,22 @@
       "candidateKeyAtReportedIndex": "choice|【文法】By the time we reached the clearing, the mist ___.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 339,
+          "hits": [
+            "has lifting",
+            "was lift",
+            "did lifted"
+          ],
+          "desc": "【文法】By the time we reached the clearing, the mist ___."
+        }
+      ],
+      "resolvedActualIndex": 339,
+      "resolvedKey": "choice|【文法】By the time we reached the clearing, the mist ___.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -477,7 +625,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：推測應與觀察分開|a guess should be kept separate from an observation",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -500,7 +649,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：步道沿河而非走直線|the path follows the river rather than a straight line",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -522,7 +672,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：腳踩在地面留下的印痕（F 開頭，9 個字母）|footprint",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -544,15 +695,16 @@
       "candidateKeyAtReportedIndex": "fill|填空題：H A B _ T A T (某種生物自然生活的環境)|habitat",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 369,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[369]` | `【文法】The guide asked that everyone ___ to` | 干擾選項設計不良 | 干擾項 `A. have return`、`C. will returning`、`D. returned it` 皆為不合語法或多餘代名詞的假選項。 | 改為 `returns`、`returned`、`to return` 以真正測驗要求動詞後之假設語氣原形動詞。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/013-leisure-teamplay.mjs",
       "reportedPrefix": "【文法】The guide asked that everyone ___ to",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -572,15 +724,30 @@
       "candidateKeyAtReportedIndex": "choice|【搭配詞】Which expression means to stop playing fairly because the result seems impossible to change? The team must not ___ before the final whistle.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 370,
+          "hits": [
+            "have return",
+            "will returning",
+            "returned it"
+          ],
+          "desc": "【文法】You can borrow a racket as long as you ___ it before closing time."
+        }
+      ],
+      "resolvedActualIndex": 370,
+      "resolvedKey": "choice|【條件句】You are taking the racket now and will hand it back later. You can borrow it as long as you ___ it before closing time.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
       "indexAtReview": 373,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[373]` | `【文法】If we ___ a torch, the last stretch ` | 干擾選項設計不良 | 干擾項 `B. had bringing`、`C. would bring yesterday` 為明顯假英文。 | 改為 `brought`、`have brought`、`would have brought`。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/013-leisure-teamplay.mjs",
       "reportedPrefix": "【文法】If we ___ a torch, the last stretch ",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -600,7 +767,22 @@
       "candidateKeyAtReportedIndex": "choice|【短文】A club charges an entry fee but lends equipment at no extra cost. A visitor assumes that borrowing a racket makes the whole visit free. What has been confused?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 374,
+          "hits": [
+            "had bringing",
+            "would bring yesterday",
+            "would have brought"
+          ],
+          "desc": "【文法】If I had known the session was outdoors, I ___ a warmer jacket."
+        }
+      ],
+      "resolvedActualIndex": 374,
+      "resolvedKey": "choice|【假設語氣】The session ended an hour ago. If I had known it was outdoors, I ___ a warmer jacket with me yesterday.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -623,7 +805,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：公平結果不必是相等結果|a fair result need not be an equal result",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -646,15 +829,16 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：定期練習能讓難技巧看似容易|regular practice can make a difficult skill look easy",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 398,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[398]` | `【文法】Neither the presenter nor the guests` | 干擾選項設計不良 | 干擾項 `A. was been recorded`、`C. has been recording` 語法結構明顯異常。 | 改為 `was aware`、`have been aware`、`is aware` 以考驗 `neither ... nor` 就近一致與過去時態。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/014-media-messages.mjs",
       "reportedPrefix": "【文法】Neither the presenter nor the guests",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -675,7 +859,21 @@
       "candidateKeyAtReportedIndex": "choice|🎧 聽一聽，選出最符合說話者意思的解讀|It sounds more definite in the summary than it did when he actually said it.",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 399,
+          "hits": [
+            "was been recorded",
+            "has been recording"
+          ],
+          "desc": "【文法】The presenter said that the interview ___ the previous evening."
+        }
+      ],
+      "resolvedActualIndex": 399,
+      "resolvedKey": "choice|【文法】The presenter said that the interview ___ the previous evening.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -2655,7 +2853,27 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The cupboard needs ___, but we can leave the painting until later.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 434,
+          "hits": [
+            "repair itself",
+            "to repairing"
+          ],
+          "desc": "【文法】The cupboard needs ___, but we can leave the painting until later."
+        },
+        {
+          "section": "normal",
+          "index": 704,
+          "hits": [
+            "to repair",
+            "repaired"
+          ],
+          "desc": "【文法】I would rather ___ the one I already have than buy another."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -2678,7 +2896,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：整齊外觀不證明修補有效|a tidy appearance does not prove the repair works",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2700,15 +2919,16 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：有門的收納櫃（C 開頭，8 個字母）|cupboard",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 460,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[460]` | `【文法】Were the hall larger, we ___ seat ev` | 干擾選項設計不良 | 干擾項 `B. were being able`、`C. have able`、`D. will can`（助動詞連用）全為明顯假英文。 | 改為 `can`、`will be able to`、`would have been able to`。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/016-events-volunteering.mjs",
       "reportedPrefix": "【文法】Were the hall larger, we ___ seat ev",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -2728,15 +2948,30 @@
       "candidateKeyAtReportedIndex": "choice|【文法】Please let us know by Thursday whether you ___ to attend on Saturday.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 460,
+          "hits": [
+            "were being able",
+            "have able",
+            "will can"
+          ],
+          "desc": "【文法】Please let us know by Thursday whether you ___ to attend on Saturday."
+        }
+      ],
+      "resolvedActualIndex": 460,
+      "resolvedKey": "choice|【未來可行性】Today is Monday. Please let us know by this Thursday whether you ___ to attend this coming Saturday. We need your actual availability, not a hypothetical past situation.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
       "indexAtReview": 463,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[463]` | `【文法】Only after the speakers confirmed th` | 干擾選項設計不良 | 干擾項 `A. to arranging`、`B. arrange them` 語法明顯不成立。 | 改為 `we arranged`、`had we arranged`、`we did arrange` 以測驗 `Only after` 句首倒裝。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/016-events-volunteering.mjs",
       "reportedPrefix": "【文法】Only after the speakers confirmed th",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -2756,7 +2991,21 @@
       "candidateKeyAtReportedIndex": "choice|【短文】An invitation asks guests to reply even if they cannot attend. A guest says silence will be understood as a refusal. What has the guest overlooked?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 464,
+          "hits": [
+            "to arranging",
+            "arrange them"
+          ],
+          "desc": "【文法】We will have the chairs ___ before the doors open."
+        }
+      ],
+      "resolvedActualIndex": 464,
+      "resolvedKey": "choice|【使役結構】Staff will do the work for us. We will have the chairs ___ before the doors open.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -2779,7 +3028,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出單字：可能發生而需要預作準備的情況|contingency",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2802,7 +3052,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：仍可能調整的暫定時程|a provisional timetable",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2825,7 +3076,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：願幫忙的志工未同意所有任務|a willing volunteer has not agreed to every task",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2848,7 +3100,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：預訂時段包含所需清場時間|the booking period includes the time needed for clearing up",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2898,7 +3151,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：B A _ G E (表示身份或角色的小牌子)|badge",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2920,7 +3174,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：R E G _ S T _ A T _ O N (登記參加的程序)|registration",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -2999,7 +3254,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：D I S _ L A Y (供人觀看的展品安排)|display",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3021,15 +3277,16 @@
       "candidateKeyAtReportedIndex": "fill|填空題：D O _ A T _ O N (捐出的物品或金錢)|donation",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 523,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[523]` | `【文法】Not until the archive digitised the ` | 干擾選項設計不良 | 干擾項 `B. has visiting`、`D. was visit` 為明顯假英文。 | 改為 `researchers could examine`、`could researchers examined`、`had researchers examined`。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/018-stories-encounters.mjs",
       "reportedPrefix": "【文法】Not until the archive digitised the ",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -3049,7 +3306,21 @@
       "candidateKeyAtReportedIndex": "choice|【短文】Owen put the letter in his pocket, then searched the desk for it. His sister watched without speaking until he checked the pocket. What had he apparently forgotten?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 524,
+          "hits": [
+            "has visiting",
+            "was visit"
+          ],
+          "desc": "【文法】She spoke as though she ___ the place before, although she later admitted it was her first visit."
+        }
+      ],
+      "resolvedActualIndex": 524,
+      "resolvedKey": "choice|【文法】She spoke as though she ___ the place before, although she later admitted it was her first visit.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -3129,7 +3400,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：D O O R _ T E P (房門外的階梯或門前位置)|doorstep",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3151,15 +3423,16 @@
       "candidateKeyAtReportedIndex": "fill|填空題：S _ R _ P (用來攜帶固定物品的帶子)|strap",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
       "indexAtReview": 549,
       "category": "干擾選項設計不良",
       "reviewRow": "| `normal[549]` | `【文法】The fabric is too delicate ___ to di` | 干擾選項設計不良 | 干擾項 `A. has facing`、`B. face it`、`D. is face` 全為明顯假英文。 | 改為 `to expose`、`being exposed`、`for exposing` 以考驗 `too ... to be p.p.`。 |",
-      "disposition": "pending",
-      "sourceFile": null,
+      "disposition": "fixed-after-manual-remapping",
+      "sourceFile": "scripts/question-bank/sources/019-instructions-making.mjs",
       "reportedPrefix": "【文法】The fabric is too delicate ___ to di",
       "candidateAtReportedIndex": {
         "type": "choice",
@@ -3179,7 +3452,22 @@
       "candidateKeyAtReportedIndex": "choice|【文法】Make sure the label ___ outwards before closing the box.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 549,
+          "hits": [
+            "has facing",
+            "face it",
+            "is face"
+          ],
+          "desc": "【文法】Make sure the label ___ outwards before closing the box."
+        }
+      ],
+      "resolvedActualIndex": 549,
+      "resolvedKey": "choice|【語意與文法】The label is to face outwards. Which form keeps this as an instruction, rather than speculation about an earlier event? The label ___ positioned with its printed side facing outwards.|",
+      "decision": "以唯一選項原文定位後人工核對實際語境；改善假英文干擾項，補出時序/施受/語氣限制，避免把另一個合理時態誤判錯。未沿用報告錯配題幹。"
     },
     {
       "section": "normal",
@@ -3207,7 +3495,8 @@
       "candidateKeyAtReportedIndex": "choice|【尺寸】The card must be at least ten centimetres wide. Which width meets that requirement?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3269,7 +3558,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The design allows the cover ___ without removing the pages.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 554,
+          "hits": [
+            "change itself",
+            "being change",
+            "to changing"
+          ],
+          "desc": "【文法】The design allows the cover ___ without removing the pages."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -3320,7 +3621,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：B O R _ E R (圍繞圖案或表面的邊框)|border",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3342,7 +3644,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：R I _ B _ N (用於裝飾繫結的緞帶)|ribbon",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3370,7 +3673,8 @@
       "candidateKeyAtReportedIndex": "choice|【路線】The library is between the station and the park. Starting at the station, you reach the library before the park. What comes next along that route?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3398,7 +3702,25 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The signs are being replaced so that visitors ___ find the entrance more easily.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 584,
+          "hits": [
+            "have"
+          ],
+          "desc": "【文法】The signs are being replaced so that visitors ___ find the entrance more easily."
+        },
+        {
+          "section": "normal",
+          "index": 699,
+          "hits": [
+            "have"
+          ],
+          "desc": "【文法】The size I need ___ currently out of stock."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -3421,7 +3743,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：到場時段不同於允許停留長度|the arrival window differs from the permitted length of stay",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3478,7 +3801,35 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The rehearsal will begin as soon as everyone ___ ready.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 584,
+          "hits": [
+            "have"
+          ],
+          "desc": "【文法】The signs are being replaced so that visitors ___ find the entrance more easily."
+        },
+        {
+          "section": "normal",
+          "index": 609,
+          "hits": [
+            "will being",
+            "are being",
+            "will being"
+          ],
+          "desc": "【文法】The rehearsal will begin as soon as everyone ___ ready."
+        },
+        {
+          "section": "normal",
+          "index": 699,
+          "hits": [
+            "have"
+          ],
+          "desc": "【文法】The size I need ___ currently out of stock."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -3535,7 +3886,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：熟悉結局演出時仍可新鮮|a familiar ending can still feel fresh in performance",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3557,7 +3909,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：C U R _ A I N (舞台前可開合的布幕)|curtain",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3579,7 +3932,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：P _ _ P (演出中使用的可移動道具)|prop",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3607,7 +3961,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】Would you mind ___ me know if the date changes?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 639,
+          "hits": [
+            "having let to",
+            "to let",
+            "letting"
+          ],
+          "desc": "【文法】Would you mind ___ me know if the date changes?"
+        }
+      ]
     },
     {
       "section": "normal",
@@ -3635,7 +4001,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】I would have replied sooner if your message ___ in the wrong folder.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 644,
+          "hits": [
+            "has not ending",
+            "was not end",
+            "would not end"
+          ],
+          "desc": "【文法】I would have replied sooner if your message ___ in the wrong folder."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -3658,7 +4036,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：條件式提議不應變成無條件承諾|a conditional offer should not become an unconditional promise",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -3680,7 +4059,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：把收到的訊息轉寄他人（F 開頭，7 個字母）|forward",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -7488,7 +7868,26 @@
       "candidateKeyAtReportedIndex": "choice|【文法】By the time we reached the ridge, the sun ___ behind the clouds.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 669,
+          "hits": [
+            "was disappear",
+            "has disappearing"
+          ],
+          "desc": "【文法】By the time we reached the ridge, the sun ___ behind the clouds."
+        },
+        {
+          "section": "boss",
+          "index": 53,
+          "hits": [
+            "has disappearing"
+          ],
+          "desc": "【文法】By the end of the opening chapter, the narrator ___ three times without explaining why."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -9594,7 +9993,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：S A _ P _ E (供檢查品質或特徵的樣品)|sample",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11677,7 +12077,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出單字：協助理解或解開問題的線索|clue",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11729,7 +12130,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：解釋仍未交代多出那杯|the explanation leaves the extra cup unaccounted for",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11751,7 +12153,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：K E Y _ O L E (供鑰匙插入的鎖孔)|keyhole",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11773,7 +12176,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：E N _ E L _ P E (盛放信件文件的封套)|envelope",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11801,7 +12205,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】You cannot move the piece until the previous player ___ their turn.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 764,
+          "hits": [
+            "will finishing",
+            "have finish",
+            "is finish"
+          ],
+          "desc": "【文法】You cannot move the piece until the previous player ___ their turn."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -11852,7 +12268,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：遊戲中用以記數或標位置的小物件（C 開頭，7 個字母）|counter",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11902,7 +12319,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：D _ _ K (供遊戲使用的一副牌)|deck",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11924,7 +12342,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：O B _ E _ T _ V E (希望達成的目標)|objective",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -11952,7 +12371,20 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The interviewer asked me where I ___ when the old theatre closed.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 789,
+          "hits": [
+            "did living",
+            "have live",
+            "am live",
+            "was living"
+          ],
+          "desc": "【文法】The interviewer asked me where I ___ when the old theatre closed."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -11980,7 +12412,8 @@
       "candidateKeyAtReportedIndex": "choice|【語意】The speaker remembers the journey clearly but cannot recall the exact date. What is uncertain?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -12008,7 +12441,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】I remember ___ the door, but I cannot remember who opened it.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 794,
+          "hits": [
+            "having knock on",
+            "knock on",
+            "to knock on"
+          ],
+          "desc": "【文法】I remember ___ the door, but I cannot remember who opened it."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -12036,7 +12481,8 @@
       "candidateKeyAtReportedIndex": "choice|【語用】I can tell you what it felt like, though I cannot tell you exactly how long it lasted. What distinction is made?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -12059,7 +12505,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出單字：透過提問蒐集想法或經驗的訪談|interview",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -12082,7 +12529,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：停頓可能反映選擇透露什麼|a pause may reflect a choice about what to reveal",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -12132,7 +12580,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：N A _ R _ T E (以連貫方式講述事件)|narrate",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14043,7 +14492,20 @@
       "candidateKeyAtReportedIndex": "choice|【語意】The announcement was audible, but I could not make out the words. What was the problem?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 820,
+          "hits": [
+            "not would",
+            "was not to being",
+            "did not to",
+            "would not"
+          ],
+          "desc": "【文法】We closed the window so that the music ___ disturb the neighbours."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -14071,7 +14533,18 @@
       "candidateKeyAtReportedIndex": "choice|【指涉】The bell rang after the choir finished, and its sound filled the hall. What does its refer to?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 823,
+          "hits": [
+            "we did open",
+            "did we opened"
+          ],
+          "desc": "【文法】Hardly ___ the door when the alarm began to ring."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -14094,7 +14567,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：聲音清楚但字詞不熟悉|the sound was clear but the words were unfamiliar",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14117,7 +14591,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：安靜房間不一定完全無聲|a quiet room is not necessarily a silent room",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14167,7 +14642,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：W H I _ P E R (刻意用很小的氣聲說話)|whisper",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14195,7 +14671,17 @@
       "candidateKeyAtReportedIndex": "choice|【文法】If we had checked the opening hours, we ___ outside a locked door now.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 849,
+          "hits": [
+            "would not have been stand"
+          ],
+          "desc": "【文法】If we had checked the opening hours, we ___ outside a locked door now."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -14218,7 +14704,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：應先確認備選再取消原預約|we should confirm the alternative before cancelling the booking",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14241,7 +14728,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：願意試試與作固定承諾不同|being willing to try is different from making a regular commitment",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -14331,7 +14819,18 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The boots need ___ before they are comfortable enough for a long walk.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 883,
+          "hits": [
+            "to breaking in",
+            "to have break in"
+          ],
+          "desc": "【文法】The boots need ___ before they are comfortable enough for a long walk."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -14354,7 +14853,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：看起來較老不等於實際年齡較大|looking older is not the same as being older",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14382,7 +14882,17 @@
       "candidateKeyAtReportedIndex": "choice|【文法】The museum opened ten years ago. By the time it closes for renovation next June, it ___ visitors for eleven years.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "boss",
+          "index": 14,
+          "hits": [
+            "would have welcoming"
+          ],
+          "desc": "【文法】The museum opened ten years ago. By the time it closes for renovation next June, it ___ visitors for eleven years."
+        }
+      ]
     },
     {
       "section": "boss",
@@ -14410,7 +14920,17 @@
       "candidateKeyAtReportedIndex": "choice|【推測】The file was encrypted, and only Mara had the key. If someone read it without asking her, they ___ another way to access it.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "boss",
+          "index": 24,
+          "hits": [
+            "will have been finding"
+          ],
+          "desc": "【推測】The file was encrypted, and only Mara had the key. If someone read it without asking her, they ___ another way to access it."
+        }
+      ]
     },
     {
       "section": "boss",
@@ -14438,7 +14958,18 @@
       "candidateKeyAtReportedIndex": "choice|【推測】The river was clear yesterday but muddy after the overnight storm. The rain ___ soil into it.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "boss",
+          "index": 34,
+          "hits": [
+            "may wash tomorrow",
+            "has washing"
+          ],
+          "desc": "【推測】The river was clear yesterday but muddy after the overnight storm. The rain ___ soil into it."
+        }
+      ]
     },
     {
       "section": "boss",
@@ -14466,7 +14997,26 @@
       "candidateKeyAtReportedIndex": "choice|【文法】By the end of the opening chapter, the narrator ___ three times without explaining why.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 669,
+          "hits": [
+            "has disappearing"
+          ],
+          "desc": "【文法】By the time we reached the ridge, the sun ___ behind the clouds."
+        },
+        {
+          "section": "boss",
+          "index": 53,
+          "hits": [
+            "is disappeared by",
+            "has disappearing"
+          ],
+          "desc": "【文法】By the end of the opening chapter, the narrator ___ three times without explaining why."
+        }
+      ]
     },
     {
       "section": "boss",
@@ -14516,7 +15066,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：是否發生取決於某項條件的（C 開頭，10 個字母）|contingent",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14539,7 +15090,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：服務慢但員工很友善|the service was slow but the staff were friendly",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14561,7 +15113,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：W A _ E R _ R _ O F (能防止水穿透的)|waterproof",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14584,7 +15137,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：我重視結果但不讓它毀掉一天|i value the result without letting it spoil the day",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14662,7 +15216,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：A T _ R I _ U T _ O N (交代言論或作品來源的做法)|attribution",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14685,7 +15240,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：地板面積未增但房間感覺更大|the room feels larger without any extra floor space",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14708,7 +15264,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：請把回覆數與出席人數分開|please keep the reply count separate from the attendance count",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14731,7 +15288,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：家族代代相傳的物品|a family heirloom",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14754,7 +15312,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：原件留樓上而遊客觸摸複本|the original remains upstairs while visitors handle the copy",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14777,7 +15336,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：不見的便條一直在書下|the missing note lay beneath the book all along",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14800,7 +15360,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：作選擇前應能看見指引|directions should be visible before a choice is made",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14823,7 +15384,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：停頓應容納笑聲而非強求它|the pause should allow a laugh without demanding one",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14845,7 +15407,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：觀眾以拍手表示讚賞的掌聲（A 開頭，8 個字母）|applause",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14868,7 +15431,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：短回覆可能反映時間不足而非惱怒|a short reply may reflect limited time rather than annoyance",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14890,7 +15454,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：把某物放入同一信封或包裝（E 開頭，7 個字母）|enclose",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14912,7 +15477,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：P _ O _ _ T (不拖延而及時的)|prompt",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -14935,7 +15501,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：微小照料痕跡使地方顯得有人住|a small sign of care made the place feel inhabited",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -16848,7 +17415,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：應區分既給事實與新增猜測|we should distinguish a supplied fact from an added guess",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -16876,7 +17444,8 @@
       "candidateKeyAtReportedIndex": "choice|【規則】A shield prevents one attack and is then removed. A player with one shield faces two separate attacks in order. What does the shield itself do?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -16899,7 +17468,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：總分比贏輪數重要|the final score matters more than the number of rounds won",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -18811,7 +19381,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：R E _ O _ D _ N G (把聲音影像保留下來的紀錄)|recording",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -18833,7 +19404,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：讓人放心或安心的（R 開頭，10 個字母）|reassuring",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -20746,7 +21318,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：還可能調整的暫定安排|a provisional arrangement",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -20769,7 +21342,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：可以調整活動而不放棄目的|we can adapt the activity without abandoning its purpose",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -20820,7 +21394,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：戲服應幫助觀眾辨識角色|the costume should help the audience recognise the character",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -20848,7 +21423,18 @@
       "candidateKeyAtReportedIndex": "choice|【推測】The laboratory was locked all night, but the window was open this morning. Someone ___ left it open before locking up.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 285,
+          "hits": [
+            "must leave tomorrow",
+            "have leaving"
+          ],
+          "desc": "【推測】The fire was out and the camp was empty, but the kettle was still warm. The travellers ___ recently."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -21018,7 +21604,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：這份確認不保證立即可用|the confirmation does not guarantee immediate availability",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -21040,7 +21627,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：P R O _ I S I _ N A L (尚待確認或可能更改的暫定的)|provisional",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -21062,7 +21650,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：C L _ A R _ N G (林間沒有樹木的空地)|clearing",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -21084,7 +21673,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：M I _ R _ T _ O N (動物季節性或定期遷移的行為)|migration",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -23024,7 +23614,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：V _ N _ E (活動舉行的場地)|venue",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -23046,7 +23637,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：H E _ R _ O _ M (家族世代相傳的物品)|heirloom",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -23068,7 +23660,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：I N _ E _ V _ L (演出兩部分之間的休息時間)|interval",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -23096,7 +23689,8 @@
       "candidateKeyAtReportedIndex": "choice|【字彙】Which verb describes small drops of light rain falling?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -25166,7 +25760,25 @@
       "candidateKeyAtReportedIndex": "fill|填空題：B A _ C H (同次製作或處理的一批物品)|batch",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 490,
+          "hits": [
+            "receipt"
+          ],
+          "desc": "【字彙】Which noun means an object kept because it reminds someone of a person or occasion?"
+        },
+        {
+          "section": "normal",
+          "index": 700,
+          "hits": [
+            "receipt"
+          ],
+          "desc": "【字彙】Which noun means an extra supply kept available for later use?"
+        }
+      ]
     },
     {
       "section": "normal",
@@ -27106,7 +27718,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：手指接觸表面留下的紋路印記（F 開頭，11 個字母）|fingerprint",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -27134,7 +27747,19 @@
       "candidateKeyAtReportedIndex": "choice|【文法】Each player ___ two cards at the beginning of a round.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": [
+        {
+          "section": "normal",
+          "index": 759,
+          "hits": [
+            "receive",
+            "have received",
+            "are receiving"
+          ],
+          "desc": "【文法】Each player ___ two cards at the beginning of a round."
+        }
+      ]
     },
     {
       "section": "normal",
@@ -27162,7 +27787,8 @@
       "candidateKeyAtReportedIndex": "choice|【字彙】A move described as optional is one a player ___.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -27185,7 +27811,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出單字：可依規則代表其他牌或角色的萬用牌|wildcard",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -27207,7 +27834,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：T O _ E N (遊戲中表示資源位置等的代幣或棋片)|token",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -29125,7 +29753,8 @@
       "candidateKeyAtReportedIndex": "choice|【字彙】To transcribe an interview is to ___.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -29148,7 +29777,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：未經提醒的自發修正|a spontaneous correction",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -29170,7 +29800,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：P R O _ P T (引出回答或行動的提示)|prompt",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31088,7 +31719,8 @@
       "candidateKeyAtReportedIndex": "choice|【文法】We closed the window so that the music ___ disturb the neighbours.|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31111,7 +31743,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：出乎意料的打斷|an unexpected interruption",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31133,7 +31766,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：帶有規律節奏的（R 開頭，8 個字母）|rhythmic",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31155,7 +31789,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：V I B _ A T _ O N (物體來回快速移動的振動)|vibration",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31183,7 +31818,8 @@
       "candidateKeyAtReportedIndex": "choice|【語意】We have kept the afternoon free in case the morning session runs over. What is the purpose?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31206,7 +31842,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：實際可行的替代方案|a workable alternative",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31228,7 +31865,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：善用現有資源想辦法解決問題的（R 開頭，11 個字母）|resourceful",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31250,7 +31888,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：F L E X I _ I L I T Y (因情況不同而能調整的彈性)|flexibility",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31272,7 +31911,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：C O N _ I N _ E N T (取決於另一條件是否成立的)|contingent",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31300,7 +31940,8 @@
       "candidateKeyAtReportedIndex": "choice|【語意】The jacket fits across the shoulders, but the sleeves need shortening. What is the problem?|",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31323,7 +31964,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出單字：對衣物尺寸或樣式所作的修改|alterations",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31345,7 +31987,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：一個人擁有的全部衣物（W 開頭，8 個字母）|wardrobe",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31367,7 +32010,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：能阻止水滲透的（W 開頭，10 個字母）|waterproof",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "normal",
@@ -31389,7 +32033,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：F A S T _ N I N G (把衣物或物品扣合的扣件)|fastening",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31411,7 +32056,8 @@
       "candidateKeyAtReportedIndex": "fill|填空題：C O N T I _ G E N C Y (可能發生而須預作準備的意外情況)|contingency",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31461,7 +32107,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：與主菜一起供應的配菜或佐食（A 開頭，13 個字母）|accompaniment",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31483,7 +32130,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：改變物品原有排列位置（R 開頭，9 個字母）|rearrange",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31505,7 +32153,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：活動所需人員物品移動與安排工作（L 開頭，9 個字母）|logistics",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31527,7 +32176,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：因個人情感與回憶而珍重的（S 開頭，11 個字母）|sentimental",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -31550,7 +32200,8 @@
       "candidateKeyAtReportedIndex": "voice|請唸出：暫時改行的路線安排|a temporary diversion",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -33462,7 +34113,8 @@
       "candidateKeyAtReportedIndex": "spell|請拼出：天空被雲層廣泛遮蔽的（O 開頭，8 個字母）|overcast",
       "snapshotSameAsCurrent": true,
       "prefixMatches": [],
-      "mappingStatus": "unmatched-report-text"
+      "mappingStatus": "unmatched-report-text",
+      "optionEvidenceCandidates": []
     },
     {
       "section": "boss",
@@ -35358,5 +36010,6 @@
     "unmatched-report-text": 148,
     "matched-index-and-prefix": 55,
     "matched-other-index": 11
-  }
+  },
+  "resolvedCount": 16
 }

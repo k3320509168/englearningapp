@@ -3,7 +3,7 @@ export const data={
 6:{
 reading:[
 [1,'【搭配詞】Which verb means to comply with the terms of a truce? The two camps agreed to ___ the truce.','observe|breach|revoke|denounce','observe 指遵守；breach 違反，revoke 撤銷，denounce 公開譴責。'],
-[1,'【文法】The gate will remain closed until the seal ___.','has been restored|has restoring|will have restore|is restore','until 時間子句不直接用未來式；seal 是被修復，用完成式被動。'],
+[1,"【文法】The gate will remain closed until the damaged seal ___ by the maintenance team.","has been restored|has restored|has been restoring|is restoring","seal 是維修團隊修復的對象，by 指明施事者；has been restored 是完成式被動。其他形式均把 seal 當作執行修復的一方，與題意不合。"],
 [1,'【語意】The guardian offers protection, but only within the valley. Which journey falls outside the stated promise?','A journey beyond the valley’s boundary.|A journey entirely along the valley floor.|A visit to a village inside the valley.|A return to a shelter within the protected area.','only within 限定地域，越界行程不在明示承諾內。'],
 [1,'【字彙】Which verb means to give up a claim or possession, often reluctantly?','relinquish|replenish|reprimand|replicate','relinquish 是放棄交出；其他動詞分別補充、斥責、複製。'],
 [1,'【語氣】The scout says, The path is passable, though I would not call it safe after dark. What is the distinction?','Being able to travel along it is different from travelling without significant risk.|The path cannot be used at any time.|The scout guarantees that darkness removes every danger.|The path is safe only because nobody has used it.','passable 是可通行，不必等於安全；after dark 限定風險情境。'],

@@ -2,7 +2,7 @@
 export const data={
 6:{
 reading:[
-[1,'【文法】The presenter said that the interview ___ the previous evening.','had been recorded|has been recording|will record|was been recorded','轉述中 the previous evening 指過去另一事件前，用過去完成式被動。'],
+[1,"【文法】The presenter said that the interview ___ the previous evening.","had been recorded|has been recorded|would be recorded|is being recorded","said 與 the previous evening 建立過去轉述及更早完成的錄製；訪談是被錄製的對象，用 had been recorded。其餘形式改成現在或轉述中的將來，未保留同一時間關係。"],
 [1,'【字彙】Which verb means to publicly withdraw a statement because it is no longer supported?','retract|repeat|illustrate|circulate','retract 是撤回聲明；repeat 重複、illustrate 說明、circulate 流傳。'],
 [1,'【語意】The editor asks for a brief account of the meeting. What is requested?','A concise description of what happened.|A detailed record of every spoken word.|A prediction of what the next meeting will decide.|A list of people who refused to attend.','brief account 是簡短敘述，不是逐字稿或未來預測。'],
 [1,'【語用】Could you send me the original message rather than a screenshot of part of it? What does the speaker want?','Access to the complete message in its original form.|A clearer photograph of the same selected sentence.|Permission to forward the selected sentence publicly.|A summary replacing both the message and the screenshot.','original rather than screenshot of part 強調取得原文完整脈絡。'],

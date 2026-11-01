@@ -3,7 +3,7 @@ export const data={
 6:{
 reading:[
 [1,'【搭配詞】The council introduced measures to ___ the impact of construction noise on residents.','mitigate|migrate|imitate|cultivate','mitigate 是減輕負面影響；其餘分別為遷移、模仿與培育。'],
-[1,'【文法】The old warehouse ___ into a community centre when funding was withdrawn.','was being converted|has converting|was converting it|had being converted','資金撤回時整修正進行，且倉庫是被改建的對象，用過去進行式被動。'],
+[1,"【時態語意】The conversion was only half finished when funding was withdrawn. Which form describes work in progress at that past moment? The warehouse ___ into a community centre.","was being converted|had been converted|has been converted|will have been converted","題目要呈現過去那一刻仍在進行的改建，用 was being converted。其他選項表先前完成、連到現在的完成或未來完成，均不保留所指定的進行中視角。"],
 [1,'【句意】The scheme is intended to supplement, rather than replace, the existing bus service. What is planned?','Adding support while keeping the existing service.|Removing buses and using the new scheme instead.|Maintaining the existing service without any addition.|Postponing every change until the bus service ends.','supplement 是補充，不是取代；原服務仍保留。'],
 [1,'【搭配詞】The housing proposal met with strong ___ from people concerned about traffic.','opposition|oppositionally|oppose|opposing it','met with strong opposition 是遭遇強烈反對，此處需名詞。'],
 [1,'【條件】Residents can borrow the equipment on condition that it is returned by Friday. Which requirement is explicit?','The equipment must be brought back by Friday.|Borrowers must purchase it after using it.|It may be kept indefinitely if unused.|Only residents with cars may borrow it.','on condition that 指借用的明確條件是週五前歸還。'],

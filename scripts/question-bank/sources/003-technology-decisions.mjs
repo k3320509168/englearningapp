@@ -3,7 +3,7 @@ export const data={
 6:{
 reading:[
 [1,'【搭配詞】The two devices are fully ___, so the same charger can be used for both.','compatible|competitive|compulsory|comparable','compatible 指能相容使用；competitive 有競爭力、compulsory 強制、comparable 可比較均不表相容性。'],
-[1,'【文法】The password should ___ before anyone outside the team is given access.','be changed|have changing|be changing by|change it','password 是被更改的對象，should 後接 be＋過去分詞。'],
+[1,"【文法】The password should ___ by the administrator before anyone outside the team is given access.","be changed|have changed|be changing|have been changing","by the administrator 指明執行更換者，password 是受動對象；should be changed 為情態助動詞後的被動。其餘是主動結構，未保留施事與受事關係。"],
 [1,'【句意】The update is optional rather than mandatory. Which statement is accurate?','Users may choose whether to install it.|Users are required to install it immediately.|Users are forbidden to install it.|Users must uninstall the existing version.','optional 是可選擇的，mandatory 是強制的；沒有安裝或移除的絕對要求。'],
 [1,'【搭配詞】Please ___ your sources before sharing a claim that could affect other people’s decisions.','verify|notify|satisfy|amplify','verify 是核實；notify 通知、satisfy 滿足、amplify 放大均不合此目的。'],
 [1,'【條件】The backup runs automatically unless the computer is switched off. When would the stated exception apply?','When the computer is not powered on.|When the user opens another document.|Whenever the user forgets to start the backup manually.|Whenever the computer has an internet connection.','unless 引入例外；電腦關機才符合所述例外，不代表其他狀況的備份一定成功。'],

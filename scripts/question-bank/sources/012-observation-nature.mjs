@@ -2,7 +2,7 @@
 export const data={
 6:{
 reading:[
-[1,'【文法】By the time we reached the clearing, the mist ___.','had lifted|has lifting|was lift|did lifted','抵達是過去時間點，霧在此前已散，用過去完成式。'],
+[1,"【文法】By the time we reached the clearing, the mist ___.","had lifted|has lifted|will lift|is lifting","reached 設定過去觀察時點，霧在抵達前已散去；過去完成式 had lifted 表此前已完成。其餘形式以現在或未來為參照。"],
 [1,'【字彙】Which verb means to blend into the surroundings so that something is less easily seen?','camouflage|illuminate|isolate|display','camouflage 是偽裝以融入環境；其他詞分別照亮、隔離、展示。'],
 [1,'【語意】The path is slippery in places. What does in places tell walkers?','Some sections of the path are slippery.|The whole path has been closed.|The path is slippery only on a map.|Every section is equally slippery.','in places 指某些地段，不是全線同樣情況。'],
 [1,'【語用】You might want to bring a notebook, says the guide before a birdwatching walk. What is the likely function?','A suggestion to prepare for recording observations.|A demand to hand over all existing notes.|A prediction that notebooks will be sold out.|A statement that the listener already owns a notebook.','You might want to ... 在此是委婉建議，而非宣告對方欲望。'],

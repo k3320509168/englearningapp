@@ -2,7 +2,7 @@
 export const data={
 6:{
 reading:[
-[1,'【文法】Make sure the label ___ outwards before closing the box.','faces|is face|has facing|face it','the label 單數，指示子句用 faces，outwards 朝外。'],
+[2,"【語意與文法】The label is to face outwards. Which form keeps this as an instruction, rather than speculation about an earlier event? The label ___ positioned with its printed side facing outwards.","is to be|must have been|might have been|would have been","is to be positioned 是對擺放方式的要求，保留原指示。must/might/would have been 均轉為對先前狀態的推論、可能或假設，沒有保留指令語氣。"],
 [1,'【字彙】Which adjective describes a mark that can be read clearly?','legible|portable|flexible|reversible','legible 指字跡可辨讀；其他為可攜、可彎、可逆。'],
 [1,'【尺寸】The card must be at least ten centimetres wide. Which width meets that requirement?','Ten centimetres.|Nine centimetres.|Eight and a half centimetres.|Any width below ten centimetres.','at least 包含等於下限，未說一定大於十。'],
 [1,'【語用】Could you leave a little space between the labels so I can cut them apart? What is requested?','A gap separating adjacent labels.|A blank label before the first printed one.|A larger font on every label.|A second copy of the same sheet.','between labels 為裁開留間隔，非空白標籤或字體大小。'],

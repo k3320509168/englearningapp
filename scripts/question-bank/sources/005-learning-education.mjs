@@ -3,7 +3,7 @@ export const data={
 6:{
 reading:[
 [1,'【搭配詞】Students are encouraged to ___ on the feedback before submitting a revised draft.','reflect|reflecting|reflective|reflection','be encouraged to 後接動詞原形 reflect；reflect on 是仔細思考。'],
-[1,'【時態】She began learning the language last spring and is still taking lessons. She ___ it for almost a year.','has been studying|had been studied|will have studied|was to study','從過去持續到現在的活動，用現在完成進行式；其他形式不表同一時間關係。'],
+[1,"【時態語意】She began lessons last spring and still attends them. Which form links that start to an activity continuing now? She ___ the language for almost a year.","has been studying|had been studying|was studying|will have been studying","指定從去年春天延續到現在仍進行中的學習，用現在完成進行式 has been studying；其餘把觀察點移到過去或未來。"],
 [1,'【語意】The qualification is desirable but not essential. What does this mean for applicants?','Having it is an advantage, but lacking it does not automatically rule someone out.|Anyone without it is automatically ineligible.|Holding it guarantees that an applicant will be selected.|Applicants are advised to avoid mentioning it.','desirable 是有利，not essential 表非必要，不能推出保證錄取。'],
 [1,'【搭配詞】The course aims to bridge the ___ between theoretical knowledge and practical use.','gap|gasp|grip|glimpse','bridge the gap 是縮小差距；其餘詞不表理論與實務間的落差。'],
 [1,'【條件】You may retake the assessment, provided you complete the feedback session first. What must happen beforehand?','Participation in the feedback session.|Payment for a completely different qualification.|A guarantee of a higher score.|Withdrawal from the current course.','provided 表重測條件，first 明確要求先完成回饋課程。'],

@@ -1818,11 +1818,15 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .wheel-note b { color: #ffd15c; }
 
 @media (max-width: 480px) {
-  .wheel-card { width: 96vw; padding: 0 12px 14px; }
-  .wheel-odds-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
-  .wheel-odds-chip { padding: 4px 2px; }
+  .wheel-card { width: 96vw; padding: 0 10px 14px; }
+  .wheel-odds-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+  }
+  .wheel-odds-chip {
+    flex: 1 1 calc(33.3% - 6px); min-width: 88px; max-width: 140px; padding: 6px 2px;
+  }
   .wheel-odds-label { font-size: 11px; }
-  .wheel-stage { width: min(280px, 78vw); }
+  .wheel-stage { width: min(280px, 76vw); }
 }
 
 @keyframes wheel-pop { from { transform: scale(0.4); } to { transform: scale(1); } }

@@ -33,11 +33,11 @@ export default function LessonPanel() {
   const start = () => useBattleStore.getState().startBattle();
   const audioText = card?.kind === 'word' ? card.word.display : (card?.grammar.audio || card?.grammar.sentence);
 
-  // 翻到新卡片時自動唸出單字或聽力原句
+  // 翻到新卡片時自動唸出單字、聽力或口說句子
   useEffect(() => {
     if (card?.kind === 'word') {
       say(card.word.display);
-    } else if (card?.kind === 'grammar' && card.grammar.tag === '聽力' && card.grammar.audio) {
+    } else if (card?.kind === 'grammar' && (card.grammar.tag === '聽力' || card.grammar.tag === '口說') && card.grammar.audio) {
       say(card.grammar.audio);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -77,22 +77,37 @@ export default function LessonPanel() {
             </>
           ) : (
             <>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <span className={`q-tag ${card.grammar.tag === '聽力' ? 'q-voice' : 'q-choice'}`}>
-                  {card.grammar.tag ?? '文法'}
+              <div className="lesson-badge-row" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <span className={`q-tag ${card.grammar.tag === '聽力' ? 'q-voice' : card.grammar.tag === '口說' ? 'q-voice' : 'q-choice'}`}>
+                  {card.grammar.tag === '聽力' ? '🎧 聽力' :
+                   card.grammar.tag === '口說' ? '🗣️ 口說' :
+                   card.grammar.tag === '拼寫' ? '✍️ 拼寫' :
+                   card.grammar.tag === '文法' ? '📘 文法' : '📖 理解'}
                 </span>
-                {card.grammar.tag === '聽力' && (
-                  <span style={{ fontSize: '12px', color: '#ffd15c' }}>🎧 聽力題重點句型</span>
-                )}
+                <span style={{ fontSize: '12px', color: '#ffd15c' }}>
+                  {card.grammar.tag === '聽力' ? '戰前聽力原音預覽' :
+                   card.grammar.tag === '口說' ? '戰前口說朗讀示範' :
+                   card.grammar.tag === '拼寫' ? '戰前拼寫單字預備' :
+                   card.grammar.tag === '文法' ? '核心文法句型解析' : '重點篇章閱讀解析'}
+                </span>
               </div>
-              <p className="lesson-example">{card.grammar.sentence || card.grammar.desc}</p>
-              <p className="lesson-explain">💡 {card.grammar.explain}</p>
+              <div className="lesson-sentence-box" style={{ background: 'rgba(0,0,0,0.25)', padding: '10px 14px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)', margin: '4px 0' }}>
+                <p className="lesson-example" style={{ fontSize: '18px', fontWeight: 'bold', color: '#ffffff' }}>
+                  {card.grammar.sentence || card.grammar.desc}
+                </p>
+              </div>
+              <p className="lesson-explain" style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6' }}>
+                💡 {card.grammar.explain}
+              </p>
             </>
           )}
           {audioText && (
             <div className="feedback-actions">
               <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => say(audioText)}>
-                🔊 {card.kind === 'word' ? '單字發音' : (card.grammar.tag === '聽力' ? '播放聽力原音' : '播放句子')}
+                🔊 {card.kind === 'word' ? '單字發音' :
+                    (card.grammar.tag === '聽力' ? '播放聽力原音' :
+                     card.grammar.tag === '口說' ? '示範朗讀原音' :
+                     card.grammar.tag === '拼寫' ? '拼寫單字發音' : '播放句子')}
               </button>
               <button className="btn" onMouseDown={keepFocus} onClick={() => say(audioText, true)}>🐢 慢速</button>
             </div>

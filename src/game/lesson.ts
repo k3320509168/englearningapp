@@ -32,23 +32,70 @@ export function buildLesson(stages: Stage[], stageIdx: number): Lesson {
   const questions = stages.slice(start, end).flatMap(s => s.questions);
   const words = new Map<string, LessonWord>();
   const grammar = new Map<string, LessonGrammar>();
+
   for (const q of questions) {
     const v = vocabFor(q);
     if (v) words.set(v.key, v);
-    if (q.type === 'choice' && q.explain) {
-      const isListening = q.skill === 'listening' || Boolean(q.speak && q.desc?.startsWith('🎧'));
-      const sentence = completedSentence(q) || q.speak || q.desc;
+
+    const isListening = q.skill === 'listening' || Boolean(q.speak && q.desc?.includes('🎧'));
+    const isSpeaking = q.skill === 'speaking' || q.type === 'voice';
+    const isSpelling = q.skill === 'writing' || q.type === 'spelling';
+
+    if (isListening) {
+      const sentence = q.speak || completedSentence(q) || q.desc;
       const audio = questionAudio(q) || q.speak || '';
-      const key = q.speak ? `speak:${q.speak}` : (completedSentence(q) || q.desc);
-      grammar.set(key, {
-        desc: q.desc,
-        sentence,
-        explain: q.explain,
-        audio,
-        tag: isListening ? '聽力' : '文法',
-      });
+      const key = `listen:${q.speak || q.desc}`;
+      if (!grammar.has(key)) {
+        grammar.set(key, {
+          desc: q.desc,
+          sentence,
+          explain: q.explain || `聽力重點詞句：${sentence}`,
+          audio,
+          tag: '聽力',
+        });
+      }
+    } else if (isSpeaking) {
+      const sentence = q.speak || q.ans;
+      const audio = q.speak || q.ans;
+      const key = `speak:${sentence}`;
+      if (!grammar.has(key)) {
+        grammar.set(key, {
+          desc: q.desc || '🗣️ 口說朗讀練習',
+          sentence,
+          explain: q.explain || '大聲朗讀此句，請先聆聽標準發音練習語調。',
+          audio,
+          tag: '口說',
+        });
+      }
+    } else if (isSpelling) {
+      const sentence = completedSentence(q) || q.speak || q.ans;
+      const audio = q.speak || (/[A-Za-z]/.test(q.ans) ? q.ans : '');
+      const key = `spell:${sentence}`;
+      if (!grammar.has(key)) {
+        grammar.set(key, {
+          desc: q.desc || '✍️ 單字拼寫練習',
+          sentence,
+          explain: q.explain || `拼寫目標單字：${sentence}`,
+          audio,
+          tag: '拼寫',
+        });
+      }
+    } else if (q.type === 'choice' && q.explain) {
+      const sentence = completedSentence(q) || q.desc;
+      const audio = questionAudio(q) || '';
+      const key = completedSentence(q) ? `grammar:${completedSentence(q)}` : `reading:${q.desc}`;
+      if (!grammar.has(key)) {
+        grammar.set(key, {
+          desc: q.desc,
+          sentence,
+          explain: q.explain,
+          audio,
+          tag: completedSentence(q) ? '文法' : '理解',
+        });
+      }
     }
   }
+
   return { words: [...words.values()], grammar: [...grammar.values()] };
 }
 

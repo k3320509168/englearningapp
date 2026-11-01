@@ -239,28 +239,80 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
   const pool = getPool(levelKey);
   const levelIdx = Math.max(0, LEVELS.indexOf(levelKey));
   const stageCount = levelKey === PROLOGUE_KEY ? PROLOGUE_STAGES : regionStageCount(levelIdx);
-  const makeDraw = (original: Question[]) => {
+
+  // 跨級螺旋連貫題池：若玩家在第 1 區以上（A2+、B1+、B2 等），收集前置區域題庫進行螺旋複習
+  const priorNormal: Question[] = [];
+  const priorBoss: Question[] = [];
+  if (levelIdx > 0 && levelKey !== PROLOGUE_KEY) {
+    for (let i = 0; i < levelIdx; i++) {
+      const p = QUESTION_POOL[LEVELS[i]];
+      if (p) {
+        if (p.normal.length) priorNormal.push(...p.normal);
+        if (p.boss.length) priorBoss.push(...p.boss);
+      }
+    }
+  }
+
+  const makeDraw = (original: Question[], spiralPool: Question[] = []) => {
     const tiers = ([1, 2, 3] as const).map(d => original.filter(q => questionDifficulty(q) === d));
     const decks: Question[][] = [[], [], [], []]; // 0 = 不分難度
+    const spiralDeck: Question[] = [];
+    const recentKeys: string[] = [];
+
     const take = (i: number, from: Question[]) => {
       if (decks[i].length === 0) decks[i].push(...shuffleArray(from, rand));
       return decks[i].pop()!;
     };
+
+    const takeSpiral = () => {
+      if (spiralDeck.length === 0) spiralDeck.push(...shuffleArray(spiralPool, rand));
+      return spiralDeck.pop()!;
+    };
+
     const draw = (stageIdx?: number) => {
+      const max = stageIdx === undefined ? 3 : maxDifficultyAt(stageIdx, stageCount);
+
+      // 螺旋抽題：25% ~ 30% 機率由低階單字/前區題庫抽題（以高階語境螺旋重現），其餘為本區新題
+      if (spiralPool.length > 0 && rand() < 0.28) {
+        if (stageIdx === undefined) return takeSpiral();
+        const allowedSpiral = spiralPool.filter(q => questionDifficulty(q) <= max);
+        if (allowedSpiral.length > 0) {
+          return allowedSpiral[Math.floor(rand() * allowedSpiral.length)];
+        }
+      }
       if (stageIdx === undefined) return take(0, original);
-      const max = maxDifficultyAt(stageIdx, stageCount);
       const allowed = [1, 2, 3].filter(d => d <= max && tiers[d - 1].length > 0);
       if (allowed.length === 0) return take(0, original);
       const top = allowed[allowed.length - 1];
       const d = allowed.length === 1 || rand() < 0.6 ? top : allowed[Math.floor(rand() * (allowed.length - 1))];
       return take(d, tiers[d - 1]);
     };
+
+    const drawWithAntiRepeat = (stageIdx?: number) => {
+      let q = draw(stageIdx);
+      const key = `${q.type}|${q.desc}|${q.speak ?? ''}`;
+      // 防重複：若題目量充足，避免短時間內（30 題）連續抽出相同題目
+      if (recentKeys.includes(key) && (original.length + spiralPool.length) > 25) {
+        for (let tries = 0; tries < 2; tries++) {
+          const alt = draw(stageIdx);
+          const altKey = `${alt.type}|${alt.desc}|${alt.speak ?? ''}`;
+          if (!recentKeys.includes(altKey)) {
+            q = alt;
+            break;
+          }
+        }
+      }
+      recentKeys.push(`${q.type}|${q.desc}|${q.speak ?? ''}`);
+      if (recentKeys.length > 30) recentKeys.shift();
+      return q;
+    };
+
     // 新手關只出開放的題型（例如 1-1～1-10 只有選擇題）：抽到別的題型就再抽；
     // 這個難度剛好沒有該題型時，改從整個題庫挑符合題型的題目
     return (stageIdx?: number) => {
       const types = stageIdx === undefined ? null : allowedTypes(levelIdx, stageIdx, levelKey);
-      let q = draw(stageIdx);
-      for (let i = 0; types && !types.includes(q.type) && i < 20; i++) q = draw(stageIdx);
+      let q = drawWithAntiRepeat(stageIdx);
+      for (let i = 0; types && !types.includes(q.type) && i < 20; i++) q = drawWithAntiRepeat(stageIdx);
       if (types && !types.includes(q.type)) {
         const fit = original.filter(x => types.includes(x.type));
         // 符合題型的題目裡挑最簡單的那一級（新手關）
@@ -271,7 +323,8 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
       return q;
     };
   };
-  return { normal: makeDraw(pool.normal), boss: makeDraw(pool.boss) };
+
+  return { normal: makeDraw(pool.normal, priorNormal), boss: makeDraw(pool.boss, priorBoss) };
 }
 
 // 一個區域：數張三星關卡 × 20 小關（第 5、10 關菁英、第 7 關寶箱、第 15 關小 BOSS、第 20 關大 BOSS），最後一關是區域最終魔王

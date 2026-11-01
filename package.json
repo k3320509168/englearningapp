@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "validate:questions": "tsx scripts/validate-questions.ts",
+    "vocab:audit": "tsx scripts/vocab-audit.ts",
     "test": "vitest run"
   },
   "dependencies": {

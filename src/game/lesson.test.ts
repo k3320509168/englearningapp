@@ -21,6 +21,53 @@ describe('buildLesson', () => {
     lesson.words.forEach(w => expect(w.meaning).toBeTruthy());
     lesson.grammar.forEach(g => expect(g.explain).toBeTruthy());
   });
+
+  it('builds listening, speaking, and spelling cards correctly', () => {
+    const mockStages = [
+      {
+        name: '測試關卡',
+        bossMode: false,
+        questions: [
+          {
+            type: 'choice',
+            skill: 'listening' as const,
+            desc: '🎧 聽一聽，選出正確的意思',
+            speak: 'resolve',
+            ans: 'B',
+            options: ['A. 保留', 'B. 解決', 'C. 旋轉'],
+            explain: '聽力原字為 resolve (v.) 解決。',
+          },
+          {
+            type: 'voice',
+            skill: 'speaking' as const,
+            desc: '請唸出：I love learning English',
+            speak: 'I love learning English',
+            ans: 'I love learning English',
+            explain: '口說練習請大聲清楚朗讀。',
+          },
+          {
+            type: 'spelling',
+            skill: 'writing' as const,
+            desc: '請拼出：SWORD',
+            ans: 'SWORD',
+            speak: 'sword',
+            explain: '拼寫單字 sword 劍。',
+          },
+        ],
+      },
+    ];
+
+    const lesson = buildLesson(mockStages, 0);
+    const tags = lesson.grammar.map(g => g.tag);
+    expect(tags).toContain('聽力');
+    expect(tags).toContain('口說');
+    expect(tags).toContain('拼寫');
+
+    const listenCard = lesson.grammar.find(g => g.tag === '聽力');
+    expect(listenCard?.sentence).toBe('resolve');
+    expect(listenCard?.audio).toBe('resolve');
+    expect(listenCard?.explain).toContain('resolve');
+  });
 });
 
 describe('summarize', () => {

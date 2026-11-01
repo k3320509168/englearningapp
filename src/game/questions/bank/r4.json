@@ -1,4 +1,678 @@
 {
-  "normal": [],
-  "boss": []
+  "normal": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "agenda",
+      "options": [
+        "A. 議程",
+        "B. 代理人",
+        "C. 協議",
+        "D. 機構"
+      ],
+      "ans": "A",
+      "explain": "agenda 是「議程」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "postpone",
+      "options": [
+        "A. 提議",
+        "B. 延期",
+        "C. 職位",
+        "D. 郵寄"
+      ],
+      "ans": "B",
+      "explain": "postpone 是「延期」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "implement",
+      "options": [
+        "A. 實施",
+        "B. 暗示",
+        "C. 進口",
+        "D. 改善"
+      ],
+      "ans": "A",
+      "explain": "implement 是「實施、執行」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "itinerary",
+      "options": [
+        "A. 目的地",
+        "B. 行程表",
+        "C. 保險",
+        "D. 護照"
+      ],
+      "ans": "B",
+      "explain": "itinerary 是「行程表」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "broadcast",
+      "options": [
+        "A. 廣播",
+        "B. 擴大",
+        "C. 國外",
+        "D. 預算"
+      ],
+      "ans": "A",
+      "explain": "broadcast 是「廣播、播報」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "headline",
+      "options": [
+        "A. 截止日期",
+        "B. 頭條新聞",
+        "C. 總部",
+        "D. 頭痛"
+      ],
+      "ans": "B",
+      "explain": "headline 是「頭條新聞」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "warranty",
+      "options": [
+        "A. 警告",
+        "B. 保證書",
+        "C. 倉庫",
+        "D. 薪水"
+      ],
+      "ans": "B",
+      "explain": "warranty 是「保固、保證書」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "complaint",
+      "options": [
+        "A. 抱怨",
+        "B. 完成",
+        "C. 競爭",
+        "D. 複雜"
+      ],
+      "ans": "A",
+      "explain": "complaint 是「抱怨、投訴」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "representative",
+      "options": [
+        "A. 呈現",
+        "B. 代表",
+        "C. 聲譽",
+        "D. 預約"
+      ],
+      "ans": "B",
+      "explain": "representative 是「代表、客服代表」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "passenger",
+      "options": [
+        "A. 通行證",
+        "B. 乘客",
+        "C. 包裹",
+        "D. 護照"
+      ],
+      "ans": "B",
+      "explain": "passenger 是「乘客」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "budget",
+      "options": [
+        "A. 預算",
+        "B. 行李",
+        "C. 建築",
+        "D. 按鈕"
+      ],
+      "ans": "A",
+      "explain": "budget 是「預算」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I was checking my emails when the system crashed.",
+      "options": [
+        "A. 系統當機時我正在回覆信件。",
+        "B. 系統當機時我正在收發電子郵件。",
+        "C. 系統當機後我才開始檢查電子郵件。",
+        "D. 為了檢查電子郵件，我讓系統當機了。"
+      ],
+      "ans": "B",
+      "explain": "I was checking my emails when the system crashed. 意思是「系統當機時，我正在檢查電子郵件。」（過去進行式）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "She is the manager who proposed the new marketing strategy.",
+      "options": [
+        "A. 她是那位反對新行銷策略的經理。",
+        "B. 她是那位提出新行銷策略的經理。",
+        "C. 她經理提出了新的行銷策略。",
+        "D. 新的行銷策略是那位經理的朋友提出的。"
+      ],
+      "ans": "B",
+      "explain": "She is the manager who proposed the new marketing strategy. 意思是「她是那位提出新行銷策略的經理。」（關係代名詞 who）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "They decided to cancel the flight due to bad weather.",
+      "options": [
+        "A. 他們因為天氣不好而決定延遲航班。",
+        "B. 因為天氣不好，他們決定取消航班。",
+        "C. 儘管天氣不好，航班仍然起飛。",
+        "D. 他們正在討論是否因為天氣取消航班。"
+      ],
+      "ans": "B",
+      "explain": "They decided to cancel the flight due to bad weather. 意思是「他們因為天氣不好決定取消航班。」（decide + to V 不定詞）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We are looking forward to receiving your feedback.",
+      "options": [
+        "A. 我們正在查看您的意見回饋。",
+        "B. 我們很期待收到您的意見回饋。",
+        "C. 我們必須將您的意見回饋轉交給別人。",
+        "D. 我們不想收到任何意見回饋。"
+      ],
+      "ans": "B",
+      "explain": "We are looking forward to receiving your feedback. 意思是「我們期待收到您的回饋。」（look forward to + V-ing 動名詞）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He admitted making a mistake in the financial report.",
+      "options": [
+        "A. 他承認在財務報告中犯了錯誤。",
+        "B. 他否認在財務報告中犯了錯誤。",
+        "C. 他打算在財務報告中犯一個錯誤。",
+        "D. 他發現別人在財務報告中犯了錯誤。"
+      ],
+      "ans": "A",
+      "explain": "He admitted making a mistake in the financial report. 意思是「他承認在財務報告中犯了錯。」（admit + V-ing 動名詞）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The doctor advised me to rest for a few days.",
+      "options": [
+        "A. 醫生建議我多運動幾天。",
+        "B. 醫生建議我休息幾天。",
+        "C. 醫生拒絕讓我休息幾天。",
+        "D. 醫生命令我立刻回去工作。"
+      ],
+      "ans": "B",
+      "explain": "The doctor advised me to rest for a few days. 意思是「醫生建議我休息幾天。」（advise sb to V）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The hotel which we stayed at was fully booked.",
+      "options": [
+        "A. 我們想訂的飯店客滿了，所以沒住。",
+        "B. 我們住的那家飯店客滿了。",
+        "C. 那家客滿的飯店不是我們住的。",
+        "D. 我們住的飯店還有很多空房。"
+      ],
+      "ans": "B",
+      "explain": "The hotel which we stayed at was fully booked. 意思是「我們住的那家飯店已經客滿了。」（關係代名詞 which）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "I avoided talking to him because he was angry.",
+      "options": [
+        "A. 因為他生氣了，所以我試著跟他說話。",
+        "B. 因為他生氣了，所以我避免跟他說話。",
+        "C. 我跟他說話讓他變得更生氣了。",
+        "D. 我很生氣，所以避免跟他說話。"
+      ],
+      "ans": "B",
+      "explain": "I avoided talking to him because he was angry. 意思是「我避免跟他說話，因為他正在生氣。」（avoid + V-ing 動名詞）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Were you taking notes during the presentation?",
+      "options": [
+        "A. Yes, I was trying to capture all the key points.",
+        "B. No, I am giving the presentation tomorrow.",
+        "C. The notes are on the desk.",
+        "D. Yes, I will take some notes next time."
+      ],
+      "ans": "A",
+      "explain": "問句：簡報時你有在做筆記嗎？（過去進行式）。A「有，我努力記下所有重點」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Is this the software that we need to install?",
+      "options": [
+        "A. Yes, it's the one recommended by the IT department.",
+        "B. No, he is the software engineer.",
+        "C. Install it on your computer tomorrow.",
+        "D. Yes, the hardware is very expensive."
+      ],
+      "ans": "A",
+      "explain": "問句：這是我們需要安裝的軟體嗎？（關係代名詞 that）。A「對，是資訊部門推薦的那套」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you mind waiting for a few more minutes?",
+      "options": [
+        "A. Yes, I wait for a few minutes.",
+        "B. Not at all. I can wait.",
+        "C. My mind is full of ideas.",
+        "D. You should wait for him."
+      ],
+      "ans": "B",
+      "explain": "問句：你介意多等幾分鐘嗎？（mind + V-ing）。B「一點也不介意，我可以等」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Have you considered taking a different flight?",
+      "options": [
+        "A. I will take the bus yesterday.",
+        "B. Yes, but there are no other flights available today.",
+        "C. Considering the price, it is very cheap.",
+        "D. The flight was delayed for two hours."
+      ],
+      "ans": "B",
+      "explain": "問句：你有考慮搭別的航班嗎？（consider + V-ing）。B「有，但今天沒有其他航班了」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Can I get a refund for this broken item?",
+      "options": [
+        "A. Yes, the item is very beautiful.",
+        "B. We can process the refund if you have the receipt.",
+        "C. I will break the item again.",
+        "D. The fund is sufficient for the project."
+      ],
+      "ans": "B",
+      "explain": "問句：這個壞掉的商品可以退款嗎？ B「如果你有收據，我們可以為您處理退款」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I was experiencing some pain in my lower back yesterday.",
+      "options": [
+        "A. You should have told me you were going to the back of the line.",
+        "B. That sounds serious. Have you seen a doctor about it?",
+        "C. My back is perfectly fine.",
+        "D. It is an interesting experience."
+      ],
+      "ans": "B",
+      "explain": "句子：我昨天背部下方有點痛（過去進行式）。B「聽起來很嚴重。你有去看醫生嗎？」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The colleague who helped me with the project is transferring to another branch.",
+      "options": [
+        "A. Oh, really? Which branch is he going to?",
+        "B. The project was very successful.",
+        "C. I can help you with the transfer.",
+        "D. The branch of the tree is falling."
+      ],
+      "ans": "A",
+      "explain": "句子：幫我做專案的那位同事要調去別的分公司了（關係代名詞 who）。A「噢真的嗎？他要去哪個分公司？」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We failed to reach an agreement during the meeting.",
+      "options": [
+        "A. That's unfortunate. What are the next steps?",
+        "B. The meeting room is very large.",
+        "C. I agree with your statement completely.",
+        "D. Reaching the top of the mountain is hard."
+      ],
+      "ans": "A",
+      "explain": "句子：我們未能在會議中達成共識（fail + to V）。A「真遺憾。那下一步是什麼？」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "He suggested organizing a training session for the new employees.",
+      "options": [
+        "A. The new employees are very tired.",
+        "B. That's a great idea to help them get started.",
+        "C. I suggest you go home early.",
+        "D. The organization is very profitable."
+      ],
+      "ans": "B",
+      "explain": "句子：他建議為新進員工辦一場培訓課程（suggest + V-ing）。B「這是個幫助他們上手的好主意」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "I am planning to visit Tokyo next month.",
+      "options": [
+        "A. The plan was cancelled yesterday.",
+        "B. Tokyo is a great city. Have a good trip!",
+        "C. I visited Tokyo two years ago.",
+        "D. Planning is an important skill."
+      ],
+      "ans": "B",
+      "explain": "句子：我打算下個月去東京玩（plan + to V）。B「東京是個很棒的城市。旅途愉快！」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "feedback",
+      "options": [
+        "A. 餵食",
+        "B. 背景",
+        "C. 意見回饋",
+        "D. 倒退"
+      ],
+      "ans": "C",
+      "explain": "feedback 是「意見回饋」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【基礎文法】測試關係代名詞 who 的用法",
+      "options": [
+        "A. which",
+        "B. who",
+        "C. what",
+        "D. whose"
+      ],
+      "ans": "B",
+      "explain": "正確答案是 B。題目「The engineer ___ fixed our network is highly skilled.」中，先行詞 engineer 是人，且在關係子句中作主詞，因此用 who。A 用於事物，C 不能當關係代名詞，D 用於表達所有格。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【基礎文法】測試關係代名詞 that 的用法",
+      "options": [
+        "A. that",
+        "B. who",
+        "C. what",
+        "D. whom"
+      ],
+      "ans": "A",
+      "explain": "正確答案是 A。題目「Please send me the document ___ you mentioned in the meeting.」中，先行詞 document 是事物，可用 which 或 that。選項中只有 that 符合。B與D用於人，C不能作關係代名詞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【基礎文法】測試關係代名詞 which 的用法",
+      "options": [
+        "A. that",
+        "B. who",
+        "C. where",
+        "D. which"
+      ],
+      "ans": "D",
+      "explain": "正確答案是 D。題目「The restaurant, ___ was recommended by my colleague, has great food.」是「非限定用法」（有逗號），先行詞是事物時只能用 which，不能用 that。"
+    }
+  ],
+  "boss": [
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The customer was complaining about the service when the manager intervened.",
+      "options": [
+        "A. 當經理介入時，顧客正在抱怨服務。",
+        "B. 顧客抱怨完服務後，經理才介入。",
+        "C. 經理正在抱怨服務，顧客於是介入。",
+        "D. 顧客要求經理出面抱怨服務。"
+      ],
+      "ans": "A",
+      "explain": "The customer was complaining... when the manager intervened. 意思是「經理介入時，顧客正在抱怨服務。」（過去進行式搭配過去式）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The document that you requested has been attached to this email.",
+      "options": [
+        "A. 你附上的文件需要用電子郵件寄出。",
+        "B. 你要求的文件已經附在這封電子郵件裡了。",
+        "C. 這封電子郵件是你要求的文件。",
+        "D. 我要求你將文件附在電子郵件裡。"
+      ],
+      "ans": "B",
+      "explain": "The document that you requested... 意思是「你要求的那份文件已經作為附件隨信附上。」（關係代名詞 that）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "We regret to inform you that your application was denied.",
+      "options": [
+        "A. 我們很遺憾你的申請表寫錯了。",
+        "B. 我們很遺憾地通知您，您的申請被拒絕了。",
+        "C. 我們忘記通知您，您的申請已被拒絕。",
+        "D. 您很遺憾地拒絕了我們的申請。"
+      ],
+      "ans": "B",
+      "explain": "We regret to inform you... 意思是「我們很遺憾地通知您，申請已被拒絕。」（regret to V 遺憾要去做某事）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "He finished writing the proposal just before the deadline.",
+      "options": [
+        "A. 他在截止日期後才寫完提案。",
+        "B. 他在截止日期前剛好寫完提案。",
+        "C. 他提議在截止日期前寫完文件。",
+        "D. 截止日期前他根本還沒開始寫提案。"
+      ],
+      "ans": "B",
+      "explain": "He finished writing the proposal... 意思是「他在截止期限前剛好寫完提案。」（finish + V-ing）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 聽一聽，選出正確的意思",
+      "speak": "The flight attendant recommended keeping our seatbelts fastened.",
+      "options": [
+        "A. 空服員建議我們保持安全帶扣好。",
+        "B. 空服員推薦我們買一條新的安全帶。",
+        "C. 空服員提醒我們解開安全帶。",
+        "D. 空服員堅持自己要扣好安全帶。"
+      ],
+      "ans": "A",
+      "explain": "The flight attendant recommended keeping... 意思是「空服員建議保持安全帶繫好。」（recommend + V-ing）"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Were they discussing the new budget when you entered the room?",
+      "options": [
+        "A. The room is very bright and spacious.",
+        "B. Yes, they were going over the numbers for next year.",
+        "C. I entered the room quietly.",
+        "D. They discuss the budget every week."
+      ],
+      "ans": "B",
+      "explain": "問句：你進房間時，他們正在討論新預算嗎？（過去進行式）。B「是的，他們正在看明年的數字」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The reporter who broke the news is being interviewed on channel five.",
+      "options": [
+        "A. Let's turn it on and watch what he has to say.",
+        "B. The news is very depressing today.",
+        "C. Breaking the rules is not allowed.",
+        "D. Channel five is a good channel."
+      ],
+      "ans": "A",
+      "explain": "句子：爆出這則新聞的記者正在第五頻道接受採訪（關係代名詞 who）。A「我們打開電視看看他怎麼說吧」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "Do you remember sending the itinerary to the clients?",
+      "options": [
+        "A. The itinerary is very detailed.",
+        "B. Yes, I emailed it to them yesterday morning.",
+        "C. I remember nothing about the client.",
+        "D. Sending emails is part of my job."
+      ],
+      "ans": "B",
+      "explain": "問句：你記得有把行程表寄給客戶嗎？（remember + V-ing 記得做過某事）。B「記得，我昨天早上用Email寄給他們了」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The doctor promised to call me as soon as the test results are ready.",
+      "options": [
+        "A. The test was very difficult.",
+        "B. That's good. I hope everything turns out fine.",
+        "C. Doctors are usually very busy.",
+        "D. I promise to be there on time."
+      ],
+      "ans": "B",
+      "explain": "句子：醫生答應檢驗結果一出來就會打電話給我（promise to V）。B「太好了，希望一切順利」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "We are committed to providing the best possible service.",
+      "options": [
+        "A. I am not committed to this relationship.",
+        "B. That's why your company has such a great reputation.",
+        "C. Providing service is very hard.",
+        "D. The best is yet to come."
+      ],
+      "ans": "B",
+      "explain": "句子：我們致力於提供最好的服務（be committed to + V-ing）。B「這就是為什麼你們公司有這麼好的聲譽」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "The medication which I took last night made me feel drowsy all morning.",
+      "options": [
+        "A. You should probably ask the pharmacist if that's a normal side effect.",
+        "B. I like taking medication.",
+        "C. The morning is the best time of the day.",
+        "D. Drowsiness is not a disease."
+      ],
+      "ans": "A",
+      "explain": "句子：我昨晚吃的藥讓我整個早上都昏昏欲睡（關係代名詞 which）。A「你或許該問問藥師那是否為正常的副作用」最合適。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "desc": "🎧 聽到這句話，最適合的回應是？",
+      "speak": "She managed to resolve the customer's issue without escalating it to management.",
+      "options": [
+        "A. The issue is very complicated.",
+        "B. That's impressive. She has excellent problem-solving skills.",
+        "C. Management is always right.",
+        "D. Escalating an issue is not recommended."
+      ],
+      "ans": "B",
+      "explain": "句子：她成功解決了客戶的問題，而沒有往上呈報給管理層（manage to V）。B「真令人佩服，她有很棒的解決問題能力」最合適。"
+    }
+  ]
 }

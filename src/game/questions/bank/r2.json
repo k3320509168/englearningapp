@@ -950,20 +950,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【對話】詢問頻率的回答",
-      "options": [
-        "A. two times",
-        "B. twice a week",
-        "C. for two weeks",
-        "D. since two weeks"
-      ],
-      "ans": "B",
-      "explain": "How often 詢問頻率。twice a week 表示「一週兩次」，是標準的頻率表達方式。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
       "desc": "【字彙】含有 screen 的句子",
       "options": [
         "A. scream",
@@ -987,174 +973,6 @@
       ],
       "ans": "A",
       "explain": "don't need to 意為「不需要」。既然昨天已經在網路上買好票了，就「不需要」擔心。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】職場消防演習郵件",
-      "options": [
-        "A. Take the elevator to the first floor.",
-        "B. Stay in the office and keep working.",
-        "C. Walk out of the building.",
-        "D. Call the fire department."
-      ],
-      "ans": "C",
-      "explain": "信中提到聽到警報時 must leave the building（必須離開建築物），且 do not use the elevator（不可使用電梯），因此選 (C) 走出建築物。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】游泳池規定告示",
-      "options": [
-        "A. A 10-year-old boy.",
-        "B. A 15-year-old girl.",
-        "C. A child without a swimming cap.",
-        "D. A guest who didn't take a shower."
-      ],
-      "ans": "B",
-      "explain": "告示規定 12 歲以下兒童必須有大人陪同。因此 15 歲的女孩可以獨自游泳。所有人都要戴泳帽及沖澡，排除 (C) 和 (D)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】綠茶促銷廣告",
-      "options": [
-        "A. It has a lot of sugar in it.",
-        "B. It is more expensive on Fridays.",
-        "C. You can get two for the price of one on Friday.",
-        "D. It will make you feel hot and tired."
-      ],
-      "ans": "C",
-      "explain": "廣告提到星期五 Buy one get one free（買一送一），也就是花一杯的錢可以拿到兩杯，符合選項 (C)。茶是無糖的（sugar-free）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】東京旅遊行程",
-      "options": [
-        "A. Resting in the hotel.",
-        "B. Seeing a famous mountain.",
-        "C. Buying gifts for friends.",
-        "D. Arriving at the airport."
-      ],
-      "ans": "B",
-      "explain": "行程第二天 (Day 2) 的計畫是 visit Mount Fuji（參觀富士山），即去看一座著名的山 (seeing a famous mountain)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】遲到通知簡訊",
-      "options": [
-        "A. He missed his bus to work.",
-        "B. He forgot about the meeting.",
-        "C. He is having breakfast with his kids.",
-        "D. He is taking his children to school."
-      ],
-      "ans": "D",
-      "explain": "簡訊中提到遲到的原因是 I have to drop my kids off at school（我必須載小孩去學校），符合選項 (D)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】圖書館規定",
-      "options": [
-        "A. Drinking water.",
-        "B. Talking loudly on the phone.",
-        "C. Eating sandwiches.",
-        "D. Drinking coffee."
-      ],
-      "ans": "A",
-      "explain": "規定寫道 must not eat or drink... except for water（除水之外不可飲食），因此在圖書館內只允許喝水 (Drinking water)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】包裹配送郵件",
-      "options": [
-        "A. Go to the post office.",
-        "B. Stay home to get the package.",
-        "C. Send a package to a friend.",
-        "D. Pay for the delivery on Wednesday."
-      ],
-      "ans": "B",
-      "explain": "郵件要求客戶 please make sure someone is at home to receive it（請確保有人在家收件），因此星期二必須待在家裡等包裹。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】商業午餐菜單",
-      "options": [
-        "A. At 10 AM on Monday.",
-        "B. At 6 PM on Friday.",
-        "C. At noon on Wednesday.",
-        "D. At 1 PM on Saturday."
-      ],
-      "ans": "C",
-      "explain": "特餐供應時間為週一至週五的上午 11 點到下午 2 點。選項 (C) 星期三的中午 (at noon) 剛好在這個時段內。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】睡眠健康建議",
-      "options": [
-        "A. Drinking a lot of coffee in the evening.",
-        "B. Using a smartphone in bed.",
-        "C. Avoiding coffee in the late afternoon.",
-        "D. Reading a book after midnight."
-      ],
-      "ans": "C",
-      "explain": "建議中提到 you should not drink coffee... after 4 PM（下午四點後不該喝咖啡），即傍晚應避免喝咖啡 (Avoiding coffee)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】健身房休館公告",
-      "options": [
-        "A. This weekend.",
-        "B. Next Tuesday.",
-        "C. Every day at 6 AM.",
-        "D. Next Monday."
-      ],
-      "ans": "D",
-      "explain": "公告中明確指出 The company gym will be closed next Monday（公司健身房下週一將休館）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】日常通勤方式",
-      "options": [
-        "A. By bus.",
-        "B. By train.",
-        "C. On foot.",
-        "D. By car."
-      ],
-      "ans": "D",
-      "explain": "短文提到約翰通常搭公車，但「今天」因為下大雨 he is going to drive his car（他將要開車），故選 By car。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】尋找物品郵件",
-      "options": [
-        "A. Give him a ride to work.",
-        "B. Look for his keys in the office.",
-        "C. Clean his desk.",
-        "D. Buy a new car."
-      ],
-      "ans": "B",
-      "explain": "寄件人說找不到車鑰匙，可能留在辦公桌上，並問 Can you check for me?（妳能幫我查看嗎？），即請對方在辦公室找鑰匙。"
     },
     {
       "type": "voice",
@@ -2636,48 +2454,6 @@
       "explain": "fee 意為「費用、手續費」。句意：如果你晚繳信用卡帳單，銀行會向你收取一筆遲交費用。選項 C 符合語境。A（地圖）、B（禮物）、D（食物）皆不合理。"
     },
     {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】產品評論推論題",
-      "options": [
-        "A. The camera is very cheap.",
-        "B. The battery is terrible.",
-        "C. The picture quality is excellent.",
-        "D. The user wants a refund."
-      ],
-      "ans": "C",
-      "explain": "短文內容提到：「I bought this camera last week. The photos look amazing and clear even at night. However, it is a bit heavy. I will recommend it to my friends.」文中明確提到照片很棒（amazing and clear），符合 C（畫質極佳）。A 未提及，B 電池未提及，D 用戶推薦給朋友，未提退款。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】社群貼文主旨題",
-      "options": [
-        "A. To sell a bicycle.",
-        "B. To complain about the weather.",
-        "C. To share a travel experience.",
-        "D. To announce a new job."
-      ],
-      "ans": "C",
-      "explain": "貼文內容：「Just returned from a 3-day trip to Hualien. The mountains are beautiful, and the food is great. We rented a car, so it was easy to get around. Can't wait to go again!」主要在分享去花蓮旅行的經驗，因此選 C。未提到賣腳踏車、抱怨天氣或宣布新工作。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】學校社團活動細節題",
-      "options": [
-        "A. Tuesday",
-        "B. Wednesday",
-        "C. Friday",
-        "D. Saturday"
-      ],
-      "ans": "C",
-      "explain": "短文內容：「The Photography Club will meet this Friday at 4 PM in Room 205. Please bring your own camera. We are going to learn how to shoot outdoors.」問題是「他們什麼時候開會？」，文中明確指出是 this Friday，因此選 C。"
-    },
-    {
       "type": "voice",
       "skill": "speaking",
       "difficulty": 1,
@@ -3821,20 +3597,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【單句】未來式的否定",
-      "options": [
-        "A. does",
-        "B. is",
-        "C. has",
-        "D. will"
-      ],
-      "ans": "D",
-      "explain": "選 D。句中有 tomorrow，表示未來時間，故使用助動詞 will。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【單句】含有 SOUVENIR 的句子",
       "options": [
         "A. souvenir",
@@ -4157,20 +3919,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 3,
-      "desc": "【短文】機場告示細節題",
-      "options": [
-        "A. A map",
-        "B. A credit card",
-        "C. A souvenir",
-        "D. A pass and ID"
-      ],
-      "ans": "D",
-      "explain": "選 D。文中規定 entering the boarding gate 前必須出示 pass and ID。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
       "desc": "【短文】健康飲食細節題 (含有 PROTEIN)",
       "options": [
         "A. Eating eggs",
@@ -4194,20 +3942,6 @@
       ],
       "ans": "B",
       "explain": "選 B。文章指出吃速食會增加體重，並建議 You should cook at home more often。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】運動健康細節題",
-      "options": [
-        "A. To lose weight faster",
-        "B. To sleep better",
-        "C. To cool down the body",
-        "D. To run faster"
-      ],
-      "ans": "C",
-      "explain": "選 C。文中提到喝水 helps your body cool down (幫助身體降溫)。"
     },
     {
       "type": "choice",
@@ -6133,20 +5867,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【對話】現在進行式表未來計畫",
-      "options": [
-        "A. visit to",
-        "B. have visit",
-        "C. am visiting",
-        "D. visiting"
-      ],
-      "ans": "C",
-      "explain": "本題測驗時態。句意：A：你為什麼在打包行李？ B：因為我下週末要去台南拜訪我的祖父母。am visiting 為現在進行式，在此用來表達已經安排好的未來計畫。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
       "desc": "【單句】含有 METAL 的句子",
       "options": [
         "A. mental",
@@ -6300,62 +6020,6 @@
     {
       "type": "choice",
       "skill": "reading",
-      "difficulty": 2,
-      "desc": "【對話】頻率副詞的用法",
-      "options": [
-        "A. two times of a week",
-        "B. twice in week",
-        "C. twice a week",
-        "D. second times a week"
-      ],
-      "ans": "C",
-      "explain": "本題測驗頻率副詞片語。句意：A：你多常去游泳？ B：我通常一週去兩次。表達「一週兩次」的正確寫法是 twice a week。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】徵人廣告主旨題",
-      "options": [
-        "A. To book a hotel room.",
-        "B. To complain about poor service.",
-        "C. To announce a weekend party.",
-        "D. To find a new worker."
-      ],
-      "ans": "D",
-      "explain": "本題測驗主旨理解。短文提到「We are seeking a friendly reception clerk...」（我們正在尋找一位友善的櫃台人員），故本文主要目的是尋找新員工（To find a new worker）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】徵人廣告細節題",
-      "options": [
-        "A. Free meals.",
-        "B. A free computer.",
-        "C. Transportation fee.",
-        "D. Two years of training."
-      ],
-      "ans": "A",
-      "explain": "本題測驗細節尋找。文中提到「We offer free lunch and flexible working hours.」（我們提供免費午餐及彈性工時）。因此公司提供給員工的是免費餐點（Free meals）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】旅遊注意事項細節題",
-      "options": [
-        "A. Stay on the trails.",
-        "B. Give food to animals.",
-        "C. Take pictures.",
-        "D. Visit the lake."
-      ],
-      "ans": "B",
-      "explain": "本題測驗細節尋找。問題問遊客「不可以」做什麼（NOT allowed）。文中明確寫出「Do not feed the wild animals.」（不要餵食野生動物），選項 B 的 Give food to animals 即為此意。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
       "difficulty": 1,
       "desc": "【字彙】含有 exhibition 的句子",
       "options": [
@@ -6441,34 +6105,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【時態】未來式的狀態變化",
-      "options": [
-        "A. became",
-        "B. becomes",
-        "C. will become",
-        "D. is becoming"
-      ],
-      "ans": "C",
-      "explain": "正確答案是 C。根據句尾的 next week，此句描述未來的狀態變化，應使用未來式 will become。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【時態】未來式的意圖與打算",
-      "options": [
-        "A. to",
-        "B. will to",
-        "C. goes to",
-        "D. am going to"
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。表達即將去做的打算，使用 be going to 的句型。主詞 I 搭配 am going to。will 後面不能加 to。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【頻率副詞】含有 never 的對比",
       "options": [
         "A. always",
@@ -6478,20 +6114,6 @@
       ],
       "ans": "C",
       "explain": "正確答案是 C。句意指出導演偏好愛情片，因此他「從不（never）」拍動作片，符合後半句的語境。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【時態】單純未來式",
-      "options": [
-        "A. are",
-        "B. were",
-        "C. have",
-        "D. will"
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。句意：我最喜歡的球隊下週「將會」參加決賽。搭配 next week 需使用未來式 will。"
     },
     {
       "type": "choice",
@@ -6595,20 +6217,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【對話】頻率副詞與日常活動",
-      "options": [
-        "A. never",
-        "B. yet",
-        "C. soon",
-        "D. usually"
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。問句詢問「你常在家做飯嗎？」，回答為「Yes」，因此選 usually（通常）最符合語境。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
       "desc": "【長句】含有 flood 的句子",
       "options": [
         "A. flood",
@@ -6632,20 +6240,6 @@
       ],
       "ans": "B",
       "explain": "正確答案是 B。theater 意為「電影院、劇院」。電影太無聊，許多人沒看完就離開電影院了。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【長句】未來式的否定",
-      "options": [
-        "A. did not",
-        "B. are not",
-        "C. will not",
-        "D. have not"
-      ],
-      "ans": "C",
-      "explain": "正確答案是 C。表達未來的決心「將不會」放棄比賽。did not 是過去式，與前半句的 are (現在式) 不合。"
     },
     {
       "type": "choice",
@@ -6744,118 +6338,6 @@
       ],
       "ans": "B",
       "explain": "正確答案是 B。before 意為「在...之前」。所有員工在返回工作崗位「之前」必須洗手，符合衛生宣導邏輯。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】美術館參觀規定",
-      "options": [
-        "A. Bags must be carried at all times.",
-        "B. The exhibition is on the first floor.",
-        "C. Visitors cannot take pictures.",
-        "D. Lockers are not available."
-      ],
-      "ans": "C",
-      "explain": "正確答案是 C。短文中提到 \"Photos are not allowed inside\"，即禁止拍照。A錯，因為要把包包放進置物櫃；B錯，展覽在二樓。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】天氣警報細節題",
-      "options": [
-        "A. Under large trees.",
-        "B. On the street.",
-        "C. Inside the park.",
-        "D. Away from large trees."
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。短文警告不要將車停在大樹下（Do not park your cars under large trees），表示應將車子遠離大樹。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】烹飪步驟細節題",
-      "options": [
-        "A. Put in the onions.",
-        "B. Cook the meat.",
-        "C. Stir everything.",
-        "D. Wash the pan."
-      ],
-      "ans": "A",
-      "explain": "正確答案是 A。第一步是熱奶油，接著（Next）加入洋蔥（add the onions）。因此加熱奶油後緊接著要放入洋蔥。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】電影評論推論題",
-      "options": [
-        "A. They hate the actors.",
-        "B. They think it is mostly good.",
-        "C. They think the story is very clear.",
-        "D. They will not watch it again."
-      ],
-      "ans": "B",
-      "explain": "正確答案是 B。作者提到演員很棒，雖然故事有點亂，但結尾說「大家依然會喜歡它（Still, I think everyone will enjoy it.）」，可推知整體評價是好的。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】運動比賽報導細節題",
-      "options": [
-        "A. The Lions.",
-        "B. The Bears.",
-        "C. The Tigers.",
-        "D. The Eagles."
-      ],
-      "ans": "C",
-      "explain": "正確答案是 C。短文第一句明確指出「The Tigers won the basketball game last night」，所以贏得比賽的是 The Tigers。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】公司內部公告細節題",
-      "options": [
-        "A. At their desks.",
-        "B. In the meeting room.",
-        "C. On the first floor.",
-        "D. In the break room."
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。短文規定不能在辦公桌吃，並指出「You can have your lunch in the break room」，說明員工能在休息室用餐。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】景點導覽細節題",
-      "options": [
-        "A. In the morning.",
-        "B. At noon.",
-        "C. In the afternoon.",
-        "D. At night."
-      ],
-      "ans": "A",
-      "explain": "正確答案是 A。短文提到導覽從早上 10:00 開始（starts at 10:00 a.m.），這屬於早上（In the morning）的時間。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】書評細節題",
-      "options": [
-        "A. It is a funny story.",
-        "B. It is based on real events.",
-        "C. It is about an old woman.",
-        "D. It takes a long time to read."
-      ],
-      "ans": "B",
-      "explain": "正確答案是 B。文中提到「tells a true story」，表示它是基於真實事件。故事主角是 young girl 不是 old woman，且一天就看完了。"
     },
     {
       "type": "choice",
@@ -8447,34 +7929,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【單句】情態動詞的否定用法",
-      "options": [
-        "A. doesn't have to",
-        "B. must not",
-        "C. will",
-        "D. are going to"
-      ],
-      "ans": "B",
-      "explain": "題目：Visitors ___ touch the glass of the fish tanks.（遊客禁止觸摸魚缸玻璃）。表示強烈禁止應使用 must not。A 表示「不必」，語意不符。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【單句】頻率副詞的用法",
-      "options": [
-        "A. always are",
-        "B. will to",
-        "C. often",
-        "D. must"
-      ],
-      "ans": "C",
-      "explain": "題目：Dolphins are very smart, and they ___ play with the staff in the pool.（海豚很聰明，牠們經常在水池裡和工作人員玩）。play 是原形動詞，前方可加上頻率副詞 often。A 位置與搭配錯誤；B 多了 to；D 雖然文法可通，但描述海豚習性用 often 比「必須 (must)」合理。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【單句】含有 MATERIAL 的句子",
       "options": [
         "A. mustn't",
@@ -8545,20 +7999,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【單句】健康檢查相關用語",
-      "options": [
-        "A. don't have to",
-        "B. must not",
-        "C. aren't going",
-        "D. won't be"
-      ],
-      "ans": "B",
-      "explain": "題目：You ___ eat or drink anything for eight hours before the blood test.（抽血前八小時禁止飲食）。強烈禁止用 must not。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【單句】含有 CLINIC 的句子",
       "options": [
         "A. is",
@@ -8582,20 +8022,6 @@
       ],
       "ans": "D",
       "explain": "題目：My sister ___ buys second-hand clothes at the flea market. buys 為現在式，前方填入頻率副詞 normally（通常）最合理。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
-      "desc": "【單句】未來式的條件句結果",
-      "options": [
-        "A. will",
-        "B. are",
-        "C. usually to",
-        "D. has to"
-      ],
-      "ans": "A",
-      "explain": "題目：If you buy three shirts, the seller ___ give you a lower price. 條件句中，表示未來可能發生的結果，主要子句使用 will + 原形動詞。"
     },
     {
       "type": "choice",
@@ -8643,20 +8069,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【單句】頻率副詞與醫療主題",
-      "options": [
-        "A. often",
-        "B. are",
-        "C. going to",
-        "D. have to"
-      ],
-      "ans": "A",
-      "explain": "題目：The nurse ___ measures your blood pressure before you see the doctor. measures 為動詞，前方可加上頻率副詞 often 形成合理的句意。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【單句】情態動詞 must 表義務",
       "options": [
         "A. doesn't have to",
@@ -8671,20 +8083,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【單句】未來式的行程安排",
-      "options": [
-        "A. is going",
-        "B. have to",
-        "C. will",
-        "D. normally to"
-      ],
-      "ans": "C",
-      "explain": "題目：Our tour leader ___ take us to the wild animal section after lunch. 午餐後的計畫，搭配原形動詞 take，使用 will 最適合 (A 少了 to)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 1,
       "desc": "【單句】情態動詞 should 表建議",
       "options": [
         "A. has to",
@@ -8694,20 +8092,6 @@
       ],
       "ans": "D",
       "explain": "題目：You ___ buy a ticket online if you want to skip the line at the front door.（如果你想跳過前門的排隊，你應該在網上買票）。給予建議使用 should。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【對話】情態動詞與時間安排",
-      "options": [
-        "A. should",
-        "B. has to",
-        "C. are going",
-        "D. will be"
-      ],
-      "ans": "A",
-      "explain": "A問：我們什麼時候可以看企鵝秀？B答：十分鐘後開始，我們現在「應該 (should)」去水池了。B (has to) 主詞是 We 應為 have to；C 缺少 to。"
     },
     {
       "type": "choice",
@@ -8769,20 +8153,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【對話】圖書館借閱規定",
-      "options": [
-        "A. have",
-        "B. can",
-        "C. will be",
-        "D. are going"
-      ],
-      "ans": "B",
-      "explain": "A問一次能借幾份數位檔案？B回答：一般借閱證「可以 (can)」借最多五份。表示權限與許可。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
       "desc": "【對話】基於證據的預測 (is going to)",
       "options": [
         "A. will be",
@@ -8792,20 +8162,6 @@
       ],
       "ans": "C",
       "explain": "A說天空有烏雲。B根據眼前烏雲的證據預測：我想快「要 (is going to)」下雨了，我們坐下層吧。表示根據現狀推斷即將發生的事，用 is going to。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【對話】醫療報告與未來式",
-      "options": [
-        "A. going",
-        "B. will be",
-        "C. have to",
-        "D. is going to"
-      ],
-      "ans": "D",
-      "explain": "A問何時能收到報告。B回答：健康中心三天後「將會 (is going to)」寄到你家。健康中心為單數，使用 is going to + 原形動詞 mail。"
     },
     {
       "type": "choice",
@@ -8825,34 +8181,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 2,
-      "desc": "【對話】未來式的否定",
-      "options": [
-        "A. haven't",
-        "B. won't",
-        "C. don't",
-        "D. shouldn't to"
-      ],
-      "ans": "B",
-      "explain": "A稱讚木椅漂亮。B覺得太重了，所以決定今天「不會 (won't)」買。won't 是 will not 的縮寫，表示未來的決定。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【對話】二手市集營業時間",
-      "options": [
-        "A. never",
-        "B. always",
-        "C. only",
-        "D. seldom"
-      ],
-      "ans": "C",
-      "explain": "A問跳蚤市場是每天開嗎？B說：不，它「只有 (only)」在週末和國定假日才開。語氣強調限定的時間。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
       "desc": "【對話】情態動詞 must 提醒",
       "options": [
         "A. can",
@@ -8867,20 +8195,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 3,
-      "desc": "【短文】農場餵食規定細節題",
-      "options": [
-        "A. Visitors must use the grass provided by the farm.",
-        "B. Visitors can give the animals outside food.",
-        "C. Visitors should wake the sheep up to feed them.",
-        "D. Visitors don't have to buy food if they bring their own."
-      ],
-      "ans": "A",
-      "explain": "短文指出「you have to use the special grass provided at the front desk」，禁止帶外食，也不可觸摸睡覺的動物，因此 A 為正確規定。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
       "desc": "【短文】含有 TECHNICIAN 的句子",
       "options": [
         "A. Fix the machine themselves.",
@@ -8890,48 +8204,6 @@
       ],
       "ans": "B",
       "explain": "短文指示「If your sewing machine makes a strange noise, turn it off immediately. Do not try to fix it yourself.」，所以聽到怪聲應該立刻關掉機器 (B)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】水族館規定細節題",
-      "options": [
-        "A. Look at the sea creatures.",
-        "B. Walk through the tunnel in the morning.",
-        "C. Take pictures with a flash.",
-        "D. Watch the dolphin show."
-      ],
-      "ans": "C",
-      "explain": "短文寫道「Visitors must not use flash photography inside the tunnel to keep the sea creatures safe.」，因此遊客不被允許使用閃光燈拍照 (C)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】木工坊服裝要求細節題",
-      "options": [
-        "A. A heavy jacket for safety.",
-        "B. Formal business clothing.",
-        "C. A uniform provided by the teacher.",
-        "D. Clothes they don't mind getting dirty."
-      ],
-      "ans": "D",
-      "explain": "短文最後提到「you should wear comfortable clothes that can get dirty」，即建議穿不怕弄髒的衣服 (D)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】圖書館罰款計算",
-      "options": [
-        "A. $3",
-        "B. $1",
-        "C. $14",
-        "D. $0"
-      ],
-      "ans": "A",
-      "explain": "短文提到「you will pay a fine of $1 per day」，即遲交一天罰 1 美元。晚三天歸還，罰款就是 3 美元 (A)。"
     }
   ],
   "boss": [
@@ -9484,174 +8756,6 @@
       ],
       "ans": "B",
       "explain": "聽到 We will evaluate the candidates after the interviews. (面試後我們會評估候選人。)，回答 Okay, we can discuss them tomorrow. (好的，我們明天可以討論他們。) 最合理。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】咖啡廳規定細節題",
-      "options": [
-        "A. They must pay in cash.",
-        "B. They can talk loudly.",
-        "C. They must keep their voice down.",
-        "D. They cannot use the Wi-Fi."
-      ],
-      "ans": "C",
-      "explain": "短文：「Welcome to Quiet Corner Cafe. Please keep your voice down so others can study. Free Wi-Fi is available for 2 hours. We only accept electronic payments.」文中要求「keep your voice down」，對應 C（他們必須放低音量）。A 錯在只能用電子支付，B 錯在不能大聲，D 錯在有免費 Wi-Fi。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】博物館營業時間推論",
-      "options": [
-        "A. At 10 AM on Monday.",
-        "B. At 9 PM on Wednesday.",
-        "C. At 11 AM on Thursday.",
-        "D. At 8 AM on Saturday."
-      ],
-      "ans": "C",
-      "explain": "短文：「City History Museum Hours: Tuesday to Sunday, 10:00 AM - 6:00 PM. Closed on Mondays. Tickets are half price on Thursday mornings.」若遊客想參觀，只能在週二到週日的 10:00~18:00。A 是星期一（休館），B 是週三晚上九點（已打烊），D 是週六早上八點（未開門），只有 C 落在營業時間內。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】飯店價目表計算與細節",
-      "options": [
-        "A. Breakfast is free for everyone.",
-        "B. You have to pay extra for breakfast.",
-        "C. The gym is closed in the morning.",
-        "D. Pets are welcome in the rooms."
-      ],
-      "ans": "B",
-      "explain": "短文：「Room Rates: Standard $100/night, Deluxe $150/night. All guests can use the gym for free. Breakfast is available for an extra $15 per person. No pets allowed.」文中說明早餐需每人額外支付 $15（an extra $15），因此 B 正確。A 錯在不免費，C 錯在健身房免費開放，D 錯在禁止寵物。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】部落格文章主旨",
-      "options": [
-        "A. How to cook pasta.",
-        "B. Tips for learning a new language.",
-        "C. The best restaurants in Italy.",
-        "D. Why buying clothes online is hard."
-      ],
-      "ans": "B",
-      "explain": "文章：「Learning Spanish? Here is what I do. First, listen to Spanish podcasts constantly. Second, don't be afraid to make mistakes when you speak. Practice regularly, and you will see progress.」全文提供學習西班牙語（新語言）的建議，因此選 B。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】公車時刻表細節",
-      "options": [
-        "A. Every 15 minutes.",
-        "B. Every 30 minutes.",
-        "C. Every hour.",
-        "D. Once a day."
-      ],
-      "ans": "B",
-      "explain": "短文：「Bus Route 101 to Downtown. First bus: 6:00 AM. Last bus: 10:00 PM. Buses depart every 30 minutes during weekdays and every hour on weekends.」題目問「在平日（weekdays），公車多久發一班？」，文中明確指出平日是 every 30 minutes，因此選 B。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】產品評論缺點分析",
-      "options": [
-        "A. The screen is too small.",
-        "B. It is too heavy.",
-        "C. The battery life is short.",
-        "D. The price is too high."
-      ],
-      "ans": "C",
-      "explain": "評論：「I love my new laptop. It is very light and the screen is beautiful. But there is one problem: I have to charge it every three hours. The power doesn't last long.」使用者抱怨每三小時就要充電（charge it every three hours），意即電池續航力短，因此選 C。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】社區活動佈告欄推論",
-      "options": [
-        "A. Bring old books to share.",
-        "B. Wear comfortable sports shoes.",
-        "C. Bring a swimsuit.",
-        "D. Pay a large entrance fee."
-      ],
-      "ans": "B",
-      "explain": "佈告：「Join our City Park Cleanup Event this Sunday! We are going to pick up trash around the lake. Gloves and bags will be provided. Please wear comfortable clothes and walking shoes.」文中要求穿舒適的衣服與走路鞋（walking shoes），選項 B 的運動鞋最為符合。A、C、D 均未提及。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】餐廳促銷活動條件",
-      "options": [
-        "A. On weekends only.",
-        "B. By showing a student ID.",
-        "C. By ordering two desserts.",
-        "D. By paying with a credit card."
-      ],
-      "ans": "B",
-      "explain": "促銷：「Student Special! Get 20% off your total bill every Monday and Tuesday. You must show a valid student ID to the waiter before ordering.」要獲得折扣的條件是向服務生出示有效的學生證（show a valid student ID），因此選 B。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】公司內部培訓規定",
-      "options": [
-        "A. They must attend the training.",
-        "B. The training is for managers only.",
-        "C. They can go home early.",
-        "D. The training is about online marketing."
-      ],
-      "ans": "A",
-      "explain": "內部郵件：「Notice to all new employees: You must attend the safety training session next Wednesday. The meeting will start at 2 PM. Please be on time.」信件指出所有新進員工（all new employees）都必須參加（must attend），因此選 A。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】線上課程網頁細節",
-      "options": [
-        "A. You will get a certificate at the end.",
-        "B. You have to travel to Taipei to take it.",
-        "C. The course takes three years to finish.",
-        "D. It is only available for children."
-      ],
-      "ans": "A",
-      "explain": "網頁：「Learn Basic Coding Online! This course is for adult beginners. You will learn HTML and CSS in just 6 weeks. A digital certificate will be provided after you finish the final test.」文中提到完成考試後會提供數位證書（A digital certificate will be provided），因此選 A。B 錯在是線上課程，C 錯在只需 6 週，D 錯在對象是成人。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】二手市集社群貼文主旨",
-      "options": [
-        "A. To complain about old clothes.",
-        "B. To invite people to a flea market.",
-        "C. To look for a lost item.",
-        "D. To teach people how to sew."
-      ],
-      "ans": "B",
-      "explain": "貼文：「We are holding a weekend flea market at Central Square! Come find cheap clothes, books, and toys. It's going to be a fun day for families. See you there!」目的是邀請大家來參加週末跳蚤市場（二手市集），因此選 B。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】音樂節行程表推論",
-      "options": [
-        "A. Rock Music",
-        "B. Jazz Music",
-        "C. Pop Music",
-        "D. Classical Music"
-      ],
-      "ans": "B",
-      "explain": "行程：「Main Stage Schedule: 1:00 PM Pop Music, 3:00 PM Rock Band, 5:00 PM Jazz Time, 7:00 PM DJ Party.」如果一個人下午五點半（5:30 PM）到達主舞台，他會聽到的是 5:00 PM 開始的爵士樂（Jazz Time），因為下一場 DJ 派對是 7:00 PM 才開始。因此選 B。"
     },
     {
       "type": "voice",
@@ -10736,146 +9840,6 @@
     {
       "type": "choice",
       "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】旅遊注意事項推論題",
-      "options": [
-        "A. The flight is canceled.",
-        "B. The plane will land in 15 minutes.",
-        "C. Families with kids don't need to wait in the normal line.",
-        "D. Door 8 is currently closed."
-      ],
-      "ans": "C",
-      "explain": "本題測驗邏輯推論。廣播提到「If you are traveling with small children, you can enter first.」（如果你帶著小孩旅行，可以先進入），推論出有小孩的家庭不必跟著一般隊伍排隊等待。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】健身房介紹細節題",
-      "options": [
-        "A. Every morning.",
-        "B. On weekends.",
-        "C. 24 hours a day.",
-        "D. On Tuesday nights."
-      ],
-      "ans": "D",
-      "explain": "本題測驗細節尋找。短文中提到「Group cycling classes are held every Tuesday evening...」（團體飛輪課每週二晚上舉行），對應選項 D 的 On Tuesday nights。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】健身房介紹字義題",
-      "options": [
-        "A. Taking a lot of effort and energy.",
-        "B. Very cheap and easy.",
-        "C. Slow and relaxing.",
-        "D. Only for old people."
-      ],
-      "ans": "A",
-      "explain": "本題測驗上下文推敲字義。該段落提到這個為期4週的課程能幫助「快速減重」，並包含「每日運動」與個人飲食計畫，推斷 intensive 意為「密集的、高強度的」，即需要付出許多精力與努力（Taking a lot of effort and energy）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】環保告示細節題",
-      "options": [
-        "A. Comfortable shoes.",
-        "B. Bags and gloves.",
-        "C. Free parking spaces.",
-        "D. Food and drinks."
-      ],
-      "ans": "B",
-      "explain": "本題測驗細節尋找。短文寫道「We will provide bags and gloves.」（我們將提供袋子與手套），主辦方給予幫手們的就是這兩樣物品。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】環保告示推論題",
-      "options": [
-        "A. To make supermarkets rich.",
-        "B. To sell more shopping bags.",
-        "C. To reduce city waste.",
-        "D. To help people save money."
-      ],
-      "ans": "C",
-      "explain": "本題測驗作者意圖推論。文中指出停止免費提供塑膠袋，並希望這項規定能鼓勵民眾自己帶袋子。可推論出市政府制定此規定的根本目的是為了「減少城市垃圾」（To reduce city waste）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】餐廳評論細節題",
-      "options": [
-        "A. The spicy chicken.",
-        "B. The prices.",
-        "C. The food quality.",
-        "D. The loud music."
-      ],
-      "ans": "D",
-      "explain": "本題測驗細節尋找。評論者提到食物很棒、價格公道，但轉折處寫到「the music was a bit too loud, and it was hard to talk with my friends.」（音樂太大聲，很難跟朋友說話）。因此作者不喜歡的是音樂太大聲。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】餐廳評論推論題",
-      "options": [
-        "A. Very angry and disappointed.",
-        "B. Happy but hungry.",
-        "C. Grateful and warm.",
-        "D. Confused but relaxed."
-      ],
-      "ans": "A",
-      "explain": "本題測驗語氣推論。作者等了45分鐘拿到冷掉的義大利麵，且女服務生連句抱歉都沒說，最後寫出「I am never going to eat here again!」（我再也不來這吃了），強烈表達出憤怒與失望的情緒。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】朋友訊息主旨題",
-      "options": [
-        "A. To cancel the movie plan.",
-        "B. To say he will be late.",
-        "C. To ask Sarah to buy a ticket.",
-        "D. To complain about the movie."
-      ],
-      "ans": "B",
-      "explain": "本題測驗主旨理解。訊息提到「stuck in a long meeting... don't think I can make it to the movie theater by 7 PM」（卡在冗長的會議中，無法在七點抵達），並要對方先進去，表示傳訊者只是會遲到，並非取消。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】朋友訊息細節題",
-      "options": [
-        "A. Book a table at the restaurant.",
-        "B. Pay for the dinner.",
-        "C. Bring a piece of clothing.",
-        "D. Arrive before 6:00."
-      ],
-      "ans": "C",
-      "explain": "本題測驗細節尋找。文中要求 Mark「could you bring the red jacket you borrowed from me last week?」（你能帶上週跟我借的紅夾克來嗎？），紅夾克屬於服飾（a piece of clothing）。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】求職信推論題",
-      "options": [
-        "A. To show his bank account.",
-        "B. To ask for a higher salary.",
-        "C. To prove he can use programs.",
-        "D. To show examples of his past art work."
-      ],
-      "ans": "D",
-      "explain": "本題測驗語境推論。求職者應徵平面設計師，並提到附上作品集（portfolio）。作品集的目的是用來展示他過去的藝術設計範例（To show examples of his past art work），以證明他的創意技能。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
       "difficulty": 2,
       "desc": "【單句】含有 BENEFIT 的句子",
       "options": [
@@ -10886,20 +9850,6 @@
       ],
       "ans": "A",
       "explain": "本題測驗單字。句意：在這裡工作的一個很大好處是你可以獲得免費的健康保險。benefit 意為「好處、福利」，符合職場福利語境。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【單句】未來式與情態動詞的結合",
-      "options": [
-        "A. had to",
-        "B. will need to",
-        "C. needs to",
-        "D. are need to"
-      ],
-      "ans": "B",
-      "explain": "本題測驗時態與動詞用法。句意：如果我們今天無法完成工作，我們星期五將必須留下來加班。條件句 If 子句用現在式，主要子句則用未來式 will，且 need to 表達「必須、需要」。"
     },
     {
       "type": "choice",
@@ -10970,90 +9920,6 @@
       ],
       "ans": "C",
       "explain": "正確答案是 C。gently 意為「輕柔地、和緩地」。你應該輕輕攪拌湯，這樣它才不會在底部燒焦。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】防災須知推論題",
-      "options": [
-        "A. Getting on the floor.",
-        "B. Hiding under a table.",
-        "C. Holding on to the table.",
-        "D. Running down the stairs."
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。短文最後一句特別警告「Never use the stairs during the shaking」，因此在地震中跑下樓梯是個壞主意。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】烹飪步驟推論題",
-      "options": [
-        "A. Olive oil and garlic.",
-        "B. Fresh tomatoes.",
-        "C. Water.",
-        "D. Salt and pepper."
-      ],
-      "ans": "A",
-      "explain": "正確答案是 A。文中指示：先切番茄（Chop the tomatoes first），接著在加番茄之前，先在油裡炸大蒜。所以大蒜跟油最先下鍋。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】體育新聞推論題",
-      "options": [
-        "A. He does not want to play.",
-        "B. He is hurt and needs rest.",
-        "C. He is going on a vacation.",
-        "D. The coach is angry with him."
-      ],
-      "ans": "B",
-      "explain": "正確答案是 B。文章提到明星球員受傷（injured his leg）且醫生說需要休息（need to rest），因此他才錯過決賽。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】影評字眼理解題",
-      "options": [
-        "A. The visual effects.",
-        "B. The robots in the film.",
-        "C. The things the characters say.",
-        "D. The length of the movie."
-      ],
-      "ans": "C",
-      "explain": "正確答案是 C。評論家稱讚視覺效果，但是對話寫得很差（dialogue is poorly written），所以他不喜歡的是角色所說的話。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】職場規定主旨題",
-      "options": [
-        "A. To ask employees to work harder.",
-        "B. To teach people how to use computers.",
-        "C. To announce a new lunch break time.",
-        "D. To explain a new security rule."
-      ],
-      "ans": "D",
-      "explain": "正確答案是 D。此公告要求員工每60天更新一次電腦密碼，目的是保護公司資料免受駭客攻擊，也就是解釋一項新的安全規定。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】書評推論題",
-      "options": [
-        "A. It is very boring.",
-        "B. It is very exciting.",
-        "C. It is difficult to understand.",
-        "D. It is too sad."
-      ],
-      "ans": "B",
-      "explain": "正確答案是 B。評論指出開頭步調慢，但是「the final chapters are full of exciting action」，表示結尾充滿刺激的動作情節。"
     },
     {
       "type": "choice",
@@ -11618,62 +10484,6 @@
     {
       "type": "choice",
       "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】觀光巴士推論題",
-      "options": [
-        "A. It is only valid for the downtown area.",
-        "B. It is valid for a full day on two different lines.",
-        "C. It is free for people visiting the monuments.",
-        "D. It requires you to wait for a long time."
-      ],
-      "ans": "B",
-      "explain": "短文說「A single ticket allows you to hop on and off both lines for 24 hours.」，代表一張票可在 24 小時內於兩條路線通用，故選 B。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】健檢前飲食推論題",
-      "options": [
-        "A. A light breakfast.",
-        "B. Any kind of drink.",
-        "C. Only water.",
-        "D. Nothing at all."
-      ],
-      "ans": "C",
-      "explain": "短文提到「You must fast—meaning no food or drinks except water—for eight hours...」，fast (禁食) 的定義是除了水以外不能吃喝，故只能喝水 (C)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】二手市集細節題",
-      "options": [
-        "A. Because the clothes are very expensive.",
-        "B. Because you can't buy antique furniture without it.",
-        "C. Because the market does not have an ATM.",
-        "D. Because most sellers do not take card payments."
-      ],
-      "ans": "D",
-      "explain": "文末寫道「please bring cash, as most stalls will not accept credit cards.」，所以建議帶現金是因為多數攤位不收信用卡 (D)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】動物園志工訓練細節題",
-      "options": [
-        "A. Making meals for the animals.",
-        "B. Guiding visitors around the zoo.",
-        "C. Catching wild mammals.",
-        "D. Working alone in the cages."
-      ],
-      "ans": "A",
-      "explain": "文中說明「You will learn how to make meals for the wild mammals and clean their cages safely.」，因此志工將學習幫動物準備食物 (A)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
       "difficulty": 2,
       "desc": "【對話】情態動詞 might 表可能",
       "options": [
@@ -11684,20 +10494,6 @@
       ],
       "ans": "B",
       "explain": "A覺得古董燈值 50 美元嗎？B回答：如果你指出底座上的刮痕，它「可能 (might)」會便宜一點。might 用來表示可能性。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 2,
-      "desc": "【對話】圖書館線上註冊規定",
-      "options": [
-        "A. can",
-        "B. will be",
-        "C. must",
-        "D. has"
-      ],
-      "ans": "C",
-      "explain": "A讚賞圖書館的數位區。B提醒：是的，但你在閱讀檔案前「必須 (must)」先在線上註冊。表示必要條件。"
     },
     {
       "type": "choice",
@@ -11717,48 +10513,6 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 3,
-      "desc": "【短文】手工皂課程推論題",
-      "options": [
-        "A. Demonstrate how to mix the oils safely.",
-        "B. Pour the soap into the molds for the students.",
-        "C. Give everyone a pair of gloves to take home.",
-        "D. Bring hard soap from a previous class."
-      ],
-      "ans": "A",
-      "explain": "短文中提到「The instructor will show you how to mix the oils safely.」，即導師會示範如何安全混合精油，與 A 的 demonstrate 意思相符。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】健檢前注意事項推論",
-      "options": [
-        "A. Because they might feel sick during the test.",
-        "B. Because it will cause the blood test results to be wrong.",
-        "C. Because the doctor is going to provide breakfast later.",
-        "D. Because they don't have enough time in the morning."
-      ],
-      "ans": "B",
-      "explain": "文中說明「If you eat breakfast, your blood test results will be incorrect.」，意思是吃早餐會導致血液檢查結果不正確，故選 B (wrong 與 incorrect 同義)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】縫紉工坊細節題",
-      "options": [
-        "A. Ask the person sitting next to them.",
-        "B. Walk to the front of the classroom.",
-        "C. Raise their hand.",
-        "D. Stop using their sharp needles."
-      ],
-      "ans": "C",
-      "explain": "短文指出「The instructor will come to your table if you raise your hand for help.」，因此需要協助時應舉手 (C)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
       "desc": "【短文】含有 SENSOR 的推論題",
       "options": [
         "A. To make sure they are comfortable in the waiting room.",
@@ -11768,34 +10522,6 @@
       ],
       "ans": "D",
       "explain": "文中提到「Please wear loose clothing so the nurse can put the medical sensors easily.」，即穿寬鬆衣物是為了讓護理師能順利放置醫療感應器 (D)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】水族館觸摸規定",
-      "options": [
-        "A. Visitors must not touch their mouths.",
-        "B. Visitors must wash their hands first.",
-        "C. Visitors should only touch them during the talk.",
-        "D. Visitors can feed them small fish."
-      ],
-      "ans": "A",
-      "explain": "文中規定「Visitors can gently touch the rays' backs, but you must keep your hands away from their mouths.」，表示絕對不可以觸碰牠們的嘴巴 (A)。"
-    },
-    {
-      "type": "choice",
-      "skill": "reading",
-      "difficulty": 3,
-      "desc": "【短文】二手書攤退貨條件",
-      "options": [
-        "A. If the buyer doesn't like the story.",
-        "B. If the book is missing pages that were not mentioned.",
-        "C. If the buyer wants to change it for a magazine.",
-        "D. If the book was bought for five dollars."
-      ],
-      "ans": "B",
-      "explain": "攤位標示「We rarely accept returns unless the book has missing pages that we didn't mark.」，除非書本有未標示的缺頁，否則很少接受退貨，故選 B。"
     }
   ]
 }

@@ -30,7 +30,7 @@ export function buildPrompt(levelKey: string, count: number, existingDescs: stri
 題目格式（四種題型都要有）：
 - 拼寫：{ "type": "spell", "desc": "請拼出：中文意思", "ans": "全大寫單字（只能有 A-Z）", "speak": "小寫單字" }
 - 填空：{ "type": "fill", "desc": "填空題：W O R _ (中文)", "ans": "空格中的大寫字母", "speak": "完整小寫單字" }（字母之間用空格隔開，空格用 _ 表示）
-- 選擇：{ "type": "choice", "desc": "【主題】含有 ___ 的英文句子", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "ans": "A~D", "explain": "繁體中文解說" }
+- 選擇：{ "type": "choice", "desc": "【時態】She ___ dinner when the phone rang.", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "ans": "A~D", "explain": "繁體中文解說" }（desc 要寫出完整英文句子本身，不能只寫題目說明）
 - 口說：{ "type": "voice", "desc": "請唸出單字：中文意思", "ans": "全大寫單字", "speak": "小寫單字" }
 
 規則：
@@ -76,7 +76,9 @@ const SKILL_RULES: Record<QuestionSkill, string> = {
   - ans 只能有大寫 A-Z、空白、撇號；speak 是同樣內容的小寫。
   - 選發音清楚、語音辨識不容易認錯的內容；避免同音字（two/too、eye/I、right/write）。`,
   reading: `閱讀題（全部是選擇題，考句子理解、文法與字彙用法）：
-  { "type": "choice", "skill": "reading", "difficulty": 1, "desc": "【主題】含有 ___ 的英文句子", "options": ["A. ...", "B. ...", "C. ...", "D. ..."], "ans": "C", "explain": "繁體中文解說：為什麼選這個、其他選項錯在哪" }
+  { "type": "choice", "skill": "reading", "difficulty": 1, "desc": "【時態】She ___ dinner when the phone rang.", "options": ["A. cooks", "B. was cooking", "C. has cooked", "D. will cook"], "ans": "B", "explain": "繁體中文解說：為什麼選這個、其他選項錯在哪" }
+  - desc 必須包含玩家要讀的完整英文句子、對話或短文本身（短文題把短文和問題都寫進 desc，例如「【短文】Notice: The pool is closed on Mondays. … Q: When is the pool closed?」）。
+  - 絕對不可以只寫題目的說明（例如「測試過去進行式的單句填空」「電子郵件閱讀」），那樣玩家看不到題目，整題作廢。
   - 【主題】例如【基礎文法】【時態】【介系詞】【字彙】【片語】【對話】【短文】。
   - 難度 1 是單句填空、2 是較長的句子或兩句對話、3 是 2～4 句的短文（告示、簡訊、郵件、菜單）再問一個問題。`,
   writing: `寫作題（拼寫題與填空題各一半）：
@@ -180,6 +182,11 @@ export function parseBatch(text: string): GeneratedBatch {
 }
 
 // 逐題驗證：有 error 的題目或與現有題目重複的題目會被丟掉；warning 保留下來讓人工抽查
+// 不靠聲音的選擇題（閱讀）一定要在 desc 裡寫出英文句子或短文；Gemini 偶爾只寫「測試過去進行式的單句填空」這類說明
+export function missingStem(q: Partial<Question>): boolean {
+  return q.type === 'choice' && !q.speak && !/[A-Za-z]{3,}/.test((q.desc ?? '').replace(/【[^】]*】/g, ''));
+}
+
 export function reviewBatch(batch: GeneratedBatch, existing: Question[]): Reviewed {
   const seen = new Set(existing.map(questionKey));
   const result: Reviewed = { accepted: [], rejected: [] };
@@ -189,6 +196,7 @@ export function reviewBatch(batch: GeneratedBatch, existing: Question[]): Review
       const errors = issues.filter(x => x.level === 'error').map(x => x.message);
       const key = questionKey(q ?? {});
       if (seen.has(key)) errors.push('與現有題目重複');
+      if (missingStem(q)) errors.push('題目缺少英文句子或短文（desc 只有說明）');
       if (errors.length) {
         result.rejected.push({ question: q, reasons: errors });
         return;

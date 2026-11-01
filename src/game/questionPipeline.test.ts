@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addToPool, buildPrompt, buildSkillPrompt, cleanVocab, countSkill, parseBatch, reviewBatch, reviewReport, tagBatch } from './questionPipeline';
+import { addToPool, buildPrompt, buildSkillPrompt, cleanVocab, countSkill, missingStem, parseBatch, reviewBatch, reviewReport, tagBatch } from './questionPipeline';
 import { QUESTION_POOL, mergePools } from './QuestionData';
 
 const existing = Object.values(QUESTION_POOL).flatMap(p => [...p.normal, ...p.boss]);
@@ -9,6 +9,15 @@ describe('question pipeline', () => {
     const p = buildPrompt('A1', 5, ['請拼出：書本']);
     expect(p).toContain('A1');
     expect(p).toContain('請拼出：書本');
+  });
+
+  it('rejects reading choices whose desc only describes the question', () => {
+    const opts = ['A. was typing', 'B. am typing', 'C. type', 'D. typed'];
+    expect(missingStem({ type: 'choice', desc: '【時態】測試過去進行式的單句填空', options: opts, ans: 'A' })).toBe(true);
+    expect(missingStem({ type: 'choice', desc: '【時態】She ___ when the phone rang.', options: opts, ans: 'A' })).toBe(false);
+    expect(missingStem({ type: 'choice', desc: '🎧 聽一聽，選出正確的意思', speak: 'agenda', options: opts, ans: 'A' })).toBe(false);
+    const r = reviewBatch({ normal: [{ type: 'choice', desc: '【短文】電子郵件閱讀', options: opts, ans: 'A', explain: 'x' }], boss: [], vocab: {} }, []);
+    expect(r.rejected[0].reasons.join()).toContain('缺少英文句子');
   });
 
   it('parses JSON even inside a code block', () => {

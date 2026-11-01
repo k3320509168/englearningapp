@@ -10217,6 +10217,399 @@
       "ans": "EDN",
       "speak": "precedence",
       "vocabId": "R7:PRECEDENCE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "oral testimony",
+      "options": [
+        "A. 已自動排除記憶錯誤的證明",
+        "B. 完全不受提問影響的每項答案",
+        "C. 以口述方式提供的經驗或見證",
+        "D. 只能由圖片組成的紀錄"
+      ],
+      "ans": "C",
+      "explain": "oral testimony口述見證，不保證完全正確或無互動影響。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a leading prompt",
+      "options": [
+        "A. 讓受訪者不受引導自行說的每句話",
+        "B. 只有開始錄音時才可見的燈號",
+        "C. 已由雙方正式撤回的問題",
+        "D. 暗示某種期望回答的提示"
+      ],
+      "ans": "D",
+      "explain": "leading帶方向，可能引導回答。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a verbatim record",
+      "options": [
+        "A. 逐字保留所說內容的紀錄",
+        "B. 只概括重點而刪去原措辭的摘要",
+        "C. 已保證每項回憶真實的聲明",
+        "D. 按主題重寫成全新字句的報導"
+      ],
+      "ans": "A",
+      "explain": "verbatim逐字，不等於內容已查真。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The question elicited a family story rather than a personal memory, though the difference emerged only near the end.",
+      "options": [
+        "A. 問題一開始就明說只能答親身經驗。",
+        "B. 結尾已證家族故事每個細節都是現場親見。",
+        "C. 說話者因家族故事太長而要求刪掉全部。",
+        "D. 問題引出家族故事而非個人記憶，差別近結尾才明。"
+      ],
+      "ans": "D",
+      "explain": "來源身分逐步明朗，非因晚說就必不可信。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The transcript is easier to read, but the ease has been purchased by removing the speaker’s visible work of finding an answer.",
+      "options": [
+        "A. 逐字稿較易讀，但代價是刪去說話者摸索答案的痕跡。",
+        "B. 易讀是因保留每個停頓與自我修正，未作刪除。",
+        "C. 說話者根本沒有努力回想，所有答案都由編輯寫。",
+        "D. 只要易讀，就已證口述內容完全精確。"
+      ],
+      "ans": "A",
+      "explain": "清整可移除認知過程線索，visible work為比喻。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would ask what prompted the change of mind before supplying my own explanation for it.",
+      "options": [
+        "A. 說話者認為改變想法不需要任何說明。",
+        "B. 我會先問何促成改念，再提供自己解釋。",
+        "C. 我會先宣告唯一原因，才讓對方重複。",
+        "D. 改念已證前後兩個立場都不可能真誠。"
+      ],
+      "ans": "B",
+      "explain": "先引出受訪者意義，不先套作者框架。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The laughter is not merely background noise; it changes how the apparently severe remark is likely to be heard.",
+      "options": [
+        "A. 笑聲不只是背景，會改變那句看似嚴厲的解讀。",
+        "B. 笑聲已證每個嚴厲字眼都沒有任何意義。",
+        "C. 說話者只要求調低音量，未討論詮釋。",
+        "D. 嚴厲話語已被確定在笑聲之前從未說出。"
+      ],
+      "ans": "A",
+      "explain": "聲音線索影響語用，非完全抹掉字面。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A fluent narrative may be the product of repeated telling, not evidence that the original experience was equally orderly.",
+      "options": [
+        "A. 說話者只比較受訪者的發音快慢。",
+        "B. 流暢敘事可能因反覆講述，不代表原體驗同樣井然。",
+        "C. 原體驗必有同樣結構，因現在講得順。",
+        "D. 反覆講述已證每個事件都未發生。"
+      ],
+      "ans": "B",
+      "explain": "敘事組織與當時事件秩序不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The interviewer’s restraint matters most where the speaker’s account does not take the direction the interviewer expected.",
+      "options": [
+        "A. 克制意味不能提出任何澄清或追問。",
+        "B. 說話者確認訪談者從來沒有任何預期。",
+        "C. 受訪敘述不照預期走時，訪談者克制尤其重要。",
+        "D. 只有完全符合預期的回答才應被保留。"
+      ],
+      "ans": "C",
+      "explain": "不強拉敘述方向不同於完全不問。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The testimony is candid but not exhaustive. What is established?",
+      "options": [
+        "A. It has been independently verified in every respect.",
+        "B. It is unusable because it contains no identifiable experience.",
+        "C. It is frank without claiming to cover every relevant detail.",
+        "D. It covers every detail while deliberately avoiding frankness."
+      ],
+      "ans": "C",
+      "explain": "candid坦誠不等於完整或已驗證。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The interviewer avoided ___ a preferred answer.",
+      "options": [
+        "A. to suggesting",
+        "B. suggested",
+        "C. that suggesting",
+        "D. suggesting"
+      ],
+      "ans": "D",
+      "explain": "avoid後動名詞suggesting。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The interviewer asks, What did the move mean to you then, rather than What should we learn from it now? What distinction is sought?",
+      "options": [
+        "A. The speaker’s earlier experience rather than a present lesson imposed on it.",
+        "B. A lesson for present listeners rather than the speaker’s earlier perspective.",
+        "C. The exact distance of the move rather than any emotional response.",
+        "D. An answer supplied by the interviewer rather than by the speaker."
+      ],
+      "ans": "A",
+      "explain": "then與now區分當時意義與事後教訓。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The account includes events ___ significance became clear only later.",
+      "options": [
+        "A. which their",
+        "B. whom",
+        "C. that of",
+        "D. whose"
+      ],
+      "ans": "D",
+      "explain": "whose significance指事件意義，含時間視角。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A transcript removes repetitions and unfinished sentences. The editor calls the result verbatim. What needs qualifying?",
+      "options": [
+        "A. The label implies a degree of word-for-word fidelity the editing does not preserve.",
+        "B. The transcript must contain more words than the original recording.",
+        "C. Removing repetition establishes that the speaker repeated no ideas.",
+        "D. The editor has changed the interview’s location rather than its wording."
+      ],
+      "ans": "A",
+      "explain": "verbatim逐字；清整刪詞需明說非完全逐字。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The speaker’s digression proves illuminating rather than irrelevant. What is suggested?",
+      "options": [
+        "A. The interviewer has decided that no answer needs interpretation.",
+        "B. An apparent departure from the topic reveals something useful.",
+        "C. The speaker has remained within a predetermined list of questions.",
+        "D. Every unrelated story automatically supplies the missing date."
+      ],
+      "ans": "B",
+      "explain": "digression離題可有啟發，不是必無關。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An interviewer asks whether a neighbour was kind or unfriendly. The speaker replies that kindness and distance coexisted. What does the response resist?",
+      "options": [
+        "A. A binary classification that does not fit the remembered relationship.",
+        "B. The possibility of describing any relationship through language.",
+        "C. A request to distinguish neighbours from members of the same household.",
+        "D. The claim that the speaker ever met the neighbour in person."
+      ],
+      "ans": "A",
+      "explain": "兩極互斥框架被複雜經驗修正。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A speaker repeats a familiar family anecdote, then quietly adds that she was not present. The interviewer retains both the story and the qualification. Why is the qualification important?",
+      "options": [
+        "A. It turns the anecdote into a prediction of a future event.",
+        "B. It distinguishes inherited narrative from direct recollection.",
+        "C. It proves the story cannot contain any accurate detail.",
+        "D. It identifies every person who was present at the event."
+      ],
+      "ans": "B",
+      "explain": "轉述家族故事與親歷記憶不同，不等於必虛假。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The researcher values rapport but warns against assuming that ease of conversation removes the asymmetry between asking and being asked. What remains relevant?",
+      "options": [
+        "A. Rapport requires the speaker to agree with every proposed interpretation.",
+        "B. An interview ceases to have any structure when the participants are friendly.",
+        "C. The interviewer still shapes what becomes a question and what counts as an answer.",
+        "D. Comfortable conversation prevents the interviewer from influencing any topic."
+      ],
+      "ans": "C",
+      "explain": "融洽不抹除角色提問框架權力，非反對友善。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：相互信任而交流自在的關係",
+      "ans": "RAPPORT",
+      "speak": "rapport",
+      "vocabId": "R7:RAPPORT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：離開原主題而談另一事的插敘",
+      "ans": "DIGRESSION",
+      "speak": "digression",
+      "vocabId": "R7:DIGRESSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：框架經仔細設計的問題",
+      "ans": "A CAREFULLY FRAMED QUESTION",
+      "speak": "a carefully framed question",
+      "vocabId": "R7:A CAREFULLY FRAMED QUESTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：對事件有保留限定的回憶",
+      "ans": "A QUALIFIED RECOLLECTION OF EVENTS",
+      "speak": "a qualified recollection of events",
+      "vocabId": "R7:A QUALIFIED RECOLLECTION OF EVENTS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：流暢故事可能反映多年重述",
+      "ans": "A FLUENT STORY MAY REFLECT YEARS OF REPEATED TELLING",
+      "speak": "a fluent story may reflect years of repeated telling",
+      "vocabId": "R7:A FLUENT STORY MAY REFLECT YEARS OF REPEATED TELLING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：對順序有把握未必對日期有把握",
+      "ans": "CONFIDENCE IN SEQUENCE NEED NOT IMPLY CONFIDENCE IN DATES",
+      "speak": "confidence in sequence need not imply confidence in dates",
+      "vocabId": "R7:CONFIDENCE IN SEQUENCE NEED NOT IMPLY CONFIDENCE IN DATES"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：以提問等引出回應或資訊（E 開頭，6 個字母）",
+      "ans": "ELICIT",
+      "speak": "elicit",
+      "vocabId": "R7:ELICIT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：正在與另一人交談的對話者（I 開頭，12 個字母）",
+      "ans": "INTERLOCUTOR",
+      "speak": "interlocutor",
+      "vocabId": "R7:INTERLOCUTOR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：以完全相同的原字句（V 開頭，8 個字母）",
+      "ans": "VERBATIM",
+      "speak": "verbatim",
+      "vocabId": "R7:VERBATIM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T E S T _ M O N Y (對經歷事件作出的見證敘述)",
+      "ans": "I",
+      "speak": "testimony",
+      "vocabId": "R7:TESTIMONY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E M I _ I S C _ N C E (對過往經歷的回憶敘述)",
+      "ans": "NE",
+      "speak": "reminiscence",
+      "vocabId": "R7:REMINISCENCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P A R _ P H _ A S _ I C (以不同措辭重述原意的)",
+      "ans": "ART",
+      "speak": "paraphrastic",
+      "vocabId": "R7:PARAPHRASTIC"
     }
   ],
   "boss": [
@@ -13625,6 +14018,137 @@
       "ans": "LAI",
       "speak": "allocation",
       "vocabId": "R7:ALLOCATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "She is precise about the order but hesitant about the year, so I would keep those two kinds of confidence separate.",
+      "options": [
+        "A. 說話者認為任何回憶只能整體全信或全不信。",
+        "B. 她對順序精確、年份卻遲疑，應分開看兩種把握。",
+        "C. 她既知順序，就已確定每個事件的精確年份。",
+        "D. 年份遲疑已使順序記憶完全不可能準確。"
+      ],
+      "ans": "B",
+      "explain": "不同記憶面向可有不同確定度。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The apparent contradiction may be between two stages of her life, not between two statements about the same stage.",
+      "options": [
+        "A. 只要提不同年份，所有內容都自動一致。",
+        "B. 說話者已證明受訪者從未改變任何想法。",
+        "C. 表面矛盾可能來自人生兩階段，而非同階段兩說。",
+        "D. 兩說已確認同時，因此不需再看時間。"
+      ],
+      "ans": "C",
+      "explain": "時間視角可解張力，但may非已證。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The qualification belongs beside the quotation, not in a separate note that readers are unlikely to connect with it.",
+      "options": [
+        "A. 限定完全無關引文，所以應永久刪除。",
+        "B. 只要有另註，就已保證每位讀者能正確連結。",
+        "C. 說話者只關心字體大小而不關心資訊關係。",
+        "D. 限定應緊靠引文，不放讀者不易連上的另註。"
+      ],
+      "ans": "D",
+      "explain": "資訊位置影響限定能否發揮詮釋作用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】To elicit a response is to ___.",
+      "options": [
+        "A. exclude it because it does not fit a theory",
+        "B. draw it out through a question or stimulus",
+        "C. guarantee that it is factually accurate",
+        "D. rewrite it without retaining the speaker’s words"
+      ],
+      "ans": "B",
+      "explain": "elicit引出，不保證真或改寫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The interviewee permits quotation on condition that the passage about another person is excluded. What is not authorised by that permission?",
+      "options": [
+        "A. Keeping track of which passage has been excluded.",
+        "B. Asking whether the condition applies to a proposed extract.",
+        "C. Publishing the excluded passage as part of the quotation.",
+        "D. Quoting the permitted material under the stated condition."
+      ],
+      "ans": "C",
+      "explain": "條件式許可明排特定段，不推真實法律效力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The edited interview places a hesitant answer immediately after a forceful question originally asked much later. The words themselves are unchanged. What can shift?",
+      "options": [
+        "A. The speaker’s actual age when the recorded events occurred.",
+        "B. The original recording’s chronological order as an event in the past.",
+        "C. The identity of every person mentioned in the answer.",
+        "D. The apparent relation between question, hesitation and reply."
+      ],
+      "ans": "D",
+      "explain": "剪接可改語用關係，不改原過去事實。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：經家族傳下來的故事",
+      "ans": "AN INHERITED FAMILY NARRATIVE",
+      "speak": "an inherited family narrative",
+      "vocabId": "R7:AN INHERITED FAMILY NARRATIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：編輯可改問題與答案關係",
+      "ans": "EDITORIAL CHANGES CAN ALTER THE RELATION BETWEEN QUESTION AND ANSWER",
+      "speak": "editorial changes can alter the relation between question and answer",
+      "vocabId": "R7:EDITORIAL CHANGES CAN ALTER THE RELATION BETWEEN QUESTION AND ANSWER"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：回看並思考過往的行為（R 開頭，13 個字母）",
+      "ans": "RETROSPECTION",
+      "speak": "retrospection",
+      "vocabId": "R7:RETROSPECTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E C _ N T E _ T U A _ I S E (把某事放入新脈絡理解或呈現)",
+      "ans": "OXL",
+      "speak": "recontextualise",
+      "vocabId": "R7:RECONTEXTUALISE"
     }
   ]
 }

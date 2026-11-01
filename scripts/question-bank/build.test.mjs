@@ -27,3 +27,20 @@ it('keeps every existing file intact when the last region has duplicate question
  const duplicate=[1,'A repeated final-region question','right|wrong|other|last','fixture'];
  rejectedBuildPreservesFiles({6:{reading:[[1,'A valid earlier region','right|wrong|other|last','fixture']]},8:{reading:[duplicate,duplicate]}},'r8: duplicate questions');
 });
+it('normalizes typographic apostrophes consistently for speech answers and vocabulary lookup',()=>{
+ const dir=mkdtempSync(join(tmpdir(),'enggame-bank-apostrophe-'));
+ try {
+  mkdirSync(join(dir,'scripts/question-bank/sources'),{recursive:true});
+  mkdirSync(join(dir,'src/game/questions/bank'),{recursive:true});
+  const data={6:{voices:[['someone else’s answer','別人的回答',3]]}};
+  writeFileSync(join(dir,'scripts/question-bank/sources/001-fixture.mjs'),`export const data=${JSON.stringify(data)};`);
+  const result=spawnSync(process.execPath,[builder],{cwd:dir,encoding:'utf8'});
+  expect(result.status,result.stderr).toBe(0);
+  const bank=JSON.parse(readFileSync(join(dir,'src/game/questions/bank/r6.json'),'utf8'));
+  const vocab=JSON.parse(readFileSync(join(dir,'src/game/questions/bank/vocab-r6.json'),'utf8'));
+  const q=bank.normal[0];
+  expect(q.ans).toBe("SOMEONE ELSE'S ANSWER");
+  expect(q.speak).toBe("someone else's answer");
+  expect(vocab[q.vocabId].word).toBe(q.speak);
+ } finally {rmSync(dir,{recursive:true,force:true});}
+});

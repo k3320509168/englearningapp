@@ -180,3 +180,10 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 ## 協作任務銜接（C1～C3工作點）
 - 已合併feat/round4的P0-1/協作看板，分項完成C1即時結算、C2曲線、C3處決純演出，詳COLLAB留言。329測試/tsc/eslint通過；C4～C7及Claude全盤模擬/實玩仍待完成。
 - 製作人明確要求題庫也繼續，原5800題/五輪一般與模式深審未取消。現為3120草稿、各1040；餘B2+760、C1/C2各960。接下來可補19個三區批次再5個僅C1/C2批次。
+
+## 第 27 批（3240/5800，進行中）
+- 持續原題庫任務，新增訪談/口述回憶120題，三區各1080（810 normal/270 boss），聽讀各324、說寫各216；尚差B2+720、C1/C2各920。
+- 內容包含間接問句、remember doing、提問框架、追問、事件/原因、逐字/改述、親歷/家族轉述、剪接先後與語氣。HAGIOGRAPHY 保留聖人傳基本義並明說本題的過度美化比喻義。
+- 驗收攔下彎引號所有格使voice答案/vocabId不合格式。建庫現將口說排版apostrophe統一為ASCII apostrophe，保持自然英文所有格，不再靠刪掉句型規避；新增隔離建庫測試，確認答案、speak及詞條查詢一致。a follow-up question聽力詞條改用a supplementary question，避免未支援的展示欄位誤教連字號字法。
+- Node22：tsc、eslint、37 files/330 tests全過；建庫可重現；76616次運作斷言通過，含舊庫5390題格式0 errors/172 warnings。題目仍為草稿，五輪全量一般/模式驗收未完成。
+- 新平衡協作C1/C2/C3分項commit為0b09a3c/55d4131/d61bd7a，待Claude模擬/整體驗收；C4～C7仍待實作。兩條任務線都保留，未push、未部署。

@@ -1875,9 +1875,9 @@
   },
   "CHRONOLOGY": {
     "pos": "n.",
-    "meaning": "事件依時間先後排列的順序",
-    "example": "The film rearranges the chronology of the novel.",
-    "exampleZh": "電影重新安排小說的事件時序。",
+    "meaning": "事件發生的時間先後次序",
+    "example": "The chronology is clearer after the correction.",
+    "exampleZh": "修正後時序更清楚。",
     "senses": [
       {
         "pos": "n.",
@@ -1890,6 +1890,16 @@
           {
             "en": "A clear chronology can help readers identify the turning point.",
             "zh": "清楚的時序能幫讀者找出轉折點。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "事件發生的時間先後次序",
+        "examples": [
+          {
+            "en": "The chronology is clearer after the correction.",
+            "zh": "修正後時序更清楚。"
           }
         ]
       }
@@ -7893,10 +7903,10 @@
     ]
   },
   "PROMPT": {
-    "pos": "adj.",
-    "meaning": "不拖延而及時的",
-    "example": "Thank you for your prompt reply.",
-    "exampleZh": "謝謝及時回覆。",
+    "pos": "n.",
+    "meaning": "引出回答或行動的提示",
+    "example": "The photograph served as a prompt.",
+    "exampleZh": "照片作提示。",
     "senses": [
       {
         "pos": "adj.",
@@ -7905,6 +7915,16 @@
           {
             "en": "Thank you for your prompt reply.",
             "zh": "謝謝及時回覆。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "引出回答或行動的提示",
+        "examples": [
+          {
+            "en": "The photograph served as a prompt.",
+            "zh": "照片作提示。"
           }
         ]
       }
@@ -9310,6 +9330,320 @@
       }
     ]
   },
+  "INTERVIEW": {
+    "word": "interview",
+    "pos": "n.",
+    "meaning": "透過提問蒐集想法或經驗的訪談",
+    "example": "The interview includes a discussion of the journey.",
+    "exampleZh": "訪談含旅程討論。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過提問蒐集想法或經驗的訪談",
+        "examples": [
+          {
+            "en": "The interview includes a discussion of the journey.",
+            "zh": "訪談含旅程討論。"
+          }
+        ]
+      }
+    ]
+  },
+  "RETELLING": {
+    "word": "retelling",
+    "pos": "n.",
+    "meaning": "再次敘述同一事件的版本或行為",
+    "example": "The story changes emphasis in retelling.",
+    "exampleZh": "故事重述時重點改變。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "再次敘述同一事件的版本或行為",
+        "examples": [
+          {
+            "en": "The story changes emphasis in retelling.",
+            "zh": "故事重述時重點改變。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SPONTANEOUS CORRECTION": {
+    "word": "a spontaneous correction",
+    "pos": "phr.",
+    "meaning": "未經提醒的自發修正",
+    "example": "The recording captures a spontaneous correction.",
+    "exampleZh": "錄音捕捉自發修正。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未經提醒的自發修正",
+        "examples": [
+          {
+            "en": "The recording captures a spontaneous correction.",
+            "zh": "錄音捕捉自發修正。"
+          }
+        ]
+      }
+    ]
+  },
+  "A VIVID PERSONAL ACCOUNT": {
+    "word": "a vivid personal account",
+    "pos": "phr.",
+    "meaning": "鮮明的個人經驗敘述",
+    "example": "She gave a vivid personal account.",
+    "exampleZh": "她給出鮮明個人敘述。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鮮明的個人經驗敘述",
+        "examples": [
+          {
+            "en": "She gave a vivid personal account.",
+            "zh": "她給出鮮明個人敘述。"
+          }
+        ]
+      }
+    ]
+  },
+  "A RESPECTFUL FOLLOW UP": {
+    "word": "a respectful follow-up",
+    "pos": "phr.",
+    "meaning": "尊重對方的接續追問",
+    "example": "A respectful follow-up invited more detail.",
+    "exampleZh": "尊重的追問引出細節。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尊重對方的接續追問",
+        "examples": [
+          {
+            "en": "A respectful follow-up invited more detail.",
+            "zh": "尊重的追問引出細節。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PAUSE MAY REFLECT A CHOICE ABOUT WHAT TO REVEAL": {
+    "word": "a pause may reflect a choice about what to reveal",
+    "pos": "phr.",
+    "meaning": "停頓可能反映選擇透露什麼",
+    "example": "A pause may reflect a choice about what to reveal.",
+    "exampleZh": "停頓可能反映選擇透露什麼。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "停頓可能反映選擇透露什麼",
+        "examples": [
+          {
+            "en": "A pause may reflect a choice about what to reveal.",
+            "zh": "停頓可能反映選擇透露什麼。"
+          }
+        ]
+      }
+    ]
+  },
+  "THE PRESENT TELLING DIFFERS FROM THE ORIGINAL EXPERIENCE": {
+    "word": "the present telling differs from the original experience",
+    "pos": "phr.",
+    "meaning": "現在敘述不同於原始體驗",
+    "example": "The present telling differs from the original experience.",
+    "exampleZh": "現在敘述不同於原始體驗。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "現在敘述不同於原始體驗",
+        "examples": [
+          {
+            "en": "The present telling differs from the original experience.",
+            "zh": "現在敘述不同於原始體驗。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SPECIFIC EXAMPLE CAN CLARIFY A GENERAL DESCRIPTION": {
+    "word": "a specific example can clarify a general description",
+    "pos": "phr.",
+    "meaning": "具體例子可說清概括描述",
+    "example": "A specific example can clarify a general description.",
+    "exampleZh": "具體例子可說清概括描述。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具體例子可說清概括描述",
+        "examples": [
+          {
+            "en": "A specific example can clarify a general description.",
+            "zh": "具體例子可說清概括描述。"
+          }
+        ]
+      }
+    ]
+  },
+  "JOG MY MEMORY": {
+    "pos": "phr.",
+    "meaning": "幫我喚回一點記憶",
+    "example": "The photograph may jog my memory.",
+    "exampleZh": "照片可能喚起記憶。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "幫我喚回一點記憶",
+        "examples": [
+          {
+            "en": "The photograph may jog my memory.",
+            "zh": "照片可能喚起記憶。"
+          }
+        ]
+      }
+    ]
+  },
+  "IN YOUR OWN WORDS": {
+    "pos": "phr.",
+    "meaning": "用你自己的說法表達",
+    "example": "Describe the room in your own words.",
+    "exampleZh": "用自己的話描述房間。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "用你自己的說法表達",
+        "examples": [
+          {
+            "en": "Describe the room in your own words.",
+            "zh": "用自己的話描述房間。"
+          }
+        ]
+      }
+    ]
+  },
+  "A SUPPLEMENTARY QUESTION": {
+    "pos": "phr.",
+    "meaning": "補充原提問的追問",
+    "example": "The interviewer asked a follow-up question.",
+    "exampleZh": "訪談者作追問。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "補充原提問的追問",
+        "examples": [
+          {
+            "en": "The interviewer asked a follow-up question.",
+            "zh": "訪談者作追問。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRANSCRIBE": {
+    "pos": "v.",
+    "meaning": "把口頭內容寫成文字",
+    "example": "Please transcribe the final answer.",
+    "exampleZh": "請把最後回答轉成文字。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把口頭內容寫成文字",
+        "examples": [
+          {
+            "en": "Please transcribe the final answer.",
+            "zh": "請把最後回答轉成文字。"
+          }
+        ]
+      }
+    ]
+  },
+  "REMINISCE": {
+    "pos": "v.",
+    "meaning": "愉快地談起或回想往事",
+    "example": "They began to reminisce about the shop.",
+    "exampleZh": "他們開始聊店裡往事。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "愉快地談起或回想往事",
+        "examples": [
+          {
+            "en": "They began to reminisce about the shop.",
+            "zh": "他們開始聊店裡往事。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECOLLECT": {
+    "pos": "v.",
+    "meaning": "努力想起過去某事",
+    "example": "She could not recollect the exact date.",
+    "exampleZh": "她想不起精確日期。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "努力想起過去某事",
+        "examples": [
+          {
+            "en": "She could not recollect the exact date.",
+            "zh": "她想不起精確日期。"
+          }
+        ]
+      }
+    ]
+  },
+  "NARRATE": {
+    "pos": "v.",
+    "meaning": "以連貫方式講述事件",
+    "example": "He will narrate the journey in order.",
+    "exampleZh": "他會依序講旅程。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以連貫方式講述事件",
+        "examples": [
+          {
+            "en": "He will narrate the journey in order.",
+            "zh": "他會依序講旅程。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESPONSE": {
+    "pos": "n.",
+    "meaning": "對問題或刺激作出的回應",
+    "example": "The response challenged the question’s assumption.",
+    "exampleZh": "回應挑戰問題假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對問題或刺激作出的回應",
+        "examples": [
+          {
+            "en": "The response challenged the question’s assumption.",
+            "zh": "回應挑戰問題假設。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECORDING": {
+    "pos": "n.",
+    "meaning": "把聲音影像保留下來的紀錄",
+    "example": "The recording includes laughter.",
+    "exampleZh": "錄音包含笑聲。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把聲音影像保留下來的紀錄",
+        "examples": [
+          {
+            "en": "The recording includes laughter.",
+            "zh": "錄音包含笑聲。"
+          }
+        ]
+      }
+    ]
+  },
   "R6:CONTINGENCY": {
     "word": "contingency",
     "pos": "n.",
@@ -10586,9 +10920,9 @@
   },
   "R6:CHRONOLOGY": {
     "pos": "n.",
-    "meaning": "事件依時間先後排列的順序",
-    "example": "The film rearranges the chronology of the novel.",
-    "exampleZh": "電影重新安排小說的事件時序。",
+    "meaning": "事件發生的時間先後次序",
+    "example": "The chronology is clearer after the correction.",
+    "exampleZh": "修正後時序更清楚。",
     "senses": [
       {
         "pos": "n.",
@@ -10601,6 +10935,16 @@
           {
             "en": "A clear chronology can help readers identify the turning point.",
             "zh": "清楚的時序能幫讀者找出轉折點。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "事件發生的時間先後次序",
+        "examples": [
+          {
+            "en": "The chronology is clearer after the correction.",
+            "zh": "修正後時序更清楚。"
           }
         ]
       }
@@ -15294,6 +15638,225 @@
     ],
     "word": "objective"
   },
+  "R6:INTERVIEW": {
+    "word": "interview",
+    "pos": "n.",
+    "meaning": "透過提問蒐集想法或經驗的訪談",
+    "example": "The interview includes a discussion of the journey.",
+    "exampleZh": "訪談含旅程討論。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過提問蒐集想法或經驗的訪談",
+        "examples": [
+          {
+            "en": "The interview includes a discussion of the journey.",
+            "zh": "訪談含旅程討論。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:RETELLING": {
+    "word": "retelling",
+    "pos": "n.",
+    "meaning": "再次敘述同一事件的版本或行為",
+    "example": "The story changes emphasis in retelling.",
+    "exampleZh": "故事重述時重點改變。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "再次敘述同一事件的版本或行為",
+        "examples": [
+          {
+            "en": "The story changes emphasis in retelling.",
+            "zh": "故事重述時重點改變。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A SPONTANEOUS CORRECTION": {
+    "word": "a spontaneous correction",
+    "pos": "phr.",
+    "meaning": "未經提醒的自發修正",
+    "example": "The recording captures a spontaneous correction.",
+    "exampleZh": "錄音捕捉自發修正。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未經提醒的自發修正",
+        "examples": [
+          {
+            "en": "The recording captures a spontaneous correction.",
+            "zh": "錄音捕捉自發修正。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A RESPECTFUL FOLLOW UP": {
+    "word": "a respectful follow-up",
+    "pos": "phr.",
+    "meaning": "尊重對方的接續追問",
+    "example": "A respectful follow-up invited more detail.",
+    "exampleZh": "尊重的追問引出細節。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "尊重對方的接續追問",
+        "examples": [
+          {
+            "en": "A respectful follow-up invited more detail.",
+            "zh": "尊重的追問引出細節。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A PAUSE MAY REFLECT A CHOICE ABOUT WHAT TO REVEAL": {
+    "word": "a pause may reflect a choice about what to reveal",
+    "pos": "phr.",
+    "meaning": "停頓可能反映選擇透露什麼",
+    "example": "A pause may reflect a choice about what to reveal.",
+    "exampleZh": "停頓可能反映選擇透露什麼。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "停頓可能反映選擇透露什麼",
+        "examples": [
+          {
+            "en": "A pause may reflect a choice about what to reveal.",
+            "zh": "停頓可能反映選擇透露什麼。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:THE PRESENT TELLING DIFFERS FROM THE ORIGINAL EXPERIENCE": {
+    "word": "the present telling differs from the original experience",
+    "pos": "phr.",
+    "meaning": "現在敘述不同於原始體驗",
+    "example": "The present telling differs from the original experience.",
+    "exampleZh": "現在敘述不同於原始體驗。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "現在敘述不同於原始體驗",
+        "examples": [
+          {
+            "en": "The present telling differs from the original experience.",
+            "zh": "現在敘述不同於原始體驗。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:TRANSCRIBE": {
+    "pos": "v.",
+    "meaning": "把口頭內容寫成文字",
+    "example": "Please transcribe the final answer.",
+    "exampleZh": "請把最後回答轉成文字。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "把口頭內容寫成文字",
+        "examples": [
+          {
+            "en": "Please transcribe the final answer.",
+            "zh": "請把最後回答轉成文字。"
+          }
+        ]
+      }
+    ],
+    "word": "transcribe"
+  },
+  "R6:REMINISCE": {
+    "pos": "v.",
+    "meaning": "愉快地談起或回想往事",
+    "example": "They began to reminisce about the shop.",
+    "exampleZh": "他們開始聊店裡往事。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "愉快地談起或回想往事",
+        "examples": [
+          {
+            "en": "They began to reminisce about the shop.",
+            "zh": "他們開始聊店裡往事。"
+          }
+        ]
+      }
+    ],
+    "word": "reminisce"
+  },
+  "R6:PROMPT": {
+    "pos": "n.",
+    "meaning": "引出回答或行動的提示",
+    "example": "The photograph served as a prompt.",
+    "exampleZh": "照片作提示。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不拖延而及時的",
+        "examples": [
+          {
+            "en": "Thank you for your prompt reply.",
+            "zh": "謝謝及時回覆。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "引出回答或行動的提示",
+        "examples": [
+          {
+            "en": "The photograph served as a prompt.",
+            "zh": "照片作提示。"
+          }
+        ]
+      }
+    ],
+    "word": "prompt"
+  },
+  "R6:NARRATE": {
+    "pos": "v.",
+    "meaning": "以連貫方式講述事件",
+    "example": "He will narrate the journey in order.",
+    "exampleZh": "他會依序講旅程。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "以連貫方式講述事件",
+        "examples": [
+          {
+            "en": "He will narrate the journey in order.",
+            "zh": "他會依序講旅程。"
+          }
+        ]
+      }
+    ],
+    "word": "narrate"
+  },
+  "R6:RESPONSE": {
+    "pos": "n.",
+    "meaning": "對問題或刺激作出的回應",
+    "example": "The response challenged the question’s assumption.",
+    "exampleZh": "回應挑戰問題假設。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對問題或刺激作出的回應",
+        "examples": [
+          {
+            "en": "The response challenged the question’s assumption.",
+            "zh": "回應挑戰問題假設。"
+          }
+        ]
+      }
+    ],
+    "word": "response"
+  },
   "R6:ON CLOSER INSPECTION": {
     "word": "on closer inspection",
     "pos": "phr.",
@@ -16901,25 +17464,6 @@
     ],
     "word": "enclose"
   },
-  "R6:PROMPT": {
-    "pos": "adj.",
-    "meaning": "不拖延而及時的",
-    "example": "Thank you for your prompt reply.",
-    "exampleZh": "謝謝及時回覆。",
-    "senses": [
-      {
-        "pos": "adj.",
-        "meaning": "不拖延而及時的",
-        "examples": [
-          {
-            "en": "Thank you for your prompt reply.",
-            "zh": "謝謝及時回覆。"
-          }
-        ]
-      }
-    ],
-    "word": "prompt"
-  },
   "R6:A PATCH OF SUNLIGHT": {
     "word": "a patch of sunlight",
     "pos": "phr.",
@@ -17223,5 +17767,81 @@
       }
     ],
     "word": "cooperative"
+  },
+  "R6:A VIVID PERSONAL ACCOUNT": {
+    "word": "a vivid personal account",
+    "pos": "phr.",
+    "meaning": "鮮明的個人經驗敘述",
+    "example": "She gave a vivid personal account.",
+    "exampleZh": "她給出鮮明個人敘述。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "鮮明的個人經驗敘述",
+        "examples": [
+          {
+            "en": "She gave a vivid personal account.",
+            "zh": "她給出鮮明個人敘述。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:A SPECIFIC EXAMPLE CAN CLARIFY A GENERAL DESCRIPTION": {
+    "word": "a specific example can clarify a general description",
+    "pos": "phr.",
+    "meaning": "具體例子可說清概括描述",
+    "example": "A specific example can clarify a general description.",
+    "exampleZh": "具體例子可說清概括描述。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具體例子可說清概括描述",
+        "examples": [
+          {
+            "en": "A specific example can clarify a general description.",
+            "zh": "具體例子可說清概括描述。"
+          }
+        ]
+      }
+    ]
+  },
+  "R6:RECOLLECT": {
+    "pos": "v.",
+    "meaning": "努力想起過去某事",
+    "example": "She could not recollect the exact date.",
+    "exampleZh": "她想不起精確日期。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "努力想起過去某事",
+        "examples": [
+          {
+            "en": "She could not recollect the exact date.",
+            "zh": "她想不起精確日期。"
+          }
+        ]
+      }
+    ],
+    "word": "recollect"
+  },
+  "R6:RECORDING": {
+    "pos": "n.",
+    "meaning": "把聲音影像保留下來的紀錄",
+    "example": "The recording includes laughter.",
+    "exampleZh": "錄音包含笑聲。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "把聲音影像保留下來的紀錄",
+        "examples": [
+          {
+            "en": "The recording includes laughter.",
+            "zh": "錄音包含笑聲。"
+          }
+        ]
+      }
+    ],
+    "word": "recording"
   }
 }

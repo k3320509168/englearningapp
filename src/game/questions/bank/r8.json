@@ -10220,6 +10220,399 @@
       "ans": "EIL",
       "speak": "reversibility",
       "vocabId": "R8:REVERSIBILITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a hagiographic portrait",
+      "options": [
+        "A. 經獨立查核所有細節的完整紀錄",
+        "B. 刻意只寫過失而不提優點的文章",
+        "C. 把人物近乎聖人化而少談缺點的描寫",
+        "D. 只介紹人物日常作息而無任何評價"
+      ],
+      "ans": "C",
+      "explain": "hagiographic可比喻過度歌頌傳記。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "a mediated recollection",
+      "options": [
+        "A. 完全不經任何表達就直接取得的過去",
+        "B. 只因錄音音量低就必為假的回答",
+        "C. 已證與說話者毫無任何關係的故事",
+        "D. 經敘述情境或呈現方式中介的回憶"
+      ],
+      "ans": "D",
+      "explain": "mediated指受呈現/互動過程中介，非自動造假。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "an unflattering reminiscence",
+      "options": [
+        "A. 未美化對象且可能顯其缺點的回憶",
+        "B. 只為討好聽者而全面歌頌的故事",
+        "C. 因沒留照片而不准談起的經歷",
+        "D. 不含任何人物或情感的時間表"
+      ],
+      "ans": "A",
+      "explain": "unflattering不替人美化，非必惡意失真。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hesitation is audible; the motive assigned to it belongs to the editor rather than to anything the speaker explicitly says.",
+      "options": [
+        "A. 本人已明說遲疑動機，所以編輯只是逐字保留。",
+        "B. 編輯已刪掉遲疑，因此錄音完全不含停頓。",
+        "C. 說話者確認所有遲疑都出於同一種動機。",
+        "D. 遲疑可聽見，所賦動機卻是編輯加的而非本人明說。"
+      ],
+      "ans": "D",
+      "explain": "觀察線索與解釋歸屬不同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The narrative’s coherence may tell us as much about the needs of the present telling as about the orderliness of the life being told.",
+      "options": [
+        "A. 敘事連貫也可能反映現在講述需求，不只過去人生有多整齊。",
+        "B. 人生當年必定完全連貫，因現在故事講得順。",
+        "C. 現在講述需求已證過去事件從未發生。",
+        "D. 說話者只在比較故事長短，沒有討論組織方式。"
+      ],
+      "ans": "A",
+      "explain": "現在建構意義與過去經歷組織不可直接等同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "An editorial act can be protective and still deprive the reader of information needed to understand the speaker’s own qualification.",
+      "options": [
+        "A. 說話者認為任何保護受訪者的考量都必須放棄。",
+        "B. 編輯可出於保護，仍可能刪去理解本人限定所需資訊。",
+        "C. 只要意在保護，就不可能影響讀者理解任何限定。",
+        "D. 編輯已完整留下所有限定，所以沒有資訊取捨。"
+      ],
+      "ans": "B",
+      "explain": "善意與資訊效果可不一致，不否定保護本身。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To keep the contradiction is not to accuse the speaker; it is to resist making memory answer to a tidiness the interview itself did not possess.",
+      "options": [
+        "A. 保留矛盾不是指控說話者，而是拒絕替原訪談強加整齊。",
+        "B. 保留矛盾已等於判定說話者必定蓄意欺騙。",
+        "C. 原訪談毫無矛盾，所以編輯需另造矛盾增趣。",
+        "D. 說話者主張紀錄不需提供任何可理解脈絡。"
+      ],
+      "ans": "A",
+      "explain": "保存複雜性不同於定罪/人格缺陷判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The account’s verisimilitude is an effect worth studying, not a substitute for asking which of its claims can be checked and how.",
+      "options": [
+        "A. 說話者認為只有毫無細節的故事才可能真。",
+        "B. 逼真感值得研究，但不能代替查問主張如何驗證。",
+        "C. 逼真感已逐項確認全部內容，所以不需其他紀錄。",
+        "D. 只要查驗主張，就必須否認敘述有任何文學效果。"
+      ],
+      "ans": "B",
+      "explain": "效果與核實標準不同，不否定敘事價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The question does not simply recover a memory waiting intact; it offers a frame within which a memory becomes tellable to this listener now.",
+      "options": [
+        "A. 記憶受框架影響已證說話者並未經歷任何事。",
+        "B. 說話者認為只有沒有聽者時才可談過去。",
+        "C. 提問非只取出完整記憶，也提供此刻向這位聽者敘述的框架。",
+        "D. 每份記憶都像完整影片，任何提問只會原樣播放。"
+      ],
+      "ans": "C",
+      "explain": "互動影響敘事呈現，非否認過去或所有記憶。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The portrait is hagiographic rather than merely affectionate. What extra tendency is implied?",
+      "options": [
+        "A. It refuses to describe any admirable quality in the subject.",
+        "B. It is concerned only with the subject’s choice of profession.",
+        "C. Its admiration suppresses faults and approaches idealisation.",
+        "D. Its affection is expressed in unusually brief sentences."
+      ],
+      "ans": "C",
+      "explain": "hagiographic比單純喜愛更像聖人傳式美化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The account is no less mediated for ___ told in the speaker’s own voice.",
+      "options": [
+        "A. to be",
+        "B. been",
+        "C. it has",
+        "D. being"
+      ],
+      "ans": "D",
+      "explain": "for後動名詞being；ownvoice不代表無中介。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The interviewer says, Let us return to what you really felt, after the speaker has given an answer he finds disappointing. What should be questioned?",
+      "options": [
+        "A. The assumption that an unwelcome answer is not the speaker’s genuine feeling.",
+        "B. The possibility that an interviewer may ever ask for clarification.",
+        "C. The speaker’s ability to hear the question in the recording.",
+        "D. The claim that the interview took place after the event described."
+      ],
+      "ans": "A",
+      "explain": "really felt可能偷換為訪談者想聽答案，非禁所有追問。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【範圍】The critic questions the representativeness of the memory, not its sincerity. What remains possible?",
+      "options": [
+        "A. The speaker has knowingly invented the whole episode.",
+        "B. A sincere account must represent every similar life.",
+        "C. The critic accepts the episode as a complete statistical survey.",
+        "D. An honestly recalled episode may still be atypical."
+      ],
+      "ans": "D",
+      "explain": "真誠與代表性不同，不因誠實就普遍。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】The interview polishes uncertainty into a reassuringly continuous life. What transformation is criticised?",
+      "options": [
+        "A. Editing makes a hesitant recollection appear more coherent than its telling warrants.",
+        "B. The recording’s sound is cleaned without altering the sequence or wording.",
+        "C. The interviewee has explicitly chosen to withdraw every uncertain statement.",
+        "D. The life described has become physically longer because more words are used."
+      ],
+      "ans": "A",
+      "explain": "polishes比喻敘事理順，非單純除音噪。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文法】The silence is an answer, though not necessarily the one the interviewer would prefer ___ it.",
+      "options": [
+        "A. to have find",
+        "B. to find in",
+        "C. finding to",
+        "D. had found of"
+      ],
+      "ans": "B",
+      "explain": "would prefer to find in it，it指silence。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【立場】The essay rejects the assumption that an unguarded voice is an unmediated past. What distinction is central?",
+      "options": [
+        "A. Spontaneous-seeming speech still involves present narration of earlier experience.",
+        "B. Only written narratives can be shaped by their intended audience.",
+        "C. A recording with no script necessarily gives complete access to past events.",
+        "D. The past cannot be discussed unless every sentence is formally prepared."
+      ],
+      "ans": "A",
+      "explain": "自然口語仍為現在講述，不是過去直接未中介顯現。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】The interviewer edits out his questions to let the speaker appear to speak entirely for herself. Those questions determined the sequence and topics. What does the edit conceal?",
+      "options": [
+        "A. The physical appearance of the room in which the interview occurred.",
+        "B. The interaction that helped produce the supposedly autonomous account.",
+        "C. The speaker’s right to use words the interviewer did not supply.",
+        "D. The fact that every answer was prepared before the interview began."
+      ],
+      "ans": "B",
+      "explain": "刪問句可隱藏共同生成框架，非證每句由訪談者寫。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】A listener praises the account as too artless to be anything but true. What inference needs scrutiny?",
+      "options": [
+        "A. The listener has distinguished sincerity from factual completeness.",
+        "B. The speaker has formally refused to be quoted.",
+        "C. An impression of spontaneity is being treated as a guarantee of accuracy.",
+        "D. A verified date is being used to identify the location of a remembered event."
+      ],
+      "ans": "C",
+      "explain": "artless自然不矯飾感≠真實性保證。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：人物內在思想感受的領域",
+      "ans": "INTERIORITY",
+      "speak": "interiority",
+      "vocabId": "R8:INTERIORITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：看似自然坦率而不矯飾的性質",
+      "ans": "ARTLESSNESS",
+      "speak": "artlessness",
+      "vocabId": "R8:ARTLESSNESS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：把一生聖人化美化的重構",
+      "ans": "A HAGIOGRAPHIC RECONSTRUCTION OF A LIFE",
+      "speak": "a hagiographic reconstruction of a life",
+      "vocabId": "R8:A HAGIOGRAPHIC RECONSTRUCTION OF A LIFE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：無法忽略雙方互動生成的敘述",
+      "ans": "AN IRREDUCIBLY DIALOGIC ACCOUNT",
+      "speak": "an irreducibly dialogic account",
+      "vocabId": "R8:AN IRREDUCIBLY DIALOGIC ACCOUNT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：熟悉聲音可被排成另一人的論點",
+      "ans": "A FAMILIAR VOICE CAN BE ARRANGED INTO SOMEONE ELSE'S ARGUMENT",
+      "speak": "a familiar voice can be arranged into someone else's argument",
+      "vocabId": "R8:A FAMILIAR VOICE CAN BE ARRANGED INTO SOMEONE ELSE'S ARGUMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：自然不矯飾不保證事實準確",
+      "ans": "ARTLESSNESS DOES NOT GUARANTEE FACTUAL ACCURACY",
+      "speak": "artlessness does not guarantee factual accuracy",
+      "vocabId": "R8:ARTLESSNESS DOES NOT GUARANTEE FACTUAL ACCURACY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：原指聖人傳，此處比喻忽略缺點的過度讚頌傳記（H 開頭，11 個字母）",
+      "ans": "HAGIOGRAPHY",
+      "speak": "hagiography",
+      "vocabId": "R8:HAGIOGRAPHY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：敘事或表現逼真可信的效果（V 開頭，14 個字母）",
+      "ans": "VERISIMILITUDE",
+      "speak": "verisimilitude",
+      "vocabId": "R8:VERISIMILITUDE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不願輕易透露想法的寡言保留（R 開頭，9 個字母）",
+      "ans": "RETICENCE",
+      "speak": "reticence",
+      "vocabId": "R8:RETICENCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A U T O B I O G _ A P H I C A L (關於本人生活經歷的自傳性的)",
+      "ans": "R",
+      "speak": "autobiographical",
+      "vocabId": "R8:AUTOBIOGRAPHICAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F A L _ I B I _ I T Y (可能犯錯而非絕對可靠的性質)",
+      "ans": "LL",
+      "speak": "fallibility",
+      "vocabId": "R8:FALLIBILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S E _ E C _ I V _ T Y (只選取部分資訊而非全部的性質)",
+      "ans": "LTI",
+      "speak": "selectivity",
+      "vocabId": "R8:SELECTIVITY"
     }
   ],
   "boss": [
@@ -13628,6 +14021,137 @@
       "ans": "OAL",
       "speak": "enforceability",
       "vocabId": "R8:ENFORCEABILITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The voice is intimate, but intimacy should not be mistaken for an absence of selection.",
+      "options": [
+        "A. 說話者認為所有親密敘述都不值得傾聽。",
+        "B. 聲音親密，不等於沒有取捨。",
+        "C. 只要語氣親密，每項記憶就已全被說出。",
+        "D. 親密已被證明只是錄音機製造的假聲。"
+      ],
+      "ans": "B",
+      "explain": "親密感與選材完整性分開。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The interview’s apparent candour is partly produced by the interviewer’s careful choice of the moments at which to stop asking.",
+      "options": [
+        "A. 受訪者拒絕說任何話，所以不存在坦誠感。",
+        "B. 說話者確認每個問題都必須問到同一長度才公平。",
+        "C. 訪談坦誠感部分來自訪談者仔細選擇何時停止追問。",
+        "D. 只要停止提問，就已保證全部事實毫無遺漏。"
+      ],
+      "ans": "C",
+      "explain": "停問點也塑造呈現，不是全無引導的直接流出。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A voice can remain recognisably the speaker’s while the arrangement of that voice has become unmistakably the editor’s argument.",
+      "options": [
+        "A. 只要保留本人聲音，剪接就不可能形成另一種論點。",
+        "B. 編輯已改用別人聲音，所以不是排列問題。",
+        "C. 說話者主張任何錄音都不得被分段呈現。",
+        "D. 聲音仍可辨是本人，但其排列已成編輯的論點。"
+      ],
+      "ans": "D",
+      "explain": "素材真實與編排論證權分開，非必換人冒聲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】Verisimilitude is ___.",
+      "options": [
+        "A. the exact chronological order of a written record",
+        "B. an appearance of truth or lifelike plausibility",
+        "C. independent verification of every reported detail",
+        "D. a refusal to imitate any recognisable experience"
+      ],
+      "ans": "B",
+      "explain": "verisimilitude逼真可信感，非已查實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The objection concerns making the speaker’s hesitation evidence of dishonesty, not preserving hesitation in the record. Which response addresses it?",
+      "options": [
+        "A. Declare every hesitation proof of deception in advance.",
+        "B. Rewrite the answer to make it sound more certain.",
+        "C. Retain the pause while avoiding an unsupported judgement about its cause.",
+        "D. Remove every pause so no reader can interpret one."
+      ],
+      "ans": "C",
+      "explain": "保存資料與賦因果動機的界線，不需抹除資料。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An interview includes a contradiction. One editor removes it to protect the speaker’s dignity; another keeps it with context explaining the different moments of recollection. What does the second approach preserve?",
+      "options": [
+        "A. A claim that every contradictory statement must be equally accurate.",
+        "B. The assumption that dignity requires concealing every revision.",
+        "C. A guarantee that no audience member will form an unfavourable view.",
+        "D. The complexity of the remembering process without reducing it to a simple personal defect."
+      ],
+      "ans": "D",
+      "explain": "可保留矛盾與脈絡，不以缺陷標籤化也不保證所有人解讀。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：經仔細呈現安排的回憶",
+      "ans": "A CAREFULLY MEDIATED RECOLLECTION",
+      "speak": "a carefully mediated recollection",
+      "vocabId": "R8:A CAREFULLY MEDIATED RECOLLECTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：保留複雜性不必損說話者尊嚴",
+      "ans": "PRESERVING COMPLEXITY NEED NOT DIMINISH THE SPEAKER'S DIGNITY",
+      "speak": "preserving complexity need not diminish the speaker's dignity",
+      "vocabId": "R8:PRESERVING COMPLEXITY NEED NOT DIMINISH THE SPEAKER'S DIGNITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：資訊透過某過程或媒介而被呈現的中介（M 開頭，9 個字母）",
+      "ans": "MEDIATION",
+      "speak": "mediation",
+      "vocabId": "R8:MEDIATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ L _ G _ C (透過對話雙方互動而形成意義的)",
+      "ans": "AOI",
+      "speak": "dialogic",
+      "vocabId": "R8:DIALOGIC"
     }
   ]
 }

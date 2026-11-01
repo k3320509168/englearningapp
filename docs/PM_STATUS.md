@@ -73,9 +73,14 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 7. 「戰敗熱身」按鈕（複習本場錯的 3 題→下一場首擊 ×2＋護盾）列入 T9 介面，非 C7 範圍。
 8. 英雄訓練金幣二次方牆（練滿 3 位 SSR 需 580 萬金幣，全期收入 12～25 萬）→ 併入 T7 經濟驗收（Q7）。
 
+### 2.3 PM 裁決（2026-11-01 21:40 巡檢）
+1. **C7 v2.2 驗收通過（T1 ✅）**：12 路徑 8/12 過；normal 四類終王前皆 Lv200、mastery 最多超前 +13、吃力 C2 終王首過 57%（>55% 門檻）。唯一未過：四類 fast 在 **C2 終王前** Lv186～187（門檻 188，缺 357～2,642 EXP）。fast 玩家 C2 終王首過 ≥95%，戰力足夠 → **C2 終王前 fast 門檻改為 −14**（其他區維持 −12），不再加 EXP 來源，85%／素材本 8／門檻其他不動。
+2. **資料授權**：製作人已授權三方協作（AGENTS.md「製作人共同指令」）。把專案檔案（題庫、規格、模擬結果）交給 Antigravity 審查**屬於已授權範圍**，不需再問；只有金鑰與個人資料不能給。
+3. **審題報告完整性**：Antigravity 報告的題號與 Codex 題庫對不上（r6 報告實為 214 列，只有 55 列題幹同索引相符）。之後所有審題報告**一律用題幹原文（`type|desc|speak` 去重鍵）定位，不用索引**，並註明審的是哪個 commit 的檔案。r7／r8 報告由 Antigravity 依新規則重做後 Codex 再修。
+
 ## 3. 目前進度（2026-11-01）
 - ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
-- 🟡 C7：程式交付（Codex `1acb617`，存檔 v21），**平衡未過** → 照 2.1 修正中。
+- ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），驗收見 2.3。
 - 🟡 C8 版面：規劃在 `docs/question-bank-qa/C8_LAYOUT.md`（Codex worktree），未完成。
 - 🟡 B2+～C2 題庫：Codex 草稿 r6/r7/r8 各 1,200 題（目標 1,800／2,000／2,000）。Antigravity 審 r6：**152 題有問題（12.7%）**，報告 `docs/question-bank-qa/agy-review-r6.md`（agy/work）；r7、r8 待審。
 - ✅ 三方分工：`docs/TEAM.md`；Antigravity worktree `/Users/dzzz/agy-worktrees/EngGame`（`agy/work`）。
@@ -94,7 +99,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 ## 5. 任務佇列（照順序；負責人／模型）
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
-| T1 | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
+| T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
 | T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |
 | T3 | 修 r6 的 152 題、r7 139 題、r8 202 題次（報告：`/Users/dzzz/agy-worktrees/EngGame/docs/question-bank-qa/agy-review-r6.md`，agy/work `d8d8690`） | Codex | low～medium | 每題對照 agy-review-r6.md 處理或寫不改理由 |
 | T4 | 審 r7 ✅ 139 題、r8 ✅ 202 題次（`agy-review-r7.md`／`r8.md`，agy/work）；兩區都多 1 批（normal 930／boss 310），Codex 決定裁減或保留 | Antigravity | argon-medium | 同 r6 格式 |

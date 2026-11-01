@@ -1,0 +1,2094 @@
+{
+  "spec": "C7-v2.2",
+  "sourceCommit": "2657570900a4f41334326f938c68bb067e4eebe4",
+  "assertions": 23033,
+  "acceptance": "終王開戰前；地圖為每圖完成含自選複習後，跨區連續計算",
+  "results": [
+    {
+      "name": "strong-fast-seed7",
+      "profile": "strong",
+      "route": "fast",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": false,
+      "bossPass": false,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 188,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 19,
+          "xp": 258,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 39,
+          "xp": 407,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 59,
+          "xp": 76,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 77,
+          "xp": 318,
+          "delta": -3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 95,
+          "xp": 610,
+          "delta": -5,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 114,
+          "xp": 33,
+          "delta": -6,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 137,
+          "xp": 527,
+          "delta": -8,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 160,
+          "xp": 485,
+          "delta": -10,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 187,
+          "xp": 1613,
+          "delta": -13,
+          "xpMissingToFloor": 357
+        }
+      ],
+      "minMapDelta": -12,
+      "maxMapDelta": 2,
+      "masteredMaps": 4,
+      "reviewDays": 0,
+      "submitted": 6144,
+      "modelMs": 68023607.96174955,
+      "sideSubmitted": 441,
+      "sideCorrect": 419,
+      "sideModelMs": 3720000,
+      "sideRuns": 62,
+      "xpLedger": {
+        "offered:rush": 7552,
+        "accepted:rush": 8946,
+        "bonus:rush": 1394,
+        "deducted:rush": 0,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 0,
+        "offered:learningBase": 39040,
+        "accepted:learningBase": 39040,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 0,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 17669,
+        "accepted:learningSubsidy": 17669,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 0,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 129950,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 0,
+        "allowanceGold:firstClear": 0,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "good-fast-seed7",
+      "profile": "good",
+      "route": "fast",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": false,
+      "bossPass": false,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 188,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 19,
+          "xp": 285,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 39,
+          "xp": 363,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 58,
+          "xp": 487,
+          "delta": -2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 77,
+          "xp": 128,
+          "delta": -3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 95,
+          "xp": 357,
+          "delta": -5,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 113,
+          "xp": 1169,
+          "delta": -7,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 137,
+          "xp": 329,
+          "delta": -8,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 160,
+          "xp": 552,
+          "delta": -10,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 187,
+          "xp": 1426,
+          "delta": -13,
+          "xpMissingToFloor": 544
+        }
+      ],
+      "minMapDelta": -12,
+      "maxMapDelta": 2,
+      "masteredMaps": 4,
+      "reviewDays": 0,
+      "submitted": 6490,
+      "modelMs": 72296630.82251757,
+      "sideSubmitted": 446,
+      "sideCorrect": 411,
+      "sideModelMs": 3720000,
+      "sideRuns": 62,
+      "xpLedger": {
+        "offered:rush": 7348,
+        "accepted:rush": 8718,
+        "bonus:rush": 1370,
+        "deducted:rush": 0,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 0,
+        "offered:learningBase": 39455,
+        "accepted:learningBase": 39455,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 0,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 17290,
+        "accepted:learningSubsidy": 17290,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 0,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 129950,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 0,
+        "allowanceGold:firstClear": 0,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "average-fast-seed7",
+      "profile": "average",
+      "route": "fast",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": false,
+      "bossPass": false,
+      "mapPass": true,
+      "longestMapsBelowFloor": 2,
+      "finalLevel": 187,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 19,
+          "xp": 226,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 39,
+          "xp": 72,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 58,
+          "xp": 173,
+          "delta": -2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 76,
+          "xp": 565,
+          "delta": -4,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 94,
+          "xp": 799,
+          "delta": -6,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 113,
+          "xp": 299,
+          "delta": -7,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 136,
+          "xp": 566,
+          "delta": -9,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 159,
+          "xp": 131,
+          "delta": -11,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 186,
+          "xp": 1288,
+          "delta": -14,
+          "xpMissingToFloor": 2642
+        }
+      ],
+      "minMapDelta": -13,
+      "maxMapDelta": 2,
+      "masteredMaps": 3,
+      "reviewDays": 0,
+      "submitted": 6953,
+      "modelMs": 80562814.24930581,
+      "sideSubmitted": 415,
+      "sideCorrect": 362,
+      "sideModelMs": 3720000,
+      "sideRuns": 62,
+      "xpLedger": {
+        "offered:rush": 6401,
+        "accepted:rush": 7599,
+        "bonus:rush": 1198,
+        "deducted:rush": 0,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 0,
+        "offered:learningBase": 39460,
+        "accepted:learningBase": 39460,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 0,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 16413,
+        "accepted:learningSubsidy": 16413,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 0,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 129950,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 0,
+        "allowanceGold:firstClear": 0,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "struggling-fast-seed7",
+      "profile": "struggling",
+      "route": "fast",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": false,
+      "bossPass": false,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 188,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 19,
+          "xp": 221,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 39,
+          "xp": 110,
+          "delta": -1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 58,
+          "xp": 167,
+          "delta": -2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 76,
+          "xp": 726,
+          "delta": -4,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 95,
+          "xp": 169,
+          "delta": -5,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 113,
+          "xp": 1102,
+          "delta": -7,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 137,
+          "xp": 115,
+          "delta": -8,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 160,
+          "xp": 225,
+          "delta": -10,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 187,
+          "xp": 1464,
+          "delta": -13,
+          "xpMissingToFloor": 506
+        }
+      ],
+      "minMapDelta": -12,
+      "maxMapDelta": 2,
+      "masteredMaps": 3,
+      "reviewDays": 0,
+      "submitted": 8399,
+      "modelMs": 100844117.64517175,
+      "sideSubmitted": 428,
+      "sideCorrect": 313,
+      "sideModelMs": 3720000,
+      "sideRuns": 62,
+      "xpLedger": {
+        "offered:rush": 5520,
+        "accepted:rush": 6533,
+        "bonus:rush": 1013,
+        "deducted:rush": 0,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 0,
+        "offered:learningBase": 43021,
+        "accepted:learningBase": 43021,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 0,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 16300,
+        "accepted:learningSubsidy": 16300,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 0,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 129950,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 0,
+        "allowanceGold:firstClear": 0,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "strong-normal-seed7",
+      "profile": "strong",
+      "route": "normal",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 22,
+          "xp": 15,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 44,
+          "xp": 4,
+          "delta": 4,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 64,
+          "xp": 133,
+          "delta": 4,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 83,
+          "xp": 565,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 103,
+          "xp": 42,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 123,
+          "xp": 433,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 147,
+          "xp": 657,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 172,
+          "xp": 1049,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": 0
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 5,
+      "masteredMaps": 12,
+      "reviewDays": 20,
+      "submitted": 8055,
+      "modelMs": 89332008.97929922,
+      "sideSubmitted": 1319,
+      "sideCorrect": 1239,
+      "sideModelMs": 11448860.211583909,
+      "sideRuns": 191,
+      "xpLedger": {
+        "offered:rush": 19969,
+        "accepted:rush": 17331,
+        "bonus:rush": 0,
+        "deducted:rush": 2638,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 314,
+        "offered:learningBase": 38613,
+        "accepted:learningBase": 37652,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 961,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 16948,
+        "accepted:learningSubsidy": 16522,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 426,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 124850,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 5100,
+        "allowanceGold:firstClear": 0,
+        "offered:tower": 6615,
+        "accepted:tower": 5834,
+        "bonus:tower": 0,
+        "deducted:tower": 781,
+        "overflow:tower": 0,
+        "allowanceGold:tower": 96,
+        "offered:replay": 18165,
+        "accepted:replay": 16211,
+        "bonus:replay": 0,
+        "deducted:replay": 1954,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 240,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "good-normal-seed7",
+      "profile": "good",
+      "route": "normal",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 22,
+          "xp": 5,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 43,
+          "xp": 323,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 63,
+          "xp": 542,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 83,
+          "xp": 329,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 102,
+          "xp": 1081,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 123,
+          "xp": 429,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 147,
+          "xp": 572,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 172,
+          "xp": 1282,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": 0
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 5,
+      "masteredMaps": 13,
+      "reviewDays": 20,
+      "submitted": 8591,
+      "modelMs": 96699063.21324542,
+      "sideSubmitted": 1290,
+      "sideCorrect": 1152,
+      "sideModelMs": 11374043.818410272,
+      "sideRuns": 191,
+      "xpLedger": {
+        "offered:rush": 18406,
+        "accepted:rush": 16093,
+        "bonus:rush": 0,
+        "deducted:rush": 2313,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 276,
+        "offered:learningBase": 39391,
+        "accepted:learningBase": 38530,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 861,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 17067,
+        "accepted:learningSubsidy": 16653,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 414,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 125263,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 4687,
+        "allowanceGold:firstClear": 0,
+        "offered:tower": 5985,
+        "accepted:tower": 5263,
+        "bonus:tower": 0,
+        "deducted:tower": 722,
+        "overflow:tower": 0,
+        "allowanceGold:tower": 90,
+        "offered:replay": 18070,
+        "accepted:replay": 16598,
+        "bonus:replay": 0,
+        "deducted:replay": 1472,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 180,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "average-normal-seed7",
+      "profile": "average",
+      "route": "normal",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 21,
+          "xp": 299,
+          "delta": 1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 43,
+          "xp": 234,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 63,
+          "xp": 394,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 83,
+          "xp": 341,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 102,
+          "xp": 1079,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 123,
+          "xp": 208,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 147,
+          "xp": 324,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 172,
+          "xp": 463,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": 0
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 5,
+      "masteredMaps": 13,
+      "reviewDays": 20,
+      "submitted": 9427,
+      "modelMs": 107981340.57235442,
+      "sideSubmitted": 1259,
+      "sideCorrect": 1026,
+      "sideModelMs": 11399477.449744837,
+      "sideRuns": 191,
+      "xpLedger": {
+        "offered:rush": 16195,
+        "accepted:rush": 14671,
+        "bonus:rush": 0,
+        "deducted:rush": 1524,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 180,
+        "offered:learningBase": 40162,
+        "accepted:learningBase": 39447,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 715,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 16340,
+        "accepted:learningSubsidy": 16028,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 312,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 125742,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 4208,
+        "allowanceGold:firstClear": 0,
+        "offered:tower": 5985,
+        "accepted:tower": 5337,
+        "bonus:tower": 0,
+        "deducted:tower": 648,
+        "overflow:tower": 0,
+        "allowanceGold:tower": 80,
+        "offered:replay": 18233,
+        "accepted:replay": 17175,
+        "bonus:replay": 0,
+        "deducted:replay": 1058,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 128,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "struggling-normal-seed7",
+      "profile": "struggling",
+      "route": "normal",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 21,
+          "xp": 111,
+          "delta": 1,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 43,
+          "xp": 28,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 63,
+          "xp": 94,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 82,
+          "xp": 834,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 102,
+          "xp": 696,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 123,
+          "xp": 107,
+          "delta": 3,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 147,
+          "xp": 104,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 172,
+          "xp": 541,
+          "delta": 2,
+          "xpMissingToFloor": 0
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": 0
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 4,
+      "masteredMaps": 12,
+      "reviewDays": 20,
+      "submitted": 11004,
+      "modelMs": 132258651.58454677,
+      "sideSubmitted": 1261,
+      "sideCorrect": 949,
+      "sideModelMs": 11461456.363850344,
+      "sideRuns": 191,
+      "xpLedger": {
+        "offered:rush": 15294,
+        "accepted:rush": 14211,
+        "bonus:rush": 0,
+        "deducted:rush": 1083,
+        "overflow:rush": 0,
+        "allowanceGold:rush": 127,
+        "offered:learningBase": 42519,
+        "accepted:learningBase": 41639,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 880,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 16024,
+        "accepted:learningSubsidy": 15670,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 354,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 125968,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 3982,
+        "allowanceGold:firstClear": 0,
+        "offered:replay": 19136,
+        "accepted:replay": 18537,
+        "bonus:replay": 0,
+        "deducted:replay": 599,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 69,
+        "offered:tower": 2556,
+        "accepted:tower": 2375,
+        "bonus:tower": 0,
+        "deducted:tower": 181,
+        "overflow:tower": 0,
+        "allowanceGold:tower": 21,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "strong-mastery-seed7",
+      "profile": "strong",
+      "route": "mastery",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 27,
+          "xp": 99,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 51,
+          "xp": 141,
+          "delta": 11,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 69,
+          "xp": 300,
+          "delta": 9,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 88,
+          "xp": 789,
+          "delta": 8,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 110,
+          "xp": 78,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 130,
+          "xp": 986,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 152,
+          "xp": 908,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 176,
+          "xp": 95,
+          "delta": 6,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": null
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 12,
+      "masteredMaps": 46,
+      "reviewDays": 157,
+      "submitted": 21185,
+      "modelMs": 236676849.49837026,
+      "sideSubmitted": 0,
+      "sideCorrect": 0,
+      "sideModelMs": 0,
+      "sideRuns": 0,
+      "xpLedger": {
+        "offered:learningBase": 38517,
+        "accepted:learningBase": 36889,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 1628,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 15968,
+        "accepted:learningSubsidy": 15190,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 778,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 122372,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 7578,
+        "allowanceGold:firstClear": 0,
+        "offered:replay": 109399,
+        "accepted:replay": 43949,
+        "bonus:replay": 0,
+        "deducted:replay": 65450,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 8119,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "good-mastery-seed7",
+      "profile": "good",
+      "route": "mastery",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 27,
+          "xp": 116,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 51,
+          "xp": 136,
+          "delta": 11,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 70,
+          "xp": 684,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 88,
+          "xp": 828,
+          "delta": 8,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 109,
+          "xp": 609,
+          "delta": 9,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 130,
+          "xp": 293,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 152,
+          "xp": 354,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 175,
+          "xp": 1577,
+          "delta": 5,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": null
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 12,
+      "masteredMaps": 43,
+      "reviewDays": 152,
+      "submitted": 21818,
+      "modelMs": 247560339.80337927,
+      "sideSubmitted": 0,
+      "sideCorrect": 0,
+      "sideModelMs": 0,
+      "sideRuns": 0,
+      "xpLedger": {
+        "offered:learningBase": 38493,
+        "accepted:learningBase": 37036,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 1457,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 15398,
+        "accepted:learningSubsidy": 14750,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 648,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 122726,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 7224,
+        "allowanceGold:firstClear": 0,
+        "offered:replay": 103530,
+        "accepted:replay": 43888,
+        "bonus:replay": 0,
+        "deducted:replay": 59642,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 7394,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "average-mastery-seed7",
+      "profile": "average",
+      "route": "mastery",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 25,
+          "xp": 200,
+          "delta": 5,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 50,
+          "xp": 271,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 71,
+          "xp": 285,
+          "delta": 11,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 90,
+          "xp": 858,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 109,
+          "xp": 599,
+          "delta": 9,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 130,
+          "xp": 1068,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 152,
+          "xp": 977,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 176,
+          "xp": 37,
+          "delta": 6,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": null
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 12,
+      "masteredMaps": 40,
+      "reviewDays": 175,
+      "submitted": 26464,
+      "modelMs": 305761810.1900114,
+      "sideSubmitted": 0,
+      "sideCorrect": 0,
+      "sideModelMs": 0,
+      "sideRuns": 0,
+      "xpLedger": {
+        "offered:learningBase": 39279,
+        "accepted:learningBase": 37700,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 1579,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 15004,
+        "accepted:learningSubsidy": 14290,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 714,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 122490,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 7460,
+        "allowanceGold:firstClear": 0,
+        "offered:replay": 122881,
+        "accepted:replay": 43920,
+        "bonus:replay": 0,
+        "deducted:replay": 78961,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 9793,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    },
+    {
+      "name": "struggling-mastery-seed7",
+      "profile": "struggling",
+      "route": "mastery",
+      "completeMaps": 61,
+      "stopped": null,
+      "pass": true,
+      "bossPass": true,
+      "mapPass": true,
+      "longestMapsBelowFloor": 0,
+      "finalLevel": 200,
+      "beforeBoss": [
+        {
+          "region": 0,
+          "recommended": 20,
+          "level": 24,
+          "xp": 313,
+          "delta": 4,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 1,
+          "recommended": 40,
+          "level": 51,
+          "xp": 69,
+          "delta": 11,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 2,
+          "recommended": 60,
+          "level": 72,
+          "xp": 0,
+          "delta": 12,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 3,
+          "recommended": 80,
+          "level": 91,
+          "xp": 227,
+          "delta": 11,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 4,
+          "recommended": 100,
+          "level": 110,
+          "xp": 829,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 5,
+          "recommended": 120,
+          "level": 130,
+          "xp": 1359,
+          "delta": 10,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 6,
+          "recommended": 145,
+          "level": 152,
+          "xp": 1131,
+          "delta": 7,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 7,
+          "recommended": 170,
+          "level": 176,
+          "xp": 213,
+          "delta": 6,
+          "xpMissingToFloor": null
+        },
+        {
+          "region": 8,
+          "recommended": 200,
+          "level": 200,
+          "xp": 0,
+          "delta": 0,
+          "xpMissingToFloor": null
+        }
+      ],
+      "minMapDelta": 1,
+      "maxMapDelta": 13,
+      "masteredMaps": 32,
+      "reviewDays": 207,
+      "submitted": 34431,
+      "modelMs": 410298191.5078171,
+      "sideSubmitted": 0,
+      "sideCorrect": 0,
+      "sideModelMs": 0,
+      "sideRuns": 0,
+      "xpLedger": {
+        "offered:learningBase": 40536,
+        "accepted:learningBase": 38699,
+        "bonus:learningBase": 0,
+        "deducted:learningBase": 0,
+        "overflow:learningBase": 1837,
+        "allowanceGold:learningBase": 0,
+        "offered:learningSubsidy": 14275,
+        "accepted:learningSubsidy": 13555,
+        "bonus:learningSubsidy": 0,
+        "deducted:learningSubsidy": 0,
+        "overflow:learningSubsidy": 720,
+        "allowanceGold:learningSubsidy": 0,
+        "offered:firstClear": 129950,
+        "accepted:firstClear": 122341,
+        "bonus:firstClear": 0,
+        "deducted:firstClear": 0,
+        "overflow:firstClear": 7609,
+        "allowanceGold:firstClear": 0,
+        "offered:replay": 145777,
+        "accepted:replay": 43805,
+        "bonus:replay": 0,
+        "deducted:replay": 101972,
+        "overflow:replay": 0,
+        "allowanceGold:replay": 12654,
+        "offered:classUnlock": 0,
+        "accepted:classUnlock": 0,
+        "bonus:classUnlock": 0,
+        "deducted:classUnlock": 0,
+        "overflow:classUnlock": 0,
+        "allowanceGold:classUnlock": 0
+      }
+    }
+  ],
+  "mc": [
+    {
+      "name": "strong-fast-mc-seed7",
+      "results": [
+        {
+          "region": 0,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 0,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 0,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 4,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 8,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "final",
+          "firstPercentRounded": 97,
+          "meanTriesRounded": 1.03,
+          "within3PercentRounded": 100,
+          "n": 60
+        }
+      ]
+    },
+    {
+      "name": "good-normal-mc-seed7",
+      "results": [
+        {
+          "region": 0,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 0,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 0,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 4,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 8,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "final",
+          "firstPercentRounded": 93,
+          "meanTriesRounded": 1.07,
+          "within3PercentRounded": 100,
+          "n": 60
+        }
+      ]
+    },
+    {
+      "name": "average-normal-mc-seed7",
+      "results": [
+        {
+          "region": 0,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 0,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 0,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "normal",
+          "firstPercentRounded": 99,
+          "meanTriesRounded": 1.01,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 4,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "final",
+          "firstPercentRounded": 95,
+          "meanTriesRounded": 1.05,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "normal",
+          "firstPercentRounded": 99,
+          "meanTriesRounded": 1.01,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 8,
+          "kind": "elite",
+          "firstPercentRounded": 98,
+          "meanTriesRounded": 1.02,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "gate",
+          "firstPercentRounded": 97,
+          "meanTriesRounded": 1.03,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "boss",
+          "firstPercentRounded": 93,
+          "meanTriesRounded": 1.07,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "final",
+          "firstPercentRounded": 73,
+          "meanTriesRounded": 1.28,
+          "within3PercentRounded": 100,
+          "n": 60
+        }
+      ]
+    },
+    {
+      "name": "struggling-normal-mc-seed7",
+      "results": [
+        {
+          "region": 0,
+          "kind": "normal",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 0,
+          "kind": "elite",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 0,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 0,
+          "kind": "final",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "normal",
+          "firstPercentRounded": 97,
+          "meanTriesRounded": 1.03,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 4,
+          "kind": "elite",
+          "firstPercentRounded": 98,
+          "meanTriesRounded": 1.02,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 4,
+          "kind": "gate",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "boss",
+          "firstPercentRounded": 100,
+          "meanTriesRounded": 1,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 4,
+          "kind": "final",
+          "firstPercentRounded": 90,
+          "meanTriesRounded": 1.1,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "normal",
+          "firstPercentRounded": 92,
+          "meanTriesRounded": 1.08,
+          "within3PercentRounded": 100,
+          "n": 480
+        },
+        {
+          "region": 8,
+          "kind": "elite",
+          "firstPercentRounded": 93,
+          "meanTriesRounded": 1.07,
+          "within3PercentRounded": 100,
+          "n": 60
+        },
+        {
+          "region": 8,
+          "kind": "gate",
+          "firstPercentRounded": 87,
+          "meanTriesRounded": 1.13,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "boss",
+          "firstPercentRounded": 60,
+          "meanTriesRounded": 1.53,
+          "within3PercentRounded": 100,
+          "n": 30
+        },
+        {
+          "region": 8,
+          "kind": "final",
+          "firstPercentRounded": 57,
+          "meanTriesRounded": 1.68,
+          "within3PercentRounded": 98,
+          "n": 60
+        }
+      ]
+    }
+  ]
+}

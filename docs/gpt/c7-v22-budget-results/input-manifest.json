@@ -1,0 +1,121 @@
+{
+  "commit": "2657570900a4f41334326f938c68bb067e4eebe4",
+  "spec": "C7-v2.2",
+  "seed": 7,
+  "files": {
+    "scripts/realsim2.mts": "47740686579c8428501127f0578683df6d24229a3be12ba633ecc9974e580cc0",
+    "scripts/sim-side-modes.ts": "9684c2449fce2f81e98a2e1695744721374a229b3cd8c37e040c8b54aebd69cd",
+    "scripts/sim-budget.ts": "ea3a1b5abcbdff5e6e27e0afc52938c9d4b0848870e0d4104e61703058394da9",
+    "src/store/battleStore.ts": "40d9b3f68818259e9748a0074d02473c7b3643f15e3fb4bb05c4f4746dc37a01",
+    "src/store/saveStore.ts": "55ae642f67ef35eff0a2add7a78e5018dd1db4e028dad82b5f49f444c4939a49",
+    "src/game/xpCatchup.ts": "9c11cad27edf7ad200052a8ad21fee72891382016036d5bb4bc66149a26166dc",
+    "src/game/retryAid.ts": "a9f579403d4401613dabbe6a6eaf429475b822bb2e2bd207db6b1f2cfc0ebca4",
+    "src/game/questions/bank/r0.json": "62b4b355c5a2e763ddd60f63a7c45083178a10b88310a8cdbc48f023bb31a257",
+    "src/game/questions/bank/r1.json": "75c8991219b52ebe2e67dcf4459c64f81ea2c5800f622693e4cbfc3a49eb447f",
+    "src/game/questions/bank/r2.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r3.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r4.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r5.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r6.json": "f3ca262e39b2026d3e730cd1903432f8293077391b0c53b13db8ff7634c57eed",
+    "src/game/questions/bank/r7.json": "5b3f04b48591d167ff15aa09ca794b089eb67f9762a7fafdd42ee074aac6c19f",
+    "src/game/questions/bank/r8.json": "8ded797cff679e48872e2cc298bfb7836be5f9f146018ad12d1a61ed2a8ef17d"
+  },
+  "cases": [
+    {
+      "name": "strong-fast-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 188,
+      "stopped": null,
+      "sideRuns": 62
+    },
+    {
+      "name": "good-fast-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 188,
+      "stopped": null,
+      "sideRuns": 62
+    },
+    {
+      "name": "average-fast-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 187,
+      "stopped": null,
+      "sideRuns": 62
+    },
+    {
+      "name": "struggling-fast-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 188,
+      "stopped": null,
+      "sideRuns": 62
+    },
+    {
+      "name": "strong-normal-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 191
+    },
+    {
+      "name": "good-normal-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 191
+    },
+    {
+      "name": "average-normal-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 191
+    },
+    {
+      "name": "struggling-normal-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 191
+    },
+    {
+      "name": "strong-mastery-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 0
+    },
+    {
+      "name": "good-mastery-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 0
+    },
+    {
+      "name": "average-mastery-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 0
+    },
+    {
+      "name": "struggling-mastery-seed7",
+      "exit": 0,
+      "maps": 61,
+      "level": 200,
+      "stopped": null,
+      "sideRuns": 0
+    }
+  ]
+}

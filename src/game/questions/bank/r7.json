@@ -11789,6 +11789,399 @@
       "ans": "EAM",
       "speak": "understatement",
       "vocabId": "R7:UNDERSTATEMENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The route is shorter on paper, but that assumes the courtyard gate is open.",
+      "options": [
+        "A. 路線圖尚未確認，所以無法知道庭院門在哪裡。",
+        "B. 庭院門會按紙本路線的長度決定開放時間。",
+        "C. 紙上路線較短，但前提是庭院門開著。",
+        "D. 庭院門開著，因此路線圖才印得比較小。"
+      ],
+      "ans": "C",
+      "explain": "assumes指出較短路線所依賴的通行條件，不是地圖尺寸。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We have made the labels clearer without making the underlying layout any less confusing.",
+      "options": [
+        "A. 配置變得較清楚，因此標籤已可移除。",
+        "B. 標籤和配置都改善了，只差顏色尚未調整。",
+        "C. 標籤較模糊，所以必須靠配置來補救。",
+        "D. 標籤變清楚了，但配置本身仍令人困惑。"
+      ],
+      "ans": "D",
+      "explain": "without ... any less否定配置困惑程度的改善，同時保留標籤的進步。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The blue route is intended for visitors; staff tend to use the service corridor instead.",
+      "options": [
+        "A. 藍線為訪客規畫，員工通常改走服務走廊。",
+        "B. 藍線只供員工走，訪客應走服務走廊。",
+        "C. 員工傾向帶訪客一起走藍線後再進走廊。",
+        "D. 服務走廊改開放訪客後，員工才開始走藍線。"
+      ],
+      "ans": "A",
+      "explain": "intended用途與tend實際習慣分述，未說員工帶路或制度變更。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The old street names survive in conversation even where the signs have been replaced.",
+      "options": [
+        "A. 舊街名只保留在路牌，交談時已改用新名。",
+        "B. 交談內容已證明路牌更換並未實際進行。",
+        "C. 路牌依居民每次交談時使用的名稱而更換。",
+        "D. 即使路牌已更換，日常交談仍沿用舊街名。"
+      ],
+      "ans": "D",
+      "explain": "survive in conversation說明口語慣用與路牌變動不同步。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am not questioning the survey. I am questioning whether these are the measurements a walker needs.",
+      "options": [
+        "A. 不是質疑測量本身，而是這些數據是否符合步行者需求。",
+        "B. 測量方法有誤，因此任何步行資訊都不可信。",
+        "C. 只要補做測量，就不再需要詢問步行者需求。",
+        "D. 步行者已提供全部數據，測量只是確認其正確性。"
+      ],
+      "ans": "A",
+      "explain": "區分資料可信度和對使用者目的的適切性，未否定測量。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We should not mistake the absence of a line for the absence of a path.",
+      "options": [
+        "A. 實地道路是否存在，可由圖上線條長度判斷。",
+        "B. 不能因圖上沒畫線，就認定實地沒有路。",
+        "C. 圖上若有線，就能確認實地道路目前開放。",
+        "D. 圖上沒畫線，反而代表實地路徑特別寬。"
+      ],
+      "ans": "B",
+      "explain": "absence對比地圖表述與實地存在；也不反向保證有線就開放。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is a more legible map, not necessarily a more faithful picture of the distances involved.",
+      "options": [
+        "A. 地圖更易辨讀，不代表距離呈現更忠實。",
+        "B. 距離畫得更準確，但標籤比以前更難辨讀。",
+        "C. 由於更易辨讀，距離的準確度也已獲得證實。",
+        "D. 地圖只呈現距離，不再提供辨讀所需的標籤。"
+      ],
+      "ans": "A",
+      "explain": "legible與faithful to distances為不同評價面向，not necessarily不等於距離一定錯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The alternative route is not an afterthought; it is the only one that works when the lift is out of service.",
+      "options": [
+        "A. 電梯停用只是設計完成後才偶然發現的小問題。",
+        "B. 替代路線並非附帶應付，而是電梯停用時唯一可行路線。",
+        "C. 替代路線尚未想好，因此電梯停用就沒有路可走。",
+        "D. 替代路線只在電梯運作時可用，停用後須另規畫。"
+      ],
+      "ans": "B",
+      "explain": "not an afterthought反對把替代路線視為事後附加；its必要性由停梯條件說明。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "People are following the signs accurately. The difficulty is that the signs were designed around a route we no longer recommend.",
+      "options": [
+        "A. 設計已按新路線更新，但人們還習慣走舊路。",
+        "B. 人們依標示走得太慢，所以設計者不再推薦步行。",
+        "C. 人們正確照標示走；問題是標示仍依已不建議的路線設計。",
+        "D. 人們誤讀了標示，因此才走上目前建議的路線。"
+      ],
+      "ans": "C",
+      "explain": "following accurately排除使用者照做有誤，問題在標示所承接的過時路線。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A campus map enlarges the central buildings and compresses the spaces between them. Its designer calls it a guide to connections, not a scale drawing. What does that distinction explain?",
+      "options": [
+        "A. The campus itself has become more densely built.",
+        "B. Connections matter only when a visitor remains in the centre.",
+        "C. Distances cannot be read directly from the spacing shown.",
+        "D. Only the largest buildings are connected by paths."
+      ],
+      "ans": "C",
+      "explain": "非比例圖可以保留連接關係，不能直接由圖上間隔推實際距離。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The route is accessible, provided you approach it from the west. What does the qualification imply?",
+      "options": [
+        "A. Western visitors are given priority over other visitors.",
+        "B. The route becomes accessible only after sunset.",
+        "C. An accessible approach is necessarily the shortest approach.",
+        "D. The approach is relevant to whether the route can be used."
+      ],
+      "ans": "D",
+      "explain": "provided引入條件；同一設施的不同進入方向可能有不同可用性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The digital map is updated weekly; the wall display, less frequently. It is the latter that visitors tend to consult first. Which source is first consulted?",
+      "options": [
+        "A. The wall display.",
+        "B. The weekly update notification.",
+        "C. The digital map.",
+        "D. A separate comparison of both versions."
+      ],
+      "ans": "A",
+      "explain": "latter指第二者wall display，更新頻率不決定實際先看哪個。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A station replaces arrows with colour-coded routes. Visitors identify the colours easily but remain unsure where each route begins. What has the change failed to resolve?",
+      "options": [
+        "A. Distinguishing one route colour from another.",
+        "B. Recognising whether the station has several routes.",
+        "C. Remembering the name of the station they entered.",
+        "D. Locating the point at which to join a route."
+      ],
+      "ans": "D",
+      "explain": "顏色辨識已成功，未解的是各路線起點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The map is comprehensive in coverage but selective in detail. Which description preserves that contrast?",
+      "options": [
+        "A. It includes the whole area while omitting some local features.",
+        "B. It depicts a small area with every feature drawn precisely.",
+        "C. It uses some areas to stand for places outside its scope.",
+        "D. It provides more local detail as its geographical coverage shrinks."
+      ],
+      "ans": "A",
+      "explain": "coverage是涵蓋範圍，selective detail是範圍內資訊有所選擇；未說縮小範圍的動態變化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A route marked as direct crosses a courtyard that is open only during office hours. The reviewer recommends qualifying the label. What needs to be made explicit?",
+      "options": [
+        "A. Whether the courtyard has more than one entrance.",
+        "B. When that direct route is available.",
+        "C. How far the courtyard lies from the office.",
+        "D. Who originally chose the word direct."
+      ],
+      "ans": "B",
+      "explain": "direct並非一定不對，但依賴庭院開放時段，標籤需附可用條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】Residents call the alley Market Lane, although it appears under another name on official maps. A local guide prints both names. What is the guide trying to bridge?",
+      "options": [
+        "A. Everyday usage and the formal naming system.",
+        "B. The alley’s current name and a predicted future name.",
+        "C. A pedestrian route and a parallel vehicle route.",
+        "D. Residents’ addresses and visitors’ accommodation details."
+      ],
+      "ans": "A",
+      "explain": "兩個名稱對應在地慣用與官方系統，不必推定先後改名。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【推論】After testing the signs with first-time visitors, the designer removes an instruction that staff had considered self-evident. Visitors had interpreted it in two different ways. What explains the removal?",
+      "options": [
+        "A. Staff had mistaken a temporary sign for a permanent one.",
+        "B. Staff familiarity had concealed ambiguity in the wording.",
+        "C. Visitors had demonstrated that the route itself was closed.",
+        "D. The instruction had become unnecessary after staff training."
+      ],
+      "ans": "B",
+      "explain": "熟悉場地者認為不言自明，新訪客卻有兩種解讀，揭露熟悉度掩蓋的歧義。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】An access map highlights step-free entrances but leaves the connecting paths unmarked. A reviewer notes that an entrance is useful only if a visitor can reach it. What is the underlying criticism?",
+      "options": [
+        "A. The map includes entrances that should be reserved for staff.",
+        "B. A step-free entrance cannot be represented on a conventional map.",
+        "C. Isolated features are shown without the usable links between them.",
+        "D. The map makes entrances appear closer to one another than they are."
+      ],
+      "ans": "C",
+      "explain": "入口資訊不等於全程可達，批評缺少串接路徑，不是否定無階差入口或地圖形式。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在環境中辨識位置與尋找路線",
+      "ans": "WAYFINDING",
+      "speak": "wayfinding",
+      "vocabId": "R7:WAYFINDING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：文字或圖示容易辨讀的程度",
+      "ans": "LEGIBILITY",
+      "speak": "legibility",
+      "vocabId": "R7:LEGIBILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：失去方向感的狀態",
+      "ans": "DISORIENTATION",
+      "speak": "disorientation",
+      "vocabId": "R7:DISORIENTATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：地形的形狀與高低起伏",
+      "ans": "TOPOGRAPHY",
+      "speak": "topography",
+      "vocabId": "R7:TOPOGRAPHY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：這張圖預設了新來者不應被要求具備的熟悉程度。",
+      "ans": "THE MAP ASSUMES A LEVEL OF FAMILIARITY THAT NEWCOMERS CANNOT BE EXPECTED TO HAVE",
+      "speak": "the map assumes a level of familiarity that newcomers cannot be expected to have",
+      "vocabId": "R7:THE MAP ASSUMES A LEVEL OF FAMILIARITY THAT NEWCOMERS CANNOT BE EXPECTED TO HAVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：若清楚的標籤出現在決定路線之後，用處就很有限。",
+      "ans": "A CLEAR LABEL IS OF LITTLE USE IF IT APPEARS AFTER THE DECISION POINT",
+      "speak": "a clear label is of little use if it appears after the decision point",
+      "vocabId": "R7:A CLEAR LABEL IS OF LITTLE USE IF IT APPEARS AFTER THE DECISION POINT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：界線的劃分或標示（D 開頭，11 個字母）",
+      "ans": "DEMARCATION",
+      "speak": "demarcation",
+      "vocabId": "R7:DEMARCATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：可以穿越或通過的（T 開頭，11 個字母）",
+      "ans": "TRAVERSABLE",
+      "speak": "traversable",
+      "vocabId": "R7:TRAVERSABLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：彼此相連的（I 開頭，14 個字母）",
+      "ans": "INTERCONNECTED",
+      "speak": "interconnected",
+      "vocabId": "R7:INTERCONNECTED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：O B S C _ R E D (被遮擋而看不清的)",
+      "ans": "U",
+      "speak": "obscured",
+      "vocabId": "R7:OBSCURED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A M B _ G U _ U S (容許不只一種解讀的)",
+      "ans": "IO",
+      "speak": "ambiguous",
+      "vocabId": "R7:AMBIGUOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ T I _ U _ T Y (連續性；不中斷的銜接)",
+      "ans": "NNI",
+      "speak": "continuity",
+      "vocabId": "R7:CONTINUITY"
     }
   ],
   "boss": [
@@ -15721,6 +16114,137 @@
       "ans": "REI",
       "speak": "apprehensive",
       "vocabId": "R7:APPREHENSIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That marker tells you where the path starts, not whether you are facing the right direction.",
+      "options": [
+        "A. 標記同時標示起點與目的地的相對方位。",
+        "B. 標記指出路徑起點，不保證你面向正確方向。",
+        "C. 標記能確認面向，卻不能指出路徑起點。",
+        "D. 先面向正確方向，標記才會移到路徑起點。"
+      ],
+      "ans": "B",
+      "explain": "where與whether區分位置資訊和朝向判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The entrance is clearly signed once you are in the courtyard, which is precisely where newcomers struggle to get.",
+      "options": [
+        "A. 入口標示把訪客帶離庭院，所以應全部移除。",
+        "B. 庭院目前不開放，因此標示清不清楚已無差別。",
+        "C. 進庭院後入口標示清楚，但新來者恰恰難在先到庭院。",
+        "D. 新來者能輕易到庭院，困難只在認出入口文字。"
+      ],
+      "ans": "C",
+      "explain": "once條件與which補充構成資訊出現太晚的問題。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Calling it intuitive tells us something about the designer’s familiarity with the place, unless newcomers find it intuitive too.",
+      "options": [
+        "A. 只要設計者熟悉場地，新來者就必定會覺得容易。",
+        "B. 新來者若不熟悉場地，就不適合評估設計是否直覺。",
+        "C. 設計者應避免熟悉場地，才能證明地圖易懂。",
+        "D. 若新來者未有同感，「直覺易懂」可能只反映設計者熟悉場地。"
+      ],
+      "ans": "D",
+      "explain": "unless要求以新來者經驗檢驗直覺性，指出熟悉度可能混入判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the closure been indicated at the first junction yesterday, we ___ the unnecessary climb we ended up making.",
+      "options": [
+        "A. will have avoided",
+        "B. could have avoided",
+        "C. can have avoided",
+        "D. could avoid"
+      ],
+      "ans": "B",
+      "explain": "Had引導與過去事實相反的條件，主句could have avoided表示本來可避免已發生的攀爬。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The problem is not a shortage of signs so much as their placement. What response best addresses the diagnosis?",
+      "options": [
+        "A. Printing the current signs in a larger range of colours.",
+        "B. Counting signs before comparing the lengths of the routes.",
+        "C. Reviewing where signs meet visitors at decision points.",
+        "D. Adding signs in proportion to each corridor’s length."
+      ],
+      "ans": "C",
+      "explain": "not ... so much as將重點移到位置；decision points直接對應需要作路線決定處。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The revised map is easier to read, though whether it is easier to use remains to be seen. What distinction is preserved?",
+      "options": [
+        "A. Practical wayfinding has improved; the lettering remains too small.",
+        "B. Readers prefer the old map even though they navigate faster with the new one.",
+        "C. The new map is visually clearer because its users already know the route.",
+        "D. Visual clarity has improved; practical wayfinding has not yet been established."
+      ],
+      "ans": "D",
+      "explain": "easier to read已肯定，whether ... remains to be seen保留實際使用成效未定。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：沒有被阻擋的",
+      "ans": "UNOBSTRUCTED",
+      "speak": "unobstructed",
+      "vocabId": "R7:UNOBSTRUCTED"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我們要區分路線的存在與實際可使用性。",
+      "ans": "WE NEED TO DISTINGUISH A ROUTE THAT EXISTS FROM ONE THAT CAN ACTUALLY BE USED",
+      "speak": "we need to distinguish a route that exists from one that can actually be used",
+      "vocabId": "R7:WE NEED TO DISTINGUISH A ROUTE THAT EXISTS FROM ONE THAT CAN ACTUALLY BE USED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：可供航行或順利穿行的程度（N 開頭，12 個字母）",
+      "ans": "NAVIGABILITY",
+      "speak": "navigability",
+      "vocabId": "R7:NAVIGABILITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A C C _ S S _ B I _ I T Y (可抵達與使用的程度)",
+      "ans": "EIL",
+      "speak": "accessibility",
+      "vocabId": "R7:ACCESSIBILITY"
     }
   ]
 }

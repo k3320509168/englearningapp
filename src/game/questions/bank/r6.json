@@ -11795,6 +11795,399 @@
       "ans": "STB",
       "speak": "unsuitable",
       "vocabId": "R6:UNSUITABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Keep the river on your left until you reach the old mill.",
+      "options": [
+        "A. 看到舊磨坊後，沿河走向左邊。",
+        "B. 走到河邊後，在第一個路口左轉。",
+        "C. 到舊磨坊之前，讓河一直在你的左邊。",
+        "D. 先到河左岸，再回到舊磨坊。"
+      ],
+      "ans": "C",
+      "explain": "on your left說明行進時河的相對位置，until設定終點。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The gate is locked, but there is a public path around the edge of the garden.",
+      "options": [
+        "A. 花園小路鎖著，必須由正門穿過。",
+        "B. 公共小路穿越花園中央，再通向鎖門。",
+        "C. 鎖門旁有人，可以請他帶路穿過花園。",
+        "D. 門鎖著，但可走花園邊緣的公共小路。"
+      ],
+      "ans": "D",
+      "explain": "but給出可行替代，around the edge不是穿越中央，也沒提帶路者。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We are on the right street, just at the wrong end of it.",
+      "options": [
+        "A. 街道找對了，但目前在不對的那一端。",
+        "B. 街道走錯了，但目的地就在這個路口。",
+        "C. 已到正確街道盡頭，可以停止找路。",
+        "D. 街道兩端都能直接進入同一棟建築。"
+      ],
+      "ans": "A",
+      "explain": "right street與wrong end同時成立，不能把right誤讀成右轉。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If you pass the bakery, you have gone too far.",
+      "options": [
+        "A. 先經過麵包店，才會到要找的位置。",
+        "B. 麵包店太遠，所以應改找其他目的地。",
+        "C. 過了麵包店之後，才需要開始看路牌。",
+        "D. 若走過麵包店，就表示已超過要找的位置。"
+      ],
+      "ans": "D",
+      "explain": "gone too far表示越過目標位置；麵包店是確認走過頭的線索。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The shortcut saves distance, but with all those steps I doubt it saves effort.",
+      "options": [
+        "A. 近路距離較短，但階梯多，未必省力。",
+        "B. 近路比較費時，因此距離應該也較長。",
+        "C. 近路雖有階梯，卻已確定更省力。",
+        "D. 近路階梯較少，所以較適合搬運行李。"
+      ],
+      "ans": "A",
+      "explain": "distance與effort分開評估，doubt保留對省力的疑問。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I would check the street name before turning. These two corners look almost the same.",
+      "options": [
+        "A. 應先轉彎，再確認街名是否相同。",
+        "B. 轉彎前先核對街名，因這兩個轉角很相似。",
+        "C. 街名已換過，所以只能憑轉角外觀找路。",
+        "D. 兩個轉角通向同條街，不必再核對。"
+      ],
+      "ans": "B",
+      "explain": "before與look almost the same說明先確認文字線索的理由與順序。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "You can see the platform from here, but we still have to go through the underpass to get onto it.",
+      "options": [
+        "A. 雖看得到月台，仍須經地下道才能上去。",
+        "B. 地下道能看見月台，但不能用來前往月台。",
+        "C. 月台在地下道內，沿目前通道直走即可。",
+        "D. 目前位置就是月台入口，不必再繞路。"
+      ],
+      "ans": "A",
+      "explain": "see與get onto分別是看見與實際抵達，underpass仍是必要路線。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The map is not wrong about the distance. It just does not tell you that most of it is uphill.",
+      "options": [
+        "A. 地圖的坡度標對了，距離卻仍待測量。",
+        "B. 距離本身沒錯，只是沒標大部分路段都上坡。",
+        "C. 距離標示有誤，因上坡會讓實際路程增加。",
+        "D. 地圖只畫上坡路段，所以漏掉其他距離。"
+      ],
+      "ans": "B",
+      "explain": "not wrong about distance保留距離資訊正確，批評遺漏坡度。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I thought we were lost, but we had simply come out on the other side of the square.",
+      "options": [
+        "A. 差點走錯，但在進入廣場前就察覺了。",
+        "B. 已走到另一座廣場，因此不認得出口。",
+        "C. 原以為迷路，其實只是從廣場另一側走出來。",
+        "D. 確實迷路，所以又回到了廣場原來那側。"
+      ],
+      "ans": "C",
+      "explain": "had simply重新解釋原先lost的判斷，other side不是另一座廣場。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【路線】The riverside path is shorter, but it closes at dusk. It is already dark, so we will take the road through the village. Why was that route chosen?",
+      "options": [
+        "A. The riverside path leads to a different village.",
+        "B. The walkers want to reach the river before dusk.",
+        "C. The shorter route is no longer available.",
+        "D. The village road has recently been shortened."
+      ],
+      "ans": "C",
+      "explain": "路徑黃昏關閉，現在已黑；選村內道路是可用性，不是距離改變。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】The guide suggests using the clock tower as a landmark when walking back. What should visitors use it for?",
+      "options": [
+        "A. Finding out when the tour ends.",
+        "B. Checking the height of nearby buildings.",
+        "C. Deciding which buildings they may enter.",
+        "D. Recognising where they are."
+      ],
+      "ans": "D",
+      "explain": "landmark在找路語境是可辨識位置的地標，未要求讀時間或進入塔內。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】By the time we reached the junction, the guide ___ the route twice already.",
+      "options": [
+        "A. had checked",
+        "B. has checked",
+        "C. will have checked",
+        "D. is checking"
+      ],
+      "ans": "A",
+      "explain": "reached為過去參照點，already與twice表示此前已完成兩次，用過去完成式。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】I would not rely on the blue line alone; the pavement markings have faded. What does the speaker recommend?",
+      "options": [
+        "A. Choosing whichever pavement looks newest.",
+        "B. Avoiding every street marked in blue.",
+        "C. Waiting for the markings to be repainted.",
+        "D. Using another source to confirm the route."
+      ],
+      "ans": "D",
+      "explain": "not rely on ... alone是不要只靠單一線索，沒有要求等重畫或避開所有藍線。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【指涉】The footbridge runs beside the railway bridge, but only the former is open to walkers. Which bridge may walkers use?",
+      "options": [
+        "A. The footbridge.",
+        "B. The railway bridge.",
+        "C. Either bridge when no train is approaching.",
+        "D. The bridge closest to their starting point."
+      ],
+      "ans": "A",
+      "explain": "former指前述第一者footbridge，不能由火車是否接近自行增加通行條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【路線】The app says the station is ten minutes away on foot. The notice beside us says the usual footpath is closed for repairs. What is the sensible conclusion?",
+      "options": [
+        "A. The app has located a different station.",
+        "B. The estimate may not allow for the closure.",
+        "C. The station itself is closed for repairs.",
+        "D. The repairs will take about ten minutes."
+      ],
+      "ans": "B",
+      "explain": "封閉可能使原步行估時不適用；不是證明車站關閉或定位錯誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A map uses a dotted line for a steep path and a solid line for a flatter one. The key explains this distinction. What should a visitor check before choosing?",
+      "options": [
+        "A. What the line styles mean.",
+        "B. Whether the dotted line is printed more recently.",
+        "C. Which line has the brighter colour.",
+        "D. Whether the solid line ends at a building."
+      ],
+      "ans": "A",
+      "explain": "題內說明線型對應坡度，應讀圖例；沒有提供更新時間或終點差別。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【推論】The campsite is visible from the road, but the entrance is on the far side of the field. What mistake might a visitor make?",
+      "options": [
+        "A. Confusing the campsite with another place mentioned on the map.",
+        "B. Assuming that seeing the site means being near its entrance.",
+        "C. Thinking the road is hidden behind the campsite.",
+        "D. Using the field entrance despite being unable to see the site."
+      ],
+      "ans": "B",
+      "explain": "可見營地與入口所在面不同，視線上的接近不等於接近可進入的位置。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The sign is technically correct, but it appears after the turning it tells you to take. What is the criticism?",
+      "options": [
+        "A. The instruction points in the opposite direction.",
+        "B. The sign should give distances rather than directions.",
+        "C. The information arrives too late to guide the decision.",
+        "D. The sign names a destination on a different road."
+      ],
+      "ans": "C",
+      "explain": "批評資訊出現的時機，不否定文字方向本身或指定改為距離。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：用來辨識位置的地標",
+      "ans": "LANDMARK",
+      "speak": "landmark",
+      "vocabId": "R6:LANDMARK"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：道路交會的路口",
+      "ans": "JUNCTION",
+      "speak": "junction",
+      "vocabId": "R6:JUNCTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：行程的目的地",
+      "ans": "DESTINATION",
+      "speak": "destination",
+      "vocabId": "R6:DESTINATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：循原路回走",
+      "ans": "RETRACE YOUR STEPS",
+      "speak": "retrace your steps",
+      "vocabId": "R6:RETRACE YOUR STEPS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：入口在庭院的另一側。",
+      "ans": "THE ENTRANCE IS ON THE FAR SIDE OF THE COURTYARD",
+      "speak": "the entrance is on the far side of the courtyard",
+      "vocabId": "R6:THE ENTRANCE IS ON THE FAR SIDE OF THE COURTYARD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：看得到它，不代表能直接走到。",
+      "ans": "BEING ABLE TO SEE IT DOES NOT MEAN WE CAN GET THERE DIRECTLY",
+      "speak": "being able to see it does not mean we can get there directly",
+      "vocabId": "R6:BEING ABLE TO SEE IT DOES NOT MEAN WE CAN GET THERE DIRECTLY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：比一般路線更近的捷徑（S 開頭，8 個字母）",
+      "ans": "SHORTCUT",
+      "speak": "shortcut",
+      "vocabId": "R6:SHORTCUT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：大致的；非精確的（A 開頭，11 個字母）",
+      "ans": "APPROXIMATE",
+      "speak": "approximate",
+      "vocabId": "R6:APPROXIMATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：因原路受阻而安排的改道路線（D 開頭，9 個字母）",
+      "ans": "DIVERSION",
+      "speak": "diversion",
+      "vocabId": "R6:DIVERSION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T H O R O U _ H F A R E (供車輛或行人穿行的主要道路)",
+      "ans": "G",
+      "speak": "thoroughfare",
+      "vocabId": "R6:THOROUGHFARE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B E _ R I _ G S (位置與方向感（常用複數）)",
+      "ans": "AN",
+      "speak": "bearings",
+      "vocabId": "R6:BEARINGS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：N A _ I _ A _ E (辨認方向並找路前進)",
+      "ans": "VGT",
+      "speak": "navigate",
+      "vocabId": "R6:NAVIGATE"
     }
   ],
   "boss": [
@@ -15727,6 +16120,137 @@
       "ans": "SNI",
       "speak": "distinctive",
       "vocabId": "R6:DISTINCTIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The arrow points to the car park, not to the building entrance.",
+      "options": [
+        "A. 箭頭表示停車場和建築入口都在前方。",
+        "B. 箭頭指停車場，不是建築入口。",
+        "C. 箭頭指建築入口，停車場在旁邊。",
+        "D. 箭頭指停車場內的建築入口。"
+      ],
+      "ans": "B",
+      "explain": "not to明確排除把箭頭當建築入口指示。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is marked as a through road, although the barrier suggests it no longer is one.",
+      "options": [
+        "A. 障礙物只限制停車，不影響道路通行。",
+        "B. 圖上道路與眼前道路有不同名字，因此不是同一條。",
+        "C. 圖上標可穿越，但障礙物顯示現在可能已不能通行。",
+        "D. 圖上標道路封閉，障礙物卻表示已重新開放。"
+      ],
+      "ans": "C",
+      "explain": "no longer is one承接through road；suggests是現場線索而非確定公告。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Let us use the printed map for the overall route and the signs for the last few turns.",
+      "options": [
+        "A. 先用路牌規畫全程，再以紙本圖找最後出口。",
+        "B. 紙本圖只用來估時間，路牌才提供全程方向。",
+        "C. 先比較兩種資訊，之後只選其中一種使用。",
+        "D. 全程方向參考紙本圖，最後幾個轉彎看路牌。"
+      ],
+      "ans": "D",
+      "explain": "overall與last few turns分配不同尺度的資訊用途，非擇一。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【路線】The museum entrance has moved to the courtyard. The map still shows it on the main street. Which information needs updating?",
+      "options": [
+        "A. The opening time of the museum.",
+        "B. The location of the museum entrance.",
+        "C. The name of the main street.",
+        "D. The position of the museum courtyard."
+      ],
+      "ans": "B",
+      "explain": "搬動的是入口；未說街名、庭院位置或開放時間改變。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The route is straightforward once you have found the right entrance. What qualification is being made?",
+      "options": [
+        "A. The entrance is marked more clearly than the route.",
+        "B. The route becomes shorter after the first visit.",
+        "C. Finding the entrance may be the tricky part.",
+        "D. Every entrance leads to the same route."
+      ],
+      "ans": "C",
+      "explain": "once條件限定容易的是找到正確入口之後，不保證入口本身好找。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【短文】A walker retraces her steps to the last junction she recognises instead of following another unfamiliar lane. What is her strategy?",
+      "options": [
+        "A. Continuing until an unfamiliar lane becomes recognisable.",
+        "B. Choosing a new route to avoid repeating any ground.",
+        "C. Checking whether the destination has moved since her last visit.",
+        "D. Returning to a known point before deciding again."
+      ],
+      "ans": "D",
+      "explain": "retrace回走，last junction she recognises提供重新定位的已知點。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：朝上坡方向的",
+      "ans": "UPHILL",
+      "speak": "uphill",
+      "vocabId": "R6:UPHILL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我們先回到最後一個認得的路口。",
+      "ans": "LET US RETURN TO THE LAST JUNCTION WE RECOGNISED",
+      "speak": "let us return to the last junction we recognised",
+      "vocabId": "R6:LET US RETURN TO THE LAST JUNCTION WE RECOGNISED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：對自身位置與方向的辨識（O 開頭，11 個字母）",
+      "ans": "ORIENTATION",
+      "speak": "orientation",
+      "vocabId": "R6:ORIENTATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V I _ I B _ L _ T Y (能見度；可看清的程度)",
+      "ans": "SII",
+      "speak": "visibility",
+      "vocabId": "R6:VISIBILITY"
     }
   ]
 }

@@ -31,6 +31,7 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   (d.voices??[]).forEach(([rawText,meaning,difficulty,pos,example,exampleZh,display],i)=>{
    // 作者可用排版彎引號；輸入/辨識答案統一標準英文 apostrophe。
    const text=rawText.replace(/[‘’]/g,"\'");
+   if(!/^[A-Za-z']+( [A-Za-z']+)*$/.test(text))throw Error(`${source}: r${r} voice: target must omit punctuation; received ${JSON.stringify(rawText)}`);
    const speak=text.toLowerCase();
    questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak});
    const examples=voiceExamples[text];

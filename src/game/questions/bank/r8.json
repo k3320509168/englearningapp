@@ -11792,6 +11792,399 @@
       "ans": "MRE",
       "speak": "comportment",
       "vocabId": "R8:COMPORTMENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The line looks inevitable on the page. It took years of negotiation to put it on the ground.",
+      "options": [
+        "A. 地面界線早已存在，協商只處理地圖紙張品質。",
+        "B. 協商時間長，證明圖上的線也必須畫得較長。",
+        "C. 紙上的線彷彿理所當然，實地劃設卻經多年協商。",
+        "D. 紙上的線仍未定案，因此地面至今沒有界線。"
+      ],
+      "ans": "C",
+      "explain": "inevitable與negotiation對照圖面自然感和實際形成過程，不聲稱界線未定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "I am less interested in what the map gets wrong than in what it invites us not to notice.",
+      "options": [
+        "A. 認為忽略細節無關緊要，應只檢查測量錯誤。",
+        "B. 想先列出每個錯誤，再決定哪些內容值得觀看。",
+        "C. 由於地圖沒有錯誤，研究已不需要再繼續。",
+        "D. 比起明顯錯誤，更關注地圖引導人忽略的事物。"
+      ],
+      "ans": "D",
+      "explain": "less ... than轉移關注到選擇性注意，不是斷言沒有錯。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The diagram is neutral about distance only in the limited sense that it declines to represent it.",
+      "options": [
+        "A. 所謂對距離中立，只是指它不打算呈現距離。",
+        "B. 它對距離的呈現已證實不受任何取捨影響。",
+        "C. 它將各段距離平均化，因此實際路程也較平均。",
+        "D. 它先測量距離，再以中立標準選出最短路線。"
+      ],
+      "ans": "A",
+      "explain": "limited sense限制neutral的意義：不呈現不等於客觀呈現得毫無取捨。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The old names have not vanished; they have been displaced from the official layer.",
+      "options": [
+        "A. 舊名完全失傳，因此官方不再能查證。",
+        "B. 官方保留舊名，其他場合則已停止使用。",
+        "C. 舊名因地點搬遷而轉移到另一個實際地區。",
+        "D. 舊名未消失，只是被移出官方那一層表述。"
+      ],
+      "ans": "D",
+      "explain": "not vanished與official layer限定移出的表述系統，不宣稱所有場合絕跡。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "To call it an empty space is already to privilege one account of what counts as occupation.",
+      "options": [
+        "A. 稱它空地，已偏重某種對何謂占用或居用的理解。",
+        "B. 稱它空地，只是在轉述一項不涉及定義的測量結果。",
+        "C. 空地是否有人使用，與如何定義占用並無關係。",
+        "D. 只要提出另一種用語，就能確定每位使用者的身分。"
+      ],
+      "ans": "A",
+      "explain": "already privilege指出命名已帶入判準，非中性地重述單一量測。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The map’s authority rests partly on the ease with which its choices disappear into its conventions.",
+      "options": [
+        "A. 地圖選擇越難實際執行，使用者就越願意信任它。",
+        "B. 地圖部分權威來自取捨融入慣例後不易被察覺。",
+        "C. 地圖權威只取決於是否逐一列出製圖者的選擇。",
+        "D. 慣例消失後，讀者反而更容易辨認地圖權威。"
+      ],
+      "ans": "B",
+      "explain": "choices disappear into conventions指取捨被慣例自然化，partly不等於唯一原因。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "That is not a complaint that the map simplifies. It is a question about whose complications are deemed expendable.",
+      "options": [
+        "A. 不是反對簡化本身，而是問誰的複雜處境被視為可省略。",
+        "B. 是要求停止簡化，將所有人的全部細節都印上。",
+        "C. 是認為只要由居民製圖，就不會有資訊取捨。",
+        "D. 是詢問誰能付費購買更複雜的地圖版本。"
+      ],
+      "ans": "A",
+      "explain": "whose complications將焦點移到簡化成本的分配，未要求任何圖都無所不包。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The revision makes the border less conspicuous, which is not quite the same as making it less consequential.",
+      "options": [
+        "A. 只要把邊界重新標出，就能消除其所有影響。",
+        "B. 修訂讓邊界不那麼顯眼，不等於它的影響減弱。",
+        "C. 邊界變得不顯眼，證明它已不再影響人們通行。",
+        "D. 修訂使邊界更重要，因此才刻意畫得較粗。"
+      ],
+      "ans": "B",
+      "explain": "conspicuous為視覺顯著，consequential為有實際後果，兩者不等同。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "What the visitor experiences as a seamless route may be a succession of thresholds to the people who live along it.",
+      "options": [
+        "A. 沿線居民不曾走過此路，所以無法評估通行是否順暢。",
+        "B. 路上每一處實體門檻都會同樣阻擋訪客與居民。",
+        "C. 訪客覺得一路順暢，沿線居民卻可能經歷一連串界限或門檻。",
+        "D. 訪客與居民對這條路的經驗相同，只是用詞不同。"
+      ],
+      "ans": "C",
+      "explain": "may及不同群體經驗對照保留差異，thresholds可指社會性界限，不限實體門檻。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【論述】An atlas calls a district peripheral. A local reviewer accepts its physical position near the edge of the sheet but objects to the implication that its activities are marginal. What precisely is resisted?",
+      "options": [
+        "A. The assumption that different maps must use the same scale.",
+        "B. The claim that the reviewer has located the district inaccurately.",
+        "C. The slide from spatial placement to a judgement of significance.",
+        "D. The use of local activities to establish a geographical centre."
+      ],
+      "ans": "C",
+      "explain": "接受圖面邊緣位置，不接受把空間邊緣延伸成活動不重要；測的是peripheral的評價性涵義。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The map is admirably spare; whether it is spare at the traveller’s expense is another question. How does the second clause qualify the praise?",
+      "options": [
+        "A. It suggests that printing the map has exceeded the traveller’s budget.",
+        "B. It questions whether travellers appreciate restrained graphic design.",
+        "C. It contrasts the traveller’s preferred route with the designer’s own journey.",
+        "D. It asks whether simplification removes information the user needs."
+      ],
+      "ans": "D",
+      "explain": "at someone’s expense在此是使用者因簡化受損的可能性，不是印刷費。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【論述】A redraw preserves the boundaries but replaces the names. The editor calls the former a technical necessity and the latter a political choice. A critic replies, “Keeping a line is no less a choice than moving it.” What is being challenged?",
+      "options": [
+        "A. The framing of continuity as politically unchosen.",
+        "B. The description of renaming as distinct from redrawing.",
+        "C. The accuracy of the coordinates used for the retained line.",
+        "D. The notion that the redraw could retain features of the earlier map."
+      ],
+      "ans": "A",
+      "explain": "批評者把保留也視為選擇，反對將沿用既有界線排除於政治取捨之外，不是否定座標或兩種操作可區分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【論述】The critic writes, “The map does not invent the barrier; it makes the barrier look like a natural edge.” What is being challenged?",
+      "options": [
+        "A. The claim that the barrier can be physically crossed.",
+        "B. The reliability of the measurements used to locate the barrier.",
+        "C. The assumption that the map depicts every barrier in the area.",
+        "D. The presentation of an existing division as self-evident."
+      ],
+      "ans": "D",
+      "explain": "區分障礙物存在與它被自然化呈現，批評的是後者，而非測量或可穿越性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】One could hardly ask for a clearer legend, says the reviewer, before describing symbols used inconsistently across the sheet. What makes the praise pointed?",
+      "options": [
+        "A. The key is clear, but the map fails to follow its own key.",
+        "B. The reviewer regards detailed legends as unnecessary for experienced readers.",
+        "C. The symbols are consistent, but their explanations have become too elaborate.",
+        "D. The reviewer prefers a key that allows the reader to improvise meanings."
+      ],
+      "ans": "A",
+      "explain": "legend清楚與實際使用不一致形成反差；反諷不等於把legend字面評價全部翻反。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【論述】An essay describes a map as an argument conducted through selection. This does not mean that its measurements are fabricated. Which claim is compatible with both statements?",
+      "options": [
+        "A. A map’s argument can be identified without considering what it leaves out.",
+        "B. Accurate measurements can be organised to favour a particular reading.",
+        "C. Selectivity becomes argumentative only when measurements are unreliable.",
+        "D. Readers must choose between accepting the measurements and questioning the framing."
+      ],
+      "ans": "B",
+      "explain": "正確數據仍可經取捨與安排形成特定論述，不必假造測量。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【編輯】A fieldworker writes, “From here the road runs behind the school.” The editor substitutes “from the station” for “from here”, although the notes never locate the writer. Which objection most precisely targets the edit?",
+      "options": [
+        "A. It resolves an unspecified viewpoint by importing an unsupported location.",
+        "B. It preserves the viewpoint while making the destination more explicit.",
+        "C. It treats behind as a fixed compass direction while retaining the same stated origin.",
+        "D. It removes the writer’s location while leaving the frame of reference unchanged."
+      ],
+      "ans": "A",
+      "explain": "here指涉依賴說話位置；紀錄未定位，編輯卻填入車站，是無證據地確定參照點，不是補明目的地。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The planner describes the redesign as restoring coherence. A resident replies, “Whose coherence is being restored?” What does the reply put under scrutiny?",
+      "options": [
+        "A. Whether coherence is a property that can be discussed in planning at all.",
+        "B. The viewpoint that makes the earlier arrangement seem coherent.",
+        "C. Whether the redesign will reproduce the earlier street layout exactly.",
+        "D. Which resident originally proposed using the word coherence."
+      ],
+      "ans": "B",
+      "explain": "Whose要求揭露一致性的評價視角與受益者，不單是復原施工精度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【論述】A writer says that a street map can be faithful to the network while estranging those whose habitual routes it omits. Which tension is being articulated?",
+      "options": [
+        "A. Habitual routes are more reliable evidence of distance than surveyed streets.",
+        "B. A map must distort the network in order to represent residents’ experience.",
+        "C. Structural accuracy can coexist with a failure to recognise lived patterns of movement.",
+        "D. A technically accurate network necessarily records every customary route."
+      ],
+      "ans": "C",
+      "explain": "網絡結構準確與對日常實踐缺乏辨認可同時成立，不強迫二選一。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：與地圖繪製或地圖表述有關的",
+      "ans": "CARTOGRAPHIC",
+      "speak": "cartographic",
+      "vocabId": "R8:CARTOGRAPHIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：空間上相接或毗鄰的",
+      "ans": "CONTIGUOUS",
+      "speak": "contiguous",
+      "vocabId": "R8:CONTIGUOUS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：位於邊緣或被視為次要的",
+      "ans": "PERIPHERAL",
+      "speak": "peripheral",
+      "vocabId": "R8:PERIPHERAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：以簡化結構或關係示意的",
+      "ans": "SCHEMATIC",
+      "speak": "schematic",
+      "vocabId": "R8:SCHEMATIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：地圖未列名稱，不足以證明人們對該地沒有依附感。",
+      "ans": "THE ABSENCE OF A NAME ON THE MAP IS NOT EVIDENCE OF AN ABSENCE OF ATTACHMENT TO THE PLACE",
+      "speak": "the absence of a name on the map is not evidence of an absence of attachment to the place",
+      "vocabId": "R8:THE ABSENCE OF A NAME ON THE MAP IS NOT EVIDENCE OF AN ABSENCE OF ATTACHMENT TO THE PLACE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：何者顯得邊緣，取決於敘述選擇把中心放在哪裡。",
+      "ans": "WHAT APPEARS PERIPHERAL DEPENDS ON WHERE THE ACCOUNT CHOOSES TO PLACE ITS CENTRE",
+      "speak": "what appears peripheral depends on where the account chooses to place its centre",
+      "vocabId": "R8:WHAT APPEARS PERIPHERAL DEPENDS ON WHERE THE ACCOUNT CHOOSES TO PLACE ITS CENTRE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：地圖的繪製與製作研究（C 開頭，11 個字母）",
+      "ans": "CARTOGRAPHY",
+      "speak": "cartography",
+      "vocabId": "R8:CARTOGRAPHY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：界線或輪廓的勾畫與界定（D 開頭，11 個字母）",
+      "ans": "DELINEATION",
+      "speak": "delineation",
+      "vocabId": "R8:DELINEATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：對事物的特定理解或解讀方式（C 開頭，9 個字母）",
+      "ans": "CONSTRUAL",
+      "speak": "construal",
+      "vocabId": "R8:CONSTRUAL"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O N T I _ U I T Y (空間上的相鄰或接壤)",
+      "ans": "G",
+      "speak": "contiguity",
+      "vocabId": "R8:CONTIGUITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P A R _ I A _ I T Y (對某事物的偏愛或偏袒)",
+      "ans": "TL",
+      "speak": "partiality",
+      "vocabId": "R8:PARTIALITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C I R _ U M S _ R I P _ I O N (範圍的限制或界定)",
+      "ans": "CCT",
+      "speak": "circumscription",
+      "vocabId": "R8:CIRCUMSCRIPTION"
     }
   ],
   "boss": [
@@ -15724,6 +16117,137 @@
       "ans": "ITB",
       "speak": "inimitable",
       "vocabId": "R8:INIMITABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Naming the area a gateway tells you where the speaker imagines the important journey begins.",
+      "options": [
+        "A. 行程的重要性可直接由地圖上入口數量推算。",
+        "B. 稱該區為門戶，透露說話者認為重要行程從何開始。",
+        "C. 門戶這個名稱足以確定當地最早興建的道路。",
+        "D. 該區只有一個入口，所以說話者不能採用其他名稱。"
+      ],
+      "ans": "B",
+      "explain": "比喻gateway透露敘述者設定的旅程視角，沒有提供道路歷史。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We can accept the coordinates without accepting the story their arrangement has been made to tell.",
+      "options": [
+        "A. 要質疑敘事，首先必須證明每個座標都有錯。",
+        "B. 座標既能被安排，實地位置就完全無法查證。",
+        "C. 可以接受座標，同時不接受其安排所構成的敘事。",
+        "D. 只要接受座標，就應同時接受由它們構成的敘事。"
+      ],
+      "ans": "C",
+      "explain": "without accepting保留事實資料與組織敘事分層判斷的可能性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The map offers a view from nowhere, provided we agree not to ask who chose the viewpoint.",
+      "options": [
+        "A. 地圖未採任何視角，所以不必詢問製圖者。",
+        "B. 只要知道製圖者的名字，就能證明座標皆錯。",
+        "C. 地圖無法辨認出任何地點，因此也沒有觀看方向。",
+        "D. 只要不追問誰選視角，它就彷彿提供了無立場的觀看。"
+      ],
+      "ans": "D",
+      "explain": "provided帶反諷條件：不問視角的選擇，才維持看似無立場的效果。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【論述】Defending a schematic’s equal spacing, the designer says, “Its not being to scale is a convention, not a defect.” Which reply accepts that defence without treating the convention as proof of universal usefulness?",
+      "options": [
+        "A. A misleading use of the diagram establishes that the convention itself is defective.",
+        "B. The convention may be legitimate while still misleading users estimating walking time.",
+        "C. If the convention is legitimate, discrepancies in walking distance cease to matter.",
+        "D. The diagram becomes universally useful once its spacing matches the walking distances."
+      ],
+      "ans": "B",
+      "explain": "可承認非比例慣例正當，同時保留特定用途不適合的判斷；其餘把慣例正當、實用性或缺陷作過強推論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】Two routes remain equally prominent on an old map, although one has since become inaccessible. The curator retains both in a historical display. Which judgement best respects the stated purpose?",
+      "options": [
+        "A. Retaining both routes implies that the curator disputes the closure.",
+        "B. The historical purpose makes the relative prominence of the routes irrelevant to interpretation.",
+        "C. The unchanged emphasis can document an earlier arrangement rather than guide current travel.",
+        "D. The map should be judged solely by how efficiently it directs present-day visitors."
+      ],
+      "ans": "C",
+      "explain": "歷史展示可保留昔日格局，不等於現時導航指引或否認封閉；呈現方式仍可供解讀。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A diagram removes local names to make its symbols usable across languages. The accompanying essay notes that the names also carry local history. What is the most balanced reading of the choice?",
+      "options": [
+        "A. It preserves local history in a form that no longer requires translation.",
+        "B. It shows that local names had prevented residents from understanding the diagram.",
+        "C. It makes historical interpretation possible by separating names from places.",
+        "D. It gains portability by giving up a particular kind of situated meaning."
+      ],
+      "ans": "D",
+      "explain": "跨語言通用性與在地歷史意義的取捨由題內明示，不能把便於通用當保留一切。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：指涉依賴說話者所處語境的",
+      "ans": "DEICTIC",
+      "speak": "deictic",
+      "vocabId": "R8:DEICTIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：我們應區分座標的準確性與敘述所宣稱的權威。",
+      "ans": "WE SHOULD DISTINGUISH THE ACCURACY OF THE COORDINATES FROM THE AUTHORITY CLAIMED FOR THE ACCOUNT",
+      "speak": "we should distinguish the accuracy of the coordinates from the authority claimed for the account",
+      "vocabId": "R8:WE SHOULD DISTINGUISH THE ACCURACY OF THE COORDINATES FROM THE AUTHORITY CLAIMED FOR THE ACCOUNT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：與空間占有、控制或領域歸屬有關的行為或觀念（T 開頭，14 個字母）",
+      "ans": "TERRITORIALITY",
+      "speak": "territoriality",
+      "vocabId": "R8:TERRITORIALITY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：R E P R _ S E N _ A T I _ N A L (與如何描繪或呈現事物有關的)",
+      "ans": "ETO",
+      "speak": "representational",
+      "vocabId": "R8:REPRESENTATIONAL"
     }
   ]
 }

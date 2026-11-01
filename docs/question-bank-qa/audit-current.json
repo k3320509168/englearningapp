@@ -8,37 +8,37 @@
   "regions": [
     {
       "region": 6,
-      "questions": 400,
+      "questions": 1240,
       "target": 1800,
-      "normal": 300,
-      "boss": 100,
+      "normal": 930,
+      "boss": 310,
       "quotas": {
         "listening": {
-          "count": 120,
+          "count": 372,
           "target": 540
         },
         "reading": {
-          "count": 120,
+          "count": 372,
           "target": 540
         },
         "speaking": {
-          "count": 80,
+          "count": 248,
           "target": 360
         },
         "writing": {
-          "count": 80,
+          "count": 248,
           "target": 360
         }
       },
-      "lexicalPoints": 138,
-      "dictionaryRecords": 313,
-      "unscopedVocabEntries": 168,
-      "scopedAliases": 145,
+      "lexicalPoints": 463,
+      "dictionaryRecords": 1024,
+      "unscopedVocabEntries": 556,
+      "scopedAliases": 468,
       "issues": [],
       "reading": {
-        "maxWords": 81,
-        "over20SecondsAt180Wpm": 63,
-        "over20SecondsAt240Wpm": 17
+        "maxWords": 83,
+        "over20SecondsAt180Wpm": 189,
+        "over20SecondsAt240Wpm": 54
       },
       "drawStats": [
         {
@@ -46,10 +46,10 @@
           "draws": 1000,
           "legacy": 0,
           "distribution": {
-            "speaking:d1": 188,
-            "reading:d1": 308,
-            "listening:d1": 313,
-            "writing:d1": 191
+            "writing:d1": 186,
+            "listening:d1": 311,
+            "reading:d1": 313,
+            "speaking:d1": 190
           }
         },
         {
@@ -57,14 +57,14 @@
           "draws": 1000,
           "legacy": 0,
           "distribution": {
-            "reading:d1": 114,
-            "listening:d2": 209,
-            "listening:d1": 114,
-            "writing:d1": 67,
-            "speaking:d1": 70,
-            "reading:d2": 217,
-            "writing:d2": 123,
-            "speaking:d2": 86
+            "reading:d1": 119,
+            "speaking:d2": 88,
+            "listening:d1": 117,
+            "writing:d1": 72,
+            "writing:d2": 114,
+            "listening:d2": 207,
+            "speaking:d1": 81,
+            "reading:d2": 202
           }
         },
         {
@@ -72,137 +72,137 @@
           "draws": 1000,
           "legacy": 0,
           "distribution": {
-            "listening:d3": 166,
-            "reading:d1": 61,
-            "listening:d1": 58,
-            "listening:d2": 67,
-            "writing:d3": 115,
-            "writing:d1": 39,
-            "speaking:d1": 37,
-            "reading:d3": 162,
-            "speaking:d3": 161,
-            "writing:d2": 40,
-            "speaking:d2": 27,
-            "reading:d2": 67
+            "writing:d3": 105,
+            "speaking:d3": 164,
+            "reading:d3": 160,
+            "listening:d1": 69,
+            "reading:d1": 64,
+            "listening:d3": 163,
+            "reading:d2": 67,
+            "writing:d1": 35,
+            "speaking:d2": 28,
+            "listening:d2": 65,
+            "speaking:d1": 41,
+            "writing:d2": 39
           }
         }
       ]
     },
     {
       "region": 7,
-      "questions": 400,
+      "questions": 1240,
       "target": 2000,
-      "normal": 300,
-      "boss": 100,
+      "normal": 930,
+      "boss": 310,
       "quotas": {
         "listening": {
-          "count": 120,
+          "count": 372,
           "target": 600
         },
         "reading": {
-          "count": 120,
+          "count": 372,
           "target": 600
         },
         "speaking": {
-          "count": 80,
+          "count": 248,
           "target": 400
         },
         "writing": {
-          "count": 80,
+          "count": 248,
           "target": 400
         }
       },
-      "lexicalPoints": 139,
-      "dictionaryRecords": 317,
-      "unscopedVocabEntries": 169,
-      "scopedAliases": 148,
+      "lexicalPoints": 458,
+      "dictionaryRecords": 1021,
+      "unscopedVocabEntries": 551,
+      "scopedAliases": 470,
       "issues": [],
       "reading": {
-        "maxWords": 82,
-        "over20SecondsAt180Wpm": 76,
-        "over20SecondsAt240Wpm": 19
+        "maxWords": 87,
+        "over20SecondsAt180Wpm": 235,
+        "over20SecondsAt240Wpm": 72
       },
       "drawStats": [
         {
           "stage": 0,
           "draws": 1000,
-          "legacy": 6,
+          "legacy": 2,
           "distribution": {
-            "writing:d1": 193,
-            "speaking:d1": 193,
-            "listening:d1": 307,
-            "reading:d1": 307
+            "speaking:d1": 188,
+            "writing:d1": 189,
+            "reading:d1": 311,
+            "listening:d1": 312
           }
         },
         {
           "stage": 80,
           "draws": 1000,
-          "legacy": 201,
+          "legacy": 81,
           "distribution": {
-            "writing:d1": 86,
-            "listening:d2": 127,
-            "listening:d1": 133,
-            "reading:d1": 127,
-            "speaking:d1": 82,
-            "reading:d2": 212,
-            "writing:d2": 178,
-            "speaking:d2": 55
+            "reading:d1": 129,
+            "writing:d2": 140,
+            "reading:d2": 200,
+            "listening:d2": 173,
+            "listening:d1": 128,
+            "speaking:d1": 79,
+            "speaking:d2": 71,
+            "writing:d1": 80
           }
         },
         {
           "stage": 160,
           "draws": 1000,
-          "legacy": 273,
+          "legacy": 119,
           "distribution": {
-            "listening:d1": 57,
-            "reading:d2": 67,
-            "writing:d3": 276,
-            "speaking:d3": 122,
-            "speaking:d1": 37,
-            "reading:d1": 55,
-            "writing:d2": 61,
-            "listening:d3": 112,
-            "listening:d2": 40,
-            "reading:d3": 118,
-            "writing:d1": 37,
-            "speaking:d2": 18
+            "reading:d1": 63,
+            "writing:d3": 174,
+            "listening:d3": 143,
+            "speaking:d1": 39,
+            "listening:d1": 70,
+            "reading:d2": 69,
+            "speaking:d2": 28,
+            "speaking:d3": 150,
+            "listening:d2": 55,
+            "writing:d2": 42,
+            "reading:d3": 139,
+            "writing:d1": 28
           }
         }
       ]
     },
     {
       "region": 8,
-      "questions": 400,
+      "questions": 1240,
       "target": 2000,
-      "normal": 300,
-      "boss": 100,
+      "normal": 930,
+      "boss": 310,
       "quotas": {
         "listening": {
-          "count": 120,
+          "count": 372,
           "target": 600
         },
         "reading": {
-          "count": 120,
+          "count": 372,
           "target": 600
         },
         "speaking": {
-          "count": 80,
+          "count": 248,
           "target": 400
         },
         "writing": {
-          "count": 80,
+          "count": 248,
           "target": 400
         }
       },
-      "lexicalPoints": 142,
-      "dictionaryRecords": 320,
-      "unscopedVocabEntries": 172,
-      "scopedAliases": 148,
+      "lexicalPoints": 455,
+      "dictionaryRecords": 1009,
+      "unscopedVocabEntries": 548,
+      "scopedAliases": 461,
       "issues": [],
       "reading": {
-        "maxWords": 88,
-        "over20SecondsAt180Wpm": 95,
-        "over20SecondsAt240Wpm": 29
+        "maxWords": 95,
+        "over20SecondsAt180Wpm": 275,
+        "over20SecondsAt240Wpm": 118
       },
       "drawStats": [
         {
@@ -210,44 +210,44 @@
           "draws": 1000,
           "legacy": 0,
           "distribution": {
+            "listening:d1": 313,
+            "reading:d1": 313,
             "writing:d1": 187,
-            "speaking:d1": 189,
-            "listening:d1": 307,
-            "reading:d1": 317
+            "speaking:d1": 187
           }
         },
         {
           "stage": 90,
           "draws": 1000,
-          "legacy": 195,
+          "legacy": 75,
           "distribution": {
-            "reading:d2": 252,
-            "writing:d1": 75,
-            "writing:d2": 158,
-            "speaking:d2": 69,
-            "listening:d1": 114,
-            "listening:d2": 143,
-            "speaking:d1": 78,
-            "reading:d1": 111
+            "listening:d2": 180,
+            "writing:d2": 141,
+            "listening:d1": 118,
+            "reading:d2": 228,
+            "reading:d1": 124,
+            "writing:d1": 72,
+            "speaking:d2": 74,
+            "speaking:d1": 63
           }
         },
         {
           "stage": 180,
           "draws": 1000,
-          "legacy": 304,
+          "legacy": 142,
           "distribution": {
-            "listening:d2": 54,
-            "reading:d1": 61,
-            "listening:d1": 60,
-            "reading:d3": 96,
-            "writing:d2": 60,
-            "listening:d3": 91,
-            "writing:d3": 284,
-            "speaking:d1": 39,
-            "speaking:d2": 21,
-            "reading:d2": 87,
-            "speaking:d3": 111,
-            "writing:d1": 36
+            "speaking:d2": 31,
+            "reading:d2": 70,
+            "reading:d3": 137,
+            "speaking:d3": 151,
+            "writing:d2": 48,
+            "listening:d3": 135,
+            "writing:d3": 200,
+            "reading:d1": 62,
+            "listening:d2": 51,
+            "speaking:d1": 32,
+            "listening:d1": 55,
+            "writing:d1": 28
           }
         }
       ]
@@ -389,5 +389,5 @@
     "regions": 9,
     "finalKind": "final"
   },
-  "assertions": 35000
+  "assertions": 86708
 }

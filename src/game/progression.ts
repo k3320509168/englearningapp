@@ -311,12 +311,17 @@ export const blessingChance = (fails: number) => (fails >= 2 ? 1 : fails === 1 ?
 // 第十三輪：九區的推薦等級（入區 → 通關），區內越後面越高；菁英 +2、小 BOSS +3、大 BOSS +4、區域魔王 +5
 // A1 從 Lv5 開始：Lv1～5 是前置區域「失語邊境」
 export const REGION_LEVELS: [number, number][] = [[5, 20], [21, 40], [41, 60], [61, 80], [81, 100], [101, 120], [121, 145], [146, 170], [171, 200]];
-export const recommendedLevel = (levelIdx: number, stageIdx: number) => {
+const enemyReferenceLevel = (levelIdx: number, stageIdx: number) => {
   const [from, to] = REGION_LEVELS[Math.min(Math.max(0, levelIdx), REGION_LEVELS.length - 1)];
   return Math.min(200, from + Math.floor((stageIdx / regionStageCount(levelIdx)) * (to - from)));
 };
+// 推薦顯示對齊區域終點；敵人沿用舊離散曲線，避免修推薦值時改到BOSS數值。
+export const recommendedLevel = (levelIdx: number, stageIdx: number) => {
+  const idx = Math.min(Math.max(0, levelIdx), REGION_LEVELS.length - 1);
+  return stageIdx >= regionStageCount(idx) - 1 ? REGION_LEVELS[idx][1] : enemyReferenceLevel(levelIdx, stageIdx);
+};
 export function monsterLevel(levelIdx: number, stageIdx: number, kind?: FoeKind): number {
-  return recommendedLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'boss' ? 4 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
+  return enemyReferenceLevel(levelIdx, stageIdx) + (kind === 'final' ? 5 : kind === 'boss' ? 4 : kind === 'gate' ? 3 : kind === 'elite' ? 2 : 0);
 }
 
 // 戰力：每位隊員「攻擊 × 10 ＋ 生命」，隊伍加總

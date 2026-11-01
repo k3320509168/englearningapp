@@ -20,6 +20,13 @@ describe('experience pools', () => {
     expect(regionXpBudget(0)).toBe(2805);
     expect(firstClearXp(0, -1)).toBe(0);
   });
+  it('includes every regional transition without changing the displayed level bands', () => {
+    let budget = 0;
+    for (let r = 0; r < 9; r++) budget += regionXpBudget(r);
+    expect(budget).toBe(185640);
+    expect(regionXpBudget(1)).toBe(6715); // Lv20→40，而非21→40
+    expect(regionXpBudget(8)).toBe(49597.5); // Lv170→200
+  });
   it('claims a stage once, never resets claims on replay, and records the XP source', () => {
     const s = useSaveStore.getState();
     expect(s.claimStageXp(0, 0).xp).toBe(firstClearXp(0, 0));

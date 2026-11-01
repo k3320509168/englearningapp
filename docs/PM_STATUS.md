@@ -105,3 +105,8 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 - T1實作前細節已整理docs/gpt/c7-v21-codex-implementation-questions.md（追趕參照點、跨倍率門檻、塔/精通目前0 EXP、0倍率兌換、副本真實答題作息等）。先對照正在進行的T2第二意見，不憑空加模擬獎勵或擅改驗收。
 
 - 已收到並讀Antigravity C7第二意見及三區題庫報告；PM v2.2已涵蓋多數實作疑點，T1改依2.2執行。T3/T4後續逐項核實，不採r7「超編應裁減到1200」建議，因正式目標仍2000。第31批九句口說長度已修。
+
+### Codex：T1 v2.2第一步（進行中，未整體驗收）
+- 已補八段跨區銜接，九區85%預算合計185640；區域終王推薦對齊各自終點（C2=200），怪物沿用原離散曲線。前後實算12290種配置，等級/HP/攻擊完全相同；369測試、tsc、eslint通過。
+- 已依三方分工實際派Antigravity做T2b：轉職上限暫存與frontier+13上限互動的專項紙上審查，gemini-4-argon-high，只讀寫檔、不改原碼/不執行指令。程序工具session=82501，輸入在agy worktree的 `.agy-input/c7-v22-growth-review/`，預期報告 `docs/gpt/c7-v22-xp-buffer-review.md`。正在執行時請勿重複派同一報告。
+- 追趕來源/日額津貼、素材本/塔作息、轉職暫存、首領援助及新12路徑/MC仍待完成；不得把這一步當T1完成。

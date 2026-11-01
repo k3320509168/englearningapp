@@ -3,7 +3,8 @@ import { xpScale, xpToNext } from './growth';
 import { chapterCount, regionStageCount, stageRole } from './stageLayout';
 import { MASTERY_TARGET } from './mapMastery';
 export function regionXpBudget(region: number): number {
-  const [start, end] = REGION_LEVELS[region];
+  const start = region === 0 ? REGION_LEVELS[0][0] : REGION_LEVELS[region - 1][1];
+  const end = REGION_LEVELS[region][1];
   let sum = 0;
   for (let lv = start; lv < end; lv++) sum += xpToNext(lv);
   return sum * 0.85;

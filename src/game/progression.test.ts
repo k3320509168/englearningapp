@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { monsterGrowth,
   BOSS_BONUS_TABLE, HITS_TO_KILL, UPGRADES, comboMultiplier, computeDamage, goldWithBonus, heroScale,
-  monsterAttack, monsterElement, monsterMaxHp, monsterLevel, playerStats, rollBossBonus, upgradeCost,
+  REGION_LEVELS, recommendedLevel, monsterAttack, monsterElement, monsterMaxHp, monsterLevel, playerStats, rollBossBonus, upgradeCost,
 } from './progression';
 import { BASE_DAMAGE, PLAYER_MAX_HP } from './battle';
 import { LEVEL_STAT } from './growth';
@@ -199,5 +199,16 @@ describe('C2：v2.0高階Combo曲線', () => {
   it.each([[0.1, 50, 60], [0.2, 99, 119], [0.3, 148, 178]])('商店step=%s保留百萬與最終比例', (step, million, cap) => {
     expect(comboMultiplier(1e6, step)).toBeCloseTo(million);
     expect(comboMultiplier(1e12, step)).toBeCloseTo(cap);
+  });
+});
+
+
+describe('C7 v2.2推薦終點與既有敵人曲線分離', () => {
+  it('recommends the regional target at every terminal boss, including C2 Lv200', () => {
+    for (let r = 0; r < 9; r++) {
+      const last = regionStageCount(r) - 1;
+      expect(recommendedLevel(r, last)).toBe(REGION_LEVELS[r][1]);
+      expect(monsterLevel(r, last, 'final')).toBe(REGION_LEVELS[r][1] + 4);
+    }
   });
 });

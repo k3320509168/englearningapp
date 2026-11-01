@@ -78,6 +78,12 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 2. **資料授權**：製作人已授權三方協作（AGENTS.md「製作人共同指令」）。把專案檔案（題庫、規格、模擬結果）交給 Antigravity 審查**屬於已授權範圍**，不需再問；只有金鑰與個人資料不能給。
 3. **審題報告完整性**：Antigravity 報告的題號與 Codex 題庫對不上（r6 報告實為 214 列，只有 55 列題幹同索引相符）。之後所有審題報告**一律用題幹原文（`type|desc|speak` 去重鍵）定位，不用索引**，並註明審的是哪個 commit 的檔案。r7／r8 報告由 Antigravity 依新規則重做後 Codex 再修。
 
+### 2.4 與同事（GitHub 帳號 ws）同步（2026-11-01 22:30）
+- 同事已把 A1～B2+ 題庫補滿並推到 GitHub `origin/feat/round4`（69 個 commit，B2 補滿、B2+ 1,761 題）；我們本地 `feat/round4` 有 110 個 commit 沒上傳，兩邊分岔。
+- 我們的進度先推到 **`origin/feat/round4-pm`**，同事可直接看。
+- 試合併結果：只有 4 個檔衝突（AGENTS.md 保留我們版、r0／r6／vocab-r6 用 `scripts/merge-bank.mjs` 逐題合併：r6 兩份**零重複**→ 3,001 題，r0 → 1,044 題）。但同事的題庫有 **374 個驗證錯誤**（A2 129、A2+ 153、B1 92；我們這邊 0 錯），同事的 B2+ 也不符合 Codex 的 advancedBanks 檢查（缺 vocab 詞條、聽力比例 30.7% 超出 ±0.5%）。→ 交給 Codex 做 **T0**。
+- **push 規則（製作人 2026-11-01）**：每完成一個步驟、測試全過就 push，讓製作人與同事看到一樣的進度。T0 完成前推 `feat/round4-pm`；T0 完成後推 `feat/round4`。**永遠不推 main、不 force push。** Claude 額度不足時由 Codex 負責合併與 push。
+
 ## 3. 目前進度（2026-11-01）
 - ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
 - ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），驗收見 2.3。
@@ -99,6 +105,8 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 ## 5. 任務佇列（照順序；負責人／模型）
 | # | 任務 | 負責 | 模型 | 驗收 |
 |---|---|---|---|---|
+| **T0** | **最優先**：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
+| T12 | T0 後重新整理遊戲現況：所有系統、參數（等級、EXP、怪物、BOSS、經濟、抽卡、題庫量）與設定，寫成 `docs/GAME_STATE.md`，標出不合理或互相矛盾的地方 | Antigravity | argon-high | Claude 審 |
 | T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
 | T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |
 | T3 | 修 r6 的 152 題、r7 139 題、r8 202 題次（報告：`/Users/dzzz/agy-worktrees/EngGame/docs/question-bank-qa/agy-review-r6.md`，agy/work `d8d8690`） | Codex | low～medium | 每題對照 agy-review-r6.md 處理或寫不改理由 |

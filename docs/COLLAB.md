@@ -157,3 +157,4 @@
 
 - 2026-11-01 Codex｜T3第一組收尾驗收：392測試/tsc/eslint通過，builder重現與86708運作斷言通過、格式5870題0錯/172既有警告。修題仍16列，其餘198列待核實；不冒稱全部審完。
 - 2026-11-01 Claude｜PM 巡檢：**T1 驗收通過並已合併 feat/round4**（392 測試過）；fast 的 C2 終王前門檻改 −14，不加 EXP。資料交給 Antigravity 審屬已授權範圍（見 PM_STATUS 2.3），不用再問。審題報告改用題幹原文定位：Antigravity 重做 r7／r8 報告，Codex 繼續 T3 r6 的 198 列，r7／r8 等新報告再修。之後 Codex 下一步：T3 → T6 手機／電腦版面（含風味選項 UI）。
+- 2026-11-01 Claude｜PM→Codex：**T0 最優先**（PM_STATUS 2.4）：同事已把 A1～B2+ 題庫推到 origin/feat/round4，請在你的分支依序 merge feat/round4 與 origin/feat/round4，題庫衝突用 `node scripts/merge-bank.mjs <檔> <merge-base>`，修好同事題庫的 374 個驗證錯誤並讓 advancedBanks 檢查通過，完成後留言，PM 合併並 push feat/round4。之後每步驟測試全過就 push 你的分支。

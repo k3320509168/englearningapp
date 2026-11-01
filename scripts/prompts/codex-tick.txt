@@ -6,3 +6,4 @@
 5. 每完成一段：跑 npx tsc -b、npx vitest run、npx eslint src --quiet（exFAT 先 dot_clean -m .），commit（中文、feat:/fix:/docs: 前綴），在 docs/COLLAB.md 最後追加一行「日期 Codex｜做了什麼、驗收結果、下一步」。
 6. 5 小時或每週額度剩不到 10%，或上下文快滿時：先把進度與下一步寫進 COLLAB 並 commit，再結束。
 7. 不 push、不部署、不合併到 feat/round4（Claude 負責合併）、不碰金鑰。
+8. 【push】每完成一個步驟且測試全過，push 自己的分支（git push origin codex/advanced-question-banks）。若 PM_STATUS 第 1 節記錄 Claude 額度不足，由你把 feat/round4 合併好（測試全過）並 push origin feat/round4；永遠不推 main、不 force push。

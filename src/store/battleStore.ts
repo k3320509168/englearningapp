@@ -442,7 +442,7 @@ const withTotals = (party: Member[]) => {
 };
 
 export const useBattleStore = create<BattleState>()((set, get) => {
-  const prepare = (q: Question) => shuffleChoice(questionTransform(q));
+  const prepare = (q: Question) => shuffleChoice(questionTransform(q), random);
 
   // 新題目的計時：20 秒，專注技能每題再多 5 秒
   const freshTimer = (focusMs: number) => {
@@ -1333,7 +1333,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
 
     startLevel: (levelKey, transform, fromStage) => {
       questionTransform = transform ?? (q => q);
-      const base = createDecks(levelKey);
+      const base = createDecks(levelKey, random);
       decks = { normal: preferNew(base.normal), boss: preferNew(base.boss) };
       const { upgrades, party: ids, character, heroes } = save();
       const stats = playerStats({ upgrades });
@@ -1378,7 +1378,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       easyQueue = [];
       const { upgrades, party: ids, character, heroes, unlockedIndex } = save();
       const levelIdx = Math.min(unlockedIndex, LEVELS.length - 1);
-      const questions = shuffleArray(skillBossQuestions(id, reachablePool(unlockedIndex)));
+      const questions = shuffleArray(skillBossQuestions(id, reachablePool(unlockedIndex)), random);
       let i = 0;
       const draw = () => questions[i++ % questions.length];
       decks = { normal: draw, boss: draw };
@@ -1520,7 +1520,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         isBossQuestion: false, ...freshTimer(s.focusMs),
       };
       if (s.wrongStreak >= ASSIST_STREAK) {
-        const assist = buildAssist(question);
+        const assist = buildAssist(question, random);
         set({ ...base, assist, assistSource: 'helper', typed: assist.revealed, wrongStreak: 0, shield: true, event: nextEvent('assist') });
         return;
       }
@@ -1577,7 +1577,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         set({ shield: true, comboGuard: true, event: nextEvent('guard') });
       } else {
         if (s.assist) return;
-        const assist = buildAssist(s.question);
+        const assist = buildAssist(s.question, random);
         const useful = assist.hiddenOptions.length > 0 || assist.revealed !== '' || assist.showWord;
         if (!useful || !save().consumeItem('hint')) return;
         set({ assist, assistSource: 'item', typed: s.typed.length >= assist.revealed.length ? s.typed : assist.revealed });

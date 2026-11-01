@@ -1,0 +1,47 @@
+{
+  "node": "v22.16.0",
+  "timezone": "Asia/Taipei",
+  "seed": 7,
+  "profiles": [
+    "strong",
+    "good",
+    "average",
+    "struggling"
+  ],
+  "regions": [
+    0,
+    4,
+    8
+  ],
+  "maps": 30,
+  "finals": 60,
+  "clockStepMs": 50,
+  "mapsPerDay": 1,
+  "bankSha256": {
+    "src/game/questions/bank/r0.json": "62b4b355c5a2e763ddd60f63a7c45083178a10b88310a8cdbc48f023bb31a257",
+    "src/game/questions/bank/r1.json": "75c8991219b52ebe2e67dcf4459c64f81ea2c5800f622693e4cbfc3a49eb447f",
+    "src/game/questions/bank/r2.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r3.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r4.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r5.json": "4c2817290830b8cbbcb4034d756138836c4506df34ee1f038b926411652dca9a",
+    "src/game/questions/bank/r6.json": "b1cd8670ac43381611d6b96a72c8fd999221fde13c6056a64a155c9941e33991",
+    "src/game/questions/bank/r7.json": "c1a87f89bd859068621335b9d8ec77e827946118ed07475bc2ccd22e5d689b50",
+    "src/game/questions/bank/r8.json": "0ead4ee19c8e03598793783b2e92852e725c4c91b2a99b015a52d4c4505fb49c"
+  },
+  "note": "Four terminal verified runs after seeded deck/choice/assist fixes. Raw log skill-per-map column included final samples; excluded from interpretation and subsequently corrected in runner.",
+  "keyReviewedSourceSha256": {
+    "scripts/realsim2.mts": "af4328858b5b0316674f2c1ba104a28754cc29e1681d767828f70d33931fa185",
+    "scripts/sim-budget.ts": "b88c5040c1827a908bd0c0cafc0cf8f993dec7d0bcc09bd97020443828720be7",
+    "scripts/sim-clock.ts": "6b1539f107e2f88e1a83df2da1aea3d42ec968581d0b00a379d6db9494e27b22",
+    "src/store/battleStore.ts": "dd3770416d0878dda0e7ba7b1f923f27e8aaa4fd7cece7a3a41226d94e93692c",
+    "src/store/saveStore.ts": "0275401e004dc12831231a121dbe545243f51395294719902b7fbc79365b5e1a",
+    "src/game/QuestionData.ts": "bc1f266a6225461a07ac4eae0fb65b5c84eade3e826419a0b7d66e3f6112f43c",
+    "src/game/equipment.ts": "c133ffded5791fab0d00fa0b8a1edda25b2d8fa06614b3285970b82e9ab7abd0",
+    "src/game/growth.ts": "0bef71d95afa4dfecc0af8e5ae779625e76ca159eee45b0abfa68a40920ac6fd",
+    "src/game/progression.ts": "1ac835227ab354e3513b509d0e787476e7e709e880db6225b302a03250241d0a",
+    "src/game/party.ts": "f7df24c66dd607fddfc9229679ee400e32f5f676758e0dab3bc6cf4dfd8c42dd",
+    "src/game/combo.ts": "a6674ffe46ff6be57ef901943cfa56c87fea53d5f1514739d1f0f93e4ad3158f",
+    "src/game/enemyPatterns.ts": "d42ab3a7a776a255b87ac66bf60eff913e8fbd3fccecb4c6bf5e3de6a01ab047",
+    "src/game/bossMods.ts": "3226b4db23ec30063075961b32aff2d0ad394973cfe80f2af78aabd7bfea9969"
+  }
+}

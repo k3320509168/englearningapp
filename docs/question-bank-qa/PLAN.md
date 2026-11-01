@@ -217,3 +217,8 @@ commit 前跑 npx tsc -b、npx vitest run、npx eslint src --quiet，另跑 npm 
 - 跨批比對非選擇詞條，WATERPROOF/INCONSPICUOUS/INCONGRUOUS/FASTIDIOUS/PUNCTILIOUS為同義項跨題型複習，不當新詞數。INCONGRUITY同為填空且高度重複，換COMPORTMENT；不以中文微調逃避重複判定。
 - Node22：tsc、eslint、37 files/332 tests通過；建庫可重現；84260運作斷言及1000程度模擬通過，含舊庫5750題格式0錯誤/172既有警告。本批仍草稿，完整一般/模式各五輪深審尚未完成，沒有CEFR達級成效認證。
 - C8/C8b的長題免捲動等限制、C9與C4～C7任務繼續保留。
+
+## C9與題庫工作的銜接（3600/5800，進行中）
+- 整合端451ed6d已審查C8/C8b，接C9。C9新增有限資源連續路徑、逐筆收支、獨立MC快照；補齊戰鬥亂數傳遞，修長段tick漏算敵人出手與EXP跨級負數。五輪角色自審/假設/限制見docs/gpt/c9-budget-model.md，不是五輪題庫審查。
+- 修正亂數後四類玩家SEED7各r0/r4/r8的30圖+60終王已完成，8份原始結果與manifest見docs/gpt/c9-budget-results。單一路徑不能代表抽卡/養成族群；無全面加血結論，C7實際等級明顯不足仍待實作。
+- 下一步C4～C7、更多養成種子/存錢策略驗收，題庫仍需B2+600、C1/C2各800及兩類各五輪全量審查，沒有縮成程式測試或平衡模型交付。

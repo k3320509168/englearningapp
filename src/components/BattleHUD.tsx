@@ -204,6 +204,8 @@ function useEnglishVoice(): boolean {
 
 function QuestionCard({ question }: { question: Question }) {
   const extra = spellingExtra(question);
+  const copyRef = useRef<HTMLDivElement>(null);
+  const [overflowing, setOverflowing] = useState(false);
   // 聽力題（題目只有聲音）：這台裝置沒有英文語音時改成顯示單字，不然完全無法作答
   const englishVoice = useEnglishVoice();
   // 瀏覽器發音卡死時也一樣：直接顯示要聽的英文，玩家還能繼續作答
@@ -213,15 +215,27 @@ function QuestionCard({ question }: { question: Question }) {
   const blind = useBattleStore(s => s.blind) && !!question.speak && englishVoice;
   // 聽力題：標籤寫「聽力」（不是一般的選擇題），旁邊放大的重播按鈕——瀏覽器的語音偶爾會沒播出來
   const listening = question.desc.startsWith('🎧') && !!question.speak && englishVoice;
+  useEffect(() => {
+    const el = copyRef.current;
+    if (!el) return;
+    const measure = () => setOverflowing(el.scrollHeight > el.clientHeight + 1);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [question, blind]);
   const say = useSpeak();
   return (
     <div className="question-card">
       {listening
         ? <span className="q-tag q-listen">🎧 聽力</span>
         : <span className={`q-tag q-${question.type}`}>{TYPE_LABEL[question.type] ?? question.type}</span>}
-      {blind
-        ? <p className="q-desc">🌫️ 迷霧遮住了題目，仔細聽發音！</p>
-        : <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>}
+      <div ref={copyRef} className="question-copy" tabIndex={overflowing ? 0 : undefined} role={overflowing ? 'region' : undefined} aria-label={overflowing ? '題目全文，可上下捲動' : undefined}>
+        {blind
+          ? <p className="q-desc">🌫️ 迷霧遮住了題目，仔細聽發音！</p>
+          : <p className="q-desc">{question.desc}{extra && <small className="q-extra">（{extra}）</small>}</p>}
+      </div>
+      {overflowing && <p className="question-scroll-note">↕ 上下捲動，閱讀完整題目</p>}
       {(listening || blind) && (
         <span className="q-replay">
           <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(question.speak)}>🔊 再聽一次</button>
@@ -322,6 +336,7 @@ function AnswerPanel({ question }: { question: Question }) {
       {(question.type === 'spell' || question.type === 'fill') && <TypingAnswer question={question} />}
       {question.type === 'choice' && <ChoiceAnswer question={question} />}
       {question.type === 'voice' && <VoiceAnswer key={question.desc} question={question} />}
+      {question.desc.length > 180 && <p className="long-question-note">↕ 長題模式：可上下捲動查看題目與選項</p>}
     </div>
   );
 }

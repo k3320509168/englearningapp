@@ -270,3 +270,50 @@ export function registerBackground(scene: Phaser.Scene, region: number) {
 }
 
 export const themeName = (region: number) => (THEMES[region] ?? THEMES[0]).name;
+
+// FIT外圍沿核心畫布的天空/地面延伸，不複製月亮或角色。
+const backdropCache = new Map<string, string>();
+export function backgroundBackdrop(region: number, aspect = 5 / 3): string {
+  const r = region >= 0 && region < THEMES.length ? region : 0;
+  const height = Math.max(1, Math.min(600, Math.round(LOW_W / Math.max(0.1, aspect))));
+  const key = `${r}:${height}`;
+  const cached = backdropCache.get(key);
+  if (cached) return cached;
+  const source = document.createElement('canvas');
+  source.width = LOW_W; source.height = LOW_H;
+  const original = source.getContext('2d');
+  if (!original) return '';
+  const theme = THEMES[r];
+  drawSky(original, { ...theme, sun: undefined }, r);
+  drawClouds(original, theme, r);
+  drawFar(original, theme, r * 13 + 1);
+  drawNear(original, theme, r * 17 + 2);
+  drawGround(original, theme, r * 19 + 3);
+  const canvas = document.createElement('canvas');
+  canvas.width = LOW_W; canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return '';
+  ctx.imageSmoothingEnabled = false;
+  const scale = Math.min(1, height / LOW_H);
+  const w = LOW_W * scale, h = LOW_H * scale;
+  const x = (LOW_W - w) / 2, y = (height - h) / 2;
+  ctx.fillStyle = theme.sky[0];
+  ctx.fillRect(0, 0, LOW_W, height);
+  ctx.fillStyle = theme.ground;
+  ctx.fillRect(0, y + h, LOW_W, height - y - h);
+  const random = rng(r * 31 + height);
+  ctx.fillStyle = '#e8e6ff';
+  for (let i = 0; i < Math.round((theme.stars ?? 0) * y / LOW_H); i++) {
+    ctx.fillRect(Math.floor(random() * LOW_W), Math.floor(random() * y), 1, 1);
+  }
+  const stripY = GROUND_ROW + 3, stripH = LOW_H - stripY;
+  for (let ty = y + h; ty < height; ty += stripH * scale) {
+    ctx.drawImage(source, 0, stripY, LOW_W, stripH, 0, ty, LOW_W, stripH * scale);
+  }
+  // 原背景左右可循環；矮寬框的側邊保持同一地平線。
+  for (let tx = x - Math.ceil(LOW_W / w) * w; tx < LOW_W; tx += w) ctx.drawImage(source, tx, y, w, h);
+  if (backdropCache.size >= 24) backdropCache.clear();
+  const image = canvas.toDataURL();
+  backdropCache.set(key, image);
+  return image;
+}

@@ -2026,3 +2026,69 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none; }
   .is-battle .member { padding: 3px; gap: 2px; }
   .is-battle .member-hp { height: 4px; }
 }
+/* C8：zoom已參與Grid尺寸計算，不再讓100%高度放大後超出所分配的列。 */
+.game-shell.is-battle > .hud {
+  width: auto;
+  height: auto;
+  align-self: stretch;
+  justify-self: stretch;
+}
+html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: none; }
+@media (max-width: 560px) {
+  /* 鍵帽仍維持44px觸控範圍；大字級只放大學習內容，不把三列鍵盤再放大。 */
+  .game-shell.is-battle .vkbd { zoom: calc(1 / var(--text-scale, 1)); }
+}
+@media (max-width: 560px) {
+  .game-shell.is-battle .slots { gap: 4px; }
+  .game-shell.is-battle .slot { width: 28px; height: 34px; font-size: 16px; }
+  .game-shell.is-battle .vkbd {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background: var(--panel);
+  }
+}
+
+/* C8b：FIT保留所有角色/旗幟，容器其餘部分用同一區的原像素環境延伸。 */
+.game-shell .game-canvas {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+/* 短文依內容自然長高；只有超長篇才在文字區捲動，標籤及提示不被切走。 */
+.is-battle .answer-panel .question-card {
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  scrollbar-gutter: auto;
+}
+.question-copy { font: 500 clamp(18px, 2.4vw, 22px)/1.5 var(--font-word); max-height: 12lh; overflow-y: auto; scrollbar-gutter: stable; }
+.question-copy .q-desc { font: inherit; }
+.question-scroll-note { margin: 6px 0 0; color: var(--accent); font-size: 13px; line-height: 1.4; }
+.question-copy:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 999px) and (min-height: 601px) {
+  .question-copy { font-size: 17px; line-height: 1.4; max-height: 9lh; }
+  .is-battle .question-copy .q-desc { font: inherit; }
+}
+@media (max-height: 600px) {
+  .question-copy { font-size: 16px; line-height: 1.4; max-height: 6lh; }
+}
+.is-map .game-canvas { background-color: #bfbfbf; background-blend-mode: multiply; }
+.game-shell .game-canvas > canvas { image-rendering: auto; }
+.long-question-note {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: 3;
+    margin: 0;
+    padding: 6px;
+    background: var(--panel-2);
+    border-top: 2px solid var(--accent);
+    color: var(--accent);
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    pointer-events: none;
+}

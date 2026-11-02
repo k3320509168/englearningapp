@@ -114,7 +114,9 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 ## 3. 目前進度（2026-11-02）
 - ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
 - ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），驗收見 2.3。
-- ✅ T0 374 個驗證錯誤成因深度診斷完成（Antigravity）：成因報告 `docs/question-bank-qa/T0_VALIDATION_ERROR_ANALYSIS.md`。
+- ✅ T0 374 個驗證錯誤全數無損修復（Antigravity）：透過 `scripts/fix-t0-questions.ts` 重建短文情境與題幹，`npm run validate:questions` 達成 13,486 題 0 個錯誤！
+- ✅ 今日複習 ReviewModal 徹底翻新（Antigravity）：去除冗長廢話，街機「錯題修煉場」按鈕突顯連對5題贈掃蕩券，清晰語法/原句卡片與辭典研讀。
+- ✅ 獎勵轉盤 TicketWheel 日系街機寶石配色升級（Antigravity）：耀金/電光紫/天藍/翡翠高對比配色，清晰機率看板。
 - ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎（Antigravity）：`docs/design/VOCAB_CURRICULUM.md`、`QuestionData.ts` 28% 螺旋抽取前區詞彙＋30 題防重複，`scripts/vocab-audit.ts` 稽核工具與報告。
 - ✅ 戰前情報聽力播放修復與全題型預覽升級（Antigravity）：支援聽力/口說/拼寫/文法全題型預覽，突顯目標原句，自動發音。
 - 🟡 C8 版面：規劃在 `docs/question-bank-qa/C8_LAYOUT.md`（Codex worktree），未完成。

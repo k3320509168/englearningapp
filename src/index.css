@@ -3727,3 +3727,96 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
   }
 }
 
+/* ---------- 圖鑑即時搜尋與進階篩選控制列 ---------- */
+.codex-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+.codex-search-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.codex-search-input {
+  width: 100%;
+  padding: 8px 36px 8px 12px;
+  background: var(--panel-2, #181528);
+  border: 2px solid var(--border, #3a335a);
+  border-radius: 8px;
+  color: var(--text, #f0eef6);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.codex-search-input:focus {
+  border-color: var(--accent, #ffd15c);
+  box-shadow: 0 0 8px rgba(255, 209, 92, 0.25);
+}
+.codex-search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #797194;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+}
+.codex-search-clear:hover {
+  color: #fff;
+}
+.codex-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.codex-filter-label {
+  font-size: 12px;
+  color: #8c82ab;
+  margin-right: 2px;
+}
+.codex-load-more-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 16px 0 8px;
+}
+.codex-load-more-btn {
+  padding: 8px 24px;
+  background: #2a2444;
+  border: 2px solid #5a4d8a;
+  border-radius: 8px;
+  color: #f0eef6;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.codex-load-more-btn:hover {
+  background: #39315c;
+  border-color: var(--accent, #ffd15c);
+  color: var(--accent, #ffd15c);
+}
+.codex-load-info {
+  font-size: 11.5px;
+  color: #797194;
+}
+.codex-empty-tip {
+  text-align: center;
+  padding: 36px 16px;
+  color: #8c82ab;
+  font-size: 14px;
+  background: rgba(26, 22, 44, 0.5);
+  border-radius: 8px;
+  border: 1px dashed #433966;
+  margin: 12px 0;
+}
+
+

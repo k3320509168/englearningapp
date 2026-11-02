@@ -1,10 +1,10 @@
 import { getPool } from './QuestionData';
-import { vocabFor, vocabKey } from './vocab';
+import { vocabFor, vocabKey, VOCAB } from './vocab';
 import { completedSentence, questionAudio, questionKey } from './battle';
 import { masteryStars } from './progression';
 import type { Question } from './types';
 
-// 圖鑑＝單字圖鑑：把題庫整理成「單字」與「文法」兩種收藏，同一個字的不同題型合併計算熟練度
+// 圖鑑＝單字圖鑑：把題庫整理成「單字」、「片語」與「文法」收藏，同一個字的不同題型合併計算熟練度
 
 export interface CodexStats {
   correct: number;
@@ -41,8 +41,23 @@ export function codexItems(
   const items = new Map<string, CodexItem>();
 
   for (const q of [...pool.normal, ...pool.boss]) {
-    const word = vocabKey(q);
-    const v = vocabFor(q);
+    let word = vocabKey(q);
+    let v = vocabFor(q);
+
+    // 智慧識別：若選擇題正確選項直接命中字典單字或片語，作為單字/片語卡片建立
+    if (!word && q.type === 'choice' && q.options) {
+      const opt = q.options.find(o => o.startsWith(`${q.ans}.`));
+      if (opt) {
+        const candidate = opt.replace(/^[A-D]\.\s*/, '').trim();
+        const candidateKey = candidate.toUpperCase();
+        const entry = VOCAB[candidateKey] || VOCAB[candidate];
+        if (entry) {
+          word = candidateKey;
+          v = { ...entry, key: candidateKey, display: entry.word ?? candidate.toLowerCase() };
+        }
+      }
+    }
+
     const isPhrase = Boolean(word && (word.includes(' ') || word.includes('-') || v?.pos?.toLowerCase().includes('phrase') || v?.pos?.includes('片語')));
     const kind: 'word' | 'phrase' | 'grammar' = word ? (isPhrase ? 'phrase' : 'word') : 'grammar';
     const id = word ? `${kind}:${word}` : `g:${q.desc}`;

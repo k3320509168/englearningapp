@@ -10,12 +10,20 @@ import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
 
 type KindFilter = 'all' | 'word' | 'phrase' | 'grammar';
+type StatusFilter = 'all' | 'seen' | 'review' | 'master';
 
 const KIND_TABS: { id: KindFilter; label: string }[] = [
-  { id: 'all', label: '全部' },
+  { id: 'all', label: '全部類型' },
   { id: 'word', label: '📖 單字' },
   { id: 'phrase', label: '🧩 片語' },
   { id: 'grammar', label: '📐 文法' },
+];
+
+const STATUS_TABS: { id: StatusFilter; label: string }[] = [
+  { id: 'all', label: '全部狀態' },
+  { id: 'seen', label: '🔓 僅已解鎖' },
+  { id: 'review', label: '⚠️ 待複習' },
+  { id: 'master', label: '🏆 滿星精通' },
 ];
 
 const REGION_TABS = [
@@ -23,7 +31,9 @@ const REGION_TABS = [
   ...LEVELS.map(lv => ({ key: lv, name: regionName(lv) })),
 ];
 
-// 圖鑑：收錄遇過的單字、片語與文法，答對次數決定星數（★1：1 次、★2：3 次、★3：5 次）
+const PAGE_SIZE = 80;
+
+// 圖鑑：收錄遇過的單字、片語與文法，支援即時關鍵字搜尋、進階狀態過濾與高效平滑分批載入
 export default function CodexModal() {
   const codex = useSaveStore(s => s.codex);
   const mistakes = useSaveStore(s => s.mistakes);
@@ -37,13 +47,39 @@ export default function CodexModal() {
     return LEVELS[Math.min(unlockedIndex, LEVELS.length - 1)];
   });
   const [kindFilter, setKindFilter] = useState<KindFilter>('all');
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [selectedItem, setSelectedItem] = useState<CodexItem | null>(null);
 
   const items = useMemo(() => codexItems(regionKey, codex, mistakes), [regionKey, codex, mistakes]);
+
   const filteredItems = useMemo(() => {
-    if (kindFilter === 'all') return items;
-    return items.filter(i => i.kind === kindFilter);
-  }, [items, kindFilter]);
+    let result = items;
+    if (kindFilter !== 'all') {
+      result = result.filter(i => i.kind === kindFilter);
+    }
+    if (statusFilter === 'seen') {
+      result = result.filter(i => i.seen);
+    } else if (statusFilter === 'review') {
+      result = result.filter(i => i.needsReview);
+    } else if (statusFilter === 'master') {
+      result = result.filter(i => i.stars === 3);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      result = result.filter(i =>
+        i.title.toLowerCase().includes(q) ||
+        i.subtitle.toLowerCase().includes(q) ||
+        i.example.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [items, kindFilter, statusFilter, searchQuery]);
+
+  const displayedItems = useMemo(() => {
+    return filteredItems.slice(0, visibleCount);
+  }, [filteredItems, visibleCount]);
 
   const seen = filteredItems.filter(i => i.seen).length;
   const mastered = filteredItems.filter(i => i.stars === 3).length;
@@ -59,6 +95,27 @@ export default function CodexModal() {
     return '文法';
   };
 
+  const handleRegionChange = (key: string) => {
+    setRegionKey(key);
+    setSelectedItem(null);
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  const handleKindChange = (k: KindFilter) => {
+    setKindFilter(k);
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  const handleStatusChange = (s: StatusFilter) => {
+    setStatusFilter(s);
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  const handleSearchChange = (val: string) => {
+    setSearchQuery(val);
+    setVisibleCount(PAGE_SIZE);
+  };
+
   return (
     <Modal title="📚 冒險圖鑑" onClose={closeModal}>
       {/* 區域橫向滑動分頁：涵蓋 Pre-A1 失語之境到 C2 王城 */}
@@ -70,25 +127,63 @@ export default function CodexModal() {
             aria-selected={tab.key === regionKey}
             className={`tab ${tab.key === regionKey ? 'is-active' : ''}`}
             onMouseDown={keepFocus}
-            onClick={() => { setRegionKey(tab.key); setSelectedItem(null); }}
+            onClick={() => handleRegionChange(tab.key)}
           >
             {tab.name}
           </button>
         ))}
       </div>
 
-      {/* 單字／片語／文法分類過濾膠囊 */}
-      <div className="codex-kind-bar">
-        {KIND_TABS.map(t => (
-          <button
-            key={t.id}
-            className={`pill ${kindFilter === t.id ? 'is-on' : ''}`}
-            onMouseDown={keepFocus}
-            onClick={() => setKindFilter(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
+      {/* 搜尋與進階過濾控制列 */}
+      <div className="codex-filter-panel">
+        <div className="codex-search-row">
+          <input
+            type="text"
+            className="codex-search-input"
+            placeholder="🔍 搜尋單字、片語、中文釋義或例句關鍵字..."
+            value={searchQuery}
+            onChange={e => handleSearchChange(e.target.value)}
+          />
+          {searchQuery && (
+            <button
+              className="codex-search-clear"
+              onClick={() => handleSearchChange('')}
+              aria-label="清除搜尋"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
+        {/* 類型膠囊 */}
+        <div className="codex-filter-row">
+          <span className="codex-filter-label">類型：</span>
+          {KIND_TABS.map(t => (
+            <button
+              key={t.id}
+              className={`pill ${kindFilter === t.id ? 'is-on' : ''}`}
+              onMouseDown={keepFocus}
+              onClick={() => handleKindChange(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* 狀態膠囊 */}
+        <div className="codex-filter-row">
+          <span className="codex-filter-label">狀態：</span>
+          {STATUS_TABS.map(t => (
+            <button
+              key={t.id}
+              className={`pill ${statusFilter === t.id ? 'is-on' : ''}`}
+              onMouseDown={keepFocus}
+              onClick={() => handleStatusChange(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 頂部收集進度與滿星精通儀表板 */}
@@ -96,7 +191,7 @@ export default function CodexModal() {
         <div className="codex-stat-chip">
           <div className="codex-stat-top">
             <span className="codex-stat-label">
-              {kindFilter === 'word' ? '📖 已收錄單字' : kindFilter === 'phrase' ? '🧩 已收錄片語' : kindFilter === 'grammar' ? '📐 已收錄文法' : '📖 已收錄全部'}
+              {kindFilter === 'word' ? '📖 已收錄單字' : kindFilter === 'phrase' ? '🧩 已收錄片語' : kindFilter === 'grammar' ? '📐 已收錄文法' : '📖 已收錄項目'}
             </span>
             <span className="codex-stat-val"><b>{seen}</b> / {filteredItems.length}</span>
           </div>
@@ -116,41 +211,66 @@ export default function CodexModal() {
         </div>
       </div>
 
-      {/* 卡片網格（固定大小，點擊彈出視窗） */}
-      <ul className="codex-grid">
-        {filteredItems.map(item => {
-          if (!item.seen) {
+      {/* 無匹配結果空狀態提示 */}
+      {filteredItems.length === 0 && (
+        <div className="codex-empty-tip">
+          🔍 未找到符合條件的圖鑑卡片，換個關鍵字或切換狀態試試看吧！
+        </div>
+      )}
+
+      {/* 卡片網格（高效分批渲染） */}
+      {displayedItems.length > 0 && (
+        <ul className="codex-grid">
+          {displayedItems.map(item => {
+            if (!item.seen) {
+              return (
+                <li key={item.id} className="codex-card is-locked" aria-label="尚未遇到">
+                  <span className="codex-title">？？？</span>
+                  <span className="codex-pos-tag">{getKindLabel(item.kind)}</span>
+                </li>
+              );
+            }
+            const isMaster = item.stars === 3;
             return (
-              <li key={item.id} className="codex-card is-locked" aria-label="尚未遇到">
-                <span className="codex-title">？？？</span>
-                <span className="codex-pos-tag">{getKindLabel(item.kind)}</span>
+              <li key={item.id} className={`codex-card ${isMaster ? 'is-master' : ''}`}>
+                <button
+                  className="codex-card-btn"
+                  onMouseDown={keepFocus}
+                  onClick={() => onCardClick(item)}
+                  aria-label={`查看 ${item.title}`}
+                >
+                  <div className="codex-card-top">
+                    <span className="codex-title">{item.title}</span>
+                    {item.needsReview && <span className="review-tag">待複習</span>}
+                  </div>
+                  <div className="codex-card-bottom">
+                    <span className="stars" aria-label={`熟練度 ${item.stars} 星`}>
+                      {'★'.repeat(item.stars)}{'☆'.repeat(3 - item.stars)}
+                    </span>
+                    <span className="codex-pos-tag">{item.pos || getKindLabel(item.kind)}</span>
+                  </div>
+                </button>
               </li>
             );
-          }
-          const isMaster = item.stars === 3;
-          return (
-            <li key={item.id} className={`codex-card ${isMaster ? 'is-master' : ''}`}>
-              <button
-                className="codex-card-btn"
-                onMouseDown={keepFocus}
-                onClick={() => onCardClick(item)}
-                aria-label={`查看 ${item.title}`}
-              >
-                <div className="codex-card-top">
-                  <span className="codex-title">{item.title}</span>
-                  {item.needsReview && <span className="review-tag">待複習</span>}
-                </div>
-                <div className="codex-card-bottom">
-                  <span className="stars" aria-label={`熟練度 ${item.stars} 星`}>
-                    {'★'.repeat(item.stars)}{'☆'.repeat(3 - item.stars)}
-                  </span>
-                  <span className="codex-pos-tag">{item.pos || getKindLabel(item.kind)}</span>
-                </div>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+          })}
+        </ul>
+      )}
+
+      {/* 底部平滑分批載入控制 */}
+      {filteredItems.length > visibleCount && (
+        <div className="codex-load-more-box">
+          <button
+            className="codex-load-more-btn"
+            onMouseDown={keepFocus}
+            onClick={() => setVisibleCount(c => c + PAGE_SIZE)}
+          >
+            ⏬ 載入更多卡片 (+{Math.min(PAGE_SIZE, filteredItems.length - visibleCount)})
+          </button>
+          <span className="codex-load-info">
+            已顯示 {displayedItems.length} / 總共 {filteredItems.length} 條卡片
+          </span>
+        </div>
+      )}
 
       {/* 獨立彈出的單字／片語／文法詳情卡片 (Popup Card) */}
       {selectedItem && (

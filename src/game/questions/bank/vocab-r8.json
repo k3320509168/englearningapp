@@ -1359,9 +1359,9 @@
   },
   "ACQUIESCENCE": {
     "pos": "n.",
-    "meaning": "沒有積極支持但默默接受或順從",
-    "example": "Silence should not automatically be read as acquiescence.",
-    "exampleZh": "沉默不應自動被當成默許。",
+    "meaning": "未提異議之默示承認",
+    "example": "Failure to register a formal diplomatic protest was construed by the court as binding ___.",
+    "exampleZh": "在關鍵歷史節點未能遞交正式外交照會嚴正抗議，被國際法院無情判定為具有法律約束力的默示承認。",
     "senses": [
       {
         "pos": "n.",
@@ -1374,6 +1374,26 @@
           {
             "en": "The agreement depended on reluctant acquiescence.",
             "zh": "協議仰賴不情願的默許。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在國際法上明知權利受到侵害或邊界變更而長期不提出抗議所構成的默示承認與默認",
+        "examples": [
+          {
+            "en": "Prolonged diplomatic silence and acquiescence cemented the neighboring state's territorial claims.",
+            "zh": "長達數十年的外交失聲與默認（Acquiescence），在法理上最終成全並鞏固了鄰國對該爭議領土的主權主張。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "未提異議之默示承認",
+        "examples": [
+          {
+            "en": "Failure to register a formal diplomatic protest was construed by the court as binding ___.",
+            "zh": "在關鍵歷史節點未能遞交正式外交照會嚴正抗議，被國際法院無情判定為具有法律約束力的默示承認。"
           }
         ]
       }
@@ -5084,9 +5104,9 @@
   "REPUDIATION": {
     "word": "repudiation",
     "pos": "n.",
-    "meaning": "明確拒絕接受或與之切割的表態",
-    "example": "The note stops short of a repudiation.",
-    "exampleZh": "附註尚未明確否認切割。",
+    "meaning": "撕毀合約之明示毀約行為",
+    "example": "The non performing partner's explicit refusal to fund capital calls was deemed an unlawful ___.",
+    "exampleZh": "該不履約股東公然拒絕繳納資本催繳款的跋扈行徑，被商業法庭當場判定為非法的根本性明示毀約。",
     "senses": [
       {
         "pos": "n.",
@@ -5095,6 +5115,26 @@
           {
             "en": "The note stops short of a repudiation.",
             "zh": "附註尚未明確否認切割。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "合約一方明確向另一方拒絕履行根本核心義務的明示毀約行為",
+        "examples": [
+          {
+            "en": "The vendor's absolute refusal to deliver raw goods constituted a total contract repudiation.",
+            "zh": "供應商在關鍵時刻斬釘截鐵拒絕供應核心原材料的違約行徑，構成了商業法理上的徹底明示毀約。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "撕毀合約之明示毀約行為",
+        "examples": [
+          {
+            "en": "The non performing partner's explicit refusal to fund capital calls was deemed an unlawful ___.",
+            "zh": "該不履約股東公然拒絕繳納資本催繳款的跋扈行徑，被商業法庭當場判定為非法的根本性明示毀約。"
           }
         ]
       }
@@ -9140,9 +9180,9 @@
   "ADJUDICATION": {
     "word": "adjudication",
     "pos": "n.",
-    "meaning": "對爭議作權威判定的程序",
-    "example": "The game provides a method of adjudication.",
-    "exampleZh": "遊戲提供裁決方式。",
+    "meaning": "國際法庭之司法審判裁決",
+    "example": "Both sovereign nations submitted the contentious maritime boundary claim for binding ___.",
+    "exampleZh": "爭端雙方國家元首共同簽字，同意將爭議海域大陸棚劃界案全權交由海牙常設仲裁法庭實施司法審判。",
     "senses": [
       {
         "pos": "n.",
@@ -9151,6 +9191,26 @@
           {
             "en": "The game provides a method of adjudication.",
             "zh": "遊戲提供裁決方式。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "由國際法庭或常設裁判機關依據實體法對主權爭端做出的終局裁決與司法判決過程",
+        "examples": [
+          {
+            "en": "The border conflict was peacefully resolved through binding international court adjudication.",
+            "zh": "這起綿延半個世紀的邊界流血衝突，最終在海牙國際法院具有約束力的終局司法判決（Adjudication）中塵埃落定。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "國際法庭之司法審判裁決",
+        "examples": [
+          {
+            "en": "Both sovereign nations submitted the contentious maritime boundary claim for binding ___.",
+            "zh": "爭端雙方國家元首共同簽字，同意將爭議海域大陸棚劃界案全權交由海牙常設仲裁法庭實施司法審判。"
           }
         ]
       }
@@ -11064,9 +11124,9 @@
   "DEROGATION": {
     "word": "derogation",
     "pos": "n.",
-    "meaning": "特定權利之減損與克減限制條款",
-    "example": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
-    "exampleZh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。",
+    "meaning": "緊急狀態下之權利減損",
+    "example": "Article four of the ICCPR strictly limits when a state may execute human rights ___.",
+    "exampleZh": "《公民與政治權利國際公約》第四條，對主權國家何時方能啟動人權義務減損設立了不可逾越的森嚴紅線。",
     "senses": [
       {
         "pos": "n.",
@@ -11095,6 +11155,26 @@
           {
             "en": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
             "zh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在面臨國家生存緊急狀態下依據條約授權暫時減損或中止履行部分人權義務的法定克減",
+        "examples": [
+          {
+            "en": "Public health emergencies permit narrow, proportional derogation from specific civil liberties.",
+            "zh": "唯有在極其罕見的威脅國家生死存亡的緊急危難關頭，法律方才允許政府在嚴格比例原則下實施人權義務的暫時克減。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "緊急狀態下之權利減損",
+        "examples": [
+          {
+            "en": "Article four of the ICCPR strictly limits when a state may execute human rights ___.",
+            "zh": "《公民與政治權利國際公約》第四條，對主權國家何時方能啟動人權義務減損設立了不可逾越的森嚴紅線。"
           }
         ]
       }
@@ -14238,9 +14318,9 @@
   },
   "ENTROPY": {
     "pos": "n.",
-    "meaning": "文本預測不確定性度量",
-    "example": "Cross entropy loss quantifies the divergence between predicted probabilities and ground truth.",
-    "exampleZh": "交叉熵損失函數精確量化了模型所預測的機率分佈與真實客觀標籤之間的幾何發散程度。",
+    "meaning": "孤立系統混亂度之熱力學熵",
+    "example": "The inexorable increase in universal ___ defines the thermodynamic cosmological arrow of time.",
+    "exampleZh": "宇宙總熵（Entropy）無可阻擋的自發遞增，奠定了熱力學意義上宇宙不可逆演化的唯一時間之箭。",
     "senses": [
       {
         "pos": "n.",
@@ -14259,6 +14339,26 @@
           {
             "en": "Cross entropy loss quantifies the divergence between predicted probabilities and ground truth.",
             "zh": "交叉熵損失函數精確量化了模型所預測的機率分佈與真實客觀標籤之間的幾何發散程度。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "熱力學中衡量孤立系統混亂度與不可逆能量耗散的熵",
+        "examples": [
+          {
+            "en": "Thermodynamic entropy dictates the irreversible arrow of time across the cosmos.",
+            "zh": "不可逆的熱力學熵增鐵律，在宏觀宇宙的廣袤時空中鐫刻下了單向不可逆轉的時間之箭。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "孤立系統混亂度之熱力學熵",
+        "examples": [
+          {
+            "en": "The inexorable increase in universal ___ defines the thermodynamic cosmological arrow of time.",
+            "zh": "宇宙總熵（Entropy）無可阻擋的自發遞增，奠定了熱力學意義上宇宙不可逆演化的唯一時間之箭。"
           }
         ]
       }
@@ -14350,9 +14450,9 @@
   },
   "CONCURRENT": {
     "pos": "adj.",
-    "meaning": "大規模並發數據流",
-    "example": "High throughput server clusters handle millions of concurrent user token generation requests.",
-    "exampleZh": "具備極高吞吐容量的伺服器集群，能夠遊刃有餘地並行承載數百萬用戶同時發起的文本生成請求。",
+    "meaning": "在晶片架構設計中允許多個運算核心或資料管道在同一時間並行運轉處理的並行的",
+    "example": "Modern GPU streaming multiprocessors execute thousands of concurrent computing threads seamlessly.",
+    "exampleZh": "現代旗艦級 GPU 流式多處理器集群，能行雲流水般調度並駕馭數以萬計的並行（Concurrent）計算線程同時狂飆。",
     "senses": [
       {
         "pos": "adj.",
@@ -14371,6 +14471,16 @@
           {
             "en": "High throughput server clusters handle millions of concurrent user token generation requests.",
             "zh": "具備極高吞吐容量的伺服器集群，能夠遊刃有餘地並行承載數百萬用戶同時發起的文本生成請求。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "在晶片架構設計中允許多個運算核心或資料管道在同一時間並行運轉處理的並行的",
+        "examples": [
+          {
+            "en": "Modern GPU streaming multiprocessors execute thousands of concurrent computing threads seamlessly.",
+            "zh": "現代旗艦級 GPU 流式多處理器集群，能行雲流水般調度並駕馭數以萬計的並行（Concurrent）計算線程同時狂飆。"
           }
         ]
       }
@@ -16678,9 +16788,9 @@
   },
   "INVIOLABILITY": {
     "pos": "n.",
-    "meaning": "使領館享有的絕對不可侵犯權",
-    "example": "Host government security forces may not breach the legal inviolability of the embassy.",
-    "exampleZh": "駐在國各類武裝警察與安全部隊，在任何緊急藉口下皆絕對無權強闖並踐踏大使館的法定不可侵犯權。",
+    "meaning": "國際法賦予外交使館館舍、外交檔案與使節人身免受任何侵犯、扣留與搜查的不可侵犯性",
+    "example": "Diplomatic mission premises enjoy complete inviolability under the Vienna Convention.",
+    "exampleZh": "外國使館的一切辦公館舍與通訊郵袋，在《維也納公約》的鋼鐵庇護下享有全天候、絕對的不可侵犯性（Inviolability）。",
     "senses": [
       {
         "pos": "n.",
@@ -16699,6 +16809,16 @@
           {
             "en": "Host government security forces may not breach the legal inviolability of the embassy.",
             "zh": "駐在國各類武裝警察與安全部隊，在任何緊急藉口下皆絕對無權強闖並踐踏大使館的法定不可侵犯權。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "國際法賦予外交使館館舍、外交檔案與使節人身免受任何侵犯、扣留與搜查的不可侵犯性",
+        "examples": [
+          {
+            "en": "Diplomatic mission premises enjoy complete inviolability under the Vienna Convention.",
+            "zh": "外國使館的一切辦公館舍與通訊郵袋，在《維也納公約》的鋼鐵庇護下享有全天候、絕對的不可侵犯性（Inviolability）。"
           }
         ]
       }
@@ -16790,9 +16910,9 @@
   },
   "REPRISAL": {
     "pos": "n.",
-    "meaning": "遭受挑釁後實施之對等報復",
-    "example": "The government launched targeted economic reprisal against the illegal import ban.",
-    "exampleZh": "針對鄰國毫無依據、單方面發動的非法進口禁令，本國政府果斷祭出了刀刀見血的對等經濟反制報復。",
+    "meaning": "戰火中的有限武裝報復",
+    "example": "Even in the face of chemical weapons attacks, executing a reciprocal civilian ___ remains illegal.",
+    "exampleZh": "哪怕自身遭受了敵方卑劣的化學毒氣偷襲，在法理上也絕不允許對敵方無辜平民發動對等殘酷報復。",
     "senses": [
       {
         "pos": "n.",
@@ -16811,6 +16931,26 @@
           {
             "en": "The government launched targeted economic reprisal against the illegal import ban.",
             "zh": "針對鄰國毫無依據、單方面發動的非法進口禁令，本國政府果斷祭出了刀刀見血的對等經濟反制報復。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交戰一方在遭遇敵方嚴重違約暴行時為迫使其停止違法行為所實施的有限軍事反制與報復",
+        "examples": [
+          {
+            "en": "International law strictly prohibits violent armed reprisal directed against civilian populations.",
+            "zh": "現代文明國際法明文嚴厲禁止一切將黑手伸向無辜平民與被俘戰俘的暴力戰時武裝報復（Reprisal）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "戰火中的有限武裝報復",
+        "examples": [
+          {
+            "en": "Even in the face of chemical weapons attacks, executing a reciprocal civilian ___ remains illegal.",
+            "zh": "哪怕自身遭受了敵方卑劣的化學毒氣偷襲，在法理上也絕不允許對敵方無辜平民發動對等殘酷報復。"
           }
         ]
       }
@@ -17393,6 +17533,2502 @@
           {
             "en": "The university launched an interdisciplinary institute dedicated to real world systemic sustainability.",
             "zh": "這所頂尖學府斥巨資成立了跨學科前沿研究所，專注於攻克人類文明在真實世界中面臨的系統性永續性重大難題。"
+          }
+        ]
+      }
+    ]
+  },
+  "AHARONOV BOHM PHASE SHIFT": {
+    "word": "aharonov bohm phase shift",
+    "pos": "phr.",
+    "meaning": "磁場為零處依然存在之阿哈羅諾夫玻姆相位差",
+    "example": "The electron wave packet picked up an aharonov bohm phase shift around the magnetic vector flux.",
+    "exampleZh": "電子波包繞行磁屏蔽螺線管一周後，在磁場嚴格為零的空間中依然精準拾取了深邃的阿哈羅諾夫-玻姆幾何相位差。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "磁場為零處依然存在之阿哈羅諾夫玻姆相位差",
+        "examples": [
+          {
+            "en": "The electron wave packet picked up an aharonov bohm phase shift around the magnetic vector flux.",
+            "zh": "電子波包繞行磁屏蔽螺線管一周後，在磁場嚴格為零的空間中依然精準拾取了深邃的阿哈羅諾夫-玻姆幾何相位差。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUANTUM ZENO EFFECT SUPPRESSION": {
+    "word": "quantum zeno effect suppression",
+    "pos": "phr.",
+    "meaning": "連續密集觀測下凍結躍遷之量子芝諾效應",
+    "example": "Rapid projective measurements caused complete quantum zeno effect suppression of decay transitions.",
+    "exampleZh": "以飛秒頻率轟擊的連續投影測量，對該激發態分子的自發輻射衰變造成了徹底的量子芝諾凍結效應。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "連續密集觀測下凍結躍遷之量子芝諾效應",
+        "examples": [
+          {
+            "en": "Rapid projective measurements caused complete quantum zeno effect suppression of decay transitions.",
+            "zh": "以飛秒頻率轟擊的連續投影測量，對該激發態分子的自發輻射衰變造成了徹底的量子芝諾凍結效應。"
+          }
+        ]
+      }
+    ]
+  },
+  "BOSE EINSTEIN CONDENSATION THRESHOLD": {
+    "word": "bose einstein condensation threshold",
+    "pos": "phr.",
+    "meaning": "跌入同一基態超級巨原子之玻色愛因斯坦凝聚",
+    "example": "Laser cooled rubidium vapor crossed the bose einstein condensation threshold at sub microkelvin cold.",
+    "exampleZh": "經雷射冷卻的銣-87 稀薄原子蒸汽在跌破數百納開爾文極限後，一舉跨越了玻色-愛因斯坦凝聚臨界相變線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "跌入同一基態超級巨原子之玻色愛因斯坦凝聚",
+        "examples": [
+          {
+            "en": "Laser cooled rubidium vapor crossed the bose einstein condensation threshold at sub microkelvin cold.",
+            "zh": "經雷射冷卻的銣-87 稀薄原子蒸汽在跌破數百納開爾文極限後，一舉跨越了玻色-愛因斯坦凝聚臨界相變線。"
+          }
+        ]
+      }
+    ]
+  },
+  "TOPOLOGICAL INSULATOR EDGE STATE": {
+    "word": "topological insulator edge state",
+    "pos": "phr.",
+    "meaning": "塊體絕緣而表面無耗散導電之拓撲邊界態",
+    "example": "Backscattering is topologically forbidden along the protected topological insulator edge state.",
+    "exampleZh": "在時間反演對稱性的鐵律庇護下，外來非磁性雜質在拓撲絕緣體一維無能隙邊界態上的背向散射被絕對禁止。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "塊體絕緣而表面無耗散導電之拓撲邊界態",
+        "examples": [
+          {
+            "en": "Backscattering is topologically forbidden along the protected topological insulator edge state.",
+            "zh": "在時間反演對稱性的鐵律庇護下，外來非磁性雜質在拓撲絕緣體一維無能隙邊界態上的背向散射被絕對禁止。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAJORANA ZERO MODE BRAIDING": {
+    "word": "majorana zero mode braiding",
+    "pos": "phr.",
+    "meaning": "用非阿貝爾任意子實現硬體級容錯之馬約拉納編織",
+    "example": "Physicists demonstrated topological fault tolerance through majorana zero mode braiding operations.",
+    "exampleZh": "凝聚態理論學家透過非阿貝爾任意子的空間馬約拉納零能模編織運算，在物理本徵層面構建了拓撲容錯矩陣。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "用非阿貝爾任意子實現硬體級容錯之馬約拉納編織",
+        "examples": [
+          {
+            "en": "Physicists demonstrated topological fault tolerance through majorana zero mode braiding operations.",
+            "zh": "凝聚態理論學家透過非阿貝爾任意子的空間馬約拉納零能模編織運算，在物理本徵層面構建了拓撲容錯矩陣。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAWKING BLACK HOLE RADIATION": {
+    "word": "hawking black hole radiation",
+    "pos": "phr.",
+    "meaning": "事件視界量子真空漲落產生之霍金黑洞輻射",
+    "example": "Virtual particle antiparticle pair separation produces hawking black hole radiation near the horizon.",
+    "exampleZh": "事件視界外緣的量子真空漲落引發虛粒子對分離，孕育出令天體黑洞緩慢蒸發衰竭的霍金量子輻射。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "事件視界量子真空漲落產生之霍金黑洞輻射",
+        "examples": [
+          {
+            "en": "Virtual particle antiparticle pair separation produces hawking black hole radiation near the horizon.",
+            "zh": "事件視界外緣的量子真空漲落引發虛粒子對分離，孕育出令天體黑洞緩慢蒸發衰竭的霍金量子輻射。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUANTUM STATE TOMOGRAPHY FIDELITY": {
+    "word": "quantum state tomography fidelity",
+    "pos": "phr.",
+    "meaning": "全方位重構密度矩陣之量子態斷層掃描保真度",
+    "example": "Over constrained measurements yielded ninety eight percent quantum state tomography fidelity.",
+    "exampleZh": "高冗餘度的全景式微波投影測量，最終解算出了高達 98% 完美契合度的量子態斷層掃描全矩陣保真度。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全方位重構密度矩陣之量子態斷層掃描保真度",
+        "examples": [
+          {
+            "en": "Over constrained measurements yielded ninety eight percent quantum state tomography fidelity.",
+            "zh": "高冗餘度的全景式微波投影測量，最終解算出了高達 98% 完美契合度的量子態斷層掃描全矩陣保真度。"
+          }
+        ]
+      }
+    ]
+  },
+  "CP SYMMETRY VIOLATION PARAMETER": {
+    "word": "cp symmetry violation parameter",
+    "pos": "phr.",
+    "meaning": "解開宇宙反物質湮滅之宇稱破缺參數",
+    "example": "Precise beam measurements revealed the tiny cp symmetry violation parameter in neutral meson decays.",
+    "exampleZh": "高能粒子對撞機的高精度束流測量，精準錨定了中性介子罕見弱相互作用衰變中的 CP 對稱性破缺關鍵參數。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "解開宇宙反物質湮滅之宇稱破缺參數",
+        "examples": [
+          {
+            "en": "Precise beam measurements revealed the tiny cp symmetry violation parameter in neutral meson decays.",
+            "zh": "高能粒子對撞機的高精度束流測量，精準錨定了中性介子罕見弱相互作用衰變中的 CP 對稱性破缺關鍵參數。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUPERFLUID QUANTUM VORTEX CORE": {
+    "word": "superfluid quantum vortex core",
+    "pos": "phr.",
+    "meaning": "液氦超流體中旋度量子化之量子渦旋核心",
+    "example": "Superfluid angular momentum is carried exclusively by quantized superfluid quantum vortex cores.",
+    "exampleZh": "超流液氦在高速旋轉時其角動量絕不連續分佈，而是完全由內部離散排列的奇異量子化渦旋核心嚴格承載。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "液氦超流體中旋度量子化之量子渦旋核心",
+        "examples": [
+          {
+            "en": "Superfluid angular momentum is carried exclusively by quantized superfluid quantum vortex cores.",
+            "zh": "超流液氦在高速旋轉時其角動量絕不連續分佈，而是完全由內部離散排列的奇異量子化渦旋核心嚴格承載。"
+          }
+        ]
+      }
+    ]
+  },
+  "ASYMMETRIC BELL INEQUALITY REFUTATION": {
+    "word": "asymmetric bell inequality refutation",
+    "pos": "phr.",
+    "meaning": "無懈可擊宣判古典局域實在論死刑之貝爾不等式",
+    "example": "Loophole free tests delivered definitive asymmetric bell inequality refutations across laboratory miles.",
+    "exampleZh": "在相隔數公里的獨立光學實驗室之間開展的「無漏洞（Loophole-free）」實驗，給古典局域實在論敲下了最後的喪鐘。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無懈可擊宣判古典局域實在論死刑之貝爾不等式",
+        "examples": [
+          {
+            "en": "Loophole free tests delivered definitive asymmetric bell inequality refutations across laboratory miles.",
+            "zh": "在相隔數公里的獨立光學實驗室之間開展的「無漏洞（Loophole-free）」實驗，給古典局域實在論敲下了最後的喪鐘。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUPERFLUIDITY": {
+    "pos": "n.",
+    "meaning": "黏滯性完全歸零之超流現象",
+    "example": "Liquid helium loses all hydrodynamic viscosity upon entering the state of macroscopic ___.",
+    "exampleZh": "液態氦在冷卻並跨入巨觀超流性狀態的那一瞬間，其所有流體動力學內部剪切黏滯性瞬間歸於虛無。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物質在極低溫下黏滯阻力完全歸零無摩擦流動的超流性",
+        "examples": [
+          {
+            "en": "Superfluidity allows liquid helium to flow uphill defying gravity in thin Rollin films.",
+            "zh": "超流性（Superfluidity）允許液態氦以奇異的微觀量子滾動薄膜姿態，完全克服重力沿著燒杯壁向上逆流。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "黏滯性完全歸零之超流現象",
+        "examples": [
+          {
+            "en": "Liquid helium loses all hydrodynamic viscosity upon entering the state of macroscopic ___.",
+            "zh": "液態氦在冷卻並跨入巨觀超流性狀態的那一瞬間，其所有流體動力學內部剪切黏滯性瞬間歸於虛無。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERFEROMETER": {
+    "pos": "n.",
+    "meaning": "量測時空漣漪之激光干涉儀",
+    "example": "A kilometer scale Michelson ___ captured the gravitational merger of binary black holes.",
+    "exampleZh": "公里級超長基線邁克生激光干涉儀，在幽深太空中首度捕捉到了雙黑洞劇烈併合時震顫時空的引力波漣漪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用光學波前疊加相長相消進行超極限精準測量的干涉儀",
+        "examples": [
+          {
+            "en": "The gravitational wave interferometer measured spacetime strain down to atomic scales.",
+            "zh": "巨型引力波激光干涉儀將時空應變的微弱測量精度，硬生生推進至原子核半徑的千分之一量級。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "量測時空漣漪之激光干涉儀",
+        "examples": [
+          {
+            "en": "A kilometer scale Michelson ___ captured the gravitational merger of binary black holes.",
+            "zh": "公里級超長基線邁克生激光干涉儀，在幽深太空中首度捕捉到了雙黑洞劇烈併合時震顫時空的引力波漣漪。"
+          }
+        ]
+      }
+    ]
+  },
+  "COHERENCE": {
+    "pos": "n.",
+    "meaning": "量子態相位之量子相干性",
+    "example": "Extending the quantum ___ time beyond milliseconds is critical for logical quantum gates.",
+    "exampleZh": "將量子相干性（Coherence）壽命一舉延長至毫秒級以上，是構築高容錯邏輯量子運算門的核心勝負手。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "量子態波函數相位之間維持確定幾何關聯的相干性與同調性",
+        "examples": [
+          {
+            "en": "Maintaining phase coherence represents the supreme engineering challenge for quantum processors.",
+            "zh": "在外界嚴苛噪聲汪洋中維持量子相位的同調性（Coherence），是當代建造大型量子電腦不可逾越的高山。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "量子態相位之量子相干性",
+        "examples": [
+          {
+            "en": "Extending the quantum ___ time beyond milliseconds is critical for logical quantum gates.",
+            "zh": "將量子相干性（Coherence）壽命一舉延長至毫秒級以上，是構築高容錯邏輯量子運算門的核心勝負手。"
+          }
+        ]
+      }
+    ]
+  },
+  "ISOTOPE": {
+    "pos": "n.",
+    "meaning": "質子相同中子相異之同位素",
+    "example": "Separating the light helium three ___ requires specialized cryogenic distillation infrastructure.",
+    "exampleZh": "要從大氣中分離出極其稀罕的輕同位素氦-3，必須依賴極其尖端複雜的低溫超流蒸餾專屬基建。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "原子核中質子數相同而中子數各異的同種化學元素同位素",
+        "examples": [
+          {
+            "en": "Helium three isotope mixtures enable cooling inside low temperature cryostats.",
+            "zh": "高純度稀有的氦-3 同位素與氦-4 混合物，構成了深低溫稀釋製冷系統中不可或缺的熱力學製冷媒介。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "質子相同中子相異之同位素",
+        "examples": [
+          {
+            "en": "Separating the light helium three ___ requires specialized cryogenic distillation infrastructure.",
+            "zh": "要從大氣中分離出極其稀罕的輕同位素氦-3，必須依賴極其尖端複雜的低溫超流蒸餾專屬基建。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONDENSATE": {
+    "pos": "n.",
+    "meaning": "物質第五態之低溫量子凝聚體",
+    "example": "The laser trapped rubidium cloud collapsed into a macroscopic quantum ___.",
+    "exampleZh": "在超高真空激光陷阱中被緊緊約束的銣原子雲，順利塌縮為物質第五態的巨觀量子凝聚體。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "微觀玻色子大量塌縮至基態形成的玻色愛因斯坦凝聚體",
+        "examples": [
+          {
+            "en": "The dilute atomic condensate behaved as a macroscopic unified wave function.",
+            "zh": "這團超低溫稀薄原子凝聚體（Condensate），在巨觀世界中猶如一個宏大而和諧的統一量子波函數般同頻共振。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "物質第五態之低溫量子凝聚體",
+        "examples": [
+          {
+            "en": "The laser trapped rubidium cloud collapsed into a macroscopic quantum ___.",
+            "zh": "在超高真空激光陷阱中被緊緊約束的銣原子雲，順利塌縮為物質第五態的巨觀量子凝聚體。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNITARITY": {
+    "pos": "n.",
+    "meaning": "守恆總概率為一之量子么正性",
+    "example": "Theoretical physicists struggle to reconcile black hole evaporation with fundamental quantum ___.",
+    "exampleZh": "當代頂尖理論物理學家殫精竭慮，試圖在黑洞霍金蒸發與量子力學最根本的么正性守恆之間架起調和的橋樑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "量子力學中保證全概率和自始至終嚴格守恆為一的么正性",
+        "examples": [
+          {
+            "en": "Quantum unitarity forbids the permanent destruction of physical information in black holes.",
+            "zh": "量子力學最神聖不可侵犯的「么正性（Unitarity）」原理，明文禁止宇宙中的任何微觀量子物理資訊遭到徹底抹滅。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "守恆總概率為一之量子么正性",
+        "examples": [
+          {
+            "en": "Theoretical physicists struggle to reconcile black hole evaporation with fundamental quantum ___.",
+            "zh": "當代頂尖理論物理學家殫精竭慮，試圖在黑洞霍金蒸發與量子力學最根本的么正性守恆之間架起調和的橋樑。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAMILTONIAN": {
+    "pos": "n.",
+    "meaning": "主宰系統總能量之哈密頓算符",
+    "example": "The total system ___ governs both energy eigenvalues and coherent temporal trajectories.",
+    "exampleZh": "主宰整個微觀粒子系統的總哈密頓算符，精確統率著能量本徵值的分佈與相干時間演化的宏偉軌跡。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "量子力學與分析力學中代表系統總能量的哈密頓算符",
+        "examples": [
+          {
+            "en": "The time dependent Hamiltonian describes the complete dynamic evolution of the system.",
+            "zh": "依賴於時間變化的哈密頓算符（Hamiltonian），完整統治並揭示了整個複合量子力學系統的動態演化軌跡。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "主宰系統總能量之哈密頓算符",
+        "examples": [
+          {
+            "en": "The total system ___ governs both energy eigenvalues and coherent temporal trajectories.",
+            "zh": "主宰整個微觀粒子系統的總哈密頓算符，精確統率著能量本徵值的分佈與相干時間演化的宏偉軌跡。"
+          }
+        ]
+      }
+    ]
+  },
+  "EIGENSTATE": {
+    "pos": "n.",
+    "meaning": "物理算符作用後僅改變模長而不改變本徵特性的本徵態",
+    "example": "Measurement projects the wave function onto a discrete computational eigenstate.",
+    "exampleZh": "對微觀粒子的測量，會粗暴地將原本連續複雜的疊加態波函數強行坍縮至離散的單一本徵態（Eigenstate）之上。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物理算符作用後僅改變模長而不改變本徵特性的本徵態",
+        "examples": [
+          {
+            "en": "Measurement projects the wave function onto a discrete computational eigenstate.",
+            "zh": "對微觀粒子的測量，會粗暴地將原本連續複雜的疊加態波函數強行坍縮至離散的單一本徵態（Eigenstate）之上。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUASIPARTICLE": {
+    "pos": "n.",
+    "meaning": "多體凝聚態物理中湧現出的集體激發態與有效準粒子",
+    "example": "Phonons and magnons represent quantized quasiparticle excitations in crystal lattices.",
+    "exampleZh": "固體晶格中的聲子與磁振子，均是多體量子力學在凝聚態物質內部湧現出的集體激發態「準粒子（Quasiparticle）」。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "多體凝聚態物理中湧現出的集體激發態與有效準粒子",
+        "examples": [
+          {
+            "en": "Phonons and magnons represent quantized quasiparticle excitations in crystal lattices.",
+            "zh": "固體晶格中的聲子與磁振子，均是多體量子力學在凝聚態物質內部湧現出的集體激發態「準粒子（Quasiparticle）」。"
+          }
+        ]
+      }
+    ]
+  },
+  "BUSINESS JUDGMENT RULE PROTECTION": {
+    "word": "business judgment rule protection",
+    "pos": "phr.",
+    "meaning": "保護董事善意決策之商業判斷原則庇護",
+    "example": "Directors invoked the business judgment rule protection against shareholder derivative claims.",
+    "exampleZh": "面對少數股東來勢洶洶的衍生訴訟，董事會全體成員昂然祭出特拉華商業判斷原則求取絕對司法豁免。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "保護董事善意決策之商業判斷原則庇護",
+        "examples": [
+          {
+            "en": "Directors invoked the business judgment rule protection against shareholder derivative claims.",
+            "zh": "面對少數股東來勢洶洶的衍生訴訟，董事會全體成員昂然祭出特拉華商業判斷原則求取絕對司法豁免。"
+          }
+        ]
+      }
+    ]
+  },
+  "REVLON DUTIES ENHANCED JUDICIAL SCRUTINY": {
+    "word": "revlon duties enhanced judicial scrutiny",
+    "pos": "phr.",
+    "meaning": "賣盤唯一追求最高價之露華濃強化司法審查",
+    "example": "Entering an all cash sale triggers revlon duties enhanced judicial scrutiny over the sales process.",
+    "exampleZh": "一旦簽署全現金出售控股權協議，整個交易流程立刻被置於露華濃強化司法審查的聚光燈下。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "賣盤唯一追求最高價之露華濃強化司法審查",
+        "examples": [
+          {
+            "en": "Entering an all cash sale triggers revlon duties enhanced judicial scrutiny over the sales process.",
+            "zh": "一旦簽署全現金出售控股權協議，整個交易流程立刻被置於露華濃強化司法審查的聚光燈下。"
+          }
+        ]
+      }
+    ]
+  },
+  "PIERCING THE CORPORATE VEIL DOCTRINE": {
+    "word": "piercing the corporate veil doctrine",
+    "pos": "phr.",
+    "meaning": "嚴打資產混同之刺破公司法人面紗原則",
+    "example": "The judge applied the piercing the corporate veil doctrine to hold the fraudulent parent liable.",
+    "exampleZh": "主審法官果斷啟動刺破公司法人面紗原則，令企圖躲在空殼公司背後惡意脫產的母公司承擔連帶責任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "嚴打資產混同之刺破公司法人面紗原則",
+        "examples": [
+          {
+            "en": "The judge applied the piercing the corporate veil doctrine to hold the fraudulent parent liable.",
+            "zh": "主審法官果斷啟動刺破公司法人面紗原則，令企圖躲在空殼公司背後惡意脫產的母公司承擔連帶責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "MAREVA WORLDWIDE FREEZING INJUNCTION": {
+    "word": "mareva worldwide freezing injunction",
+    "pos": "phr.",
+    "meaning": "斬斷跨國隱匿脫產之瑪瑞瓦全球資產凍結令",
+    "example": "The commercial division obtained a mareva worldwide freezing injunction against offshore bank vaults.",
+    "exampleZh": "商事法庭在立案當日火速簽發了瑪瑞瓦全球資產凍結令，全面查封了被告藏匿於海外避稅天堂的秘密金庫。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "斬斷跨國隱匿脫產之瑪瑞瓦全球資產凍結令",
+        "examples": [
+          {
+            "en": "The commercial division obtained a mareva worldwide freezing injunction against offshore bank vaults.",
+            "zh": "商事法庭在立案當日火速簽發了瑪瑞瓦全球資產凍結令，全面查封了被告藏匿於海外避稅天堂的秘密金庫。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNSOLICITED HOSTILE TENDER OFFER": {
+    "word": "unsolicited hostile tender offer",
+    "pos": "phr.",
+    "meaning": "繞開董事會強娶之非善意敵意要約收購",
+    "example": "The corporate predator launched an unsolicited hostile tender offer at a thirty percent premium.",
+    "exampleZh": "該資本大鱷以溢價 30% 的瘋狂手筆，繞開目標公司董事會直接向二級市場發起了非善意敵意要約收購。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "繞開董事會強娶之非善意敵意要約收購",
+        "examples": [
+          {
+            "en": "The corporate predator launched an unsolicited hostile tender offer at a thirty percent premium.",
+            "zh": "該資本大鱷以溢價 30% 的瘋狂手筆，繞開目標公司董事會直接向二級市場發起了非善意敵意要約收購。"
+          }
+        ]
+      }
+    ]
+  },
+  "FRAUDULENT CONVEYANCE ASSET CLAWBACK": {
+    "word": "fraudulent conveyance asset clawback",
+    "pos": "phr.",
+    "meaning": "追討破產前被掏空財產之詐害移轉資產追索",
+    "example": "The bankruptcy trustee initiated a fraudulent conveyance asset clawback targeting insider transfers.",
+    "exampleZh": "破產清算管理人以雷霆萬鈞之勢發動了詐害移轉追索訴訟，將高管在破產前夕偷偷劃走的資產全額追回。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "追討破產前被掏空財產之詐害移轉資產追索",
+        "examples": [
+          {
+            "en": "The bankruptcy trustee initiated a fraudulent conveyance asset clawback targeting insider transfers.",
+            "zh": "破產清算管理人以雷霆萬鈞之勢發動了詐害移轉追索訴訟，將高管在破產前夕偷偷劃走的資產全額追回。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBSTANTIVE CONSOLIDATION EQUITABLE REMEDY": {
+    "word": "substantive consolidation equitable remedy",
+    "pos": "phr.",
+    "meaning": "打破法人屏障合併清償之實質合併衡平法救濟",
+    "example": "Creditors successfully petitioned for a substantive consolidation equitable remedy across the group.",
+    "exampleZh": "廣大債權人在破產法庭成功爭取到了集團實質合併清償救濟，將混淆不清的數十家空殼子公司資產打包受償。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "打破法人屏障合併清償之實質合併衡平法救濟",
+        "examples": [
+          {
+            "en": "Creditors successfully petitioned for a substantive consolidation equitable remedy across the group.",
+            "zh": "廣大債權人在破產法庭成功爭取到了集團實質合併清償救濟，將混淆不清的數十家空殼子公司資產打包受償。"
+          }
+        ]
+      }
+    ]
+  },
+  "CFIUS NATIONAL SECURITY REVIEW JURISDICTION": {
+    "word": "cfius national security review jurisdiction",
+    "pos": "phr.",
+    "meaning": "阻截關鍵技術外流之外資審查委員會國安管轄",
+    "example": "The semiconductor buyout fell directly within cfius national security review jurisdiction.",
+    "exampleZh": "這起涉及尖端製程晶片製造商的跨國併購案，毫無懸念地撞上了美國外國投資委員會國安審查的鋼鐵防線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "阻截關鍵技術外流之外資審查委員會國安管轄",
+        "examples": [
+          {
+            "en": "The semiconductor buyout fell directly within cfius national security review jurisdiction.",
+            "zh": "這起涉及尖端製程晶片製造商的跨國併購案，毫無懸念地撞上了美國外國投資委員會國安審查的鋼鐵防線。"
+          }
+        ]
+      }
+    ]
+  },
+  "EQUITY CURE FINANCIAL COVENANT RELIEF": {
+    "word": "equity cure financial covenant relief",
+    "pos": "phr.",
+    "meaning": "注資補血消弭違約之股權補救承諾豁免",
+    "example": "The buyout fund exercised its equity cure financial covenant relief to prevent debt acceleration.",
+    "exampleZh": "收購基金在關鍵節點毅然啟動股權補救程序，自掏腰包注資補血以徹底避免銀行銀團提前收回貸款。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "注資補血消弭違約之股權補救承諾豁免",
+        "examples": [
+          {
+            "en": "The buyout fund exercised its equity cure financial covenant relief to prevent debt acceleration.",
+            "zh": "收購基金在關鍵節點毅然啟動股權補救程序，自掏腰包注資補血以徹底避免銀行銀團提前收回貸款。"
+          }
+        ]
+      }
+    ]
+  },
+  "DRAG ALONG MINORITY SHAREHOLDER RIGHT": {
+    "word": "drag along minority shareholder right",
+    "pos": "phr.",
+    "meaning": "大股東強賣打包出售之少數股東拖售權",
+    "example": "Exercising the drag along minority shareholder right forced all angel investors to tender their shares.",
+    "exampleZh": "控股大股東果斷扣動了少數股東拖售權，強制要求早期天使投資人以相同估值共同交割出場。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "大股東強賣打包出售之少數股東拖售權",
+        "examples": [
+          {
+            "en": "Exercising the drag along minority shareholder right forced all angel investors to tender their shares.",
+            "zh": "控股大股東果斷扣動了少數股東拖售權，強制要求早期天使投資人以相同估值共同交割出場。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBORDINATION": {
+    "pos": "n.",
+    "meaning": "債權位階劣後讓渡",
+    "example": "The second lien lenders agreed to clear payment ___ under the definitive intercreditor terms.",
+    "exampleZh": "在終局各級債權人間協議的框架下，二級抵押權人以白紙黑字簽字同意了債權受償順位的全面劣後。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在債務體系中將特定債權人的受償位階合法劣後於其他債權人的順位讓渡",
+        "examples": [
+          {
+            "en": "Intercreditor agreements formalize the lien subordination of junior subordinated mezzanine debt.",
+            "zh": "各級債權人間清償協議白紙黑字確立了次級夾層貸款對一級資產擔保信貸的順位劣後讓渡。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "債權位階劣後讓渡",
+        "examples": [
+          {
+            "en": "The second lien lenders agreed to clear payment ___ under the definitive intercreditor terms.",
+            "zh": "在終局各級債權人間協議的框架下，二級抵押權人以白紙黑字簽字同意了債權受償順位的全面劣後。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDEMNIFICATION": {
+    "pos": "n.",
+    "meaning": "交割前債務之免責補償",
+    "example": "The buyer asserted extensive contractual rights to financial ___ following environmental fines.",
+    "exampleZh": "在遭遇環保署巨額罰單突襲後，收購方即刻全面啟動了契約所賦予的巨額免責損害補償請求權。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "一方承諾在特定損失、訴訟或罰款發生時對另一方提供完全補償的免責補償",
+        "examples": [
+          {
+            "en": "The merger agreement provided comprehensive tax indemnification for pre acquisition liabilities.",
+            "zh": "該項重大合併協議為買方提供了無懈可擊的稅務免責補償條款，涵蓋交割前一切隱藏欠稅。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交割前債務之免責補償",
+        "examples": [
+          {
+            "en": "The buyer asserted extensive contractual rights to financial ___ following environmental fines.",
+            "zh": "在遭遇環保署巨額罰單突襲後，收購方即刻全面啟動了契約所賦予的巨額免責損害補償請求權。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLICITATION": {
+    "pos": "n.",
+    "meaning": "爭奪董事席位之委託書招攬",
+    "example": "Institutional shareholders were inundated with competing campaign materials during the proxy ___.",
+    "exampleZh": "在激烈的股東大會委託書爭奪大戰期間，廣大機構投資人被雙方鋪天蓋地的宣傳攻勢所淹沒。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公開向股東尋求授權投票或徵集要約收購股份的公開招攬行為",
+        "examples": [
+          {
+            "en": "The activist fund commenced a vigorous proxy solicitation to unseat entrenched board directors.",
+            "zh": "這家激進對沖基金在全球二級市場展開了聲勢浩大的委託書公開招攬，誓將頑固保守的董事會老臣拉下馬。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "爭奪董事席位之委託書招攬",
+        "examples": [
+          {
+            "en": "Institutional shareholders were inundated with competing campaign materials during the proxy ___.",
+            "zh": "在激烈的股東大會委託書爭奪大戰期間，廣大機構投資人被雙方鋪天蓋地的宣傳攻勢所淹沒。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORBEARANCE": {
+    "pos": "n.",
+    "meaning": "債權人按兵不動之暫緩寬限",
+    "example": "The syndicate agreed to a temporary debt enforcement ___ to allow emergency inventory restructuring.",
+    "exampleZh": "貸款銀團最終同意簽署一份短期的暫緩強制執行寬限協議，為債務人實施緊急存貨盤活爭取寶貴喘息之機。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "債權人在借款人違約時基於談判考量暫停行使強制執行拍賣權的寬限容忍協議",
+        "examples": [
+          {
+            "en": "Lenders signed a sixty day forbearance agreement while debt restructuring talks proceeded.",
+            "zh": "貸款銀團同意簽署為期 60 天的寬限容忍協議（Forbearance），在債務重組談判期間暫不行使拍賣抵押權。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "債權人按兵不動之暫緩寬限",
+        "examples": [
+          {
+            "en": "The syndicate agreed to a temporary debt enforcement ___ to allow emergency inventory restructuring.",
+            "zh": "貸款銀團最終同意簽署一份短期的暫緩強制執行寬限協議，為債務人實施緊急存貨盤活爭取寶貴喘息之機。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISSOLUTION": {
+    "pos": "n.",
+    "meaning": "註銷法人資格之法定解散",
+    "example": "Irreconcilable fraud within the executive suite culminated in the state attorney moving for judicial ___.",
+    "exampleZh": "管理層內部駭人聽聞的系統性舞弊被公之於眾後，州檢察長毅然向法院聲請對該涉案企業實施司法強制解散。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依照法定程序徹底終止公司法人資格並將其完全註銷的法人解散",
+        "examples": [
+          {
+            "en": "The deadlock between equal joint venture partners ultimately resulted in judicial dissolution.",
+            "zh": "持股各佔一半的合資夥伴間無休止的法理死鎖，最終不可避免地將這家合資巨頭推向了司法強制解散。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "註銷法人資格之法定解散",
+        "examples": [
+          {
+            "en": "Irreconcilable fraud within the executive suite culminated in the state attorney moving for judicial ___.",
+            "zh": "管理層內部駭人聽聞的系統性舞弊被公之於眾後，州檢察長毅然向法院聲請對該涉案企業實施司法強制解散。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACCRETION": {
+    "pos": "n.",
+    "meaning": "帶動每股盈餘增長之收益增厚",
+    "example": "Management justified the premium purchase price by highlighting projected long term earnings ___.",
+    "exampleZh": "管理層在投資人說明會上大力為溢價收購辯護，反覆強調該交易將為合併後集團帶來豐沛的長線收益增厚。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "企業併購後預期將帶動合併後母公司每股盈餘（EPS）立竿見影增長的收益增厚",
+        "examples": [
+          {
+            "en": "Financial analysts modeled whether the strategic acquisition would be immediately EPS accretion.",
+            "zh": "華爾街資深量化分析師緊鑼密鼓建模測算：這場高達百億的戰略收購能否在首個財年實現每股盈餘的立竿見影增厚。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "帶動每股盈餘增長之收益增厚",
+        "examples": [
+          {
+            "en": "Management justified the premium purchase price by highlighting projected long term earnings ___.",
+            "zh": "管理層在投資人說明會上大力為溢價收購辯護，反覆強調該交易將為合併後集團帶來豐沛的長線收益增厚。"
+          }
+        ]
+      }
+    ]
+  },
+  "RECEIVERSHIP": {
+    "pos": "n.",
+    "meaning": "司法接管破產保護狀態",
+    "example": "The defaulting shopping mall developer was forced into involuntary court supervised asset ___.",
+    "exampleZh": "這家嚴重拖欠工程款的購物中心開發商，被債權人依法強制逼入了法院監管下的破產資產接管程序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "法院在企業破產或違約時指定獨立接管人接管財產並運營的司法接管狀態",
+        "examples": [
+          {
+            "en": "The insolvent commercial real estate group was placed under court ordered equity receivership.",
+            "zh": "這家深陷債務危機的巨型商業地產財團，被依法全面置於破產法院下令的司法衡平接管狀態之中。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "司法接管破產保護狀態",
+        "examples": [
+          {
+            "en": "The defaulting shopping mall developer was forced into involuntary court supervised asset ___.",
+            "zh": "這家嚴重拖欠工程款的購物中心開發商，被債權人依法強制逼入了法院監管下的破產資產接管程序。"
+          }
+        ]
+      }
+    ]
+  },
+  "ARBITRATOR": {
+    "pos": "n.",
+    "meaning": "由爭議雙方依據商事合約共同選定並賦予終局裁決權限的中立商務仲裁員",
+    "example": "The experienced international arbitrator rendered a final, unappealable damage award of fifty million.",
+    "exampleZh": "這位德高望重的國際商事仲裁員最終做出具有終局效力、不可上訴的五千萬美元巨額損害賠償裁決。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由爭議雙方依據商事合約共同選定並賦予終局裁決權限的中立商務仲裁員",
+        "examples": [
+          {
+            "en": "The experienced international arbitrator rendered a final, unappealable damage award of fifty million.",
+            "zh": "這位德高望重的國際商事仲裁員最終做出具有終局效力、不可上訴的五千萬美元巨額損害賠償裁決。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIVESTMENT": {
+    "pos": "n.",
+    "meaning": "基金或企業基於倫理、法規或戰略考量大舉拋售特定產業股權的資本撤出",
+    "example": "Institutional endowments announced total divestment from companies involved in thermal coal extraction.",
+    "exampleZh": "多家頂尖常春藤大學捐贈基金莊嚴宣佈：全面撤出對所有傳統動力煤開採上市企業的全部股權投資。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "基金或企業基於倫理、法規或戰略考量大舉拋售特定產業股權的資本撤出",
+        "examples": [
+          {
+            "en": "Institutional endowments announced total divestment from companies involved in thermal coal extraction.",
+            "zh": "多家頂尖常春藤大學捐贈基金莊嚴宣佈：全面撤出對所有傳統動力煤開採上市企業的全部股權投資。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHALMERS HARD PROBLEM OF CONSCIOUSNESS": {
+    "word": "chalmers hard problem of consciousness",
+    "pos": "phr.",
+    "meaning": "探尋主觀感受質起源之意識難題",
+    "example": "The philosopher addressed the chalmers hard problem of consciousness during the international symposium.",
+    "exampleZh": "哲學大師在世界心智哲學大會上，再度向在座群雄拋出了直擊靈魂的查爾默斯意識困難問題。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "探尋主觀感受質起源之意識難題",
+        "examples": [
+          {
+            "en": "The philosopher addressed the chalmers hard problem of consciousness during the international symposium.",
+            "zh": "哲學大師在世界心智哲學大會上，再度向在座群雄拋出了直擊靈魂的查爾默斯意識困難問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "PREDICTIVE PROCESSING PREDICTION ERROR": {
+    "word": "predictive processing prediction error",
+    "pos": "phr.",
+    "meaning": "貝氏大腦架構下之預測編碼預測誤差",
+    "example": "Cortical hierarchies continuously minimize predictive processing prediction errors against sensory inputs.",
+    "exampleZh": "皮層階層式網絡不知疲倦地將預測編碼架構下的預測誤差壓至最低，以此構建我們眼中的現實。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "貝氏大腦架構下之預測編碼預測誤差",
+        "examples": [
+          {
+            "en": "Cortical hierarchies continuously minimize predictive processing prediction errors against sensory inputs.",
+            "zh": "皮層階層式網絡不知疲倦地將預測編碼架構下的預測誤差壓至最低，以此構建我們眼中的現實。"
+          }
+        ]
+      }
+    ]
+  },
+  "RETINAL LATERAL INHIBITION CONTRAST": {
+    "word": "retinal lateral inhibition contrast",
+    "pos": "phr.",
+    "meaning": "視網膜橫向抑制邊緣銳化之側抑制對比",
+    "example": "Edge perception is dramatically sharpened by retinal lateral inhibition contrast mechanisms.",
+    "exampleZh": "在視網膜複雜迴路的側抑制反差機制雕琢下，昏暗視野中的輪廓線條瞬間被勾勒得清清楚楚。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "視網膜橫向抑制邊緣銳化之側抑制對比",
+        "examples": [
+          {
+            "en": "Edge perception is dramatically sharpened by retinal lateral inhibition contrast mechanisms.",
+            "zh": "在視網膜複雜迴路的側抑制反差機制雕琢下，昏暗視野中的輪廓線條瞬間被勾勒得清清楚楚。"
+          }
+        ]
+      }
+    ]
+  },
+  "GLOBAL NEURONAL WORKSPACE BROADCAST": {
+    "word": "global neuronal workspace broadcast",
+    "pos": "phr.",
+    "meaning": "全腦點燃躍升為主觀意識之全腦工作空間廣播",
+    "example": "Subliminal primes fail to achieve global neuronal workspace broadcast across the prefrontal network.",
+    "exampleZh": "那些閾下潛意識刺激因能量孱弱，終究無法在額頂葉網絡引發具有決定意義的全腦工作空間點燃廣播。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全腦點燃躍升為主觀意識之全腦工作空間廣播",
+        "examples": [
+          {
+            "en": "Subliminal primes fail to achieve global neuronal workspace broadcast across the prefrontal network.",
+            "zh": "那些閾下潛意識刺激因能量孱弱，終究無法在額頂葉網絡引發具有決定意義的全腦工作空間點燃廣播。"
+          }
+        ]
+      }
+    ]
+  },
+  "HIPPOCAMPAL MEMORY CONSOLIDATION REPLAY": {
+    "word": "hippocampal memory consolidation replay",
+    "pos": "phr.",
+    "meaning": "睡眠中海馬迴記憶重播與大腦皮層固化",
+    "example": "Sharp wave ripples mediate hippocampal memory consolidation replay during deep slow wave sleep.",
+    "exampleZh": "深慢波睡眠中激盪的海馬尖波漣漪，在毫秒之間忠實重播著白晝經歷，將記憶深深烙印進大腦皮層。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "睡眠中海馬迴記憶重播與大腦皮層固化",
+        "examples": [
+          {
+            "en": "Sharp wave ripples mediate hippocampal memory consolidation replay during deep slow wave sleep.",
+            "zh": "深慢波睡眠中激盪的海馬尖波漣漪，在毫秒之間忠實重播著白晝經歷，將記憶深深烙印進大腦皮層。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENTORHINAL GRID CELL HEXAGONAL LATTICE": {
+    "word": "entorhinal grid cell hexagonal lattice",
+    "pos": "phr.",
+    "meaning": "內嗅皮層正六邊形空間鋪嵌之網格細胞晶格",
+    "example": "The Nobel laureates mapped the entorhinal grid cell hexagonal lattice guiding mammalian navigation.",
+    "exampleZh": "諾貝爾獎得主向世人展示了哺乳動物大腦內嗅皮層網格細胞那令人屏息的正六邊形幾何導航晶格。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內嗅皮層正六邊形空間鋪嵌之網格細胞晶格",
+        "examples": [
+          {
+            "en": "The Nobel laureates mapped the entorhinal grid cell hexagonal lattice guiding mammalian navigation.",
+            "zh": "諾貝爾獎得主向世人展示了哺乳動物大腦內嗅皮層網格細胞那令人屏息的正六邊形幾何導航晶格。"
+          }
+        ]
+      }
+    ]
+  },
+  "CEREBELLAR LONG TERM DEPRESSION PLASTICITY": {
+    "word": "cerebellar long term depression plasticity",
+    "pos": "phr.",
+    "meaning": "小腦運動協調精細修剪之長程抑制可塑性",
+    "example": "Climbing fiber inputs induce cerebellar long term depression plasticity at parallel fiber synapses.",
+    "exampleZh": "攀爬纖維的強大輸入在平行纖維與浦肯野細胞突觸間，精準誘導了奠定精細運動學習的小腦長程抑制。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "小腦運動協調精細修剪之長程抑制可塑性",
+        "examples": [
+          {
+            "en": "Climbing fiber inputs induce cerebellar long term depression plasticity at parallel fiber synapses.",
+            "zh": "攀爬纖維的強大輸入在平行纖維與浦肯野細胞突觸間，精準誘導了奠定精細運動學習的小腦長程抑制。"
+          }
+        ]
+      }
+    ]
+  },
+  "AMYLOID CASCADE HYPOTHESIS VALIDATION": {
+    "word": "amyloid cascade hypothesis validation",
+    "pos": "phr.",
+    "meaning": "阿茲海默症澱粉樣蛋白級聯假說檢驗",
+    "example": "Clinical drug trials provide ongoing amyloid cascade hypothesis validation in modern neurology.",
+    "exampleZh": "全球各大前沿三期臨床新藥試驗，正在以數百億代價對阿茲海默症澱粉樣蛋白級聯假說展開終極驗證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "阿茲海默症澱粉樣蛋白級聯假說檢驗",
+        "examples": [
+          {
+            "en": "Clinical drug trials provide ongoing amyloid cascade hypothesis validation in modern neurology.",
+            "zh": "全球各大前沿三期臨床新藥試驗，正在以數百億代價對阿茲海默症澱粉樣蛋白級聯假說展開終極驗證。"
+          }
+        ]
+      }
+    ]
+  },
+  "PATCH CLAMP SINGLE CHANNEL ELECTROPHYSIOLOGY": {
+    "word": "patch clamp single channel electrophysiology",
+    "pos": "phr.",
+    "meaning": "記錄單離子通道開閉之膜片鉗單通道電生理",
+    "example": "Sakmann and Neher invented patch clamp single channel electrophysiology to observe ionic currents.",
+    "exampleZh": "薩克曼與內爾開創性的膜片鉗單通道電生理技術，讓全人類首度用肉眼「看見」了離子流穿透細胞膜的微觀奇蹟。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "記錄單離子通道開閉之膜片鉗單通道電生理",
+        "examples": [
+          {
+            "en": "Sakmann and Neher invented patch clamp single channel electrophysiology to observe ionic currents.",
+            "zh": "薩克曼與內爾開創性的膜片鉗單通道電生理技術，讓全人類首度用肉眼「看見」了離子流穿透細胞膜的微觀奇蹟。"
+          }
+        ]
+      }
+    ]
+  },
+  "BRAIN MACHINE INTERFACE KINEMATIC DECODING": {
+    "word": "brain machine interface kinematic decoding",
+    "pos": "phr.",
+    "meaning": "意念直驅仿生肢體之腦機介面運動學解碼",
+    "example": "Paralyzed patients achieved independent movement through brain machine interface kinematic decoding.",
+    "exampleZh": "完全癱瘓的病患依託高通量侵入式腦機介面運動學實時解碼算法，重新奪回了用意念觸摸世界的尊嚴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意念直驅仿生肢體之腦機介面運動學解碼",
+        "examples": [
+          {
+            "en": "Paralyzed patients achieved independent movement through brain machine interface kinematic decoding.",
+            "zh": "完全癱瘓的病患依託高通量侵入式腦機介面運動學實時解碼算法，重新奪回了用意念觸摸世界的尊嚴。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLASTICITY": {
+    "pos": "n.",
+    "meaning": "神經迴路自適應之突觸可塑性",
+    "example": "Adult cortical ___ allows stroke patients to recover lost speech faculties over years.",
+    "exampleZh": "成年人強大的大腦皮層突觸可塑性，為無數中風失語症患者跨越數載重新開口說話點亮了生命之光。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "神經突觸與大腦功能組織依據經驗刺激自主重塑與自適應演變的可塑性",
+        "examples": [
+          {
+            "en": "Synaptic plasticity serves as the undisputed cellular foundation for behavioral learning.",
+            "zh": "突觸可塑性（Plasticity）作為行為學學習與認知獲得的細胞生物學基石，地位堅不可摧。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "神經迴路自適應之突觸可塑性",
+        "examples": [
+          {
+            "en": "Adult cortical ___ allows stroke patients to recover lost speech faculties over years.",
+            "zh": "成年人強大的大腦皮層突觸可塑性，為無數中風失語症患者跨越數載重新開口說話點亮了生命之光。"
+          }
+        ]
+      }
+    ]
+  },
+  "QUALIA": {
+    "pos": "n.",
+    "meaning": "主觀體驗之意識感受質",
+    "example": "The vivid subjective redness of a ripe strawberry represents a classic example of conscious ___.",
+    "exampleZh": "鮮紅草莓在視網膜前綻放出的那一抹絢爛主觀紅色，是心智哲學界無可爭議的純粹意識感受質經典範例。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "心智哲學中主觀意識體驗所特有的個別感受質與第一人稱內在感官質感",
+        "examples": [
+          {
+            "en": "Philosophers argue whether physicalist neuroscience can fully account for subjective qualia.",
+            "zh": "當代唯物主義神經科學究竟能否完備解釋帶有強烈第一人稱色彩的「主觀感受質（Qualia）」，引發了百年激辯。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "主觀體驗之意識感受質",
+        "examples": [
+          {
+            "en": "The vivid subjective redness of a ripe strawberry represents a classic example of conscious ___.",
+            "zh": "鮮紅草莓在視網膜前綻放出的那一抹絢爛主觀紅色，是心智哲學界無可爭議的純粹意識感受質經典範例。"
+          }
+        ]
+      }
+    ]
+  },
+  "HOMEOSTATIC": {
+    "pos": "adj.",
+    "meaning": "機體自我調控之動態平衡的",
+    "example": "Endocrine feedback loops maintain ___ stability across systemic blood calcium concentrations.",
+    "exampleZh": "精密的內分泌激素反饋調節閉環，晝夜不息地捍衛著人體血鈣濃度神經生理動態平衡的無上尊嚴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "生物體為維持內部微環境生理指標動態穩定而進行的體內平衡的",
+        "examples": [
+          {
+            "en": "Hypothalamic nuclei launch homeostatic autonomic reflexes to preserve normal blood pressure.",
+            "zh": "下視丘神經核團緊急扣動體內平衡自主神經反射扳機，以將劇烈波動的血壓拉回安全生理警戒線之內。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "機體自我調控之動態平衡的",
+        "examples": [
+          {
+            "en": "Endocrine feedback loops maintain ___ stability across systemic blood calcium concentrations.",
+            "zh": "精密的內分泌激素反饋調節閉環，晝夜不息地捍衛著人體血鈣濃度神經生理動態平衡的無上尊嚴。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEGENERACY": {
+    "pos": "n.",
+    "meaning": "異構同功之生物簡併性",
+    "example": "Structural ___ across neural ensembles imparts exceptional computational fault tolerance.",
+    "exampleZh": "神經元集群在微觀拓撲上的異構簡併性，為生物大腦注入了傳統矽基晶片望塵莫及的超強容錯抗損韌性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "生物學中不同結構的神經元網絡或生化通路能夠執行完全相同功能的簡併性",
+        "examples": [
+          {
+            "en": "Neural degeneracy ensures that motor circuits can produce identical behaviors via diverse pathways.",
+            "zh": "神經系統深邃的「簡併性（Degeneracy）」架構，確保了運動迴路即使遭受局域微創傷，亦能動員不同旁路完成相同指令。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "異構同功之生物簡併性",
+        "examples": [
+          {
+            "en": "Structural ___ across neural ensembles imparts exceptional computational fault tolerance.",
+            "zh": "神經元集群在微觀拓撲上的異構簡併性，為生物大腦注入了傳統矽基晶片望塵莫及的超強容錯抗損韌性。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERNEURON": {
+    "pos": "n.",
+    "meaning": "迴路調控之中間神經元",
+    "example": "Optogenetic excitation of the local ___ terminated spontaneous epileptic bursting in seconds.",
+    "exampleZh": "利用光學信號特異性激發局域中間神經元，在數秒鐘之內便強行撲滅了皮層突發的異常癲癇暴風雨。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在大腦局部神經迴路中承擔訊號整合、側抑制與節律振盪調控的中間神經元",
+        "examples": [
+          {
+            "en": "Cortical parvalbumin interneuron networks generate rhythmic gamma band local field potentials.",
+            "zh": "大腦皮層小白蛋白陽性中間神經元（Interneuron）網絡，主導孕育了高頻伽瑪頻段的局部場電位律動。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "迴路調控之中間神經元",
+        "examples": [
+          {
+            "en": "Optogenetic excitation of the local ___ terminated spontaneous epileptic bursting in seconds.",
+            "zh": "利用光學信號特異性激發局域中間神經元，在數秒鐘之內便強行撲滅了皮層突發的異常癲癇暴風雨。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOMATOSENSORY": {
+    "pos": "adj.",
+    "meaning": "感知觸覺本體之軀體感覺的",
+    "example": "Tactile signals from fingertips travel along dorsal columns to reach the primary ___ cortex.",
+    "exampleZh": "指尖撫摸絲綢時激發的微弱觸覺電訊號，沿著脊髓後索神經束疾馳而上，精準匯入大腦初級軀體感覺皮層。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "接收並處理來自全身皮膚觸覺、溫度感、痛感與深層本體感覺的軀體感覺的",
+        "examples": [
+          {
+            "en": "The primary somatosensory cortex contains an orderly topographic homunculus of the human body.",
+            "zh": "人類初級軀體感覺皮層表面，宛如縮微倒影般精密排列著覆蓋全身各部位的「感覺皮層小人」神經拓撲投影。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "感知觸覺本體之軀體感覺的",
+        "examples": [
+          {
+            "en": "Tactile signals from fingertips travel along dorsal columns to reach the primary ___ cortex.",
+            "zh": "指尖撫摸絲綢時激發的微弱觸覺電訊號，沿著脊髓後索神經束疾馳而上，精準匯入大腦初級軀體感覺皮層。"
+          }
+        ]
+      }
+    ]
+  },
+  "ELECTROPHYSIOLOGY": {
+    "pos": "n.",
+    "meaning": "探秘膜電位之細胞電生理學",
+    "example": "The discovery of patch clamp ___ revolutionized pharmacological ion channel drug discovery.",
+    "exampleZh": "膜片鉗電生理學技術的橫空出世，徹底引爆並重塑了全球離子通道標靶藥物研發的現代革命。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "應用微電極與生物放大器量測細胞膜電位與離子通道電流的電生理學",
+        "examples": [
+          {
+            "en": "Intracellular electrophysiology reveals subtle subthreshold postsynaptic voltage fluctuations.",
+            "zh": "高靈敏度細胞內電生理學（Electrophysiology）記錄，能將突觸後膜哪怕幾毫伏的閾下微弱電壓振盪精準還原。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "探秘膜電位之細胞電生理學",
+        "examples": [
+          {
+            "en": "The discovery of patch clamp ___ revolutionized pharmacological ion channel drug discovery.",
+            "zh": "膜片鉗電生理學技術的橫空出世，徹底引爆並重塑了全球離子通道標靶藥物研發的現代革命。"
+          }
+        ]
+      }
+    ]
+  },
+  "HABITUATION": {
+    "pos": "n.",
+    "meaning": "過濾冗餘刺激之習慣化",
+    "example": "Repetitive harmless tactile stimulation elicited rapid behavioral ___ in the marine snail.",
+    "exampleZh": "連續溫和而無害的機械輕觸刺激，在海兔體內迅速誘導出了經典的行為學刺激習慣化反應。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "當微弱重複刺激不具備獎勵或威脅意義時有機體對其反應強度逐步減弱的習慣化",
+        "examples": [
+          {
+            "en": "Sensory habituation prevents the conscious mind from being overwhelmed by background noise.",
+            "zh": "感官習慣化（Habituation）是一層智慧的認知保護傘，防止我們的大腦意識被充斥在背景中的微弱冗餘噪聲徹底淹沒。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "過濾冗餘刺激之習慣化",
+        "examples": [
+          {
+            "en": "Repetitive harmless tactile stimulation elicited rapid behavioral ___ in the marine snail.",
+            "zh": "連續溫和而無害的機械輕觸刺激，在海兔體內迅速誘導出了經典的行為學刺激習慣化反應。"
+          }
+        ]
+      }
+    ]
+  },
+  "POTENTIATION": {
+    "pos": "n.",
+    "meaning": "高頻電刺激引發突觸傳遞強度與反應幅度持久顯著增強的長程增強作用",
+    "example": "Long term potentiation remains the gold standard experimental model for memory formation.",
+    "exampleZh": "突觸長程增強作用（Potentiation），自發現之日起便始終高居現代記憶形成機制研究的黃金實驗標桿地位。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "高頻電刺激引發突觸傳遞強度與反應幅度持久顯著增強的長程增強作用",
+        "examples": [
+          {
+            "en": "Long term potentiation remains the gold standard experimental model for memory formation.",
+            "zh": "突觸長程增強作用（Potentiation），自發現之日起便始終高居現代記憶形成機制研究的黃金實驗標桿地位。"
+          }
+        ]
+      }
+    ]
+  },
+  "NEUROTRANSMITTER": {
+    "pos": "n.",
+    "meaning": "由突觸前膜釋放並與突觸後膜受體特異性結合以傳遞化學神經衝動的神經傳導物質",
+    "example": "Acetylcholine acts as a critical neurotransmitter mediating neuromuscular muscle contraction.",
+    "exampleZh": "乙醯膽鹼作為至關重要的化學神經傳導物質，在神經肌肉接頭處統率並觸發著全身骨骼肌的強勁收縮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由突觸前膜釋放並與突觸後膜受體特異性結合以傳遞化學神經衝動的神經傳導物質",
+        "examples": [
+          {
+            "en": "Acetylcholine acts as a critical neurotransmitter mediating neuromuscular muscle contraction.",
+            "zh": "乙醯膽鹼作為至關重要的化學神經傳導物質，在神經肌肉接頭處統率並觸發著全身骨骼肌的強勁收縮。"
+          }
+        ]
+      }
+    ]
+  },
+  "COMMAND RESPONSIBILITY INTERNATIONAL CRIMINAL LIABILITY": {
+    "word": "command responsibility international criminal liability",
+    "pos": "phr.",
+    "meaning": "統帥怠於制止部屬暴行之指揮官連帶刑事責任",
+    "example": "The general was convicted on all counts of command responsibility international criminal liability.",
+    "exampleZh": "這位驕橫的陸軍上將最終在海牙法庭被定罪，承擔起指揮官過失與連帶刑事責任的終身監禁懲罰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "統帥怠於制止部屬暴行之指揮官連帶刑事責任",
+        "examples": [
+          {
+            "en": "The general was convicted on all counts of command responsibility international criminal liability.",
+            "zh": "這位驕橫的陸軍上將最終在海牙法庭被定罪，承擔起指揮官過失與連帶刑事責任的終身監禁懲罰。"
+          }
+        ]
+      }
+    ]
+  },
+  "REBUS SIC STANTIBUS TREATY TERMINATION": {
+    "word": "rebus sic stantibus treaty termination",
+    "pos": "phr.",
+    "meaning": "情勢顛覆劇變廢止條約之情勢變更原則",
+    "example": "The state successfully invoked rebus sic stantibus treaty termination following the sudden tectonic event.",
+    "exampleZh": "在遭遇前所未有的地質板塊巨變後，該國成功援引情勢變更原則宣布廢止原本劃界的舊條約。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "情勢顛覆劇變廢止條約之情勢變更原則",
+        "examples": [
+          {
+            "en": "The state successfully invoked rebus sic stantibus treaty termination following the sudden tectonic event.",
+            "zh": "在遭遇前所未有的地質板塊巨變後，該國成功援引情勢變更原則宣布廢止原本劃界的舊條約。"
+          }
+        ]
+      }
+    ]
+  },
+  "ERGA OMNES SOVEREIGN OBLIGATION ENFORCEMENT": {
+    "word": "erga omnes sovereign obligation enforcement",
+    "pos": "phr.",
+    "meaning": "全人類共同捍衛無可割裂之對一切義務執行",
+    "example": "Small island nations joined in erga omnes sovereign obligation enforcement against massive polluters.",
+    "exampleZh": "瀕臨淹沒的小島國聯合體依託對一切義務的法理鋼盾，在國際法院向溫室氣體超級排放國提起世紀追訴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全人類共同捍衛無可割裂之對一切義務執行",
+        "examples": [
+          {
+            "en": "Small island nations joined in erga omnes sovereign obligation enforcement against massive polluters.",
+            "zh": "瀕臨淹沒的小島國聯合體依託對一切義務的法理鋼盾，在國際法院向溫室氣體超級排放國提起世紀追訴。"
+          }
+        ]
+      }
+    ]
+  },
+  "MARTENS CLAUSE HUMANITARIAN PROTECTION": {
+    "word": "martens clause humanitarian protection",
+    "pos": "phr.",
+    "meaning": "無條約情境下守護良知底線之馬爾頓斯條款庇護",
+    "example": "Jurists relied on martens clause humanitarian protection to forbid automated civilian targeting algorithms.",
+    "exampleZh": "國際法泰斗毅然搬出馬爾頓斯條款的人道良知庇護盾牌，將AI自主屠戮平民的致命演算法明文打入地獄。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無條約情境下守護良知底線之馬爾頓斯條款庇護",
+        "examples": [
+          {
+            "en": "Jurists relied on martens clause humanitarian protection to forbid automated civilian targeting algorithms.",
+            "zh": "國際法泰斗毅然搬出馬爾頓斯條款的人道良知庇護盾牌，將AI自主屠戮平民的致命演算法明文打入地獄。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXHAUSTION OF LOCAL REMEDIES REQUIREMENT": {
+    "word": "exhaustion of local remedies requirement",
+    "pos": "phr.",
+    "meaning": "叩響海牙大門前必須窮盡地方法院救濟之先行義務",
+    "example": "The international lawsuit was dismissed for ignoring the exhaustion of local remedies requirement.",
+    "exampleZh": "該起涉資百億的跨國仲裁訴訟因粗暴跳過國內救濟窮盡原則的法定前置程序，被裁判官當庭裁定不予受理。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "叩響海牙大門前必須窮盡地方法院救濟之先行義務",
+        "examples": [
+          {
+            "en": "The international lawsuit was dismissed for ignoring the exhaustion of local remedies requirement.",
+            "zh": "該起涉資百億的跨國仲裁訴訟因粗暴跳過國內救濟窮盡原則的法定前置程序，被裁判官當庭裁定不予受理。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRE EMPTIVE SELF DEFENSE CAROLINE TEST": {
+    "word": "pre emptive self defense caroline test",
+    "pos": "phr.",
+    "meaning": "命懸一線別無他法之卡羅琳自衛權黃金準則",
+    "example": "Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.",
+    "exampleZh": "國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "命懸一線別無他法之卡羅琳自衛權黃金準則",
+        "examples": [
+          {
+            "en": "Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.",
+            "zh": "國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。"
+          }
+        ]
+      }
+    ]
+  },
+  "DOLUS SPECIALIS GENOCIDAL INTENT BURDEN": {
+    "word": "dolus specialis genocidal intent burden",
+    "pos": "phr.",
+    "meaning": "證明有組織斬草除根之種族滅絕特別意圖舉證責任",
+    "example": "The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.",
+    "exampleZh": "檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "證明有組織斬草除根之種族滅絕特別意圖舉證責任",
+        "examples": [
+          {
+            "en": "The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.",
+            "zh": "檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIRECT PARTICIPATION IN HOSTILITIES LOSS": {
+    "word": "direct participation in hostilities loss",
+    "pos": "phr.",
+    "meaning": "平民持槍開火瞬間喪失豁免之直接參與敵對行動",
+    "example": "Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.",
+    "exampleZh": "平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "平民持槍開火瞬間喪失豁免之直接參與敵對行動",
+        "examples": [
+          {
+            "en": "Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.",
+            "zh": "平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。"
+          }
+        ]
+      }
+    ]
+  },
+  "BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION": {
+    "word": "biological weapons non proliferation verification",
+    "pos": "phr.",
+    "meaning": "銷毀末日炭疽病毒庫之生物武器不擴散查核",
+    "example": "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.",
+    "exampleZh": "聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "銷毀末日炭疽病毒庫之生物武器不擴散查核",
+        "examples": [
+          {
+            "en": "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.",
+            "zh": "聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESTITUTIO IN INTEGRUM FULL DAMAGES": {
+    "word": "restitutio in integrum full damages",
+    "pos": "phr.",
+    "meaning": "重回侵權從未發生狀態之完全恢復原狀最高損害賠償",
+    "example": "The tribunal awarded billions under the historic restitutio in integrum full damages standard.",
+    "exampleZh": "國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "重回侵權從未發生狀態之完全恢復原狀最高損害賠償",
+        "examples": [
+          {
+            "en": "The tribunal awarded billions under the historic restitutio in integrum full damages standard.",
+            "zh": "國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。"
+          }
+        ]
+      }
+    ]
+  },
+  "BELLIGERENCE": {
+    "pos": "n.",
+    "meaning": "處於交戰之戰時狀態",
+    "example": "Recognizing a rebel faction's lawful ___ elevates the conflict from civil unrest to war.",
+    "exampleZh": "在國際法上承認叛軍武裝的合法交戰地位，將一場國內動亂實質性躍升為受日內瓦公約管轄的正式戰爭。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家間處於公開武裝衝突對抗的交戰狀態以及由此衍生的一整套戰時法權力",
+        "examples": [
+          {
+            "en": "Declaring formal belligerence invokes the comprehensive apparatus of international humanitarian law.",
+            "zh": "正式向全世界宣佈進入交戰狀態（Belligerence），即刻啟動了國際人道法龐大而嚴密的戰時公約法網。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "處於交戰之戰時狀態",
+        "examples": [
+          {
+            "en": "Recognizing a rebel faction's lawful ___ elevates the conflict from civil unrest to war.",
+            "zh": "在國際法上承認叛軍武裝的合法交戰地位，將一場國內動亂實質性躍升為受日內瓦公約管轄的正式戰爭。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERNMENT": {
+    "pos": "n.",
+    "meaning": "預防性戰時行政拘押",
+    "example": "The occupying army violated conventions by subjecting non combatant journalists to indefinite ___.",
+    "exampleZh": "非法占領軍悍然將戰地中立記者投入無休止的行政拘押集中營，公然觸犯了日內瓦公約重罪條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "交戰國在武裝衝突期間出於重大安全防範需要對敵國僑民實施的合法行政拘留拘押",
+        "examples": [
+          {
+            "en": "Administrative internment of civilian nationals requires individual periodic judicial review.",
+            "zh": "交戰當局在戰時對敵國僑民實施的預防性行政拘押（Internment），必須接受獨立司法機構嚴格的定期合規審查。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "預防性戰時行政拘押",
+        "examples": [
+          {
+            "en": "The occupying army violated conventions by subjecting non combatant journalists to indefinite ___.",
+            "zh": "非法占領軍悍然將戰地中立記者投入無休止的行政拘押集中營，公然觸犯了日內瓦公約重罪條款。"
+          }
+        ]
+      }
+    ]
+  },
+  "SANCTITY": {
+    "pos": "n.",
+    "meaning": "不可動搖之神聖性",
+    "example": "The landmark judgment reaffirmed the sacred ___ of civilian life amidst intense urban warfare.",
+    "exampleZh": "海牙法庭的這份歷史性判決書，在殘酷的巷戰血火中再次擦亮了無辜平民生命神聖不可侵犯的文明之光。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "神聖不可侵犯性，特別指條約必須嚴格恪守以及外交場所與平民生命的神聖地位",
+        "examples": [
+          {
+            "en": "Pacta sunt servanda affirms the absolute moral and legal sanctity of freely negotiated treaties.",
+            "zh": "「條約必須信守（Pacta sunt servanda）」的拉丁法諺，鏗鏘宣告了自由協商締結之國際條約神聖不可侵犯的至高權威。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "不可動搖之神聖性",
+        "examples": [
+          {
+            "en": "The landmark judgment reaffirmed the sacred ___ of civilian life amidst intense urban warfare.",
+            "zh": "海牙法庭的這份歷史性判決書，在殘酷的巷戰血火中再次擦亮了無辜平民生命神聖不可侵犯的文明之光。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRIBUNAL": {
+    "pos": "n.",
+    "meaning": "審判戰犯之國際特設法庭",
+    "example": "The international criminal ___ sentenced the deposed dictator to life imprisonment for crimes against humanity.",
+    "exampleZh": "聯合國特設國際刑事法庭當庭宣判：判處倒台的軍事獨裁者無期徒刑，以告慰被反人類罪荼毒的數萬亡魂。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為審判特定重大國際罪行或商事仲裁專門設立的特設或常設法庭與專門裁判所",
+        "examples": [
+          {
+            "en": "The ad hoc criminal tribunal prosecuted top military commanders for atrocious ethnic cleansing.",
+            "zh": "這座聯合國特設國際刑事法庭（Tribunal），以鋼鐵意志將犯下令人髮指的種族清洗罪行的軍政巨頭全數送上審判席。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "審判戰犯之國際特設法庭",
+        "examples": [
+          {
+            "en": "The international criminal ___ sentenced the deposed dictator to life imprisonment for crimes against humanity.",
+            "zh": "聯合國特設國際刑事法庭當庭宣判：判處倒台的軍事獨裁者無期徒刑，以告慰被反人類罪荼毒的數萬亡魂。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACCESSION": {
+    "pos": "n.",
+    "meaning": "未參與條約原始起草簽署的主權國家隨後正式宣佈加入並受該多邊條約約束的加入程序",
+    "example": "The newly independent sovereign state announced its formal accession to the Geneva Conventions.",
+    "exampleZh": "這個剛剛宣告獨立的年輕主權國家，莊嚴向聯合國與瑞士聯邦委員會遞交了全面加入日內瓦公約的正式文書。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "未參與條約原始起草簽署的主權國家隨後正式宣佈加入並受該多邊條約約束的加入程序",
+        "examples": [
+          {
+            "en": "The newly independent sovereign state announced its formal accession to the Geneva Conventions.",
+            "zh": "這個剛剛宣告獨立的年輕主權國家，莊嚴向聯合國與瑞士聯邦委員會遞交了全面加入日內瓦公約的正式文書。"
+          }
+        ]
+      }
+    ]
+  },
+  "GATE ALL AROUND NANOSHEET ARCHITECTURE": {
+    "word": "gate all around nanosheet architecture",
+    "pos": "phr.",
+    "meaning": "徹底杜絕短通道漏電之全環繞閘極奈米片架構",
+    "example": "The industry embraced the gate all around nanosheet architecture to push Moore's Law further.",
+    "exampleZh": "全球晶片製造全產業鏈集體擁抱全環繞閘極奈米片架構，以無畏姿態將摩爾定律再次推向極限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "徹底杜絕短通道漏電之全環繞閘極奈米片架構",
+        "examples": [
+          {
+            "en": "The industry embraced the gate all around nanosheet architecture to push Moore's Law further.",
+            "zh": "全球晶片製造全產業鏈集體擁抱全環繞閘極奈米片架構，以無畏姿態將摩爾定律再次推向極限。"
+          }
+        ]
+      }
+    ]
+  },
+  "BACKSIDE POWER DELIVERY NETWORK DECOUPLING": {
+    "word": "backside power delivery network decoupling",
+    "pos": "phr.",
+    "meaning": "電壓降歸零供電走線移至晶圓背部之背面供電",
+    "example": "Implementing backside power delivery network decoupling eliminated routing congestion on the front.",
+    "exampleZh": "背面供電網路技術的革命性解耦實裝，徹底掃清了晶圓正面信號層密密麻麻金屬走線的擁塞噩夢。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "電壓降歸零供電走線移至晶圓背部之背面供電",
+        "examples": [
+          {
+            "en": "Implementing backside power delivery network decoupling eliminated routing congestion on the front.",
+            "zh": "背面供電網路技術的革命性解耦實裝，徹底掃清了晶圓正面信號層密密麻麻金屬走線的擁塞噩夢。"
+          }
+        ]
+      }
+    ]
+  },
+  "WAFER TO WAFER HYBRID DIRECT BONDING": {
+    "word": "wafer to wafer hybrid direct bonding",
+    "pos": "phr.",
+    "meaning": "無焊球分子共形熔融之晶圓級混合鍵合技術",
+    "example": "The 3D image sensor achieved sub micron pitch via wafer to wafer hybrid direct bonding.",
+    "exampleZh": "新一代頂級 3D 影像感測器依託晶圓對晶圓混合鍵合技術，達成了亞微米級接點間距的立體神蹟。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無焊球分子共形熔融之晶圓級混合鍵合技術",
+        "examples": [
+          {
+            "en": "The 3D image sensor achieved sub micron pitch via wafer to wafer hybrid direct bonding.",
+            "zh": "新一代頂級 3D 影像感測器依託晶圓對晶圓混合鍵合技術，達成了亞微米級接點間距的立體神蹟。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHEMICAL MECHANICAL PLANARIZATION UNIFORMITY": {
+    "word": "chemical mechanical planarization uniformity",
+    "pos": "phr.",
+    "meaning": "拋光晶圓至原子級平整之化學機械研磨拋光",
+    "example": "Atomic level chemical mechanical planarization uniformity is mandatory for multi layer lithography.",
+    "exampleZh": "原子級絕對平整的化學機械研磨拋光均勻度，是多層複雜光刻微影製程中不容絲毫妥協的鋼鐵前提。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拋光晶圓至原子級平整之化學機械研磨拋光",
+        "examples": [
+          {
+            "en": "Atomic level chemical mechanical planarization uniformity is mandatory for multi layer lithography.",
+            "zh": "原子級絕對平整的化學機械研磨拋光均勻度，是多層複雜光刻微影製程中不容絲毫妥協的鋼鐵前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "FOREIGN DIRECT PRODUCT RULE EXPORT LICENSING": {
+    "word": "foreign direct product rule export licensing",
+    "pos": "phr.",
+    "meaning": "動用長臂管制封鎖先進晶片之外國直接產品原則",
+    "example": "The regulatory agency tightened foreign direct product rule export licensing to prevent technology leaks.",
+    "exampleZh": "監管當局全面收緊外國直接產品原則長臂審批絞索，以銅牆鐵壁杜絕先進硬核技術流入威權軍工體系。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "動用長臂管制封鎖先進晶片之外國直接產品原則",
+        "examples": [
+          {
+            "en": "The regulatory agency tightened foreign direct product rule export licensing to prevent technology leaks.",
+            "zh": "監管當局全面收緊外國直接產品原則長臂審批絞索，以銅牆鐵壁杜絕先進硬核技術流入威權軍工體系。"
+          }
+        ]
+      }
+    ]
+  },
+  "ATOMIC LAYER ETCHING DETERMINISTIC CONTROL": {
+    "word": "atomic layer etching deterministic control",
+    "pos": "phr.",
+    "meaning": "單原子層逐層精準剝離之原子層蝕刻確定性控制",
+    "example": "Engineers leveraged atomic layer etching deterministic control to pattern sub five nanometer gates.",
+    "exampleZh": "工藝巨擘們利用原子層蝕刻確定性控制的超凡精度，在次五奈米深處雕刻出無可挑剔的完美垂直閘極。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "單原子層逐層精準剝離之原子層蝕刻確定性控制",
+        "examples": [
+          {
+            "en": "Engineers leveraged atomic layer etching deterministic control to pattern sub five nanometer gates.",
+            "zh": "工藝巨擘們利用原子層蝕刻確定性控制的超凡精度，在次五奈米深處雕刻出無可挑剔的完美垂直閘極。"
+          }
+        ]
+      }
+    ]
+  },
+  "STOCHASTIC LINE EDGE ROUGHNESS MITIGATION": {
+    "word": "stochastic line edge roughness mitigation",
+    "pos": "phr.",
+    "meaning": "抑制量子光子散粒雜訊之線邊粗糙度消除對策",
+    "example": "Advanced resist chemistry enabled significant stochastic line edge roughness mitigation.",
+    "exampleZh": "特種化學光阻聚合物的分子級革命，為平息極紫外光子隨機散粒雜訊導致的線邊粗糙度立下了奇功。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "抑制量子光子散粒雜訊之線邊粗糙度消除對策",
+        "examples": [
+          {
+            "en": "Advanced resist chemistry enabled significant stochastic line edge roughness mitigation.",
+            "zh": "特種化學光阻聚合物的分子級革命，為平息極紫外光子隨機散粒雜訊導致的線邊粗糙度立下了奇功。"
+          }
+        ]
+      }
+    ]
+  },
+  "CO PACKAGED OPTICS SILICON PHOTONICS INTEGRATION": {
+    "word": "co packaged optics silicon photonics integration",
+    "pos": "phr.",
+    "meaning": "光子直驅取代發熱銅線之光電共封裝矽光子整合",
+    "example": "Hyperscale datacenters embraced co packaged optics silicon photonics integration to slash power.",
+    "exampleZh": "全球超算資料中心大舉換裝光電共封裝矽光子整合模組，將 AI 集群內部互連功耗腰斬過半。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "光子直驅取代發熱銅線之光電共封裝矽光子整合",
+        "examples": [
+          {
+            "en": "Hyperscale datacenters embraced co packaged optics silicon photonics integration to slash power.",
+            "zh": "全球超算資料中心大舉換裝光電共封裝矽光子整合模組，將 AI 集群內部互連功耗腰斬過半。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHIP FOUR ALLIANCE SEMICONDUCTOR RESILIENCE": {
+    "word": "chip four alliance semiconductor resilience",
+    "pos": "phr.",
+    "meaning": "美日韓台四大半導體巨頭締結之晶片四方同盟",
+    "example": "Diplomats convened to formalize the chip four alliance semiconductor resilience framework.",
+    "exampleZh": "各國特使齊聚一堂正式簽署晶片四方同盟戰略框架，將民主世界最核心的半導體製造命脈緊緊銲死在一起。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "美日韓台四大半導體巨頭締結之晶片四方同盟",
+        "examples": [
+          {
+            "en": "Diplomats convened to formalize the chip four alliance semiconductor resilience framework.",
+            "zh": "各國特使齊聚一堂正式簽署晶片四方同盟戰略框架，將民主世界最核心的半導體製造命脈緊緊銲死在一起。"
+          }
+        ]
+      }
+    ]
+  },
+  "WIDE BANDGAP SEMICONDUCTOR POWER CONVERSION": {
+    "word": "wide bandgap semiconductor power conversion",
+    "pos": "phr.",
+    "meaning": "耐受千伏高壓熱力學穩定之寬能隙半導體功率轉換",
+    "example": "Electric supercars rely on wide bandgap semiconductor power conversion for lightning fast charging.",
+    "exampleZh": "新一代純電百萬超跑全線搭載寬能隙半導體碳化矽功率變流模組，達成了驚豔世人的三分鐘極限超充。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "耐受千伏高壓熱力學穩定之寬能隙半導體功率轉換",
+        "examples": [
+          {
+            "en": "Electric supercars rely on wide bandgap semiconductor power conversion for lightning fast charging.",
+            "zh": "新一代純電百萬超跑全線搭載寬能隙半導體碳化矽功率變流模組，達成了驚豔世人的三分鐘極限超充。"
+          }
+        ]
+      }
+    ]
+  },
+  "FABRICATION": {
+    "pos": "n.",
+    "meaning": "微納晶片之晶圓製造製程",
+    "example": "Front end semiconductor ___ accounts for seventy percent of the total cost of chip production.",
+    "exampleZh": "晶片前段晶圓製造製程（Fabrication），在整顆微晶片全流程綜合成本中佔據了高達七成的壓倒性比重。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在尖端無塵室環境中由數百道微觀工序將矽片打造成微晶片的半導體製造製程",
+        "examples": [
+          {
+            "en": "Wafer fabrication demands ultra clean chemical reagents and vibration isolated foundations.",
+            "zh": "晶圓製造製程（Fabrication）對工業超純化學試劑的潔淨度與地質抗震基礎有著近乎病態的苛刻要求。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "微納晶片之晶圓製造製程",
+        "examples": [
+          {
+            "en": "Front end semiconductor ___ accounts for seventy percent of the total cost of chip production.",
+            "zh": "晶片前段晶圓製造製程（Fabrication），在整顆微晶片全流程綜合成本中佔據了高達七成的壓倒性比重。"
+          }
+        ]
+      }
+    ]
+  },
+  "PHOTOMASK": {
+    "pos": "n.",
+    "meaning": "投射電路之高精度光罩",
+    "example": "Any microscopic dust particle landing on an unprotected ___ creates millions of defective dies.",
+    "exampleZh": "哪怕只有一顆看不見的微觀塵埃落在未受保護的光罩（Photomask）表面，都會連續催生數百萬顆報廢晶片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "刻有高精度積體電路版圖以供光刻微影機將圖案無損投射在晶圓上的石英光罩",
+        "examples": [
+          {
+            "en": "Fabricating an extreme ultraviolet photomask requires defect free multilayer molybdenum silicon mirrors.",
+            "zh": "製作一片合格的極紫外石英光罩（Photomask），仰賴在基底上沉積數十層零瑕疵的鉬矽交替反射薄膜。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "投射電路之高精度光罩",
+        "examples": [
+          {
+            "en": "Any microscopic dust particle landing on an unprotected ___ creates millions of defective dies.",
+            "zh": "哪怕只有一顆看不見的微觀塵埃落在未受保護的光罩（Photomask）表面，都會連續催生數百萬顆報廢晶片。"
+          }
+        ]
+      }
+    ]
+  },
+  "NANOSHEET": {
+    "pos": "n.",
+    "meaning": "全環繞閘極之超薄奈米片",
+    "example": "The transition from FinFET to gate all around ___ represents the biggest architectural shift in a decade.",
+    "exampleZh": "從立體鰭式電晶體向全環繞閘極奈米片（Nanosheet）的全面跨越，是全球半導體過去十年最波瀾壯闊的架構革命。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "全環繞閘極電晶體中多層水平堆疊作為導電通道的超薄奈米矽片結構",
+        "examples": [
+          {
+            "en": "Stacking three silicon nanosheet channels vertically maximizes drive currents while minimizing leakage.",
+            "zh": "將三層奈米矽片（Nanosheet）通道在垂直空間重疊排列，能在將漏電流壓制至極限的同時實現驅動電流倍增。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "全環繞閘極之超薄奈米片",
+        "examples": [
+          {
+            "en": "The transition from FinFET to gate all around ___ represents the biggest architectural shift in a decade.",
+            "zh": "從立體鰭式電晶體向全環繞閘極奈米片（Nanosheet）的全面跨越，是全球半導體過去十年最波瀾壯闊的架構革命。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISLOCATION": {
+    "pos": "n.",
+    "meaning": "晶格缺陷之微觀原子位錯",
+    "example": "X ray topography inspection revealed severe crystal ___ networks running through the substrate.",
+    "exampleZh": "高分辨率 X 光拓撲形貌無損檢測震撼揭示：整片晶圓基底內部交織盤踞著密密麻麻的晶格原子位錯缺陷。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "晶體生長或薄膜沉積過程中發生的晶格原子排列錯位與結晶線缺陷",
+        "examples": [
+          {
+            "en": "Basal plane dislocation defects in silicon carbide severely degrade high voltage device lifetime.",
+            "zh": "碳化矽單晶生長中的基面位錯（Dislocation）晶格缺陷，會大幅縮短高壓車規級功率元件的使用壽命。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "晶格缺陷之微觀原子位錯",
+        "examples": [
+          {
+            "en": "X ray topography inspection revealed severe crystal ___ networks running through the substrate.",
+            "zh": "高分辨率 X 光拓撲形貌無損檢測震撼揭示：整片晶圓基底內部交織盤踞著密密麻麻的晶格原子位錯缺陷。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERPOSER": {
+    "pos": "n.",
+    "meaning": "立體封裝之高密度中介層",
+    "example": "The massive AI chip is seated atop a passive silicon ___ measuring twice the reticle limit.",
+    "exampleZh": "這顆龐大無比的 AI 旗艦晶片端坐在一座面積超過光罩極限兩倍的巨型超高密度矽中介層（Interposer）之上。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在先進立體封裝中為多顆小晶粒之間提供超高密度微觀金屬佈線互連的微型中介層",
+        "examples": [
+          {
+            "en": "The silicon interposer routes thousands of micro connections between the GPU and HBM memory.",
+            "zh": "高精度矽中介層（Interposer），在 AI 運算主晶片與高頻寬記憶體之間編織起數以萬計的超密集訊號微管線。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "立體封裝之高密度中介層",
+        "examples": [
+          {
+            "en": "The massive AI chip is seated atop a passive silicon ___ measuring twice the reticle limit.",
+            "zh": "這顆龐大無比的 AI 旗艦晶片端坐在一座面積超過光罩極限兩倍的巨型超高密度矽中介層（Interposer）之上。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLANARIZATION": {
+    "pos": "n.",
+    "meaning": "晶圓原子級拋光平坦化",
+    "example": "Inadequate surface ___ results in severe photolithographic focal depth errors during printing.",
+    "exampleZh": "表面化學研磨拋光平坦化（Planarization）稍有不逮，便會在接下來的光刻曝光中引發毀滅性的焦點深度失焦。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用化學腐蝕與機械磨削協同作用將晶圓表面起伏研磨至絕對平整的平坦化製程",
+        "examples": [
+          {
+            "en": "Chemical mechanical planarization achieves sub nanometer surface planarity across the entire disc.",
+            "zh": "化學機械平坦化製程（Planarization），在直徑 300 毫米的巨大晶圓表面達成了亞奈米級的鏡面平整度。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "晶圓原子級拋光平坦化",
+        "examples": [
+          {
+            "en": "Inadequate surface ___ results in severe photolithographic focal depth errors during printing.",
+            "zh": "表面化學研磨拋光平坦化（Planarization）稍有不逮，便會在接下來的光刻曝光中引發毀滅性的焦點深度失焦。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIELECTRIC": {
+    "pos": "adj.",
+    "meaning": "隔絕漏電之高阻抗電介質的",
+    "example": "Engineers deposited an ultrathin conformal ___ barrier to prevent copper migration into the silicon.",
+    "exampleZh": "工藝工程師精心沉積了一層超薄保形高阻抗電介質（Dielectric）阻擋層，徹底截斷了金屬銅向矽基體的有害擴散。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在電場作用下極化而不導電、用於晶體管絕緣層與電容介質的高阻抗電介質的",
+        "examples": [
+          {
+            "en": "High-k dielectric materials like hafnium oxide replaced legacy silicon dioxide to reduce gate tunneling.",
+            "zh": "以二氧化鉿為代表的高介電常數（Dielectric）材料徹底取代了傳統二氧化矽，將微觀閘極量子穿隧漏電一網打盡。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "隔絕漏電之高阻抗電介質的",
+        "examples": [
+          {
+            "en": "Engineers deposited an ultrathin conformal ___ barrier to prevent copper migration into the silicon.",
+            "zh": "工藝工程師精心沉積了一層超薄保形高阻抗電介質（Dielectric）阻擋層，徹底截斷了金屬銅向矽基體的有害擴散。"
+          }
+        ]
+      }
+    ]
+  },
+  "LITHOGRAPHY": {
+    "pos": "n.",
+    "meaning": "光波雕琢之極紫外光刻機",
+    "example": "The export ban on extreme ultraviolet ___ crippled the adversary's domestic cutting edge node aspirations.",
+    "exampleZh": "極紫外光刻微影機（Lithography）的全球全面禁運，徹底重創了競對實體在先進製程晶片領域的一切戰略野心。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用特定波長光線將掩模版上的微觀電路圖案投影並轉移到晶圓感光層的光刻技術",
+        "examples": [
+          {
+            "en": "The semiconductor industry's relentless scaling relies on constant innovations in deep lithography.",
+            "zh": "半導體工業永不停歇的微縮長征，始終維繫在深紫外與極紫外尖端光刻（Lithography）技術的不斷革新之上。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "光波雕琢之極紫外光刻機",
+        "examples": [
+          {
+            "en": "The export ban on extreme ultraviolet ___ crippled the adversary's domestic cutting edge node aspirations.",
+            "zh": "極紫外光刻微影機（Lithography）的全球全面禁運，徹底重創了競對實體在先進製程晶片領域的一切戰略野心。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERCONNECT": {
+    "pos": "n.",
+    "meaning": "在晶片不同層級或多晶粒之間建立超高速低延遲電氣導通線路的微觀金屬互連導線",
+    "example": "Air gaps were engineered between copper interconnect wires to minimize parasitic capacitance.",
+    "exampleZh": "微電子工藝專家在相鄰銅互連（Interconnect）導線之間巧妙雕琢出空氣隙，將致命的寄生電容損耗壓降到底。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在晶片不同層級或多晶粒之間建立超高速低延遲電氣導通線路的微觀金屬互連導線",
+        "examples": [
+          {
+            "en": "Air gaps were engineered between copper interconnect wires to minimize parasitic capacitance.",
+            "zh": "微電子工藝專家在相鄰銅互連（Interconnect）導線之間巧妙雕琢出空氣隙，將致命的寄生電容損耗壓降到底。"
+          }
+        ]
+      }
+    ]
+  },
+  "DERRIDA POST STRUCTURALIST DIFFERANCE DEFERRAL": {
+    "word": "derrida post structuralist differance deferral",
+    "pos": "phr.",
+    "meaning": "意義無限延宕分化之德希達延異",
+    "example": "The literary critic applied derrida post structuralist differance deferral to unravel metaphysical claims.",
+    "exampleZh": "解構批評大師熟稔操持德希達後結構主義延異利刃，將形上學的絕對真理企圖徹底化為齏粉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意義無限延宕分化之德希達延異",
+        "examples": [
+          {
+            "en": "The literary critic applied derrida post structuralist differance deferral to unravel metaphysical claims.",
+            "zh": "解構批評大師熟稔操持德希達後結構主義延異利刃，將形上學的絕對真理企圖徹底化為齏粉。"
+          }
+        ]
+      }
+    ]
+  },
+  "BAUDRILLARD HYPERREALITY SIMULATION SIMULACRUM": {
+    "word": "baudrillard hyperreality simulation simulacrum",
+    "pos": "phr.",
+    "meaning": "超越真實凌駕客觀之布希亞超真實擬像",
+    "example": "Disneyland stands as the archetypal baudrillard hyperreality simulation simulacrum masking consumer decay.",
+    "exampleZh": "加州迪士尼樂園巍然矗立，成為布希亞超真實擬像世界最登峰造極、掩蓋消費帝國精神荒涼的遮羞布。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "超越真實凌駕客觀之布希亞超真實擬像",
+        "examples": [
+          {
+            "en": "Disneyland stands as the archetypal baudrillard hyperreality simulation simulacrum masking consumer decay.",
+            "zh": "加州迪士尼樂園巍然矗立，成為布希亞超真實擬像世界最登峰造極、掩蓋消費帝國精神荒涼的遮羞布。"
+          }
+        ]
+      }
+    ]
+  },
+  "KANT AESTHETIC SUBLIME TRANSCENDENCE": {
+    "word": "kant aesthetic sublime transcendence",
+    "pos": "phr.",
+    "meaning": "震撼感官激發靈魂敬畏之康德崇高審美",
+    "example": "Gazing upon the violent alpine storm evoked classic kant aesthetic sublime transcendence in the soul.",
+    "exampleZh": "在阿爾卑斯山巔狂風驟雨的雷霆轟鳴前凝眸沉思，在哲人靈魂深處喚醒了無與倫比的康德崇高審美敬畏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "震撼感官激發靈魂敬畏之康德崇高審美",
+        "examples": [
+          {
+            "en": "Gazing upon the violent alpine storm evoked classic kant aesthetic sublime transcendence in the soul.",
+            "zh": "在阿爾卑斯山巔狂風驟雨的雷霆轟鳴前凝眸沉思，在哲人靈魂深處喚醒了無與倫比的康德崇高審美敬畏。"
+          }
+        ]
+      }
+    ]
+  },
+  "LYOTARD POSTMODERN METANARRATIVE COLLAPSE": {
+    "word": "lyotard postmodern metanarrative collapse",
+    "pos": "phr.",
+    "meaning": "烏托邦宏大救贖神話破滅之利奧塔宏大敘事瓦解",
+    "example": "The horrors of Auschwitz precipitated lyotard postmodern metanarrative collapse across western thought.",
+    "exampleZh": "奧斯威辛集中營冒出的滾滾濃煙，向全人類無情宣告了利奧塔後現代宏大敘事救贖神話的徹底幻滅。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "烏托邦宏大救贖神話破滅之利奧塔宏大敘事瓦解",
+        "examples": [
+          {
+            "en": "The horrors of Auschwitz precipitated lyotard postmodern metanarrative collapse across western thought.",
+            "zh": "奧斯威辛集中營冒出的滾滾濃煙，向全人類無情宣告了利奧塔後現代宏大敘事救贖神話的徹底幻滅。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADORNO NEGATIVE DIALECTICS NON IDENTITY": {
+    "word": "adorno negative dialectics non identity",
+    "pos": "phr.",
+    "meaning": "拒絕虛偽和諧揚棄之阿多諾否定辯證法",
+    "example": "Critical theorists drew upon adorno negative dialectics non identity to preserve irreconcilable pain.",
+    "exampleZh": "法蘭克福批判哲人緊緊握住阿多諾否定辯證法的批判武器，矢志捍衛那些無法被抽象同一性強行抹平的具體苦難。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拒絕虛偽和諧揚棄之阿多諾否定辯證法",
+        "examples": [
+          {
+            "en": "Critical theorists drew upon adorno negative dialectics non identity to preserve irreconcilable pain.",
+            "zh": "法蘭克福批判哲人緊緊握住阿多諾否定辯證法的批判武器，矢志捍衛那些無法被抽象同一性強行抹平的具體苦難。"
+          }
+        ]
+      }
+    ]
+  },
+  "LEVINAS ETHICAL FACE OF THE OTHER": {
+    "word": "levinas ethical face of the other",
+    "pos": "phr.",
+    "meaning": "先於存在不可推卸之列維納斯他者之面龐",
+    "example": "Moral responsibility is ignited by the defenseless levinas ethical face of the other demanding justice.",
+    "exampleZh": "當那張無助而赤裸的列維納斯他者之面龐映入眼簾時，沉睡在靈魂深處的無條件道德正義之火被瞬間點燃。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "先於存在不可推卸之列維納斯他者之面龐",
+        "examples": [
+          {
+            "en": "Moral responsibility is ignited by the defenseless levinas ethical face of the other demanding justice.",
+            "zh": "當那張無助而赤裸的列維納斯他者之面龐映入眼簾時，沉睡在靈魂深處的無條件道德正義之火被瞬間點燃。"
+          }
+        ]
+      }
+    ]
+  },
+  "AGAMBEN SOVEREIGN STATE OF EXCEPTION": {
+    "word": "agamben sovereign state of exception",
+    "pos": "phr.",
+    "meaning": "法治暫停公民貶為赤裸生命之阿岡本例外狀態",
+    "example": "Authoritarian regimes weaponize the agamben sovereign state of exception to strip citizens of rights.",
+    "exampleZh": "威權專制政客最擅長將阿岡本例外狀態武器化，以反恐與維穩為由將全體公民合法剝奪為任人宰割的赤裸生命。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "法治暫停公民貶為赤裸生命之阿岡本例外狀態",
+        "examples": [
+          {
+            "en": "Authoritarian regimes weaponize the agamben sovereign state of exception to strip citizens of rights.",
+            "zh": "威權專制政客最擅長將阿岡本例外狀態武器化，以反恐與維穩為由將全體公民合法剝奪為任人宰割的赤裸生命。"
+          }
+        ]
+      }
+    ]
+  },
+  "ZIZEK CYNICAL DISTANCE IDEOLOGICAL FANTASY": {
+    "word": "zizek cynical distance ideological fantasy",
+    "pos": "phr.",
+    "meaning": "深知真相卻依然照做之齊澤克犬儒意識形態幻想",
+    "example": "Consumerism operates not through blind faith but via zizek cynical distance ideological fantasy.",
+    "exampleZh": "當代消費拜物教的生命力絕非源於愚昧盲信，恰恰深植於齊澤克剖析的那套「深知虛妄卻依然照做」的犬儒意識形態幻想。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "深知真相卻依然照做之齊澤克犬儒意識形態幻想",
+        "examples": [
+          {
+            "en": "Consumerism operates not through blind faith but via zizek cynical distance ideological fantasy.",
+            "zh": "當代消費拜物教的生命力絕非源於愚昧盲信，恰恰深植於齊澤克剖析的那套「深知虛妄卻依然照做」的犬儒意識形態幻想。"
+          }
+        ]
+      }
+    ]
+  },
+  "HABERMAS COMMUNICATIVE RATIONALITY DISCOURSE": {
+    "word": "habermas communicative rationality discourse",
+    "pos": "phr.",
+    "meaning": "構建理想言談共識之哈伯瑪斯交往理性話語",
+    "example": "Democratic legitimacy depends on vibrant habermas communicative rationality discourse across public spheres.",
+    "exampleZh": "當代民主法治大廈的合法性基石，唯有在公民社會蓬勃激盪的哈伯瑪斯交往理性論證話語中方能長治久安。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "構建理想言談共識之哈伯瑪斯交往理性話語",
+        "examples": [
+          {
+            "en": "Democratic legitimacy depends on vibrant habermas communicative rationality discourse across public spheres.",
+            "zh": "當代民主法治大廈的合法性基石，唯有在公民社會蓬勃激盪的哈伯瑪斯交往理性論證話語中方能長治久安。"
+          }
+        ]
+      }
+    ]
+  },
+  "FOUCAULT BIOPOLITICAL POPULATION MANAGEMENT": {
+    "word": "foucault biopolitical population management",
+    "pos": "phr.",
+    "meaning": "將全體公民生物體納入規訓統治之生命政治治理",
+    "example": "Epidemic quarantines epitomized foucault biopolitical population management techniques at national scales.",
+    "exampleZh": "遍布全國的嚴密疫情追蹤與全民隔離，集中展示了傅柯生命政治人口微觀規訓治理技術的極致威力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "將全體公民生物體納入規訓統治之生命政治治理",
+        "examples": [
+          {
+            "en": "Epidemic quarantines epitomized foucault biopolitical population management techniques at national scales.",
+            "zh": "遍布全國的嚴密疫情追蹤與全民隔離，集中展示了傅柯生命政治人口微觀規訓治理技術的極致威力。"
+          }
+        ]
+      }
+    ]
+  },
+  "SIMULACRUM": {
+    "pos": "n.",
+    "meaning": "無真實源頭之純粹擬像",
+    "example": "The theme park creates an idealized ___ that tourists enjoy far more than historical reality.",
+    "exampleZh": "這座造價百億的主題樂園精心編織了一座完美無瑕的擬像（Simulacrum），令遊客沉溺其中無法自拔。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "後現代哲學中不再反映任何真實客觀參照物自身成為超真實的仿真擬像",
+        "examples": [
+          {
+            "en": "The casino replica of Venice is a hollow simulacrum that replaces the historical Italian city.",
+            "zh": "賭城大道上那座金碧輝煌的假威尼斯運河，是一座憑空捏造、徹底取代了歷史義大利水城的空洞擬像（Simulacrum）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "無真實源頭之純粹擬像",
+        "examples": [
+          {
+            "en": "The theme park creates an idealized ___ that tourists enjoy far more than historical reality.",
+            "zh": "這座造價百億的主題樂園精心編織了一座完美無瑕的擬像（Simulacrum），令遊客沉溺其中無法自拔。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBLIMITY": {
+    "pos": "n.",
+    "meaning": "震撼靈魂之美學崇高境",
+    "example": "The thundering arctic glacier calving into the ocean stunned onlookers with its terrifying ___.",
+    "exampleZh": "極地萬年冰川轟然崩塌砸入怒海的毀滅性巨響，以攝人心魄的美學崇高（Sublimity）震撼了在場所有目擊者。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "美學中因浩瀚宏偉或毀滅性力量超越感官極限而喚醒崇高震撼與敬畏的精神境界",
+        "examples": [
+          {
+            "en": "The sheer cosmic sublimity of the starry sky inspired Kant's profound philosophical awe.",
+            "zh": "夜空中浩瀚無垠、深不可測的繁星蒼穹，在康德心靈深處激發起了穿越物質世界的美學崇高感（Sublimity）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "震撼靈魂之美學崇高境",
+        "examples": [
+          {
+            "en": "The thundering arctic glacier calving into the ocean stunned onlookers with its terrifying ___.",
+            "zh": "極地萬年冰川轟然崩塌砸入怒海的毀滅性巨響，以攝人心魄的美學崇高（Sublimity）震撼了在場所有目擊者。"
+          }
+        ]
+      }
+    ]
+  },
+  "METANARRATIVE": {
+    "pos": "n.",
+    "meaning": "包羅萬象之歷史宏大敘事",
+    "example": "Contemporary historians eschew the overarching ___ in favor of microhistories of marginalized voices.",
+    "exampleZh": "當代前沿歷史學家徹底拋棄了空洞包羅萬象的宏大敘事（Metanarrative），轉而將目光深情傾注於被遺忘小人物的微觀史料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "後現代主義批判的、試圖用單一歷史目的論或真理神話統攝解釋全人類經驗的宏大敘事",
+        "examples": [
+          {
+            "en": "Postmodern skepticism dismantled the grand metanarrative of uninterrupted human moral progress.",
+            "zh": "後現代主義深刻的懷疑鋒芒，將啟蒙運動以來構築的那套人類道德必然不斷進步的宏大敘事（Metanarrative）徹底瓦解。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "包羅萬象之歷史宏大敘事",
+        "examples": [
+          {
+            "en": "Contemporary historians eschew the overarching ___ in favor of microhistories of marginalized voices.",
+            "zh": "當代前沿歷史學家徹底拋棄了空洞包羅萬象的宏大敘事（Metanarrative），轉而將目光深情傾注於被遺忘小人物的微觀史料。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERSUBJECTIVE": {
+    "pos": "adj.",
+    "meaning": "心靈互認之互為主體的",
+    "example": "True human empathy requires establishing an ___ bond where both parties feel mutually understood.",
+    "exampleZh": "真正觸及靈魂的人類共情，必須構築起互為主體的（Intersubjective）心靈紐帶，令彼此真真切切感受到被對方所理解與接納。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "超越個體唯我論、在兩個或多個具備意識的主體之間透過對話互認達成的互為主體的",
+        "examples": [
+          {
+            "en": "Scientific objectivity relies fundamentally on intersubjective verification within the scientific community.",
+            "zh": "科學所謂的客觀性，其底層最根本的支柱正是科學家共同體內部開展的互為主體的（Intersubjective）反覆核驗與對話。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "心靈互認之互為主體的",
+        "examples": [
+          {
+            "en": "True human empathy requires establishing an ___ bond where both parties feel mutually understood.",
+            "zh": "真正觸及靈魂的人類共情，必須構築起互為主體的（Intersubjective）心靈紐帶，令彼此真真切切感受到被對方所理解與接納。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISENCHANTMENT": {
+    "pos": "n.",
+    "meaning": "驅逐神祕魔法之世界祛魅",
+    "example": "The relentless spread of secular empiricism brought about the psychological ___ of the modern cosmos.",
+    "exampleZh": "世俗經驗主義科學的野蠻生長，為人類現代文明不可逆地拉開了宇宙全面世俗祛魅（Disenchantment）的沉重大幕。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "現代工具理性、科學主義擴張驅逐了自然神祕光環與神聖超驗意義的世俗祛魅",
+        "examples": [
+          {
+            "en": "Weber lamented the cosmic disenchantment that accompanied the rise of industrial bureaucratic systems.",
+            "zh": "馬克斯·韋伯為工業科層制興起所必然伴隨的宇宙神聖魔法光環的消解與世界祛魅（Disenchantment）發出了深沉的哀嘆。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "驅逐神祕魔法之世界祛魅",
+        "examples": [
+          {
+            "en": "The relentless spread of secular empiricism brought about the psychological ___ of the modern cosmos.",
+            "zh": "世俗經驗主義科學的野蠻生長，為人類現代文明不可逆地拉開了宇宙全面世俗祛魅（Disenchantment）的沉重大幕。"
+          }
+        ]
+      }
+    ]
+  },
+  "HERMENEUTIC": {
+    "pos": "adj.",
+    "meaning": "抽絲剝繭之哲學詮釋學的",
+    "example": "Literary scholars apply advanced ___ frameworks to unravel the layered meanings of ancient epics.",
+    "exampleZh": "文學史巨擘熟稔動用高階哲學詮釋學（Hermeneutic）解讀框架，將古老英雄史詩中千回百轉的多重視域層層揭開。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "關乎文本深層闡釋、理解自反性循環與歷史語境理解的詮釋學的與解釋學的",
+        "examples": [
+          {
+            "en": "The legal scholar performed a meticulous hermeneutic reading of the constitutional amendment.",
+            "zh": "這位憲政法學泰斗對該項歷史性憲法修正案，展開了入木三分、抽絲剝繭的詮釋學（Hermeneutic）文本解讀。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "抽絲剝繭之哲學詮釋學的",
+        "examples": [
+          {
+            "en": "Literary scholars apply advanced ___ frameworks to unravel the layered meanings of ancient epics.",
+            "zh": "文學史巨擘熟稔動用高階哲學詮釋學（Hermeneutic）解讀框架，將古老英雄史詩中千回百轉的多重視域層層揭開。"
+          }
+        ]
+      }
+    ]
+  },
+  "BIOPOLITICS": {
+    "pos": "n.",
+    "meaning": "統御全民生物體之生命政治",
+    "example": "Managing epidemiological disease transmission constitutes the very essence of modern governmental ___.",
+    "exampleZh": "對傳染病大流行傳播鏈實施鐵腕動態清零與流行病學管控，構成了當代現代國家生命政治（Biopolitics）最原汁原味的核心展現。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "現代國家公權力透過公共衛生、生育率、防疫統計對全民生物肉體實施管治的生命政治",
+        "examples": [
+          {
+            "en": "Vaccination mandates fall squarely under the expansive umbrella of contemporary state biopolitics.",
+            "zh": "全民強制疫苗接種令與健康碼軌跡追蹤，無可爭議地劃入了當代國家全方位鋪展的生命政治（Biopolitics）大網。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "統御全民生物體之生命政治",
+        "examples": [
+          {
+            "en": "Managing epidemiological disease transmission constitutes the very essence of modern governmental ___.",
+            "zh": "對傳染病大流行傳播鏈實施鐵腕動態清零與流行病學管控，構成了當代現代國家生命政治（Biopolitics）最原汁原味的核心展現。"
+          }
+        ]
+      }
+    ]
+  },
+  "APORIA": {
+    "pos": "n.",
+    "meaning": "邏輯自噬之文本不可解困境",
+    "example": "The constitutional amendment debate hit a legal ___, paralyzing legislative negotiations for months.",
+    "exampleZh": "圍繞該憲法條款的法理激辯一頭撞上了無法化解的邏輯不可解困境（Aporia），令國會朝野立法博弈整整癱瘓了數月之久。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "解構主義與修辭學中論證邏輯相互衝突抵消導致思維陷入無解僵局的不可解困境",
+        "examples": [
+          {
+            "en": "The novel culminates in a profound philosophical aporia where justice and law become irreconcilable.",
+            "zh": "這部先鋒小說在終章將情節推向了令人窒息的哲學不可解困境（Aporia）：實體正義與成文法律發生了無法彌合的殊死互噬。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "邏輯自噬之文本不可解困境",
+        "examples": [
+          {
+            "en": "The constitutional amendment debate hit a legal ___, paralyzing legislative negotiations for months.",
+            "zh": "圍繞該憲法條款的法理激辯一頭撞上了無法化解的邏輯不可解困境（Aporia），令國會朝野立法博弈整整癱瘓了數月之久。"
+          }
+        ]
+      }
+    ]
+  },
+  "SPECTACLE": {
+    "pos": "n.",
+    "meaning": "當代批判理論中由大眾傳媒景觀商品異化真實人際生活引發群眾被動旁觀的景觀社會",
+    "example": "In the society of the spectacle, human relations are mediated entirely through commercial imagery.",
+    "exampleZh": "在居伊·德波筆下光怪陸離的景觀（Spectacle）社會中，有溫度的人性交往被徹底異化為隔著冷冰冰的商業影像相互對望。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "當代批判理論中由大眾傳媒景觀商品異化真實人際生活引發群眾被動旁觀的景觀社會",
+        "examples": [
+          {
+            "en": "In the society of the spectacle, human relations are mediated entirely through commercial imagery.",
+            "zh": "在居伊·德波筆下光怪陸離的景觀（Spectacle）社會中，有溫度的人性交往被徹底異化為隔著冷冰冰的商業影像相互對望。"
+          }
+        ]
+      }
+    ]
+  },
+  "RESSENTIMENT": {
+    "pos": "n.",
+    "meaning": "弱者因無力對抗強者在內心淤積壓抑並反向將自身軟弱美化為道德聖潔的深層怨恨",
+    "example": "Nietzsche warned against the toxic moral inversions poisoned by repressed spiritual ressentiment.",
+    "exampleZh": "尼采向全人類大聲疾呼，警惕那些被內心深處壓抑的毒性怨恨（Ressentiment）所閹割、進而反咬真正強者生命力的道德說教。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "弱者因無力對抗強者在內心淤積壓抑並反向將自身軟弱美化為道德聖潔的深層怨恨",
+        "examples": [
+          {
+            "en": "Nietzsche warned against the toxic moral inversions poisoned by repressed spiritual ressentiment.",
+            "zh": "尼采向全人類大聲疾呼，警惕那些被內心深處壓抑的毒性怨恨（Ressentiment）所閹割、進而反咬真正強者生命力的道德說教。"
           }
         ]
       }
@@ -18349,9 +20985,9 @@
   },
   "R8:ACQUIESCENCE": {
     "pos": "n.",
-    "meaning": "沒有積極支持但默默接受或順從",
-    "example": "Silence should not automatically be read as acquiescence.",
-    "exampleZh": "沉默不應自動被當成默許。",
+    "meaning": "未提異議之默示承認",
+    "example": "Failure to register a formal diplomatic protest was construed by the court as binding ___.",
+    "exampleZh": "在關鍵歷史節點未能遞交正式外交照會嚴正抗議，被國際法院無情判定為具有法律約束力的默示承認。",
     "senses": [
       {
         "pos": "n.",
@@ -18364,6 +21000,26 @@
           {
             "en": "The agreement depended on reluctant acquiescence.",
             "zh": "協議仰賴不情願的默許。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在國際法上明知權利受到侵害或邊界變更而長期不提出抗議所構成的默示承認與默認",
+        "examples": [
+          {
+            "en": "Prolonged diplomatic silence and acquiescence cemented the neighboring state's territorial claims.",
+            "zh": "長達數十年的外交失聲與默認（Acquiescence），在法理上最終成全並鞏固了鄰國對該爭議領土的主權主張。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "未提異議之默示承認",
+        "examples": [
+          {
+            "en": "Failure to register a formal diplomatic protest was construed by the court as binding ___.",
+            "zh": "在關鍵歷史節點未能遞交正式外交照會嚴正抗議，被國際法院無情判定為具有法律約束力的默示承認。"
           }
         ]
       }
@@ -20717,9 +23373,9 @@
   "R8:REPUDIATION": {
     "word": "repudiation",
     "pos": "n.",
-    "meaning": "明確拒絕接受或與之切割的表態",
-    "example": "The note stops short of a repudiation.",
-    "exampleZh": "附註尚未明確否認切割。",
+    "meaning": "撕毀合約之明示毀約行為",
+    "example": "The non performing partner's explicit refusal to fund capital calls was deemed an unlawful ___.",
+    "exampleZh": "該不履約股東公然拒絕繳納資本催繳款的跋扈行徑，被商業法庭當場判定為非法的根本性明示毀約。",
     "senses": [
       {
         "pos": "n.",
@@ -20728,6 +23384,26 @@
           {
             "en": "The note stops short of a repudiation.",
             "zh": "附註尚未明確否認切割。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "合約一方明確向另一方拒絕履行根本核心義務的明示毀約行為",
+        "examples": [
+          {
+            "en": "The vendor's absolute refusal to deliver raw goods constituted a total contract repudiation.",
+            "zh": "供應商在關鍵時刻斬釘截鐵拒絕供應核心原材料的違約行徑，構成了商業法理上的徹底明示毀約。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "撕毀合約之明示毀約行為",
+        "examples": [
+          {
+            "en": "The non performing partner's explicit refusal to fund capital calls was deemed an unlawful ___.",
+            "zh": "該不履約股東公然拒絕繳納資本催繳款的跋扈行徑，被商業法庭當場判定為非法的根本性明示毀約。"
           }
         ]
       }
@@ -23404,9 +26080,9 @@
   "R8:ADJUDICATION": {
     "word": "adjudication",
     "pos": "n.",
-    "meaning": "對爭議作權威判定的程序",
-    "example": "The game provides a method of adjudication.",
-    "exampleZh": "遊戲提供裁決方式。",
+    "meaning": "國際法庭之司法審判裁決",
+    "example": "Both sovereign nations submitted the contentious maritime boundary claim for binding ___.",
+    "exampleZh": "爭端雙方國家元首共同簽字，同意將爭議海域大陸棚劃界案全權交由海牙常設仲裁法庭實施司法審判。",
     "senses": [
       {
         "pos": "n.",
@@ -23415,6 +26091,26 @@
           {
             "en": "The game provides a method of adjudication.",
             "zh": "遊戲提供裁決方式。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "由國際法庭或常設裁判機關依據實體法對主權爭端做出的終局裁決與司法判決過程",
+        "examples": [
+          {
+            "en": "The border conflict was peacefully resolved through binding international court adjudication.",
+            "zh": "這起綿延半個世紀的邊界流血衝突，最終在海牙國際法院具有約束力的終局司法判決（Adjudication）中塵埃落定。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "國際法庭之司法審判裁決",
+        "examples": [
+          {
+            "en": "Both sovereign nations submitted the contentious maritime boundary claim for binding ___.",
+            "zh": "爭端雙方國家元首共同簽字，同意將爭議海域大陸棚劃界案全權交由海牙常設仲裁法庭實施司法審判。"
           }
         ]
       }
@@ -27339,9 +30035,9 @@
   "R8:DEROGATION": {
     "word": "derogation",
     "pos": "n.",
-    "meaning": "特定權利之減損與克減限制條款",
-    "example": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
-    "exampleZh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。",
+    "meaning": "緊急狀態下之權利減損",
+    "example": "Article four of the ICCPR strictly limits when a state may execute human rights ___.",
+    "exampleZh": "《公民與政治權利國際公約》第四條，對主權國家何時方能啟動人權義務減損設立了不可逾越的森嚴紅線。",
     "senses": [
       {
         "pos": "n.",
@@ -27370,6 +30066,26 @@
           {
             "en": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
             "zh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在面臨國家生存緊急狀態下依據條約授權暫時減損或中止履行部分人權義務的法定克減",
+        "examples": [
+          {
+            "en": "Public health emergencies permit narrow, proportional derogation from specific civil liberties.",
+            "zh": "唯有在極其罕見的威脅國家生死存亡的緊急危難關頭，法律方才允許政府在嚴格比例原則下實施人權義務的暫時克減。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "緊急狀態下之權利減損",
+        "examples": [
+          {
+            "en": "Article four of the ICCPR strictly limits when a state may execute human rights ___.",
+            "zh": "《公民與政治權利國際公約》第四條，對主權國家何時方能啟動人權義務減損設立了不可逾越的森嚴紅線。"
           }
         ]
       }
@@ -27616,9 +30332,9 @@
   },
   "R8:ENTROPY": {
     "pos": "n.",
-    "meaning": "文本預測不確定性度量",
-    "example": "Cross entropy loss quantifies the divergence between predicted probabilities and ground truth.",
-    "exampleZh": "交叉熵損失函數精確量化了模型所預測的機率分佈與真實客觀標籤之間的幾何發散程度。",
+    "meaning": "孤立系統混亂度之熱力學熵",
+    "example": "The inexorable increase in universal ___ defines the thermodynamic cosmological arrow of time.",
+    "exampleZh": "宇宙總熵（Entropy）無可阻擋的自發遞增，奠定了熱力學意義上宇宙不可逆演化的唯一時間之箭。",
     "senses": [
       {
         "pos": "n.",
@@ -27637,6 +30353,26 @@
           {
             "en": "Cross entropy loss quantifies the divergence between predicted probabilities and ground truth.",
             "zh": "交叉熵損失函數精確量化了模型所預測的機率分佈與真實客觀標籤之間的幾何發散程度。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "熱力學中衡量孤立系統混亂度與不可逆能量耗散的熵",
+        "examples": [
+          {
+            "en": "Thermodynamic entropy dictates the irreversible arrow of time across the cosmos.",
+            "zh": "不可逆的熱力學熵增鐵律，在宏觀宇宙的廣袤時空中鐫刻下了單向不可逆轉的時間之箭。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "孤立系統混亂度之熱力學熵",
+        "examples": [
+          {
+            "en": "The inexorable increase in universal ___ defines the thermodynamic cosmological arrow of time.",
+            "zh": "宇宙總熵（Entropy）無可阻擋的自發遞增，奠定了熱力學意義上宇宙不可逆演化的唯一時間之箭。"
           }
         ]
       }
@@ -29331,9 +32067,9 @@
   },
   "R8:INVIOLABILITY": {
     "pos": "n.",
-    "meaning": "使領館享有的絕對不可侵犯權",
-    "example": "Host government security forces may not breach the legal inviolability of the embassy.",
-    "exampleZh": "駐在國各類武裝警察與安全部隊，在任何緊急藉口下皆絕對無權強闖並踐踏大使館的法定不可侵犯權。",
+    "meaning": "國際法賦予外交使館館舍、外交檔案與使節人身免受任何侵犯、扣留與搜查的不可侵犯性",
+    "example": "Diplomatic mission premises enjoy complete inviolability under the Vienna Convention.",
+    "exampleZh": "外國使館的一切辦公館舍與通訊郵袋，在《維也納公約》的鋼鐵庇護下享有全天候、絕對的不可侵犯性（Inviolability）。",
     "senses": [
       {
         "pos": "n.",
@@ -29352,6 +32088,16 @@
           {
             "en": "Host government security forces may not breach the legal inviolability of the embassy.",
             "zh": "駐在國各類武裝警察與安全部隊，在任何緊急藉口下皆絕對無權強闖並踐踏大使館的法定不可侵犯權。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "國際法賦予外交使館館舍、外交檔案與使節人身免受任何侵犯、扣留與搜查的不可侵犯性",
+        "examples": [
+          {
+            "en": "Diplomatic mission premises enjoy complete inviolability under the Vienna Convention.",
+            "zh": "外國使館的一切辦公館舍與通訊郵袋，在《維也納公約》的鋼鐵庇護下享有全天候、絕對的不可侵犯性（Inviolability）。"
           }
         ]
       }
@@ -29418,9 +32164,9 @@
   },
   "R8:REPRISAL": {
     "pos": "n.",
-    "meaning": "遭受挑釁後實施之對等報復",
-    "example": "The government launched targeted economic reprisal against the illegal import ban.",
-    "exampleZh": "針對鄰國毫無依據、單方面發動的非法進口禁令，本國政府果斷祭出了刀刀見血的對等經濟反制報復。",
+    "meaning": "戰火中的有限武裝報復",
+    "example": "Even in the face of chemical weapons attacks, executing a reciprocal civilian ___ remains illegal.",
+    "exampleZh": "哪怕自身遭受了敵方卑劣的化學毒氣偷襲，在法理上也絕不允許對敵方無辜平民發動對等殘酷報復。",
     "senses": [
       {
         "pos": "n.",
@@ -29439,6 +32185,26 @@
           {
             "en": "The government launched targeted economic reprisal against the illegal import ban.",
             "zh": "針對鄰國毫無依據、單方面發動的非法進口禁令，本國政府果斷祭出了刀刀見血的對等經濟反制報復。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交戰一方在遭遇敵方嚴重違約暴行時為迫使其停止違法行為所實施的有限軍事反制與報復",
+        "examples": [
+          {
+            "en": "International law strictly prohibits violent armed reprisal directed against civilian populations.",
+            "zh": "現代文明國際法明文嚴厲禁止一切將黑手伸向無辜平民與被俘戰俘的暴力戰時武裝報復（Reprisal）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "戰火中的有限武裝報復",
+        "examples": [
+          {
+            "en": "Even in the face of chemical weapons attacks, executing a reciprocal civilian ___ remains illegal.",
+            "zh": "哪怕自身遭受了敵方卑劣的化學毒氣偷襲，在法理上也絕不允許對敵方無辜平民發動對等殘酷報復。"
           }
         ]
       }
@@ -29799,6 +32565,1817 @@
       }
     ],
     "word": "acidification"
+  },
+  "R8:AHARONOV BOHM PHASE SHIFT": {
+    "word": "aharonov bohm phase shift",
+    "pos": "phr.",
+    "meaning": "磁場為零處依然存在之阿哈羅諾夫玻姆相位差",
+    "example": "The electron wave packet picked up an aharonov bohm phase shift around the magnetic vector flux.",
+    "exampleZh": "電子波包繞行磁屏蔽螺線管一周後，在磁場嚴格為零的空間中依然精準拾取了深邃的阿哈羅諾夫-玻姆幾何相位差。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "磁場為零處依然存在之阿哈羅諾夫玻姆相位差",
+        "examples": [
+          {
+            "en": "The electron wave packet picked up an aharonov bohm phase shift around the magnetic vector flux.",
+            "zh": "電子波包繞行磁屏蔽螺線管一周後，在磁場嚴格為零的空間中依然精準拾取了深邃的阿哈羅諾夫-玻姆幾何相位差。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:QUANTUM ZENO EFFECT SUPPRESSION": {
+    "word": "quantum zeno effect suppression",
+    "pos": "phr.",
+    "meaning": "連續密集觀測下凍結躍遷之量子芝諾效應",
+    "example": "Rapid projective measurements caused complete quantum zeno effect suppression of decay transitions.",
+    "exampleZh": "以飛秒頻率轟擊的連續投影測量，對該激發態分子的自發輻射衰變造成了徹底的量子芝諾凍結效應。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "連續密集觀測下凍結躍遷之量子芝諾效應",
+        "examples": [
+          {
+            "en": "Rapid projective measurements caused complete quantum zeno effect suppression of decay transitions.",
+            "zh": "以飛秒頻率轟擊的連續投影測量，對該激發態分子的自發輻射衰變造成了徹底的量子芝諾凍結效應。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BOSE EINSTEIN CONDENSATION THRESHOLD": {
+    "word": "bose einstein condensation threshold",
+    "pos": "phr.",
+    "meaning": "跌入同一基態超級巨原子之玻色愛因斯坦凝聚",
+    "example": "Laser cooled rubidium vapor crossed the bose einstein condensation threshold at sub microkelvin cold.",
+    "exampleZh": "經雷射冷卻的銣-87 稀薄原子蒸汽在跌破數百納開爾文極限後，一舉跨越了玻色-愛因斯坦凝聚臨界相變線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "跌入同一基態超級巨原子之玻色愛因斯坦凝聚",
+        "examples": [
+          {
+            "en": "Laser cooled rubidium vapor crossed the bose einstein condensation threshold at sub microkelvin cold.",
+            "zh": "經雷射冷卻的銣-87 稀薄原子蒸汽在跌破數百納開爾文極限後，一舉跨越了玻色-愛因斯坦凝聚臨界相變線。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:MAJORANA ZERO MODE BRAIDING": {
+    "word": "majorana zero mode braiding",
+    "pos": "phr.",
+    "meaning": "用非阿貝爾任意子實現硬體級容錯之馬約拉納編織",
+    "example": "Physicists demonstrated topological fault tolerance through majorana zero mode braiding operations.",
+    "exampleZh": "凝聚態理論學家透過非阿貝爾任意子的空間馬約拉納零能模編織運算，在物理本徵層面構建了拓撲容錯矩陣。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "用非阿貝爾任意子實現硬體級容錯之馬約拉納編織",
+        "examples": [
+          {
+            "en": "Physicists demonstrated topological fault tolerance through majorana zero mode braiding operations.",
+            "zh": "凝聚態理論學家透過非阿貝爾任意子的空間馬約拉納零能模編織運算，在物理本徵層面構建了拓撲容錯矩陣。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HAWKING BLACK HOLE RADIATION": {
+    "word": "hawking black hole radiation",
+    "pos": "phr.",
+    "meaning": "事件視界量子真空漲落產生之霍金黑洞輻射",
+    "example": "Virtual particle antiparticle pair separation produces hawking black hole radiation near the horizon.",
+    "exampleZh": "事件視界外緣的量子真空漲落引發虛粒子對分離，孕育出令天體黑洞緩慢蒸發衰竭的霍金量子輻射。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "事件視界量子真空漲落產生之霍金黑洞輻射",
+        "examples": [
+          {
+            "en": "Virtual particle antiparticle pair separation produces hawking black hole radiation near the horizon.",
+            "zh": "事件視界外緣的量子真空漲落引發虛粒子對分離，孕育出令天體黑洞緩慢蒸發衰竭的霍金量子輻射。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:QUANTUM STATE TOMOGRAPHY FIDELITY": {
+    "word": "quantum state tomography fidelity",
+    "pos": "phr.",
+    "meaning": "全方位重構密度矩陣之量子態斷層掃描保真度",
+    "example": "Over constrained measurements yielded ninety eight percent quantum state tomography fidelity.",
+    "exampleZh": "高冗餘度的全景式微波投影測量，最終解算出了高達 98% 完美契合度的量子態斷層掃描全矩陣保真度。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全方位重構密度矩陣之量子態斷層掃描保真度",
+        "examples": [
+          {
+            "en": "Over constrained measurements yielded ninety eight percent quantum state tomography fidelity.",
+            "zh": "高冗餘度的全景式微波投影測量，最終解算出了高達 98% 完美契合度的量子態斷層掃描全矩陣保真度。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUPERFLUID QUANTUM VORTEX CORE": {
+    "word": "superfluid quantum vortex core",
+    "pos": "phr.",
+    "meaning": "液氦超流體中旋度量子化之量子渦旋核心",
+    "example": "Superfluid angular momentum is carried exclusively by quantized superfluid quantum vortex cores.",
+    "exampleZh": "超流液氦在高速旋轉時其角動量絕不連續分佈，而是完全由內部離散排列的奇異量子化渦旋核心嚴格承載。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "液氦超流體中旋度量子化之量子渦旋核心",
+        "examples": [
+          {
+            "en": "Superfluid angular momentum is carried exclusively by quantized superfluid quantum vortex cores.",
+            "zh": "超流液氦在高速旋轉時其角動量絕不連續分佈，而是完全由內部離散排列的奇異量子化渦旋核心嚴格承載。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ASYMMETRIC BELL INEQUALITY REFUTATION": {
+    "word": "asymmetric bell inequality refutation",
+    "pos": "phr.",
+    "meaning": "無懈可擊宣判古典局域實在論死刑之貝爾不等式",
+    "example": "Loophole free tests delivered definitive asymmetric bell inequality refutations across laboratory miles.",
+    "exampleZh": "在相隔數公里的獨立光學實驗室之間開展的「無漏洞（Loophole-free）」實驗，給古典局域實在論敲下了最後的喪鐘。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無懈可擊宣判古典局域實在論死刑之貝爾不等式",
+        "examples": [
+          {
+            "en": "Loophole free tests delivered definitive asymmetric bell inequality refutations across laboratory miles.",
+            "zh": "在相隔數公里的獨立光學實驗室之間開展的「無漏洞（Loophole-free）」實驗，給古典局域實在論敲下了最後的喪鐘。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUPERFLUIDITY": {
+    "pos": "n.",
+    "meaning": "黏滯性完全歸零之超流現象",
+    "example": "Liquid helium loses all hydrodynamic viscosity upon entering the state of macroscopic ___.",
+    "exampleZh": "液態氦在冷卻並跨入巨觀超流性狀態的那一瞬間，其所有流體動力學內部剪切黏滯性瞬間歸於虛無。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "物質在極低溫下黏滯阻力完全歸零無摩擦流動的超流性",
+        "examples": [
+          {
+            "en": "Superfluidity allows liquid helium to flow uphill defying gravity in thin Rollin films.",
+            "zh": "超流性（Superfluidity）允許液態氦以奇異的微觀量子滾動薄膜姿態，完全克服重力沿著燒杯壁向上逆流。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "黏滯性完全歸零之超流現象",
+        "examples": [
+          {
+            "en": "Liquid helium loses all hydrodynamic viscosity upon entering the state of macroscopic ___.",
+            "zh": "液態氦在冷卻並跨入巨觀超流性狀態的那一瞬間，其所有流體動力學內部剪切黏滯性瞬間歸於虛無。"
+          }
+        ]
+      }
+    ],
+    "word": "superfluidity"
+  },
+  "R8:INTERFEROMETER": {
+    "pos": "n.",
+    "meaning": "量測時空漣漪之激光干涉儀",
+    "example": "A kilometer scale Michelson ___ captured the gravitational merger of binary black holes.",
+    "exampleZh": "公里級超長基線邁克生激光干涉儀，在幽深太空中首度捕捉到了雙黑洞劇烈併合時震顫時空的引力波漣漪。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用光學波前疊加相長相消進行超極限精準測量的干涉儀",
+        "examples": [
+          {
+            "en": "The gravitational wave interferometer measured spacetime strain down to atomic scales.",
+            "zh": "巨型引力波激光干涉儀將時空應變的微弱測量精度，硬生生推進至原子核半徑的千分之一量級。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "量測時空漣漪之激光干涉儀",
+        "examples": [
+          {
+            "en": "A kilometer scale Michelson ___ captured the gravitational merger of binary black holes.",
+            "zh": "公里級超長基線邁克生激光干涉儀，在幽深太空中首度捕捉到了雙黑洞劇烈併合時震顫時空的引力波漣漪。"
+          }
+        ]
+      }
+    ],
+    "word": "interferometer"
+  },
+  "R8:ISOTOPE": {
+    "pos": "n.",
+    "meaning": "質子相同中子相異之同位素",
+    "example": "Separating the light helium three ___ requires specialized cryogenic distillation infrastructure.",
+    "exampleZh": "要從大氣中分離出極其稀罕的輕同位素氦-3，必須依賴極其尖端複雜的低溫超流蒸餾專屬基建。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "原子核中質子數相同而中子數各異的同種化學元素同位素",
+        "examples": [
+          {
+            "en": "Helium three isotope mixtures enable cooling inside low temperature cryostats.",
+            "zh": "高純度稀有的氦-3 同位素與氦-4 混合物，構成了深低溫稀釋製冷系統中不可或缺的熱力學製冷媒介。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "質子相同中子相異之同位素",
+        "examples": [
+          {
+            "en": "Separating the light helium three ___ requires specialized cryogenic distillation infrastructure.",
+            "zh": "要從大氣中分離出極其稀罕的輕同位素氦-3，必須依賴極其尖端複雜的低溫超流蒸餾專屬基建。"
+          }
+        ]
+      }
+    ],
+    "word": "isotope"
+  },
+  "R8:CONDENSATE": {
+    "pos": "n.",
+    "meaning": "物質第五態之低溫量子凝聚體",
+    "example": "The laser trapped rubidium cloud collapsed into a macroscopic quantum ___.",
+    "exampleZh": "在超高真空激光陷阱中被緊緊約束的銣原子雲，順利塌縮為物質第五態的巨觀量子凝聚體。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "微觀玻色子大量塌縮至基態形成的玻色愛因斯坦凝聚體",
+        "examples": [
+          {
+            "en": "The dilute atomic condensate behaved as a macroscopic unified wave function.",
+            "zh": "這團超低溫稀薄原子凝聚體（Condensate），在巨觀世界中猶如一個宏大而和諧的統一量子波函數般同頻共振。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "物質第五態之低溫量子凝聚體",
+        "examples": [
+          {
+            "en": "The laser trapped rubidium cloud collapsed into a macroscopic quantum ___.",
+            "zh": "在超高真空激光陷阱中被緊緊約束的銣原子雲，順利塌縮為物質第五態的巨觀量子凝聚體。"
+          }
+        ]
+      }
+    ],
+    "word": "condensate"
+  },
+  "R8:COHERENCE": {
+    "pos": "n.",
+    "meaning": "量子態相位之量子相干性",
+    "example": "Extending the quantum ___ time beyond milliseconds is critical for logical quantum gates.",
+    "exampleZh": "將量子相干性（Coherence）壽命一舉延長至毫秒級以上，是構築高容錯邏輯量子運算門的核心勝負手。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "量子態波函數相位之間維持確定幾何關聯的相干性與同調性",
+        "examples": [
+          {
+            "en": "Maintaining phase coherence represents the supreme engineering challenge for quantum processors.",
+            "zh": "在外界嚴苛噪聲汪洋中維持量子相位的同調性（Coherence），是當代建造大型量子電腦不可逾越的高山。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "量子態相位之量子相干性",
+        "examples": [
+          {
+            "en": "Extending the quantum ___ time beyond milliseconds is critical for logical quantum gates.",
+            "zh": "將量子相干性（Coherence）壽命一舉延長至毫秒級以上，是構築高容錯邏輯量子運算門的核心勝負手。"
+          }
+        ]
+      }
+    ],
+    "word": "coherence"
+  },
+  "R8:BUSINESS JUDGMENT RULE PROTECTION": {
+    "word": "business judgment rule protection",
+    "pos": "phr.",
+    "meaning": "保護董事善意決策之商業判斷原則庇護",
+    "example": "Directors invoked the business judgment rule protection against shareholder derivative claims.",
+    "exampleZh": "面對少數股東來勢洶洶的衍生訴訟，董事會全體成員昂然祭出特拉華商業判斷原則求取絕對司法豁免。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "保護董事善意決策之商業判斷原則庇護",
+        "examples": [
+          {
+            "en": "Directors invoked the business judgment rule protection against shareholder derivative claims.",
+            "zh": "面對少數股東來勢洶洶的衍生訴訟，董事會全體成員昂然祭出特拉華商業判斷原則求取絕對司法豁免。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:REVLON DUTIES ENHANCED JUDICIAL SCRUTINY": {
+    "word": "revlon duties enhanced judicial scrutiny",
+    "pos": "phr.",
+    "meaning": "賣盤唯一追求最高價之露華濃強化司法審查",
+    "example": "Entering an all cash sale triggers revlon duties enhanced judicial scrutiny over the sales process.",
+    "exampleZh": "一旦簽署全現金出售控股權協議，整個交易流程立刻被置於露華濃強化司法審查的聚光燈下。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "賣盤唯一追求最高價之露華濃強化司法審查",
+        "examples": [
+          {
+            "en": "Entering an all cash sale triggers revlon duties enhanced judicial scrutiny over the sales process.",
+            "zh": "一旦簽署全現金出售控股權協議，整個交易流程立刻被置於露華濃強化司法審查的聚光燈下。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PIERCING THE CORPORATE VEIL DOCTRINE": {
+    "word": "piercing the corporate veil doctrine",
+    "pos": "phr.",
+    "meaning": "嚴打資產混同之刺破公司法人面紗原則",
+    "example": "The judge applied the piercing the corporate veil doctrine to hold the fraudulent parent liable.",
+    "exampleZh": "主審法官果斷啟動刺破公司法人面紗原則，令企圖躲在空殼公司背後惡意脫產的母公司承擔連帶責任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "嚴打資產混同之刺破公司法人面紗原則",
+        "examples": [
+          {
+            "en": "The judge applied the piercing the corporate veil doctrine to hold the fraudulent parent liable.",
+            "zh": "主審法官果斷啟動刺破公司法人面紗原則，令企圖躲在空殼公司背後惡意脫產的母公司承擔連帶責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:UNSOLICITED HOSTILE TENDER OFFER": {
+    "word": "unsolicited hostile tender offer",
+    "pos": "phr.",
+    "meaning": "繞開董事會強娶之非善意敵意要約收購",
+    "example": "The corporate predator launched an unsolicited hostile tender offer at a thirty percent premium.",
+    "exampleZh": "該資本大鱷以溢價 30% 的瘋狂手筆，繞開目標公司董事會直接向二級市場發起了非善意敵意要約收購。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "繞開董事會強娶之非善意敵意要約收購",
+        "examples": [
+          {
+            "en": "The corporate predator launched an unsolicited hostile tender offer at a thirty percent premium.",
+            "zh": "該資本大鱷以溢價 30% 的瘋狂手筆，繞開目標公司董事會直接向二級市場發起了非善意敵意要約收購。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FRAUDULENT CONVEYANCE ASSET CLAWBACK": {
+    "word": "fraudulent conveyance asset clawback",
+    "pos": "phr.",
+    "meaning": "追討破產前被掏空財產之詐害移轉資產追索",
+    "example": "The bankruptcy trustee initiated a fraudulent conveyance asset clawback targeting insider transfers.",
+    "exampleZh": "破產清算管理人以雷霆萬鈞之勢發動了詐害移轉追索訴訟，將高管在破產前夕偷偷劃走的資產全額追回。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "追討破產前被掏空財產之詐害移轉資產追索",
+        "examples": [
+          {
+            "en": "The bankruptcy trustee initiated a fraudulent conveyance asset clawback targeting insider transfers.",
+            "zh": "破產清算管理人以雷霆萬鈞之勢發動了詐害移轉追索訴訟，將高管在破產前夕偷偷劃走的資產全額追回。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUBSTANTIVE CONSOLIDATION EQUITABLE REMEDY": {
+    "word": "substantive consolidation equitable remedy",
+    "pos": "phr.",
+    "meaning": "打破法人屏障合併清償之實質合併衡平法救濟",
+    "example": "Creditors successfully petitioned for a substantive consolidation equitable remedy across the group.",
+    "exampleZh": "廣大債權人在破產法庭成功爭取到了集團實質合併清償救濟，將混淆不清的數十家空殼子公司資產打包受償。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "打破法人屏障合併清償之實質合併衡平法救濟",
+        "examples": [
+          {
+            "en": "Creditors successfully petitioned for a substantive consolidation equitable remedy across the group.",
+            "zh": "廣大債權人在破產法庭成功爭取到了集團實質合併清償救濟，將混淆不清的數十家空殼子公司資產打包受償。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:EQUITY CURE FINANCIAL COVENANT RELIEF": {
+    "word": "equity cure financial covenant relief",
+    "pos": "phr.",
+    "meaning": "注資補血消弭違約之股權補救承諾豁免",
+    "example": "The buyout fund exercised its equity cure financial covenant relief to prevent debt acceleration.",
+    "exampleZh": "收購基金在關鍵節點毅然啟動股權補救程序，自掏腰包注資補血以徹底避免銀行銀團提前收回貸款。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "注資補血消弭違約之股權補救承諾豁免",
+        "examples": [
+          {
+            "en": "The buyout fund exercised its equity cure financial covenant relief to prevent debt acceleration.",
+            "zh": "收購基金在關鍵節點毅然啟動股權補救程序，自掏腰包注資補血以徹底避免銀行銀團提前收回貸款。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DRAG ALONG MINORITY SHAREHOLDER RIGHT": {
+    "word": "drag along minority shareholder right",
+    "pos": "phr.",
+    "meaning": "大股東強賣打包出售之少數股東拖售權",
+    "example": "Exercising the drag along minority shareholder right forced all angel investors to tender their shares.",
+    "exampleZh": "控股大股東果斷扣動了少數股東拖售權，強制要求早期天使投資人以相同估值共同交割出場。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "大股東強賣打包出售之少數股東拖售權",
+        "examples": [
+          {
+            "en": "Exercising the drag along minority shareholder right forced all angel investors to tender their shares.",
+            "zh": "控股大股東果斷扣動了少數股東拖售權，強制要求早期天使投資人以相同估值共同交割出場。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUBORDINATION": {
+    "pos": "n.",
+    "meaning": "債權位階劣後讓渡",
+    "example": "The second lien lenders agreed to clear payment ___ under the definitive intercreditor terms.",
+    "exampleZh": "在終局各級債權人間協議的框架下，二級抵押權人以白紙黑字簽字同意了債權受償順位的全面劣後。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在債務體系中將特定債權人的受償位階合法劣後於其他債權人的順位讓渡",
+        "examples": [
+          {
+            "en": "Intercreditor agreements formalize the lien subordination of junior subordinated mezzanine debt.",
+            "zh": "各級債權人間清償協議白紙黑字確立了次級夾層貸款對一級資產擔保信貸的順位劣後讓渡。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "債權位階劣後讓渡",
+        "examples": [
+          {
+            "en": "The second lien lenders agreed to clear payment ___ under the definitive intercreditor terms.",
+            "zh": "在終局各級債權人間協議的框架下，二級抵押權人以白紙黑字簽字同意了債權受償順位的全面劣後。"
+          }
+        ]
+      }
+    ],
+    "word": "subordination"
+  },
+  "R8:INDEMNIFICATION": {
+    "pos": "n.",
+    "meaning": "交割前債務之免責補償",
+    "example": "The buyer asserted extensive contractual rights to financial ___ following environmental fines.",
+    "exampleZh": "在遭遇環保署巨額罰單突襲後，收購方即刻全面啟動了契約所賦予的巨額免責損害補償請求權。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "一方承諾在特定損失、訴訟或罰款發生時對另一方提供完全補償的免責補償",
+        "examples": [
+          {
+            "en": "The merger agreement provided comprehensive tax indemnification for pre acquisition liabilities.",
+            "zh": "該項重大合併協議為買方提供了無懈可擊的稅務免責補償條款，涵蓋交割前一切隱藏欠稅。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "交割前債務之免責補償",
+        "examples": [
+          {
+            "en": "The buyer asserted extensive contractual rights to financial ___ following environmental fines.",
+            "zh": "在遭遇環保署巨額罰單突襲後，收購方即刻全面啟動了契約所賦予的巨額免責損害補償請求權。"
+          }
+        ]
+      }
+    ],
+    "word": "indemnification"
+  },
+  "R8:FORBEARANCE": {
+    "pos": "n.",
+    "meaning": "債權人按兵不動之暫緩寬限",
+    "example": "The syndicate agreed to a temporary debt enforcement ___ to allow emergency inventory restructuring.",
+    "exampleZh": "貸款銀團最終同意簽署一份短期的暫緩強制執行寬限協議，為債務人實施緊急存貨盤活爭取寶貴喘息之機。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "債權人在借款人違約時基於談判考量暫停行使強制執行拍賣權的寬限容忍協議",
+        "examples": [
+          {
+            "en": "Lenders signed a sixty day forbearance agreement while debt restructuring talks proceeded.",
+            "zh": "貸款銀團同意簽署為期 60 天的寬限容忍協議（Forbearance），在債務重組談判期間暫不行使拍賣抵押權。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "債權人按兵不動之暫緩寬限",
+        "examples": [
+          {
+            "en": "The syndicate agreed to a temporary debt enforcement ___ to allow emergency inventory restructuring.",
+            "zh": "貸款銀團最終同意簽署一份短期的暫緩強制執行寬限協議，為債務人實施緊急存貨盤活爭取寶貴喘息之機。"
+          }
+        ]
+      }
+    ],
+    "word": "forbearance"
+  },
+  "R8:DISSOLUTION": {
+    "pos": "n.",
+    "meaning": "註銷法人資格之法定解散",
+    "example": "Irreconcilable fraud within the executive suite culminated in the state attorney moving for judicial ___.",
+    "exampleZh": "管理層內部駭人聽聞的系統性舞弊被公之於眾後，州檢察長毅然向法院聲請對該涉案企業實施司法強制解散。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依照法定程序徹底終止公司法人資格並將其完全註銷的法人解散",
+        "examples": [
+          {
+            "en": "The deadlock between equal joint venture partners ultimately resulted in judicial dissolution.",
+            "zh": "持股各佔一半的合資夥伴間無休止的法理死鎖，最終不可避免地將這家合資巨頭推向了司法強制解散。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "註銷法人資格之法定解散",
+        "examples": [
+          {
+            "en": "Irreconcilable fraud within the executive suite culminated in the state attorney moving for judicial ___.",
+            "zh": "管理層內部駭人聽聞的系統性舞弊被公之於眾後，州檢察長毅然向法院聲請對該涉案企業實施司法強制解散。"
+          }
+        ]
+      }
+    ],
+    "word": "dissolution"
+  },
+  "R8:SOLICITATION": {
+    "pos": "n.",
+    "meaning": "爭奪董事席位之委託書招攬",
+    "example": "Institutional shareholders were inundated with competing campaign materials during the proxy ___.",
+    "exampleZh": "在激烈的股東大會委託書爭奪大戰期間，廣大機構投資人被雙方鋪天蓋地的宣傳攻勢所淹沒。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公開向股東尋求授權投票或徵集要約收購股份的公開招攬行為",
+        "examples": [
+          {
+            "en": "The activist fund commenced a vigorous proxy solicitation to unseat entrenched board directors.",
+            "zh": "這家激進對沖基金在全球二級市場展開了聲勢浩大的委託書公開招攬，誓將頑固保守的董事會老臣拉下馬。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "爭奪董事席位之委託書招攬",
+        "examples": [
+          {
+            "en": "Institutional shareholders were inundated with competing campaign materials during the proxy ___.",
+            "zh": "在激烈的股東大會委託書爭奪大戰期間，廣大機構投資人被雙方鋪天蓋地的宣傳攻勢所淹沒。"
+          }
+        ]
+      }
+    ],
+    "word": "solicitation"
+  },
+  "R8:CHALMERS HARD PROBLEM OF CONSCIOUSNESS": {
+    "word": "chalmers hard problem of consciousness",
+    "pos": "phr.",
+    "meaning": "探尋主觀感受質起源之意識難題",
+    "example": "The philosopher addressed the chalmers hard problem of consciousness during the international symposium.",
+    "exampleZh": "哲學大師在世界心智哲學大會上，再度向在座群雄拋出了直擊靈魂的查爾默斯意識困難問題。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "探尋主觀感受質起源之意識難題",
+        "examples": [
+          {
+            "en": "The philosopher addressed the chalmers hard problem of consciousness during the international symposium.",
+            "zh": "哲學大師在世界心智哲學大會上，再度向在座群雄拋出了直擊靈魂的查爾默斯意識困難問題。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PREDICTIVE PROCESSING PREDICTION ERROR": {
+    "word": "predictive processing prediction error",
+    "pos": "phr.",
+    "meaning": "貝氏大腦架構下之預測編碼預測誤差",
+    "example": "Cortical hierarchies continuously minimize predictive processing prediction errors against sensory inputs.",
+    "exampleZh": "皮層階層式網絡不知疲倦地將預測編碼架構下的預測誤差壓至最低，以此構建我們眼中的現實。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "貝氏大腦架構下之預測編碼預測誤差",
+        "examples": [
+          {
+            "en": "Cortical hierarchies continuously minimize predictive processing prediction errors against sensory inputs.",
+            "zh": "皮層階層式網絡不知疲倦地將預測編碼架構下的預測誤差壓至最低，以此構建我們眼中的現實。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:RETINAL LATERAL INHIBITION CONTRAST": {
+    "word": "retinal lateral inhibition contrast",
+    "pos": "phr.",
+    "meaning": "視網膜橫向抑制邊緣銳化之側抑制對比",
+    "example": "Edge perception is dramatically sharpened by retinal lateral inhibition contrast mechanisms.",
+    "exampleZh": "在視網膜複雜迴路的側抑制反差機制雕琢下，昏暗視野中的輪廓線條瞬間被勾勒得清清楚楚。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "視網膜橫向抑制邊緣銳化之側抑制對比",
+        "examples": [
+          {
+            "en": "Edge perception is dramatically sharpened by retinal lateral inhibition contrast mechanisms.",
+            "zh": "在視網膜複雜迴路的側抑制反差機制雕琢下，昏暗視野中的輪廓線條瞬間被勾勒得清清楚楚。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HIPPOCAMPAL MEMORY CONSOLIDATION REPLAY": {
+    "word": "hippocampal memory consolidation replay",
+    "pos": "phr.",
+    "meaning": "睡眠中海馬迴記憶重播與大腦皮層固化",
+    "example": "Sharp wave ripples mediate hippocampal memory consolidation replay during deep slow wave sleep.",
+    "exampleZh": "深慢波睡眠中激盪的海馬尖波漣漪，在毫秒之間忠實重播著白晝經歷，將記憶深深烙印進大腦皮層。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "睡眠中海馬迴記憶重播與大腦皮層固化",
+        "examples": [
+          {
+            "en": "Sharp wave ripples mediate hippocampal memory consolidation replay during deep slow wave sleep.",
+            "zh": "深慢波睡眠中激盪的海馬尖波漣漪，在毫秒之間忠實重播著白晝經歷，將記憶深深烙印進大腦皮層。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ENTORHINAL GRID CELL HEXAGONAL LATTICE": {
+    "word": "entorhinal grid cell hexagonal lattice",
+    "pos": "phr.",
+    "meaning": "內嗅皮層正六邊形空間鋪嵌之網格細胞晶格",
+    "example": "The Nobel laureates mapped the entorhinal grid cell hexagonal lattice guiding mammalian navigation.",
+    "exampleZh": "諾貝爾獎得主向世人展示了哺乳動物大腦內嗅皮層網格細胞那令人屏息的正六邊形幾何導航晶格。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "內嗅皮層正六邊形空間鋪嵌之網格細胞晶格",
+        "examples": [
+          {
+            "en": "The Nobel laureates mapped the entorhinal grid cell hexagonal lattice guiding mammalian navigation.",
+            "zh": "諾貝爾獎得主向世人展示了哺乳動物大腦內嗅皮層網格細胞那令人屏息的正六邊形幾何導航晶格。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CEREBELLAR LONG TERM DEPRESSION PLASTICITY": {
+    "word": "cerebellar long term depression plasticity",
+    "pos": "phr.",
+    "meaning": "小腦運動協調精細修剪之長程抑制可塑性",
+    "example": "Climbing fiber inputs induce cerebellar long term depression plasticity at parallel fiber synapses.",
+    "exampleZh": "攀爬纖維的強大輸入在平行纖維與浦肯野細胞突觸間，精準誘導了奠定精細運動學習的小腦長程抑制。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "小腦運動協調精細修剪之長程抑制可塑性",
+        "examples": [
+          {
+            "en": "Climbing fiber inputs induce cerebellar long term depression plasticity at parallel fiber synapses.",
+            "zh": "攀爬纖維的強大輸入在平行纖維與浦肯野細胞突觸間，精準誘導了奠定精細運動學習的小腦長程抑制。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PATCH CLAMP SINGLE CHANNEL ELECTROPHYSIOLOGY": {
+    "word": "patch clamp single channel electrophysiology",
+    "pos": "phr.",
+    "meaning": "記錄單離子通道開閉之膜片鉗單通道電生理",
+    "example": "Sakmann and Neher invented patch clamp single channel electrophysiology to observe ionic currents.",
+    "exampleZh": "薩克曼與內爾開創性的膜片鉗單通道電生理技術，讓全人類首度用肉眼「看見」了離子流穿透細胞膜的微觀奇蹟。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "記錄單離子通道開閉之膜片鉗單通道電生理",
+        "examples": [
+          {
+            "en": "Sakmann and Neher invented patch clamp single channel electrophysiology to observe ionic currents.",
+            "zh": "薩克曼與內爾開創性的膜片鉗單通道電生理技術，讓全人類首度用肉眼「看見」了離子流穿透細胞膜的微觀奇蹟。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BRAIN MACHINE INTERFACE KINEMATIC DECODING": {
+    "word": "brain machine interface kinematic decoding",
+    "pos": "phr.",
+    "meaning": "意念直驅仿生肢體之腦機介面運動學解碼",
+    "example": "Paralyzed patients achieved independent movement through brain machine interface kinematic decoding.",
+    "exampleZh": "完全癱瘓的病患依託高通量侵入式腦機介面運動學實時解碼算法，重新奪回了用意念觸摸世界的尊嚴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意念直驅仿生肢體之腦機介面運動學解碼",
+        "examples": [
+          {
+            "en": "Paralyzed patients achieved independent movement through brain machine interface kinematic decoding.",
+            "zh": "完全癱瘓的病患依託高通量侵入式腦機介面運動學實時解碼算法，重新奪回了用意念觸摸世界的尊嚴。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PLASTICITY": {
+    "pos": "n.",
+    "meaning": "神經迴路自適應之突觸可塑性",
+    "example": "Adult cortical ___ allows stroke patients to recover lost speech faculties over years.",
+    "exampleZh": "成年人強大的大腦皮層突觸可塑性，為無數中風失語症患者跨越數載重新開口說話點亮了生命之光。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "神經突觸與大腦功能組織依據經驗刺激自主重塑與自適應演變的可塑性",
+        "examples": [
+          {
+            "en": "Synaptic plasticity serves as the undisputed cellular foundation for behavioral learning.",
+            "zh": "突觸可塑性（Plasticity）作為行為學學習與認知獲得的細胞生物學基石，地位堅不可摧。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "神經迴路自適應之突觸可塑性",
+        "examples": [
+          {
+            "en": "Adult cortical ___ allows stroke patients to recover lost speech faculties over years.",
+            "zh": "成年人強大的大腦皮層突觸可塑性，為無數中風失語症患者跨越數載重新開口說話點亮了生命之光。"
+          }
+        ]
+      }
+    ],
+    "word": "plasticity"
+  },
+  "R8:QUALIA": {
+    "pos": "n.",
+    "meaning": "主觀體驗之意識感受質",
+    "example": "The vivid subjective redness of a ripe strawberry represents a classic example of conscious ___.",
+    "exampleZh": "鮮紅草莓在視網膜前綻放出的那一抹絢爛主觀紅色，是心智哲學界無可爭議的純粹意識感受質經典範例。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "心智哲學中主觀意識體驗所特有的個別感受質與第一人稱內在感官質感",
+        "examples": [
+          {
+            "en": "Philosophers argue whether physicalist neuroscience can fully account for subjective qualia.",
+            "zh": "當代唯物主義神經科學究竟能否完備解釋帶有強烈第一人稱色彩的「主觀感受質（Qualia）」，引發了百年激辯。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "主觀體驗之意識感受質",
+        "examples": [
+          {
+            "en": "The vivid subjective redness of a ripe strawberry represents a classic example of conscious ___.",
+            "zh": "鮮紅草莓在視網膜前綻放出的那一抹絢爛主觀紅色，是心智哲學界無可爭議的純粹意識感受質經典範例。"
+          }
+        ]
+      }
+    ],
+    "word": "qualia"
+  },
+  "R8:HOMEOSTATIC": {
+    "pos": "adj.",
+    "meaning": "機體自我調控之動態平衡的",
+    "example": "Endocrine feedback loops maintain ___ stability across systemic blood calcium concentrations.",
+    "exampleZh": "精密的內分泌激素反饋調節閉環，晝夜不息地捍衛著人體血鈣濃度神經生理動態平衡的無上尊嚴。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "生物體為維持內部微環境生理指標動態穩定而進行的體內平衡的",
+        "examples": [
+          {
+            "en": "Hypothalamic nuclei launch homeostatic autonomic reflexes to preserve normal blood pressure.",
+            "zh": "下視丘神經核團緊急扣動體內平衡自主神經反射扳機，以將劇烈波動的血壓拉回安全生理警戒線之內。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "機體自我調控之動態平衡的",
+        "examples": [
+          {
+            "en": "Endocrine feedback loops maintain ___ stability across systemic blood calcium concentrations.",
+            "zh": "精密的內分泌激素反饋調節閉環，晝夜不息地捍衛著人體血鈣濃度神經生理動態平衡的無上尊嚴。"
+          }
+        ]
+      }
+    ],
+    "word": "homeostatic"
+  },
+  "R8:INTERNEURON": {
+    "pos": "n.",
+    "meaning": "迴路調控之中間神經元",
+    "example": "Optogenetic excitation of the local ___ terminated spontaneous epileptic bursting in seconds.",
+    "exampleZh": "利用光學信號特異性激發局域中間神經元，在數秒鐘之內便強行撲滅了皮層突發的異常癲癇暴風雨。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在大腦局部神經迴路中承擔訊號整合、側抑制與節律振盪調控的中間神經元",
+        "examples": [
+          {
+            "en": "Cortical parvalbumin interneuron networks generate rhythmic gamma band local field potentials.",
+            "zh": "大腦皮層小白蛋白陽性中間神經元（Interneuron）網絡，主導孕育了高頻伽瑪頻段的局部場電位律動。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "迴路調控之中間神經元",
+        "examples": [
+          {
+            "en": "Optogenetic excitation of the local ___ terminated spontaneous epileptic bursting in seconds.",
+            "zh": "利用光學信號特異性激發局域中間神經元，在數秒鐘之內便強行撲滅了皮層突發的異常癲癇暴風雨。"
+          }
+        ]
+      }
+    ],
+    "word": "interneuron"
+  },
+  "R8:SOMATOSENSORY": {
+    "pos": "adj.",
+    "meaning": "感知觸覺本體之軀體感覺的",
+    "example": "Tactile signals from fingertips travel along dorsal columns to reach the primary ___ cortex.",
+    "exampleZh": "指尖撫摸絲綢時激發的微弱觸覺電訊號，沿著脊髓後索神經束疾馳而上，精準匯入大腦初級軀體感覺皮層。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "接收並處理來自全身皮膚觸覺、溫度感、痛感與深層本體感覺的軀體感覺的",
+        "examples": [
+          {
+            "en": "The primary somatosensory cortex contains an orderly topographic homunculus of the human body.",
+            "zh": "人類初級軀體感覺皮層表面，宛如縮微倒影般精密排列著覆蓋全身各部位的「感覺皮層小人」神經拓撲投影。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "感知觸覺本體之軀體感覺的",
+        "examples": [
+          {
+            "en": "Tactile signals from fingertips travel along dorsal columns to reach the primary ___ cortex.",
+            "zh": "指尖撫摸絲綢時激發的微弱觸覺電訊號，沿著脊髓後索神經束疾馳而上，精準匯入大腦初級軀體感覺皮層。"
+          }
+        ]
+      }
+    ],
+    "word": "somatosensory"
+  },
+  "R8:DEGENERACY": {
+    "pos": "n.",
+    "meaning": "異構同功之生物簡併性",
+    "example": "Structural ___ across neural ensembles imparts exceptional computational fault tolerance.",
+    "exampleZh": "神經元集群在微觀拓撲上的異構簡併性，為生物大腦注入了傳統矽基晶片望塵莫及的超強容錯抗損韌性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "生物學中不同結構的神經元網絡或生化通路能夠執行完全相同功能的簡併性",
+        "examples": [
+          {
+            "en": "Neural degeneracy ensures that motor circuits can produce identical behaviors via diverse pathways.",
+            "zh": "神經系統深邃的「簡併性（Degeneracy）」架構，確保了運動迴路即使遭受局域微創傷，亦能動員不同旁路完成相同指令。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "異構同功之生物簡併性",
+        "examples": [
+          {
+            "en": "Structural ___ across neural ensembles imparts exceptional computational fault tolerance.",
+            "zh": "神經元集群在微觀拓撲上的異構簡併性，為生物大腦注入了傳統矽基晶片望塵莫及的超強容錯抗損韌性。"
+          }
+        ]
+      }
+    ],
+    "word": "degeneracy"
+  },
+  "R8:COMMAND RESPONSIBILITY INTERNATIONAL CRIMINAL LIABILITY": {
+    "word": "command responsibility international criminal liability",
+    "pos": "phr.",
+    "meaning": "統帥怠於制止部屬暴行之指揮官連帶刑事責任",
+    "example": "The general was convicted on all counts of command responsibility international criminal liability.",
+    "exampleZh": "這位驕橫的陸軍上將最終在海牙法庭被定罪，承擔起指揮官過失與連帶刑事責任的終身監禁懲罰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "統帥怠於制止部屬暴行之指揮官連帶刑事責任",
+        "examples": [
+          {
+            "en": "The general was convicted on all counts of command responsibility international criminal liability.",
+            "zh": "這位驕橫的陸軍上將最終在海牙法庭被定罪，承擔起指揮官過失與連帶刑事責任的終身監禁懲罰。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:REBUS SIC STANTIBUS TREATY TERMINATION": {
+    "word": "rebus sic stantibus treaty termination",
+    "pos": "phr.",
+    "meaning": "情勢顛覆劇變廢止條約之情勢變更原則",
+    "example": "The state successfully invoked rebus sic stantibus treaty termination following the sudden tectonic event.",
+    "exampleZh": "在遭遇前所未有的地質板塊巨變後，該國成功援引情勢變更原則宣布廢止原本劃界的舊條約。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "情勢顛覆劇變廢止條約之情勢變更原則",
+        "examples": [
+          {
+            "en": "The state successfully invoked rebus sic stantibus treaty termination following the sudden tectonic event.",
+            "zh": "在遭遇前所未有的地質板塊巨變後，該國成功援引情勢變更原則宣布廢止原本劃界的舊條約。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ERGA OMNES SOVEREIGN OBLIGATION ENFORCEMENT": {
+    "word": "erga omnes sovereign obligation enforcement",
+    "pos": "phr.",
+    "meaning": "全人類共同捍衛無可割裂之對一切義務執行",
+    "example": "Small island nations joined in erga omnes sovereign obligation enforcement against massive polluters.",
+    "exampleZh": "瀕臨淹沒的小島國聯合體依託對一切義務的法理鋼盾，在國際法院向溫室氣體超級排放國提起世紀追訴。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全人類共同捍衛無可割裂之對一切義務執行",
+        "examples": [
+          {
+            "en": "Small island nations joined in erga omnes sovereign obligation enforcement against massive polluters.",
+            "zh": "瀕臨淹沒的小島國聯合體依託對一切義務的法理鋼盾，在國際法院向溫室氣體超級排放國提起世紀追訴。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:EXHAUSTION OF LOCAL REMEDIES REQUIREMENT": {
+    "word": "exhaustion of local remedies requirement",
+    "pos": "phr.",
+    "meaning": "叩響海牙大門前必須窮盡地方法院救濟之先行義務",
+    "example": "The international lawsuit was dismissed for ignoring the exhaustion of local remedies requirement.",
+    "exampleZh": "該起涉資百億的跨國仲裁訴訟因粗暴跳過國內救濟窮盡原則的法定前置程序，被裁判官當庭裁定不予受理。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "叩響海牙大門前必須窮盡地方法院救濟之先行義務",
+        "examples": [
+          {
+            "en": "The international lawsuit was dismissed for ignoring the exhaustion of local remedies requirement.",
+            "zh": "該起涉資百億的跨國仲裁訴訟因粗暴跳過國內救濟窮盡原則的法定前置程序，被裁判官當庭裁定不予受理。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PRE EMPTIVE SELF DEFENSE CAROLINE TEST": {
+    "word": "pre emptive self defense caroline test",
+    "pos": "phr.",
+    "meaning": "命懸一線別無他法之卡羅琳自衛權黃金準則",
+    "example": "Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.",
+    "exampleZh": "國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "命懸一線別無他法之卡羅琳自衛權黃金準則",
+        "examples": [
+          {
+            "en": "Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.",
+            "zh": "國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DOLUS SPECIALIS GENOCIDAL INTENT BURDEN": {
+    "word": "dolus specialis genocidal intent burden",
+    "pos": "phr.",
+    "meaning": "證明有組織斬草除根之種族滅絕特別意圖舉證責任",
+    "example": "The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.",
+    "exampleZh": "檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "證明有組織斬草除根之種族滅絕特別意圖舉證責任",
+        "examples": [
+          {
+            "en": "The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.",
+            "zh": "檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION": {
+    "word": "biological weapons non proliferation verification",
+    "pos": "phr.",
+    "meaning": "銷毀末日炭疽病毒庫之生物武器不擴散查核",
+    "example": "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.",
+    "exampleZh": "聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "銷毀末日炭疽病毒庫之生物武器不擴散查核",
+        "examples": [
+          {
+            "en": "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.",
+            "zh": "聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:RESTITUTIO IN INTEGRUM FULL DAMAGES": {
+    "word": "restitutio in integrum full damages",
+    "pos": "phr.",
+    "meaning": "重回侵權從未發生狀態之完全恢復原狀最高損害賠償",
+    "example": "The tribunal awarded billions under the historic restitutio in integrum full damages standard.",
+    "exampleZh": "國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "重回侵權從未發生狀態之完全恢復原狀最高損害賠償",
+        "examples": [
+          {
+            "en": "The tribunal awarded billions under the historic restitutio in integrum full damages standard.",
+            "zh": "國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BELLIGERENCE": {
+    "pos": "n.",
+    "meaning": "處於交戰之戰時狀態",
+    "example": "Recognizing a rebel faction's lawful ___ elevates the conflict from civil unrest to war.",
+    "exampleZh": "在國際法上承認叛軍武裝的合法交戰地位，將一場國內動亂實質性躍升為受日內瓦公約管轄的正式戰爭。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家間處於公開武裝衝突對抗的交戰狀態以及由此衍生的一整套戰時法權力",
+        "examples": [
+          {
+            "en": "Declaring formal belligerence invokes the comprehensive apparatus of international humanitarian law.",
+            "zh": "正式向全世界宣佈進入交戰狀態（Belligerence），即刻啟動了國際人道法龐大而嚴密的戰時公約法網。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "處於交戰之戰時狀態",
+        "examples": [
+          {
+            "en": "Recognizing a rebel faction's lawful ___ elevates the conflict from civil unrest to war.",
+            "zh": "在國際法上承認叛軍武裝的合法交戰地位，將一場國內動亂實質性躍升為受日內瓦公約管轄的正式戰爭。"
+          }
+        ]
+      }
+    ],
+    "word": "belligerence"
+  },
+  "R8:SANCTITY": {
+    "pos": "n.",
+    "meaning": "不可動搖之神聖性",
+    "example": "The landmark judgment reaffirmed the sacred ___ of civilian life amidst intense urban warfare.",
+    "exampleZh": "海牙法庭的這份歷史性判決書，在殘酷的巷戰血火中再次擦亮了無辜平民生命神聖不可侵犯的文明之光。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "神聖不可侵犯性，特別指條約必須嚴格恪守以及外交場所與平民生命的神聖地位",
+        "examples": [
+          {
+            "en": "Pacta sunt servanda affirms the absolute moral and legal sanctity of freely negotiated treaties.",
+            "zh": "「條約必須信守（Pacta sunt servanda）」的拉丁法諺，鏗鏘宣告了自由協商締結之國際條約神聖不可侵犯的至高權威。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "不可動搖之神聖性",
+        "examples": [
+          {
+            "en": "The landmark judgment reaffirmed the sacred ___ of civilian life amidst intense urban warfare.",
+            "zh": "海牙法庭的這份歷史性判決書，在殘酷的巷戰血火中再次擦亮了無辜平民生命神聖不可侵犯的文明之光。"
+          }
+        ]
+      }
+    ],
+    "word": "sanctity"
+  },
+  "R8:INTERNMENT": {
+    "pos": "n.",
+    "meaning": "預防性戰時行政拘押",
+    "example": "The occupying army violated conventions by subjecting non combatant journalists to indefinite ___.",
+    "exampleZh": "非法占領軍悍然將戰地中立記者投入無休止的行政拘押集中營，公然觸犯了日內瓦公約重罪條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "交戰國在武裝衝突期間出於重大安全防範需要對敵國僑民實施的合法行政拘留拘押",
+        "examples": [
+          {
+            "en": "Administrative internment of civilian nationals requires individual periodic judicial review.",
+            "zh": "交戰當局在戰時對敵國僑民實施的預防性行政拘押（Internment），必須接受獨立司法機構嚴格的定期合規審查。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "預防性戰時行政拘押",
+        "examples": [
+          {
+            "en": "The occupying army violated conventions by subjecting non combatant journalists to indefinite ___.",
+            "zh": "非法占領軍悍然將戰地中立記者投入無休止的行政拘押集中營，公然觸犯了日內瓦公約重罪條款。"
+          }
+        ]
+      }
+    ],
+    "word": "internment"
+  },
+  "R8:GATE ALL AROUND NANOSHEET ARCHITECTURE": {
+    "word": "gate all around nanosheet architecture",
+    "pos": "phr.",
+    "meaning": "徹底杜絕短通道漏電之全環繞閘極奈米片架構",
+    "example": "The industry embraced the gate all around nanosheet architecture to push Moore's Law further.",
+    "exampleZh": "全球晶片製造全產業鏈集體擁抱全環繞閘極奈米片架構，以無畏姿態將摩爾定律再次推向極限。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "徹底杜絕短通道漏電之全環繞閘極奈米片架構",
+        "examples": [
+          {
+            "en": "The industry embraced the gate all around nanosheet architecture to push Moore's Law further.",
+            "zh": "全球晶片製造全產業鏈集體擁抱全環繞閘極奈米片架構，以無畏姿態將摩爾定律再次推向極限。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BACKSIDE POWER DELIVERY NETWORK DECOUPLING": {
+    "word": "backside power delivery network decoupling",
+    "pos": "phr.",
+    "meaning": "電壓降歸零供電走線移至晶圓背部之背面供電",
+    "example": "Implementing backside power delivery network decoupling eliminated routing congestion on the front.",
+    "exampleZh": "背面供電網路技術的革命性解耦實裝，徹底掃清了晶圓正面信號層密密麻麻金屬走線的擁塞噩夢。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "電壓降歸零供電走線移至晶圓背部之背面供電",
+        "examples": [
+          {
+            "en": "Implementing backside power delivery network decoupling eliminated routing congestion on the front.",
+            "zh": "背面供電網路技術的革命性解耦實裝，徹底掃清了晶圓正面信號層密密麻麻金屬走線的擁塞噩夢。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:WAFER TO WAFER HYBRID DIRECT BONDING": {
+    "word": "wafer to wafer hybrid direct bonding",
+    "pos": "phr.",
+    "meaning": "無焊球分子共形熔融之晶圓級混合鍵合技術",
+    "example": "The 3D image sensor achieved sub micron pitch via wafer to wafer hybrid direct bonding.",
+    "exampleZh": "新一代頂級 3D 影像感測器依託晶圓對晶圓混合鍵合技術，達成了亞微米級接點間距的立體神蹟。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無焊球分子共形熔融之晶圓級混合鍵合技術",
+        "examples": [
+          {
+            "en": "The 3D image sensor achieved sub micron pitch via wafer to wafer hybrid direct bonding.",
+            "zh": "新一代頂級 3D 影像感測器依託晶圓對晶圓混合鍵合技術，達成了亞微米級接點間距的立體神蹟。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FOREIGN DIRECT PRODUCT RULE EXPORT LICENSING": {
+    "word": "foreign direct product rule export licensing",
+    "pos": "phr.",
+    "meaning": "動用長臂管制封鎖先進晶片之外國直接產品原則",
+    "example": "The regulatory agency tightened foreign direct product rule export licensing to prevent technology leaks.",
+    "exampleZh": "監管當局全面收緊外國直接產品原則長臂審批絞索，以銅牆鐵壁杜絕先進硬核技術流入威權軍工體系。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "動用長臂管制封鎖先進晶片之外國直接產品原則",
+        "examples": [
+          {
+            "en": "The regulatory agency tightened foreign direct product rule export licensing to prevent technology leaks.",
+            "zh": "監管當局全面收緊外國直接產品原則長臂審批絞索，以銅牆鐵壁杜絕先進硬核技術流入威權軍工體系。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ATOMIC LAYER ETCHING DETERMINISTIC CONTROL": {
+    "word": "atomic layer etching deterministic control",
+    "pos": "phr.",
+    "meaning": "單原子層逐層精準剝離之原子層蝕刻確定性控制",
+    "example": "Engineers leveraged atomic layer etching deterministic control to pattern sub five nanometer gates.",
+    "exampleZh": "工藝巨擘們利用原子層蝕刻確定性控制的超凡精度，在次五奈米深處雕刻出無可挑剔的完美垂直閘極。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "單原子層逐層精準剝離之原子層蝕刻確定性控制",
+        "examples": [
+          {
+            "en": "Engineers leveraged atomic layer etching deterministic control to pattern sub five nanometer gates.",
+            "zh": "工藝巨擘們利用原子層蝕刻確定性控制的超凡精度，在次五奈米深處雕刻出無可挑剔的完美垂直閘極。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:STOCHASTIC LINE EDGE ROUGHNESS MITIGATION": {
+    "word": "stochastic line edge roughness mitigation",
+    "pos": "phr.",
+    "meaning": "抑制量子光子散粒雜訊之線邊粗糙度消除對策",
+    "example": "Advanced resist chemistry enabled significant stochastic line edge roughness mitigation.",
+    "exampleZh": "特種化學光阻聚合物的分子級革命，為平息極紫外光子隨機散粒雜訊導致的線邊粗糙度立下了奇功。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "抑制量子光子散粒雜訊之線邊粗糙度消除對策",
+        "examples": [
+          {
+            "en": "Advanced resist chemistry enabled significant stochastic line edge roughness mitigation.",
+            "zh": "特種化學光阻聚合物的分子級革命，為平息極紫外光子隨機散粒雜訊導致的線邊粗糙度立下了奇功。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CHIP FOUR ALLIANCE SEMICONDUCTOR RESILIENCE": {
+    "word": "chip four alliance semiconductor resilience",
+    "pos": "phr.",
+    "meaning": "美日韓台四大半導體巨頭締結之晶片四方同盟",
+    "example": "Diplomats convened to formalize the chip four alliance semiconductor resilience framework.",
+    "exampleZh": "各國特使齊聚一堂正式簽署晶片四方同盟戰略框架，將民主世界最核心的半導體製造命脈緊緊銲死在一起。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "美日韓台四大半導體巨頭締結之晶片四方同盟",
+        "examples": [
+          {
+            "en": "Diplomats convened to formalize the chip four alliance semiconductor resilience framework.",
+            "zh": "各國特使齊聚一堂正式簽署晶片四方同盟戰略框架，將民主世界最核心的半導體製造命脈緊緊銲死在一起。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:WIDE BANDGAP SEMICONDUCTOR POWER CONVERSION": {
+    "word": "wide bandgap semiconductor power conversion",
+    "pos": "phr.",
+    "meaning": "耐受千伏高壓熱力學穩定之寬能隙半導體功率轉換",
+    "example": "Electric supercars rely on wide bandgap semiconductor power conversion for lightning fast charging.",
+    "exampleZh": "新一代純電百萬超跑全線搭載寬能隙半導體碳化矽功率變流模組，達成了驚豔世人的三分鐘極限超充。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "耐受千伏高壓熱力學穩定之寬能隙半導體功率轉換",
+        "examples": [
+          {
+            "en": "Electric supercars rely on wide bandgap semiconductor power conversion for lightning fast charging.",
+            "zh": "新一代純電百萬超跑全線搭載寬能隙半導體碳化矽功率變流模組，達成了驚豔世人的三分鐘極限超充。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FABRICATION": {
+    "pos": "n.",
+    "meaning": "微納晶片之晶圓製造製程",
+    "example": "Front end semiconductor ___ accounts for seventy percent of the total cost of chip production.",
+    "exampleZh": "晶片前段晶圓製造製程（Fabrication），在整顆微晶片全流程綜合成本中佔據了高達七成的壓倒性比重。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在尖端無塵室環境中由數百道微觀工序將矽片打造成微晶片的半導體製造製程",
+        "examples": [
+          {
+            "en": "Wafer fabrication demands ultra clean chemical reagents and vibration isolated foundations.",
+            "zh": "晶圓製造製程（Fabrication）對工業超純化學試劑的潔淨度與地質抗震基礎有著近乎病態的苛刻要求。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "微納晶片之晶圓製造製程",
+        "examples": [
+          {
+            "en": "Front end semiconductor ___ accounts for seventy percent of the total cost of chip production.",
+            "zh": "晶片前段晶圓製造製程（Fabrication），在整顆微晶片全流程綜合成本中佔據了高達七成的壓倒性比重。"
+          }
+        ]
+      }
+    ],
+    "word": "fabrication"
+  },
+  "R8:PHOTOMASK": {
+    "pos": "n.",
+    "meaning": "投射電路之高精度光罩",
+    "example": "Any microscopic dust particle landing on an unprotected ___ creates millions of defective dies.",
+    "exampleZh": "哪怕只有一顆看不見的微觀塵埃落在未受保護的光罩（Photomask）表面，都會連續催生數百萬顆報廢晶片。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "刻有高精度積體電路版圖以供光刻微影機將圖案無損投射在晶圓上的石英光罩",
+        "examples": [
+          {
+            "en": "Fabricating an extreme ultraviolet photomask requires defect free multilayer molybdenum silicon mirrors.",
+            "zh": "製作一片合格的極紫外石英光罩（Photomask），仰賴在基底上沉積數十層零瑕疵的鉬矽交替反射薄膜。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "投射電路之高精度光罩",
+        "examples": [
+          {
+            "en": "Any microscopic dust particle landing on an unprotected ___ creates millions of defective dies.",
+            "zh": "哪怕只有一顆看不見的微觀塵埃落在未受保護的光罩（Photomask）表面，都會連續催生數百萬顆報廢晶片。"
+          }
+        ]
+      }
+    ],
+    "word": "photomask"
+  },
+  "R8:NANOSHEET": {
+    "pos": "n.",
+    "meaning": "全環繞閘極之超薄奈米片",
+    "example": "The transition from FinFET to gate all around ___ represents the biggest architectural shift in a decade.",
+    "exampleZh": "從立體鰭式電晶體向全環繞閘極奈米片（Nanosheet）的全面跨越，是全球半導體過去十年最波瀾壯闊的架構革命。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "全環繞閘極電晶體中多層水平堆疊作為導電通道的超薄奈米矽片結構",
+        "examples": [
+          {
+            "en": "Stacking three silicon nanosheet channels vertically maximizes drive currents while minimizing leakage.",
+            "zh": "將三層奈米矽片（Nanosheet）通道在垂直空間重疊排列，能在將漏電流壓制至極限的同時實現驅動電流倍增。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "全環繞閘極之超薄奈米片",
+        "examples": [
+          {
+            "en": "The transition from FinFET to gate all around ___ represents the biggest architectural shift in a decade.",
+            "zh": "從立體鰭式電晶體向全環繞閘極奈米片（Nanosheet）的全面跨越，是全球半導體過去十年最波瀾壯闊的架構革命。"
+          }
+        ]
+      }
+    ],
+    "word": "nanosheet"
+  },
+  "R8:INTERPOSER": {
+    "pos": "n.",
+    "meaning": "立體封裝之高密度中介層",
+    "example": "The massive AI chip is seated atop a passive silicon ___ measuring twice the reticle limit.",
+    "exampleZh": "這顆龐大無比的 AI 旗艦晶片端坐在一座面積超過光罩極限兩倍的巨型超高密度矽中介層（Interposer）之上。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在先進立體封裝中為多顆小晶粒之間提供超高密度微觀金屬佈線互連的微型中介層",
+        "examples": [
+          {
+            "en": "The silicon interposer routes thousands of micro connections between the GPU and HBM memory.",
+            "zh": "高精度矽中介層（Interposer），在 AI 運算主晶片與高頻寬記憶體之間編織起數以萬計的超密集訊號微管線。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "立體封裝之高密度中介層",
+        "examples": [
+          {
+            "en": "The massive AI chip is seated atop a passive silicon ___ measuring twice the reticle limit.",
+            "zh": "這顆龐大無比的 AI 旗艦晶片端坐在一座面積超過光罩極限兩倍的巨型超高密度矽中介層（Interposer）之上。"
+          }
+        ]
+      }
+    ],
+    "word": "interposer"
+  },
+  "R8:PLANARIZATION": {
+    "pos": "n.",
+    "meaning": "晶圓原子級拋光平坦化",
+    "example": "Inadequate surface ___ results in severe photolithographic focal depth errors during printing.",
+    "exampleZh": "表面化學研磨拋光平坦化（Planarization）稍有不逮，便會在接下來的光刻曝光中引發毀滅性的焦點深度失焦。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用化學腐蝕與機械磨削協同作用將晶圓表面起伏研磨至絕對平整的平坦化製程",
+        "examples": [
+          {
+            "en": "Chemical mechanical planarization achieves sub nanometer surface planarity across the entire disc.",
+            "zh": "化學機械平坦化製程（Planarization），在直徑 300 毫米的巨大晶圓表面達成了亞奈米級的鏡面平整度。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "晶圓原子級拋光平坦化",
+        "examples": [
+          {
+            "en": "Inadequate surface ___ results in severe photolithographic focal depth errors during printing.",
+            "zh": "表面化學研磨拋光平坦化（Planarization）稍有不逮，便會在接下來的光刻曝光中引發毀滅性的焦點深度失焦。"
+          }
+        ]
+      }
+    ],
+    "word": "planarization"
+  },
+  "R8:DISLOCATION": {
+    "pos": "n.",
+    "meaning": "晶格缺陷之微觀原子位錯",
+    "example": "X ray topography inspection revealed severe crystal ___ networks running through the substrate.",
+    "exampleZh": "高分辨率 X 光拓撲形貌無損檢測震撼揭示：整片晶圓基底內部交織盤踞著密密麻麻的晶格原子位錯缺陷。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "晶體生長或薄膜沉積過程中發生的晶格原子排列錯位與結晶線缺陷",
+        "examples": [
+          {
+            "en": "Basal plane dislocation defects in silicon carbide severely degrade high voltage device lifetime.",
+            "zh": "碳化矽單晶生長中的基面位錯（Dislocation）晶格缺陷，會大幅縮短高壓車規級功率元件的使用壽命。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "晶格缺陷之微觀原子位錯",
+        "examples": [
+          {
+            "en": "X ray topography inspection revealed severe crystal ___ networks running through the substrate.",
+            "zh": "高分辨率 X 光拓撲形貌無損檢測震撼揭示：整片晶圓基底內部交織盤踞著密密麻麻的晶格原子位錯缺陷。"
+          }
+        ]
+      }
+    ],
+    "word": "dislocation"
+  },
+  "R8:DERRIDA POST STRUCTURALIST DIFFERANCE DEFERRAL": {
+    "word": "derrida post structuralist differance deferral",
+    "pos": "phr.",
+    "meaning": "意義無限延宕分化之德希達延異",
+    "example": "The literary critic applied derrida post structuralist differance deferral to unravel metaphysical claims.",
+    "exampleZh": "解構批評大師熟稔操持德希達後結構主義延異利刃，將形上學的絕對真理企圖徹底化為齏粉。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "意義無限延宕分化之德希達延異",
+        "examples": [
+          {
+            "en": "The literary critic applied derrida post structuralist differance deferral to unravel metaphysical claims.",
+            "zh": "解構批評大師熟稔操持德希達後結構主義延異利刃，將形上學的絕對真理企圖徹底化為齏粉。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BAUDRILLARD HYPERREALITY SIMULATION SIMULACRUM": {
+    "word": "baudrillard hyperreality simulation simulacrum",
+    "pos": "phr.",
+    "meaning": "超越真實凌駕客觀之布希亞超真實擬像",
+    "example": "Disneyland stands as the archetypal baudrillard hyperreality simulation simulacrum masking consumer decay.",
+    "exampleZh": "加州迪士尼樂園巍然矗立，成為布希亞超真實擬像世界最登峰造極、掩蓋消費帝國精神荒涼的遮羞布。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "超越真實凌駕客觀之布希亞超真實擬像",
+        "examples": [
+          {
+            "en": "Disneyland stands as the archetypal baudrillard hyperreality simulation simulacrum masking consumer decay.",
+            "zh": "加州迪士尼樂園巍然矗立，成為布希亞超真實擬像世界最登峰造極、掩蓋消費帝國精神荒涼的遮羞布。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:KANT AESTHETIC SUBLIME TRANSCENDENCE": {
+    "word": "kant aesthetic sublime transcendence",
+    "pos": "phr.",
+    "meaning": "震撼感官激發靈魂敬畏之康德崇高審美",
+    "example": "Gazing upon the violent alpine storm evoked classic kant aesthetic sublime transcendence in the soul.",
+    "exampleZh": "在阿爾卑斯山巔狂風驟雨的雷霆轟鳴前凝眸沉思，在哲人靈魂深處喚醒了無與倫比的康德崇高審美敬畏。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "震撼感官激發靈魂敬畏之康德崇高審美",
+        "examples": [
+          {
+            "en": "Gazing upon the violent alpine storm evoked classic kant aesthetic sublime transcendence in the soul.",
+            "zh": "在阿爾卑斯山巔狂風驟雨的雷霆轟鳴前凝眸沉思，在哲人靈魂深處喚醒了無與倫比的康德崇高審美敬畏。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ADORNO NEGATIVE DIALECTICS NON IDENTITY": {
+    "word": "adorno negative dialectics non identity",
+    "pos": "phr.",
+    "meaning": "拒絕虛偽和諧揚棄之阿多諾否定辯證法",
+    "example": "Critical theorists drew upon adorno negative dialectics non identity to preserve irreconcilable pain.",
+    "exampleZh": "法蘭克福批判哲人緊緊握住阿多諾否定辯證法的批判武器，矢志捍衛那些無法被抽象同一性強行抹平的具體苦難。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拒絕虛偽和諧揚棄之阿多諾否定辯證法",
+        "examples": [
+          {
+            "en": "Critical theorists drew upon adorno negative dialectics non identity to preserve irreconcilable pain.",
+            "zh": "法蘭克福批判哲人緊緊握住阿多諾否定辯證法的批判武器，矢志捍衛那些無法被抽象同一性強行抹平的具體苦難。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LEVINAS ETHICAL FACE OF THE OTHER": {
+    "word": "levinas ethical face of the other",
+    "pos": "phr.",
+    "meaning": "先於存在不可推卸之列維納斯他者之面龐",
+    "example": "Moral responsibility is ignited by the defenseless levinas ethical face of the other demanding justice.",
+    "exampleZh": "當那張無助而赤裸的列維納斯他者之面龐映入眼簾時，沉睡在靈魂深處的無條件道德正義之火被瞬間點燃。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "先於存在不可推卸之列維納斯他者之面龐",
+        "examples": [
+          {
+            "en": "Moral responsibility is ignited by the defenseless levinas ethical face of the other demanding justice.",
+            "zh": "當那張無助而赤裸的列維納斯他者之面龐映入眼簾時，沉睡在靈魂深處的無條件道德正義之火被瞬間點燃。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AGAMBEN SOVEREIGN STATE OF EXCEPTION": {
+    "word": "agamben sovereign state of exception",
+    "pos": "phr.",
+    "meaning": "法治暫停公民貶為赤裸生命之阿岡本例外狀態",
+    "example": "Authoritarian regimes weaponize the agamben sovereign state of exception to strip citizens of rights.",
+    "exampleZh": "威權專制政客最擅長將阿岡本例外狀態武器化，以反恐與維穩為由將全體公民合法剝奪為任人宰割的赤裸生命。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "法治暫停公民貶為赤裸生命之阿岡本例外狀態",
+        "examples": [
+          {
+            "en": "Authoritarian regimes weaponize the agamben sovereign state of exception to strip citizens of rights.",
+            "zh": "威權專制政客最擅長將阿岡本例外狀態武器化，以反恐與維穩為由將全體公民合法剝奪為任人宰割的赤裸生命。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HABERMAS COMMUNICATIVE RATIONALITY DISCOURSE": {
+    "word": "habermas communicative rationality discourse",
+    "pos": "phr.",
+    "meaning": "構建理想言談共識之哈伯瑪斯交往理性話語",
+    "example": "Democratic legitimacy depends on vibrant habermas communicative rationality discourse across public spheres.",
+    "exampleZh": "當代民主法治大廈的合法性基石，唯有在公民社會蓬勃激盪的哈伯瑪斯交往理性論證話語中方能長治久安。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "構建理想言談共識之哈伯瑪斯交往理性話語",
+        "examples": [
+          {
+            "en": "Democratic legitimacy depends on vibrant habermas communicative rationality discourse across public spheres.",
+            "zh": "當代民主法治大廈的合法性基石，唯有在公民社會蓬勃激盪的哈伯瑪斯交往理性論證話語中方能長治久安。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FOUCAULT BIOPOLITICAL POPULATION MANAGEMENT": {
+    "word": "foucault biopolitical population management",
+    "pos": "phr.",
+    "meaning": "將全體公民生物體納入規訓統治之生命政治治理",
+    "example": "Epidemic quarantines epitomized foucault biopolitical population management techniques at national scales.",
+    "exampleZh": "遍布全國的嚴密疫情追蹤與全民隔離，集中展示了傅柯生命政治人口微觀規訓治理技術的極致威力。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "將全體公民生物體納入規訓統治之生命政治治理",
+        "examples": [
+          {
+            "en": "Epidemic quarantines epitomized foucault biopolitical population management techniques at national scales.",
+            "zh": "遍布全國的嚴密疫情追蹤與全民隔離，集中展示了傅柯生命政治人口微觀規訓治理技術的極致威力。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SIMULACRUM": {
+    "pos": "n.",
+    "meaning": "無真實源頭之純粹擬像",
+    "example": "The theme park creates an idealized ___ that tourists enjoy far more than historical reality.",
+    "exampleZh": "這座造價百億的主題樂園精心編織了一座完美無瑕的擬像（Simulacrum），令遊客沉溺其中無法自拔。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "後現代哲學中不再反映任何真實客觀參照物自身成為超真實的仿真擬像",
+        "examples": [
+          {
+            "en": "The casino replica of Venice is a hollow simulacrum that replaces the historical Italian city.",
+            "zh": "賭城大道上那座金碧輝煌的假威尼斯運河，是一座憑空捏造、徹底取代了歷史義大利水城的空洞擬像（Simulacrum）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "無真實源頭之純粹擬像",
+        "examples": [
+          {
+            "en": "The theme park creates an idealized ___ that tourists enjoy far more than historical reality.",
+            "zh": "這座造價百億的主題樂園精心編織了一座完美無瑕的擬像（Simulacrum），令遊客沉溺其中無法自拔。"
+          }
+        ]
+      }
+    ],
+    "word": "simulacrum"
+  },
+  "R8:SUBLIMITY": {
+    "pos": "n.",
+    "meaning": "震撼靈魂之美學崇高境",
+    "example": "The thundering arctic glacier calving into the ocean stunned onlookers with its terrifying ___.",
+    "exampleZh": "極地萬年冰川轟然崩塌砸入怒海的毀滅性巨響，以攝人心魄的美學崇高（Sublimity）震撼了在場所有目擊者。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "美學中因浩瀚宏偉或毀滅性力量超越感官極限而喚醒崇高震撼與敬畏的精神境界",
+        "examples": [
+          {
+            "en": "The sheer cosmic sublimity of the starry sky inspired Kant's profound philosophical awe.",
+            "zh": "夜空中浩瀚無垠、深不可測的繁星蒼穹，在康德心靈深處激發起了穿越物質世界的美學崇高感（Sublimity）。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "震撼靈魂之美學崇高境",
+        "examples": [
+          {
+            "en": "The thundering arctic glacier calving into the ocean stunned onlookers with its terrifying ___.",
+            "zh": "極地萬年冰川轟然崩塌砸入怒海的毀滅性巨響，以攝人心魄的美學崇高（Sublimity）震撼了在場所有目擊者。"
+          }
+        ]
+      }
+    ],
+    "word": "sublimity"
+  },
+  "R8:METANARRATIVE": {
+    "pos": "n.",
+    "meaning": "包羅萬象之歷史宏大敘事",
+    "example": "Contemporary historians eschew the overarching ___ in favor of microhistories of marginalized voices.",
+    "exampleZh": "當代前沿歷史學家徹底拋棄了空洞包羅萬象的宏大敘事（Metanarrative），轉而將目光深情傾注於被遺忘小人物的微觀史料。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "後現代主義批判的、試圖用單一歷史目的論或真理神話統攝解釋全人類經驗的宏大敘事",
+        "examples": [
+          {
+            "en": "Postmodern skepticism dismantled the grand metanarrative of uninterrupted human moral progress.",
+            "zh": "後現代主義深刻的懷疑鋒芒，將啟蒙運動以來構築的那套人類道德必然不斷進步的宏大敘事（Metanarrative）徹底瓦解。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "包羅萬象之歷史宏大敘事",
+        "examples": [
+          {
+            "en": "Contemporary historians eschew the overarching ___ in favor of microhistories of marginalized voices.",
+            "zh": "當代前沿歷史學家徹底拋棄了空洞包羅萬象的宏大敘事（Metanarrative），轉而將目光深情傾注於被遺忘小人物的微觀史料。"
+          }
+        ]
+      }
+    ],
+    "word": "metanarrative"
+  },
+  "R8:DISENCHANTMENT": {
+    "pos": "n.",
+    "meaning": "驅逐神祕魔法之世界祛魅",
+    "example": "The relentless spread of secular empiricism brought about the psychological ___ of the modern cosmos.",
+    "exampleZh": "世俗經驗主義科學的野蠻生長，為人類現代文明不可逆地拉開了宇宙全面世俗祛魅（Disenchantment）的沉重大幕。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "現代工具理性、科學主義擴張驅逐了自然神祕光環與神聖超驗意義的世俗祛魅",
+        "examples": [
+          {
+            "en": "Weber lamented the cosmic disenchantment that accompanied the rise of industrial bureaucratic systems.",
+            "zh": "馬克斯·韋伯為工業科層制興起所必然伴隨的宇宙神聖魔法光環的消解與世界祛魅（Disenchantment）發出了深沉的哀嘆。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "驅逐神祕魔法之世界祛魅",
+        "examples": [
+          {
+            "en": "The relentless spread of secular empiricism brought about the psychological ___ of the modern cosmos.",
+            "zh": "世俗經驗主義科學的野蠻生長，為人類現代文明不可逆地拉開了宇宙全面世俗祛魅（Disenchantment）的沉重大幕。"
+          }
+        ]
+      }
+    ],
+    "word": "disenchantment"
+  },
+  "R8:HERMENEUTIC": {
+    "pos": "adj.",
+    "meaning": "抽絲剝繭之哲學詮釋學的",
+    "example": "Literary scholars apply advanced ___ frameworks to unravel the layered meanings of ancient epics.",
+    "exampleZh": "文學史巨擘熟稔動用高階哲學詮釋學（Hermeneutic）解讀框架，將古老英雄史詩中千回百轉的多重視域層層揭開。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "關乎文本深層闡釋、理解自反性循環與歷史語境理解的詮釋學的與解釋學的",
+        "examples": [
+          {
+            "en": "The legal scholar performed a meticulous hermeneutic reading of the constitutional amendment.",
+            "zh": "這位憲政法學泰斗對該項歷史性憲法修正案，展開了入木三分、抽絲剝繭的詮釋學（Hermeneutic）文本解讀。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "抽絲剝繭之哲學詮釋學的",
+        "examples": [
+          {
+            "en": "Literary scholars apply advanced ___ frameworks to unravel the layered meanings of ancient epics.",
+            "zh": "文學史巨擘熟稔動用高階哲學詮釋學（Hermeneutic）解讀框架，將古老英雄史詩中千回百轉的多重視域層層揭開。"
+          }
+        ]
+      }
+    ],
+    "word": "hermeneutic"
+  },
+  "R8:INTERSUBJECTIVE": {
+    "pos": "adj.",
+    "meaning": "心靈互認之互為主體的",
+    "example": "True human empathy requires establishing an ___ bond where both parties feel mutually understood.",
+    "exampleZh": "真正觸及靈魂的人類共情，必須構築起互為主體的（Intersubjective）心靈紐帶，令彼此真真切切感受到被對方所理解與接納。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "超越個體唯我論、在兩個或多個具備意識的主體之間透過對話互認達成的互為主體的",
+        "examples": [
+          {
+            "en": "Scientific objectivity relies fundamentally on intersubjective verification within the scientific community.",
+            "zh": "科學所謂的客觀性，其底層最根本的支柱正是科學家共同體內部開展的互為主體的（Intersubjective）反覆核驗與對話。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "心靈互認之互為主體的",
+        "examples": [
+          {
+            "en": "True human empathy requires establishing an ___ bond where both parties feel mutually understood.",
+            "zh": "真正觸及靈魂的人類共情，必須構築起互為主體的（Intersubjective）心靈紐帶，令彼此真真切切感受到被對方所理解與接納。"
+          }
+        ]
+      }
+    ],
+    "word": "intersubjective"
   },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
@@ -32675,6 +37252,234 @@
           {
             "en": "Mining developers must secure free prior and informed consent before altering customary indigenous forests.",
             "zh": "任何外來跨國採礦資本在踏入原住民世代棲息的原始森林半步之前，必須依法獲得其完整、自由且知情的同意授權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:TOPOLOGICAL INSULATOR EDGE STATE": {
+    "word": "topological insulator edge state",
+    "pos": "phr.",
+    "meaning": "塊體絕緣而表面無耗散導電之拓撲邊界態",
+    "example": "Backscattering is topologically forbidden along the protected topological insulator edge state.",
+    "exampleZh": "在時間反演對稱性的鐵律庇護下，外來非磁性雜質在拓撲絕緣體一維無能隙邊界態上的背向散射被絕對禁止。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "塊體絕緣而表面無耗散導電之拓撲邊界態",
+        "examples": [
+          {
+            "en": "Backscattering is topologically forbidden along the protected topological insulator edge state.",
+            "zh": "在時間反演對稱性的鐵律庇護下，外來非磁性雜質在拓撲絕緣體一維無能隙邊界態上的背向散射被絕對禁止。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CP SYMMETRY VIOLATION PARAMETER": {
+    "word": "cp symmetry violation parameter",
+    "pos": "phr.",
+    "meaning": "解開宇宙反物質湮滅之宇稱破缺參數",
+    "example": "Precise beam measurements revealed the tiny cp symmetry violation parameter in neutral meson decays.",
+    "exampleZh": "高能粒子對撞機的高精度束流測量，精準錨定了中性介子罕見弱相互作用衰變中的 CP 對稱性破缺關鍵參數。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "解開宇宙反物質湮滅之宇稱破缺參數",
+        "examples": [
+          {
+            "en": "Precise beam measurements revealed the tiny cp symmetry violation parameter in neutral meson decays.",
+            "zh": "高能粒子對撞機的高精度束流測量，精準錨定了中性介子罕見弱相互作用衰變中的 CP 對稱性破缺關鍵參數。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:MAREVA WORLDWIDE FREEZING INJUNCTION": {
+    "word": "mareva worldwide freezing injunction",
+    "pos": "phr.",
+    "meaning": "斬斷跨國隱匿脫產之瑪瑞瓦全球資產凍結令",
+    "example": "The commercial division obtained a mareva worldwide freezing injunction against offshore bank vaults.",
+    "exampleZh": "商事法庭在立案當日火速簽發了瑪瑞瓦全球資產凍結令，全面查封了被告藏匿於海外避稅天堂的秘密金庫。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "斬斷跨國隱匿脫產之瑪瑞瓦全球資產凍結令",
+        "examples": [
+          {
+            "en": "The commercial division obtained a mareva worldwide freezing injunction against offshore bank vaults.",
+            "zh": "商事法庭在立案當日火速簽發了瑪瑞瓦全球資產凍結令，全面查封了被告藏匿於海外避稅天堂的秘密金庫。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CFIUS NATIONAL SECURITY REVIEW JURISDICTION": {
+    "word": "cfius national security review jurisdiction",
+    "pos": "phr.",
+    "meaning": "阻截關鍵技術外流之外資審查委員會國安管轄",
+    "example": "The semiconductor buyout fell directly within cfius national security review jurisdiction.",
+    "exampleZh": "這起涉及尖端製程晶片製造商的跨國併購案，毫無懸念地撞上了美國外國投資委員會國安審查的鋼鐵防線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "阻截關鍵技術外流之外資審查委員會國安管轄",
+        "examples": [
+          {
+            "en": "The semiconductor buyout fell directly within cfius national security review jurisdiction.",
+            "zh": "這起涉及尖端製程晶片製造商的跨國併購案，毫無懸念地撞上了美國外國投資委員會國安審查的鋼鐵防線。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:GLOBAL NEURONAL WORKSPACE BROADCAST": {
+    "word": "global neuronal workspace broadcast",
+    "pos": "phr.",
+    "meaning": "全腦點燃躍升為主觀意識之全腦工作空間廣播",
+    "example": "Subliminal primes fail to achieve global neuronal workspace broadcast across the prefrontal network.",
+    "exampleZh": "那些閾下潛意識刺激因能量孱弱，終究無法在額頂葉網絡引發具有決定意義的全腦工作空間點燃廣播。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "全腦點燃躍升為主觀意識之全腦工作空間廣播",
+        "examples": [
+          {
+            "en": "Subliminal primes fail to achieve global neuronal workspace broadcast across the prefrontal network.",
+            "zh": "那些閾下潛意識刺激因能量孱弱，終究無法在額頂葉網絡引發具有決定意義的全腦工作空間點燃廣播。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AMYLOID CASCADE HYPOTHESIS VALIDATION": {
+    "word": "amyloid cascade hypothesis validation",
+    "pos": "phr.",
+    "meaning": "阿茲海默症澱粉樣蛋白級聯假說檢驗",
+    "example": "Clinical drug trials provide ongoing amyloid cascade hypothesis validation in modern neurology.",
+    "exampleZh": "全球各大前沿三期臨床新藥試驗，正在以數百億代價對阿茲海默症澱粉樣蛋白級聯假說展開終極驗證。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "阿茲海默症澱粉樣蛋白級聯假說檢驗",
+        "examples": [
+          {
+            "en": "Clinical drug trials provide ongoing amyloid cascade hypothesis validation in modern neurology.",
+            "zh": "全球各大前沿三期臨床新藥試驗，正在以數百億代價對阿茲海默症澱粉樣蛋白級聯假說展開終極驗證。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:MARTENS CLAUSE HUMANITARIAN PROTECTION": {
+    "word": "martens clause humanitarian protection",
+    "pos": "phr.",
+    "meaning": "無條約情境下守護良知底線之馬爾頓斯條款庇護",
+    "example": "Jurists relied on martens clause humanitarian protection to forbid automated civilian targeting algorithms.",
+    "exampleZh": "國際法泰斗毅然搬出馬爾頓斯條款的人道良知庇護盾牌，將AI自主屠戮平民的致命演算法明文打入地獄。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "無條約情境下守護良知底線之馬爾頓斯條款庇護",
+        "examples": [
+          {
+            "en": "Jurists relied on martens clause humanitarian protection to forbid automated civilian targeting algorithms.",
+            "zh": "國際法泰斗毅然搬出馬爾頓斯條款的人道良知庇護盾牌，將AI自主屠戮平民的致命演算法明文打入地獄。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DIRECT PARTICIPATION IN HOSTILITIES LOSS": {
+    "word": "direct participation in hostilities loss",
+    "pos": "phr.",
+    "meaning": "平民持槍開火瞬間喪失豁免之直接參與敵對行動",
+    "example": "Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.",
+    "exampleZh": "平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "平民持槍開火瞬間喪失豁免之直接參與敵對行動",
+        "examples": [
+          {
+            "en": "Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.",
+            "zh": "平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CHEMICAL MECHANICAL PLANARIZATION UNIFORMITY": {
+    "word": "chemical mechanical planarization uniformity",
+    "pos": "phr.",
+    "meaning": "拋光晶圓至原子級平整之化學機械研磨拋光",
+    "example": "Atomic level chemical mechanical planarization uniformity is mandatory for multi layer lithography.",
+    "exampleZh": "原子級絕對平整的化學機械研磨拋光均勻度，是多層複雜光刻微影製程中不容絲毫妥協的鋼鐵前提。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "拋光晶圓至原子級平整之化學機械研磨拋光",
+        "examples": [
+          {
+            "en": "Atomic level chemical mechanical planarization uniformity is mandatory for multi layer lithography.",
+            "zh": "原子級絕對平整的化學機械研磨拋光均勻度，是多層複雜光刻微影製程中不容絲毫妥協的鋼鐵前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CO PACKAGED OPTICS SILICON PHOTONICS INTEGRATION": {
+    "word": "co packaged optics silicon photonics integration",
+    "pos": "phr.",
+    "meaning": "光子直驅取代發熱銅線之光電共封裝矽光子整合",
+    "example": "Hyperscale datacenters embraced co packaged optics silicon photonics integration to slash power.",
+    "exampleZh": "全球超算資料中心大舉換裝光電共封裝矽光子整合模組，將 AI 集群內部互連功耗腰斬過半。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "光子直驅取代發熱銅線之光電共封裝矽光子整合",
+        "examples": [
+          {
+            "en": "Hyperscale datacenters embraced co packaged optics silicon photonics integration to slash power.",
+            "zh": "全球超算資料中心大舉換裝光電共封裝矽光子整合模組，將 AI 集群內部互連功耗腰斬過半。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LYOTARD POSTMODERN METANARRATIVE COLLAPSE": {
+    "word": "lyotard postmodern metanarrative collapse",
+    "pos": "phr.",
+    "meaning": "烏托邦宏大救贖神話破滅之利奧塔宏大敘事瓦解",
+    "example": "The horrors of Auschwitz precipitated lyotard postmodern metanarrative collapse across western thought.",
+    "exampleZh": "奧斯威辛集中營冒出的滾滾濃煙，向全人類無情宣告了利奧塔後現代宏大敘事救贖神話的徹底幻滅。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "烏托邦宏大救贖神話破滅之利奧塔宏大敘事瓦解",
+        "examples": [
+          {
+            "en": "The horrors of Auschwitz precipitated lyotard postmodern metanarrative collapse across western thought.",
+            "zh": "奧斯威辛集中營冒出的滾滾濃煙，向全人類無情宣告了利奧塔後現代宏大敘事救贖神話的徹底幻滅。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ZIZEK CYNICAL DISTANCE IDEOLOGICAL FANTASY": {
+    "word": "zizek cynical distance ideological fantasy",
+    "pos": "phr.",
+    "meaning": "深知真相卻依然照做之齊澤克犬儒意識形態幻想",
+    "example": "Consumerism operates not through blind faith but via zizek cynical distance ideological fantasy.",
+    "exampleZh": "當代消費拜物教的生命力絕非源於愚昧盲信，恰恰深植於齊澤克剖析的那套「深知虛妄卻依然照做」的犬儒意識形態幻想。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "深知真相卻依然照做之齊澤克犬儒意識形態幻想",
+        "examples": [
+          {
+            "en": "Consumerism operates not through blind faith but via zizek cynical distance ideological fantasy.",
+            "zh": "當代消費拜物教的生命力絕非源於愚昧盲信，恰恰深植於齊澤克剖析的那套「深知虛妄卻依然照做」的犬儒意識形態幻想。"
           }
         ]
       }

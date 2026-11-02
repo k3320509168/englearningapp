@@ -9066,6 +9066,182 @@
       ],
       "ans": "C",
       "explain": "繁體中文解說：now 表示現在正在進行，用 is helping。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 【外送點餐】請聽店員的詢問並選出正確回應：",
+      "speak": "Would you like that for dine-in or takeout?",
+      "ans": "B",
+      "options": [
+        "A. Yes, I like food.",
+        "B. For takeout, please.",
+        "C. I am cooking.",
+        "D. At five o'clock."
+      ],
+      "explain": "店員詢問「你要內用還是外帶？」（dine-in or takeout），最適當的回應為「外帶，謝謝」（For takeout, please）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【咖啡廳告示】Notice: Please inform the barista if you have any milk allergies. We offer oat and soy milk upon request.\nQ: What should customers do if they cannot drink dairy milk?",
+      "ans": "C",
+      "options": [
+        "A. Bring their own drinks",
+        "B. Pay extra cash only",
+        "C. Ask for oat or soy milk",
+        "D. Leave the cafe immediately"
+      ],
+      "explain": "告示說明如有牛奶過敏請告知咖啡師，店內提供燕麥奶與豆奶（offer oat and soy milk upon request），因此選項 C 正確。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "【口說點餐】請唸出向店員點餐的常用禮貌句：「Could I get an iced latte, please?」",
+      "speak": "Could I get an iced latte please",
+      "ans": "COULD I GET AN ICED LATTE PLEASE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "【生活單字】用餐結束後向服務生索取「帳單」（4個字母）：",
+      "ans": "BILL"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "Customer: \"Could you put the salad dressing on the side?\"\nWaiter: \"Certainly, we will put it in a separate cup.\"\nQ: What does \"on the side\" mean here?",
+      "ans": "A",
+      "options": [
+        "A. Served in a separate container",
+        "B. Added on top of the plate",
+        "C. Mixed with hot soup",
+        "D. Cancelled completely"
+      ],
+      "explain": "「on the side」在餐飲情境意為「分開裝／附在旁邊」，不直接淋在沙拉上。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "【口語結帳】請唸出用餐後請求買單的日常用語：「Check, please.」",
+      "speak": "Check please",
+      "ans": "CHECK PLEASE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 【餐飲廣播】請聽取叫號廣播並選出號碼：",
+      "speak": "Order number forty-seven is ready for pickup at the counter.",
+      "ans": "C",
+      "options": [
+        "A. Order 27",
+        "B. Order 37",
+        "C. Order 47",
+        "D. Order 57"
+      ],
+      "explain": "語音播放「Order number forty-seven is ready for pickup」，47 號餐點已可至櫃檯領取。"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "【生活單字】用餐客滿時需在候位區「等待」（4個字母）：",
+      "ans": "WAIT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 【地鐵詢問】請聽乘客的問路並選出合適解答：",
+      "speak": "Excuse me, does this train go to the international airport?",
+      "ans": "A",
+      "options": [
+        "A. Yes, it goes directly there.",
+        "B. I have two tickets.",
+        "C. It is raining outside.",
+        "D. The airport is closed."
+      ],
+      "explain": "乘客詢問「請問這班列車有到國際機場嗎？」，最適當的回覆是「有，它直達那裡」（Yes, it goes directly there）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "【捷運轉乘指引】Transit Guide: Passengers traveling to the Museum Station should transfer to the Blue Line at Central Station.\nQ: What should passengers do at Central Station?",
+      "ans": "D",
+      "options": [
+        "A. Buy a new luggage",
+        "B. Take a taxi outside",
+        "C. Wait until tomorrow",
+        "D. Switch to the Blue Line"
+      ],
+      "explain": "文中指出前往博物館站的乘客應於中央車站轉乘藍線（transfer to the Blue Line），switch to 等於 transfer。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "【問路交際】請唸出詢問洗手間位置的禮貌用語：「Excuse me, where is the nearest restroom?」",
+      "speak": "Excuse me where is the nearest restroom",
+      "ans": "EXCUSE ME WHERE IS THE NEAREST RESTROOM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "【生活單字】火車或捷運的「月台」（8個字母）：",
+      "ans": "PLATFORM"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "desc": "🎧 【藥局指引】請聽藥師的醫囑並選出服用方式：",
+      "speak": "Take one pill twice a day after meals with a glass of water.",
+      "ans": "A",
+      "options": [
+        "A. 2 pills daily, after eating",
+        "B. 1 pill daily, before sleeping",
+        "C. 3 pills with juice",
+        "D. Only when you have a headache"
+      ],
+      "explain": "藥師說「Take one pill twice a day after meals」（一天兩次、每次一顆、飯後服用），等於一天兩顆且在用餐後服用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "desc": "Medicine Label: \"Warning: May cause drowsiness. Avoid driving or operating machinery after taking this medication.\"\nQ: What should you NOT do after taking this medicine?",
+      "ans": "C",
+      "options": [
+        "A. Drink water",
+        "B. Sleep in bed",
+        "C. Drive a car",
+        "D. Stay at home"
+      ],
+      "explain": "警語標註「Avoid driving... after taking this medication」（服用本藥後避免開車），因此不可開車（Drive a car）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "desc": "【求醫問診】請唸出向醫師描述症狀的日常句：「I have had a sore throat since yesterday.」",
+      "speak": "I have had a sore throat since yesterday",
+      "ans": "I HAVE HAD A SORE THROAT SINCE YESTERDAY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "【醫療單字】身體發熱發燙的「發燒」（5個字母）：",
+      "ans": "FEVER"
     }
   ],
   "boss": [

@@ -9254,6 +9254,138 @@
       ],
       "ans": "D",
       "explain": "文中建議 shouldn't panic (不該恐慌) 且向警衛詢問，對應選項 D (保持冷靜並尋求協助)。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 【機場廣播】請聽取登機門變更廣播並回答問題：",
+      "speak": "Attention passengers on Flight 204 to Tokyo: the departure gate has been changed from Gate B4 to Gate C12.",
+      "ans": "C",
+      "options": [
+        "A. Gate B4",
+        "B. Gate B12",
+        "C. Gate C12",
+        "D. Gate C4"
+      ],
+      "explain": "廣播說明登機門已由 B4 更改為 C12（changed from Gate B4 to Gate C12）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Tourist: \"Is the art museum within walking distance from here?\"\nLocal: \"Yes, it is only a five-minute walk straight down this avenue.\"\nQ: What does the local imply?",
+      "ans": "B",
+      "options": [
+        "A. You must take a bus.",
+        "B. The museum is very close.",
+        "C. The museum is already closed.",
+        "D. You need to rent a bicycle."
+      ],
+      "explain": "五分鐘步行路程（five-minute walk）代表距離非常近（within walking distance）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【飯店退房】請唸出退房並請求寄放行李的句子：「Could I leave my luggage here until this afternoon?」",
+      "speak": "Could I leave my luggage here until this afternoon",
+      "ans": "COULD I LEAVE MY LUGGAGE HERE UNTIL THIS AFTERNOON"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "【旅遊單字】搭乘大眾運輸的「票價」（4個字母）：",
+      "ans": "FARE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 【租屋問題】請聽房客的留言並選出主要問題：",
+      "speak": "Hello landlord, there is a water leak under the kitchen sink. Could you please send a plumber today?",
+      "ans": "A",
+      "options": [
+        "A. The sink is leaking water.",
+        "B. The kitchen light is broken.",
+        "C. The rent is overdue.",
+        "D. The keys are lost."
+      ],
+      "explain": "房客提到「there is a water leak under the kitchen sink」（水槽底下漏水），需要水電工修理。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Apartment Listing: \"$1,200/month. Utilities included: water and trash removal. Tenant pays electricity and Wi-Fi.\"\nQ: Which bill does the tenant have to pay separately?",
+      "ans": "C",
+      "options": [
+        "A. Water",
+        "B. Trash disposal",
+        "C. Electricity",
+        "D. Parking fee only"
+      ],
+      "explain": "招租資訊註明「Tenant pays electricity and Wi-Fi」（房客需自行負擔電費與網路），水費與垃圾費已包含在內。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【生活會話】請唸出向房東確認租約的句子：「Does the monthly rent include internet?」",
+      "speak": "Does the monthly rent include internet",
+      "ans": "DOES THE MONTHLY RENT INCLUDE INTERNET"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "【生活單字】房屋租賃的「租約／租約合約」（5個字母）：",
+      "ans": "LEASE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 【診所預約】請聽診所櫃檯的回覆並回答看診時間：",
+      "speak": "Doctor Harris has an opening this Thursday at quarter past two in the afternoon.",
+      "ans": "B",
+      "options": [
+        "A. Thursday at 2:00 PM",
+        "B. Thursday at 2:15 PM",
+        "C. Thursday at 2:45 PM",
+        "D. Friday morning at 9:00 AM"
+      ],
+      "explain": "「quarter past two」即為 2 點 15 分（2:15 PM）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Clinic FAQ: \"Do I need a prescription to purchase allergy relief tablets?\"\nAnswer: \"No, mild antihistamines are available over the counter.\"\nQ: What does \"over the counter\" mean?",
+      "ans": "A",
+      "options": [
+        "A. Available without a doctor's prescription",
+        "B. Sold only in hospital emergency rooms",
+        "C. Free of charge for all citizens",
+        "D. Delivered only through postal mail"
+      ],
+      "explain": "「over the counter」(OTC) 為成藥情境專用語，指「無需醫師處方籤即可於櫃檯購買」。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【藥房詢問】請唸出向藥師詢問副作用的實用語：「Does this medicine have any side effects?」",
+      "speak": "Does this medicine have any side effects",
+      "ans": "DOES THIS MEDICINE HAVE ANY SIDE EFFECTS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "【生活單字】生病時應多喝水並充分「休息」（4個字母）：",
+      "ans": "REST"
     }
   ],
   "boss": [

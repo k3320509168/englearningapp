@@ -11475,6 +11475,116 @@
       ],
       "ans": "B",
       "explain": "短文清楚指出「If you are not home, we will leave them with the security guard.（如果你不在家，我們會把它們留給警衛）」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Manager: \"We need to follow up on the customer complaints as soon as possible.\"\nQ: What does \"follow up on\" mean in this context?",
+      "ans": "C",
+      "options": [
+        "A. Ignore and delete",
+        "B. Forward to friends",
+        "C. Take further action or investigate",
+        "D. Blame another team"
+      ],
+      "explain": "片語動詞「follow up on」意為「跟進處理／深入調查後續行動」（take further action）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【職場通訊】請唸出工作郵件結尾常見的跟進句：「I will follow up with you tomorrow morning.」",
+      "speak": "I will follow up with you tomorrow morning",
+      "ans": "I WILL FOLLOW UP WITH YOU TOMORROW MORNING"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 【修繕通知】請聽大樓管委會廣播並選出停水時間：",
+      "speak": "Notice to all residents: the water supply will be temporarily shut off tomorrow between 9 AM and 1 PM for maintenance.",
+      "ans": "B",
+      "options": [
+        "A. From 8 AM to 12 PM",
+        "B. From 9 AM to 1 PM",
+        "C. From 1 PM to 5 PM",
+        "D. All day tomorrow"
+      ],
+      "explain": "廣播明確指出停水時段為「between 9 AM and 1 PM」（上午9點至下午1點）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Email to Landlord: \"Dear Mr. Davis, the heating system in unit 302 stopped functioning last night. The temperature inside has dropped below 15 degrees. We appreciate your immediate assistance.\"\nQ: Why is the tenant urgent?",
+      "ans": "A",
+      "options": [
+        "A. The apartment has no heat in cold weather.",
+        "B. The rent was paid to the wrong account.",
+        "C. The tenant wants to move out today.",
+        "D. The neighbors are making loud noise."
+      ],
+      "explain": "房客表示暖氣系統停止運作（heating system stopped functioning），室內溫度已降至 15 度以下，亟需暖氣修復。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【租約洽詢】請唸出欲續約的商務租屋句：「I would like to renew my rental contract for another year.」",
+      "speak": "I would like to renew my rental contract for another year",
+      "ans": "I WOULD LIKE TO RENEW MY RENTAL CONTRACT FOR ANOTHER YEAR"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "【生活單字】租屋簽約時支付的「押金／保證金」（7個字母）：",
+      "ans": "DEPOSIT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "desc": "🎧 【視訊會議】請聽會議主持人的提醒並回答情境：",
+      "speak": "David, we cannot hear you right now. I think you are speaking on mute.",
+      "ans": "D",
+      "options": [
+        "A. David left the office.",
+        "B. David's webcam is turned off.",
+        "C. The meeting has ended.",
+        "D. David forgot to unmute his microphone."
+      ],
+      "explain": "主持人提到「speaking on mute」，代表戴維忘記解除麥克風靜音（forgot to unmute）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "desc": "Slack Message: \"Hey team, let's wrap up our discussion by 3:30 so everyone has time to review the client feedback before the sprint ends.\"\nQ: What does the phrase \"wrap up\" mean?",
+      "ans": "B",
+      "options": [
+        "A. Put in a gift box",
+        "B. Finish or conclude",
+        "C. Postpone until next week",
+        "D. Start an argument"
+      ],
+      "explain": "「wrap up」在商務溝通中是非常高頻的片語，意為「結束／收尾」（finish or conclude）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "desc": "【商務會話】請唸出視訊會議共享螢幕的實用語：「Let me share my screen to show the quarterly results.」",
+      "speak": "Let me share my screen to show the quarterly results",
+      "ans": "LET ME SHARE MY SCREEN TO SHOW THE QUARTERLY RESULTS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "【職場單字】專案任務的最後「截止日期」（8個字母）：",
+      "ans": "DEADLINE"
     }
   ],
   "boss": [

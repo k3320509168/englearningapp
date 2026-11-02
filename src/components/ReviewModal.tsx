@@ -59,25 +59,43 @@ export default function ReviewModal() {
   return (
     <Modal title="📌 今日複習" onClose={closeModal}>
       {total > 0 && (
-        <button className="btn btn-primary shard-quiz-btn" onMouseDown={keepFocus} onClick={startTraining}>
-          🥋 錯題修煉場：連對 {SWEEP_STREAK} 題送 3 張掃蕩券（持有 🎟️ {sweepTickets}）
-        </button>
+        <div className="review-dojo-card">
+          <div className="review-dojo-info">
+            <span className="review-dojo-title">🥋 錯題修煉場</span>
+            <span className="review-dojo-reward">連對 5 題贈 3 張掃蕩券（持有 🎟️ {sweepTickets}）</span>
+          </div>
+          <button className="btn btn-primary btn-small review-dojo-btn" onMouseDown={keepFocus} onClick={startTraining}>
+            進入修煉 ⚔️
+          </button>
+        </div>
       )}
       {due.length === 0 ? (
-        <p>今天沒有到期的錯題 🎉 {total > 0 ? `錯題本裡還有 ${total} 個字，會在之後幾天陸續回來考你。` : '繼續冒險，遇到不會的字也不用怕。'}</p>
+        <div className="review-empty">
+          <p>🎉 今天沒有到期的複習題目！</p>
+          <span className="muted">{total > 0 ? `錯題本中尚有 ${total} 題，會在後續冒險中陸續安排溫習。` : '持續探索新區域，累積更多冒險詞彙吧！'}</span>
+        </div>
       ) : (
         <>
-          <p className="muted">這 {due.length} 個字今天該複習了。先看一眼、聽一次發音，它們會在戰鬥中以「困難題」出現——在不同的三天各答對一次（間隔 1 天 → 3 天 → 7 天）就會離開錯題本。</p>
+          <div className="review-section-header">
+            <span className="review-badge">今日待複習重點（{due.length}）</span>
+            <span className="review-hint-inline">戰鬥中將化為「困難題」登場</span>
+          </div>
           <ul className="mistake-list">
             {due.map(m => {
               const l = answerLabel(m.question);
               return (
-                <li key={questionKey(m.question)}>
-                  <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(l.audio)} aria-label="播放發音" disabled={!l.audio}>🔊</button>
-                  <span className="mistake-text">{l.text}</span>
-                  <span className="mistake-meaning">{l.meaning}{m.wrongCount > 1 ? `・答錯 ${m.wrongCount} 次` : ''}</span>
+                <li key={questionKey(m.question)} className="review-item-card">
+                  <button className="btn btn-ghost btn-small review-sound-btn" onMouseDown={keepFocus} onClick={() => say(l.audio)} aria-label="播放發音" disabled={!l.audio}>
+                    🔊
+                  </button>
+                  <div className="review-item-content">
+                    <p className="mistake-text">{l.text}</p>
+                    <p className="mistake-meaning">{l.meaning}{m.wrongCount > 1 ? ` (累計答錯 ${m.wrongCount} 次)` : ''}</p>
+                  </div>
                   {vocabKey(m.question) && VOCAB[vocabKey(m.question)!] && (
-                    <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocabKey(m.question)!)} aria-label="打開單字學習">📖</button>
+                    <button className="btn btn-ghost btn-small review-book-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocabKey(m.question)!)} aria-label="打開單字學習">
+                      📖
+                    </button>
                   )}
                 </li>
               );
@@ -85,7 +103,7 @@ export default function ReviewModal() {
           </ul>
         </>
       )}
-      <div className="tutorial-actions">
+      <div className="tutorial-actions review-actions">
         <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={closeModal}>關閉</button>
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => { closeModal(); continueJourney(); }}>⚔️ 去戰鬥中複習</button>
       </div>

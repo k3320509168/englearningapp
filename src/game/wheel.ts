@@ -15,11 +15,11 @@ export interface WheelPrize {
 }
 
 export const WHEEL_PRIZES: WheelPrize[] = [
-  { id: 'none', label: '銘謝惠顧', icon: '🍀', color: '#2e3561', weight: 18, gold: 50 },
-  { id: 't1', label: '召喚券 ×1', icon: '🎫', color: '#1d5ec4', weight: 50, tickets: 1 },
-  { id: 'sweep', label: '掃蕩券 ×1', icon: '🎟️', color: '#0d8a56', weight: 14, sweep: 1 },
-  { id: 't3', label: '召喚券 ×3', icon: '🎫', color: '#7a3ac9', weight: 15, tickets: 3 },
-  { id: 't5', label: '召喚券 ×5', icon: '💎', color: '#e08914', weight: 3, tickets: 5 },
+  { id: 'none', label: '銘謝惠顧', icon: '🍀', color: '#334155', weight: 18, gold: 50 },
+  { id: 't1', label: '召喚券 ×1', icon: '🎫', color: '#0284c7', weight: 50, tickets: 1 },
+  { id: 'sweep', label: '掃蕩券 ×1', icon: '🎟️', color: '#059669', weight: 14, sweep: 1 },
+  { id: 't3', label: '召喚券 ×3', icon: '🎫', color: '#8b5cf6', weight: 15, tickets: 3 },
+  { id: 't5', label: '召喚券 ×5', icon: '💎', color: '#f59e0b', weight: 3, tickets: 5 },
 ];
 
 // 每張地圖的哪幾關破完可以轉（地圖內第幾關，1 起算）

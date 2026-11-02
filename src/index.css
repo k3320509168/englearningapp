@@ -330,21 +330,48 @@ button { font: inherit; color: inherit; }
   font-weight: 700;
   cursor: pointer;
 }
-.mistake-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.mistake-list li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: "btn text" "btn meaning";
-  column-gap: 10px;
-  align-items: center;
-  padding: 8px 10px;
-  background: var(--panel-2);
-  border: 2px solid var(--ink);
-  border-radius: 6px;
+/* 今日複習視窗重製 */
+.review-dojo-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 14px; margin-bottom: 12px;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.08));
+  border: 2px solid #ffd15c; border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-.mistake-list .btn { grid-area: btn; }
-.mistake-text { grid-area: text; font-family: var(--font-word); font-weight: 700; }
-.mistake-meaning { grid-area: meaning; color: var(--muted); font-size: 14px; }
+.review-dojo-info { display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.review-dojo-title { font-family: var(--font-ui); font-size: 15px; font-weight: 700; color: #ffd15c; }
+.review-dojo-reward { font-size: 12px; color: #cbd5e1; }
+.review-dojo-btn { white-space: nowrap; font-weight: 700; padding: 6px 14px; box-shadow: 0 3px 0 #8a5800; }
+
+.review-section-header {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  margin: 6px 0 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.review-badge { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+.review-hint-inline { font-size: 12px; color: #ffd15c; }
+
+.review-empty { padding: 24px 16px; text-align: center; }
+
+.mistake-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; max-height: 50vh; overflow-y: auto; }
+.review-item-card {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px;
+  background: rgba(15, 18, 38, 0.85);
+  border: 1.5px solid #282e56;
+  border-radius: 6px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.review-item-card:hover { border-color: #ffd15c; background: rgba(25, 30, 60, 0.95); }
+.review-sound-btn { flex-shrink: 0; margin-top: 2px; padding: 4px 8px; }
+.review-item-content { flex: 1; min-width: 0; text-align: left; }
+.review-item-content .mistake-text {
+  margin: 0 0 4px; font-family: var(--font-word); font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.4;
+}
+.review-item-content .mistake-meaning {
+  margin: 0; font-size: 13px; color: #94a3b8; line-height: 1.5;
+}
+.review-book-btn { flex-shrink: 0; padding: 4px 8px; margin-top: 2px; }
+.review-actions { margin-top: 14px; }
 
 /* ---------- 地圖工具列與區域按鈕 ---------- */
 .map-toolbar { width: 100%; max-width: max(560px, calc((100dvh - 250px) * 5 / 3)); display: flex; flex-direction: column; gap: 10px; }

@@ -66,7 +66,7 @@ const newEntries: Record<string, VocabEntry> = { ...currentGenVocab };
 
 // 基礎功能詞列表（不單獨萃取為高階字典卡）
 const STOP_WORDS = new Set([
-  'THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'ANY', 'CAN', 'HAD', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE'
+  'THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'ANY', 'CAN', 'HAD', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'THAT', 'THIS', 'WITH', 'FROM', 'HAVE', 'THEY', 'BEEN', 'WERE'
 ]);
 
 for (const [, pool] of Object.entries(QUESTION_POOL)) {
@@ -74,12 +74,17 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
   for (const q of allQ) {
     let key = vocabKey(q);
 
-    // 若非拼寫/語音/填空，檢查是否為單字選擇題
+    // 若非拼寫/語音/填空，檢查是否為單字或片語選擇題
     if (!key && q.type === 'choice' && q.options) {
       const correctOpt = q.options.find(o => o.startsWith(q.ans + '.'));
       if (correctOpt) {
         const candidate = correctOpt.slice(3).trim();
+        // 1. 單字候選（3 個字母以上，非虛詞）
         if (/^[A-Za-z]+$/.test(candidate) && candidate.length >= 3 && !STOP_WORDS.has(candidate.toUpperCase())) {
+          key = candidate.toUpperCase();
+        }
+        // 2. 高階片語/搭配詞候選（2~4 個單字，如 carte blanche, take umbrage）
+        else if (/^[A-Za-z]+(\s+[A-Za-z]+){1,3}$/.test(candidate) && candidate.length >= 5) {
           key = candidate.toUpperCase();
         }
       }
@@ -96,15 +101,15 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
 
       if (q.type === 'choice') {
         meaning = extractMeaningFromExplain(q.explain, word);
-        pos = guessPos(word);
+        pos = key.includes(' ') ? 'phr.' : guessPos(word);
         // 若題幹含有底線挖空，將挖空處填入該單字製成完整例句
         if (q.desc.includes('___')) {
           const cleanDesc = q.desc.replace(/【[^】]+】/g, '').replace(/🎧\s*/g, '').trim();
           example = cleanDesc.replace(/_{2,}/g, word);
           exampleZh = q.explain ? q.explain.split(/[。；\n]/)[0].trim() + '。' : `${meaning}。`;
         } else {
-          example = `This example demonstrates ${word}.`;
-          exampleZh = `此例句展示了「${meaning}」。`;
+          example = `The concept of ${word} is fundamental in this context.`;
+          exampleZh = `此語境充分體現了「${meaning}」的核心意涵。`;
         }
       } else {
         meaning = extractMeaning(q.desc) || q.explain || key;

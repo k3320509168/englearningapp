@@ -244,3 +244,10 @@
   ② **全庫題數突破 13,693 題**：全量執行 `validate-questions.ts`，全庫 13,693 題達成 **0 錯誤、0 警告**！
   ③ **字典卡片大擴充（突破 5,500 條）**：升級 `auto-lemmatize-vocab.ts` 支援選擇題字彙與挖空例句自動提取，單次自動生成 **539 筆全新單字卡片**（含精準中文解釋、詞性、例句中英對照），`generated-vocab.json` 擴增至 2,264 條，全專案詞庫突破 5,500 條。
   ④ **全量檢驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-02 Antigravity｜實測反饋四大UI/邏輯修復＋C1/C2高階題庫突破1.39萬題＋字典卡片持續擴充交付：
+  ① **隊伍與英雄 Modal 頂部重疊穿透徹底根除（圖 2）**：重構彈窗底層架構，`.modal` 採用 Flexbox 佈局（`display: flex; flex-direction: column; overflow: hidden;`），`.modal-head` 永遠居頂且獨立，徹底消除外層雙滾動條；`.modal-body:has(.hero-modal-layout)` 禁用外層滾動，出戰隊伍格子（`.party-slots-fixed`）穩固吸頂，50 位圖鑑由獨立滾動區（`.hero-modal-scroll`）承載，任何手勢滑動絕不再將隊伍推進標題列，頂部重疊切斷徹底治本。
+  ② **召喚視窗雙池 1:1 等高對齊（圖 3）**：在 `SummonModal.tsx` 引入 `.summon-modal-container` 與 `.summon-banner` 等高容器（`min-height: 470px` / `min-height: 230px`），英雄召喚、專武已解鎖與未解鎖骨架尺寸嚴格一致，切換頁籤時彈窗外框紋絲不動，徹底消除忽大忽小的不和諧跳動感。
+  ③ **冒險工坊重複裝備鍛造移除確認與防跑版加固（圖 4 & 5）**：確認 `ShopModal.tsx` 只有雜貨商會與專武強化，一般裝備鍛造已回歸「成長」鍛造坊；針對鍛造卡片 `.gear-item` 加入 `flex-wrap: wrap` 與 `.gear-info b` 取消 `white-space: nowrap`，在窄螢幕下武器名稱與按鈕自動適配換行，徹底杜絕單字直排擠壓跑版。
+  ④ **口說題絕不預設拼寫最高指令貫徹落實（圖 1）**：微調 `MicPermissionModal.tsx` 文案與邏輯，明確告知玩家「口說題預設正常出題」，上架正式 HTTPS 網站後語音辨識完全正常；僅在瀏覽器或設備確定無法調用麥克風時才提供單題安全拼寫作答，下一題維持口說，絕不全域或提前預設拼寫。
+  ⑤ **第 34～37 批高階原創題庫入庫（圖 6）**：實裝外交治國、宏觀經濟、文學詩學、深層生態四大主題共 320 道 C1/C2 試題，全庫題目總量躍升至 **13,933 題**，r7 (C1) 達到 1,480 題、r8 (C2) 達到 1,400 題；`generated-vocab.json` 詞庫量擴增至 2,266 條，全庫詞庫朝 6,000 條邁進。
+  ⑥ **全量檢驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、13,933 題 0 錯誤 0 警告、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。

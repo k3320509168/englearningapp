@@ -797,9 +797,9 @@
   },
   "EXCULPATORY": {
     "pos": "adj.",
-    "meaning": "用來使某人免責的",
-    "example": "The account has an exculpatory tone.",
-    "exampleZh": "敘述帶有卸責口吻。",
+    "meaning": "排除被告涉案嫌疑之客觀證據",
+    "example": "Suppressing exculpatory DNA evidence violated the defendant constitutional right to fair trial.",
+    "exampleZh": "隱匿並扣壓能夠證明被告完全清白的關鍵DNA鑑識證據，嚴重侵犯了憲法賦予公民的公正審判權。",
     "senses": [
       {
         "pos": "adj.",
@@ -822,6 +822,26 @@
           {
             "en": "The account has an exculpatory tone.",
             "zh": "敘述帶有卸責口吻。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "能證明被告人無罪或免除其法律責任的",
+        "examples": [
+          {
+            "en": "Prosecutors have an affirmative legal duty to disclose exculpatory evidence to the defense.",
+            "zh": "檢察官負有不容推卸的法定舉證義務，必須將手中掌握的一切有利於被告的脫罪證據及時送交辯方。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "排除被告涉案嫌疑之客觀證據",
+        "examples": [
+          {
+            "en": "Suppressing exculpatory DNA evidence violated the defendant constitutional right to fair trial.",
+            "zh": "隱匿並扣壓能夠證明被告完全清白的關鍵DNA鑑識證據，嚴重侵犯了憲法賦予公民的公正審判權。"
           }
         ]
       }
@@ -1265,9 +1285,9 @@
   },
   "EXPEDIENCY": {
     "pos": "n.",
-    "meaning": "以眼前方便或可行為優先的考量",
-    "example": "The decision was defended on grounds of expediency.",
-    "exampleZh": "這項決定以眼前務實方便為理由辯護。",
+    "meaning": "為求眼前政治權宜而非道德原則之行事考量",
+    "example": "The policy was driven by diplomatic expediency rather than ethics.",
+    "exampleZh": "該項政策乃是出於外交上的權宜之計而非倫理考量。",
     "senses": [
       {
         "pos": "n.",
@@ -1280,6 +1300,16 @@
           {
             "en": "Expediency can conflict with a stated principle.",
             "zh": "權宜考量可能與已聲明的原則衝突。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "為求眼前政治權宜而非道德原則之行事考量",
+        "examples": [
+          {
+            "en": "The policy was driven by diplomatic expediency rather than ethics.",
+            "zh": "該項政策乃是出於外交上的權宜之計而非倫理考量。"
           }
         ]
       }
@@ -2531,9 +2561,9 @@
   },
   "IMPUGN": {
     "pos": "v.",
-    "meaning": "對某人的動機誠信等提出質疑",
-    "example": "The criticism does not impugn her integrity.",
-    "exampleZh": "這項批評不質疑她的誠信。",
+    "meaning": "公然攻擊專業操守",
+    "example": "Critics sought to impugn the integrity of the peer review consortium.",
+    "exampleZh": "少數批評者企圖以毫無證據的指控，惡意攻擊同行審查委員會專家的學術操守。",
     "senses": [
       {
         "pos": "v.",
@@ -2546,6 +2576,26 @@
           {
             "en": "He chose to challenge the reasoning rather than impugn the motive.",
             "zh": "他選擇挑戰推理，而非質疑動機。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "公開質疑攻擊動機誠信或效力",
+        "examples": [
+          {
+            "en": "The defense attorney attempted to impugn the reliability of the eyewitness.",
+            "zh": "辯方律師試圖透過交叉詰問，質疑並削弱控方關鍵目擊證人證詞的客觀可信度。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "公然攻擊專業操守",
+        "examples": [
+          {
+            "en": "Critics sought to impugn the integrity of the peer review consortium.",
+            "zh": "少數批評者企圖以毫無證據的指控，惡意攻擊同行審查委員會專家的學術操守。"
           }
         ]
       }
@@ -4955,9 +5005,9 @@
   "INSINUATION": {
     "word": "insinuation",
     "pos": "n.",
-    "meaning": "以不直接方式提出的負面暗示",
-    "example": "The juxtaposition creates an insinuation.",
-    "exampleZh": "並列造成負面影射。",
+    "meaning": "不負責任的含沙射影與影射攻擊",
+    "example": "Political campaigns degenerated into personal smears and unsubstantiated insinuations.",
+    "exampleZh": "這場國會議員選戰徹底墮落淪為無休止的人身攻擊抹黑，以及毫無真憑實據的含沙射影。",
     "senses": [
       {
         "pos": "n.",
@@ -4966,6 +5016,26 @@
           {
             "en": "The juxtaposition creates an insinuation.",
             "zh": "並列造成負面影射。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "惡意旁敲側擊的含沙射影與詆毀暗諷",
+        "examples": [
+          {
+            "en": "He resented the prosecutor insinuation that the transaction was fraudulent.",
+            "zh": "他對主控檢察官在法庭辯論中旁敲側擊地影射該筆商業交易存在惡意詐欺的說法深感憤慨。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "不負責任的含沙射影與影射攻擊",
+        "examples": [
+          {
+            "en": "Political campaigns degenerated into personal smears and unsubstantiated insinuations.",
+            "zh": "這場國會議員選戰徹底墮落淪為無休止的人身攻擊抹黑，以及毫無真憑實據的含沙射影。"
           }
         ]
       }
@@ -9195,9 +9265,9 @@
   },
   "ADJUDICATE": {
     "pos": "v.",
-    "meaning": "對爭議作具權威的裁定",
-    "example": "The organiser will adjudicate the disputed move.",
-    "exampleZh": "主辦者會裁定爭議一步。",
+    "meaning": "以法庭裁決方式化解跨國爭端",
+    "example": "The Hague tribunal was formally petitioned to adjudicate the cross border aquifer allocation.",
+    "exampleZh": "海牙國際常設仲裁法院正式收到訴狀，受託以司法裁決程序全面化解跨國深層地下水資源分配的爭議。",
     "senses": [
       {
         "pos": "v.",
@@ -9206,6 +9276,26 @@
           {
             "en": "The organiser will adjudicate the disputed move.",
             "zh": "主辦者會裁定爭議一步。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "法官或仲裁員依法律程序正式審理並作出裁決",
+        "examples": [
+          {
+            "en": "The maritime boundary commission was convened to adjudicate the continental shelf dispute.",
+            "zh": "多邊大陸棚邊界劃定委員會正式召開，以依法裁決兩國圍繞深海海底大陸棚劃界展開的激烈爭端。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "以法庭裁決方式化解跨國爭端",
+        "examples": [
+          {
+            "en": "The Hague tribunal was formally petitioned to adjudicate the cross border aquifer allocation.",
+            "zh": "海牙國際常設仲裁法院正式收到訴狀，受託以司法裁決程序全面化解跨國深層地下水資源分配的爭議。"
           }
         ]
       }
@@ -10894,9 +10984,9 @@
   "DEROGATION": {
     "word": "derogation",
     "pos": "n.",
-    "meaning": "對公約或法規條款的官方減免讓步",
-    "example": "Emergency powers permit temporary derogation from certain obligations.",
-    "exampleZh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。",
+    "meaning": "特定權利之減損與克減限制條款",
+    "example": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
+    "exampleZh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。",
     "senses": [
       {
         "pos": "n.",
@@ -10905,6 +10995,26 @@
           {
             "en": "Emergency powers permit temporary derogation from certain obligations.",
             "zh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "因國家面臨緊急狀態而暫時減損減免人權條款",
+        "examples": [
+          {
+            "en": "The human rights covenant specifies that non derogation clauses apply even during total war.",
+            "zh": "國際人權公約明確規定，即便在國家爆發全面戰爭的極端狀態下，核心條款依然適用不容減損準則。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "特定權利之減損與克減限制條款",
+        "examples": [
+          {
+            "en": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
+            "zh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。"
           }
         ]
       }
@@ -11060,9 +11170,9 @@
   },
   "HEGEMONY": {
     "pos": "n.",
-    "meaning": "特定集團或思想體系之領導支配霸權",
-    "example": "Cultural hegemony reinforces institutional compliance without overt force.",
-    "exampleZh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。",
+    "meaning": "在國際或區域格局中享有決定性主導地位之霸權",
+    "example": "The defeat ended the empire’s maritime hegemony in the ocean.",
+    "exampleZh": "那場戰敗終結了該帝國在大洋上的海上霸權地位。",
     "senses": [
       {
         "pos": "n.",
@@ -11071,6 +11181,16 @@
           {
             "en": "Cultural hegemony reinforces institutional compliance without overt force.",
             "zh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在國際或區域格局中享有決定性主導地位之霸權",
+        "examples": [
+          {
+            "en": "The defeat ended the empire’s maritime hegemony in the ocean.",
+            "zh": "那場戰敗終結了該帝國在大洋上的海上霸權地位。"
           }
         ]
       }
@@ -11264,9 +11384,9 @@
   },
   "CORROBORATE": {
     "pos": "v.",
-    "meaning": "提供額外證據以證實支持某項主張",
-    "example": "Multiple witnesses came forward to corroborate the defendant’s story.",
-    "exampleZh": "多位證人主動出面提供證據以證實被告的說法。",
+    "meaning": "提供佐證確證事實",
+    "example": "Satellite telemetry was deployed to corroborate surface temperature anomalies.",
+    "exampleZh": "多光譜衛星遙測技術被廣泛部署，以確證地表所發生的異常溫度躍升。",
     "senses": [
       {
         "pos": "v.",
@@ -11275,6 +11395,26 @@
           {
             "en": "Multiple witnesses came forward to corroborate the defendant’s story.",
             "zh": "多位證人主動出面提供證據以證實被告的說法。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "提供確鑿證據以證實某主張說法",
+        "examples": [
+          {
+            "en": "Newly declassified archives corroborate the ambassador account of the crisis.",
+            "zh": "新解密的歷史檔案完全證實了大使對這場危機發展過程的陳述。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "提供佐證確證事實",
+        "examples": [
+          {
+            "en": "Satellite telemetry was deployed to corroborate surface temperature anomalies.",
+            "zh": "多光譜衛星遙測技術被廣泛部署，以確證地表所發生的異常溫度躍升。"
           }
         ]
       }
@@ -11329,6 +11469,2266 @@
           {
             "en": "The classic syllogism deduces mortality from the nature of humanity.",
             "zh": "經典的三段論從人類本質演繹推導出生命的必有一死。"
+          }
+        ]
+      }
+    ]
+  },
+  "REALPOLITIK": {
+    "word": "realpolitik",
+    "pos": "n.",
+    "meaning": "立足國家利益與實力政治的現實政治",
+    "example": "Bismarck practiced realpolitik to consolidate Prussian power.",
+    "exampleZh": "俾斯麥奉行現實政治以鞏固普魯士的國家實力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "立足國家利益與實力政治的現實政治",
+        "examples": [
+          {
+            "en": "Bismarck practiced realpolitik to consolidate Prussian power.",
+            "zh": "俾斯麥奉行現實政治以鞏固普魯士的國家實力。"
+          }
+        ]
+      }
+    ]
+  },
+  "BELLIGERENT": {
+    "word": "belligerent",
+    "pos": "adj.",
+    "meaning": "參與交戰的敵對國家或交戰方",
+    "example": "International law imposes duties upon all belligerent forces.",
+    "exampleZh": "國際法對所有交戰國軍隊皆施加了嚴格的法定責任。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "參與交戰的敵對國家或交戰方",
+        "examples": [
+          {
+            "en": "International law imposes duties upon all belligerent forces.",
+            "zh": "國際法對所有交戰國軍隊皆施加了嚴格的法定責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "CAPITULATE": {
+    "word": "capitulate",
+    "pos": "v.",
+    "meaning": "在特定條件或無條件下向敵軍屈服投降",
+    "example": "The besieged garrison refused to capitulate without terms.",
+    "exampleZh": "被圍困的守軍斷然拒絕在沒有協議條件的情況下投降。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "在特定條件或無條件下向敵軍屈服投降",
+        "examples": [
+          {
+            "en": "The besieged garrison refused to capitulate without terms.",
+            "zh": "被圍困的守軍斷然拒絕在沒有協議條件的情況下投降。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXTRADITION": {
+    "word": "extradition",
+    "pos": "n.",
+    "meaning": "依據條約將在逃嫌犯引渡交還外國的程序",
+    "example": "The two nations signed a formal bilateral extradition treaty.",
+    "exampleZh": "兩國簽署了一份正式的雙邊刑事引渡條約。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依據條約將在逃嫌犯引渡交還外國的程序",
+        "examples": [
+          {
+            "en": "The two nations signed a formal bilateral extradition treaty.",
+            "zh": "兩國簽署了一份正式的雙邊刑事引渡條約。"
+          }
+        ]
+      }
+    ]
+  },
+  "ENTENTE": {
+    "word": "entente",
+    "pos": "n.",
+    "meaning": "國家之間基於共同理解而建立的友好協約",
+    "example": "The diplomatic entente balanced the rival continental coalition.",
+    "exampleZh": "這項外交協約平衡了對立陣營的大陸同盟集團。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家之間基於共同理解而建立的友好協約",
+        "examples": [
+          {
+            "en": "The diplomatic entente balanced the rival continental coalition.",
+            "zh": "這項外交協約平衡了對立陣營的大陸同盟集團。"
+          }
+        ]
+      }
+    ]
+  },
+  "STRATEGIC AMBIGUITY PRESERVES DIPLOMATIC MANEUVER": {
+    "word": "strategic ambiguity preserves diplomatic maneuver",
+    "pos": "phr.",
+    "meaning": "戰略模糊性保留了外交斡旋的靈活空間。",
+    "example": "Strategic ambiguity preserves diplomatic maneuver.",
+    "exampleZh": "戰略模糊性保留了外交斡旋的靈活空間。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "戰略模糊性保留了外交斡旋的靈活空間。",
+        "examples": [
+          {
+            "en": "Strategic ambiguity preserves diplomatic maneuver.",
+            "zh": "戰略模糊性保留了外交斡旋的靈活空間。。"
+          }
+        ]
+      }
+    ]
+  },
+  "DETERRENCE COLLAPSES WHEN RESOLVE IS DOUBTED": {
+    "word": "deterrence collapses when resolve is doubted",
+    "pos": "phr.",
+    "meaning": "當防衛決心遭受質疑時威懾體系便告瓦解。",
+    "example": "Deterrence collapses when resolve is doubted.",
+    "exampleZh": "當防衛決心遭受質疑時威懾體系便告瓦解。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "當防衛決心遭受質疑時威懾體系便告瓦解。",
+        "examples": [
+          {
+            "en": "Deterrence collapses when resolve is doubted.",
+            "zh": "當防衛決心遭受質疑時威懾體系便告瓦解。。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEGEMONY REQUIRES BOTH COERCION AND CONSENT": {
+    "word": "hegemony requires both coercion and consent",
+    "pos": "phr.",
+    "meaning": "維持霸權地位既需強制實力亦需各方認同。",
+    "example": "Hegemony requires both coercion and consent.",
+    "exampleZh": "維持霸權地位既需強制實力亦需各方認同。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "維持霸權地位既需強制實力亦需各方認同。",
+        "examples": [
+          {
+            "en": "Hegemony requires both coercion and consent.",
+            "zh": "維持霸權地位既需強制實力亦需各方認同。。"
+          }
+        ]
+      }
+    ]
+  },
+  "SANCTION": {
+    "pos": "n.",
+    "meaning": "依據國際法或條約對違約國採取的經濟懲處措施",
+    "example": "Multilateral sanctions curtailed the regime’s oil revenues.",
+    "exampleZh": "多邊經濟制裁大幅削減了該政權的石油出口收入。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依據國際法或條約對違約國採取的經濟懲處措施",
+        "examples": [
+          {
+            "en": "Multilateral sanctions curtailed the regime’s oil revenues.",
+            "zh": "多邊經濟制裁大幅削減了該政權的石油出口收入。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXTRADITE": {
+    "pos": "v.",
+    "meaning": "依據條約程序將在逃罪犯引渡交還本國審判",
+    "example": "The court ordered the authorities to extradite the suspect.",
+    "exampleZh": "法院下令行政當局將該名嫌疑犯正式引渡出境審訊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依據條約程序將在逃罪犯引渡交還本國審判",
+        "examples": [
+          {
+            "en": "The court ordered the authorities to extradite the suspect.",
+            "zh": "法院下令行政當局將該名嫌疑犯正式引渡出境審訊。"
+          }
+        ]
+      }
+    ]
+  },
+  "ALLIANCE": {
+    "pos": "n.",
+    "meaning": "為防禦或進攻目的締結的軍事或政治同盟",
+    "example": "The treaty cemented a transatlantic security alliance.",
+    "exampleZh": "該條約鞏固了一座跨大西洋的集體安全同盟體系。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為防禦或進攻目的締結的軍事或政治同盟",
+        "examples": [
+          {
+            "en": "The treaty cemented a transatlantic security alliance.",
+            "zh": "該條約鞏固了一座跨大西洋的集體安全同盟體系。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOVEREIGNTY": {
+    "pos": "n.",
+    "meaning": "國家對其領土與人民享有之最高且排他的統治權",
+    "example": "The disputed island’s sovereignty remains hotly contested.",
+    "exampleZh": "這座爭議島嶼的國家主權歸屬依然存在激烈紛爭。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家對其領土與人民享有之最高且排他的統治權",
+        "examples": [
+          {
+            "en": "The disputed island’s sovereignty remains hotly contested.",
+            "zh": "這座爭議島嶼的國家主權歸屬依然存在激烈紛爭。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPARTIAL": {
+    "pos": "adj.",
+    "meaning": "不偏不倚且公正客觀對待爭議雙方的",
+    "example": "The mediator maintained an impartial stance during negotiations.",
+    "exampleZh": "調停者在雙邊談判過程中始終維持公正不偏的立場。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不偏不倚且公正客觀對待爭議雙方的",
+        "examples": [
+          {
+            "en": "The mediator maintained an impartial stance during negotiations.",
+            "zh": "調停者在雙邊談判過程中始終維持公正不偏的立場。"
+          }
+        ]
+      }
+    ]
+  },
+  "BELLICOSE": {
+    "pos": "adj.",
+    "meaning": "好戰且動輒訴諸武力威脅或衝突的",
+    "example": "The general’s bellicose rhetoric escalated border tensions.",
+    "exampleZh": "將軍好戰的言論迅速升級了兩國邊境的緊張局勢。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "好戰且動輒訴諸武力威脅或衝突的",
+        "examples": [
+          {
+            "en": "The general’s bellicose rhetoric escalated border tensions.",
+            "zh": "將軍好戰的言論迅速升級了兩國邊境的緊張局勢。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSOLVENCY": {
+    "word": "insolvency",
+    "pos": "n.",
+    "meaning": "無法償還到期債務之無力償債狀態",
+    "example": "The airline filed for protection following balance sheet insolvency.",
+    "exampleZh": "該航空公司在資產負債表陷入實質破產後申請了重整保護。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法償還到期債務之無力償債狀態",
+        "examples": [
+          {
+            "en": "The airline filed for protection following balance sheet insolvency.",
+            "zh": "該航空公司在資產負債表陷入實質破產後申請了重整保護。"
+          }
+        ]
+      }
+    ]
+  },
+  "ARBITRAGE": {
+    "word": "arbitrage",
+    "pos": "n.",
+    "meaning": "利用不同市場間資產價格落差進行無風險套利",
+    "example": "Algorithmic systems exploit momentary international currency arbitrage.",
+    "exampleZh": "演算法系統捕捉瞬間出現的跨國匯率套利機會。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用不同市場間資產價格落差進行無風險套利",
+        "examples": [
+          {
+            "en": "Algorithmic systems exploit momentary international currency arbitrage.",
+            "zh": "演算法系統捕捉瞬間出現的跨國匯率套利機會。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEIGNIORAGE": {
+    "word": "seigniorage",
+    "pos": "n.",
+    "meaning": "國家壟斷貨幣發行所獲得之鑄幣稅利益",
+    "example": "Central bank seigniorage profits are remitted to the public treasury.",
+    "exampleZh": "中央銀行的貨幣鑄幣稅利潤全額繳交國家公庫。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家壟斷貨幣發行所獲得之鑄幣稅利益",
+        "examples": [
+          {
+            "en": "Central bank seigniorage profits are remitted to the public treasury.",
+            "zh": "中央銀行的貨幣鑄幣稅利潤全額繳交國家公庫。"
+          }
+        ]
+      }
+    ]
+  },
+  "MACROECONOMIC": {
+    "word": "macroeconomic",
+    "pos": "adj.",
+    "meaning": "涉及總體經濟體系各變數巨觀運作的",
+    "example": "Macroeconomic stability is an essential prerequisite for foreign investment.",
+    "exampleZh": "總體經濟的穩定是吸引外國資本投資不可或缺的前提。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "涉及總體經濟體系各變數巨觀運作的",
+        "examples": [
+          {
+            "en": "Macroeconomic stability is an essential prerequisite for foreign investment.",
+            "zh": "總體經濟的穩定是吸引外國資本投資不可或缺的前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "FINANCIALIZATION": {
+    "word": "financialization",
+    "pos": "n.",
+    "meaning": "金融資本與邏輯在整體經濟中支配地位上升",
+    "example": "Critics argue that financialization decoupled profits from production.",
+    "exampleZh": "批評者主張金融化使得資本利潤與實體生產完全脫鉤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "金融資本與邏輯在整體經濟中支配地位上升",
+        "examples": [
+          {
+            "en": "Critics argue that financialization decoupled profits from production.",
+            "zh": "批評者主張金融化使得資本利潤與實體生產完全脫鉤。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLVENCY REQUIRES STRUCTURAL PROFITABILITY": {
+    "word": "solvency requires structural profitability",
+    "pos": "phr.",
+    "meaning": "償債能力仰賴結構性的盈利能力。",
+    "example": "Solvency requires structural profitability.",
+    "exampleZh": "償債能力仰賴結構性的盈利能力。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "償債能力仰賴結構性的盈利能力。",
+        "examples": [
+          {
+            "en": "Solvency requires structural profitability.",
+            "zh": "償債能力仰賴結構性的盈利能力。。"
+          }
+        ]
+      }
+    ]
+  },
+  "LIQUIDITY EVAPORATES PRECISELY WHEN NEEDED MOST": {
+    "word": "liquidity evaporates precisely when needed most",
+    "pos": "phr.",
+    "meaning": "流動性往往在最緊要關頭瞬間蒸發。",
+    "example": "Liquidity evaporates precisely when needed most.",
+    "exampleZh": "流動性往往在最緊要關頭瞬間蒸發。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "流動性往往在最緊要關頭瞬間蒸發。",
+        "examples": [
+          {
+            "en": "Liquidity evaporates precisely when needed most.",
+            "zh": "流動性往往在最緊要關頭瞬間蒸發。。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEBT DEFLATION DEEPENS ECONOMIC CONTRACTION": {
+    "word": "debt deflation deepens economic contraction",
+    "pos": "phr.",
+    "meaning": "債務通縮將進一步加深經濟衰退。",
+    "example": "Debt deflation deepens economic contraction.",
+    "exampleZh": "債務通縮將進一步加深經濟衰退。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "債務通縮將進一步加深經濟衰退。",
+        "examples": [
+          {
+            "en": "Debt deflation deepens economic contraction.",
+            "zh": "債務通縮將進一步加深經濟衰退。。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEFAULT": {
+    "pos": "n.",
+    "meaning": "無法按合約約定如期償還債務之違約事件",
+    "example": "The sovereign default triggered a suspension of bilateral credit lines.",
+    "exampleZh": "該起主權違約事件導致雙邊信貸額度遭到全面暫停。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法按合約約定如期償還債務之違約事件",
+        "examples": [
+          {
+            "en": "The sovereign default triggered a suspension of bilateral credit lines.",
+            "zh": "該起主權違約事件導致雙邊信貸額度遭到全面暫停。"
+          }
+        ]
+      }
+    ]
+  },
+  "AMORTIZE": {
+    "pos": "v.",
+    "meaning": "透過分期攤還方式逐步清償本金與利息",
+    "example": "The municipality will amortize the construction loan over thirty years.",
+    "exampleZh": "該市政府將在長達三十年的期間內逐步攤還這筆工程貸款。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "透過分期攤還方式逐步清償本金與利息",
+        "examples": [
+          {
+            "en": "The municipality will amortize the construction loan over thirty years.",
+            "zh": "該市政府將在長達三十年的期間內逐步攤還這筆工程貸款。"
+          }
+        ]
+      }
+    ]
+  },
+  "LIQUIDATE": {
+    "pos": "v.",
+    "meaning": "變賣轉換實體或金融資產以取得現金",
+    "example": "The hedge fund was forced to liquidate its long positions rapidly.",
+    "exampleZh": "避險基金被迫在短時間內迅速變賣其持有的多頭資產部位。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "變賣轉換實體或金融資產以取得現金",
+        "examples": [
+          {
+            "en": "The hedge fund was forced to liquidate its long positions rapidly.",
+            "zh": "避險基金被迫在短時間內迅速變賣其持有的多頭資產部位。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLVENT": {
+    "pos": "adj.",
+    "meaning": "擁有足夠資本與資產得以清償所有債務的",
+    "example": "Strict stress tests proved that the regional bank remained solvent.",
+    "exampleZh": "嚴格的壓力測試證實該區域銀行依然具備完全的償債能力。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "擁有足夠資本與資產得以清償所有債務的",
+        "examples": [
+          {
+            "en": "Strict stress tests proved that the regional bank remained solvent.",
+            "zh": "嚴格的壓力測試證實該區域銀行依然具備完全的償債能力。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEPRECIATION": {
+    "pos": "n.",
+    "meaning": "資產隨時間與使用磨損產生之價值折舊",
+    "example": "Accounting rules require straight-line depreciation of capital assets.",
+    "exampleZh": "會計準則要求對固定資本資產採取直線法進行折舊攤提。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資產隨時間與使用磨損產生之價值折舊",
+        "examples": [
+          {
+            "en": "Accounting rules require straight-line depreciation of capital assets.",
+            "zh": "會計準則要求對固定資本資產採取直線法進行折舊攤提。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONGLOMERATE": {
+    "pos": "n.",
+    "meaning": "業務跨足多元不同產業領域之大型跨國企業集團",
+    "example": "The industrial conglomerate divested its loss-making shipping division.",
+    "exampleZh": "該工業巨型跨國集團剝離了持續虧損的航運業務部門。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "業務跨足多元不同產業領域之大型跨國企業集團",
+        "examples": [
+          {
+            "en": "The industrial conglomerate divested its loss-making shipping division.",
+            "zh": "該工業巨型跨國集團剝離了持續虧損的航運業務部門。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONCENTRATION": {
+    "pos": "n.",
+    "meaning": "市場份額或金融風險過度集中於少數主體",
+    "example": "Antitrust regulators investigated market concentration in tech sectors.",
+    "exampleZh": "反壟斷監管機關對科技領域的市場份額過度集中展開了調查。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "市場份額或金融風險過度集中於少數主體",
+        "examples": [
+          {
+            "en": "Antitrust regulators investigated market concentration in tech sectors.",
+            "zh": "反壟斷監管機關對科技領域的市場份額過度集中展開了調查。"
+          }
+        ]
+      }
+    ]
+  },
+  "CREDITWORTHY": {
+    "pos": "adj.",
+    "meaning": "具備良好信用紀錄與償債能力而值得放款的",
+    "example": "Commercial lenders compete fiercely to attract creditworthy corporate borrowers.",
+    "exampleZh": "商業銀行展開激烈競爭以吸引具備優質信用資格的企業借款人。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "具備良好信用紀錄與償債能力而值得放款的",
+        "examples": [
+          {
+            "en": "Commercial lenders compete fiercely to attract creditworthy corporate borrowers.",
+            "zh": "商業銀行展開激烈競爭以吸引具備優質信用資格的企業借款人。"
+          }
+        ]
+      }
+    ]
+  },
+  "ON NO ACCOUNT": {
+    "word": "on no account",
+    "pos": "phr.",
+    "meaning": "絕不可；無論如何都不（倒裝片語）",
+    "example": "On no account should fundamental human liberties be subordinated to political expediency.",
+    "exampleZh": "無論在任何情況下，基本人權與自由都絕不可屈從於政治權宜。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "絕不可；無論如何都不（倒裝片語）",
+        "examples": [
+          {
+            "en": "On no account should fundamental human liberties be subordinated to political expediency.",
+            "zh": "無論在任何情況下，基本人權與自由都絕不可屈從於政治權宜。"
+          }
+        ]
+      }
+    ]
+  },
+  "WERE IT UNDERMINED": {
+    "word": "were it undermined",
+    "pos": "phr.",
+    "meaning": "若其遭到破壞削弱（虛擬倒裝）",
+    "example": "Were constitutional guardrails undermined the fragile democratic compact would disintegrate.",
+    "exampleZh": "憲法防護欄若遭到削弱瓦解，脆弱的民主公約便將隨之崩塌。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若其遭到破壞削弱（虛擬倒裝）",
+        "examples": [
+          {
+            "en": "Were constitutional guardrails undermined the fragile democratic compact would disintegrate.",
+            "zh": "憲法防護欄若遭到削弱瓦解，脆弱的民主公約便將隨之崩塌。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUCH WAS THE BRILLIANCE": {
+    "word": "such was the brilliance",
+    "pos": "phr.",
+    "meaning": "如此之才華卓越以致於",
+    "example": "Such was the intellectual brilliance of the thesis that orthodox paradigms crumbled.",
+    "exampleZh": "該論文的智慧光芒如此耀眼，以致於傳統典範隨之土崩瓦解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "如此之才華卓越以致於",
+        "examples": [
+          {
+            "en": "Such was the intellectual brilliance of the thesis that orthodox paradigms crumbled.",
+            "zh": "該論文的智慧光芒如此耀眼，以致於傳統典範隨之土崩瓦解。"
+          }
+        ]
+      }
+    ]
+  },
+  "NOWHERE WITHIN THE LAW": {
+    "word": "nowhere within the law",
+    "pos": "phr.",
+    "meaning": "在法律中毫無蹤跡（否定倒裝）",
+    "example": "Nowhere within the jurisprudence can one discern a justification for arbitrary detention.",
+    "exampleZh": "在整體法理體系中，人們絕無可能找到任何支持任意拘留的合法依據。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在法律中毫無蹤跡（否定倒裝）",
+        "examples": [
+          {
+            "en": "Nowhere within the jurisprudence can one discern a justification for arbitrary detention.",
+            "zh": "在整體法理體系中，人們絕無可能找到任何支持任意拘留的合法依據。"
+          }
+        ]
+      }
+    ]
+  },
+  "SCARCELY HAD IT TAKEN": {
+    "word": "scarcely had it taken",
+    "pos": "phr.",
+    "meaning": "剛一生效實施之際",
+    "example": "Scarcely had the decree taken effect when profound structural fissures manifested.",
+    "exampleZh": "政令剛一生效實施，深刻的體制結構裂痕便全面顯現。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "剛一生效實施之際",
+        "examples": [
+          {
+            "en": "Scarcely had the decree taken effect when profound structural fissures manifested.",
+            "zh": "政令剛一生效實施，深刻的體制結構裂痕便全面顯現。"
+          }
+        ]
+      }
+    ]
+  },
+  "IT WAS SYSTEMIC OPACITY": {
+    "word": "it was systemic opacity",
+    "pos": "phr.",
+    "meaning": "正是體制的不透明性",
+    "example": "It was precisely systemic opacity that enabled unchecked predatory exploitation.",
+    "exampleZh": "正是體制層面的極度不透明，助長了毫無制衡的掠奪性剝削。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "正是體制的不透明性",
+        "examples": [
+          {
+            "en": "It was precisely systemic opacity that enabled unchecked predatory exploitation.",
+            "zh": "正是體制層面的極度不透明，助長了毫無制衡的掠奪性剝削。"
+          }
+        ]
+      }
+    ]
+  },
+  "ONLY BY UPHOLDING": {
+    "word": "only by upholding",
+    "pos": "phr.",
+    "meaning": "唯有堅守；只有秉持",
+    "example": "Only by upholding rigorous forensic standards can judicial integrity endure.",
+    "exampleZh": "唯有始終恪守嚴謹的鑑識標準，司法公正誠信方能歷久不衰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "唯有堅守；只有秉持",
+        "examples": [
+          {
+            "en": "Only by upholding rigorous forensic standards can judicial integrity endure.",
+            "zh": "唯有始終恪守嚴謹的鑑識標準，司法公正誠信方能歷久不衰。"
+          }
+        ]
+      }
+    ]
+  },
+  "LITTLE DID THEY KNOW": {
+    "word": "little did they know",
+    "pos": "phr.",
+    "meaning": "彼等完全未曾預料知曉",
+    "example": "Little did the chroniclers comprehend that archaic dogma was rapidly obsolete.",
+    "exampleZh": "編年史家完全未曾預料到，古老的教條正以驚人的速度被歷史淘汰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彼等完全未曾預料知曉",
+        "examples": [
+          {
+            "en": "Little did the chroniclers comprehend that archaic dogma was rapidly obsolete.",
+            "zh": "編年史家完全未曾預料到，古老的教條正以驚人的速度被歷史淘汰。"
+          }
+        ]
+      }
+    ]
+  },
+  "SO CONTENTIOUS WERE THEY": {
+    "word": "so contentious were they",
+    "pos": "phr.",
+    "meaning": "爭議如此激烈以致於",
+    "example": "So contentious were the deliberations that consensus remained entirely elusive.",
+    "exampleZh": "閉門商議過程如此充滿激烈爭辯，以致於共識始終難以企及。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "爭議如此激烈以致於",
+        "examples": [
+          {
+            "en": "So contentious were the deliberations that consensus remained entirely elusive.",
+            "zh": "閉門商議過程如此充滿激烈爭辯，以致於共識始終難以企及。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAD IT BEEN FORTHCOMING": {
+    "word": "had it been forthcoming",
+    "pos": "phr.",
+    "meaning": "假若當時及時獲得提供",
+    "example": "Had archival corroboration been forthcoming the hypothesis would have attained orthodoxy.",
+    "exampleZh": "假若當時檔案佐證能及時公諸於世，這項假說早已確立為公認正統。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "假若當時及時獲得提供",
+        "examples": [
+          {
+            "en": "Had archival corroboration been forthcoming the hypothesis would have attained orthodoxy.",
+            "zh": "假若當時檔案佐證能及時公諸於世，這項假說早已確立為公認正統。"
+          }
+        ]
+      }
+    ]
+  },
+  "SEQUESTER": {
+    "pos": "v.",
+    "meaning": "依法院命令查封扣押涉案物資",
+    "example": "The magistrate issued a warrant to sequester the offshore accounts.",
+    "exampleZh": "法官正式簽發了查封並扣押這些離岸銀行帳戶的司法扣押令。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依法沒收查封扣押或隔離保管爭議資產",
+        "examples": [
+          {
+            "en": "The state moved to sequester the disputed cartel assets.",
+            "zh": "國家依法採取行動，對涉案財團的有爭議資產進行查封與扣押。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "依法院命令查封扣押涉案物資",
+        "examples": [
+          {
+            "en": "The magistrate issued a warrant to sequester the offshore accounts.",
+            "zh": "法官正式簽發了查封並扣押這些離岸銀行帳戶的司法扣押令。"
+          }
+        ]
+      }
+    ]
+  },
+  "FALLIBILISM": {
+    "pos": "n.",
+    "meaning": "承認知識暫定性與可錯性的認知態度",
+    "example": "Epistemic fallibilism prevents researchers from succumbing to intellectual arrogance.",
+    "exampleZh": "認識論的可謬論心態，能防止研究人員陷入理性的自負與傲慢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "認識論主張人類實證知識皆具犯錯可能",
+        "examples": [
+          {
+            "en": "Scientific inquiry is anchored in fallibilism rather than dogmatic finality.",
+            "zh": "科學探索的根基在於可謬主義的開放態度，而非教條式的終極定論。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "承認知識暫定性與可錯性的認知態度",
+        "examples": [
+          {
+            "en": "Epistemic fallibilism prevents researchers from succumbing to intellectual arrogance.",
+            "zh": "認識論的可謬論心態，能防止研究人員陷入理性的自負與傲慢。"
+          }
+        ]
+      }
+    ]
+  },
+  "SCHISM": {
+    "pos": "n.",
+    "meaning": "派系決裂與組織大分裂",
+    "example": "The ideological schism paralyzed the governing coalition for a generation.",
+    "exampleZh": "這場意識形態的大分裂，使執政聯盟整整一代人陷入施政癱瘓。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "宗教團體或政治陣營產生的正式重大分裂",
+        "examples": [
+          {
+            "en": "The schism between eastern and western churches altered European history.",
+            "zh": "東西方教會之間的大分裂深刻地改變了歐洲歷史的進程。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "派系決裂與組織大分裂",
+        "examples": [
+          {
+            "en": "The ideological schism paralyzed the governing coalition for a generation.",
+            "zh": "這場意識形態的大分裂，使執政聯盟整整一代人陷入施政癱瘓。"
+          }
+        ]
+      }
+    ]
+  },
+  "WAIVER": {
+    "pos": "n.",
+    "meaning": "放棄豁免權之法定文件",
+    "example": "The treaty included a mutual waiver of future wartime reparations claims.",
+    "exampleZh": "條約中包含了一項相互放棄未來戰時賠償索賠要求的法定豁免條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "正式放棄某項法律權利特權之聲明文件",
+        "examples": [
+          {
+            "en": "The sovereign signed an explicit waiver of maritime jurisdictional immunity.",
+            "zh": "該國正式簽署了一份明確放棄海事管轄豁免權的法律文件。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "放棄豁免權之法定文件",
+        "examples": [
+          {
+            "en": "The treaty included a mutual waiver of future wartime reparations claims.",
+            "zh": "條約中包含了一項相互放棄未來戰時賠償索賠要求的法定豁免條款。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORENSIC": {
+    "pos": "adj.",
+    "meaning": "科學鑑識與證據審查",
+    "example": "Forensic analysis revealed micro fissures in the subsea gas pipeline.",
+    "exampleZh": "專業鑑識分析揭示了海底天然氣管道內部存在的微觀裂縫。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "司法鑑識的或法庭適用的檢驗方法",
+        "examples": [
+          {
+            "en": "Forensic accounting unraveled the transnational web of fictitious holding entities.",
+            "zh": "鑑識會計技術揭開了跨國虛假控股公司相互交織的隱秘網絡。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "科學鑑識與證據審查",
+        "examples": [
+          {
+            "en": "Forensic analysis revealed micro fissures in the subsea gas pipeline.",
+            "zh": "專業鑑識分析揭示了海底天然氣管道內部存在的微觀裂縫。"
+          }
+        ]
+      }
+    ]
+  },
+  "PEREMPTORY": {
+    "pos": "adj.",
+    "meaning": "具備最高位階強制力之公法條款",
+    "example": "The prohibition against genocide constitutes a peremptory norm recognizing no sovereign treaty exception.",
+    "exampleZh": "嚴格禁止任何種族滅絕行徑的國際法規範，屬於絕對不承認任何國家間條約例外與豁免的強行法。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "強制專斷的不容置辯的官方指令",
+        "examples": [
+          {
+            "en": "The high commissioner issued a peremptory directive halting border fortifications.",
+            "zh": "高級專員發布了一道不容抗辯的強制指令，勒令立即暫停邊境要塞建設。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "專斷而具約束力的命令",
+        "examples": [
+          {
+            "en": "The tribunal issued a peremptory injunction against habitat deforestation.",
+            "zh": "審判庭發布了一道具備強制約束力的禁令，禁止對原始棲地進行採伐。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "絕對強制的且不容抗辯的最高法律規範",
+        "examples": [
+          {
+            "en": "Peremptory norms of international law override any conflicting bilateral treaty provisions.",
+            "zh": "國際法中具有絕對拘束力的強行性規範，其法律位階高於並壓倒任何相互牴觸的雙邊條約條款。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "具備最高位階強制力之公法條款",
+        "examples": [
+          {
+            "en": "The prohibition against genocide constitutes a peremptory norm recognizing no sovereign treaty exception.",
+            "zh": "嚴格禁止任何種族滅絕行徑的國際法規範，屬於絕對不承認任何國家間條約例外與豁免的強行法。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONVULSE": {
+    "pos": "v.",
+    "meaning": "社會或經濟層面的劇烈動盪",
+    "example": "Speculative runs on regional banks threatened to convulse sovereign credit.",
+    "exampleZh": "對地區性銀行的投機擠兌浪潮，隨時可能使整個國家的主權信用劇烈震盪。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使劇烈震盪動盪不安或引發痙攣",
+        "examples": [
+          {
+            "en": "Hyperinflation threatened to convulse the fragile post conflict republic.",
+            "zh": "惡性通貨膨脹隨時可能使這個剛剛結束衝突的脆弱共和國陷入劇烈動盪。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "社會或經濟層面的劇烈動盪",
+        "examples": [
+          {
+            "en": "Speculative runs on regional banks threatened to convulse sovereign credit.",
+            "zh": "對地區性銀行的投機擠兌浪潮，隨時可能使整個國家的主權信用劇烈震盪。"
+          }
+        ]
+      }
+    ]
+  },
+  "AUDACITY": {
+    "pos": "n.",
+    "meaning": "非凡膽略與大膽探索精神",
+    "example": "The explorer showed the audacity to chart uncharted polar waters alone.",
+    "exampleZh": "這位探險家展現了獨自航向未繪製地圖的極地水域的過人膽略。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "大膽無畏的魄力或過人的膽識",
+        "examples": [
+          {
+            "en": "His theoretical paper possessed the audacity to challenge Einsteinian orthodoxy.",
+            "zh": "他的理論論文擁有過人的膽識，敢於向愛因斯坦的物理正統提出挑戰。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "非凡膽略與大膽探索精神",
+        "examples": [
+          {
+            "en": "The explorer showed the audacity to chart uncharted polar waters alone.",
+            "zh": "這位探險家展現了獨自航向未繪製地圖的極地水域的過人膽略。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBORDINATE": {
+    "pos": "v.",
+    "meaning": "使隸屬次級地位",
+    "example": "Democratic constitutions never subordinate fundamental rights to executive decrees.",
+    "exampleZh": "民主國家的憲法絕不會將公民的基本權利屈從於行政首長的個人法令。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使從屬於或將某事物置於次等地位",
+        "examples": [
+          {
+            "en": "A genuine scholar refuses to subordinate truth to institutional convenience.",
+            "zh": "一位真正的學者絕不會將真理屈從於體制運作的方便與利益。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "使隸屬次級地位",
+        "examples": [
+          {
+            "en": "Democratic constitutions never subordinate fundamental rights to executive decrees.",
+            "zh": "民主國家的憲法絕不會將公民的基本權利屈從於行政首長的個人法令。"
+          }
+        ]
+      }
+    ]
+  },
+  "OF PARAMOUNT NECESSITY": {
+    "word": "of paramount necessity",
+    "pos": "phr.",
+    "meaning": "具有至高無上之必要性",
+    "example": "It is of paramount importance that human rights protocols be maintained without exception.",
+    "exampleZh": "無可動搖的一點是，基本人權保障公約必須無一例外地予以嚴格遵守。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具有至高無上之必要性",
+        "examples": [
+          {
+            "en": "It is of paramount importance that human rights protocols be maintained without exception.",
+            "zh": "無可動搖的一點是，基本人權保障公約必須無一例外地予以嚴格遵守。"
+          }
+        ]
+      }
+    ]
+  },
+  "FAR BE IT FROM ME": {
+    "word": "far be it from me",
+    "pos": "phr.",
+    "meaning": "我絕無意…；絕不敢自居",
+    "example": "Far be it from this committee to dictate sovereign domestic legislative prerogatives.",
+    "exampleZh": "本委員會絕無意僭越干預各自主權國家的內部國內立法特權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "我絕無意…；絕不敢自居",
+        "examples": [
+          {
+            "en": "Far be it from this committee to dictate sovereign domestic legislative prerogatives.",
+            "zh": "本委員會絕無意僭越干預各自主權國家的內部國內立法特權。"
+          }
+        ]
+      }
+    ]
+  },
+  "HAD SAFEGUARDS BEEN RATIFIED": {
+    "word": "had safeguards been ratified",
+    "pos": "phr.",
+    "meaning": "若防護體制當時獲批准",
+    "example": "Had constitutional safeguards not been ratified civic institutions would be dismantled today.",
+    "exampleZh": "若非憲法防護條款當時及時獲得批准，今日公民民主制度早已被徹底瓦解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若防護體制當時獲批准",
+        "examples": [
+          {
+            "en": "Had constitutional safeguards not been ratified civic institutions would be dismantled today.",
+            "zh": "若非憲法防護條款當時及時獲得批准，今日公民民主制度早已被徹底瓦解。"
+          }
+        ]
+      }
+    ]
+  },
+  "DICTATES THAT NO TRUSTEE": {
+    "word": "dictates that no trustee",
+    "pos": "phr.",
+    "meaning": "明確約束任何受託人均不得",
+    "example": "The statutory framework mandates that fiduciary custodians exercise scrupulous prudence.",
+    "exampleZh": "法定體制嚴正要求，所有信託財產管理人均必須履行極致審慎的注意義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明確約束任何受託人均不得",
+        "examples": [
+          {
+            "en": "The statutory framework mandates that fiduciary custodians exercise scrupulous prudence.",
+            "zh": "法定體制嚴正要求，所有信託財產管理人均必須履行極致審慎的注意義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "LEST INADVERTENT PROVOCATION": {
+    "word": "lest inadvertent provocation",
+    "pos": "phr.",
+    "meaning": "以免引發非預期之挑釁",
+    "example": "The diplomat walked cautiously lest inadvertent rhetorical provocation ignite hostilities.",
+    "exampleZh": "外交官行事極其慎重，唯恐不經意間的言辭挑釁點燃邊境武裝衝突的引信。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以免引發非預期之挑釁",
+        "examples": [
+          {
+            "en": "The diplomat walked cautiously lest inadvertent rhetorical provocation ignite hostilities.",
+            "zh": "外交官行事極其慎重，唯恐不經意間的言辭挑釁點燃邊境武裝衝突的引信。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRUTH BE TOLD": {
+    "word": "truth be told",
+    "pos": "phr.",
+    "meaning": "實話實說；坦白而言",
+    "example": "Truth be told structural insolvency cannot be cured through cosmetic monetary adjustments.",
+    "exampleZh": "坦白而言，長期的結構性債務破產絕非單憑表面化的微調貨幣政策所能療癒。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實話實說；坦白而言",
+        "examples": [
+          {
+            "en": "Truth be told structural insolvency cannot be cured through cosmetic monetary adjustments.",
+            "zh": "坦白而言，長期的結構性債務破產絕非單憑表面化的微調貨幣政策所能療癒。"
+          }
+        ]
+      }
+    ]
+  },
+  "DECREED THAT THEY BE": {
+    "word": "decreed that they be",
+    "pos": "phr.",
+    "meaning": "依法正式頒佈命令要求",
+    "example": "The magistrate decreed that the confiscated archives be repatriated to the national library.",
+    "exampleZh": "司法巡察官依法頒布命令，要求將被查扣的珍貴歷史檔案歸還予國家圖書館。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "依法正式頒佈命令要求",
+        "examples": [
+          {
+            "en": "The magistrate decreed that the confiscated archives be repatriated to the national library.",
+            "zh": "司法巡察官依法頒布命令，要求將被查扣的珍貴歷史檔案歸還予國家圖書館。"
+          }
+        ]
+      }
+    ]
+  },
+  "WERE TIPPING POINTS SURPASSED": {
+    "word": "were tipping points surpassed",
+    "pos": "phr.",
+    "meaning": "若關鍵臨界點遭到突破",
+    "example": "Were ecological tipping points surpassed the planetary climate would be irreparably altered.",
+    "exampleZh": "一旦生態環境臨界點被突破，整個地球的氣候系統便將面臨不可逆的永久巨變。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若關鍵臨界點遭到突破",
+        "examples": [
+          {
+            "en": "Were ecological tipping points surpassed the planetary climate would be irreparably altered.",
+            "zh": "一旦生態環境臨界點被突破，整個地球的氣候系統便將面臨不可逆的永久巨變。"
+          }
+        ]
+      }
+    ]
+  },
+  "STIPULATED THAT THE ENGINE": {
+    "word": "stipulated that the engine",
+    "pos": "phr.",
+    "meaning": "明確約定該演算法引擎",
+    "example": "The oversight council stipulated that the algorithmic engine be audited by external referees.",
+    "exampleZh": "監管審議會明文約定，該演算法推論核心必須由外部獨立專家進行嚴格審查。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明確約定該演算法引擎",
+        "examples": [
+          {
+            "en": "The oversight council stipulated that the algorithmic engine be audited by external referees.",
+            "zh": "監管審議會明文約定，該演算法推論核心必須由外部獨立專家進行嚴格審查。"
+          }
+        ]
+      }
+    ]
+  },
+  "LEST SYSTEMIC CONTAGION SPREAD": {
+    "word": "lest systemic contagion spread",
+    "pos": "phr.",
+    "meaning": "以免系統性金融傳染蔓延",
+    "example": "Lest systemic contagion spread the central bank injected emergency liquidity into the market.",
+    "exampleZh": "為防範系統性金融危機蔓延擴散，中央銀行火速向貨幣市場注入了緊急流動性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以免系統性金融傳染蔓延",
+        "examples": [
+          {
+            "en": "Lest systemic contagion spread the central bank injected emergency liquidity into the market.",
+            "zh": "為防範系統性金融危機蔓延擴散，中央銀行火速向貨幣市場注入了緊急流動性。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARAMOUNT": {
+    "pos": "adj.",
+    "meaning": "極端重要具有壓倒性優勢的",
+    "example": "Maintaining institutional autonomy is paramount for the central bank credibility.",
+    "exampleZh": "維持高度的體制獨立性，對中央銀行的貨幣公信力而言具有至關重要的意義。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "至高無上的首要的核心準則",
+        "examples": [
+          {
+            "en": "Public health and biosecurity protocols were of paramount concern during the crisis.",
+            "zh": "在危機爆發期間，公眾衛生與生物安全防護規範具有至高無上的首要重要性。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "極端重要具有壓倒性優勢的",
+        "examples": [
+          {
+            "en": "Maintaining institutional autonomy is paramount for the central bank credibility.",
+            "zh": "維持高度的體制獨立性，對中央銀行的貨幣公信力而言具有至關重要的意義。"
+          }
+        ]
+      }
+    ]
+  },
+  "LEST": {
+    "pos": "conj.",
+    "meaning": "以防唯恐特定風險發生",
+    "example": "Emergency reserves were stockpiled lest subsea supply corridors be severed.",
+    "exampleZh": "後備基地囤積了充足的緊急戰略物資，以免海底物流動脈遭到戰火切斷。",
+    "senses": [
+      {
+        "pos": "conj.",
+        "meaning": "唯恐以免引導預防性虛擬子句",
+        "examples": [
+          {
+            "en": "He refrained from comment lest his spontaneous remarks be misconstrued.",
+            "zh": "他刻意克制自己不作任何公開評論，唯恐其隨口發言遭到公眾與媒體的誤讀。"
+          }
+        ]
+      },
+      {
+        "pos": "conj.",
+        "meaning": "以防唯恐特定風險發生",
+        "examples": [
+          {
+            "en": "Emergency reserves were stockpiled lest subsea supply corridors be severed.",
+            "zh": "後備基地囤積了充足的緊急戰略物資，以免海底物流動脈遭到戰火切斷。"
+          }
+        ]
+      }
+    ]
+  },
+  "EMPANEL": {
+    "pos": "v.",
+    "meaning": "依法召集特別審裁小組",
+    "example": "Authorities decided to empanel forensic examiners to review financial ledgers.",
+    "exampleZh": "司法機關決定依法選派資深鑑識審計專家，對所有異常涉案帳冊展開全面清查。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "遴選組成陪審團或專家審理小組",
+        "examples": [
+          {
+            "en": "The court will empanel a jury of twelve citizens for the treason trial.",
+            "zh": "最高法院將為這場涉及叛國罪的重大案件正式遴選並組成由十二名公民組成的陪審團。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "依法召集特別審裁小組",
+        "examples": [
+          {
+            "en": "Authorities decided to empanel forensic examiners to review financial ledgers.",
+            "zh": "司法機關決定依法選派資深鑑識審計專家，對所有異常涉案帳冊展開全面清查。"
+          }
+        ]
+      }
+    ]
+  },
+  "LACUNA": {
+    "pos": "n.",
+    "meaning": "法律漏洞或論證盲區",
+    "example": "Forensic scrutiny identified a structural lacuna within cross border tax agreements.",
+    "exampleZh": "專業鑑識審計揭露了跨國雙邊稅務協定中存在的一處嚴重的結構性法律漏洞。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "法規文獻或理論體系中的空白缺失斷層",
+        "examples": [
+          {
+            "en": "A critical lacuna in the statutory text left judges without sentencing guidelines.",
+            "zh": "法定條文文本中存在的一處重大空白缺漏，使法官在量刑時缺乏明確的裁量基準。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法律漏洞或論證盲區",
+        "examples": [
+          {
+            "en": "Forensic scrutiny identified a structural lacuna within cross border tax agreements.",
+            "zh": "專業鑑識審計揭露了跨國雙邊稅務協定中存在的一處嚴重的結構性法律漏洞。"
+          }
+        ]
+      }
+    ]
+  },
+  "CODICIL": {
+    "pos": "n.",
+    "meaning": "法定遺囑修訂條款",
+    "example": "An explicit codicil disinherited relatives involved in corporate litigation.",
+    "exampleZh": "遺囑人特意增補了一項明確的法定附加書，取消了涉入公司惡意訴訟親屬的繼承權。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "遺囑之法定附加修訂附錄文件",
+        "examples": [
+          {
+            "en": "The philanthropist executed a codicil endowing the university library.",
+            "zh": "這位慈善家正式簽署了一份遺囑附加書，將名下巨額基金遺贈予大學圖書館。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法定遺囑修訂條款",
+        "examples": [
+          {
+            "en": "An explicit codicil disinherited relatives involved in corporate litigation.",
+            "zh": "遺囑人特意增補了一項明確的法定附加書，取消了涉入公司惡意訴訟親屬的繼承權。"
+          }
+        ]
+      }
+    ]
+  },
+  "FIDUCIARY": {
+    "pos": "adj.",
+    "meaning": "受託誠信與忠實義務",
+    "example": "Asset managers violated fiduciary duties by trading against client portfolios.",
+    "exampleZh": "該資產管理機構透過與客戶投資組合進行對沖內幕交易，嚴重違反了受託人忠實義務。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "受託人的基於誠信信賴之職責",
+        "examples": [
+          {
+            "en": "Directors have a fiduciary responsibility to act in the best interests of shareholders.",
+            "zh": "公司全體董事皆肩負著以股東最佳利益為最高出發點的受託人誠信義務。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "受託誠信與忠實義務",
+        "examples": [
+          {
+            "en": "Asset managers violated fiduciary duties by trading against client portfolios.",
+            "zh": "該資產管理機構透過與客戶投資組合進行對沖內幕交易，嚴重違反了受託人忠實義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "BRINKMANSHIP": {
+    "pos": "n.",
+    "meaning": "高風險邊緣博弈策略",
+    "example": "Diplomatic brinkmanship tested the nerve of both nuclear armed superpowers.",
+    "exampleZh": "危險的外交邊緣博弈政策，極度考驗著兩個擁有核武的超級大國決策者的戰略定力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將局勢推向危險邊緣的邊緣政策",
+        "examples": [
+          {
+            "en": "Cold war brinkmanship over maritime straits risked immediate military escalation.",
+            "zh": "冷戰時期圍繞戰略海峽展開的危險邊緣政策，隨時可能引爆不可挽回的軍事升級。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "高風險邊緣博弈策略",
+        "examples": [
+          {
+            "en": "Diplomatic brinkmanship tested the nerve of both nuclear armed superpowers.",
+            "zh": "危險的外交邊緣博弈政策，極度考驗著兩個擁有核武的超級大國決策者的戰略定力。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROVENANCE": {
+    "pos": "n.",
+    "meaning": "文獻古籍之原始淵源出處",
+    "example": "Archivists traced the provenance of the illuminated Bible to a Carolingian abbey.",
+    "exampleZh": "文獻檔案專家成功將這部彩繪泥金聖經的歷史出處，追溯至查理曼時代的修道院。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "歷史文物藝術品之起源出處傳承紀錄",
+        "examples": [
+          {
+            "en": "Forensic chemical testing corroborated the sixteenth century provenance of the canvas.",
+            "zh": "鑑識化學光譜檢驗，明確佐證了這幅油畫畫布源自十六世紀威尼斯工坊的出處。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "文獻古籍之原始淵源出處",
+        "examples": [
+          {
+            "en": "Archivists traced the provenance of the illuminated Bible to a Carolingian abbey.",
+            "zh": "文獻檔案專家成功將這部彩繪泥金聖經的歷史出處，追溯至查理曼時代的修道院。"
+          }
+        ]
+      }
+    ]
+  },
+  "REPATRIATE": {
+    "pos": "v.",
+    "meaning": "歸還被掠奪之國家文化財產",
+    "example": "Treaties compelled imperial powers to repatriate sacred ritual bronzes.",
+    "exampleZh": "和平條約迫使昔日的帝國主義列強，將掠奪自殖民地的神聖祭祀青銅禮器歸還原屬國。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "將流失海外之歷史文物或人員歸還祖國",
+        "examples": [
+          {
+            "en": "International conventions mandate efforts to repatriate illicitly exported treasures.",
+            "zh": "國際公約嚴格強制締約國共同努力，將所有透過非法手段走私出境的文化瑰寶遣返原產國。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "歸還被掠奪之國家文化財產",
+        "examples": [
+          {
+            "en": "Treaties compelled imperial powers to repatriate sacred ritual bronzes.",
+            "zh": "和平條約迫使昔日的帝國主義列強，將掠奪自殖民地的神聖祭祀青銅禮器歸還原屬國。"
+          }
+        ]
+      }
+    ]
+  },
+  "A PYRRHIC VICTORY": {
+    "word": "a pyrrhic victory",
+    "pos": "phr.",
+    "meaning": "付出慘烈犧牲代價的慘勝",
+    "example": "The costly conquest proved to be a pyrrhic victory that bankrupt the crown.",
+    "exampleZh": "這場耗資億萬的邊境征服戰役，最終證明是一場讓王室財政徹底破產的慘勝。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "付出慘烈犧牲代價的慘勝",
+        "examples": [
+          {
+            "en": "The costly conquest proved to be a pyrrhic victory that bankrupt the crown.",
+            "zh": "這場耗資億萬的邊境征服戰役，最終證明是一場讓王室財政徹底破產的慘勝。"
+          }
+        ]
+      }
+    ]
+  },
+  "GRANTED CARTE BLANCHE": {
+    "word": "granted carte blanche",
+    "pos": "phr.",
+    "meaning": "被授予全權自由決策之特權",
+    "example": "The plenipotentiary was granted carte blanche to negotiate sovereign debt restructuring.",
+    "exampleZh": "全權公使獲得了國家元首的完全授權，得以全權自主商討主權債務重組協議。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "被授予全權自由決策之特權",
+        "examples": [
+          {
+            "en": "The plenipotentiary was granted carte blanche to negotiate sovereign debt restructuring.",
+            "zh": "全權公使獲得了國家元首的完全授權，得以全權自主商討主權債務重組協議。"
+          }
+        ]
+      }
+    ]
+  },
+  "AT LOGGERHEADS OVER": {
+    "word": "at loggerheads over",
+    "pos": "phr.",
+    "meaning": "在某重大爭端上長期相持不下",
+    "example": "The regulatory agencies have been at loggerheads over cryptocurrency oversight.",
+    "exampleZh": "兩大國家金融監管機構在針對去中心化加密資產的管轄權限上，長期相持不下。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在某重大爭端上長期相持不下",
+        "examples": [
+          {
+            "en": "The regulatory agencies have been at loggerheads over cryptocurrency oversight.",
+            "zh": "兩大國家金融監管機構在針對去中心化加密資產的管轄權限上，長期相持不下。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLAY DEVIL ADVOCATE": {
+    "word": "play devil advocate",
+    "pos": "phr.",
+    "meaning": "故意扮演唱反調反詰的質疑者",
+    "example": "Let me play devil advocate to test the structural coherence of your thesis.",
+    "exampleZh": "容我暫時扮演唱反調的反詰質疑者，來極限檢驗你的理論論文是否具備內在自洽性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "故意扮演唱反調反詰的質疑者",
+        "examples": [
+          {
+            "en": "Let me play devil advocate to test the structural coherence of your thesis.",
+            "zh": "容我暫時扮演唱反調的反詰質疑者，來極限檢驗你的理論論文是否具備內在自洽性。"
+          }
+        ]
+      }
+    ]
+  },
+  "BEYOND THE PALE": {
+    "word": "beyond the pale",
+    "pos": "phr.",
+    "meaning": "完全逾越文明底線大逆不道",
+    "example": "Such blatant state sponsored espionage is considered entirely beyond the pale.",
+    "exampleZh": "這種明目張膽由國家情報機構幕後主導的惡意黑客間諜行徑，完全超越了文明公約的底線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "完全逾越文明底線大逆不道",
+        "examples": [
+          {
+            "en": "Such blatant state sponsored espionage is considered entirely beyond the pale.",
+            "zh": "這種明目張膽由國家情報機構幕後主導的惡意黑客間諜行徑，完全超越了文明公約的底線。"
+          }
+        ]
+      }
+    ]
+  },
+  "PLAY FAST AND LOOSE": {
+    "word": "play fast and loose",
+    "pos": "phr.",
+    "meaning": "輕浮不負責任地任意妄為",
+    "example": "The rogue executives played fast and loose with shareholder capital and safety protocols.",
+    "exampleZh": "這幫利慾薰心的流氓高管在股東投資資本與工業安全操作手冊上，任意妄為欺瞞公眾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "輕浮不負責任地任意妄為",
+        "examples": [
+          {
+            "en": "The rogue executives played fast and loose with shareholder capital and safety protocols.",
+            "zh": "這幫利慾薰心的流氓高管在股東投資資本與工業安全操作手冊上，任意妄為欺瞞公眾。"
+          }
+        ]
+      }
+    ]
+  },
+  "BRIDGE THE CHASM": {
+    "word": "bridge the chasm",
+    "pos": "phr.",
+    "meaning": "彌合橫亙其間的巨大意識形態鴻溝",
+    "example": "Statesmanship requires the intellectual courage to bridge the partisan chasm.",
+    "exampleZh": "真正的卓越治國政治家風範，要求具備敢於跨越兩黨黨爭意識形態鴻溝的非凡勇氣。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彌合橫亙其間的巨大意識形態鴻溝",
+        "examples": [
+          {
+            "en": "Statesmanship requires the intellectual courage to bridge the partisan chasm.",
+            "zh": "真正的卓越治國政治家風範，要求具備敢於跨越兩黨黨爭意識形態鴻溝的非凡勇氣。"
+          }
+        ]
+      }
+    ]
+  },
+  "A BITTER PILL TO SWALLOW": {
+    "word": "a bitter pill to swallow",
+    "pos": "phr.",
+    "meaning": "不得不屈辱承受的苦果現實",
+    "example": "Accepting international fiscal oversight was a bitter pill to swallow for the cabinet.",
+    "exampleZh": "被迫全盤接受國際貨幣基金組織的嚴苛財政託管監察，對內閣而言是一顆極難嚥下的苦果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不得不屈辱承受的苦果現實",
+        "examples": [
+          {
+            "en": "Accepting international fiscal oversight was a bitter pill to swallow for the cabinet.",
+            "zh": "被迫全盤接受國際貨幣基金組織的嚴苛財政託管監察，對內閣而言是一顆極難嚥下的苦果。"
+          }
+        ]
+      }
+    ]
+  },
+  "THERE IS THE RUB": {
+    "word": "there is the rub",
+    "pos": "phr.",
+    "meaning": "這才是核心難題與死結癥結所在",
+    "example": "Archival inconsistencies constitute the rub in resolving this historiographical controversy.",
+    "exampleZh": "原始文獻紀錄之間相互矛盾的空白記載，正是徹底解開這樁歷史學公案的真正死結所在。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這才是核心難題與死結癥結所在",
+        "examples": [
+          {
+            "en": "Archival inconsistencies constitute the rub in resolving this historiographical controversy.",
+            "zh": "原始文獻紀錄之間相互矛盾的空白記載，正是徹底解開這樁歷史學公案的真正死結所在。"
+          }
+        ]
+      }
+    ]
+  },
+  "THREW CAUTION TO THE WINDS": {
+    "word": "threw caution to the winds",
+    "pos": "phr.",
+    "meaning": "置個人安危成敗於度外放手一搏",
+    "example": "Facing imminent systemic insolvency the bank threw caution to the winds.",
+    "exampleZh": "在面臨即刻到來的系統性資本鏈斷裂破產之際，這家投行決定放手一搏孤注一擲。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "置個人安危成敗於度外放手一搏",
+        "examples": [
+          {
+            "en": "Facing imminent systemic insolvency the bank threw caution to the winds.",
+            "zh": "在面臨即刻到來的系統性資本鏈斷裂破產之際，這家投行決定放手一搏孤注一擲。"
+          }
+        ]
+      }
+    ]
+  },
+  "LOGGERHEADS": {
+    "pos": "n.",
+    "meaning": "雙方陷入激烈僵局相持不下",
+    "example": "Diplomats were at loggerheads over the verification protocols for nuclear warheads.",
+    "exampleZh": "在戰略核彈頭拆解的現場鑑識核查監督條款上，兩國談判代表團已連續數日相持不下。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "陷入頑固爭執激烈對立（用於 at loggerheads）",
+        "examples": [
+          {
+            "en": "The treasury and the defense ministry were at loggerheads over submarine procurement.",
+            "zh": "財政部與國防部在深海核潛艦的巨額採購預算份額分配上，長年陷入激烈的頑固對峙。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "雙方陷入激烈僵局相持不下",
+        "examples": [
+          {
+            "en": "Diplomats were at loggerheads over the verification protocols for nuclear warheads.",
+            "zh": "在戰略核彈頭拆解的現場鑑識核查監督條款上，兩國談判代表團已連續數日相持不下。"
+          }
+        ]
+      }
+    ]
+  },
+  "CHASM": {
+    "pos": "n.",
+    "meaning": "貧富或階級之間深不見底的鴻溝",
+    "example": "A growing economic chasm separated coastal metropolitan elites from agrarian provinces.",
+    "exampleZh": "一條深不見底且日益擴大的貧富與發展鴻溝，將沿海繁榮都市精英與內陸農業行省無情割裂。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法彌合的巨大分歧思想鴻溝或深淵",
+        "examples": [
+          {
+            "en": "A philosophical chasm separated empirical realists from postmodern theorists.",
+            "zh": "一道深不可測的認識論哲學鴻溝，將嚴肅的經驗實在論學者與後現代思潮解構者徹底割裂。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "貧富或階級之間深不見底的鴻溝",
+        "examples": [
+          {
+            "en": "A growing economic chasm separated coastal metropolitan elites from agrarian provinces.",
+            "zh": "一條深不見底且日益擴大的貧富與發展鴻溝，將沿海繁榮都市精英與內陸農業行省無情割裂。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRECARIOUS": {
+    "pos": "adj.",
+    "meaning": "處於動盪危險邊緣的微弱平衡",
+    "example": "The endangered alpine ecosystem survives in a precarious equilibrium under warming.",
+    "exampleZh": "這片極度脆弱的珍稀高山特有生態系統，在氣候急劇暖化的威脅下維持著岌岌可危的動態平衡。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "缺乏穩固支撐隨時可能崩潰搖搖欲墜的",
+        "examples": [
+          {
+            "en": "The post war coalition maintained a precarious parliamentary majority.",
+            "zh": "戰後由多黨倉促拼湊而成的執政聯合陣線，在國會中僅勉強維持著搖搖欲墜的微弱多數。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "處於動盪危險邊緣的微弱平衡",
+        "examples": [
+          {
+            "en": "The endangered alpine ecosystem survives in a precarious equilibrium under warming.",
+            "zh": "這片極度脆弱的珍稀高山特有生態系統，在氣候急劇暖化的威脅下維持著岌岌可危的動態平衡。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRACTABLE": {
+    "pos": "adj.",
+    "meaning": "問題經過分解後變得易於處理",
+    "example": "Complex algorithmic optimization becomes tractable when decomposed into linear subproblems.",
+    "exampleZh": "當將錯綜複雜的大規模全域優化問題分解為各個獨立的線性子問題後，求解過程便變得十分順暢。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "性情溫馴易於引導處置馴服駕馭的",
+        "examples": [
+          {
+            "en": "Domestic disputes proved more tractable once mediation mechanisms were established.",
+            "zh": "一旦設立了專門的社區司法調解機制，原本棘手的家庭財產民事糾紛便顯得容易引導處置。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "問題經過分解後變得易於處理",
+        "examples": [
+          {
+            "en": "Complex algorithmic optimization becomes tractable when decomposed into linear subproblems.",
+            "zh": "當將錯綜複雜的大規模全域優化問題分解為各個獨立的線性子問題後，求解過程便變得十分順暢。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTRACTABLE": {
+    "pos": "adj.",
+    "meaning": "牽涉多方利益頑抗難解的宿怨矛盾",
+    "example": "Deep seated sectarian rivalries presented an intractable hurdle to national unification.",
+    "exampleZh": "根深蒂固且歷經數百年的宗派歷史血仇，為整個國家的和平統一進程構築了一道難以踰越的頑固障礙。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "沉痾頑疾極度棘手難以解決或馴服的",
+        "examples": [
+          {
+            "en": "Chronic sovereign debt deficits remained an intractable structural dilemma.",
+            "zh": "慢性惡化且連年膨脹的國家主權財政赤字，始終是一項極難根治且頑固存在的體制性死結。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "牽涉多方利益頑抗難解的宿怨矛盾",
+        "examples": [
+          {
+            "en": "Deep seated sectarian rivalries presented an intractable hurdle to national unification.",
+            "zh": "根深蒂固且歷經數百年的宗派歷史血仇，為整個國家的和平統一進程構築了一道難以踰越的頑固障礙。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEONTOLOGY": {
+    "pos": "n.",
+    "meaning": "義務論倫理學體系與行事準則",
+    "example": "Medical ethics combines utilitarian public health needs with strict physician deontology.",
+    "exampleZh": "當代醫療倫理學，有機地結合了群體公共衛生層面的效益主義考量，與臨床醫師嚴格的救死扶傷道義論。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "強調道德義務與絕對職責規範之義務論",
+        "examples": [
+          {
+            "en": "Kantian deontology asserts that treating humans merely as means is immoral.",
+            "zh": "康德主義的嚴格道義義務論強調，無論出於何種目的，將人類僅僅視為工具手段皆屬不道德。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "義務論倫理學體系與行事準則",
+        "examples": [
+          {
+            "en": "Medical ethics combines utilitarian public health needs with strict physician deontology.",
+            "zh": "當代醫療倫理學，有機地結合了群體公共衛生層面的效益主義考量，與臨床醫師嚴格的救死扶傷道義論。"
+          }
+        ]
+      }
+    ]
+  },
+  "SERENDIPITY": {
+    "pos": "n.",
+    "meaning": "科研探索過程中的意外良機巧合",
+    "example": "Astronomers acknowledged serendipity in detecting the short duration gamma ray burst.",
+    "exampleZh": "全球天體物理學家皆一致坦承，本次能在第一時間成功捕獲這記毫秒級伽馬射線暴完全得益於天賜機緣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無意間意外偶獲重大寶貴發現之機緣",
+        "examples": [
+          {
+            "en": "The isolation of antibiotic compounds was a historic triumph of scientific serendipity.",
+            "zh": "廣譜抗生素青黴素化合物的成功提取與提純，是人類現代科學探索史上最偉大的機緣巧合。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "科研探索過程中的意外良機巧合",
+        "examples": [
+          {
+            "en": "Astronomers acknowledged serendipity in detecting the short duration gamma ray burst.",
+            "zh": "全球天體物理學家皆一致坦承，本次能在第一時間成功捕獲這記毫秒級伽馬射線暴完全得益於天賜機緣。"
+          }
+        ]
+      }
+    ]
+  },
+  "ZEITGEIST": {
+    "pos": "n.",
+    "meaning": "反映特定年代主流價值觀的時代思潮",
+    "example": "Minimalist industrial architecture embodied the technological zeitgeist of the century.",
+    "exampleZh": "崇尚純粹幾何線條的包浩斯極簡主義工業建築風格，最極致地體現了二十世紀初崇尚工業理性的時代思潮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主導特定歷史時期的時代精神與思潮風尚",
+        "examples": [
+          {
+            "en": "The youth protest movement captured the cultural zeitgeist of the late 1960s.",
+            "zh": "風起雲湧的大規模反戰青年抗議運動，最精準地體現並抓住了二十世紀六零年代末的時代精神。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "反映特定年代主流價值觀的時代思潮",
+        "examples": [
+          {
+            "en": "Minimalist industrial architecture embodied the technological zeitgeist of the century.",
+            "zh": "崇尚純粹幾何線條的包浩斯極簡主義工業建築風格，最極致地體現了二十世紀初崇尚工業理性的時代思潮。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARADIGM": {
+    "pos": "n.",
+    "meaning": "重塑科學界思考邏輯的劃時代理論架構",
+    "example": "The Copernican heliocentric paradigm dismantled millennia of Ptolemaic celestial mechanics.",
+    "exampleZh": "哥白尼劃時代的太陽中心說理論典範，以無可辯駁的幾何觀測數據徹底推翻了統治西方千年的托勒密地心體系。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公認的主導學術範式理論典範與體系架構",
+        "examples": [
+          {
+            "en": "The discovery of plate tectonics provoked a fundamental paradigm shift in geology.",
+            "zh": "大陸漂移與地球板塊構造學說的劃時代發現，在整個地質科學界引發了顛覆性的典範大轉移。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "重塑科學界思考邏輯的劃時代理論架構",
+        "examples": [
+          {
+            "en": "The Copernican heliocentric paradigm dismantled millennia of Ptolemaic celestial mechanics.",
+            "zh": "哥白尼劃時代的太陽中心說理論典範，以無可辯駁的幾何觀測數據徹底推翻了統治西方千年的托勒密地心體系。"
+          }
+        ]
+      }
+    ]
+  },
+  "JUS COGENS NORMS": {
+    "word": "jus cogens norms",
+    "pos": "phr.",
+    "meaning": "強行法不可減損規範",
+    "example": "The prohibition of torture is an absolute jus cogens norm in international law.",
+    "exampleZh": "禁止實施任何形式的酷刑，在現代國際法體系中屬於絕對不可減損的強行法規範。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "強行法不可減損規範",
+        "examples": [
+          {
+            "en": "The prohibition of torture is an absolute jus cogens norm in international law.",
+            "zh": "禁止實施任何形式的酷刑，在現代國際法體系中屬於絕對不可減損的強行法規範。"
+          }
+        ]
+      }
+    ]
+  },
+  "FUSION OF HORIZONS": {
+    "word": "fusion of horizons",
+    "pos": "phr.",
+    "meaning": "詮釋學之視域融合",
+    "example": "Hermeneutic understanding requires a profound fusion of horizons between past and present.",
+    "exampleZh": "深度的詮釋學理解，要求在歷史文本的過去語境與詮釋者的當下視角之間達成深刻的視域融合。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "詮釋學之視域融合",
+        "examples": [
+          {
+            "en": "Hermeneutic understanding requires a profound fusion of horizons between past and present.",
+            "zh": "深度的詮釋學理解，要求在歷史文本的過去語境與詮釋者的當下視角之間達成深刻的視域融合。"
+          }
+        ]
+      }
+    ]
+  },
+  "VOID AB INITIO": {
+    "word": "void ab initio",
+    "pos": "phr.",
+    "meaning": "自始完全不生效力無效",
+    "example": "The illicit commercial merger was declared void ab initio by the antitrust bench.",
+    "exampleZh": "這起涉及非法壟斷的跨國企業併購案，被聯邦反壟斷法庭正式宣告自始完全無效。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "自始完全不生效力無效",
+        "examples": [
+          {
+            "en": "The illicit commercial merger was declared void ab initio by the antitrust bench.",
+            "zh": "這起涉及非法壟斷的跨國企業併購案，被聯邦反壟斷法庭正式宣告自始完全無效。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNIVERSAL JURISDICTION OVER": {
+    "word": "universal jurisdiction over",
+    "pos": "phr.",
+    "meaning": "享有跨國之普遍管轄權",
+    "example": "National tribunals exercise universal jurisdiction over perpetrators of piracy and genocide.",
+    "exampleZh": "國內普通法院依法對公海海盜與種族滅絕罪行的實施者，享有不受地域限制的普遍管轄權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "享有跨國之普遍管轄權",
+        "examples": [
+          {
+            "en": "National tribunals exercise universal jurisdiction over perpetrators of piracy and genocide.",
+            "zh": "國內普通法院依法對公海海盜與種族滅絕罪行的實施者，享有不受地域限制的普遍管轄權。"
+          }
+        ]
+      }
+    ]
+  },
+  "EXPRESSIO UNIUS EST": {
+    "word": "expressio unius est",
+    "pos": "phr.",
+    "meaning": "明示其一即排除其他（法學解釋法則）",
+    "example": "The statutory cannon expressio unius est exclusio alterius limits implied executive authority.",
+    "exampleZh": "法學成文法解釋原則明示其一即排除其他，嚴格約束了行政首長未經列舉的隱含裁量權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明示其一即排除其他（法學解釋法則）",
+        "examples": [
+          {
+            "en": "The statutory cannon expressio unius est exclusio alterius limits implied executive authority.",
+            "zh": "法學成文法解釋原則明示其一即排除其他，嚴格約束了行政首長未經列舉的隱含裁量權。"
+          }
+        ]
+      }
+    ]
+  },
+  "ORIGINALISM POSITS THAT": {
+    "word": "originalism posits that",
+    "pos": "phr.",
+    "meaning": "原旨主義法學派主張",
+    "example": "Constitutional originalism posits that semantic meaning is fixed at the moment of adoption.",
+    "exampleZh": "憲法原旨主義的核心命題在於，法條的語義內涵在憲法正式頒布通過的那一歷史時刻便已確定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原旨主義法學派主張",
+        "examples": [
+          {
+            "en": "Constitutional originalism posits that semantic meaning is fixed at the moment of adoption.",
+            "zh": "憲法原旨主義的核心命題在於，法條的語義內涵在憲法正式頒布通過的那一歷史時刻便已確定。"
+          }
+        ]
+      }
+    ]
+  },
+  "NON REFOULEMENT PRINCIPLE": {
+    "word": "non refoulement principle",
+    "pos": "phr.",
+    "meaning": "國際法之難民不推回原則",
+    "example": "Customary international law enshrines the non refoulement principle to safeguard displaced refugees.",
+    "exampleZh": "國際習慣法莊嚴確立了難民不推回原則，以切實保障流離失所的避難者免遭遣返迫害。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "國際法之難民不推回原則",
+        "examples": [
+          {
+            "en": "Customary international law enshrines the non refoulement principle to safeguard displaced refugees.",
+            "zh": "國際習慣法莊嚴確立了難民不推回原則，以切實保障流離失所的避難者免遭遣返迫害。"
+          }
+        ]
+      }
+    ]
+  },
+  "STARE DECISIS MANDATES": {
+    "word": "stare decisis mandates",
+    "pos": "phr.",
+    "meaning": "遵循先例司法準則要求",
+    "example": "The rule of stare decisis mandates that common law courts honor established precedent.",
+    "exampleZh": "遵循先例的普通法最高規則，嚴格要求下級法院必須尊重並採納上級法院的既有判例。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "遵循先例司法準則要求",
+        "examples": [
+          {
+            "en": "The rule of stare decisis mandates that common law courts honor established precedent.",
+            "zh": "遵循先例的普通法最高規則，嚴格要求下級法院必須尊重並採納上級法院的既有判例。"
+          }
+        ]
+      }
+    ]
+  },
+  "RAISON D ETAT CANNOT": {
+    "word": "raison d etat cannot",
+    "pos": "phr.",
+    "meaning": "國家利益借口絕不能",
+    "example": "Appeals to raison d etat cannot justify systemic violations of peremptory human rights.",
+    "exampleZh": "任何訴諸「國家安全與利益」的權宜說詞，皆絕不能為系統性踐踏基本人權的行徑開脫。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "國家利益借口絕不能",
+        "examples": [
+          {
+            "en": "Appeals to raison d etat cannot justify systemic violations of peremptory human rights.",
+            "zh": "任何訴諸「國家安全與利益」的權宜說詞，皆絕不能為系統性踐踏基本人權的行徑開脫。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTER ALIA DICTATES": {
+    "word": "inter alia dictates",
+    "pos": "phr.",
+    "meaning": "在其所列諸項之中特別規定",
+    "example": "The maritime treaty inter alia dictates the conservation of endangered pelagic species.",
+    "exampleZh": "這份多邊海洋公約在其所規範的諸多事項中，特別明文規定了對瀕危遠洋物種的保護責任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在其所列諸項之中特別規定",
+        "examples": [
+          {
+            "en": "The maritime treaty inter alia dictates the conservation of endangered pelagic species.",
+            "zh": "這份多邊海洋公約在其所規範的諸多事項中，特別明文規定了對瀕危遠洋物種的保護責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "HERMENEUTICS": {
+    "pos": "n.",
+    "meaning": "法學條文與古典文獻詮釋體系",
+    "example": "Legal hermeneutics bridges the historical distance between statutory drafting and modern application.",
+    "exampleZh": "法律詮釋學在古代立法者的最初草案構想，與現代法官在全新社會現實中的具體適用之間搭建起橋樑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "哲學與神學中探討文本深層詮釋理論的詮釋學",
+        "examples": [
+          {
+            "en": "Philosophical hermeneutics explores the conditions that make human understanding possible.",
+            "zh": "哲學詮釋學深入探討了使人類跨越時空與文本達成真正相互理解的根本認識論前提。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法學條文與古典文獻詮釋體系",
+        "examples": [
+          {
+            "en": "Legal hermeneutics bridges the historical distance between statutory drafting and modern application.",
+            "zh": "法律詮釋學在古代立法者的最初草案構想，與現代法官在全新社會現實中的具體適用之間搭建起橋樑。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISPENSATION": {
+    "pos": "n.",
+    "meaning": "行政首長發布之特例豁免權限",
+    "example": "The minister refused to grant a regulatory dispensation to the non compliant chemical factory.",
+    "exampleZh": "內閣環境大臣態度堅決，拒絕向這家長期排放未達標廢水且拒不整改的化工巨頭核發特例豁免許可。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方正式特許免除某項法律義務或禁令豁免",
+        "examples": [
+          {
+            "en": "The monarch granted an extraordinary royal dispensation from commercial navigation embargoes.",
+            "zh": "君主親自發布了一道非同尋常的王室特許豁免令，免除了該商會受制於戰時航運禁運令的法定義務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "行政首長發布之特例豁免權限",
+        "examples": [
+          {
+            "en": "The minister refused to grant a regulatory dispensation to the non compliant chemical factory.",
+            "zh": "內閣環境大臣態度堅決，拒絕向這家長期排放未達標廢水且拒不整改的化工巨頭核發特例豁免許可。"
+          }
+        ]
+      }
+    ]
+  },
+  "ORIGINALISM": {
+    "pos": "n.",
+    "meaning": "回歸制憲歷史語義的司法流派",
+    "example": "Judges who adhere to originalism consult historic dictionaries to ascertain semantic intentions.",
+    "exampleZh": "堅持原旨主義解釋進路的資深大法官，往往藉由查閱建國時代的古老權威辭典來精確核實憲法詞義。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張按憲法制定時客觀原意進行解釋的原旨主義",
+        "examples": [
+          {
+            "en": "Originalism insists that the constitution should not be rewritten through judicial activism.",
+            "zh": "憲法原旨主義堅持認為，法官不應透過司法的過度能動主義去任意重構根本大法的初始含義。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "回歸制憲歷史語義的司法流派",
+        "examples": [
+          {
+            "en": "Judges who adhere to originalism consult historic dictionaries to ascertain semantic intentions.",
+            "zh": "堅持原旨主義解釋進路的資深大法官，往往藉由查閱建國時代的古老權威辭典來精確核實憲法詞義。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDEMNIFY": {
+    "pos": "v.",
+    "meaning": "簽訂具有強制約束力的損害賠償保證",
+    "example": "The contractor was contractually required to indemnify the municipality against site accidents.",
+    "exampleZh": "該工程總承包商在法律合約中被嚴格要求，必須對施工現場可能發生的一切安全事故向市政府承擔全額賠償責任。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "為他人遭受的損失提供法定補償或免責賠償",
+        "examples": [
+          {
+            "en": "Insurance syndicates agreed to indemnify the shipping enterprise for war risks.",
+            "zh": "國際知名再保險辛迪加正式達成協議，承諾對航運企業在衝突海域所遭受的戰時風險予以全額賠償。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "簽訂具有強制約束力的損害賠償保證",
+        "examples": [
+          {
+            "en": "The contractor was contractually required to indemnify the municipality against site accidents.",
+            "zh": "該工程總承包商在法律合約中被嚴格要求，必須對施工現場可能發生的一切安全事故向市政府承擔全額賠償責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "REFOULEMENT": {
+    "pos": "n.",
+    "meaning": "跨國難民保護體系之不推回底線",
+    "example": "Border patrols violated customary human rights law by engaging in summary refoulement.",
+    "exampleZh": "邊境巡邏部隊在未經任何身分甄別程序下擅自對難民實施就地推回，公然違反了國際人權習慣法的硬性約束。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國際法中將難民強制遣返至可能面臨迫害國家的推回行為",
+        "examples": [
+          {
+            "en": "The forced return of refugees constituted a flagrant violation of the refoulement prohibition.",
+            "zh": "對難民實施強制推回出境的行徑，構成了對國際法嚴格禁止難民推回原則的公然粗暴踐踏。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "跨國難民保護體系之不推回底線",
+        "examples": [
+          {
+            "en": "Border patrols violated customary human rights law by engaging in summary refoulement.",
+            "zh": "邊境巡邏部隊在未經任何身分甄別程序下擅自對難民實施就地推回，公然違反了國際人權習慣法的硬性約束。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEINOUS": {
+    "pos": "adj.",
+    "meaning": "嚴重違反人道文明底線的殘暴行徑",
+    "example": "Heinous atrocities committed against innocent civilians are subject to universal extraterritorial jurisdiction.",
+    "exampleZh": "針對手無寸鐵的無辜平民所犯下的滅絕人性之滔天罪行，受到國際社會不受國界限制的普遍管轄權嚴懲。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "罪大惡極的令人髮指的滅絕人性之罪行",
+        "examples": [
+          {
+            "en": "The international criminal tribunal was established to prosecute heinous war crimes.",
+            "zh": "國際刑事特別法庭正式宣佈成立，旨在對戰爭期間所犯下的種族滅絕等令人髮指的滔天罪行提起公訴。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "嚴重違反人道文明底線的殘暴行徑",
+        "examples": [
+          {
+            "en": "Heinous atrocities committed against innocent civilians are subject to universal extraterritorial jurisdiction.",
+            "zh": "針對手無寸鐵的無辜平民所犯下的滅絕人性之滔天罪行，受到國際社會不受國界限制的普遍管轄權嚴懲。"
           }
         ]
       }
@@ -12209,9 +14609,9 @@
   },
   "R8:EXPEDIENCY": {
     "pos": "n.",
-    "meaning": "以眼前方便或可行為優先的考量",
-    "example": "The decision was defended on grounds of expediency.",
-    "exampleZh": "這項決定以眼前務實方便為理由辯護。",
+    "meaning": "為求眼前政治權宜而非道德原則之行事考量",
+    "example": "The policy was driven by diplomatic expediency rather than ethics.",
+    "exampleZh": "該項政策乃是出於外交上的權宜之計而非倫理考量。",
     "senses": [
       {
         "pos": "n.",
@@ -12224,6 +14624,16 @@
           {
             "en": "Expediency can conflict with a stated principle.",
             "zh": "權宜考量可能與已聲明的原則衝突。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "為求眼前政治權宜而非道德原則之行事考量",
+        "examples": [
+          {
+            "en": "The policy was driven by diplomatic expediency rather than ethics.",
+            "zh": "該項政策乃是出於外交上的權宜之計而非倫理考量。"
           }
         ]
       }
@@ -13031,9 +15441,9 @@
   },
   "R8:IMPUGN": {
     "pos": "v.",
-    "meaning": "對某人的動機誠信等提出質疑",
-    "example": "The criticism does not impugn her integrity.",
-    "exampleZh": "這項批評不質疑她的誠信。",
+    "meaning": "公然攻擊專業操守",
+    "example": "Critics sought to impugn the integrity of the peer review consortium.",
+    "exampleZh": "少數批評者企圖以毫無證據的指控，惡意攻擊同行審查委員會專家的學術操守。",
     "senses": [
       {
         "pos": "v.",
@@ -13046,6 +15456,26 @@
           {
             "en": "He chose to challenge the reasoning rather than impugn the motive.",
             "zh": "他選擇挑戰推理，而非質疑動機。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "公開質疑攻擊動機誠信或效力",
+        "examples": [
+          {
+            "en": "The defense attorney attempted to impugn the reliability of the eyewitness.",
+            "zh": "辯方律師試圖透過交叉詰問，質疑並削弱控方關鍵目擊證人證詞的客觀可信度。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "公然攻擊專業操守",
+        "examples": [
+          {
+            "en": "Critics sought to impugn the integrity of the peer review consortium.",
+            "zh": "少數批評者企圖以毫無證據的指控，惡意攻擊同行審查委員會專家的學術操守。"
           }
         ]
       }
@@ -14564,9 +16994,9 @@
   "R8:INSINUATION": {
     "word": "insinuation",
     "pos": "n.",
-    "meaning": "以不直接方式提出的負面暗示",
-    "example": "The juxtaposition creates an insinuation.",
-    "exampleZh": "並列造成負面影射。",
+    "meaning": "不負責任的含沙射影與影射攻擊",
+    "example": "Political campaigns degenerated into personal smears and unsubstantiated insinuations.",
+    "exampleZh": "這場國會議員選戰徹底墮落淪為無休止的人身攻擊抹黑，以及毫無真憑實據的含沙射影。",
     "senses": [
       {
         "pos": "n.",
@@ -14575,6 +17005,26 @@
           {
             "en": "The juxtaposition creates an insinuation.",
             "zh": "並列造成負面影射。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "惡意旁敲側擊的含沙射影與詆毀暗諷",
+        "examples": [
+          {
+            "en": "He resented the prosecutor insinuation that the transaction was fraudulent.",
+            "zh": "他對主控檢察官在法庭辯論中旁敲側擊地影射該筆商業交易存在惡意詐欺的說法深感憤慨。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "不負責任的含沙射影與影射攻擊",
+        "examples": [
+          {
+            "en": "Political campaigns degenerated into personal smears and unsubstantiated insinuations.",
+            "zh": "這場國會議員選戰徹底墮落淪為無休止的人身攻擊抹黑，以及毫無真憑實據的含沙射影。"
           }
         ]
       }
@@ -15109,9 +17559,9 @@
   },
   "R8:EXCULPATORY": {
     "pos": "adj.",
-    "meaning": "用來使某人免責的",
-    "example": "The account has an exculpatory tone.",
-    "exampleZh": "敘述帶有卸責口吻。",
+    "meaning": "排除被告涉案嫌疑之客觀證據",
+    "example": "Suppressing exculpatory DNA evidence violated the defendant constitutional right to fair trial.",
+    "exampleZh": "隱匿並扣壓能夠證明被告完全清白的關鍵DNA鑑識證據，嚴重侵犯了憲法賦予公民的公正審判權。",
     "senses": [
       {
         "pos": "adj.",
@@ -15134,6 +17584,26 @@
           {
             "en": "The account has an exculpatory tone.",
             "zh": "敘述帶有卸責口吻。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "能證明被告人無罪或免除其法律責任的",
+        "examples": [
+          {
+            "en": "Prosecutors have an affirmative legal duty to disclose exculpatory evidence to the defense.",
+            "zh": "檢察官負有不容推卸的法定舉證義務，必須將手中掌握的一切有利於被告的脫罪證據及時送交辯方。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "排除被告涉案嫌疑之客觀證據",
+        "examples": [
+          {
+            "en": "Suppressing exculpatory DNA evidence violated the defendant constitutional right to fair trial.",
+            "zh": "隱匿並扣壓能夠證明被告完全清白的關鍵DNA鑑識證據，嚴重侵犯了憲法賦予公民的公正審判權。"
           }
         ]
       }
@@ -17303,9 +19773,9 @@
   },
   "R8:ADJUDICATE": {
     "pos": "v.",
-    "meaning": "對爭議作具權威的裁定",
-    "example": "The organiser will adjudicate the disputed move.",
-    "exampleZh": "主辦者會裁定爭議一步。",
+    "meaning": "以法庭裁決方式化解跨國爭端",
+    "example": "The Hague tribunal was formally petitioned to adjudicate the cross border aquifer allocation.",
+    "exampleZh": "海牙國際常設仲裁法院正式收到訴狀，受託以司法裁決程序全面化解跨國深層地下水資源分配的爭議。",
     "senses": [
       {
         "pos": "v.",
@@ -17314,6 +19784,26 @@
           {
             "en": "The organiser will adjudicate the disputed move.",
             "zh": "主辦者會裁定爭議一步。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "法官或仲裁員依法律程序正式審理並作出裁決",
+        "examples": [
+          {
+            "en": "The maritime boundary commission was convened to adjudicate the continental shelf dispute.",
+            "zh": "多邊大陸棚邊界劃定委員會正式召開，以依法裁決兩國圍繞深海海底大陸棚劃界展開的激烈爭端。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "以法庭裁決方式化解跨國爭端",
+        "examples": [
+          {
+            "en": "The Hague tribunal was formally petitioned to adjudicate the cross border aquifer allocation.",
+            "zh": "海牙國際常設仲裁法院正式收到訴狀，受託以司法裁決程序全面化解跨國深層地下水資源分配的爭議。"
           }
         ]
       }
@@ -18704,9 +21194,9 @@
   },
   "R8:HEGEMONY": {
     "pos": "n.",
-    "meaning": "特定集團或思想體系之領導支配霸權",
-    "example": "Cultural hegemony reinforces institutional compliance without overt force.",
-    "exampleZh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。",
+    "meaning": "在國際或區域格局中享有決定性主導地位之霸權",
+    "example": "The defeat ended the empire’s maritime hegemony in the ocean.",
+    "exampleZh": "那場戰敗終結了該帝國在大洋上的海上霸權地位。",
     "senses": [
       {
         "pos": "n.",
@@ -18715,6 +21205,16 @@
           {
             "en": "Cultural hegemony reinforces institutional compliance without overt force.",
             "zh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在國際或區域格局中享有決定性主導地位之霸權",
+        "examples": [
+          {
+            "en": "The defeat ended the empire’s maritime hegemony in the ocean.",
+            "zh": "那場戰敗終結了該帝國在大洋上的海上霸權地位。"
           }
         ]
       }
@@ -18910,6 +21410,2106 @@
       }
     ],
     "word": "heuristic"
+  },
+  "R8:REALPOLITIK": {
+    "word": "realpolitik",
+    "pos": "n.",
+    "meaning": "立足國家利益與實力政治的現實政治",
+    "example": "Bismarck practiced realpolitik to consolidate Prussian power.",
+    "exampleZh": "俾斯麥奉行現實政治以鞏固普魯士的國家實力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "立足國家利益與實力政治的現實政治",
+        "examples": [
+          {
+            "en": "Bismarck practiced realpolitik to consolidate Prussian power.",
+            "zh": "俾斯麥奉行現實政治以鞏固普魯士的國家實力。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BELLIGERENT": {
+    "word": "belligerent",
+    "pos": "adj.",
+    "meaning": "參與交戰的敵對國家或交戰方",
+    "example": "International law imposes duties upon all belligerent forces.",
+    "exampleZh": "國際法對所有交戰國軍隊皆施加了嚴格的法定責任。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "參與交戰的敵對國家或交戰方",
+        "examples": [
+          {
+            "en": "International law imposes duties upon all belligerent forces.",
+            "zh": "國際法對所有交戰國軍隊皆施加了嚴格的法定責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CAPITULATE": {
+    "word": "capitulate",
+    "pos": "v.",
+    "meaning": "在特定條件或無條件下向敵軍屈服投降",
+    "example": "The besieged garrison refused to capitulate without terms.",
+    "exampleZh": "被圍困的守軍斷然拒絕在沒有協議條件的情況下投降。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "在特定條件或無條件下向敵軍屈服投降",
+        "examples": [
+          {
+            "en": "The besieged garrison refused to capitulate without terms.",
+            "zh": "被圍困的守軍斷然拒絕在沒有協議條件的情況下投降。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ENTENTE": {
+    "word": "entente",
+    "pos": "n.",
+    "meaning": "國家之間基於共同理解而建立的友好協約",
+    "example": "The diplomatic entente balanced the rival continental coalition.",
+    "exampleZh": "這項外交協約平衡了對立陣營的大陸同盟集團。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家之間基於共同理解而建立的友好協約",
+        "examples": [
+          {
+            "en": "The diplomatic entente balanced the rival continental coalition.",
+            "zh": "這項外交協約平衡了對立陣營的大陸同盟集團。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:STRATEGIC AMBIGUITY PRESERVES DIPLOMATIC MANEUVER": {
+    "word": "strategic ambiguity preserves diplomatic maneuver",
+    "pos": "phr.",
+    "meaning": "戰略模糊性保留了外交斡旋的靈活空間。",
+    "example": "Strategic ambiguity preserves diplomatic maneuver.",
+    "exampleZh": "戰略模糊性保留了外交斡旋的靈活空間。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "戰略模糊性保留了外交斡旋的靈活空間。",
+        "examples": [
+          {
+            "en": "Strategic ambiguity preserves diplomatic maneuver.",
+            "zh": "戰略模糊性保留了外交斡旋的靈活空間。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DETERRENCE COLLAPSES WHEN RESOLVE IS DOUBTED": {
+    "word": "deterrence collapses when resolve is doubted",
+    "pos": "phr.",
+    "meaning": "當防衛決心遭受質疑時威懾體系便告瓦解。",
+    "example": "Deterrence collapses when resolve is doubted.",
+    "exampleZh": "當防衛決心遭受質疑時威懾體系便告瓦解。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "當防衛決心遭受質疑時威懾體系便告瓦解。",
+        "examples": [
+          {
+            "en": "Deterrence collapses when resolve is doubted.",
+            "zh": "當防衛決心遭受質疑時威懾體系便告瓦解。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SANCTION": {
+    "pos": "n.",
+    "meaning": "依據國際法或條約對違約國採取的經濟懲處措施",
+    "example": "Multilateral sanctions curtailed the regime’s oil revenues.",
+    "exampleZh": "多邊經濟制裁大幅削減了該政權的石油出口收入。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依據國際法或條約對違約國採取的經濟懲處措施",
+        "examples": [
+          {
+            "en": "Multilateral sanctions curtailed the regime’s oil revenues.",
+            "zh": "多邊經濟制裁大幅削減了該政權的石油出口收入。"
+          }
+        ]
+      }
+    ],
+    "word": "sanction"
+  },
+  "R8:EXTRADITE": {
+    "pos": "v.",
+    "meaning": "依據條約程序將在逃罪犯引渡交還本國審判",
+    "example": "The court ordered the authorities to extradite the suspect.",
+    "exampleZh": "法院下令行政當局將該名嫌疑犯正式引渡出境審訊。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依據條約程序將在逃罪犯引渡交還本國審判",
+        "examples": [
+          {
+            "en": "The court ordered the authorities to extradite the suspect.",
+            "zh": "法院下令行政當局將該名嫌疑犯正式引渡出境審訊。"
+          }
+        ]
+      }
+    ],
+    "word": "extradite"
+  },
+  "R8:ALLIANCE": {
+    "pos": "n.",
+    "meaning": "為防禦或進攻目的締結的軍事或政治同盟",
+    "example": "The treaty cemented a transatlantic security alliance.",
+    "exampleZh": "該條約鞏固了一座跨大西洋的集體安全同盟體系。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "為防禦或進攻目的締結的軍事或政治同盟",
+        "examples": [
+          {
+            "en": "The treaty cemented a transatlantic security alliance.",
+            "zh": "該條約鞏固了一座跨大西洋的集體安全同盟體系。"
+          }
+        ]
+      }
+    ],
+    "word": "alliance"
+  },
+  "R8:SOVEREIGNTY": {
+    "pos": "n.",
+    "meaning": "國家對其領土與人民享有之最高且排他的統治權",
+    "example": "The disputed island’s sovereignty remains hotly contested.",
+    "exampleZh": "這座爭議島嶼的國家主權歸屬依然存在激烈紛爭。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家對其領土與人民享有之最高且排他的統治權",
+        "examples": [
+          {
+            "en": "The disputed island’s sovereignty remains hotly contested.",
+            "zh": "這座爭議島嶼的國家主權歸屬依然存在激烈紛爭。"
+          }
+        ]
+      }
+    ],
+    "word": "sovereignty"
+  },
+  "R8:IMPARTIAL": {
+    "pos": "adj.",
+    "meaning": "不偏不倚且公正客觀對待爭議雙方的",
+    "example": "The mediator maintained an impartial stance during negotiations.",
+    "exampleZh": "調停者在雙邊談判過程中始終維持公正不偏的立場。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "不偏不倚且公正客觀對待爭議雙方的",
+        "examples": [
+          {
+            "en": "The mediator maintained an impartial stance during negotiations.",
+            "zh": "調停者在雙邊談判過程中始終維持公正不偏的立場。"
+          }
+        ]
+      }
+    ],
+    "word": "impartial"
+  },
+  "R8:INSOLVENCY": {
+    "word": "insolvency",
+    "pos": "n.",
+    "meaning": "無法償還到期債務之無力償債狀態",
+    "example": "The airline filed for protection following balance sheet insolvency.",
+    "exampleZh": "該航空公司在資產負債表陷入實質破產後申請了重整保護。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法償還到期債務之無力償債狀態",
+        "examples": [
+          {
+            "en": "The airline filed for protection following balance sheet insolvency.",
+            "zh": "該航空公司在資產負債表陷入實質破產後申請了重整保護。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ARBITRAGE": {
+    "word": "arbitrage",
+    "pos": "n.",
+    "meaning": "利用不同市場間資產價格落差進行無風險套利",
+    "example": "Algorithmic systems exploit momentary international currency arbitrage.",
+    "exampleZh": "演算法系統捕捉瞬間出現的跨國匯率套利機會。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "利用不同市場間資產價格落差進行無風險套利",
+        "examples": [
+          {
+            "en": "Algorithmic systems exploit momentary international currency arbitrage.",
+            "zh": "演算法系統捕捉瞬間出現的跨國匯率套利機會。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SEIGNIORAGE": {
+    "word": "seigniorage",
+    "pos": "n.",
+    "meaning": "國家壟斷貨幣發行所獲得之鑄幣稅利益",
+    "example": "Central bank seigniorage profits are remitted to the public treasury.",
+    "exampleZh": "中央銀行的貨幣鑄幣稅利潤全額繳交國家公庫。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國家壟斷貨幣發行所獲得之鑄幣稅利益",
+        "examples": [
+          {
+            "en": "Central bank seigniorage profits are remitted to the public treasury.",
+            "zh": "中央銀行的貨幣鑄幣稅利潤全額繳交國家公庫。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FINANCIALIZATION": {
+    "word": "financialization",
+    "pos": "n.",
+    "meaning": "金融資本與邏輯在整體經濟中支配地位上升",
+    "example": "Critics argue that financialization decoupled profits from production.",
+    "exampleZh": "批評者主張金融化使得資本利潤與實體生產完全脫鉤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "金融資本與邏輯在整體經濟中支配地位上升",
+        "examples": [
+          {
+            "en": "Critics argue that financialization decoupled profits from production.",
+            "zh": "批評者主張金融化使得資本利潤與實體生產完全脫鉤。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SOLVENCY REQUIRES STRUCTURAL PROFITABILITY": {
+    "word": "solvency requires structural profitability",
+    "pos": "phr.",
+    "meaning": "償債能力仰賴結構性的盈利能力。",
+    "example": "Solvency requires structural profitability.",
+    "exampleZh": "償債能力仰賴結構性的盈利能力。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "償債能力仰賴結構性的盈利能力。",
+        "examples": [
+          {
+            "en": "Solvency requires structural profitability.",
+            "zh": "償債能力仰賴結構性的盈利能力。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LIQUIDITY EVAPORATES PRECISELY WHEN NEEDED MOST": {
+    "word": "liquidity evaporates precisely when needed most",
+    "pos": "phr.",
+    "meaning": "流動性往往在最緊要關頭瞬間蒸發。",
+    "example": "Liquidity evaporates precisely when needed most.",
+    "exampleZh": "流動性往往在最緊要關頭瞬間蒸發。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "流動性往往在最緊要關頭瞬間蒸發。",
+        "examples": [
+          {
+            "en": "Liquidity evaporates precisely when needed most.",
+            "zh": "流動性往往在最緊要關頭瞬間蒸發。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DEFAULT": {
+    "pos": "n.",
+    "meaning": "無法按合約約定如期償還債務之違約事件",
+    "example": "The sovereign default triggered a suspension of bilateral credit lines.",
+    "exampleZh": "該起主權違約事件導致雙邊信貸額度遭到全面暫停。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法按合約約定如期償還債務之違約事件",
+        "examples": [
+          {
+            "en": "The sovereign default triggered a suspension of bilateral credit lines.",
+            "zh": "該起主權違約事件導致雙邊信貸額度遭到全面暫停。"
+          }
+        ]
+      }
+    ],
+    "word": "default"
+  },
+  "R8:AMORTIZE": {
+    "pos": "v.",
+    "meaning": "透過分期攤還方式逐步清償本金與利息",
+    "example": "The municipality will amortize the construction loan over thirty years.",
+    "exampleZh": "該市政府將在長達三十年的期間內逐步攤還這筆工程貸款。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "透過分期攤還方式逐步清償本金與利息",
+        "examples": [
+          {
+            "en": "The municipality will amortize the construction loan over thirty years.",
+            "zh": "該市政府將在長達三十年的期間內逐步攤還這筆工程貸款。"
+          }
+        ]
+      }
+    ],
+    "word": "amortize"
+  },
+  "R8:LIQUIDATE": {
+    "pos": "v.",
+    "meaning": "變賣轉換實體或金融資產以取得現金",
+    "example": "The hedge fund was forced to liquidate its long positions rapidly.",
+    "exampleZh": "避險基金被迫在短時間內迅速變賣其持有的多頭資產部位。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "變賣轉換實體或金融資產以取得現金",
+        "examples": [
+          {
+            "en": "The hedge fund was forced to liquidate its long positions rapidly.",
+            "zh": "避險基金被迫在短時間內迅速變賣其持有的多頭資產部位。"
+          }
+        ]
+      }
+    ],
+    "word": "liquidate"
+  },
+  "R8:DEPRECIATION": {
+    "pos": "n.",
+    "meaning": "資產隨時間與使用磨損產生之價值折舊",
+    "example": "Accounting rules require straight-line depreciation of capital assets.",
+    "exampleZh": "會計準則要求對固定資本資產採取直線法進行折舊攤提。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "資產隨時間與使用磨損產生之價值折舊",
+        "examples": [
+          {
+            "en": "Accounting rules require straight-line depreciation of capital assets.",
+            "zh": "會計準則要求對固定資本資產採取直線法進行折舊攤提。"
+          }
+        ]
+      }
+    ],
+    "word": "depreciation"
+  },
+  "R8:CONGLOMERATE": {
+    "pos": "n.",
+    "meaning": "業務跨足多元不同產業領域之大型跨國企業集團",
+    "example": "The industrial conglomerate divested its loss-making shipping division.",
+    "exampleZh": "該工業巨型跨國集團剝離了持續虧損的航運業務部門。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "業務跨足多元不同產業領域之大型跨國企業集團",
+        "examples": [
+          {
+            "en": "The industrial conglomerate divested its loss-making shipping division.",
+            "zh": "該工業巨型跨國集團剝離了持續虧損的航運業務部門。"
+          }
+        ]
+      }
+    ],
+    "word": "conglomerate"
+  },
+  "R8:CONCENTRATION": {
+    "pos": "n.",
+    "meaning": "市場份額或金融風險過度集中於少數主體",
+    "example": "Antitrust regulators investigated market concentration in tech sectors.",
+    "exampleZh": "反壟斷監管機關對科技領域的市場份額過度集中展開了調查。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "市場份額或金融風險過度集中於少數主體",
+        "examples": [
+          {
+            "en": "Antitrust regulators investigated market concentration in tech sectors.",
+            "zh": "反壟斷監管機關對科技領域的市場份額過度集中展開了調查。"
+          }
+        ]
+      }
+    ],
+    "word": "concentration"
+  },
+  "R8:ON NO ACCOUNT": {
+    "word": "on no account",
+    "pos": "phr.",
+    "meaning": "絕不可；無論如何都不（倒裝片語）",
+    "example": "On no account should fundamental human liberties be subordinated to political expediency.",
+    "exampleZh": "無論在任何情況下，基本人權與自由都絕不可屈從於政治權宜。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "絕不可；無論如何都不（倒裝片語）",
+        "examples": [
+          {
+            "en": "On no account should fundamental human liberties be subordinated to political expediency.",
+            "zh": "無論在任何情況下，基本人權與自由都絕不可屈從於政治權宜。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:WERE IT UNDERMINED": {
+    "word": "were it undermined",
+    "pos": "phr.",
+    "meaning": "若其遭到破壞削弱（虛擬倒裝）",
+    "example": "Were constitutional guardrails undermined the fragile democratic compact would disintegrate.",
+    "exampleZh": "憲法防護欄若遭到削弱瓦解，脆弱的民主公約便將隨之崩塌。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若其遭到破壞削弱（虛擬倒裝）",
+        "examples": [
+          {
+            "en": "Were constitutional guardrails undermined the fragile democratic compact would disintegrate.",
+            "zh": "憲法防護欄若遭到削弱瓦解，脆弱的民主公約便將隨之崩塌。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUCH WAS THE BRILLIANCE": {
+    "word": "such was the brilliance",
+    "pos": "phr.",
+    "meaning": "如此之才華卓越以致於",
+    "example": "Such was the intellectual brilliance of the thesis that orthodox paradigms crumbled.",
+    "exampleZh": "該論文的智慧光芒如此耀眼，以致於傳統典範隨之土崩瓦解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "如此之才華卓越以致於",
+        "examples": [
+          {
+            "en": "Such was the intellectual brilliance of the thesis that orthodox paradigms crumbled.",
+            "zh": "該論文的智慧光芒如此耀眼，以致於傳統典範隨之土崩瓦解。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SCARCELY HAD IT TAKEN": {
+    "word": "scarcely had it taken",
+    "pos": "phr.",
+    "meaning": "剛一生效實施之際",
+    "example": "Scarcely had the decree taken effect when profound structural fissures manifested.",
+    "exampleZh": "政令剛一生效實施，深刻的體制結構裂痕便全面顯現。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "剛一生效實施之際",
+        "examples": [
+          {
+            "en": "Scarcely had the decree taken effect when profound structural fissures manifested.",
+            "zh": "政令剛一生效實施，深刻的體制結構裂痕便全面顯現。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:IT WAS SYSTEMIC OPACITY": {
+    "word": "it was systemic opacity",
+    "pos": "phr.",
+    "meaning": "正是體制的不透明性",
+    "example": "It was precisely systemic opacity that enabled unchecked predatory exploitation.",
+    "exampleZh": "正是體制層面的極度不透明，助長了毫無制衡的掠奪性剝削。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "正是體制的不透明性",
+        "examples": [
+          {
+            "en": "It was precisely systemic opacity that enabled unchecked predatory exploitation.",
+            "zh": "正是體制層面的極度不透明，助長了毫無制衡的掠奪性剝削。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ONLY BY UPHOLDING": {
+    "word": "only by upholding",
+    "pos": "phr.",
+    "meaning": "唯有堅守；只有秉持",
+    "example": "Only by upholding rigorous forensic standards can judicial integrity endure.",
+    "exampleZh": "唯有始終恪守嚴謹的鑑識標準，司法公正誠信方能歷久不衰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "唯有堅守；只有秉持",
+        "examples": [
+          {
+            "en": "Only by upholding rigorous forensic standards can judicial integrity endure.",
+            "zh": "唯有始終恪守嚴謹的鑑識標準，司法公正誠信方能歷久不衰。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SO CONTENTIOUS WERE THEY": {
+    "word": "so contentious were they",
+    "pos": "phr.",
+    "meaning": "爭議如此激烈以致於",
+    "example": "So contentious were the deliberations that consensus remained entirely elusive.",
+    "exampleZh": "閉門商議過程如此充滿激烈爭辯，以致於共識始終難以企及。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "爭議如此激烈以致於",
+        "examples": [
+          {
+            "en": "So contentious were the deliberations that consensus remained entirely elusive.",
+            "zh": "閉門商議過程如此充滿激烈爭辯，以致於共識始終難以企及。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HAD IT BEEN FORTHCOMING": {
+    "word": "had it been forthcoming",
+    "pos": "phr.",
+    "meaning": "假若當時及時獲得提供",
+    "example": "Had archival corroboration been forthcoming the hypothesis would have attained orthodoxy.",
+    "exampleZh": "假若當時檔案佐證能及時公諸於世，這項假說早已確立為公認正統。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "假若當時及時獲得提供",
+        "examples": [
+          {
+            "en": "Had archival corroboration been forthcoming the hypothesis would have attained orthodoxy.",
+            "zh": "假若當時檔案佐證能及時公諸於世，這項假說早已確立為公認正統。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SEQUESTER": {
+    "pos": "v.",
+    "meaning": "依法院命令查封扣押涉案物資",
+    "example": "The magistrate issued a warrant to sequester the offshore accounts.",
+    "exampleZh": "法官正式簽發了查封並扣押這些離岸銀行帳戶的司法扣押令。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依法沒收查封扣押或隔離保管爭議資產",
+        "examples": [
+          {
+            "en": "The state moved to sequester the disputed cartel assets.",
+            "zh": "國家依法採取行動，對涉案財團的有爭議資產進行查封與扣押。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "依法院命令查封扣押涉案物資",
+        "examples": [
+          {
+            "en": "The magistrate issued a warrant to sequester the offshore accounts.",
+            "zh": "法官正式簽發了查封並扣押這些離岸銀行帳戶的司法扣押令。"
+          }
+        ]
+      }
+    ],
+    "word": "sequester"
+  },
+  "R8:FALLIBILISM": {
+    "pos": "n.",
+    "meaning": "承認知識暫定性與可錯性的認知態度",
+    "example": "Epistemic fallibilism prevents researchers from succumbing to intellectual arrogance.",
+    "exampleZh": "認識論的可謬論心態，能防止研究人員陷入理性的自負與傲慢。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "認識論主張人類實證知識皆具犯錯可能",
+        "examples": [
+          {
+            "en": "Scientific inquiry is anchored in fallibilism rather than dogmatic finality.",
+            "zh": "科學探索的根基在於可謬主義的開放態度，而非教條式的終極定論。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "承認知識暫定性與可錯性的認知態度",
+        "examples": [
+          {
+            "en": "Epistemic fallibilism prevents researchers from succumbing to intellectual arrogance.",
+            "zh": "認識論的可謬論心態，能防止研究人員陷入理性的自負與傲慢。"
+          }
+        ]
+      }
+    ],
+    "word": "fallibilism"
+  },
+  "R8:SCHISM": {
+    "pos": "n.",
+    "meaning": "派系決裂與組織大分裂",
+    "example": "The ideological schism paralyzed the governing coalition for a generation.",
+    "exampleZh": "這場意識形態的大分裂，使執政聯盟整整一代人陷入施政癱瘓。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "宗教團體或政治陣營產生的正式重大分裂",
+        "examples": [
+          {
+            "en": "The schism between eastern and western churches altered European history.",
+            "zh": "東西方教會之間的大分裂深刻地改變了歐洲歷史的進程。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "派系決裂與組織大分裂",
+        "examples": [
+          {
+            "en": "The ideological schism paralyzed the governing coalition for a generation.",
+            "zh": "這場意識形態的大分裂，使執政聯盟整整一代人陷入施政癱瘓。"
+          }
+        ]
+      }
+    ],
+    "word": "schism"
+  },
+  "R8:FORENSIC": {
+    "pos": "adj.",
+    "meaning": "科學鑑識與證據審查",
+    "example": "Forensic analysis revealed micro fissures in the subsea gas pipeline.",
+    "exampleZh": "專業鑑識分析揭示了海底天然氣管道內部存在的微觀裂縫。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "司法鑑識的或法庭適用的檢驗方法",
+        "examples": [
+          {
+            "en": "Forensic accounting unraveled the transnational web of fictitious holding entities.",
+            "zh": "鑑識會計技術揭開了跨國虛假控股公司相互交織的隱秘網絡。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "科學鑑識與證據審查",
+        "examples": [
+          {
+            "en": "Forensic analysis revealed micro fissures in the subsea gas pipeline.",
+            "zh": "專業鑑識分析揭示了海底天然氣管道內部存在的微觀裂縫。"
+          }
+        ]
+      }
+    ],
+    "word": "forensic"
+  },
+  "R8:PEREMPTORY": {
+    "pos": "adj.",
+    "meaning": "具備最高位階強制力之公法條款",
+    "example": "The prohibition against genocide constitutes a peremptory norm recognizing no sovereign treaty exception.",
+    "exampleZh": "嚴格禁止任何種族滅絕行徑的國際法規範，屬於絕對不承認任何國家間條約例外與豁免的強行法。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "強制專斷的不容置辯的官方指令",
+        "examples": [
+          {
+            "en": "The high commissioner issued a peremptory directive halting border fortifications.",
+            "zh": "高級專員發布了一道不容抗辯的強制指令，勒令立即暫停邊境要塞建設。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "專斷而具約束力的命令",
+        "examples": [
+          {
+            "en": "The tribunal issued a peremptory injunction against habitat deforestation.",
+            "zh": "審判庭發布了一道具備強制約束力的禁令，禁止對原始棲地進行採伐。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "絕對強制的且不容抗辯的最高法律規範",
+        "examples": [
+          {
+            "en": "Peremptory norms of international law override any conflicting bilateral treaty provisions.",
+            "zh": "國際法中具有絕對拘束力的強行性規範，其法律位階高於並壓倒任何相互牴觸的雙邊條約條款。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "具備最高位階強制力之公法條款",
+        "examples": [
+          {
+            "en": "The prohibition against genocide constitutes a peremptory norm recognizing no sovereign treaty exception.",
+            "zh": "嚴格禁止任何種族滅絕行徑的國際法規範，屬於絕對不承認任何國家間條約例外與豁免的強行法。"
+          }
+        ]
+      }
+    ],
+    "word": "peremptory"
+  },
+  "R8:CONVULSE": {
+    "pos": "v.",
+    "meaning": "社會或經濟層面的劇烈動盪",
+    "example": "Speculative runs on regional banks threatened to convulse sovereign credit.",
+    "exampleZh": "對地區性銀行的投機擠兌浪潮，隨時可能使整個國家的主權信用劇烈震盪。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使劇烈震盪動盪不安或引發痙攣",
+        "examples": [
+          {
+            "en": "Hyperinflation threatened to convulse the fragile post conflict republic.",
+            "zh": "惡性通貨膨脹隨時可能使這個剛剛結束衝突的脆弱共和國陷入劇烈動盪。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "社會或經濟層面的劇烈動盪",
+        "examples": [
+          {
+            "en": "Speculative runs on regional banks threatened to convulse sovereign credit.",
+            "zh": "對地區性銀行的投機擠兌浪潮，隨時可能使整個國家的主權信用劇烈震盪。"
+          }
+        ]
+      }
+    ],
+    "word": "convulse"
+  },
+  "R8:SUBORDINATE": {
+    "pos": "v.",
+    "meaning": "使隸屬次級地位",
+    "example": "Democratic constitutions never subordinate fundamental rights to executive decrees.",
+    "exampleZh": "民主國家的憲法絕不會將公民的基本權利屈從於行政首長的個人法令。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "使從屬於或將某事物置於次等地位",
+        "examples": [
+          {
+            "en": "A genuine scholar refuses to subordinate truth to institutional convenience.",
+            "zh": "一位真正的學者絕不會將真理屈從於體制運作的方便與利益。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "使隸屬次級地位",
+        "examples": [
+          {
+            "en": "Democratic constitutions never subordinate fundamental rights to executive decrees.",
+            "zh": "民主國家的憲法絕不會將公民的基本權利屈從於行政首長的個人法令。"
+          }
+        ]
+      }
+    ],
+    "word": "subordinate"
+  },
+  "R8:CORROBORATE": {
+    "pos": "v.",
+    "meaning": "提供佐證確證事實",
+    "example": "Satellite telemetry was deployed to corroborate surface temperature anomalies.",
+    "exampleZh": "多光譜衛星遙測技術被廣泛部署，以確證地表所發生的異常溫度躍升。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "提供額外證據以證實支持某項主張",
+        "examples": [
+          {
+            "en": "Multiple witnesses came forward to corroborate the defendant’s story.",
+            "zh": "多位證人主動出面提供證據以證實被告的說法。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "提供確鑿證據以證實某主張說法",
+        "examples": [
+          {
+            "en": "Newly declassified archives corroborate the ambassador account of the crisis.",
+            "zh": "新解密的歷史檔案完全證實了大使對這場危機發展過程的陳述。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "提供佐證確證事實",
+        "examples": [
+          {
+            "en": "Satellite telemetry was deployed to corroborate surface temperature anomalies.",
+            "zh": "多光譜衛星遙測技術被廣泛部署，以確證地表所發生的異常溫度躍升。"
+          }
+        ]
+      }
+    ],
+    "word": "corroborate"
+  },
+  "R8:WAIVER": {
+    "pos": "n.",
+    "meaning": "放棄豁免權之法定文件",
+    "example": "The treaty included a mutual waiver of future wartime reparations claims.",
+    "exampleZh": "條約中包含了一項相互放棄未來戰時賠償索賠要求的法定豁免條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "正式放棄某項法律權利特權之聲明文件",
+        "examples": [
+          {
+            "en": "The sovereign signed an explicit waiver of maritime jurisdictional immunity.",
+            "zh": "該國正式簽署了一份明確放棄海事管轄豁免權的法律文件。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "放棄豁免權之法定文件",
+        "examples": [
+          {
+            "en": "The treaty included a mutual waiver of future wartime reparations claims.",
+            "zh": "條約中包含了一項相互放棄未來戰時賠償索賠要求的法定豁免條款。"
+          }
+        ]
+      }
+    ],
+    "word": "waiver"
+  },
+  "R8:AUDACITY": {
+    "pos": "n.",
+    "meaning": "非凡膽略與大膽探索精神",
+    "example": "The explorer showed the audacity to chart uncharted polar waters alone.",
+    "exampleZh": "這位探險家展現了獨自航向未繪製地圖的極地水域的過人膽略。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "大膽無畏的魄力或過人的膽識",
+        "examples": [
+          {
+            "en": "His theoretical paper possessed the audacity to challenge Einsteinian orthodoxy.",
+            "zh": "他的理論論文擁有過人的膽識，敢於向愛因斯坦的物理正統提出挑戰。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "非凡膽略與大膽探索精神",
+        "examples": [
+          {
+            "en": "The explorer showed the audacity to chart uncharted polar waters alone.",
+            "zh": "這位探險家展現了獨自航向未繪製地圖的極地水域的過人膽略。"
+          }
+        ]
+      }
+    ],
+    "word": "audacity"
+  },
+  "R8:OF PARAMOUNT NECESSITY": {
+    "word": "of paramount necessity",
+    "pos": "phr.",
+    "meaning": "具有至高無上之必要性",
+    "example": "It is of paramount importance that human rights protocols be maintained without exception.",
+    "exampleZh": "無可動搖的一點是，基本人權保障公約必須無一例外地予以嚴格遵守。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "具有至高無上之必要性",
+        "examples": [
+          {
+            "en": "It is of paramount importance that human rights protocols be maintained without exception.",
+            "zh": "無可動搖的一點是，基本人權保障公約必須無一例外地予以嚴格遵守。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FAR BE IT FROM ME": {
+    "word": "far be it from me",
+    "pos": "phr.",
+    "meaning": "我絕無意…；絕不敢自居",
+    "example": "Far be it from this committee to dictate sovereign domestic legislative prerogatives.",
+    "exampleZh": "本委員會絕無意僭越干預各自主權國家的內部國內立法特權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "我絕無意…；絕不敢自居",
+        "examples": [
+          {
+            "en": "Far be it from this committee to dictate sovereign domestic legislative prerogatives.",
+            "zh": "本委員會絕無意僭越干預各自主權國家的內部國內立法特權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HAD SAFEGUARDS BEEN RATIFIED": {
+    "word": "had safeguards been ratified",
+    "pos": "phr.",
+    "meaning": "若防護體制當時獲批准",
+    "example": "Had constitutional safeguards not been ratified civic institutions would be dismantled today.",
+    "exampleZh": "若非憲法防護條款當時及時獲得批准，今日公民民主制度早已被徹底瓦解。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若防護體制當時獲批准",
+        "examples": [
+          {
+            "en": "Had constitutional safeguards not been ratified civic institutions would be dismantled today.",
+            "zh": "若非憲法防護條款當時及時獲得批准，今日公民民主制度早已被徹底瓦解。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LEST INADVERTENT PROVOCATION": {
+    "word": "lest inadvertent provocation",
+    "pos": "phr.",
+    "meaning": "以免引發非預期之挑釁",
+    "example": "The diplomat walked cautiously lest inadvertent rhetorical provocation ignite hostilities.",
+    "exampleZh": "外交官行事極其慎重，唯恐不經意間的言辭挑釁點燃邊境武裝衝突的引信。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以免引發非預期之挑釁",
+        "examples": [
+          {
+            "en": "The diplomat walked cautiously lest inadvertent rhetorical provocation ignite hostilities.",
+            "zh": "外交官行事極其慎重，唯恐不經意間的言辭挑釁點燃邊境武裝衝突的引信。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:TRUTH BE TOLD": {
+    "word": "truth be told",
+    "pos": "phr.",
+    "meaning": "實話實說；坦白而言",
+    "example": "Truth be told structural insolvency cannot be cured through cosmetic monetary adjustments.",
+    "exampleZh": "坦白而言，長期的結構性債務破產絕非單憑表面化的微調貨幣政策所能療癒。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "實話實說；坦白而言",
+        "examples": [
+          {
+            "en": "Truth be told structural insolvency cannot be cured through cosmetic monetary adjustments.",
+            "zh": "坦白而言，長期的結構性債務破產絕非單憑表面化的微調貨幣政策所能療癒。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DECREED THAT THEY BE": {
+    "word": "decreed that they be",
+    "pos": "phr.",
+    "meaning": "依法正式頒佈命令要求",
+    "example": "The magistrate decreed that the confiscated archives be repatriated to the national library.",
+    "exampleZh": "司法巡察官依法頒布命令，要求將被查扣的珍貴歷史檔案歸還予國家圖書館。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "依法正式頒佈命令要求",
+        "examples": [
+          {
+            "en": "The magistrate decreed that the confiscated archives be repatriated to the national library.",
+            "zh": "司法巡察官依法頒布命令，要求將被查扣的珍貴歷史檔案歸還予國家圖書館。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:STIPULATED THAT THE ENGINE": {
+    "word": "stipulated that the engine",
+    "pos": "phr.",
+    "meaning": "明確約定該演算法引擎",
+    "example": "The oversight council stipulated that the algorithmic engine be audited by external referees.",
+    "exampleZh": "監管審議會明文約定，該演算法推論核心必須由外部獨立專家進行嚴格審查。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明確約定該演算法引擎",
+        "examples": [
+          {
+            "en": "The oversight council stipulated that the algorithmic engine be audited by external referees.",
+            "zh": "監管審議會明文約定，該演算法推論核心必須由外部獨立專家進行嚴格審查。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LEST SYSTEMIC CONTAGION SPREAD": {
+    "word": "lest systemic contagion spread",
+    "pos": "phr.",
+    "meaning": "以免系統性金融傳染蔓延",
+    "example": "Lest systemic contagion spread the central bank injected emergency liquidity into the market.",
+    "exampleZh": "為防範系統性金融危機蔓延擴散，中央銀行火速向貨幣市場注入了緊急流動性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "以免系統性金融傳染蔓延",
+        "examples": [
+          {
+            "en": "Lest systemic contagion spread the central bank injected emergency liquidity into the market.",
+            "zh": "為防範系統性金融危機蔓延擴散，中央銀行火速向貨幣市場注入了緊急流動性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PARAMOUNT": {
+    "pos": "adj.",
+    "meaning": "極端重要具有壓倒性優勢的",
+    "example": "Maintaining institutional autonomy is paramount for the central bank credibility.",
+    "exampleZh": "維持高度的體制獨立性，對中央銀行的貨幣公信力而言具有至關重要的意義。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "至高無上的首要的核心準則",
+        "examples": [
+          {
+            "en": "Public health and biosecurity protocols were of paramount concern during the crisis.",
+            "zh": "在危機爆發期間，公眾衛生與生物安全防護規範具有至高無上的首要重要性。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "極端重要具有壓倒性優勢的",
+        "examples": [
+          {
+            "en": "Maintaining institutional autonomy is paramount for the central bank credibility.",
+            "zh": "維持高度的體制獨立性，對中央銀行的貨幣公信力而言具有至關重要的意義。"
+          }
+        ]
+      }
+    ],
+    "word": "paramount"
+  },
+  "R8:LEST": {
+    "pos": "conj.",
+    "meaning": "以防唯恐特定風險發生",
+    "example": "Emergency reserves were stockpiled lest subsea supply corridors be severed.",
+    "exampleZh": "後備基地囤積了充足的緊急戰略物資，以免海底物流動脈遭到戰火切斷。",
+    "senses": [
+      {
+        "pos": "conj.",
+        "meaning": "唯恐以免引導預防性虛擬子句",
+        "examples": [
+          {
+            "en": "He refrained from comment lest his spontaneous remarks be misconstrued.",
+            "zh": "他刻意克制自己不作任何公開評論，唯恐其隨口發言遭到公眾與媒體的誤讀。"
+          }
+        ]
+      },
+      {
+        "pos": "conj.",
+        "meaning": "以防唯恐特定風險發生",
+        "examples": [
+          {
+            "en": "Emergency reserves were stockpiled lest subsea supply corridors be severed.",
+            "zh": "後備基地囤積了充足的緊急戰略物資，以免海底物流動脈遭到戰火切斷。"
+          }
+        ]
+      }
+    ],
+    "word": "lest"
+  },
+  "R8:EMPANEL": {
+    "pos": "v.",
+    "meaning": "依法召集特別審裁小組",
+    "example": "Authorities decided to empanel forensic examiners to review financial ledgers.",
+    "exampleZh": "司法機關決定依法選派資深鑑識審計專家，對所有異常涉案帳冊展開全面清查。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "遴選組成陪審團或專家審理小組",
+        "examples": [
+          {
+            "en": "The court will empanel a jury of twelve citizens for the treason trial.",
+            "zh": "最高法院將為這場涉及叛國罪的重大案件正式遴選並組成由十二名公民組成的陪審團。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "依法召集特別審裁小組",
+        "examples": [
+          {
+            "en": "Authorities decided to empanel forensic examiners to review financial ledgers.",
+            "zh": "司法機關決定依法選派資深鑑識審計專家，對所有異常涉案帳冊展開全面清查。"
+          }
+        ]
+      }
+    ],
+    "word": "empanel"
+  },
+  "R8:CODICIL": {
+    "pos": "n.",
+    "meaning": "法定遺囑修訂條款",
+    "example": "An explicit codicil disinherited relatives involved in corporate litigation.",
+    "exampleZh": "遺囑人特意增補了一項明確的法定附加書，取消了涉入公司惡意訴訟親屬的繼承權。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "遺囑之法定附加修訂附錄文件",
+        "examples": [
+          {
+            "en": "The philanthropist executed a codicil endowing the university library.",
+            "zh": "這位慈善家正式簽署了一份遺囑附加書，將名下巨額基金遺贈予大學圖書館。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法定遺囑修訂條款",
+        "examples": [
+          {
+            "en": "An explicit codicil disinherited relatives involved in corporate litigation.",
+            "zh": "遺囑人特意增補了一項明確的法定附加書，取消了涉入公司惡意訴訟親屬的繼承權。"
+          }
+        ]
+      }
+    ],
+    "word": "codicil"
+  },
+  "R8:FIDUCIARY": {
+    "pos": "adj.",
+    "meaning": "受託誠信與忠實義務",
+    "example": "Asset managers violated fiduciary duties by trading against client portfolios.",
+    "exampleZh": "該資產管理機構透過與客戶投資組合進行對沖內幕交易，嚴重違反了受託人忠實義務。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "受託人的基於誠信信賴之職責",
+        "examples": [
+          {
+            "en": "Directors have a fiduciary responsibility to act in the best interests of shareholders.",
+            "zh": "公司全體董事皆肩負著以股東最佳利益為最高出發點的受託人誠信義務。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "受託誠信與忠實義務",
+        "examples": [
+          {
+            "en": "Asset managers violated fiduciary duties by trading against client portfolios.",
+            "zh": "該資產管理機構透過與客戶投資組合進行對沖內幕交易，嚴重違反了受託人忠實義務。"
+          }
+        ]
+      }
+    ],
+    "word": "fiduciary"
+  },
+  "R8:BRINKMANSHIP": {
+    "pos": "n.",
+    "meaning": "高風險邊緣博弈策略",
+    "example": "Diplomatic brinkmanship tested the nerve of both nuclear armed superpowers.",
+    "exampleZh": "危險的外交邊緣博弈政策，極度考驗著兩個擁有核武的超級大國決策者的戰略定力。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將局勢推向危險邊緣的邊緣政策",
+        "examples": [
+          {
+            "en": "Cold war brinkmanship over maritime straits risked immediate military escalation.",
+            "zh": "冷戰時期圍繞戰略海峽展開的危險邊緣政策，隨時可能引爆不可挽回的軍事升級。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "高風險邊緣博弈策略",
+        "examples": [
+          {
+            "en": "Diplomatic brinkmanship tested the nerve of both nuclear armed superpowers.",
+            "zh": "危險的外交邊緣博弈政策，極度考驗著兩個擁有核武的超級大國決策者的戰略定力。"
+          }
+        ]
+      }
+    ],
+    "word": "brinkmanship"
+  },
+  "R8:PROVENANCE": {
+    "pos": "n.",
+    "meaning": "文獻古籍之原始淵源出處",
+    "example": "Archivists traced the provenance of the illuminated Bible to a Carolingian abbey.",
+    "exampleZh": "文獻檔案專家成功將這部彩繪泥金聖經的歷史出處，追溯至查理曼時代的修道院。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "歷史文物藝術品之起源出處傳承紀錄",
+        "examples": [
+          {
+            "en": "Forensic chemical testing corroborated the sixteenth century provenance of the canvas.",
+            "zh": "鑑識化學光譜檢驗，明確佐證了這幅油畫畫布源自十六世紀威尼斯工坊的出處。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "文獻古籍之原始淵源出處",
+        "examples": [
+          {
+            "en": "Archivists traced the provenance of the illuminated Bible to a Carolingian abbey.",
+            "zh": "文獻檔案專家成功將這部彩繪泥金聖經的歷史出處，追溯至查理曼時代的修道院。"
+          }
+        ]
+      }
+    ],
+    "word": "provenance"
+  },
+  "R8:REPATRIATE": {
+    "pos": "v.",
+    "meaning": "歸還被掠奪之國家文化財產",
+    "example": "Treaties compelled imperial powers to repatriate sacred ritual bronzes.",
+    "exampleZh": "和平條約迫使昔日的帝國主義列強，將掠奪自殖民地的神聖祭祀青銅禮器歸還原屬國。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "將流失海外之歷史文物或人員歸還祖國",
+        "examples": [
+          {
+            "en": "International conventions mandate efforts to repatriate illicitly exported treasures.",
+            "zh": "國際公約嚴格強制締約國共同努力，將所有透過非法手段走私出境的文化瑰寶遣返原產國。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "歸還被掠奪之國家文化財產",
+        "examples": [
+          {
+            "en": "Treaties compelled imperial powers to repatriate sacred ritual bronzes.",
+            "zh": "和平條約迫使昔日的帝國主義列強，將掠奪自殖民地的神聖祭祀青銅禮器歸還原屬國。"
+          }
+        ]
+      }
+    ],
+    "word": "repatriate"
+  },
+  "R8:LACUNA": {
+    "pos": "n.",
+    "meaning": "法律漏洞或論證盲區",
+    "example": "Forensic scrutiny identified a structural lacuna within cross border tax agreements.",
+    "exampleZh": "專業鑑識審計揭露了跨國雙邊稅務協定中存在的一處嚴重的結構性法律漏洞。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "法規文獻或理論體系中的空白缺失斷層",
+        "examples": [
+          {
+            "en": "A critical lacuna in the statutory text left judges without sentencing guidelines.",
+            "zh": "法定條文文本中存在的一處重大空白缺漏，使法官在量刑時缺乏明確的裁量基準。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法律漏洞或論證盲區",
+        "examples": [
+          {
+            "en": "Forensic scrutiny identified a structural lacuna within cross border tax agreements.",
+            "zh": "專業鑑識審計揭露了跨國雙邊稅務協定中存在的一處嚴重的結構性法律漏洞。"
+          }
+        ]
+      }
+    ],
+    "word": "lacuna"
+  },
+  "R8:A PYRRHIC VICTORY": {
+    "word": "a pyrrhic victory",
+    "pos": "phr.",
+    "meaning": "付出慘烈犧牲代價的慘勝",
+    "example": "The costly conquest proved to be a pyrrhic victory that bankrupt the crown.",
+    "exampleZh": "這場耗資億萬的邊境征服戰役，最終證明是一場讓王室財政徹底破產的慘勝。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "付出慘烈犧牲代價的慘勝",
+        "examples": [
+          {
+            "en": "The costly conquest proved to be a pyrrhic victory that bankrupt the crown.",
+            "zh": "這場耗資億萬的邊境征服戰役，最終證明是一場讓王室財政徹底破產的慘勝。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:GRANTED CARTE BLANCHE": {
+    "word": "granted carte blanche",
+    "pos": "phr.",
+    "meaning": "被授予全權自由決策之特權",
+    "example": "The plenipotentiary was granted carte blanche to negotiate sovereign debt restructuring.",
+    "exampleZh": "全權公使獲得了國家元首的完全授權，得以全權自主商討主權債務重組協議。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "被授予全權自由決策之特權",
+        "examples": [
+          {
+            "en": "The plenipotentiary was granted carte blanche to negotiate sovereign debt restructuring.",
+            "zh": "全權公使獲得了國家元首的完全授權，得以全權自主商討主權債務重組協議。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:AT LOGGERHEADS OVER": {
+    "word": "at loggerheads over",
+    "pos": "phr.",
+    "meaning": "在某重大爭端上長期相持不下",
+    "example": "The regulatory agencies have been at loggerheads over cryptocurrency oversight.",
+    "exampleZh": "兩大國家金融監管機構在針對去中心化加密資產的管轄權限上，長期相持不下。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在某重大爭端上長期相持不下",
+        "examples": [
+          {
+            "en": "The regulatory agencies have been at loggerheads over cryptocurrency oversight.",
+            "zh": "兩大國家金融監管機構在針對去中心化加密資產的管轄權限上，長期相持不下。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BEYOND THE PALE": {
+    "word": "beyond the pale",
+    "pos": "phr.",
+    "meaning": "完全逾越文明底線大逆不道",
+    "example": "Such blatant state sponsored espionage is considered entirely beyond the pale.",
+    "exampleZh": "這種明目張膽由國家情報機構幕後主導的惡意黑客間諜行徑，完全超越了文明公約的底線。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "完全逾越文明底線大逆不道",
+        "examples": [
+          {
+            "en": "Such blatant state sponsored espionage is considered entirely beyond the pale.",
+            "zh": "這種明目張膽由國家情報機構幕後主導的惡意黑客間諜行徑，完全超越了文明公約的底線。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PLAY FAST AND LOOSE": {
+    "word": "play fast and loose",
+    "pos": "phr.",
+    "meaning": "輕浮不負責任地任意妄為",
+    "example": "The rogue executives played fast and loose with shareholder capital and safety protocols.",
+    "exampleZh": "這幫利慾薰心的流氓高管在股東投資資本與工業安全操作手冊上，任意妄為欺瞞公眾。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "輕浮不負責任地任意妄為",
+        "examples": [
+          {
+            "en": "The rogue executives played fast and loose with shareholder capital and safety protocols.",
+            "zh": "這幫利慾薰心的流氓高管在股東投資資本與工業安全操作手冊上，任意妄為欺瞞公眾。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BRIDGE THE CHASM": {
+    "word": "bridge the chasm",
+    "pos": "phr.",
+    "meaning": "彌合橫亙其間的巨大意識形態鴻溝",
+    "example": "Statesmanship requires the intellectual courage to bridge the partisan chasm.",
+    "exampleZh": "真正的卓越治國政治家風範，要求具備敢於跨越兩黨黨爭意識形態鴻溝的非凡勇氣。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彌合橫亙其間的巨大意識形態鴻溝",
+        "examples": [
+          {
+            "en": "Statesmanship requires the intellectual courage to bridge the partisan chasm.",
+            "zh": "真正的卓越治國政治家風範，要求具備敢於跨越兩黨黨爭意識形態鴻溝的非凡勇氣。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:THERE IS THE RUB": {
+    "word": "there is the rub",
+    "pos": "phr.",
+    "meaning": "這才是核心難題與死結癥結所在",
+    "example": "Archival inconsistencies constitute the rub in resolving this historiographical controversy.",
+    "exampleZh": "原始文獻紀錄之間相互矛盾的空白記載，正是徹底解開這樁歷史學公案的真正死結所在。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "這才是核心難題與死結癥結所在",
+        "examples": [
+          {
+            "en": "Archival inconsistencies constitute the rub in resolving this historiographical controversy.",
+            "zh": "原始文獻紀錄之間相互矛盾的空白記載，正是徹底解開這樁歷史學公案的真正死結所在。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:THREW CAUTION TO THE WINDS": {
+    "word": "threw caution to the winds",
+    "pos": "phr.",
+    "meaning": "置個人安危成敗於度外放手一搏",
+    "example": "Facing imminent systemic insolvency the bank threw caution to the winds.",
+    "exampleZh": "在面臨即刻到來的系統性資本鏈斷裂破產之際，這家投行決定放手一搏孤注一擲。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "置個人安危成敗於度外放手一搏",
+        "examples": [
+          {
+            "en": "Facing imminent systemic insolvency the bank threw caution to the winds.",
+            "zh": "在面臨即刻到來的系統性資本鏈斷裂破產之際，這家投行決定放手一搏孤注一擲。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LOGGERHEADS": {
+    "pos": "n.",
+    "meaning": "雙方陷入激烈僵局相持不下",
+    "example": "Diplomats were at loggerheads over the verification protocols for nuclear warheads.",
+    "exampleZh": "在戰略核彈頭拆解的現場鑑識核查監督條款上，兩國談判代表團已連續數日相持不下。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "陷入頑固爭執激烈對立（用於 at loggerheads）",
+        "examples": [
+          {
+            "en": "The treasury and the defense ministry were at loggerheads over submarine procurement.",
+            "zh": "財政部與國防部在深海核潛艦的巨額採購預算份額分配上，長年陷入激烈的頑固對峙。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "雙方陷入激烈僵局相持不下",
+        "examples": [
+          {
+            "en": "Diplomats were at loggerheads over the verification protocols for nuclear warheads.",
+            "zh": "在戰略核彈頭拆解的現場鑑識核查監督條款上，兩國談判代表團已連續數日相持不下。"
+          }
+        ]
+      }
+    ],
+    "word": "loggerheads"
+  },
+  "R8:CHASM": {
+    "pos": "n.",
+    "meaning": "貧富或階級之間深不見底的鴻溝",
+    "example": "A growing economic chasm separated coastal metropolitan elites from agrarian provinces.",
+    "exampleZh": "一條深不見底且日益擴大的貧富與發展鴻溝，將沿海繁榮都市精英與內陸農業行省無情割裂。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無法彌合的巨大分歧思想鴻溝或深淵",
+        "examples": [
+          {
+            "en": "A philosophical chasm separated empirical realists from postmodern theorists.",
+            "zh": "一道深不可測的認識論哲學鴻溝，將嚴肅的經驗實在論學者與後現代思潮解構者徹底割裂。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "貧富或階級之間深不見底的鴻溝",
+        "examples": [
+          {
+            "en": "A growing economic chasm separated coastal metropolitan elites from agrarian provinces.",
+            "zh": "一條深不見底且日益擴大的貧富與發展鴻溝，將沿海繁榮都市精英與內陸農業行省無情割裂。"
+          }
+        ]
+      }
+    ],
+    "word": "chasm"
+  },
+  "R8:TRACTABLE": {
+    "pos": "adj.",
+    "meaning": "問題經過分解後變得易於處理",
+    "example": "Complex algorithmic optimization becomes tractable when decomposed into linear subproblems.",
+    "exampleZh": "當將錯綜複雜的大規模全域優化問題分解為各個獨立的線性子問題後，求解過程便變得十分順暢。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "性情溫馴易於引導處置馴服駕馭的",
+        "examples": [
+          {
+            "en": "Domestic disputes proved more tractable once mediation mechanisms were established.",
+            "zh": "一旦設立了專門的社區司法調解機制，原本棘手的家庭財產民事糾紛便顯得容易引導處置。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "問題經過分解後變得易於處理",
+        "examples": [
+          {
+            "en": "Complex algorithmic optimization becomes tractable when decomposed into linear subproblems.",
+            "zh": "當將錯綜複雜的大規模全域優化問題分解為各個獨立的線性子問題後，求解過程便變得十分順暢。"
+          }
+        ]
+      }
+    ],
+    "word": "tractable"
+  },
+  "R8:INTRACTABLE": {
+    "pos": "adj.",
+    "meaning": "牽涉多方利益頑抗難解的宿怨矛盾",
+    "example": "Deep seated sectarian rivalries presented an intractable hurdle to national unification.",
+    "exampleZh": "根深蒂固且歷經數百年的宗派歷史血仇，為整個國家的和平統一進程構築了一道難以踰越的頑固障礙。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "沉痾頑疾極度棘手難以解決或馴服的",
+        "examples": [
+          {
+            "en": "Chronic sovereign debt deficits remained an intractable structural dilemma.",
+            "zh": "慢性惡化且連年膨脹的國家主權財政赤字，始終是一項極難根治且頑固存在的體制性死結。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "牽涉多方利益頑抗難解的宿怨矛盾",
+        "examples": [
+          {
+            "en": "Deep seated sectarian rivalries presented an intractable hurdle to national unification.",
+            "zh": "根深蒂固且歷經數百年的宗派歷史血仇，為整個國家的和平統一進程構築了一道難以踰越的頑固障礙。"
+          }
+        ]
+      }
+    ],
+    "word": "intractable"
+  },
+  "R8:DEONTOLOGY": {
+    "pos": "n.",
+    "meaning": "義務論倫理學體系與行事準則",
+    "example": "Medical ethics combines utilitarian public health needs with strict physician deontology.",
+    "exampleZh": "當代醫療倫理學，有機地結合了群體公共衛生層面的效益主義考量，與臨床醫師嚴格的救死扶傷道義論。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "強調道德義務與絕對職責規範之義務論",
+        "examples": [
+          {
+            "en": "Kantian deontology asserts that treating humans merely as means is immoral.",
+            "zh": "康德主義的嚴格道義義務論強調，無論出於何種目的，將人類僅僅視為工具手段皆屬不道德。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "義務論倫理學體系與行事準則",
+        "examples": [
+          {
+            "en": "Medical ethics combines utilitarian public health needs with strict physician deontology.",
+            "zh": "當代醫療倫理學，有機地結合了群體公共衛生層面的效益主義考量，與臨床醫師嚴格的救死扶傷道義論。"
+          }
+        ]
+      }
+    ],
+    "word": "deontology"
+  },
+  "R8:ZEITGEIST": {
+    "pos": "n.",
+    "meaning": "反映特定年代主流價值觀的時代思潮",
+    "example": "Minimalist industrial architecture embodied the technological zeitgeist of the century.",
+    "exampleZh": "崇尚純粹幾何線條的包浩斯極簡主義工業建築風格，最極致地體現了二十世紀初崇尚工業理性的時代思潮。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主導特定歷史時期的時代精神與思潮風尚",
+        "examples": [
+          {
+            "en": "The youth protest movement captured the cultural zeitgeist of the late 1960s.",
+            "zh": "風起雲湧的大規模反戰青年抗議運動，最精準地體現並抓住了二十世紀六零年代末的時代精神。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "反映特定年代主流價值觀的時代思潮",
+        "examples": [
+          {
+            "en": "Minimalist industrial architecture embodied the technological zeitgeist of the century.",
+            "zh": "崇尚純粹幾何線條的包浩斯極簡主義工業建築風格，最極致地體現了二十世紀初崇尚工業理性的時代思潮。"
+          }
+        ]
+      }
+    ],
+    "word": "zeitgeist"
+  },
+  "R8:PARADIGM": {
+    "pos": "n.",
+    "meaning": "重塑科學界思考邏輯的劃時代理論架構",
+    "example": "The Copernican heliocentric paradigm dismantled millennia of Ptolemaic celestial mechanics.",
+    "exampleZh": "哥白尼劃時代的太陽中心說理論典範，以無可辯駁的幾何觀測數據徹底推翻了統治西方千年的托勒密地心體系。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公認的主導學術範式理論典範與體系架構",
+        "examples": [
+          {
+            "en": "The discovery of plate tectonics provoked a fundamental paradigm shift in geology.",
+            "zh": "大陸漂移與地球板塊構造學說的劃時代發現，在整個地質科學界引發了顛覆性的典範大轉移。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "重塑科學界思考邏輯的劃時代理論架構",
+        "examples": [
+          {
+            "en": "The Copernican heliocentric paradigm dismantled millennia of Ptolemaic celestial mechanics.",
+            "zh": "哥白尼劃時代的太陽中心說理論典範，以無可辯駁的幾何觀測數據徹底推翻了統治西方千年的托勒密地心體系。"
+          }
+        ]
+      }
+    ],
+    "word": "paradigm"
+  },
+  "R8:PRECARIOUS": {
+    "pos": "adj.",
+    "meaning": "處於動盪危險邊緣的微弱平衡",
+    "example": "The endangered alpine ecosystem survives in a precarious equilibrium under warming.",
+    "exampleZh": "這片極度脆弱的珍稀高山特有生態系統，在氣候急劇暖化的威脅下維持著岌岌可危的動態平衡。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "缺乏穩固支撐隨時可能崩潰搖搖欲墜的",
+        "examples": [
+          {
+            "en": "The post war coalition maintained a precarious parliamentary majority.",
+            "zh": "戰後由多黨倉促拼湊而成的執政聯合陣線，在國會中僅勉強維持著搖搖欲墜的微弱多數。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "處於動盪危險邊緣的微弱平衡",
+        "examples": [
+          {
+            "en": "The endangered alpine ecosystem survives in a precarious equilibrium under warming.",
+            "zh": "這片極度脆弱的珍稀高山特有生態系統，在氣候急劇暖化的威脅下維持著岌岌可危的動態平衡。"
+          }
+        ]
+      }
+    ],
+    "word": "precarious"
+  },
+  "R8:SERENDIPITY": {
+    "pos": "n.",
+    "meaning": "科研探索過程中的意外良機巧合",
+    "example": "Astronomers acknowledged serendipity in detecting the short duration gamma ray burst.",
+    "exampleZh": "全球天體物理學家皆一致坦承，本次能在第一時間成功捕獲這記毫秒級伽馬射線暴完全得益於天賜機緣。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "無意間意外偶獲重大寶貴發現之機緣",
+        "examples": [
+          {
+            "en": "The isolation of antibiotic compounds was a historic triumph of scientific serendipity.",
+            "zh": "廣譜抗生素青黴素化合物的成功提取與提純，是人類現代科學探索史上最偉大的機緣巧合。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "科研探索過程中的意外良機巧合",
+        "examples": [
+          {
+            "en": "Astronomers acknowledged serendipity in detecting the short duration gamma ray burst.",
+            "zh": "全球天體物理學家皆一致坦承，本次能在第一時間成功捕獲這記毫秒級伽馬射線暴完全得益於天賜機緣。"
+          }
+        ]
+      }
+    ],
+    "word": "serendipity"
+  },
+  "R8:JUS COGENS NORMS": {
+    "word": "jus cogens norms",
+    "pos": "phr.",
+    "meaning": "強行法不可減損規範",
+    "example": "The prohibition of torture is an absolute jus cogens norm in international law.",
+    "exampleZh": "禁止實施任何形式的酷刑，在現代國際法體系中屬於絕對不可減損的強行法規範。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "強行法不可減損規範",
+        "examples": [
+          {
+            "en": "The prohibition of torture is an absolute jus cogens norm in international law.",
+            "zh": "禁止實施任何形式的酷刑，在現代國際法體系中屬於絕對不可減損的強行法規範。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FUSION OF HORIZONS": {
+    "word": "fusion of horizons",
+    "pos": "phr.",
+    "meaning": "詮釋學之視域融合",
+    "example": "Hermeneutic understanding requires a profound fusion of horizons between past and present.",
+    "exampleZh": "深度的詮釋學理解，要求在歷史文本的過去語境與詮釋者的當下視角之間達成深刻的視域融合。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "詮釋學之視域融合",
+        "examples": [
+          {
+            "en": "Hermeneutic understanding requires a profound fusion of horizons between past and present.",
+            "zh": "深度的詮釋學理解，要求在歷史文本的過去語境與詮釋者的當下視角之間達成深刻的視域融合。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:VOID AB INITIO": {
+    "word": "void ab initio",
+    "pos": "phr.",
+    "meaning": "自始完全不生效力無效",
+    "example": "The illicit commercial merger was declared void ab initio by the antitrust bench.",
+    "exampleZh": "這起涉及非法壟斷的跨國企業併購案，被聯邦反壟斷法庭正式宣告自始完全無效。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "自始完全不生效力無效",
+        "examples": [
+          {
+            "en": "The illicit commercial merger was declared void ab initio by the antitrust bench.",
+            "zh": "這起涉及非法壟斷的跨國企業併購案，被聯邦反壟斷法庭正式宣告自始完全無效。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:EXPRESSIO UNIUS EST": {
+    "word": "expressio unius est",
+    "pos": "phr.",
+    "meaning": "明示其一即排除其他（法學解釋法則）",
+    "example": "The statutory cannon expressio unius est exclusio alterius limits implied executive authority.",
+    "exampleZh": "法學成文法解釋原則明示其一即排除其他，嚴格約束了行政首長未經列舉的隱含裁量權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明示其一即排除其他（法學解釋法則）",
+        "examples": [
+          {
+            "en": "The statutory cannon expressio unius est exclusio alterius limits implied executive authority.",
+            "zh": "法學成文法解釋原則明示其一即排除其他，嚴格約束了行政首長未經列舉的隱含裁量權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ORIGINALISM POSITS THAT": {
+    "word": "originalism posits that",
+    "pos": "phr.",
+    "meaning": "原旨主義法學派主張",
+    "example": "Constitutional originalism posits that semantic meaning is fixed at the moment of adoption.",
+    "exampleZh": "憲法原旨主義的核心命題在於，法條的語義內涵在憲法正式頒布通過的那一歷史時刻便已確定。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "原旨主義法學派主張",
+        "examples": [
+          {
+            "en": "Constitutional originalism posits that semantic meaning is fixed at the moment of adoption.",
+            "zh": "憲法原旨主義的核心命題在於，法條的語義內涵在憲法正式頒布通過的那一歷史時刻便已確定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:NON REFOULEMENT PRINCIPLE": {
+    "word": "non refoulement principle",
+    "pos": "phr.",
+    "meaning": "國際法之難民不推回原則",
+    "example": "Customary international law enshrines the non refoulement principle to safeguard displaced refugees.",
+    "exampleZh": "國際習慣法莊嚴確立了難民不推回原則，以切實保障流離失所的避難者免遭遣返迫害。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "國際法之難民不推回原則",
+        "examples": [
+          {
+            "en": "Customary international law enshrines the non refoulement principle to safeguard displaced refugees.",
+            "zh": "國際習慣法莊嚴確立了難民不推回原則，以切實保障流離失所的避難者免遭遣返迫害。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:RAISON D ETAT CANNOT": {
+    "word": "raison d etat cannot",
+    "pos": "phr.",
+    "meaning": "國家利益借口絕不能",
+    "example": "Appeals to raison d etat cannot justify systemic violations of peremptory human rights.",
+    "exampleZh": "任何訴諸「國家安全與利益」的權宜說詞，皆絕不能為系統性踐踏基本人權的行徑開脫。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "國家利益借口絕不能",
+        "examples": [
+          {
+            "en": "Appeals to raison d etat cannot justify systemic violations of peremptory human rights.",
+            "zh": "任何訴諸「國家安全與利益」的權宜說詞，皆絕不能為系統性踐踏基本人權的行徑開脫。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:INTER ALIA DICTATES": {
+    "word": "inter alia dictates",
+    "pos": "phr.",
+    "meaning": "在其所列諸項之中特別規定",
+    "example": "The maritime treaty inter alia dictates the conservation of endangered pelagic species.",
+    "exampleZh": "這份多邊海洋公約在其所規範的諸多事項中，特別明文規定了對瀕危遠洋物種的保護責任。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在其所列諸項之中特別規定",
+        "examples": [
+          {
+            "en": "The maritime treaty inter alia dictates the conservation of endangered pelagic species.",
+            "zh": "這份多邊海洋公約在其所規範的諸多事項中，特別明文規定了對瀕危遠洋物種的保護責任。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HERMENEUTICS": {
+    "pos": "n.",
+    "meaning": "法學條文與古典文獻詮釋體系",
+    "example": "Legal hermeneutics bridges the historical distance between statutory drafting and modern application.",
+    "exampleZh": "法律詮釋學在古代立法者的最初草案構想，與現代法官在全新社會現實中的具體適用之間搭建起橋樑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "哲學與神學中探討文本深層詮釋理論的詮釋學",
+        "examples": [
+          {
+            "en": "Philosophical hermeneutics explores the conditions that make human understanding possible.",
+            "zh": "哲學詮釋學深入探討了使人類跨越時空與文本達成真正相互理解的根本認識論前提。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法學條文與古典文獻詮釋體系",
+        "examples": [
+          {
+            "en": "Legal hermeneutics bridges the historical distance between statutory drafting and modern application.",
+            "zh": "法律詮釋學在古代立法者的最初草案構想，與現代法官在全新社會現實中的具體適用之間搭建起橋樑。"
+          }
+        ]
+      }
+    ],
+    "word": "hermeneutics"
+  },
+  "R8:DISPENSATION": {
+    "pos": "n.",
+    "meaning": "行政首長發布之特例豁免權限",
+    "example": "The minister refused to grant a regulatory dispensation to the non compliant chemical factory.",
+    "exampleZh": "內閣環境大臣態度堅決，拒絕向這家長期排放未達標廢水且拒不整改的化工巨頭核發特例豁免許可。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方正式特許免除某項法律義務或禁令豁免",
+        "examples": [
+          {
+            "en": "The monarch granted an extraordinary royal dispensation from commercial navigation embargoes.",
+            "zh": "君主親自發布了一道非同尋常的王室特許豁免令，免除了該商會受制於戰時航運禁運令的法定義務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "行政首長發布之特例豁免權限",
+        "examples": [
+          {
+            "en": "The minister refused to grant a regulatory dispensation to the non compliant chemical factory.",
+            "zh": "內閣環境大臣態度堅決，拒絕向這家長期排放未達標廢水且拒不整改的化工巨頭核發特例豁免許可。"
+          }
+        ]
+      }
+    ],
+    "word": "dispensation"
+  },
+  "R8:INDEMNIFY": {
+    "pos": "v.",
+    "meaning": "簽訂具有強制約束力的損害賠償保證",
+    "example": "The contractor was contractually required to indemnify the municipality against site accidents.",
+    "exampleZh": "該工程總承包商在法律合約中被嚴格要求，必須對施工現場可能發生的一切安全事故向市政府承擔全額賠償責任。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "為他人遭受的損失提供法定補償或免責賠償",
+        "examples": [
+          {
+            "en": "Insurance syndicates agreed to indemnify the shipping enterprise for war risks.",
+            "zh": "國際知名再保險辛迪加正式達成協議，承諾對航運企業在衝突海域所遭受的戰時風險予以全額賠償。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "簽訂具有強制約束力的損害賠償保證",
+        "examples": [
+          {
+            "en": "The contractor was contractually required to indemnify the municipality against site accidents.",
+            "zh": "該工程總承包商在法律合約中被嚴格要求，必須對施工現場可能發生的一切安全事故向市政府承擔全額賠償責任。"
+          }
+        ]
+      }
+    ],
+    "word": "indemnify"
+  },
+  "R8:REFOULEMENT": {
+    "pos": "n.",
+    "meaning": "跨國難民保護體系之不推回底線",
+    "example": "Border patrols violated customary human rights law by engaging in summary refoulement.",
+    "exampleZh": "邊境巡邏部隊在未經任何身分甄別程序下擅自對難民實施就地推回，公然違反了國際人權習慣法的硬性約束。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "國際法中將難民強制遣返至可能面臨迫害國家的推回行為",
+        "examples": [
+          {
+            "en": "The forced return of refugees constituted a flagrant violation of the refoulement prohibition.",
+            "zh": "對難民實施強制推回出境的行徑，構成了對國際法嚴格禁止難民推回原則的公然粗暴踐踏。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "跨國難民保護體系之不推回底線",
+        "examples": [
+          {
+            "en": "Border patrols violated customary human rights law by engaging in summary refoulement.",
+            "zh": "邊境巡邏部隊在未經任何身分甄別程序下擅自對難民實施就地推回，公然違反了國際人權習慣法的硬性約束。"
+          }
+        ]
+      }
+    ],
+    "word": "refoulement"
+  },
+  "R8:HEINOUS": {
+    "pos": "adj.",
+    "meaning": "嚴重違反人道文明底線的殘暴行徑",
+    "example": "Heinous atrocities committed against innocent civilians are subject to universal extraterritorial jurisdiction.",
+    "exampleZh": "針對手無寸鐵的無辜平民所犯下的滅絕人性之滔天罪行，受到國際社會不受國界限制的普遍管轄權嚴懲。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "罪大惡極的令人髮指的滅絕人性之罪行",
+        "examples": [
+          {
+            "en": "The international criminal tribunal was established to prosecute heinous war crimes.",
+            "zh": "國際刑事特別法庭正式宣佈成立，旨在對戰爭期間所犯下的種族滅絕等令人髮指的滔天罪行提起公訴。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "嚴重違反人道文明底線的殘暴行徑",
+        "examples": [
+          {
+            "en": "Heinous atrocities committed against innocent civilians are subject to universal extraterritorial jurisdiction.",
+            "zh": "針對手無寸鐵的無辜平民所犯下的滅絕人性之滔天罪行，受到國際社會不受國界限制的普遍管轄權嚴懲。"
+          }
+        ]
+      }
+    ],
+    "word": "heinous"
+  },
+  "R8:ORIGINALISM": {
+    "pos": "n.",
+    "meaning": "回歸制憲歷史語義的司法流派",
+    "example": "Judges who adhere to originalism consult historic dictionaries to ascertain semantic intentions.",
+    "exampleZh": "堅持原旨主義解釋進路的資深大法官，往往藉由查閱建國時代的古老權威辭典來精確核實憲法詞義。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張按憲法制定時客觀原意進行解釋的原旨主義",
+        "examples": [
+          {
+            "en": "Originalism insists that the constitution should not be rewritten through judicial activism.",
+            "zh": "憲法原旨主義堅持認為，法官不應透過司法的過度能動主義去任意重構根本大法的初始含義。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "回歸制憲歷史語義的司法流派",
+        "examples": [
+          {
+            "en": "Judges who adhere to originalism consult historic dictionaries to ascertain semantic intentions.",
+            "zh": "堅持原旨主義解釋進路的資深大法官，往往藉由查閱建國時代的古老權威辭典來精確核實憲法詞義。"
+          }
+        ]
+      }
+    ],
+    "word": "originalism"
+  },
+  "R8:DEROGATION": {
+    "word": "derogation",
+    "pos": "n.",
+    "meaning": "特定權利之減損與克減限制條款",
+    "example": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
+    "exampleZh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對公約或法規條款的官方減免讓步",
+        "examples": [
+          {
+            "en": "Emergency powers permit temporary derogation from certain obligations.",
+            "zh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "因國家面臨緊急狀態而暫時減損減免人權條款",
+        "examples": [
+          {
+            "en": "The human rights covenant specifies that non derogation clauses apply even during total war.",
+            "zh": "國際人權公約明確規定，即便在國家爆發全面戰爭的極端狀態下，核心條款依然適用不容減損準則。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "特定權利之減損與克減限制條款",
+        "examples": [
+          {
+            "en": "A declaration of national martial law cannot justify any derogation from habeas corpus protections.",
+            "zh": "即便國家正式宣佈進入戰時戒嚴狀態，亦絕不能成為任意減損人身保護令憲法司法救濟程序的合法依據。"
+          }
+        ]
+      }
+    ]
   },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
@@ -21107,25 +25707,6 @@
     ],
     "word": "representational"
   },
-  "R8:DEROGATION": {
-    "word": "derogation",
-    "pos": "n.",
-    "meaning": "對公約或法規條款的官方減免讓步",
-    "example": "Emergency powers permit temporary derogation from certain obligations.",
-    "exampleZh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。",
-    "senses": [
-      {
-        "pos": "n.",
-        "meaning": "對公約或法規條款的官方減免讓步",
-        "examples": [
-          {
-            "en": "Emergency powers permit temporary derogation from certain obligations.",
-            "zh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。"
-          }
-        ]
-      }
-    ]
-  },
   "R8:PROCEDURAL SAFEGUARDS PRESERVE CIVIL LIBERTY": {
     "word": "procedural safeguards preserve civil liberty",
     "pos": "phr.",
@@ -21202,25 +25783,6 @@
       }
     ]
   },
-  "R8:CORROBORATE": {
-    "pos": "v.",
-    "meaning": "提供額外證據以證實支持某項主張",
-    "example": "Multiple witnesses came forward to corroborate the defendant’s story.",
-    "exampleZh": "多位證人主動出面提供證據以證實被告的說法。",
-    "senses": [
-      {
-        "pos": "v.",
-        "meaning": "提供額外證據以證實支持某項主張",
-        "examples": [
-          {
-            "en": "Multiple witnesses came forward to corroborate the defendant’s story.",
-            "zh": "多位證人主動出面提供證據以證實被告的說法。"
-          }
-        ]
-      }
-    ],
-    "word": "corroborate"
-  },
   "R8:SYLLOGISM": {
     "pos": "n.",
     "meaning": "由大前提、小前提與結論組成的三段論",
@@ -21239,5 +25801,290 @@
       }
     ],
     "word": "syllogism"
+  },
+  "R8:EXTRADITION": {
+    "word": "extradition",
+    "pos": "n.",
+    "meaning": "依據條約將在逃嫌犯引渡交還外國的程序",
+    "example": "The two nations signed a formal bilateral extradition treaty.",
+    "exampleZh": "兩國簽署了一份正式的雙邊刑事引渡條約。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "依據條約將在逃嫌犯引渡交還外國的程序",
+        "examples": [
+          {
+            "en": "The two nations signed a formal bilateral extradition treaty.",
+            "zh": "兩國簽署了一份正式的雙邊刑事引渡條約。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:HEGEMONY REQUIRES BOTH COERCION AND CONSENT": {
+    "word": "hegemony requires both coercion and consent",
+    "pos": "phr.",
+    "meaning": "維持霸權地位既需強制實力亦需各方認同。",
+    "example": "Hegemony requires both coercion and consent.",
+    "exampleZh": "維持霸權地位既需強制實力亦需各方認同。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "維持霸權地位既需強制實力亦需各方認同。",
+        "examples": [
+          {
+            "en": "Hegemony requires both coercion and consent.",
+            "zh": "維持霸權地位既需強制實力亦需各方認同。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:BELLICOSE": {
+    "pos": "adj.",
+    "meaning": "好戰且動輒訴諸武力威脅或衝突的",
+    "example": "The general’s bellicose rhetoric escalated border tensions.",
+    "exampleZh": "將軍好戰的言論迅速升級了兩國邊境的緊張局勢。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "好戰且動輒訴諸武力威脅或衝突的",
+        "examples": [
+          {
+            "en": "The general’s bellicose rhetoric escalated border tensions.",
+            "zh": "將軍好戰的言論迅速升級了兩國邊境的緊張局勢。"
+          }
+        ]
+      }
+    ],
+    "word": "bellicose"
+  },
+  "R8:MACROECONOMIC": {
+    "word": "macroeconomic",
+    "pos": "adj.",
+    "meaning": "涉及總體經濟體系各變數巨觀運作的",
+    "example": "Macroeconomic stability is an essential prerequisite for foreign investment.",
+    "exampleZh": "總體經濟的穩定是吸引外國資本投資不可或缺的前提。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "涉及總體經濟體系各變數巨觀運作的",
+        "examples": [
+          {
+            "en": "Macroeconomic stability is an essential prerequisite for foreign investment.",
+            "zh": "總體經濟的穩定是吸引外國資本投資不可或缺的前提。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DEBT DEFLATION DEEPENS ECONOMIC CONTRACTION": {
+    "word": "debt deflation deepens economic contraction",
+    "pos": "phr.",
+    "meaning": "債務通縮將進一步加深經濟衰退。",
+    "example": "Debt deflation deepens economic contraction.",
+    "exampleZh": "債務通縮將進一步加深經濟衰退。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "債務通縮將進一步加深經濟衰退。",
+        "examples": [
+          {
+            "en": "Debt deflation deepens economic contraction.",
+            "zh": "債務通縮將進一步加深經濟衰退。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SOLVENT": {
+    "pos": "adj.",
+    "meaning": "擁有足夠資本與資產得以清償所有債務的",
+    "example": "Strict stress tests proved that the regional bank remained solvent.",
+    "exampleZh": "嚴格的壓力測試證實該區域銀行依然具備完全的償債能力。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "擁有足夠資本與資產得以清償所有債務的",
+        "examples": [
+          {
+            "en": "Strict stress tests proved that the regional bank remained solvent.",
+            "zh": "嚴格的壓力測試證實該區域銀行依然具備完全的償債能力。"
+          }
+        ]
+      }
+    ],
+    "word": "solvent"
+  },
+  "R8:CREDITWORTHY": {
+    "pos": "adj.",
+    "meaning": "具備良好信用紀錄與償債能力而值得放款的",
+    "example": "Commercial lenders compete fiercely to attract creditworthy corporate borrowers.",
+    "exampleZh": "商業銀行展開激烈競爭以吸引具備優質信用資格的企業借款人。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "具備良好信用紀錄與償債能力而值得放款的",
+        "examples": [
+          {
+            "en": "Commercial lenders compete fiercely to attract creditworthy corporate borrowers.",
+            "zh": "商業銀行展開激烈競爭以吸引具備優質信用資格的企業借款人。"
+          }
+        ]
+      }
+    ],
+    "word": "creditworthy"
+  },
+  "R8:NOWHERE WITHIN THE LAW": {
+    "word": "nowhere within the law",
+    "pos": "phr.",
+    "meaning": "在法律中毫無蹤跡（否定倒裝）",
+    "example": "Nowhere within the jurisprudence can one discern a justification for arbitrary detention.",
+    "exampleZh": "在整體法理體系中，人們絕無可能找到任何支持任意拘留的合法依據。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "在法律中毫無蹤跡（否定倒裝）",
+        "examples": [
+          {
+            "en": "Nowhere within the jurisprudence can one discern a justification for arbitrary detention.",
+            "zh": "在整體法理體系中，人們絕無可能找到任何支持任意拘留的合法依據。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LITTLE DID THEY KNOW": {
+    "word": "little did they know",
+    "pos": "phr.",
+    "meaning": "彼等完全未曾預料知曉",
+    "example": "Little did the chroniclers comprehend that archaic dogma was rapidly obsolete.",
+    "exampleZh": "編年史家完全未曾預料到，古老的教條正以驚人的速度被歷史淘汰。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "彼等完全未曾預料知曉",
+        "examples": [
+          {
+            "en": "Little did the chroniclers comprehend that archaic dogma was rapidly obsolete.",
+            "zh": "編年史家完全未曾預料到，古老的教條正以驚人的速度被歷史淘汰。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DICTATES THAT NO TRUSTEE": {
+    "word": "dictates that no trustee",
+    "pos": "phr.",
+    "meaning": "明確約束任何受託人均不得",
+    "example": "The statutory framework mandates that fiduciary custodians exercise scrupulous prudence.",
+    "exampleZh": "法定體制嚴正要求，所有信託財產管理人均必須履行極致審慎的注意義務。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "明確約束任何受託人均不得",
+        "examples": [
+          {
+            "en": "The statutory framework mandates that fiduciary custodians exercise scrupulous prudence.",
+            "zh": "法定體制嚴正要求，所有信託財產管理人均必須履行極致審慎的注意義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:WERE TIPPING POINTS SURPASSED": {
+    "word": "were tipping points surpassed",
+    "pos": "phr.",
+    "meaning": "若關鍵臨界點遭到突破",
+    "example": "Were ecological tipping points surpassed the planetary climate would be irreparably altered.",
+    "exampleZh": "一旦生態環境臨界點被突破，整個地球的氣候系統便將面臨不可逆的永久巨變。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "若關鍵臨界點遭到突破",
+        "examples": [
+          {
+            "en": "Were ecological tipping points surpassed the planetary climate would be irreparably altered.",
+            "zh": "一旦生態環境臨界點被突破，整個地球的氣候系統便將面臨不可逆的永久巨變。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PLAY DEVIL ADVOCATE": {
+    "word": "play devil advocate",
+    "pos": "phr.",
+    "meaning": "故意扮演唱反調反詰的質疑者",
+    "example": "Let me play devil advocate to test the structural coherence of your thesis.",
+    "exampleZh": "容我暫時扮演唱反調的反詰質疑者，來極限檢驗你的理論論文是否具備內在自洽性。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "故意扮演唱反調反詰的質疑者",
+        "examples": [
+          {
+            "en": "Let me play devil advocate to test the structural coherence of your thesis.",
+            "zh": "容我暫時扮演唱反調的反詰質疑者，來極限檢驗你的理論論文是否具備內在自洽性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:A BITTER PILL TO SWALLOW": {
+    "word": "a bitter pill to swallow",
+    "pos": "phr.",
+    "meaning": "不得不屈辱承受的苦果現實",
+    "example": "Accepting international fiscal oversight was a bitter pill to swallow for the cabinet.",
+    "exampleZh": "被迫全盤接受國際貨幣基金組織的嚴苛財政託管監察，對內閣而言是一顆極難嚥下的苦果。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "不得不屈辱承受的苦果現實",
+        "examples": [
+          {
+            "en": "Accepting international fiscal oversight was a bitter pill to swallow for the cabinet.",
+            "zh": "被迫全盤接受國際貨幣基金組織的嚴苛財政託管監察，對內閣而言是一顆極難嚥下的苦果。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:UNIVERSAL JURISDICTION OVER": {
+    "word": "universal jurisdiction over",
+    "pos": "phr.",
+    "meaning": "享有跨國之普遍管轄權",
+    "example": "National tribunals exercise universal jurisdiction over perpetrators of piracy and genocide.",
+    "exampleZh": "國內普通法院依法對公海海盜與種族滅絕罪行的實施者，享有不受地域限制的普遍管轄權。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "享有跨國之普遍管轄權",
+        "examples": [
+          {
+            "en": "National tribunals exercise universal jurisdiction over perpetrators of piracy and genocide.",
+            "zh": "國內普通法院依法對公海海盜與種族滅絕罪行的實施者，享有不受地域限制的普遍管轄權。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:STARE DECISIS MANDATES": {
+    "word": "stare decisis mandates",
+    "pos": "phr.",
+    "meaning": "遵循先例司法準則要求",
+    "example": "The rule of stare decisis mandates that common law courts honor established precedent.",
+    "exampleZh": "遵循先例的普通法最高規則，嚴格要求下級法院必須尊重並採納上級法院的既有判例。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "遵循先例司法準則要求",
+        "examples": [
+          {
+            "en": "The rule of stare decisis mandates that common law courts honor established precedent.",
+            "zh": "遵循先例的普通法最高規則，嚴格要求下級法院必須尊重並採納上級法院的既有判例。"
+          }
+        ]
+      }
+    ]
   }
 }

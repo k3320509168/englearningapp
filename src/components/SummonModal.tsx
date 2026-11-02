@@ -151,6 +151,7 @@ export default function SummonModal() {
           <button role="tab" aria-selected={pool === 'weapon'} className={`tab ${pool === 'weapon' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('weapon')}>{weaponUnlocked ? '⚔️' : '🔒'} 專武召喚</button>
         </div>
 
+        <div className="summon-modal-container">
         {pool === 'weapon' ? (
           !weaponUnlocked ? (
             <>
@@ -396,6 +397,7 @@ export default function SummonModal() {
             )}
           </>
         )}
+        </div>
       </Modal>
 
       {/* 機率與保底詳細說明視窗 */}

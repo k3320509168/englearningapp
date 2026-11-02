@@ -12968,6 +12968,3893 @@
       "ans": "IIT",
       "speak": "verisimilitude",
       "vocabId": "R7:VERISIMILITUDE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Diplomatic immunity shields accredited envoys from local criminal jurisdiction.",
+      "options": [
+        "A. 駐在國政府有權任意查扣外國使館之外交郵袋。",
+        "B. 外交豁免權保護派駐使節免受駐在國刑事管轄。",
+        "C. 外交豁免僅適用於使館聘僱之當地行政人員。",
+        "D. 派駐使節在任何情況下皆必須在駐在國納稅。"
+      ],
+      "ans": "B",
+      "explain": "diplomatic immunity 外交豁免，shields from criminal jurisdiction 免受刑事管轄。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The treaty was ratified by a two-thirds majority in the senate yesterday.",
+      "options": [
+        "A. 條約因未達法定半數出席門檻而延後至明年表決。",
+        "B. 參議院要求在批准前先將條約提交公投表決。",
+        "C. 該條約昨日在參議院以三分之二的多數正式獲得批准。",
+        "D. 參議院全體議員一致表決否決了該項國際條約。"
+      ],
+      "ans": "C",
+      "explain": "ratified by a two-thirds majority 三分之二多數批准條約。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Sanctions were imposed to curtail the proliferation of ballistic missiles.",
+      "options": [
+        "A. 制裁措施促使彈道飛彈的國際貿易大幅成長。",
+        "B. 所有制裁在飛彈發射試驗開始前便已被全數撤銷。",
+        "C. 制裁僅限制該國農產品與民生紡織品的正常出口。",
+        "D. 國際社會實施制裁以遏止彈道飛彈技術的擴散。"
+      ],
+      "ans": "D",
+      "explain": "curtail proliferation of missiles 遏制飛彈擴散。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Sovereign equality remains a foundational pillar of the modern interstate order.",
+      "options": [
+        "A. 主權平等原則僅適用於經濟產值排名前十的大國。",
+        "B. 現代國際法已徹底廢除國家享有獨立主權的法律地位。",
+        "C. 主權平等依然是現代國家間國際秩序的根本基石。",
+        "D. 國際秩序的核心精神在於保障強權支配弱國的特權。"
+      ],
+      "ans": "C",
+      "explain": "sovereign equality 主權平等，foundational pillar 根本基石。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The armistice halted active combat, but left the underlying territorial dispute unresolved.",
+      "options": [
+        "A. 停戰協定的簽署標誌著兩國永久邊界問題徹底落幕。",
+        "B. 領土爭端的解決使得前線部隊無需再簽署停火協議。",
+        "C. 實質交火在停戰協定公布後迅速擴大至周邊鄰國。",
+        "D. 停戰協定終止了實質交火，但仍未解決潛在的領土爭端。"
+      ],
+      "ans": "D",
+      "explain": "armistice halted combat 停戰止火，left dispute unresolved 留存爭端。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Economic interdependence reduces the likelihood of war, yet it does not eliminate systemic rivalry.",
+      "options": [
+        "A. 經濟上的相互依存降低了戰爭機率，但並未消除體制性競爭。",
+        "B. 相互依存保證了各國之間永遠不可能爆發軍事對抗。",
+        "C. 體制性競爭迫使所有貿易夥伴在一夕之間徹底中斷貿易。",
+        "D. 經濟往來被證明是促發大規模地緣政治衝突的唯一根源。"
+      ],
+      "ans": "A",
+      "explain": "reduces likelihood of war, yet does not eliminate rivalry 降低機率但不消弭競爭。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The declaration was aspirational in character, lacking the force of a binding covenant.",
+      "options": [
+        "A. 該宣言自簽署日起即賦予各締約國嚴格的法定責任。",
+        "B. 宣示性文件在國際司法審判中享有超越成文法規之效力。",
+        "C. 各國元首拒絕簽署這份具備嚴格法律制裁條款的公約。",
+        "D. 該宣言本質上屬於宣示性的願景，欠缺具拘束力公約的強制力。"
+      ],
+      "ans": "D",
+      "explain": "aspirational in character 願景宣示性質，lacking binding force 缺乏強制力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The alliance framework proved resilient because member states shared deep normative commitments.",
+      "options": [
+        "A. 該同盟架構經受住了考驗，因成員國共享深厚的價值與規範承諾。",
+        "B. 同盟的穩定完全建立在成員國之間彼此相互猜忌的基礎上。",
+        "C. 共享的價值承諾在面對外部軍事威脅時被證明毫無助益。",
+        "D. 同盟在成立的第一年便因規範衝突而陷入全面癱瘓分裂。"
+      ],
+      "ans": "A",
+      "explain": "normative commitments 價值規範承諾，resilient 同盟堅韌。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Deterrence depends upon credibility: a threat that is perceived as a bluff invites provocation.",
+      "options": [
+        "A. 主動挑釁是維持防衛威懾長期可信度的唯一可行策略。",
+        "B. 威懾的成效取決於可信度：被視為虛張聲勢的威脅反而招致挑釁。",
+        "C. 只要軍事實力強大，威脅是否可信便對威懾效果毫無影響。",
+        "D. 虛張聲勢的外交恫嚇在歷史上始終被證明是最有效的防禦。"
+      ],
+      "ans": "B",
+      "explain": "deterrence depends upon credibility 威懾依賴可信度，bluff invites provocation 虛張聲勢招致挑釁。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【條約】The bilateral accord enters into force upon exchange of the instruments of ratification. What is the trigger for enforcement?",
+      "options": [
+        "A. The public announcement by both heads of state.",
+        "B. The formal exchange of ratification instruments.",
+        "C. A unanimous resolution by the United Nations.",
+        "D. The signing of the initial draft treaty."
+      ],
+      "ans": "B",
+      "explain": "enters into force upon exchange of instruments of ratification 明文規定生效條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】The ambassador emphasized that strategic ambiguity was designed to deter unilateral changes to the status quo. What is the intended effect?",
+      "options": [
+        "A. Eliminating all confidential diplomatic negotiations.",
+        "B. Guaranteeing an unconditional mutual defense alliance.",
+        "C. Discouraging either party from altering the situation alone.",
+        "D. Forcing an immediate military confrontation."
+      ],
+      "ans": "C",
+      "explain": "strategic ambiguity 戰略模糊性旨在 deter unilateral changes（遏阻單方面改變現狀）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the envoy ___ the ultimatum yesterday, hostilities would have erupted along the border.",
+      "options": [
+        "A. deliver",
+        "B. delivering",
+        "C. was delivered",
+        "D. delivered"
+      ],
+      "ans": "D",
+      "explain": "Had the envoy delivered ... would have erupted 為過去虛擬假設倒裝句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The minister described the summit as constructive, while acknowledging that territorial disputes remained unresolved. What was the outcome?",
+      "options": [
+        "A. Both nations agreed to abolish their shared borders.",
+        "B. All territorial claims were definitively abandoned.",
+        "C. Progress was made, though primary differences persist.",
+        "D. The summit was a total failure with no mutual dialogue."
+      ],
+      "ans": "C",
+      "explain": "形容為 constructive 但 territorial disputes remain，進展與分歧並存。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A nation accepts binding arbitration only on condition that the tribunal’s mandate excludes maritime boundary delimitation. What is excluded?",
+      "options": [
+        "A. Commercial trade disputes involving state-owned vessels.",
+        "B. Historical claims to inland freshwater lakes.",
+        "C. Compensation claims filed by private citizens.",
+        "D. Decisions regarding the division of maritime borders."
+      ],
+      "ans": "D",
+      "explain": "mandate excludes maritime boundary delimitation 明文排除海洋邊界劃分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【戰略】The report warns that appeasement often emboldens revisionist powers rather than satisfying their territorial ambitions. What does appeasement do?",
+      "options": [
+        "A. It encourages aggressive states to make further demands.",
+        "B. It establishes permanent peace through shared commerce.",
+        "C. It forces revisionist powers into economic bankruptcy.",
+        "D. It guarantees absolute adherence to international law."
+      ],
+      "ans": "A",
+      "explain": "emboldens revisionist powers 指姑息使修正主義擴張勢力更加肆無忌憚。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【外交】The embassy granted temporary diplomatic asylum, citing customary humanitarian protections recognized across the continent. On what ground was it granted?",
+      "options": [
+        "A. An explicit extradition treaty signed by both states.",
+        "B. A direct instruction issued by the local municipal police.",
+        "C. The applicant’s status as a registered commercial trader.",
+        "D. Continental customary norms regarding humanitarian refuge."
+      ],
+      "ans": "D",
+      "explain": "citing customary humanitarian protections 以習慣人道庇護常規為依據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The analyst observed that the sanction regime harmed the civilian population disproportionately while consolidating the ruling regime’s internal monopoly. What was the flaw?",
+      "options": [
+        "A. It damaged ordinary citizens without weakening the leadership.",
+        "B. It proved completely ineffective at reducing international trade.",
+        "C. It caused neighboring states to declare war immediately.",
+        "D. It enriched foreign corporations at the expense of allies."
+      ],
+      "ans": "A",
+      "explain": "制裁不成比例傷害平民，反倒鞏固了執政階層對資源的壟斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The communiqué referred to a frank exchange of views, a standard diplomatic euphemism indicating sharp disagreement. What occurred?",
+      "options": [
+        "A. Both parties refused to attend the scheduled banquet.",
+        "B. The participants clashed over contentious issues.",
+        "C. The leaders agreed unanimously on all agenda items.",
+        "D. The discussions were canceled due to translation errors."
+      ],
+      "ans": "B",
+      "explain": "frank exchange of views（坦率交換意見）在外交辭令中指重大分歧與激烈交鋒。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：國家對內享有最高管轄、對外獨立的主權",
+      "ans": "SOVEREIGNTY",
+      "speak": "sovereignty",
+      "vocabId": "R7:SOVEREIGNTY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：立法機關對國際條約的正式批准程序",
+      "ans": "RATIFICATION",
+      "speak": "ratification",
+      "vocabId": "R7:RATIFICATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：僅涉及雙方國家或當事人的雙邊的",
+      "ans": "BILATERAL",
+      "speak": "bilateral",
+      "vocabId": "R7:BILATERAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在國際體系或區域中具支配地位的霸權",
+      "ans": "HEGEMONY",
+      "speak": "hegemony",
+      "vocabId": "R7:HEGEMONY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：外交是講求戰略性妥協的藝術。",
+      "ans": "DIPLOMACY IS THE ART OF STRATEGIC COMPROMISE",
+      "speak": "diplomacy is the art of strategic compromise",
+      "vocabId": "R7:DIPLOMACY IS THE ART OF STRATEGIC COMPROMISE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：享有主權同時意謂承擔國際責任。",
+      "ans": "SOVEREIGNTY ENTAILS INTERNATIONAL RESPONSIBILITY",
+      "speak": "sovereignty entails international responsibility",
+      "vocabId": "R7:SOVEREIGNTY ENTAILS INTERNATIONAL RESPONSIBILITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：國家間經正式談判達成的和平或合作協議（A 開頭，6 個字母）",
+      "ans": "ACCORD",
+      "speak": "accord",
+      "vocabId": "R7:ACCORD"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：代表政府執行特定外交任務的特使（E 開頭，5 個字母）",
+      "ans": "ENVOY",
+      "speak": "envoy",
+      "vocabId": "R7:ENVOY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：為達成共同地緣政治目標建立的同盟集團（C 開頭，9 個字母）",
+      "ans": "COALITION",
+      "speak": "coalition",
+      "vocabId": "R7:COALITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R O C L A _ A T I O N (官方正式向國際社會發布的重大公告宣言)",
+      "ans": "M",
+      "speak": "proclamation",
+      "vocabId": "R7:PROCLAMATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H E G _ M O _ I C (在國際關係中展現霸權支配意圖與特質的)",
+      "ans": "EN",
+      "speak": "hegemonic",
+      "vocabId": "R7:HEGEMONIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C O _ R _ I _ E (訴諸武力威脅或實質制裁之強制性的)",
+      "ans": "ECV",
+      "speak": "coercive",
+      "vocabId": "R7:COERCIVE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Fiscal stimulus measures were deployed to avert an impending economic recession.",
+      "options": [
+        "A. 政府決定全面終止對基礎建設的所有公共投資預算。",
+        "B. 中央銀行宣布將基準利率上調至歷史最高水平。",
+        "C. 當局推行財政刺激措施以防範迫在眉睫的經濟衰退。",
+        "D. 財政緊縮政策促成了國內經濟活動的大規模繁榮。"
+      ],
+      "ans": "C",
+      "explain": "fiscal stimulus 財政刺激，avert recession 防範衰退。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The currency depreciated against the euro following the interest rate cut.",
+      "options": [
+        "A. 降息措施使得該國貨幣匯率創下歷史最高升值紀錄。",
+        "B. 兩國央行達成協議將雙方匯率永久固定在等值水準。",
+        "C. 貨幣貶值促使該國中央銀行立即實施外匯管制作為。",
+        "D. 在調降基準利率之後，該國貨幣對歐元呈現顯著貶值。"
+      ],
+      "ans": "D",
+      "explain": "depreciated against the euro 降息後對歐元貶值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Sovereign debt yields rose sharply amid concerns over fiscal sustainability.",
+      "options": [
+        "A. 在對財政永續性的疑慮中，主權公債殖利率大幅攀升。",
+        "B. 投資人對主權財政的信心促使公債殖利率降至零點。",
+        "C. 政府宣布將在年底前提前全數清償所有到期公債。",
+        "D. 公債殖利率之變動與該國政府之財政赤字毫無關聯。"
+      ],
+      "ans": "A",
+      "explain": "yields rose amid concerns over fiscal sustainability 財政疑慮推升殖利率。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The trade deficit narrowed as export volumes rebounded during the fourth quarter.",
+      "options": [
+        "A. 進口總額的激增導致貿易逆差擴大至歷史新高水準。",
+        "B. 第四季出口完全停滯使得貿易帳呈現大幅度的盈餘。",
+        "C. 該國政府全面禁止所有進口商品的報關與市場銷售。",
+        "D. 隨著第四季出口總量強勁反彈，對外貿易逆差有所收窄。"
+      ],
+      "ans": "D",
+      "explain": "trade deficit narrowed 貿易逆差收窄，exports rebounded 出口反彈。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Inelastic demand implies that consumer purchases change very little when prices fluctuate.",
+      "options": [
+        "A. 非彈性需求意味著當商品價格波動時，消費者購買量的變化極小。",
+        "B. 非彈性需求之商品價格若上漲，消費者需求便立即歸零。",
+        "C. 所有奢侈品在經濟學上皆被歸類為具備絕對非彈性需求。",
+        "D. 價格的大幅下跌會導致非彈性需求商品之銷量呈指數暴增。"
+      ],
+      "ans": "A",
+      "explain": "inelastic demand 非彈性需求，purchases change very little 購買量變動極微。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The restructuring plan involved an equity swap that diluted existing shareholder value.",
+      "options": [
+        "A. 股東大會一致投票否決了任何針對公司資產重組之建議。",
+        "B. 重組方案涉及債轉股置換，從而稀釋了既有股東的股權價值。",
+        "C. 債轉股方案使既有股東的持股比例在重組後大幅攀升。",
+        "D. 所有公司債務在未進行股權稀釋的情況下獲得全額現金清償。"
+      ],
+      "ans": "B",
+      "explain": "equity swap 債轉股置換，diluted shareholder value 稀釋股東價值。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The subsidy was phased out gradually to prevent market distortion in the agricultural sector.",
+      "options": [
+        "A. 該項補貼採取分階段逐步退場，以防範對農業部門造成市場扭曲。",
+        "B. 政府決定永久維持對農產品的高額直接價格補貼政策。",
+        "C. 補貼的立即取消被證明徹底解決了農產品生產過剩之危機。",
+        "D. 市場扭曲現象主要源自該國農民拒絕採用任何現代機械設備。"
+      ],
+      "ans": "A",
+      "explain": "phased out gradually 逐步退場，prevent market distortion 防範市場扭曲。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The credit crunch emerged not from a lack of base money, but from an evaporation of interbank trust.",
+      "options": [
+        "A. 信貸緊縮之出現證實中央銀行的最後貸款人職能完全無效。",
+        "B. 信貸緊縮之爆發非因基礎貨幣匱乏，而是源於銀行間拆借信任之蒸發。",
+        "C. 銀行間的深厚信任成功遏止了任何可能出現的信貸緊縮風暴。",
+        "D. 基礎貨幣的大量增發使得所有商業銀行主動放棄了風險審查。"
+      ],
+      "ans": "B",
+      "explain": "credit crunch 信貸緊縮，evaporation of interbank trust 同業信任瓦解。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Austerity policies dampened aggregate demand, entrenching economic stagnation rather than spurring recovery.",
+      "options": [
+        "A. 總體需求的擴張被緊縮政策證明是引發高額失業之罪魁禍首。",
+        "B. 各界一致認定財政緊縮乃是擺脫流動性陷阱最為迅速之途徑。",
+        "C. 緊縮財政政策壓抑了總體需求，非但未促成復甦，反而加深了經濟停滯。",
+        "D. 緊縮政策透過大幅削減公共預算，奇蹟般促成了全體就業增長。"
+      ],
+      "ans": "C",
+      "explain": "austerity dampened aggregate demand 緊縮壓抑總需求，entrenching stagnation 加深停滯。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【金融】The central bank lowered the reserve requirement to inject liquidity into the commercial banking sector. What was the purpose?",
+      "options": [
+        "A. Forcing commercial banks to close their international branches.",
+        "B. Mandating that all loans be repaid within twenty-four hours.",
+        "C. Increasing the supply of available funds for lending.",
+        "D. Decreasing the total money supply in the domestic economy."
+      ],
+      "ans": "C",
+      "explain": "lowered reserve requirement to inject liquidity 降準以注入流動性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】The company faced insolvency after consecutive quarters of operational losses and debt defaults. What condition occurred?",
+      "options": [
+        "A. A sudden surge in foreign investment capital.",
+        "B. The transition from private ownership to state control.",
+        "C. A record increase in quarterly corporate revenues.",
+        "D. The inability to meet financial debt obligations as they fall due."
+      ],
+      "ans": "D",
+      "explain": "insolvency 指無法償還到期債務之無力償債狀態。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had interest rates ___ raised earlier, the property bubble would not have expanded so dramatically.",
+      "options": [
+        "A. been",
+        "B. were",
+        "C. was",
+        "D. being"
+      ],
+      "ans": "A",
+      "explain": "Had interest rates been raised earlier 為與過去事實相反的倒裝條件句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The economist described the recovery as uneven, noting that service sectors lagged behind manufacturing. What was her evaluation?",
+      "options": [
+        "A. The entire national economy had collapsed into a severe depression.",
+        "B. Manufacturing output had dropped to historical lows.",
+        "C. All commercial sectors expanded at an identical rate.",
+        "D. Growth was concentrated in specific industries rather than shared equally."
+      ],
+      "ans": "D",
+      "explain": "uneven recovery 不均衡復甦：製造業走強而服務業滯後。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】A country pegs its domestic currency to the US dollar, requiring foreign reserves to intervene whenever currency pressures arise. What must the central bank maintain?",
+      "options": [
+        "A. Sufficient foreign currency reserves for market intervention.",
+        "B. A total ban on domestic consumer spending.",
+        "C. An exclusive reliance on gold bullion for all transactions.",
+        "D. A prohibition on foreign commercial investment."
+      ],
+      "ans": "A",
+      "explain": "pegs currency requiring foreign reserves to intervene 需維持充沛外匯儲備。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【概念】The term negative externality refers to a cost imposed on an uninvolved third party as a consequence of economic transactions. What is an example?",
+      "options": [
+        "A. A dividend payment distributed to corporate shareholders.",
+        "B. Environmental pollution caused by factory production.",
+        "C. A salary bonus awarded to a high-performing employee.",
+        "D. A discount offered to bulk purchasing consumers."
+      ],
+      "ans": "B",
+      "explain": "negative externality 負外部性：生產造成的未補償環境污染。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【政策】The tariff applies exclusively to imported steel alloys, exempting raw iron ore and finished consumer machinery. What is exempt?",
+      "options": [
+        "A. Unprocessed iron ore and finished machinery.",
+        "B. All steel products regardless of origin.",
+        "C. Imports originating from treaty partner nations.",
+        "D. Every category of mineral raw materials."
+      ],
+      "ans": "A",
+      "explain": "exempting raw iron ore and finished consumer machinery 明確豁免原礦與成品。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The analyst argued that quantitative easing inflated asset prices, thereby exacerbating the wealth gap between capital owners and wage earners. What was the critique?",
+      "options": [
+        "A. Interest rate adjustments eliminated all sovereign debt.",
+        "B. Monetary stimulus disproportionately enriched asset holders.",
+        "C. The central bank caused an immediate collapse of the banking system.",
+        "D. Wage earners experienced unprecedented purchasing power gains."
+      ],
+      "ans": "B",
+      "explain": "量化寬鬆推升資產價格，不成比例圖利資產階級並擴大貧富差距。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The finance ministry characterized the deficit reduction target as aspirational rather than statutory. What did this imply?",
+      "options": [
+        "A. The deficit will be eliminated automatically by statute.",
+        "B. All public spending has been frozen indefinitely by court order.",
+        "C. The target serves as a goal rather than a binding legal duty.",
+        "D. The government is legally mandated to balance the budget this year."
+      ],
+      "ans": "C",
+      "explain": "aspirational rather than statutory 指目標屬願景期許，非法定強制義務。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：資產可迅速轉換為現金之流動性",
+      "ans": "LIQUIDITY",
+      "speak": "liquidity",
+      "vocabId": "R7:LIQUIDITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：貨幣對外匯率貶值或資產實質折舊",
+      "ans": "DEPRECIATION",
+      "speak": "depreciation",
+      "vocabId": "R7:DEPRECIATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：具備足夠資產以償付到期長期債務之償債能力",
+      "ans": "SOLVENCY",
+      "speak": "solvency",
+      "vocabId": "R7:SOLVENCY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：經濟交易對無關第三方造成之外部效應",
+      "ans": "EXTERNALITY",
+      "speak": "externality",
+      "vocabId": "R7:EXTERNALITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：流動性是銀行體系的命脈所在。",
+      "ans": "LIQUIDITY IS THE LIFEBLOOD OF BANKING",
+      "speak": "liquidity is the lifeblood of banking",
+      "vocabId": "R7:LIQUIDITY IS THE LIFEBLOOD OF BANKING"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：償債能力優先於盲目的增長擴張。",
+      "ans": "SOLVENCY PRECEDES GROWTH AND EXPANSION",
+      "speak": "solvency precedes growth and expansion",
+      "vocabId": "R7:SOLVENCY PRECEDES GROWTH AND EXPANSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：財政收支或國際貿易結算之結餘順差（S 開頭，7 個字母）",
+      "ans": "SURPLUS",
+      "speak": "surplus",
+      "vocabId": "R7:SURPLUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：支出大於收入之財政或貿易赤字（D 開頭，7 個字母）",
+      "ans": "DEFICIT",
+      "speak": "deficit",
+      "vocabId": "R7:DEFICIT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：與國家貨幣發行流通及央行政策相關的（M 開頭，8 個字母）",
+      "ans": "MONETARY",
+      "speak": "monetary",
+      "vocabId": "R7:MONETARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N F L A T _ O N A R Y (容易引發物價持續普遍上漲之通膨性的)",
+      "ans": "I",
+      "speak": "inflationary",
+      "vocabId": "R7:INFLATIONARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：E Q U _ L I B _ I U M (供給與需求達到相互平衡協調之均衡狀態)",
+      "ans": "IR",
+      "speak": "equilibrium",
+      "vocabId": "R7:EQUILIBRIUM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A R _ I _ R _ G E (利用不同市場價格差異進行無風險買賣的套利)",
+      "ans": "BTA",
+      "speak": "arbitrage",
+      "vocabId": "R7:ARBITRAGE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The protagonist undergoes a profound moral epiphany during the storm scene.",
+      "options": [
+        "A. 主角在暴風雨中決定完全放棄對家庭的所有責任。",
+        "B. 該場景因缺乏戲劇張力而被多數評論家視為敗筆。",
+        "C. 暴風雨的描繪在整部戲劇中僅僅具有裝飾性的效果。",
+        "D. 主角在暴風雨場景中經歷了一場深刻的心靈頓悟。"
+      ],
+      "ans": "D",
+      "explain": "moral epiphany 道德與精神層面的深刻頓悟。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Catharsis provides the audience with emotional purgation through pity and terror.",
+      "options": [
+        "A. 悲劇的宣洩淨化透過引發憐憫與恐懼，撫平觀眾心靈。",
+        "B. 悲劇之目的在於促使觀眾對劇中反派產生強烈憎恨。",
+        "C. 情感淨化被亞里斯多德判定為戲劇創作中最致命的缺陷。",
+        "D. 觀眾在觀賞悲劇時被要求保持絕對冷酷的理性旁觀立場。"
+      ],
+      "ans": "A",
+      "explain": "catharsis 宣洩淨化：through pity and terror。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The author employed apostrophe, directly addressing the absent muse of history.",
+      "options": [
+        "A. 該修辭手法被批評為過於口語化而欠缺文學美感。",
+        "B. 作者運用了頓呼修辭法，直接向缺席的歷史繆思呼喚。",
+        "C. 頓呼修辭旨在向現場觀眾提供詳盡的背景歷史數據。",
+        "D. 作者在詩中完全摒除了任何對超自然存在的擬人想像。"
+      ],
+      "ans": "B",
+      "explain": "apostrophe 頓呼修辭法：直接向缺席者或抽象事物呼喚。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The poet used enjambment to propel the reader forward across the stanza break.",
+      "options": [
+        "A. 詩人運用跨行連續法，引導讀者視線不停頓地躍過節奏間隔。",
+        "B. 跨行法在古典英詩中被用來強迫讀者在每行結尾停頓數秒。",
+        "C. 詩節之間的斷裂使得全篇詩作喪失了所有的音律連貫性。",
+        "D. 該詩人因過度墨守傳統格律規範而遭受年輕批評家非議。"
+      ],
+      "ans": "A",
+      "explain": "enjambment 跨行連續：propels reader forward。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The juxtaposition of sacred hymns with street slang highlighted cultural hybridity.",
+      "options": [
+        "A. 並置手法的使用使得該小說的文化內涵變得極度單一扁平。",
+        "B. 將神聖讚美詩與市井俚語並置，突顯了文化的混雜交融性。",
+        "C. 神聖詩歌與街頭俚語在小說中被證明屬於完全相同的語域。",
+        "D. 作者試圖透過並置修辭法證明市井語言在文學中毫無價值。"
+      ],
+      "ans": "B",
+      "explain": "juxtaposition 並置對比，highlighted hybridity 突顯混雜性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Metonymy substitutes an associated attribute for the entity itself, as in the crown for royalty.",
+      "options": [
+        "A. 以王冠代指王權在修辭學分類上被歸類為直接的字面描寫。",
+        "B. 轉喻與隱喻在結構上的唯一差異在於是否使用明喻關聯詞。",
+        "C. 轉喻修辭以相關聯的屬性代指事物本身，例如以王冠代指王權。",
+        "D. 轉喻修辭要求所使用的比喻事物必須與本體在外形上完全相同。"
+      ],
+      "ans": "C",
+      "explain": "metonymy 轉喻：substitutes associated attribute。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The narrator’s dry, laconic delivery heightened the underlying tragic absurdity.",
+      "options": [
+        "A. 簡短洗鍊的語言風格使得該小說無法傳達任何深刻的人生哲理。",
+        "B. 敘事者冷峻、簡短洗鍊的語氣，反倒放大了潛在的悲劇荒謬感。",
+        "C. 繁複冗長的敘事語調成功化解了故事結尾的悲劇沉重感。",
+        "D. 敘事者的冷峻被多數讀者誤讀為對劇中人物命運的無動於衷。"
+      ],
+      "ans": "B",
+      "explain": "laconic delivery 簡練語氣，heightened tragic absurdity 放大了悲劇荒謬。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Intertextuality suggests that no literary work exists in isolation from the literary archive.",
+      "options": [
+        "A. 孤立創作在現代文論中被確立為衡量一部作品原創性的唯一標準。",
+        "B. 所有文學作品之間的指涉關係皆被證明屬於惡意的剽竊抄襲行為。",
+        "C. 互文性理論表明，沒有任何文學作品能孤立於龐大文學系譜之外。",
+        "D. 互文性主張偉大的作家完全不需要閱讀前人留下的任何著作。"
+      ],
+      "ans": "C",
+      "explain": "intertextuality 互文性：no work in isolation from archive。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The dissolution of linear time reflects the character’s fragmented traumatic memory.",
+      "options": [
+        "A. 線性時間敘事在現代心理小說中被證實最能呈現創傷體驗。",
+        "B. 角色之記憶創傷在小說結尾透過順序編年體敘事獲得完全療癒。",
+        "C. 時間的崩解被文學批評界一致視為作者缺乏編劇技巧之體現。",
+        "D. 線性時間的瓦解崩解，深刻反映了角色創傷記憶的支離破碎性。"
+      ],
+      "ans": "D",
+      "explain": "dissolution of linear time 線性時間瓦解，reflects fragmented trauma。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文學】The novel employs an unreliable narrator whose personal vanity distorts the accounts of historical events. Why should the reader be cautious?",
+      "options": [
+        "A. The narrator is physically unable to speak to other characters.",
+        "B. The story is written entirely in an extinct dead language.",
+        "C. The novel contains no actual characters or plot progression.",
+        "D. The narrator’s self-regard compromises the truth of the storytelling."
+      ],
+      "ans": "D",
+      "explain": "unreliable narrator（不可靠敘事者）因虛榮偏見扭曲敘事。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】The playwright used dramatic irony, allowing the audience to know the impending catastrophe while the protagonist remained oblivious. What occurs?",
+      "options": [
+        "A. The spectators possess critical information hidden from the character.",
+        "B. The protagonist deliberately plans his own downfall in secret.",
+        "C. The actors refuse to follow the written lines of the script.",
+        "D. The audience is forced to leave the theater before the climax."
+      ],
+      "ans": "A",
+      "explain": "dramatic irony（戲劇反諷）：觀眾知曉角色所不知之關鍵事實。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the poet ___ the archaic sonnet structure, the emotional intimacy would have been lost.",
+      "options": [
+        "A. no abandoned",
+        "B. not abandoned",
+        "C. abandoned not",
+        "D. not abandon"
+      ],
+      "ans": "B",
+      "explain": "Had the poet not abandoned 否定虛擬假設倒裝句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The critic described the prose as luminous yet disciplined, avoiding ornate sentimentalism. What was praised?",
+      "options": [
+        "A. Clarity and emotional restraint in the author’s style.",
+        "B. An excessive reliance on florid nineteenth-century adjectives.",
+        "C. The complete avoidance of any punctuation in the text.",
+        "D. The author’s willingness to plagiarize classical folklore."
+      ],
+      "ans": "A",
+      "explain": "luminous yet disciplined 指風格清晰透徹且具備高度節制。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】The poet utilizes synesthesia, describing a musical chord as heavy, dark velvet. What sensory interaction is created?",
+      "options": [
+        "A. Eliminating all sensory descriptions from the poetic verse.",
+        "B. Translating auditory sensation into tactile and visual imagery.",
+        "C. Denying that musical notes can be expressed on paper.",
+        "D. Proving that visual art is superior to instrumental music."
+      ],
+      "ans": "B",
+      "explain": "synesthesia（通感）：將聽覺轉化為觸覺與視覺意象。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【主題】The recurring motif of the ticking pocket watch reinforces the protagonist’s dread of mortality. What does the motif signify?",
+      "options": [
+        "A. The technical precision of eighteenth-century clockmaking.",
+        "B. A secret message encoded by political conspirators.",
+        "C. The relentless and irreversible passage of human time.",
+        "D. The character’s wealth and luxurious taste in jewelry."
+      ],
+      "ans": "C",
+      "explain": "motif（主題母題）：懷錶滴答象徵無法逆轉的死亡威脅與時間流逝。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【詩學】Free verse abandons strict metrical patterns, yet it relies upon internal rhythm, line breaks, and assonance for musicality. What does it reject?",
+      "options": [
+        "A. The expression of genuine personal emotional experiences.",
+        "B. Rigid traditional meters and mandatory rhyming schemes.",
+        "C. All forms of spoken human language in performance.",
+        "D. The use of metaphors and imaginative comparisons."
+      ],
+      "ans": "B",
+      "explain": "free verse（自由詩）揚棄嚴格格律與固定押韻，但保留內在節奏。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The reviewer noted that the film relied on melodramatic spectacle, sacrificing psychological complexity for cheap emotional manipulation. What was the flaw?",
+      "options": [
+        "A. The historical costumes failed to match the designated century.",
+        "B. The soundtrack was performed entirely without orchestral strings.",
+        "C. Sensational theatricality took precedence over nuanced characterization.",
+        "D. The dialogue was spoken too quietly to be understood by viewers."
+      ],
+      "ans": "C",
+      "explain": "以通俗劇的感官煽情犧牲了人物心理的深刻複雜性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The author praised the translation for capturing the idiomatic resonance of the original without slavish literalism. What made the translation successful?",
+      "options": [
+        "A. It translated only the first and last chapters of the epic.",
+        "B. It invented entirely new characters to replace foreign ones.",
+        "C. It eliminated all philosophical dialogues from the text.",
+        "D. It conveyed cultural nuances without word-for-word rigidity."
+      ],
+      "ans": "D",
+      "explain": "capturing idiomatic resonance without slavish literalism 傳達神韻而非死板直譯。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：透過具體情節寄託深層道德政治意涵的寓言",
+      "ans": "ALLEGORY",
+      "speak": "allegory",
+      "vocabId": "R7:ALLEGORY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在作品中間接引經據典或指涉歷史典故的暗引",
+      "ans": "ALLUSION",
+      "speak": "allusion",
+      "vocabId": "R7:ALLUSION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：與美學、審美感知及藝術品味相關的",
+      "ans": "AESTHETIC",
+      "speak": "aesthetic",
+      "vocabId": "R7:AESTHETIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在戲劇或小說中居於核心地位的第一主角",
+      "ans": "PROTAGONIST",
+      "speak": "protagonist",
+      "vocabId": "R7:PROTAGONIST"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：隱喻揭示了潛藏於概念之間的深層聯繫。",
+      "ans": "METAPHOR REVEALS HIDDEN CONCEPTUAL RELATIONS",
+      "speak": "metaphor reveals hidden conceptual relations",
+      "vocabId": "R7:METAPHOR REVEALS HIDDEN CONCEPTUAL RELATIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：藝術的形式與實質內容彼此緊密交織。",
+      "ans": "FORM AND SUBSTANCE ARE INTIMATELY INTERWOVEN",
+      "speak": "form and substance are intimately interwoven",
+      "vocabId": "R7:FORM AND SUBSTANCE ARE INTIMATELY INTERWOVEN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：為達到滑稽諷刺效果而刻意模仿特定風格的滑稽仿作（P 開頭，6 個字母）",
+      "ans": "PARODY",
+      "speak": "parody",
+      "vocabId": "R7:PARODY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：相對於韻文詩歌之散文體語言表達（P 開頭，5 個字母）",
+      "ans": "PROSE",
+      "speak": "prose",
+      "vocabId": "R7:PROSE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：語言聲音或音樂節奏所呈現之抑揚頓挫韻律（R 開頭，6 個字母）",
+      "ans": "RHYTHM",
+      "speak": "rhythm",
+      "vocabId": "R7:RHYTHM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A E S T H _ T I C S (探討美之本質與藝術哲學的美學學門)",
+      "ans": "E",
+      "speak": "aesthetics",
+      "vocabId": "R7:AESTHETICS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S O L _ L O _ U Y (戲劇中角色獨自在舞台上表達內心獨白的獨白戲)",
+      "ans": "IQ",
+      "speak": "soliloquy",
+      "vocabId": "R7:SOLILOQUY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：M E _ A _ H _ R (不使用比喻連接詞而將兩事物概念融合的隱喻)",
+      "ans": "TPO",
+      "speak": "metaphor",
+      "vocabId": "R7:METAPHOR"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Biodiversity loss diminishes the stability and productivity of natural ecosystems.",
+      "options": [
+        "A. 生物多樣性的流失削弱了自然生態系統的穩定度與生產力。",
+        "B. 多樣性喪失使得生態系在面對疾病與乾旱時更具抵抗力。",
+        "C. 所有自然生態系在物種單一化之後皆能自發提升生物量。",
+        "D. 物種數量的多寡在現代生態科學中被證明與環境穩定無關。"
+      ],
+      "ans": "A",
+      "explain": "biodiversity loss diminishes stability 生物多樣性流失削弱穩定。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The treaty established a transnational ecological corridor for migrating herbivores.",
+      "options": [
+        "A. 各國政府決定在走廊兩側興建高壓電網以防範動物穿越。",
+        "B. 該條約為遷徙性草食動物建立了一條跨越國界的生態走廊。",
+        "C. 條約全面禁止野生動物在任何跨國保護區邊界之間遷徙。",
+        "D. 生態走廊之設立導致沿途野生草食動物遭到大規模獵捕。"
+      ],
+      "ans": "B",
+      "explain": "transnational ecological corridor 跨國生態走廊。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Wetlands serve as natural filtration systems, cleansing agricultural runoff before it enters the sea.",
+      "options": [
+        "A. 排乾濕地被證明能夠顯著改善沿海沿岸海域的水質狀況。",
+        "B. 濕地生態系在地球水循環體系中不具備任何調節過濾功能。",
+        "C. 濕地扮演天然過濾系統的角色，在農田逕流匯入大海前加以淨化。",
+        "D. 濕地會將所有農藥殘留與重金屬廢水直接排入鄰近海灣。"
+      ],
+      "ans": "C",
+      "explain": "wetlands serve as filtration systems 濕地具過濾淨化功能。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The decline of insect pollinators threatens global agricultural yields and wild flora.",
+      "options": [
+        "A. 該報告指出殺蟲劑的大量噴灑是保護野生蜂群的最佳手段。",
+        "B. 授粉昆蟲的數量驟降威脅著全球農業產量以及野生植物群落。",
+        "C. 授粉昆蟲的減少促使全球所有農作物的收成量達到歷史新高。",
+        "D. 野生植物群落完全不需要依賴任何昆蟲即可完成授粉繁衍。"
+      ],
+      "ans": "B",
+      "explain": "pollinators decline threatens yields 授粉昆蟲銳減威脅產量。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Invasive species disrupt native food webs by outcompeting endemic species for finite resources.",
+      "options": [
+        "A. 本土物種在遭遇強勢競爭時會自發放棄對食物與水源的需求。",
+        "B. 食物網的結構在任何外來捕食者入侵時皆能保持絕對恆定不變。",
+        "C. 外來入侵物種透過在有限資源中壓制本土特有種，擾亂了食物網。",
+        "D. 入侵物種的引入始終被證明能自然擴增本土特有種的族群數量。"
+      ],
+      "ans": "C",
+      "explain": "invasive species disrupt food webs 外來種擾亂食物網。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The keystone species exerts an ecological influence disproportionate to its numerical abundance.",
+      "options": [
+        "A. 關鍵物種在生態系統中的重要性完全取決於其個體體型的大小。",
+        "B. 數量稀少的物種在任何生態群落中皆被證明是無足輕重的存在。",
+        "C. 移除關鍵物種被證實能使群落內所有其他物種均勻蓬勃繁衍。",
+        "D. 關鍵物種所發揮的生態影響力，遠遠超越其族群在數量上的佔比。"
+      ],
+      "ans": "D",
+      "explain": "keystone species 關鍵物種，disproportionate influence 影響力遠超數量比例。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Ecological succession is the predictable sequence of species replacement following disturbance.",
+      "options": [
+        "A. 演替過程在演化生物學中被證明是完全混亂且毫無規律可循的。",
+        "B. 火山噴發後的裸露岩石表面永遠不可能萌發任何先驅植物生命。",
+        "C. 生態演替乃是生態系在遭受干擾後，物種替代演化的可預測序列。",
+        "D. 生態干擾發生後，原始森林植被會在數天之內完全原樣復原。"
+      ],
+      "ans": "C",
+      "explain": "ecological succession 生態演替：predictable sequence of replacement。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The Anthropocene marks a geological epoch in which human activity dominates earth systems.",
+      "options": [
+        "A. 人類世在地質學上被定義為人類科技完全臣服於自然法則的時代。",
+        "B. 地球系統在人類活動干預下依然保持著未受擾動的原始平衡。",
+        "C. 人類活動對大氣層與海洋化學結構的衝擊被判定為微不足道。",
+        "D. 人類世標誌著一個人類活動在各方面主導重塑地球系統的地質年代。"
+      ],
+      "ans": "D",
+      "explain": "Anthropocene 人類世，human activity dominates earth systems 人類活動主導地球系統。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Rewilding seeks to restore self-regulating natural processes by removing human management.",
+      "options": [
+        "A. 再野化策略旨在透過撤除人為干預，恢復自然生態系統的自我調節功能。",
+        "B. 再野化要求在所有自然保護區內引進大規模集約化的林業管理。",
+        "C. 自我調節功能在自然界中唯有依靠高強度的人工灌溉方能維持。",
+        "D. 撤除人為管理在任何生態復育專案中皆被證明必然導致物種滅絕。"
+      ],
+      "ans": "A",
+      "explain": "rewilding 再野化，restore self-regulating processes 恢復自我調節。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【生態】The reintroduction of apex predators triggered a trophic cascade, restoring riparian vegetation. What was the effect?",
+      "options": [
+        "A. Restoration of streamside vegetation across the park.",
+        "B. The complete extinction of all native herbivore species.",
+        "C. A catastrophic decline in water quality across the valley.",
+        "D. The immediate conversion of forests into arid farmland."
+      ],
+      "ans": "A",
+      "explain": "trophic cascade（營養級聯效應）恢復了溪流植被（riparian vegetation）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【字彙】The scientist observed that habitat fragmentation prevents gene flow between isolated wildlife populations. What is the consequence?",
+      "options": [
+        "A. A total cessation of plant photosynthesis across the zone.",
+        "B. Restricted genetic exchange leading to inbreeding risks.",
+        "C. An immediate doubling of the total wildlife population.",
+        "D. The spontaneous evolution of new bird species in days."
+      ],
+      "ans": "B",
+      "explain": "fragmentation 棲地破碎化導致 gene flow（基因流動）受阻。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the coastal mangrove forest not ___ preserved, storm surges would have devastated the shoreline.",
+      "options": [
+        "A. was",
+        "B. be",
+        "C. been",
+        "D. being"
+      ],
+      "ans": "C",
+      "explain": "Had ... not been preserved 過去虛擬條件倒裝句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The climatologist described the climate model’s projection as alarming yet technically reversible. What was the verdict?",
+      "options": [
+        "A. The climate models were based on intentionally falsified data.",
+        "B. The outlook is serious, but corrective action can still alter it.",
+        "C. The planet will become completely uninhabitable tomorrow.",
+        "D. No action taken today can influence environmental outcomes."
+      ],
+      "ans": "B",
+      "explain": "alarming yet reversible 情況嚴峻但仍可逆轉。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】An ecosystem exhibits high ecological resilience when it absorbs severe environmental disturbances without shifting into an alternate degraded state. What characterizes resilience?",
+      "options": [
+        "A. The rapid industrial harvesting of all native timber resources.",
+        "B. The permanent elimination of all seasonal temperature swings.",
+        "C. The capacity to endure shocks without undergoing structural collapse.",
+        "D. The total immunity of an ecosystem to all natural disasters."
+      ],
+      "ans": "C",
+      "explain": "ecological resilience（生態韌性）：承受衝擊而不陷入退化崩解。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【概念】The term carrying capacity refers to the maximum population size of a species that an environment can sustain indefinitely. What does it establish?",
+      "options": [
+        "A. The physical weight limit of an individual mammal.",
+        "B. The legal speed limit for vehicles in national parks.",
+        "C. The volume of water carried by a glacial river during spring.",
+        "D. An environmental threshold for sustainable population size."
+      ],
+      "ans": "D",
+      "explain": "carrying capacity（環境承載力）：長期可支撐的最大族群規模門檻。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【政策】The decree restricts chemical runoff into freshwater streams, exempting certified organic smallholders who utilize biological compost. Who is exempt?",
+      "options": [
+        "A. Chemical fertilizer manufacturers located beside riverbanks.",
+        "B. All commercial livestock operations within the municipality.",
+        "C. Organic smallholders applying natural biological compost.",
+        "D. Large industrial agribusinesses operating automated sprayers."
+      ],
+      "ans": "C",
+      "explain": "exempting certified organic smallholders 明確豁免認證有機小農。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The essay argued that carbon offset schemes allow corporate emitters to purchase green credentials while deferring actual operational decarbonization. What is the critique?",
+      "options": [
+        "A. Carbon offsets have permanently eradicated global emissions.",
+        "B. Industrial corporations should be forbidden from planting trees.",
+        "C. Green credentials have reduced corporate stock values to zero.",
+        "D. Offsets function as moral licenses that delay genuine emission cuts."
+      ],
+      "ans": "D",
+      "explain": "碳抵換被批判為延宕實質營運減碳的道德護身符。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The researcher qualified her findings, noting that while localized coral bleaching had ceased, the thermal threshold remained perilously elevated. What did she emphasize?",
+      "options": [
+        "A. A temporary halt does not equal long-term ecological security.",
+        "B. Coral reefs have completely adapted to high temperatures.",
+        "C. Thermal measurements were inaccurate due to equipment flaws.",
+        "D. Bleaching is a healthy biological indicator of ocean vitality."
+      ],
+      "ans": "A",
+      "explain": "halted does not equal security 短暫停止白化不等於生態長期安全。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：特定生態系中生物物種的多樣性",
+      "ans": "BIODIVERSITY",
+      "speak": "biodiversity",
+      "vocabId": "R7:BIODIVERSITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：生物群落與其物理環境相互作用之生態系統",
+      "ans": "ECOSYSTEM",
+      "speak": "ecosystem",
+      "vocabId": "R7:ECOSYSTEM"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：土地土壤或生態環境品質之退化與劣化",
+      "ans": "DEGRADATION",
+      "speak": "degradation",
+      "vocabId": "R7:DEGRADATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：生態系統遭受衝擊後自我復原的恢復力",
+      "ans": "RESILIENCE",
+      "speak": "resilience",
+      "vocabId": "R7:RESILIENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：生態系統仰賴錯綜複雜的微妙平衡。",
+      "ans": "ECOSYSTEMS DEPEND UPON INTRICATE BALANCE",
+      "speak": "ecosystems depend upon intricate balance",
+      "vocabId": "R7:ECOSYSTEMS DEPEND UPON INTRICATE BALANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：人類的生存繁衍與生物多樣性休戚相關。",
+      "ans": "HUMAN SURVIVAL IS TIED TO BIODIVERSITY",
+      "speak": "human survival is tied to biodiversity",
+      "vocabId": "R7:HUMAN SURVIVAL IS TIED TO BIODIVERSITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：特定野生動植物生存繁衍所需的自然棲息地（H 開頭，7 個字母）",
+      "ans": "HABITAT",
+      "speak": "habitat",
+      "vocabId": "R7:HABITAT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：地球上所有生物生存活動所構成之生物圈（B 開頭，9 個字母）",
+      "ans": "BIOSPHERE",
+      "speak": "biosphere",
+      "vocabId": "R7:BIOSPHERE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：僅生長繁衍於特定地理區域的特有物種的（E 開頭，7 個字母）",
+      "ans": "ENDEMIC",
+      "speak": "endemic",
+      "vocabId": "R7:ENDEMIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E G R A _ A T I O N (土壤品質或森林生態環境之劣化與退化)",
+      "ans": "D",
+      "speak": "degradation",
+      "vocabId": "R7:DEGRADATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S Y M _ I O _ I S (不同物種之間互相依存且互利的共生關係)",
+      "ans": "BS",
+      "speak": "symbiosis",
+      "vocabId": "R7:SYMBIOSIS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E S _ R T I _ I C A _ I O N (原本肥沃的土地轉變為不毛沙漠之荒漠化)",
+      "ans": "EFT",
+      "speak": "desertification",
+      "vocabId": "R7:DESERTIFICATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "No sooner had the envoy arrived than the summit was adjourned. What happened?",
+      "options": [
+        "A. The summit was prolonged indefinitely.",
+        "B. The summit ended immediately upon the envoy arrival.",
+        "C. The envoy arrived after the summit had concluded.",
+        "D. The envoy delayed the commencement of negotiations."
+      ],
+      "ans": "B",
+      "explain": "No sooner had... than... 表示使節一抵達，峰會就隨即休會。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is not economic scarcity but regulatory inertia that impedes regional growth. What impedes growth?",
+      "options": [
+        "A. Foreign trade competition.",
+        "B. Unpredictable natural disasters.",
+        "C. Administrative inaction and regulatory inertia.",
+        "D. Absolute lack of financial resources."
+      ],
+      "ans": "C",
+      "explain": "It is... that... 強調句強調真正的阻礙是 regulatory inertia（監管怠惰）。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "So contentious became the territorial dispute that bilateral mediation collapsed entirely. Why did mediation fail?",
+      "options": [
+        "A. Because third party mediators refused to attend.",
+        "B. Because the summit was held in secret.",
+        "C. Because treaty documents were misplaced.",
+        "D. Because the territorial conflict grew exceptionally bitter."
+      ],
+      "ans": "D",
+      "explain": "So + adj + verb + subj 倒裝強調因果程度，說明爭端激烈導致調解破裂。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Only after protracted arbitration did the consortium agree to compensate the displaced communities. When was compensation agreed?",
+      "options": [
+        "A. Without any third party involvement.",
+        "B. Immediately after the initial petition.",
+        "C. Following lengthy and exhaustive legal proceedings.",
+        "D. Before formal negotiations had commenced."
+      ],
+      "ans": "C",
+      "explain": "Only after protracted arbitration 倒裝強調是在漫長仲裁之後才達成協議。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Should unforeseen anomalies arise automated safety protocols will override manual command. Under what condition will override occur?",
+      "options": [
+        "A. When the operator issues a manual command.",
+        "B. After regular working hours expire.",
+        "C. If safety protocols fail to initialize.",
+        "D. If unexpected irregularities occur."
+      ],
+      "ans": "D",
+      "explain": "Should... arise 省略 if 倒裝，表示若出現非預期異常則自動覆蓋手動指令。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Had the administration acknowledged the logistical bottleneck earlier the shortage could have been mitigated. What actually occurred?",
+      "options": [
+        "A. The administration delayed recognition and a severe shortage ensued.",
+        "B. The administration acted proactively to prevent supply disruptions.",
+        "C. Logistical bottlenecks were successfully resolved in advance.",
+        "D. The shortage was manufactured by speculative distributors."
+      ],
+      "ans": "A",
+      "explain": "Had... acknowledged 為過去虛擬倒裝，暗示實際上未及早承認瓶頸導致短缺。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Bitterly did the spokesperson lament the politicization of international humanitarian aid. What was the spokesperson attitude?",
+      "options": [
+        "A. Pleased by the political alignment of relief efforts.",
+        "B. Indifferent to the geopolitical debate.",
+        "C. Optimistic about future diplomatic negotiations.",
+        "D. Deeply grieved by the political exploitation of aid."
+      ],
+      "ans": "D",
+      "explain": "Bitterly did... 倒裝強化發言人對於人道援助遭到政治化的沉痛譴責。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "In no way can the preliminary telemetry be construed as conclusive proof of subterranean water. What does telemetry provide?",
+      "options": [
+        "A. Inconclusive and merely provisional indications.",
+        "B. Definitive evidence of deep aquifers.",
+        "C. Complete disproof of subterranean moisture.",
+        "D. Irrelevant noise without scientific value."
+      ],
+      "ans": "A",
+      "explain": "In no way can... 倒裝表示初步遙測絕不能被視為決定性證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Seldom ___ such an unyielding consensus among rival political factions.",
+      "options": [
+        "A. witnessed observers",
+        "B. had observers witnessed",
+        "C. observers witnessed",
+        "D. observers had witnessed"
+      ],
+      "ans": "B",
+      "explain": "否定副詞 Seldom 置於句首引導部分倒裝，助動詞 had 須置於主詞 observers 之前。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】Not until the final audit was published ___ the full extent of the fiscal embezzlement.",
+      "options": [
+        "A. had the board realized",
+        "B. realized the board",
+        "C. did the board realize",
+        "D. the board realized"
+      ],
+      "ans": "C",
+      "explain": "Not until... 引導時間子句置於句首時，主要子句須採用倒裝語序 did the board realize。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【強調】It was precisely her uncompromising integrity ___ preserved the institutional credibility of the council.",
+      "options": [
+        "A. which",
+        "B. whom",
+        "C. what",
+        "D. that"
+      ],
+      "ans": "D",
+      "explain": "It is/was... that... 分裂強調句，被強調部分為名詞片語 her uncompromising integrity。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【篇章】Only by subjecting empirical hypotheses to rigorous refutation ___ ensure genuine scientific advancement.",
+      "options": [
+        "A. researchers will",
+        "B. should researchers have",
+        "C. can researchers",
+        "D. researchers can"
+      ],
+      "ans": "C",
+      "explain": "Only by + 介系詞片語置於句首時，主要子句須倒裝為情態助動詞 can + 主詞 researchers。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【讓步】Much as the committee appreciated the delegate eloquence, they could not endorse the fiscal proposal. What was the committee stance?",
+      "options": [
+        "A. They were swayed entirely by his moving delivery.",
+        "B. They rejected both the speech and the delegate.",
+        "C. They approved the funding due to his persuasiveness.",
+        "D. They valued his delivery but rejected the substance of the proposal."
+      ],
+      "ans": "D",
+      "explain": "Much as... 引導讓步從句表示「儘管非常欣賞…」，但主要子句仍否決了財政提案。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Under no circumstances ___ confidential diplomatic correspondence be disclosed to unauthorized third parties.",
+      "options": [
+        "A. may",
+        "B. should it",
+        "C. could have",
+        "D. might not"
+      ],
+      "ans": "A",
+      "explain": "否定介系詞片語 Under no circumstances 置於句首，情態動詞 may/should 須前置於主詞之前。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Little ___ that the contractual caveat would eventually jeopardize their corporate sovereignty.",
+      "options": [
+        "A. the executives anticipated",
+        "B. had anticipated the executives",
+        "C. the executives did anticipate",
+        "D. did the executives anticipate"
+      ],
+      "ans": "D",
+      "explain": "否定副詞 Little 置於句首表示「完全沒料到」，助動詞 did 須前置倒裝。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】Hardly had the ceasefire been ratified ___ skirmishes flared along the contested border.",
+      "options": [
+        "A. when",
+        "B. than",
+        "C. as",
+        "D. while"
+      ],
+      "ans": "A",
+      "explain": "Hardly... when... 固定句型，表示剛批准停火協議，邊境就爆發衝突。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：極少見到；罕有目睹",
+      "ans": "SELDOM HAVE WE SEEN",
+      "speak": "seldom have we seen",
+      "vocabId": "R7:SELDOM HAVE WE SEEN"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：直到…才（倒裝連接片語）",
+      "ans": "NOT UNTIL",
+      "speak": "not until",
+      "vocabId": "R7:NOT UNTIL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：一…就…（倒裝時間關聯）",
+      "ans": "HARDLY HAD",
+      "speak": "hardly had",
+      "vocabId": "R7:HARDLY HAD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：絕不；在任何情況下都不",
+      "ans": "UNDER NO CIRCUMSTANCES",
+      "speak": "under no circumstances",
+      "vocabId": "R7:UNDER NO CIRCUMSTANCES"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：唯有透過；只有藉由",
+      "ans": "ONLY THROUGH",
+      "speak": "only through",
+      "vocabId": "R7:ONLY THROUGH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：調查所揭示的正是",
+      "ans": "WHAT THE INQUIRY SHOWED",
+      "speak": "what the inquiry showed",
+      "vocabId": "R7:WHAT THE INQUIRY SHOWED"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：若董事會當時採取行動",
+      "ans": "HAD THE BOARD ACTED",
+      "speak": "had the board acted",
+      "vocabId": "R7:HAD THE BOARD ACTED"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：如此錯綜複雜以至於",
+      "ans": "SO INTRICATE WAS",
+      "speak": "so intricate was",
+      "vocabId": "R7:SO INTRICATE WAS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：文法中將助動詞或動詞置於主詞之前的倒裝結構（I 開頭，9 個字母）",
+      "ans": "INVERSION",
+      "speak": "inversion",
+      "vocabId": "R7:INVERSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：對政策文件或財務進行嚴密審查與仔細檢驗（S 開頭，8 個字母）",
+      "ans": "SCRUTINY",
+      "speak": "scrutiny",
+      "vocabId": "R7:SCRUTINY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：體制缺乏動力的怠惰遲滯或物理慣性（I 開頭，7 個字母）",
+      "ans": "INERTIA",
+      "speak": "inertia",
+      "vocabId": "R7:INERTIA"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：非法侵占或挪用公款與委託資金（E 開頭，8 個字母）",
+      "ans": "EMBEZZLE",
+      "speak": "embezzle",
+      "vocabId": "R7:EMBEZZLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：以嚴謹邏輯或反例駁斥證偽某種論點假說（R 開頭，10 個字母）",
+      "ans": "REFUTATION",
+      "speak": "refutation",
+      "vocabId": "R7:REFUTATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：會議法庭或官方協商宣布休會延期（A 開頭，7 個字母）",
+      "ans": "ADJOURN",
+      "speak": "adjourn",
+      "vocabId": "R7:ADJOURN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：縮減預算開支或限制特權規模（C 開頭，7 個字母）",
+      "ans": "CURTAIL",
+      "speak": "curtail",
+      "vocabId": "R7:CURTAIL"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：小規模邊界交火短暫爭執或非正規衝突（S 開頭，8 個字母）",
+      "ans": "SKIRMISH",
+      "speak": "skirmish",
+      "vocabId": "R7:SKIRMISH"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N V E _ S I O N (文法中將動詞置於主詞前的倒裝結構)",
+      "ans": "R",
+      "speak": "inversion",
+      "vocabId": "R7:INVERSION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I _ E _ T _ A (體制遲滯不前的惰性現象)",
+      "ans": "NRI",
+      "speak": "inertia",
+      "vocabId": "R7:INERTIA"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C _ V _ _ T (協議中的保留條款或警示)",
+      "ans": "AEA",
+      "speak": "caveat",
+      "vocabId": "R7:CAVEAT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E M B E _ Z L E (侵占或挪用公款財產)",
+      "ans": "Z",
+      "speak": "embezzle",
+      "vocabId": "R7:EMBEZZLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A _ J _ U _ N (正式休會或暫停審理)",
+      "ans": "DOR",
+      "speak": "adjourn",
+      "vocabId": "R7:ADJOURN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A _ O _ A _ Y (統計數據上的反常異數)",
+      "ans": "NML",
+      "speak": "anomaly",
+      "vocabId": "R7:ANOMALY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C U R _ A I L (削減限制或縮短規模)",
+      "ans": "T",
+      "speak": "curtail",
+      "vocabId": "R7:CURTAIL"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The board stipulated that the CEO recuse himself from procurement voting. What was required?",
+      "options": [
+        "A. The procurement vote was canceled indefinitely.",
+        "B. The board dissolved the procurement oversight committee.",
+        "C. The CEO must formally abstain from decisions on procurement.",
+        "D. The CEO was awarded full discretionary veto power."
+      ],
+      "ans": "C",
+      "explain": "stipulate that + 原形動詞 recuse，要求執行長利益迴避。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If the diplomat had not negotiated the transit corridor last year supply lines would be paralyzed today. What is the situation?",
+      "options": [
+        "A. Supply lines are currently completely paralyzed across the region.",
+        "B. The diplomat failed to negotiate the corridor last year.",
+        "C. Regional transit corridors were abandoned due to lack of funding.",
+        "D. Supply lines are operating because of last year successful transit treaty."
+      ],
+      "ans": "D",
+      "explain": "錯綜條件句：去年談妥了走廊，因此今日補給線並未癱瘓。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is vital that international observers be granted unrestricted access to polling precincts. What is requested?",
+      "options": [
+        "A. Unimpeded and full inspection rights at all voting stations.",
+        "B. Superficial observation through closed circuit cameras.",
+        "C. Observation limited exclusively to urban capital centers.",
+        "D. Post election access after all ballots have been destroyed."
+      ],
+      "ans": "A",
+      "explain": "vital that + 原形虛擬式 be granted，要求無限制進出投票所。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The treaty specifies that each signatory state dismantle its enrichment centrifuge within ninety days. What action is mandated?",
+      "options": [
+        "A. The indefinite expansion of nuclear enrichment capacity.",
+        "B. The transfer of centrifuges to private commercial vendors.",
+        "C. A voluntary reduction of enrichment operations over a decade.",
+        "D. The physical deconstruction of centrifuge facilities within three months."
+      ],
+      "ans": "D",
+      "explain": "specify that + 原形動詞 dismantle，強制三個月內拆除離心機。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Be that as it may the geopolitical realities on the ground preclude immediate disarmament. What does the speaker convey?",
+      "options": [
+        "A. Even acknowledging those arguments immediate disarmament remains impossible.",
+        "B. Disarmament will proceed immediately regardless of conditions.",
+        "C. Geopolitical conditions are completely conducive to peace.",
+        "D. The speaker unconditionally agrees with the opponent plan."
+      ],
+      "ans": "A",
+      "explain": "Be that as it may 為讓步虛擬結構，意為「即便如此，現實現狀仍無法立即裁軍」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The committee resolved that the dissenting memorandum be appended to the final conference communique. What was decided?",
+      "options": [
+        "A. To hold a separate conference exclusively for dissenters.",
+        "B. To formally attach the disagreement note to the official communique.",
+        "C. To redact and censor all dissenting commentary completely.",
+        "D. To publish the dissent as an anonymous internet editorial."
+      ],
+      "ans": "B",
+      "explain": "resolve that + 原形虛擬式 be appended，決議將異議備忘錄附於公報之後。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is essential that scientific researchers preserve raw observational data prior to statistical modeling. Why?",
+      "options": [
+        "A. To ensure absolute forensic integrity before computational processing.",
+        "B. To conceal experimental errors from independent peer reviewers.",
+        "C. To artificially inflate the perceived sample size of the study.",
+        "D. To comply with proprietary corporate marketing guidelines."
+      ],
+      "ans": "A",
+      "explain": "essential that + 原形動詞 preserve，強調建模前保留原始數據以確保鑑識嚴謹度。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Had the archivist not indexed the microfilms in the 1970s modern historians would be unable to reconstruct deliberations. What helped?",
+      "options": [
+        "A. The oral recollections of surviving delegates from the era.",
+        "B. The archivist diligent indexing half a century ago.",
+        "C. The public broadcast of the council secret audio recordings.",
+        "D. The recent discovery of unedited diplomatic memoirs."
+      ],
+      "ans": "B",
+      "explain": "過去完成假設對應現在能力，歸功於檔案員當年的編目。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】It is imperative that the envoy ___ with full plenipotentiary authority during bilateral negotiations.",
+      "options": [
+        "A. was invested",
+        "B. would be invested",
+        "C. be invested",
+        "D. is invested"
+      ],
+      "ans": "C",
+      "explain": "imperative that 子句須使用原形動詞虛擬式 be invested（省略 should）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【虛擬】Had the civil engineers reinforced the levee system, the coastal basin ___ submerged today.",
+      "options": [
+        "A. would have not been",
+        "B. is not",
+        "C. had not been",
+        "D. would not be"
+      ],
+      "ans": "D",
+      "explain": "過去完成式假設對應現在結果（錯綜條件句），主要子句使用 would not be。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【原形虛擬】The oversight council demanded that every audit log ___ submitted without administrative redaction.",
+      "options": [
+        "A. be",
+        "B. is",
+        "C. was",
+        "D. were"
+      ],
+      "ans": "A",
+      "explain": "demand that 引導賓語從句，謂語動詞使用原形虛擬式 be submitted。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【篇章】If the treaty had not guaranteed tariff exemptions, domestic manufacturing ___ in severe distress at present.",
+      "options": [
+        "A. would have been",
+        "B. had been",
+        "C. is",
+        "D. would be"
+      ],
+      "ans": "D",
+      "explain": "錯綜假設句：過去條件（had not guaranteed）造成現在影響（would be in distress at present）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【要求虛擬】The decree mandated that all municipal expenditure ___ subject to biweekly public disclosure.",
+      "options": [
+        "A. be",
+        "B. was",
+        "C. should to be",
+        "D. being"
+      ],
+      "ans": "A",
+      "explain": "mandate that 引導主語補語從句，動詞一律採用原形虛擬式 be。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【條件】Were it not for international humanitarian corridors, thousands of stranded refugees ___ without potable water.",
+      "options": [
+        "A. had remained",
+        "B. would remain",
+        "C. would have remained",
+        "D. remained"
+      ],
+      "ans": "B",
+      "explain": "Were it not for... 表示「若非目前有…」，主要子句對應現在推測 would remain。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】If the central bank were to hike rates abruptly, capital markets ___ severe contraction.",
+      "options": [
+        "A. would undergo",
+        "B. will undergo",
+        "C. underwent",
+        "D. had undergone"
+      ],
+      "ans": "A",
+      "explain": "were to 表未來純粹假設，主要子句使用 would undergo。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】Suffice it to ___ that diplomatic ambiguity often serves to avert immediate military escalation.",
+      "options": [
+        "A. says",
+        "B. say",
+        "C. said",
+        "D. saying"
+      ],
+      "ans": "B",
+      "explain": "Suffice it to say 為原形虛擬式成語，意為「只需說…就夠了；簡而言之」。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：極為重要的是；勢在必行",
+      "ans": "IT IS IMPERATIVE THAT",
+      "speak": "it is imperative that",
+      "vocabId": "R7:IT IS IMPERATIVE THAT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：假使當時正常運作",
+      "ans": "HAD IT FUNCTIONED",
+      "speak": "had it functioned",
+      "vocabId": "R7:HAD IT FUNCTIONED"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：建議應予如何辦理",
+      "ans": "RECOMMENDED THAT IT BE",
+      "speak": "recommended that it be",
+      "vocabId": "R7:RECOMMENDED THAT IT BE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：只需說…就夠了；簡而言之",
+      "ans": "SUFFICE IT TO SAY",
+      "speak": "suffice it to say",
+      "vocabId": "R7:SUFFICE IT TO SAY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：堅決要求應予如何處置",
+      "ans": "DEMANDED THAT IT BE",
+      "speak": "demanded that it be",
+      "vocabId": "R7:DEMANDED THAT IT BE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：若非因為現存之某因素",
+      "ans": "WERE IT NOT FOR",
+      "speak": "were it not for",
+      "vocabId": "R7:WERE IT NOT FOR"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：明文規定各成員國應當",
+      "ans": "STIPULATED THAT EACH STATE",
+      "speak": "stipulated that each state",
+      "vocabId": "R7:STIPULATED THAT EACH STATE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：今日依然會處於凍結狀態",
+      "ans": "WOULD STILL BE FROZEN",
+      "speak": "would still be frozen",
+      "vocabId": "R7:WOULD STILL BE FROZEN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：擁有全權代表國家談判締約的全權特使（P 開頭，15 個字母）",
+      "ans": "PLENIPOTENTIARY",
+      "speak": "plenipotentiary",
+      "vocabId": "R7:PLENIPOTENTIARY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：因利益衝突自請迴避審理或表決（R 開頭，6 個字母）",
+      "ans": "RECUSE",
+      "speak": "recuse",
+      "vocabId": "R7:RECUSE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：沿河岸或海濱建造的防洪堤壩護堤（L 開頭，5 個字母）",
+      "ans": "LEVEE",
+      "speak": "levee",
+      "vocabId": "R7:LEVEE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：政府或國際高峰會正式發布的官方公報（C 開頭，10 個字母）",
+      "ans": "COMMUNIQUE",
+      "speak": "communique",
+      "vocabId": "R7:COMMUNIQUE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在合約法規中明文規定具體條件（S 開頭，9 個字母）",
+      "ans": "STIPULATE",
+      "speak": "stipulate",
+      "vocabId": "R7:STIPULATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：在法庭宣誓具結後故意作假證之罪行（P 開頭，7 個字母）",
+      "ans": "PERJURY",
+      "speak": "perjury",
+      "vocabId": "R7:PERJURY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：因保密對官方文件部分內容進行塗黑遮蔽（R 開頭，9 個字母）",
+      "ans": "REDACTION",
+      "speak": "redaction",
+      "vocabId": "R7:REDACTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：符合衛生標準可安全飲用的水質（P 開頭，7 個字母）",
+      "ans": "POTABLE",
+      "speak": "potable",
+      "vocabId": "R7:POTABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P L E N I P O _ E N T I A R Y (具備全權代表國家的)",
+      "ans": "T",
+      "speak": "plenipotentiary",
+      "vocabId": "R7:PLENIPOTENTIARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：L _ _ _ E (防洪護堤基礎設施)",
+      "ans": "EVE",
+      "speak": "levee",
+      "vocabId": "R7:LEVEE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ M _ N _ L E (逐步解散拆除組織架構)",
+      "ans": "SAT",
+      "speak": "dismantle",
+      "vocabId": "R7:DISMANTLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O M M U _ I Q U E (首腦會議之最終公報)",
+      "ans": "N",
+      "speak": "communique",
+      "vocabId": "R7:COMMUNIQUE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P _ R _ U _ Y (具結偽證刑事責任)",
+      "ans": "EJR",
+      "speak": "perjury",
+      "vocabId": "R7:PERJURY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：C E _ T R _ F _ G E (化學同位素分離設備)",
+      "ans": "NIU",
+      "speak": "centrifuge",
+      "vocabId": "R7:CENTRIFUGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：R E D A _ T I O N (涉密文本遮蔽與編輯)",
+      "ans": "C",
+      "speak": "redaction",
+      "vocabId": "R7:REDACTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The economic statistics bear out the thesis that fiscal stimulus accelerates infrastructural renewal. What do they do?",
+      "options": [
+        "A. They thoroughly disprove and dismantle the initial hypothesis.",
+        "B. They indicate that stimulus funds were entirely squandered.",
+        "C. They show no statistical correlation whatsoever.",
+        "D. They substantiate and confirm the validity of the thesis."
+      ],
+      "ans": "D",
+      "explain": "bear out 表示「證實、印證」。統計數據印證了財政刺激促進基建更新的論點。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The foreign minister urged negotiating parties not to let the perfect be the enemy of the good. What is the counsel?",
+      "options": [
+        "A. Accept a pragmatic and viable compromise rather than holding out for unachievable perfection.",
+        "B. Refuse any treaty that contains minor imperfections.",
+        "C. Prolong the conflict until absolute victory is attained.",
+        "D. Abandon all diplomatic endeavors and resort to arbitration."
+      ],
+      "ans": "A",
+      "explain": "not let the perfect be the enemy of the good 勸告勿因追求完美而放棄切實可行之妥協。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The sovereign wealth fund decided to pull the plug on the unprofitable subsea pipeline venture. What action was taken?",
+      "options": [
+        "A. They expanded operations into adjacent maritime territories.",
+        "B. They terminated and discontinued financial support for the venture.",
+        "C. They injected additional emergency capital into the pipeline.",
+        "D. They nationalized the corporate operating consortium."
+      ],
+      "ans": "B",
+      "explain": "pull the plug on 表示「終止注資、叫停中止項目」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The corporate merger had been in the pipeline for nearly eighteen months before filing. How long was it planned?",
+      "options": [
+        "A. It had been actively prepared and under development for a year and a half.",
+        "B. It was spontaneously conceived within twenty four hours.",
+        "C. It was stalled due to total lack of regulatory interest.",
+        "D. It was officially rejected eighteen months ago."
+      ],
+      "ans": "A",
+      "explain": "in the pipeline 表示「正在籌備醞釀之中」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The delegate impassioned speech struck at the very root of institutional inequality. What did the speech target?",
+      "options": [
+        "A. Unrelated foreign exchange rate fluctuations.",
+        "B. The fundamental foundational origin of the systemic problem.",
+        "C. Superficial administrative symptoms on the periphery.",
+        "D. The personal dietary habits of committee delegates."
+      ],
+      "ans": "B",
+      "explain": "strike at the root of 意為「直擊根本、正中要害」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The whistleblower decided to bite the bullet and submit the forensic dossier to prosecutors. What did they do?",
+      "options": [
+        "A. Destroyed the documents to protect corporate executives.",
+        "B. Sold the confidential records to commercial tabloid outlets.",
+        "C. Confronted an agonizing decision and acted with grim determination.",
+        "D. Fled the jurisdiction to avoid personal legal liability."
+      ],
+      "ans": "C",
+      "explain": "bite the bullet 意為「咬緊牙關、硬著頭皮採取艱難行動」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The regional central bank has bent over backward to accommodate the liquidity needs of lenders. What did the bank do?",
+      "options": [
+        "A. Liquidated its reserves to purchase foreign sovereign debt.",
+        "B. Exerted extraordinary and exhaustive efforts to assist local lenders.",
+        "C. Imposed draconian austerity penalties on regional banks.",
+        "D. Refused all requests for emergency credit facilities."
+      ],
+      "ans": "B",
+      "explain": "bend over backward 表示「竭盡全力、不遺餘力地遷就協助」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The proposed maritime border treaty proved to be a bone of contention throughout talks. What was the treaty?",
+      "options": [
+        "A. A completely trivial matter requiring no debate.",
+        "B. A secret protocol signed prior to the formal summit.",
+        "C. A primary and persistent source of bitter dispute between factions.",
+        "D. A universally applauded consensus document."
+      ],
+      "ans": "C",
+      "explain": "bone of contention 意為「爭論的焦點、爭端根源」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配】The ambassador took profound ___ at the foreign minister condescending insinuations.",
+      "options": [
+        "A. offensement",
+        "B. agitation",
+        "C. disdainment",
+        "D. umbrage"
+      ],
+      "ans": "D",
+      "explain": "take umbrage at 為高級書面搭配，意為「對…感到憤懣不悅、被冒犯」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【片語】The architect magnificent cathedral bears eloquent ___ to the technological genius of the era.",
+      "options": [
+        "A. testament",
+        "B. testimony",
+        "C. protest",
+        "D. tribute"
+      ],
+      "ans": "A",
+      "explain": "bear testament to 為固定搭配，意為「有力地證明…、是…的雄辯見證」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【成語】The new statutory regulations run entirely ___ to the principles of free and unrestricted commerce.",
+      "options": [
+        "A. contrarywise",
+        "B. counter",
+        "C. opposite",
+        "D. backward"
+      ],
+      "ans": "B",
+      "explain": "run counter to 表示「與…背道而馳、相抵觸」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【篇章】During the parliamentary inquiry, the defense counsel cast severe ___ on the credibility of the whistleblower.",
+      "options": [
+        "A. aspersions",
+        "B. criticisms",
+        "C. doubts",
+        "D. invectives"
+      ],
+      "ans": "A",
+      "explain": "cast aspersions on 為正式搭配，意為「惡意誹謗、詆毀…的名譽與可信度」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【片語】After decades of historical denial, the nation is finally coming to ___ with its colonial transgressions.",
+      "options": [
+        "A. conditions",
+        "B. terms",
+        "C. words",
+        "D. agreements"
+      ],
+      "ans": "B",
+      "explain": "come to terms with 表示「正視、妥協並逐漸接受痛苦現實」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配】For nearly half a century, the authoritarian dynasty held absolute ___ over the peninsula commerce.",
+      "options": [
+        "A. rule",
+        "B. controlment",
+        "C. sway",
+        "D. power"
+      ],
+      "ans": "C",
+      "explain": "hold sway over 為高級搭配，意為「對…擁有絕對主導統治地位」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語境】When cross-examined about the secret offshore bank accounts, the witness drew a complete ___.",
+      "options": [
+        "A. gap",
+        "B. blank",
+        "C. void",
+        "D. space"
+      ],
+      "ans": "B",
+      "explain": "draw a blank 為慣用語，意為「腦中一片空白、毫無頭緒或無法記起」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】The prime minister preemptive concession took the ___ out of the opposition campaign sails.",
+      "options": [
+        "A. steam",
+        "B. breeze",
+        "C. wind",
+        "D. air"
+      ],
+      "ans": "C",
+      "explain": "take the wind out of someone sails 表示「先發制人消除對手銳氣、挫其銳氣」。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：作為雄辯之證明；有力見證",
+      "ans": "BEAR ELOQUENT TESTAMENT",
+      "speak": "bear eloquent testament",
+      "vocabId": "R7:BEAR ELOQUENT TESTAMENT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：感到極為不快；深感冒犯",
+      "ans": "TOOK GRAVE UMBRAGE",
+      "speak": "took grave umbrage",
+      "vocabId": "R7:TOOK GRAVE UMBRAGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：完全與…背道而馳；抵觸",
+      "ans": "RUN ENTIRELY COUNTER TO",
+      "speak": "run entirely counter to",
+      "vocabId": "R7:RUN ENTIRELY COUNTER TO"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：逐漸接受妥協正視現實",
+      "ans": "COME TO TERMS WITH",
+      "speak": "come to terms with",
+      "vocabId": "R7:COME TO TERMS WITH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：掌握無可爭議之統治權柄",
+      "ans": "HELD UNDISPUTED SWAY",
+      "speak": "held undisputed sway",
+      "vocabId": "R7:HELD UNDISPUTED SWAY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：僅做口頭敷衍；口惠不實",
+      "ans": "PAY MERE LIP SERVICE",
+      "speak": "pay mere lip service",
+      "vocabId": "R7:PAY MERE LIP SERVICE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：提出實質客觀證據加以證實",
+      "ans": "SUBSTANTIATE THE CLAIM",
+      "speak": "substantiate the claim",
+      "vocabId": "R7:SUBSTANTIATE THE CLAIM"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：竭盡全力；極致遷就迎合",
+      "ans": "BENT OVER BACKWARD",
+      "speak": "bent over backward",
+      "vocabId": "R7:BENT OVER BACKWARD"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：因受到輕視或冒犯而產生的憤懣不悅（U 開頭，7 個字母）",
+      "ans": "UMBRAGE",
+      "speak": "umbrage",
+      "vocabId": "R7:UMBRAGE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：具體證明某事實或價值的雄辯明證（T 開頭，9 個字母）",
+      "ans": "TESTAMENT",
+      "speak": "testament",
+      "vocabId": "R7:TESTAMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：對他人品格或誠信的中傷誹謗侮辱（A 開頭，9 個字母）",
+      "ans": "ASPERSION",
+      "speak": "aspersion",
+      "vocabId": "R7:ASPERSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：虛偽狡黠的假裝誠懇實則心懷鬼胎（D 開頭，12 個字母）",
+      "ans": "DISINGENUOUS",
+      "speak": "disingenuous",
+      "vocabId": "R7:DISINGENUOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：為他人提供便利遷就或適應需求（A 開頭，11 個字母）",
+      "ans": "ACCOMMODATE",
+      "speak": "accommodate",
+      "vocabId": "R7:ACCOMMODATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：先發制人的搶先防患未然的戰術（P 開頭，10 個字母）",
+      "ans": "PREEMPTIVE",
+      "speak": "preemptive",
+      "vocabId": "R7:PREEMPTIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：跨國企業銀行為大項目組成的聯合財團（C 開頭，10 個字母）",
+      "ans": "CONSORTIUM",
+      "speak": "consortium",
+      "vocabId": "R7:CONSORTIUM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：法律制裁或刑罰條款極其嚴酷苛刻（D 開頭，9 個字母）",
+      "ans": "DRACONIAN",
+      "speak": "draconian",
+      "vocabId": "R7:DRACONIAN"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：U M B _ A G E (因受冒犯而引發的不快情緒)",
+      "ans": "R",
+      "speak": "umbrage",
+      "vocabId": "R7:UMBRAGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A S _ E _ S _ O N (缺乏證據之惡意誹謗抹黑)",
+      "ans": "PRI",
+      "speak": "aspersion",
+      "vocabId": "R7:ASPERSION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U B _ T A _ T I _ T E (以嚴謹鑑識手段證實假說)",
+      "ans": "SNA",
+      "speak": "substantiate",
+      "vocabId": "R7:SUBSTANTIATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D I S I N G _ N U O U S (虛偽隱瞞實情的陳述態度)",
+      "ans": "E",
+      "speak": "disingenuous",
+      "vocabId": "R7:DISINGENUOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ E M _ T _ V E (搶先一步實施的先手防衛)",
+      "ans": "EPI",
+      "speak": "preemptive",
+      "vocabId": "R7:PREEMPTIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X _ C E _ B _ T E (推波助瀾使衝突更不可收拾)",
+      "ans": "ARA",
+      "speak": "exacerbate",
+      "vocabId": "R7:EXACERBATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：C O N S O _ T I U M (聯合開採與建設的跨國辛迪加)",
+      "ans": "R",
+      "speak": "consortium",
+      "vocabId": "R7:CONSORTIUM"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Epistemological skepticism questions whether sensory perception can yield objective truth. What is under scrutiny?",
+      "options": [
+        "A. The epistemic reliability and veracity of human senses.",
+        "B. The mathematical validity of geometric proofs.",
+        "C. The historical authenticity of ancient coins.",
+        "D. The mechanical durability of optical lenses."
+      ],
+      "ans": "A",
+      "explain": "認識論懷疑論（Epistemological skepticism）質疑人類感官知覺能否獲取客觀真理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Thomas Kuhn posited that periods of normal science are punctuated by crises. What follows a crisis?",
+      "options": [
+        "A. A complete consensus across all global religious bodies.",
+        "B. The collapse of prevailing models and emergence of a new paradigm.",
+        "C. The permanent termination of all scientific publications.",
+        "D. An unquestioned return to primitive mythological worldviews."
+      ],
+      "ans": "B",
+      "explain": "庫恩認為常規科學時期會被革命性危機打斷，進而促使新典範誕生。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Cognitive dissonance denotes psychological discomfort experienced from holding contradictory beliefs. How is it relieved?",
+      "options": [
+        "A. By ignoring physical sustenance and biological needs.",
+        "B. Through prolonged isolation in sensory deprivation chambers.",
+        "C. By rationalizing behavior or modifying one of the conflicting beliefs.",
+        "D. By immediately increasing the cognitive contradiction."
+      ],
+      "ans": "C",
+      "explain": "認知失調（Cognitive dissonance）描述持有矛盾信念的不適感，通常透過合理化或調整信念緩解。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "In phenomenology Edmund Husserl advocated the bracketing of assumptions. What does it entail?",
+      "options": [
+        "A. Rejecting logical reasoning in favor of emotional impulse.",
+        "B. Suspending metaphysical presuppositions about external reality.",
+        "C. Endorsing empirical materialism without critique.",
+        "D. Memorizing classical theological catechisms."
+      ],
+      "ans": "B",
+      "explain": "現象學的「懸置（bracketing）」指暫停對外在世界的預設判斷。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Heuristic shortcuts facilitate rapid decision making but introduce cognitive distortions. What are heuristics?",
+      "options": [
+        "A. Exhaustive computational simulations of complex systems.",
+        "B. Unconscious physical muscle contractions.",
+        "C. Mental rules of thumb that streamline cognitive processing.",
+        "D. Rigorous formal mathematical proof algorithms."
+      ],
+      "ans": "C",
+      "explain": "捷思法（Heuristics）是加速決策的思維法則，但易誘發系統性認知偏差。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Determinism argues that every event is necessitated by antecedent states and laws of nature. What does it challenge?",
+      "options": [
+        "A. The mathematical validity of the law of gravity.",
+        "B. The possibility of technological engineering.",
+        "C. The biological reality of genetic inheritance.",
+        "D. The traditional concept of absolute unconditioned free will."
+      ],
+      "ans": "D",
+      "explain": "決定論（Determinism）主張一切事件皆由前置狀態所必然決定，挑戰絕對自由意志。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The Duhem Quine thesis asserts that no scientific hypothesis can be tested in isolation. Why?",
+      "options": [
+        "A. Because scientists are inherently biased toward funding agencies.",
+        "B. Because natural laws change unpredictably during laboratory tests.",
+        "C. Because testing always relies on an auxiliary web of background assumptions.",
+        "D. Because scientific apparatus is fundamentally defective and unreliable."
+      ],
+      "ans": "C",
+      "explain": "杜恆奎因命題（Duhem Quine thesis）論證檢驗假說時必然依賴整體輔助假設網。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Epistemic humility demands that researchers acknowledge the provisional nature of conclusions. What does it foster?",
+      "options": [
+        "A. An arrogant insistence on the infallibility of personal theories.",
+        "B. A cynical rejection of all empirical inquiry and data.",
+        "C. A blind deference to ancient ecclesiastic authority.",
+        "D. An open minded willingness to revise views in light of superior evidence."
+      ],
+      "ans": "D",
+      "explain": "認知謙遜（Epistemic humility）促使研究者承認結論的暫定性並樂於依新證據修正。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】Empirical verificationism asserts that a proposition is cognitively meaningful only if it is testable. What is the criterion?",
+      "options": [
+        "A. The capacity of an assertion to be verified through observable sensory experience.",
+        "B. Its strict adherence to classical theological or metaphysical dogma.",
+        "C. The subjective emotional resonance it produces in listeners.",
+        "D. Its formal mathematical elegance regardless of tangible reality."
+      ],
+      "ans": "A",
+      "explain": "經驗證實主義（Empirical verificationism）主張命題的認知意義在於其能否經由觀察經驗檢驗。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【科學哲學】According to Karl Popper, what demarcates genuine science from pseudoscience?",
+      "options": [
+        "A. The complete absence of theoretical speculation in research.",
+        "B. The principle of falsifiability rather than verification.",
+        "C. The unanimous consensus among contemporary academic institutions.",
+        "D. The absolute impossibility of formulating counterarguments."
+      ],
+      "ans": "B",
+      "explain": "波普爾的科學哲學主張「可證偽性（falsifiability）」是區分科學與偽科學的分水嶺。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認知科學】Confirmation bias compels individuals to search for, interpret, and recall information in a biased manner. What does it cause?",
+      "options": [
+        "A. An immediate willingness to abandon settled opinions upon dispute.",
+        "B. Random and arbitrary memory lapses during stressful examinations.",
+        "C. Selective attention and distorted interpretation favoring prior beliefs.",
+        "D. Objective and exhaustive evaluation of contradictory evidence."
+      ],
+      "ans": "C",
+      "explain": "確認偏誤（Confirmation bias）使人傾向選擇性搜尋並詮釋符合既有信念的資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【邏輯】An ad hominem fallacy occurs when an arguer attacks the opponent personal character rather than:",
+      "options": [
+        "A. consulting public opinion polls on the matter.",
+        "B. evaluating the logical substance and evidence of their argument.",
+        "C. checking the spelling and grammatical structure of their prose.",
+        "D. agreeing with the opponent premises unconditionally."
+      ],
+      "ans": "B",
+      "explain": "人身攻擊謬誤（ad hominem）是指攻擊辯手個人特質而非評估其論證實質。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】Epistemic closure describes a condition wherein a community rejects all external evidence. What is the consequence?",
+      "options": [
+        "A. Universal tolerance toward foreign philosophical traditions.",
+        "B. The complete abandonment of all ideological convictions.",
+        "C. Intellectual insularity and total resistance to corrective facts.",
+        "D. Rapid adaptation and welcoming of dissenting empirical findings."
+      ],
+      "ans": "C",
+      "explain": "認知閉環（Epistemic closure）導致群體思想封閉，全面排斥與其信念相左的外部證據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【篇章】Occam razor dictates that when presented with competing hypotheses, scientists should select the one that:",
+      "options": [
+        "A. requires the largest quantity of theoretical entities.",
+        "B. is supported by the most prestigious political authorities.",
+        "C. relies most heavily on poetic and symbolic imagery.",
+        "D. makes the fewest explanatory assumptions."
+      ],
+      "ans": "D",
+      "explain": "奧坎剃刀（Occam razor）主張在相容的解釋假說中，應優先選擇假設前提最少者。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【科學】A paradigm shift occurs not merely through incremental data accumulation, but through:",
+      "options": [
+        "A. the unconditional revival of discarded ancient doctrines.",
+        "B. administrative mandates issued by government ministries.",
+        "C. a radical fundamental restructuring of core theoretical frameworks.",
+        "D. minor typographical revisions in academic textbooks."
+      ],
+      "ans": "C",
+      "explain": "典範轉移（Paradigm shift）指核心理論框架的根本性重構，而非單純數據累積。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倫理】The trolley problem is a classic thought experiment designed to illuminate tensions between:",
+      "options": [
+        "A. monetary profit optimization and regulatory bureaucratic delay.",
+        "B. aesthetic visual harmony and architectural structural resilience.",
+        "C. linguistic grammatical syntax and phonetic acoustic clarity.",
+        "D. utilitarian outcome maximization and deontological moral duty."
+      ],
+      "ans": "D",
+      "explain": "電車難題（Trolley problem）旨在檢視效益主義極大化與道義義務之間的倫理張力。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：實證上的可證偽性標準",
+      "ans": "EMPIRICAL FALSIFIABILITY",
+      "speak": "empirical falsifiability",
+      "vocabId": "R7:EMPIRICAL FALSIFIABILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：認知失調心理狀態",
+      "ans": "COGNITIVE DISSONANCE",
+      "speak": "cognitive dissonance",
+      "vocabId": "R7:COGNITIVE DISSONANCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：黑格爾辯證演進法",
+      "ans": "HEGELIAN DIALECTICS",
+      "speak": "hegelian dialectics",
+      "vocabId": "R7:HEGELIAN DIALECTICS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：達克效應認知偏差",
+      "ans": "DUNNING KRUGER EFFECT",
+      "speak": "dunning kruger effect",
+      "vocabId": "R7:DUNNING KRUGER EFFECT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：認識論上的謙遜審慎態度",
+      "ans": "EPISTEMIC HUMILITY",
+      "speak": "epistemic humility",
+      "vocabId": "R7:EPISTEMIC HUMILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：暫時懸置哲學形上學預設",
+      "ans": "BRACKET ASSUMPTIONS",
+      "speak": "bracket assumptions",
+      "vocabId": "R7:BRACKET ASSUMPTIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：大腦捷思思維省力法則",
+      "ans": "HEURISTIC SHORTCUTS",
+      "speak": "heuristic shortcuts",
+      "vocabId": "R7:HEURISTIC SHORTCUTS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：劃時代的理論典範大轉移",
+      "ans": "A PARADIGM SHIFT",
+      "speak": "a paradigm shift",
+      "vocabId": "R7:A PARADIGM SHIFT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：認識論的與知識構建驗證本質相關的（E 開頭，9 個字母）",
+      "ans": "EPISTEMIC",
+      "speak": "epistemic",
+      "vocabId": "R7:EPISTEMIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在科學哲學中證偽假說或篡改偽造數據（F 開頭，7 個字母）",
+      "ans": "FALSIFY",
+      "speak": "falsify",
+      "vocabId": "R7:FALSIFY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：認知信念或聲音之間的不協和脫節衝突（D 開頭，10 個字母）",
+      "ans": "DISSONANCE",
+      "speak": "dissonance",
+      "vocabId": "R7:DISSONANCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：主張萬物皆具有終極意圖追求的目的論（T 開頭，9 個字母）",
+      "ans": "TELEOLOGY",
+      "speak": "teleology",
+      "vocabId": "R7:TELEOLOGY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：透過矛盾正反論證推演真理的辯證法（D 開頭，9 個字母）",
+      "ans": "DIALECTIC",
+      "speak": "dialectic",
+      "vocabId": "R7:DIALECTIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：哲學中揚棄克服否定同時保留提升其昇華（S 開頭，7 個字母）",
+      "ans": "SUBLATE",
+      "speak": "sublate",
+      "vocabId": "R7:SUBLATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在學術範疇或地理邊界上劃定分野界線（D 開頭，9 個字母）",
+      "ans": "DEMARCATE",
+      "speak": "demarcate",
+      "vocabId": "R7:DEMARCATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：現象學中懸置擱置對外部客觀存在的預斷（B 開頭，7 個字母）",
+      "ans": "BRACKET",
+      "speak": "bracket",
+      "vocabId": "R7:BRACKET"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：E P I S _ E M I C (與認知確定性及真理證成相關的)",
+      "ans": "T",
+      "speak": "epistemic",
+      "vocabId": "R7:EPISTEMIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I _ S O _ A _ C E (信仰與客觀證據嚴重背離時的不適感)",
+      "ans": "SNN",
+      "speak": "dissonance",
+      "vocabId": "R7:DISSONANCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H E _ R _ S _ I C (實用性經驗捷徑而非嚴密演繹證明)",
+      "ans": "UIT",
+      "speak": "heuristic",
+      "vocabId": "R7:HEURISTIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T E L E _ L O G Y (以結果與功能解釋因果機制的哲學傳統)",
+      "ans": "O",
+      "speak": "teleology",
+      "vocabId": "R7:TELEOLOGY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S _ B _ A _ E (在更高維度的綜合中實現對立面揚棄)",
+      "ans": "ULT",
+      "speak": "sublate",
+      "vocabId": "R7:SUBLATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P R _ P O _ I T _ O N (作為科學推導前提條件的基本公理命題)",
+      "ans": "OSI",
+      "speak": "proposition",
+      "vocabId": "R7:PROPOSITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E M A _ C A T E (確立清晰的專業邊界以防止混淆)",
+      "ans": "R",
+      "speak": "demarcate",
+      "vocabId": "R7:DEMARCATE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The principle of habeas corpus protects individuals from arbitrary and indefinite detention. What right is safeguarded?",
+      "options": [
+        "A. The state power to sequester property without trial.",
+        "B. The fundamental right to challenge unlawful state imprisonment in court.",
+        "C. The absolute immunity of government officials from prosecution.",
+        "D. The right of corporate entities to evade public taxation."
+      ],
+      "ans": "B",
+      "explain": "人身保護令（habeas corpus）旨在保護個人免於遭到國家機關的任意拘禁。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "It is essential that judicial deliberations remain insulated from partisan electoral pressures. Why?",
+      "options": [
+        "A. To accelerate trial speed by removing deliberation protocols.",
+        "B. To allow ruling party donors to select appellate judges.",
+        "C. To preserve the institutional impartiality and integrity of courts.",
+        "D. To ensure that political party platforms dictate court verdicts."
+      ],
+      "ans": "C",
+      "explain": "essential that + 原形動詞 remain，確保司法評議不受黨派政治壓力干擾。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "So egregious was the prosecutorial misconduct that the judge ordered an immediate retrial. What was the reaction?",
+      "options": [
+        "A. The prosecutor was immediately promoted to chief magistrate.",
+        "B. The misconduct was ignored as minor harmless error.",
+        "C. The jury was permanently imprisoned for contempt of court.",
+        "D. The court dismissed the conviction and mandated a fresh trial."
+      ],
+      "ans": "D",
+      "explain": "So egregious was... that... 倒裝凸顯檢控濫權之嚴重導致法官下令重審。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Not until the dissenting opinion was published did the public grasp the constitutional crisis. When did the public understand?",
+      "options": [
+        "A. Immediately following the preliminary arraignment.",
+        "B. Before any charges had been formally brought.",
+        "C. Only after the minority judges released their critical dissent.",
+        "D. Long before the oral arguments commenced in court."
+      ],
+      "ans": "C",
+      "explain": "Not until... did... 倒裝指出只有在少數派異議意見書公佈後，公眾才看清憲法危機。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Hardly had the injunction been granted when regional developers halted construction. What happened?",
+      "options": [
+        "A. Developers ignored the injunction and accelerated work.",
+        "B. The court canceled the injunction within five minutes.",
+        "C. Developers filed a successful appeal before sunrise.",
+        "D. Construction paused the very moment the court injunction was issued."
+      ],
+      "ans": "D",
+      "explain": "Hardly had... when... 倒裝描寫禁令剛一下達，開發商便立即停工。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The convention mandates that diplomatic pouches be immune from customs inspection and search. What is mandated?",
+      "options": [
+        "A. Absolute legal inviolability of diplomatic mail bags.",
+        "B. Routine physical inspection of all foreign diplomatic parcels.",
+        "C. The complete commercial taxation of embassy shipments.",
+        "D. The destruction of diplomatic mail at border points."
+      ],
+      "ans": "A",
+      "explain": "mandate that + 原形虛擬式 be immune，強制外交郵袋享有絕對不可侵犯的免檢權。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Under no circumstances may evidence obtained through coercion be admitted in proceedings. What is the standard?",
+      "options": [
+        "A. Coerced testimony is admissible if verified by a notary.",
+        "B. The judge has full discretion to admit torture confessions.",
+        "C. Defense attorneys must provide evidence for the prosecution.",
+        "D. A complete exclusionary bar against involuntary testimony."
+      ],
+      "ans": "D",
+      "explain": "Under no circumstances may... 倒裝闡明刑訊逼供取得的證據絕不具備證據能力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Little did the drafting committee divine that the loophole would be exploited by monopolies. What was unforeseen?",
+      "options": [
+        "A. The aggressive predatory exploitation of the statutory loophole.",
+        "B. The unanimous praise the statute would receive from scholars.",
+        "C. The immediate repeal of the law by presidential decree.",
+        "D. The total irrelevance of antitrust legislation in trade."
+      ],
+      "ans": "A",
+      "explain": "Little did... divine 倒裝表示起草委員會完全未曾料到該漏洞會遭壟斷集團鑽營。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【法理】The legal maxim pacta sunt servanda dictates that international treaties are binding upon signatories. What does it demand?",
+      "options": [
+        "A. Only oral declarations witnessed by the pontiff carry legal validity.",
+        "B. Treaties must be faithfully and scrupulously observed in good faith.",
+        "C. Signatories may unilaterally abrogate agreements during economic recessions.",
+        "D. Treaties are merely non binding recommendations with moral force."
+      ],
+      "ans": "B",
+      "explain": "pacta sunt servanda（條約必須信守）是國際法核心準則，要求締約國必須善意嚴格恪守條約。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Seldom ___ a constitutional assembly codified citizen rights with such exhaustive precision.",
+      "options": [
+        "A. had been",
+        "B. did have",
+        "C. has",
+        "D. have"
+      ],
+      "ans": "C",
+      "explain": "Seldom has a constitutional assembly codified... 否定倒裝句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The doctrine of stare decisis requires common law appellate tribunals to stand by precedent. What is its effect?",
+      "options": [
+        "A. It mandates the automatic overruling of prior judicial decisions.",
+        "B. It allows judges to decide disputes based on personal intuition.",
+        "C. It abolishes the hierarchy between municipal and federal courts.",
+        "D. It promotes institutional consistency and predictability in rulings."
+      ],
+      "ans": "D",
+      "explain": "stare decisis（遵循先例）原則要求上訴法庭遵循既有判例以維護司法穩定與可預測性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【篇章】No sooner had the bill been signed by the sovereign ___ constitutional petitions were filed.",
+      "options": [
+        "A. then",
+        "B. as",
+        "C. than",
+        "D. when"
+      ],
+      "ans": "C",
+      "explain": "No sooner had... than... 固定時間倒裝。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【搭配】The treaty stipulates that coastal states exercise sovereign jurisdiction over their territorial sea. What is exercised?",
+      "options": [
+        "A. Temporary advisory oversight subject to foreign naval consent.",
+        "B. Shared international joint ownership without borders.",
+        "C. No regulatory control whatsoever over foreign navigation.",
+        "D. Full exclusive sovereign authority over adjacent maritime bands."
+      ],
+      "ans": "D",
+      "explain": "exercise sovereign jurisdiction 為高級法理搭配，意為行使主權管轄權。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【條件】Should the respondent fail to appear, default judgment ___ entered in favor of the claimant.",
+      "options": [
+        "A. will be",
+        "B. is",
+        "C. was",
+        "D. had been"
+      ],
+      "ans": "A",
+      "explain": "Should the respondent fail to appear（省略 if 倒裝），主要子句使用 will be entered。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】Much as legal positivists prioritize codified statutory form, moral equity cannot be wholly extirpated. What is conveyed?",
+      "options": [
+        "A. Legal codes possess complete independence from ethical considerations.",
+        "B. Equity is completely obsolete in modern jurisprudence.",
+        "C. Positivism rejects the existence of written legislation.",
+        "D. Statutory law remains inextricably intertwined with moral justice."
+      ],
+      "ans": "D",
+      "explain": "Much as... 讓步倒裝：儘管法律實證主義注重制定法形式，道德衡平正義仍無法被徹底根除。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Only by exhaustively demonstrating procedural ultra vires ___ overturn the administrative decree.",
+      "options": [
+        "A. can plaintiffs",
+        "B. plaintiffs can",
+        "C. plaintiffs will",
+        "D. should plaintiffs"
+      ],
+      "ans": "A",
+      "explain": "Only by... 倒裝引導情態動詞 can plaintiffs overturn。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：條約必須恪守信諾（國際法基本準則）",
+      "ans": "PACTA SUNT SERVANDA",
+      "speak": "pacta sunt servanda",
+      "vocabId": "R7:PACTA SUNT SERVANDA"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：遵循先例原則嚴格要求",
+      "ans": "STARE DECISIS DEMANDS",
+      "speak": "stare decisis demands",
+      "vocabId": "R7:STARE DECISIS DEMANDS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：人身保護令之司法救濟",
+      "ans": "HABEAS CORPUS RELIEF",
+      "speak": "habeas corpus relief",
+      "vocabId": "R7:HABEAS CORPUS RELIEF"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：踰越法定權限之程序瑕疵",
+      "ans": "PROCEDURAL ULTRA VIRES",
+      "speak": "procedural ultra vires",
+      "vocabId": "R7:PROCEDURAL ULTRA VIRES"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在被判有罪前推定為無罪",
+      "ans": "PRESUMED INNOCENT UNTIL",
+      "speak": "presumed innocent until",
+      "vocabId": "R7:PRESUMED INNOCENT UNTIL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：證據排除法則嚴格禁止",
+      "ans": "EXCLUSIONARY RULE BARS",
+      "speak": "exclusionary rule bars",
+      "vocabId": "R7:EXCLUSIONARY RULE BARS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：客觀舉證責任明確歸屬於",
+      "ans": "BURDEN OF PROOF RESTS",
+      "speak": "burden of proof rests",
+      "vocabId": "R7:BURDEN OF PROOF RESTS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：對制定法條文之嚴謹解釋",
+      "ans": "STATUTORY INTERPRETATION OF",
+      "speak": "statutory interpretation of",
+      "vocabId": "R7:STATUTORY INTERPRETATION OF"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：法學理論司法體系或法院判例法學（J 開頭，13 個字母）",
+      "ans": "JURISPRUDENCE",
+      "speak": "jurisprudence",
+      "vocabId": "R7:JURISPRUDENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：負責審理上訴案件之上訴法庭的（A 開頭，9 個字母）",
+      "ans": "APPELLATE",
+      "speak": "appellate",
+      "vocabId": "R7:APPELLATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：官方正式廢除條約撤銷法律或特權（A 開頭，8 個字母）",
+      "ans": "ABROGATE",
+      "speak": "abrogate",
+      "vocabId": "R7:ABROGATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在後續同類判決中具約束力之司法判例（P 開頭，9 個字母）",
+      "ans": "PRECEDENT",
+      "speak": "precedent",
+      "vocabId": "R7:PRECEDENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：大陪審團正式簽發之刑事起訴書（I 開頭，10 個字母）",
+      "ans": "INDICTMENT",
+      "speak": "indictment",
+      "vocabId": "R7:INDICTMENT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：不可侵犯的不容褻瀆的崇高神聖權利（I 開頭，10 個字母）",
+      "ans": "INVIOLABLE",
+      "speak": "inviolable",
+      "vocabId": "R7:INVIOLABLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：侵權行為的構成民事損害賠償要件的（T 開頭，8 個字母）",
+      "ans": "TORTIOUS",
+      "speak": "tortious",
+      "vocabId": "R7:TORTIOUS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：國會立法機關正式審議通過之成文制定法（S 開頭，7 個字母）",
+      "ans": "STATUTE",
+      "speak": "statute",
+      "vocabId": "R7:STATUTE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：J U R I S P _ U D E N C E (法理學研究與判例哲學)",
+      "ans": "R",
+      "speak": "jurisprudence",
+      "vocabId": "R7:JURISPRUDENCE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A B _ O _ A _ E (廢除不平等舊約或法規)",
+      "ans": "RGT",
+      "speak": "abrogate",
+      "vocabId": "R7:ABROGATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E X _ I _ P _ T E (根除洗錢犯罪溫床)",
+      "ans": "TRA",
+      "speak": "extirpate",
+      "vocabId": "R7:EXTIRPATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：P R E C _ D E N T (具有指導性約束力的司法先例)",
+      "ans": "E",
+      "speak": "precedent",
+      "vocabId": "R7:PRECEDENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ I O _ A _ L E (神聖不可侵犯的特權)",
+      "ans": "VLB",
+      "speak": "inviolable",
+      "vocabId": "R7:INVIOLABLE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：A R _ I _ R _ R Y (缺乏實質法定標準之裁量)",
+      "ans": "BTA",
+      "speak": "arbitrary",
+      "vocabId": "R7:ARBITRARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：T O R T _ O U S (民事侵權法律責任)",
+      "ans": "I",
+      "speak": "tortious",
+      "vocabId": "R7:TORTIOUS"
     }
   ],
   "boss": [
@@ -17293,6 +21180,1165 @@
       "ans": "ONA",
       "speak": "incommensurable",
       "vocabId": "R7:INCOMMENSURABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The mediator proposed a phased withdrawal of troops from the buffer zone.",
+      "options": [
+        "A. 斡旋者提議從衝突緩衝區分階段撤離武裝部隊。",
+        "B. 斡旋者要求交戰雙方立即在緩衝區部署重型武器。",
+        "C. 緩衝區的建立導致兩國軍事衝突在邊境全面升級。",
+        "D. 撤軍方案被雙方前線指揮官認定為不具可行性。"
+      ],
+      "ans": "A",
+      "explain": "phased withdrawal 分階段撤軍，buffer zone 緩衝區。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The state exercised its sovereign prerogative to withdraw from the non-proliferation treaty.",
+      "options": [
+        "A. 退約之決定受到聯合國安理會全體成員國一致讚賞。",
+        "B. 該國行使其主權專屬特權，正式退出了禁止核擴散條約。",
+        "C. 該國在外部軍事壓力下被迫放棄退約的主權權利。",
+        "D. 禁止核擴散條約明文規定任何締約國皆不得自願退出。"
+      ],
+      "ans": "B",
+      "explain": "exercised sovereign prerogative 行使主權特權。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Multilateral institutions mitigate power asymmetries by subjecting strong states to common rules.",
+      "options": [
+        "A. 強權國家在任何多邊機構中皆享有完全不受規則約束之特權。",
+        "B. 不對稱的實力差距使得建立任何共同的國際規範皆成泡影。",
+        "C. 多邊機制透過將強權納入共同規範約束，從而減緩了實力不對稱性。",
+        "D. 多邊組織的存在旨在進一步擴大強權對弱小的絕對支配權。"
+      ],
+      "ans": "C",
+      "explain": "mitigate power asymmetries 緩和實力不對稱，subjecting to common rules 約束於共同規則。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【外交】The ceasefire agreement permits humanitarian convoys, provided their routes are coordinated forty-eight hours in advance. What is required?",
+      "options": [
+        "A. Prior route coordination two days before movement.",
+        "B. An escort composed exclusively of neutral peacekeepers.",
+        "C. The immediate surrender of all heavy artillery.",
+        "D. Written permission from the international Red Cross."
+      ],
+      "ans": "A",
+      "explain": "forty-eight hours in advance 即提前兩天協調路線。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The diplomat distinguished a non-binding memorandum of understanding from a formal covenant enforceable under international law. What distinction is drawn?",
+      "options": [
+        "A. Between wartime treaties and peacetime armistices.",
+        "B. Between political intent and legal enforceability.",
+        "C. Between secret agreements and public proclamations.",
+        "D. Between bilateral accords and multilateral conventions."
+      ],
+      "ans": "B",
+      "explain": "MOU 為非具拘束力之政治意向，covenant 具國際法強制執行力。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【體制】The treaty establishes a collective security mechanism: an armed attack against one signatory is considered an attack against all. What is the principle?",
+      "options": [
+        "A. Military action requires unanimous public referendums.",
+        "B. Signatories must disarm their domestic police forces.",
+        "C. Collective self-defense binding all member states.",
+        "D. Each state retains full freedom to remain neutral."
+      ],
+      "ans": "C",
+      "explain": "attack against one considered attack against all 即集體自衛與安全機制。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：透過展現反擊實力以遏阻敵方攻擊的威懾",
+      "ans": "DETERRENCE",
+      "speak": "deterrence",
+      "vocabId": "R7:DETERRENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：同盟體系需要具備可信度的安全承諾。",
+      "ans": "ALLIANCES REQUIRE CREDIBLE COMMITMENTS",
+      "speak": "alliances require credible commitments",
+      "vocabId": "R7:ALLIANCES REQUIRE CREDIBLE COMMITMENTS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：依據國際法對違反規約之國家實施制裁（S 開頭，8 個字母）",
+      "ans": "SANCTION",
+      "speak": "sanction",
+      "vocabId": "R7:SANCTION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D E M _ L I _ A R _ Z E (依據國際條約自特定區域撤除所有軍事力量)",
+      "ans": "ITI",
+      "speak": "demilitarize",
+      "vocabId": "R7:DEMILITARIZE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Capital flight accelerated as investors sought refuge in safe haven assets.",
+      "options": [
+        "A. 投資人一致認為該國貨幣乃是全球最穩健之避險天堂。",
+        "B. 隨著投資人轉向避險資產尋求庇護，資本外逃速度加劇。",
+        "C. 大量外國資本湧入該國證券市場以追求高額風險回報。",
+        "D. 政府完全解除了所有針對境外金融資產的監管申報規定。"
+      ],
+      "ans": "B",
+      "explain": "capital flight accelerated 資本外逃加劇，safe haven 避險資產。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Regulatory arbitrage occurs when institutions exploit inconsistencies between different legal jurisdictions.",
+      "options": [
+        "A. 各國監管法規的完全統一為機構創造了前所未有的套利空間。",
+        "B. 監管套利要求所有金融交易必須在單一的國家交易所內完成。",
+        "C. 當金融機構利用不同司法管轄區之間的制度出入獲利時，即構成監管套利。",
+        "D. 監管套利在國際金融體系中被視為最受推崇的風險防範措施。"
+      ],
+      "ans": "C",
+      "explain": "regulatory arbitrage 監管套利，exploit inconsistencies 利用法規出入。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Financialization shifted corporate focus from long-term capital investment to short-term shareholder distributions.",
+      "options": [
+        "A. 金融化促使全球大型跨國企業大幅追加對基礎科研的長期投入。",
+        "B. 短期股東分配之追求被證明是推動製造業技術革新之核心動能。",
+        "C. 實體資本投資在金融化浪潮中被各國政府確立為首要的補貼標的。",
+        "D. 金融化將企業重心由長期的實體資本投資，轉向短期的股東利益分配。"
+      ],
+      "ans": "D",
+      "explain": "financialization 金融化，shifted from capital investment to shareholder distributions。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【經濟】The tax incentive is restricted to capital investments in renewable energy infrastructure. Which investments qualify?",
+      "options": [
+        "A. Speculative investments in international currency markets.",
+        "B. Capital expenditures on green energy infrastructure.",
+        "C. Any routine corporate advertising expenditure.",
+        "D. Bonuses paid to executive management teams."
+      ],
+      "ans": "B",
+      "explain": "restricted to capital investments in renewable energy infrastructure 限定綠能基礎設施。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The report distinguishes between headline inflation, which includes volatile food and energy costs, and core inflation, which filters them out. What does core inflation exclude?",
+      "options": [
+        "A. Government revenue generated by sales taxes.",
+        "B. The prices of durable commercial equipment.",
+        "C. Volatile food and energy price swings.",
+        "D. All manufacturing labor expenditure."
+      ],
+      "ans": "C",
+      "explain": "core inflation 核心通膨：排除波動劇烈之糧食與能源價格。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【機制】Moral hazard arises when an institution takes excessive risks, knowing that the public purse will absorb catastrophic losses. What drives the behavior?",
+      "options": [
+        "A. A complete lack of financial acumen among executives.",
+        "B. Strict regulatory oversight punishing prudent investments.",
+        "C. The statutory prohibition of private insurance contracts.",
+        "D. The expectation of external bailouts removing risk consequences."
+      ],
+      "ans": "D",
+      "explain": "moral hazard 道德風險：篤信政府將以公共財政紓困而過度冒險。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：可在交易所公開買賣之大宗商品",
+      "ans": "COMMODITY",
+      "speak": "commodity",
+      "vocabId": "R7:COMMODITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：資產價格泡沫終將面臨回檔修正。",
+      "ans": "ASSET BUBBLES INEVITABLY FACE CORRECTION",
+      "speak": "asset bubbles inevitably face correction",
+      "vocabId": "R7:ASSET BUBBLES INEVITABLY FACE CORRECTION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：政府透過稅收或企業營運獲得之總收入（R 開頭，7 個字母）",
+      "ans": "REVENUE",
+      "speak": "revenue",
+      "vocabId": "R7:REVENUE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：D I S _ N F _ A T _ O N (物價上漲速度放緩而非物價絕對下跌之去通脹)",
+      "ans": "ILI",
+      "speak": "disinflation",
+      "vocabId": "R7:DISINFLATION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Verisimilitude refers to the appearance or semblance of truth in fiction.",
+      "options": [
+        "A. 虛構文學作品在古典詩學中被嚴格禁止具備任何現實感。",
+        "B. 讀者之所以被該作品吸引，乃因其完全脫離了現實世界。",
+        "C. 逼真性意指虛構文學作品中所展現的真實質感或外貌。",
+        "D. 逼真性要求小說中的所有故事情節必須具備完全歷史屬實性。"
+      ],
+      "ans": "C",
+      "explain": "verisimilitude 逼真性、貌似真實的寫實質感。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The author deploys an episodic structure, linking adventures through a common traveler.",
+      "options": [
+        "A. 偶發結構要求全書情節必須在二十四小時之內發生完畢。",
+        "B. 小說中的所有冒險事件在因果關係上皆具備嚴密的必然性。",
+        "C. 章回結構之運用徹底消除了小說中所有登場人物的性格特色。",
+        "D. 作者採用章回偶發結構，透過一位共同旅人串聯起各個冒險。"
+      ],
+      "ans": "D",
+      "explain": "episodic structure 章回偶發結構，linking through traveler。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Aesthetic autonomy defends art as self-contained, resisting reduction to ideological utility.",
+      "options": [
+        "A. 審美自律論捍衛藝術的自足性，抵制將藝術貶低為意識形態工具。",
+        "B. 審美自律論主張藝術作品必須無條件服務於當前的政治宣傳。",
+        "C. 藝術的自足性在歷史上始終被證實無法脫離經濟階級利益而存在。",
+        "D. 將藝術還原為政治工具在美學哲學中被公認為最崇高之創作追求。"
+      ],
+      "ans": "A",
+      "explain": "aesthetic autonomy 審美自律，resisting ideological reduction 抵制意識形態工具化。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【修辭】An allegory functions on two levels: a literal narrative and a symbolic moral or political subtext. What does an allegory possess?",
+      "options": [
+        "A. A historical index verifying all named historical figures.",
+        "B. A complete absence of any figurative or metaphorical phrasing.",
+        "C. A literal plot accompanied by an underlying symbolic meaning.",
+        "D. An exclusive focus on the rhyming meter of spoken verse."
+      ],
+      "ans": "C",
+      "explain": "allegory（寓言）具備表面字面敘事與深層象徵涵義雙重層次。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The essay distinguishes parody, which mocks a specific style for comedic effect, from pastiche, which respectfully imitates it. What defines pastiche?",
+      "options": [
+        "A. Bitter personal satire aimed at destroying an author’s career.",
+        "B. The accidental duplication of an earlier published poem.",
+        "C. A commercial advertisement disguised as classical literature.",
+        "D. Affectionate imitation of another artist’s distinctive style."
+      ],
+      "ans": "D",
+      "explain": "pastiche（仿作）：出於致敬與借鑒之風格模仿，非諷刺嘲弄。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【文論】Bakhtin’s concept of polyphony describes a novel in which multiple independent voices interact without being subordinated to a single authorial voice. What characterizes the text?",
+      "options": [
+        "A. A multiplicity of autonomous, unmerged consciousnesses.",
+        "B. An absolute dictatorship of the narrator’s personal ideology.",
+        "C. The mechanical repetition of a single patriotic slogan.",
+        "D. A total absence of dialogue between interacting characters."
+      ],
+      "ans": "A",
+      "explain": "polyphony（複調/多聲部）：多種獨立意識相互交鋒而不屈從單一權威。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：悲劇所引發的情感宣洩與精神昇華淨化",
+      "ans": "CATHARSIS",
+      "speak": "catharsis",
+      "vocabId": "R7:CATHARSIS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：文學守護並記錄了人類經驗的幽微複雜性。",
+      "ans": "LITERATURE PRESERVES THE COMPLEXITY OF EXPERIENCE",
+      "speak": "literature preserves the complexity of experience",
+      "vocabId": "R7:LITERATURE PRESERVES THE COMPLEXITY OF EXPERIENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：探討詩歌與文藝創作本質原理之詩學理論（P 開頭，7 個字母）",
+      "ans": "POETICS",
+      "speak": "poetics",
+      "vocabId": "R7:POETICS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：H Y _ E _ B _ L E (為強調特定意境而刻意誇大其詞的誇飾修辭)",
+      "ans": "PRO",
+      "speak": "hyperbole",
+      "vocabId": "R7:HYPERBOLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Overgrazing accelerated topsoil erosion, transforming productive grassland into barren desert.",
+      "options": [
+        "A. 過度放牧使得草原本土的草種根系變得更加繁茂穩固。",
+        "B. 表土侵蝕在沙漠化進程中被證實能夠富集土壤中的有機質。",
+        "C. 草原植被在完全喪失表土後依然能透過光合作用蓬勃生長。",
+        "D. 過度放牧加速了表土侵蝕，將原本肥沃的草原轉化為不毛荒漠。"
+      ],
+      "ans": "D",
+      "explain": "overgrazing accelerated erosion 過度放牧加速表土侵蝕。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Nutrient pollution caused algal blooms that depleted dissolved oxygen across the coastal bay.",
+      "options": [
+        "A. 營養鹽污染引發藻華暴發，消耗耗盡了整座沿海海灣中的水體溶氧。",
+        "B. 藻華暴發為海灣底棲魚類與甲殼類生物提供了充沛的氧氣來源。",
+        "C. 沿海水體中的溶氧量在藻類大規模繁衍暴斃後反而顯著提升。",
+        "D. 農業化肥逕流在排入海洋前已被證明完全不含任何氮磷營養鹽。"
+      ],
+      "ans": "A",
+      "explain": "algal blooms depleted oxygen 藻華消耗溶氧。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Environmental justice demands that marginalized communities not bear the brunt of pollution.",
+      "options": [
+        "A. 公害負擔的分配在現代都市規劃中被證實完全與社會階級無關。",
+        "B. 環境正義訴求弱勢邊緣群體不應首當其衝地承擔污染與公害的重擔。",
+        "C. 環境正義主張污染密集型工廠應一律優先設立在貧困社區之中。",
+        "D. 邊緣群體在環境決策過程中被法律推定為主動放棄了抗辯權。"
+      ],
+      "ans": "B",
+      "explain": "environmental justice 環境正義，not bear the brunt 不承受污染重擔。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【保護】A wildlife sanctuary permits scientific monitoring, provided visitors remain confined to designated wooden boardwalks. What is the restriction?",
+      "options": [
+        "A. All scientific research is permanently prohibited.",
+        "B. Tourists are allowed to camp freely throughout the forest.",
+        "C. Vehicles may enter all protected nesting zones.",
+        "D. Visitors must stay exclusively on designated boardwalks."
+      ],
+      "ans": "D",
+      "explain": "confined to designated boardwalks 限定於指定木棧道。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The report distinguishes between conservation, which manages resources for sustainable human use, and preservation, which excludes human exploitation entirely. What defines preservation?",
+      "options": [
+        "A. Protecting wilderness areas from any extractive human activity.",
+        "B. Harvesting timber at a rate that allows natural regeneration.",
+        "C. Converting virgin forests into municipal golf courses.",
+        "D. Selling mineral rights in national parks to mining consortia."
+      ],
+      "ans": "A",
+      "explain": "preservation（嚴格保護）排除一切人為開採與利用。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【系統】Feedback loops in the arctic amplify warming: melting ice reduces planetary albedo, which absorbs more solar radiation and accelerates further melting. What mechanism operates?",
+      "options": [
+        "A. An artificial weather pattern created by scientific radars.",
+        "B. A self-reinforcing positive feedback loop accelerating warming.",
+        "C. A stabilizing negative feedback loop that cools the atmosphere.",
+        "D. A linear cooling trend unaffected by solar radiation."
+      ],
+      "ans": "B",
+      "explain": "positive feedback loop 正反饋迴路：冰層融化降低反照率加速暖化。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對自然資源與野生動物的保護保育工作",
+      "ans": "CONSERVATION",
+      "speak": "conservation",
+      "vocabId": "R7:CONSERVATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：生態復育必須順應自然演替的內在規律。",
+      "ans": "RESTORATION REQUIRES WORKING WITH NATURAL PROCESSES",
+      "speak": "restoration requires working with natural processes",
+      "vocabId": "R7:RESTORATION REQUIRES WORKING WITH NATURAL PROCESSES"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：維護並保護自然資源免受破壞或過度開採（P 開頭，8 個字母）",
+      "ans": "PRESERVE",
+      "speak": "preserve",
+      "vocabId": "R7:PRESERVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：P E _ M A _ R _ S T (連續兩年以上維持冰凍狀態之地下多年凍土)",
+      "ans": "RFO",
+      "speak": "permafrost",
+      "vocabId": "R7:PERMAFROST"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Were the board to approve this merger antitrust scrutiny would inevitably intensify. What is implied?",
+      "options": [
+        "A. Approval would certainly provoke heightened regulatory investigation.",
+        "B. The merger has already been cleared by regulators.",
+        "C. The board will unconditionally decline the proposal.",
+        "D. Antitrust laws do not apply to this transaction."
+      ],
+      "ans": "A",
+      "explain": "Were the board to approve 為條件句倒裝，省略 if，表示假設狀況將引發反壟斷審查。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Not only did the legislation safeguard consumer privacy but it also curtailed monopolistic telemetry. What twofold effect occurred?",
+      "options": [
+        "A. It solely focused on financial transaction taxation.",
+        "B. It protected personal data and restricted monopolistic data harvesting.",
+        "C. It promoted unrestricted corporate data collection.",
+        "D. It eliminated all regulatory oversight on tech firms."
+      ],
+      "ans": "B",
+      "explain": "Not only... but also... 倒裝並列兩項積極監管成效。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倒裝】Scarcely had the decree taken effect ___ widespread civil demonstrations erupted across the metropolitan provinces.",
+      "options": [
+        "A. when",
+        "B. than",
+        "C. then",
+        "D. until"
+      ],
+      "ans": "A",
+      "explain": "Scarcely... when... 為固定倒裝時態結構，表示「一…就…」，不可搭配 than。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【強調】What the investigating magistrate found particularly alarming was the deliberate obliteration of electronic logs. What was alarming?",
+      "options": [
+        "A. The prompt disclosure of server logs.",
+        "B. The intentional erasure of electronic evidence.",
+        "C. The accidental corruption of communication lines.",
+        "D. The magistrate procedural negligence."
+      ],
+      "ans": "B",
+      "explain": "What... was... 偽分裂強調句，被強調的主體為 deliberate obliteration（故意消除）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：正是…（分裂句強調開頭）",
+      "ans": "IT WAS PRECISELY",
+      "speak": "it was precisely",
+      "vocabId": "R7:IT WAS PRECISELY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：剛一…就（倒裝副詞）",
+      "ans": "SCARCELY HAD",
+      "speak": "scarcely had",
+      "vocabId": "R7:SCARCELY HAD"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：合約條款或協議中的免責限制或警告說明（C 開頭，6 個字母）",
+      "ans": "CAVEAT",
+      "speak": "caveat",
+      "vocabId": "R7:CAVEAT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：偏離常態規律難以預料的異常現象（A 開頭，7 個字母）",
+      "ans": "ANOMALY",
+      "speak": "anomaly",
+      "vocabId": "R7:ANOMALY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S C _ U T _ N Y (嚴密的審查與鑑識分析)",
+      "ans": "RI",
+      "speak": "scrutiny",
+      "vocabId": "R7:SCRUTINY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E F _ T A _ I O N (對錯誤假說的有力反駁)",
+      "ans": "UT",
+      "speak": "refutation",
+      "vocabId": "R7:REFUTATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S K _ R M _ S H (前線零星衝突或陣地交火)",
+      "ans": "II",
+      "speak": "skirmish",
+      "vocabId": "R7:SKIRMISH"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Had the reactor cooling pumps failed the surrounding valleys would be uninhabitable today. What did the pumps prevent?",
+      "options": [
+        "A. Unscheduled maintenance shutdowns during winter months.",
+        "B. Long term catastrophic radiological contamination of the valley.",
+        "C. Minor temporary power outages in neighboring villages.",
+        "D. The economic privatization of the regional power grid."
+      ],
+      "ans": "B",
+      "explain": "過去完成假設對應現在結果，水泵正常運轉避免了如今土地不可居住。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "If the treaty had collapsed in committee border customs duties would still apply today. What is true today?",
+      "options": [
+        "A. The treaty collapsed during parliamentary floor debate.",
+        "B. Border trade remains paralyzed under protectionist embargoes.",
+        "C. Customs duties do not apply because the treaty succeeded in committee.",
+        "D. Customs duties are currently enforced at highest historical tariffs."
+      ],
+      "ans": "C",
+      "explain": "錯綜虛擬：因為條約過關，所以今日已無邊境關稅。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【古雅虛擬】___ what may, the research team remains committed to publishing their unedited empirical findings.",
+      "options": [
+        "A. Came",
+        "B. Come",
+        "C. Comes",
+        "D. Coming"
+      ],
+      "ans": "B",
+      "explain": "Come what may 為固定倒裝讓步虛擬結構，意為「無論發生何事、不管後果如何」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【虛擬】The magistrate recommended that the testimony ___ struck from the court record due to perjury.",
+      "options": [
+        "A. was",
+        "B. would be",
+        "C. be",
+        "D. is"
+      ],
+      "ans": "C",
+      "explain": "recommend that 從句需用原形動詞虛擬式 be struck。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：無論發生何事；不管怎樣",
+      "ans": "COME WHAT MAY",
+      "speak": "come what may",
+      "vocabId": "R7:COME WHAT MAY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：即便如此；話雖如此",
+      "ans": "BE THAT AS IT MAY",
+      "speak": "be that as it may",
+      "vocabId": "R7:BE THAT AS IT MAY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：拆除軍事設施分解機器或廢除體制（D 開頭，9 個字母）",
+      "ans": "DISMANTLE",
+      "speak": "dismantle",
+      "vocabId": "R7:DISMANTLE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：用於濃縮分離高密度物質的高速離心機（C 開頭，10 個字母）",
+      "ans": "CENTRIFUGE",
+      "speak": "centrifuge",
+      "vocabId": "R7:CENTRIFUGE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：R E _ U _ E (依法退出案件審理)",
+      "ans": "CS",
+      "speak": "recuse",
+      "vocabId": "R7:RECUSE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S T I _ U L _ T E (明確約定各項義務)",
+      "ans": "PA",
+      "speak": "stipulate",
+      "vocabId": "R7:STIPULATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P O _ A _ L E (純淨可飲用之水源)",
+      "ans": "TB",
+      "speak": "potable",
+      "vocabId": "R7:POTABLE"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The sudden resignation of the chief magistrate set the cat among the pigeons in the ministry. What did it cause?",
+      "options": [
+        "A. It went completely unnoticed by legal commentators.",
+        "B. It prompted immediate celebration across all departments.",
+        "C. It provoked immense turmoil alarm and frantic speculation.",
+        "D. It restored complete tranquility and administrative decorum."
+      ],
+      "ans": "C",
+      "explain": "set the cat among the pigeons 慣用語，意為「引起騷動惶恐、投下震撼彈」。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The spokesperson ambiguous clarification added fuel to the fire of media speculation. What was the consequence?",
+      "options": [
+        "A. It successfully quelled and extinguished public curiosity.",
+        "B. It disproved all speculative conspiracy narratives.",
+        "C. It established complete consensus across the press corps.",
+        "D. It exacerbated and intensified public rumors and controversy."
+      ],
+      "ans": "D",
+      "explain": "add fuel to the fire 表示「火上加油、使爭議更為加劇」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The novelist poignant portrayal of exile struck a profound ___ with thousands of displaced readers.",
+      "options": [
+        "A. bell",
+        "B. melody",
+        "C. chord",
+        "D. string"
+      ],
+      "ans": "C",
+      "explain": "strike a chord with 表示「在…心中引起強烈共鳴」。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【成語】The corporate board paid mere ___ service to environmental sustainability while expanding offshore drilling.",
+      "options": [
+        "A. mouth",
+        "B. vocal",
+        "C. tongue",
+        "D. lip"
+      ],
+      "ans": "D",
+      "explain": "pay lip service to 表示「口惠而實不至、僅做表面文章」。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：惡意中傷抹黑；嚴厲毀謗",
+      "ans": "CAST DEVASTATING ASPERSIONS",
+      "speak": "cast devastating aspersions",
+      "vocabId": "R7:CAST DEVASTATING ASPERSIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：腦中一片空白；毫無頭緒",
+      "ans": "DREW A COMPLETE BLANK",
+      "speak": "drew a complete blank",
+      "vocabId": "R7:DREW A COMPLETE BLANK"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：提出真憑實據以證實或驗證某主張（S 開頭，12 個字母）",
+      "ans": "SUBSTANTIATE",
+      "speak": "substantiate",
+      "vocabId": "R7:SUBSTANTIATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：使危機病情或爭端進一步惡化加劇（E 開頭，10 個字母）",
+      "ans": "EXACERBATE",
+      "speak": "exacerbate",
+      "vocabId": "R7:EXACERBATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：T E S _ A M _ N T (歷史遺存作為卓越文明之證明)",
+      "ans": "TE",
+      "speak": "testament",
+      "vocabId": "R7:TESTAMENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A C C _ M M O _ A T E (調整政策以配合現實需求)",
+      "ans": "OD",
+      "speak": "accommodate",
+      "vocabId": "R7:ACCOMMODATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D R A _ O N _ A N (刑罰尺度極其嚴刑峻法)",
+      "ans": "CI",
+      "speak": "draconian",
+      "vocabId": "R7:DRACONIAN"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A straw man fallacy involves distorting an opponent argument into a caricature to refute it. What is the tactic?",
+      "options": [
+        "A. Quoting the opponent assertions with scrupulous fidelity.",
+        "B. Agreeing with every premise while disputing the conclusion.",
+        "C. Refusing to speak during public academic debates.",
+        "D. Misrepresenting a claim so that it appears ridiculous and easily dismantled."
+      ],
+      "ans": "D",
+      "explain": "稻草人謬誤（Straw man fallacy）曲解誇大對手論點以利輕易駁斥。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Teleological explanations account for phenomena in terms of purpose rather than physical causes. What do they prioritize?",
+      "options": [
+        "A. Inherent purpose, ultimate ends, and designed function.",
+        "B. Mechanical physical interactions between atomic particles.",
+        "C. Random chaotic turbulence in thermodynamic systems.",
+        "D. Statistical probabilities derived from large sample pools."
+      ],
+      "ans": "A",
+      "explain": "目的論（Teleological explanations）優先以終極目的與設計功能來解釋現象。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【辯證法】In classical Hegelian dialectics, what emerges from the tension between a thesis and its antithesis?",
+      "options": [
+        "A. The permanent and total annihilation of both intellectual positions.",
+        "B. An infinite regression of identical and unresolvable disputes.",
+        "C. The absolute triumph of the initial thesis over reality.",
+        "D. A higher synthesis that sublates and reconciles contradictions."
+      ],
+      "ans": "D",
+      "explain": "黑格爾辯證法中，正題（thesis）與反題（antithesis）的內在矛盾催生出更高階的合題（synthesis）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認知】The Dunning Kruger effect demonstrates that individuals with low competence tend to:",
+      "options": [
+        "A. grossly overestimate their own relative cognitive ability.",
+        "B. accurately assess their limitations with humble introspection.",
+        "C. exhibit superior performance under rigorous testing.",
+        "D. refuse to offer any opinions on complex subjects."
+      ],
+      "ans": "A",
+      "explain": "達克效應（Dunning Kruger effect）指出能力不足者傾向嚴重高估自身專業水準。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：奧坎剃刀原則告誡人們",
+      "ans": "OCCAM RAZOR CAUTIONS",
+      "speak": "occam razor cautions",
+      "vocabId": "R7:OCCAM RAZOR CAUTIONS"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：目的論性質的論點主張",
+      "ans": "TELEOLOGICAL CLAIMS",
+      "speak": "teleological claims",
+      "vocabId": "R7:TELEOLOGICAL CLAIMS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：啟發式捷思的以經驗法則快速求解的（H 開頭，9 個字母）",
+      "ans": "HEURISTIC",
+      "speak": "heuristic",
+      "vocabId": "R7:HEURISTIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：邏輯學中具備真偽可驗證性的陳述命題（P 開頭，11 個字母）",
+      "ans": "PROPOSITION",
+      "speak": "proposition",
+      "vocabId": "R7:PROPOSITION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：F A _ S _ F Y (經由嚴密實驗反證駁斥既有理論)",
+      "ans": "LI",
+      "speak": "falsify",
+      "vocabId": "R7:FALSIFY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：D I A _ E C _ I C (貫穿社會變革與科學探索的辯證論爭)",
+      "ans": "LT",
+      "speak": "dialectic",
+      "vocabId": "R7:DIALECTIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B R _ C _ E T (刻意懸置預設立場以獲得純粹體驗)",
+      "ans": "AK",
+      "speak": "bracket",
+      "vocabId": "R7:BRACKET"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Were the high court to sanction warrantless surveillance civil liberties would be imperiled. What is implied?",
+      "options": [
+        "A. Sanctioning warrantless wiretaps would destroy constitutional freedoms.",
+        "B. The court has officially authorized unlimited surveillance.",
+        "C. Warrantless wiretaps have no impact on citizen privacy.",
+        "D. Constitutional liberties are immune to executive decrees."
+      ],
+      "ans": "A",
+      "explain": "Were the court to sanction 為虛擬倒裝，警告若批准無令狀搜查將危害公民自由。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Had the state not recognized the locus standi of citizens the aquifer would be polluted today. What prevented pollution?",
+      "options": [
+        "A. Secret executive settlements with polluters.",
+        "B. Granting citizens the legal standing to sue in court.",
+        "C. Total government deregulation of industrial chemical disposal.",
+        "D. The complete absence of environmental advocacy groups."
+      ],
+      "ans": "B",
+      "explain": "錯綜條件句：若非當初承認公民的訴訟主體資格（locus standi），地下含水層今日早已遭受污染。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【強調】It was precisely through textualist statutory interpretation ___ the appellate bench resolved the dispute.",
+      "options": [
+        "A. that",
+        "B. which",
+        "C. whom",
+        "D. what"
+      ],
+      "ans": "A",
+      "explain": "It was through... that... 分裂強調句。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【虛擬】The magistrate insisted that the evidentiary deposition ___ sealed pending forensic audit.",
+      "options": [
+        "A. were",
+        "B. be",
+        "C. is",
+        "D. was"
+      ],
+      "ans": "B",
+      "explain": "insist that + 原形虛擬式 be sealed。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：在法庭上的訴訟主體資格",
+      "ans": "LOCUS STANDI IN COURT",
+      "speak": "locus standi in court",
+      "vocabId": "R7:LOCUS STANDI IN COURT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：享有豁免於司法起訴之特權",
+      "ans": "SOVEREIGN IMMUNITY FROM",
+      "speak": "sovereign immunity from",
+      "vocabId": "R7:SOVEREIGN IMMUNITY FROM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：徹底剷除連根拔起根絕陋習或體制（E 開頭，9 個字母）",
+      "ans": "EXTIRPATE",
+      "speak": "extirpate",
+      "vocabId": "R7:EXTIRPATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：專斷的缺乏客觀法律依據任意妄為的（A 開頭，9 個字母）",
+      "ans": "ARBITRARY",
+      "speak": "arbitrary",
+      "vocabId": "R7:ARBITRARY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A P P _ L L _ T E (上訴級別之司法審級)",
+      "ans": "EA",
+      "speak": "appellate",
+      "vocabId": "R7:APPELLATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：I N D _ C T _ E N T (刑事重罪起訴書)",
+      "ans": "IM",
+      "speak": "indictment",
+      "vocabId": "R7:INDICTMENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：S T _ T _ T E (議會成文法案法規)",
+      "ans": "AU",
+      "speak": "statute",
+      "vocabId": "R7:STATUTE"
     }
   ]
 }

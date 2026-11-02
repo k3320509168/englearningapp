@@ -124,6 +124,21 @@ export function vocabKey(q: Question): string | null {
   if (q.vocabId) return q.vocabId;
   if (q.type === 'spell' || q.type === 'voice') return q.ans;
   if (q.type === 'fill') return q.speak ? q.speak.toUpperCase().replace(/[^A-Z]/g, '') : null;
+  if (q.type === 'choice') {
+    if (q.speak && !q.speak.includes(' ')) {
+      const spkKey = q.speak.toUpperCase().replace(/[^A-Z0-9_]/g, '');
+      if (VOCAB[spkKey]) return spkKey;
+    }
+    if (q.options && q.ans) {
+      const letters = ['A', 'B', 'C', 'D'];
+      const idx = letters.indexOf(q.ans.trim().toUpperCase());
+      if (idx >= 0 && q.options[idx]) {
+        const text = q.options[idx].replace(/^[A-D]\.\s*/, '').trim();
+        const optKey = text.toUpperCase().replace(/[^A-Z0-9_]/g, '');
+        if (VOCAB[optKey]) return optKey;
+      }
+    }
+  }
   return null;
 }
 

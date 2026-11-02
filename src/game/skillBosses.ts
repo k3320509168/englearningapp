@@ -54,7 +54,7 @@ export function skillBossQuestions(id: SkillBossId, pool: Question[], rand: () =
     case 'speaking':
       return words.map(w => ({ type: 'voice', desc: `請唸出單字：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
     case 'reading':
-      return pool.filter(q => q.type === 'choice');
+      return pool.filter(q => q.type === 'choice' && !q.desc.startsWith('🎧'));
     case 'listening': {
       // 聽發音選意思：錯誤選項取自其他單字的中文
       const meanings = [...new Set(Object.values(VOCAB).map(v => v.meaning))];

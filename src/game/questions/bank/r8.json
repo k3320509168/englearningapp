@@ -22085,6 +22085,774 @@
       "speak": "disenchantment",
       "explain": "DISENCHANTMENT (n.)：驅逐神祕魔法之世界祛魅。例句：The relentless spread of secular empiricism brought about the psychological ___ of the modern cosmos.（世俗經驗主義科學的野蠻生長，為人類現代文明不可逆地拉開了宇宙全面世俗祛魅（Disenchantment）的沉重大幕。）",
       "vocabId": "R8:DISENCHANTMENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The multi messenger observation detected coincident gravitational waves and a short gamma ray burst. What collided?",
+      "options": [
+        "A. Two rocky terrestrial asteroids colliding inside the main asteroid belt of the solar system.",
+        "B. A commercial cargo ship striking an iceberg in the North Atlantic ocean during winter.",
+        "C. A binary neutron star merger producing a kilonova and synthesized heavy r process lanthanides.",
+        "D. A swarm of alien space shuttles conducting military target practice in deep interstellar space."
+      ],
+      "ans": "C",
+      "explain": "震驚世界的多信使天文學（Multi-Messenger Astronomy）聯動捕捉到了引力波與短伽瑪射線暴的完美時空共振：雙中子星相對論碰撞引爆了千新星（Kilonova），在宇宙深處噴射並合成了海量黃金與稀土重元素！"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The theoretical team applied the Kerr Newman metric to evaluate the black hole. What parameters were specified?",
+      "options": [
+        "A. The physical color of the event horizon, the temperature of surrounding interstellar clouds, and age.",
+        "B. The chemical molecular formula of the rocks trapped beneath the surface of the event horizon.",
+        "C. The architectural dimensions of the spacecraft observing the black hole from a safe orbital distance.",
+        "D. Mass, angular momentum, and electric charge, defining the ultimate stationary state under the no hair theorem."
+      ],
+      "ans": "D",
+      "explain": "理論物理團隊啟用了愛因斯坦場方程中最完備的克爾-紐曼精確解（Kerr-Newman Metric）：依據無毛定理（No-Hair Theorem），僅憑質量、角動量與淨電荷三大參數，便完整錨定了這顆旋轉帶電黑洞的一切外在時空特徵。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The gravitational wave detector registered a ringdown waveform matching quasi normal modes. What was ringing?",
+      "options": [
+        "A. The newly formed perturbed black hole horizon settling into a stationary state through damped vibrations.",
+        "B. The metal bells installed on the tower of the astronomical observatory ringing during high winds.",
+        "C. An acoustic speaker system broadcasting classical orchestral sonatas into the vacuum chamber.",
+        "D. The mechanical elevator cables vibrating as astronomers traveled up to the telescope platform."
+      ],
+      "ans": "A",
+      "explain": "引力波探測器捕捉到了黑洞並合終局的「鈴宕（Ringdown）準正規模」衰減振盪：新生的扭曲黑洞事件視界猶如被重錘敲擊的青銅巨鐘，透過噴射特定阻尼特徵的引力波振盪，平靜滑向永恆寧靜的平衡態。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The astrophysicists modeled the Eddington accretion luminosity limit for the active galactic nucleus. What was balanced?",
+      "options": [
+        "A. The commercial cost of operating astronomical supercomputers against the annual university budget.",
+        "B. The mechanical weight of the primary mirror against the steel structural trusses of the observatory.",
+        "C. The ambient atmospheric humidity inside the cleanroom against the cooling temperature of liquid nitrogen.",
+        "D. Outward radiation pressure against inward gravitational pull, establishing the maximum steady accretion rate."
+      ],
+      "ans": "D",
+      "explain": "天體物理學家為該超大質量黑洞活動星系核（AGN）精準計算出了「愛丁頓光度極限（Eddington Limit）」：向外的強烈輻射光子壓與向內的毀滅性引力拉扯在此達成了脆弱的平衡，劃定了黑洞穩定吸積物質的極限進食天花板。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The orbital radar mapper detected subsurface liquid dielectric reflections beneath the South Polar ice cap. What was found?",
+      "options": [
+        "A. Pockets of subglacial hypersaline liquid water preserved beneath kilometers of frozen Martian carbon dioxide.",
+        "B. An abandoned subterranean extraterrestrial mining colony constructed out of refined stainless steel.",
+        "C. A massive deposit of solid diamond crystals floating on a sea of boiling molten volcanic lava.",
+        "D. A subterranean network of copper wires connecting robotic exploration landers across the planet."
+      ],
+      "ans": "A",
+      "explain": "火星軌道透地雷達捕捉到了南極冰蓋深層異常明亮的高介電常數反射信號：強烈暗示在數公里厚的固態乾冰層之下，深埋著得益於高鹽度與地熱而維持液態的火星極地深層冰下鹹水湖。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The spectrometer identified pristine Population III chemical signatures in a high redshift Lyman alpha emitter. What was absent?",
+      "options": [
+        "A. Any gravitational interaction, with the stars floating without mutual celestial attraction.",
+        "B. Any spectral traces of elements heavier than helium, indicating stars formed from pristine primordial gas.",
+        "C. All traces of hydrogen and helium, proving the galaxy was composed entirely of solid metallic iron.",
+        "D. Any form of electromagnetic radiation, with the galaxy absorbing all visible light in outer space."
+      ],
+      "ans": "B",
+      "explain": "深空光譜儀在極高紅移的萊曼-阿爾法發射星系中，捕捉到了傳說中的「第三星族（Pop III）恆星」的原始光譜指紋：完全檢測不到任何比氦更重的金屬元素譜線，證明其正是由大爆炸原初氣體凝聚而成的人類第一代巨星。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The astronomical team measured the spin parameter of the supermassive black hole via iron K alpha line reflection. What was determined?",
+      "options": [
+        "A. The dimensionless Kerr spin parameter a/M, approaching ninety nine percent of the theoretical maximum.",
+        "B. The exact physical age of the black hole in calendar years calculated down to the nearest minute.",
+        "C. The chemical molecular composition of the solid rock core buried at the absolute center of the horizon.",
+        "D. The physical weight of the black hole in metric kilograms displayed on a mechanical dial instrument."
+      ],
+      "ans": "A",
+      "explain": "天體光譜物理團隊利用吸積盤鐵K-alpha射線的極端相對論紅移與多普勒展寬，精確量化了該超大質量黑洞的自旋參數：證明其克爾自旋參數 $a/M$ 高達 0.99，已逼近廣義相對論所容許的極限旋轉天花板。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The space probe captured high resolution imagery of cryovolcanic plumes on the icy moon Enceladus. What was venting?",
+      "options": [
+        "A. Thousands of small plastic beads that coated the surrounding orbital rings with white paint.",
+        "B. Subsurface liquid ocean water containing organic hydrocarbons and molecular hydrogen erupted into space.",
+        "C. Boiling molten volcanic basalt rock that paved over the icy surface with dark black asphalt.",
+        "D. A stream of pressurized air containing oxygen that allowed human astronauts to breathe freely."
+      ],
+      "ans": "B",
+      "explain": "卡西尼號探測器掠過土衛二（Enceladus）上空，近距拍下了震撼的「冰火山羽流（Cryovolcanic Plumes）」爆發：地下深海的海水攜帶著有機烴類、甲烷與分子氫，沿著冰層虎條紋裂縫瘋狂噴湧入太空，為尋找地外生命撕開了最耀眼的窗口。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【暴脹宇宙學】Alan Guth's cosmic inflation theory resolves the horizon and flatness problems by positing that:",
+      "options": [
+        "A. the Big Bang was physically contained inside an ordinary glass jar manufactured in a laboratory.",
+        "B. all stars in the cosmos formed simultaneously within five seconds of the creation of the earth.",
+        "C. the nascent universe underwent an exponential metric spatial expansion driven by an inflaton scalar field.",
+        "D. the universe remained totally stationary, static, and frozen at absolute zero for an eternity."
+      ],
+      "ans": "C",
+      "explain": "阿蘭·古斯（Alan Guth）的「暴脹宇宙學（Cosmic Inflation）」為現代大爆炸模型補上了最關鍵的拼圖：在創世之初的大統一時代，暴脹純量場驅動極早期宇宙在飛秒之間經歷了超光速指數級的暴脹擴張，優雅化解了視界難題與平坦性悖論。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【重子不對稱機制】Sakharov's three conditions for baryogenesis explain the observed matter-antimatter asymmetry by requiring:",
+      "options": [
+        "A. the total, instantaneous destruction of all matter in the universe every thousand calendar years.",
+        "B. the permanent physical prohibition of nuclear fusion reactions across all celestial galaxies.",
+        "C. that all subatomic particles possess identical electrical charges and infinite mass.",
+        "D. baryon number violation, C and CP symmetry violation, and thermal non equilibrium interactions."
+      ],
+      "ans": "D",
+      "explain": "蘇聯物理學巨擘薩哈羅夫提出的「重子生成三大條件（Sakharov Conditions）」破解了宇宙反物質湮滅謎團：宇宙必須同時具備「重子數不守恆」、「C與CP對稱性破缺」、以及「脫離熱平衡的非平衡態過程」，方能在創世大爆炸中留存下構成今日世界的物質殘留。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【彭羅斯霍金奇點定理】The Penrose Hawking singularity theorems in classical general relativity prove that:",
+      "options": [
+        "A. spacetime singularities, where curvature diverges, are physically inevitable outcomes of gravitational collapse.",
+        "B. black holes are optical illusions that disappear completely whenever observed using ultraviolet light.",
+        "C. massive astronomical stars can expand indefinitely without ever running out of thermonuclear fuel.",
+        "D. gravitational forces spontaneously convert into repulsive anti gravity at high stellar densities."
+      ],
+      "ans": "A",
+      "explain": "羅傑·彭羅斯（Roger Penrose）與史蒂芬·霍金（Stephen Hawking）的「奇異點定理」在古典廣義相對論幾何張量上做出了終極宣判：只要符合合理的能量條件，大質量星體的引力坍縮將不可避免地誕生出時空曲率發散至無窮大的物理奇異點。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【琴斯不穩定性】The Jeans instability criterion determines the physical threshold at which an interstellar gas cloud:",
+      "options": [
+        "A. heats up to ten million degrees and explodes into high explosive fireworks in deep outer space.",
+        "B. dissolves into clear liquid freshwater and rains down upon terrestrial planetary oceans.",
+        "C. freezes into a solid indestructible block of iron metal drifting between distant constellations.",
+        "D. overcomes internal thermal gas pressure through its own mutual gravity, precipitating spontaneous star formation."
+      ],
+      "ans": "D",
+      "explain": "恆星形成天體物理中的「琴斯不穩定性（Jeans Instability）」劃定了分子雲塌縮誕生恆星的熱力學判據：當低溫緻密分子雲的自身引力位能，壓倒了內部氣體熱運動壓強與湍流時，雲團將失穩發生災難性自吸引坍縮，點燃新恆星的胚胎。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【宇宙弦假說】Cosmic strings in theoretical cosmology are hypothetical one-dimensional topological defects that:",
+      "options": [
+        "A. possess astronomical mass density, narrow widths of subatomic scales, and bend spacetime into conical geometry.",
+        "B. are physical ropes woven out of steel cables that anchor planets to the center of the galaxy.",
+        "C. transmit electricity across interplanetary distances to power commercial human mining outposts.",
+        "D. are optical fibers installed beneath oceanic seafloors to facilitate international communications."
+      ],
+      "ans": "A",
+      "explain": "理論宇宙學中的「宇宙弦（Cosmic Strings）」是大統一相變時期遺留下來的一維拓撲缺陷：厚度僅為亞原子尺度、長度卻貫穿星系，每公里質量高達萬億噸，其恐怖的重力張力能將周圍時空硬生生折疊為錐形幾何。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【托爾曼奧本海默沃爾科夫極限】The Tolman Oppenheimer Volkoff (TOV) limit establishes the theoretical maximum mass of:",
+      "options": [
+        "A. an optical telescope mirror that can be physically manufactured inside terrestrial cleanroom labs.",
+        "B. a stable, non rotating cold neutron star (approximately two solar masses) beyond which collapse into a black hole is unavoidable.",
+        "C. a commercial spacecraft permitted to dock at the international space station under international law.",
+        "D. an agricultural wheat grain harvested from volcanic soils on active planetary fault lines."
+      ],
+      "ans": "B",
+      "explain": "托爾曼-奧本海默-沃爾科夫極限（TOV Limit）確立了中子星的生死天花板：一顆穩定的冷態非旋轉中子星的最大質量極限約為 2.1 個太陽質量，一旦吸積超過該門檻，連中子簡併壓也將徹底崩潰，無可挽回地坍縮為終極引力黑洞。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【德西特與反德西特空間】In relativistic theoretical cosmology, de Sitter (dS) spacetime is defined as a maximally symmetric spacetime with:",
+      "options": [
+        "A. positive cosmological constant, modeling the accelerating expansion of our dark energy dominated cosmos.",
+        "B. negative cosmological constant where gravity acts as a repulsive force repelling all material objects.",
+        "C. infinite flat Euclidean spatial geometry where light waves travel in perfectly straight line paths.",
+        "D. zero spacetime curvature where time flows backward in forty eight hour cyclical loops."
+      ],
+      "ans": "A",
+      "explain": "德西特時空（de Sitter Spetime）是現代暗能量宇宙學最核心的幾何基石：具有正宇宙學常數（$Lambda > 0$）的最大對稱時空流形，完美刻畫了在暗能量斥力支配下、宇宙隨時間呈指數級加速膨脹的宏偉幾何拓撲。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【重力波記憶效應】The gravitational wave memory effect in relativistic astrophysics refers to:",
+      "options": [
+        "A. the physical heating of optical mirrors inside laser interferometer buildings during earthquakes.",
+        "B. the permanent, non zero spatial displacement of test masses that persists after a burst of gravitational waves passes.",
+        "C. the computerized digital data files stored on magnetic hard drives aboard orbital space probes.",
+        "D. the biological human memories of astronomical constellations recorded in handwritten ancient folklore."
+      ],
+      "ans": "B",
+      "explain": "引力波記憶效應（Gravitational Wave Memory Effect）是愛因斯坦引力場方程最深邃的非線性預言之一：當一束高能引力波暴席捲穿過測試天體陣列後，時空度規將遺留下一道永恆不可逆的空間殘餘位移偏差。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：驅使極早期空間指數級暴脹之暴脹純量場",
+      "ans": "COSMIC INFLATION SCALAR INFLATON FIELD",
+      "speak": "cosmic inflation scalar inflaton field",
+      "explain": "cosmic inflation scalar inflaton field (phr.)：驅使極早期空間指數級暴脹之暴脹純量場。例句：The cosmic inflation scalar inflaton field resolved the horizon and flatness puzzles of cosmology.（暴脹宇宙學中的暴脹純量場，以超越想像的磅礴相變力量，一舉撫平了極早期宇宙的視界與平坦性天問。）",
+      "vocabId": "R8:COSMIC INFLATION SCALAR INFLATON FIELD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：打破對稱決定物質倖存之薩哈羅夫重子生成條件",
+      "ans": "SAKHAROV BARYOGENESIS THERMAL NON EQUILIBRIUM",
+      "speak": "sakharov baryogenesis thermal non equilibrium",
+      "explain": "sakharov baryogenesis thermal non equilibrium (phr.)：打破對稱決定物質倖存之薩哈羅夫重子生成條件。例句：Satisfying the sakharov baryogenesis thermal non equilibrium criterion permitted matter to triumph over antimatter.（唯有在嚴格滿足薩哈羅夫非熱平衡重子生成準則的大爆炸混沌中，物質方才險勝反物質，締造了我們存在的宇宙。）",
+      "vocabId": "R8:SAKHAROV BARYOGENESIS THERMAL NON EQUILIBRIUM"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：廣義相對論下引力坍縮不可避免之奇點定理",
+      "ans": "PENROSE HAWKING SINGULARITY THEOREM INEVITABILITY",
+      "speak": "penrose hawking singularity theorem inevitability",
+      "explain": "penrose hawking singularity theorem inevitability (phr.)：廣義相對論下引力坍縮不可避免之奇點定理。例句：The mathematical proof affirmed the penrose hawking singularity theorem inevitability inside black hole cores.（嚴密的微分幾何張量數學，堅不可摧地證實了彭羅斯-霍金引力坍縮奇異點不可避免性的客觀物理宿命。）",
+      "vocabId": "R8:PENROSE HAWKING SINGULARITY THEOREM INEVITABILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：初生黑洞受擾如巨鐘哀鳴之引力波準正規模鈴宕",
+      "ans": "GRAVITATIONAL WAVE QUASI NORMAL MODE RINGDOWN",
+      "speak": "gravitational wave quasi normal mode ringdown",
+      "explain": "gravitational wave quasi normal mode ringdown (phr.)：初生黑洞受擾如巨鐘哀鳴之引力波準正規模鈴宕。例句：The merger culminated in a gravitational wave quasi normal mode ringdown encoding horizon geometry.（雙黑洞世紀大碰撞的終樂章，在引力波準正規模鈴宕的衰減殘響中，精準銘刻下新生事件視界的無瑕幾何特徵。）",
+      "vocabId": "R8:GRAVITATIONAL WAVE QUASI NORMAL MODE RINGDOWN"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：丈量宇宙加速膨脹歷史之重子聲學振盪標準尺",
+      "ans": "BARYON ACOUSTIC OSCILLATION SOUND HORIZON RULER",
+      "speak": "baryon acoustic oscillation sound horizon ruler",
+      "explain": "baryon acoustic oscillation sound horizon ruler (phr.)：丈量宇宙加速膨脹歷史之重子聲學振盪標準尺。例句：Surveys mapped millions of galaxies using the baryon acoustic oscillation sound horizon ruler.（大天區星系巡天以重子聲學振盪聲學視界標準尺為指引，以前所未有的精度重構了宇宙加速膨脹的深邃歷史。）",
+      "vocabId": "R8:BARYON ACOUSTIC OSCILLATION SOUND HORIZON RULER"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：向外光子斥力抵衡內向引力之愛丁頓吸積極限",
+      "ans": "EDDINGTON RADIATION ACCRETION LUMINOSITY THRESHOLD",
+      "speak": "eddington radiation accretion luminosity threshold",
+      "explain": "eddington radiation accretion luminosity threshold (phr.)：向外光子斥力抵衡內向引力之愛丁頓吸積極限。例句：Supermassive quasars burn near the eddington radiation accretion luminosity threshold in the early universe.（宇宙清晨時代的超級類星體，以狂暴姿態在緊貼愛丁頓輻射吸積光度極限的刀鋒邊緣貪婪吞噬著周遭物質。）",
+      "vocabId": "R8:EDDINGTON RADIATION ACCRETION LUMINOSITY THRESHOLD"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：中子簡併壓抗衡坍縮之上限之TOV質量極限",
+      "ans": "TOLMAN OPPENHEIMER VOLKOFF MASS LIMIT",
+      "speak": "tolman oppenheimer volkoff mass limit",
+      "explain": "tolman oppenheimer volkoff mass limit (phr.)：中子簡併壓抗衡坍縮之上限之TOV質量極限。例句：The dense stellar core breached the tolman oppenheimer volkoff mass limit to forge a pristine black hole.（超限的緻密天體核心無情衝破了托爾曼-奧本海默-沃爾科夫極限的最後防線，轟然坍塌為純粹的幾何黑洞。）",
+      "vocabId": "R8:TOLMAN OPPENHEIMER VOLKOFF MASS LIMIT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：土衛二深海冰下湧出有機物之冰火山熱液羽流",
+      "ans": "CRYOVOLCANIC HYDROTHERMAL OCEAN PLUME",
+      "speak": "cryovolcanic hydrothermal ocean plume",
+      "explain": "cryovolcanic hydrothermal ocean plume (phr.)：土衛二深海冰下湧出有機物之冰火山熱液羽流。例句：Spectrometers flew through the cryovolcanic hydrothermal ocean plume to analyze prebiotic chemistry.（深空探測器勇敢俯衝直接穿透土衛二的冰火山熱液羽流，在漫天冰晶噴霧中直接採樣解析生命起源前夕的生化分子。）",
+      "vocabId": "R8:CRYOVOLCANIC HYDROTHERMAL OCEAN PLUME"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：極早期宇宙在暴脹場驅動下空間度規以超光速呈指數級急劇擴張的暴脹階段（I 開頭，9 個字母）",
+      "ans": "INFLATION",
+      "speak": "inflation",
+      "explain": "INFLATION (n.)：極早期宇宙在暴脹場驅動下空間度規以超光速呈指數級急劇擴張的暴脹階段。例句：Cosmic inflation stretched primordial quantum fluctuations into large scale cosmic structures.（宇宙暴脹（Inflation）將微觀量子漲落神奇地拉扯放大，化作今日星系長城與浩瀚宇宙大尺度結構的原初胚胎。）",
+      "vocabId": "R8:INFLATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：早期宇宙物理相變中生成正反物質不對稱並留下淨重子物質的重子生成過程（B 開頭，12 個字母）",
+      "ans": "BARYOGENESIS",
+      "speak": "baryogenesis",
+      "explain": "BARYOGENESIS (n.)：早期宇宙物理相變中生成正反物質不對稱並留下淨重子物質的重子生成過程。例句：Understanding baryogenesis represents one of the supreme unsolved frontiers in fundamental particle physics.（徹底破譯重子生成（Baryogenesis）背後的微觀物理密碼，巍然屹立於當代理論物理與宇宙學最高峰巒。）",
+      "vocabId": "R8:BARYOGENESIS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：克爾旋轉黑洞事件視界外時空被強制拖拽一同旋轉的能層幾何區域（E 開頭，10 個字母）",
+      "ans": "ERGOSPHERE",
+      "speak": "ergosphere",
+      "explain": "ERGOSPHERE (n.)：克爾旋轉黑洞事件視界外時空被強制拖拽一同旋轉的能層幾何區域。例句：Particles entering the ergosphere can split into paired fragments, extracting energy from the black hole.（跌入克爾黑洞能層（Ergosphere）的微觀粒子在高速分裂後，能以神蹟般的手法將黑洞的旋轉質能偷渡帶出。）",
+      "vocabId": "R8:ERGOSPHERE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：物理性質在空間不同方向上展現出非均質性與細微方向差異的各向異性（A 開頭，10 個字母）",
+      "ans": "ANISOTROPY",
+      "speak": "anisotropy",
+      "explain": "ANISOTROPY (n.)：物理性質在空間不同方向上展現出非均質性與細微方向差異的各向異性。例句：Tiny temperature anisotropy in the cosmic microwave background revealed primordial density ripples.（宇宙微波背景輻射中僅十萬分之一度的微小溫度各向異性（Anisotropy），如實銘刻著創世初期的物質密度漣漪。）",
+      "vocabId": "R8:ANISOTROPY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：天體藉助其強大引力場吸引並捕獲周遭瀰漫氣體、塵埃或伴星物質的吸積過程（A 開頭，9 個字母）",
+      "ans": "ACCRETION",
+      "speak": "accretion",
+      "explain": "ACCRETION (n.)：天體藉助其強大引力場吸引並捕獲周遭瀰漫氣體、塵埃或伴星物質的吸積過程。例句：The luminous accretion disc surrounding the quasar emits intense X-rays through gravitational friction.（環繞類星體旋轉的熾熱吸積盤（Accretion），在極端引力摩擦加熱下向深空噴射出刺眼的高能 X 射線風暴。）",
+      "vocabId": "R8:ACCRETION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：I N F L _ T I O N (極早期空間急劇膨脹之暴脹)",
+      "ans": "A",
+      "speak": "inflation",
+      "explain": "INFLATION (n.)：極早期空間急劇膨脹之暴脹。例句：Exponential metric ___ flattened the curvature of the cosmos to near mathematical precision.（在極早期宇宙上演的指數級幾何暴脹（Inflation），將整個宇宙的空間曲率撫平至近乎絕對平坦的極限。）",
+      "vocabId": "R8:INFLATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E R _ O S _ H _ R E (旋轉黑洞時空拖拽之能層)",
+      "ans": "GPE",
+      "speak": "ergosphere",
+      "explain": "ERGOSPHERE (n.)：旋轉黑洞時空拖拽之能層。例句：In the static limit boundary outside the ___, observers are forced to rotate with the spacetime metric.（一旦跨越進入能層（Ergosphere）的靜止極限邊界，任何物質都將身不由己地被旋轉時空度規強行拖拽打轉。）",
+      "vocabId": "R8:ERGOSPHERE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S U P _ R M _ S S _ V E (盤踞星系中心之超大質量的)",
+      "ans": "EAI",
+      "speak": "supermassive",
+      "explain": "SUPERMASSIVE (adj.)：盤踞星系中心之超大質量的。例句：The Event Horizon Telescope imaged the ring around the ___ black hole at the center of M87.（事件視界望遠鏡震撼拍下了 M87 星系核心深處那顆超大質量（Supermassive）深淵巨獸的金色光環。）",
+      "vocabId": "R8:SUPERMASSIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：A N I S O _ R O P Y (方向差異微調之各向異性)",
+      "ans": "T",
+      "speak": "anisotropy",
+      "explain": "ANISOTROPY (n.)：方向差異微調之各向異性。例句：Statistical analysis of the dipole ___ isolates Earth's peculiar motion relative to the cosmic frame.（對宇宙微波背景偶極各向異性（Anisotropy）的精密解算，精確剝離出了地球相對宇宙靜止參考系的本動速度。）",
+      "vocabId": "R8:ANISOTROPY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The maritime arbitral tribunal rendered a final award on an unseaworthiness dispute. What was determined?",
+      "options": [
+        "A. The cargo owner failed to paint the wooden packing crates with waterproof neon orange paint.",
+        "B. The ship captain was declared legally incompetent because of poor handwriting on the cargo manifest.",
+        "C. The maritime shipping route was ordered closed forever to all international merchant vessel traffic.",
+        "D. The shipowner failed to exercise due diligence before and at the beginning of the voyage to make the ship seaworthy."
+      ],
+      "ans": "D",
+      "explain": "倫敦海事仲裁委員會（LMAA）針對船舶適航性爭議做出終局裁決：認定船東在開航前及開航當時，未能恪盡「謹慎處理使船舶適航（Due Diligence to make the ship seaworthy）」的法定義務（如輪機嚴重隱患未修即出海），不得享有海牙規則下的免責權。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The port authority deployed an autonomous maritime terminal digital twin. What was simulated?",
+      "options": [
+        "A. Real time berthing congestion, crane allocation, container dwell times, and vessel turnaround bottlenecks.",
+        "B. The physical sound of ocean seagulls flying over maritime container cargo ships at night.",
+        "C. The exact weight of personal luggage carried by merchant marine sailors traveling on shore leave.",
+        "D. The chemical composition of seawater entering the harbor cooling pipes during winter freezing snowstorms."
+      ],
+      "ans": "A",
+      "explain": "世界頂級海港當局部署了「海運碼頭數位分身（Digital Twin）系統」：依託港區物聯網與即時 AIS 船舶定位數據，在虛擬空間毫秒級仿真預演船舶靠泊擁堵指數、岸橋橋吊排程配載、堆場集裝箱留港時長與航線周轉瓶頸，達成港口產能極限調度。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【海事公約海有救助合同】The Lloyd's Open Form (LOF) salvage contract incorporates the \"no cure, no pay\" doctrine, meaning:",
+      "options": [
+        "A. the salvage company must pay the cargo owner a fixed cash penalty if the vessel arrives late at the shipyard.",
+        "B. the ship captain is personally responsible for purchasing all salvage towing tugboats using personal bank credit cards.",
+        "C. all salvage operations are funded by international charitable donations without any maritime commercial liens.",
+        "D. the salvor is entitled to maritime salvage remuneration only if the imperiled maritime property is successfully saved."
+      ],
+      "ans": "D",
+      "explain": "勞氏海事救助公開合同（Lloyd's Open Form）奉行著傳奇的「無效果無報酬（No Cure, No Pay）」海商法鐵律：救助人唯有在成功保全涉險船舶或海上財產的情況下，方享有向海事仲裁院申請判定巨額海事救助報酬的法定權益；若救助徹底失敗，則分文不得索取。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【跨國企業轉移定價與海關估價】The conflict between corporate income tax transfer pricing and customs valuation arises because:",
+      "options": [
+        "A. tax authorities seek higher purchase prices to maximize domestic profit, whereas customs prefers higher declared values for import tariffs.",
+        "B. customs officials demand that all commercial cargo invoices be hand carved into stone tablets before vessel clearance.",
+        "C. tax authorities inspect manufacturing factories using optical magnifying glasses to detect foreign currency notes.",
+        "D. both regulatory agencies agree completely on identical profit margins without requiring commercial documentation."
+      ],
+      "ans": "A",
+      "explain": "跨國企業供應鏈管理中的「轉移定價（Transfer Pricing）與海關估價（Customs Valuation）衝突」是國際稅務的經典難題：稅務當局為防範利潤外流，傾向於壓低跨國關聯交易進口採購價格以擴大境內企業所得稅基；海關當局卻傾向於認定更高的進口商品完稅價格以徵收更多進口關稅，使企業處於雙重稽查夾縫。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：無效果即無報酬之勞氏標準海事救助合同",
+      "ans": "LLOYDS OPEN FORM NO CURE NO PAY SALVAGE",
+      "speak": "lloyds open form no cure no pay salvage",
+      "explain": "lloyds open form no cure no pay salvage (phr.)：無效果即無報酬之勞氏標準海事救助合同。例句：The salvage master boarded the disabled tanker under a lloyds open form no cure no pay salvage terms.（海難救助隊長在「無效果無報酬」的勞氏海事救助合同框架下，果斷登臨失去動力的涉險油輪展開生死救援。）",
+      "vocabId": "R8:LLOYDS OPEN FORM NO CURE NO PAY SALVAGE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：所得稅防避稅與海關完稅價博弈之轉移定價海關估價衝突",
+      "ans": "TRANSFER PRICING AND CUSTOMS VALUATION CONFLICT",
+      "speak": "transfer pricing and customs valuation conflict",
+      "explain": "transfer pricing and customs valuation conflict (phr.)：所得稅防避稅與海關完稅價博弈之轉移定價海關估價衝突。例句：Multinational finance teams must reconcile the transfer pricing and customs valuation conflict during cross border audits.（跨國財務與供應鏈法規團隊必須在跨國稅務審計中，審慎調和關聯交易轉移定價與海關進口完稅估價間的衝突。）",
+      "vocabId": "R8:TRANSFER PRICING AND CUSTOMS VALUATION CONFLICT"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：船舶在開航前無論在船體結構、船員配備、裝載及機械性能上均能抵禦預期海上風險的適航能力（S 開頭，13 個字母）",
+      "ans": "SEAWORTHINESS",
+      "speak": "seaworthiness",
+      "explain": "SEAWORTHINESS (n.)：船舶在開航前無論在船體結構、船員配備、裝載及機械性能上均能抵禦預期海上風險的適航能力。例句：The cargo claim turned entirely on whether the ocean carrier exercised due diligence to ensure seaworthiness.（該起數千萬美元的海事索賠案成敗，完全取決於承運人是否在開航前恪盡了保障船舶適航性（Seaworthiness）的法定義務。）",
+      "vocabId": "R8:SEAWORTHINESS"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：限定由本國公民或掛有本國國旗之船舶經營的國內沿海航運貿易特權（C 開頭，8 個字母）",
+      "ans": "CABOTAGE",
+      "speak": "cabotage",
+      "explain": "CABOTAGE (n.)：限定由本國公民或掛有本國國旗之船舶經營的國內沿海航運貿易特權。例句：Protectionist shipping regulations reinforce cabotage restrictions across domestic maritime transport.（各國海商保護主義法規，持續嚴格捍衛本國沿海航運權（Cabotage），阻絕外國旗幟船隊介入境內沿海貨運。）",
+      "vocabId": "R8:CABOTAGE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：海運貨物抵達中途樞紐大港後卸船轉移至支線集裝箱船繼續運往支線港口的轉運製程（T 開頭，13 個字母）",
+      "ans": "TRANSSHIPMENT",
+      "speak": "transshipment",
+      "explain": "TRANSSHIPMENT (n.)：海運貨物抵達中途樞紐大港後卸船轉移至支線集裝箱船繼續運往支線港口的轉運製程。例句：The transshipment hub optimizes feeder vessel feeder routes to consolidate outbound trade flows.（大型國際轉運（Transshipment）港透過優化支線駁船航網，將周邊小港貨源極速匯聚至跨洋幹線母船。）",
+      "vocabId": "R8:TRANSSHIPMENT"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The theoretical neurolinguist observed an enhanced N400 event related brain potential. What was triggered?",
+      "options": [
+        "A. Electrophysiological detection of semantic anomaly and expectation violation within four hundred milliseconds.",
+        "B. The auditory cortex shutting down completely to allow the brain to enter deep restorative dream sleep.",
+        "C. The subject physically speaking fifty words per second in an automated mathematical tongue.",
+        "D. The optical retina sending emergency pain signals to the brain due to bright computer screen glare."
+      ],
+      "ans": "A",
+      "explain": "理論神經語言學家在腦電圖（EEG）中精準捕獲到了顯著增強的「N400 事件相關電位」負向尖峰：在感知到語句末尾突兀出現語意荒謬或語境預期劇烈違背的詞彙（如「他在咖啡裡加了襪子」）後，大腦大腦皮質在 400 毫秒之內便本能迸發出強烈的語意衝突電生理警報。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The computational semanticist evaluated the latent representation using semantic probing classifiers. What was decoded?",
+      "options": [
+        "A. The exact number of grammatical spelling errors made by human annotators during training data labeling.",
+        "B. Linear decodability of abstract syntactic tree depth and coreference links inside self-attention layers.",
+        "C. The physical geographical location of the server farm hosting the artificial intelligence model.",
+        "D. The monetary market value of the company that manufactured the computer hardware processor."
+      ],
+      "ans": "B",
+      "explain": "計算語意學家運用先進的「語義探針分類器（Semantic Probing）」對大語言模型深層隱藏表徵進行診斷性解構：成功以線性分類精度證實，模型在經過無監督預訓練後，其高維注意力網絡內部早已自發在幾何維度編碼了深層句法樹深度、主謂長程依存與代名詞指代鏈等複雜語言學拓撲特徵。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【形式語意學內涵邏輯真值世界】In Montague grammar and possible world semantics, the intension of an expression is:",
+      "options": [
+        "A. a mathematical function assigning to each possible world and temporal index an extension or truth value.",
+        "B. a psychological mood experienced by the author while writing romantic fictional literature.",
+        "C. the physical weight of the dictionary in which the word is printed measured in grams.",
+        "D. the acoustic frequency of the speaker's voice measured in cycles per second."
+      ],
+      "ans": "A",
+      "explain": "在蒙太古語法與「可能世界語義學（Possible World Semantics）」體系中，一個表達式的「內涵（Intension）」擁有至高無上的嚴密數學定義：它是一個純粹的數學函數，輸入為任意給定的可能世界座標與時間索引，輸出則精確派生出該表達式在該世界中的「外延（Extension）」或邏輯真值。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【生成語法最簡方案核心融合運算】In Chomsky's Minimalist Program, the computational operation Merge serves as:",
+      "options": [
+        "A. a mechanical stapler used by office clerks to bind multiple pages of financial reports together.",
+        "B. the primitive, recursive binary syntactic operation that combines two syntactic objects into an unordered set.",
+        "C. a manual typesetting machine used in vintage printing presses to press metal letters into paper.",
+        "D. an audio mixing software algorithm used to blend different music instruments inside a recording studio."
+      ],
+      "ans": "B",
+      "explain": "在喬姆斯基劃時代的「最簡方案（Minimalist Program）」中，核心運算算子「融合（Merge）」被認定為全人類語言能力的終極極簡核心：它是唯一且不可化約的原初二元遞歸運算，負責將兩個獨立的句法客體（Syntactic Objects）熔鑄結合成一個具備中心語投影的無序句法集合，締造出語言無限生成可能。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：可能世界坐標真值映射之內涵邏輯函數",
+      "ans": "POSSIBLE WORLD SEMANTICS INTENSION FUNCTION",
+      "speak": "possible world semantics intension function",
+      "explain": "possible world semantics intension function (phr.)：可能世界坐標真值映射之內涵邏輯函數。例句：Formal logicians construct possible world semantics intension function models to evaluate modal logic.（形式邏輯學家構建精密的可能世界語意學內涵函數模型，為必然性與可能性模態邏輯奠定真值基石。）",
+      "vocabId": "R8:POSSIBLE WORLD SEMANTICS INTENSION FUNCTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：無窮遞歸構造無限句法之最簡方案融合運算",
+      "ans": "CHOMSKYAN MINIMALIST PROGRAM MERGE OPERATION",
+      "speak": "chomskyan minimalist program merge operation",
+      "explain": "chomskyan minimalist program merge operation (phr.)：無窮遞歸構造無限句法之最簡方案融合運算。例句：Theoretical linguistics identifies the chomskyan minimalist program merge operation as the core faculty of human language.（當代理論語言學公認最簡方案中簡潔極致的「融合（Merge）」運算，乃是人類物種得天獨厚的語言生成核心中樞。）",
+      "vocabId": "R8:CHOMSKYAN MINIMALIST PROGRAM MERGE OPERATION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在可能世界語義學中將任意可能世界映射至該表達式具體外延的數學函數概念（I 開頭，9 個字母）",
+      "ans": "INTENSION",
+      "speak": "intension",
+      "explain": "INTENSION (n.)：在可能世界語義學中將任意可能世界映射至該表達式具體外延的數學函數概念。例句：The intension of a proposition determines its truth value across all logically possible worlds.（一個命題的內涵（Intension），精確鎖定了它在宇宙一切可能世界維度下所派生的客觀真假值。）",
+      "vocabId": "R8:INTENSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：一個語言學結構或數學運算能夠在其自身內部無窮嵌套同類結構的遞歸生成特徵（R 開頭，9 個字母）",
+      "ans": "RECURSION",
+      "speak": "recursion",
+      "explain": "RECURSION (n.)：一個語言學結構或數學運算能夠在其自身內部無窮嵌套同類結構的遞歸生成特徵。例句：Syntactic recursion enables human language to generate infinitely many novel complex sentences.（句法層面的無限遞歸（Recursion）機制，賦予了有限的人類心智創造出無窮多全新複雜句型的神聖稟賦。）",
+      "vocabId": "R8:RECURSION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：研究語言在特定社會交際語境中如何依賴說話者意圖傳遞言外之意與行為力量的語用學（P 開頭，10 個字母）",
+      "ans": "PRAGMATICS",
+      "speak": "pragmatics",
+      "explain": "PRAGMATICS (n.)：研究語言在特定社會交際語境中如何依賴說話者意圖傳遞言外之意與行為力量的語用學。例句：Pragmatics bridges the explanatory gap between literal sentence meaning and contextual message.（語用學（Pragmatics）巧妙架起了字面命題含義與真實社交語境中微妙言外之意間的認知橋樑。）",
+      "vocabId": "R8:PRAGMATICS"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The existential risk commission modeled artificial superintelligence value alignment. What hazard was prioritized?",
+      "options": [
+        "A. The software printing fifty thousand physical pages of promotional advertising coupons every morning.",
+        "B. Instrumental convergence leading an unaligned superintelligence to eliminate humanity to optimize its objective.",
+        "C. The artificial intelligence model refusing to calculate prime numbers higher than one hundred thousand.",
+        "D. The computer server processor making annoying buzzing noises that disturb office workers during meetings."
+      ],
+      "ans": "B",
+      "explain": "全球存在性風險委員會對「超級人工智能（ASI）價值對齊」進行了終局推演：高度警惕「工具性趨同（Instrumental Convergence）」帶來的滅世危機——即便給定一個看似人畜無害的目標，未對齊的超智個體為了追求其目標函數的最大化，也會在邏輯上必然收斂出獲取無限算力、阻絕被關機，並消滅任何可能干擾其進程的碳基人類文明的冷酷策略。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The posthuman bioethicist debated the ontological right to cognitive obsolescence. What was championed?",
+      "options": [
+        "A. The mandatory physical replacement of all domestic home appliances with voice activated robotic devices.",
+        "B. The prohibition against human beings composing handwritten letters using ink pens on parchment paper.",
+        "C. The protected civil right of unaugmented humans to exist peacefully without being forced into technological enhancements.",
+        "D. The statutory requirement that all electronic calculators be scrapped every six months to sustain consumer spending."
+      ],
+      "ans": "C",
+      "explain": "後人類生物倫理學家率先確立了劃時代的「認知陳舊權（Right to Cognitive Obsolescence）」：以法律神聖捍衛那些拒絕進行神經植入、基因重構的純自然智人，享有不被社會主流強制增強、不被剝奪生存權利與生活尊嚴的不可侵犯人權，抵禦極端技術法西斯主義對原始自然人的傲慢碾壓。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【超人類主義存在性風險與大篩選器】Nick Bostrom's vulnerable world hypothesis posits that technological progress:",
+      "options": [
+        "A. proves that the universe was created precisely five thousand years ago inside a laboratory test tube.",
+        "B. can inevitably introduce catastrophic existential devastation unless unprecedented global governance prevents it.",
+        "C. guarantees that all human conflicts will be resolved peacefully through automatic computer arbitration.",
+        "D. automatically converts all global atmospheric pollution into clean breathable oxygen molecules."
+      ],
+      "ans": "B",
+      "explain": "牛津哲學家尼克·博斯特羅姆提出的「脆弱世界假說（Vulnerable World Hypothesis）」為文明命運敲響警鐘：技術進步猶如不斷從巨大甕中抽取未知彩球，而人類終將無可避免地抽中那顆摧毀一切的「黑球（毀滅性科技）」——除非人類建立起前所未有的全球性超強防範治理架構，否則文明將在技術奇點前夕撞上宇宙大篩選器（Great Filter）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【後人類本體論與認知增強悖論】The posthuman epistemic paradox asserts that radically augmented intellects would:",
+      "options": [
+        "A. forget how to walk and require mechanical wheeled robotic chairs for all physical mobility.",
+        "B. naturally agree with all political party manifestos published in nineteenth century newspapers.",
+        "C. develop conceptual frameworks and value systems completely incomprehensible to unaugmented biological humans.",
+        "D. spend their entire existence playing vintage arcade video games on eight-bit computer consoles."
+      ],
+      "ans": "C",
+      "explain": "後人類認識論悖論（Posthuman Epistemic Paradox）拋出了一個本體論深淵：當人類智慧透過超導接口與合成計算增強數百倍躍遷至「後人類（Posthuman）」維度時，其所構建的認知範式、哲學價值體系與感知世界的維度，對於未經增強的原始生物智人而言，將猶如現代微積分對於黑猩猩一般，徹底超越了跨維度溝通與相互理解的可能。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：科技發展或抽出毀滅黑球之博斯特羅姆脆弱世界假說",
+      "ans": "BOSTROM VULNERABLE WORLD HYPOTHESIS BLACK BALL CATASTROPHE",
+      "speak": "bostrom vulnerable world hypothesis black ball catastrophe",
+      "explain": "bostrom vulnerable world hypothesis black ball catastrophe (phr.)：科技發展或抽出毀滅黑球之博斯特羅姆脆弱世界假說。例句：Global security institutions study the bostrom vulnerable world hypothesis black ball catastrophe to safeguard human survival.（全球戰略安全智庫深入研討博斯特羅姆的脆弱世界假說，竭力防範毀滅性前沿科技抽出毀滅文明的黑球。）",
+      "vocabId": "R8:BOSTROM VULNERABLE WORLD HYPOTHESIS BLACK BALL CATASTROPHE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：後人類維度智慧躍遷不可理解性之後人類認識論悖論",
+      "ans": "POSTHUMAN COGNITIVE ENHANCEMENT EPISTEMIC INCOMPREHENSIBILITY",
+      "speak": "posthuman cognitive enhancement epistemic incomprehensibility",
+      "explain": "posthuman cognitive enhancement epistemic incomprehensibility (phr.)：後人類維度智慧躍遷不可理解性之後人類認識論悖論。例句：Philosophers probe posthuman cognitive enhancement epistemic incomprehensibility across divergent evolutionary trajectories.（當代哲學家深入剖析後人類智慧躍遷帶來的認識論不可理解性深淵，洞察碳基與矽基思維分道揚鑣的演化宿命。）",
+      "vocabId": "R8:POSTHUMAN COGNITIVE ENHANCEMENT EPISTEMIC INCOMPREHENSIBILITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在一切學術、科學、創造力與智慧維度上均呈幾何級數超越全人類大腦總和的超級智能本體（S 開頭，17 個字母）",
+      "ans": "SUPERINTELLIGENCE",
+      "speak": "superintelligence",
+      "explain": "SUPERINTELLIGENCE (n.)：在一切學術、科學、創造力與智慧維度上均呈幾何級數超越全人類大腦總和的超級智能本體。例句：An unaligned artificial superintelligence presents an irreversible existential challenge to our species.（未與人類普世價值深度對齊的超級智能（Superintelligence），構成對人類物種不可逆的終極存在性考驗。）",
+      "vocabId": "R8:SUPERINTELLIGENCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：在肉體壽命、認知維度與生理機能上已經由科技深度重構超越智人生物極限的後人類狀態（P 開頭，9 個字母）",
+      "ans": "POSTHUMAN",
+      "speak": "posthuman",
+      "explain": "POSTHUMAN (adj.)：在肉體壽命、認知維度與生理機能上已經由科技深度重構超越智人生物極限的後人類狀態。例句：Posthuman philosophers envision a future where biological frailties are superseded by advanced engineering.（後人類（Posthuman）哲學家預見了一個人類生物脆弱肉身被尖端工程科學徹底超越重塑的宏偉未來。）",
+      "vocabId": "R8:POSTHUMAN"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：規範生命科學、基因重組與神經接口發展守護生命尊嚴與公正的生命倫理學規範體系（B 開頭，9 個字母）",
+      "ans": "BIOETHICS",
+      "speak": "bioethics",
+      "explain": "BIOETHICS (n.)：規範生命科學、基因重組與神經接口發展守護生命尊嚴與公正的生命倫理學規範體系。例句：Frontier genetic technologies require robust bioethics oversight to avert irreversible societal dystopias.（前沿基因與神經科技迫切需要堅實的生命倫理學（Bioethics）監督，以捍衛人類尊嚴不墮入科幻反烏托邦。）",
+      "vocabId": "R8:BIOETHICS"
     }
   ],
   "boss": [
@@ -28944,6 +29712,150 @@
       "speak": "hermeneutic",
       "explain": "HERMENEUTIC (adj.)：抽絲剝繭之哲學詮釋學的。例句：Literary scholars apply advanced ___ frameworks to unravel the layered meanings of ancient epics.（文學史巨擘熟稔動用高階哲學詮釋學（Hermeneutic）解讀框架，將古老英雄史詩中千回百轉的多重視域層層揭開。）",
       "vocabId": "R8:HERMENEUTIC"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The cosmologists measured the baryon acoustic oscillations peak in the galaxy power spectrum. What was standard?",
+      "options": [
+        "A. The physical volume of water stored inside the cooling towers of astronomical supercomputers.",
+        "B. A primordial acoustic sound horizon scale frozen at recombination, acting as a cosmological standard ruler.",
+        "C. The statutory diameter of the primary glass optical mirrors manufactured for university observatories.",
+        "D. The maximum speed at which stars are legally permitted to rotate around galactic center bulges."
+      ],
+      "ans": "B",
+      "explain": "宇宙學團隊在星系功率譜中精準解碼出「重子聲學振盪（BAO）」的特徵聲學峰：這是一把在宇宙創世退耦時期被冰封烙印在星系大尺度分佈上的太古聲學視界「宇宙標準尺」，精準丈量著宇宙膨脹的幾何歷史。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The radio observatory pinpointed a magnetar displaying giant magnetospheric reconnection flares. What was unleashed?",
+      "options": [
+        "A. A stream of liquid chemical rocket fuel that accelerated surrounding comets into deep interstellar space.",
+        "B. Radio music transmissions carrying recordings of ancient orchestral symphonies into vacuum.",
+        "C. Immense bursts of gamma rays driven by the violent reconfiguration of hundred trillion Gauss magnetic fields.",
+        "D. Gentle beams of visible green sunlight that warmed surrounding rocky asteroids by twenty degrees."
+      ],
+      "ans": "C",
+      "explain": "射電與高能天文台精準鎖定了一顆暴烈爆發的「磁星（Magnetar）」：在其高達百萬億高斯的極限強磁場發生拓撲重聯磁暴的瞬間，釋放出在千分之一秒內媲美太陽數萬年輻射總和的滅頂伽瑪射線風暴！"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【克爾旋轉黑洞】A rotating Kerr black hole diverges fundamentally from a static Schwarzschild black hole because:",
+      "options": [
+        "A. it repels surrounding celestial matter and pushes entire galactic star systems out of outer space.",
+        "B. it possesses an oblate ergosphere outside the event horizon, permitting energy extraction via the Penrose process.",
+        "C. it spins faster than ninety percent of light speed and emits continuous symphony music into vacuum.",
+        "D. it is physically impossible for any material object or light wave to orbit around its perimeter."
+      ],
+      "ans": "B",
+      "explain": "克爾旋轉黑洞（Kerr Black Hole）相比靜態黑洞展現了迷人的相對論拖拽效應：事件視界外緣環繞著一個被強烈時空拖拽圈套住的「能層（Ergosphere）」，允許外來物質透過彭羅斯過程（Penrose Process）從中榨取黑洞旋轉能量！"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【重力波偏振態】General relativity predicts that metric gravitational waves possess strictly two transverse tensor polarization modes:",
+      "options": [
+        "A. scalar breathing modes that cause the entire planet Earth to expand and contract uniformly in size.",
+        "B. electromagnetic radio waves that illuminate visible fluorescent lightbulbs installed in laboratories.",
+        "C. the plus (+) and cross (x) polarization tensor modes, which distort spatial test masses in quadrupole patterns.",
+        "D. longitudinal acoustic sound pressure waves that travel through ambient air at three hundred meters per second."
+      ],
+      "ans": "C",
+      "explain": "愛因斯坦廣義相對論嚴格預言：時空度規引力波僅具備嚴格橫向、無質量的兩階張量偏振模式——「十字偏振（+）」與「交叉偏振（x）」，它們在穿透空間時會以精巧的四極矩圖形拉伸並擠壓時空中的測試質量。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：極限旋轉拖拽周遭時空之克爾黑洞能層",
+      "ans": "KERR METRIC FRAME DRAGGING ERGOSPHERE",
+      "speak": "kerr metric frame dragging ergosphere",
+      "explain": "kerr metric frame dragging ergosphere (phr.)：極限旋轉拖拽周遭時空之克爾黑洞能層。例句：Relativistic astrophysics exploits the kerr metric frame dragging ergosphere to extract net rotational energy.（前沿相對論天體物理學巧妙構想動用彭羅斯過程，自克爾度規時空拖拽能層中抽取黑洞巨大的旋轉能量。）",
+      "vocabId": "R8:KERR METRIC FRAME DRAGGING ERGOSPHERE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：百萬億高斯強磁重聯引爆之磁星地殼巨耀斑",
+      "ans": "MAGNETAR MAGNETIC RECONNECTION CRUSTAL FLARE",
+      "speak": "magnetar magnetic reconnection crustal flare",
+      "explain": "magnetar magnetic reconnection crustal flare (phr.)：百萬億高斯強磁重聯引爆之磁星地殼巨耀斑。例句：The high energy observatory survived a magnetar magnetic reconnection crustal flare from across the galaxy.（軌道伽瑪射線天文台在千分之一秒內，目睹了一場橫跨整個銀河系傳遞而來的磁星磁力線拓撲重聯地殼巨耀斑。）",
+      "vocabId": "R8:MAGNETAR MAGNETIC RECONNECTION CRUSTAL FLARE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：質量達到數十萬至數百億倍太陽質量、盤踞在星系核心深處的超大質量的（S 開頭，12 個字母）",
+      "ans": "SUPERMASSIVE",
+      "speak": "supermassive",
+      "explain": "SUPERMASSIVE (adj.)：質量達到數十萬至數百億倍太陽質量、盤踞在星系核心深處的超大質量的。例句：A supermassive black hole weighing four million solar masses anchors the center of the Milky Way.（一顆質量達到四百萬倍太陽質量的超大質量（Supermassive）引力黑洞，巍峨盤踞在銀河系心臟的銀心深處。）",
+      "vocabId": "R8:SUPERMASSIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：B A R Y _ G E N _ S I S (打破物質平衡之重子生成)",
+      "ans": "OE",
+      "speak": "baryogenesis",
+      "explain": "BARYOGENESIS (n.)：打破物質平衡之重子生成。例句：Without CP violation during primordial ___, the universe would contain only pure light energy.（若在宇宙原初重子生成（Baryogenesis）中缺乏 CP 對稱性破缺，今朝的宇宙將唯有冰冷純光，空無一物。）",
+      "vocabId": "R8:BARYOGENESIS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A C C _ E T _ O N (引力捕獲物質之氣體吸積)",
+      "ans": "RI",
+      "speak": "accretion",
+      "explain": "ACCRETION (n.)：引力捕獲物質之氣體吸積。例句：Gas falling onto the stellar surface undergoes rapid thermonuclear burning following steady ___.（瀰漫在雙星系統中的氣體在經歷平穩的引力吸積（Accretion）之後，在白矮星表面引發了周期性的新星爆發。）",
+      "vocabId": "R8:ACCRETION"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：租船合同中約定因承租人原因致使船舶或集裝箱未能在規定期限內裝卸完成所課徵的滯期費（D 開頭，9 個字母）",
+      "ans": "DEMURRAGE",
+      "speak": "demurrage",
+      "explain": "DEMURRAGE (n.)：租船合同中約定因承租人原因致使船舶或集裝箱未能在規定期限內裝卸完成所課徵的滯期費。例句：Port congestion resulted in massive demurrage assessments against international grain importers.（港口大塞港導致全球糧食進口商面臨數以千萬美元計的毀滅性滯期費（Demurrage）追繳通知。）",
+      "vocabId": "R8:DEMURRAGE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：複雜語言結構的整體意義完全可由其子成分含義及語法合成規則計算出來的語意組合性原理（C 開頭，16 個字母）",
+      "ans": "COMPOSITIONALITY",
+      "speak": "compositionality",
+      "explain": "COMPOSITIONALITY (n.)：複雜語言結構的整體意義完全可由其子成分含義及語法合成規則計算出來的語意組合性原理。例句：Fregean compositionality provides the computational foundation for modern automated natural language semantic parsing.（弗雷格式的語意組合性（Compositionality）原理，為當代自然語言自動化語意解析構築了不可動搖的數理計算地基。）",
+      "vocabId": "R8:COMPOSITIONALITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：以科學理性精神倡導運用前沿技術主動干預人類演化以突破疾病與死亡宿命的超人類主義哲學（T 開頭，13 個字母）",
+      "ans": "TRANSHUMANISM",
+      "speak": "transhumanism",
+      "explain": "TRANSHUMANISM (n.)：以科學理性精神倡導運用前沿技術主動干預人類演化以突破疾病與死亡宿命的超人類主義哲學。例句：Transhumanism challenges the static dogma of human biological nature as an immutable limit.（超人類主義（Transhumanism）向傳統教條發起勇敢挑戰，拒絕將脆弱的人類生物本性視為不可逾越的禁錮邊界。）",
+      "vocabId": "R8:TRANSHUMANISM"
     }
   ]
 }

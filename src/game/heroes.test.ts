@@ -9,15 +9,17 @@ import { useSaveStore, initialSave, migrateSave } from '../store/saveStore';
 const seq = (...values: number[]) => { let i = 0; return () => values[i++ % values.length]; };
 
 describe('hero roster', () => {
-  it('has 88 heroes with unique English-word names（第二十二輪擴充 +38）', () => {
-    expect(HEROES).toHaveLength(88);
-    expect(new Set(HEROES.map(h => h.id)).size).toBe(88);
+  it('has 150 heroes with unique English-word names（第二十二輪擴充滿編 150 位）', () => {
+    expect(HEROES).toHaveLength(150);
+    expect(new Set(HEROES.map(h => h.id)).size).toBe(150);
     HEROES.forEach(h => expect(h.id).toMatch(/^[a-z]+$/));
   });
 
-  it('spreads heroes across rarities (N 29, R 27, SR 23, SSR 9)', () => {
+  it('spreads heroes across rarities (N 48, R 45, SR 38, SSR 15, UR 4, total 150)', () => {
     const count = (r: string) => HEROES.filter(h => h.rarity === r).length;
-    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([29, 27, 23, 9]);
+    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([48, 45, 38, 15]);
+    expect(count('UR')).toBe(4);
+    expect(HEROES.length).toBe(150);
   });
 
   it('gives each hero a valid, stable look', () => {

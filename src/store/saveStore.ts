@@ -42,6 +42,8 @@ import type { MemberId } from '../game/party';
 import {
   WEAPON_DUPE_SHARDS,
   WEAPON_SPARK_COST,
+  WEAPON_TICKET_BUY_WEEKLY,
+  WEAPON_TICKET_GOLD_PRICE,
   WEAPON_UNLOCK_REGION,
   rollWeaponSummon,
   weaponForHero,
@@ -152,6 +154,7 @@ interface SaveData {
   wheelClaimed: string[];
   // 金幣買召喚券的本週數量；錯題修煉場今天已經給了幾題的金幣
   ticketBuys: { week: string; count: number };
+  weaponTicketBuys: { week: string; count: number };
   trainingGoldDay: string;
   trainingGoldCount: number;
   wheelPending: number;
@@ -187,6 +190,7 @@ interface SaveData {
   skillBossCleared: string[];
   // 戰鬥中已看過的情境提示
   hintsSeen: string[];
+  _weaponBossBackfilled?: boolean;
 }
 
 // 一次召喚的結果：新英雄，或重複時得到的碎片數
@@ -226,6 +230,7 @@ interface SaveActions {
   consumeItem: (id: ItemId) => boolean;
   addTickets: (n: number) => void;
   buyTicket: () => boolean;
+  buyWeaponTicket: () => boolean;
   earnTrainingGold: () => number;
   summonHeroes: (count: number, rand?: () => number) => SummonOutcome[] | null;
   exchangeSpark: (id: HeroId) => SummonOutcome | null;
@@ -323,6 +328,7 @@ export const initialSave: SaveData = {
   sweepTickets: 0,
   wheelClaimed: [],
   ticketBuys: { week: '', count: 0 },
+  weaponTicketBuys: { week: '', count: 0 },
   trainingGoldDay: '',
   trainingGoldCount: 0,
   wheelPending: 0,
@@ -542,6 +548,16 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     migrated.bossDown = Array.from({ length: Math.max(0, Math.floor(migrated.unlockedIndex)) }, (_, i) => i);
   }
   migrated.bossDown = migrated.bossDown.filter(n => Number.isInteger(n) && n >= 0);
+  // 專武券補發：如果舊存檔已打倒 B1 或之後的魔王，但當時尚未配置全額專武券
+  if (Array.isArray(migrated.bossDown) && migrated.bossDown.includes(WEAPON_UNLOCK_REGION)) {
+    const passedAfterB1 = migrated.bossDown.filter(r => r > WEAPON_UNLOCK_REGION);
+    if (passedAfterB1.length > 0 && !migrated._weaponBossBackfilled) {
+      let extra = 0;
+      for (const r of passedAfterB1) extra += r === 8 ? 10 : 5;
+      migrated.weaponTickets = (migrated.weaponTickets ?? 0) + extra;
+      migrated._weaponBossBackfilled = true;
+    }
+  }
   // 舊玩家補發已打過關卡的經驗值（每關約 20，後面的區域較多）
   if (version >= 1 && version < 10 && !data.player) {
     const regionIds = Object.keys(migrated.bestStage);
@@ -717,6 +733,10 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const patch: Partial<SaveData> = { bossDown: [...s.bossDown, regionIdx] };
           if (regionIdx === WEAPON_UNLOCK_REGION) {
             patch.weaponTickets = (s.weaponTickets ?? 0) + 10;
+          } else if (regionIdx > WEAPON_UNLOCK_REGION) {
+            // 後續區域魔王擊敗獎勵：B1+~C1 各送 5 張，C2 終王送 10 張
+            const grant = regionIdx === 8 ? 10 : 5;
+            patch.weaponTickets = (s.weaponTickets ?? 0) + grant;
           }
           return patch;
         }),
@@ -1186,6 +1206,18 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           if (bought >= TICKET_BUY_WEEKLY) return false;
           return purchase(TICKET_GOLD_PRICE, s => ({ tickets: s.tickets + 1, ticketBuys: { week, count: bought + 1 } }));
         },
+        // 金幣買專武券：每週最多 WEAPON_TICKET_BUY_WEEKLY 張
+        buyWeaponTicket: () => {
+          get().ensureDaily();
+          const week = get().weekly?.week ?? '';
+          const buys = get().weaponTicketBuys ?? { week: '', count: 0 };
+          const bought = buys.week === week ? buys.count : 0;
+          if (bought >= WEAPON_TICKET_BUY_WEEKLY) return false;
+          return purchase(WEAPON_TICKET_GOLD_PRICE, s => ({
+            weaponTickets: (s.weaponTickets ?? 0) + 1,
+            weaponTicketBuys: { week, count: bought + 1 },
+          }));
+        },
         // 錯題修煉場：每天前 TRAINING_GOLD_MAX 題答對，每題 TRAINING_GOLD 金幣
         earnTrainingGold: () => {
           const s = get();
@@ -1354,7 +1386,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, weaponTickets: s.weaponTickets, weapons: s.weapons, weaponShards: s.weaponShards, weaponCounter: s.weaponCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, xpAllowanceDay: s.xpAllowanceDay, xpAllowanceGold: s.xpAllowanceGold, xpAllowanceRemainder: s.xpAllowanceRemainder, towerFloor: s.towerFloor,
-        sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
+        sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, weaponTicketBuys: s.weaponTicketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen, storyRewardClaimed: s.storyRewardClaimed,
         player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, trueNameRewarded: s.trueNameRewarded, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,

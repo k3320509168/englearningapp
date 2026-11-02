@@ -92,6 +92,69 @@ export const SSR_HERO_WEAPONS: WeaponDef[] = [
     passiveDesc: '攻擊 +8%，相剋傷害 +25%',
     passiveMods: { atk: 0.08, elementBonus: 0.25 },
   },
+  {
+    id: 'wp_radiance',
+    name: '晨曦裁決聖杖',
+    icon: '☀️',
+    heroId: 'radiance',
+    desc: '沐浴在黎明破曉初光中的神聖裁決法杖。',
+    passiveDesc: '光屬性傷害 +30%，思考時間 +2 秒',
+    passiveMods: { elementBonus: 0.3, timeMs: 2000 },
+  },
+  {
+    id: 'wp_nemesis',
+    name: '幽冥天罰魔刃',
+    icon: '⚔️',
+    heroId: 'nemesis',
+    desc: '宣告冥界宿命審判的漆黑魔刃。',
+    passiveDesc: '暴擊傷害 +40%，攻擊 +6%',
+    passiveMods: { critDmg: 0.4, atk: 0.06 },
+  },
+  {
+    id: 'wp_chivalry',
+    name: '榮耀騎士長槍',
+    icon: '🔱',
+    heroId: 'chivalry',
+    desc: '銘刻騎士八大美德的百戰重長槍。',
+    passiveDesc: '全隊生命 +12%，每 4 combo 獲得守護',
+    passiveMods: { hp: 0.12, guardEvery: 4 },
+  },
+  {
+    id: 'wp_solitude',
+    name: '霜月孤影獵弓',
+    icon: '🏹',
+    heroId: 'solitude',
+    desc: '伴隨長夜孤獨寒風的寂滅長弓。',
+    passiveDesc: '首擊傷害 +90%，暴擊率 +8%',
+    passiveMods: { firstHit: 0.9, crit: 0.08 },
+  },
+  {
+    id: 'wp_genesis',
+    name: '生命創世寶典',
+    icon: '📖',
+    heroId: 'genesis',
+    desc: '記錄萬物起源生生不息法則的翠綠聖典。',
+    passiveDesc: '全隊思考時間 +3 秒，生命 +15%',
+    passiveMods: { timeMs: 3000, hp: 0.15 },
+  },
+  {
+    id: 'wp_titan',
+    name: '崩山泰坦巨錘',
+    icon: '🔨',
+    heroId: 'titan',
+    desc: '沉重如遠古泰坦巨神心臟的碎地巨錘。',
+    passiveDesc: '攻擊 +10%，首擊傷害 +60%',
+    passiveMods: { atk: 0.1, firstHit: 0.6 },
+  },
+  {
+    id: 'wp_tenacity',
+    name: '磐岩誓斬重劍',
+    icon: '🗡️',
+    heroId: 'tenacity',
+    desc: '堅定如山岳磐石的重裝誓言大劍。',
+    passiveDesc: '全隊生命 +15%，攻擊 +5%',
+    passiveMods: { hp: 0.15, atk: 0.05 },
+  },
 ];
 
 export const PROTAGONIST_WEAPONS: WeaponDef[] = [
@@ -197,6 +260,15 @@ export const WEAPON_UNLOCK_REGION = 3; // B1 黃金沙漠
 export const WEAPON_PITY_SSR = 30;
 export const WEAPON_SPARK_COST = 60;
 export const WEAPON_DUPE_SHARDS = 20; // 重複抽到專武轉為 20 個該專武強化碎片
+export const WEAPON_TICKET_GOLD_PRICE = 600; // 每週可在工坊/召喚以金幣購買專武券
+export const WEAPON_TICKET_BUY_WEEKLY = 2; // 每週限購 2 張
+
+export const WEAPON_SUMMON_RATES = [
+  { kind: 'weapon', label: '專屬神兵', rate: 5, color: '#ffd15c', icon: '⚔️' },
+  { kind: 'rare_mat', label: '稀有素材', rate: 15, color: '#c084fc', icon: '🔮' },
+  { kind: 'shards', label: '願望碎片', rate: 30, color: '#38bdf8', icon: '✨' },
+  { kind: 'mat', label: '強化礦石', rate: 50, color: '#94a3b8', icon: '🪨' },
+] as const;
 
 export function rollWeaponSummon(
   count: number,

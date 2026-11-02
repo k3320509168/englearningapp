@@ -175,8 +175,9 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | **T15** | **高標準區域試煉 40 題正式版**：聽讀說寫各 10 題，通過 36/40，每項 ≥ 8/10，串接 GateTrialModal | Antigravity | ✅ 已實裝上線（18/18 測試通過） |
 | **T16** | **口說未驗證記號全域落實**：區域試煉與程度測驗替代拼寫時，明確標記 `speakingVerified = false` | Antigravity | ✅ 已實裝上線 |
 | **T17** | **每日素材本獎勵校準**：每日素材本前 2 次各保底基礎 150 金幣＋素材，第 3 次純表現計算 | Antigravity | ✅ 已實裝上線（modes.test.ts 測試通過） |
-| T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |
-| T8 | B1～C2 劇本：初稿 ✅（`docs/story-drafts/b1-c2-draft.md`，agy/work `0f72110`）；PM 裁決：地圖順序不改、16 位新角色全收、反派統一「沉默君王 👑」、45 張頭目台詞全收、風味選項每區 2 組、`{name}`；T8b 已匯入 story.ts／storyChoices.ts ✅（362 測試過，已合併 feat/round4）；**待 Claude 讀一遍語氣定稿**、選項 UI 歸 T9 | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
+| **T7** | **全盤戰鬥平衡模擬驗收**：3種養成 × 3種正確率 9 組矩陣全數完成，產出 `docs/FULL_BALANCE_SIMULATION_REPORT.md` | Antigravity | ✅ 已完成（90%裸裝一般關≥98%、80%正常大BOSS 100%） |
+| **T8** | **B1～C2 主線劇情深度潤飾與收斂**：黃金沙漠至王城全地圖開場與通關對話、16位NPC伏筆與魔王台詞在 `src/game/story.ts` 完整實裝 | Antigravity | ✅ 已完成（全數實裝收斂） |
+| **T18** | **英雄名冊第二批擴充（滿編 150 位）**：名冊達終極 150 位（N48/R45/SR38/SSR15/UR4），擴充 6 位 SSR 專屬技能與 62 筆真名題組 | Antigravity | ✅ 已完成（407項單元測試全過） |
 
 規則：一次只有一方改同一分支；改戰鬥檔（COLLAB 檔案負責人表）只有 Codex；合併到 `feat/round4` 只有 Claude；不 push main、不部署。
 

@@ -11,7 +11,7 @@ import {
   ADVANCE_REQ, BADGE_COST, MAX_LEVEL, classBufferLimit, bestTier, canAdvance, pathBadgeCost, playerLevelCap, childrenOf, currentClassName, describeMods, nextOptions, xpToNext,
 } from '../game/growth';
 import {
-  DRAGON_REGION, EQUIPMENT, HOLY_FORGE_QUESTIONS, MAX_GRADE, SLOTS, displayName, enhanceChance, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue,
+  DRAGON_REGION, EQUIPMENT, HOLY_FORGE_QUESTIONS, MAX_GRADE, SLOTS, displayName, enhanceChance, gradeMaterial, gradeOf, maxPlus, enhanceCost, equipDef, equipMods, materialIcon, materialName, resolveCost, SELL_RATE, sellValue, sortEquipment,
 } from '../game/equipment';
 import type { OwnedEquip } from '../game/equipment';
 import { RARITY_INFO } from '../game/heroes';
@@ -241,7 +241,7 @@ export default function GrowthModal() {
             <p className="forge-tip">💡 擊倒怪物可獲取鍛造素材；重複打造同名裝備可「升品階」大幅提升威力！</p>
           </div>
           <ul className="forge-grid">
-            {EQUIPMENT
+            {sortEquipment(EQUIPMENT)
               .filter(def => forgeSlot === 'all' || def.slot === forgeSlot)
               .map(def => {
                 const need = resolveCost(def, character.element);

@@ -35,7 +35,7 @@ export default function HeroModal() {
   const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, summonCounter, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, trainHeroMax, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
-  const [selected, setSelected] = useState<MemberId | null>(null);
+  const [selected, setSelected] = useState<MemberId>(party[0] ?? 'player');
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
   const [tab, setTab] = useState<'skills' | 'growth'>('skills');
   const [help, setHelp] = useState(false);
@@ -65,7 +65,7 @@ export default function HeroModal() {
           <span className="hero-head-actions">
             <span className="shop-gold">🪙 {gold}</span>
             {party.length > 1 && (
-              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected(null); }}>全部撤下</button>
+              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected('player'); }}>全部撤下</button>
             )}
             <button className={`btn btn-small help-btn ${help ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus} onClick={() => setHelp(h => !h)} aria-expanded={help} aria-label="說明">?</button>
           </span>

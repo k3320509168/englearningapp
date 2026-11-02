@@ -907,7 +907,19 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .collection-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
 .hero-filter { display: flex; align-items: center; gap: 8px; margin: 6px 0 8px; font-size: 14px; }
 .hero-filter select { min-height: 36px; padding: 4px 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--panel-2); color: var(--text); font-family: var(--font-body); font-size: 14px; }
-.hero-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.hero-tiles {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+  max-height: 290px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: rgba(14, 16, 32, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
 .hero-tile {
   --rarity: var(--muted);
   position: relative;
@@ -967,6 +979,103 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   border: var(--px) solid var(--ink);
 }
 .summon-banner p { margin: 0 0 6px; }
+.summon-banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.summon-banner-header .summon-title {
+  margin: 0;
+  text-align: left;
+}
+.summon-rate-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.summon-rate-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--accent);
+}
+.summon-crystal-pills {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.crystal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-num);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid color-mix(in srgb, var(--pill-color) 45%, transparent);
+  color: var(--pill-color);
+}
+.ways-modal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ways-modal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ways-modal-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.ways-modal-content {
+  flex: 1;
+}
+.ways-modal-content b {
+  color: var(--accent);
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.ways-modal-content p {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+.rates-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 8px 0 14px;
+}
+.rates-table th, .rates-table td {
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.rates-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
 .summon-title { font-family: var(--font-ui); font-size: 22px; color: var(--accent); }
 .summon-rates { display: flex; justify-content: center; gap: 12px; font-family: var(--font-num); font-size: 10px; }
 .summon-meters { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 14px; }
@@ -1246,6 +1355,93 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .lock-text { font-size: 12px; }
 .drop-line { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
 .stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+
+/* ---------- 工坊專武神兵清單 ---------- */
+.weapon-forge-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.weapon-forge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid color-mix(in srgb, var(--rarity) 60%, var(--ink));
+  background: color-mix(in srgb, var(--rarity) 10%, var(--panel-2));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+.weapon-forge-item.is-locked {
+  opacity: 0.8;
+  background: rgba(22, 24, 48, 0.7);
+  border-color: #3e3860;
+}
+.weapon-forge-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.weapon-forge-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.weapon-forge-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.weapon-forge-title-row b {
+  font-size: 15px;
+  font-family: var(--font-ui);
+}
+.weapon-forge-meta {
+  font-size: 12px;
+  color: #a4a7be;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.weapon-forge-meta b {
+  color: #ffd15c;
+}
+.weapon-forge-passive {
+  font-size: 12px;
+  color: #d1d5db;
+  line-height: 1.35;
+}
+.weapon-forge-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+@media (max-width: 520px) {
+  .weapon-forge-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .weapon-forge-actions {
+    align-items: stretch;
+  }
+}
 
 /* ---------- 真名考驗 ---------- */
 .true-mark { color: var(--accent); }
@@ -1982,8 +2178,30 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
 .hero-filter { flex-wrap: wrap; }
 .pill { padding: 4px 10px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; background: transparent; color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
 .pill.is-on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent); }
-.summon-entry { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-height: 44px; padding: 6px 16px; font-size: 15px; font-weight: 700; line-height: 1.2; box-shadow: 0 3px 0 #78350f, 0 4px 12px rgba(255, 205, 75, 0.3); }
-.summon-entry small { font-size: 12px; opacity: 0.95; font-weight: 400; color: #ffe58a; margin-top: 2px; }
+.summon-entry {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 3px 0 #78350f, 0 4px 12px rgba(255, 205, 75, 0.3);
+}
+.summon-entry small {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #381a03 !important;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 3px;
+  border: 1px solid rgba(120, 53, 15, 0.25);
+  letter-spacing: 0.3px;
+}
 .hero-tile .star-badge { margin-top: 1px; }
 @media (max-width: 640px) {
   .hd-main { flex-direction: column; align-items: center; text-align: center; }

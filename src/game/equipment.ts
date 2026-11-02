@@ -74,6 +74,75 @@ const SIGNATURE: Record<ClassId, string> = {
 };
 export const signatureName = (cls: ClassId) => SIGNATURE[cls];
 
+// 依照不同主角職業，呈現專屬對應武器名稱
+export const CLASS_WEAPON_NAMES: Record<ClassId, Record<string, string>> = {
+  swordsman: {
+    blade_training: '見習短劍',
+    blade_steel: '精鋼長劍',
+    blade_element: '元素之劍',
+    blade_legend: '傳說聖劍',
+    blade_star: '星辰之刃',
+    blade_flame: '熔岩魔劍',
+    signature: '誓約之劍',
+  },
+  archer: {
+    blade_training: '見習木弓',
+    blade_steel: '精鋼戰弓',
+    blade_element: '元素長弓',
+    blade_legend: '傳說天穹弓',
+    blade_star: '星辰獵神弓',
+    blade_flame: '熔岩狂嘯弓',
+    signature: '風神長弓',
+  },
+  mage: {
+    blade_training: '見習魔杖',
+    blade_steel: '精鋼法杖',
+    blade_element: '元素魔導杖',
+    blade_legend: '傳說星象權杖',
+    blade_star: '星辰秘術杖',
+    blade_flame: '熔岩深淵杖',
+    signature: '古代咒語法杖',
+  },
+  warrior: {
+    blade_training: '見習戰斧',
+    blade_steel: '精鋼破甲斧',
+    blade_element: '元素狂怒斧',
+    blade_legend: '傳說滅絕之斧',
+    blade_star: '星辰雙刃斧',
+    blade_flame: '熔岩滅世斧',
+    signature: '破城巨斧',
+  },
+  monk: {
+    blade_training: '見習木槌',
+    blade_steel: '精鋼戰錘',
+    blade_element: '元素祈願錘',
+    blade_legend: '傳說救贖權杖',
+    blade_star: '星辰神聖權杖',
+    blade_flame: '熔岩庇護聖錘',
+    signature: '聖光權杖',
+  },
+};
+
+export const RARITY_ORDER: Record<Rarity, number> = {
+  N: 1, R: 2, SR: 3, SSR: 4, UR: 5,
+};
+export const SLOT_ORDER: Record<Slot, number> = {
+  weapon: 1, armor: 2, accessory: 3,
+};
+
+export function sortEquipment(list: EquipDef[]): EquipDef[] {
+  return [...list].sort((a, b) => {
+    const slotDiff = (SLOT_ORDER[a.slot] ?? 99) - (SLOT_ORDER[b.slot] ?? 99);
+    if (slotDiff !== 0) return slotDiff;
+    const rarityDiff = (RARITY_ORDER[a.rarity] ?? 99) - (RARITY_ORDER[b.rarity] ?? 99);
+    if (rarityDiff !== 0) return rarityDiff;
+    const reqRegA = a.requires?.regionsCleared ?? 0;
+    const reqRegB = b.requires?.regionsCleared ?? 0;
+    if (reqRegA !== reqRegB) return reqRegA - reqRegB;
+    return a.cost.gold - b.cost.gold;
+  });
+}
+
 // 屬性護符（飾品）：讓主角屬性以外的結晶也有用途
 const AMULET_MODS: Record<Element, [string, Partial<Mods>]> = {
   metal: ['鋒利的金之力，暴擊更容易', { crit: 0.12 }],
@@ -185,6 +254,12 @@ export function gradeRefund(material: OwnedEquip): number {
 }
 
 export function displayName(def: EquipDef, cls: ClassId): string {
+  if (def.slot === 'weapon') {
+    const classMap = CLASS_WEAPON_NAMES[cls];
+    if (classMap && classMap[def.id]) {
+      return classMap[def.id];
+    }
+  }
   return def.id === 'signature' ? signatureName(cls) : def.name;
 }
 

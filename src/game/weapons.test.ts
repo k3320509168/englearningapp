@@ -17,10 +17,10 @@ import {
 import { useSaveStore } from '../store/saveStore';
 
 describe('Exclusive Weapon System (專武系統)', () => {
-  it('defines 8 SSR hero weapons and 5 protagonist weapons with unique IDs', () => {
-    expect(SSR_HERO_WEAPONS).toHaveLength(8);
+  it('defines 15 SSR hero weapons and 5 protagonist weapons with unique IDs', () => {
+    expect(SSR_HERO_WEAPONS).toHaveLength(15);
     expect(PROTAGONIST_WEAPONS).toHaveLength(5);
-    expect(ALL_WEAPONS).toHaveLength(13);
+    expect(ALL_WEAPONS).toHaveLength(20);
 
     const ids = new Set(ALL_WEAPONS.map(w => w.id));
     expect(ids.size).toBe(ALL_WEAPONS.length);

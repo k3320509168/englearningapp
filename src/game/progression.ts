@@ -58,7 +58,8 @@ export type SkillId =
   | 'amplify' | 'heal' | 'fireball'      // 魔法師
   | 'haste' | 'quake' | 'fortify'        // 戰士
   | 'prayer' | 'blessing' | 'angelWing'  // 僧侶
-  | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora' | 'tenacity'; // SSR 專屬
+  | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora' | 'tenacity'
+  | 'radiance' | 'nemesis' | 'chivalry' | 'solitude' | 'genesis' | 'titan'; // SSR 專屬
 
 // 技能效果的組成（數值已經套用威力）
 export interface SkillEffect {
@@ -117,6 +118,13 @@ export const SKILLS: Record<SkillId, SkillDef> = {
   aurora: { id: 'aurora', icon: '🌌', name: '極光祝福', signature: true, cost: 6, effect: p => ({ heal: r(25 * p), amplify: 3 }) },
   // 堅韌（第二十二輪）：攻守兼備的土屬性劍士——下一擊 ×3.6（SSR）並得到一次守護（答錯不扣血、不斷 combo）
   tenacity: { id: 'tenacity', icon: '🪨', name: '磐岩誓斬', signature: true, cost: 6, effect: p => ({ charge: r1(1.2 + 1.5 * p), shield: true }) },
+  // 第二批 SSR 專屬技能（光輝、天罰、騎士道、孤寂、創世、泰坦）
+  radiance: { id: 'radiance', icon: '🌟', name: '聖輝普照', signature: true, cost: 6, effect: p => ({ heal: r(28 * p), amplify: 2 }) },
+  nemesis: { id: 'nemesis', icon: '🗡️', name: '天罰之刃', signature: true, cost: 6, effect: p => ({ charge: r1(1.8 + 1.8 * p), crits: 2 }) },
+  chivalry: { id: 'chivalry', icon: '🛡️', name: '騎士誓約', signature: true, cost: 6, opening: true, effect: p => ({ shield: true, combo: r(10 * p) }) },
+  solitude: { id: 'solitude', icon: '🏹', name: '靜水深流', signature: true, cost: 5, effect: p => ({ timeStage: r(4 * p), crits: r(3 * p) }) },
+  genesis: { id: 'genesis', icon: '🌿', name: '創生之雨', signature: true, cost: 7, effect: p => ({ revive: true, heal: r(32 * p), shield: true }) },
+  titan: { id: 'titan', icon: '⛰️', name: '泰坦撼地', signature: true, cost: 5, effect: p => ({ charge: r1(1.4 + 1.6 * p), breakShield: 3 }) },
 };
 
 // 各職業的技能池；第一個是主角的技能

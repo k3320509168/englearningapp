@@ -5,7 +5,7 @@ import { useUiStore, type ShopTab } from '../store/uiStore';
 import { ITEMS, UPGRADES, upgradeCost } from '../game/progression';
 import {
   EQUIPMENT, SLOTS, displayName,
-  materialIcon, materialName, resolveCost,
+  materialIcon, materialName, resolveCost, sortEquipment,
 } from '../game/equipment';
 import { RARITY_INFO, HEROES } from '../game/heroes';
 import { classDef } from '../game/character';
@@ -24,6 +24,7 @@ export default function ShopModal() {
   const [tab, setTab] = useState<ShopTab>(shopTab || 'upgrades');
   const [shopSubTab, setShopSubTab] = useState<'upgrades' | 'items'>('upgrades');
   const [forgeSlot, setForgeSlot] = useState<'all' | 'weapon' | 'armor' | 'accessory'>('all');
+  const [weaponFilter, setWeaponFilter] = useState<'all' | 'protagonist' | 'hero'>('all');
 
   const materialBar = (
     <div className="material-bar" aria-label="持有鍛造素材">
@@ -153,7 +154,7 @@ export default function ShopModal() {
             <p className="forge-tip">💡 擊倒怪物可獲取鍛造素材；重複打造同名裝備可「升品階」大幅提升威力！</p>
           </div>
           <ul className="forge-grid">
-            {EQUIPMENT
+            {sortEquipment(EQUIPMENT)
               .filter(def => forgeSlot === 'all' || def.slot === forgeSlot)
               .map(def => {
                 const charEl = character?.element ?? 'light';
@@ -189,7 +190,18 @@ export default function ShopModal() {
       {tab === 'weapons' && (
         <>
           <div className="forge-toolbar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-            <p className="forge-tip" style={{ margin: 0 }}>💡 專武提供獨立攻擊乘區（+7%～+15%）與專屬被動技能。可消耗金幣與專武碎片進行強化！</p>
+            <div className="forge-filter-tabs">
+              {([['all', `全部 (${ALL_WEAPONS.length})`], ['protagonist', '👑 主角神兵 (5)'], ['hero', `🌟 SSR 專武 (${ALL_WEAPONS.length - 5})`]] as const).map(([id, label]) => (
+                <button
+                  key={id}
+                  className={`pill ${weaponFilter === id ? 'is-on' : ''}`}
+                  onMouseDown={keepFocus}
+                  onClick={() => setWeaponFilter(id)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
             <button
               className="btn btn-small btn-secondary"
               onMouseDown={keepFocus}
@@ -198,71 +210,82 @@ export default function ShopModal() {
               🔮 前往真名鍛爐召喚 ➔
             </button>
           </div>
+          <p className="forge-tip" style={{ margin: '6px 0 0' }}>💡 專武提供獨立攻擊加成（+7%～+15%）與專屬特色被動。可消耗金幣與專屬碎片提升神兵等階！</p>
 
-          <ul className="forge-grid" style={{ marginTop: 12 }}>
-            {ALL_WEAPONS.map(wp => {
-              const owned = weapons[wp.id];
-              const isUnlocked = !!owned?.unlocked;
-              const curLvl = owned?.level ?? 0;
-              const shards = weaponShards[wp.id] ?? 0;
-              const cost = weaponUpgradeCost(curLvl);
-              const isMax = curLvl >= WEAPON_MAX_LEVEL;
-              const canUpgrade = isUnlocked && !isMax && cost !== null && gold >= cost.gold && shards >= cost.shards;
-              const atkBonusPct = Math.round(weaponAtkMultiplier(curLvl) * 100);
-              const ownerName = wp.heroId
-                ? (HEROES.find(h => h.id === wp.heroId)?.meaning ?? wp.heroId)
-                : wp.classId
-                  ? classDef(wp.classId)?.name ?? wp.classId
-                  : '專屬';
-              const wpColor = isUnlocked ? '#ffd15c' : '#a855f7';
+          <ul className="weapon-forge-list">
+            {ALL_WEAPONS
+              .filter(wp => weaponFilter === 'all' || (weaponFilter === 'protagonist' ? !!wp.classId : !!wp.heroId))
+              .map(wp => {
+                const owned = weapons[wp.id];
+                const isUnlocked = !!owned?.unlocked;
+                const curLvl = owned?.level ?? 0;
+                const shards = weaponShards[wp.id] ?? 0;
+                const cost = weaponUpgradeCost(curLvl);
+                const isMax = curLvl >= WEAPON_MAX_LEVEL;
+                const canUpgrade = isUnlocked && !isMax && cost !== null && gold >= cost.gold && shards >= cost.shards;
+                const atkBonusPct = Math.round(weaponAtkMultiplier(curLvl) * 100);
+                const ownerName = wp.heroId
+                  ? (HEROES.find(h => h.id === wp.heroId)?.meaning ?? wp.heroId)
+                  : wp.classId
+                    ? classDef(wp.classId)?.name ?? wp.classId
+                    : '專屬';
+                const wpColor = isUnlocked ? '#ffd15c' : '#c084fc';
 
-              return (
-                <li key={wp.id} className={`gear-item ${!isUnlocked ? 'is-locked' : ''}`} style={{ '--rarity': wpColor } as CSSProperties}>
-                  <span className="rarity-tag inline" style={{ borderColor: wpColor, color: wpColor }}>
-                    {wp.heroId ? 'SSR專武' : '主角神兵'}
-                  </span>
-                  <div className="gear-info">
-                    <b style={{ color: wpColor }}>
-                      {wp.icon} {wp.name} {isUnlocked && <span className="hero-tag">+{curLvl}</span>}
-                    </b>
-                    <small style={{ color: '#ffd15c' }}>
-                      專屬持有人：{ownerName}（攻擊 +{atkBonusPct}%）
-                    </small>
-                    <small className="muted">{wp.passiveDesc}</small>
-                    {isUnlocked ? (
-                      <small className="cost-line">
-                        碎片持有：<b>{shards}</b> 枚
-                        {!isMax && cost && (
-                          <span> ｜ 升級需：🪙{cost.gold}、🪓碎片×{cost.shards}</span>
+                return (
+                  <li key={wp.id} className={`weapon-forge-item ${!isUnlocked ? 'is-locked' : ''}`} style={{ '--rarity': wpColor } as CSSProperties}>
+                    <div className="weapon-forge-icon" aria-hidden="true">{wp.icon}</div>
+                    <div className="weapon-forge-info">
+                      <div className="weapon-forge-title-row">
+                        <span className="rarity-tag inline" style={{ borderColor: wpColor, color: wpColor }}>
+                          {wp.heroId ? 'SSR專武' : '主角神兵'}
+                        </span>
+                        <b style={{ color: wpColor }}>{wp.name}</b>
+                        {isUnlocked ? (
+                          <span className="hero-tag" style={{ background: '#ffd15c', color: '#1a1000' }}>+{curLvl}</span>
+                        ) : (
+                          <span className="muted" style={{ fontSize: 11 }}>未擁有</span>
                         )}
-                      </small>
-                    ) : (
-                      <small className="muted lock-text">🔒 尚未解鎖（真名鍛爐召喚或真名試煉解鎖）</small>
-                    )}
-                  </div>
-                  {isUnlocked ? (
-                    <button
-                      className="btn btn-small btn-primary"
-                      onMouseDown={keepFocus}
-                      disabled={!canUpgrade}
-                      onClick={() => {
-                        if (upgradeWeapon(wp.id)) sfx.coin();
-                      }}
-                    >
-                      {isMax ? '已滿階' : '強化專武'}
-                    </button>
-                  ) : (
-                    <button
-                      className="btn btn-small btn-ghost"
-                      onMouseDown={keepFocus}
-                      onClick={() => { closeModal(); openModal('summon'); }}
-                    >
-                      去鍛爐
-                    </button>
-                  )}
-                </li>
-              );
-            })}
+                      </div>
+                      <div className="weapon-forge-meta">
+                        <span style={{ color: '#ffd15c' }}>專屬：<b>{ownerName}</b></span>
+                        <span>攻擊加成：<b>+{atkBonusPct}%</b></span>
+                        {isUnlocked && <span>持有碎片：<b>{shards}</b> 枚</span>}
+                      </div>
+                      <div className="weapon-forge-passive">{wp.passiveDesc}</div>
+                      {!isUnlocked && (
+                        <div className="lock-text muted">🔒 獲取途徑：真名鍛爐召喚 或 完成英雄真名試煉解鎖</div>
+                      )}
+                      {isUnlocked && !isMax && cost && (
+                        <div className="cost-line" style={{ marginTop: 2 }}>
+                          下一級消耗：🪙{cost.gold} ｜ 🪓碎片×{cost.shards} {shards < cost.shards && <span className="short">(缺 {cost.shards - shards})</span>}
+                        </div>
+                      )}
+                    </div>
+                    <div className="weapon-forge-actions">
+                      {isUnlocked ? (
+                        <button
+                          className="btn btn-small btn-primary"
+                          onMouseDown={keepFocus}
+                          disabled={!canUpgrade}
+                          onClick={() => {
+                            if (upgradeWeapon(wp.id)) sfx.coin();
+                          }}
+                        >
+                          {isMax ? '★ 已滿級' : '強化神兵'}
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-small btn-ghost"
+                          onMouseDown={keepFocus}
+                          onClick={() => { closeModal(); openModal('summon'); }}
+                        >
+                          去鍛爐 ➔
+                        </button>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
         </>
       )}

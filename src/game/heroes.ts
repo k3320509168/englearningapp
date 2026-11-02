@@ -3,7 +3,7 @@ import type { Character, ClassId, Element, Gender } from './character';
 import { CLASS_SKILLS, RARITY_POWER } from './progression';
 import type { SkillId } from './progression';
 
-// 夥伴英雄：50 位，名字都是英文單字（真名機制的基礎），稀有度對應單字難度。
+// 夥伴英雄：150 位（N 48 / R 45 / SR 38 / SSR 15 / UR 4），名字都是英文單字（真名機制的基礎），稀有度對應單字難度。
 // 外觀用主角的分層像素系統產生：職業、屬性、性別手動指定，其餘依單字固定亂數決定。
 // 取得方式：遊戲內召喚券抽卡（不付費），有保底與累積兌換。
 
@@ -156,24 +156,87 @@ const ROSTER: Entry[] = [
 
   ['tenacity', '堅韌', 'SSR', 'swordsman', 'earth', 'female'],
 
-  // SSR 專屬技能構想
-  // TENACITY — 磐岩誓斬
-  // 下一次答對攻擊傷害 ×3.6，
-  // 並獲得一次守護：抵擋下一次答錯傷害，
-  // 同時保護 Combo 不被中斷。
-  //
-  // 建議 SkillEffect：
-  // { charge: 3.6, shield: true }
-  //
-  // 數值參考既有 eclipse 的蓄力攻擊、
-  // guard 的一次性守護。
-  // 定位：土屬性攻守兼備劍士，
-  // 傷害低於純攻擊 SSR，但多一層保護。
-  //
-  // 實作提醒：
-  // 需在 SkillId、SKILLS、SIGNATURE
-  // 分別新增 tenacity 專屬技能，
-  // 否則會落回一般劍士技能池。
+  // ==========================================
+  // 英雄擴充第二批（滿編 150 位目標）：62 位
+  // N 19 位（累計 48）
+  // R 18 位（累計 45）
+  // SR 15 位（累計 38）
+  // SSR 6 位（累計 15）
+  // UR 4 位（累計 4）
+  // 總計 150 位，已核對無任何重複單字
+  // ==========================================
+
+  // ===== N：A1 基礎單字（19 位） =====
+  ['hill', '山丘', 'N', 'warrior', 'earth', 'male'],
+  ['leaf', '樹葉', 'N', 'archer', 'wood', 'female'],
+  ['lake', '湖泊', 'N', 'mage', 'water', 'female'],
+  ['sand', '沙子', 'N', 'warrior', 'earth', 'male'],
+  ['wind', '微風', 'N', 'archer', 'water', 'female'],
+  ['wave', '波浪', 'N', 'swordsman', 'water', 'male'],
+  ['seed', '種子', 'N', 'monk', 'wood', 'female'],
+  ['grass', '青草', 'N', 'monk', 'wood', 'female'],
+  ['path', '小徑', 'N', 'archer', 'earth', 'male'],
+  ['door', '大門', 'N', 'warrior', 'metal', 'male'],
+  ['ring', '戒指', 'N', 'mage', 'light', 'female'],
+  ['rope', '繩索', 'N', 'swordsman', 'wood', 'male'],
+  ['horn', '號角', 'N', 'warrior', 'metal', 'male'],
+  ['coin', '硬幣', 'N', 'swordsman', 'metal', 'male'],
+  ['lamp', '油燈', 'N', 'monk', 'fire', 'female'],
+  ['cup', '茶杯', 'N', 'monk', 'light', 'female'],
+  ['nest', '鳥巢', 'N', 'monk', 'wood', 'female'],
+  ['pond', '池塘', 'N', 'mage', 'water', 'female'],
+  ['frog', '青蛙', 'N', 'archer', 'water', 'male'],
+
+  // ===== R：A2 常用單字（18 位） =====
+  ['valley', '山谷', 'R', 'archer', 'earth', 'female'],
+  ['stream', '小溪', 'R', 'swordsman', 'water', 'female'],
+  ['desert', '荒漠', 'R', 'warrior', 'earth', 'male'],
+  ['cliff', '懸崖', 'R', 'swordsman', 'earth', 'male'],
+  ['feather', '羽毛', 'R', 'archer', 'light', 'female'],
+  ['branch', '樹枝', 'R', 'monk', 'wood', 'male'],
+  ['harbor', '港口', 'R', 'warrior', 'water', 'male'],
+  ['meadow', '草甸', 'R', 'monk', 'wood', 'female'],
+  ['breeze', '和風', 'R', 'mage', 'water', 'female'],
+  ['cavern', '巨窟', 'R', 'warrior', 'dark', 'male'],
+  ['beacon', '燈塔', 'R', 'monk', 'light', 'male'],
+  ['spear', '長矛', 'R', 'swordsman', 'metal', 'male'],
+  ['blade', '利刃', 'R', 'swordsman', 'metal', 'female'],
+  ['hammer', '鐵錘', 'R', 'warrior', 'metal', 'male'],
+  ['arrow', '箭矢', 'R', 'archer', 'metal', 'female'],
+  ['echo', '回音', 'R', 'mage', 'dark', 'female'],
+  ['crown', '王冠', 'R', 'mage', 'light', 'male'],
+  ['scroll', '卷軸', 'R', 'monk', 'light', 'female'],
+
+  // ===== SR：B1～B2 進階單字（15 位） =====
+  ['avalanche', '雪崩', 'SR', 'warrior', 'water', 'male'],
+  ['bolt', '雷矢', 'SR', 'swordsman', 'light', 'male'],
+  ['whirlwind', '旋風', 'SR', 'archer', 'water', 'female'],
+  ['meteor', '流星', 'SR', 'mage', 'fire', 'male'],
+  ['tundra', '凍原', 'SR', 'warrior', 'water', 'male'],
+  ['canyon', '峽谷', 'SR', 'swordsman', 'earth', 'male'],
+  ['forge', '鍛爐', 'SR', 'warrior', 'fire', 'male'],
+  ['bastion', '堡壘', 'SR', 'warrior', 'metal', 'male'],
+  ['relic', '聖物', 'SR', 'monk', 'light', 'female'],
+  ['zenith', '頂點', 'SR', 'archer', 'light', 'female'],
+  ['vortex', '漩渦', 'SR', 'mage', 'dark', 'male'],
+  ['sentinel', '哨兵', 'SR', 'archer', 'metal', 'male'],
+  ['prophet', '先知', 'SR', 'monk', 'light', 'female'],
+  ['omen', '預兆', 'SR', 'mage', 'dark', 'female'],
+  ['solstice', '至點', 'SR', 'swordsman', 'fire', 'female'],
+
+  // ===== SSR：B2～C1 抽象真名（6 位，累計 15 位） =====
+  ['radiance', '光輝', 'SSR', 'mage', 'light', 'female'],
+  ['nemesis', '天罰', 'SSR', 'swordsman', 'dark', 'male'],
+  ['chivalry', '騎士道', 'SSR', 'warrior', 'metal', 'male'],
+  ['solitude', '孤寂', 'SSR', 'archer', 'water', 'female'],
+  ['genesis', '創世', 'SSR', 'monk', 'wood', 'female'],
+  ['titan', '泰坦', 'SSR', 'warrior', 'earth', 'male'],
+
+  // ===== UR：C1～C2 高階終極真名（4 位） =====
+  ['oblivion', '湮滅', 'UR', 'monk', 'dark', 'male'],
+  ['infinity', '無限', 'UR', 'mage', 'light', 'female'],
+  ['eternity', '永恆', 'UR', 'swordsman', 'metal', 'female'],
+  ['apocalypse', '天啟', 'UR', 'warrior', 'fire', 'male'],
 ];
 
 // 依單字產生固定的亂數（每次開遊戲外觀都一樣）
@@ -214,6 +277,8 @@ const SIGNATURE: Record<HeroId, SkillId> = {
   phoenix: 'rebirth', eclipse: 'eclipse', tempest: 'storm', sanctuary: 'sanctum',
   valor: 'valor', serenity: 'calm', labyrinth: 'maze', aurora: 'aurora',
   tenacity: 'tenacity',
+  radiance: 'radiance', nemesis: 'nemesis', chivalry: 'chivalry',
+  solitude: 'solitude', genesis: 'genesis', titan: 'titan',
 };
 
 // 英雄的技能：SSR 用專屬技，其他依名字固定分到職業技能池的其中一種（同職業的英雄技能不一定一樣）

@@ -25,6 +25,7 @@ import { keepFocus } from './keepFocus';
 import { usePartyDrag } from './usePartyDrag';
 import { NameGlow, StarBadge } from './HeroBits';
 import { PITY_SSR } from '../game/heroes';
+import { weaponForHero, weaponForClass, weaponAtkMultiplier, weaponUpgradeCost } from '../game/weapons';
 
 type Filter = 'owned' | 'all' | Rarity;
 
@@ -246,7 +247,7 @@ export default function HeroModal() {
               </div>
             ) : <p className="muted">尚未擁有：可以透過召喚取得。</p>}
           </div>
-          {h.rarity === 'SSR' && <WeaponSlot />}
+          {h.rarity === 'SSR' && <WeaponSlot heroId={id} />}
         </div>
 
         <div className="hd-tabs" role="tablist">
@@ -376,32 +377,64 @@ function GrowthRow({ title, effect, reqs, action, onAction }: { title: string; e
   );
 }
 
-// 專武欄位（預告）：SSR 英雄與主角才有，專武系統之後開放（B1 區通關後解鎖專武池）
-const CLASS_WEAPON_INFO: Record<ClassId, { icon: string; name: string; title: string; color: string }> = {
-  swordsman: { icon: '🗡️', name: '誓約聖劍・艾爾德', title: '劍聖專武', color: '#f97316' },
-  warrior: { icon: '🪓', name: '滅世戰斧・巴薩卡', title: '狂戰專武', color: '#eab308' },
-  archer: { icon: '🏹', name: '天穹逐影弓・伊卡洛', title: '神射專武', color: '#22c55e' },
-  mage: { icon: '🔮', name: '深淵星象法杖・克羅諾', title: '賢者專武', color: '#a855f7' },
-  monk: { icon: '✨', name: '晨曦庇護聖杯・歐若拉', title: '聖者專武', color: '#38bdf8' },
-};
+// 專武欄位：SSR 英雄與主角專屬武器
+function WeaponSlot({ heroId, classId }: { heroId?: string; classId?: ClassId }) {
+  const wp = heroId ? weaponForHero(heroId) : classId ? weaponForClass(classId) : undefined;
+  const userWp = useSaveStore(s => (wp ? s.weapons[wp.id] : undefined));
+  const shards = useSaveStore(s => (wp ? s.weaponShards[wp.id] ?? 0 : 0));
+  const gold = useSaveStore(s => s.gold);
+  const upgradeWeapon = useSaveStore(s => s.upgradeWeapon);
+  if (!wp) return null;
 
-function WeaponSlot({ classId = 'swordsman' }: { classId?: ClassId }) {
-  const info = CLASS_WEAPON_INFO[classId] ?? CLASS_WEAPON_INFO.swordsman;
+  const isUnlocked = !!userWp?.unlocked;
+  const level = userWp?.level ?? 0;
+  const cost = weaponUpgradeCost(level);
+  const atkMult = Math.round(weaponAtkMultiplier(level) * 100);
+  const canUpgrade = isUnlocked && cost && shards >= cost.shards && gold >= cost.gold;
+
   return (
     <aside
-      className="hd-weapon-anticipation"
-      style={{ '--wp-color': info.color } as CSSProperties}
-      title={`真名專武【${info.name}】：通關 B1 區魔王後於召喚畫面開放專武鍛爐！`}
+      className={`hd-weapon-anticipation ${isUnlocked ? 'hd-weapon-unlocked' : ''}`}
+      style={{ '--wp-color': isUnlocked ? '#ffd15c' : '#a855f7' } as CSSProperties}
+      title={`專武【${wp.name}】\n${wp.desc}\n加成：攻擊 +${atkMult}%、${wp.passiveDesc}`}
     >
       <div className="hd-weapon-halo" aria-hidden />
       <div className="hd-weapon-box">
-        <span className="hd-weapon-icon" aria-hidden>{info.icon}</span>
-        <span className="hd-weapon-lock">🔒</span>
+        <span className="hd-weapon-icon" aria-hidden>{wp.icon}</span>
+        {isUnlocked ? (
+          <span className="hd-weapon-level">+{level}</span>
+        ) : (
+          <span className="hd-weapon-lock">🔒</span>
+        )}
       </div>
       <div className="hd-weapon-details">
-        <b className="hd-weapon-title">{info.name}</b>
-        <span className="hd-weapon-role">【{info.title}】</span>
-        <small className="hd-weapon-status">B1 通關後開放召喚</small>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <b className="hd-weapon-title">{wp.name}</b>
+          {isUnlocked && <span className="badge badge-gold">+{level}</span>}
+        </div>
+        <span className="hd-weapon-role">攻 +{atkMult}% ｜ {wp.passiveDesc}</span>
+        {isUnlocked ? (
+          cost ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 4 }}>
+              <button
+                className="btn btn-tiny btn-primary"
+                onMouseDown={keepFocus}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (upgradeWeapon(wp.id)) sfx.coin();
+                }}
+                disabled={!canUpgrade}
+                title={`強化需要 ${cost.shards} 碎片、🪙${cost.gold}`}
+              >
+                強化 (🧩{shards}/{cost.shards} 🪙{cost.gold})
+              </button>
+            </div>
+          ) : (
+            <small className="hd-weapon-status" style={{ color: '#ffd15c', fontWeight: 'bold' }}>👑 鍛造極限 (Lv MAX)</small>
+          )
+        ) : (
+          <small className="hd-weapon-status">{heroId ? '完成真名考驗或於專武召喚解鎖' : '於專武召喚/鍛爐解鎖'}</small>
+        )}
       </div>
     </aside>
   );

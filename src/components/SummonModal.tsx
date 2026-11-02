@@ -10,18 +10,36 @@ import {
 import { heroDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
-
-// 專武池解鎖：打倒 B1 黃金沙漠（區域索引 3）的區域魔王
-const WEAPON_UNLOCK_REGION = 3;
+import {
+  ALL_WEAPONS,
+  WEAPON_PITY_SSR,
+  WEAPON_SPARK_COST,
+  WEAPON_UNLOCK_REGION,
+  weaponDef,
+  type WeaponSummonDrop,
+} from '../game/weapons';
 
 // 召喚：用遊戲內的召喚券抽英雄（不付費）。
 // 保底：第 50 抽內必出 SSR；累積：每抽 1 點，100 點可任選一位 SSR；十連至少一位 SR 以上。
 export default function SummonModal() {
-  const { tickets, gold, summonCounter, buyTicket, summonHeroes, exchangeSpark } = useSaveStore();
+  const {
+    tickets,
+    gold,
+    summonCounter,
+    buyTicket,
+    summonHeroes,
+    exchangeSpark,
+    weaponTickets,
+    weaponCounter,
+    summonWeapons,
+    exchangeWeaponSpark,
+  } = useSaveStore();
   const boughtThisWeek = useSaveStore(s => (s.ticketBuys.week === s.weekly?.week ? s.ticketBuys.count : 0));
   const { closeModal, openModal } = useUiStore();
   const [results, setResults] = useState<SummonOutcome[] | null>(null);
   const [picking, setPicking] = useState(false);
+  const [weaponResults, setWeaponResults] = useState<WeaponSummonDrop[] | null>(null);
+  const [pickingWeapon, setPickingWeapon] = useState(false);
   // 召喚池分頁（第二十一輪 D2）：英雄池／專武池。專武池在打倒 B1 黃金沙漠的區域魔王或跳級通過後解鎖
   const [pool, setPool] = useState<'hero' | 'weapon'>('hero');
   const weaponUnlocked = useSaveStore(s => s.bossDown.includes(WEAPON_UNLOCK_REGION) || s.unlockedIndex > WEAPON_UNLOCK_REGION);
@@ -34,6 +52,17 @@ export default function SummonModal() {
     setResults(out);
     if (out.some(r => r.rarity === 'SSR')) sfx.victory(); else sfx.coin();
     celebrateNew(out);
+  };
+
+  const pullWeapons = (count: number) => {
+    const out = summonWeapons(count);
+    if (!out) return;
+    setPickingWeapon(false);
+    setWeaponResults(out);
+    if (out.some(r => r.kind === 'weapon')) sfx.victory(); else sfx.coin();
+    out.filter(r => r.kind === 'weapon' && r.isNew).forEach(r => {
+      useUiStore.getState().celebrate({ icon: '⚔️', title: '神兵鍛造完成！', sub: r.name, color: '#ffd15c' });
+    });
   };
 
   // 新的 SSR 以上英雄：全螢幕登場
@@ -53,8 +82,22 @@ export default function SummonModal() {
     celebrateNew([out]);
   };
 
+  const pickWeapon = (id: string) => {
+    const ok = exchangeWeaponSpark(id);
+    if (!ok) return;
+    sfx.victory();
+    setPickingWeapon(false);
+    const wp = weaponDef(id);
+    if (wp) {
+      setWeaponResults([{ kind: 'weapon', weaponId: wp.id, name: wp.name, icon: wp.icon, amount: 1, isNew: true }]);
+      useUiStore.getState().celebrate({ icon: '⚔️', title: '神兵鍛造完成！', sub: wp.name, color: '#ffd15c' });
+    }
+  };
+
   const sparkReady = summonCounter.spark >= SPARK_COST;
   const pityLeft = PITY_SSR - summonCounter.sinceSsr;
+  const weaponPityLeft = WEAPON_PITY_SSR - weaponCounter.sinceSsr;
+  const weaponSparkReady = weaponCounter.spark >= WEAPON_SPARK_COST;
 
   return (
     <Modal title="🔮 召喚" onClose={closeModal} wide>
@@ -63,13 +106,91 @@ export default function SummonModal() {
         <button role="tab" aria-selected={pool === 'weapon'} className={`tab ${pool === 'weapon' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('weapon')}>{weaponUnlocked ? '⚔️' : '🔒'} 專武召喚</button>
       </div>
       {pool === 'weapon' ? (
-        <section className="summon-banner is-weapon">
-          <p className="summon-title">真名鍛爐</p>
-          {weaponUnlocked
-            ? <p>專武召喚即將開放：SSR 英雄與主角二轉職業的專屬武器，專武機率 5%、30 抽保底、60 抽自選，使用專武召喚券。</p>
-            : <p>🔒 打倒 B1「黃金沙漠」的區域魔王「流沙法老」後解鎖，解鎖時送專武召喚券 ×10。</p>}
-          <p className="muted">專武召喚券和英雄召喚券分開，保底也分開計算。</p>
-        </section>
+        !weaponUnlocked ? (
+          <section className="summon-banner is-weapon">
+            <p className="summon-title">真名鍛爐</p>
+            <p>🔒 打倒 B1「黃金沙漠」的區域魔王「流沙法老」後解鎖，解鎖時贈送專武召喚券 ×10。</p>
+            <p className="muted">專武召喚券和英雄召喚券分開，保底也分開計算。</p>
+          </section>
+        ) : (
+          <>
+            <section className="summon-banner is-weapon">
+              <p className="summon-title">真名鍛爐</p>
+              <p className="muted">鍛造英雄與主角的專屬神兵。專武擁有強大攻擊加成與特色被動。</p>
+              <p className="summon-rates">
+                <span style={{ color: '#ffd15c' }}>專武 5%</span>
+                <span style={{ color: '#a855f7' }}>稀有素材 15%</span>
+                <span style={{ color: '#38bdf8' }}>願望碎片 30%</span>
+                <span style={{ color: '#94a3b8' }}>強化礦石 50%</span>
+              </p>
+              <div className="summon-meters">
+                <span>🎯 保底：再 <b>{weaponPityLeft}</b> 次鍛造內必出專武</span>
+                <span className="spark">
+                  ✨ 累積 <b>{weaponCounter.spark}/{WEAPON_SPARK_COST}</b>
+                  <span className="spark-track"><span style={{ width: `${Math.min(100, (weaponCounter.spark / WEAPON_SPARK_COST) * 100)}%` }} /></span>
+                  <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => setPickingWeapon(p => !p)} disabled={!weaponSparkReady}>任選專武</button>
+                </span>
+              </div>
+            </section>
+
+            <div className="summon-actions-card">
+              <div className="summon-wallet-row">
+                <span className="ticket-count">⚔️ 持有專武券 <b>{weaponTickets}</b></span>
+                <span className="summon-ways-chip" title="通關 B1 贈送 10 張、擊敗區域魔王、高難度試煉或活動取得">
+                  ⓘ 取得途徑
+                </span>
+              </div>
+
+              <div className="summon-buttons-row">
+                <button className="btn btn-primary btn-summon-single" onMouseDown={keepFocus} onClick={() => pullWeapons(1)} disabled={weaponTickets < 1}>
+                  鍛造 ×1
+                </button>
+                <button className="btn btn-primary btn-summon-ten" onMouseDown={keepFocus} onClick={() => pullWeapons(TEN_PULL)} disabled={weaponTickets < TEN_PULL}>
+                  十連鍛造 ×10
+                </button>
+              </div>
+            </div>
+
+            {pickingWeapon && (
+              <section>
+                <p className="summon-sub">選一把專武（消耗 {WEAPON_SPARK_COST} 點）</p>
+                <ul className="summon-results">
+                  {ALL_WEAPONS.map(w => (
+                    <li key={w.id}>
+                      <button className="summon-card" style={{ '--rarity': '#ffd15c' } as CSSProperties} onMouseDown={keepFocus} onClick={() => pickWeapon(w.id)}>
+                        <div style={{ fontSize: 36, margin: '8px 0' }}>{w.icon}</div>
+                        <b>{w.name}</b>
+                        <small>{w.heroId ? '英雄專武' : '主角專武'}</small>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {weaponResults && !pickingWeapon && (
+              <section>
+                <p className="summon-sub">鍛造結果</p>
+                <ul className="summon-results">
+                  {weaponResults.map((r, i) => (
+                    <li key={i}>
+                      <div className="summon-card is-revealed" style={{ '--rarity': r.kind === 'weapon' ? '#ffd15c' : '#38bdf8', animationDelay: `${i * 0.12}s` } as CSSProperties}>
+                        <span className="rarity-tag">{r.kind === 'weapon' ? '專武' : '素材'}</span>
+                        <div style={{ fontSize: 32, margin: '6px 0' }}>{r.icon}</div>
+                        <b>{r.name}</b>
+                        <small>{r.kind === 'weapon' ? (r.isNew ? 'NEW!' : '重複轉為碎片') : `x${r.amount}`}</small>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <div className="tutorial-actions">
+                  <span />
+                  <button className="btn" onMouseDown={keepFocus} onClick={() => openModal('heroes')}>查看英雄與專武</button>
+                </div>
+              </section>
+            )}
+          </>
+        )
       ) : (<>
       <section className="summon-banner">
         <p className="summon-title">古代咒語的召喚陣</p>

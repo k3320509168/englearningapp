@@ -39,10 +39,19 @@ import { clearStoryId, regionStoryId } from '../game/story';
 import type { Character, ClassId } from '../game/character';
 import { PARTY_MAX } from '../game/party';
 import type { MemberId } from '../game/party';
+import {
+  WEAPON_DUPE_SHARDS,
+  WEAPON_SPARK_COST,
+  WEAPON_UNLOCK_REGION,
+  rollWeaponSummon,
+  weaponForHero,
+  weaponUpgradeCost,
+} from '../game/weapons';
+import type { WeaponSummonDrop } from '../game/weapons';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 22;
+export const SAVE_VERSION = 23;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -119,6 +128,11 @@ interface SaveData {
   // 召喚（抽卡）：召喚券、保底與累積點數、重複英雄轉成的碎片、已升品階的英雄
   tickets: number;
   summonCounter: SummonCounter;
+  // 專武系統（STAGE_PLAN.md 第 15 節）：SSR 英雄與主角專武
+  weaponTickets: number;
+  weapons: Record<string, { level: number; unlocked: boolean }>;
+  weaponShards: Record<string, number>;
+  weaponCounter: { sinceSsr: number; spark: number };
   heroShards: Record<HeroId, number>;
   heroStars: Record<HeroId, number>; // SSR 升星（0～4 星）
   wishShards: number;                // 願望碎片：任何英雄都能用來補不足的碎片
@@ -210,6 +224,11 @@ interface SaveActions {
   earnTrainingGold: () => number;
   summonHeroes: (count: number, rand?: () => number) => SummonOutcome[] | null;
   exchangeSpark: (id: HeroId) => SummonOutcome | null;
+  addWeaponTickets: (n: number) => void;
+  summonWeapons: (count: number, rand?: () => number) => WeaponSummonDrop[] | null;
+  upgradeWeapon: (weaponId: string) => boolean;
+  exchangeWeaponSpark: (weaponId: string) => boolean;
+  unlockWeapon: (weaponId: string) => void;
   tierUp: (id: HeroId) => boolean;
   starUp: (id: HeroId) => boolean;
   finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
@@ -284,6 +303,10 @@ export const initialSave: SaveData = {
   party: ['player', 'knight'],
   tickets: STARTER_TICKETS,
   summonCounter: { sinceSsr: 0, spark: 0 },
+  weaponTickets: 0,
+  weapons: {},
+  weaponShards: {},
+  weaponCounter: { sinceSsr: 0, spark: 0 },
   heroShards: {},
   heroStars: {},
   wishShards: 0,
@@ -450,6 +473,17 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.heroTier = counts(migrated.heroTier);
   migrated.heroStars = counts(migrated.heroStars);
   migrated.heroLevel = counts(migrated.heroLevel, 1);
+  migrated.weaponShards = counts(migrated.weaponShards);
+  migrated.weapons = Object.fromEntries(
+    Object.entries(migrated.weapons ?? {}).filter(([, wp]) => isPlainObject(wp) && typeof wp.level === 'number' && typeof wp.unlocked === 'boolean')
+  );
+  if (!isPlainObject(migrated.weaponCounter)) migrated.weaponCounter = { sinceSsr: 0, spark: 0 };
+  else {
+    migrated.weaponCounter = {
+      sinceSsr: Math.max(0, Number(migrated.weaponCounter.sinceSsr) || 0),
+      spark: Math.max(0, Number(migrated.weaponCounter.spark) || 0),
+    };
+  }
   migrated.levelProgress = counts(migrated.levelProgress);
   if (version >= 1 && version < 15) migrated.unlockedIndex = OLD_REGION_TO_NEW[Math.min(6, Math.max(0, Math.floor(migrated.unlockedIndex)))];
   migrated.bestStage = counts(migrated.bestStage);
@@ -673,7 +707,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           });
           return idx;
         },
-        defeatRegionBoss: (regionIdx) => set(s => (s.bossDown.includes(regionIdx) ? {} : { bossDown: [...s.bossDown, regionIdx] })),
+        defeatRegionBoss: (regionIdx) => set(s => {
+          if (s.bossDown.includes(regionIdx)) return {};
+          const patch: Partial<SaveData> = { bossDown: [...s.bossDown, regionIdx] };
+          if (regionIdx === WEAPON_UNLOCK_REGION) {
+            patch.weaponTickets = (s.weaponTickets ?? 0) + 10;
+          }
+          return patch;
+        }),
 
         updateSettings: (patch) => set(s => ({ settings: { ...s.settings, ...patch } })),
         setTutorialDone: (done) => set({ tutorialDone: done }),
@@ -928,9 +969,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const next = prev.map((v, i) => v || i === trialIdx);
           // 五項全部完成（第二十一輪 D4）：看英雄原生稀有度，SSR 送召喚券 ×3、SR 送掃蕩券 ×3，每位英雄只領一次
           const reward = trialsDone(next) >= TRIAL_COUNT && !s.trueNameRewarded.includes(id) ? TRUE_NAME_REWARD[heroDef(id).rarity] : undefined;
+          const heroWp = weaponForHero(id);
+          const wpPatch = (heroDef(id).rarity === 'SSR' && trialsDone(next) >= TRIAL_COUNT && heroWp && !s.weapons[heroWp.id]?.unlocked)
+            ? { weapons: { ...s.weapons, [heroWp.id]: { level: 0, unlocked: true } } }
+            : {};
           set({
             trueName: { ...s.trueName, [id]: next },
             heroShards: { ...s.heroShards, [id]: (s.heroShards[id] ?? 0) + TRIAL_SHARDS },
+            ...wpPatch,
             ...(reward ? {
               trueNameRewarded: [...s.trueNameRewarded, id],
               tickets: s.tickets + (reward.tickets ?? 0),
@@ -940,6 +986,87 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           get().trackDaily('trial');
           return true;
         },
+
+        addWeaponTickets: (n: number) => set(s => ({ weaponTickets: Math.max(0, (s.weaponTickets ?? 0) + n) })),
+
+        summonWeapons: (count: number, rand?: () => number) => {
+          const s = get();
+          if (s.weaponTickets < count) return null;
+          const { drops, nextCounter } = rollWeaponSummon(count, s.weaponCounter, s.weapons, rand);
+          const nextWeapons = { ...s.weapons };
+          const nextShards = { ...s.weaponShards };
+          let addedWish = 0;
+          const nextMaterials = { ...s.materials };
+
+          for (const d of drops) {
+            if (d.kind === 'weapon' && d.weaponId) {
+              if (!nextWeapons[d.weaponId]?.unlocked) {
+                nextWeapons[d.weaponId] = { level: 0, unlocked: true };
+              } else {
+                nextShards[d.weaponId] = (nextShards[d.weaponId] ?? 0) + WEAPON_DUPE_SHARDS;
+              }
+            } else if (d.kind === 'shards') {
+              addedWish += d.amount;
+            } else if (d.kind === 'rare_mat') {
+              const matKey = d.name === '龍晶' ? 'dragon_crystal' : 'magic_core';
+              nextMaterials[matKey] = (nextMaterials[matKey] ?? 0) + d.amount;
+            } else if (d.kind === 'mat') {
+              nextMaterials['ore'] = (nextMaterials['ore'] ?? 0) + d.amount;
+            }
+          }
+
+          set({
+            weaponTickets: s.weaponTickets - count,
+            weaponCounter: nextCounter,
+            weapons: nextWeapons,
+            weaponShards: nextShards,
+            wishShards: s.wishShards + addedWish,
+            materials: nextMaterials,
+          });
+          return drops;
+        },
+
+        upgradeWeapon: (weaponId: string) => {
+          const s = get();
+          const wp = s.weapons[weaponId];
+          if (!wp || !wp.unlocked) return false;
+          const cost = weaponUpgradeCost(wp.level);
+          if (!cost) return false;
+          const ownShards = s.weaponShards[weaponId] ?? 0;
+          if (ownShards < cost.shards || s.gold < cost.gold) return false;
+
+          set({
+            gold: s.gold - cost.gold,
+            weaponShards: { ...s.weaponShards, [weaponId]: ownShards - cost.shards },
+            weapons: { ...s.weapons, [weaponId]: { ...wp, level: wp.level + 1 } },
+          });
+          return true;
+        },
+
+        exchangeWeaponSpark: (weaponId: string) => {
+          const s = get();
+          if (s.weaponCounter.spark < WEAPON_SPARK_COST) return false;
+          const nextWeapons = { ...s.weapons };
+          const nextShards = { ...s.weaponShards };
+          if (!nextWeapons[weaponId]?.unlocked) {
+            nextWeapons[weaponId] = { level: 0, unlocked: true };
+          } else {
+            nextShards[weaponId] = (nextShards[weaponId] ?? 0) + WEAPON_DUPE_SHARDS;
+          }
+          set({
+            weaponCounter: { ...s.weaponCounter, spark: s.weaponCounter.spark - WEAPON_SPARK_COST },
+            weapons: nextWeapons,
+            weaponShards: nextShards,
+          });
+          return true;
+        },
+
+        unlockWeapon: (weaponId: string) => set(s => {
+          if (s.weapons[weaponId]?.unlocked) return {};
+          return {
+            weapons: { ...s.weapons, [weaponId]: { level: 0, unlocked: true } },
+          };
+        }),
 
         // 每日任務：換日時重新抽任務、計算連續登入
         ensureDaily: () => {
@@ -1208,7 +1335,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         character: s.character,
         unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
-        tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
+        tickets: s.tickets, summonCounter: s.summonCounter, weaponTickets: s.weaponTickets, weapons: s.weapons, weaponShards: s.weaponShards, weaponCounter: s.weaponCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, xpAllowanceDay: s.xpAllowanceDay, xpAllowanceGold: s.xpAllowanceGold, xpAllowanceRemainder: s.xpAllowanceRemainder, towerFloor: s.towerFloor,
         sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen, storyRewardClaimed: s.storyRewardClaimed,

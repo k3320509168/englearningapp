@@ -392,6 +392,7 @@ function partyOptions(regionIdx?: number): PartyOptions {
       classPath: sv.player.classPath,
       equipped: Object.values(sv.equipped).map(uid => sv.equipment.find(e => e.uid === uid)).filter(e => e !== undefined),
     },
+    weapons: sv.weapons,
   };
 }
 

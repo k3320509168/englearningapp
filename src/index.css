@@ -1983,6 +1983,17 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
   box-shadow: 0 0 16px color-mix(in srgb, var(--wp-color, #ffd15c) 25%, transparent), inset 0 0 12px rgba(0, 0, 0, 0.6);
   cursor: pointer; overflow: hidden;
 }
+.hd-weapon-unlocked {
+  border-style: solid;
+  border-color: #ffd15c;
+  background: linear-gradient(135deg, rgba(32, 28, 64, 0.95) 0%, rgba(18, 14, 38, 0.98) 100%);
+  box-shadow: 0 0 20px rgba(255, 209, 92, 0.35), inset 0 0 16px rgba(255, 209, 92, 0.15);
+}
+.hd-weapon-level {
+  position: absolute; bottom: -4px; right: -4px; font-size: 10px; font-weight: 800;
+  background: #f59e0b; color: #111; border-radius: 4px; padding: 1px 4px;
+  line-height: 1.2; box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
 .hd-weapon-halo {
   position: absolute; inset: 0;
   background: radial-gradient(circle at 25% 50%, color-mix(in srgb, var(--wp-color, #ffd15c) 22%, transparent) 0%, transparent 70%);

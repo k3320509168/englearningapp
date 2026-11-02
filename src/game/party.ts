@@ -10,6 +10,7 @@ import type { Mods } from './growth';
 import { equipMods } from './equipment';
 import type { OwnedEquip } from './equipment';
 import { TRUE_NAME_BONUS, isTrueName } from './trueName';
+import { weaponForHero, weaponForClass, weaponCombinedMods } from './weapons';
 import { CLASS_TALENT, heroTalent } from './talents';
 import type { TalentId } from './talents';
 
@@ -53,6 +54,7 @@ export interface PartyOptions {
   heroLevels?: Record<HeroId, number>;
   trueName?: Record<HeroId, boolean[]>;
   growth?: PlayerGrowth;
+  weapons?: Record<string, { level: number; unlocked: boolean }>;
 }
 
 // 主角的基礎數值和 SSR 英雄同級（第十三輪）：主角多出來的只有轉職與裝備，全程大約在 SSR 英雄的 ±15% 內，
@@ -66,7 +68,11 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
   if (id === 'player') {
     const c = character!;
     const cls = classDef(c.classId);
-    const mods = opts.growth ? playerMods(opts.growth) : { ...NO_MODS };
+    let mods = opts.growth ? playerMods(opts.growth) : { ...NO_MODS };
+    const classWp = weaponForClass(c.classId);
+    if (classWp && opts.weapons?.[classWp.id]?.unlocked) {
+      mods = combineMods(mods, weaponCombinedMods(classWp, opts.weapons[classWp.id].level));
+    }
     const base = opts.growth ? PLAYER_BASE_MULT : 1; // 黃金之路只用最基礎的主角
     const maxHp = Math.round(stats.maxHp * cls.stats.hp * base * (1 + mods.hp));
     return {
@@ -80,7 +86,11 @@ export function buildMember(id: MemberId, character: Character | null, stats: Pl
   const hs = heroStats(h, opts.tiers?.[id] ?? 0, opts.stars?.[id] ?? 0);
   // 真名英雄：基礎能力 +50%
   const named = isTrueName(opts.trueName?.[id]) ? TRUE_NAME_BONUS : 0;
-  const mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1), { hp: named, atk: named });
+  let mods = combineMods(levelMods(opts.heroLevels?.[id] ?? 1), { hp: named, atk: named });
+  const heroWp = weaponForHero(id);
+  if (heroWp && opts.weapons?.[heroWp.id]?.unlocked) {
+    mods = combineMods(mods, weaponCombinedMods(heroWp, opts.weapons[heroWp.id].level));
+  }
   const maxHp = Math.round(stats.maxHp * hs.hp * (1 + mods.hp));
   return {
     id, name: heroWord(h), element: h.element, maxHp, hp: maxHp,

@@ -24,6 +24,7 @@ export interface CodexItem {
   seen: boolean;
   stars: number;
   needsReview: boolean;
+  vocabKey?: string;
 }
 
 function grammarTitle(q: Question): string {
@@ -71,6 +72,7 @@ export function codexItems(
       example: v ? `${v.example}\n${v.exampleZh}` : (q.desc && q.desc !== grammarTitle(q) ? q.desc : ''),
       audio: v?.display ?? questionAudio(q),
       correct: 0, wrong: 0, seen: false, stars: 0, needsReview: false,
+      vocabKey: v?.key ?? (word || undefined),
     };
     item.correct += stats?.correct ?? 0;
     item.wrong += stats?.wrong ?? 0;

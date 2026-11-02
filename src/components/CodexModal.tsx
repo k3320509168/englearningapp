@@ -451,7 +451,7 @@ export default function CodexModal() {
                   className="btn btn-secondary btn-small"
                   onMouseDown={keepFocus}
                   onClick={() => {
-                    const w = selectedItem.title;
+                    const w = selectedItem.vocabKey || selectedItem.title;
                     setSelectedItem(null);
                     useUiStore.getState().openStudy(w);
                   }}

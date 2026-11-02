@@ -309,3 +309,27 @@
      - 修復 `WordStudy.tsx` 與 `CodexModal.tsx` 中 `highlightWord` / `highlightKeyword` 正則 `lastIndex` 潛在交替誤判問題；
      - 補齊 `.defeat-warmup-tip`、`.defeat-warmup-banner`、`.defeat-warmup-btn` 的像素風樣式。
   ④ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-03 Antigravity｜雲端架構與上線路線圖定案入庫＋全域介面與細節打磨推進：
+  ① **雲端架構與 5 階段上線路線圖持久化**：於 `docs/PM_STATUS.md` 第 6 節定案記錄 5-Phase Roadmap 與 1,000 CCU 規模評估（Cloudflare Pages + Supabase Pro 方案）。
+  ② **全面轉入本地極致打磨**：依製作人指示，不搶跑雲端資料庫，全力深耕 UI/UX、遊戲體驗、戰鬥平衡、題庫品質、圖鑑字典卡片等細節打磨。
+- 2026-11-03 Antigravity｜全域介面與深層體驗極致打磨（時空之塔/每日碎片/英雄名冊搜尋/錯題修煉結算/四階轉職修復/字典容錯回退）交付：
+  ① **時空之塔與無盡之塔（`TowerModal.tsx`）日系像素風重塑**：
+     - 首頁加入「👑 首領守護層」高光徽章與考驗領域標記；
+     - 整合今日主角英雄大頭貼、碎片獎勵與 5 欄通關獎勵預覽網格（碎片、金幣、徽章、經驗、召喚券）；
+     - 通關結算卡片化，支援「🚀 一鍵繼續挑戰下一層」與失敗時的溫和鼓勵。
+  ② **每日碎片英文題（`ShardQuizModal.tsx`）儀式感升級**：
+     - 加入萬能願望碎片卡片、今日狀態膠囊（待挑戰 / 今日已領）、出題接入 `voiceFallback` 防呆；
+     - 答題結算加入專屬獎勵結算卡片，並提供「⭐ 前往英雄升星」快捷捷徑。
+  ③ **英雄名冊（`HeroModal.tsx`）實裝「即時模糊搜尋」**：
+     - 支援按英雄英文名、中文稱號、意涵、屬性、職業即時篩選 300 位英雄；
+     - 空搜尋結果提示友善引導，大幅提升大名冊管理效率。
+  ④ **錯題修煉場（`ReviewModal.tsx`）自由修煉與結算加固**：
+     - 在今日無到期題時提供「🥋 自由修煉全部錯題（10題）」入口，隨時可練；
+     - 完成修煉後展示專屬成果結算卡片（正確率、連對、掃蕩券進度）與「再練一組」操作。
+  ⑤ **主角成長（`GrowthModal.tsx`）四階轉職階級與鍛造提示修復**：
+     - 補齊「三轉」與「👑 終極覺醒」階級名稱，修復原 4 元素陣列導致三轉被當成覺醒、覺醒變 undefined 的 Bug；
+     - 裝備鍛造鎖定條件文字改為動態讀取階級需求（不再寫死二轉後解鎖）。
+  ⑥ **字典鍵值大小寫/底線多重容錯回退（`vocab.ts`、`codex.ts`、`CodexModal.tsx`）**：
+     - `vocabByKey` 實裝原始鍵、大寫、底線、去標點與小寫多重容錯回退，徹底根除大小寫不一致導致單字學習卡（`WordStudy.tsx`）空白未渲染的潛在 Bug；
+     - `CodexItem` 帶有明確 `vocabKey`，確保圖鑑卡片詳情點擊「📖 單字卡」100% 成功展開。
+  ⑦ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。

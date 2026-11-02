@@ -112,6 +112,28 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 6. **量化驗收**（寫成腳本 `scripts/vocab-audit.ts`）：每區不同目標字數（B1+ 目標 ≥ 600 新字）、模擬連打 3 張圖的重複率（同字重出 < 10%）、跨級重用率（25% ± 5%）、每張圖主題字覆蓋。
 
 ## 3. 目前進度（2026-11-03 當前最新）
+- ✅ **全域介面與深層體驗極致打磨（時空之塔/每日碎片/英雄名冊搜尋/錯題修煉結算/四階轉職修復/字典容錯回退）交付（2026-11-03 製作人指令 / Antigravity）**：
+  - **時空之塔與無盡之塔（`TowerModal.tsx`）日系像素風重塑**：
+    - 首頁加入「👑 首領守護層」高光徽章與考驗領域標記；
+    - 整合今日主角英雄大頭貼、碎片獎勵與 5 欄通關獎勵預覽網格（碎片、金幣、徽章、經驗、召喚券）；
+    - 通關結算卡片化，支援「🚀 一鍵繼續挑戰下一層」與失敗時的溫和鼓勵。
+  - **每日碎片英文題（`ShardQuizModal.tsx`）儀式感升級**：
+    - 加入萬能願望碎片卡片、今日狀態膠囊（待挑戰 / 今日已領）、出題接入 `voiceFallback` 防呆；
+    - 答題結算加入專屬獎勵結算卡片，並提供「⭐ 前往英雄升星」快捷捷徑。
+  - **英雄名冊（`HeroModal.tsx`）實裝「即時模糊搜尋」**：
+    - 支援按英雄英文名、中文稱號、意涵、屬性、職業即時篩選 300 位英雄；
+    - 空搜尋結果提示友善引導，大幅提升大名冊管理效率。
+  - **錯題修煉場（`ReviewModal.tsx`）自由修煉與結算加固**：
+    - 在今日無到期題時提供「🥋 自由修煉全部錯題（10題）」入口，隨時可練；
+    - 完成修煉後展示專屬成果結算卡片（正確率、連對、掃蕩券進度）與「再練一組」操作。
+  - **主角成長（`GrowthModal.tsx`）四階轉職階級與鍛造提示修復**：
+    - 補齊「三轉」與「👑 終極覺醒」階級名稱，修復原 4 元素陣列導致三轉被當成覺醒、覺醒變 undefined 的 Bug；
+    - 裝備鍛造鎖定條件文字改為動態讀取階級需求（不再寫死二轉後解鎖）。
+  - **字典鍵值大小寫/底線多重容錯回退（`vocab.ts`、`codex.ts`、`CodexModal.tsx`）**：
+    - `vocabByKey` 實裝原始鍵、大寫、底線、去標點與小寫多重容錯回退，徹底根除大小寫不一致導致單字學習卡（`WordStudy.tsx`）空白未渲染的潛在 Bug；
+    - `CodexItem` 帶有明確 `vocabKey`，確保圖鑑卡片詳情點擊「📖 單字卡」100% 成功展開。
+  - **雲端架構與上線路線圖持久化**：於第 6 節定案記錄 5 階段 Roadmap 與 1,000 CCU 規模評估（Cloudflare Pages + Supabase Pro 方案）。
+  - **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
 - ✅ **戰敗熱身系統全面實裝＋實用聽力片語卡片大擴充至 13,556 條（2026-11-03 製作人指令 / Antigravity）**：
   - **戰敗熱身系統極致實裝（`DefeatModal.tsx` & `battleStore.ts`）**：
     - 戰敗時智慧提取本場答錯的題目（取前 3 道去重），提供「🥋 戰敗熱身」快答複習；
@@ -272,3 +294,58 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 - 2026-11-01 Codex→PM｜T1 v2.2新12路徑+4 MC全部exit0、61圖全達；等級8/12過，四fast僅C2終王前186～187（需188），缺357/544/2642/506 EXP。normal四類均終王前200，mastery最大超前12～13；23033重核斷言。吃力C2終王首過57%（n60）未觸55%調整門檻，不改BOSS。詳docs/gpt/c7-v22-experience-pool-review.md與c7-v22-budget-results。請裁決fast C2容許−14或另定補足來源，未擅改85%/Rush8/門檻，不勾T1。AGY新結果第二審待資料外傳明確授權，先續本地T3。T3核出r6報告214列非宣稱152，且原900/300輸入與現在前段完全相同，僅55同索引題幹相符/11他處/148未對應，不能直接照索引改；詳REVIEW_REPORT_INTEGRITY與逐項triage。
 
 - 2026-11-01 Codex｜T3第一組已核實修16道r6閱讀/文法原始資料，先以報告完整選項重定位再人工核上下文，改善假英文/時態多解/使役與偏好改寫；build可重現、題數仍3720。triage16 resolved/198 pending，非全量五輪完成。86708運作斷言與格式0錯/172既有警告，必要型別/測試/lint另跑；詳R6_REVIEW_REVISION_001.md。C7數據固定在2657570歷史輸入，不把後續換題冒作同一模擬。
+
+## 6. 雲端架構與正式商轉上架路線圖（Roadmap & Cloud Architecture）
+
+> 依製作人指示定案記錄：目前核心任務為 **Phase 1 本地極致打磨**（UI/UX、遊戲體驗、平衡、題庫、圖鑑字典卡片）。本章節作為未來雲端串接與 1,000 CCU 上線規劃之持久化藍圖。
+
+### 6.1 五階段邁向上線路線圖（5-Phase Roadmap）
+```mermaid
+flowchart LR
+    P1["Phase 1: 本地極致打磨<br/>(當前進行中)"] --> P2["Phase 2: 存檔雙軌介面化<br/>(Local & Cloud Adapter)"]
+    P2 --> P3["Phase 3: 雲端資料庫建置<br/>(Supabase + Cloudflare)"]
+    P3 --> P4["Phase 4: 封閉內測驗收<br/>(30~100 人真實試玩)"]
+    P4 --> P5["Phase 5: 正式商業上線<br/>(公開測試 / PWA / App)"]
+```
+
+1. **Phase 1: 本地體驗極致打磨（當前進行中，優先級最高）**
+   - **UI/UX 全面打磨**：三尺寸響應式（1366×768 / 1920×1080 / 375×812）零死角驗證、觸控區域 ≥44px、彈窗滾動與彈窗內彈窗層級（Esc 冒泡與捕捉管理）。
+   - **遊戲爽感與挫折平衡**：Combo 12 階特效、大招奧義回響、戰敗熱身雙重加成（首擊×2＋神聖護盾）、首領連敗援助階梯。
+   - **題庫品質與解析完整度**：15,865 題 100% 詳解中英對照、CEFR 螺旋式抽題防重複、全題庫深度審查（`deep-question-audit.ts`）0 缺陷。
+   - **字典圖鑑卡片全覆蓋**：目標字詞 100% 字典卡片映射（1.35 萬映射）、單字學習卡（`WordStudy.tsx`）智慧高亮與無縫翻閱。
+2. **Phase 2: 存檔雙軌介面化與離線備份**
+   - 將目前純 localStorage 的 `saveStore.ts` 抽象為 `SaveRepository` 介面。
+   - 實裝離線手動「匯出存檔（加密 JSON）」與「匯入存檔」功能，提供防呆校驗與版本遷移。
+   - 支援「訪客離線遊玩」與「綁定帳號雲端同步」的平滑過渡機制。
+3. **Phase 3: 雲端基建與資料庫建置（以 1,000 CCU 同時在線為基準）**
+   - **靜態資源與前端託管**：Cloudflare Pages（全球 Anycast CDN，免費或 $20/月 Pro，免除伺服器頻寬開銷）。
+   - **後端與資料庫託管**：Supabase Pro（託管 PostgreSQL + Auth + Realtime + Edge Functions，約 $25/月）。
+   - **資料庫綱要規劃**：
+     - `auth.users`：電子郵件、Google OAuth 第三方登入、訪客轉正。
+     - `player_profiles`：玩家暱稱、主職業、當前等級、最高到達區域、累積星數。
+     - `player_saves`：主存檔 JSON 壓縮快照（附帶 hash 校驗碼與版本號），支援樂觀鎖（Optimistic Locking）防覆蓋。
+     - `leaderboards`：時空之塔 / 無盡之塔 / 黃金之路全球與好友排行。
+     - `telemetry_logs`：作答錯誤率、關卡流失率、高難題目難度熱點（匿名聚合分析）。
+4. **Phase 4: 封閉內測（Closed Alpha / Beta，30～100 人規模）**
+   - 邀請真實玩家進行 7 天深度測試，重點檢驗：
+     - 行動端 Chrome / Safari 麥克風語音辨識穩定度與權限表現。
+     - 關卡推薦戰力與玩家實際過關率（對照 C7 數值模型）。
+     - 各職業轉職與 300 位英雄養成搭配喜好。
+5. **Phase 5: 正式商業上線與全球發行**
+   - 綁定自訂獨立網域（HTTPS + HTTP/3）。
+   - 接入 Sentry 前端例外監控，即時捕獲線上運行錯誤。
+   - PWA（Progressive Web App）桌面與手機主畫面安裝支援，未來可封裝 Capacitor / Electron 發行雙平台或 Steam。
+
+---
+
+### 6.2 雲端架構與 1,000 CCU 規模硬體評估
+
+| 評估維度 | 傳統雲端架構 (AWS / GCP 自建) | 現代無伺服器架構 (Cloudflare + Supabase) **[推薦]** |
+|---|---|---|
+| **前端傳輸** | AWS CloudFront + S3 / GCP Cloud Storage | **Cloudflare Pages** (全球 Edge CDN，無限頻寬，靜態零冷卻) |
+| **資料庫** | AWS RDS (PostgreSQL db.t4g.medium) 或 Cloud SQL | **Supabase Pro** (專屬 2-core 4GB RAM PostgreSQL，包含連線池 PgBouncer) |
+| **伺服器邏輯** | ECS / GKE / EC2 應用伺服器叢集 | **Supabase Edge Functions** (Deno/TS 全球邊緣執行，依呼叫次數計費) |
+| **1000 CCU 負載** | 需配置負載均衡 ALB + 至少 2 台 4C8G 容器執行個體 | Supabase PgBouncer 輕鬆承載 1,000+ 同時長連線；靜態請求 100% 由 CDN 承擔 |
+| **月營運成本** | 約 **$150 ~ $300 USD / 月** | 約 **$25 ~ $45 USD / 月**（性價比極高，維護零負擔） |
+| **維運難度** | 高（需維護 VPC、安全組、OS 修補、Docker 容器編排） | **極低**（完全託管，專注於前端與資料邏輯，符合小團隊敏捷開發） |
+

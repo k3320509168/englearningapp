@@ -116,8 +116,32 @@ export function vocabSenses(entry: VocabEntry): VocabSense[] {
 }
 
 export const vocabByKey = (key: string) => {
-  const entry = VOCAB[key];
-  return entry ? { ...entry, key, display: entry.word ?? key.toLowerCase() } : null;
+  if (!key) return null;
+  if (VOCAB[key]) {
+    const entry = VOCAB[key];
+    return { ...entry, key, display: entry.word ?? key.toLowerCase() };
+  }
+  const upper = key.toUpperCase().trim();
+  if (VOCAB[upper]) {
+    const entry = VOCAB[upper];
+    return { ...entry, key: upper, display: entry.word ?? key.toLowerCase() };
+  }
+  const under = upper.replace(/[\s-]+/g, '_');
+  if (VOCAB[under]) {
+    const entry = VOCAB[under];
+    return { ...entry, key: under, display: entry.word ?? key.toLowerCase() };
+  }
+  const clean = upper.replace(/[^A-Z0-9_]/g, '');
+  if (clean && VOCAB[clean]) {
+    const entry = VOCAB[clean];
+    return { ...entry, key: clean, display: entry.word ?? key.toLowerCase() };
+  }
+  const lower = key.toLowerCase().trim();
+  if (VOCAB[lower]) {
+    const entry = VOCAB[lower];
+    return { ...entry, key: lower, display: entry.word ?? key.toLowerCase() };
+  }
+  return null;
 };
 
 export function vocabKey(q: Question): string | null {

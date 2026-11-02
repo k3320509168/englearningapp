@@ -111,7 +111,7 @@ export default function GrowthModal() {
             <div className="class-switch" role="group" aria-label="切換職業">
               {CLASSES.map(c => {
                 const path = c.id === character.classId ? player.classPath : sv.classPaths[c.id] ?? [];
-                const tierName = ['未轉職', '一轉', '二轉', '覺醒'][path.length];
+                const tierName = ['未轉職', '一轉', '二轉', '三轉', '👑 終極覺醒'][path.length] ?? '👑 終極覺醒';
                 return (
                   <button key={c.id} className={`class-chip ${c.id === character.classId ? 'is-on' : ''}`} onMouseDown={keepFocus}
                     onClick={() => { if (sv.switchClass(c.id)) sfx.victory(); }} aria-pressed={c.id === character.classId}>
@@ -248,7 +248,9 @@ export default function GrowthModal() {
                 const regionOk = (def.requires?.regionsCleared ?? 0) <= unlockedIndex;
                 const tierOk = (def.requires?.classTier ?? 0) <= player.classPath.length;
                 const enough = Object.entries(need).every(([k, v]) => (materials[k] ?? 0) >= v) && gold >= def.cost.gold;
-                const lockText = !regionOk ? `通關 ${def.requires!.regionsCleared} 個區域後解鎖` : !tierOk ? '二轉後解鎖' : '';
+                const tierReq = def.requires?.classTier ?? 0;
+                const tierReqText = tierReq > 0 ? `${['一轉', '二轉', '三轉', '終極覺醒'][tierReq - 1] ?? `${tierReq}轉`}後解鎖` : '';
+                const lockText = !regionOk ? `通關 ${def.requires!.regionsCleared} 個區域後解鎖` : !tierOk ? tierReqText : '';
                 return (
                   <li key={def.id} className={`gear-item ${lockText ? 'is-locked' : ''}`} style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
                     <span className="rarity-tag inline">{def.rarity}</span>

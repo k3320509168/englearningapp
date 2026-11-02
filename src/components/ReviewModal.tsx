@@ -11,6 +11,7 @@ import QuizRunner from './QuizRunner';
 import { SWEEP_STREAK, SWEEP_DAILY_MAX } from '../store/saveStore';
 import { voiceFallback } from '../game/battle';
 import type { Question } from '../game/types';
+import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
 // 今日複習：到期的錯題清單。複習方式不變——這些字會在戰鬥中以困難題、復仇魔王出現；
@@ -27,31 +28,66 @@ export default function ReviewModal() {
   // 修煉場：直接在這裡練錯題，連續答對 5 題送 3 張掃蕩券
   const [training, setTraining] = useState<Question[] | null>(null);
   const [streak, setStreak] = useState(0);
+  const [trainDone, setTrainDone] = useState(false);
+  const [trainStats, setTrainStats] = useState({ answered: 0, correct: 0 });
+
   const startTraining = () => {
     const list = (due.length ? due : Object.values(mistakes)).slice(0, 10).map(m => voiceFallback(m.question));
     setTraining(list);
     setStreak(0);
+    setTrainDone(false);
+    setTrainStats({ answered: 0, correct: 0 });
   };
   const onTrain = (correct: boolean) => {
     if (correct) useSaveStore.getState().earnTrainingGold();
     const next = correct ? streak + 1 : 0;
     setStreak(next);
+    const newStats = { answered: trainStats.answered + 1, correct: trainStats.correct + (correct ? 1 : 0) };
+    setTrainStats(newStats);
+
     if (next > 0 && next % SWEEP_STREAK === 0) {
       const got = useSaveStore.getState().earnSweepTickets();
       useUiStore.getState().celebrate(got > 0
         ? { icon: '🎟️', title: `掃蕩券 +${got}`, sub: '三星通關的地圖可以直接掃蕩領獎勵', color: '#ffcd4b' }
         : { icon: '🎟️', title: '今天的掃蕩券領滿了', sub: `每天最多 ${SWEEP_DAILY_MAX} 張，明天再來`, color: '#8a8494' });
     }
+    if (training && newStats.answered >= training.length) {
+      setTrainDone(true);
+      sfx.victory();
+    }
   };
 
   if (training) {
     return (
       <Modal title="🥋 錯題修煉場" onClose={closeModal}>
-        <p className="muted">連續答對 {SWEEP_STREAK} 題送 3 張掃蕩券・目前連對 {streak}・持有 🎟️ {sweepTickets}</p>
-        <QuizRunner key={training.length} questions={training} label={i => `第 ${i + 1} / ${training.length} 題`} onAnswer={onTrain} lastLabel="完成" />
-        <div className="tutorial-actions">
-          <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => setTraining(null)}>回到清單</button>
-        </div>
+        {!trainDone ? (
+          <>
+            <p className="muted">連續答對 {SWEEP_STREAK} 題送 3 張掃蕩券・目前連對 {streak}・持有 🎟️ {sweepTickets}</p>
+            <QuizRunner key={training.length} questions={training} label={i => `第 ${i + 1} / ${training.length} 題`} onAnswer={onTrain} lastLabel="看結算" />
+            <div className="tutorial-actions">
+              <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => setTraining(null)}>回到清單</button>
+            </div>
+          </>
+        ) : (
+          <div className="tower-result-card">
+            <div className="tower-result-header is-victory">
+              <span className="tower-result-icon">🥋</span>
+              <h3>修煉完成！</h3>
+              <p>本次作答：答對 {trainStats.correct} / {trainStats.answered} 題（最高連對 {streak}）</p>
+            </div>
+            <p className="muted" style={{ textAlign: 'center', margin: '8px 0' }}>
+              錯題記憶已強化！答對題目可獲得修煉金幣，連續答對更可源源不絕累積掃蕩券！
+            </p>
+            <div className="tower-actions-row">
+              <button className="btn btn-primary" onMouseDown={keepFocus} onClick={startTraining}>
+                🔄 再修煉一組（10題）
+              </button>
+              <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={() => setTraining(null)}>
+                返回錯題清單
+              </button>
+            </div>
+          </div>
+        )}
       </Modal>
     );
   }
@@ -72,6 +108,13 @@ export default function ReviewModal() {
         <div className="review-empty">
           <p>🎉 今天沒有到期的複習題目！</p>
           <span className="muted">{total > 0 ? `錯題本中尚有 ${total} 題，會在後續冒險中陸續安排溫習。` : '持續探索新區域，累積更多冒險詞彙吧！'}</span>
+          {total > 0 && (
+            <div style={{ marginTop: 14 }}>
+              <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={startTraining}>
+                🥋 自由修煉全部錯題（抽測 10 題）
+              </button>
+            </div>
+          )}
         </div>
       ) : (
         <div className="review-list-wrap">

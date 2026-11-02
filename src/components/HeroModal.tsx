@@ -35,6 +35,7 @@ export default function HeroModal() {
   const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, summonCounter, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, trainHeroMax, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
+  const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<MemberId>(party[0] ?? 'player');
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
   const [tab, setTab] = useState<'skills' | 'growth'>('skills');
@@ -53,9 +54,23 @@ export default function HeroModal() {
     sfx.coin();
   });
 
-  const list = HEROES
-    .filter(h => filter === 'all' || (filter === 'owned' ? heroes.includes(h.id) : currentRarity(h, heroTier[h.id] ?? 0) === filter))
-    .sort((a, b) => RARITIES.indexOf(currentRarity(b, heroTier[b.id] ?? 0)) - RARITIES.indexOf(currentRarity(a, heroTier[a.id] ?? 0)));
+  const list = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return HEROES
+      .filter(h => {
+        const rarity = currentRarity(h, heroTier[h.id] ?? 0);
+        const matchesFilter = filter === 'all' || (filter === 'owned' ? heroes.includes(h.id) : rarity === filter);
+        if (!matchesFilter) return false;
+        if (!q) return true;
+        const word = heroWord(h).toLowerCase();
+        const title = heroTitle(h).toLowerCase();
+        const meaning = (h.meaning ?? '').toLowerCase();
+        const el = elementDef(h.element).name.toLowerCase();
+        const cls = classDef(h.classId).name.toLowerCase();
+        return word.includes(q) || title.includes(q) || meaning.includes(q) || el.includes(q) || cls.includes(q);
+      })
+      .sort((a, b) => RARITIES.indexOf(currentRarity(b, heroTier[b.id] ?? 0)) - RARITIES.indexOf(currentRarity(a, heroTier[a.id] ?? 0)));
+  }, [filter, heroes, heroTier, search]);
 
   return (
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
@@ -105,15 +120,36 @@ export default function HeroModal() {
                 🔮 召喚 <small>🎫 {tickets}・SSR 保底 {summonCounter.sinceSsr}/{PITY_SSR}</small>
               </button>
             </div>
-            <div className="hero-filter" role="group" aria-label="篩選英雄">
-              {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
-                <button key={f} className={`pill ${filter === f ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)} aria-pressed={filter === f}>
-                  {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
-                </button>
-              ))}
+            <div className="hero-filter-row">
+              <div className="hero-filter" role="group" aria-label="篩選英雄">
+                {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
+                  <button key={f} className={`pill ${filter === f ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)} aria-pressed={filter === f}>
+                    {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
+                  </button>
+                ))}
+              </div>
+              <div className="hero-search-box">
+                <input
+                  type="text"
+                  className="hero-search-input"
+                  placeholder="🔍 搜尋英雄、稱號、屬性..."
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                />
+                {search && (
+                  <button className="hero-search-clear" onClick={() => setSearch('')} aria-label="清除搜尋">
+                    ✕
+                  </button>
+                )}
+              </div>
             </div>
+            {list.length === 0 && search && (
+              <div className="codex-empty-tip">
+                🔍 找不到符合「{search}」的英雄，試試其他關鍵字或切換「全部」篩選。
+              </div>
+            )}
             <ul className="hero-tiles">
-              {character && filter === 'owned' && (
+              {character && filter === 'owned' && !search && (
                 <li>
                   <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
                     onPointerDown={start('player', portraits.player)} onClick={guardClick(() => { sfx.click(); setSelected('player'); })}>

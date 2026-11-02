@@ -634,9 +634,9 @@
   },
   "EQUIVOCATION": {
     "pos": "n.",
-    "meaning": "以含糊措辭迴避明確立場的做法",
-    "example": "The reply was criticised for equivocation.",
-    "exampleZh": "回覆因模稜兩可而受批評。",
+    "meaning": "在論辯中刻意模糊或偷換語義之雙關謬誤",
+    "example": "The politician’s defense relied upon an obvious equivocation.",
+    "exampleZh": "該政客的辯解仰賴於一處顯而易見的語義偷換。",
     "senses": [
       {
         "pos": "n.",
@@ -661,8 +661,19 @@
             "zh": "回覆因模稜兩可而受批評。"
           }
         ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在論辯中刻意模糊或偷換語義之雙關謬誤",
+        "examples": [
+          {
+            "en": "The politician’s defense relied upon an obvious equivocation.",
+            "zh": "該政客的辯解仰賴於一處顯而易見的語義偷換。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "equivocation"
   },
   "CIRCUMLOCUTION": {
     "pos": "n.",
@@ -1189,9 +1200,9 @@
   },
   "TELEOLOGICAL": {
     "pos": "adj.",
-    "meaning": "以預設終點或目的來解釋發展的",
-    "example": "The essay rejects a teleological account of urban change.",
-    "exampleZh": "文章反對以預設終點解釋城市變遷。",
+    "meaning": "將世界演變歸因於特定終極目標與目的的",
+    "example": "Evolutionary biology rejects teleological accounts of adaptation.",
+    "exampleZh": "演化生物學否定對生物適應機制採取目的論式的解釋。",
     "senses": [
       {
         "pos": "adj.",
@@ -1206,8 +1217,19 @@
             "zh": "目的論敘事可能讓偶然事件看似必然。"
           }
         ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "將世界演變歸因於特定終極目標與目的的",
+        "examples": [
+          {
+            "en": "Evolutionary biology rejects teleological accounts of adaptation.",
+            "zh": "演化生物學否定對生物適應機制採取目的論式的解釋。"
+          }
+        ]
       }
-    ]
+    ],
+    "word": "teleological"
   },
   "REIFICATION": {
     "pos": "n.",
@@ -3714,9 +3736,9 @@
   },
   "ABROGATE": {
     "pos": "v.",
-    "meaning": "正式廢除協議法律或權利安排",
-    "example": "The ruler sought to abrogate the treaty.",
-    "exampleZh": "統治者試圖廢除條約。",
+    "meaning": "官方正式廢止廢除法律或條約",
+    "example": "The newly elected parliament voted to abrogate the treaty.",
+    "exampleZh": "新當選的國會正式表決廢除該項國際條約。",
     "senses": [
       {
         "pos": "v.",
@@ -3729,6 +3751,16 @@
           {
             "en": "A power to abrogate can weaken an apparent guarantee.",
             "zh": "單方廢除權可能削弱表面保證。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "官方正式廢止廢除法律或條約",
+        "examples": [
+          {
+            "en": "The newly elected parliament voted to abrogate the treaty.",
+            "zh": "新當選的國會正式表決廢除該項國際條約。"
           }
         ]
       }
@@ -3780,9 +3812,9 @@
   },
   "INJUNCTION": {
     "pos": "n.",
-    "meaning": "正式而強制的命令或禁令",
-    "example": "The proclamation contained an injunction against dissent.",
-    "exampleZh": "公告含有禁止異議的命令。",
+    "meaning": "法院正式頒布之強制或禁止處分命令",
+    "example": "The appellate court issued a preliminary injunction against the eviction.",
+    "exampleZh": "上訴法院對該驅離行動頒布了初步禁止處分命令。",
     "senses": [
       {
         "pos": "n.",
@@ -3795,6 +3827,16 @@
           {
             "en": "An injunction is not the same as an explanation.",
             "zh": "命令不等於解釋。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法院正式頒布之強制或禁止處分命令",
+        "examples": [
+          {
+            "en": "The appellate court issued a preliminary injunction against the eviction.",
+            "zh": "上訴法院對該驅離行動頒布了初步禁止處分命令。"
           }
         ]
       }
@@ -4240,9 +4282,9 @@
   "EPISTEMIC": {
     "word": "epistemic",
     "pos": "adj.",
-    "meaning": "關於知識及其可證成程度的",
-    "example": "The report recognises an epistemic limitation.",
-    "exampleZh": "報告承認可知程度的限制。",
+    "meaning": "與認知、知識理論及證成基礎相關的",
+    "example": "The jury evaluated the epistemic reliability of the expert testimony.",
+    "exampleZh": "陪審團認真評估了專家證詞在認知層面的可信度基礎。",
     "senses": [
       {
         "pos": "adj.",
@@ -4251,6 +4293,16 @@
           {
             "en": "The report recognises an epistemic limitation.",
             "zh": "報告承認可知程度的限制。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "與認知、知識理論及證成基礎相關的",
+        "examples": [
+          {
+            "en": "The jury evaluated the epistemic reliability of the expert testimony.",
+            "zh": "陪審團認真評估了專家證詞在認知層面的可信度基礎。"
           }
         ]
       }
@@ -10782,6 +10834,506 @@
       }
     ]
   },
+  "JURISPRUDENCE": {
+    "word": "jurisprudence",
+    "pos": "n.",
+    "meaning": "法律哲學與法理學論述體系",
+    "example": "Constitutional jurisprudence evolved through landmark decisions.",
+    "exampleZh": "憲法法理學體系是透過里程碑判決逐步演進而成的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "法律哲學與法理學論述體系",
+        "examples": [
+          {
+            "en": "Constitutional jurisprudence evolved through landmark decisions.",
+            "zh": "憲法法理學體系是透過里程碑判決逐步演進而成的。"
+          }
+        ]
+      }
+    ]
+  },
+  "SUBSTANTIVE": {
+    "word": "substantive",
+    "pos": "adj.",
+    "meaning": "實質內容而非僅僅表面形式的",
+    "example": "The reform produced substantive changes in environmental regulation.",
+    "exampleZh": "該項改革在環境監管領域產生了實質性的變革。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "實質內容而非僅僅表面形式的",
+        "examples": [
+          {
+            "en": "The reform produced substantive changes in environmental regulation.",
+            "zh": "該項改革在環境監管領域產生了實質性的變革。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROPORTIONALITY": {
+    "word": "proportionality",
+    "pos": "n.",
+    "meaning": "手段與目的均衡對稱之比例原則",
+    "example": "The measure violated the legal test of proportionality.",
+    "exampleZh": "該項處置措施違反了法律上的比例原則檢驗標準。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "手段與目的均衡對稱之比例原則",
+        "examples": [
+          {
+            "en": "The measure violated the legal test of proportionality.",
+            "zh": "該項處置措施違反了法律上的比例原則檢驗標準。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEROGATION": {
+    "word": "derogation",
+    "pos": "n.",
+    "meaning": "對公約或法規條款的官方減免讓步",
+    "example": "Emergency powers permit temporary derogation from certain obligations.",
+    "exampleZh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對公約或法規條款的官方減免讓步",
+        "examples": [
+          {
+            "en": "Emergency powers permit temporary derogation from certain obligations.",
+            "zh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "ULTRA VIRES": {
+    "word": "ultra vires",
+    "pos": "adj.",
+    "meaning": "逾越法定職權範圍而屬違法無效的",
+    "example": "The court declared the ministerial decree ultra vires.",
+    "exampleZh": "法院正式宣告該部會頒布之行政命令逾越法定權限而告無效。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "逾越法定職權範圍而屬違法無效的",
+        "examples": [
+          {
+            "en": "The court declared the ministerial decree ultra vires.",
+            "zh": "法院正式宣告該部會頒布之行政命令逾越法定權限而告無效。"
+          }
+        ]
+      }
+    ]
+  },
+  "FORMALITY IS NOT SYNONYMOUS WITH JUSTICE": {
+    "word": "formality is not synonymous with justice",
+    "pos": "phr.",
+    "meaning": "形式合法不等於體現正義。",
+    "example": "Formality is not synonymous with justice.",
+    "exampleZh": "形式合法不等於體現正義。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式合法不等於體現正義。",
+        "examples": [
+          {
+            "en": "Formality is not synonymous with justice.",
+            "zh": "形式合法不等於體現正義。。"
+          }
+        ]
+      }
+    ]
+  },
+  "UNCHECKED AUTHORITY BREEDS INSTITUTIONAL DECAY": {
+    "word": "unchecked authority breeds institutional decay",
+    "pos": "phr.",
+    "meaning": "未受制約的權力滋生體制的衰退。",
+    "example": "Unchecked authority breeds institutional decay.",
+    "exampleZh": "未受制約的權力滋生體制的衰退。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未受制約的權力滋生體制的衰退。",
+        "examples": [
+          {
+            "en": "Unchecked authority breeds institutional decay.",
+            "zh": "未受制約的權力滋生體制的衰退。。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROCEDURAL SAFEGUARDS PRESERVE CIVIL LIBERTY": {
+    "word": "procedural safeguards preserve civil liberty",
+    "pos": "phr.",
+    "meaning": "程序保障維繫公民自由。",
+    "example": "Procedural safeguards preserve civil liberty.",
+    "exampleZh": "程序保障維繫公民自由。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序保障維繫公民自由。",
+        "examples": [
+          {
+            "en": "Procedural safeguards preserve civil liberty.",
+            "zh": "程序保障維繫公民自由。。"
+          }
+        ]
+      }
+    ]
+  },
+  "ACQUIESCE": {
+    "pos": "v.",
+    "meaning": "默許、默認他人主張或處置",
+    "example": "Citizens refused to acquiesce in the arbitrary property seizure.",
+    "exampleZh": "公民斷然拒絕默許政府專斷沒收私人財產。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "默許、默認他人主張或處置",
+        "examples": [
+          {
+            "en": "Citizens refused to acquiesce in the arbitrary property seizure.",
+            "zh": "公民斷然拒絕默許政府專斷沒收私人財產。"
+          }
+        ]
+      }
+    ]
+  },
+  "IMPRIMATUR": {
+    "pos": "n.",
+    "meaning": "官方認可核准或權威背書證明",
+    "example": "The regulatory body gave its official imprimatur to the merger.",
+    "exampleZh": "監管機構對該起併購案正式給予了官方認可與背書。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方認可核准或權威背書證明",
+        "examples": [
+          {
+            "en": "The regulatory body gave its official imprimatur to the merger.",
+            "zh": "監管機構對該起併購案正式給予了官方認可與背書。"
+          }
+        ]
+      }
+    ]
+  },
+  "CONTRAVENE": {
+    "pos": "v.",
+    "meaning": "抵觸違背成文法律或條約義務",
+    "example": "The new licensing requirement contravened municipal law.",
+    "exampleZh": "這項新的營業執照要求抵觸了該市的自治法規。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "抵觸違背成文法律或條約義務",
+        "examples": [
+          {
+            "en": "The new licensing requirement contravened municipal law.",
+            "zh": "這項新的營業執照要求抵觸了該市的自治法規。"
+          }
+        ]
+      }
+    ]
+  },
+  "UBIQUITOUS": {
+    "pos": "adj.",
+    "meaning": "無所不在且極其普遍存在的",
+    "example": "Bureaucratic surveillance has become ubiquitous in modern cities.",
+    "exampleZh": "官僚體系的監控機制在現代城市中已變得無所不在。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "無所不在且極其普遍存在的",
+        "examples": [
+          {
+            "en": "Bureaucratic surveillance has become ubiquitous in modern cities.",
+            "zh": "官僚體系的監控機制在現代城市中已變得無所不在。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEGEMONY": {
+    "pos": "n.",
+    "meaning": "特定集團或思想體系之領導支配霸權",
+    "example": "Cultural hegemony reinforces institutional compliance without overt force.",
+    "exampleZh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "特定集團或思想體系之領導支配霸權",
+        "examples": [
+          {
+            "en": "Cultural hegemony reinforces institutional compliance without overt force.",
+            "zh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDEMNITY": {
+    "pos": "n.",
+    "meaning": "對未來潛在損害或損失之官方保障補償",
+    "example": "The government offered financial indemnity to contracted shipping firms.",
+    "exampleZh": "政府向受合約約束的航運公司提供了財務損害補償保證。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對未來潛在損害或損失之官方保障補償",
+        "examples": [
+          {
+            "en": "The government offered financial indemnity to contracted shipping firms.",
+            "zh": "政府向受合約約束的航運公司提供了財務損害補償保證。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLIPSISM": {
+    "word": "solipsism",
+    "pos": "n.",
+    "meaning": "主張唯有自我心靈確實存在之唯我論",
+    "example": "Epistemic solipsism denies the provability of external minds.",
+    "exampleZh": "認識論上的唯我論否定他人心靈具備可證性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張唯有自我心靈確實存在之唯我論",
+        "examples": [
+          {
+            "en": "Epistemic solipsism denies the provability of external minds.",
+            "zh": "認識論上的唯我論否定他人心靈具備可證性。"
+          }
+        ]
+      }
+    ]
+  },
+  "DIALECTIC": {
+    "word": "dialectic",
+    "pos": "n.",
+    "meaning": "透過對立矛盾揚棄以追求真理的辯證法",
+    "example": "Marx adapted the Hegelian dialectic to material historical forces.",
+    "exampleZh": "馬克思將黑格爾辯證法轉化應用於唯物歷史動力分析。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過對立矛盾揚棄以追求真理的辯證法",
+        "examples": [
+          {
+            "en": "Marx adapted the Hegelian dialectic to material historical forces.",
+            "zh": "馬克思將黑格爾辯證法轉化應用於唯物歷史動力分析。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCOMMENSURABILITY": {
+    "word": "incommensurability",
+    "pos": "n.",
+    "meaning": "兩理論體系因缺乏共同衡量標準而具不可公度性",
+    "example": "Kuhn argued for the incommensurability of competing scientific paradigms.",
+    "exampleZh": "孔恩主張競爭中的科學典範之間具備不可公度性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "兩理論體系因缺乏共同衡量標準而具不可公度性",
+        "examples": [
+          {
+            "en": "Kuhn argued for the incommensurability of competing scientific paradigms.",
+            "zh": "孔恩主張競爭中的科學典範之間具備不可公度性。"
+          }
+        ]
+      }
+    ]
+  },
+  "DOUBT IS THE THRESHOLD OF CRITICAL THOUGHT": {
+    "word": "doubt is the threshold of critical thought",
+    "pos": "phr.",
+    "meaning": "懷疑是批判思維的起點門檻。",
+    "example": "Doubt is the threshold of critical thought.",
+    "exampleZh": "懷疑是批判思維的起點門檻。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "懷疑是批判思維的起點門檻。",
+        "examples": [
+          {
+            "en": "Doubt is the threshold of critical thought.",
+            "zh": "懷疑是批判思維的起點門檻。。"
+          }
+        ]
+      }
+    ]
+  },
+  "LANGUAGE CONDITIONS OUR PERCEPTION OF REALITY": {
+    "word": "language conditions our perception of reality",
+    "pos": "phr.",
+    "meaning": "語言深度制約我們對實在的感知。",
+    "example": "Language conditions our perception of reality.",
+    "exampleZh": "語言深度制約我們對實在的感知。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "語言深度制約我們對實在的感知。",
+        "examples": [
+          {
+            "en": "Language conditions our perception of reality.",
+            "zh": "語言深度制約我們對實在的感知。。"
+          }
+        ]
+      }
+    ]
+  },
+  "CERTAINTY IS AN EMOTIONAL RATHER THAN LOGICAL STATE": {
+    "word": "certainty is an emotional rather than logical state",
+    "pos": "phr.",
+    "meaning": "確定性本質上常屬心理情感而非純粹邏輯狀態。",
+    "example": "Certainty is an emotional rather than logical state.",
+    "exampleZh": "確定性本質上常屬心理情感而非純粹邏輯狀態。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "確定性本質上常屬心理情感而非純粹邏輯狀態。",
+        "examples": [
+          {
+            "en": "Certainty is an emotional rather than logical state.",
+            "zh": "確定性本質上常屬心理情感而非純粹邏輯狀態。。"
+          }
+        ]
+      }
+    ]
+  },
+  "DOGMATIC": {
+    "pos": "adj.",
+    "meaning": "武斷且未經批判便堅持特定信條的",
+    "example": "The professor rejected dogmatic assertions in scholarly seminars.",
+    "exampleZh": "教授在學術研討會上斷然拒絕未經批判的武斷宣稱。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "武斷且未經批判便堅持特定信條的",
+        "examples": [
+          {
+            "en": "The professor rejected dogmatic assertions in scholarly seminars.",
+            "zh": "教授在學術研討會上斷然拒絕未經批判的武斷宣稱。"
+          }
+        ]
+      }
+    ]
+  },
+  "ANACHRONISM": {
+    "pos": "n.",
+    "meaning": "將現代概念或事物錯置於過去時代的年代錯誤",
+    "example": "Depicting ancient soldiers with firearms is an egregious anachronism.",
+    "exampleZh": "描繪古代士兵攜帶現代槍械是一項刺眼的年代錯置錯誤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將現代概念或事物錯置於過去時代的年代錯誤",
+        "examples": [
+          {
+            "en": "Depicting ancient soldiers with firearms is an egregious anachronism.",
+            "zh": "描繪古代士兵攜帶現代槍械是一項刺眼的年代錯置錯誤。"
+          }
+        ]
+      }
+    ]
+  },
+  "APORISTIC": {
+    "pos": "adj.",
+    "meaning": "充滿哲學困境而難以找到出口的",
+    "example": "The dialogue concludes on an aporistic and unresolved note.",
+    "exampleZh": "該篇對話錄在進退維谷且懸而未決的哲學困境中劃下句點。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "充滿哲學困境而難以找到出口的",
+        "examples": [
+          {
+            "en": "The dialogue concludes on an aporistic and unresolved note.",
+            "zh": "該篇對話錄在進退維谷且懸而未決的哲學困境中劃下句點。"
+          }
+        ]
+      }
+    ]
+  },
+  "CORROBORATE": {
+    "pos": "v.",
+    "meaning": "提供額外證據以證實支持某項主張",
+    "example": "Multiple witnesses came forward to corroborate the defendant’s story.",
+    "exampleZh": "多位證人主動出面提供證據以證實被告的說法。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "提供額外證據以證實支持某項主張",
+        "examples": [
+          {
+            "en": "Multiple witnesses came forward to corroborate the defendant’s story.",
+            "zh": "多位證人主動出面提供證據以證實被告的說法。"
+          }
+        ]
+      }
+    ]
+  },
+  "HETERODOX": {
+    "pos": "adj.",
+    "meaning": "與正統或權威通說相違背之非正統異端的主張",
+    "example": "The economist advanced a heterodox critique of monetary policy.",
+    "exampleZh": "該經濟學家對當前貨幣政策提出了非正統的深刻批判。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與正統或權威通說相違背之非正統異端的主張",
+        "examples": [
+          {
+            "en": "The economist advanced a heterodox critique of monetary policy.",
+            "zh": "該經濟學家對當前貨幣政策提出了非正統的深刻批判。"
+          }
+        ]
+      }
+    ]
+  },
+  "HEURISTIC": {
+    "pos": "n.",
+    "meaning": "在複雜問題中便於快速探索或解決問題的啟發式方法",
+    "example": "Trial and error serves as a useful cognitive heuristic.",
+    "exampleZh": "嘗試錯誤法可作為一種實用且高效的認知啟發式途徑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在複雜問題中便於快速探索或解決問題的啟發式方法",
+        "examples": [
+          {
+            "en": "Trial and error serves as a useful cognitive heuristic.",
+            "zh": "嘗試錯誤法可作為一種實用且高效的認知啟發式途徑。"
+          }
+        ]
+      }
+    ]
+  },
+  "SYLLOGISM": {
+    "pos": "n.",
+    "meaning": "由大前提、小前提與結論組成的三段論",
+    "example": "The classic syllogism deduces mortality from the nature of humanity.",
+    "exampleZh": "經典的三段論從人類本質演繹推導出生命的必有一死。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由大前提、小前提與結論組成的三段論",
+        "examples": [
+          {
+            "en": "The classic syllogism deduces mortality from the nature of humanity.",
+            "zh": "經典的三段論從人類本質演繹推導出生命的必有一死。"
+          }
+        ]
+      }
+    ]
+  },
   "R8:DISINGENUOUS": {
     "word": "disingenuous",
     "pos": "adj.",
@@ -11624,9 +12176,9 @@
   },
   "R8:TELEOLOGICAL": {
     "pos": "adj.",
-    "meaning": "以預設終點或目的來解釋發展的",
-    "example": "The essay rejects a teleological account of urban change.",
-    "exampleZh": "文章反對以預設終點解釋城市變遷。",
+    "meaning": "將世界演變歸因於特定終極目標與目的的",
+    "example": "Evolutionary biology rejects teleological accounts of adaptation.",
+    "exampleZh": "演化生物學否定對生物適應機制採取目的論式的解釋。",
     "senses": [
       {
         "pos": "adj.",
@@ -11639,6 +12191,16 @@
           {
             "en": "A teleological narrative can make contingent events seem inevitable.",
             "zh": "目的論敘事可能讓偶然事件看似必然。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "將世界演變歸因於特定終極目標與目的的",
+        "examples": [
+          {
+            "en": "Evolutionary biology rejects teleological accounts of adaptation.",
+            "zh": "演化生物學否定對生物適應機制採取目的論式的解釋。"
           }
         ]
       }
@@ -13293,9 +13855,9 @@
   },
   "R8:INJUNCTION": {
     "pos": "n.",
-    "meaning": "正式而強制的命令或禁令",
-    "example": "The proclamation contained an injunction against dissent.",
-    "exampleZh": "公告含有禁止異議的命令。",
+    "meaning": "法院正式頒布之強制或禁止處分命令",
+    "example": "The appellate court issued a preliminary injunction against the eviction.",
+    "exampleZh": "上訴法院對該驅離行動頒布了初步禁止處分命令。",
     "senses": [
       {
         "pos": "n.",
@@ -13308,6 +13870,16 @@
           {
             "en": "An injunction is not the same as an explanation.",
             "zh": "命令不等於解釋。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "法院正式頒布之強制或禁止處分命令",
+        "examples": [
+          {
+            "en": "The appellate court issued a preliminary injunction against the eviction.",
+            "zh": "上訴法院對該驅離行動頒布了初步禁止處分命令。"
           }
         ]
       }
@@ -13588,9 +14160,9 @@
   "R8:EPISTEMIC": {
     "word": "epistemic",
     "pos": "adj.",
-    "meaning": "關於知識及其可證成程度的",
-    "example": "The report recognises an epistemic limitation.",
-    "exampleZh": "報告承認可知程度的限制。",
+    "meaning": "與認知、知識理論及證成基礎相關的",
+    "example": "The jury evaluated the epistemic reliability of the expert testimony.",
+    "exampleZh": "陪審團認真評估了專家證詞在認知層面的可信度基礎。",
     "senses": [
       {
         "pos": "adj.",
@@ -13599,6 +14171,16 @@
           {
             "en": "The report recognises an epistemic limitation.",
             "zh": "報告承認可知程度的限制。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "與認知、知識理論及證成基礎相關的",
+        "examples": [
+          {
+            "en": "The jury evaluated the epistemic reliability of the expert testimony.",
+            "zh": "陪審團認真評估了專家證詞在認知層面的可信度基礎。"
           }
         ]
       }
@@ -17916,6 +18498,419 @@
     ],
     "word": "circumscription"
   },
+  "R8:JURISPRUDENCE": {
+    "word": "jurisprudence",
+    "pos": "n.",
+    "meaning": "法律哲學與法理學論述體系",
+    "example": "Constitutional jurisprudence evolved through landmark decisions.",
+    "exampleZh": "憲法法理學體系是透過里程碑判決逐步演進而成的。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "法律哲學與法理學論述體系",
+        "examples": [
+          {
+            "en": "Constitutional jurisprudence evolved through landmark decisions.",
+            "zh": "憲法法理學體系是透過里程碑判決逐步演進而成的。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:SUBSTANTIVE": {
+    "word": "substantive",
+    "pos": "adj.",
+    "meaning": "實質內容而非僅僅表面形式的",
+    "example": "The reform produced substantive changes in environmental regulation.",
+    "exampleZh": "該項改革在環境監管領域產生了實質性的變革。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "實質內容而非僅僅表面形式的",
+        "examples": [
+          {
+            "en": "The reform produced substantive changes in environmental regulation.",
+            "zh": "該項改革在環境監管領域產生了實質性的變革。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PROPORTIONALITY": {
+    "word": "proportionality",
+    "pos": "n.",
+    "meaning": "手段與目的均衡對稱之比例原則",
+    "example": "The measure violated the legal test of proportionality.",
+    "exampleZh": "該項處置措施違反了法律上的比例原則檢驗標準。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "手段與目的均衡對稱之比例原則",
+        "examples": [
+          {
+            "en": "The measure violated the legal test of proportionality.",
+            "zh": "該項處置措施違反了法律上的比例原則檢驗標準。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ULTRA VIRES": {
+    "word": "ultra vires",
+    "pos": "adj.",
+    "meaning": "逾越法定職權範圍而屬違法無效的",
+    "example": "The court declared the ministerial decree ultra vires.",
+    "exampleZh": "法院正式宣告該部會頒布之行政命令逾越法定權限而告無效。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "逾越法定職權範圍而屬違法無效的",
+        "examples": [
+          {
+            "en": "The court declared the ministerial decree ultra vires.",
+            "zh": "法院正式宣告該部會頒布之行政命令逾越法定權限而告無效。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:FORMALITY IS NOT SYNONYMOUS WITH JUSTICE": {
+    "word": "formality is not synonymous with justice",
+    "pos": "phr.",
+    "meaning": "形式合法不等於體現正義。",
+    "example": "Formality is not synonymous with justice.",
+    "exampleZh": "形式合法不等於體現正義。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式合法不等於體現正義。",
+        "examples": [
+          {
+            "en": "Formality is not synonymous with justice.",
+            "zh": "形式合法不等於體現正義。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:UNCHECKED AUTHORITY BREEDS INSTITUTIONAL DECAY": {
+    "word": "unchecked authority breeds institutional decay",
+    "pos": "phr.",
+    "meaning": "未受制約的權力滋生體制的衰退。",
+    "example": "Unchecked authority breeds institutional decay.",
+    "exampleZh": "未受制約的權力滋生體制的衰退。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "未受制約的權力滋生體制的衰退。",
+        "examples": [
+          {
+            "en": "Unchecked authority breeds institutional decay.",
+            "zh": "未受制約的權力滋生體制的衰退。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:ACQUIESCE": {
+    "pos": "v.",
+    "meaning": "默許、默認他人主張或處置",
+    "example": "Citizens refused to acquiesce in the arbitrary property seizure.",
+    "exampleZh": "公民斷然拒絕默許政府專斷沒收私人財產。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "默許、默認他人主張或處置",
+        "examples": [
+          {
+            "en": "Citizens refused to acquiesce in the arbitrary property seizure.",
+            "zh": "公民斷然拒絕默許政府專斷沒收私人財產。"
+          }
+        ]
+      }
+    ],
+    "word": "acquiesce"
+  },
+  "R8:ABROGATE": {
+    "pos": "v.",
+    "meaning": "官方正式廢止廢除法律或條約",
+    "example": "The newly elected parliament voted to abrogate the treaty.",
+    "exampleZh": "新當選的國會正式表決廢除該項國際條約。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "正式廢除協議法律或權利安排",
+        "examples": [
+          {
+            "en": "The ruler sought to abrogate the treaty.",
+            "zh": "統治者試圖廢除條約。"
+          },
+          {
+            "en": "A power to abrogate can weaken an apparent guarantee.",
+            "zh": "單方廢除權可能削弱表面保證。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "官方正式廢止廢除法律或條約",
+        "examples": [
+          {
+            "en": "The newly elected parliament voted to abrogate the treaty.",
+            "zh": "新當選的國會正式表決廢除該項國際條約。"
+          }
+        ]
+      }
+    ],
+    "word": "abrogate"
+  },
+  "R8:IMPRIMATUR": {
+    "pos": "n.",
+    "meaning": "官方認可核准或權威背書證明",
+    "example": "The regulatory body gave its official imprimatur to the merger.",
+    "exampleZh": "監管機構對該起併購案正式給予了官方認可與背書。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方認可核准或權威背書證明",
+        "examples": [
+          {
+            "en": "The regulatory body gave its official imprimatur to the merger.",
+            "zh": "監管機構對該起併購案正式給予了官方認可與背書。"
+          }
+        ]
+      }
+    ],
+    "word": "imprimatur"
+  },
+  "R8:UBIQUITOUS": {
+    "pos": "adj.",
+    "meaning": "無所不在且極其普遍存在的",
+    "example": "Bureaucratic surveillance has become ubiquitous in modern cities.",
+    "exampleZh": "官僚體系的監控機制在現代城市中已變得無所不在。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "無所不在且極其普遍存在的",
+        "examples": [
+          {
+            "en": "Bureaucratic surveillance has become ubiquitous in modern cities.",
+            "zh": "官僚體系的監控機制在現代城市中已變得無所不在。"
+          }
+        ]
+      }
+    ],
+    "word": "ubiquitous"
+  },
+  "R8:HEGEMONY": {
+    "pos": "n.",
+    "meaning": "特定集團或思想體系之領導支配霸權",
+    "example": "Cultural hegemony reinforces institutional compliance without overt force.",
+    "exampleZh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "特定集團或思想體系之領導支配霸權",
+        "examples": [
+          {
+            "en": "Cultural hegemony reinforces institutional compliance without overt force.",
+            "zh": "文化領導權在無須訴諸外在武力的情況下強化了體制遵從。"
+          }
+        ]
+      }
+    ],
+    "word": "hegemony"
+  },
+  "R8:SOLIPSISM": {
+    "word": "solipsism",
+    "pos": "n.",
+    "meaning": "主張唯有自我心靈確實存在之唯我論",
+    "example": "Epistemic solipsism denies the provability of external minds.",
+    "exampleZh": "認識論上的唯我論否定他人心靈具備可證性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張唯有自我心靈確實存在之唯我論",
+        "examples": [
+          {
+            "en": "Epistemic solipsism denies the provability of external minds.",
+            "zh": "認識論上的唯我論否定他人心靈具備可證性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DIALECTIC": {
+    "word": "dialectic",
+    "pos": "n.",
+    "meaning": "透過對立矛盾揚棄以追求真理的辯證法",
+    "example": "Marx adapted the Hegelian dialectic to material historical forces.",
+    "exampleZh": "馬克思將黑格爾辯證法轉化應用於唯物歷史動力分析。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "透過對立矛盾揚棄以追求真理的辯證法",
+        "examples": [
+          {
+            "en": "Marx adapted the Hegelian dialectic to material historical forces.",
+            "zh": "馬克思將黑格爾辯證法轉化應用於唯物歷史動力分析。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:INCOMMENSURABILITY": {
+    "word": "incommensurability",
+    "pos": "n.",
+    "meaning": "兩理論體系因缺乏共同衡量標準而具不可公度性",
+    "example": "Kuhn argued for the incommensurability of competing scientific paradigms.",
+    "exampleZh": "孔恩主張競爭中的科學典範之間具備不可公度性。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "兩理論體系因缺乏共同衡量標準而具不可公度性",
+        "examples": [
+          {
+            "en": "Kuhn argued for the incommensurability of competing scientific paradigms.",
+            "zh": "孔恩主張競爭中的科學典範之間具備不可公度性。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DOUBT IS THE THRESHOLD OF CRITICAL THOUGHT": {
+    "word": "doubt is the threshold of critical thought",
+    "pos": "phr.",
+    "meaning": "懷疑是批判思維的起點門檻。",
+    "example": "Doubt is the threshold of critical thought.",
+    "exampleZh": "懷疑是批判思維的起點門檻。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "懷疑是批判思維的起點門檻。",
+        "examples": [
+          {
+            "en": "Doubt is the threshold of critical thought.",
+            "zh": "懷疑是批判思維的起點門檻。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:LANGUAGE CONDITIONS OUR PERCEPTION OF REALITY": {
+    "word": "language conditions our perception of reality",
+    "pos": "phr.",
+    "meaning": "語言深度制約我們對實在的感知。",
+    "example": "Language conditions our perception of reality.",
+    "exampleZh": "語言深度制約我們對實在的感知。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "語言深度制約我們對實在的感知。",
+        "examples": [
+          {
+            "en": "Language conditions our perception of reality.",
+            "zh": "語言深度制約我們對實在的感知。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:DOGMATIC": {
+    "pos": "adj.",
+    "meaning": "武斷且未經批判便堅持特定信條的",
+    "example": "The professor rejected dogmatic assertions in scholarly seminars.",
+    "exampleZh": "教授在學術研討會上斷然拒絕未經批判的武斷宣稱。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "武斷且未經批判便堅持特定信條的",
+        "examples": [
+          {
+            "en": "The professor rejected dogmatic assertions in scholarly seminars.",
+            "zh": "教授在學術研討會上斷然拒絕未經批判的武斷宣稱。"
+          }
+        ]
+      }
+    ],
+    "word": "dogmatic"
+  },
+  "R8:ANACHRONISM": {
+    "pos": "n.",
+    "meaning": "將現代概念或事物錯置於過去時代的年代錯誤",
+    "example": "Depicting ancient soldiers with firearms is an egregious anachronism.",
+    "exampleZh": "描繪古代士兵攜帶現代槍械是一項刺眼的年代錯置錯誤。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "將現代概念或事物錯置於過去時代的年代錯誤",
+        "examples": [
+          {
+            "en": "Depicting ancient soldiers with firearms is an egregious anachronism.",
+            "zh": "描繪古代士兵攜帶現代槍械是一項刺眼的年代錯置錯誤。"
+          }
+        ]
+      }
+    ],
+    "word": "anachronism"
+  },
+  "R8:APORISTIC": {
+    "pos": "adj.",
+    "meaning": "充滿哲學困境而難以找到出口的",
+    "example": "The dialogue concludes on an aporistic and unresolved note.",
+    "exampleZh": "該篇對話錄在進退維谷且懸而未決的哲學困境中劃下句點。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "充滿哲學困境而難以找到出口的",
+        "examples": [
+          {
+            "en": "The dialogue concludes on an aporistic and unresolved note.",
+            "zh": "該篇對話錄在進退維谷且懸而未決的哲學困境中劃下句點。"
+          }
+        ]
+      }
+    ],
+    "word": "aporistic"
+  },
+  "R8:HETERODOX": {
+    "pos": "adj.",
+    "meaning": "與正統或權威通說相違背之非正統異端的主張",
+    "example": "The economist advanced a heterodox critique of monetary policy.",
+    "exampleZh": "該經濟學家對當前貨幣政策提出了非正統的深刻批判。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與正統或權威通說相違背之非正統異端的主張",
+        "examples": [
+          {
+            "en": "The economist advanced a heterodox critique of monetary policy.",
+            "zh": "該經濟學家對當前貨幣政策提出了非正統的深刻批判。"
+          }
+        ]
+      }
+    ],
+    "word": "heterodox"
+  },
+  "R8:HEURISTIC": {
+    "pos": "n.",
+    "meaning": "在複雜問題中便於快速探索或解決問題的啟發式方法",
+    "example": "Trial and error serves as a useful cognitive heuristic.",
+    "exampleZh": "嘗試錯誤法可作為一種實用且高效的認知啟發式途徑。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在複雜問題中便於快速探索或解決問題的啟發式方法",
+        "examples": [
+          {
+            "en": "Trial and error serves as a useful cognitive heuristic.",
+            "zh": "嘗試錯誤法可作為一種實用且高效的認知啟發式途徑。"
+          }
+        ]
+      }
+    ],
+    "word": "heuristic"
+  },
   "R8:DAMNING WITH FAINT PRAISE": {
     "word": "damning with faint praise",
     "pos": "phr.",
@@ -18546,29 +19541,6 @@
       }
     ]
   },
-  "R8:ABROGATE": {
-    "pos": "v.",
-    "meaning": "正式廢除協議法律或權利安排",
-    "example": "The ruler sought to abrogate the treaty.",
-    "exampleZh": "統治者試圖廢除條約。",
-    "senses": [
-      {
-        "pos": "v.",
-        "meaning": "正式廢除協議法律或權利安排",
-        "examples": [
-          {
-            "en": "The ruler sought to abrogate the treaty.",
-            "zh": "統治者試圖廢除條約。"
-          },
-          {
-            "en": "A power to abrogate can weaken an apparent guarantee.",
-            "zh": "單方廢除權可能削弱表面保證。"
-          }
-        ]
-      }
-    ],
-    "word": "abrogate"
-  },
   "R8:REVOCABLE": {
     "pos": "adj.",
     "meaning": "可被撤回或取消的",
@@ -18826,9 +19798,9 @@
   },
   "R8:EQUIVOCATION": {
     "pos": "n.",
-    "meaning": "以含糊措辭迴避明確立場的做法",
-    "example": "The reply was criticised for equivocation.",
-    "exampleZh": "回覆因模稜兩可而受批評。",
+    "meaning": "在論辯中刻意模糊或偷換語義之雙關謬誤",
+    "example": "The politician’s defense relied upon an obvious equivocation.",
+    "exampleZh": "該政客的辯解仰賴於一處顯而易見的語義偷換。",
     "senses": [
       {
         "pos": "n.",
@@ -18851,6 +19823,16 @@
           {
             "en": "The reply was criticised for equivocation.",
             "zh": "回覆因模稜兩可而受批評。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "在論辯中刻意模糊或偷換語義之雙關謬誤",
+        "examples": [
+          {
+            "en": "The politician’s defense relied upon an obvious equivocation.",
+            "zh": "該政客的辯解仰賴於一處顯而易見的語義偷換。"
           }
         ]
       }
@@ -20124,5 +21106,138 @@
       }
     ],
     "word": "representational"
+  },
+  "R8:DEROGATION": {
+    "word": "derogation",
+    "pos": "n.",
+    "meaning": "對公約或法規條款的官方減免讓步",
+    "example": "Emergency powers permit temporary derogation from certain obligations.",
+    "exampleZh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對公約或法規條款的官方減免讓步",
+        "examples": [
+          {
+            "en": "Emergency powers permit temporary derogation from certain obligations.",
+            "zh": "緊急權力允許在特定情境下暫時減免履行部分法規義務。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:PROCEDURAL SAFEGUARDS PRESERVE CIVIL LIBERTY": {
+    "word": "procedural safeguards preserve civil liberty",
+    "pos": "phr.",
+    "meaning": "程序保障維繫公民自由。",
+    "example": "Procedural safeguards preserve civil liberty.",
+    "exampleZh": "程序保障維繫公民自由。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "程序保障維繫公民自由。",
+        "examples": [
+          {
+            "en": "Procedural safeguards preserve civil liberty.",
+            "zh": "程序保障維繫公民自由。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CONTRAVENE": {
+    "pos": "v.",
+    "meaning": "抵觸違背成文法律或條約義務",
+    "example": "The new licensing requirement contravened municipal law.",
+    "exampleZh": "這項新的營業執照要求抵觸了該市的自治法規。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "抵觸違背成文法律或條約義務",
+        "examples": [
+          {
+            "en": "The new licensing requirement contravened municipal law.",
+            "zh": "這項新的營業執照要求抵觸了該市的自治法規。"
+          }
+        ]
+      }
+    ],
+    "word": "contravene"
+  },
+  "R8:INDEMNITY": {
+    "pos": "n.",
+    "meaning": "對未來潛在損害或損失之官方保障補償",
+    "example": "The government offered financial indemnity to contracted shipping firms.",
+    "exampleZh": "政府向受合約約束的航運公司提供了財務損害補償保證。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對未來潛在損害或損失之官方保障補償",
+        "examples": [
+          {
+            "en": "The government offered financial indemnity to contracted shipping firms.",
+            "zh": "政府向受合約約束的航運公司提供了財務損害補償保證。"
+          }
+        ]
+      }
+    ],
+    "word": "indemnity"
+  },
+  "R8:CERTAINTY IS AN EMOTIONAL RATHER THAN LOGICAL STATE": {
+    "word": "certainty is an emotional rather than logical state",
+    "pos": "phr.",
+    "meaning": "確定性本質上常屬心理情感而非純粹邏輯狀態。",
+    "example": "Certainty is an emotional rather than logical state.",
+    "exampleZh": "確定性本質上常屬心理情感而非純粹邏輯狀態。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "確定性本質上常屬心理情感而非純粹邏輯狀態。",
+        "examples": [
+          {
+            "en": "Certainty is an emotional rather than logical state.",
+            "zh": "確定性本質上常屬心理情感而非純粹邏輯狀態。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R8:CORROBORATE": {
+    "pos": "v.",
+    "meaning": "提供額外證據以證實支持某項主張",
+    "example": "Multiple witnesses came forward to corroborate the defendant’s story.",
+    "exampleZh": "多位證人主動出面提供證據以證實被告的說法。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "提供額外證據以證實支持某項主張",
+        "examples": [
+          {
+            "en": "Multiple witnesses came forward to corroborate the defendant’s story.",
+            "zh": "多位證人主動出面提供證據以證實被告的說法。"
+          }
+        ]
+      }
+    ],
+    "word": "corroborate"
+  },
+  "R8:SYLLOGISM": {
+    "pos": "n.",
+    "meaning": "由大前提、小前提與結論組成的三段論",
+    "example": "The classic syllogism deduces mortality from the nature of humanity.",
+    "exampleZh": "經典的三段論從人類本質演繹推導出生命的必有一死。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "由大前提、小前提與結論組成的三段論",
+        "examples": [
+          {
+            "en": "The classic syllogism deduces mortality from the nature of humanity.",
+            "zh": "經典的三段論從人類本質演繹推導出生命的必有一死。"
+          }
+        ]
+      }
+    ],
+    "word": "syllogism"
   }
 }

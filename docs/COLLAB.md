@@ -239,3 +239,8 @@
   ② **長時間遊玩發音看門狗自愈（TASKS 第八節）**：`src/game/speech.ts` 實裝 5.5 秒看門狗自愈機制，瀏覽器語音事件遺失時自動強制解鎖並清理隊列；監聽 `visibilitychange`，分頁切回前景時若語音處於 paused 自動 `resume()`，徹底消除長期遊玩 TTS 假死。
   ③ **未決問題 Q1/Q2/Q3/Q7 全案審定與閉環**：等級 200 對齊主世界九區終王，第二世界作為長線擴充版本；三星條件與處決追擊 9 組矩陣驗收通過；召喚券每週 25~35 抽契合 300 位英雄與 SSR 晉升 UR 需求；`trainCost` 平滑曲線徹底打破二次方金幣牆。
   ④ 51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-02 Antigravity｜C1/C2高階題庫擴充160題＋全庫字典卡片大爆發539張交付：
+  ① **第 32 & 33 批高階原創題庫實裝**：建立 `032-institutions-and-reforms.mjs`（制度、治理與公共倫理）與 `033-critique-and-philosophy.mjs`（思辨、批判與認識論），為 C1 (r7) 與 C2 (r8) 各注入 80 道高品質聽說讀寫試題，r7 與 r8 題量雙雙達到 1,320 題。
+  ② **全庫題數突破 13,693 題**：全量執行 `validate-questions.ts`，全庫 13,693 題達成 **0 錯誤、0 警告**！
+  ③ **字典卡片大擴充（突破 5,500 條）**：升級 `auto-lemmatize-vocab.ts` 支援選擇題字彙與挖空例句自動提取，單次自動生成 **539 筆全新單字卡片**（含精準中文解釋、詞性、例句中英對照），`generated-vocab.json` 擴增至 2,264 條，全專案詞庫突破 5,500 條。
+  ④ **全量檢驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。

@@ -12182,6 +12182,792 @@
       "ans": "NNI",
       "speak": "continuity",
       "vocabId": "R7:CONTINUITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The code prohibits officials from accepting gifts that could compromise impartiality.",
+      "options": [
+        "A. 官員可接受所有外部饋贈，唯需如實申報價值。",
+        "B. 法規僅限制非營利機構向審查人員提供禮品。",
+        "C. 饋贈金額若低於規定標準即不被視為倫理事件。",
+        "D. 法規禁止公務人員收受可能損害公正立場之饋贈。"
+      ],
+      "ans": "D",
+      "explain": "compromise impartiality 損害公正性，prohibits accepting 禁止收受。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The inspector general operates independently of the agency’s executive leadership.",
+      "options": [
+        "A. 督察長獨立於該機構之高階行政領導層之外運作。",
+        "B. 督察長直接向各業務部門最高行政首長負責。",
+        "C. 機構領導層有權隨時終止督察長之調查行動。",
+        "D. 督察長僅在獲得法官授權後方能開展內部稽核。"
+      ],
+      "ans": "A",
+      "explain": "operates independently of 體現監督機制的獨立運作架構。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Public consultation revealed significant reservations regarding the proposed zoning amendments.",
+      "options": [
+        "A. 分區修訂委員會在諮詢前已正式簽署實施法令。",
+        "B. 公眾諮詢顯示民眾對擬議之土地分區修訂案多所保留。",
+        "C. 諮詢結果證實各界對分區修訂案展現壓倒性支持。",
+        "D. 市民要求即刻取消所有未來的都市公聽會程序。"
+      ],
+      "ans": "B",
+      "explain": "significant reservations 對方案持重大保留與疑慮。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Arbitrary enforcement undermines the perceived legitimacy of administrative rules.",
+      "options": [
+        "A. 專斷恣意的執法將侵蝕行政規章在公眾眼中的合法性。",
+        "B. 行政規章必須具備絕對彈性以適應所有個案差異。",
+        "C. 專斷執法被證明能夠顯著提升公眾之法規遵從度。",
+        "D. 公眾對規章合法性之評價完全取決於執法罰鍰多寡。"
+      ],
+      "ans": "A",
+      "explain": "arbitrary enforcement 專斷執法，undermines perceived legitimacy 侵蝕公信力。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The distinction between advisory recommendations and binding statutory requirements must be upheld.",
+      "options": [
+        "A. 行政機構有權自由將任何法定要求解釋為自願建言。",
+        "B. 諮詢性建言與具拘束力之法定要求之間的界線必須維持。",
+        "C. 所有諮詢建言自發布當日起即具備完全之法定拘束力。",
+        "D. 法定要求在遭遇執行阻礙時可自動降格為諮詢建言。"
+      ],
+      "ans": "B",
+      "explain": "distinction must be upheld 堅持兩者界限不可混淆。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A superficial consensus often conceals profound disagreements regarding resource allocation.",
+      "options": [
+        "A. 資源分配的爭議在簽訂協議後便已徹底煙消雲散。",
+        "B. 各部門寧願維持公開爭吵也不願尋求形式上之共識。",
+        "C. 表面上的共識往往掩蓋了關於資源分配的深刻分歧。",
+        "D. 達成共識即證明所有人對資源配置方案毫無異議。"
+      ],
+      "ans": "C",
+      "explain": "superficial consensus 表面共識，conceals profound disagreements 掩蓋深刻歧異。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Institutional legitimacy depends not merely on statutory legality, but on perceived procedural justice.",
+      "options": [
+        "A. 體制合法性完全由行政機關的預算規模與執行速度所決定。",
+        "B. 體制正當性不僅取決於法律合規，更取決於公眾所感知的程序正義。",
+        "C. 只要符合法定程序，公眾的主觀感受便與體制正當性無關。",
+        "D. 程序正義在面對法定成文法規時不具備任何獨立參考價值。"
+      ],
+      "ans": "B",
+      "explain": "not merely ... but on 強調 procedural justice 程序正義之不可或缺。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The administration framed the reform as an efficiency measure, thereby diverting scrutiny from its redistributive impact.",
+      "options": [
+        "A. 效率提升的承諾吸引了更多外部專家對分配衝擊的深入研究。",
+        "B. 社會各界一致認為效率改進是該改革方案唯一值得探討的面向。",
+        "C. 行政當局將改革包裝為效率提升，藉此轉移對其重分配衝擊的檢視。",
+        "D. 當局直言不諱地承認該改革方案旨在全面重構財富分配。"
+      ],
+      "ans": "C",
+      "explain": "framed as ... diverting scrutiny 將其框定為效率，藉此轉移分配衝擊。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Adjudicative discretion is essential to equity, yet unchecked discretion invariably invites charges of bias.",
+      "options": [
+        "A. 為追求絕對公平，司法體系必須徹底剝奪所有法官的自由裁量權。",
+        "B. 受到嚴密監督的裁量權在司法實務中被證明完全無法實現實質正義。",
+        "C. 所有針對裁量偏差的指控均源自對成文法條文內容的錯誤解讀。",
+        "D. 裁量權對個案公平不可或缺，然而不受制約之裁量必然招致不公指控。"
+      ],
+      "ans": "D",
+      "explain": "discretion essential to equity 裁量為公平所需，unchecked discretion invites bias 無制約則生偏私。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【法規】The regulation distinguishes administrative penalties from criminal prosecution, assigning the former to the municipal inspectorate. Which authority handles administrative penalties?",
+      "options": [
+        "A. The state criminal court.",
+        "B. An independent panel of citizens.",
+        "C. The national constitutional tribunal.",
+        "D. The municipal inspectorate."
+      ],
+      "ans": "D",
+      "explain": "the former 指前述第一者 administrative penalties，歸 municipal inspectorate。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【政策】A policy amendment permits discretionary exemptions, provided the applicant demonstrates disproportionate hardship. What must an applicant demonstrate?",
+      "options": [
+        "A. Disproportionate hardship resulting from the rule.",
+        "B. A clean record of prior compliance.",
+        "C. Endorsement from three municipal officials.",
+        "D. A commitment to fund alternative community projects."
+      ],
+      "ans": "A",
+      "explain": "discretionary exemptions 酌情豁免的必要前提為證明 disproportionate hardship。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Were the board to approve the restructuring tomorrow, implementation ___ across six distinct phases.",
+      "options": [
+        "A. had proceeded",
+        "B. would proceed",
+        "C. will proceed",
+        "D. has proceeded"
+      ],
+      "ans": "B",
+      "explain": "Were the board to approve 為假設語氣倒裝，主句配 would proceed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The director praised the initiative as ambitious, though she questioned its institutional sustainability. What was her assessment?",
+      "options": [
+        "A. She supported its vision while doubting its longevity.",
+        "B. She dismissed both the concept and the execution.",
+        "C. She confirmed that the funding was permanent and secure.",
+        "D. She urged other departments to duplicate the structure immediately."
+      ],
+      "ans": "A",
+      "explain": "肯定其雄心（vision），但對體制永續性（longevity）保留質疑。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】An agency replaces peer review with algorithmic scoring for small grants, noting a reduction in processing times but an increase in identical appeal arguments. What trade-off is indicated?",
+      "options": [
+        "A. Algorithmic scoring proved more expensive than anticipated.",
+        "B. Efficiency improved at the expense of individualized review.",
+        "C. Subjective bias was entirely eliminated without cost.",
+        "D. The total number of applications dropped precipitously."
+      ],
+      "ans": "B",
+      "explain": "時效縮短但申訴論點趨同，顯示以犧牲個別化審查換取效率。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【文義】The committee deemed the measure necessary but insufficient to curb regulatory capture. What was the verdict?",
+      "options": [
+        "A. The proposed reform is counterproductive and harmful.",
+        "B. Regulatory capture cannot be addressed through legislation.",
+        "C. The step is helpful, yet further action is required.",
+        "D. The measure is redundant because capture has already ended."
+      ],
+      "ans": "C",
+      "explain": "necessary but insufficient 表示該步驟有益但仍需後續行動。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【政策】The decree imposes reporting obligations on foreign subsidiaries, excepting those operating solely within free-trade zones. Which subsidiaries are exempt?",
+      "options": [
+        "A. Enterprises employing fewer than one hundred personnel.",
+        "B. Those confined entirely to free-trade zones.",
+        "C. All subsidiaries established before the decree.",
+        "D. Subsidiaries whose parent companies are domestic."
+      ],
+      "ans": "B",
+      "explain": "excepting those operating solely within free-trade zones 僅排除保稅區企業。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The report observes that institutional inertia, rather than explicit opposition, derailed the reform package. What stalled the reform?",
+      "options": [
+        "A. A catastrophic shortfall in public revenues.",
+        "B. Contradictory directives issued by the executive branch.",
+        "C. Established organizational habits and reluctance to change.",
+        "D. Direct legal challenges brought by advocacy groups."
+      ],
+      "ans": "C",
+      "explain": "institutional inertia 指體制既有慣性與消極拖延，非明面反對。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The chair remarked that while legal compliance had been verified, ethical defensibility remained an open question. What did the chair imply?",
+      "options": [
+        "A. The organization should challenge the relevant statutes in court.",
+        "B. Compliance officers exceeded their designated authority.",
+        "C. The legal audit was flawed and must be conducted anew.",
+        "D. Lawfulness does not guarantee ethical acceptability."
+      ],
+      "ans": "D",
+      "explain": "合乎法律不等於在倫理層面站得住腳（lawfulness does not guarantee defensibility）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：官方司法或行政管轄權限範圍",
+      "ans": "JURISDICTION",
+      "speak": "jurisdiction",
+      "vocabId": "R7:JURISDICTION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：實務導向且講求實際成效的",
+      "ans": "PRAGMATIC",
+      "speak": "pragmatic",
+      "vocabId": "R7:PRAGMATIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：深思熟慮且經審慎評估的",
+      "ans": "DELIBERATE",
+      "speak": "deliberate",
+      "vocabId": "R7:DELIBERATE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：法律成文法條明文規定的",
+      "ans": "STATUTORY",
+      "speak": "statutory",
+      "vocabId": "R7:STATUTORY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：自由裁量權必須具備制度性制約。",
+      "ans": "DISCRETION REQUIRES STRUCTURAL CONSTRAINT",
+      "speak": "discretion requires structural constraint",
+      "vocabId": "R7:DISCRETION REQUIRES STRUCTURAL CONSTRAINT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：體制的公信力極易遭受揮霍耗損。",
+      "ans": "INSTITUTIONAL CREDIBILITY IS EASILY SQUANDERED",
+      "speak": "institutional credibility is easily squandered",
+      "vocabId": "R7:INSTITUTIONAL CREDIBILITY IS EASILY SQUANDERED"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：官方正式廢除撤銷法令或合約（R 開頭，7 個字母）",
+      "ans": "RESCIND",
+      "speak": "rescind",
+      "vocabId": "R7:RESCIND"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：依據法律或官方程序對爭議進行裁決（A 開頭，10 個字母）",
+      "ans": "ADJUDICATE",
+      "speak": "adjudicate",
+      "vocabId": "R7:ADJUDICATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：符合眼前權宜算計但未必合於道德的（E 開頭，9 個字母）",
+      "ans": "EXPEDIENT",
+      "speak": "expedient",
+      "vocabId": "R7:EXPEDIENT"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：D E R O G _ T I O N (對法律或公約義務的局部減損或免除)",
+      "ans": "A",
+      "speak": "derogation",
+      "vocabId": "R7:DEROGATION"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：P R E _ O G A _ I V E (特定職位或統治機構專屬之特權)",
+      "ans": "RT",
+      "speak": "prerogative",
+      "vocabId": "R7:PREROGATIVE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ E R _ E G _ U M (體制或政權交替期間之權力過渡空白期)",
+      "ans": "TRN",
+      "speak": "interregnum",
+      "vocabId": "R7:INTERREGNUM"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "A sound argument requires both formal validity and true premises.",
+      "options": [
+        "A. 健全之論證既需形式上的有效結構，亦需實質真確之前提。",
+        "B. 形式有效之論證必然能確保其所有前提皆屬真確。",
+        "C. 論證之真偽完全取決於聽眾是否產生強烈情感共鳴。",
+        "D. 健全性在邏輯學上僅要求結論與講述者初衷相互契合。"
+      ],
+      "ans": "A",
+      "explain": "sound argument 要求 formal validity 與 true premises 兩者兼備。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Epistemology investigates the nature, sources, and limits of knowledge.",
+      "options": [
+        "A. 該學門主要探討古代統治者如何運用權謀維持政權。",
+        "B. 認識論深入探究知識的本質、來源及其界限所在。",
+        "C. 認識論專注於研究物質宇宙在物理層面的演化規律。",
+        "D. 認識論否定人類大腦具備掌握任何客觀知識之可能。"
+      ],
+      "ans": "B",
+      "explain": "epistemology 核心命題：nature, sources, limits of knowledge。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The assertion that all swans are white was dismantled by a single counterexample.",
+      "options": [
+        "A. 該反例被證明屬於實驗室人為製造的基因變異物種。",
+        "B. 科學界一致同意將該反例排除在天鵝物種分類之外。",
+        "C. 所有天鵝皆白之普遍宣稱，僅憑單一反例便遭徹底瓦解。",
+        "D. 單一反例在經驗科學中不足以動搖任何普遍法則。"
+      ],
+      "ans": "C",
+      "explain": "counterexample 反例對全稱命題之決定性瓦解作用。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The principle of parsimony favours the explanation that requires the fewest assumptions.",
+      "options": [
+        "A. 解釋效能與模型內部的假設數量多寡在實務上毫無關聯。",
+        "B. 簡約原則傾向支持需要最少假設前提之理論解釋。",
+        "C. 最複雜且假設最多的學說必然具備最強之解釋效能。",
+        "D. 簡約原則要求科學家完全放棄使用任何未經證實的符號。"
+      ],
+      "ans": "B",
+      "explain": "parsimony 奧坎剃刀原則：fewest assumptions 最少假設。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The historian demonstrated that the concept of individual privacy is historically contingent.",
+      "options": [
+        "A. 隱私觀念的演變證明了人類道德水準隨著時間必然不斷進步。",
+        "B. 歷史研究已證實任何文明若欠缺現代隱私法制便無法維繫。",
+        "C. 歷史學家證明了個人隱私的概念在歷史進程中深具偶發性。",
+        "D. 個人隱私權自人類誕生起便被所有文明視為至高無上的美德。"
+      ],
+      "ans": "C",
+      "explain": "historically contingent 表明並非永恆先驗，而是歷史條件之產物。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The author conflated necessity with sufficiency, derailing the logical force of the thesis.",
+      "options": [
+        "A. 論文的邏輯力量因精確區分必要性與充分性而大獲讚賞。",
+        "B. 必要條件在嚴密推論中往往可直接視為充分條件予以處理。",
+        "C. 該混淆被評審委員會認為是開創全新邏輯範式的劃時代突破。",
+        "D. 作者混淆了必要條件與充分條件，削弱了論文的核心邏輯力量。"
+      ],
+      "ans": "D",
+      "explain": "conflated necessity with sufficiency 混淆充分與必要條件。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The thesis relies upon a reductive materialism that trivializes qualitative consciousness.",
+      "options": [
+        "A. 論文作者斷言主觀心靈體驗完全無法被還原為單純物理神經活動。",
+        "B. 質性意識在該研究中被確立為衡量物質宇宙存在的最高準則。",
+        "C. 該論文依賴還原唯物論，將質性意識經驗貶低為無足輕重的副產物。",
+        "D. 還原唯物論完美解釋了人類情感與藝術審美經驗的獨特價值。"
+      ],
+      "ans": "C",
+      "explain": "reductive materialism 還原唯物論 trivializes qualitative consciousness。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Hermeneutic analysis reveals that no interpretation is entirely free from historical prejudice.",
+      "options": [
+        "A. 讀者只要經過嚴密訓練，便能在閱讀時徹底清除所有歷史預設。",
+        "B. 歷史先見被證實乃是阻礙讀者理解任何古典文本之致命毒素。",
+        "C. 詮釋學的主要目標在於確立文本存在唯一的絕對客觀標準答案。",
+        "D. 詮釋學分析揭示，沒有任何文本解讀能夠完全超脫歷史先見之制約。"
+      ],
+      "ans": "D",
+      "explain": "hermeneutic analysis 詮釋學揭示歷史先見（prejudice）之不可避免。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The fallacy of reification treats an abstract concept as though it were a concrete physical entity.",
+      "options": [
+        "A. 具象化謬誤將抽象概念誤當作具體物理實體來對待與處理。",
+        "B. 具象化是現代哲學用以檢驗抽象概念客觀實在性之標準方法。",
+        "C. 所有物理實體在本質上皆應被視為人類語言發明之抽象範疇。",
+        "D. 將概念視為實體在理論物理學中已被證明能消除所有認識盲點。"
+      ],
+      "ans": "A",
+      "explain": "fallacy of reification 概念實體化/具象化謬誤。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】Empiricism asserts that all knowledge originates in sensory experience, whereas rationalism posits innate intellectual concepts. What is the fundamental divide?",
+      "options": [
+        "A. The ultimate source of human knowledge.",
+        "B. Whether science should be funded by universities.",
+        "C. The grammatical structure of logical propositions.",
+        "D. Whether mathematics is applicable to astronomy."
+      ],
+      "ans": "A",
+      "explain": "經驗論與唯理論之核心分歧在於知識的根本起源。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【邏輯】An argument is formally valid if its conclusion follows necessarily from its premises, regardless of whether the premises are factually true. What does validity evaluate?",
+      "options": [
+        "A. The moral intentions behind proposing the argument.",
+        "B. The logical connection between premises and conclusion.",
+        "C. The empirical accuracy of the factual statements.",
+        "D. The rhetorical charisma of the defending speaker."
+      ],
+      "ans": "B",
+      "explain": "有效性（validity）純粹衡量前提與結論間之邏輯推導結構。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the researchers accounted for attrition bias, their longitudinal findings ___ far more persuasive.",
+      "options": [
+        "A. are",
+        "B. had been",
+        "C. would have been",
+        "D. will have been"
+      ],
+      "ans": "C",
+      "explain": "Had the researchers accounted ... would have been 為與過去事實相反之倒裝句型。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【深辨】The critique demonstrated that the proposed model was unfalsifiable, as it reinterpreted every contradiction as a special case. Why was the model criticized?",
+      "options": [
+        "A. It relied exclusively on ancient geometric principles.",
+        "B. It insulated itself against empirical refutation.",
+        "C. It proved that all previous scientific models were wrong.",
+        "D. It required excessive computational power to execute."
+      ],
+      "ans": "B",
+      "explain": "任何反證皆被強解為特例，使其在經驗上不可證偽（unfalsifiable）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【論點】The historian rejects technological determinism, arguing that inventions are shaped by prevailing social structures rather than dictating them autonomously. What is rejected?",
+      "options": [
+        "A. The belief that historians should study ancient engineering.",
+        "B. The proposition that machines require human operators.",
+        "C. The claim that technology independently determines social history.",
+        "D. The view that social structures influence technological adoption."
+      ],
+      "ans": "C",
+      "explain": "駁斥技術決定論（即科技獨立單向決定人類社會歷史之觀點）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【謬誤】To dismiss a philosopher’s ethical theory simply because she led an unconventional personal life is to commit an ad hominem fallacy. What makes this a fallacy?",
+      "options": [
+        "A. Demanding empirical proof for metaphysical claims.",
+        "B. Assuming that ethical theories can never be applied in practice.",
+        "C. Confusing logical necessity with contingent historical fact.",
+        "D. Attacking the person’s character rather than the argument’s merits."
+      ],
+      "ans": "D",
+      "explain": "訴諸人身謬誤：攻擊人格私德而非論辯理論本身之理據。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【方法】A paradigm shift occurs not merely through incremental accumulation, but through a conceptual reconfiguration of existing data. What triggers the shift?",
+      "options": [
+        "A. An administrative decree issued by the academy.",
+        "B. A sudden doubling of governmental research grants.",
+        "C. A fundamental change in the conceptual framework.",
+        "D. The physical destruction of older laboratory archives."
+      ],
+      "ans": "C",
+      "explain": "典範轉移仰賴概念架構的根本重構，非單純資料量之遞增。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The essay distinguishes between ontological claims regarding what exists and epistemological claims regarding how we know what exists. What is the scope of ontology?",
+      "options": [
+        "A. The analysis of the cognitive faculties of memory.",
+        "B. The historical investigation of religious scriptures.",
+        "C. The technical measurement of physical constants.",
+        "D. The study of the fundamental nature of existence."
+      ],
+      "ans": "D",
+      "explain": "本體論（ontology）探討存在本身，與探討認知途徑的認識論分立。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【深辨】The critic argues that the author confuses an instrumental reason, which calculates means to an end, with substantive reason, which evaluates the ends themselves. What is the critique?",
+      "options": [
+        "A. Means-end efficiency was mistaken for moral wisdom.",
+        "B. All human reasoning was declared fundamentally flawed.",
+        "C. Substantive goals were prioritized over technical execution.",
+        "D. Instrumental reason was rejected as completely useless."
+      ],
+      "ans": "A",
+      "explain": "將工具理性（手段效率）誤認為實質理性（價值目的之反思）。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：探討知識起源、本質與界限的認識論",
+      "ans": "EPISTEMOLOGY",
+      "speak": "epistemology",
+      "vocabId": "R7:EPISTEMOLOGY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：與詮釋理解及文本解讀方法相關的",
+      "ans": "HERMENEUTIC",
+      "speak": "hermeneutic",
+      "vocabId": "R7:HERMENEUTIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在經驗科學上具備可被反證推翻性質的",
+      "ans": "FALSIFIABLE",
+      "speak": "falsifiable",
+      "vocabId": "R7:FALSIFIABLE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：探討存在本身與實在本質的本體論的",
+      "ans": "ONTOLOGICAL",
+      "speak": "ontological",
+      "vocabId": "R7:ONTOLOGICAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：形式有效性並不保證經驗真理。",
+      "ans": "VALIDITY DOES NOT GUARANTEE EMPIRICAL TRUTH",
+      "speak": "validity does not guarantee empirical truth",
+      "vocabId": "R7:VALIDITY DOES NOT GUARANTEE EMPIRICAL TRUTH"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：經驗觀察本質上受理論制約。",
+      "ans": "OBSERVATION IS CONDITIONED BY THEORY",
+      "speak": "observation is conditioned by theory",
+      "vocabId": "R7:OBSERVATION IS CONDITIONED BY THEORY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：依循邏輯規則從普遍前提推演的（D 開頭，9 個字母）",
+      "ans": "DEDUCTIVE",
+      "speak": "deductive",
+      "vocabId": "R7:DEDUCTIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：從多數個別經驗觀察歸納通則的（I 開頭，9 個字母）",
+      "ans": "INDUCTIVE",
+      "speak": "inductive",
+      "vocabId": "R7:INDUCTIVE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：在邏輯上同義反覆而不增添新資訊的重言式（T 開頭，9 個字母）",
+      "ans": "TAUTOLOGY",
+      "speak": "tautology",
+      "vocabId": "R7:TAUTOLOGY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：S O L E _ I S M (語法文理上之不合規範或禮儀失範)",
+      "ans": "C",
+      "speak": "solecism",
+      "vocabId": "R7:SOLECISM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：A P _ R _ A (哲學思辨中陷入進退維谷的理路困境)",
+      "ans": "OI",
+      "speak": "aporia",
+      "vocabId": "R7:APORIA"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：V E R _ S I M _ L I _ U D E (極度逼真且看似真實存在的特質)",
+      "ans": "IIT",
+      "speak": "verisimilitude",
+      "vocabId": "R7:VERISIMILITUDE"
     }
   ],
   "boss": [
@@ -16245,6 +17031,268 @@
       "ans": "EIL",
       "speak": "accessibility",
       "vocabId": "R7:ACCESSIBILITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The revised charter establishes explicit mechanisms for internal whistleblowing.",
+      "options": [
+        "A. 內部檢舉案件依法一律需由所屬主管先行閱核。",
+        "B. 規程將所有匿名檢舉視為惡意指控而不予受理。",
+        "C. 修訂後之規程為內部吹哨檢舉建立了明確的機制。",
+        "D. 新規程全面禁止基層員工向外部媒體提供資訊。"
+      ],
+      "ans": "C",
+      "explain": "explicit mechanisms 設立明確制度，內部吹哨 whistleblowing。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The regulator cited repeated compliance failures as grounds for revoking the operating licence.",
+      "options": [
+        "A. 執照之吊銷係因該企業未如期提交次年度之營運計畫。",
+        "B. 監管機構同意在繳納罰金後撤回吊銷執照的行政決定。",
+        "C. 該企業主動註銷執照以抗議監管機構過於嚴苛的裁量。",
+        "D. 監管機構援引多次法規遵循缺失作為吊銷營業執照之依據。"
+      ],
+      "ans": "D",
+      "explain": "repeated compliance failures 多次違規，grounds for revoking 吊銷之依據。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The commission noted that formal institutional alignment did not guarantee operational cohesion on the ground.",
+      "options": [
+        "A. 委員會指出，體制架構上的形式對齊並不能保證基層現場的運作協同。",
+        "B. 架構對齊一旦完成，跨部門的日常合作便能自動無縫運作。",
+        "C. 形式上的分離在實務經驗中往往能激發更強大的基層協調力。",
+        "D. 現場運作的嚴重脫節迫使委員會撤銷了原先設定的協同目標。"
+      ],
+      "ans": "A",
+      "explain": "formal alignment did not guarantee operational cohesion 形式對齊不等於實質運作協同。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【倫理】A public servant recuses herself from an adjudication where her sibling is an applicant. What principle does this action embody?",
+      "options": [
+        "A. Ensuring geographical diversity on the panel.",
+        "B. Demonstrating expertise in civil law.",
+        "C. Preventing conflicts of interest.",
+        "D. Accelerating the evaluation timeline."
+      ],
+      "ans": "C",
+      "explain": "迴避親屬利益申請案體現防止利益衝突（conflicts of interest）原則。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【治理】The ombudsman possesses investigatory authority but lacks the power to enforce administrative restitution. What is beyond the ombudsman’s authority?",
+      "options": [
+        "A. Requesting agency records.",
+        "B. Conducting fact-finding interviews.",
+        "C. Issuing public criticism of department practices.",
+        "D. Enforcing restitution directly."
+      ],
+      "ans": "D",
+      "explain": "擁有調查權（investigatory），但強制賠償（enforcing restitution）超出權限。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【論證】A researcher argues that decentralization has not broadened democratic participation so much as it has fragmented administrative responsibility. What is the central claim?",
+      "options": [
+        "A. Decentralization has dispersed accountability without empowering citizens.",
+        "B. Local authorities have systematically outperformed central ministries.",
+        "C. Democratic participation is inherently incompatible with oversight.",
+        "D. Administrative centralization always produces superior outcomes."
+      ],
+      "ans": "A",
+      "explain": "not ... so much as 批判地方分權並未擴大參與，反倒撕裂了究責責任。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：未依據客觀標準之專斷任性的",
+      "ans": "ARBITRARY",
+      "speak": "arbitrary",
+      "vocabId": "R7:ARBITRARY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：缺乏執行力的透明度終究流於空洞。",
+      "ans": "TRANSPARENCY WITHOUT ENFORCEMENT REMAINS HOLLOW",
+      "speak": "transparency without enforcement remains hollow",
+      "vocabId": "R7:TRANSPARENCY WITHOUT ENFORCEMENT REMAINS HOLLOW"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：拖延持久且耗時漫長的（P 開頭，10 個字母）",
+      "ans": "PROTRACTED",
+      "speak": "protracted",
+      "vocabId": "R7:PROTRACTED"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ U M _ E _ C Y (公職任期或在職者的官方地位)",
+      "ans": "CBN",
+      "speak": "incumbency",
+      "vocabId": "R7:INCUMBENCY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "We must guard against teleological explanations that ascribe conscious purpose to nature.",
+      "options": [
+        "A. 自然界的所有物理運動皆由明確的神聖意識目的所主導。",
+        "B. 目的論在現代演化生物學中已被證實為唯一的真理指南。",
+        "C. 科學解釋若排除超自然意圖，便無法說明任何複雜現象。",
+        "D. 我們必須警惕將意識目的強加於自然規律的目的論解釋。"
+      ],
+      "ans": "D",
+      "explain": "teleological explanations 目的論解釋將意識目的投射於自然。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Scientific realism asserts that unobservable entities posited by theories genuinely exist.",
+      "options": [
+        "A. 科學實在論主張，被科學理論所假定之不可觀察實體確實存在。",
+        "B. 實在論認為所有科學理論純屬便於計算的抽象數學工具而已。",
+        "C. 不可觀察的實體已被哲學界一致判定屬於純粹的形上學幻覺。",
+        "D. 科學進展意味著人類最終將完全摒除所有不可觀察的理論假設。"
+      ],
+      "ans": "A",
+      "explain": "scientific realism 堅持理論假定之 unobservable entities 具有客觀實在性。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Epistemic paternalism assumes that authorities may restrict information for citizens’ own good.",
+      "options": [
+        "A. 資訊限制措施在任何民主憲政國家皆已被證實完全出自惡意動機。",
+        "B. 認知家長制假定，官方權威有權為公民自身利益而限制其獲取資訊。",
+        "C. 認知家長制要求政府必須無條件向公民公開所有涉及國家安全的檔案。",
+        "D. 公民在該體系下被視為具備完全自主評估複雜資訊的成熟個體。"
+      ],
+      "ans": "B",
+      "explain": "epistemic paternalism 以公民利益為名行資訊管制之認知家長主義。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The author avoids dogmatic claims, qualifying her assertions with probabilities. What does this approach indicate?",
+      "options": [
+        "A. A profound lack of confidence in her mathematical data.",
+        "B. A clandestine attempt to deceive the academic community.",
+        "C. A preference for emotional rhetoric over factual evidence.",
+        "D. Epistemic humility and intellectual rigor."
+      ],
+      "ans": "D",
+      "explain": "以機率限定斷言體現認識上的謙遜（epistemic humility）與嚴謹。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【推論】The author argues that objectivity is not the absence of perspective, but the disciplined awareness of one’s standpoint. How is objectivity redefined?",
+      "options": [
+        "A. As conscious self-awareness rather than detached neutrality.",
+        "B. As total emotional detachment from all human concerns.",
+        "C. As the universal agreement of all living human beings.",
+        "D. As the uncritical adoption of established orthodoxies."
+      ],
+      "ans": "A",
+      "explain": "客觀性被重構為對自身視角邊界的清醒自覺，非虛無的中立。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】The philosopher contends that sensory perception is inherently theory-laden, meaning that what we observe is conditioned by the conceptual framework we inhabit. What is the core assertion?",
+      "options": [
+        "A. Human vision is physically identical in all cultures.",
+        "B. Observation is inevitably influenced by pre-existing theory.",
+        "C. Raw sensory data is transmitted directly into the mind.",
+        "D. Scientific instruments eliminate all theoretical presuppositions."
+      ],
+      "ans": "B",
+      "explain": "觀察滲透理論（theory-laden）：所有經驗觀察必然受先驗概念架構制約。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：主張萬事萬物皆朝特定終極目的發展的目的論",
+      "ans": "TELEOLOGY",
+      "speak": "teleology",
+      "vocabId": "R7:TELEOLOGY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：審慎的懷疑精神維繫求知的生命力。",
+      "ans": "SKEPTICISM PRESERVES INTELLECTUAL VITALITY",
+      "speak": "skepticism preserves intellectual vitality",
+      "vocabId": "R7:SKEPTICISM PRESERVES INTELLECTUAL VITALITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：被特定學術社群共同遵循的核心典範（P 開頭，8 個字母）",
+      "ans": "PARADIGM",
+      "speak": "paradigm",
+      "vocabId": "R7:PARADIGM"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N C _ M M E _ S U R _ B L E (欠缺共同度量標準而無法直接衡量的)",
+      "ans": "ONA",
+      "speak": "incommensurable",
+      "vocabId": "R7:INCOMMENSURABLE"
     }
   ]
 }

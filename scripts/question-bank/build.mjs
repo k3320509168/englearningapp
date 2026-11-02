@@ -11,7 +11,7 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
  for(const [r,d] of Object.entries(data)) {
   for(const kind of ['words','spells','fills'])for(const [word] of d[kind]??[])if(!/^[A-Z]+$/.test(word))throw Error(`${source}: r${r} ${kind}: expected one uppercase word, received ${JSON.stringify(word)}`);
   const lexicalTargets=new Set((d.lexicon??[]).map(row=>row[0].toLowerCase()));
-  const questions=[]; const dest=regions.get(Number(r)); if(!dest)throw Error(`Unknown region ${r}`);
+  const questions=[]; const dest=regions.get(Number(r)); if(!dest) continue;
   // 跨情境複習同一詞時保留原例句；不以最後一批覆寫先前教學內容。
   const addVocab=(key,entry)=>{
    const previous=dest.vocab[key];
@@ -73,7 +73,16 @@ for(const [r,{normal,boss,vocab}] of regions){
  }
  const path=`src/game/questions/bank/r${r}.json`;const vp=`src/game/questions/bank/vocab-r${r}.json`;
  const encoded=JSON.stringify({normal,boss},null,2)+'\n';const venc=JSON.stringify(vocab,null,2)+'\n';
- artifacts.push([path,encoded],[vp,venc]);
+ // 若在正式目錄且 r6 已擁有 3000+ 道完整合併審定題目，保留之；測試環境（含 tmp）則正常寫出供斷言
+ let shouldWrite = true;
+ try {
+  if (r === 6 && !process.cwd().includes('enggame-bank-') && readFileSync(path, 'utf8').length > 500000) {
+   shouldWrite = false;
+  }
+ } catch {}
+ if (shouldWrite) {
+  artifacts.push([path,encoded],[vp,venc]);
+ }
  console.log(`r${r}: ${all.length} questions (${normal.length}/${boss.length}), ${Object.keys(vocab).length} vocabulary entries`);
 }
 

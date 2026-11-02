@@ -2232,9 +2232,9 @@
   },
   "PREROGATIVE": {
     "pos": "n.",
-    "meaning": "因職位或身分而擁有的特殊權限",
-    "example": "The final appointment remains the chair’s prerogative.",
-    "exampleZh": "最終任命仍屬主席的專有權限。",
+    "meaning": "特定職位或統治機構專屬之特權",
+    "example": "Pardoning convicted offenders remains an executive prerogative.",
+    "exampleZh": "赦免受刑定讞者依然屬於行政首長之專屬特權。",
     "senses": [
       {
         "pos": "n.",
@@ -2247,6 +2247,16 @@
           {
             "en": "The claim to that prerogative was challenged.",
             "zh": "對該特權的主張遭到質疑。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "特定職位或統治機構專屬之特權",
+        "examples": [
+          {
+            "en": "Pardoning convicted offenders remains an executive prerogative.",
+            "zh": "赦免受刑定讞者依然屬於行政首長之專屬特權。"
           }
         ]
       }
@@ -3455,9 +3465,9 @@
   },
   "RESCIND": {
     "pos": "v.",
-    "meaning": "正式撤銷規定協議或決定",
-    "example": "The council voted to rescind the decree.",
-    "exampleZh": "議會投票撤銷法令。",
+    "meaning": "官方正式廢除撤銷法令或合約",
+    "example": "The governor moved to rescind the emergency directive last night.",
+    "exampleZh": "州長昨晚採取行動以正式廢除該緊急行政命令。",
     "senses": [
       {
         "pos": "v.",
@@ -3470,6 +3480,16 @@
           {
             "en": "Rescinding an order does not automatically repair its effects.",
             "zh": "撤銷命令不會自動修復其影響。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "官方正式廢除撤銷法令或合約",
+        "examples": [
+          {
+            "en": "The governor moved to rescind the emergency directive last night.",
+            "zh": "州長昨晚採取行動以正式廢除該緊急行政命令。"
           }
         ]
       }
@@ -9938,10 +9958,10 @@
   },
   "EXPEDIENT": {
     "word": "expedient",
-    "pos": "n.",
-    "meaning": "解決眼前問題但未必理想的權宜措施",
-    "example": "The temporary venue was a practical expedient.",
-    "exampleZh": "臨時場地是實際的權宜措施。",
+    "pos": "adj.",
+    "meaning": "符合眼前權宜算計但未必合於道德的",
+    "example": "The compromise was politically expedient though morally questionable.",
+    "exampleZh": "這項妥協在政治上雖屬權宜之計，道德層面卻大有可議。",
     "senses": [
       {
         "pos": "n.",
@@ -9950,6 +9970,16 @@
           {
             "en": "The temporary venue was a practical expedient.",
             "zh": "臨時場地是實際的權宜措施。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "符合眼前權宜算計但未必合於道德的",
+        "examples": [
+          {
+            "en": "The compromise was politically expedient though morally questionable.",
+            "zh": "這項妥協在政治上雖屬權宜之計，道德層面卻大有可議。"
           }
         ]
       }
@@ -10763,6 +10793,544 @@
           {
             "en": "The assessment considers accessibility along the whole route.",
             "zh": "評估考慮整條路線的可達與可用程度。"
+          }
+        ]
+      }
+    ]
+  },
+  "JURISDICTION": {
+    "word": "jurisdiction",
+    "pos": "n.",
+    "meaning": "官方司法或行政管轄權限範圍",
+    "example": "The complaint falls outside the regulatory jurisdiction of this office.",
+    "exampleZh": "該項投訴超出本辦公室的行政監管權限範圍。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方司法或行政管轄權限範圍",
+        "examples": [
+          {
+            "en": "The complaint falls outside the regulatory jurisdiction of this office.",
+            "zh": "該項投訴超出本辦公室的行政監管權限範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "PRAGMATIC": {
+    "word": "pragmatic",
+    "pos": "adj.",
+    "meaning": "實務導向且講求實際成效的",
+    "example": "We adopted a pragmatic approach to resolve the contractual dispute.",
+    "exampleZh": "我們採取實務導向的做法以化解合約糾紛。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "實務導向且講求實際成效的",
+        "examples": [
+          {
+            "en": "We adopted a pragmatic approach to resolve the contractual dispute.",
+            "zh": "我們採取實務導向的做法以化解合約糾紛。"
+          }
+        ]
+      }
+    ]
+  },
+  "DELIBERATE": {
+    "word": "deliberate",
+    "pos": "adj.",
+    "meaning": "深思熟慮且經審慎評估的",
+    "example": "The policy was a deliberate choice to mitigate systemic fiscal risks.",
+    "exampleZh": "該政策乃是為減輕體制性財政風險而經深思熟慮之抉擇。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "深思熟慮且經審慎評估的",
+        "examples": [
+          {
+            "en": "The policy was a deliberate choice to mitigate systemic fiscal risks.",
+            "zh": "該政策乃是為減輕體制性財政風險而經深思熟慮之抉擇。"
+          }
+        ]
+      }
+    ]
+  },
+  "ARBITRARY": {
+    "word": "arbitrary",
+    "pos": "adj.",
+    "meaning": "未依據客觀標準之專斷任性的",
+    "example": "Citizens challenged the zoning fee as an arbitrary administrative penalty.",
+    "exampleZh": "市民質疑該分區規費乃屬專斷任性之行政處分。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未依據客觀標準之專斷任性的",
+        "examples": [
+          {
+            "en": "Citizens challenged the zoning fee as an arbitrary administrative penalty.",
+            "zh": "市民質疑該分區規費乃屬專斷任性之行政處分。"
+          }
+        ]
+      }
+    ]
+  },
+  "STATUTORY": {
+    "word": "statutory",
+    "pos": "adj.",
+    "meaning": "法律成文法條明文規定的",
+    "example": "The ministry failed to fulfill its statutory duty to publish the report.",
+    "exampleZh": "該部會未能履行其公佈該報告之法定職責。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "法律成文法條明文規定的",
+        "examples": [
+          {
+            "en": "The ministry failed to fulfill its statutory duty to publish the report.",
+            "zh": "該部會未能履行其公佈該報告之法定職責。"
+          }
+        ]
+      }
+    ]
+  },
+  "DISCRETION REQUIRES STRUCTURAL CONSTRAINT": {
+    "word": "discretion requires structural constraint",
+    "pos": "phr.",
+    "meaning": "自由裁量權必須具備制度性制約。",
+    "example": "Discretion requires structural constraint.",
+    "exampleZh": "自由裁量權必須具備制度性制約。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "自由裁量權必須具備制度性制約。",
+        "examples": [
+          {
+            "en": "Discretion requires structural constraint.",
+            "zh": "自由裁量權必須具備制度性制約。。"
+          }
+        ]
+      }
+    ]
+  },
+  "INSTITUTIONAL CREDIBILITY IS EASILY SQUANDERED": {
+    "word": "institutional credibility is easily squandered",
+    "pos": "phr.",
+    "meaning": "體制的公信力極易遭受揮霍耗損。",
+    "example": "Institutional credibility is easily squandered.",
+    "exampleZh": "體制的公信力極易遭受揮霍耗損。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "體制的公信力極易遭受揮霍耗損。",
+        "examples": [
+          {
+            "en": "Institutional credibility is easily squandered.",
+            "zh": "體制的公信力極易遭受揮霍耗損。。"
+          }
+        ]
+      }
+    ]
+  },
+  "TRANSPARENCY WITHOUT ENFORCEMENT REMAINS HOLLOW": {
+    "word": "transparency without enforcement remains hollow",
+    "pos": "phr.",
+    "meaning": "缺乏執行力的透明度終究流於空洞。",
+    "example": "Transparency without enforcement remains hollow.",
+    "exampleZh": "缺乏執行力的透明度終究流於空洞。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "缺乏執行力的透明度終究流於空洞。",
+        "examples": [
+          {
+            "en": "Transparency without enforcement remains hollow.",
+            "zh": "缺乏執行力的透明度終究流於空洞。。"
+          }
+        ]
+      }
+    ]
+  },
+  "ADJUDICATE": {
+    "pos": "v.",
+    "meaning": "依據法律或官方程序對爭議進行裁決",
+    "example": "An independent tribunal was appointed to adjudicate the dispute.",
+    "exampleZh": "一個獨立仲裁法庭獲指派以就該起爭端進行法律裁決。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依據法律或官方程序對爭議進行裁決",
+        "examples": [
+          {
+            "en": "An independent tribunal was appointed to adjudicate the dispute.",
+            "zh": "一個獨立仲裁法庭獲指派以就該起爭端進行法律裁決。"
+          }
+        ]
+      }
+    ]
+  },
+  "PROTRACTED": {
+    "pos": "adj.",
+    "meaning": "拖延持久且耗時漫長的",
+    "example": "Protracted litigation depleted the municipal council’s legal budget.",
+    "exampleZh": "曠日持久的訴訟耗盡了市議會編列的法律預算。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "拖延持久且耗時漫長的",
+        "examples": [
+          {
+            "en": "Protracted litigation depleted the municipal council’s legal budget.",
+            "zh": "曠日持久的訴訟耗盡了市議會編列的法律預算。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEROGATION": {
+    "pos": "n.",
+    "meaning": "對法律或公約義務的局部減損或免除",
+    "example": "The state applied for a temporary derogation from the treaty provisions.",
+    "exampleZh": "該國申請暫時免除履行部分條約義務條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對法律或公約義務的局部減損或免除",
+        "examples": [
+          {
+            "en": "The state applied for a temporary derogation from the treaty provisions.",
+            "zh": "該國申請暫時免除履行部分條約義務條款。"
+          }
+        ]
+      }
+    ]
+  },
+  "INTERREGNUM": {
+    "pos": "n.",
+    "meaning": "體制或政權交替期間之權力過渡空白期",
+    "example": "The civil service maintained basic public order during the interregnum.",
+    "exampleZh": "文官體系在政權過渡空白期維持了基本公共秩序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "體制或政權交替期間之權力過渡空白期",
+        "examples": [
+          {
+            "en": "The civil service maintained basic public order during the interregnum.",
+            "zh": "文官體系在政權過渡空白期維持了基本公共秩序。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCUMBENCY": {
+    "pos": "n.",
+    "meaning": "公職任期或在職者的官方地位",
+    "example": "The advantages of incumbency often influence electoral outcomes.",
+    "exampleZh": "在職者的體制優勢往往對選舉結果產生重大影響。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公職任期或在職者的官方地位",
+        "examples": [
+          {
+            "en": "The advantages of incumbency often influence electoral outcomes.",
+            "zh": "在職者的體制優勢往往對選舉結果產生重大影響。"
+          }
+        ]
+      }
+    ]
+  },
+  "EPISTEMOLOGY": {
+    "word": "epistemology",
+    "pos": "n.",
+    "meaning": "探討知識起源、本質與界限的認識論",
+    "example": "Classical epistemology distinguishes between belief and justified knowledge.",
+    "exampleZh": "古典認識論嚴格區分主觀信念與經證成之真知識。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "探討知識起源、本質與界限的認識論",
+        "examples": [
+          {
+            "en": "Classical epistemology distinguishes between belief and justified knowledge.",
+            "zh": "古典認識論嚴格區分主觀信念與經證成之真知識。"
+          }
+        ]
+      }
+    ]
+  },
+  "HERMENEUTIC": {
+    "word": "hermeneutic",
+    "pos": "adj.",
+    "meaning": "與詮釋理解及文本解讀方法相關的",
+    "example": "The court adopted a hermeneutic approach to constitutional text.",
+    "exampleZh": "法院對憲法文本採取了深刻的詮釋學解讀方法。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與詮釋理解及文本解讀方法相關的",
+        "examples": [
+          {
+            "en": "The court adopted a hermeneutic approach to constitutional text.",
+            "zh": "法院對憲法文本採取了深刻的詮釋學解讀方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "FALSIFIABLE": {
+    "word": "falsifiable",
+    "pos": "adj.",
+    "meaning": "在經驗科學上具備可被反證推翻性質的",
+    "example": "A rigorous theory must yield empirically falsifiable predictions.",
+    "exampleZh": "嚴謹的科學理論必須能產出可在經驗上被證偽的預測。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在經驗科學上具備可被反證推翻性質的",
+        "examples": [
+          {
+            "en": "A rigorous theory must yield empirically falsifiable predictions.",
+            "zh": "嚴謹的科學理論必須能產出可在經驗上被證偽的預測。"
+          }
+        ]
+      }
+    ]
+  },
+  "TELEOLOGY": {
+    "word": "teleology",
+    "pos": "n.",
+    "meaning": "主張萬事萬物皆朝特定終極目的發展的目的論",
+    "example": "Darwinian evolution banished conscious teleology from biology.",
+    "exampleZh": "達爾文演化論將主觀目的論從生物學領域中徹底驅逐。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張萬事萬物皆朝特定終極目的發展的目的論",
+        "examples": [
+          {
+            "en": "Darwinian evolution banished conscious teleology from biology.",
+            "zh": "達爾文演化論將主觀目的論從生物學領域中徹底驅逐。"
+          }
+        ]
+      }
+    ]
+  },
+  "ONTOLOGICAL": {
+    "word": "ontological",
+    "pos": "adj.",
+    "meaning": "探討存在本身與實在本質的本體論的",
+    "example": "The argument relies upon an unproven ontological assumption.",
+    "exampleZh": "該項論證依賴於一個未經證實的本體論層面假定。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "探討存在本身與實在本質的本體論的",
+        "examples": [
+          {
+            "en": "The argument relies upon an unproven ontological assumption.",
+            "zh": "該項論證依賴於一個未經證實的本體論層面假定。"
+          }
+        ]
+      }
+    ]
+  },
+  "VALIDITY DOES NOT GUARANTEE EMPIRICAL TRUTH": {
+    "word": "validity does not guarantee empirical truth",
+    "pos": "phr.",
+    "meaning": "形式有效性並不保證經驗真理。",
+    "example": "Validity does not guarantee empirical truth.",
+    "exampleZh": "形式有效性並不保證經驗真理。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式有效性並不保證經驗真理。",
+        "examples": [
+          {
+            "en": "Validity does not guarantee empirical truth.",
+            "zh": "形式有效性並不保證經驗真理。。"
+          }
+        ]
+      }
+    ]
+  },
+  "OBSERVATION IS CONDITIONED BY THEORY": {
+    "word": "observation is conditioned by theory",
+    "pos": "phr.",
+    "meaning": "經驗觀察本質上受理論制約。",
+    "example": "Observation is conditioned by theory.",
+    "exampleZh": "經驗觀察本質上受理論制約。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "經驗觀察本質上受理論制約。",
+        "examples": [
+          {
+            "en": "Observation is conditioned by theory.",
+            "zh": "經驗觀察本質上受理論制約。。"
+          }
+        ]
+      }
+    ]
+  },
+  "SKEPTICISM PRESERVES INTELLECTUAL VITALITY": {
+    "word": "skepticism preserves intellectual vitality",
+    "pos": "phr.",
+    "meaning": "審慎的懷疑精神維繫求知的生命力。",
+    "example": "Skepticism preserves intellectual vitality.",
+    "exampleZh": "審慎的懷疑精神維繫求知的生命力。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "審慎的懷疑精神維繫求知的生命力。",
+        "examples": [
+          {
+            "en": "Skepticism preserves intellectual vitality.",
+            "zh": "審慎的懷疑精神維繫求知的生命力。。"
+          }
+        ]
+      }
+    ]
+  },
+  "DEDUCTIVE": {
+    "pos": "adj.",
+    "meaning": "依循邏輯規則從普遍前提推演的",
+    "example": "Deductive reasoning moves from general principles to specific cases.",
+    "exampleZh": "演繹推理遵循普遍原則推導至個別特殊案例。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依循邏輯規則從普遍前提推演的",
+        "examples": [
+          {
+            "en": "Deductive reasoning moves from general principles to specific cases.",
+            "zh": "演繹推理遵循普遍原則推導至個別特殊案例。"
+          }
+        ]
+      }
+    ]
+  },
+  "INDUCTIVE": {
+    "pos": "adj.",
+    "meaning": "從多數個別經驗觀察歸納通則的",
+    "example": "Inductive generalization cannot provide mathematical certainty.",
+    "exampleZh": "歸納法的概括通則無法提供數學層面的絕對必然性。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "從多數個別經驗觀察歸納通則的",
+        "examples": [
+          {
+            "en": "Inductive generalization cannot provide mathematical certainty.",
+            "zh": "歸納法的概括通則無法提供數學層面的絕對必然性。"
+          }
+        ]
+      }
+    ]
+  },
+  "TAUTOLOGY": {
+    "pos": "n.",
+    "meaning": "在邏輯上同義反覆而不增添新資訊的重言式",
+    "example": "The statement that all bachelors are unmarried is a tautology.",
+    "exampleZh": "單身漢皆未婚之宣稱純屬不增添新知的同義反覆。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在邏輯上同義反覆而不增添新資訊的重言式",
+        "examples": [
+          {
+            "en": "The statement that all bachelors are unmarried is a tautology.",
+            "zh": "單身漢皆未婚之宣稱純屬不增添新知的同義反覆。"
+          }
+        ]
+      }
+    ]
+  },
+  "PARADIGM": {
+    "pos": "n.",
+    "meaning": "被特定學術社群共同遵循的核心典範",
+    "example": "The discovery precipitated a radical paradigm shift in physics.",
+    "exampleZh": "該項發現促成了物理學界一場劇烈的核心典範轉移。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "被特定學術社群共同遵循的核心典範",
+        "examples": [
+          {
+            "en": "The discovery precipitated a radical paradigm shift in physics.",
+            "zh": "該項發現促成了物理學界一場劇烈的核心典範轉移。"
+          }
+        ]
+      }
+    ]
+  },
+  "SOLECISM": {
+    "pos": "n.",
+    "meaning": "語法文理上之不合規範或禮儀失範",
+    "example": "The published paper contained an egregious logical solecism.",
+    "exampleZh": "該篇發表論文包含了一處極其刺眼的邏輯失範之處。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "語法文理上之不合規範或禮儀失範",
+        "examples": [
+          {
+            "en": "The published paper contained an egregious logical solecism.",
+            "zh": "該篇發表論文包含了一處極其刺眼的邏輯失範之處。"
+          }
+        ]
+      }
+    ]
+  },
+  "APORIA": {
+    "pos": "n.",
+    "meaning": "哲學思辨中陷入進退維谷的理路困境",
+    "example": "Socrates led his interlocutors into philosophical aporia.",
+    "exampleZh": "蘇格拉底引導其對話者陷入哲學思辨的困境死結。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "哲學思辨中陷入進退維谷的理路困境",
+        "examples": [
+          {
+            "en": "Socrates led his interlocutors into philosophical aporia.",
+            "zh": "蘇格拉底引導其對話者陷入哲學思辨的困境死結。"
+          }
+        ]
+      }
+    ]
+  },
+  "VERISIMILITUDE": {
+    "pos": "n.",
+    "meaning": "極度逼真且看似真實存在的特質",
+    "example": "The historical novel possessed remarkable verisimilitude.",
+    "exampleZh": "這部歷史小說具備令人驚嘆的逼真寫實歷史質感。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "極度逼真且看似真實存在的特質",
+        "examples": [
+          {
+            "en": "The historical novel possessed remarkable verisimilitude.",
+            "zh": "這部歷史小說具備令人驚嘆的逼真寫實歷史質感。"
+          }
+        ]
+      }
+    ]
+  },
+  "INCOMMENSURABLE": {
+    "pos": "adj.",
+    "meaning": "欠缺共同度量標準而無法直接衡量的",
+    "example": "The two ethical frameworks were deemed wholly incommensurable.",
+    "exampleZh": "這兩套倫理哲學架構被判定為完全欠缺公度性。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "欠缺共同度量標準而無法直接衡量的",
+        "examples": [
+          {
+            "en": "The two ethical frameworks were deemed wholly incommensurable.",
+            "zh": "這兩套倫理哲學架構被判定為完全欠缺公度性。"
           }
         ]
       }
@@ -13066,9 +13634,9 @@
   },
   "R7:RESCIND": {
     "pos": "v.",
-    "meaning": "正式撤銷規定協議或決定",
-    "example": "The council voted to rescind the decree.",
-    "exampleZh": "議會投票撤銷法令。",
+    "meaning": "官方正式廢除撤銷法令或合約",
+    "example": "The governor moved to rescind the emergency directive last night.",
+    "exampleZh": "州長昨晚採取行動以正式廢除該緊急行政命令。",
     "senses": [
       {
         "pos": "v.",
@@ -13081,6 +13649,16 @@
           {
             "en": "Rescinding an order does not automatically repair its effects.",
             "zh": "撤銷命令不會自動修復其影響。"
+          }
+        ]
+      },
+      {
+        "pos": "v.",
+        "meaning": "官方正式廢除撤銷法令或合約",
+        "examples": [
+          {
+            "en": "The governor moved to rescind the emergency directive last night.",
+            "zh": "州長昨晚採取行動以正式廢除該緊急行政命令。"
           }
         ]
       }
@@ -17324,10 +17902,10 @@
   },
   "R7:EXPEDIENT": {
     "word": "expedient",
-    "pos": "n.",
-    "meaning": "解決眼前問題但未必理想的權宜措施",
-    "example": "The temporary venue was a practical expedient.",
-    "exampleZh": "臨時場地是實際的權宜措施。",
+    "pos": "adj.",
+    "meaning": "符合眼前權宜算計但未必合於道德的",
+    "example": "The compromise was politically expedient though morally questionable.",
+    "exampleZh": "這項妥協在政治上雖屬權宜之計，道德層面卻大有可議。",
     "senses": [
       {
         "pos": "n.",
@@ -17336,6 +17914,16 @@
           {
             "en": "The temporary venue was a practical expedient.",
             "zh": "臨時場地是實際的權宜措施。"
+          }
+        ]
+      },
+      {
+        "pos": "adj.",
+        "meaning": "符合眼前權宜算計但未必合於道德的",
+        "examples": [
+          {
+            "en": "The compromise was politically expedient though morally questionable.",
+            "zh": "這項妥協在政治上雖屬權宜之計，道德層面卻大有可議。"
           }
         ]
       }
@@ -17948,6 +18536,438 @@
       }
     ],
     "word": "continuity"
+  },
+  "R7:JURISDICTION": {
+    "word": "jurisdiction",
+    "pos": "n.",
+    "meaning": "官方司法或行政管轄權限範圍",
+    "example": "The complaint falls outside the regulatory jurisdiction of this office.",
+    "exampleZh": "該項投訴超出本辦公室的行政監管權限範圍。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "官方司法或行政管轄權限範圍",
+        "examples": [
+          {
+            "en": "The complaint falls outside the regulatory jurisdiction of this office.",
+            "zh": "該項投訴超出本辦公室的行政監管權限範圍。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PRAGMATIC": {
+    "word": "pragmatic",
+    "pos": "adj.",
+    "meaning": "實務導向且講求實際成效的",
+    "example": "We adopted a pragmatic approach to resolve the contractual dispute.",
+    "exampleZh": "我們採取實務導向的做法以化解合約糾紛。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "實務導向且講求實際成效的",
+        "examples": [
+          {
+            "en": "We adopted a pragmatic approach to resolve the contractual dispute.",
+            "zh": "我們採取實務導向的做法以化解合約糾紛。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DELIBERATE": {
+    "word": "deliberate",
+    "pos": "adj.",
+    "meaning": "深思熟慮且經審慎評估的",
+    "example": "The policy was a deliberate choice to mitigate systemic fiscal risks.",
+    "exampleZh": "該政策乃是為減輕體制性財政風險而經深思熟慮之抉擇。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "深思熟慮且經審慎評估的",
+        "examples": [
+          {
+            "en": "The policy was a deliberate choice to mitigate systemic fiscal risks.",
+            "zh": "該政策乃是為減輕體制性財政風險而經深思熟慮之抉擇。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:STATUTORY": {
+    "word": "statutory",
+    "pos": "adj.",
+    "meaning": "法律成文法條明文規定的",
+    "example": "The ministry failed to fulfill its statutory duty to publish the report.",
+    "exampleZh": "該部會未能履行其公佈該報告之法定職責。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "法律成文法條明文規定的",
+        "examples": [
+          {
+            "en": "The ministry failed to fulfill its statutory duty to publish the report.",
+            "zh": "該部會未能履行其公佈該報告之法定職責。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DISCRETION REQUIRES STRUCTURAL CONSTRAINT": {
+    "word": "discretion requires structural constraint",
+    "pos": "phr.",
+    "meaning": "自由裁量權必須具備制度性制約。",
+    "example": "Discretion requires structural constraint.",
+    "exampleZh": "自由裁量權必須具備制度性制約。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "自由裁量權必須具備制度性制約。",
+        "examples": [
+          {
+            "en": "Discretion requires structural constraint.",
+            "zh": "自由裁量權必須具備制度性制約。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:INSTITUTIONAL CREDIBILITY IS EASILY SQUANDERED": {
+    "word": "institutional credibility is easily squandered",
+    "pos": "phr.",
+    "meaning": "體制的公信力極易遭受揮霍耗損。",
+    "example": "Institutional credibility is easily squandered.",
+    "exampleZh": "體制的公信力極易遭受揮霍耗損。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "體制的公信力極易遭受揮霍耗損。",
+        "examples": [
+          {
+            "en": "Institutional credibility is easily squandered.",
+            "zh": "體制的公信力極易遭受揮霍耗損。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:ADJUDICATE": {
+    "pos": "v.",
+    "meaning": "依據法律或官方程序對爭議進行裁決",
+    "example": "An independent tribunal was appointed to adjudicate the dispute.",
+    "exampleZh": "一個獨立仲裁法庭獲指派以就該起爭端進行法律裁決。",
+    "senses": [
+      {
+        "pos": "v.",
+        "meaning": "依據法律或官方程序對爭議進行裁決",
+        "examples": [
+          {
+            "en": "An independent tribunal was appointed to adjudicate the dispute.",
+            "zh": "一個獨立仲裁法庭獲指派以就該起爭端進行法律裁決。"
+          }
+        ]
+      }
+    ],
+    "word": "adjudicate"
+  },
+  "R7:DEROGATION": {
+    "pos": "n.",
+    "meaning": "對法律或公約義務的局部減損或免除",
+    "example": "The state applied for a temporary derogation from the treaty provisions.",
+    "exampleZh": "該國申請暫時免除履行部分條約義務條款。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "對法律或公約義務的局部減損或免除",
+        "examples": [
+          {
+            "en": "The state applied for a temporary derogation from the treaty provisions.",
+            "zh": "該國申請暫時免除履行部分條約義務條款。"
+          }
+        ]
+      }
+    ],
+    "word": "derogation"
+  },
+  "R7:PREROGATIVE": {
+    "pos": "n.",
+    "meaning": "特定職位或統治機構專屬之特權",
+    "example": "Pardoning convicted offenders remains an executive prerogative.",
+    "exampleZh": "赦免受刑定讞者依然屬於行政首長之專屬特權。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "因職位或身分而擁有的特殊權限",
+        "examples": [
+          {
+            "en": "The final appointment remains the chair’s prerogative.",
+            "zh": "最終任命仍屬主席的專有權限。"
+          },
+          {
+            "en": "The claim to that prerogative was challenged.",
+            "zh": "對該特權的主張遭到質疑。"
+          }
+        ]
+      },
+      {
+        "pos": "n.",
+        "meaning": "特定職位或統治機構專屬之特權",
+        "examples": [
+          {
+            "en": "Pardoning convicted offenders remains an executive prerogative.",
+            "zh": "赦免受刑定讞者依然屬於行政首長之專屬特權。"
+          }
+        ]
+      }
+    ],
+    "word": "prerogative"
+  },
+  "R7:INTERREGNUM": {
+    "pos": "n.",
+    "meaning": "體制或政權交替期間之權力過渡空白期",
+    "example": "The civil service maintained basic public order during the interregnum.",
+    "exampleZh": "文官體系在政權過渡空白期維持了基本公共秩序。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "體制或政權交替期間之權力過渡空白期",
+        "examples": [
+          {
+            "en": "The civil service maintained basic public order during the interregnum.",
+            "zh": "文官體系在政權過渡空白期維持了基本公共秩序。"
+          }
+        ]
+      }
+    ],
+    "word": "interregnum"
+  },
+  "R7:EPISTEMOLOGY": {
+    "word": "epistemology",
+    "pos": "n.",
+    "meaning": "探討知識起源、本質與界限的認識論",
+    "example": "Classical epistemology distinguishes between belief and justified knowledge.",
+    "exampleZh": "古典認識論嚴格區分主觀信念與經證成之真知識。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "探討知識起源、本質與界限的認識論",
+        "examples": [
+          {
+            "en": "Classical epistemology distinguishes between belief and justified knowledge.",
+            "zh": "古典認識論嚴格區分主觀信念與經證成之真知識。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:HERMENEUTIC": {
+    "word": "hermeneutic",
+    "pos": "adj.",
+    "meaning": "與詮釋理解及文本解讀方法相關的",
+    "example": "The court adopted a hermeneutic approach to constitutional text.",
+    "exampleZh": "法院對憲法文本採取了深刻的詮釋學解讀方法。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "與詮釋理解及文本解讀方法相關的",
+        "examples": [
+          {
+            "en": "The court adopted a hermeneutic approach to constitutional text.",
+            "zh": "法院對憲法文本採取了深刻的詮釋學解讀方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:FALSIFIABLE": {
+    "word": "falsifiable",
+    "pos": "adj.",
+    "meaning": "在經驗科學上具備可被反證推翻性質的",
+    "example": "A rigorous theory must yield empirically falsifiable predictions.",
+    "exampleZh": "嚴謹的科學理論必須能產出可在經驗上被證偽的預測。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "在經驗科學上具備可被反證推翻性質的",
+        "examples": [
+          {
+            "en": "A rigorous theory must yield empirically falsifiable predictions.",
+            "zh": "嚴謹的科學理論必須能產出可在經驗上被證偽的預測。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:ONTOLOGICAL": {
+    "word": "ontological",
+    "pos": "adj.",
+    "meaning": "探討存在本身與實在本質的本體論的",
+    "example": "The argument relies upon an unproven ontological assumption.",
+    "exampleZh": "該項論證依賴於一個未經證實的本體論層面假定。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "探討存在本身與實在本質的本體論的",
+        "examples": [
+          {
+            "en": "The argument relies upon an unproven ontological assumption.",
+            "zh": "該項論證依賴於一個未經證實的本體論層面假定。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:VALIDITY DOES NOT GUARANTEE EMPIRICAL TRUTH": {
+    "word": "validity does not guarantee empirical truth",
+    "pos": "phr.",
+    "meaning": "形式有效性並不保證經驗真理。",
+    "example": "Validity does not guarantee empirical truth.",
+    "exampleZh": "形式有效性並不保證經驗真理。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "形式有效性並不保證經驗真理。",
+        "examples": [
+          {
+            "en": "Validity does not guarantee empirical truth.",
+            "zh": "形式有效性並不保證經驗真理。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:OBSERVATION IS CONDITIONED BY THEORY": {
+    "word": "observation is conditioned by theory",
+    "pos": "phr.",
+    "meaning": "經驗觀察本質上受理論制約。",
+    "example": "Observation is conditioned by theory.",
+    "exampleZh": "經驗觀察本質上受理論制約。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "經驗觀察本質上受理論制約。",
+        "examples": [
+          {
+            "en": "Observation is conditioned by theory.",
+            "zh": "經驗觀察本質上受理論制約。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:DEDUCTIVE": {
+    "pos": "adj.",
+    "meaning": "依循邏輯規則從普遍前提推演的",
+    "example": "Deductive reasoning moves from general principles to specific cases.",
+    "exampleZh": "演繹推理遵循普遍原則推導至個別特殊案例。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "依循邏輯規則從普遍前提推演的",
+        "examples": [
+          {
+            "en": "Deductive reasoning moves from general principles to specific cases.",
+            "zh": "演繹推理遵循普遍原則推導至個別特殊案例。"
+          }
+        ]
+      }
+    ],
+    "word": "deductive"
+  },
+  "R7:INDUCTIVE": {
+    "pos": "adj.",
+    "meaning": "從多數個別經驗觀察歸納通則的",
+    "example": "Inductive generalization cannot provide mathematical certainty.",
+    "exampleZh": "歸納法的概括通則無法提供數學層面的絕對必然性。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "從多數個別經驗觀察歸納通則的",
+        "examples": [
+          {
+            "en": "Inductive generalization cannot provide mathematical certainty.",
+            "zh": "歸納法的概括通則無法提供數學層面的絕對必然性。"
+          }
+        ]
+      }
+    ],
+    "word": "inductive"
+  },
+  "R7:TAUTOLOGY": {
+    "pos": "n.",
+    "meaning": "在邏輯上同義反覆而不增添新資訊的重言式",
+    "example": "The statement that all bachelors are unmarried is a tautology.",
+    "exampleZh": "單身漢皆未婚之宣稱純屬不增添新知的同義反覆。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "在邏輯上同義反覆而不增添新資訊的重言式",
+        "examples": [
+          {
+            "en": "The statement that all bachelors are unmarried is a tautology.",
+            "zh": "單身漢皆未婚之宣稱純屬不增添新知的同義反覆。"
+          }
+        ]
+      }
+    ],
+    "word": "tautology"
+  },
+  "R7:SOLECISM": {
+    "pos": "n.",
+    "meaning": "語法文理上之不合規範或禮儀失範",
+    "example": "The published paper contained an egregious logical solecism.",
+    "exampleZh": "該篇發表論文包含了一處極其刺眼的邏輯失範之處。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "語法文理上之不合規範或禮儀失範",
+        "examples": [
+          {
+            "en": "The published paper contained an egregious logical solecism.",
+            "zh": "該篇發表論文包含了一處極其刺眼的邏輯失範之處。"
+          }
+        ]
+      }
+    ],
+    "word": "solecism"
+  },
+  "R7:APORIA": {
+    "pos": "n.",
+    "meaning": "哲學思辨中陷入進退維谷的理路困境",
+    "example": "Socrates led his interlocutors into philosophical aporia.",
+    "exampleZh": "蘇格拉底引導其對話者陷入哲學思辨的困境死結。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "哲學思辨中陷入進退維谷的理路困境",
+        "examples": [
+          {
+            "en": "Socrates led his interlocutors into philosophical aporia.",
+            "zh": "蘇格拉底引導其對話者陷入哲學思辨的困境死結。"
+          }
+        ]
+      }
+    ],
+    "word": "aporia"
+  },
+  "R7:VERISIMILITUDE": {
+    "pos": "n.",
+    "meaning": "極度逼真且看似真實存在的特質",
+    "example": "The historical novel possessed remarkable verisimilitude.",
+    "exampleZh": "這部歷史小說具備令人驚嘆的逼真寫實歷史質感。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "極度逼真且看似真實存在的特質",
+        "examples": [
+          {
+            "en": "The historical novel possessed remarkable verisimilitude.",
+            "zh": "這部歷史小說具備令人驚嘆的逼真寫實歷史質感。"
+          }
+        ]
+      }
+    ],
+    "word": "verisimilitude"
   },
   "R7:IN THE FINAL ANALYSIS": {
     "word": "in the final analysis",
@@ -20211,5 +21231,157 @@
       }
     ],
     "word": "accessibility"
+  },
+  "R7:ARBITRARY": {
+    "word": "arbitrary",
+    "pos": "adj.",
+    "meaning": "未依據客觀標準之專斷任性的",
+    "example": "Citizens challenged the zoning fee as an arbitrary administrative penalty.",
+    "exampleZh": "市民質疑該分區規費乃屬專斷任性之行政處分。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "未依據客觀標準之專斷任性的",
+        "examples": [
+          {
+            "en": "Citizens challenged the zoning fee as an arbitrary administrative penalty.",
+            "zh": "市民質疑該分區規費乃屬專斷任性之行政處分。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:TRANSPARENCY WITHOUT ENFORCEMENT REMAINS HOLLOW": {
+    "word": "transparency without enforcement remains hollow",
+    "pos": "phr.",
+    "meaning": "缺乏執行力的透明度終究流於空洞。",
+    "example": "Transparency without enforcement remains hollow.",
+    "exampleZh": "缺乏執行力的透明度終究流於空洞。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "缺乏執行力的透明度終究流於空洞。",
+        "examples": [
+          {
+            "en": "Transparency without enforcement remains hollow.",
+            "zh": "缺乏執行力的透明度終究流於空洞。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PROTRACTED": {
+    "pos": "adj.",
+    "meaning": "拖延持久且耗時漫長的",
+    "example": "Protracted litigation depleted the municipal council’s legal budget.",
+    "exampleZh": "曠日持久的訴訟耗盡了市議會編列的法律預算。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "拖延持久且耗時漫長的",
+        "examples": [
+          {
+            "en": "Protracted litigation depleted the municipal council’s legal budget.",
+            "zh": "曠日持久的訴訟耗盡了市議會編列的法律預算。"
+          }
+        ]
+      }
+    ],
+    "word": "protracted"
+  },
+  "R7:INCUMBENCY": {
+    "pos": "n.",
+    "meaning": "公職任期或在職者的官方地位",
+    "example": "The advantages of incumbency often influence electoral outcomes.",
+    "exampleZh": "在職者的體制優勢往往對選舉結果產生重大影響。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "公職任期或在職者的官方地位",
+        "examples": [
+          {
+            "en": "The advantages of incumbency often influence electoral outcomes.",
+            "zh": "在職者的體制優勢往往對選舉結果產生重大影響。"
+          }
+        ]
+      }
+    ],
+    "word": "incumbency"
+  },
+  "R7:TELEOLOGY": {
+    "word": "teleology",
+    "pos": "n.",
+    "meaning": "主張萬事萬物皆朝特定終極目的發展的目的論",
+    "example": "Darwinian evolution banished conscious teleology from biology.",
+    "exampleZh": "達爾文演化論將主觀目的論從生物學領域中徹底驅逐。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "主張萬事萬物皆朝特定終極目的發展的目的論",
+        "examples": [
+          {
+            "en": "Darwinian evolution banished conscious teleology from biology.",
+            "zh": "達爾文演化論將主觀目的論從生物學領域中徹底驅逐。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:SKEPTICISM PRESERVES INTELLECTUAL VITALITY": {
+    "word": "skepticism preserves intellectual vitality",
+    "pos": "phr.",
+    "meaning": "審慎的懷疑精神維繫求知的生命力。",
+    "example": "Skepticism preserves intellectual vitality.",
+    "exampleZh": "審慎的懷疑精神維繫求知的生命力。。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "審慎的懷疑精神維繫求知的生命力。",
+        "examples": [
+          {
+            "en": "Skepticism preserves intellectual vitality.",
+            "zh": "審慎的懷疑精神維繫求知的生命力。。"
+          }
+        ]
+      }
+    ]
+  },
+  "R7:PARADIGM": {
+    "pos": "n.",
+    "meaning": "被特定學術社群共同遵循的核心典範",
+    "example": "The discovery precipitated a radical paradigm shift in physics.",
+    "exampleZh": "該項發現促成了物理學界一場劇烈的核心典範轉移。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "被特定學術社群共同遵循的核心典範",
+        "examples": [
+          {
+            "en": "The discovery precipitated a radical paradigm shift in physics.",
+            "zh": "該項發現促成了物理學界一場劇烈的核心典範轉移。"
+          }
+        ]
+      }
+    ],
+    "word": "paradigm"
+  },
+  "R7:INCOMMENSURABLE": {
+    "pos": "adj.",
+    "meaning": "欠缺共同度量標準而無法直接衡量的",
+    "example": "The two ethical frameworks were deemed wholly incommensurable.",
+    "exampleZh": "這兩套倫理哲學架構被判定為完全欠缺公度性。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "欠缺共同度量標準而無法直接衡量的",
+        "examples": [
+          {
+            "en": "The two ethical frameworks were deemed wholly incommensurable.",
+            "zh": "這兩套倫理哲學架構被判定為完全欠缺公度性。"
+          }
+        ]
+      }
+    ],
+    "word": "incommensurable"
   }
 }

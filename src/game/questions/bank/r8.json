@@ -12185,6 +12185,792 @@
       "ans": "CCT",
       "speak": "circumscription",
       "vocabId": "R8:CIRCUMSCRIPTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Administrative discretion cannot be construed as an unfettered licence to legislate.",
+      "options": [
+        "A. 行政機關享有超越立法機關之無限制裁量權。",
+        "B. 裁量權行使時可完全無視成文法規之字面拘束。",
+        "C. 法院已放棄對行政機關裁量權行使之司法審查。",
+        "D. 行政裁量權不得被解釋為毫無制約的創法特權。"
+      ],
+      "ans": "D",
+      "explain": "discretion cannot be construed as unfettered licence 裁量非毫無拘束。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The doctrine of ultra vires safeguards the constitutional separation of powers.",
+      "options": [
+        "A. 越權無效原則捍衛了憲法權力分立之體制架構。",
+        "B. 權力分立原則禁止司法機關撤銷違法之行政行為。",
+        "C. 越權原則旨在賦予行政首長不受制約之指揮特權。",
+        "D. 憲法已將所有行政管轄權全數移交立法常設委員會。"
+      ],
+      "ans": "A",
+      "explain": "doctrine of ultra vires 越權無效原則，safeguards separation of powers 捍衛分權。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Legal positivism insists upon the conceptual separation of law and morality.",
+      "options": [
+        "A. 法律體系之運行必須以特定宗教教義為指導原則。",
+        "B. 法律實證主義堅持法律概念與道德評價之嚴格區分。",
+        "C. 實證法學主張所有不道德之成文法自始當然無效。",
+        "D. 道德價值乃是檢驗成文法效力之唯一先決標準。"
+      ],
+      "ans": "B",
+      "explain": "conceptual separation of law and morality 法律與道德之概念分離。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Institutional legitimacy dissolves when procedures are perceived as mere window dressing.",
+      "options": [
+        "A. 當程序被視為僅屬點綴門面時，體制正當性便蕩然無存。",
+        "B. 門面裝飾性的程序被證實最能長期凝聚公眾體制信任。",
+        "C. 體制正當性一旦建立便不再受後續執法程序所影響。",
+        "D. 程序透明化往往被公眾誤讀為行政體系內部的妥協退讓。"
+      ],
+      "ans": "A",
+      "explain": "procedures perceived as window dressing 程序流於裝飾，legitimacy dissolves 正當性瓦解。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The statute purports to codify customary rights, yet it circumscribes their exercise.",
+      "options": [
+        "A. 該法案全面禁止各級法院在判決中援引任何傳統法理。",
+        "B. 該法案聲稱在法典化傳統權利，實質上卻限縮了其行使。",
+        "C. 法典化過程成功拓展了傳統權利在現代社會之範疇。",
+        "D. 傳統權利因該法案之頒布而獲得絕對不受限的行使地位。"
+      ],
+      "ans": "B",
+      "explain": "purports to codify 聲稱法典化，yet circumscribes 實則限縮行使。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Normative coherence within a doctrine cannot substitute for its empirical adequacy.",
+      "options": [
+        "A. 經驗事實之佐證在建構規範性法律體系時完全多此一舉。",
+        "B. 規範一致性與經驗充分性在法學論證中彼此不可兼得。",
+        "C. 法理學說內部規範層面之一致性，無法取代其經驗上的實質充分性。",
+        "D. 內部邏輯自洽乃是衡量任何法學理論之唯一決定性指標。"
+      ],
+      "ans": "C",
+      "explain": "coherence cannot substitute for empirical adequacy 內部邏輯一致不可替代經驗充分。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The appearance of impartiality is as vital to the bench as actual fairness.",
+      "options": [
+        "A. 公眾對審判之觀感不應納入評估司法系統公正性之指標。",
+        "B. 形式上的客觀中立外觀，對審判席而言與實質公正同等重要。",
+        "C. 只要裁判實質公正，法官是否顯露偏頗外觀便微不足道。",
+        "D. 中立外觀乃是法官在遭遇利益衝突時得以免責之抗辯理由。"
+      ],
+      "ans": "B",
+      "explain": "appearance of impartiality as vital as actual fairness 外觀與實質公正同等關鍵。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Procedural fetishism mistakes fidelity to rules for the realisation of justice.",
+      "options": [
+        "A. 程序正義之落實要求徹底根除所有對規則條文的墨守成規。",
+        "B. 盲從條文形式乃是現代法治國家對抗司法專斷之唯一利器。",
+        "C. 程序盲從主義誤將恪守條文形式當成了正義價值的具體實現。",
+        "D. 恪守程序條文在任何情境下均必然自動導向實質正義。"
+      ],
+      "ans": "C",
+      "explain": "fetishism mistakes fidelity to rules for justice 盲信規則等同正義實現。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The judgment rested on an unexamined distinction between public policy and legal right.",
+      "options": [
+        "A. 法院徹底弭平了公共政策考量與當事人法定權益的界線。",
+        "B. 判決表明法定權利必須在任何爭端中無條件服從公共政策。",
+        "C. 該區分乃是數百年普通法判例體系反覆論證之成熟共識。",
+        "D. 該判決建立在未經審驗之公共政策與法定權利二分法之上。"
+      ],
+      "ans": "D",
+      "explain": "unexamined distinction 未經檢驗之粗糙區分。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【法理】The doctrine holds that statutory ambiguities must be resolved in favour of individual liberty against state encroachment. How should an ambiguous statute be construed?",
+      "options": [
+        "A. To maximise municipal tax revenue.",
+        "B. Strictly in accordance with historical drafts.",
+        "C. In favor of administrative convenience.",
+        "D. Against state encroachment on individual liberty."
+      ],
+      "ans": "D",
+      "explain": "法律歧義必須從寬作有利於個人自由、反對國家侵越之解釋。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【制度】The constitutional court affirmed that procedural ultra vires invalidates an administrative act irrespective of its substantive merits. What nullifies the act?",
+      "options": [
+        "A. Exceeding statutory authority in procedure.",
+        "B. The unpopularity of the outcome.",
+        "C. A dissenting opinion from senior judges.",
+        "D. A subsequent change in the governing coalition."
+      ],
+      "ans": "A",
+      "explain": "程序逾越法定權限（ultra vires）直接使行政處分無效，無關實質內容良窳。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Had the ombudsman not intervened ex officio, the systemic cover-up ___ unnoticed by parliamentary overseers.",
+      "options": [
+        "A. passes",
+        "B. would have passed",
+        "C. had passed",
+        "D. will pass"
+      ],
+      "ans": "B",
+      "explain": "Had ... not intervened 為過去假設倒裝，主句配 would have passed unnoticed。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【哲理】A legal philosopher argues that the rule of law is a negative virtue: it prevents arbitrary subjugation but cannot specify the ultimate good. What is its limit?",
+      "options": [
+        "A. It cannot define the ultimate moral good.",
+        "B. It increases the likelihood of arbitrary violence.",
+        "C. It applies only to criminal jurisprudence.",
+        "D. It is inferior to traditional customary rule."
+      ],
+      "ans": "A",
+      "explain": "法治為消極美德：防止專斷支配，但無法指明終極的善。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【論證】The reviewer notes that the author conflates procedural legitimacy with normative validity, treating institutional compliance as proof of moral rectitude. What error is identified?",
+      "options": [
+        "A. Refusing to study the history of administrative law.",
+        "B. Equating lawful procedure with moral rightness.",
+        "C. Denying that institutions require written rules.",
+        "D. Assuming that all laws are intentionally unjust."
+      ],
+      "ans": "B",
+      "explain": "批評將程序合規（procedural legitimacy）混淆為實質道德正當性（moral rectitude）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【批判】The commission observed that regulatory devolution transformed systemic inequalities into local fiscal crises. What was the consequence?",
+      "options": [
+        "A. Federal oversight increased exponentially.",
+        "B. Local communities solved wealth disparities independently.",
+        "C. National inequalities were shifted onto local budgets.",
+        "D. Municipal governments became entirely autonomous."
+      ],
+      "ans": "C",
+      "explain": "權限下放將整體性不平等轉嫁為地方財政危機。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【體制】The charter establishes judicial independence as an institutional guarantee, not an individual privilege of the magistrate. Whose protection is primary?",
+      "options": [
+        "A. The convenience of administrative prosecutors.",
+        "B. The institutional integrity of the judiciary.",
+        "C. The personal career advancement of magistrates.",
+        "D. The executive branch’s political priorities."
+      ],
+      "ans": "B",
+      "explain": "司法獨立旨在保障體制本身的完整性（institutional integrity），非法官私人特權。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【微差】The decision distinguished between justifiable reliance on past practice and an enforceable legitimate expectation. What was denied?",
+      "options": [
+        "A. The court’s competence to review administrative acts.",
+        "B. The requirement of written administrative precedents.",
+        "C. An automatic right to enforce past practice.",
+        "D. The relevance of past practice to future rules."
+      ],
+      "ans": "C",
+      "explain": "正當信賴過去實務並不等同於產生法律上可強制執行的信賴利益。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【深辨】The dissent argued that substantive due process had been hollowed out, leaving merely the aesthetic trappings of legality. What was the dissent’s charge?",
+      "options": [
+        "A. The legislature had completely abolished written codes.",
+        "B. The court had acted too aggressively against the executive.",
+        "C. Procedural requirements had become overly burdensome to litigants.",
+        "D. The form of law was preserved while its substance was lost."
+      ],
+      "ans": "D",
+      "explain": "實質正當法律程序已被掏空，僅徒留形式合法性的外表點綴。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：法律哲學與法理學論述體系",
+      "ans": "JURISPRUDENCE",
+      "speak": "jurisprudence",
+      "vocabId": "R8:JURISPRUDENCE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：實質內容而非僅僅表面形式的",
+      "ans": "SUBSTANTIVE",
+      "speak": "substantive",
+      "vocabId": "R8:SUBSTANTIVE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：手段與目的均衡對稱之比例原則",
+      "ans": "PROPORTIONALITY",
+      "speak": "proportionality",
+      "vocabId": "R8:PROPORTIONALITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出：逾越法定職權範圍而屬違法無效的",
+      "ans": "ULTRA VIRES",
+      "speak": "ultra vires",
+      "vocabId": "R8:ULTRA VIRES"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：形式合法不等於體現正義。",
+      "ans": "FORMALITY IS NOT SYNONYMOUS WITH JUSTICE",
+      "speak": "formality is not synonymous with justice",
+      "vocabId": "R8:FORMALITY IS NOT SYNONYMOUS WITH JUSTICE"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：未受制約的權力滋生體制的衰退。",
+      "ans": "UNCHECKED AUTHORITY BREEDS INSTITUTIONAL DECAY",
+      "speak": "unchecked authority breeds institutional decay",
+      "vocabId": "R8:UNCHECKED AUTHORITY BREEDS INSTITUTIONAL DECAY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：默許、默認他人主張或處置（A 開頭，9 個字母）",
+      "ans": "ACQUIESCE",
+      "speak": "acquiesce",
+      "vocabId": "R8:ACQUIESCE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：官方正式廢止廢除法律或條約（A 開頭，8 個字母）",
+      "ans": "ABROGATE",
+      "speak": "abrogate",
+      "vocabId": "R8:ABROGATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：官方認可核准或權威背書證明（I 開頭，10 個字母）",
+      "ans": "IMPRIMATUR",
+      "speak": "imprimatur",
+      "vocabId": "R8:IMPRIMATUR"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：U B I Q U _ T O U S (無所不在且極其普遍存在的)",
+      "ans": "I",
+      "speak": "ubiquitous",
+      "vocabId": "R8:UBIQUITOUS"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H E _ E M _ N Y (特定集團或思想體系之領導支配霸權)",
+      "ans": "GO",
+      "speak": "hegemony",
+      "vocabId": "R8:HEGEMONY"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ U N _ T _ O N (法院正式頒布之強制或禁止處分命令)",
+      "ans": "JCI",
+      "speak": "injunction",
+      "vocabId": "R8:INJUNCTION"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The principle of non-contradiction is an indispensable axiom of rational discourse.",
+      "options": [
+        "A. 矛盾律乃是理性對話與思辨論述中不可或缺的根本公理。",
+        "B. 矛盾律允許同一陳述在完全相同的意義下既真且假。",
+        "C. 現代哲學已經全面揚棄了對非矛盾邏輯公理的依賴。",
+        "D. 理性思辨之進行無需設立任何不可動搖之前提公理。"
+      ],
+      "ans": "A",
+      "explain": "principle of non-contradiction 矛盾律，indispensable axiom 不可或缺的公理。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "An ad hominem attack addresses the speaker’s character rather than the argument’s validity.",
+      "options": [
+        "A. 所有針對品格之評論在任何情境下皆自動構成合法論點。",
+        "B. 訴諸人身的攻擊針對的是說話者的品格，而非其論證之有效性。",
+        "C. 訴諸人身被邏輯學判定為唯一具備決定性說服力之論證方式。",
+        "D. 論證有效性之判定完全取決於講述者是否具備崇高道德形象。"
+      ],
+      "ans": "B",
+      "explain": "ad hominem attack 針對人身品格，而非 argument validity。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Phenomenology bracketed ontological assumptions to investigate consciousness as experienced.",
+      "options": [
+        "A. 所有主觀經驗在現象學研究中皆被判定為不具學術價值。",
+        "B. 本體論假定被現象學確立為檢驗一切意識現象的先決標準。",
+        "C. 現象學懸置了本體論假定，以專注探討意識所經歷的純粹質性經驗。",
+        "D. 現象學致力於證明外部物理世界在物質層面的絕對客觀性。"
+      ],
+      "ans": "C",
+      "explain": "bracketed ontological assumptions 懸置本體論假定，investigate consciousness。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Epistemic injustice occurs when someone’s credibility is degraded due to social prejudice.",
+      "options": [
+        "A. 可信度評估在任何社會情境下皆能自發保持絕對客觀中立。",
+        "B. 當某人的言說可信度因社會偏見而遭貶低時，即構成認知不公。",
+        "C. 認知不公主要探討法庭證人提供偽證時應承擔的刑事責任。",
+        "D. 社會偏見被證明能夠普遍提升邊緣群體在學術界的可信度。"
+      ],
+      "ans": "B",
+      "explain": "epistemic injustice 認知不公，credibility degraded due to prejudice。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The dialectical method seeks truth through the clash and sublation of contradictory claims.",
+      "options": [
+        "A. 矛盾命題之交鋒在辯證框架下被視為阻礙學術進展之障礙。",
+        "B. 昇華過程意味著徹底消滅對立雙方所蘊含之任何合理成分。",
+        "C. 辯證方法透過相互牴觸觀點之交鋒碰撞與揚棄昇華以追求真理。",
+        "D. 辯證法要求在論辯過程中無條件維持各方最初的極端主張。"
+      ],
+      "ans": "C",
+      "explain": "dialectical method 辯證法，clash and sublation (揚棄) of contradictory claims。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The author commits an equivocation by shifting the meaning of justice mid-argument.",
+      "options": [
+        "A. 正義一詞之多義性在嚴謹論述中被證明能大幅強化論證力道。",
+        "B. 作者在整篇論文中始終如一地貫徹了對正義概念的單一嚴格定義。",
+        "C. 語義偷換在哲學論辯中被普遍推崇為展現思維敏捷之修辭技巧。",
+        "D. 作者在論證中途偷換了正義一詞的內涵，從而犯了語義雙關謬誤。"
+      ],
+      "ans": "D",
+      "explain": "commits an equivocation 語義偷換/雙關謬誤，shifting meaning mid-argument。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The naturalistic worldview rejects ontological dualism, denying the existence of non-physical substances.",
+      "options": [
+        "A. 二元論假定被自然主義確立為解釋所有自然現象的核心理論支柱。",
+        "B. 非物理實體之存在已被當代神經物理學界一致公認為客觀事實。",
+        "C. 自然主義世界觀揚棄了本體論二元論，斷然否定非物理實體的存在。",
+        "D. 自然主義主張精神實體與物質實體在宇宙中各自獨立永恆並存。"
+      ],
+      "ans": "C",
+      "explain": "naturalistic worldview 否定 ontological dualism，denying non-physical substances。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Deconstructive critique reveals how binary oppositions hierarchize meaning and marginalize alternatives.",
+      "options": [
+        "A. 二元對立架構在解構理論中被譽為體現客觀正義之完美思維模式。",
+        "B. 解構批評之終極目的在於強化既有中心論述對邊緣語義的支配力。",
+        "C. 意義階層之建立被證實完全不受文化權力與歷史脈絡的任何干預。",
+        "D. 解構式批評深刻揭示了二元對立如何建構意義階層並邊緣化替代可能。"
+      ],
+      "ans": "D",
+      "explain": "binary oppositions hierarchize meaning 二元對立等級化意義，marginalize alternatives。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Kantian transcendental idealism holds that space and time are pure forms of human sensible intuition.",
+      "options": [
+        "A. 康德先驗唯心論主張，空間與時間乃是人類感性直觀的純粹形式。",
+        "B. 空間與時間在康德體系中被視為獨立於人類心靈之外的客觀物理容器。",
+        "C. 感性直觀在面對純粹經驗數據時不具備任何預先架構感官之功能。",
+        "D. 先驗唯心論主張人類理性能夠直接、無媒介地洞悉物自身之終極本質。"
+      ],
+      "ans": "A",
+      "explain": "transcendental idealism 先驗唯心論，space and time are pure forms of intuition。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】The philosopher challenges epistemic foundationalism, arguing that beliefs are justified by mutual coherence rather than foundational bedrock. What theory is advocated?",
+      "options": [
+        "A. Coherentism.",
+        "B. Foundationalism.",
+        "C. Radical solipsism.",
+        "D. Naive empiricism."
+      ],
+      "ans": "A",
+      "explain": "主張信念證成源於互為融通自洽（coherence），即融通論（coherentism）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【邏輯】A tautology is a proposition that is true in every possible interpretation, yet it imparts zero empirical information. Why is it uninformative?",
+      "options": [
+        "A. It relies upon subjective poetic metaphor.",
+        "B. It rules out no logical possibilities.",
+        "C. It contradicts the laws of formal arithmetic.",
+        "D. It can be verified only through physical experiment."
+      ],
+      "ans": "B",
+      "explain": "重言式（tautology）在所有可能世界皆真，因而未排除任何邏輯可能，不帶經驗資訊。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【文法】Were the thesis to conflate semantic sense with referential denotation, the semantic puzzle ___ unsolved.",
+      "options": [
+        "A. has remained",
+        "B. had remained",
+        "C. would remain",
+        "D. will remain"
+      ],
+      "ans": "C",
+      "explain": "Were ... to conflate 假設倒裝句型，主句搭配 would remain。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【深辨】The treatise demonstrates that the verificationist criterion of meaning is self-refuting, as it is neither empirically verifiable nor an analytic tautology. What is the fatal flaw?",
+      "options": [
+        "A. It applies only to ancient Greek poetry.",
+        "B. The criterion fails its own standard of meaningfulness.",
+        "C. It requires excessive mathematical notation.",
+        "D. It was rejected by classical religious authorities."
+      ],
+      "ans": "B",
+      "explain": "證實原則自身既不可經驗證實，亦非邏輯分析真理，故陷入自我推翻（self-refuting）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【論點】The essay argues that the naturalistic fallacy occurs whenever an author attempts to derive a normative ought from an empirical is. What is the error?",
+      "options": [
+        "A. Treating ethical norms as mathematical axioms.",
+        "B. Refusing to study animal behavior in the wild.",
+        "C. Deriving moral obligations directly from factual descriptions.",
+        "D. Assuming that natural science has no empirical validity."
+      ],
+      "ans": "C",
+      "explain": "自然主義謬誤：企圖直接從客觀實然描述（is）推導出道德應然（ought）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【解構】The critic contends that deconstructive reading does not destroy meaning, but exposes the internal instabilities of logocentric discourse. What does deconstruction aim to expose?",
+      "options": [
+        "A. The grammatical errors made by ancient scribes.",
+        "B. The biographical secrets of historical authors.",
+        "C. The financial corruption of academic publishers.",
+        "D. The internal tensions and contradictions within a text."
+      ],
+      "ans": "D",
+      "explain": "解構並非毀滅意義，而是揭示文本與邏輯中心主義論述的內在矛盾與不穩定性。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】Pragmatic epistemology argues that truth is not the correspondence between mind and reality, but what proves reliable in practice. What is truth equated with?",
+      "options": [
+        "A. The emotional satisfaction of the believer.",
+        "B. The consensus of political authorities.",
+        "C. Practical efficacy and warranted assertibility.",
+        "D. Absolute metaphysical correspondence with Platonic forms."
+      ],
+      "ans": "C",
+      "explain": "實用主義認識論將真理重構為可經受實踐檢驗的確證可行性（warranted assertibility）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【極致】The thesis investigates the limits of linguistic representation, asserting with Wittgenstein that what cannot be spoken of must be passed over in silence. What is the implication?",
+      "options": [
+        "A. Propositional language is entirely capable of expressing all truths.",
+        "B. Silence indicates that an intellectual speaker has conceded defeat.",
+        "C. Philosophical debate should be replaced by physical labor.",
+        "D. Certain profound dimensions of reality transcend propositional language."
+      ],
+      "ans": "D",
+      "explain": "維根斯坦核心命題：超越命題語言邊界之深刻維度，必須報以沉默。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【深辨】The author warns against the reification of historical epochs, reminding readers that the Renaissance was not an agent, but a retrospective classification. What error is targeted?",
+      "options": [
+        "A. Treating a chronological category as a conscious historical actor.",
+        "B. Denying that classical antiquity influenced European art.",
+        "C. Claiming that calendar dates are entirely arbitrary.",
+        "D. Refusing to acknowledge the existence of painting."
+      ],
+      "ans": "A",
+      "explain": "批判將時代劃分概念實體化（reification），誤將文藝復興當成具備意識的行動主體。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：主張唯有自我心靈確實存在之唯我論",
+      "ans": "SOLIPSISM",
+      "speak": "solipsism",
+      "vocabId": "R8:SOLIPSISM"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：透過對立矛盾揚棄以追求真理的辯證法",
+      "ans": "DIALECTIC",
+      "speak": "dialectic",
+      "vocabId": "R8:DIALECTIC"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：將世界演變歸因於特定終極目標與目的的",
+      "ans": "TELEOLOGICAL",
+      "speak": "teleological",
+      "vocabId": "R8:TELEOLOGICAL"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：兩理論體系因缺乏共同衡量標準而具不可公度性",
+      "ans": "INCOMMENSURABILITY",
+      "speak": "incommensurability",
+      "vocabId": "R8:INCOMMENSURABILITY"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：懷疑是批判思維的起點門檻。",
+      "ans": "DOUBT IS THE THRESHOLD OF CRITICAL THOUGHT",
+      "speak": "doubt is the threshold of critical thought",
+      "vocabId": "R8:DOUBT IS THE THRESHOLD OF CRITICAL THOUGHT"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：語言深度制約我們對實在的感知。",
+      "ans": "LANGUAGE CONDITIONS OUR PERCEPTION OF REALITY",
+      "speak": "language conditions our perception of reality",
+      "vocabId": "R8:LANGUAGE CONDITIONS OUR PERCEPTION OF REALITY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：武斷且未經批判便堅持特定信條的（D 開頭，8 個字母）",
+      "ans": "DOGMATIC",
+      "speak": "dogmatic",
+      "vocabId": "R8:DOGMATIC"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：將現代概念或事物錯置於過去時代的年代錯誤（A 開頭，11 個字母）",
+      "ans": "ANACHRONISM",
+      "speak": "anachronism",
+      "vocabId": "R8:ANACHRONISM"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "請拼出：充滿哲學困境而難以找到出口的（A 開頭，9 個字母）",
+      "ans": "APORISTIC",
+      "speak": "aporistic",
+      "vocabId": "R8:APORISTIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "填空題：H E T E _ O D O X (與正統或權威通說相違背之非正統異端的主張)",
+      "ans": "R",
+      "speak": "heterodox",
+      "vocabId": "R8:HETERODOX"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 2,
+      "desc": "填空題：H E U _ I S _ I C (在複雜問題中便於快速探索或解決問題的啟發式方法)",
+      "ans": "RT",
+      "speak": "heuristic",
+      "vocabId": "R8:HEURISTIC"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：E P _ S _ E _ I C (與認知、知識理論及證成基礎相關的)",
+      "ans": "ITM",
+      "speak": "epistemic",
+      "vocabId": "R8:EPISTEMIC"
     }
   ],
   "boss": [
@@ -16248,6 +17034,268 @@
       "ans": "ETO",
       "speak": "representational",
       "vocabId": "R8:REPRESENTATIONAL"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The principle of proportionality requires that administrative burdens not be excessive.",
+      "options": [
+        "A. 比例原則僅適用於跨國條約之履行與爭端解決程序。",
+        "B. 所有行政負擔均被法律推定為絕對合理且毋庸審查。",
+        "C. 比例原則要求行政處分所施加之負擔不得顯失均衡。",
+        "D. 行政機關得為達成單一目的而不惜造成任何過當負擔。"
+      ],
+      "ans": "C",
+      "explain": "proportionality 比例原則，burdens not be excessive 負擔不得過當。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The delegation of legislative authority must be bounded by an intelligible principle.",
+      "options": [
+        "A. 立法機關有權將制定刑罰之全權無限期委由行政部門行使。",
+        "B. 授權原則之模糊性被證明有利於行政機關維持政策連貫。",
+        "C. 司法審查禁止立法部門向專責機構進行任何形式之授權。",
+        "D. 立法權之授權必須受制於清晰可辨識之法定授權原則。"
+      ],
+      "ans": "D",
+      "explain": "delegation bounded by intelligible principle 授權必須有明確指引原則。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Judicial deference to bureaucratic expertise must not become an abdication of review.",
+      "options": [
+        "A. 司法對官僚體系專業之尊重，絕不能異化為司法審查職責之放棄。",
+        "B. 法官在面對行政專業時應全面停止對事實認定之司法覆核。",
+        "C. 尊重官僚專業在實務上必然導致行政訴訟制度之全面廢弛。",
+        "D. 司法審查之職能主要在於取代行政專家進行技術性政策制定。"
+      ],
+      "ans": "A",
+      "explain": "deference must not become abdication 尊重專業絕不可演變為放棄審查。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The treatise criticises legal formalism for mistaking axiomatic coherence for empirical justice. What is the core critique?",
+      "options": [
+        "A. Axioms should be replaced by informal customs.",
+        "B. Legal systems should abandon coherence altogether.",
+        "C. Internal consistency does not guarantee real-world justice.",
+        "D. Formalism pays too much attention to empirical facts."
+      ],
+      "ans": "C",
+      "explain": "批評法律形式主義誤將公理邏輯的一致性等同於實體正義。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語用】The scholar observed that the statute’s deliberate vagueness was not an oversight, but the political price of legislative passage. Why was the text vague?",
+      "options": [
+        "A. Because the draftsmen lacked legal expertise.",
+        "B. To prevent judges from exercising discretion.",
+        "C. In order to force an immediate constitutional amendment.",
+        "D. To secure political agreement for its passage."
+      ],
+      "ans": "D",
+      "explain": "刻意模糊並非疏失，而是促成法案通過所付出的政治妥協代價。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】The historian cautions against treating institutional evolution as an inexorable march toward rational bureaucracy. What view is being challenged?",
+      "options": [
+        "A. The assumption that history moves inevitably toward rationality.",
+        "B. The claim that modern institutions are less efficient than archaic ones.",
+        "C. The idea that written constitutions restrict governmental action.",
+        "D. The belief that institutional reform requires public participation."
+      ],
+      "ans": "A",
+      "explain": "駁斥制度演進乃必然邁向理性官僚體系的目的論史觀。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：對公約或法規條款的官方減免讓步",
+      "ans": "DEROGATION",
+      "speak": "derogation",
+      "vocabId": "R8:DEROGATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：程序保障維繫公民自由。",
+      "ans": "PROCEDURAL SAFEGUARDS PRESERVE CIVIL LIBERTY",
+      "speak": "procedural safeguards preserve civil liberty",
+      "vocabId": "R8:PROCEDURAL SAFEGUARDS PRESERVE CIVIL LIBERTY"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：抵觸違背成文法律或條約義務（C 開頭，10 個字母）",
+      "ans": "CONTRAVENE",
+      "speak": "contravene",
+      "vocabId": "R8:CONTRAVENE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：I N _ E _ N _ T Y (對未來潛在損害或損失之官方保障補償)",
+      "ans": "DMI",
+      "speak": "indemnity",
+      "vocabId": "R8:INDEMNITY"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The claim that all knowledge is relative is itself a universal truth claim.",
+      "options": [
+        "A. 相對主義宣稱已被邏輯學家證明徹底擺脫了自我指涉難題。",
+        "B. 普遍真理之存在完全排除了在任何特定情境下的相對性。",
+        "C. 知識相對性之主張禁止任何學者提出具有普適性的哲學命題。",
+        "D. 所有知識皆屬相對之宣稱，其自身便構成一項普遍真理主張。"
+      ],
+      "ans": "D",
+      "explain": "self-referential inconsistency 相對主義在自我指涉上的邏輯困境。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "Solipsism posits that only one’s own mind is sure to exist, rendering external reality doubtful.",
+      "options": [
+        "A. 唯我論主張唯有自身的心靈確鑿存在，從而使外在世界存疑。",
+        "B. 唯我論以堅實的經驗證據確立了他人心靈與物質世界的客觀性。",
+        "C. 外在實在之確定性在唯我論體系中被視為不言自明的公理基礎。",
+        "D. 唯我論學者致力於透過跨學科合作證明集體意識的真實存在。"
+      ],
+      "ans": "A",
+      "explain": "solipsism 唯我論：only one’s own mind sure to exist，external reality doubtful。"
+    },
+    {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The hermeneutic circle illustrates that understanding the whole requires grasping its constituent parts.",
+      "options": [
+        "A. 整體與局部在文本理解中彼此獨立，毫無任何動態互動之辯證關係。",
+        "B. 詮釋學循環說明了理解整體仰賴掌握局部，而掌握局部又需理解整體。",
+        "C. 局部之解讀在任何文本詮釋過程中皆能完全脫離整體背景而獨立完成。",
+        "D. 詮釋學循環被當代符號學界證明為一種致命且無法自拔的邏輯錯誤。"
+      ],
+      "ans": "B",
+      "explain": "hermeneutic circle 詮釋學循環：understanding whole requires grasping parts。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【哲學】The critique of essentialism rejects the idea that concepts possess immutable, timeless essences. What is being denied?",
+      "options": [
+        "A. That words can be translated between languages.",
+        "B. That historical definitions change over time.",
+        "C. That grammatical syntax is necessary for meaning.",
+        "D. That concepts have fixed and unalterable cores."
+      ],
+      "ans": "D",
+      "explain": "反本質主義（anti-essentialism）否定概念具有永恆不變的本質（immutable essences）。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 2,
+      "knowledgeType": "discourse",
+      "desc": "【語意】The semantic distinction between sense (Sinn) and reference (Bedeutung) resolves the paradox of identity statements. What problem does it address?",
+      "options": [
+        "A. How statements like Venus is the Morning Star can be informative.",
+        "B. Why geometric shapes have identical perimeter measurements.",
+        "C. Whether animal communication possesses recursive grammar.",
+        "D. Why historical documents contain contradictory dates."
+      ],
+      "ans": "A",
+      "explain": "意義與指涉（sense & reference）之別，化解了「金星是晨星」為何具備資訊含量的難題。"
+    },
+    {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "【認識論】Sellars criticizes the Myth of the Given, demonstrating that immediate sensory experience cannot serve as an unconceptualized epistemic foundation. What is rejected?",
+      "options": [
+        "A. The view that language is learned through social interaction.",
+        "B. The belief that raw sensation provides a concept-free foundation for knowledge.",
+        "C. The claim that humans possess sensory organs.",
+        "D. The idea that scientific theories require verification."
+      ],
+      "ans": "B",
+      "explain": "批判「所與的神話」（Myth of the Given）：否定未經概念化的純粹感官直接構成知識基礎。"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 2,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：在論辯中刻意模糊或偷換語義之雙關謬誤",
+      "ans": "EQUIVOCATION",
+      "speak": "equivocation",
+      "vocabId": "R8:EQUIVOCATION"
+    },
+    {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 3,
+      "knowledgeType": "discourse",
+      "desc": "請唸出：確定性本質上常屬心理情感而非純粹邏輯狀態。",
+      "ans": "CERTAINTY IS AN EMOTIONAL RATHER THAN LOGICAL STATE",
+      "speak": "certainty is an emotional rather than logical state",
+      "vocabId": "R8:CERTAINTY IS AN EMOTIONAL RATHER THAN LOGICAL STATE"
+    },
+    {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "請拼出：提供額外證據以證實支持某項主張（C 開頭，11 個字母）",
+      "ans": "CORROBORATE",
+      "speak": "corroborate",
+      "vocabId": "R8:CORROBORATE"
+    },
+    {
+      "type": "fill",
+      "skill": "writing",
+      "difficulty": 3,
+      "desc": "填空題：S Y _ L _ G _ S M (由大前提、小前提與結論組成的三段論)",
+      "ans": "LOI",
+      "speak": "syllogism",
+      "vocabId": "R8:SYLLOGISM"
     }
   ]
 }

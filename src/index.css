@@ -1153,6 +1153,25 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .story-rest { visibility: hidden; }
 .story-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; }
 .story-actions .btn { min-height: 44px; }
+/* 劇情風味選項 UI */
+.story-choices-overlay {
+  display: flex; flex-direction: column; gap: 8px; margin: 8px 0;
+}
+.story-choice-btn {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px; min-height: 46px;
+  border: 2px solid rgba(255, 209, 92, 0.45); border-radius: 8px;
+  background: linear-gradient(135deg, rgba(32, 36, 72, 0.95), rgba(16, 17, 39, 0.95));
+  color: #f1f0f8; font-family: inherit; font-size: 15px; cursor: pointer; text-align: left;
+  transition: all 0.2s ease;
+}
+.story-choice-btn:hover {
+  border-color: #ffd15c; background: linear-gradient(135deg, rgba(48, 54, 95, 0.95), rgba(24, 26, 52, 0.95));
+  box-shadow: 0 0 12px rgba(255, 209, 92, 0.35); transform: translateX(4px);
+}
+.story-choice-letter {
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: #ffd15c; color: #11142a; font-weight: 800; font-size: 13px; flex-shrink: 0;
+}
 @media (max-width: 600px) {
   .story-backdrop { padding: 0 12px 12px; }
   .story-box { gap: 10px; padding: 12px; }

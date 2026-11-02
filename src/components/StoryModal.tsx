@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { PROLOGUE_CLEAR_STORY, SPEAKERS, STORIES } from '../game/story';
+import { getStoryChoice } from '../game/storyChoices';
 import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
@@ -22,10 +23,14 @@ export default function StoryModal() {
   const character = useSaveStore(s => s.character);
   const markStorySeen = useSaveStore(s => s.markStorySeen);
   const [step, setStep] = useState(0);
+  const [chosenReplies, setChosenReplies] = useState<Record<number, string>>({});
   const lines = STORIES[storyId] ?? [];
   const heroPortrait = useMemo(() => (character ? avatarDataUrl(character, 'idle', 3) : ''), [character]);
   const name = character?.name ?? '勇者';
   const fill = (t: string) => t.replaceAll('{name}', name);
+
+  const choice = getStoryChoice(storyId, step);
+  const needChoice = choice && !chosenReplies[step];
 
   const finish = () => {
     markStorySeen(storyId);
@@ -42,16 +47,17 @@ export default function StoryModal() {
   };
 
   const line = lines[step];
-  const text = line ? fill(line.text) : '';
+  const rawText = chosenReplies[step] ?? (line ? line.text : '');
+  const text = fill(rawText);
   // 打到第幾個字（換句時重新從 0 開始；系統偏好減少動畫時直接整句）
   const [typed, setTyped] = useState({ step: -1, n: 0 });
-  const shown = reduceMotion() ? text.length : typed.step === step ? typed.n : 0;
+  const shown = reduceMotion() || needChoice ? text.length : typed.step === step ? typed.n : 0;
   const typing = shown < text.length;
   const showAll = () => setTyped({ step, n: text.length });
 
   // 打字機：每個字 1000/28ms，遇到標點多停一下
   useEffect(() => {
-    if (reduceMotion()) return;
+    if (reduceMotion() || needChoice) return;
     let i = 0;
     let timer = 0;
     const tick = () => {
@@ -61,9 +67,15 @@ export default function StoryModal() {
     };
     timer = window.setTimeout(tick, 1000 / TYPE_CPS);
     return () => window.clearTimeout(timer);
-  }, [text, step]);
+  }, [text, step, needChoice]);
+
+  const selectChoice = (reply: string) => {
+    sfx.click();
+    setChosenReplies(prev => ({ ...prev, [step]: reply }));
+  };
 
   const next = () => {
+    if (needChoice) return;
     if (typing) return showAll();
     sfx.click();
     if (step + 1 >= lines.length) finish();
@@ -73,6 +85,7 @@ export default function StoryModal() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); finish(); return; }
+      if (needChoice) return;
       if (e.key !== ' ' && e.key !== 'Enter') return;
       e.preventDefault(); e.stopImmediatePropagation();
       next();
@@ -97,12 +110,31 @@ export default function StoryModal() {
             {speaker.name && <b>{fill(speaker.name)}</b>}
             <small className="muted">{step + 1}／{lines.length}</small>
           </div>
-          <p aria-live="polite">{text.slice(0, shown)}<span className="story-rest" aria-hidden="true">{text.slice(shown)}</span></p>
+          {needChoice ? (
+            <div className="story-choices-overlay" onClick={e => e.stopPropagation()}>
+              <p style={{ margin: '0 0 6px', color: '#ffd15c', fontWeight: 'bold' }}>💭 做出你的回應：</p>
+              {choice.options.map(opt => (
+                <button
+                  key={opt.id}
+                  className="story-choice-btn"
+                  onMouseDown={keepFocus}
+                  onClick={() => selectChoice(opt.reply)}
+                >
+                  <span className="story-choice-letter">{opt.id}</span>
+                  <span>{fill(opt.label)}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p aria-live="polite">{text.slice(0, shown)}<span className="story-rest" aria-hidden="true">{text.slice(shown)}</span></p>
+          )}
           <div className="story-actions">
-            <small className="muted">{typing ? '點一下顯示整句' : '點一下繼續'}</small>
-            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={e => { e.stopPropagation(); next(); }}>
-              {step + 1 >= lines.length && !typing ? '繼續' : '下一句 ⏎'}
-            </button>
+            <small className="muted">{needChoice ? '請點選上方選項回應' : typing ? '點一下顯示整句' : '點一下繼續'}</small>
+            {!needChoice && (
+              <button className="btn btn-primary" onMouseDown={keepFocus} onClick={e => { e.stopPropagation(); next(); }}>
+                {step + 1 >= lines.length && !typing ? '繼續' : '下一句 ⏎'}
+              </button>
+            )}
           </div>
         </div>
       </div>

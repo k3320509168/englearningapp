@@ -244,7 +244,7 @@ interface SaveActions {
   finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
   startRush: () => void;
   grantRush: (reward: { gold: number; xp: number; ore: number }) => { gold: number; xp: number; ore: number; bonus: number; allowanceGold: number };
-  clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number; xp: number; bonus: number; allowanceGold: number } | null; // 第一次通過才有獎勵
+  clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number; xp: number; bonus: number; allowanceGold: number; tickets?: number } | null; // 第一次通過才有獎勵
   earnSweepTickets: () => number;    // 修煉場連對 5 題：回傳實際拿到的張數（每天上限）
   sweepMap: (regionIdx: number, rand?: () => number) => { gold: number; xp: number; drops: Record<string, number> } | null;
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
@@ -362,8 +362,12 @@ export const TICKET_BUY_WEEKLY = 5;
 export const TRAINING_GOLD = 10;
 export const TRAINING_GOLD_MAX = 20;
 
-// 英雄訓練的金幣：等級越高、稀有度越高越貴
-export const trainCost = (level: number, rarityIdx: number) => 30 * level * (rarityIdx + 1);
+// 英雄訓練的金幣：平滑成長曲線，打破二次方牆（Q7）
+// 讓主力 3 位 SSR 英雄練到 Lv100 累計約 4 萬金幣、Lv200 累計約 15 萬金幣，完全契合全期 12~25 萬金幣經濟
+export const trainCost = (level: number, rarityIdx: number) => {
+  const mult = 1 + rarityIdx * 0.2;
+  return Math.max(10, Math.round((8 + level * 1.5) * mult));
+};
 
 // 送別英雄（賣掉）：依稀有度的基本金幣＋訓練與升品階投入金幣的 65%。
 // 只退金幣，不退召喚券或累積點數，避免「抽了再賣」刷召喚；該英雄的碎片保留。
@@ -1290,7 +1294,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return { ...reward, xp: a.xp, gold: reward.gold + a.allowanceGold, bonus: a.bonus, allowanceGold: a.allowanceGold };
         },
 
-        // 英雄時空之塔：照順序往上爬，第一次通過的那一層才給獎勵
+        // 英雄時空之塔與無盡之塔：照順序往上爬，第一次通過的那一層才給獎勵（無盡層每5層送召喚券）
         clearTowerFloor: (floor, heroId) => {
           const s = get();
           if (floor !== s.towerFloor + 1) return null;
@@ -1298,6 +1302,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           set(st => ({
             towerFloor: floor,
             classBadges: st.classBadges + reward.badges,
+            tickets: st.tickets + (reward.tickets ?? 0),
             ...(heroId ? { heroShards: { ...st.heroShards, [heroId]: (st.heroShards[heroId] ?? 0) + reward.shards } } : { wishShards: st.wishShards + reward.shards }),
           }));
           get().addGold(reward.gold);

@@ -36,6 +36,7 @@ import { loadBanksFrom } from './questions/bank/loader';
 import HolyForgeModal from '../components/HolyForgeModal';
 import RushModal from '../components/RushModal';
 import TowerModal from '../components/TowerModal';
+import WorldBossModal from '../components/WorldBossModal';
 import { CloudConflict } from '../components/CloudSave';
 import SaveRecoveryNotice from '../components/SaveRecoveryNotice';
 import { initCloud } from '../cloud/cloudSave';
@@ -255,6 +256,7 @@ export default function Game() {
       {modal === 'holyForge' && <HolyForgeModal />}
       {modal === 'rush' && <RushModal />}
       {modal === 'tower' && <TowerModal />}
+      {modal === 'worldBoss' && <WorldBossModal />}
       <CelebrationOverlay />
       <TicketWheel />
       <CloudConflict />

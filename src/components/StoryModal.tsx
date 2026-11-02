@@ -5,6 +5,7 @@ import { PROLOGUE_CLEAR_STORY, SPEAKERS, STORIES } from '../game/story';
 import { getStoryChoice } from '../game/storyChoices';
 import { avatarDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
+import { stopSpeaking } from '../game/speech';
 import { keepFocus } from './keepFocus';
 
 // 打字機速度與標點停頓（第十六輪 v1.6：每秒 28 字、標點多停 150ms）
@@ -31,6 +32,14 @@ export default function StoryModal() {
 
   const choice = getStoryChoice(storyId, step);
   const needChoice = choice && !chosenReplies[step];
+
+  // 劇情對話播放時，立即停止任何背景語音朗讀，絕不與劇情搶聲
+  useEffect(() => {
+    stopSpeaking();
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+  }, [storyId]);
 
   const finish = () => {
     markStorySeen(storyId);

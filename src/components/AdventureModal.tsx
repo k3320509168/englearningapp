@@ -75,6 +75,16 @@ export default function AdventureModal() {
       tone: 'tone-golden',
       btnLabel: '踏上黃金之路 👑',
     },
+    {
+      id: 'worldBoss',
+      icon: '🐉',
+      name: '世界王突襲・法夫納',
+      tag: '語音詠唱破盾',
+      reward: '🎫 專武召喚券 ×2、🪙 3000金幣、神話稱號',
+      status: '限時 60 秒・朗讀神聖英文古咒直擊魔王核心護盾',
+      tone: 'tone-boss',
+      btnLabel: '開啟詠唱突襲 🐉',
+    },
   ];
 
   return (

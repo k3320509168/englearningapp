@@ -267,7 +267,7 @@ export default function HeroModal() {
               <GrowthRow title={`升星 ${'★'.repeat(stars + 1)}`} effect={`生命與攻擊 +${Math.round(STAR_BONUS * 100)}%`} reqs={starReqs}
                 action="升星" onAction={() => {
                   if (!starUp(id)) return;
-                  sfx.upgrade();
+                  sfx.starUp();
                   useUiStore.getState().celebrate({ icon: '⭐', title: `升星：${stars + 1} 星`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO.SSR.color });
                 }} />
             )}
@@ -275,7 +275,7 @@ export default function HeroModal() {
               <GrowthRow title={`升品階 ${h.rarity} → ${nextRarity}`} effect="能力大幅提升、等級上限提高" reqs={tierReqs}
                 action="升品階" onAction={() => {
                   if (!tierUp(id)) return;
-                  sfx.victory();
+                  sfx.starUp();
                   const r = currentRarity(h, 1);
                   useUiStore.getState().celebrate({ icon: '🌟', title: `升品階：${r}`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO[r].color });
                 }} />

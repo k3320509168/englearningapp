@@ -99,7 +99,7 @@ export default function RegionModal() {
                   onClick={() => {
                     const r = useSaveStore.getState().sweepMap(regionIdx);
                     if (!r) return;
-                    sfx.coin();
+                    sfx.claim();
                     useUiStore.getState().celebrate({ icon: '🎟️', title: `掃蕩「${name}」`, sub: `🪙 ${r.gold}・經驗 ${r.xp}・${Object.entries(r.drops).map(([k, v]) => `${materialIcon(k)}${v}`).join(' ')}`, color: '#ffcd4b' });
                   }}>🎟️ 掃蕩（{sweepTickets}）</button>
               )}
@@ -123,7 +123,7 @@ export default function RegionModal() {
             <p>不同題 {m?.items.length ?? 0}/{Math.ceil(denominator * 0.6)}・通關 {(m?.cleared ?? 0).toString(2).replace(/0/g, '').length}/20 小關</p>
             <p>聽 {m?.skills.listening ?? 0}/{Math.ceil(denominator * 0.15)}・讀 {m?.skills.reading ?? 0}/{Math.ceil(denominator * 0.15)}・說 {m?.skills.speaking ?? 0}/{Math.ceil(denominator * 0.1)}・寫 {m?.skills.writing ?? 0}/{Math.ceil(denominator * 0.1)}</p>
             <p>口說{(m?.spoken ?? 0) < Math.ceil(denominator * 0.1) ? '未驗證（替代拼寫可計入精通）' : '已實際作答（非程度認證）'}</p>
-            {m?.claimed ? <p>精通獎勵已領取</p> : <button className="btn btn-small" disabled={!masteryReady(regionIdx, m)} onClick={() => useSaveStore.getState().claimMapMastery(regionIdx, i)}>領取 🪙{80 + 20 * regionIdx}＋素材包×{regionIdx < 3 ? 2 : regionIdx < 6 ? 3 : 4}</button>}
+            {m?.claimed ? <p>精通獎勵已領取</p> : <button className="btn btn-small" disabled={!masteryReady(regionIdx, m)} onClick={() => { if (useSaveStore.getState().claimMapMastery(regionIdx, i)) sfx.claim(); }}>領取 🪙{80 + 20 * regionIdx}＋素材包×{regionIdx < 3 ? 2 : regionIdx < 6 ? 3 : 4}</button>}
           </div>;
         })}
       </details>

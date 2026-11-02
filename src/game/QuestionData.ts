@@ -213,6 +213,38 @@ export function questionSkill(q: Question): QuestionSkill {
   return 'writing';
 }
 
+// 防膩機制（ROUND4_DESIGN 13節）：對於單字與片語選擇題，以 35% 機率動態從同級題庫抽取 1 個詞替換既有錯誤選項（確保正確答案不變）
+export function withDynamicDistractor(q: Question, distractorPool: string[], rand = Math.random): Question {
+  if (q.type !== 'choice' || !q.options || q.options.length < 4 || distractorPool.length < 5) return q;
+  if (rand() > 0.35) return q;
+
+  const correctLetter = q.ans.toUpperCase();
+  const correctIdx = ['A', 'B', 'C', 'D'].indexOf(correctLetter);
+  if (correctIdx < 0) return q;
+
+  const currentTexts = q.options.map(o => o.replace(/^[A-D]\.\s*/, '').trim());
+  const correctText = currentTexts[correctIdx];
+  const wrongIndices = [0, 1, 2, 3].filter(i => i !== correctIdx);
+  if (wrongIndices.length === 0) return q;
+
+  const targetLen = correctText.length;
+  const candidates = distractorPool.filter(w =>
+    w !== correctText &&
+    !currentTexts.includes(w) &&
+    Math.abs(w.length - targetLen) <= Math.max(3, targetLen * 0.4)
+  );
+
+  if (candidates.length === 0) return q;
+  const replaceIdx = wrongIndices[Math.floor(rand() * wrongIndices.length)];
+  const newWord = candidates[Math.floor(rand() * candidates.length)];
+
+  const newOptions = [...q.options];
+  const prefix = ['A', 'B', 'C', 'D'][replaceIdx];
+  newOptions[replaceIdx] = `${prefix}. ${newWord}`;
+
+  return { ...q, options: newOptions };
+}
+
 // 區域內第幾關可以出到哪個難度：前 1/3 只出 1、中段出到 2、後段全部（依該區的關卡數）
 export const maxDifficultyAt = (stageIdx: number, stageCount = 50) =>
   Math.min(3, 1 + Math.floor((stageIdx * 3) / Math.max(3, stageCount))) as 1 | 2 | 3;
@@ -258,6 +290,11 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
     const decks: Question[][] = [[], [], [], []]; // 0 = 不分難度
     const spiralDeck: Question[] = [];
     const recentKeys: string[] = [];
+    const distractorPool = Array.from(new Set(
+      original.filter(x => x.type === 'choice' && x.options)
+        .flatMap(x => x.options!.map(o => o.replace(/^[A-D]\.\s*/, '').trim()))
+        .filter(w => w.length > 1 && w.length < 25 && !w.includes('\n'))
+    ));
 
     const take = (i: number, from: Question[]) => {
       if (decks[i].length === 0) decks[i].push(...shuffleArray(from, rand));
@@ -320,7 +357,7 @@ export function createDecks(levelKey: string, rand: () => number = Math.random):
         const pick = fit.filter(x => questionDifficulty(x) === easiest);
         if (pick.length) q = pick[Math.floor(rand() * pick.length)];
       }
-      return q;
+      return withDynamicDistractor(q, distractorPool, rand);
     };
   };
 

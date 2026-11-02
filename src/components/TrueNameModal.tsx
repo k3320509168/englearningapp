@@ -14,6 +14,7 @@ import { heroDataUrl } from '../game/art/sprites';
 import { sfx } from '../game/sfx';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
+import { getHeroLoreStory } from '../game/heroStories';
 
 type Result = { correct: boolean; given: string } | null;
 
@@ -31,6 +32,8 @@ export default function TrueNameModal() {
   const done = trialsDone(progress);
   const named = isTrueName(progress);
   const portrait = useMemo(() => heroDataUrl(heroId, 3), [heroId]);
+  const say = useSpeak();
+  const loreStory = useMemo(() => getHeroLoreStory(heroId, heroWord(h), h.meaning, h.classId), [heroId, h]);
   // 同一次挑戰固定題目（選項不會因為畫面更新而重新洗牌）；round 改變（再試一次）時才重新出題
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const question = useMemo(() => (active === null ? null : trialQuestion(heroId, active)), [heroId, active, round]);
@@ -85,6 +88,18 @@ export default function TrueNameModal() {
           }}
           onRetry={() => setRound(r => r + 1)}
         />
+      )}
+
+      {named && (
+        <section className="true-name-story" style={{ marginTop: 14, padding: '12px 14px', background: 'rgba(0,0,0,0.3)', borderRadius: 8, border: '1px solid rgba(255,209,92,0.3)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+            <h4 style={{ margin: 0, color: '#ffd15c', fontSize: 15 }}>📖 傳奇真名紀事：{loreStory.titleZh}</h4>
+            <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => say(loreStory.storyEn)}>🔊 聆聽朗讀</button>
+          </div>
+          <p style={{ margin: '0 0 6px', color: '#ffcd4b', fontStyle: 'italic', fontSize: 13 }}>{loreStory.quote}</p>
+          <p style={{ margin: '0 0 8px', color: '#f1f0f8', fontSize: 13.5, lineHeight: 1.6 }}>{loreStory.storyEn}</p>
+          <p style={{ margin: 0, color: '#a9b0ce', fontSize: 12.5, lineHeight: 1.5, borderTop: '1px dashed rgba(255,255,255,0.1)', paddingTop: 6 }}>{loreStory.storyZh}</p>
+        </section>
       )}
 
       <div className="tutorial-actions">

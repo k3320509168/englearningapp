@@ -29,19 +29,32 @@ export function rushReward(correct: number, bestCombo: number, regionIdx: number
   };
 }
 
-// ---------- 英雄時空之塔 ----------
-// 30 層，每 3 層換一個 CEFR 區域的題目；每層 5 題、答對 4 題通過。
-// 第一次通過每層送「今日主角英雄」的碎片（每 5 層加倍）與金幣，卡關時可以來衝碎片升星。
+// ---------- 英雄時空之塔與無盡之塔 ----------
+// 前 30 層為標準時空之塔，每 3 層換一個 CEFR 區域的題目；每層 5 題、答對 4 題通過。
+// 30 層通關後開啟「無盡之塔」，層數無上限攀爬，每 5 層為頭目關並額外贈送 1 張召喚券！
 export const TOWER_FLOORS = 30;
 export const TOWER_QUESTIONS = 5;
 export const TOWER_PASS = 4;
-export const towerRegion = (floor: number) => Math.min(LEVELS.length - 1, Math.floor((floor - 1) / 3));
-// 每一層第一次通過：碎片、金幣，和 2 個職業徽章（主角換職業後點亮轉職用）
-export const towerReward = (floor: number) => ({ shards: floor % 5 === 0 ? 15 : 5, gold: 100 * floor, badges: 2, xp: Math.round(120 * xpScale(towerRegion(floor)) * (floor % 5 === 0 ? 1.5 : 1)) });
+export const isEndlessFloor = (floor: number) => floor > TOWER_FLOORS;
+export const towerRegion = (floor: number) => {
+  if (floor <= TOWER_FLOORS) return Math.min(LEVELS.length - 1, Math.floor((floor - 1) / 3));
+  return (floor - 31) % LEVELS.length;
+};
+// 每一層第一次通過：碎片、金幣，和職業徽章；無盡層每 5 層贈送召喚券
+export const towerReward = (floor: number) => {
+  const isEndless = floor > TOWER_FLOORS;
+  const shards = floor % 5 === 0 ? (isEndless ? 20 : 15) : (isEndless ? 8 : 5);
+  const gold = isEndless ? 300 + floor * 15 : 100 * floor;
+  const badges = isEndless && floor % 5 === 0 ? 4 : 2;
+  const tickets = isEndless && floor % 5 === 0 ? 1 : 0;
+  const xp = Math.round(120 * xpScale(towerRegion(floor)) * (floor % 5 === 0 ? 1.5 : 1));
+  return { shards, gold, badges, tickets, xp };
+};
 
 export function towerQuestions(floor: number, rand: () => number = Math.random): Question[] {
   const pool = getPool(LEVELS[towerRegion(floor)]);
-  const hard = floor % 3 === 0; // 每個區域的第三層用頭目題
+  const isEndless = floor > TOWER_FLOORS;
+  const hard = isEndless ? (floor % 5 === 0) : (floor % 3 === 0);
   return shuffleArray((hard ? pool.boss : pool.normal).map(voiceFallback), rand).slice(0, TOWER_QUESTIONS);
 }
 

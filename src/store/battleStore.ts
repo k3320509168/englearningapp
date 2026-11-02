@@ -520,6 +520,20 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
     const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined, s.levelKey)) : takeEasy(stage) ?? stage.questions[0];
+
+    // 劇情檢查提前：若有開場或 BOSS 登場台詞，先開啟劇情視窗，避免戰前情報搶先顯示或唸出發音
+    let pendingStoryId = '';
+    if (s.mode === 'normal' && isPrologue(s.levelKey)) {
+      const storyId = PROLOGUE_STORY_AT[stageIdx];
+      if (storyId && !save().storySeen.includes(storyId)) pendingStoryId = storyId;
+    } else if (s.mode === 'normal') {
+      const inMap = stageInMap(stageIdx);
+      const part = inMap === 1 ? 'intro' : inMap === 15 ? 'mini' : inMap === 20 ? 'big' : null;
+      const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : part ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), part) : '';
+      if (storyId && STORIES[storyId] && !save().storySeen.includes(storyId)) pendingStoryId = storyId;
+    }
+    if (pendingStoryId) useUiStore.getState().openStory(pendingStoryId);
+
     set({
       ...(newMap ? { combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, streak: 0, mapStats: emptyRunStats(), mapResult: null } : {}),
       stages,
@@ -565,16 +579,6 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     });
     // 技能封印只封隊長一個人
     if (get().sealed && !get().sealTarget) set({ sealTarget: get().party[Math.max(0, leaderIndex(get().party))]?.id ?? null });
-    // 劇情：每張三星地圖第一次打第 1 關播開場、第 15／20 關 BOSS 各一句登場台詞；區域魔王登場也有劇情（看過就不再自動播放）
-    if (s.mode === 'normal' && isPrologue(s.levelKey)) {
-      const storyId = PROLOGUE_STORY_AT[stageIdx];
-      if (storyId && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
-    } else if (s.mode === 'normal') {
-      const inMap = stageInMap(stageIdx);
-      const part = inMap === 1 ? 'intro' : inMap === 15 ? 'mini' : inMap === 20 ? 'big' : null;
-      const storyId = isFinalBoss ? bossStoryId(s.levelIdx) : part ? mapStoryId(s.levelIdx, mapIndexOf(stageIdx), part) : '';
-      if (storyId && STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
-    }
     // 前置區域 P-4：第一次技能——隊長的能量直接集滿，配合技能提示讓玩家試一次
     if (s.mode === 'normal' && isPrologue(s.levelKey) && stageIdx === ONBOARD_SKILL_STAGE && !save().hintsSeen.includes('skill')) {
       const party = get().party;

@@ -53,7 +53,7 @@ export default function ShopModal() {
           aria-selected={tab === 'upgrades'}
           className={`tab ${tab === 'upgrades' ? 'is-active' : ''}`}
           onMouseDown={keepFocus}
-          onClick={() => { setTab('upgrades'); openShop('upgrades'); }}
+          onClick={() => { sfx.click(); setTab('upgrades'); openShop('upgrades'); }}
         >
           🏪 雜貨商會
         </button>
@@ -62,7 +62,7 @@ export default function ShopModal() {
           aria-selected={tab === 'forge'}
           className={`tab ${tab === 'forge' ? 'is-active' : ''}`}
           onMouseDown={keepFocus}
-          onClick={() => { setTab('forge'); openShop('forge'); }}
+          onClick={() => { sfx.click(); setTab('forge'); openShop('forge'); }}
         >
           🛡️ 裝備鍛造
         </button>
@@ -71,7 +71,7 @@ export default function ShopModal() {
           aria-selected={tab === 'weapons'}
           className={`tab ${tab === 'weapons' ? 'is-active' : ''}`}
           onMouseDown={keepFocus}
-          onClick={() => { setTab('weapons'); openShop('weapons'); }}
+          onClick={() => { sfx.click(); setTab('weapons'); openShop('weapons'); }}
         >
           ⚔️ 專武強化
         </button>
@@ -83,14 +83,14 @@ export default function ShopModal() {
             <button
               className={`pill ${shopSubTab === 'upgrades' ? 'is-on' : ''}`}
               onMouseDown={keepFocus}
-              onClick={() => setShopSubTab('upgrades')}
+              onClick={() => { sfx.click(); setShopSubTab('upgrades'); }}
             >
               ⚔️ 永久升級
             </button>
             <button
               className={`pill ${shopSubTab === 'items' ? 'is-on' : ''}`}
               onMouseDown={keepFocus}
-              onClick={() => setShopSubTab('items')}
+              onClick={() => { sfx.click(); setShopSubTab('items'); }}
             >
               🧪 戰鬥道具
             </button>
@@ -115,6 +115,7 @@ export default function ShopModal() {
                       onMouseDown={keepFocus}
                       onClick={() => {
                         if (buyUpgrade(u.id)) sfx.upgrade();
+                        else sfx.cantAfford();
                       }}
                       disabled={maxed || gold < cost}
                     >
@@ -138,6 +139,7 @@ export default function ShopModal() {
                     onMouseDown={keepFocus}
                     onClick={() => {
                       if (buyItem(it.id)) sfx.coin();
+                      else sfx.cantAfford();
                     }}
                     disabled={gold < it.cost}
                   >
@@ -195,7 +197,7 @@ export default function ShopModal() {
                     </div>
                     {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
                       : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
-                        onClick={() => { if (sv.forge(def.id)) sfx.victory(); }}>鍛造</button>}
+                        onClick={() => { if (sv.forge(def.id)) sfx.forge(); else sfx.cantAfford(); }}>鍛造</button>}
                   </li>
                 );
               })}

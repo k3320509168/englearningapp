@@ -34,7 +34,8 @@ export default function HolyForgeModal() {
     setScore(s);
     if (!questions || !item || s.answered < questions.length) return;
     if (s.correct === questions.length && enhance(item.uid, true) === 'ok') {
-      sfx.victory();
+      sfx.forge();
+      sfx.starUp();
       setResult('ok');
       useUiStore.getState().celebrate({ icon: '✨', title: '神聖鍛造成功！', sub: `${def && character ? displayName(def, character.classId) : ''} +${item.plus + 1}，得到神聖加護`, color: '#ffcd4b' });
     } else setResult('miss');

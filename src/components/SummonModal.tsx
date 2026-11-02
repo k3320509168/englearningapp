@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { TICKET_BUY_WEEKLY, useSaveStore } from '../store/saveStore';
@@ -53,32 +53,58 @@ export default function SummonModal() {
   const heroResultsRef = useRef<HTMLElement | null>(null);
   const weaponResultsRef = useRef<HTMLElement | null>(null);
 
+  // 英雄抽卡結果自動平滑滑動到底部結果區，保證使用者第一時間看到抽到的卡牌
+  useEffect(() => {
+    if (!results || results.length === 0) return;
+    const timer = setTimeout(() => {
+      const el = heroResultsRef.current;
+      if (!el) return;
+      const modalEl = el.closest('.modal') as HTMLElement | null;
+      if (modalEl) {
+        modalEl.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [results]);
+
+  // 專武抽卡結果自動平滑滑動
+  useEffect(() => {
+    if (!weaponResults || weaponResults.length === 0) return;
+    const timer = setTimeout(() => {
+      const el = weaponResultsRef.current;
+      if (!el) return;
+      const modalEl = el.closest('.modal') as HTMLElement | null;
+      if (modalEl) {
+        modalEl.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [weaponResults]);
+
   const pull = (count: number) => {
+    sfx.summonPull();
     const out = summonHeroes(count);
     if (!out) return;
     setPicking(false);
     setResults(out);
-    if (out.some(r => r.rarity === 'SSR')) sfx.victory(); else sfx.coin();
+    if (out.some(r => r.rarity === 'SSR')) sfx.starUp(); else sfx.coin();
     celebrateNew(out);
-    // 抽卡完成後立刻平滑滾動到結果，給予最直接的驚喜
-    setTimeout(() => {
-      heroResultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 60);
   };
 
   const pullWeapons = (count: number) => {
+    sfx.summonPull();
     const out = summonWeapons(count);
     if (!out) return;
     setPickingWeapon(false);
     setWeaponResults(out);
-    if (out.some(r => r.kind === 'weapon')) sfx.victory(); else sfx.coin();
+    if (out.some(r => r.kind === 'weapon')) sfx.starUp(); else sfx.coin();
     out.filter(r => r.kind === 'weapon' && r.isNew).forEach(r => {
       useUiStore.getState().celebrate({ icon: '⚔️', title: '神兵鍛造完成！', sub: r.name, color: '#ffd15c' });
     });
-    // 鍛造完成後立刻平滑滾動到結果
-    setTimeout(() => {
-      weaponResultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 60);
   };
 
   const celebrateNew = (out: SummonOutcome[]) => {

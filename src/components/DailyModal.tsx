@@ -24,7 +24,7 @@ function renderTasks(tasks: DailyTask[], claim: (id: string) => boolean) {
             </div>
             {t.claimed ? <span className="hero-tag">已領取</span> : (
               <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!done}
-                onClick={() => { if (claim(t.id)) sfx.coin(); }}>{done ? '領取' : '進行中'}</button>
+                onClick={() => { if (claim(t.id)) sfx.claim(); }}>{done ? '領取' : '進行中'}</button>
             )}
           </li>
         );

@@ -114,7 +114,7 @@ export default function GrowthModal() {
                 const tierName = ['未轉職', '一轉', '二轉', '覺醒'][path.length];
                 return (
                   <button key={c.id} className={`class-chip ${c.id === character.classId ? 'is-on' : ''}`} onMouseDown={keepFocus}
-                    onClick={() => { if (sv.switchClass(c.id)) sfx.coin(); }} aria-pressed={c.id === character.classId}>
+                    onClick={() => { if (sv.switchClass(c.id)) sfx.victory(); }} aria-pressed={c.id === character.classId}>
                     <b>{c.name}</b><small>{c.id === (sv.homeClass ?? character.classId) ? '★ ' : ''}{tierName}</small>
                   </button>
                 );
@@ -186,7 +186,7 @@ export default function GrowthModal() {
                   <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!canEnhance}
                     onClick={() => {
                       const r = sv.enhance(item.uid);
-                      if (r === 'ok') sfx.coin();
+                      if (r === 'ok') sfx.forge();
                       else if (r === 'fail') { sfx.wrong(); useUiStore.getState().celebrate({ icon: '💨', title: '強化失敗', sub: '材料用掉了，裝備沒事。試試「神聖鍛造」：答對 3 題英文一定成功', color: '#8a8494' }); }
                     }}
                     title={item.plus >= cap ? `已經強化到目前上限 +${cap}${grade < MAX_GRADE ? '（升品階可以提高上限）' : ''}` : `需要 🪙${cost.gold}、🪨${cost.ore}`}>
@@ -201,7 +201,7 @@ export default function GrowthModal() {
                   )}
                   {grade < MAX_GRADE && (
                     <button className="btn btn-small" onMouseDown={keepFocus} disabled={!hasMaterial}
-                      onClick={() => { if (sv.gradeUp(item.uid)) sfx.victory(); }}
+                      onClick={() => { if (sv.gradeUp(item.uid)) sfx.starUp(); }}
                       title={hasMaterial ? '用掉一件沒穿在身上的同名裝備：效果 +20%、強化上限 +2（稀有度不變）' : '需要一件沒穿在身上的同名裝備（可以到鍛造坊再打造一件）'}>
                       ★ 升品階 {grade}→{grade + 1}
                     </button>
@@ -264,7 +264,7 @@ export default function GrowthModal() {
                     </div>
                     {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
                       : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
-                        onClick={() => { if (sv.forge(def.id)) sfx.victory(); }}>鍛造</button>}
+                        onClick={() => { if (sv.forge(def.id)) sfx.forge(); }}>鍛造</button>}
                   </li>
                 );
               })}

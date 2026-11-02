@@ -38,7 +38,7 @@ export default function MicPermissionModal() {
     }
   };
 
-  const isInsecureOrigin = typeof window !== 'undefined' && window.location.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const isInsecureOrigin = typeof window !== 'undefined' && (!window.isSecureContext || (window.location.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(window.location.hostname)));
 
   return (
     <Modal title="🎤 開啟麥克風" onClose={close}>
@@ -62,12 +62,22 @@ export default function MicPermissionModal() {
           </>
         ) : (
           <>
-            <h3>{isInsecureOrigin ? '📱 本地 HTTP 限制' : '這個瀏覽器不支援語音辨識'}</h3>
+            <h3>{isInsecureOrigin ? '📱 局域網 HTTP 安全限制提示' : '這個瀏覽器不支援語音辨識'}</h3>
             {isInsecureOrigin ? (
-              <p style={{ lineHeight: 1.6 }}>
-                目前使用內網 HTTP 連線（{typeof window !== 'undefined' ? window.location.hostname : ''}），手機 Chrome 依安全規範僅在 <b>HTTPS</b> 或 <b>localhost</b> 下開放麥克風與語音辨識 API。<br />
-                <span style={{ color: '#ffd15c' }}>已為您自動切換為拼寫作答</span>。正式上線（HTTPS）或設定 Chrome 安全旗標即可正常用語音！
-              </p>
+              <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.25)', padding: 12, borderRadius: 8, marginTop: 10, lineHeight: 1.6, fontSize: 13.5 }}>
+                <p style={{ margin: '0 0 8px' }}>
+                  檢測到您正在透過局域網 IP 連線（<b>{typeof window !== 'undefined' ? window.location.host : ''}</b>）。
+                </p>
+                <p style={{ margin: '0 0 8px', color: '#ffd15c' }}>
+                  📌 <b>說明</b>：您的手機 Chrome 是最新且支援語音的，但依據 Chrome 安全規範，麥克風 API 僅在 <b>HTTPS</b>（如正式上線網址）或 <b>localhost</b> 下允許呼叫。
+                </p>
+                <p style={{ margin: '0 0 8px', color: '#7fe8ff' }}>
+                  ✅ <b>已自動為您將口說題切換為拼寫題</b>，所有關卡與題目完全不影響闖關！
+                </p>
+                <p style={{ margin: 0, color: '#a9b0ce', fontSize: 12 }}>
+                  💡 若想在手機測試口說：可於 Chrome 網址輸入 <code>chrome://flags/#unsafely-treat-insecure-origin-as-secure</code> 將此網址加入信任名單即可啟用！
+                </p>
+              </div>
             ) : (
               <p>口說題會自動改成拼寫題。想練習口說的話，建議改用電腦或手機上的 Chrome、Edge 瀏覽器。</p>
             )}

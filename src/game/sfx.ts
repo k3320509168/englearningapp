@@ -6,10 +6,12 @@ let master: GainNode | null = null;
 let volume = 0.7;
 let muted = false; // 麥克風聆聽中：音效靜音
 
-function ctx(): AudioContext | null {
-  if (typeof window === 'undefined' || !('AudioContext' in window)) return null;
+export function ctx(): AudioContext | null {
+  if (typeof window === 'undefined') return null;
+  const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+  if (!AudioCtx) return null;
   if (!audio) {
-    audio = new AudioContext();
+    audio = new AudioCtx();
     master = audio.createGain();
     master.gain.value = muted ? 0 : volume;
     master.connect(audio.destination);
@@ -17,11 +19,25 @@ function ctx(): AudioContext | null {
     document.addEventListener('visibilitychange', () => {
       if (!audio) return;
       if (document.hidden) void audio.suspend();
-      else void audio.resume();
+      else if (audio.state === 'suspended') void audio.resume();
     });
   }
-  if (audio.state === 'suspended' && !document.hidden) void audio.resume();
+  if (audio.state === 'suspended' && !document.hidden) {
+    void audio.resume();
+  }
   return audio;
+}
+
+// 支援行動裝置手勢解鎖
+export function unlockSfx() {
+  const ac = ctx();
+  if (ac && ac.state === 'suspended' && !document.hidden) {
+    void ac.resume();
+  }
+}
+if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+  window.addEventListener('pointerdown', unlockSfx, { passive: true });
+  window.addEventListener('touchstart', unlockSfx, { passive: true });
 }
 
 export function setSfxVolume(v: number) {
@@ -177,6 +193,29 @@ export const sfx = {
     noise({ dur: 0.2, gain: 0.35, from: 8000, to: 1500, type: 'bandpass' });
     tone({ type: 'sawtooth', freq: 659, to: 330, dur: 0.15, gain: 0.2 });
     tone({ type: 'sine', freq: 1319, to: 2637, dur: 0.28, gain: 0.15, delay: 0.05 });
+  },
+  // 英雄升星／突破／晉升神話 UR 音效：華麗史詩三和弦＋衝霄高音
+  starUp() {
+    [392, 523, 659, 784, 1047, 1319, 1568].forEach((f, i) =>
+      tone({ type: 'triangle', freq: f, dur: 0.18, gain: 0.16, delay: i * 0.04 }),
+    );
+    tone({ type: 'sine', freq: 1047, to: 2093, dur: 0.45, gain: 0.18, delay: 0.25 });
+    noise({ dur: 0.3, gain: 0.15, from: 3000, to: 8000, type: 'bandpass', delay: 0.1 });
+  },
+  // 領取獎勵（每日任務、地圖精通、登入獎勵）：清脆叮咚雙音
+  claim() {
+    tone({ type: 'triangle', freq: 880, dur: 0.1, gain: 0.15 });
+    tone({ type: 'sine', freq: 1318.5, dur: 0.25, gain: 0.2, delay: 0.08 });
+    tone({ type: 'sine', freq: 1760, dur: 0.35, gain: 0.15, delay: 0.16 });
+  },
+  // 召喚抽卡發動：聚能音
+  summonPull() {
+    tone({ type: 'sine', freq: 220, to: 880, dur: 0.35, gain: 0.18 });
+    tone({ type: 'triangle', freq: 440, to: 1320, dur: 0.4, gain: 0.15, delay: 0.05 });
+  },
+  // 金幣不足或條件不符：輕微鈍音提示，不吵但有反饋
+  cantAfford() {
+    tone({ type: 'square', freq: 150, to: 100, dur: 0.08, gain: 0.1 });
   },
   click() {
     tone({ freq: 700, dur: 0.03, gain: 0.06 });

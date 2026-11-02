@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { RUSH_PER_DAY, rushQuestions, rushReward, towerQuestions, towerRegion, towerReward } from './modes';
+import { RUSH_PER_DAY, isEndlessFloor, rushQuestions, rushReward, towerQuestions, towerRegion, towerReward } from './modes';
 import { initialSave, useSaveStore } from '../store/saveStore';
 
 describe('daily rush', () => {
@@ -40,6 +40,17 @@ describe('hero tower', () => {
     expect(useSaveStore.getState().clearTowerFloor(1, 'knight')).toMatchObject({ shards: 5 });
     expect(useSaveStore.getState().heroShards.knight).toBe(5);
     expect(useSaveStore.getState().clearTowerFloor(1, 'knight')).toBeNull();
+  });
+
+  it('supports endless tower beyond floor 30 and rewards tickets every 5 floors', () => {
+    expect(isEndlessFloor(31)).toBe(true);
+    expect(towerReward(35).tickets).toBe(1);
+    expect(towerReward(31).tickets).toBe(0);
+    useSaveStore.setState({ ...initialSave, towerFloor: 34, tickets: 0 });
+    const res = useSaveStore.getState().clearTowerFloor(35, 'knight');
+    expect(res).toBeDefined();
+    expect(useSaveStore.getState().tickets).toBe(1);
+    expect(useSaveStore.getState().towerFloor).toBe(35);
   });
 });
 

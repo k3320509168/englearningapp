@@ -2117,10 +2117,23 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
 .tree-connector.is-active {
   color: #ffd15c; text-shadow: 0 0 6px #ffd15c; font-weight: 700;
 }
-.tree-seconds { display: flex; flex-wrap: wrap; gap: 10px; }
-.tree-pair { display: inline-flex; align-items: center; gap: 6px; }
+.tree-seconds {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+.tree-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(32, 36, 72, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px dashed rgba(255, 209, 92, 0.2);
+}
 .tree-awake-group { display: inline-flex; align-items: center; gap: 4px; }
-.tree-sub-connector { color: #475569; font-size: 11px; }
+.tree-sub-connector { color: #64748b; font-size: 11px; }
 .tree-sub-connector.is-active { color: #ffd15c; }
 
 @media (max-width: 640px) { .class-switch { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

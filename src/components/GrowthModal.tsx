@@ -344,12 +344,12 @@ function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
   const lit = (id: string) => path.includes(id);
   return (
     <div className="class-tree-panel">
-      <div className="class-tree-title">★ 轉職路線軌跡 ★</div>
+      <div className="class-tree-title">★ 轉職路線軌跡（一轉 Lv30 ➔ 二轉 Lv80 ➔ 終極覺醒 Lv150）★</div>
       <div className="class-tree">
         {childrenOf(classId).map(first => (
           <div key={first.id} className="tree-branch">
-            <div className={`tree-node-wrapper ${lit(first.id) ? 'is-lit' : ''}`} title={first.desc}>
-              <span className="tree-tier-tag">一轉</span>
+            <div className={`tree-node-wrapper ${lit(first.id) ? 'is-lit' : ''}`} title={`${first.name}（Lv 30 需求）：${first.desc}`}>
+              <span className="tree-tier-tag">一轉 (Lv30)</span>
               <span className="tree-node">{first.name}</span>
             </div>
             <span className={`tree-connector ${lit(first.id) ? 'is-active' : ''}`} aria-hidden>══▶</span>
@@ -358,15 +358,15 @@ function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
                 const awakens = childrenOf(second.id);
                 return (
                   <div key={second.id} className="tree-pair">
-                    <div className={`tree-node-wrapper ${lit(second.id) ? 'is-lit' : ''}`} title={second.desc}>
-                      <span className="tree-tier-tag">二轉</span>
+                    <div className={`tree-node-wrapper ${lit(second.id) ? 'is-lit' : ''}`} title={`${second.name}（Lv 80 需求）：${second.desc}`}>
+                      <span className="tree-tier-tag">二轉 (Lv80)</span>
                       <span className="tree-node">{second.name}</span>
                     </div>
                     {awakens.map(a => (
                       <div key={a.id} className="tree-awake-group">
                         <span className={`tree-sub-connector ${lit(second.id) ? 'is-active' : ''}`} aria-hidden>─▶</span>
-                        <div className={`tree-node-wrapper is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={`${a.name}: ${a.desc}`}>
-                          <span className="tree-node">👑 覺醒</span>
+                        <div className={`tree-node-wrapper is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={`${a.name}（Lv 150 需求）：${a.desc}`}>
+                          <span className="tree-node">👑 覺醒 (Lv150)</span>
                         </div>
                       </div>
                     ))}

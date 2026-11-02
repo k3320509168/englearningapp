@@ -565,6 +565,17 @@ describe('stage progress', () => {
     expect(state().playerHp).toBe(state().playerMaxHp);
   });
 
+  it('retryWithWarmupBonus restarts level with double first strike damage and divine shield', () => {
+    resetSave({ levelProgress: { [LEVELS[0]]: 6 } });
+    state().startLevel(LEVELS[0], undefined, 2);
+    expect(state().stageIdx).toBe(2);
+    state().retryWithWarmupBonus();
+    expect(state().stageIdx).toBe(2);
+    expect(state().amplifyLeft).toBe(1);
+    expect(state().shield).toBe(true);
+    expect(state().comboGuard).toBe(true);
+  });
+
   it('resets progress after clearing the whole level', () => {
     resetSave();
     state().startLevel(LEVELS[0]);

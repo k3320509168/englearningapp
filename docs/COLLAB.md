@@ -294,3 +294,18 @@
      - 狀態篩選膠囊即時統計計數（全部 / 🔓 已解鎖 / ⚠️ 待複習 / 🏆 滿星精通 具體數量一目了然）。
      - 搜尋框 150ms 輕量防抖優化，杜絕手機端輸入卡頓。
   ④ **全量自動化校驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-03 Antigravity｜戰敗熱身系統實裝（首擊×2＋神聖護盾）＋聽力實用句卡片擴充至13,556條＋高亮正則防抖加固交付：
+  ① **「🥋 戰敗熱身」系統全面實裝（`DefeatModal.tsx` & `battleStore.ts`）**：
+     - 失敗時智慧提取本場答錯的題目（取前 3 道去重），提供「🥋 戰敗熱身 (3題)」快答複習；
+     - 內嵌 `QuizRunner` 進行專注錯題快答，答完即刻觸發戰力激發慶祝，呼叫 `retryWithWarmupBonus()` 重返戰場；
+     - 重開戰場即刻享有「💥 首擊傷害 ×2 ＋ 🛡️ 神聖守護護盾（格擋致命反擊與連擊保護）」之爽感加成；
+     - 若戰鬥表現頑強無錯題，一鍵提供「🛡️ 女神庇佑重戰」直接賦予雙重加成重返戰場；
+     - 配備單元測試驗證 `retryWithWarmupBonus` 狀態機制 100% 正確。
+  ② **實用聽力片語與生活句型字典卡片大擴充（13,556條映射）**：
+     - 升級 `clean-and-refine-vocab.ts` 與 `vocab.ts`，萃取 680 道高頻生活口語、問路、時間、點餐與商務聽力片語卡片；
+     - 題目直通字典命中率提升至 10,115 題（63.8%），支援自然空格、下劃線別名與去標點智慧辨識；
+     - 冒險圖鑑總卡片量達到 10,387 條，滿足 A1~C2 各階段深度自學需求。
+  ③ **正則檢驗與樣式加固**：
+     - 修復 `WordStudy.tsx` 與 `CodexModal.tsx` 中 `highlightWord` / `highlightKeyword` 正則 `lastIndex` 潛在交替誤判問題；
+     - 補齊 `.defeat-warmup-tip`、`.defeat-warmup-banner`、`.defeat-warmup-btn` 的像素風樣式。
+  ④ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。

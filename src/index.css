@@ -1904,9 +1904,44 @@ html[data-reduce-motion] .confetti, html[data-reduce-motion] .celebrate-rays { d
 .defeat-btn > span { font-size: 26px; }
 .defeat-btn b { font-size: 16px; }
 .defeat-btn small { color: var(--muted); font-family: var(--font-body); font-size: 12px; }
-.defeat-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.defeat-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
 .defeat-advice { padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--panel-2); font-size: 14px; line-height: 1.6; }
 .defeat-btn.is-recommended { box-shadow: 0 0 0 2px var(--accent), 0 4px 0 var(--ink); }
+.defeat-warmup-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 12px;
+  padding: 8px 12px;
+  background: rgba(255, 209, 92, 0.12);
+  border: 1px solid rgba(255, 209, 92, 0.35);
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--accent);
+}
+.defeat-tip-icon { font-size: 18px; flex-shrink: 0; }
+.defeat-tip-text { flex: 1; }
+.defeat-warmup-btn {
+  background: linear-gradient(180deg, #ff9800 0%, #e65100 100%) !important;
+  color: #fff !important;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.45);
+}
+.defeat-warmup-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 209, 92, 0.1);
+  border: 1px solid rgba(255, 209, 92, 0.3);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.defeat-warmup-icon { font-size: 28px; line-height: 1; }
+.defeat-warmup-title { font-size: 15px; color: var(--accent); display: block; margin-bottom: 4px; }
+.defeat-warmup-desc { margin: 0 !important; font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.defeat-warmup-desc b { color: #fff; }
 
 @media (pointer: coarse) { .only-desktop { display: none; } }
 .grade-stars { color: var(--accent); text-shadow: 0 0 6px var(--accent); }

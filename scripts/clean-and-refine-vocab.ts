@@ -249,6 +249,57 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
   }
 }
 
+// 3. 掃描選擇題中的實用聽力片語與生活句型，建立標準單字/片語卡片
+for (const [, pool] of Object.entries(QUESTION_POOL)) {
+  const allQ = [...pool.normal, ...pool.boss];
+  for (const q of allQ) {
+    if (q.type !== 'choice' || !q.speak || !q.options || !q.ans) continue;
+    const letters = ['A', 'B', 'C', 'D'];
+    const idx = letters.indexOf(q.ans.trim().toUpperCase());
+    if (idx < 0 || !q.options[idx]) continue;
+    const optText = q.options[idx].replace(/^[A-D]\.\s*/, '').trim();
+    const spk = q.speak.trim();
+
+    // 聽力題：朗讀英文片語/句子，中文選項為正確意思
+    if (/[\u4e00-\u9fa5]/.test(optText) && /^[A-Za-z0-9\s,'\.\?\!\-]+$/.test(spk)) {
+      const cleanSpk = spk.replace(/[\.\?\!]+$/, '').trim();
+      if (cleanSpk.length >= 2 && cleanSpk.length <= 50 && !cleanSpk.includes('\n')) {
+        const canonicalKey = cleanSpk.toUpperCase().replace(/_/g, ' ').replace(/\s+/g, ' ');
+        if (!cleanedVocab[canonicalKey]) {
+          const word = cleanSpk.toLowerCase();
+          const meaning = optText.replace(/[。，！？]/g, '').trim();
+          let pos = 'phr.';
+          if (/^(in|on|at|by|to|for|from|with|under|near|next to)\b/i.test(cleanSpk)) {
+            pos = 'prep. phr.';
+          } else if (/^(a|an|the|my|your|this|that)\b/i.test(cleanSpk)) {
+            pos = 'n. phr.';
+          } else if (/^(go|take|open|close|sign|turn|look|make|have|come|get|put|listen|wait|wash|pay)\b/i.test(cleanSpk)) {
+            pos = 'v. phr.';
+          } else if (cleanSpk.split(' ').length > 3) {
+            pos = 'sent.';
+          }
+
+          const example = spk.endsWith('.') || spk.endsWith('?') || spk.endsWith('!') ? spk : `${spk}.`;
+          const exampleZh = `${meaning}。`;
+
+          const standardEntry: VocabEntry = {
+            word,
+            pos,
+            meaning,
+            example,
+            exampleZh,
+          };
+
+          cleanedVocab[canonicalKey] = standardEntry;
+          if (canonicalKey.includes(' ')) {
+            cleanedVocab[canonicalKey.replace(/\s+/g, '_')] = standardEntry;
+          }
+        }
+      }
+    }
+  }
+}
+
 writeFileSync(genVocabPath, JSON.stringify(cleanedVocab, null, 1) + '\n', 'utf-8');
 console.log(`=== 字典卡片全庫 100% 覆蓋同步完成 ===`);
 console.log(`總詞條映射數: ${Object.keys(cleanedVocab).length}`);

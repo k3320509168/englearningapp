@@ -111,7 +111,22 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 5. **詞族升級**：低級學過 *decide*，高級出 *decision／decisive／indecisive*，答對時顯示「詞族進化」小特效（爽度）。
 6. **量化驗收**（寫成腳本 `scripts/vocab-audit.ts`）：每區不同目標字數（B1+ 目標 ≥ 600 新字）、模擬連打 3 張圖的重複率（同字重出 < 10%）、跨級重用率（25% ± 5%）、每張圖主題字覆蓋。
 
-## 3. 目前進度（2026-11-02 當前最新）
+## 3. 目前進度（2026-11-03 當前最新）
+- ✅ **戰敗熱身系統全面實裝＋實用聽力片語卡片大擴充至 13,556 條（2026-11-03 製作人指令 / Antigravity）**：
+  - **戰敗熱身系統極致實裝（`DefeatModal.tsx` & `battleStore.ts`）**：
+    - 戰敗時智慧提取本場答錯的題目（取前 3 道去重），提供「🥋 戰敗熱身」快答複習；
+    - 內嵌 `QuizRunner` 進行專注錯題快答，答完即刻觸發戰力激發慶祝，呼叫 `retryWithWarmupBonus()` 重返戰場；
+    - 重開戰場即刻享有「💥 首擊傷害 ×2 ＋ 🛡️ 神聖守護護盾（格擋致命反擊與連擊保護）」之爽感加成；
+    - 若戰鬥表現頑強無錯題，一鍵提供「🛡️ 女神庇佑重戰」直接賦予雙重加成重返戰場；
+    - 配備單元測試驗證 `retryWithWarmupBonus` 狀態機制 100% 正確（415 項單元測試全綠）。
+  - **實用聽力片語與生活句型字典卡片大擴充（13,556 條映射）**：
+    - 升級 `clean-and-refine-vocab.ts` 與 `vocab.ts`，萃取 680 道高頻生活口語、問路、時間、點餐與商務聽力片語卡片；
+    - 題目直通字典命中率提升至 10,115 題（63.8%），支援自然空格、下劃線別名與去標點智慧辨識；
+    - 冒險圖鑑總卡片量達到 10,387 條，滿足 A1~C2 各階段深度自學需求。
+  - **正則檢驗與細節加固**：
+    - 修復 `WordStudy.tsx` 與 `CodexModal.tsx` 中 `highlightWord` / `highlightKeyword` 正則 `lastIndex` 潛在交替誤判問題；
+    - 補齊 `.defeat-warmup-tip`、`.defeat-warmup-banner`、`.defeat-warmup-btn` 的像素風樣式。
+  - **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
 - ✅ **C1/C2 高階題庫擴充與全庫字典卡片大爆發（2026-11-02 製作人指令 / Antigravity）**：
   - **第 32 & 33 批高階原創題庫實裝（`032-institutions-and-reforms.mjs` & `033-critique-and-philosophy.mjs`）**：圍繞「制度治理與公共倫理」及「思辨批判與認識論論證」，為 C1 (r7) 與 C2 (r8) 注入 160 道國際標準高階試題（聽讀說寫全覆蓋），r7 與 r8 題量各自擴增至 1,320 題。
   - **題庫總量躍升**：全庫題目總量由 13,533 題擴增至 **13,693 題**，`validate:questions` 維持 **0 錯誤、0 警告**！

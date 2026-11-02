@@ -121,21 +121,47 @@ export const vocabByKey = (key: string) => {
 };
 
 export function vocabKey(q: Question): string | null {
-  if (q.vocabId) return q.vocabId;
-  if (q.type === 'spell' || q.type === 'voice') return q.ans;
-  if (q.type === 'fill') return q.speak ? q.speak.toUpperCase().replace(/[^A-Z]/g, '') : null;
+  if (q.vocabId && VOCAB[q.vocabId]) return q.vocabId;
+  if (q.type === 'spell' || q.type === 'voice') {
+    if (VOCAB[q.ans]) return q.ans;
+    const clean = q.ans.toUpperCase().replace(/[^A-Z0-9_ ]/g, '').trim();
+    if (VOCAB[clean]) return clean;
+    const under = clean.replace(/\s+/g, '_');
+    if (VOCAB[under]) return under;
+    return q.ans;
+  }
+  if (q.type === 'fill') {
+    if (!q.speak) return null;
+    const raw = q.speak.toUpperCase().trim();
+    if (VOCAB[raw]) return raw;
+    const noSpace = raw.replace(/[^A-Z]/g, '');
+    if (VOCAB[noSpace]) return noSpace;
+    const under = raw.replace(/[^A-Z0-9_]/g, '_');
+    if (VOCAB[under]) return under;
+    return noSpace;
+  }
   if (q.type === 'choice') {
-    if (q.speak && !q.speak.includes(' ')) {
-      const spkKey = q.speak.toUpperCase().replace(/[^A-Z0-9_]/g, '');
-      if (VOCAB[spkKey]) return spkKey;
+    if (q.speak) {
+      const spk = q.speak.toUpperCase().trim();
+      if (VOCAB[spk]) return spk;
+      const spkClean = spk.replace(/[.?!]+$/, '').trim();
+      if (VOCAB[spkClean]) return spkClean;
+      const spkUnder = spkClean.replace(/[^A-Z0-9]/g, '_').replace(/_+/g, '_');
+      if (VOCAB[spkUnder]) return spkUnder;
+      const spkNoSpace = spkClean.replace(/[^A-Z0-9_]/g, '');
+      if (VOCAB[spkNoSpace]) return spkNoSpace;
     }
     if (q.options && q.ans) {
       const letters = ['A', 'B', 'C', 'D'];
       const idx = letters.indexOf(q.ans.trim().toUpperCase());
       if (idx >= 0 && q.options[idx]) {
         const text = q.options[idx].replace(/^[A-D]\.\s*/, '').trim();
-        const optKey = text.toUpperCase().replace(/[^A-Z0-9_]/g, '');
-        if (VOCAB[optKey]) return optKey;
+        const upper = text.toUpperCase();
+        if (VOCAB[upper]) return upper;
+        const under = upper.replace(/[^A-Z0-9]/g, '_').replace(/_+/g, '_');
+        if (VOCAB[under]) return under;
+        const noSpace = upper.replace(/[^A-Z0-9_]/g, '');
+        if (VOCAB[noSpace]) return noSpace;
       }
     }
   }

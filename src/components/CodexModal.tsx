@@ -47,10 +47,11 @@ function highlightKeyword(text: string, target: string) {
   if (cleanTarget.length < 2) return text;
 
   try {
-    const regex = new RegExp(`\\b(${cleanTarget}[a-z]*)\\b`, 'gi');
-    const parts = text.split(regex);
+    const splitRegex = new RegExp(`\\b(${cleanTarget}[a-z]*)\\b`, 'gi');
+    const testRegex = new RegExp(`^${cleanTarget}[a-z]*$`, 'i');
+    const parts = text.split(splitRegex);
     return parts.map((part, idx) => {
-      if (regex.test(part)) {
+      if (testRegex.test(part)) {
         return <mark key={idx} className="word-kw-highlight">{part}</mark>;
       }
       return part;

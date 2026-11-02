@@ -242,6 +242,7 @@ interface BattleState {
   consumeItem: (id: ItemId) => void;
   nextStage: () => void;
   retryLevel: () => void;
+  retryWithWarmupBonus: () => void;
   exitToMap: () => void;
 }
 
@@ -1678,6 +1679,15 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       if (s.mode === 'golden') s.startGoldenRoad(questionTransform);
       else if (s.mode === 'skill') s.startSkillBoss(s.skillBoss!);
       else s.startLevel(s.levelKey, questionTransform, s.stageIdx);
+    },
+
+    // 戰敗熱身：複習剛才的錯題後重新挑戰，獲得首擊傷害翻倍與神聖守護護盾
+    retryWithWarmupBonus: () => {
+      const s = get();
+      if (s.mode === 'golden') s.startGoldenRoad(questionTransform);
+      else if (s.mode === 'skill') s.startSkillBoss(s.skillBoss!);
+      else s.startLevel(s.levelKey, questionTransform, s.stageIdx);
+      set({ amplifyLeft: 1, shield: true, comboGuard: true });
     },
 
     exitToMap: () => set({ active: false, question: null }),

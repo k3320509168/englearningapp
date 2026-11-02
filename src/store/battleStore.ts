@@ -273,8 +273,8 @@ const save = () => useSaveStore.getState();
 // 升級慶祝：只在里程碑等級或剛好可以轉職時全螢幕慶祝（其他升級只在戰鬥畫面跳字）
 function celebrateLevelUp(level: number) {
   const { character, player } = save();
-  const tier = (player.classPath.length + 1) as 1 | 2 | 3;
-  const canClass = !!character && tier <= 3 && ADVANCE_REQ[tier].level === level && canAdvance(tier, level);
+  const tier = (player.classPath.length + 1) as 1 | 2 | 3 | 4;
+  const canClass = !!character && tier <= 4 && ADVANCE_REQ[tier]?.level === level && canAdvance(tier, level);
   if (!canClass && !isMilestoneLevel(level)) return;
   useUiStore.getState().celebrate({
     icon: '⬆️', title: `LEVEL UP!  Lv ${level}`,

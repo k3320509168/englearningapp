@@ -51,11 +51,11 @@ export function describeMods(m: Partial<Mods>): string[] {
 }
 
 // ---------- 等級 ----------
-// 等級（第十三輪，和 ChatGPT 討論）：主角最高 Lv 200，每轉職一次上限提高（未轉職 40、一轉 100、二轉 160、覺醒 200）；
+// 等級（第十三輪，和 ChatGPT 討論）：主角最高 Lv 200，每轉職一次上限提高（未轉職 40、一轉 80、二轉 120、三轉 160、覺醒 200）；
 // 英雄最高 180（UR 200），也不能超過主角。每級 HP 與攻擊 +0.65%（線性，Lv 200 約 ×2.29）——
 // 等級讓人有感，但不會比英文（combo）更重要
 export const MAX_LEVEL = 200;
-export const PLAYER_LEVEL_CAPS = [40, 100, 160, 200];
+export const PLAYER_LEVEL_CAPS = [40, 80, 120, 160, 200];
 export const playerLevelCap = (classTier: number) => PLAYER_LEVEL_CAPS[Math.min(Math.max(0, classTier), PLAYER_LEVEL_CAPS.length - 1)];
 export const HERO_LEVEL_CAPS: Record<string, number> = { N: 180, R: 180, SR: 180, SSR: 180, UR: 200 };
 export const LEVEL_STAT = 0.0065;
@@ -109,99 +109,215 @@ export interface ClassNode {
   id: string;
   name: string;
   en: string;
-  tier: 1 | 2 | 3;
+  tier: 1 | 2 | 3 | 4;
   parent: string;       // 上一階：一轉的 parent 是基礎職業 id
   desc: string;
   mods: Partial<Mods>;
 }
 
 // 每一階的基礎能力加成
-// 第十三輪：固定加成下修（8%／10%／12%），職業差異主要靠特色效果
-const TIER_STATS: Record<1 | 2 | 3, Partial<Mods>> = {
+// 梯度提升：一轉 8% / 二轉 10% / 三轉 12% / 覺醒 15%
+const TIER_STATS: Record<1 | 2 | 3 | 4, Partial<Mods>> = {
   1: { hp: 0.08, atk: 0.08 },
   2: { hp: 0.1, atk: 0.1 },
   3: { hp: 0.12, atk: 0.12 },
+  4: { hp: 0.15, atk: 0.15 },
 };
 
 type Branch = [id: string, name: string, en: string, desc: string, mods: Partial<Mods>];
+type SecondWithThird = [second: Branch, third: Branch];
 
-const TREE: Record<ClassId, { first: Branch; second: [Branch, Branch] }[]> = {
+const TREE: Record<ClassId, { first: Branch; second: [SecondWithThird, SecondWithThird] }[]> = {
   mage: [
-    { first: ['elementalist', '元素魔法師', 'Elementalist', '擅長屬性相剋的爆發', { elementBonus: 0.3 }],
-      second: [['archmage', '大魔導士', 'Archmage', '純粹的魔力，傷害最高', { atk: 0.2, elementBonus: 0.1 }],
-        ['element_lord', '元素領主', 'Element Lord', '把屬性相剋發揮到極致', { elementBonus: 0.4 }]] },
-    { first: ['chronomancer', '時空術士', 'Chronomancer', '延長全隊的思考時間', { timeMs: 3000 }],
-      second: [['time_sage', '時之賢者', 'Time Sage', '時間的主宰', { timeMs: 3000 }],
-        ['astrologer', '星象師', 'Astrologer', '看見未來，攻擊更準', { timeMs: 1000, crit: 0.15 }]] },
+    {
+      first: ['elementalist', '元素魔法師', 'Elementalist', '擅長屬性相剋的爆發', { elementBonus: 0.3 }],
+      second: [
+        [
+          ['archmage', '大魔導士', 'Archmage', '純粹的魔力，傷害最高', { atk: 0.2, elementBonus: 0.1 }],
+          ['arcane_master', '秘術法皇', 'Arcane Sovereign', '掌控純粹秘法奧術魔力', { atk: 0.28, elementBonus: 0.15 }],
+        ],
+        [
+          ['element_lord', '元素領主', 'Element Lord', '把屬性相剋發揮到極致', { elementBonus: 0.4 }],
+          ['cataclysm_lord', '天變神君', 'Cataclysm Sovereign', '呼喚天地萬象元素風暴', { elementBonus: 0.55 }],
+        ],
+      ],
+    },
+    {
+      first: ['chronomancer', '時空術士', 'Chronomancer', '延長全隊的思考時間', { timeMs: 3000 }],
+      second: [
+        [
+          ['time_sage', '時之賢者', 'Time Sage', '時間的主宰', { timeMs: 3000 }],
+          ['chronos_ruler', '永劫支配者', 'Chronos Ruler', '時間流速完全掌握在指尖', { timeMs: 4500 }],
+        ],
+        [
+          ['astrologer', '星象師', 'Astrologer', '看見未來，攻擊更準', { timeMs: 1000, crit: 0.15 }],
+          ['star_prophet', '星宿司辰', 'Star Prophet', '洞悉群星宿命軌跡', { timeMs: 2000, crit: 0.2 }],
+        ],
+      ],
+    },
   ],
   swordsman: [
-    { first: ['squire', '見習騎士', 'Squire', '每累積 5 combo 得到一次守護', { guardEvery: 5 }],
-      second: [['paladin', '聖騎士', 'Paladin', '守護更頻繁', { guardEvery: 4, hp: 0.1 }],
-        ['dragoon', '龍騎士', 'Dragoon', '攻守兼備', { atk: 0.15, hp: 0.1 }]] },
-    { first: ['blade_dancer', '劍舞者', 'Blade Dancer', '高暴擊的連擊手', { crit: 0.1 }],
-      second: [['sword_saint', '劍聖', 'Sword Saint', '暴擊傷害極高', { critDmg: 0.6 }],
-        ['phantom', '幻影劍客', 'Phantom', '暴擊率極高', { crit: 0.15 }]] },
+    {
+      first: ['squire', '見習騎士', 'Squire', '每累積 5 combo 得到一次守護', { guardEvery: 5 }],
+      second: [
+        [
+          ['paladin', '聖騎士', 'Paladin', '守護更頻繁', { guardEvery: 4, hp: 0.1 }],
+          ['crusader_lord', '十字聖裁領主', 'Crusader Lord', '光芒萬丈的神聖騎士長', { guardEvery: 3, hp: 0.15 }],
+        ],
+        [
+          ['dragoon', '龍騎士', 'Dragoon', '攻守兼備', { atk: 0.15, hp: 0.1 }],
+          ['dragon_emperor', '天龍劍聖', 'Dragon Emperor', '融合巨龍威儀與絕世劍術', { atk: 0.22, hp: 0.15 }],
+        ],
+      ],
+    },
+    {
+      first: ['blade_dancer', '劍舞者', 'Blade Dancer', '高暴擊的連擊手', { crit: 0.1 }],
+      second: [
+        [
+          ['sword_saint', '劍聖', 'Sword Saint', '暴擊傷害極高', { critDmg: 0.6 }],
+          ['sword_emperor', '無雙萬劍皇', 'Sword Emperor', '心劍合一，斬破一切虛妄', { critDmg: 0.85 }],
+        ],
+        [
+          ['phantom', '幻影劍客', 'Phantom', '暴擊率極高', { crit: 0.15 }],
+          ['shadow_assassin', '幽冥影煞', 'Shadow Assassin', '疾風魅影，殺人無形', { crit: 0.22, critDmg: 0.2 }],
+        ],
+      ],
+    },
   ],
   warrior: [
-    { first: ['berserker', '狂野戰士', 'Berserker', '血越少越強', { lowHp: 0.4 }],
-      second: [['berserker_king', '狂戰士', 'Berserker King', '瀕死時爆發', { lowHp: 0.6 }],
-        ['war_god', '戰神', 'War God', '穩定的高攻擊', { atk: 0.2, lowHp: 0.1 }]] },
-    { first: ['vanguard', '鐵壁戰士', 'Vanguard', '血量極厚', { hp: 0.3 }],
-      second: [['guardian', '守護者', 'Guardian', '更厚的血量與守護', { hp: 0.3, guardEvery: 8 }],
-        ['fortress', '要塞巨人', 'Fortress', '能攻能守', { hp: 0.2, atk: 0.15 }]] },
+    {
+      first: ['berserker', '狂野戰士', 'Berserker', '血越少越強', { lowHp: 0.4 }],
+      second: [
+        [
+          ['berserker_king', '狂戰士', 'Berserker King', '瀕死時爆發', { lowHp: 0.6 }],
+          ['blood_slayer', '血戮死狂', 'Blood Slayer', '鮮血燃盡之際無堅不摧', { lowHp: 0.85 }],
+        ],
+        [
+          ['war_god', '戰神', 'War God', '穩定的高攻擊', { atk: 0.2, lowHp: 0.1 }],
+          ['asura', '鬥神阿修羅', 'Asura', '橫掃千軍不屈戰皇', { atk: 0.28, lowHp: 0.2 }],
+        ],
+      ],
+    },
+    {
+      first: ['vanguard', '鐵壁戰士', 'Vanguard', '血量極厚', { hp: 0.3 }],
+      second: [
+        [
+          ['guardian', '守護者', 'Guardian', '更厚的血量與守護', { hp: 0.3, guardEvery: 8 }],
+          ['titan_shield', '泰坦神盾領主', 'Titan Shield', '如巍峨神山守護眾生', { hp: 0.45, guardEvery: 6 }],
+        ],
+        [
+          ['fortress', '要塞巨人', 'Fortress', '能攻能守', { hp: 0.2, atk: 0.15 }],
+          ['dreadnought', '無畏鋼鐵霸主', 'Dreadnought', '固若金湯的攻城重要塞', { hp: 0.3, atk: 0.22 }],
+        ],
+      ],
+    },
   ],
   archer: [
-    { first: ['hunter', '狩獵射手', 'Hunter', '暴擊傷害提高', { critDmg: 0.5 }],
-      second: [['sharpshooter', '神射手', 'Sharpshooter', '百發百中', { crit: 0.15, critDmg: 0.2 }],
-        ['demon_hunter', '獵魔人', 'Demon Hunter', '對強敵一擊必殺', { critDmg: 0.6 }]] },
-    { first: ['ranger', '森林遊俠', 'Ranger', '先制攻擊、多一點時間', { firstHit: 1, timeMs: 2000 }],
-      second: [['elf_ranger', '精靈遊俠', 'Elf Ranger', '森林賜予的時間', { timeMs: 2000, firstHit: 0.5 }],
-        ['wind_bard', '風之詩人', 'Wind Bard', '開場的一箭最致命', { firstHit: 1.5 }]] },
+    {
+      first: ['hunter', '狩獵射手', 'Hunter', '暴擊傷害提高', { critDmg: 0.5 }],
+      second: [
+        [
+          ['sharpshooter', '神射手', 'Sharpshooter', '百發百中', { crit: 0.15, critDmg: 0.2 }],
+          ['deadeye_sniper', '死眼鷹皇', 'Deadeye Sniper', '萬里穿雲，例無虛發', { crit: 0.2, critDmg: 0.35 }],
+        ],
+        [
+          ['demon_hunter', '獵魔人', 'Demon Hunter', '對強敵一擊必殺', { critDmg: 0.6 }],
+          ['abyss_hunter', '極夜獵魔尊', 'Abyss Hunter', '專獵傳奇深淵魔神', { critDmg: 0.85 }],
+        ],
+      ],
+    },
+    {
+      first: ['ranger', '森林遊俠', 'Ranger', '先制攻擊、多一點時間', { firstHit: 1, timeMs: 2000 }],
+      second: [
+        [
+          ['elf_ranger', '精靈遊俠', 'Elf Ranger', '森林賜予的時間', { timeMs: 2000, firstHit: 0.5 }],
+          ['forest_arbiter', '森羅大仲裁', 'Forest Arbiter', '萬木生靈皆為其號令', { timeMs: 3000, firstHit: 0.8 }],
+        ],
+        [
+          ['wind_bard', '風之詩人', 'Wind Bard', '開場的一箭最致命', { firstHit: 1.5 }],
+          ['gale_strider', '踏風追日者', 'Gale Strider', '呼嘯狂風中的雷霆首擊', { firstHit: 2.2 }],
+        ],
+      ],
+    },
   ],
-  // 僧侶（第四輪新增，和 Gemini 討論）：牧師線偏守護，詩人線偏時間與命中
   monk: [
-    { first: ['priest', '牧師', 'Priest', '守護更頻繁、血量更厚', { hp: 0.2, guardEvery: 6 }],
-      second: [['bishop', '主教', 'Bishop', '全隊的堅實後盾', { hp: 0.3, guardEvery: 5 }],
-        ['saint', '聖徒', 'Saint', '神聖守護幾乎不間斷', { hp: 0.15, guardEvery: 4 }]] },
-    { first: ['bard', '吟遊詩人', 'Bard', '歌聲讓隊伍思考更從容', { timeMs: 2500 }],
-      second: [['prophet', '先知', 'Prophet', '預見答案，時間更充裕', { timeMs: 3000, crit: 0.05 }],
-        ['oracle', '神諭者', 'Oracle', '神諭讓攻擊更精準', { timeMs: 1500, crit: 0.15 }]] },
+    {
+      first: ['priest', '牧師', 'Priest', '守護更頻繁、血量更厚', { hp: 0.2, guardEvery: 6 }],
+      second: [
+        [
+          ['bishop', '主教', 'Bishop', '全隊的堅實後盾', { hp: 0.3, guardEvery: 5 }],
+          ['cardinal', '天國樞機卿', 'Cardinal', '神明代言人，神聖守護', { hp: 0.35, guardEvery: 4 }],
+        ],
+        [
+          ['saint', '聖徒', 'Saint', '神聖守護幾乎不間斷', { hp: 0.15, guardEvery: 4 }],
+          ['arch_saint', '聖域大主教', 'Arch Saint', '光輝灑落之處萬物復甦', { hp: 0.25, guardEvery: 3 }],
+        ],
+      ],
+    },
+    {
+      first: ['bard', '吟遊詩人', 'Bard', '歌聲讓隊伍思考更從容', { timeMs: 2500 }],
+      second: [
+        [
+          ['prophet', '先知', 'Prophet', '預見答案，時間更充裕', { timeMs: 3000, crit: 0.05 }],
+          ['all_seeing', '至高全知者', 'All-Seeing', '過去現在未來歷歷在目', { timeMs: 4000, crit: 0.08 }],
+        ],
+        [
+          ['oracle', '神諭者', 'Oracle', '神諭讓攻擊更精準', { timeMs: 1500, crit: 0.15 }],
+          ['divine_voice', '天啟真音', 'Divine Voice', '字字珠璣化為神聖審判', { timeMs: 2500, crit: 0.22 }],
+        ],
+      ],
+    },
   ],
 };
 
-const node = ([id, name, en, desc, mods]: Branch, tier: 1 | 2, parent: string): ClassNode => ({
+const node = ([id, name, en, desc, mods]: Branch, tier: 1 | 2 | 3, parent: string): ClassNode => ({
   id, name, en, desc, tier, parent, mods: combineMods(TIER_STATS[tier], mods),
 });
 
 export const CLASS_NODES: ClassNode[] = (Object.keys(TREE) as ClassId[]).flatMap(cls =>
   TREE[cls].flatMap(({ first, second }) => {
     const t1 = node(first, 1, cls);
-    const t2 = second.map(b => node(b, 2, t1.id));
-    // 覺醒：該路線的最終形態，再強化一次同樣的特色
-    const t3 = t2.map(n => ({
-      id: `${n.id}_awake`, name: `覺醒・${n.name}`, en: `Awakened ${n.en}`, tier: 3 as const, parent: n.id,
-      desc: `${n.name}的最終形態`, mods: combineMods(TIER_STATS[3], second.find(b => b[0] === n.id)![4]),
-    }));
-    return [t1, ...t2, ...t3];
+    const t2List: ClassNode[] = [];
+    const t3List: ClassNode[] = [];
+    const t4List: ClassNode[] = [];
+
+    for (const [secBranch, thirdBranch] of second) {
+      const t2 = node(secBranch, 2, t1.id);
+      t2List.push(t2);
+      const t3 = node(thirdBranch, 3, t2.id);
+      t3List.push(t3);
+      // 覺醒：三轉後的最終極限形態
+      const t4: ClassNode = {
+        id: `${t3.id}_awake`,
+        name: `覺醒・${t3.name}`,
+        en: `Awakened ${t3.en}`,
+        tier: 4,
+        parent: t3.id,
+        desc: `${t3.name}的終極覺醒形態`,
+        mods: combineMods(TIER_STATS[4], thirdBranch[4]),
+      };
+      t4List.push(t4);
+    }
+    return [t1, ...t2List, ...t3List, ...t4List];
   }),
 );
 
 export const classNode = (id: string) => CLASS_NODES.find(n => n.id === id);
 export const childrenOf = (parent: string) => CLASS_NODES.filter(n => n.parent === parent);
 
-// 轉職條件（第二十一輪）：只看等級，不再要求通關區域。A1 打完約 Lv20 不會馬上轉職；
-// 一轉約在 A2、二轉約在 B1 後段、覺醒約在 C1 初期。程度測驗的臨時等級不能拿來轉職（只看存檔等級）
-export const ADVANCE_REQ: Record<1 | 2 | 3, { level: number; label: string }> = {
+// 轉職條件：一轉 Lv30、二轉 Lv80、三轉 Lv120、覺醒 Lv160
+export const ADVANCE_REQ: Record<1 | 2 | 3 | 4, { level: number; label: string }> = {
   1: { level: 30, label: 'Lv 30' },
   2: { level: 80, label: 'Lv 80' },
-  3: { level: 150, label: 'Lv 150' },
+  3: { level: 120, label: 'Lv 120' },
+  4: { level: 160, label: 'Lv 160' },
 };
 
 // 主角換職業（第十三輪）：五種職業共用等級，轉職路線各自保留；戰鬥外免費切換。
 // 創角時選的第一個職業轉職不用徽章；其他職業點亮轉職要職業徽章（時空之塔、每週任務取得，不能抽）
-export const BADGE_COST: Record<1 | 2 | 3, number> = { 1: 10, 2: 25, 3: 50 };
+export const BADGE_COST: Record<1 | 2 | 3 | 4, number> = { 1: 10, 2: 25, 3: 40, 4: 60 };
 // 已花在這條路線上的徽章（重置時退回）
-export const pathBadgeCost = (path: string[]) => path.reduce((sum, id) => sum + BADGE_COST[classNode(id)?.tier ?? 1], 0);
+export const pathBadgeCost = (path: string[]) => path.reduce((sum, id) => sum + (BADGE_COST[classNode(id)?.tier ?? 1] ?? 0), 0);
 // 等級上限看所有職業裡轉得最高的那一個
 export const bestTier = (paths: Record<string, string[]>) => Math.max(0, ...Object.values(paths).map(p => p.length));
 
@@ -210,7 +326,7 @@ export function nextOptions(classId: ClassId, path: string[]): ClassNode[] {
   return childrenOf(path.length ? path[path.length - 1] : classId);
 }
 
-export function canAdvance(tier: 1 | 2 | 3, level: number): boolean {
+export function canAdvance(tier: 1 | 2 | 3 | 4, level: number): boolean {
   return level >= ADVANCE_REQ[tier].level;
 }
 

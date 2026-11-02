@@ -23,26 +23,34 @@ describe('levels', () => {
 });
 
 describe('class tree', () => {
-  it('every class has 2 branches, each with 2 second-tier options and an awakening', () => {
+  it('every class has 2 branches, each with 2 second-tier options, third-tier masters, and an awakening', () => {
     for (const c of CLASSES) {
       const first = nextOptions(c.id, []);
       expect(first).toHaveLength(2);
       for (const t1 of first) {
         const second = nextOptions(c.id, [t1.id]);
         expect(second).toHaveLength(2);
-        second.forEach(t2 => expect(nextOptions(c.id, [t1.id, t2.id])).toHaveLength(1));
+        for (const t2 of second) {
+          const third = nextOptions(c.id, [t1.id, t2.id]);
+          expect(third).toHaveLength(1);
+          const awake = nextOptions(c.id, [t1.id, t2.id, third[0].id]);
+          expect(awake).toHaveLength(1);
+        }
       }
     }
-    expect(CLASS_NODES.length).toBe(CLASSES.length * 2 * (1 + 2 + 2));
+    expect(CLASS_NODES.length).toBe(CLASSES.length * 2 * (1 + 2 + 2 + 2));
   });
 
-  it('requires level and cleared regions', () => {
-    // 第二十一輪：只看等級 Lv30／80／150
+  it('requires level for advance', () => {
+    // 轉職門檻：一轉 Lv30、二轉 Lv80、三轉 Lv120、覺醒 Lv160
     expect(canAdvance(1, 30)).toBe(true);
     expect(canAdvance(1, 29)).toBe(false);
     expect(canAdvance(2, 80)).toBe(true);
     expect(canAdvance(2, 79)).toBe(false);
-    expect(canAdvance(3, 150)).toBe(true);
+    expect(canAdvance(3, 120)).toBe(true);
+    expect(canAdvance(3, 119)).toBe(false);
+    expect(canAdvance(4, 160)).toBe(true);
+    expect(canAdvance(4, 159)).toBe(false);
   });
 
   it('class passives combine along the path', () => {

@@ -266,8 +266,8 @@ export default function GrowthModal() {
 
   function renderAdvance() {
     const options = nextOptions(character!.classId, player.classPath);
-    const curTier = player.classPath.length;
-    const curTierName = ['基礎職業（未轉職）', '一轉職業', '二轉職業', '終極覺醒'][curTier];
+    const curTier = Math.min(4, player.classPath.length);
+    const curTierName = ['基礎職業（未轉職）', '一轉職業', '二轉職業', '三轉職業', '👑 終極覺醒'][curTier] ?? '👑 終極覺醒';
 
     if (options.length === 0) {
       return (
@@ -282,7 +282,7 @@ export default function GrowthModal() {
     }
 
     const tier = options[0].tier;
-    const nextTierTitle = tier === 3 ? '三轉・終極覺醒' : tier === 2 ? '二轉・進階職業' : '一轉・初階職業';
+    const nextTierTitle = tier === 4 ? '四轉・終極覺醒' : tier === 3 ? '三轉・大師職業' : tier === 2 ? '二轉・進階職業' : '一轉・初階職業';
     const req = ADVANCE_REQ[tier];
     const badgeCost = character!.classId === (sv.homeClass ?? character!.classId) ? 0 : BADGE_COST[tier];
     const ok = canAdvance(tier, player.level) && sv.classBadges >= badgeCost;
@@ -339,12 +339,12 @@ export default function GrowthModal() {
   }
 }
 
-// 轉職樹：這個職業的兩條路線（一轉 → 兩個二轉 → 各自的覺醒），走過的節點點亮
+// 轉職樹：這個職業的兩條路線（一轉 → 二轉 → 三轉 → 終極覺醒），走過的節點點亮
 function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
   const lit = (id: string) => path.includes(id);
   return (
     <div className="class-tree-panel">
-      <div className="class-tree-title">★ 轉職路線軌跡（一轉 Lv30 ➔ 二轉 Lv80 ➔ 終極覺醒 Lv150）★</div>
+      <div className="class-tree-title">★ 轉職路線軌跡（一轉 Lv30 ➔ 二轉 Lv80 ➔ 三轉 Lv120 ➔ 終極覺醒 Lv160）★</div>
       <div className="class-tree">
         {childrenOf(classId).map(first => (
           <div key={first.id} className="tree-branch">
@@ -355,21 +355,33 @@ function ClassTree({ classId, path }: { classId: ClassId; path: string[] }) {
             <span className={`tree-connector ${lit(first.id) ? 'is-active' : ''}`} aria-hidden>══▶</span>
             <div className="tree-seconds">
               {childrenOf(first.id).map(second => {
-                const awakens = childrenOf(second.id);
+                const thirds = childrenOf(second.id);
                 return (
                   <div key={second.id} className="tree-pair">
                     <div className={`tree-node-wrapper ${lit(second.id) ? 'is-lit' : ''}`} title={`${second.name}（Lv 80 需求）：${second.desc}`}>
                       <span className="tree-tier-tag">二轉 (Lv80)</span>
                       <span className="tree-node">{second.name}</span>
                     </div>
-                    {awakens.map(a => (
-                      <div key={a.id} className="tree-awake-group">
-                        <span className={`tree-sub-connector ${lit(second.id) ? 'is-active' : ''}`} aria-hidden>─▶</span>
-                        <div className={`tree-node-wrapper is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={`${a.name}（Lv 150 需求）：${a.desc}`}>
-                          <span className="tree-node">👑 覺醒 (Lv150)</span>
+                    {thirds.map(third => {
+                      const awakens = childrenOf(third.id);
+                      return (
+                        <div key={third.id} className="tree-awake-group">
+                          <span className={`tree-sub-connector ${lit(second.id) ? 'is-active' : ''}`} aria-hidden>─▶</span>
+                          <div className={`tree-node-wrapper ${lit(third.id) ? 'is-lit' : ''}`} title={`${third.name}（Lv 120 需求）：${third.desc}`}>
+                            <span className="tree-tier-tag">三轉 (Lv120)</span>
+                            <span className="tree-node">{third.name}</span>
+                          </div>
+                          {awakens.map(a => (
+                            <div key={a.id} className="tree-awake-group">
+                              <span className={`tree-sub-connector ${lit(third.id) ? 'is-active' : ''}`} aria-hidden>─▶</span>
+                              <div className={`tree-node-wrapper is-awake ${lit(a.id) ? 'is-lit' : ''}`} title={`${a.name}（Lv 160 需求）：${a.desc}`}>
+                                <span className="tree-node">👑 覺醒 (Lv160)</span>
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 );
               })}

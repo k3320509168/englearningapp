@@ -64,42 +64,94 @@ export function holdMusic(on: boolean) {
 // 瀏覽器要求使用者互動後才能播放：第一次點擊或按鍵時呼叫
 export function unlockMusic() {
   const ac = ctx();
-  if (ac?.state === 'suspended' && !document.hidden) void ac.resume();
-  if (current && timer === undefined && volume > 0) startScheduler();
+  if (!ac) return;
+  if (ac.state === 'suspended' && !document.hidden) {
+    void ac.resume().then(() => {
+      if (current && timer === undefined && volume > 0 && ac.state === 'running') {
+        startScheduler();
+      }
+    });
+  } else if (ac.state === 'running' && current && timer === undefined && volume > 0) {
+    startScheduler();
+  }
 }
 
 export function playMusic(track: Track | null) {
   if (track === current) return;
   current = track;
   stopScheduler();
-  if (track && volume > 0) startScheduler();
+  if (!track || volume <= 0) return;
+  const ac = ctx();
+  if (ac?.state === 'running') {
+    startScheduler();
+  } else if (ac?.state === 'suspended') {
+    void ac.resume().then(() => {
+      if (current === track && timer === undefined && volume > 0 && ac.state === 'running') {
+        startScheduler();
+      }
+    });
+  }
 }
 
 function stopScheduler() {
-  window.clearInterval(timer);
-  timer = undefined;
-  // 舊曲子淡出
+  if (timer !== undefined) {
+    window.clearInterval(timer);
+    timer = undefined;
+  }
+  // 舊曲子快速平滑淡出（0.1 秒），絕不拖延長尾與新曲打架
   if (audio && songGain) {
     const g = songGain;
-    g.gain.setTargetAtTime(0, audio.currentTime, 0.3);
-    window.setTimeout(() => g.disconnect(), 1500);
     songGain = null;
+    try {
+      const now = audio.currentTime;
+      g.gain.cancelScheduledValues(now);
+      g.gain.setValueAtTime(g.gain.value, now);
+      g.gain.linearRampToValueAtTime(0.0001, now + 0.1);
+      window.setTimeout(() => {
+        try {
+          g.disconnect();
+        } catch {
+          // 忽略已斷開節點
+        }
+      }, 120);
+    } catch {
+      try {
+        g.disconnect();
+      } catch {
+        // 忽略已斷開節點
+      }
+    }
   }
 }
 
 function startScheduler() {
   const ac = ctx();
   if (!ac || !musicGain || ac.state !== 'running' || !current) return;
+  // 防幽靈計時器：清除任何已存在的計時器
+  if (timer !== undefined) {
+    window.clearInterval(timer);
+    timer = undefined;
+  }
+  
+  const currentTrack = current;
   songGain = ac.createGain();
-  songGain.gain.setValueAtTime(0, ac.currentTime);
-  songGain.gain.linearRampToValueAtTime(1, ac.currentTime + 1.5);
+  const now = ac.currentTime;
+  songGain.gain.setValueAtTime(0.0001, now);
+  songGain.gain.linearRampToValueAtTime(1, now + 0.25); // 0.25 秒平滑淡入
   songGain.connect(musicGain);
   step = 0;
-  nextTime = ac.currentTime + 0.1;
-  // 預先排程 0.2 秒內的音符，避免計時器抖動造成節奏不穩
+  nextTime = now + 0.05;
+
   timer = window.setInterval(() => {
-    if (!audio || !current || !songGain) return;
-    const song = SONGS[current];
+    if (!audio || !current || current !== currentTrack || !songGain) {
+      if (timer !== undefined) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+      return;
+    }
+    const song = SONGS[currentTrack];
+    if (!song) return;
     const stepDur = 60 / song.bpm / 2; // 八分音符
     while (nextTime < audio.currentTime + 0.2) {
       scheduleStep(song, step, nextTime, stepDur, songGain);

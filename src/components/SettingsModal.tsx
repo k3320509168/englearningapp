@@ -16,11 +16,11 @@ const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '�
 // 設定分成五類（第二十一輪 E6）：桌機左側分類、手機上方一排；標題與關閉按鈕固定，只有內容捲動
 type SettingTab = 'sound' | 'voice' | 'display' | 'save' | 'advanced';
 const SETTING_TABS: { id: SettingTab; icon: string; label: string }[] = [
-  { id: 'sound', icon: '🔊', label: '聲音' },
-  { id: 'voice', icon: '🗣️', label: '語音與學習' },
-  { id: 'display', icon: '👁️', label: '顯示與操作' },
-  { id: 'save', icon: '💾', label: '存檔與帳號' },
-  { id: 'advanced', icon: '⚠️', label: '進階' },
+  { id: 'sound', icon: '🔊', label: '聲音音效' },
+  { id: 'voice', icon: '🗣️', label: '語音學習' },
+  { id: 'display', icon: '👁️', label: '顯示操作' },
+  { id: 'save', icon: '💾', label: '存檔帳號' },
+  { id: 'advanced', icon: '⚠️', label: '進階選項' },
 ];
 
 export default function SettingsModal() {
@@ -176,16 +176,18 @@ function VoicePicker() {
   const sample = 'Good morning. I would like to make a reservation.';
   return (
     <div className="voice-picker">
-      <label className="range">
-        <span>發音語音</span>
-        <select value={voiceName} onChange={e => updateSettings({ voiceName: e.target.value })} aria-label="發音語音">
-          <option value="">自動（{auto?.name ?? '瀏覽器預設'}）</option>
+      <div className="voice-select-wrap">
+        <label htmlFor="voice-select" className="voice-select-label">選擇英文發音引擎：</label>
+        <select id="voice-select" value={voiceName} onChange={e => updateSettings({ voiceName: e.target.value })} aria-label="發音語音">
+          <option value="">自動最佳（{auto?.name ?? '瀏覽器預設'}）</option>
           {voices.map(v => <option key={v.name} value={v.name}>{v.name}（{v.lang}）</option>)}
         </select>
-      </label>
-      <div className="feedback-actions">
-        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
-        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
+      </div>
+      <div className="voice-test-box">
+        <div className="feedback-actions">
+          <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
+        </div>
         {jammed && <p className="q-silent">⚠️ 瀏覽器的發音引擎卡住了，按試聽也不會出聲。請重新整理頁面；還是不行，請完全關閉瀏覽器（Mac 按 Cmd+Q）再打開。</p>}
       </div>
       {voices.length === 0 && <p className="voice-error">這台裝置找不到英文語音，聽力題會改成顯示單字。可以到系統設定安裝英文語音（Mac：系統設定 → 輔助使用 → 語音內容；Windows：設定 → 時間與語言 → 語音）。</p>}

@@ -338,6 +338,7 @@ export default function GrowthModal() {
                 <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!ok}
                   onClick={() => {
                     if (!sv.advanceClass(o.id)) return;
+                    sfx.victory();
                     useUiStore.getState().celebrate({ icon: '⚔️', title: `轉職：${o.name}`, sub: o.desc, img: avatarDataUrl(character!, 'idle', 4, sv.player.classPath.length + 1), color: '#ff7a3d' });
                   }}>轉職</button>
               </div>

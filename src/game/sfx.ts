@@ -165,6 +165,19 @@ export const sfx = {
   victory() {
     [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone({ freq: f, dur: i === 5 ? 0.4 : 0.12, gain: 0.12, delay: i * 0.11 }));
   },
+  // 升級變強音效：明快上揚的大調琶音，爽度拉滿
+  upgrade() {
+    [523, 659, 784, 1047, 1319].forEach((f, i) =>
+      tone({ type: 'triangle', freq: f, dur: 0.12, gain: 0.15, delay: i * 0.05 }),
+    );
+    tone({ type: 'sine', freq: 1568, to: 2093, dur: 0.25, gain: 0.1, delay: 0.2 });
+  },
+  // 鍛造強化音效：鐵砧金屬鏗鏘 + 火花共鳴
+  forge() {
+    noise({ dur: 0.2, gain: 0.35, from: 8000, to: 1500, type: 'bandpass' });
+    tone({ type: 'sawtooth', freq: 659, to: 330, dur: 0.15, gain: 0.2 });
+    tone({ type: 'sine', freq: 1319, to: 2637, dur: 0.28, gain: 0.15, delay: 0.05 });
+  },
   click() {
     tone({ freq: 700, dur: 0.03, gain: 0.06 });
   },

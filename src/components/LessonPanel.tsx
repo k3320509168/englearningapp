@@ -33,15 +33,18 @@ export default function LessonPanel() {
   const start = () => useBattleStore.getState().startBattle();
   const audioText = card?.kind === 'word' ? card.word.display : (card?.grammar.audio || card?.grammar.sentence);
 
-  // 翻到新卡片時自動唸出單字、聽力或口說句子
+  const modal = useUiStore(s => s.modal);
+
+  // 翻到新卡片時自動唸出單字、聽力或口說句子（劇情播放中絕不搶先發音）
   useEffect(() => {
+    if (modal === 'story') return;
     if (card?.kind === 'word') {
       say(card.word.display);
     } else if (card?.kind === 'grammar' && (card.grammar.tag === '聽力' || card.grammar.tag === '口說') && card.grammar.audio) {
       say(card.grammar.audio);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [card]);
+  }, [card, modal]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

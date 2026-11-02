@@ -239,8 +239,8 @@ export default function HeroModal() {
               <div className="hd-actions">
                 {/* 第十五輪：一鍵訓練是主要按鈕，其他次要；離隊移到養成分頁最下面 */}
                 <span className="hd-train">
-                  <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.coin(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
-                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.coin(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
+                  <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.upgrade(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
+                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.upgrade(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
                   {(levelCap || gold < cost) && <small className="req-no">{levelCap ? `最高到主角 Lv ${player.level}` : `還差 🪙${cost - gold}`}</small>}
                 </span>
                 {renderMemberButtons(id, inParty, pos, full)}
@@ -267,6 +267,7 @@ export default function HeroModal() {
               <GrowthRow title={`升星 ${'★'.repeat(stars + 1)}`} effect={`生命與攻擊 +${Math.round(STAR_BONUS * 100)}%`} reqs={starReqs}
                 action="升星" onAction={() => {
                   if (!starUp(id)) return;
+                  sfx.upgrade();
                   useUiStore.getState().celebrate({ icon: '⭐', title: `升星：${stars + 1} 星`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO.SSR.color });
                 }} />
             )}
@@ -274,6 +275,7 @@ export default function HeroModal() {
               <GrowthRow title={`升品階 ${h.rarity} → ${nextRarity}`} effect="能力大幅提升、等級上限提高" reqs={tierReqs}
                 action="升品階" onAction={() => {
                   if (!tierUp(id)) return;
+                  sfx.victory();
                   const r = currentRarity(h, 1);
                   useUiStore.getState().celebrate({ icon: '🌟', title: `升品階：${r}`, sub: `${heroWord(h)}・${heroTitle(h)}變得更強了`, img: heroDataUrl(id, 4), color: RARITY_INFO[r].color });
                 }} />
@@ -421,7 +423,7 @@ function WeaponSlot({ heroId, classId }: { heroId?: string; classId?: ClassId })
                 onMouseDown={keepFocus}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (upgradeWeapon(wp.id)) sfx.coin();
+                  if (upgradeWeapon(wp.id)) sfx.forge();
                 }}
                 disabled={!canUpgrade}
                 title={`強化需要 ${cost.shards} 碎片、🪙${cost.gold}`}

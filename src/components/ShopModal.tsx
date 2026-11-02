@@ -110,7 +110,14 @@ export default function ShopModal() {
                       <span className="muted">目前：{level ? u.desc(level) : '尚未升級'}</span>
                       {!maxed && <span>下一級：{u.desc(level + 1)}</span>}
                     </div>
-                    <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => buyUpgrade(u.id)} disabled={maxed || gold < cost}>
+                    <button
+                      className="btn btn-primary btn-small"
+                      onMouseDown={keepFocus}
+                      onClick={() => {
+                        if (buyUpgrade(u.id)) sfx.upgrade();
+                      }}
+                      disabled={maxed || gold < cost}
+                    >
                       {maxed ? '已滿級' : `🪙 ${cost}`}
                     </button>
                   </li>
@@ -126,7 +133,16 @@ export default function ShopModal() {
                     <b>{it.name} <small className="muted">持有 {items[it.id]}</small></b>
                     <span className="muted">{it.desc}</span>
                   </div>
-                  <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => buyItem(it.id)} disabled={gold < it.cost}>🪙 {it.cost}</button>
+                  <button
+                    className="btn btn-primary btn-small"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      if (buyItem(it.id)) sfx.coin();
+                    }}
+                    disabled={gold < it.cost}
+                  >
+                    🪙 {it.cost}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -268,7 +284,7 @@ export default function ShopModal() {
                           onMouseDown={keepFocus}
                           disabled={!canUpgrade}
                           onClick={() => {
-                            if (upgradeWeapon(wp.id)) sfx.coin();
+                            if (upgradeWeapon(wp.id)) sfx.forge();
                           }}
                         >
                           {isMax ? '★ 已滿級' : '強化神兵'}

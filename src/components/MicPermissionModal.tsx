@@ -38,6 +38,8 @@ export default function MicPermissionModal() {
     }
   };
 
+  const isInsecureOrigin = typeof window !== 'undefined' && window.location.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(window.location.hostname);
+
   return (
     <Modal title="🎤 開啟麥克風" onClose={close}>
       <div className="tutorial-step">
@@ -60,8 +62,15 @@ export default function MicPermissionModal() {
           </>
         ) : (
           <>
-            <h3>這個瀏覽器不支援語音辨識</h3>
-            <p>口說題會自動改成拼寫題。想練習口說的話，建議改用電腦或手機上的 Chrome、Edge 瀏覽器。</p>
+            <h3>{isInsecureOrigin ? '📱 本地 HTTP 限制' : '這個瀏覽器不支援語音辨識'}</h3>
+            {isInsecureOrigin ? (
+              <p style={{ lineHeight: 1.6 }}>
+                目前使用內網 HTTP 連線（{typeof window !== 'undefined' ? window.location.hostname : ''}），手機 Chrome 依安全規範僅在 <b>HTTPS</b> 或 <b>localhost</b> 下開放麥克風與語音辨識 API。<br />
+                <span style={{ color: '#ffd15c' }}>已為您自動切換為拼寫作答</span>。正式上線（HTTPS）或設定 Chrome 安全旗標即可正常用語音！
+              </p>
+            ) : (
+              <p>口說題會自動改成拼寫題。想練習口說的話，建議改用電腦或手機上的 Chrome、Edge 瀏覽器。</p>
+            )}
           </>
         )}
       </div>

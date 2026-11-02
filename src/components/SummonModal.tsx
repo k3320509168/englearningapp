@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
 import { TICKET_BUY_WEEKLY, useSaveStore } from '../store/saveStore';
@@ -50,6 +50,8 @@ export default function SummonModal() {
 
   const weaponUnlocked = useSaveStore(s => s.bossDown.includes(WEAPON_UNLOCK_REGION) || s.unlockedIndex > WEAPON_UNLOCK_REGION);
   const ssr = useMemo(() => HEROES.filter(h => h.rarity === 'SSR'), []);
+  const heroResultsRef = useRef<HTMLElement | null>(null);
+  const weaponResultsRef = useRef<HTMLElement | null>(null);
 
   const pull = (count: number) => {
     const out = summonHeroes(count);
@@ -58,6 +60,10 @@ export default function SummonModal() {
     setResults(out);
     if (out.some(r => r.rarity === 'SSR')) sfx.victory(); else sfx.coin();
     celebrateNew(out);
+    // 抽卡完成後立刻平滑滾動到結果，給予最直接的驚喜
+    setTimeout(() => {
+      heroResultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
   };
 
   const pullWeapons = (count: number) => {
@@ -69,6 +75,10 @@ export default function SummonModal() {
     out.filter(r => r.kind === 'weapon' && r.isNew).forEach(r => {
       useUiStore.getState().celebrate({ icon: '⚔️', title: '神兵鍛造完成！', sub: r.name, color: '#ffd15c' });
     });
+    // 鍛造完成後立刻平滑滾動到結果
+    setTimeout(() => {
+      weaponResultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
   };
 
   const celebrateNew = (out: SummonOutcome[]) => {
@@ -201,8 +211,8 @@ export default function SummonModal() {
               )}
 
               {weaponResults && !pickingWeapon && (
-                <section>
-                  <p className="summon-sub">鍛造結果</p>
+                <section ref={weaponResultsRef} className="summon-results-section">
+                  <p className="summon-sub">⚔️ 鍛造結果</p>
                   <ul className="summon-results">
                     {weaponResults.map((r, i) => (
                       <li key={i}>
@@ -297,8 +307,8 @@ export default function SummonModal() {
             )}
 
             {results && !picking && (
-              <section>
-                <p className="summon-sub">召喚結果</p>
+              <section ref={heroResultsRef} className="summon-results-section">
+                <p className="summon-sub">🎉 召喚成果</p>
                 <ul className="summon-results">
                   {results.map((r, i) => {
                     const h = heroDef(r.id);

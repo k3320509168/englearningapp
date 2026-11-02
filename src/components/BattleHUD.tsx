@@ -51,6 +51,7 @@ export default function BattleHUD() {
     shield: s.shield,
   })));
   const openModal = useUiStore(s => s.openModal);
+  const modal = useUiStore(s => s.modal);
   const retreatAsk = useUiStore(s => s.retreatAsk);
   const setRetreatAsk = useUiStore(s => s.setRetreatAsk);
   const say = useSpeak(true);
@@ -160,7 +161,7 @@ export default function BattleHUD() {
       <PartyBar />
       <BonusBar />
       <TimerBars />
-      {phase === 'lesson' && <LessonPanel />}
+      {phase === 'lesson' && modal !== 'story' && <LessonPanel />}
       {phase === 'casting' && <CastConfirm />}
       {(phase === 'answering' || phase === 'casting') && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}

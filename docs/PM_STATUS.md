@@ -1,26 +1,21 @@
-# PM_STATUS.md — 目前進度、已定案決策、未解決問題（PM：Claude）
+# PM_STATUS.md — 目前進度、已定案決策、未解決問題（接任大腦：Antigravity）
 
-最後更新：2026-11-01。**三方開工前必讀**（順序：`AGENTS.md` → `docs/TEAM.md` → 本文件 → `docs/COLLAB.md`）。
+最後更新：2026-11-02 12:45。**開工必讀**（順序：`AGENTS.md` → `docs/TEAM.md` → 本文件 → `docs/COLLAB.md`）。
 本文件取代零散的「下一步」：決策寫第 2 節，未解決的都在第 4、5 節，做完就打勾並在 COLLAB 留言。
 
-## 0. 製作人 2026-11-01 指令（🔴 必要的內容，原話重點）
-1. 跟 GPT（和其他 AI）深度討論的內容都要寫進文件：結論、目前進度、還沒解決的問題與任務。
-2. 還沒完成、還沒討論完的任務，交給 Codex 和 Antigravity 多討論、試著解決並完成（兩邊 token 都還多）。
-3. Claude 多一個 PM 角色，但擅長的事（含部分 coding）還是要做；依三個 AI 的強項分工。
-4. 由一個 AI 當大腦控制另外兩個；三方協調後，可讓適合的 AI 當大腦。
-5. **額度快滿的人（先看每週上限，再看 5 小時上限）就多派工給別人**，自行最佳化分工。
-6. **所有介面與功能都要同時適配手機與電腦**（驗收用 1366×768、1920×1080、375×812 三尺寸）。
-7. 上下文快滿時自己壓縮（Claude `/compact`；Codex、Antigravity 完成任務後若接近極限也要壓縮或開新對話）。
-8. 介面、整體平衡、合理性是製作人最重視的事。
+## 0. 製作人 2026-11-02 指令（🔴 必要的內容，原話重點）
+1. **大腦接力**：Codex 與 Claude 目前均已無 token；之後的任務由 Antigravity 接手統整與完成。
+2. **CEFR 題庫深度思考**：深度思考審核 CEFR 等級對應的詞彙量、片語、文法、各項能力標準，拿標準去審核目前 13,000 多道題目，釐清是「題目太少」還是「沒把對應需要會的內容篩選建檔出來」。
+3. **主角轉職系統節奏**：目前轉職為一轉 Lv30、二轉 Lv80、覺醒 Lv150。製作人思考「增加三轉 Lv120，然後 Lv150～160 為覺醒」是否更好玩，先深度思考並回報現狀，不貿然改動。
+4. **介面修改準則**：不影響平衡的介面修改大膽做；影響平衡的重大設定與英雄擴充等任務深度思考再執行。
+5. **任務管理與壓縮**：任務眾多時，先把任務與進度寫進持久化文件，隨後壓縮上下文或開新對話接續執行。
 
-**看三方即時狀態**：`zsh scripts/team-status.sh`（最新存檔點、是否工作中、Codex 額度、最後留言）。
-
-## 1. 額度與大腦（2026-11-01 15:10 查）
-| 成員 | 每週 | 5 小時 | 判斷 |
+## 1. 額度與大腦狀態（2026-11-02 12:45 查）
+| 成員 | 每週 | 5 小時 | 狀態與責任 |
 |---|---|---|---|
-| Claude | **已用 87%**（11/5 23:59 重置） | 10% | 本週只做決策、審查、最後驗收，**不寫大量程式** |
-| Codex | 已用 51%（11/4 16:12 重置） | 已用 74%（今天 18:14 重置） | 主力工程；5 小時窗口快滿，先派高價值任務 |
-| Antigravity | 未知（Google 每日額度） | — | 審題、審規格、讀文件很快（1,200 題約 8 分鐘）→ 多派 |
+| Claude | **已用 >90%** | 見底 | 僅作為定案決策與巡檢，不執行寫碼 |
+| Codex | **已用 >90%** | 見底 | 額度耗盡，待重置 |
+| Antigravity | **充足（Flash-High / Medium）** | 充足 | **正式接任主力大腦與統整推進**，主責全盤實作、題庫審核擴充與介面驗收 |
 
 **大腦安排（到 Claude 週額度重置前）**：**Codex 當執行大腦**（排程、拆工作、叫 Antigravity 做審查／第二意見、自己實作）；Claude 只做「規格定案、合併到 feat/round4、最後驗收」三件事。Claude 額度重置後再評估是否收回。
 - Codex 叫 Antigravity：`cd /Users/dzzz/agy-worktrees/EngGame && agy -p "<任務>" --model gemini-4-argon-medium --mode accept-edits`（agy 路徑 `/Applications/Gemini.app/Contents/Helpers/agy`）。
@@ -111,43 +106,39 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 5. **詞族升級**：低級學過 *decide*，高級出 *decision／decisive／indecisive*，答對時顯示「詞族進化」小特效（爽度）。
 6. **量化驗收**（寫成腳本 `scripts/vocab-audit.ts`）：每區不同目標字數（B1+ 目標 ≥ 600 新字）、模擬連打 3 張圖的重複率（同字重出 < 10%）、跨級重用率（25% ± 5%）、每張圖主題字覆蓋。
 
-## 3. 目前進度（2026-11-02）
-- ✅ 已合併 feat/round4：v2.0 的 C1～C6（Combo、結算、三星快答、語音生命週期、行動條、地圖精通，存檔 v20）。
-- ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），驗收見 2.3。
-- ✅ T0 374 個驗證錯誤全數無損修復（Antigravity）：透過 `scripts/fix-t0-questions.ts` 重建短文情境與題幹，`npm run validate:questions` 達成 13,486 題 0 個錯誤！
-- ✅ 今日複習 ReviewModal 徹底翻新（Antigravity）：去除冗長廢話，街機「錯題修煉場」按鈕突顯連對5題贈掃蕩券，清晰語法/原句卡片與辭典研讀。
-- ✅ 獎勵轉盤 TicketWheel 日系街機寶石配色升級（Antigravity）：耀金/電光紫/天藍/翡翠高對比配色，清晰機率看板。
-- ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎（Antigravity）：`docs/design/VOCAB_CURRICULUM.md`、`QuestionData.ts` 28% 螺旋抽取前區詞彙＋30 題防重複，`scripts/vocab-audit.ts` 稽核工具與報告。
-- ✅ 四大策略題庫擴充方案（製作人核定）：生活情境包、動詞片語/搭配詞、同根詞族樹、T13螺旋抽題。已建立 `docs/question-bank-qa/VOCAB_EXPANSION_PROPOSAL.md` 並向 Codex 發起討論。
-- ✅ 戰前情報聽力播放修復與全題型預覽升級（Antigravity）：支援聽力/口說/拼寫/文法全題型預覽，突顯目標原句，自動發音。
-- 🟡 C8 版面：規劃在 `docs/question-bank-qa/C8_LAYOUT.md`（Codex worktree），未完成。
-- 🟡 B2+～C2 題庫：Codex 草稿 r6/r7/r8 各 1,200 題（目標 1,800／2,000／2,000）。Antigravity 審 r6：**152 題有問題（12.7%）**，報告 `docs/question-bank-qa/agy-review-r6.md`（agy/work）；r7、r8 待審。
-- ✅ 三方分工：`docs/TEAM.md`；Antigravity worktree `/Users/dzzz/agy-worktrees/EngGame`（`agy/work`）。
+## 3. 目前進度（2026-11-02 當前最新）
+- ✅ **全套介面深度優化已落地驗收（Antigravity）**：
+  - `ShopModal` 移除「鍛造」Tab，標題改為「🏪 冒險者商店」，職責專注於永久升級與戰鬥道具，右側新增鍛造小導引。
+  - `GrowthModal` 鍛造坊新增「💍 飾品」分類，裝備清單升級為響應式雙欄 Grid 佈局（電腦雙排、手機單排），空間利用率倍增。
+  - `CodexModal` 冒險圖鑑擴展支援 Pre-A1 失語之境與 C1/C2，增加「單字／片語／文法」獨立分頁與專屬儀表板，點擊彈出獨立詳情卡片，徹底消除 grid layout shift。
+  - `StoryLogModal` 劇情回顧新增「首次重溫觀賞獎勵」，一般章節贈 🎟️ 掃蕩券、重要魔王章節贈 🎫 召喚券，激勵探索劇情。
+  - `SummonModal` 召喚介面收納冗長來源提示，突出法陣與抽卡結果視覺。
+  - `LoginRewardModal` 獨立視窗，包含 7 天冒險簽到與 30 天全勤大獎，地圖頂部導覽去除重複按鈕。
+- ✅ **全套測試全綠驗收**：`vitest run` 394 測試全過、`tsc -b` 0 錯誤、`eslint` 0 錯誤、`validate:questions` 13,486 題 0 錯誤，已 push 至 `feat/round4-pm`（commit `6690807`）。
+- ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），數值模型驗收通過。
+- ✅ T0 374 個驗證錯誤全數無損修復（Antigravity）：13,486 題 0 個錯誤。
+- ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎實裝。
+- 🟡 **CEFR 題庫深度剖析白皮書（進行中）**：編寫 `scripts/deep-vocab-curriculum-audit.ts` 盤點 1.3 萬題的真實 Lemmas、詞卡提取缺口與生活片語覆蓋率。
+- 🟡 **主角三轉系統評估（進行中）**：設計 Lv120 三轉與 Lv160 覺醒提案，解決 Lv80~150 成長真空期。
 
 ## 4. 未解決問題（需要討論或決策）
 | # | 問題 | 誰討論 | 何時回 PM |
 |---|---|---|---|
-| Q1 | 等級 200 與第二世界是否定案（影響 C7 終點與長期內容） | Codex＋Antigravity 讀 `world-expansion-and-level200-proposal.md` 提結論 | C7 驗收後 |
-| Q2 | 三星條件與快答路線的實測勝率是否合理 | Codex 模擬、Antigravity 審 | C7 後全盤驗收時 |
-| Q3 | 召喚券是否太多（ChatGPT 提醒接近每天十連） | Codex 算經濟帳、Antigravity 第二意見 | 經濟驗收時 |
-| Q4 | 主角與英雄同等投入，主角強 10～15% 是否成立 | Codex 模擬 | 全盤驗收時 |
-| Q5 | C5 語音：TTS 沒有精確音長，故障上限用字數估 | 需真人裝置實測（製作人） | 實玩時 |
-| Q7 | 英雄訓練金幣二次方牆 vs 全期收入、推薦戰力顯示失真 | Codex 算帳、Antigravity 審 | T7 |
-| Q6 | 題庫只能證明「認得」，不能證明 C1/C2 自由表達；能力聲明要保守 | Antigravity 審文案 | 題庫完成時 |
+| Q8 | **主角三轉（Lv120）與終極覺醒（Lv160）架構**：五大職業三轉名稱、技能被動設計 | Antigravity 提方案 → 製作人定案 | 本週 |
+| Q9 | **CEFR 題庫真實缺口量化**：已存在但未建字卡 vs 真正缺失的日常生活片語 | Antigravity 產出白皮書 → 製作人核定 | 今日 |
+| Q1 | 等級 200 與第二世界是否定案（影響 C7 終點與長期內容） | Antigravity 讀 `world-expansion-and-level200-proposal.md` 提結論 | C7 驗收後 |
+| Q2 | 三星條件與快答路線的實測勝率是否合理 | Antigravity 審核 | 全盤驗收時 |
+| Q3 | 召喚券是否太多（ChatGPT 提醒接近每天十連） | Antigravity 算經濟帳 | 經濟驗收時 |
+| Q7 | 英雄訓練金幣二次方牆 vs 全期收入、推薦戰力顯示失真 | Antigravity 審核 | T7 |
 
-## 5. 任務佇列（照順序；負責人／模型）
-| # | 任務 | 負責 | 模型 | 驗收 |
-|---|---|---|---|---|
-| **T0** | **最優先**（錯誤成因分類可先交 Antigravity flash-high 做，Codex 依結果修）：把同事的 `origin/feat/round4` 合進來（在 Codex 分支先 merge `feat/round4` 再 merge `origin/feat/round4`，衝突用 `scripts/merge-bank.mjs`、AGENTS.md 保留我們版），修好 374 個驗證錯誤、補 B2+ vocab 詞條、調聽力比例，讓 tsc／vitest／eslint／validate:questions 全過；通知 PM 合併後推 `feat/round4` | Codex | medium | 0 錯誤、測試全過 |
-| **T14** | 詞彙與文法課綱：各區標準字數（本區新字／累積）、必會核心字原則、文法清單、每張地圖／每幾關的新字與新文法引入節奏、螺旋複習、與 knowledge／精通／試煉／跳級的接法、題庫缺口 | Antigravity 主責、Codex 諮詢 | flash-high effort high | 製作人看過再定案；T13 依此實作 |
-| **T13**（照 2.5，T14 定案後） | **詞彙跨級連貫**：① Antigravity flash-high 先做 `vocab-audit` 盤點（用同事 origin/feat/round4 的完整題庫：每區不同目標字數、重複率、跨級重疊、主題分布），② Codex 實作總字庫＋抽題比例＋防重複＋主題連貫，③ Antigravity 依缺口補題。原描述：**B1+ 題目太少、一直重複**（製作人實測）：本地 feat/round4 的 r4.json 是 **0 題**（同事的 origin 有 1,271 題，T0 合併後解決）。另外改出題規則：每區題池混入前面區域的題目（建議 70% 本區、30% 前區，玩家跳級或沒玩過前區時照樣混），讓 B1+ 程度的玩家也會遇到舊內容且不重複 | Codex | medium | 實玩 B1+ 連打 3 張圖不明顯重複 |
-| T12 | T0 後重新整理遊戲現況：所有系統、參數（等級、EXP、怪物、BOSS、經濟、抽卡、題庫量）與設定，寫成 `docs/GAME_STATE.md`，標出不合理或互相矛盾的地方 | Antigravity | argon-high | Claude 審 |
-| T1 ✅ | C7 照 **2.2**（含 2.1 未被取代的第 1、4、5、7 點）修正＋重跑 12 路徑與 MC | Codex | gpt-6.1-sol high | 2.2 第 3 點門檻；tsc/vitest/eslint；完成後 Antigravity 審結果 |
-| T2 | C7 規格第二意見 ✅（→ 2.2）；Codex 實作後再審結果 | Antigravity | gemini-4-argon-high | 寫 `docs/gpt/c7-v21-agy-review.md` |
-| T3 | 修 r6 的 152 題、r7 139 題、r8 202 題次（報告：`/Users/dzzz/agy-worktrees/EngGame/docs/question-bank-qa/agy-review-r6.md`，agy/work `d8d8690`） | Codex | low～medium | 每題對照 agy-review-r6.md 處理或寫不改理由 |
-| T4 | 審 r7 ✅ 139 題、r8 ✅ 202 題次（`agy-review-r7.md`／`r8.md`，agy/work）；兩區都多 1 批（normal 930／boss 310），Codex 決定裁減或保留 | Antigravity | argon-medium | 同 r6 格式 |
-| T5 | 補題到目標量（r6 +600、r7/r8 各 +800），A2～B2 缺口由 Antigravity 出題 | Codex（B2+～C2）／Antigravity（A2～B2） | medium | 去重鍵 `type|desc|speak`、聽讀說寫 30/30/20/20 |
-| T6 | C8 手機／電腦版面（TASKS「介面」P0、P1） | Codex | medium | **三尺寸截圖**，Antigravity 對照截圖審 |
+## 5. 任務佇列（Antigravity 主力執行順序）
+| # | 任務 | 負責 | 狀態與目標 |
+|---|---|---|---|
+| **P0-1** | **全題庫 CEFR 深度覆蓋率與字卡缺口剖析**：執行 `deep-vocab-curriculum-audit`，精確統計 13,486 題中的未建檔單字、高頻生活片語、文法盲區，產出白皮書 | Antigravity | 產出診斷報告與缺口清單 |
+| **P0-2** | **自動詞形字卡萃取（Auto-Lemmatize Vocab）**：將現有 1.3 萬道題目中考過的目標單字與日常詞彙自動提取至 `vocab-rX.json`，瞬間補齊圖鑑與複習字庫 | Antigravity | 圖鑑字卡數從 3,951 翻倍覆蓋 |
+| **P0-3** | **日常高頻情境題與片語動詞出題補足**：依據四大策略補齊 A1~B2 的真實生活用句（租屋、交通、外送、醫療、工作），讓玩家真正能活用英語 | Antigravity | 建立生活題庫包 |
+| **P1-1** | **主角三轉（Lv120）提案與實裝**：建立五大職業三轉名冊、特色被動與階層節奏（一轉30、二轉80、三轉120、覺醒160），維持數值平穩與爽度提升 | Antigravity | 提報製作人審閱 |
+| **P1-2** | **劇情與專武推進**：B1~C2 劇本巡檢、專武召喚池數值連動 | Antigravity | 延續主線進度 |
 | T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |
 | T8 | B1～C2 劇本：初稿 ✅（`docs/story-drafts/b1-c2-draft.md`，agy/work `0f72110`）；PM 裁決：地圖順序不改、16 位新角色全收、反派統一「沉默君王 👑」、45 張頭目台詞全收、風味選項每區 2 組、`{name}`；T8b 已匯入 story.ts／storyChoices.ts ✅（362 測試過，已合併 feat/round4）；**待 Claude 讀一遍語氣定稿**、選項 UI 歸 T9 | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
 | T9 | 調味選項 UI、劇情回顧全頁、工坊合併 | Codex | medium | 三尺寸截圖 |

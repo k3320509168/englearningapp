@@ -2154,28 +2154,166 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
   font-size: 13px;
   line-height: 1.4;
 }
-.story-log-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  position: relative;
-  transition: transform 0.15s ease;
+/* 劇情回顧全頁畫廊 */
+.story-header-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
 }
-.story-log-btn.is-unclaimed {
+.story-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.story-progress-badge {
+  font-size: 13px;
+  color: #a9b0ce;
+  background: rgba(32, 36, 72, 0.6);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 209, 92, 0.2);
+}
+.story-progress-badge b {
+  color: #ffd15c;
+  font-size: 14px;
+}
+.story-search-input {
+  flex: 0 1 240px;
+  padding: 6px 12px;
+  border: 1px solid #3c447a;
+  border-radius: 6px;
+  background: #181a38;
+  color: #f1f0f8;
+  font-size: 13px;
+  outline: none;
+}
+.story-search-input:focus {
+  border-color: #ffd15c;
+}
+.story-tabs-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+  scrollbar-width: thin;
+}
+.story-tab-btn {
+  white-space: nowrap;
+  padding: 5px 12px;
+  font-size: 13px;
+  border: 1px solid #323864;
+  border-radius: 6px;
+  background: #1a1d3b;
+  color: #9aa2c8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.story-tab-btn:hover {
+  border-color: #ffd15c;
+  color: #f1f0f8;
+}
+.story-tab-btn.is-active {
   border-color: #ffd15c;
   background: #2b2545;
+  color: #ffd15c;
+  font-weight: 700;
 }
+.story-chapter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(255, 209, 92, 0.2);
+}
+.story-chapter-count {
+  font-size: 12px;
+  color: #7b84aa;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.story-log-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 12px;
+  min-height: 58px;
+  border-radius: 8px;
+  text-align: left;
+  border: 1px solid #30365f;
+  background: #202448;
+  color: #f1f0f8;
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+.story-log-card.is-unlocked {
+  cursor: pointer;
+}
+.story-log-card.is-unlocked:hover {
+  transform: translateY(-1px);
+  border-color: #ffd15c;
+}
+.story-log-card.is-unclaimed {
+  border-color: rgba(255, 209, 92, 0.6);
+  background: linear-gradient(180deg, #282442 0%, #1e1b36 100%);
+}
+.story-log-card.is-locked {
+  opacity: 0.5;
+  border-style: dashed;
+  background: rgba(18, 20, 43, 0.6);
+  cursor: not-allowed;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.story-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.story-play-icon {
+  color: #ffd15c;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.story-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  flex: 1;
+}
+.story-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+.story-lock-tag {
+  font-size: 11px;
+  color: #7b84aa;
+}
+.story-lock-icon {
+  font-size: 14px;
+}
+
 .story-reward-pill {
   font-size: 11px;
   background: #ffcd4b;
   color: #1a1226;
   font-weight: 800;
-  padding: 1px 5px;
+  padding: 1px 6px;
   border-radius: 4px;
 }
 .story-claimed-check {
   font-size: 11px;
-  color: #7b7396;
+  color: #52c41a;
+  font-weight: 600;
 }
 
 /* 處決後的追擊加成題 */

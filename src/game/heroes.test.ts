@@ -9,17 +9,17 @@ import { useSaveStore, initialSave, migrateSave } from '../store/saveStore';
 const seq = (...values: number[]) => { let i = 0; return () => values[i++ % values.length]; };
 
 describe('hero roster', () => {
-  it('has 150 heroes with unique English-word names（第二十二輪擴充滿編 150 位）', () => {
-    expect(HEROES).toHaveLength(150);
-    expect(new Set(HEROES.map(h => h.id)).size).toBe(150);
+  it('has 300 heroes with unique English-word names（擴充滿編 300 位）', () => {
+    expect(HEROES).toHaveLength(300);
+    expect(new Set(HEROES.map(h => h.id)).size).toBe(300);
     HEROES.forEach(h => expect(h.id).toMatch(/^[a-z]+$/));
   });
 
-  it('spreads heroes across rarities (N 48, R 45, SR 38, SSR 15, UR 4, total 150)', () => {
+  it('spreads heroes across rarities (N 96, R 90, SR 76, SSR 38, UR 0, total 300)', () => {
     const count = (r: string) => HEROES.filter(h => h.rarity === r).length;
-    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([48, 45, 38, 15]);
-    expect(count('UR')).toBe(4);
-    expect(HEROES.length).toBe(150);
+    expect([count('N'), count('R'), count('SR'), count('SSR')]).toEqual([96, 90, 76, 38]);
+    expect(count('UR')).toBe(0);
+    expect(HEROES.length).toBe(300);
   });
 
   it('gives each hero a valid, stable look', () => {

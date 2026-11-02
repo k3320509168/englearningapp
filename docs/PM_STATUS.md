@@ -107,6 +107,12 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 6. **量化驗收**（寫成腳本 `scripts/vocab-audit.ts`）：每區不同目標字數（B1+ 目標 ≥ 600 新字）、模擬連打 3 張圖的重複率（同字重出 < 10%）、跨級重用率（25% ± 5%）、每張圖主題字覆蓋。
 
 ## 3. 目前進度（2026-11-02 當前最新）
+- ✅ **英雄名冊擴充至滿編 300 位（滿編，0 原生 UR，全部 100% 透過 SSR 滿星晉升）**：
+  - 撥亂反正：將原誤標為 UR 的 4 位英雄（`oblivion`, `infinity`, `eternity`, `apocalypse`）改回原生 SSR（遊戲內 100% 無原生 UR，全由滿星 SSR 晉升）。
+  - 滿編 300 位原生英雄：N 96 (32%), R 90 (30%), SR 76 (25.3%), SSR 38 (12.7%), 原生 UR 0 位，名字長度全數 ≤10 且 300 字無重複。
+  - 38 位 SSR 英雄全量配備專屬技能（`signature: true`）與 38 把專屬神兵（總計 43 把神兵）。
+  - 300 位英雄全量配備 `src/game/heroLore.ts` 真名試煉題組（1,500 道試煉題目 100% 驗證通過）。
+  - 單元測試 407 項全數 PASS，TypeScript 0 error，ESLint 0 error，題庫 13,533 題 0 錯 0 警。
 - ✅ **全套介面深度優化已落地驗收（Antigravity）**：
   - `ShopModal` 移除「鍛造」Tab，標題改為「🏪 冒險者商店」，職責專注於永久升級與戰鬥道具，右側新增鍛造小導引。
   - `GrowthModal` 鍛造坊新增「💍 飾品」分類，裝備清單升級為響應式雙欄 Grid 佈局（電腦雙排、手機單排），空間利用率倍增。
@@ -178,6 +184,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | **T7** | **全盤戰鬥平衡模擬驗收**：3種養成 × 3種正確率 9 組矩陣全數完成，產出 `docs/FULL_BALANCE_SIMULATION_REPORT.md` | Antigravity | ✅ 已完成（90%裸裝一般關≥98%、80%正常大BOSS 100%） |
 | **T8** | **B1～C2 主線劇情深度潤飾與收斂**：黃金沙漠至王城全地圖開場與通關對話、16位NPC伏筆與魔王台詞在 `src/game/story.ts` 完整實裝 | Antigravity | ✅ 已完成（全數實裝收斂） |
 | **T18** | **英雄名冊第二批擴充（滿編 150 位）**：名冊達終極 150 位（N48/R45/SR38/SSR15/UR4），擴充 6 位 SSR 專屬技能與 62 筆真名題組 | Antigravity | ✅ 已完成（407項單元測試全過） |
+| **T19** | **英雄名冊擴充至滿編 300 位（0 原生 UR）**：300位零重複英文名、38位SSR專屬技能、43把神兵、1,500道真名試煉題組 | Antigravity | ✅ 已完成（407項單元測試全過） |
 
 規則：一次只有一方改同一分支；改戰鬥檔（COLLAB 檔案負責人表）只有 Codex；合併到 `feat/round4` 只有 Claude；不 push main、不部署。
 

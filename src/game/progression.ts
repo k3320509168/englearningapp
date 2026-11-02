@@ -59,7 +59,11 @@ export type SkillId =
   | 'haste' | 'quake' | 'fortify'        // 戰士
   | 'prayer' | 'blessing' | 'angelWing'  // 僧侶
   | 'rebirth' | 'eclipse' | 'storm' | 'sanctum' | 'valor' | 'calm' | 'maze' | 'aurora' | 'tenacity'
-  | 'radiance' | 'nemesis' | 'chivalry' | 'solitude' | 'genesis' | 'titan'; // SSR 專屬
+  | 'radiance' | 'nemesis' | 'chivalry' | 'solitude' | 'genesis' | 'titan' // SSR 專屬
+  | 'oblivion' | 'infinity' | 'eternity' | 'apocalypse'
+  | 'ascendant' | 'celestial' | 'immortal' | 'dominion' | 'seraphim' | 'chronicle'
+  | 'transcend' | 'resonance' | 'cataclysm' | 'pantheon' | 'valkyrie' | 'chimera'
+  | 'leviathan' | 'behemoth' | 'colossus' | 'archangel' | 'paragon' | 'rhapsody' | 'sovereign';
 
 // 技能效果的組成（數值已經套用威力）
 export interface SkillEffect {
@@ -125,6 +129,30 @@ export const SKILLS: Record<SkillId, SkillDef> = {
   solitude: { id: 'solitude', icon: '🏹', name: '靜水深流', signature: true, cost: 5, effect: p => ({ timeStage: r(4 * p), crits: r(3 * p) }) },
   genesis: { id: 'genesis', icon: '🌿', name: '創生之雨', signature: true, cost: 7, effect: p => ({ revive: true, heal: r(32 * p), shield: true }) },
   titan: { id: 'titan', icon: '⛰️', name: '泰坦撼地', signature: true, cost: 5, effect: p => ({ charge: r1(1.4 + 1.6 * p), breakShield: 3 }) },
+  // ===== 23 位 SSR 英雄專屬技能 =====
+  oblivion: { id: 'oblivion', icon: '🌌', name: '湮滅虛空', signature: true, cost: 7, effect: p => ({ charge: r1(2.0 + 1.8 * p), breakShield: 3, timeStage: r(3 * p) }) },
+  infinity: { id: 'infinity', icon: '♾️', name: '無極魔道', signature: true, cost: 6, effect: p => ({ combo: r(12 * p), crits: 3, charge: r1(1.2 + 1.5 * p) }) },
+  eternity: { id: 'eternity', icon: '⏳', name: '永恆守護', signature: true, cost: 6, opening: true, effect: p => ({ shield: true, heal: r(25 * p), amplify: 2 }) },
+  apocalypse: { id: 'apocalypse', icon: '☄️', name: '天啟劫火', signature: true, cost: 6, effect: p => ({ charge: r1(2.2 + 1.8 * p), breakShield: 4 }) },
+  ascendant: { id: 'ascendant', icon: '✨', name: '天光飛昇', signature: true, cost: 6, effect: p => ({ timeStage: r(5 * p), amplify: 3, heal: r(20 * p) }) },
+  celestial: { id: 'celestial', icon: '🕊️', name: '星穹聖佑', signature: true, cost: 6, effect: p => ({ heal: r(30 * p), shield: true, crits: 2 }) },
+  immortal: { id: 'immortal', icon: '🛡️', name: '不朽金身', signature: true, cost: 6, opening: true, effect: p => ({ shield: true, crits: 3, charge: r1(1.5 + 1.5 * p) }) },
+  dominion: { id: 'dominion', icon: '👑', name: '霸者王權', signature: true, cost: 6, effect: p => ({ charge: r1(2.0 + 1.8 * p), combo: r(10 * p) }) },
+  seraphim: { id: 'seraphim', icon: '🪽', name: '熾天使之翼', signature: true, cost: 7, effect: p => ({ revive: true, heal: r(35 * p), shield: true }) },
+  chronicle: { id: 'chronicle', icon: '📜', name: '歲月編年', signature: true, cost: 5, effect: p => ({ timeStage: r(6 * p), combo: r(8 * p), heal: r(18 * p) }) },
+  transcend: { id: 'transcend', icon: '🧘', name: '超然頓悟', signature: true, cost: 6, effect: p => ({ amplify: 3, combo: r(15 * p), crits: 2 }) },
+  resonance: { id: 'resonance', icon: '🔔', name: '萬籟共鳴', signature: true, cost: 6, effect: p => ({ charge: r1(1.6 + 1.6 * p), crits: 3 }) },
+  cataclysm: { id: 'cataclysm', icon: '🌋', name: '地脈浩劫', signature: true, cost: 6, effect: p => ({ breakShield: 4, charge: r1(2.0 + 1.7 * p) }) },
+  pantheon: { id: 'pantheon', icon: '🏛️', name: '眾神殿堂', signature: true, cost: 6, opening: true, effect: p => ({ amplify: 3, combo: r(10 * p), shield: true }) },
+  valkyrie: { id: 'valkyrie', icon: '🗡️', name: '女武神突擊', signature: true, cost: 6, effect: p => ({ charge: r1(2.2 + 1.8 * p), crits: 2 }) },
+  chimera: { id: 'chimera', icon: '🐉', name: '幻獸多重息', signature: true, cost: 6, effect: p => ({ charge: r1(1.8 + 1.8 * p), breakShield: 2, amplify: 2 }) },
+  leviathan: { id: 'leviathan', icon: '🌊', name: '深海狂濤', signature: true, cost: 6, effect: p => ({ charge: r1(1.8 + 1.6 * p), shield: true, heal: r(22 * p) }) },
+  behemoth: { id: 'behemoth', icon: '🦣', name: '遠古巨獸怒', signature: true, cost: 6, effect: p => ({ charge: r1(2.2 + 1.6 * p), shield: true }) },
+  colossus: { id: 'colossus', icon: '🗿', name: '泰坦鐵壁', signature: true, cost: 5, opening: true, effect: p => ({ shield: true, breakShield: 3, heal: r(20 * p) }) },
+  archangel: { id: 'archangel', icon: '⚔️', name: '大天使審判', signature: true, cost: 7, effect: p => ({ charge: r1(2.0 + 1.6 * p), heal: r(28 * p), shield: true }) },
+  paragon: { id: 'paragon', icon: '💎', name: '純白英靈典範', signature: true, cost: 6, effect: p => ({ crits: 3, combo: r(12 * p), charge: r1(1.4 + 1.4 * p) }) },
+  rhapsody: { id: 'rhapsody', icon: '🎶', name: '烈焰狂想', signature: true, cost: 6, effect: p => ({ charge: r1(1.8 + 1.8 * p), timeStage: r(4 * p), amplify: 2 }) },
+  sovereign: { id: 'sovereign', icon: '🔱', name: '至尊皇權號令', signature: true, cost: 6, opening: true, effect: p => ({ combo: r(15 * p), amplify: 3, shield: true }) },
 };
 
 // 各職業的技能池；第一個是主角的技能

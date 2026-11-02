@@ -506,7 +506,7 @@ button { font: inherit; color: inherit; }
 .modal-head {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -863,6 +863,29 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .boss-q-tag { margin: 0; padding: 8px 10px; border: 2px solid #ff5af0; background: rgba(255, 90, 240, 0.12); color: #ffc2f7; font-family: var(--font-ui); }
 
 /* ---------- 英雄圖鑑與隊伍 ---------- */
+.hero-modal-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(90dvh - 84px);
+}
+.party-slots-fixed {
+  flex: 0 0 auto;
+  background: var(--panel);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+.hero-modal-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 4px;
+  scrollbar-gutter: stable;
+}
 .party-slots { display: flex; flex-direction: column; gap: 8px; }
 .party-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
 .party-slot {
@@ -1337,7 +1360,7 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 10px;
 }
 @media (max-width: 640px) {
@@ -1355,7 +1378,7 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   background: color-mix(in srgb, var(--rarity) 8%, var(--panel-2));
 }
 .gear-slot > div, .gear-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.gear-slot b, .gear-info b { font-family: var(--font-ui); }
+.gear-slot b, .gear-info b { font-family: var(--font-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .gear-icon { font-size: 26px; }
 .gear-item.is-locked { opacity: 0.6; }
 .cost-line { font-size: 12px; }

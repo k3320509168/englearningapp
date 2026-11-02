@@ -148,7 +148,7 @@ export default function SummonModal() {
 
   return (
     <>
-      <Modal title="🔮 召喚" onClose={closeModal} wide>
+      <Modal title="🔮 召喚" onClose={closeModal}>
         <div className="tabs" role="tablist">
           <button role="tab" aria-selected={pool === 'hero'} className={`tab ${pool === 'hero' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('hero')}>🧙 英雄召喚</button>
           <button role="tab" aria-selected={pool === 'weapon'} className={`tab ${pool === 'weapon' ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setPool('weapon')}>{weaponUnlocked ? '⚔️' : '🔒'} 專武召喚</button>
@@ -156,13 +156,53 @@ export default function SummonModal() {
 
         {pool === 'weapon' ? (
           !weaponUnlocked ? (
-            <section className="summon-banner is-weapon">
-              <div className="summon-banner-header">
-                <p className="summon-title">真名鍛爐</p>
+            <>
+              <section className="summon-banner is-weapon">
+                <div className="summon-banner-header">
+                  <p className="summon-title">真名鍛爐・專屬神兵</p>
+                  <button className="summon-rate-btn" onMouseDown={keepFocus} onClick={() => setShowRates(true)}>
+                    📊 機率詳情
+                  </button>
+                </div>
+                <p className="muted">鍛造英雄與主角的專屬神兵。專武擁有獨立攻擊加成與特色被動。</p>
+                
+                <div className="summon-crystal-pills">
+                  {WEAPON_SUMMON_RATES.map(r => (
+                    <span key={r.kind} className="crystal-pill" style={{ '--pill-color': r.color } as CSSProperties}>
+                      {r.icon} {r.label} {r.rate}%
+                    </span>
+                  ))}
+                </div>
+
+                <div className="summon-meters">
+                  <span style={{ color: '#ffd15c' }}>🔒 解鎖條件：通關 B1「黃金沙漠」區域魔王</span>
+                  <span className="spark">
+                    🎁 解鎖贈禮：<b>專武召喚券 ×10</b>
+                  </span>
+                </div>
+              </section>
+
+              <div className="summon-actions-card">
+                <div className="summon-wallet-row">
+                  <span className="ticket-count">⚔️ 持有專武券 <b>0</b></span>
+                  <button className="btn btn-small btn-ghost buy-ticket-btn" disabled>
+                    用 🪙600 買 1 張（解鎖後開放）
+                  </button>
+                  <button className="summon-rate-btn" onMouseDown={keepFocus} onClick={() => setShowWays(true)}>
+                    ⓘ 取得途徑
+                  </button>
+                </div>
+
+                <div className="summon-buttons-row">
+                  <button className="btn btn-primary btn-summon-single" disabled>
+                    🔒 鍛造 ×1（未解鎖）
+                  </button>
+                  <button className="btn btn-primary btn-summon-ten" disabled>
+                    🔒 十連鍛造 ×10（未解鎖）
+                  </button>
+                </div>
               </div>
-              <p>🔒 打倒 B1「黃金沙漠」的區域魔王「流沙法老」後解鎖，解鎖時贈送專武召喚券 ×10。</p>
-              <p className="muted">專武召喚券和英雄召喚券分開，保底也分開計算。</p>
-            </section>
+            </>
           ) : (
             <>
               <section className="summon-banner is-weapon">

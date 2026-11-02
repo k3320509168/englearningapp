@@ -227,3 +227,8 @@
   ② **手機端隊伍長按拖曳手感升級（TASKS 第七節）**：`.party-slot` 樣式修正為 `touch-action: none` 徹底消除行動端瀏覽器誤判滾動導致的拖曳中斷；`usePartyDrag.ts` 配備 35ms 長按振動觸感反饋，長按換位與拖回圖鑑離隊無縫順暢。
   ③ **詞族進化微特效全套實裝（PM_STATUS 2.5 節）**：新增 `src/game/wordFamilies.ts`（涵蓋 54 組核心詞族與衍生詞）；`battleStore.ts` 答對衍生詞時自動檢測詞族進化關係，在戰鬥中觸發 `wordEvolution` 狀態；`BattleHUD.tsx` 與 `src/index.css` 實裝日系像素金色流光浮動微特效（`🌟 詞族進化！root ➔ evolved`），爽度與學習成就感倍增。
   ④ **全量檢驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告。
+- 2026-11-02 Antigravity｜隊伍頂部吸頂修復＋召喚雙池尺寸1:1對齊＋工坊移除裝備鍛造交付：
+  ① **隊伍視窗滾動重疊穿透徹底治本（圖 1）**：`HeroModal.tsx` 出戰隊伍槽位（4 個格子）吸頂固定（`.party-slots-fixed`），下方圖鑑與詳細資料建立獨立滾動區（`.hero-modal-scroll`），`.modal-head` 提高至 `z-index: 50`，徹底解決向上滾動時隊伍槽位穿透擠進標題列、切斷重疊的問題。
+  ② **英雄與專武召喚視窗尺寸 1:1 完全一致（圖 2）**：`SummonModal.tsx` 移除 `wide`，專武未解鎖與已解鎖狀態皆提供等高對稱骨架（鎖定召喚陣、機率膠囊、解鎖目標卡、操作按鈕），切換 Tab 外框高度與寬度紋絲不動，徹底消除不和諧跳動感。
+  ③ **冒險工坊依指示移除重複裝備鍛造（圖 3 & 4）**：依製作人指示，從 `ShopModal.tsx` 徹底移除重複的「裝備鍛造」Tab，專注於「🏪 雜貨商會」與「⚔️ 專武強化」，一般裝備鍛造回歸「🛡️ 成長」鍛造坊；`.forge-grid` 與 `.gear-info b` 優化 `white-space: nowrap` 徹底消除直排折疊跑版。
+  ④ 51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。

@@ -1,50 +1,38 @@
 import { useState, type CSSProperties } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
-import { useUiStore, type ShopTab } from '../store/uiStore';
+import { useUiStore } from '../store/uiStore';
 import { ITEMS, UPGRADES, upgradeCost } from '../game/progression';
-import {
-  EQUIPMENT, SLOTS, displayName,
-  materialIcon, materialName, resolveCost, sortEquipment,
-} from '../game/equipment';
-import { RARITY_INFO, HEROES } from '../game/heroes';
+import { HEROES } from '../game/heroes';
 import { classDef } from '../game/character';
-import { describeMods } from '../game/growth';
 import {
   ALL_WEAPONS, WEAPON_MAX_LEVEL, weaponUpgradeCost, weaponAtkMultiplier,
 } from '../game/weapons';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
-// 冒險工坊：整合永久升級、戰鬥道具、裝備鍛造與專武神兵強化（第二十一輪規格）
+// 冒險工坊：整合永久升級、戰鬥道具與專武神兵強化（一般裝備鍛造在「成長」鍛造坊）
 export default function ShopModal() {
   const sv = useSaveStore();
-  const { gold, upgrades, items, buyUpgrade, buyItem, materials, character, player, unlockedIndex, weapons, weaponShards, upgradeWeapon } = sv;
+  const { gold, upgrades, items, buyUpgrade, buyItem, weapons, weaponShards, upgradeWeapon } = sv;
   const { closeModal, shopTab, openShop, openModal } = useUiStore();
-  const [tab, setTab] = useState<ShopTab>(shopTab || 'upgrades');
+  const [tab, setTab] = useState<'upgrades' | 'weapons'>(shopTab === 'weapons' ? 'weapons' : 'upgrades');
   const [shopSubTab, setShopSubTab] = useState<'upgrades' | 'items'>('upgrades');
-  const [forgeSlot, setForgeSlot] = useState<'all' | 'weapon' | 'armor' | 'accessory'>('all');
   const [weaponFilter, setWeaponFilter] = useState<'all' | 'protagonist' | 'hero'>('all');
-
-  const materialBar = (
-    <div className="material-bar" aria-label="持有鍛造素材">
-      <span title="金幣">🪙 {gold}</span>
-      <span title="鐵礦">🪨 {materials.ore ?? 0}</span>
-      <span title="布料">🧵 {materials.cloth ?? 0}</span>
-      <span title="皮革">🧶 {materials.leather ?? 0}</span>
-      <span title="原木">🪵 {materials.wood ?? 0}</span>
-      <span title="水晶">💎 {materials.crystal ?? 0}</span>
-      <span title="元素精華">✨ {materials.essence ?? 0}</span>
-      <span title="龍鱗">🐉 {materials.scale ?? 0}</span>
-    </div>
-  );
-
-  const ownedCount = (defId: string) => sv.equipment.filter(e => e.defId === defId).length;
 
   return (
     <Modal title="⚒️ 冒險工坊" onClose={closeModal}>
-      <div className="shop-header-bar">
-        <p className="shop-gold">持有金幣 <b>🪙 {gold}</b></p>
+      <div className="shop-header-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+        <p className="shop-gold" style={{ margin: 0 }}>持有金幣 <b>🪙 {gold}</b></p>
+        <button
+          className="btn btn-small btn-ghost"
+          style={{ fontSize: 12, padding: '3px 8px' }}
+          onMouseDown={keepFocus}
+          onClick={() => { closeModal(); openModal('growth'); }}
+          title="打造與升品階一般武器、防具、飾品"
+        >
+          🛡️ 前往成長鍛造坊 ➔
+        </button>
       </div>
 
       <div className="tabs" role="tablist">
@@ -56,15 +44,6 @@ export default function ShopModal() {
           onClick={() => { sfx.click(); setTab('upgrades'); openShop('upgrades'); }}
         >
           🏪 雜貨商會
-        </button>
-        <button
-          role="tab"
-          aria-selected={tab === 'forge'}
-          className={`tab ${tab === 'forge' ? 'is-active' : ''}`}
-          onMouseDown={keepFocus}
-          onClick={() => { sfx.click(); setTab('forge'); openShop('forge'); }}
-        >
-          🛡️ 裝備鍛造
         </button>
         <button
           role="tab"
@@ -150,58 +129,6 @@ export default function ShopModal() {
             </ul>
           )}
           <p className="muted shop-note">💡 打倒怪獸、通過 Boss 都能獲得金幣；就算體力耗盡，賺到的金幣也會保留。</p>
-        </>
-      )}
-
-      {tab === 'forge' && (
-        <>
-          {materialBar}
-          <div className="forge-toolbar">
-            <div className="forge-filter-tabs">
-              {([['all', '全部'], ['weapon', '⚔️ 武器'], ['armor', '🛡️ 防具'], ['accessory', '💍 飾品']] as const).map(([id, label]) => (
-                <button
-                  key={id}
-                  className={`pill ${forgeSlot === id ? 'is-on' : ''}`}
-                  onMouseDown={keepFocus}
-                  onClick={() => setForgeSlot(id)}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-            <p className="forge-tip">💡 擊倒怪物可獲取鍛造素材；重複打造同名裝備可「升品階」大幅提升威力！</p>
-          </div>
-          <ul className="forge-grid">
-            {sortEquipment(EQUIPMENT)
-              .filter(def => forgeSlot === 'all' || def.slot === forgeSlot)
-              .map(def => {
-                const charEl = character?.element ?? 'light';
-                const charClass = character?.classId ?? 'swordsman';
-                const need = resolveCost(def, charEl);
-                const regionOk = (def.requires?.regionsCleared ?? 0) <= unlockedIndex;
-                const tierOk = (def.requires?.classTier ?? 0) <= player.classPath.length;
-                const enough = Object.entries(need).every(([k, v]) => (materials[k] ?? 0) >= v) && gold >= def.cost.gold;
-                const lockText = !regionOk ? `通關 ${def.requires!.regionsCleared} 個區域後解鎖` : !tierOk ? '二轉後解鎖' : '';
-                return (
-                  <li key={def.id} className={`gear-item ${lockText ? 'is-locked' : ''}`} style={{ '--rarity': RARITY_INFO[def.rarity].color } as CSSProperties}>
-                    <span className="rarity-tag inline">{def.rarity}</span>
-                    <div className="gear-info">
-                      <b>{SLOTS.find(sl => sl.id === def.slot)?.icon} {displayName(def, charClass)}{ownedCount(def.id) > 0 && <small className="muted"> 已擁有 {ownedCount(def.id)} 件</small>}</b>
-                      <small className="muted">{describeMods(def.mods).join('、')}</small>
-                      <small className="cost-line">
-                        🪙{def.cost.gold}
-                        {Object.entries(need).map(([k, v]) => (
-                          <span key={k} className={(materials[k] ?? 0) >= v ? '' : 'short'}> {materialIcon(k)}{materialName(k)}×{v}</span>
-                        ))}
-                      </small>
-                    </div>
-                    {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
-                      : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
-                        onClick={() => { if (sv.forge(def.id)) sfx.forge(); else sfx.cantAfford(); }}>鍛造</button>}
-                  </li>
-                );
-              })}
-          </ul>
         </>
       )}
 

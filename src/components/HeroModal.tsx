@@ -59,93 +59,97 @@ export default function HeroModal() {
 
   return (
     <Modal title="⚔️ 隊伍與英雄" onClose={closeModal} wide>
-      <section className="party-slots">
-        <div className="collection-head">
-          <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b></p>
-          <span className="hero-head-actions">
-            <span className="shop-gold">🪙 {gold}</span>
-            {party.length > 1 && (
-              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected('player'); }}>全部撤下</button>
-            )}
-            <button className={`btn btn-small help-btn ${help ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus} onClick={() => setHelp(h => !h)} aria-expanded={help} aria-label="說明">?</button>
-          </span>
-        </div>
-        {help && <HeroHelp />}
-        <div className="party-row">
-          {Array.from({ length: PARTY_MAX }, (_, i) => {
-            const id = party[i];
-            const over = drag?.over === i ? 'is-drop' : '';
-            // 每一格都有出手順序的數字與底色，英雄放上去時數字還在、只是被英雄擋住一部分
-            const order = <span className="slot-num" aria-hidden>{i + 1}</span>;
-            if (!id) return <div key={i} data-slot={i} className={`party-slot slot-${i + 1} is-empty ${over}`}>{order}<small>拖曳英雄到這裡</small></div>;
-            const name = id === 'player' ? character?.name ?? '' : heroWord(heroDef(id));
-            return (
-              <button key={id} data-slot={i} className={`party-slot slot-${i + 1} ${selected === id ? 'is-selected' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
-                onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => setSelected(id))}
-                aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}>
-                {order}
-                {i === 0 && <span className="party-pos">👑</span>}
-                <img src={portraits[id]} alt="" draggable={false} />
-                <span>{name}</span>
-                {id !== 'player' && <StarBadge id={id} compact />}
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      {selected && renderDetail(selected)}
-
-      <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
-        <div className="collection-head">
-          <p className="shop-gold">📖 英雄圖鑑 <b>{heroes.length}/{HEROES.length}</b></p>
-          <button className="btn btn-primary summon-entry" onMouseDown={keepFocus} onClick={() => openModal('summon')}>
-            🔮 召喚 <small>🎫 {tickets}・SSR 保底 {summonCounter.sinceSsr}/{PITY_SSR}</small>
-          </button>
-        </div>
-        <div className="hero-filter" role="group" aria-label="篩選英雄">
-          {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
-            <button key={f} className={`pill ${filter === f ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)} aria-pressed={filter === f}>
-              {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
-            </button>
-          ))}
-        </div>
-        <ul className="hero-tiles">
-          {character && filter === 'owned' && (
-            <li>
-              <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
-                onPointerDown={start('player', portraits.player)} onClick={guardClick(() => setSelected('player'))}>
-                <img src={portraits.player} alt="" draggable={false} />
-                <b>{character.name}</b>
-                <small>主角</small>
-              </button>
-            </li>
-          )}
-          {list.map(h => {
-            const owned = heroes.includes(h.id);
-            const rarity = currentRarity(h, heroTier[h.id] ?? 0);
-            return (
-              <li key={h.id}>
-                <button
-                  className={`hero-tile ${owned ? '' : 'is-locked'} ${party.includes(h.id) ? 'in-party' : ''}`}
-                  style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}
-                  onMouseDown={keepFocus}
-                  onPointerDown={owned ? start(h.id, portraits[h.id]) : undefined}
-                  onClick={guardClick(() => setSelected(h.id))}
-                  aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
-                >
-                  <span className="rarity-tag">{rarity}</span>
-                  <img src={portraits[h.id]} alt="" draggable={false} />
-                  <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
-                  <small>{owned ? heroTitle(h) : h.meaning}</small>
-                  {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
-                  {owned && <StarBadge id={h.id} compact />}
+      <div className="hero-modal-layout">
+        <section className="party-slots party-slots-fixed">
+          <div className="collection-head">
+            <p className="shop-gold">出戰隊伍 <b>{party.length}/{PARTY_MAX}</b></p>
+            <span className="hero-head-actions">
+              <span className="shop-gold">🪙 {gold}</span>
+              {party.length > 1 && (
+                <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected('player'); }}>全部撤下</button>
+              )}
+              <button className={`btn btn-small help-btn ${help ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus} onClick={() => setHelp(h => !h)} aria-expanded={help} aria-label="說明">?</button>
+            </span>
+          </div>
+          {help && <HeroHelp />}
+          <div className="party-row">
+            {Array.from({ length: PARTY_MAX }, (_, i) => {
+              const id = party[i];
+              const over = drag?.over === i ? 'is-drop' : '';
+              // 每一格都有出手順序的數字與底色，英雄放上去時數字還在、只是被英雄擋住一部分
+              const order = <span className="slot-num" aria-hidden>{i + 1}</span>;
+              if (!id) return <div key={i} data-slot={i} className={`party-slot slot-${i + 1} is-empty ${over}`}>{order}<small>拖曳英雄到這裡</small></div>;
+              const name = id === 'player' ? character?.name ?? '' : heroWord(heroDef(id));
+              return (
+                <button key={id} data-slot={i} className={`party-slot slot-${i + 1} ${selected === id ? 'is-selected' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
+                  onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => setSelected(id))}
+                  aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}>
+                  {order}
+                  {i === 0 && <span className="party-pos">👑</span>}
+                  <img src={portraits[id]} alt="" draggable={false} />
+                  <span>{name}</span>
+                  {id !== 'player' && <StarBadge id={id} compact />}
                 </button>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+
+        <div className="hero-modal-scroll">
+          {selected && renderDetail(selected)}
+
+          <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
+            <div className="collection-head">
+              <p className="shop-gold">📖 英雄圖鑑 <b>{heroes.length}/{HEROES.length}</b></p>
+              <button className="btn btn-primary summon-entry" onMouseDown={keepFocus} onClick={() => openModal('summon')}>
+                🔮 召喚 <small>🎫 {tickets}・SSR 保底 {summonCounter.sinceSsr}/{PITY_SSR}</small>
+              </button>
+            </div>
+            <div className="hero-filter" role="group" aria-label="篩選英雄">
+              {(['owned', 'all', 'UR', 'SSR', 'SR', 'R', 'N'] as Filter[]).map(f => (
+                <button key={f} className={`pill ${filter === f ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setFilter(f)} aria-pressed={filter === f}>
+                  {f === 'owned' ? '已擁有' : f === 'all' ? '全部' : f}
+                </button>
+              ))}
+            </div>
+            <ul className="hero-tiles">
+              {character && filter === 'owned' && (
+                <li>
+                  <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
+                    onPointerDown={start('player', portraits.player)} onClick={guardClick(() => setSelected('player'))}>
+                    <img src={portraits.player} alt="" draggable={false} />
+                    <b>{character.name}</b>
+                    <small>主角</small>
+                  </button>
+                </li>
+              )}
+              {list.map(h => {
+                const owned = heroes.includes(h.id);
+                const rarity = currentRarity(h, heroTier[h.id] ?? 0);
+                return (
+                  <li key={h.id}>
+                    <button
+                      className={`hero-tile ${owned ? '' : 'is-locked'} ${party.includes(h.id) ? 'in-party' : ''}`}
+                      style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}
+                      onMouseDown={keepFocus}
+                      onPointerDown={owned ? start(h.id, portraits[h.id]) : undefined}
+                      onClick={guardClick(() => setSelected(h.id))}
+                      aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
+                    >
+                      <span className="rarity-tag">{rarity}</span>
+                      <img src={portraits[h.id]} alt="" draggable={false} />
+                      <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
+                      <small>{owned ? heroTitle(h) : h.meaning}</small>
+                      {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
+                      {owned && <StarBadge id={h.id} compact />}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        </div>
+      </div>
       {drag && createPortal(<img className="drag-ghost" src={drag.img} alt="" style={{ left: drag.x, top: drag.y }} />, document.body)}
     </Modal>
   );

@@ -137,6 +137,10 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
   - 一轉 Lv30、二轉 Lv80、三轉 Lv120、👑 終極覺醒 Lv160，等級上限階梯對應 `[40, 80, 120, 160, 200]`，徹底抹除 Lv80~150 成長真空期。
   - 五大職業擴充 20 組三轉大師職業（如秘術法皇、天變神君、十字聖裁領主、無雙萬劍皇、血戮死狂、鬥神阿修羅、死眼鷹皇、天國樞機卿等）與對應終極覺醒形態。
   - `GrowthModal` 全面支援四階樹狀分叉軌跡展示與升階目標卡片；單元測試通過。
+- ✅ **冒險工坊／英雄／召喚三重視覺痛點全面攻克（2026-11-02 製作人截圖反饋 / Antigravity）**：
+  - **隊伍視窗滾動穿透徹底解決（圖 1）**：`HeroModal.tsx` 出戰隊伍槽位（4 個格子）吸頂固定（`.party-slots-fixed`），下方建立專屬滾動容器（`.hero-modal-scroll`），`.modal-head` 提升至 `z-index: 50`，徹底根絕隊伍格子往上滾動時穿透擠進標題列、切斷重疊之 Bug。
+  - **英雄召喚與專武召喚視窗尺寸 1:1 對齊（圖 2）**：`SummonModal.tsx` 移除 `wide` 限制，統一為標準尺寸；未解鎖專武時以等高對稱骨架（鎖定法陣、機率膠囊、解鎖進度條件卡、操作按鈕）呈現，切換 Tab 外框紋絲不動、完全平穩不跳動。
+  - **工坊移除裝備鍛造並消除折行（圖 3 & 4）**：依製作人指示，從 `ShopModal.tsx`（冒險工坊）徹底移除「裝備鍛造」分頁，專注於「🏪 雜貨商會」與「⚔️ 專武強化」，頂部提供快速跳轉成長鍛造坊按鈕；`.forge-grid` 與 `.gear-info b` 樣式優化，裝備名稱全面 `white-space: nowrap` 消除直排折疊。
 - ✅ **詞族進化微特效全套實裝（PM_STATUS 2.5 節 / Antigravity）**：
   - 建立 `src/game/wordFamilies.ts`，收錄 54 組核心詞族庫（涵蓋 act、decide、create、depend、differ、protect 等在各區反覆進化的字根與衍生詞）。
   - `battleStore.ts` 答對時自動檢測詞族進化關係，在戰鬥中觸發 `wordEvolution` 狀態。

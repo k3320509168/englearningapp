@@ -15,12 +15,12 @@ const TEXT_SCALES: [number, string][] = [[1, '標準'], [1.15, '大'], [1.3, '�
 
 // 設定分成五類（第二十一輪 E6）：桌機左側分類、手機上方一排；標題與關閉按鈕固定，只有內容捲動
 type SettingTab = 'sound' | 'voice' | 'display' | 'save' | 'advanced';
-const SETTING_TABS: { id: SettingTab; icon: string; label: string }[] = [
-  { id: 'sound', icon: '🔊', label: '聲音音效' },
-  { id: 'voice', icon: '🗣️', label: '語音學習' },
-  { id: 'display', icon: '👁️', label: '顯示操作' },
-  { id: 'save', icon: '💾', label: '存檔帳號' },
-  { id: 'advanced', icon: '⚠️', label: '進階選項' },
+const SETTING_TABS: { id: SettingTab; icon: string; label: string; short: string }[] = [
+  { id: 'sound', icon: '🔊', label: '聲音音效', short: '聲音' },
+  { id: 'voice', icon: '🗣️', label: '語音學習', short: '語音' },
+  { id: 'display', icon: '👁️', label: '顯示操作', short: '操作' },
+  { id: 'save', icon: '💾', label: '存檔帳號', short: '存檔' },
+  { id: 'advanced', icon: '⚠️', label: '進階選項', short: '進階' },
 ];
 
 export default function SettingsModal() {
@@ -37,8 +37,16 @@ export default function SettingsModal() {
       <div className="settings-layout">
         <nav className="settings-nav" aria-label="設定分類">
           {SETTING_TABS.map(t => (
-            <button key={t.id} className={`settings-tab ${tab === t.id ? 'is-on' : ''}`} aria-current={tab === t.id} onMouseDown={keepFocus} onClick={() => setTab(t.id)}>
-              <span aria-hidden>{t.icon}</span>{t.label}
+            <button
+              key={t.id}
+              className={`settings-tab ${tab === t.id ? 'is-on' : ''}`}
+              aria-current={tab === t.id}
+              onMouseDown={keepFocus}
+              onClick={() => { sfx.click(); setTab(t.id); }}
+            >
+              <span aria-hidden>{t.icon}</span>
+              <span className="tab-text-full">{t.label}</span>
+              <span className="tab-text-short">{t.short}</span>
             </button>
           ))}
         </nav>
@@ -184,9 +192,13 @@ function VoicePicker() {
         </select>
       </div>
       <div className="voice-test-box">
+        <div className="voice-test-header">
+          <span className="voice-test-title">🎧 語音發音試聽：</span>
+          <span className="muted" style={{ fontSize: 11.5 }}>可驗證正常與慢速朗讀效果</span>
+        </div>
         <div className="feedback-actions">
-          <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => say(sample)}>▶ 試聽：正常速度</button>
-          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(sample, true)}>🐢 試聽：慢速</button>
+          <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { sfx.click(); say(sample); }}>▶ 試聽：正常速度</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { sfx.click(); say(sample, true); }}>🐢 試聽：慢速</button>
         </div>
         {jammed && <p className="q-silent">⚠️ 瀏覽器的發音引擎卡住了，按試聽也不會出聲。請重新整理頁面；還是不行，請完全關閉瀏覽器（Mac 按 Cmd+Q）再打開。</p>}
       </div>
@@ -212,7 +224,16 @@ function MicTest() {
   }, []);
 
   if (!isSpeechRecognitionSupported()) {
-    return <p className="muted">這個瀏覽器不支援語音辨識，口說題會自動改成拼寫題。建議使用 Chrome 或 Edge。</p>;
+    const isHttps = typeof window !== 'undefined' && window.isSecureContext;
+    return (
+      <div className="mic-notice-box">
+        <p className="muted" style={{ margin: 0, lineHeight: 1.6 }}>
+          {!isHttps
+            ? '💡 局域網 HTTP 開發預覽下，瀏覽器安全規範限制麥克風；上架至正式 HTTPS 網站後 Chrome 將全功能支援語音辨識！目前已提供拼寫模式保障順暢闖關。'
+            : '這個瀏覽器目前不支援語音辨識，口說題會自動改成拼寫題。建議使用 Chrome 或 Edge。'}
+        </p>
+      </div>
+    );
   }
   return (
     <div className="mic-test">

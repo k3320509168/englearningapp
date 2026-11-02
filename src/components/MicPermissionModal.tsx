@@ -16,9 +16,8 @@ export default function MicPermissionModal() {
   const [status, setStatus] = useState<Status>('idle');
 
   const close = () => { setMicAsked(); closeModal(); };
-  // 確定沒有麥克風可用時才轉拼寫
+  // 確定暫時無法使用麥克風時，僅將眼前題目切換為拼寫，絕不永久改寫全域設定
   const fallbackToSpelling = () => {
-    useSaveStore.getState().updateSettings({ voiceAsSpelling: true });
     useBattleStore.getState().switchToSpelling();
   };
 
@@ -38,6 +37,7 @@ export default function MicPermissionModal() {
     }
   };
 
+  const isHttps = typeof window !== 'undefined' && window.isSecureContext;
 
   return (
     <Modal title="🎤 開啟麥克風" onClose={close}>
@@ -56,15 +56,16 @@ export default function MicPermissionModal() {
           </>
         ) : status === 'denied' ? (
           <>
-            <h3>麥克風沒有開啟</h3>
-            <p>沒關係！口說題已經自動改成拼寫題，一樣可以練到這些字。之後想開啟時，點瀏覽器網址列左邊的 🔒 圖示把「麥克風」改成允許，再到設定取消「口說題改成拼寫題」。</p>
+            <h3>麥克風暫未開啟</h3>
+            <p>沒關係！當前題目已為您切換為拼寫作答，一樣可以練到這個單字。之後想開啟時，可點瀏覽器網址列左邊的圖示將「麥克風」設為允許即可！</p>
           </>
         ) : (
           <>
             <h3>麥克風暫時無法啟用</h3>
             <p style={{ lineHeight: 1.6, fontSize: 13.5 }}>
-              設備或瀏覽器目前無法讀取麥克風（在正式發布的 HTTPS 網站將支援正常語音辨識）。<br />
-              已先為您切換為拼寫作答，所有題目與關卡進度完全正常推進！之後若想開啟，可隨時在「⚙️ 設定」中切換。
+              {!isHttps
+                ? '提示：您的 Chrome 瀏覽器支援完整語音辨識！因目前為局域網 (HTTP) 開發測試，瀏覽器安全規範限制了麥克風；遊戲正式上架 (HTTPS) 後將完全支援語音！目前這道題目已切換為拼寫作答，完全不影響冒險！'
+                : '設備或瀏覽器目前無法讀取麥克風。已先為您切換為拼寫作答，所有關卡進度完全正常推進！'}
             </p>
           </>
         )}
@@ -72,7 +73,7 @@ export default function MicPermissionModal() {
       <div className="tutorial-actions">
         {status === 'idle' || status === 'asking' ? (
           <>
-            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { fallbackToSpelling(); close(); }}>先改用拼寫</button>
+            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { fallbackToSpelling(); close(); }}>本題改用拼寫</button>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={ask} disabled={status === 'asking'}>
               {status === 'asking' ? '請在瀏覽器視窗中選擇…' : '🎤 允許麥克風'}
             </button>
@@ -80,7 +81,7 @@ export default function MicPermissionModal() {
         ) : (
           <>
             <span />
-            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>繼續</button>
+            <button className="btn btn-primary" onMouseDown={keepFocus} onClick={close}>繼續冒險</button>
           </>
         )}
       </div>

@@ -38,6 +38,7 @@ export function unlockSfx() {
 if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
   window.addEventListener('pointerdown', unlockSfx, { passive: true });
   window.addEventListener('touchstart', unlockSfx, { passive: true });
+  window.addEventListener('click', unlockSfx, { passive: true });
 }
 
 export function setSfxVolume(v: number) {
@@ -63,6 +64,7 @@ interface ToneOpts {
 function tone({ type = 'square', freq, to, dur, gain = 0.2, delay = 0 }: ToneOpts) {
   const ac = ctx();
   if (!ac || !master || volume <= 0) return;
+  if (ac.state === 'suspended' && !document.hidden) void ac.resume();
   const t0 = ac.currentTime + delay;
   const osc = ac.createOscillator();
   const g = ac.createGain();
@@ -90,6 +92,7 @@ interface NoiseOpts {
 function noise({ dur, gain = 0.25, from = 4000, to = 300, delay = 0, type = 'lowpass' }: NoiseOpts) {
   const ac = ctx();
   if (!ac || !master || volume <= 0) return;
+  if (ac.state === 'suspended' && !document.hidden) void ac.resume();
   if (!noiseBuffer) {
     noiseBuffer = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
     const data = noiseBuffer.getChannelData(0);
@@ -181,43 +184,47 @@ export const sfx = {
   victory() {
     [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone({ freq: f, dur: i === 5 ? 0.4 : 0.12, gain: 0.12, delay: i * 0.11 }));
   },
-  // 升級變強音效：明快上揚的大調琶音，爽度拉滿
+  // 升級變強音效：經典 8-bit 大調方波向上琶音＋清脆尾韻，爽度十足
   upgrade() {
-    [523, 659, 784, 1047, 1319].forEach((f, i) =>
-      tone({ type: 'triangle', freq: f, dur: 0.12, gain: 0.15, delay: i * 0.05 }),
-    );
-    tone({ type: 'sine', freq: 1568, to: 2093, dur: 0.25, gain: 0.1, delay: 0.2 });
+    [523.25, 659.25, 783.99, 1046.5, 1318.51, 1567.98].forEach((f, i) => {
+      tone({ type: 'square', freq: f, dur: 0.1, gain: 0.14, delay: i * 0.045 });
+      tone({ type: 'triangle', freq: f * 2, dur: 0.12, gain: 0.08, delay: i * 0.045 });
+    });
+    tone({ type: 'sine', freq: 1568, to: 2093, dur: 0.28, gain: 0.16, delay: 0.28 });
   },
-  // 鍛造強化音效：鐵砧金屬鏗鏘 + 火花共鳴
+  // 鍛造強化音效：鐵砧重擊金屬鏗鏘 + 火花共鳴
   forge() {
-    noise({ dur: 0.2, gain: 0.35, from: 8000, to: 1500, type: 'bandpass' });
-    tone({ type: 'sawtooth', freq: 659, to: 330, dur: 0.15, gain: 0.2 });
-    tone({ type: 'sine', freq: 1319, to: 2637, dur: 0.28, gain: 0.15, delay: 0.05 });
+    noise({ dur: 0.16, gain: 0.38, from: 7000, to: 1200, type: 'bandpass' });
+    tone({ type: 'square', freq: 440, to: 220, dur: 0.12, gain: 0.22 });
+    tone({ type: 'sawtooth', freq: 880, to: 440, dur: 0.18, gain: 0.16, delay: 0.04 });
+    tone({ type: 'sine', freq: 1319, to: 2637, dur: 0.3, gain: 0.18, delay: 0.08 });
   },
-  // 英雄升星／突破／晉升神話 UR 音效：華麗史詩三和弦＋衝霄高音
+  // 英雄升星／突破／晉升神話 UR 音效：華麗史詩大調和弦＋衝霄光芒
   starUp() {
-    [392, 523, 659, 784, 1047, 1319, 1568].forEach((f, i) =>
-      tone({ type: 'triangle', freq: f, dur: 0.18, gain: 0.16, delay: i * 0.04 }),
-    );
-    tone({ type: 'sine', freq: 1047, to: 2093, dur: 0.45, gain: 0.18, delay: 0.25 });
-    noise({ dur: 0.3, gain: 0.15, from: 3000, to: 8000, type: 'bandpass', delay: 0.1 });
+    [392, 523, 659, 784, 1047, 1319, 1568, 2093].forEach((f, i) => {
+      tone({ type: 'square', freq: f, dur: 0.12, gain: 0.13, delay: i * 0.038 });
+      tone({ type: 'triangle', freq: f, dur: 0.16, gain: 0.1, delay: i * 0.038 });
+    });
+    tone({ type: 'sine', freq: 1047, to: 2093, dur: 0.5, gain: 0.22, delay: 0.32 });
+    noise({ dur: 0.35, gain: 0.2, from: 3500, to: 9000, type: 'bandpass', delay: 0.15 });
   },
-  // 領取獎勵（每日任務、地圖精通、登入獎勵）：清脆叮咚雙音
+  // 領取獎勵（每日任務、地圖精通、登入獎勵）：清脆明快的「叮鈴鈴」入袋音效
   claim() {
-    tone({ type: 'triangle', freq: 880, dur: 0.1, gain: 0.15 });
-    tone({ type: 'sine', freq: 1318.5, dur: 0.25, gain: 0.2, delay: 0.08 });
-    tone({ type: 'sine', freq: 1760, dur: 0.35, gain: 0.15, delay: 0.16 });
+    tone({ type: 'square', freq: 987.77, dur: 0.08, gain: 0.12 });
+    tone({ type: 'square', freq: 1318.51, dur: 0.14, gain: 0.15, delay: 0.06 });
+    tone({ type: 'sine', freq: 1975.53, dur: 0.26, gain: 0.18, delay: 0.12 });
   },
   // 召喚抽卡發動：聚能音
   summonPull() {
-    tone({ type: 'sine', freq: 220, to: 880, dur: 0.35, gain: 0.18 });
-    tone({ type: 'triangle', freq: 440, to: 1320, dur: 0.4, gain: 0.15, delay: 0.05 });
+    tone({ type: 'sine', freq: 220, to: 880, dur: 0.35, gain: 0.2 });
+    tone({ type: 'sawtooth', freq: 330, to: 1320, dur: 0.4, gain: 0.14, delay: 0.05 });
   },
-  // 金幣不足或條件不符：輕微鈍音提示，不吵但有反饋
+  // 金幣不足或條件不符：清晰鈍音反饋，告知操作已觸發但資源不夠
   cantAfford() {
-    tone({ type: 'square', freq: 150, to: 100, dur: 0.08, gain: 0.1 });
+    tone({ type: 'square', freq: 220, to: 130, dur: 0.09, gain: 0.15 });
+    tone({ type: 'square', freq: 160, to: 110, dur: 0.12, gain: 0.15, delay: 0.09 });
   },
   click() {
-    tone({ freq: 700, dur: 0.03, gain: 0.06 });
+    tone({ type: 'square', freq: 720, dur: 0.035, gain: 0.08 });
   },
 };

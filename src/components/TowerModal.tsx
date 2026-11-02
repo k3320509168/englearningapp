@@ -8,6 +8,7 @@ import { REGIONS } from '../game/regions';
 import { heroDef, heroWord } from '../game/heroes';
 import { heroDataUrl } from '../game/art/sprites';
 import type { Question } from '../game/types';
+import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
 // 英雄時空之塔與無盡之塔：每層 5 題、答對 4 題通過。
@@ -37,6 +38,7 @@ export default function TowerModal() {
     if (!questions || s.answered < questions.length) return;
     const paid = s.correct >= TOWER_PASS ? clearTowerFloor(floor, hero) : null;
     if (paid) {
+      sfx.victory();
       setResult('pass');
       useUiStore.getState().celebrate({
         icon: isEndless ? '🌌' : '🗼',
@@ -44,7 +46,10 @@ export default function TowerModal() {
         sub: `${hero ? `${heroWord(heroDef(hero))} 碎片` : '願望碎片'} +${reward.shards}、🪙 ${paid.gold}${paid.tickets ? `、🎫 召喚券 +${paid.tickets}` : ''}、EXP ${paid.xp}${paid.bonus > 0 ? `（追趕祝福 +25%，多得${paid.bonus}）` : ''}${paid.allowanceGold > 0 ? `（含修練津貼${paid.allowanceGold}）` : ''}`,
         img: hero ? heroDataUrl(hero, 4) : undefined, color: '#c9a8ff',
       });
-    } else setResult(s.correct >= TOWER_PASS ? 'pass' : 'fail');
+    } else {
+      if (s.correct >= TOWER_PASS) sfx.victory(); else sfx.wrong();
+      setResult(s.correct >= TOWER_PASS ? 'pass' : 'fail');
+    }
   };
 
   return (

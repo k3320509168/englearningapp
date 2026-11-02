@@ -141,7 +141,7 @@ export default function ShopModal() {
                   key={id}
                   className={`pill ${weaponFilter === id ? 'is-on' : ''}`}
                   onMouseDown={keepFocus}
-                  onClick={() => setWeaponFilter(id)}
+                  onClick={() => { sfx.click(); setWeaponFilter(id); }}
                 >
                   {label}
                 </button>
@@ -214,6 +214,7 @@ export default function ShopModal() {
                           disabled={!canUpgrade}
                           onClick={() => {
                             if (upgradeWeapon(wp.id)) sfx.forge();
+                            else sfx.cantAfford();
                           }}
                         >
                           {isMax ? '★ 已滿級' : '強化神兵'}

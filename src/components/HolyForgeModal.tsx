@@ -38,7 +38,10 @@ export default function HolyForgeModal() {
       sfx.starUp();
       setResult('ok');
       useUiStore.getState().celebrate({ icon: '✨', title: '神聖鍛造成功！', sub: `${def && character ? displayName(def, character.classId) : ''} +${item.plus + 1}，得到神聖加護`, color: '#ffcd4b' });
-    } else setResult('miss');
+    } else {
+      sfx.wrong();
+      setResult('miss');
+    }
   };
 
   const back = () => { closeModal(); openGrowth('gear'); };

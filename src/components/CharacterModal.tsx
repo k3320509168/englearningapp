@@ -39,11 +39,10 @@ export default function CharacterModal() {
     setCharacter({ ...draft, name: cleanName(draft.name) });
     closeModal();
     if (!isNew) return;
-    const { tutorialDone, micAsked } = useSaveStore.getState();
+    const { tutorialDone } = useSaveStore.getState();
     // 新玩家：先看序章，序章結束後再接新手引導與麥克風
     if (!useSaveStore.getState().storySeen.includes('prologue')) useUiStore.getState().openStory('prologue');
     else if (!tutorialDone) openModal('tutorial');
-    else if (!micAsked) openModal('mic');
   };
 
   const randomize = () => {

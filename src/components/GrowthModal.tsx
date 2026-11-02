@@ -124,7 +124,7 @@ export default function GrowthModal() {
             {renderAdvance()}
             <ClassTree classId={character.classId} path={player.classPath} />
             {player.classPath.length > 0 && (
-              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => sv.resetClassPath()}>
+              <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { sfx.coin(); sv.resetClassPath(); }}>
                 ↺ 重置這個職業的路線{character.classId !== (sv.homeClass ?? character.classId) ? `（退回 🎖️ ${pathBadgeCost(player.classPath)}）` : ''}
               </button>
             )}
@@ -201,7 +201,7 @@ export default function GrowthModal() {
                   )}
                   {grade < MAX_GRADE && (
                     <button className="btn btn-small" onMouseDown={keepFocus} disabled={!hasMaterial}
-                      onClick={() => { if (sv.gradeUp(item.uid)) sfx.starUp(); }}
+                      onClick={() => { if (sv.gradeUp(item.uid)) sfx.starUp(); else sfx.cantAfford(); }}
                       title={hasMaterial ? '用掉一件沒穿在身上的同名裝備：效果 +20%、強化上限 +2（稀有度不變）' : '需要一件沒穿在身上的同名裝備（可以到鍛造坊再打造一件）'}>
                       ★ 升品階 {grade}→{grade + 1}
                     </button>
@@ -264,7 +264,7 @@ export default function GrowthModal() {
                     </div>
                     {lockText ? <span className="muted lock-text">🔒 {lockText}</span>
                       : <button className="btn btn-small btn-primary" onMouseDown={keepFocus} disabled={!enough}
-                        onClick={() => { if (sv.forge(def.id)) sfx.forge(); }}>鍛造</button>}
+                        onClick={() => { if (sv.forge(def.id)) sfx.forge(); else sfx.cantAfford(); }}>鍛造</button>}
                   </li>
                 );
               })}

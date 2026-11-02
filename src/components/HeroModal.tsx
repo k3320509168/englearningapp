@@ -82,7 +82,7 @@ export default function HeroModal() {
               const name = id === 'player' ? character?.name ?? '' : heroWord(heroDef(id));
               return (
                 <button key={id} data-slot={i} className={`party-slot slot-${i + 1} ${selected === id ? 'is-selected' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
-                  onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => setSelected(id))}
+                  onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => { sfx.click(); setSelected(id); })}
                   aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}>
                   {order}
                   {i === 0 && <span className="party-pos">👑</span>}
@@ -116,7 +116,7 @@ export default function HeroModal() {
               {character && filter === 'owned' && (
                 <li>
                   <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
-                    onPointerDown={start('player', portraits.player)} onClick={guardClick(() => setSelected('player'))}>
+                    onPointerDown={start('player', portraits.player)} onClick={guardClick(() => { sfx.click(); setSelected('player'); })}>
                     <img src={portraits.player} alt="" draggable={false} />
                     <b>{character.name}</b>
                     <small>主角</small>
@@ -133,7 +133,7 @@ export default function HeroModal() {
                       style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}
                       onMouseDown={keepFocus}
                       onPointerDown={owned ? start(h.id, portraits[h.id]) : undefined}
-                      onClick={guardClick(() => setSelected(h.id))}
+                      onClick={guardClick(() => { sfx.click(); setSelected(h.id); })}
                       aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
                     >
                       <span className="rarity-tag">{rarity}</span>
@@ -243,8 +243,8 @@ export default function HeroModal() {
               <div className="hd-actions">
                 {/* 第十五輪：一鍵訓練是主要按鈕，其他次要；離隊移到養成分頁最下面 */}
                 <span className="hd-train">
-                  <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.upgrade(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
-                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.upgrade(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
+                  <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.upgrade(); else sfx.cantAfford(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
+                  <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.upgrade(); else sfx.cantAfford(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
                   {(levelCap || gold < cost) && <small className="req-no">{levelCap ? `最高到主角 Lv ${player.level}` : `還差 🪙${cost - gold}`}</small>}
                 </span>
                 {renderMemberButtons(id, inParty, pos, full)}
@@ -255,8 +255,8 @@ export default function HeroModal() {
         </div>
 
         <div className="hd-tabs" role="tablist">
-          <button role="tab" aria-selected={tab === 'skills'} className={`pill ${tab === 'skills' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('skills')}>技能</button>
-          {owned && <button role="tab" aria-selected={tab === 'growth'} className={`pill ${tab === 'growth' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => setTab('growth')}>養成{(canStar && starReqs.every(r => r.ok)) || (tier === 0 && tierReqs.every(r => r.ok)) ? ' ●' : ''}</button>}
+          <button role="tab" aria-selected={tab === 'skills'} className={`pill ${tab === 'skills' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => { sfx.click(); setTab('skills'); }}>技能</button>
+          {owned && <button role="tab" aria-selected={tab === 'growth'} className={`pill ${tab === 'growth' ? 'is-on' : ''}`} onMouseDown={keepFocus} onClick={() => { sfx.click(); setTab('growth'); }}>養成{(canStar && starReqs.every(r => r.ok)) || (tier === 0 && tierReqs.every(r => r.ok)) ? ' ●' : ''}</button>}
         </div>
 
         {(tab === 'skills' || !owned) ? (
@@ -428,6 +428,7 @@ function WeaponSlot({ heroId, classId }: { heroId?: string; classId?: ClassId })
                 onClick={(e) => {
                   e.stopPropagation();
                   if (upgradeWeapon(wp.id)) sfx.forge();
+                  else sfx.cantAfford();
                 }}
                 disabled={!canUpgrade}
                 title={`強化需要 ${cost.shards} 碎片、🪙${cost.gold}`}

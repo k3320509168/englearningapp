@@ -53,36 +53,33 @@ export default function SummonModal() {
   const heroResultsRef = useRef<HTMLElement | null>(null);
   const weaponResultsRef = useRef<HTMLElement | null>(null);
 
-  // 英雄抽卡結果自動平滑滑動到底部結果區，保證使用者第一時間看到抽到的卡牌
+  // 抽卡結果平滑自動滾動到視野正中，第一時間展示抽卡驚喜
+  const scrollToTarget = (el: HTMLElement | null) => {
+    if (!el) return;
+    const modalEl = el.closest('.modal') as HTMLElement | null;
+    if (modalEl) {
+      const modalRect = modalEl.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      const targetTop = modalEl.scrollTop + (elRect.top - modalRect.top) - 50;
+      modalEl.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+
+  // 英雄抽卡結果自動滑動到底部結果區
   useEffect(() => {
     if (!results || results.length === 0) return;
-    const timer = setTimeout(() => {
-      const el = heroResultsRef.current;
-      if (!el) return;
-      const modalEl = el.closest('.modal') as HTMLElement | null;
-      if (modalEl) {
-        modalEl.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 50);
-    return () => clearTimeout(timer);
+    const t1 = setTimeout(() => scrollToTarget(heroResultsRef.current), 60);
+    const t2 = setTimeout(() => scrollToTarget(heroResultsRef.current), 200);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [results]);
 
-  // 專武抽卡結果自動平滑滑動
+  // 專武抽卡結果自動滑動
   useEffect(() => {
     if (!weaponResults || weaponResults.length === 0) return;
-    const timer = setTimeout(() => {
-      const el = weaponResultsRef.current;
-      if (!el) return;
-      const modalEl = el.closest('.modal') as HTMLElement | null;
-      if (modalEl) {
-        modalEl.scrollTo({ top: el.offsetTop - 30, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 50);
-    return () => clearTimeout(timer);
+    const t1 = setTimeout(() => scrollToTarget(weaponResultsRef.current), 60);
+    const t2 = setTimeout(() => scrollToTarget(weaponResultsRef.current), 200);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [weaponResults]);
 
   const pull = (count: number) => {
@@ -238,7 +235,7 @@ export default function SummonModal() {
                   <button
                     className="btn btn-small btn-ghost buy-ticket-btn"
                     onMouseDown={keepFocus}
-                    onClick={() => { if (buyWeaponTicket()) sfx.coin(); }}
+                    onClick={() => { if (buyWeaponTicket()) sfx.coin(); else sfx.cantAfford(); }}
                     disabled={gold < WEAPON_TICKET_GOLD_PRICE || weaponBoughtThisWeek >= WEAPON_TICKET_BUY_WEEKLY}
                     title="每週可在商會用金幣兌換 2 張專武券"
                   >
@@ -334,7 +331,7 @@ export default function SummonModal() {
                 <button
                   className="btn btn-small btn-ghost buy-ticket-btn"
                   onMouseDown={keepFocus}
-                  onClick={buyTicket}
+                  onClick={() => { if (buyTicket()) sfx.coin(); else sfx.cantAfford(); }}
                   disabled={gold < TICKET_GOLD_PRICE || boughtThisWeek >= TICKET_BUY_WEEKLY}
                   title="每週可在商會用金幣兌換 5 張召喚券"
                 >

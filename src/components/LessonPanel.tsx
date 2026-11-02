@@ -35,17 +35,18 @@ export default function LessonPanel() {
 
   const modal = useUiStore(s => s.modal);
 
-  // 翻到新卡片時自動唸出單字、聽力或口說句子（劇情播放中絕不搶先發音）
+  // 翻到新卡片時自動唸出單字、聽力或口說句子（劇情播放中或任何視窗打開時絕不搶先發音）
   useEffect(() => {
     if (modal) return;
     const timer = setTimeout(() => {
+      // 二次檢查：如果在此期間觸發了劇情對話或視窗，絕對不發聲
       if (useUiStore.getState().modal) return;
       if (card?.kind === 'word') {
         say(card.word.display);
       } else if (card?.kind === 'grammar' && (card.grammar.tag === '聽力' || card.grammar.tag === '口說') && card.grammar.audio) {
         say(card.grammar.audio);
       }
-    }, 60);
+    }, 120);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [card, modal]);

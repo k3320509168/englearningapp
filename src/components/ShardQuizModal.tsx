@@ -6,6 +6,7 @@ import { useUiStore } from '../store/uiStore';
 import { LEVELS, getPool } from '../game/QuestionData';
 import { shuffleArray } from '../game/battle';
 import type { Question } from '../game/types';
+import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
 // 每日碎片英文題：從目前最前線區域出 5 題，每答對一題得到 2 片願望碎片（任何英雄升星、升品階都能用）
@@ -28,7 +29,10 @@ export default function ShardQuizModal() {
     if (questions && s.answered >= questions.length) {
       const g = finishShardQuiz(s.correct);
       setGained(g);
-      if (g > 0) useUiStore.getState().celebrate({ icon: '💎', title: `願望碎片 +${g}`, sub: '可以用在任何英雄的升星與升品階', color: '#7fe8ff' });
+      if (g > 0) {
+        sfx.victory();
+        useUiStore.getState().celebrate({ icon: '💎', title: `願望碎片 +${g}`, sub: '可以用在任何英雄的升星與升品階', color: '#7fe8ff' });
+      }
     }
   };
 

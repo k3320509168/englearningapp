@@ -162,7 +162,7 @@ export default function BattleHUD() {
       <WordEvolutionBanner />
       <BonusBar />
       <TimerBars />
-      {phase === 'lesson' && modal !== 'story' && <LessonPanel />}
+      {phase === 'lesson' && !modal && <LessonPanel />}
       {phase === 'casting' && <CastConfirm />}
       {(phase === 'answering' || phase === 'casting') && <AnswerPanel question={question} />}
       {phase === 'feedback' && <FeedbackPanel />}
@@ -430,9 +430,8 @@ function ChoiceAnswer({ question }: { question: Question }) {
   );
 }
 
-// 改用拼寫：眼前這題立刻轉成拼寫，並打開「口說題改成拼寫題」設定（之後的關卡也適用）
+// 改用拼寫：眼前這題立刻轉成拼寫作答（依使用者指令：不預設修改全域設定，下一題仍維持正常口說題）
 function switchVoiceToSpelling() {
-  useSaveStore.getState().updateSettings({ voiceAsSpelling: true });
   useBattleStore.getState().switchToSpelling();
 }
 

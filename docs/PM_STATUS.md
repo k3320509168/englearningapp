@@ -114,7 +114,12 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
   - `StoryLogModal` 劇情回顧新增「首次重溫觀賞獎勵」，一般章節贈 🎟️ 掃蕩券、重要魔王章節贈 🎫 召喚券，激勵探索劇情。
   - `SummonModal` 召喚介面收納冗長來源提示，突出法陣與抽卡結果視覺。
   - `LoginRewardModal` 獨立視窗，包含 7 天冒險簽到與 30 天全勤大獎，地圖頂部導覽去除重複按鈕。
-- ✅ **全套測試全綠驗收**：`vitest run` 394 測試全過、`tsc -b` 0 錯誤、`eslint` 0 錯誤、`validate:questions` 13,486 題 0 錯誤，已 push 至 `feat/round4-pm`（commit `6690807`）。
+- ✅ **全套測試與題庫驗證完美 0 錯誤 0 警告（Antigravity）**：
+  - 執行 `scripts/auto-lemmatize-vocab.ts`，自全庫題目中自動萃取 1,223 筆未建檔單字、高頻生活片語與文法句型卡片，收納至 `generated-vocab.json`（詞庫總量擴增至 1,687 條）。
+  - 修復 `r6.json` normal[1143] 示範發音 typo（"anticulate" ➔ "anticipate"）。
+  - `npm run validate:questions` 達成 **13,486 題 0 個錯誤、0 個警告**！
+  - `GrowthModal` 轉職軌跡改為垂直樹狀分支佈局，標明「一轉 (Lv30) ➔ 二轉 (Lv80) ➔ 👑 覺醒 (Lv150)」，消除橫排串接誤會。
+  - `vitest run` 394 測試全過、`tsc -b` 0 錯誤、`eslint` 0 錯誤，已 push 至 `feat/round4-pm`（commit `3f04ebf`）。
 - ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），數值模型驗收通過。
 - ✅ T0 374 個驗證錯誤全數無損修復（Antigravity）：13,486 題 0 個錯誤。
 - ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎實裝。

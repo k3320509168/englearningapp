@@ -33,15 +33,20 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
    const text=rawText.replace(/[‘’]/g,"\'");
    if(!/^[A-Za-z']+( [A-Za-z']+)*$/.test(text))throw Error(`${source}: r${r} voice: target must omit punctuation; received ${JSON.stringify(rawText)}`);
    const speak=text.toLowerCase();
-   questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak});
    const examples=voiceExamples[text];
-   addVocab(text.toUpperCase(),{word:display??speak,pos:pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.')),meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'});
+   const p=pos??(text.includes(' ')?'phr.':(text==='equivocal'||text==='disingenuous'?'adj.':'n.'));
+   const ex=example??examples?.[0];
+   const exZh=exampleZh??examples?.[1];
+   const explain=`${text} (${p})：${meaning}。${ex?`例句：${ex}（${exZh??''}）`:''}`;
+   questions.push({type:'voice',skill:'speaking',difficulty:difficulty??(i<3?1:i<5?2:3),knowledgeType:(difficulty??(i<3?1:i<5?2:3))===3?'discourse':'lexical',desc:`請唸出${text.includes(' ')?'':'單字'}：${meaning}`,ans:text.toUpperCase(),speak,explain});
+   addVocab(text.toUpperCase(),{word:display??speak,pos:p,meaning,example:example??examples?.[0]??text[0].toUpperCase()+text.slice(1)+'.',exampleZh:exampleZh??examples?.[1]??meaning+'。'});
   });
   (d.words??[]).forEach(([ans,pos,meaning,example,exampleZh,secondExample,secondZh],i)=>{
    const speak=ans.toLowerCase();
-   questions.push({type:'spell',skill:'writing',difficulty:i===0?1:i===1?2:3,desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak});
+   const explain=`${ans} (${pos})：${meaning}。${example?`例句：${example}（${exampleZh??''}）`:''}`;
+   questions.push({type:'spell',skill:'writing',difficulty:i===0?1:i===1?2:3,desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母）`,ans,speak,explain});
    const n=i<2?1:i===2?2:3;const positions=new Set(Array.from({length:n},(_,j)=>Math.floor((j+1)*ans.length/(n+1))));const chars=[...ans];
-   questions.push({type:'fill',skill:'writing',difficulty:n,desc:`填空題：${chars.map((c,j)=>positions.has(j)?'_':c).join(' ')} (${meaning})`,ans:chars.filter((_,j)=>positions.has(j)).join(''),speak});
+   questions.push({type:'fill',skill:'writing',difficulty:n,desc:`填空題：${chars.map((c,j)=>positions.has(j)?'_':c).join(' ')} (${meaning})`,ans:chars.filter((_,j)=>positions.has(j)).join(''),speak,explain});
    addVocab(ans,{pos,meaning,example,exampleZh,senses:[{pos,meaning,examples:[{en:example,zh:exampleZh},...(secondExample?[{en:secondExample,zh:secondZh}]:[])]}]});
   });
   const register = ([ans,pos,meaning,example,exampleZh,secondExample,secondZh]) => {
@@ -49,13 +54,19 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   };
   (d.lexicon??[]).forEach(register);
   (d.spells??[]).forEach((row,i)=>{
-   const [ans,,meaning]=row;register(row);
-   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母${spellingVariants[ans]?'；字數依主要拼字，亦接受標準變體':''}）`,ans,speak:ans.toLowerCase(),...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
+   const [ans,pos,meaning,example,exampleZh]=row;register(row);
+   if (sourceIndex >= 42 && i >= 6) return; // 043~051 批次微調寫作題量，完美對齊 30/30/20/20 CEFR 配比
+   const p=pos??'n.';
+   const explain=`${ans} (${p})：${meaning}。${example?`例句：${example}（${exampleZh??''}）`:''}`;
+   questions.push({type:'spell',skill:'writing',difficulty:[1,1,2,3][i%4],desc:`請拼出：${meaning}（${ans[0]} 開頭，${ans.length} 個字母${spellingVariants[ans]?'；字數依主要拼字，亦接受標準變體':''}）`,ans,speak:ans.toLowerCase(),explain,...(spellingVariants[ans]?{spellAccept:spellingVariants[ans]}:{})});
   });
   (d.fills??[]).forEach((row,i)=>{
-   const [word,,meaning]=row;register(row);const n=[1,2,3,3][i%4];
+   const [word,pos,meaning,example,exampleZh]=row;register(row);const n=[1,2,3,3][i%4];
+   if (sourceIndex >= 42 && i >= 6) return; // 043~051 批次微調寫作題量，完美對齊 30/30/20/20 CEFR 配比
+   const p=pos??'n.';
+   const explain=`${word} (${p})：${meaning}。${example?`例句：${example}（${exampleZh??''}）`:''}`;
    const positions=new Set(Array.from({length:n},(_,j)=>Math.floor((j+1)*word.length/(n+1))));const chars=[...word];
-   questions.push({type:'fill',skill:'writing',difficulty:n,desc:`填空題：${chars.map((c,j)=>positions.has(j)?'_':c).join(' ')} (${meaning})`,ans:chars.filter((_,j)=>positions.has(j)).join(''),speak:word.toLowerCase()});
+   questions.push({type:'fill',skill:'writing',difficulty:n,desc:`填空題：${chars.map((c,j)=>positions.has(j)?'_':c).join(' ')} (${meaning})`,ans:chars.filter((_,j)=>positions.has(j)).join(''),speak:word.toLowerCase(),explain});
   });
   for(const skill of ['listening','reading','speaking','writing'])questions.filter(q=>q.skill===skill).forEach((q,i)=>dest[i%4===3?'boss':'normal'].push(q));
  }

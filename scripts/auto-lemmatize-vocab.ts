@@ -1,7 +1,6 @@
 // 執行方式：npx tsx scripts/auto-lemmatize-vocab.ts
-// 功能：從全部題庫中自動萃取未建檔單字、高頻生活片語、文法句型與選擇題字彙，
-// 自動補充到 generated-vocab.json 與對應詞庫，消除 validate:questions 警告，
-// 並讓冒險圖鑑與錯題本能完整查閱所有題目的單字/片語卡片！
+// 功能：從全部題庫與分區詞庫中自動萃取未建檔單字、高頻生活片語、文法句型與選擇題字彙，
+// 全面補充至 generated-vocab.json，讓冒險圖鑑、錯題本與戰鬥結算能完整查閱所有單字/片語卡片！
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -64,11 +63,34 @@ function determinePos(text: string): string {
 let addedCount = 0;
 const newEntries: Record<string, VocabEntry> = { ...currentGenVocab };
 
+// 1. 先將全部分區 vocab-r0 ~ vocab-r8 的詞條完整同步入 newEntries
+for (let r = 0; r <= 8; r++) {
+  try {
+    const vrPath = resolve(process.cwd(), `src/game/questions/bank/vocab-r${r}.json`);
+    const vr = JSON.parse(readFileSync(vrPath, 'utf-8'));
+    for (const [rawKey, entry] of Object.entries<any>(vr)) {
+      const canonical = rawKey.replace(/^R\d+:/, '').toUpperCase();
+      if (!newEntries[canonical]) {
+        newEntries[canonical] = {
+          word: entry.word ?? canonical.toLowerCase(),
+          pos: entry.pos ?? (canonical.includes(' ') ? 'phr.' : 'n.'),
+          meaning: entry.meaning ?? '',
+          example: entry.example ?? (entry.senses?.[0]?.examples?.[0]?.en || `${canonical.toLowerCase()}.`),
+          exampleZh: entry.exampleZh ?? (entry.senses?.[0]?.examples?.[0]?.zh || `${entry.meaning || ''}。`),
+          senses: entry.senses,
+        };
+        addedCount++;
+      }
+    }
+  } catch {}
+}
+
 // 基礎功能詞列表（不單獨萃取為高階字典卡）
 const STOP_WORDS = new Set([
   'THE', 'AND', 'FOR', 'ARE', 'BUT', 'NOT', 'YOU', 'ALL', 'ANY', 'CAN', 'HAD', 'HER', 'WAS', 'ONE', 'OUR', 'OUT', 'DAY', 'GET', 'HAS', 'HIM', 'HIS', 'HOW', 'MAN', 'NEW', 'NOW', 'OLD', 'SEE', 'TWO', 'WAY', 'WHO', 'BOY', 'DID', 'ITS', 'LET', 'PUT', 'SAY', 'SHE', 'TOO', 'USE', 'THAT', 'THIS', 'WITH', 'FROM', 'HAVE', 'THEY', 'BEEN', 'WERE'
 ]);
 
+// 2. 掃描題目池，為選擇題中的高階單字/片語萃取字典卡
 for (const [, pool] of Object.entries(QUESTION_POOL)) {
   const allQ = [...pool.normal, ...pool.boss];
   for (const q of allQ) {
@@ -92,8 +114,10 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
 
     if (!key) continue;
 
-    if (!VOCAB[key] && !newEntries[key]) {
-      let word = key.toLowerCase();
+    const canonicalKey = key.replace(/^R\d+:/, '').toUpperCase();
+
+    if (!newEntries[canonicalKey]) {
+      let word = canonicalKey.toLowerCase();
       let meaning = '';
       let pos = 'n.';
       let example = `${word.charAt(0).toUpperCase() + word.slice(1)}.`;
@@ -101,8 +125,7 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
 
       if (q.type === 'choice') {
         meaning = extractMeaningFromExplain(q.explain, word);
-        pos = key.includes(' ') ? 'phr.' : guessPos(word);
-        // 若題幹含有底線挖空，將挖空處填入該單字製成完整例句
+        pos = canonicalKey.includes(' ') ? 'phr.' : guessPos(word);
         if (q.desc.includes('___')) {
           const cleanDesc = q.desc.replace(/【[^】]+】/g, '').replace(/🎧\s*/g, '').trim();
           example = cleanDesc.replace(/_{2,}/g, word);
@@ -112,15 +135,15 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
           exampleZh = `此語境充分體現了「${meaning}」的核心意涵。`;
         }
       } else {
-        meaning = extractMeaning(q.desc) || q.explain || key;
+        meaning = extractMeaning(q.desc) || q.explain || canonicalKey;
         const speak = q.speak || q.ans.toLowerCase();
         word = speak;
         pos = determinePos(speak);
-        example = q.speak ? (q.speak.endsWith('.') || q.speak.endsWith('?') ? q.speak : `${q.speak.charAt(0).toUpperCase() + q.speak.slice(1)}.`) : `${key.toLowerCase()}.`;
+        example = q.speak ? (q.speak.endsWith('.') || q.speak.endsWith('?') ? q.speak : `${q.speak.charAt(0).toUpperCase() + q.speak.slice(1)}.`) : `${canonicalKey.toLowerCase()}.`;
         exampleZh = meaning.endsWith('。') || meaning.endsWith('？') ? meaning : `${meaning}。`;
       }
 
-      newEntries[key] = {
+      newEntries[canonicalKey] = {
         word,
         pos,
         meaning,
@@ -128,7 +151,6 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
         exampleZh,
       };
 
-      VOCAB[key] = newEntries[key];
       addedCount++;
     }
   }

@@ -56,12 +56,12 @@ export default function SummonModal() {
   // 抽卡結果平滑自動滾動到視野正中，第一時間展示抽卡驚喜
   const scrollToTarget = (el: HTMLElement | null) => {
     if (!el) return;
-    const modalEl = el.closest('.modal') as HTMLElement | null;
-    if (modalEl) {
-      const modalRect = modalEl.getBoundingClientRect();
+    const scrollContainer = (el.closest('.modal-body') || el.closest('.modal')) as HTMLElement | null;
+    if (scrollContainer) {
+      const containerRect = scrollContainer.getBoundingClientRect();
       const elRect = el.getBoundingClientRect();
-      const targetTop = modalEl.scrollTop + (elRect.top - modalRect.top) - 50;
-      modalEl.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+      const targetTop = scrollContainer.scrollTop + (elRect.top - containerRect.top) - 20;
+      scrollContainer.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
     }
     el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   };

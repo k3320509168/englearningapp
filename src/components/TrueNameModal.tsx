@@ -118,6 +118,7 @@ function TrialPanel({ question, onPass, onRetry }: { question: TrialQuestion; on
   const voiceAsSpelling = useSaveStore(s => s.settings.voiceAsSpelling);
   // 沒有麥克風（或設定暫不使用）時，發音考驗改成「聽寫」
   const dictation = question.kind === 'voice' && (!isSpeechRecognitionSupported() || voiceAsSpelling);
+  const speakText = question.speak || (dictation ? question.answer : undefined);
 
   const judge = (given: string, correct: boolean) => {
     setResult({ correct, given });
@@ -143,10 +144,10 @@ function TrialPanel({ question, onPass, onRetry }: { question: TrialQuestion; on
     <section className="trial-panel">
       <p className="trial-prompt">{dictation ? '聽發音，拼出這個字' : question.prompt}</p>
       {question.sub && !dictation && <p className="muted">{question.sub}</p>}
-      {question.speak && question.kind !== 'type' || dictation ? (
+      {speakText && (question.kind !== 'type' || dictation) ? (
         <span className="feedback-actions">
-          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(question.speak)}>🔊 聽發音</button>
-          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(question.speak, true)}>🐢 慢速</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(speakText)}>🔊 聽發音</button>
+          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(speakText, true)}>🐢 慢速</button>
         </span>
       ) : null}
 

@@ -333,3 +333,25 @@
      - `vocabByKey` 實裝原始鍵、大寫、底線、去標點與小寫多重容錯回退，徹底根除大小寫不一致導致單字學習卡（`WordStudy.tsx`）空白未渲染的潛在 Bug；
      - `CodexItem` 帶有明確 `vocabKey`，確保圖鑑卡片詳情點擊「📖 單字卡」100% 成功展開。
   ⑦ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-03 Antigravity｜真機全尺寸視覺審核（CDP 30 張截圖）＋全域遮罩深藍毛玻璃＋6 大介面與隱蔽 Bug 打磨交付：
+  ① **全域彈窗深藍毛玻璃遮罩升級（`src/index.css`）**：
+     - `.modal-backdrop` 實裝 `backdrop-filter: blur(8px)` 與 `rgba(5, 6, 18, 0.82)`，徹底消除底層地圖文字、征途大按鈕與工具列文字穿透干擾，所有彈窗立體感與高級感大幅躍升。
+     - 手機端（375px）邊距縮窄為 `8px 6px`，可視寬度提升至 363px，全面消除彈窗邊緣緊繃感。
+  ② **7 日簽到與里程碑跑版根治（`LoginRewardModal.tsx` & `src/index.css`）**：
+     - `.streak-section-header` 手機端垂直排列，徹底根除「進 / 度」「里程 / 碑」文字擠斷折行；
+     - 簽到日曆由 7 欄改為 4 欄網格（第 7 天跨 2 欄），「🎁 召喚券×2」告別溢出折疊。
+  ③ **英雄名冊篩選膠囊單行平滑滑動（`HeroModal.tsx` & `src/index.css`）**：
+     - `.hero-filter` 實裝單行橫滑（`overflow-x: auto; white-space: nowrap; scrollbar-width: none`），徹底根除 375px 手機上最後一個品級 `N` 孤立掉行的瑕疵。
+  ④ **工坊文字像素字體 C/O 混淆修復（`ShopModal.tsx` & `src/index.css`）**：
+     - `.shop-info b` 改用高清晰無襯線粗體 `var(--font-body)`，消除「Combo 加成」看似「Oombo」的像素字體混淆；商店視窗升級為 `wide` 雙欄寬版。
+  ⑤ **單字學習卡（`WordStudy.tsx`）大小寫正規化與導航修復**：
+     - 實裝 `canonicalKey` 規範化，修復傳入小寫時「上一詞 / 下一詞」按鈕 disabled 缺陷，作答統計精確匹配。
+  ⑥ **守門人區域試煉（`GateTrialModal.tsx`）達標動態判定修復**：
+     - 修復高標準試煉 40 題結算時寫死 `TRIAL_PER_SKILL` (6) 導致 10 題全對時 `met` 綠色高光未觸發的重大細節缺陷，改為動態 `rule.perSkill`。
+  ⑦ **真名短篇故事（`TrueNameModal.tsx`）聽寫題語音 Fallback 修復**：
+     - 修正運算子優先級，確保聽寫考驗時點擊「🔊 聽發音」100% 朗讀題目單字。
+  ⑧ **長句子選擇題單欄自適應（`BattleHUD.tsx` & `src/index.css`）**：
+     - 閱讀長選項自動由 2×2 網格切換為 1 欄通欄，告別手機 170px 窄格內劇烈折行。
+  ⑨ **真機 CDP 截圖工具實裝（`scripts/cdp-screen-audit.mjs`）**：
+     - 產出 375×812、1366×768、1920×1080 三大尺寸共 30 張全彈窗真機截圖，驗證所有介面均完美無瑕。
+  ⑩ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。

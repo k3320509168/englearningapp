@@ -6,7 +6,7 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { REGIONS } from '../game/regions';
 import { GATE_LEVEL, canChallengeGate } from '../game/placement';
-import { STRICT_TRIALS_PER_DAY, TRIAL_PASS, TRIAL_PER_SKILL, TRIAL_SKILLS, TRIAL_STRICT, completeTrial, emptyTrialScore, regionMastery, strictTrialWait, trialPassed, trialQuestions } from '../game/knowledge';
+import { STRICT_TRIALS_PER_DAY, TRIAL_PASS, TRIAL_SKILLS, TRIAL_STRICT, completeTrial, emptyTrialScore, regionMastery, strictTrialWait, trialPassed, trialQuestions } from '../game/knowledge';
 import type { TrialScore } from '../game/knowledge';
 import { questionSkill } from '../game/QuestionData';
 import { questionKey } from '../game/battle';
@@ -117,7 +117,7 @@ export default function GateTrialModal() {
           <p>答對 <b>{correct}</b> / {questions.length} 題（需要 {rule.total} 題、每種至少 {rule.each} 題）</p>
           <ul className="trial-skills">
             {TRIAL_SKILLS.map(s => (
-              <li key={s} className={score[s].total === TRIAL_PER_SKILL && score[s].correct >= rule.each ? 'met' : ''}>
+              <li key={s} className={score[s].total === rule.perSkill && score[s].correct >= rule.each ? 'met' : ''}>
                 {SKILL_LABEL[s]} {score[s].correct} / {score[s].total}
               </li>
             ))}

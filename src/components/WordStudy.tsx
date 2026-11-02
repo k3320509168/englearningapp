@@ -52,7 +52,18 @@ export default function WordStudy() {
 
   // 取得全詞庫鍵值列表以便前後翻閱導航
   const vocabKeys = useMemo(() => Object.keys(VOCAB), []);
-  const currentIndex = useMemo(() => (key ? vocabKeys.indexOf(key) : -1), [key, vocabKeys]);
+
+  // 尋找規範化的標準大寫 Key，確保大小寫容錯與索引精確匹配
+  const canonicalKey = useMemo(() => {
+    if (!key) return null;
+    const direct = key.toUpperCase();
+    if (VOCAB[direct]) return direct;
+    const stripped = direct.replace(/[^A-Z]/g, '');
+    if (VOCAB[stripped]) return stripped;
+    return direct;
+  }, [key]);
+
+  const currentIndex = useMemo(() => (canonicalKey ? vocabKeys.indexOf(canonicalKey) : -1), [canonicalKey, vocabKeys]);
 
   // 前後導航切換
   const hasPrev = currentIndex > 0;
@@ -81,14 +92,14 @@ export default function WordStudy() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goPrev, goNext]);
 
-  // 這個字在所有題目中答對／答錯的總次數
+  // 這個字在所有題目中答對／答錯的總次數（大小寫與標點多重容錯比對）
   const stats = useSaveStore(useShallow(s => {
     let correct = 0, wrong = 0;
-    if (!key) return { correct, wrong };
+    if (!canonicalKey) return { correct, wrong };
     for (const c of Object.values(s.codex)) {
       const q = c.question;
-      const ans = q.type === 'fill' ? (q.speak ?? '').toUpperCase().replace(/[^A-Z]/g, '') : q.ans;
-      if (ans === key) { correct += c.correct; wrong += c.wrong; }
+      const ans = q.type === 'fill' ? (q.speak ?? '').toUpperCase().replace(/[^A-Z]/g, '') : (q.ans ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+      if (ans === canonicalKey) { correct += c.correct; wrong += c.wrong; }
     }
     return { correct, wrong };
   }));

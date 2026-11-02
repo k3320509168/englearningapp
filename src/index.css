@@ -227,6 +227,7 @@ button { font: inherit; color: inherit; }
 
 /* 選擇題 */
 .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.options.is-long-options { grid-template-columns: 1fr !important; }
 @media (max-width: 480px) { .options { grid-template-columns: 1fr; } }
 .option-btn {
   min-height: 54px;
@@ -491,7 +492,9 @@ button { font: inherit; color: inherit; }
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(5, 6, 18, 0.72);
+  background: rgba(5, 6, 18, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
   padding: 16px;
@@ -545,7 +548,7 @@ button { font: inherit; color: inherit; }
 .dots { display: flex; justify-content: center; gap: 6px; }
 .dot { width: 10px; height: 10px; border: 2px solid var(--ink); background: var(--panel-3); }
 .dot.is-active { background: var(--accent); width: 22px; }
-.tutorial-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tutorial-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .tutorial-nav { display: flex; gap: 8px; }
 
 .settings-group { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
@@ -591,7 +594,7 @@ button { font: inherit; color: inherit; }
   background: var(--panel);
 }
 .shop-info { flex: 1; display: flex; flex-direction: column; gap: 2px; font-size: 14px; min-width: 0; }
-.shop-info b { font-family: var(--font-ui); font-size: 17px; }
+.shop-info b { font-family: var(--font-body); font-weight: 700; font-size: 16px; letter-spacing: 0.2px; }
 .shop-note { font-size: 13px; margin: 0; }
 
 .hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -2306,7 +2309,19 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
 .growth-row.is-done { color: var(--good); }
 .growth-reqs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; }
 .hd-note { display: flex; align-items: center; gap: 8px; font-size: 13px; }
-.hero-filter { flex-wrap: wrap; }
+.hero-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.hero-filter::-webkit-scrollbar { display: none; }
+.hero-filter .pill { flex-shrink: 0; padding: 4px 9px; }
 .pill { padding: 4px 10px; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; background: transparent; color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
 .pill.is-on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent); }
 .summon-entry {
@@ -3313,6 +3328,32 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
+}
+@media (max-width: 520px) {
+  .modal-backdrop {
+    padding: 8px 6px;
+  }
+  .modal {
+    max-height: calc(100dvh - 16px);
+  }
+  .modal.modal-wide {
+    max-height: calc(100dvh - 16px);
+  }
+  .streak-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .streak-section-title {
+    white-space: nowrap;
+  }
+  .streak-week-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .streak-day-chip:nth-child(7) {
+    grid-column: span 2;
+  }
 }
 .streak-day-chip {
   display: flex;

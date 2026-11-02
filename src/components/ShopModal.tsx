@@ -21,7 +21,7 @@ export default function ShopModal() {
   const [weaponFilter, setWeaponFilter] = useState<'all' | 'protagonist' | 'hero'>('all');
 
   return (
-    <Modal title="⚒️ 冒險工坊" onClose={closeModal}>
+    <Modal title="⚒️ 冒險工坊" onClose={closeModal} wide>
       <div className="shop-header-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
         <p className="shop-gold" style={{ margin: 0 }}>持有金幣 <b>🪙 {gold}</b></p>
         <button

@@ -413,9 +413,10 @@ function TypingAnswer({ question }: { question: Question }) {
 function ChoiceAnswer({ question }: { question: Question }) {
   const hidden = useBattleStore(s => s.assist?.hiddenOptions);
   const { chooseOption } = useBattleStore.getState();
+  const isLongOptions = question.options?.some(o => o.length > 28);
   return (
     <>
-      <div className="options">
+      <div className={`options ${isLongOptions ? 'is-long-options' : ''}`}>
         {question.options?.map(opt => {
           const isHidden = hidden?.includes(opt[0]);
           return (

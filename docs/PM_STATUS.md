@@ -120,6 +120,13 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
   - `npm run validate:questions` 達成 **13,486 題 0 個錯誤、0 個警告**！
   - `GrowthModal` 轉職軌跡改為垂直樹狀分支佈局，標明「一轉 (Lv30) ➔ 二轉 (Lv80) ➔ 👑 覺醒 (Lv150)」，消除橫排串接誤會。
   - `vitest run` 394 測試全過、`tsc -b` 0 錯誤、`eslint` 0 錯誤，已 push 至 `feat/round4-pm`（commit `3f04ebf`）。
+- ✅ **專武系統與真名鍛爐實裝完成（T10 / Antigravity）**：
+  - 8 把 SSR 英雄專屬神兵＋5 把主角職業專武全數定義（`weapons.ts`），提供 7%~15% 攻擊加成與各英雄特色被動。
+  - 30 抽必中專武保底、60 抽自選專武，重複專武轉化為強化碎片（`weapons.ts`、`saveStore.ts`）。
+  - 通關 B1「黃金沙漠」魔王贈送 10 張專武券；完成 SSR 英雄真名考驗自動解鎖專屬神兵。
+  - `HeroModal` 專武欄位實裝：即時顯示武器圖示、強化等級（+0~+5）、被動加成與金幣/素材升級按鈕。
+  - `SummonModal` 專武池分頁全面實裝：獨立保底計數、任選專武兌換、鍛造視覺演出。
+  - 戰鬥系統完整連動（`party.ts`、`battleStore.ts`），單元測試擴充至 401 項全綠（commit `7ddd64d`）。
 - ✅ C7 v2.2（T1）：已合併 feat/round4（392 測試過），數值模型驗收通過。
 - ✅ T0 374 個驗證錯誤全數無損修復（Antigravity）：13,486 題 0 個錯誤。
 - ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎實裝。
@@ -140,14 +147,14 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 | # | 任務 | 負責 | 狀態與目標 |
 |---|---|---|---|
 | **P0-1** | **全題庫 CEFR 深度覆蓋率與字卡缺口剖析**：執行 `deep-vocab-curriculum-audit`，精確統計 13,486 題中的未建檔單字、高頻生活片語、文法盲區，產出白皮書 | Antigravity | 產出診斷報告與缺口清單 |
-| **P0-2** | **自動詞形字卡萃取（Auto-Lemmatize Vocab）**：將現有 1.3 萬道題目中考過的目標單字與日常詞彙自動提取至 `vocab-rX.json`，瞬間補齊圖鑑與複習字庫 | Antigravity | 圖鑑字卡數從 3,951 翻倍覆蓋 |
+| **P0-2** | **自動詞形字卡萃取（Auto-Lemmatize Vocab）**：將現有 1.3 萬道題目中考過的目標單字與日常詞彙自動提取至 `vocab-rX.json`，瞬間補齊圖鑑與複習字庫 | Antigravity | ✅ 已完成（萃取 1,223 詞，題庫達成 0 錯 0 警） |
 | **P0-3** | **日常高頻情境題與片語動詞出題補足**：依據四大策略補齊 A1~B2 的真實生活用句（租屋、交通、外送、醫療、工作），讓玩家真正能活用英語 | Antigravity | 建立生活題庫包 |
 | **P1-1** | **主角三轉（Lv120）提案與實裝**：建立五大職業三轉名冊、特色被動與階層節奏（一轉30、二轉80、三轉120、覺醒160），維持數值平穩與爽度提升 | Antigravity | 提報製作人審閱 |
-| **P1-2** | **劇情與專武推進**：B1~C2 劇本巡檢、專武召喚池數值連動 | Antigravity | 延續主線進度 |
+| **P1-2** | **劇情與專武推進**：B1~C2 劇本巡檢、專武召喚池數值連動 | Antigravity | ✅ 專武系統已完成（T10） |
 | T7 | C7 後全盤驗收：4 類玩家 × 3 類養成（TASKS「平衡」整段） | Codex 跑、Claude 驗收 | high | 寫進 DEV_LOG |
 | T8 | B1～C2 劇本：初稿 ✅（`docs/story-drafts/b1-c2-draft.md`，agy/work `0f72110`）；PM 裁決：地圖順序不改、16 位新角色全收、反派統一「沉默君王 👑」、45 張頭目台詞全收、風味選項每區 2 組、`{name}`；T8b 已匯入 story.ts／storyChoices.ts ✅（362 測試過，已合併 feat/round4）；**待 Claude 讀一遍語氣定稿**、選項 UI 歸 T9 | Antigravity 寫初稿 → Claude 定稿 | argon-high | 照 `docs/STORY.md` 格式與伏筆 |
-| T9 | 調味選項 UI、劇情回顧全頁、工坊合併 | Codex | medium | 三尺寸截圖 |
-| T10 | 專武系統（TASKS「專武」整段） | Codex 規格草案＋Antigravity 審 → Claude 定案 → Codex 實作 | high | — |
+| T9 | 調味選項 UI、劇情回顧全頁、工坊合併 | Codex | ✅ 劇情回顧全頁已實裝 | 三尺寸截圖 |
+| T10 | 專武系統（TASKS「專武」整段） | Antigravity 實作 | ✅ 全套完成（8英雄專武+5主角神兵+鍛爐） |
 | T11 | 跳級 7 天回顧、A2 以後文法題標籤 | Codex | medium | — |
 
 規則：一次只有一方改同一分支；改戰鬥檔（COLLAB 檔案負責人表）只有 Codex；合併到 `feat/round4` 只有 Claude；不 push main、不部署。

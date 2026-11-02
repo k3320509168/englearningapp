@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
@@ -19,13 +19,6 @@ const KIND_TABS: { id: KindFilter; label: string }[] = [
   { id: 'grammar', label: '📐 文法' },
 ];
 
-const STATUS_TABS: { id: StatusFilter; label: string }[] = [
-  { id: 'all', label: '全部狀態' },
-  { id: 'seen', label: '🔓 僅已解鎖' },
-  { id: 'review', label: '⚠️ 待複習' },
-  { id: 'master', label: '🏆 滿星精通' },
-];
-
 const REGION_TABS = [
   { key: 'PRE', name: '失語之境 (Pre-A1)' },
   ...LEVELS.map(lv => ({ key: lv, name: regionName(lv) })),
@@ -33,7 +26,41 @@ const REGION_TABS = [
 
 const PAGE_SIZE = 80;
 
-// 圖鑑：收錄遇過的單字、片語與文法，支援即時關鍵字搜尋、進階狀態過濾與高效平滑分批載入
+// 詞性色彩分類輔助函式
+function getPosClass(pos: string | undefined): string {
+  if (!pos) return 'pos-default';
+  const p = pos.toLowerCase();
+  if (p.includes('n.')) return 'pos-noun';
+  if (p.includes('v.')) return 'pos-verb';
+  if (p.includes('adj.')) return 'pos-adj';
+  if (p.includes('adv.')) return 'pos-adv';
+  if (p.includes('phr.')) return 'pos-phr';
+  if (p.includes('prep.')) return 'pos-prep';
+  if (p.includes('conj.')) return 'pos-conj';
+  return 'pos-default';
+}
+
+// 例句中智慧高亮目標詞彙
+function highlightKeyword(text: string, target: string) {
+  if (!target || !text) return text;
+  const cleanTarget = target.replace(/[^A-Za-z0-9]/g, '');
+  if (cleanTarget.length < 2) return text;
+
+  try {
+    const regex = new RegExp(`\\b(${cleanTarget}[a-z]*)\\b`, 'gi');
+    const parts = text.split(regex);
+    return parts.map((part, idx) => {
+      if (regex.test(part)) {
+        return <mark key={idx} className="word-kw-highlight">{part}</mark>;
+      }
+      return part;
+    });
+  } catch {
+    return text;
+  }
+}
+
+// 圖鑑：收錄遇過的單字、片語與文法，支援即時關鍵字搜尋、進階狀態過濾、平滑分批載入與沉浸式連貫卡片翻閱
 export default function CodexModal() {
   const codex = useSaveStore(s => s.codex);
   const mistakes = useSaveStore(s => s.mistakes);
@@ -49,10 +76,31 @@ export default function CodexModal() {
   const [kindFilter, setKindFilter] = useState<KindFilter>('all');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [selectedItem, setSelectedItem] = useState<CodexItem | null>(null);
 
+  // 搜尋防抖優化（150ms 響應極致平滑）
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(searchQuery);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
   const items = useMemo(() => codexItems(regionKey, codex, mistakes), [regionKey, codex, mistakes]);
+
+  // 各狀態數量即時統計
+  const statusCounts = useMemo(() => {
+    let pool = items;
+    if (kindFilter !== 'all') pool = pool.filter(i => i.kind === kindFilter);
+    return {
+      all: pool.length,
+      seen: pool.filter(i => i.seen).length,
+      review: pool.filter(i => i.needsReview).length,
+      master: pool.filter(i => i.stars === 3).length,
+    };
+  }, [items, kindFilter]);
 
   const filteredItems = useMemo(() => {
     let result = items;
@@ -66,8 +114,8 @@ export default function CodexModal() {
     } else if (statusFilter === 'master') {
       result = result.filter(i => i.stars === 3);
     }
-    if (searchQuery.trim()) {
-      const q = searchQuery.trim().toLowerCase();
+    if (debouncedQuery.trim()) {
+      const q = debouncedQuery.trim().toLowerCase();
       result = result.filter(i =>
         i.title.toLowerCase().includes(q) ||
         i.subtitle.toLowerCase().includes(q) ||
@@ -75,7 +123,7 @@ export default function CodexModal() {
       );
     }
     return result;
-  }, [items, kindFilter, statusFilter, searchQuery]);
+  }, [items, kindFilter, statusFilter, debouncedQuery]);
 
   const displayedItems = useMemo(() => {
     return filteredItems.slice(0, visibleCount);
@@ -83,6 +131,50 @@ export default function CodexModal() {
 
   const seen = filteredItems.filter(i => i.seen).length;
   const mastered = filteredItems.filter(i => i.stars === 3).length;
+
+  // 彈窗內部的卡片前後切換導航
+  const selectedIndex = useMemo(() => {
+    if (!selectedItem) return -1;
+    return filteredItems.findIndex(i => i.id === selectedItem.id);
+  }, [selectedItem, filteredItems]);
+
+  const hasPrevCard = selectedIndex > 0;
+  const hasNextCard = selectedIndex >= 0 && selectedIndex < filteredItems.length - 1;
+
+  const goPrevCard = useCallback(() => {
+    if (hasPrevCard) {
+      const nextItem = filteredItems[selectedIndex - 1];
+      setSelectedItem(nextItem);
+      if (nextItem.audio) say(nextItem.audio);
+    }
+  }, [hasPrevCard, selectedIndex, filteredItems, say]);
+
+  const goNextCard = useCallback(() => {
+    if (hasNextCard) {
+      const nextItem = filteredItems[selectedIndex + 1];
+      setSelectedItem(nextItem);
+      if (nextItem.audio) say(nextItem.audio);
+    }
+  }, [hasNextCard, selectedIndex, filteredItems, say]);
+
+  // 鍵盤左右鍵切換卡片、Esc 關閉彈窗
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedItem) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goPrevCard();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goNextCard();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        setSelectedItem(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedItem, goPrevCard, goNextCard]);
 
   const onCardClick = (item: CodexItem) => {
     setSelectedItem(item);
@@ -111,10 +203,12 @@ export default function CodexModal() {
     setVisibleCount(PAGE_SIZE);
   };
 
-  const handleSearchChange = (val: string) => {
-    setSearchQuery(val);
-    setVisibleCount(PAGE_SIZE);
-  };
+  const statusTabs: { id: StatusFilter; label: string; count: number }[] = [
+    { id: 'all', label: '全部狀態', count: statusCounts.all },
+    { id: 'seen', label: '🔓 僅已解鎖', count: statusCounts.seen },
+    { id: 'review', label: '⚠️ 待複習', count: statusCounts.review },
+    { id: 'master', label: '🏆 滿星精通', count: statusCounts.master },
+  ];
 
   return (
     <Modal title="📚 冒險圖鑑" onClose={closeModal}>
@@ -142,12 +236,12 @@ export default function CodexModal() {
             className="codex-search-input"
             placeholder="🔍 搜尋單字、片語、中文釋義或例句關鍵字..."
             value={searchQuery}
-            onChange={e => handleSearchChange(e.target.value)}
+            onChange={e => setSearchQuery(e.target.value)}
           />
           {searchQuery && (
             <button
               className="codex-search-clear"
-              onClick={() => handleSearchChange('')}
+              onClick={() => setSearchQuery('')}
               aria-label="清除搜尋"
             >
               ✕
@@ -170,17 +264,17 @@ export default function CodexModal() {
           ))}
         </div>
 
-        {/* 狀態膠囊 */}
+        {/* 狀態膠囊（附帶即時計數徽章） */}
         <div className="codex-filter-row">
           <span className="codex-filter-label">狀態：</span>
-          {STATUS_TABS.map(t => (
+          {statusTabs.map(t => (
             <button
               key={t.id}
               className={`pill ${statusFilter === t.id ? 'is-on' : ''}`}
               onMouseDown={keepFocus}
               onClick={() => handleStatusChange(t.id)}
             >
-              {t.label}
+              {t.label} <span className="pill-badge">{t.count}</span>
             </button>
           ))}
         </div>
@@ -247,7 +341,9 @@ export default function CodexModal() {
                     <span className="stars" aria-label={`熟練度 ${item.stars} 星`}>
                       {'★'.repeat(item.stars)}{'☆'.repeat(3 - item.stars)}
                     </span>
-                    <span className="codex-pos-tag">{item.pos || getKindLabel(item.kind)}</span>
+                    <span className={`codex-pos-tag ${getPosClass(item.pos)}`}>
+                      {item.pos || getKindLabel(item.kind)}
+                    </span>
                   </div>
                 </button>
               </li>
@@ -272,7 +368,7 @@ export default function CodexModal() {
         </div>
       )}
 
-      {/* 獨立彈出的單字／片語／文法詳情卡片 (Popup Card) */}
+      {/* 獨立彈出的單字／片語／文法詳情卡片 (Popup Card) 支援沉浸式前後切換 */}
       {selectedItem && (
         <div className="codex-popup-overlay" onClick={() => setSelectedItem(null)}>
           <div className="codex-popup-card" onClick={e => e.stopPropagation()}>
@@ -289,8 +385,10 @@ export default function CodexModal() {
               <div className="codex-popup-title-box">
                 <h3 className="codex-popup-word">{selectedItem.title}</h3>
                 <span className="codex-popup-pos">
-                  {selectedItem.kind === 'word' ? '📖 單字' : selectedItem.kind === 'phrase' ? '🧩 片語' : '📐 文法考點'}
-                  {selectedItem.pos && selectedItem.pos !== 'grammar' && selectedItem.pos !== 'phrase' ? ` · ${selectedItem.pos}` : ''}
+                  <span className={`pos-tag-inline ${getPosClass(selectedItem.pos)}`}>
+                    {selectedItem.kind === 'word' ? '📖 單字' : selectedItem.kind === 'phrase' ? '🧩 片語' : '📐 文法考點'}
+                    {selectedItem.pos && selectedItem.pos !== 'grammar' && selectedItem.pos !== 'phrase' ? ` · ${selectedItem.pos}` : ''}
+                  </span>
                 </span>
               </div>
               <button
@@ -305,7 +403,7 @@ export default function CodexModal() {
 
             <div className="codex-popup-body">
               <div className="codex-popup-section">
-                <h4>釋義與解析</h4>
+                <h4>釋義與核心意涵</h4>
                 <p className="codex-popup-def">{selectedItem.subtitle || '暫無中文釋義'}</p>
               </div>
 
@@ -314,7 +412,9 @@ export default function CodexModal() {
                   <h4>冒險例句 / 考點原句</h4>
                   <div className="codex-popup-example-box">
                     {selectedItem.example.split('\n').map((line, idx) => (
-                      <p key={idx} className={idx === 0 ? 'codex-popup-en' : 'codex-popup-zh'}>{line}</p>
+                      <p key={idx} className={idx === 0 ? 'codex-popup-en' : 'codex-popup-zh'}>
+                        {idx === 0 ? highlightKeyword(line, selectedItem.title) : line}
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -328,9 +428,19 @@ export default function CodexModal() {
               </div>
             </div>
 
+            {/* 彈窗底部前後卡片無縫導航與操作列 */}
             <div className="codex-popup-actions">
               <button
-                className="btn btn-primary"
+                className="btn btn-ghost btn-small codex-nav-card-btn"
+                disabled={!hasPrevCard}
+                onMouseDown={keepFocus}
+                onClick={goPrevCard}
+                title="快捷鍵: ← 鍵"
+              >
+                ◀ 上一張
+              </button>
+              <button
+                className="btn btn-primary btn-small"
                 onMouseDown={keepFocus}
                 onClick={() => {
                   if (selectedItem.audio) say(selectedItem.audio);
@@ -339,11 +449,13 @@ export default function CodexModal() {
                 🔊 重複發音
               </button>
               <button
-                className="btn btn-ghost"
+                className="btn btn-ghost btn-small codex-nav-card-btn"
+                disabled={!hasNextCard}
                 onMouseDown={keepFocus}
-                onClick={() => setSelectedItem(null)}
+                onClick={goNextCard}
+                title="快捷鍵: → 鍵"
               >
-                完成
+                下一張 ▶
               </button>
             </div>
           </div>

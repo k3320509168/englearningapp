@@ -3651,6 +3651,84 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
 .codex-popup-actions .btn {
   flex: 1;
 }
+.codex-nav-card-btn {
+  min-width: 84px;
+  flex: 0 0 auto !important;
+}
+
+/* 詞性色彩分類標籤 */
+.pos-noun, .codex-pos-tag.pos-noun, .word-study-pos-badge.pos-noun { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+.pos-verb, .codex-pos-tag.pos-verb, .word-study-pos-badge.pos-verb { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+.pos-adj, .codex-pos-tag.pos-adj, .word-study-pos-badge.pos-adj { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+.pos-adv, .codex-pos-tag.pos-adv, .word-study-pos-badge.pos-adv { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
+.pos-phr, .codex-pos-tag.pos-phr, .word-study-pos-badge.pos-phr { background: rgba(255, 205, 75, 0.2); color: #ffe082; border: 1px solid rgba(255, 205, 75, 0.4); }
+.pos-prep, .codex-pos-tag.pos-prep, .word-study-pos-badge.pos-prep { background: rgba(6, 182, 212, 0.2); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.4); }
+.pos-conj, .codex-pos-tag.pos-conj, .word-study-pos-badge.pos-conj { background: rgba(236, 72, 153, 0.2); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.4); }
+
+/* 例句智慧關鍵字高亮 */
+.word-kw-highlight {
+  background: rgba(255, 205, 75, 0.25);
+  color: #ffcd4b;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* 狀態膠囊上的計數徽章 */
+.pill-badge {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.pill.is-on .pill-badge {
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+/* 單字學習視窗深度打磨 */
+.word-study-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.word-study-pos-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.word-study-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 6px;
+}
+.word-nav-btn {
+  min-width: 90px;
+}
+.word-nav-counter {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.copy-btn {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+.pos-tag-inline {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
 
 /* 🌟 詞族進化微特效 */
 @keyframes evoPop {

@@ -87,13 +87,32 @@ export default function SummonModal() {
         </div>
       </section>
 
-      <div className="summon-actions">
-        <span className="ticket-count">🎫 召喚券 <b>{tickets}</b></span>
-        <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={buyTicket} disabled={gold < TICKET_GOLD_PRICE || boughtThisWeek >= TICKET_BUY_WEEKLY}>用 🪙<b className="num">{TICKET_GOLD_PRICE}</b> 買 1 張（本週 {boughtThisWeek}/{TICKET_BUY_WEEKLY}）</button>
-        <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => pull(1)} disabled={tickets < 1}>召喚 ×1</button>
-        <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => pull(TEN_PULL)} disabled={tickets < TEN_PULL}>十連召喚 ×10</button>
+      <div className="summon-actions-card">
+        <div className="summon-wallet-row">
+          <span className="ticket-count">🎫 持有召喚券 <b>{tickets}</b></span>
+          <button
+            className="btn btn-small btn-ghost buy-ticket-btn"
+            onMouseDown={keepFocus}
+            onClick={buyTicket}
+            disabled={gold < TICKET_GOLD_PRICE || boughtThisWeek >= TICKET_BUY_WEEKLY}
+            title="每週可在商會用金幣兌換 5 張召喚券"
+          >
+            用 🪙<b className="num">{TICKET_GOLD_PRICE}</b> 買 1 張（本週 {boughtThisWeek}/{TICKET_BUY_WEEKLY}）
+          </button>
+          <span className="summon-ways-chip" title="打倒守門頭目 +1、復仇魔王 +2、區域通關 +5，或每週金幣購買">
+            ⓘ 取得途徑
+          </span>
+        </div>
+
+        <div className="summon-buttons-row">
+          <button className="btn btn-primary btn-summon-single" onMouseDown={keepFocus} onClick={() => pull(1)} disabled={tickets < 1}>
+            召喚 ×1
+          </button>
+          <button className="btn btn-primary btn-summon-ten" onMouseDown={keepFocus} onClick={() => pull(TEN_PULL)} disabled={tickets < TEN_PULL}>
+            十連召喚 ×10
+          </button>
+        </div>
       </div>
-      <p className="muted party-note">召喚券來源：打倒守門頭目 +1、復仇魔王 +2、區域通關 +5，也可以用金幣購買。</p>
 
       {picking && (
         <section>

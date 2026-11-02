@@ -13,7 +13,7 @@ export interface CodexStats {
 
 export interface CodexItem {
   id: string;
-  kind: 'word' | 'grammar';
+  kind: 'word' | 'phrase' | 'grammar';
   title: string;
   subtitle: string;
   pos: string;
@@ -43,15 +43,17 @@ export function codexItems(
   for (const q of [...pool.normal, ...pool.boss]) {
     const word = vocabKey(q);
     const v = vocabFor(q);
-    const id = word ? `w:${word}` : `g:${q.desc}`;
+    const isPhrase = Boolean(word && (word.includes(' ') || word.includes('-') || v?.pos?.toLowerCase().includes('phrase') || v?.pos?.includes('片語')));
+    const kind: 'word' | 'phrase' | 'grammar' = word ? (isPhrase ? 'phrase' : 'word') : 'grammar';
+    const id = word ? `${kind}:${word}` : `g:${q.desc}`;
     const stats = codex[questionKey(q)];
     const item = items.get(id) ?? {
       id,
-      kind: word ? 'word' as const : 'grammar' as const,
-      title: v?.display ?? grammarTitle(q),
-      subtitle: v?.meaning ?? q.explain ?? '',
-      pos: v?.pos ?? '',
-      example: v ? `${v.example}\n${v.exampleZh}` : '',
+      kind,
+      title: v?.display ?? (word || grammarTitle(q)),
+      subtitle: v?.meaning ?? q.explain ?? q.desc ?? '',
+      pos: v?.pos ?? (kind === 'phrase' ? 'phrase' : kind === 'grammar' ? 'grammar' : ''),
+      example: v ? `${v.example}\n${v.exampleZh}` : (q.desc && q.desc !== grammarTitle(q) ? q.desc : ''),
       audio: v?.display ?? questionAudio(q),
       correct: 0, wrong: 0, seen: false, stars: 0, needsReview: false,
     };

@@ -974,7 +974,49 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .spark { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .spark-track { width: 140px; height: 10px; border: 2px solid var(--ink); background: var(--bg); }
 .spark-track span { display: block; height: 100%; background: linear-gradient(90deg, #c98aff, #ffcd4b); }
-.summon-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
+.summon-actions-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #1e1b34;
+  border: 1px solid #3c355f;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.summon-wallet-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.buy-ticket-btn {
+  font-size: 12px;
+}
+.summon-ways-chip {
+  font-size: 11px;
+  color: #8c82ab;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: help;
+}
+.summon-buttons-row {
+  display: flex;
+  gap: 10px;
+}
+.summon-buttons-row .btn {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.btn-summon-ten {
+  background: linear-gradient(180deg, #ffd15c 0%, #e6a817 100%) !important;
+  color: #1a1226 !important;
+  box-shadow: 0 4px 12px rgba(255, 209, 92, 0.3);
+}
 .ticket-count { font-family: var(--font-ui); }
 .ticket-count b { font-family: var(--font-num); font-size: 13px; color: var(--accent); }
 .summon-sub { margin: 0 0 8px; font-family: var(--font-ui); color: var(--accent); }
@@ -1154,6 +1196,19 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .material-bar { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; font-size: 14px; }
 .material-bar b { font-family: var(--font-num); font-size: 11px; color: var(--accent); }
 .gear-slots, .gear-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.forge-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .forge-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .gear-slot, .gear-item {
   --rarity: var(--muted);
   display: flex;
@@ -2076,6 +2131,39 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
 /* 劇情回顧：依章節分組 */
 .story-chapter { margin-bottom: 14px; }
 .story-chapter h3 { margin: 0 0 6px; font-size: 15px; color: #ffd15c; }
+.story-bonus-tip {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  background: rgba(255, 205, 75, 0.1);
+  border: 1px solid rgba(255, 205, 75, 0.25);
+  border-radius: 6px;
+  color: #ffd15c;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.story-log-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.story-log-btn.is-unclaimed {
+  border-color: #ffd15c;
+  background: #2b2545;
+}
+.story-reward-pill {
+  font-size: 11px;
+  background: #ffcd4b;
+  color: #1a1226;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.story-claimed-check {
+  font-size: 11px;
+  color: #7b7396;
+}
 
 /* 處決後的追擊加成題 */
 .bonus-offer { margin: 6px 0; border-color: #ffd15c; color: #ffd15c; }
@@ -2409,3 +2497,605 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
 
 /* 路線圖的旗幟/角色限制在自己的圖層，捲動時不遮住視窗標題與關閉鈕。 */
 .region-route { isolation: isolate; }
+
+/* ============================================================
+   今日複習介面 (ReviewModal) 街機風格精簡與語法說明聚焦
+   ============================================================ */
+.review-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+.review-lead {
+  margin: 0;
+  font-size: 13px;
+  color: var(--accent);
+  line-height: 1.4;
+  flex: 1;
+}
+.review-train-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #3c345a;
+  border: 1px solid #7769a3;
+  color: #fff;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.review-train-btn:hover {
+  background: #4e4475;
+  transform: translateY(-1px);
+}
+.train-reward-badge {
+  background: #ffcd4b;
+  color: #1a1226;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+.review-list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.review-badge {
+  color: #a8a0c2;
+  font-weight: 600;
+}
+.review-ticket-hint {
+  color: #ffcd4b;
+  font-size: 12px;
+}
+.mistake-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+.review-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #232039;
+  border: 1px solid #3c375e;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.15s ease;
+}
+.review-item-card:hover {
+  border-color: #6a619c;
+}
+.review-item-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-sound-btn, .review-book-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+.review-sound-btn:hover:not(:disabled), .review-book-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
+}
+.review-item-text {
+  flex: 1;
+  min-width: 0;
+}
+.review-item-text .mistake-text {
+  margin: 0;
+  font-family: var(--font-word);
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+.review-item-bottom {
+  padding-left: 42px;
+}
+.mistake-explain {
+  margin: 0;
+  font-size: 13px;
+  color: #d1cbde;
+  line-height: 1.5;
+}
+.mistake-count-tag {
+  color: #ff6b6b;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+/* ============================================================
+   登入簽到與全勤獎勵 (LoginRewardModal)
+   ============================================================ */
+.login-reward-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.streak-hero-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #2a1f44 0%, #1f1b34 100%);
+  border: 1px solid #5a4985;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+.streak-hero-icon {
+  font-size: 36px;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.6));
+}
+.streak-hero-info {
+  flex: 1;
+}
+.streak-hero-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+}
+.streak-hero-title b {
+  color: #ffaa33;
+  font-size: 22px;
+}
+.streak-hero-sub {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #cfc8e6;
+  line-height: 1.4;
+}
+.streak-next-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 205, 75, 0.3);
+}
+.streak-next-badge span {
+  font-size: 11px;
+  color: #a097bd;
+}
+.streak-next-badge b {
+  font-size: 13px;
+  color: #ffcd4b;
+}
+
+.streak-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.streak-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.streak-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.streak-section-hint {
+  font-size: 11px;
+  color: #8f87a8;
+}
+
+.streak-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+.streak-day-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: #201d36;
+  border: 1px solid #383359;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+.streak-day-chip.is-checked {
+  background: #252844;
+  border-color: #55609e;
+}
+.streak-day-chip.is-today {
+  border-color: #ffcd4b;
+  box-shadow: 0 0 10px rgba(255, 205, 75, 0.3);
+}
+.streak-day-label {
+  font-size: 10px;
+  color: #928ba8;
+}
+.streak-day-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+.streak-day-reward {
+  font-size: 10px;
+  color: #e2dcff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.streak-today-tag {
+  position: absolute;
+  top: -6px;
+  background: #ffcd4b;
+  color: #1a1226;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.streak-milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 8px;
+}
+.streak-milestone-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #201c38;
+  border: 1px solid #3c3660;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.streak-milestone-card.is-full-month {
+  border-color: #e6a817;
+  background: linear-gradient(145deg, #2a2342 0%, #1e1933 100%);
+  box-shadow: 0 0 12px rgba(230, 168, 23, 0.2);
+}
+.streak-milestone-card.is-ready {
+  border-color: #ffcd4b;
+  box-shadow: 0 0 10px rgba(255, 205, 75, 0.25);
+  animation: pulse-border 2s infinite ease-in-out;
+}
+.milestone-badge-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.milestone-days {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+}
+.milestone-icon {
+  font-size: 18px;
+}
+.milestone-reward-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  color: #ffcd4b;
+}
+.milestone-reward-info b {
+  font-weight: 600;
+}
+.milestone-action {
+  margin-top: auto;
+}
+.milestone-claimed-tag {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: #726c8a;
+  padding: 4px 0;
+}
+.milestone-btn {
+  width: 100%;
+  font-size: 11px;
+  padding: 4px 6px;
+}
+.streak-footer-note {
+  margin: 0;
+  font-size: 11px;
+  color: #7f7899;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ============================================================
+   單字圖鑑 (CodexModal) 儀表板與卡片彈窗
+   ============================================================ */
+.codex-kind-bar {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+  overflow-x: auto;
+}
+.codex-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 6px 0 12px;
+}
+.codex-stat-chip {
+  padding: 8px 12px;
+  background: #211e38;
+  border: 1px solid #3c3660;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.codex-stat-chip.is-mastered {
+  border-color: #665230;
+  background: linear-gradient(135deg, #2b233a 0%, #1f1b2b 100%);
+}
+.codex-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.codex-stat-label {
+  font-size: 12px;
+  color: #a49cb8;
+}
+.codex-stat-val {
+  font-size: 13px;
+  color: #fff;
+}
+.gold-text {
+  color: #ffd15c !important;
+}
+.codex-mini-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.codex-mini-bar span {
+  display: block;
+  height: 100%;
+  background: #6486ff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.codex-mini-bar.is-gold span {
+  background: linear-gradient(90deg, #e6a817, #ffd15c);
+}
+
+.codex-card-btn {
+  width: 100%;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #201c36;
+  border: 1px solid #383256;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.codex-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: #6c5fa0;
+  background: #272242;
+}
+.codex-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.codex-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.codex-pos-tag {
+  font-size: 11px;
+  color: #797194;
+}
+
+/* 單字圖鑑彈出詳情卡片 (Popup Card) */
+.codex-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 6, 16, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+.codex-popup-card {
+  width: 100%;
+  max-width: 440px;
+  background: #1d1a33;
+  border: 2px solid #5a4d8a;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: popup-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes popup-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.codex-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.codex-popup-audio-btn {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #332d56;
+  border: 1px solid #5c528e;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.1s ease;
+}
+.codex-popup-audio-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  background: #433b70;
+}
+.codex-popup-title-box {
+  flex: 1;
+}
+.codex-popup-word {
+  margin: 0;
+  font-family: var(--font-word);
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+.codex-popup-phonetic {
+  font-size: 13px;
+  color: #9f96bd;
+  margin-right: 8px;
+}
+.codex-popup-pos {
+  font-size: 11px;
+  color: #ffcd4b;
+  background: rgba(255, 205, 75, 0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.codex-popup-close-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+}
+.codex-popup-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.codex-popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.codex-popup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.codex-popup-section h4 {
+  margin: 0;
+  font-size: 12px;
+  color: #8c83a8;
+  font-weight: 600;
+}
+.codex-popup-def {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e5dfff;
+}
+.codex-popup-example-box {
+  padding: 8px 10px;
+  background: #141224;
+  border: 1px solid #2d2847;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.codex-popup-en {
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+  font-style: italic;
+  line-height: 1.4;
+}
+.codex-popup-zh {
+  margin: 0;
+  font-size: 12px;
+  color: #9d94b8;
+}
+.codex-popup-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+.codex-popup-star-track {
+  font-size: 16px;
+  color: #ffcd4b;
+  letter-spacing: 2px;
+}
+.codex-popup-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.codex-popup-actions .btn {
+  flex: 1;
+}

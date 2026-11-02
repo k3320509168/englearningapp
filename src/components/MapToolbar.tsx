@@ -15,7 +15,6 @@ export default function MapToolbar() {
   const tickets = useSaveStore(s => s.tickets);
   const player = useSaveStore(s => s.player);
   const character = useSaveStore(s => s.character);
-  const mistakeCount = useSaveStore(s => Object.keys(s.mistakes).length);
   const openModal = useUiStore(s => s.openModal);
   const notices = useNotices();
   const [moreOpen, setMoreOpen] = useState(false);
@@ -47,9 +46,6 @@ export default function MapToolbar() {
         <div className="toolbar-actions">
           <span className="gold-badge" aria-label={`金幣 ${gold}`}>🪙 {gold}</span>
           <span className="ticket-badge" aria-label={`召喚券 ${tickets}`}>🎫 {tickets}</span>
-          {/* 📌 今天該複習的錯題（和「今日複習」同一個數字），點一下打開清單 */}
-          <button className="map-stat review-chip" onMouseDown={keepFocus} onClick={() => openModal('review')}
-            title={`今天要複習 ${notices.dueMistakes} 個錯題（錯題本共 ${mistakeCount} 個）`} aria-label={`今日複習 ${notices.dueMistakes} 個`}>📌 {notices.dueMistakes}</button>
         </div>
       </div>
       <nav className="toolbar-nav" aria-label="主要選單">
@@ -62,8 +58,8 @@ export default function MapToolbar() {
         <button className="nav-btn" onMouseDown={keepFocus} onClick={() => open('growth')}>
           <span className="nav-icon">🛡️</span><span>成長</span>{dot(notices.classAdvance || notices.forge || notices.gradeUp)}
         </button>
-        <button className="nav-btn" onMouseDown={keepFocus} onClick={() => open('daily')}>
-          <span className="nav-icon">📅</span><span>每日</span>{dot(notices.daily)}
+        <button className="nav-btn" onMouseDown={keepFocus} onClick={() => open('shop')}>
+          <span className="nav-icon">🏪</span><span>商店</span>{dot(notices.forge)}
         </button>
         <div className="nav-more" ref={moreRef}>
           <button className="nav-btn" onMouseDown={keepFocus} onClick={() => setMoreOpen(v => !v)} aria-expanded={moreOpen} aria-haspopup="menu">
@@ -71,7 +67,6 @@ export default function MapToolbar() {
           </button>
           {moreOpen && (
             <div className="more-menu" role="menu">
-              <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('shop')}>🔨 工坊（商店・鍛造）</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('codex')}>📚 圖鑑</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('storyLog')}>📜 劇情回顧</button>
               <button role="menuitem" onMouseDown={keepFocus} onClick={() => open('tutorial')}>❓ 說明</button>

@@ -69,7 +69,7 @@ export default function MapLevelBar() {
             <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('review')} title="今天該複習的錯題">
               📌 複習 <b>{notices.dueMistakes}</b>
             </button>
-            <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('daily')} title="連續天數">
+            <button className="today-chip" onMouseDown={keepFocus} onClick={() => openModal('loginReward')} title={`連續登入 ${daily.streak} 天・每日簽到與全勤獎勵`}>
               🔥 <b>{daily.streak}</b> 天
             </button>
           </>

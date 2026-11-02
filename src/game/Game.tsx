@@ -23,6 +23,7 @@ import GrowthModal from '../components/GrowthModal';
 import TrueNameModal from '../components/TrueNameModal';
 import GoldenModal from '../components/GoldenModal';
 import DailyModal from '../components/DailyModal';
+import LoginRewardModal from '../components/LoginRewardModal';
 import SkillBossModal from '../components/SkillBossModal';
 import CelebrationOverlay from '../components/CelebrationOverlay';
 import TicketWheel from '../components/TicketWheel';
@@ -215,6 +216,7 @@ export default function Game() {
       {modal === 'trueName' && <TrueNameModal />}
       {modal === 'golden' && <GoldenModal />}
       {modal === 'daily' && <DailyModal />}
+      {modal === 'loginReward' && <LoginRewardModal />}
       {modal === 'review' && <ReviewModal />}
       {modal === 'placement' && <PlacementModal />}
       {modal === 'gateTrial' && <GateTrialModal />}

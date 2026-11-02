@@ -58,51 +58,77 @@ export default function ReviewModal() {
 
   return (
     <Modal title="📌 今日複習" onClose={closeModal}>
-      {total > 0 && (
-        <div className="review-dojo-card">
-          <div className="review-dojo-info">
-            <span className="review-dojo-title">🥋 錯題修煉場</span>
-            <span className="review-dojo-reward">連對 5 題贈 3 張掃蕩券（持有 🎟️ {sweepTickets}）</span>
-          </div>
-          <button className="btn btn-primary btn-small review-dojo-btn" onMouseDown={keepFocus} onClick={startTraining}>
-            進入修煉 ⚔️
+      {/* 頂部極簡引導與錯題修煉場按鈕 */}
+      <div className="review-header-row">
+        <p className="review-lead">💡 戰鬥中將化為「困難題」登場，答對 3 次即可掌握畢業。</p>
+        {total > 0 && (
+          <button className="btn btn-secondary btn-small review-train-btn" onMouseDown={keepFocus} onClick={startTraining} title="進入修煉連續答對 5 題贈 3 張掃蕩券">
+            🥋 進入修煉場 <span className="train-reward-badge">🎟️+3</span>
           </button>
-        </div>
-      )}
+        )}
+      </div>
+
       {due.length === 0 ? (
         <div className="review-empty">
           <p>🎉 今天沒有到期的複習題目！</p>
           <span className="muted">{total > 0 ? `錯題本中尚有 ${total} 題，會在後續冒險中陸續安排溫習。` : '持續探索新區域，累積更多冒險詞彙吧！'}</span>
         </div>
       ) : (
-        <>
+        <div className="review-list-wrap">
           <div className="review-section-header">
-            <span className="review-badge">今日待複習重點（{due.length}）</span>
-            <span className="review-hint-inline">戰鬥中將化為「困難題」登場</span>
+            <span className="review-badge">待複習重點（{due.length}）</span>
+            {sweepTickets > 0 && <span className="review-ticket-hint">持有掃蕩券 🎟️ {sweepTickets}</span>}
           </div>
           <ul className="mistake-list">
             {due.map(m => {
               const l = answerLabel(m.question);
+              const q = m.question;
+              const displayText = q.desc || l.text;
+              const displayExplain = q.explain || l.meaning;
+              const audioTarget = l.audio || q.speak || l.text;
+
               return (
-                <li key={questionKey(m.question)} className="review-item-card">
-                  <button className="btn btn-ghost btn-small review-sound-btn" onMouseDown={keepFocus} onClick={() => say(l.audio)} aria-label="播放發音" disabled={!l.audio}>
-                    🔊
-                  </button>
-                  <div className="review-item-content">
-                    <p className="mistake-text">{l.text}</p>
-                    <p className="mistake-meaning">{l.meaning}{m.wrongCount > 1 ? ` (累計答錯 ${m.wrongCount} 次)` : ''}</p>
-                  </div>
-                  {vocabKey(m.question) && VOCAB[vocabKey(m.question)!] && (
-                    <button className="btn btn-ghost btn-small review-book-btn" onMouseDown={keepFocus} onClick={() => useUiStore.getState().openStudy(vocabKey(m.question)!)} aria-label="打開單字學習">
-                      📖
+                <li key={questionKey(q)} className="review-item-card">
+                  <div className="review-item-top">
+                    <button
+                      className="btn btn-ghost btn-small review-sound-btn"
+                      onMouseDown={keepFocus}
+                      onClick={() => say(audioTarget)}
+                      aria-label="播放發音"
+                      disabled={!audioTarget}
+                    >
+                      🔊
                     </button>
+                    <div className="review-item-text">
+                      <p className="mistake-text">{displayText}</p>
+                    </div>
+                    {vocabKey(q) && VOCAB[vocabKey(q)!] && (
+                      <button
+                        className="btn btn-ghost btn-small review-book-btn"
+                        onMouseDown={keepFocus}
+                        onClick={() => useUiStore.getState().openStudy(vocabKey(q)!)}
+                        aria-label="打開單字字典"
+                        title="查看單字詳情"
+                      >
+                        📖
+                      </button>
+                    )}
+                  </div>
+                  {displayExplain && (
+                    <div className="review-item-bottom">
+                      <p className="mistake-explain">
+                        {displayExplain}
+                        {m.wrongCount > 1 && <span className="mistake-count-tag">（累計錯 {m.wrongCount} 次）</span>}
+                      </p>
+                    </div>
                   )}
                 </li>
               );
             })}
           </ul>
-        </>
+        </div>
       )}
+
       <div className="tutorial-actions review-actions">
         <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={closeModal}>關閉</button>
         <button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => { closeModal(); continueJourney(); }}>⚔️ 去戰鬥中複習</button>

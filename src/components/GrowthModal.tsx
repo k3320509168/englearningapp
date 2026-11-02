@@ -31,7 +31,7 @@ export default function GrowthModal() {
   const [tab, setTab] = useState<Tab>(() => useUiStore.getState().growthTab);
   const notices = useNotices();
   const [selling, setSelling] = useState<string | null>(null); // 正在確認賣出的裝備
-  const [forgeSlot, setForgeSlot] = useState<'all' | 'weapon' | 'armor'>('all');
+  const [forgeSlot, setForgeSlot] = useState<'all' | 'weapon' | 'armor' | 'accessory'>('all');
   const equippedItems = useMemo(
     () => Object.values(equipped).map(uid => equipment.find(e => e.uid === uid)).filter((e): e is OwnedEquip => e !== undefined),
     [equipped, equipment],
@@ -217,7 +217,7 @@ export default function GrowthModal() {
           {materialBar}
           <div className="forge-toolbar">
             <div className="forge-filter-tabs">
-              {([['all', '全部'], ['weapon', '⚔️ 武器'], ['armor', '🛡️ 防具']] as const).map(([id, label]) => (
+              {([['all', '全部'], ['weapon', '⚔️ 武器'], ['armor', '🛡️ 防具'], ['accessory', '💍 飾品']] as const).map(([id, label]) => (
                 <button
                   key={id}
                   className={`pill ${forgeSlot === id ? 'is-on' : ''}`}
@@ -230,9 +230,9 @@ export default function GrowthModal() {
             </div>
             <p className="forge-tip">💡 擊倒怪物可獲取鍛造素材；重複打造同名裝備可「升品階」大幅提升威力！</p>
           </div>
-          <ul className="gear-list">
+          <ul className="forge-grid">
             {EQUIPMENT
-              .filter(def => forgeSlot === 'all' || (forgeSlot === 'weapon' ? def.slot === 'weapon' : def.slot !== 'weapon'))
+              .filter(def => forgeSlot === 'all' || def.slot === forgeSlot)
               .map(def => {
                 const need = resolveCost(def, character.element);
                 const regionOk = (def.requires?.regionsCleared ?? 0) <= unlockedIndex;

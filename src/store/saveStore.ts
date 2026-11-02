@@ -145,6 +145,7 @@ interface SaveData {
   mapStars: Record<string, boolean[]>;
   bestStage: Record<string, number>;
   storySeen: string[];
+  storyRewardClaimed: string[];
   // 成長：主角等級與轉職路線、英雄等級、素材、裝備
   player: { level: number; xp: number; classPath: string[] };
   // 主角換職業：每個職業各自的轉職路線（目前職業的路線也同步在 player.classPath）、創角時的職業、職業徽章
@@ -220,6 +221,7 @@ interface SaveActions {
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
+  claimStoryReward: (id: string) => { rewardType: 'ticket' | 'sweep'; amount: number } | null;
   claimStageXp: (region: number, stage: number) => { xp: number; levels: number };
   grantLearningXp: (region: number, q: Question, eligible: boolean, replay?: boolean) => { xp: number; levels: number; allowanceGold: number; bonus: number };
   awardXp: (n: number, source?: string) => { xp: number; levels: number; bonus: number; allowanceGold: number };
@@ -303,6 +305,7 @@ export const initialSave: SaveData = {
   mapStars: {},
   bestStage: {},
   storySeen: [],
+  storyRewardClaimed: [],
   player: { level: 1, xp: 0, classPath: [] },
   classPaths: {},
   homeClass: null,
@@ -429,6 +432,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     bestStage: data.bestStage ?? { ...data.levelProgress },
     player: { ...initialSave.player, ...obj('player') },
     storySeen: data.storySeen ?? (version >= 1 && version < 9 ? ['prologue'] : []),
+    storyRewardClaimed: data.storyRewardClaimed ?? [],
     tutorialDone: version >= 1 ? (version < 2 ? true : data.tutorialDone ?? true) : (data.tutorialDone ?? false),
   };
   // 型別檢查：壞掉的欄位改回預設值（每日任務可以是 null，其他物件要長得對）
@@ -723,6 +727,21 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         markHint: (id) => set(s => (s.hintsSeen.includes(id) ? {} : { hintsSeen: [...s.hintsSeen, id] })),
 
         markStorySeen: (id) => set(s => (s.storySeen.includes(id) ? {} : { storySeen: [...s.storySeen, id] })),
+
+        claimStoryReward: (id) => {
+          const s = get();
+          const claimed = s.storyRewardClaimed ?? [];
+          if (claimed.includes(id)) return null;
+          const isMajor = id.includes('clear') || id.includes('boss') || id === 'prologue';
+          const rewardType: 'ticket' | 'sweep' = isMajor ? 'ticket' : 'sweep';
+          const amount = 1;
+          set(state => ({
+            storyRewardClaimed: [...(state.storyRewardClaimed ?? []), id],
+            tickets: rewardType === 'ticket' ? state.tickets + amount : state.tickets,
+            sweepTickets: rewardType === 'sweep' ? state.sweepTickets + amount : state.sweepTickets,
+          }));
+          return { rewardType, amount };
+        },
 
         claimStageXp: (region, stage) => {
           const r = REGIONS[region], amount = firstClearXp(region, stage);
@@ -1192,7 +1211,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         tickets: s.tickets, summonCounter: s.summonCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, xpAllowanceDay: s.xpAllowanceDay, xpAllowanceGold: s.xpAllowanceGold, xpAllowanceRemainder: s.xpAllowanceRemainder, towerFloor: s.towerFloor,
         sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
-        mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen,
+        mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen, storyRewardClaimed: s.storyRewardClaimed,
         player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
         trueName: s.trueName, trueNameRewarded: s.trueNameRewarded, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),

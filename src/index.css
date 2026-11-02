@@ -3525,6 +3525,30 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
   font-size: 11px;
   color: #797194;
 }
+.codex-card.is-unseen {
+  opacity: 0.85;
+}
+.unseen-tag {
+  font-size: 10.5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(140, 130, 170, 0.2);
+  color: #a9a2c2;
+  border: 1px solid rgba(140, 130, 170, 0.4);
+}
+.codex-unseen-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(100, 134, 255, 0.12);
+  border: 1px solid rgba(100, 134, 255, 0.3);
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: #8fa7ff;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
 
 /* 單字圖鑑彈出詳情卡片 (Popup Card) */
 .codex-popup-overlay {

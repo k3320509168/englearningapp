@@ -66,12 +66,13 @@ export default function CodexModal() {
   const codex = useSaveStore(s => s.codex);
   const mistakes = useSaveStore(s => s.mistakes);
   const unlockedIndex = useSaveStore(s => s.unlockedIndex);
+  const prologueDone = useSaveStore(s => s.prologueDone);
   const closeModal = useUiStore(s => s.closeModal);
   const say = useSpeak();
 
-  // 預設切換到目前解鎖的最高區域（索引 0 為 PRE，之後為 LEVELS）
+  // 預設切換到目前解鎖的最高區域（序章未完預設 PRE，之後為 LEVELS）
   const [regionKey, setRegionKey] = useState<string>(() => {
-    if (unlockedIndex < 0) return 'PRE';
+    if (!prologueDone) return 'PRE';
     return LEVELS[Math.min(unlockedIndex, LEVELS.length - 1)];
   });
   const [kindFilter, setKindFilter] = useState<KindFilter>('all');
@@ -158,7 +159,7 @@ export default function CodexModal() {
     }
   }, [hasNextCard, selectedIndex, filteredItems, say]);
 
-  // 鍵盤左右鍵切換卡片、Esc 關閉彈窗
+  // 鍵盤左右鍵切換卡片、Esc 優先關閉卡片彈窗
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!selectedItem) return;
@@ -170,11 +171,12 @@ export default function CodexModal() {
         goNextCard();
       } else if (e.key === 'Escape') {
         e.preventDefault();
+        e.stopImmediatePropagation();
         setSelectedItem(null);
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
   }, [selectedItem, goPrevCard, goNextCard]);
 
   const onCardClick = (item: CodexItem) => {
@@ -212,7 +214,7 @@ export default function CodexModal() {
   ];
 
   return (
-    <Modal title="📚 冒險圖鑑" onClose={closeModal}>
+    <Modal title="📚 冒險圖鑑" onClose={closeModal} wide>
       {/* 區域橫向滑動分頁：涵蓋 Pre-A1 失語之境到 C2 王城 */}
       <div className="tabs tabs-scroll" role="tablist">
         {REGION_TABS.map(tab => (
@@ -317,17 +319,10 @@ export default function CodexModal() {
       {displayedItems.length > 0 && (
         <ul className="codex-grid">
           {displayedItems.map(item => {
-            if (!item.seen) {
-              return (
-                <li key={item.id} className="codex-card is-locked" aria-label="尚未遇到">
-                  <span className="codex-title">？？？</span>
-                  <span className="codex-pos-tag">{getKindLabel(item.kind)}</span>
-                </li>
-              );
-            }
             const isMaster = item.stars === 3;
+            const isUnseen = !item.seen;
             return (
-              <li key={item.id} className={`codex-card ${isMaster ? 'is-master' : ''}`}>
+              <li key={item.id} className={`codex-card ${isUnseen ? 'is-unseen' : ''} ${isMaster ? 'is-master' : ''}`}>
                 <button
                   className="codex-card-btn"
                   onMouseDown={keepFocus}
@@ -336,7 +331,11 @@ export default function CodexModal() {
                 >
                   <div className="codex-card-top">
                     <span className="codex-title">{item.title}</span>
-                    {item.needsReview && <span className="review-tag">待複習</span>}
+                    {item.seen ? (
+                      item.needsReview && <span className="review-tag">待複習</span>
+                    ) : (
+                      <span className="unseen-tag">🔒 待探索</span>
+                    )}
                   </div>
                   <div className="codex-card-bottom">
                     <span className="stars" aria-label={`熟練度 ${item.stars} 星`}>
@@ -403,6 +402,13 @@ export default function CodexModal() {
             </div>
 
             <div className="codex-popup-body">
+              {!selectedItem.seen && (
+                <div className="codex-unseen-hint">
+                  <span aria-hidden>🔒</span>
+                  <span>此項目尚未在戰鬥中遇到。先在此預習發音與例句，在冒險中答對即可解鎖熟練星級！</span>
+                </div>
+              )}
+
               <div className="codex-popup-section">
                 <h4>釋義與核心意涵</h4>
                 <p className="codex-popup-def">{selectedItem.subtitle || '暫無中文釋義'}</p>
@@ -440,6 +446,20 @@ export default function CodexModal() {
               >
                 ◀ 上一張
               </button>
+              {selectedItem.kind === 'word' && (
+                <button
+                  className="btn btn-secondary btn-small"
+                  onMouseDown={keepFocus}
+                  onClick={() => {
+                    const w = selectedItem.title;
+                    setSelectedItem(null);
+                    useUiStore.getState().openStudy(w);
+                  }}
+                  title="開啟詳細單字學習卡"
+                >
+                  📖 單字卡
+                </button>
+              )}
               <button
                 className="btn btn-primary btn-small"
                 onMouseDown={keepFocus}
@@ -447,7 +467,7 @@ export default function CodexModal() {
                   if (selectedItem.audio) say(selectedItem.audio);
                 }}
               >
-                🔊 重複發音
+                🔊 發音
               </button>
               <button
                 className="btn btn-ghost btn-small codex-nav-card-btn"

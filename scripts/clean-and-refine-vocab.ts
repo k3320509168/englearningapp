@@ -167,7 +167,8 @@ for (const [key, entry] of Object.entries(rawVocab)) {
     .replace(/\s+/g, ' ')
     .trim();
 
-  if (!canonicalKey || canonicalKey.length < 2) continue;
+  // 單字母（如 A, B, C 等）絕不能作為單字鍵值，防止誤攔截選擇題選項 A/B/C/D
+  if (!canonicalKey || canonicalKey.length <= 1) continue;
 
   let word = entry.word;
   if (!word || typeof word !== 'string' || word.trim() === '') {
@@ -216,8 +217,12 @@ for (const [, pool] of Object.entries(QUESTION_POOL)) {
   const allQ = [...pool.normal, ...pool.boss];
   for (const q of allQ) {
     if (q.type !== 'spell' && q.type !== 'fill' && q.type !== 'voice') continue;
-    const ansKey = q.ans.trim().toUpperCase().replace(/_/g, ' ').replace(/\s+/g, ' ');
-    if (!ansKey) continue;
+    // 關鍵修復：填空題 (fill) 的 q.ans 只是缺失字母（如 'A'），真實單字必須從 q.speak 取得！
+    const rawTarget = q.type === 'fill'
+      ? (q.speak ? q.speak.trim().replace(/[^A-Za-z\s-]/g, '') : '')
+      : q.ans.trim();
+    const ansKey = rawTarget.toUpperCase().replace(/_/g, ' ').replace(/\s+/g, ' ');
+    if (!ansKey || ansKey.length <= 1) continue;
 
     if (!cleanedVocab[ansKey]) {
       const word = q.speak ? q.speak.trim() : ansKey.toLowerCase();

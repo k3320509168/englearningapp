@@ -15,6 +15,7 @@ export interface MapRunStats {
   correctTimeMs: number;      // 答對題目花的總時間
   hpRatio: number;            // 結算時隊伍 HP 比例
   bossFlawless: boolean;      // 頭目戰沒有答錯
+  earlyFinish?: boolean;      // 處決提早結算（有剩餘加成題未答）
 }
 
 export const emptyRunStats = (): MapRunStats => ({
@@ -45,15 +46,25 @@ export const fastRoutePassed = (s: MapRunStats) => s.eligibleCorrectAnswers >= 1
 // 第四輪（和 Gemini 討論）：原本的條件太容易拿滿。改成三個方向各一顆：
 // 生存、英文準度85%、動態真實連對或至少10%有效答對達快答。
 // C4：連對門檻依整張實際作答數調整，並以區域門檻封頂；困難題 Bonus 不影響真實連對。
+// 第二十一輪：首領處決提早結算時，為維持彩色三星挑戰性，要求正確率 ≥95%、真實連對 ≥12。
 export const STAR_COMBO = [8, 10, 12, 15, 18, 20, 25, 30, 35];
 export const STAR_ACCURACY = 0.85;
+export const STAR_EARLY_ACCURACY = 0.95;
+export const STAR_EARLY_STREAK = 12;
 
 export function requiredStreak(regionIdx: number, actualAnswers: number): number {
   const regionRequirement = STAR_COMBO[Math.min(Math.max(0, regionIdx), STAR_COMBO.length - 1)];
   return Math.min(regionRequirement, Math.max(8, Math.ceil(Math.min(Math.max(0, actualAnswers), 90) * 0.15)));
 }
 
-export function starConditions(regionIdx: number, actualAnswers = 90): StarCondition[] {
+export function starConditions(regionIdx: number, actualAnswers = 90, earlyFinish = false): StarCondition[] {
+  if (earlyFinish) {
+    return [
+      { label: '通關且沒有隊員倒下', met: s => s.knockouts === 0 },
+      { label: `處決提早結算：正確率 ${Math.round(STAR_EARLY_ACCURACY * 100)}% 以上（未達可繼續追擊）`, met: s => accuracy(s) >= STAR_EARLY_ACCURACY },
+      { label: `處決提早結算：連續答對 ${STAR_EARLY_STREAK} 題以上`, met: s => s.maxStreak >= STAR_EARLY_STREAK },
+    ];
+  }
   const combo = requiredStreak(regionIdx, actualAnswers);
   return [
     { label: '通關且沒有隊員倒下', met: s => s.knockouts === 0 },
@@ -63,7 +74,7 @@ export function starConditions(regionIdx: number, actualAnswers = 90): StarCondi
 }
 
 export function evaluateStars(regionIdx: number, stats: MapRunStats): boolean[] {
-  return starConditions(regionIdx, stats.answered).map(c => c.met(stats));
+  return starConditions(regionIdx, stats.answered, !!stats.earlyFinish).map(c => c.met(stats));
 }
 
 // 每顆新拿到的星星：+1 召喚券

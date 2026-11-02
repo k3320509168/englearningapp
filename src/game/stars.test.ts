@@ -39,6 +39,20 @@ describe('three-star rating', () => {
     expect(evaluateStars(8, { ...emptyRunStats(), answered: 90, correct: 80, maxStreak: 13, correctTimeMs: 800000 })[2]).toBe(false);
   });
 
+  it('evaluates early execution finish with stricter criteria: 95% accuracy and 12 streak', () => {
+    // 正常通關（未提早）：85% 正確率、連對 9 題即可拿到三星
+    const normalRun = { ...emptyRunStats(), answered: 20, correct: 18, maxStreak: 9, correctTimeMs: 18 * 6000, earlyFinish: false };
+    expect(evaluateStars(0, normalRun)).toEqual([true, true, true]);
+
+    // 處決提早結算（earlyFinish = true）：18/20 = 90% (<95%)，連對 9 (<12) → 第 2、3 顆星未達成
+    const earlyRun = { ...normalRun, earlyFinish: true };
+    expect(evaluateStars(0, earlyRun)).toEqual([true, false, false]);
+
+    // 處決提早結算達成 95% 正確率（例如 20/20）且連對 12 題以上 → 取得完整三星
+    const perfectEarlyRun = { ...emptyRunStats(), answered: 20, correct: 19, maxStreak: 12, earlyFinish: true };
+    expect(evaluateStars(0, perfectEarlyRun)).toEqual([true, true, true]);
+  });
+
   it('evaluates a run: survive, 85% accuracy, combo or speed', () => {
     const good = { ...emptyRunStats(), answered: 20, correct: 18, maxStreak: 9, correctTimeMs: 18 * 6000 };
     expect(evaluateStars(0, good)).toEqual([true, true, true]);

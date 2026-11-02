@@ -212,3 +212,134 @@ export function skipSpeaking(s: PlacementState, now = Date.now()): PlacementStat
 export const RETEST_DAYS = 7;
 export const retestWaitMs = (lastAt: number | undefined, now = Date.now()) =>
   (lastAt ? Math.max(0, lastAt + RETEST_DAYS * 86_400_000 - now) : 0);
+
+// 7 天回顧檢查規格（docs/STAGE_PLAN.md 第 17 節 / TASKS T11）：
+// 跳級驗證後第 7 天進行 12 題回顧檢查（聽、讀、說、寫各 3 題）
+// 總分 >= 9 且每項技能 >= 2 題算通過。
+// 若未通過，不降級、不收回等級，推薦弱項練習，24 小時後可再驗證。
+export const REVIEW_DAYS = 7;
+export const REVIEW_RETRY_HOURS = 24;
+export const REVIEW_TOTAL_QUESTIONS = 12;
+export const REVIEW_PER_SKILL = 3;
+export const REVIEW_PASS_TOTAL = 9;
+export const REVIEW_PASS_PER_SKILL = 2;
+
+export interface SkillScore { correct: number; total: number }
+export type ReviewSkill = 'reading' | 'listening' | 'speaking' | 'writing';
+
+export interface PlacementReviewState {
+  level: number;
+  queue: Question[];
+  currentIdx: number;
+  scores: Record<ReviewSkill, SkillScore>;
+  speakingVerified: boolean;
+  done: boolean;
+  passed: boolean;
+  weak: ReviewSkill[];
+}
+
+export function isPlacementReviewDue(
+  placement: { level?: number; region?: number; verified?: boolean; at: number; verifiedAt?: number; lastReviewAt?: number; reviewPassed?: boolean } | null,
+  now = Date.now(),
+): boolean {
+  if (!placement || !placement.verified || placement.reviewPassed) return false;
+  if (placement.lastReviewAt) {
+    return now - placement.lastReviewAt >= REVIEW_RETRY_HOURS * 3600_000;
+  }
+  const baseTime = placement.verifiedAt ?? placement.at;
+  return now - baseTime >= REVIEW_DAYS * 86_400_000;
+}
+
+export function startPlacementReview(
+  placement: { level: number; speakingVerified?: boolean },
+  opts: { voice?: boolean; rand?: () => number; pool?: Question[][] } = {},
+): PlacementReviewState {
+  const rand = opts.rand ?? Math.random;
+  const pool = opts.pool ?? POOL;
+  const level = Math.min(Math.max(0, placement.level), maxTestable(pool));
+  const list = pool[level];
+  const voice = opts.voice ?? placement.speakingVerified ?? true;
+  const used = new Set<string>();
+
+  const r = take(list.filter(isReading), REVIEW_PER_SKILL, used, rand);
+  r.forEach(q => used.add(key(q)));
+  const l = take(list.filter(isListening), REVIEW_PER_SKILL, used, rand);
+  l.forEach(q => used.add(key(q)));
+  const s = voice ? take(list.filter(q => q.type === 'voice'), REVIEW_PER_SKILL, used, rand) : [];
+  s.forEach(q => used.add(key(q)));
+  const w = take(list.filter(q => q.type === 'spell' || q.type === 'fill'), REVIEW_PER_SKILL, used, rand);
+  w.forEach(q => used.add(key(q)));
+
+  // 口說未啟用或題量不足時，以寫作題補足總數
+  if (s.length < REVIEW_PER_SKILL) {
+    const extraW = take(list.filter(q => q.type === 'spell' || q.type === 'fill'), REVIEW_PER_SKILL - s.length, used, rand);
+    extraW.forEach(q => used.add(key(q)));
+    w.push(...extraW);
+  }
+
+  const queue = shuffleArray([...r, ...l, ...s, ...w], rand);
+
+  return {
+    level,
+    queue,
+    currentIdx: 0,
+    scores: {
+      reading: { correct: 0, total: 0 },
+      listening: { correct: 0, total: 0 },
+      speaking: { correct: 0, total: 0 },
+      writing: { correct: 0, total: 0 },
+    },
+    speakingVerified: voice && s.length > 0,
+    done: queue.length === 0,
+    passed: false,
+    weak: [],
+  };
+}
+
+export function currentReviewQuestion(state: PlacementReviewState): Question | null {
+  return state.queue[state.currentIdx] ?? null;
+}
+
+export function answerPlacementReview(
+  state: PlacementReviewState,
+  correct: boolean,
+): PlacementReviewState {
+  if (state.done || state.currentIdx >= state.queue.length) return state;
+  const q = state.queue[state.currentIdx];
+  const skill: ReviewSkill = q.type === 'voice'
+    ? 'speaking'
+    : q.type === 'spell' || q.type === 'fill'
+      ? 'writing'
+      : isListening(q)
+        ? 'listening'
+        : 'reading';
+
+  const prevScore = state.scores[skill];
+  const scores = {
+    ...state.scores,
+    [skill]: { correct: prevScore.correct + (correct ? 1 : 0), total: prevScore.total + 1 },
+  };
+
+  const nextIdx = state.currentIdx + 1;
+  const done = nextIdx >= state.queue.length;
+
+  if (!done) {
+    return { ...state, currentIdx: nextIdx, scores };
+  }
+
+  const totalCorrect = Object.values(scores).reduce((acc, s) => acc + s.correct, 0);
+  const weak: ReviewSkill[] = (Object.entries(scores) as [ReviewSkill, SkillScore][])
+    .filter(([, s]) => s.total > 0 && s.correct < REVIEW_PASS_PER_SKILL)
+    .map(([sk]) => sk);
+
+  const passed = totalCorrect >= REVIEW_PASS_TOTAL && weak.length === 0;
+
+  return {
+    ...state,
+    currentIdx: nextIdx,
+    scores,
+    done: true,
+    passed,
+    weak,
+  };
+}

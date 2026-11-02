@@ -7,9 +7,9 @@ import { PROLOGUE, REGIONS } from '../game/regions';
 import { isSpeechRecognitionSupported } from '../game/speech';
 import {
   CONFIRM_SIZE, MAX_PROBE_QUESTIONS, PLACEMENT_LEVELS, TIME_LIMIT_MS, answerPlacement, answeredCount, currentQuestion,
-  maxTestable, retestWaitMs, skipSpeaking, startPlacement,
+  maxTestable, retestWaitMs, skipSpeaking, startPlacement, isPlacementReviewDue, startPlacementReview, answerPlacementReview,
+  currentReviewQuestion, type PlacementReviewState, type PlacementState,
 } from '../game/placementTest';
-import type { PlacementState } from '../game/placementTest';
 import { beginLevel, continueJourney } from '../game/startLevel';
 import { keepFocus } from './keepFocus';
 
@@ -22,21 +22,36 @@ const STARTS = [
 ];
 
 // 程度測驗 v1.6：自適應聽讀探測＋口說寫作確認（docs/STAGE_PLAN.md 第 17 節）。
-// 測驗中不顯示對錯；結果決定從失語邊境或哪個區域出發。跳級的玩家先用臨時戰力試玩，通過區域試煉才正式補等級
+// 測驗中不顯示對錯；結果決定從失語邊境或哪個區域出發。跳級的玩家先用臨時戰力試玩，通過區域試煉才正式補等級。
+// T11：跳級 7 天後進行 12 題回顧檢查（聽讀說寫各 3 題），總分 ≥9 且每技能 ≥2 通過。
 export default function PlacementModal() {
   const closeModal = useUiStore(s => s.closeModal);
-  const lastAt = useSaveStore(s => s.placement?.at);
+  const placement = useSaveStore(s => s.placement);
+  const recordPlacementReview = useSaveStore(s => s.recordPlacementReview);
+  const lastAt = placement?.at;
   const voice = useSaveStore(s => isSpeechRecognitionSupported() && !s.settings.voiceAsSpelling);
   const [start, setStart] = useState(Math.min(4, maxTestable()));
   const [test, setTest] = useState<PlacementState | null>(null);
+  const [review, setReview] = useState<PlacementReviewState | null>(null);
   const wait = retestWaitMs(lastAt);
   const top = maxTestable();
+  const reviewDue = isPlacementReviewDue(placement);
 
   const begin = () => setTest(startPlacement(start, { voice }));
+  const beginReview = () => {
+    if (!placement) return;
+    setReview(startPlacementReview(placement, { voice }));
+  };
+
   const onAnswer = (correct: boolean, viaSpelling?: boolean) => {
     if (!test) return;
     const q = currentQuestion(test);
     setTest(q?.type === 'voice' && viaSpelling ? skipSpeaking(test) : answerPlacement(test, correct));
+  };
+
+  const onReviewAnswer = (correct: boolean) => {
+    if (!review) return;
+    setReview(answerPlacementReview(review, correct));
   };
 
   // 出發：Pre-A1 去失語邊境；其他從推薦區域開始（前面的區域不算通關、不補獎勵，之後可以回去打）
@@ -56,11 +71,79 @@ export default function PlacementModal() {
   };
 
   const q = test ? currentQuestion(test) : null;
+  const rq = review ? currentReviewQuestion(review) : null;
   const result = test?.phase === 'done' ? test.result ?? 0 : null;
   const regionOf = (level: number) => (level <= 0 ? PROLOGUE.name : REGIONS[Math.min(level - 1, REGIONS.length - 2)].name);
 
+  // 7 天回顧模式
+  if (review) {
+    if (review.done) {
+      const totalCorrect = Object.values(review.scores).reduce((acc, sc) => acc + sc.correct, 0);
+      const skillNameMap = { reading: '閱讀', listening: '聽力', speaking: '口說', writing: '寫作' };
+      return (
+        <Modal title="📋 7 天跳級回顧檢查結果" onClose={closeModal}>
+          <p className="result-title">{review.passed ? '🎉 7 天回顧檢查全數通過！' : '💪 回顧檢查未達標'}</p>
+          <p>
+            {review.passed
+              ? `恭喜！12 題中答對 ${totalCorrect} 題，四項能力全數達標，跳級實力與推薦區域正式鎖定！`
+              : `12 題中答對 ${totalCorrect} 題（標準：總分 ≥9 題且每項能力 ≥2 題）。`}
+          </p>
+          <ul className="muted gate-rules" style={{ margin: '12px 0' }}>
+            <li>🎧 聽力：{review.scores.listening.correct} / {review.scores.listening.total} 題 {review.scores.listening.correct >= 2 ? '✔' : '✘'}</li>
+            <li>📖 閱讀：{review.scores.reading.correct} / {review.scores.reading.total} 題 {review.scores.reading.correct >= 2 ? '✔' : '✘'}</li>
+            <li>🎙️ 口說：{review.scores.speaking.correct} / {review.scores.speaking.total} 題 {review.scores.speaking.correct >= 2 ? '✔' : '✘'}</li>
+            <li>✍️ 寫作：{review.scores.writing.correct} / {review.scores.writing.total} 題 {review.scores.writing.correct >= 2 ? '✔' : '✘'}</li>
+          </ul>
+          {!review.passed && (
+            <p className="muted">
+              💡 未通過<b>不會降級、不收回任何進度與裝備</b>。建議多在錯題修煉場加強「{review.weak.map(w => skillNameMap[w]).join('、')}」，24 小時後可再進行回顧驗證。
+            </p>
+          )}
+          <div className="tutorial-actions">
+            <button
+              className="btn btn-primary"
+              onMouseDown={keepFocus}
+              onClick={() => {
+                recordPlacementReview(review.passed, review.weak);
+                closeModal();
+              }}
+            >
+              {review.passed ? '完成' : '知道了'}
+            </button>
+          </div>
+        </Modal>
+      );
+    }
+    if (rq) {
+      return (
+        <Modal title="📋 7 天跳級回顧檢查" onClose={closeModal}>
+          <QuizRunner
+            key={`review-${review.currentIdx}`}
+            questions={[rq]}
+            blind
+            lastLabel="下一題"
+            label={() => `7 天實力回顧・第 ${review.currentIdx + 1} / 12 題`}
+            onAnswer={onReviewAnswer}
+          />
+        </Modal>
+      );
+    }
+  }
+
   return (
     <Modal title="🧭 程度測驗" onClose={closeModal}>
+      {reviewDue && (
+        <div style={{ background: 'rgba(255, 209, 92, 0.12)', border: '1px solid #ffd15c', borderRadius: 8, padding: 12, marginBottom: 16 }}>
+          <p style={{ margin: 0, fontWeight: 700, color: '#ffd15c' }}>📋 7 天跳級實力回顧檢查到期！</p>
+          <p style={{ margin: '4px 0 10px 0', fontSize: '0.88rem' }}>
+            你在跳級驗證後已達 7 天，依課綱需進行 12 題快速實力回顧（聽讀說寫各 3 題）。通過即正式鎖定實力；未通過不降級。
+          </p>
+          <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={beginReview}>
+            立即開始 7 天回顧檢查（12 題）➔
+          </button>
+        </div>
+      )}
+
       {result !== null && test ? (
         <>
           <p className="result-title">你的程度：{PLACEMENT_LEVELS[result]}</p>

@@ -85,10 +85,15 @@ export default function SummaryPanel() {
             {mapResult.stars.map((on, i) => <span key={i} className={`big-star ${on ? 'on' : ''}`} style={{ animationDelay: `${i * 0.25}s` }}>★</span>)}
           </div>
           <ul>
-            {starConditions(levelIdx, mapStats.answered).map((c, i) => (
+            {starConditions(levelIdx, mapStats.answered, mapStats.earlyFinish).map((c, i) => (
               <li key={c.label} className={mapResult.stars[i] ? 'met' : ''}>{mapResult.stars[i] ? '✔' : '✘'} {c.label}</li>
             ))}
           </ul>
+          {mapStats.earlyFinish && !mapResult.stars.every(Boolean) && (
+            <p className="star-tip" style={{ fontSize: '0.82rem', color: '#ffcd4b', margin: '4px 0 0 0' }}>
+              💡 處決提早結算未滿三星，可透過下方「繼續追擊」完成標準題量爭取滿星！
+            </p>
+          )}
           {mapResult.gained > 0 && <p className="star-gain">新星星 +{mapResult.gained}，獲得召喚券 🎫 ×{mapResult.gained}！</p>}
         </section>
       )}

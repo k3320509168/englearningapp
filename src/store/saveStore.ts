@@ -92,6 +92,10 @@ export interface PlacementRecord {
   confidence: 'ok' | 'low';
   weak: string[];
   verified: boolean;        // 通過推薦區域的區域試煉
+  verifiedAt?: number;      // 通過區域試煉時間戳
+  lastReviewAt?: number;    // 上次回顧時間戳
+  reviewPassed?: boolean;   // 7天回顧是否通過
+  reviewWeak?: string[];    // 回顧未通過時的弱項
 }
 
 interface SaveData {
@@ -215,6 +219,7 @@ interface SaveActions {
   finishPrologue: () => void;
   setPlacement: (rec: PlacementRecord) => void;
   verifyPlacement: (regionIdx: number) => void;
+  recordPlacementReview: (passed: boolean, weak: string[]) => void;
   addGold: (amount: number) => void;
   buyUpgrade: (id: UpgradeId) => boolean;
   buyItem: (id: ItemId) => boolean;
@@ -728,11 +733,22 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const level = Math.max(s.player.level, floor);
           const before = cumulativeXpAtLevel(s.player.level) + s.player.xp;
           const grant = Math.max(0, cumulativeXpAtLevel(level) - before);
-          return { placement: { ...p, verified: true }, player: { ...s.player, level, xp: before + grant - cumulativeXpAtLevel(level) },
+          return { placement: { ...p, verified: true, verifiedAt: Date.now() }, player: { ...s.player, level, xp: before + grant - cumulativeXpAtLevel(level) },
             xpLedger: { ...s.xpLedger,
               'offered:placement': (s.xpLedger['offered:placement'] ?? 0) + grant,
               'accepted:placement': (s.xpLedger['accepted:placement'] ?? 0) + grant,
             } };
+        }),
+        recordPlacementReview: (passed: boolean, weak: string[]) => set(s => {
+          if (!s.placement) return {};
+          return {
+            placement: {
+              ...s.placement,
+              lastReviewAt: Date.now(),
+              reviewPassed: passed,
+              reviewWeak: weak,
+            },
+          };
         }),
         addGold: (amount) => set(s => ({ gold: s.gold + amount })),
 

@@ -152,8 +152,18 @@ export default function GrowthModal() {
               );
             })}
           </ul>
-          <p className="summary-label">背包（{equipment.length}）</p>
-          {equipment.length === 0 && <p className="muted">還沒有裝備，到「鍛造坊」打造第一件吧！</p>}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12, marginBottom: 6 }}>
+            <p className="summary-label" style={{ margin: 0 }}>背包（{equipment.length}）</p>
+            <button
+              className="btn btn-secondary btn-small"
+              onMouseDown={keepFocus}
+              onClick={() => { closeModal(); useUiStore.getState().openShop('forge'); }}
+              title="前往工坊打造新裝備"
+            >
+              ⚒️ 前往工坊鍛造 ➔
+            </button>
+          </div>
+          {equipment.length === 0 && <p className="muted">還沒有裝備，到工坊鍛造打造第一件吧！</p>}
           <ul className="gear-list">
             {equipment.map(item => {
               const def = equipDef(item.defId);

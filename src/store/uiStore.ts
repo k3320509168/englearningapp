@@ -4,6 +4,7 @@ import { create } from 'zustand';
 export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review' | 'placement' | 'gateTrial' | 'shardQuiz' | 'holyForge' | 'rush' | 'tower' | 'storyLog' | 'adventure' | 'loginReward';
 
 export type GrowthTab = 'hero' | 'gear' | 'forge';
+export type ShopTab = 'upgrades' | 'forge' | 'weapons';
 
 // 全螢幕慶祝：升級、三星、SSR、真名、轉職等重大時刻。排隊依序顯示
 export interface Celebration {
@@ -24,6 +25,7 @@ interface UiState {
   storyReplay: boolean; // 從設定重看劇情：看完直接關閉
   heroId: string;
   growthTab: GrowthTab;
+  shopTab: ShopTab;
   celebrations: Celebration[];
   hintOpen: boolean; // 戰鬥中的情境提示還沒按「知道了」：計時暫停
   wheelHidden: boolean; // 獎勵轉盤按了「稍後再轉」（地圖上的按鈕可以再打開）
@@ -44,6 +46,7 @@ interface UiState {
   openStory: (storyId: string, replay?: boolean) => void;
   openTrueName: (heroId: string) => void;
   openGrowth: (tab?: GrowthTab) => void;
+  openShop: (tab?: ShopTab) => void;
   closeModal: () => void;
 }
 
@@ -56,6 +59,7 @@ export const useUiStore = create<UiState>()((set) => ({
   storyReplay: false,
   heroId: '',
   growthTab: 'hero',
+  shopTab: 'upgrades',
   celebrations: [],
   hintOpen: false,
   wheelHidden: false,
@@ -74,6 +78,7 @@ export const useUiStore = create<UiState>()((set) => ({
   openTrueName: (heroId) => set({ modal: 'trueName', heroId }),
   openHolyForge: (uid) => set({ modal: 'holyForge', forgeUid: uid }),
   openGrowth: (tab = 'hero') => set({ modal: 'growth', growthTab: tab }),
+  openShop: (tab = 'upgrades') => set({ modal: 'shop', shopTab: tab }),
   closeModal: () => set({ modal: null }),
   openStudy: (key) => set({ studyWord: key }),
   closeStudy: () => set({ studyWord: null }),

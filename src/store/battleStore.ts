@@ -844,7 +844,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 三星關卡的第 20 關（大 BOSS）或區域最終魔王：三星評價（第 15 關的小 BOSS 不結算）
     if (stageInMap(s.stageIdx) === MAP_SIZE || isLastStage) {
       const merged = { ...s, ...patch };
-      const stats = { ...merged.mapStats, hpRatio: merged.playerHp / Math.max(1, merged.playerMaxHp) };
+      const earlyFinish = (patch.bonusLeft ?? s.bonusLeft ?? 0) > 0;
+      const stats = { ...merged.mapStats, hpRatio: merged.playerHp / Math.max(1, merged.playerMaxHp), earlyFinish };
       const stars = evaluateStars(s.levelIdx, stats);
       const mapIdx = mapIndexOf(s.stageIdx);
       const gained = save().recordMapStars(mapKey(s.levelKey, mapIdx), stars);
@@ -958,8 +959,21 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         bonusLeft, bonusGold: s.bonusGold + gold, runGold: s.runGold + gold + award.allowanceGold, runXp: s.runXp + award.xp,
         event: nextEvent('attack', { amount: 0, gold, member: s.party[s.attackerIdx]?.id, execution: true, levelUp }),
       };
-      if (bonusLeft <= 0) set({ ...patch, bonusRound: false, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null });
-      else set({ ...patch, ...nextQuestion() });
+      if (bonusLeft <= 0) {
+        let extraPatch: Partial<BattleState> = {};
+        const isMapBoss = stageInMap(s.stageIdx) === MAP_SIZE || (s.stageIdx + 1 >= s.stages.length);
+        if (isMapBoss && s.mode === 'normal') {
+          const stats = { ...s.mapStats, earlyFinish: false };
+          const stars = evaluateStars(s.levelIdx, stats);
+          const mapIdx = mapIndexOf(s.stageIdx);
+          const gained = save().recordMapStars(mapKey(s.levelKey, mapIdx), stars);
+          extraPatch = { mapStats: stats, mapResult: { mapIdx, stars, gained } };
+          if (gained > 0 && stars.every(Boolean)) {
+            useUiStore.getState().celebrate({ icon: '⭐', title: '三星通關！', sub: `「${regionOf(s.levelKey).maps[mapIdx] ?? ''}」全部條件達成`, color: '#ffcd4b' });
+          }
+        }
+        set({ ...patch, ...extraPatch, bonusRound: false, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null });
+      } else set({ ...patch, ...nextQuestion() });
       return;
     }
     // 超過 20 秒才答對：這題不累積 combo
@@ -1552,7 +1566,19 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     endBonus: () => {
       const s = get();
       if (!s.bonusRound) return;
-      set({ bonusRound: false, bonusLeft: 0, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null, feedback: null });
+      let extraPatch: Partial<BattleState> = {};
+      const isMapBoss = stageInMap(s.stageIdx) === MAP_SIZE || (s.stageIdx + 1 >= s.stages.length);
+      if (isMapBoss && s.mode === 'normal') {
+        const stats = { ...s.mapStats, earlyFinish: true };
+        const stars = evaluateStars(s.levelIdx, stats);
+        const mapIdx = mapIndexOf(s.stageIdx);
+        const gained = save().recordMapStars(mapKey(s.levelKey, mapIdx), stars);
+        extraPatch = { mapStats: stats, mapResult: { mapIdx, stars, gained } };
+        if (gained > 0 && stars.every(Boolean)) {
+          useUiStore.getState().celebrate({ icon: '⭐', title: '三星通關！', sub: `「${regionOf(s.levelKey).maps[mapIdx] ?? ''}」全部條件達成`, color: '#ffcd4b' });
+        }
+      }
+      set({ ...extraPatch, bonusRound: false, bonusLeft: 0, executing: false, phase: s.bonusReturn ?? 'monsterDown', bonusReturn: null, feedback: null });
     },
 
     continueAfterFeedback: () => {

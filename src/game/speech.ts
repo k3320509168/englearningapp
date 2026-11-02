@@ -118,14 +118,27 @@ function setJammed(value: boolean) {
 // 瀏覽器規定頁面被點過之前不能發音（例如一進戰鬥就自動唸題目）：被擋下的那一句，等第一次點擊或按鍵時補唸
 let blocked: { replay: () => void; at: number } | null = null;
 const BLOCKED_REPLAY_MS = 10_000;
+let lastPlayStart = 0;
+
 if (typeof window !== 'undefined') {
   const replay = () => {
+    // 恢復可能被瀏覽器後台掛起的語音引擎
+    if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
     const b = blocked;
     blocked = null;
     if (b && Date.now() - b.at < BLOCKED_REPLAY_MS) b.replay();
   };
   window.addEventListener?.('pointerdown', replay, true);
   window.addEventListener?.('keydown', replay, true);
+  if (typeof document !== 'undefined') {
+    document.addEventListener?.('visibilitychange', () => {
+      if (!document.hidden && 'speechSynthesis' in window && window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
+    });
+  }
 }
 
 // 估計唸完要多久（毫秒）：約每個字元 90ms，語速越慢越久，再加 3 秒緩衝
@@ -142,6 +155,7 @@ function play(r: SpeakRequest) {
   if (voice) u.voice = voice;
   u.rate = r.slow ? r.slowRate : r.rate;
   u.volume = r.volume;
+  lastPlayStart = Date.now();
   playing = u;
   keepAlive.add(u);
   // 發音時壓低背景音樂，唸完再恢復
@@ -200,6 +214,12 @@ export function speak(text: string, rate = 1, volume = 1, slow = false, voiceNam
   if (key === lastRequest.key && now - lastRequest.at < REPEAT_IGNORE_MS) return;
   lastRequest = { key, at: now };
   const request = { text, rate, volume, slow, voiceName, slowRate, lifecycle };
+  // 長時間遊玩看門狗自愈：若前一句標記 playing 已超過 5.5 秒，但瀏覽器語音事件遺失，強制解鎖自愈
+  if (playing && Date.now() - lastPlayStart > 5500) {
+    playing = null;
+    keepAlive.clear();
+    duckMusic(false);
+  }
   // 上一句還在唸：排隊（只留最新的一句），不打斷
   if (playing) { queued = request; return; }
   play(request);

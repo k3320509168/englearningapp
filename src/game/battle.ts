@@ -107,9 +107,9 @@ function editDistance(a: string, b: string): number {
 
 // 辨識出來的字算不算唸對：完全一樣、單複數（reservation / reservations），
 // 或長字只差一個字母（辨識引擎常見的小誤差，例如 luggage → luggages）
-// 長單字容許的誤差：電腦的麥克風收音比手機差，辨識常差一兩個字母（例如 helicopter 聽成 hellicopter）。
-// 短字維持嚴格，避免唸錯也算對（restart 不能算 start）
-const wordTolerance = (len: number) => (len >= 9 ? 2 : len >= 6 ? 1 : 0);
+// 長單字容許的誤差：電腦/手機麥克風收音常見一兩個音素微差（例如 helicopter 聽成 hellicopter，accommodation 聽成 accomadation）。
+// 短字維持嚴格避免誤判（例如 apple 不能算 apply、start 不能算 restart）
+const wordTolerance = (len: number) => (len >= 12 ? 3 : len >= 8 ? 2 : len >= 6 ? 1 : 0);
 function wordMatches(heard: string, target: string): boolean {
   if (heard === target) return true;
   if (heard === `${target}S` || heard === `${target}ES` || `${heard}S` === target) return true;
@@ -145,9 +145,15 @@ export function checkVoice(q: Question, transcripts: string | string[]): boolean
 // 只聽到開頭一小段（例如 helicopter 只聽到 "Hel"）：收音被提早切斷，不是唸錯，讓玩家免費再唸一次
 export function isVoiceFragment(q: Question, transcripts: string[]): boolean {
   const target = (q.speak ?? q.ans).toUpperCase().replace(/[^A-Z]/g, '');
-  const heard = (transcripts[0] ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+  const raw = (transcripts[0] ?? '').toUpperCase();
+  const words = raw.replace(/[^A-Z]/g, ' ').split(/\s+/).filter(Boolean).filter(w => !['UH', 'UM', 'AH', 'OH', 'A', 'THE'].includes(w));
+  const heard = words.join('');
   if (!heard) return true;
-  return heard.length <= target.length * 0.6 && target.startsWith(heard.slice(0, 2));
+  if (heard.length <= target.length * 0.65) {
+    if (target.startsWith(heard.slice(0, 2))) return true;
+    if (words.some(w => target.startsWith(w.slice(0, 2)))) return true;
+  }
+  return false;
 }
 
 // 從題目描述取出中文提示，例如「請拼出：書本」→「書本」、「填空題：B U D G _ T (預算)」→「預算」

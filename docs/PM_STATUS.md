@@ -137,6 +137,13 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
   - 一轉 Lv30、二轉 Lv80、三轉 Lv120、👑 終極覺醒 Lv160，等級上限階梯對應 `[40, 80, 120, 160, 200]`，徹底抹除 Lv80~150 成長真空期。
   - 五大職業擴充 20 組三轉大師職業（如秘術法皇、天變神君、十字聖裁領主、無雙萬劍皇、血戮死狂、鬥神阿修羅、死眼鷹皇、天國樞機卿等）與對應終極覺醒形態。
   - `GrowthModal` 全面支援四階樹狀分叉軌跡展示與升階目標卡片；單元測試通過。
+- ✅ **詞族進化微特效全套實裝（PM_STATUS 2.5 節 / Antigravity）**：
+  - 建立 `src/game/wordFamilies.ts`，收錄 54 組核心詞族庫（涵蓋 act、decide、create、depend、differ、protect 等在各區反覆進化的字根與衍生詞）。
+  - `battleStore.ts` 答對時自動檢測詞族進化關係，在戰鬥中觸發 `wordEvolution` 狀態。
+  - `BattleHUD.tsx` 與 `index.css` 實裝日系像素金色流光浮動微特效（`🌟 詞族進化！root ➔ evolved`），大幅提升詞彙學習爽度與成就感。
+- ✅ **手機端長按拖曳換隊手感與麥克風回歸口說全量落實（TASKS 第七節 / Antigravity）**：
+  - `MicPermissionModal.tsx` 貫徹製作人「不預設拼寫、確定無法開啟才改拼寫」最高指令，移除冗長局域網解釋，保留真實麥克風權限流程與溫和備援。
+  - `.party-slot` 加入 `touch-action: none` 防止行動端捲動阻斷，`usePartyDrag.ts` 配備 35ms 長按抓取振動反饋，手機端拖曳換位與離隊無縫順暢。
 - ✅ **全題庫 CEFR 深度覆蓋率與字卡缺口剖析白皮書（P0-1 / Antigravity）**：
   - 產出 `docs/question-bank-qa/CEFR_CURRICULUM_AUDIT_REPORT.md` 白皮書，量化全庫 13,486 題中內含高達 **11,129 個獨立英文詞形**，精確證實「**題目極其充沛，過去缺口在於手工字典卡片建檔未全**」。
 - ✅ **日常高頻情境題與片語動詞出題補足（P0-3 / Antigravity）**：

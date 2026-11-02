@@ -882,7 +882,7 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   cursor: pointer;
 }
 .party-slot img { width: 64px; height: 54px; image-rendering: pixelated; }
-.party-slot { background: color-mix(in srgb, var(--slot-color) 16%, var(--panel-2)); border-color: color-mix(in srgb, var(--slot-color) 55%, var(--ink)); touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.party-slot { background: color-mix(in srgb, var(--slot-color) 16%, var(--panel-2)); border-color: color-mix(in srgb, var(--slot-color) 55%, var(--ink)); touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .party-slot > img, .party-slot > span:not(.slot-num):not(.party-pos) { position: relative; z-index: 1; }
 .party-slot > .party-pos { z-index: 2; }
 /* 出手順序：大數字在格子底下，英雄站上去會擋住一部分 */
@@ -3544,3 +3544,79 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
 .codex-popup-actions .btn {
   flex: 1;
 }
+
+/* 🌟 詞族進化微特效 */
+@keyframes evoPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  25% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes evoGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 209, 92, 0.4), inset 0 0 8px rgba(255, 209, 92, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(255, 209, 92, 0.8), inset 0 0 12px rgba(255, 209, 92, 0.4); }
+}
+.word-evolution-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(48, 54, 95, 0.95), rgba(28, 32, 60, 0.95));
+  border: 2px solid var(--accent, #ffd15c);
+  animation: evoPop 0.3s ease-out, evoGlow 2s infinite ease-in-out;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: #fff;
+  z-index: 10;
+}
+.evo-sparkle {
+  font-size: 15px;
+  animation: spin 3s infinite linear;
+}
+.evo-tag {
+  background: var(--accent, #ffd15c);
+  color: #101127;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.evo-flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+}
+.evo-root {
+  color: #a9b0ce;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+.evo-arrow {
+  color: #4cc9f0;
+  font-weight: bold;
+}
+.evo-evolved {
+  color: #ffd15c;
+  font-weight: 800;
+  font-size: 14.5px;
+  text-shadow: 0 0 8px rgba(255, 209, 92, 0.5);
+}
+.evo-meaning {
+  color: #b8c0e0;
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .word-evolution-banner {
+    font-size: 12px;
+    padding: 4px 8px;
+    gap: 5px;
+  }
+  .evo-evolved {
+    font-size: 13px;
+  }
+}
+

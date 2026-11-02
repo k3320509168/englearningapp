@@ -38,6 +38,9 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
     const begin = () => {
       active = true;
       suppressClick.current = true;
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+        try { navigator.vibrate(35); } catch { /* ignore */ }
+      }
       setDrag({ id, img, x, y, over: targetAt(x, y) });
     };
     const timer = touch ? window.setTimeout(begin, 250) : 0;

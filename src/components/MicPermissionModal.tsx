@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
-import { isSpeechRecognitionSupported } from '../game/speech';
 import { useBattleStore } from '../store/battleStore';
 import { keepFocus } from './keepFocus';
 
@@ -13,13 +12,11 @@ type Status = 'idle' | 'asking' | 'granted' | 'denied' | 'unsupported';
 export default function MicPermissionModal() {
   const setMicAsked = useSaveStore(s => s.setMicAsked);
   const closeModal = useUiStore(s => s.closeModal);
-  const [status, setStatus] = useState<Status>(
-    // 非 HTTPS 網頁沒有 mediaDevices（型別上一定存在，實際上可能是 undefined）
-    isSpeechRecognitionSupported() && 'mediaDevices' in navigator ? 'idle' : 'unsupported',
-  );
+  // 依製作人指令：不預設切換拼寫，初始狀態一律為 idle，讓玩家可主動嘗試開啟麥克風；只有確定不能開啟時才切換
+  const [status, setStatus] = useState<Status>('idle');
 
   const close = () => { setMicAsked(); closeModal(); };
-  // 沒有麥克風可用：口說題改成拼寫（戰鬥中眼前的口說題也立刻轉換），玩家不會卡在口說題
+  // 確定沒有麥克風可用時才轉拼寫
   const fallbackToSpelling = () => {
     useSaveStore.getState().updateSettings({ voiceAsSpelling: true });
     useBattleStore.getState().switchToSpelling();
@@ -28,6 +25,9 @@ export default function MicPermissionModal() {
   const ask = async () => {
     setStatus('asking');
     try {
+      if (!navigator?.mediaDevices?.getUserMedia) {
+        throw new Error('mediaDevices unavailable');
+      }
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       // 只是為了取得權限，立刻關掉麥克風
       stream.getTracks().forEach(t => t.stop());
@@ -38,7 +38,6 @@ export default function MicPermissionModal() {
     }
   };
 
-  const isInsecureOrigin = typeof window !== 'undefined' && (!window.isSecureContext || (window.location.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(window.location.hostname)));
 
   return (
     <Modal title="🎤 開啟麥克風" onClose={close}>
@@ -62,25 +61,11 @@ export default function MicPermissionModal() {
           </>
         ) : (
           <>
-            <h3>{isInsecureOrigin ? '📱 局域網 HTTP 安全限制提示' : '這個瀏覽器不支援語音辨識'}</h3>
-            {isInsecureOrigin ? (
-              <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.25)', padding: 12, borderRadius: 8, marginTop: 10, lineHeight: 1.6, fontSize: 13.5 }}>
-                <p style={{ margin: '0 0 8px' }}>
-                  檢測到您正在透過局域網 IP 連線（<b>{typeof window !== 'undefined' ? window.location.host : ''}</b>）。
-                </p>
-                <p style={{ margin: '0 0 8px', color: '#ffd15c' }}>
-                  📌 <b>說明</b>：您的手機 Chrome 是最新且支援語音的，但依據 Chrome 安全規範，麥克風 API 僅在 <b>HTTPS</b>（如正式上線網址）或 <b>localhost</b> 下允許呼叫。
-                </p>
-                <p style={{ margin: '0 0 8px', color: '#7fe8ff' }}>
-                  ✅ <b>已自動為您將口說題切換為拼寫題</b>，所有關卡與題目完全不影響闖關！
-                </p>
-                <p style={{ margin: 0, color: '#a9b0ce', fontSize: 12 }}>
-                  💡 若想在手機測試口說：可於 Chrome 網址輸入 <code>chrome://flags/#unsafely-treat-insecure-origin-as-secure</code> 將此網址加入信任名單即可啟用！
-                </p>
-              </div>
-            ) : (
-              <p>口說題會自動改成拼寫題。想練習口說的話，建議改用電腦或手機上的 Chrome、Edge 瀏覽器。</p>
-            )}
+            <h3>麥克風暫時無法啟用</h3>
+            <p style={{ lineHeight: 1.6, fontSize: 13.5 }}>
+              設備或瀏覽器目前無法讀取麥克風（在正式發布的 HTTPS 網站將支援正常語音辨識）。<br />
+              已先為您切換為拼寫作答，所有題目與關卡進度完全正常推進！之後若想開啟，可隨時在「⚙️ 設定」中切換。
+            </p>
           </>
         )}
       </div>

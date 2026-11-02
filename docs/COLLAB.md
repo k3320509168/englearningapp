@@ -222,3 +222,8 @@
   ⑥ **世界王突襲（World Boss Raid）掛載與無障礙拼寫破盾雙軌運作**：在 `Game.tsx` 中掛載 `WorldBossModal`，收錄 50 句史詩古咒詠唱破盾、支援鍵盤輸入關鍵詞破盾備援、60 秒緊張倒數與專屬專武券/稱號獎勵。
   ⑦ **實裝英雄真名短篇故事（Hero True Name Lore Stories）**：建立 `src/game/heroStories.ts`，編寫 38 位原生 SSR 傳奇英雄全英文傳奇紀事短篇（配中英對照與金色名言），並具備全名冊語源動態紀事引擎；在 `TrueNameModal.tsx` 中，當英雄完成五項真名考驗覺醒後，展開「📖 傳奇真名紀事」並支援點擊 🔊 全文朗讀。
   ⑧ **全量檢驗全綠燈**：50 個測試檔、**410 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告。已 Commit 並 Push 至 `origin/feat/round4-pm`。
+- 2026-11-02 Antigravity｜麥克風不預設拼寫最高指令落地＋手機長按拖曳手感升級＋詞族進化微特效實裝交付：
+  ① **麥克風不預設拼寫最高指令落地（製作人最新指示）**：在 `startLevel.ts` 移除任何開局自動將口說題降級為拼寫題的邏輯，只有在玩家設定明確勾選時才轉換；`MicPermissionModal.tsx` 初始狀態為 `idle`，提供「🎤 允許麥克風」，僅在設備或瀏覽器確定拋出錯誤時才提示備援拼寫，絕不提前限制玩家口說體驗。
+  ② **手機端隊伍長按拖曳手感升級（TASKS 第七節）**：`.party-slot` 樣式修正為 `touch-action: none` 徹底消除行動端瀏覽器誤判滾動導致的拖曳中斷；`usePartyDrag.ts` 配備 35ms 長按振動觸感反饋，長按換位與拖回圖鑑離隊無縫順暢。
+  ③ **詞族進化微特效全套實裝（PM_STATUS 2.5 節）**：新增 `src/game/wordFamilies.ts`（涵蓋 54 組核心詞族與衍生詞）；`battleStore.ts` 答對衍生詞時自動檢測詞族進化關係，在戰鬥中觸發 `wordEvolution` 狀態；`BattleHUD.tsx` 與 `src/index.css` 實裝日系像素金色流光浮動微特效（`🌟 詞族進化！root ➔ evolved`），爽度與學習成就感倍增。
+  ④ **全量檢驗全綠燈**：51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告。

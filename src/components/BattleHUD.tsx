@@ -159,6 +159,7 @@ export default function BattleHUD() {
         </div>
       )}
       <PartyBar />
+      <WordEvolutionBanner />
       <BonusBar />
       <TimerBars />
       {phase === 'lesson' && modal !== 'story' && <LessonPanel />}
@@ -182,6 +183,23 @@ export function BonusOffer() {
     </button>
   );
 }
+function WordEvolutionBanner() {
+  const evolution = useBattleStore(s => s.wordEvolution);
+  if (!evolution) return null;
+  return (
+    <div className="word-evolution-banner" role="status" aria-live="polite">
+      <span className="evo-sparkle">🌟</span>
+      <span className="evo-tag">詞族進化</span>
+      <span className="evo-flow">
+        <span className="evo-root">{evolution.root}</span>
+        <span className="evo-arrow">➔</span>
+        <span className="evo-evolved">{evolution.evolved}</span>
+      </span>
+      <span className="evo-meaning">（{evolution.meaning}）</span>
+    </div>
+  );
+}
+
 function BonusBar() {
   const { round, left } = useBattleStore(useShallow(s => ({ round: s.bonusRound, left: s.bonusLeft })));
   if (!round) return null;

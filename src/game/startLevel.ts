@@ -1,5 +1,4 @@
 import { useBattleStore } from '../store/battleStore';
-import { isSpeechRecognitionSupported } from './speech';
 import { voiceFallback } from './battle';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
@@ -14,9 +13,10 @@ import { loadBank, loadBanksFrom } from './questions/bank/loader';
 // 從地圖（Phaser 圓點或 React 按鈕）開始關卡的共用入口。
 // 場景切換由 MapScene 訂閱 battleStore.active 處理，React 與 Phaser 不必互相呼叫。
 // fromStage 未指定時從存檔進度繼續；傳 0 代表從第 1 關重新開始
-// 瀏覽器不支援語音辨識，或玩家在設定中選擇暫時不用麥克風，口說題都改成拼寫題
+// 只有在玩家主動在設定中勾選「暫時不用麥克風」時，才預先將口說題轉換為拼寫題；
+// 其餘情況保持口說題，讓玩家正常嘗試語音，確定不能開啟時才在戰鬥中切換拼寫
 function voiceTransform() {
-  const noVoice = !isSpeechRecognitionSupported() || useSaveStore.getState().settings.voiceAsSpelling;
+  const noVoice = useSaveStore.getState().settings.voiceAsSpelling;
   return noVoice ? voiceFallback : undefined;
 }
 

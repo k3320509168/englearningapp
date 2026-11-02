@@ -43,6 +43,8 @@ import { MAP_SIZE, mapIndexOf, mapKey, regionOf } from '../game/regions';
 import { PROLOGUE_XP, allowedTypes, prologueGuard, gaugeScale, isPrologue, minAnswers, stageInMap, stageRole, startWaves, untimedStage } from '../game/stageLayout';
 import { BONUS_GOLD, BONUS_GOLD_CAP, canExecute, executeKindOf } from '../game/execute';
 import { WRONG_COMBO_KEEP, applyHardBonus, decayCombo, grantSkillCombo, skillWindowOf } from '../game/combo';
+import { detectWordEvolution } from '../game/wordFamilies';
+import type { WordEvolutionResult } from '../game/wordFamilies';
 import { useUiStore } from './uiStore';
 import { emptyRunStats, evaluateStars, isFastAnswer } from '../game/stars';
 import { dueKnowledge, isLearned, knowledgeKey, needsSeal, regionIndex } from '../game/knowledge';
@@ -158,6 +160,7 @@ interface BattleState {
   questionLimit: number;
   questionLeft: number;
   activeAnswerMs: number;
+  wordEvolution: WordEvolutionResult | null; // 詞族進化微特效
   overtime: boolean;    // 這題已超過 20 秒（前 25 關）：答對不加 combo
   phaseLeft: number;    // 施法確認剩餘時間
   casting: number | null; // 正在確認施放技能的隊員
@@ -570,6 +573,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       treasureLeft: stage.kind === 'treasure' ? TREASURE_TIME : 0,
       phase: showLesson ? 'lesson' : 'answering',
       feedback: null,
+      wordEvolution: null,
       assist: null,
       assistSource: null,
       focusMs: 0,
@@ -1041,8 +1045,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 見習騎士系的被動：每 N combo 得到一次守護
     const guardEvery = teamGuardEvery(party);
     const guardGained = guardEvery > 0 && combo > 0 && combo % guardEvery === 0 && !s.comboGuard;
+    const wordEvolution = !s.overtime ? detectWordEvolution(s.original ?? s.question) : null;
     const base = {
       mapStats,
+      wordEvolution,
       attackerIdx: s.isBossQuestion ? s.attackerIdx : nextAttacker(party, attackerIdx + 1),
       combo, streak, stageAnswers, stageSubmissions: s.stageSubmissions + 1, runAnswers: s.runAnswers + 1, maxCombo: Math.max(s.maxCombo, combo), bossBoost: bonusMult ? false : s.bossBoost,
       amplifyLeft: Math.max(0, s.amplifyLeft - 1),
@@ -1204,6 +1210,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageAnswers: s.stageAnswers + 1,
       stageSubmissions: s.stageSubmissions + (!timeout && given.trim() ? 1 : 0),
       feedback: { question: s.question, given, timeout },
+      wordEvolution: null,
       mapStats: { ...s.mapStats, answered: s.mapStats.answered + 1, bossFlawless: s.mapStats.bossFlawless && !stage.bossMode },
     };
 
@@ -1351,6 +1358,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     questionLimit: QUESTION_LIMIT,
     questionLeft: QUESTION_LIMIT,
     activeAnswerMs: 0,
+    wordEvolution: null,
     overtime: false,
     phaseLeft: 0,
     casting: null,

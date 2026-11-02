@@ -51,6 +51,11 @@ Claude 本週額度將盡（已用約 90%，11/6 00:00 重置）→ **Codex 正�
 - **主責＋諮詢制（製作人 2026-11-01）**：每段工作一個「主責 AI」負責修改、一個「諮詢 AI」參與設計與機制討論（只給意見不改檔）；誰額度快用完（先看每週再看 5 小時）就互換或換人。Claude 額度恢復前只當偶爾的諮詢。
 - 目前：**T14 詞彙與文法課綱** 主責 Antigravity（flash-high、effort high，產出 `docs/design/VOCAB_CURRICULUM.md`）→ 諮詢 Codex 看程式可行性 → 之後 **Codex 主責 T0／T13**、Antigravity 諮詢。
 
+### 1.5 巡檢警報（2026-11-02 21:40，Claude 每週 90%：只看狀態）
+- **Codex 自動接續空轉**：`codex exec` 沙箱寫不進 `.git/worktrees/EngGame/index.lock`（Operation not permitted），T0 無法 commit／merge／push，每輪仍耗約 4.7 萬 token；Codex 每週已用 **93%**。→ **自動迴圈要暫停**；T0 的 git 步驟改在 Codex App（可要求權限）或由製作人／Claude 代做。T0 進度與步驟在 Codex 分支 `docs/question-bank-qa/t0/T0_INTEGRATION.md`，工作區有 31 個未存檔修改，**不要丟掉**。
+- **Antigravity 自動任務卡住 23 小時**（`agy -p` 自動喚醒那一輪），擋住後續任務 → 需停止該程序。
+- T14 課綱已完成（agy/work，`docs/design/VOCAB_CURRICULUM.md`），**待製作人看過定案**。
+
 ## 2. 已定案決策（和 ChatGPT「ENG RPG遊戲」討論的結論）
 完整原文都在 `docs/gpt/`，這裡只列結論與出處。
 | 主題 | 結論 | 出處 |

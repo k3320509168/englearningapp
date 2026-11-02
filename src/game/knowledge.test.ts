@@ -69,44 +69,63 @@ describe('區域試煉', () => {
   it('空白、缺能力、未答完與不合法成績不可換算成通過', () => {
     for (const strict of [false, true]) {
       expect(trialPassed(emptyTrialScore(), strict)).toBe(false);
+      const perSkill = strict ? 10 : 6;
       for (const missing of TRIAL_SKILLS) {
-        for (const total of [0, 1, 5, 7]) {
+        for (const total of [0, 1, perSkill - 1, perSkill + 1]) {
           const score = emptyTrialScore();
-          for (const skill of TRIAL_SKILLS) score[skill] = { correct: 6, total: 6 };
+          for (const skill of TRIAL_SKILLS) score[skill] = { correct: perSkill, total: perSkill };
           score[missing] = { correct: total, total };
           expect(trialPassed(score, strict)).toBe(false);
         }
-        for (const correct of [-1, 6.5, 7, NaN, Infinity]) {
+        for (const correct of [-1, perSkill + 0.5, perSkill + 1, NaN, Infinity]) {
           const score = emptyTrialScore();
-          for (const skill of TRIAL_SKILLS) score[skill] = { correct: 6, total: 6 };
-          score[missing] = { correct, total: 6 };
+          for (const skill of TRIAL_SKILLS) score[skill] = { correct: perSkill, total: perSkill };
+          score[missing] = { correct, total: perSkill };
           expect(trialPassed(score, strict)).toBe(false);
         }
       }
     }
   });
 
-  it('開考前拒絕缺題型、少一題或重複知識點的題組', () => {
-    const batch = TRIAL_SKILLS.flatMap(skill => Array.from({ length: 6 }, (_, i): Question => ({
+  it('開考前拒絕缺題型、少一題或重複知識點的題組（普通 24 題、高標準 40 題）', () => {
+    const batch24 = TRIAL_SKILLS.flatMap(skill => Array.from({ length: 6 }, (_, i): Question => ({
       type: 'choice', skill, difficulty: 1, desc: `${skill} question ${i}`, ans: 'A', options: ['A. yes', 'B. no'],
     })));
-    expect(completeTrial(batch)).toBe(true);
+    expect(completeTrial(batch24, false)).toBe(true);
+    expect(completeTrial(batch24, true)).toBe(false);
     expect(completeTrial([])).toBe(false);
-    expect(completeTrial(batch.slice(1))).toBe(false);
-    expect(completeTrial([...batch.slice(1), batch[1]])).toBe(false);
-    expect(completeTrial(batch.map(q => ({ ...q, skill: 'reading' })))).toBe(false);
+    expect(completeTrial(batch24.slice(1), false)).toBe(false);
+    expect(completeTrial([...batch24.slice(1), batch24[1]], false)).toBe(false);
+    expect(completeTrial(batch24.map(q => ({ ...q, skill: 'reading' })), false)).toBe(false);
+
+    const batch40 = TRIAL_SKILLS.flatMap(skill => Array.from({ length: 10 }, (_, i): Question => ({
+      type: 'choice', skill, difficulty: 1, desc: `${skill} strict question ${i}`, ans: 'A', options: ['A. yes', 'B. no'],
+    })));
+    expect(completeTrial(batch40, true)).toBe(true);
+    expect(completeTrial(batch40, false)).toBe(false);
+    expect(completeTrial(batch40.slice(1), true)).toBe(false);
   });
 
-  it('封印完成：18/24、每項 ≥ 4；沒完成：21/24、每項 ≥ 5', () => {
-    const score = (each: number[]) => {
+  it('封印完成普通試煉：18/24、每項 ≥ 4；高標準硬闖試煉：36/40、每項 ≥ 8', () => {
+    const scoreNormal = (each: number[]) => {
       const s = emptyTrialScore();
-      TRIAL_SKILLS.forEach((k, i) => { s[k] = { correct: each[i], total: TRIAL_PER_SKILL }; });
+      TRIAL_SKILLS.forEach((k, i) => { s[k] = { correct: each[i], total: 6 }; });
       return s;
     };
-    expect(trialPassed(score([5, 5, 4, 4]), false)).toBe(true);
-    expect(trialPassed(score([6, 6, 6, 3]), false)).toBe(false);
-    expect(trialPassed(score([5, 5, 4, 4]), true)).toBe(false);
-    expect(trialPassed(score([6, 5, 5, 5]), true)).toBe(true);
+    expect(trialPassed(scoreNormal([5, 5, 4, 4]), false)).toBe(true);
+    expect(trialPassed(scoreNormal([6, 6, 6, 3]), false)).toBe(false);
+    expect(trialPassed(scoreNormal([5, 5, 4, 4]), true)).toBe(false);
+
+    const scoreStrict = (each: number[]) => {
+      const s = emptyTrialScore();
+      TRIAL_SKILLS.forEach((k, i) => { s[k] = { correct: each[i], total: 10 }; });
+      return s;
+    };
+    expect(trialPassed(scoreStrict([9, 9, 9, 9]), true)).toBe(true);
+    expect(trialPassed(scoreStrict([10, 10, 9, 7]), true)).toBe(false);
+    expect(trialPassed(scoreStrict([10, 8, 9, 9]), true)).toBe(true);
+    expect(trialPassed(scoreStrict([8, 8, 8, 8]), true)).toBe(false); // 32 < 36
+    expect(trialPassed(scoreStrict([9, 9, 9, 9]), false)).toBe(false); // total != 6
   });
 });
 
@@ -133,6 +152,17 @@ describe('區域試煉的難度分布', () => {
     for (const s of TRIAL_SKILLS) {
       const d = qs.filter(q => questionSkill(q) === s).map(questionDifficulty).sort();
       expect(d).toEqual([1, 1, 2, 2, 3, 3]);
+    }
+  });
+
+  it('A1 高標準試煉：每種能力 10 題，總共 40 題且無重複知識點', () => {
+    addBank(0, r0 as BankFile);
+    const qs = trialQuestions(0, () => false, () => 0.3, true);
+    expect(qs).toHaveLength(40);
+    expect(completeTrial(qs, true)).toBe(true);
+    for (const s of TRIAL_SKILLS) {
+      const group = qs.filter(q => questionSkill(q) === s);
+      expect(group).toHaveLength(10);
     }
   });
 });

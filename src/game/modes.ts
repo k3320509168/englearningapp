@@ -18,10 +18,12 @@ export function rushQuestions(codex: Record<string, { question: Question }>, reg
 }
 
 export interface RushReward { gold: number; xp: number; ore: number }
-export function rushReward(correct: number, bestCombo: number, regionIdx: number): RushReward {
+export function rushReward(correct: number, bestCombo: number, regionIdx: number, runIndex = 0): RushReward {
   const scale = 1 + regionIdx * 0.3;
+  // 前 2 次保底 150 金幣＋素材，第 3 次純依表現結算
+  const baseGold = runIndex < 2 ? 150 : 0;
   return {
-    gold: Math.round((correct * 15 + bestCombo * 5) * scale),
+    gold: baseGold + Math.round((correct * 15 + bestCombo * 5) * scale),
     xp: Math.round(correct * 8 * xpScale(regionIdx)),
     ore: Math.floor(correct / 3),
   };

@@ -7,6 +7,10 @@ describe('daily rush', () => {
     expect(rushReward(20, 10, 0).gold).toBeGreaterThan(rushReward(10, 5, 0).gold);
     expect(rushReward(9, 0, 0).ore).toBe(3);
     expect(rushReward(10, 5, 4).gold).toBeGreaterThan(rushReward(10, 5, 0).gold);
+    // 前 2 次保底 150 金幣，第 3 次不含保底
+    expect(rushReward(0, 0, 0, 0).gold).toBe(150);
+    expect(rushReward(0, 0, 0, 1).gold).toBe(150);
+    expect(rushReward(0, 0, 0, 2).gold).toBe(0);
   });
 
   it('falls back to easy questions when little has been learned, never voice', () => {

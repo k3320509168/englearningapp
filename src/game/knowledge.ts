@@ -157,12 +157,14 @@ export function regionMastery(levelIdx: number, knowledge: Record<string, Knowle
 export const needsSeal = (levelIdx: number) => levelIdx < LEVELS.length - 1 && regionIndex(levelIdx).size > 0;
 
 // ---------- 區域試煉 ----------
-// 24 題，聽讀說寫各 6 題；每種能力的前段、中段、後段難度各 2 題（某段不夠時由其他段補），同一段裡優先出沒看過的。
-// 封印完成：總分 ≥ 18 且每項 ≥ 4；封印還沒完成（或還沒打倒魔王就想跳級）：總分 ≥ 21 且每項 ≥ 5——用更好的表現證明實力
+// 普通試煉：24 題，聽讀說寫各 6 題；封印完成後開啟，總分 ≥ 18 且每項 ≥ 4。
+// 高標準試煉（正式版）：40 題，聽讀說寫各 10 題；封印未完成硬闖或跳級，總分 ≥ 36 且每項 ≥ 8。
+// 每種能力由難度 1、2、3 輪流抽取，同段內沒看過的優先，同知識點不重複。
 export const TRIAL_SKILLS: QuestionSkill[] = ['listening', 'reading', 'speaking', 'writing'];
 export const TRIAL_PER_SKILL = 6;
-export const TRIAL_PASS = { total: 18, each: 4 };
-export const TRIAL_STRICT = { total: 21, each: 5 };
+export const TRIAL_STRICT_PER_SKILL = 10;
+export const TRIAL_PASS = { total: 18, each: 4, perSkill: TRIAL_PER_SKILL };
+export const TRIAL_STRICT = { total: 36, each: 8, perSkill: TRIAL_STRICT_PER_SKILL };
 // 高標準試煉每區 24 小時內最多 2 次：要測真正的能力，不能一直重刷到運氣好（第七輪）
 export const STRICT_TRIALS_PER_DAY = 2;
 export function strictTrialWait(tries: number[] | undefined, now: number): number {
@@ -170,19 +172,25 @@ export function strictTrialWait(tries: number[] | undefined, now: number): numbe
   return recent.length < STRICT_TRIALS_PER_DAY ? 0 : Math.min(...recent) + DAY - now;
 }
 
-export function trialQuestions(levelIdx: number, seen: (q: Question) => boolean, rand: () => number = Math.random): Question[] {
+export function trialQuestions(
+  levelIdx: number,
+  seen: (q: Question) => boolean,
+  rand: () => number = Math.random,
+  strict = false,
+): Question[] {
   const index = regionIndex(levelIdx);
   const all = [...index.values()].flat();
   const out: Question[] = [];
+  const perSkill = strict ? TRIAL_STRICT.perSkill : TRIAL_PASS.perSkill;
   for (const skill of TRIAL_SKILLS) {
     const list = all.filter(q => questionSkill(q) === skill);
     // 輪流從難度 1、2、3 各拿一題，沒看過的排前面（同一組裡隨機）
     const tiers = ([1, 2, 3] as const).map(d => shuffleArray(list.filter(q => questionDifficulty(q) === d), rand).sort((a, b) => Number(seen(a)) - Number(seen(b))));
     const used = new Set<string>();
     let picked = 0;
-    while (picked < TRIAL_PER_SKILL && tiers.some(t => t.length)) {
+    while (picked < perSkill && tiers.some(t => t.length)) {
       for (const tier of tiers) {
-        if (picked >= TRIAL_PER_SKILL) break;
+        if (picked >= perSkill) break;
         while (tier.length) {
           const q = tier.shift()!;
           const k = knowledgeKey(q);
@@ -203,12 +211,13 @@ export const emptyTrialScore = (): TrialScore =>
   Object.fromEntries(TRIAL_SKILLS.map(s => [s, { correct: 0, total: 0 }])) as TrialScore;
 
 // 抽題不足時不可把缺少的能力視為已測完，也不以降低門檻替代完整測驗。
-export function completeTrial(questions: Question[]): boolean {
-  return questions.length === TRIAL_SKILLS.length * TRIAL_PER_SKILL
+export function completeTrial(questions: Question[], strict = false): boolean {
+  const perSkill = strict ? TRIAL_STRICT.perSkill : TRIAL_PASS.perSkill;
+  return questions.length === TRIAL_SKILLS.length * perSkill
     && TRIAL_SKILLS.every(skill => {
       const group = questions.filter(q => questionSkill(q) === skill);
-      return group.length === TRIAL_PER_SKILL
-        && new Set(group.map(knowledgeKey)).size === TRIAL_PER_SKILL;
+      return group.length === perSkill
+        && new Set(group.map(knowledgeKey)).size === perSkill;
     });
 }
 
@@ -216,7 +225,7 @@ export function trialPassed(score: TrialScore, strict: boolean): boolean {
   const rule = strict ? TRIAL_STRICT : TRIAL_PASS;
   if (!TRIAL_SKILLS.every(skill => {
     const item = score[skill];
-    return item && item.total === TRIAL_PER_SKILL
+    return item && item.total === rule.perSkill
       && Number.isInteger(item.correct) && item.correct >= 0 && item.correct <= item.total;
   })) return false;
   return TRIAL_SKILLS.reduce((sum, skill) => sum + score[skill].correct, 0) >= rule.total

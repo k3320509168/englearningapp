@@ -218,7 +218,7 @@ interface SaveActions {
   setTutorialDone: (done: boolean) => void;
   finishPrologue: () => void;
   setPlacement: (rec: PlacementRecord) => void;
-  verifyPlacement: (regionIdx: number) => void;
+  verifyPlacement: (regionIdx: number, speakingVerified?: boolean) => void;
   recordPlacementReview: (passed: boolean, weak: string[]) => void;
   addGold: (amount: number) => void;
   buyUpgrade: (id: UpgradeId) => boolean;
@@ -726,14 +726,15 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         finishPrologue: () => set({ prologueDone: true }),
         setPlacement: (rec) => set({ placement: rec }),
         // 通過推薦區域（或之後）的區域試煉：跳級驗證完成，主角一次補到推薦區域的最低推薦等級
-        verifyPlacement: (regionIdx) => set(s => {
+        verifyPlacement: (regionIdx, speakingVerified) => set(s => {
           const p = s.placement;
           if (!p || p.verified || regionIdx < p.region) return {};
           const floor = REGION_LEVELS[Math.min(REGION_LEVELS.length - 1, p.region)][0];
           const level = Math.max(s.player.level, floor);
           const before = cumulativeXpAtLevel(s.player.level) + s.player.xp;
           const grant = Math.max(0, cumulativeXpAtLevel(level) - before);
-          return { placement: { ...p, verified: true, verifiedAt: Date.now() }, player: { ...s.player, level, xp: before + grant - cumulativeXpAtLevel(level) },
+          const updatedVerified = speakingVerified !== undefined ? speakingVerified : (p.speakingVerified ?? true);
+          return { placement: { ...p, verified: true, verifiedAt: Date.now(), speakingVerified: updatedVerified }, player: { ...s.player, level, xp: before + grant - cumulativeXpAtLevel(level) },
             xpLedger: { ...s.xpLedger,
               'offered:placement': (s.xpLedger['offered:placement'] ?? 0) + grant,
               'accepted:placement': (s.xpLedger['accepted:placement'] ?? 0) + grant,

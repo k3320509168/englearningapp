@@ -49,7 +49,8 @@ export default function RushModal() {
       window.clearInterval(t);
       const { correct, best } = statsRef.current;
       const sv = useSaveStore.getState();
-      const reward = rushReward(correct, best, sv.unlockedIndex);
+      const runIndex = Math.max(0, (sv.rushDay === today ? sv.rushRuns : 1) - 1);
+      const reward = rushReward(correct, best, sv.unlockedIndex, runIndex);
       setDone(sv.grantRush(reward));
       sfx.victory();
     }, 100);

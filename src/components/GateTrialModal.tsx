@@ -34,6 +34,7 @@ export default function GateTrialModal() {
   const [score, setScore] = useState<TrialScore>(emptyTrialScore);
   const [answered, setAnswered] = useState(0);
   const [incomplete, setIncomplete] = useState(false);
+  const [hasFallback, setHasFallback] = useState(false);
 
   useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
 
@@ -49,8 +50,8 @@ export default function GateTrialModal() {
 
   const start = () => {
     if (!allowed) return;
-    const batch = trialQuestions(regionIdx, q => !!codex[questionKey(q)]);
-    if (!completeTrial(batch)) {
+    const batch = trialQuestions(regionIdx, q => !!codex[questionKey(q)], Math.random, strict);
+    if (!completeTrial(batch, strict)) {
       setIncomplete(true);
       return;
     }
@@ -59,19 +60,27 @@ export default function GateTrialModal() {
     setQuestions(batch);
     setScore(emptyTrialScore());
     setAnswered(0);
+    setHasFallback(false);
     setRound(r => r + 1);
   };
 
-  const onAnswer = (ok: boolean) => {
+  const onAnswer = (ok: boolean, viaSpelling?: boolean) => {
     if (!questions || answered >= questions.length) return;
+    if (viaSpelling) setHasFallback(true);
     const skill = questionSkill(questions[answered]);
     const s = { ...score, [skill]: { correct: score[skill].correct + (ok ? 1 : 0), total: score[skill].total + 1 } };
     setScore(s);
     setAnswered(answered + 1);
     if (answered + 1 >= questions.length && trialPassed(s, strict)) {
+      const verifiedSpeaking = !hasFallback && !viaSpelling;
       skipRegions(regionIdx + 1);
-      useSaveStore.getState().verifyPlacement(regionIdx);
-      celebrate({ icon: '🗿', title: '區域試煉通過！', sub: `守門人讓開了道路${next ? `，「${next.name}」已解鎖` : ''}`, color: '#ffcd4b' });
+      useSaveStore.getState().verifyPlacement(regionIdx, verifiedSpeaking);
+      celebrate({
+        icon: '🗿',
+        title: '區域試煉通過！',
+        sub: `守門人讓開了道路${verifiedSpeaking ? '' : '（口說未驗證）'}${next ? `，「${next.name}」已解鎖` : ''}`,
+        color: '#ffcd4b',
+      });
     }
   };
 
@@ -82,12 +91,12 @@ export default function GateTrialModal() {
           {mastery && mastery.pool > 0 && <SealPanel mastery={mastery} />}
           <p>
             {beaten
-              ? (mastery?.sealMet ? '封印已經重建！通過區域試煉，證明你真的學會了，就能前往' : '封印還沒完成也可以直接挑戰試煉，但標準比較高。前往')
-              : '覺得這個區域太簡單？通過區域試煉就能直接跳過，前往'}
+              ? (mastery?.sealMet ? '封印已經重建！通過區域試煉，證明你真的學會了，就能前往' : '封印還沒完成也可以直接挑戰高標準試煉（40題）。前往')
+              : '覺得這個區域太簡單？通過高標準區域試煉（40題）就能直接跳過，前往'}
             「{next?.name}」。
           </p>
           <ul className="muted gate-rules">
-            <li>{TRIAL_SKILLS.length * TRIAL_PER_SKILL} 題這一區的題目（聽、讀、說、寫各 {TRIAL_PER_SKILL} 題），盡量出你還沒看過的。</li>
+            <li>{TRIAL_SKILLS.length * rule.perSkill} 題這一區的題目（聽、讀、說、寫各 {rule.perSkill} 題），盡量出你還沒看過的。</li>
             <li>答對 <b>{rule.total}</b> 題以上，而且每種能力至少 <b>{rule.each}</b> 題，就通過。</li>
             <li>沒有計時、不會受傷；沒通過也沒有損失，可以再挑戰{strict ? `（高標準每天最多 ${STRICT_TRIALS_PER_DAY} 次）` : ''}。</li>
             {!beaten && <li>跳過的區域之後隨時可以回來打，拿星星和召喚券。</li>}

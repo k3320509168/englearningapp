@@ -118,6 +118,7 @@ Antigravity 第二意見（`docs/gpt/c7-v21-agy-review.md`，agy/work）用 summ
 - ✅ 今日複習 ReviewModal 徹底翻新（Antigravity）：去除冗長廢話，街機「錯題修煉場」按鈕突顯連對5題贈掃蕩券，清晰語法/原句卡片與辭典研讀。
 - ✅ 獎勵轉盤 TicketWheel 日系街機寶石配色升級（Antigravity）：耀金/電光紫/天藍/翡翠高對比配色，清晰機率看板。
 - ✅ T14 CEFR 詞彙課綱標準定案＋T13 跨級螺旋抽題引擎（Antigravity）：`docs/design/VOCAB_CURRICULUM.md`、`QuestionData.ts` 28% 螺旋抽取前區詞彙＋30 題防重複，`scripts/vocab-audit.ts` 稽核工具與報告。
+- ✅ 四大策略題庫擴充方案（製作人核定）：生活情境包、動詞片語/搭配詞、同根詞族樹、T13螺旋抽題。已建立 `docs/question-bank-qa/VOCAB_EXPANSION_PROPOSAL.md` 並向 Codex 發起討論。
 - ✅ 戰前情報聽力播放修復與全題型預覽升級（Antigravity）：支援聽力/口說/拼寫/文法全題型預覽，突顯目標原句，自動發音。
 - 🟡 C8 版面：規劃在 `docs/question-bank-qa/C8_LAYOUT.md`（Codex worktree），未完成。
 - 🟡 B2+～C2 題庫：Codex 草稿 r6/r7/r8 各 1,200 題（目標 1,800／2,000／2,000）。Antigravity 審 r6：**152 題有問題（12.7%）**，報告 `docs/question-bank-qa/agy-review-r6.md`（agy/work）；r7、r8 待審。

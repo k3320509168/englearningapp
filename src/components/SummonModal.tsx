@@ -22,9 +22,9 @@ export default function SummonModal() {
   const { closeModal, openModal } = useUiStore();
   const [results, setResults] = useState<SummonOutcome[] | null>(null);
   const [picking, setPicking] = useState(false);
-  // 召喚池分頁（第二十一輪 D2）：英雄池／專武池。專武池在打倒 B1 黃金沙漠的區域魔王後解鎖
+  // 召喚池分頁（第二十一輪 D2）：英雄池／專武池。專武池在打倒 B1 黃金沙漠的區域魔王或跳級通過後解鎖
   const [pool, setPool] = useState<'hero' | 'weapon'>('hero');
-  const weaponUnlocked = useSaveStore(s => s.bossDown.includes(WEAPON_UNLOCK_REGION));
+  const weaponUnlocked = useSaveStore(s => s.bossDown.includes(WEAPON_UNLOCK_REGION) || s.unlockedIndex > WEAPON_UNLOCK_REGION);
   const ssr = useMemo(() => HEROES.filter(h => h.rarity === 'SSR'), []);
 
   const pull = (count: number) => {

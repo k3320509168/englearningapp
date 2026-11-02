@@ -120,8 +120,9 @@ export default function GrowthModal() {
                 );
               })}
             </div>
-            <ClassTree classId={character.classId} path={player.classPath} />
+            {/* P1 主角成長：先顯示「目前職業 → 下一轉職 → 還缺什麼」，再展開完整轉職樹 */}
             {renderAdvance()}
+            <ClassTree classId={character.classId} path={player.classPath} />
             {player.classPath.length > 0 && (
               <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => sv.resetClassPath()}>
                 ↺ 重置這個職業的路線{character.classId !== (sv.homeClass ?? character.classId) ? `（退回 🎖️ ${pathBadgeCost(player.classPath)}）` : ''}
@@ -265,16 +266,56 @@ export default function GrowthModal() {
 
   function renderAdvance() {
     const options = nextOptions(character!.classId, player.classPath);
-    if (options.length === 0) return <p className="muted">已經覺醒，到達這條路線的最終形態！</p>;
+    const curTier = player.classPath.length;
+    const curTierName = ['基礎職業（未轉職）', '一轉職業', '二轉職業', '終極覺醒'][curTier];
+
+    if (options.length === 0) {
+      return (
+        <div className="advance-goal-card is-awakened">
+          <div className="advance-goal-head">
+            <span className="advance-badge">👑 階級：{curTierName}</span>
+            <span className="advance-status-pill is-ready">★ 登峰造極</span>
+          </div>
+          <p className="advance-goal-desc">恭喜！已到達這條轉職路線的終極形態，擁有最高職業被動與屬性加成！</p>
+        </div>
+      );
+    }
+
     const tier = options[0].tier;
+    const nextTierTitle = tier === 3 ? '三轉・終極覺醒' : tier === 2 ? '二轉・進階職業' : '一轉・初階職業';
     const req = ADVANCE_REQ[tier];
     const badgeCost = character!.classId === (sv.homeClass ?? character!.classId) ? 0 : BADGE_COST[tier];
     const ok = canAdvance(tier, player.level) && sv.classBadges >= badgeCost;
+    const lvDiff = Math.max(0, req.level - player.level);
+    const badgeDiff = Math.max(0, badgeCost - sv.classBadges);
+
     return (
-      <>
-        <p className={ok ? 'req-ok' : 'muted'}>
-          {tier === 3 ? '覺醒' : tier === 2 ? '二轉' : '一轉'}條件：{req.label}{badgeCost ? `＋🎖️ ${badgeCost}` : ''}（目前 Lv {player.level}{badgeCost ? `、徽章 ${sv.classBadges}` : ''}）
-        </p>
+      <div className={`advance-goal-card ${ok ? 'is-advance-ready' : ''}`}>
+        <div className="advance-goal-head">
+          <div className="advance-goal-title">
+            <span className="advance-tag">目前階級：<b>{curTierName}</b></span>
+            <span className="advance-arrow" aria-hidden>➔</span>
+            <span className="advance-tag is-next">下一轉職：<b>{nextTierTitle}</b></span>
+          </div>
+          <span className={`advance-status-pill ${ok ? 'is-ready' : 'is-pending'}`}>
+            {ok ? '✨ 條件已達成！請選擇分支' : `🔒 尚缺 ${lvDiff > 0 ? `Lv ${lvDiff} ` : ''}${badgeDiff > 0 ? `🎖️ ${badgeDiff} ` : ''}`}
+          </span>
+        </div>
+
+        <div className="advance-req-row">
+          <div className={`advance-req-item ${player.level >= req.level ? 'is-met' : 'is-unmet'}`}>
+            <span className="advance-req-icon">{player.level >= req.level ? '✔' : '●'}</span>
+            <span>等級需求：<b>Lv {req.level}</b>（目前 Lv {player.level}{lvDiff > 0 ? `，還差 ${lvDiff} 級` : '，已達成'}）</span>
+          </div>
+          {badgeCost > 0 && (
+            <div className={`advance-req-item ${sv.classBadges >= badgeCost ? 'is-met' : 'is-unmet'}`}>
+              <span className="advance-req-icon">{sv.classBadges >= badgeCost ? '✔' : '●'}</span>
+              <span>職業徽章：<b>🎖️ {badgeCost}</b>（持有 🎖️ {sv.classBadges}{badgeDiff > 0 ? `，還差 ${badgeDiff} 個` : '，已足夠'}）</span>
+            </div>
+          )}
+        </div>
+
+        <p className="advance-prompt">可選轉職分支（轉職將突破等級上限並獲得專屬被動）：</p>
         <div className="advance-options">
           {options.map(o => {
             const next = childrenOf(o.id);
@@ -293,7 +334,7 @@ export default function GrowthModal() {
             );
           })}
         </div>
-      </>
+      </div>
     );
   }
 }

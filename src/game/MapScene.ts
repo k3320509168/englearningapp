@@ -61,26 +61,46 @@ export default class MapScene extends Phaser.Scene {
       const current = index === unlockedIndex;
 
       this.add.image(x, y + 4, 'pedestal').setOrigin(0.5, 0).setScale(5);
-      const flag = this.add.image(x - 4, y + 4, flagKey(index, locked)).setOrigin(0.15, 1).setScale(5);
-      if (!locked) this.tweens.add({ targets: flag, scaleX: 4.6, yoyo: true, repeat: -1, duration: 700 + index * 90, ease: 'Sine.easeInOut' });
+      const flagScale = current ? 5.8 : 5;
+      const flag = this.add.image(x - 4, y + 4, flagKey(index, locked)).setOrigin(0.15, 1).setScale(flagScale);
+      if (!locked) {
+        this.tweens.add({
+          targets: flag,
+          scaleX: current ? 5.3 : 4.6,
+          yoyo: true,
+          repeat: -1,
+          duration: current ? 550 : 700 + index * 90,
+          ease: 'Sine.easeInOut',
+        });
+      }
       if (locked) this.add.image(x + 14, y - 36, 'lock').setScale(4);
 
-      this.add.text(x, y + 50, region.name, textStyle(14, locked ? '#8a8494' : current ? '#ffcd4b' : '#ffffff')).setOrigin(0.5);
+      // 區域名稱字體：目前區域金色放大加陰影、已通關清爽亮藍、未解鎖暗色
+      const nameColor = locked ? '#64748b' : current ? '#ffd15c' : '#38bdf8';
+      const nameSize = current ? 16 : 14;
+      const nameText = this.add.text(x, y + 50, region.name, textStyle(nameSize, nameColor)).setOrigin(0.5);
+      if (current) {
+        nameText.setShadow(0, 2, '#0b0d1e', 3, true, true);
+      }
 
       if (current) {
         // 英雄站在目前可挑戰的旗幟旁
         const h = character
-          ? this.add.image(x - 42, y + 6, avatarKey(character, 'idle', tier)).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2)
-          : this.add.image(x - 42, y + 6, heroKey('knight', 'idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2);
+          ? this.add.image(x - 44, y + 6, avatarKey(character, 'idle', tier)).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2.2)
+          : this.add.image(x - 44, y + 6, heroKey('knight', 'idle')).setOrigin(AVATAR_ORIGIN_X, 1).setScale(2.2);
         this.tweens.add({ targets: h, y: y - 2, yoyo: true, repeat: -1, duration: 420, ease: 'Sine.easeInOut' });
-        const ring = this.add.circle(x + 10, y - 30, 46).setStrokeStyle(3, 0xffcd4b, 0.8);
-        this.tweens.add({ targets: ring, scale: 1.25, alpha: 0, repeat: -1, duration: 1200 });
+
+        // 雙層動態光圈（呼吸光暈 + 脈衝擴散光環）
+        const glow = this.add.circle(x + 10, y - 30, 52, 0xffd15c, 0.15);
+        this.tweens.add({ targets: glow, alpha: { from: 0.15, to: 0.35 }, yoyo: true, repeat: -1, duration: 800 });
+        const ring = this.add.circle(x + 10, y - 30, 48).setStrokeStyle(3, 0xffd15c, 0.9);
+        this.tweens.add({ targets: ring, scale: 1.35, alpha: 0, repeat: -1, duration: 1100 });
       }
 
       if (!locked) {
         const zone = this.add.zone(x + 10, y - 10, 100, 130).setInteractive({ useHandCursor: true });
-        zone.on('pointerover', () => { flag.setScale(5.6); sfx.click(); });
-        zone.on('pointerout', () => flag.setScale(5));
+        zone.on('pointerover', () => { flag.setScale(current ? 6.2 : 5.6); sfx.click(); });
+        zone.on('pointerout', () => flag.setScale(flagScale));
         zone.on('pointerdown', () => {
           burst(this, x + 10, y - 40, [0xffcd4b, 0xffffff], 14, { speed: 160 });
           useUiStore.getState().openRegion(index);

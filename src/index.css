@@ -1976,6 +1976,53 @@ html[data-reduce-motion] .wheel-bulbs i { animation: none !important; }
 .class-chip { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px; border: 2px solid var(--ink); border-radius: 8px; background: var(--panel-2); color: var(--text); font: inherit; cursor: pointer; }
 .class-chip small { color: var(--muted); font-size: 11px; }
 .class-chip.is-on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--panel-2)); }
+/* P1 主角成長：當前轉職目標與要求卡片 */
+.advance-goal-card {
+  margin: 8px 0 12px; padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(28, 33, 68, 0.9) 0%, rgba(18, 21, 46, 0.95) 100%);
+  border: 2px solid #373f73; border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.advance-goal-card.is-advance-ready {
+  border-color: #ffd15c;
+  box-shadow: 0 0 16px rgba(255, 209, 92, 0.35), inset 0 0 12px rgba(255, 209, 92, 0.15);
+  animation: advance-ready-pulse 2s ease-in-out infinite alternate;
+}
+@keyframes advance-ready-pulse {
+  from { border-color: #ffd15c; }
+  to { border-color: #f59e0b; box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+}
+.advance-goal-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;
+  margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.advance-goal-title {
+  display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;
+}
+.advance-tag { color: #cbd5e1; }
+.advance-tag.is-next b { color: #ffd15c; }
+.advance-arrow { color: #64748b; font-size: 11px; }
+.advance-status-pill {
+  font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+}
+.advance-status-pill.is-ready {
+  background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e;
+}
+.advance-status-pill.is-pending {
+  background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);
+}
+.advance-req-row {
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px;
+}
+.advance-req-item {
+  display: flex; align-items: center; gap: 6px; font-size: 12.5px;
+}
+.advance-req-item.is-met { color: #a7f3d0; }
+.advance-req-item.is-met .advance-req-icon { color: #34d399; font-weight: bold; }
+.advance-req-item.is-unmet { color: #94a3b8; }
+.advance-req-item.is-unmet .advance-req-icon { color: #f87171; font-size: 10px; }
+.advance-prompt { margin: 6px 0 8px; font-size: 12px; color: #ffd15c; font-weight: 600; }
+
 /* 轉職路線軌跡樹 */
 .class-tree-panel {
   margin: 6px 0 12px; padding: 12px 14px;

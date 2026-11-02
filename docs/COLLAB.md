@@ -234,3 +234,8 @@
   ④ **劇情播放時戰前情報搶先朗讀時序問題徹底阻斷（圖 3）**：在 `BattleHUD.tsx` 增加 `!modal` 強約束，有任何劇情或彈窗時 `LessonPanel` 絕不掛載；在 `LessonPanel.tsx` 增加二次狀態檢查與延遲，劇情對話未完全結束前絕不調用 `say()`，徹底杜絕單字語音與劇情對話框打架。
   ⑤ **口說題絕不預設拼寫最高指令貫通（圖 4 & 6）**：創角完成後拿掉提前彈出的麥克風詢問；`MicPermissionModal.tsx` 與 `BattleHUD.tsx` 移除任何擅自修改存檔 `voiceAsSpelling` 的邏輯，遇到無法收音時僅將眼前單一題目臨時切換為拼寫，下一題口說題依然保持口說題本色；針對局域網 HTTP 連線明確向玩家說明「Chrome 完整支援語音，上架至正式 HTTPS 網站後即能全功能語音辨識」，消除使用者的瀏覽器支援疑慮。
   ⑥ 51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告、`npm run build` 通過。
+- 2026-11-02 Antigravity｜長單字口說辨識階梯容錯＋TTS看門狗自愈＋未決問題全案定案交付：
+  ① **長單字口說辨識容錯升級（TASKS 第八節）**：`src/game/battle.ts` 將 `wordTolerance` 升級為長度階梯（>=12字容錯3、>=8字容錯2、>=6字容錯1），容許長單字（如 helicopter, accommodation, environmental）自然微小音素差異，短字維持嚴格；`isVoiceFragment` 強化贅詞過濾（uh, um, a, the）與開頭音素識別，給予免費重新唸誦機會。
+  ② **長時間遊玩發音看門狗自愈（TASKS 第八節）**：`src/game/speech.ts` 實裝 5.5 秒看門狗自愈機制，瀏覽器語音事件遺失時自動強制解鎖並清理隊列；監聽 `visibilitychange`，分頁切回前景時若語音處於 paused 自動 `resume()`，徹底消除長期遊玩 TTS 假死。
+  ③ **未決問題 Q1/Q2/Q3/Q7 全案審定與閉環**：等級 200 對齊主世界九區終王，第二世界作為長線擴充版本；三星條件與處決追擊 9 組矩陣驗收通過；召喚券每週 25~35 抽契合 300 位英雄與 SSR 晉升 UR 需求；`trainCost` 平滑曲線徹底打破二次方金幣牆。
+  ④ 51 個測試檔、**414 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、題庫 13,533 題 0 錯誤 0 警告、`npm run build` 通過。已 Commit 並 Push 至 `origin/feat/round4-pm`。

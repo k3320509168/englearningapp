@@ -14,17 +14,17 @@
 }
 
 :root {
-  --bg: #0f1023;
-  --bg-2: #15173a;
-  --panel: #1c1e40;
-  --panel-2: #262959;
-  --panel-3: #30346d;
+  --bg: #101127;           /* 主背景：深邃夜空 */
+  --bg-2: #161838;
+  --panel: #202448;        /* 視窗：高對比深藍 */
+  --panel-2: #282e5b;
+  --panel-3: #30365f;      /* 卡片：夜光靛藍 */
   --ink: #090a1a;          /* 像素外框 */
   --line: #3d4185;
-  --text: #f4f3ff;
-  --muted: #a3a6d4;
-  --accent: #ffcd4b;       /* 金 */
-  --accent-dark: #c98a1c;
+  --text: #f1f0f8;         /* 主要文字：高清晰柔白 */
+  --muted: #a9b0ce;        /* 次要文字：淡灰藍 */
+  --accent: #ffd15c;       /* 獎勵與重點金 */
+  --accent-dark: #d49f1a;
   --primary: #4cc9f0;      /* 青 */
   --primary-dark: #2385b0;
   --good: #6ee7a8;

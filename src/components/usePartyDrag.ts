@@ -52,15 +52,21 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
       setDrag({ id, img, x, y, over: targetAt(x, y) });
     };
 
-    const timer = touch ? window.setTimeout(begin, 180) : 0;
+    const timer = touch ? window.setTimeout(begin, 350) : 0;
 
     const move = (ev: PointerEvent) => {
       x = ev.clientX;
       y = ev.clientY;
       if (!active) {
-        const dist = Math.hypot(x - sx, y - sy);
-        if (touch && dist > 14) cleanup(); // 長按前大幅滑動：判定為原生滾動
-        else if (!touch && dist > 6) begin();
+        const dy = Math.abs(y - sy);
+        const dx = Math.abs(x - sx);
+        // 觸控設備：一旦有任何滑動意圖（垂直位移 > 8px 或水平位移 > 12px），立即認定為列表原生滾動，取消拖曳長按！
+        if (touch && (dy > 8 || dx > 12)) {
+          cleanup();
+          return;
+        } else if (!touch && Math.hypot(dx, dy) > 6) {
+          begin();
+        }
         return;
       }
       // 已啟動拖曳時，阻止瀏覽器原生手勢與滾動

@@ -41,7 +41,7 @@ function wordsOf(pool: Question[]): { word: string; meaning: string }[] {
   const seen = new Map<string, string>();
   for (const q of pool) {
     const v = vocabFor(q);
-    if (v && !v.display.includes(' ')) seen.set(v.display, v.meaning);
+    if (v && !v.display.includes(' ') && /^[a-zA-Z]+$/.test(v.display)) seen.set(v.display, v.meaning);
   }
   return [...seen].map(([word, meaning]) => ({ word, meaning }));
 }

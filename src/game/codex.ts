@@ -1,10 +1,10 @@
 import { getPool } from './QuestionData';
-import { vocabFor, vocabKey, VOCAB } from './vocab';
+import { vocabFor, vocabKey, vocabByKey } from './vocab';
 import { completedSentence, questionAudio, questionKey } from './battle';
 import { masteryStars } from './progression';
 import type { Question } from './types';
 
-// 圖鑑＝單字圖鑑：把題庫整理成「單字」、「片語」與「文法」收藏，同一個字的不同題型合併計算熟練度
+// 圖鑑＝冒險圖鑑：將題庫 15,000+ 題整理成「單字」、「片語」與「文法」收藏，同一個字的不同題型合併計算熟練度
 
 export interface CodexStats {
   correct: number;
@@ -33,6 +33,20 @@ function grammarTitle(q: Question): string {
   return q.options?.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? q.desc;
 }
 
+function guessPos(w: string): string {
+  const lower = w.toLowerCase().trim();
+  if (lower.includes(' ') || lower.includes('-')) return 'phr.';
+  if (['i', 'you', 'he', 'she', 'we', 'they', 'it', 'this', 'that', 'these', 'those', 'who', 'what', 'which', 'my', 'your', 'his', 'her', 'our', 'their', 'its'].includes(lower)) return 'pron.';
+  if (['in', 'on', 'at', 'by', 'for', 'with', 'about', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'over', 'under'].includes(lower)) return 'prep.';
+  if (['and', 'but', 'or', 'so', 'because', 'although', 'though', 'while', 'if', 'unless', 'since'].includes(lower)) return 'conj.';
+  if (['can', 'could', 'may', 'might', 'must', 'shall', 'should', 'will', 'would'].includes(lower)) return 'v.aux.';
+  if (lower.endsWith('tion') || lower.endsWith('ment') || lower.endsWith('ness') || lower.endsWith('ity') || lower.endsWith('ship') || lower.endsWith('ance') || lower.endsWith('ence') || lower.endsWith('ism') || lower.endsWith('ist') || lower.endsWith('er') || lower.endsWith('or')) return 'n.';
+  if (lower.endsWith('able') || lower.endsWith('ible') || lower.endsWith('ous') || lower.endsWith('ive') || lower.endsWith('ful') || lower.endsWith('less') || lower.endsWith('al') || lower.endsWith('ic') || lower.endsWith('ary')) return 'adj.';
+  if (lower.endsWith('ly')) return 'adv.';
+  if (lower.endsWith('ize') || lower.endsWith('ise') || lower.endsWith('ate') || lower.endsWith('ify') || lower.endsWith('ed') || lower.endsWith('ing')) return 'v.';
+  return 'n.';
+}
+
 export function codexItems(
   levelKey: string,
   codex: Record<string, CodexStats>,
@@ -45,35 +59,73 @@ export function codexItems(
     let word = vocabKey(q);
     let v = vocabFor(q);
 
-    // 智慧識別：若選擇題正確選項直接命中字典單字或片語，作為單字/片語卡片建立
+    // 1. 若選擇題正確選項直接是英文單字/片語（例如 agenda, postpone, implement）
     if (!word && q.type === 'choice' && q.options) {
       const opt = q.options.find(o => o.startsWith(`${q.ans}.`));
       if (opt) {
         const candidate = opt.replace(/^[A-D]\.\s*/, '').trim();
-        const candidateKey = candidate.toUpperCase();
-        const entry = VOCAB[candidateKey] || VOCAB[candidate];
-        if (entry) {
-          word = candidateKey;
-          v = { ...entry, key: candidateKey, display: entry.word ?? candidate.toLowerCase() };
+        const candidateClean = candidate.replace(/[^A-Za-z0-9\s-_]/g, '').trim();
+        if (/^[A-Za-z\s-_]+$/.test(candidateClean) && candidateClean.length >= 2 && candidateClean.length <= 40) {
+          word = candidateClean.toUpperCase();
+          const entry = vocabByKey(candidateClean);
+          if (entry) v = entry;
         }
       }
     }
 
-    const isPhrase = Boolean(word && (word.includes(' ') || word.includes('-') || v?.pos?.toLowerCase().includes('phrase') || v?.pos?.includes('片語')));
-    const kind: 'word' | 'phrase' | 'grammar' = word ? (isPhrase ? 'phrase' : 'word') : 'grammar';
+    // 2. 若為聽力/口說理解選擇題（q.speak 包含核心英文句子）
+    if (!word && q.speak && /^[A-Za-z\s.,!?'"()-]+$/.test(q.speak.trim())) {
+      const spk = q.speak.trim();
+      if (spk.length >= 2 && spk.length <= 80) {
+        word = spk.toUpperCase();
+        const entry = vocabByKey(spk);
+        if (entry) v = entry;
+      }
+    }
+
+    // 分類判定：
+    // 若為單一純英文單字（無空格、無連字符、詞性非 phr/sent）➔ word (單字)
+    // 若為片語、日常交際短句 ➔ phrase (片語)
+    // 其他文法挖空、時態 ➔ grammar (文法)
+    const isSingleWord = Boolean(
+      word &&
+      !word.includes(' ') &&
+      !word.includes('-') &&
+      !v?.pos?.toLowerCase().includes('phr') &&
+      !v?.pos?.includes('片語') &&
+      !v?.pos?.toLowerCase().includes('sent')
+    );
+    const isPhrase = Boolean(word && !isSingleWord);
+    const kind: 'word' | 'phrase' | 'grammar' = isSingleWord ? 'word' : (isPhrase ? 'phrase' : 'grammar');
     const id = word ? `${kind}:${word}` : `g:${q.desc}`;
     const stats = codex[questionKey(q)];
+
+    // 標題與釋義健全提取
+    const title = v?.display || (word ? (isSingleWord ? word.toLowerCase() : word) : grammarTitle(q));
+    let subtitle = v?.meaning || q.explain || q.desc || '';
+    if (q.type === 'choice' && q.options && (!v?.meaning || v.meaning === title)) {
+      const correctOpt = q.options.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '').trim();
+      if (correctOpt && /^[\u4e00-\u9fa5\s；，、]+$/.test(correctOpt)) {
+        subtitle = correctOpt;
+      }
+    }
+
     const item = items.get(id) ?? {
       id,
       kind,
-      title: v?.display ?? (word || grammarTitle(q)),
-      subtitle: v?.meaning ?? q.explain ?? q.desc ?? '',
-      pos: v?.pos ?? (kind === 'phrase' ? 'phrase' : kind === 'grammar' ? 'grammar' : ''),
-      example: v ? `${v.example}\n${v.exampleZh}` : (q.desc && q.desc !== grammarTitle(q) ? q.desc : ''),
-      audio: v?.display ?? questionAudio(q),
-      correct: 0, wrong: 0, seen: false, stars: 0, needsReview: false,
+      title,
+      subtitle,
+      pos: v?.pos ?? (kind === 'phrase' ? 'phr.' : kind === 'grammar' ? 'grammar' : guessPos(title)),
+      example: v ? `${v.example}\n${v.exampleZh}` : (q.desc && q.desc !== grammarTitle(q) ? `${completedSentence(q) || q.speak || ''}\n${q.desc}` : (completedSentence(q) || '')),
+      audio: v?.display ?? questionAudio(q) ?? title,
+      correct: 0,
+      wrong: 0,
+      seen: false,
+      stars: 0,
+      needsReview: false,
       vocabKey: v?.key ?? (word || undefined),
     };
+
     item.correct += stats?.correct ?? 0;
     item.wrong += stats?.wrong ?? 0;
     item.seen ||= stats !== undefined;
@@ -81,5 +133,6 @@ export function codexItems(
     item.stars = masteryStars(item.correct);
     items.set(id, item);
   }
+
   return [...items.values()];
 }

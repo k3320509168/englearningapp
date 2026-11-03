@@ -8,6 +8,7 @@ import { codexItems } from '../game/codex';
 import type { CodexItem } from '../game/codex';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
+import { loadBank, loadBanksFrom } from '../game/questions/bank/loader';
 
 type KindFilter = 'all' | 'word' | 'phrase' | 'grammar';
 type StatusFilter = 'all' | 'seen' | 'review' | 'master';
@@ -81,6 +82,20 @@ export default function CodexModal() {
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [selectedItem, setSelectedItem] = useState<CodexItem | null>(null);
+  const [loadedVersion, setLoadedVersion] = useState(0);
+
+  // 打開圖鑑時，背景自動預加載所有分區題庫
+  useEffect(() => {
+    void loadBanksFrom(0).then(() => setLoadedVersion(v => v + 1));
+  }, []);
+
+  // 當切換區域時，確保該區域的題庫與詞庫已完整下載載入
+  useEffect(() => {
+    const idx = LEVELS.indexOf(regionKey);
+    if (idx >= 0) {
+      void loadBank(idx).then(() => setLoadedVersion(v => v + 1));
+    }
+  }, [regionKey]);
 
   // 搜尋防抖優化（150ms 響應極致平滑）
   useEffect(() => {
@@ -90,7 +105,15 @@ export default function CodexModal() {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  const items = useMemo(() => codexItems(regionKey, codex, mistakes), [regionKey, codex, mistakes]);
+  const items = useMemo(() => codexItems(regionKey, codex, mistakes), [regionKey, codex, mistakes, loadedVersion]);
+
+  // 類型數量即時統計
+  const kindCounts = useMemo(() => ({
+    all: items.length,
+    word: items.filter(i => i.kind === 'word').length,
+    phrase: items.filter(i => i.kind === 'phrase').length,
+    grammar: items.filter(i => i.kind === 'grammar').length,
+  }), [items]);
 
   // 各狀態數量即時統計
   const statusCounts = useMemo(() => {
@@ -252,7 +275,7 @@ export default function CodexModal() {
           )}
         </div>
 
-        {/* 類型膠囊 */}
+        {/* 類型膠囊（附帶即時計數徽章） */}
         <div className="codex-filter-row">
           <span className="codex-filter-label">類型：</span>
           {KIND_TABS.map(t => (
@@ -262,7 +285,7 @@ export default function CodexModal() {
               onMouseDown={keepFocus}
               onClick={() => handleKindChange(t.id)}
             >
-              {t.label}
+              {t.label} <b style={{ opacity: 0.85, fontSize: '11px', marginLeft: 2 }}>{kindCounts[t.id]}</b>
             </button>
           ))}
         </div>
@@ -435,49 +458,53 @@ export default function CodexModal() {
               </div>
             </div>
 
-            {/* 彈窗底部前後卡片無縫導航與操作列 */}
+            {/* 彈窗底部前後卡片無縫導航與操作列：雙排自適應對齊，徹底消除手機端擠壓折行 */}
             <div className="codex-popup-actions">
-              <button
-                className="btn btn-ghost btn-small codex-nav-card-btn"
-                disabled={!hasPrevCard}
-                onMouseDown={keepFocus}
-                onClick={goPrevCard}
-                title="快捷鍵: ← 鍵"
-              >
-                ◀ 上一張
-              </button>
-              {selectedItem.kind === 'word' && (
+              <div className="codex-popup-main-btns">
                 <button
-                  className="btn btn-secondary btn-small"
+                  className="btn btn-primary"
                   onMouseDown={keepFocus}
                   onClick={() => {
-                    const w = selectedItem.vocabKey || selectedItem.title;
-                    setSelectedItem(null);
-                    useUiStore.getState().openStudy(w);
+                    if (selectedItem.audio) say(selectedItem.audio);
                   }}
-                  title="開啟詳細單字學習卡"
                 >
-                  📖 單字卡
+                  🔊 發音朗讀
                 </button>
-              )}
-              <button
-                className="btn btn-primary btn-small"
-                onMouseDown={keepFocus}
-                onClick={() => {
-                  if (selectedItem.audio) say(selectedItem.audio);
-                }}
-              >
-                🔊 發音
-              </button>
-              <button
-                className="btn btn-ghost btn-small codex-nav-card-btn"
-                disabled={!hasNextCard}
-                onMouseDown={keepFocus}
-                onClick={goNextCard}
-                title="快捷鍵: → 鍵"
-              >
-                下一張 ▶
-              </button>
+                {selectedItem.kind === 'word' && (
+                  <button
+                    className="btn btn-secondary"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      const w = selectedItem.vocabKey || selectedItem.title;
+                      setSelectedItem(null);
+                      useUiStore.getState().openStudy(w);
+                    }}
+                    title="開啟詳細單字學習卡"
+                  >
+                    📖 單字卡
+                  </button>
+                )}
+              </div>
+              <div className="codex-popup-nav-btns">
+                <button
+                  className="btn btn-ghost btn-small"
+                  disabled={!hasPrevCard}
+                  onMouseDown={keepFocus}
+                  onClick={goPrevCard}
+                  title="快捷鍵: ← 鍵"
+                >
+                  ◀ 上一張
+                </button>
+                <button
+                  className="btn btn-ghost btn-small"
+                  disabled={!hasNextCard}
+                  onMouseDown={keepFocus}
+                  onClick={goNextCard}
+                  title="快捷鍵: → 鍵"
+                >
+                  下一張 ▶
+                </button>
+              </div>
             </div>
           </div>
         </div>

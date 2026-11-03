@@ -38,6 +38,7 @@ export default function HeroModal() {
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<MemberId>(party[0] ?? 'player');
   const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
+  const [detailExpanded, setDetailExpanded] = useState(false);
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
   const [tab, setTab] = useState<'skills' | 'growth'>('skills');
   const [help, setHelp] = useState(false);
@@ -149,10 +150,36 @@ export default function HeroModal() {
               );
             })}
           </div>
+          {selectedSlot !== null && selectedSlot >= 0 && selectedSlot < PARTY_MAX && (
+            <div className="party-slot-guide">
+              <span className="party-guide-text">
+                👉 <b>替換模式</b>：已選中【第 {selectedSlot + 1} 位{party[selectedSlot] ? `：${party[selectedSlot] === 'player' ? '主角' : heroWord(heroDef(party[selectedSlot]))}` : '（空位）'}】
+              </span>
+              <small className="muted">點擊下方任一英雄即可直接上陣替換</small>
+              <button className="btn btn-tiny btn-ghost" onMouseDown={keepFocus} onClick={() => setSelectedSlot(null)}>✕ 取消</button>
+            </div>
+          )}
         </section>
 
         <div className="hero-modal-scroll">
-          {currentSelected && renderDetail(currentSelected)}
+          {/* 手機端可自由收合／展開英雄詳細資料面板，讓出戰隊伍與下方圖鑑清單順暢銜接 */}
+          <div className="hero-detail-container">
+            <div className="hero-detail-toggle-bar">
+              <span className="hero-current-pick-hint">
+                📌 當前選取：<b>{currentSelected === 'player' ? (character?.name ?? '主角') : heroWord(heroDef(currentSelected))}</b>
+              </span>
+              <button
+                className="btn btn-tiny btn-ghost hero-toggle-btn"
+                onMouseDown={keepFocus}
+                onClick={() => setDetailExpanded(v => !v)}
+              >
+                {detailExpanded ? '▲ 收合詳細數值與技能' : '▼ 查看詳細數值與技能'}
+              </button>
+            </div>
+            <div className={`hero-detail-wrapper ${detailExpanded ? 'is-expanded' : 'is-collapsed'}`}>
+              {currentSelected && renderDetail(currentSelected)}
+            </div>
+          </div>
 
           <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
             <div className="collection-head">
@@ -198,6 +225,12 @@ export default function HeroModal() {
                     onPointerDown={start('player', getPortrait('player'))}
                     onClick={guardClick(() => {
                       sfx.click();
+                      if (selectedSlot !== null && selectedSlot >= 0 && selectedSlot < PARTY_MAX) {
+                        placeMember('player', selectedSlot);
+                        setSelected('player');
+                        sfx.upgrade();
+                        return;
+                      }
                       setSelected('player');
                       const idx = party.indexOf('player');
                       if (idx >= 0) setSelectedSlot(idx);
@@ -223,6 +256,13 @@ export default function HeroModal() {
                       onPointerDown={owned ? start(h.id, portrait) : undefined}
                       onClick={guardClick(() => {
                         sfx.click();
+                        // 若當前有選中的出戰格子，且點擊的是已擁有英雄，一鍵直接替換上陣！
+                        if (selectedSlot !== null && selectedSlot >= 0 && selectedSlot < PARTY_MAX && owned) {
+                          placeMember(h.id, selectedSlot);
+                          setSelected(h.id);
+                          sfx.upgrade();
+                          return;
+                        }
                         setSelected(h.id);
                         const idx = party.indexOf(h.id);
                         if (idx >= 0) setSelectedSlot(idx);

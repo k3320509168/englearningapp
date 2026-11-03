@@ -1,4 +1,39 @@
 {
+  "100": {
+    "word": "$100.",
+    "pos": "n.",
+    "meaning": "全票成人價",
+    "example": "【短文理解】[Museum Ticket Notice] General admission: $200. Senior citizens (over 65) and students with ID: $100. Children under 6: Free admission. Audio guide rental: $50 per person.\nQ: How much does a university student with a valid ID pay to enter?",
+    "exampleZh": "學生出示學生證（students with ID）票價為 $100，故選 B"
+  },
+  "170": {
+    "word": "$170.",
+    "pos": "n.",
+    "meaning": "$170.",
+    "example": "【短文理解】[Restaurant Menu] Daily Lunch Set (11:00-14:00): Chicken sandwich with fries and a cup of black coffee for $150. Add $20 to change your black coffee to hot milk tea or orange juice.\nQ: How much is the sandwich set if you change the coffee to orange juice?",
+    "exampleZh": "套餐原價 150 元，換柳橙汁需加價 20 元（Add $20），總計 150 + 20 = $170"
+  },
+  "180": {
+    "word": "$180.",
+    "pos": "n.",
+    "meaning": "$180.",
+    "example": "【短文理解】[Supermarket Special Board] Fresh Strawberries: Buy one box for $120, get the second box for half price! Offer valid this Saturday and Sunday only.\nQ: How much are two boxes of fresh strawberries on Sunday?",
+    "exampleZh": "第一盒 120 元，第二盒半價為 60 元，兩盒總計 120 + 60 = 180 元，故選 C"
+  },
+  "190": {
+    "word": "$190.",
+    "pos": "n.",
+    "meaning": "$190.",
+    "example": "【短文理解】[Coffee Shop Menu Board] Afternoon Tea Combo (14:00-17:00): Any warm drink with a slice of carrot cake for $160. Add $30 to upgrade your drink to a seasonal strawberry smoothie.\nQ: How much does the combo cost if you upgrade the drink to a strawberry smoothie?",
+    "exampleZh": "下午茶組合原價 160 元，升級草莓冰沙加價 30 元（Add $30），總計 160 + 30 = 190 元，故選 C"
+  },
+  "1010": {
+    "word": "10:10.",
+    "pos": "n.",
+    "meaning": "New Departure: 10:10",
+    "example": "【短文理解】[Flight Schedule Screen] Flight CI100 to Tokyo Narita: Gate B4. Status: Delayed. Scheduled Departure: 08:50. New Departure: 10:10. Please stay near Gate B4 for updates.\nQ: What is the new departure time for Flight CI100?",
+    "exampleZh": "螢幕資訊顯示「New Departure: 10:10」，因此新出發時間為 10:10"
+  },
   "EMAIL": {
     "pos": "n.",
     "meaning": "電子郵件",
@@ -3418,5 +3453,3346 @@
         ]
       }
     ]
+  },
+  "OFFICE": {
+    "word": "office",
+    "pos": "n.",
+    "meaning": "辦公室",
+    "example": "Office.",
+    "exampleZh": "辦公室。"
+  },
+  "DESK": {
+    "word": "desk",
+    "pos": "n.",
+    "meaning": "書桌",
+    "example": "Desk.",
+    "exampleZh": "書桌；辦公桌。"
+  },
+  "TRAIN": {
+    "word": "train",
+    "pos": "n.",
+    "meaning": "火車",
+    "example": "The train leaves at six.",
+    "exampleZh": "火車六點開。"
+  },
+  "TAXI": {
+    "word": "taxi",
+    "pos": "n.",
+    "meaning": "計程車",
+    "example": "Let's take a taxi.",
+    "exampleZh": "我們搭計程車吧。"
+  },
+  "HOTEL": {
+    "word": "hotel",
+    "pos": "n.",
+    "meaning": "旅館",
+    "example": "Hotel.",
+    "exampleZh": "旅館；飯店。"
+  },
+  "CASH": {
+    "word": "cash",
+    "pos": "n.",
+    "meaning": "現金",
+    "example": "Do you take cash?",
+    "exampleZh": "你們收現金嗎？"
+  },
+  "SHOP": {
+    "word": "shop",
+    "pos": "n.",
+    "meaning": "商店",
+    "example": "The shop closes at nine.",
+    "exampleZh": "這家店九點打烊。"
+  },
+  "MAP": {
+    "word": "map",
+    "pos": "n.",
+    "meaning": "地圖",
+    "example": "Can I see the map?",
+    "exampleZh": "可以看一下地圖嗎？"
+  },
+  "DOCTOR": {
+    "word": "doctor",
+    "pos": "n.",
+    "meaning": "醫生",
+    "example": "You should see a doctor.",
+    "exampleZh": "你應該去看醫生。"
+  },
+  "SEAT": {
+    "word": "seat",
+    "pos": "n.",
+    "meaning": "座位",
+    "example": "Is this seat taken?",
+    "exampleZh": "這個位子有人坐嗎？"
+  },
+  "SIZE": {
+    "word": "size",
+    "pos": "n.",
+    "meaning": "尺寸",
+    "example": "Do you have this in a larger size?",
+    "exampleZh": "這件有大一點的尺寸嗎？"
+  },
+  "BEACH": {
+    "word": "beach",
+    "pos": "n.",
+    "meaning": "海灘",
+    "example": "The beach is crowded in summer.",
+    "exampleZh": "夏天海灘人很多。"
+  },
+  "MARKET": {
+    "word": "market",
+    "pos": "n.",
+    "meaning": "市場",
+    "example": "We buy fruit at the market.",
+    "exampleZh": "我們在市場買水果。"
+  },
+  "IT IS NEAR THE PARK": {
+    "word": "it is near the park.",
+    "pos": "phr.",
+    "meaning": "它在公園附近",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "題目詢問地點「Where is the station? (車站在哪裡？)」，回答「It is near the park. (它在公園附近)」最合適"
+  },
+  "NICE TO MEET YOU TOO": {
+    "word": "nice to meet you too.",
+    "pos": "phr.",
+    "meaning": "很高興認識你",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方說「Nice to meet you. (很高興認識你)」，最禮貌的回應是「Nice to meet you too. (我也很高興認識你)」"
+  },
+  "YES PLEASE": {
+    "word": "yes, please.",
+    "pos": "phr.",
+    "meaning": "好的，麻煩你",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Do you need help? (需要幫忙嗎？)」，接受協助時可回答「Yes, please. (好的，麻煩你)」"
+  },
+  "IT IS AT TWO PM": {
+    "word": "it is at two p.m.",
+    "pos": "phr.",
+    "meaning": "下午兩點",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "題目詢問時間「What time is the meeting? (會議幾點開始？)」，回答「It is at two p.m. (下午兩點)」最合適"
+  },
+  "YES WE TAKE CREDIT CARDS": {
+    "word": "yes, we take credit cards.",
+    "pos": "phr.",
+    "meaning": "是的，我們接受信用卡",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問付款方式「Can I pay by credit card? (我可以用信用卡付款嗎？)」，適當回答為「Yes, we take credit cards. (是的，我們接受信用卡)」"
+  },
+  "NO PROBLEM YOURE WELCOME": {
+    "word": "no problem, you're welcome.",
+    "pos": "phr.",
+    "meaning": "謝謝你的幫忙",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方表達感謝「Thank you for your help. (謝謝你的幫忙)」，最適合的回應是「No problem, you're welcome. (不客氣)」"
+  },
+  "YES NOBODY IS SITTING HERE": {
+    "word": "yes, nobody is sitting here.",
+    "pos": "phr.",
+    "meaning": "可以坐，這裡沒人坐",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問座位有沒有人坐「Is this seat free?（這個位子有人坐嗎？）」，回答「Yes, nobody is sitting here.（可以坐，這裡沒人坐）」最合適"
+  },
+  "AT AROUND SIX OCLOCK": {
+    "word": "at around six o'clock.",
+    "pos": "phr.",
+    "meaning": "大約六點鐘",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "題目詢問到達時間「When will you arrive? (你何時會到達？)」，回答時間點「At around six o'clock. (大約六點鐘)」最正確"
+  },
+  "MY NAME IS JOHN": {
+    "word": "my name is john",
+    "pos": "n. phr.",
+    "meaning": "約翰",
+    "example": "My name is John.",
+    "exampleZh": "我是約翰。"
+  },
+  "I AM FINE THANK YOU": {
+    "word": "i am fine, thank you.",
+    "pos": "phr.",
+    "meaning": "How are you? (你好嗎？)",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "這是一般的問候「How are you? (你好嗎？)」，最標準的回應是「I am fine, thank you. (我很好，謝謝)」"
+  },
+  "I AM FROM TAIWAN": {
+    "word": "i am from taiwan",
+    "pos": "sent.",
+    "meaning": "我來自台灣",
+    "example": "I am from taiwan.",
+    "exampleZh": "我來自台灣。"
+  },
+  "I AM A TEACHER": {
+    "word": "i am a teacher.",
+    "pos": "phr.",
+    "meaning": "我是一名老師",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問職業「What do you do? (你的職業是什麼？)」，回答「I am a teacher. (我是一名老師)」最合適"
+  },
+  "YES HERE IT IS": {
+    "word": "yes, here it is.",
+    "pos": "phr.",
+    "meaning": "有的，在這裡",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問是否有地圖「Do you have a map? (你有地圖嗎？)」，遞出地圖並回答「Yes, here it is. (有的，在這裡)」最自然"
+  },
+  "YES I AM LOOKING FOR MY ROOM": {
+    "word": "yes, i am looking for my room.",
+    "pos": "phr.",
+    "meaning": "是的，我在找我的房間",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "服務人員常問「Can I help you? (需要幫忙嗎？)」，回答「Yes, I am looking for my room. (是的，我在找我的房間)」很合適"
+  },
+  "IT IS ON THE SECOND FLOOR": {
+    "word": "it is on the second floor.",
+    "pos": "phr.",
+    "meaning": "在二樓",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問地點「Where is the toilet? (廁所在哪裡？)」，回答「It is on the second floor. (在二樓)」最正確"
+  },
+  "YES I WANT A HAMBURGER": {
+    "word": "yes, i want a hamburger.",
+    "pos": "phr.",
+    "meaning": "是的，我要一個漢堡",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "餐廳點餐時服務生會問「Are you ready to order? (您準備好點餐了嗎？)」，回答「Yes, I want a hamburger. (是的，我要一個漢堡)」很合理"
+  },
+  "NO IT IS SUNNY": {
+    "word": "no, it is sunny.",
+    "pos": "phr.",
+    "meaning": "沒有，現在是晴天",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問天氣「Is it raining outside? (外面在下雨嗎？)」，回答天氣狀況「No, it is sunny. (沒有，現在是晴天)」最合適"
+  },
+  "IT IS 555-1234": {
+    "word": "it is 555-1234.",
+    "pos": "phr.",
+    "meaning": "it is 555-1234.",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問電話號碼「What is your phone number?」，回答「It is 555-1234. (是 555-1234)」最合適"
+  },
+  "I AM TWENTY-FIVE YEARS OLD": {
+    "word": "i am twenty-five years old.",
+    "pos": "phr.",
+    "meaning": "How old are you?",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問年紀「How old are you?」，回答「I am twenty-five years old. (我 25 歲)」最合適"
+  },
+  "IT IS IN JULY": {
+    "word": "it is in july.",
+    "pos": "phr.",
+    "meaning": "在七月",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問生日月份/日期「When is your birthday? (你的生日是何時？)」，回答「It is in July. (在七月)」最正確"
+  },
+  "I LIVE IN KAOHSIUNG": {
+    "word": "i live in kaohsiung.",
+    "pos": "phr.",
+    "meaning": "我住在高雄",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問居住地「Where do you live? (你住在哪裡？)」，回答「I live in Kaohsiung. (我住在高雄)」最正確"
+  },
+  "I TAKE THE MRT": {
+    "word": "i take the mrt.",
+    "pos": "phr.",
+    "meaning": "我搭捷運",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問通勤方式「How do you go to work? (你怎麼去上班？)」，回答「I take the MRT. (我搭捷運)」最正確"
+  },
+  "AT SEVEN IN THE MORNING": {
+    "word": "at seven in the morning.",
+    "pos": "phr.",
+    "meaning": "早上七點",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問起床時間「What time do you wake up? (你幾點起床？)」，回答「At seven in the morning. (早上七點)」最正確"
+  },
+  "NO THANKS": {
+    "word": "no, thanks.",
+    "pos": "phr.",
+    "meaning": "不用，謝謝",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問是否需要加糖「Do you want some sugar? (你需要一點糖嗎？)」，禮貌回絕「No, thanks. (不用，謝謝)」很自然合適"
+  },
+  "NO I WORK IN A BANK": {
+    "word": "no, i work in a bank.",
+    "pos": "phr.",
+    "meaning": "不是，我在銀行工作",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問身分「Are you a student? (你是一名學生嗎？)」，回答「No, I work in a bank. (不是，我在銀行工作)」十分符合邏輯"
+  },
+  "YES A LITTLE BIT": {
+    "word": "yes, a little bit.",
+    "pos": "phr.",
+    "meaning": "會，會一點點",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問語言能力「Can you speak English? (你會說英文嗎？)」，回答「Yes, a little bit. (會，會一點點)」最合適"
+  },
+  "SHE IS READING A BOOK": {
+    "word": "she is reading a book.",
+    "pos": "phr.",
+    "meaning": "她正在看書",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問對方正在做什麼「What is she doing? (她正在做什麼？)」，回答現在進行的動作「She is reading a book. (她正在看書)」最合適"
+  },
+  "HE IS MY NEW COLLEAGUE": {
+    "word": "he is my new colleague.",
+    "pos": "phr.",
+    "meaning": "他是我的新同事",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問人物身分「Who is that man? (那個男人是誰？)」，回答「He is my new colleague. (他是我的新同事)」最合適"
+  },
+  "I AM GOING TO THE BANK": {
+    "word": "i am going to the bank.",
+    "pos": "phr.",
+    "meaning": "我要去銀行",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Where are you going? (你要去哪裡？)」，回答目的地「I am going to the bank. (我要去銀行)」最正確"
+  },
+  "I AM READING AN EMAIL": {
+    "word": "i am reading an email.",
+    "pos": "phr.",
+    "meaning": "我正在讀一封電子郵件",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「What are you doing? (你正在做什麼？)」，回答正在進行的動作「I am reading an email. (我正在讀一封電子郵件)」最正確"
+  },
+  "SHE IS MY MANAGER": {
+    "word": "she is my manager.",
+    "pos": "phr.",
+    "meaning": "Who is she? (她是誰？)",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Who is she? (她是誰？)」，回答她的身分「She is my manager. (她是我的經理)」最正確"
+  },
+  "YES IT IS MINE": {
+    "word": "yes, it is mine.",
+    "pos": "phr.",
+    "meaning": "是的，它是我的",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Is this your pen? (這是你的筆嗎？)」，回答「Yes, it is mine. (是的，它是我的)」最正確"
+  },
+  "SORRY I AM USING IT": {
+    "word": "sorry, i am using it.",
+    "pos": "phr.",
+    "meaning": "抱歉，我正在用它",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Can I use your computer? (我能用你的電腦嗎？)」，禮貌拒絕「Sorry, I am using it. (抱歉，我正在用它)」很合適"
+  },
+  "YES I DRINK IT EVERY DAY": {
+    "word": "yes, i drink it every day.",
+    "pos": "phr.",
+    "meaning": "是的，我每天都喝",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問喜好「Do you like coffee? (你喜歡咖啡嗎？)」，回答「Yes, I drink it every day. (是的，我每天都喝)」最自然"
+  },
+  "IT IS VERY HOT": {
+    "word": "it is very hot.",
+    "pos": "phr.",
+    "meaning": "非常熱",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問天氣「How is the weather? (天氣如何？)」，回答天氣狀況「It is very hot. (非常熱)」最正確"
+  },
+  "IN TEN MINUTES": {
+    "word": "in ten minutes.",
+    "pos": "phr.",
+    "meaning": "十分鐘後",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問抵達時間「When will he arrive? (他何時會抵達？)」，回答時間點「In ten minutes. (十分鐘後)」最正確"
+  },
+  "NO THEY ARE FROM TAIWAN": {
+    "word": "no, they are from taiwan.",
+    "pos": "phr.",
+    "meaning": "不，他們來自台灣",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問國籍「Are they from Japan? (他們來自日本嗎？)」，回答「No, they are from Taiwan. (不，他們來自台灣)」最符合邏輯"
+  },
+  "AT ELEVEN OCLOCK": {
+    "word": "at eleven o'clock.",
+    "pos": "phr.",
+    "meaning": "十一點鐘",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問就寢時間「What time do you go to bed? (你幾點上床睡覺？)」，回答時間「At eleven o'clock. (十一點鐘)」最正確"
+  },
+  "THEY ARE FIFTY DOLLARS": {
+    "word": "they are fifty dollars.",
+    "pos": "phr.",
+    "meaning": "它們五十元",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問鞋子的價格「How much are these shoes? (這雙鞋多少錢？)」，回答價格「They are fifty dollars. (它們五十元)」最正確"
+  },
+  "YES LET ME CHECK": {
+    "word": "yes, let me check.",
+    "pos": "phr.",
+    "meaning": "有的，讓我查一下",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "在商店詢問尺寸「Do you have a small size? (你們有小號的嗎？)」，店員回答「Yes, let me check. (有的，讓我查一下)」最合理"
+  },
+  "I WILL HAVE THE CHICKEN": {
+    "word": "i will have the chicken.",
+    "pos": "phr.",
+    "meaning": "我要吃雞肉",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問想吃什麼「What would you like to eat? (你想要吃點什麼？)」，回答食物「I will have the chicken. (我要吃雞肉)」最正確"
+  },
+  "TAKE BUS NUMBER FIVE": {
+    "word": "take bus number five.",
+    "pos": "phr.",
+    "meaning": "搭五號公車",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問交通方式「How can I get to the supermarket? (我要怎麼去超市？)」，指示搭乘公車「Take bus number five. (搭五號公車)」最正確"
+  },
+  "YES WEAR A COAT": {
+    "word": "yes, wear a coat.",
+    "pos": "phr.",
+    "meaning": "是的，穿件外套吧",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問外面天氣「Is it cold outside? (外面很冷嗎？)」，回答並給予建議「Yes, wear a coat. (是的，穿件外套吧)」最貼切"
+  },
+  "IT STARTS AT SEVEN": {
+    "word": "it starts at seven.",
+    "pos": "phr.",
+    "meaning": "它七點開始",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問電影放映時間「What time is the movie? (電影幾點播？)」，回答時間點「It starts at seven. (它七點開始)」最正確"
+  },
+  "THREE PLEASE": {
+    "word": "three, please.",
+    "pos": "phr.",
+    "meaning": "請給我三顆",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問數量「How many apples do you want? (你想要幾顆蘋果？)」，回答數字「Three, please. (請給我三顆)」最正確"
+  },
+  "NO JUST A FIVE-MINUTE WALK": {
+    "word": "no, just a five-minute walk.",
+    "pos": "phr.",
+    "meaning": "不遠，只要走五分鐘",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問距離「Is the station far from here? (車站離這裡很遠嗎？)」，回答時間距離「No, just a five-minute walk. (不遠，只要走五分鐘)」很自然合適"
+  },
+  "NO THE SUN IS SHINING": {
+    "word": "no, the sun is shining.",
+    "pos": "phr.",
+    "meaning": "不會，太陽正在發光呢",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問今日是否下雨「Will it rain today? (今天會下雨嗎？)」，回答天氣現況「No, the sun is shining. (不會，太陽正在發光呢)」最正確"
+  },
+  "IT IS FRIDAY": {
+    "word": "it is friday.",
+    "pos": "phr.",
+    "meaning": "星期五",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "原句：What day is today?（今天是星期幾？）最適合的回應是 It is Friday. (今天是星期五"
+  },
+  "IT IS ONE HUNDRED DOLLARS": {
+    "word": "it is one hundred dollars.",
+    "pos": "phr.",
+    "meaning": "一百元",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "原句：How much is this book?（這本書多少錢？）最適合的回應是 It is one hundred dollars. (這是一百元"
+  },
+  "YES I DO": {
+    "word": "yes, i do.",
+    "pos": "phr.",
+    "meaning": "的",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "原句：Do you like cats?（你喜歡貓嗎？）最適合的回應是 Yes, I do. (是的，我喜歡"
+  },
+  "MY FAVORITE COLOR IS BLUE": {
+    "word": "my favorite color is blue.",
+    "pos": "phr.",
+    "meaning": "原句",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "原句：What is your favorite color?（你最喜歡的顏色是什麼？）最適合的回應是 My favorite color is blue. (我最喜歡藍色"
+  },
+  "I GET UP AT SEVEN OCLOCK": {
+    "word": "i get up at seven o'clock.",
+    "pos": "phr.",
+    "meaning": "原句",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "原句：What time do you get up?（你幾點起床？）最適合的回應是 I get up at seven o'clock. (我七點起床"
+  },
+  "MORNING": {
+    "word": "morning",
+    "pos": "n.",
+    "meaning": "早晨",
+    "example": "Morning.",
+    "exampleZh": "早晨；上午。"
+  },
+  "WATER": {
+    "word": "water",
+    "pos": "n.",
+    "meaning": "水",
+    "example": "Water.",
+    "exampleZh": "水。"
+  },
+  "COFFEE": {
+    "word": "coffee",
+    "pos": "n.",
+    "meaning": "咖啡",
+    "example": "I drink coffee in the morning.",
+    "exampleZh": "我早上喝咖啡。"
+  },
+  "APPLE": {
+    "word": "apple",
+    "pos": "n.",
+    "meaning": "蘋果",
+    "example": "Apple.",
+    "exampleZh": "蘋果。"
+  },
+  "BANANA": {
+    "word": "banana",
+    "pos": "n.",
+    "meaning": "香蕉",
+    "example": "He eats a banana after lunch.",
+    "exampleZh": "他午餐後吃一根香蕉。"
+  },
+  "FAMILY": {
+    "word": "family",
+    "pos": "adv.",
+    "meaning": "家庭",
+    "example": "Family.",
+    "exampleZh": "家庭；家人。"
+  },
+  "SISTER": {
+    "word": "sister",
+    "pos": "n.",
+    "meaning": "姊妹",
+    "example": "My sister lives in Taipei.",
+    "exampleZh": "我姊姊住在台北。"
+  },
+  "BROTHER": {
+    "word": "brother",
+    "pos": "n.",
+    "meaning": "兄弟",
+    "example": "Her brother is a teacher.",
+    "exampleZh": "她哥哥是老師。"
+  },
+  "GOOD MORNING": {
+    "word": "good morning",
+    "pos": "phr.",
+    "meaning": "早安",
+    "example": "Good morning.",
+    "exampleZh": "早安。"
+  },
+  "THANK YOU": {
+    "word": "thank you",
+    "pos": "phr.",
+    "meaning": "謝謝你",
+    "example": "Thank you.",
+    "exampleZh": "謝謝你。"
+  },
+  "YOURE WELCOME": {
+    "word": "you're welcome",
+    "pos": "sent.",
+    "meaning": "不客氣",
+    "example": "You're welcome.",
+    "exampleZh": "不客氣。"
+  },
+  "EXCUSE ME": {
+    "word": "excuse me",
+    "pos": "phr.",
+    "meaning": "不好意思；抱歉打擾",
+    "example": "Excuse me.",
+    "exampleZh": "不好意思；抱歉。"
+  },
+  "SEE YOU LATER": {
+    "word": "see you later",
+    "pos": "phr.",
+    "meaning": "待會見；再見",
+    "example": "See you later.",
+    "exampleZh": "待會見。"
+  },
+  "HAVE A NICE DAY": {
+    "word": "have a nice day",
+    "pos": "phr.",
+    "meaning": "祝你有美好的一天",
+    "example": "Have a nice day.",
+    "exampleZh": "祝你有美好的一天。"
+  },
+  "NO PROBLEM": {
+    "word": "no problem",
+    "pos": "phr.",
+    "meaning": "沒問題；不客氣",
+    "example": "No problem.",
+    "exampleZh": "沒問題。"
+  },
+  "GOOD NIGHT": {
+    "word": "good night",
+    "pos": "phr.",
+    "meaning": "晚安",
+    "example": "Good night.",
+    "exampleZh": "晚安。"
+  },
+  "WAIT A MINUTE": {
+    "word": "wait a minute",
+    "pos": "phr.",
+    "meaning": "稍等一下",
+    "example": "Wait a minute.",
+    "exampleZh": "請稍等。"
+  },
+  "BE CAREFUL": {
+    "word": "be careful",
+    "pos": "phr.",
+    "meaning": "小心；注意安全",
+    "example": "Be careful.",
+    "exampleZh": "小心；注意安全。"
+  },
+  "HURRY UP": {
+    "word": "hurry up",
+    "pos": "phr.",
+    "meaning": "趕快；快點",
+    "example": "Hurry up.",
+    "exampleZh": "快點。"
+  },
+  "HOW ARE YOU TODAY": {
+    "word": "how are you today",
+    "pos": "phr.",
+    "meaning": "你今天好嗎？",
+    "example": "How are you today.",
+    "exampleZh": "你今天好嗎？"
+  },
+  "NICE TO MEET YOU": {
+    "word": "nice to meet you",
+    "pos": "phr.",
+    "meaning": "很高興認識你",
+    "example": "Nice to meet you.",
+    "exampleZh": "很高興認識你。"
+  },
+  "I AM AN ENGINEER": {
+    "word": "i am an engineer",
+    "pos": "sent.",
+    "meaning": "一名工程師",
+    "example": "I am an engineer.",
+    "exampleZh": "我是一名工程師。"
+  },
+  "WHERE IS THE RESTROOM": {
+    "word": "where is the restroom",
+    "pos": "phr.",
+    "meaning": "洗手間在哪裡？",
+    "example": "Where is the restroom.",
+    "exampleZh": "請問洗手間在哪裡？"
+  },
+  "A GLASS OF WATER PLEASE": {
+    "word": "a glass of water please",
+    "pos": "phr.",
+    "meaning": "請給我一杯水",
+    "example": "A glass of water please.",
+    "exampleZh": "請給我一杯水。"
+  },
+  "I LIKE HOT COFFEE": {
+    "word": "i like hot coffee",
+    "pos": "sent.",
+    "meaning": "我喜歡熱咖啡",
+    "example": "I like hot coffee.",
+    "exampleZh": "我喜歡熱咖啡。"
+  },
+  "HOW MUCH IS THIS": {
+    "word": "how much is this",
+    "pos": "sent.",
+    "meaning": "這個多少錢？",
+    "example": "How much is this.",
+    "exampleZh": "這個多少錢？"
+  },
+  "THE CHECK PLEASE": {
+    "word": "the check please",
+    "pos": "phr.",
+    "meaning": "請買單",
+    "example": "The check please.",
+    "exampleZh": "請買單。"
+  },
+  "CAN YOU HELP ME": {
+    "word": "can you help me",
+    "pos": "phr.",
+    "meaning": "你能幫我嗎？",
+    "example": "Can you help me.",
+    "exampleZh": "你能幫我嗎？"
+  },
+  "I AM BUSY TODAY": {
+    "word": "i am busy today",
+    "pos": "sent.",
+    "meaning": "我今天很忙",
+    "example": "I am busy today.",
+    "exampleZh": "我今天很忙。"
+  },
+  "IS": {
+    "word": "is",
+    "pos": "v.",
+    "meaning": "是（第三人稱單數）",
+    "example": "This is my friend, Tom.",
+    "exampleZh": "介紹一個人用 This is...。"
+  },
+  "ON": {
+    "word": "on",
+    "pos": "prep.",
+    "meaning": "在...之上；關於",
+    "example": "The meeting is on Monday.",
+    "exampleZh": "星期與日期前用 on。"
+  },
+  "WORK": {
+    "word": "work",
+    "pos": "n.",
+    "meaning": "work",
+    "example": "Our team members work in the office from 9 a.m. to 6 p.m. every day.",
+    "exampleZh": "主詞 Our team members 為複數名詞，現在簡單式動詞用原形 work。"
+  },
+  "TICKET": {
+    "word": "ticket",
+    "pos": "n.",
+    "meaning": "票",
+    "example": "Excuse me, where can I buy a train ticket to Taichung?",
+    "exampleZh": "買火車「票」應使用 ticket。"
+  },
+  "HAS": {
+    "word": "has",
+    "pos": "v.",
+    "meaning": "有；擁有（第三人稱單數）",
+    "example": "She has two brothers.",
+    "exampleZh": "第三人稱單數（he / she / it）的 have 要變成 has。"
+  },
+  "BECAUSE": {
+    "word": "because",
+    "pos": "conj.",
+    "meaning": "因為",
+    "example": "A: What is your favorite season? B: I like spring because the weather is warm and nice.",
+    "exampleZh": "後句是喜歡春天的原因，表原因的連接詞用 because。"
+  },
+  "AT": {
+    "word": "at",
+    "pos": "prep.",
+    "meaning": "在...地點/時間",
+    "example": "I get up at seven o'clock.",
+    "exampleZh": "時刻前用 at。"
+  },
+  "THERE ARE": {
+    "word": "there are",
+    "pos": "phr.",
+    "meaning": "有；存在（複數）",
+    "example": "Look at the map! there are two famous night markets near our hotel.",
+    "exampleZh": "表示「有」且後方主詞 two famous night markets 為複數名詞，應用 There are。"
+  },
+  "MY": {
+    "word": "my",
+    "pos": "pron.",
+    "meaning": "我的",
+    "example": "This is my bag.",
+    "exampleZh": "名詞前用所有格 my（我的）。"
+  },
+  "DRINKS": {
+    "word": "drinks",
+    "pos": "n.",
+    "meaning": "現在簡單式",
+    "example": "He drinks coffee every morning.",
+    "exampleZh": "現在簡單式，第三人稱單數（he）動詞加 -s：drink → drinks。"
+  },
+  "CANNOT": {
+    "word": "cannot",
+    "pos": "n.",
+    "meaning": "無法/不能",
+    "example": "The museum is closed today, so visitors cannot enter the building.",
+    "exampleZh": "因博物館今天休館，故參觀者「無法/不能」進入，填 cannot。"
+  },
+  "EAT": {
+    "word": "eat",
+    "pos": "v.",
+    "meaning": "吃",
+    "example": "We eat lunch at noon.",
+    "exampleZh": "我們中午吃午餐。"
+  },
+  "MINE": {
+    "word": "mine",
+    "pos": "n.",
+    "meaning": "mine",
+    "example": "A: Good morning, Mr. Lin. Is this your jacket? B: No, it isn't. That is Peter's jacket, and mine is over there on the chair.",
+    "exampleZh": "此處需要所有格代名詞 mine 代替 my jacket 作為後句的主詞。"
+  },
+  "AT ON": {
+    "word": "at; on",
+    "pos": "phr.",
+    "meaning": "at; on",
+    "example": "A: When do we arrive in Tokyo? B: The airplane lands at; on 4:00 p.m. ___ Friday afternoon.",
+    "exampleZh": "具體時間點 4:00 p.m. 前用 at；特定日期的下午 Friday afternoon 前用 on"
+  },
+  "HOW": {
+    "word": "how",
+    "pos": "adv.",
+    "meaning": "如何；怎樣；多麼",
+    "example": "A: Excuse me, how can I get to the nearest convenience store? B: Just walk straight for two minutes. It is next to the bank.",
+    "exampleZh": "詢問前往某處的方法或路線，使用疑問詞 how。"
+  },
+  "DOES": {
+    "word": "does",
+    "pos": "v.",
+    "meaning": "做（第三人稱單數）",
+    "example": "A: What time does the new manager arrive at the company? B: She usually arrives at 8:45 every morning.",
+    "exampleZh": "主詞 the new manager 為第三人稱單數，一般動詞 arrive 的現在簡單式疑問句應使用助動詞 does。"
+  },
+  "HIS": {
+    "word": "his",
+    "pos": "pron.",
+    "meaning": "他的",
+    "example": "Tom is a doctor. He works in a big hospital, and his wife works in a school as an English teacher.",
+    "exampleZh": "先行詞 Tom 為男性，對應的男性單數所有格形容詞為 his。"
+  },
+  "TURN OFF THE LIGHTS": {
+    "word": "turn off the lights.",
+    "pos": "phr.",
+    "meaning": "turn off the lights.",
+    "example": "【短文理解】[Office Notice] Please turn off the lights and air conditioners before you leave the meeting room. Also, remember to take your cups and pens with you. Thank you for your help.\nQ: What should workers do before leaving the room?",
+    "exampleZh": "告示第一句明白寫道「Please turn off the lights...」，因此選 B"
+  },
+  "IN A CAF": {
+    "word": "in a café.",
+    "pos": "phr.",
+    "meaning": "出作者目前在咖啡廳",
+    "example": "【短文理解】[Text Message] Hi Kevin! I am at the café across from the train station. The coffee here is great and they have free Wi-Fi. What time will you arrive?\nQ: Where is the writer right now?",
+    "exampleZh": "文中第二句「I am at the café across from the train station.」直接指出作者目前在咖啡廳"
+  },
+  "A CUP OF TEA": {
+    "word": "a cup of tea",
+    "pos": "n. phr.",
+    "meaning": "一杯茶",
+    "example": "A cup of tea.",
+    "exampleZh": "一杯茶。"
+  },
+  "ON THE SECOND FLOOR": {
+    "word": "on the second floor",
+    "pos": "phr.",
+    "meaning": "在二樓",
+    "example": "On the second floor.",
+    "exampleZh": "在二樓。"
+  },
+  "A CLIENT IS VISITING": {
+    "word": "a client is visiting.",
+    "pos": "phr.",
+    "meaning": "因此大家需要穿著正式服裝接見客戶",
+    "example": "【短文理解】[Email to Team] Dear all, our client from Japan will visit our office at 10:00 a.m. tomorrow. Please wear formal clothes and prepare the new product pictures.\nQ: Why should the workers dress formally tomorrow?",
+    "exampleZh": "信中提到「our client from Japan will visit our office at 10:00 a.m. tomorrow」，因此大家需要穿著正式服裝接見客戶"
+  },
+  "AT A HOSPITAL": {
+    "word": "at a hospital.",
+    "pos": "phr.",
+    "meaning": "無法加值的地方",
+    "example": "【短文理解】[Travel Card Note] You can use this travel card for the MRT, city buses, and local trains. You can add money to your card at any convenience store or MRT station.\nQ: Where CANNOT you add money to this card according to the note?",
+    "exampleZh": "文中僅列出便利商店與捷運站可以加值，沒有提到醫院 (hospital)，因此醫院是無法加值的地方"
+  },
+  "THE WRITER IS SICK": {
+    "word": "the writer is sick.",
+    "pos": "phr.",
+    "meaning": "頭很痛",
+    "example": "【短文理解】[Text Message] Hi Amy, I cannot go to the gym with you tonight. I have a bad headache, so I want to go to bed early. Let's exercise together next week.\nQ: Why does the writer cancel the gym plan?",
+    "exampleZh": "作者提到「I have a bad headache」（頭很痛），說明生病不舒服是取消運動的原因"
+  },
+  "GO TO THE GARDEN": {
+    "word": "go to the garden.",
+    "pos": "phr.",
+    "meaning": "文中所指示的行動",
+    "example": "【短文理解】[Sign at the Library] Quiet, please! Do not talk loudly on your mobile phone in the reading area. If you need to make a call, please walk outside to the garden.\nQ: What should people do if they need to speak on the phone?",
+    "exampleZh": "告示最後一句指出「If you need to make a call, please walk outside to the garden.」，因此應前往花園"
+  },
+  "SPEAKS": {
+    "word": "speaks",
+    "pos": "n.",
+    "meaning": "speaks",
+    "example": "My supervisor speaks two languages: English and Japanese.",
+    "exampleZh": "主詞 My supervisor 是單數第三人稱，現在簡單式動詞字尾加 -s 寫作 speaks。"
+  },
+  "IN": {
+    "word": "in",
+    "pos": "prep.",
+    "meaning": "在...之內",
+    "example": "My birthday is in May.",
+    "exampleZh": "月份前用 in。"
+  },
+  "HER": {
+    "word": "her",
+    "pos": "pron.",
+    "meaning": "她的；她（受格）",
+    "example": "This isn't Susan's bag. her bag is black, but this one is brown.",
+    "exampleZh": "修飾名詞 bag 需要使用所有格形容詞 Her。"
+  },
+  "PASS": {
+    "word": "pass",
+    "pos": "n.",
+    "meaning": "pass",
+    "example": "Please have your passport and boarding pass ready before you enter the gate.",
+    "exampleZh": "機場登機證的標準固定搭配是 boarding pass。"
+  },
+  "THERE IS": {
+    "word": "there is",
+    "pos": "phr.",
+    "meaning": "有；存在（單數）",
+    "example": "there is a new supermarket near my apartment, so shopping is very convenient.",
+    "exampleZh": "表示某地存在某物，且後方主詞 a new supermarket 為單數，使用 There is。"
+  },
+  "YOURS": {
+    "word": "yours",
+    "pos": "n.",
+    "meaning": "yours",
+    "example": "A: Is that blue water bottle yours? B: Yes, it is mine! Thank you for finding it.",
+    "exampleZh": "此處需要所有格代名詞 yours 代替 your water bottle 作為形容詞或補語結尾。"
+  },
+  "DONT DRINK": {
+    "word": "don't drink",
+    "pos": "phr.",
+    "meaning": "複數名詞",
+    "example": "My parents don't drink coffee in the evening because it keeps them awake all night.",
+    "exampleZh": "主詞 My parents 為複數名詞，現在簡單式動詞否定句應使用 don't + 原形動詞 drink"
+  },
+  "IS THERE": {
+    "word": "is there",
+    "pos": "phr.",
+    "meaning": "有...嗎？（單數疑問）",
+    "example": "A: Excuse me, is there a post office around here? B: Yes, walk straight and it is on your left.",
+    "exampleZh": "詢問單數名詞 a post office 是否存在，疑問句需倒裝為 Is there...?(A) are there 用於複數名詞。"
+  },
+  "ON THE FOURTH FLOOR": {
+    "word": "on the fourth floor.",
+    "pos": "phr.",
+    "meaning": "請使用四樓休息室的機器",
+    "example": "【短文理解】[Office Notice] The second-floor coffee machine is broken today. The repair person will fix it tomorrow morning. In the meantime, please use the machine in the break room on the fourth floor.\nQ: Where can employees get coffee today?",
+    "exampleZh": "告示說明二樓咖啡機故障，臨時方案是「please use the machine in the break room on the fourth floor」（請使用四樓休息室的機器）"
+  },
+  "THE CLIENT MEETING ENDS AROUND 630": {
+    "word": "the client meeting ends around 6:30.",
+    "pos": "phr.",
+    "meaning": "the client meeting ends around 6:30.",
+    "example": "【短文理解】[Text Message] Hi Leo, I am still in a client meeting. It will end around 6:30 p.m. Can we meet for dinner at 7:00 at the noodle shop near our company?\nQ: Why does the sender want to meet at 7:00 instead of earlier?",
+    "exampleZh": "簡訊提到「I am still in a client meeting. It will end around 6:30 p.m.」，客戶會議到 6:30 才結束，因此改約 7:00"
+  },
+  "EVERY 30 MINUTES": {
+    "word": "every 30 minutes.",
+    "pos": "phr.",
+    "meaning": "平日班距",
+    "example": "【短文理解】[Bus Timetable Note] Bus Route 5: Bus arrives every 15 minutes on weekdays. On weekends and national holidays, the bus runs once every 30 minutes from 6:00 a.m. to 10:00 p.m.\nQ: How often does Route 5 run on Sunday afternoon?",
+    "exampleZh": "週日屬於週末（weekends），文中明確指出「On weekends... the bus runs once every 30 minutes」，因此為每 30 分鐘一班"
+  },
+  "TO OSAKA": {
+    "word": "to osaka.",
+    "pos": "phr.",
+    "meaning": "明天我們要搭新幹線去大阪",
+    "example": "【短文理解】[Postcard from Kyoto] Dear Helen, Greetings from Japan! The weather here is cool and sunny. We visited two old temples yesterday and took hundreds of photos. Tomorrow we are taking a bullet train to Osaka. Best, Mark.\nQ: Where will Mark go tomorrow?",
+    "exampleZh": "明信片中寫道「Tomorrow we are taking a bullet train to Osaka.」（明天我們要搭新幹線去大阪），故選 A"
+  },
+  "TELL THE FRONT DESK TONIGHT": {
+    "word": "tell the front desk tonight.",
+    "pos": "phr.",
+    "meaning": "今晚告知櫃檯",
+    "example": "【短文理解】[Hotel Reception Sign] Breakfast is served from 6:30 a.m. to 10:00 a.m. in the dining room on the 1st floor. If you need early check-out before 6:00 a.m., please inform the front desk tonight.\nQ: What should guests do if they want to check out at 5:30 tomorrow morning?",
+    "exampleZh": "文中說明如果需要在早上六點前退房（early check-out before 6:00 a.m.），請「inform the front desk tonight」（今晚告知櫃檯），故選 B"
+  },
+  "THE STAIRS": {
+    "word": "the stairs.",
+    "pos": "phr.",
+    "meaning": "請走樓梯",
+    "example": "【短文理解】[Company Memo] To all staff: The building elevator will be inspected this Saturday from 9:00 a.m. to 1:00 p.m. During this time, the elevator will stop working. Please use the stairs if you come to the office.\nQ: What should people use to go upstairs on Saturday morning?",
+    "exampleZh": "文中提到電梯停用期間「Please use the stairs if you come to the office.」（請走樓梯），故選 C"
+  },
+  "HER SALES NUMBERS": {
+    "word": "her sales numbers.",
+    "pos": "phr.",
+    "meaning": "業務數字",
+    "example": "【短文理解】[Text Message] Hi Tina, our boss said we have to hand in the sales report by 11:30 a.m. today. I am almost done with my part. Can you send me your sales numbers in ten minutes?\nQ: What does the writer need from Tina?",
+    "exampleZh": "文中問句明確寫出「Can you send me your sales numbers in ten minutes?」，需要的是業務數字，故選 D"
+  },
+  "IT ENDS AT 1200 NOON": {
+    "word": "it ends at 12:00 noon.",
+    "pos": "phr.",
+    "meaning": "優惠有效至中午十二點止",
+    "example": "【短文理解】[Café Board] Today's Special: Buy any large hot drink and get a chocolate donut for only $10. Offer valid until 12:00 noon. Cash and Line Pay only.\nQ: Which is true about the special offer?",
+    "exampleZh": "文中提到「Offer valid until 12:00 noon.」（優惠有效至中午十二點止），因此 A 正確"
+  },
+  "IN THE BLUE BIN": {
+    "word": "in the blue bin.",
+    "pos": "phr.",
+    "meaning": "領取乾淨毛巾的地方",
+    "example": "【短文理解】[Notice at Fitness Center] Clean towels are available at the front counter. Please put used towels into the blue bin next to the shower room after you finish exercising. Thank you for keeping our gym clean.\nQ: Where should members put their towels after exercising?",
+    "exampleZh": "文中指出「put used towels into the blue bin next to the shower room」，毛巾用完應放入藍色收集桶"
+  },
+  "SHE EATS AT THE NIGHT MARKET": {
+    "word": "she eats at the night market.",
+    "pos": "phr.",
+    "meaning": "早上的活動",
+    "example": "【短文理解】[Postcard from Kenting] Hi Jack, Kenting is amazing! We are staying at a small hotel near the beach. Every morning we go swimming, and in the evening we eat seafood at the night market. See you next Monday! Emily.\nQ: What does Emily do in Kenting in the evening?",
+    "exampleZh": "文中提到「in the evening we eat seafood at the night market」，傍晚在夜市吃海鮮，故選 D"
+  },
+  "A 50 DISCOUNT COUPON": {
+    "word": "a $50 discount coupon.",
+    "pos": "phr.",
+    "meaning": "a $50 discount coupon.",
+    "example": "【短文理解】[Supermarket Receipt Note] Thank you for shopping at WellMart! Spend over $500 today to get a $50 discount coupon for your next visit. The coupon is valid until November 30.\nQ: What can a customer get by spending more than $500 today?",
+    "exampleZh": "收據註記載明「Spend over $500 today to get a $50 discount coupon...」，可獲得 50 元折價券，選 A"
+  },
+  "HEAVY RAIN": {
+    "word": "heavy rain",
+    "pos": "phr.",
+    "meaning": "下著大雨",
+    "example": "Heavy rain.",
+    "exampleZh": "下著大雨。"
+  },
+  "A GUEST BADGE": {
+    "word": "a guest badge.",
+    "pos": "phr.",
+    "meaning": "取得訪客證證件",
+    "example": "【短文理解】[Office Sign] Welcome to the New Media Department. All visitors must register at the reception desk on the 1st floor and get a guest badge before going up to the 5th floor.\nQ: What must a visitor get on the 1st floor before going upstairs?",
+    "exampleZh": "告示最後指明訪客必須「get a guest badge before going up」（取得訪客證證件），故選 D"
+  },
+  "BREAD": {
+    "word": "bread",
+    "pos": "n.",
+    "meaning": "麵包",
+    "example": "I buy bread every morning.",
+    "exampleZh": "我每天早上買麵包。"
+  },
+  "PUT THE GREEN CARD ON THE BED": {
+    "word": "put the green card on the bed.",
+    "pos": "phr.",
+    "meaning": "想換床單需將綠色卡片放在床上",
+    "example": "【短文理解】[Notice in Hotel Room] Dear Guest: Our hotel cares about nature. If you want us to change your bedsheets and towels, please put this green card on your bed before 10:00 a.m. Otherwise, we will not change them today.\nQ: What should a guest do if they want fresh bedsheets?",
+    "exampleZh": "說明提到「please put this green card on your bed before 10:00 a.m.」，想換床單需將綠色卡片放在床上，故選 B"
+  },
+  "RAIN": {
+    "word": "rain",
+    "pos": "n.",
+    "meaning": "雨",
+    "example": "Take an umbrella in the rain.",
+    "exampleZh": "下雨時帶把傘。"
+  },
+  "KITCHEN": {
+    "word": "kitchen",
+    "pos": "n.",
+    "meaning": "廚房",
+    "example": "Mom is cooking in the kitchen.",
+    "exampleZh": "媽媽在廚房煮飯。"
+  },
+  "WINDOW": {
+    "word": "window",
+    "pos": "n.",
+    "meaning": "窗戶",
+    "example": "Can you open the window?",
+    "exampleZh": "你可以打開窗戶嗎？"
+  },
+  "CAMERA": {
+    "word": "camera",
+    "pos": "n.",
+    "meaning": "相機",
+    "example": "I took photos with my camera.",
+    "exampleZh": "我用相機拍照。"
+  },
+  "MENU": {
+    "word": "menu",
+    "pos": "n.",
+    "meaning": "菜單",
+    "example": "Could we have the menu, please?",
+    "exampleZh": "可以給我們菜單嗎？"
+  },
+  "SUNNY DAY": {
+    "word": "sunny day",
+    "pos": "n.",
+    "meaning": "晴天",
+    "example": "Sunny day.",
+    "exampleZh": "天氣晴朗。"
+  },
+  "HAVE A GOOD WEEKEND": {
+    "word": "have a good weekend",
+    "pos": "sent.",
+    "meaning": "週末愉快",
+    "example": "Have a good weekend.",
+    "exampleZh": "週末愉快。"
+  },
+  "TAKE THE BUS": {
+    "word": "take the bus",
+    "pos": "phr.",
+    "meaning": "搭公車",
+    "example": "Take the bus.",
+    "exampleZh": "搭乘公車。"
+  },
+  "METRO STATION": {
+    "word": "metro station",
+    "pos": "n.",
+    "meaning": "捷運站；地鐵站",
+    "example": "Metro station.",
+    "exampleZh": "捷運站。"
+  },
+  "LIVING ROOM": {
+    "word": "living room",
+    "pos": "n.",
+    "meaning": "客廳",
+    "example": "Living room.",
+    "exampleZh": "客廳。"
+  },
+  "WASH YOUR HANDS": {
+    "word": "wash your hands",
+    "pos": "phr.",
+    "meaning": "洗手",
+    "example": "Wash your hands.",
+    "exampleZh": "洗手。"
+  },
+  "GO JOGGING": {
+    "word": "go jogging",
+    "pos": "phr.",
+    "meaning": "去慢跑",
+    "example": "Go jogging.",
+    "exampleZh": "去慢跑。"
+  },
+  "LISTEN TO MUSIC": {
+    "word": "listen to music",
+    "pos": "phr.",
+    "meaning": "聽音樂",
+    "example": "Listen to music.",
+    "exampleZh": "聽音樂。"
+  },
+  "TRY IT ON": {
+    "word": "try it on",
+    "pos": "phr.",
+    "meaning": "試穿",
+    "example": "Try it on.",
+    "exampleZh": "試穿。"
+  },
+  "PAY IN CASH": {
+    "word": "pay in cash",
+    "pos": "phr.",
+    "meaning": "用現金付款",
+    "example": "Pay in cash.",
+    "exampleZh": "現金付款。"
+  },
+  "HOT GREEN TEA": {
+    "word": "hot green tea",
+    "pos": "n.",
+    "meaning": "熱綠茶",
+    "example": "Hot green tea.",
+    "exampleZh": "熱綠茶。"
+  },
+  "IT IS HOT TODAY": {
+    "word": "it is hot today",
+    "pos": "sent.",
+    "meaning": "今天天氣很熱",
+    "example": "It is hot today.",
+    "exampleZh": "今天天氣很熱。"
+  },
+  "WHAT TIME IS IT": {
+    "word": "what time is it",
+    "pos": "sent.",
+    "meaning": "現在幾點了？",
+    "example": "What time is it.",
+    "exampleZh": "現在幾點了？"
+  },
+  "IT IS TWO OCLOCK": {
+    "word": "it is two o'clock",
+    "pos": "sent.",
+    "meaning": "下午兩點整",
+    "example": "It is two o'clock.",
+    "exampleZh": "現在是下午兩點整。"
+  },
+  "I RIDE A BIKE EVERY DAY": {
+    "word": "i ride a bike every day",
+    "pos": "sent.",
+    "meaning": "我每天騎腳踏車",
+    "example": "I ride a bike every day.",
+    "exampleZh": "我每天騎腳踏車。"
+  },
+  "PLEASE OPEN THE WINDOW": {
+    "word": "please open the window",
+    "pos": "sent.",
+    "meaning": "打開窗戶好嗎？",
+    "example": "Please open the window.",
+    "exampleZh": "打開窗戶好嗎？"
+  },
+  "MY HEAD HURTS": {
+    "word": "my head hurts",
+    "pos": "phr.",
+    "meaning": "我頭很痛",
+    "example": "My head hurts.",
+    "exampleZh": "我頭很痛。"
+  },
+  "HE IS A GOOD TEACHER": {
+    "word": "he is a good teacher",
+    "pos": "sent.",
+    "meaning": "一位好老師",
+    "example": "He is a good teacher.",
+    "exampleZh": "他是一位好老師。"
+  },
+  "LET US GO SWIMMING": {
+    "word": "let us go swimming",
+    "pos": "phr.",
+    "meaning": "我們去游泳吧",
+    "example": "Let us go swimming.",
+    "exampleZh": "我們去游泳吧。"
+  },
+  "DO YOU HAVE A LARGE SIZE": {
+    "word": "do you have a large size",
+    "pos": "sent.",
+    "meaning": "你有一件大尺碼嗎？",
+    "example": "Do you have a large size.",
+    "exampleZh": "你有一件大尺碼嗎？"
+  },
+  "THE MENU PLEASE": {
+    "word": "the menu please",
+    "pos": "phr.",
+    "meaning": "請給我菜單",
+    "example": "The menu please.",
+    "exampleZh": "請給我菜單。"
+  },
+  "I AM READY TO ORDER": {
+    "word": "i am ready to order",
+    "pos": "sent.",
+    "meaning": "我準備好點餐了",
+    "example": "I am ready to order.",
+    "exampleZh": "我準備好點餐了。"
+  },
+  "PASSWORD": {
+    "word": "password",
+    "pos": "n.",
+    "meaning": "密碼",
+    "example": "Please change your password.",
+    "exampleZh": "請更改你的密碼。"
+  },
+  "MESSAGE": {
+    "word": "message",
+    "pos": "n.",
+    "meaning": "訊息",
+    "example": "Can I take a message?",
+    "exampleZh": "需要幫您留言嗎？"
+  },
+  "HOSPITAL": {
+    "word": "hospital",
+    "pos": "n.",
+    "meaning": "醫院",
+    "example": "She works at the city hospital.",
+    "exampleZh": "她在市立醫院工作。"
+  },
+  "MEDICINE": {
+    "word": "medicine",
+    "pos": "n.",
+    "meaning": "藥",
+    "example": "Take this medicine after meals.",
+    "exampleZh": "飯後服用這個藥。"
+  },
+  "QUIET": {
+    "word": "quiet",
+    "pos": "adj.",
+    "meaning": "安靜的",
+    "example": "The library is very quiet.",
+    "exampleZh": "圖書館很安靜。"
+  },
+  "TIRED": {
+    "word": "tired",
+    "pos": "adj.",
+    "meaning": "累的",
+    "example": "She is tired after work.",
+    "exampleZh": "她下班後很累。"
+  },
+  "HUNGRY": {
+    "word": "hungry",
+    "pos": "adj.",
+    "meaning": "餓的",
+    "example": "I am hungry. Let's eat.",
+    "exampleZh": "我餓了，我們去吃吧。"
+  },
+  "DELICIOUS": {
+    "word": "delicious",
+    "pos": "adj.",
+    "meaning": "美味的",
+    "example": "The cake is delicious.",
+    "exampleZh": "這個蛋糕很好吃。"
+  },
+  "OPEN YOUR BOOK": {
+    "word": "open your book",
+    "pos": "phr.",
+    "meaning": "打開書本",
+    "example": "Open your book.",
+    "exampleZh": "打開書本。"
+  },
+  "CALL ME BACK": {
+    "word": "call me back",
+    "pos": "phr.",
+    "meaning": "回電話",
+    "example": "Call me back.",
+    "exampleZh": "回電話。"
+  },
+  "SEND A TEXT": {
+    "word": "send a text",
+    "pos": "phr.",
+    "meaning": "傳簡訊",
+    "example": "Send a text.",
+    "exampleZh": "傳簡訊。"
+  },
+  "CHECK IN": {
+    "word": "check in",
+    "pos": "phr.",
+    "meaning": "入住登記",
+    "example": "Check in.",
+    "exampleZh": "入住登記。"
+  },
+  "CHECK OUT": {
+    "word": "check out",
+    "pos": "phr.",
+    "meaning": "退房手續",
+    "example": "Check out.",
+    "exampleZh": "退房手續。"
+  },
+  "BOARDING GATE": {
+    "word": "boarding gate",
+    "pos": "phr.",
+    "meaning": "登機門",
+    "example": "Boarding gate.",
+    "exampleZh": "登機門。"
+  },
+  "GOOD LUCK": {
+    "word": "good luck",
+    "pos": "phr.",
+    "meaning": "祝你好運",
+    "example": "Good luck.",
+    "exampleZh": "祝你好運。"
+  },
+  "HAPPY BIRTHDAY": {
+    "word": "happy birthday",
+    "pos": "phr.",
+    "meaning": "生日快樂",
+    "example": "Happy birthday.",
+    "exampleZh": "生日快樂。"
+  },
+  "HAPPY NEW YEAR": {
+    "word": "happy new year",
+    "pos": "phr.",
+    "meaning": "新年快樂",
+    "example": "Happy new year.",
+    "exampleZh": "新年快樂。"
+  },
+  "HAVE FUN": {
+    "word": "have fun",
+    "pos": "sent.",
+    "meaning": "祝玩得開心",
+    "example": "Have fun.",
+    "exampleZh": "祝玩得開心。"
+  },
+  "KEEP QUIET": {
+    "word": "keep quiet",
+    "pos": "phr.",
+    "meaning": "保持安靜",
+    "example": "Keep quiet.",
+    "exampleZh": "保持安靜。"
+  },
+  "I HAVE A QUESTION": {
+    "word": "i have a question",
+    "pos": "sent.",
+    "meaning": "我有一個問題",
+    "example": "I have a question.",
+    "exampleZh": "我有一個問題。"
+  },
+  "WHAT IS THE WIFI PASSWORD": {
+    "word": "what is the wifi password",
+    "pos": "sent.",
+    "meaning": "無線網路密碼是什麼？",
+    "example": "What is the wifi password.",
+    "exampleZh": "無線網路密碼是什麼？"
+  },
+  "CAN YOU SPEAK LOUDER": {
+    "word": "can you speak louder",
+    "pos": "sent.",
+    "meaning": "你能大聲點說嗎？",
+    "example": "Can you speak louder.",
+    "exampleZh": "你能大聲點說嗎？"
+  },
+  "I WANT TO CHECK IN": {
+    "word": "i want to check in",
+    "pos": "sent.",
+    "meaning": "我想要辦理入住手續",
+    "example": "I want to check in.",
+    "exampleZh": "我想要辦理入住手續。"
+  },
+  "THIS IS MY ROOM KEY": {
+    "word": "this is my room key",
+    "pos": "sent.",
+    "meaning": "我的房卡",
+    "example": "This is my room key.",
+    "exampleZh": "這是我的房卡。"
+  },
+  "IS THERE A PHARMACY NEARBY": {
+    "word": "is there a pharmacy nearby",
+    "pos": "phr.",
+    "meaning": "附近有藥局嗎？",
+    "example": "Is there a pharmacy nearby.",
+    "exampleZh": "附近有藥局嗎？"
+  },
+  "TAKE THIS AFTER MEALS": {
+    "word": "take this after meals",
+    "pos": "phr.",
+    "meaning": "飯後吃這顆藥",
+    "example": "Take this after meals.",
+    "exampleZh": "飯後吃這顆藥。"
+  },
+  "MERRY CHRISTMAS TO YOU": {
+    "word": "merry christmas to you",
+    "pos": "phr.",
+    "meaning": "聖誕快樂",
+    "example": "Merry christmas to you.",
+    "exampleZh": "聖誕快樂。"
+  },
+  "I FEEL TIRED NOW": {
+    "word": "i feel tired now",
+    "pos": "sent.",
+    "meaning": "我現在覺得很累",
+    "example": "I feel tired now.",
+    "exampleZh": "我現在覺得很累。"
+  },
+  "THE DINNER IS VERY DELICIOUS": {
+    "word": "the dinner is very delicious",
+    "pos": "phr.",
+    "meaning": "這頓晚餐非常好吃",
+    "example": "The dinner is very delicious.",
+    "exampleZh": "這頓晚餐非常好吃。"
+  },
+  "DO NOT WORRY ABOUT IT": {
+    "word": "do not worry about it",
+    "pos": "sent.",
+    "meaning": "不要擔心這件事",
+    "example": "Do not worry about it.",
+    "exampleZh": "不要擔心這件事。"
+  },
+  "VISITS": {
+    "word": "visits",
+    "pos": "n.",
+    "meaning": "第三人稱單數",
+    "example": "My uncle lives in Tainan, and he visits our family twice a month.",
+    "exampleZh": "主詞 he 為第三人稱單數，現在簡單式動詞字尾須加 -s 寫作 visits。"
+  },
+  "CLOUDY": {
+    "word": "cloudy",
+    "pos": "n.",
+    "meaning": "多雲的",
+    "example": "Cloudy.",
+    "exampleZh": "多雲的。"
+  },
+  "RECEIPT": {
+    "word": "receipt",
+    "pos": "n.",
+    "meaning": "收據/發票",
+    "example": "Excuse me, can I have the paper receipt to check the price of each item?",
+    "exampleZh": "購物結帳後核對商品金額的明細紙條是「收據/發票」receipt。"
+  },
+  "CAN": {
+    "word": "can",
+    "pos": "v.aux.",
+    "meaning": "能夠；可以",
+    "example": "Lisa is very musical. She can play the piano and guitar.",
+    "exampleZh": "助動詞 can 表能力，後接動詞原形且字尾不可變化。"
+  },
+  "WHO": {
+    "word": "who",
+    "pos": "pron.",
+    "meaning": "誰",
+    "example": "A: who is sitting next to Tom today? B: It is our new classmate, Jason.",
+    "exampleZh": "根據回答「新同學 Jason」，可知在詢問坐在旁邊的「人是誰」，疑問詞選 Who。"
+  },
+  "DONT": {
+    "word": "don't",
+    "pos": "n.",
+    "meaning": "複數代名詞",
+    "example": "My brothers are very athletic, but they don't like watching football on TV.",
+    "exampleZh": "主詞 they 是複數代名詞，現在簡單式一般動詞 like 的否定句須搭配助動詞 don't"
+  },
+  "ARE THERE": {
+    "word": "are there",
+    "pos": "phr.",
+    "meaning": "有...嗎？（複數疑問）",
+    "example": "A: Excuse me, are there any computer labs in this building? B: Yes, there are two on the third floor.",
+    "exampleZh": "修飾複數名詞 computer labs 的存在性疑問句，應將 be 動詞倒裝為 Are there...?(A) is there 用於單數名詞。"
+  },
+  "RAINY": {
+    "word": "rainy",
+    "pos": "n.",
+    "meaning": "rainy",
+    "example": "It is rainy outside right now. Let's stay in the living room and watch movies.",
+    "exampleZh": "be 動詞 is 後面需要形容詞作主詞補語，表天氣狀態選 rainy。"
+  },
+  "HOBBY": {
+    "word": "hobby",
+    "pos": "n.",
+    "meaning": "嗜好",
+    "example": "My favorite hobby is reading.",
+    "exampleZh": "我最喜歡的嗜好是閱讀。",
+    "senses": [
+      {
+        "pos": "n.",
+        "meaning": "嗜好",
+        "examples": [
+          {
+            "en": "My favorite hobby is reading.",
+            "zh": "我最喜歡的嗜好是閱讀。"
+          },
+          {
+            "en": "He has a new hobby now.",
+            "zh": "他現在有一個新嗜好。"
+          }
+        ]
+      }
+    ]
+  },
+  "IN ROOM 204": {
+    "word": "in room 204.",
+    "pos": "phr.",
+    "meaning": "in Room 204",
+    "example": "【短文理解】[School Notice] English Speaking Club meets every Tuesday at 4:30 p.m. in Room 204. Please bring your student ID and a notebook. Everyone is welcome to join!\nQ: Where does the English Speaking Club meet?",
+    "exampleZh": "公告清楚註記「in Room 204」，故聚會地點選 A"
+  },
+  "AT 430 PM": {
+    "word": "at 4:30 p.m.",
+    "pos": "phr.",
+    "meaning": "at 4:30 p.m.",
+    "example": "【短文理解】[Office Text Message] Hi Claire, Mr. Evans called this morning. He rescheduled the client meeting from 2:00 p.m. to 4:30 p.m. Please prepare the presentation slides before 4:00 p.m.\nQ: What time does the client meeting start now?",
+    "exampleZh": "簡訊提到會議時間改動「rescheduled the client meeting from 2:00 p.m. to 4:30 p.m.」，現在開始時間為 4:30 p.m.，故選 B"
+  },
+  "IN THE AFTERNOON": {
+    "word": "in the afternoon.",
+    "pos": "phr.",
+    "meaning": "午後有雷雨",
+    "example": "【短文理解】[Weather Board] Taipei Weather Today: Morning: Sunny, 26°C. Afternoon: Sudden heavy rain and thunderstorms, 22°C. Evening: Windy and cool, 19°C.\nQ: When are thunderstorms expected today?",
+    "exampleZh": "資訊板顯示「Afternoon: Sudden heavy rain and thunderstorms」，午後有雷雨，故選 D"
+  },
+  "COFFEE CUPS": {
+    "word": "coffee cups.",
+    "pos": "phr.",
+    "meaning": "學習製作自己的咖啡杯",
+    "example": "【短文理解】[Community Center Poster] Weekend Pottery Class: Learn to make your own coffee cups! Every Saturday from 10:00 to 12:00. All clay and tools are included in the fee.\nQ: What do students make in this Saturday class?",
+    "exampleZh": "海報載明「Learn to make your own coffee cups!」（學習製作自己的咖啡杯），故選 A"
+  },
+  "SHE PICKED STRAWBERRIES": {
+    "word": "she picked strawberries.",
+    "pos": "phr.",
+    "meaning": "採了一大籃新鮮水果",
+    "example": "【短文理解】[Postcard from Hsinchu] Dear Tina, we visited a strawberry farm in Guanxi this morning! We picked a big basket of fresh fruit and tasted sweet jam. Tomorrow we are visiting the old street. Love, Emily.\nQ: What did Emily do on the farm this morning?",
+    "exampleZh": "明信片開頭說明拜訪草莓農場，並提到「picked a big basket of fresh fruit」（採了一大籃新鮮水果），故選 B"
+  },
+  "THREE LOAVES": {
+    "word": "three loaves.",
+    "pos": "phr.",
+    "meaning": "每位顧客限購三條",
+    "example": "【短文理解】[Bakery Sign] Today's Bake: Warm garlic bread comes out of the oven at 11:00 a.m. and 4:30 p.m. Limit of three loaves per customer. Cash and EasyCard accepted.\nQ: How many loaves of garlic bread can one customer buy at most?",
+    "exampleZh": "告示指明「Limit of three loaves per customer」（每位顧客限購三條），故選 C"
+  },
+  "WASH THEM IMMEDIATELY": {
+    "word": "wash them immediately.",
+    "pos": "phr.",
+    "meaning": "必須立刻清洗",
+    "example": "【短文理解】[Office Kitchen Notice] Please wash all spoons, mugs, and plates immediately after eating. Do not leave dirty items in the sink overnight. The cleaning team clears the sink every day at 6:00 p.m.\nQ: What should employees do with their dirty mugs after using them?",
+    "exampleZh": "告示第 1 句指示「Please wash all spoons, mugs, and plates immediately after eating」，必須立刻清洗，故選 D"
+  },
+  "A TUNA SANDWICH": {
+    "word": "a tuna sandwich.",
+    "pos": "phr.",
+    "meaning": "鮪魚三明治",
+    "example": "【短文理解】[Text Message Chain] Mike: 'Hi Sarah, are you coming to lunch with us?' Sarah: 'I have to finish checking this invoice for the boss. Can you bring a tuna sandwich back for me?' Mike: 'Sure, no problem.'\nQ: What does Sarah want Mike to bring for her?",
+    "exampleZh": "Sarah 詢問「Can you bring a tuna sandwich back for me?」，需要的是鮪魚三明治，故選 A"
+  },
+  "A SWIMMING CAP": {
+    "word": "a swimming cap.",
+    "pos": "phr.",
+    "meaning": "所有泳客必須戴泳帽",
+    "example": "【短文理解】[School Swimming Pool Rules] Swimming Pool Hours: Monday-Friday 06:00-21:00. Saturday 08:00-18:00. All swimmers must wear a swimming cap and shower before entering the pool.\nQ: What must everyone wear in the pool?",
+    "exampleZh": "泳池規定「All swimmers must wear a swimming cap」（所有泳客必須戴泳帽），故選 B"
+  },
+  "1 LITER": {
+    "word": "1 liter.",
+    "pos": "phr.",
+    "meaning": "1 liter.",
+    "example": "【短文理解】[Holiday Hiking Note] Mountain Trail Info: Trail length is 3.5 km. Most hikers finish in two hours. Please stay on the marked path and carry at least 1 liter of drinking water.\nQ: How much drinking water should a hiker carry at least?",
+    "exampleZh": "注意須知末句提醒「carry at least 1 liter of drinking water」（至少攜帶 1 公升飲用水），故選 C"
+  },
+  "PUMPKIN SOUP AND GARLIC BREAD": {
+    "word": "pumpkin soup and garlic bread.",
+    "pos": "phr.",
+    "meaning": "贈送南瓜濃湯與大蒜麵包",
+    "example": "【短文理解】[Restaurant Daily Special] Thursday Dinner Special: Order any main steak and get a bowl of pumpkin soup and garlic bread for free! Service charge of 10% is included.\nQ: What food is free with a main steak on Thursday?",
+    "exampleZh": "優惠說明「get a bowl of pumpkin soup and garlic bread for free」，贈送南瓜濃湯與大蒜麵包，選 D"
+  },
+  "IN LAB 3": {
+    "word": "in lab 3.",
+    "pos": "phr.",
+    "meaning": "in lab 3.",
+    "example": "【短文理解】[Notice on School Door] Science Lab 1 is closed for floor painting today and tomorrow. All chemistry classes are moved to Lab 3 across the hallway.\nQ: Where are the chemistry classes held today?",
+    "exampleZh": "告示說明 1 號實驗室粉刷關閉，化學課「are moved to Lab 3 across the hallway」（移至走廊對面的 3 號實驗室），故選 A"
+  },
+  "TAKE THE EMERGENCY STAIRS": {
+    "word": "take the emergency stairs.",
+    "pos": "phr.",
+    "meaning": "take the emergency stairs.",
+    "example": "【短文理解】[Apartment Notice] Elevators A and B will stop from 2:00 p.m. to 4:00 p.m. this Wednesday for scheduled safety checks. Residents can take the emergency stairs near the lobby.\nQ: How can residents go upstairs on Wednesday at 3:00 p.m.?",
+    "exampleZh": "電梯檢修期間（2:00-4:00 p.m.），住戶可走緊急樓梯「take the emergency stairs near the lobby」，故選 B"
+  },
+  "HAVE": {
+    "word": "have",
+    "pos": "v.",
+    "meaning": "有；擁有",
+    "example": "We have lunch at noon.",
+    "exampleZh": "主詞 we 搭配 have。"
+  },
+  "ARE": {
+    "word": "are",
+    "pos": "v.",
+    "meaning": "是（複數或第二人稱）",
+    "example": "They are from Japan.",
+    "exampleZh": "主詞 they 搭配 are。"
+  },
+  "FOLDER": {
+    "word": "folder",
+    "pos": "n.",
+    "meaning": "資料夾",
+    "example": "Save the file in this folder.",
+    "exampleZh": "把檔案存在這個資料夾。"
+  },
+  "WHOSE": {
+    "word": "whose",
+    "pos": "pron.",
+    "meaning": "誰的",
+    "example": "A: whose bag is this on the classroom chair? B: It belongs to our teacher, Mr. Chen.",
+    "exampleZh": "詢問物品「是誰的」所有權，疑問詞使用 Whose。"
+  },
+  "ASK": {
+    "word": "ask",
+    "pos": "n.",
+    "meaning": "Let's",
+    "example": "A: Do you know the answer to Question 5? B: No, I don't. Let's ask the teacher for help.",
+    "exampleZh": "祈使句提議句型「Let's」後面必須接動詞原形，故選 ask。"
+  },
+  "TAKES": {
+    "word": "takes",
+    "pos": "n.",
+    "meaning": "單數第三人稱",
+    "example": "Mr. Lin does not work on weekends. He always takes his family to the park on Saturdays.",
+    "exampleZh": "主詞 He 是單數第三人稱，頻率副詞 always 後的現在簡單式動詞字尾加 -s 寫作 takes。"
+  },
+  "AROUND": {
+    "word": "around",
+    "pos": "n.",
+    "meaning": "轉角處/轉角過去",
+    "example": "A: May I try on this coat? B: Yes, of course. The fitting room is around the corner over there.",
+    "exampleZh": "表示位置在「轉角處/轉角過去」，英語常用 around the corner。"
+  },
+  "READS": {
+    "word": "reads",
+    "pos": "n.",
+    "meaning": "reads",
+    "example": "A: What do you usually do after dinner? B: I usually listen to music, and my sister reads her favorite book.",
+    "exampleZh": "主詞 my sister 為單數第三人稱，敘述日常習慣用現在簡單式，動詞加 -s 寫作 reads。"
+  },
+  "THOSE": {
+    "word": "those",
+    "pos": "n.",
+    "meaning": "those",
+    "example": "These black shoes are too small for me. Can I look at those pairs over there?",
+    "exampleZh": "修飾遠處 (over there) 且為複數的名詞 pairs，指示代名詞應使用 those。"
+  },
+  "BEFORE 330 PM": {
+    "word": "before 3:30 p.m.",
+    "pos": "phr.",
+    "meaning": "圖書館閉館時間",
+    "example": "【短文理解】[School Notice] Dear Students, the school library will close early at 4:00 p.m. this Friday for book cleaning. Please return all borrowed books to the front desk before 3:30 p.m.\nQ: What time must students return their books this Friday?",
+    "exampleZh": "告示明確指出「Please return all borrowed books to the front desk before 3:30 p.m.」，因此還書截止時間是 3:30 p.m. 前"
+  },
+  "SUNNY AND HOT": {
+    "word": "sunny and hot.",
+    "pos": "phr.",
+    "meaning": "sunny and hot.",
+    "example": "【短文理解】[Weather Forecast] Weather in Kaohsiung tomorrow: Sunny and hot with temperatures around 32°C. There is no rain expected all day. Please drink plenty of water when outdoors.\nQ: What is the weather like in Kaohsiung tomorrow?",
+    "exampleZh": "預報第一句寫明「Sunny and hot with temperatures around 32°C」，故選 B"
+  },
+  "THE COMPANY MEETING FINISHES LATE": {
+    "word": "the company meeting finishes late.",
+    "pos": "phr.",
+    "meaning": "公司會議今晚會很晚結束",
+    "example": "【短文理解】[Text Message] Hi Mom, the company meeting will finish late tonight. I cannot join the family dinner at 6:30. Please don't wait for me and eat first.\nQ: Why will the sender miss the family dinner?",
+    "exampleZh": "簡訊開頭解釋「the company meeting will finish late tonight」（公司會議今晚會很晚結束），故選 C"
+  },
+  "BRUSHES AND PAPER": {
+    "word": "brushes and paper.",
+    "pos": "phr.",
+    "meaning": "畫筆與畫紙全部免費提供",
+    "example": "【短文理解】[Holiday Activity Poster] Weekend Art Workshop: Learn to paint flowers this Saturday from 2:00 p.m. to 4:00 p.m. Fee: $300 per person. All brushes and paper are provided for free.\nQ: What is provided for free at the workshop?",
+    "exampleZh": "海報末句載明「All brushes and paper are provided for free.」（畫筆與畫紙全部免費提供），故選 A"
+  },
+  "TO THE HOT SPRINGS": {
+    "word": "to the hot springs.",
+    "pos": "phr.",
+    "meaning": "今天去了溫泉",
+    "example": "【短文理解】[Postcard from Yilan] Dear Grandma, we are having a wonderful holiday in Yilan! Yesterday we visited a tea farm, and today we went to the hot springs. The air here is very fresh. Love, Penny.\nQ: Where did Penny go today?",
+    "exampleZh": "明信片提到「today we went to the hot springs」（今天去了溫泉），故選 B"
+  },
+  "LOCK THE FRONT DOOR": {
+    "word": "lock the front door.",
+    "pos": "phr.",
+    "meaning": "最後離開者必須鎖大門",
+    "example": "【短文理解】[Office Notice] Please remember to lock the front door if you are the last person to leave the office in the evening. Also, make sure all lights are switched off.\nQ: What should the last worker do before leaving?",
+    "exampleZh": "告示指出「remember to lock the front door if you are the last person to leave」，最後離開者必須鎖大門，故選 C"
+  },
+  "A CARTON OF FRESH MILK": {
+    "word": "a carton of fresh milk.",
+    "pos": "phr.",
+    "meaning": "鮮奶半價",
+    "example": "【短文理解】[Bakery Discount Note] Buy two loaves of toast after 7:00 p.m. and get a carton of fresh milk for half price! This special discount is available every evening while supplies last.\nQ: What item is half price after 7:00 p.m. when buying two loaves of toast?",
+    "exampleZh": "告示說明「get a carton of fresh milk for half price」（鮮奶半價），故選 D"
+  },
+  "FOUR PLAYERS": {
+    "word": "four players.",
+    "pos": "phr.",
+    "meaning": "現在有四個人，還差一位",
+    "example": "【短文理解】[Text Message] Hi David, do you want to play badminton at the sports center this Saturday morning? We have four people now and we need one more player. Let me know today!\nQ: How many players do they have right now?",
+    "exampleZh": "簡訊提到「We have four people now and we need one more player.」（現在有四個人，還差一位），因此目前有 4 人，選 A"
+  },
+  "PUT THEM INTO THEIR BAGS": {
+    "word": "put them into their bags.",
+    "pos": "phr.",
+    "meaning": "上課時需將手機放進包包",
+    "example": "【短文理解】[School Classroom Rules] 1. Arrive in class before 8:10 a.m. 2. Put mobile phones into your bags during lessons. 3. Raise your hand before you ask a question.\nQ: What should students do with their mobile phones during lessons?",
+    "exampleZh": "規則第 2 條指明「Put mobile phones into your bags during lessons」，上課時需將手機放進包包，故選 B"
+  },
+  "STAY INSIDE THEIR HOMES": {
+    "word": "stay inside their homes.",
+    "pos": "phr.",
+    "meaning": "請安全待在家中",
+    "example": "【短文理解】[Weather Warning Note] Weather Warning: A strong typhoon is coming tomorrow. All schools and office buildings in the city will be closed. Please stay inside your home safely.\nQ: What should people in the city do tomorrow?",
+    "exampleZh": "警報文末提醒「Please stay inside your home safely.」（請安全待在家中），故選 C"
+  },
+  "REFUND OR EXCHANGE THEM": {
+    "word": "refund or exchange them.",
+    "pos": "phr.",
+    "meaning": "特價品不退不換",
+    "example": "【短文理解】[Clothing Store Sign] Season Clearance Sale: All summer shirts and shorts are 30% off! Sale ends this Sunday. No refunds or exchanges for sale items.\nQ: What can a customer NOT do with the items bought on sale?",
+    "exampleZh": "告示最後一句特別說明「No refunds or exchanges for sale items」（特價品不退不換），因此不能退換貨，選 D"
+  },
+  "FRESH MILK": {
+    "word": "fresh milk.",
+    "pos": "phr.",
+    "meaning": "鮮奶",
+    "example": "【短文理解】[Postcard from Taitung] Dear Andy, Taitung is very quiet and beautiful. We stayed at a small farm yesterday and drank fresh milk. Tomorrow morning we plan to ride bicycles along the forest path. Best regards, Grace.\nQ: What did Grace drink at the farm yesterday?",
+    "exampleZh": "明信片寫道「We stayed at a small farm yesterday and drank fresh milk.」，因此昨天喝的是鮮奶，選 A"
+  },
+  "ON WEDNESDAY": {
+    "word": "on wednesday.",
+    "pos": "phr.",
+    "meaning": "會員日為每週三",
+    "example": "【短文理解】[Supermarket Member Notice] VIP Member Day is every Wednesday. Members get 10 bonus points for every $100 spent. Points can be used as cash on your next visit.\nQ: On which day can members earn bonus points?",
+    "exampleZh": "通知首句指明「VIP Member Day is every Wednesday.」（會員日為每週三），故選 B"
+  },
+  "WALK": {
+    "word": "walk",
+    "pos": "v.",
+    "meaning": "走路",
+    "example": "I walk to school.",
+    "exampleZh": "我走路上學。"
+  },
+  "MONDAY": {
+    "word": "monday",
+    "pos": "n.",
+    "meaning": "星期一",
+    "example": "The office opens on Monday.",
+    "exampleZh": "辦公室星期一開門。"
+  },
+  "AROUND THE CORNER": {
+    "word": "around the corner",
+    "pos": "phr.",
+    "meaning": "轉過附近街角的位置",
+    "example": "The entrance is around the corner.",
+    "exampleZh": "入口轉過街角就到。",
+    "senses": [
+      {
+        "pos": "phr.",
+        "meaning": "轉過附近街角的位置",
+        "examples": [
+          {
+            "en": "The entrance is around the corner.",
+            "zh": "入口轉過街角就到。"
+          }
+        ]
+      }
+    ]
+  },
+  "CROSS THE STREET": {
+    "word": "cross the street",
+    "pos": "phr.",
+    "meaning": "過馬路",
+    "example": "Cross the street.",
+    "exampleZh": "過馬路。"
+  },
+  "ORDER FOOD": {
+    "word": "order food",
+    "pos": "phr.",
+    "meaning": "點餐",
+    "example": "Order food.",
+    "exampleZh": "點餐。"
+  },
+  "ICE WATER": {
+    "word": "ice water",
+    "pos": "phr.",
+    "meaning": "冰水",
+    "example": "Ice water.",
+    "exampleZh": "冰水。"
+  },
+  "HOT SOUP": {
+    "word": "hot soup",
+    "pos": "phr.",
+    "meaning": "熱湯",
+    "example": "Hot soup.",
+    "exampleZh": "熱湯。"
+  },
+  "JUST LOOKING": {
+    "word": "just looking",
+    "pos": "phr.",
+    "meaning": "看看",
+    "example": "Just looking.",
+    "exampleZh": "只是看看。"
+  },
+  "BUY ONE GET ONE": {
+    "word": "buy one get one",
+    "pos": "phr.",
+    "meaning": "買一送一",
+    "example": "Buy one get one.",
+    "exampleZh": "買一送一。"
+  },
+  "TOO SMALL": {
+    "word": "too small",
+    "pos": "phr.",
+    "meaning": "太小了",
+    "example": "Too small.",
+    "exampleZh": "太小了。"
+  },
+  "TOO BIG": {
+    "word": "too big",
+    "pos": "phr.",
+    "meaning": "太大了",
+    "example": "Too big.",
+    "exampleZh": "太大了。"
+  },
+  "GLAD TO MEET YOU": {
+    "word": "glad to meet you",
+    "pos": "phr.",
+    "meaning": "很高興見到你",
+    "example": "Glad to meet you.",
+    "exampleZh": "很高興見到你。"
+  },
+  "MY PLEASURE": {
+    "word": "my pleasure",
+    "pos": "phr.",
+    "meaning": "我的榮幸",
+    "example": "My pleasure.",
+    "exampleZh": "我的榮幸。"
+  },
+  "NEVER MIND": {
+    "word": "never mind",
+    "pos": "phr.",
+    "meaning": "沒關係",
+    "example": "Never mind.",
+    "exampleZh": "沒關係。"
+  },
+  "SEE YOU MONDAY": {
+    "word": "see you monday",
+    "pos": "phr.",
+    "meaning": "星期一見",
+    "example": "See you monday.",
+    "exampleZh": "星期一見。"
+  },
+  "THIS FRIDAY": {
+    "word": "this friday",
+    "pos": "sent.",
+    "meaning": "這星期五",
+    "example": "This friday.",
+    "exampleZh": "這星期五。"
+  },
+  "COME IN PLEASE": {
+    "word": "come in please",
+    "pos": "phr.",
+    "meaning": "請進來",
+    "example": "Come in please.",
+    "exampleZh": "請進來。"
+  },
+  "SIT DOWN PLEASE": {
+    "word": "sit down please",
+    "pos": "phr.",
+    "meaning": "請坐下",
+    "example": "Sit down please.",
+    "exampleZh": "請坐下。"
+  },
+  "MY NAME IS AMY": {
+    "word": "my name is amy",
+    "pos": "phr.",
+    "meaning": "我叫艾美",
+    "example": "My name is amy.",
+    "exampleZh": "我叫艾美。"
+  },
+  "I LIVE IN TAICHUNG": {
+    "word": "i live in taichung",
+    "pos": "sent.",
+    "meaning": "我住在台中",
+    "example": "I live in taichung.",
+    "exampleZh": "我住在台中。"
+  },
+  "I WORK IN AN OFFICE": {
+    "word": "i work in an office",
+    "pos": "sent.",
+    "meaning": "個上班族",
+    "example": "I work in an office.",
+    "exampleZh": "我是個上班族。"
+  },
+  "I AM FORTY YEARS OLD": {
+    "word": "i am forty years old",
+    "pos": "sent.",
+    "meaning": "我今年四十歲",
+    "example": "I am forty years old.",
+    "exampleZh": "我今年四十歲。"
+  },
+  "CAN I ORDER NOW": {
+    "word": "can i order now",
+    "pos": "sent.",
+    "meaning": "我可以點餐了嗎？",
+    "example": "Can i order now.",
+    "exampleZh": "我可以點餐了嗎？"
+  },
+  "AN ORANGE JUICE PLEASE": {
+    "word": "an orange juice please",
+    "pos": "phr.",
+    "meaning": "請給我一杯柳橙汁",
+    "example": "An orange juice please.",
+    "exampleZh": "請給我一杯柳橙汁。"
+  },
+  "A BOWL OF SOUP PLEASE": {
+    "word": "a bowl of soup please",
+    "pos": "phr.",
+    "meaning": "請給我一碗熱湯",
+    "example": "A bowl of soup please.",
+    "exampleZh": "請給我一碗熱湯。"
+  },
+  "IS THIS DISH SPICY": {
+    "word": "is this dish spicy",
+    "pos": "phr.",
+    "meaning": "這道菜會辣嗎？",
+    "example": "Is this dish spicy.",
+    "exampleZh": "這道菜會辣嗎？"
+  },
+  "WHERE IS THE SUBWAY STATION": {
+    "word": "where is the subway station",
+    "pos": "sent.",
+    "meaning": "地鐵站在哪裡？",
+    "example": "Where is the subway station.",
+    "exampleZh": "地鐵站在哪裡？"
+  },
+  "IT IS ON YOUR RIGHT": {
+    "word": "it is on your right",
+    "pos": "sent.",
+    "meaning": "它在你的右邊",
+    "example": "It is on your right.",
+    "exampleZh": "它在你的右邊。"
+  },
+  "IS IT FAR FROM HERE": {
+    "word": "is it far from here",
+    "pos": "phr.",
+    "meaning": "它離這裡很遠嗎？",
+    "example": "Is it far from here.",
+    "exampleZh": "它離這裡很遠嗎？"
+  },
+  "CAN I TRY THIS ON": {
+    "word": "can i try this on",
+    "pos": "sent.",
+    "meaning": "我可以試穿這件嗎？",
+    "example": "Can i try this on.",
+    "exampleZh": "我可以試穿這件嗎？"
+  },
+  "DO YOU HAVE A BLUE ONE": {
+    "word": "do you have a blue one",
+    "pos": "sent.",
+    "meaning": "你們有藍色的嗎？",
+    "example": "Do you have a blue one.",
+    "exampleZh": "你們有藍色的嗎？"
+  },
+  "I WILL TAKE THIS ONE": {
+    "word": "i will take this one",
+    "pos": "sent.",
+    "meaning": "我買下這個了",
+    "example": "I will take this one.",
+    "exampleZh": "我買下這個了。"
+  },
+  "WRITES": {
+    "word": "writes",
+    "pos": "n.",
+    "meaning": "第三人稱單數",
+    "example": "She writes an email to her boss every day.",
+    "exampleZh": "主詞 She 是第三人稱單數，現在簡單式動詞字尾需要加 -s，因此選 writes。"
+  },
+  "THERE": {
+    "word": "there",
+    "pos": "n.",
+    "meaning": "有",
+    "example": "there are two birds in the park.",
+    "exampleZh": "There are 表示「有」，後面接複數名詞 two birds，所以選 There。"
+  },
+  "SING": {
+    "word": "sing",
+    "pos": "v.",
+    "meaning": "唱歌",
+    "example": "They sing in the car.",
+    "exampleZh": "他們在車上唱歌。"
+  },
+  "OUR": {
+    "word": "our",
+    "pos": "pron.",
+    "meaning": "我們的",
+    "example": "our flight is late, so we wait at the airport.",
+    "exampleZh": "此語境充分體現了「我們的」的實際運用。"
+  },
+  "BIRD": {
+    "word": "bird",
+    "pos": "n.",
+    "meaning": "鳥",
+    "example": "A bird is singing outside.",
+    "exampleZh": "外面有一隻鳥在唱歌。"
+  },
+  "WHERE": {
+    "word": "where",
+    "pos": "adv.",
+    "meaning": "在哪裡",
+    "example": "A: where is the bank? B: It is next to the park.",
+    "exampleZh": "此語境充分體現了「在哪裡」的實際運用。"
+  },
+  "DOESNT": {
+    "word": "doesn't",
+    "pos": "n.",
+    "meaning": "第三人稱單數",
+    "example": "Mr. Lin doesn't work here.",
+    "exampleZh": "Mr. Lin ___ work here. 主詞是第三人稱單數，一般動詞的否定需用 doesn't"
+  },
+  "WATCHES": {
+    "word": "watches",
+    "pos": "n.",
+    "meaning": "watches",
+    "example": "A: What does your friend do at night? B: He usually watches a movie.",
+    "exampleZh": "此語境充分體現了「watches」的實際運用。"
+  },
+  "DRIVE": {
+    "word": "drive",
+    "pos": "v.",
+    "meaning": "開車",
+    "example": "Can you drive me to the station?",
+    "exampleZh": "你可以開車送我到車站嗎？"
+  },
+  "BUT": {
+    "word": "but",
+    "pos": "conj.",
+    "meaning": "但是；然而",
+    "example": "She has a pen, but she does not have any paper.",
+    "exampleZh": "此語境充分體現了「但是；然而」的實際運用。"
+  },
+  "AN": {
+    "word": "an",
+    "pos": "n.",
+    "meaning": "母音音",
+    "example": "I have an umbrella.",
+    "exampleZh": "umbrella 開頭是母音音，用 an。"
+  },
+  "CLOSE": {
+    "word": "close",
+    "pos": "v.",
+    "meaning": "關上",
+    "example": "Close the window, please.",
+    "exampleZh": "請關上窗戶。"
+  },
+  "BICYCLE": {
+    "word": "bicycle",
+    "pos": "n.",
+    "meaning": "bicycle",
+    "example": "We ride a bicycle in the park.",
+    "exampleZh": "此語境充分體現了「bicycle」的實際運用。"
+  },
+  "IS ALWAYS": {
+    "word": "is always",
+    "pos": "phr.",
+    "meaning": "is always",
+    "example": "The clerk is always busy on Mondays.",
+    "exampleZh": "此語境充分體現了「【詞彙】is always」的實際運用。"
+  },
+  "THESE": {
+    "word": "these",
+    "pos": "n.",
+    "meaning": "these",
+    "example": "these pens are red, and those pens are blue.",
+    "exampleZh": "此語境充分體現了「these」的實際運用。"
+  },
+  "HIM": {
+    "word": "him",
+    "pos": "pron.",
+    "meaning": "他（受格）",
+    "example": "A: Where is Mr. Lin? B: I do not see him.",
+    "exampleZh": "此語境充分體現了「他（受格）」的實際運用。"
+  },
+  "UNDER": {
+    "word": "under",
+    "pos": "n.",
+    "meaning": "在...下方",
+    "example": "The cat is sleeping under the sofa.",
+    "exampleZh": "此語境充分體現了「在...下方」的實際運用。"
+  },
+  "ON THE DESK": {
+    "word": "on the desk",
+    "pos": "phr.",
+    "meaning": "請把紙放在辦公桌上",
+    "example": "We should focus on the usage of on the desk in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「請把紙放在辦公桌上」的核心用法。"
+  },
+  "BICYCLES": {
+    "word": "bicycles",
+    "pos": "n.",
+    "meaning": "bicycles",
+    "example": "This example demonstrates bicycles.",
+    "exampleZh": "此例句展示了「bicycles」。"
+  },
+  "AT THE BANK": {
+    "word": "at the bank",
+    "pos": "phr.",
+    "meaning": "我現在在銀行",
+    "example": "We should focus on the usage of at the bank in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「我現在在銀行」的核心用法。"
+  },
+  "MILK AND MEAT": {
+    "word": "milk and meat",
+    "pos": "phr.",
+    "meaning": "牛奶和肉",
+    "example": "We should focus on the usage of milk and meat in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「牛奶和肉」的核心用法。"
+  },
+  "WRITE EMAILS": {
+    "word": "write emails",
+    "pos": "phr.",
+    "meaning": "write emails",
+    "example": "We should focus on the usage of write emails in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「Write emails」的核心用法。"
+  },
+  "100 NT DOLLARS": {
+    "word": "100 nt dollars",
+    "pos": "phr.",
+    "meaning": "100 nt dollars",
+    "example": "【短文理解】[Notice] The singer will sing in the park today at 19:00. The ticket is 100 NT dollars.\nQ: How much is the ticket?",
+    "exampleZh": "公告中註明「The ticket is 100 NT dollars.（門票 100 台幣）」，所以選 C"
+  },
+  "BLACK": {
+    "word": "black",
+    "pos": "adj.",
+    "meaning": "黑色的",
+    "example": "I have a black cat.",
+    "exampleZh": "我有一隻黑貓。"
+  },
+  "NO IT IS NOT": {
+    "word": "no, it is not.",
+    "pos": "phr.",
+    "meaning": "週六與週日休息",
+    "example": "【短文理解】[Store Sign] Open Monday to Friday. Closed on Saturday and Sunday.\nQ: Is the store open on Sunday?",
+    "exampleZh": "告示寫「Closed on Saturday and Sunday.（週六與週日休息）」，因此週日沒有營業，選 B"
+  },
+  "A NEW SOFA": {
+    "word": "a new sofa",
+    "pos": "phr.",
+    "meaning": "沙發",
+    "example": "We should focus on the usage of a new sofa in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「沙發」的核心用法。"
+  },
+  "A BLUE PEN": {
+    "word": "a blue pen",
+    "pos": "phr.",
+    "meaning": "我找不到我的藍筆",
+    "example": "We should focus on the usage of a blue pen in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「我找不到我的藍筆」的核心用法。"
+  },
+  "AM": {
+    "word": "am",
+    "pos": "v.",
+    "meaning": "是（第一人稱單數）",
+    "example": "I am a student.",
+    "exampleZh": "主詞 I 搭配 be 動詞 am。"
+  },
+  "HE": {
+    "word": "he",
+    "pos": "pron.",
+    "meaning": "男生、單數",
+    "example": "This is my brother. he is a student.",
+    "exampleZh": "my brother（我的哥哥／弟弟）是男生、單數，代名詞用 He。"
+  },
+  "SHE": {
+    "word": "she",
+    "pos": "pron.",
+    "meaning": "女生、單數",
+    "example": "My mother is a nurse. she works at a hospital.",
+    "exampleZh": "my mother 是女生、單數，代名詞用 She。"
+  },
+  "WE": {
+    "word": "we",
+    "pos": "pron.",
+    "meaning": "我",
+    "example": "Tom and I are in the same class. we are good friends.",
+    "exampleZh": "Tom and I（湯姆和我）包含「我」，代名詞用 We。"
+  },
+  "IT": {
+    "word": "it",
+    "pos": "pron.",
+    "meaning": "人",
+    "example": "Look at the cat! it is very cute.",
+    "exampleZh": "動物（不知道性別時）用 It 代替。"
+  },
+  "THEY": {
+    "word": "they",
+    "pos": "n.",
+    "meaning": "我",
+    "example": "Anna and Ben work here. they are very busy today.",
+    "exampleZh": "Anna and Ben 是兩個人、不包含說話的人，代名詞用 They。"
+  },
+  "GO": {
+    "word": "go",
+    "pos": "n.",
+    "meaning": "走",
+    "example": "Go.",
+    "exampleZh": "走。"
+  },
+  "SPEAK": {
+    "word": "speak",
+    "pos": "n.",
+    "meaning": "複數",
+    "example": "They speak English at work every day.",
+    "exampleZh": "主詞 They 是複數，一般現在式用原形 speak。"
+  },
+  "STUDIES": {
+    "word": "studies",
+    "pos": "n.",
+    "meaning": "本題測試第三人稱單數動詞的變化",
+    "example": "His wife studies English at a language school in Taipei.",
+    "exampleZh": "本題測試第三人稱單數動詞的變化。"
+  },
+  "WAKE": {
+    "word": "wake",
+    "pos": "n.",
+    "meaning": "本題測試現在簡單式",
+    "example": "We wake up at six o'clock every day.",
+    "exampleZh": "本題測試現在簡單式。"
+  },
+  "HOUSE": {
+    "word": "house",
+    "pos": "n.",
+    "meaning": "房子",
+    "example": "House.",
+    "exampleZh": "房子。"
+  },
+  "WHEN": {
+    "word": "when",
+    "pos": "adv.",
+    "meaning": "何時；當...的時候",
+    "example": "when is your birthday? — It's in May.",
+    "exampleZh": "問時間用 When。"
+  },
+  "WASH THE RICE": {
+    "word": "wash the rice",
+    "pos": "phr.",
+    "meaning": "請在我回來前幫忙洗米",
+    "example": "We should focus on the usage of wash the rice in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「請在我回來前幫忙洗米」的核心用法。"
+  },
+  "IN THE GARDEN": {
+    "word": "in the garden",
+    "pos": "phr.",
+    "meaning": "我們正在花園裡吃大餐",
+    "example": "We should focus on the usage of in the garden in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「我們正在花園裡吃大餐」的核心用法。"
+  },
+  "TOMATOES": {
+    "word": "tomatoes",
+    "pos": "n.",
+    "meaning": "本題測試名詞複數",
+    "example": "I want to buy three red tomatoes from the market.",
+    "exampleZh": "本題測試名詞複數。"
+  },
+  "RICE": {
+    "word": "rice",
+    "pos": "n.",
+    "meaning": "米飯",
+    "example": "We eat rice with dinner.",
+    "exampleZh": "我們晚餐配米飯。"
+  },
+  "CAKE": {
+    "word": "cake",
+    "pos": "n.",
+    "meaning": "蛋糕",
+    "example": "We have cake on her birthday.",
+    "exampleZh": "她生日時我們吃蛋糕。"
+  },
+  "YOUR": {
+    "word": "your",
+    "pos": "pron.",
+    "meaning": "你的；你們的",
+    "example": "That is not your ruler. Mine is blue.",
+    "exampleZh": "本題測試所有格形容詞。"
+  },
+  "RAISE A HAND TO SPEAK": {
+    "word": "raise a hand to speak",
+    "pos": "phr.",
+    "meaning": "發言前請舉手",
+    "example": "【短文理解】[School Rules] 1. Do not eat or drink during the lesson. 2. Please turn off your phone. 3. Raise your hand if you want to speak.\nQ: What can a student do?",
+    "exampleZh": "本題測試短文理解"
+  },
+  "COOL": {
+    "word": "cool",
+    "pos": "n.",
+    "meaning": "No",
+    "example": "A: Is it warm outside right now? B: No, it is very cool. You need a jacket.",
+    "exampleZh": "本題測試天氣形容詞。"
+  },
+  "WINDY AND COOL": {
+    "word": "windy and cool",
+    "pos": "phr.",
+    "meaning": "明天台北將會起風且涼爽",
+    "example": "We should focus on the usage of windy and cool in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「明天台北將會起風且涼爽」的核心用法。"
+  },
+  "BLUE": {
+    "word": "blue",
+    "pos": "adj.",
+    "meaning": "藍色的",
+    "example": "The sky is blue today.",
+    "exampleZh": "今天天空是藍色的。"
+  },
+  "ITS": {
+    "word": "its",
+    "pos": "pron.",
+    "meaning": "它的",
+    "example": "Look at the cute pig! its tail is short and curly.",
+    "exampleZh": "本題測試所有格。"
+  },
+  "SHOES": {
+    "word": "shoes",
+    "pos": "n.",
+    "meaning": "本題測試名詞複數",
+    "example": "She wears a pink dress and two white shoes.",
+    "exampleZh": "本題測試名詞複數。"
+  },
+  "LIVE": {
+    "word": "live",
+    "pos": "adj.",
+    "meaning": "不定詞",
+    "example": "I live in a small apartment.",
+    "exampleZh": "繁體中文解說：此題測試現在簡單式。"
+  },
+  "RUNS": {
+    "word": "runs",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "The dog runs fast.",
+    "exampleZh": "繁體中文解說：此題測試現在簡單式第三人稱單數。"
+  },
+  "EATS": {
+    "word": "eats",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "He eats salad for lunch.",
+    "exampleZh": "繁體中文解說：此題測試現在簡單式的動詞變化。"
+  },
+  "MILK": {
+    "word": "milk",
+    "pos": "n.",
+    "meaning": "牛奶",
+    "example": "Do you want milk in your coffee?",
+    "exampleZh": "你的咖啡要加牛奶嗎？"
+  },
+  "DO": {
+    "word": "do",
+    "pos": "v.",
+    "meaning": "做；助動詞",
+    "example": "do you like music?",
+    "exampleZh": "you 的一般動詞疑問句用 Do 開頭。"
+  },
+  "DRINK": {
+    "word": "drink",
+    "pos": "v.",
+    "meaning": "喝",
+    "example": "I drink tea every day.",
+    "exampleZh": "我每天喝茶。"
+  },
+  "SEE": {
+    "word": "see",
+    "pos": "n.",
+    "meaning": "此題測試助動詞的用法",
+    "example": "Can you see the bank?",
+    "exampleZh": "繁體中文解說：此題測試助動詞的用法。"
+  },
+  "DRIVE A CAR": {
+    "word": "drive a car",
+    "pos": "phr.",
+    "meaning": "此題測試短文理解",
+    "example": "We should focus on the usage of drive a car in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試短文理解」的核心用法。"
+  },
+  "READ": {
+    "word": "read",
+    "pos": "v.",
+    "meaning": "閱讀",
+    "example": "He reads the news every morning.",
+    "exampleZh": "他每天早上看新聞。"
+  },
+  "GOES": {
+    "word": "goes",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "She goes to the movies on the weekend.",
+    "exampleZh": "繁體中文解說：此題測試第三人稱單數動詞。"
+  },
+  "PLAYS": {
+    "word": "plays",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "A: What does he do on the weekend? B: He plays games.",
+    "exampleZh": "繁體中文解說：此題測試現在簡單式。"
+  },
+  "A BALL": {
+    "word": "a ball",
+    "pos": "phr.",
+    "meaning": "此題測試短文細節理解",
+    "example": "We should focus on the usage of a ball in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試短文細節理解」的核心用法。"
+  },
+  "STILL WATER PLEASE": {
+    "word": "still water, please.",
+    "pos": "phr.",
+    "meaning": "常溫水還是氣泡水？",
+    "example": "The word is still water, please..",
+    "exampleZh": "服務生詢問要「常溫水還是氣泡水？」（Still or sparkling water），最適當的回答是「請給我們常溫水」（Still water, please）"
+  },
+  "PLATE": {
+    "word": "plate",
+    "pos": "n.",
+    "meaning": "盤子／餐盤",
+    "example": "Please pass me that clean plate.",
+    "exampleZh": "盤子／餐盤"
+  },
+  "STREET": {
+    "word": "street",
+    "pos": "n.",
+    "meaning": "街道",
+    "example": "The bank is on Main Street.",
+    "exampleZh": "銀行在大街上。"
+  },
+  "AIRPORT": {
+    "word": "airport",
+    "pos": "n.",
+    "meaning": "機場",
+    "example": "Airport.",
+    "exampleZh": "機場。"
+  },
+  "FLIGHT": {
+    "word": "flight",
+    "pos": "n.",
+    "meaning": "班機",
+    "example": "Our flight was delayed.",
+    "exampleZh": "我們的班機延誤了。"
+  },
+  "MEETING": {
+    "word": "meeting",
+    "pos": "n.",
+    "meaning": "會議",
+    "example": "Meeting.",
+    "exampleZh": "會議。"
+  },
+  "PASSPORT": {
+    "word": "passport",
+    "pos": "n.",
+    "meaning": "護照",
+    "example": "Don't forget your passport.",
+    "exampleZh": "別忘了你的護照。"
+  },
+  "RESTAURANT": {
+    "word": "restaurant",
+    "pos": "n.",
+    "meaning": "餐廳",
+    "example": "Restaurant.",
+    "exampleZh": "餐廳。"
+  },
+  "MANAGER": {
+    "word": "manager",
+    "pos": "n.",
+    "meaning": "經理",
+    "example": "The manager approved my request.",
+    "exampleZh": "經理核准了我的申請。"
+  },
+  "VACATION": {
+    "word": "vacation",
+    "pos": "n.",
+    "meaning": "假期",
+    "example": "We went to Japan on vacation.",
+    "exampleZh": "我們去日本度假。"
+  },
+  "WEATHER": {
+    "word": "weather",
+    "pos": "n.",
+    "meaning": "天氣",
+    "example": "Weather.",
+    "exampleZh": "天氣。"
+  },
+  "LUGGAGE": {
+    "word": "luggage",
+    "pos": "n.",
+    "meaning": "行李",
+    "example": "Luggage.",
+    "exampleZh": "行李。"
+  },
+  "MUSEUM": {
+    "word": "museum",
+    "pos": "n.",
+    "meaning": "博物館",
+    "example": "The museum is free on Sundays.",
+    "exampleZh": "博物館星期日免費。"
+  },
+  "SURE I WILL EMAIL IT NOW": {
+    "word": "sure, i will email it now.",
+    "pos": "phr.",
+    "meaning": "沒問題，我現在寄電子郵件給你",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方提出請求「Could you please send me the file? (能否請你寄檔案給我？)」，適當回答為「Sure, I will email it now. (沒問題，我現在寄電子郵件給你)」"
+  },
+  "BLACK WITH NO SUGAR PLEASE": {
+    "word": "black with no sugar, please.",
+    "pos": "phr.",
+    "meaning": "請給我黑咖啡，不要糖",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "服務生或同事詢問咖啡喜好「How would you like your coffee? (你的咖啡想要怎麼調配？)」，回答「Black with no sugar, please. (請給我黑咖啡，不要糖)」最正確"
+  },
+  "MR CHEN IS LEADING IT": {
+    "word": "mr. chen is leading it.",
+    "pos": "phr.",
+    "meaning": "陳先生正在主導它",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "題目詢問負責人「Who is responsible for this project? (誰負責這個專案？)」，回答人選「Mr. Chen is leading it. (陳先生正在主導它)」最切合句意"
+  },
+  "WATER WOULD BE GREAT THANK YOU": {
+    "word": "water would be great, thank you.",
+    "pos": "phr.",
+    "meaning": "開水就好，謝謝你",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方提供飲品選擇「Would you like some tea or water? (你想要喝茶還是水？)」，回答「Water would be great, thank you. (開水就好，謝謝你)」最自然合適"
+  },
+  "YES NEXT TO THE HOTEL": {
+    "word": "yes, next to the hotel.",
+    "pos": "phr.",
+    "meaning": "有的，在飯店旁邊",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問附近有無銀行「Is there a bank near here? (這附近有銀行嗎？)」，回答地點「Yes, next to the hotel. (有的，在飯店旁邊)」最正確"
+  },
+  "SURE NO PROBLEM": {
+    "word": "sure, no problem.",
+    "pos": "phr.",
+    "meaning": "當然，沒問題",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "請求對方重述「Could you repeat that? (你可以再說一次嗎？)」，答覆「Sure, no problem. (當然，沒問題)」最禮貌合適"
+  },
+  "AT FIVE THIRTY": {
+    "word": "at five thirty.",
+    "pos": "phr.",
+    "meaning": "五點半",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問火車發車時間「What time does the train leave? (火車幾點開？)」，回答時間「At five thirty. (五點半)」最正確"
+  },
+  "ABOUT AN HOUR": {
+    "word": "about an hour.",
+    "pos": "phr.",
+    "meaning": "大約一小時",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問時間長度「How long is the meeting? (會議有多長？)」，回答時間長度「About an hour. (大約一小時)」最正確"
+  },
+  "THE TRAFFIC WAS BAD": {
+    "word": "the traffic was bad.",
+    "pos": "phr.",
+    "meaning": "the traffic was bad.",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問原因「Why are you late? (你為什麼遲到了？)」，回答原因「The traffic was bad. (交通狀況很糟／塞車)」最正確"
+  },
+  "THE BLACK ONE": {
+    "word": "the black one.",
+    "pos": "phr.",
+    "meaning": "黑色的那一個",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問哪一個是特定物品「Which one is your bag? (哪一個是你的包包？)」，回答物品特徵「The black one. (黑色的那一個)」最正確"
+  },
+  "NO EVERYTHING IS CLEAR": {
+    "word": "no, everything is clear.",
+    "pos": "phr.",
+    "meaning": "沒有，一切都很清楚",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "會議或解說後詢問「Do you have any questions? (你有任何問題嗎？)」，回答「No, everything is clear. (沒有，一切都很清楚)」最合適"
+  },
+  "I NEED YOUR HELP WITH A FILE": {
+    "word": "i need your help with a file.",
+    "pos": "phr.",
+    "meaning": "我需要你幫忙處理一個檔案",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「Why did you call me? (你為什麼打給我？)」，回答原因「I need your help with a file. (我需要你幫忙處理一個檔案)」最正確"
+  },
+  "IT WAS GREAT I WENT TO TAIPEI": {
+    "word": "it was great, i went to taipei.",
+    "pos": "phr.",
+    "meaning": "很棒，我去了台北",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問「How was your weekend? (你週末過得如何？)」，回答「It was great, I went to Taipei. (很棒，我去了台北)」最合適"
+  },
+  "IT BELONGS TO MR LIN": {
+    "word": "it belongs to mr. lin.",
+    "pos": "phr.",
+    "meaning": "這是林先生的",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方詢問物品擁有者「Whose bag is this? (這是誰的包包？)」，回答「It belongs to Mr. Lin. (這是林先生的)」最合適"
+  },
+  "ID LOVE TO THANK YOU": {
+    "word": "i'd love to, thank you.",
+    "pos": "phr.",
+    "meaning": "我很樂意，謝謝",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "對方提出邀請「Would you like to join us for dinner? (你想和我們一起吃晚餐嗎？)」，欣然接受「I'd love to, thank you. (我很樂意，謝謝)」最禮貌合適"
+  },
+  "RIGHT THIS WAY PLEASE": {
+    "word": "right this way, please.",
+    "pos": "phr.",
+    "meaning": "請走這邊",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "在餐廳門口詢問「Can we have a table for two? (我們能有兩個人的位子嗎？)」，服務生回答「Right this way, please. (請走這邊)」最標準"
+  },
+  "YES IT IS VERY CHEAP": {
+    "word": "yes, it is very cheap.",
+    "pos": "phr.",
+    "meaning": "想，它很便宜",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問購買意願「Do you want to buy it? (你想買它嗎？)」，回答意願與理由「Yes, it is very cheap. (想，它很便宜)」最合理"
+  },
+  "I LIKE THE RED ONE": {
+    "word": "i like the red one.",
+    "pos": "phr.",
+    "meaning": "我喜歡紅色的那一個",
+    "example": "🎧 聽到這句話，最適合的回應是？",
+    "exampleZh": "詢問顏色偏好「Which color do you like? (你喜歡哪一個顏色？)」，回答「I like the red one. (我喜歡紅色的那一個)」最正確"
+  },
+  "BOARDING PASS": {
+    "word": "boarding pass",
+    "pos": "phr.",
+    "meaning": "登機證",
+    "example": "Boarding pass.",
+    "exampleZh": "登機證。"
+  },
+  "PLEASE COME IN": {
+    "word": "please come in",
+    "pos": "sent.",
+    "meaning": "請進",
+    "example": "Please come in.",
+    "exampleZh": "請進。"
+  },
+  "CREDIT CARD": {
+    "word": "credit card",
+    "pos": "phr.",
+    "meaning": "信用卡",
+    "example": "Credit card.",
+    "exampleZh": "信用卡。"
+  },
+  "GO STRAIGHT AHEAD": {
+    "word": "go straight ahead",
+    "pos": "phr.",
+    "meaning": "直走",
+    "example": "Go straight ahead.",
+    "exampleZh": "直走。"
+  },
+  "YOUR PASSPORT PLEASE": {
+    "word": "your passport please",
+    "pos": "phr.",
+    "meaning": "請出示您的護照",
+    "example": "Your passport please.",
+    "exampleZh": "請出示您的護照。"
+  },
+  "I HAVE A MEETING": {
+    "word": "i have a meeting",
+    "pos": "sent.",
+    "meaning": "我有一場會議",
+    "example": "I have a meeting.",
+    "exampleZh": "我有一場會議。"
+  },
+  "CAN YOU SAY THAT AGAIN": {
+    "word": "can you say that again",
+    "pos": "sent.",
+    "meaning": "你可以再說一次嗎？",
+    "example": "Can you say that again.",
+    "exampleZh": "你可以再說一次嗎？"
+  },
+  "CAN I PAY BY CARD": {
+    "word": "can i pay by card",
+    "pos": "sent.",
+    "meaning": "我可以用信用卡付款嗎？",
+    "example": "Can i pay by card.",
+    "exampleZh": "我可以用信用卡付款嗎？"
+  },
+  "ANSWERS": {
+    "word": "answers",
+    "pos": "n.",
+    "meaning": "answers",
+    "example": "Emily is an assistant. She answers calls from customers and writes emails every afternoon.",
+    "exampleZh": "接聽電話在英語中習慣搭配「answer calls/phones」，主詞為單數第三人稱故用 answers。"
+  },
+  "THE STAFF WILL THROW IT AWAY": {
+    "word": "the staff will throw it away.",
+    "pos": "phr.",
+    "meaning": "the staff will throw it away.",
+    "example": "【短文理解】[Notice on Office Fridge] All food in this refrigerator must have a name tag with today's date. The cleaning staff cleans the fridge every Friday at 5:00 p.m. Any food without a name will be thrown away.\nQ: What will happen to an apple without a name on Friday evening?",
+    "exampleZh": "文中最後一句「Any food without a name will be thrown away.」說明沒有標示名字的食物會在週五清掃時被丟掉"
+  },
+  "GO TO THE SERVICE DESK": {
+    "word": "go to the service desk.",
+    "pos": "phr.",
+    "meaning": "在服務台領取免費飲料兌換券",
+    "example": "【短文理解】[Flight Ticket Message] Flight BR28 to San Francisco is delayed. The new departure time is 11:45 p.m. Passengers can wait at Gate 12 and get a free drink voucher from the service desk.\nQ: What should passengers do if they want a free drink?",
+    "exampleZh": "文末指出旅客可以「get a free drink voucher from the service desk」（在服務台領取免費飲料兌換券），故選 B"
+  },
+  "THERE IS NO TRASH COLLECTION ON SUNDAY": {
+    "word": "there is no trash collection on sunday.",
+    "pos": "phr.",
+    "meaning": "星期日沒有垃圾清運",
+    "example": "【短文理解】[Apartment Rules] Welcome to your new home. Please do not play loud music after 10:00 p.m. Put your trash bags in the collection area on the first floor before 8:00 a.m. every morning except Sunday.\nQ: Which of the following is true according to the rules?",
+    "exampleZh": "文中「every morning except Sunday」表示星期日沒有垃圾清運，故選 B"
+  },
+  "MARY": {
+    "word": "mary.",
+    "pos": "adj.",
+    "meaning": "瑪麗今天將代替他主持",
+    "example": "【短文理解】[Business Email] Dear Team, John is sick today and cannot lead the marketing meeting at 3 p.m. Mary will take his place today. Please send your weekly reports to Mary before 2 p.m.\nQ: Who will lead the marketing meeting today?",
+    "exampleZh": "文中明確提到「Mary will take his place today」（瑪麗今天將代替他主持），因此今天由 Mary 主持會議"
+  },
+  "WAIT FOR THE 1000 TRAIN": {
+    "word": "wait for the 10:00 train.",
+    "pos": "phr.",
+    "meaning": "wait for the 10:00 train.",
+    "example": "【短文理解】[Train Station Broadcast] Attention all passengers: The 9:15 train to Hualien is full. If you do not have a reserved seat, please buy a ticket for the next train at 10:00 at ticket window 3.\nQ: What can a person without a ticket do to go to Hualien?",
+    "exampleZh": "廣播說明 9:15 的火車已客滿，沒有劃位的旅客應購買 10:00 的下一班車，故選 A"
+  },
+  "A PERSON WHO WANTS TO WORK ON WEEKENDS": {
+    "word": "a person who wants to work on weekends.",
+    "pos": "phr.",
+    "meaning": "weekend waiter",
+    "example": "【短文理解】[Job Advertisement] Star Coffee Shop is looking for a weekend waiter. Working hours are from 10 a.m. to 6 p.m. on Saturdays and Sundays. Good English communication skills are welcome. Please call Mr. Wu at 0912-345-678.\nQ: Who can apply for this job?",
+    "exampleZh": "該職缺為「weekend waiter」，工作時間為「Saturdays and Sundays」，因此適合能在週末工作的人"
+  },
+  "THROW IT AWAY OR REMOVE IT": {
+    "word": "throw it away or remove it.",
+    "pos": "phr.",
+    "meaning": "throw it away or remove it.",
+    "example": "【短文理解】[Office Kitchen Notice] Please label your lunchbox with your name and department. Any box without a name will be removed every Friday at 4:30 p.m. Please do not leave dirty forks or bowls in the sink overnight.\nQ: What will the cleaner do to an unlabeled lunchbox on Friday at 5:00 p.m.?",
+    "exampleZh": "文中說明「Any box without a name will be removed every Friday at 4:30 p.m.」（沒有標註名字的餐盒會在週五下午四點半被清除丟棄），故選 C"
+  },
+  "NO BECAUSE TRAIN 107 DOES NOT STOP THERE": {
+    "word": "no, because train 107 does not stop there.",
+    "pos": "phr.",
+    "meaning": "不停靠台中",
+    "example": "【短文理解】[Express Train Schedule] Train 105: Leaves Taipei at 07:15, arrives in Taichung at 08:20, arrives in Zuoying at 09:10. Train 107: Leaves Taipei at 07:45, does NOT stop in Taichung, arrives in Zuoying at 09:20.\nQ: If Mr. Lin takes Train 107 in Taipei, can he get off at Taichung?",
+    "exampleZh": "時刻表明確說明 Train 107「does NOT stop in Taichung」（不停靠台中），因此林先生無法在台中下車，故選 D"
+  },
+  "WRITE THE SUMMARY PAGE": {
+    "word": "write the summary page.",
+    "pos": "phr.",
+    "meaning": "他接下來會去寫總結頁面",
+    "example": "【短文理解】[Text Message Chain] John: 'Hey Lisa, the manager wants us to finish the presentation slides before our 3:00 meeting.' Lisa: 'I already finished the charts. Can you write the summary page?' John: 'Sure, I can do that now.'\nQ: What will John do next?",
+    "exampleZh": "Lisa 詢問 John 能否寫總結頁面（Can you write the summary page?），John 回答「Sure, I can do that now.」，表示他接下來會去寫總結頁面，故選 A"
+  },
+  "THEIR TABLE MAY BE GIVEN AWAY": {
+    "word": "their table may be given away.",
+    "pos": "phr.",
+    "meaning": "桌位將轉讓給現場候位客人",
+    "example": "【短文理解】[Restaurant Policy Note] Table reservations are held for 10 minutes only. If all guests are not present within 10 minutes after the reserved time, your table will be given to waiting walk-in customers.\nQ: What happens if a group of four arrives 15 minutes late for their reservation?",
+    "exampleZh": "規定說明座位僅保留 10 分鐘，若逾時「table will be given to waiting walk-in customers」（桌位將轉讓給現場候位客人），遲到 15 分鐘桌位可能不保，故選 B"
+  },
+  "RIDE BICYCLES ALONG THE COAST": {
+    "word": "ride bicycles along the coast.",
+    "pos": "phr.",
+    "meaning": "沿海岸騎腳踏車",
+    "example": "【短文理解】[Postcard from Hualien] Dear Eric, Taroko Gorge is breathtaking! Yesterday we walked along the Shakadang Trail. My sister was tired, but she finished the entire walk. Tomorrow we will ride bicycles along the coast before heading home. See you Tuesday! Ken.\nQ: What is Ken's plan for tomorrow?",
+    "exampleZh": "文中「Tomorrow we will ride bicycles along the coast before heading home.」直接點出明天的行程是沿海岸騎腳踏車，故選 C"
+  },
+  "IT IS NOT OPEN IN THE AFTERNOON": {
+    "word": "it is not open in the afternoon.",
+    "pos": "phr.",
+    "meaning": "因此週六下午並未開診",
+    "example": "【短文理解】[Dentist Clinic Notice] Clinic Hours: Monday to Friday 9:00 a.m. to 8:30 p.m. Saturday: 9:00 a.m. to 12:00 noon. Sunday: Closed. For urgent tooth pain outside opening hours, please call emergency line 0988-111-222.\nQ: When is the clinic open on Saturday afternoon?",
+    "exampleZh": "告示說明週六營業時間僅到中午十二點（Saturday: 9:00 a.m. to 12:00 noon），因此週六下午並未開診，選 D"
+  },
+  "GO TO GATE C3": {
+    "word": "go to gate c3.",
+    "pos": "phr.",
+    "meaning": "go to gate c3.",
+    "example": "【短文理解】[Airport Announcement] Attention passengers on flight JL802 to Tokyo: The boarding gate has changed from Gate A7 to Gate C3. Boarding will start at 14:15. Please go directly to Terminal 2, Gate C3 now.\nQ: What should passengers on flight JL802 do right now?",
+    "exampleZh": "廣播指出登機門已更換為 C3，並指示「Please go directly to Terminal 2, Gate C3 now.」，故選 A"
+  },
+  "CHOOSE THEIR MEAL CHOICE BY EMAIL": {
+    "word": "choose their meal choice by email.",
+    "pos": "phr.",
+    "meaning": "choose their meal choice by email.",
+    "example": "【短文理解】[Email Invitation] Dear Colleagues, We invite you to the company annual dinner on Friday, December 18 at Grand Palace Hotel. Dinner starts at 6:30 p.m. Please reply to this email before next Wednesday to choose beef, fish, or vegetarian.\nQ: What must employees do by next Wednesday?",
+    "exampleZh": "信中指出「Please reply to this email before next Wednesday to choose beef, fish, or vegetarian.」（請在下週三前以回信選擇餐點種類：牛、魚或素食），故選 B"
+  },
+  "NO HOT WATER IS NOT AVAILABLE AT 200 PM": {
+    "word": "no, hot water is not available at 2:00 p.m.",
+    "pos": "phr.",
+    "meaning": "沒有熱水",
+    "example": "【短文理解】[Notice on Boarding School / Hostel Washroom] The hot water system operates daily from 6:00 a.m. to 10:00 a.m., and from 6:00 p.m. to 11:30 p.m. During other hours, only cold water is available in all bathrooms.\nQ: Can a resident take a hot shower at 2:00 p.m.?",
+    "exampleZh": "熱水供應時段為 06:00-10:00 與 18:00-23:30，其餘時段僅有冷水（only cold water is available），因此下午 2 點沒有熱水，選 C"
+  },
+  "THE WRITERS BROTHER CANNOT GO": {
+    "word": "the writer's brother cannot go.",
+    "pos": "phr.",
+    "meaning": "工作無法去",
+    "example": "【短文理解】[Text Message] Hi Kelly! I bought two tickets for the pop concert this Saturday night at 7:00 p.m. My brother cannot come with me because of his work. Would you like to come with me? The ticket is free for you!\nQ: Why does the writer invite Kelly to the concert?",
+    "exampleZh": "文中說明「My brother cannot come with me because of his work. Would you like to come with me?」（哥哥因為工作無法去，因此詢問 Kelly 是否願意同行），選 B"
+  },
+  "HIGH SPEED RAIL": {
+    "word": "high speed rail",
+    "pos": "phr.",
+    "meaning": "高鐵",
+    "example": "High speed rail.",
+    "exampleZh": "高鐵。"
+  },
+  "FOR HERE OR TO GO": {
+    "word": "for here or to go",
+    "pos": "phr.",
+    "meaning": "內用",
+    "example": "For here or to go.",
+    "exampleZh": "外帶還是內用。"
+  },
+  "A TABLE FOR TWO": {
+    "word": "a table for two",
+    "pos": "phr.",
+    "meaning": "兩人的桌位",
+    "example": "A table for two.",
+    "exampleZh": "兩人的桌位。"
+  },
+  "WHEN IS THE NEXT BUS": {
+    "word": "when is the next bus",
+    "pos": "phr.",
+    "meaning": "下一班公車什麼時候來？",
+    "example": "When is the next bus.",
+    "exampleZh": "下一班公車什麼時候來？"
+  },
+  "THIS COAT IS TOO EXPENSIVE": {
+    "word": "this coat is too expensive",
+    "pos": "sent.",
+    "meaning": "這件外套太貴了",
+    "example": "This coat is too expensive.",
+    "exampleZh": "這件外套太貴了。"
+  },
+  "LET US MEET TOMORROW MORNING": {
+    "word": "let us meet tomorrow morning",
+    "pos": "phr.",
+    "meaning": "我們明天早上見面吧",
+    "example": "Let us meet tomorrow morning.",
+    "exampleZh": "我們明天早上見面吧。"
+  },
+  "I WOULD LIKE A CUP OF TEA": {
+    "word": "i would like a cup of tea",
+    "pos": "sent.",
+    "meaning": "我想要喝一杯熱茶",
+    "example": "I would like a cup of tea.",
+    "exampleZh": "我想要喝一杯熱茶。"
+  },
+  "COMFORTABLE": {
+    "word": "comfortable",
+    "pos": "adj.",
+    "meaning": "舒服的",
+    "example": "We stayed in a comfortable hotel during our holiday in Hualien.",
+    "exampleZh": "我們在花蓮度假期間住了一家舒適的飯店。",
+    "senses": [
+      {
+        "pos": "adj.",
+        "meaning": "舒服的；舒適的",
+        "examples": [
+          {
+            "en": "The tourists are relaxing in the comfortable lounge now.",
+            "zh": "遊客們現在正在舒適的休息室裡放鬆。"
+          },
+          {
+            "en": "This leather chair is more comfortable than the wooden one in my office.",
+            "zh": "這張皮椅比我辦公室的那張木椅舒服多了。"
+          }
+        ]
+      }
+    ]
+  },
+  "BAGGAGE CLAIM": {
+    "word": "baggage claim",
+    "pos": "phr.",
+    "meaning": "行李領取處",
+    "example": "Baggage claim.",
+    "exampleZh": "行李領取處。"
+  },
+  "HAVE A SAFE FLIGHT": {
+    "word": "have a safe flight",
+    "pos": "sent.",
+    "meaning": "祝你旅途平安",
+    "example": "Have a safe flight.",
+    "exampleZh": "祝你旅途平安。"
+  },
+  "GET WELL SOON": {
+    "word": "get well soon",
+    "pos": "phr.",
+    "meaning": "早日康復",
+    "example": "Get well soon.",
+    "exampleZh": "早日康復。"
+  },
+  "ONLINE LESSON": {
+    "word": "online lesson",
+    "pos": "phr.",
+    "meaning": "線上課程",
+    "example": "Online lesson.",
+    "exampleZh": "線上課程。"
+  },
+  "CAN YOU SPELL THAT PLEASE": {
+    "word": "can you spell that please",
+    "pos": "sent.",
+    "meaning": "可以請你拼出來嗎？",
+    "example": "Can you spell that please.",
+    "exampleZh": "可以請你拼出來嗎？"
+  },
+  "MY PHONE BATTERY IS LOW": {
+    "word": "my phone battery is low",
+    "pos": "phr.",
+    "meaning": "我的手機電池快沒電了",
+    "example": "My phone battery is low.",
+    "exampleZh": "我的手機電池快沒電了。"
+  },
+  "IS BREAKFAST INCLUDED": {
+    "word": "is breakfast included",
+    "pos": "phr.",
+    "meaning": "早餐有包含在房價內嗎？",
+    "example": "Is breakfast included.",
+    "exampleZh": "早餐有包含在房價內嗎？"
+  },
+  "I NEED A DOCTOR APPOINTMENT": {
+    "word": "i need a doctor appointment",
+    "pos": "sent.",
+    "meaning": "我想要和醫生預約掛號",
+    "example": "I need a doctor appointment.",
+    "exampleZh": "我想要和醫生預約掛號。"
+  },
+  "THE COURT IS WET FROM RAIN": {
+    "word": "the court is wet from rain.",
+    "pos": "phr.",
+    "meaning": "場地因晨雨潮濕",
+    "example": "【短文理解】[Text Message Chain] Jason: 'Hey Paul, are you ready for the tennis game at 9:00 a.m.?' Paul: 'The court is wet because of morning rain. The coach said the match will start at 10:30 instead.'\nQ: Why is the tennis match delayed?",
+    "exampleZh": "Paul 說明「The court is wet because of morning rain.」（場地因晨雨潮濕），故延後開打，選 C"
+  },
+  "HE PICKED ORANGES AT AN ORCHARD": {
+    "word": "he picked oranges at an orchard.",
+    "pos": "phr.",
+    "meaning": "學習採摘成熟香甜的橘子",
+    "example": "【短文理解】[Postcard from Miaoli] Dear Grandpa, we visited an orange orchard in Miaoli today. The owner taught us how to pick ripe sweet oranges. Tomorrow we are visiting an old pottery museum. Love, Brian.\nQ: What did Brian do in Miaoli today?",
+    "exampleZh": "明信片說明今天參觀果園「taught us how to pick ripe sweet oranges」（學習採摘成熟香甜的橘子），故選 D"
+  },
+  "FOUR ITEMS": {
+    "word": "four items.",
+    "pos": "phr.",
+    "meaning": "一次最多帶四件衣物",
+    "example": "【短文理解】[Clothing Store Sign] Fitting Room Rules: Maximum of four clothing items allowed inside at one time. Please return unbought clothes to the clothing rack outside the fitting room.\nQ: What is the maximum number of items a customer can bring into the fitting room?",
+    "exampleZh": "規定寫明「Maximum of four clothing items allowed inside at one time」（一次最多帶四件衣物），故選 A"
+  },
+  "PRINT IN BLACK-AND-WHITE": {
+    "word": "print in black-and-white.",
+    "pos": "phr.",
+    "meaning": "請將預設設為黑白列印",
+    "example": "【短文理解】[Notice on Office Printer] Color printing costs $5 per page and requires manager approval. For daily office work, please set your default printer mode to black-and-white.\nQ: What should employees do for daily office printing?",
+    "exampleZh": "告示提醒日常辦公列印「please set your default printer mode to black-and-white」（請將預設設為黑白列印），故選 B"
+  },
+  "IN ACTIVITY HALL 2": {
+    "word": "in activity hall 2.",
+    "pos": "phr.",
+    "meaning": "故遇雨改在活動二館",
+    "example": "【短文理解】[Weekend Sports Class Notice] Yoga in the Park: Every Sunday morning from 7:30 to 8:30 on the Sun Lawn. Please bring your own yoga mat and towel. If it rains, the class will move to Activity Hall 2.\nQ: Where will the yoga class be held if it rains on Sunday morning?",
+    "exampleZh": "雨天備案載明「If it rains, the class will move to Activity Hall 2」，故遇雨改在活動二館，選 D"
+  },
+  "AT THE THEATER GATE": {
+    "word": "at the theater gate.",
+    "pos": "phr.",
+    "meaning": "在劇院大門口見面",
+    "example": "【短文理解】[Text Message Chain] Kelly: 'Hi Anna, did you get the tickets for the musical this evening?' Anna: 'Yes, I have two tickets for Row 5. The show starts at 7:30 p.m. Let's meet at the theater gate at 7:00.'\nQ: Where will Kelly and Anna meet this evening?",
+    "exampleZh": "Anna 提到碰面地點「Let's meet at the theater gate at 7:00」（在劇院大門口見面），故選 A"
+  },
+  "THE BROWN CONTAINER": {
+    "word": "the brown container.",
+    "pos": "phr.",
+    "meaning": "廚餘必須放入棕色容器",
+    "example": "【短文理解】[Apartment Trash Policy] Kitchen food waste must be placed in the brown container before 9:00 p.m. daily. Plastic bottles and cardboard boxes should be folded and placed in the green recycling bins on Saturday mornings.\nQ: Which container is used for kitchen food waste?",
+    "exampleZh": "規定明確指出「Kitchen food waste must be placed in the brown container」（廚餘必須放入棕色容器），故選 B"
+  },
+  "THE SCHOOL SPORTS UNIFORM": {
+    "word": "the school sports uniform.",
+    "pos": "phr.",
+    "meaning": "穿學校運動制服",
+    "example": "【短文理解】[School Field Trip Notice] Annual Zoo Trip: This Friday, buses leave the school gate at 8:30 a.m. and return at 3:30 p.m. Students should pack their own lunch and wear the school sports uniform.\nQ: What should students wear for the zoo trip?",
+    "exampleZh": "通知提醒學生當天穿著「wear the school sports uniform」（穿學校運動制服），故選 C"
+  },
+  "KEEP WARM AND CLOSE WINDOWS": {
+    "word": "keep warm and close windows.",
+    "pos": "phr.",
+    "meaning": "請做好保暖並關閉朝北窗戶",
+    "example": "【短文理解】[Weather Station Alert] Cold Surge Warning: Temperatures will drop to 10°C tonight in the northern plains. Strong winds will continue until tomorrow noon. Please keep warm and close all north-facing windows.\nQ: What should residents do tonight according to the alert?",
+    "exampleZh": "警報文末具體叮嚀「Please keep warm and close all north-facing windows」（請做好保暖並關閉朝北窗戶），故選 D"
+  },
+  "WEDNESDAY EVENING": {
+    "word": "wednesday evening.",
+    "pos": "phr.",
+    "meaning": "晚間",
+    "example": "【短文理解】[Community Center Timetable] Morning Yoga: Tuesday & Thursday, 09:00-10:00. English Speaking Club: Wednesday, 19:00-20:30. Weekend Cooking Class: Saturday, 14:00-16:00.\nQ: When can a person attend the English Speaking Club?",
+    "exampleZh": "時程表顯示「English Speaking Club: Wednesday, 19:00-20:30」，19:00 為晚間，故為週三晚上，選 C"
+  },
+  "EMAIL MR BROWN BEFORE NOV 10": {
+    "word": "email mr. brown before nov 10.",
+    "pos": "phr.",
+    "meaning": "示",
+    "example": "【短文理解】[Workplace Email] Dear Staff, our company will hold the monthly meeting on November 12 at 10:00 a.m. in Meeting Room B. Please bring your sales reports. If you cannot attend, please email Mr. Brown before November 10.\nQ: What should an employee do if they cannot come to the meeting?",
+    "exampleZh": "信件最後說明「If you cannot attend, please email Mr. Brown before November 10.」，無法出席者需在此日前發郵件告知，選 D"
+  },
+  "IT WAS TOO FOGGY": {
+    "word": "it was too foggy.",
+    "pos": "phr.",
+    "meaning": "霧太大以致看不到太陽",
+    "example": "【短文理解】[Postcard from Alishan] Hi Peter, greeting from Alishan! We woke up at 4:30 a.m. today to watch the sunrise, but it was too foggy and we could not see the sun. However, the mountain forest walk this afternoon was really wonderful! See you soon, Sam.\nQ: Why couldn't Sam see the sunrise this morning?",
+    "exampleZh": "明信片中寫道「it was too foggy and we could not see the sun」（霧太大以致看不到太陽），故選 A"
+  },
+  "THERE WILL BE NO TAP WATER": {
+    "word": "there will be no tap water.",
+    "pos": "phr.",
+    "meaning": "這段期間沒有自來水",
+    "example": "【短文理解】[Apartment Notice] Water Supply Notice: The water pipe will be repaired on Thursday from 1:00 p.m. to 5:00 p.m. There will be no tap water during this period. Please store enough water in advance for cooking and washing.\nQ: What will happen on Thursday afternoon?",
+    "exampleZh": "公告指出週四下午修水管期間「There will be no tap water during this period」（這段期間沒有自來水），故選 B"
+  },
+  "THE AIR CONDITIONER IN 301 IS BROKEN": {
+    "word": "the air conditioner in 301 is broken.",
+    "pos": "phr.",
+    "meaning": "因此需要換教室",
+    "example": "【短文理解】[Text Message Chain] Amanda: 'Hi Kevin, is the air conditioner in Room 301 working? It is 34 degrees outside today.' Kevin: 'No, it is broken. The engineer will come tomorrow morning. Please move your students to Room 305.'\nQ: Why should Amanda move her students to Room 305?",
+    "exampleZh": "Kevin 回覆「No, it is broken... Please move your students to Room 305.」，301 教室冷氣壞掉且外頭高達 34 度，因此需要換教室，選 C"
+  },
+  "TIE THEIR HAIR BACK NEATLY": {
+    "word": "tie their hair back neatly.",
+    "pos": "phr.",
+    "meaning": "長髮必須整齊綁起",
+    "example": "【短文理解】[Cooking School Class Rules] Welcome to our beginners' baking class. Please wash your hands before touching any flour. Wear your clean apron at all times. Long hair must be tied back neatly.\nQ: What must students with long hair do in the baking class?",
+    "exampleZh": "烘焙班規定最後一條指明「Long hair must be tied back neatly.」（長髮必須整齊綁起），故選 D"
+  },
+  "A FREE DRINK OR CHEESECAKE": {
+    "word": "a free drink or cheesecake.",
+    "pos": "phr.",
+    "meaning": "免費飲料一杯或起司蛋糕一塊",
+    "example": "【短文理解】[Coffee Shop Stamp Card] Buy one coffee to collect one stamp. Collect 10 stamps to get a free drink or a piece of cheesecake! Note: Stamps cannot be exchanged for cash.\nQ: What can a customer get after collecting 10 stamps?",
+    "exampleZh": "集點卡說明指出集滿 10 點可兌換「a free drink or a piece of cheesecake」（免費飲料一杯或起司蛋糕一塊），故選 A"
+  },
+  "THE 3RD FLOOR": {
+    "word": "the 3rd floor.",
+    "pos": "phr.",
+    "meaning": "古代歷史與禮品店",
+    "example": "【短文理解】[Museum Floor Guide] 1st Floor: Ancient History & Gift Shop. 2nd Floor: Traditional Asian Art. 3rd Floor: Modern Painting & Café. Restrooms are located on every floor next to the elevator.\nQ: On which floor can a visitor find both modern paintings and a café?",
+    "exampleZh": "導覽指出三樓配置為「3rd Floor: Modern Painting & Café」，因此現代畫作與咖啡廳均在三樓，選 B"
+  },
+  "OPEN FIRES ON THE GRASS": {
+    "word": "open fires on the grass.",
+    "pos": "phr.",
+    "meaning": "草地上嚴禁生明火",
+    "example": "【短文理解】[Holiday Camping Sign] Welcome to Green Valley Campsite. Quiet hours are from 10:00 p.m. to 7:00 a.m. Open fires on the grass are strictly forbidden. Please throw your garbage into the marked bins near the gate.\nQ: What is strictly forbidden at this campsite?",
+    "exampleZh": "營區告示明確指出「Open fires on the grass are strictly forbidden.」（草地上嚴禁生明火），故選 C"
+  },
+  "ELEVATOR 1 NEAR EXIT 4": {
+    "word": "elevator 1 near exit 4.",
+    "pos": "phr.",
+    "meaning": "elevator 1 near exit 4.",
+    "example": "【短文理解】[Notice at Subway Station Gate] Attention passengers: Elevator 2 is under maintenance today. Passengers with wheelchairs or baby strollers please use Elevator 1 near Exit 4.\nQ: Which elevator should people with baby strollers use today?",
+    "exampleZh": "告示指引推嬰兒車或輪椅的乘客「please use Elevator 1 near Exit 4」，故選 D"
+  },
+  "CHEAP": {
+    "word": "cheap",
+    "pos": "adj.",
+    "meaning": "便宜的",
+    "example": "This hotel is cheap and clean.",
+    "exampleZh": "這家飯店便宜又乾淨。"
+  },
+  "THIS TUESDAY MORNING": {
+    "word": "this tuesday morning",
+    "pos": "sent.",
+    "meaning": "這星期二早上",
+    "example": "This tuesday morning.",
+    "exampleZh": "這星期二早上。"
+  },
+  "AT THE BUS STOP": {
+    "word": "at the bus stop",
+    "pos": "phr.",
+    "meaning": "在公車站牌那裡",
+    "example": "At the bus stop.",
+    "exampleZh": "在公車站牌那裡。"
+  },
+  "DO YOU NEED A BAG": {
+    "word": "do you need a bag",
+    "pos": "sent.",
+    "meaning": "需要袋子嗎",
+    "example": "Do you need a bag.",
+    "exampleZh": "需要袋子嗎。"
+  },
+  "YOU ARE VERY WELCOME": {
+    "word": "you are very welcome",
+    "pos": "sent.",
+    "meaning": "不客氣",
+    "example": "You are very welcome.",
+    "exampleZh": "不客氣；很樂意。"
+  },
+  "COULD I SEE THE MENU PLEASE": {
+    "word": "could i see the menu please",
+    "pos": "sent.",
+    "meaning": "我可以看菜單嗎？",
+    "example": "Could i see the menu please.",
+    "exampleZh": "我可以看菜單嗎？"
+  },
+  "WHAT IS THE SPECIAL TODAY": {
+    "word": "what is the special today",
+    "pos": "sent.",
+    "meaning": "今天的特別推薦是什麼？",
+    "example": "What is the special today.",
+    "exampleZh": "今天的特別推薦是什麼？"
+  },
+  "COULD YOU PLEASE HELP ME": {
+    "word": "could you please help me",
+    "pos": "phr.",
+    "meaning": "請問你能幫我嗎？",
+    "example": "Could you please help me.",
+    "exampleZh": "請問你能幫我嗎？"
+  },
+  "IT TAKES FIVE MINUTES TO WALK": {
+    "word": "it takes five minutes to walk",
+    "pos": "sent.",
+    "meaning": "走到那裡只要五分鐘",
+    "example": "It takes five minutes to walk.",
+    "exampleZh": "走到那裡只要五分鐘。"
+  },
+  "WHERE ARE THE FITTING ROOMS": {
+    "word": "where are the fitting rooms",
+    "pos": "sent.",
+    "meaning": "請問試衣間在哪裡？",
+    "example": "Where are the fitting rooms.",
+    "exampleZh": "請問試衣間在哪裡？"
+  },
+  "THIS SHIRT IS TOO SMALL": {
+    "word": "this shirt is too small",
+    "pos": "sent.",
+    "meaning": "這個襯衫太小了",
+    "example": "This shirt is too small.",
+    "exampleZh": "這個襯衫太小了。"
+  },
+  "CAN I TRY ANOTHER COLOR": {
+    "word": "can i try another color",
+    "pos": "sent.",
+    "meaning": "我可以試穿別的顏色嗎？",
+    "example": "Can i try another color.",
+    "exampleZh": "我可以試穿別的顏色嗎？"
+  },
+  "LET US MEET ON THURSDAY AFTERNOON": {
+    "word": "let us meet on thursday afternoon",
+    "pos": "sent.",
+    "meaning": "我們星期四下午見面吧",
+    "example": "Let us meet on thursday afternoon.",
+    "exampleZh": "我們星期四下午見面吧。"
+  },
+  "EMAILS": {
+    "word": "emails",
+    "pos": "n.",
+    "meaning": "emails",
+    "example": "The clerk writes and sends many emails to the boss every day.",
+    "exampleZh": "此語境充分體現了「emails」的實際運用。"
+  },
+  "HOW MANY": {
+    "word": "how many",
+    "pos": "sent.",
+    "meaning": "可數名詞複數",
+    "example": "how many birds are there in the park?",
+    "exampleZh": "此語境充分體現了「可數名詞複數」的實際運用。"
+  },
+  "ARRIVES": {
+    "word": "arrives",
+    "pos": "n.",
+    "meaning": "arrives",
+    "example": "When the taxi arrives, we can go to the movies.",
+    "exampleZh": "此語境充分體現了「arrives」的實際運用。"
+  },
+  "IT IS TOO BIG FOR THE ROOM": {
+    "word": "it is too big for the room.",
+    "pos": "phr.",
+    "meaning": "新桌子對我的房間來說太大了",
+    "example": "【短文理解】[Email] Hello, the new desk is too big for my room. I want to put it in the hall. Can you help me move it at 15:00?\nQ: Why does the writer want to move the desk?",
+    "exampleZh": "信中提到「the new desk is too big for my room.（新桌子對我的房間來說太大了）」，這是想移動桌子的原因"
+  },
+  "0 DOLLARS": {
+    "word": "0 dollars",
+    "pos": "phr.",
+    "meaning": "腳踏車免費",
+    "example": "【短文理解】[Sign] Parking: Cars $50/hour, Taxis $30/hour. Bicycles are free.\nQ: How much does it cost to park a bicycle?",
+    "exampleZh": "告示寫著「Bicycles are free.（腳踏車免費）」，因此費用是 0 元"
+  },
+  "FEED THE BIRD": {
+    "word": "feed the bird",
+    "pos": "phr.",
+    "meaning": "要求媽媽做的事情",
+    "example": "We should focus on the usage of feed the bird in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「要求媽媽做的事情」的核心用法。"
+  },
+  "A NEW MOVIE": {
+    "word": "a new movie",
+    "pos": "phr.",
+    "meaning": "新電影",
+    "example": "We should focus on the usage of a new movie in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「新電影」的核心用法。"
+  },
+  "MUCH": {
+    "word": "much",
+    "pos": "n.",
+    "meaning": "本題測試數量形容詞",
+    "example": "How much sugar do you want in your tea?",
+    "exampleZh": "本題測試數量形容詞。"
+  },
+  "ONE": {
+    "word": "one",
+    "pos": "n.",
+    "meaning": "一",
+    "example": "One.",
+    "exampleZh": "一。"
+  },
+  "CHEESE": {
+    "word": "cheese",
+    "pos": "n.",
+    "meaning": "本題測試短文細節",
+    "example": "This example demonstrates cheese.",
+    "exampleZh": "此例句展示了「本題測試短文細節」。"
+  },
+  "7 DAYS": {
+    "word": "7 days",
+    "pos": "phr.",
+    "meaning": "本題測試短文細節搜尋",
+    "example": "【短文理解】[Library Notice] Welcome to the Town Library. Books can be borrowed for 14 days. DVDs can be borrowed for 7 days. If you return items late, you must pay 5 dollars for each day.\nQ: How long can a person keep a DVD?",
+    "exampleZh": "本題測試短文細節搜尋"
+  },
+  "SPRING": {
+    "word": "spring",
+    "pos": "n.",
+    "meaning": "春天",
+    "example": "A: Which season do you like? B: I like spring, because I enjoy seeing the beautiful flowers.",
+    "exampleZh": "本題測試季節字彙與語境推論。"
+  },
+  "GETS": {
+    "word": "gets",
+    "pos": "n.",
+    "meaning": "本題測試現在簡單式",
+    "example": "In Taiwan, the air gets very hot and humid in summer.",
+    "exampleZh": "本題測試現在簡單式。"
+  },
+  "IN AUTUMN": {
+    "word": "in autumn",
+    "pos": "phr.",
+    "meaning": "我們去年秋天拜訪了京都",
+    "example": "We should focus on the usage of in autumn in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「我們去年秋天拜訪了京都」的核心用法。"
+  },
+  "SHEEP": {
+    "word": "sheep",
+    "pos": "n.",
+    "meaning": "本題測試不規則複數名詞",
+    "example": "There are three sheep sleeping under the tall tree.",
+    "exampleZh": "本題測試不規則複數名詞。"
+  },
+  "150 DOLLARS": {
+    "word": "150 dollars",
+    "pos": "phr.",
+    "meaning": "本題測試短文資訊統整",
+    "example": "【短文理解】[Farm Poster] Come to Happy Farm this weekend! You can ride a pony, feed the ducks, and pick fresh tomatoes. The price is 100 dollars for adults and 50 dollars for children under twelve.\nQ: How much is the cost for a man and his ten-year-old son?",
+    "exampleZh": "本題測試短文資訊統整"
+  },
+  "GIVE FOOD TO THE LIONS": {
+    "word": "give food to the lions",
+    "pos": "phr.",
+    "meaning": "不要餵食獅子",
+    "example": "【短文理解】[Zoo Sign] Welcome to the Lion Zone. Please stay behind the red line. Do not feed the lions. They sleep a lot, so please do not make loud sounds.\nQ: What should visitors NOT do?",
+    "exampleZh": "本題測試短文細節"
+  },
+  "IN THE BOX": {
+    "word": "in the box",
+    "pos": "phr.",
+    "meaning": "此題測試細節讀取",
+    "example": "We should focus on the usage of in the box in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試細節讀取」的核心用法。"
+  },
+  "A TV": {
+    "word": "a tv",
+    "pos": "phr.",
+    "meaning": "此題測試否定訊息的理解",
+    "example": "We should focus on the usage of a tv in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試否定訊息的理解」的核心用法。"
+  },
+  "NEAR THE DOOR": {
+    "word": "near the door",
+    "pos": "phr.",
+    "meaning": "此題測試相對位置的理解",
+    "example": "We should focus on the usage of near the door in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試相對位置的理解」的核心用法。"
+  },
+  "AT NIGHT": {
+    "word": "at night",
+    "pos": "phr.",
+    "meaning": "此題測試時間細節",
+    "example": "We should focus on the usage of at night in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試時間細節」的核心用法。"
+  },
+  "BROWN": {
+    "word": "brown",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "This example demonstrates brown.",
+    "exampleZh": "此例句展示了「繁體中文解說」。"
+  },
+  "60 DOLLARS": {
+    "word": "60 dollars",
+    "pos": "phr.",
+    "meaning": "麵包加牛奶的價格",
+    "example": "【短文理解】[Shop Sign] Breakfast Set: Bread and milk for 50 dollars. Salad and tea for 60 dollars. Q: How much is the salad and tea?",
+    "exampleZh": "繁體中文解說：此題測試價格資訊的配對"
+  },
+  "NOODLES AND FISH": {
+    "word": "noodles and fish",
+    "pos": "phr.",
+    "meaning": "此題測試食物細節",
+    "example": "We should focus on the usage of noodles and fish in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試食物細節」的核心用法。"
+  },
+  "ON THE TABLE": {
+    "word": "on the table",
+    "pos": "phr.",
+    "meaning": "令理解",
+    "example": "We should focus on the usage of on the table in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試指令理解」的核心用法。"
+  },
+  "A HAT": {
+    "word": "a hat",
+    "pos": "phr.",
+    "meaning": "此題測試購物意圖",
+    "example": "We should focus on the usage of a hat in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試購物意圖」的核心用法。"
+  },
+  "AT THE SCHOOL": {
+    "word": "at the school",
+    "pos": "phr.",
+    "meaning": "此題測試時間表查閱能力",
+    "example": "We should focus on the usage of at the school in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試時間表查閱能力」的核心用法。"
+  },
+  "STUDENTS": {
+    "word": "students",
+    "pos": "n.",
+    "meaning": "繁體中文解說",
+    "example": "This example demonstrates students.",
+    "exampleZh": "此例句展示了「繁體中文解說」。"
+  },
+  "PLAYED A GAME": {
+    "word": "played a game",
+    "pos": "phr.",
+    "meaning": "此題測試事件的先後順序",
+    "example": "We should focus on the usage of played a game in modern English.",
+    "exampleZh": "在現代英文語境中應充分掌握「此題測試事件的先後順序」的核心用法。"
   }
 }

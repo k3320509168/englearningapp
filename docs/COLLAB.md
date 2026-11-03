@@ -355,3 +355,23 @@
   ⑨ **真機 CDP 截圖工具實裝（`scripts/cdp-screen-audit.mjs`）**：
      - 產出 375×812、1366×768、1920×1080 三大尺寸共 30 張全彈窗真機截圖，驗證所有介面均完美無瑕。
   ⑩ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`validate:questions` 15,865 題 0 錯誤 0 警告、`deep-question-audit.ts` 15,003 題 0 錯誤 0 警告、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
+
+- 2026-11-03 Antigravity｜冒險圖鑑分頁還原＋手機隊伍點擊一鍵替換＋手勢衝突隔離＋記憶體Canvas與空指針閃退根治交付：
+  ① **冒險圖鑑大區域分頁（Pre-A1～C2）還原與不被壓縮根治**：
+     - 在 `src/index.css` 與 `CodexModal.tsx` 為 `.tabs`、`.tabs-scroll`、`.modal-body > .tabs` 全面實裝 `flex: 0 0 auto !important; min-height: 48px; width: 100%;`，徹底根絕 Flex 演算法將橫向分頁壓縮為 4px 細線的缺陷；
+     - 經 Chrome CDP 真機實測驗證，375×812、1366×768、1920×1080 三大尺寸下，大區域 Tabs 高度精準穩定為 **63px**，10 大區域（Pre-A1 至 C2）全數清晰呈現並支援橫向滑動。
+  ② **手機隊伍換人操作困難徹底解決（雙軌制：點擊替換＋順暢拖曳）**：
+     - 實裝「直覺點擊一鍵替換（Tap-to-Swap）」防呆換人機制（`HeroModal.tsx`）：
+       - 隊伍未滿時：點選英雄直接點「⚔️ 加入隊伍」；
+       - 隊伍滿員（4人）時：告別「隊伍已滿」不可點擊之窘境，點選未上陣英雄直接顯示「🔄 替換【第 X 位 目標名字】」，並提供 1位/2位/3位/4位 快速切換按鈕，單手點擊 1 秒完成換人，完全免除長按拖曳之苦；
+       - 選中出戰隊員時：除隊長外直接提供「🚪 下陣離隊」按鈕，不必滑到養成最底部。
+     - 瀏覽器手勢衝突徹底根除（`src/index.css` & `usePartyDrag.ts`）：
+       - `.party-slot`、`.hero-tile`、`.hero-tile img` 注入 `touch-action: none; user-select: none; -webkit-touch-callout: none;`，並將圖片設置 `pointer-events: none;`，徹底禁止 iOS/Android 長按彈出系統「拷貝/儲存圖片/分享」選單，徹底消除滾動手勢打架；
+       - `usePartyDrag.ts` 將長按響應由 250ms 調優至 180ms，移動容差放寬至 14px（防止手機微震誤殺），並整合 PointerCapture 與 PointerCancel 容錯，拖曳換位順暢無阻。
+  ③ **隊伍介面隨機閃退（Crash）徹底根治**：
+     - 記憶體暴增/Canvas OOM 閃退治本：在 `src/game/art/sprites.ts` 建立 `heroPortraitCache` 與 `avatarDataUrlCache` 模組級記憶體快取，英雄一生只繪製一次；`HeroModal.tsx` 移除一次性同步為全部英雄建立 50+ Canvas 的低效代碼，改為按需讀取 `getPortrait(id)`，徹底消滅手機端 WebKit 記憶體壓力崩潰；
+     - 空指針崩潰防禦：`WeaponSlot` 全面使用可選鏈 `s.weapons?.[wp.id]` 與 `s.weaponShards?.[wp.id]`，根絕 TypeError 空指針崩潰；`sellHero` 送別英雄後若 `selected === id`，安全重置選取態回主角，徹底防禦選中態懸空崩潰。
+  ④ **手機局域網連線診斷與指引**：
+     - Vite 正在以 `0.0.0.0:5173` 正常監聽中；
+     - 診斷顯示 Mac 具備有線網卡 `en0` (192.168.68.106) 與無線 Wi-Fi `en1` (192.168.68.107)；若手機連線 106 逾時，係因家用路由器 AP 隔離或有線/無線網段阻斷，手機直連 `http://192.168.68.107:5173/` 即可秒連，並確認關閉 VPN 或 iCloud 私密轉送。
+  ⑤ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`npm run build` 通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。

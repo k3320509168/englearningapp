@@ -314,7 +314,16 @@ export function pixelDataUrl(rows: string[], palette: Palette, scale = 6, width?
   return canvas.toDataURL();
 }
 
-export const heroDataUrl = (hero: HeroId, scale = 3) => avatarDataUrl(heroCharacter(heroDef(hero)), 'idle', scale);
+const heroPortraitCache = new Map<string, string>();
+export const heroDataUrl = (hero: HeroId, scale = 3): string => {
+  const key = `${hero}_${scale}`;
+  let cached = heroPortraitCache.get(key);
+  if (!cached) {
+    cached = avatarDataUrl(heroCharacter(heroDef(hero)), 'idle', scale);
+    heroPortraitCache.set(key, cached);
+  }
+  return cached;
+};
 
 export const heroKey = (hero: HeroId, frame: AvatarFrame) => `hero_${hero}_${frame}`;
 export const monsterKey = (kind: MonsterKind, el: Element) => `mon_${kind}_${el}`;
@@ -365,9 +374,16 @@ export function registerAvatar(scene: Phaser.Scene, c: Character, tier = 0) {
   });
 }
 
+const avatarDataUrlCache = new Map<string, string>();
 export function avatarDataUrl(c: Character, frame: AvatarFrame = 'idle', scale = 6, tier = 0): string {
-  const { rows, palette } = composeAvatar(c, frame, tier);
-  return pixelDataUrl(rows, palette, scale);
+  const key = `${c.gender}_${c.skin}_${c.hair}_${c.hairColor}_${c.classId}_${c.element}_${frame}_${scale}_${tier}`;
+  let cached = avatarDataUrlCache.get(key);
+  if (!cached) {
+    const { rows, palette } = composeAvatar(c, frame, tier);
+    cached = pixelDataUrl(rows, palette, scale);
+    avatarDataUrlCache.set(key, cached);
+  }
+  return cached;
 }
 
 // 夥伴英雄的貼圖（用到時才畫）

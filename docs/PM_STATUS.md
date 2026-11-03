@@ -363,3 +363,37 @@ flowchart LR
 | **月營運成本** | 約 **$150 ~ $300 USD / 月** | 約 **$25 ~ $45 USD / 月**（性價比極高，維護零負擔） |
 | **維運難度** | 高（需維護 VPC、安全組、OS 修補、Docker 容器編排） | **極低**（完全託管，專注於前端與資料邏輯，符合小團隊敏捷開發） |
 
+
+---
+
+## 7. 2026-11-03 UI/UX 細節打磨與關鍵缺陷攻克
+
+### 7.1 冒險圖鑑大區域分頁（Pre-A1～C2）還原與不被壓縮根治
+- **根本原因定位**：`.modal-body` 為 Flex 列向佈局，子層 `.tabs.tabs-scroll` 未設 `flex-shrink: 0`。當圖鑑網格內容展開時，Flex 計算壓縮剩餘空間，將橫向滑動分頁壓迫為 4px 細線，導致 10 大區域（Pre-A1 至 C2）按鈕視覺消失。
+- **徹底修復措施**：在 `src/index.css` 與 `CodexModal.tsx` 全面配置 `.modal-body > .tabs`, `.tabs.tabs-scroll { flex: 0 0 auto !important; min-height: 48px; width: 100%; }`。
+- **真機驗收**：Chrome CDP 375×812、1366×768、1920×1080 三大尺寸實測，大區域 Tabs 高度穩定精準為 **63px**，10 大區域按鈕全數可見並支援順暢橫滑。
+
+### 7.2 手機隊伍換人操作困難徹底解決（雙軌制：點擊替換＋順暢拖曳）
+- **痛點根治**：
+  1. **實裝直覺「點擊一鍵替換（Tap-to-Swap）」**（`HeroModal.tsx`）：
+     - 隊伍未滿時：點選英雄直接點「⚔️ 加入隊伍」；
+     - 隊伍滿員（4人）時：告別「隊伍已滿」不可點擊之窘境，點選未上陣英雄直接顯示「🔄 替換【第 X 位 目標名字】」，並提供 1位/2位/3位/4位 快速切換按鈕，單手點擊 1 秒完成換人，完全免除長按拖曳之苦；
+     - 選中出戰隊員時：除隊長外直接提供「🚪 下陣離隊」按鈕，不必滑到養成最底部。
+  2. **手勢衝突與瀏覽器原生選單徹底隔離**（`src/index.css` & `usePartyDrag.ts`）：
+     - `.party-slot`、`.hero-tile`、`.hero-tile img` 注入 `touch-action: none; user-select: none; -webkit-touch-callout: none;`，並將圖片設置 `pointer-events: none;`，徹底禁止 iOS/Android 長按彈出系統「拷貝/儲存圖片/分享」選單，徹底消除滾動手勢打架；
+     - `usePartyDrag.ts` 將長按響應由 250ms 調優至 180ms，移動容差放寬至 14px（防止手機微震誤殺），並整合 PointerCapture 與 PointerCancel 容錯，拖曳換位順暢無阻。
+
+### 7.3 隊伍介面隨機閃退（Crash）徹底根治
+- **記憶體暴增/Canvas OOM 閃退治本**：
+  - 原架構每次渲染同步對全部 50+ 位英雄建立 Canvas 並執行 `toDataURL`，觸發手機 WebKit Memory Pressure Warning 導致網頁崩潰重新載入；
+  - 在 `src/game/art/sprites.ts` 建立 `heroPortraitCache` 與 `avatarDataUrlCache` 模組級記憶體快取，英雄一生只繪製一次；
+  - `HeroModal.tsx` 改為按需讀取 `getPortrait(id)`，DOM 記憶體佔用驟降，徹底消滅 OOM 閃退。
+- **空指針崩潰防禦**：
+  - `WeaponSlot` 全面使用可選鏈 `s.weapons?.[wp.id]` 與 `s.weaponShards?.[wp.id]`，根絕 TypeError 空指針崩潰；
+  - `sellHero` 送別英雄後若 `selected === id`，安全重置選取態回主角，徹底防禦選中態懸空崩潰。
+
+### 7.4 驗收狀態
+- `npx tsc -b`：0 錯誤
+- `npx eslint src --quiet`：0 錯誤
+- `npx vitest run`：51 個測試檔案、415 個單元測試 100% 全數通過
+- `npm run build`：生產打包順暢成功

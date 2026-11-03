@@ -20,8 +20,8 @@ function targetAt(x: number, y: number): DropTarget | null {
   return el.dataset.slot !== undefined ? Number(el.dataset.slot) : 'bench';
 }
 
-// 英雄卡拖拉換隊：滑鼠按住移動超過 6px 就開始拖；手機長按 0.25 秒才開始拖（一般滑動仍然是捲動畫面）。
-// 拖拉結束後會吃掉緊接著的那次 click，避免放開時順便打開英雄詳細資料
+// 英雄卡拖拉換隊：滑鼠按住移動超過 6px 開始拖；手機長按 0.18 秒開始拖。
+// 具備手勢衝突隔離、防顫動容差、PointerCapture 與點擊防呆保護
 export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void) {
   const [drag, setDrag] = useState<DragState | null>(null);
   const suppressClick = useRef(false);
@@ -34,55 +34,90 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
     let x = sx;
     let y = sy;
     let active = false;
+    const targetEl = e.currentTarget as HTMLElement;
+    const pointerId = e.pointerId;
 
     const begin = () => {
       active = true;
       suppressClick.current = true;
+      try {
+        if (typeof document !== 'undefined') {
+          document.body.style.userSelect = 'none';
+          document.body.style.webkitUserSelect = 'none';
+        }
+      } catch { /* ignore */ }
       if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
         try { navigator.vibrate(35); } catch { /* ignore */ }
       }
       setDrag({ id, img, x, y, over: targetAt(x, y) });
     };
-    const timer = touch ? window.setTimeout(begin, 250) : 0;
+
+    const timer = touch ? window.setTimeout(begin, 180) : 0;
 
     const move = (ev: PointerEvent) => {
       x = ev.clientX;
       y = ev.clientY;
       if (!active) {
         const dist = Math.hypot(x - sx, y - sy);
-        if (touch && dist > 8) cleanup(); // 長按前就滑動：當作捲動
+        if (touch && dist > 14) cleanup(); // 長按前大幅滑動：判定為原生滾動
         else if (!touch && dist > 6) begin();
         return;
       }
+      // 已啟動拖曳時，阻止瀏覽器原生手勢與滾動
+      ev.preventDefault();
       setDrag(d => d && { ...d, x, y, over: targetAt(x, y) });
     };
+
     const finish = (ev: PointerEvent, drop: boolean) => {
       if (active) {
         const target = drop ? targetAt(ev.clientX, ev.clientY) : null;
         if (target !== null) onDrop(id, target);
         setDrag(null);
-        window.setTimeout(() => { suppressClick.current = false; }, 0);
+        window.setTimeout(() => { suppressClick.current = false; }, 80);
       }
       cleanup();
     };
+
     const up = (ev: PointerEvent) => finish(ev, true);
-    const cancel = (ev: PointerEvent) => finish(ev, false);
+    // 在觸發 pointercancel 時，若已經在拖曳中，檢查是否停留在有效格子上
+    const cancel = (ev: PointerEvent) => {
+      if (active) {
+        const target = targetAt(ev.clientX, ev.clientY);
+        if (target !== null) {
+          finish(ev, true);
+          return;
+        }
+      }
+      finish(ev, false);
+    };
+
     // 拖拉中不要讓手機捲動畫面
     const blockScroll = (ev: TouchEvent) => { if (active) ev.preventDefault(); };
+
     function cleanup() {
       window.clearTimeout(timer);
+      try {
+        if (typeof document !== 'undefined') {
+          document.body.style.userSelect = '';
+          document.body.style.webkitUserSelect = '';
+        }
+        if (targetEl && targetEl.hasPointerCapture?.(pointerId)) {
+          targetEl.releasePointerCapture(pointerId);
+        }
+      } catch { /* ignore */ }
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
       window.removeEventListener('pointercancel', cancel);
       window.removeEventListener('touchmove', blockScroll);
     }
-    window.addEventListener('pointermove', move);
+
+    window.addEventListener('pointermove', move, { passive: false });
     window.addEventListener('pointerup', up);
     window.addEventListener('pointercancel', cancel);
     window.addEventListener('touchmove', blockScroll, { passive: false });
   };
 
-  // 包住原本的 click：剛拖完就不觸發
+  // 包住原本的 click：剛拖完就不觸發，避免拖曳放開時意外點擊
   const guardClick = (fn: () => void) => () => {
     if (suppressClick.current) return;
     fn();

@@ -30,27 +30,42 @@ import { weaponForHero, weaponForClass, weaponAtkMultiplier, weaponUpgradeCost }
 type Filter = 'owned' | 'all' | Rarity;
 
 // 英雄：上方是出戰隊伍（最多 4 人，第一位是隊長），下方是 50 位英雄的圖鑑。
-// 點英雄看詳細資料、加入／離開隊伍、升品階。
+// 支援直覺的點擊換人/替換（防呆免拖曳）與手勢隔離拖曳雙軌制，極致流暢防閃退
 export default function HeroModal() {
   const { gold, heroes, party, character, heroShards, heroTier, heroStars, wishShards, heroLevel, player, tickets, trueName, summonCounter, toggleMember, setLeader, placeMember, clearParty, tierUp, starUp, trainHero, trainHeroMax, sellHero } = useSaveStore();
   const { closeModal, openModal, openTrueName } = useUiStore();
   const [filter, setFilter] = useState<Filter>('owned');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<MemberId>(party[0] ?? 'player');
+  const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
   const [tab, setTab] = useState<'skills' | 'growth'>('skills');
   const [help, setHelp] = useState(false);
 
-  const portraits = useMemo(() => {
-    const map: Record<string, string> = Object.fromEntries(HEROES.map(h => [h.id, heroDataUrl(h.id, 2)]));
-    if (character) map.player = avatarDataUrl(character, 'idle', 2, player.classPath.length);
-    return map;
-  }, [character, player.classPath.length]);
+  // 記憶體快取讀取頭像（按需讀取，不預建 50 份 Canvas，杜絕 OOM 閃退）
+  const getPortrait = (id: MemberId): string => {
+    if (id === 'player') {
+      return character ? avatarDataUrl(character, 'idle', 2, player.classPath.length) : '';
+    }
+    return heroDataUrl(id, 2);
+  };
+
+  // 防呆安全的當前選中角色：避免送別或非法 ID 引發空指標崩潰
+  const currentSelected: MemberId = (selected === 'player'
+    ? (character ? 'player' : (party[0] ?? 'player'))
+    : (heroes.includes(selected) ? selected : (party[0] ?? 'player')));
 
   // 拖拉換隊：拖到隊伍格子＝上場／換位／替換；隊伍裡的英雄拖回圖鑑＝離隊
   const { drag, start, guardClick } = usePartyDrag((id, target) => {
-    if (target === 'bench') { if (party.includes(id) && party.length > 1) toggleMember(id); }
-    else placeMember(id, target);
+    if (target === 'bench') {
+      if (party.includes(id) && party.length > 1) {
+        toggleMember(id);
+        if (selected === id) setSelected('player');
+      }
+    } else {
+      placeMember(id, target);
+      setSelectedSlot(target);
+    }
     sfx.coin();
   });
 
@@ -81,7 +96,7 @@ export default function HeroModal() {
             <span className="hero-head-actions">
               <span className="shop-gold">🪙 {gold}</span>
               {party.length > 1 && (
-                <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected('player'); }}>全部撤下</button>
+                <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { clearParty(); setSelected('player'); setSelectedSlot(0); }}>全部撤下</button>
               )}
               <button className={`btn btn-small help-btn ${help ? 'btn-primary' : 'btn-ghost'}`} onMouseDown={keepFocus} onClick={() => setHelp(h => !h)} aria-expanded={help} aria-label="說明">?</button>
             </span>
@@ -91,17 +106,43 @@ export default function HeroModal() {
             {Array.from({ length: PARTY_MAX }, (_, i) => {
               const id = party[i];
               const over = drag?.over === i ? 'is-drop' : '';
-              // 每一格都有出手順序的數字與底色，英雄放上去時數字還在、只是被英雄擋住一部分
+              const isSelectedSlot = selectedSlot === i;
               const order = <span className="slot-num" aria-hidden>{i + 1}</span>;
-              if (!id) return <div key={i} data-slot={i} className={`party-slot slot-${i + 1} is-empty ${over}`}>{order}<small>拖曳英雄到這裡</small></div>;
+
+              if (!id) {
+                return (
+                  <button
+                    key={i}
+                    data-slot={i}
+                    className={`party-slot slot-${i + 1} is-empty ${over} ${isSelectedSlot ? 'is-target' : ''}`}
+                    onClick={() => setSelectedSlot(i)}
+                    aria-label={`空位 ${i + 1}`}
+                  >
+                    {order}
+                    <small>{isSelectedSlot ? '已選中空位' : '點選或拖曳'}</small>
+                  </button>
+                );
+              }
+
               const name = id === 'player' ? character?.name ?? '' : heroWord(heroDef(id));
+              const portrait = getPortrait(id);
               return (
-                <button key={id} data-slot={i} className={`party-slot slot-${i + 1} ${selected === id ? 'is-selected' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
-                  onMouseDown={keepFocus} onPointerDown={start(id, portraits[id])} onClick={guardClick(() => { sfx.click(); setSelected(id); })}
-                  aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}>
+                <button
+                  key={id}
+                  data-slot={i}
+                  className={`party-slot slot-${i + 1} ${currentSelected === id ? 'is-selected' : ''} ${isSelectedSlot ? 'is-target' : ''} ${over} ${drag?.id === id ? 'is-dragging' : ''}`}
+                  onMouseDown={keepFocus}
+                  onPointerDown={start(id, portrait)}
+                  onClick={guardClick(() => {
+                    sfx.click();
+                    setSelected(id);
+                    setSelectedSlot(i);
+                  })}
+                  aria-label={`第 ${i + 1} 位${i === 0 ? '（隊長）' : ''}：${name}`}
+                >
                   {order}
                   {i === 0 && <span className="party-pos">👑</span>}
-                  <img src={portraits[id]} alt="" draggable={false} />
+                  <img src={portrait} alt="" draggable={false} />
                   <span>{name}</span>
                   {id !== 'player' && <StarBadge id={id} compact />}
                 </button>
@@ -111,7 +152,7 @@ export default function HeroModal() {
         </section>
 
         <div className="hero-modal-scroll">
-          {selected && renderDetail(selected)}
+          {currentSelected && renderDetail(currentSelected)}
 
           <section className={`hero-collection ${drag?.over === 'bench' && party.includes(drag.id) ? 'is-drop' : ''}`} data-bench>
             <div className="collection-head">
@@ -151,9 +192,18 @@ export default function HeroModal() {
             <ul className="hero-tiles">
               {character && filter === 'owned' && !search && (
                 <li>
-                  <button className={`hero-tile ${party.includes('player') ? 'in-party' : ''}`} onMouseDown={keepFocus}
-                    onPointerDown={start('player', portraits.player)} onClick={guardClick(() => { sfx.click(); setSelected('player'); })}>
-                    <img src={portraits.player} alt="" draggable={false} />
+                  <button
+                    className={`hero-tile ${party.includes('player') ? 'in-party' : ''} ${currentSelected === 'player' ? 'is-selected' : ''}`}
+                    onMouseDown={keepFocus}
+                    onPointerDown={start('player', getPortrait('player'))}
+                    onClick={guardClick(() => {
+                      sfx.click();
+                      setSelected('player');
+                      const idx = party.indexOf('player');
+                      if (idx >= 0) setSelectedSlot(idx);
+                    })}
+                  >
+                    <img src={getPortrait('player')} alt="" draggable={false} />
                     <b>{character.name}</b>
                     <small>主角</small>
                   </button>
@@ -162,18 +212,25 @@ export default function HeroModal() {
               {list.map(h => {
                 const owned = heroes.includes(h.id);
                 const rarity = currentRarity(h, heroTier[h.id] ?? 0);
+                const inParty = party.includes(h.id);
+                const portrait = getPortrait(h.id);
                 return (
                   <li key={h.id}>
                     <button
-                      className={`hero-tile ${owned ? '' : 'is-locked'} ${party.includes(h.id) ? 'in-party' : ''}`}
+                      className={`hero-tile ${owned ? '' : 'is-locked'} ${inParty ? 'in-party' : ''} ${currentSelected === h.id ? 'is-selected' : ''}`}
                       style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}
                       onMouseDown={keepFocus}
-                      onPointerDown={owned ? start(h.id, portraits[h.id]) : undefined}
-                      onClick={guardClick(() => { sfx.click(); setSelected(h.id); })}
+                      onPointerDown={owned ? start(h.id, portrait) : undefined}
+                      onClick={guardClick(() => {
+                        sfx.click();
+                        setSelected(h.id);
+                        const idx = party.indexOf(h.id);
+                        if (idx >= 0) setSelectedSlot(idx);
+                      })}
                       aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
                     >
                       <span className="rarity-tag">{rarity}</span>
-                      <img src={portraits[h.id]} alt="" draggable={false} />
+                      <img src={portrait} alt="" draggable={false} />
                       <b>{owned ? heroWord(h) : '？？？'}{isTrueName(trueName[h.id]) && <span className="true-mark" title="真名英雄"> ✦</span>}</b>
                       <small>{owned ? heroTitle(h) : h.meaning}</small>
                       {(heroShards[h.id] ?? 0) > 0 && <span className="shard-tag">◆{heroShards[h.id]}</span>}
@@ -193,7 +250,6 @@ export default function HeroModal() {
   // 詳細資料（第十二輪重設計）：主卡（立繪、名字、星星、屬性、等級、三個數值、常用按鈕）＋「技能／養成」分頁。
   // 條件不足的按鈕不消失，直接顯示還缺什麼
   function renderDetail(id: MemberId) {
-    const pics = portraits;
     const inParty = party.includes(id);
     const pos = party.indexOf(id);
     const full = party.length >= PARTY_MAX;
@@ -207,7 +263,7 @@ export default function HeroModal() {
       return (
         <section className="hero-detail hd">
           <div className="hd-main">
-            <img src={pics.player} alt="" />
+            <img src={getPortrait('player')} alt="" draggable={false} />
             <div className="hd-info">
               <h3>{character.name} <span className="el-badge" style={{ '--el': el.color } as CSSProperties}>{el.name}</span></h3>
               <p className="muted">主角・{cls.name}・Lv {player.level}</p>
@@ -261,7 +317,7 @@ export default function HeroModal() {
     return (
       <section className="hero-detail hd" style={{ '--rarity': RARITY_INFO[rarity].color } as CSSProperties}>
         <div className="hd-main">
-          <img src={pics[id]} alt="" className={owned ? '' : 'is-locked'} />
+          <img src={getPortrait(id)} alt="" className={owned ? '' : 'is-locked'} draggable={false} />
           <div className="hd-info">
             <h3>
               <span className="rarity-tag inline">{rarity}</span>{' '}
@@ -277,7 +333,6 @@ export default function HeroModal() {
             </div>
             {owned ? (
               <div className="hd-actions">
-                {/* 第十五輪：一鍵訓練是主要按鈕，其他次要；離隊移到養成分頁最下面 */}
                 <span className="hd-train">
                   <button className="btn btn-small btn-primary" onMouseDown={keepFocus} onClick={() => { if (trainHeroMax(id) > 0) sfx.upgrade(); else sfx.cantAfford(); }} disabled={levelCap || gold < cost} title="金幣夠就一直升">一鍵訓練</button>
                   <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => { if (trainHero(id)) sfx.upgrade(); else sfx.cantAfford(); }} disabled={levelCap || gold < cost}>訓練 🪙{cost}</button>
@@ -353,22 +408,115 @@ export default function HeroModal() {
     return (
       <div className="sell-confirm">
         <small>送別後得到 🪙{value}，碎片會保留。{losses.length > 0 && <b className="sell-warn">會失去：{losses.join('、')}</b>}之後再召喚到會是新的英雄。</small>
-        <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { if (sellHero(id)) sfx.coin(); setSelling(null); }}>確定送別</button>
+        <button
+          className="btn btn-small btn-danger"
+          onMouseDown={keepFocus}
+          onClick={() => {
+            if (sellHero(id)) {
+              sfx.coin();
+              if (selected === id) {
+                setSelected('player');
+                setSelectedSlot(null);
+                setTab('skills');
+              }
+            }
+            setSelling(null);
+          }}
+        >
+          確定送別
+        </button>
         <button className="btn btn-small btn-ghost" onMouseDown={keepFocus} onClick={() => setSelling(null)}>取消</button>
       </div>
     );
   }
 
+  // 隊伍操作按鈕：加入、離隊、設為隊長，以及隊伍滿員時的「一鍵替換」防呆換人機制
   function renderMemberButtons(id: MemberId, inParty: boolean, pos: number, full: boolean) {
+    if (inParty) {
+      return (
+        <span className="hero-actions">
+          {pos > 0 && (
+            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { setLeader(id); sfx.click(); }}>
+              👑 設為隊長
+            </button>
+          )}
+          {party.length > 1 && (
+            <button
+              className="btn btn-ghost btn-small"
+              onMouseDown={keepFocus}
+              onClick={() => {
+                toggleMember(id);
+                setSelected('player');
+                setSelectedSlot(null);
+                sfx.click();
+              }}
+              title="離開目前出戰隊伍"
+            >
+              🚪 下陣離隊
+            </button>
+          )}
+        </span>
+      );
+    }
+
+    // 未在隊伍中且未滿：加入隊伍
+    if (!full) {
+      return (
+        <span className="hero-actions">
+          <button
+            className="btn btn-small btn-primary"
+            onMouseDown={keepFocus}
+            onClick={() => {
+              toggleMember(id);
+              setSelectedSlot(party.length);
+              sfx.upgrade();
+            }}
+          >
+            ⚔️ 加入隊伍
+          </button>
+        </span>
+      );
+    }
+
+    // 隊伍已滿 4 人：直覺一鍵替換（點選位置或預設替換最後一位，免拖曳）
+    const targetSlot = (selectedSlot !== null && selectedSlot >= 0 && selectedSlot < PARTY_MAX)
+      ? selectedSlot
+      : (party.length - 1);
+    const targetMember = party[targetSlot];
+    const targetName = targetMember === 'player' ? '主角' : (targetMember ? heroWord(heroDef(targetMember)) : `第 ${targetSlot + 1} 位`);
+
     return (
-      <span className="hero-actions">
-        {inParty ? (
-          <>
-            {pos > 0 && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setLeader(id)}>設為隊長</button>}
-          </>
-        ) : (
-          <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => toggleMember(id)} disabled={full}>{full ? '隊伍已滿' : '加入隊伍'}</button>
-        )}
+      <span className="hero-actions hero-replace-actions">
+        <button
+          className="btn btn-small btn-primary"
+          onMouseDown={keepFocus}
+          onClick={() => {
+            placeMember(id, targetSlot);
+            setSelectedSlot(targetSlot);
+            sfx.upgrade();
+          }}
+          title={`點擊直接替換【第 ${targetSlot + 1} 位：${targetName}】`}
+        >
+          🔄 替換【第 {targetSlot + 1} 位 {targetName}】
+        </button>
+        <span className="slot-quick-pick">
+          <small className="muted">換至：</small>
+          {party.map((m, idx) => (
+            <button
+              key={idx}
+              className={`btn btn-tiny ${targetSlot === idx ? 'btn-secondary' : 'btn-ghost'}`}
+              onMouseDown={keepFocus}
+              onClick={() => {
+                placeMember(id, idx);
+                setSelectedSlot(idx);
+                sfx.upgrade();
+              }}
+              title={`換到第 ${idx + 1} 位（${m === 'player' ? '主角' : heroWord(heroDef(m))}）`}
+            >
+              {idx + 1}位
+            </button>
+          ))}
+        </span>
       </span>
     );
   }
@@ -419,11 +567,11 @@ function GrowthRow({ title, effect, reqs, action, onAction }: { title: string; e
   );
 }
 
-// 專武欄位：SSR 英雄與主角專屬武器
+// 專武欄位：SSR 英雄與主角專屬武器（安全防禦性可選鏈，根除 TypeError 空指針）
 function WeaponSlot({ heroId, classId }: { heroId?: string; classId?: ClassId }) {
   const wp = heroId ? weaponForHero(heroId) : classId ? weaponForClass(classId) : undefined;
-  const userWp = useSaveStore(s => (wp ? s.weapons[wp.id] : undefined));
-  const shards = useSaveStore(s => (wp ? s.weaponShards[wp.id] ?? 0 : 0));
+  const userWp = useSaveStore(s => (wp && s.weapons ? s.weapons[wp.id] : undefined));
+  const shards = useSaveStore(s => (wp && s.weaponShards ? s.weaponShards[wp.id] ?? 0 : 0));
   const gold = useSaveStore(s => s.gold);
   const upgradeWeapon = useSaveStore(s => s.upgradeWeapon);
   if (!wp) return null;
@@ -487,7 +635,8 @@ function WeaponSlot({ heroId, classId }: { heroId?: string; classId?: ClassId })
 function HeroHelp() {
   return (
     <ul className="hero-help">
-      <li><b>出手順序</b>：格子上的數字就是出手順序，1 號是隊長（先出手、負責困難題）。把英雄卡拖進格子就能換人，拖回圖鑑就是離隊。</li>
+      <li><b>出手順序</b>：格子上的數字就是出手順序，1 號是隊長（先出手、負責困難題）。支援點擊直接換人或拖曳換位。</li>
+      <li><b>快速換人</b>：隊伍滿員時，點選想替換的格子或點選圖鑑中的英雄，直接點「🔄 替換」即可一鍵上陣，免去長按拖曳！</li>
       <li><b>星星</b>：SSR 英雄可以用碎片升星，每顆星生命與攻擊 +8%。滑鼠移到星星上（手機點一下）看還差多少碎片。</li>
       <li><b>碎片</b>：重複抽到的英雄會變成碎片；願望碎片（每日碎片題）可以補任何英雄。</li>
       <li><b>升品階</b>：碎片＋金幣＋真名考驗，每位英雄可以升一次（SSR 要先四星），能力大幅提升。</li>

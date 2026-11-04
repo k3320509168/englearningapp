@@ -73,10 +73,12 @@ export function codexItems(
       }
     }
 
-    // 2. 若為聽力/口說理解選擇題（q.speak 包含核心英文句子）
+    // 2. 若為聽力/口說理解選擇題（q.speak 包含核心英文句子或短語）
     if (!word && q.speak && /^[A-Za-z\s.,!?'"()-]+$/.test(q.speak.trim())) {
       const spk = q.speak.trim();
-      if (spk.length >= 2 && spk.length <= 80) {
+      const spkTokens = spk.split(/\s+/).filter(Boolean);
+      // 只有單字或 2~4 詞短片語才作為 word / phrase
+      if (spkTokens.length <= 4) {
         word = spk.toUpperCase();
         const entry = vocabByKey(spk);
         if (entry) v = entry;
@@ -85,19 +87,25 @@ export function codexItems(
 
     // 分類判定：
     // 若為單一純英文單字（無空格、無連字符、詞性非 phr/sent）➔ word (單字)
-    // 若為片語、日常交際短句 ➔ phrase (片語)
-    // 其他文法挖空、時態 ➔ grammar (文法)
+    // 若為 2~4 詞之片語短語 ➔ phrase (片語)
+    // 超過 4 詞的長句、文法挖空、時態 ➔ grammar (文法與句型)
+    const tokenCount = word ? word.trim().split(/\s+/).filter(Boolean).length : 0;
     const isSingleWord = Boolean(
       word &&
-      !word.includes(' ') &&
+      tokenCount === 1 &&
       !word.includes('-') &&
       !v?.pos?.toLowerCase().includes('phr') &&
       !v?.pos?.includes('片語') &&
       !v?.pos?.toLowerCase().includes('sent')
     );
-    const isPhrase = Boolean(word && !isSingleWord);
+    const isPhrase = Boolean(
+      word &&
+      !isSingleWord &&
+      tokenCount >= 2 &&
+      tokenCount <= 4
+    );
     const kind: 'word' | 'phrase' | 'grammar' = isSingleWord ? 'word' : (isPhrase ? 'phrase' : 'grammar');
-    const id = word ? `${kind}:${word}` : `g:${q.desc}`;
+    const id = word && kind !== 'grammar' ? `${kind}:${word}` : `g:${q.desc}`;
     const stats = codex[questionKey(q)];
 
     // 標題與釋義健全提取
@@ -141,7 +149,9 @@ export function codexItems(
     if (regionVocab) {
       for (const [key, v] of Object.entries(regionVocab)) {
         const upper = key.toUpperCase();
-        const isSingleWord = !key.includes(' ') && !key.includes('-') && !v.pos?.toLowerCase().includes('phr') && !v.pos?.includes('片語');
+        const tokenCount = upper.trim().split(/\s+/).filter(Boolean).length;
+        if (tokenCount > 4) continue; // 排除任何歷史遺留長句
+        const isSingleWord = tokenCount === 1 && !upper.includes('-') && !v.pos?.toLowerCase().includes('phr') && !v.pos?.includes('片語');
         const kind: 'word' | 'phrase' = isSingleWord ? 'word' : 'phrase';
         const id = `${kind}:${upper}`;
 

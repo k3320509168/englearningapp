@@ -92,7 +92,85 @@ const BASE_VOCAB: Record<string, VocabEntry> = {
   INFRASTRUCTURE: { pos: 'n.', meaning: '基礎建設', example: 'The city is investing in its infrastructure.', exampleZh: '這座城市正在投資基礎建設。' },
   SUSTAINABILITY: { pos: 'n.', meaning: '永續性', example: 'Sustainability is part of our business strategy.', exampleZh: '永續是我們商業策略的一部分。' },
   ENTREPRENEUR: { pos: 'n.', meaning: '創業家', example: 'He became a successful entrepreneur at 30.', exampleZh: '他三十歲就成為成功的創業家。' },
+  PANDA: { pos: 'n.', meaning: '熊貓；大貓熊', example: "The giant panda is eating bamboo.", exampleZh: '大貓熊正在吃竹子。' },
+  'SEE YOU': { pos: 'phr.', meaning: '再見；回頭見', example: "See you tomorrow morning.", exampleZh: '明天早上見。' },
+  'GOOD JOB': { pos: 'phr.', meaning: '做得好；太棒了', example: "Good job on finishing the assignment early.", exampleZh: '作業提早完成，做得好！' },
+  IAMTOM: { pos: 'phr.', meaning: '我是湯姆', example: "Hello, I am Tom.", exampleZh: '你好，我是湯姆。' },
   TRANSPARENCY: { pos: 'n.', meaning: '透明度', example: 'Investors expect transparency from the board.', exampleZh: '投資人期待董事會保持透明。' },
+
+  // ---------- 核心考綱必備單字 ----------
+  PUNCTUAL: { pos: 'adj.', meaning: '準時的', example: "Please be punctual for the meeting.", exampleZh: '開會請準時。' },
+  SCANNER: { pos: 'n.', meaning: '掃描器', example: "The scanner is next to the printer.", exampleZh: '掃描器在印表機旁邊。' },
+  WHOLESALE: { pos: 'n.', meaning: '批發', example: "We buy at wholesale prices.", exampleZh: '我們用批發價購買。' },
+  FRANCHISE: { pos: 'n.', meaning: '加盟店', example: "He owns a coffee franchise.", exampleZh: '他經營一家咖啡加盟店。' },
+  PREVALENT: { pos: 'adj.', meaning: '普遍的', example: "This view is prevalent among young people.", exampleZh: '這種看法在年輕人中很普遍。' },
+  CANDID: { pos: 'adj.', meaning: '坦白的', example: "Thank you for your candid feedback.", exampleZh: '謝謝你坦白的意見。' },
+  COMPLACENT: { pos: 'adj.', meaning: '自滿的', example: "We cannot become complacent.", exampleZh: '我們不能自滿。' },
+  CONTEMPLATE: { pos: 'v.', meaning: '仔細考慮', example: "He is contemplating a career change.", exampleZh: '他正在考慮轉換跑道。' },
+  DEFER: { pos: 'v.', meaning: '延後', example: "Payment can be deferred.", exampleZh: '付款可以延後。' },
+  FORMIDABLE: { pos: 'adj.', meaning: '強大的', example: "They are a formidable competitor.", exampleZh: '他們是強大的競爭對手。' },
+  IMPEDE: { pos: 'v.', meaning: '阻礙', example: "Bad weather impeded the work.", exampleZh: '壞天氣阻礙了工作。' },
+  RATIFY: { pos: 'v.', meaning: '批准', example: "The agreement was ratified in May.", exampleZh: '協議在五月獲得批准。' },
+  SUBSEQUENT: { pos: 'adj.', meaning: '後續的', example: "Subsequent meetings were shorter.", exampleZh: '後續的會議比較短。' },
+  DILIGENT: { pos: 'adj.', meaning: '勤奮的', example: "She is a diligent worker.", exampleZh: '她是勤奮的員工。' },
+  REITERATE: { pos: 'v.', meaning: '重申', example: "Let me reiterate the main point.", exampleZh: '讓我重申重點。' },
+  NEGLIGIBLE: { pos: 'adj.', meaning: '微不足道的', example: "The difference is negligible.", exampleZh: '差異微不足道。' },
+  QUINTESSENTIAL: { pos: 'adj.', meaning: '典型的', example: "It is the quintessential English pub.", exampleZh: '這是典型的英式酒吧。' },
+  OBFUSCATE: { pos: 'v.', meaning: '使模糊難懂', example: "Don t obfuscate the issue with jargon.", exampleZh: '別用術語把問題弄得難懂。' },
+  VERBOSE: { pos: 'adj.', meaning: '冗長的', example: "The report is too verbose.", exampleZh: '這份報告太冗長了。' },
+  CAPRICIOUS: { pos: 'adj.', meaning: '反覆無常的', example: "The weather here is capricious.", exampleZh: '這裡的天氣反覆無常。' },
+  CANDOR: { pos: 'n.', meaning: '坦率', example: "I appreciate your candor.", exampleZh: '我欣賞你的坦率。' },
+  ACUMEN: { pos: 'n.', meaning: '敏銳', example: "She has great business acumen.", exampleZh: '她很有商業頭腦。' },
+  DICHOTOMY: { pos: 'n.', meaning: '二分', example: "There is a dichotomy between theory and practice.", exampleZh: '理論與實務之間存在落差。' },
+  PANACEA: { pos: 'n.', meaning: '萬靈丹', example: "Technology is not a panacea.", exampleZh: '科技不是萬靈丹。' },
+  REPUDIATE: { pos: 'v.', meaning: '否認', example: "He repudiated the accusation.", exampleZh: '他否認了指控。' },
+  EXTRAPOLATE: { pos: 'v.', meaning: '推斷', example: "We cannot extrapolate from one case.", exampleZh: '我們不能從單一案例推斷。' },
+  EBULLIENT: { pos: 'adj.', meaning: '熱情洋溢的', example: "She was ebullient after the win.", exampleZh: '獲勝後她興高采烈。' },
+  PROPENSITY: { pos: 'n.', meaning: '傾向', example: "He has a propensity to exaggerate.", exampleZh: '他有誇大的傾向。' },
+  VICARIOUS: { pos: 'adj.', meaning: '間接感受的', example: "I felt a vicarious thrill.", exampleZh: '我感同身受地興奮。' },
+  ESCHEW: { pos: 'v.', meaning: '刻意避開', example: "She eschews fast food.", exampleZh: '她刻意不吃速食。' },
+  ABERRATION: { pos: 'n.', meaning: '異常', example: "The bad result was an aberration.", exampleZh: '那次糟糕的結果只是異常。' },
+  ACRIMONIOUS: { pos: 'adj.', meaning: '尖刻的', example: "They had an acrimonious divorce.", exampleZh: '他們的離婚鬧得很難看。' },
+  AMELIORATE: { pos: 'v.', meaning: '改善', example: "Steps were taken to ameliorate the situation.", exampleZh: '已採取措施改善情況。' },
+  ANATHEMA: { pos: 'n.', meaning: '深惡痛絕的事物', example: "Waste is anathema to him.", exampleZh: '他對浪費深惡痛絕。' },
+  ARCANE: { pos: 'adj.', meaning: '晦澀難懂的', example: "The rules are arcane.", exampleZh: '這些規則晦澀難懂。' },
+  BOMBASTIC: { pos: 'adj.', meaning: '誇大其詞的', example: "The speech was bombastic.", exampleZh: '那場演講浮誇不實。' },
+  CACOPHONY: { pos: 'n.', meaning: '刺耳的雜音', example: "A cacophony of horns filled the street.", exampleZh: '街上充滿刺耳的喇叭聲。' },
+  CANTANKEROUS: { pos: 'adj.', meaning: '脾氣暴躁的', example: "He is a cantankerous old man.", exampleZh: '他是個脾氣暴躁的老人。' },
+  CONUNDRUM: { pos: 'n.', meaning: '難題', example: "This is a real conundrum.", exampleZh: '這真是個難題。' },
+  DELETERIOUS: { pos: 'adj.', meaning: '有害的', example: "Smoking has deleterious effects.", exampleZh: '吸菸有害健康。' },
+  DILETTANTE: { pos: 'n.', meaning: '業餘愛好者', example: "He is a dilettante in art.", exampleZh: '他對藝術只是淺嘗即止。' },
+  DISPARATE: { pos: 'adj.', meaning: '迥然不同的', example: "They come from disparate backgrounds.", exampleZh: '他們來自完全不同的背景。' },
+  EFFICACIOUS: { pos: 'adj.', meaning: '有效的', example: "The treatment proved efficacious.", exampleZh: '這個療法證明有效。' },
+  ENIGMATIC: { pos: 'adj.', meaning: '謎一般的', example: "She gave an enigmatic smile.", exampleZh: '她露出謎一般的微笑。' },
+  ERUDITE: { pos: 'adj.', meaning: '博學的', example: "He is an erudite scholar.", exampleZh: '他是一位博學的學者。' },
+  FORTUITOUS: { pos: 'adj.', meaning: '偶然的', example: "Our meeting was fortuitous.", exampleZh: '我們的相遇純屬偶然。' },
+  GREGARIOUS: { pos: 'adj.', meaning: '愛交際的', example: "She is outgoing and gregarious.", exampleZh: '她外向又愛交際。' },
+  IDIOSYNCRASY: { pos: 'n.', meaning: '怪癖', example: "Everyone has their idiosyncrasies.", exampleZh: '每個人都有自己的怪癖。' },
+  IMPECCABLE: { pos: 'adj.', meaning: '無瑕的', example: "His manners are impeccable.", exampleZh: '他的禮儀無可挑剔。' },
+  LOQUACIOUS: { pos: 'adj.', meaning: '話多的', example: "Our loquacious guide talked all day.", exampleZh: '我們健談的導遊講了一整天。' },
+  MALLEABLE: { pos: 'adj.', meaning: '可塑的', example: "Young minds are malleable.", exampleZh: '年輕的心靈很有可塑性。' },
+  PERNICIOUS: { pos: 'adj.', meaning: '有害的', example: "Gossip has a pernicious effect.", exampleZh: '八卦有很壞的影響。' },
+  QUIXOTIC: { pos: 'adj.', meaning: '不切實際的', example: "It was a quixotic dream.", exampleZh: '那是個不切實際的夢想。' },
+  RECALCITRANT: { pos: 'adj.', meaning: '頑抗的', example: "The recalcitrant staff refused to change.", exampleZh: '頑固的員工拒絕改變。' },
+  SAGACIOUS: { pos: 'adj.', meaning: '睿智的', example: "She made a sagacious decision.", exampleZh: '她做了一個明智的決定。' },
+  SPURIOUS: { pos: 'adj.', meaning: '而非的', example: "That is a spurious argument.", exampleZh: '那是似是而非的論點。' },
+  VOCIFEROUS: { pos: 'adj.', meaning: '大聲疾呼的', example: "There was vociferous opposition.", exampleZh: '有人大聲反對。' },
+  ZEALOUS: { pos: 'adj.', meaning: '熱心的', example: "She is a zealous supporter.", exampleZh: '她是熱情的支持者。' },
+  BENEVOLENT: { pos: 'adj.', meaning: '仁慈的', example: "He was a benevolent leader.", exampleZh: '他是一位仁慈的領袖。' },
+  HUBRIS: { pos: 'n.', meaning: '傲慢自大', example: "His hubris led to his downfall.", exampleZh: '他的傲慢導致他垮台。' },
+  ASSUAGE: { pos: 'v.', meaning: '緩和', example: "Nothing could assuage her fears.", exampleZh: '什麼都無法減輕她的恐懼。' },
+  INSIDIOUS: { pos: 'adj.', meaning: '害的', example: "Stress can have an insidious effect.", exampleZh: '壓力可能悄悄造成傷害。' },
+  SYCOPHANT: { pos: 'n.', meaning: '諂媚者', example: "He is surrounded by sycophants.", exampleZh: '他身邊都是馬屁精。' },
+  ALACRITY: { pos: 'n.', meaning: '欣然', example: "She accepted the offer with alacrity.", exampleZh: '她欣然接受了邀約。' },
+  APLOMB: { pos: 'n.', meaning: '沉著', example: "She handled the crisis with aplomb.", exampleZh: '她沉著地處理了危機。' },
+  CAJOLE: { pos: 'v.', meaning: '哄騙', example: "She cajoled him into coming.", exampleZh: '她哄他一起來。' },
+  DEBACLE: { pos: 'n.', meaning: '大失敗', example: "The launch was a debacle.", exampleZh: '這次發表是一場大失敗。' },
+  INCORRIGIBLE: { pos: 'adj.', meaning: '無可救藥的', example: "He is an incorrigible optimist.", exampleZh: '他是個無可救藥的樂觀主義者。' },
+  NEFARIOUS: { pos: 'adj.', meaning: '邪惡的', example: "They uncovered a nefarious plot.", exampleZh: '他們揭發了一個邪惡的陰謀。' },
+  PARSIMONIOUS: { pos: 'adj.', meaning: '吝嗇的', example: "He is parsimonious with praise.", exampleZh: '他很吝於稱讚。' },
+  VENERABLE: { pos: 'adj.', meaning: '可敬的', example: "The venerable professor retired.", exampleZh: '那位德高望重的教授退休了。' },
+
 };
 
 // 題目對應的單字：首屏包含基礎手寫詞庫；各分區題庫載入時透過 addBankVocab 注入，全域詞典則背景非同步載入
@@ -177,14 +255,22 @@ export const vocabByKey = (key: string) => {
 };
 
 export function vocabKey(q: Question): string | null {
-  if (q.vocabId && VOCAB[q.vocabId]) return q.vocabId;
+  if (q.vocabId) {
+    if (VOCAB[q.vocabId]) return q.vocabId;
+    const clean = q.vocabId.replace(/^R\d+:/, '');
+    if (VOCAB[clean]) return clean;
+    return q.vocabId;
+  }
   if (q.type === 'spell' || q.type === 'voice') {
     if (VOCAB[q.ans]) return q.ans;
     const clean = q.ans.toUpperCase().replace(/[^A-Z0-9_ ]/g, '').trim();
     if (VOCAB[clean]) return clean;
     const under = clean.replace(/\s+/g, '_');
     if (VOCAB[under]) return under;
-    return q.ans;
+    // 只有單字或短片語（詞數 <= 4）才回傳 q.ans 作為待補單字 key；長句子語音題教學在 explain 中，避免長句被誤判為單字
+    const tokenCount = q.ans.trim().split(/\s+/).filter(Boolean).length;
+    if (tokenCount <= 4) return q.ans;
+    return null;
   }
   if (q.type === 'fill') {
     if (!q.speak) return null;

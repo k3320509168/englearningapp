@@ -245,7 +245,7 @@ export default function HeroModal() {
                       setSelected('player');
                       const idx = party.indexOf('player');
                       if (idx >= 0) setSelectedSlot(idx);
-                      else setSelectedSlot(0); // 滿員未上陣時預設高亮第 1 位方便一鍵替換
+                      else setSelectedSlot(null);
                     })}
                   >
                     <img src={getPortrait('player')} alt="" draggable={false} />
@@ -286,7 +286,7 @@ export default function HeroModal() {
                         setSelected(h.id);
                         const idx = party.indexOf(h.id);
                         if (idx >= 0) setSelectedSlot(idx);
-                        else if (owned) setSelectedSlot(0); // 滿員未上陣時預設選中第 1 位方便一鍵替換
+                        else if (owned) setSelectedSlot(null);
                       })}
                       aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
                     >

@@ -39,7 +39,7 @@ export function buildLesson(stages: Stage[], stageIdx: number): Lesson {
 
     const isListening = q.skill === 'listening' || Boolean(q.speak && q.desc?.includes('🎧'));
     const isSpeaking = q.skill === 'speaking' || q.type === 'voice';
-    const isSpelling = q.skill === 'writing' || q.type === 'spelling';
+    const isSpelling = q.skill === 'writing' || q.type === 'spelling' || q.type === 'fill';
 
     if (isListening) {
       const sentence = q.speak || completedSentence(q) || q.desc;
@@ -80,7 +80,7 @@ export function buildLesson(stages: Stage[], stageIdx: number): Lesson {
           tag: '拼寫',
         });
       }
-    } else if (q.type === 'choice' && q.explain) {
+    } else {
       const sentence = completedSentence(q) || q.desc;
       const audio = questionAudio(q) || '';
       const key = completedSentence(q) ? `grammar:${completedSentence(q)}` : `reading:${q.desc}`;
@@ -88,7 +88,7 @@ export function buildLesson(stages: Stage[], stageIdx: number): Lesson {
         grammar.set(key, {
           desc: q.desc,
           sentence,
-          explain: q.explain,
+          explain: q.explain || `閱讀重點句：${sentence}`,
           audio,
           tag: completedSentence(q) ? '文法' : '理解',
         });

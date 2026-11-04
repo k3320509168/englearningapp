@@ -1,11 +1,4 @@
 {
-  "1010": {
-    "word": "10:10.",
-    "pos": "n.",
-    "meaning": "New Departure: 10:10",
-    "example": "【短文理解】[Flight Schedule Screen] Flight CI100 to Tokyo Narita: Gate B4. Status: Delayed. Scheduled Departure: 08:50. New Departure: 10:10. Please stay near Gate B4 for updates.\nQ: What is the new departure time for Flight CI100?",
-    "exampleZh": "螢幕資訊顯示「New Departure: 10:10」，因此新出發時間為 10:10"
-  },
   "EMAIL": {
     "pos": "n.",
     "meaning": "電子郵件",
@@ -5458,15 +5451,15 @@
   },
   "STUDIES": {
     "word": "studies",
-    "pos": "n.",
-    "meaning": "本題測試第三人稱單數動詞的變化",
+    "pos": "v.",
+    "meaning": "學習；研究",
     "example": "His wife studies English at a language school in Taipei.",
     "exampleZh": "本題測試第三人稱單數動詞的變化。"
   },
   "WAKE": {
     "word": "wake",
-    "pos": "n.",
-    "meaning": "本題測試現在簡單式",
+    "pos": "v.",
+    "meaning": "醒來；喚醒",
     "example": "We wake up at six o'clock every day.",
     "exampleZh": "本題測試現在簡單式。"
   },
@@ -5501,7 +5494,7 @@
   "TOMATOES": {
     "word": "tomatoes",
     "pos": "n.",
-    "meaning": "本題測試名詞複數",
+    "meaning": "番茄",
     "example": "I want to buy three red tomatoes from the market.",
     "exampleZh": "本題測試名詞複數。"
   },
@@ -5564,7 +5557,7 @@
   "SHOES": {
     "word": "shoes",
     "pos": "n.",
-    "meaning": "本題測試名詞複數",
+    "meaning": "鞋子",
     "example": "She wears a pink dress and two white shoes.",
     "exampleZh": "本題測試名詞複數。"
   },
@@ -5577,15 +5570,15 @@
   },
   "RUNS": {
     "word": "runs",
-    "pos": "n.",
-    "meaning": "繁體中文解說",
+    "pos": "v.",
+    "meaning": "跑步；經營",
     "example": "The dog runs fast.",
     "exampleZh": "繁體中文解說：此題測試現在簡單式第三人稱單數。"
   },
   "EATS": {
     "word": "eats",
-    "pos": "n.",
-    "meaning": "繁體中文解說",
+    "pos": "v.",
+    "meaning": "吃",
     "example": "He eats salad for lunch.",
     "exampleZh": "繁體中文解說：此題測試現在簡單式的動詞變化。"
   },
@@ -5633,15 +5626,15 @@
   },
   "GOES": {
     "word": "goes",
-    "pos": "n.",
-    "meaning": "繁體中文解說",
+    "pos": "v.",
+    "meaning": "去；前往",
     "example": "She goes to the movies on the weekend.",
     "exampleZh": "繁體中文解說：此題測試第三人稱單數動詞。"
   },
   "PLAYS": {
     "word": "plays",
-    "pos": "n.",
-    "meaning": "繁體中文解說",
+    "pos": "v.",
+    "meaning": "玩耍；演奏",
     "example": "A: What does he do on the weekend? B: He plays games.",
     "exampleZh": "繁體中文解說：此題測試現在簡單式。"
   },
@@ -6354,13 +6347,6 @@
     "example": "【短文理解】[Email] Hello, the new desk is too big for my room. I want to put it in the hall. Can you help me move it at 15:00?\nQ: Why does the writer want to move the desk?",
     "exampleZh": "信中提到「the new desk is too big for my room.（新桌子對我的房間來說太大了）」，這是想移動桌子的原因"
   },
-  "0 DOLLARS": {
-    "word": "0 dollars",
-    "pos": "phr.",
-    "meaning": "腳踏車免費",
-    "example": "【短文理解】[Sign] Parking: Cars $50/hour, Taxis $30/hour. Bicycles are free.\nQ: How much does it cost to park a bicycle?",
-    "exampleZh": "告示寫著「Bicycles are free.（腳踏車免費）」，因此費用是 0 元"
-  },
   "FEED THE BIRD": {
     "word": "feed the bird",
     "pos": "phr.",
@@ -6377,8 +6363,8 @@
   },
   "MUCH": {
     "word": "much",
-    "pos": "n.",
-    "meaning": "本題測試數量形容詞",
+    "pos": "adj.",
+    "meaning": "很多；大量",
     "example": "How much sugar do you want in your tea?",
     "exampleZh": "本題測試數量形容詞。"
   },
@@ -6392,16 +6378,9 @@
   "CHEESE": {
     "word": "cheese",
     "pos": "n.",
-    "meaning": "本題測試短文細節",
+    "meaning": "起司；乳酪",
     "example": "This example demonstrates cheese.",
     "exampleZh": "此例句展示了「本題測試短文細節」。"
-  },
-  "7 DAYS": {
-    "word": "7 days",
-    "pos": "phr.",
-    "meaning": "本題測試短文細節搜尋",
-    "example": "【短文理解】[Library Notice] Welcome to the Town Library. Books can be borrowed for 14 days. DVDs can be borrowed for 7 days. If you return items late, you must pay 5 dollars for each day.\nQ: How long can a person keep a DVD?",
-    "exampleZh": "本題測試短文細節搜尋"
   },
   "SPRING": {
     "word": "spring",
@@ -6412,8 +6391,8 @@
   },
   "GETS": {
     "word": "gets",
-    "pos": "n.",
-    "meaning": "本題測試現在簡單式",
+    "pos": "v.",
+    "meaning": "得到；獲得",
     "example": "In Taiwan, the air gets very hot and humid in summer.",
     "exampleZh": "本題測試現在簡單式。"
   },
@@ -6427,16 +6406,9 @@
   "SHEEP": {
     "word": "sheep",
     "pos": "n.",
-    "meaning": "本題測試不規則複數名詞",
+    "meaning": "綿羊",
     "example": "There are three sheep sleeping under the tall tree.",
     "exampleZh": "本題測試不規則複數名詞。"
-  },
-  "150 DOLLARS": {
-    "word": "150 dollars",
-    "pos": "phr.",
-    "meaning": "本題測試短文資訊統整",
-    "example": "【短文理解】[Farm Poster] Come to Happy Farm this weekend! You can ride a pony, feed the ducks, and pick fresh tomatoes. The price is 100 dollars for adults and 50 dollars for children under twelve.\nQ: How much is the cost for a man and his ten-year-old son?",
-    "exampleZh": "本題測試短文資訊統整"
   },
   "GIVE FOOD TO THE LIONS": {
     "word": "give food to the lions",
@@ -6475,17 +6447,10 @@
   },
   "BROWN": {
     "word": "brown",
-    "pos": "n.",
-    "meaning": "繁體中文解說",
+    "pos": "adj.",
+    "meaning": "棕色的",
     "example": "This example demonstrates brown.",
     "exampleZh": "此例句展示了「繁體中文解說」。"
-  },
-  "60 DOLLARS": {
-    "word": "60 dollars",
-    "pos": "phr.",
-    "meaning": "麵包加牛奶的價格",
-    "example": "【短文理解】[Shop Sign] Breakfast Set: Bread and milk for 50 dollars. Salad and tea for 60 dollars. Q: How much is the salad and tea?",
-    "exampleZh": "繁體中文解說：此題測試價格資訊的配對"
   },
   "NOODLES AND FISH": {
     "word": "noodles and fish",
@@ -6518,7 +6483,7 @@
   "STUDENTS": {
     "word": "students",
     "pos": "n.",
-    "meaning": "繁體中文解說",
+    "meaning": "學生",
     "example": "This example demonstrates students.",
     "exampleZh": "此例句展示了「繁體中文解說」。"
   },

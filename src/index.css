@@ -1046,38 +1046,124 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   background: rgba(14, 16, 32, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
-.hero-quick-party-bar {
+.party-slot-remove {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.85);
+  color: #fff;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: rgba(255, 205, 75, 0.08);
-  border: 1px solid rgba(255, 205, 75, 0.25);
-  border-radius: 6px;
-  font-size: 12px;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
-.quick-replace-group {
+.party-slot-remove:hover {
+  background: #ef4444;
+  transform: scale(1.15);
+}
+.hero-docked-bar {
+  flex: 0 0 auto;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  width: 100%;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #191b36;
+  border-top: 2px solid rgba(255, 205, 75, 0.35);
+  border-radius: 0 0 8px 8px;
+  z-index: 25;
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.5);
+  min-height: 48px;
 }
-.quick-replace-label {
+.hero-docked-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+.hero-docked-avatar {
+  width: 38px;
+  height: 38px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-docked-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.hero-docked-name {
+  font-family: var(--font-word);
+  font-size: 13px;
   font-weight: 700;
   color: var(--accent);
-  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.quick-slot-btn {
-  padding: 3px 8px;
-  font-size: 11px;
+.hero-docked-status {
+  font-size: 10px;
+  color: var(--muted);
   white-space: nowrap;
 }
-.quick-deploy-btn {
-  width: 100%;
+.hero-docked-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+  min-width: 0;
+}
+.hero-docked-btn {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 4px 10px;
+  min-height: 34px;
+}
+.hero-docked-slots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.hero-docked-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.hero-docked-slot-pill {
+  padding: 3px 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  min-height: 28px;
+  line-height: 1;
+}
+.hero-docked-party-ops {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hero-docked-detail-btn {
+  font-size: 11px;
+  white-space: nowrap;
+  min-height: 30px;
+  padding: 3px 6px;
 }
 .hero-tile {
   --rarity: var(--muted);
@@ -1384,6 +1470,25 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
   .hero-tiles {
     max-height: none;
     overflow-y: visible;
+  }
+  .hero-docked-bar {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .hero-docked-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .hero-docked-name {
+    font-size: 12px;
+    max-width: 72px;
+  }
+  .hero-docked-status {
+    font-size: 9px;
+  }
+  .hero-docked-slot-pill {
+    padding: 2px 5px;
+    font-size: 10px;
   }
 }
 .num { font-family: var(--font-num); font-size: 11px; }
@@ -3899,34 +4004,47 @@ html[data-text-scale="large"] .game-shell.is-battle > .game-canvas { max-width: 
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 10px;
+  width: 100%;
 }
 .codex-popup-main-btns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
   gap: 8px;
+  width: 100%;
 }
 .codex-popup-main-btns .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 42px;
   min-height: 42px;
-  white-space: nowrap;
+  max-height: 42px;
+  white-space: nowrap !important;
   font-weight: 700;
   font-size: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .codex-popup-nav-btns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 8px;
+  width: 100%;
 }
 .codex-popup-nav-btns .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 38px;
   min-height: 38px;
-  white-space: nowrap;
+  max-height: 38px;
+  white-space: nowrap !important;
   font-size: 13px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 /* 詞性色彩分類標籤 */

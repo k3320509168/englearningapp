@@ -28,7 +28,10 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
 
   const start = (id: MemberId, img: string) => (e: ReactPointerEvent) => {
     if (e.button !== 0) return;
-    const touch = e.pointerType !== 'mouse';
+    // 手機觸控環境下完全不啟動拖曳監聽，將手勢完全留給瀏覽器原生極致順暢滾動；
+    // 隊伍編隊全權交給直覺的「點擊格子/點擊英雄秒換」機制！
+    if (e.pointerType === 'touch') return;
+
     const sx = e.clientX;
     const sy = e.clientY;
     let x = sx;
@@ -46,15 +49,9 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
           document.body.style.webkitUserSelect = 'none';
         }
       } catch { /* ignore */ }
-      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
-        try { navigator.vibrate(35); } catch { /* ignore */ }
-      }
-      // 只有在真正觸發拖曳後，才接管 touchmove 阻止螢幕滾動
       window.addEventListener('touchmove', blockScroll, { passive: false });
       setDrag({ id, img, x, y, over: targetAt(x, y) });
     };
-
-    const timer = touch ? window.setTimeout(begin, 400) : 0;
 
     const move = (ev: PointerEvent) => {
       x = ev.clientX;
@@ -62,16 +59,11 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
       if (!active) {
         const dy = Math.abs(y - sy);
         const dx = Math.abs(x - sx);
-        // 觸控設備：一旦有任何滑動意圖（位移 > 5px），立即認定為列表原生滾動，取消拖曳長按！
-        if (touch && (dy > 5 || dx > 5)) {
-          cleanup();
-          return;
-        } else if (!touch && Math.hypot(dx, dy) > 6) {
+        if (Math.hypot(dx, dy) > 6) {
           begin();
         }
         return;
       }
-      // 已啟動拖曳時，阻止瀏覽器原生手勢與滾動
       ev.preventDefault();
       setDrag(d => d && { ...d, x, y, over: targetAt(x, y) });
     };
@@ -103,7 +95,6 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
     const blockScroll = (ev: TouchEvent) => { if (active) ev.preventDefault(); };
 
     function cleanup() {
-      window.clearTimeout(timer);
       try {
         if (typeof document !== 'undefined') {
           document.body.style.userSelect = '';

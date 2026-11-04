@@ -143,6 +143,21 @@ export default function HeroModal() {
                 >
                   {order}
                   {i === 0 && <span className="party-pos">👑</span>}
+                  {party.length > 1 && i > 0 && (
+                    <span
+                      className="party-slot-remove"
+                      title="撤下此位置英雄"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        sfx.coin();
+                        toggleMember(id);
+                        if (selected === id) setSelected('player');
+                        setSelectedSlot(null);
+                      }}
+                    >
+                      ✕
+                    </span>
+                  )}
                   <img src={portrait} alt="" draggable={false} />
                   <span>{name}</span>
                   {id !== 'player' && <StarBadge id={id} compact />}
@@ -164,76 +179,6 @@ export default function HeroModal() {
         <div className="hero-modal-scroll">
           {/* 手機端可自由收合／展開英雄詳細資料面板，讓出戰隊伍與下方圖鑑清單順暢銜接 */}
           <div className="hero-detail-container">
-            <div className="hero-detail-toggle-bar">
-              <span className="hero-current-pick-hint">
-                📌 當前選取：<b>{currentSelected === 'player' ? (character?.name ?? '主角') : heroWord(heroDef(currentSelected))}</b>
-              </span>
-              <div className="hero-toggle-bar-actions">
-                <button
-                  className="btn btn-tiny btn-ghost hero-toggle-btn"
-                  onMouseDown={keepFocus}
-                  onClick={() => setDetailExpanded(v => !v)}
-                >
-                  {detailExpanded ? '▲ 收合數值' : '▼ 查看數值'}
-                </button>
-              </div>
-            </div>
-
-            {/* 手機端直覺快速上陣／替換操作列：點擊英雄後可一鍵上陣、秒換位置或下陣，徹底免去拖曳痛苦 */}
-            <div className="hero-quick-party-bar">
-              {!party.includes(currentSelected) ? (
-                party.length < PARTY_MAX ? (
-                  <button
-                    className="btn btn-primary btn-small quick-deploy-btn"
-                    onMouseDown={keepFocus}
-                    onClick={() => {
-                      placeMember(currentSelected, party.length);
-                      setSelectedSlot(party.length);
-                      sfx.upgrade();
-                    }}
-                  >
-                    ⚡ 加入隊伍（第 {party.length + 1} 位）
-                  </button>
-                ) : (
-                  <div className="quick-replace-group">
-                    <span className="quick-replace-label">⚡ 點擊替換：</span>
-                    {party.map((mId, slotIdx) => {
-                      const name = mId === 'player' ? '主角' : heroWord(heroDef(mId));
-                      return (
-                        <button
-                          key={slotIdx}
-                          className="btn btn-secondary btn-tiny quick-slot-btn"
-                          onMouseDown={keepFocus}
-                          onClick={() => {
-                            placeMember(currentSelected, slotIdx);
-                            setSelectedSlot(slotIdx);
-                            sfx.upgrade();
-                          }}
-                        >
-                          換第 {slotIdx + 1} 位 ({name})
-                        </button>
-                      );
-                    })}
-                  </div>
-                )
-              ) : (
-                party.length > 1 && (
-                  <button
-                    className="btn btn-ghost btn-tiny text-bad quick-bench-btn"
-                    onMouseDown={keepFocus}
-                    onClick={() => {
-                      toggleMember(currentSelected);
-                      if (selected === currentSelected) setSelected('player');
-                      setSelectedSlot(null);
-                      sfx.coin();
-                    }}
-                  >
-                    ✕ 將【{currentSelected === 'player' ? '主角' : heroWord(heroDef(currentSelected))}】移出出戰隊伍
-                  </button>
-                )
-              )}
-            </div>
-
             <div className={`hero-detail-wrapper ${detailExpanded ? 'is-expanded' : 'is-collapsed'}`}>
               {currentSelected && renderDetail(currentSelected)}
             </div>
@@ -357,6 +302,108 @@ export default function HeroModal() {
               })}
             </ul>
           </section>
+        </div>
+
+        {/* 常駐底部操作列：無論手機滑動到哪裡，選中英雄時隨時可一鍵上陣、秒換或離隊，徹底免去滑回頂部的痛苦 */}
+        <div className="hero-docked-bar">
+          <div className="hero-docked-info">
+            <img src={getPortrait(currentSelected)} alt="" className="hero-docked-avatar" />
+            <div className="hero-docked-meta">
+              <span className="hero-docked-name">
+                {currentSelected === 'player' ? (character?.name ?? '主角') : heroWord(heroDef(currentSelected))}
+              </span>
+              <span className="hero-docked-status">
+                {party.includes(currentSelected)
+                  ? `出戰中 · 第 ${party.indexOf(currentSelected) + 1} 位`
+                  : '待命英雄'}
+              </span>
+            </div>
+          </div>
+
+          <div className="hero-docked-actions">
+            {!party.includes(currentSelected) ? (
+              party.length < PARTY_MAX ? (
+                <button
+                  className="btn btn-primary btn-small hero-docked-btn"
+                  onMouseDown={keepFocus}
+                  onClick={() => {
+                    placeMember(currentSelected, party.length);
+                    setSelectedSlot(party.length);
+                    sfx.upgrade();
+                  }}
+                >
+                  ⚡ 加入隊伍（第 {party.length + 1} 位）
+                </button>
+              ) : selectedSlot !== null && selectedSlot >= 0 && selectedSlot < PARTY_MAX ? (
+                <button
+                  className="btn btn-primary btn-small hero-docked-btn"
+                  onMouseDown={keepFocus}
+                  onClick={() => {
+                    placeMember(currentSelected, selectedSlot);
+                    sfx.upgrade();
+                  }}
+                >
+                  ⚡ 替換第 {selectedSlot + 1} 位 ({party[selectedSlot] === 'player' ? '主角' : heroWord(heroDef(party[selectedSlot]))})
+                </button>
+              ) : (
+                <div className="hero-docked-slots">
+                  <span className="hero-docked-label">換至：</span>
+                  {party.map((mId, slotIdx) => (
+                    <button
+                      key={slotIdx}
+                      className="btn btn-secondary btn-tiny hero-docked-slot-pill"
+                      onMouseDown={keepFocus}
+                      onClick={() => {
+                        placeMember(currentSelected, slotIdx);
+                        setSelectedSlot(slotIdx);
+                        sfx.upgrade();
+                      }}
+                    >
+                      {slotIdx + 1}位 {mId === 'player' ? '主角' : heroWord(heroDef(mId))}
+                    </button>
+                  ))}
+                </div>
+              )
+            ) : (
+              <div className="hero-docked-party-ops">
+                {party.indexOf(currentSelected) > 0 && (
+                  <button
+                    className="btn btn-secondary btn-tiny"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      setLeader(currentSelected);
+                      sfx.upgrade();
+                    }}
+                  >
+                    👑 設為隊長
+                  </button>
+                )}
+                {party.length > 1 && (
+                  <button
+                    className="btn btn-ghost btn-tiny text-bad"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      toggleMember(currentSelected);
+                      if (selected === currentSelected) setSelected('player');
+                      setSelectedSlot(null);
+                      sfx.coin();
+                    }}
+                  >
+                    ✕ 下陣離隊
+                  </button>
+                )}
+              </div>
+            )}
+
+            <button
+              className="btn btn-ghost btn-tiny hero-docked-detail-btn"
+              onMouseDown={keepFocus}
+              onClick={() => setDetailExpanded(v => !v)}
+              title="查看此英雄詳細數值與技能"
+            >
+              {detailExpanded ? '▲ 收合數值' : '📊 數值'}
+            </button>
+          </div>
         </div>
       </div>
       {drag && createPortal(<img className="drag-ghost" src={drag.img} alt="" style={{ left: drag.x, top: drag.y }} />, document.body)}

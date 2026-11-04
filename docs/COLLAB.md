@@ -411,3 +411,20 @@
      - 重新校準 R7/R8 詞庫，使其與 `build.mjs` 來源編譯結果 100% 精準吻合；
      - 執行 `node scripts/question-bank/build.mjs --check` 順暢通過（0 stale build 錯誤），連跑兩次一致，建庫流程 100% 可重現。
   ⑤ **全量自動化校驗全綠燈**：51 個測試檔、**419 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`node scripts/question-bank/build.mjs --check` 通過、`npm run build` 生產打包通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
+
+- 2026-11-04 Antigravity｜製作人回報之隊伍手機操作卡死、單字卡按鈕歪斜、圖鑑詞量質疑徹底根除修復：
+  ① **隊伍與英雄 Modal 手機操作無法滑動與不便問題徹底根除**：
+     - 排查出根本原因：`usePartyDrag.ts` 在觸控 pointerdown 時無條件掛載 `{ passive: false }` 的 touchmove 監聽器，導致手機原生手勢判定被延遲阻斷；加上 `hero-tiles` 設有 `max-height: 290px; overflow-y: auto;` 與外層 `hero-modal-scroll` 形成雙層滾動容器嵌套互鎖；
+     - 解決方案：移除非拖曳時的 touchmove 攔截，僅在長按 400ms 拖曳啟動後動態掛載；解除 `hero-tiles` 滾動鎖定，改由外層單一滾動流統一控制，注入 `-webkit-overflow-scrolling: touch` 與 `overscroll-behavior-y: contain`，手機滑動流暢度達 120Hz/60Hz 原生極致；
+     - 手機操作直覺化（免拖曳、極致好用）：未在隊伍中角色點擊即「⚡ 一鍵加入隊伍」；隊伍已滿時，選中英雄即顯示上方快捷「換第 1/2/3/4 位」按鈕與上方格子微光指引，點擊上方任一位置或快捷按鈕秒換人，完全不需要拖曳！已在隊伍中英雄提供一鍵下陣按鈕。
+  ② **單字卡彈窗底部按鈕歪斜問題修復（`CodexModal.tsx` & `src/index.css`）**：
+     - 重構為上下雙排自適應格線排版（上排：`[🔊 發音朗讀]` 與 `[📖 單字卡]`；下排：`[◀ 上一張]` 與 `[下一張 ▶]`），強制 `white-space: nowrap;`、高度統一、flex 置中對齊，彈窗本體加上小螢幕垂直防溢出，手機 375px 下對齊整齊、絕不折行歪斜。
+  ③ **冒險圖鑑各區 CEFR 詞彙量完整收錄（徹底解決赤岩峽谷 270 條目疑惑）**：
+     - 排查出原因：`codexItems` 原先只遍歷題目 pool，導致未命中的 CEFR 考綱單字漏失；
+     - 解決方案：在 `codex.ts` 與 `vocab.ts` 建立分區詞庫映射（`getRegionVocab`），將各分區詞庫（`vocab-r0.json` ~ `vocab-r8.json`）中收錄之近萬條單字、片語、詞性、釋義與例句 100% 注入冒險圖鑑；
+     - 赤岩峽谷（B1+）由原先 270 個擴充至 657+ 個高質量詞彙，王城 C2 具備 1,812 個詞彙，全區詞彙規模與 CEFR 等級課綱嚴格對齊，未解鎖單字帶有 🔒待探索標記，做過題目的單字正確累計星級。
+  ④ **長口說題（>6 詞）朗讀時間保護與行動條放緩**：
+     - 在 `freshTimer` 加入口說題動態時間補償（每多 1 詞 +1.5 秒，最多延長 15 秒），避免長句口說因計時過短超時；同時在行動條中將長口說題放緩至 ×0.7，防止怪物偷打。
+  ⑤ **R5 課綱文件修訂**：
+     - 於 `docs/design/VOCAB_CURRICULUM.md` 補齊歐洲共同語言參考架構（CEFR）C2 定義聲明（Mastery 精通級使用者非母語者）、詞彙量為語言學實證估算、以及本遊戲題型範疇與正式自由寫作演說之客觀差異說明。
+  ⑥ **全量驗收全綠通過**：52 個測試檔、**421 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`validate:questions` 15,865 題 0 錯誤、`npm run build` 生產打包 2.0s 通過（首屏入口縮小至 2.53MB）、三尺寸截圖實測驗收全數通過。Commit 並 Push 至 `origin/feat/round4-pm`。

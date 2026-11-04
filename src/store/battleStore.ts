@@ -458,9 +458,16 @@ const withTotals = (party: Member[]) => {
 export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q), random);
 
-  // 新題目的計時：20 秒，專注技能每題再多 5 秒
-  const freshTimer = (focusMs: number, aidMs = get().aidTimeMs) => {
-    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party) + aidMs;
+  // 新題目的計時：基礎 20 秒，專注技能每題再多 5 秒；長口說題（>6 詞）依詞數彈性延長，避免長句朗讀超時
+  const freshTimer = (focusMs: number, aidMs = get().aidTimeMs, q?: Question) => {
+    let voiceBonusMs = 0;
+    if (q?.type === 'voice' && q.speak) {
+      const wordCount = q.speak.trim().split(/\s+/).length;
+      if (wordCount > 6) {
+        voiceBonusMs = Math.min(15000, (wordCount - 6) * 1500);
+      }
+    }
+    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party) + aidMs + voiceBonusMs;
     return { questionLimit: limit, questionLeft: limit, activeAnswerMs: 0, overtime: false };
   };
 
@@ -578,7 +585,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       assist: null,
       assistSource: null,
       focusMs: 0,
-      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0, aid.timeMs),
+      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0, aid.timeMs, original),
       casting: null,
       event: nextEvent('stage'),
     });
@@ -655,7 +662,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const enemyTurn = s.enemyTurn + 1;
     const statuses = tickStatuses();
     const boss = bossTurn(enemyTurn);
-    const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0));
+    const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0), s.aidTimeMs, original);
     return {
       qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
       retrying: false, ...timer,
@@ -1493,7 +1500,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         // 敵人行動條：集滿就依攻擊模式出招
         if (gaugeActive(s)) {
           const kind = foeKindOf(s.stages[s.stageIdx], s.stageIdx, s.stages.length) ?? 'normal';
-          const writing = s.question?.type === 'spell' || s.question?.type === 'fill';
+          const writing = s.question?.type === 'spell' || s.question?.type === 'fill' || (s.question?.type === 'voice' && (s.question.speak?.split(/\s+/).length ?? 0) > 6);
           const gauge = s.enemyGauge + (timerMs * (writing ? 0.7 : 1) * gaugeScale(s.levelIdx, s.stageIdx, s.levelKey) * modGaugeMult(s.mods)) / (gaugeSeconds(patternFor(s)!, s.levelIdx, kind) * 1000);
           if (gauge >= 1) {
             const move = nextMove(s);

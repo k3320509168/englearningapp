@@ -1,5 +1,5 @@
-import { getPool } from './QuestionData';
-import { vocabFor, vocabKey, vocabByKey } from './vocab';
+import { getPool, LEVELS } from './QuestionData';
+import { vocabFor, vocabKey, vocabByKey, getRegionVocab } from './vocab';
 import { completedSentence, questionAudio, questionKey } from './battle';
 import { masteryStars } from './progression';
 import type { Question } from './types';
@@ -132,6 +132,46 @@ export function codexItems(
     item.needsReview ||= questionKey(q) in mistakes;
     item.stars = masteryStars(item.correct);
     items.set(id, item);
+  }
+
+  // 注入該分區的完整 CEFR 詞庫：確保冒險圖鑑完整收錄該區域的所有考綱詞彙
+  const regionIdx = LEVELS.indexOf(levelKey);
+  if (regionIdx >= 0) {
+    const regionVocab = getRegionVocab(regionIdx);
+    if (regionVocab) {
+      for (const [key, v] of Object.entries(regionVocab)) {
+        const upper = key.toUpperCase();
+        const isSingleWord = !key.includes(' ') && !key.includes('-') && !v.pos?.toLowerCase().includes('phr') && !v.pos?.includes('片語');
+        const kind: 'word' | 'phrase' = isSingleWord ? 'word' : 'phrase';
+        const id = `${kind}:${upper}`;
+
+        if (!items.has(id)) {
+          const title = v.word || (isSingleWord ? key.toLowerCase() : key);
+          const spellStats = codex[`spell:${upper}`];
+          const voiceStats = codex[`voice:${upper}`];
+          const correct = (spellStats?.correct ?? 0) + (voiceStats?.correct ?? 0);
+          const wrong = (spellStats?.wrong ?? 0) + (voiceStats?.wrong ?? 0);
+          const seen = spellStats !== undefined || voiceStats !== undefined;
+
+          const item: CodexItem = {
+            id,
+            kind,
+            title,
+            subtitle: v.meaning || '',
+            pos: v.pos || (kind === 'phrase' ? 'phr.' : guessPos(title)),
+            example: v.example ? `${v.example}\n${v.exampleZh || ''}` : '',
+            audio: v.word || title,
+            correct,
+            wrong,
+            seen,
+            stars: masteryStars(correct),
+            needsReview: (`spell:${upper}` in mistakes) || (`voice:${upper}` in mistakes),
+            vocabKey: key,
+          };
+          items.set(id, item);
+        }
+      }
+    }
   }
 
   return [...items.values()];

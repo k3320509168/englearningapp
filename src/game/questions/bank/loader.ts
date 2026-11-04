@@ -2,7 +2,7 @@ import type { VocabEntry } from '../../types';
 import type { BankFile } from './index';
 import { BANK_COUNT } from './index';
 import { addBank, isBankLoaded } from '../../QuestionData';
-import { addBankVocab } from '../../vocab';
+import { addBankVocab, loadGeneratedVocab } from '../../vocab';
 
 // 瀏覽器裡分區域載入題庫：每個區域是獨立的檔案，用到才下載（之後由瀏覽器快取）
 const files = import.meta.glob<{ default: BankFile }>('./r[0-9].json');
@@ -15,7 +15,7 @@ export function loadBank(regionIdx: number): Promise<void> {
     pending.set(regionIdx, Promise.all([files[`./r${regionIdx}.json`]?.(), vocabs[`./vocab-r${regionIdx}.json`]?.()])
       .then(([f, v]) => {
         if (f) addBank(regionIdx, f.default);
-        if (v) addBankVocab(v.default);
+        if (v) addBankVocab(v.default, regionIdx);
       })
       .catch(() => { pending.delete(regionIdx); })); // 網路失敗：下次再試，先用內建題目
   }
@@ -25,5 +25,7 @@ export function loadBank(regionIdx: number): Promise<void> {
 // 先載入目前區域（最快能玩），其餘的在背景依序載入
 export async function loadBanksFrom(regionIdx: number): Promise<void> {
   await loadBank(regionIdx);
+  // 背景空閒時間非同步載入全域詞庫，絕不阻塞主執行緒首屏
+  void loadGeneratedVocab();
   for (let i = 0; i < BANK_COUNT; i++) await loadBank(i);
 }

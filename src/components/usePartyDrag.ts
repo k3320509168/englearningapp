@@ -49,10 +49,12 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
       if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
         try { navigator.vibrate(35); } catch { /* ignore */ }
       }
+      // 只有在真正觸發拖曳後，才接管 touchmove 阻止螢幕滾動
+      window.addEventListener('touchmove', blockScroll, { passive: false });
       setDrag({ id, img, x, y, over: targetAt(x, y) });
     };
 
-    const timer = touch ? window.setTimeout(begin, 350) : 0;
+    const timer = touch ? window.setTimeout(begin, 400) : 0;
 
     const move = (ev: PointerEvent) => {
       x = ev.clientX;
@@ -60,8 +62,8 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
       if (!active) {
         const dy = Math.abs(y - sy);
         const dx = Math.abs(x - sx);
-        // 觸控設備：一旦有任何滑動意圖（垂直位移 > 8px 或水平位移 > 12px），立即認定為列表原生滾動，取消拖曳長按！
-        if (touch && (dy > 8 || dx > 12)) {
+        // 觸控設備：一旦有任何滑動意圖（位移 > 5px），立即認定為列表原生滾動，取消拖曳長按！
+        if (touch && (dy > 5 || dx > 5)) {
           cleanup();
           return;
         } else if (!touch && Math.hypot(dx, dy) > 6) {
@@ -120,7 +122,6 @@ export function usePartyDrag(onDrop: (id: MemberId, target: DropTarget) => void)
     window.addEventListener('pointermove', move, { passive: false });
     window.addEventListener('pointerup', up);
     window.addEventListener('pointercancel', cancel);
-    window.addEventListener('touchmove', blockScroll, { passive: false });
   };
 
   // 包住原本的 click：剛拖完就不觸發，避免拖曳放開時意外點擊

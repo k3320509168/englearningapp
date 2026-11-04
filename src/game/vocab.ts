@@ -1,10 +1,9 @@
 import type { Question, VocabEntry, VocabSense } from './types';
-import generatedVocab from './questions/generated-vocab.json';
 
 // 單字資料：拼寫、填空、語音題共用同一個字的中文與例句。
 // key 為大寫單字；題目透過 vocabKey() 對應到這裡。
 
-// 手寫的單字資料；自動生成題目附帶的單字放在 questions/generated-vocab.json，載入時合併
+// 手寫的單字資料；自動生成題目附帶的單字放在 questions/generated-vocab.json，背景非同步載入避免阻塞首屏主包
 const BASE_VOCAB: Record<string, VocabEntry> = {
   // ---------- A1 ----------
   BOOK: { pos: 'n.', meaning: '書本', example: 'I read a book every night.', exampleZh: '我每晚讀一本書。' },
@@ -96,10 +95,43 @@ const BASE_VOCAB: Record<string, VocabEntry> = {
   TRANSPARENCY: { pos: 'n.', meaning: '透明度', example: 'Investors expect transparency from the board.', exampleZh: '投資人期待董事會保持透明。' },
 };
 
-// 題目對應的單字：拼寫／語音看答案，填空看 speak（答案只是缺的字母），選擇題沒有單一單字
-export const VOCAB: Record<string, VocabEntry> = { ...BASE_VOCAB, ...(generatedVocab as Record<string, VocabEntry>) };
+// 題目對應的單字：首屏包含基礎手寫詞庫；各分區題庫載入時透過 addBankVocab 注入，全域詞典則背景非同步載入
+export const VOCAB: Record<string, VocabEntry> = { ...BASE_VOCAB };
+
+let generatedVocabPromise: Promise<void> | null = null;
+export function loadGeneratedVocab(): Promise<void> {
+  if (!generatedVocabPromise) {
+    generatedVocabPromise = import('./questions/generated-vocab.json')
+      .then(mod => {
+        const data = mod.default as Record<string, VocabEntry>;
+        for (const [k, v] of Object.entries(data)) {
+          if (!VOCAB[k]) VOCAB[k] = v;
+        }
+      })
+      .catch(err => {
+        console.warn('Background generated-vocab load error:', err);
+        generatedVocabPromise = null;
+      });
+  }
+  return generatedVocabPromise;
+}
+
+// 各分區獨立保存的 CEFR 詞庫：供圖鑑與分區學習完整索引
+const REGION_VOCABS: Record<number, Record<string, VocabEntry>> = {};
+
+export function setRegionVocab(regionIdx: number, vocab: Record<string, VocabEntry>) {
+  REGION_VOCABS[regionIdx] = vocab;
+}
+
+export function getRegionVocab(regionIdx: number): Record<string, VocabEntry> | undefined {
+  return REGION_VOCABS[regionIdx];
+}
+
 // CEFR 題庫的單字資料：分區域載入時加進來（已有的字不覆蓋）
-export function addBankVocab(vocab: Record<string, VocabEntry>) {
+export function addBankVocab(vocab: Record<string, VocabEntry>, regionIdx?: number) {
+  if (regionIdx !== undefined) {
+    setRegionVocab(regionIdx, vocab);
+  }
   for (const [k, v] of Object.entries(vocab)) if (!VOCAB[k]) VOCAB[k] = v;
 }
 

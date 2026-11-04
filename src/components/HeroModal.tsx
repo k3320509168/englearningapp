@@ -168,14 +168,72 @@ export default function HeroModal() {
               <span className="hero-current-pick-hint">
                 📌 當前選取：<b>{currentSelected === 'player' ? (character?.name ?? '主角') : heroWord(heroDef(currentSelected))}</b>
               </span>
-              <button
-                className="btn btn-tiny btn-ghost hero-toggle-btn"
-                onMouseDown={keepFocus}
-                onClick={() => setDetailExpanded(v => !v)}
-              >
-                {detailExpanded ? '▲ 收合詳細數值與技能' : '▼ 查看詳細數值與技能'}
-              </button>
+              <div className="hero-toggle-bar-actions">
+                <button
+                  className="btn btn-tiny btn-ghost hero-toggle-btn"
+                  onMouseDown={keepFocus}
+                  onClick={() => setDetailExpanded(v => !v)}
+                >
+                  {detailExpanded ? '▲ 收合數值' : '▼ 查看數值'}
+                </button>
+              </div>
             </div>
+
+            {/* 手機端直覺快速上陣／替換操作列：點擊英雄後可一鍵上陣、秒換位置或下陣，徹底免去拖曳痛苦 */}
+            <div className="hero-quick-party-bar">
+              {!party.includes(currentSelected) ? (
+                party.length < PARTY_MAX ? (
+                  <button
+                    className="btn btn-primary btn-small quick-deploy-btn"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      placeMember(currentSelected, party.length);
+                      setSelectedSlot(party.length);
+                      sfx.upgrade();
+                    }}
+                  >
+                    ⚡ 加入隊伍（第 {party.length + 1} 位）
+                  </button>
+                ) : (
+                  <div className="quick-replace-group">
+                    <span className="quick-replace-label">⚡ 點擊替換：</span>
+                    {party.map((mId, slotIdx) => {
+                      const name = mId === 'player' ? '主角' : heroWord(heroDef(mId));
+                      return (
+                        <button
+                          key={slotIdx}
+                          className="btn btn-secondary btn-tiny quick-slot-btn"
+                          onMouseDown={keepFocus}
+                          onClick={() => {
+                            placeMember(currentSelected, slotIdx);
+                            setSelectedSlot(slotIdx);
+                            sfx.upgrade();
+                          }}
+                        >
+                          換第 {slotIdx + 1} 位 ({name})
+                        </button>
+                      );
+                    })}
+                  </div>
+                )
+              ) : (
+                party.length > 1 && (
+                  <button
+                    className="btn btn-ghost btn-tiny text-bad quick-bench-btn"
+                    onMouseDown={keepFocus}
+                    onClick={() => {
+                      toggleMember(currentSelected);
+                      if (selected === currentSelected) setSelected('player');
+                      setSelectedSlot(null);
+                      sfx.coin();
+                    }}
+                  >
+                    ✕ 將【{currentSelected === 'player' ? '主角' : heroWord(heroDef(currentSelected))}】移出出戰隊伍
+                  </button>
+                )
+              )}
+            </div>
+
             <div className={`hero-detail-wrapper ${detailExpanded ? 'is-expanded' : 'is-collapsed'}`}>
               {currentSelected && renderDetail(currentSelected)}
             </div>
@@ -231,9 +289,18 @@ export default function HeroModal() {
                         sfx.upgrade();
                         return;
                       }
+                      // 若未預選格子且主角未上陣：未滿員直接自動加入出戰
+                      if (!party.includes('player') && party.length < PARTY_MAX) {
+                        placeMember('player', party.length);
+                        setSelected('player');
+                        setSelectedSlot(party.length);
+                        sfx.upgrade();
+                        return;
+                      }
                       setSelected('player');
                       const idx = party.indexOf('player');
                       if (idx >= 0) setSelectedSlot(idx);
+                      else setSelectedSlot(0); // 滿員未上陣時預設高亮第 1 位方便一鍵替換
                     })}
                   >
                     <img src={getPortrait('player')} alt="" draggable={false} />
@@ -263,9 +330,18 @@ export default function HeroModal() {
                           sfx.upgrade();
                           return;
                         }
+                        // 若未預選格子且未上陣：未滿員直接自動加入隊伍！
+                        if (owned && !inParty && party.length < PARTY_MAX) {
+                          placeMember(h.id, party.length);
+                          setSelected(h.id);
+                          setSelectedSlot(party.length);
+                          sfx.upgrade();
+                          return;
+                        }
                         setSelected(h.id);
                         const idx = party.indexOf(h.id);
                         if (idx >= 0) setSelectedSlot(idx);
+                        else if (owned) setSelectedSlot(0); // 滿員未上陣時預設選中第 1 位方便一鍵替換
                       })}
                       aria-label={`${rarity} ${heroWord(h)} ${heroTitle(h)}${owned ? '' : '（未擁有）'}`}
                     >

@@ -75,7 +75,8 @@ function extractMeaning(q: Question, word: string): string {
   const descClean = desc.replace(/^請(?:唸出|拼出|填入)[^：:]*[：:]/, '').replace(/^[「『"']+|[」』"']+$/g, '').trim();
   if (/^[\u4e00-\u9fa5\s]+$/.test(descClean) && descClean.length <= 20) return descClean;
 
-  return word.toLowerCase();
+  // 嚴禁回填英文單字本身作為假釋義（R3 防禦）
+  return '';
 }
 
 // 為每一個分區提取並補齊該區題庫所屬的全部單字與片語
@@ -100,23 +101,29 @@ for (let r = 0; r <= 8; r++) {
     }
 
     if (!rawTarget) continue;
+    // 排除純數字、金額與算術符號（R3 防禦）
+    if (/^\$?\d+(\.\d+)?\.?$/.test(rawTarget.trim())) continue;
     const cleanKey = rawTarget.replace(/[^A-Za-z0-9\s-_]/g, '').trim().toUpperCase();
     if (!cleanKey || cleanKey.length < 2 || cleanKey.length > 40) continue;
+    if (/^\d+$/.test(cleanKey)) continue;
 
     // 檢查全域詞庫是否有此詞
     const existing = globalVocab[cleanKey] || globalVocab[cleanKey.replace(/\s+/g, '_')] || globalVocab[rawTarget.toUpperCase()];
 
     if (existing) {
-      if (!regionVocab[cleanKey]) {
+      if (!regionVocab[cleanKey] && existing.meaning && existing.meaning.toLowerCase() !== cleanKey.toLowerCase()) {
         regionVocab[cleanKey] = { ...existing, word: existing.word ?? rawTarget.toLowerCase() };
         addedCount++;
       }
       continue;
     }
 
-    // 若完全沒有，依題目上下文自動構建高標準單字卡
-    const pos = guessPos(cleanKey);
+    // 若完全沒有，嘗試提取真實中文釋義；提取不到則嚴格捨棄，絕不回填英文假詞條
     const meaning = extractMeaning(q, rawTarget);
+    if (!meaning || meaning.toLowerCase() === rawTarget.toLowerCase() || meaning.toLowerCase() === cleanKey.toLowerCase()) {
+      continue;
+    }
+    const pos = guessPos(cleanKey);
     const exEn = completedSentence(q) || (q.desc && !q.desc.includes('請') ? q.desc : `The word is ${rawTarget.toLowerCase()}.`);
     const exZh = q.explain ? q.explain.split(/[。\n]/)[0].trim() : `這個詞的意思是${meaning}。`;
 

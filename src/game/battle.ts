@@ -93,6 +93,28 @@ export function sentenceMatchRatio(expected: string, transcript: string): number
   return dp[a.length][b.length] / a.length;
 }
 
+// 關鍵否定詞清單：句中否定詞必須嚴格一致，避免漏唸 NOT/NEVER 導致意思相反卻被誤判過關
+const NEGATION_WORDS = new Set(['NOT', 'NO', 'NEVER', 'NEITHER', 'NOR', 'NONE', 'CANNOT']);
+
+function negationMismatch(expectedWords: string[], heardWords: string[]): boolean {
+  const countExp = expectedWords.filter(w => NEGATION_WORDS.has(w)).length;
+  const countHeard = heardWords.filter(w => NEGATION_WORDS.has(w)).length;
+  return countExp !== countHeard;
+}
+
+// 常見反義前綴清單：相差此類前綴代表詞義完全相反，絕對不能納入發音容錯
+const OPPOSING_PREFIXES = ['UN', 'IN', 'IM', 'DIS', 'NON', 'IR', 'IL', 'MIS', 'MAL', 'ANTI'];
+
+function hasOpposingPrefixMismatch(a: string, b: string): boolean {
+  const [longer, shorter] = a.length >= b.length ? [a, b] : [b, a];
+  for (const p of OPPOSING_PREFIXES) {
+    if (longer.startsWith(p) && longer.slice(p.length) === shorter) {
+      return true;
+    }
+  }
+  return false;
+}
+
 // 兩個字差幾個字母（編輯距離）
 function editDistance(a: string, b: string): number {
   const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
@@ -113,6 +135,8 @@ const wordTolerance = (len: number) => (len >= 12 ? 3 : len >= 8 ? 2 : len >= 6 
 function wordMatches(heard: string, target: string): boolean {
   if (heard === target) return true;
   if (heard === `${target}S` || heard === `${target}ES` || `${heard}S` === target) return true;
+  // 反義前綴保護（R2）：若相差否定/反義前綴（如 conspicuous vs inconspicuous），絕不容錯
+  if (hasOpposingPrefixMismatch(heard, target)) return false;
   const tol = wordTolerance(target.length);
   return tol > 0 && Math.abs(heard.length - target.length) <= tol && editDistance(heard, target) <= tol;
 }
@@ -134,7 +158,15 @@ export function checkVoice(q: Question, transcripts: string | string[]): boolean
   const candidates = [q.ans, ...(q.accept ?? []), ...(q.spellAccept ?? [])];
   const isSentence = q.ans.trim().includes(' ');
   return heardList.some(transcript => {
-    if (isSentence) return candidates.some(c => sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO);
+    if (isSentence) {
+      const heardWords = normalizeWords(transcript);
+      return candidates.some(c => {
+        const expWords = normalizeWords(c);
+        // 關鍵否定詞一致性保護（R2）：嚴防漏唸 NOT 或多唸 NOT 顛倒句義
+        if (negationMismatch(expWords, heardWords)) return false;
+        return sentenceMatchRatio(c, transcript) >= SENTENCE_PASS_RATIO;
+      });
+    }
     const words = normalizeWords(transcript);
     // 片語（例如 thank you）也可能被辨識成連在一起的一個字；一個長字也可能被拆成幾個詞
     const joined = words.join('');

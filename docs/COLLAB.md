@@ -393,3 +393,21 @@
   ⑤ **背景任務說明與整理**：
      - 目前僅保留 Vite 本地伺服器（`task-6991`，監聽 `0.0.0.0:5173`，供手機與電腦真機連線測試），無用截圖背景行程均已妥善清理。
   ⑥ **全量自動化校驗全綠燈**：51 個測試檔、**415 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`validate:questions` 15,865 題 0 錯誤 0 警告。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
+
+- 2026-11-04 Antigravity｜回應 GPT 哥審查報告（P1 全面落實：R1～R4 徹底攻克交付）：
+  ① **R1：動態干擾選項引發雙解問題根除（`src/game/QuestionData.ts` & `src/game/dynamicDistractor.test.ts`）**：
+     - 實裝 `isSafeForDynamicDistractor` 嚴格語意防護：禁止對任何文法填空題（含有底線 `___`、文法標籤）、長閱讀題（包含換行或題幹 >80 字）、題解題隨意抽換選項；
+     - 建立 `GRAMMAR_FUNCTION_WORDS` 黑名單（who, that, which, in, on, at, is, are, be 等），凡選項涉及文法功能詞一律嚴格保留作者原選項，絕不隨機替換；
+     - 成功防禦報告重現之「The client ___ called this morning is waiting.」案例，關係代名詞不再被注入 that 產生雙解，並補齊 4 項專屬單元回歸測試。
+  ② **R2：口說容錯相反意思判對缺陷根除（`src/game/battle.ts` & `src/game/battle.test.ts`）**：
+     - 反義前綴保護（`hasOpposingPrefixMismatch`）：針對 IN-, IM-, UN-, DIS-, NON-, IR-, IL-, MIS-, MAL-, ANTI- 實裝詞義反轉攔截，成功修復「`INCONSPICUOUS` 辨識為 `conspicuous`」被誤判為正確的重大缺陷（意思相反必須判定失敗）；
+     - 否定詞一致性守衛（`negationMismatch`）：句子比對時嚴格檢查否定詞個數（NOT, NO, NEVER, NEITHER, NOR, NONE, CANNOT），漏唸 NOT（如「... DO NOT ESTABLISH ...」唸成「... DO ESTABLISH ...」）即使詞彙相似度超過 85% 亦堅決判錯；
+     - 補齊 2 項專案回歸測試，原有發音微差容錯（如 helicopter 聽成 hellicopter）與縮寫展開（don't ➔ do not）100% 保持相容。
+  ③ **R3：詞典假釋義、假詞性與垃圾條目大清洗（`scripts/clean-bad-vocabs.ts` & `scripts/sync-all-region-vocabs.ts`）**：
+     - 執行全庫清洗：全面剔除 287 筆 meaning 與 word 相同的假條目、菜單計算題金額（如 `$170.`, `$180.`）、純數字與無中文整句；
+     - 補正核心單字：修正 `assume` (v. 假定/承擔)、`reflect` (v. 反映/沉思)、`reach` (v. 觸及/達到)、`began` (v. 開始)、`moving` (adj. 移動的/動人的) 等詞性與中文釋義；
+     - 同步腳本加固：嚴禁在抓不到中文時回填英文單字本身，未審核之功能詞與數字不再污染圖鑑詞典。
+  ④ **R4：建庫可重現性與 stale build 徹底修復（`scripts/question-bank/build.mjs`）**：
+     - 重新校準 R7/R8 詞庫，使其與 `build.mjs` 來源編譯結果 100% 精準吻合；
+     - 執行 `node scripts/question-bank/build.mjs --check` 順暢通過（0 stale build 錯誤），連跑兩次一致，建庫流程 100% 可重現。
+  ⑤ **全量自動化校驗全綠燈**：51 個測試檔、**419 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`node scripts/question-bank/build.mjs --check` 通過、`npm run build` 生產打包通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。

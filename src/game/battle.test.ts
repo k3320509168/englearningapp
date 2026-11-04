@@ -74,6 +74,35 @@ describe('voice', () => {
     expect(checkVoice({ type: 'voice', desc: '', ans: 'DO NOT WORRY ABOUT IT' }, 'don’t worry about it')).toBe(true);
     expect(checkVoice({ type: 'voice', desc: '', ans: 'LET US GO SWIMMING' }, "let's go swimming")).toBe(true);
   });
+
+  it('R2回歸：反義前綴保護（INCONSPICUOUS 唸成 conspicuous 絕不能算對）', () => {
+    const q: Question = { type: 'voice', desc: '請唸出單字：不顯眼的', ans: 'INCONSPICUOUS', speak: 'inconspicuous' };
+    expect(checkVoice(q, 'inconspicuous')).toBe(true);
+    expect(checkVoice(q, 'inconspicous')).toBe(true); // 合理微小發音誤差容錯仍生效
+    expect(checkVoice(q, 'conspicuous')).toBe(false); // 缺少反義前綴 IN-，意思相反，必須判定失敗！
+  });
+
+  it('R2回歸：關鍵否定詞保護（漏唸 NOT 導致整句意思顛倒，絕不能算對）', () => {
+    const q1: Question = {
+      type: 'voice',
+      desc: '',
+      ans: 'COMPARABLE PRICES DO NOT ESTABLISH INTERCHANGEABLE FUNCTIONS',
+      speak: 'Comparable prices do not establish interchangeable functions',
+    };
+    // 完整唸出包含 NOT：通過
+    expect(checkVoice(q1, 'comparable prices do not establish interchangeable functions')).toBe(true);
+    // 漏唸 NOT：即使單字匹配率達 6/7 (85.7%)，也必須判定失敗！
+    expect(checkVoice(q1, 'comparable prices do establish interchangeable functions')).toBe(false);
+
+    const q2: Question = {
+      type: 'voice',
+      desc: '',
+      ans: 'SINCERE MOTIVES DO NOT BY THEMSELVES VINDICATE OUTCOMES',
+      speak: 'Sincere motives do not by themselves vindicate outcomes',
+    };
+    expect(checkVoice(q2, 'sincere motives do not by themselves vindicate outcomes')).toBe(true);
+    expect(checkVoice(q2, 'sincere motives do by themselves vindicate outcomes')).toBe(false);
+  });
 });
 
 describe('combo timer rules', () => {

@@ -29,4 +29,30 @@ describe('withDynamicDistractor', () => {
     const result = withDynamicDistractor(spellQ, pool, () => 0.1);
     expect(result).toBe(spellQ);
   });
+
+  it('R1回歸：絕對不修改文法填空題，避免產生雙解（如 who / that 關係子句衝突）', () => {
+    const grammarFillQ: Question = {
+      type: 'choice',
+      desc: 'The client ___ called this morning is waiting.',
+      options: ['A. who', 'B. which', 'C. whose', 'D. whom'],
+      ans: 'A',
+    };
+    const grammarPool = ['that', 'where', 'when', 'what', 'how'];
+    for (let i = 0; i < 20; i++) {
+      const result = withDynamicDistractor(grammarFillQ, grammarPool, () => 0.1);
+      // 確保題目完全未被修改，選項依然是原選項
+      expect(result.options).toEqual(['A. who', 'B. which', 'C. whose', 'D. whom']);
+    }
+  });
+
+  it('R1回歸：不修改閱讀題、長文章題或附帶解析的題目', () => {
+    const readingQ: Question = {
+      type: 'choice',
+      desc: 'Line 1: Meeting at noon.\nLine 2: Please bring your notes.\nWhen is the meeting?',
+      options: ['A. At noon', 'B. At midnight', 'C. Tomorrow morning', 'D. Next week'],
+      ans: 'A',
+    };
+    const result = withDynamicDistractor(readingQ, ['yesterday', 'evening', 'tonight'], () => 0.1);
+    expect(result.options).toEqual(readingQ.options);
+  });
 });

@@ -213,16 +213,45 @@ export function questionSkill(q: Question): QuestionSkill {
   return 'writing';
 }
 
+// 文法功能詞彙黑名單：絕不能作為動態干擾項隨機替換，避免破壞關係子句、介系詞或時態題產生雙解
+const GRAMMAR_FUNCTION_WORDS = new Set([
+  'WHO', 'WHOM', 'WHOSE', 'WHICH', 'THAT', 'WHERE', 'WHEN', 'WHY', 'HOW',
+  'IN', 'ON', 'AT', 'BY', 'FOR', 'WITH', 'ABOUT', 'TO', 'FROM', 'OF',
+  'IS', 'ARE', 'WAS', 'WERE', 'BE', 'BEEN', 'BEING',
+  'HAVE', 'HAS', 'HAD', 'DO', 'DOES', 'DID',
+  'A', 'AN', 'THE', 'THIS', 'THESE', 'THOSE'
+]);
+
+// 判斷題目是否具備安全的干擾項替換資格（R1 答題公平性保護）
+export function isSafeForDynamicDistractor(q: Question): boolean {
+  if (q.type !== 'choice' || !q.options || q.options.length !== 4) return false;
+  // 禁止文法填空題（包含底線、文法標籤）
+  if (q.desc.includes('___') || q.desc.includes('__') || q.grammar) return false;
+  // 禁止閱讀理解、長文章與對話題（包含換行或題幹過長）
+  if (q.desc.includes('\n') || q.desc.length > 80) return false;
+  // 禁止附帶題解的題目（避免替換選項後與原解析矛盾）
+  if (q.explain) return false;
+
+  const currentTexts = q.options.map(o => o.replace(/^[A-D]\.\s*/, '').trim());
+  // 若選項包含文法功能詞，嚴禁動態替換
+  if (currentTexts.some(t => GRAMMAR_FUNCTION_WORDS.has(t.toUpperCase()))) return false;
+  // 選項必須全為單純字詞（不包含長句子或空格）
+  if (!currentTexts.every(t => !t.includes(' ') && t.length > 0 && t.length < 25)) return false;
+
+  return true;
+}
+
 // 防膩機制（ROUND4_DESIGN 13節）：對於單字與片語選擇題，以 35% 機率動態從同級題庫抽取 1 個詞替換既有錯誤選項（確保正確答案不變）
+// 嚴格受到 isSafeForDynamicDistractor 安全守衛保護，絕不破壞文法填空題與閱讀題
 export function withDynamicDistractor(q: Question, distractorPool: string[], rand = Math.random): Question {
-  if (q.type !== 'choice' || !q.options || q.options.length < 4 || distractorPool.length < 5) return q;
+  if (!isSafeForDynamicDistractor(q) || distractorPool.length < 5) return q;
   if (rand() > 0.35) return q;
 
   const correctLetter = q.ans.toUpperCase();
   const correctIdx = ['A', 'B', 'C', 'D'].indexOf(correctLetter);
   if (correctIdx < 0) return q;
 
-  const currentTexts = q.options.map(o => o.replace(/^[A-D]\.\s*/, '').trim());
+  const currentTexts = q.options!.map(o => o.replace(/^[A-D]\.\s*/, '').trim());
   const correctText = currentTexts[correctIdx];
   const wrongIndices = [0, 1, 2, 3].filter(i => i !== correctIdx);
   if (wrongIndices.length === 0) return q;
@@ -231,6 +260,8 @@ export function withDynamicDistractor(q: Question, distractorPool: string[], ran
   const candidates = distractorPool.filter(w =>
     w !== correctText &&
     !currentTexts.includes(w) &&
+    !GRAMMAR_FUNCTION_WORDS.has(w.toUpperCase()) &&
+    !w.includes(' ') &&
     Math.abs(w.length - targetLen) <= Math.max(3, targetLen * 0.4)
   );
 
@@ -238,7 +269,7 @@ export function withDynamicDistractor(q: Question, distractorPool: string[], ran
   const replaceIdx = wrongIndices[Math.floor(rand() * wrongIndices.length)];
   const newWord = candidates[Math.floor(rand() * candidates.length)];
 
-  const newOptions = [...q.options];
+  const newOptions = [...q.options!];
   const prefix = ['A', 'B', 'C', 'D'][replaceIdx];
   newOptions[replaceIdx] = `${prefix}. ${newWord}`;
 

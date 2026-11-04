@@ -413,3 +413,12 @@ flowchart LR
   1. 恢復滾動：移除 `.hero-tile` 的 `touch-action: none`，改為 `touch-action: pan-y`；`usePartyDrag.ts` 觸控長按延遲調升至 350ms，且手指有垂直位移（> 8px）立即釋放為原生滾動，徹底解放手機滑動手勢。
   2. 手機版空間釋放：出戰隊伍改為單行 4 格（高度 74px），英雄詳細資料面板預設折疊（提供切換鈕），把螢幕 70% 空間全數釋放給下方英雄圖鑑網格。
   3. 直覺點擊上陣/替換：點選上方任一出戰位置（高亮提示），再點下方任一已擁有英雄，直接一秒替換上陣。
+
+### 7.7 落實 2026-11-04 GPT 哥審查報告（P1 全面落實：R1～R4 徹底攻克）
+- **R1 動態干擾項防護**：實裝 `isSafeForDynamicDistractor` 與文法功能詞黑名單，嚴格禁止文法填空題（如 who/that）、長閱讀題動態更換選項，杜絕雙重正解。
+- **R2 口說容錯防護**：
+  1. 實裝 `hasOpposingPrefixMismatch`：相差反義前綴（IN-, UN-, DIS-, IM- 等）如 `INCONSPICUOUS` 唸成 `conspicuous` 堅決判錯。
+  2. 實裝 `negationMismatch`：漏唸 NOT/NEVER 導致句義相反堅決判錯。
+- **R3 詞典假釋義清洗**：全面剔除 287 筆 meaning 與 word 相同的假條目、菜單計算數字（如 `$170.`）與無意義片段；補正 `assume`, `reflect`, `reach`, `began` 等正確詞性與中文釋義。
+- **R4 建庫可重現性**：校準 R7/R8 詞庫，`node scripts/question-bank/build.mjs --check` 0 錯誤通過，建庫流程 100% 可重現。
+- **當前驗證狀態**：51 個測試檔案、419 個單元測試 100% 通過；`validate:questions` 0 錯誤；`npm run build` 通過。

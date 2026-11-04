@@ -1987,7 +1987,7 @@
   "THAT": {
     "word": "that",
     "pos": "n.",
-    "meaning": "that",
+    "meaning": "強調句",
     "example": "It was the lack of consultation that angered local residents.",
     "exampleZh": "It was X that... 是強調句。"
   },
@@ -2007,8 +2007,8 @@
   },
   "MOVING": {
     "word": "moving",
-    "pos": "n.",
-    "meaning": "moving",
+    "pos": "adj.",
+    "meaning": "移動的、動人的",
     "example": "Our manager suggested moving the weekly meeting to Thursday morning.",
     "exampleZh": "suggest（建議）後面必須接動名詞（V-ing）作受詞，不能接不定詞。"
   },
@@ -2040,13 +2040,6 @@
     "example": "Many employees plan to work from home at least twice a week.",
     "exampleZh": "plan（計畫）後面必須接不定詞（to V）當作受詞。"
   },
-  "ITS SCHEDULE HAS BEEN CHANGED": {
-    "word": "its schedule has been changed.",
-    "pos": "phr.",
-    "meaning": "its schedule has been changed.",
-    "example": "【短文】Notice: The annual tech conference, which usually takes place in June, has been delayed to August. The venue will remain the same. Q: What is true about the tech conference?",
-    "exampleZh": "短文中提到會議從六月延遲到八月（delayed to August），地點維持不變（remain the same），故選 D"
-  },
   "WERE TESTING": {
     "word": "were testing",
     "pos": "phr.",
@@ -2071,16 +2064,9 @@
   "HEARING": {
     "word": "hearing",
     "pos": "n.",
-    "meaning": "hearing",
+    "meaning": "介系詞",
     "example": "I look forward to hearing from you.",
     "exampleZh": "look forward to 的 to 是介系詞，後面接 V-ing。"
-  },
-  "JANES MENTOR": {
-    "word": "jane's mentor.",
-    "pos": "phr.",
-    "meaning": "jane's mentor.",
-    "example": "【短文】Subject: Welcome! \nDear Jane, \nWe are excited to have you join our team. The mentor who will guide you during your first week is Mr. Davis. Please meet him at 9 AM tomorrow. \nQ: Who is Mr. Davis?",
-    "exampleZh": "信中寫道「The mentor who will guide you... is Mr. Davis」，表示 Mr. Davis 是 Jane 的導師"
   },
   "WERE DISCUSSING": {
     "word": "were discussing",
@@ -2088,13 +2074,6 @@
     "meaning": "討論預算",
     "example": "They were discussing the budget for next year when the power went out.",
     "exampleZh": "描述過去正在進行的動作（討論預算）被突發事件（停電 went out）打斷"
-  },
-  "CLOSING": {
-    "word": "closing",
-    "pos": "n.",
-    "meaning": "closing",
-    "example": "Would you mind closing the window? It's getting a bit cold in here.",
-    "exampleZh": "mind（介意）後面必須接動名詞（V-ing）作受詞。"
   },
   "WHOSE": {
     "word": "whose",
@@ -2109,34 +2088,6 @@
     "meaning": "過去同時正在發生的兩個動作",
     "example": "While the chef was preparing the ingredients, the waiters were setting up the tables.",
     "exampleZh": "While 引導的子句常用進行式，且後方子句為 were setting up，表示過去同時正在發生的兩個動作"
-  },
-  "OPERATING": {
-    "word": "operating",
-    "pos": "n.",
-    "meaning": "operating",
-    "example": "If you don't know how to use the equipment, you should avoid operating it without supervision.",
-    "exampleZh": "avoid（避免）後方需接動名詞（V-ing）。"
-  },
-  "IT SNOWED DURING THEIR TEMPLE VISIT": {
-    "word": "it snowed during their temple visit.",
-    "pos": "phr.",
-    "meaning": "it snowed during their temple visit.",
-    "example": "【短文】Travel Blog: We spent three days exploring Kyoto. On the second day, while we were visiting a temple, it started to snow heavily. It was a magical experience. Q: What happened on their second day in Kyoto?",
-    "exampleZh": "短文提到「while we were visiting a temple, it started to snow heavily」，故選 C"
-  },
-  "WAS LISTENING": {
-    "word": "was listening",
-    "pos": "phr.",
-    "meaning": "was listening",
-    "example": "I was listening to a podcast about remote work when I fell asleep.",
-    "exampleZh": "表示在過去某時正在聽 podcast，接著發生了睡著（fell asleep）的動作"
-  },
-  "TO PURSUE": {
-    "word": "to pursue",
-    "pos": "phr.",
-    "meaning": "to pursue",
-    "example": "She decided to pursue a new career path after working in finance for ten years.",
-    "exampleZh": "decide 後面必須接不定詞（to V）作受詞。"
   },
   "WAS GIVING": {
     "word": "was giving",
@@ -2158,27 +2109,6 @@
     "meaning": "記得曾經做過某事",
     "example": "I remember watching this movie before; the ending is very surprising.",
     "exampleZh": "remember V-ing 表示「記得曾經做過某事」。"
-  },
-  "WERE UPGRADING": {
-    "word": "were upgrading",
-    "pos": "phr.",
-    "meaning": "were upgrading",
-    "example": "While the engineers were upgrading the software, they found a critical bug in the system.",
-    "exampleZh": "While 引導的過去時間子句，表示當時正在進行升級（upgrading）的動作"
-  },
-  "LEAKING": {
-    "word": "leaking",
-    "pos": "n.",
-    "meaning": "leaking",
-    "example": "He denied leaking the confidential documents to the press.",
-    "exampleZh": "deny（否認）後面必須接動名詞（V-ing）。"
-  },
-  "THE CONTRACT": {
-    "word": "the contract.",
-    "pos": "phr.",
-    "meaning": "the contract.",
-    "example": "【短文】Email: Hi Sarah, please remember to bring the contract that we printed yesterday. We will need it for the client meeting at 2 PM. Q: What does Sarah need to bring?",
-    "exampleZh": "信中提到「please remember to bring the contract」，故 Sarah 必須帶合約"
   },
   "WERE WAITING": {
     "word": "were waiting",
@@ -2728,13 +2658,6 @@
     "example": "The scientists were analyzing the effects of the new diet when the fire alarm rang.",
     "exampleZh": "這是一個測試「過去進行式」的句子，表示在過去某個特定時間點（火災警報響起時）正在進行的動作，因此選擇 B. were analyzing"
   },
-  "GIVING": {
-    "word": "giving",
-    "pos": "n.",
-    "meaning": "giving",
-    "example": "Many doctors advise giving up sugary drinks to improve heart health and lose weight.",
-    "exampleZh": "動詞 advise 後面若直接接動詞，需要使用動名詞 (V-ing) 形式，因此選 giving。"
-  },
   "WERE MEASURING": {
     "word": "were measuring",
     "pos": "phr.",
@@ -2748,13 +2671,6 @@
     "meaning": "計畫要做的事",
     "example": "The local clinic plans to launch a free wellness program for seniors next month.",
     "exampleZh": "動詞 plan 後面必須接不定詞 (to + V)，表示計畫要做的事，因此正確答案為 B. to launch。"
-  },
-  "TAKING": {
-    "word": "taking",
-    "pos": "n.",
-    "meaning": "taking",
-    "example": "She admitted taking the painkillers without consulting her family doctor first.",
-    "exampleZh": "動詞 admit（承認）後面必須接動名詞 (V-ing) 表示已經發生的動作，因此選 C. taking。"
   },
   "WAS UPDATING": {
     "word": "was updating",
@@ -2777,13 +2693,6 @@
     "example": "I was waiting for the express train when I heard the station announcement.",
     "exampleZh": "表示在過去聽到廣播的瞬間，我「正在」等車，需使用過去進行式 B. was waiting"
   },
-  "SITTING": {
-    "word": "sitting",
-    "pos": "n.",
-    "meaning": "sitting",
-    "example": "Many citizens cannot tolerate sitting in heavy traffic for hours every morning.",
-    "exampleZh": "動詞 tolerate（容忍）後面必須接動名詞 (V-ing) 當作受詞，因此選 A. sitting。"
-  },
   "WERE FIXING": {
     "word": "were fixing",
     "pos": "phr.",
@@ -2797,13 +2706,6 @@
     "meaning": "決定去做某事",
     "example": "To save money and protect the environment, we decided to take public transport instead of driving.",
     "exampleZh": "動詞 decide 後面固定接不定詞 (to + V) 表示決定去做某事，因此選 D. to take。"
-  },
-  "DELIVERING": {
-    "word": "delivering",
-    "pos": "n.",
-    "meaning": "delivering",
-    "example": "Before the big event, the speaker practiced delivering his speech in front of a mirror many times.",
-    "exampleZh": "動詞 practice 後面必須接動名詞 (V-ing) 表示練習某事，故選 C. delivering。"
   },
   "WAS DRAFTING": {
     "word": "was drafting",
@@ -2846,13 +2748,6 @@
     "meaning": "了看天燈",
     "example": "Tourists from all over the world travel to Taiwan to see the famous sky lanterns.",
     "exampleZh": "不定詞 (to + V) 在句中用來表示目的，「為了看天燈」所以來台灣，因此選 D. to see。"
-  },
-  "SHARING": {
-    "word": "sharing",
-    "pos": "n.",
-    "meaning": "sharing",
-    "example": "Local residents enjoy sharing homemade traditional food with their neighbors during the holiday.",
-    "exampleZh": "動詞 enjoy 後面必須接動名詞 (V-ing) 當作受詞，表示享受做某事，因此選擇 B. sharing。"
   },
   "WERE PERFORMING": {
     "word": "were performing",
@@ -4159,13 +4054,6 @@
     "example": "🎧 聽到這句話，最適合的回應是？",
     "exampleZh": "We advise you to warm up before you start running.（我們建議你在開始跑步前先暖身"
   },
-  "5G": {
-    "word": "這個城市的 5g 覆蓋率非常好",
-    "pos": "n.",
-    "meaning": "這個城市的 5g 覆蓋率非常好",
-    "example": "🎧 聽一聽，選出正確的意思",
-    "exampleZh": "The 5G coverage is excellent in this city.（這個城市的 5G 覆蓋率非常好"
-  },
   "YES BUT IT STILL DOESNT WORK": {
     "word": "yes, but it still doesn't work.",
     "pos": "phr.",
@@ -4208,13 +4096,6 @@
     "example": "Many consumers hesitate to buy expensive electronics online.",
     "exampleZh": "動詞 hesitate（猶豫）後面必須接不定詞（to + V）當接受詞。"
   },
-  "REMOVING": {
-    "word": "removing",
-    "pos": "n.",
-    "meaning": "removing",
-    "example": "You must delay removing the tags on the clothes if you want a full refund.",
-    "exampleZh": "動詞 delay（延遲、暫緩）後面必須接動名詞（V-ing）作受詞。"
-  },
   "WAS ENTERING": {
     "word": "was entering",
     "pos": "phr.",
@@ -4242,13 +4123,6 @@
     "meaning": "過去發生的單一事件",
     "example": "The athletes were training in the gym when the fire alarm sounded.",
     "exampleZh": "when 子句為過去簡單式（sounded），表示過去發生的單一事件；主要子句應使用過去進行式，表示當時正在進行的訓練"
-  },
-  "WAS RUNNING": {
-    "word": "was running",
-    "pos": "phr.",
-    "meaning": "was running",
-    "example": "He was running heavily on the treadmill when he unexpectedly felt a sharp pain.",
-    "exampleZh": "when 引導過去簡單式（felt）的瞬間動作，主要子句則需使用過去進行式（was running）來描述當時持續在進行的跑步狀態"
   },
   "ESTIMATING": {
     "word": "estimating",
@@ -4278,13 +4152,6 @@
     "example": "New staff members are instructed to watch this safety video by Friday.",
     "exampleZh": "instruct sb. to do sth. 被動語態為 be instructed to do sth.（被指示去做某事）。"
   },
-  "WEARING": {
-    "word": "wearing",
-    "pos": "n.",
-    "meaning": "wearing",
-    "example": "The strict company policy prohibits wearing sandals in the office.",
-    "exampleZh": "動詞 prohibit（禁止）若直接接動作作為受詞，需使用動名詞（V-ing）。"
-  },
   "WAS SETTING": {
     "word": "was setting",
     "pos": "phr.",
@@ -4305,13 +4172,6 @@
     "meaning": "唯一正確的時態",
     "example": "We were walking along the river when the fireworks show began.",
     "exampleZh": "when 子句為過去簡單式（began），主要子句描述當時正在持續的動作，應使用過去進行式"
-  },
-  "TRYING": {
-    "word": "trying",
-    "pos": "n.",
-    "meaning": "trying",
-    "example": "The assistant suggested trying the smaller version before ordering a second set.",
-    "exampleZh": "suggest後動名詞trying，before表示先試再訂。"
   },
   "TO RENT": {
     "word": "to rent",
@@ -4833,13 +4693,6 @@
     "example": "【短文】Workplace Survey: A recent poll indicates that most professionals intend to continue working from home at least twice a week.\nQ: What do most professionals plan to do?",
     "exampleZh": "【閱讀】文章提到多數專業人士打算 (intend to) 每週至少有兩天在家工作，符合 D 選項「一週有幾天遠距工作」的意思"
   },
-  "HOLDING": {
-    "word": "holding",
-    "pos": "n.",
-    "meaning": "holding",
-    "example": "After the heavy rain, the committee postponed holding the final tennis match until the next day.",
-    "exampleZh": "【文法】postpone（延期）後方必須接動名詞 (V-ing)，表示延遲做某事。"
-  },
   "TO WIN": {
     "word": "to win",
     "pos": "phr.",
@@ -4861,26 +4714,12 @@
     "example": "【短文】Athlete Interview: 「I couldn't help crying when I stood on the podium,」 the champion said. 「All those years of hard training finally paid off.」\nQ: How did the champion react on the podium?",
     "exampleZh": "【閱讀】短文提到 couldn't help crying（忍不住哭了），對應 A 選項的 shed tears（流淚）"
   },
-  "WAITING": {
-    "word": "waiting",
-    "pos": "n.",
-    "meaning": "waiting",
-    "example": "The famous food critic did not mind waiting in line for two hours to try the new ramen.",
-    "exampleZh": "【文法】mind（介意）作為動詞時，後面必須接動名詞 (V-ing)。"
-  },
   "WAS CHECKING": {
     "word": "was checking",
     "pos": "phr.",
     "meaning": "正在",
     "example": "A: How was your experience at the diner?\nB: Terrible. The waiter was checking his phone while I was trying to order.",
     "exampleZh": "【時態】while I was trying to order (當我正試著點餐時) 使用了過去進行式，表示同一時段服務生也「正在」看手機，故前後應一致使用過去進行式"
-  },
-  "THEY WERE CONSUMING A PIECE OF PIZZA": {
-    "word": "they were consuming a piece of pizza.",
-    "pos": "phr.",
-    "meaning": "they were consuming a piece of pizza.",
-    "example": "【短文】Food Blog: I was eating a slice of their famous pepperoni pizza when I realized they had changed the cheese blend. It tastes much creamier now.\nQ: What was the blogger doing when they noticed a change?",
-    "exampleZh": "【閱讀】文中提到「I was eating a slice of their famous pepperoni pizza when I realized... (我正在吃一片披薩時意識到...)」，eating 等同於 B 選項的 consuming"
   },
   "IT RECENTLY STARTED OPERATING": {
     "word": "it recently started operating.",
@@ -4895,13 +4734,6 @@
     "meaning": "練習",
     "example": "Many adults practice speaking foreign languages by conversing with native speakers online.",
     "exampleZh": "【文法】practice (練習) 後方必須接動名詞 (V-ing)。"
-  },
-  "TO SPEND": {
-    "word": "to spend",
-    "pos": "phr.",
-    "meaning": "to spend",
-    "example": "The professor urged his students to spend more time reading academic journals.",
-    "exampleZh": "【文法】urge (敦促/呼籲) 的用法為 urge someone to do something，需搭配不定詞 (to V)。"
   },
   "WHOM": {
     "word": "whom",
@@ -5230,33 +5062,12 @@
       }
     ]
   },
-  "NOT AT ALL LET ME GRAB THE OTHER END": {
-    "word": "not at all. let me grab the other end.",
-    "pos": "phr.",
-    "meaning": "not at all. let me grab the other end.",
-    "example": "🎧 聽到這句話，最適合的回應是？",
-    "exampleZh": "Do you mind helping me carry this heavy couch?（你介意幫我搬這張沉重的沙發嗎？）"
-  },
-  "REALLY WE SHOULD DEMAND A REFUND": {
-    "word": "really? we should demand a refund.",
-    "pos": "phr.",
-    "meaning": "really? we should demand a refund.",
-    "example": "🎧 聽到這句話，最適合的回應是？",
-    "exampleZh": "The electrician who rewired the house did a terrible job.（重新拉線的電工做得非常糟糕"
-  },
   "THAT IS OKAY HOW CAN I RETURN IT TO YOU": {
     "word": "that is okay. how can i return it to you?",
     "pos": "phr.",
     "meaning": "將錯誤的物品寄到您的地址感到抱歉",
     "example": "🎧 聽到這句話，最適合的回應是？",
     "exampleZh": "We apologize for shipping the wrong item to your address.（我們為將錯誤的物品寄到您的地址感到抱歉"
-  },
-  "PLEASE LET US KNOW WHEN IT IS RESTORED": {
-    "word": "please let us know when it is restored.",
-    "pos": "phr.",
-    "meaning": "please let us know when it is restored.",
-    "example": "🎧 聽到這句話，最適合的回應是？",
-    "exampleZh": "We are currently investigating the cause of the power outage.（我們目前正在調查停電的原因"
   },
   "WAS PATROLLING": {
     "word": "was patrolling",
@@ -5985,13 +5796,6 @@
     "example": "My SUPERIOR urged me to resolve the conflict with my team member as soon as possible.",
     "exampleZh": "本題考不定詞用法。"
   },
-  "MAKING": {
-    "word": "making",
-    "pos": "n.",
-    "meaning": "making",
-    "example": "The organiser proposed making the final session optional.",
-    "exampleZh": "propose doing 表提議做某事，making session optional。"
-  },
   "WAS DEALING": {
     "word": "was dealing",
     "pos": "phr.",
@@ -6116,26 +5920,12 @@
     "example": "Project Memo: \"We are currently running behind schedule on the backend development. We need to allocate additional resources to meet our launch milestone.\"\nQ: What is the main problem stated in the memo?",
     "exampleZh": "「running behind schedule」意為進度落後／延遲（is delayed），需增派人手趕上時程"
   },
-  "DELAY THE CALL TO THREE THIRTY": {
-    "word": "delay the call to three thirty",
-    "pos": "phr.",
-    "meaning": "delay the call to three thirty",
-    "example": "The word is delay the call to three thirty.",
-    "exampleZh": "「push back... by half an hour to three thirty」意為將通話延後 30 分鐘至 3:30（Delay the call）"
-  },
   "CONTRACT": {
     "word": "contract",
     "pos": "n.",
     "meaning": "合約",
     "example": "Both parties agreed to sign the contract.",
     "exampleZh": "合約"
-  },
-  "IMPLEMENTING": {
-    "word": "implementing",
-    "pos": "n.",
-    "meaning": "implementing",
-    "example": "The management team is considering implementing a four-day workweek to boost employee morale.",
-    "exampleZh": "consider（考慮）作為動詞時，後方須接動名詞（V-ing）當作受詞。"
   },
   "IT WAS CREATED BY UNIVERSITY STUDENTS": {
     "word": "it was created by university students.",
@@ -6157,20 +5947,6 @@
     "meaning": "due to heavy rain",
     "example": "【短文】Your flight to Tokyo has been delayed by two hours due to heavy rain. We will provide a meal voucher if you wait at the gate. \nQuestion: Why is the flight delayed?",
     "exampleZh": "告示提到「due to heavy rain」(由於大雨)，這屬於不良天氣狀況 (bad weather)，故選 B"
-  },
-  "ASKING": {
-    "word": "asking",
-    "pos": "n.",
-    "meaning": "asking",
-    "example": "It is generally a good idea to avoid asking sensitive personal questions during a job interview.",
-    "exampleZh": "avoid 後面必須接動名詞（V-ing），表示避免做某件事。"
-  },
-  "SHE SKETCHED BUILDINGS": {
-    "word": "she sketched buildings.",
-    "pos": "phr.",
-    "meaning": "she sketched buildings.",
-    "example": "【短文】Biography: Maria, who spent her childhood in a small village, always dreamed of becoming an architect. She was sketching buildings while other kids were playing outside. Q: What did Maria do when other kids played outside?",
-    "exampleZh": "文章指出「She was sketching buildings while other kids were playing outside.」，選 B"
   },
   "WAS STRUGGLING": {
     "word": "was struggling",
@@ -6751,13 +6527,6 @@
     "example": "【短文】Incident Report: While the new assistant was printing the monthly charts, the printer jammed. She had to ask the IT department for help.\nQ: When did the printer jam?",
     "exampleZh": "報告指出「While the new assistant was printing the monthly charts, the printer jammed」，直接說明了印表機卡紙發生的時間點"
   },
-  "RESETTING": {
-    "word": "resetting",
-    "pos": "n.",
-    "meaning": "resetting",
-    "example": "A: I am having trouble logging in.\nB: You should think about resetting your password first.",
-    "exampleZh": "介系詞 about 後方若要接動詞，必須變成動名詞（V-ing）作為受詞。"
-  },
   "SKIPPING LINES AT ATTRACTIONS": {
     "word": "skipping lines at attractions.",
     "pos": "phr.",
@@ -6998,7 +6767,7 @@
   "SEPARATING": {
     "word": "separating",
     "pos": "n.",
-    "meaning": "separating",
+    "meaning": "介系詞",
     "example": "Many remote workers struggle with separating their professional and personal lives at home.",
     "exampleZh": "【文法】struggle with 的 with 是介系詞，介系詞後面的動詞必須改成動名詞 (V-ing) 型態。"
   },
@@ -7108,13 +6877,6 @@
         ]
       }
     ]
-  },
-  "CERTAINLY WHAT DATES WORK BEST FOR YOU": {
-    "word": "certainly. what dates work best for you?",
-    "pos": "phr.",
-    "meaning": "certainly. what dates work best for you?",
-    "example": "🎧 聽到這句話，最適合的回應是？",
-    "exampleZh": "I was hoping to reschedule the installation of my new air conditioner.（我本來希望能重新安排安裝新冷氣的時間"
   },
   "SENDING": {
     "word": "sending",

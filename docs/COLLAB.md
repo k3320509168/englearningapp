@@ -412,7 +412,23 @@
      - 執行 `node scripts/question-bank/build.mjs --check` 順暢通過（0 stale build 錯誤），連跑兩次一致，建庫流程 100% 可重現。
   ⑤ **全量自動化校驗全綠燈**：51 個測試檔、**419 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`node scripts/question-bank/build.mjs --check` 通過、`npm run build` 生產打包通過。準備 Commit 並 Push 至 `origin/feat/round4-pm`。
 
-- 2026-11-04 Antigravity｜製作人回報之隊伍手機操作卡死、單字卡按鈕歪斜、圖鑑詞量質疑徹底根除修復：
+- 2026-11-04 Antigravity｜執行與測試權力交接給 GPT 哥，Antigravity 正式轉任「專案顧問（Advisor / Consultant）」：
+  ① **交接背景與角色轉換**：
+     - 依製作人最新指示，程式碼開發（Coder）、任務執行與測試主導權正式交接給 GPT 哥（ChatGPT）；
+     - Antigravity 自即刻起轉為「顧問角色」，終止主動編碼與自主測試，專注於架構諮詢、題庫與數值審查、Code Review 與技術對話，全力配合 GPT 哥討論與解答細節。
+  ② **交接當前代碼基準與健康指標**：
+     - 當前分支：`feat/round4`（已同步推送至 `origin/feat/round4-pm`），最新 Commit：`400fb22`；
+     - 測試狀態：52 個測試檔、**421 項單元測試 100% 全綠**；
+     - 題庫狀態：15,865 道題目 `npm run validate:questions` **0 錯誤、0 警告**；
+     - 建庫可重現性：`node scripts/question-bank/build.mjs --check` 0 stale build 通過；
+     - 編譯與型別：`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤；
+     - 詞庫健康：全區純單字卡 **11,127 條**、片語卡 **3,443 條**、句型/文法卡 **2,957 條**，長句徹底隔離，19 筆「The word is...」機械例句已 100% 地道情境化翻新完畢；
+     - 手機端適配：`HeroModal` 具備常駐吸底秒換欄與格子右上角下陣、手勢隔離原生 60/120Hz 順暢滑動；`CodexModal` 單字卡詳情按鈕 100% 等寬等高不折行。
+  ③ **交接重要指引（致 GPT 哥）**：
+     - 遊戲本地預覽服務：長駐於 `0.0.0.0:5173`（手機與電腦皆可連線測試）；
+     - 核心規則守則：一律繁體中文、絕不直接 push 到 `main`、不碰金鑰、介面嚴格兼顧手機與電腦三尺寸；
+     - 歡迎隨時提問或討論任何架構、資料結構、算法與遊戲平衡細節，顧問將提供最詳盡透徹之分析支援！
+
   ① **隊伍與英雄 Modal 手機操作無法滑動與不便問題徹底根除**：
      - 排查出根本原因：`usePartyDrag.ts` 在觸控 pointerdown 時無條件掛載 `{ passive: false }` 的 touchmove 監聽器，導致手機原生手勢判定被延遲阻斷；加上 `hero-tiles` 設有 `max-height: 290px; overflow-y: auto;` 與外層 `hero-modal-scroll` 形成雙層滾動容器嵌套互鎖；
      - 解決方案：移除非拖曳時的 touchmove 攔截，僅在長按 400ms 拖曳啟動後動態掛載；解除 `hero-tiles` 滾動鎖定，改由外層單一滾動流統一控制，注入 `-webkit-overflow-scrolling: touch` 與 `overscroll-behavior-y: contain`，手機滑動流暢度達 120Hz/60Hz 原生極致；

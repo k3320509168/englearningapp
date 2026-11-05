@@ -21127,10 +21127,10 @@
       "skill": "speaking",
       "difficulty": 2,
       "knowledgeType": "lexical",
-      "desc": "請唸出：銷毀末日炭疽病毒庫之生物武器不擴散查核",
+      "desc": "請唸出：生物武器不擴散核查",
       "ans": "BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION",
       "speak": "biological weapons non proliferation verification",
-      "explain": "biological weapons non proliferation verification (phr.)：銷毀末日炭疽病毒庫之生物武器不擴散查核。例句：Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.（聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。）",
+      "explain": "biological weapons non proliferation verification (phr.)：生物武器不擴散核查。例句：Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.（核查人員對地下掩體進行了未預先通知的生物武器不擴散核查。）",
       "vocabId": "R8:BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION"
     },
     {
@@ -21304,15 +21304,15 @@
       "difficulty": 1,
       "knowledgeType": "discourse",
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
-      "speak": "The chemical mechanical planarization (CMP) module suffered from dishing and erosion on copper interconnects. What failed?",
+      "speak": "The team provisionally attributed the uneven surface to unequal removal rates, but noted that the polishing settings and the slurry had been changed together. The report therefore cautioned against treating that attribution as an isolated causal finding. What reservation does the report express?",
       "options": [
-        "A. The liquid polishing slurry evaporated because someone left the plastic bottle cap unscrewed.",
-        "B. The selective removal rate between copper metal and surrounding dielectric oxide was improperly balanced.",
-        "C. The motorized polishing pad failed to rotate because of a blown electrical fuse in the motor.",
-        "D. The cleanroom technician forgot to wash their protective rubber boots before entering the room."
+        "A. The report considers further investigation unnecessary because the effect has been isolated.",
+        "B. The proposed cause is tentative because two simultaneous changes prevent its effect from being isolated.",
+        "C. The proposed explanation was rejected because the surface was found to be even.",
+        "D. Changing two conditions together establishes which condition caused the unevenness."
       ],
       "ans": "B",
-      "explain": "化學機械研磨拋光（CMP）模組突遇嚴重的「碟形凹陷（Dishing）」與「介質侵蝕（Erosion）」微觀缺陷：金屬研磨液（Slurry）的化學腐蝕速率與機械拋光布的磨削壓力失衡，導致微細銅導線中心被過度挖空，引發晶片局部互連電阻劇烈飆升。"
+      "explain": "provisionally與cautioned表明歸因仍暫定；兩項條件同時改變，不能把個別因素的作用單獨確立。答案來自原文對證據範圍的保留，不考研磨工藝知識。"
     },
     {
       "type": "choice",

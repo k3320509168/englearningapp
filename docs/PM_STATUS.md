@@ -453,3 +453,8 @@ flowchart LR
 ### 2026-11-05 Codex 驗收修復第一批（製作人授權）
 
 主工程/測試由Codex接任。從5383eb8建立乾淨獨立clone及codex/game-audit-fixes，不動舊advanced-question-banks四檔unmerged。完成N01/N02/N03/N05/N06/N07/N08/N09/N14/N16/N18/N22/N23/N24/N25/N28/N29/N30/N31/N32的指定缺陷；未完成N04/N10/N11/N12/N13/N15/N17/N19/N20/N21/N26/N27，詳docs/question-bank-qa/FIX_PROGRESS_2026-11-05.md。439 tests/tsc/eslint/build/題庫格式/builder通過，5181實玩世界王、材料遷移、三尺寸英雄/鍛造/黃金背景；不冒稱全遊戲或實體手機通過。SAVE_VERSION24遷移舊素材、持久化補發標記，不扣回合法資源。遠端feat/round4-pm=5383eb8，feat/round4為另一條b8d2d1c題庫線，僅上傳codex/game-audit-fixes，不部署。
+
+
+### 2026-11-05 Codex 第二批修復與回歸
+
+接續42943f9，修正N04/N11/N13/N19/N20/N21/N26/N27八項已知缺陷。新增HTML手機敵方資訊、快答提示與錯題回饋、既有規格前兩次1礦保底、修煉SRS與最高連對/日期快照修復；36個大小寫提示、時態語境、2組詞義/翻譯、3道專業題改成題內推論。SAVE_VERSION25更新43個精確舊題並保留codex/mistakes成績，避免舊錯題仍用壞版本。完整56檔452 tests/tsc/eslint/build/15865題格式/builder全過；5181實玩C1答題、60秒0對仍150金幣+1礦、5題4對最高連對3、再次答錯仍待複習1，附三尺寸圖。N10全庫語意、N12全模式口說驗證範圍、N15世界王經濟、N17歷史詞典資料仍未完成，詳FIX_PROGRESS_2026-11-05.md。只提交codex/game-audit-fixes，不合main/部署。

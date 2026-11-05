@@ -1,0 +1,227 @@
+{
+  "case_cue_fixes": [
+    {
+      "region": 2,
+      "group": "normal",
+      "index": 725,
+      "target": "CANCEL"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 992,
+      "target": "CONSENT"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 995,
+      "target": "AUTHENTIC"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 997,
+      "target": "EXCLUDED"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1000,
+      "target": "RELOCATE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1003,
+      "target": "STREAMING"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1005,
+      "target": "COMPREHEND"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1006,
+      "target": "HERITAGE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1012,
+      "target": "BARRIERS"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1014,
+      "target": "ALERT"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1016,
+      "target": "REVISE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1018,
+      "target": "EXCLUSIVE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1024,
+      "target": "MANIPULATE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1068,
+      "target": "DECEPTIVE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1069,
+      "target": "ACCESSIBLE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1073,
+      "target": "ADVOCATE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1074,
+      "target": "ISOLATION"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1078,
+      "target": "TRANSITION"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1079,
+      "target": "VULNERABLE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1083,
+      "target": "REFUND"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1084,
+      "target": "PRESERVE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1088,
+      "target": "LEGISLATION"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1089,
+      "target": "DISPUTE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1093,
+      "target": "INTERACTIVE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1094,
+      "target": "TRANSPARENT"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1098,
+      "target": "ADEQUATE"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1099,
+      "target": "CONSUMPTION"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1106,
+      "target": "EXPLICIT"
+    },
+    {
+      "region": 5,
+      "group": "normal",
+      "index": 1109,
+      "target": "COMPENSATE"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 330,
+      "target": "HEAVILY"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 334,
+      "target": "BIASES"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 337,
+      "target": "WITHDRAW"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 355,
+      "target": "MANDATORY"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 356,
+      "target": "COMPENSATE"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 360,
+      "target": "TRANSPARENT"
+    },
+    {
+      "region": 5,
+      "group": "boss",
+      "index": 362,
+      "target": "MANDATORY"
+    }
+  ],
+  "case_policy": "36 explicit common-word candidates reviewed; pronoun I retained; answer positions unchanged",
+  "domain_question_fixes": 3,
+  "translation_targets": [
+    "SUPREMACY",
+    "biological weapons non proliferation verification"
+  ],
+  "cefr_status": "Targeted repair only; not full bank semantic approval"
+}

@@ -42,3 +42,19 @@ it('黃金之路不能消耗無效護盾，正常戰鬥仍可使用', () => {
   B().consumeItem('shield'); expect(S().items.shield).toBe(3); expect(B().shield).toBe(false);
   B().exitToMap();
 });
+
+it('v25更新已存的舊歧義題，合併新舊key保留成績並可安全重載', async () => {
+  const { questionKey } = await import('../game/battle');
+  const old = { type: 'choice', skill: 'reading' as const, difficulty: 1 as const, desc: '【時態】The express train ___ from PLATFORM 3 at 9:15 AM.', options: ['A. departs', 'B. departed', 'C. has departed', 'D. departing'], ans: 'A', explain: '舊解析' };
+  const { revisedQuestion } = await import('../game/questionRevisions'); const fixed = revisedQuestion(old);
+  const data = { ...initialSave, codex: {
+    [questionKey(old)]: { question: old, correct: 2, wrong: 1, firstSeenAt: 5 },
+    [questionKey(fixed)]: { question: fixed, correct: 3, wrong: 2, firstSeenAt: 10 },
+  }, mistakes: { [questionKey(old)]: { question: old, wrongCount: 1, box: 1, dueAt: 100, lastWrongAt: 1 } } };
+  const saved = migrateSave(data, 24);
+  expect(Object.keys(saved.codex)).toEqual([questionKey(fixed)]);
+  expect(saved.codex[questionKey(fixed)]).toMatchObject({ correct: 5, wrong: 3, firstSeenAt: 5 });
+  expect(saved.mistakes[questionKey(fixed)]).toMatchObject({ box: 1, dueAt: 100, wrongCount: 1 });
+  expect(saved.mistakes[questionKey(fixed)].question.desc).toContain('current timetable');
+  expect(migrateSave(saved, SAVE_VERSION).codex).toEqual(saved.codex);
+});

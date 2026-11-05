@@ -15,12 +15,14 @@ import { keepFocus } from './keepFocus';
 // 測驗作答：一題一題出，答完立刻顯示對錯與正確答案，按「下一題」繼續。
 // 沒有計時、不扣血；答錯的字一樣記進錯題本。聽力題一出就播放，可以重播、慢速。
 // 口說題：有麥克風就用說的（區域試煉），沒有或設定不用麥克風時改成拼寫（一樣要真的會才算對）
-export default function QuizRunner({ questions, label, onAnswer, lastLabel = '看結果', blind = false }: {
+export default function QuizRunner({ questions, label, onAnswer, lastLabel = '看結果', blind = false, review = false, forceSpelling = false }: {
   questions: Question[];
   label: (idx: number) => string;   // 例如「第 3 / 10 題」
   // 按「下一題」時回報這一題的結果；viaSpelling：口說題改用拼寫作答
   onAnswer: (correct: boolean, viaSpelling?: boolean) => void;
   lastLabel?: string;               // 最後一題按鈕的文字（程度測驗會繼續測下一區，用「繼續」）
+  review?: boolean;                // 到期錯題依既有SRS推進
+  forceSpelling?: boolean;         // 明確的文字練習模式，不驗證口說
   blind?: boolean;                  // 程度測驗：不顯示對錯與正確答案、不記進圖鑑，答完直接下一題
 }) {
   const [idx, setIdx] = useState(0);
@@ -34,7 +36,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   const autoSpeak = useSaveStore(s => s.settings.autoSpeak);
   const say = useSpeak();
   const raw = questions[idx];
-  const canVoice = isSpeechRecognitionSupported() && !voiceAsSpelling && typed !== idx;
+  const canVoice = isSpeechRecognitionSupported() && !forceSpelling && !voiceAsSpelling && typed !== idx;
   const q = raw && raw.type === 'voice' && !canVoice ? voiceFallback(raw) : raw;
   const listeningQ = !!q && q.type === 'choice' && !!q.speak && questionSkill(q) === 'listening';
   const recognizer = useRef<Recognizer | null>(null);
@@ -49,7 +51,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
 
   const finish = (correct: boolean, heard?: string) => {
     if (blind) return answerBlind(correct);
-    recordAnswer(raw, correct, false, true);
+    recordAnswer(raw, correct, review, true);
     setResult({ correct, heard });
     if (correct) sfx.coin(); else sfx.wrong();
     if (q.speak) say(q.speak);
@@ -78,7 +80,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
     if (!q || result || !given.trim()) return;
     const correct = checkQuizAnswer(q, given);
     if (blind) return answerBlind(correct);
-    recordAnswer(raw, correct, false, true);
+    recordAnswer(raw, correct, review, true);
     setResult({ correct });
     if (correct) sfx.coin(); else sfx.wrong();
     if (q.speak) say(q.speak);

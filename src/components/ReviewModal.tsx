@@ -9,7 +9,6 @@ import { continueJourney } from '../game/startLevel';
 import { useSpeak } from './useSpeak';
 import QuizRunner from './QuizRunner';
 import { SWEEP_STREAK, SWEEP_DAILY_MAX } from '../store/saveStore';
-import { voiceFallback } from '../game/battle';
 import type { Question } from '../game/types';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
@@ -21,20 +20,24 @@ export default function ReviewModal() {
   const mistakes = useSaveStore(s => s.mistakes);
   const say = useSpeak();
   // 打開視窗當下的時間（同一次查看清單不會變動）
-  const [now] = useState(() => Date.now());
+  const [now, setNow] = useState(() => Date.now());
   const due = useMemo(() => dueMistakes(mistakes, now, 50), [mistakes, now]);
   const total = Object.keys(mistakes).length;
   const sweepTickets = useSaveStore(s => s.sweepTickets);
   // 修煉場：直接在這裡練錯題，連續答對 5 題送 3 張掃蕩券
   const [training, setTraining] = useState<Question[] | null>(null);
   const [streak, setStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
+  const [round, setRound] = useState(0);
   const [trainDone, setTrainDone] = useState(false);
   const [trainStats, setTrainStats] = useState({ answered: 0, correct: 0 });
 
   const startTraining = () => {
-    const list = (due.length ? due : Object.values(mistakes)).slice(0, 10).map(m => voiceFallback(m.question));
+    const list = (due.length ? due : Object.values(mistakes)).slice(0, 10).map(m => m.question);
     setTraining(list);
     setStreak(0);
+    setBestStreak(0);
+    setRound(n => n + 1);
     setTrainDone(false);
     setTrainStats({ answered: 0, correct: 0 });
   };
@@ -42,6 +45,7 @@ export default function ReviewModal() {
     if (correct) useSaveStore.getState().earnTrainingGold();
     const next = correct ? streak + 1 : 0;
     setStreak(next);
+    setBestStreak(best => Math.max(best, next));
     const newStats = { answered: trainStats.answered + 1, correct: trainStats.correct + (correct ? 1 : 0) };
     setTrainStats(newStats);
 
@@ -53,6 +57,7 @@ export default function ReviewModal() {
     }
     if (training && newStats.answered >= training.length) {
       setTrainDone(true);
+      setNow(Date.now());
       sfx.victory();
     }
   };
@@ -63,9 +68,9 @@ export default function ReviewModal() {
         {!trainDone ? (
           <>
             <p className="muted">連續答對 {SWEEP_STREAK} 題送 3 張掃蕩券・目前連對 {streak}・持有 🎟️ {sweepTickets}</p>
-            <QuizRunner key={training.length} questions={training} label={i => `第 ${i + 1} / ${training.length} 題`} onAnswer={onTrain} lastLabel="看結算" />
+            <QuizRunner key={round} questions={training} review forceSpelling label={i => `第 ${i + 1} / ${training.length} 題`} onAnswer={onTrain} lastLabel="看結算" />
             <div className="tutorial-actions">
-              <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => setTraining(null)}>回到清單</button>
+              <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { setNow(Date.now()); setTraining(null); }}>回到清單</button>
             </div>
           </>
         ) : (
@@ -73,16 +78,16 @@ export default function ReviewModal() {
             <div className="tower-result-header is-victory">
               <span className="tower-result-icon">🥋</span>
               <h3>修煉完成！</h3>
-              <p>本次作答：答對 {trainStats.correct} / {trainStats.answered} 題（最高連對 {streak}）</p>
+              <p>本次作答：答對 {trainStats.correct} / {trainStats.answered} 題（最高連對 {bestStreak}）</p>
             </div>
             <p className="muted" style={{ textAlign: 'center', margin: '8px 0' }}>
-              錯題記憶已強化！答對題目可獲得修煉金幣，連續答對更可源源不絕累積掃蕩券！
+              到期錯題答對後已安排下次複習；同一天的立即複習不當作跨日掌握。修煉金幣與掃蕩券依每日上限發放，口說題以拼寫練習、不作口說驗證。
             </p>
             <div className="tower-actions-row">
               <button className="btn btn-primary" onMouseDown={keepFocus} onClick={startTraining}>
-                🔄 再修煉一組（10題）
+                🔄 再修煉一組（最多10題）
               </button>
-              <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={() => setTraining(null)}>
+              <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={() => { setNow(Date.now()); setTraining(null); }}>
                 返回錯題清單
               </button>
             </div>
@@ -96,7 +101,7 @@ export default function ReviewModal() {
     <Modal title="📌 今日複習" onClose={closeModal}>
       {/* 頂部極簡引導與錯題修煉場按鈕 */}
       <div className="review-header-row">
-        <p className="review-lead">💡 戰鬥中將化為「困難題」登場，答對 3 次即可掌握畢業。</p>
+        <p className="review-lead">💡 到期錯題可在這裡或戰鬥中複習；依間隔安排跨日答對，才算掌握。</p>
         {total > 0 && (
           <button className="btn btn-secondary btn-small review-train-btn" onMouseDown={keepFocus} onClick={startTraining} title="進入修煉連續答對 5 題贈 3 張掃蕩券">
             🥋 進入修煉場 <span className="train-reward-badge">🎟️+3</span>

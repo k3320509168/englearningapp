@@ -1,8 +1,9 @@
 import { getPool, LEVELS } from './QuestionData';
 import { vocabFor, vocabKey, vocabByKey, getRegionVocab } from './vocab';
-import { completedSentence, questionAudio, questionKey } from './battle';
+import { completedSentence, questionAudio, questionKey, questionHint } from './battle';
 import { masteryStars } from './progression';
 import type { Question } from './types';
+import { REVIEWED_POS } from './vocabMetadata';
 
 // 圖鑑＝冒險圖鑑：將題庫 15,000+ 題整理成「單字」、「片語」與「文法」收藏，同一個字的不同題型合併計算熟練度
 
@@ -33,19 +34,6 @@ function grammarTitle(q: Question): string {
   return q.options?.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '') ?? q.desc;
 }
 
-function guessPos(w: string): string {
-  const lower = w.toLowerCase().trim();
-  if (lower.includes(' ') || lower.includes('-')) return 'phr.';
-  if (['i', 'you', 'he', 'she', 'we', 'they', 'it', 'this', 'that', 'these', 'those', 'who', 'what', 'which', 'my', 'your', 'his', 'her', 'our', 'their', 'its'].includes(lower)) return 'pron.';
-  if (['in', 'on', 'at', 'by', 'for', 'with', 'about', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'over', 'under'].includes(lower)) return 'prep.';
-  if (['and', 'but', 'or', 'so', 'because', 'although', 'though', 'while', 'if', 'unless', 'since'].includes(lower)) return 'conj.';
-  if (['can', 'could', 'may', 'might', 'must', 'shall', 'should', 'will', 'would'].includes(lower)) return 'v.aux.';
-  if (lower.endsWith('tion') || lower.endsWith('ment') || lower.endsWith('ness') || lower.endsWith('ity') || lower.endsWith('ship') || lower.endsWith('ance') || lower.endsWith('ence') || lower.endsWith('ism') || lower.endsWith('ist') || lower.endsWith('er') || lower.endsWith('or')) return 'n.';
-  if (lower.endsWith('able') || lower.endsWith('ible') || lower.endsWith('ous') || lower.endsWith('ive') || lower.endsWith('ful') || lower.endsWith('less') || lower.endsWith('al') || lower.endsWith('ic') || lower.endsWith('ary')) return 'adj.';
-  if (lower.endsWith('ly')) return 'adv.';
-  if (lower.endsWith('ize') || lower.endsWith('ise') || lower.endsWith('ate') || lower.endsWith('ify') || lower.endsWith('ed') || lower.endsWith('ing')) return 'v.';
-  return 'n.';
-}
 
 export function codexItems(
   levelKey: string,
@@ -58,6 +46,7 @@ export function codexItems(
   for (const q of [...pool.normal, ...pool.boss]) {
     let word = vocabKey(q);
     let v = vocabFor(q);
+    if (word && !/[A-Za-z]/.test(word.replace(/^R\d+:/, ''))) { word = null; v = null; }
 
     // 1. 若選擇題正確選項直接是英文單字/片語（例如 agenda, postpone, implement）
     if (!word && q.type === 'choice' && q.options) {
@@ -110,7 +99,7 @@ export function codexItems(
 
     // 標題與釋義健全提取
     const title = v?.display || (word ? (isSingleWord ? word.toLowerCase() : word) : grammarTitle(q));
-    let subtitle = v?.meaning || q.explain || q.desc || '';
+    let subtitle = v?.meaning || (kind === 'grammar' ? q.explain || q.desc : questionHint(q)) || '';
     if (q.type === 'choice' && q.options && (!v?.meaning || v.meaning === title)) {
       const correctOpt = q.options.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '').trim();
       if (correctOpt && /^[\u4e00-\u9fa5\s；，、]+$/.test(correctOpt)) {
@@ -123,7 +112,7 @@ export function codexItems(
       kind,
       title,
       subtitle,
-      pos: v?.pos ?? (kind === 'phrase' ? 'phr.' : kind === 'grammar' ? 'grammar' : guessPos(title)),
+      pos: REVIEWED_POS[title.toUpperCase()] ?? v?.pos ?? (kind === 'phrase' ? 'phr.' : kind === 'grammar' ? 'grammar' : ''),
       example: v ? `${v.example}\n${v.exampleZh}` : (q.desc && q.desc !== grammarTitle(q) ? `${completedSentence(q) || q.speak || ''}\n${q.desc}` : (completedSentence(q) || '')),
       audio: v?.display ?? questionAudio(q) ?? title,
       correct: 0,
@@ -148,6 +137,7 @@ export function codexItems(
     const regionVocab = getRegionVocab(regionIdx);
     if (regionVocab) {
       for (const [key, v] of Object.entries(regionVocab)) {
+        if (!/[A-Za-z]/.test(key.replace(/^R\d+:/, ''))) continue;
         const upper = key.toUpperCase();
         const tokenCount = upper.trim().split(/\s+/).filter(Boolean).length;
         if (tokenCount > 4) continue; // 排除任何歷史遺留長句
@@ -168,7 +158,7 @@ export function codexItems(
             kind,
             title,
             subtitle: v.meaning || '',
-            pos: v.pos || (kind === 'phrase' ? 'phr.' : guessPos(title)),
+            pos: REVIEWED_POS[title.toUpperCase()] ?? (v.pos || (kind === 'phrase' ? 'phr.' : '')),
             example: v.example ? `${v.example}\n${v.exampleZh || ''}` : '',
             audio: v.word || title,
             correct,

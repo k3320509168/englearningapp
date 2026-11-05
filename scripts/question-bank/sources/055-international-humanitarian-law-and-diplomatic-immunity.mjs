@@ -94,7 +94,7 @@ export const data = {
       ['pre emptive self defense caroline test','命懸一線別無他法之卡羅琳自衛權黃金準則',2,'phr.','Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.','國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。'],
       ['dolus specialis genocidal intent burden','證明有組織斬草除根之種族滅絕特別意圖舉證責任',2,'phr.','The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.','檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。'],
       ['direct participation in hostilities loss','平民持槍開火瞬間喪失豁免之直接參與敵對行動',2,'phr.','Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.','平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。'],
-      ['biological weapons non proliferation verification','銷毀末日炭疽病毒庫之生物武器不擴散查核',2,'phr.','Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.','聯合國武器核查官突襲深入數十米地下碉堡，以鐵腕落實生物武器不擴散核查與無害化銷毀程序。'],
+      ["biological weapons non proliferation verification", "生物武器不擴散核查", 2, "phr.", "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.", "核查人員對地下掩體進行了未預先通知的生物武器不擴散核查。"],
       ['restitutio in integrum full damages','重回侵權從未發生狀態之完全恢復原狀最高損害賠償',2,'phr.','The tribunal awarded billions under the historic restitutio in integrum full damages standard.','國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。']
     ],
     spells: [

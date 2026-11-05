@@ -1,3 +1,4 @@
+import { revisedQuestion } from '../game/questionRevisions';
 import { allowance, allowanceCap, catchupXp, frontierRecommendedLevel, isCatchupSource } from '../game/xpCatchup';
 import { firstClearXp, learningXp } from '../game/experiencePool';
 import { emptyMapMastery, masteryReady, recordMastery, MASTERY_PACKS } from '../game/mapMastery';
@@ -53,7 +54,7 @@ import type { WeaponSummonDrop } from '../game/weapons';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 24;
+export const SAVE_VERSION = 25;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -550,6 +551,21 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.knowledge = Object.fromEntries(Object.entries(migrated.knowledge)
     .filter(([, r]) => isPlainObject(r) && Array.isArray(r.wins) && r.wins.every(Number.isFinite) && Number.isFinite(r.dueAt)
       && (r.items === undefined || (Array.isArray(r.items) && r.items.every(i => typeof i === 'string')))));
+  // v25：題目修訂也更新已保存的錯題／圖鑑；保留累計成績，不讓舊題繼續誤導。
+  const codex: SaveData['codex'] = {};
+  for (const [originalKey, record] of Object.entries(migrated.codex)) {
+    const question = revisedQuestion(record.question), key = question === record.question ? originalKey : questionKey(question), previous = codex[key];
+    codex[key] = previous ? { ...record, question, correct: previous.correct + record.correct, wrong: previous.wrong + record.wrong,
+      firstSeenAt: Math.min(previous.firstSeenAt, record.firstSeenAt) } : { ...record, question };
+  }
+  migrated.codex = codex;
+  const mistakes: SaveData['mistakes'] = {};
+  for (const [originalKey, record] of Object.entries(migrated.mistakes)) {
+    const question = revisedQuestion(record.question), key = question === record.question ? originalKey : questionKey(question), previous = mistakes[key];
+    mistakes[key] = previous ? { ...record, question, wrongCount: previous.wrongCount + record.wrongCount,
+      lastWrongAt: Math.max(previous.lastWrongAt, record.lastWrongAt), box: Math.min(previous.box, record.box), dueAt: Math.min(previous.dueAt, record.dueAt) } : { ...record, question };
+  }
+  migrated.mistakes = mistakes;
   // v17 之前沒有知識點：圖鑑裡答對過的都算「已學」（第一次見到的時間算一次成功）；已開放的區域視為打倒過魔王
   if (version >= 1 && version < 17) {
     for (const c of Object.values(migrated.codex)) {

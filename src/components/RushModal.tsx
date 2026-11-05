@@ -8,6 +8,8 @@ import { useUiStore } from '../store/uiStore';
 import { useSpeak } from './useSpeak';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { quickSpellingExtra } from '../game/questionHelp';
+import { answerLabel } from '../game/answerLabel';
 
 // 每日素材本：60 秒狂熱快答。只出玩家學過（圖鑑裡）的題目，答完立刻下一題，練語感和反應速度；
 // 依答對題數與最高連擊給金幣、經驗與礦石。一天 3 次。
@@ -22,6 +24,7 @@ export default function RushModal() {
   const [stats, setStats] = useState({ correct: 0, combo: 0, best: 0 });
   const [flash, setFlash] = useState<'ok' | 'ng' | null>(null);
   const [input, setInput] = useState('');
+  const [lastMistake, setLastMistake] = useState<string | null>(null);
   const [done, setDone] = useState<ReturnType<ReturnType<typeof useSaveStore.getState>['grantRush']> | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const say = useSpeak();
@@ -33,6 +36,7 @@ export default function RushModal() {
     setLeft(RUSH_SECONDS * 1000);
     setStats({ correct: 0, combo: 0, best: 0 });
     setDone(null);
+    setLastMistake(null);
     save.startRush();
   };
 
@@ -73,6 +77,7 @@ export default function RushModal() {
       const combo = ok ? s.combo + 1 : 0;
       return { correct: s.correct + (ok ? 1 : 0), combo, best: Math.max(s.best, combo) };
     });
+    if (!ok) setLastMistake(`${q.desc} → ${answerLabel(q).text}`);
     setFlash(ok ? 'ok' : 'ng');
     window.setTimeout(() => setFlash(null), 250);
     if (ok) sfx.coin(); else sfx.wrong();
@@ -87,6 +92,7 @@ export default function RushModal() {
       {!questions && (
         <>
           <p>只出你學過的題目，{RUSH_SECONDS} 秒內答越多越好！答錯不扣血，但會斷連擊。答對越多、連擊越高，金幣、經驗和礦石越多。</p>
+          <p className="muted">口說題在快答模式以拼寫練習，不作口說驗證；前兩次至少獲得150金幣與1礦石。</p>
           <p className="muted">今天還可以挑戰 {Math.max(0, runsLeft)} / {RUSH_PER_DAY} 次</p>
           <button className="btn btn-primary" onMouseDown={keepFocus} disabled={runsLeft <= 0} onClick={start}>{runsLeft > 0 ? '開始！' : '今天的次數用完了'}</button>
         </>
@@ -96,6 +102,8 @@ export default function RushModal() {
           <div className="rush-bar"><span style={{ width: `${(left / (RUSH_SECONDS * 1000)) * 100}%` }} /></div>
           <p className="rush-score">✔ {stats.correct}・🔥 {stats.combo} combo・⏱ {Math.ceil(left / 1000)} 秒</p>
           <p className="q-desc">{q.desc}</p>
+          {quickSpellingExtra(q) && <p className="muted">{quickSpellingExtra(q)}</p>}
+          {lastMistake && <p className="rush-correction" role="status">上一個錯題：{lastMistake}</p>}
           {q.speak && q.desc.startsWith('🎧') && <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(q.speak)}>🔊 再聽一次</button>}
           {q.type === 'choice' ? (
             <div className="rush-options">

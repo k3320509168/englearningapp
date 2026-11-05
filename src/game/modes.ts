@@ -25,7 +25,7 @@ export function rushReward(correct: number, bestCombo: number, regionIdx: number
   return {
     gold: baseGold + Math.round((correct * 15 + bestCombo * 5) * scale),
     xp: Math.round(correct * 8 * xpScale(regionIdx)),
-    ore: Math.floor(correct / 3),
+    ore: Math.max(runIndex < 2 ? 1 : 0, Math.floor(correct / 3)),
   };
 }
 

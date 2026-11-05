@@ -8624,7 +8624,7 @@
       "type": "choice",
       "skill": "reading",
       "difficulty": 1,
-      "desc": "【時態】The express train ___ from PLATFORM 3 at 9:15 AM.",
+      "desc": "【時態】According to the current timetable, the express train ___ from platform 3 at 9:15 AM every weekday.",
       "options": [
         "A. departs",
         "B. departed",
@@ -8632,7 +8632,7 @@
         "D. departing"
       ],
       "ans": "A",
-      "explain": "火車時刻表屬於固定行程，即使是未來發生的事，也常用現在簡單式表示，因此選 departs。"
+      "explain": "目前時刻表列出的例行行程用現在簡單式departs；departed與has departed描述已發生的事件，departing不是這個句子的完整謂語。"
     },
     {
       "type": "choice",
@@ -8866,7 +8866,7 @@
       "options": [
         "A. start",
         "B. join",
-        "C. CANCEL",
+        "C. cancel",
         "D. continue"
       ],
       "ans": "C",

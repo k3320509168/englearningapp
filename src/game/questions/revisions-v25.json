@@ -1,0 +1,597 @@
+{
+  "choice|【時態】The express train ___ from PLATFORM 3 at 9:15 AM.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【時態】According to the current timetable, the express train ___ from platform 3 at 9:15 AM every weekday.",
+    "options": [
+      "A. departs",
+      "B. departed",
+      "C. has departed",
+      "D. departing"
+    ],
+    "ans": "A",
+    "explain": "目前時刻表列出的例行行程用現在簡單式departs；departed與has departed描述已發生的事件，departing不是這個句子的完整謂語。"
+  },
+  "choice|【對話】A: Are we still going hiking tomorrow? \nB: The radio says there will be a storm. I think we must ___ the trip.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【對話】A: Are we still going hiking tomorrow? \nB: The radio says there will be a storm. I think we must ___ the trip.",
+    "options": [
+      "A. start",
+      "B. join",
+      "C. cancel",
+      "D. continue"
+    ],
+    "ans": "C",
+    "explain": "因為有暴風雨，所以必須「取消(cancel)」行程，符合語境。"
+  },
+  "choice|【字彙】Doctors must always obtain written ___ from patients before performing any experimental procedures.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】Doctors must always obtain written ___ from patients before performing any experimental procedures.",
+    "options": [
+      "A. fiction",
+      "B. sorrow",
+      "C. penalty",
+      "D. consent"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (同意)。句意：醫生在進行任何實驗性程序之前，必須始終取得病患的書面同意。選項 A (虛構小說)、B (悲傷)、C (懲罰) 皆不符合醫療程序的語境。"
+  },
+  "choice|【字彙】The village is famous for its ___ crafts, which have been made using the same techniques for centuries.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】The village is famous for its ___ crafts, which have been made using the same techniques for centuries.",
+    "options": [
+      "A. desperate",
+      "B. careless",
+      "C. authentic",
+      "D. artificial"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (道地的 / 真實的)。句意：這個村莊以其道地的工藝品聞名，這些工藝品幾個世紀以來一直使用相同的技術製作。選項 A (絕望的)、B (粗心的)、D (人造的) 皆不符文意。"
+  },
+  "choice|【字彙】The company is trying to remove invisible barriers so that no minority group feels ___ in the workplace.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】The company is trying to remove invisible barriers so that no minority group feels ___ in the workplace.",
+    "options": [
+      "A. decorated",
+      "B. excluded",
+      "C. infected",
+      "D. cooked"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (被排除在外的)。句意：公司正試圖消除無形的障礙，以便沒有任何少數群體在職場中感到被排斥。選項 A (被裝飾的)、C (被感染的)、D (被煮熟的) 都不符合職場多元包容的語境。"
+  },
+  "choice|【字彙】After the devastating hurricane, thousands of residents were forced to ___ to safer inland territories.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】After the devastating hurricane, thousands of residents were forced to ___ to safer inland territories.",
+    "options": [
+      "A. predict",
+      "B. entertain",
+      "C. translate",
+      "D. relocate"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (搬遷)。句意：在毀滅性的颶風之後，成千上萬的居民被迫搬遷到更安全的內陸地區。選項 A (預測)、B (娛樂)、C (翻譯) 語意完全不符。"
+  },
+  "choice|【字彙】The independent artist decided to pull her albums from the ___ platform because the payout rates were too low.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】The independent artist decided to pull her albums from the ___ platform because the payout rates were too low.",
+    "options": [
+      "A. boiling",
+      "B. streaming",
+      "C. chewing",
+      "D. farming"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (串流)。句意：這位獨立藝術家決定將她的專輯從串流平台上撤下，因為分潤率太低了。選項 A (沸騰的)、C (咀嚼的)、D (耕作的) 在此不具意義。"
+  },
+  "choice|【字彙】Scientists are currently trying to ___ exactly how the human brain processes artificial visual signals.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】Although she could repeat every sentence verbatim, she still could not ___ the argument: she did not understand how its premises supported its conclusion.",
+    "options": [
+      "A. comprehend",
+      "B. memorise",
+      "C. recite",
+      "D. quote"
+    ],
+    "ans": "A",
+    "explain": "能逐字重複不代表理解論證。後半句明說她不理解前提如何支持結論，因此comprehend（理解）最合適；memorise（記住）、recite（背誦）、quote（引用）都不能表達這個理解上的缺口。"
+  },
+  "choice|【字彙】The newly elected mayor promised to protect the region's cultural ___ from being destroyed by mass tourism.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙】The newly elected mayor promised to protect the region's cultural ___ from being destroyed by mass tourism.",
+    "options": [
+      "A. luggage",
+      "B. garbage",
+      "C. envelope",
+      "D. heritage"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (遺產 / 傳統)。句意：新當選的市長承諾要保護該地區的文化遺產，以免被大眾旅遊業破壞。cultural heritage（文化遺產）是常見的固定搭配搭配。"
+  },
+  "choice|【字彙】Due to the rising sea levels, the government must build stronger physical ___ to protect the low-lying coastal cities from regular flooding.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙】Due to the rising sea levels, the government must build stronger physical ___ to protect the low-lying coastal cities from regular flooding.",
+    "options": [
+      "A. theories",
+      "B. barriers",
+      "C. menus",
+      "D. pockets"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (障礙物 / 屏障)。句意：由於海平面上升，政府必須建造更堅固的物理屏障，以保護低窪沿海城市免受經常性洪水的侵襲。選項 A (理論)、C (菜單) 皆不合邏輯。"
+  },
+  "choice|【字彙】The new wearable device can continuously monitor your heart rate and instantly ___ you if it detects any dangerous irregular beats.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙】The new wearable device can continuously monitor your heart rate and instantly ___ you if it detects any dangerous irregular beats.",
+    "options": [
+      "A. alert",
+      "B. suspect",
+      "C. forgive",
+      "D. comfort"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (警示 / 發出警報)。句意：這款新的穿戴式裝置可持續監測您的心率，如果檢測到危險的不規律跳動，會立即向您發出警示。選項 B (懷疑)、C (原諒)、D (安慰) 不符合科技裝置的功能。"
+  },
+  "choice|【字彙】To ensure fairness, the manager decided to ___ the current bonus structure so that part-time employees could also receive holiday rewards.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙】To ensure fairness, the manager decided to ___ the current bonus structure so that part-time employees could also receive holiday rewards.",
+    "options": [
+      "A. steal",
+      "B. bury",
+      "C. paint",
+      "D. revise"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (修訂 / 修改)。句意：為確保公平，經理決定修訂目前的獎金結構，讓兼職員工也能獲得節日獎勵。選項 A (偷竊)、B (埋葬) 在此不具意義。"
+  },
+  "choice|【字彙】The entertainment agency signed an ___ contract with the young composer, meaning he cannot write songs for any other companies.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙】The entertainment agency signed an ___ contract with the young composer, meaning he cannot write songs for any other companies.",
+    "options": [
+      "A. obvious",
+      "B. polite",
+      "C. exclusive",
+      "D. casual"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (獨家的 / 排他的)。句意：娛樂經紀公司與這位年輕作曲家簽署了獨家合約，意味著他不能為任何其他公司寫歌。exclusive contract 意為獨家合約。"
+  },
+  "choice|【短文-字彙】Medical Ethics Forum: Gene-editing tools like CRISPR offer immense medical potential. However, doctors must ensure that they do not ___ patient DNA for non-medical enhancements, such as changing a child's eye color or physical height. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙】Medical Ethics Forum: Gene-editing tools like CRISPR offer immense medical potential. However, doctors must ensure that they do not ___ patient DNA for non-medical enhancements, such as changing a child's eye color or physical height. Q: Which word best fills in the blank?",
+    "options": [
+      "A. swallow",
+      "B. polish",
+      "C. rescue",
+      "D. manipulate"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (操縱)。句意：醫生必須確保他們不會為了非醫療的增強目的（如改變眼睛顏色）去操縱病患的DNA。選項 A (吞嚥)、B (擦亮) 皆不符合科技與倫理的語意。"
+  },
+  "choice|【字彙-消費者權益】The retailer was fined heavily for using ___ advertising tactics that misled thousands of customers.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-消費者權益】The retailer was fined heavily for using ___ advertising tactics that misled thousands of customers.",
+    "options": [
+      "A. organic",
+      "B. manual",
+      "C. vulnerable",
+      "D. deceptive"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (欺騙的)。句意：該零售商因使用誤導數千名顧客的欺騙性廣告手法而遭到重罰。選項 A (有機的)、B (手動的)、C (脆弱的) 皆不符合題意。"
+  },
+  "choice|【字彙-博物館】The new audio guide makes the historical artifacts much more ___ to visually impaired visitors.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-博物館】The new audio guide makes the historical artifacts much more ___ to visually impaired visitors.",
+    "options": [
+      "A. accessible",
+      "B. mandatory",
+      "C. isolated",
+      "D. fragile"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (可接近的 / 無障礙的)。句意：新的語音導覽讓視障遊客更容易親近這些歷史文物。make something accessible to someone 為常見搭配，表示讓某人能使用或理解。選項 B (強制的)、C (孤立的)、D (脆弱的) 語意不通。"
+  },
+  "choice|【字彙-氣候政策】Environmentalists ___ for stricter penalties against industries that illegally dump toxic waste into rivers.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-氣候政策】Environmentalists ___ for stricter penalties against industries that illegally dump toxic waste into rivers.",
+    "options": [
+      "A. advocate",
+      "B. compensate",
+      "C. translate",
+      "D. decorate"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (提倡 / 主張)。句意：環保人士提倡對非法將有毒廢棄物排入河流的工業實施更嚴格的懲罰。選項 B (補償)、C (翻譯)、D (裝飾) 完全不符合環保抗爭的語境。"
+  },
+  "choice|【字彙-遠距工作】Many employees felt a deep sense of ___ after working from home alone for several consecutive months.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-遠距工作】Many employees felt a deep sense of ___ after working from home alone for several consecutive months.",
+    "options": [
+      "A. emission",
+      "B. isolation",
+      "C. luxury",
+      "D. refund"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (孤立 / 隔離)。句意：許多員工在連續幾個月獨自在家工作後，感到深深的孤立感。sense of isolation 是常見搭配。選項 A (排放)、C (奢華)、D (退款) 皆不合邏輯。"
+  },
+  "choice|【字彙-企業永續】The company's rapid ___ to solar power helped them significantly lower their monthly electricity bills.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-企業永續】The company's rapid ___ to solar power helped them significantly lower their monthly electricity bills.",
+    "options": [
+      "A. dispute",
+      "B. transition",
+      "C. isolation",
+      "D. vocabulary"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (轉變 / 過渡)。句意：該公司向太陽能的快速轉型幫助他們大幅降低了每月的電費。transition to... 表示過渡或轉變到某種狀態。選項 A (爭議)、C (孤立) 不符句意。"
+  },
+  "choice|【字彙-氣候政策】Developing countries are often the most ___ to the devastating impacts of extreme climate changes.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-氣候政策】Developing countries are often the most ___ to the devastating impacts of extreme climate changes.",
+    "options": [
+      "A. explicit",
+      "B. interactive",
+      "C. vulnerable",
+      "D. transparent"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (脆弱的 / 易受影響的)。句意：開發中國家通常最容易受到極端氣候變遷的毀滅性影響。be vulnerable to... 意為易受...傷害。選項 A (明確的)、B (互動的)、D (透明的) 語意不通。"
+  },
+  "choice|【字彙-消費者權益】According to the new law, offering a full ___ for defective electronic goods is mandatory for all sellers.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-消費者權益】According to the new law, offering a full ___ for defective electronic goods is mandatory for all sellers.",
+    "options": [
+      "A. dispute",
+      "B. emission",
+      "C. refund",
+      "D. transition"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (退款)。句意：根據新法，為有缺陷的電子產品提供全額退款是所有賣家必須遵守的規定。選項 A (爭議)、B (排放)、D (轉變) 都不符合消費者權益的語境。"
+  },
+  "choice|【字彙-博物館】The interactive exhibit is designed to ___ the local indigenous culture and educate the younger generation.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "desc": "【字彙-博物館】The interactive exhibit is designed to ___ the local indigenous culture and educate the younger generation.",
+    "options": [
+      "A. compensate",
+      "B. advocate",
+      "C. deceive",
+      "D. preserve"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (保存 / 維護)。句意：這個互動展覽旨在保存當地原住民文化並教育年輕一代。preserve culture 是常見的搭配。選項 A (補償)、B (提倡)、C (欺騙) 語意不符。"
+  },
+  "choice|【字彙-氣候政策】The proposed ___ aims to strictly regulate greenhouse gases, but many politicians are still debating its potential economic impacts.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-氣候政策】The proposed ___ aims to strictly regulate greenhouse gases, but many politicians are still debating its potential economic impacts.",
+    "options": [
+      "A. isolation",
+      "B. refund",
+      "C. exhibition",
+      "D. legislation"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (立法 / 法規)。句意：擬議中的法規旨在嚴格管制溫室氣體，但許多政治人物仍在辯論其潛在的經濟影響。選項 A (孤立)、B (退款)、C (展覽) 與管制溫室氣體無關。"
+  },
+  "choice|【字彙-消費者權益】To resolve the ongoing ___ fairly, the airline agreed to offer free flight vouchers to all the stranded passengers.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-消費者權益】To resolve the ongoing ___ fairly, the airline agreed to offer free flight vouchers to all the stranded passengers.",
+    "options": [
+      "A. dispute",
+      "B. emission",
+      "C. transition",
+      "D. consumption"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (爭議 / 糾紛)。句意：為了公平解決這場持續的糾紛，航空公司同意向所有滯留乘客提供免費航班代金券。選項 B (排放)、C (轉變)、D (消費) 皆不符合解決客訴的情境。"
+  },
+  "choice|【字彙-博物館】Unlike traditional galleries, this modern space features ___ displays where children can physically touch and manipulate the scientific models.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-博物館】Unlike traditional galleries, this modern space features ___ displays where children can physically touch and manipulate the scientific models.",
+    "options": [
+      "A. interactive",
+      "B. vulnerable",
+      "C. deceptive",
+      "D. mandatory"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (互動的)。句意：與傳統畫廊不同，這個現代空間的特色是互動式展示，兒童可以親自觸摸和操作科學模型。選項 B (脆弱的)、C (欺騙的)、D (強制的) 語意不符。"
+  },
+  "choice|【字彙-企業永續】Corporate reporting must be completely ___ so that investors can clearly see how much water and energy the factories consume annually.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-企業永續】Corporate reporting must be completely ___ so that investors can clearly see how much water and energy the factories consume annually.",
+    "options": [
+      "A. isolated",
+      "B. transparent",
+      "C. vulnerable",
+      "D. deceptive"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (透明的 / 公開的)。句意：企業報告必須完全透明，以便投資者可以清楚看到工廠每年消耗多少水和能源。選項 A (孤立的)、C (脆弱的)、D (欺騙的) 皆不符合誠實揭露的語境。"
+  },
+  "choice|【字彙-遠距工作】The survey indicated that many home-based employees lacked ___ ergonomic office furniture, which led to chronic back pain.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-遠距工作】The survey indicated that many home-based employees lacked ___ ergonomic office furniture, which led to chronic back pain.",
+    "options": [
+      "A. explicit",
+      "B. adequate",
+      "C. transparent",
+      "D. mandatory"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (足夠的 / 合適的)。句意：調查指出，許多居家辦公的員工缺乏合適的人體工學辦公家具，這導致了慢性背痛。選項 A (明確的)、C (透明的)、D (強制的) 套入句中皆不通順。"
+  },
+  "choice|【字彙-氣候政策】To effectively combat global warming, nations must drastically reduce their daily ___ of fossil fuels over the next decade.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙-氣候政策】To effectively combat global warming, nations must drastically reduce their daily ___ of fossil fuels over the next decade.",
+    "options": [
+      "A. isolation",
+      "B. legislation",
+      "C. consumption",
+      "D. transition"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (消耗 / 消費)。句意：為了有效對抗全球暖化，各國必須在未來十年內大幅減少化石燃料的日常消耗。選項 A (孤立)、B (立法)、D (過渡) 語意不符。"
+  },
+  "choice|【短文-字彙-遠距工作】Workplace Report: Transitioning to a fully remote model can be challenging for managers. Without physical oversight, supervisors must ensure that expectations are perfectly ___ to avoid any misunderstandings regarding project deadlines. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-遠距工作】Workplace Report: Transitioning to a fully remote model can be challenging for managers. Without physical oversight, supervisors must ensure that expectations are perfectly ___ to avoid any misunderstandings regarding project deadlines. Q: Which word best fills in the blank?",
+    "options": [
+      "A. vulnerable",
+      "B. explicit",
+      "C. deceptive",
+      "D. isolated"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (明確的 / 清楚的)。句意：主管必須確保期望是非常明確的，以避免對於專案截止日期產生任何誤解。選項 A (脆弱的)、C (欺騙的)、D (孤立的) 無法與「期望 (expectations)」搭配構成合理句意。"
+  },
+  "choice|【短文-字彙-消費者權益】Tech News: Following a massive data breach, the telecommunications company was ordered to heavily ___ the victims whose personal information was compromised. The court ruled that providing a year of free credit monitoring was not enough to make up for the potential financial risks. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-消費者權益】Tech News: Following a massive data breach, the telecommunications company was ordered to heavily ___ the victims whose personal information was compromised. The court ruled that providing a year of free credit monitoring was not enough to make up for the potential financial risks. Q: Which word best fills in the blank?",
+    "options": [
+      "A. manipulate",
+      "B. compensate",
+      "C. withdraw",
+      "D. relocate"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (補償)。句意：在發生大規模資料外洩後，該電信公司被勒令重金補償個資受損的受害者。選項 A (操縱)、C (撤回)、D (搬遷) 皆不符合法院判決要求賠償的語意。"
+  },
+  "choice|【短文-字彙】Climate Report: The continuous desertification of arable land forces rural communities to flee. Without immediate agricultural interventions, the region will face a massive humanitarian crisis as millions of people become ___ dependent on international food aid. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙】Climate Report: The continuous desertification of arable land forces rural communities to flee. Without immediate agricultural interventions, the region will face a massive humanitarian crisis as millions of people become ___ dependent on international food aid. Q: Which word best fills in the blank?",
+    "options": [
+      "A. smoothly",
+      "B. visually",
+      "C. heavily",
+      "D. narrowly"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (嚴重地 / 高度地)。句意：...數百萬人將「嚴重依賴」國際糧食援助。become heavily dependent on 為常見搭配詞，表示依賴程度極高。A (平滑地)、B (視覺上) 不符文意。"
+  },
+  "choice|【字彙】Creating a truly inclusive environment requires actively dismantling the ___ that often exist unconsciously in people's minds regarding gender and race.|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 2,
+    "desc": "【字彙】Creating a truly inclusive environment requires actively dismantling the ___ that often exist unconsciously in people's minds regarding gender and race.",
+    "options": [
+      "A. cables",
+      "B. vitamins",
+      "C. biases",
+      "D. lyrics"
+    ],
+    "ans": "C",
+    "explain": "正確答案是 C (偏見)。句意：創造一個真正包容的環境需要積極消除人們心中潛意識裡常存在的關於性別與種族的「偏見」。dismantle biases 是指消除偏見。"
+  },
+  "choice|【短文-字彙】Ethics Journal: Using artificial intelligence to predict patient life expectancy raises serious moral questions. If an algorithm determines a patient has a low chance of survival, insurance companies might unfairly ___ their medical coverage to save costs. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙】Ethics Journal: Using artificial intelligence to predict patient life expectancy raises serious moral questions. If an algorithm determines a patient has a low chance of survival, insurance companies might unfairly ___ their medical coverage to save costs. Q: Which word best fills in the blank?",
+    "options": [
+      "A. withdraw",
+      "B. celebrate",
+      "C. swallow",
+      "D. translate"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (撤回 / 取消)。句意：保險公司可能會不公平地取消他們的醫療保險以節省成本。withdraw coverage 意思是取消或撤回保障。B (慶祝)、C (吞嚥) 完全不合邏輯。"
+  },
+  "choice|【短文-字彙-博物館】Art Review: The retrospective of the famous 20th-century painter is breathtaking. The curator successfully gathered pieces from private collections around the world. Because these artworks are so rarely seen in public, advanced booking for the exhibition is strictly ___. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-博物館】Art Review: The retrospective of the famous 20th-century painter is breathtaking. The curator successfully gathered pieces from private collections around the world. Because these artworks are so rarely seen in public, advanced booking for the exhibition is strictly ___. Q: Which word best fills in the blank?",
+    "options": [
+      "A. authentic",
+      "B. explicit",
+      "C. deceptive",
+      "D. mandatory"
+    ],
+    "ans": "D",
+    "explain": "正確答案是 D (強制的 / 必須的)。句意：因為這些藝術品極少在公眾面前展示，因此展覽的提前預約是嚴格強制規定的 (strictly mandatory)。選項 A (真實的)、B (明確的)、C (欺騙的) 放入句中不符合邏輯。"
+  },
+  "choice|【短文-字彙-氣候政策】Energy Update: The government announced a new subsidy program for households transitioning to solar energy. The official spokesperson stated that the state would fully ___ families for the initial installation costs within three months of application approval. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-氣候政策】Energy Update: The government announced a new subsidy program for households transitioning to solar energy. The official spokesperson stated that the state would fully ___ families for the initial installation costs within three months of application approval. Q: Which word best fills in the blank?",
+    "options": [
+      "A. compensate",
+      "B. preserve",
+      "C. isolate",
+      "D. advocate"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (補償)。句意：官方發言人表示，國家將在申請核准後的三個月內，全額「補償」家庭的初始安裝費用。compensate someone for something 為常用句型。選項 B (保存)、C (隔離)、D (提倡) 語意不通。"
+  },
+  "choice|【短文-字彙-企業永續】Supply Chain Audit: Modern consumers care deeply about how their products are made. If a clothing brand's manufacturing process is not ___, activist groups will quickly expose any unethical labor practices, severely damaging the brand's public image. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-企業永續】Supply Chain Audit: Modern consumers care deeply about how their products are made. If a clothing brand's manufacturing process is not ___, activist groups will quickly expose any unethical labor practices, severely damaging the brand's public image. Q: Which word best fills in the blank?",
+    "options": [
+      "A. vulnerable",
+      "B. transparent",
+      "C. interactive",
+      "D. adequate"
+    ],
+    "ans": "B",
+    "explain": "正確答案是 B (透明的 / 公開的)。句意：如果服飾品牌的製造過程不夠透明 (transparent)，社運團體將會迅速揭露任何不道德的勞工行為。選項 A (脆弱的)、C (互動的)、D (足夠的) 放入句中皆不合理。"
+  },
+  "choice|【短文-字彙-遠距工作】Mental Health Blog: Finding a work-life balance is harder when your office is your living room. The psychologist explained that taking short, regular breaks is absolutely ___ for preventing burnout when you spend eight hours staring at a screen. Q: Which word best fills in the blank?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 3,
+    "desc": "【短文-字彙-遠距工作】Mental Health Blog: Finding a work-life balance is harder when your office is your living room. The psychologist explained that taking short, regular breaks is absolutely ___ for preventing burnout when you spend eight hours staring at a screen. Q: Which word best fills in the blank?",
+    "options": [
+      "A. mandatory",
+      "B. deceptive",
+      "C. isolated",
+      "D. explicit"
+    ],
+    "ans": "A",
+    "explain": "正確答案是 A (強制的 / 必須的)。句意：心理學家解釋說，當你花八個小時盯著螢幕時，定期進行短暫的休息對於預防職業倦怠是絕對「必須的」。選項 B (欺騙的)、C (孤立的)、D (明確的) 均不符合語意。"
+  },
+  "choice|【臨床研究】In double blind randomized clinical trials, what does double blind signify?|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "knowledgeType": "discourse",
+    "desc": "【閱讀推論】The report explains that 'double-blind' means neither participants nor treating doctors knew which treatment each participant received. An editor says that calling the study merely 'randomised' omits a separate safeguard. What is the editor's point?",
+    "options": [
+      "A. The omission of the word double-blind proves that every participant knew their treatment.",
+      "B. Concealing treatment identity makes the allocation procedure irrelevant to the report.",
+      "C. Random allocation and concealing treatment identity are distinct features, so mentioning one does not establish the other.",
+      "D. Random allocation alone establishes that both groups were unaware of treatment identity."
+    ],
+    "ans": "C",
+    "explain": "文中分別說明隨機分配與隱藏治療身分兩個特徵；編輯指出只提到前者不足以交代後者。定義已在題幹，不需醫學背景。"
+  },
+  "spell|請拼出：量子運算架構在特定指標上對傳統計算呈現的壓倒性霸權（S 開頭，9 個字母）|supremacy": {
+    "type": "spell",
+    "skill": "writing",
+    "difficulty": 1,
+    "desc": "請拼出：優勢地位；支配地位（S 開頭，9 個字母）",
+    "ans": "SUPREMACY",
+    "speak": "supremacy",
+    "explain": "SUPREMACY (n.)：優勢地位；支配地位。例句：The two companies are competing for supremacy in the market.（這兩家公司正在爭奪市場的主導地位。）",
+    "vocabId": "R7:SUPREMACY"
+  },
+  "fill|填空題：S U P R _ M A C Y (超越傳統極限之量子優越性)|supremacy": {
+    "type": "fill",
+    "skill": "writing",
+    "difficulty": 1,
+    "desc": "填空題：S U P R _ M A C Y (優勢地位；支配地位)",
+    "ans": "E",
+    "speak": "supremacy",
+    "explain": "SUPREMACY (n.)：優勢地位；支配地位。例句：The two companies are competing for supremacy in the market.（這兩家公司正在爭奪市場的主導地位。）",
+    "vocabId": "R7:SUPREMACY"
+  },
+  "choice|【金曼羅謝極限】The Roche limit defines the minimum orbital distance at which a celestial body, held only by gravity, can:|": {
+    "type": "choice",
+    "skill": "reading",
+    "difficulty": 1,
+    "knowledgeType": "discourse",
+    "desc": "【閱讀推論】A passage defines the Roche limit as a boundary inside which a body held together only by its own gravity may be pulled apart by tidal forces. It does not discuss bodies held together by additional forces. Which inference stays within the scope of the passage?",
+    "options": [
+      "A. Because additional forces are not discussed, they cannot affect whether a body breaks apart.",
+      "B. The word may guarantees that any body held only by gravity will break apart at the boundary.",
+      "C. The definition alone does not justify predicting the same outcome for bodies held together by additional forces.",
+      "D. The definition establishes that every kind of body must break apart at exactly the same distance."
+    ],
+    "ans": "C",
+    "explain": "only限定定義適用的對象，may表示可能而非必然；未討論額外凝聚力的物體，不能直接外推相同結果。此題測限定語與推論範圍，題內已給定義。"
+  },
+  "voice|請唸出：銷毀末日炭疽病毒庫之生物武器不擴散查核|biological weapons non proliferation verification": {
+    "type": "voice",
+    "skill": "speaking",
+    "difficulty": 2,
+    "knowledgeType": "lexical",
+    "desc": "請唸出：生物武器不擴散核查",
+    "ans": "BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION",
+    "speak": "biological weapons non proliferation verification",
+    "explain": "biological weapons non proliferation verification (phr.)：生物武器不擴散核查。例句：Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.（核查人員對地下掩體進行了未預先通知的生物武器不擴散核查。）",
+    "vocabId": "R8:BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION"
+  },
+  "choice|🎧 聽一聽，選出最符合說話者意思的解讀|The chemical mechanical planarization (CMP) module suffered from dishing and erosion on copper interconnects. What failed?": {
+    "type": "choice",
+    "skill": "listening",
+    "difficulty": 1,
+    "knowledgeType": "discourse",
+    "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+    "speak": "The team provisionally attributed the uneven surface to unequal removal rates, but noted that the polishing settings and the slurry had been changed together. The report therefore cautioned against treating that attribution as an isolated causal finding. What reservation does the report express?",
+    "options": [
+      "A. The report considers further investigation unnecessary because the effect has been isolated.",
+      "B. The proposed cause is tentative because two simultaneous changes prevent its effect from being isolated.",
+      "C. The proposed explanation was rejected because the surface was found to be even.",
+      "D. Changing two conditions together establishes which condition caused the unevenness."
+    ],
+    "ans": "B",
+    "explain": "provisionally與cautioned表明歸因仍暫定；兩項條件同時改變，不能把個別因素的作用單獨確立。答案來自原文對證據範圍的保留，不考研磨工藝知識。"
+  }
+}

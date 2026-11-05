@@ -15,7 +15,11 @@ import { speak } from '../src/game/speech';
 import WordStudy from '../src/components/WordStudy';
 import { VOCAB } from '../src/game/vocab';
 import MapLevelBar from '../src/components/MapLevelBar';
-vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => '' }));
+import ReviewModal from '../src/components/ReviewModal';
+import HeroModal from '../src/components/HeroModal';
+import EnemyStatus from '../src/components/EnemyStatus';
+import { useBattleStore } from '../src/store/battleStore';
+vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => '', avatarDataUrl: () => '' }));
 vi.mock('../src/game/questions/bank/loader', () => ({ loadBank: async () => undefined }));
 vi.mock('../src/game/speech', async importOriginal => ({ ...await importOriginal<typeof import('../src/game/speech')>(), speak: vi.fn(), isSpeechRecognitionSupported: () => false }));
 let root: Root;
@@ -122,4 +126,53 @@ it('正式匯入daily:null存檔立即初始化每日與每週資料', async () 
   await act(async () => importSave({ state: { ...structuredClone(initialSave), daily: null, weekly: null }, version: 24 }));
   expect(useSaveStore.getState().daily?.tasks.length).toBeGreaterThan(0);
   expect(useSaveStore.getState().weekly?.tasks.length).toBeGreaterThan(0);
+});
+
+it('錯題修煉使用原voice題更新SRS，重開同題數也可重新作答', async () => {
+  const q = { type: 'voice', desc: '請唸出：蘋果', ans: 'APPLE', speak: 'apple' };
+  const key = questionKey(q);
+  useSaveStore.setState({ mistakes: { [key]: { question: q, wrongCount: 1, lastWrongAt: Date.now() - 86400000 * 2, box: 0, dueAt: 0 } } });
+  await act(async () => root.render(<ReviewModal />));
+  const entry = [...document.querySelectorAll('button')].find(b => b.textContent?.includes('進入修煉場'))!;
+  await act(async () => entry.click()); await typeAndSubmit('APPLE');
+  expect(useSaveStore.getState().mistakes[key].box).toBe(1);
+  expect(Object.keys(useSaveStore.getState().mistakes)).toEqual([key]);
+  await click('看結算 ⏎');
+  const retry = [...document.querySelectorAll('button')].find(b => b.textContent?.includes('再修煉一組'))!;
+  await act(async () => retry.click());
+  expect(document.querySelector('input')?.disabled).toBe(false);
+  await typeAndSubmit('APPLE');
+  expect(useSaveStore.getState().mistakes[key].box).toBe(1); // 尚未到期，不可同日刷box
+});
+it('英雄點數值會把詳情捲回可見範圍', async () => {
+  const scroll = vi.fn();
+  Object.defineProperty(HTMLElement.prototype, 'scrollTo', { value: scroll, configurable: true });
+  useSaveStore.setState({ heroes: ['phoenix', 'knight'], party: ['knight', 'phoenix'] });
+  await act(async () => root.render(<HeroModal />));
+  const button = [...document.querySelectorAll('button')].find(b => b.textContent?.includes('📊 數值'))!;
+  await act(async () => button.click());
+  expect(scroll).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+});
+it('敵方HTML資訊與戰鬥store的HP同步，不依賴畫布縮放', async () => {
+  const B = useBattleStore.getState;
+  B().startGoldenRoad(); if (B().phase === 'lesson') B().startBattle();
+  await act(async () => root.render(<EnemyStatus />));
+  expect(document.body.textContent).toContain(`HP ${B().monsterHp.toLocaleString()} / ${B().monsterMaxHp.toLocaleString()}`);
+  await act(async () => useBattleStore.setState({ monsterHp: 7 }));
+  expect(document.body.textContent).toContain('HP 7 /');
+  B().exitToMap();
+});
+
+it('修煉中再次答錯的題，結算後仍列為到期而非誤稱今天全做完', async () => {
+  const q = { type: 'spell', desc: '請拼出：蘋果', ans: 'APPLE', speak: 'apple' };
+  const key = questionKey(q); const before = Date.now();
+  vi.spyOn(Date, 'now').mockReturnValue(before);
+  useSaveStore.setState({ mistakes: { [key]: { question: q, wrongCount: 1, lastWrongAt: before - 86400000, box: 0, dueAt: 0 } } });
+  await act(async () => root.render(<ReviewModal />));
+  await act(async () => [...document.querySelectorAll('button')].find(b => b.textContent?.includes('進入修煉場'))!.click());
+  vi.mocked(Date.now).mockReturnValue(before + 1000);
+  await typeAndSubmit('ZZZ'); await click('看結算 ⏎'); await click('返回錯題清單');
+  expect(document.body.textContent).toContain('待複習重點（1）');
+  expect(document.body.textContent).not.toContain('今天沒有到期');
+  vi.mocked(Date.now).mockRestore();
 });

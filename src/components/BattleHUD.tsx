@@ -28,6 +28,7 @@ import { BossQuestionTag, CastConfirm, PartyBar, TimerBars } from './BattleParty
 import { useBattleClock } from './useBattleClock';
 import { finishBattle } from '../game/startLevel';
 import { TEN_PULL } from '../game/heroes';
+import EnemyStatus from './EnemyStatus';
 
 // 作答介面：電腦用實體鍵盤，手機用螢幕鍵盤與按鈕（RWD）。
 
@@ -150,6 +151,7 @@ export default function BattleHUD() {
           <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => openModal('settings')} aria-label="設定">⚙️</button>
         </div>
       </header>
+      <EnemyStatus />
 
       {retreatAsk && (
         <div className="retreat-ask" role="dialog" aria-label="確定撤退">

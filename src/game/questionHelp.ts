@@ -35,3 +35,11 @@ export function spellingExtra(q: Question): string {
   if ((hintCollisions().get(questionHint(q))?.size ?? 0) > 1) parts.push(`${q.ans[0]} 開頭`);
   return parts.join('・');
 }
+
+// 快答的拼寫提示必須可區分同中文的不同詞，且不依賴首次載入的碰撞快照。
+export function quickSpellingExtra(q: Question): string {
+  if (q.type !== 'spell') return '';
+  const explicitPos = q.explain?.match(/\((n\.\/v\.|adj\.|adv\.|phr\.|n\.|v\.)\)/)?.[1];
+  const pos = explicitPos ?? vocabFor(q)?.pos;
+  return [pos ? (POS_NAMES[pos] ?? pos) : '', `${q.ans[0]} 開頭`, `${q.ans.length} 個字母`].filter(Boolean).join('・');
+}

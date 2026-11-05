@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
@@ -39,6 +39,7 @@ export default function HeroModal() {
   const [selected, setSelected] = useState<MemberId>(party[0] ?? 'player');
   const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
   const [detailExpanded, setDetailExpanded] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [selling, setSelling] = useState<string | null>(null); // 正在確認送別的英雄
   const [tab, setTab] = useState<'skills' | 'growth'>('skills');
   const [help, setHelp] = useState(false);
@@ -55,6 +56,10 @@ export default function HeroModal() {
   const currentSelected: MemberId = (selected === 'player'
     ? (character ? 'player' : (party[0] ?? 'player'))
     : (heroes.includes(selected) ? selected : (party[0] ?? 'player')));
+  useEffect(() => {
+    if (detailExpanded) scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [detailExpanded, currentSelected]);
+
 
   // 拖拉換隊：拖到隊伍格子＝上場／換位／替換；隊伍裡的英雄拖回圖鑑＝離隊
   const { drag, start, guardClick } = usePartyDrag((id, target) => {
@@ -176,7 +181,7 @@ export default function HeroModal() {
           )}
         </section>
 
-        <div className="hero-modal-scroll">
+        <div className="hero-modal-scroll" ref={scrollRef}>
           {/* 手機端可自由收合／展開英雄詳細資料面板，讓出戰隊伍與下方圖鑑清單順暢銜接 */}
           <div className="hero-detail-container">
             <div className={`hero-detail-wrapper ${detailExpanded ? 'is-expanded' : 'is-collapsed'}`}>

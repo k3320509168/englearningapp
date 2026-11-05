@@ -18841,15 +18841,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【臨床研究】In double blind randomized clinical trials, what does double blind signify?",
+      "desc": "【閱讀推論】The report explains that 'double-blind' means neither participants nor treating doctors knew which treatment each participant received. An editor says that calling the study merely 'randomised' omits a separate safeguard. What is the editor's point?",
       "options": [
-        "A. Patients must wear fabric blindfolds during all diagnostic examinations.",
-        "B. Physicians are prohibited from reading medical journals during the study.",
-        "C. Neither the participating patients nor the treating physicians know who receives the active drug versus placebo.",
-        "D. The testing facility operates in complete darkness without electrical lighting."
+        "A. The omission of the word double-blind proves that every participant knew their treatment.",
+        "B. Concealing treatment identity makes the allocation procedure irrelevant to the report.",
+        "C. Random allocation and concealing treatment identity are distinct features, so mentioning one does not establish the other.",
+        "D. Random allocation alone establishes that both groups were unaware of treatment identity."
       ],
       "ans": "C",
-      "explain": "雙盲試驗（Double-blind）意味著受試患者與負責診斷治療的主治醫師雙方，均不知道誰被分配在實驗組（活性藥物）或對照組（安慰劑）。"
+      "explain": "文中分別說明隨機分配與隱藏治療身分兩個特徵；編輯指出只提到前者不足以交代後者。定義已在題幹，不需醫學背景。"
     },
     {
       "type": "choice",
@@ -21619,10 +21619,10 @@
       "type": "spell",
       "skill": "writing",
       "difficulty": 1,
-      "desc": "請拼出：量子運算架構在特定指標上對傳統計算呈現的壓倒性霸權（S 開頭，9 個字母）",
+      "desc": "請拼出：優勢地位；支配地位（S 開頭，9 個字母）",
       "ans": "SUPREMACY",
       "speak": "supremacy",
-      "explain": "SUPREMACY (n.)：量子運算架構在特定指標上對傳統計算呈現的壓倒性霸權。例句：The computational supremacy of the processor was verified against top supercomputers.（該處理器展現出的壓倒性量子霸權指標，已在與全球最頂級傳統超級電腦的同台對決中得到權威核驗。）",
+      "explain": "SUPREMACY (n.)：優勢地位；支配地位。例句：The two companies are competing for supremacy in the market.（這兩家公司正在爭奪市場的主導地位。）",
       "vocabId": "R7:SUPREMACY"
     },
     {
@@ -21669,10 +21669,10 @@
       "type": "fill",
       "skill": "writing",
       "difficulty": 1,
-      "desc": "填空題：S U P R _ M A C Y (超越傳統極限之量子優越性)",
+      "desc": "填空題：S U P R _ M A C Y (優勢地位；支配地位)",
       "ans": "E",
       "speak": "supremacy",
-      "explain": "SUPREMACY (n.)：超越傳統極限之量子優越性。例句：The experimental team published rigorous benchmark data claiming quantum computational ___.（該跨國聯合實驗團隊在頂級期刊發表了嚴格的跑分基準測試，正式宣佈達成量子運算優越性。）",
+      "explain": "SUPREMACY (n.)：優勢地位；支配地位。例句：The two companies are competing for supremacy in the market.（這兩家公司正在爭奪市場的主導地位。）",
       "vocabId": "R7:SUPREMACY"
     },
     {
@@ -33358,15 +33358,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【金曼羅謝極限】The Roche limit defines the minimum orbital distance at which a celestial body, held only by gravity, can:",
+      "desc": "【閱讀推論】A passage defines the Roche limit as a boundary inside which a body held together only by its own gravity may be pulled apart by tidal forces. It does not discuss bodies held together by additional forces. Which inference stays within the scope of the passage?",
       "options": [
-        "A. ignite spontaneous thermonuclear fusion reactions within its interior planetary crust mantle.",
-        "B. achieve an orbital velocity that exceeds ninety nine percent of the physical speed of light.",
-        "C. approach a second massive body without being mechanically torn apart by overwhelming tidal gravitational forces.",
-        "D. maintain a permanent liquid water ocean on its surface without evaporating into the planetary vacuum."
+        "A. Because additional forces are not discussed, they cannot affect whether a body breaks apart.",
+        "B. The word may guarantees that any body held only by gravity will break apart at the boundary.",
+        "C. The definition alone does not justify predicting the same outcome for bodies held together by additional forces.",
+        "D. The definition establishes that every kind of body must break apart at exactly the same distance."
       ],
       "ans": "C",
-      "explain": "天體力學中的「洛希極限（Roche Limit）」畫定了一條生死分界線：一個僅靠自身引力凝聚的鬆散衛星或小行星，一旦越過該臨界軌道距離，母星排山倒海的潮汐引力差將無情超越其自身引力，將其徹底撕成碎片環帶。"
+      "explain": "only限定定義適用的對象，may表示可能而非必然；未討論額外凝聚力的物體，不能直接外推相同結果。此題測限定語與推論範圍，題內已給定義。"
     },
     {
       "type": "voice",

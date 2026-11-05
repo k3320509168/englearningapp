@@ -42,7 +42,7 @@ export const data = {
       ['ENTANGLEMENT','n.','微觀粒子系統間超越空間距離相互制約的量子糾纏','Quantum entanglement violates Bell inequalities and underpins quantum communication networks.','量子糾纏現象直接擊穿了古典局域實在論的貝爾不等式，構成了當代量子通訊網絡的物理底座。'],
       ['DECOHERENCE','n.','量子系統與外部環境互動導致同調性崩潰的退相干','Environmental decoherence transforms fragile quantum states into ordinary classical probabilities.','無孔不入的環境退相干效應，無情地將脆弱的神奇量子疊加態打回平淡無奇的古典古典機率。'],
       ['CRYPTOGRAPHY','n.','應用數學方法保障資訊保密性與不可篡改性的密碼學','Lattice based cryptography forms the vanguard of quantum resistant data security.','以格理論為核心的後量子密碼學，站在了全面守護未來人類數位資產免遭量子算力破解的最前線。'],
-      ['SUPREMACY','n.','量子運算架構在特定指標上對傳統計算呈現的壓倒性霸權','The computational supremacy of the processor was verified against top supercomputers.','該處理器展現出的壓倒性量子霸權指標，已在與全球最頂級傳統超級電腦的同台對決中得到權威核驗。'],
+      ["SUPREMACY", "n.", "優勢地位；支配地位", "The two companies are competing for supremacy in the market.", "這兩家公司正在爭奪市場的主導地位。"],
       ['THERMODYNAMICS','n.','研究熱能、功與物質巨觀轉化規律的熱力學學科','Statistical thermodynamics links microscopic molecular states to macroscopic temperature.','統計熱力學以深邃的微觀數學概率模型，成功架起了連結微觀分子熱運動與巨觀溫度壓強的橋樑。'],
       ['SINGULARITY','n.','時空密度與引力場在數學上趨於無限大的奇異點','The gravitational singularity inside a black hole is cloaked by an event horizon.','隱匿於黑洞事件視界黑紗之下的引力奇異點，代表著時空幾何在數學上被拉扯至無限大的終極極限。'],
       ['ANNEALING','n.','藉由量子穿隧尋找系統能量全域最低點的量子退火','Quantum annealing finds global minimum energy configurations for complex routing algorithms.','量子退火演算法利用穿透能量障壁的量子穿隧效應，為極度複雜的物流拓撲網絡尋求全域最優解。'],
@@ -54,7 +54,7 @@ export const data = {
       ['ENTANGLEMENT','n.','跨越空間制約之量子糾纏','Measuring one photon instantly resolves the state of its paired partner via quantum ___.','透過深邃的量子糾纏效應，對其中一顆光子的測量將瞬間決定其千里之外孿生夥伴的物理狀態。'],
       ['DECOHERENCE','n.','破壞相位之環境量子退相干','Thermal noise within the dilution chamber remains the predominant driver of phase ___.','極低溫製冷腔體內殘餘的微弱熱噪聲，依然是引發處理器量子相位退相干崩潰的最主要推手。'],
       ['CRYPTOGRAPHY','n.','保障資安之抗量子密碼學','Government agencies accelerated the migration toward quantum safe public key ___.','各國政府最高機關正在緊鑼密鼓加速向抗量子公鑰密碼學新體系實施全面技術遷移。'],
-      ['SUPREMACY','n.','超越傳統極限之量子優越性','The experimental team published rigorous benchmark data claiming quantum computational ___.','該跨國聯合實驗團隊在頂級期刊發表了嚴格的跑分基準測試，正式宣佈達成量子運算優越性。'],
+      ["SUPREMACY", "n.", "優勢地位；支配地位", "The two companies are competing for supremacy in the market.", "這兩家公司正在爭奪市場的主導地位。"],
       ['THERMODYNAMICS','n.','支配宇宙能量流動之熱力學','No physical heat engine can violate the immutable governing laws of macroscopic ___.','宇宙中不存在任何一台能凌駕並違背巨觀熱力學鐵律運轉的永動熱機。'],
       ['SINGULARITY','n.','宇宙核心無窮大之引力奇點','General relativity predicts a mathematical ___ where spacetime curvature diverges to infinity.','廣義相對論在嚴格的張量數學上預言了一個時空曲率發散至無窮大的引力奇異點。'],
       ['ANNEALING','n.','化解組合難題之量子退火','The specialized hardware architecture was optimized strictly for heuristic quantum ___.','這款專用客製化晶片硬體架構，從底層便專門針對啟發式量子退火算法進行了深度極致優化。']

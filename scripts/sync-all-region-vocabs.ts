@@ -1,3 +1,4 @@
+import { REVIEWED_POS } from '../src/game/vocabMetadata';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Question, VocabEntry } from '../src/game/types';
@@ -24,20 +25,6 @@ for (let r = 0; r <= 8; r++) {
 console.log(`初始 globalVocab 詞條數: ${Object.keys(globalVocab).length}`);
 
 // 詞性推測輔助函式
-function guessPos(w: string): string {
-  const lower = w.toLowerCase().trim();
-  if (lower.includes(' ') || lower.includes('-')) return 'phr.';
-  if (['i', 'you', 'he', 'she', 'we', 'they', 'it', 'this', 'that', 'these', 'those', 'who', 'what', 'which', 'my', 'your', 'his', 'her', 'our', 'their', 'its'].includes(lower)) return 'pron.';
-  if (['in', 'on', 'at', 'by', 'for', 'with', 'about', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'over', 'under'].includes(lower)) return 'prep.';
-  if (['and', 'but', 'or', 'so', 'because', 'although', 'though', 'while', 'if', 'unless', 'since'].includes(lower)) return 'conj.';
-  if (['can', 'could', 'may', 'might', 'must', 'shall', 'should', 'will', 'would'].includes(lower)) return 'v.aux.';
-  if (lower.endsWith('tion') || lower.endsWith('ment') || lower.endsWith('ness') || lower.endsWith('ity') || lower.endsWith('ship') || lower.endsWith('ance') || lower.endsWith('ence') || lower.endsWith('ism') || lower.endsWith('ist') || lower.endsWith('er') || lower.endsWith('or')) return 'n.';
-  if (lower.endsWith('able') || lower.endsWith('ible') || lower.endsWith('ous') || lower.endsWith('ive') || lower.endsWith('ful') || lower.endsWith('less') || lower.endsWith('al') || lower.endsWith('ic') || lower.endsWith('ary')) return 'adj.';
-  if (lower.endsWith('ly')) return 'adv.';
-  if (lower.endsWith('ize') || lower.endsWith('ise') || lower.endsWith('ate') || lower.endsWith('ify') || lower.endsWith('ed') || lower.endsWith('ing')) return 'v.';
-  return 'n.';
-}
-
 // 從題目的 desc、explain 中提取精確中文釋義
 function extractMeaning(q: Question, word: string): string {
   const explain = q.explain || '';
@@ -123,7 +110,7 @@ for (let r = 0; r <= 8; r++) {
     if (!meaning || meaning.toLowerCase() === rawTarget.toLowerCase() || meaning.toLowerCase() === cleanKey.toLowerCase()) {
       continue;
     }
-    const pos = guessPos(cleanKey);
+    const pos = REVIEWED_POS[cleanKey] ?? (rawTarget.includes(' ') ? 'phr.' : ''); // 未核對詞性留白，不從字尾或干擾項猜測
     const exEn = completedSentence(q) || (q.desc && !q.desc.includes('請') ? q.desc : `The word is ${rawTarget.toLowerCase()}.`);
     const exZh = q.explain ? q.explain.split(/[。\n]/)[0].trim() : `這個詞的意思是${meaning}。`;
 

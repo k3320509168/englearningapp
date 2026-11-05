@@ -18841,15 +18841,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【閱讀推論】The report explains that 'double-blind' means neither participants nor treating doctors knew which treatment each participant received. An editor says that calling the study merely 'randomised' omits a separate safeguard. What is the editor's point?",
+      "desc": "【閱讀推論】Randomisation determined the groups; blinding kept treatment identities concealed. An editor says 'randomised' alone is an incomplete description. Why?",
       "options": [
-        "A. The omission of the word double-blind proves that every participant knew their treatment.",
-        "B. Concealing treatment identity makes the allocation procedure irrelevant to the report.",
-        "C. Random allocation and concealing treatment identity are distinct features, so mentioning one does not establish the other.",
-        "D. Random allocation alone establishes that both groups were unaware of treatment identity."
+        "A. It makes the allocation method impossible to describe.",
+        "B. It contradicts the stated existence of separate groups.",
+        "C. It omits concealment, which randomisation does not establish.",
+        "D. It establishes that treatment identities were disclosed."
       ],
       "ans": "C",
-      "explain": "文中分別說明隨機分配與隱藏治療身分兩個特徵；編輯指出只提到前者不足以交代後者。定義已在題幹，不需醫學背景。"
+      "explain": "隨機分組與隱藏治療身分是兩個不同特徵；只說randomised沒有交代後者。答案可直接由題內對照推論。"
     },
     {
       "type": "choice",
@@ -33358,15 +33358,15 @@
       "skill": "reading",
       "difficulty": 1,
       "knowledgeType": "discourse",
-      "desc": "【閱讀推論】A passage defines the Roche limit as a boundary inside which a body held together only by its own gravity may be pulled apart by tidal forces. It does not discuss bodies held together by additional forces. Which inference stays within the scope of the passage?",
+      "desc": "【閱讀推論】The passage says only that gravity-bound bodies may break apart inside the Roche limit. Which claim exceeds that statement?",
       "options": [
-        "A. Because additional forces are not discussed, they cannot affect whether a body breaks apart.",
-        "B. The word may guarantees that any body held only by gravity will break apart at the boundary.",
-        "C. The definition alone does not justify predicting the same outcome for bodies held together by additional forces.",
-        "D. The definition establishes that every kind of body must break apart at exactly the same distance."
+        "A. The passage does not establish universal certainty.",
+        "B. The statement qualifies both its subject and outcome.",
+        "C. Every body must break apart there.",
+        "D. Breakup is possible for gravity-bound bodies."
       ],
       "ans": "C",
-      "explain": "only限定定義適用的對象，may表示可能而非必然；未討論額外凝聚力的物體，不能直接外推相同結果。此題測限定語與推論範圍，題內已給定義。"
+      "explain": "題幹限定gravity-bound bodies，且may只表示可能。把它擴大成every body並斷言must超出原文範圍；其他選項保留限定與可能性。"
     },
     {
       "type": "voice",

@@ -42,8 +42,8 @@ it('兩個失真詞條與別名保持忠實，例句不留挖空', () => {
   expect(v8['R8:BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION'].exampleZh).not.toMatch(/炭疽|聯合國|銷毀|數十米/);
 });
 it('指定領域題改成題內可推導，無需靠外部定義答題', () => {
-  expect(r7.normal.find(q => q.desc.includes('calling the study merely'))).toBeTruthy();
-  expect(r7.boss.find(q => q.desc.includes('within the scope of the passage'))).toBeTruthy();
+  expect(r7.normal.find(q => q.desc.includes('An editor says'))).toBeTruthy();
+  expect(r7.boss.find(q => q.desc.includes('Which claim exceeds'))).toBeTruthy();
   expect(r8.normal.find(q => q.speak?.includes('attribution as an isolated causal finding'))).toBeTruthy();
 });
 it('未知詞性留白，不用解析全文當字義；cogent人工核對為adj.', () => {
@@ -62,4 +62,12 @@ it('未知詞性留白，不用解析全文當字義；cogent人工核對為adj.
 it('中文指令不作英文單字列入圖鑑', () => {
   addBankVocab({ '站起來': { pos: 'n.', meaning: '指令', example: '', exampleZh: '' } }, 7);
   expect(codexItems(LEVELS[7], {}, {}).some(item => item.kind === 'word' && item.title === '站起來')).toBe(false);
+});
+
+it('兩道本批C1改寫題含選項不超過60個英文詞，避免修語意時反而拉長讀題', () => {
+  for (const q of [r7.normal[1413], r7.boss[572]]) {
+    expect(q.options).toHaveLength(4);
+    const text = [q.desc, ...(q.options ?? []).map(o => o.replace(/^[A-D]\.\s*/, ''))].join(' ');
+    expect((text.match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g) ?? []).length).toBeLessThanOrEqual(60);
+  }
 });

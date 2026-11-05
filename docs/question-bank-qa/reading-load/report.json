@@ -1,0 +1,512 @@
+{
+  "baseCommit": "81df14d",
+  "contentRevision": "reading-load follow-up (same commit as this report)",
+  "method": "English words in reading-choice stem plus four options, excluding answer-label letters. 120/180/240 WPM are scenario assumptions, not measured player norms. Excludes Chinese text, numbers, inference, answer entry and audio; not a CEFR-level classifier or proof of actual timeout.",
+  "baseSeconds": 20,
+  "regions": [
+    {
+      "region": 0,
+      "level": "A1",
+      "questions": 331,
+      "words": {
+        "median": 19,
+        "p90": 59,
+        "max": 76
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 94
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 25
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 0
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 145,
+          "words": 76,
+          "desc": "【短文理解】[Office Kitchen Notice] Please label your lunchbox with your name and department. Any box without a name will be removed every Friday at 4:30 p.m. Please do not leave dirty forks or bowls in the sink overnight.\nQ: What will the cleaner do to an unlabeled lunchbox on Friday at 5:00 p.m.?"
+        },
+        {
+          "kind": "boss",
+          "index": 154,
+          "words": 75,
+          "desc": "【短文理解】[Text Message] Hi Kelly! I bought two tickets for the pop concert this Saturday night at 7:00 p.m. My brother cannot come with me because of his work. Would you like to come with me? The ticket is free for you!\nQ: Why does the writer invite Kelly to the concert?"
+        },
+        {
+          "kind": "boss",
+          "index": 141,
+          "words": 74,
+          "desc": "【短文理解】[Apartment Rules] Welcome to your new home. Please do not play loud music after 10:00 p.m. Put your trash bags in the collection area on the first floor before 8:00 a.m. every morning except Sunday.\nQ: Which of the following is true according to the rules?"
+        },
+        {
+          "kind": "boss",
+          "index": 144,
+          "words": 74,
+          "desc": "【短文理解】[Job Advertisement] Star Coffee Shop is looking for a weekend waiter. Working hours are from 10 a.m. to 6 p.m. on Saturdays and Sundays. Good English communication skills are welcome. Please call Mr. Wu at 0912-345-678.\nQ: Who can apply for this job?"
+        },
+        {
+          "kind": "normal",
+          "index": 484,
+          "words": 73,
+          "desc": "【短文理解】[Notice in Hotel Room] Dear Guest: Our hotel cares about nature. If you want us to change your bedsheets and towels, please put this green card on your bed before 10:00 a.m. Otherwise, we will not change them today.\nQ: What should a guest do if they want fresh bedsheets?"
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "level": "A2",
+      "questions": 295,
+      "words": {
+        "median": 15,
+        "p90": 41,
+        "max": 60
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 35
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 0
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 0
+        }
+      ],
+      "longest": [
+        {
+          "kind": "normal",
+          "index": 320,
+          "words": 60,
+          "desc": "【對話】Man: \"Do you have this shirt in a larger one?\"\nClerk: \"Let me check the back room. No, I'm sorry, we only have medium and small left.\"\nQuestion: What is true about the shirt?"
+        },
+        {
+          "kind": "boss",
+          "index": 92,
+          "words": 58,
+          "desc": "【短文】Memo: All staff must submit their travel expenses by the 15th of each month. Late submissions will be processed in the following month's payroll.\nQuestion: What happens if you submit your expenses on the 20th?"
+        },
+        {
+          "kind": "normal",
+          "index": 280,
+          "words": 56,
+          "desc": "【短文】Subject: Welcome Event\nDear Team, let's meet in the lobby at 12:30 p.m. tomorrow to welcome the new staff members. Lunch will be provided.\nQuestion: What will happen at 12:30 p.m. tomorrow?"
+        },
+        {
+          "kind": "normal",
+          "index": 666,
+          "words": 55,
+          "desc": "【短文閱讀】[Blog] \"The new wardrobe is bigger and more USEFUL than my old one, but it was very hard to build!\"\nQ: What does the author say about the wardrobe?"
+        },
+        {
+          "kind": "normal",
+          "index": 264,
+          "words": 51,
+          "desc": "【短文】To: All Staff\nFrom: HR Department\nPlease remember that the company gym is open from 6:00 a.m. to 9:00 p.m. It is closed on Sundays for cleaning.\nQuestion: When can employees NOT use the gym?"
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "level": "A2+",
+      "questions": 298,
+      "words": {
+        "median": 8,
+        "p90": 39,
+        "max": 67
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 26
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 3
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 0
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 210,
+          "words": 67,
+          "desc": "【短文】Hi Mark,\nI won't be able to attend the team meeting tomorrow morning because my train DELAY is worse than expected. Could you take notes for me?\nThanks, Jane\nQ: Why is Jane writing this message?"
+        },
+        {
+          "kind": "boss",
+          "index": 209,
+          "words": 61,
+          "desc": "【短文】Store Policy:\nItems bought on sale cannot be returned for a full refund. However, you may EXCHANGE them for a different size within 14 days.\nQ: What is true about sale items?"
+        },
+        {
+          "kind": "boss",
+          "index": 211,
+          "words": 61,
+          "desc": "【短文】Important Notice:\nAll members must renew their gym membership by December 31st. Members who do not renew will lose their locker space in January.\nQ: What will happen if someone forgets to renew?"
+        },
+        {
+          "kind": "normal",
+          "index": 774,
+          "words": 58,
+          "desc": "【短文】Forum Post: If you lose your keys in this neighborhood, you shouldn't panic. Just ask the security guard at the front gate. Q: What does the writer advise you to do if you lose keys?"
+        },
+        {
+          "kind": "boss",
+          "index": 233,
+          "words": 58,
+          "desc": "【短文】Hotel Policy: Visitors are going to be charged an extra fee if they lose their room keys. You must return them to the front desk. Q: What happens if a visitor loses a key?"
+        }
+      ]
+    },
+    {
+      "region": 3,
+      "level": "B1",
+      "questions": 357,
+      "words": {
+        "median": 17,
+        "p90": 57,
+        "max": 85
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 74
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 24
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 2
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 108,
+          "words": 85,
+          "desc": "【短文】Buying items in bulk can seem like a great way to save cash. However, if you buy too much fresh food, it might go bad before you can eat it. You should only buy dry goods like rice and pasta in large quantities. Question: What is the text's advice on buying things in bulk?"
+        },
+        {
+          "kind": "boss",
+          "index": 110,
+          "words": 84,
+          "desc": "【短文】Adults returning to education often worry about their ability to learn new things. Research shows that older brains are actually better at connecting different ideas. If you take your time, you will find that learning is a lifelong joy. Question: What advantage do older learners have according to research?"
+        },
+        {
+          "kind": "boss",
+          "index": 105,
+          "words": 80,
+          "desc": "【短文】Distance learning allows you to study from anywhere in the world. However, it requires a lot of self-discipline. If you do not plan your schedule well, you will easily fall behind in your classes. Question: What is a disadvantage of distance learning mentioned in the text?"
+        },
+        {
+          "kind": "boss",
+          "index": 106,
+          "words": 80,
+          "desc": "【短文】In Spain, taking a short nap after lunch, known as a siesta, was once very common. Today, modern work schedules have changed this habit. Most businesses in big cities are no longer closed in the afternoon. Question: What has changed about the siesta in modern Spain?"
+        },
+        {
+          "kind": "boss",
+          "index": 104,
+          "words": 77,
+          "desc": "【短文】A fitness tracker is worn on the wrist to monitor physical activity. It counts your steps and estimates the calories you have burned. If you connect it to your phone, you will see a detailed chart of your daily progress. Question: How can a user view a detailed chart of their progress?"
+        }
+      ]
+    },
+    {
+      "region": 4,
+      "level": "B1+",
+      "questions": 404,
+      "words": {
+        "median": 19,
+        "p90": 51,
+        "max": 77
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 107
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 8
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 0
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 56,
+          "words": 77,
+          "desc": "【短文】Health Report: A recent survey shows that office workers who sit for more than eight hours a day face a higher risk of back pain. The researchers urge people to take short walks. Q: What does the report say about office workers?"
+        },
+        {
+          "kind": "boss",
+          "index": 67,
+          "words": 72,
+          "desc": "【短文】Consumer Rights: If an item is faulty, buyers have the right to demand a replacement or a refund. Stores that deny this right can be reported to the consumer protection agency. Q: What can buyers do if they purchase a faulty item?"
+        },
+        {
+          "kind": "boss",
+          "index": 60,
+          "words": 65,
+          "desc": "【短文】City Notice: The government plans to build a new park in the center of the city. The project, which will begin next year, aims to provide a green space for families. Q: What is the purpose of the new project?"
+        },
+        {
+          "kind": "normal",
+          "index": 555,
+          "words": 64,
+          "desc": "【短文】News Report: While workers were cleaning up the oil spill on the coast, they discovered a rare species of turtle. The turtle was safely relocated to a marine center.\nQ: What were the workers doing when they found the turtle?"
+        },
+        {
+          "kind": "normal",
+          "index": 576,
+          "words": 63,
+          "desc": "【短文】Food Blog: I was eating a slice of their famous pepperoni pizza when I realized they had changed the cheese blend. It tastes much creamier now.\nQ: What was the blogger doing when they noticed a change?"
+        }
+      ]
+    },
+    {
+      "region": 5,
+      "level": "B2",
+      "questions": 458,
+      "words": {
+        "median": 24,
+        "p90": 76,
+        "max": 97
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 141
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 97
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 28
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 332,
+          "words": 97,
+          "desc": "【短文-推論】Health Tech Today: Remote patient monitoring systems have saved countless lives. A rural doctor reported that if he hadn't received real-time data from a patient's smart watch, he wouldn't have dispatched the ambulance in time to prevent a fatal heart attack. He added that the system had already proven its worth twice that month. Q: What can be inferred about the rural doctor's opinion on smart watches?"
+        },
+        {
+          "kind": "normal",
+          "index": 1105,
+          "words": 95,
+          "desc": "【短文-主旨-企業永續】Corporate Update: We are proud to announce our new 「Zero Waste」 initiative. Starting next month, all cafeterias in our global offices will stop providing single-use plastic utensils and cups. Employees are encouraged to bring their own containers or purchase reusable ones at subsidized prices from the company store. Q: What is the main purpose of this update?"
+        },
+        {
+          "kind": "boss",
+          "index": 354,
+          "words": 93,
+          "desc": "【短文-推論-企業永續】Investment Blog: More investors are scrutinizing ESG (Environmental, Social, and Governance) scores before buying stocks. A recent report highlighted a clothing brand that falsely claimed its cotton was 100% organic. When the truth emerged, its stock price plummeted. Investors now demand verifiable proof, not just marketing slogans. Q: What is the main lesson for investors mentioned in the blog?"
+        },
+        {
+          "kind": "normal",
+          "index": 1107,
+          "words": 89,
+          "desc": "【短文-推論-氣候政策】Editorial: The carbon tax proposal has faced fierce opposition from heavy industries. They argue that the sudden increase in operational costs will force them to lay off workers. However, environmental economists point out that the revenue generated could be used to retrain these workers for the rapidly growing green energy sector. Q: What do environmental economists suggest doing with the tax revenue?"
+        },
+        {
+          "kind": "boss",
+          "index": 213,
+          "words": 88,
+          "desc": "【短文】Immigration Policy Review: The historical context of the new bill is often overlooked. By the time the comprehensive immigration reform was finally passed in the senate, thousands of families had already waited for their visa approvals in uncertainty for over a decade. Q: What was the situation for many families prior to the bill's passage?"
+        }
+      ]
+    },
+    {
+      "region": 6,
+      "level": "B2+",
+      "questions": 871,
+      "words": {
+        "median": 33,
+        "p90": 73,
+        "max": 98
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 395
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 206
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 41
+        }
+      ],
+      "longest": [
+        {
+          "kind": "boss",
+          "index": 708,
+          "words": 98,
+          "desc": "【綜合】Healthcare Economics: The federal government has been heavily subsidizing the domestic production of essential medical supplies. The reliance on foreign imports is universally acknowledged to have exposed the nation to critical shortages during the pandemic. The previous administration must have drastically underestimated the vulnerability of a globalized medical supply chain.\nQ: What is the main reason the government is subsidizing domestic medical production?"
+        },
+        {
+          "kind": "boss",
+          "index": 707,
+          "words": 95,
+          "desc": "【綜合】Corporate Psychology Column: Middle management has been enduring an unprecedented level of scrutiny from both executives and subordinates. This intense pressure is empirically proven to have diminished their decision-making efficacy. The HR department's failure to intervene early must have exacerbated the organizational paralysis currently plaguing the company.\nQ: Which of the following best describes the current state of middle management?"
+        },
+        {
+          "kind": "boss",
+          "index": 310,
+          "words": 94,
+          "desc": "【綜合】Business Review: The retail giant's downfall is generally understood to have been triggered by its failure to adapt to e-commerce. For years, executives had been ignoring the digital shift, mistakenly believing their brick-and-mortar dominance was unassailable. They must have severely miscalculated consumer behavior. Now, large-scale layoffs are expected to be announced. Q: Which of the following best describes the executives' past mindset?"
+        },
+        {
+          "kind": "boss",
+          "index": 709,
+          "words": 94,
+          "desc": "【綜合】Architecture Review: For decades, city planners have been advocating for the integration of green spaces into high-density commercial zones. The concrete-heavy aesthetics of the 1980s are now considered to have significantly contributed to the urban heat island effect. The original developers must have prioritized maximum rentable floor space over environmental sustainability.\nQ: What is a negative impact of the 1980s architectural style mentioned in the text?"
+        },
+        {
+          "kind": "boss",
+          "index": 312,
+          "words": 91,
+          "desc": "【綜合】Policy Paper Summary: The proposed carbon tax has been facing fierce opposition from industrial sectors. Proponents argue that the measure is essential and is proven to have reduced emissions in neighboring countries. The government's failure to consult industry leaders beforehand must have exacerbated the backlash. Q: Why did the policy face a severe backlash according to the passage?"
+        }
+      ]
+    },
+    {
+      "region": 7,
+      "level": "C1",
+      "questions": 694,
+      "words": {
+        "median": 55,
+        "p90": 69,
+        "max": 90
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 538
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 223
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 3
+        }
+      ],
+      "longest": [
+        {
+          "kind": "normal",
+          "index": 1880,
+          "words": 90,
+          "desc": "【國際商貿術語船上交貨】Under the Incoterms 2020 FOB rule (Free on Board), the risk of loss transfers to the buyer when:"
+        },
+        {
+          "kind": "normal",
+          "index": 496,
+          "words": 83,
+          "desc": "【短文】A memoir describes an old kitchen as the centre of family life. Letters written at the time refer frequently to arguments there. The curator keeps both accounts. What does this permit?"
+        },
+        {
+          "kind": "normal",
+          "index": 1907,
+          "words": 83,
+          "desc": "【組合語意學弗雷格原則】The principle of compositionality, or Frege's Principle, dictates that the meaning of a complex expression:"
+        },
+        {
+          "kind": "normal",
+          "index": 136,
+          "words": 78,
+          "desc": "【短文】A debate rubric rewards confident delivery. Participants from one group tend to hedge claims more carefully, even when their evidence is stronger. The same rubric is used for everyone. Why might uniform use still be problematic?"
+        },
+        {
+          "kind": "normal",
+          "index": 1906,
+          "words": 77,
+          "desc": "【範疇化原型理論】Rosch's prototype theory of categorization challenges classical Aristotelian definitions by proving that:"
+        }
+      ]
+    },
+    {
+      "region": 8,
+      "level": "C2",
+      "questions": 616,
+      "words": {
+        "median": 58,
+        "p90": 73,
+        "max": 91
+      },
+      "scenarios": [
+        {
+          "assumedWpm": 120,
+          "over20seconds": 520
+        },
+        {
+          "assumedWpm": 180,
+          "over20seconds": 256
+        },
+        {
+          "assumedWpm": 240,
+          "over20seconds": 16
+        }
+      ],
+      "longest": [
+        {
+          "kind": "normal",
+          "index": 823,
+          "words": 91,
+          "desc": "【短文】A curator suppresses the audience noise in an archival performance. The notes call the result the work as it was meant to be heard. A critic objects that the intervention has quietly promoted an interpretation into an origin. What is the objection?"
+        },
+        {
+          "kind": "boss",
+          "index": 460,
+          "words": 87,
+          "desc": "【環境主權】The Trail Smelter arbitral precedent established the foundational transboundary harm principle of sic utere tuo, meaning:"
+        },
+        {
+          "kind": "boss",
+          "index": 165,
+          "words": 86,
+          "desc": "【短文】A cracked cup is presented as a universal symbol of family life. A donor notes that it belonged to a worker who lived alone and used it at night shifts. What is at risk in the universal framing?"
+        },
+        {
+          "kind": "normal",
+          "index": 436,
+          "words": 85,
+          "desc": "【短文】A room is called communal because nobody may personalise it. Residents consequently use it only for brief visits. A critic asks whether the policy protects shared ownership or merely prevents anyone from feeling at home. What is at issue?"
+        },
+        {
+          "kind": "boss",
+          "index": 195,
+          "words": 85,
+          "desc": "【短文】A centre cites satisfied users of its digital entrance system as evidence that alternative access is unnecessary. The survey excludes people who abandoned the process before entry. What limits the conclusion?"
+        }
+      ]
+    }
+  ]
+}

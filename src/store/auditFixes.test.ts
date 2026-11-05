@@ -58,3 +58,21 @@ it('v25更新已存的舊歧義題，合併新舊key保留成績並可安全重�
   expect(saved.mistakes[questionKey(fixed)].question.desc).toContain('current timetable');
   expect(migrateSave(saved, SAVE_VERSION).codex).toEqual(saved.codex);
 });
+
+it('38位SSR升UR的四種不足條件不扣資源，合法晉升僅扣一次', async () => {
+  const { HEROES, currentRarity } = await import('../game/heroes');
+  const ssrs = HEROES.filter(h => h.rarity === 'SSR'); expect(ssrs).toHaveLength(38);
+  for (const hero of ssrs) {
+    const id = hero.id;
+    for (const missing of ['stars', 'trials', 'shards', 'gold', 'none']) {
+      useSaveStore.setState({ heroes: [id], heroTier: {}, wishShards: 0, gold: missing === 'gold' ? 1499 : 1500, heroStars: { [id]: missing === 'stars' ? 3 : 4 }, heroShards: { [id]: missing === 'shards' ? 149 : 150 }, trueName: { [id]: missing === 'trials' ? [true, true] : [true, true, true, true, true] } });
+      const beforeGold = S().gold, beforeShards = S().heroShards[id];
+      expect(S().tierUp(id), `${id}/${missing}`).toBe(missing === 'none');
+      if (missing !== 'none') { expect(S().gold).toBe(beforeGold); expect(S().heroShards[id]).toBe(beforeShards); }
+      else {
+        expect(currentRarity(hero, S().heroTier[id])).toBe('UR'); expect(S().gold).toBe(0); expect(S().heroShards[id]).toBe(0);
+        expect(S().tierUp(id)).toBe(false); expect(S().gold).toBe(0);
+      }
+    }
+  }
+});

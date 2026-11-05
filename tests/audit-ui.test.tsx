@@ -18,8 +18,9 @@ import MapLevelBar from '../src/components/MapLevelBar';
 import ReviewModal from '../src/components/ReviewModal';
 import HeroModal from '../src/components/HeroModal';
 import EnemyStatus from '../src/components/EnemyStatus';
+import TicketWheel from '../src/components/TicketWheel';
 import { useBattleStore } from '../src/store/battleStore';
-vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => '', avatarDataUrl: () => '' }));
+vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==', avatarDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' }));
 vi.mock('../src/game/questions/bank/loader', () => ({ loadBank: async () => undefined }));
 vi.mock('../src/game/speech', async importOriginal => ({ ...await importOriginal<typeof import('../src/game/speech')>(), speak: vi.fn(), isSpeechRecognitionSupported: () => false }));
 let root: Root;
@@ -175,4 +176,33 @@ it('修煉中再次答錯的題，結算後仍列為到期而非誤稱今天全�
   expect(document.body.textContent).toContain('待複習重點（1）');
   expect(document.body.textContent).not.toContain('今天沒有到期');
   vi.mocked(Date.now).mockRestore();
+});
+
+it('轉盤稍後再轉保留次數，重開及跳過動畫不重複發獎', async () => {
+  useUiStore.setState({ modal: null, celebrations: [], wheelHidden: false });
+  useBattleStore.setState({ active: false });
+  useSaveStore.setState({ wheelPending: 2, tickets: 10 });
+  await act(async () => root.render(<StrictMode><TicketWheel /></StrictMode>));
+  await click('稍後再轉（保留次數）');
+  expect(useSaveStore.getState().wheelPending).toBe(2);
+  expect(document.querySelector('.wheel-card')).toBeNull();
+  await act(async () => useUiStore.getState().setWheelHidden(false));
+  vi.useFakeTimers(); const random = vi.spyOn(Math, 'random').mockReturnValue(.2);
+  await click('🎯 開始轉盤！');
+  expect(useSaveStore.getState().wheelPending).toBe(1); expect(useSaveStore.getState().tickets).toBe(11);
+  await click('點擊跳過 ⏭'); await click('再轉一次（剩餘 1 次）'); await click('🎯 開始轉盤！');
+  await act(async () => vi.advanceTimersByTime(3401));
+  expect(useSaveStore.getState().tickets).toBe(12); expect(useSaveStore.getState().wheelPending).toBe(0);
+  await click('開心收下 ⏎'); expect(document.querySelector('.wheel-card')).toBeNull(); random.mockRestore();
+});
+it('SSR滿星與真名/碎片/金幣條件達成，可經原英雄介面晉升UR且只扣一次', async () => {
+  useUiStore.setState({ modal: null, celebrations: [] });
+  useSaveStore.setState({ heroes: ['phoenix'], party: ['phoenix'], gold: 1500, heroStars: { phoenix: 4 }, heroShards: { phoenix: 150 }, trueName: { phoenix: [true, true, true, true, true] } });
+  await act(async () => root.render(<HeroModal />));
+  await act(async () => [...document.querySelectorAll('button')].find(b => b.textContent?.trim().startsWith('養成'))!.click());
+  await click('升品階');
+  expect(useSaveStore.getState().heroTier.phoenix).toBe(1);
+  expect(useSaveStore.getState().gold).toBe(0); expect(useSaveStore.getState().heroShards.phoenix).toBe(0);
+  expect(document.body.textContent).toContain('已升品階（UR）');
+  expect(useSaveStore.getState().tierUp('phoenix')).toBe(false);
 });

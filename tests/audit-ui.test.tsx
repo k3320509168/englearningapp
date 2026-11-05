@@ -206,3 +206,13 @@ it('SSR滿星與真名/碎片/金幣條件達成，可經原英雄介面晉升UR
   expect(document.body.textContent).toContain('已升品階（UR）');
   expect(useSaveStore.getState().tierUp('phoenix')).toBe(false);
 });
+
+it('桌面未按展開時選另一位英雄，也會把可見詳情捲回頂部', async () => {
+  const scroll = vi.fn();
+  Object.defineProperty(HTMLElement.prototype, 'scrollTo', { value: scroll, configurable: true });
+  useSaveStore.setState({ heroes: ['phoenix', 'knight'], party: ['knight', 'phoenix'] });
+  await act(async () => root.render(<HeroModal />)); scroll.mockClear();
+  const tile = [...document.querySelectorAll<HTMLButtonElement>('.hero-tile')].find(b => b.textContent?.includes('PHOENIX'))!;
+  await act(async () => tile.click());
+  expect(scroll).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+});

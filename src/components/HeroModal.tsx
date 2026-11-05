@@ -57,7 +57,7 @@ export default function HeroModal() {
     ? (character ? 'player' : (party[0] ?? 'player'))
     : (heroes.includes(selected) ? selected : (party[0] ?? 'player')));
   useEffect(() => {
-    if (detailExpanded) scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
+    if (detailExpanded || window.innerWidth > 600) scrollRef.current?.scrollTo?.({ top: 0, behavior: 'auto' });
   }, [detailExpanded, currentSelected]);
 
 

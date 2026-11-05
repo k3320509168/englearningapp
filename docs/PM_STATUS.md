@@ -467,3 +467,8 @@ flowchart LR
 ### Codex 桌面補驗（2026-11-05）
 
 獨立分支codex/game-audit-fixes：1366×768/1920×1080桌面地圖、隊伍、搜尋篩選與召喚說明補驗。N04發現額外桌面條件，已修正選角詳情未回頂；完整56檔457測試、tsc、src ESLint通過。全面遊戲驗收尚未完成；詳細已測/未測與截圖見docs/question-bank-qa/FIX_PROGRESS_2026-11-05.md末段。未改main、未部署。
+
+
+### Codex × Antigravity 副本續測（2026-11-05）
+
+已直接與Gemini桌面Antigravity對話做N12只讀審查/反證/回歸回報。Codex修口說魔王拼寫備援誤發稱號、重打可補稱號且不重券、guard與本場重置；補結算/試煉結果/真名/文字副本說明。Chrome備援8/8通關、券105→110、三尺寸結算存證；語音重打僅store測試，未真人ASR。塔第1層5/5實玩，新增N33結算漏列實發徽章已修（新徽章顯示目前元件回歸，瀏覽器未重打）。56檔460 tests/tsc/src ESLint通過。顧問概括全過處已在FIX_PROGRESS逐項更正，完整驗收仍未完成。只提交codex/game-audit-fixes，不合main/部署。

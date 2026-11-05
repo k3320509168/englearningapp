@@ -53,6 +53,7 @@ export default function TrueNameModal() {
         </div>
       </section>
 
+      <p className="muted">發音考驗可用聽寫備援，獎勵相同；真名完成是英雄養成進度，不代表口說能力已驗證。</p>
       <ol className="trial-list">
         {TRIALS.map((t, i) => {
           const passed = progress?.[i] ?? false;

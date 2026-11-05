@@ -25,6 +25,7 @@ import { keepFocus } from './keepFocus';
 // 結算畫面：Boss 後（區段結算）、全區通關、體力耗盡時顯示
 
 export default function SummaryPanel() {
+  const skillVoiceFallback = useBattleStore(s => s.skillVoiceFallback);
   const { phase, answers, stageIdx, stages, maxCombo, runGold, runRunes, mapResult, levelKey, levelIdx, runXp, runDrops, mode, mapStats } = useBattleStore(useShallow(s => ({
     phase: s.phase, answers: s.answers, stageIdx: s.stageIdx, stages: s.stages, maxCombo: s.maxCombo, runGold: s.runGold, runRunes: s.runRunes,
     mapStats: s.mapStats, mapResult: s.mapResult, levelKey: s.levelKey, levelIdx: s.levelIdx, runXp: s.runXp, runDrops: s.runDrops, mode: s.mode,
@@ -73,7 +74,9 @@ export default function SummaryPanel() {
     <div ref={ref} className={`result summary ${phase === 'gameOver' ? 'is-fail' : ''}`}>
       <p className="result-title">{title}</p>
       {classHint && <button className="btn btn-primary" onClick={openClassAdvance}>⚡ {classHint}</button>}
-      {skillDef && phase === 'levelClear' && <p>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</p>}
+      {skillDef && phase === 'levelClear' && <p>{skillDef.id === 'speaking' && skillVoiceFallback
+        ? '本次以拼寫備援通關，口說未驗證。首通召喚券照常發放；全程口說重打可補稱號「雄辯之聲」。'
+        : <>你的{skillDef.skill}能力證明了自己！{titles.includes(skillDef.title) ? `稱號「${skillDef.title}」` : ''}</>}</p>}
       {phase === 'levelClear' && prologue && <p>追獵隊長倒下了！穿過邊境，前方就是翠綠草原。從這裡開始是正式的冒險：combo、敵人行動條、技能與召喚全部開放。</p>}
       {phase === 'levelClear' && !golden && !skillDef && !prologue && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}
       {runRunes > 0 && !golden && <p className="rune-gain">🔮 跨日複習答對 {runRunes} 個知識點：封印能量 +{runRunes}</p>}

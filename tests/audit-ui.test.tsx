@@ -19,6 +19,9 @@ import ReviewModal from '../src/components/ReviewModal';
 import HeroModal from '../src/components/HeroModal';
 import EnemyStatus from '../src/components/EnemyStatus';
 import TicketWheel from '../src/components/TicketWheel';
+import SkillBossModal from '../src/components/SkillBossModal';
+import TowerModal from '../src/components/TowerModal';
+import * as modes from '../src/game/modes';
 import { useBattleStore } from '../src/store/battleStore';
 vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==', avatarDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' }));
 vi.mock('../src/game/questions/bank/loader', () => ({ loadBank: async () => undefined }));
@@ -215,4 +218,26 @@ it('桌面未按展開時選另一位英雄，也會把可見詳情捲回頂部'
   const tile = [...document.querySelectorAll<HTMLButtonElement>('.hero-tile')].find(b => b.textContent?.includes('PHOENIX'))!;
   await act(async () => tile.click());
   expect(scroll).toHaveBeenCalledWith({ top: 0, behavior: 'auto' });
+});
+
+
+it('備援首通口說魔王顯示可重打補稱號，不冒稱已獲稱號', async () => {
+  useSaveStore.setState({ skillBossCleared: ['speaking'], titles: [] });
+  await act(async () => root.render(<SkillBossModal />));
+  const card = [...document.querySelectorAll('.skill-boss')].find(e => e.textContent?.includes('鬼嘴魔王'))!;
+  expect(card.textContent).toContain('重打可挑戰稱號');
+  expect(card.textContent).toContain('途中改拼寫仍保留首通召喚券');
+  expect(card.textContent).not.toContain('已獲得');
+});
+it('塔結算列出確實發放的徽章，重開不重複領第一層', async () => {
+  const fixed = Array.from({ length: 5 }, () => ({ type: 'choice' as const, desc: 'Which word means 貓?', options: ['A. cat', 'B. dog'], ans: 'A' }));
+  const pick = vi.spyOn(modes, 'towerQuestions').mockReturnValue(fixed);
+  try {
+    await act(async () => root.render(<TowerModal />));
+    await click('⚔️ 開始挑戰第 1 層');
+    for (let i = 0; i < 5; i++) { await click('A cat'); await click(i === 4 ? '看結果 ⏎' : '下一題 ⏎'); }
+    expect(document.querySelector('.tower-settle-rewards')?.textContent).toContain('職業徽章+2');
+    expect(useSaveStore.getState().classBadges).toBe(initialSave.classBadges + 2);
+    expect(useSaveStore.getState().clearTowerFloor(1, null)).toBe(null);
+  } finally { pick.mockRestore(); }
 });

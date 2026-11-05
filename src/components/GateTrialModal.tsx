@@ -125,6 +125,7 @@ export default function GateTrialModal() {
               </li>
             ))}
           </ul>
+          {hasFallback && <p className="muted">本次使用拼寫備援，口說未驗證；通關與區域解鎖不受影響。</p>}
           <p>{passed ? `「${next?.name}」解鎖了！` : '答錯的字已記進錯題本。多複習幾天、讓封印更穩，再來挑戰吧！'}</p>
           <div className="tutorial-actions">
             <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={closeModal}>關閉</button>

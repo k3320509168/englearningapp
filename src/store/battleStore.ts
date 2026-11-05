@@ -115,6 +115,7 @@ interface BattleState {
   levelKey: string;
   mode: 'normal' | 'golden' | 'skill'; // golden：黃金之路；skill：聽說讀寫擴充魔王
   skillBoss: SkillBossId | null;
+  skillVoiceFallback: boolean; // 本場口說魔王曾改拼寫；不視為口說稱號驗證
   levelIdx: number;
   stages: Stage[];
   stageIdx: number;
@@ -823,10 +824,9 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 擴充魔王：第一次擊敗得到稱號與召喚券
     if (s.mode === 'skill') {
       const def = skillBossDef(s.skillBoss!)!;
-      if (save().recordSkillBoss(def.id)) {
-        save().addTitle(def.title);
-        save().addTickets(SKILL_BOSS_FIRST_TICKETS);
-      }
+      if (save().recordSkillBoss(def.id)) save().addTickets(SKILL_BOSS_FIRST_TICKETS);
+      // 首通獎勵與口說驗證分開；備援首通後仍可用口說重打補稱號。
+      if (def.id !== 'speaking' || !s.skillVoiceFallback) save().addTitle(def.title);
       set({ ...patch, phase: 'levelClear' });
       return;
     }
@@ -1321,6 +1321,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     levelKey: '',
     mode: 'normal',
     skillBoss: null,
+    skillVoiceFallback: false,
     levelIdx: 0,
     stages: [],
     stageIdx: 0,
@@ -1413,7 +1414,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const stats = playerStats({ upgrades });
       const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions(LEVELS.indexOf(levelKey))));
       set({
-        active: true, mode: 'normal', skillBoss: null, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
+        active: true, mode: 'normal', skillBoss: null, skillVoiceFallback: false, levelKey, levelIdx: Math.max(0, LEVELS.indexOf(levelKey)), stages: generateStages(levelKey, decks),
         combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runRunes: 0, runXp: 0, runDrops: {},
@@ -1437,7 +1438,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const stats = playerStats({ upgrades: { hp: 0, atk: 0, combo: 0, gold: 0 } });
       const party = buildParty([character ? 'player' : heroes[0]], heroes, character, stats);
       set({
-        active: true, mode: 'golden', skillBoss: null, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
+        active: true, mode: 'golden', skillBoss: null, skillVoiceFallback: false, levelKey: GOLDEN_LEVEL_KEY, levelIdx: 0, stages: generateGoldenStages(goldenDecks),
         combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
         answers: [], wrongStreak: 0, shield: false, comboGuard: false, amplifyLeft: 0, charge: 1, critLeft: 0, relay: null, chain: [], runGold: 0, runRunes: 0, runXp: 0, runDrops: {},
@@ -1459,7 +1460,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       const stats = playerStats({ upgrades });
       const party = withSpring(buildParty(ids, heroes, character, stats, partyOptions()));
       set({
-        active: true, mode: 'skill', skillBoss: id, levelKey: `skill-${id}`, levelIdx,
+        active: true, mode: 'skill', skillBoss: id, skillVoiceFallback: false, levelKey: `skill-${id}`, levelIdx,
         stages: [{ name: def.name, bossMode: true, kind: 'final', questions: [draw()] }],
         combo: 0, skillCombo: 0, skillWindow: 0, skillWindowGain: 0, runAnswers: 0, maxCombo: 0, bossBoost: false, questionCount: 0,
         stats, ...withTotals(party), attackerIdx: 0,
@@ -1533,10 +1534,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     },
 
     switchToSpelling: () => {
-      const prev = questionTransform;
-      questionTransform = q => voiceFallback(prev(q));
       const s = get();
       if (s.phase !== 'answering' || !s.original || s.question?.type !== 'voice') return;
+      const prev = questionTransform;
+      questionTransform = q => voiceFallback(prev(q));
+      if (s.mode === 'skill' && s.skillBoss === 'speaking') set({ skillVoiceFallback: true });
       const converted = prepare(s.original);
       // 句子型的口說題沒辦法改成拼寫：直接換下一題（不算答錯）
       if (converted.type === 'voice') { set({ ...nextQuestion(), typed: '', assist: null, assistSource: null }); return; }

@@ -46,6 +46,7 @@ export default function ShardQuizModal() {
 
   return (
     <Modal title="💎 每日碎片英文題" onClose={closeModal}>
+      <p className="muted">此副本的口說題改用拼寫練習，不驗證口說能力；獎勵不受影響。</p>
       {!questions && (
         <div className="shard-quiz-panel">
           <div className="shard-quiz-hero-card">

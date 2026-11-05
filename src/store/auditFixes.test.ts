@@ -76,3 +76,39 @@ it('38位SSR升UR的四種不足條件不扣資源，合法晉升僅扣一次', 
     }
   }
 });
+
+it('口說魔王備援首通保留5券，之後全口說重打補稱號不重發券', () => {
+  const play = () => {
+    for (let i = 0; i < 500 && useBattleStore.getState().phase !== 'levelClear'; i++) {
+      const b = useBattleStore.getState();
+      if (b.phase === 'lesson') b.startBattle();
+      else if (b.phase === 'feedback') b.continueAfterFeedback();
+      else if (b.phase === 'answering') {
+        // 集中驗證原戰鬥完成/發獎流程，壓低敵方HP，非平衡通關率測試。
+        useBattleStore.setState({ monsterHp: 1 });
+        const q = b.question!;
+        if (q.type === 'voice') b.submitVoice(q.ans);
+        else if (q.type === 'choice') b.chooseOption(q.ans);
+        else { for (const ch of q.ans.slice(b.typed.length)) b.inputLetter(ch); b.submitTyped(); }
+      } else throw new Error(`未預期戰鬥狀態 ${b.phase}`);
+    }
+    expect(useBattleStore.getState().phase).toBe('levelClear');
+  };
+  useSaveStore.setState({ settings: { ...S().settings, showLessons: false }, hintsSeen: ['boss', 'skill'], unlockedIndex: 0 });
+  const tickets = S().tickets;
+  useBattleStore.getState().startSkillBoss('speaking');
+  if (useBattleStore.getState().phase === 'lesson') useBattleStore.getState().startBattle();
+  useBattleStore.getState().switchToSpelling();
+  expect(useBattleStore.getState().skillVoiceFallback).toBe(true);
+  play();
+  expect(S().tickets).toBe(tickets + 5);
+  expect(S().skillBossCleared).toContain('speaking');
+  expect(S().titles).not.toContain('雄辯之聲');
+  useBattleStore.getState().startSkillBoss('speaking');
+  expect(useBattleStore.getState().skillVoiceFallback).toBe(false);
+  play();
+  expect(S().titles).toContain('雄辯之聲');
+  expect(S().tickets).toBe(tickets + 5);
+  useBattleStore.getState().switchToSpelling();
+  expect(useBattleStore.getState().skillVoiceFallback).toBe(false);
+});

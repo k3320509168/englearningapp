@@ -79,6 +79,7 @@ export default function TowerModal() {
 
   return (
     <Modal title={isEndless ? '🌌 無盡時空之塔' : '🗼 英雄時空之塔'} onClose={closeModal} wide>
+      <p className="muted">此副本的口說題改用拼寫練習，不驗證口說能力；獎勵不受影響。</p>
       {!questions && (
         <div className="tower-panel">
           <div className="tower-header-card">
@@ -204,6 +205,10 @@ export default function TowerModal() {
                         <small>金幣</small>
                         <b>+{lastPaid.gold}</b>
                       </div>
+                    </div>
+                    <div className="tower-reward-chip">
+                      <span className="reward-icon">🎖️</span>
+                      <div className="reward-detail"><small>職業徽章</small><b>+{lastPaid.badges}</b></div>
                     </div>
                     <div className="tower-reward-chip">
                       <span className="reward-icon">⚡</span>

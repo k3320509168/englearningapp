@@ -11,6 +11,7 @@ import { keepFocus } from './keepFocus';
 // 擴充魔王（聽說讀寫）：每位只用一種能力的題目，題目來自已到達的區域
 export default function SkillBossModal() {
   const closeModal = useUiStore(s => s.closeModal);
+  const titles = useSaveStore(s => s.titles);
   const cleared = useSaveStore(s => s.skillBossCleared);
   const unlockedIndex = useSaveStore(s => s.unlockedIndex);
   const voiceAsSpelling = useSaveStore(s => s.settings.voiceAsSpelling);
@@ -31,7 +32,8 @@ export default function SkillBossModal() {
               <span className="skill-boss-icon">{b.icon}</span>
               <b>{b.skill}・{b.name}</b>
               <span>{b.desc}</span>
-              <small className="muted">題目 {count} 題{done ? ` ・ 🏅 已獲得「${b.title}」` : ` ・ 擊敗獲得稱號「${b.title}」`}</small>
+              <small className="muted">題目 {count} 題{titles.includes(b.title) ? ` ・ 🏅 已獲得「${b.title}」` : ` ・ ${done ? '已通關；重打可挑戰' : '擊敗可挑戰'}稱號「${b.title}」`}</small>
+              {b.id === 'speaking' && <small className="muted">全程口說通關可獲稱號；途中改拼寫仍保留首通召喚券，但口說未驗證，可再挑戰補稱號。</small>}
               {blocked && <small className="voice-error">需要可以使用麥克風的瀏覽器（並在設定關閉「口說題改成拼寫題」）</small>}
               <button className="btn btn-primary btn-small" onMouseDown={keepFocus} disabled={blocked || count < 4}
                 onClick={() => { closeModal(); useBattleStore.getState().startSkillBoss(b.id); }}>

@@ -57,7 +57,7 @@ export const GAME_HEIGHT = 480;
 export default function Game() {
   const gameRef = useRef<HTMLDivElement>(null);
   const inBattle = useBattleStore(s => s.active);
-  const battleRegion = useBattleStore(s => s.levelIdx);
+  const battleRegion = useBattleStore(s => s.mode === 'normal' ? s.levelIdx : 8);
   const mapRegion = useSaveStore(s => s.unlockedIndex);
   useEffect(() => {
     const parent = gameRef.current;
@@ -214,7 +214,7 @@ export default function Game() {
         g.scale.getParentBounds();
         g.scale.refresh();
         const b = useBattleStore.getState();
-        const r = b.active ? b.levelIdx : useSaveStore.getState().unlockedIndex;
+        const r = b.active ? (b.mode === 'normal' ? b.levelIdx : 8) : useSaveStore.getState().unlockedIndex;
         parent.style.backgroundImage = `url("${backgroundBackdrop(r, parent.clientWidth / Math.max(1, parent.clientHeight))}")`;
       });
       observer.observe(parent);

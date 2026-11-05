@@ -85,13 +85,13 @@ export default function PlacementModal() {
           <p className="result-title">{review.passed ? '🎉 7 天回顧檢查全數通過！' : '💪 回顧檢查未達標'}</p>
           <p>
             {review.passed
-              ? `恭喜！12 題中答對 ${totalCorrect} 題，四項能力全數達標，跳級實力與推薦區域正式鎖定！`
-              : `12 題中答對 ${totalCorrect} 題（標準：總分 ≥9 題且每項能力 ≥2 題）。`}
+              ? `恭喜！${review.queue.length} 題中答對 ${totalCorrect} 題，${review.speakingVerified ? '四項能力全數達標' : '本次受測能力達標（口說未驗證）'}，跳級實力與推薦區域正式鎖定！`
+              : `${review.queue.length} 題中答對 ${totalCorrect} 題（標準：總分 ≥9 題且每項能力 ≥2 題）。`}
           </p>
           <ul className="muted gate-rules" style={{ margin: '12px 0' }}>
             <li>🎧 聽力：{review.scores.listening.correct} / {review.scores.listening.total} 題 {review.scores.listening.correct >= 2 ? '✔' : '✘'}</li>
             <li>📖 閱讀：{review.scores.reading.correct} / {review.scores.reading.total} 題 {review.scores.reading.correct >= 2 ? '✔' : '✘'}</li>
-            <li>🎙️ 口說：{review.scores.speaking.correct} / {review.scores.speaking.total} 題 {review.scores.speaking.correct >= 2 ? '✔' : '✘'}</li>
+            <li>🎙️ 口說：{review.scores.speaking.correct} / {review.scores.speaking.total} 題 {!review.speakingVerified ? '未驗證' : review.scores.speaking.correct >= 2 ? '✔' : '✘'}</li>
             <li>✍️ 寫作：{review.scores.writing.correct} / {review.scores.writing.total} 題 {review.scores.writing.correct >= 2 ? '✔' : '✘'}</li>
           </ul>
           {!review.passed && (
@@ -122,7 +122,7 @@ export default function PlacementModal() {
             questions={[rq]}
             blind
             lastLabel="下一題"
-            label={() => `7 天實力回顧・第 ${review.currentIdx + 1} / 12 題`}
+            label={() => `7 天實力回顧・第 ${review.currentIdx + 1} / ${review.queue.length} 題`}
             onAnswer={onReviewAnswer}
           />
         </Modal>
@@ -136,10 +136,10 @@ export default function PlacementModal() {
         <div style={{ background: 'rgba(255, 209, 92, 0.12)', border: '1px solid #ffd15c', borderRadius: 8, padding: 12, marginBottom: 16 }}>
           <p style={{ margin: 0, fontWeight: 700, color: '#ffd15c' }}>📋 7 天跳級實力回顧檢查到期！</p>
           <p style={{ margin: '4px 0 10px 0', fontSize: '0.88rem' }}>
-            你在跳級驗證後已達 7 天，依課綱需進行 12 題快速實力回顧（聽讀說寫各 3 題）。通過即正式鎖定實力；未通過不降級。
+            你在跳級驗證後已達 7 天，可進行快速實力回顧（題數依可用題庫及麥克風設定調整；口說備援不算口說驗證）。通過即正式鎖定實力；未通過不降級。
           </p>
           <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={beginReview}>
-            立即開始 7 天回顧檢查（12 題）➔
+            立即開始 7 天回顧檢查 ➔
           </button>
         </div>
       )}

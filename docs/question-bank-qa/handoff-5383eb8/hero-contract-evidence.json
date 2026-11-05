@@ -1,0 +1,3287 @@
+{
+  "scope": "Store and buildMember contracts; not browser/device gameplay or full balance acceptance",
+  "skillCases": 76,
+  "trueNameCases": 300,
+  "weaponCases": 43,
+  "checks": 1282,
+  "failures": [],
+  "skillResults": [
+    {
+      "hero": "phoenix",
+      "skill": "rebirth",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 48
+      }
+    },
+    {
+      "hero": "phoenix",
+      "skill": "rebirth",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 48
+      }
+    },
+    {
+      "hero": "eclipse",
+      "skill": "eclipse",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.2
+      }
+    },
+    {
+      "hero": "eclipse",
+      "skill": "eclipse",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.2
+      }
+    },
+    {
+      "hero": "tempest",
+      "skill": "storm",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "crits": 4,
+        "charge": 1.6
+      }
+    },
+    {
+      "hero": "tempest",
+      "skill": "storm",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "crits": 4,
+        "charge": 1.6
+      }
+    },
+    {
+      "hero": "sanctuary",
+      "skill": "sanctum",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "heal": 40,
+        "timeThis": 5
+      }
+    },
+    {
+      "hero": "sanctuary",
+      "skill": "sanctum",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "heal": 40,
+        "timeThis": 5
+      }
+    },
+    {
+      "hero": "valor",
+      "skill": "valor",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 19,
+        "bossStep": true
+      }
+    },
+    {
+      "hero": "valor",
+      "skill": "valor",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 19,
+        "bossStep": true
+      }
+    },
+    {
+      "hero": "serenity",
+      "skill": "calm",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 8,
+        "heal": 19
+      }
+    },
+    {
+      "hero": "serenity",
+      "skill": "calm",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 8,
+        "heal": 19
+      }
+    },
+    {
+      "hero": "labyrinth",
+      "skill": "maze",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "breakShield": 3,
+        "charge": 2.6
+      }
+    },
+    {
+      "hero": "labyrinth",
+      "skill": "maze",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "breakShield": 3,
+        "charge": 2.6
+      }
+    },
+    {
+      "hero": "aurora",
+      "skill": "aurora",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 40,
+        "amplify": 3
+      }
+    },
+    {
+      "hero": "aurora",
+      "skill": "aurora",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 40,
+        "amplify": 3
+      }
+    },
+    {
+      "hero": "tenacity",
+      "skill": "tenacity",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 3.6,
+        "shield": true
+      }
+    },
+    {
+      "hero": "tenacity",
+      "skill": "tenacity",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 3.6,
+        "shield": true
+      }
+    },
+    {
+      "hero": "radiance",
+      "skill": "radiance",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 45,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "radiance",
+      "skill": "radiance",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 45,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "nemesis",
+      "skill": "nemesis",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "nemesis",
+      "skill": "nemesis",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "chivalry",
+      "skill": "chivalry",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "combo": 16
+      }
+    },
+    {
+      "hero": "chivalry",
+      "skill": "chivalry",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "combo": 16
+      }
+    },
+    {
+      "hero": "solitude",
+      "skill": "solitude",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 6,
+        "crits": 5
+      }
+    },
+    {
+      "hero": "solitude",
+      "skill": "solitude",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 6,
+        "crits": 5
+      }
+    },
+    {
+      "hero": "genesis",
+      "skill": "genesis",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 51,
+        "shield": true
+      }
+    },
+    {
+      "hero": "genesis",
+      "skill": "genesis",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 51,
+        "shield": true
+      }
+    },
+    {
+      "hero": "titan",
+      "skill": "titan",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4,
+        "breakShield": 3
+      }
+    },
+    {
+      "hero": "titan",
+      "skill": "titan",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4,
+        "breakShield": 3
+      }
+    },
+    {
+      "hero": "oblivion",
+      "skill": "oblivion",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.9,
+        "breakShield": 3,
+        "timeStage": 5
+      }
+    },
+    {
+      "hero": "oblivion",
+      "skill": "oblivion",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.9,
+        "breakShield": 3,
+        "timeStage": 5
+      }
+    },
+    {
+      "hero": "infinity",
+      "skill": "infinity",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 19,
+        "crits": 3,
+        "charge": 3.6
+      }
+    },
+    {
+      "hero": "infinity",
+      "skill": "infinity",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 19,
+        "crits": 3,
+        "charge": 3.6
+      }
+    },
+    {
+      "hero": "eternity",
+      "skill": "eternity",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "heal": 40,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "eternity",
+      "skill": "eternity",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "heal": 40,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "apocalypse",
+      "skill": "apocalypse",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.1,
+        "breakShield": 4
+      }
+    },
+    {
+      "hero": "apocalypse",
+      "skill": "apocalypse",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.1,
+        "breakShield": 4
+      }
+    },
+    {
+      "hero": "ascendant",
+      "skill": "ascendant",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 8,
+        "amplify": 3,
+        "heal": 32
+      }
+    },
+    {
+      "hero": "ascendant",
+      "skill": "ascendant",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 8,
+        "amplify": 3,
+        "heal": 32
+      }
+    },
+    {
+      "hero": "celestial",
+      "skill": "celestial",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 48,
+        "shield": true,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "celestial",
+      "skill": "celestial",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "heal": 48,
+        "shield": true,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "immortal",
+      "skill": "immortal",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "crits": 3,
+        "charge": 3.9
+      }
+    },
+    {
+      "hero": "immortal",
+      "skill": "immortal",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "crits": 3,
+        "charge": 3.9
+      }
+    },
+    {
+      "hero": "dominion",
+      "skill": "dominion",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.9,
+        "combo": 16
+      }
+    },
+    {
+      "hero": "dominion",
+      "skill": "dominion",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.9,
+        "combo": 16
+      }
+    },
+    {
+      "hero": "seraphim",
+      "skill": "seraphim",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 56,
+        "shield": true
+      }
+    },
+    {
+      "hero": "seraphim",
+      "skill": "seraphim",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "revive": true,
+        "heal": 56,
+        "shield": true
+      }
+    },
+    {
+      "hero": "chronicle",
+      "skill": "chronicle",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 10,
+        "combo": 13,
+        "heal": 29
+      }
+    },
+    {
+      "hero": "chronicle",
+      "skill": "chronicle",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "timeStage": 10,
+        "combo": 13,
+        "heal": 29
+      }
+    },
+    {
+      "hero": "transcend",
+      "skill": "transcend",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "amplify": 3,
+        "combo": 24,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "transcend",
+      "skill": "transcend",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "amplify": 3,
+        "combo": 24,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "resonance",
+      "skill": "resonance",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.2,
+        "crits": 3
+      }
+    },
+    {
+      "hero": "resonance",
+      "skill": "resonance",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.2,
+        "crits": 3
+      }
+    },
+    {
+      "hero": "cataclysm",
+      "skill": "cataclysm",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "breakShield": 4,
+        "charge": 4.7
+      }
+    },
+    {
+      "hero": "cataclysm",
+      "skill": "cataclysm",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "breakShield": 4,
+        "charge": 4.7
+      }
+    },
+    {
+      "hero": "pantheon",
+      "skill": "pantheon",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "amplify": 3,
+        "combo": 16,
+        "shield": true
+      }
+    },
+    {
+      "hero": "pantheon",
+      "skill": "pantheon",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "amplify": 3,
+        "combo": 16,
+        "shield": true
+      }
+    },
+    {
+      "hero": "valkyrie",
+      "skill": "valkyrie",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.1,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "valkyrie",
+      "skill": "valkyrie",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 5.1,
+        "crits": 2
+      }
+    },
+    {
+      "hero": "chimera",
+      "skill": "chimera",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "breakShield": 2,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "chimera",
+      "skill": "chimera",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "breakShield": 2,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "leviathan",
+      "skill": "leviathan",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.4,
+        "shield": true,
+        "heal": 35
+      }
+    },
+    {
+      "hero": "leviathan",
+      "skill": "leviathan",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.4,
+        "shield": true,
+        "heal": 35
+      }
+    },
+    {
+      "hero": "behemoth",
+      "skill": "behemoth",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.8,
+        "shield": true
+      }
+    },
+    {
+      "hero": "behemoth",
+      "skill": "behemoth",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.8,
+        "shield": true
+      }
+    },
+    {
+      "hero": "colossus",
+      "skill": "colossus",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "breakShield": 3,
+        "heal": 32
+      }
+    },
+    {
+      "hero": "colossus",
+      "skill": "colossus",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "shield": true,
+        "breakShield": 3,
+        "heal": 32
+      }
+    },
+    {
+      "hero": "archangel",
+      "skill": "archangel",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.6,
+        "heal": 45,
+        "shield": true
+      }
+    },
+    {
+      "hero": "archangel",
+      "skill": "archangel",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.6,
+        "heal": 45,
+        "shield": true
+      }
+    },
+    {
+      "hero": "paragon",
+      "skill": "paragon",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "crits": 3,
+        "combo": 19,
+        "charge": 3.6
+      }
+    },
+    {
+      "hero": "paragon",
+      "skill": "paragon",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "crits": 3,
+        "combo": 19,
+        "charge": 3.6
+      }
+    },
+    {
+      "hero": "rhapsody",
+      "skill": "rhapsody",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "timeStage": 6,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "rhapsody",
+      "skill": "rhapsody",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "charge": 4.7,
+        "timeStage": 6,
+        "amplify": 2
+      }
+    },
+    {
+      "hero": "sovereign",
+      "skill": "sovereign",
+      "stage": 4,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 24,
+        "amplify": 3,
+        "shield": true
+      }
+    },
+    {
+      "hero": "sovereign",
+      "skill": "sovereign",
+      "stage": 19,
+      "castingApplied": true,
+      "energy": 0,
+      "effect": {
+        "combo": 24,
+        "amplify": 3,
+        "shield": true
+      }
+    }
+  ],
+  "trueNameResults": [
+    {
+      "hero": "knight",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "apple",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "bread",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "cat",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "dog",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "sun",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "moon",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "tree",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "fish",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "bird",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "book",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "milk",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "star",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "rain",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "rose",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "egg",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "archer",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "mage",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "bard",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "river",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "forest",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "island",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "castle",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "garden",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "winter",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "shadow",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "silver",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "hunter",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "candle",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "ocean",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "dragon",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "thunder",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "crystal",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "warrior",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "journey",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "courage",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "harmony",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "volcano",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "glacier",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "compass",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "lantern",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "guardian",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "phoenix",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "eclipse",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "tempest",
+      "baseHp": 131,
+      "namedHp": 196,
+      "baseAtk": 68.875,
+      "namedAtk": 103.3125
+    },
+    {
+      "hero": "sanctuary",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "valor",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "serenity",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "labyrinth",
+      "baseHp": 131,
+      "namedHp": 196,
+      "baseAtk": 68.875,
+      "namedAtk": 103.3125
+    },
+    {
+      "hero": "aurora",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "rock",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "sword",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "night",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "snow",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "cloud",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "fire",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "bear",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "wolf",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "fox",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "light",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "flower",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "bell",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "smile",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "bridge",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "iron",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "smoke",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "mirror",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "cave",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "spark",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "ash",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "torch",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "sunrise",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "flame",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "root",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "moss",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "shield",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "rift",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "tremor",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "alloy",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "drought",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "inferno",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "midnight",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "fortress",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "fury",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "phantom",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "bloom",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "anchor",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "tenacity",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "hill",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "leaf",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "lake",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "sand",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "wind",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "wave",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "seed",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "grass",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "path",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "door",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "ring",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "rope",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "horn",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "coin",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "lamp",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "cup",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "nest",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "pond",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "frog",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "valley",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "stream",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "desert",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "cliff",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "feather",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "branch",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "harbor",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "meadow",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "breeze",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "cavern",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "beacon",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "spear",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "blade",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "hammer",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "arrow",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "echo",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "crown",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "scroll",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "avalanche",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "bolt",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "whirlwind",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "meteor",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "tundra",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "canyon",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "forge",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "bastion",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "relic",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "zenith",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "vortex",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "sentinel",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "prophet",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "omen",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "solstice",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "radiance",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "nemesis",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "chivalry",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "solitude",
+      "baseHp": 131,
+      "namedHp": 196,
+      "baseAtk": 68.875,
+      "namedAtk": 103.3125
+    },
+    {
+      "hero": "genesis",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "titan",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "oblivion",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "infinity",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "eternity",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "apocalypse",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "clay",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "dust",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "silk",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "wool",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "corn",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "rice",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "herb",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "salt",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "soup",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "cake",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "pear",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "plum",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "duck",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "goat",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "hare",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "hawk",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "lamb",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "mole",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "mule",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "seal",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "swan",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "toad",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "crow",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "deer",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "dove",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "gold",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "flag",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "pipe",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "sail",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "ship",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "tool",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "wall",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "well",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "wing",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "bark",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "vine",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "lock",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "mask",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "gate",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "cart",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "boat",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "tent",
+      "baseHp": 90,
+      "namedHp": 135,
+      "baseAtk": 47.5,
+      "namedAtk": 71.25
+    },
+    {
+      "hero": "drum",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "mint",
+      "baseHp": 110,
+      "namedHp": 165,
+      "baseAtk": 37.5,
+      "namedAtk": 56.25
+    },
+    {
+      "hero": "zinc",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 50,
+      "namedAtk": 75
+    },
+    {
+      "hero": "lead",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "coal",
+      "baseHp": 130,
+      "namedHp": 195,
+      "baseAtk": 42.5,
+      "namedAtk": 63.75
+    },
+    {
+      "hero": "lime",
+      "baseHp": 80,
+      "namedHp": 120,
+      "baseAtk": 65,
+      "namedAtk": 97.5
+    },
+    {
+      "hero": "canal",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "creek",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "crest",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "grove",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "haven",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "lance",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "lodge",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "manor",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "oasis",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "ridge",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "vault",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "wharf",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "anvil",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "domain",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "fathom",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "islet",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "lagoon",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "outpost",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "pillar",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "quarry",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "rampart",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "ravine",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "redoubt",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "refuge",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "sanctum",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "spire",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "strata",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "trench",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "fawn",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "geyser",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "timber",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "harpoon",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "chalice",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "censer",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "banner",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "shrine",
+      "baseHp": 123,
+      "namedHp": 185,
+      "baseAtk": 42.00000000000001,
+      "namedAtk": 63.000000000000014
+    },
+    {
+      "hero": "summit",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "delta",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "dune",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "glade",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "gully",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "crag",
+      "baseHp": 146,
+      "namedHp": 218,
+      "baseAtk": 47.6,
+      "namedAtk": 71.4
+    },
+    {
+      "hero": "steppe",
+      "baseHp": 101,
+      "namedHp": 151,
+      "baseAtk": 53.2,
+      "namedAtk": 79.80000000000001
+    },
+    {
+      "hero": "tide",
+      "baseHp": 112,
+      "namedHp": 168,
+      "baseAtk": 56.00000000000001,
+      "namedAtk": 84.00000000000001
+    },
+    {
+      "hero": "hail",
+      "baseHp": 90,
+      "namedHp": 134,
+      "baseAtk": 72.80000000000001,
+      "namedAtk": 109.20000000000002
+    },
+    {
+      "hero": "cavalier",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "crusader",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "defender",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "emperor",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "herald",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "ironclad",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "justicar",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "marshal",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "monarch",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "paladin",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "pioneer",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "templar",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "warlord",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "champion",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "avenger",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "wanderer",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "seeker",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "stalker",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "strider",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "striker",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "tracker",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "vanquish",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "voyager",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "corsair",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "dragoon",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "duelist",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "enchanter",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "invoker",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "overseer",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "prodigy",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "ranger",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "reaper",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "scout",
+      "baseHp": 113,
+      "namedHp": 169,
+      "baseAtk": 59.375,
+      "namedAtk": 89.0625
+    },
+    {
+      "hero": "shaman",
+      "baseHp": 138,
+      "namedHp": 206,
+      "baseAtk": 46.875,
+      "namedAtk": 70.3125
+    },
+    {
+      "hero": "sorcerer",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "warden",
+      "baseHp": 163,
+      "namedHp": 244,
+      "baseAtk": 53.125,
+      "namedAtk": 79.6875
+    },
+    {
+      "hero": "zealot",
+      "baseHp": 125,
+      "namedHp": 188,
+      "baseAtk": 62.5,
+      "namedAtk": 93.75
+    },
+    {
+      "hero": "mystic",
+      "baseHp": 100,
+      "namedHp": 150,
+      "baseAtk": 81.25,
+      "namedAtk": 121.875
+    },
+    {
+      "hero": "ascendant",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "celestial",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "immortal",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "dominion",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "seraphim",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "chronicle",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "transcend",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "resonance",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "cataclysm",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "pantheon",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "valkyrie",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "chimera",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "leviathan",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "behemoth",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "colossus",
+      "baseHp": 189,
+      "namedHp": 283,
+      "baseAtk": 61.625,
+      "namedAtk": 92.4375
+    },
+    {
+      "hero": "archangel",
+      "baseHp": 160,
+      "namedHp": 239,
+      "baseAtk": 54.37499999999999,
+      "namedAtk": 81.56249999999999
+    },
+    {
+      "hero": "paragon",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    },
+    {
+      "hero": "rhapsody",
+      "baseHp": 116,
+      "namedHp": 174,
+      "baseAtk": 94.25,
+      "namedAtk": 141.375
+    },
+    {
+      "hero": "sovereign",
+      "baseHp": 145,
+      "namedHp": 218,
+      "baseAtk": 72.5,
+      "namedAtk": 108.75
+    }
+  ],
+  "weaponResults": [
+    {
+      "weapon": "wp_phoenix",
+      "target": "phoenix",
+      "plainAtk": 94.25,
+      "basicAtk": 105.56000000000002,
+      "maxAtk": 113.1
+    },
+    {
+      "weapon": "wp_eclipse",
+      "target": "eclipse",
+      "plainAtk": 72.5,
+      "basicAtk": 77.575,
+      "maxAtk": 83.375
+    },
+    {
+      "weapon": "wp_tempest",
+      "target": "tempest",
+      "plainAtk": 68.875,
+      "basicAtk": 73.69625,
+      "maxAtk": 79.20625
+    },
+    {
+      "weapon": "wp_sanctuary",
+      "target": "sanctuary",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_valor",
+      "target": "valor",
+      "plainAtk": 61.625,
+      "basicAtk": 70.86874999999999,
+      "maxAtk": 75.79875
+    },
+    {
+      "weapon": "wp_serenity",
+      "target": "serenity",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_labyrinth",
+      "target": "labyrinth",
+      "plainAtk": 68.875,
+      "basicAtk": 73.69625,
+      "maxAtk": 79.20625
+    },
+    {
+      "weapon": "wp_aurora",
+      "target": "aurora",
+      "plainAtk": 94.25,
+      "basicAtk": 108.38749999999999,
+      "maxAtk": 115.9275
+    },
+    {
+      "weapon": "wp_radiance",
+      "target": "radiance",
+      "plainAtk": 94.25,
+      "basicAtk": 100.84750000000001,
+      "maxAtk": 108.38749999999999
+    },
+    {
+      "weapon": "wp_nemesis",
+      "target": "nemesis",
+      "plainAtk": 72.5,
+      "basicAtk": 81.925,
+      "maxAtk": 87.725
+    },
+    {
+      "weapon": "wp_chivalry",
+      "target": "chivalry",
+      "plainAtk": 61.625,
+      "basicAtk": 65.93875,
+      "maxAtk": 70.86874999999999
+    },
+    {
+      "weapon": "wp_solitude",
+      "target": "solitude",
+      "plainAtk": 68.875,
+      "basicAtk": 73.69625,
+      "maxAtk": 79.20625
+    },
+    {
+      "weapon": "wp_genesis",
+      "target": "genesis",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_titan",
+      "target": "titan",
+      "plainAtk": 61.625,
+      "basicAtk": 72.10125,
+      "maxAtk": 77.03125
+    },
+    {
+      "weapon": "wp_tenacity",
+      "target": "tenacity",
+      "plainAtk": 72.5,
+      "basicAtk": 81.2,
+      "maxAtk": 87
+    },
+    {
+      "weapon": "wp_oblivion",
+      "target": "oblivion",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_infinity",
+      "target": "infinity",
+      "plainAtk": 94.25,
+      "basicAtk": 108.38749999999999,
+      "maxAtk": 115.9275
+    },
+    {
+      "weapon": "wp_eternity",
+      "target": "eternity",
+      "plainAtk": 72.5,
+      "basicAtk": 77.575,
+      "maxAtk": 83.375
+    },
+    {
+      "weapon": "wp_apocalypse",
+      "target": "apocalypse",
+      "plainAtk": 61.625,
+      "basicAtk": 72.10125,
+      "maxAtk": 77.03125
+    },
+    {
+      "weapon": "wp_ascendant",
+      "target": "ascendant",
+      "plainAtk": 94.25,
+      "basicAtk": 100.84750000000001,
+      "maxAtk": 108.38749999999999
+    },
+    {
+      "weapon": "wp_celestial",
+      "target": "celestial",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_immortal",
+      "target": "immortal",
+      "plainAtk": 72.5,
+      "basicAtk": 82.65,
+      "maxAtk": 88.45
+    },
+    {
+      "weapon": "wp_dominion",
+      "target": "dominion",
+      "plainAtk": 61.625,
+      "basicAtk": 71.485,
+      "maxAtk": 76.415
+    },
+    {
+      "weapon": "wp_seraphim",
+      "target": "seraphim",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_chronicle",
+      "target": "chronicle",
+      "plainAtk": 94.25,
+      "basicAtk": 106.50249999999998,
+      "maxAtk": 114.04249999999999
+    },
+    {
+      "weapon": "wp_transcend",
+      "target": "transcend",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_resonance",
+      "target": "resonance",
+      "plainAtk": 94.25,
+      "basicAtk": 100.84750000000001,
+      "maxAtk": 108.38749999999999
+    },
+    {
+      "weapon": "wp_cataclysm",
+      "target": "cataclysm",
+      "plainAtk": 61.625,
+      "basicAtk": 73.33375,
+      "maxAtk": 78.26375
+    },
+    {
+      "weapon": "wp_pantheon",
+      "target": "pantheon",
+      "plainAtk": 72.5,
+      "basicAtk": 84.1,
+      "maxAtk": 89.9
+    },
+    {
+      "weapon": "wp_valkyrie",
+      "target": "valkyrie",
+      "plainAtk": 72.5,
+      "basicAtk": 81.925,
+      "maxAtk": 87.725
+    },
+    {
+      "weapon": "wp_chimera",
+      "target": "chimera",
+      "plainAtk": 94.25,
+      "basicAtk": 106.50249999999998,
+      "maxAtk": 114.04249999999999
+    },
+    {
+      "weapon": "wp_leviathan",
+      "target": "leviathan",
+      "plainAtk": 61.625,
+      "basicAtk": 65.93875,
+      "maxAtk": 70.86874999999999
+    },
+    {
+      "weapon": "wp_behemoth",
+      "target": "behemoth",
+      "plainAtk": 61.625,
+      "basicAtk": 69.02000000000001,
+      "maxAtk": 73.95
+    },
+    {
+      "weapon": "wp_colossus",
+      "target": "colossus",
+      "plainAtk": 61.625,
+      "basicAtk": 65.93875,
+      "maxAtk": 70.86874999999999
+    },
+    {
+      "weapon": "wp_archangel",
+      "target": "archangel",
+      "plainAtk": 54.37499999999999,
+      "basicAtk": 58.18125,
+      "maxAtk": 62.531249999999986
+    },
+    {
+      "weapon": "wp_paragon",
+      "target": "paragon",
+      "plainAtk": 72.5,
+      "basicAtk": 83.375,
+      "maxAtk": 89.175
+    },
+    {
+      "weapon": "wp_rhapsody",
+      "target": "rhapsody",
+      "plainAtk": 94.25,
+      "basicAtk": 100.84750000000001,
+      "maxAtk": 108.38749999999999
+    },
+    {
+      "weapon": "wp_sovereign",
+      "target": "sovereign",
+      "plainAtk": 72.5,
+      "basicAtk": 86.27499999999999,
+      "maxAtk": 92.075
+    },
+    {
+      "weapon": "wp_swordsman",
+      "target": "player",
+      "plainAtk": 50,
+      "basicAtk": 57.49999999999999,
+      "maxAtk": 61.5
+    },
+    {
+      "weapon": "wp_warrior",
+      "target": "player",
+      "plainAtk": 42.5,
+      "basicAtk": 45.475,
+      "maxAtk": 48.87499999999999
+    },
+    {
+      "weapon": "wp_archer",
+      "target": "player",
+      "plainAtk": 47.5,
+      "basicAtk": 50.825,
+      "maxAtk": 54.62499999999999
+    },
+    {
+      "weapon": "wp_mage",
+      "target": "player",
+      "plainAtk": 65,
+      "basicAtk": 69.55,
+      "maxAtk": 74.75
+    },
+    {
+      "weapon": "wp_monk",
+      "target": "player",
+      "plainAtk": 37.5,
+      "basicAtk": 40.125,
+      "maxAtk": 43.125
+    }
+  ]
+}

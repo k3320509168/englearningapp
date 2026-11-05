@@ -7,8 +7,8 @@ import { keepFocus } from './keepFocus';
 
 // 道具按鈕：戰鬥狀態列與手機的「🎒」選單共用
 function ItemButtons({ onUse }: { onUse?: () => void }) {
-  const { phase, playerHp, playerMaxHp, shield, assist } = useBattleStore(useShallow(s => ({
-    phase: s.phase, playerHp: s.playerHp, playerMaxHp: s.playerMaxHp, shield: s.shield, assist: s.assist,
+  const { phase, playerHp, playerMaxHp, shield, assist, golden } = useBattleStore(useShallow(s => ({
+    golden: s.mode === 'golden', phase: s.phase, playerHp: s.playerHp, playerMaxHp: s.playerMaxHp, shield: s.shield, assist: s.assist,
   })));
   const items = useSaveStore(s => s.items);
   const consumeItem = useBattleStore(s => s.consumeItem);
@@ -16,7 +16,7 @@ function ItemButtons({ onUse }: { onUse?: () => void }) {
   // 已經有效果時不能再用（例如滿血時不能喝藥水）
   const disabledReason: Record<string, boolean> = {
     potion: playerHp >= playerMaxHp,
-    shield,
+    shield: shield || golden,
     hint: assist !== null,
   };
   return (
@@ -24,7 +24,7 @@ function ItemButtons({ onUse }: { onUse?: () => void }) {
       {ITEMS.map(it => (
         <button key={it.id} className="item-btn" onMouseDown={keepFocus} onClick={() => { consumeItem(it.id); onUse?.(); }}
           disabled={!canUse || items[it.id] <= 0 || disabledReason[it.id]}
-          title={`${it.name}：${it.desc}`} aria-label={`使用${it.name}，剩 ${items[it.id]} 個`}>
+          title={golden && it.id === 'shield' ? '黃金之路不能使用護盾：答錯或超時立即止步' : `${it.name}：${it.desc}`} aria-label={`使用${it.name}，剩 ${items[it.id]} 個`}>
           {it.icon}<small>{items[it.id]}</small>
           <span className="item-name">{it.name}</span>
         </button>

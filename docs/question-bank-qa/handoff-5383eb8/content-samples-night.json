@@ -1,0 +1,74 @@
+[
+  {
+    "bank": "r8",
+    "pool": "normal",
+    "index": 529,
+    "question": {
+      "type": "voice",
+      "skill": "speaking",
+      "difficulty": 1,
+      "knowledgeType": "lexical",
+      "desc": "請唸出單字：尖刻易怒而帶刺的",
+      "ans": "WASPISH",
+      "speak": "waspish",
+      "explain": "waspish (adj.)：尖刻易怒而帶刺的。例句：She made a waspish comment.（她說了句尖刻話。）",
+      "vocabId": "R8:WASPISH"
+    }
+  },
+  {
+    "bank": "r8",
+    "pool": "normal",
+    "index": 1287,
+    "question": {
+      "type": "choice",
+      "skill": "reading",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "【認證破解】Pass the Hash attacks bypass traditional authentication challenges by:",
+      "options": [
+        "A. physically soldering bypass wires directly onto the computer motherboard printed circuit.",
+        "B. shouting randomized alphanumeric characters into the workstation microphone.",
+        "C. submitting expired paper identification cards to digital automated border check gates.",
+        "D. presenting captured NTLM password hashes directly to services without ever cracking the plaintext."
+      ],
+      "ans": "D",
+      "explain": "哈希傳遞攻擊（Pass-the-Hash）允許攻擊者在完全不需要破解出原始明文密碼的情況下，直接向遠端主機出示截獲的 NTLM 雜湊值登入。"
+    }
+  },
+  {
+    "bank": "r8",
+    "pool": "normal",
+    "index": 1464,
+    "question": {
+      "type": "spell",
+      "skill": "writing",
+      "difficulty": 1,
+      "desc": "請拼出：使遭到人為破壞的退化自然生境恢復原始生機的生態復育（R 開頭，11 個字母）",
+      "ans": "RESTORATION",
+      "speak": "restoration",
+      "explain": "RESTORATION (n.)：使遭到人為破壞的退化自然生境恢復原始生機的生態復育。例句：Community led mangrove restoration shields low lying coastal deltas from destructive typhoons.（由在地沿海社群主導的紅樹林生態復育壯舉，為低窪三角洲築起了抵禦超級颱風海嘯的最強活體長城。）",
+      "vocabId": "R8:RESTORATION"
+    }
+  },
+  {
+    "bank": "r8",
+    "pool": "normal",
+    "index": 1606,
+    "question": {
+      "type": "choice",
+      "skill": "listening",
+      "difficulty": 1,
+      "knowledgeType": "discourse",
+      "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
+      "speak": "The chemical mechanical planarization (CMP) module suffered from dishing and erosion on copper interconnects. What failed?",
+      "options": [
+        "A. The liquid polishing slurry evaporated because someone left the plastic bottle cap unscrewed.",
+        "B. The selective removal rate between copper metal and surrounding dielectric oxide was improperly balanced.",
+        "C. The motorized polishing pad failed to rotate because of a blown electrical fuse in the motor.",
+        "D. The cleanroom technician forgot to wash their protective rubber boots before entering the room."
+      ],
+      "ans": "B",
+      "explain": "化學機械研磨拋光（CMP）模組突遇嚴重的「碟形凹陷（Dishing）」與「介質侵蝕（Erosion）」微觀缺陷：金屬研磨液（Slurry）的化學腐蝕速率與機械拋光布的磨削壓力失衡，導致微細銅導線中心被過度挖空，引發晶片局部互連電阻劇烈飆升。"
+    }
+  }
+]

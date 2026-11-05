@@ -1,0 +1,31 @@
+{
+  "harness": "Actual WordStudy, actual pre-A1 bread question, actual saveStore.recordAnswer; no browser audio",
+  "before": {
+    "keyCount": 153,
+    "hasBread": false
+  },
+  "after": {
+    "keyCount": 8738,
+    "hasBread": true
+  },
+  "recordedAnswers": [
+    {
+      "type": "choice",
+      "speak": "bread",
+      "ans": "D",
+      "correct": 0,
+      "wrong": 1
+    }
+  ],
+  "visibleStats": "熟練度 ☆☆☆・答對 0 次・答錯 0 次",
+  "navigation": [
+    {
+      "text": "◀ 上一個詞",
+      "disabled": true
+    },
+    {
+      "text": "下一個詞 ▶",
+      "disabled": true
+    }
+  ]
+}

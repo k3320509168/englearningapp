@@ -19,8 +19,8 @@ const seconds = (ms: number) => Math.max(0, ms / 1000).toFixed(1);
 
 // 每題 20 秒的 combo 計時。越快答對傷害越高（5 秒內 ×1.5、10 秒內 ×1.2）
 export function TimerBars() {
-  const { phase, questionLeft, questionLimit, overtime, stageIdx, treasureLeft, untimed } = useBattleStore(useShallow(s => ({
-    phase: s.phase, questionLeft: s.questionLeft, questionLimit: s.questionLimit,
+  const { phase, questionLeft, questionLimit, overtime, stageIdx, treasureLeft, untimed, golden } = useBattleStore(useShallow(s => ({
+    golden: s.mode === 'golden', phase: s.phase, questionLeft: s.questionLeft, questionLimit: s.questionLimit,
     overtime: s.overtime, stageIdx: s.stageIdx, treasureLeft: s.treasureLeft,
     untimed: s.mode === 'normal' && untimedStage(s.levelIdx, s.stageIdx, s.levelKey),
   })));
@@ -42,7 +42,7 @@ export function TimerBars() {
   const lenient = isLenientStage(stageIdx);
   return (
     <div className={`timers ${phase !== 'answering' ? 'is-paused' : ''}`}>
-      <div className="timer" title={lenient ? '20 秒內答對 combo +1；超時只會讓 combo 中斷' : '20 秒內要答對，超時算答錯'}>
+      <div className="timer" title={golden ? '黃金之路：答錯或超時立即止步' : lenient ? '20 秒內答對 combo +1；超時只會讓 combo 中斷' : '20 秒內要答對，超時算答錯'}>
         <span className="timer-label">Combo</span>
         <span className="timer-track">
           <span className={`timer-fill question ${pct < 25 ? 'is-low' : ''}`} style={{ width: `${pct}%` }} />
@@ -54,7 +54,8 @@ export function TimerBars() {
       {overtime
         ? <span className="timer-note is-enemy">⏰ 超過 20 秒：這題答對不加 combo，慢慢想沒關係</span>
         : speed && <span className="timer-note">⚡ {speed}</span>}
-      {!overtime && !lenient && <span className="timer-note is-enemy">超時算答錯</span>}
+      {golden && <span className="timer-note is-enemy">答錯或超時立即止步</span>}
+      {!golden && !overtime && !lenient && <span className="timer-note is-enemy">超時算答錯</span>}
       {treasureLeft > 0 && <span className="timer-note treasure">💰 寶箱逃走倒數 {seconds(treasureLeft)}</span>}
     </div>
   );

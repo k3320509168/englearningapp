@@ -473,9 +473,9 @@ export const WEAPON_TICKET_BUY_WEEKLY = 2; // 每週限購 2 張
 
 export const WEAPON_SUMMON_RATES = [
   { kind: 'weapon', label: '專屬神兵', rate: 5, color: '#ffd15c', icon: '⚔️' },
-  { kind: 'rare_mat', label: '稀有素材', rate: 15, color: '#c084fc', icon: '🔮' },
-  { kind: 'shards', label: '願望碎片', rate: 30, color: '#38bdf8', icon: '✨' },
-  { kind: 'mat', label: '強化礦石', rate: 50, color: '#94a3b8', icon: '🪨' },
+  { kind: 'rare_mat', label: '稀有素材', rate: 19, color: '#c084fc', icon: '🔮' },
+  { kind: 'shards', label: '願望碎片', rate: 28.5, color: '#38bdf8', icon: '✨' },
+  { kind: 'mat', label: '強化礦石', rate: 47.5, color: '#94a3b8', icon: '🪨' },
 ] as const;
 
 export function rollWeaponSummon(
@@ -509,7 +509,7 @@ export function rollWeaponSummon(
     } else {
       const r = rand();
       if (r < 0.20) {
-        // 15% 稀有素材（魔核 1~2 或龍晶 1）
+        // 基礎機率 95% × 20% = 19% 稀有素材（魔核 1~2 或龍晶 1）
         const isDragon = rand() < 0.35;
         drops.push({
           kind: 'rare_mat',
@@ -518,7 +518,7 @@ export function rollWeaponSummon(
           amount: isDragon ? 1 : (rand() < 0.5 ? 1 : 2),
         });
       } else if (r < 0.50) {
-        // 30% 願望碎片 5~10 片
+        // 基礎機率 95% × 30% = 28.5% 願望碎片 5~10 片
         const amount = 5 + Math.floor(rand() * 6);
         drops.push({
           kind: 'shards',
@@ -527,7 +527,7 @@ export function rollWeaponSummon(
           amount,
         });
       } else {
-        // 50% 基礎鍛造素材（礦石 5~15）
+        // 基礎機率 95% × 50% = 47.5% 基礎鍛造素材（礦石 5~15）
         const amount = 5 + Math.floor(rand() * 11);
         drops.push({
           kind: 'mat',

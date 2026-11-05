@@ -22,7 +22,7 @@ const masteryModule = await import(`${ROOT}/game/mapMastery`);
 const { DEFAULT_CHARACTER } = await import(`${ROOT}/game/character`);
 const { recommendedLevel, comboMultiplier } = await import(`${ROOT}/game/progression`);
 const { regionStageCount, chapterCount, MAP_SIZE } = await import(`${ROOT}/game/stageLayout`);
-const { ADVANCE_REQ, nextOptions, xpToNext } = await import(`${ROOT}/game/growth`);
+const { ADVANCE_REQ, nextOptions, xpToNext, playerLevelCap } = await import(`${ROOT}/game/growth`);
 const { EQUIPMENT } = await import(`${ROOT}/game/equipment`);
 const { useUiStore } = await import(`${ROOT}/store/uiStore`);
 LEVELS.forEach((_: string, i: number) => addBank(i, JSON.parse(fs.readFileSync(`${ROOT}/game/questions/bank/r${i}.json`, 'utf8'))));
@@ -97,13 +97,14 @@ function setup(r: number, stage: number) {
     hintsSeen: ['boss', 'skill'], tutorialDone: true, prologueDone: true, unlockedIndex: r, settings: { ...initialSave.settings, showLessons: false },
     gold: 1e8, classBadges: 999, materials: { ore: 9999, core: 999, dragon: 999, ...Object.fromEntries(['metal', 'wood', 'water', 'fire', 'earth', 'light', 'dark'].map(e => [`crystal_${e}`, 999])) },
   });
-  if (GROWTH === 'bare') return;
   // 轉職：等級到了就走第一條路線
-  for (const tier of [1, 2, 3] as const) {
+  for (const tier of [1, 2, 3, 4] as const) {
     if (lv < ADVANCE_REQ[tier].level) break;
     const opt = nextOptions(DEFAULT_CHARACTER.classId, sv().player.classPath)[0];
     if (opt) sv().advanceClass(opt.id);
   }
+  if (sv().player.level > playerLevelCap(sv().player.classPath.length)) throw new Error('模擬角色超過轉職等級上限');
+  if (GROWTH === 'bare') return;
   // 裝備：每個欄位鍛造目前合法的最高稀有度，再強化
   const rarityRank = ['N', 'R', 'SR', 'SSR', 'UR'];
   for (const slot of ['weapon', 'armor', 'accessory']) {

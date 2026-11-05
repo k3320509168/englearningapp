@@ -1,0 +1,77 @@
+{
+  "method": "Actual checkVoice against recognized text, not a microphone/audio capture or acoustic quality test",
+  "cases": [
+    {
+      "ans": "INCREASE",
+      "heard": "increase",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "ans": "INCREASE",
+      "heard": "decrease",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "ans": "DECREASE",
+      "heard": "increase",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "ans": "POSSIBLE",
+      "heard": "impossible",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "ans": "CREDIBLE",
+      "heard": "incredible",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "ans": "ALTITUDE",
+      "heard": "attitude",
+      "expected": false,
+      "actual": true
+    },
+    {
+      "ans": "ECONOMIC",
+      "heard": "economical",
+      "expected": false,
+      "actual": true
+    }
+  ],
+  "realBankSamples": [
+    {
+      "r": 3,
+      "section": "normal",
+      "index": 703,
+      "q": {
+        "type": "voice",
+        "skill": "speaking",
+        "difficulty": 1,
+        "desc": "請唸出單字：減少",
+        "ans": "DECREASE",
+        "speak": "decrease",
+        "explain": "口說表達「DECREASE」(v.)：減少。例句：Sales have decreased by ten percent this year.（今年的銷售額減少了百分之十。）"
+      }
+    },
+    {
+      "r": 3,
+      "section": "normal",
+      "index": 704,
+      "q": {
+        "type": "voice",
+        "skill": "speaking",
+        "difficulty": 1,
+        "desc": "請唸出單字：增加",
+        "ans": "INCREASE",
+        "speak": "increase",
+        "explain": "口說表達「INCREASE」(v.)：增加。例句：The price of coffee has increased again.（咖啡的價格又上漲了。）"
+      }
+    }
+  ]
+}

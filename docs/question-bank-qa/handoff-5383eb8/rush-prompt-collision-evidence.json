@@ -1,0 +1,21 @@
+{
+  "scope": "Actual rush-eligible difficulty1 normal questions, after actual voiceFallback; identical visible prompt with different mutually rejected answers",
+  "checked": 1180,
+  "pairs": 1,
+  "examples": [
+    {
+      "bank": "r6",
+      "prompt": "請拼出：補償",
+      "a": {
+        "index": 1010,
+        "answer": "COMPENSATION"
+      },
+      "b": {
+        "index": 1597,
+        "answer": "COMPENSATE"
+      },
+      "xAcceptY": false,
+      "yAcceptX": false
+    }
+  ]
+}

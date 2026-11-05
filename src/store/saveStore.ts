@@ -53,7 +53,7 @@ import type { WeaponSummonDrop } from '../game/weapons';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 23;
+export const SAVE_VERSION = 24;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -484,6 +484,13 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.xpAllowanceGold = Math.min(allowanceCap(migrated.unlockedIndex), Math.max(0, Math.floor(migrated.xpAllowanceGold)));
   migrated.xpAllowanceRemainder = Math.min(7, Math.max(0, Math.floor(migrated.xpAllowanceRemainder)));
   migrated.materials = counts(migrated.materials);
+  // v24：修復專武召喚曾寫入的別名；刪除別名讓同版本 rehydrate 也能安全重入。
+  for (const [legacy, canonical] of [['magic_core', 'core'], ['dragon_crystal', 'dragon']] as const) {
+    if (legacy in migrated.materials) {
+      migrated.materials[canonical] = (migrated.materials[canonical] ?? 0) + migrated.materials[legacy];
+      delete migrated.materials[legacy];
+    }
+  }
   migrated.heroShards = counts(migrated.heroShards);
   migrated.heroTier = counts(migrated.heroTier);
   migrated.heroStars = counts(migrated.heroStars);
@@ -553,7 +560,7 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   }
   migrated.bossDown = migrated.bossDown.filter(n => Number.isInteger(n) && n >= 0);
   // 專武券補發：如果舊存檔已打倒 B1 或之後的魔王，但當時尚未配置全額專武券
-  if (Array.isArray(migrated.bossDown) && migrated.bossDown.includes(WEAPON_UNLOCK_REGION)) {
+  if (version < 24 && Array.isArray(migrated.bossDown) && migrated.bossDown.includes(WEAPON_UNLOCK_REGION)) {
     const passedAfterB1 = migrated.bossDown.filter(r => r > WEAPON_UNLOCK_REGION);
     if (passedAfterB1.length > 0 && !migrated._weaponBossBackfilled) {
       let extra = 0;
@@ -1049,7 +1056,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
             } else if (d.kind === 'shards') {
               addedWish += d.amount;
             } else if (d.kind === 'rare_mat') {
-              const matKey = d.name === '龍晶' ? 'dragon_crystal' : 'magic_core';
+              const matKey = d.name === '龍晶' ? 'dragon' : 'core';
               nextMaterials[matKey] = (nextMaterials[matKey] ?? 0) + d.amount;
             } else if (d.kind === 'mat') {
               nextMaterials['ore'] = (nextMaterials['ore'] ?? 0) + d.amount;
@@ -1386,7 +1393,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       // 沒有存檔（新玩家）時 persisted 是 undefined：直接用預設值，不能當成舊存檔轉換（不然會被當成看過新手引導與全部提示）
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
-        character: s.character,
+        character: s.character, _weaponBossBackfilled: s._weaponBossBackfilled,
         unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, weaponTickets: s.weaponTickets, weapons: s.weapons, weaponShards: s.weaponShards, weaponCounter: s.weaponCounter, heroShards: s.heroShards, heroTier: s.heroTier,

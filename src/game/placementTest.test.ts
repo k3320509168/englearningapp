@@ -107,3 +107,12 @@ describe('真實診斷題的重複隔離', () => {
     }
   });
 });
+
+it('確認階段超時且資料不足，不能宣稱高可信或口說已驗證', () => {
+  const rand = seeded(17); let state = startPlacement(undefined, { pool, rand, voice: true, now: 0 });
+  while (state.phase === 'probe') state = answerPlacement(state, true, { pool, rand, now: 0 });
+  expect(state.phase).toBe('confirm');
+  state = answerPlacement(state, true, { pool, rand, now: 15 * 60 * 1000 + 1 });
+  expect(state.phase).toBe('done'); expect(state.confidence).toBe('low');
+  expect(state.speakingVerified).toBe(false);
+});

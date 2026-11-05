@@ -1,0 +1,201 @@
+{
+  "cases": [
+    {
+      "region": 2,
+      "section": "normal",
+      "index": 708,
+      "q": {
+        "type": "choice",
+        "skill": "reading",
+        "difficulty": 1,
+        "desc": "【時態】The express train ___ from PLATFORM 3 at 9:15 AM.",
+        "options": [
+          "A. departs",
+          "B. departed",
+          "C. has departed",
+          "D. departing"
+        ],
+        "ans": "A",
+        "explain": "火車時刻表屬於固定行程，即使是未來發生的事，也常用現在簡單式表示，因此選 departs。"
+      }
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1005,
+      "q": {
+        "type": "choice",
+        "skill": "reading",
+        "difficulty": 1,
+        "desc": "【字彙】Scientists are currently trying to ___ exactly how the human brain processes artificial visual signals.",
+        "options": [
+          "A. COMPREHEND",
+          "B. swim",
+          "C. bake",
+          "D. fold"
+        ],
+        "ans": "A",
+        "explain": "正確答案是 A (理解 / 領悟)。句意：科學家目前正試圖確切理解人類大腦如何處理人造視覺訊號。選項 B (游泳)、C (烘烤)、D (摺疊) 完全無關。"
+      }
+    }
+  ],
+  "uppercaseCueCandidates": 36,
+  "examples": [
+    {
+      "region": 2,
+      "section": "normal",
+      "index": 725,
+      "desc": "【對話】A: Are we still going hiking tomorrow? \nB: The radio says there will be a storm. I think we must ___ the trip.",
+      "options": [
+        "A. start",
+        "B. join",
+        "C. CANCEL",
+        "D. continue"
+      ],
+      "ans": "C"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 992,
+      "desc": "【字彙】Doctors must always obtain written ___ from patients before performing any experimental procedures.",
+      "options": [
+        "A. fiction",
+        "B. sorrow",
+        "C. penalty",
+        "D. CONSENT"
+      ],
+      "ans": "D"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 995,
+      "desc": "【字彙】The village is famous for its ___ crafts, which have been made using the same techniques for centuries.",
+      "options": [
+        "A. desperate",
+        "B. careless",
+        "C. AUTHENTIC",
+        "D. artificial"
+      ],
+      "ans": "C"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 997,
+      "desc": "【字彙】The company is trying to remove invisible barriers so that no minority group feels ___ in the workplace.",
+      "options": [
+        "A. decorated",
+        "B. EXCLUDED",
+        "C. infected",
+        "D. cooked"
+      ],
+      "ans": "B"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1000,
+      "desc": "【字彙】After the devastating hurricane, thousands of residents were forced to ___ to safer inland territories.",
+      "options": [
+        "A. predict",
+        "B. entertain",
+        "C. translate",
+        "D. RELOCATE"
+      ],
+      "ans": "D"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1003,
+      "desc": "【字彙】The independent artist decided to pull her albums from the ___ platform because the payout rates were too low.",
+      "options": [
+        "A. boiling",
+        "B. STREAMING",
+        "C. chewing",
+        "D. farming"
+      ],
+      "ans": "B"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1005,
+      "desc": "【字彙】Scientists are currently trying to ___ exactly how the human brain processes artificial visual signals.",
+      "options": [
+        "A. COMPREHEND",
+        "B. swim",
+        "C. bake",
+        "D. fold"
+      ],
+      "ans": "A"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1006,
+      "desc": "【字彙】The newly elected mayor promised to protect the region's cultural ___ from being destroyed by mass tourism.",
+      "options": [
+        "A. luggage",
+        "B. garbage",
+        "C. envelope",
+        "D. HERITAGE"
+      ],
+      "ans": "D"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1012,
+      "desc": "【字彙】Due to the rising sea levels, the government must build stronger physical ___ to protect the low-lying coastal cities from regular flooding.",
+      "options": [
+        "A. theories",
+        "B. BARRIERS",
+        "C. menus",
+        "D. pockets"
+      ],
+      "ans": "B"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1014,
+      "desc": "【字彙】The new wearable device can continuously monitor your heart rate and instantly ___ you if it detects any dangerous irregular beats.",
+      "options": [
+        "A. ALERT",
+        "B. suspect",
+        "C. forgive",
+        "D. comfort"
+      ],
+      "ans": "A"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1016,
+      "desc": "【字彙】To ensure fairness, the manager decided to ___ the current bonus structure so that part-time employees could also receive holiday rewards.",
+      "options": [
+        "A. steal",
+        "B. bury",
+        "C. paint",
+        "D. REVISE"
+      ],
+      "ans": "D"
+    },
+    {
+      "region": 5,
+      "section": "normal",
+      "index": 1018,
+      "desc": "【字彙】The entertainment agency signed an ___ contract with the young composer, meaning he cannot write songs for any other companies.",
+      "options": [
+        "A. obvious",
+        "B. polite",
+        "C. EXCLUSIVE",
+        "D. casual"
+      ],
+      "ans": "C"
+    }
+  ]
+}

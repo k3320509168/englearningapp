@@ -78,6 +78,7 @@ export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
   const user = useCloudStore.getState().user;
   localStorage.setItem(SAVE_KEY, JSON.stringify(snapshot.data));
   await useSaveStore.persist.rehydrate();
+  useSaveStore.getState().ensureDaily();
   if (user) writeMeta({ userId: user.id, syncedAt: snapshot.updatedAt, dirty: false });
   setCloud({ status: 'idle', lastSync: snapshot.updatedAt, conflict: null });
 }
@@ -232,6 +233,7 @@ export function parseSaveCode(code: string): { state: Record<string, unknown>; v
 export async function importSave(data: { state: Record<string, unknown>; version: number }) {
   localStorage.setItem(SAVE_KEY, JSON.stringify(data));
   await useSaveStore.persist.rehydrate();
+  useSaveStore.getState().ensureDaily();
   const meta = readMeta();
   if (meta) writeMeta({ ...meta, dirty: true });
   if (useCloudStore.getState().user) void uploadNow();

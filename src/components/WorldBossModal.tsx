@@ -11,9 +11,10 @@ import {
   checkChant,
   type ChantSpell,
 } from '../game/worldBoss';
-import { createRecognizer, isSpeechRecognitionSupported, speak, speakableText, type Recognizer } from '../game/speech';
+import { createRecognizer, isSpeechRecognitionSupported, speakableText, type Recognizer } from '../game/speech';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { useSpeak } from './useSpeak';
 
 export default function WorldBossModal() {
   const closeModal = useUiStore(s => s.closeModal);
@@ -30,57 +31,54 @@ export default function WorldBossModal() {
   const [battleState, setBattleState] = useState<'intro' | 'active' | 'victory' | 'defeat'>('intro');
 
   const recognizer = useRef<Recognizer | null>(null);
+  const raid = useRef({ hp: WORLD_BOSS_HP, combo: 0, index: 0, remaining: WORLD_BOSS_TIME, active: false });
+  const say = useSpeak();
   const currentSpell: ChantSpell = CHANT_SPELLS[currentIndex % CHANT_SPELLS.length];
 
   const handleChantSuccess = () => {
-    const isCrit = (combo + 1) % 3 === 0;
+    const current = raid.current;
+    // 舊辨識回呼或勝利後的重複事件不得再次傷害／發獎。
+    if (!current.active || current.index !== currentIndex) return;
+    const nextCombo = current.combo + 1;
+    const isCrit = nextCombo % 3 === 0;
     const damage = isCrit ? DAMAGE_PER_CHANT + COMBO_BONUS_DAMAGE : DAMAGE_PER_CHANT;
-
-    sfx.crit();
-    setCombo(c => c + 1);
+    const nextHp = Math.max(0, current.hp - damage);
+    raid.current = { ...current, hp: nextHp, combo: nextCombo, index: current.index + 1, active: nextHp > 0 };
+    setBossHp(nextHp);
+    setCombo(nextCombo);
     setSpellTyped('');
-
-    setBossHp(prevHp => {
-      const nextHp = Math.max(0, prevHp - damage);
-      if (nextHp === 0) {
-        setBattleState('victory');
-        sfx.victory();
-        addWeaponTickets(2);
-        addGold(3000);
-        if (!titles.includes('👑 屠龍詠唱者')) addTitle('👑 屠龍詠唱者');
-        celebrate({
-          icon: '🐉',
-          title: '世界王法夫納・核心護盾完全破滅！',
-          sub: '討伐大成功！獲得 🎫 專武召喚券 ×2、🪙 3,000 金幣，並解鎖稱號【👑 屠龍詠唱者】！',
-          color: '#ffd15c',
-        });
-      } else {
-        setStatusText(isCrit ? `🔥 神聖大裁決爆發！造成 ${damage.toLocaleString()} 點破盾打擊！` : `✨ 詠唱成功！造成 ${damage.toLocaleString()} 點破盾傷害！`);
-        setCurrentIndex(i => i + 1);
-        setTimeout(() => {
-          recognizer.current?.start();
-        }, 200);
-      }
-      return nextHp;
-    });
+    sfx.crit();
+    if (nextHp === 0) {
+      setBattleState('victory');
+      sfx.victory();
+      addWeaponTickets(2);
+      addGold(3000);
+      if (!titles.includes('👑 屠龍詠唱者')) addTitle('👑 屠龍詠唱者');
+      celebrate({
+        icon: '🐉', title: '世界王法夫納・核心護盾完全破滅！',
+        sub: '討伐大成功！獲得 🎫 專武召喚券 ×2、🪙 3,000 金幣，並解鎖稱號【👑 屠龍詠唱者】！',
+        color: '#ffd15c',
+      });
+    } else {
+      setStatusText(isCrit ? `🔥 神聖大裁決爆發！造成 ${damage.toLocaleString()} 點破盾打擊！` : `✨ 詠唱成功！造成 ${damage.toLocaleString()} 點破盾傷害！`);
+      setCurrentIndex(current.index + 1);
+      setTimeout(() => { if (raid.current.active) recognizer.current?.start(); }, 200);
+    }
   };
 
-  // 60 秒倒數計時器
   useEffect(() => {
     if (battleState !== 'active') return;
     const timer = window.setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          setBattleState('defeat');
-          sfx.wrong();
-          return 0;
-        }
-        return prev - 1;
-      });
+      if (!raid.current.active) return;
+      const remaining = Math.max(0, raid.current.remaining - 1);
+      raid.current = { ...raid.current, remaining, active: remaining > 0 };
+      setTimeLeft(remaining);
+      if (remaining === 0) { setBattleState('defeat'); sfx.wrong(); }
     }, 1000);
     return () => clearInterval(timer);
   }, [battleState]);
+
+  useEffect(() => () => { raid.current.active = false; }, []);
 
   // 語音辨識綁定
   useEffect(() => {
@@ -119,6 +117,7 @@ export default function WorldBossModal() {
   }, [battleState, currentIndex]);
 
   const startRaid = () => {
+    raid.current = { hp: WORLD_BOSS_HP, combo: 0, index: 0, remaining: WORLD_BOSS_TIME, active: true };
     setBossHp(WORLD_BOSS_HP);
     setTimeLeft(WORLD_BOSS_TIME);
     setCurrentIndex(0);
@@ -127,7 +126,7 @@ export default function WorldBossModal() {
     setBattleState('active');
     sfx.boss();
     setTimeout(() => {
-      recognizer.current?.start();
+      if (raid.current.active) recognizer.current?.start();
     }, 300);
   };
 
@@ -142,7 +141,7 @@ export default function WorldBossModal() {
   };
 
   const playDemo = () => {
-    speak(speakableText(currentSpell.en), 0.9);
+    say(speakableText(currentSpell.en));
   };
 
   const hpPercent = Math.max(0, (bossHp / WORLD_BOSS_HP) * 100);

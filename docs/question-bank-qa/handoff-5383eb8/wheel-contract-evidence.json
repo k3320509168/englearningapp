@@ -1,0 +1,53 @@
+{
+  "method": "Actual store deterministic contract, not browser animation",
+  "first": true,
+  "duplicate": false,
+  "outcomes": [
+    {
+      "prize": "none",
+      "before": {
+        "gold": 0,
+        "tickets": 10,
+        "sweep": 0
+      },
+      "after": {
+        "gold": 50,
+        "tickets": 10,
+        "sweep": 0,
+        "dry": 1,
+        "pending": 0
+      }
+    },
+    {
+      "prize": "none",
+      "before": {
+        "gold": 50,
+        "tickets": 10,
+        "sweep": 0
+      },
+      "after": {
+        "gold": 100,
+        "tickets": 10,
+        "sweep": 0,
+        "dry": 2,
+        "pending": 0
+      }
+    },
+    {
+      "prize": "t1",
+      "before": {
+        "gold": 100,
+        "tickets": 10,
+        "sweep": 0
+      },
+      "after": {
+        "gold": 100,
+        "tickets": 11,
+        "sweep": 0,
+        "dry": 0,
+        "pending": 0
+      }
+    }
+  ],
+  "spinWithoutPending": -1
+}

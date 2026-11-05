@@ -444,3 +444,8 @@
   ⑤ **R5 課綱文件修訂**：
      - 於 `docs/design/VOCAB_CURRICULUM.md` 補齊歐洲共同語言參考架構（CEFR）C2 定義聲明（Mastery 精通級使用者非母語者）、詞彙量為語言學實證估算、以及本遊戲題型範疇與正式自由寫作演說之客觀差異說明。
   ⑥ **全量驗收全綠通過**：52 個測試檔、**421 項單元測試全數通過**、`npx tsc -b` 0 錯誤、`npx eslint src --quiet` 0 錯誤、`validate:questions` 15,865 題 0 錯誤、`npm run build` 生產打包 2.0s 通過（首屏入口縮小至 2.53MB）、三尺寸截圖實測驗收全數通過。Commit 並 Push 至 `origin/feat/round4-pm`。
+
+
+### 2026-11-05 Codex 驗收修復第一批（製作人授權）
+
+主工程/測試由Codex接任。從5383eb8建立乾淨獨立clone及codex/game-audit-fixes，不動舊advanced-question-banks四檔unmerged。完成N01/N02/N03/N05/N06/N07/N08/N09/N14/N16/N18/N22/N23/N24/N25/N28/N29/N30/N31/N32的指定缺陷；未完成N04/N10/N11/N12/N13/N15/N17/N19/N20/N21/N26/N27，詳docs/question-bank-qa/FIX_PROGRESS_2026-11-05.md。439 tests/tsc/eslint/build/題庫格式/builder通過，5181實玩世界王、材料遷移、三尺寸英雄/鍛造/黃金背景；不冒稱全遊戲或實體手機通過。SAVE_VERSION24遷移舊素材、持久化補發標記，不扣回合法資源。遠端feat/round4-pm=5383eb8，feat/round4為另一條b8d2d1c題庫線，僅上傳codex/game-audit-fixes，不部署。

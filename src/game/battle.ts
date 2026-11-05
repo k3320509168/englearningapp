@@ -131,9 +131,13 @@ function editDistance(a: string, b: string): number {
 // 或長字只差一個字母（辨識引擎常見的小誤差，例如 luggage → luggages）
 // 長單字容許的誤差：電腦/手機麥克風收音常見一兩個音素微差（例如 helicopter 聽成 hellicopter，accommodation 聽成 accomadation）。
 // 短字維持嚴格避免誤判（例如 apple 不能算 apply、start 不能算 restart）
+const CONFUSABLE_PAIRS = [
+  ['INCREASE', 'DECREASE'], ['ALTITUDE', 'ATTITUDE'], ['ECONOMIC', 'ECONOMICAL'],
+] as const;
 const wordTolerance = (len: number) => (len >= 12 ? 3 : len >= 8 ? 2 : len >= 6 ? 1 : 0);
 function wordMatches(heard: string, target: string): boolean {
   if (heard === target) return true;
+  if (CONFUSABLE_PAIRS.some(([a, b]) => (heard === a && target === b) || (heard === b && target === a))) return false;
   if (heard === `${target}S` || heard === `${target}ES` || `${heard}S` === target) return true;
   // 反義前綴保護（R2）：若相差否定/反義前綴（如 conspicuous vs inconspicuous），絕不容錯
   if (hasOpposingPrefixMismatch(heard, target)) return false;

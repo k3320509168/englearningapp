@@ -184,3 +184,10 @@ describe('isVoiceFragment：收音被切斷', () => {
     expect(isVoiceFragment(heli, ['helicopter'])).toBe(false);
   });
 });
+
+it('口說相近但不同義/反義詞不可由編輯距離放行，正常拼讀容錯保留', () => {
+  for (const [target, heard] of [['INCREASE', 'decrease'], ['DECREASE', 'increase'], ['ALTITUDE', 'attitude'], ['ECONOMIC', 'economical']]) {
+    expect(checkVoice({ type: 'voice', desc: '請唸出', ans: target }, heard)).toBe(false);
+  }
+  expect(checkVoice({ type: 'voice', desc: '請唸出', ans: 'HELICOPTER' }, 'hellicopter')).toBe(true);
+});

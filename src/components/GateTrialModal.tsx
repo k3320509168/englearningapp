@@ -35,17 +35,19 @@ export default function GateTrialModal() {
   const [answered, setAnswered] = useState(0);
   const [incomplete, setIncomplete] = useState(false);
   const [hasFallback, setHasFallback] = useState(false);
+  const [attemptStrict, setAttemptStrict] = useState<boolean | null>(null);
 
   useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
 
   const beaten = bossDown.includes(regionIdx);
   const mastery = ready ? regionMastery(regionIdx, knowledge, now) : null;
   const strict = !beaten || !mastery?.sealMet;
-  const rule = strict ? TRIAL_STRICT : TRIAL_PASS;
+  const activeStrict = questions === null ? strict : (attemptStrict ?? strict);
+  const rule = activeStrict ? TRIAL_STRICT : TRIAL_PASS;
   const wait = strict ? strictTrialWait(strictTries, now) : 0;
   const allowed = (beaten || canChallengeGate(regionIdx, level)) && wait === 0;
   const done = questions !== null && answered >= questions.length;
-  const passed = done && trialPassed(score, strict);
+  const passed = done && trialPassed(score, activeStrict);
   const correct = TRIAL_SKILLS.reduce((n, s) => n + score[s].correct, 0);
 
   const start = () => {
@@ -57,6 +59,7 @@ export default function GateTrialModal() {
     }
     setIncomplete(false);
     if (strict) useSaveStore.getState().recordStrictTrial(regionIdx, Date.now());
+    setAttemptStrict(strict);
     setQuestions(batch);
     setScore(emptyTrialScore());
     setAnswered(0);
@@ -71,7 +74,7 @@ export default function GateTrialModal() {
     const s = { ...score, [skill]: { correct: score[skill].correct + (ok ? 1 : 0), total: score[skill].total + 1 } };
     setScore(s);
     setAnswered(answered + 1);
-    if (answered + 1 >= questions.length && trialPassed(s, strict)) {
+    if (answered + 1 >= questions.length && trialPassed(s, activeStrict)) {
       const verifiedSpeaking = !hasFallback && !viaSpelling;
       skipRegions(regionIdx + 1);
       useSaveStore.getState().verifyPlacement(regionIdx, verifiedSpeaking);

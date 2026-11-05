@@ -1,0 +1,178 @@
+{
+  "method": "Actual stores/functions with formal banks; all-correct contract routes use answer keys and synthetic timing, not human success rates, ASR or device gameplay",
+  "golden": [
+    {
+      "run": 0,
+      "before": {
+        "tickets": 10,
+        "gold": 0,
+        "level": 1
+      },
+      "startParty": [
+        {
+          "id": "player",
+          "hp": 100,
+          "atk": 50
+        }
+      ],
+      "result": {
+        "phase": "levelClear",
+        "answered": 108,
+        "stages": 45,
+        "stageIdx": 44,
+        "combo": 122869,
+        "hp": 100
+      },
+      "after": {
+        "tickets": 20,
+        "gold": 1470,
+        "level": 1,
+        "best": 45
+      }
+    },
+    {
+      "run": 1,
+      "before": {
+        "tickets": 20,
+        "gold": 1470,
+        "level": 1
+      },
+      "startParty": [
+        {
+          "id": "player",
+          "hp": 100,
+          "atk": 50
+        }
+      ],
+      "result": {
+        "phase": "levelClear",
+        "answered": 110,
+        "stages": 45,
+        "stageIdx": 44,
+        "combo": 122871,
+        "hp": 100
+      },
+      "after": {
+        "tickets": 20,
+        "gold": 2965,
+        "level": 1,
+        "best": 45
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "writing",
+      "run": 0,
+      "result": {
+        "phase": "levelClear",
+        "answered": 5,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 5,
+        "hp": 1268
+      },
+      "ticketDelta": 5
+    },
+    {
+      "id": "writing",
+      "run": 1,
+      "result": {
+        "phase": "levelClear",
+        "answered": 5,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 5,
+        "hp": 1268
+      },
+      "ticketDelta": 0
+    },
+    {
+      "id": "reading",
+      "run": 0,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 5
+    },
+    {
+      "id": "reading",
+      "run": 1,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 0
+    },
+    {
+      "id": "listening",
+      "run": 0,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 5
+    },
+    {
+      "id": "listening",
+      "run": 1,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 0
+    },
+    {
+      "id": "speaking",
+      "run": 0,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 5
+    },
+    {
+      "id": "speaking",
+      "run": 1,
+      "result": {
+        "phase": "levelClear",
+        "answered": 4,
+        "stages": 1,
+        "stageIdx": 0,
+        "combo": 4,
+        "hp": 1268
+      },
+      "ticketDelta": 0
+    }
+  ],
+  "tower": {
+    "floors": 120,
+    "questions": 600,
+    "failures": []
+  },
+  "trials": {
+    "cases": 1800,
+    "failures": []
+  }
+}

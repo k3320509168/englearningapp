@@ -157,7 +157,7 @@ export default function GrowthModal() {
             <button
               className="btn btn-secondary btn-small"
               onMouseDown={keepFocus}
-              onClick={() => { closeModal(); useUiStore.getState().openShop('forge'); }}
+              onClick={() => setTab('forge')}
               title="前往工坊打造新裝備"
             >
               ⚒️ 前往工坊鍛造 ➔

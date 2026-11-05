@@ -1,0 +1,21 @@
+{
+  "version": 23,
+  "startTickets": 0,
+  "first": {
+    "tickets": 5,
+    "marker": true
+  },
+  "persisted": {
+    "tickets": 5,
+    "hasMarker": false
+  },
+  "second": {
+    "tickets": 10,
+    "marker": true
+  },
+  "assertions": {
+    "firstGrant5": true,
+    "markerOmitted": true,
+    "repeatedGrant5": true
+  }
+}

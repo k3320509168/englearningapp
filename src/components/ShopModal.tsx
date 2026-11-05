@@ -28,7 +28,7 @@ export default function ShopModal() {
           className="btn btn-small btn-ghost"
           style={{ fontSize: 12, padding: '3px 8px' }}
           onMouseDown={keepFocus}
-          onClick={() => { closeModal(); openModal('growth'); }}
+          onClick={() => useUiStore.getState().openGrowth('forge')}
           title="打造與升品階一般武器、防具、飾品"
         >
           🛡️ 前往成長鍛造坊 ➔

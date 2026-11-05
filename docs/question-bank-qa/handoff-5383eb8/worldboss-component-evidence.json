@@ -1,0 +1,94 @@
+{
+  "harness": "Actual WorldBossModal rendered by ReactDOM in jsdom; speech API is a silent recorder",
+  "allAudioSettingsZero": true,
+  "speechCalls": [
+    {
+      "text": "By the sacred flame of truth, consume all darkness!",
+      "volume": 1
+    }
+  ],
+  "results": [
+    {
+      "strict": false,
+      "steps": [
+        {
+          "input": "SACRED",
+          "card": "第 2 節神聖古咒",
+          "hp": "850,000 / 1,000,000 HP (85.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "GUARDIANS",
+          "card": "第 3 節神聖古咒",
+          "hp": "700,000 / 1,000,000 HP (70.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "ETERNITY",
+          "card": "第 4 節神聖古咒",
+          "hp": "250,000 / 1,000,000 HP (25.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "RESOLVE",
+          "card": "第 5 節神聖古咒",
+          "hp": "100,000 / 1,000,000 HP (10.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "DRAGONS",
+          "gold": 3000,
+          "tickets": 2
+        }
+      ],
+      "finalGold": 3000,
+      "finalTickets": 2,
+      "victory": true
+    },
+    {
+      "strict": true,
+      "steps": [
+        {
+          "input": "SACRED",
+          "card": "第 3 節神聖古咒",
+          "hp": "850,000 / 1,000,000 HP (85.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "ETERNITY",
+          "card": "第 5 節神聖古咒",
+          "hp": "700,000 / 1,000,000 HP (70.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "DRAGONS",
+          "card": "第 7 節神聖古咒",
+          "hp": "250,000 / 1,000,000 HP (25.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "THUNDER",
+          "card": "第 9 節神聖古咒",
+          "hp": "100,000 / 1,000,000 HP (10.0%)",
+          "gold": 0,
+          "tickets": 0
+        },
+        {
+          "input": "TEMPEST",
+          "gold": 6000,
+          "tickets": 4
+        }
+      ],
+      "finalGold": 6000,
+      "finalTickets": 4,
+      "victory": true
+    }
+  ]
+}

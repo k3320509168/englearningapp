@@ -1,0 +1,60 @@
+{
+  "results": [
+    [
+      {
+        "kind": "rare_mat",
+        "name": "魔核",
+        "icon": "🔮",
+        "amount": 1
+      }
+    ],
+    [
+      {
+        "kind": "rare_mat",
+        "name": "魔核",
+        "icon": "🔮",
+        "amount": 1
+      }
+    ],
+    [
+      {
+        "kind": "rare_mat",
+        "name": "魔核",
+        "icon": "🔮",
+        "amount": 1
+      }
+    ],
+    [
+      {
+        "kind": "rare_mat",
+        "name": "龍晶",
+        "icon": "🐉",
+        "amount": 1
+      }
+    ]
+  ],
+  "materials": {
+    "ore": 100,
+    "core": 0,
+    "dragon": 0,
+    "magic_core": 3,
+    "dragon_crystal": 1
+  },
+  "forgeWithSummonedMagicCores": false,
+  "forgeWithCanonicalCoreControl": true,
+  "baseRatesWithoutPity": {
+    "displayed": {
+      "weapon": 5,
+      "rare_mat": 15,
+      "shards": 30,
+      "mat": 50
+    },
+    "implemented": {
+      "weapon": 5,
+      "rare_mat": 19,
+      "shards": 28.5,
+      "mat": 47.5
+    }
+  },
+  "method": "Deterministic RNG, original store and roll implementation; rate calculation excludes hard pity."
+}

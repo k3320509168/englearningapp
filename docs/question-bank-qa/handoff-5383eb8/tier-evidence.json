@@ -1,0 +1,18 @@
+{
+  "scope": "合成Lv200輸入核對模擬養成流程，不是玩家正常升級測試",
+  "fixedConfig": {
+    "steps": [
+      true,
+      true,
+      true
+    ],
+    "tier": 3,
+    "level": 200,
+    "legalCap": 160
+  },
+  "repeatedBudgetMaintenance": {
+    "firstTier": 3,
+    "secondTier": 4
+  },
+  "conclusion": "固定配置setup只有3階；budget反覆呼叫可達4階，不能籠統說所有模擬都不會覺醒"
+}

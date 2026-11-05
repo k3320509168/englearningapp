@@ -1662,7 +1662,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         const totals = withTotals(party);
         set({ ...totals, event: nextEvent('heal', { amount: totals.playerHp - s.playerHp }) });
       } else if (id === 'shield') {
-        if (s.shield || !save().consumeItem('shield')) return;
+        if (s.mode === 'golden' || s.shield || !save().consumeItem('shield')) return;
         // 護盾：下一次答錯（或超時）不扣血，combo 也不會中斷
         set({ shield: true, comboGuard: true, event: nextEvent('guard') });
       } else {

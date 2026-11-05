@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useUiStore } from '../store/uiStore';
 import { useSaveStore } from '../store/saveStore';
-import { VOCAB, vocabByKey, vocabSenses } from '../game/vocab';
+import { VOCAB, vocabByKey, vocabSenses, vocabKey } from '../game/vocab';
 import { masteryStars } from '../game/progression';
 import Modal from './Modal';
 import { useSpeak } from './useSpeak';
@@ -51,7 +51,7 @@ export default function WordStudy() {
   const [copied, setCopied] = useState(false);
 
   // 取得全詞庫鍵值列表以便前後翻閱導航
-  const vocabKeys = useMemo(() => Object.keys(VOCAB), []);
+  const vocabKeys = Object.keys(VOCAB);
 
   // 尋找規範化的標準大寫 Key，確保大小寫容錯與索引精確匹配
   const canonicalKey = useMemo(() => {
@@ -98,8 +98,8 @@ export default function WordStudy() {
     if (!canonicalKey) return { correct, wrong };
     for (const c of Object.values(s.codex)) {
       const q = c.question;
-      const ans = q.type === 'fill' ? (q.speak ?? '').toUpperCase().replace(/[^A-Z]/g, '') : (q.ans ?? '').toUpperCase().replace(/[^A-Z]/g, '');
-      if (ans === canonicalKey) { correct += c.correct; wrong += c.wrong; }
+      const ans = vocabKey(q)?.toUpperCase().replace(/[^A-Z]/g, '');
+      if (ans === canonicalKey.replace(/[^A-Z]/g, '')) { correct += c.correct; wrong += c.wrong; }
     }
     return { correct, wrong };
   }));

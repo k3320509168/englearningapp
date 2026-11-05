@@ -189,13 +189,16 @@ function toConfirm(s: PlacementState, rand: () => number, pool: Question[][]): P
 function finish(s: PlacementState): PlacementState {
   let result = probeResult(s);
   const weak: ('speaking' | 'writing')[] = [];
+  const incomplete = s.confirm.writing.total < CONFIRM_SIZE || (s.speakingVerified && s.confirm.speaking.total < CONFIRM_SIZE);
+  const confidence = incomplete ? 'low' : s.confidence;
+  const speakingVerified = s.speakingVerified && s.confirm.speaking.total >= CONFIRM_SIZE;
   const low = (r: LevelResult) => r.total >= CONFIRM_SIZE && r.correct < CONFIRM_PASS;
   if (s.speakingVerified && low(s.confirm.speaking)) weak.push('speaking');
   if (low(s.confirm.writing)) weak.push('writing');
   if (weak.length) result = Math.max(0, result - 1);
   // 資料不足時保守一點：推薦低一級（玩家可以自己選高一級）
-  if (s.confidence === 'low' && result > 0 && !weak.length) result -= 1;
-  return { ...s, phase: 'done', queue: [], result, weak };
+  if (confidence === 'low' && result > 0 && !weak.length) result -= 1;
+  return { ...s, phase: 'done', queue: [], result, weak, confidence, speakingVerified };
 }
 
 // 測驗的題數（介面顯示進度用）

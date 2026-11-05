@@ -7,8 +7,9 @@ import { continueJourney } from '../game/startLevel';
 import { continueTarget, nextStep } from '../game/notices';
 import { useNotices } from './useNotices';
 import { dailyDef } from '../game/daily';
-import { MAP_SIZE, mapName, stageLabel } from '../game/regions';
+import { mapName, stageLabel } from '../game/regions';
 import { keepFocus } from './keepFocus';
+import { isPlacementReviewDue } from '../game/placementTest';
 import { SKIPPABLE_REGIONS } from '../game/placement';
 
 // 地圖下方（第二十一輪 E4）：大大的「繼續征途」＋一行下一步提示，第二列是一排小按鈕
@@ -26,6 +27,7 @@ export default function MapLevelBar() {
   // 最前線的魔王已經打倒、下一區還沒開：主按鈕帶玩家去找守門人（封印進度、區域試煉、回去複習）
   const atGate = useSaveStore(s => s.bossDown.includes(unlockedIndex)) && unlockedIndex < SKIPPABLE_REGIONS;
   const wheelPending = useSaveStore(s => s.wheelPending);
+  const reviewDue = useSaveStore(s => isPlacementReviewDue(s.placement));
   const step = nextStep(notices);
   const { openModal, openGrowth } = useUiStore.getState();
   // 下一步建議的按鈕：鍛造直接打開鍛造坊分頁
@@ -78,9 +80,9 @@ export default function MapLevelBar() {
           ⚔️ 副本與挑戰
         </button>
         {/* 前 20 關都可以做程度測驗：英文好的玩家隨時可以跳到後面的區域 */}
-        {unlockedIndex === 0 && (progress[REGIONS[0].id] ?? 0) < MAP_SIZE && (
+        {(
           <button className="today-chip is-placement" onMouseDown={keepFocus} onClick={() => openModal('placement')} title="英文不錯？直接跳到適合你的區域">
-            🧭 程度測驗
+            {reviewDue ? '📋 7 天回顧到期' : '🧭 程度測驗'}
           </button>
         )}
         {wheelPending > 0 && (

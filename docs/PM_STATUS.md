@@ -448,3 +448,8 @@ flowchart LR
 - **R3 詞典假釋義清洗**：全面剔除 287 筆 meaning 與 word 相同的假條目、菜單計算數字（如 `$170.`）與無意義片段；補正 `assume`, `reflect`, `reach`, `began` 等正確詞性與中文釋義。
 - **R4 建庫可重現性**：校準 R7/R8 詞庫，`node scripts/question-bank/build.mjs --check` 0 錯誤通過，建庫流程 100% 可重現。
 - **當前驗證狀態**：51 個測試檔案、419 個單元測試 100% 通過；`validate:questions` 0 錯誤；`npm run build` 通過。
+
+
+### 2026-11-05 Codex 驗收修復第一批（製作人授權）
+
+主工程/測試由Codex接任。從5383eb8建立乾淨獨立clone及codex/game-audit-fixes，不動舊advanced-question-banks四檔unmerged。完成N01/N02/N03/N05/N06/N07/N08/N09/N14/N16/N18/N22/N23/N24/N25/N28/N29/N30/N31/N32的指定缺陷；未完成N04/N10/N11/N12/N13/N15/N17/N19/N20/N21/N26/N27，詳docs/question-bank-qa/FIX_PROGRESS_2026-11-05.md。439 tests/tsc/eslint/build/題庫格式/builder通過，5181實玩世界王、材料遷移、三尺寸英雄/鍛造/黃金背景；不冒稱全遊戲或實體手機通過。SAVE_VERSION24遷移舊素材、持久化補發標記，不扣回合法資源。遠端feat/round4-pm=5383eb8，feat/round4為另一條b8d2d1c題庫線，僅上傳codex/game-audit-fixes，不部署。

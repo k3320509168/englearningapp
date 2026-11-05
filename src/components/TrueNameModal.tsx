@@ -84,7 +84,7 @@ export default function TrueNameModal() {
               const gift = reward?.tickets ? `，獲得召喚券 🎫×${reward.tickets}` : reward?.sweep ? `，獲得掃蕩券 🧹×${reward.sweep}` : '';
               useUiStore.getState().celebrate({ icon: '✨', title: `真名覺醒：${heroWord(h)}`, sub: `${heroTitle(h)}的基礎能力 +${Math.round(TRUE_NAME_BONUS * 100)}%${gift}`, img: heroDataUrl(heroId, 4), color: '#ffcd4b' });
             }
-            window.setTimeout(() => setActive(null), 900);
+            setActive(null);
           }}
           onRetry={() => setRound(r => r + 1)}
         />

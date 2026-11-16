@@ -19,7 +19,7 @@ export default function GoldenModal() {
         <ul className="golden-rules">
           <li>⚔️ 只用<b>初始角色</b>：Lv 1、沒有轉職、沒有裝備、沒有夥伴英雄、沒有商店升級。</li>
           <li>🧭 共 {GOLDEN_STAGE_COUNT} 關：{REGIONS.map(r => r.name).join(' → ')}，每個區域 {GOLDEN_STAGES_PER_TIER} 關，題目越來越難。</li>
-          <li>💀 <b>不能答錯、不能超時</b>（20 秒），一次失誤就結束。</li>
+          <li>💀 <b>不能答錯、不能超時</b>，一次失誤就結束。基本限時 20 秒，長閱讀依題目與選項字數延長，長口說也有朗讀時間。</li>
           <li>🔥 Combo 從頭到尾不會重置，困難題 Bonus 還會讓 combo 翻倍，要靠連續答對才打得倒魔王。</li>
           <li>🏆 通關獎勵：稱號「{GOLDEN_TITLE}」、特殊結局、召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS}。</li>
         </ul>

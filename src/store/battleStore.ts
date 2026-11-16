@@ -57,6 +57,7 @@ import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef,
 import type { SkillBossId } from '../game/skillBosses';
 import {
   GOLDEN_CLEAR_TICKETS, GOLDEN_LEVEL_KEY, GOLDEN_STAGE_COUNT, GOLDEN_TITLE, createGoldenDecks, generateGoldenStages, goldenMonsterHp, goldenTier,
+  goldenReadingLimit,
 } from '../game/golden';
 import type { MapRunStats } from '../game/stars';
 
@@ -460,7 +461,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
   const prepare = (q: Question) => shuffleChoice(questionTransform(q), random);
 
   // 新題目的計時：基礎 20 秒，專注技能每題再多 5 秒；長口說題（>6 詞）依詞數彈性延長，避免長句朗讀超時
-  const freshTimer = (focusMs: number, aidMs = get().aidTimeMs, q?: Question) => {
+  const freshTimer = (focusMs: number, aidMs = get().aidTimeMs, q?: Question, displayed = q) => {
     let voiceBonusMs = 0;
     if (q?.type === 'voice' && q.speak) {
       const wordCount = q.speak.trim().split(/\s+/).length;
@@ -468,7 +469,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
         voiceBonusMs = Math.min(15000, (wordCount - 6) * 1500);
       }
     }
-    const limit = QUESTION_LIMIT + focusMs + teamTimeBonus(get().party) + aidMs + voiceBonusMs;
+    const baseLimit = get().mode === 'golden' && displayed ? goldenReadingLimit(displayed) : QUESTION_LIMIT;
+    const limit = baseLimit + focusMs + teamTimeBonus(get().party) + aidMs + voiceBonusMs;
     return { questionLimit: limit, questionLeft: limit, activeAnswerMs: 0, overtime: false };
   };
 
@@ -532,6 +534,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
     const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined, s.levelKey)) : takeEasy(stage) ?? stage.questions[0];
+    const question = prepare(original);
 
     // 劇情檢查提前：若有開場或 BOSS 登場台詞，先開啟劇情視窗，避免戰前情報搶先顯示或唸出發音
     let pendingStoryId = '';
@@ -552,7 +555,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       stageIdx,
       qIdx: isBossQuestion ? -1 : 0,
       original,
-      question: prepare(original),
+      question,
       questionSeq: s.questionSeq + 1,
       questionCount,
       isBossQuestion,
@@ -586,7 +589,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       assist: null,
       assistSource: null,
       focusMs: 0,
-      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0, aid.timeMs, original),
+      ...freshTimer(foe?.id === 'timeThief' ? -TIME_THIEF_MS : 0, aid.timeMs, original, question),
       casting: null,
       event: nextEvent('stage'),
     });
@@ -663,9 +666,10 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     const enemyTurn = s.enemyTurn + 1;
     const statuses = tickStatuses();
     const boss = bossTurn(enemyTurn);
-    const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0), s.aidTimeMs, original);
+    const question = prepare(original);
+    const timer = freshTimer(s.focusMs - (s.foeSkill === 'timeThief' ? TIME_THIEF_MS : 0), s.aidTimeMs, original, question);
     return {
-      qIdx, original, question: prepare(original), questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
+      qIdx, original, question, questionSeq: s.questionSeq + 1, questionCount, isBossQuestion,
       retrying: false, ...timer,
       ...(boss.frostLeft > 0 ? { questionLimit: FROST_LIMIT + s.aidTimeMs, questionLeft: FROST_LIMIT + s.aidTimeMs } : {}),
       // 減速：這一題少幾秒（最少留 6 秒）
@@ -1473,7 +1477,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     startBattle: () => {
       const s = get();
       if (s.phase !== 'lesson') return;
-      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...freshTimer(s.focusMs) });
+      const timer = s.mode === 'golden' ? {} : freshTimer(s.focusMs);
+      set({ phase: 'answering', questionSeq: s.questionSeq + 1, ...timer });
     },
 
     openLesson: () => {

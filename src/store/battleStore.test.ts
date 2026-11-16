@@ -726,6 +726,32 @@ describe('enemy attack patterns (action gauge)', () => {
     expect(state().party.every(m => m.hp > m.maxHp / 2)).toBe(true);
   });
 
+  it('黃金之路依顯示的閱讀題加時，打開預習後仍適用且超時立即結束', () => {
+    resetSave();
+    state().startGoldenRoad(() => ({
+      type: 'choice', skill: 'reading', desc: 'word '.repeat(60),
+      options: ['A. twenty more words', 'B. no'], ans: 'A',
+    }));
+    expect(state().questionLimit).toBe(30_000);
+    state().tick(2_000);
+    state().openLesson();
+    state().startBattle();
+    expect(state().questionLeft).toBe(28_000);
+    state().tick(27_999);
+    expect(state().phase).toBe('answering');
+    state().tick(1);
+    expect(state().phase).toBe('gameOver');
+  });
+
+  it('黃金之路的聽力維持基本限時', () => {
+    resetSave();
+    state().startGoldenRoad(() => ({
+      type: 'choice', skill: 'listening', desc: 'word '.repeat(60),
+      options: ['A. yes', 'B. no'], ans: 'A', speak: 'yes',
+    }));
+    expect(state().questionLimit).toBe(QUESTION_LIMIT);
+  });
+
   it('golden road has no action gauge', () => {
     resetSave();
     state().startGoldenRoad();

@@ -1,7 +1,7 @@
-import type { Stage } from './types';
+import type { Question, Stage } from './types';
 import type { Decks } from './QuestionData';
-import { LEVELS, createDecks } from './QuestionData';
-import { BASE_DAMAGE } from './battle';
+import { LEVELS, createDecks, questionSkill } from './QuestionData';
+import { BASE_DAMAGE, QUESTION_LIMIT } from './battle';
 import { REGIONS } from './regions';
 
 // 黃金之路：只用初始角色（Lv 1、沒有轉職、沒有裝備、沒有夥伴）挑戰。
@@ -13,6 +13,14 @@ export const GOLDEN_TIERS = LEVELS.length;
 export const GOLDEN_STAGE_COUNT = GOLDEN_STAGES_PER_TIER * GOLDEN_TIERS;
 export const GOLDEN_LEVEL_KEY = 'golden-road';
 export const GOLDEN_FINAL_HP = 50_000; // 沉默魔王：約 15 擊
+
+// 每秒 3 詞是配置計時的假設，另保留 8 秒判斷與送出。
+export function goldenReadingLimit(question: Question): number {
+  if (question.type !== 'choice' || questionSkill(question) !== 'reading') return QUESTION_LIMIT;
+  const text = [question.desc, ...(question.options ?? []).map(option => option.replace(/^[A-D][.)]\s*/, ''))].join(' ');
+  const words = text.match(/[A-Za-z]+(?:['’–-][A-Za-z]+)*/g)?.length ?? 0;
+  return Math.max(QUESTION_LIMIT, (Math.ceil(words / 3) + 8) * 1000);
+}
 
 export const goldenTier = (stageIdx: number) => Math.min(GOLDEN_TIERS - 1, Math.floor(stageIdx / GOLDEN_STAGES_PER_TIER));
 

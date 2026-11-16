@@ -6,6 +6,7 @@ import { useSaveStore, initialSave } from '../src/store/saveStore';
 import { useUiStore } from '../src/store/uiStore';
 import { setSfxVolume } from '../src/game/sfx';
 import WorldBoss from '../src/components/WorldBossModal';
+import { CHANT_SPELLS } from '../src/game/worldBoss';
 import TrueName from '../src/components/TrueNameModal';
 import Gate from '../src/components/GateTrialModal';
 import '../scripts/loadBanks';
@@ -53,12 +54,34 @@ it('世界王在StrictMode逐題推進，勝利只發一次3000金幣與2專武�
   const before = useSaveStore.getState();
   const keywords = ['SACRED', 'GUARDIANS', 'ETERNITY', 'RESOLVE', 'DRAGONS'];
   for (const word of keywords) {
-    expect(document.querySelector('input')?.placeholder).toContain(word);
+    expect(document.querySelector('input')?.placeholder).toBe('輸入古咒關鍵詞');
+    expect(document.getElementById('worldboss-keyword-clue')?.textContent).toContain(`以 ${word.slice(0, 3)} 開頭、共 ${word.length} 個字母`);
     await typeAndSubmit(word);
   }
   expect(document.body.textContent).toContain('世界王討伐大獲全勝');
   expect(useSaveStore.getState().gold - before.gold).toBe(3000);
   expect(useSaveStore.getState().weaponTickets - before.weaponTickets).toBe(2);
+});
+it('世界王鍵盤答錯不公布關鍵詞，主動顯示提示後換題會收合', async () => {
+  await act(async () => root.render(<WorldBoss />));
+  await click('⚔️ 開始詠唱破盾突襲！');
+  await typeAndSubmit('flame');
+  expect(document.body.textContent).toContain('拼寫未吻合');
+  expect(document.body.textContent).toContain('連擊共鳴：0 層');
+  const clue = document.getElementById('worldboss-keyword-clue')!;
+  expect(clue.textContent).not.toContain('SACRED');
+  await click('顯示關鍵詞');
+  expect(clue.textContent).toBe('關鍵詞：SACRED');
+  await typeAndSubmit('  sacred  ');
+  expect(document.body.textContent).toContain('連擊共鳴：1 層');
+  expect(clue.textContent).toContain('以 GUA 開頭、共 9 個字母');
+});
+it('每節古咒的鍵盤線索只對應一個單字', () => {
+  for (const { en, keyword } of CHANT_SPELLS) {
+    const words = new Set(en.toUpperCase().match(/[A-Z]+/g));
+    const matches = [...words].filter(word => word.startsWith(keyword.slice(0, 3)) && word.length === keyword.length);
+    expect(matches, en).toEqual([keyword]);
+  }
 });
 it('世界王示範遵守玩家發音音量', async () => {
   vi.mocked(speak).mockClear();

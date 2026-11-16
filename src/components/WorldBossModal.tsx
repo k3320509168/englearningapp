@@ -28,6 +28,7 @@ export default function WorldBossModal() {
   const [listening, setListening] = useState(false);
   const [statusText, setStatusText] = useState('準備開始詠唱破盾！');
   const [spellTyped, setSpellTyped] = useState('');
+  const [keywordRevealed, setKeywordRevealed] = useState(false);
   const [battleState, setBattleState] = useState<'intro' | 'active' | 'victory' | 'defeat'>('intro');
 
   const recognizer = useRef<Recognizer | null>(null);
@@ -47,6 +48,7 @@ export default function WorldBossModal() {
     setBossHp(nextHp);
     setCombo(nextCombo);
     setSpellTyped('');
+    setKeywordRevealed(false);
     sfx.crit();
     if (nextHp === 0) {
       setBattleState('victory');
@@ -123,6 +125,7 @@ export default function WorldBossModal() {
     setCurrentIndex(0);
     setCombo(0);
     setSpellTyped('');
+    setKeywordRevealed(false);
     setBattleState('active');
     sfx.boss();
     setTimeout(() => {
@@ -133,10 +136,12 @@ export default function WorldBossModal() {
   // 拼寫備援：打入 keyword 直接破盾
   const handleKeywordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (spellTyped.trim().toUpperCase() === currentSpell.keyword) {
+    const attempt = spellTyped.trim().toUpperCase();
+    if (!attempt) return;
+    if (attempt === currentSpell.keyword) {
       handleChantSuccess();
     } else {
-      setStatusText(`關鍵詞應為【${currentSpell.keyword}】，請重新確認！`);
+      setStatusText('拼寫未吻合，請核對古咒中的單字，或使用提示。');
     }
   };
 
@@ -223,10 +228,15 @@ export default function WorldBossModal() {
                 {listening ? '🎙️ 正在收音……' : '🎙️ 點擊開始朗讀'}
               </button>
 
-              <form onSubmit={handleKeywordSubmit} style={{ display: 'inline-flex', gap: '6px' }}>
+              <form onSubmit={handleKeywordSubmit} style={{ display: 'inline-flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '100%' }}>
                 <input
                   type="text"
-                  placeholder={`拼寫關鍵詞：${currentSpell.keyword}`}
+                  placeholder="輸入古咒關鍵詞"
+                  aria-label="拼寫關鍵詞"
+                  aria-describedby="worldboss-keyword-clue"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
                   value={spellTyped}
                   onChange={e => setSpellTyped(e.target.value.toUpperCase())}
                   style={{
@@ -238,12 +248,31 @@ export default function WorldBossModal() {
                     textAlign: 'center',
                     fontWeight: 'bold',
                     width: '180px',
+                    maxWidth: '100%',
                   }}
                 />
                 <button type="submit" className="btn btn-primary" style={{ padding: '8px 14px' }} onMouseDown={keepFocus}>
                   送出破盾 ⚡
                 </button>
               </form>
+            </div>
+            <div style={{ marginTop: '8px', color: '#a9b0ce', fontSize: '14px' }}>
+              <span id="worldboss-keyword-clue" aria-live="polite">
+                {keywordRevealed
+                  ? `關鍵詞：${currentSpell.keyword}`
+                  : `鍵盤破盾：找出古咒中以 ${currentSpell.keyword.slice(0, 3)} 開頭、共 ${currentSpell.keyword.length} 個字母的單字。`}
+              </span>
+              {!keywordRevealed && (
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  style={{ margin: '4px', padding: '4px 8px' }}
+                  onMouseDown={keepFocus}
+                  onClick={() => setKeywordRevealed(true)}
+                >
+                  顯示關鍵詞
+                </button>
+              )}
             </div>
           </div>
         )}

@@ -27,7 +27,7 @@ import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, cl
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
 import { TIER_UP_TRIALS, TRIAL_COUNT, TRIAL_SHARDS, TRUE_NAME_REWARD, trialsDone } from '../game/trueName';
-import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weeklyDef } from '../game/daily';
+import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily, refreshWeekly, streakMilestone, weekStart, weeklyDef } from '../game/daily';
 import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
 import { ELEMENTS, normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
@@ -51,10 +51,12 @@ import {
   weaponUpgradeCost,
 } from '../game/weapons';
 import type { WeaponSummonDrop } from '../game/weapons';
+import { WORLD_BOSS_FIRST_WIN_GOLD, WORLD_BOSS_FIRST_WIN_TICKETS, WORLD_BOSS_REPEAT_GOLD, WORLD_BOSS_TITLE } from '../game/worldBoss';
+import type { WorldBossReward } from '../game/worldBoss';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 25;
+export const SAVE_VERSION = 26;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -185,6 +187,7 @@ interface SaveData {
   // 黃金之路最多通過幾關（全部通關為關卡總數）、獲得的稱號
   goldenBest: number;
   titles: string[];
+  worldBossRewardWeek: string;
   // 每日任務與連續登入；擴充魔王（聽說讀寫）的通關紀錄
   daily: DailyState | null;
   weekly: WeeklyState | null; // 每週任務
@@ -282,6 +285,7 @@ interface SaveActions {
   recordSkillBoss: (id: string) => boolean; // 第一次通關回傳 true
   markHint: (id: string) => void;
   addTitle: (title: string) => boolean;
+  claimWorldBossVictory: () => WorldBossReward;
   toggleMember: (id: MemberId) => void;
   setLeader: (id: MemberId) => void;
   placeMember: (id: MemberId, slot: number) => void; // 拖拉英雄到第 slot 格（0 = 隊長）：換位、替換或補上空位
@@ -353,6 +357,7 @@ export const initialSave: SaveData = {
   trueNameRewarded: [],
   goldenBest: 0,
   titles: [],
+  worldBossRewardWeek: '',
   daily: null,
   weekly: null,
   skillBossCleared: [],
@@ -1209,6 +1214,24 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           return true;
         },
 
+        claimWorldBossVictory: () => {
+          const save = get();
+          const week = weekStart(localDate());
+          const firstWin = save.worldBossRewardWeek !== week;
+          const reward = {
+            gold: firstWin ? WORLD_BOSS_FIRST_WIN_GOLD : WORLD_BOSS_REPEAT_GOLD,
+            tickets: firstWin ? WORLD_BOSS_FIRST_WIN_TICKETS : 0,
+            newTitle: !save.titles.includes(WORLD_BOSS_TITLE),
+          };
+          set({
+            worldBossRewardWeek: week,
+            gold: save.gold + reward.gold,
+            weaponTickets: save.weaponTickets + reward.tickets,
+            titles: reward.newTitle ? [...save.titles, WORLD_BOSS_TITLE] : save.titles,
+          });
+          return reward;
+        },
+
         // 英雄訓練：花金幣升一級，最高到主角的等級
         trainHero: (id) => {
           const s = get();
@@ -1417,7 +1440,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         sweepTickets: s.sweepTickets, wheelClaimed: s.wheelClaimed, ticketBuys: s.ticketBuys, weaponTicketBuys: s.weaponTicketBuys, trainingGoldDay: s.trainingGoldDay, trainingGoldCount: s.trainingGoldCount, wheelPending: s.wheelPending, wheelDry: s.wheelDry, trainingDay: s.trainingDay, trainingGiven: s.trainingGiven,
         mapStars: s.mapStars, bestStage: s.bestStage, storySeen: s.storySeen, storyRewardClaimed: s.storyRewardClaimed,
         player: s.player, classPaths: s.classPaths, homeClass: s.homeClass, classBadges: s.classBadges, heroLevel: s.heroLevel, materials: s.materials, equipment: s.equipment, equipped: s.equipped,
-        trueName: s.trueName, trueNameRewarded: s.trueNameRewarded, goldenBest: s.goldenBest, titles: s.titles, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
+        trueName: s.trueName, trueNameRewarded: s.trueNameRewarded, goldenBest: s.goldenBest, titles: s.titles, worldBossRewardWeek: s.worldBossRewardWeek, daily: s.daily, weekly: s.weekly, skillBossCleared: s.skillBossCleared, hintsSeen: s.hintsSeen,
       }),
     },
   ),

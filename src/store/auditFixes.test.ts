@@ -1,4 +1,4 @@
-import { beforeEach, expect, it } from 'vitest';
+import { beforeEach, expect, it, vi } from 'vitest';
 import { initialSave, migrateSave, SAVE_VERSION, useSaveStore } from './saveStore';
 import { DEFAULT_CHARACTER } from '../game/character';
 import { useBattleStore } from './battleStore';
@@ -111,4 +111,33 @@ it('口說魔王備援首通保留5券，之後全口說重打補稱號不重發
   expect(S().tickets).toBe(tickets + 5);
   useBattleStore.getState().switchToSpelling();
   expect(useBattleStore.getState().skillVoiceFallback).toBe(false);
+});
+
+it('世界王沿用本地週一重置，保留舊存檔資源並防止同週重領專武券', () => {
+  vi.useFakeTimers();
+  try {
+    vi.setSystemTime(new Date(2026, 10, 22, 23, 59, 59));
+    const title = '👑 屠龍詠唱者';
+    const oldSave: Partial<typeof initialSave> = { gold: 2000, weaponTickets: 7, titles: [title] };
+    const migrated = migrateSave(oldSave, 25);
+    expect(migrated.worldBossRewardWeek).toBe('');
+    expect(migrated.gold).toBe(2000);
+    expect(migrated.weaponTickets).toBe(7);
+    useSaveStore.setState(migrated);
+    expect(S().claimWorldBossVictory()).toEqual({ gold: 3000, tickets: 2, newTitle: false });
+
+    const persisted = useSaveStore.persist.getOptions().partialize!(S());
+    const restored = migrateSave(JSON.parse(JSON.stringify(persisted)), SAVE_VERSION);
+    expect(restored.worldBossRewardWeek).toBe('2026-11-16');
+    useSaveStore.setState(restored);
+    expect(S().claimWorldBossVictory()).toEqual({ gold: 150, tickets: 0, newTitle: false });
+
+    vi.setSystemTime(new Date(2026, 10, 23, 0, 0, 0));
+    expect(S().claimWorldBossVictory()).toEqual({ gold: 3000, tickets: 2, newTitle: false });
+    expect(S().gold).toBe(8150);
+    expect(S().weaponTickets).toBe(11);
+    expect(S().titles).toEqual([title]);
+  } finally {
+    vi.useRealTimers();
+  }
 });

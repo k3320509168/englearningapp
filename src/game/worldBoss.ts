@@ -12,6 +12,16 @@ export interface ChantSpell {
 
 export const WORLD_BOSS_HP = 1_000_000;
 export const WORLD_BOSS_TIME = 60;
+export const WORLD_BOSS_FIRST_WIN_GOLD = 3000;
+export const WORLD_BOSS_FIRST_WIN_TICKETS = 2;
+export const WORLD_BOSS_REPEAT_GOLD = 150;
+export const WORLD_BOSS_TITLE = '👑 屠龍詠唱者';
+
+export interface WorldBossReward {
+  gold: number;
+  tickets: number;
+  newTitle: boolean;
+}
 export const DAMAGE_PER_CHANT = 150_000;
 export const COMBO_BONUS_DAMAGE = 300_000;
 

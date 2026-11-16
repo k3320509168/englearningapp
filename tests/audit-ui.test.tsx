@@ -61,6 +61,17 @@ it('世界王在StrictMode逐題推進，勝利只發一次3000金幣與2專武�
   expect(document.body.textContent).toContain('世界王討伐大獲全勝');
   expect(useSaveStore.getState().gold - before.gold).toBe(3000);
   expect(useSaveStore.getState().weaponTickets - before.weaponTickets).toBe(2);
+  expect(document.querySelector('.worldboss-victory')?.textContent).toContain('首次解鎖稱號');
+
+  await act(async () => root.render(<StrictMode><WorldBoss key="rematch" /></StrictMode>));
+  await click('⚔️ 開始詠唱破盾突襲！');
+  for (const word of keywords) await typeAndSubmit(word);
+  const result = document.querySelector('.worldboss-victory')?.textContent;
+  expect(result).toContain('150 金幣');
+  expect(result).not.toContain('專武召喚券');
+  expect(result).not.toContain('首次解鎖稱號');
+  expect(useSaveStore.getState().gold - before.gold).toBe(3150);
+  expect(useSaveStore.getState().weaponTickets - before.weaponTickets).toBe(2);
 });
 it('世界王鍵盤答錯不公布關鍵詞，主動顯示提示後換題會收合', async () => {
   await act(async () => root.render(<WorldBoss />));

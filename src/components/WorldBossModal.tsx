@@ -7,9 +7,14 @@ import {
   COMBO_BONUS_DAMAGE,
   DAMAGE_PER_CHANT,
   WORLD_BOSS_HP,
+  WORLD_BOSS_FIRST_WIN_GOLD,
+  WORLD_BOSS_FIRST_WIN_TICKETS,
+  WORLD_BOSS_REPEAT_GOLD,
+  WORLD_BOSS_TITLE,
   WORLD_BOSS_TIME,
   checkChant,
   type ChantSpell,
+  type WorldBossReward,
 } from '../game/worldBoss';
 import { createRecognizer, isSpeechRecognitionSupported, speakableText, type Recognizer } from '../game/speech';
 import { sfx } from '../game/sfx';
@@ -19,7 +24,8 @@ import { useSpeak } from './useSpeak';
 export default function WorldBossModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const celebrate = useUiStore(s => s.celebrate);
-  const { addWeaponTickets, addGold, addTitle, titles } = useSaveStore();
+  const claimVictory = useSaveStore(s => s.claimWorldBossVictory);
+  const [reward, setReward] = useState<WorldBossReward | null>(null);
 
   const [bossHp, setBossHp] = useState(WORLD_BOSS_HP);
   const [timeLeft, setTimeLeft] = useState(WORLD_BOSS_TIME);
@@ -53,12 +59,14 @@ export default function WorldBossModal() {
     if (nextHp === 0) {
       setBattleState('victory');
       sfx.victory();
-      addWeaponTickets(2);
-      addGold(3000);
-      if (!titles.includes('👑 屠龍詠唱者')) addTitle('👑 屠龍詠唱者');
+      const earned = claimVictory();
+      setReward(earned);
+      const summary = [`🪙 ${earned.gold.toLocaleString()} 金幣`];
+      if (earned.tickets) summary.push(`🎫 專武召喚券 ×${earned.tickets}`);
+      if (earned.newTitle) summary.push(`首次解鎖稱號【${WORLD_BOSS_TITLE}】`);
       celebrate({
         icon: '🐉', title: '世界王法夫納・核心護盾完全破滅！',
-        sub: '討伐大成功！獲得 🎫 專武召喚券 ×2、🪙 3,000 金幣，並解鎖稱號【👑 屠龍詠唱者】！',
+        sub: summary.join('、'),
         color: '#ffd15c',
       });
     } else {
@@ -166,6 +174,10 @@ export default function WorldBossModal() {
               <div style={{ color: '#5fb3ff' }}>🎙️ 支援麥克風語音詠唱（推薦）</div>
               <div style={{ color: '#c9a8ff', fontSize: '13px', marginTop: '4px' }}>⌨️ 亦支援安靜環境下的高速鍵盤拼寫備援</div>
             </div>
+            <p style={{ color: '#a9b0ce', margin: '0 0 12px' }}>
+              每週首勝（週一重置）：{WORLD_BOSS_FIRST_WIN_GOLD.toLocaleString()} 金幣與 {WORLD_BOSS_FIRST_WIN_TICKETS} 張專武召喚券。
+              同週再次獲勝可得 {WORLD_BOSS_REPEAT_GOLD} 金幣。
+            </p>
             <div>
               <button className="btn btn-primary" style={{ fontSize: '18px', padding: '12px 28px' }} onMouseDown={keepFocus} onClick={startRaid}>
                 ⚔️ 開始詠唱破盾突襲！
@@ -277,7 +289,7 @@ export default function WorldBossModal() {
           </div>
         )}
 
-        {battleState === 'victory' && (
+        {battleState === 'victory' && reward && (
           <div className="worldboss-victory">
             <div style={{ fontSize: '64px', marginBottom: '8px' }}>🎉👑</div>
             <h2 style={{ color: '#ffd15c' }}>世界王討伐大獲全勝！</h2>
@@ -286,9 +298,9 @@ export default function WorldBossModal() {
             </p>
             <div style={{ background: '#1c1f3b', padding: '12px 24px', borderRadius: '8px', display: 'inline-block', marginBottom: '16px' }}>
               <div style={{ color: '#fff' }}>🎁 <b>獲得獎勵：</b></div>
-              <div style={{ color: '#ffcd4b', marginTop: '4px' }}>🎫 專武召喚券 ×2</div>
-              <div style={{ color: '#ffcd4b' }}>🪙 3,000 金幣</div>
-              <div style={{ color: '#c9a8ff' }}>👑 榮譽稱號【屠龍詠唱者】</div>
+              {reward.tickets > 0 && <div style={{ color: '#ffcd4b', marginTop: '4px' }}>🎫 專武召喚券 ×{reward.tickets}</div>}
+              <div style={{ color: '#ffcd4b' }}>🪙 {reward.gold.toLocaleString()} 金幣</div>
+              {reward.newTitle && <div style={{ color: '#c9a8ff' }}>首次解鎖稱號【{WORLD_BOSS_TITLE}】</div>}
             </div>
             <div>
               <button className="btn btn-primary" onMouseDown={keepFocus} onClick={closeModal}>

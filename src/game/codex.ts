@@ -99,6 +99,8 @@ export function codexItems(
 
     // 標題與釋義健全提取
     const title = v?.display || (word ? (isSingleWord ? word.toLowerCase() : word) : grammarTitle(q));
+    // 金額、時間等答案仍可出題與複習，圖鑑略過沒有英文字的純數值卡片。
+    if (!v && q.type === 'choice' && /^[\p{N}\p{Sc}\s.,:;%+／/−-]+$/u.test(title.trim()) && /\p{N}/u.test(title)) continue;
     let subtitle = v?.meaning || (kind === 'grammar' ? q.explain || q.desc : questionHint(q)) || '';
     if (q.type === 'choice' && q.options && (!v?.meaning || v.meaning === title)) {
       const correctOpt = q.options.find(o => o.startsWith(`${q.ans}.`))?.replace(/^[A-D]\.\s*/, '').trim();

@@ -1,9 +1,22 @@
 import { describe, expect, it } from 'vitest';
 import { codexItems } from './codex';
-import { LEVELS } from './QuestionData';
+import { addBank, getPool, LEVELS } from './QuestionData';
+import a1Bank from './questions/bank/r0.json';
+import a1Vocab from './questions/bank/vocab-r0.json';
+import type { Question } from './types';
 import { addBankVocab, getRegionVocab } from './vocab';
 
 describe('冒險圖鑑（Codex）', () => {
+  it('保留菜單價格題，但不把純金額答案當圖鑑卡片', () => {
+    addBank(0, a1Bank as { normal: Question[]; boss: Question[] });
+    addBankVocab(a1Vocab, 0);
+    const pool = getPool(LEVELS[0]);
+    expect([...pool.normal, ...pool.boss].some(q => q.options?.some(option => option === q.ans + '. $170.'))).toBe(true);
+    const items = codexItems(LEVELS[0], {}, {});
+    expect(items.some(item => item.title === '$170.')).toBe(false);
+    expect(items.some(item => item.title.toLowerCase() === 'much')).toBe(true);
+  });
+
   it('正確將分區 CEFR 詞庫納入該區域圖鑑，單字數量完整充足', () => {
     // 模擬載入 R4 (B1+ 赤岩峽谷) 詞庫
     const mockR4Vocab = {

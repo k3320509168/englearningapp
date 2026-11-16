@@ -3477,11 +3477,11 @@
     "exampleZh": "退款。"
   },
   "BECAUSE OF BAD WEATHER": {
-    "word": "because of bad weather.",
+    "word": "because of bad weather",
     "pos": "phr.",
-    "meaning": "due to heavy rain",
-    "example": "【短文】Your flight to Tokyo has been delayed by two hours due to heavy rain. We will provide a meal voucher if you wait at the gate. \nQuestion: Why is the flight delayed?",
-    "exampleZh": "告示提到「due to heavy rain」(由於大雨)，這屬於不良天氣狀況 (bad weather)，故選 B"
+    "meaning": "由於天氣不佳",
+    "example": "The match was cancelled because of bad weather.",
+    "exampleZh": "比賽因天氣不佳而取消。"
   },
   "THE CUSTOMER": {
     "word": "the customer",
@@ -5792,10 +5792,10 @@
   },
   "FORWARDED": {
     "word": "forwarded",
-    "pos": "n.",
-    "meaning": "正確答案是 B",
-    "example": "This example demonstrates forwarded.",
-    "exampleZh": "此例句展示了「正確答案是 B」。"
+    "pos": "v.",
+    "meaning": "轉寄；轉發（forward 的過去式或過去分詞）",
+    "example": "I forwarded the email to my manager.",
+    "exampleZh": "我把電子郵件轉寄給主管。"
   },
   "REFUSE": {
     "word": "refuse",
@@ -6527,9 +6527,9 @@
   "HAS GONE": {
     "word": "has gone",
     "pos": "phr.",
-    "meaning": "has gone to",
-    "example": "A: Where is the boss? \nB: She has gone to London for a business trip.",
-    "exampleZh": "這題測試現在完成式。"
+    "meaning": "已經去了（go 的現在完成式）",
+    "example": "She has gone to the library.",
+    "exampleZh": "她已經去圖書館了。"
   },
   "IS BEING CHECKED": {
     "word": "is being checked",
@@ -7439,10 +7439,10 @@
   },
   "PAID": {
     "word": "paid",
-    "pos": "n.",
-    "meaning": "正確答案是 D",
-    "example": "A: \"Independent musicians hardly make a living these days.\" B: \"True. If streaming services paid a fairer percentage of their revenue, these artists wouldn't struggle so much.\"",
-    "exampleZh": "正確答案是 D。"
+    "pos": "v.",
+    "meaning": "支付（pay 的過去式或過去分詞）",
+    "example": "She paid for lunch.",
+    "exampleZh": "她付了午餐錢。"
   },
   "CARD": {
     "word": "card",
@@ -7775,10 +7775,10 @@
   },
   "PURCHASED": {
     "word": "purchased",
-    "pos": "n.",
-    "meaning": "正確答案是 D",
-    "example": "A: 「Our packaging costs are extremely high this quarter.」 B: 「If the firm purchased locally sourced materials, we would save a considerable amount of money on shipping.」",
-    "exampleZh": "正確答案是 D。"
+    "pos": "v.",
+    "meaning": "購買（purchase 的過去式或過去分詞）",
+    "example": "They purchased a new printer.",
+    "exampleZh": "他們購買了一台新印表機。"
   },
   "SCORE": {
     "word": "score",
@@ -8090,10 +8090,10 @@
   },
   "ASK": {
     "word": "ask",
-    "pos": "n.",
-    "meaning": "Let's",
-    "example": "A: Do you know the answer to Question 5? B: No, I don't. Let's ask the teacher for help.",
-    "exampleZh": "祈使句提議句型「Let's」後面必須接動詞原形，故選 ask。"
+    "pos": "v.",
+    "meaning": "詢問；請求",
+    "example": "Ask the teacher for help.",
+    "exampleZh": "向老師求助。"
   },
   "COMPUTER": {
     "word": "computer",
@@ -8748,10 +8748,10 @@
   },
   "BUYING": {
     "word": "buying",
-    "pos": "n.",
-    "meaning": "本題考動名詞用法",
-    "example": "A: Did you enjoy the jazz concert?\nB: Absolutely, I couldn't resist buying the CD after the show.",
-    "exampleZh": "本題考動名詞用法。"
+    "pos": "v.",
+    "meaning": "購買（buy 的 -ing 形式）",
+    "example": "She is buying a train ticket.",
+    "exampleZh": "她正在買火車票。"
   },
   "STREET": {
     "word": "street",
@@ -8762,10 +8762,10 @@
   },
   "PROVIDED": {
     "word": "provided",
-    "pos": "n.",
-    "meaning": "正確答案是 A",
-    "example": "If the wealthy nations provided more funding, fewer families would be displaced by extreme weather.",
-    "exampleZh": "正確答案是 A。"
+    "pos": "v.",
+    "meaning": "提供（provide 的過去式或過去分詞）",
+    "example": "The hotel provided towels.",
+    "exampleZh": "旅館提供了毛巾。"
   },
   "THOUSAND": {
     "word": "thousand",
@@ -8825,10 +8825,10 @@
   },
   "USED": {
     "word": "used",
-    "pos": "n.",
-    "meaning": "正確答案是 A",
-    "example": "If the textile manufacturer used more eco-friendly dyes, their products would appeal to environmentally conscious buyers.",
-    "exampleZh": "正確答案是 A。"
+    "pos": "v.",
+    "meaning": "使用（use 的過去式或過去分詞）",
+    "example": "We used a map to find the station.",
+    "exampleZh": "我們用地圖找到了車站。"
   },
   "USING": {
     "word": "using",
@@ -9306,13 +9306,6 @@
     "example": "They practiced conversational English for two hours last night.",
     "exampleZh": "他們昨晚練習了兩小時的日常英語會話。"
   },
-  "SB": {
-    "word": "describe",
-    "pos": "n.",
-    "meaning": "描述",
-    "example": "Describe.",
-    "exampleZh": "描述。"
-  },
   "DESCRIBED": {
     "word": "described",
     "pos": "n.",
@@ -9333,13 +9326,6 @@
     "meaning": "行李",
     "example": "Luggage.",
     "exampleZh": "行李。"
-  },
-  "RS": {
-    "word": "purchase",
-    "pos": "n.",
-    "meaning": "購買",
-    "example": "Purchase.",
-    "exampleZh": "購買。"
   },
   "TICKET": {
     "word": "ticket",
@@ -9658,10 +9644,10 @@
   },
   "VISITING": {
     "word": "visiting",
-    "pos": "n.",
-    "meaning": "本題測驗動名詞",
-    "example": "The guide suggested visiting the museum during the early morning.",
-    "exampleZh": "本題測驗動名詞。"
+    "pos": "v.",
+    "meaning": "拜訪；參觀（visit 的 -ing 形式）",
+    "example": "We are visiting a museum today.",
+    "exampleZh": "我們今天要參觀一間博物館。"
   },
   "SUPERMARKET": {
     "word": "supermarket",
@@ -10421,10 +10407,10 @@
   },
   "PLANTING": {
     "word": "planting",
-    "pos": "n.",
-    "meaning": "正確答案",
-    "example": "The resident enjoys planting flowers on her small balcony.",
-    "exampleZh": "本題測驗動名詞的用法。"
+    "pos": "v.",
+    "meaning": "種植（plant 的 -ing 形式）",
+    "example": "She is planting tomatoes.",
+    "exampleZh": "她正在種番茄。"
   },
   "SOUP": {
     "word": "soup",
@@ -12094,10 +12080,10 @@
   },
   "DOING": {
     "word": "doing",
-    "pos": "n.",
-    "meaning": "本題測驗動名詞",
-    "example": "A: How do you handle stress? \nB: I practice doing deep breathing exercises every morning.",
-    "exampleZh": "本題測驗動名詞。"
+    "pos": "v.",
+    "meaning": "做；進行（do 的 -ing 形式）",
+    "example": "What are you doing?",
+    "exampleZh": "你在做什麼？"
   },
   "CONSTRUCT": {
     "word": "construct",

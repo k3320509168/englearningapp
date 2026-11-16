@@ -271,6 +271,7 @@ it('塔結算列出確實發放的徽章，重開不重複領第一層', async (
     await click('⚔️ 開始挑戰第 1 層');
     for (let i = 0; i < 5; i++) { await click('A cat'); await click(i === 4 ? '看結果 ⏎' : '下一題 ⏎'); }
     expect(document.querySelector('.tower-settle-rewards')?.textContent).toContain('職業徽章+2');
+    expect(useUiStore.getState().celebrations.at(-1)?.sub).toContain('職業徽章 +2');
     expect(useSaveStore.getState().classBadges).toBe(initialSave.classBadges + 2);
     expect(useSaveStore.getState().clearTowerFloor(1, null)).toBe(null);
   } finally { pick.mockRestore(); }

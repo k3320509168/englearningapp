@@ -64,7 +64,7 @@ export default function TowerModal() {
         useUiStore.getState().celebrate({
           icon: isEndless ? '🌌' : '🗼',
           title: `${isEndless ? '無盡之塔 ' : ''}第 ${attemptFloor} 層通過！`,
-          sub: `${hero ? `${heroWord(heroDef(hero))} 碎片` : '願望碎片'} +${reward.shards}、🪙 ${paid.gold}${paid.tickets ? `、🎫 召喚券 +${paid.tickets}` : ''}、EXP ${paid.xp}${paid.bonus > 0 ? `（追趕祝福 +25%，多得${paid.bonus}）` : ''}${paid.allowanceGold > 0 ? `（含修練津貼${paid.allowanceGold}）` : ''}`,
+          sub: `${hero ? `${heroWord(heroDef(hero))} 碎片` : '願望碎片'} +${reward.shards}、🪙 ${paid.gold}${paid.tickets ? `、🎫 召喚券 +${paid.tickets}` : ''}${reward.badges > 0 ? `、🎖️ 職業徽章 +${reward.badges}` : ''}、EXP ${paid.xp}${paid.bonus > 0 ? `（追趕祝福 +25%，多得${paid.bonus}）` : ''}${paid.allowanceGold > 0 ? `（含修練津貼${paid.allowanceGold}）` : ''}`,
           img: hero ? heroDataUrl(hero, 4) : undefined,
           color: '#c9a8ff',
         });

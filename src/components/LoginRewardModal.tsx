@@ -6,17 +6,6 @@ import { STREAK_MILESTONES, claimableMilestones, nextMilestone } from '../game/d
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
-// 7 日循環登入獎勵預覽
-const WEEK_GIFTS = [
-  { day: 1, label: '🪙 50' },
-  { day: 2, label: '🪙 80' },
-  { day: 3, label: '🎫 召喚券×1' },
-  { day: 4, label: '🪙 120' },
-  { day: 5, label: '🎟️ 掃蕩券×1' },
-  { day: 6, label: '🪙 200' },
-  { day: 7, label: '🎁 召喚券×2' },
-];
-
 export default function LoginRewardModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const daily = useSaveStore(s => s.daily);
@@ -52,20 +41,19 @@ export default function LoginRewardModal() {
         </div>
 
         {/* 7 日冒險簽到日曆 */}
-        <section className="streak-section" aria-label="本週簽到">
+        <section className="streak-section" aria-label="連續登入週期">
           <div className="streak-section-header">
-            <span className="streak-section-title">📅 本週登入進度</span>
-            <span className="streak-section-hint">每天登入即算簽到，第 7 天可獲神秘召喚禮盒</span>
+            <span className="streak-section-title">📅 連續登入週期</span>
+            <span className="streak-section-hint">每天登入即算簽到，達到下方里程碑即可領獎</span>
           </div>
           <div className="streak-week-grid">
-            {WEEK_GIFTS.map((g, i) => {
+            {Array.from({ length: 7 }, (_, i) => {
               const isChecked = i < currentWeekDay;
               const isToday = i === currentWeekDay;
               return (
-                <div key={g.day} className={`streak-day-chip ${isChecked ? 'is-checked' : ''} ${isToday ? 'is-today' : ''}`}>
-                  <span className="streak-day-label">第 {g.day} 天</span>
-                  <span className="streak-day-icon">{i === 6 ? '🎁' : isChecked ? '✔' : '⭐'}</span>
-                  <span className="streak-day-reward">{g.label}</span>
+                <div key={i} className={`streak-day-chip ${isChecked ? 'is-checked' : ''} ${isToday ? 'is-today' : ''}`}>
+                  <span className="streak-day-label">第 {i + 1} 天</span>
+                  <span className="streak-day-icon">{isChecked || isToday ? '✔' : '☆'}</span>
                   {isToday && <span className="streak-today-tag">今日</span>}
                 </div>
               );
@@ -125,7 +113,7 @@ export default function LoginRewardModal() {
         </section>
 
         <p className="streak-footer-note">
-          💡 貼心提示：每天午夜（00:00）自動結算新的一天；堅持每日冒險累積全勤，讓英文成為最強大的冒險力量！
+          簽到按裝置的本地日期更新。回到遊戲時會刷新進度。
         </p>
       </div>
     </Modal>

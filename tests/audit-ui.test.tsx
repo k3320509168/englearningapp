@@ -241,3 +241,13 @@ it('塔結算列出確實發放的徽章，重開不重複領第一層', async (
     expect(useSaveStore.getState().clearTowerFloor(1, null)).toBe(null);
   } finally { pick.mockRestore(); }
 });
+
+it('簽到日曆顯示目前進度，只有實際可領的里程碑列出獎勵', async () => {
+  const { default: LoginRewardModal } = await import('../src/components/LoginRewardModal');
+  await act(async () => root.render(<LoginRewardModal />));
+  const calendar = document.querySelector('.streak-week-grid')!;
+  expect(calendar.querySelectorAll('.streak-day-chip')).toHaveLength(7);
+  expect(calendar.querySelector('.is-today')?.textContent).toContain('第 1 天');
+  expect(calendar.textContent).not.toMatch(/金幣|召喚券|🪙/);
+  expect(document.querySelector('.streak-milestones-grid')?.textContent).toContain('100 金幣');
+});

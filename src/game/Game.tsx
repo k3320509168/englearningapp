@@ -94,6 +94,19 @@ export default function Game() {
     return () => window.removeEventListener('storage', onStorage);
   }, []);
 
+  // 保持畫面開著時也更新登入日期，背景分頁回來立即補刷新。
+  useEffect(() => {
+    const refresh = () => useSaveStore.getState().ensureDaily();
+    const interval = window.setInterval(refresh, 60_000);
+    document.addEventListener('visibilitychange', refresh);
+    window.addEventListener('focus', refresh);
+    return () => {
+      window.clearInterval(interval);
+      document.removeEventListener('visibilitychange', refresh);
+      window.removeEventListener('focus', refresh);
+    };
+  }, []);
+
   // 音效與背景音樂的音量、文字大小、減少動態效果跟著設定走
   useEffect(() => {
     const apply = () => {

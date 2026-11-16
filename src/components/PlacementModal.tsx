@@ -170,7 +170,7 @@ export default function PlacementModal() {
           <ul className="muted gate-rules">
             <li>聽力、閱讀會依你的作答自動變難或變簡單，最後再考口說、寫作各 {CONFIRM_SIZE} 題。通常 {Math.round(MAX_PROBE_QUESTIONS * 0.8)}～{MAX_PROBE_QUESTIONS + CONFIRM_SIZE * 2} 題、{Math.round(TIME_LIMIT_MS / 60_000)} 分鐘內。</li>
             <li>測驗中不顯示對錯、沒有計時、不會受傷。亂猜很難跳級，照實作答最準。</li>
-            <li>麥克風不方便可以改拼寫，口說會記成「未驗證」，不扣分。</li>
+            <li>麥克風不方便可以跳過口說。結果會標示「口說未驗證」。</li>
             {top < PLACEMENT_LEVELS.length - 1 && <li>目前題庫最高測到 {PLACEMENT_LEVELS[top]}，更高的等級之後開放。</li>}
           </ul>
           <p>你覺得自己的英文：</p>

@@ -27,6 +27,13 @@ describe('存檔碼', () => {
     expect(summarize(back!.state)).toMatchObject({ name: '小夢', level: 11, regions: 2, gold: 350 });
   });
 
+  it('拒絕陣列備份與無法還原的版本', () => {
+    expect(parseSaveCode(JSON.stringify({ state: [], version: SAVE_VERSION }))).toBeNull();
+    for (const version of [-1, 1.5, SAVE_VERSION + 1]) {
+      expect(parseSaveCode(JSON.stringify({ state: { gold: 350 }, version }))).toBeNull();
+    }
+  });
+
   it('亂貼的文字不會被當成存檔', () => {
     expect(parseSaveCode('{"foo":1}')).toBeNull();
     expect(parseSaveCode('hello')).toBeNull();

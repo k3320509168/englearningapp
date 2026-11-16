@@ -1,7 +1,9 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { GOLDEN_STAGE_COUNT, GOLDEN_TITLE, MAIN_TITLE, createGoldenDecks, generateGoldenStages, goldenTier } from './golden';
-import { LEVELS, generateStages } from './QuestionData';
+import { LEVELS, addBank, generateStages } from './QuestionData';
 import { REGIONS } from './regions';
+import c1 from './questions/bank/r7.json';
+import c2 from './questions/bank/r8.json';
 import { STORIES } from './story';
 import { initialSave, useSaveStore } from '../store/saveStore';
 import { setBattleRandom, useBattleStore } from '../store/battleStore';
@@ -81,16 +83,42 @@ describe('golden road', () => {
   });
 
   it('a perfect run defeats the Demon Lord and earns the special title', () => {
-    start();
+    addBank(7, c1 as Parameters<typeof addBank>[1]);
+    addBank(8, c2 as Parameters<typeof addBank>[1]);
+    let seed = 20261116;
+    const rng = vi.spyOn(Math, 'random').mockImplementation(() => {
+      seed = (seed * 16807) % 2147483647;
+      return seed / 2147483647;
+    });
+    try {
+      start();
+    } finally {
+      rng.mockRestore();
+    }
+    const verifiedReadingTiers = new Set<number>();
     let answers = 0;
     for (let i = 0; i < 3000 && st().phase !== 'levelClear'; i++) {
       if (st().phase === 'monsterDown') st().nextStage();
-      else { answer(); answers++; }
+      else {
+        const { stageIdx, question, questionLimit } = st();
+        const tier = goldenTier(stageIdx);
+        if (tier >= 7 && question?.skill === 'reading' && questionLimit > 20_000 && !verifiedReadingTiers.has(tier)) {
+          st().tick(2_000);
+          st().openLesson();
+          st().tick(5_000);
+          st().startBattle();
+          expect(st().questionLeft).toBe(questionLimit - 2_000);
+          verifiedReadingTiers.add(tier);
+        }
+        answer();
+        answers++;
+      }
     }
     expect(st().phase).toBe('levelClear');
     expect(useSaveStore.getState().titles).toContain(GOLDEN_TITLE);
     expect(useSaveStore.getState().goldenBest).toBe(GOLDEN_STAGE_COUNT);
     // 平衡檢查：完美通關不該需要太多題
     expect(answers).toBeLessThan(150);
+    expect([...verifiedReadingTiers]).toEqual([7, 8]);
   });
 });

@@ -221,7 +221,8 @@ export function parseSaveCode(code: string): { state: Record<string, unknown>; v
     const raw = code.trim();
     const text = raw.startsWith('{') ? raw : new TextDecoder().decode(Uint8Array.from(atob(raw), c => c.charCodeAt(0)));
     const data = JSON.parse(text);
-    if (!data || typeof data !== 'object' || !data.state || typeof data.state !== 'object' || typeof data.version !== 'number') return null;
+    if (!data || typeof data !== 'object' || !data.state || typeof data.state !== 'object' || Array.isArray(data.state)) return null;
+    if (!Number.isInteger(data.version) || data.version < 0 || data.version > SAVE_VERSION) return null;
     // 補齊欄位、檢查型別，壞掉的欄位改回預設值；轉成目前的存檔版本
     const state = migrateSave(data.state, data.version) as unknown as Record<string, unknown>;
     return { state, version: SAVE_VERSION };

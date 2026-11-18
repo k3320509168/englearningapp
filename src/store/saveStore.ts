@@ -556,6 +556,12 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   migrated.knowledge = Object.fromEntries(Object.entries(migrated.knowledge)
     .filter(([, r]) => isPlainObject(r) && Array.isArray(r.wins) && r.wins.every(Number.isFinite) && Number.isFinite(r.dueAt)
       && (r.items === undefined || (Array.isArray(r.items) && r.items.every(i => typeof i === 'string')))));
+  // 凌日測光法改用標準術語。已有新紀錄時以新紀錄為準，避免合併後誤算跨日熟練。
+  const oldTransitKey = 'w:exoplanet transit photometry detection';
+  if (migrated.knowledge[oldTransitKey]) {
+    migrated.knowledge['w:transit photometry'] ??= migrated.knowledge[oldTransitKey];
+    delete migrated.knowledge[oldTransitKey];
+  }
   // v25：題目修訂也更新已保存的錯題／圖鑑；保留累計成績，不讓舊題繼續誤導。
   const codex: SaveData['codex'] = {};
   for (const [originalKey, record] of Object.entries(migrated.codex)) {

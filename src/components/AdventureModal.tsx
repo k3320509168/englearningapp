@@ -3,6 +3,7 @@ import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import type { ModalName } from '../store/uiStore';
 import { GOLDEN_STAGE_COUNT } from '../game/golden';
+import { WORLD_BOSS_FIRST_WIN_GOLD, WORLD_BOSS_FIRST_WIN_TICKETS, WORLD_BOSS_REPEAT_GOLD, WORLD_BOSS_TIME } from '../game/worldBoss';
 import { useNotices } from './useNotices';
 import { keepFocus } from './keepFocus';
 
@@ -80,8 +81,8 @@ export default function AdventureModal() {
       icon: '🐉',
       name: '世界王突襲・法夫納',
       tag: '語音詠唱破盾',
-      reward: '🎫 專武召喚券 ×2、🪙 3000金幣、神話稱號',
-      status: '限時 60 秒・朗讀神聖英文古咒直擊魔王核心護盾',
+      reward: `每週首勝：🪙 ${WORLD_BOSS_FIRST_WIN_GOLD.toLocaleString()} 金幣、🎫 專武召喚券 ×${WORLD_BOSS_FIRST_WIN_TICKETS}。同週再勝：${WORLD_BOSS_REPEAT_GOLD} 金幣`,
+      status: `限時 ${WORLD_BOSS_TIME} 秒・朗讀神聖英文古咒直擊魔王核心護盾`,
       tone: 'tone-boss',
       btnLabel: '開啟詠唱突襲 🐉',
     },

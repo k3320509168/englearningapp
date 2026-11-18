@@ -623,5 +623,27 @@
     ],
     "ans": "C",
     "explain": "題幹限定gravity-bound bodies，且may只表示可能。把它擴大成every body並斷言must超出原文範圍；其他選項保留限定與可能性。"
+  },
+  "voice|請唸出：捕捉微弱星光跌落之系外行星凌日光度探測|exoplanet transit photometry detection": {
+    "type": "voice",
+    "skill": "speaking",
+    "difficulty": 1,
+    "knowledgeType": "lexical",
+    "desc": "請唸出：凌日測光法（藉由恆星亮度下降偵測行星）",
+    "ans": "TRANSIT PHOTOMETRY",
+    "speak": "transit photometry",
+    "explain": "transit photometry (phr.)：凌日測光法（藉由恆星亮度下降偵測行星）。例句：Astronomers use transit photometry to detect planets by measuring small dips in starlight.（天文學家用凌日測光法測量星光亮度的微小下降，藉此偵測行星。）",
+    "vocabId": "R7:TRANSIT PHOTOMETRY"
+  },
+  "spell|請先聽發音，再拼出英文（不用打空格）：捕捉微弱星光跌落之系外行星凌日光度探測|exoplanet transit photometry detection": {
+    "type": "spell",
+    "skill": "speaking",
+    "difficulty": 1,
+    "knowledgeType": "lexical",
+    "desc": "請先聽發音，再拼出英文（不用打空格）：凌日測光法（藉由恆星亮度下降偵測行星）",
+    "ans": "TRANSITPHOTOMETRY",
+    "speak": "transit photometry",
+    "explain": "transit photometry (phr.)：凌日測光法（藉由恆星亮度下降偵測行星）。例句：Astronomers use transit photometry to detect planets by measuring small dips in starlight.（天文學家用凌日測光法測量星光亮度的微小下降，藉此偵測行星。）",
+    "vocabId": "R7:TRANSIT PHOTOMETRY"
   }
 }

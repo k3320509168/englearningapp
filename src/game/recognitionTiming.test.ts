@@ -4,6 +4,8 @@ class FakeRecognition {
   static last: FakeRecognition;
   start = vi.fn(); stop = vi.fn();
   onstart = () => {}; onspeechstart = () => {}; onspeechend = () => {}; onend = () => {};
+  onresult: (event: { resultIndex: number; results: { transcript: string }[][] }) => void = () => {};
+  onerror: (event: { error: string }) => void = () => {};
   constructor() { FakeRecognition.last = this; }
 }
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); });
@@ -11,9 +13,9 @@ async function setup() {
   vi.useFakeTimers(); vi.resetModules();
   vi.stubGlobal('window', { webkitSpeechRecognition: FakeRecognition, setTimeout, clearTimeout, addEventListener: () => {} });
   const { createRecognizer } = await import('./speech');
-  const onPhase = vi.fn(), onError = vi.fn();
-  const r = createRecognizer({ onPhase, onError, onStart: vi.fn(), onResult: vi.fn(), onEnd: vi.fn() })!;
-  return { r, onPhase, onError, engine: FakeRecognition.last };
+  const onPhase = vi.fn(), onError = vi.fn(), onResult = vi.fn();
+  const r = createRecognizer({ onPhase, onError, onStart: vi.fn(), onResult, onEnd: vi.fn() })!;
+  return { r, onPhase, onError, onResult, engine: FakeRecognition.last };
 }
 describe('recognition lifecycle', () => {
   it('distinguishes initialization, player speech and processing', async () => {
@@ -30,6 +32,20 @@ describe('recognition lifecycle', () => {
     vi.advanceTimersByTime(10000); onPhase.mockClear();
     engine.onstart(); expect(onPhase).not.toHaveBeenCalledWith('speaking');
     expect(engine.stop).toHaveBeenCalled();
+  });
+  it('reports permission denial on a new attempt after a prior transcript', async () => {
+    const { r, engine, onError, onResult } = await setup();
+    r.start();
+    engine.onstart();
+    engine.onresult({ resultIndex: 0, results: [[{ transcript: 'first question' }]] });
+    engine.onend();
+    expect(onResult).toHaveBeenCalledWith(['first question']);
+
+    r.start();
+    engine.onerror({ error: 'not-allowed' });
+    engine.onend();
+    expect(onError).toHaveBeenCalledWith('not-allowed');
+    expect(onResult).toHaveBeenCalledTimes(1);
   });
   it('reports a stuck initialization instead of waiting indefinitely', async () => {
     const { r, onError, onPhase } = await setup();

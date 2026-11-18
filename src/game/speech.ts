@@ -306,8 +306,6 @@ export function createRecognizer(handlers: {
   recognition.onstart = () => {
     if (!requested) { try { recognition.stop(); } catch { /* 已停止 */ } return; }
     window.clearTimeout(startup);
-    segments = [];
-    delivered = false;
     limit = window.setTimeout(finish, MAX_LISTEN_MS);
     handlers.onPhase?.('speaking');
     handlers.onStart();
@@ -349,6 +347,8 @@ export function createRecognizer(handlers: {
       // 不打斷遊戲正在唸的句子：清掉排隊的，等這一句唸完（最多 3 秒）再開始收音
       if (requested) return;
       requested = true;
+      segments = [];
+      delivered = false;
       const request = ++generation;
       handlers.onPhase?.('waiting');
       window.clearTimeout(startup);

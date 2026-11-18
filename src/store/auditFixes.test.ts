@@ -141,3 +141,44 @@ it('世界王沿用本地週一重置，保留舊存檔資源並防止同週重�
     vi.useRealTimers();
   }
 });
+
+it('C1 凌日測光法舊題更新為正式題庫版本並保留錯題進度', async () => {
+  const { questionKey, voiceFallback } = await import('../game/battle');
+  const { revisedQuestion } = await import('../game/questionRevisions');
+  const { default: bank } = await import('../game/questions/bank/r7.json');
+  const old = {
+    type: 'voice',
+    desc: '請唸出：捕捉微弱星光跌落之系外行星凌日光度探測',
+    ans: 'EXOPLANET TRANSIT PHOTOMETRY DETECTION',
+    speak: 'exoplanet transit photometry detection',
+  };
+  const fixed = revisedQuestion(old);
+  const key = questionKey(old);
+  const oldFallback = voiceFallback(old);
+  const fallbackKey = questionKey(oldFallback);
+  const oldKnowledgeKey = 'w:exoplanet transit photometry detection';
+  const newKnowledgeKey = 'w:transit photometry';
+  const previousKnowledge = { wins: [10], dueAt: 200 };
+  const saved = migrateSave({
+    ...initialSave,
+    knowledge: { [oldKnowledgeKey]: previousKnowledge },
+    codex: { [key]: { question: old, correct: 3, wrong: 2, firstSeenAt: 5 } },
+    mistakes: {
+      [key]: { question: old, wrongCount: 2, box: 1, dueAt: 100, lastWrongAt: 10 },
+      [fallbackKey]: { question: oldFallback, wrongCount: 1, box: 2, dueAt: 200, lastWrongAt: 10 },
+    },
+  }, SAVE_VERSION);
+  expect(fixed).toEqual([...bank.normal, ...bank.boss].find(q => q.speak === 'transit photometry'));
+  expect(saved.codex[questionKey(fixed)]).toMatchObject({ question: fixed, correct: 3, wrong: 2 });
+  expect(saved.mistakes[questionKey(fixed)]).toMatchObject({ question: fixed, box: 1, dueAt: 100, wrongCount: 2 });
+  expect(saved.codex[key]).toBeUndefined();
+  expect(saved.mistakes[key]).toBeUndefined();
+  const fixedFallback = voiceFallback(fixed);
+  expect(saved.mistakes[questionKey(fixedFallback)]).toMatchObject({ box: 2, dueAt: 200 });
+  expect(saved.mistakes[questionKey(fixedFallback)].question).toEqual(fixedFallback);
+  expect(saved.mistakes[fallbackKey]).toBeUndefined();
+  expect(saved.knowledge).toEqual({ [newKnowledgeKey]: previousKnowledge });
+  const newKnowledge = { wins: [20, 30], dueAt: 300 };
+  const both = migrateSave({ ...saved, knowledge: { [oldKnowledgeKey]: previousKnowledge, [newKnowledgeKey]: newKnowledge } }, SAVE_VERSION);
+  expect(both.knowledge).toEqual({ [newKnowledgeKey]: newKnowledge });
+});

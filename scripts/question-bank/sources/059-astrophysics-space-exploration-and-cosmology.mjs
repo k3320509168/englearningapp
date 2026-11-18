@@ -26,7 +26,7 @@ export const data = {
       [1,'The spectrometer detected the 21 centimeter hydrogen hyperfine transition line. What was mapped?','The neutral atomic hydrogen distribution across the spiral arms and interstellar medium of the galaxy.|The chemical purity of water ice crystals floating inside the rings surrounding planet Saturn.|The electrical current flowing through copper power cables supplying the astronomical observatory.|The physical velocity of supersonic jet aircraft flying through high altitude military flight corridors.','高靈敏度射電光譜儀精準鎖定了中性氫原子的「21公分超精細能階躍遷譜線」：這束穿越宇宙塵埃迷霧的電磁信標，為天文學家完美勾勒並重構出了整個銀河系旋臂內部廣袤寒冷的中性氫氣體雲拓撲分佈圖。']
     ],
     voices: [
-      ['exoplanet transit photometry detection','捕捉微弱星光跌落之系外行星凌日光度探測',1,'phr.','Space telescopes rely on exoplanet transit photometry detection to catalog habitable worlds.','開普勒與苔絲太空望遠鏡依託系外行星凌日測光技術，為人類建檔了一座浩瀚的宜居異星世界名冊。'],
+      ['transit photometry','凌日測光法（藉由恆星亮度下降偵測行星）',1,'phr.','Astronomers use transit photometry to detect planets by measuring small dips in starlight.','天文學家用凌日測光法測量星光亮度的微小下降，藉此偵測行星。'],
       ['cosmic microwave background relic','大爆炸冷卻太古遺蹟之宇宙微波背景輻射',1,'phr.','Planck satellite data mapped tiny temperature anisotropies in the cosmic microwave background relic.','普朗克巡天衛星以無上精度測繪出了宇宙微波背景太古遺蹟中那微小卻孕育了萬千星系的溫度各向異性。'],
       ['gravitational lensing spacetime curvature','質量扭曲時空形成天然透鏡之重力透鏡效應',1,'phr.','Massive galaxy clusters act through gravitational lensing spacetime curvature to reveal distant cosmos.','超巨質量星系團藉由扭曲時空幾何的重力透鏡效應，化身為窺探宇宙創世破曉時代的宇宙望遠鏡。'],
       ['stellar nucleosynthesis carbon fusion','恆星深核熔爐淬鍊重元素之恆星核合成',1,'phr.','Heavy elements in human blood were forged inside massive stars via stellar nucleosynthesis carbon fusion.','流淌在人類血管中的每一滴鐵元素，皆是億萬年前遠古巨星核心恆星核聚變熔爐所淬煉的星塵結晶。'],

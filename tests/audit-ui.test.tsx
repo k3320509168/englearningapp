@@ -14,9 +14,10 @@ import * as K from '../src/game/knowledge';
 import { questionKey, voiceFallback } from '../src/game/battle';
 import { speak } from '../src/game/speech';
 import WordStudy from '../src/components/WordStudy';
-import { VOCAB } from '../src/game/vocab';
+import { VOCAB, addBankVocab } from '../src/game/vocab';
 import MapLevelBar from '../src/components/MapLevelBar';
 import ReviewModal from '../src/components/ReviewModal';
+import CodexModal from '../src/components/CodexModal';
 import HeroModal from '../src/components/HeroModal';
 import EnemyStatus from '../src/components/EnemyStatus';
 import TicketWheel from '../src/components/TicketWheel';
@@ -25,7 +26,7 @@ import TowerModal from '../src/components/TowerModal';
 import * as modes from '../src/game/modes';
 import { useBattleStore } from '../src/store/battleStore';
 vi.mock('../src/game/art/sprites', () => ({ heroDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==', avatarDataUrl: () => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==' }));
-vi.mock('../src/game/questions/bank/loader', () => ({ loadBank: async () => undefined }));
+vi.mock('../src/game/questions/bank/loader', () => ({ loadBank: async () => undefined, loadBanksFrom: async () => undefined }));
 vi.mock('../src/game/speech', async importOriginal => ({ ...await importOriginal<typeof import('../src/game/speech')>(), speak: vi.fn(), isSpeechRecognitionSupported: () => false }));
 let root: Root;
 const click = async (text: string) => act(async () => {
@@ -285,4 +286,42 @@ it('簽到日曆顯示目前進度，只有實際可領的里程碑列出獎勵'
   expect(calendar.querySelector('.is-today')?.textContent).toContain('第 1 天');
   expect(calendar.textContent).not.toMatch(/金幣|召喚券|🪙/);
   expect(document.querySelector('.streak-milestones-grid')?.textContent).toContain('100 金幣');
+});
+
+it('實際 C1 圖鑑可搜尋並標亮有連字號的例句詞組', async () => {
+  vi.useFakeTimers();
+  const { default: vocab } = await import('../src/game/questions/bank/vocab-r7.json');
+  addBankVocab(vocab, 7);
+  useSaveStore.setState({ unlockedIndex: 7, prologueDone: true });
+  await act(async () => root.render(<CodexModal />));
+  const search = document.querySelector('.codex-search-input')!;
+  await act(async () => {
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!.call(search, 'end to end encryption');
+    search.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  await act(async () => vi.advanceTimersByTimeAsync(200));
+  const cards = document.querySelectorAll<HTMLButtonElement>('button[aria-label="查看 end to end encryption"]');
+  expect(cards).toHaveLength(1);
+  await act(async () => cards[0].click());
+  expect(document.querySelector('.codex-popup-def')?.textContent).toContain('端到端加密');
+  expect(document.querySelector('mark.word-kw-highlight')?.textContent).toBe('end-to-end encryption');
+});
+
+it('匯入舊 C2 備份後可在修煉場答對新版詞組', async () => {
+  const old = { type: 'voice', desc: '請唸出：剛一生效實施之際', ans: 'SCARCELY HAD IT TAKEN', speak: 'scarcely had it taken' };
+  const { parseSaveCode, importSave } = await import('../src/cloud/cloudSave');
+  const state = { ...useSaveStore.getState(), mistakes: {
+    [questionKey(old)]: { question: old, wrongCount: 2, lastWrongAt: 1, dueAt: 0, box: 0 },
+  } };
+  const parsed = parseSaveCode(JSON.stringify({ state, version: 26 }));
+  expect(parsed).toBeTruthy();
+  await act(async () => importSave(parsed!));
+  await act(async () => root.render(<ReviewModal />));
+  expect(document.querySelector('.mistake-text')?.textContent).toContain('它才剛生效');
+  expect(document.body.textContent).not.toContain('剛一生效實施之際');
+  const entry = [...document.querySelectorAll('button')].find(b => b.textContent?.includes('進入修煉場'))!;
+  await act(async () => entry.click());
+  await typeAndSubmit('SCARCELYHADITTAKENEFFECT');
+  expect(document.body.textContent).toContain('正確');
+  expect(useSaveStore.getState().mistakes['voice:SCARCELY HAD IT TAKEN EFFECT'].box).toBe(1);
 });

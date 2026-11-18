@@ -46,7 +46,11 @@ export function codexItems(
   for (const q of [...pool.normal, ...pool.boss]) {
     let word = vocabKey(q);
     let v = vocabFor(q);
-    if (word && !/[A-Za-z]/.test(word.replace(/^R\d+:/, ''))) { word = null; v = null; }
+    if (word) {
+      // 題庫用帶區域前綴的詞條取釋義，圖鑑卡則用不帶前綴的單字識別。
+      word = word.replace(/^R\d+:/, '');
+      if (!/[A-Za-z]/.test(word)) { word = null; v = null; }
+    }
 
     // 1. 若選擇題正確選項直接是英文單字/片語（例如 agenda, postpone, implement）
     if (!word && q.type === 'choice' && q.options) {
@@ -139,8 +143,8 @@ export function codexItems(
     const regionVocab = getRegionVocab(regionIdx);
     if (regionVocab) {
       for (const [key, v] of Object.entries(regionVocab)) {
-        if (!/[A-Za-z]/.test(key.replace(/^R\d+:/, ''))) continue;
-        const upper = key.toUpperCase();
+        const upper = key.toUpperCase().replace(/^R\d+:/, '');
+        if (!/[A-Za-z]/.test(upper)) continue;
         const tokenCount = upper.trim().split(/\s+/).filter(Boolean).length;
         if (tokenCount > 4) continue; // 排除任何歷史遺留長句
         const isSingleWord = tokenCount === 1 && !upper.includes('-') && !v.pos?.toLowerCase().includes('phr') && !v.pos?.includes('片語');

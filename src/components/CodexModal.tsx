@@ -43,23 +43,13 @@ function getPosClass(pos: string | undefined): string {
 
 // 例句中智慧高亮目標詞彙
 function highlightKeyword(text: string, target: string) {
-  if (!target || !text) return text;
-  const cleanTarget = target.replace(/[^A-Za-z0-9]/g, '');
-  if (cleanTarget.length < 2) return text;
-
-  try {
-    const splitRegex = new RegExp(`\\b(${cleanTarget}[a-z]*)\\b`, 'gi');
-    const testRegex = new RegExp(`^${cleanTarget}[a-z]*$`, 'i');
-    const parts = text.split(splitRegex);
-    return parts.map((part, idx) => {
-      if (testRegex.test(part)) {
-        return <mark key={idx} className="word-kw-highlight">{part}</mark>;
-      }
-      return part;
-    });
-  } catch {
-    return text;
-  }
+  const words = target.match(/[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)*/g);
+  if (!text || !words?.length || words.join('').length < 2) return text;
+  const pattern = words.map(word => word.replace(/['’]/g, "['’]")).join('[\\s\\-‐‑‒–—]+');
+  const parts = text.split(new RegExp(`\\b(${pattern})\\b`, 'gi'));
+  return parts.map((part, idx) =>
+    idx % 2 === 0 ? part : <mark key={idx} className="word-kw-highlight">{part}</mark>,
+  );
 }
 
 // 圖鑑：收錄遇過的單字、片語與文法，支援即時關鍵字搜尋、進階狀態過濾、平滑分批載入與沉浸式連貫卡片翻閱

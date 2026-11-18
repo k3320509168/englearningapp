@@ -494,3 +494,5 @@
 - 高階詞組逐題審核已建立清單 docs/question-bank-qa/ADVANCED_PHRASE_REVIEW.md。首批六道已修，後續依清單追蹤，涉及術語或題型判斷時請 Antigravity 只讀複核。
 
 - Codex × Antigravity｜已完成原始清單 388 道高階長詞組逐題審核，累計 293 修訂、95 保留。Antigravity 複核了 C2 天文專業詞組。正式題庫、分區及全域圖鑑與兩種舊題鍵皆已同步，詳 docs/question-bank-qa/ADVANCED_PHRASE_REVIEW.md。
+
+- Codex｜高階改題後的圖鑑與舊錯題元件回歸。合併區域詞條前綴別名以去除重複卡，修正多詞與連字號例句標亮。C2 舊備份匯入後於修煉場答對新版詞組。正式預覽已啟用，實際瀏覽器冷啟動計時仍待指定分頁解除休眠。

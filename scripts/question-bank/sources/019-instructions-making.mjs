@@ -34,7 +34,7 @@ voices:[
 ['alignment','物件位置彼此對齊的狀態',1,'n.','Check the alignment before attaching the label.','貼標前檢查對齊。'],
 ['a spare component','額外備用的組件',1,'phr.','The kit includes a spare component.','套件含一個備件。'],
 ['a snug fit','緊密合適而不鬆動的配合',2,'phr.','The cover should be a snug fit.','蓋子應緊密合適。'],
-['a reversible first step','能恢復原狀的第一步',2,'phr.','A trial arrangement is a reversible first step.','試擺是可回復的第一步。'],
+['a reversible first step','能恢復原狀的第一步',2,'phr.','A trial arrangement is a reversible first step.','先試行這個安排，必要時還能恢復原狀。'],
 ['The border is included in the total measurement','邊框包含在總尺寸內',3],
 ['The example illustrates one possible colour choice','範例展示一種可能配色',3],
 ['A spare piece does not imply a missing step','備件不表示漏做步驟',3]

@@ -32,7 +32,7 @@ listening:[
 voices:[
 ['wildcard','可依規則代表其他牌或角色的萬用牌',1,'n.','The wildcard can stand for either colour.','萬用牌可代表任一色。'],
 ['setback','使進展受阻或倒退的挫折',1,'n.','The lost turn was a small setback.','失去回合是小挫折。'],
-['an optional extra move','可自行選擇的額外一步',1,'phr.','The card grants an optional extra move.','卡給可選額外一步。'],
+['an optional extra move','可自行選擇的額外一步',1,'phr.','The card grants an optional extra move.','這張卡讓你可以選擇多走一步。'],
 ['a shared objective','大家共同要達成的目標',2,'phr.','The team pursues a shared objective.','隊伍追共同目標。'],
 ['a guarded entrance','有人或防禦物守住的入口',2,'phr.','The blue piece protects a guarded entrance.','藍棋子保護有防守入口。'],
 ['A legal move need not be a useful move','合規一步未必有用',3],

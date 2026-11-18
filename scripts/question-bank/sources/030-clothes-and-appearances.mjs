@@ -34,7 +34,7 @@ voices:[
 ['alterations','對衣物尺寸或樣式所作的修改',1,'n.','The trousers need minor alterations.','這件長褲需稍作修改。'],
 ['a deliberately loose fit','刻意設計的寬鬆版型',1,'phr.','The coat has a deliberately loose fit.','外套刻意設計成寬鬆版型。'],
 ['a distinctive piece of clothing','具有鮮明辨識特徵的衣物',2,'phr.','A distinctive piece of clothing helped identify the character.','有鮮明特徵的衣物幫助辨識角色。'],
-['a practical change of clothes','適合實際活動的替換衣物',2,'phr.','Bring a practical change of clothes for the workshop.','請為工作坊帶實用的替換衣物。'],
+['a practical change of clothes','適合實際活動的替換衣物',2,'phr.','Bring a practical change of clothes for the workshop.','請帶一套適合工作坊活動的替換衣物。'],
 ['The repair can become part of the design','修補可以成為設計的一部分',3],
 ['Looking older is not the same as being older','看起來較老不等於實際年齡較大',3],
 ['The costume should help the audience recognise the character','戲服應幫助觀眾辨識角色',3]

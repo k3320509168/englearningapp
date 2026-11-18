@@ -150,7 +150,7 @@ listening:[
 voices:[
 ['piquant','滋味鮮明而略帶刺激感的',1,'adj.','The salad has a piquant dressing.','沙拉搭配滋味鮮明的醬。'],
 ['astringent','使口腔感到收斂乾澀的',1,'adj.','The tea has an astringent finish.','茶尾韻帶收澀感。'],
-['a fastidious attention to detail','對細節極其講究的關注',1,'phr.','The service shows a fastidious attention to detail.','服務對細節極其講究。'],
+["fastidious attention to detail","對細節極其講究",1,"phr.","The restoration shows fastidious attention to detail in every room.","這項修復工程在每個房間都展現對細節的講究。"],
 ['a calculated air of spontaneity','刻意營造的隨興感',2,'phr.','The event had a calculated air of spontaneity.','活動帶著刻意營造的隨興感。'],
 ['an incongruous flourish','與整體不相稱的華麗點綴',2,'phr.','The garnish was an incongruous flourish.','裝飾是個不搭調的華麗點綴。'],
 ['Prestige may be doing the work attributed to taste','名望可能代替了宣稱由品味所作的判斷',3],

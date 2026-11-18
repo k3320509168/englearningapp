@@ -91,7 +91,7 @@ voices:[
 ['reflexivity','對自身觀點與角色進行反思的能力',1,'n.','Reflexivity helps researchers examine their own assumptions.','反思自身立場有助研究者檢視自己的假設。'],
 ['a defensible interpretation','有充分理由可辯護的解讀',1,'phr.','The evidence supports more than one defensible interpretation.','證據支持不只一種有理可據的解讀。'],
 ['the limits of generalisation','推廣結論的適用界線',2,'phr.','The discussion addressed the limits of generalisation.','討論處理結論推廣的界線。'],
-['a distinction worth preserving','值得保留的重要區分',2,'phr.','That is a distinction worth preserving in the summary.','摘要中值得保留那個區分。'],
+["a distinction worth preserving","值得保留的區別",2,"phr.","The two proposals look similar, but there is a distinction worth preserving in the summary.","這兩項提案看起來相似，但摘要仍值得保留其中一項區別。"],
 ['Conceptual clarity requires more than fluent terminology','概念清楚需要的不只是熟練使用術語',3],
 ['The task should reveal rather than conceal misunderstanding','任務應揭露而非掩蓋誤解',3],
 ['Uniform procedures can still produce unequal opportunities','一致程序仍可能造成不均等機會',3]

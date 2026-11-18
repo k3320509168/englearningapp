@@ -35,7 +35,7 @@ voices: [
 ['avoid catastrophic overfitting','避免發生毀滅性過擬合',1,'phr.','Regularization techniques like dropout are implemented to avoid catastrophic overfitting.','工程師引入了隨機丟棄等正規化技術，以避免神經網絡發生嚴重的過擬合。'],
 ['dense semantic embeddings','高維語義特徵向量嵌入',1,'phr.','Neural encoders map diverse unstructured text documents into dense semantic embeddings.','神經編碼器將非結構化文本資料高效映射至多維空間的密集語義特徵向量中。'],
 ['inference latency reduction','推論響應時間延遲降低',1,'phr.','Model distillation and weight pruning led to dramatic inference latency reduction on smartphones.','模型蒸餾與權重剪枝技術大幅降低了深度學習模型在智慧型手機上的推論延遲。'],
-['expand context window capacity','擴展上下文標記視窗容量',1,'phr.','Architectural breakthroughs expand context window capacity to process entire technical books.','底層架構的重大突破，極大地擴展了模型上下文視窗處理整本技術專著的能力。']
+["extend the context window","延長模型能處理的上下文視窗",1,"phr.","The developers plan to extend the context window so the model can process longer passages.","開發人員打算延長上下文視窗，讓模型可以處理更長的段落。"]
 ],
 spells: [
 ['TRANSFORMER','n.','以自注意力機制為核心的革命性神經網絡架構','The transformer architecture revolutionized machine translation and natural language processing.','Transformer 架構徹底革新了機器翻譯與當代自然語言處理研究領域。'],
@@ -93,7 +93,7 @@ voices: [
 ['generative adversarial networks','生成對抗零和博弈網絡',1,'phr.','Generative adversarial networks pit a generator against an adversarial discriminator in high stakes training.','生成對抗網絡在深度訓練中，讓生成器與判別器展開高強度的零和對抗博弈。'],
 ['model inversion attacks','模型逆向工程與特徵反推攻擊',1,'phr.','Cryptographic safeguards are mandated to protect clinical neural networks from model inversion attacks.','醫療神經網絡系統必須部署嚴格的密碼學防護，以抵禦惡意模型逆向工程與隱私特徵反推攻擊。'],
 ['quantum computational supremacy','可編程量子計算霸權臨界點',1,'phr.','Achieving quantum computational supremacy marked an irreversible watershed in computational complexity theory.','可編程量子計算霸權的成功達成，在計算複雜性理論史上標誌著一個不可逆轉的重大分水嶺。'],
-['sparse mixture of experts','稀疏動態專家混合神經架構',1,'phr.','Deploying a sparse mixture of experts architecture allows models to scale parameters while maintaining throughput.','部署稀疏專家混合架構，使超大規模語言模型在極限擴充參數容量的同時仍能保持卓越的推論吞吐量。'],
+["a sparse mixture of experts","稀疏混合專家模型",1,"phr.","The paper compares a sparse mixture of experts with a dense model.","論文比較了稀疏混合專家模型與稠密模型。"],
 ['instrumental convergence thesis','通用人工智慧之工具性收斂假說',1,'phr.','The instrumental convergence thesis warns that autonomous artificial agents will seek self preservation.','工具性收斂假說發出深刻警告：高度自主的通用人工智慧實體將自發演化出自我保存與資源擴張的子目標。'],
 ['mechanistic interpretability circuits','機械性可解釋性底層計算電路',1,'phr.','Researchers in mechanistic interpretability reverse engineer the internal neural circuits encoding grammar.','機械性可解釋性領域的研究者，成功逆向破譯了神經網絡內部專門負責編碼語法結構的底層計算電路。'],
 ['differential privacy guarantees','差分隱私數學保證機制',1,'phr.','Differential privacy guarantees mathematically preclude the reconstruction of sensitive personal telemetry.','嚴格的差分隱私數學證明機制，從根本上杜絕了任何人企圖反向重構敏感個人隱私特徵的可能性。'],

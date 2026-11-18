@@ -152,7 +152,7 @@ voices:[
 ['officious','過分熱心而愛干涉他人事務的',1,'adj.','The neighbour’s advice became officious.','鄰居的建議變得多管閒事。'],
 ['a grudging accommodation','勉強作出的遷就安排',1,'phr.','The agreement felt like a grudging accommodation.','協議像是不情願的遷就。'],
 ['a proprietary claim over shared space','把共用空間視為自己所有的主張',2,'phr.','The shelves implied a proprietary claim over shared space.','架子的安排暗示對共用空間的佔有主張。'],
-['an aesthetic at odds with habitation','與日常居住使用不協調的美學',2,'phr.','The room embodied an aesthetic at odds with habitation.','房間呈現與居住使用不協調的美學。'],
+["an aesthetic at odds with everyday use","與日常使用需求相衝突的美學",2,"phr.","The bare concrete interior embodies an aesthetic at odds with everyday use.","裸露的混凝土室內空間體現了與日常使用需求相衝突的美學。"],
 ['Personal taste should not masquerade as a neutral standard','個人品味不應偽裝成中立標準',3],
 ['A workable compromise may lack visual uniformity','可行折衷可能欠缺視覺一致',3],
 ['Shared ownership requires more than the absence of personal belongings','共有不只需要沒有個人物品',3]

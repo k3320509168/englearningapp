@@ -26,16 +26,16 @@ listening: [
 [1,'Had the archivist not indexed the microfilms in the 1970s modern historians would be unable to reconstruct deliberations. What helped?','The archivist diligent indexing half a century ago.|The public broadcast of the council secret audio recordings.|The recent discovery of unedited diplomatic memoirs.|The oral recollections of surviving delegates from the era.','過去完成假設對應現在能力，歸功於檔案員當年的編目。']
 ],
 voices: [
-['it is imperative that','極為重要的是；勢在必行',1,'phr.','It is imperative that the diplomatic delegation be granted absolute legal immunity.','極為重要的是，外交代表團必須獲得完全的司法豁免權。'],
+["it is imperative that","必須做到某件事（正式強調）",1,"phr.","It is imperative that every applicant receive the same instructions.","每位申請人都必須收到相同的指示。"],
 ['had it functioned','假使當時正常運作',1,'phr.','Had the early warning system functioned thousands of casualties would be averted today.','假使當時預警系統正常運作，今天成千上萬的傷亡本可得以避免。'],
-['recommended that it be','建議應予如何辦理',1,'phr.','The committee recommended that the draft constitution be submitted to a referendum.','委員會正式建議，應將憲法草案交付全民公投決定。'],
+["recommended that it be revised","建議修訂該文件（使用被動語態）",1,"phr.","The panel reviewed the draft and recommended that it be revised.","小組審閱草案後，建議對草案作出修訂。"],
 ['come what may','無論發生何事；不管怎樣',1,'phr.','Come what may our steadfast commitment to universal human dignity will not waver.','無論前路發生何事，我們對普世人類尊嚴的堅定承諾絕不動搖。'],
-['suffice it to say','只需說…就夠了；簡而言之',1,'phr.','Suffice it to say that geopolitical ambiguity rarely resolves territorial discord.','簡而言之，地緣政治上的模稜兩可鮮少能夠真正解決領土紛爭。'],
-['demanded that it be','堅決要求應予如何處置',1,'phr.','The high court demanded that the clandestine surveillance program be dismantled immediately.','最高法院堅決要求，必須立即徹底拆除這項秘密監控計畫。'],
-['were it not for','若非因為現存之某因素',1,'phr.','Were it not for sovereign credit guarantees the monetary union would be in insolvency.','若非因為國家主權信用擔保，貨幣聯盟今日早已陷入全面無力償債。'],
-['be that as it may','即便如此；話雖如此',1,'phr.','Be that as it may the institutional framework demands uncompromising compliance.','即便如此，現行的體制框架依然要求毫無妥協餘地的嚴格遵守。'],
-['stipulated that each state','明文規定各成員國應當',1,'phr.','The treaty required that each signatory state destroy its stockpile of chemical munitions.','條約嚴格規定，每個簽約國都必須銷毀其庫存的化學軍火。'],
-['would still be frozen','今日依然會處於凍結狀態',1,'phr.','If the arbitration had stalled last month financial liquidity would still be frozen today.','若仲裁上個月陷入停滯，金融體系的流動性今日依然會處於凍結狀態。']
+["suffice it to say","只要說到這裡就夠了；簡而言之",1,"phr.","Suffice it to say that the figures were less reliable than we had hoped.","簡而言之，這些數字不如我們原先期望的那麼可靠。"],
+["demanded that it be withdrawn","要求撤回該提案（使用被動語態）",1,"phr.","The union objected to the proposal and demanded that it be withdrawn.","工會反對該提案，並要求撤回。"],
+["were it not for","若不是因為（省略 if 的假設倒裝）",1,"phr.","Were it not for the volunteers, the archive would remain closed.","若不是有志工，檔案館仍會關閉。"],
+["be that as it may","話雖如此；即便如此",1,"phr.","Be that as it may, we still need evidence to support the claim.","話雖如此，我們仍需要證據支持該主張。"],
+["stipulated that each state report its findings","明文規定每個國家都應提交其調查結果",1,"phr.","The agreement stipulated that each state report its findings.","協議明文規定，每個國家都應提交其調查結果。"],
+["would still be frozen","到那時仍會處於凍結狀態",1,"phr.","If the judge had not intervened, the funds would still be frozen.","如果法官當時沒有介入，那筆款項現在仍會凍結。"]
 ],
 spells: [
 ['PLENIPOTENTIARY','n.','擁有全權代表國家談判締約的全權特使','The sovereign dispatched a plenipotentiary to negotiate the armistice.','國家元首派遣了一位全權特使前往敵國商定停戰協定。'],
@@ -89,15 +89,15 @@ listening: [
 ],
 voices: [
 ['of paramount necessity','具有至高無上之必要性',1,'phr.','It is of paramount importance that human rights protocols be maintained without exception.','無可動搖的一點是，基本人權保障公約必須無一例外地予以嚴格遵守。'],
-['far be it from me','我絕無意…；絕不敢自居',1,'phr.','Far be it from this committee to dictate sovereign domestic legislative prerogatives.','本委員會絕無意僭越干預各自主權國家的內部國內立法特權。'],
-['had safeguards been ratified','若防護體制當時獲批准',1,'phr.','Had constitutional safeguards not been ratified civic institutions would be dismantled today.','若非憲法防護條款當時及時獲得批准，今日公民民主制度早已被徹底瓦解。'],
-['dictates that no trustee','明確約束任何受託人均不得',1,'phr.','The statutory framework mandates that fiduciary custodians exercise scrupulous prudence.','法定體制嚴正要求，所有信託財產管理人均必須履行極致審慎的注意義務。'],
+["far be it from me","我絕無意這麼做（固定語式）",1,"phr.","Far be it from me to tell you how to do your job.","我絕無意告訴你該如何做你的工作。"],
+["had the safeguards been approved","如果當時已批准這些保障措施（使用倒裝）",1,"phr.","Had the safeguards been approved, the participants would have been better protected.","如果當時已批准這些保障措施，參與者就能得到更好的保護。"],
+["prohibits trustees from profiting","禁止受託人牟利",1,"phr.","The agreement prohibits trustees from profiting from the sale.","這份協議禁止受託人從這筆交易中牟利。"],
 ['lest inadvertent provocation','以免引發非預期之挑釁',1,'phr.','The diplomat walked cautiously lest inadvertent rhetorical provocation ignite hostilities.','外交官行事極其慎重，唯恐不經意間的言辭挑釁點燃邊境武裝衝突的引信。'],
 ['truth be told','實話實說；坦白而言',1,'phr.','Truth be told structural insolvency cannot be cured through cosmetic monetary adjustments.','坦白而言，長期的結構性債務破產絕非單憑表面化的微調貨幣政策所能療癒。'],
-['decreed that they be','依法正式頒佈命令要求',1,'phr.','The magistrate decreed that the confiscated archives be repatriated to the national library.','司法巡察官依法頒布命令，要求將被查扣的珍貴歷史檔案歸還予國家圖書館。'],
-['were tipping points surpassed','若關鍵臨界點遭到突破',1,'phr.','Were ecological tipping points surpassed the planetary climate would be irreparably altered.','一旦生態環境臨界點被突破，整個地球的氣候系統便將面臨不可逆的永久巨變。'],
-['stipulated that the engine','明確約定該演算法引擎',1,'phr.','The oversight council stipulated that the algorithmic engine be audited by external referees.','監管審議會明文約定，該演算法推論核心必須由外部獨立專家進行嚴格審查。'],
-['lest systemic contagion spread','以免系統性金融傳染蔓延',1,'phr.','Lest systemic contagion spread the central bank injected emergency liquidity into the market.','為防範系統性金融危機蔓延擴散，中央銀行火速向貨幣市場注入了緊急流動性。']
+["decreed that the records be sealed","下令封存這些紀錄（使用被動語態）",1,"phr.","The court decreed that the records be sealed until the appeal was heard.","法院下令封存這些紀錄，直到上訴獲得審理。"],
+["were those thresholds to be crossed","若越過那些門檻（使用倒裝）",1,"phr.","Were those thresholds to be crossed, the projected damage could be much greater.","若越過那些門檻，預估損害可能大得多。"],
+["stipulated that the system be audited","明文規定須對該系統進行稽核",1,"phr.","The contract stipulated that the system be audited before it went live.","合約明文規定，該系統上線前須經稽核。"],
+["lest the problem spread","以免問題擴大",1,"phr.","The organisers intervened early lest the problem spread to other venues.","主辦方提早介入，以免問題擴大到其他場地。"]
 ],
 spells: [
 ['PARAMOUNT','adj.','至高無上的首要的核心準則','Public health and biosecurity protocols were of paramount concern during the crisis.','在危機爆發期間，公眾衛生與生物安全防護規範具有至高無上的首要重要性。'],

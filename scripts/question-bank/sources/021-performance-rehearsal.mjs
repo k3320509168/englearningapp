@@ -91,7 +91,7 @@ voices:[
 ['cadence','說話或聲音的節奏起伏',1,'n.','The cadence makes the line sound uncertain.','語調節奏使台詞顯得不確定。'],
 ['a deliberately spare setting','刻意簡約的場景布置',1,'phr.','The actors work within a deliberately spare setting.','演員在刻意簡約的布景中表演。'],
 ['a finely judged transition','拿捏精準的轉換',2,'phr.','The scene ends with a finely judged transition.','場景以精準轉換結束。'],
-['a sustained emotional tension','持續維持的情感張力',2,'phr.','The pauses create a sustained emotional tension.','停頓創造持續情感張力。'],
+["sustained emotional tension","持續的情感張力",2,"phr.","The restrained dialogue creates sustained emotional tension throughout the scene.","克制的對白使整場戲維持著情感張力。"],
 ['Ambiguity need not obscure who is speaking','歧義不必模糊誰在說話',3],
 ['Preparation can support the impression of spontaneous discovery','準備可支撐自發發現的觀感',3],
 ['The same words can change function with different listeners','同樣字句可因聽者不同改變作用',3]
@@ -148,7 +148,7 @@ voices:[
 ['catharsis','戲劇等引起的情緒宣洩與釋放',1,'n.','The ending withholds catharsis.','結尾不提供情緒釋放。'],
 ['an arresting visual composition','引人注意的視覺構圖',1,'phr.','The scene opens with an arresting visual composition.','場景以醒目構圖開始。'],
 ['a brittle assertion of certainty','帶脆弱感的確定宣示',2,'phr.','The reply is a brittle assertion of certainty.','回覆是帶脆弱感的確定宣示。'],
-['an emotionally unearned resolution','情感鋪陳不足而突兀的解決',2,'phr.','The critic rejects an emotionally unearned resolution.','評論者不接受情感不足的突兀解決。'],
+["an emotionally unearned resolution","缺乏情感鋪陳的結局",2,"phr.","The reviewer called the sudden reconciliation an emotionally unearned resolution.","評論者認為這場突如其來的和解是個缺乏情感鋪陳的結局。"],
 ['Recognition need not resolve the predicament','理解不必解決角色困境',3],
 ['Visible intensity does not establish emotional complexity','可見強度不證成情緒複雜性',3],
 ['A repeated gesture changes force when the character knows more','角色知道更多時重複動作的作用會改變',3]

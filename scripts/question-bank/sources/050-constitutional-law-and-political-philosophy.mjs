@@ -26,15 +26,15 @@ export const data = {
       [1,'The amicus curiae brief submitted by twenty civil liberties groups urged the bench to safeguard free expression. Who submitted it?','Friend of the court briefs providing expert legal arguments from interested non parties to aid deliberations.|Foreign sovereign military commanders demanding immediate diplomatic intervention in maritime straits.|Commercial advertising agencies seeking to promote consumer sugary beverage products to jurors.|Convicted criminal felons appealing their sentences from solitary confinement cellblocks.','由二十家人權法學智庫聯合提交的「法庭之友意見書（Amicus curiae）」，以極具深度的國際判例論述，懇請大法官們在審議中堅定守護公民思想表達自由的底線。']
     ],
     voices: [
-      ['constitutional separation of powers','憲政主義核心之立法行政司法三權分立',1,'phr.','The framers designed the constitutional separation of powers to prevent monarchical despotism.','立憲先賢們精心鑄造了憲法三權分立制度，旨在從結構上徹底杜絕任何君主專制專橫死灰復燃。'],
-      ['substantive due process liberty','實質正當法律程序所保障之根本自由',1,'phr.','The court grounded reproductive autonomy within the guarantees of substantive due process liberty.','最高法院將公民的自主權利，堅實地錨定在實質正當法律程序所賦予的基本人身自由保障之內。'],
+      ["separation of powers","權力分立",1,"phr.","The article examines how the separation of powers shapes the relationship between courts and legislatures.","文章探討權力分立如何影響法院與立法機關的關係。"],
+      ["substantive due process","實質正當法律程序",1,"phr.","The seminar examined competing interpretations of substantive due process.","研討會檢視對實質正當法律程序的不同解釋。"],
       ['judicial review invalidation','違憲審查制度下宣告違憲法律自始無效',1,'phr.','The supreme court exercised judicial review invalidation against the discriminatory electoral law.','憲法法庭毅然決然行使司法審查權，以違憲為由當庭裁決將這部充斥著歧視色彩的選舉法條文徹底廢止。'],
-      ['veil of ignorance thought experiment','羅爾斯正義論之無知之幕思想實驗',1,'phr.','Rawlsian justice relies on the veil of ignorance thought experiment to determine fair distributive principles.','羅爾斯正義論精妙依託無知之幕思想實驗，旨在推導出超越階層偏狹的真正公平資源分配正義準則。'],
-      ['doctrine of stare decisis stability','遵循先例原則為普通法帶來之確定性',1,'phr.','Overruling entrenched precedent demands compelling justification under the doctrine of stare decisis stability.','在遵循先例原則所賦予的崇高穩定性面前，輕率推翻歷史判例必須出示具備壓倒性說服力的法理依據。'],
+      ["the veil of ignorance","無知之幕",1,"phr.","The seminar used the veil of ignorance to discuss how people might choose fair rules.","研討會以無知之幕討論人們可能如何選擇公平的規則。"],
+      ["the doctrine of precedent","遵循判例原則",1,"phr.","The lecture considered the doctrine of precedent and the weight of earlier decisions.","講座探討了遵循判例原則，以及先前判決所具有的份量。"],
       ['principled civil disobedience','出於憲政良知之公開非暴力公民不服從',1,'phr.','Leaders practiced principled civil disobedience to dismantle systemic statutory racial segregation.','民權領袖們以無畏的勇氣實踐了出於憲政良知的公民不服從，以肉身推倒了法定的種族隔離體系惡法。'],
-      ['strict scrutiny standard review','限制基本權利時最嚴苛之嚴格審查標準',1,'phr.','Legislation curbing fundamental political speech must survive the strict scrutiny standard review.','任何企圖閹割限制公民政治言論自由的立法法案，都必須在憲法法庭最嚴苛的嚴格審查標準下經受考驗。'],
-      ['habeas corpus judicial petition','勒令提審受拘押人以審查人身保護令狀',1,'phr.','Attorneys filed an emergency habeas corpus judicial petition to challenge the unlawful military detention.','人權大律師火速向高等法院遞交緊急人身保護令狀，要求司法機關即刻介入徹查非法軍事拘禁。'],
-      ['ultra vires administrative overreach','行政機關超越法定授權範圍之非法越權',1,'phr.','The appellate bench struck down the environmental directive as an unconstitutional ultra vires administrative overreach.','上訴巡迴法庭直指該環保部指令在法律上構成行政權非法越權，當庭判定其自始無效。'],
+      ["apply strict scrutiny","採用嚴格審查標準",1,"phr.","The article considers when a court might apply strict scrutiny.","文章探討法院何時可能採用嚴格審查標準。"],
+      ["a petition for habeas corpus","人身保護令聲請",1,"phr.","The case summary notes that the lawyers filed a petition for habeas corpus.","案件摘要指出，律師提出了人身保護令聲請。"],
+      ["exceed its statutory authority","超越其法定權限",1,"phr.","The review asked whether the agency had acted in a way that would exceed its statutory authority.","審查檢視該機關的作為是否超越其法定權限。"],
       ['proportionality balancing test','衡平公益與私益之三階比例原則檢驗',1,'phr.','Constitutional courts deploy the proportionality balancing test to assess the validity of civil restrictions.','各國憲法法院廣泛採用三階比例原則利益衡量檢驗，以客觀評估各項限制民事自由措施的憲法正當性。']
     ],
     spells: [

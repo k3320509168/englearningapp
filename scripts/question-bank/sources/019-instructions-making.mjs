@@ -91,7 +91,7 @@ voices:[
 ['tolerance','尺寸等允許偏差的範圍',1,'n.','The gap falls within the stated tolerance.','間隙在明定容差內。'],
 ['a repeatable procedure','能反覆得到相應結果的程序',1,'phr.','The guide describes a repeatable procedure.','指南描述可重現程序。'],
 ['a consistent frame of reference','前後一致的參照框架',2,'phr.','Comparison requires a consistent frame of reference.','比較需一致參照框架。'],
-['a functionally adequate result','功能上足以符合要求的結果',2,'phr.','A close match gives a functionally adequate result.','近似配合可提供功能足夠的結果。'],
+["a result that meets the requirements","符合要求的結果",2,"phr.","The team needs a result that meets the requirements before it can proceed.","團隊需要先得到符合要求的結果，才能繼續。"],
 ['Precision does not guarantee that the reference point is correct','精密不保證參照點正確',3],
 ['An illustration need not specify a fixed stopping count','示例不必規定固定停止次數',3],
 ['A simplified diagram can clarify structure while omitting detail','簡圖可說清結構同時省略細節',3]

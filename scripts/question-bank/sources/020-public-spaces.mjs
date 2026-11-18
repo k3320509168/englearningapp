@@ -91,7 +91,7 @@ voices:[
 ['threshold','進入某活動或空間前需跨過的門檻',1,'n.','Unclear instructions create an unnecessary threshold.','不清楚指示造成不必要門檻。'],
 ['a legible spatial hierarchy','容易理解的空間層級',1,'phr.','The lobby has a legible spatial hierarchy.','大廳空間層級易理解。'],
 ['an institutional vocabulary','某機構內部慣用的詞彙',2,'phr.','Visitors may not know the institutional vocabulary.','遊客未必熟悉機構用語。'],
-['a readily discoverable alternative','容易找到資訊的替代選項',2,'phr.','The staffed desk should be a readily discoverable alternative.','人工櫃台應是容易發現的替代選項。'],
+["an easy to find alternative","容易找到的替代選項",2,"phr.","For visitors who prefer to speak to someone, the staffed desk should be an easy-to-find alternative.","對偏好與人交談的訪客來說，有人服務的櫃台應當是容易找到的替代選項。"],
 ['Physical entry does not guarantee a sense of welcome','能實際進入不保證感到被歡迎',3],
 ['The same route can impose different demands on different users','同路線可對不同使用者造成不同負擔',3],
 ['Information must be discoverable without prior familiarity','資訊應不靠事先熟悉就能找到',3]
@@ -147,7 +147,7 @@ voices:[
 ['inscrutable','難以理解或看透的',1,'adj.','The layout seemed inscrutable to a newcomer.','格局對新客似乎難懂。'],
 ['exclusionary','具有排除某些人效果或目的的',1,'adj.','The assumption has an exclusionary effect.','假設有排除效果。'],
 ['a tacitly privileged starting point','被默默優先考量的起點',1,'phr.','The route assumes a tacitly privileged starting point.','路線預設默默優先考量的起點。'],
-['an ostensibly universal provision','表面上適用所有人的設施安排',2,'phr.','The report questions an ostensibly universal provision.','報告質疑表面普遍的安排。'],
+["an ostensibly universal provision","表面上適用所有人的安排",2,"phr.","The report questions an ostensibly universal provision that excludes anyone without internet access.","報告質疑一項表面上適用所有人，卻把無法上網者排除在外的安排。"],
 ['a presumption of prior competence','預設使用者已有所需能力',2,'phr.','The entrance system relies on a presumption of prior competence.','入場系統依賴先備能力預設。'],
 ['Formal openness may coexist with practical exclusion','形式開放可能與實際排除並存',3],
 ['A discoverable alternative must be visible to unfamiliar users','可被發現的替代方案須讓新手看見',3],

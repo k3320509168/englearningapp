@@ -26,16 +26,16 @@ export const data = {
       [1,'The Atomic Layer Deposition (ALD) tool deposited conformal hafnium oxide dielectrics. What was achieved?','Monolayer by monolayer thickness control with flawless step coverage inside high aspect ratio trenches.|Spraying thick layers of molten plastic over the wafer to protect it from rainwater leaks.|Heating the silicon wafer until all metal contacts evaporated into the vacuum chamber.|Etching away ninety percent of the silicon substrate within thirty seconds of processing.','原子層沉積（ALD）機台以單原子層自限制表面化學吸附反應，精雕細琢沉積出超薄、均勻一致的二氧化鉿高介電常數（High-k）絕緣柵氧化層：在深寬比極高的微觀溝槽內部達成了令人嘆為觀止的完美階梯覆蓋。']
     ],
     voices: [
-      ['extreme ultraviolet lithography scanner','雕刻先進製程晶片之極紫外光刻曝光機',1,'phr.','The foundry installed the latest extreme ultraviolet lithography scanner to ramp three nanometer output.','這座新落成的旗艦晶圓廠連夜吊裝了最新一代極紫外光刻曝光機，以全力衝刺三奈米先進產能爬坡。'],
-      ['semiconductor wafer fabrication foundry','晶圓代工模式之半導體晶圓製造晶圓廠',1,'phr.','Operating an advanced semiconductor wafer fabrication foundry requires tens of billions in capex.','興建並維護一座頂級先進半導體晶圓代工廠，每年都需要吞吐數以百億美元計的驚人資本支出。'],
-      ['global supply chain chokepoint vulnerability','牽一髮動全身之全球供應鏈咽喉脆弱性',1,'phr.','The report mapped global supply chain chokepoint vulnerabilities across critical precursors.','智庫發布的地緣經濟報告，一針見血揭露了全球高科技供應鏈在特種光阻等關鍵上游耗材上的致命咽喉脆弱性。'],
-      ['advanced heterogeneous packaging architecture','突破摩爾極限之先進立體異質整合封裝架構',1,'phr.','NVIDIA accelerated AI compute through advanced heterogeneous packaging architectures like CoWoS.','全球算力霸主輝達透過台積電先進立體異質整合封裝架構，打破晶粒面積天花板釋放出毀天滅地的運算力。'],
-      ['friend shoring strategic diversification','重構地緣安全之友岸外包戰略多元化',1,'phr.','Western democracies championed friend shoring strategic diversification to counter trade coercion.','西方主要經濟體不遺餘力鼓吹友岸外包戰略多元化，誓要徹底粉碎威權對手揮舞貿易大棒敲詐勒索的圖謀。'],
+      ["extreme ultraviolet lithography","極紫外光微影技術",1,"phr.","The engineer explained how extreme ultraviolet lithography fits into the manufacturing process.","工程師說明極紫外光微影技術在製造流程中所扮演的角色。"],
+      ["semiconductor foundry","半導體晶圓代工廠",1,"phr.","The chip designer contracted a semiconductor foundry to manufacture the new processor.","晶片設計商委託一家半導體晶圓代工廠製造新處理器。"],
+      ["a supply chain bottleneck","供應鏈瓶頸",1,"phr.","The shortage exposed a supply chain bottleneck that had previously gone unnoticed.","這次短缺暴露出先前未被察覺的供應鏈瓶頸。"],
+      ["heterogeneous integration in chip packaging","晶片封裝中的異質整合",1,"phr.","The talk surveyed approaches to heterogeneous integration in chip packaging.","演講概述晶片封裝中異質整合的各種做法。"],
+      ["diversify supplier networks","讓供應商網絡多元化",1,"phr.","The company decided to diversify supplier networks to reduce its reliance on a single supplier.","公司決定讓供應商網絡更多元，以降低對單一供應商的依賴。"],
       ["through silicon via","穿矽導孔",1,"phr.","A through-silicon via can carry signals vertically between stacked memory dies.","穿矽導孔可以在堆疊的記憶體晶粒之間垂直傳輸訊號。"],
-      ['pure play semiconductor foundry model','不與客戶爭利之純晶圓代工經營模式',1,'phr.','The pure play semiconductor foundry model revolutionized the global fabless design ecosystem.','台積電開創的純晶圓代工模式，直接孕育並繁榮了全球無數極具創新活力的無廠晶片設計獨角獸。'],
-      ['critical minerals export control licensing','卡死先進材料之關鍵稀缺礦產出口管制審批',1,'phr.','Authorities weaponized critical minerals export control licensing to disrupt overseas battery plants.','監管機關將關鍵戰略礦產的出口管制許可武器化，令海外競對電池工廠的原材料供應鏈瞬間陷入停擺危機。'],
-      ['atomic layer deposition conformal coating','精準至單原子層之原子層沉積保形塗層技術',1,'phr.','Engineers relied on atomic layer deposition conformal coating to insulate deep FinFET gate structures.','製程架構工程師完全依託原子層沉積保形薄膜技術，為深邃立體的鰭式電晶體閘極披上了天衣無縫的絕緣羽衣。'],
-      ['cleanroom airborne particulate contamination','摧毀整片晶圓之潔淨室懸浮微粒污染隱患',1,'phr.','HEPA filtration systems eliminate cleanroom airborne particulate contamination to ensure high yields.','全天候運轉的超高效空氣過濾循環矩陣，將潔淨室內部的懸浮微粒污染壓低至極限，誓死捍衛百億晶圓良率。']
+      ["a pure play foundry","專做晶圓代工的廠商",1,"phr.","The designer chose a pure-play foundry to manufacture the new chips.","設計商選擇一家專做晶圓代工的廠商來製造新晶片。"],
+      ["export licences for critical minerals","關鍵礦物的出口許可",1,"phr.","The report examined applications for export licences for critical minerals.","報告檢視了關鍵礦物出口許可的申請。"],
+      ["atomic layer deposition","原子層沉積",1,"phr.","The new facility can apply thin coatings using atomic layer deposition.","新設施可以使用原子層沉積來施加薄層塗膜。"],
+      ["airborne particle contamination","空氣中微粒造成的污染",1,"phr.","The team investigated airborne particle contamination in the cleanroom.","團隊調查無塵室內由空氣中微粒造成的污染。"]
     ],
     spells: [
       ['LITHOGRAPHY','n.','利用光學、電子束在矽晶圓感光膠層上精準轉移超微奈米電路圖案的光刻微影技術','Advanced photolithography forms the core technological pillar of modern silicon fabrication.','尖端光刻微影技術（Lithography），巍然矗立於當代超大規模集成電路矽晶圓製造的最核心殿堂。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The export enforcement task force intercepted illicit transshipments of advanced GPU accelerator clusters. How?','Shell companies established in third party jurisdictions routed deliveries through intermediary logistics hubs to evade scrutiny.|Criminals hid the large metal computer servers inside their personal carry on airline suitcases.|The computer chips were dissolved into clear chemical liquids and shipped inside plastic perfume bottles.|The export smugglers painted the computer server cases to resemble wooden grandfather clocks.','多國聯合出口管制執法小組成功斬斷了一條跨國走私先進 GPU 算力集群的地下黑產鏈條：暗黑走私網絡透過在第三國避稅天堂設立層層幽靈空殼公司，利用中轉物流樞紐偷梁換換柱，企圖以此規避西方大國對先進 AI 算力的鋼鐵禁運。']
     ],
     voices: [
-      ['gate all around nanosheet architecture','徹底杜絕短通道漏電之全環繞閘極奈米片架構',2,'phr.','The industry embraced the gate all around nanosheet architecture to push Moore\'s Law further.','全球晶片製造全產業鏈集體擁抱全環繞閘極奈米片架構，以無畏姿態將摩爾定律再次推向極限。'],
-      ['backside power delivery network decoupling','電壓降歸零供電走線移至晶圓背部之背面供電',2,'phr.','Implementing backside power delivery network decoupling eliminated routing congestion on the front.','背面供電網路技術的革命性解耦實裝，徹底掃清了晶圓正面信號層密密麻麻金屬走線的擁塞噩夢。'],
-      ['wafer to wafer hybrid direct bonding','無焊球分子共形熔融之晶圓級混合鍵合技術',2,'phr.','The 3D image sensor achieved sub micron pitch via wafer to wafer hybrid direct bonding.','新一代頂級 3D 影像感測器依託晶圓對晶圓混合鍵合技術，達成了亞微米級接點間距的立體神蹟。'],
-      ['chemical mechanical planarization uniformity','拋光晶圓至原子級平整之化學機械研磨拋光',2,'phr.','Atomic level chemical mechanical planarization uniformity is mandatory for multi layer lithography.','原子級絕對平整的化學機械研磨拋光均勻度，是多層複雜光刻微影製程中不容絲毫妥協的鋼鐵前提。'],
-      ['foreign direct product rule export licensing','動用長臂管制封鎖先進晶片之外國直接產品原則',2,'phr.','The regulatory agency tightened foreign direct product rule export licensing to prevent technology leaks.','監管當局全面收緊外國直接產品原則長臂審批絞索，以銅牆鐵壁杜絕先進硬核技術流入威權軍工體系。'],
-      ['atomic layer etching deterministic control','單原子層逐層精準剝離之原子層蝕刻確定性控制',2,'phr.','Engineers leveraged atomic layer etching deterministic control to pattern sub five nanometer gates.','工藝巨擘們利用原子層蝕刻確定性控制的超凡精度，在次五奈米深處雕刻出無可挑剔的完美垂直閘極。'],
-      ['stochastic line edge roughness mitigation','抑制量子光子散粒雜訊之線邊粗糙度消除對策',2,'phr.','Advanced resist chemistry enabled significant stochastic line edge roughness mitigation.','特種化學光阻聚合物的分子級革命，為平息極紫外光子隨機散粒雜訊導致的線邊粗糙度立下了奇功。'],
-      ['co packaged optics silicon photonics integration','光子直驅取代發熱銅線之光電共封裝矽光子整合',2,'phr.','Hyperscale datacenters embraced co packaged optics silicon photonics integration to slash power.','全球超算資料中心大舉換裝光電共封裝矽光子整合模組，將 AI 集群內部互連功耗腰斬過半。'],
-      ['chip four alliance semiconductor resilience','美日韓台四大半導體巨頭締結之晶片四方同盟',2,'phr.','Diplomats convened to formalize the chip four alliance semiconductor resilience framework.','各國特使齊聚一堂正式簽署晶片四方同盟戰略框架，將民主世界最核心的半導體製造命脈緊緊銲死在一起。'],
-      ['wide bandgap semiconductor power conversion','耐受千伏高壓熱力學穩定之寬能隙半導體功率轉換',2,'phr.','Electric supercars rely on wide bandgap semiconductor power conversion for lightning fast charging.','新一代純電百萬超跑全線搭載寬能隙半導體碳化矽功率變流模組，達成了驚豔世人的三分鐘極限超充。']
+      ["a gate all around transistor","全環繞閘極電晶體",2,"phr.","The presentation compares a gate-all-around transistor with an earlier design.","簡報比較全環繞閘極電晶體與較早期的設計。"],
+      ["backside power delivery","背面供電",2,"phr.","The engineer outlined the benefits and trade-offs of backside power delivery.","工程師概述背面供電的優點及取捨。"],
+      ["wafer to wafer hybrid bonding","晶圓對晶圓混合鍵合",2,"phr.","The presentation compared two approaches to wafer-to-wafer hybrid bonding.","簡報比較兩種晶圓對晶圓混合鍵合的方法。"],
+      ["chemical mechanical planarisation","化學機械平坦化",2,"phr.","Engineers compared two approaches to chemical mechanical planarisation.","工程師比較了兩種化學機械平坦化方法。"],
+      ["the foreign direct product rule","外國直接產品規則",2,"phr.","The seminar examined how firms assess the scope of the foreign direct product rule.","研討會探討企業如何評估外國直接產品規則的適用範圍。"],
+      ["atomic layer etching","原子層蝕刻",2,"phr.","The researchers assessed whether atomic layer etching suited their process.","研究人員評估原子層蝕刻是否適合其製程。"],
+      ["line edge roughness","線邊粗糙度",2,"phr.","The team measured line edge roughness after processing.","團隊在加工後量測線邊粗糙度。"],
+      ["co packaged optics","共同封裝光學",2,"phr.","The engineer explained the trade-offs of co-packaged optics.","工程師說明共同封裝光學的取捨。"],
+      ["resilience in semiconductor supply chains","半導體供應鏈的韌性",2,"phr.","The report analyses policies aimed at strengthening resilience in semiconductor supply chains.","報告分析旨在強化半導體供應鏈韌性的政策。"],
+      ["wide bandgap semiconductors","寬能隙半導體",2,"phr.","The presentation surveyed applications for wide-bandgap semiconductors.","簡報概述寬能隙半導體的應用。"]
     ],
     spells: [
       ['FABRICATION','n.','在尖端無塵室環境中由數百道微觀工序將矽片打造成微晶片的半導體製造製程','Wafer fabrication demands ultra clean chemical reagents and vibration isolated foundations.','晶圓製造製程（Fabrication）對工業超純化學試劑的潔淨度與地質抗震基礎有著近乎病態的苛刻要求。'],

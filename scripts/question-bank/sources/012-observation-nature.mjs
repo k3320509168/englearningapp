@@ -93,7 +93,7 @@ voices:[
 ['corroboration','支持某說法的其他佐證',1,'n.','The sighting needs independent corroboration.','目擊需要獨立佐證。'],
 ['a provisional classification','仍可修改的暫定分類',1,'phr.','We used a provisional classification.','我們採用暫定分類。'],
 ['a marked discrepancy','明顯的差異或不一致',2,'phr.','There is a marked discrepancy between the records.','紀錄間有明顯差異。'],
-['a systematic observation bias','觀察方式造成的系統性偏差',2,'phr.','The timing may create a systematic observation bias.','時段可能造成系統性觀察偏差。'],
+["systematic bias in observation","觀察中的系統性偏差",2,"phr.","Recording results only in the morning may introduce systematic bias in observation.","只在早上記錄結果，可能使觀察產生系統性偏差。"],
 ['Compatibility with an explanation does not establish its truth','符合某解釋不證成它為真',3],
 ['The apparent boundary may reflect where observers have looked','表面界線可能反映觀察者搜尋範圍',3],
 ['Comparable records require attention to how observations were made','可比較紀錄需要留意觀察方法',3]

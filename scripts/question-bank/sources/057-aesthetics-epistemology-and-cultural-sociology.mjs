@@ -26,16 +26,16 @@ export const data = {
       [1,'The cultural sociologist applied habitus to explain educational stratification. What perpetuates disparity?','Deep seated, internalized dispositions and linguistic codes acquired from class backgrounds that schools unconsciously reward.|The statutory prohibition of working class children from entering the physical grounds of public schools.|The inability of working class students to afford identical pencils and notebooks used by wealthy children.|The legal requirement that elite private universities admit only students who are taller than six feet.','當代文化社會學家動用布爾迪厄的「慣習（Habitus）」王牌理論，無情戳穿了精英教育階層固化的遮羞布：底層學子並非智力不逮，而是精英名校那套不假思索的考核評價體系，往往暗中獎勵並偏袒精英家庭自幼耳濡目染的言談談吐、文化眼界與肢體自信等深層階級慣習。']
     ],
     voices: [
-      ['husserl phenomenological epoche suspension','懸置客觀成見直擊現象本質之現象學還原',1,'phr.','Philosophers performed the husserl phenomenological epoche suspension to examine pure conscious flow.','現象學家們毅然啟動胡塞爾式的現象學懸置還原法，將外界一切常識暫時打上括號以直探純粹意識流。'],
-      ['hermeneutic circular interpretation dynamic','局部與整體互為參照之詮釋學循環動態',1,'phr.','Literary analysis requires navigation of the hermeneutic circular interpretation dynamic across chapters.','對這部鴻篇巨著的文學批評，無時無刻不置身於局部細節與宏觀視域相互參照的詮釋學循環律動之中。'],
-      ['bourdieu habitus embodied cultural capital','刻進言談舉止品味骨髓之身體化文化資本',1,'phr.','Elite boarding schools inculcate bourdieu habitus embodied cultural capital that reproduces status.','頂級貴族私校在潛移默化中為豪門子弟注入了布爾迪厄式的慣習與身體化文化資本，悄然鎖定階級複製。'],
-      ['gramsci cultural hegemony ideology','以主流常識馴化大眾之葛蘭西文化霸權',1,'phr.','The ruling elite consolidated power through gramsci cultural hegemony ideology across mass media.','統治階層巧妙利用大眾傳媒築牢了葛蘭西式文化霸權意識形態，將自身特權粉飾為天經地義的普通常識。'],
-      ['adorno culture industry mass commodification','流水線低智洗腦大眾之文化工業商品化',1,'phr.','Critics attacked reality television as adorno culture industry mass commodification at its worst.','激進文化批評家痛斥低俗真人秀節目，直指其已墮落為阿多諾筆下文化工業流水線商品化的終極毒瘤。'],
-      ['foucault power knowledge discourse regime','劃定瘋癲與文明邊界之傅柯權力知識話語體制',1,'phr.','Psychiatry evolved within a complex foucault power knowledge discourse regime of institutional control.','現代精神病學的歷史流變，始終深陷在傅柯揭露的權力/知識話語體制與收容規訓網絡的幽暗泥淖之中。'],
-      ['walter benjamin mechanical aura decay','工業複製大潮洗禮下之藝術品原始靈光消逝',1,'phr.','Mass production precipitated irreversible walter benjamin mechanical aura decay across fine arts.','海量流水線工業複製的滔天巨浪，無可挽回地加速了經典純藝術作品原始靈光（Aura）的消逝殞落。'],
-      ['structuralist semiotic myth deconstruction','刺破階級意識形態面紗之符號學神話解構',1,'phr.','The theorist executed a rigorous structuralist semiotic myth deconstruction of advertising tropes.','符號學泰斗對當代奢侈品廣告套路展開了一場摧枯拉朽、直擊靈魂的結構主義神話學符號大解構。'],
-      ['critical regionalism architectural idiom','對抗千城一面玻璃方盒之批判地域主義語彙',1,'phr.','The museum architect adopted a critical regionalism architectural idiom honoring vernacular stone.','這座新銳當代美術館建築大師大膽擁抱批判地域主義語彙，將在地粗獷的火山岩石與現代鋼構天衣無縫熔鑄。'],
-      ['kuhn epistemological paradigm revolution','連根拔起重塑認知底座之庫恩範式革命',1,'phr.','The discovery of general relativity sparked a historic kuhn epistemological paradigm revolution.','愛因斯坦廣義相對論的橫空出世，在全人類物理學思想史上引爆了一場驚天動地的庫恩範式革命。']
+      ["suspend prior assumptions","暫時擱置既有假設",1,"phr.","The instructor asked students to suspend prior assumptions and describe what they observed.","教師請學生暫時擱置既有假設，並描述觀察到的情況。"],
+      ["the hermeneutic circle","詮釋學循環",1,"phr.","Through the hermeneutic circle, readers revise their understanding of the whole as they interpret each part.","在詮釋學循環中，讀者會隨著對各部分的解讀修正對整體的理解。"],
+      ["embodied cultural capital","體現於言行與習慣中的文化資本",1,"phr.","The essay examines how taste and speech can express embodied cultural capital.","文章探討品味和說話方式如何體現文化資本。"],
+      ["cultural hegemony","文化霸權",1,"phr.","The essay examines the role of education in maintaining cultural hegemony.","文章探討教育在維持文化霸權上扮演的角色。"],
+      ["the commodification of culture","文化商品化",1,"phr.","The article examines the commodification of culture in the entertainment industry.","文章探討娛樂產業中的文化商品化。"],
+      ["the relationship between power and knowledge","權力與知識之間的關係",1,"phr.","The lecture surveyed Foucault’s account of the relationship between power and knowledge.","講座概述傅柯對權力與知識關係的論述。"],
+      ["the loss of aura","靈光的消逝",1,"phr.","The essay discusses the loss of aura associated with reproducing an artwork.","文章討論藝術品遭到複製時所伴隨的靈光消逝。"],
+      ["a semiotic analysis of myth","對神話的符號學分析",1,"phr.","The chapter offers a semiotic analysis of myth in popular culture.","本章以符號學分析流行文化中的神話。"],
+      ["critical regionalism in architecture","建築中的批判地域主義",1,"phr.","The exhibition introduced critical regionalism in architecture through several contrasting projects.","展覽透過幾個形成對比的建案，介紹建築中的批判地域主義。"],
+      ["a shift in the prevailing paradigm","主流典範的轉變",1,"phr.","The author interprets the dispute as a shift in the prevailing paradigm.","作者把這場爭議理解成主流典範的轉變。"]
     ],
     spells: [
       ['PHENOMENOLOGY','n.','擱置客觀世界成見、專注於意識體驗與現象如何向主觀顯現的現象學哲學','Phenomenology grounds philosophical inquiry in the direct immediacy of lived conscious experience.','現象學（Phenomenology）將一切哲學探究的根基，死死錨定在鮮活生動、未經加工的原初生活體驗之中。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The political theorist dissected the biopolitical management of populations during pandemics. What was exercised?','The sovereign regulation of aggregate biological bodies, mortality rates, and hygiene regimes as state governance.|The military invasion of sovereign neighboring nations to confiscate foreign agricultural grain stockpiles.|The mandatory conversion of all municipal commercial paper currencies into digital cryptocurrency tokens.|The physical reconstruction of all public university classroom buildings using clear reinforced glass.','政治哲學泰斗深入解剖了世紀大流行期間主權國家動用的「生命政治（Biopolitics）」全套治理技術：主權治理權力不再著眼於傳統的疆土防禦，而是全面轉化為對全民生物體聚集密度、發病死亡率曲線、人流軌跡大數據與公共衛生隔離體系的精準微觀統治。']
     ],
     voices: [
-      ['derrida post structuralist differance deferral','意義無限延宕分化之德希達延異',2,'phr.','The literary critic applied derrida post structuralist differance deferral to unravel metaphysical claims.','解構批評大師熟稔操持德希達後結構主義延異利刃，將形上學的絕對真理企圖徹底化為齏粉。'],
-      ['baudrillard hyperreality simulation simulacrum','超越真實凌駕客觀之布希亞超真實擬像',2,'phr.','Disneyland stands as the archetypal baudrillard hyperreality simulation simulacrum masking consumer decay.','加州迪士尼樂園巍然矗立，成為布希亞超真實擬像世界最登峰造極、掩蓋消費帝國精神荒涼的遮羞布。'],
-      ['kant aesthetic sublime transcendence','震撼感官激發靈魂敬畏之康德崇高審美',2,'phr.','Gazing upon the violent alpine storm evoked classic kant aesthetic sublime transcendence in the soul.','在阿爾卑斯山巔狂風驟雨的雷霆轟鳴前凝眸沉思，在哲人靈魂深處喚醒了無與倫比的康德崇高審美敬畏。'],
-      ['lyotard postmodern metanarrative collapse','烏托邦宏大救贖神話破滅之利奧塔宏大敘事瓦解',2,'phr.','The horrors of Auschwitz precipitated lyotard postmodern metanarrative collapse across western thought.','奧斯威辛集中營冒出的滾滾濃煙，向全人類無情宣告了利奧塔後現代宏大敘事救贖神話的徹底幻滅。'],
-      ['adorno negative dialectics non identity','拒絕虛偽和諧揚棄之阿多諾否定辯證法',2,'phr.','Critical theorists drew upon adorno negative dialectics non identity to preserve irreconcilable pain.','法蘭克福批判哲人緊緊握住阿多諾否定辯證法的批判武器，矢志捍衛那些無法被抽象同一性強行抹平的具體苦難。'],
-      ['levinas ethical face of the other','先於存在不可推卸之列維納斯他者之面龐',2,'phr.','Moral responsibility is ignited by the defenseless levinas ethical face of the other demanding justice.','當那張無助而赤裸的列維納斯他者之面龐映入眼簾時，沉睡在靈魂深處的無條件道德正義之火被瞬間點燃。'],
-      ['agamben sovereign state of exception','法治暫停公民貶為赤裸生命之阿岡本例外狀態',2,'phr.','Authoritarian regimes weaponize the agamben sovereign state of exception to strip citizens of rights.','威權專制政客最擅長將阿岡本例外狀態武器化，以反恐與維穩為由將全體公民合法剝奪為任人宰割的赤裸生命。'],
-      ['zizek cynical distance ideological fantasy','深知真相卻依然照做之齊澤克犬儒意識形態幻想',2,'phr.','Consumerism operates not through blind faith but via zizek cynical distance ideological fantasy.','當代消費拜物教的生命力絕非源於愚昧盲信，恰恰深植於齊澤克剖析的那套「深知虛妄卻依然照做」的犬儒意識形態幻想。'],
-      ['habermas communicative rationality discourse','構建理想言談共識之哈伯瑪斯交往理性話語',2,'phr.','Democratic legitimacy depends on vibrant habermas communicative rationality discourse across public spheres.','當代民主法治大廈的合法性基石，唯有在公民社會蓬勃激盪的哈伯瑪斯交往理性論證話語中方能長治久安。'],
-      ['foucault biopolitical population management','將全體公民生物體納入規訓統治之生命政治治理',2,'phr.','Epidemic quarantines epitomized foucault biopolitical population management techniques at national scales.','遍布全國的嚴密疫情追蹤與全民隔離，集中展示了傅柯生命政治人口微觀規訓治理技術的極致威力。']
+      ["the deferral of meaning","意義的延宕",2,"phr.","The seminar discussed the deferral of meaning in Derrida’s writing.","研討會討論德希達著作中的意義延宕。"],
+      ["blur the distinction between simulation and reality","模糊模擬與現實之間的區別",2,"phr.","The installation tries to blur the distinction between simulation and reality.","這件裝置作品試圖模糊模擬與現實之間的區別。"],
+      ["the aesthetic experience of the sublime","對崇高的審美體驗",2,"phr.","The essay contrasts the aesthetic experience of the sublime with that of beauty.","文章比較對崇高與對美的審美體驗。"],
+      ["scepticism towards grand narratives","對宏大敘事的懷疑",2,"phr.","The essay examines scepticism towards grand narratives in postmodern thought.","文章探討後現代思想對宏大敘事的懷疑。"],
+      ["negative dialectics","否定辯證法",2,"phr.","The reading group discussed negative dialectics.","讀書會討論否定辯證法。"],
+      ["ethical responsibility towards others","對他人的倫理責任",2,"phr.","The essay explores ethical responsibility towards others in Levinas’s work.","文章探討列維納斯著作中對他人的倫理責任。"],
+      ["a state of exception","例外狀態",2,"phr.","The chapter analyses the relationship between a state of exception and ordinary law.","本章分析例外狀態與一般法律的關係。"],
+      ["cynical distance from ideology","對意識形態保持犬儒式距離",2,"phr.","The essay asks whether cynical distance from ideology is enough to escape its influence.","文章探問，對意識形態保持犬儒式距離，是否足以擺脫它的影響。"],
+      ["communicative rationality","溝通理性",2,"phr.","The author contrasts communicative rationality with strategic action.","作者把溝通理性與策略行動作對照。"],
+      ["the governance of populations","人口治理",2,"phr.","The lecture discussed the governance of populations through public institutions.","講座討論透過公共機構進行的人口治理。"]
     ],
     spells: [
       ['SIMULACRUM','n.','後現代哲學中不再反映任何真實客觀參照物自身成為超真實的仿真擬像','The casino replica of Venice is a hollow simulacrum that replaces the historical Italian city.','賭城大道上那座金碧輝煌的假威尼斯運河，是一座憑空捏造、徹底取代了歷史義大利水城的空洞擬像（Simulacrum）。'],

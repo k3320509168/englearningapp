@@ -26,15 +26,15 @@ listening: [
 [1,'In no way can the preliminary telemetry be construed as conclusive proof of subterranean water. What does telemetry provide?','Inconclusive and merely provisional indications.|Definitive evidence of deep aquifers.|Complete disproof of subterranean moisture.|Irrelevant noise without scientific value.','In no way can... 倒裝表示初步遙測絕不能被視為決定性證據。']
 ],
 voices: [
-['seldom have we seen','極少見到；罕有目睹',1,'phr.','Seldom have we seen such institutional resilience in the face of crisis.','在面對危機時，我們極少見到如此卓越的體制韌性。'],
+["seldom have we seen such resilience","我們很少見到如此強的韌性（使用倒裝）",1,"phr.","Seldom have we seen such resilience after a setback.","我們很少見到有人在遭遇挫折後展現如此強的韌性。"],
 ['not until','直到…才（倒裝連接片語）',1,'phr.','Not until transparency is established will investor confidence be fully restored.','直到透明度建立之後，投資人信心才會徹底恢復。'],
 ['hardly had','一…就…（倒裝時間關聯）',1,'phr.','Hardly had the treaty been signed when regional disputes reignited.','條約剛一簽署，區域爭端便隨之再度點燃。'],
 ['it was precisely','正是…（分裂句強調開頭）',1,'phr.','It was precisely systemic accountability that the oversight committee demanded.','監督委員會所堅決要求的，正是系統性的問責制度。'],
 ['under no circumstances','絕不；在任何情況下都不',1,'phr.','Under no circumstances should safety regulations be compromised for expediency.','在任何情況下，都絕不能為了權宜之計而犧牲安全規範。'],
 ['only through','唯有透過；只有藉由',1,'phr.','Only through collective endeavor can civil societies overcome structural inequality.','唯有透過集體努力，公民社會方能克服結構性不平等。'],
-['what the inquiry showed','調查所揭示的正是',1,'phr.','What the empirical inquiry illuminated was a profound cognitive divergence.','實證調查所揭示的，正是深刻的認知分歧。'],
+["what the inquiry showed","這項調查顯示的內容",1,"phr.","What the inquiry showed was that the warning had gone unanswered.","這項調查顯示，那項警告當時沒有人理會。"],
 ['scarcely had','剛一…就（倒裝副詞）',1,'phr.','Scarcely had the session commenced when procedural objections were registered.','議程剛一開始，程序異議便隨之提出。'],
-['had the board acted','若董事會當時採取行動',1,'phr.','Had the board exercised due diligence the financial catastrophe could have been averted.','若董事會當時恪盡審慎義務，這場金融災難本可避免。'],
+["had the board acted sooner","倘若董事會當時更早採取行動",1,"phr.","Had the board acted sooner, the company might have avoided the loss.","若董事會當時更早採取行動，公司或許能避免損失。"],
 ['so intricate was','如此錯綜複雜以至於',1,'phr.','So intricate was the statutory framework that few practitioners mastered its scope.','法規體系如此錯綜複雜，以致於極少有實務工作者能通曉其範疇。']
 ],
 spells: [
@@ -90,14 +90,14 @@ listening: [
 voices: [
 ['on no account','絕不可；無論如何都不（倒裝片語）',1,'phr.','On no account should fundamental human liberties be subordinated to political expediency.','無論在任何情況下，基本人權與自由都絕不可屈從於政治權宜。'],
 ['were it undermined','若其遭到破壞削弱（虛擬倒裝）',1,'phr.','Were constitutional guardrails undermined the fragile democratic compact would disintegrate.','憲法防護欄若遭到削弱瓦解，脆弱的民主公約便將隨之崩塌。'],
-['such was the brilliance','如此之才華卓越以致於',1,'phr.','Such was the intellectual brilliance of the thesis that orthodox paradigms crumbled.','該論文的智慧光芒如此耀眼，以致於傳統典範隨之土崩瓦解。'],
-['nowhere within the law','在法律中毫無蹤跡（否定倒裝）',1,'phr.','Nowhere within the jurisprudence can one discern a justification for arbitrary detention.','在整體法理體系中，人們絕無可能找到任何支持任意拘留的合法依據。'],
-['scarcely had it taken','剛一生效實施之際',1,'phr.','Scarcely had the decree taken effect when profound structural fissures manifested.','政令剛一生效實施，深刻的體制結構裂痕便全面顯現。'],
-['it was systemic opacity','正是體制的不透明性',1,'phr.','It was precisely systemic opacity that enabled unchecked predatory exploitation.','正是體制層面的極度不透明，助長了毫無制衡的掠奪性剝削。'],
+["such was the brilliance of the performance","那場演出精彩至此（使用倒裝）",1,"phr.","Such was the brilliance of the performance that even the critics rose to applaud.","那場演出精彩得連評論家都起立鼓掌。"],
+["nowhere does the law specify","法律任何一處都沒有明文規定（使用倒裝）",1,"phr.","Nowhere does the law specify how long the records must be kept.","法律並未明文規定這些紀錄須保存多久。"],
+["scarcely had it taken effect","它才剛生效（使用倒裝）",1,"phr.","Scarcely had it taken effect when a second amendment was proposed.","它才剛生效，就有人提出第二項修正案。"],
+["it was systemic opacity that obscured responsibility","正是體制缺乏透明度，使人難以釐清責任",1,"phr.","It was systemic opacity that obscured responsibility for the decision.","正是體制缺乏透明度，使人難以釐清該決策的責任歸屬。"],
 ['only by upholding','唯有堅守；只有秉持',1,'phr.','Only by upholding rigorous forensic standards can judicial integrity endure.','唯有始終恪守嚴謹的鑑識標準，司法公正誠信方能歷久不衰。'],
-['little did they know','彼等完全未曾預料知曉',1,'phr.','Little did the chroniclers comprehend that archaic dogma was rapidly obsolete.','編年史家完全未曾預料到，古老的教條正以驚人的速度被歷史淘汰。'],
-['so contentious were they','爭議如此激烈以致於',1,'phr.','So contentious were the deliberations that consensus remained entirely elusive.','閉門商議過程如此充滿激烈爭辯，以致於共識始終難以企及。'],
-['had it been forthcoming','假若當時及時獲得提供',1,'phr.','Had archival corroboration been forthcoming the hypothesis would have attained orthodoxy.','假若當時檔案佐證能及時公諸於世，這項假說早已確立為公認正統。']
+["little did they know","他們萬萬沒想到（使用倒裝）",1,"phr.","Little did they know that their letter would later become crucial evidence.","他們萬萬沒想到，那封信後來竟成為關鍵證據。"],
+["so contentious were the talks","談判爭議之激烈（使用倒裝）",1,"phr.","So contentious were the talks that even the wording of the agenda was disputed.","談判的爭議如此激烈，連議程的措辭都有人反對。"],
+["had the evidence been forthcoming","如果當時有提供證據（使用倒裝）",1,"phr.","Had the evidence been forthcoming, the inquiry might have reached a different conclusion.","如果當時有提供證據，調查或許會得出不同結論。"]
 ],
 spells: [
 ['SEQUESTER','v.','依法沒收查封扣押或隔離保管爭議資產','The state moved to sequester the disputed cartel assets.','國家依法採取行動，對涉案財團的有爭議資產進行查封與扣押。'],

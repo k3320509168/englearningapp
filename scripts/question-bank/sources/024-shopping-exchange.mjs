@@ -91,7 +91,7 @@ voices:[
 ['repairability','物件實際可被修好的程度',1,'n.','The review considers repairability.','評估考量可維修性。'],
 ['a functionally equivalent substitute','功能上相當的替代品',1,'phr.','The trial seeks a functionally equivalent substitute.','試用旨在找功能相當替代品。'],
 ['a qualified assurance of suitability','帶條件保留的適用性保證',2,'phr.','The note gives a qualified assurance of suitability.','便條給有條件的適用保證。'],
-['a realistic prospect of repair','實際可行的修復可能性',2,'phr.','Parts availability creates a realistic prospect of repair.','配件供應帶來實際維修可能。'],
+["a realistic chance of repairing it","確實有機會修好它",2,"phr.","With the replacement parts available, there is a realistic chance of repairing it.","有了替換零件，就確實有機會修好它。"],
 ['Comparable prices do not establish interchangeable functions','價格相近不證成功能可互換',3],
 ['A spare is useful only when it fits the relevant version','備件適合相關版本才有用',3],
 ['An equal count can conceal different kinds of benefit','相同件數可能掩蓋不同效益',3]
@@ -146,7 +146,7 @@ listening:[
 voices:[
 ['fungible','在指定用途下可由同等單位互換的',1,'adj.','The scheme treats the units as fungible.','方案把單位視為可互換。'],
 ['superfluity','多於所需而顯得多餘的數量或事物',1,'n.','The collection risks becoming a superfluity.','收藏可能變成多餘累贅。'],
-['a spurious appearance of economy','貌似節省而不成立的表象',1,'phr.','The offer creates a spurious appearance of economy.','提議造成貌似省費的表象。'],
+["a false impression of economy","看似節省成本的錯覺",1,"phr.","Low upfront fees can give a false impression of economy.","低廉的前期費用可能讓人誤以為整體更省錢。"],
 ['an ostentatious display of abundance','誇耀豐裕的展示',2,'phr.','The room presents an ostentatious display of abundance.','房間誇示豐富物件。'],
 ['a tacit redefinition of sufficiency','未明說地重新定義足夠',2,'phr.','The comparison introduces a tacit redefinition of sufficiency.','比較暗中重定何謂足夠。'],
 ['A restored feature can be marketed as a generous extra','恢復的功能可能被包裝成慷慨加碼',3],

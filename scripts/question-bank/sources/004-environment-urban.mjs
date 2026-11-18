@@ -90,7 +90,7 @@ voices:[
 ['intergenerational','涉及不同世代之間的',1,'adj.','The decision raises questions of intergenerational fairness.','這項決定涉及世代公平問題。'],
 ['redistribution','將資源或利益重新分配',1,'n.','The policy involves redistribution between districts.','這項政策涉及區域之間的重新分配。'],
 ['an unintended consequence','非原本預期的後果',1,'phr.','Higher demand was an unintended consequence of the subsidy.','需求增加是補助未預期的後果。'],
-['the distribution of benefits','利益如何分配',2,'phr.','The review examines the distribution of benefits.','檢討檢視利益如何分配。'],
+["the distribution of benefits","利益的分配情形",2,"phr.","The review examines the distribution of benefits across neighbourhoods.","這項檢討分析不同社區分別獲得多少利益。"],
 ['a disproportionate burden','不成比例的沉重負擔',2,'phr.','Small businesses faced a disproportionate burden.','小型企業承受了不成比例的負擔。'],
 ['Aggregate gains can obscure unequal individual outcomes','總體收益可能掩蓋個人結果的不均',3],
 ['Efficiency alone does not establish overall sustainability','效率本身無法確立整體永續性',3],

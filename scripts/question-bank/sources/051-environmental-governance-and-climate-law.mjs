@@ -26,15 +26,15 @@ export const data = {
       [1,'The biodiversity credit registry established strict permanence and non leakage standards. What was safeguarded?','That protected habitats remain conserved over decades without simply displacing deforestation elsewhere.|That wild animals are legally required to remain within designated national park perimeters.|That private real estate developers are exempted from all municipal property taxes for a century.|That commercial logging companies receive unconditional logging concessions across all public land.','生物多樣性信用額度登記處立下了嚴苛的「永久性（Permanence）」與「非洩漏」標準，確保受保護棲息地能跨越數十年獲得永續養護，而非僅僅將伐木電鋸驅趕至隔壁林地。']
     ],
     voices: [
-      ['cap and trade emissions system','總量管制與碳排放配額交易系統',1,'phr.','Industrial conglomerates purchase surplus permits within the cap and trade emissions system.','重型工業財團在法定總量管制與碳交易體系內，斥巨資搶購各類依法流轉的剩餘排碳許可憑證。'],
-      ['carbon border adjustment mechanism','防止碳洩漏之歐盟碳邊境調整機制',1,'phr.','Exporters restructured manufacturing supply lines to comply with the carbon border adjustment mechanism.','廣大出口製造商夜以繼日重組其海外供應鏈，以全力對齊歐盟碳邊境調整機制即將徵收的碳關稅。'],
+      ["cap and trade system","總量管制與交易制度",1,"phr.","The report compares a cap-and-trade system with a tax on emissions.","報告比較了總量管制與交易制度，以及排放稅。"],
+      ["carbon border adjustment mechanism","碳邊境調整機制",1,"phr.","The panel discussed how a carbon border adjustment mechanism could affect exporters.","小組討論碳邊境調整機制可能如何影響出口商。"],
       ['strategic climate litigation','逼迫政府與藥企減排之戰略氣候訴訟',1,'phr.','Youth activists turned to strategic climate litigation to challenge sluggish sovereign decarbonization plans.','一群無畏的青年氣候活動家毅然走上法庭，透過戰略性氣候公益訴訟強勢倒逼主權政府加速落實脫碳承諾。'],
       ['ecosystem services valuation','大自然無償餽贈之生態系統服務估值',1,'phr.','Environmental economists conduct ecosystem services valuation to quantify the monetary worth of wetlands.','當代前沿環境經濟學家全面推進生態系服務評估，將紅樹林濕地防洪淨水的隱形價值以真金白銀精準量化。'],
-      ['nature based adaptation solutions','基於自然之道化解洪澇之調適解決方案',1,'phr.','Coastal municipalities invest heavily in nature based adaptation solutions like mangrove restoration.','沿海先鋒城市大刀闊斧投資於基於自然的氣候調適方案，透過大面積人工復育紅樹林築牢天然消波綠色屏障。'],
+      ["nature based adaptation","以自然為本的調適措施",1,"phr.","The city is considering nature-based adaptation, including restoring wetlands to reduce flood risk.","該市正在考慮以自然為本的調適措施，包括恢復濕地以減少淹水風險。"],
       ['planetary boundary threshold','維持地球宜居繁衍之行星安全邊界臨界點',1,'phr.','Earth system scientists warned that crossing the planetary boundary threshold risks irreversible collapse.','地球系統科學家向全人類敲響警鐘：一旦擊穿行星安全邊界的不可逆臨界點，全球生態將面臨雪崩式瓦解。'],
-      ['stranded fossil asset write down','淨零轉型逼迫下石化資產不可逆巨額減記',1,'phr.','Institutional pension funds accelerated divestment to avoid catastrophic stranded fossil asset write downs.','全球機構養老金大舉拋售傳統煤炭與油氣股，以搶在災難性的石化擱淺資產巨額減記海嘯來臨前全身而退。'],
+      ["a write down of stranded assets","擱淺資產的帳面價值減記",1,"phr.","The annual report disclosed a write-down of stranded assets.","年度報告揭露了擱淺資產的帳面價值減記。"],
       ['corporate greenwashing practice','企業公關虛假宣傳偽裝環保之漂綠惡疾',1,'phr.','Securities regulators introduced heavy civil fines to penalize systemic corporate greenwashing practice.','證券監管當局正式祭出毀滅性的巨額民事罰單，重拳打擊各大跨國財團屢禁不止的系統性「漂綠」欺詐惡疾。'],
-      ['scope three carbon emissions','貫穿上下游全產業鏈之範疇三碳排放',1,'phr.','Auditing scope three carbon emissions demands transparent lifecycle tracking across suppliers.','精確審計核算複雜龐大的範疇三碳排放，強制要求企業對所有跨國供應鏈夥伴落實穿透式的全生命週期追蹤。'],
+      ["scope three emissions","範疇三排放",1,"phr.","The company said it would improve its estimates of Scope Three emissions.","公司表示會改進對範疇三排放的估算。"],
       ['biodiversity credit permanence','生物多樣性信用額度之數十年永久性指標',1,'phr.','Conservation registries enforce biodiversity credit permanence to prevent premature forest clearing.','國際生態保護註冊機構嚴格把控生物多樣性信用的永久性指標，杜絕任何受保護林地在數年後遭偷偷復砍的作弊行為。']
     ],
     spells: [
@@ -88,16 +88,16 @@ export const data = {
       [1,'The environmental compliance monitors detected clandestine flaring of methane gas at remote shale extraction pads. What was caught?','Illegal burning of potent greenhouse hydrocarbons to evade statutory fugitive emissions penalties.|The unauthorized roasting of agricultural maize ears by junior field petroleum engineering technicians.|The use of industrial gas burners to illuminate drilling work sites during midnight operations.|The accidental ignition of ambient atmospheric air due to mechanical sparks from metal machinery.','環境執法無人機紅外巡航，在偏遠頁岩氣鑽井平台抓了個現形：採油廠商為規避鉅額逃逸排放罰款，竟在深夜暗中秘密點火燃燒海量高純度強效溫室氣體甲烷（Clandestine flaring）。']
     ],
     voices: [
-      ['public trust doctrine protection','公共信託理論守護大自然共用公域',1,'phr.','Jurists rely on public trust doctrine protection to safeguard navigable waterways for future generations.','卓越的環境法學家高舉公共信託理論大旗，誓死捍衛通航水域與天然海岸線不受權貴私相授受與世代侵害。'],
-      ['earth system tipping elements','非線性劇震崩潰之地球系統臨界元素',1,'phr.','Climatologists monitor earth system tipping elements to identify early warnings of abrupt biospheric collapse.','全球頂尖氣候學家日夜緊盯各大地球系統臨界元素，竭盡所能捕捉生物圈面臨突發性雪崩崩潰的前兆預警。'],
+      ["the public trust doctrine","公共信託原則",1,"phr.","The article examines how courts have applied the public trust doctrine to access to waterways.","文章研究各法院如何把公共信託原則應用於水道使用權。"],
+      ["tipping elements in the earth system","地球系統中的臨界要素",1,"phr.","The authors examined several tipping elements in the Earth system.","作者檢視了地球系統中的多個臨界要素。"],
       ['precautionary principle application','面臨不可逆毀滅時預防原則之斷然適用',1,'phr.','Regulators halted the synthetic chemical rollout under strict precautionary principle application.','面對新型合成化工產品可能帶來的深遠遺傳毒性隱患，主管當局果斷依據預防原則下達了立即全面叫停的行政命令。'],
       ['intergenerational equity doctrine','當代人對後代子孫之跨代正義法理公理',1,'phr.','The landmark verdict enshrined the intergenerational equity doctrine within basic human rights law.','這場名垂青史的世紀判決，將守護未出世後代子孫福祉的「跨代正義」法理，正式寫入了當代基本人權憲章法典。'],
-      ['rights of nature recognition','賦予山川河流獨立法人資格之自然權利',1,'phr.','The municipal river was granted legal personhood under expanding rights of nature recognition.','在這場轟轟烈烈的「自然權利運動」中，這條歷經滄桑的母親河被國家正式授予了神聖不可侵犯的獨立法律法人人格。'],
-      ['international crime of ecocide','將大肆屠戮自然生態入刑之生態滅絕罪',1,'phr.','Campaigners lobby the international criminal court to codify the international crime of ecocide.','跨國法律倡議聯盟全面奔走遊說，力促海牙國際刑事法院正式將反自然大肆屠戮的「生態滅絕罪」編纂入刑。'],
+      ["recognition of the rights of nature","承認自然的權利",1,"phr.","The essay examines arguments for legal recognition of the rights of nature.","文章探討法律應承認自然權利的各種論點。"],
+      ["proposals to criminalise ecocide","將大規模生態破壞定為犯罪的提案",1,"phr.","The debate considered several proposals to criminalise ecocide.","這場辯論討論了數項將大規模生態破壞定為犯罪的提案。"],
       ['carbon dioxide mineralization','將捕集碳氣永久轉化為地下岩石之礦化技術',1,'phr.','Pilot facilities demonstrate that carbon dioxide mineralization safely binds greenhouse gas into solid stone.','先導地質示範基地以無可辯駁的實測數據證明：二氧化碳地質礦化技術能將溫室氣體安全鎖死在萬年堅石之中。'],
-      ['free prior and informed consent','原住民對祖傳土地開發之知情同意否決權',1,'phr.','Mining developers must secure free prior and informed consent before altering customary indigenous forests.','任何外來跨國採礦資本在踏入原住民世代棲息的原始森林半步之前，必須依法獲得其完整、自由且知情的同意授權。'],
-      ['polluter pays legal principle','污染製造者全額賠償生態修復之法理原則',1,'phr.','The environmental protection agency enforced the polluter pays legal principle against the chemical polluter.','環境保護署以雷霆手段援引「污染者付費」法定原則，對這家惡意排毒的跨國化工集團發起了無上限的天價追償訴訟。'],
-      ['trophic cascade ecological collapse','關鍵物種滅絕誘發之整個營養級連鎖崩潰',1,'phr.','The loss of top wolves initiated a devastating trophic cascade ecological collapse in the national park.','頂級灰狼種群的慘遭捕殺殆盡，在國家公園深處引爆了一場難以收拾的整個營養級生態系統連鎖崩潰浩劫。']
+      ["free prior and informed consent","自由、事先及知情同意",1,"phr.","The report discusses how free, prior and informed consent is understood in the context of Indigenous rights.","報告探討如何在原住民族權利的脈絡下理解自由、事先及知情同意。"],
+      ["the polluter pays principle","污染者付費原則",1,"phr.","The report applies the polluter pays principle to the cost of cleaning up the spill.","報告將污染者付費原則應用於這次外洩的清理費用。"],
+      ["trophic cascade","營養級聯效應",1,"phr.","The researchers examined whether changes in predator numbers had triggered a trophic cascade.","研究人員探討掠食者數量的變動是否引發了營養級聯效應。"]
     ],
     spells: [
       ['ECOCIDE','n.','嚴重、廣泛或長期毀滅自然生態系統的生態滅絕罪行','Legal scholars drafted formal statutory language to establish the international crime of ecocide.','跨國刑法權威學者聯手起草了嚴密的法條文本，旨在國際法庭正式確立追究跨國生態滅絕罪的刑事法網。'],

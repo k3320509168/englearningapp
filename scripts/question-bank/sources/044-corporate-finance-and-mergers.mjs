@@ -93,11 +93,11 @@ export const data = {
       ['synthetic credit instruments','基於合約的合成信用衍生工具',1,'phr.','Sophisticated asset managers hedge counterparty exposure using synthetic credit instruments.','成熟頂尖的資產管理機構，廣泛利用各類合成信用衍生合約來對沖交易對手的信用違約風險。'],
       ['market microstructure dynamics','金融二級市場微觀結構定價機制',1,'phr.','High frequency trading algorithms exploit market microstructure dynamics to extract tiny spreads.','高頻量化演算法深度挖掘訂單簿中的二級市場微觀結構機制，從中榨取稍縱即逝的微小價差。'],
       ['independent fairness opinion','獨立機構出具的估值公允性意見',1,'phr.','The special committee solicited an independent fairness opinion before endorsing the buyout proposal.','董事會特別獨立委員會在正式簽署支持私有化要約前，聘請了外部頂級智庫出具獨立公允性意見書。'],
-      ['yield curve inversion warning','殖利率曲線倒掛所釋放之衰退警訊',1,'phr.','The persistent yield curve inversion warning signaled deep macroeconomic headwinds ahead.','長短天期公債殖利率曲線罕見且持續的倒掛警訊，向資本市場釋放出總體經濟深層衰退的強烈信號。'],
+      ["yield curve inversion","殖利率曲線倒掛",1,"phr.","The analyst described the yield curve inversion as a warning signal rather than a forecast.","分析師把殖利率曲線倒掛描述為警訊，而非預測。"],
       ['greenmail extortion maneuver','以惡意收購為要脅的高價回購勒索',1,'phr.','The corporate board refused to succumb to the activist hedge fund\'s greenmail extortion maneuver.','公司董事會斷然拒絕向維權避險基金所策動的惡意收購要脅與高價股權勒索行徑低頭妥協。'],
-      ['reverse triangular merger structure','反向三角全資子公司併購架構',1,'phr.','Legal counsel advised executing a reverse triangular merger structure to preserve operational licenses.','首席法務顧問極力建議採用反向三角併購架構，以完整保留標的公司既有的特許執照與關鍵合約。'],
+      ["a reverse triangular merger","反向三角合併",1,"phr.","The parties considered structuring the transaction as a reverse triangular merger.","雙方考慮將交易設計為反向三角合併。"],
       ['absolute priority doctrine','破產清償中的絕對優先權法定則',1,'phr.','The absolute priority doctrine prevents shareholders from extracting value before senior debt is settled.','破產清償中的絕對優先權原則，嚴格杜絕股東在優先債權人的本息獲得全額清償前擅自截留資產。'],
-      ['special purpose acquisition vehicle','特殊目的併購上市借殼殼實體',1,'phr.','The tech startup merged into a special purpose acquisition vehicle to expedite its public debut.','該前沿科技獨角獸選擇併入一家特殊目的收購上市空殼載體，以此繞過繁複流程迅速敲鐘上市。']
+      ["a special purpose acquisition company","特殊目的收購公司",1,"phr.","The article explains how a special purpose acquisition company seeks a merger partner.","文章說明特殊目的收購公司如何尋找合併對象。"]
     ],
     spells: [
       ['ARBITRAGEUR','n.','專門利用市場價差進行無風險對沖套利的投機商','The merger arbitrageur profited from narrowing spreads as regulatory approvals cleared.','併購套利專門操盤手，在反壟斷反托拉斯監管批文相繼落地使收購價差收斂之際獲取了暴利。'],

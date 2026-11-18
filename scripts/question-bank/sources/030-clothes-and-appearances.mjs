@@ -85,8 +85,8 @@ voices:[
 ['inconspicuous','不容易引人注意的',1,'adj.','She chose an inconspicuous coat.','她選了件不顯眼的外套。'],
 ['ostentatious','刻意炫耀財富或地位而顯得招搖的',1,'adj.','The character rejects ostentatious displays.','角色拒絕招搖的炫示。'],
 ['a consciously restrained design','有意採克制手法的設計',1,'phr.','The scene uses a consciously restrained design.','這一幕採有意克制的設計。'],
-['a misleading impression of effortlessness','彷彿毫不費力的誤導印象',2,'phr.','The costume creates a misleading impression of effortlessness.','戲服造成彷彿毫不費力的誤導印象。'],
-['an association made visually legible','以視覺方式清楚呈現的關聯',2,'phr.','The badge provides an association made visually legible.','徽章使關聯以視覺方式清楚呈現。'],
+["a misleading impression of effortlessness","讓人誤以為毫不費力的印象",2,"phr.","The seamless edit creates a misleading impression of effortlessness.","流暢的剪輯讓人誤以為整個過程毫不費力。"],
+["a clear visual link","清楚的視覺連結",2,"phr.","The matching badges establish a clear visual link between the two exhibits.","相同的標記讓兩件展品之間的關聯一目了然。"],
 ['A uniform need not reveal the wearer’s private allegiance','制服未必揭示穿戴者內心的效忠',3],
 ['Restraint can be a deliberate aesthetic choice','克制可以是有意識的美學選擇',3],
 ['An apparently effortless style may be carefully rehearsed','看似毫不費力的風格可能經仔細排練',3]

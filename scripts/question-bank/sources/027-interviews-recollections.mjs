@@ -89,7 +89,7 @@ listening:[
 voices:[
 ['rapport','相互信任而交流自在的關係',1,'n.','Rapport helped the speaker continue.','融洽幫說話者繼續。'],
 ['digression','離開原主題而談另一事的插敘',1,'n.','The digression revealed an important detail.','岔題透露重要細節。'],
-['a carefully framed question','框架經仔細設計的問題',1,'phr.','A carefully framed question invited a specific example.','仔細提問引出具體例子。'],
+["a carefully framed question","措辭經仔細設計的問題",1,"phr.","A carefully framed question prompted the witness to give a specific example.","一道措辭經過仔細設計的問題，促使證人舉出具體例子。"],
 ['an inherited family narrative','經家族傳下來的故事',2,'phr.','The account includes an inherited family narrative.','敘述含傳承家族故事。'],
 ['a qualified recollection of events','對事件有保留限定的回憶',2,'phr.','She offers a qualified recollection of events.','她有保留地回憶事件。'],
 ['A fluent story may reflect years of repeated telling','流暢故事可能反映多年重述',3],

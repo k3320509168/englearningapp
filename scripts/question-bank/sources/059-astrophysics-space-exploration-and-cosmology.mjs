@@ -27,15 +27,15 @@ export const data = {
     ],
     voices: [
       ['transit photometry','凌日測光法（藉由恆星亮度下降偵測行星）',1,'phr.','Astronomers use transit photometry to detect planets by measuring small dips in starlight.','天文學家用凌日測光法測量星光亮度的微小下降，藉此偵測行星。'],
-      ['cosmic microwave background relic','大爆炸冷卻太古遺蹟之宇宙微波背景輻射',1,'phr.','Planck satellite data mapped tiny temperature anisotropies in the cosmic microwave background relic.','普朗克巡天衛星以無上精度測繪出了宇宙微波背景太古遺蹟中那微小卻孕育了萬千星系的溫度各向異性。'],
-      ['gravitational lensing spacetime curvature','質量扭曲時空形成天然透鏡之重力透鏡效應',1,'phr.','Massive galaxy clusters act through gravitational lensing spacetime curvature to reveal distant cosmos.','超巨質量星系團藉由扭曲時空幾何的重力透鏡效應，化身為窺探宇宙創世破曉時代的宇宙望遠鏡。'],
-      ['stellar nucleosynthesis carbon fusion','恆星深核熔爐淬鍊重元素之恆星核合成',1,'phr.','Heavy elements in human blood were forged inside massive stars via stellar nucleosynthesis carbon fusion.','流淌在人類血管中的每一滴鐵元素，皆是億萬年前遠古巨星核心恆星核聚變熔爐所淬煉的星塵結晶。'],
-      ['fast radio burst dispersion measure','穿梭百億光年電漿之快速射電暴色散量',1,'phr.','Radio astronomers computed the high fast radio burst dispersion measure to confirm extragalactic origin.','射電天文學家透過解算快速射電暴驚人的高色散量，徹底坐實了其源自百億光年外河外星系的史詩源頭。'],
-      ['supermassive black hole event horizon','光芒亦無法掙脫之超大質量黑洞事件視界',1,'phr.','The global telescope array resolved the glowing ring around the supermassive black hole event horizon.','全球分布式望遠鏡陣列，震撼捕捉到了環繞超大質量黑洞事件視界外緣狂暴旋轉的吸積光環。'],
-      ['chandrasekhar mass limit detonation','白矮星吸積超載大爆炸之錢德拉塞卡質量極限',1,'phr.','Accreting white dwarfs exceed the chandrasekhar mass limit detonation threshold to become Type 1a standard candles.','不斷吸積伴星物質的白矮星一旦被壓垮越過錢德拉塞卡質量極限，便會化作丈量寰宇的標準燭光超新星。'],
-      ['interplanetary gravity assist trajectory','借力巨星引力彈弓疾馳深空之引力助推軌道',1,'phr.','The deep space probe executed an interplanetary gravity assist trajectory to reach outer solar boundaries.','深空探測器沿著精密設計的行星引力彈弓軌跡疾馳，一舉斬獲了衝向太陽系邊疆柯伊伯帶的磅礴動力。'],
-      ['transmission spectroscopy atmospheric biosignature','異星大氣透射光譜尋找生命印記之透射光譜學',1,'phr.','Next generation observatories prioritize transmission spectroscopy atmospheric biosignature searches on rocky planets.','下一代旗艦巡天望遠鏡將搜尋岩質行星大氣透射光譜中的水汽與甲烷生命印記，列為最神聖的科學使命。'],
-      ['neutral hydrogen hyperfine transition line','刺破星塵迷霧測繪星系旋臂之中性氫超精細躍遷',1,'phr.','Radio dishes tune to the neutral hydrogen hyperfine transition line to map galactic spiral structures.','巨型拋物面射電天線緊緊鎖定中性氫超精細能階躍遷譜線，在冰冷虛空中精確復原銀河系旋臂的壯麗盤面。']
+      ["cosmic microwave background radiation","宇宙微波背景輻射",1,"phr.","The lecturer showed a map of cosmic microwave background radiation.","講師展示了一張宇宙微波背景輻射的分布圖。"],
+      ["gravitational lensing","重力透鏡效應",1,"phr.","The team used gravitational lensing to study a distant galaxy.","團隊利用重力透鏡效應研究一個遙遠的星系。"],
+      ["stellar nucleosynthesis","恆星核合成",1,"phr.","The lecture introduced stellar nucleosynthesis in a discussion of where elements come from.","講座在討論元素來源時介紹了恆星核合成。"],
+      ["dispersion in a fast radio burst","快速射電暴中的色散",1,"phr.","The article discusses measurements of dispersion in a fast radio burst.","文章討論快速射電暴中的色散測量結果。"],
+      ["the event horizon of a black hole","黑洞的事件視界",1,"phr.","The diagram marks the event horizon of a black hole.","圖上標出了黑洞的事件視界。"],
+      ["the Chandrasekhar limit","錢德拉塞卡極限",1,"phr.","The lecture introduced the Chandrasekhar limit in a discussion of white dwarfs.","講座在討論白矮星時介紹了錢德拉塞卡極限。"],
+      ["a gravity assist manoeuvre","引力助推操作",1,"phr.","The spacecraft used a gravity assist manoeuvre to change its trajectory.","太空船利用引力助推改變飛行軌道。"],
+      ["transmission spectroscopy","透射光譜法",1,"phr.","The team used transmission spectroscopy to investigate the planet’s atmosphere.","團隊使用透射光譜法研究那顆行星的大氣。"],
+      ["the neutral hydrogen line","中性氫譜線",1,"phr.","The astronomers mapped the gas by observing the neutral hydrogen line.","天文學家透過觀測中性氫譜線，繪製了氣體分布圖。"]
     ],
     spells: [
       ['EXOPLANET','n.','在太陽系之外圍繞其他恆星公轉的太陽系外行星','Astronomers confirmed the discovery of an Earth-sized habitable exoplanet in the habitable zone.','天文學界權威證實：在該恆星的宜居帶中發現了一顆質量與地球相當的岩質系外行星（Exoplanet）。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The space probe captured high resolution imagery of cryovolcanic plumes on the icy moon Enceladus. What was venting?','Subsurface liquid ocean water containing organic hydrocarbons and molecular hydrogen erupted into space.|Boiling molten volcanic basalt rock that paved over the icy surface with dark black asphalt.|A stream of pressurized air containing oxygen that allowed human astronauts to breathe freely.|Thousands of small plastic beads that coated the surrounding orbital rings with white paint.','卡西尼號探測器掠過土衛二（Enceladus）上空，近距拍下了震撼的「冰火山羽流（Cryovolcanic Plumes）」爆發：地下深海的海水攜帶著有機烴類、甲烷與分子氫，沿著冰層虎條紋裂縫瘋狂噴湧入太空，為尋找地外生命撕開了最耀眼的窗口。']
     ],
     voices: [
-      ['cosmic inflation scalar inflaton field','驅使極早期空間指數級暴脹之暴脹純量場',2,'phr.','The cosmic inflation scalar inflaton field resolved the horizon and flatness puzzles of cosmology.','暴脹宇宙學中的暴脹純量場，以超越想像的磅礴相變力量，一舉撫平了極早期宇宙的視界與平坦性天問。'],
-      ['sakharov baryogenesis thermal non equilibrium','打破對稱決定物質倖存之薩哈羅夫重子生成條件',2,'phr.','Satisfying the sakharov baryogenesis thermal non equilibrium criterion permitted matter to triumph over antimatter.','唯有在嚴格滿足薩哈羅夫非熱平衡重子生成準則的大爆炸混沌中，物質方才險勝反物質，締造了我們存在的宇宙。'],
-      ['penrose hawking singularity theorem inevitability','廣義相對論下引力坍縮不可避免之奇點定理',2,'phr.','The mathematical proof affirmed the penrose hawking singularity theorem inevitability inside black hole cores.','嚴密的微分幾何張量數學，堅不可摧地證實了彭羅斯-霍金引力坍縮奇異點不可避免性的客觀物理宿命。'],
-      ['kerr metric frame dragging ergosphere','極限旋轉拖拽周遭時空之克爾黑洞能層',2,'phr.','Relativistic astrophysics exploits the kerr metric frame dragging ergosphere to extract net rotational energy.','前沿相對論天體物理學巧妙構想動用彭羅斯過程，自克爾度規時空拖拽能層中抽取黑洞巨大的旋轉能量。'],
-      ['gravitational wave quasi normal mode ringdown','初生黑洞受擾如巨鐘哀鳴之引力波準正規模鈴宕',2,'phr.','The merger culminated in a gravitational wave quasi normal mode ringdown encoding horizon geometry.','雙黑洞世紀大碰撞的終樂章，在引力波準正規模鈴宕的衰減殘響中，精準銘刻下新生事件視界的無瑕幾何特徵。'],
-      ['baryon acoustic oscillation sound horizon ruler','丈量宇宙加速膨脹歷史之重子聲學振盪標準尺',2,'phr.','Surveys mapped millions of galaxies using the baryon acoustic oscillation sound horizon ruler.','大天區星系巡天以重子聲學振盪聲學視界標準尺為指引，以前所未有的精度重構了宇宙加速膨脹的深邃歷史。'],
-      ['eddington radiation accretion luminosity threshold','向外光子斥力抵衡內向引力之愛丁頓吸積極限',2,'phr.','Supermassive quasars burn near the eddington radiation accretion luminosity threshold in the early universe.','宇宙清晨時代的超級類星體，以狂暴姿態在緊貼愛丁頓輻射吸積光度極限的刀鋒邊緣貪婪吞噬著周遭物質。'],
-      ['magnetar magnetic reconnection crustal flare','百萬億高斯強磁重聯引爆之磁星地殼巨耀斑',2,'phr.','The high energy observatory survived a magnetar magnetic reconnection crustal flare from across the galaxy.','軌道伽瑪射線天文台在千分之一秒內，目睹了一場橫跨整個銀河系傳遞而來的磁星磁力線拓撲重聯地殼巨耀斑。'],
-      ['tolman oppenheimer volkoff mass limit','中子簡併壓抗衡坍縮之上限之TOV質量極限',2,'phr.','The dense stellar core breached the tolman oppenheimer volkoff mass limit to forge a pristine black hole.','超限的緻密天體核心無情衝破了托爾曼-奧本海默-沃爾科夫極限的最後防線，轟然坍塌為純粹的幾何黑洞。'],
-      ['cryovolcanic hydrothermal ocean plume','土衛二深海冰下湧出有機物之冰火山熱液羽流',2,'phr.','Spectrometers flew through the cryovolcanic hydrothermal ocean plume to analyze prebiotic chemistry.','深空探測器勇敢俯衝直接穿透土衛二的冰火山熱液羽流，在漫天冰晶噴霧中直接採樣解析生命起源前夕的生化分子。']
+      ["cosmic inflation","宇宙暴脹",2,"phr.","The lecturer introduced cosmic inflation in a discussion of the early universe.","講師在討論早期宇宙時介紹了宇宙暴脹。"],
+      ["out of thermal equilibrium","處於熱非平衡狀態",2,"phr.","The model considers processes that occur out of thermal equilibrium.","模型考慮處於熱非平衡狀態時發生的過程。"],
+      ["a singularity theorem","奇點定理",2,"phr.","The lecture examined the assumptions behind a singularity theorem.","講座探討某項奇點定理背後的假設。"],
+      ["frame dragging around a rotating black hole","旋轉黑洞周圍的參考系拖曳",2,"phr.","The simulation illustrates frame dragging around a rotating black hole.","模擬展示旋轉黑洞周圍的參考系拖曳效應。"],
+      ["the ringdown phase of a black hole merger","黑洞合併後的振鈴階段",2,"phr.","The researchers analysed the ringdown phase of a black hole merger.","研究人員分析黑洞合併後的振鈴階段。"],
+      ["baryon acoustic oscillations","重子聲學振盪",2,"phr.","The team compared measurements of baryon acoustic oscillations across several surveys.","團隊比較數項巡天觀測所得的重子聲學振盪測量結果。"],
+      ["the Eddington luminosity limit","愛丁頓光度極限",2,"phr.","The lecture introduced the Eddington luminosity limit in a discussion of accretion.","講座在討論吸積時介紹了愛丁頓光度極限。"],
+      ["a flare from a magnetar","來自磁星的耀發",2,"phr.","The observatory recorded a flare from a magnetar.","天文台記錄到一次來自磁星的耀發。"],
+      ["the maximum mass of a neutron star","中子星的質量上限",2,"phr.","The paper discusses different estimates of the maximum mass of a neutron star.","論文討論對中子星質量上限的不同估算。"],
+      ["a plume from an icy moon","從冰質衛星噴出的羽流",2,"phr.","The instrument detected a plume from an icy moon.","儀器偵測到一顆冰質衛星噴出的羽流。"]
     ],
     spells: [
       ['INFLATION','n.','極早期宇宙在暴脹場驅動下空間度規以超光速呈指數級急劇擴張的暴脹階段','Cosmic inflation stretched primordial quantum fluctuations into large scale cosmic structures.','宇宙暴脹（Inflation）將微觀量子漲落神奇地拉扯放大，化作今日星系長城與浩瀚宇宙大尺度結構的原初胚胎。'],

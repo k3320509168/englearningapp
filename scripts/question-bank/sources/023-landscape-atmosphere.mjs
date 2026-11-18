@@ -146,9 +146,9 @@ listening:[
 voices:[
 ['iridescence','隨觀看或照光角度變化的虹彩',1,'n.','The water has a faint iridescence.','水有淡淡虹彩。'],
 ['desolation','荒寂空落而令人孤絕的狀態',1,'n.','The empty platform suggests desolation.','空月台令人感到荒寂。'],
-['a sinuous progression of shadows','蜿蜒延展的一連串影子',1,'phr.','The wall carries a sinuous progression of shadows.','牆上有蜿蜒延展的影子。'],
+["an undulating pattern of shadows","起伏延展的影子圖案",1,"phr.","The trees cast an undulating pattern of shadows across the wall.","樹木在牆上投下起伏延展的影子。"],
 ['an estranging clarity of light','使熟物陌生化的清晰光線',2,'phr.','The scene has an estranging clarity of light.','景物光線清晰到令人陌生。'],
-['an unredeemed sense of neglect','未被化解的失修忽略感',2,'phr.','The room retains an unredeemed sense of neglect.','房仍留未被化解的忽略感。'],
+["a lingering sense of neglect","揮之不去的疏於照料感",2,"phr.","Even after the repairs, the room retained a lingering sense of neglect.","即使修繕過後，這個房間仍讓人覺得長期疏於照料。"],
 ['An open prospect need not promise a different future','開闊景象未必承諾不同未來',3],
 ['The smallest detail may interrupt a grand narrative','最小細節可能打斷宏大敘事',3],
 ['Familiarity becomes newly perceptible on the return journey','返程中熟悉重新變得可感',3]

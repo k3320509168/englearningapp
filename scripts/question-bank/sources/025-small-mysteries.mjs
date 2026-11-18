@@ -148,7 +148,7 @@ voices:[
 ['misapprehension','對事物形成的錯誤理解',1,'n.','The question rests on a misapprehension.','問題依錯誤理解。'],
 ['a non sequitur in the argument','論證中不由前提推得的結論',1,'phr.','The final sentence introduces a non sequitur in the argument.','末句引入推論跳躍。'],
 ['an unwarranted imputation of motive','欠缺依據地歸給他人某種動機',2,'phr.','The reading makes an unwarranted imputation of motive.','解讀無據歸給動機。'],
-['a circular claim to independent confirmation','循環地宣稱取得獨立確認',2,'phr.','The report relies on a circular claim to independent confirmation.','報告依循環的獨立確認主張。'],
+["a circular argument presented as independent confirmation","被當作獨立佐證的循環論證",2,"phr.","The report cites the original claim as evidence, creating a circular argument presented as independent confirmation.","報告引用原主張作為證據，把循環論證包裝成獨立佐證。"],
 ['A valid inference still depends on the status of its premise','有效推論仍取決前提地位',3],
 ['Striking coincidence does not establish deliberate coordination','醒目巧合不證成蓄意協調',3],
 ['Knowledge held by the narrator need not belong to the character','敘述者所知未必屬角色',3]

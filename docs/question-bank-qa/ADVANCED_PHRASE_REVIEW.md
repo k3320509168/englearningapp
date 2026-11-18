@@ -3,9 +3,10 @@
 範圍為首輪盤點的 388 題詞彙口說題。清單保留舊答案，以免修短後失去追蹤。逐題核對自然度、中文線索、例句、口說判定和拼寫備援。
 
 - [x] 修正並驗證首批 6 道拼接術語。
-- [ ] 完成 C1 剩餘 183 題。
-- [ ] 完成 C2 剩餘 199 題。
-- [ ] 逐批驗證正式包、圖鑑與舊存檔，再核對所有勾選項。
+- [x] 修正第 2 批 287 道斷句、搭配或專業提示。
+- [x] C1 188 題逐題完成。154 題修正，34 題保留。
+- [x] C2 200 題逐題完成。139 題修正，61 題保留。
+- [x] 用正式分區資料逐題驗標準逐字稿、拼寫輸入及分區詞條。293 道修訂題測試舊圖鑑、舊拼寫錯題與知識紀錄的遷移。
 
 ## C1
 
@@ -14,389 +15,389 @@
 - [x] `mind uploading ship of theseus personal identity` → `continuity of personal identity`。改為單一術語或自然詞組。
 - [x] `high bandwidth memory through silicon via` → `through silicon via`。改為單一術語或自然詞組。
 - [x] `real time cold chain telemetry monitoring` → `real time temperature monitoring`。改為單一術語或自然詞組。
-- [ ] `jonasian imperative of responsibility long term survival`
-- [ ] `fillmore case grammar deep semantic roles`
-- [ ] `fregean principle of compositionality semantic rules`
-- [ ] `incoterms free on board risk transfer`
-- [ ] `multimodal transport operator door to door`
-- [ ] `sandelian case against genetic perfection mastery`
-- [ ] `spiral of silence social conformity pressure`
-- [ ] `synthetic sentience moral status qualia suffering`
-- [ ] `york antwerp rules general average contribution`
-- [ ] `a commensurate degree of authority`
-- [ ] `a consistent frame of reference`
-- [ ] `a finite pool of volunteers`
-- [ ] `a misleading impression of certainty`
-- [ ] `a misleading impression of effortlessness`
-- [ ] `a provisional account of events`
-- [ ] `a qualified assurance of suitability`
-- [ ] `a qualified recollection of events`
-- [ ] `a realistic prospect of repair`
-- [ ] `a tacit claim to ownership`
-- [ ] `a tacit expectation of availability`
-- [ ] `a translucent veil of mist`
-- [ ] `adorno culture industry mass commodification`
-- [ ] `an arrangement open to revision`
-- [ ] `an association made visually legible`
-- [ ] `an equitable division of labour`
-- [ ] `an implied obligation to respond`
-- [ ] `atomic layer deposition conformal coating`
-- [ ] `be that as it may`
-- [ ] `bourdieu habitus embodied cultural capital`
-- [ ] `cap and trade emissions system`
-- [ ] `cognitive enhancement biological caste stratification`
-- [ ] `conceptual metaphor cross domain mapping`
-- [ ] `container demurrage and detention charges`
-- [ ] `corporate mea culpa unconditional apology`
-- [ ] `critical minerals export control licensing`
-- [ ] `cross docking lean warehouse logistics`
-- [ ] `debt for equity swap restructuring`
-- [ ] `doctrine of stare decisis stability`
-- [ ] `fast radio burst dispersion measure`
-- [ ] `fauconnier conceptual blending mental spaces`
-- [ ] `foucault power knowledge discourse regime`
-- [ ] `genetic information nondiscrimination act protection`
-- [ ] `germline genome editing transmissible mutation`
-- [ ] `global supply chain chokepoint vulnerability`
-- [ ] `golden hours crisis communications response`
-- [ ] `innate universal grammar cognitive architecture`
-- [ ] `irrevocable documentary letter of credit`
-- [ ] `negotiable bill of lading title`
-- [ ] `neutral hydrogen hyperfine transition line`
-- [ ] `on the face of it`
-- [ ] `peremptory norm of jus cogens`
-- [ ] `pragmatic illocutionary speech act force`
-- [ ] `pre merger due diligence audit`
-- [ ] `proactive holding statement transparent briefing`
-- [ ] `pure play semiconductor foundry model`
-- [ ] `rosch prototype theory graded categorization`
-- [ ] `scope for a negotiated compromise`
-- [ ] `sensorimotor embodied image schema cognition`
-- [ ] `stranded fossil asset write down`
-- [ ] `streisand effect viral backlash explosion`
-- [ ] `supermassive black hole event horizon`
-- [ ] `supply chain bullwhip effect amplification`
-- [ ] `transhumanist longevity escape velocity threshold`
-- [ ] `transhumanist morphological freedom bodily sovereignty`
-- [ ] `vector space cosine semantic similarity`
-- [ ] `veil of ignorance thought experiment`
-- [ ] `walter benjamin mechanical aura decay`
-- [ ] `a bone of contention`
-- [ ] `a carefully delimited commitment`
-- [ ] `a carefully framed question`
-- [ ] `a claim to legitimacy`
-- [ ] `a consciously restrained design`
-- [ ] `a deliberately restrained delivery`
-- [ ] `a deliberately spare setting`
-- [ ] `a distinction worth preserving`
-- [ ] `a finely judged transition`
-- [ ] `a functionally adequate result`
-- [ ] `a functionally equivalent substitute`
-- [ ] `a legible spatial hierarchy`
-- [ ] `a procedurally complete response`
-- [ ] `a readily discoverable alternative`
-- [ ] `a sense of ownership`
-- [ ] `a shift in perspective`
-- [ ] `a substantively adequate remedy`
-- [ ] `a sustained emotional tension`
-- [ ] `a systematic observation bias`
-- [ ] `advanced heterogeneous packaging architecture`
-- [ ] `algorithmic filter bubble polarization`
-- [ ] `amyloid beta plaque neuropathology`
-- [ ] `an acoustically intimate setting`
-- [ ] `an embedded value judgement`
-- [ ] `an independently testable prediction`
-- [ ] `an inherited family narrative`
-- [ ] `astroturfing fake grassroots manipulation`
-- [ ] `attitudinal inoculation cognitive defense`
-- [ ] `axonal saltatory myelination conduction`
-- [ ] `belligerent occupation administrative duty`
-- [ ] `binding arbitration dispute resolution`
-- [ ] `blood brain barrier permeability`
-- [ ] `burden of proof rests`
-- [ ] `capital inflows sudden stop`
-- [ ] `carbon border adjustment mechanism`
-- [ ] `chandrasekhar mass limit detonation`
-- [ ] `cleanroom airborne particulate contamination`
-- [ ] `come to terms with`
-- [ ] `computational distributional semantics hypothesis`
-- [ ] `constitutional separation of powers`
-- [ ] `cosmic microwave background relic`
-- [ ] `cost push inflation pressures`
-- [ ] `critical regionalism architectural idiom`
-- [ ] `cryptographic content provenance metadata`
-- [ ] `declarative episodic memory consolidation`
-- [ ] `default mode network connectivity`
-- [ ] `demanded that it be`
-- [ ] `diplomatic pouch communications inviolability`
-- [ ] `dopaminergic reward prediction error`
-- [ ] `double blind randomized trial`
-- [ ] `drew a complete blank`
-- [ ] `end to end encryption`
-- [ ] `exclusive economic zone limits`
-- [ ] `expand context window capacity`
-- [ ] `extreme ultraviolet lithography scanner`
-- [ ] `fault tolerant quantum architecture`
-- [ ] `fiduciary duty of loyalty`
-- [ ] `fiscal policy crowding out`
-- [ ] `freedom of navigation operations`
-- [ ] `friend shoring strategic diversification`
-- [ ] `golden parachute severance provision`
-- [ ] `gramsci cultural hegemony ideology`
-- [ ] `gravitational lensing spacetime curvature`
-- [ ] `grey zone coercive tactics`
-- [ ] `habeas corpus judicial petition`
-- [ ] `had the board acted`
-- [ ] `hermeneutic circular interpretation dynamic`
-- [ ] `hostile takeover poison pill`
-- [ ] `husserl phenomenological epoche suspension`
-- [ ] `in the final analysis`
-- [ ] `insolvency chapter eleven petition`
-- [ ] `international court advisory opinion`
-- [ ] `interplanetary gravity assist trajectory`
-- [ ] `it is imperative that`
-- [ ] `kuhn epistemological paradigm revolution`
-- [ ] `locus standi in court`
-- [ ] `malicious disinformation operational campaign`
-- [ ] `managed float exchange regime`
-- [ ] `material adverse effect clause`
-- [ ] `multilateral treaty ratification instrument`
-- [ ] `nature based adaptation solutions`
-- [ ] `non refoulement refugee protection`
-- [ ] `off target cleavage risk`
-- [ ] `optogenetic neural circuit manipulation`
-- [ ] `pay mere lip service`
-- [ ] `persona non grata expulsion`
-- [ ] `pluripotent stem cell line`
-- [ ] `post quantum cryptography standard`
-- [ ] `principle of humanitarian distinction`
-- [ ] `quantum key distribution protocol`
-- [ ] `recommended that it be`
-- [ ] `regulatory antitrust divestiture mandate`
-- [ ] `retrospective peak end rule`
-- [ ] `run entirely counter to`
-- [ ] `scope three carbon emissions`
-- [ ] `second strike nuclear capability`
-- [ ] `seldom have we seen`
-- [ ] `semiconductor wafer fabrication foundry`
-- [ ] `sovereign debt restructuring haircut`
-- [ ] `stellar nucleosynthesis carbon fusion`
-- [ ] `stipulated that each state`
-- [ ] `strict scrutiny standard review`
-- [ ] `structuralist semiotic myth deconstruction`
-- [ ] `substantive due process liberty`
-- [ ] `suffice it to say`
-- [ ] `sunk cost fallacy trap`
-- [ ] `the distribution of benefits`
-- [ ] `the limits of generalisation`
-- [ ] `transmission spectroscopy atmospheric biosignature`
-- [ ] `ultra vires administrative overreach`
-- [ ] `universal human rights jurisdiction`
-- [ ] `vienna convention diplomatic immunity`
-- [ ] `were it not for`
-- [ ] `what the inquiry showed`
-- [ ] `within the stated remit`
-- [ ] `would still be frozen`
+- [x] `jonasian imperative of responsibility long term survival` → `responsibility to future generations`。修正搭配或補足語境。
+- [x] `fillmore case grammar deep semantic roles` → `semantic roles in case grammar`。修正搭配或補足語境。
+- [x] `fregean principle of compositionality semantic rules` → `the principle of compositionality`。修正搭配或補足語境。
+- [x] `incoterms free on board risk transfer` → `the transfer of risk`。修正搭配或補足語境。
+- [x] `multimodal transport operator door to door` → `multimodal transport operator`。修正搭配或補足語境。
+- [x] `sandelian case against genetic perfection mastery` → `the pursuit of genetic perfection`。修正搭配或補足語境。
+- [x] `spiral of silence social conformity pressure` → `the spiral of silence`。修正搭配或補足語境。
+- [x] `synthetic sentience moral status qualia suffering` → `the moral status of artificial beings`。修正搭配或補足語境。
+- [x] `york antwerp rules general average contribution` → `general average contributions`。修正搭配或補足語境。
+- [x] `a commensurate degree of authority`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a consistent frame of reference`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a finite pool of volunteers`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a misleading impression of certainty`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a misleading impression of effortlessness`。修正提示及例句。
+- [x] `a provisional account of events`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a qualified assurance of suitability`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a qualified recollection of events`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a realistic prospect of repair` → `a realistic chance of repairing it`。修正搭配或補足語境。
+- [x] `a tacit claim to ownership`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a tacit expectation of availability`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a translucent veil of mist`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `adorno culture industry mass commodification` → `the commodification of culture`。修正搭配或補足語境。
+- [x] `an arrangement open to revision`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an association made visually legible` → `a clear visual link`。修正搭配或補足語境。
+- [x] `an equitable division of labour`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an implied obligation to respond`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `atomic layer deposition conformal coating` → `atomic layer deposition`。修正搭配或補足語境。
+- [x] `be that as it may`。修正提示及例句。
+- [x] `bourdieu habitus embodied cultural capital` → `embodied cultural capital`。修正搭配或補足語境。
+- [x] `cap and trade emissions system` → `cap and trade system`。修正搭配或補足語境。
+- [x] `cognitive enhancement biological caste stratification` → `unequal access to cognitive enhancement`。修正搭配或補足語境。
+- [x] `conceptual metaphor cross domain mapping` → `mapping between conceptual domains`。修正搭配或補足語境。
+- [x] `container demurrage and detention charges` → `demurrage and detention charges`。修正搭配或補足語境。
+- [x] `corporate mea culpa unconditional apology` → `public acknowledgement of wrongdoing`。修正搭配或補足語境。
+- [x] `critical minerals export control licensing` → `export licences for critical minerals`。修正搭配或補足語境。
+- [x] `cross docking lean warehouse logistics` → `transfer goods without storing them`。修正搭配或補足語境。
+- [x] `debt for equity swap restructuring` → `debt for equity swap`。修正搭配或補足語境。
+- [x] `doctrine of stare decisis stability` → `the doctrine of precedent`。修正搭配或補足語境。
+- [x] `fast radio burst dispersion measure` → `dispersion in a fast radio burst`。修正搭配或補足語境。
+- [x] `fauconnier conceptual blending mental spaces` → `conceptual blending`。修正搭配或補足語境。
+- [x] `foucault power knowledge discourse regime` → `the relationship between power and knowledge`。修正搭配或補足語境。
+- [x] `genetic information nondiscrimination act protection` → `discrimination based on genetic information`。修正搭配或補足語境。
+- [x] `germline genome editing transmissible mutation` → `ethical questions about heritable changes`。修正搭配或補足語境。
+- [x] `global supply chain chokepoint vulnerability` → `a supply chain bottleneck`。修正搭配或補足語境。
+- [x] `golden hours crisis communications response` → `a timely crisis response`。修正搭配或補足語境。
+- [x] `innate universal grammar cognitive architecture` → `the hypothesis of universal grammar`。修正搭配或補足語境。
+- [x] `irrevocable documentary letter of credit` → `an irrevocable letter of credit`。修正搭配或補足語境。
+- [x] `negotiable bill of lading title` → `a negotiable bill of lading`。修正搭配或補足語境。
+- [x] `neutral hydrogen hyperfine transition line` → `the neutral hydrogen line`。修正搭配或補足語境。
+- [x] `on the face of it`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `peremptory norm of jus cogens` → `a peremptory norm of international law`。修正搭配或補足語境。
+- [x] `pragmatic illocutionary speech act force` → `the force of an utterance`。修正搭配或補足語境。
+- [x] `pre merger due diligence audit` → `pre merger due diligence`。修正搭配或補足語境。
+- [x] `proactive holding statement transparent briefing` → `issue a holding statement`。修正搭配或補足語境。
+- [x] `pure play semiconductor foundry model` → `a pure play foundry`。修正搭配或補足語境。
+- [x] `rosch prototype theory graded categorization` → `prototype theory in categorisation`。修正搭配或補足語境。
+- [x] `scope for a negotiated compromise`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `sensorimotor embodied image schema cognition` → `image schemas in embodied cognition`。修正搭配或補足語境。
+- [x] `stranded fossil asset write down` → `a write down of stranded assets`。修正搭配或補足語境。
+- [x] `streisand effect viral backlash explosion` → `the streisand effect`。修正搭配或補足語境。
+- [x] `supermassive black hole event horizon` → `the event horizon of a black hole`。修正搭配或補足語境。
+- [x] `supply chain bullwhip effect amplification` → `the bullwhip effect`。修正搭配或補足語境。
+- [x] `transhumanist longevity escape velocity threshold` → `claims about extending human lifespan`。修正搭配或補足語境。
+- [x] `transhumanist morphological freedom bodily sovereignty` → `freedom to modify one's body`。修正搭配或補足語境。
+- [x] `vector space cosine semantic similarity` → `cosine similarity between vectors`。修正搭配或補足語境。
+- [x] `veil of ignorance thought experiment` → `the veil of ignorance`。修正搭配或補足語境。
+- [x] `walter benjamin mechanical aura decay` → `the loss of aura`。修正搭配或補足語境。
+- [x] `a bone of contention`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a carefully delimited commitment`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a carefully framed question`。修正提示及例句。
+- [x] `a claim to legitimacy`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a consciously restrained design`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a deliberately restrained delivery`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a deliberately spare setting`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a distinction worth preserving`。修正提示及例句。
+- [x] `a finely judged transition`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a functionally adequate result` → `a result that meets the requirements`。修正搭配或補足語境。
+- [x] `a functionally equivalent substitute`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a legible spatial hierarchy`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a procedurally complete response`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a readily discoverable alternative` → `an easy to find alternative`。修正搭配或補足語境。
+- [x] `a sense of ownership`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a shift in perspective`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a substantively adequate remedy`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a sustained emotional tension` → `sustained emotional tension`。修正搭配或補足語境。
+- [x] `a systematic observation bias` → `systematic bias in observation`。修正搭配或補足語境。
+- [x] `advanced heterogeneous packaging architecture` → `heterogeneous integration in chip packaging`。修正搭配或補足語境。
+- [x] `algorithmic filter bubble polarization` → `an algorithmic filter bubble`。修正搭配或補足語境。
+- [x] `amyloid beta plaque neuropathology` → `amyloid plaques in the brain`。修正搭配或補足語境。
+- [x] `an acoustically intimate setting` → `an intimate acoustic setting`。修正搭配或補足語境。
+- [x] `an embedded value judgement`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an independently testable prediction`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an inherited family narrative`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `astroturfing fake grassroots manipulation` → `a fabricated grassroots campaign`。修正搭配或補足語境。
+- [x] `attitudinal inoculation cognitive defense` → `inoculation against misinformation`。修正搭配或補足語境。
+- [x] `axonal saltatory myelination conduction` → `saltatory conduction`。修正搭配或補足語境。
+- [x] `belligerent occupation administrative duty` → `the duties of an occupying power`。修正搭配或補足語境。
+- [x] `binding arbitration dispute resolution` → `binding arbitration`。修正搭配或補足語境。
+- [x] `blood brain barrier permeability` → `permeability of the blood brain barrier`。修正搭配或補足語境。
+- [x] `burden of proof rests` → `the burden of proof rests with`。修正搭配或補足語境。
+- [x] `capital inflows sudden stop` → `a sudden stop in capital inflows`。修正搭配或補足語境。
+- [x] `carbon border adjustment mechanism`。修正提示及例句。
+- [x] `chandrasekhar mass limit detonation` → `the chandrasekhar limit`。修正搭配或補足語境。
+- [x] `cleanroom airborne particulate contamination` → `airborne particle contamination`。修正搭配或補足語境。
+- [x] `come to terms with`。修正提示及例句。
+- [x] `computational distributional semantics hypothesis` → `distributional semantics`。修正搭配或補足語境。
+- [x] `constitutional separation of powers` → `separation of powers`。修正搭配或補足語境。
+- [x] `cosmic microwave background relic` → `cosmic microwave background radiation`。修正搭配或補足語境。
+- [x] `cost push inflation pressures` → `cost push inflation`。修正搭配或補足語境。
+- [x] `critical regionalism architectural idiom` → `critical regionalism in architecture`。修正搭配或補足語境。
+- [x] `cryptographic content provenance metadata` → `metadata about content provenance`。修正搭配或補足語境。
+- [x] `declarative episodic memory consolidation` → `consolidation of episodic memory`。修正搭配或補足語境。
+- [x] `default mode network connectivity` → `connectivity within the default mode network`。修正搭配或補足語境。
+- [x] `demanded that it be` → `demanded that it be withdrawn`。修正搭配或補足語境。
+- [x] `diplomatic pouch communications inviolability` → `the inviolability of the diplomatic bag`。修正搭配或補足語境。
+- [x] `dopaminergic reward prediction error` → `reward prediction error`。修正搭配或補足語境。
+- [x] `double blind randomized trial` → `double blind randomised trial`。修正搭配或補足語境。
+- [x] `drew a complete blank` → `drew a blank`。修正搭配或補足語境。
+- [x] `end to end encryption`。修正提示及例句。
+- [x] `exclusive economic zone limits` → `the limits of an exclusive economic zone`。修正搭配或補足語境。
+- [x] `expand context window capacity` → `extend the context window`。修正搭配或補足語境。
+- [x] `extreme ultraviolet lithography scanner` → `extreme ultraviolet lithography`。修正搭配或補足語境。
+- [x] `fault tolerant quantum architecture` → `fault tolerant quantum computing`。修正搭配或補足語境。
+- [x] `fiduciary duty of loyalty`。修正提示及例句。
+- [x] `fiscal policy crowding out` → `the crowding out effect`。修正搭配或補足語境。
+- [x] `freedom of navigation operations` → `freedom of navigation`。修正搭配或補足語境。
+- [x] `friend shoring strategic diversification` → `diversify supplier networks`。修正搭配或補足語境。
+- [x] `golden parachute severance provision` → `a golden parachute`。修正搭配或補足語境。
+- [x] `gramsci cultural hegemony ideology` → `cultural hegemony`。修正搭配或補足語境。
+- [x] `gravitational lensing spacetime curvature` → `gravitational lensing`。修正搭配或補足語境。
+- [x] `grey zone coercive tactics` → `coercion below the threshold of war`。修正搭配或補足語境。
+- [x] `habeas corpus judicial petition` → `a petition for habeas corpus`。修正搭配或補足語境。
+- [x] `had the board acted` → `had the board acted sooner`。修正搭配或補足語境。
+- [x] `hermeneutic circular interpretation dynamic` → `the hermeneutic circle`。修正搭配或補足語境。
+- [x] `hostile takeover poison pill` → `a poison pill defence`。修正搭配或補足語境。
+- [x] `husserl phenomenological epoche suspension` → `suspend prior assumptions`。修正搭配或補足語境。
+- [x] `in the final analysis`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `insolvency chapter eleven petition` → `file for bankruptcy protection`。修正搭配或補足語境。
+- [x] `international court advisory opinion` → `an advisory opinion`。修正搭配或補足語境。
+- [x] `interplanetary gravity assist trajectory` → `a gravity assist manoeuvre`。修正搭配或補足語境。
+- [x] `it is imperative that`。修正提示及例句。
+- [x] `kuhn epistemological paradigm revolution` → `a shift in the prevailing paradigm`。修正搭配或補足語境。
+- [x] `locus standi in court` → `standing to bring a claim`。修正搭配或補足語境。
+- [x] `malicious disinformation operational campaign` → `disinformation campaign`。修正搭配或補足語境。
+- [x] `managed float exchange regime` → `a managed float`。修正搭配或補足語境。
+- [x] `material adverse effect clause`。修正提示及例句。
+- [x] `multilateral treaty ratification instrument` → `an instrument of ratification`。修正搭配或補足語境。
+- [x] `nature based adaptation solutions` → `nature based adaptation`。修正搭配或補足語境。
+- [x] `non refoulement refugee protection` → `the principle of non refoulement`。修正搭配或補足語境。
+- [x] `off target cleavage risk` → `risk of unintended changes`。修正搭配或補足語境。
+- [x] `optogenetic neural circuit manipulation` → `neural activity during decision making`。修正搭配或補足語境。
+- [x] `pay mere lip service` → `pay lip service to`。修正搭配或補足語境。
+- [x] `persona non grata expulsion` → `declare someone persona non grata`。修正搭配或補足語境。
+- [x] `pluripotent stem cell line`。修正提示及例句。
+- [x] `post quantum cryptography standard` → `post quantum cryptography standards`。修正搭配或補足語境。
+- [x] `principle of humanitarian distinction` → `the principle of distinction`。修正搭配或補足語境。
+- [x] `quantum key distribution protocol` → `quantum key distribution`。修正搭配或補足語境。
+- [x] `recommended that it be` → `recommended that it be revised`。修正搭配或補足語境。
+- [x] `regulatory antitrust divestiture mandate` → `a divestiture order`。修正搭配或補足語境。
+- [x] `retrospective peak end rule` → `the peak end rule`。修正搭配或補足語境。
+- [x] `run entirely counter to` → `run counter to`。修正搭配或補足語境。
+- [x] `scope three carbon emissions` → `scope three emissions`。修正搭配或補足語境。
+- [x] `second strike nuclear capability` → `nuclear deterrence`。修正搭配或補足語境。
+- [x] `seldom have we seen` → `seldom have we seen such resilience`。修正搭配或補足語境。
+- [x] `semiconductor wafer fabrication foundry` → `semiconductor foundry`。修正搭配或補足語境。
+- [x] `sovereign debt restructuring haircut` → `a haircut on sovereign debt`。修正搭配或補足語境。
+- [x] `stellar nucleosynthesis carbon fusion` → `stellar nucleosynthesis`。修正搭配或補足語境。
+- [x] `stipulated that each state` → `stipulated that each state report its findings`。修正搭配或補足語境。
+- [x] `strict scrutiny standard review` → `apply strict scrutiny`。修正搭配或補足語境。
+- [x] `structuralist semiotic myth deconstruction` → `a semiotic analysis of myth`。修正搭配或補足語境。
+- [x] `substantive due process liberty` → `substantive due process`。修正搭配或補足語境。
+- [x] `suffice it to say`。修正提示及例句。
+- [x] `sunk cost fallacy trap` → `sunk cost fallacy`。修正搭配或補足語境。
+- [x] `the distribution of benefits`。修正提示及例句。
+- [x] `the limits of generalisation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `transmission spectroscopy atmospheric biosignature` → `transmission spectroscopy`。修正搭配或補足語境。
+- [x] `ultra vires administrative overreach` → `exceed its statutory authority`。修正搭配或補足語境。
+- [x] `universal human rights jurisdiction` → `universal jurisdiction`。修正搭配或補足語境。
+- [x] `vienna convention diplomatic immunity` → `diplomatic immunity`。修正搭配或補足語境。
+- [x] `were it not for`。修正提示及例句。
+- [x] `what the inquiry showed`。修正提示及例句。
+- [x] `within the stated remit`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `would still be frozen`。修正提示及例句。
 
 ## C2
 
 - [x] `lloyds open form no cure no pay salvage` → `no cure no pay`。改為單一術語或自然詞組。
-- [ ] `bostrom vulnerable world hypothesis black ball catastrophe`
-- [ ] `a circular claim to independent confirmation`
-- [ ] `a hagiographic reconstruction of a life`
-- [ ] `a non sequitur in the argument`
-- [ ] `a presupposition disguised as a question`
-- [ ] `a proprietary claim over shared space`
-- [ ] `a proprietorial concern for another person`
-- [ ] `a socially legible gesture of restraint`
-- [ ] `a triumph of wording over substance`
-- [ ] `an aesthetic at odds with habitation`
-- [ ] `baryon acoustic oscillation sound horizon ruler`
-- [ ] `co packaged optics silicon photonics integration`
-- [ ] `foreign direct product rule export licensing`
-- [ ] `gravitational wave quasi normal mode ringdown`
-- [ ] `levinas ethical face of the other`
-- [ ] `pre emptive self defense caroline test`
-- [ ] `transfer pricing and customs valuation conflict`
-- [ ] `wafer to wafer hybrid direct bonding`
-- [ ] `a bitter pill to swallow`
-- [ ] `a brittle assertion of certainty`
-- [ ] `a calculated air of spontaneity`
-- [ ] `a ceremonious show of generosity`
-- [ ] `a discretionary but reasoned judgement`
-- [ ] `a distinction that bears scrutiny`
-- [ ] `a distinction without a difference`
-- [ ] `a facile appeal to complexity`
-- [ ] `a fastidious attention to detail`
-- [ ] `a presumption of prior competence`
-- [ ] `a punctilious display of courtesy`
-- [ ] `a romanticised account of improvisation`
-- [ ] `a sinuous progression of shadows`
-- [ ] `a spurious appearance of economy`
-- [ ] `a studied display of deference`
-- [ ] `a studied show of candour`
-- [ ] `a tacit economy of obligation`
-- [ ] `a tacit redefinition of sufficiency`
-- [ ] `a tacitly privileged starting point`
-- [ ] `a tendentious appeal to fairness`
-- [ ] `adorno negative dialectics non identity`
-- [ ] `agamben sovereign state of exception`
-- [ ] `an asymmetrical standard of judgement`
-- [ ] `an asymmetry of permissible directness`
-- [ ] `an estranging clarity of light`
-- [ ] `an exercise in window dressing`
-- [ ] `an ostentatious display of abundance`
-- [ ] `an unexamined hierarchy of significance`
-- [ ] `an unquantified reserve of labour`
-- [ ] `an unredeemed sense of neglect`
-- [ ] `an unwarranted imputation of motive`
-- [ ] `an urbane disclaimer of authority`
-- [ ] `atomic layer etching deterministic control`
-- [ ] `backside power delivery network decoupling`
-- [ ] `biological weapons non proliferation verification`
-- [ ] `brain machine interface kinematic decoding`
-- [ ] `cerebellar long term depression plasticity`
-- [ ] `cfius national security review jurisdiction`
-- [ ] `chalmers hard problem of consciousness`
-- [ ] `chip four alliance semiconductor resilience`
-- [ ] `chomskyan minimalist program merge operation`
-- [ ] `command responsibility international criminal liability`
-- [ ] `cosmic inflation scalar inflaton field`
-- [ ] `derrida post structuralist differance deferral`
-- [ ] `direct participation in hostilities loss`
-- [ ] `dolus specialis genocidal intent burden`
-- [ ] `drag along minority shareholder right`
-- [ ] `eddington radiation accretion luminosity threshold`
-- [ ] `entorhinal grid cell hexagonal lattice`
-- [ ] `equity cure financial covenant relief`
-- [ ] `erga omnes sovereign obligation enforcement`
-- [ ] `exhaustion of local remedies requirement`
-- [ ] `far be it from me`
-- [ ] `free prior and informed consent`
-- [ ] `gate all around nanosheet architecture`
-- [ ] `hardware anchored root of trust`
-- [ ] `kerr metric frame dragging ergosphere`
-- [ ] `magnetar magnetic reconnection crustal flare`
-- [ ] `patch clamp single channel electrophysiology`
-- [ ] `penrose hawking singularity theorem inevitability`
-- [ ] `piercing the corporate veil doctrine`
-- [ ] `possible world semantics intension function`
-- [ ] `posthuman cognitive enhancement epistemic incomprehensibility`
-- [ ] `rebus sic stantibus treaty termination`
-- [ ] `restitutio in integrum full damages`
-- [ ] `revlon duties enhanced judicial scrutiny`
-- [ ] `sakharov baryogenesis thermal non equilibrium`
-- [ ] `stochastic line edge roughness mitigation`
-- [ ] `the appearance of disinterested judgement`
-- [ ] `threw caution to the winds`
-- [ ] `tolman oppenheimer volkoff mass limit`
-- [ ] `wide bandgap semiconductor power conversion`
-- [ ] `winner curse in common auctions`
-- [ ] `zizek cynical distance ideological fantasy`
-- [ ] `a carefully calibrated rebuke`
-- [ ] `a carefully mediated recollection`
-- [ ] `a conspicuously seamless soundscape`
-- [ ] `a conveniently elastic definition`
-- [ ] `a disconcerting tonal shift`
-- [ ] `a face saving reformulation`
-- [ ] `a formally symmetric permission`
-- [ ] `a methodologically circumspect conclusion`
-- [ ] `a meticulously cultivated informality`
-- [ ] `a pragmatically inadequate instruction`
-- [ ] `a procedurally immaculate failure`
-- [ ] `a retroactively imposed condition`
-- [ ] `a retrospective narrative coherence`
-- [ ] `a rhetorically charged silence`
-- [ ] `a scrupulously circumscribed apology`
-- [ ] `a self exculpatory narrative`
-- [ ] `a self serving interpretation`
-- [ ] `a superficially conciliatory gesture`
-- [ ] `a superficially neutral formulation`
-- [ ] `adverse selection death spiral`
-- [ ] `aharonov bohm phase shift`
-- [ ] `amyloid cascade hypothesis validation`
-- [ ] `an arresting visual composition`
-- [ ] `an artfully circumscribed denial`
-- [ ] `an artfully evasive formulation`
-- [ ] `an artfully qualified assurance`
-- [ ] `an artfully sustained ambiguity`
-- [ ] `an asymmetry of power`
-- [ ] `an emotionally unearned resolution`
-- [ ] `an irreducibly dialogic account`
-- [ ] `an operationally meaningful distinction`
-- [ ] `an ostensibly benevolent decree`
-- [ ] `an ostensibly uncontrived appearance`
-- [ ] `an ostensibly universal provision`
-- [ ] `an ostensibly unmediated voice`
-- [ ] `an unspoken emotional price`
-- [ ] `anti access area denial`
-- [ ] `asymmetric bell inequality refutation`
-- [ ] `baudrillard hyperreality simulation simulacrum`
-- [ ] `bose einstein condensation threshold`
-- [ ] `business judgment rule protection`
-- [ ] `chemical mechanical planarization uniformity`
-- [ ] `control flow integrity protection`
-- [ ] `cp symmetry violation parameter`
-- [ ] `cryovolcanic hydrothermal ocean plume`
-- [ ] `damning with faint praise`
-- [ ] `de novo protein design`
-- [ ] `decreed that they be`
-- [ ] `dictates that no trustee`
-- [ ] `differential power analysis attack`
-- [ ] `earth system tipping elements`
-- [ ] `five eyes intelligence sharing`
-- [ ] `foucault biopolitical population management`
-- [ ] `fraudulent conveyance asset clawback`
-- [ ] `global neuronal workspace broadcast`
-- [ ] `habermas communicative rationality discourse`
-- [ ] `had it been forthcoming`
-- [ ] `had safeguards been ratified`
-- [ ] `hawking black hole radiation`
-- [ ] `hippocampal memory consolidation replay`
-- [ ] `international crime of ecocide`
-- [ ] `it was systemic opacity`
-- [ ] `kant aesthetic sublime transcendence`
-- [ ] `lest systemic contagion spread`
-- [ ] `little did they know`
-- [ ] `lyotard postmodern metanarrative collapse`
-- [ ] `majorana zero mode braiding`
-- [ ] `mare liberum oceanic doctrine`
-- [ ] `mareva worldwide freezing injunction`
-- [ ] `martens clause humanitarian protection`
-- [ ] `moral hazard after bailout`
-- [ ] `nowhere within the law`
-- [ ] `offshore balancing grand strategy`
-- [ ] `pathogen gain of function`
-- [ ] `play fast and loose`
-- [ ] `polluter pays legal principle`
-- [ ] `power transition theory dynamics`
-- [ ] `predictive processing prediction error`
-- [ ] `presumed consent opt out`
-- [ ] `public trust doctrine protection`
-- [ ] `quantum state tomography fidelity`
-- [ ] `quantum zeno effect suppression`
-- [ ] `raison d etat cannot`
-- [ ] `remote enclave execution attestation`
-- [ ] `retinal lateral inhibition contrast`
-- [ ] `return oriented programming exploit`
-- [ ] `reverse triangular merger structure`
-- [ ] `rights of nature recognition`
-- [ ] `scarcely had it taken`
-- [ ] `so contentious were they`
-- [ ] `sparse mixture of experts`
-- [ ] `special purpose acquisition vehicle`
-- [ ] `speculative execution side channel`
-- [ ] `stealthy watering hole compromise`
-- [ ] `stipulated that the engine`
-- [ ] `substantive consolidation equitable remedy`
-- [ ] `such was the brilliance`
-- [ ] `superfluid quantum vortex core`
-- [ ] `the appearance of inevitability`
-- [ ] `there is the rub`
-- [ ] `tit for tat reciprocity`
-- [ ] `topological insulator edge state`
-- [ ] `trophic cascade ecological collapse`
-- [ ] `unsolicited hostile tender offer`
-- [ ] `were tipping points surpassed`
-- [ ] `yield curve inversion warning`
-- [ ] `zero knowledge proof verification`
+- [x] `bostrom vulnerable world hypothesis black ball catastrophe` → `the vulnerable world hypothesis`。修正搭配或補足語境。
+- [x] `a circular claim to independent confirmation` → `a circular argument presented as independent confirmation`。修正搭配或補足語境。
+- [x] `a hagiographic reconstruction of a life`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a non sequitur in the argument`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a presupposition disguised as a question` → `a question with a hidden presupposition`。修正搭配或補足語境。
+- [x] `a proprietary claim over shared space`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a proprietorial concern for another person`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a socially legible gesture of restraint`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a triumph of wording over substance`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an aesthetic at odds with habitation` → `an aesthetic at odds with everyday use`。修正搭配或補足語境。
+- [x] `baryon acoustic oscillation sound horizon ruler` → `baryon acoustic oscillations`。修正搭配或補足語境。
+- [x] `co packaged optics silicon photonics integration` → `co packaged optics`。修正搭配或補足語境。
+- [x] `foreign direct product rule export licensing` → `the foreign direct product rule`。修正搭配或補足語境。
+- [x] `gravitational wave quasi normal mode ringdown` → `the ringdown phase of a black hole merger`。修正搭配或補足語境。
+- [x] `levinas ethical face of the other` → `ethical responsibility towards others`。修正搭配或補足語境。
+- [x] `pre emptive self defense caroline test` → `the limits of anticipatory self defence`。修正搭配或補足語境。
+- [x] `transfer pricing and customs valuation conflict` → `a conflict over customs valuation`。修正搭配或補足語境。
+- [x] `wafer to wafer hybrid direct bonding` → `wafer to wafer hybrid bonding`。修正搭配或補足語境。
+- [x] `a bitter pill to swallow`。修正提示及例句。
+- [x] `a brittle assertion of certainty`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a calculated air of spontaneity`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a ceremonious show of generosity`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a discretionary but reasoned judgement`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a distinction that bears scrutiny`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a distinction without a difference`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a facile appeal to complexity`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a fastidious attention to detail` → `fastidious attention to detail`。修正搭配或補足語境。
+- [x] `a presumption of prior competence`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a punctilious display of courtesy`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a romanticised account of improvisation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a sinuous progression of shadows` → `an undulating pattern of shadows`。修正搭配或補足語境。
+- [x] `a spurious appearance of economy` → `a false impression of economy`。修正搭配或補足語境。
+- [x] `a studied display of deference`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a studied show of candour`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a tacit economy of obligation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a tacit redefinition of sufficiency`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a tacitly privileged starting point`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a tendentious appeal to fairness`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `adorno negative dialectics non identity` → `negative dialectics`。修正搭配或補足語境。
+- [x] `agamben sovereign state of exception` → `a state of exception`。修正搭配或補足語境。
+- [x] `an asymmetrical standard of judgement`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an asymmetry of permissible directness`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an estranging clarity of light`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an exercise in window dressing`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an ostentatious display of abundance`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an unexamined hierarchy of significance`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an unquantified reserve of labour`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an unredeemed sense of neglect` → `a lingering sense of neglect`。修正搭配或補足語境。
+- [x] `an unwarranted imputation of motive`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an urbane disclaimer of authority`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `atomic layer etching deterministic control` → `atomic layer etching`。修正搭配或補足語境。
+- [x] `backside power delivery network decoupling` → `backside power delivery`。修正搭配或補足語境。
+- [x] `biological weapons non proliferation verification` → `international verification of treaty compliance`。修正搭配或補足語境。
+- [x] `brain machine interface kinematic decoding` → `interpret signals associated with movement`。修正搭配或補足語境。
+- [x] `cerebellar long term depression plasticity` → `long term depression in the cerebellum`。修正搭配或補足語境。
+- [x] `cfius national security review jurisdiction` → `national security review of foreign investment`。修正搭配或補足語境。
+- [x] `chalmers hard problem of consciousness` → `the hard problem of consciousness`。修正搭配或補足語境。
+- [x] `chip four alliance semiconductor resilience` → `resilience in semiconductor supply chains`。修正搭配或補足語境。
+- [x] `chomskyan minimalist program merge operation` → `the operation known as merge`。修正搭配或補足語境。
+- [x] `command responsibility international criminal liability` → `the doctrine of command responsibility`。修正搭配或補足語境。
+- [x] `cosmic inflation scalar inflaton field` → `cosmic inflation`。修正搭配或補足語境。
+- [x] `derrida post structuralist differance deferral` → `the deferral of meaning`。修正搭配或補足語境。
+- [x] `direct participation in hostilities loss` → `direct participation in hostilities`。修正搭配或補足語境。
+- [x] `dolus specialis genocidal intent burden` → `the requirement of specific intent`。修正搭配或補足語境。
+- [x] `drag along minority shareholder right` → `drag along rights`。修正搭配或補足語境。
+- [x] `eddington radiation accretion luminosity threshold` → `the eddington luminosity limit`。修正搭配或補足語境。
+- [x] `entorhinal grid cell hexagonal lattice` → `the firing patterns of grid cells`。修正搭配或補足語境。
+- [x] `equity cure financial covenant relief` → `an equity cure provision`。修正搭配或補足語境。
+- [x] `erga omnes sovereign obligation enforcement` → `obligations owed to the international community`。修正搭配或補足語境。
+- [x] `exhaustion of local remedies requirement` → `exhaustion of local remedies`。修正搭配或補足語境。
+- [x] `far be it from me`。修正提示及例句。
+- [x] `free prior and informed consent`。修正提示及例句。
+- [x] `gate all around nanosheet architecture` → `a gate all around transistor`。修正搭配或補足語境。
+- [x] `hardware anchored root of trust` → `a hardware root of trust`。修正搭配或補足語境。
+- [x] `kerr metric frame dragging ergosphere` → `frame dragging around a rotating black hole`。修正搭配或補足語境。
+- [x] `magnetar magnetic reconnection crustal flare` → `a flare from a magnetar`。修正搭配或補足語境。
+- [x] `patch clamp single channel electrophysiology` → `single channel recording`。修正搭配或補足語境。
+- [x] `penrose hawking singularity theorem inevitability` → `a singularity theorem`。修正搭配或補足語境。
+- [x] `piercing the corporate veil doctrine` → `piercing the corporate veil`。修正搭配或補足語境。
+- [x] `possible world semantics intension function` → `possible world semantics`。修正搭配或補足語境。
+- [x] `posthuman cognitive enhancement epistemic incomprehensibility` → `the limits of human understanding`。修正搭配或補足語境。
+- [x] `rebus sic stantibus treaty termination` → `a fundamental change of circumstances`。修正搭配或補足語境。
+- [x] `restitutio in integrum full damages` → `restitution in kind`。修正搭配或補足語境。
+- [x] `revlon duties enhanced judicial scrutiny` → `enhanced judicial scrutiny`。修正搭配或補足語境。
+- [x] `sakharov baryogenesis thermal non equilibrium` → `out of thermal equilibrium`。修正搭配或補足語境。
+- [x] `stochastic line edge roughness mitigation` → `line edge roughness`。修正搭配或補足語境。
+- [x] `the appearance of disinterested judgement`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `threw caution to the winds` → `threw caution to the wind`。修正搭配或補足語境。
+- [x] `tolman oppenheimer volkoff mass limit` → `the maximum mass of a neutron star`。修正搭配或補足語境。
+- [x] `wide bandgap semiconductor power conversion` → `wide bandgap semiconductors`。修正搭配或補足語境。
+- [x] `winner curse in common auctions` → `the winner's curse`。修正搭配或補足語境。
+- [x] `zizek cynical distance ideological fantasy` → `cynical distance from ideology`。修正搭配或補足語境。
+- [x] `a carefully calibrated rebuke`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a carefully mediated recollection`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a conspicuously seamless soundscape` → `a seamless soundscape`。修正搭配或補足語境。
+- [x] `a conveniently elastic definition`。修正提示及例句。
+- [x] `a disconcerting tonal shift`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a face saving reformulation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a formally symmetric permission` → `identical permissions for both sides`。修正搭配或補足語境。
+- [x] `a methodologically circumspect conclusion`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a meticulously cultivated informality`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a pragmatically inadequate instruction`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a procedurally immaculate failure`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a retroactively imposed condition`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a retrospective narrative coherence` → `retrospective narrative coherence`。修正搭配或補足語境。
+- [x] `a rhetorically charged silence`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a scrupulously circumscribed apology`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a self exculpatory narrative`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a self serving interpretation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a superficially conciliatory gesture`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `a superficially neutral formulation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `adverse selection death spiral` → `an adverse selection spiral`。修正搭配或補足語境。
+- [x] `aharonov bohm phase shift` → `the aharonov bohm effect`。修正搭配或補足語境。
+- [x] `amyloid cascade hypothesis validation` → `the amyloid cascade hypothesis`。修正搭配或補足語境。
+- [x] `an arresting visual composition`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an artfully circumscribed denial`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an artfully evasive formulation`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an artfully qualified assurance`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an artfully sustained ambiguity`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an asymmetry of power`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an emotionally unearned resolution`。修正提示及例句。
+- [x] `an irreducibly dialogic account`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an operationally meaningful distinction`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an ostensibly benevolent decree`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an ostensibly uncontrived appearance`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an ostensibly universal provision`。修正提示及例句。
+- [x] `an ostensibly unmediated voice`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `an unspoken emotional price`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `anti access area denial` → `restrict access to a region`。修正搭配或補足語境。
+- [x] `asymmetric bell inequality refutation` → `a violation of a bell inequality`。修正搭配或補足語境。
+- [x] `baudrillard hyperreality simulation simulacrum` → `blur the distinction between simulation and reality`。修正搭配或補足語境。
+- [x] `bose einstein condensation threshold` → `bose einstein condensation`。修正搭配或補足語境。
+- [x] `business judgment rule protection` → `the business judgment rule`。修正搭配或補足語境。
+- [x] `chemical mechanical planarization uniformity` → `chemical mechanical planarisation`。修正搭配或補足語境。
+- [x] `control flow integrity protection` → `control flow integrity`。修正搭配或補足語境。
+- [x] `cp symmetry violation parameter` → `violation of charge parity symmetry`。修正搭配或補足語境。
+- [x] `cryovolcanic hydrothermal ocean plume` → `a plume from an icy moon`。修正搭配或補足語境。
+- [x] `damning with faint praise`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `de novo protein design` → `protein structure prediction`。修正搭配或補足語境。
+- [x] `decreed that they be` → `decreed that the records be sealed`。修正搭配或補足語境。
+- [x] `dictates that no trustee` → `prohibits trustees from profiting`。修正搭配或補足語境。
+- [x] `differential power analysis attack` → `detect leakage through power consumption`。修正搭配或補足語境。
+- [x] `earth system tipping elements` → `tipping elements in the earth system`。修正搭配或補足語境。
+- [x] `five eyes intelligence sharing` → `intelligence sharing among allies`。修正搭配或補足語境。
+- [x] `foucault biopolitical population management` → `the governance of populations`。修正搭配或補足語境。
+- [x] `fraudulent conveyance asset clawback` → `recover assets transferred fraudulently`。修正搭配或補足語境。
+- [x] `global neuronal workspace broadcast` → `global neuronal workspace theory`。修正搭配或補足語境。
+- [x] `habermas communicative rationality discourse` → `communicative rationality`。修正搭配或補足語境。
+- [x] `had it been forthcoming` → `had the evidence been forthcoming`。修正搭配或補足語境。
+- [x] `had safeguards been ratified` → `had the safeguards been approved`。修正搭配或補足語境。
+- [x] `hawking black hole radiation` → `hawking radiation`。修正搭配或補足語境。
+- [x] `hippocampal memory consolidation replay` → `memory replay during sleep`。修正搭配或補足語境。
+- [x] `international crime of ecocide` → `proposals to criminalise ecocide`。修正搭配或補足語境。
+- [x] `it was systemic opacity` → `it was systemic opacity that obscured responsibility`。修正搭配或補足語境。
+- [x] `kant aesthetic sublime transcendence` → `the aesthetic experience of the sublime`。修正搭配或補足語境。
+- [x] `lest systemic contagion spread` → `lest the problem spread`。修正搭配或補足語境。
+- [x] `little did they know`。修正提示及例句。
+- [x] `lyotard postmodern metanarrative collapse` → `scepticism towards grand narratives`。修正搭配或補足語境。
+- [x] `majorana zero mode braiding` → `braiding of majorana zero modes`。修正搭配或補足語境。
+- [x] `mare liberum oceanic doctrine` → `freedom of the seas`。修正搭配或補足語境。
+- [x] `mareva worldwide freezing injunction` → `a worldwide freezing order`。修正搭配或補足語境。
+- [x] `martens clause humanitarian protection` → `the martens clause`。修正搭配或補足語境。
+- [x] `moral hazard after bailout` → `moral hazard after a bailout`。修正搭配或補足語境。
+- [x] `nowhere within the law` → `nowhere does the law specify`。修正搭配或補足語境。
+- [x] `offshore balancing grand strategy` → `a strategy of offshore balancing`。修正搭配或補足語境。
+- [x] `pathogen gain of function` → `public oversight of research`。修正搭配或補足語境。
+- [x] `play fast and loose` → `play fast and loose with`。修正搭配或補足語境。
+- [x] `polluter pays legal principle` → `the polluter pays principle`。修正搭配或補足語境。
+- [x] `power transition theory dynamics` → `power transition theory`。修正搭配或補足語境。
+- [x] `predictive processing prediction error` → `prediction error in perception`。修正搭配或補足語境。
+- [x] `presumed consent opt out` → `an opt out system`。修正搭配或補足語境。
+- [x] `public trust doctrine protection` → `the public trust doctrine`。修正搭配或補足語境。
+- [x] `quantum state tomography fidelity` → `quantum state tomography`。修正搭配或補足語境。
+- [x] `quantum zeno effect suppression` → `the quantum zeno effect`。修正搭配或補足語境。
+- [x] `raison d etat cannot` → `in the name of national interest`。修正搭配或補足語境。
+- [x] `remote enclave execution attestation` → `independently verify a remote system`。修正搭配或補足語境。
+- [x] `retinal lateral inhibition contrast` → `lateral inhibition in the retina`。修正搭配或補足語境。
+- [x] `return oriented programming exploit` → `mitigate code reuse attacks`。修正搭配或補足語境。
+- [x] `reverse triangular merger structure` → `a reverse triangular merger`。修正搭配或補足語境。
+- [x] `rights of nature recognition` → `recognition of the rights of nature`。修正搭配或補足語境。
+- [x] `scarcely had it taken` → `scarcely had it taken effect`。修正搭配或補足語境。
+- [x] `so contentious were they` → `so contentious were the talks`。修正搭配或補足語境。
+- [x] `sparse mixture of experts` → `a sparse mixture of experts`。修正搭配或補足語境。
+- [x] `special purpose acquisition vehicle` → `a special purpose acquisition company`。修正搭配或補足語境。
+- [x] `speculative execution side channel` → `an unintended side channel`。修正搭配或補足語境。
+- [x] `stealthy watering hole compromise` → `targeted website compromise`。修正搭配或補足語境。
+- [x] `stipulated that the engine` → `stipulated that the system be audited`。修正搭配或補足語境。
+- [x] `substantive consolidation equitable remedy` → `substantive consolidation in bankruptcy`。修正搭配或補足語境。
+- [x] `such was the brilliance` → `such was the brilliance of the performance`。修正搭配或補足語境。
+- [x] `superfluid quantum vortex core` → `a quantised vortex`。修正搭配或補足語境。
+- [x] `the appearance of inevitability`。保留，搭配自然、中文提示對應、例句提供語境。
+- [x] `there is the rub`。修正提示及例句。
+- [x] `tit for tat reciprocity` → `reciprocity in repeated interactions`。修正搭配或補足語境。
+- [x] `topological insulator edge state` → `edge states in a topological insulator`。修正搭配或補足語境。
+- [x] `trophic cascade ecological collapse` → `trophic cascade`。修正搭配或補足語境。
+- [x] `unsolicited hostile tender offer` → `unsolicited tender offer`。修正搭配或補足語境。
+- [x] `were tipping points surpassed` → `were those thresholds to be crossed`。修正搭配或補足語境。
+- [x] `yield curve inversion warning` → `yield curve inversion`。修正搭配或補足語境。
+- [x] `zero knowledge proof verification` → `verify a zero knowledge proof`。修正搭配或補足語境。

@@ -147,7 +147,7 @@ voices:[
 ['vestige','大部分消失後留下的痕跡',1,'n.','The scratch is a vestige of an earlier repair.','刮痕是先前修補留下的痕跡。'],
 ['apocryphal','流傳卻真實性可疑的',1,'adj.','The story may be apocryphal.','故事可能真實性可疑。'],
 ['an elegiac recollection','帶哀思追憶意味的回想',1,'phr.','The essay begins with an elegiac recollection.','文章以哀思追憶開頭。'],
-['a retrospective narrative coherence','事後賦予敘事的連貫性',2,'phr.','The memoir imposes a retrospective narrative coherence.','回憶錄事後賦予人生敘事連貫。'],
+["retrospective narrative coherence","回顧時為敘事建立的連貫性",2,"phr.","The memoir imposes retrospective narrative coherence on events that once seemed unrelated.","這本回憶錄在回顧時，把當時看似無關的事件串成連貫的敘事。"],
 ['an unexamined hierarchy of significance','未經檢視的重要性排序',2,'phr.','The display relies on an unexamined hierarchy of significance.','展覽依賴未經檢視的重要性排序。'],
 ['A surviving object reflects decisions about what to preserve','留存物反映選擇保存什麼的決定',3],
 ['Nostalgia can comfort without accurately recovering the past','懷舊可安慰而未必準確重現過去',3],

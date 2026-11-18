@@ -152,7 +152,7 @@ voices:[
 ['repudiation','明確拒絕接受或與之切割的表態',1,'n.','The note stops short of a repudiation.','附註尚未明確否認切割。'],
 ['a studied show of candour','刻意展現的坦誠姿態',1,'phr.','The interview opens with a studied show of candour.','訪談以刻意坦誠姿態開始。'],
 ['an artfully circumscribed denial','巧妙限定範圍的否認',2,'phr.','The reply offers an artfully circumscribed denial.','回覆巧妙限定否認範圍。'],
-['a presupposition disguised as a question','偽裝成問題的預設',2,'phr.','The opening line is a presupposition disguised as a question.','開場句是偽裝成問題的預設。'],
+["a question with a hidden presupposition","帶有隱藏預設的問題",2,"phr.","The interviewer asked a question with a hidden presupposition about who was responsible.","訪談者提出一個暗中預設責任歸屬的問題。"],
 ['An absence of stated preference need not constitute neutrality','未表明偏好不必構成中立',3],
 ['The correction leaves the central inference insufficiently examined','修正仍未充分檢視核心推論',3],
 ['A precise quotation can acquire a tendentious framing','精確引文可能被置於偏頗框架',3]

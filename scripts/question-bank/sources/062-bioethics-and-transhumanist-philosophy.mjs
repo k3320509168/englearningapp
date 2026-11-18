@@ -26,16 +26,16 @@ export const data = {
       [1,'The ethics review panel evaluated the commodification of human organ donation. What was condemned?','Exploitation of vulnerable, impoverished populations driven into irreversible organ selling by economic coercion.|Allowing individuals to donate blood samples for non-profit charitable biomedical research laboratories.|Hospitals accepting financial donations from grateful philanthropic donors to construct intensive care wards.|Surgeons wearing sterilized surgical gloves while performing live human organ transplant surgeries.','全球人權與醫學倫理審查委員會以最嚴厲措辭譴責「人體器官商業化交易」的深淵罪惡：指出在金錢利益驅使下，人體器官買賣本質上是以經濟強制對貧困脆弱人群進行的殘酷肉體剝削與尊嚴物化，徹底踐踏了康德「人是目的而非手段」的道德絕對命令。']
     ],
     voices: [
-      ['germline genome editing transmissible mutation','世代傳遞無從知情同意之生殖系基因編輯',1,'phr.','The international treaty enforced a moratorium on human germline genome editing transmissible mutation trials.','國際公約對可能引發世代傳遞未知風險的人類生殖系基因編輯試驗，實施了全球性的最嚴格凍結令。'],
-      ['transhumanist longevity escape velocity threshold','醫學突破超越衰老侵蝕之長壽逃逸速度臨界點',1,'phr.','Biogerontologists debate whether regenerative medicine will cross the transhumanist longevity escape velocity threshold.','生物老年醫學界激烈爭論：現代再生醫療究竟能否在本世紀中葉，跨越戰勝生物衰老死亡的長壽逃逸速度分水嶺。'],
+      ["ethical questions about heritable changes","關於可遺傳變化的倫理問題",1,"phr.","The panel considered ethical questions about heritable changes.","小組探討有關可遺傳變化的倫理問題。"],
+      ["claims about extending human lifespan","關於延長人類壽命的主張",1,"phr.","The review assessed how well the available evidence supported claims about extending human lifespan.","這篇綜述評估現有證據對延長人類壽命主張的支持程度。"],
       ["continuity of personal identity","個人同一性的延續",1,"phr.","The thought experiment asks whether a digital copy would preserve the continuity of personal identity.","這個思想實驗探問，數位副本能否延續同一個人的身分。"],
-      ['cognitive enhancement biological caste stratification','認知增強不均引發遺傳種姓固化之分配正義危機',1,'phr.','Bioethicists caution that unregulated neural implants risk deepening cognitive enhancement biological caste stratification.','生命倫理學界深沉告誡：缺乏監管的神經植入物自由市場，恐將誘發前所未有的認知增強遺傳種姓固化災難。'],
-      ['sandelian case against genetic perfection mastery','狂熱掌控生命踐踏謙卑連帶之反對基因完美主義',1,'phr.','The philosopher invoked the sandelian case against genetic perfection mastery to uphold human solidarity.','哲學教授引述桑德爾反對追求基因完美的名篇，呼籲全人類守護對生命恩賜的敬畏與休戚與共的連帶基石。'],
-      ['jonasian imperative of responsibility long term survival','前沿科技行動防不可逆滅絕之尤納斯責任原則',1,'phr.','Existential risk researchers adhere to the jonasian imperative of responsibility long term survival doctrine.','全球存在性風險研究中心恪守尤納斯的責任原則，以守護人類物種在尖端科技浪潮下的長線永續生存為至高使命。'],
-      ['synthetic sentience moral status qualia suffering','合成意識主觀感質與免受折磨之人工道德地位',1,'phr.','AI alignment labs must determine whether deep neural nets attain synthetic sentience moral status qualia suffering.','前沿對齊實驗室必須嚴肅界定：深層神經網絡是否已觸及主觀感質與感受苦難的合成意識道德地位門檻。'],
-      ['genetic information nondiscrimination act protection','防範基因預測數據遭濫用歧視之反基因歧視法',1,'phr.','Patients participate in clinical genome mapping under statutory genetic information nondiscrimination act protection.','在法定反基因歧視人權法規的剛性庇護下，病患方能安心參與全基因組測序與精準醫療臨床。'],
+      ["unequal access to cognitive enhancement","取得認知增強的機會不平等",1,"phr.","The paper examines the social consequences of unequal access to cognitive enhancement.","文章探討取得認知增強的機會不平等所造成的社會後果。"],
+      ["the pursuit of genetic perfection","追求基因上的完美",1,"phr.","The essay asks whether the pursuit of genetic perfection changes how we understand responsibility.","文章探問追求基因上的完美是否會改變我們對責任的理解。"],
+      ["responsibility to future generations","對後代的責任",1,"phr.","The lecture discussed responsibility to future generations in debates about technology.","講座探討科技辯論中對後代的責任。"],
+      ["the moral status of artificial beings","人工存在的道德地位",1,"phr.","The author raises questions about the moral status of artificial beings.","作者提出人工存在的道德地位問題。"],
+      ["discrimination based on genetic information","基於遺傳資訊的歧視",1,"phr.","The seminar discussed policies addressing discrimination based on genetic information.","研討會討論應對基於遺傳資訊之歧視的政策。"],
       ["advance directive","預先醫療指示",1,"phr.","Her advance directive describes the care she would want if she could no longer communicate.","她的預先醫療指示說明了她無法表達意願時希望接受的照護。"],
-      ['transhumanist morphological freedom bodily sovereignty','自主重構身體神經機能之超人類主義形態自由權',1,'phr.','Cyborg activists champion statutory protection for transhumanist morphological freedom bodily sovereignty.','義體與賽博格先鋒運動大力捍衛「形態自由權」，主張人類對自身肉體形態與神經認知享有終極重構主權。']
+      ["freedom to modify one's body","改變自身身體的自由",1,"phr.","The essay considers what might limit the freedom to modify one’s body.","文章探討哪些因素可能限制改變自身身體的自由。"]
     ],
     spells: [
       ['GERMLINE','n.','能夠將基因遺傳突變代代相傳給後代子嗣的生殖細胞譜系與胚胎基因序列','Germline gene therapies alter the hereditary genetic legacy of all future descendant generations.','生殖系（Germline）基因療法將從根本上永久改變一個家族所有後代子嗣的遺傳命運。'],
@@ -56,8 +56,8 @@ export const data = {
       [1,'The posthuman bioethicist debated the ontological right to cognitive obsolescence. What was championed?','The protected civil right of unaugmented humans to exist peacefully without being forced into technological enhancements.|The statutory requirement that all electronic calculators be scrapped every six months to sustain consumer spending.|The mandatory physical replacement of all domestic home appliances with voice activated robotic devices.|The prohibition against human beings composing handwritten letters using ink pens on parchment paper.','後人類生物倫理學家率先確立了劃時代的「認知陳舊權（Right to Cognitive Obsolescence）」：以法律神聖捍衛那些拒絕進行神經植入、基因重構的純自然智人，享有不被社會主流強制增強、不被剝奪生存權利與生活尊嚴的不可侵犯人權，抵禦極端技術法西斯主義對原始自然人的傲慢碾壓。']
     ],
     voices: [
-      ['bostrom vulnerable world hypothesis black ball catastrophe','科技發展或抽出毀滅黑球之博斯特羅姆脆弱世界假說',1,'phr.','Global security institutions study the bostrom vulnerable world hypothesis black ball catastrophe to safeguard human survival.','全球戰略安全智庫深入研討博斯特羅姆的脆弱世界假說，竭力防範毀滅性前沿科技抽出毀滅文明的黑球。'],
-      ['posthuman cognitive enhancement epistemic incomprehensibility','後人類維度智慧躍遷不可理解性之後人類認識論悖論',1,'phr.','Philosophers probe posthuman cognitive enhancement epistemic incomprehensibility across divergent evolutionary trajectories.','當代哲學家深入剖析後人類智慧躍遷帶來的認識論不可理解性深淵，洞察碳基與矽基思維分道揚鑣的演化宿命。']
+      ["the vulnerable world hypothesis","脆弱世界假說",1,"phr.","The panel discussed objections to the vulnerable world hypothesis.","小組討論了對脆弱世界假說的反對意見。"],
+      ["the limits of human understanding","人類理解能力的界限",1,"phr.","The essay asks what highly advanced intelligence might reveal about the limits of human understanding.","文章探問高度先進的智慧可能如何揭示人類理解能力的界限。"]
     ],
     spells: [
       ['SUPERINTELLIGENCE','n.','在一切學術、科學、創造力與智慧維度上均呈幾何級數超越全人類大腦總和的超級智能本體','An unaligned artificial superintelligence presents an irreversible existential challenge to our species.','未與人類普世價值深度對齊的超級智能（Superintelligence），構成對人類物種不可逆的終極存在性考驗。'],

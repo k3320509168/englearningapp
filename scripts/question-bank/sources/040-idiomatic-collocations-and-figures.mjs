@@ -28,12 +28,12 @@ listening: [
 voices: [
 ['bear eloquent testament','作為雄辯之證明；有力見證',1,'phr.','The ancient manuscripts bear eloquent testament to an advanced classical cosmology.','這批珍貴的古代泥金手稿，成為古典時代先進宇宙論體系的雄辯明證。'],
 ['took grave umbrage','感到極為不快；深感冒犯',1,'phr.','The ambassador took grave umbrage at the condescending tone of the ultimatum.','特命全權公使對最後通牒中所流露出的居高臨下輕蔑語氣深感被冒犯。'],
-['run entirely counter to','完全與…背道而馳；抵觸',1,'phr.','Protectionist trade measures run entirely counter to multilateral commercial agreements.','各國相繼出台的貿易保護主義壁壘，與多邊自由貿易協定的基本精神徹底背道而馳。'],
+["run counter to","與某事背道而馳",1,"phr.","The new rules run counter to the stated aims of the reform.","新規定與改革明訂的目標背道而馳。"],
 ['cast devastating aspersions','惡意中傷抹黑；嚴厲毀謗',1,'phr.','The forensic revelations cast devastating aspersions on the credibility of the cabinet.','這份鑑識清查報告所披露的黑幕，對內閣全體的誠信與威信構成了毀滅性的打擊。'],
-['come to terms with','逐漸接受妥協正視現實',1,'phr.','A democratic society must come to terms with the dark chapters of its past.','一個健全成熟的民主社會，必須學會正視並深刻反省其歷史記憶中的黑暗篇章。'],
+["come to terms with","逐漸接受難以面對的事實",1,"phr.","It took her months to come to terms with the decision.","她花了幾個月才逐漸接受這項決定。"],
 ['held undisputed sway','掌握無可爭議之統治權柄',1,'phr.','The charismatic philosopher held undisputed sway over intellectual circles for decades.','這位魅力非凡的思想導師，整整數十年在當代學術知識界掌握著無可爭議的崇高地位。'],
-['pay mere lip service','僅做口頭敷衍；口惠不實',1,'phr.','Global summits must not pay mere lip service to the imperative of climate resilience.','全球氣候高峰會絕不可僅對構建生態韌性的迫切任務進行口惠而實不至的表面敷衍。'],
-['drew a complete blank','腦中一片空白；毫無頭緒',1,'phr.','When interrogated about the missing munitions the warehouse supervisor drew a blank.','當被突擊詰問那批關鍵軍火的去向時，倉庫值班主管頓時腦中一片空白啞口無言。'],
+["pay lip service to","口頭上表示支持卻沒有實際行動",1,"phr.","It is easy to pay lip service to reform while resisting every concrete change.","嘴上支持改革卻反對每一項具體改變，並不難做到。"],
+["drew a blank","想不起答案；腦中一片空白",1,"phr.","When asked for the name of the author, I drew a blank.","被問到作者的名字時，我腦中一片空白。"],
 ['substantiate the claim','提出實質客觀證據加以證實',1,'phr.','Empirical data from gravitational observatories substantiate the theoretical model.','來自全球重力波天文台的實時實測數據，徹底證實了愛因斯坦理論模型的正確性。'],
 ['bent over backward','竭盡全力；極致遷就迎合',1,'phr.','The municipal council bent over backward to facilitate equitable urban housing.','市政協商委員會不遺餘力地協調各方，竭盡所能推動公平可負擔的都市安居政策。']
 ],
@@ -93,11 +93,11 @@ voices: [
 ['at loggerheads over','在某重大爭端上長期相持不下',1,'phr.','The regulatory agencies have been at loggerheads over cryptocurrency oversight.','兩大國家金融監管機構在針對去中心化加密資產的管轄權限上，長期相持不下。'],
 ['play devil advocate','故意扮演唱反調反詰的質疑者',1,'phr.','Let me play devil advocate to test the structural coherence of your thesis.','容我暫時扮演唱反調的反詰質疑者，來極限檢驗你的理論論文是否具備內在自洽性。'],
 ['beyond the pale','完全逾越文明底線大逆不道',1,'phr.','Such blatant state sponsored espionage is considered entirely beyond the pale.','這種明目張膽由國家情報機構幕後主導的惡意黑客間諜行徑，完全超越了文明公約的底線。'],
-['play fast and loose','輕浮不負責任地任意妄為',1,'phr.','The rogue executives played fast and loose with shareholder capital and safety protocols.','這幫利慾薰心的流氓高管在股東投資資本與工業安全操作手冊上，任意妄為欺瞞公眾。'],
+["play fast and loose with","不負責任地對待或操弄某事",1,"phr.","A reliable witness cannot play fast and loose with the facts.","可靠的證人不能隨意扭曲事實。"],
 ['bridge the chasm','彌合橫亙其間的巨大意識形態鴻溝',1,'phr.','Statesmanship requires the intellectual courage to bridge the partisan chasm.','真正的卓越治國政治家風範，要求具備敢於跨越兩黨黨爭意識形態鴻溝的非凡勇氣。'],
-['a bitter pill to swallow','不得不屈辱承受的苦果現實',1,'phr.','Accepting international fiscal oversight was a bitter pill to swallow for the cabinet.','被迫全盤接受國際貨幣基金組織的嚴苛財政託管監察，對內閣而言是一顆極難嚥下的苦果。'],
-['there is the rub','這才是核心難題與死結癥結所在',1,'phr.','Archival inconsistencies constitute the rub in resolving this historiographical controversy.','原始文獻紀錄之間相互矛盾的空白記載，正是徹底解開這樁歷史學公案的真正死結所在。'],
-['threw caution to the winds','置個人安危成敗於度外放手一搏',1,'phr.','Facing imminent systemic insolvency the bank threw caution to the winds.','在面臨即刻到來的系統性資本鏈斷裂破產之際，這家投行決定放手一搏孤注一擲。']
+["a bitter pill to swallow","令人難以接受卻必須面對的事實",1,"phr.","For the team, losing funding after years of work was a bitter pill to swallow.","對團隊來說，投入多年後失去資助，是個難以接受的結果。"],
+["there is the rub","棘手之處就在這裡",1,"phr.","We can fund the trial, but there is the rub: nobody can maintain it afterward.","我們能出資試行，但棘手的是，試行過後沒有人能維護。"],
+["threw caution to the wind","不顧風險放手一搏",1,"phr.","Against the advice of her colleagues, she threw caution to the wind and backed the proposal.","她不顧同事勸告，放手支持這項提案。"]
 ],
 spells: [
 ['LOGGERHEADS','n.','陷入頑固爭執激烈對立（用於 at loggerheads）','The treasury and the defense ministry were at loggerheads over submarine procurement.','財政部與國防部在深海核潛艦的巨額採購預算份額分配上，長年陷入激烈的頑固對峙。'],

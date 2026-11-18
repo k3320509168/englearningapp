@@ -148,7 +148,7 @@ voices:[
 ['forfeiture','依條件而失去權利或資源的結果',1,'n.','The rule specifies forfeiture of the bonus.','規則明定獎勵喪失。'],
 ['a retroactively imposed condition','事後回溯加上的條件',1,'phr.','The players objected to a retroactively imposed condition.','玩家反對事後回溯條件。'],
 ['a discretionary but reasoned judgement','有裁量空間卻仍有理由的判斷',2,'phr.','The dispute requires a discretionary but reasoned judgement.','爭議需有理由的裁量判斷。'],
-['a formally symmetric permission','形式上對稱的許可',2,'phr.','The card gives a formally symmetric permission.','卡給形式對稱許可。'],
+["identical permissions for both sides","給雙方完全相同的許可",2,"phr.","The rule grants identical permissions for both sides, although only one side has the means to use them.","這項規則給雙方完全相同的許可，儘管只有一方實際有能力行使。"],
 ['Finality of a ruling does not establish its correctness','裁決終局性不證成其正確',3],
 ['An achievable goal should not recede whenever it is reached','可達目標不應每達成就後退',3],
 ['A shared permission may require resources only one player possesses','共同許可可能需僅一方有的資源',3]

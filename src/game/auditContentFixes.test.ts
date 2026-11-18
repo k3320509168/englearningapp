@@ -38,8 +38,11 @@ it('兩個失真詞條與別名保持忠實，例句不留挖空', () => {
   for (const key of ['SUPREMACY', 'R7:SUPREMACY'] as const) {
     expect(v7[key].meaning).toBe('優勢地位；支配地位'); expect(v7[key].example).not.toContain('___');
   }
-  expect(v8['BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION'].meaning).toBe('生物武器不擴散核查');
-  expect(v8['R8:BIOLOGICAL WEAPONS NON PROLIFERATION VERIFICATION'].exampleZh).not.toMatch(/炭疽|聯合國|銷毀|數十米/);
+  for (const key of ['INTERNATIONAL VERIFICATION OF TREATY COMPLIANCE', 'R8:INTERNATIONAL VERIFICATION OF TREATY COMPLIANCE'] as const) {
+    expect(v8[key].meaning).toBe('對條約遵守情況進行國際核查');
+    expect(v8[key].example).toContain('international verification of treaty compliance');
+    expect(v8[key].exampleZh).not.toMatch(/炭疽|聯合國|銷毀|數十米/);
+  }
 });
 it('指定領域題改成題內可推導，無需靠外部定義答題', () => {
   expect(r7.normal.find(q => q.desc.includes('An editor says'))).toBeTruthy();

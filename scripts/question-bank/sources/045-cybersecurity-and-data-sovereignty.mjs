@@ -32,7 +32,7 @@ export const data = {
       ['software supply chain','軟體供應鏈底層依賴風險',1,'phr.','Auditing third party dependencies is imperative to secure the software supply chain.','對所有第三方開源依賴項進行全面審計，是構築牢不可破之軟體供應鏈安全的當務之急。'],
       ['data exfiltration channel','隱蔽的機密資料外流滲透通道',1,'phr.','Network monitoring flagged a suspicious data exfiltration channel routing through cloud proxies.','網路監控系統即時捕獲了一條偽裝成正常雲端代理請求的隱蔽機密資料外流滲透通道。'],
       ['lateral movement detection','內網橫向移動攻擊威脅偵測',1,'phr.','Behavioral analysis models triggered an alert upon lateral movement detection in the server farm.','使用者行為異常分析模型，在伺服器機房內部偵測到攻擊者企圖橫向移動時立即拉響了警報。'],
-      ['end to end encryption','端到端不可攔截加密傳輸',1,'phr.','Activists rely on end to end encryption to shield confidential human rights reporting.','各國人權工作者極度依賴端到端不可攔截的加密傳輸技術，以保護極度敏感的現場調查報告。'],
+      ["end to end encryption","端到端加密",1,"phr.","They chose a messaging service with end-to-end encryption for their conversations.","他們選擇使用具備端到端加密的通訊服務來交談。"],
       ['incident response containment','資安事件應變中的擴散圍堵',1,'phr.','The swift incident response containment isolated compromised nodes before ransomware could spread.','極其果斷迅速的資安應變圍堵行動，在勒索軟體大面積擴散前成功切斷了失陷節點的內網連結。'],
       ['buffer overflow exploitation','緩衝區溢位記憶體破壞利用',1,'phr.','Modern operating systems deploy address space layout randomization to stop buffer overflow exploitation.','當代主流作業系統普遍部署了位址空間配置隨機化技術，以阻斷惡意緩衝區溢位利用。'],
       ['covert tunneling protocol','封包偽裝隱蔽隧道傳輸協定',1,'phr.','Malware bypassed firewalls by encoding binary payloads inside a covert tunneling protocol.','惡意病毒軟體將其二進位攻擊載荷偽裝編碼於隱蔽隧道協定中，成功穿透了外層防火牆。']
@@ -89,15 +89,15 @@ export const data = {
     ],
     voices: [
       ['lattice based cryptography','基於晶格維度的後量子抗量子密碼學',1,'phr.','Standardization bodies adopted lattice based cryptography to secure future digital communications.','國際標準組織全面擁抱並頒布基於晶格的抗量子密碼學，以捍衛未來全球通訊在量子時代的本質安全。'],
-      ['speculative execution side channel','微處理器推測執行微架構側通道漏洞',1,'phr.','Hardware engineers patched the speculative execution side channel through microcode firmware updates.','處理器晶片硬體架構師藉由推送底層微碼韌體更新，全力封堵了推測執行側通道帶來的記憶體洩密漏洞。'],
-      ['control flow integrity protection','防範惡意程式碼重用之控制流完整性保護',1,'phr.','Enforcing control flow integrity protection precludes attackers from hijacking system execution graphs.','嚴格強制實施控制流完整性保護機制，徹底杜絕了惡意攻擊者企圖篡改劫持程式正常執行圖譜的野心。'],
+      ["an unintended side channel","非預期的旁通道",1,"phr.","The defensive review identified an unintended side channel.","防禦審查發現了一個非預期的旁通道。"],
+      ["control flow integrity","控制流程完整性",1,"phr.","The audit asked whether the program enforced control flow integrity.","稽核檢查該程式是否實施控制流程完整性保護。"],
       ['homomorphic encryption computation','無須解密即可直接運算之同態加密技術',1,'phr.','Cloud providers leverage homomorphic encryption computation to analyze sensitive genomic records.','領先的雲端運算巨頭開始廣泛部署同態加密計算技術，在不解密明文的條件下深度分析高度敏感的人類基因組資料。'],
-      ['hardware anchored root of trust','基於晶片底層物理硬體錨定的信任根基石',1,'phr.','The secure boot protocol verifies all firmware against a hardware anchored root of trust.','整套安全引導啟動協定在每一次重啟時，均會對照晶片底層硬體錨定的信任根對全部韌體簽章進行嚴格查驗。'],
-      ['zero knowledge proof verification','零知識證明在不洩漏實質內容下的驗證',1,'phr.','Blockchain identity protocols employ zero knowledge proof verification to preserve user anonymity.','次世代區塊鏈數位身分體系深度結合零知識證明驗證機制，在完美證明身分合規的同時捍衛了使用者的匿名隱私。'],
-      ['return oriented programming exploit','拼接記憶體片段之回歸導向程式設計攻擊利用',1,'phr.','Stack canaries and non executable memory mitigate return oriented programming exploit threats.','堆疊金絲雀校驗與記憶體不可執行保護（DEP）的聯合部署，顯著壓制了回歸導向程式設計（ROP）利用的威脅空間。'],
-      ['differential power analysis attack','透過晶片微弱功耗波動破解密鑰之差分分析',1,'phr.','Cryptographic chips incorporate noise generators to thwart differential power analysis attack attempts.','高安全級別加密晶片內建了高頻隨機硬體雜訊生成器，以徹底挫敗各類試圖透過監測微小功耗波動的差分分析竊密企圖。'],
-      ['remote enclave execution attestation','硬體機密計算飛地執行狀態之遠端遠程證明',1,'phr.','The client validated the server state via remote enclave execution attestation before sending data.','客戶端在向雲端傳輸極度機密的商業資料之前，必須先藉由遠端安全飛地執行證明驗證伺服器狀態的絕對純淨。'],
-      ['stealthy watering hole compromise','針對特定社群之隱蔽水坑滲透攻擊手法',1,'phr.','Forensic teams traced the espionage campaign to a stealthy watering hole compromise on an industry forum.','司法數位鑑識調查組透過多方線索排查，最終將這起跨國商業間諜行動的源頭鎖定在某行業專業論壇的水坑滲透攻擊上。']
+      ["a hardware root of trust","硬體信任根",1,"phr.","The report describes the role of a hardware root of trust in the design.","報告說明硬體信任根在該設計中的角色。"],
+      ["verify a zero knowledge proof","驗證零知識證明",1,"phr.","The tutorial explains what it means to verify a zero-knowledge proof.","教材解釋驗證零知識證明是什麼意思。"],
+      ["mitigate code reuse attacks","降低程式碼重用攻擊的風險",1,"phr.","The team assessed whether the safeguards could mitigate code reuse attacks.","團隊評估這些防護措施能否降低程式碼重用攻擊的風險。"],
+      ["detect leakage through power consumption","偵測由功耗造成的資訊洩漏",1,"phr.","The defensive assessment asked whether the test could detect leakage through power consumption.","防禦評估檢查測試能否偵測由功耗造成的資訊洩漏。"],
+      ["independently verify a remote system","獨立驗證遠端系統",1,"phr.","The policy calls for a way to independently verify a remote system before relying on it.","政策要求在信任遠端系統前，必須有辦法獨立驗證它。"],
+      ["targeted website compromise","針對特定網站的入侵",1,"phr.","The security report documented a targeted website compromise without identifying the affected users.","安全報告記錄了一起針對特定網站的入侵，並隱去受影響使用者的身分。"]
     ],
     spells: [
       ['OBFUSCATION','n.','故意使程式碼複雜難懂以防逆向工程的混淆技術','Malware authors employ metamorphic code obfuscation to defeat static signature scanners.','惡意病毒軟體作者廣泛利用易變形程式碼混淆技術，試圖徹底癱瘓傳統防毒軟體的靜態特徵碼比對掃描。'],

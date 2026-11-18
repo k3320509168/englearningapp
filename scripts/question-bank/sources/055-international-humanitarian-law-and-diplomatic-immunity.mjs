@@ -27,15 +27,15 @@ export const data = {
     ],
     voices: [
       ['extraterritorial sovereign jurisdiction','越境打擊海外罪犯之域外主權管轄權',1,'phr.','The statute asserts extraterritorial sovereign jurisdiction over international financial bribery.','該項劃時代的聯邦反腐敗法案，對一切跨國金融洗錢行賄犯罪強勢確立了長臂域外主權管轄權。'],
-      ['universal human rights jurisdiction','代表人類天良審判戰犯之普遍人權管轄權',1,'phr.','European tribunals invoked universal human rights jurisdiction to prosecute foreign war criminals.','歐洲主權獨立特別刑事法庭果斷啟動普遍人權管轄權，將犯下反人類暴行的異邦戰犯繩之以法。'],
-      ['vienna convention diplomatic immunity','保障使節人身不可侵犯之維也納公約外交豁免',1,'phr.','Host police respected the vienna convention diplomatic immunity shielding the accredited envoy.','駐在國各級執法警察恪守國際條約義務，不敢造次冒犯受到維也納公約絕對外交豁免保護的外交公使。'],
-      ['peremptory norm of jus cogens','任何主權國家皆不得減損之絕對強行法規範',1,'phr.','The absolute ban on systematic torture stands as a peremptory norm of jus cogens in international law.','對任何人施行酷刑的絕對禁止令，早已作為至高無上的絕對強行法規範鐫刻在現代文明的豐碑之上。'],
-      ['principle of humanitarian distinction','交戰部隊嚴禁傷及無辜之國際人道法區分原則',1,'phr.','Artillery commanders committed a grave breach of the principle of humanitarian distinction in bombing cities.','前線砲兵指揮官在密集狂轟濫炸無辜居民區的瘋狂行徑中，徹底背叛了人道法中最神聖的區分原則。'],
-      ['international court advisory opinion','海雅國際法庭權威非強制之諮詢意見',1,'phr.','The general assembly formally requested an international court advisory opinion on climate liability.','聯合國大會以壓倒性多數票正式向海牙國際法院提請就全球氣候賠償責任出具權威諮詢意見。'],
-      ['non refoulement refugee protection','絕不遣返庇護者送死之不推回難民保護原則',1,'phr.','Border patrols violated non refoulement refugee protection rules by push backs at the maritime border.','海上邊防巡邏艇在公海上實施暴力推回的粗暴行徑，直接踐踏了人道法中神聖不可推回原則的底線。'],
-      ['multilateral treaty ratification instrument','向聯合國秘書處遞交之多邊條約批准文書',1,'phr.','The head of state deposited the multilateral treaty ratification instrument at the United Nations.','國家元首親赴聯合國紐約總部，莊嚴向聯合國秘書長親自遞交了加入該重要多邊條約的批准文書。'],
-      ['belligerent occupation administrative duty','敵占區當局保障民生安全之交戰占領管治義務',1,'phr.','Geneva conventions define the clear belligerent occupation administrative duty owed to civilians.','日內瓦第四公約白紙黑字嚴格界定了軍事占領當局對敵占區無辜平民生活物資供應的不可推卸管治義務。'],
-      ['diplomatic pouch communications inviolability','杜絕任何查驗扣留之外交郵袋通訊絕對不可侵犯',1,'phr.','Customs agents were dismissed for breaching diplomatic pouch communications inviolability protocols.','幾名膽敢在機場擅自破壞外交郵袋通訊絕對不可侵犯條例的魯莽海關人員，被當場予以撤職查辦。']
+      ["universal jurisdiction","普遍管轄權",1,"phr.","The speakers disagreed about the scope of universal jurisdiction.","與會者對普遍管轄權的範圍意見不一。"],
+      ["diplomatic immunity","外交豁免",1,"phr.","The report reviewed the scope of diplomatic immunity.","報告檢視了外交豁免的範圍。"],
+      ["a peremptory norm of international law","國際法上的強行規範",1,"phr.","The judges discussed what constitutes a peremptory norm of international law.","法官討論了哪些規範構成國際法上的強行規範。"],
+      ["the principle of distinction","區分原則（國際人道法用語）",1,"phr.","The course introduced the principle of distinction in international humanitarian law.","課程介紹了國際人道法中的區分原則。"],
+      ["an advisory opinion","諮詢意見",1,"phr.","The court issued an advisory opinion on the question referred to it.","法院就提交給它的問題發布諮詢意見。"],
+      ["the principle of non refoulement","不推回原則",1,"phr.","The seminar examined the principle of non-refoulement in refugee protection.","研討會探討難民保護中的不推回原則。"],
+      ["an instrument of ratification","批准書（條約用語）",1,"phr.","The ministry prepared an instrument of ratification for the treaty.","部會為該條約準備了一份批准書。"],
+      ["the duties of an occupying power","占領國當局的義務",1,"phr.","The report discussed the duties of an occupying power.","報告討論了占領國當局的義務。"],
+      ["the inviolability of the diplomatic bag","外交郵袋不受侵犯",1,"phr.","The lecture covered the inviolability of the diplomatic bag.","講座談到外交郵袋不受侵犯。"]
     ],
     spells: [
       ['EXTRATERRITORIALITY','n.','一國國內法效力超越本土疆界在境外或對外國人適用的域外管轄與治外法權','Extraterritoriality allows the prosecution of corporate bribery conducted by overseas subsidiaries.','域外管轄權（Extraterritoriality）授權檢察官對跨國母公司旗下的海外空殼子公司的海外行賄展開長臂追訴。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The ad hoc arbitral tribunal awarded restitution in integrum for unlawful expropriation of the copper mine. What standard was applied?','Restoring the affected investor to the precise financial position that would have existed but for the unlawful act.|Paying the foreign investor fifty percent of the scrap metal value of their abandoned mining bulldozers.|Requiring the national government to apologize verbally on international television news channels.|Ordering the sovereign president of the state to personally resign their constitutional office.','海牙特設國際仲裁庭就非法徵收外國銅礦資產案，祭出了國際衡平賠償的最高天花板標準「完全恢復原狀（Restitutio in Integrum）」：責令違約國賠償數十億美元，直至將外國投資人徹底恢復到如同侵權違約暴行從未發生過一樣的精準財務狀態。']
     ],
     voices: [
-      ['command responsibility international criminal liability','統帥怠於制止部屬暴行之指揮官連帶刑事責任',2,'phr.','The general was convicted on all counts of command responsibility international criminal liability.','這位驕橫的陸軍上將最終在海牙法庭被定罪，承擔起指揮官過失與連帶刑事責任的終身監禁懲罰。'],
-      ['rebus sic stantibus treaty termination','情勢顛覆劇變廢止條約之情勢變更原則',2,'phr.','The state successfully invoked rebus sic stantibus treaty termination following the sudden tectonic event.','在遭遇前所未有的地質板塊巨變後，該國成功援引情勢變更原則宣布廢止原本劃界的舊條約。'],
-      ['erga omnes sovereign obligation enforcement','全人類共同捍衛無可割裂之對一切義務執行',2,'phr.','Small island nations joined in erga omnes sovereign obligation enforcement against massive polluters.','瀕臨淹沒的小島國聯合體依託對一切義務的法理鋼盾，在國際法院向溫室氣體超級排放國提起世紀追訴。'],
-      ['martens clause humanitarian protection','無條約情境下守護良知底線之馬爾頓斯條款庇護',2,'phr.','Jurists relied on martens clause humanitarian protection to forbid automated civilian targeting algorithms.','國際法泰斗毅然搬出馬爾頓斯條款的人道良知庇護盾牌，將AI自主屠戮平民的致命演算法明文打入地獄。'],
-      ['exhaustion of local remedies requirement','叩響海牙大門前必須窮盡地方法院救濟之先行義務',2,'phr.','The international lawsuit was dismissed for ignoring the exhaustion of local remedies requirement.','該起涉資百億的跨國仲裁訴訟因粗暴跳過國內救濟窮盡原則的法定前置程序，被裁判官當庭裁定不予受理。'],
-      ['pre emptive self defense caroline test','命懸一線別無他法之卡羅琳自衛權黃金準則',2,'phr.','Military strategists rigorously analyzed the strike against the pre emptive self defense caroline test.','國防部最高法律顧問團依據卡羅琳先制自衛權黃金準則，逐條嚴審該軍事打擊在法理上的生存立足點。'],
-      ['dolus specialis genocidal intent burden','證明有組織斬草除根之種族滅絕特別意圖舉證責任',2,'phr.','The prosecution overcame the monumental dolus specialis genocidal intent burden with internal state memos.','檢方憑藉起獲的元首秘密內部親筆備忘錄，克服了種族滅絕罪「特別犯罪意圖」那座不可逾越的舉證高山。'],
-      ['direct participation in hostilities loss','平民持槍開火瞬間喪失豁免之直接參與敵對行動',2,'phr.','Firing shoulder mounted missiles constitutes immediate direct participation in hostilities loss of immunity.','平民一旦扛起肩扛式防空飛彈向戰機扣動扳機，便在那一秒當場喪失一切受人道法庇護的免攻擊特權。'],
-      ["biological weapons non proliferation verification", "生物武器不擴散核查", 2, "phr.", "Inspectors conducted unannounced biological weapons non proliferation verification on subterranean bunkers.", "核查人員對地下掩體進行了未預先通知的生物武器不擴散核查。"],
-      ['restitutio in integrum full damages','重回侵權從未發生狀態之完全恢復原狀最高損害賠償',2,'phr.','The tribunal awarded billions under the historic restitutio in integrum full damages standard.','國際常設仲裁法院依據完全恢復原狀的最高歷史賠償準則，做出了具有執行力的數十億美元全額賠償裁決。']
+      ["the doctrine of command responsibility","指揮責任原則",2,"phr.","The seminar considered the doctrine of command responsibility.","研討會討論指揮責任原則。"],
+      ["a fundamental change of circumstances","情勢的根本變更",2,"phr.","The parties disagreed over whether there had been a fundamental change of circumstances.","雙方對情勢是否發生了根本變更意見不一。"],
+      ["obligations owed to the international community","對國際社會承擔的義務",2,"phr.","The article discusses obligations owed to the international community.","文章探討對國際社會承擔的義務。"],
+      ["the Martens clause","馬爾頓斯條款",2,"phr.","The seminar considered the interpretation of the Martens clause.","研討會討論馬爾頓斯條款的解釋。"],
+      ["exhaustion of local remedies","用盡當地救濟途徑",2,"phr.","The seminar examined the meaning of exhaustion of local remedies.","研討會探討何謂用盡當地救濟途徑。"],
+      ["the limits of anticipatory self defence","預先自衛的界限",2,"phr.","The seminar debated the limits of anticipatory self-defence.","研討會辯論預先自衛的界限。"],
+      ["the requirement of specific intent","特定意圖的要件",2,"phr.","The article examines the requirement of specific intent in a criminal case.","文章檢視一起刑事案件中的特定意圖要件。"],
+      ["direct participation in hostilities","直接參與敵對行動",2,"phr.","The handbook discusses the meaning of direct participation in hostilities.","手冊探討直接參與敵對行動的意義。"],
+      ["international verification of treaty compliance","對條約遵守情況進行國際核查",2,"phr.","The delegates discussed safeguards for international verification of treaty compliance.","代表們討論對條約遵守情況進行國際核查時的保障措施。"],
+      ["restitution in kind","以實物返還或恢復原狀",2,"phr.","A court might consider restitution in kind when returning the original property is possible.","如果原物可以返還，法院可能考慮以實物返還。"]
     ],
     spells: [
       ['ACQUIESCENCE','n.','在國際法上明知權利受到侵害或邊界變更而長期不提出抗議所構成的默示承認與默認','Prolonged diplomatic silence and acquiescence cemented the neighboring state\'s territorial claims.','長達數十年的外交失聲與默認（Acquiescence），在法理上最終成全並鞏固了鄰國對該爭議領土的主權主張。'],

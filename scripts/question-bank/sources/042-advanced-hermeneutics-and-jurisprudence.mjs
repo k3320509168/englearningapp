@@ -29,12 +29,12 @@ voices: [
 ['pacta sunt servanda','條約必須恪守信諾（國際法基本準則）',1,'phr.','The principle of pacta sunt servanda underpins the entire framework of international law.','條約必須信守的法理準則，構成了整部現代國際法體系的基石。'],
 ['stare decisis demands','遵循先例原則嚴格要求',1,'phr.','The doctrine of stare decisis demands that appellate judges respect settled precedent.','遵循先例的普通法準則要求，各級上訴法院法官必須恪守既有的確立判例。'],
 ['habeas corpus relief','人身保護令之司法救濟',1,'phr.','The prisoner filed a writ of habeas corpus to challenge arbitrary detention.','遭羈押者向巡迴法庭正式遞交了人身保護令狀，嚴正挑戰行政機關的任意拘禁。'],
-['locus standi in court','在法庭上的訴訟主體資格',1,'phr.','Environmental advocates established locus standi to contest offshore oil leasing.','環保公益組織在法庭上成功確立了訴訟主體資格，對離岸石油開採許可提起公訴。'],
+["standing to bring a claim","提出訴訟的法律資格",1,"phr.","The court first considered whether the residents had standing to bring a claim.","法院先審查居民是否具有提出訴訟的法律資格。"],
 ['procedural ultra vires','踰越法定權限之程序瑕疵',1,'phr.','The regulation was struck down on grounds of procedural ultra vires.','該項行政規章因存在超越法定管轄權限的嚴重程序瑕疵，遭最高行政法院宣告撤銷。'],
 ['presumed innocent until','在被判有罪前推定為無罪',1,'phr.','Every accused person is presumed innocent until proven guilty beyond reasonable doubt.','任何遭到刑事起訴的被告，在未經排除合理懷疑的實質定罪之前，皆推定為無罪。'],
 ['exclusionary rule bars','證據排除法則嚴格禁止',1,'phr.','The exclusionary rule bars the admission of unconstitutionally seized evidence.','憲法證據排除法則嚴格禁止將任何透過違憲搜查手段取得的非法證據採納為呈堂證供。'],
 ['sovereign immunity from','享有豁免於司法起訴之特權',1,'phr.','Foreign diplomats claim absolute sovereign immunity from civil tort litigation.','派駐外國的外交人員，主張對地方法院提起的一切民事侵權訴訟享有完全的主權豁免權。'],
-['burden of proof rests','客觀舉證責任明確歸屬於',1,'phr.','The burden of proof rests entirely on the prosecution in criminal indictments.','在所有刑事公訴案件中，客觀的舉證責任毫無例外地完全落在控方檢察官身上。'],
+["the burden of proof rests with","舉證責任由某人承擔",1,"phr.","In this exercise, the burden of proof rests with the person making the claim.","在這項練習中，舉證責任由提出主張的人承擔。"],
 ['statutory interpretation of','對制定法條文之嚴謹解釋',1,'phr.','Judicial statutory interpretation must harmonize legislative text with constitutional norms.','司法的制定法文義解釋，必須使實定法條文與最高憲法價值規範保持深刻的內在和諧。']
 ],
 spells: [
@@ -96,7 +96,7 @@ voices: [
 ['originalism posits that','原旨主義法學派主張',1,'phr.','Constitutional originalism posits that semantic meaning is fixed at the moment of adoption.','憲法原旨主義的核心命題在於，法條的語義內涵在憲法正式頒布通過的那一歷史時刻便已確定。'],
 ['non refoulement principle','國際法之難民不推回原則',1,'phr.','Customary international law enshrines the non refoulement principle to safeguard displaced refugees.','國際習慣法莊嚴確立了難民不推回原則，以切實保障流離失所的避難者免遭遣返迫害。'],
 ['stare decisis mandates','遵循先例司法準則要求',1,'phr.','The rule of stare decisis mandates that common law courts honor established precedent.','遵循先例的普通法最高規則，嚴格要求下級法院必須尊重並採納上級法院的既有判例。'],
-['raison d etat cannot','國家利益借口絕不能',1,'phr.','Appeals to raison d etat cannot justify systemic violations of peremptory human rights.','任何訴諸「國家安全與利益」的權宜說詞，皆絕不能為系統性踐踏基本人權的行徑開脫。'],
+["in the name of national interest","以國家利益為名",1,"phr.","The decision was defended in the name of national interest.","這個決定是以國家利益為由來辯護的。"],
 ['inter alia dictates','在其所列諸項之中特別規定',1,'phr.','The maritime treaty inter alia dictates the conservation of endangered pelagic species.','這份多邊海洋公約在其所規範的諸多事項中，特別明文規定了對瀕危遠洋物種的保護責任。']
 ],
 spells: [

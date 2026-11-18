@@ -31,9 +31,9 @@ export const data = {
       ['behavioral choice architecture','基於行為科學之公共選擇架構設計',1,'phr.','Applying behavioral choice architecture improves employee wellness without restricting freedom.','巧妙運用行為科學選擇架構設計，能在完全不剝奪個體選擇自由的前提下顯著改善全體員工的身心福祉。'],
       ['anchoring heuristic trap','先入為主第一印象錨定捷思陷阱',1,'phr.','Savvy negotiators establish extreme starting figures to lure opponents into the anchoring heuristic trap.','老練的談判專家往往在開局便拋出極端報價，誘使對手在不知不覺中墜入先入為主的錨定捷思陷阱。'],
       ['endowment effect valuation','持有所有權導致對物品非理性高估值',1,'phr.','The endowment effect valuation explains why homeowners consistently overprice their real estate properties.','稟賦效應所引發的非理性估值，充分揭示了為何廣大房主在掛牌出售自有物業時總是死咬過高市價不放。'],
-      ['sunk cost fallacy trap','因沉沒成本無法追回而繼續燒錢陷阱',1,'phr.','Corporate managers poured millions into obsolete software due to the sunk cost fallacy trap.','多位專案主管因無法割捨前期投入的沉沒成本，在明知技術落後的情況下依舊向該專案繼續盲目追加數百萬預算。'],
+      ["sunk cost fallacy","沉沒成本謬誤",1,"phr.","Continuing the project solely because we have already spent so much is a sunk cost fallacy.","只因前期已投入大量資金就繼續計畫，是沉沒成本謬誤。"],
       ['intertemporal hyperbolic discounting','跨期決策中對即時滿足之雙曲貼現',1,'phr.','Chronic debt accumulation is heavily driven by intertemporal hyperbolic discounting in consumption.','家庭債務如滾雪球般不斷膨脹的背後，往往深受跨期消費決策中對即時享樂極端雙曲貼現的深刻支配。'],
-      ['retrospective peak end rule','回顧歷史體驗時僅記憶峰值與終點',1,'phr.','Customer satisfaction teams design the final interaction around the retrospective peak end rule.','卓越的客戶體驗管理團隊緊扣回顧性峰終定律，精心雕琢服務流程中最震撼的亮點與臨別收尾時刻。'],
+      ["the peak end rule","峰終定律",1,"phr.","The study examined whether participants’ ratings followed the peak-end rule.","研究探討參與者的評分是否符合峰終定律。"],
       ['asymmetric decoy effect','插入劣質選項誘導購買目標之誘餌效應',1,'phr.','Subscription pricing models leverage the asymmetric decoy effect to steer buyers to the premium tier.','現代軟體訂閱制價目表廣泛操弄非對稱誘餌效應，神不知鬼不覺地將龐大買家精準導向最高利潤的豪華版。'],
       ['retrospective hindsight bias','事後諸葛亮妄稱早就料到一切之偏誤',1,'phr.','Pundits succumbed to retrospective hindsight bias after the election results were officially certified.','各路時事政論名嘴在激烈的選戰結果正式揭曉塵埃落定後，紛紛落入事後諸葛亮的後見之明偏誤中大放厥詞。']
     ],
@@ -88,16 +88,16 @@ export const data = {
       [1,'Signaling theory clarified why elite law firms require arduous eighty hour work weeks from junior associates. Why?','The grueling work schedule operates as a costly screening mechanism to filter for extreme stamina.|The firms lacked sufficient electronic computers, forcing lawyers to handwrite contracts on parchment.|The senior partners were bound by medieval religious oaths requiring monastic sleep deprivation.|The municipal government imposed a luxury tax on any commercial law firm whose lights were extinguished.','訊號理論（Signaling theory）一語道破天機：頂級律所之所以對初級律師強制要求每週高達八十小時的魔鬼工時，本質上是將其作為篩選極致抗壓耐力的殘酷訊號篩檢工具。']
     ],
     voices: [
-      ['tit for tat reciprocity','以牙還牙之博弈合作互惠平衡',1,'phr.','Game theorists verified that tit for tat reciprocity stabilizes long term bilateral peace.','博弈論巨擘透過嚴密數學證明：以牙還牙的互惠反制法則，是在混亂博弈中確立長久雙邊和平合作的基石。'],
-      ['adverse selection death spiral','逆向選擇誘發市場崩潰之死亡螺旋',1,'phr.','Without universal mandates, private healthcare markets risk an adverse selection death spiral.','若缺乏普遍納保的制度性強制約束，商業健康險市場將極易滑入逆向選擇的萬劫不復死亡螺旋之中。'],
-      ['winner curse in common auctions','共同價值拍賣中因過度樂觀之贏家詛咒',1,'phr.','Prudent bidders shade their valuations downward to avoid the winner curse in common auctions.','冷靜睿智的競標者往往會在拍賣中主動調降自己的最終報價，以防深陷共同價值拍賣中慘絕人寰的贏家詛咒。'],
-      ['moral hazard after bailout','獲得政府注資救助後引發之道德風險',1,'phr.','Regulators imposed strict capital caps to curtail reckless moral hazard after bailout operations.','金融監管機構火速祭出嚴苛的資本限制紅線，旨在徹底遏止金融巨頭在獲得政府救助後死灰復燃的道德風險。'],
+      ["reciprocity in repeated interactions","反覆互動中的互惠",1,"phr.","The study examines reciprocity in repeated interactions between the same participants.","研究探討同一批參與者在反覆互動中如何互惠。"],
+      ["an adverse selection spiral","逆向選擇造成的惡性循環",1,"phr.","Analysts warned that repeated price increases could set off an adverse selection spiral.","分析師警告，一再漲價可能引發逆向選擇的惡性循環。"],
+      ["the winner's curse","贏家詛咒（競標時得標者出價過高的現象）",1,"phr.","The bidder worried that paying so much for the asset might illustrate the winner’s curse.","投標者擔心以如此高的價格買下資產，可能正是贏家詛咒的例子。"],
+      ["moral hazard after a bailout","紓困後的道德風險",1,"phr.","The economists discussed the risk of moral hazard after a bailout.","經濟學家討論紓困後可能出現的道德風險。"],
       ['bounded rationality doctrine','有限理性在複雜現實決策中之邊界',1,'phr.','The bounded rationality doctrine acknowledges that human cognitive throughput is inherently finite.','有限理性學說從根本上承認：人類大腦在面對大千世界時，其認知運算與資訊處理的吞吐容量生來就是極其有限的。'],
       ['hyperbolic discounting dilemma','短視近利即時滿足之雙曲貼現困局',1,'phr.','Public policy struggles to overcome the hyperbolic discounting dilemma in climate change mitigation.','在推進全球氣候變遷治理的艱難進程中，各國公共政策無時無刻不在與人性深處短視近利的雙曲貼現困局死磕。'],
       ['principal agent conflict','職業經理人與全體股東之委託代理衝突',1,'phr.','Independent audit committees are established to mitigate the severe principal agent conflict.','上市公司專門成立由獨立董事組成的審計委員會，旨在化解職業高階主管與全體股東之間尖銳的委託代理利益衝突。'],
       ['explore exploit tradeoff','在探索新知與收割已知間之戰略權衡',1,'phr.','Autonomous reinforcement agents navigate the explore exploit tradeoff through epsilon greedy algorithms.','自主深度強化學習智能體，廣泛藉由 ε-貪婪演算法在浩瀚未知中精確權衡探索新領域與利用已知經驗的平衡點。'],
       ['inequity aversion utility','對極端貧富不均與不公平之效用厭惡',1,'phr.','Experimental economics models include inequity aversion utility to explain generous ultimatum offers.','實驗經濟學模型精巧納入了不平等厭惡效用函數，從而科學解釋了最後通牒博弈中提議者為何總是傾向於慷慨分錢。'],
-      ['presumed consent opt out','默認推定同意之行為科學預設退出制',1,'phr.','The healthcare authority enacted a presumed consent opt out policy to replenish the organ donor pool.','公共衛生主管部門大膽推行了「默認推定同意」的預設退出制度，在一夜之間奇蹟般充實了瀕危枯竭的器官捐贈庫存。']
+      ["an opt out system","可主動選擇退出的制度",1,"phr.","The agency compared an opt-out system with one requiring people to sign up.","該機構比較了可主動退出的制度與必須自行登記加入的制度。"]
     ],
     spells: [
       ['ASYMMETRIC','adj.','交易各方所掌握之資訊極度不平等非對稱的','Asymmetric information creates profound market failures across used car sales lots.','極度的資訊不對稱，在二手車交易市場等廣泛領域引發了極其深刻的市場失靈與信賴危機。'],

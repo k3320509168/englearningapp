@@ -26,16 +26,16 @@ export const data = {
       [1,'The communications director warned against the boomerang effect of defensive messaging. What was risked?','Overly aggressive corporate denials that alienate neutral audiences and harden public conviction of guilt.|Generating so much public goodwill that the company stock price doubles in value within twelve hours.|Causing competing corporate manufacturing firms to spontaneously surrender their commercial patents.|Forcing the national government to grant the corporation an unconditional exemption from corporate taxes.','資深公關傳播總監力諫高管團隊：嚴厲警告切莫採取蠻橫反咬的防禦性公關回擊，否則極易引發致命的「公關迴力鏢效應（Boomerang Effect）」——過度的傲慢闢謠反而會將搖擺中立的大眾徹底推向對立面，坐實外界對公司「做賊心虛」的鐵證定性。']
     ],
     voices: [
-      ['attitudinal inoculation cognitive defense','預先剖析話術建立抗體之態度免疫認知防禦',1,'phr.','Media literacy initiatives deployed attitudinal inoculation cognitive defense against viral conspiracy myths.','國家媒介素養推廣工程全面啟動態度免疫認知防禦機制，以科學理性為公眾披上抵禦病毒式陰謀論的精神盔甲。'],
-      ['golden hours crisis communications response','搶佔第一時機誠懇定調之黃金時間危機公關應變',1,'phr.','The airline launched a transparent golden hours crisis communications response following the emergency landing.','這家百年航空公司在客機緊急迫降後，第一時間啟動了公開透明的黃金時間危機應變處置，迅速穩住了公眾信心。'],
-      ['malicious disinformation operational campaign','蓄意造謠煽動撕裂對立之惡意假訊息認知作戰',1,'phr.','Intelligence agencies disrupted a foreign malicious disinformation operational campaign targeting elections.','最高情報安全部門一舉端掉了境外敵對勢力企圖操弄大選民意的惡意假訊息認知作戰地下指揮網絡。'],
-      ['algorithmic filter bubble polarization','極端內容推波助瀾之演算法同溫層回音室極化',1,'phr.','Legislators debated regulatory bills to break algorithmic filter bubble polarization across social feeds.','國會兩黨議員緊急就反壟斷法規展開激辯，誓要打破社群媒體推薦演算法製造的同溫層極化惡疾。'],
-      ['cryptographic content provenance metadata','烙印防偽審計水印之加密內容溯源元資料',1,'phr.','News agencies adopted cryptographic content provenance metadata to verify generative media authenticity.','各大國際權威通訊社全線換裝加密內容溯源元資料標準，令生成式 AI 偽造的假圖假視頻無所遁形。'],
-      ['corporate mea culpa unconditional apology','直面責任鞠躬悔罪之企業公開全面認錯致歉',1,'phr.','The CEO offered an emotional corporate mea culpa unconditional apology that saved the company from ruin.','執行長在萬千鎂光燈前那場發自肺腑、勇於擔責的全面認錯與鞠躬致歉，在最後一刻將這家百年品牌從懸崖邊拉了回來。'],
-      ['astroturfing fake grassroots manipulation','機器水軍偽裝民意之草根輿論造假操弄',1,'phr.','Regulators fined the lobby firm for illegal astroturfing fake grassroots manipulation during the referendum.','監管當局向這家遊說黑公關開出了天價罰單，嚴懲其在公投期間利用大量水軍帳號製造虛假民意的卑劣行徑。'],
-      ['spiral of silence social conformity pressure','因恐懼被群體孤立而噤聲之沉默螺旋從眾壓力',1,'phr.','The extreme online mob environment intensified spiral of silence social conformity pressures among scholars.','狂熱極端的網路網絡暴力泥淖，在廣大學術知識分子群體中催生出了令人窒息的沉默螺旋從眾禁言恐懼。'],
-      ['streisand effect viral backlash explosion','蠻橫刪帖反遭瘋狂擴散之史翠珊效應病毒式反噬',1,'phr.','Suing the student blogger backfired in a textbook streisand effect viral backlash explosion on the internet.','這家大財團起訴大學生部落客的霸凌之舉，引爆了教科書般的史翠珊效應，引發全網瘋狂起底轉發。'],
-      ['proactive holding statement transparent briefing','搶在謠言前公開進度之預防性守位聲明透明簡報',1,'phr.','The hospital press team issued a proactive holding statement transparent briefing within ten minutes of the incident.','市府醫院新聞應急小組在突發公共衛生事件發生後十分鐘內，便發布了誠懇坦蕩的守位聲明與動態簡報。']
+      ["inoculation against misinformation","對錯假資訊建立抵抗力",1,"phr.","The study evaluated a short lesson designed as inoculation against misinformation.","研究評估一堂旨在建立錯假資訊抵抗力的短課。"],
+      ["a timely crisis response","及時的危機應對",1,"phr.","A timely crisis response explained what had happened and when more information would be available.","及時的危機應對說明了已發生的情況，以及何時會公布更多資訊。"],
+      ["disinformation campaign","假訊息宣傳活動",1,"phr.","Investigators asked whether the false reports were part of a coordinated disinformation campaign.","調查人員想釐清，這些不實報導是否出自有組織的假訊息宣傳活動。"],
+      ["an algorithmic filter bubble","由演算法造成的資訊過濾泡泡",1,"phr.","The author asks whether personalised recommendations can create an algorithmic filter bubble.","作者探問個人化推薦是否會造成演算法過濾泡泡。"],
+      ["metadata about content provenance","關於內容來源與流轉紀錄的中繼資料",1,"phr.","The newsroom reviewed metadata about content provenance before publishing the image.","新聞編輯部在發布圖片前檢查了記錄內容來源與流轉過程的中繼資料。"],
+      ["public acknowledgement of wrongdoing","公開承認過錯",1,"phr.","The apology included a public acknowledgement of wrongdoing and a commitment to change.","這份道歉公開承認過錯，並承諾作出改變。"],
+      ["a fabricated grassroots campaign","捏造的草根運動",1,"phr.","The investigation examined allegations of a fabricated grassroots campaign.","調查檢視了有關捏造草根運動的指控。"],
+      ["the spiral of silence","沉默螺旋",1,"phr.","The study uses the spiral of silence to examine why people withhold unpopular opinions.","研究用沉默螺旋探討人們為何不說出不受歡迎的意見。"],
+      ["the Streisand effect","史翠珊效應",1,"phr.","The attempt to suppress the image drew more attention to it, illustrating the Streisand effect.","試圖阻止圖片流傳反而引來更多關注，正是史翠珊效應的例子。"],
+      ["issue a holding statement","先發布一份暫時聲明",1,"phr.","The spokesperson planned to issue a holding statement while the facts were being checked.","發言人打算在查核事實期間先發布一份暫時聲明。"]
     ],
     spells: [
       ['DISINFORMATION','n.','敵對主體為達到欺騙、分裂、製造社會恐慌而蓄意捏造傳播的虛假惡意訊息','Combating foreign disinformation requires media literacy and advanced algorithmic tracking.','抗擊境外勢力精心策劃的惡意假訊息（Disinformation），仰賴全民媒介素養的提升與前沿追蹤技術。'],

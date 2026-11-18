@@ -26,15 +26,15 @@ export const data = {
       [1,'The warehouse management system initiated automated cycle counting during active fulfillment shifts. What was achieved?','Continuous, systematic auditing of specific inventory subsets without halting general warehouse logistics operations.|The total disposal of all inventory stored in the warehouse to prepare for the annual commercial tax audit.|The replacement of all human warehouse supervisors with remote video streaming telepresence actors.|Counting all warehouse lightbulbs to ensure compliance with municipal environmental energy saving laws.','智慧倉儲管理系統（WMS）在繁忙的訂單履行週期中持續推進「循環盤點（Cycle Counting）」：透過算法每日定期指派不同庫區高頻抽盤特定品類的庫存實體與系統賬面，在完全不中斷倉庫整體進出貨運轉的前提下，達成 99.9% 的賬實相符率。']
     ],
     voices: [
-      ['negotiable bill of lading title','代表物權可背書轉讓之可轉讓海運提單',1,'phr.','The international trade deal finalized upon endorsement of the negotiable bill of lading title.','買方在取得經背書轉讓的可轉讓海運提單物權憑證後，正式宣告國際大宗物資貿易交割圓滿達成。'],
-      ['irrevocable documentary letter of credit','開證行獨立承擔第一付款責任之不可撤銷跟單信用狀',1,'phr.','Exporters rely on an irrevocable documentary letter of credit to eliminate sovereign and commercial credit risk.','跨國出口商高度依賴不可撤銷跟單信用狀，徹底化解跨國買家惡意拖欠與商業違約信用風險。'],
-      ['multimodal transport operator door to door','全段海陸空聯運一票到底負責之多式聯運經營人',1,'phr.','The multimodal transport operator door to door liability protects cargo through rail and ocean corridors.','多式聯運經營人憑藉其一票到底的「門到門」責任體系，為貫通鐵路、公路與深水海運的大宗貨物築起堅固法律屏障。'],
-      ['container demurrage and detention charges','碼頭超期佔地與場外逾期滯箱之滯期滯箱費',1,'phr.','Importers expedite customs clearance to avert punitive container demurrage and detention charges.','各大進口企業全力提速港口報關放行流程，以規避船公司計收的巨額碼頭滯期與場外超期滯箱費。'],
-      ['york antwerp rules general average contribution','共同海損危難共擔按獲救利益分攤之約克安特衛普規則',1,'phr.','Average adjusters calculated the cargo value for york antwerp rules general average contribution after the salvage.','在海事救助拖航成功後，海損理算師依據《約克-安特衛普規則》精確核算各貨主應分攤的共同海損分攤金。'],
+      ["a negotiable bill of lading","可轉讓提單",1,"phr.","The bank asked whether the shipment was covered by a negotiable bill of lading.","銀行詢問這批貨物是否有可轉讓提單。"],
+      ["an irrevocable letter of credit","不可撤銷信用狀",1,"phr.","The seller requested an irrevocable letter of credit before shipping the goods.","賣方要求取得不可撤銷信用狀後才出貨。"],
+      ["multimodal transport operator","多式聯運經營人",1,"phr.","The exporter hired a multimodal transport operator to coordinate the shipment.","出口商委託多式聯運經營人協調這批貨物的運送。"],
+      ["demurrage and detention charges","滯期費與滯箱費",1,"phr.","The importer reviewed the invoice for demurrage and detention charges.","進口商檢查了帳單上的滯期費和滯箱費。"],
+      ["general average contributions","共同海損分攤金",1,"phr.","The report explains how general average contributions were determined in that case.","報告說明該案的共同海損分攤金如何決定。"],
       ["real time temperature monitoring","即時溫度監測",1,"phr.","Real-time temperature monitoring alerted the warehouse when the refrigerated shipment began to warm.","冷藏貨物開始升溫時，即時溫度監測系統向倉庫發出警報。"],
-      ['cross docking lean warehouse logistics','免入庫理貨快速轉運出境之精益越庫物流作業',1,'phr.','The distribution hub handles high velocity perishables through cross docking lean warehouse logistics.','大型區域分銷樞紐透過極致的精益越庫物流作業，實現了高週轉率生鮮商品數小時內的零庫存流轉。'],
-      ['supply chain bullwhip effect amplification','信息失真逐級放大庫存失衡之供應鏈長鞭效應',1,'phr.','Integrated ERP transparency mitigates supply chain bullwhip effect amplification across manufacturing tiers.','上下游深度整合的雲端 ERP 數據透明共享機制，能有效遏止供應鏈長鞭效應造成的產能誤判與庫存雪崩。'],
-      ['incoterms free on board risk transfer','貨物越過船舷裝船完畢之國際貿易術語離岸價',1,'phr.','The exporter fulfilled its contractual obligation upon incoterms free on board risk transfer at the loading terminal.','當出口集裝箱於裝運港吊裝完畢越過船舷，賣方即圓滿完成了離岸價（FOB）約定的風險與義務交割。'],
+      ["transfer goods without storing them","直接轉運貨物，不先入庫儲存",1,"phr.","The distribution centre can transfer goods without storing them overnight.","配送中心可以直接轉運貨物，不用讓貨物在倉庫過夜。"],
+      ["the bullwhip effect","長鞭效應",1,"phr.","The analyst used the bullwhip effect to explain why orders fluctuated more sharply upstream.","分析師以長鞭效應解釋，為何越上游的訂單波動越劇烈。"],
+      ["the transfer of risk","風險移轉",1,"phr.","The dispute concerned the transfer of risk under the shipping contract.","爭議涉及運送合約中的風險移轉。"],
       ["certificate of origin","原產地證明書",1,"phr.","The exporter provided a certificate of origin to support the claim for a preferential tariff.","出口商提供原產地證明書，以支持適用優惠關稅的申請。"],
     ],
     spells: [
@@ -57,7 +57,7 @@ export const data = {
     ],
     voices: [
       ["no cure no pay","救助無成效即無報酬（海事救助原則）",1,"phr.","Under the principle of no cure, no pay, a salvor generally earns a reward only for a successful salvage operation.","依無成效即無報酬原則，救助人通常須成功完成救助才能取得報酬。"],
-      ['transfer pricing and customs valuation conflict','所得稅防避稅與海關完稅價博弈之轉移定價海關估價衝突',1,'phr.','Multinational finance teams must reconcile the transfer pricing and customs valuation conflict during cross border audits.','跨國財務與供應鏈法規團隊必須在跨國稅務審計中，審慎調和關聯交易轉移定價與海關進口完稅估價間的衝突。']
+      ["a conflict over customs valuation","海關估價爭議",1,"phr.","The importer and the authority had a conflict over customs valuation.","進口商與主管機關之間發生海關估價爭議。"]
     ],
     spells: [
       ['SEAWORTHINESS','n.','船舶在開航前無論在船體結構、船員配備、裝載及機械性能上均能抵禦預期海上風險的適航能力','The cargo claim turned entirely on whether the ocean carrier exercised due diligence to ensure seaworthiness.','該起數千萬美元的海事索賠案成敗，完全取決於承運人是否在開航前恪盡了保障船舶適航性（Seaworthiness）的法定義務。'],

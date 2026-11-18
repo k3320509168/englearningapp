@@ -29,11 +29,11 @@ export const data = {
       ['quantum superposition state','處於零與一疊加態之量子疊加態',1,'phr.','The qubit remained in a coherent quantum superposition state for one hundred microseconds.','這顆超導量子位元在長達一百微秒的同調時間內，穩如泰山地保持著純淨的量子疊加態。'],
       ['quantum entanglement correlation','愛因斯坦驚呼之幽靈般超距量子糾纏',1,'phr.','Spooky quantum entanglement correlation enables instantaneous quantum teleportation protocols.','超越古典物理局域性的量子糾纏關聯，為構建遠程量子隱形傳態協議鋪平了堅實的理論基石。'],
       ['quantum phase decoherence','破壞量子運算精準度之環境相干性崩潰',1,'phr.','Thermal fluctuations and ambient magnetic noise accelerate quantum phase decoherence.','細微的環境熱擾動與雜散電磁干擾，是加速量子相位退相干崩潰的頭號元兇。'],
-      ['post quantum cryptography standard','防範量子解密攻擊之後量子密碼學標準',1,'phr.','Security agencies adopted the lattice based post quantum cryptography standard to protect secrets.','國家最高情報安全機關正式全面換裝基於格理論的後量子密碼標準，以抵禦未來的量子破譯攻擊。'],
-      ['fault tolerant quantum architecture','能自動即時修正錯誤之容錯量子運算架構',1,'phr.','Surface codes provide the foundation for a scalable fault tolerant quantum architecture.','表面碼（Surface Code）拓撲糾錯編碼，為人類建造可擴展的百萬位元容錯量子電腦架構奠定了核心藍圖。'],
+      ["post quantum cryptography standards","後量子密碼學標準",1,"phr.","The team reviewed post-quantum cryptography standards before planning the transition.","團隊在規劃轉換前檢視了後量子密碼學標準。"],
+      ["fault tolerant quantum computing","容錯量子運算",1,"phr.","The lecture introduced the idea of fault-tolerant quantum computing.","講座介紹容錯量子運算的概念。"],
       ['dilution refrigerator cryostat','逼近絕對零度之低溫稀釋製冷機低溫恆溫器',1,'phr.','Engineers mounted the superconducting processor inside the dilution refrigerator cryostat.','低溫工程專家將精密的超導處理器晶片牢牢安裝於稀釋製冷機極寒的底層冷盤之上。'],
       ['quantum supremacy demonstration','算力碾壓傳統超算之量子霸權實驗展示',1,'phr.','The landmark experiment marked the first definitive quantum supremacy demonstration in history.','這項具有歷史分水嶺意義的先驅實驗，完成了人類科學史上的首次量子優越性權威實證。'],
-      ['quantum key distribution protocol','杜絕一切竊聽之單光子量子金鑰分發協議',1,'phr.','Banks deployed the BB84 quantum key distribution protocol to secure metropolitan financial transfers.','跨國銀行總行率先部署了 BB84 單光子量子密鑰分發協議，以物理極限封死了一切中間人竊聽可能。'],
+      ["quantum key distribution","量子金鑰分配",1,"phr.","The lecture introduced quantum key distribution and discussed its limitations.","講座介紹量子金鑰分配，並討論其限制。"],
       ['general relativistic singularity','時空曲率無限大之廣義相對論引力奇點',1,'phr.','At the core of a black hole lies a general relativistic singularity where known physics breaks down.','在黑洞吞噬一切的核心深處，盤踞著時空曲率趨於無窮大的廣義相對論奇點，所有已知物理法則在此徹底失效。'],
       ['superconducting josephson junction','構成超導量子位元心臟之約瑟夫森穿隧結',1,'phr.','A superconducting josephson junction introduces nonlinear inductance into the circuit.','精密沉積的奈米級超導約瑟夫森穿隧結，為微波振盪諧振腔注入了至關重要的無耗散非線性電感。']
     ],
@@ -86,16 +86,16 @@ export const data = {
       [2,'The quantum state tomography reconstructed the complete thirty two dimensional density matrix. What was quantified?','The full statistical quantum state, including all coherences and purity parameters of the system.|The exact geographic location of the laboratory on satellite navigational positioning maps.|The physical market monetary valuation of the silicon wafer on global commodities exchanges.|The number of individual physics students enrolled in the university graduate program.','高階「量子態斷層掃描（Quantum State Tomography）」全面重構了多位元系統高達 32 維的龐大密度矩陣，徹底量化了該複合量子系統的一切微觀相干性細節、量子糾纏深度與態純度指標。']
     ],
     voices: [
-      ['aharonov bohm phase shift','磁場為零處依然存在之阿哈羅諾夫玻姆相位差',2,'phr.','The electron wave packet picked up an aharonov bohm phase shift around the magnetic vector flux.','電子波包繞行磁屏蔽螺線管一周後，在磁場嚴格為零的空間中依然精準拾取了深邃的阿哈羅諾夫-玻姆幾何相位差。'],
-      ['quantum zeno effect suppression','連續密集觀測下凍結躍遷之量子芝諾效應',2,'phr.','Rapid projective measurements caused complete quantum zeno effect suppression of decay transitions.','以飛秒頻率轟擊的連續投影測量，對該激發態分子的自發輻射衰變造成了徹底的量子芝諾凍結效應。'],
-      ['bose einstein condensation threshold','跌入同一基態超級巨原子之玻色愛因斯坦凝聚',2,'phr.','Laser cooled rubidium vapor crossed the bose einstein condensation threshold at sub microkelvin cold.','經雷射冷卻的銣-87 稀薄原子蒸汽在跌破數百納開爾文極限後，一舉跨越了玻色-愛因斯坦凝聚臨界相變線。'],
-      ['topological insulator edge state','塊體絕緣而表面無耗散導電之拓撲邊界態',2,'phr.','Backscattering is topologically forbidden along the protected topological insulator edge state.','在時間反演對稱性的鐵律庇護下，外來非磁性雜質在拓撲絕緣體一維無能隙邊界態上的背向散射被絕對禁止。'],
-      ['majorana zero mode braiding','用非阿貝爾任意子實現硬體級容錯之馬約拉納編織',2,'phr.','Physicists demonstrated topological fault tolerance through majorana zero mode braiding operations.','凝聚態理論學家透過非阿貝爾任意子的空間馬約拉納零能模編織運算，在物理本徵層面構建了拓撲容錯矩陣。'],
-      ['hawking black hole radiation','事件視界量子真空漲落產生之霍金黑洞輻射',2,'phr.','Virtual particle antiparticle pair separation produces hawking black hole radiation near the horizon.','事件視界外緣的量子真空漲落引發虛粒子對分離，孕育出令天體黑洞緩慢蒸發衰竭的霍金量子輻射。'],
-      ['quantum state tomography fidelity','全方位重構密度矩陣之量子態斷層掃描保真度',2,'phr.','Over constrained measurements yielded ninety eight percent quantum state tomography fidelity.','高冗餘度的全景式微波投影測量，最終解算出了高達 98% 完美契合度的量子態斷層掃描全矩陣保真度。'],
-      ['cp symmetry violation parameter','解開宇宙反物質湮滅之宇稱破缺參數',2,'phr.','Precise beam measurements revealed the tiny cp symmetry violation parameter in neutral meson decays.','高能粒子對撞機的高精度束流測量，精準錨定了中性介子罕見弱相互作用衰變中的 CP 對稱性破缺關鍵參數。'],
-      ['superfluid quantum vortex core','液氦超流體中旋度量子化之量子渦旋核心',2,'phr.','Superfluid angular momentum is carried exclusively by quantized superfluid quantum vortex cores.','超流液氦在高速旋轉時其角動量絕不連續分佈，而是完全由內部離散排列的奇異量子化渦旋核心嚴格承載。'],
-      ['asymmetric bell inequality refutation','無懈可擊宣判古典局域實在論死刑之貝爾不等式',2,'phr.','Loophole free tests delivered definitive asymmetric bell inequality refutations across laboratory miles.','在相隔數公里的獨立光學實驗室之間開展的「無漏洞（Loophole-free）」實驗，給古典局域實在論敲下了最後的喪鐘。']
+      ["the Aharonov Bohm effect","阿哈羅諾夫－玻姆效應",2,"phr.","The lecture introduced the Aharonov–Bohm effect.","講座介紹了阿哈羅諾夫－玻姆效應。"],
+      ["the quantum Zeno effect","量子芝諾效應",2,"phr.","The presentation discussed the quantum Zeno effect in the context of repeated measurements.","簡報從反覆測量的角度討論量子芝諾效應。"],
+      ["Bose Einstein condensation","玻色－愛因斯坦凝聚",2,"phr.","The physicist introduced Bose–Einstein condensation in a lecture on ultracold gases.","物理學家在超冷氣體講座中介紹玻色－愛因斯坦凝聚。"],
+      ["edge states in a topological insulator","拓撲絕緣體中的邊緣態",2,"phr.","The researchers investigated edge states in a topological insulator.","研究人員探討拓撲絕緣體中的邊緣態。"],
+      ["braiding of Majorana zero modes","馬約拉納零模的編織",2,"phr.","The seminar surveyed proposals for the braiding of Majorana zero modes.","研討會概述了馬約拉納零模編織的研究提案。"],
+      ["Hawking radiation","霍金輻射",2,"phr.","The lecturer described Hawking radiation as a theoretical prediction.","講師說明霍金輻射是一項理論預測。"],
+      ["quantum state tomography","量子態斷層掃描",2,"phr.","The researchers used quantum state tomography to estimate the state of the system.","研究人員利用量子態斷層掃描估計系統的狀態。"],
+      ["violation of charge parity symmetry","電荷與宇稱對稱性的破壞",2,"phr.","The paper reports evidence of violation of charge-parity symmetry.","論文報告電荷與宇稱對稱性破壞的證據。"],
+      ["a quantised vortex","量子化渦旋",2,"phr.","The diagram depicts a quantised vortex in a superfluid.","圖表描繪超流體中的量子化渦旋。"],
+      ["a violation of a Bell inequality","對貝爾不等式的違反",2,"phr.","The researchers discussed whether their results showed a violation of a Bell inequality.","研究人員討論實驗結果是否顯示對貝爾不等式的違反。"]
     ],
     spells: [
       ['SUPERFLUIDITY','n.','物質在極低溫下黏滯阻力完全歸零無摩擦流動的超流性','Superfluidity allows liquid helium to flow uphill defying gravity in thin Rollin films.','超流性（Superfluidity）允許液態氦以奇異的微觀量子滾動薄膜姿態，完全克服重力沿著燒杯壁向上逆流。'],

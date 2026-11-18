@@ -29,13 +29,13 @@ export const data = {
       ['quantitative tightening cycle','中央銀行資產負債表量化緊縮週期',1,'phr.','The central bank initiated a quantitative tightening cycle to drain surplus market liquidity.','央行正式拉開了量化緊縮週期的序幕，旨在果斷抽乾市場中氾濫成災的投機性過剩流動性。'],
       ['stagflationary macroeconomic shock','滯脹型總體經濟負面供給衝擊',1,'phr.','Geopolitical disruptions delivered a severe stagflationary macroeconomic shock across advanced economies.','地緣政治衝突爆發給全球主要已開發經濟體帶來了沉重的滯脹型總體經濟負向衝擊。'],
       ['overnight reverse repurchase','央行隔夜逆回購流動性回收機制',1,'phr.','Institutional money funds parked trillions in the overnight reverse repurchase facility.','全美機構貨幣基金在央行的隔夜逆回購工具中，鎖定了數以萬億計的短期超額流動性以防範信用風險。'],
-      ['cost push inflation pressures','供給端受阻引發之成本推動型通膨',1,'phr.','Escalating raw material shortages intensified cost push inflation pressures across manufacturing sectors.','關鍵大宗原材料的持續斷供匱乏，極大激化了製造業內部成本推動型通膨的惡性傳導蔓延。'],
-      ['sovereign debt restructuring haircut','主權債務重整談判中的債券本金減記',1,'phr.','Foreign creditors resisted accepting a sixty percent sovereign debt restructuring haircut.','國際跨國債權人團體群起抵制，強烈拒絕接受高達 60% 的主權債務重整本金直接折價減記方案。'],
-      ['managed float exchange regime','央行適度干預調節之管理浮動匯率制',1,'phr.','The monetary authority intervenes under its managed float exchange regime to suppress currency speculation.','貨幣主管當局在其管理浮動匯率體系下果斷出手干預，全力打擊惡意做空本幣的跨國外匯投機勢力。'],
-      ['capital inflows sudden stop','外部資本毫無預警的驟停式外逃抽離',1,'phr.','A sudden stop in capital inflows forced the developing nation to seek an emergency IMF bailout.','外部投資資本毫無預警的驟停式抽離，迫使該發展中國家不得不緊急向國際貨幣基金組織（IMF）求援。'],
+      ["cost push inflation","成本推動型通膨",1,"phr.","The textbook uses rising production costs to illustrate cost-push inflation.","教科書用生產成本上升說明成本推動型通膨。"],
+      ["a haircut on sovereign debt","主權債務的減記",1,"phr.","The proposal calls for a haircut on sovereign debt as part of the restructuring.","這項提案主張在重整過程中減記部分主權債務。"],
+      ["a managed float","管理浮動匯率制度",1,"phr.","The report contrasts a managed float with a fixed exchange rate.","報告比較了管理浮動匯率制度與固定匯率制度。"],
+      ["a sudden stop in capital inflows","資本流入突然中斷",1,"phr.","The report examined the effects of a sudden stop in capital inflows.","這份報告探討資本流入突然中斷所造成的影響。"],
       ['anchor inflation expectations','堅定錨定市場與公眾長期通膨預期',1,'phr.','Aggressive front loaded interest rate hikes are deployed to anchor inflation expectations firmly.','央行果斷採取前期激進加碼的升息手段，旨在堅定錨定市場與廣大公眾的長期物價通膨預期。'],
       ['liquidity trap vulnerability','名目利率觸及零利率下限之流動性陷阱',1,'phr.','Deep deflationary psychology increases an economy\'s liquidity trap vulnerability during recessions.','根深蒂固的長期通縮恐慌心理，極大加劇了經濟體在衰退期深陷流動性陷阱泥淖的脆弱性。'],
-      ['fiscal policy crowding out','政府發債擴張赤字導致之民間排擠效應',1,'phr.','Economists cautioned that excessive sovereign borrowing risks fiscal policy crowding out of private enterprise.','頂尖經濟學家齊聲警告，過度失控的主權債務發行極易誘發財政赤字對民間實體企業信貸的排擠效應。']
+      ["the crowding out effect","排擠效應",1,"phr.","The textbook discusses the crowding-out effect as a possible consequence of higher government borrowing.","教科書把排擠效應列為政府借款增加的可能後果。"]
     ],
     spells: [
       ['DEVALUATION','n.','政府官方下調本國貨幣對外法定匯率的貨幣貶值','Deliberate currency devaluation boosts export competitiveness but spikes import inflation.','政府主動實施的法定貨幣貶值雖能短暫提振出口競爭力，但卻會瞬間引發輸入型通膨的海嘯。'],

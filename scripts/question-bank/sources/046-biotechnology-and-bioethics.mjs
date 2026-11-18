@@ -27,14 +27,14 @@ export const data = {
     ],
     voices: [
       ['precise genome editing','高精確度全基因組靶向編輯',1,'phr.','CRISPR systems facilitate precise genome editing to correct monogenic hereditary disorders.','CRISPR 分子剪刀使高精確度全基因組靶向編輯成為現實，有望從根源逆轉各類單基因遺傳罕見病。'],
-      ['double blind randomized trial','雙盲安慰劑對照隨機化臨床試驗',1,'phr.','The gold standard in clinical pharmacology is the double blind randomized trial.','當代臨床藥理學界至高無上的療效驗證金標準，當屬嚴謹規範的雙盲安慰劑隨機臨床試驗。'],
+      ["double blind randomised trial","雙盲隨機試驗",1,"phr.","The paper explains why the researchers chose a double-blind randomised trial.","論文說明研究人員為何選擇雙盲隨機試驗。"],
       ['monoclonal antibody therapy','單株抗體靶向特異性生物療法',1,'phr.','Oncologists prescribe monoclonal antibody therapy to neutralize circulating angiogenic growth factors.','腫瘤臨床專家開具單株抗體特異性生物標靶藥物，旨在精準中和阻斷腫瘤周邊的血管新生生長因子。'],
       ['institutional review board','人體生物試驗醫學倫理審查委員會',1,'phr.','The institutional review board mandated revisions to protect vulnerable pediatric clinical subjects.','人體試驗醫學倫理審查委員會下達硬性整改要求，以全方位加固對弱勢兒科受試者的身心安全保障。'],
       ['lipid nanoparticle delivery','脂質奈米粒子載體核酸投遞技術',1,'phr.','Optimizing lipid nanoparticle delivery is critical for tissue specific gene silencing therapies.','優化設計脂質奈米粒載體投遞系統，是成功達成特定器官組織特異性基因沉默治療的關鍵命脈。'],
-      ['pluripotent stem cell line','多潛能誘導幹細胞自律分化株',1,'phr.','Researchers differentiated a human pluripotent stem cell line into functional cardiomyocytes.','科研團隊在培養皿中成功引導人類多能幹細胞株，定向分化出了具備自主節律跳動功能的心肌細胞。'],
+      ["pluripotent stem cell line","多能性幹細胞株",1,"phr.","The researchers compared results from two pluripotent stem cell lines.","研究人員比較了兩種多能性幹細胞株的研究結果。"],
       ['antimicrobial resistance crisis','超級細菌抗生素抗藥性公衛危機',1,'phr.','Global health organizations convene emergency summits to address the antimicrobial resistance crisis.','世界公共衛生組織緊急召集跨國峰會，共同研商應對全球蔓延擴散的超級細菌耐藥性公衛危機。'],
       ['diagnostic biomarker validation','臨床診斷生物標記分子確效檢驗',1,'phr.','Multi center clinical studies accelerated diagnostic biomarker validation for early neurodegenerative detection.','多中心跨國聯合臨床佇列，極大加速了用於早期篩查阿茲海默症等神經退行性疾病的生化標記物確效。'],
-      ['off target cleavage risk','基因編輯脫靶剪切非預期突變風險',1,'phr.','High fidelity Cas9 variants were engineered specifically to eliminate off target cleavage risk.','科學家透過定向演化開發出高保真 Cas9 變體酶，專門用於在體內治療中徹底消除脫靶切割帶來的安全風險。'],
+      ["risk of unintended changes","發生非預期變化的風險",1,"phr.","The board asked how the proposal would address the risk of unintended changes.","委員會詢問提案會如何處理非預期變化的風險。"],
       ['autologous chimeric receptor','自體採集嵌合抗原受體修飾淋巴細胞',1,'phr.','Treating refractory lymphomas often involves infusing autologous chimeric receptor armed immune cells.','針對臨床上頑固難治的惡性淋巴瘤，回輸經自體基因工程武裝的嵌合抗原受體免疫細胞往往能創造奇蹟。']
     ],
     spells: [
@@ -92,8 +92,8 @@ export const data = {
       ['mendelian inheritance drive','打破孟德爾定律之偏向基因驅動系統',1,'phr.','Ecologists debated releasing mosquitoes carrying a CRISPR based mendelian inheritance drive.','生態學家激辯是否該向大自然釋放攜帶基於 CRISPR 偏向性基因驅動系統的基因改造蚊蟲。'],
       ['epigenetic marks erasure','體細胞全能重編程中表觀遺傳標記抹除',1,'phr.','Cellular reprogramming demands comprehensive epigenetic marks erasure across chromatin loci.','誘導成熟體細胞逆轉分化命運，必須徹底實現全染色質位點表觀遺傳修飾標記的深層抹除。'],
       ['single cell transcriptomics','微觀單細胞轉錄組異質性高解析定序',1,'phr.','Single cell transcriptomics revealed rare drug resistant subclonal populations in solid tumors.','高靈敏單細胞轉錄組定序技術，精準揪出了實體惡性腫瘤中潛伏的罕見耐藥性亞克隆微小細胞群。'],
-      ['pathogen gain of function','增強病毒致死力之病原體功能獲得研究',1,'phr.','Bioethicists scrutinized the dual use hazards of pathogen gain of function experiments.','國際生命倫理學界高度審視並強烈警惕病原體功能獲得性增強實驗所潛藏的軍民兩用致命危害。'],
-      ['de novo protein design','基於第一性原理計算之從頭蛋白質設計',1,'phr.','Deep learning models empowered de novo protein design for hyper stable therapeutic biologics.','前沿深度學習大模型賦予了科學家從頭蛋白質設計的強大能力，創造出超常熱穩定的新型生物藥物。'],
+      ["public oversight of research","對研究活動的公共監督",1,"phr.","The panel discussed how public oversight of research might improve accountability.","小組討論對研究活動的公共監督如何加強問責。"],
+      ["protein structure prediction","蛋白質結構預測",1,"phr.","The course introduces protein structure prediction and discusses its limitations.","課程介紹蛋白質結構預測，並討論其限制。"],
       ['cytokine release syndrome','免疫過度活化誘發之致命細胞因子風暴',1,'phr.','Intensive care protocols were initiated upon early signs of cytokine release syndrome.','重症監護病房在患者初現全身性細胞因子釋放綜合徵端倪之際，第一時間啟動了抗炎急救處置預案。'],
       ['minimal residual disease','手術或化療後體內殘留之微小惡性病灶',1,'phr.','Serial liquid biopsy assays monitor minimal residual disease to predict cancer relapse months early.','常態化液體切片監測追蹤微小殘留病灶，往往能比傳統影像學提前數月精確預警癌症的復發。'],
       ['compassionate use protocol','無藥可救之重症患者同情用藥人道審批',1,'phr.','The regulator authorized a compassionate use protocol for an unapproved individualized gene therapy.','藥品監督管理機構依法特批了一項同情用藥人道方案，讓瀕危罕見病患能破格試用尚未獲批的訂製基因療法。'],

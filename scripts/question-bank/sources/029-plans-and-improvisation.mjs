@@ -137,7 +137,7 @@ voices:[
 ['improvisation','在未預備完整方案下當場即興創作或應變',1,'n.','The workshop left room for improvisation.','工作坊留有即興發揮的空間。'],
 ['sanguine','對結果保持樂觀有信心的',1,'adj.','He remained sanguine about the revised plan.','他對修改後的計畫仍樂觀。'],
 ['a face saving reformulation','讓人保住顏面的重新表述',1,'phr.','They accepted a face-saving reformulation.','他們接受讓人保住顏面的重新表述。','a face-saving reformulation'],
-['a conveniently elastic definition','因方便而可隨意伸縮的定義',2,'phr.','The claim relies on a conveniently elastic definition of success.','主張依賴可因方便而伸縮的成功定義。'],
+["a conveniently elastic definition","為了說法方便而可任意伸縮的定義",2,"phr.","The claim relies on a conveniently elastic definition of success.","這項主張仰賴一套可為了說法方便而任意伸縮的成功定義。"],
 ['a triumph of wording over substance','措辭蓋過實質內容的表面成功',2,'phr.','The agreement was a triumph of wording over substance.','這項協議的成功在措辭而非實質。'],
 ['Agreement to continue is not agreement on what continuation entails','同意繼續不等於同意繼續所涉及的內容',3],
 ['A tactful reformulation can leave the underlying disagreement intact','圓融的重述可能仍讓根本歧見原封不動',3],

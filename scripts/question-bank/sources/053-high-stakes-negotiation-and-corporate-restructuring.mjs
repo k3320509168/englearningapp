@@ -27,15 +27,15 @@ export const data = {
     ],
     voices: [
       ['leveraged buyout acquisition','以小博大舉債槓桿收購交易',1,'phr.','Private equity syndicates executed a multi billion dollar leveraged buyout acquisition.','頂級私募股權銀團聯合發動了一場涉資百億美元的驚天槓桿收購收購大戰。'],
-      ['binding arbitration dispute resolution','排除訴訟具終局效力之約束性仲裁',1,'phr.','The cross border consortium opted for binding arbitration dispute resolution in Singapore.','這家跨國合資聯合體在協議中明確指定新加坡國際仲裁中心作為終局爭端解決機構。'],
-      ['material adverse effect clause','併購遇重大天鵝解約之重大不利影響條款',1,'phr.','The buyer invoked the material adverse effect clause following the catastrophic plant fire.','在目標工廠遭遇毀滅性大火重創後，買方第一時間援引了併購契約中的重大不利影響條款宣布撤資。'],
-      ['fiduciary duty of loyalty','董事不得圖謀私利之信託忠實義務',1,'phr.','Directors who trade on inside information commit an egregious breach of their fiduciary duty of loyalty.','任何膽敢依託內幕資訊謀取私利的董事，都構成了對公司信託忠實義務的嚴重褻瀆與踐踏。'],
-      ['hostile takeover poison pill','稀釋股份震懾野蠻人之反敵意收購毒藥丸',1,'phr.','The corporate board triggered its hostile takeover poison pill to halt creeping stock purchases.','面對惡意併購方在公開市場的暗中吸籌，董事會斷然扣動了反敵意收購毒藥丸的防禦扳機。'],
-      ['debt for equity swap restructuring','消弭沈重利息之以債轉股企業重組',1,'phr.','Lenders accepted a complex debt for equity swap restructuring to avert total liquidation.','各大債權銀行在全面清算的滅頂深淵前妥協，接受了錯綜複雜的以債轉股重組處方。'],
-      ['regulatory antitrust divestiture mandate','破除市場壟斷之監管反壟斷資產剝離令',1,'phr.','The merger was approved only after compliance with the regulatory antitrust divestiture mandate.','該項世紀合併案唯有在完全落實了監管反壟斷資產剝離強制指令後，方才獲得通行證。'],
-      ['pre merger due diligence audit','掘地三尺排查隱患之併購前盡職調查審計',1,'phr.','Forensic accountants spearheaded the pre merger due diligence audit across five continents.','法證會計師團隊跨越五大洲，掘地三尺展開了拉網式的併購前全方位盡職調查審計。'],
-      ['golden parachute severance provision','高管交割遭撤之天價金降落傘資遣條款',1,'phr.','Activists protested the forty million dollar golden parachute severance provision for the exiting CEO.','廣大行動主義股東群情激憤，強烈抗議即將離任的執行長坐領四千萬美元的天價金降落傘資遣款。'],
-      ['insolvency chapter eleven petition','宣告陷入流動性枯竭之破產法第十一章聲請',1,'phr.','The airline filed a voluntary insolvency chapter eleven petition to renegotiate aircraft leases.','這家百年跨國航空公司正式向法院提交了破產保護重組聲請，以重啟客機租賃契約談判。']
+      ["binding arbitration","具約束力的仲裁",1,"phr.","The parties agreed to submit the dispute to binding arbitration.","雙方同意把爭議交付具約束力的仲裁。"],
+      ["material adverse effect clause","重大不利影響條款",1,"phr.","The negotiators debated the wording of the material adverse effect clause.","談判雙方討論了重大不利影響條款的措辭。"],
+      ["fiduciary duty of loyalty","受託人的忠實義務",1,"phr.","The ruling discussed what the fiduciary duty of loyalty required in that case.","裁定討論忠實義務在該案中要求受託人做到哪些事。"],
+      ["a poison pill defence","毒丸防禦措施（併購語境）",1,"phr.","The board considered a poison pill defence after receiving an unsolicited bid.","董事會收到未經邀請的收購出價後，考慮採用毒丸防禦措施。"],
+      ["debt for equity swap","以債換股",1,"phr.","The creditors discussed a debt-for-equity swap as part of the restructuring.","債權人討論以債換股，作為重整的一環。"],
+      ["a divestiture order","要求剝離資產的命令",1,"phr.","The company challenged a divestiture order issued after the merger review.","公司對併購審查後發布的資產剝離命令提出異議。"],
+      ["pre merger due diligence","併購前的盡職調查",1,"phr.","Pre-merger due diligence uncovered an obligation the buyer had not anticipated.","併購前的盡職調查發現一項買方未預料到的義務。"],
+      ["a golden parachute","高階主管離職時的優厚補償方案",1,"phr.","The shareholders questioned the cost of the chief executive’s golden parachute.","股東質疑執行長離職時的優厚補償方案所需的成本。"],
+      ["file for bankruptcy protection","申請破產保護",1,"phr.","The company may file for bankruptcy protection if its negotiations fail.","如果協商失敗，公司可能申請破產保護。"]
     ],
     spells: [
       ['DIVESTITURE','n.','企業為聚焦核心主業或滿足監管要求所實施的資產剝離與分拆','The conglomerate completed the strategic divestiture of its non core petrochemical division.','這家巨型跨國財團順利完成了對旗下非核心石化業務單元的戰略性資產剝離。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The target firm was protected by a staggered board structure. Why was it resistant to quick takeover?','Only one third of the directors stood for election each year, requiring two election cycles to gain control.|The directors were physically located in five different sovereign nations across the globe.|The company bylaws prohibited anyone younger than sixty years old from serving as a director.|The board of directors met only once every five years inside an underground bunker.','這家被收購防禦重裝包裹的目標企業背靠「交錯董事會架構（Staggered Board）」堡壘：每年僅改選三分之一的董事席位，這意味著野蠻人哪怕收購了絕大多數流通股，也必須耗費至少兩個漫長年度週期才能奪取控制權。']
     ],
     voices: [
-      ['business judgment rule protection','保護董事善意決策之商業判斷原則庇護',2,'phr.','Directors invoked the business judgment rule protection against shareholder derivative claims.','面對少數股東來勢洶洶的衍生訴訟，董事會全體成員昂然祭出特拉華商業判斷原則求取絕對司法豁免。'],
-      ['revlon duties enhanced judicial scrutiny','賣盤唯一追求最高價之露華濃強化司法審查',2,'phr.','Entering an all cash sale triggers revlon duties enhanced judicial scrutiny over the sales process.','一旦簽署全現金出售控股權協議，整個交易流程立刻被置於露華濃強化司法審查的聚光燈下。'],
-      ['piercing the corporate veil doctrine','嚴打資產混同之刺破公司法人面紗原則',2,'phr.','The judge applied the piercing the corporate veil doctrine to hold the fraudulent parent liable.','主審法官果斷啟動刺破公司法人面紗原則，令企圖躲在空殼公司背後惡意脫產的母公司承擔連帶責任。'],
-      ['mareva worldwide freezing injunction','斬斷跨國隱匿脫產之瑪瑞瓦全球資產凍結令',2,'phr.','The commercial division obtained a mareva worldwide freezing injunction against offshore bank vaults.','商事法庭在立案當日火速簽發了瑪瑞瓦全球資產凍結令，全面查封了被告藏匿於海外避稅天堂的秘密金庫。'],
-      ['unsolicited hostile tender offer','繞開董事會強娶之非善意敵意要約收購',2,'phr.','The corporate predator launched an unsolicited hostile tender offer at a thirty percent premium.','該資本大鱷以溢價 30% 的瘋狂手筆，繞開目標公司董事會直接向二級市場發起了非善意敵意要約收購。'],
-      ['fraudulent conveyance asset clawback','追討破產前被掏空財產之詐害移轉資產追索',2,'phr.','The bankruptcy trustee initiated a fraudulent conveyance asset clawback targeting insider transfers.','破產清算管理人以雷霆萬鈞之勢發動了詐害移轉追索訴訟，將高管在破產前夕偷偷劃走的資產全額追回。'],
-      ['substantive consolidation equitable remedy','打破法人屏障合併清償之實質合併衡平法救濟',2,'phr.','Creditors successfully petitioned for a substantive consolidation equitable remedy across the group.','廣大債權人在破產法庭成功爭取到了集團實質合併清償救濟，將混淆不清的數十家空殼子公司資產打包受償。'],
-      ['cfius national security review jurisdiction','阻截關鍵技術外流之外資審查委員會國安管轄',2,'phr.','The semiconductor buyout fell directly within cfius national security review jurisdiction.','這起涉及尖端製程晶片製造商的跨國併購案，毫無懸念地撞上了美國外國投資委員會國安審查的鋼鐵防線。'],
-      ['equity cure financial covenant relief','注資補血消弭違約之股權補救承諾豁免',2,'phr.','The buyout fund exercised its equity cure financial covenant relief to prevent debt acceleration.','收購基金在關鍵節點毅然啟動股權補救程序，自掏腰包注資補血以徹底避免銀行銀團提前收回貸款。'],
-      ['drag along minority shareholder right','大股東強賣打包出售之少數股東拖售權',2,'phr.','Exercising the drag along minority shareholder right forced all angel investors to tender their shares.','控股大股東果斷扣動了少數股東拖售權，強制要求早期天使投資人以相同估值共同交割出場。']
+      ["the business judgment rule","商業判斷原則",2,"phr.","The text compares how courts apply the business judgment rule.","這篇文章比較法院如何適用商業判斷原則。"],
+      ["enhanced judicial scrutiny","加強的司法審查",2,"phr.","The case note compares ordinary review with enhanced judicial scrutiny.","判例評析比較一般審查與加強的司法審查。"],
+      ["piercing the corporate veil","揭開公司面紗（法律用語）",2,"phr.","The seminar compared different approaches to piercing the corporate veil.","研討會比較揭開公司面紗的不同做法。"],
+      ["a worldwide freezing order","全球資產凍結令",2,"phr.","The claimant applied for a worldwide freezing order.","原告聲請全球資產凍結令。"],
+      ["unsolicited tender offer","未經邀請提出的公開收購要約",2,"phr.","The board met to discuss the unsolicited tender offer.","董事會召開會議，討論這項未經邀請提出的公開收購要約。"],
+      ["recover assets transferred fraudulently","追回以詐害方式移轉的資產",2,"phr.","The administrator sought to recover assets transferred fraudulently.","管理人試圖追回以詐害方式移轉的資產。"],
+      ["substantive consolidation in bankruptcy","破產程序中的實質合併",2,"phr.","The article surveys cases involving substantive consolidation in bankruptcy.","文章概述涉及破產程序中實質合併的案件。"],
+      ["national security review of foreign investment","外國投資的國家安全審查",2,"phr.","The briefing outlined national security review of foreign investment.","簡報概述外國投資的國家安全審查。"],
+      ["an equity cure provision","股權補救條款",2,"phr.","The parties disagreed about the scope of an equity cure provision in the financing agreement.","雙方對融資協議中一項股權補救條款的範圍有不同看法。"],
+      ["drag along rights","拖售權",2,"phr.","The shareholders negotiated drag-along rights before agreeing to the investment.","股東在同意投資前就拖售權進行協商。"]
     ],
     spells: [
       ['REPUDIATION','n.','合約一方明確向另一方拒絕履行根本核心義務的明示毀約行為','The vendor\'s absolute refusal to deliver raw goods constituted a total contract repudiation.','供應商在關鍵時刻斬釘截鐵拒絕供應核心原材料的違約行徑，構成了商業法理上的徹底明示毀約。'],

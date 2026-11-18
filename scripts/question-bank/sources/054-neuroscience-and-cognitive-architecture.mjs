@@ -28,14 +28,14 @@ export const data = {
     voices: [
       ['synaptic neuroplasticity adaptation','神經突觸隨學習重組之神經可塑性適應',1,'phr.','Intensive musical training drives rapid synaptic neuroplasticity adaptation across motor cortices.','長年累月高強度的樂器演奏淬鍊，會驅動大腦運動皮層展開劇烈而深刻的突觸神經可塑性重塑。'],
       ['cognitive dissonance rationalization','為緩解內心衝突之認知失調自我合理化',1,'phr.','Smokers resort to cognitive dissonance rationalization to downplay the empirical health risks.','長期吸菸者往往本能地求助於認知失調自我合理化心理防禦機制，拼命淡化菸草帶來的客觀健康死局。'],
-      ['blood brain barrier permeability','外源物質難以逾越之血腦屏障選擇性通透',1,'phr.','Nanoparticle engineering strategies aim to enhance therapeutic blood brain barrier permeability.','當代前沿奈米藥物工程矢志不渝的攻關焦點，正是設法安全提升救命標靶藥物穿越血腦屏障的通透效率。'],
-      ['default mode network connectivity','神遊沉思與自省回憶之預設模式網絡連結',1,'phr.','Depression is frequently linked to pathological hyper default mode network connectivity and rumination.','重度憂鬱症的發病機制往往與大腦預設模式網絡的病理性異常超連接以及無休止的反芻思維緊密交織。'],
+      ["permeability of the blood brain barrier","血腦屏障的通透性",1,"phr.","The study examined the permeability of the blood-brain barrier.","這項研究探討血腦屏障的通透性。"],
+      ["connectivity within the default mode network","預設模式網絡內部的連結",1,"phr.","The study compared connectivity within the default mode network across two groups.","研究比較兩組受試者預設模式網絡內部的連結。"],
       ['metacognitive monitoring strategy','跳出思維看思維之後設認知監控策略',1,'phr.','Mastering self testing constitutes a superior metacognitive monitoring strategy for deep mastery.','養成主動自我檢測與錯題深度反思的習慣，是一項能帶來終身認知躍升的極致後設認知監控策略。'],
-      ['dopaminergic reward prediction error','驅使強化學習演算法之多巴胺獎勵預測誤差',1,'phr.','Midbrain neurons compute the precise dopaminergic reward prediction error governing learning.','中腦腹側被蓋區的神經元群，能以神乎其技的精度即時運算出支配強化學習的多巴胺獎勵預測誤差信號。'],
-      ['declarative episodic memory consolidation','將經歷固化為永恆之陳述性情節記憶鞏固',1,'phr.','Slow wave sleep is essential for hippocampal declarative episodic memory consolidation.','深沉的非快速動眼慢波睡眠，是推動海馬迴將白晝鮮活經歷固化為大腦皮層長久情節記憶的黃金窗口。'],
-      ['optogenetic neural circuit manipulation','純光學毫秒級操控之光遺傳學神經迴路調控',1,'phr.','Researchers achieved cell type specific optogenetic neural circuit manipulation in behavioral assays.','科研人員在活體動物行為學實驗中，完成了精確針對特定神經元亞型的光遺傳學微觀迴路純光操控。'],
-      ['amyloid beta plaque neuropathology','侵蝕大腦神經元之澱粉樣蛋白斑塊神經病理',1,'phr.','Monoclonal antibodies were developed to clear toxic amyloid beta plaque neuropathology from the brain.','全球跨國製藥巨頭耗資百億研發單株抗體，旨在強力清除淤積在阿茲海默症患者腦內的致命澱粉樣蛋白斑塊。'],
-      ['axonal saltatory myelination conduction','絕緣跳躍傳導提速百倍之軸突髓鞘化傳導',1,'phr.','Oligodendrocytes wrap axons to enable rapid axonal saltatory myelination conduction of impulses.','少突膠質細胞以同心圓狀緊密包裹軸突，賦予神經衝動超高速「跳躍式」髓鞘化電傳導能力。']
+      ["reward prediction error","獎勵預測誤差",1,"phr.","The lecturer used an unexpected outcome to illustrate reward prediction error.","講師用一個出乎預料的結果解釋獎勵預測誤差。"],
+      ["consolidation of episodic memory","情節記憶的鞏固",1,"phr.","The review discusses how sleep may contribute to the consolidation of episodic memory.","這篇綜述討論睡眠可能如何促進情節記憶的鞏固。"],
+      ["neural activity during decision making","做決定時的神經活動",1,"phr.","The study examined neural activity during decision-making.","研究探討做決定時的神經活動。"],
+      ["amyloid plaques in the brain","腦中的類澱粉蛋白斑塊",1,"phr.","The lecture discussed how researchers identify amyloid plaques in the brain.","講座探討研究人員如何辨識腦中的類澱粉蛋白斑塊。"],
+      ["saltatory conduction","跳躍式傳導",1,"phr.","The diagram illustrates saltatory conduction along a myelinated axon.","圖示說明跳躍式傳導如何沿著有髓鞘的軸突發生。"]
     ],
     spells: [
       ['NEUROPLASTICITY','n.','中樞神經系統在後天經驗與創傷後自主重構突觸網絡的神經可塑性','Adult neuroplasticity refutes the obsolete dogma that the mature mammalian brain is static.','成體大腦神經可塑性的實證，徹底粉碎了過去認為成熟哺乳動物大腦結構完全僵死不可再生的陳舊教條。'],
@@ -86,16 +86,16 @@ export const data = {
       [1,'The optogenetic silencing of the central amygdala extinguished learned Pavlovian conditioned fear responses. What was abolished?','The learned behavioral and autonomic freezing reactions previously evoked by an auditory paired cue.|The animal\'s ability to digest food or absorb water through the small intestinal lining.|The capacity of the auditory system to detect acoustic sounds across all audible frequencies.|The cellular ability of red blood cells to transport oxygen from the lungs to muscular tissues.','利用光遺傳學微光脈衝精確緘默中央杏仁核神經元，以乾淨俐落的純物理手段，瞬間徹底熄滅了實驗動物在制約反射中所習得的恐懼僵直反應（Freezing）：證實恐懼記憶印跡的表達開關被牢牢拿捏在該特異性迴路手中。']
     ],
     voices: [
-      ['chalmers hard problem of consciousness','探尋主觀感受質起源之意識難題',2,'phr.','The philosopher addressed the chalmers hard problem of consciousness during the international symposium.','哲學大師在世界心智哲學大會上，再度向在座群雄拋出了直擊靈魂的查爾默斯意識困難問題。'],
-      ['predictive processing prediction error','貝氏大腦架構下之預測編碼預測誤差',2,'phr.','Cortical hierarchies continuously minimize predictive processing prediction errors against sensory inputs.','皮層階層式網絡不知疲倦地將預測編碼架構下的預測誤差壓至最低，以此構建我們眼中的現實。'],
-      ['retinal lateral inhibition contrast','視網膜橫向抑制邊緣銳化之側抑制對比',2,'phr.','Edge perception is dramatically sharpened by retinal lateral inhibition contrast mechanisms.','在視網膜複雜迴路的側抑制反差機制雕琢下，昏暗視野中的輪廓線條瞬間被勾勒得清清楚楚。'],
-      ['global neuronal workspace broadcast','全腦點燃躍升為主觀意識之全腦工作空間廣播',2,'phr.','Subliminal primes fail to achieve global neuronal workspace broadcast across the prefrontal network.','那些閾下潛意識刺激因能量孱弱，終究無法在額頂葉網絡引發具有決定意義的全腦工作空間點燃廣播。'],
-      ['hippocampal memory consolidation replay','睡眠中海馬迴記憶重播與大腦皮層固化',2,'phr.','Sharp wave ripples mediate hippocampal memory consolidation replay during deep slow wave sleep.','深慢波睡眠中激盪的海馬尖波漣漪，在毫秒之間忠實重播著白晝經歷，將記憶深深烙印進大腦皮層。'],
-      ['entorhinal grid cell hexagonal lattice','內嗅皮層正六邊形空間鋪嵌之網格細胞晶格',2,'phr.','The Nobel laureates mapped the entorhinal grid cell hexagonal lattice guiding mammalian navigation.','諾貝爾獎得主向世人展示了哺乳動物大腦內嗅皮層網格細胞那令人屏息的正六邊形幾何導航晶格。'],
-      ['cerebellar long term depression plasticity','小腦運動協調精細修剪之長程抑制可塑性',2,'phr.','Climbing fiber inputs induce cerebellar long term depression plasticity at parallel fiber synapses.','攀爬纖維的強大輸入在平行纖維與浦肯野細胞突觸間，精準誘導了奠定精細運動學習的小腦長程抑制。'],
-      ['amyloid cascade hypothesis validation','阿茲海默症澱粉樣蛋白級聯假說檢驗',2,'phr.','Clinical drug trials provide ongoing amyloid cascade hypothesis validation in modern neurology.','全球各大前沿三期臨床新藥試驗，正在以數百億代價對阿茲海默症澱粉樣蛋白級聯假說展開終極驗證。'],
-      ['patch clamp single channel electrophysiology','記錄單離子通道開閉之膜片鉗單通道電生理',2,'phr.','Sakmann and Neher invented patch clamp single channel electrophysiology to observe ionic currents.','薩克曼與內爾開創性的膜片鉗單通道電生理技術，讓全人類首度用肉眼「看見」了離子流穿透細胞膜的微觀奇蹟。'],
-      ['brain machine interface kinematic decoding','意念直驅仿生肢體之腦機介面運動學解碼',2,'phr.','Paralyzed patients achieved independent movement through brain machine interface kinematic decoding.','完全癱瘓的病患依託高通量侵入式腦機介面運動學實時解碼算法，重新奪回了用意念觸摸世界的尊嚴。']
+      ["the hard problem of consciousness","意識的難問題",2,"phr.","The seminar distinguished the hard problem of consciousness from questions about attention and memory.","研討會將意識的難問題與注意力、記憶等問題區分開來。"],
+      ["prediction error in perception","知覺中的預測誤差",2,"phr.","The lecturer used a visual illusion to illustrate prediction error in perception.","講師以視覺錯覺說明知覺中的預測誤差。"],
+      ["lateral inhibition in the retina","視網膜中的側抑制",2,"phr.","The textbook discusses how lateral inhibition in the retina affects the perception of contrast.","教科書探討視網膜中的側抑制如何影響對比知覺。"],
+      ["global neuronal workspace theory","全域神經工作空間理論",2,"phr.","The lecture compared global neuronal workspace theory with other accounts of consciousness.","講座比較全域神經工作空間理論與其他意識理論。"],
+      ["memory replay during sleep","睡眠中的記憶重播",2,"phr.","The study investigated memory replay during sleep.","這項研究探討睡眠中的記憶重播。"],
+      ["the firing patterns of grid cells","網格細胞的放電模式",2,"phr.","The study compared the firing patterns of grid cells across different environments.","研究比較網格細胞在不同環境中的放電模式。"],
+      ["long term depression in the cerebellum","小腦中的長期抑制",2,"phr.","The review discusses research on long-term depression in the cerebellum.","綜述討論小腦長期抑制的相關研究。"],
+      ["the amyloid cascade hypothesis","類澱粉蛋白級聯假說",2,"phr.","The review evaluates evidence for the amyloid cascade hypothesis.","這篇綜述評估支持類澱粉蛋白級聯假說的證據。"],
+      ["single channel recording","單通道記錄",2,"phr.","The methods section explains why the researchers used single-channel recording.","研究方法一節說明研究人員選用單通道記錄的原因。"],
+      ["interpret signals associated with movement","解讀與動作有關的訊號",2,"phr.","The team evaluated whether the interface could interpret signals associated with movement.","團隊評估該介面能否解讀與動作有關的訊號。"]
     ],
     spells: [
       ['PLASTICITY','n.','神經突觸與大腦功能組織依據經驗刺激自主重塑與自適應演變的可塑性','Synaptic plasticity serves as the undisputed cellular foundation for behavioral learning.','突觸可塑性（Plasticity）作為行為學學習與認知獲得的細胞生物學基石，地位堅不可摧。'],

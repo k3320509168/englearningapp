@@ -26,16 +26,16 @@ export const data = {
       [1,'The frame semantic parser annotated the text based on the Berkeley FrameNet schema. What was identified?','Evoked semantic frames, frame elements, and conceptual participants anchoring situational real-world knowledge.|The exact typographical font style and point size used to format the printed chapter headings.|The author\'s astrological zodiac sign calculated from their official municipal birth certificate record.|Whether the novel was bound in genuine calfskin leather or synthetic compressed imitation paper covers.','框式語意學解析器（FrameNet Parser）對非結構化文本進行了深度語意標註：精準識別出句子中所被激發的原型「情境認知語義框（Semantic Frames）」（如「商業交易框」），並完整標註出框架要素（買方、賣方、商品與貨幣），還原常識情境結構。']
     ],
     voices: [
-      ['conceptual metaphor cross domain mapping','具體體驗投射抽象思維之概念隱喻跨域映射',1,'phr.','Cognitive science analyzes conceptual metaphor cross domain mapping to decode abstract human reasoning.','認知語言學透過解構概念隱喻的跨域認知映射，揭開人類建構時間、空間與情感抽象思維的認知密碼。'],
-      ['computational distributional semantics hypothesis','語料庫上下文統計共現分佈之分佈語意學假說',1,'phr.','Modern language models are rooted in the computational distributional semantics hypothesis of lexical co-occurrence.','當代千億參數量大語言模型，底層完全植根於詞彙在海量語料中統計共現的分佈語意學假說。'],
-      ['pragmatic illocutionary speech act force','言即是行具有社會約束力之語用學語內言語行為',1,'phr.','The courtroom oath carries binding legal weight through its pragmatic illocutionary speech act force.','法庭上莊嚴宣讀的宣誓詞，憑藉其強大的語內言語行為約束力，瞬間確立了偽證罪的嚴肅法律邊界。'],
-      ['innate universal grammar cognitive architecture','大腦基因先驗編碼之天賦普遍文法認知架構',1,'phr.','Generative syntacticians argue for an innate universal grammar cognitive architecture to explain child acquisition.','生成語法學派堅稱人類心智配備了先天的普遍文法認知架構，方能合理解釋幼童跨越刺激貧乏的神奇語言習得。'],
-      ['rosch prototype theory graded categorization','擺脫二元剛性邊界之認知心理學原型範疇化理論',1,'phr.','Psycholinguists applied rosch prototype theory graded categorization to model human semantic networks.','心理語言學家採用原型理論的梯度範疇化模型，生動模擬出人類心智網絡中對鳥類、果實等自然範疇的原型歸納機制。'],
-      ['fregean principle of compositionality semantic rules','局部語意與句法結構組合之弗雷格語意組合原則',1,'phr.','Formal natural language parsers adhere to the fregean principle of compositionality semantic rules to evaluate sentences.','形式自然語言解析引擎嚴格依循弗雷格語意組合律，將詞彙語意依句法樹逐步拼裝計算出複合句的全局真值。'],
-      ['fauconnier conceptual blending mental spaces','雙向投射湧現新思維之概念整合心理空間理論',1,'phr.','Scientific breakthroughs often emerge from fauconnier conceptual blending mental spaces integrating disparate theories.','科學史上跨時代的重大思想突破，往往誕生於大腦將看似毫不相干的知識網絡進行多維概念整合的心理空間交匯之中。'],
-      ['sensorimotor embodied image schema cognition','源自肉身物理世界互動之具身意象圖式認知架構',1,'phr.','Abstract metaphors of balance and containment derive from sensorimotor embodied image schema cognition.','人類思維中關於平衡、邊界與進退的抽象隱喻體系，全體深植於人類肉身體驗在物理世界沉澱的具身意象圖式。'],
-      ['fillmore case grammar deep semantic roles','超越表層句法之菲爾莫爾格語法深層語意角色',1,'phr.','Information extraction algorithms utilize fillmore case grammar deep semantic roles to identify who did what to whom.','智能信息抽取系統利用格語法的深層語意角色標註，在千變萬化的句型變換中精準鎖定「何人、於何時、以何工具、對何人施加了何種行為」。'],
-      ['vector space cosine semantic similarity','高維幾何空間距離精準衡量詞義之餘弦相似度',1,'phr.','Dense word embeddings calculate vector space cosine semantic similarity to retrieve conceptually relevant documents.','高維密集詞向量模型透過計算高維幾何空間中的餘弦相似度，秒級檢索出語義高度共鳴的專業文獻。']
+      ["mapping between conceptual domains","概念領域之間的映射",1,"phr.","The chapter uses metaphor to illustrate mapping between conceptual domains.","本章以隱喻說明概念領域之間的映射。"],
+      ["distributional semantics","分布語意學",1,"phr.","The course introduces distributional semantics through examples of how words are used in context.","課程透過單字在語境中的用法介紹分布語意學。"],
+      ["the force of an utterance","一段話所具有的語用作用",1,"phr.","The tone can change the force of an utterance that looks neutral on paper.","語調能改變一句看似中立的話在實際語境中的作用。"],
+      ["the hypothesis of universal grammar","普遍文法假說",1,"phr.","The textbook surveys arguments for and against the hypothesis of universal grammar.","教科書概述支持與反對普遍文法假說的論點。"],
+      ["prototype theory in categorisation","分類中的原型理論",1,"phr.","The textbook discusses prototype theory in categorisation.","教科書探討分類中的原型理論。"],
+      ["the principle of compositionality","語意組合原則",1,"phr.","The lesson illustrates the principle of compositionality with a simple sentence.","課程以一句簡單的句子說明語意組合原則。"],
+      ["conceptual blending","概念融合",1,"phr.","The author uses conceptual blending to interpret the metaphor.","作者運用概念融合來解讀這個隱喻。"],
+      ["image schemas in embodied cognition","具身認知中的意象圖式",1,"phr.","The article discusses image schemas in embodied cognition.","文章探討具身認知中的意象圖式。"],
+      ["semantic roles in case grammar","格文法中的語意角色",1,"phr.","The diagram illustrates semantic roles in case grammar.","圖表說明格文法中的語意角色。"],
+      ["cosine similarity between vectors","向量之間的餘弦相似度",1,"phr.","The exercise asks students to calculate cosine similarity between vectors.","練習要求學生計算向量之間的餘弦相似度。"]
     ],
     spells: [
       ['METAPHOR','n.','以一個具體熟悉概念域的結構投射映射至抽象概念域的認知隱喻機制','Conceptual metaphor allows human minds to conceptualize abstract time as physical space.','概念隱喻（Metaphor）賦予了人類思維將虛無縹緲的「時間」感知為具體物理「空間」的認知超能力。'],
@@ -56,8 +56,8 @@ export const data = {
       [1,'The computational semanticist evaluated the latent representation using semantic probing classifiers. What was decoded?','Linear decodability of abstract syntactic tree depth and coreference links inside self-attention layers.|The physical geographical location of the server farm hosting the artificial intelligence model.|The monetary market value of the company that manufactured the computer hardware processor.|The exact number of grammatical spelling errors made by human annotators during training data labeling.','計算語意學家運用先進的「語義探針分類器（Semantic Probing）」對大語言模型深層隱藏表徵進行診斷性解構：成功以線性分類精度證實，模型在經過無監督預訓練後，其高維注意力網絡內部早已自發在幾何維度編碼了深層句法樹深度、主謂長程依存與代名詞指代鏈等複雜語言學拓撲特徵。']
     ],
     voices: [
-      ['possible world semantics intension function','可能世界坐標真值映射之內涵邏輯函數',1,'phr.','Formal logicians construct possible world semantics intension function models to evaluate modal logic.','形式邏輯學家構建精密的可能世界語意學內涵函數模型，為必然性與可能性模態邏輯奠定真值基石。'],
-      ['chomskyan minimalist program merge operation','無窮遞歸構造無限句法之最簡方案融合運算',1,'phr.','Theoretical linguistics identifies the chomskyan minimalist program merge operation as the core faculty of human language.','當代理論語言學公認最簡方案中簡潔極致的「融合（Merge）」運算，乃是人類物種得天獨厚的語言生成核心中樞。']
+      ["possible world semantics","可能世界語意學",1,"phr.","The course introduces possible-world semantics through examples involving necessity.","課程透過涉及必然性的例子介紹可能世界語意學。"],
+      ["the operation known as Merge","稱為「合併」的語法運算",1,"phr.","The chapter explains the operation known as Merge.","本章解釋稱為「合併」的語法運算。"]
     ],
     spells: [
       ['INTENSION','n.','在可能世界語義學中將任意可能世界映射至該表達式具體外延的數學函數概念','The intension of a proposition determines its truth value across all logically possible worlds.','一個命題的內涵（Intension），精確鎖定了它在宇宙一切可能世界維度下所派生的客觀真假值。'],

@@ -492,3 +492,5 @@
 - 2026-11-18 Codex × Antigravity｜顧問複核定位兩項具體遺漏：世界王入口沿用舊獎勵、C1 改題會讓舊知識點失去索引。已更新入口並驗三尺寸，舊口說與拼寫錯題及知識鍵均加回歸。長專業片語篩選列入題庫審查，字數本身不判為錯。額外複測語音重試權限拒絕、主線九區與連續養成，詳 PM_STATUS。
 
 - 高階詞組逐題審核已建立清單 docs/question-bank-qa/ADVANCED_PHRASE_REVIEW.md。首批六道已修，後續依清單追蹤，涉及術語或題型判斷時請 Antigravity 只讀複核。
+
+- Codex × Antigravity｜已完成原始清單 388 道高階長詞組逐題審核，累計 293 修訂、95 保留。Antigravity 複核了 C2 天文專業詞組。正式題庫、分區及全域圖鑑與兩種舊題鍵皆已同步，詳 docs/question-bank-qa/ADVANCED_PHRASE_REVIEW.md。

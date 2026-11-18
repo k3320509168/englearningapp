@@ -91,7 +91,7 @@ voices:[
 ['cadence','說話或音樂中聲調起伏的節奏',1,'n.','She recognised the familiar cadence of his voice.','她認出他熟悉的說話節奏。'],
 ['an uneasy lull','令人不安的短暫平靜',1,'phr.','An uneasy lull followed the argument.','爭執後出現令人不安的短暫平靜。'],
 ['a deliberately restrained delivery','刻意克制的表達方式',2,'phr.','Her deliberately restrained delivery contrasted with the subject.','她刻意克制的表達與主題形成對比。'],
-['an acoustically intimate setting','聲音感受親近的場域',2,'phr.','The small hall provided an acoustically intimate setting.','小廳提供聲音感受親近的場域。'],
+["an intimate acoustic setting","聽感親近的演出空間",2,"phr.","The small hall offered an intimate acoustic setting for the solo recital.","這座小廳為獨奏會提供了聽感親近的演出空間。"],
 ['Audible hesitation need not indicate a lack of conviction','聽得見的遲疑不一定表示缺乏信念',3],
 ['Removing overlap can obscure the dynamics of a discussion','刪除交疊發言可能遮蔽討論的互動',3],
 ['An apparently incidental sound may dominate someone else’s evening','看似附帶的聲音可能支配他人的晚上',3]
@@ -148,7 +148,7 @@ voices:[
 ['stentorian','聲音洪亮而有力的',1,'adj.','His stentorian announcement silenced the crowd.','他洪亮的宣告使群眾安靜下來。'],
 ['a rhetorically charged silence','具有強烈修辭作用的沉默',1,'phr.','The scene ends in a rhetorically charged silence.','場景在富修辭意味的沉默中結束。'],
 ['an ostensibly unmediated voice','表面上似乎未經中介安排的聲音',2,'phr.','The film presents an ostensibly unmediated voice.','影片呈現表面上未經中介的聲音。'],
-['a conspicuously seamless soundscape','明顯被處理得毫無接縫的聲景',2,'phr.','The montage has a conspicuously seamless soundscape.','蒙太奇的聲景明顯被處理得毫無接縫。'],
+["a seamless soundscape","銜接自然、毫無斷裂的聲景",2,"phr.","The sound editor blended recordings from several locations into a seamless soundscape.","聲音剪輯師把不同地點的錄音自然地融合成一片連貫的聲景。"],
 ['Acoustic continuity need not establish historical continuity','聲音連續不一定證明歷史過程連續',3],
 ['An apparently unguarded utterance can be meticulously framed','看似不設防的話語也可能被精心安排',3],
 ['The final silence withholds the reassurance we have been led to expect','最後沉默不給先前使人期待的安心保證',3]

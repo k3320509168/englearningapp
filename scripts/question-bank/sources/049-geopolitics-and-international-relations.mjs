@@ -28,14 +28,14 @@ export const data = {
     voices: [
       ['thucydides trap dynamic','崛起大國與守成霸權之修昔底德陷阱',1,'phr.','Diplomats strive to avert catastrophic conflict driven by the Thucydides trap dynamic.','全球頂級外交家宵衣旰食，全力避免世界滑入由修昔底德陷阱動態所主導的大國毀滅性全面軍事衝突。'],
       ['mutually assured destruction','相互保證毀滅之核平衡戰略威懾',1,'phr.','Cold War nuclear doctrine rested upon the grim logic of mutually assured destruction.','冷戰時期的大國核戰略基石，冷酷且赤裸地扎根於「相互保證毀滅」的恐怖毀滅邏輯之上。'],
-      ['exclusive economic zone limits','領海基線外兩百浬專屬經濟區界限',1,'phr.','Naval vessels patrolled the maritime perimeter to protect exclusive economic zone limits.','海軍巡防艦日夜巡弋在浩瀚外海邊界，以鋼鐵意志捍衛國家兩百浬專屬經濟區的海洋主權紅線。'],
-      ['grey zone coercive tactics','切香腸蠶食現狀之灰區非對稱脅迫戰術',1,'phr.','Adversaries utilize grey zone coercive tactics to expand control without triggering treaty redlines.','敵對陣營老練地運用各類灰區脅迫戰術，在不踩踏共同防禦條約硬性紅線的灰色地帶巧妙擴張實質控制權。'],
+      ["the limits of an exclusive economic zone","專屬經濟區的界限",1,"phr.","The chart shows the limits of an exclusive economic zone.","圖表標出專屬經濟區的界限。"],
+      ["coercion below the threshold of war","未達戰爭門檻的脅迫",1,"phr.","The article examined international responses to coercion below the threshold of war.","文章探討國際社會如何回應未達戰爭門檻的脅迫。"],
       ['asymmetric hybrid warfare','融合網路輿論與特種部隊之非對稱混合戰',1,'phr.','Modern national defense doctrines emphasize resilience against asymmetric hybrid warfare.','當代先進國防白皮書將抵禦非對稱混合戰侵蝕，列為鞏固國家總體安全體系韌性的重中之重。'],
       ['maritime chokepoint blockade','封鎖狹窄咽喉海峽之海上封鎖演練',1,'phr.','The naval exercises simulated an emergency response to a hostile maritime chokepoint blockade.','這場多國海軍聯合大演習，高度仿真演練了在面臨敵對勢力封鎖戰略咽喉海峽時的緊急破局反制處置。'],
-      ['persona non grata expulsion','驅逐列為不受歡迎人物之外國情報使節',1,'phr.','Following the espionage revelation, the ministry issued a persona non grata expulsion decree.','在間諜竊密醜聞敗露後，外交部第一時間簽發政令，宣佈對涉案外交使節實施不受歡迎人物強制驅逐。'],
-      ['freedom of navigation operations','挑戰非法海洋主張之公海自由航行行動',1,'phr.','Allied fleets conducted freedom of navigation operations through the strategic international strait.','盟軍聯合艦隊以無畏之姿穿行於戰略國際海峽，以實際行動向世界宣示捍衛公海航行自由的鋼鐵意志。'],
+      ["declare someone persona non grata","宣布某人為不受歡迎的人",1,"phr.","The article explained what it means to declare someone persona non grata.","文章解釋宣布某人為不受歡迎的人是什麼意思。"],
+      ["freedom of navigation","航行自由",1,"phr.","The statement reaffirmed the importance of freedom of navigation.","聲明重申航行自由的重要性。"],
       ['weaponized financial networks','將結算網絡轉化為制裁大棒之金融武器化',1,'phr.','Sanctions experts examined the systemic fallout of weaponized financial networks across global trade.','跨國制裁專家深入評估了將全球結算體系全面武器化所給國際貿易格局帶來的深遠系統性餘震。'],
-      ['second strike nuclear capability','承受首次打擊後實施報復之二次核反擊',1,'phr.','Ballistic missile submarines ensure a survivable second strike nuclear capability under the sea.','深潛於大洋深處的戰略彈道飛彈核潛艦，構成了大國在承受突襲後實施毀滅性二次核打擊的最強保險。']
+      ["nuclear deterrence","核威懾",1,"phr.","The essay considered the assumptions behind nuclear deterrence.","文章探討核威懾背後的假設。"]
     ],
     spells: [
       ['HEGEMONY','n.','在國際體系或區域中佔據絕對支配主導地位的霸權','Great powers compete fiercely to establish undisputed regional economic hegemony.','各大地緣強權展開了針鋒相對的慘烈博弈，意圖在關鍵戰略板塊確立不可撼動的區域霸權。'],
@@ -88,13 +88,13 @@ export const data = {
       [1,'The treaty required reciprocal on site inspections of warhead dismantlement facilities under strict protocols. How?','International verification teams personally oversaw the irreversible physical neutralization of warheads.|Participating nations submitted unverified, voluntary declarations via international postal mail.|The inspection process was conducted by watching unedited satellite television entertainment broadcasts.|All dismantling facilities were required to be constructed inside transparent glass domes.','該裁軍條約明文要求實施嚴格對等的「現場核查（On-site inspection）」，國際核查專家親臨絕密廠房，親眼監督並確認核彈頭被不可逆地徹底切割銷毀。']
     ],
     voices: [
-      ['offshore balancing grand strategy','離岸平衡之大國制衡戰略構想',1,'phr.','Scholars advocate an offshore balancing grand strategy to preserve military assets and avoid entanglements.','頂尖地緣戰略學者極力建言採納離岸平衡大戰略，藉由扶植在地均勢以避免本國捲入曠日持久的歐亞泥淖。'],
+      ["a strategy of offshore balancing","離岸平衡戰略",1,"phr.","The seminar contrasted a strategy of offshore balancing with other approaches to regional security.","研討會比較離岸平衡戰略與其他區域安全方針。"],
       ['nuclear brinkmanship escalation','將對抗推向核毀滅邊緣之險棋升級',1,'phr.','The standoff worsened as reckless rhetoric accelerated nuclear brinkmanship escalation.','隨著前線互嗆言辭日趨狂妄激化，這場地緣對峙正以令人窒息的速度向核邊緣政策的失控深淵狂飆升級。'],
-      ['anti access area denial','拒止強敵介入之反介入區域拒止體系',1,'phr.','Coastal missile regiments erected a dense anti access area denial envelope across the maritime approaches.','沿海重型飛彈旅在海峽關鍵航道上，築起了一道水下、海面與防空立體交叉的嚴密反介入區域拒止鐵幕。'],
+      ["restrict access to a region","限制進入某個區域",1,"phr.","The report examined how the policy might restrict access to a region.","報告探討相關政策可能如何限制人員進入某個區域。"],
       ['universal jurisdiction prosecution','針對滅絕人道罪行之普遍管轄權公訴',1,'phr.','Human rights tribunals invoked universal jurisdiction prosecution against fugitive war criminals.','國際人權特別法庭大膽援引普遍管轄權原則，在全球範圍內對那些雙手沾滿鮮血的在逃戰犯發起跨國紅色通緝。'],
-      ['power transition theory dynamics','守成霸主與新興挑戰者之權力轉移律',1,'phr.','Analyzing historical conflicts validates the core tenets of power transition theory dynamics.','縱覽數百年世界帝國興衰史，無情印證了權力轉移理論所揭示的新興力量逼近霸主時必然爆發的劇烈陣痛。'],
-      ['five eyes intelligence sharing','五眼聯盟全天候跨國情報深度互通',1,'phr.','Operational coordination was streamlined via the automated Five Eyes intelligence sharing pipeline.','各軍兵種作戰指令的精準協同，得益於五眼聯盟後台那套高度自動化、即時互通的深層情報共用管道。'],
-      ['mare liberum oceanic doctrine','公海航行自由無害通過之海洋自由論',1,'phr.','International naval coalitions defend the timeless mare liberum oceanic doctrine across international straits.','多國海軍聯合編隊巡弋於重要國際海峽，用現代堅船利炮堅定捍衛著歷史悠久的「海洋自由論」法理基石。'],
+      ["power transition theory","權力轉移理論",1,"phr.","The seminar asked what power transition theory can explain about relations between major states.","研討會探討權力轉移理論能為大國關係提供哪些解釋。"],
+      ["intelligence sharing among allies","盟國之間的情報共享",1,"phr.","The article discussed oversight of intelligence sharing among allies.","文章探討如何監督盟國之間的情報共享。"],
+      ["freedom of the seas","海洋自由",1,"phr.","The historian traced arguments about freedom of the seas.","歷史學家梳理了關於海洋自由的論辯。"],
       ['counterforce military targeting','外科手術般摧毀敵方發射井之反軍力打擊',1,'phr.','Strategic planners debated shifting from countervalue retaliation to high precision counterforce military targeting.','最高戰略參謀部激烈辯論，是否應當將核武預案由無差別屠戮大城市的反價值報復轉向精準點穴的反軍力打擊。'],
       ['diplomatic pouch inviolability','外交郵袋免受任何開拆搜查之神聖不可侵犯',1,'phr.','Customs authorities respected diplomatic pouch inviolability despite suspicions of illicit espionage materials.','儘管邊境海關明知包裹內極可能夾帶敏感間諜器材，但基於外交郵袋絕對不可侵犯的國際法鐵律仍予以免檢放行。'],
       ['unmanned autonomous underwater','長航程自主潛航無人深海探測系統',1,'phr.','Deep sea patrols increasingly deploy unmanned autonomous underwater vehicles for bathymetric reconnaissance.','各大遠洋海軍在執行極端深海巡邏時，正日益全面依賴大續航力長航程的自主無人潛航器實施海底深層勘探。']

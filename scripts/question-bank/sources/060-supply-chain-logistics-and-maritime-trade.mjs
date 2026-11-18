@@ -31,11 +31,11 @@ export const data = {
       ['multimodal transport operator door to door','全段海陸空聯運一票到底負責之多式聯運經營人',1,'phr.','The multimodal transport operator door to door liability protects cargo through rail and ocean corridors.','多式聯運經營人憑藉其一票到底的「門到門」責任體系，為貫通鐵路、公路與深水海運的大宗貨物築起堅固法律屏障。'],
       ['container demurrage and detention charges','碼頭超期佔地與場外逾期滯箱之滯期滯箱費',1,'phr.','Importers expedite customs clearance to avert punitive container demurrage and detention charges.','各大進口企業全力提速港口報關放行流程，以規避船公司計收的巨額碼頭滯期與場外超期滯箱費。'],
       ['york antwerp rules general average contribution','共同海損危難共擔按獲救利益分攤之約克安特衛普規則',1,'phr.','Average adjusters calculated the cargo value for york antwerp rules general average contribution after the salvage.','在海事救助拖航成功後，海損理算師依據《約克-安特衛普規則》精確核算各貨主應分攤的共同海損分攤金。'],
-      ['real time cold chain telemetry monitoring','物聯網全時回傳溫濕度防變質之冷鏈即時遙測',1,'phr.','Vaccine shipments must maintain real time cold chain telemetry monitoring throughout international air transit.','高端疫苗與生物靶向藥在跨國空運轉運全程中，必須嚴格維持物聯網冷鏈即時數據遙測監控。'],
+      ["real time temperature monitoring","即時溫度監測",1,"phr.","Real-time temperature monitoring alerted the warehouse when the refrigerated shipment began to warm.","冷藏貨物開始升溫時，即時溫度監測系統向倉庫發出警報。"],
       ['cross docking lean warehouse logistics','免入庫理貨快速轉運出境之精益越庫物流作業',1,'phr.','The distribution hub handles high velocity perishables through cross docking lean warehouse logistics.','大型區域分銷樞紐透過極致的精益越庫物流作業，實現了高週轉率生鮮商品數小時內的零庫存流轉。'],
       ['supply chain bullwhip effect amplification','信息失真逐級放大庫存失衡之供應鏈長鞭效應',1,'phr.','Integrated ERP transparency mitigates supply chain bullwhip effect amplification across manufacturing tiers.','上下游深度整合的雲端 ERP 數據透明共享機制，能有效遏止供應鏈長鞭效應造成的產能誤判與庫存雪崩。'],
       ['incoterms free on board risk transfer','貨物越過船舷裝船完畢之國際貿易術語離岸價',1,'phr.','The exporter fulfilled its contractual obligation upon incoterms free on board risk transfer at the loading terminal.','當出口集裝箱於裝運港吊裝完畢越過船舷，賣方即圓滿完成了離岸價（FOB）約定的風險與義務交割。'],
-      ['free trade agreement rules of origin certificate','審核實質性轉型享有特惠關稅之自貿協定原產地證明',1,'phr.','Customs authorities inspected the free trade agreement rules of origin certificate to grant preferential duty status.','海關關稅稽查官員嚴格核驗原產地證明書，以依法給予符合實質性加工標準的進口商品零關稅特惠。']
+      ["certificate of origin","原產地證明書",1,"phr.","The exporter provided a certificate of origin to support the claim for a preferential tariff.","出口商提供原產地證明書，以支持適用優惠關稅的申請。"],
     ],
     spells: [
       ['DEMURRAGE','n.','集裝箱超期滯留港口碼頭堆場由船公司按日計收的滯期補償金','The importer incurred thousands of dollars in demurrage due to delayed customs documentation.','由於清關單據延誤，進口商被迫向港口與船公司支付了數千美元的碼頭滯期費（Demurrage）。'],
@@ -56,7 +56,7 @@ export const data = {
       [1,'The port authority deployed an autonomous maritime terminal digital twin. What was simulated?','Real time berthing congestion, crane allocation, container dwell times, and vessel turnaround bottlenecks.|The physical sound of ocean seagulls flying over maritime container cargo ships at night.|The exact weight of personal luggage carried by merchant marine sailors traveling on shore leave.|The chemical composition of seawater entering the harbor cooling pipes during winter freezing snowstorms.','世界頂級海港當局部署了「海運碼頭數位分身（Digital Twin）系統」：依託港區物聯網與即時 AIS 船舶定位數據，在虛擬空間毫秒級仿真預演船舶靠泊擁堵指數、岸橋橋吊排程配載、堆場集裝箱留港時長與航線周轉瓶頸，達成港口產能極限調度。']
     ],
     voices: [
-      ['lloyds open form no cure no pay salvage','無效果即無報酬之勞氏標準海事救助合同',1,'phr.','The salvage master boarded the disabled tanker under a lloyds open form no cure no pay salvage terms.','海難救助隊長在「無效果無報酬」的勞氏海事救助合同框架下，果斷登臨失去動力的涉險油輪展開生死救援。'],
+      ["no cure no pay","救助無成效即無報酬（海事救助原則）",1,"phr.","Under the principle of no cure, no pay, a salvor generally earns a reward only for a successful salvage operation.","依無成效即無報酬原則，救助人通常須成功完成救助才能取得報酬。"],
       ['transfer pricing and customs valuation conflict','所得稅防避稅與海關完稅價博弈之轉移定價海關估價衝突',1,'phr.','Multinational finance teams must reconcile the transfer pricing and customs valuation conflict during cross border audits.','跨國財務與供應鏈法規團隊必須在跨國稅務審計中，審慎調和關聯交易轉移定價與海關進口完稅估價間的衝突。']
     ],
     spells: [

@@ -28,13 +28,13 @@ export const data = {
     voices: [
       ['germline genome editing transmissible mutation','世代傳遞無從知情同意之生殖系基因編輯',1,'phr.','The international treaty enforced a moratorium on human germline genome editing transmissible mutation trials.','國際公約對可能引發世代傳遞未知風險的人類生殖系基因編輯試驗，實施了全球性的最嚴格凍結令。'],
       ['transhumanist longevity escape velocity threshold','醫學突破超越衰老侵蝕之長壽逃逸速度臨界點',1,'phr.','Biogerontologists debate whether regenerative medicine will cross the transhumanist longevity escape velocity threshold.','生物老年醫學界激烈爭論：現代再生醫療究竟能否在本世紀中葉，跨越戰勝生物衰老死亡的長壽逃逸速度分水嶺。'],
-      ['mind uploading ship of theseus personal identity','神經元微晶片替換意識本體論之忒修斯之船心智悖論',1,'phr.','The philosophy of mind tackles the mind uploading ship of theseus personal identity continuity dilemma.','心靈哲學家反覆叩問心智上傳中的忒修斯之船難題：當血肉之軀化為代碼時，第一人稱主觀意識究竟是昇華還是湮滅？'],
+      ["continuity of personal identity","個人同一性的延續",1,"phr.","The thought experiment asks whether a digital copy would preserve the continuity of personal identity.","這個思想實驗探問，數位副本能否延續同一個人的身分。"],
       ['cognitive enhancement biological caste stratification','認知增強不均引發遺傳種姓固化之分配正義危機',1,'phr.','Bioethicists caution that unregulated neural implants risk deepening cognitive enhancement biological caste stratification.','生命倫理學界深沉告誡：缺乏監管的神經植入物自由市場，恐將誘發前所未有的認知增強遺傳種姓固化災難。'],
       ['sandelian case against genetic perfection mastery','狂熱掌控生命踐踏謙卑連帶之反對基因完美主義',1,'phr.','The philosopher invoked the sandelian case against genetic perfection mastery to uphold human solidarity.','哲學教授引述桑德爾反對追求基因完美的名篇，呼籲全人類守護對生命恩賜的敬畏與休戚與共的連帶基石。'],
       ['jonasian imperative of responsibility long term survival','前沿科技行動防不可逆滅絕之尤納斯責任原則',1,'phr.','Existential risk researchers adhere to the jonasian imperative of responsibility long term survival doctrine.','全球存在性風險研究中心恪守尤納斯的責任原則，以守護人類物種在尖端科技浪潮下的長線永續生存為至高使命。'],
       ['synthetic sentience moral status qualia suffering','合成意識主觀感質與免受折磨之人工道德地位',1,'phr.','AI alignment labs must determine whether deep neural nets attain synthetic sentience moral status qualia suffering.','前沿對齊實驗室必須嚴肅界定：深層神經網絡是否已觸及主觀感質與感受苦難的合成意識道德地位門檻。'],
       ['genetic information nondiscrimination act protection','防範基因預測數據遭濫用歧視之反基因歧視法',1,'phr.','Patients participate in clinical genome mapping under statutory genetic information nondiscrimination act protection.','在法定反基因歧視人權法規的剛性庇護下，病患方能安心參與全基因組測序與精準醫療臨床。'],
-      ['patient autonomy advance directive end of life care','捍衛個人尊嚴主權拒絕無效醫療之預先醫療指示',1,'phr.','Palliative care programs encourage adults to execute a patient autonomy advance directive end of life care plan.','安寧緩和醫療體系大力推動公民及早簽署預先醫療指示，以法律力量捍衛病患在臨終尊嚴照護中的絕對自主權。'],
+      ["advance directive","預先醫療指示",1,"phr.","Her advance directive describes the care she would want if she could no longer communicate.","她的預先醫療指示說明了她無法表達意願時希望接受的照護。"],
       ['transhumanist morphological freedom bodily sovereignty','自主重構身體神經機能之超人類主義形態自由權',1,'phr.','Cyborg activists champion statutory protection for transhumanist morphological freedom bodily sovereignty.','義體與賽博格先鋒運動大力捍衛「形態自由權」，主張人類對自身肉體形態與神經認知享有終極重構主權。']
     ],
     spells: [

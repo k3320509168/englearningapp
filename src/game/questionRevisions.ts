@@ -6,3 +6,12 @@ const patches = revisions as Record<string, Question>;
 export function revisedQuestion(q: Question): Question {
   return patches[`${q.type}|${q.desc}|${q.speak ?? ''}`] ?? q;
 }
+
+// 遷移同一教學概念改名後的詞彙知識紀錄。
+export const revisedLexicalKeys = Object.entries(patches).flatMap(([old, question]) => {
+  if (!old.startsWith('voice|') || question.type !== 'voice' || question.knowledgeType !== 'lexical' || !question.speak) return [];
+  const previous = old.slice(old.lastIndexOf('|') + 1);
+  return previous && previous !== question.speak
+    ? [[`w:${previous.toLowerCase()}`, `w:${question.speak.toLowerCase()}`] as const]
+    : [];
+});

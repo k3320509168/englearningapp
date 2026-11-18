@@ -1,0 +1,402 @@
+# C1／C2 長詞組口說題逐題審核
+
+範圍為首輪盤點的 388 題詞彙口說題。清單保留舊答案，以免修短後失去追蹤。逐題核對自然度、中文線索、例句、口說判定和拼寫備援。
+
+- [x] 修正並驗證首批 6 道拼接術語。
+- [ ] 完成 C1 剩餘 183 題。
+- [ ] 完成 C2 剩餘 199 題。
+- [ ] 逐批驗證正式包、圖鑑與舊存檔，再核對所有勾選項。
+
+## C1
+
+- [x] `patient autonomy advance directive end of life care` → `advance directive`。改為單一術語或自然詞組。
+- [x] `free trade agreement rules of origin certificate` → `certificate of origin`。改為單一術語或自然詞組。
+- [x] `mind uploading ship of theseus personal identity` → `continuity of personal identity`。改為單一術語或自然詞組。
+- [x] `high bandwidth memory through silicon via` → `through silicon via`。改為單一術語或自然詞組。
+- [x] `real time cold chain telemetry monitoring` → `real time temperature monitoring`。改為單一術語或自然詞組。
+- [ ] `jonasian imperative of responsibility long term survival`
+- [ ] `fillmore case grammar deep semantic roles`
+- [ ] `fregean principle of compositionality semantic rules`
+- [ ] `incoterms free on board risk transfer`
+- [ ] `multimodal transport operator door to door`
+- [ ] `sandelian case against genetic perfection mastery`
+- [ ] `spiral of silence social conformity pressure`
+- [ ] `synthetic sentience moral status qualia suffering`
+- [ ] `york antwerp rules general average contribution`
+- [ ] `a commensurate degree of authority`
+- [ ] `a consistent frame of reference`
+- [ ] `a finite pool of volunteers`
+- [ ] `a misleading impression of certainty`
+- [ ] `a misleading impression of effortlessness`
+- [ ] `a provisional account of events`
+- [ ] `a qualified assurance of suitability`
+- [ ] `a qualified recollection of events`
+- [ ] `a realistic prospect of repair`
+- [ ] `a tacit claim to ownership`
+- [ ] `a tacit expectation of availability`
+- [ ] `a translucent veil of mist`
+- [ ] `adorno culture industry mass commodification`
+- [ ] `an arrangement open to revision`
+- [ ] `an association made visually legible`
+- [ ] `an equitable division of labour`
+- [ ] `an implied obligation to respond`
+- [ ] `atomic layer deposition conformal coating`
+- [ ] `be that as it may`
+- [ ] `bourdieu habitus embodied cultural capital`
+- [ ] `cap and trade emissions system`
+- [ ] `cognitive enhancement biological caste stratification`
+- [ ] `conceptual metaphor cross domain mapping`
+- [ ] `container demurrage and detention charges`
+- [ ] `corporate mea culpa unconditional apology`
+- [ ] `critical minerals export control licensing`
+- [ ] `cross docking lean warehouse logistics`
+- [ ] `debt for equity swap restructuring`
+- [ ] `doctrine of stare decisis stability`
+- [ ] `fast radio burst dispersion measure`
+- [ ] `fauconnier conceptual blending mental spaces`
+- [ ] `foucault power knowledge discourse regime`
+- [ ] `genetic information nondiscrimination act protection`
+- [ ] `germline genome editing transmissible mutation`
+- [ ] `global supply chain chokepoint vulnerability`
+- [ ] `golden hours crisis communications response`
+- [ ] `innate universal grammar cognitive architecture`
+- [ ] `irrevocable documentary letter of credit`
+- [ ] `negotiable bill of lading title`
+- [ ] `neutral hydrogen hyperfine transition line`
+- [ ] `on the face of it`
+- [ ] `peremptory norm of jus cogens`
+- [ ] `pragmatic illocutionary speech act force`
+- [ ] `pre merger due diligence audit`
+- [ ] `proactive holding statement transparent briefing`
+- [ ] `pure play semiconductor foundry model`
+- [ ] `rosch prototype theory graded categorization`
+- [ ] `scope for a negotiated compromise`
+- [ ] `sensorimotor embodied image schema cognition`
+- [ ] `stranded fossil asset write down`
+- [ ] `streisand effect viral backlash explosion`
+- [ ] `supermassive black hole event horizon`
+- [ ] `supply chain bullwhip effect amplification`
+- [ ] `transhumanist longevity escape velocity threshold`
+- [ ] `transhumanist morphological freedom bodily sovereignty`
+- [ ] `vector space cosine semantic similarity`
+- [ ] `veil of ignorance thought experiment`
+- [ ] `walter benjamin mechanical aura decay`
+- [ ] `a bone of contention`
+- [ ] `a carefully delimited commitment`
+- [ ] `a carefully framed question`
+- [ ] `a claim to legitimacy`
+- [ ] `a consciously restrained design`
+- [ ] `a deliberately restrained delivery`
+- [ ] `a deliberately spare setting`
+- [ ] `a distinction worth preserving`
+- [ ] `a finely judged transition`
+- [ ] `a functionally adequate result`
+- [ ] `a functionally equivalent substitute`
+- [ ] `a legible spatial hierarchy`
+- [ ] `a procedurally complete response`
+- [ ] `a readily discoverable alternative`
+- [ ] `a sense of ownership`
+- [ ] `a shift in perspective`
+- [ ] `a substantively adequate remedy`
+- [ ] `a sustained emotional tension`
+- [ ] `a systematic observation bias`
+- [ ] `advanced heterogeneous packaging architecture`
+- [ ] `algorithmic filter bubble polarization`
+- [ ] `amyloid beta plaque neuropathology`
+- [ ] `an acoustically intimate setting`
+- [ ] `an embedded value judgement`
+- [ ] `an independently testable prediction`
+- [ ] `an inherited family narrative`
+- [ ] `astroturfing fake grassroots manipulation`
+- [ ] `attitudinal inoculation cognitive defense`
+- [ ] `axonal saltatory myelination conduction`
+- [ ] `belligerent occupation administrative duty`
+- [ ] `binding arbitration dispute resolution`
+- [ ] `blood brain barrier permeability`
+- [ ] `burden of proof rests`
+- [ ] `capital inflows sudden stop`
+- [ ] `carbon border adjustment mechanism`
+- [ ] `chandrasekhar mass limit detonation`
+- [ ] `cleanroom airborne particulate contamination`
+- [ ] `come to terms with`
+- [ ] `computational distributional semantics hypothesis`
+- [ ] `constitutional separation of powers`
+- [ ] `cosmic microwave background relic`
+- [ ] `cost push inflation pressures`
+- [ ] `critical regionalism architectural idiom`
+- [ ] `cryptographic content provenance metadata`
+- [ ] `declarative episodic memory consolidation`
+- [ ] `default mode network connectivity`
+- [ ] `demanded that it be`
+- [ ] `diplomatic pouch communications inviolability`
+- [ ] `dopaminergic reward prediction error`
+- [ ] `double blind randomized trial`
+- [ ] `drew a complete blank`
+- [ ] `end to end encryption`
+- [ ] `exclusive economic zone limits`
+- [ ] `expand context window capacity`
+- [ ] `extreme ultraviolet lithography scanner`
+- [ ] `fault tolerant quantum architecture`
+- [ ] `fiduciary duty of loyalty`
+- [ ] `fiscal policy crowding out`
+- [ ] `freedom of navigation operations`
+- [ ] `friend shoring strategic diversification`
+- [ ] `golden parachute severance provision`
+- [ ] `gramsci cultural hegemony ideology`
+- [ ] `gravitational lensing spacetime curvature`
+- [ ] `grey zone coercive tactics`
+- [ ] `habeas corpus judicial petition`
+- [ ] `had the board acted`
+- [ ] `hermeneutic circular interpretation dynamic`
+- [ ] `hostile takeover poison pill`
+- [ ] `husserl phenomenological epoche suspension`
+- [ ] `in the final analysis`
+- [ ] `insolvency chapter eleven petition`
+- [ ] `international court advisory opinion`
+- [ ] `interplanetary gravity assist trajectory`
+- [ ] `it is imperative that`
+- [ ] `kuhn epistemological paradigm revolution`
+- [ ] `locus standi in court`
+- [ ] `malicious disinformation operational campaign`
+- [ ] `managed float exchange regime`
+- [ ] `material adverse effect clause`
+- [ ] `multilateral treaty ratification instrument`
+- [ ] `nature based adaptation solutions`
+- [ ] `non refoulement refugee protection`
+- [ ] `off target cleavage risk`
+- [ ] `optogenetic neural circuit manipulation`
+- [ ] `pay mere lip service`
+- [ ] `persona non grata expulsion`
+- [ ] `pluripotent stem cell line`
+- [ ] `post quantum cryptography standard`
+- [ ] `principle of humanitarian distinction`
+- [ ] `quantum key distribution protocol`
+- [ ] `recommended that it be`
+- [ ] `regulatory antitrust divestiture mandate`
+- [ ] `retrospective peak end rule`
+- [ ] `run entirely counter to`
+- [ ] `scope three carbon emissions`
+- [ ] `second strike nuclear capability`
+- [ ] `seldom have we seen`
+- [ ] `semiconductor wafer fabrication foundry`
+- [ ] `sovereign debt restructuring haircut`
+- [ ] `stellar nucleosynthesis carbon fusion`
+- [ ] `stipulated that each state`
+- [ ] `strict scrutiny standard review`
+- [ ] `structuralist semiotic myth deconstruction`
+- [ ] `substantive due process liberty`
+- [ ] `suffice it to say`
+- [ ] `sunk cost fallacy trap`
+- [ ] `the distribution of benefits`
+- [ ] `the limits of generalisation`
+- [ ] `transmission spectroscopy atmospheric biosignature`
+- [ ] `ultra vires administrative overreach`
+- [ ] `universal human rights jurisdiction`
+- [ ] `vienna convention diplomatic immunity`
+- [ ] `were it not for`
+- [ ] `what the inquiry showed`
+- [ ] `within the stated remit`
+- [ ] `would still be frozen`
+
+## C2
+
+- [x] `lloyds open form no cure no pay salvage` → `no cure no pay`。改為單一術語或自然詞組。
+- [ ] `bostrom vulnerable world hypothesis black ball catastrophe`
+- [ ] `a circular claim to independent confirmation`
+- [ ] `a hagiographic reconstruction of a life`
+- [ ] `a non sequitur in the argument`
+- [ ] `a presupposition disguised as a question`
+- [ ] `a proprietary claim over shared space`
+- [ ] `a proprietorial concern for another person`
+- [ ] `a socially legible gesture of restraint`
+- [ ] `a triumph of wording over substance`
+- [ ] `an aesthetic at odds with habitation`
+- [ ] `baryon acoustic oscillation sound horizon ruler`
+- [ ] `co packaged optics silicon photonics integration`
+- [ ] `foreign direct product rule export licensing`
+- [ ] `gravitational wave quasi normal mode ringdown`
+- [ ] `levinas ethical face of the other`
+- [ ] `pre emptive self defense caroline test`
+- [ ] `transfer pricing and customs valuation conflict`
+- [ ] `wafer to wafer hybrid direct bonding`
+- [ ] `a bitter pill to swallow`
+- [ ] `a brittle assertion of certainty`
+- [ ] `a calculated air of spontaneity`
+- [ ] `a ceremonious show of generosity`
+- [ ] `a discretionary but reasoned judgement`
+- [ ] `a distinction that bears scrutiny`
+- [ ] `a distinction without a difference`
+- [ ] `a facile appeal to complexity`
+- [ ] `a fastidious attention to detail`
+- [ ] `a presumption of prior competence`
+- [ ] `a punctilious display of courtesy`
+- [ ] `a romanticised account of improvisation`
+- [ ] `a sinuous progression of shadows`
+- [ ] `a spurious appearance of economy`
+- [ ] `a studied display of deference`
+- [ ] `a studied show of candour`
+- [ ] `a tacit economy of obligation`
+- [ ] `a tacit redefinition of sufficiency`
+- [ ] `a tacitly privileged starting point`
+- [ ] `a tendentious appeal to fairness`
+- [ ] `adorno negative dialectics non identity`
+- [ ] `agamben sovereign state of exception`
+- [ ] `an asymmetrical standard of judgement`
+- [ ] `an asymmetry of permissible directness`
+- [ ] `an estranging clarity of light`
+- [ ] `an exercise in window dressing`
+- [ ] `an ostentatious display of abundance`
+- [ ] `an unexamined hierarchy of significance`
+- [ ] `an unquantified reserve of labour`
+- [ ] `an unredeemed sense of neglect`
+- [ ] `an unwarranted imputation of motive`
+- [ ] `an urbane disclaimer of authority`
+- [ ] `atomic layer etching deterministic control`
+- [ ] `backside power delivery network decoupling`
+- [ ] `biological weapons non proliferation verification`
+- [ ] `brain machine interface kinematic decoding`
+- [ ] `cerebellar long term depression plasticity`
+- [ ] `cfius national security review jurisdiction`
+- [ ] `chalmers hard problem of consciousness`
+- [ ] `chip four alliance semiconductor resilience`
+- [ ] `chomskyan minimalist program merge operation`
+- [ ] `command responsibility international criminal liability`
+- [ ] `cosmic inflation scalar inflaton field`
+- [ ] `derrida post structuralist differance deferral`
+- [ ] `direct participation in hostilities loss`
+- [ ] `dolus specialis genocidal intent burden`
+- [ ] `drag along minority shareholder right`
+- [ ] `eddington radiation accretion luminosity threshold`
+- [ ] `entorhinal grid cell hexagonal lattice`
+- [ ] `equity cure financial covenant relief`
+- [ ] `erga omnes sovereign obligation enforcement`
+- [ ] `exhaustion of local remedies requirement`
+- [ ] `far be it from me`
+- [ ] `free prior and informed consent`
+- [ ] `gate all around nanosheet architecture`
+- [ ] `hardware anchored root of trust`
+- [ ] `kerr metric frame dragging ergosphere`
+- [ ] `magnetar magnetic reconnection crustal flare`
+- [ ] `patch clamp single channel electrophysiology`
+- [ ] `penrose hawking singularity theorem inevitability`
+- [ ] `piercing the corporate veil doctrine`
+- [ ] `possible world semantics intension function`
+- [ ] `posthuman cognitive enhancement epistemic incomprehensibility`
+- [ ] `rebus sic stantibus treaty termination`
+- [ ] `restitutio in integrum full damages`
+- [ ] `revlon duties enhanced judicial scrutiny`
+- [ ] `sakharov baryogenesis thermal non equilibrium`
+- [ ] `stochastic line edge roughness mitigation`
+- [ ] `the appearance of disinterested judgement`
+- [ ] `threw caution to the winds`
+- [ ] `tolman oppenheimer volkoff mass limit`
+- [ ] `wide bandgap semiconductor power conversion`
+- [ ] `winner curse in common auctions`
+- [ ] `zizek cynical distance ideological fantasy`
+- [ ] `a carefully calibrated rebuke`
+- [ ] `a carefully mediated recollection`
+- [ ] `a conspicuously seamless soundscape`
+- [ ] `a conveniently elastic definition`
+- [ ] `a disconcerting tonal shift`
+- [ ] `a face saving reformulation`
+- [ ] `a formally symmetric permission`
+- [ ] `a methodologically circumspect conclusion`
+- [ ] `a meticulously cultivated informality`
+- [ ] `a pragmatically inadequate instruction`
+- [ ] `a procedurally immaculate failure`
+- [ ] `a retroactively imposed condition`
+- [ ] `a retrospective narrative coherence`
+- [ ] `a rhetorically charged silence`
+- [ ] `a scrupulously circumscribed apology`
+- [ ] `a self exculpatory narrative`
+- [ ] `a self serving interpretation`
+- [ ] `a superficially conciliatory gesture`
+- [ ] `a superficially neutral formulation`
+- [ ] `adverse selection death spiral`
+- [ ] `aharonov bohm phase shift`
+- [ ] `amyloid cascade hypothesis validation`
+- [ ] `an arresting visual composition`
+- [ ] `an artfully circumscribed denial`
+- [ ] `an artfully evasive formulation`
+- [ ] `an artfully qualified assurance`
+- [ ] `an artfully sustained ambiguity`
+- [ ] `an asymmetry of power`
+- [ ] `an emotionally unearned resolution`
+- [ ] `an irreducibly dialogic account`
+- [ ] `an operationally meaningful distinction`
+- [ ] `an ostensibly benevolent decree`
+- [ ] `an ostensibly uncontrived appearance`
+- [ ] `an ostensibly universal provision`
+- [ ] `an ostensibly unmediated voice`
+- [ ] `an unspoken emotional price`
+- [ ] `anti access area denial`
+- [ ] `asymmetric bell inequality refutation`
+- [ ] `baudrillard hyperreality simulation simulacrum`
+- [ ] `bose einstein condensation threshold`
+- [ ] `business judgment rule protection`
+- [ ] `chemical mechanical planarization uniformity`
+- [ ] `control flow integrity protection`
+- [ ] `cp symmetry violation parameter`
+- [ ] `cryovolcanic hydrothermal ocean plume`
+- [ ] `damning with faint praise`
+- [ ] `de novo protein design`
+- [ ] `decreed that they be`
+- [ ] `dictates that no trustee`
+- [ ] `differential power analysis attack`
+- [ ] `earth system tipping elements`
+- [ ] `five eyes intelligence sharing`
+- [ ] `foucault biopolitical population management`
+- [ ] `fraudulent conveyance asset clawback`
+- [ ] `global neuronal workspace broadcast`
+- [ ] `habermas communicative rationality discourse`
+- [ ] `had it been forthcoming`
+- [ ] `had safeguards been ratified`
+- [ ] `hawking black hole radiation`
+- [ ] `hippocampal memory consolidation replay`
+- [ ] `international crime of ecocide`
+- [ ] `it was systemic opacity`
+- [ ] `kant aesthetic sublime transcendence`
+- [ ] `lest systemic contagion spread`
+- [ ] `little did they know`
+- [ ] `lyotard postmodern metanarrative collapse`
+- [ ] `majorana zero mode braiding`
+- [ ] `mare liberum oceanic doctrine`
+- [ ] `mareva worldwide freezing injunction`
+- [ ] `martens clause humanitarian protection`
+- [ ] `moral hazard after bailout`
+- [ ] `nowhere within the law`
+- [ ] `offshore balancing grand strategy`
+- [ ] `pathogen gain of function`
+- [ ] `play fast and loose`
+- [ ] `polluter pays legal principle`
+- [ ] `power transition theory dynamics`
+- [ ] `predictive processing prediction error`
+- [ ] `presumed consent opt out`
+- [ ] `public trust doctrine protection`
+- [ ] `quantum state tomography fidelity`
+- [ ] `quantum zeno effect suppression`
+- [ ] `raison d etat cannot`
+- [ ] `remote enclave execution attestation`
+- [ ] `retinal lateral inhibition contrast`
+- [ ] `return oriented programming exploit`
+- [ ] `reverse triangular merger structure`
+- [ ] `rights of nature recognition`
+- [ ] `scarcely had it taken`
+- [ ] `so contentious were they`
+- [ ] `sparse mixture of experts`
+- [ ] `special purpose acquisition vehicle`
+- [ ] `speculative execution side channel`
+- [ ] `stealthy watering hole compromise`
+- [ ] `stipulated that the engine`
+- [ ] `substantive consolidation equitable remedy`
+- [ ] `such was the brilliance`
+- [ ] `superfluid quantum vortex core`
+- [ ] `the appearance of inevitability`
+- [ ] `there is the rub`
+- [ ] `tit for tat reciprocity`
+- [ ] `topological insulator edge state`
+- [ ] `trophic cascade ecological collapse`
+- [ ] `unsolicited hostile tender offer`
+- [ ] `were tipping points surpassed`
+- [ ] `yield curve inversion warning`
+- [ ] `zero knowledge proof verification`

@@ -522,3 +522,14 @@ flowchart LR
 - 最新正式包驗收：以 `BASE_PATH=/englearningapp/ npm run build` 產出正式包，隔離預覽服務 5183 已改用 production preview。XS 指定驗收分頁被休眠外掛轉成 chrome-extension 網址，瀏覽器政策拒絕接管，冷啟動計時與正式瀏覽器實點仍待分頁恢復。
 - 已用正式 C1 資料與實際圖鑑元件重現並修正兩項缺陷：區域詞條前綴造成普通詞條和區域詞條各出一張卡；連字號或空格讓長詞組例句無法標亮。驗證 `end to end encryption` 搜尋結果只剩一卡，釋義及例句正確，`end-to-end encryption` 可標亮。以舊 C2 存檔走實際匯入、錯題修煉元件作答，確認 `scarcely had it taken effect` 顯示新版提示並更新 SRS。這些是元件回歸（jsdom），不計入正式瀏覽器實點。
 - 本機正式包大小（gzip，約值）：入口 JS 0.83 MB、CSS 0.04 MB，A1 題庫及詞庫 0.15 MB，全部九區 3.58 MB，全域圖鑑詞庫 1.38 MB。後兩者非 HTML 首屏直接引用，但目前會在啟動後預載。這是資源大小量測，未取得瀏覽器首次可操作秒數。
+
+### 2026-11-20 正式預覽瀏覽器補驗（b2db4ea）
+
+- 已重新接管指定 XS Chrome 隔離驗收分頁，5183 使用 production preview，沒有改動使用者其他遊戲分頁。
+- 先從設定下載原隔離存檔，再從 UI 匯入舊高階測試備份。修煉場兩題分別輸入 `ENDTOENDENCRYPTION`、`SCARCELYHADITTAKENEFFECT`，新版提示與答案均正確，實際結算 2/2；這次是正式瀏覽器點擊與鍵盤作答，補上先前僅元件測試的缺口。
+- C1 搜尋 `end to end encryption` 僅一張卡，釋義「端到端加密」，例句中的 `end-to-end encryption` 正常標亮；C2 舊詞組對應新版完整詞條 `scarcely had it taken effect`，提示「它才剛生效（使用倒裝）」。
+- 圖鑑三尺寸 1366×768、1920×1080、375×812 截圖存證，document 寬度均等於 viewport。已目視核對 375×812 與 1366×768，卡片、例句、發音及切換按鈕完整。375×812 是瀏覽器 viewport 模擬，並非手機實機或觸控驗收。
+- 三次已快取的本機正式頁重載，到主按鈕可見的工具端耗時為 256、255、207 ms；包含工具呼叫耗時，不能當成冷啟動、手機網路或瀏覽器原生效能指標。只讀工具未提供 performance 物件，未清除使用者瀏覽器快取。
+- 結束時經 UI 匯入本輪開始前下載的原隔離備份，確認金幣回復 9,250、BGM 0%、SFX 10%、發音 10%，並關閉設定。測試備份不提交。
+- 截圖：[手機圖鑑](question-bank-qa/production-2026-11-20/enggame-prod-codex-375x812.png)、[1366 桌面](question-bank-qa/production-2026-11-20/enggame-prod-codex-1366x768.png)、[1920 桌面](question-bank-qa/production-2026-11-20/enggame-prod-codex-1920x1080.png)、[舊題修煉 2/2](question-bank-qa/production-2026-11-20/enggame-prod-old-review-pass.png)。
+- 本批未新增程式改動。真人語音、實機觸控、未設定帳號的雲端同步仍不列通過；全題庫語意審查與實際玩家難度校準也不能由本輪抽樣替代。

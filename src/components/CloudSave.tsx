@@ -67,6 +67,7 @@ export function CloudSection() {
 // 兩邊都有新進度時跳出：讓玩家選要保留哪一份（另一份會被覆蓋）
 export function CloudConflict() {
   const conflict = useCloudStore(s => s.conflict);
+  const error = useCloudStore(s => s.status === 'error' ? s.error : '');
   const [busy, setBusy] = useState(false);
   if (!conflict) return null;
   const choose = async (keep: 'local' | 'cloud') => { setBusy(true); await resolveConflict(keep); setBusy(false); };
@@ -76,6 +77,7 @@ export function CloudConflict() {
         <header className="modal-head"><h2>☁️ 選擇要保留的存檔</h2></header>
         <div className="modal-body">
           <p>雲端和這台裝置都有新的進度，請選一份保留（另一份會被覆蓋）：</p>
+          {error && <p className="voice-error" role="alert">同步未完成：{error}。兩份進度仍保留，請重試選擇。</p>}
           <div className="conflict-grid">
             <button className="conflict-card" disabled={busy} onMouseDown={keepFocus} onClick={() => void choose('cloud')}>
               <b>☁️ 雲端的存檔</b><span>{describe(conflict.cloud)}</span><small className="muted">最後更新 {timeText(conflict.cloud.updatedAt)}</small>

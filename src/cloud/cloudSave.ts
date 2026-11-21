@@ -61,10 +61,12 @@ async function fetchCloud(userId: string): Promise<CloudSnapshot | null> {
   return data ? { data: data.data, updatedAt: data.updated_at } : null;
 }
 
-export async function uploadNow(): Promise<void> {
+export async function uploadNow(expectedCloudTime?: string | null): Promise<void> {
   const { user, conflict } = useCloudStore.getState();
   const local = readLocal();
-  if (!supabase || !user || conflict) return;
+  if (!supabase || !user) return;
+  if (loginSyncPending) return syncOnLogin(user);
+  if (conflict && expectedCloudTime === undefined) return;
   // 新裝置尚未產生本地存檔；保持可監聽狀態，之後建角／作答才會自動排傳。
   if (!local) return setCloud({ status: 'idle' });
   const generation = authGeneration;
@@ -74,20 +76,46 @@ export async function uploadNow(): Promise<void> {
   const current = () => authGeneration === generation && useCloudStore.getState().user?.id === user.id;
   const promise = (async () => {
     setCloud({ status: 'syncing', error: '' });
-    const updatedAt = new Date().toISOString();
+    const meta = knownMeta;
+    const expected = expectedCloudTime === undefined ? (meta?.userId === user.id ? meta.syncedAt || null : null) : expectedCloudTime;
+    // 即使同一毫秒連續寫入，也不能重用上一個版本的時間戳。
+    const previousTime = expected ? Date.parse(expected) : NaN;
+    const updatedAt = new Date(Math.max(Date.now(), Number.isFinite(previousTime) ? previousTime + 1 : 0)).toISOString();
+    const payload = { user_id: user.id, data: local, save_version: local.version, updated_at: updatedAt };
     try {
-      const { error } = await supabase!.from('saves').upsert({ user_id: user.id, data: local, save_version: local.version, updated_at: updatedAt });
+      // 比對與更新在同一個資料庫 statement；不能用先 fetch 再無條件 upsert 取代。
+      // 首次建立採 insert，讓 user_id 唯一限制攔住另一台裝置的同時建立。
+      const result = expected
+        ? await supabase!.from('saves').update(payload).eq('user_id', user.id).eq('updated_at', expected).select('data, updated_at').maybeSingle()
+        : await supabase!.from('saves').insert(payload).select('data, updated_at').maybeSingle();
       if (!current()) return;
+      const { data: written, error } = result;
+      if ((!error && !written) || (!expected && error?.code === '23505')) {
+        const latest = await fetchCloud(user.id);
+        if (!current()) return;
+        if (!latest) {
+          rememberMeta({ userId: user.id, syncedAt: '', dirty: true });
+          setCloud({ conflict: null });
+          throw new Error('雲端存檔已移除，已保留本地進度；請按「立即上傳」重新建立。');
+        }
+        const latestLocal = readLocal();
+        rememberMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
+        setCloud({ status: 'conflict', conflict: {
+          local: summarize(latestLocal?.state), cloud: summarize(latest.data.state, latest.updatedAt), snapshot: latest,
+        } });
+        return;
+      }
       if (error) throw new Error(error.message);
+      if (!written?.updated_at) throw new Error('伺服器未回傳存檔版本，請重新同步。');
       // 上傳的是開始時的快照；等待期間玩家仍可繼續玩。
       const dirty = JSON.stringify(readLocal()) !== JSON.stringify(local);
-      writeMeta({ userId: user.id, syncedAt: updatedAt, dirty });
-      setCloud({ status: 'idle', lastSync: updatedAt });
+      rememberMeta({ userId: user.id, syncedAt: written.updated_at, dirty });
+      setCloud({ status: 'idle', lastSync: written.updated_at, conflict: null });
       if (dirty) scheduleUpload();
     } catch (e) {
       if (!current()) return;
-      const meta = readMeta();
-      writeMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
+      const meta = knownMeta;
+      rememberMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
       setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
     }
   })();
@@ -111,7 +139,7 @@ export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
   useSaveStore.getState().ensureDaily();
   // 下載舊日期的存檔時 ensureDaily 會產生新進度，也必須再上傳。
   const dirty = JSON.stringify(readLocal()) !== JSON.stringify(data);
-  if (user) writeMeta({ userId: user.id, syncedAt: snapshot.updatedAt, dirty });
+  if (user) rememberMeta({ userId: user.id, syncedAt: snapshot.updatedAt, dirty });
   setCloud({ status: 'idle', lastSync: snapshot.updatedAt, conflict: null });
   if (user && dirty) scheduleUpload();
 }
@@ -120,28 +148,34 @@ export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
 export async function resolveConflict(keep: 'local' | 'cloud'): Promise<void> {
   const c = useCloudStore.getState().conflict;
   if (!c) return;
-  setCloud({ conflict: null });
-  if (keep === 'cloud') await applyCloud(c.snapshot);
-  else await uploadNow();
+  const generation = authGeneration;
+  try {
+    if (keep === 'cloud') await applyCloud(c.snapshot);
+    else await uploadNow(c.snapshot.updatedAt);
+  } catch (e) {
+    if (generation === authGeneration) setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
+  }
 }
 
 // 登入後（或重新整理後已是登入狀態）比對雲端與這台裝置
 async function syncOnLogin(user: User) {
   const generation = ++authGeneration;
+  loginSyncPending = true;
   window.clearTimeout(uploadTimer);
-  setCloud({ user, status: 'syncing', error: '' });
+  setCloud({ user, status: 'syncing', error: '', conflict: null });
   try {
     const cloud = await fetchCloud(user.id);
     if (generation !== authGeneration || useCloudStore.getState().user?.id !== user.id) return;
+    loginSyncPending = false;
     const local = readLocal();
-    const meta = readMeta();
-    if (!cloud) return uploadNow();                                  // 雲端還沒有：上傳
-    if (!local || isEmptySave(local.state)) return applyCloud(cloud); // 這台是新裝置：直接下載
+    const meta = knownMeta;
+    if (!cloud) return uploadNow(null);                              // 雲端還沒有：建立，不覆蓋
+    if (!local || isEmptySave(local.state)) return await applyCloud(cloud); // 這台是新裝置：直接下載
     const sameDevice = meta?.userId === user.id;
     const cloudChanged = !sameDevice || cloud.updatedAt !== meta?.syncedAt;
     const localChanged = !sameDevice || (meta?.dirty ?? true);
     if (!cloudChanged) return localChanged ? uploadNow() : setCloud({ status: 'idle', lastSync: cloud.updatedAt });
-    if (!localChanged) return applyCloud(cloud);
+    if (!localChanged) return await applyCloud(cloud);
     // 兩邊都有新進度：讓玩家選
     setCloud({
       status: 'conflict',
@@ -167,6 +201,10 @@ let started = false;
 let uploadTimer: number | undefined;
 let authGeneration = 0;
 let uploadInFlight: { generation: number; userId: string; promise: Promise<void> } | null = null;
+// 每個分頁只能使用自己已觀察／接受的版本，不能借用另一分頁寫進共用 storage 的新時間戳。
+let knownMeta: Meta | null = null;
+let loginSyncPending = false;
+function rememberMeta(meta: Meta) { knownMeta = meta; writeMeta(meta); }
 
 function scheduleUpload() {
   window.clearTimeout(uploadTimer);
@@ -178,6 +216,7 @@ function scheduleUpload() {
 export function initCloud(): boolean {
   if (!supabase || started) return false;
   started = true;
+  knownMeta = readMeta();
   // 登入連結失敗：記下原因、把網址上的錯誤清掉（重新整理才不會一直出現）
   const loginError = readLoginError(initialHash);
   if (loginError) {
@@ -189,6 +228,7 @@ export function initCloud(): boolean {
       if (useCloudStore.getState().user?.id !== session.user.id) void syncOnLogin(session.user);
     } else if (event === 'SIGNED_OUT') {
       authGeneration++;
+      loginSyncPending = false;
       window.clearTimeout(uploadTimer);
       setCloud({ user: null, status: 'signedOut', lastSync: null, conflict: null });
     }
@@ -197,8 +237,9 @@ export function initCloud(): boolean {
     // 登出時玩的進度也要記下「有變動」，下次登入才會跟雲端比較
     const meta = readMeta();
     if (meta && !meta.dirty) writeMeta({ ...meta, dirty: true });
+    if (knownMeta && !knownMeta.dirty) knownMeta = { ...knownMeta, dirty: true };
     const { user, status } = useCloudStore.getState();
-    if (!user || status === 'conflict' || status === 'syncing') return;
+    if (!user || status === 'conflict' || status === 'syncing' || status === 'error') return;
     scheduleUpload();
   });
   return !!loginError;
@@ -236,6 +277,8 @@ export async function signOut() {
 // 之後再登入時，兩邊都有進度會讓玩家選要保留哪一份
 export async function forgetCloudForReset() {
   authGeneration++;
+  knownMeta = null;
+  loginSyncPending = false;
   window.clearTimeout(uploadTimer);
   try { localStorage.removeItem(META_KEY); } catch { /* 略過 */ }
   if (supabase && useCloudStore.getState().user) await supabase.auth.signOut();

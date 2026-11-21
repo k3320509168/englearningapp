@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint src e2e playwright.config.ts scripts/lint-transfer-content.ts --quiet && npm run lint:content",
+    "lint": "eslint src e2e playwright.config.ts scripts/lint-transfer-content.ts scripts/lint-review-contexts.ts --quiet && npm run lint:content",
     "preview": "vite preview",
     "validate:questions": "tsx scripts/validate-questions.ts",
     "vocab:audit": "tsx scripts/vocab-audit.ts",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "lint:content": "node --import tsx scripts/lint-transfer-content.ts"
+    "lint:content": "node --import tsx scripts/lint-transfer-content.ts && node --import tsx scripts/lint-review-contexts.ts"
   },
   "dependencies": {
     "@fontsource/pixelify-sans": "^5.3.0",

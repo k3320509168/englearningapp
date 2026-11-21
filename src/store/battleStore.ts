@@ -1,3 +1,4 @@
+import { preferReviewContext } from '../game/reviewContexts';
 import { retryAid } from '../game/retryAid';
 import { create } from 'zustand';
 import type { Question, QuestionSkill, Stage } from '../game/types';
@@ -347,10 +348,14 @@ function buildReviewIndex(levelIdx: number) {
 function pickDueReview(exclude: Question | null, types: string[] | null): Question | null {
   if (random() >= REVIEW_SHARE) return null;
   const skip = exclude ? knowledgeKey(exclude) : '';
-  for (const key of dueKnowledge(save().knowledge, Date.now())) {
+  const { knowledge, codex } = save();
+  for (const key of dueKnowledge(knowledge, Date.now())) {
     if (key === skip) continue;
     const list = (reviewIndex.get(key) ?? []).filter(q => !types || types.includes(q.type));
-    if (list.length) return list[Math.floor(random() * list.length)];
+    if (list.length) {
+      const preferred = preferReviewContext(key, list, codex);
+      return preferred[Math.floor(random() * preferred.length)];
+    }
   }
   return null;
 }

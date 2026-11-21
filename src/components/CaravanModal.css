@@ -1,0 +1,21 @@
+.caravan-scenario { display: grid; gap: 14px; min-width: 0; line-height: 1.65; }
+.caravan-scenario p, .caravan-scenario h3 { margin: 0; overflow-wrap: anywhere; }
+.caravan-note { color: #c8c9e2; font-size: .88rem; }
+.caravan-progress { display: flex; flex-wrap: wrap; gap: 8px 18px; color: #ffdc75; }
+.caravan-reference, .caravan-support { min-width: 0; padding: 12px; border: 1px solid #7374a0; border-radius: 8px; background: #17182e; }
+.caravan-reference summary { cursor: pointer; color: #9bdaff; }
+.caravan-reference p { margin-top: 10px; }
+.caravan-cards { min-width: 0; margin: 0; padding: 10px; border: 1px solid #62658d; border-radius: 8px; display: grid; gap: 8px; }
+.caravan-cards legend { padding: 0 6px; color: #ffdc75; font-weight: bold; }
+.caravan-cards label { display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: #292c50; border: 2px solid transparent; border-radius: 6px; cursor: pointer; min-height: 44px; min-width: 0; }
+.caravan-cards label.is-selected { border-color: #ffe180; background: #383957; }
+.caravan-cards input { flex: 0 0 auto; width: 18px; height: 18px; margin-top: 4px; }
+.caravan-cards span { min-width: 0; overflow-wrap: anywhere; }
+.caravan-cards:disabled label { cursor: default; }
+.caravan-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.caravan-actions .btn { white-space: normal; height: auto; min-height: 44px; overflow-wrap: anywhere; }
+.caravan-scenario blockquote { margin: 0; padding: 14px; background: #181a34; border-left: 3px solid #ffdc75; overflow-wrap: anywhere; }
+.caravan-feedback:empty { display: none; }
+.caravan-feedback { color: #ffe18f; }
+.caravan-complete { display: grid; gap: 16px; }
+@media (max-width: 480px) { .caravan-actions .btn { flex: 1 1 100%; } .caravan-cards { padding: 8px; } .caravan-cards label { padding: 10px; } }

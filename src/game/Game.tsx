@@ -37,6 +37,7 @@ import HolyForgeModal from '../components/HolyForgeModal';
 import RushModal from '../components/RushModal';
 import TowerModal from '../components/TowerModal';
 import WorldBossModal from '../components/WorldBossModal';
+import CaravanModal from '../components/CaravanModal';
 import { CloudConflict } from '../components/CloudSave';
 import SaveRecoveryNotice from '../components/SaveRecoveryNotice';
 import { initCloud } from '../cloud/cloudSave';
@@ -50,12 +51,14 @@ import { musicTrackFor, regionMusic } from './musicData';
 import { isPrologue, stageInMap } from './stageLayout';
 import { TOWER_FLOORS, towerRegion } from './modes';
 import { useDailyRefresh } from '../components/useDailyRefresh';
+import { useLearningEvidenceLifecycle } from '../components/useLearningEvidenceLifecycle';
 
 // 遊戲畫布固定 800x480 的邏輯座標，由 Phaser 依容器大小等比縮放（RWD）
 export const GAME_WIDTH = 800;
 export const GAME_HEIGHT = 480;
 
 export default function Game() {
+  useLearningEvidenceLifecycle();
   const gameRef = useRef<HTMLDivElement>(null);
   const inBattle = useBattleStore(s => s.active);
   const battleRegion = useBattleStore(s => s.mode === 'normal' ? s.levelIdx : 8);
@@ -261,6 +264,7 @@ export default function Game() {
       {modal === 'rush' && <RushModal />}
       {modal === 'tower' && <TowerModal />}
       {modal === 'worldBoss' && <WorldBossModal />}
+      {modal === 'caravan' && <CaravanModal />}
       <CelebrationOverlay />
       <TicketWheel />
       <CloudConflict />

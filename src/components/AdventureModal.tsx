@@ -27,6 +27,11 @@ export default function AdventureModal() {
 
   const dungeons: DungeonCard[] = [
     {
+      id: 'caravan', icon: '🛒', name: '護送商隊・路線之爭', tag: '英文情境支線',
+      reward: '故事完成紀錄・無額外資源獎勵', status: '讀公告、更新路線、組句回應・無需麥克風',
+      tone: 'tone-review', btnLabel: '護送商隊 🛒',
+    },
+    {
       id: 'rush',
       icon: '⚡',
       name: '每日素材本',

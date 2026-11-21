@@ -9,5 +9,5 @@ export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
   plugins: [react()],
   // exFAT 外接碟上 macOS 會產生 ._ 檔，測試不要讀到
-  test: { exclude: [...configDefaults.exclude, '**/._*'] },
+  test: { exclude: [...configDefaults.exclude, '**/._*', '**/e2e/**'] },
 })

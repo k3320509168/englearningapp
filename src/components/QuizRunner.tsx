@@ -11,6 +11,7 @@ import { useSaveStore } from '../store/saveStore';
 import { sfx } from '../game/sfx';
 import { useSpeak } from './useSpeak';
 import { keepFocus } from './keepFocus';
+import { evidenceItemId, newEvidenceRunId, recordLearningEvidence } from '../game/learningEvidence';
 
 // 測驗作答：一題一題出，答完立刻顯示對錯與正確答案，按「下一題」繼續。
 // 沒有計時、不扣血；答錯的字一樣記進錯題本。聽力題一出就播放，可以重播、慢速。
@@ -40,7 +41,34 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   const q = raw && raw.type === 'voice' && !canVoice ? voiceFallback(raw) : raw;
   const listeningQ = !!q && q.type === 'choice' && !!q.speak && questionSkill(q) === 'listening';
   const recognizer = useRef<Recognizer | null>(null);
-
+  const runId = useRef(newEvidenceRunId());
+  const submitted = useRef(new Set<number>());
+  const audioRequests = useRef(new Map<number, { model: boolean; plays: number; slow: boolean }>());
+  const requestAudio = (slow = false) => {
+    if (!q?.speak) return;
+    // 只記錄使用者要求播放，不宣稱裝置確實播出或玩家聽懂。
+    if (!submitted.current.has(idx)) {
+      const prev = audioRequests.current.get(idx) ?? { model: false, plays: 0, slow: false };
+      audioRequests.current.set(idx, { model: prev.model || !listeningQ, plays: Math.min(100, prev.plays + Number(listeningQ)), slow: prev.slow || slow });
+    }
+    say(q.speak, slow);
+  };
+  const recordEvidence = (correct: boolean, skipped = false): boolean => {
+    if (!raw || submitted.current.has(idx)) return false;
+    submitted.current.add(idx);
+    const audio = audioRequests.current.get(idx);
+    recordLearningEvidence({
+      attemptId: `${runId.current}:${idx}`, runId: runId.current, itemId: evidenceItemId(raw),
+      at: Date.now(), task: 'fixed-answer', skill: questionSkill(raw),
+      mode: skipped ? 'skipped' : q.type === 'voice' ? 'speech' : q.type === 'choice' ? 'choice' : 'typed',
+      outcome: skipped ? 'unverified' : correct ? 'correct' : 'incorrect',
+      source: blind ? 'blind' : review ? 'review' : 'quiz',
+      voiceFallback: raw.type === 'voice' && q.type !== 'voice',
+      modelAudioRequested: audio?.model ?? false, listeningPlaysRequested: audio?.plays ?? 0,
+      slowAudioRequested: audio?.slow ?? false, context: 'unknown',
+    });
+    return true;
+  };
   // 不顯示對錯：答完直接換下一題
   const answerBlind = (correct: boolean) => {
     sfx.click();
@@ -50,6 +78,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   };
 
   const finish = (correct: boolean, heard?: string) => {
+    if (!recordEvidence(correct)) return;
     if (blind) return answerBlind(correct);
     recordAnswer(raw, correct, review, true);
     setResult({ correct, heard });
@@ -59,7 +88,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
 
   // 聽力題：出題時自動播放
   useEffect(() => {
-    if (listeningQ && autoSpeak) say(q.speak);
+    if (listeningQ && autoSpeak) requestAudio();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idx]);
 
@@ -79,6 +108,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
   const judge = (given: string) => {
     if (!q || result || !given.trim()) return;
     const correct = checkQuizAnswer(q, given);
+    if (!recordEvidence(correct)) return;
     if (blind) return answerBlind(correct);
     recordAnswer(raw, correct, review, true);
     setResult({ correct });
@@ -122,8 +152,8 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
         <p className="q-desc">{q.desc.replace(/^【[^】]*試煉】/, '')}{spellingExtra(q) && <small className="q-extra">（{spellingExtra(q)}）</small>}</p>
         {q.speak && (q.type !== 'choice' || listeningQ) && (
           <span className="feedback-actions">
-            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(q.speak)}>🔊 {listeningQ ? '再聽一次' : '聽發音'}</button>
-            {listeningQ && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => say(q.speak, true)}>🐢 慢速</button>}
+            <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => requestAudio()}>🔊 {listeningQ ? '再聽一次' : '聽發音'}</button>
+            {listeningQ && <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => requestAudio(true)}>🐢 慢速</button>}
           </span>
         )}
       </div>
@@ -143,7 +173,7 @@ export default function QuizRunner({ questions, label, onAnswer, lastLabel = '�
           </button>
           {!result && (blind
             // 程度測驗：口說題不改拼寫（題目會露出答案），直接跳過、記成口說未驗證
-            ? <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { sfx.click(); setIdx(i => i + 1); onAnswer(false, true); }}>麥克風不方便？跳過口說</button>
+            ? <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => { if (!recordEvidence(false, true)) return; sfx.click(); setIdx(i => i + 1); onAnswer(false, true); }}>麥克風不方便？跳過口說</button>
             : <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={() => setTyped(idx)}>麥克風不方便？改用拼寫</button>)}
         </div>
       ) : (

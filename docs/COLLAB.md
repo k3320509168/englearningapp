@@ -503,3 +503,7 @@
 - 2026-11-22 Codex｜按製作人要求直接執行非人工缺口。新增5項日期整合回歸；獨立助手指出上傳中進度漏傳候選，已先重現測試失敗，再修 dirty 補傳／同帳號併發／登出切帳遲到回覆／下載資料驗證與換日補傳。Antigravity 第三輪 code review 指出無本地存檔登入卡 syncing，已加修。雲端新增15項mock契約回歸，不需讀真金鑰或登入。仍未完成跨裝置原子比對更新（目前 upsert 未帶遠端版本條件）；這是後續明確工程任務，不推給人工。真帳號同步與手機／真人收音另驗。
 
 - 2026-11-22 本批驗證：58檔492 tests、`npx tsc -b`、`npx eslint src --quiet`、`BASE_PATH=/englearningapp/ npm run build` 全過；新增日期5項與雲端mock15項。Vite大chunk既有警告保留，不當作冷啟動效能通過。未讀金鑰、未登入、未操作真雲端或玩家存檔；未改main、未部署。
+
+- 2026-11-22 Codex × Antigravity｜按製作人「全部執行」完成實際功能包：雲端CAS/首次insert競爭、私有分頁版本、衝突/登入斷線重試與遠端刪除保護；QuizRunner事件與Game層清除；三節護送商隊及Adventure入口。Antigravity逐輪指出的具體bug已反證修正，最後只讀複核未發現明確新bug。獨立助手實作證據及支線，Codex整合與真Chrome三尺寸實點自動驗收；Sky服務不可用不再打擾製作人設定，改用獨立headless，沒有操作其分頁。已修瀏覽器測試輸出目錄衝突及production preview子路徑設定；工具問題不當遊戲bug。報告見learning-20261122/REPORT.md；未合main／部署。
+
+- Codex本批交件｜8ec587c雲端條件寫入，19a8cc8商隊支線與作答證據。521項自動測試、型別/lint/build、3尺寸瀏覽器完整流程及2條受控正式包冷載入通過。真帳號RLS/實機/真人ASR仍未驗，其餘內容與進階學習階段待辦保留；見learning-20261122/REPORT.md。

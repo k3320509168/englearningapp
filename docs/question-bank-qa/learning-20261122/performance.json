@@ -1,0 +1,387 @@
+{
+  "measuredAt": "2026-11-21T18:15:09.900Z",
+  "url": "http://127.0.0.1:5184/englearningapp/",
+  "expectedSamples": 2,
+  "allProfilesMeasured": true,
+  "conditions": {
+    "environment": "local Vite production preview; controlled synthetic measurement; compressed responses observed in encoded/decoded resource sizes",
+    "cache": "Each case uses a new isolated browser context; CDP Network.setCacheDisabled=true; service workers blocked. No user profile or global cache is accessed or cleared.",
+    "timing": "Browser navigation-relative performance.now() sampled immediately after locator visibility assertions; includes automation observation/click latency. FCP is the native paint entry.",
+    "resources": "PerformanceResourceTiming entries completed by the caravan heading snapshot; preloads still in flight are excluded. transferSize includes protocol overhead and is not total final bundle size.",
+    "limitations": "Not a real handset, mobile Safari, user network, deployed CDN, long-term benchmark, or CEFR/learning result. Narrow viewport uses desktop Chromium with CPU/network throttling. One sample per profile.",
+    "volume": "Background music, sound effects and pronunciation volume all 0; autoSpeak=false."
+  },
+  "samples": [
+    {
+      "profile": {
+        "name": "desktop-local-unthrottled",
+        "width": 1366,
+        "height": 768,
+        "cpuRate": 1,
+        "latencyMs": 0,
+        "downloadBytesPerSecond": -1,
+        "uploadBytesPerSecond": -1
+      },
+      "metrics": {
+        "adventureVisibleMs": 375.80000000447035,
+        "caravanVisibleMs": 1188,
+        "adventureToCaravanMs": 812.1999999955297,
+        "fcpMs": 244,
+        "domContentLoadedMs": 112.5,
+        "loadEventEndMs": 186.5,
+        "snapshotAtMs": 1189.5,
+        "completedResourceCount": 26,
+        "completedResourceTransferBytes": 5911528,
+        "navigationTransferBytes": 900,
+        "completedTransferBytesIncludingNavigation": 5912428,
+        "completedEncodedBodyBytes": 5904328,
+        "resources": [
+          {
+            "path": "/englearningapp/assets/index-BT1JvTRK.css",
+            "initiatorType": "link",
+            "startTimeMs": 8,
+            "durationMs": 5.899999998509884,
+            "transferBytes": 43350,
+            "encodedBodyBytes": 43050,
+            "decodedBodyBytes": 155456
+          },
+          {
+            "path": "/englearningapp/assets/index-jswWaWVk.js",
+            "initiatorType": "script",
+            "startTimeMs": 8,
+            "durationMs": 46.30000000447035,
+            "transferBytes": 834617,
+            "encodedBodyBytes": 834317,
+            "decodedBodyBytes": 2957952
+          },
+          {
+            "path": "/englearningapp/assets/roboto-latin-700-normal-BZpUvMxY.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 168,
+            "durationMs": 1.7000000029802322,
+            "transferBytes": 22540,
+            "encodedBodyBytes": 22240,
+            "decodedBodyBytes": 22240
+          },
+          {
+            "path": "/englearningapp/assets/pixelify-sans-latin-700-normal-D3Xxx3QE.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 171.10000000149012,
+            "durationMs": 1.2000000029802322,
+            "transferBytes": 8204,
+            "encodedBodyBytes": 7904,
+            "decodedBodyBytes": 7904
+          },
+          {
+            "path": "/englearningapp/assets/pixelify-sans-latin-400-normal-DLrIX9QE.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 177.20000000298023,
+            "durationMs": 1.6999999955296516,
+            "transferBytes": 7992,
+            "encodedBodyBytes": 7692,
+            "decodedBodyBytes": 7692
+          },
+          {
+            "path": "/englearningapp/assets/press-start-2p-latin-400-normal-_wFEWmAB.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 206.39999999850988,
+            "durationMs": 2.600000001490116,
+            "transferBytes": 12812,
+            "encodedBodyBytes": 12512,
+            "decodedBodyBytes": 12512
+          },
+          {
+            "path": "/englearningapp/assets/r3-D-ysuqs4.js",
+            "initiatorType": "script",
+            "startTimeMs": 207.10000000149012,
+            "durationMs": 16.200000002980232,
+            "transferBytes": 131944,
+            "encodedBodyBytes": 131644,
+            "decodedBodyBytes": 477520
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r3-BiKWvN0R.js",
+            "initiatorType": "script",
+            "startTimeMs": 207.20000000298023,
+            "durationMs": 11.399999998509884,
+            "transferBytes": 101848,
+            "encodedBodyBytes": 101548,
+            "decodedBodyBytes": 298768
+          },
+          {
+            "path": "/englearningapp/favicon-32.png",
+            "initiatorType": "other",
+            "startTimeMs": 252.30000000447035,
+            "durationMs": 1.5999999940395355,
+            "transferBytes": 528,
+            "encodedBodyBytes": 228,
+            "decodedBodyBytes": 228
+          },
+          {
+            "path": "/englearningapp/assets/generated-vocab-B7huQWvP.js",
+            "initiatorType": "script",
+            "startTimeMs": 310.5,
+            "durationMs": 125.10000000149012,
+            "transferBytes": 1383794,
+            "encodedBodyBytes": 1383494,
+            "decodedBodyBytes": 5536389
+          },
+          {
+            "path": "/englearningapp/assets/r0-Df0Q-oT4.js",
+            "initiatorType": "script",
+            "startTimeMs": 310.6000000014901,
+            "durationMs": 9.299999997019768,
+            "transferBytes": 83212,
+            "encodedBodyBytes": 82912,
+            "decodedBodyBytes": 323224
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r0-BTNE6Jb2.js",
+            "initiatorType": "script",
+            "startTimeMs": 310.70000000298023,
+            "durationMs": 7.5,
+            "transferBytes": 64560,
+            "encodedBodyBytes": 64260,
+            "decodedBodyBytes": 191096
+          },
+          {
+            "path": "/englearningapp/assets/r1-yzEskPh7.js",
+            "initiatorType": "script",
+            "startTimeMs": 329.5,
+            "durationMs": 10.700000002980232,
+            "transferBytes": 85265,
+            "encodedBodyBytes": 84965,
+            "decodedBodyBytes": 332084
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r1-DmsiodDD.js",
+            "initiatorType": "script",
+            "startTimeMs": 329.6000000014901,
+            "durationMs": 9.399999998509884,
+            "transferBytes": 74115,
+            "encodedBodyBytes": 73815,
+            "decodedBodyBytes": 210127
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r2-D6x8RCAV.js",
+            "initiatorType": "script",
+            "startTimeMs": 345.5,
+            "durationMs": 8.100000001490116,
+            "transferBytes": 71653,
+            "encodedBodyBytes": 71353,
+            "decodedBodyBytes": 208459
+          },
+          {
+            "path": "/englearningapp/assets/r2-D1chMa72.js",
+            "initiatorType": "script",
+            "startTimeMs": 345.5,
+            "durationMs": 8.899999998509884,
+            "transferBytes": 86652,
+            "encodedBodyBytes": 86352,
+            "decodedBodyBytes": 319567
+          },
+          {
+            "path": "/englearningapp/assets/r4-DRSdZzCN.js",
+            "initiatorType": "script",
+            "startTimeMs": 360.80000000447035,
+            "durationMs": 15.199999995529652,
+            "transferBytes": 143998,
+            "encodedBodyBytes": 143698,
+            "decodedBodyBytes": 493242
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r4-fttVhAhZ.js",
+            "initiatorType": "script",
+            "startTimeMs": 360.8999999985099,
+            "durationMs": 12.300000004470348,
+            "transferBytes": 109432,
+            "encodedBodyBytes": 109132,
+            "decodedBodyBytes": 313478
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r5-BNuEWJWY.js",
+            "initiatorType": "script",
+            "startTimeMs": 378.70000000298023,
+            "durationMs": 13.600000001490116,
+            "transferBytes": 139494,
+            "encodedBodyBytes": 139194,
+            "decodedBodyBytes": 405462
+          },
+          {
+            "path": "/englearningapp/assets/r5-DEp3ziuU.js",
+            "initiatorType": "script",
+            "startTimeMs": 378.70000000298023,
+            "durationMs": 18.399999998509884,
+            "transferBytes": 210509,
+            "encodedBodyBytes": 210209,
+            "decodedBodyBytes": 706062
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r6-CKGrYnd-.js",
+            "initiatorType": "script",
+            "startTimeMs": 399.5,
+            "durationMs": 32.600000001490116,
+            "transferBytes": 310745,
+            "encodedBodyBytes": 310445,
+            "decodedBodyBytes": 983609
+          },
+          {
+            "path": "/englearningapp/assets/r6-Z8OkX5Ev.js",
+            "initiatorType": "script",
+            "startTimeMs": 399.5,
+            "durationMs": 36.70000000298023,
+            "transferBytes": 412432,
+            "encodedBodyBytes": 412132,
+            "decodedBodyBytes": 1363403
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r7-ClxLhbaF.js",
+            "initiatorType": "script",
+            "startTimeMs": 457.30000000447035,
+            "durationMs": 27.19999999552965,
+            "transferBytes": 341935,
+            "encodedBodyBytes": 341635,
+            "decodedBodyBytes": 1169034
+          },
+          {
+            "path": "/englearningapp/assets/r7-Bd0sJllY.js",
+            "initiatorType": "script",
+            "startTimeMs": 457.30000000447035,
+            "durationMs": 31.899999998509884,
+            "transferBytes": 483910,
+            "encodedBodyBytes": 483610,
+            "decodedBodyBytes": 1407427
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r8-CPTOGCjo.js",
+            "initiatorType": "script",
+            "startTimeMs": 577.8000000044703,
+            "durationMs": 18,
+            "transferBytes": 307463,
+            "encodedBodyBytes": 307163,
+            "decodedBodyBytes": 1060883
+          },
+          {
+            "path": "/englearningapp/assets/r8-CjlMG6is.js",
+            "initiatorType": "script",
+            "startTimeMs": 577.8000000044703,
+            "durationMs": 22.599999994039536,
+            "transferBytes": 438524,
+            "encodedBodyBytes": 438224,
+            "decodedBodyBytes": 1278866
+          }
+        ]
+      },
+      "browserVersion": "157.0.8103.79"
+    },
+    {
+      "profile": {
+        "name": "narrow-viewport-controlled-slow",
+        "width": 375,
+        "height": 812,
+        "cpuRate": 4,
+        "latencyMs": 100,
+        "downloadBytesPerSecond": 500000,
+        "uploadBytesPerSecond": 125000
+      },
+      "metrics": {
+        "adventureVisibleMs": 2555.39999999851,
+        "caravanVisibleMs": 3192.2000000029802,
+        "adventureToCaravanMs": 636.8000000044703,
+        "fcpMs": 2472,
+        "domContentLoadedMs": 2194,
+        "loadEventEndMs": 2769,
+        "snapshotAtMs": 3199.8000000044703,
+        "completedResourceCount": 9,
+        "completedResourceTransferBytes": 1163835,
+        "navigationTransferBytes": 900,
+        "completedTransferBytesIncludingNavigation": 1164735,
+        "completedEncodedBodyBytes": 1161735,
+        "resources": [
+          {
+            "path": "/englearningapp/assets/index-jswWaWVk.js",
+            "initiatorType": "script",
+            "startTimeMs": 114.70000000298023,
+            "durationMs": 1860.1000000014901,
+            "transferBytes": 834617,
+            "encodedBodyBytes": 834317,
+            "decodedBodyBytes": 2957952
+          },
+          {
+            "path": "/englearningapp/assets/index-BT1JvTRK.css",
+            "initiatorType": "link",
+            "startTimeMs": 115.39999999850988,
+            "durationMs": 272.30000000447035,
+            "transferBytes": 43350,
+            "encodedBodyBytes": 43050,
+            "decodedBodyBytes": 155456
+          },
+          {
+            "path": "/englearningapp/assets/roboto-latin-700-normal-BZpUvMxY.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 2401.7000000029802,
+            "durationMs": 184.69999999552965,
+            "transferBytes": 22540,
+            "encodedBodyBytes": 22240,
+            "decodedBodyBytes": 22240
+          },
+          {
+            "path": "/englearningapp/assets/pixelify-sans-latin-700-normal-D3Xxx3QE.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 2414.39999999851,
+            "durationMs": 138.90000000596046,
+            "transferBytes": 8204,
+            "encodedBodyBytes": 7904,
+            "decodedBodyBytes": 7904
+          },
+          {
+            "path": "/englearningapp/assets/pixelify-sans-latin-400-normal-DLrIX9QE.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 2442.10000000149,
+            "durationMs": 141.70000000298023,
+            "transferBytes": 7992,
+            "encodedBodyBytes": 7692,
+            "decodedBodyBytes": 7692
+          },
+          {
+            "path": "/englearningapp/assets/press-start-2p-latin-400-normal-_wFEWmAB.woff2",
+            "initiatorType": "css",
+            "startTimeMs": 2504.7000000029802,
+            "durationMs": 177.5,
+            "transferBytes": 12812,
+            "encodedBodyBytes": 12512,
+            "decodedBodyBytes": 12512
+          },
+          {
+            "path": "/englearningapp/assets/r3-D-ysuqs4.js",
+            "initiatorType": "script",
+            "startTimeMs": 2508.5,
+            "durationMs": 594.3000000044703,
+            "transferBytes": 131944,
+            "encodedBodyBytes": 131644,
+            "decodedBodyBytes": 477520
+          },
+          {
+            "path": "/englearningapp/assets/vocab-r3-BiKWvN0R.js",
+            "initiatorType": "script",
+            "startTimeMs": 2509.10000000149,
+            "durationMs": 533.7000000029802,
+            "transferBytes": 101848,
+            "encodedBodyBytes": 101548,
+            "decodedBodyBytes": 298768
+          },
+          {
+            "path": "/englearningapp/favicon-32.png",
+            "initiatorType": "other",
+            "startTimeMs": 3003.2000000029802,
+            "durationMs": 102.19999999552965,
+            "transferBytes": 528,
+            "encodedBodyBytes": 228,
+            "decodedBodyBytes": 228
+          }
+        ]
+      },
+      "browserVersion": "157.0.8103.79"
+    }
+  ]
+}

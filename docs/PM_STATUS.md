@@ -547,3 +547,13 @@ flowchart LR
 尚有工程待辦：目前upsert沒有帶遠端版本條件，兩台裝置同時在線仍可能最後寫入覆蓋。須以資料庫條件更新／版本欄位設計原子保護並補兩客戶端競爭測試；不能只fetch再upsert假裝已解決。Antigravity提到伺服器timestamp覆寫可能造成假衝突，但未核實部署DB行為，暫不列已重現。所有待辦保留，未宣稱全遊戲完成。
 
 - 2026-11-22 本批驗證：58檔492 tests、`npx tsc -b`、`npx eslint src --quiet`、`BASE_PATH=/englearningapp/ npm run build` 全過；新增日期5項與雲端mock15項。Vite大chunk既有警告保留，不當作冷啟動效能通過。未讀金鑰、未登入、未操作真雲端或玩家存檔；未改main、未部署。
+
+### 2026-11-22 製作人要求「全部執行」後的實際交件
+
+已完成程式：雲端條件update／首次insert競爭保護，衝突快照重試、登入離線重試、各分頁私有已知版本、遠端刪除停自動重建；新增25項mock同步回歸。LE-01首包已接QuizRunner實際作答事件，Game層匯入／重置清除本機診斷。LE-02已實作可玩的商隊三節，真正Adventure入口可進，storySeen保存斷點與輔助旗標，無資源／主線平衡改動。
+
+新增Playwright依賴與可重現e2e：三尺寸流程包含商隊錯誤修正、重載續接、字幕、組卡、結局、無額外獎勵重播、實際塔答題產生證據、離開測驗後設定匯入清除診斷並保留故事。另正式包以獨立context/CDP禁快取量測兩組冷載入與弱網CPU條件。Chrome控制服務sky回報Trusted RPC service is not configured，未要求製作人重改權限，改為獨立headless真Chrome驗收，不碰使用者profile。這不是實機手機。
+
+Antigravity本批雲端多輪反證後最後未再指出明確新bug；其只讀建議與實測結果分開。具體檔案、執行方式及截圖見docs/question-bank-qa/learning-20261122/REPORT.md。功能剩餘待辦仍在LEARNING_PATH_B2PLUS，不把本機診斷當CEFR，不聲稱全庫全模式完成。
+
+- 本批最終驗證：63檔521 tests、型別／src ESLint／e2e ESLint／正式建置通過，真Chrome三尺寸3/3流程與2/2受控冷載入通過。程式commit 8ec587c／19a8cc8；詳細條件、截圖與可重現指令見learning-20261122/REPORT.md。

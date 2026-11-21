@@ -48,7 +48,7 @@ export default function CaravanModal() {
         <p>{hinted ? '選路曾使用提示。' : '選路未開啟提示。'}{supported ? '更新路線曾開啟字幕，記為文字輔助練習。' : audioRequested ? '曾要求播放音訊；尚不能據此確認獨立聽力能力。' : '沒有音訊播放紀錄，聽力未驗證。'}</p>
         <p>參考表達（其中一種可行安排）：</p><blockquote lang="en">{CARAVAN_EXAMPLE}</blockquote>
         <p className="caravan-note">本次為引導式情境練習，自由口說與寫作程度尚未評量。</p>
-        <div className="caravan-actions"><button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => jump(0)}>重玩三節（無額外獎勵）</button><button className="btn" onMouseDown={keepFocus} onClick={closeModal}>回到冒險</button></div>
+        <div className="caravan-actions"><button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => jump(0)}>重玩三節（無額外獎勵）</button><button className="btn" onMouseDown={keepFocus} onClick={closeModal}>回到冒險</button><button className="btn" onClick={() => useUiStore.getState().openModal('transfer')}>新情境挑戰</button></div>
       </section> : <>
         <h3>{['第一節：選最快的安全路線', '第二節：商人帶來新消息', '第三節：說服商隊長'][stage]}</h3>
         <details className="caravan-reference" open={stage === 0}>

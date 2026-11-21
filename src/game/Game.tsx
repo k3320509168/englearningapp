@@ -1,3 +1,4 @@
+import TransferModal from '../components/TransferModal';
 import { useEffect, useRef } from 'react';
 import Phaser from 'phaser';
 import MapScene from './MapScene';
@@ -265,6 +266,7 @@ export default function Game() {
       {modal === 'tower' && <TowerModal />}
       {modal === 'worldBoss' && <WorldBossModal />}
       {modal === 'caravan' && <CaravanModal />}
+      {modal === 'transfer' && <TransferModal />}
       <CelebrationOverlay />
       <TicketWheel />
       <CloudConflict />

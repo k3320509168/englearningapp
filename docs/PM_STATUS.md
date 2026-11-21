@@ -557,3 +557,9 @@ flowchart LR
 Antigravity本批雲端多輪反證後最後未再指出明確新bug；其只讀建議與實測結果分開。具體檔案、執行方式及截圖見docs/question-bank-qa/learning-20261122/REPORT.md。功能剩餘待辦仍在LEARNING_PATH_B2PLUS，不把本機診斷當CEFR，不聲稱全庫全模式完成。
 
 - 本批最終驗證：63檔521 tests、型別／src ESLint／e2e ESLint／正式建置通過，真Chrome三尺寸3/3流程與2/2受控冷載入通過。程式commit 8ec587c／19a8cc8；詳細條件、截圖與可重現指令見learning-20261122/REPORT.md。
+
+### 2026-11-22 情境檢核與持續回歸
+
+商隊後新增三個練習情境，練完七天後開放兩題獨立閱讀檢核。題面到期才載入，正常流程保留首答，答完顯示解析。LE-03 試點與 LE-04 支線部分完成。主線 SRS 選題、口寫輸出、全庫語意與全模式驗收繼續列為待辦。
+
+新增分支／PR 品質檢查。npm run lint 執行情境內容與 ESLint 規則，CI 另跑型別、題庫驗證、Vitest 和三尺寸瀏覽器。可靜態判斷的缺陷補 lint，需操作才能發現的問題補回歸。

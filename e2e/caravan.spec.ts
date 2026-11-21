@@ -102,6 +102,30 @@ for (const [width, height] of [[1366, 768], [1920, 1080], [375, 812]]) {
     await expect(page.getByText('讀取完成！', { exact: true })).toBeVisible();
     expect(await page.evaluate(() => localStorage.getItem('english-rpg-learning-evidence'))).toBeNull();
     expect((await save()).storySeen).toContain('scenario:caravan:v1:done:respond');
+    await page.getByRole('button', { name: '關閉', exact: true }).click();
+    await open();
+    await page.getByRole('button', { name: '新情境挑戰', exact: true }).click();
+    await page.getByRole('button', { name: /Move the meeting downstairs/ }).click();
+    await page.getByRole('button', { name: /Start with silent blocking/ }).click();
+    await page.getByRole('button', { name: /Water the seedlings from the rain barrel/ }).click();
+    await expect(page.getByRole('heading', { name: '三種情境練習完成' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: '展覽手冊' })).toHaveCount(0);
+    // 模擬經過七天，保留真正遊戲存檔並走正常重入入口。
+    const completedAt = Date.now();
+    await page.clock.install({ time: new Date(completedAt) });
+    await page.clock.fastForward(7 * 24 * 60 * 60 * 1000 + 1000);
+    await expect(page.getByRole('heading', { name: '展覽手冊' })).toBeVisible();
+    await noOverflow();
+    await page.getByRole('button', { name: /Send the current layout/ }).click();
+    await page.reload();
+    await open();
+    await page.getByRole('button', { name: '新情境挑戰', exact: true }).click();
+    await expect(page.getByRole('heading', { name: '工作坊教材' })).toBeVisible();
+    await page.getByRole('button', { name: /Share the exercise sheet alongside/ }).click();
+    await expect(page.getByRole('heading', { name: '延後檢核完成' })).toBeVisible();
+    await expect(page.getByText('首次作答答對 1 / 2 題。')).toBeVisible();
+    await noOverflow();
+    await page.screenshot({ path: `${screenshotDir}/transfer-${width}x${height}-complete.png`, animations: 'disabled' });
     expect(errors).toEqual([]);
   });
 }

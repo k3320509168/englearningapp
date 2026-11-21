@@ -29,6 +29,7 @@ jobs:
       - run: npm ci
       - name: 檢查與測試
         run: |
+          npm run lint
           npm run validate:questions
           npm test
       - name: 建置

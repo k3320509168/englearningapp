@@ -533,3 +533,17 @@ flowchart LR
 - 結束時經 UI 匯入本輪開始前下載的原隔離備份，確認金幣回復 9,250、BGM 0%、SFX 10%、發音 10%，並關閉設定。測試備份不提交。
 - 截圖：[手機圖鑑](question-bank-qa/production-2026-11-20/enggame-prod-codex-375x812.png)、[1366 桌面](question-bank-qa/production-2026-11-20/enggame-prod-codex-1366x768.png)、[1920 桌面](question-bank-qa/production-2026-11-20/enggame-prod-codex-1920x1080.png)、[舊題修煉 2/2](question-bank-qa/production-2026-11-20/enggame-prod-old-review-pass.png)。
 - 本批未新增程式改動。真人語音、實機觸控、未設定帳號的雲端同步仍不列通過；全題庫語意審查與實際玩家難度校準也不能由本輪抽樣替代。
+
+### 2026-11-22 學習成效整合與非人工驗收續作
+
+製作人授權把真實 B2+ 路徑納入設計，並要求另一 AI 與 Antigravity 協助具體落實；可自動處理的舊缺口繼續優先執行。完整可交付進程見 [LEARNING_PATH_B2PLUS.md](LEARNING_PATH_B2PLUS.md)，LE-00～07 與 QA-DATE／CONTENT／FLOW／PERF／CLOUD／BALANCE 分開追蹤。先證據→可選三節護送商隊→新情境隔離池→延後驗證，沿用既有 SRS／程度複測，不改主線門檻或聲稱通關等於 CEFR。Antigravity 第一輪提出缺題、待評體驗、獨立評量等風險，已反證並送第二輪；另一助手核對最新 f15907b 入口。
+
+已補 5 項跨日 React＋真 store 整合測試，Game 日期刷新原邏輯抽為 useDailyRefresh 供直接驗收，涵蓋週一午夜、背景多日返回 focus／visibility、登入不重算、里程碑不重領、碎片題換日、卸載清理。不是瀏覽器長時間實測。其他待辦狀態見規格第8節；本輪尚未實作新學習支線。工作目錄 /private/tmp/enggame-learning-design-20261122，基於已推修復分支，舊 unmerged worktree 保留不動。
+
+#### 本輪新增實際修正：雲端同步（QA-CLOUD）
+
+已以 deferred mock 重現「upsert 等待期間本地100→150，舊回覆誤清dirty且未補傳」；修後保留dirty並5秒後補傳最新快照。同帳號並發合併，登出／切帳的舊上傳與舊fetch不再回寫新狀態；上傳拒絕或錯誤保留dirty並可手動重試。applyCloud 套用前沿用本機備份格式／版本驗證，拒絕陣列、缺資料、較新版本而不覆蓋本地；下載後 ensureDaily 產生變更會補傳。沒有本地與雲端存檔時登入不再卡syncing。15項mock雲端＋5項日期測試通過，不當作真Supabase跨裝置驗收。
+
+尚有工程待辦：目前upsert沒有帶遠端版本條件，兩台裝置同時在線仍可能最後寫入覆蓋。須以資料庫條件更新／版本欄位設計原子保護並補兩客戶端競爭測試；不能只fetch再upsert假裝已解決。Antigravity提到伺服器timestamp覆寫可能造成假衝突，但未核實部署DB行為，暫不列已重現。所有待辦保留，未宣稱全遊戲完成。
+
+- 2026-11-22 本批驗證：58檔492 tests、`npx tsc -b`、`npx eslint src --quiet`、`BASE_PATH=/englearningapp/ npm run build` 全過；新增日期5項與雲端mock15項。Vite大chunk既有警告保留，不當作冷啟動效能通過。未讀金鑰、未登入、未操作真雲端或玩家存檔；未改main、未部署。

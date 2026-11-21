@@ -62,25 +62,58 @@ async function fetchCloud(userId: string): Promise<CloudSnapshot | null> {
 }
 
 export async function uploadNow(): Promise<void> {
-  const user = useCloudStore.getState().user;
+  const { user, conflict } = useCloudStore.getState();
   const local = readLocal();
-  if (!supabase || !user || !local) return;
-  setCloud({ status: 'syncing', error: '' });
-  const updatedAt = new Date().toISOString();
-  const { error } = await supabase.from('saves').upsert({ user_id: user.id, data: local, save_version: local.version, updated_at: updatedAt });
-  if (error) return setCloud({ status: 'error', error: error.message });
-  writeMeta({ userId: user.id, syncedAt: updatedAt, dirty: false });
-  setCloud({ status: 'idle', lastSync: updatedAt });
+  if (!supabase || !user || conflict) return;
+  // 新裝置尚未產生本地存檔；保持可監聽狀態，之後建角／作答才會自動排傳。
+  if (!local) return setCloud({ status: 'idle' });
+  const generation = authGeneration;
+  // 手動同步、備份匯入與自動計時器可能同時觸發，避免同帳號快照倒序抵達。
+  if (uploadInFlight?.generation === generation && uploadInFlight.userId === user.id) return uploadInFlight.promise;
+  window.clearTimeout(uploadTimer);
+  const current = () => authGeneration === generation && useCloudStore.getState().user?.id === user.id;
+  const promise = (async () => {
+    setCloud({ status: 'syncing', error: '' });
+    const updatedAt = new Date().toISOString();
+    try {
+      const { error } = await supabase!.from('saves').upsert({ user_id: user.id, data: local, save_version: local.version, updated_at: updatedAt });
+      if (!current()) return;
+      if (error) throw new Error(error.message);
+      // 上傳的是開始時的快照；等待期間玩家仍可繼續玩。
+      const dirty = JSON.stringify(readLocal()) !== JSON.stringify(local);
+      writeMeta({ userId: user.id, syncedAt: updatedAt, dirty });
+      setCloud({ status: 'idle', lastSync: updatedAt });
+      if (dirty) scheduleUpload();
+    } catch (e) {
+      if (!current()) return;
+      const meta = readMeta();
+      writeMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
+      setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
+    }
+  })();
+  uploadInFlight = { generation, userId: user.id, promise };
+  try { await promise; }
+  finally { if (uploadInFlight?.promise === promise) uploadInFlight = null; }
 }
 
 // 用雲端的存檔取代這台裝置的存檔（舊版存檔會自動轉換）
 export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
   const user = useCloudStore.getState().user;
-  localStorage.setItem(SAVE_KEY, JSON.stringify(snapshot.data));
+  const generation = authGeneration;
+  const data = parseSaveCode(JSON.stringify(snapshot.data));
+  if (!data) {
+    setCloud({ status: 'error', error: '雲端存檔格式或版本無法讀取，已保留這台裝置的進度。' });
+    return;
+  }
+  localStorage.setItem(SAVE_KEY, JSON.stringify(data));
   await useSaveStore.persist.rehydrate();
+  if (generation !== authGeneration || useCloudStore.getState().user?.id !== user?.id) return;
   useSaveStore.getState().ensureDaily();
-  if (user) writeMeta({ userId: user.id, syncedAt: snapshot.updatedAt, dirty: false });
+  // 下載舊日期的存檔時 ensureDaily 會產生新進度，也必須再上傳。
+  const dirty = JSON.stringify(readLocal()) !== JSON.stringify(data);
+  if (user) writeMeta({ userId: user.id, syncedAt: snapshot.updatedAt, dirty });
   setCloud({ status: 'idle', lastSync: snapshot.updatedAt, conflict: null });
+  if (user && dirty) scheduleUpload();
 }
 
 // 衝突時玩家選了要留哪一份
@@ -94,9 +127,12 @@ export async function resolveConflict(keep: 'local' | 'cloud'): Promise<void> {
 
 // 登入後（或重新整理後已是登入狀態）比對雲端與這台裝置
 async function syncOnLogin(user: User) {
+  const generation = ++authGeneration;
+  window.clearTimeout(uploadTimer);
   setCloud({ user, status: 'syncing', error: '' });
   try {
     const cloud = await fetchCloud(user.id);
+    if (generation !== authGeneration || useCloudStore.getState().user?.id !== user.id) return;
     const local = readLocal();
     const meta = readMeta();
     if (!cloud) return uploadNow();                                  // 雲端還沒有：上傳
@@ -112,6 +148,7 @@ async function syncOnLogin(user: User) {
       conflict: { local: summarize(local.state), cloud: summarize(cloud.data.state, cloud.updatedAt), snapshot: cloud },
     });
   } catch (e) {
+    if (generation !== authGeneration || useCloudStore.getState().user?.id !== user.id) return;
     setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
   }
 }
@@ -128,6 +165,13 @@ export function readLoginError(hash: string): string | null {
 
 let started = false;
 let uploadTimer: number | undefined;
+let authGeneration = 0;
+let uploadInFlight: { generation: number; userId: string; promise: Promise<void> } | null = null;
+
+function scheduleUpload() {
+  window.clearTimeout(uploadTimer);
+  uploadTimer = window.setTimeout(() => { void uploadNow(); }, 5000);
+}
 
 // 遊戲啟動時呼叫一次：恢復登入狀態、監聽登入登出、存檔變動後自動上傳（5 秒內的變動合併成一次）。
 // 回傳 true 代表這次是從失敗的登入連結回來的
@@ -144,6 +188,8 @@ export function initCloud(): boolean {
     if (session?.user && (event === 'SIGNED_IN' || event === 'INITIAL_SESSION')) {
       if (useCloudStore.getState().user?.id !== session.user.id) void syncOnLogin(session.user);
     } else if (event === 'SIGNED_OUT') {
+      authGeneration++;
+      window.clearTimeout(uploadTimer);
       setCloud({ user: null, status: 'signedOut', lastSync: null, conflict: null });
     }
   });
@@ -153,8 +199,7 @@ export function initCloud(): boolean {
     if (meta && !meta.dirty) writeMeta({ ...meta, dirty: true });
     const { user, status } = useCloudStore.getState();
     if (!user || status === 'conflict' || status === 'syncing') return;
-    window.clearTimeout(uploadTimer);
-    uploadTimer = window.setTimeout(() => { void uploadNow(); }, 5000);
+    scheduleUpload();
   });
   return !!loginError;
 }
@@ -190,6 +235,7 @@ export async function signOut() {
 // 重置遊戲時：登出雲端並忘記這台裝置的同步紀錄，避免新的空白進度自動上傳、蓋掉雲端的舊存檔。
 // 之後再登入時，兩邊都有進度會讓玩家選要保留哪一份
 export async function forgetCloudForReset() {
+  authGeneration++;
   window.clearTimeout(uploadTimer);
   try { localStorage.removeItem(META_KEY); } catch { /* 略過 */ }
   if (supabase && useCloudStore.getState().user) await supabase.auth.signOut();

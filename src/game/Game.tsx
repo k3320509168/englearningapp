@@ -49,6 +49,7 @@ import { playMusic, setMusicVolume, unlockMusic } from './music';
 import { musicTrackFor, regionMusic } from './musicData';
 import { isPrologue, stageInMap } from './stageLayout';
 import { TOWER_FLOORS, towerRegion } from './modes';
+import { useDailyRefresh } from '../components/useDailyRefresh';
 
 // 遊戲畫布固定 800x480 的邏輯座標，由 Phaser 依容器大小等比縮放（RWD）
 export const GAME_WIDTH = 800;
@@ -95,17 +96,7 @@ export default function Game() {
   }, []);
 
   // 保持畫面開著時也更新登入日期，背景分頁回來立即補刷新。
-  useEffect(() => {
-    const refresh = () => useSaveStore.getState().ensureDaily();
-    const interval = window.setInterval(refresh, 60_000);
-    document.addEventListener('visibilitychange', refresh);
-    window.addEventListener('focus', refresh);
-    return () => {
-      window.clearInterval(interval);
-      document.removeEventListener('visibilitychange', refresh);
-      window.removeEventListener('focus', refresh);
-    };
-  }, []);
+  useDailyRefresh();
 
   // 音效與背景音樂的音量、文字大小、減少動態效果跟著設定走
   useEffect(() => {

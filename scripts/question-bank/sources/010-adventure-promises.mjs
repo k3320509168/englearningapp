@@ -141,7 +141,7 @@ listening:[
 [2,'The oath is invoked as though fidelity to its words settled fidelity to its purpose.','誓言被援引得好像忠於字句就已等於忠於其目的。|說話者已確認字句與目的在所有情境都相反。|誓言完全沒有任何可供解釋的文字。|所有人已共同重新定義誓言目的。','字面遵守與目的實現不必自動相同。'],
 [3,'What is presented as a rebellion against authority may be an insistence that authority remain answerable to the grounds on which it originally claimed obedience.','所謂反叛權威，可能是在要求權威仍須回應其最初要求服從的理由。|反對者已明確拒絕任何可能正當的權威。|原本的服從理由已由所有人正式撤回。|權威只要曾獲服從就永遠不需說明。','挑戰可訴諸原有正當性標準，不必是全面否定。'],
 [3,'The victory is hollow not because nothing has changed, but because the change leaves untouched the power to recreate the grievance at will.','勝利空洞不是因毫無改變，而是仍保留可任意重造不滿的權力。|勝利已移除所有造成不滿的可能條件。|沒有任何改變發生，這是唯一批評。|說話者認為改變只要有限就完全沒有價值。','承認改變，但指出根源權力未受限制。'],
-[3,'The narrative withholds the easy comfort of a villain who knows he is lying, asking instead how an honest self-image can survive practices that require others not to speak.','敘事不提供明知說謊的簡單反派，而追問誠實自我形象如何與要求他人沉默的做法共存。|故事已證明所有統治者都知道自己在說謊。|敘事完全不關心角色對自己的理解。|要求沉默被呈現為誠實形象的充分證據。','主題在自我理解與壓制行為的張力，而非單純惡意解釋。']
+[3,'The narrative withholds the easy comfort of a villain who knows he is lying, asking instead how an honest self-image can survive practices that require others not to speak.','敘事追問真誠的自我形象如何與壓制別人發聲共存。|敘事把沉默解釋為旁人對角色真誠的信任，進而替他辯護。|敘事聚焦角色察覺自己說謊後，如何維持誠實形象。|敘事的重點是角色怎樣讓旁人誤信他，而非他如何看待自己。','主題在自我理解與壓制行為的張力，而非單純惡意解釋。']
 ],
 voices:[
 ['probity','堅守誠實正直的品格',1,'n.','The captain’s probity was respected even by her opponents.','連對手都尊重隊長的正直。'],

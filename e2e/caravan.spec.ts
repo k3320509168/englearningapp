@@ -65,6 +65,14 @@ for (const [width, height] of [[1366, 768], [1920, 1080], [375, 812]]) {
     await expect(page.locator('.caravan-complete')).toContainText('文字輔助練習');
     await noOverflow();
     await page.screenshot({ path: `${screenshotDir}/caravan-${width}x${height}-complete.png`, animations: 'disabled' });
+    await page.getByText('用自己的話回應隊長（選練）', { exact: true }).click();
+    const writing = page.getByRole('textbox', { name: '英文回應' });
+    await expect(page.getByRole('button', { name: '對照寫作要點' })).toBeDisabled();
+    await writing.fill('We should use the forest road because the bridge limit is 2.5 tonnes.');
+    await page.getByRole('button', { name: '對照寫作要點' }).click();
+    await expect(page.getByRole('region', { name: '寫作自我檢查' })).toContainText('延誤');
+    expect(JSON.stringify(await save())).not.toContain('We should use the forest road');
+    await noOverflow();
     const completed = await save();
     expect(completed).toMatchObject({ gold: 1234, tickets: 7, weaponTickets: 3, unlockedIndex: 3 });
     expect(completed.storySeen).toContain('scenario:caravan:v1:done:respond');

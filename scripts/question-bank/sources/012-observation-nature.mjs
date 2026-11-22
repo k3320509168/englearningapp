@@ -25,7 +25,7 @@ listening:[
 [2,'Please record what you actually see, and put any guesses in a separate column.','請記錄實際所見，把推測放另一欄。|請刪掉全部觀察只留下猜測。|只要猜測合理就當作親眼所見。|所有欄位都必須填同一句話。','要求區分觀察與推測，不是完全禁止推測。'],
 [2,'We are unlikely to see much from here unless the fog clears.','除非霧散，否則從這裡大概看不到太多。|即使霧很濃也確定能看清一切。|霧散後仍已確定不能看到任何東西。|說話者要求大家立即停止觀察。','unless 提出能見度改善的必要條件，unlikely 留機率。'],
 [2,'That sound could be a bird, but I would rather check than put a name to it yet.','那可能是鳥聲，但我想確認後再辨認名稱。|說話者已確定是哪一種鳥。|只要聽到聲音就不必檢查。|說話者拒絕記錄任何聲音。','could 表可能；暫緩定名而非否認聲音存在。'],
-[3,'The visitor centre is nearby as the crow flies, but the path follows the river, so allow more time than the map suggests.','遊客中心直線距離近，但步道沿河，應預留比地圖觀感更多的時間。|步道與直線距離完全相同。|中心只准烏鴉進入而不接待人。|說話者建議忽略步道直接涉水。','as the crow flies 是直線距離，不等於可走路程。'],
+[3,'The visitor centre is nearby as the crow flies, but the path follows the river, so allow more time than the map suggests.','中心直線距離近，但沿河步道較長，宜多留時間。|步道雖沿著河走，但實際路程比地圖上的直線更短。|中心距離近，地圖所示的步行時間也足以應付。|應預留時間，因為中心離河邊比原本想像的還遠。','as the crow flies 是直線距離，不等於可走路程。'],
 [3,'Seeing fewer birds today does not necessarily mean there are fewer in the area; they may simply be harder to spot.','今天看見較少鳥，不一定代表區內鳥較少，也可能比較難發現。|今天的觀察已證明鳥數必然下降。|鳥只要存在就一定會被看見。|說話者確定區內的鳥已全部離開。','區分可偵測性與實際數量，may 提供替代可能。'],
 [3,'The guide described the walk as gentle, but that was before she knew how much of the path had been washed away.','導遊先說路程輕鬆，當時還不知道步道有多少被沖毀。|導遊是在充分了解損壞後保證輕鬆。|步道損壞已被確認完全不影響路程。|導遊只是在形容說話聲音柔和。','before she knew 限定最初評估的資訊狀態。']
 ],

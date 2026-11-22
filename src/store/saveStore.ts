@@ -100,6 +100,7 @@ export interface PlacementRecord {
   verifiedAt?: number;      // 通過區域試煉時間戳
   lastReviewAt?: number;    // 上次回顧時間戳
   reviewPassed?: boolean;   // 7天回顧是否通過
+  placementQuestionKeys?: string[]; // 初測分配與已完成複測的題目身分
   reviewWeak?: string[];    // 回顧未通過時的弱項
 }
 
@@ -227,7 +228,7 @@ interface SaveActions {
   finishPrologue: () => void;
   setPlacement: (rec: PlacementRecord) => void;
   verifyPlacement: (regionIdx: number, speakingVerified?: boolean) => void;
-  recordPlacementReview: (passed: boolean, weak: string[]) => void;
+  recordPlacementReview: (passed: boolean, weak: string[], questionKeys?: string[]) => void;
   addGold: (amount: number) => void;
   buyUpgrade: (id: UpgradeId) => boolean;
   buyItem: (id: ItemId) => boolean;
@@ -483,6 +484,15 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
   Object.assign(migrated, conform(initialSave, migrated));
   if (migrated.daily !== null && !(isPlainObject(migrated.daily) && Array.isArray(migrated.daily.tasks))) migrated.daily = null;
   if (migrated.placement !== null && !(isPlainObject(migrated.placement) && Number.isFinite(migrated.placement.region))) migrated.placement = null;
+  if (migrated.placement?.placementQuestionKeys !== undefined) {
+    const keys = migrated.placement.placementQuestionKeys;
+    migrated.placement = {
+      ...migrated.placement,
+      placementQuestionKeys: Array.isArray(keys)
+        ? [...new Set(keys.filter(key => typeof key === 'string' && key.length > 0 && key.length <= 4096))].slice(-256)
+        : undefined,
+    };
+  }
   if (migrated.weekly !== null && !(isPlainObject(migrated.weekly) && Array.isArray(migrated.weekly.tasks))) migrated.weekly = null;
   // 數量類的紀錄：去掉不是數字的項目，負數改成 0；等級至少 1
   const counts = (rec: Record<string, number>, min = 0) => Object.fromEntries(Object.entries(rec)
@@ -799,7 +809,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
               'accepted:placement': (s.xpLedger['accepted:placement'] ?? 0) + grant,
             } };
         }),
-        recordPlacementReview: (passed: boolean, weak: string[]) => set(s => {
+        recordPlacementReview: (passed: boolean, weak: string[], questionKeys?: string[]) => set(s => {
           if (!s.placement) return {};
           return {
             placement: {
@@ -807,6 +817,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
               lastReviewAt: Date.now(),
               reviewPassed: passed,
               reviewWeak: weak,
+              placementQuestionKeys: [...new Set([...(s.placement.placementQuestionKeys ?? []), ...(questionKeys ?? [])])].slice(-256),
             },
           };
         }),

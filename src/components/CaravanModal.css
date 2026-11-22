@@ -19,3 +19,17 @@
 .caravan-feedback { color: #ffe18f; }
 .caravan-complete { display: grid; gap: 16px; }
 @media (max-width: 480px) { .caravan-actions .btn { flex: 1 1 100%; } .caravan-cards { padding: 8px; } .caravan-cards label { padding: 10px; } }
+
+.caravan-draft { display: grid; gap: 6px; margin: 12px 0; }
+.caravan-draft textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  padding: 10px;
+  font: inherit;
+  color: #fff;
+  background: #17182e;
+  border: 1px solid #7374a0;
+  border-radius: 6px;
+}
+.caravan-reference .caravan-support { margin-top: 12px; }

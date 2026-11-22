@@ -271,12 +271,12 @@
       "knowledgeType": "discourse",
       "desc": "【語意】The proposal is workable in principle, though several practical obstacles remain. Which summary is most accurate?",
       "options": [
-        "A. The basic idea could work, but implementation is not yet straightforward.",
+        "A. The obstacles have already been removed.",
         "B. The proposal is fully ready to implement without changes.",
         "C. The basic idea is impossible regardless of practical details.",
-        "D. The obstacles have already been removed."
+        "D. The basic idea could work, but implementation is not yet straightforward."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "in principle 肯定原則可行，though 保留實務障礙；不能推論已準備完成或完全不可能。"
     },
     {
@@ -850,12 +850,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "contingent on",
       "options": [
-        "A. 取決於某項條件",
+        "A. 與某項條件毫不相關",
         "B. 完全不受條件影響",
         "C. 發生在另一件事之前",
-        "D. 與某項條件毫不相關"
+        "D. 取決於某項條件"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "contingent on 表依某條件而定；不是時間先後或無條件。"
     },
     {
@@ -882,12 +882,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The service claims to be free, but some essential features are only available through a paid subscription.",
       "options": [
-        "A. 服務標榜免費，但部分必要功能須付費訂閱才能用。",
+        "A. 只要下載 app 就已付清終身訂閱費。",
         "B. 所有功能都可以免費使用，沒有任何限制。",
-        "C. 只要下載 app 就已付清終身訂閱費。",
+        "C. 服務標榜免費，但部分必要功能須付費訂閱才能用。",
         "D. 服務只接受紙本申請，不提供數位功能。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "claims to be free 與 paid subscription 呈現免費宣傳的限制。"
     },
     {
@@ -931,11 +931,11 @@
       "speak": "An improvement in average performance does not necessarily mean that every user will notice a difference.",
       "options": [
         "A. 只要有人沒察覺差異，平均數就一定是錯的。",
-        "B. 平均表現提升不代表每位使用者都會察覺差異。",
-        "C. 每位使用者的表現都已被證明完全相同。",
+        "B. 每位使用者的表現都已被證明完全相同。",
+        "C. 平均表現提升不代表每位使用者都會察覺差異。",
         "D. 平均表現提升必定代表任何人都受益。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "not necessarily 阻止從平均推到每一個個體的過度概括。"
     },
     {
@@ -1239,12 +1239,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "resource allocation",
       "options": [
-        "A. 把可用資源分配到不同用途",
+        "A. 估算資源最初被發現的年份",
         "B. 把使用過的資源全部丟棄",
         "C. 將所有資源保留而禁止使用",
-        "D. 估算資源最初被發現的年份"
+        "D. 把可用資源分配到不同用途"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "allocation 是分配，這裡指資源如何安排用途。"
     },
     {
@@ -1288,11 +1288,11 @@
       "speak": "The figures include the energy used in production, not just the electricity consumed while the device is running.",
       "options": [
         "A. 裝置停止運轉時仍會自動生產電力。",
-        "B. 數字納入製造耗能，不只計算運作時用電。",
+        "B. 製造過程已被證明完全不耗能。",
         "C. 數字只計算插電後的耗能。",
-        "D. 製造過程已被證明完全不耗能。"
+        "D. 數字納入製造耗能，不只計算運作時用電。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "not just 擴大計算邊界，production 和 running 是不同階段。"
     },
     {
@@ -1427,11 +1427,11 @@
       "desc": "【短文】A city offers free bike hire for journeys under thirty minutes. Longer journeys incur a fee, even when the bike is returned to the original station. What determines whether a fee applies?",
       "options": [
         "A. Whether the rider uses the same bicycle twice.",
-        "B. The duration of the journey.",
+        "B. The number of stations passed along the route.",
         "C. Whether the bicycle returns to the same station.",
-        "D. The number of stations passed along the route."
+        "D. The duration of the journey."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "題目只以騎乘時間區分收費，回原站也不能免除超時費。"
     },
     {
@@ -1787,11 +1787,11 @@
       "desc": "【時態語意】She began lessons last spring and still attends them. Which form links that start to an activity continuing now? She ___ the language for almost a year.",
       "options": [
         "A. will have been studying",
-        "B. has been studying",
+        "B. was studying",
         "C. had been studying",
-        "D. was studying"
+        "D. has been studying"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "指定從去年春天延續到現在仍進行中的學習，用現在完成進行式 has been studying；其餘把觀察點移到過去或未來。"
     },
     {
@@ -3248,12 +3248,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "subject to confirmation",
       "options": [
-        "A. 尚待確認才算確定",
+        "A. 必須由旅客取消才能成立",
         "B. 已完成最終確認而不會改變",
         "C. 只要提出申請就自動批准",
-        "D. 必須由旅客取消才能成立"
+        "D. 尚待確認才算確定"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "subject to confirmation 表仍需確認，並非已保證。"
     },
     {
@@ -3733,12 +3733,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "I would rather lose an hour checking the bridge than save an hour and risk everyone’s lives.",
       "options": [
-        "A. 我寧願花一小時檢查橋，也不願省時間卻冒全隊生命危險。",
+        "A. 說話者認為檢查能保證永遠不會有意外。",
         "B. 我建議不檢查以最快速度通過。",
         "C. 橋已被確定不能通行，所以沒有選擇。",
-        "D. 說話者認為檢查能保證永遠不會有意外。"
+        "D. 我寧願花一小時檢查橋，也不願省時間卻冒全隊生命危險。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "明確比較時間成本與風險，不保證檢查消除所有風險。"
     },
     {
@@ -3765,12 +3765,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The promise sounds generous until we notice that the ruler is offering to restore a freedom he had no right to remove.",
       "options": [
-        "A. 承諾初聽大方，但其實只是恢復統治者本無權剝奪的自由。",
+        "A. 說話者只是在稱讚演說聲音很大。",
         "B. 統治者原本擁有永久剝奪自由的無限權力。",
         "C. 承諾已增加每個人原本沒有的全部特權。",
-        "D. 說話者只是在稱讚演說聲音很大。"
+        "D. 承諾初聽大方，但其實只是恢復統治者本無權剝奪的自由。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "恢復既有權利與額外施惠不同，善意姿態受正當性質疑。"
     },
     {
@@ -4578,10 +4578,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The visitor centre is nearby as the crow flies, but the path follows the river, so allow more time than the map suggests.",
       "options": [
-        "A. 中心只准烏鴉進入而不接待人。",
-        "B. 說話者建議忽略步道直接涉水。",
-        "C. 遊客中心直線距離近，但步道沿河，應預留比地圖觀感更多的時間。",
-        "D. 步道與直線距離完全相同。"
+        "A. 中心距離近，地圖所示的步行時間也足以應付。",
+        "B. 應預留時間，因為中心離河邊比原本想像的還遠。",
+        "C. 中心直線距離近，但沿河步道較長，宜多留時間。",
+        "D. 步道雖沿著河走，但實際路程比地圖上的直線更短。"
       ],
       "ans": "C",
       "explain": "as the crow flies 是直線距離，不等於可走路程。"
@@ -4700,11 +4700,11 @@
       "desc": "【短文】A volunteer marks a flower on a map but does not pick it. Later, another visitor assumes that the absence of a specimen means no record exists. What has the visitor overlooked?",
       "options": [
         "A. A record counts only if the plant has been moved.",
-        "B. An observation can be documented without removing the plant.",
+        "B. Every map must include a pressed flower.",
         "C. The volunteer has explicitly denied seeing the flower.",
-        "D. Every map must include a pressed flower."
+        "D. An observation can be documented without removing the plant."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "地圖標註也是紀錄，未採集不等於未記錄。"
     },
     {
@@ -5030,11 +5030,11 @@
       "desc": "【條件句】You are taking the racket now and will hand it back later. You can borrow it as long as you ___ it before closing time.",
       "options": [
         "A. have been returned",
-        "B. return",
+        "B. were returning",
         "C. had returned",
-        "D. were returning"
+        "D. return"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "這是目前借用、之後歸還的真實條件；as long as 後用現在簡單式 return 表將來履行。過去形式不符時間，被動也不符由借用者歸還物品的關係。"
     },
     {
@@ -5423,11 +5423,11 @@
       "desc": "【文法】The presenter said that the interview ___ the previous evening.",
       "options": [
         "A. is being recorded",
-        "B. had been recorded",
+        "B. would be recorded",
         "C. has been recorded",
-        "D. would be recorded"
+        "D. had been recorded"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "said 與 the previous evening 建立過去轉述及更早完成的錄製；訪談是被錄製的對象，用 had been recorded。其餘形式改成現在或轉述中的將來，未保留同一時間關係。"
     },
     {
@@ -5527,12 +5527,12 @@
       "knowledgeType": "discourse",
       "desc": "【語用】I can see why you read it that way, though I am not sure that is what she intended. What is the speaker doing?",
       "options": [
-        "A. Acknowledging a reading while questioning the intended meaning.",
+        "A. Asking the writer to use exactly the same words in a new message.",
         "B. Accepting that the writer deliberately chose to offend the reader.",
         "C. Denying that the reader could reasonably interpret the words that way.",
-        "D. Asking the writer to use exactly the same words in a new message."
+        "D. Acknowledging a reading while questioning the intended meaning."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "理解讀者解讀有由，不代表確定作者意圖如此。"
     },
     {
@@ -5887,12 +5887,12 @@
       "knowledgeType": "discourse",
       "desc": "【短文】A notice asks residents not to leave bicycles in the hallway, but provides a rack in the courtyard. A resident says bicycles have been banned from the building’s grounds. What is overstated?",
       "options": [
-        "A. A location-specific restriction has become a general ban.",
+        "A. A temporary closure has become a permanent repair.",
         "B. An optional storage suggestion has become a required purchase.",
         "C. A rule about bicycles has become a rule about cars.",
-        "D. A temporary closure has become a permanent repair."
+        "D. A location-specific restriction has become a general ban."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "走廊禁放不等於全院禁止，另有停車架。"
     },
     {
@@ -5933,11 +5933,11 @@
       "desc": "【語用】I do not mind the music, just not at a volume that fills every room. What is being challenged?",
       "options": [
         "A. The use of speakers rather than headphones specifically.",
-        "B. Its loudness rather than its presence.",
+        "B. The time it starts rather than the room it fills.",
         "C. Its musical style rather than its loudness.",
-        "D. The time it starts rather than the room it fills."
+        "D. Its loudness rather than its presence."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "不反對音樂本身，只反對音量影響全部房間；未限定器材。"
     },
     {
@@ -6323,11 +6323,11 @@
       "desc": "【短文】A volunteer offers to distribute leaflets, not design them. The organiser later criticises her for failing to produce a layout. What should be checked?",
       "options": [
         "A. Whether distribution must always follow the same route.",
-        "B. Whether the expected task matches the task she accepted.",
+        "B. Whether more than one person may attend the event.",
         "C. Whether leaflets are usually printed in colour.",
-        "D. Whether more than one person may attend the event."
+        "D. Whether the expected task matches the task she accepted."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "分發與設計是不同任務，需核對承諾範圍。"
     },
     {
@@ -6622,12 +6622,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The label says unknown maker, which is more honest than attaching the name of someone whose work merely looks similar.",
       "options": [
-        "A. 標籤寫作者不詳，比只因相似就冠上某人姓名更誠實。",
+        "A. 說話者建議選最有名的相似作者來吸引遊客。",
         "B. 相似外觀已足以確認作者，因此不詳標籤不誠實。",
         "C. 標籤承認作者不詳，表示物件沒有任何價值。",
-        "D. 說話者建議選最有名的相似作者來吸引遊客。"
+        "D. 標籤寫作者不詳，比只因相似就冠上某人姓名更誠實。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "相似不足以確定歸屬，承認未知可更準確。"
     },
     {
@@ -6637,12 +6637,12 @@
       "knowledgeType": "discourse",
       "desc": "【文法】The photograph shows the house ___ my grandparents used to live.",
       "options": [
-        "A. where",
+        "A. what",
         "B. which in",
         "C. whose",
-        "D. what"
+        "D. where"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "where 引出居住地點；若用 which 應是 in which 或 which ... in。"
     },
     {
@@ -7163,11 +7163,11 @@
       "desc": "【語意】The narrator says, The village was smaller than I remembered, or perhaps I had finally grown. What is left open?",
       "options": [
         "A. Whether growing older prevents people from recognising places.",
-        "B. Whether the difference lies in the place or the observer’s perspective.",
+        "B. Whether the village has become too small for any residents.",
         "C. Whether the narrator had ever visited the village before.",
-        "D. Whether the village has become too small for any residents."
+        "D. Whether the difference lies in the place or the observer’s perspective."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "or perhaps 提供視角成長的替代解釋，不否認記憶曾有地方。"
     },
     {
@@ -7336,12 +7336,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "a trial run",
       "options": [
-        "A. 正式執行前的試做",
+        "A. 完成後才撰寫的檢討",
         "B. 為比賽名次進行的衝刺",
         "C. 已被判定失敗的唯一嘗試",
-        "D. 完成後才撰寫的檢討"
+        "D. 正式執行前的試做"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "trial run 測試流程，不必是跑步。"
     },
     {
@@ -7943,11 +7943,11 @@
       "desc": "【短文】The booking page offers fifteen-minute arrival slots, but says visitors may stay for an hour after entering. A visitor thinks the visit lasts only fifteen minutes. What has been mistaken?",
       "options": [
         "A. The closing hour for a fixed departure slot.",
-        "B. The arrival window for the permitted length of stay.",
+        "B. The time spent inside for the waiting time outside.",
         "C. The admission price for the time of arrival.",
-        "D. The time spent inside for the waiting time outside."
+        "D. The arrival window for the permitted length of stay."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "到場時段與可停留時間為兩種時間限制。"
     },
     {
@@ -8131,11 +8131,11 @@
       "speak": "steal the show",
       "options": [
         "A. 偷偷複製節目所有台詞",
-        "B. 以精彩表現搶走全場注意",
+        "B. 在開演前取消整齣戲",
         "C. 未經允許把道具帶走",
-        "D. 在開演前取消整齣戲"
+        "D. 以精彩表現搶走全場注意"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "steal the show 是成為最受矚目者的比喻。"
     },
     {
@@ -8242,12 +8242,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The ending did not surprise me, but the way the actor reached it made it feel new.",
       "options": [
-        "A. 結局不意外，但演員演到結局的方式帶來新鮮感。",
+        "A. 我認為熟悉的結局不可能帶來任何新感受。",
         "B. 結局被完全改寫，所以我無法認出原故事。",
         "C. 演員只因忘詞而使結局看來不同。",
-        "D. 我認為熟悉的結局不可能帶來任何新感受。"
+        "D. 結局不意外，但演員演到結局的方式帶來新鮮感。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "內容熟悉與詮釋新意可並存。"
     },
     {
@@ -8631,12 +8631,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "I appreciate the reminder, though I would have preferred it before I had made the arrangements rather than afterwards.",
       "options": [
-        "A. 謝謝提醒，但希望在我安排前而非之後告知。",
+        "A. 說話者認為提醒只在事情全部結束後才有用。",
         "B. 提醒來得太早，所以我還無法開始安排。",
         "C. 我已因這次提醒取消所有安排，也不感謝對方。",
-        "D. 說話者認為提醒只在事情全部結束後才有用。"
+        "D. 謝謝提醒，但希望在我安排前而非之後告知。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "肯定提醒功能但批評時機已晚。"
     },
     {
@@ -8663,11 +8663,11 @@
       "desc": "【文法】Would you mind ___ me know if the date changes?",
       "options": [
         "A. having let to",
-        "B. letting",
+        "B. let",
         "C. to let",
-        "D. let"
+        "D. letting"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "mind 後用動名詞 letting，let me know 為告知。"
     },
     {
@@ -8988,12 +8988,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The light kept changing, so the same patch of hillside looked different every time I glanced back.",
       "options": [
-        "A. 光一直變，每次回看同片山坡都不同。",
+        "A. 說話者只看山坡一次，所以無法比較。",
         "B. 山坡每次回看都已移到另一個位置。",
         "C. 光線從未改變，只有山坡顏色真的變了。",
-        "D. 說話者只看山坡一次，所以無法比較。"
+        "D. 光一直變，每次回看同片山坡都不同。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "光照改變表觀，不是地理位置移動。"
     },
     {
@@ -9037,11 +9037,11 @@
       "speak": "The place was peaceful without feeling abandoned; someone had swept the step and left a mug beside the door.",
       "options": [
         "A. 說話者認為寧靜必定表示從未有人居住。",
-        "B. 地方寧靜卻不像廢棄，掃過階梯和門邊杯子有生活痕跡。",
+        "B. 階梯與杯子已被確認只是遊客中心的佈景。",
         "C. 地方完全廢棄，因門邊杯子證明多年沒有人。",
-        "D. 階梯與杯子已被確認只是遊客中心的佈景。"
+        "D. 地方寧靜卻不像廢棄，掃過階梯和門邊杯子有生活痕跡。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "微小照料痕跡建立有人氣的平和印象。"
     },
     {
@@ -9097,12 +9097,12 @@
       "knowledgeType": "discourse",
       "desc": "【空間】The path ran along the river, with the hill to our left and the water to our right. What was immediately to the walkers’ right?",
       "options": [
-        "A. The river.",
+        "A. The path behind them.",
         "B. The top of the hill.",
         "C. The opposite side of the hill.",
-        "D. The path behind them."
+        "D. The river."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "water 與river同指，明示位於右側。"
     },
     {
@@ -9143,11 +9143,11 @@
       "desc": "【文法】The further we walked from the road, ___ we heard.",
       "options": [
         "A. so few traffic",
-        "B. the less traffic",
+        "B. the least of traffic",
         "C. less than traffic",
-        "D. the least of traffic"
+        "D. the less traffic"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "the further ..., the less ...；traffic 不可數。"
     },
     {
@@ -9173,11 +9173,11 @@
       "desc": "【氣氛】The road was familiar, but in the fading light every turning seemed to hesitate before revealing itself. What effect does the description create?",
       "options": [
         "A. Every turning is clearly marked by newly installed signs.",
-        "B. A known place feels uncertain as visibility decreases.",
+        "B. The narrator has forgotten that the walk took place in daylight.",
         "C. The road is described as physically changing its route.",
-        "D. The narrator has forgotten that the walk took place in daylight."
+        "D. A known place feels uncertain as visibility decreases."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "路口擬人化，暗光讓熟悉路也顯猶疑。"
     },
     {
@@ -9517,12 +9517,12 @@
       "knowledgeType": "discourse",
       "desc": "【範圍】A sign says the offer applies to marked items only. Which condition matters?",
       "options": [
-        "A. The item must carry the relevant mark.",
+        "A. The item must have the highest price in its category.",
         "B. The customer must buy every item on the shelf.",
         "C. The shop must close before the purchase is made.",
-        "D. The item must have the highest price in its category."
+        "D. The item must carry the relevant mark."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "only限markeditems，題內未設價格高低門檻。"
     },
     {
@@ -9751,11 +9751,11 @@
       "speak": "jump to conclusions",
       "options": [
         "A. 以跳躍動作參加比賽",
-        "B. 未充分考慮就急下結論",
+        "B. 因證據完整而結束查核",
         "C. 將結論移到文章第一段",
-        "D. 因證據完整而結束查核"
+        "D. 未充分考慮就急下結論"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "jump to conclusions 帶過早判斷的負評。"
     },
     {
@@ -10251,12 +10251,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "We were cooperating until we realised the instructions said share information, not share the final score.",
       "options": [
-        "A. 原本合作，後來發現規則是分享資訊不是共享最終分數。",
+        "A. 兩人已證實合作無論何時都違反規則。",
         "B. 規則已要求共享分數，資訊則禁止交流。",
-        "C. 兩人已證實合作無論何時都違反規則。",
+        "C. 原本合作，後來發現規則是分享資訊不是共享最終分數。",
         "D. 說話者明說資訊與分數在遊戲中定義相同。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "可分享的對象範圍不同，不必合作本身非法。"
     },
     {
@@ -10982,11 +10982,11 @@
       "speak": "a muffled sound",
       "options": [
         "A. 刻意模仿他人的語氣",
-        "B. 被遮阻而低沉不清的聲音",
-        "C. 逐字清晰傳達的訊息",
+        "B. 逐字清晰傳達的訊息",
+        "C. 被遮阻而低沉不清的聲音",
         "D. 突然升高的尖銳聲響"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "muffled表示聲音因遮阻而不清晰。"
     },
     {
@@ -10997,12 +10997,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The music is fine; it is the conversation at the next table that I cannot ignore.",
       "options": [
-        "A. 困擾的是鄰桌談話，不是音樂。",
+        "A. 說話者認為餐廳需要更多音樂。",
         "B. 音樂太大，蓋住鄰桌所有談話。",
         "C. 說話者想加入鄰桌的討論。",
-        "D. 說話者認為餐廳需要更多音樂。"
+        "D. 困擾的是鄰桌談話，不是音樂。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "it is…that強調真正干擾來源為鄰桌談話。"
     },
     {
@@ -11123,11 +11123,11 @@
       "desc": "【字彙】If a sound fades away, it ___.",
       "options": [
         "A. moves closer to the listener",
-        "B. gradually becomes quieter",
-        "C. suddenly changes into speech",
+        "B. suddenly changes into speech",
+        "C. gradually becomes quieter",
         "D. continues at the same volume"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "fade away指逐漸消弱，不必涉及聲源移動。"
     },
     {
@@ -11543,11 +11543,11 @@
       "desc": "【指涉】We could use the hall or meet outside. The latter depends on the weather. Which option depends on the weather?",
       "options": [
         "A. Choosing an appointment time.",
-        "B. Meeting outside.",
+        "B. Cancelling both options.",
         "C. Using the hall.",
-        "D. Cancelling both options."
+        "D. Meeting outside."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "the latter指剛列舉的後者meet outside。"
     },
     {
@@ -11839,12 +11839,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "I would keep the original buttons. They are part of what makes the coat recognisable in the old photographs.",
       "options": [
-        "A. 想保留原鈕扣，因是舊照片中辨識外套的特徵。",
+        "A. 鈕扣已全部遺失，只能根據照片重買。",
         "B. 想把鈕扣全換掉，讓外套更像照片原貌。",
         "C. 舊照片看不到外套，所以沒有可保留的特徵。",
-        "D. 鈕扣已全部遺失，只能根據照片重買。"
+        "D. 想保留原鈕扣，因是舊照片中辨識外套的特徵。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "keep與recognisable指出保留辨識特徵，未說鈕扣遺失。"
     },
     {
@@ -11903,11 +11903,11 @@
       "desc": "【語意】The jacket fits across the shoulders, but the sleeves need shortening. What is the problem?",
       "options": [
         "A. The fabric has lost its colour.",
-        "B. The sleeves are too long.",
+        "B. The jacket cannot be fastened.",
         "C. The shoulders are too narrow.",
-        "D. The jacket cannot be fastened."
+        "D. The sleeves are too long."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "need shortening表示袖長過長，肩部尺寸合適已明說。"
     },
     {
@@ -12277,11 +12277,11 @@
       "speak": "The map is not wrong about the distance. It just does not tell you that most of it is uphill.",
       "options": [
         "A. 地圖的坡度標對了，距離卻仍待測量。",
-        "B. 距離本身沒錯，只是沒標大部分路段都上坡。",
+        "B. 地圖只畫上坡路段，所以漏掉其他距離。",
         "C. 距離標示有誤，因上坡會讓實際路程增加。",
-        "D. 地圖只畫上坡路段，所以漏掉其他距離。"
+        "D. 距離本身沒錯，只是沒標大部分路段都上坡。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "not wrong about distance保留距離資訊正確，批評遺漏坡度。"
     },
     {
@@ -12337,12 +12337,12 @@
       "knowledgeType": "discourse",
       "desc": "【文法】By the time we reached the junction, the guide ___ the route twice already.",
       "options": [
-        "A. had checked",
+        "A. is checking",
         "B. has checked",
         "C. will have checked",
-        "D. is checking"
+        "D. had checked"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "reached為過去參照點，already與twice表示此前已完成兩次，用過去完成式。"
     },
     {
@@ -12610,11 +12610,11 @@
       "desc": "【字彙】To ___ the financial burden on small businesses, the government introduced a new subsidy program.",
       "options": [
         "A. aggravate",
-        "B. alleviate",
+        "B. alternate",
         "C. allocate",
-        "D. alternate"
+        "D. alleviate"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "alleviate 意為「減輕、緩和」。政府推動補助計畫是為了減輕小型企業的財務負擔。"
     },
     {
@@ -12876,11 +12876,11 @@
       "desc": "【推測語氣】You walked right past me without saying hello; you ___ daydreaming.",
       "options": [
         "A. might be",
-        "B. must have been",
+        "B. ought to be",
         "C. should have been",
-        "D. ought to be"
+        "D. must have been"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "你走過去都沒打招呼，所以過去那個當下你「一定是在」做白日夢。must have been + V-ing。"
     },
     {
@@ -13016,11 +13016,11 @@
       "desc": "【推測語氣】You left your umbrella at the office; you ___ drenched in that sudden downpour.",
       "options": [
         "A. must get",
-        "B. must have gotten",
+        "B. can get",
         "C. should have gotten",
-        "D. can get"
+        "D. must have gotten"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "對過去已經發生的事情作推測，「你當時一定淋濕了」，用 must have gotten。"
     },
     {
@@ -13030,11 +13030,11 @@
       "desc": "【字彙】The company's primary ___ is to expand its operations into the European market by next year.",
       "options": [
         "A. obstacle",
-        "B. objective",
+        "B. objection",
         "C. obligation",
-        "D. objection"
+        "D. objective"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "objective 意為「目標」。公司的主要目標是拓展歐洲市場。"
     },
     {
@@ -13340,12 +13340,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "We must have taken a more pragmatic approach to solve this.",
       "options": [
-        "A. 我們當時一定是採取了更務實的方法來解決這個問題。",
+        "A. 這個方法完全無法解決我們的問題。",
         "B. 我們當時採取的方法太過理想化了。",
         "C. 我們必須放棄所有務實的解決方案。",
-        "D. 這個方法完全無法解決我們的問題。"
+        "D. 我們當時一定是採取了更務實的方法來解決這個問題。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "We must have taken a more pragmatic approach to solve this. (我們當時一定是採取了更務實的方法來解決這個問題。) pragmatic 意為「務實的」；must have taken 是對過去事實的肯定推斷。"
     },
     {
@@ -13416,11 +13416,11 @@
       "speak": "We have been complying with all the new industry regulations.",
       "options": [
         "A. They are always breaking the law intentionally.",
-        "B. Good, that keeps us out of legal trouble.",
-        "C. Regulations are incredibly annoying to read.",
+        "B. Regulations are incredibly annoying to read.",
+        "C. Good, that keeps us out of legal trouble.",
         "D. Complaining won't help us finish the project."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "We have been complying with all the new industry regulations. (我們一直遵守著所有新的行業法規。) comply (with) 指「遵守」；回應「很好，這能讓我們免於法律麻煩」最合適。"
     },
     {
@@ -13640,12 +13640,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "We have been searching for a commercially viable alternative to plastic packaging.",
       "options": [
-        "A. Have you found any promising biodegradable materials yet?",
+        "A. We stopped searching for alternatives late last year.",
         "B. Plastic is absolutely the only option available to us.",
         "C. The new television commercial was extremely successful.",
-        "D. We stopped searching for alternatives late last year."
+        "D. Have you found any promising biodegradable materials yet?"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "We have been searching for a commercially viable alternative to plastic packaging. (我們一直在尋找商業上可行的塑膠包裝替代方案。) viable 指「可實行的、能存活的」；回應「你們有找到任何有潛力的生物可分解材料嗎？」最對題。"
     },
     {
@@ -14355,11 +14355,11 @@
       "speak": "The main contractor must have abandoned the construction site.",
       "options": [
         "A. 主承包商必須馬上抵達建築工地。",
-        "B. 主承包商一定已經放棄了這個建築工地。",
-        "C. 主承包商昨天才剛開始在這個工地工作。",
+        "B. 主承包商昨天才剛開始在這個工地工作。",
+        "C. 主承包商一定已經放棄了這個建築工地。",
         "D. 主承包商正在尋找新的建築工地。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "原句：The main contractor must have abandoned the construction site. 意思：主承包商一定已經放棄了這個建築工地。"
     },
     {
@@ -14384,12 +14384,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The deficit is projected to be offset by a surge in export sales.",
       "options": [
-        "A. 預計出口銷售的激增將抵銷赤字。",
+        "A. 我們必須減少出口以降低赤字。",
         "B. 赤字預計會導致出口銷售下滑。",
         "C. 出口銷售激增造成了嚴重的赤字。",
-        "D. 我們必須減少出口以降低赤字。"
+        "D. 預計出口銷售的激增將抵銷赤字。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The deficit is projected to be offset by a surge in export sales. 意思：預計出口銷售的激增將抵銷赤字。is projected to be offset 預計被抵銷。"
     },
     {
@@ -14535,11 +14535,11 @@
       "speak": "The CEO must have resigned due to the ongoing financial scandal.",
       "options": [
         "A. 執行長必須為財務醜聞辭職。",
-        "B. 執行長一定是因為持續的財務醜聞而辭職的。",
+        "B. 執行長打算因為財務醜聞而開除員工。",
         "C. 執行長否認與財務醜聞有關。",
-        "D. 執行長打算因為財務醜聞而開除員工。"
+        "D. 執行長一定是因為持續的財務醜聞而辭職的。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "原句：The CEO must have resigned due to the ongoing financial scandal. 意思：執行長一定是因為持續的財務醜聞而辭職的。"
     },
     {
@@ -14549,12 +14549,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "We have been trying to contact the supplier regarding the delayed shipment.",
       "options": [
-        "A. Have they answered any of your calls?",
+        "A. The supplier is very fast.",
         "B. The shipment arrived early.",
         "C. We must have contacted the wrong ship.",
-        "D. The supplier is very fast."
+        "D. Have they answered any of your calls?"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：We have been trying to contact the supplier regarding the delayed shipment.（我們一直試圖聯繫供應商詢問延遲出貨的事。）回應 A「他們有接任何電話嗎？」最合理。"
     },
     {
@@ -14564,12 +14564,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "All outstanding debts are required to be settled before the end of the fiscal year.",
       "options": [
-        "A. 會計年度結束前，所有的未償債務都要求被結清。",
+        "A. 未償債務導致了會計年度的提前結束。",
         "B. 所有的債務在會計年度結束後都會被免除。",
         "C. 我們要求在年底前增加未償債務。",
-        "D. 未償債務導致了會計年度的提前結束。"
+        "D. 會計年度結束前，所有的未償債務都要求被結清。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：All outstanding debts are required to be settled before the end of the fiscal year. 意思：會計年度結束前，所有的未償債務都要求被結清。"
     },
     {
@@ -14670,11 +14670,11 @@
       "speak": "The security footage must have been tampered with before the investigation.",
       "options": [
         "A. 監視器畫面在調查前必須被修改。",
-        "B. 監視器畫面在調查前一定被人動過手腳。",
+        "B. 我們必須在調查前檢查監視器畫面。",
         "C. 監視器畫面沒有任何被動過手腳的痕跡。",
-        "D. 我們必須在調查前檢查監視器畫面。"
+        "D. 監視器畫面在調查前一定被人動過手腳。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "原句：The security footage must have been tampered with before the investigation. 意思：監視器畫面在調查前一定被人動過手腳。tamper with 竄改、動手腳。"
     },
     {
@@ -14895,11 +14895,11 @@
       "desc": "【被動語態】The experimental data is believed ___ by a sudden fluctuation in the laboratory's temperature yesterday.",
       "options": [
         "A. to corrupt",
-        "B. to have been corrupted",
+        "B. has corrupted",
         "C. corrupting",
-        "D. has corrupted"
+        "D. to have been corrupted"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "is believed (現在被認為)，但破壞數據發生在昨天(yesterday)，須用 to have V-en 表過去，且數據是被破壞，故選 to have been corrupted。"
     },
     {
@@ -15119,11 +15119,11 @@
       "desc": "【短文】Notice: The pool area has been undergoing maintenance. It is scheduled to be reopened next Monday. Q: What is the current status of the pool area?",
       "options": [
         "A. It is ready for public use.",
-        "B. It is currently being repaired.",
+        "B. It was opened last Monday.",
         "C. It will be closed permanently.",
-        "D. It was opened last Monday."
+        "D. It is currently being repaired."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "has been undergoing maintenance 表示一直在進行維修，對應 currently being repaired。"
     },
     {
@@ -15811,11 +15811,11 @@
       "speak": "Your connecting flight is anticipated to be delayed by severe turbulence.",
       "options": [
         "A. 你的轉機航班預計會準時起飛。",
-        "B. 你的轉機航班預期會因為嚴重亂流而延誤。",
+        "B. 我們強烈建議你取消有亂流的轉機航班。",
         "C. 亂流導致你的航班必須更改目的地。",
-        "D. 我們強烈建議你取消有亂流的轉機航班。"
+        "D. 你的轉機航班預期會因為嚴重亂流而延誤。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "英文原句：Your connecting flight is anticipated to be delayed by severe turbulence. (你的轉機航班預期會因為嚴重亂流而延誤。) is anticipated to be delayed 為複雜被動語態。"
     },
     {
@@ -15871,11 +15871,11 @@
       "speak": "I have been waiting on hold for an agent for over forty minutes. Can someone assist me?",
       "options": [
         "A. The flight will depart in forty minutes, please hurry.",
-        "B. I sincerely apologize for the wait. Let me pull up your reservation right away.",
-        "C. You must have been waiting at the wrong boarding gate.",
+        "B. You must have been waiting at the wrong boarding gate.",
+        "C. I sincerely apologize for the wait. Let me pull up your reservation right away.",
         "D. The customer service agent has been promoted recently."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "對話情境：乘客抱怨已經在線上等了超過四十分鐘。選項 B「非常抱歉讓您久等，我馬上為您調出預訂資料」為最合適的客服回應。"
     },
     {
@@ -16141,11 +16141,11 @@
       "speak": "His sudden disconnection must have been caused by an insufficient bandwidth issue.",
       "options": [
         "A. 頻寬不足的問題必須立刻被解決。",
-        "B. 他突然斷線一定是因為頻寬不足的問題造成的。",
-        "C. 他的頻寬一直在影響別人的通話品質。",
+        "B. 他的頻寬一直在影響別人的通話品質。",
+        "C. 他突然斷線一定是因為頻寬不足的問題造成的。",
         "D. 頻寬問題一定會導致更多人斷線。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文原句：His sudden disconnection must have been caused by an insufficient bandwidth issue. (他突然斷線一定是因為頻寬不足的問題造成的。) bandwidth 指頻寬。"
     },
     {
@@ -16275,12 +16275,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "We have been brainstorming ways to streamline our overly complex onboarding process.",
       "options": [
-        "A. 我們一直在腦力激盪，試圖簡化過度複雜的新人報到流程。",
+        "A. 我們已經把過於複雜的入職流程全部刪除了。",
         "B. 複雜的入職流程一定是被腦力激盪所影響的。",
         "C. 新人報到流程必須被簡化才能節省成本。",
-        "D. 我們已經把過於複雜的入職流程全部刪除了。"
+        "D. 我們一直在腦力激盪，試圖簡化過度複雜的新人報到流程。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "英文原句：We have been brainstorming ways to streamline our overly complex onboarding process. (我們一直在腦力激盪，試圖簡化過度複雜的新人報到流程。) streamline 有精簡、使有效率之意。"
     },
     {
@@ -16490,11 +16490,11 @@
       "desc": "【推測語氣】The air pollution levels dropped significantly overnight. The factories ___ their operations during the inspection.",
       "options": [
         "A. must halt",
-        "B. must have halted",
+        "B. will have halted",
         "C. should halt",
-        "D. will have halted"
+        "D. must have halted"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "針對過去狀況的肯定推測：「工廠一定是在檢查期間暫停了運作」，用 must have + V-en。"
     },
     {
@@ -16518,11 +16518,11 @@
       "desc": "【對話】A: Why is the construction of the new dam delayed?\nB: The contractors ___ the ecological impact for months, and they finally concluded it would be too destructive.",
       "options": [
         "A. evaluate",
-        "B. have been evaluating",
+        "B. evaluated",
         "C. are evaluating",
-        "D. evaluated"
+        "D. have been evaluating"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "承包商「好幾個月來一直在評估」生態影響，強調動作的持續與累積，用現在完成進行式。"
     },
     {
@@ -16559,12 +16559,12 @@
       "difficulty": 3,
       "desc": "【短文】Environmental News: To ___ the devastating effects of deforestation, the local council has launched a massive tree-planting campaign. This initiative is highly expected to restore the regional climate balance over the next decade. Q: Which word fits the blank best?",
       "options": [
-        "A. mitigate",
+        "A. fluctuate",
         "B. dismantle",
         "C. speculate",
-        "D. fluctuate"
+        "D. mitigate"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "mitigate 意為「減輕、緩和」。為了減輕森林砍伐帶來的破壞性影響，發起了植樹活動。dismantle 為拆除，speculate 為投機/猜測。"
     },
     {
@@ -16602,11 +16602,11 @@
       "desc": "【被動語態】The contaminated food products are required ___ from all supermarket shelves immediately to prevent further illness.",
       "options": [
         "A. to remove",
-        "B. to be removed",
+        "B. removing",
         "C. removed",
-        "D. removing"
+        "D. to be removed"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "產品「被要求從架上移除」，因此 require 後方接被動的不定詞 to be removed。"
     },
     {
@@ -16868,11 +16868,11 @@
       "desc": "【字彙】The severe public ___ forced the board of directors to reconsider their controversial restructuring plan.",
       "options": [
         "A. dividend",
-        "B. backlash",
+        "B. portfolio",
         "C. compliance",
-        "D. portfolio"
+        "D. backlash"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "backlash 意為「強烈反彈、反對」。公眾的強烈反彈迫使董事會重新考慮計畫。compliance 為遵守。"
     },
     {
@@ -17596,12 +17596,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The insurance agent must have quoted the wrong deductible amount earlier.",
       "options": [
-        "A. 保險業務員剛才一定報錯了自負額",
+        "A. 自負額將會在下個月自動扣款",
         "B. 業務員已經成功簽下了這份保單",
         "C. 客戶要求降低每個月的保險費",
-        "D. 自負額將會在下個月自動扣款"
+        "D. 保險業務員剛才一定報錯了自負額"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The insurance agent must have quoted the wrong deductible amount earlier. (保險業務員剛才一定報錯了自負額。)"
     },
     {
@@ -17656,12 +17656,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "We have been reinforcing the foundation since the heavy rain started.",
       "options": [
-        "A. That is good to hear, safety comes first.",
+        "A. The foundation was built last year.",
         "B. The rain must have stopped hours ago.",
         "C. I will order more paint for the walls.",
-        "D. The foundation was built last year."
+        "D. That is good to hear, safety comes first."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：We have been reinforcing the foundation since the heavy rain started. (自從開始下大雨，我們就一直在加固地基。) 選項 A (聽到這個真好，安全第一) 最合理。"
     },
     {
@@ -17821,12 +17821,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The gallery has been hosting contemporary artists to attract a younger crowd.",
       "options": [
-        "A. 畫廊一直在舉辦當代藝術家展覽以吸引年輕族群",
+        "A. 畫廊已經決定不再展出當代藝術品",
         "B. 很多年輕人拒絕參觀這間傳統畫廊",
-        "C. 畫廊已經決定不再展出當代藝術品",
+        "C. 畫廊一直在舉辦當代藝術家展覽以吸引年輕族群",
         "D. 當代藝術家們正在畫廊裡進行抗議"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "原句：The gallery has been hosting contemporary artists to attract a younger crowd. (畫廊一直在舉辦當代藝術家展覽以吸引年輕族群。)"
     },
     {
@@ -17911,12 +17911,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "We have been tracking the runner's lap times throughout the tournament.",
       "options": [
-        "A. His times must have been improving steadily.",
+        "A. I have been running every morning.",
         "B. The tournament was cancelled last week.",
         "C. The runner refused to track his time.",
-        "D. I have been running every morning."
+        "D. His times must have been improving steadily."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：We have been tracking the runner's lap times throughout the tournament. (在整個錦標賽期間，我們一直在追蹤這位跑者的單圈時間。) 選項 A (他的成績一定在穩定進步中) 最合理。"
     },
     {
@@ -18314,11 +18314,11 @@
       "desc": "【推測語氣】Several consumers reported food poisoning; the restaurant ___ cross-contamination in the kitchen yesterday.",
       "options": [
         "A. must allow",
-        "B. must have allowed",
+        "B. has allowed",
         "C. allowed",
-        "D. has allowed"
+        "D. must have allowed"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "句末有 yesterday，推論昨天廚房裡「一定允許/發生了」交叉污染，用 must have + V-p.p.。"
     },
     {
@@ -18579,12 +18579,12 @@
       "difficulty": 3,
       "desc": "【短文】Case Study: The sportswear company has been struggling to connect with Gen Z buyers. Their recent partnership with e-sports athletes is reported to have revitalized their market share. The marketing director must have recognized the immense purchasing power of the gaming community.\nQ: What action helped the company regain its market share?",
       "options": [
-        "A. Sponsoring gamers",
+        "A. Closing stores",
         "B. Lowering prices",
         "C. Changing the logo",
-        "D. Closing stores"
+        "D. Sponsoring gamers"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "短文中提及「partnership with e-sports athletes (與電競選手合作)」，即指贊助遊戲玩家 (Sponsoring gamers)。"
     },
     {
@@ -19545,12 +19545,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The delayed parcels are anticipated to be dispatched by tomorrow morning.",
       "options": [
-        "A. 延誤的包裹預計明天早上發出",
+        "A. 所有包裹都在今晚被退回",
         "B. 包裹明天早上才會抵達轉運站",
         "C. 預期明天早上會取消寄送",
-        "D. 所有包裹都在今晚被退回"
+        "D. 延誤的包裹預計明天早上發出"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "The delayed parcels are anticipated to be dispatched by tomorrow morning. (延誤的包裹預計將於明天早上發出。)"
     },
     {
@@ -19876,11 +19876,11 @@
       "speak": "The sudden policy reversal must have caught the local businesses completely off guard.",
       "options": [
         "A. They have been planning this reversal for years.",
-        "B. Indeed, many shop owners are scrambling to adapt.",
+        "B. Business owners must have guarded the policy.",
         "C. The policy is expected to be ignored.",
-        "D. Business owners must have guarded the policy."
+        "D. Indeed, many shop owners are scrambling to adapt."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "The sudden policy reversal must have caught the local businesses completely off guard. (政策突然的反覆一定讓當地企業措手不及。) 回應 B (確實，許多店主正手忙腳亂地適應) 符合情境。"
     },
     {
@@ -19965,12 +19965,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "The prolonged outage must have been caused by a massive hardware failure.",
       "options": [
-        "A. I heard the primary storage array completely burned out.",
+        "A. It must have been a very quick fix.",
         "B. We have been trying to cause an outage.",
         "C. The hardware is expected to be flawless.",
-        "D. It must have been a very quick fix."
+        "D. I heard the primary storage array completely burned out."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "The prolonged outage must have been caused by a massive hardware failure. (長時間的停機一定是因大規模硬體故障所引起的。) 回應 A (我聽說主儲存陣列完全燒毀了) 最合理。"
     },
     {
@@ -20040,12 +20040,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The seasonal menu is designed to be paired with their extensive wine collection.",
       "options": [
-        "A. 季節菜單的設計是為了搭配他們豐富的葡萄酒收藏",
+        "A. 菜單上的菜色與葡萄酒完全不搭",
         "B. 季節菜單將不提供任何酒精飲料",
         "C. 葡萄酒收藏被賣給了其他餐廳",
-        "D. 菜單上的菜色與葡萄酒完全不搭"
+        "D. 季節菜單的設計是為了搭配他們豐富的葡萄酒收藏"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "The seasonal menu is designed to be paired with their extensive wine collection. (季節性菜單是專為搭配他們豐富的葡萄酒收藏而設計的。)"
     },
     {
@@ -20056,11 +20056,11 @@
       "speak": "The culinary award must have boosted the restaurant's reputation immensely.",
       "options": [
         "A. They have been losing customers steadily.",
-        "B. Definitely, they're fully booked for the next three months.",
-        "C. The award is considered to be fake.",
+        "B. The award is considered to be fake.",
+        "C. Definitely, they're fully booked for the next three months.",
         "D. We must have cooked the reputation."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "The culinary award must have boosted the restaurant's reputation immensely. (這個烹飪獎項一定極大地提升了該餐廳的聲譽。) 回應 B (絕對是，他們接下來三個月的訂位都滿了) 最合理。"
     },
     {
@@ -20240,11 +20240,11 @@
       "desc": "【推測語氣】The fossil was found in a deep marine rock layer. The creature ___ in a shallow sea environment.",
       "options": [
         "A. must not dwell",
-        "B. cannot have dwelled",
+        "B. might dwell",
         "C. should have dwelled",
-        "D. might dwell"
+        "D. cannot have dwelled"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：化石是在「深海」岩層中發現的，因此推測該生物「不可能」棲息在淺海環境。對過去事實的強烈否定推測用 cannot (can't) have + p.p.。B 正確。A 是現在禁止，C 是過去應該做卻沒做，D 是現在或未來的弱推測。"
     },
     {
@@ -20295,12 +20295,12 @@
       "difficulty": 1,
       "desc": "【時態】The research institute ___ funding for its controversial cloning project since the ethical debate intensified.",
       "options": [
-        "A. has been losing",
+        "A. to lose",
         "B. are losing",
         "C. is lost",
-        "D. to lose"
+        "D. has been losing"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "繁體中文解說：since 連接過去時間 (倫理辯論加劇之時)，主要子句應使用現在完成進行式表示動作持續至今。主詞為單數，故選 has been losing。"
     },
     {
@@ -20337,12 +20337,12 @@
       "difficulty": 1,
       "desc": "【推測語氣】The mayor approved the demolition of the park. He ___ the immense historical value of that green space.",
       "options": [
-        "A. must have disregarded",
+        "A. will disregard",
         "B. should disregard",
         "C. can disregard",
-        "D. will disregard"
+        "D. must have disregarded"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "繁體中文解說：市長已經批准了拆除案 (過去式 approved)，所以我們推論他當時「一定忽視了」那片綠地的歷史價值。對過去事實的肯定推測用 must have + p.p.。選項 A 正確。"
     },
     {
@@ -20366,11 +20366,11 @@
       "desc": "【對話】A: Did you read the editorial about the new stadium?\nB: Yes, the construction costs are reported ___ the initial budget by millions of dollars.",
       "options": [
         "A. to exceed",
-        "B. to have exceeded",
+        "B. exceeded",
         "C. exceeding",
-        "D. exceeded"
+        "D. to have exceeded"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：are reported 後接 to V，但因為「超出預算」是已經發生的事實，比「被報導」(現在) 更早發生，因此要用完成不定詞 to have exceeded。主動語態即可，因為花費主動超出預算。"
     },
     {
@@ -20422,11 +20422,11 @@
       "desc": "【時態】Legal experts ___ the implications of this landmark Supreme Court decision since it was announced yesterday morning.",
       "options": [
         "A. are scrutinizing",
-        "B. have been scrutinizing",
+        "B. will scrutinize",
         "C. scrutinize",
-        "D. will scrutinize"
+        "D. have been scrutinizing"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：句子有 since + 過去時間點，表示動作從過去持續到現在，應使用現在完成進行式。選項 B 正確。"
     },
     {
@@ -20562,11 +20562,11 @@
       "desc": "【推測語氣】The lighting in the exhibition hall is perfectly designed. The curator ___ a lot of time arranging the spotlights.",
       "options": [
         "A. must invest",
-        "B. must have invested",
+        "B. might invest",
         "C. should invest",
-        "D. might invest"
+        "D. must have invested"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：展廳的燈光設計很完美 (現在的事實)，推論館長過去「一定投入了」許多時間。對過去的肯定推測用 must have + p.p.。選項 B 正確。"
     },
     {
@@ -20575,12 +20575,12 @@
       "difficulty": 2,
       "desc": "【字彙】The contemporary sculpture exhibition offers a deeply ___ look into the devastating effects of climate change.",
       "options": [
-        "A. evocative",
+        "A. controversial",
         "B. circumstantial",
         "C. preposterous",
-        "D. controversial"
+        "D. evocative"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "繁體中文解說：evocative 意思是「喚起(情感/記憶)的、引起共鳴的」。句意為該展覽對氣候變遷的破壞性影響提供了深刻且發人深省/引起共鳴的視角。B 間接的，C 荒謬的，D 具爭議的 (此處理論上也可，但 evocative 更符合藝術評論的語境與 deeply 搭配)。"
     },
     {
@@ -21233,11 +21233,11 @@
       "speak": "Eligible staff members have been receiving generous maternity benefits.",
       "options": [
         "A. 所有員工都在要求更高的加班費。",
-        "B. 符合資格的員工一直有收到豐厚的產假福利。",
-        "C. 只有少數主管能享有公司的配股分紅。",
+        "B. 只有少數主管能享有公司的配股分紅。",
+        "C. 符合資格的員工一直有收到豐厚的產假福利。",
         "D. 表現優異的團隊獲得了額外的旅遊津貼。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文：Eligible staff members have been receiving generous maternity benefits. 意思：符合資格的員工一直有收到豐厚的產假福利。eligible 為符合資格的，使用現在完成進行式。"
     },
     {
@@ -21277,12 +21277,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "We have been reviewing the annual leave entitlements for all regional branches.",
       "options": [
-        "A. 我們一直在審查所有各地分公司的特休假資格。",
+        "A. 我們已經完成了所有員工的年度績效考核。",
         "B. 總公司已經決定取消所有地區的年度獎金。",
         "C. 各分部的主管正在討論如何減少加班時數。",
-        "D. 我們已經完成了所有員工的年度績效考核。"
+        "D. 我們一直在審查所有各地分公司的特休假資格。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "英文：We have been reviewing the annual leave entitlements for all regional branches. 意思：我們一直在審查所有各地分公司的特休假資格（權益）。"
     },
     {
@@ -21353,11 +21353,11 @@
       "speak": "You must have ignored the dashboard warning lights for a while.",
       "options": [
         "A. 你的車燈在夜晚時常常會閃爍。",
-        "B. 你一定已經忽視儀表板上的警告燈好一陣子了。",
-        "C. 汽車電池的壽命已經快要耗盡了。",
+        "B. 汽車電池的壽命已經快要耗盡了。",
+        "C. 你一定已經忽視儀表板上的警告燈好一陣子了。",
         "D. 你應該盡快去修理破損的擋風玻璃。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文：You must have ignored the dashboard warning lights for a while. 意思：你一定已經忽視儀表板上的警告燈好一陣子了。dashboard 為儀表板。"
     },
     {
@@ -21397,12 +21397,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The previous owner must have neglected the routine maintenance timeline.",
       "options": [
-        "A. 前任車主一定是疏忽了例行的保養時程。",
+        "A. 買家希望能看到過去所有的維修紀錄。",
         "B. 這台二手車的車況維持得非常完美。",
-        "C. 買家希望能看到過去所有的維修紀錄。",
+        "C. 前任車主一定是疏忽了例行的保養時程。",
         "D. 汽車的保固期已經在兩個月前失效了。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "英文：The previous owner must have neglected the routine maintenance timeline. 意思：前任車主一定是疏忽了例行的保養時程。neglect 為疏忽。"
     },
     {
@@ -21637,12 +21637,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "Have you been updating your profile to match the job requirements?",
       "options": [
-        "A. Yes, I am still putting the final touches on it.",
+        "A. She has been working as a teacher for ten years.",
         "B. No, the computer system is down today.",
-        "C. She has been working as a teacher for ten years.",
+        "C. Yes, I am still putting the final touches on it.",
         "D. The interview room is on the second floor."
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "英文：Have you been updating your profile to match the job requirements? 意思：你有一直在更新你的個人檔案以符合工作要求嗎？回應 A「有，我還在做最後的潤飾」最合適。"
     },
     {
@@ -21653,11 +21653,11 @@
       "speak": "The majestic cathedral is currently being restored by local artisans.",
       "options": [
         "A. 當地的藝術家正在舉辦一場盛大的畫展。",
-        "B. 這座宏偉的大教堂目前正在由當地工匠修復中。",
+        "B. 這個歷史悠久的廣場將被改建為購物中心。",
         "C. 遊客們被要求在進入寺廟時保持安靜。",
-        "D. 這個歷史悠久的廣場將被改建為購物中心。"
+        "D. 這座宏偉的大教堂目前正在由當地工匠修復中。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "英文：The majestic cathedral is currently being restored by local artisans. 意思：這座宏偉的大教堂目前正在由當地工匠修復中。majestic 為宏偉的，is being restored 表現在進行被動。"
     },
     {
@@ -21772,11 +21772,11 @@
       "desc": "【時態】The logistics team ___ alternative shipping routes for the past three weeks to avoid the port strike.",
       "options": [
         "A. is exploring",
-        "B. has been exploring",
+        "B. will explore",
         "C. explores",
-        "D. will explore"
+        "D. has been exploring"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "本題測驗現在完成進行式，表示從過去持續到現在的動作（for the past three weeks）。"
     },
     {
@@ -21884,11 +21884,11 @@
       "desc": "【短文】Industry Report: Analysts have been monitoring the sudden fluctuation in commodity prices. The erratic pricing is observed to have driven many small competitors out of business. Larger firms must have secured long-term contracts to survive the turmoil.\nQ: How did larger firms likely survive according to the report?",
       "options": [
         "A. By fluctuating prices",
-        "B. By securing long-term contracts",
+        "B. By monitoring the market",
         "C. By driving out competitors",
-        "D. By monitoring the market"
+        "D. By securing long-term contracts"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文中提到「Larger firms must have secured long-term contracts to survive the turmoil」。"
     },
     {
@@ -21897,12 +21897,12 @@
       "difficulty": 1,
       "desc": "【時態】Nutritionists ___ the effects of artificial sweeteners on our metabolism for the last decade.",
       "options": [
-        "A. have been studying",
+        "A. studied",
         "B. are studying",
         "C. will study",
-        "D. studied"
+        "D. have been studying"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "for the last decade 搭配現在完成進行式，表示持續至今的動作。"
     },
     {
@@ -22065,12 +22065,12 @@
       "difficulty": 2,
       "desc": "【對話】A: What happens if I break the lease early?\nB: According to the penalty ___, you will forfeit your entire security deposit.",
       "options": [
-        "A. clause",
+        "A. surge",
         "B. venture",
         "C. heritage",
-        "D. surge"
+        "D. clause"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "clause 指合約中的「條款」。"
     },
     {
@@ -22163,12 +22163,12 @@
       "difficulty": 1,
       "desc": "【字彙】The investors were highly impressed by the startup's rapid market ___, acquiring thousands of users in just one month.",
       "options": [
-        "A. traction",
+        "A. heritage",
         "B. clause",
         "C. bottleneck",
-        "D. heritage"
+        "D. traction"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "traction 在商業上指「吸引力、初步成功或進展」。"
     },
     {
@@ -22262,11 +22262,11 @@
       "desc": "【推測語氣】The museum's ancient vase is shattered on the floor! A careless visitor ___ it over during the busy hours.",
       "options": [
         "A. can knock",
-        "B. must have knocked",
+        "B. should knock",
         "C. will knock",
-        "D. should knock"
+        "D. must have knocked"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "看到花瓶碎在地上，推測「一定是」粗心的訪客撞倒的。"
     },
     {
@@ -22979,12 +22979,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "A customized nutrition plan is being formulated by our dietitians.",
       "options": [
-        "A. 我們的營養師正在制定專屬的營養計畫。",
+        "A. 營養師一定是忘了制定飲食計畫。",
         "B. 營養師已經完成了所有的飲食評估。",
         "C. 這個營養計畫即將被醫院強制推行。",
-        "D. 營養師一定是忘了制定飲食計畫。"
+        "D. 我們的營養師正在制定專屬的營養計畫。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：A customized nutrition plan is being formulated by our dietitians. 意思是「我們的營養師正在制定一份客製化的營養計畫」。is being formulated 為現在進行式的被動語態。"
     },
     {
@@ -22994,12 +22994,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "You must have misunderstood the recommended dosage on the prescription.",
       "options": [
-        "A. 你一定誤解了處方箋上的建議劑量。",
+        "A. 你必須嚴格遵守處方箋上的用藥指示。",
         "B. 醫生一定開錯了藥物的劑量。",
         "C. 這份處方箋的劑量正在被重新評估。",
-        "D. 你必須嚴格遵守處方箋上的用藥指示。"
+        "D. 你一定誤解了處方箋上的建議劑量。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：You must have misunderstood the recommended dosage on the prescription. 意思是「你一定誤解了處方箋上的建議劑量」。"
     },
     {
@@ -23010,11 +23010,11 @@
       "speak": "Why is the patient's metabolism rate still being monitored?",
       "options": [
         "A. The monitoring equipment must have been turned off.",
-        "B. They have been trying to identify the underlying cause.",
-        "C. Metabolism is the chemical process in the body.",
+        "B. Metabolism is the chemical process in the body.",
+        "C. They have been trying to identify the underlying cause.",
         "D. He must have eaten a large meal just now."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "原句：Why is the patient's metabolism rate still being monitored?（為什麼病患的新陳代謝率還在被監測？）回應「他們一直在試圖找出潛在原因 (They have been trying to identify...)」最合理。"
     },
     {
@@ -23069,12 +23069,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Your subscription is scheduled to be terminated at the end of the billing cycle.",
       "options": [
-        "A. 您的訂閱預計在計費週期結束時被終止。",
+        "A. 我們將延長您的訂閱直到下個計費週期。",
         "B. 您必須在計費週期結束前繳清所有費用。",
         "C. 您的合約已經在昨天被強制取消了。",
-        "D. 我們將延長您的訂閱直到下個計費週期。"
+        "D. 您的訂閱預計在計費週期結束時被終止。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：Your subscription is scheduled to be terminated at the end of the billing cycle. 意思是「您的訂閱預計在計費週期結束時被終止」。"
     },
     {
@@ -23084,12 +23084,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The bandwidth allocation has been strictly regulated to prevent congestion.",
       "options": [
-        "A. 頻寬分配一直受到嚴格管制以防止網路擁塞。",
+        "A. 我們正在放寬頻寬限制來提升速度。",
         "B. 公司一定是為了省錢才限制頻寬使用。",
         "C. 頻寬太小導致我們的網路持續塞車。",
-        "D. 我們正在放寬頻寬限制來提升速度。"
+        "D. 頻寬分配一直受到嚴格管制以防止網路擁塞。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The bandwidth allocation has been strictly regulated to prevent congestion. 意思是「頻寬分配一直受到嚴格管制以防止擁塞」。"
     },
     {
@@ -23204,12 +23204,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "We have been analyzing the shifts in consumer behavior towards versatile garments.",
       "options": [
-        "A. 我們一直在分析消費者對多功能服裝的行為轉變。",
+        "A. 我們的分析報告即將被時尚雜誌刊登。",
         "B. 消費者一定比較喜歡便宜且多功能的衣物。",
-        "C. 我們的分析報告即將被時尚雜誌刊登。",
+        "C. 我們一直在分析消費者對多功能服裝的行為轉變。",
         "D. 多功能服裝正在被大規模地推廣到全球市場。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "原句：We have been analyzing the shifts in consumer behavior towards versatile garments. 意思是「我們一直在分析消費者行為朝向多功能服裝的轉變」。"
     },
     {
@@ -23249,12 +23249,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The vintage accessories are being showcased in the main exhibition hall.",
       "options": [
-        "A. 這些復古配件正被展示在主展覽廳裡。",
+        "A. 展覽廳裡必須展示所有最新的時尚單品。",
         "B. 我們一直在主展覽廳尋找那些復古配件。",
         "C. 復古配件一定是展覽中最受歡迎的項目。",
-        "D. 展覽廳裡必須展示所有最新的時尚單品。"
+        "D. 這些復古配件正被展示在主展覽廳裡。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The vintage accessories are being showcased in the main exhibition hall. 意思是「復古配件正被展示在主展覽廳中」。"
     },
     {
@@ -23280,11 +23280,11 @@
       "speak": "They must have acquired a majority stake to force the hostile takeover.",
       "options": [
         "A. The steaks are being grilled right now.",
-        "B. Yes, the board of directors had no choice but to comply.",
-        "C. We have been forcing them to sign the contract.",
+        "B. We have been forcing them to sign the contract.",
+        "C. Yes, the board of directors had no choice but to comply.",
         "D. The acquisition was officially canceled."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "原句：They must have acquired a majority stake to force the hostile takeover.（他們一定取得了多數股權以強行進行惡意併購。）回應「對，董事會別無選擇只能順從」最適合。"
     },
     {
@@ -23354,12 +23354,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The core curriculum is being redesigned to foster critical thinking skills.",
       "options": [
-        "A. 核心課綱正被重新設計以培養批判性思考能力。",
+        "A. 學生必須在核心課程中展現批判性思考。",
         "B. 學校一直在尋找能教導批判性思考的老師。",
         "C. 舊的課綱一定是阻礙了學生的思考發展。",
-        "D. 學生必須在核心課程中展現批判性思考。"
+        "D. 核心課綱正被重新設計以培養批判性思考能力。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The core curriculum is being redesigned to foster critical thinking skills. 意思是「核心課程正在被重新設計，以培養批判性思考技能」。"
     },
     {
@@ -23369,12 +23369,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The parents have been expressing concerns regarding the excessive extracurricular activities.",
       "options": [
-        "A. 家長們一直對過多的課外活動表達擔憂。",
+        "A. 家長一定認為課外活動對學生的幫助不大。",
         "B. 課外活動即將因為家長的抗議而被取消。",
-        "C. 家長一定認為課外活動對學生的幫助不大。",
+        "C. 家長們一直對過多的課外活動表達擔憂。",
         "D. 我們必須為學生安排更多有意義的活動。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "原句：The parents have been expressing concerns regarding the excessive extracurricular activities. 意思是「家長們一直對過度/過多的課外活動表達擔憂」。"
     },
     {
@@ -23474,12 +23474,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Specialized workshops are being organized to assist parents in guiding their children.",
       "options": [
-        "A. 專門的工作坊正在被組織起來，以協助家長引導孩子。",
+        "A. 家長們一定覺得這些工作坊非常有幫助。",
         "B. 學校一直定期舉辦工作坊來教育家長。",
-        "C. 家長們一定覺得這些工作坊非常有幫助。",
+        "C. 專門的工作坊正在被組織起來，以協助家長引導孩子。",
         "D. 你必須參加這些專門的工作坊才能了解孩子。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "原句：Specialized workshops are being organized to assist parents in guiding their children. 意思是「專門的工作坊正被籌辦中，以協助父母引導他們的孩子」。"
     },
     {
@@ -23504,11 +23504,11 @@
       "desc": "【時態】The committee ___ the transition to renewable energy for several months.",
       "options": [
         "A. is facilitating",
-        "B. has been facilitating",
+        "B. facilitates",
         "C. will facilitate",
-        "D. facilitates"
+        "D. has been facilitating"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "句末有 for several months，強調動作從過去一直持續到現在，必須使用現在完成進行式 (have/has been V-ing)。其他選項時態不符。"
     },
     {
@@ -23573,12 +23573,12 @@
       "difficulty": 2,
       "desc": "【字彙】To achieve carbon neutrality, the nation must drastically reduce its ___ on fossil fuels.",
       "options": [
-        "A. reliance",
+        "A. reluctant",
         "B. resilient",
         "C. relevant",
-        "D. reluctant"
+        "D. reliance"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "空格處需要名詞作受詞。reliance 意為「依賴」，符合句意（減少對化石燃料的依賴）。其他選項均為形容詞或字義不合。"
     },
     {
@@ -23700,11 +23700,11 @@
       "desc": "【時態】The hospitality group ___ guest complaints regarding the outdated plumbing for months.",
       "options": [
         "A. monitors",
-        "B. has been monitoring",
+        "B. will monitor",
         "C. is monitored",
-        "D. will monitor"
+        "D. has been monitoring"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "for months 點出時間的持續性，需使用現在完成進行式。句子為主動，飯店集團持續監控客訴。"
     },
     {
@@ -23825,12 +23825,12 @@
       "difficulty": 1,
       "desc": "【推測語氣】The competitor released an identical smartwatch. They ___ access to our confidential design schematics.",
       "options": [
-        "A. must have gained",
+        "A. have gained",
         "B. should gain",
         "C. will gain",
-        "D. have gained"
+        "D. must have gained"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "對手發布一模一樣的產品是已發生的事實，由此推斷對手「當時一定取得了」我們的機密設計圖，故用 must have V-en。"
     },
     {
@@ -23923,12 +23923,12 @@
       "difficulty": 1,
       "desc": "【推測語氣】The historic theater was demolished overnight. The municipal council ___ the preservation orders completely.",
       "options": [
-        "A. must have bypassed",
+        "A. should bypass",
         "B. could bypass",
         "C. will bypass",
-        "D. should bypass"
+        "D. must have bypassed"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "歷史劇院在一夜之間被拆除，這是已發生的事實。推論市議會「必定是忽視/繞過了」保護令，應使用 must have V-en。"
     },
     {
@@ -24676,12 +24676,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "How long have you been experiencing these side effects after taking the pills?",
       "options": [
-        "A. For about three days now.",
+        "A. You must have taken the wrong pills.",
         "B. I usually take them twice a day.",
         "C. The pills are being manufactured.",
-        "D. You must have taken the wrong pills."
+        "D. For about three days now."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "說話者詢問：「How long have you been experiencing these side effects after taking the pills?（你吃完藥後經歷這些副作用有多久了？）」最合理的回應是回答時間長度 (A)。（重點文法：現在完成進行式）"
     },
     {
@@ -24872,11 +24872,11 @@
       "speak": "Live demonstrations are scheduled to be conducted every hour at our booth.",
       "options": [
         "A. 我們的攤位一直在每小時進行一場現場示範。",
-        "B. 我們的攤位預定每小時都會進行現場示範。",
-        "C. 現場示範一定是在我們的攤位每小時舉辦一次。",
+        "B. 現場示範一定是在我們的攤位每小時舉辦一次。",
+        "C. 我們的攤位預定每小時都會進行現場示範。",
         "D. 我們必須每小時在攤位安排一次現場示範。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "「Live demonstrations are scheduled to be conducted every hour at our booth.」意思是「我們的攤位預定每小時都會進行現場示範。」（重點文法：複雜被動）"
     },
     {
@@ -24916,12 +24916,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "Are these promotional brochures going to be distributed at the main entrance?",
       "options": [
-        "A. Yes, they will be handed out to visitors as they walk in.",
+        "A. I have been reading this brochure all day.",
         "B. The entrance is being renovated at the moment.",
         "C. They must have printed too many brochures.",
-        "D. I have been reading this brochure all day."
+        "D. Yes, they will be handed out to visitors as they walk in."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "說話者詢問：「Are these promotional brochures going to be distributed at the main entrance?（這些宣傳手冊會在大門口發放嗎？）」最合理的回應是肯定並說明發放方式 (A)。（重點文法：複雜被動）"
     },
     {
@@ -25112,11 +25112,11 @@
       "speak": "All personnel are strictly required to be escorted to the designated assembly area.",
       "options": [
         "A. 所有人員一定已經在指定的集合地點會合了。",
-        "B. 嚴格要求所有人員必須被護送到指定的集合區域。",
-        "C. 救護人員一直在將傷者護送到指定的集合區域。",
+        "B. 救護人員一直在將傷者護送到指定的集合區域。",
+        "C. 嚴格要求所有人員必須被護送到指定的集合區域。",
         "D. 所有人員都必須自行前往指定的集合區域報到。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "「All personnel are strictly required to be escorted to the designated assembly area.」意思是「嚴格要求所有人員必須被護送到指定的集合區域。」（重點文法：複雜被動）"
     },
     {
@@ -25269,12 +25269,12 @@
       "difficulty": 1,
       "desc": "【推測語氣】The server crashed right after the new update was installed. The IT team ___ some incompatible codes.",
       "options": [
-        "A. must have deployed",
+        "A. can deploy",
         "B. would deploy",
         "C. ought to deploy",
-        "D. can deploy"
+        "D. must have deployed"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "對於過去發生的伺服器崩潰原因進行強烈推測，表示「必定已經部署了」不相容的程式碼，用 must have + p.p.。"
     },
     {
@@ -25297,12 +25297,12 @@
       "difficulty": 1,
       "desc": "【時態】The marine biologists ___ the migration patterns of these endangered whales for over a decade.",
       "options": [
-        "A. have been tracking",
+        "A. will track",
         "B. track",
         "C. are tracked",
-        "D. will track"
+        "D. have been tracking"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "for over a decade 搭配現在完成進行式，表示動作從過去持續到現在。"
     },
     {
@@ -25326,11 +25326,11 @@
       "desc": "【推測語氣】The lab rats navigated the complex maze flawlessly. They ___ the route during the previous trials.",
       "options": [
         "A. could memorize",
-        "B. must have memorized",
+        "B. are memorizing",
         "C. will memorize",
-        "D. are memorizing"
+        "D. must have memorized"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "完美走完迷宮是過去事實，推測其原因「必定是已經記住了路線」，故選 must have memorized。"
     },
     {
@@ -25409,12 +25409,12 @@
       "difficulty": 1,
       "desc": "【時態】The non-profit organization ___ emergency relief supplies to the drought-stricken regions for three consecutive months.",
       "options": [
-        "A. has been dispatching",
+        "A. to dispatch",
         "B. dispatched",
         "C. is dispatched",
-        "D. to dispatch"
+        "D. has been dispatching"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "for three consecutive months 強調動作持續至今，故選 has been dispatching。"
     },
     {
@@ -25424,11 +25424,11 @@
       "desc": "【被動語態】The community outreach program is reported ___ successfully in bridging the wealth gap in urban areas.",
       "options": [
         "A. implemented",
-        "B. to have been implemented",
+        "B. is implementing",
         "C. implement",
-        "D. is implementing"
+        "D. to have been implemented"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "is reported to have been + p.p. 表示「據報導已經被實施」，符合複雜被動語態的結構。"
     },
     {
@@ -25479,12 +25479,12 @@
       "difficulty": 2,
       "desc": "【對話】A: Why didn't the marketing team launch the campaign on time?\nB: They ___ a lot of internal resistance regarding the budget allocation.",
       "options": [
-        "A. must have faced",
+        "A. will have faced",
         "B. should face",
         "C. can face",
-        "D. will have faced"
+        "D. must have faced"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "解釋過去沒有準時推出的原因，推測「必定是面臨了內部阻力」，用 must have + p.p.。"
     },
     {
@@ -25550,11 +25550,11 @@
       "desc": "【句子】The sudden reduction in greenhouse gases during the lockdown is considered ___ a temporary phenomenon rather than a permanent climate shift.",
       "options": [
         "A. be",
-        "B. to be",
+        "B. being",
         "C. been",
-        "D. being"
+        "D. to be"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "is considered to be... 為常見的被動語態結構，意指「被認為是...」。"
     },
     {
@@ -25676,11 +25676,11 @@
       "desc": "【短文】Market Pulse: Startups in the electric vehicle sector have been struggling to secure capital. The recent withdrawal of several major investors is thought to have triggered a domino effect. The venture capitalists must have perceived the battery supply chain constraints as too risky. \nQ: What was a major concern for the venture capitalists?",
       "options": [
         "A. The lack of consumer demand for electric vehicles.",
-        "B. The risks associated with the battery supply chain.",
+        "B. The sudden resignation of key startup founders.",
         "C. The excessive government regulations on startups.",
-        "D. The sudden resignation of key startup founders."
+        "D. The risks associated with the battery supply chain."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文中指出 The venture capitalists must have perceived the battery supply chain constraints as too risky，故選 B。"
     },
     {
@@ -26100,11 +26100,11 @@
       "speak": "The customer must have forgotten to attach the receipt in the email.",
       "options": [
         "A. I attached it to the wall yesterday.",
-        "B. We should politely ask him to resend it.",
-        "C. The email was delivered successfully.",
+        "B. The email was delivered successfully.",
+        "C. We should politely ask him to resend it.",
         "D. He forgot to bring his credit card."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "正確答案是 B。句意：那位客戶一定忘記在電子郵件中附上收據了。原句：The customer must have forgotten to attach the receipt in the email. 選項 B「我們應該有禮貌地請他重新發送」最適合。"
     },
     {
@@ -26204,12 +26204,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Commuters must have experienced tremendous frustration this morning.",
       "options": [
-        "A. 通勤者今早一定經歷了極大的挫折。",
+        "A. 許多通勤者決定今天在家工作。",
         "B. 通勤者明天將面臨嚴重的交通堵塞。",
         "C. 今早的通勤時間比往常短了許多。",
-        "D. 許多通勤者決定今天在家工作。"
+        "D. 通勤者今早一定經歷了極大的挫折。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "正確答案是 A。句意：通勤者今早一定經歷了極大的挫折（沮喪）。原句：Commuters must have experienced tremendous frustration this morning."
     },
     {
@@ -26264,12 +26264,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Why are these secondary roads rumored to be restricted to local residents?",
       "options": [
-        "A. 為什麼謠傳這些次要道路僅限當地居民通行？",
+        "A. 為什麼只有當地居民能夠獲得道路通行的許可？",
         "B. 當地居民為何要求封鎖這些次要道路？",
         "C. 誰決定將這些主要幹道留給當地居民使用？",
-        "D. 為什麼只有當地居民能夠獲得道路通行的許可？"
+        "D. 為什麼謠傳這些次要道路僅限當地居民通行？"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "正確答案是 A。句意：為什麼謠傳這些次要道路僅限當地居民通行？原句：Why are these secondary roads rumored to be restricted to local residents?"
     },
     {
@@ -26460,11 +26460,11 @@
       "speak": "The sculptors must have spent countless hours perfecting these intricate details.",
       "options": [
         "A. Time flies when you are having fun.",
-        "B. Exactly, the level of precision is absolutely stunning.",
-        "C. Details are often overlooked by modern artists.",
+        "B. Details are often overlooked by modern artists.",
+        "C. Exactly, the level of precision is absolutely stunning.",
         "D. They didn't spend any money on the materials."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "正確答案是 B。句意：雕塑家們一定花了無數個小時來完美這些複雜的細節。原句：The sculptors must have spent countless hours perfecting these intricate details. 選項 B「沒錯，這精準度絕對令人驚豔」最適合。"
     },
     {
@@ -26504,12 +26504,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The proposed deadline is considered to be unrealistic by our production team.",
       "options": [
-        "A. 我們的生產團隊認為提議的截止日期不切實際。",
+        "A. 生產團隊認為這個提案將無法如期完成。",
         "B. 生產團隊已經同意將截止日期延後一週。",
         "C. 專案經理向生產團隊提出了新的時間表。",
-        "D. 生產團隊認為這個提案將無法如期完成。"
+        "D. 我們的生產團隊認為提議的截止日期不切實際。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "正確答案是 A。句意：我們的生產團隊認為提議的截止日期不切實際。原句：The proposed deadline is considered to be unrealistic by our production team."
     },
     {
@@ -26520,11 +26520,11 @@
       "speak": "They must have rejected our initial offer without even reading the terms.",
       "options": [
         "A. Reading books is a great hobby.",
-        "B. I agree; it was dismissed far too quickly.",
-        "C. The initial phase is complete now.",
+        "B. The initial phase is complete now.",
+        "C. I agree; it was dismissed far too quickly.",
         "D. We rejected the flawed products."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "正確答案是 B。句意：他們一定是連條款都沒看就拒絕了我們最初的報價。原句：They must have rejected our initial offer without even reading the terms. 選項 B「我同意；它被駁回得太快了」最適合。"
     },
     {
@@ -26706,11 +26706,11 @@
       "desc": "【時態】Healthcare administrators ___ resources to emergency departments due to the unexpected flu outbreak.",
       "options": [
         "A. redirect",
-        "B. have been redirecting",
+        "B. redirects",
         "C. is redirected",
-        "D. redirects"
+        "D. have been redirecting"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：表示從疫情爆發到現在「一直持續在重新分配」資源，用現在完成進行式最適當。"
     },
     {
@@ -26846,11 +26846,11 @@
       "desc": "【短文】Trade Journal: The government has been imposing severe embargoes on specific raw materials to protect domestic industries. Consequently, the profit margins of several prominent exporters are proven to have shrunk drastically. The exporters must have relied too heavily on international markets instead of cultivating local demand.\nQ: What is true about the prominent exporters according to the journal?",
       "options": [
         "A. They have successfully shifted to the domestic market.",
-        "B. Their profit margins decreased because of the embargoes.",
+        "B. They are proven to have avoided financial losses.",
         "C. They requested the government to impose the embargoes.",
-        "D. They are proven to have avoided financial losses."
+        "D. Their profit margins decreased because of the embargoes."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：短文提到因為禁運(embargoes)，導致出口商的利潤率(profit margins)大幅縮水(shrunk drastically)。故選 B。"
     },
     {
@@ -26860,11 +26860,11 @@
       "desc": "【短文】Workplace Wellness: Many organizations have been ignoring the early signs of chronic stress among their mid-level managers. This neglect is considered to have accelerated the alarming turnover rate in recent months. The HR executives must have assumed that offering generic wellness apps would be sufficient to prevent burnout.\nQ: What mistake did the HR executives likely make?",
       "options": [
         "A. They actively fired mid-level managers.",
-        "B. They thought simple wellness apps could solve the burnout issue.",
+        "B. They ignored the turnover rate completely.",
         "C. They spent too much money on psychological counseling.",
-        "D. They ignored the turnover rate completely."
+        "D. They thought simple wellness apps could solve the burnout issue."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：短文最後一句指出，HR高層一定是假定(must have assumed)提供一般的健康應用程式就足以防止職業倦怠，這是他們的錯誤認知。"
     },
     {
@@ -26929,12 +26929,12 @@
       "difficulty": 1,
       "desc": "【被動語態】The surge in teleconsultation adoption is largely presumed ___ by the need for accessible healthcare in rural areas.",
       "options": [
-        "A. to have been driven",
+        "A. driven",
         "B. to drive",
         "C. driving",
-        "D. driven"
+        "D. to have been driven"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "繁體中文解說：「is presumed to...」後接不定詞，表示「被推測是由...所驅動（已經發生的被動原因）」，需用 to have been driven。"
     },
     {
@@ -26944,11 +26944,11 @@
       "desc": "【推測語氣】The newly imported goods were completely spoiled upon arrival. The logistics team ___ the refrigeration units properly.",
       "options": [
         "A. shouldn't inspect",
-        "B. must not have inspected",
+        "B. will not inspect",
         "C. cannot inspect",
-        "D. will not inspect"
+        "D. must not have inspected"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：貨物抵達時全壞了，推測物流團隊過去「一定沒有」好好檢查冷藏設備，用 must not have + p.p.。"
     },
     {
@@ -26986,11 +26986,11 @@
       "desc": "【短文】Trade Alert: Multinational corporations have been diversifying their manufacturing hubs to minimize geopolitical risks. This strategic shift is considered to have weakened the monopoly of traditional industrial zones. The local governments in those traditional zones must have felt a severe economic shock as factories relocated en masse.\nQ: What is considered a result of corporations diversifying their manufacturing hubs?",
       "options": [
         "A. Geopolitical risks have completely disappeared.",
-        "B. Traditional industrial zones have lost their dominant position.",
+        "B. Factories relocated to the traditional industrial zones.",
         "C. Local governments have increased their tax revenues.",
-        "D. Factories relocated to the traditional industrial zones."
+        "D. Traditional industrial zones have lost their dominant position."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：短文提到 This strategic shift is considered to have weakened the monopoly of traditional industrial zones（這被認為削弱了傳統工業區的壟斷地位），即失去優勢地位。"
     },
     {
@@ -27412,12 +27412,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The defective batches must have been discarded immediately.",
       "options": [
-        "A. 那些有瑕疵的批次一定立刻被丟棄了",
+        "A. 預期會立刻丟棄所有未經過測試的批次",
         "B. 有瑕疵的批次正在被退回給供應商",
         "C. 我們一直在檢查批次中是否有瑕疵",
-        "D. 預期會立刻丟棄所有未經過測試的批次"
+        "D. 那些有瑕疵的批次一定立刻被丟棄了"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "The defective batches must have been discarded immediately. (那些有瑕疵的批次一定立刻被丟棄了。)"
     },
     {
@@ -27577,12 +27577,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Early INTERVENTION is strongly recommended to prevent further emotional decline.",
       "options": [
-        "A. 強烈建議早期介入，以防情緒進一步惡化",
+        "A. 醫生一定已經建議了提早介入治療",
         "B. 早期的介入治療一直被認為是無效的",
         "C. 為了防止情緒惡化，早期干預正在被測試",
-        "D. 醫生一定已經建議了提早介入治療"
+        "D. 強烈建議早期介入，以防情緒進一步惡化"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "Early intervention is strongly recommended to prevent further emotional decline. (強烈建議早期介入，以防情緒進一步惡化。)"
     },
     {
@@ -27682,12 +27682,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "The broken window must have been shattered during the heavy storm.",
       "options": [
-        "A. We should contact maintenance to get it boarded up immediately.",
+        "A. I have been breaking the windows on purpose.",
         "B. The storm is expected to arrive later tonight.",
-        "C. I have been breaking the windows on purpose.",
+        "C. We should contact maintenance to get it boarded up immediately.",
         "D. The window is being washed right now."
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "The broken window must have been shattered during the heavy storm. (破掉的窗戶一定是在暴風雨中被震碎的。) 最適合的回應是 A (我們應該聯絡維修人員立刻把它釘上木板。)"
     },
     {
@@ -27936,11 +27936,11 @@
       "desc": "【對話】A: The coastal town was completely submerged after the unprecedented tidal surge.\nB: The local authorities ___ the severe weather warnings issued last week.",
       "options": [
         "A. could ignore",
-        "B. must have ignored",
+        "B. would have ignored",
         "C. should ignore",
-        "D. would have ignored"
+        "D. must have ignored"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "沿海城鎮被淹沒，因此強烈推測當局「一定忽略了」上週發布的警報。must have ignored 表對過去的強烈推測。"
     },
     {
@@ -28033,12 +28033,12 @@
       "difficulty": 1,
       "desc": "【字彙】By integrating augmented reality into the shopping app, the brand provides a highly ___ experience for its users.",
       "options": [
-        "A. immersive",
+        "A. deceptive",
         "B. passive",
         "C. disruptive",
-        "D. deceptive"
+        "D. immersive"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "immersive 意為「沉浸式的」。AR（擴增實境）提供使用者高度沉浸式的體驗。disruptive（破壞性的）與語境不完全契合。"
     },
     {
@@ -28075,12 +28075,12 @@
       "difficulty": 2,
       "desc": "【對話】A: The labor inspector found multiple safety violations in the warehouse.\nB: The site manager ___ the mandatory safety drills entirely.",
       "options": [
-        "A. must have bypassed",
+        "A. should have bypassed",
         "B. would bypass",
         "C. can bypass",
-        "D. should have bypassed"
+        "D. must have bypassed"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "基於檢查員發現多處違規，強烈推測經理「一定略過了」強制性的安全演習，用 must have bypassed。"
     },
     {
@@ -28394,12 +28394,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "Someone must have accidentally terminated the video transmission.",
       "options": [
-        "A. Yes, the screen just went completely blank.",
+        "A. No one is allowed to transmit video here.",
         "B. I will terminate the contract immediately.",
         "C. They have been broadcasting it all day.",
-        "D. No one is allowed to transmit video here."
+        "D. Yes, the screen just went completely blank."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：一定有人不小心終止了視訊傳輸。選項A「對，螢幕剛剛變成一片空白了」最符合情境。"
     },
     {
@@ -28620,11 +28620,11 @@
       "speak": "Several major intersections are being closed temporarily for underground excavation.",
       "options": [
         "A. 地下開挖工程導致幾個主要十字路口永久封閉。",
-        "B. 幾個主要十字路口正因為地下開挖工程而被暫時封閉。",
+        "B. 警方正在十字路口調查地下的管線爆炸案。",
         "C. 十字路口的地下道正在進行維修保養。",
-        "D. 警方正在十字路口調查地下的管線爆炸案。"
+        "D. 幾個主要十字路口正因為地下開挖工程而被暫時封閉。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "英文原句意為「幾個主要十字路口正因地下開挖工程被暫時封閉。」（are being closed：正被封閉）。"
     },
     {
@@ -28679,12 +28679,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "We have been developing a scalable solution for urban waste management.",
       "options": [
-        "A. 我們一直在開發一個針對城市廢物管理的可擴展解決方案。",
+        "A. 這個城市廢物處理系統正在被大規模地拆除。",
         "B. 我們已經放棄了解決城市垃圾問題的計畫。",
-        "C. 這個城市廢物處理系統正在被大規模地拆除。",
+        "C. 我們一直在開發一個針對城市廢物管理的可擴展解決方案。",
         "D. 我們發現城市廢物管理的問題比預期還要嚴重。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "英文原句意為「我們一直在為城市廢物管理開發一個可擴展的（具備規模化潛力的）解決方案。」（have been developing：一直在開發）。"
     },
     {
@@ -28695,11 +28695,11 @@
       "speak": "A significant amount of capital is being injected into our marketing efforts.",
       "options": [
         "A. 我們的行銷部門大幅削減了預算。",
-        "B. 大量資金正被注入我們的行銷活動中。",
+        "B. 我們的行銷活動帶來了大量的資金回報。",
         "C. 投資者要求我們停止所有的行銷支出。",
-        "D. 我們的行銷活動帶來了大量的資金回報。"
+        "D. 大量資金正被注入我們的行銷活動中。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "英文原句意為「大量的資金正被注入我們的行銷工作中。」（is being injected：正被注入）。"
     },
     {
@@ -28754,12 +28754,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The monetization strategy is being refined before the next round of funding.",
       "options": [
-        "A. 盈利策略在下一輪融資前正被改進完善。",
+        "A. 投資者強烈反對目前的盈利策略。",
         "B. 他們在下一輪融資中放棄了盈利目標。",
-        "C. 投資者強烈反對目前的盈利策略。",
+        "C. 盈利策略在下一輪融資前正被改進完善。",
         "D. 融資活動因為盈利不佳而被迫延遲。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "英文原句意為「變現（盈利）策略正於下一輪融資前被精煉/改進。」（is being refined：正被改進）。"
     },
     {
@@ -28799,12 +28799,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "I have been reviewing the manuscript, and the character arcs are fascinating.",
       "options": [
-        "A. 我一直在審閱這份手稿，而角色發展非常迷人。",
+        "A. 我覺得這本小說的手稿完全沒有任何亮點。",
         "B. 我拒絕了這份手稿，因為角色的設定太無聊了。",
         "C. 這份手稿的角色設定正在被作者大幅修改。",
-        "D. 我覺得這本小說的手稿完全沒有任何亮點。"
+        "D. 我一直在審閱這份手稿，而角色發展非常迷人。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "英文原句意為「我一直在審閱這份手稿，而且角色曲線（發展）很迷人。」（have been reviewing：一直在審閱）。"
     }
   ],
@@ -28850,11 +28850,11 @@
       "speak": "We have been assured that no jobs will be lost, although the details of the restructuring have yet to be announced.",
       "options": [
         "A. 公司已公布每個職位的調動細節。",
-        "B. 已獲不裁員的保證，但重組細節仍未公布。",
-        "C. 重組細節已公布，並確定裁掉所有員工。",
+        "B. 重組細節已公布，並確定裁掉所有員工。",
+        "C. 已獲不裁員的保證，但重組細節仍未公布。",
         "D. 說話者保證重組永遠不會發生。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "have been assured 是收到保證，have yet to be announced 是尚未公布。"
     },
     {
@@ -28969,11 +28969,11 @@
       "speak": "I had been looking forward to the concert, so finding out it had been cancelled was a real letdown.",
       "options": [
         "A. 演唱會只是延期，日期已經確定。",
-        "B. 因原本很期待演唱會，得知取消令說話者失望。",
+        "B. 說話者直到演出結束才知道有演唱會。",
         "C. 說話者原本就不想參加，因此很高興取消。",
-        "D. 說話者直到演出結束才知道有演唱會。"
+        "D. 因原本很期待演唱會，得知取消令說話者失望。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "look forward to 是期待，letdown 是令人失望的事；cancelled 不等於已確定延期。"
     },
     {
@@ -29015,11 +29015,11 @@
       "desc": "【文法】The museum opened ten years ago. By the time it closes for renovation next June, it ___ visitors for eleven years.",
       "options": [
         "A. would have welcoming",
-        "B. will have welcomed",
+        "B. has been welcomed",
         "C. will welcome",
-        "D. has been welcomed"
+        "D. will have welcomed"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "By...next June 設定未來完成的時間點，用 will have＋過去分詞；museum 是接待者，不是被接待者。"
     },
     {
@@ -29135,11 +29135,11 @@
       "desc": "【搭配詞】Please ___ your sources before sharing a claim that could affect other people’s decisions.",
       "options": [
         "A. amplify",
-        "B. verify",
+        "B. satisfy",
         "C. notify",
-        "D. satisfy"
+        "D. verify"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "verify 是核實；notify 通知、satisfy 滿足、amplify 放大均不合此目的。"
     },
     {
@@ -29254,12 +29254,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "I would welcome the improvement, but only if the households most affected by the work have a genuine say in how it is carried out.",
       "options": [
-        "A. 我願支持改善，但條件是受影響最大的住戶能實際參與執行方式的決定。",
+        "A. 受影響最大的住戶已獲准單獨決定一切。",
         "B. 只要宣布工程，住戶就不需要再表達意見。",
         "C. 我反對讓任何住戶參與。",
-        "D. 受影響最大的住戶已獲准單獨決定一切。"
+        "D. 我願支持改善，但條件是受影響最大的住戶能實際參與執行方式的決定。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "only if 明示必要條件；genuine say 是實質發言權，非單獨掌控所有決策。"
     },
     {
@@ -29435,11 +29435,11 @@
       "desc": "【短文】A school compares this year’s average score with last year’s, but this year’s test used shorter texts and allowed more time. What should be considered before attributing the rise to improved teaching?",
       "options": [
         "A. A higher average guarantees that each student improved.",
-        "B. The changes to the assessment may have affected the scores.",
+        "B. More time proves that students studied less.",
         "C. Shorter texts always test a more advanced skill.",
-        "D. More time proves that students studied less."
+        "D. The changes to the assessment may have affected the scores."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "測驗條件同時改變，不能直接把平均提升單獨歸因於教學。"
     },
     {
@@ -29675,11 +29675,11 @@
       "desc": "【語域】Which reply asks for clarification without rejecting the request?",
       "options": [
         "A. You should not have asked me in the first place.",
-        "B. Could you clarify which part you would like me to prioritise?",
+        "B. There is nothing to clarify, and I have already finished.",
         "C. I am refusing to do any part of this task.",
-        "D. There is nothing to clarify, and I have already finished."
+        "D. Could you clarify which part you would like me to prioritise?"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "clarify 與 prioritise 詢問工作範圍與順序，未直接拒絕。"
     },
     {
@@ -29975,11 +29975,11 @@
       "desc": "【短文】A route planner selects the quickest journey by adding scheduled travel times. It ignores the ten-minute walk between two different stations with similar names. What is missing?",
       "options": [
         "A. A reason why scheduled travel time can never be useful.",
-        "B. A practical transfer requirement not included in the time calculation.",
+        "B. Proof that all station names refer to one building.",
         "C. The distinction between morning and evening fares.",
-        "D. Proof that all station names refer to one building."
+        "D. A practical transfer requirement not included in the time calculation."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "步行轉乘是必要但未計入的時間，不能只相加行車分鐘。"
     },
     {
@@ -30095,11 +30095,11 @@
       "desc": "【短文】The map marks a passage as hidden, not blocked. The group has not found its entrance. What conclusion is warranted?",
       "options": [
         "A. A hidden passage must have an entrance visible from every direction.",
-        "B. The passage may exist even though its entrance has not been located.",
+        "B. The group has already proved the route impassable.",
         "C. The map explicitly states that no passage exists.",
-        "D. The group has already proved the route impassable."
+        "D. The passage may exist even though its entrance has not been located."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "未發現不等於不存在；hidden 和 blocked 的資訊不同。"
     },
     {
@@ -30334,12 +30334,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The guide described the walk as gentle, but that was before she knew how much of the path had been washed away.",
       "options": [
-        "A. 導遊先說路程輕鬆，當時還不知道步道有多少被沖毀。",
+        "A. 導遊只是在形容說話聲音柔和。",
         "B. 導遊是在充分了解損壞後保證輕鬆。",
         "C. 步道損壞已被確認完全不影響路程。",
-        "D. 導遊只是在形容說話聲音柔和。"
+        "D. 導遊先說路程輕鬆，當時還不知道步道有多少被沖毀。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "before she knew 限定最初評估的資訊狀態。"
     },
     {
@@ -30515,11 +30515,11 @@
       "desc": "【短文】A player wins a match after her opponent slips. She says the result was welcome but not a fair measure of their usual abilities. What distinction does she make?",
       "options": [
         "A. Her opponent’s footwear versus the condition of her own equipment.",
-        "B. Winning this match versus demonstrating greater skill overall.",
+        "B. Following the rules versus receiving permission to enter the event.",
         "C. Being pleased with a win versus wanting to play the match again.",
-        "D. Following the rules versus receiving permission to enter the event."
+        "D. Winning this match versus demonstrating greater skill overall."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "單次結果可能受意外影響，不能直接代表平常實力。"
     },
     {
@@ -31175,11 +31175,11 @@
       "desc": "【語氣】You might have mentioned the stairs, said the visitor, looking at the suitcase she had carried up four floors. What is conveyed?",
       "options": [
         "A. Gratitude for a detailed description of the stairs.",
-        "B. Mild reproach for not being warned.",
+        "B. A request to remove the suitcase from the building.",
         "C. Certainty that the stairs have just been installed.",
-        "D. A request to remove the suitcase from the building."
+        "D. Mild reproach for not being warned."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "might have mentioned 在此責怪未提前提醒，以情境確定語氣。"
     },
     {
@@ -32090,11 +32090,11 @@
       "speak": "I am not saying the story is wrong; I am saying the detail you have just added was not in the story we were given.",
       "options": [
         "A. 說話者要求只因新細節有趣就當既定事實。",
-        "B. 我沒說故事錯，只說你新加細節不在原故事。",
+        "B. 我確認故事每項資訊都假，因此所有細節都刪。",
         "C. 原故事已逐字包含新細節，所以不需區分。",
-        "D. 我確認故事每項資訊都假，因此所有細節都刪。"
+        "D. 我沒說故事錯，只說你新加細節不在原故事。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "來源界線與故事真偽分別，不能無證添設定。"
     },
     {
@@ -32134,12 +32134,12 @@
       "knowledgeType": "discourse",
       "desc": "【短文】A cake is missing from the kitchen. Pat has flour on a sleeve, but says she baked bread elsewhere. No other information is given. Which conclusion is warranted?",
       "options": [
-        "A. The missing cake must have been bread all along.",
-        "B. The flour alone does not establish that Pat took the cake.",
+        "A. The flour alone does not establish that Pat took the cake.",
+        "B. The missing cake must have been bread all along.",
         "C. The flour proves Pat ate the cake before anyone arrived.",
         "D. Pat’s explanation proves she could not have entered the kitchen."
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "麵粉有替代來源，不足以唯一定案，也未證Pat必無關。"
     },
     {
@@ -32374,12 +32374,12 @@
       "knowledgeType": "discourse",
       "desc": "【語用】Take your time; we are not trying to fit the whole story into one minute. What is encouraged?",
       "options": [
-        "A. Repeating the same sentence for a minute.",
-        "B. Answering without feeling rushed.",
+        "A. Answering without feeling rushed.",
+        "B. Repeating the same sentence for a minute.",
         "C. Giving only a one-word response.",
         "D. Ending the interview immediately."
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "take your time允許從容，不是限更短。"
     },
     {
@@ -32732,12 +32732,12 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "Do I need a tie? No, just something reasonably smart.",
       "options": [
-        "A. 不必領帶，穿得適度整齊即可。",
+        "A. 完全沒有衣著要求，任何穿著都可以。",
         "B. 一定要領帶，而且只能選黑色。",
-        "C. 完全沒有衣著要求，任何穿著都可以。",
+        "C. 不必領帶，穿得適度整齊即可。",
         "D. 只有領帶需要整齊，其他衣服不重要。"
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "否定領帶必要性，但reasonably smart仍有整齊程度要求。"
     },
     {
@@ -32868,11 +32868,11 @@
       "speak": "The arrow points to the car park, not to the building entrance.",
       "options": [
         "A. 箭頭表示停車場和建築入口都在前方。",
-        "B. 箭頭指停車場，不是建築入口。",
+        "B. 箭頭指停車場內的建築入口。",
         "C. 箭頭指建築入口，停車場在旁邊。",
-        "D. 箭頭指停車場內的建築入口。"
+        "D. 箭頭指停車場，不是建築入口。"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "not to明確排除把箭頭當建築入口指示。"
     },
     {
@@ -33015,11 +33015,11 @@
       "desc": "【綜合】Science Journal: Anthropologists have been debating the purpose of the newly discovered ruins. The complex structure is hypothesized to have been utilized as a celestial observatory. Given the precision of the stonework, the builders must have possessed advanced mathematical knowledge. Q: What is the main conclusion drawn about the ancient builders?",
       "options": [
         "A. They struggled with complex architectural designs.",
-        "B. They were highly skilled in mathematics.",
+        "B. They have been living in the region for centuries.",
         "C. They used the ruins primarily for religious rituals.",
-        "D. They have been living in the region for centuries."
+        "D. They were highly skilled in mathematics."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "短文推論「the builders must have possessed advanced mathematical knowledge」（建造者一定具備先進的數學知識），故選 B。"
     },
     {
@@ -33335,11 +33335,11 @@
       "speak": "The current foreign exchange market situation is considered to be highly volatile at this particular moment.",
       "options": [
         "A. The market is completely stable right now, don't worry.",
-        "B. Perhaps we should delay our large currency conversion then.",
+        "B. Volatility is just a myth invented by stock brokers.",
         "C. Exchange rates basically never change in this region.",
-        "D. Volatility is just a myth invented by stock brokers."
+        "D. Perhaps we should delay our large currency conversion then."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "The current foreign exchange market situation is considered to be highly volatile at this particular moment. (目前的匯市情況在此刻被認為是高度波動的。) volatile 指「易變的、波動大的」；回應「或許我們該延後大額外幣兌換」是明智的對策。"
     },
     {
@@ -33586,12 +33586,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The outdated machinery is slated to be dismantled and replaced by automated robotics.",
       "options": [
-        "A. 過時的機械預計將被拆除，並由自動化機器人取代。",
+        "A. 過時的機械已經被自動化機器人完全取代了。",
         "B. 自動化機器人正在拆除過時的機械。",
         "C. 我們不打算拆除過時的機械，而是直接引入機器人。",
-        "D. 過時的機械已經被自動化機器人完全取代了。"
+        "D. 過時的機械預計將被拆除，並由自動化機器人取代。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The outdated machinery is slated to be dismantled and replaced by automated robotics. 意思：過時的機械預計將被拆除，並由自動化機器人取代。is slated to be 預計將被..."
     },
     {
@@ -33721,12 +33721,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The initial patent application is deemed to be invalid due to prior art references.",
       "options": [
-        "A. 最初的專利申請因先前的技術參考文獻被視為無效。",
+        "A. 先前的技術參考文獻因最初的專利申請而無效。",
         "B. 最初的專利申請被視為有效，並將成為技術參考。",
         "C. 我們必須使最初的專利申請失效以引用先前的技術。",
-        "D. 先前的技術參考文獻因最初的專利申請而無效。"
+        "D. 最初的專利申請因先前的技術參考文獻被視為無效。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The initial patent application is deemed to be invalid due to prior art references. 意思：最初的專利申請因先前的技術參考文獻被視為無效。is deemed to be (被視為)。"
     },
     {
@@ -33736,11 +33736,11 @@
       "desc": "【短文】Legal Brief: Section 4 of the employment contract has been undergoing major revisions. The termination clause is considered to have been too ambiguous in the previous version. The drafting committee must have realized that a clearer definition of gross misconduct was necessary to protect the company from wrongful dismissal lawsuits. Q: Why was Section 4 revised?",
       "options": [
         "A. To provide more vacation days for employees.",
-        "B. Because the previous termination rules lacked clarity.",
-        "C. To prevent the drafting committee from resigning.",
+        "B. To prevent the drafting committee from resigning.",
+        "C. Because the previous termination rules lacked clarity.",
         "D. Because lawsuits have bankrupted the company."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "文中提到 termination clause is considered to have been too ambiguous (解雇條款被認為太過模稜兩可)，且需要 clearer definition (更清晰的定義)，故選 B。"
     },
     {
@@ -33764,11 +33764,11 @@
       "desc": "【短文】HR Announcement: We have been evaluating our current health benefits package for the past six months. The updated dental plan is slated to be launched in January. Employees who missed the open enrollment period must have overlooked the multiple reminder emails sent last week. Q: What is true about the updated dental plan?",
       "options": [
         "A. It has already been implemented.",
-        "B. It will be introduced at the beginning of the year.",
-        "C. It was rejected by the employees.",
+        "B. It was rejected by the employees.",
+        "C. It will be introduced at the beginning of the year.",
         "D. It replaces the mandatory health checkup."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "文中指出 The updated dental plan is slated to be launched in January (預計於一月推出)，故選 B。"
     },
     {
@@ -33819,12 +33819,12 @@
       "difficulty": 3,
       "desc": "【短文】Travel Insight: The hospitality industry has been adapting to the rise of \"bleisure\" travel—combining business with leisure. Many luxury resorts are reported to have upgraded their business centers to accommodate remote workers. Hotel managers must have realized that free Wi-Fi is no longer sufficient to attract this new demographic. Q: What is the main reason luxury resorts are upgrading their facilities?",
       "options": [
-        "A. To comply with new safety regulations.",
-        "B. To meet the needs of travelers mixing work and vacation.",
+        "A. To meet the needs of travelers mixing work and vacation.",
+        "B. To comply with new safety regulations.",
         "C. To host international political summits.",
         "D. To reduce their overall energy consumption."
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "文章首句定義 bleisure 為 combining business with leisure，並提到度假村升級商務中心以 accommodate remote workers (容納遠端工作者)，故選 B。"
     },
     {
@@ -33848,11 +33848,11 @@
       "desc": "【短文】Book Review: The author has been weaving intricate political allegories into her fantasy worlds for years. Her latest work is said to have been inspired by the European industrial revolution. Readers familiar with her style must have quickly identified the parallels between the fictional empire and 19th-century Britain. Q: What is the primary inspiration for the author's latest book?",
       "options": [
         "A. The author's personal childhood memories.",
-        "B. The industrial revolution in Europe.",
-        "C. A recent political scandal in modern Britain.",
+        "B. A recent political scandal in modern Britain.",
+        "C. The industrial revolution in Europe.",
         "D. Classical Greek mythology."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "文中直接說明 Her latest work is said to have been inspired by the European industrial revolution (據說靈感來自歐洲工業革命)。"
     },
     {
@@ -33876,11 +33876,11 @@
       "desc": "【綜合】The ancient manuscript, which ___ in a forgotten monastery, is currently being authenticated. The monks who preserved it ___ extraordinary measures to protect it from moisture.",
       "options": [
         "A. is believed to be found / should take",
-        "B. is believed to have been found / must have taken",
-        "C. believes to find / must take",
+        "B. believes to find / must take",
+        "C. is believed to have been found / must have taken",
         "D. believed to have found / should have taken"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "第一格：手稿「被發現」發生在過去，用 is believed to have been found。第二格：推測過去僧侶「一定採取了」保護措施，用 must have taken。"
     },
     {
@@ -34149,11 +34149,11 @@
       "speak": "The sudden political turmoil must have destabilized the regional currency significantly.",
       "options": [
         "A. 政治動盪一直在破壞區域貨幣的穩定性。",
-        "B. 突如其來的政治動盪一定嚴重破壞了區域貨幣的穩定。",
-        "C. 區域貨幣的貶值預期將引發政治動盪。",
+        "B. 區域貨幣的貶值預期將引發政治動盪。",
+        "C. 突如其來的政治動盪一定嚴重破壞了區域貨幣的穩定。",
         "D. 必須有政治動盪才能促成貨幣的重大改革。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文原句：The sudden political turmoil must have destabilized the regional currency significantly. (突如其來的政治動盪一定嚴重破壞了區域貨幣的穩定。) destabilize 使動搖、破壞穩定。"
     },
     {
@@ -34313,11 +34313,11 @@
       "desc": "【綜合語法】The commodity prices ___ wildly this month. Speculators are thought ___ artificial shortages to drive up the value.",
       "options": [
         "A. fluctuate / to create",
-        "B. have been fluctuating / to have created",
+        "B. fluctuated / created",
         "C. are fluctuating / creating",
-        "D. fluctuated / created"
+        "D. have been fluctuating / to have created"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "前半句強調這個月以來持續的波動，用 have been fluctuating；後半句表示投機客被認為「已經製造了」人為短缺，用 to have created。"
     },
     {
@@ -34383,11 +34383,11 @@
       "desc": "【綜合語法】Customers ___ of faulty wiring in the blenders since May. The severe overheating is suspected ___ several kitchen fires last week.",
       "options": [
         "A. complain / to cause",
-        "B. have been complaining / to have caused",
+        "B. had complained / to be caused",
         "C. complained / causing",
-        "D. had complained / to be caused"
+        "D. have been complaining / to have caused"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "第一格用現在完成進行式表示自五月以來持續的抱怨；第二格用 to have caused 表示「過去被懷疑造成了火災」。"
     },
     {
@@ -34439,11 +34439,11 @@
       "desc": "【綜合語法】The CEO's questionable tax records ___ intense public scrutiny. The missing documents are assumed ___ deliberately destroyed before the audit.",
       "options": [
         "A. draw / to be",
-        "B. have been drawing / to have been",
+        "B. drew / to have",
         "C. are drawing / having been",
-        "D. drew / to have"
+        "D. have been drawing / to have been"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "一直在引來公眾審視用 have been drawing；文件被假設「已經被銷毀」，用完成式被動不定詞 to have been destroyed。"
     },
     {
@@ -34758,11 +34758,11 @@
       "speak": "Several prominent critics have been analyzing the symbolic motifs in this collection.",
       "options": [
         "A. 評論家們認為這個系列的作品缺乏象徵意義",
-        "B. 幾位著名的評論家一直在分析這個系列中的象徵性主題",
-        "C. 藝術家拒絕向評論家解釋作品中的主題",
+        "B. 藝術家拒絕向評論家解釋作品中的主題",
+        "C. 幾位著名的評論家一直在分析這個系列中的象徵性主題",
         "D. 觀眾對於作品中複雜的象徵感到非常困惑"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "原句：Several prominent critics have been analyzing the symbolic motifs in this collection. (幾位著名的評論家一直在分析這個系列中的象徵性主題。)"
     },
     {
@@ -34833,11 +34833,11 @@
       "speak": "The executive coaching sessions are purported to be highly transformative.",
       "options": [
         "A. I have been transforming the raw data.",
-        "B. Indeed, several managers spoke highly of them.",
-        "C. The coach must have missed the bus.",
+        "B. The coach must have missed the bus.",
+        "C. Indeed, several managers spoke highly of them.",
         "D. The sessions were unfortunately cancelled."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "原句：The executive coaching sessions are purported to be highly transformative. (高階主管教練課程據說非常具有變革性。) 選項 B (的確，有幾位經理對此評價很高) 最合理。"
     },
     {
@@ -34891,12 +34891,12 @@
       "difficulty": 3,
       "desc": "【短文】HR Memo: The management has been reviewing the turnover metrics for the past quarter. The rigid office hours are suspected to have alienated our top performers. We must have ignored their requests for a better work-life balance for far too long.\nQ: What is considered the main reason for losing top performers?",
       "options": [
-        "A. Low salaries",
-        "B. Inflexible schedules",
+        "A. Inflexible schedules",
+        "B. Low salaries",
         "C. Poor management",
         "D. Lack of training"
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "文中提到「rigid office hours (僵化的辦公時間)」，也就是缺乏彈性的行程 (Inflexible schedules) 導致留不住優秀人才。"
     },
     {
@@ -35004,11 +35004,11 @@
       "desc": "【短文】Article: Security experts have been monitoring the new smart home devices. The built-in microphones are proven to have recorded private conversations without consent. The manufacturer must have intentionally hidden this tracking feature deep within the terms of service.\nQ: What is the main concern regarding the smart devices?",
       "options": [
         "A. They are too expensive.",
-        "B. They secretly record users.",
+        "B. They consume too much power.",
         "C. They break down easily.",
-        "D. They consume too much power."
+        "D. They secretly record users."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文章指出麥克風在未經同意下錄下私人對話 (recorded private conversations without consent)，即暗中錄音。"
     },
     {
@@ -35494,12 +35494,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The ambitious housing initiative is slated to be entirely subsidized by federal grants.",
       "options": [
-        "A. 這個雄心勃勃的住宅計畫預計將完全由聯邦政府補助",
+        "A. 這項倡議已經被全盤否決",
         "B. 住宅計畫將由市民自行籌資",
         "C. 聯邦政府拒絕資助這項住宅計畫",
-        "D. 這項倡議已經被全盤否決"
+        "D. 這個雄心勃勃的住宅計畫預計將完全由聯邦政府補助"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "The ambitious housing initiative is slated to be entirely subsidized by federal grants. (這項雄心勃勃的住房倡議預定將完全由聯邦補助款提供資金。)"
     },
     {
@@ -35611,11 +35611,11 @@
       "desc": "【短文】Neuro-Science: Neuroscientists have been mapping the brain's neural pathways during deep sleep. Memory consolidation is proven to be facilitated by these slow-wave patterns. Individuals who sleep poorly must have experienced a significant disruption in this critical restorative phase.\nQ: What happens during slow-wave sleep?",
       "options": [
         "A. Neural pathways are permanently destroyed",
-        "B. Memories are strengthened and organized",
+        "B. Individuals experience vivid nightmares",
         "C. The brain stops all internal activity",
-        "D. Individuals experience vivid nightmares"
+        "D. Memories are strengthened and organized"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：文章提到 Memory consolidation (記憶鞏固/強化) 是由慢波模式 (slow-wave patterns) 促進的。選項 B「記憶被強化與組織」正是 consolidation 的意義。"
     },
     {
@@ -35639,11 +35639,11 @@
       "desc": "【短文】Opinion Page: We have been enduring endless traffic jams since the bridge repair began. The detour routes are proven to have been poorly planned. The urban planners must have relied on outdated traffic models, as they completely failed to account for rush-hour volume.\nQ: Why are the detour routes ineffective?",
       "options": [
         "A. They are too narrow for commercial trucks",
-        "B. The planners used old and inaccurate traffic data",
+        "B. The bridge repair was unexpectedly canceled",
         "C. Rush-hour volume has decreased recently",
-        "D. The bridge repair was unexpectedly canceled"
+        "D. The planners used old and inaccurate traffic data"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：投書中提到都市計畫者「must have relied on outdated traffic models (一定依賴了過時的交通模型)」，導致無法應付尖峰時段車流。選項 B (使用舊且不準確的數據) 為正解。"
     },
     {
@@ -35709,11 +35709,11 @@
       "desc": "【短文】Science Weekly: Researchers have been observing the peculiar mating rituals of the bird of paradise. The vibrant plumage is considered to have evolved specifically to attract mates in dense jungles. The ancestors of these birds must have faced intense sexual selection pressures.\nQ: Why did the vibrant plumage evolve?",
       "options": [
         "A. To camouflage the birds in dense jungles",
-        "B. To attract potential mating partners",
+        "B. To help the birds fly faster",
         "C. To frighten away dangerous predators",
-        "D. To help the birds fly faster"
+        "D. To attract potential mating partners"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：文章明確指出鮮豔的羽毛 (vibrant plumage) 被認為是為了「attract mates (吸引配偶)」而演化出來的。選項 B (attract potential mating partners) 完全相符。"
     },
     {
@@ -35722,12 +35722,12 @@
       "difficulty": 3,
       "desc": "【短文】Exhibition Critique: We have been waiting in line for hours to see the immersive digital art show. The visual projections are reported to have crashed twice during the morning session. The technical team must have overlooked a fatal bug in the rendering software.\nQ: What issue occurred during the morning session?",
       "options": [
-        "A. The gallery was closed due to a power outage",
-        "B. The visual projections failed to operate correctly",
+        "A. The visual projections failed to operate correctly",
+        "B. The gallery was closed due to a power outage",
         "C. The technical team resigned unexpectedly",
         "D. The audience refused to wait in line"
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "繁體中文解說：文中提及「The visual projections are reported to have crashed twice (視覺投影據報崩潰了兩次)」，意即系統無法正常運作。選項 B 準確描述了投影失敗的問題。"
     },
     {
@@ -35944,12 +35944,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "Have you been going to the mandatory retirement planning workshops?",
       "options": [
-        "A. No, I actually missed the first session due to a meeting.",
+        "A. Yes, he is retiring next month.",
         "B. I plan to buy a new suit for the party.",
         "C. The construction workshop is located outside.",
-        "D. Yes, he is retiring next month."
+        "D. No, I actually missed the first session due to a meeting."
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "英文：Have you been going to the mandatory retirement planning workshops? 意思：你有一直去參加強制性的退休規劃工作坊嗎？A「沒有，其實我因為開會錯過了第一堂課」最為連貫。"
     },
     {
@@ -36020,11 +36020,11 @@
       "speak": "The brake pads have been wearing out unevenly due to a misaligned suspension.",
       "options": [
         "A. I will pad the box with some extra foam.",
-        "B. Should I authorize a complete suspension replacement then?",
-        "C. The road has been very smooth lately.",
+        "B. The road has been very smooth lately.",
+        "C. Should I authorize a complete suspension replacement then?",
         "D. Please wear a helmet while riding the motorcycle."
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文：The brake pads have been wearing out unevenly due to a misaligned suspension. 意思：因為懸吊系統未對齊，煞車來令片一直磨損得很不平均。B「那麼我應該授權進行懸吊系統的全面更換嗎？」為最佳回應。"
     },
     {
@@ -36080,11 +36080,11 @@
       "speak": "The essential prerequisites for this internship are supposed to be strictly enforced.",
       "options": [
         "A. 公司決定放寬實習生的招募條件以吸引更多人。",
-        "B. 這個實習計畫的必要先決條件理應被嚴格執行。",
-        "C. 所有實習生都會獲得一份全職工作的錄取通知。",
+        "B. 所有實習生都會獲得一份全職工作的錄取通知。",
+        "C. 這個實習計畫的必要先決條件理應被嚴格執行。",
         "D. 面試過程非常輕鬆，沒有任何嚴格的規定。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文：The essential prerequisites for this internship are supposed to be strictly enforced. 意思：這個實習計畫的必要先決條件理應被嚴格執行。prerequisite 為先決條件。"
     },
     {
@@ -36139,11 +36139,11 @@
       "desc": "【綜合】Supply Chain Insight: The sudden collapse of the major shipping firm is heavily rumored to have been orchestrated by a rival conglomerate. Smaller vendors have been suffering from extreme inventory shortages ever since. They must have relied entirely on a single logistics provider, ignoring the basic principle of diversification.\nQ: What mistake did the smaller vendors make?",
       "options": [
         "A. They orchestrated the firm's collapse.",
-        "B. They relied on a single logistics provider.",
+        "B. They ignored the rival conglomerate.",
         "C. They diversified their inventory too much.",
-        "D. They ignored the rival conglomerate."
+        "D. They relied on a single logistics provider."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文中指責較小的供應商「must have relied entirely on a single logistics provider」，犯了未分散風險的錯誤。"
     },
     {
@@ -36153,11 +36153,11 @@
       "desc": "【語法結構】Not only ___ alternative raw materials, but the procurement team is also expected to secure lower import tariffs next quarter.",
       "options": [
         "A. they have been sourcing",
-        "B. have they been sourcing",
+        "B. they source",
         "C. do they source",
-        "D. they source"
+        "D. have they been sourcing"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "Not only 置於句首時，後面的子句需要倒裝（助動詞移到主詞前），故選 have they been sourcing。"
     },
     {
@@ -36265,11 +36265,11 @@
       "desc": "【語法結構】Only after the audit was fully completed ___ that the startup's inflated valuation was entirely fabricated by the founders.",
       "options": [
         "A. it was discovered",
-        "B. did they discover",
-        "C. they discovered",
+        "B. they discovered",
+        "C. did they discover",
         "D. they have discovered"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "Only after 位於句首時，主要子句需倒裝。過去式倒裝為 did + S + V。"
     },
     {
@@ -36514,12 +36514,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The correlation between sleep deprivation and cognitive decline has been rigorously documented by researchers.",
       "options": [
-        "A. 研究人員一直嚴格記錄睡眠不足與認知衰退之間的關聯性。",
+        "A. 研究人員必須證明睡眠不足會造成認知衰退。",
         "B. 睡眠不足一定導致了受試者嚴重的認知功能下降。",
         "C. 關於睡眠與認知的研究正被學術界廣泛討論。",
-        "D. 研究人員必須證明睡眠不足會造成認知衰退。"
+        "D. 研究人員一直嚴格記錄睡眠不足與認知衰退之間的關聯性。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The correlation between sleep deprivation and cognitive decline has been rigorously documented by researchers. 意思是「睡眠不足與認知衰退之間的關聯，已經被研究人員嚴格地記錄下來」。使用現在完成式的被動語態 (has been documented)。"
     },
     {
@@ -36544,12 +36544,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The intricate embroidery on this haute couture gown is being meticulously crafted by artisans.",
       "options": [
-        "A. 這件高級訂製禮服上精美的刺繡正由工匠們一絲不苟地製作中。",
+        "A. 我們必須請最頂尖的工匠來完成這種精美的刺繡。",
         "B. 工匠們一直努力在期限前完成這件高級禮服的刺繡。",
         "C. 這件禮服的刺繡一定花了工匠們好幾個月的時間。",
-        "D. 我們必須請最頂尖的工匠來完成這種精美的刺繡。"
+        "D. 這件高級訂製禮服上精美的刺繡正由工匠們一絲不苟地製作中。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The intricate embroidery on this haute couture gown is being meticulously crafted by artisans. 意思是「這件高級訂製禮服上繁複的刺繡，正由工匠們一絲不苟地手工製作」。使用了現在進行式的被動語態 (is being crafted)。"
     },
     {
@@ -36574,12 +36574,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The standardized testing protocols must have been compromised during the administrative transition.",
       "options": [
-        "A. 標準化測驗的程序一定在行政交接期間遭到了破壞。",
+        "A. 行政團隊必須在交接前確保測驗不會遭到外洩。",
         "B. 學校一直在過渡期間努力維持標準化測驗的公平性。",
         "C. 測驗程序正被教育局重新評估其有效性。",
-        "D. 行政團隊必須在交接前確保測驗不會遭到外洩。"
+        "D. 標準化測驗的程序一定在行政交接期間遭到了破壞。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The standardized testing protocols must have been compromised during the administrative transition. 意思是「標準化測試規程一定在行政過渡/交接期間遭到妥協/破壞了」。compromised 在此指「遭受損害/破壞」。"
     },
     {
@@ -36604,12 +36604,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "Your roaming privileges are currently being suspended due to anomalous international activity.",
       "options": [
-        "A. 由於異常的國際活動，您的漫遊權限目前正被停用。",
+        "A. 您必須親自聯繫客服才能恢復國際漫遊服務。",
         "B. 我們一直懷疑您的帳號涉及異常的跨國詐騙活動。",
         "C. 您的漫遊權限一定是因為出國太久而被取消了。",
-        "D. 您必須親自聯繫客服才能恢復國際漫遊服務。"
+        "D. 由於異常的國際活動，您的漫遊權限目前正被停用。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：Your roaming privileges are currently being suspended due to anomalous international activity. 意思是「您的漫遊特權/權限目前正因為異常的國際活動而被暫停」。(is being suspended)"
     },
     {
@@ -36664,12 +36664,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "The therapeutic benefits of this herbal remedy have been fiercely debated by medical professionals.",
       "options": [
-        "A. 這種草藥療法的治療效益一直受到醫療專業人員的激烈辯論。",
+        "A. 我們必須證明這種草藥具有醫學上的療效。",
         "B. 醫療專家一定早就知道這種草藥的潛在風險。",
         "C. 這種草藥目前正被醫院廣泛用於治療重症病患。",
-        "D. 我們必須證明這種草藥具有醫學上的療效。"
+        "D. 這種草藥療法的治療效益一直受到醫療專業人員的激烈辯論。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "原句：The therapeutic benefits of this herbal remedy have been fiercely debated by medical professionals. 意思是「這種草藥療法的療效一直被醫療專業人員激烈地爭論」。"
     },
     {
@@ -36722,11 +36722,11 @@
       "desc": "【短文】Academic Journal: Researchers have been tracking the long-term effects of bilingual education. Cognitive flexibility is proven to have been greatly enhanced in students who started early. Policymakers who cut funding for language programs must have disregarded these empirical findings.\nQ: What is a proven benefit of bilingual education mentioned?",
       "options": [
         "A. Cheaper program funding",
-        "B. Enhanced cognitive flexibility",
+        "B. Faster reading speed in one language",
         "C. More physical strength",
-        "D. Faster reading speed in one language"
+        "D. Enhanced cognitive flexibility"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文中的「Cognitive flexibility is proven to have been greatly enhanced」直接對應到選項 B。"
     },
     {
@@ -36750,11 +36750,11 @@
       "desc": "【短文】Quality Assurance Report: The front desk staff has been undergoing intensive conflict resolution training. A recent altercation in the lobby is confirmed to have been handled unprofessionally. The duty supervisor must have lacked the necessary experience to de-escalate the situation effectively.\nQ: Why is the staff undergoing training?",
       "options": [
         "A. To learn how to use the new software",
-        "B. Because a situation was handled poorly",
+        "B. Because they requested a pay raise",
         "C. To prepare for the tourist season",
-        "D. Because they requested a pay raise"
+        "D. Because a situation was handled poorly"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "因為近期大廳的爭執 (altercation) 被證實處理得不專業 (handled unprofessionally)，所以人員正在接受衝突解決訓練。"
     },
     {
@@ -36792,11 +36792,11 @@
       "desc": "【短文】Arbitration Update: The mediation board has been striving to resolve the software copyright conflict peacefully. The proprietary code is verified to have been independently developed, not stolen. The accusing party must have jumped to conclusions based solely on the superficial similarities in the final product.\nQ: What did the mediation board verify?",
       "options": [
         "A. The software was stolen",
-        "B. The code was independently developed",
+        "B. The final product was superficial",
         "C. The accusing party was correct",
-        "D. The final product was superficial"
+        "D. The code was independently developed"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "短文第二句「The proprietary code is verified to have been independently developed (專有程式碼被驗證為獨立開發)」為解答依據。"
     },
     {
@@ -36819,12 +36819,12 @@
       "difficulty": 3,
       "desc": "【短文】Public Transport Update: The transport authority has been extending the light rail network to the outer suburbs. The improved connectivity is projected to be a major catalyst for suburban economic growth. Residents who previously relied on cars must have welcomed the reduction in their daily commute times.\nQ: What is expected to boost suburban economic growth?",
       "options": [
-        "A. More cars on the road",
-        "B. Better transport connectivity",
+        "A. Better transport connectivity",
+        "B. More cars on the road",
         "C. A new shopping mall",
         "D. The transport authority's headquarters"
       ],
-      "ans": "B",
+      "ans": "A",
       "explain": "「The improved connectivity is projected to be a major catalyst for suburban economic growth (改善的連結性預計將成為郊區經濟增長的主要催化劑)」，因此選 B。"
     },
     {
@@ -37347,11 +37347,11 @@
       "desc": "【短文】NGO Strategic Review: The foundation has been channeling funds into renewable energy projects in developing nations. The reliance on fossil fuels is considered to have hindered economic resilience in these regions. The previous administration must have overlooked the vital importance of sustainable infrastructure when drafting their development plans. \nQ: According to the review, what hindered economic resilience?",
       "options": [
         "A. The foundation's funding strategy.",
-        "B. The reliance on fossil fuels.",
+        "B. The overpopulation in developing nations.",
         "C. The new sustainable infrastructure.",
-        "D. The overpopulation in developing nations."
+        "D. The reliance on fossil fuels."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文中明確寫出 The reliance on fossil fuels is considered to have hindered economic resilience (對化石燃料的依賴被認為阻礙了經濟韌性)。"
     },
     {
@@ -37569,12 +37569,12 @@
       "desc": "🎧 聽一聽，選出正確的意思",
       "speak": "A strict curfew is highly likely to be imposed on the flooded regions.",
       "options": [
-        "A. 極大可能會對淹水地區實施嚴格的宵禁。",
+        "A. 政府決定取消災區原本實施的夜間宵禁。",
         "B. 淹水地區的居民已經被要求立即撤離。",
         "C. 警察正在淹水災區實施嚴格的交通管制。",
-        "D. 政府決定取消災區原本實施的夜間宵禁。"
+        "D. 極大可能會對淹水地區實施嚴格的宵禁。"
       ],
-      "ans": "A",
+      "ans": "D",
       "explain": "正確答案是 A。句意：極大可能會對淹水地區實施嚴格的宵禁。原句：A strict curfew is highly likely to be imposed on the flooded regions."
     },
     {
@@ -37705,11 +37705,11 @@
       "speak": "A mutually beneficial alliance is believed to be favored by the board.",
       "options": [
         "A. The blackboard needs to be wiped clean.",
-        "B. That makes sense; a win-win scenario reduces long-term risks.",
+        "B. They favored a much more aggressive approach last year.",
         "C. I don't believe in alien alliances at all.",
-        "D. They favored a much more aggressive approach last year."
+        "D. That makes sense; a win-win scenario reduces long-term risks."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "正確答案是 B。句意：董事會據信傾向於建立互利互惠的聯盟。原句：A mutually beneficial alliance is believed to be favored by the board. 選項 B「這很合理；雙贏的局面能降低長期風險」最適合。"
     },
     {
@@ -37831,11 +37831,11 @@
       "desc": "【對話】A: Did the sellers agree to the new platform fee structure?\nB: No, they are furious. They ___ a mass boycott against the e-commerce site for the past forty-eight hours.",
       "options": [
         "A. are organized",
-        "B. have been organizing",
+        "B. will have organized",
         "C. organize",
-        "D. will have organized"
+        "D. have been organizing"
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "繁體中文解說：for the past forty-eight hours 提示動作從過去持續到現在，應選現在完成進行式 have been organizing。"
     },
     {
@@ -38051,11 +38051,11 @@
       "desc": "【綜合】International Aid Journal: The UN has been advocating for a more transparent distribution network. The sudden disappearance of emergency rations is strongly suspected to have been orchestrated by local warlords. The convoy leaders must have deviated from the secured routes without authorization. Q: What is the main suspicion regarding the missing rations?",
       "options": [
         "A. The UN distributed them unfairly.",
-        "B. Local warlords stole them.",
+        "B. The convoy leaders ate them.",
         "C. The rations were expired.",
-        "D. The convoy leaders ate them."
+        "D. Local warlords stole them."
       ],
-      "ans": "B",
+      "ans": "D",
       "explain": "文章提到 disappearance... is strongly suspected to have been orchestrated by local warlords（強烈懷疑是由當地軍閥策劃的），故選 B（stole them 為同義轉換）。"
     },
     {
@@ -38309,12 +38309,12 @@
       "desc": "🎧 聽到這句話，最適合的回應是？",
       "speak": "The cynical tone of the narrative must have alienated some of the older demographic.",
       "options": [
-        "A. Yes, older readers found the book too pessimistic.",
+        "A. The narrator is being cynical about the demographic.",
         "B. They have been aliens to the demographic for years.",
-        "C. The narrator is being cynical about the demographic.",
+        "C. Yes, older readers found the book too pessimistic.",
         "D. I must have toned down my voice during the reading."
       ],
-      "ans": "A",
+      "ans": "C",
       "explain": "原句：敘事中憤世嫉俗的語調一定疏遠了部分較年長的族群（must have alienated：一定使...疏遠）。選項A「對，年長讀者覺得這本書太悲觀了」符合語境。"
     },
     {
@@ -38370,11 +38370,11 @@
       "speak": "Our proprietary software is being patented in multiple international jurisdictions.",
       "options": [
         "A. 我們的專有軟體正被跨國競爭對手惡意抄襲。",
-        "B. 我們的專有軟體正在多個國際司法管轄區申請專利中。",
-        "C. 國際法庭已經撤銷了我們專有軟體的專利權。",
+        "B. 國際法庭已經撤銷了我們專有軟體的專利權。",
+        "C. 我們的專有軟體正在多個國際司法管轄區申請專利中。",
         "D. 我們一直在全球各地推廣我們擁有專利的軟體。"
       ],
-      "ans": "B",
+      "ans": "C",
       "explain": "英文原句意為「我們的專有（專利）軟體正於多個國際司法管轄區取得專利中。」（is being patented：正在被註冊專利）。"
     },
     {

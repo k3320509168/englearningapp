@@ -71,6 +71,23 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   for(const skill of ['listening','reading','speaking','writing'])questions.filter(q=>q.skill===skill).forEach((q,i)=>dest[i%4===3?'boss':'normal'].push(q));
  }
 }
+// 少量移動過量選項的正解，保持各模式和技能的字母分布接近。
+function balanceAnswerPositions(deck, skill) {
+ const questions = deck.filter(q => q.type === 'choice' && q.skill === skill);
+ const counts = [...letters].map(letter => questions.filter(q => q.ans === letter).length);
+ if (Math.max(...counts) - Math.min(...counts) <= 2) return;
+ while (Math.max(...counts) - Math.min(...counts) > 1) {
+  const from = counts.indexOf(Math.max(...counts));
+  const to = counts.indexOf(Math.min(...counts));
+  const question = questions.find(q => q.ans === letters[from]);
+  const texts = question.options.map(option => option.slice(3));
+  [texts[from], texts[to]] = [texts[to], texts[from]];
+  question.options = texts.map((value, i) => `${letters[i]}. ${value}`);
+  question.ans = letters[to];
+  counts[from]--;
+  counts[to]++;
+ }
+}
 const artifacts=[];
 for(const [r,{normal,boss,vocab}] of regions){
  const all=[...normal,...boss];const keys=all.map(q=>`${q.type}|${q.desc}|${q.speak??''}`);
@@ -83,6 +100,7 @@ for(const [r,{normal,boss,vocab}] of regions){
   vocab[q.vocabId]={...vocab[canonical],word:vocab[canonical].word??canonical.toLowerCase()};
  }
  const path=`src/game/questions/bank/r${r}.json`;const vp=`src/game/questions/bank/vocab-r${r}.json`;
+ for (const deck of [normal, boss]) for (const skill of ['listening', 'reading']) balanceAnswerPositions(deck, skill);
  const encoded=JSON.stringify({normal,boss},null,2)+'\n';const venc=JSON.stringify(vocab,null,2)+'\n';
  // 若在正式目錄且 r6 已擁有 3000+ 道完整合併審定題目，保留之；測試環境（含 tmp）則正常寫出供斷言
  let shouldWrite = true;

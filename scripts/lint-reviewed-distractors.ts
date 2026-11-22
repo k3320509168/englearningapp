@@ -1,0 +1,38 @@
+import './loadBanks';
+import { QUESTION_POOL, LEVELS } from '../src/game/QuestionData';
+
+// 已修正明顯長度暗示的高階聽力題。只約束已審過的題，舊候選另排審查。
+const reviewed: [number, string][] = [
+  [6, 'The visitor centre is nearby as the crow flies'],
+  [7, 'The process becomes circular when'],
+  [7, 'The menu is concise, but'],
+  [7, 'The assurance applies to the stated route'],
+  [8, 'The narrative withholds the easy comfort'],
+];
+for (const [region, prefix] of reviewed) {
+  const pool = QUESTION_POOL[LEVELS[region]];
+  const matches = [...pool.normal, ...pool.boss].filter(q => q.speak?.startsWith(prefix));
+  const question = matches[0];
+  const options = question?.options ?? [];
+  const answer = options.find(option => option.startsWith(question.ans + '. '));
+  const length = (option: string) => Array.from(option.slice(3)).length;
+  const longestDistractor = Math.max(...options.filter(option => option !== answer).map(length));
+  if (matches.length !== 1 || options.length !== 4 || !answer || length(answer) > longestDistractor * 1.3) {
+    console.error(`已審聽力題的正解長度可能提示答案：${prefix}`);
+    process.exitCode = 1;
+  }
+}
+if (!process.exitCode) console.log('已審五道聽力題的選項長度檢查通過');
+
+for (const region of [6, 7, 8]) {
+  for (const [deckName, deck] of Object.entries(QUESTION_POOL[LEVELS[region]])) {
+    for (const skill of ['reading', 'listening']) {
+      const choices = deck.filter(q => q.type === 'choice' && q.skill === skill);
+      const totals = [...'ABCD'].map(letter => choices.filter(q => q.ans === letter).length);
+      if (choices.length >= 12 && Math.max(...totals) - Math.min(...totals) > 2) {
+        console.error(`R${region} ${deckName} ${skill} 正解位置偏斜：${totals.join('/')}`);
+        process.exitCode = 1;
+      }
+    }
+  }
+}

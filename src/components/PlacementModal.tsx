@@ -7,7 +7,7 @@ import { PROLOGUE, REGIONS } from '../game/regions';
 import { isSpeechRecognitionSupported } from '../game/speech';
 import {
   CONFIRM_SIZE, MAX_PROBE_QUESTIONS, PLACEMENT_LEVELS, TIME_LIMIT_MS, answerPlacement, answeredCount, currentQuestion,
-  maxTestable, retestWaitMs, skipSpeaking, startPlacement, isPlacementReviewDue, startPlacementReview, answerPlacementReview,
+  maxTestable, retestWaitMs, skipSpeaking, startPlacement, isPlacementReviewDue, startPlacementReview, answerPlacementReview, placementQuestionKey,
   currentReviewQuestion, type PlacementReviewState, type PlacementState,
 } from '../game/placementTest';
 import { beginLevel, continueJourney } from '../game/startLevel';
@@ -49,9 +49,9 @@ export default function PlacementModal() {
     setTest(q?.type === 'voice' && viaSpelling ? skipSpeaking(test) : answerPlacement(test, correct));
   };
 
-  const onReviewAnswer = (correct: boolean) => {
+  const onReviewAnswer = (correct: boolean, viaSpelling?: boolean) => {
     if (!review) return;
-    setReview(answerPlacementReview(review, correct));
+    setReview(answerPlacementReview(review, correct, viaSpelling));
   };
 
   // 出發：Pre-A1 去失語邊境；其他從推薦區域開始（前面的區域不算通關、不補獎勵，之後可以回去打）
@@ -63,7 +63,7 @@ export default function PlacementModal() {
     save.finishPrologue();
     if (test?.result !== null && test) {
       save.setPlacement({
-        level, region, at: Date.now(), speakingVerified: test.speakingVerified, confidence: test.confidence, weak: test.weak, verified: region === 0,
+        level, region, at: Date.now(), speakingVerified: test.speakingVerified, confidence: test.confidence, weak: test.weak, verified: region === 0, placementQuestionKeys: [...new Set([...(save.placement?.placementQuestionKeys ?? []), ...test.used])].slice(-256),
       });
     }
     if (region > 0) save.skipRegions(region);
@@ -86,8 +86,10 @@ export default function PlacementModal() {
           <p>
             {review.passed
               ? `恭喜！${review.queue.length} 題中答對 ${totalCorrect} 題，${review.speakingVerified ? '四項能力全數達標' : '本次受測能力達標（口說未驗證）'}，跳級實力與推薦區域正式鎖定！`
-              : `${review.queue.length} 題中答對 ${totalCorrect} 題（標準：總分 ≥9 題且每項能力 ≥2 題）。`}
+              : `${review.queue.length} 題中答對 ${totalCorrect} 題（標準：總分 ≥${review.passTotal} 題且每項受測技能 ≥2 題）。`}
           </p>
+          {review.reusedCount > 0 && <p className="muted">這次有 {review.reusedCount} 題曾出現在先前的測驗。</p>}
+          {review.queue.length < review.requiredTotal && <p className="muted">本次題量不足，無法完成驗證。</p>}
           <ul className="muted gate-rules" style={{ margin: '12px 0' }}>
             <li>🎧 聽力：{review.scores.listening.correct} / {review.scores.listening.total} 題 {review.scores.listening.correct >= 2 ? '✔' : '✘'}</li>
             <li>📖 閱讀：{review.scores.reading.correct} / {review.scores.reading.total} 題 {review.scores.reading.correct >= 2 ? '✔' : '✘'}</li>
@@ -104,7 +106,7 @@ export default function PlacementModal() {
               className="btn btn-primary"
               onMouseDown={keepFocus}
               onClick={() => {
-                recordPlacementReview(review.passed, review.weak);
+                recordPlacementReview(review.passed, review.weak, review.queue.map(placementQuestionKey));
                 closeModal();
               }}
             >

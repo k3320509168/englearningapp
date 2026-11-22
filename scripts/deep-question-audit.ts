@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs';
 
-console.log('=== 開始全題庫深度審核 (Deep Question Audit) ===');
+// 補充正式區域題庫的結構規則。語意、答案合理性與分級由內容審核處理。
+console.log('=== 正式區域題庫結構檢查 ===');
 
 let totalCount = 0;
 const errors: string[] = [];
-const warnings: string[] = [];
 const seenKeys = new Set<string>();
 
 for (let r = 0; r <= 8; r++) {
@@ -86,14 +86,13 @@ for (let r = 0; r <= 8; r++) {
   }
 }
 
-console.log(`審查完成！共審核 ${totalCount} 道題目。`);
+console.log(`已檢查 ${totalCount} 道正式區域題目。`);
 console.log(`發現重大錯誤: ${errors.length} 項`);
-console.log(`發現潛在警告: ${warnings.length} 項`);
 
 if (errors.length > 0) {
   console.log('錯誤範例 (前 10 項):');
   errors.slice(0, 10).forEach(e => console.log('  ❌', e));
   process.exit(1);
 } else {
-  console.log('✅ 全題庫深層審查 100% 通過！結構、答案、長度、首字母、選項去重與解析皆完美無暇！');
+  console.log('正式區域題庫結構檢查通過。');
 }

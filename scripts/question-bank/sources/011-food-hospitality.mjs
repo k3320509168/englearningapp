@@ -80,7 +80,7 @@ listening:[
 [1,'to whet the appetite','激起食慾或期待|使所有食物泡濕|徹底消除想吃的念頭|把進餐時間一再延後','whet 是激起；不是同音 wet 的弄濕。'],
 [1,'an exercise in restraint','展現克制與節制的做法|只用來訓練肌力的運動|完全放任各種效果的嘗試|拒絕作任何選擇的狀態','此處 exercise 指實踐展現，不必是體能訓練。'],
 [1,'a convivial atmosphere','便於愉快交談共處的氣氛|要求全程沉默的氣氛|讓人感到敵意的氣氛|刻意保持距離的氣氛','convivial 指友善歡聚，常用於用餐社交。'],
-[2,'The menu is concise, but I would hesitate to call it limited: almost every choice feels distinct.','菜單精簡，但我不太會稱它選擇受限，因為各選項幾乎都具特色。|菜單篇幅很長且每道菜都相同。|說話者認為菜少必定沒有選擇。|每個選項已被廚師刪除。','區分 concise 的正面精簡與 limited 的負面不足。'],
+[2,'The menu is concise, but I would hesitate to call it limited: almost every choice feels distinct.','菜單精簡，但各選項幾乎都不同，未必算受限。|菜單雖短，但說話者認為份量較大足以彌補選擇少。|菜單看來多樣，但說話者覺得選項實際上大同小異。|菜單上的選項各有特色，但說話者仍稱選擇受限。','區分 concise 的正面精簡與 limited 的負面不足。'],
 [2,'What disappointed me was not the simplicity of the dish, but the lack of care with which it had been prepared.','令我失望的是製作欠用心，不是料理簡單。|說話者要求每道菜都必須複雜。|簡單料理已被明確評為做得用心。|失望只因菜名不夠長。','not ... but ... 確定批評對象為用心程度。'],
 [2,'The surroundings are informal without making the service feel casual about the details.','環境輕鬆，但服務沒有因此對細節隨便。|員工因環境輕鬆而忽略所有細節。|服務細心已迫使餐廳採正式服裝。|說話者把輕鬆與粗心視為相同。','informal 與 casual about details 在此分別是輕鬆、草率。'],
 [2,'I can see why the dish attracts attention, though I suspect its novelty contributes more to its appeal than its flavour does.','我理解它為何引人注意，但懷疑吸引力更多來自新奇而非滋味。|說話者完全無法理解料理受到注意的原因。|說話者認為吸引力完全來自熟悉的味道。|說話者只在抱怨上菜時間。','承認料理引人注意，同時比較新奇與滋味對吸引力的貢獻。'],

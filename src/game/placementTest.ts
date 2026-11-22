@@ -1,4 +1,5 @@
 import type { Question } from './types';
+import { ADVANCED_REVIEW_READING } from './placementReviewReading';
 import { shuffleArray } from './battle';
 import { questionSkill } from './QuestionData';
 import prologueBank from './questions/bank/r-pre.json';
@@ -62,7 +63,9 @@ export interface PlacementState {
   weak: ('speaking' | 'writing')[];
 }
 
-const key = (q: Question) => `${q.type}|${q.desc}|${q.speak ?? ''}`;
+export const placementQuestionKey = (q: Question) => `${q.type}|${q.desc}|${q.speak ?? ''}`;
+
+const key = placementQuestionKey;
 
 function take(pool: Question[], n: number, used: Set<string>, rand: () => number): Question[] {
   return shuffleArray(pool.filter(q => !used.has(key(q))), rand).slice(0, n);
@@ -236,6 +239,10 @@ export interface PlacementReviewState {
   currentIdx: number;
   scores: Record<ReviewSkill, SkillScore>;
   speakingVerified: boolean;
+  speakingRequired: boolean;
+  reusedCount: number;
+  requiredTotal: number;
+  passTotal: number;
   done: boolean;
   passed: boolean;
   weak: ReviewSkill[];
@@ -254,7 +261,7 @@ export function isPlacementReviewDue(
 }
 
 export function startPlacementReview(
-  placement: { level: number; speakingVerified?: boolean },
+  placement: { level: number; speakingVerified?: boolean; placementQuestionKeys?: string[] },
   opts: { voice?: boolean; rand?: () => number; pool?: Question[][] } = {},
 ): PlacementReviewState {
   const rand = opts.rand ?? Math.random;
@@ -264,21 +271,31 @@ export function startPlacementReview(
   const voice = opts.voice ?? placement.speakingVerified ?? true;
   const used = new Set<string>();
 
-  const r = take(list.filter(isReading), REVIEW_PER_SKILL, used, rand);
-  r.forEach(q => used.add(key(q)));
-  const l = take(list.filter(isListening), REVIEW_PER_SKILL, used, rand);
-  l.forEach(q => used.add(key(q)));
-  const s = voice ? take(list.filter(q => q.type === 'voice'), REVIEW_PER_SKILL, used, rand) : [];
-  s.forEach(q => used.add(key(q)));
-  const w = take(list.filter(q => q.type === 'spell' || q.type === 'fill'), REVIEW_PER_SKILL, used, rand);
-  w.forEach(q => used.add(key(q)));
+  const previouslySeen = new Set(placement.placementQuestionKeys);
+  let reusedCount = 0;
+  const draw = (candidates: Question[], count: number, preferred: readonly Question[] = []) => {
+    const result: Question[] = [];
+    for (const group of [
+      shuffleArray(preferred.filter(q => !previouslySeen.has(key(q))), rand),
+      shuffleArray(candidates.filter(q => !previouslySeen.has(key(q))), rand),
+      shuffleArray([...preferred, ...candidates].filter(q => previouslySeen.has(key(q))), rand),
+    ]) {
+      for (const question of group) {
+        if (result.length >= count) break;
+        const id = key(question);
+        if (used.has(id)) continue;
+        used.add(id);
+        result.push(question);
+        if (previouslySeen.has(id)) reusedCount++;
+      }
+    }
+    return result;
+  };
 
-  // 口說未啟用或題量不足時，以寫作題補足總數
-  if (s.length < REVIEW_PER_SKILL) {
-    const extraW = take(list.filter(q => q.type === 'spell' || q.type === 'fill'), REVIEW_PER_SKILL - s.length, used, rand);
-    extraW.forEach(q => used.add(key(q)));
-    w.push(...extraW);
-  }
+  const r = draw(list.filter(isReading), REVIEW_PER_SKILL, opts.pool ? [] : ADVANCED_REVIEW_READING[level]);
+  const l = draw(list.filter(isListening), REVIEW_PER_SKILL);
+  const s = voice ? draw(list.filter(q => q.type === 'voice'), REVIEW_PER_SKILL) : [];
+  const w = draw(list.filter(q => q.type === 'spell' || q.type === 'fill'), REVIEW_PER_SKILL);
 
   const queue = shuffleArray([...r, ...l, ...s, ...w], rand);
 
@@ -292,7 +309,11 @@ export function startPlacementReview(
       speaking: { correct: 0, total: 0 },
       writing: { correct: 0, total: 0 },
     },
-    speakingVerified: voice && s.length > 0,
+    speakingVerified: voice && s.length === REVIEW_PER_SKILL,
+    speakingRequired: voice,
+    reusedCount,
+    requiredTotal: voice ? REVIEW_TOTAL_QUESTIONS : REVIEW_TOTAL_QUESTIONS - REVIEW_PER_SKILL,
+    passTotal: voice ? REVIEW_PASS_TOTAL : Math.ceil((REVIEW_TOTAL_QUESTIONS - REVIEW_PER_SKILL) * REVIEW_PASS_TOTAL / REVIEW_TOTAL_QUESTIONS),
     done: queue.length === 0,
     passed: false,
     weak: [],
@@ -306,6 +327,7 @@ export function currentReviewQuestion(state: PlacementReviewState): Question | n
 export function answerPlacementReview(
   state: PlacementReviewState,
   correct: boolean,
+  speakingSkipped = false,
 ): PlacementReviewState {
   if (state.done || state.currentIdx >= state.queue.length) return state;
   const q = state.queue[state.currentIdx];
@@ -317,25 +339,29 @@ export function answerPlacementReview(
         ? 'listening'
         : 'reading';
 
+  const speakingVerified = state.speakingVerified && !(skill === 'speaking' && speakingSkipped);
   const prevScore = state.scores[skill];
   const scores = {
     ...state.scores,
-    [skill]: { correct: prevScore.correct + (correct ? 1 : 0), total: prevScore.total + 1 },
+    [skill]: { correct: prevScore.correct + (correct && !(skill === 'speaking' && speakingSkipped) ? 1 : 0), total: prevScore.total + 1 },
   };
 
   const nextIdx = state.currentIdx + 1;
   const done = nextIdx >= state.queue.length;
 
   if (!done) {
-    return { ...state, currentIdx: nextIdx, scores };
+    return { ...state, currentIdx: nextIdx, scores, speakingVerified };
   }
 
   const totalCorrect = Object.values(scores).reduce((acc, s) => acc + s.correct, 0);
   const weak: ReviewSkill[] = (Object.entries(scores) as [ReviewSkill, SkillScore][])
-    .filter(([, s]) => s.total > 0 && s.correct < REVIEW_PASS_PER_SKILL)
+    .filter(([skill, s]) => {
+      if (skill === 'speaking' && !state.speakingRequired) return false;
+      return s.total < REVIEW_PER_SKILL || s.correct < REVIEW_PASS_PER_SKILL || (skill === 'speaking' && !speakingVerified);
+    })
     .map(([sk]) => sk);
 
-  const passed = totalCorrect >= REVIEW_PASS_TOTAL && weak.length === 0;
+  const passed = totalCorrect >= state.passTotal && weak.length === 0;
 
   return {
     ...state,
@@ -344,5 +370,6 @@ export function answerPlacementReview(
     done: true,
     passed,
     weak,
+    speakingVerified,
   };
 }

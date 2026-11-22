@@ -18,6 +18,7 @@ jobs:
       - run: npm run lint
       - run: npx tsc -b
       - run: npm run validate:questions
+      - run: node --import tsx scripts/question-bank/audit.ts
       - run: npm test
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -- e2e/caravan.spec.ts
+      - run: npm run test:e2e -- e2e/caravan.spec.ts e2e/placement-review.spec.ts

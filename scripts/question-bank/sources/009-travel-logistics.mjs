@@ -27,7 +27,7 @@ listening:[
 [2,'We were told the road might be closed, so we kept a second route in mind.','因得知道路可能封閉，我們預先考慮了另一條路。|道路已確定永久關閉，所以沒有任何路可走。|我們在完全未收到提醒下取消行程。|第二條路已被證明比所有路線更短。','might 保留可能，second route 是備案。'],
 [3,'The guarantee covers the replacement service, not every expense that might result from arriving later than planned.','保證涵蓋替代服務，不是延後抵達可能帶來的全部費用。|保證已承諾無條件支付每種後續損失。|替代服務完全不在保證範圍內。|抵達較晚已被證明不可能造成任何支出。','covers 範圍須精確，不能從一項承諾擴到所有後果。'],
 [3,'I am not saying the schedule is impossible; I am saying it leaves no room for the ordinary delays we should reasonably expect.','我不是說行程不可能，而是它沒有預留合理可預期的一般延誤。|行程在任何條件下都絕不可能完成。|普通延誤已被安排排除而不會發生。|我只是在要求每段旅程都增加一整天。','區分理論可行與實務餘裕，不作絕對否定。'],
-[3,'The confirmation sounded reassuring until we noticed that it confirmed receipt of the request, rather than availability of the service.','確認通知令人安心，直到發現它只確認收到申請，並未確認服務可用。|通知已同時確認申請和服務都完成。|收到申請就必然保證服務有空位。|通知明確拒絕受理任何要求。','receipt 與 availability 是不同確認對象。']
+[3,'The confirmation sounded reassuring until we noticed that it confirmed receipt of the request, rather than availability of the service.','通知只確認收到需求，服務仍未確認可用。|通知先確認有服務，卻無法確認是否收到需求。|通知本來確認服務可用，後來抽回了原先承諾。|通知已拒絕這次需求，正在找另一項服務。','receipt 與 availability 是不同確認對象。']
 ],
 voices:[
 ['itinerary','旅程中各段安排的行程表',1,'n.','The itinerary includes time for the transfer.','行程表納入轉乘時間。'],

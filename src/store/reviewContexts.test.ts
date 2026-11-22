@@ -3,12 +3,13 @@ import { questionKey } from '../game/battle';
 import { DEFAULT_CHARACTER } from '../game/character';
 import { addBank, LEVELS } from '../game/QuestionData';
 import r0 from '../game/questions/bank/r0.json';
+import r7 from '../game/questions/bank/r7.json';
 import type { BankFile } from '../game/questions/bank';
 import { preferReviewContext, REVIEW_CONTEXTS } from '../game/reviewContexts';
 import { setBattleRandom, useBattleStore } from './battleStore';
 import { initialSave, useSaveStore } from './saveStore';
 
-const tagged = REVIEW_CONTEXTS.map(entry => (r0 as BankFile).normal.find(q => questionKey(q) === entry.key)!);
+const tagged = REVIEW_CONTEXTS.filter(entry => entry.objective === 'g:be_verb').map(entry => (r0 as BankFile).normal.find(q => questionKey(q) === entry.key)!);
 const [work, school, home] = tagged;
 const history = (correct: number, wrong = 0) => ({ correct, wrong });
 afterEach(() => setBattleRandom(() => 0.99));
@@ -45,4 +46,27 @@ it('主線作答後，到期複習實際抽到另一個正式情境', () => {
   setBattleRandom(() => 0);
   battle().chooseOption('A');
   expect([questionKey(school), questionKey(home)]).toContain(questionKey(battle().original!));
+});
+
+it('C1 正式題考點到期後，從稽核場景移到分配或訂位場景', () => {
+  const objective = 'g:restricted_inversion';
+  const candidates = REVIEW_CONTEXTS.filter(entry => entry.objective === objective)
+    .map(entry => (r7 as BankFile).normal.find(q => questionKey(q) === entry.key)!);
+  const [audit, allocation, booking] = candidates;
+  addBank(7, { normal: candidates, boss: [] });
+  const battle = () => useBattleStore.getState();
+  setBattleRandom(() => 0.99);
+  useSaveStore.setState({
+    ...structuredClone(initialSave), unlockedIndex: 7, character: DEFAULT_CHARACTER,
+    codex: { [questionKey(audit)]: { question: audit, ...history(1), firstSeenAt: 0 } },
+    knowledge: { [objective]: { wins: [0], dueAt: 0 } },
+    settings: { ...initialSave.settings, showLessons: false },
+    hintsSeen: ['boss', 'skill'],
+  });
+  battle().startLevel(LEVELS[7], undefined, 5);
+  const starter = { type: 'choice', desc: 'Which word means 貓?', ans: 'A', options: ['A. cat', 'B. dog'] };
+  useBattleStore.setState({ monsterHp: 1e9, monsterMaxHp: 1e9, question: starter, original: starter });
+  setBattleRandom(() => 0);
+  battle().chooseOption('A');
+  expect([questionKey(allocation), questionKey(booking)]).toContain(questionKey(battle().original!));
 });

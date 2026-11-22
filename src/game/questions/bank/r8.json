@@ -3733,10 +3733,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "He need not be mendacious for the account to be misleading; he may sincerely fail to notice the facts his position makes inconvenient.",
       "options": [
-        "A. 敘述要有誤導性不必出於說謊；他也可能真誠忽略對自身立場不利的事實。",
-        "B. 誤導敘述已證明他刻意捏造每個事實。",
-        "C. 只要相信自己，任何敘述就不會誤導。",
-        "D. 不方便的事實已被他完整列出並接受。"
+        "A. 他可能無意說謊，卻沒留意對自己不利的事實，因而誤導人。",
+        "B. 他知道哪些事實對自己不利，於是刻意用另一套敘述掩飾。",
+        "C. 他可能沒注意到部分事實，但說話者認為讀者不會被誤導。",
+        "D. 真正造成誤導的是聽眾低估了他公開承認的利益衝突。"
       ],
       "ans": "A",
       "explain": "意圖誠實與資訊偏差可並存，may 留下可能性。"
@@ -4170,10 +4170,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The review turns the diner’s inability to recognise an ingredient into evidence of the chef’s sophistication, without considering that obscurity may simply be obscurity.",
       "options": [
-        "A. 說話者斷言任何陌生味道都毫無價值。",
-        "B. 評論把食客認不出食材當作主廚高深的證據，卻沒考慮難辨或許只是難辨。",
-        "C. 食材難辨已充分證明烹飪高明。",
-        "D. 所有食客都被描述為準確辨認食材。"
+        "A. 評論把食客認得食材歸功於廚師技術，而非食客見識。",
+        "B. 評論誤把食材難辨直接當成廚師功力的證據。",
+        "C. 評論認為食材很難辨，但從擺盤看出了廚師功力。",
+        "D. 評論先從其他跡象判斷廚師功力，再把食材難辨當成缺點。"
       ],
       "ans": "B",
       "explain": "質疑由難以辨識跳到高明的推論，不否定所有陌生風味。"
@@ -8740,7 +8740,11 @@
         "D. that"
       ],
       "ans": "A",
-      "explain": "assent to something，介系詞後關係詞 which。"
+      "explain": "assent to something，介系詞後關係詞 which。",
+      "grammar": [
+        "preposition_relative_which"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -9550,7 +9554,11 @@
         "D. whom"
       ],
       "ans": "C",
-      "explain": "rely on，介系詞後關係詞which。"
+      "explain": "rely on，介系詞後關係詞which。",
+      "grammar": [
+        "preposition_relative_which"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -9955,7 +9963,11 @@
         "D. which"
       ],
       "ans": "D",
-      "explain": "the truth of which 為關係子句，which指premise。"
+      "explain": "the truth of which 為關係子句，which指premise。",
+      "grammar": [
+        "preposition_relative_which"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -24246,10 +24258,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The critic’s praise is qualified less by reservations about the food than by unease at the cultural hierarchy through which its excellence is made legible.",
       "options": [
-        "A. 保留完全只關乎食物溫度。",
-        "B. 評論者已否認料理有任何優點。",
-        "C. 文化認可被描述為完全不涉及價值排序。",
-        "D. 評論者的保留較少來自料理本身，而更多來自使其卓越得以被認可的文化階序。"
+        "A. 評論者擔憂料理水準不足，只是文化聲望讓人難以看出缺點。",
+        "B. 評論者主要在意食物表現，但認為文化階序使優點被忽略。",
+        "C. 評論者欣賞文化品味的評價方式，保留主要來自料理本身。",
+        "D. 評論者主要質疑認可美食的文化階序，對料理本身較少保留。"
       ],
       "ans": "D",
       "explain": "less ... than ... 定位保留來源；legible 比喻能被理解認可。"
@@ -24365,10 +24377,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The anomaly may expose a weakness in the category, or merely a limitation in the observation; the report prematurely settles on the latter.",
       "options": [
-        "A. 報告已全面比較並排除所有解釋。",
-        "B. 說話者斷言分類必須立即廢除。",
-        "C. 異常被描述為完全符合既有預期。",
-        "D. 異常可能暴露分類弱點，也可能只是觀察限制；報告過早選定後者。"
+        "A. 報告太早否定觀察缺陷，直接認定分類方式有問題。",
+        "B. 觀察確有侷限，因此報告有充足理由排除分類問題。",
+        "C. 兩種解釋仍可成立，而報告有意暫不擇一。",
+        "D. 異常也可能是分類問題，報告太早認定是觀察受限。"
       ],
       "ans": "D",
       "explain": "the latter 指觀察限制；批評過早排除另一可能。"

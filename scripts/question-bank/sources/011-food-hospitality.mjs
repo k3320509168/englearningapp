@@ -85,7 +85,7 @@ listening:[
 [2,'The surroundings are informal without making the service feel casual about the details.','環境輕鬆，但服務沒有因此對細節隨便。|員工因環境輕鬆而忽略所有細節。|服務細心已迫使餐廳採正式服裝。|說話者把輕鬆與粗心視為相同。','informal 與 casual about details 在此分別是輕鬆、草率。'],
 [2,'I can see why the dish attracts attention, though I suspect its novelty contributes more to its appeal than its flavour does.','我理解它為何引人注意，但懷疑吸引力更多來自新奇而非滋味。|說話者完全無法理解料理受到注意的原因。|說話者認為吸引力完全來自熟悉的味道。|說話者只在抱怨上菜時間。','承認料理引人注意，同時比較新奇與滋味對吸引力的貢獻。'],
 [3,'The claim of authenticity seems less a description of a stable tradition than an invitation to accept the chef’s preferred version of it.','正宗的主張較像邀請接受主廚偏好的版本，而非描述固定傳統。|主廚已證明只有一個從未改變的版本。|說話者否定這道菜與任何傳統有關。|正宗一詞被解釋成食材重量。','less ... than ... 重新界定話語功能，不證明全無傳統。'],
-[3,'For all the talk of innovation, the most convincing dish was the one that seemed least anxious to announce its originality.','雖然一直談創新，最有說服力的卻是最不急於宣示原創性的那道菜。|最成功的菜靠反覆宣告創新取勝。|說話者認為原創菜一概不能成功。|沒有任何人談到創新。','For all 表儘管；批評刻意宣示，不一概反對原創。'],
+[3,'For all the talk of innovation, the most convincing dish was the one that seemed least anxious to announce its originality.','最動人的菜反而沒有刻意展現原創性。|最動人的菜最清楚表現了廚師刻意追求的原創性。|菜單強調新意，但最動人的菜其實是別處移植的。|最動人的菜證明必須大力呈現概念，客人才看得出新意。','For all 表儘管；批評刻意宣示，不一概反對原創。'],
 [3,'The hospitality never felt calculated, which is not to say that the staff had left anything to chance.','接待沒有刻意算計感，但不表示員工毫無準備、任憑偶然。|自然接待證明員工完全沒有計畫。|周到準備被說成必然帶有操弄。|員工已承認所有細節都出於運氣。','自然感與周密準備可共存；not to say 排除錯誤推論。']
 ],
 voices:[
@@ -143,9 +143,9 @@ listening:[
 [2,'The dish courts nostalgia without quite surrendering to it, allowing the remembered flavour to remain a point of departure rather than a destination.','料理借助懷舊卻未完全屈從，把記憶滋味當起點而非終點。|料理被要求精確複製記憶且不容變化。|料理完全避開任何熟悉味道。|評論者斷言懷舊與創新無法共存。','保留懷舊影響但不受它完全限定。'],
 [2,'For all its studied informality, the service leaves you acutely aware that informality is itself part of the performance.','服務雖刻意呈現輕鬆，卻讓人清楚感到這份輕鬆本身也是表演。|員工完全沒有想過如何呈現服務。|服務的正式規則已被全部取消。|說話者只是說餐廳沒有制服。','studied 指經設計；批評自然感被表演痕跡削弱。'],
 [2,'The provenance is impeccable; whether it tells us much about the pleasure of eating the dish is another question.','來源無可挑剔，但它能否說明用餐樂趣仍是另一回事。|來源已被證明虛假，滋味因此不必討論。|來源好就已充分證明食用體驗美好。|評論者認為不應追問任何來源。','認可來源，同時拒絕來源自動決定感官品質。'],
-[3,'The review turns the diner’s inability to recognise an ingredient into evidence of the chef’s sophistication, without considering that obscurity may simply be obscurity.','評論把食客認不出食材當作主廚高深的證據，卻沒考慮難辨或許只是難辨。|食材難辨已充分證明烹飪高明。|所有食客都被描述為準確辨認食材。|說話者斷言任何陌生味道都毫無價值。','質疑由難以辨識跳到高明的推論，不否定所有陌生風味。'],
+[3,'The review turns the diner’s inability to recognise an ingredient into evidence of the chef’s sophistication, without considering that obscurity may simply be obscurity.','評論誤把食材難辨直接當成廚師功力的證據。|評論認為食材很難辨，但從擺盤看出了廚師功力。|評論先從其他跡象判斷廚師功力，再把食材難辨當成缺點。|評論把食客認得食材歸功於廚師技術，而非食客見識。','質疑由難以辨識跳到高明的推論，不否定所有陌生風味。'],
 [3,'It is not that the meal lacked pleasure, but that its insistence on being an experience seemed curiously distrustful of pleasure left to speak for itself.','餐點並非沒有樂趣，只是堅持宣示體驗，顯得不信任樂趣自行呈現。|餐點完全無樂趣，這是唯一批評。|評論者認為愉悅必須靠詳解才存在。|餐廳已拒絕向客人介紹任何內容。','承認愉悅，批評過度宣示的框架可能壓過直接感受。'],
-[3,'The critic’s praise is qualified less by reservations about the food than by unease at the cultural hierarchy through which its excellence is made legible.','評論者的保留較少來自料理本身，而更多來自使其卓越得以被認可的文化階序。|保留完全只關乎食物溫度。|評論者已否認料理有任何優點。|文化認可被描述為完全不涉及價值排序。','less ... than ... 定位保留來源；legible 比喻能被理解認可。']
+[3,'The critic’s praise is qualified less by reservations about the food than by unease at the cultural hierarchy through which its excellence is made legible.','評論者主要質疑認可美食的文化階序，對料理本身較少保留。|評論者擔憂料理水準不足，只是文化聲望讓人難以看出缺點。|評論者主要在意食物表現，但認為文化階序使優點被忽略。|評論者欣賞文化品味的評價方式，保留主要來自料理本身。','less ... than ... 定位保留來源；legible 比喻能被理解認可。']
 ],
 voices:[
 ['piquant','滋味鮮明而略帶刺激感的',1,'adj.','The salad has a piquant dressing.','沙拉搭配滋味鮮明的醬。'],

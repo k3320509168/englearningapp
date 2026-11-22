@@ -268,6 +268,7 @@ export const MAX_LISTEN_MS = 7000;
 
 export function createRecognizer(handlers: {
   onStart: () => void;
+  maxListenMs?: number;
   onPhase?: (phase: 'waiting' | 'speaking' | 'idle') => void;
   onResult: (transcripts: string[]) => void; // 辨識結果的所有候選（第一個是整段最可能的內容）
   onError: (error: string) => void;
@@ -306,7 +307,7 @@ export function createRecognizer(handlers: {
   recognition.onstart = () => {
     if (!requested) { try { recognition.stop(); } catch { /* 已停止 */ } return; }
     window.clearTimeout(startup);
-    limit = window.setTimeout(finish, MAX_LISTEN_MS);
+    limit = window.setTimeout(finish, handlers.maxListenMs ?? MAX_LISTEN_MS);
     handlers.onPhase?.('speaking');
     handlers.onStart();
   };

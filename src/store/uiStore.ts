@@ -3,7 +3,7 @@ import { create } from 'zustand';
 // 介面狀態（不存檔）：目前開啟的視窗，以及視窗需要的參數（例如哪個區域、哪段劇情）
 export type ModalName = 'settings' | 'tutorial' | 'shop' | 'heroes' | 'codex' | 'mic' | 'character' | 'summon' | 'region' | 'story' | 'growth' | 'trueName' | 'golden' | 'daily' | 'skillBoss' | 'review' | 'placement' | 'gateTrial' | 'shardQuiz' | 'holyForge' | 'rush' | 'tower' | 'storyLog' | 'adventure' | 'loginReward' | 'worldBoss' | 'caravan' | 'transfer';
 
-export type GrowthTab = 'hero' | 'gear' | 'forge';
+export type GrowthTab = 'hero' | 'gear' | 'forge' | 'learning';
 export type ShopTab = 'upgrades' | 'forge' | 'weapons';
 
 // 全螢幕慶祝：升級、三星、SSR、真名、轉職等重大時刻。排隊依序顯示

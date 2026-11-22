@@ -9,6 +9,22 @@ for (const [width, height] of [[1366, 768], [1920, 1080], [375, 812]]) {
     const errors: string[] = [];
     page.on('pageerror', error => errors.push(error.message));
     await page.addInitScript(character => {
+      // 使用瀏覽器 API 測試替身，避免開啟真實麥克風。
+      class TestRecognition {
+        onstart?: () => void;
+        onresult?: (event: { resultIndex: number; results: { transcript: string }[][] }) => void;
+        onend?: () => void;
+        start() {
+          setTimeout(() => {
+            this.onstart?.();
+            this.onresult?.({ resultIndex: 0, results: [[{ transcript: 'We should call the customer before taking the forest road.' }]] });
+            this.onend?.();
+          }, 100);
+        }
+        stop() { this.onend?.(); }
+      }
+      Object.defineProperty(window, 'SpeechRecognition', { value: TestRecognition });
+
       if (!localStorage.getItem('english-rpg-save')) localStorage.setItem('english-rpg-save', JSON.stringify({
         version: 26, state: {
           character, prologueDone: true, tutorialDone: true, unlockedIndex: 3,
@@ -73,6 +89,14 @@ for (const [width, height] of [[1366, 768], [1920, 1080], [375, 812]]) {
     await expect(page.getByRole('region', { name: '寫作自我檢查' })).toContainText('延誤');
     expect(JSON.stringify(await save())).not.toContain('We should use the forest road');
     await noOverflow();
+    await page.getByText('口頭回應隊長（選練）', { exact: true }).click();
+    await page.getByRole('button', { name: '開始自由口說' }).click();
+    await expect(page.getByLabel('瀏覽器辨識文字')).toContainText('call the customer');
+    await page.getByLabel('瀏覽器辨識文字').scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `${screenshotDir}/speaking-${width}x${height}.png`, animations: 'disabled' });
+    expect(JSON.stringify(await save())).not.toContain('before taking the forest road');
+    await page.getByText('口頭回應隊長（選練）', { exact: true }).click();
+    await expect(page.getByLabel('瀏覽器辨識文字')).toHaveCount(0);
     const completed = await save();
     expect(completed).toMatchObject({ gold: 1234, tickets: 7, weaponTickets: 3, unlockedIndex: 3 });
     expect(completed.storySeen).toContain('scenario:caravan:v1:done:respond');
@@ -99,6 +123,14 @@ for (const [width, height] of [[1366, 768], [1920, 1080], [375, 812]]) {
 
     // 離開測驗再由設定匯入，不能把本機證據誤接到另一份存檔。
     await page.getByRole('button', { name: '關閉', exact: true }).click();
+    await page.getByRole('button', { name: /成長/ }).click();
+    await page.getByRole('tab', { name: '英文練習' }).click();
+    await expect(page.getByRole('tabpanel', { name: '英文練習' })).toContainText('固定答案練習 1 次');
+    await expect(page.getByRole('tabpanel', { name: '英文練習' })).toContainText('自由說寫程度尚未評量');
+    await noOverflow();
+    await page.screenshot({ path: `${screenshotDir}/growth-${width}x${height}.png`, animations: 'disabled' });
+    await page.getByRole('button', { name: '關閉', exact: true }).click();
+
     await page.getByRole('button', { name: /更多/ }).click();
     await page.getByRole('menuitem', { name: '⚙️ 設定', exact: true }).click();
     await page.locator('.settings-tab').filter({ hasText: '存檔帳號' }).click();

@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import type { CSSProperties } from 'react';
 import Modal from './Modal';
+import LearningGrowthPanel from './LearningGrowthPanel';
+import './CaravanModal.css';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import type { GrowthTab } from '../store/uiStore';
@@ -66,12 +68,14 @@ export default function GrowthModal() {
   return (
     <Modal title={`🛡️ ${character.name}・${className}`} onClose={closeModal} wide>
       <div className="tabs" role="tablist">
-        {([['hero', '主角'], ['gear', '裝備'], ['forge', '鍛造坊']] as [Tab, string][]).map(([id, label]) => (
+        {([['hero', '主角'], ['gear', '裝備'], ['forge', '鍛造坊'], ['learning', '英文練習']] as [Tab, string][]).map(([id, label]) => (
           <button key={id} role="tab" aria-selected={tab === id} className={`tab ${tab === id ? 'is-active' : ''}`} onMouseDown={keepFocus} onClick={() => setTab(id)}>
             {label}{((id === 'hero' && notices.classAdvance) || (id === 'gear' && notices.gradeUp) || (id === 'forge' && notices.forge)) && <span className="dot-badge" aria-label="有可以做的事" />}
           </button>
         ))}
       </div>
+
+      {tab === 'learning' && <LearningGrowthPanel />}
 
       {tab === 'hero' && (
         <>

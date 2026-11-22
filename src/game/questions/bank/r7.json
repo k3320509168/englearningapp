@@ -157,7 +157,11 @@
         "D. recognised the board did"
       ],
       "ans": "A",
-      "explain": "Only after 置於句首時，主要子句需助動詞倒裝：did＋主詞＋原形動詞。"
+      "explain": "Only after 置於句首時，主要子句需助動詞倒裝：did＋主詞＋原形動詞。",
+      "grammar": [
+        "restricted_inversion"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -2617,7 +2621,11 @@
         "D. the members did acknowledge"
       ],
       "ans": "A",
-      "explain": "Only when 置首，主要子句倒裝為 did the members acknowledge。"
+      "explain": "Only when 置首，主要子句倒裝為 did the members acknowledge。",
+      "grammar": [
+        "restricted_inversion"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -3427,7 +3435,11 @@
         "D. the agent explained why"
       ],
       "ans": "C",
-      "explain": "Only after 置首，主句用 did＋主詞＋原形；why 引導說明內容。"
+      "explain": "Only after 置首，主句用 did＋主詞＋原形；why 引導說明內容。",
+      "grammar": [
+        "restricted_inversion"
+      ],
+      "grammarReview": "approved"
     },
     {
       "type": "choice",
@@ -3717,10 +3729,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "The offer restores access to the bridge while leaving the ruler free to close it whenever dissent is described as disorder.",
       "options": [
-        "A. 過橋權已被無條件永久保障。",
-        "B. 所有異議已明確不再受限制。",
-        "C. 統治者已放棄對橋的任何控制。",
-        "D. 提議恢復過橋，但仍讓統治者在把異議稱作騷亂時隨時關閉。"
+        "A. 提案讓橋重開，只有經其他機構證實騷亂才能封橋。",
+        "B. 提案暫時封橋，等統治者同意把異議和騷亂分開後才開放。",
+        "C. 提案開始限制封橋的裁量權，但沒有恢復目前的通行。",
+        "D. 提案讓橋重開，也保留統治者以騷亂為由封橋的權力。"
       ],
       "ans": "D",
       "explain": "恢復與保留關閉權共同限制承諾的穩定性。"
@@ -4186,10 +4198,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "For all the talk of innovation, the most convincing dish was the one that seemed least anxious to announce its originality.",
       "options": [
-        "A. 說話者認為原創菜一概不能成功。",
-        "B. 沒有任何人談到創新。",
-        "C. 雖然一直談創新，最有說服力的卻是最不急於宣示原創性的那道菜。",
-        "D. 最成功的菜靠反覆宣告創新取勝。"
+        "A. 菜單強調新意，但最動人的菜其實是別處移植的。",
+        "B. 最動人的菜證明必須大力呈現概念，客人才看得出新意。",
+        "C. 最動人的菜反而沒有刻意展現原創性。",
+        "D. 最動人的菜最清楚表現了廚師刻意追求的原創性。"
       ],
       "ans": "C",
       "explain": "For all 表儘管；批評刻意宣示，不一概反對原創。"
@@ -27326,10 +27338,10 @@
       "desc": "🎧 聽一聽，選出最符合說話者意思的解讀",
       "speak": "I would be wary of calling the trend a recovery until we know whether the way sightings are collected has changed.",
       "options": [
-        "A. 說話者確認蒐集方法從未改變。",
-        "B. 趨勢已證明族群永久復甦。",
-        "C. 所有目擊紀錄都被斷定毫無價值。",
-        "D. 在知道目擊蒐集方式是否改變前，我會謹慎使用復甦來描述趨勢。"
+        "A. 應先承認是復甦，再看是否要改用別的目擊蒐集方法。",
+        "B. 現有紀錄已足以判斷復甦，真正不明的是將來怎麼記。",
+        "C. 只有重新蒐集所有資料後，才有理由比較過去的趨勢。",
+        "D. 得先查目擊紀錄方法有沒有變，再判斷是否真是復甦。"
       ],
       "ans": "D",
       "explain": "保留針對趨勢的解釋，不是拒絕所有紀錄。"

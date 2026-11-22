@@ -8,6 +8,14 @@ const reviewed: [number, string][] = [
   [7, 'The menu is concise, but'],
   [7, 'The assurance applies to the stated route'],
   [8, 'The narrative withholds the easy comfort'],
+  [7, "For all the talk of innovation"],
+  [8, "The anomaly may expose"],
+  [6, "The confirmation sounded reassuring"],
+  [8, "He need not be mendacious"],
+  [8, "The review turns the diner"],
+  [8, "The critic’s praise is qualified"],
+  [7, "The offer restores access"],
+  [7, "I would be wary"],
 ];
 for (const [region, prefix] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];
@@ -22,7 +30,7 @@ for (const [region, prefix] of reviewed) {
     process.exitCode = 1;
   }
 }
-if (!process.exitCode) console.log('已審五道聽力題的選項長度檢查通過');
+if (!process.exitCode) console.log(`已審 ${reviewed.length} 道聽力題的選項長度檢查通過`);
 
 for (const region of [6, 7, 8]) {
   for (const [deckName, deck] of Object.entries(QUESTION_POOL[LEVELS[region]])) {

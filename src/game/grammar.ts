@@ -44,7 +44,12 @@ export const GRAMMAR_TAGS: GrammarTagDef[][] = [
   ],
 ];
 
-export const grammarTagDef = (id: string) => GRAMMAR_TAGS.flat().find(d => d.id === id);
+const ADVANCED_REVIEW_GRAMMAR = [
+  t('ongoing_present_perfect_progressive', '持續至今的現在完成進行式', false),
+  t('restricted_inversion', '限制副詞短語前置倒裝', false),
+  t('preposition_relative_which', '介系詞後的關係代名詞 which', false),
+];
+export const grammarTagDef = (id: string) => [...GRAMMAR_TAGS.flat(), ...ADVANCED_REVIEW_GRAMMAR].find(d => d.id === id);
 export const grammarName = (id: string) => grammarTagDef(id)?.name ?? id;
 
 // 這題算不算文法題（主要考點，已審核）

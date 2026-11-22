@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 const dir='scripts/question-bank/sources';
 const regions=new Map([6,7,8].map(r=>[r,{normal:[],boss:[],vocab:{}}]));
 const letters='ABCD';
+const reviewGrammar = JSON.parse(readFileSync(new URL('./review-grammar.json', import.meta.url), 'utf8'));
 const spellingVariants={PRIORITISE:['PRIORITIZE'],FLAVOURFUL:['FLAVORFUL'],RACKET:['RACQUET'],FETISHISATION:['FETISHIZATION']};
 for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(f)).sort().entries()) {
  const {data,voiceExamples={}}=await import(pathToFileURL(resolve(dir,source)).href);
@@ -25,8 +26,9 @@ for(const [sourceIndex,source] of readdirSync(dir).filter(f=>/^\d.*\.mjs$/.test(
   };
   for(const skill of ['reading','listening']) (d[skill]??[]).forEach(([difficulty,body,opts,explain],i)=>{
    const a=opts.split('|'); if(a.length!==4)throw Error(body);
+   const grammar = skill === 'reading' ? reviewGrammar[r]?.[body] : undefined;
    const at=(i+Math.floor(i/4)+sourceIndex)%4;const options=a.map((_,j)=>`${letters[j]}. ${a[(j-at+4)%4]}`);
-   questions.push({type:'choice',skill,difficulty,knowledgeType:skill==='listening'&&lexicalTargets.has(body.toLowerCase())?'lexical':'discourse',desc:skill==='listening'?'🎧 聽一聽，選出最符合說話者意思的解讀':body,...(skill==='listening'?{speak:body}:{}),options,ans:letters[at],explain});
+   questions.push({type:'choice',skill,difficulty,knowledgeType:skill==='listening'&&lexicalTargets.has(body.toLowerCase())?'lexical':'discourse',desc:skill==='listening'?'🎧 聽一聽，選出最符合說話者意思的解讀':body,...(skill==='listening'?{speak:body}:{}),options,ans:letters[at],explain,...(grammar ? {grammar:[grammar],grammarReview:'approved'} : {})});
   });
   (d.voices??[]).forEach(([rawText,meaning,difficulty,pos,example,exampleZh,display],i)=>{
    // 作者可用排版彎引號；輸入/辨識答案統一標準英文 apostrophe。

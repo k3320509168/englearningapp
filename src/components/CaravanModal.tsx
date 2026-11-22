@@ -7,6 +7,7 @@ import { keepFocus } from './keepFocus';
 import { CARAVAN_EXAMPLE, CARAVAN_MANIFEST, CARAVAN_NOTICE, CARAVAN_STAGES, CARAVAN_UPDATE, caravanFlag, caravanListenAnswer, caravanReadAnswer, caravanResponseAnswer, caravanResume } from '../game/caravanScenario';
 import './CaravanModal.css';
 import CaravanWritingPractice from './CaravanWritingPractice';
+import CaravanSpeakingPractice from './CaravanSpeakingPractice';
 
 type Card = { value: string; text: string };
 function Cards({ title, name, value, onChange, cards, disabled }: { title: string; name: string; value: string; onChange: (v: string) => void; cards: Card[]; disabled: boolean }) {
@@ -50,6 +51,7 @@ export default function CaravanModal() {
         <p>參考表達（其中一種可行安排）：</p><blockquote lang="en">{CARAVAN_EXAMPLE}</blockquote>
         <p className="caravan-note">本次為引導式情境練習，自由口說與寫作程度尚未評量。</p>
         <CaravanWritingPractice />
+        <CaravanSpeakingPractice />
         <div className="caravan-actions"><button className="btn btn-primary" onMouseDown={keepFocus} onClick={() => jump(0)}>重玩三節（無額外獎勵）</button><button className="btn" onMouseDown={keepFocus} onClick={closeModal}>回到冒險</button><button className="btn" onClick={() => useUiStore.getState().openModal('transfer')}>新情境挑戰</button></div>
       </section> : <>
         <h3>{['第一節：選最快的安全路線', '第二節：商人帶來新消息', '第三節：說服商隊長'][stage]}</h3>

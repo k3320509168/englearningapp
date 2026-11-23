@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DAILY_COUNT, applyDailyEvent, dailyDef, pickDaily, refreshDaily } from './daily';
-import { SKILL_BOSSES, reachablePool, skillBossCounts, skillBossQuestions } from './skillBosses';
+import { SKILL_BOSSES, prepareSkillBossPool, skillBossCounts, skillBossQuestions } from './skillBosses';
 import { validateQuestion } from './validateQuestions';
 import { questionKey } from './battle';
 import { initialSave, useSaveStore } from '../store/saveStore';
@@ -47,7 +47,7 @@ describe('daily tasks', () => {
 });
 
 describe('skill bosses', () => {
-  const pool = reachablePool(5);
+  const pool = prepareSkillBossPool(5);
 
   it('builds valid questions of a single skill each', () => {
     const counts = skillBossCounts(pool);
@@ -76,6 +76,13 @@ describe('skill bosses', () => {
         expect(q.explain).toBe(`${q.speak}：${options['ABCD'.indexOf(q.ans)]}`);
       }
     }
+  });
+
+  it('does not begin a boss battle with an empty prepared pool', () => {
+    const battle = useBattleStore.getState();
+    battle.startSkillBoss('writing', { reading: [], words: [], unambiguous: [] });
+    expect(useBattleStore.getState().active).toBe(battle.active);
+    expect(useBattleStore.getState().skillBoss).toBe(battle.skillBoss);
   });
 
   it('defeating a skill boss the first time grants its title and tickets', () => {

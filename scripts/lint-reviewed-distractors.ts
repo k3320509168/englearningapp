@@ -1,8 +1,8 @@
 import './loadBanks';
 import { QUESTION_POOL, LEVELS } from '../src/game/QuestionData';
 
-// 已修正明顯長度暗示的高階聽力題。只約束已審過的題，舊候選另排審查。
-const reviewed: [number, string][] = [
+// 已修正明顯長度暗示的高階聽讀題。只約束已審過的題，舊候選另排審查。
+const reviewed: [number, string, ('reading' | 'listening')?][] = [
   [6, 'The visitor centre is nearby as the crow flies'],
   [7, 'The process becomes circular when'],
   [7, 'The menu is concise, but'],
@@ -30,21 +30,30 @@ const reviewed: [number, string][] = [
   [7, "I am wary of celebrating empowerment where the organisation has delegated the consequences but retained all the consequential choices."],
   [7, "The hospitality never felt calculated"],
   [7, "We have a convincing description of one event"],
+  [7, "The restraint would seem evasive if the withheld explanation wer"],
+  [8, "The poignancy lies not in what is said, but in how little the sp"],
+  [6, "I would rather know that you cannot make it than keep the evenin"],
+  [7, "The system accommodates routine cases reasonably well; the diffi"],
+  [6, "I do not doubt that the captain wants peace; I doubt that demand"],
+  [7, "【語意】The exception is discretionary, not automatic. Which expectation i", "reading"],
+  [6, "【短文】A friend says, Any evening is fine, then rejects each proposed eve", "reading"],
+  [8, "【短文】A ruler claims that the people’s gratitude proves his authority le", "reading"],
+  [7, "【短文】A redevelopment promises a net gain in green space by replacing se", "reading"],
 ];
-for (const [region, prefix] of reviewed) {
+for (const [region, prefix, skill = 'listening'] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];
-  const matches = [...pool.normal, ...pool.boss].filter(q => q.speak?.startsWith(prefix));
+  const matches = [...pool.normal, ...pool.boss].filter(q => q.skill === skill && (skill === 'reading' ? q.desc : q.speak)?.startsWith(prefix));
   const question = matches[0];
   const options = question?.options ?? [];
   const answer = options.find(option => option.startsWith(question.ans + '. '));
   const length = (option: string) => Array.from(option.slice(3)).length;
   const longestDistractor = Math.max(...options.filter(option => option !== answer).map(length));
   if (matches.length !== 1 || options.length !== 4 || !answer || length(answer) > longestDistractor * 1.3) {
-    console.error(`已審聽力題的正解長度可能提示答案：${prefix}`);
+    console.error(`已審聽讀題的正解長度可能提示答案：${prefix}`);
     process.exitCode = 1;
   }
 }
-if (!process.exitCode) console.log(`已審 ${reviewed.length} 道聽力題的選項長度檢查通過`);
+if (!process.exitCode) console.log(`已審 ${reviewed.length} 道聽讀題的選項長度檢查通過`);
 
 for (const region of [6, 7, 8]) {
   for (const [deckName, deck] of Object.entries(QUESTION_POOL[LEVELS[region]])) {

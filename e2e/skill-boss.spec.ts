@@ -15,8 +15,8 @@ async function openBosses(page: Page) {
   await page.getByRole('button', { name: /迎戰魔王/ }).click();
 }
 
-async function setupPlayer(page: Page, voiceAsSpelling: boolean) {
-  await page.addInitScript(({ character, voiceAsSpelling }) => {
+async function setupPlayer(page: Page, voiceAsSpelling: boolean, unlockedIndex = 8) {
+  await page.addInitScript(({ character, voiceAsSpelling, unlockedIndex }) => {
     if (!voiceAsSpelling) {
       // 透過瀏覽器語音 API 送入轉錄，仍由遊戲判定答案。
       class TestRecognition {
@@ -36,10 +36,10 @@ async function setupPlayer(page: Page, voiceAsSpelling: boolean) {
     }
     if (localStorage.getItem('english-rpg-save')) return;
     localStorage.setItem('english-rpg-save', JSON.stringify({ version: 26, state: {
-      character, tutorialDone: true, prologueDone: true, unlockedIndex: 8, tickets: 0,
+      character, tutorialDone: true, prologueDone: true, unlockedIndex, tickets: 0,
       settings: { volume: 0, musicVolume: 0, sfxVolume: 0, autoSpeak: false, voiceAsSpelling, showLessons: false },
     } }));
-  }, { character: DEFAULT_CHARACTER, voiceAsSpelling });
+  }, { character: DEFAULT_CHARACTER, voiceAsSpelling, unlockedIndex });
   await page.goto('/englearningapp/');
 }
 
@@ -168,3 +168,23 @@ for (const [width, height] of [[375, 812], [1366, 768], [1920, 1080]]) {
     expect((await readQuestion(page))?.type).toBe('voice');
   });
 }
+
+test('新手魔王等 A2 題庫完成，再以唯一提示完成拼寫首勝', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  let releaseBank = () => {};
+  const ready = new Promise<void>(resolve => { releaseBank = resolve; });
+  await page.route(/\/r1\.json(?:\?|$)/, async route => {
+    await ready;
+    await route.continue();
+  });
+  await setupPlayer(page, true, 0);
+  await openBosses(page);
+  const writing = bossCard(page, '咒文魔王');
+  await expect(writing).toContainText('題庫載入中');
+  await expect(writing.getByRole('button')).toBeDisabled();
+  releaseBank();
+  await expect(writing).toContainText(/題目 [1-9]\d+ 題/);
+  await writing.getByRole('button').click();
+  await defeatBoss(page, '咒文魔王', 'spell');
+  expect(await readSave(page)).toMatchObject({ tickets: 5, skillBossCleared: ['writing'] });
+});

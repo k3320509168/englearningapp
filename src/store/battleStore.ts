@@ -54,8 +54,8 @@ import type { ModContext, ModEffects, ModRole, ModState } from '../game/bossMods
 import { grammarName, primaryGrammar } from '../game/grammar';
 import { WHEEL_CHECKPOINTS, wheelKey } from '../game/wheel';
 import { PROLOGUE_STORY_AT, STORIES, bossStoryId, mapStoryId } from '../game/story';
-import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, reachablePool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
-import type { SkillBossId } from '../game/skillBosses';
+import { SKILL_BOSS_FIRST_TICKETS, SKILL_BOSS_HITS, SKILL_BOSS_MIN_QUESTIONS, prepareSkillBossPool, skillBossDef, skillBossQuestions } from '../game/skillBosses';
+import type { SkillBossId, SkillBossPool } from '../game/skillBosses';
 import {
   GOLDEN_CLEAR_TICKETS, GOLDEN_LEVEL_KEY, GOLDEN_STAGE_COUNT, GOLDEN_TITLE, createGoldenDecks, generateGoldenStages, goldenMonsterHp, goldenTier,
   goldenReadingLimit,
@@ -224,7 +224,7 @@ interface BattleState {
   // fromStage 未指定時，從存檔記錄的進度繼續
   startLevel: (levelKey: string, transform?: (q: Question) => Question, fromStage?: number) => void;
   startGoldenRoad: (transform?: (q: Question) => Question) => void;
-  startSkillBoss: (id: SkillBossId) => void;
+  startSkillBoss: (id: SkillBossId, pool?: SkillBossPool) => void;
   startBattle: () => void;
   openLesson: () => void;
   tick: (ms: number, systemPauseMs?: number, activePauseMs?: number) => void;
@@ -1456,13 +1456,14 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     },
 
     // 擴充魔王：單一頭目戰，題目只來自一種能力；用正式隊伍（含成長）挑戰
-    startSkillBoss: (id) => {
+    startSkillBoss: (id, pool) => {
       const def = skillBossDef(id)!;
-      questionTransform = q => q;
-      easyQueue = [];
       const { upgrades, party: ids, character, heroes, unlockedIndex } = save();
       const levelIdx = Math.min(unlockedIndex, LEVELS.length - 1);
-      const questions = shuffleArray(skillBossQuestions(id, reachablePool(unlockedIndex)), random);
+      const questions = shuffleArray(skillBossQuestions(id, pool ?? prepareSkillBossPool(unlockedIndex)), random);
+      if (questions.length < SKILL_BOSS_MIN_QUESTIONS) return;
+      questionTransform = q => q;
+      easyQueue = [];
       let i = 0;
       const draw = () => questions[i++ % questions.length];
       decks = { normal: draw, boss: draw };

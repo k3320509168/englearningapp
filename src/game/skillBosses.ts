@@ -1,6 +1,6 @@
 import type { Question } from './types';
 import type { Element } from './character';
-import { QUESTION_POOL, LEVELS } from './QuestionData';
+import { QUESTION_POOL, LEVELS, questionSkill } from './QuestionData';
 import { VOCAB, vocabFor } from './vocab';
 import { CHOICE_LETTERS, shuffleArray } from './battle';
 
@@ -31,30 +31,57 @@ export const SKILL_BOSS_FIRST_TICKETS = 5;
 export const SKILL_BOSS_HITS = 15; // 沒有 combo 時約需答對幾題
 
 // 玩家到達過的區域的所有題目；至少包含前兩個區域，避免題目太少一直重複
-export function reachablePool(unlockedIndex: number): Question[] {
-  return LEVELS.slice(0, Math.min(LEVELS.length, Math.max(2, unlockedIndex + 1)))
+export const skillBossRegionCount = (unlockedIndex: number) => Math.min(LEVELS.length, Math.max(2, unlockedIndex + 1));
+export const SKILL_BOSS_MIN_QUESTIONS = 4;
+
+function reachablePool(unlockedIndex: number): Question[] {
+  return LEVELS.slice(0, skillBossRegionCount(unlockedIndex))
     .flatMap(l => [...(QUESTION_POOL[l]?.normal ?? []), ...(QUESTION_POOL[l]?.boss ?? [])]);
 }
 
 // 題目裡的單字（拼寫、填空、口說題）與它的中文意思
 function wordsOf(pool: Question[]): { word: string; meaning: string }[] {
-  const seen = new Map<string, string>();
+  const seen = new Map<string, { word: string; meaning: string }>();
   for (const q of pool) {
     const v = vocabFor(q);
-    if (v && !v.display.includes(' ') && /^[a-zA-Z]+$/.test(v.display)) seen.set(v.display, v.meaning);
+    if (v && /^[a-zA-Z]+$/.test(v.display.trim()) && v.meaning.trim()) {
+      const word = v.display.trim();
+      seen.set(word.toUpperCase(), { word, meaning: v.meaning });
+    }
   }
-  return [...seen].map(([word, meaning]) => ({ word, meaning }));
+  return [...seen.values()];
 }
 
-const isReading = (q: Question) => q.type === 'choice' && !q.desc.startsWith('🎧');
-
-export function skillBossCounts(pool: Question[]): Record<SkillBossId, number> {
-  const words = wordsOf(pool).length;
-  return { writing: words, speaking: words, listening: words, reading: pool.filter(isReading).length };
+// 口說和拼寫只顯示中文。可達題庫有同提示的不同英文字時，這兩種模式不抽該提示。
+const clueKey = (text: string) => text.normalize('NFKC').trim().replace(/\s+/g, ' ');
+function unambiguousWords(words: ReturnType<typeof wordsOf>) {
+  const counts = new Map<string, number>();
+  for (const word of words) {
+    const clue = clueKey(word.meaning);
+    counts.set(clue, (counts.get(clue) ?? 0) + 1);
+  }
+  return words.filter(word => counts.get(clueKey(word.meaning)) === 1);
 }
 
-function sampleMeanings(meanings: string[], correctIndex: number, rand: () => number): string[] {
-  const used = [correctIndex];
+const isReading = (q: Question) => q.type === 'choice' && questionSkill(q) === 'reading' && !q.desc.startsWith('🎧');
+
+export function prepareSkillBossPool(unlockedIndex: number) {
+  const pool = reachablePool(unlockedIndex);
+  const words = wordsOf(pool);
+  return { words, unambiguous: unambiguousWords(words), reading: pool.filter(isReading) };
+}
+
+export type SkillBossPool = ReturnType<typeof prepareSkillBossPool>;
+
+export function skillBossCounts(pool: SkillBossPool): Record<SkillBossId, number> {
+  return {
+    writing: pool.unambiguous.length, speaking: pool.unambiguous.length,
+    listening: pool.words.length, reading: pool.reading.length,
+  };
+}
+
+function sampleMeanings(meanings: string[], correctIndex: number | undefined, rand: () => number): string[] {
+  const used = correctIndex === undefined ? [] : [correctIndex];
   const wrong: string[] = [];
   // 抽未使用索引的名次，再略過已用位置。每次至多掃四個索引，無須洗整份詞庫。
   while (wrong.length < 3 && used.length < meanings.length) {
@@ -69,20 +96,20 @@ function sampleMeanings(meanings: string[], correctIndex: number, rand: () => nu
   return wrong;
 }
 
-export function skillBossQuestions(id: SkillBossId, pool: Question[], rand: () => number = Math.random): Question[] {
-  if (id === 'reading') return pool.filter(isReading);
-  const words = wordsOf(pool);
+export function skillBossQuestions(id: SkillBossId, pool: SkillBossPool, rand: () => number = Math.random): Question[] {
   switch (id) {
+    case 'reading':
+      return pool.reading;
     case 'writing':
-      return words.map(w => ({ type: 'spell', desc: `請拼出：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
+      return pool.unambiguous.map(w => ({ type: 'spell', desc: `請拼出：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
     case 'speaking':
-      return words.map(w => ({ type: 'voice', desc: `請唸出單字：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
+      return pool.unambiguous.map(w => ({ type: 'voice', desc: `請唸出單字：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
     case 'listening': {
       // 聽發音選意思：錯誤選項取自其他單字的中文
       const meanings = [...new Set(Object.values(VOCAB).map(v => v.meaning))];
       const indices = new Map(meanings.map((meaning, index) => [meaning, index]));
-      return words.map(w => {
-        const wrong = sampleMeanings(meanings, indices.get(w.meaning)!, rand);
+      return pool.words.map(w => {
+        const wrong = sampleMeanings(meanings, indices.get(w.meaning), rand);
         const options = shuffleArray([w.meaning, ...wrong], rand);
         return {
           type: 'choice' as const,

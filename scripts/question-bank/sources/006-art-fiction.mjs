@@ -84,7 +84,7 @@ listening:[
 [2,'The final scene does not answer the earlier question so much as change what we take the question to have been.','最後一幕與其說回答先前問題，不如說改變我們對問題本身的理解。|最後一幕逐項回答了所有先前問題。|先前問題被證明是無關故事的印刷錯誤。|觀眾在最後一幕以前就已完全知道這個改變。','not so much A as B 將功能定位為重新框定問題。'],
 [3,'The adaptation is faithful in a more demanding sense than literal reproduction: it finds a different means of creating a comparable uncertainty.','改編的忠實在於用不同手段重建相近的不確定感，而非逐字重現。|忠實只以每句對白是否原封不動為標準。|改編因使用不同媒介而無法保留任何效果。|原作的不確定感已被改編完全消除。','效果層次的忠實與表面複製不同。'],
 [3,'What seems at first like a failure to choose a perspective becomes a way of making each perspective disclose what it cannot accommodate.','最初看似未選定觀點，後來成為讓每種觀點顯露自身盲點的方法。|作品最後證明每種觀點都能完整容納全部經驗。|作者在第一頁便明確宣布唯一正確立場。|缺少觀點只使作品完全沒有可供分析的內容。','多觀點結構揭露各自限制，不能簡化為沒有選擇或皆完全正確。'],
-[3,'The restraint would seem evasive if the withheld explanation were the point; instead, the withholding makes our demand for an explanation part of the subject.','若解釋本身是目的，克制可能像迴避；但作品把我們索求解釋的欲望也變成主題。|作品只是忘記加入原定的說明段落。|說話者確認所有不提供解釋的作品都一樣成功。|觀眾對解釋的期待已被排除在作品關注之外。','後句重新界定 withholding 的藝術功能，並非一概替缺乏解釋開脫。']
+[3,'The restraint would seem evasive if the withheld explanation were the point; instead, the withholding makes our demand for an explanation part of the subject.','如果被隱去的解釋本身才是重點，克制可能顯得像迴避；但作品讓我們為何想要解釋也成了主題。|作品刻意延後交代，讓觀眾先猜答案，最後再用完整解釋印證其中一種猜測。|因為未交代的真相才是核心，作品對它保持沉默，因而迴避了原本要處理的主題。|克制的安排讓觀眾容易放下對解釋的需求，將注意力轉回角色已經說出口的話。','後句重新界定 withholding 的藝術功能，並非一概替缺乏解釋開脫。']
 ],
 voices:[
 ['allusion','間接提及另一作品或事物的手法',1,'n.','The title contains an allusion to an older story.','標題間接引用了一個較古老的故事。'],
@@ -135,7 +135,7 @@ listening:[
 [1,'a knowing wink','暗示彼此理解某個隱意的示意|因完全不懂對方而發出的質問|要求暫停表演的正式命令|證明事件確實發生的書面資料','knowing wink 可指眼神或敘事上與知情觀眾的會意。'],
 [1,'The narration is arch, but not quite as knowing as it would have us believe.','敘述帶俏皮會意姿態，卻未必如它暗示的那麼通透。|敘述全然天真，從未暗示自己懂得更多。|敘述的通透已由所有事件無條件證實。|說話者只在描述拱門的外形。','arch 在此是帶會意或調侃；not quite...保留其自我呈現。'],
 [1,'The apparent throwaway line becomes less incidental with every recurrence.','看似隨口一句的話，愈反覆出現就愈不像無關緊要。|那句話每次出現都證明與主題更加無關。|那句話在作品中只出現一次。|說話者認為重複必定是作者疏失。','throwaway 與 less incidental 的變化顯示反覆賦予意義。'],
-[2,'The poignancy lies not in what is said, but in how little the speakers can bring themselves to say.','動人之處在於角色難以說出口而只說了很少，而非字面內容本身。|動人之處完全來自角色長篇解釋情緒。|角色因沒有共同語言而完全不能交談。|說話者認定角色不在乎彼此。','bring themselves to say 表心理上難以開口，少言不等於無情。'],
+[2,'The poignancy lies not in what is said, but in how little the speakers can bring themselves to say.','動人之處在於角色難以說出口而只說了很少，而非字面內容本身。|對話雖短，真正動人的仍是角色終於用幾句話把感受全都說清楚。|動人之處在於角色精心挑選字句，讓一句簡短的解釋承載他們想表達的全部意思。|角色其實能自在談論情感，只是作者把大量對話留在故事沒呈現的部分。','bring themselves to say 表心理上難以開口，少言不等於無情。'],
 [2,'The joke is at the narrator’s expense, although he appears to imagine that he is sharing it with us.','敘事者以為和讀者一起開玩笑，實際上自己才是被取笑者。|敘事者已清楚承認自己是笑柄。|讀者被取笑而敘事者始終置身事外。|這個玩笑只是在談實際支付的金額。','at someone’s expense 是以某人為笑柄；與自我理解形成落差。'],
 [2,'The scene is sentimental only if we mistake its exposure of a desire for reassurance for an attempt to satisfy that desire.','只有把揭露求安慰的欲望誤當成滿足它，才會把場景讀成感傷煽情。|場景因明確滿足每個角色的願望而感傷。|場景完全沒有涉及任何安慰的欲望。|說話者認為揭露欲望必然等於肯定欲望。','區分呈現某種欲求與提供它所求的慰藉。'],
 [2,'The allusion rewards recognition, but the scene does not collapse for a reader who misses it.','認出典故會有額外收穫，但沒認出的讀者仍能理解場景。|沒有認出典故就必定無法理解任何情節。|典故與場景的意義完全無關。|每位讀者都已被直接告知典故來源。','reward recognition 與 not collapse 保留可分層理解。'],

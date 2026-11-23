@@ -86,7 +86,7 @@ listening:[
 [2,'I can see why the dish attracts attention, though I suspect its novelty contributes more to its appeal than its flavour does.','我理解它為何引人注意，但懷疑吸引力更多來自新奇而非滋味。|說話者完全無法理解料理受到注意的原因。|說話者認為吸引力完全來自熟悉的味道。|說話者只在抱怨上菜時間。','承認料理引人注意，同時比較新奇與滋味對吸引力的貢獻。'],
 [3,'The claim of authenticity seems less a description of a stable tradition than an invitation to accept the chef’s preferred version of it.','正宗的主張較像邀請接受主廚偏好的版本，而非描述固定傳統。|主廚已證明只有一個從未改變的版本。|說話者否定這道菜與任何傳統有關。|正宗一詞被解釋成食材重量。','less ... than ... 重新界定話語功能，不證明全無傳統。'],
 [3,'For all the talk of innovation, the most convincing dish was the one that seemed least anxious to announce its originality.','最動人的菜反而沒有刻意展現原創性。|最動人的菜最清楚表現了廚師刻意追求的原創性。|菜單強調新意，但最動人的菜其實是別處移植的。|最動人的菜證明必須大力呈現概念，客人才看得出新意。','For all 表儘管；批評刻意宣示，不一概反對原創。'],
-[3,'The hospitality never felt calculated, which is not to say that the staff had left anything to chance.','接待沒有刻意算計感，但不表示員工毫無準備、任憑偶然。|自然接待證明員工完全沒有計畫。|周到準備被說成必然帶有操弄。|員工已承認所有細節都出於運氣。','自然感與周密準備可共存；not to say 排除錯誤推論。']
+[3,'The hospitality never felt calculated, which is not to say that the staff had left anything to chance.','接待沒有刻意算計感，但不表示員工毫無準備、任憑偶然。|員工有周全準備，接待也因此讓人明顯感到每一步都在照本宣科。|接待感覺自然，說話者便推測員工把多數細節留待現場決定。|周全準備有助於避免出錯，但說話者仍覺得接待有刻意迎合的成分。','自然感與周密準備可共存；not to say 排除錯誤推論。']
 ],
 voices:[
 ['convivial','使人愉快交談共處的',1,'adj.','The supper had a convivial atmosphere.','晚餐氣氛歡洽。'],
@@ -139,7 +139,7 @@ listening:[
 [1,'an astringent finish','尾韻帶有使口腔收澀的感覺|尾韻只有濃厚奶油感|入口立即消失而毫無餘味|只能用視覺辨認的顏色','astringent 指收斂澀感，不等於單純酸或苦。'],
 [1,'a piquant dressing','滋味鮮明、帶刺激感的調味醬|毫無滋味的調味醬|只用於裝飾桌面的布料|經過長時間冷凍的空盤','piquant 指開胃而鮮明刺激的滋味；dressing 在此是醬汁。'],
 [1,'a sumptuous spread','豐盛豪華的一桌餐食|刻意只提供清水的安排|用來塗抹的少量膠水|食物已售罄後的空桌','spread 在此指鋪陳的一桌食物，sumptuous 豪華豐盛。'],
-[2,'The austerity seems earned rather than affected: nothing feels omitted merely to advertise how much has been left out.','簡約顯得有根據而非做作，沒有只是為炫耀刪減而省略的感覺。|簡約被說成完全為了炫耀省略。|評論者要求菜餚加入所有可能食材。|菜單已被證明遺失部分頁面。','earned/affected 對比有實質依據與刻意姿態。'],
+[2,'The austerity seems earned rather than affected: nothing feels omitted merely to advertise how much has been left out.','簡約顯得有根據而非做作，沒有只是為炫耀刪減而省略的感覺。|簡約外表之下有些刻意的省略，目的在讓用餐者注意刪減本身。|省略看起來並非炫技，可惜用餐者仍感到不少必要元素被刪掉。|菜式雖然花俏，多出來的細節卻都有用處，沒有堆砌之感。','earned/affected 對比有實質依據與刻意姿態。'],
 [2,'The dish courts nostalgia without quite surrendering to it, allowing the remembered flavour to remain a point of departure rather than a destination.','料理借助懷舊卻未完全屈從，把記憶滋味當起點而非終點。|料理被要求精確複製記憶且不容變化。|料理完全避開任何熟悉味道。|評論者斷言懷舊與創新無法共存。','保留懷舊影響但不受它完全限定。'],
 [2,'For all its studied informality, the service leaves you acutely aware that informality is itself part of the performance.','服務刻意顯得隨意，卻讓人意識到這份隨意也是演出的一部分。|服務其實經過設計，但看來足夠自然，客人幾乎不會察覺。|服務試圖營造輕鬆感，卻因一些正式儀節讓客人覺得拘束。|服務在正式與輕鬆之間轉換，輕鬆的部分沒經過特別安排。','studied 指經設計；批評自然感被表演痕跡削弱。'],
 [2,'The provenance is impeccable; whether it tells us much about the pleasure of eating the dish is another question.','來源無可挑剔，但它能否說明用餐樂趣仍是另一回事。|來源已被證明虛假，滋味因此不必討論。|來源好就已充分證明食用體驗美好。|評論者認為不應追問任何來源。','認可來源，同時拒絕來源自動決定感官品質。'],

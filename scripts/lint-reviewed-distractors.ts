@@ -21,6 +21,15 @@ const reviewed: [number, string][] = [
   [8, "It is not that the meal lacked pleasure"],
   [8, "For all its studied informality"],
   [6, "Seeing fewer birds today"],
+  [8, "One can acknowledge the tact of the formulation while noticing that its tact depends on making the other party infer a refusal the speaker declines to own."],
+  [7, "The agreement is durable only if the concession is understood as a genuine exchange rather than a favour that one side can withdraw at will."],
+  [7, "The remark may have been meant kindly"],
+  [8, "I am not imputing bad faith"],
+  [8, "It is a peculiar form of responsiveness that requires the customer to translate the problem into a category that omits what made it a problem."],
+  [8, "The austerity seems earned rather than affected"],
+  [7, "I am wary of celebrating empowerment where the organisation has delegated the consequences but retained all the consequential choices."],
+  [7, "The hospitality never felt calculated"],
+  [7, "We have a convincing description of one event"],
 ];
 for (const [region, prefix] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];

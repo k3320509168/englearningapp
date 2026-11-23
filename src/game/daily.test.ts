@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DAILY_COUNT, applyDailyEvent, dailyDef, pickDaily, refreshDaily } from './daily';
-import { SKILL_BOSSES, reachablePool, skillBossQuestions } from './skillBosses';
+import { SKILL_BOSSES, reachablePool, skillBossCounts, skillBossQuestions } from './skillBosses';
 import { validateQuestion } from './validateQuestions';
 import { questionKey } from './battle';
 import { initialSave, useSaveStore } from '../store/saveStore';
@@ -50,9 +50,11 @@ describe('skill bosses', () => {
   const pool = reachablePool(5);
 
   it('builds valid questions of a single skill each', () => {
+    const counts = skillBossCounts(pool);
     for (const b of SKILL_BOSSES) {
       const qs = skillBossQuestions(b.id, pool);
       expect(qs.length, b.id).toBeGreaterThan(10);
+      expect(qs).toHaveLength(counts[b.id]);
       qs.forEach(q => expect(validateQuestion(q, b.id).filter(i => i.level === 'error')).toEqual([]));
       const types = new Set(qs.map(q => q.type));
       expect(types.size).toBe(1);
@@ -63,6 +65,17 @@ describe('skill bosses', () => {
     const qs = skillBossQuestions('listening', pool);
     expect(qs.every(q => q.speak && !q.desc.includes(q.speak))).toBe(true);
     expect(new Set(qs.map(questionKey)).size).toBe(qs.length);
+  });
+
+  it('draws three distinct wrong meanings even when the random source repeats a value', () => {
+    for (const random of [() => 0, () => 0.999]) {
+      const questions = skillBossQuestions('listening', pool, random);
+      for (const q of questions) {
+        const options = q.options!.map(o => o.slice(3));
+        expect(new Set(options).size).toBe(4);
+        expect(q.explain).toBe(`${q.speak}：${options['ABCD'.indexOf(q.ans)]}`);
+      }
+    }
   });
 
   it('defeating a skill boss the first time grants its title and tickets', () => {

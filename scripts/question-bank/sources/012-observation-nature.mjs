@@ -80,7 +80,7 @@ listening:[
 [1,'an unobtrusive observer','不顯眼且盡量不打擾的觀察者|以大聲呼喊引人注意的觀察者|完全沒有記錄的遊客|只觀察自己倒影的人','unobtrusive 強調不引人注意或造成干擾。'],
 [1,'a plausible inference','合理但不等於已證實的推論|由定義保證必然為真的結論|明知矛盾而提出的假話|不包含解釋的原始照片','plausible 是看來合理，並非確證。'],
 [1,'in the absence of corroboration','缺乏其他佐證時|所有獨立證據一致確認後|觀察者全數到齊之際|不准保存原始資料的情況','corroboration 指增加可信度的佐證。'],
-[2,'We have a convincing description of one event, not yet a convincing account of how often it occurs.','我們有一次事件的可信描述，尚無其發生頻率的可信說明。|一次記錄已足以確定全年頻率。|事件本身已被證明未曾發生。|描述細節越多就必然發生越頻繁。','事件存在與頻率推斷是不同層次。'],
+[2,'We have a convincing description of one event, not yet a convincing account of how often it occurs.','我們有一次事件的可信描述，尚無其發生頻率的可信說明。|現有說明足以估計它通常發生多久一次，但個別事件的細節尚未釐清。|我們對事件有仔細描述，也已能用該描述推斷它發生的頻率。|我們缺的是可信的單次記錄；單憑已知頻率還無法說明那次發生了什麼。','事件存在與頻率推斷是不同層次。'],
 [2,'The features are compatible with that identification, though none is distinctive enough to settle it on its own.','特徵符合那個辨識，但沒有一項單獨足以定案。|每項特徵都單獨唯一確定該種類。|所有特徵與辨識完全矛盾。|沒有任何特徵曾被記錄。','相容不等於有獨特鑑別力；on its own 限定單一特徵。'],
 [2,'I would be wary of calling the trend a recovery until we know whether the way sightings are collected has changed.','得先查目擊紀錄方法有沒有變，再判斷是否真是復甦。|應先承認是復甦，再看是否要改用別的目擊蒐集方法。|現有紀錄已足以判斷復甦，真正不明的是將來怎麼記。|只有重新蒐集所有資料後，才有理由比較過去的趨勢。','保留針對趨勢的解釋，不是拒絕所有紀錄。'],
 [2,'The label is useful as a starting point, provided we do not let it dictate which details we notice.','標籤可當起點，只要不讓它決定我們留意哪些細節。|標籤應先決定哪些不符細節必須刪掉。|說話者拒絕使用任何標籤。|每個細節都已被證明同樣重要。','分類的用途附有不讓預期篩掉觀察的條件。'],

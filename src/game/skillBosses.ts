@@ -20,7 +20,7 @@ export interface SkillBossDef {
 }
 
 export const SKILL_BOSSES: SkillBossDef[] = [
-  { id: 'writing', name: '咒文魔王', skill: '寫作', icon: '✍️', element: 'water', desc: '只出拼寫與填空：看中文寫出英文。', title: '咒文大師' },
+  { id: 'writing', name: '咒文魔王', skill: '寫作', icon: '✍️', element: 'water', desc: '只出單字拼寫：看中文提示寫出英文。', title: '咒文大師' },
   { id: 'listening', name: '魔音魔王', skill: '聽力', icon: '🎧', element: 'dark', desc: '題目只有聲音：聽發音選出正確的意思。', title: '千里順風耳' },
   { id: 'reading', name: '魔眼魔王', skill: '閱讀', icon: '📖', element: 'wood', desc: '只出句子選擇題：讀懂句子選出正確答案。', title: '博覽群書者' },
   { id: 'speaking', name: '鬼嘴魔王', skill: '口說', icon: '🗣️', element: 'fire', desc: '只出口說題：對著麥克風唸出英文。', title: '雄辯之聲' },
@@ -46,20 +46,43 @@ function wordsOf(pool: Question[]): { word: string; meaning: string }[] {
   return [...seen].map(([word, meaning]) => ({ word, meaning }));
 }
 
+const isReading = (q: Question) => q.type === 'choice' && !q.desc.startsWith('🎧');
+
+export function skillBossCounts(pool: Question[]): Record<SkillBossId, number> {
+  const words = wordsOf(pool).length;
+  return { writing: words, speaking: words, listening: words, reading: pool.filter(isReading).length };
+}
+
+function sampleMeanings(meanings: string[], correctIndex: number, rand: () => number): string[] {
+  const used = [correctIndex];
+  const wrong: string[] = [];
+  // 抽未使用索引的名次，再略過已用位置。每次至多掃四個索引，無須洗整份詞庫。
+  while (wrong.length < 3 && used.length < meanings.length) {
+    let index = Math.floor(rand() * (meanings.length - used.length));
+    for (const excluded of used) {
+      if (index >= excluded) index++;
+    }
+    wrong.push(meanings[index]);
+    used.push(index);
+    used.sort((a, b) => a - b);
+  }
+  return wrong;
+}
+
 export function skillBossQuestions(id: SkillBossId, pool: Question[], rand: () => number = Math.random): Question[] {
+  if (id === 'reading') return pool.filter(isReading);
   const words = wordsOf(pool);
   switch (id) {
     case 'writing':
       return words.map(w => ({ type: 'spell', desc: `請拼出：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
     case 'speaking':
       return words.map(w => ({ type: 'voice', desc: `請唸出單字：${w.meaning}`, ans: w.word.toUpperCase(), speak: w.word }));
-    case 'reading':
-      return pool.filter(q => q.type === 'choice' && !q.desc.startsWith('🎧'));
     case 'listening': {
       // 聽發音選意思：錯誤選項取自其他單字的中文
       const meanings = [...new Set(Object.values(VOCAB).map(v => v.meaning))];
+      const indices = new Map(meanings.map((meaning, index) => [meaning, index]));
       return words.map(w => {
-        const wrong = shuffleArray(meanings.filter(m => m !== w.meaning), rand).slice(0, 3);
+        const wrong = sampleMeanings(meanings, indices.get(w.meaning)!, rand);
         const options = shuffleArray([w.meaning, ...wrong], rand);
         return {
           type: 'choice' as const,

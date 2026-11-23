@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import Modal from './Modal';
-import { dueMistakes, useSaveStore } from '../store/saveStore';
+import { dueMistakes, SWEEP_DAILY_MAX, SWEEP_PER_STREAK, SWEEP_STREAK, useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { VOCAB, vocabKey } from '../game/vocab';
 import { answerLabel } from '../game/answerLabel';
@@ -8,7 +8,6 @@ import { questionKey } from '../game/battle';
 import { continueJourney } from '../game/startLevel';
 import { useSpeak } from './useSpeak';
 import QuizRunner from './QuizRunner';
-import { SWEEP_STREAK, SWEEP_DAILY_MAX } from '../store/saveStore';
 import type { Question } from '../game/types';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
@@ -33,8 +32,16 @@ export default function ReviewModal() {
   const [trainStats, setTrainStats] = useState({ answered: 0, correct: 0 });
 
   const startTraining = () => {
-    const list = (due.length ? due : Object.values(mistakes)).slice(0, 10).map(m => m.question);
-    setTraining(list);
+    const currentTime = Date.now();
+    const currentMistakes = useSaveStore.getState().mistakes;
+    const currentDue = dueMistakes(currentMistakes, currentTime, 10);
+    const list = (currentDue.length ? currentDue : Object.values(currentMistakes)).slice(0, 10);
+    setNow(currentTime);
+    if (!list.length) {
+      setTraining(null);
+      return;
+    }
+    setTraining(list.map(m => m.question));
     setStreak(0);
     setBestStreak(0);
     setRound(n => n + 1);
@@ -67,7 +74,7 @@ export default function ReviewModal() {
       <Modal title="🥋 錯題修煉場" onClose={closeModal}>
         {!trainDone ? (
           <>
-            <p className="muted">連續答對 {SWEEP_STREAK} 題送 3 張掃蕩券・目前連對 {streak}・持有 🎟️ {sweepTickets}</p>
+            <p className="muted">每連對 {SWEEP_STREAK} 題最多得 {SWEEP_PER_STREAK} 張掃蕩券，每天上限 {SWEEP_DAILY_MAX} 張。<br />目前連對 {streak}・持有 🎟️ {sweepTickets}</p>
             <QuizRunner key={round} questions={training} review forceSpelling label={i => `第 ${i + 1} / ${training.length} 題`} onAnswer={onTrain} lastLabel="看結算" />
             <div className="tutorial-actions">
               <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { setNow(Date.now()); setTraining(null); }}>回到清單</button>
@@ -83,10 +90,13 @@ export default function ReviewModal() {
             <p className="muted" style={{ textAlign: 'center', margin: '8px 0' }}>
               到期錯題答對後已安排下次複習；同一天的立即複習不當作跨日掌握。修煉金幣與掃蕩券依每日上限發放，口說題以拼寫練習、不作口說驗證。
             </p>
+            {total > 0 && due.length === 0 && (
+              <p className="muted">目前沒有到期題，再修煉會以錯題本中的題目練習。</p>
+            )}
             <div className="tower-actions-row">
-              <button className="btn btn-primary" onMouseDown={keepFocus} onClick={startTraining}>
-                🔄 再修煉一組（最多10題）
-              </button>
+              {total > 0 && <button className="btn btn-primary" onMouseDown={keepFocus} onClick={startTraining}>
+                🔄 再修煉一組（最多 10 題）
+              </button>}
               <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={() => { setNow(Date.now()); setTraining(null); }}>
                 返回錯題清單
               </button>
@@ -103,8 +113,8 @@ export default function ReviewModal() {
       <div className="review-header-row">
         <p className="review-lead">💡 到期錯題可在這裡或戰鬥中複習；依間隔安排跨日答對，才算掌握。</p>
         {total > 0 && (
-          <button className="btn btn-secondary btn-small review-train-btn" onMouseDown={keepFocus} onClick={startTraining} title="進入修煉連續答對 5 題贈 3 張掃蕩券">
-            🥋 進入修煉場 <span className="train-reward-badge">🎟️+3</span>
+          <button className="btn btn-secondary btn-small review-train-btn" onMouseDown={keepFocus} onClick={startTraining} title={`每連對 ${SWEEP_STREAK} 題最多得 ${SWEEP_PER_STREAK} 張掃蕩券，每天上限 ${SWEEP_DAILY_MAX} 張`}>
+            🥋 {due.length > 0 ? '進入修煉場' : '自由修煉錯題（最多 10 題）'}
           </button>
         )}
       </div>
@@ -113,13 +123,6 @@ export default function ReviewModal() {
         <div className="review-empty">
           <p>🎉 今天沒有到期的複習題目！</p>
           <span className="muted">{total > 0 ? `錯題本中尚有 ${total} 題，會在後續冒險中陸續安排溫習。` : '持續探索新區域，累積更多冒險詞彙吧！'}</span>
-          {total > 0 && (
-            <div style={{ marginTop: 14 }}>
-              <button className="btn btn-secondary" onMouseDown={keepFocus} onClick={startTraining}>
-                🥋 自由修煉全部錯題（抽測 10 題）
-              </button>
-            </div>
-          )}
         </div>
       ) : (
         <div className="review-list-wrap">

@@ -24,6 +24,7 @@ export default function AdventureModal() {
   const notices = useNotices();
   const goldenBest = useSaveStore(s => s.goldenBest);
   const towerFloor = useSaveStore(s => s.towerFloor);
+  const mistakes = useSaveStore(s => Object.keys(s.mistakes).length);
 
   const dungeons: DungeonCard[] = [
     {
@@ -45,9 +46,9 @@ export default function AdventureModal() {
       id: 'review',
       icon: '📕',
       name: '錯題修煉場',
-      tag: notices.dueMistakes > 0 ? `待複習 ${notices.dueMistakes}` : '無錯題',
+      tag: notices.dueMistakes > 0 ? `待複習 ${notices.dueMistakes}` : mistakes > 0 ? '暫無到期題' : '無錯題',
       reward: '金幣、副本掃蕩券',
-      status: notices.dueMistakes > 0 ? `累積 ${notices.dueMistakes} 題待攻克` : '錯題皆已掌握・保持手感',
+      status: notices.dueMistakes > 0 ? `累積 ${notices.dueMistakes} 題待攻克` : mistakes > 0 ? `錯題本有 ${mistakes} 題，可自由修煉` : '探索冒險，累積你的複習題',
       tone: 'tone-review',
       btnLabel: '進入修煉 📖',
     },

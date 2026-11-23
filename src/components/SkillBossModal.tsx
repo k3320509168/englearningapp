@@ -3,7 +3,7 @@ import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { useBattleStore } from '../store/battleStore';
-import { SKILL_BOSSES, SKILL_BOSS_FIRST_TICKETS, reachablePool, skillBossQuestions } from '../game/skillBosses';
+import { SKILL_BOSSES, SKILL_BOSS_FIRST_TICKETS, reachablePool, skillBossCounts } from '../game/skillBosses';
 import { elementDef } from '../game/character';
 import { isSpeechRecognitionSupported } from '../game/speech';
 import { keepFocus } from './keepFocus';
@@ -16,7 +16,7 @@ export default function SkillBossModal() {
   const unlockedIndex = useSaveStore(s => s.unlockedIndex);
   const voiceAsSpelling = useSaveStore(s => s.settings.voiceAsSpelling);
   const canSpeak = isSpeechRecognitionSupported() && !voiceAsSpelling;
-  const pool = reachablePool(unlockedIndex);
+  const counts = skillBossCounts(reachablePool(unlockedIndex));
 
   return (
     <Modal title="⚔️ 魔王挑戰：聽說讀寫" onClose={closeModal} wide>
@@ -24,7 +24,7 @@ export default function SkillBossModal() {
       <ul className="skill-boss-grid">
         {SKILL_BOSSES.map(b => {
           const el = elementDef(b.element);
-          const count = skillBossQuestions(b.id, pool).length;
+          const count = counts[b.id];
           const blocked = b.id === 'speaking' && !canSpeak;
           const done = cleared.includes(b.id);
           return (
@@ -32,7 +32,7 @@ export default function SkillBossModal() {
               <span className="skill-boss-icon">{b.icon}</span>
               <b>{b.skill}・{b.name}</b>
               <span>{b.desc}</span>
-              <small className="muted">題目 {count} 題{titles.includes(b.title) ? ` ・ 🏅 已獲得「${b.title}」` : ` ・ ${done ? '已通關；重打可挑戰' : '擊敗可挑戰'}稱號「${b.title}」`}</small>
+              <small className="muted">題目 {count} 題{titles.includes(b.title) ? ` ・ 🏅 已獲得「${b.title}」` : ` ・ ${done ? '已通關；重打可挑戰' : '擊敗可獲得'}稱號「${b.title}」`}</small>
               {b.id === 'speaking' && <small className="muted">全程口說通關可獲稱號；途中改拼寫仍保留首通召喚券，但口說未驗證，可再挑戰補稱號。</small>}
               {blocked && <small className="voice-error">需要可以使用麥克風的瀏覽器（並在設定關閉「口說題改成拼寫題」）</small>}
               <button className="btn btn-primary btn-small" onMouseDown={keepFocus} disabled={blocked || count < 4}

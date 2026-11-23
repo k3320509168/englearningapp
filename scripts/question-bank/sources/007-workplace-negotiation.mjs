@@ -82,8 +82,8 @@ listening:[
 [2,'The request is framed as an exception, but granting it would create expectations that are unlikely to remain exceptional.','要求雖稱例外，批准後形成的期待可能不會一直只是例外。|批准已保證不會影響任何未來申請。|要求因叫作例外就已不需審查。|說話者確認所有未來要求都已被批准。','個案授權可能形成先例，未斷言所有後續已通過。'],
 [2,'The problem is less a lack of willingness than uncertainty about who is authorised to act.','問題與其說是不願意，不如說是不清楚誰有權行動。|所有人都清楚權限，只是不願合作。|沒有任何人可能獲授權。|說話者只想增加工作量而不管權限。','less A than B 轉移主要診斷到授權不明。'],
 [2,'An impartial process must do more than give both sides the appearance of being heard.','公正程序需要的不只是讓雙方看似被傾聽。|只要雙方出席，就已保證程序公正。|公正程序不應讓任何人表達意見。|說話者確定所有發言都被完全忽略。','appearance 與 meaningful consideration 分開，未否定傾聽必要性。'],
-[3,'The agreement is durable only if the concession is understood as a genuine exchange rather than a favour that one side can withdraw at will.','協議要持久，讓步需被理解為真正交換，而非一方可隨時收回的恩惠。|協議只要稱為恩惠就會更穩固。|任何交換都代表雙方權力已完全相等。|讓步已被雙方明確承諾永不變更。','genuine exchange 與可任意撤回施惠的關係不同。'],
-[3,'I am wary of celebrating empowerment where the organisation has delegated the consequences but retained all the consequential choices.','若組織把後果交出去承擔，卻保留所有重大選擇，我對稱讚賦權有所戒心。|授權已使員工掌握所有重大決策。|組織已不再對任何結果負責。|只要有人承擔後果，就一定有完整自主權。','承擔後果不等於擁有相應決策權，批評表面賦權。'],
+[3,'The agreement is durable only if the concession is understood as a genuine exchange rather than a favour that one side can withdraw at will.','協議要持久，讓步需被理解為真正交換，而非一方可隨時收回的恩惠。|即使一方可以隨時收回讓步，只要對方把它視為一份恩惠，協議就能維持。|讓步要被視為真正交換，協議才有可能成立；至於能維持多久則有待觀察。|雙方須約定何時可收回作為恩惠的讓步，才能維持這項協議。','genuine exchange 與可任意撤回施惠的關係不同。'],
+[3,'I am wary of celebrating empowerment where the organisation has delegated the consequences but retained all the consequential choices.','若組織把後果交出去承擔，卻保留所有重大選擇，我對稱讚賦權有所戒心。|組織把重大決策交給員工，但把實行後的責任留在管理層，因而難稱真正賦權。|員工能決定大方向，卻需要管理層承擔後果，說話者因此對賦權有所保留。|說話者對賦權有所保留，主因是組織沒有明確把執行結果交由員工負責。','承擔後果不等於擁有相應決策權，批評表面賦權。'],
 [3,'What sounds like consensus may be accommodation to a hierarchy that makes disagreement disproportionately costly.','看似共識的狀態可能是適應了讓異議代價特別高的階序。|每位參與者已自由表達且毫無代價。|階序已被正式廢除，所以不存在任何壓力。|說話者證明所有表面共識都一定虛假。','may 保留替代解釋，非一概否定共識。']
 ],
 voices:[
@@ -139,7 +139,7 @@ listening:[
 [2,'The invitation to exercise judgement is curiously bounded by the requirement that the judgement coincide with the preferred result.','邀請人自行判斷，卻要求結果符合預定偏好，界線很矛盾。|自行判斷已被允許產生任何不同結果而無後果。|邀請只涉及何時安排會議，與結論無關。|說話者確認每個判斷都已自然相同。','名義裁量與實際可接受結論之間的限制受質疑。'],
 [2,'Her acquiescence is being treated as endorsement, though the alternatives were never made remotely attractive.','她的順從被當成支持，但其他選項從未有起碼吸引力。|她已在多個同等可行選項中熱烈支持此案。|她完全沒有採取任何行動或回應。|說話者主張所有順從都必定出於強迫。','有限可選性使從順從推到積極支持成問題，未泛化所有情況。'],
 [2,'The disclaimer is doing much of the work that an explicit refusal would have done, while preserving the appearance that no refusal has occurred.','免責說詞實際上發揮了多數拒絕作用，同時保留未拒絕的表象。|免責說詞已明白同意所有要求。|說話者只在比較兩份法律文件長度。|明確拒絕與這段說詞在語用上完全無關。','著重實際話語功能與表面承諾不同。'],
-[3,'One can acknowledge the tact of the formulation while noticing that its tact depends on making the other party infer a refusal the speaker declines to own.','可以承認措辭圓融，同時看到它把推知拒絕的責任交給對方，說話者卻不明認。|圓融措辭已使拒絕不存在。|對方已明白接受拒絕且沒有任何解讀負擔。|只要拒絕未明說，就不可能被合理推知。','評價技巧與分配溝通責任可以分開。'],
+[3,'One can acknowledge the tact of the formulation while noticing that its tact depends on making the other party infer a refusal the speaker declines to own.','可以承認措辭圓融，同時看到它把推知拒絕的責任交給對方，說話者卻不明認。|措辭的圓融在於說話者願意先明說拒絕，讓另一方自行決定如何回應。|另一方從措辭中察覺拒絕，但說話者認為這種解讀誤會了原本的請求。|措辭之所以得體，是因為說話者願意等對方開口後，再正式承認自己拒絕。','評價技巧與分配溝通責任可以分開。'],
 [3,'What is offered as a concession to dissent may be a way of giving dissent a place from which it cannot affect anything consequential.','看似容納異議的讓步，可能把異議安置在無法影響重大事項的位置。|異議已被授予所有最終決策權。|說話者確認程序完全沒有讓異議出現。|只要有固定發言位置，就必定能影響決定。','納入表達不必然等於實質影響，may 保留對機制的分析。'],
 [3,'The magnanimity of the gesture is easier to appreciate if we forget that the right being graciously restored was not the giver’s to withhold in the first place.','若忘了對方本無權扣留這項權利，恢復權利的姿態才比較像寬宏。|給予者原本有明確權利永久剝奪該權利。|恢復權利被描述為與任何恩惠姿態毫無關聯。|說話者主要在稱讚給予者無條件犧牲。','以原本無權扣留的事物施惠，削弱magnanimity的正當性。']
 ],

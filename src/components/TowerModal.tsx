@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Modal from './Modal';
 import QuizRunner from './QuizRunner';
 import { useSaveStore } from '../store/saveStore';
@@ -8,6 +8,7 @@ import { REGIONS } from '../game/regions';
 import { heroDef, heroWord } from '../game/heroes';
 import { heroDataUrl } from '../game/art/sprites';
 import type { Question } from '../game/types';
+import { loadBank } from '../game/questions/bank/loader';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 
@@ -18,10 +19,13 @@ export default function TowerModal() {
   const { towerFloor, heroes, clearTowerFloor } = useSaveStore();
   const hero = featuredHero(heroes, dayIndex());
   const floor = towerFloor + 1;
-  const isEndless = isEndlessFloor(floor);
-  const [questions, setQuestions] = useState<Question[] | null>(null);
+  const [attempt, setAttempt] = useState<{ floor: number; hero: string | null; questions: Question[] } | null>(null);
+  const [loading, setLoading] = useState(false);
+  const pending = useRef(false);
   const [score, setScore] = useState({ answered: 0, correct: 0 });
-  const [attemptFloor, setAttemptFloor] = useState(floor);
+  const attemptFloor = attempt?.floor ?? floor;
+  const questions = attempt?.questions;
+  const isEndless = isEndlessFloor(attemptFloor);
   const [result, setResult] = useState<'pass' | 'fail' | null>(null);
   const [lastPaid, setLastPaid] = useState<{
     gold: number;
@@ -33,24 +37,30 @@ export default function TowerModal() {
     badges: number;
   } | null>(null);
 
-  const isBossFloor = floor % 5 === 0;
-  const reward = towerReward(floor);
+  const isBossFloor = attemptFloor % 5 === 0;
+  const reward = towerReward(attemptFloor);
 
-  const startChallenge = (targetFloor: number) => {
-    setAttemptFloor(targetFloor);
-    setQuestions(towerQuestions(targetFloor));
+  const startChallenge = async (targetFloor: number) => {
+    if (pending.current) return;
+    pending.current = true;
+    setLoading(true);
+    sfx.click();
+    await loadBank(towerRegion(targetFloor));
+    setAttempt({ floor: targetFloor, hero, questions: towerQuestions(targetFloor) });
     setScore({ answered: 0, correct: 0 });
     setResult(null);
     setLastPaid(null);
-    sfx.click();
+    setLoading(false);
+    pending.current = false;
   };
 
   const onAnswer = (correct: boolean) => {
     const s = { answered: score.answered + 1, correct: score.correct + (correct ? 1 : 0) };
     setScore(s);
-    if (!questions || s.answered < questions.length) return;
+    if (!attempt || s.answered < attempt.questions.length) return;
 
     if (s.correct >= TOWER_PASS) {
+      const { hero } = attempt;
       const paid = clearTowerFloor(attemptFloor, hero);
       sfx.victory();
       setResult('pass');
@@ -107,7 +117,7 @@ export default function TowerModal() {
                 {heroItem && <span className="rarity-tag inline">{heroItem.rarity}</span>}
               </div>
               <p className="tower-hero-desc">
-                通關本層即可獲取該英雄碎片，每日更換主角！每 5 層首領層獎勵 3 倍！
+                通關可獲得主角英雄碎片，每日更換主角！每 5 層遇到首領，獎勵以本層預覽為準。
               </p>
             </div>
           </div>
@@ -162,9 +172,10 @@ export default function TowerModal() {
             <button
               className="btn btn-primary tower-start-btn"
               onMouseDown={keepFocus}
-              onClick={() => startChallenge(floor)}
+              disabled={loading}
+              onClick={() => void startChallenge(floor)}
             >
-              ⚔️ 開始挑戰第 {floor} 層
+              {loading ? '載入本層題目…' : `⚔️ 開始挑戰第 ${floor} 層`}
             </button>
           </div>
         </div>
@@ -234,14 +245,16 @@ export default function TowerModal() {
                 <button
                   className="btn btn-primary"
                   onMouseDown={keepFocus}
-                  onClick={() => startChallenge(towerFloor + 1)}
+                  disabled={loading}
+                  onClick={() => void startChallenge(towerFloor + 1)}
                 >
                   🚀 繼續挑戰第 {towerFloor + 1} 層
                 </button>
                 <button
                   className="btn btn-secondary"
                   onMouseDown={keepFocus}
-                  onClick={() => { setQuestions(null); setResult(null); }}
+                  disabled={loading}
+                  onClick={() => { setAttempt(null); setResult(null); }}
                 >
                   🗼 查看塔樓總覽
                 </button>
@@ -261,14 +274,16 @@ export default function TowerModal() {
                 <button
                   className="btn btn-primary"
                   onMouseDown={keepFocus}
-                  onClick={() => startChallenge(attemptFloor)}
+                  disabled={loading}
+                  onClick={() => void startChallenge(attemptFloor)}
                 >
                   🔄 重新挑戰第 {attemptFloor} 層
                 </button>
                 <button
                   className="btn btn-secondary"
                   onMouseDown={keepFocus}
-                  onClick={() => { setQuestions(null); setResult(null); }}
+                  disabled={loading}
+                  onClick={() => { setAttempt(null); setResult(null); }}
                 >
                   返回塔樓
                 </button>

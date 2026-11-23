@@ -141,7 +141,7 @@ listening:[
 [2,'We risk laundering a judgement into an apparently impersonal result simply by expressing it numerically.','只因用數字表達，我們可能把判斷包裝成看似客觀無涉個人的結果。|用數字表示就一定能消除任何價值判斷。|說話者認定所有數字都必然是偽造的。|說話者只關心數字排列的美觀。','laundering 在此比喻洗去主觀來源的外觀；risk 不是斷言所有量化都無效。'],
 [3,'The qualification is framed as a minor technicality, when it is in fact doing most of the work of insulating the claim from any conceivable counterexample.','這項限定被說成小細節，實際上卻主要靠它讓主張避開任何可能的反例。|限定使主張更容易被具體反例推翻。|所有可能反例都已逐一接受實驗檢驗。|主張因缺少任何限定而變得完全無法理解。','insulating from counterexample 是避免反證，doing most of the work 指限定承擔主要防護作用。'],
 [3,'What passes for transparency here is an abundance of detail that makes the consequential choices harder, rather than easier, to discern.','這裡看似透明，其實大量細節反而讓關鍵選擇更難辨認。|所有細節都已精確指出最有影響的選擇。|資訊完全沒有公開，所以不存在任何透明外觀。|只要公開資訊很多，就必然已達成實質透明。','passes for 指被當成；大量資訊與可理解性並非同一件事。'],
-[3,'The difficulty is not that the distinction cannot be drawn, but that drawing it this way quietly settles the very dispute it purports merely to describe.','問題不是無法區分，而是這樣劃界已暗中替它聲稱只是描述的爭議下了判斷。|這個區分在任何情況下都完全無法表達。|劃界方式已由雙方公開同意且毫無爭議。|說話者只是要求把描述寫得更短。','區分描述性姿態與劃界所帶入的實質判斷；不是否認所有區分都可能。']
+[3,'The difficulty is not that the distinction cannot be drawn, but that drawing it this way quietly settles the very dispute it purports merely to describe.','這種劃界表面是描述，實際已替爭議下了判斷。|這種劃界僅是描述，真正問題是根本不能作出區分。|劃界本身可以中立，但雙方後來各自把它用於不同論證。|真正的爭議在於是否需劃界，至於怎麼劃已取得共識。','區分描述性姿態與劃界所帶入的實質判斷；不是否認所有區分都可能。']
 ],
 voices:[
 ['tendentious','以推動特定立場為目的而有偏向的',1,'adj.','The summary was criticised as tendentious.','這份摘要被批評帶有推動特定立場的偏向。'],

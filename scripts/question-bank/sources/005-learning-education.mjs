@@ -140,7 +140,7 @@ listening:[
 [2,'It would be pedantic to insist on the distinction if nothing turned on it; the point is that rather a great deal does.','若差異不影響任何事，堅持它才是吹毛求疵；但此處它影響很大。|因差異影響很大，所以不值得繼續區分。|說話者承認堅持此差異毫無實際意義。|只要有人提出差異，就不必再證明其重要性。','反事實條件與後句共同支持這個區分並非無關緊要。'],
 [2,'The objection is not that the scheme lacks coherence, but that its coherence has been purchased by excluding what would trouble it.','問題不在架構不一致，而在一致性靠排除麻煩案例換得。|架構因納入所有反例而變得不一致。|說話者否認架構呈現任何一致性。|架構的一致性已獨立證明所有案例都適用。','coherence 被承認，但取得方式受批評。'],
 [3,'There is a difference between teaching students to tolerate ambiguity and using ambiguity as a reason never to expose one’s own position to challenge.','容忍歧義與藉歧義保護自己立場免受挑戰不同。|容忍歧義必然表示所有立場都不能受質疑。|學生必須消除所有歧義後才可提出問題。|說話者認為立場不明確總是較成熟的表現。','把處理不確定性的能力，與利用不確定性迴避責任分開。'],
-[3,'What is presented as intellectual modesty can become a remarkably comfortable position if it requires everyone else to justify their claims while exempting its own refusal to commit.','若只要求他人辯護而不檢視自己拒絕表態，知識謙遜也可能成為舒適的特權立場。|知識謙遜已被證明在每個情境都等同虛偽。|拒絕表態必然比提出主張更需公開辯護。|說話者肯定此立場已平等要求所有人負責。','can 和 if 限定批評條件，核心在不對等的辯護要求。'],
+[3,'What is presented as intellectual modesty can become a remarkably comfortable position if it requires everyone else to justify their claims while exempting its own refusal to commit.','若只要求別人舉證，自己拒絕表態卻免受檢驗，謙遜便成了有利的位置。|暫不表態讓人更容易退一步檢驗自己與他人的理由。|這種謙遜有說服力，因為它提高了自己舉證的負擔。|不肯表態有時是逃避，可是這裡雙方都被要求說明理由。','can 和 if 限定批評條件，核心在不對等的辯護要求。'],
 [3,'The exercise is productive precisely because it denies the reader the consolation of a vocabulary in which the disagreement has already been settled.','練習有價值，正因不讓讀者靠已預先判定爭議的詞彙獲得安心。|練習因詞彙不足而無法讓讀者辨認任何分歧。|讀者只需背熟標準用語，就能避開所有推理。|練習已把爭議結論明確列出作為提示。','詞彙框架可能預定答案，練習刻意不提供這種捷徑。']
 ],
 voices:[

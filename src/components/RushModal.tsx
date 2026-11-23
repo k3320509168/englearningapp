@@ -26,40 +26,41 @@ export default function RushModal() {
   const [input, setInput] = useState('');
   const [lastMistake, setLastMistake] = useState<string | null>(null);
   const [done, setDone] = useState<ReturnType<ReturnType<typeof useSaveStore.getState>['grantRush']> | null>(null);
+  const runRef = useRef<{ deadline: number; region: number; attempt: number; settled: boolean } | null>(null);
+  const statsRef = useRef({ correct: 0, combo: 0, best: 0 });
   const inputRef = useRef<HTMLInputElement>(null);
   const say = useSpeak();
   const q = questions?.[idx % (questions?.length || 1)];
 
   const start = () => {
-    setQuestions(rushQuestions(save.codex, save.unlockedIndex));
-    setIdx(0);
-    setLeft(RUSH_SECONDS * 1000);
-    setStats({ correct: 0, combo: 0, best: 0 });
-    setDone(null);
-    setLastMistake(null);
-    save.startRush();
+    if (runRef.current) return;
+    const deck = rushQuestions(save.codex, save.unlockedIndex);
+    if (!deck.length) return;
+    const attempt = save.startRush();
+    if (attempt === null) return;
+    runRef.current = { deadline: Date.now() + RUSH_SECONDS * 1000, region: save.unlockedIndex, attempt, settled: false };
+    const initialStats = { correct: 0, combo: 0, best: 0 };
+    statsRef.current = initialStats;
+    setStats(initialStats);
+    setQuestions(deck);
   };
 
-  // 倒數計時：時間到就結算（用 ref 拿最新的成績，避免在 effect 裡連鎖 setState）
-  const statsRef = useRef(stats);
-  useEffect(() => { statsRef.current = stats; }, [stats]);
   useEffect(() => {
-    if (!questions || done) return;
-    const end = Date.now() + RUSH_SECONDS * 1000;
-    const t = window.setInterval(() => {
-      const remain = Math.max(0, end - Date.now());
+    const run = runRef.current;
+    if (!questions || !run || run.settled) return;
+    const timer = window.setInterval(() => {
+      const remain = Math.max(0, run.deadline - Date.now());
       setLeft(remain);
-      if (remain > 0) return;
-      window.clearInterval(t);
+      if (remain > 0 || run.settled) return;
+      run.settled = true;
+      window.clearInterval(timer);
       const { correct, best } = statsRef.current;
-      const sv = useSaveStore.getState();
-      const runIndex = Math.max(0, (sv.rushDay === today ? sv.rushRuns : 1) - 1);
-      const reward = rushReward(correct, best, sv.unlockedIndex, runIndex);
-      setDone(sv.grantRush(reward));
+      const reward = rushReward(correct, best, run.region, run.attempt);
+      setDone(useSaveStore.getState().grantRush(reward));
       sfx.victory();
     }, 100);
-    return () => window.clearInterval(t);
-  }, [questions, done]);
+    return () => window.clearInterval(timer);
+  }, [questions]);
 
   // 聽力題自動播放；拼寫題自動聚焦
   useEffect(() => {
@@ -69,14 +70,16 @@ export default function RushModal() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idx, questions]);
 
-  const answer = (given: string) => {
-    if (!q || done || left <= 0) return;
+  const answer = (given: string, submittedAt: number) => {
+    const run = runRef.current;
+    if (!q || !given.trim() || !run || run.settled || submittedAt >= run.deadline) return;
     const ok = checkQuizAnswer(q, given);
     save.recordAnswer(q, ok, false);
-    setStats(s => {
-      const combo = ok ? s.combo + 1 : 0;
-      return { correct: s.correct + (ok ? 1 : 0), combo, best: Math.max(s.best, combo) };
-    });
+    const previous = statsRef.current;
+    const combo = ok ? previous.combo + 1 : 0;
+    const next = { correct: previous.correct + (ok ? 1 : 0), combo, best: Math.max(previous.best, combo) };
+    statsRef.current = next;
+    setStats(next);
     if (!ok) setLastMistake(`${q.desc} → ${answerLabel(q).text}`);
     setFlash(ok ? 'ok' : 'ng');
     window.setTimeout(() => setFlash(null), 250);
@@ -91,7 +94,7 @@ export default function RushModal() {
     <Modal title="⚡ 每日素材本：60 秒狂熱快答" onClose={closeModal}>
       {!questions && (
         <>
-          <p>只出你學過的題目，{RUSH_SECONDS} 秒內答越多越好！答錯不扣血，但會斷連擊。答對越多、連擊越高，金幣、經驗和礦石越多。</p>
+          <p>優先出你學過的題目，題量不足時以當區基礎題補足。{RUSH_SECONDS} 秒內答越多越好！答錯不扣血，但會斷連擊。答對越多、連擊越高，金幣、經驗和礦石越多。</p>
           <p className="muted">口說題在快答模式以拼寫練習，不作口說驗證；前兩次至少獲得150金幣與1礦石。</p>
           <p className="muted">今天還可以挑戰 {Math.max(0, runsLeft)} / {RUSH_PER_DAY} 次</p>
           <button className="btn btn-primary" onMouseDown={keepFocus} disabled={runsLeft <= 0} onClick={start}>{runsLeft > 0 ? '開始！' : '今天的次數用完了'}</button>
@@ -107,10 +110,10 @@ export default function RushModal() {
           {q.speak && q.desc.startsWith('🎧') && <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => say(q.speak)}>🔊 再聽一次</button>}
           {q.type === 'choice' ? (
             <div className="rush-options">
-              {options.map(o => <button key={o} className="btn" onMouseDown={keepFocus} onClick={() => answer(o.slice(0, 1))}>{o}</button>)}
+              {options.map(o => <button key={o} className="btn" onMouseDown={keepFocus} onClick={() => answer(o.slice(0, 1), Date.now())}>{o}</button>)}
             </div>
           ) : (
-            <form className="trial-input" onSubmit={e => { e.preventDefault(); answer(input); }}>
+            <form className="trial-input" onSubmit={e => { e.preventDefault(); answer(input, Date.now()); }}>
               <input ref={inputRef} value={input} onChange={e => setInput(e.target.value)} autoComplete="off" autoCapitalize="characters" spellCheck={false}
                 aria-label="輸入答案" placeholder={q.type === 'fill' ? '填入空格的字母（或整個單字）' : '輸入英文單字'} />
               <button className="btn btn-primary" type="submit">確認 ⏎</button>

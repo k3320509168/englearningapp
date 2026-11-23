@@ -141,10 +141,10 @@ listening:[
 [1,'a sumptuous spread','豐盛豪華的一桌餐食|刻意只提供清水的安排|用來塗抹的少量膠水|食物已售罄後的空桌','spread 在此指鋪陳的一桌食物，sumptuous 豪華豐盛。'],
 [2,'The austerity seems earned rather than affected: nothing feels omitted merely to advertise how much has been left out.','簡約顯得有根據而非做作，沒有只是為炫耀刪減而省略的感覺。|簡約被說成完全為了炫耀省略。|評論者要求菜餚加入所有可能食材。|菜單已被證明遺失部分頁面。','earned/affected 對比有實質依據與刻意姿態。'],
 [2,'The dish courts nostalgia without quite surrendering to it, allowing the remembered flavour to remain a point of departure rather than a destination.','料理借助懷舊卻未完全屈從，把記憶滋味當起點而非終點。|料理被要求精確複製記憶且不容變化。|料理完全避開任何熟悉味道。|評論者斷言懷舊與創新無法共存。','保留懷舊影響但不受它完全限定。'],
-[2,'For all its studied informality, the service leaves you acutely aware that informality is itself part of the performance.','服務雖刻意呈現輕鬆，卻讓人清楚感到這份輕鬆本身也是表演。|員工完全沒有想過如何呈現服務。|服務的正式規則已被全部取消。|說話者只是說餐廳沒有制服。','studied 指經設計；批評自然感被表演痕跡削弱。'],
+[2,'For all its studied informality, the service leaves you acutely aware that informality is itself part of the performance.','服務刻意顯得隨意，卻讓人意識到這份隨意也是演出的一部分。|服務其實經過設計，但看來足夠自然，客人幾乎不會察覺。|服務試圖營造輕鬆感，卻因一些正式儀節讓客人覺得拘束。|服務在正式與輕鬆之間轉換，輕鬆的部分沒經過特別安排。','studied 指經設計；批評自然感被表演痕跡削弱。'],
 [2,'The provenance is impeccable; whether it tells us much about the pleasure of eating the dish is another question.','來源無可挑剔，但它能否說明用餐樂趣仍是另一回事。|來源已被證明虛假，滋味因此不必討論。|來源好就已充分證明食用體驗美好。|評論者認為不應追問任何來源。','認可來源，同時拒絕來源自動決定感官品質。'],
 [3,'The review turns the diner’s inability to recognise an ingredient into evidence of the chef’s sophistication, without considering that obscurity may simply be obscurity.','評論誤把食材難辨直接當成廚師功力的證據。|評論認為食材很難辨，但從擺盤看出了廚師功力。|評論先從其他跡象判斷廚師功力，再把食材難辨當成缺點。|評論把食客認得食材歸功於廚師技術，而非食客見識。','質疑由難以辨識跳到高明的推論，不否定所有陌生風味。'],
-[3,'It is not that the meal lacked pleasure, but that its insistence on being an experience seemed curiously distrustful of pleasure left to speak for itself.','餐點並非沒有樂趣，只是堅持宣示體驗，顯得不信任樂趣自行呈現。|餐點完全無樂趣，這是唯一批評。|評論者認為愉悅必須靠詳解才存在。|餐廳已拒絕向客人介紹任何內容。','承認愉悅，批評過度宣示的框架可能壓過直接感受。'],
+[3,'It is not that the meal lacked pleasure, but that its insistence on being an experience seemed curiously distrustful of pleasure left to speak for itself.','餐點令人愉快，但太強調營造體驗，像是不相信愉悅能自然傳達。|餐點令人愉快，正因餐廳替客人說明了為何值得享受。|評論者覺得體驗設計優於實際菜色，愉悅主要來自氛圍。|評論者珍惜用餐樂趣，但認為它只有靠體驗設計才能成立。','承認愉悅，批評過度宣示的框架可能壓過直接感受。'],
 [3,'The critic’s praise is qualified less by reservations about the food than by unease at the cultural hierarchy through which its excellence is made legible.','評論者主要質疑認可美食的文化階序，對料理本身較少保留。|評論者擔憂料理水準不足，只是文化聲望讓人難以看出缺點。|評論者主要在意食物表現，但認為文化階序使優點被忽略。|評論者欣賞文化品味的評價方式，保留主要來自料理本身。','less ... than ... 定位保留來源；legible 比喻能被理解認可。']
 ],
 voices:[

@@ -16,6 +16,11 @@ const reviewed: [number, string][] = [
   [8, "The critic’s praise is qualified"],
   [7, "The offer restores access"],
   [7, "I would be wary"],
+  [8, "The difficulty is not that the distinction"],
+  [8, "What is presented as intellectual modesty"],
+  [8, "It is not that the meal lacked pleasure"],
+  [8, "For all its studied informality"],
+  [6, "Seeing fewer birds today"],
 ];
 for (const [region, prefix] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];

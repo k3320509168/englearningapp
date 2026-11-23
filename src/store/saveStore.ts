@@ -22,7 +22,7 @@ import {
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
 import { STAR_TICKETS, mergeStars } from '../game/stars';
-import { towerReward } from '../game/modes';
+import { RUSH_PER_DAY, towerReward } from '../game/modes';
 import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, cumulativeXpAtLevel, nextOptions, pathBadgeCost, playerLevelCap, xpScale, xpToNext } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
 import type { OwnedEquip, Slot } from '../game/equipment';
@@ -247,7 +247,7 @@ interface SaveActions {
   tierUp: (id: HeroId) => boolean;
   starUp: (id: HeroId) => boolean;
   finishShardQuiz: (correct: number) => number; // 回傳得到的願望碎片
-  startRush: () => void;
+  startRush: () => number | null;
   grantRush: (reward: { gold: number; xp: number; ore: number }) => { gold: number; xp: number; ore: number; bonus: number; allowanceGold: number };
   clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number; xp: number; bonus: number; allowanceGold: number; tickets?: number } | null; // 第一次通過才有獎勵
   earnSweepTickets: () => number;    // 修煉場連對 5 題：回傳實際拿到的張數（每天上限）
@@ -1347,10 +1347,14 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         },
 
         // 每日素材本：一天 3 次
-        startRush: () => set(s => {
+        startRush: () => {
           const today = new Date().toDateString();
-          return { rushDay: today, rushRuns: (s.rushDay === today ? s.rushRuns : 0) + 1 };
-        }),
+          const { rushDay, rushRuns } = get();
+          const used = rushDay === today ? rushRuns : 0;
+          if (used >= RUSH_PER_DAY) return null;
+          set({ rushDay: today, rushRuns: used + 1 });
+          return used;
+        },
         grantRush: (reward) => {
           get().addGold(reward.gold);
           get().addMaterials({ ore: reward.ore });

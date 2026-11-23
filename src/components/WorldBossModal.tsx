@@ -24,6 +24,8 @@ import { useSpeak } from './useSpeak';
 export default function WorldBossModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const celebrate = useUiStore(s => s.celebrate);
+  const voiceDisabled = useSaveStore(s => s.settings.voiceAsSpelling);
+  const allowVoice = !voiceDisabled && isSpeechRecognitionSupported();
   const claimVictory = useSaveStore(s => s.claimWorldBossVictory);
   const [reward, setReward] = useState<WorldBossReward | null>(null);
 
@@ -38,19 +40,29 @@ export default function WorldBossModal() {
   const [battleState, setBattleState] = useState<'intro' | 'active' | 'victory' | 'defeat'>('intro');
 
   const recognizer = useRef<Recognizer | null>(null);
-  const raid = useRef({ hp: WORLD_BOSS_HP, combo: 0, index: 0, remaining: WORLD_BOSS_TIME, active: false });
+  const raid = useRef({ hp: WORLD_BOSS_HP, combo: 0, index: 0, deadline: 0, active: false });
   const say = useSpeak();
   const currentSpell: ChantSpell = CHANT_SPELLS[currentIndex % CHANT_SPELLS.length];
 
-  const handleChantSuccess = () => {
+  const expire = () => {
+    raid.current.active = false;
+    setTimeLeft(0);
+    setListening(false);
+    setBattleState('defeat');
+    sfx.wrong();
+  };
+  const handleChantSuccess = (submittedAt: number) => {
     const current = raid.current;
     // 舊辨識回呼或勝利後的重複事件不得再次傷害／發獎。
     if (!current.active || current.index !== currentIndex) return;
+    if (submittedAt >= current.deadline) { expire(); return; }
     const nextCombo = current.combo + 1;
     const isCrit = nextCombo % 3 === 0;
     const damage = isCrit ? DAMAGE_PER_CHANT + COMBO_BONUS_DAMAGE : DAMAGE_PER_CHANT;
     const nextHp = Math.max(0, current.hp - damage);
-    raid.current = { ...current, hp: nextHp, combo: nextCombo, index: current.index + 1, active: nextHp > 0 };
+    const next = { ...current, hp: nextHp, combo: nextCombo, index: current.index + 1, active: nextHp > 0 };
+    raid.current = next;
+    setListening(false);
     setBossHp(nextHp);
     setCombo(nextCombo);
     setSpellTyped('');
@@ -72,7 +84,7 @@ export default function WorldBossModal() {
     } else {
       setStatusText(isCrit ? `🔥 神聖大裁決爆發！造成 ${damage.toLocaleString()} 點破盾打擊！` : `✨ 詠唱成功！造成 ${damage.toLocaleString()} 點破盾傷害！`);
       setCurrentIndex(current.index + 1);
-      setTimeout(() => { if (raid.current.active) recognizer.current?.start(); }, 200);
+      setTimeout(() => { if (raid.current === next && next.active) recognizer.current?.start(); }, 200);
     }
   };
 
@@ -80,10 +92,9 @@ export default function WorldBossModal() {
     if (battleState !== 'active') return;
     const timer = window.setInterval(() => {
       if (!raid.current.active) return;
-      const remaining = Math.max(0, raid.current.remaining - 1);
-      raid.current = { ...raid.current, remaining, active: remaining > 0 };
+      const remaining = Math.max(0, Math.ceil((raid.current.deadline - Date.now()) / 1000));
       setTimeLeft(remaining);
-      if (remaining === 0) { setBattleState('defeat'); sfx.wrong(); }
+      if (remaining === 0) expire();
     }, 1000);
     return () => clearInterval(timer);
   }, [battleState]);
@@ -92,42 +103,44 @@ export default function WorldBossModal() {
 
   // 語音辨識綁定
   useEffect(() => {
-    if (battleState !== 'active') {
-      recognizer.current?.stop();
-      return;
-    }
-
-    if (isSpeechRecognitionSupported()) {
-      recognizer.current = createRecognizer({
-        onStart: () => {
-          setListening(true);
-          setStatusText('🎙️ 正在聆聽您的詠唱聲……請朗讀當前古咒！');
-        },
-        accept: (transcripts) => checkChant(currentSpell, transcripts),
-        onResult: (transcripts) => {
-          if (checkChant(currentSpell, transcripts)) {
-            handleChantSuccess();
-          } else {
-            setStatusText(`聽到「${transcripts[0] ?? ''}」，與古咒未完全吻合，請繼續朗讀！`);
-          }
-        },
-        onError: (err) => {
-          setListening(false);
-          setStatusText(`辨識暫停（${err}），您也可以使用鍵盤拼寫關鍵詞破盾！`);
-        },
-        onEnd: () => {
-          setListening(false);
-        },
-      });
-    }
+    if (battleState !== 'active' || !allowVoice) return;
+    let current = true;
+    const recognition = createRecognizer({
+      onStart: () => {
+        if (!current) return;
+        setListening(true);
+        setStatusText('🎙️ 正在聆聽您的詠唱聲……請朗讀當前古咒！');
+      },
+      accept: (transcripts) => checkChant(currentSpell, transcripts),
+      onResult: (transcripts) => {
+        if (!current) return;
+        if (checkChant(currentSpell, transcripts)) {
+          handleChantSuccess(Date.now());
+        } else {
+          setStatusText(`聽到「${transcripts[0] ?? ''}」，與古咒未完全吻合，請繼續朗讀！`);
+        }
+      },
+      onError: (err) => {
+        if (!current) return;
+        setListening(false);
+        setStatusText(`辨識暫停（${err}），您也可以使用鍵盤拼寫關鍵詞破盾！`);
+      },
+      onEnd: () => {
+        if (current) setListening(false);
+      },
+    });
+    recognizer.current = recognition;
 
     return () => {
-      recognizer.current?.stop();
+      current = false;
+      recognition?.stop();
+      recognizer.current = null;
     };
-  }, [battleState, currentIndex]);
+  }, [allowVoice, battleState, currentIndex]);
 
   const startRaid = () => {
-    raid.current = { hp: WORLD_BOSS_HP, combo: 0, index: 0, remaining: WORLD_BOSS_TIME, active: true };
+    const started = { hp: WORLD_BOSS_HP, combo: 0, index: 0, deadline: Date.now() + WORLD_BOSS_TIME * 1000, active: true };
+    raid.current = started;
     setBossHp(WORLD_BOSS_HP);
     setTimeLeft(WORLD_BOSS_TIME);
     setCurrentIndex(0);
@@ -137,7 +150,7 @@ export default function WorldBossModal() {
     setBattleState('active');
     sfx.boss();
     setTimeout(() => {
-      if (raid.current.active) recognizer.current?.start();
+      if (raid.current === started && started.active) recognizer.current?.start();
     }, 300);
   };
 
@@ -147,7 +160,7 @@ export default function WorldBossModal() {
     const attempt = spellTyped.trim().toUpperCase();
     if (!attempt) return;
     if (attempt === currentSpell.keyword) {
-      handleChantSuccess();
+      handleChantSuccess(Date.now());
     } else {
       setStatusText('拼寫未吻合，請核對古咒中的單字，或使用提示。');
     }
@@ -160,7 +173,7 @@ export default function WorldBossModal() {
   const hpPercent = Math.max(0, (bossHp / WORLD_BOSS_HP) * 100);
 
   return (
-    <Modal title="🐉 世界王突襲・天穹暴君法夫納" onClose={closeModal} wide>
+    <Modal title="🐉 世界王突襲・法夫納" onClose={closeModal} wide>
       <div className="worldboss-container" style={{ textAlign: 'center', padding: '12px' }}>
         {battleState === 'intro' && (
           <div className="worldboss-intro">
@@ -231,14 +244,14 @@ export default function WorldBossModal() {
 
             {/* 快捷朗讀與鍵盤拼寫 */}
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-              <button
+              {allowVoice && <button
                 className={`btn ${listening ? 'btn-primary' : 'btn-secondary'}`}
                 onMouseDown={keepFocus}
                 onClick={() => recognizer.current?.start()}
                 style={{ padding: '10px 20px', fontSize: '15px' }}
               >
                 {listening ? '🎙️ 正在收音……' : '🎙️ 點擊開始朗讀'}
-              </button>
+              </button>}
 
               <form onSubmit={handleKeywordSubmit} style={{ display: 'inline-flex', gap: '6px', flexWrap: 'wrap', justifyContent: 'center', maxWidth: '100%' }}>
                 <input

@@ -21,7 +21,8 @@ describe('daily rush', () => {
 
   it('allows three runs a day', () => {
     useSaveStore.setState({ ...initialSave });
-    for (let i = 0; i < RUSH_PER_DAY; i++) useSaveStore.getState().startRush();
+    for (let i = 0; i < RUSH_PER_DAY; i++) expect(useSaveStore.getState().startRush()).toBe(i);
+    expect(useSaveStore.getState().startRush()).toBeNull();
     expect(useSaveStore.getState().rushRuns).toBe(RUSH_PER_DAY);
   });
 });

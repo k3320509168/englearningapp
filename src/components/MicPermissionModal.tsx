@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
@@ -15,13 +15,21 @@ export default function MicPermissionModal() {
   // 依製作人指令：不預設切換拼寫，初始狀態一律為 idle，讓玩家可主動嘗試開啟麥克風；只有確定不能開啟時才切換
   const [status, setStatus] = useState<Status>('idle');
 
-  const close = () => { setMicAsked(); closeModal(); };
-  // 確定暫時無法使用麥克風時，僅將眼前題目切換為拼寫，絕不永久改寫全域設定
+  const request = useRef(0);
+  useEffect(() => () => { request.current++; }, []);
+
+  const close = () => {
+    request.current++;
+    setMicAsked();
+    closeModal();
+  };
+  // 確定暫時無法使用麥克風時，將本場戰鬥切換為拼寫，不改全域設定
   const fallbackToSpelling = () => {
     useBattleStore.getState().switchToSpelling();
   };
 
   const ask = async () => {
+    const current = ++request.current;
     setStatus('asking');
     try {
       if (!navigator?.mediaDevices?.getUserMedia) {
@@ -30,8 +38,9 @@ export default function MicPermissionModal() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       // 只是為了取得權限，立刻關掉麥克風
       stream.getTracks().forEach(t => t.stop());
-      setStatus('granted');
+      if (current === request.current) setStatus('granted');
     } catch {
+      if (current !== request.current) return;
       setStatus('denied');
       fallbackToSpelling();
     }
@@ -57,15 +66,15 @@ export default function MicPermissionModal() {
         ) : status === 'denied' ? (
           <>
             <h3>麥克風暫未開啟</h3>
-            <p>若設備無麥克風或瀏覽器未授權，當前這道題目可先改用拼寫作答；之後遇到口說題時仍會以口說模式為您出題，也可隨時在網址列允許麥克風！</p>
+            <p>本場戰鬥的口說題已改用拼寫。下一場會依照原本的口說設定出題。你可以在網址列調整麥克風權限。</p>
           </>
         ) : (
           <>
             <h3>麥克風無法啟用</h3>
             <p style={{ lineHeight: 1.6, fontSize: 13.5 }}>
               {!isHttps
-                ? '目前為本機局域網開發環境，瀏覽器安全規範限制了非 HTTPS 連線存取麥克風。遊戲正式上架（HTTPS）後語音功能完全正常！若目前無法收音，可點擊按鈕改用拼寫模式作答。'
-                : '設備或瀏覽器未能讀取到麥克風輸入。您可以點擊下方按鈕先以拼寫模式完成這道題目。'}
+                ? '目前為本機局域網開發環境，瀏覽器安全規範限制了非 HTTPS 連線存取麥克風。若瀏覽器限制收音，可使用 HTTPS 或在本場改用拼寫。'
+                : '設備或瀏覽器未能讀取到麥克風輸入。可以在本場改用拼寫。'}
             </p>
           </>
         )}
@@ -73,7 +82,7 @@ export default function MicPermissionModal() {
       <div className="tutorial-actions">
         {status === 'idle' || status === 'asking' ? (
           <>
-            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { fallbackToSpelling(); close(); }}>本題改用拼寫</button>
+            <button className="btn btn-ghost" onMouseDown={keepFocus} onClick={() => { fallbackToSpelling(); close(); }}>本場改用拼寫</button>
             <button className="btn btn-primary" onMouseDown={keepFocus} onClick={ask} disabled={status === 'asking'}>
               {status === 'asking' ? '請在瀏覽器視窗中選擇…' : '🎤 允許麥克風'}
             </button>

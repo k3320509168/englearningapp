@@ -433,7 +433,7 @@ function ChoiceAnswer({ question }: { question: Question }) {
   );
 }
 
-// 改用拼寫：眼前這題立刻轉成拼寫作答（依使用者指令：不預設修改全域設定，下一題仍維持正常口說題）
+// 改用拼寫：本場口說題改用拼寫，下一場依原本設定出題
 function switchVoiceToSpelling() {
   useBattleStore.getState().switchToSpelling();
 }
@@ -467,7 +467,7 @@ function VoiceAnswer({ question }: { question: Question }) {
         useBattleStore.getState().submitVoice(t);
       },
       onError: (err) => {
-        // 玩家拒絕使用麥克風：口說題改成拼寫，之後的關卡也是（設定可以再改回來）。
+        // 玩家拒絕使用麥克風：本場口說題改用拼寫，不改全域設定。
         // 其他錯誤（麥克風暫時被占用、網路、辨識服務）只是這一次失敗，說明原因讓玩家再試，不自動改設定
         if (err === 'not-allowed') return switchVoiceToSpelling();
         setError(recognitionErrorText(err));
@@ -498,7 +498,7 @@ function VoiceAnswer({ question }: { question: Question }) {
       </button>
       {error && <p className="voice-error">{error}</p>}
       <p className="kbd-hint">也可以按 Enter 開始錄音</p>
-      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={switchVoiceToSpelling}>⌨️ 不方便說話？改用拼寫作答</button>
+      <button className="btn btn-ghost btn-small" onMouseDown={keepFocus} onClick={switchVoiceToSpelling}>⌨️ 本場改用拼寫作答</button>
     </div>
   );
 }

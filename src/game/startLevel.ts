@@ -8,7 +8,7 @@ import { GOLDEN_TITLE, MAIN_TITLE } from './golden';
 import { PROLOGUE, REGIONS } from './regions';
 import { PROLOGUE_CLEAR_STORY } from './story';
 import { continueTarget } from './notices';
-import { loadBank, loadBanksFrom } from './questions/bank/loader';
+import { loadBank } from './questions/bank/loader';
 
 // 從地圖（Phaser 圓點或 React 按鈕）開始關卡的共用入口。
 // 場景切換由 MapScene 訂閱 battleStore.active 處理，React 與 Phaser 不必互相呼叫。
@@ -20,9 +20,9 @@ function voiceTransform() {
   return noVoice ? voiceFallback : undefined;
 }
 
-// 開始前先確認要用到的題庫已經載入（通常背景早就載好了，這裡只是保險）
+// 黃金之路入口完成題庫準備後開戰。
 export function beginGoldenRoad() {
-  void loadBanksFrom(0).then(() => useBattleStore.getState().startGoldenRoad(voiceTransform()));
+  useBattleStore.getState().startGoldenRoad(voiceTransform());
 }
 
 export function beginLevel(levelKey: string, fromStage?: number) {

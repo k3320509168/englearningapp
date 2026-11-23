@@ -81,7 +81,7 @@ export default function SummaryPanel() {
       {phase === 'levelClear' && !golden && !skillDef && !prologue && <p>{levelIdx === LEVELS.length - 1 ? `沉默魔王倒下了！你獲得了稱號「${MAIN_TITLE}」。` : unlockedNext ? '下一個區域已解鎖' : `魔王倒下了！回到區域地圖找「🗿 守門人」：重建封印、通過區域試煉，就能前往「${REGIONS[levelIdx + 1]?.name ?? ''}」。`}</p>}
       {runRunes > 0 && !golden && <p className="rune-gain">🔮 跨日複習答對 {runRunes} 個知識點：封印能量 +{runRunes}</p>}
       {golden && phase === 'gameOver' && <p>一次失誤就結束——這就是黃金之路。最佳紀錄：通過 {goldenBest} / {stages.length} 關。看看是哪一題，再挑戰一次吧！</p>}
-      {golden && phase === 'levelClear' && <p>沒有夥伴、沒有裝備，只憑英文能力擊敗了沉默魔王。獲得召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS}！</p>}
+      {golden && phase === 'levelClear' && <p>沒有夥伴、沒有裝備，只憑英文能力擊敗了沉默魔王。召喚券 🎫 ×{GOLDEN_CLEAR_TICKETS} 僅於首次通關發放。</p>}
       {mapResult && phase !== 'gameOver' && (
         <section className="star-result" aria-label="三星評價">
           <div className="star-row">

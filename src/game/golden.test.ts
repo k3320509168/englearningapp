@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { GOLDEN_STAGE_COUNT, GOLDEN_TITLE, MAIN_TITLE, createGoldenDecks, generateGoldenStages, goldenTier } from './golden';
+import { GOLDEN_CLEAR_TICKETS, GOLDEN_STAGE_COUNT, GOLDEN_TITLE, MAIN_TITLE, createGoldenDecks, generateGoldenStages, goldenTier } from './golden';
 import { LEVELS, addBank, generateStages } from './QuestionData';
 import { REGIONS } from './regions';
 import c1 from './questions/bank/r7.json';
@@ -50,12 +50,12 @@ describe('golden road', () => {
     st().startGoldenRoad();
   };
 
-  it('has 6 tiers of 5 stages each, ending with the Demon Lord', () => {
+  it('has nine tiers of five stages each, ending with the Demon Lord', () => {
     const stages = generateGoldenStages(createGoldenDecks());
     expect(stages).toHaveLength(GOLDEN_STAGE_COUNT);
     expect(stages[4].bossMode).toBe(true);
     expect(stages.at(-1)!.kind).toBe('final');
-    expect(goldenTier(29)).toBe(5);
+    expect(goldenTier(GOLDEN_STAGE_COUNT - 1)).toBe(8);
   });
 
   it('uses the base protagonist only, ignoring levels, equipment, heroes and upgrades', () => {
@@ -82,7 +82,7 @@ describe('golden road', () => {
     expect(st().phase).toBe('gameOver');
   });
 
-  it('a perfect run defeats the Demon Lord and earns the special title', () => {
+  it('perfect runs earn the title and tickets only on the first clear', () => {
     addBank(7, c1 as Parameters<typeof addBank>[1]);
     addBank(8, c2 as Parameters<typeof addBank>[1]);
     let seed = 20261116;
@@ -120,5 +120,16 @@ describe('golden road', () => {
     // 平衡檢查：完美通關不該需要太多題
     expect(answers).toBeLessThan(150);
     expect([...verifiedReadingTiers]).toEqual([7, 8]);
+    const tickets = initialSave.tickets + GOLDEN_CLEAR_TICKETS;
+    expect(useSaveStore.getState().tickets).toBe(tickets);
+
+    st().startGoldenRoad();
+    for (let i = 0; i < 3000 && st().phase !== 'levelClear'; i++) {
+      if (st().phase === 'monsterDown') st().nextStage();
+      else answer();
+    }
+    expect(st().phase).toBe('levelClear');
+    expect(useSaveStore.getState().tickets).toBe(tickets);
+    expect(useSaveStore.getState().titles.filter(title => title === GOLDEN_TITLE)).toHaveLength(1);
   });
 });

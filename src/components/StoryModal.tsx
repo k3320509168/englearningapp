@@ -12,7 +12,7 @@ import { keepFocus } from './keepFocus';
 export const TYPE_CPS = 28;
 export const PUNCT_PAUSE_MS = 150;
 const PUNCT = /[，。！？、…；：,.!?]/;
-const reduceMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
 // 劇情對話：畫面底部的像素對話框，一句一句打字播放。點對話框：還在打字就整句顯示，再點下一句；
 // 空白鍵／Enter 也可以。右上角略過整段（略過也算看過）。看完後依劇情決定接下來開啟什麼
@@ -23,6 +23,7 @@ export default function StoryModal() {
   const { closeModal, openRegion } = useUiStore.getState();
   const character = useSaveStore(s => s.character);
   const markStorySeen = useSaveStore(s => s.markStorySeen);
+  const reduceMotion = useSaveStore(s => s.settings.reduceMotion) || prefersReducedMotion();
   const [step, setStep] = useState(0);
   const [chosenReplies, setChosenReplies] = useState<Record<number, string>>({});
   const lines = STORIES[storyId] ?? [];
@@ -60,13 +61,13 @@ export default function StoryModal() {
   const text = fill(rawText);
   // 打到第幾個字（換句時重新從 0 開始；系統偏好減少動畫時直接整句）
   const [typed, setTyped] = useState({ step: -1, n: 0 });
-  const shown = reduceMotion() || needChoice ? text.length : typed.step === step ? typed.n : 0;
+  const shown = reduceMotion || needChoice ? text.length : typed.step === step ? typed.n : 0;
   const typing = shown < text.length;
   const showAll = () => setTyped({ step, n: text.length });
 
   // 打字機：每個字 1000/28ms，遇到標點多停一下
   useEffect(() => {
-    if (reduceMotion() || needChoice) return;
+    if (reduceMotion || needChoice) return;
     let i = 0;
     let timer = 0;
     const tick = () => {
@@ -76,7 +77,7 @@ export default function StoryModal() {
     };
     timer = window.setTimeout(tick, 1000 / TYPE_CPS);
     return () => window.clearTimeout(timer);
-  }, [text, step, needChoice]);
+  }, [text, step, needChoice, reduceMotion]);
 
   const selectChoice = (reply: string) => {
     sfx.click();

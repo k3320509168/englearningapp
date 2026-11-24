@@ -538,7 +538,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 每第 5 題是困難題：剛好輪到這一關的第一題時也要出（之後再出這關準備好的題目）
     const questionCount = s.questionCount + 1;
     const isBossQuestion = !stage.revenge && stage.kind !== 'treasure' && questionCount % BOSS_QUESTION_EVERY === 0;
-    const original = isBossQuestion ? (s.mode === 'skill' ? decks!.boss() : pickBossQuestion(null, s.levelIdx, s.mode === 'normal' ? stageIdx : undefined, s.levelKey)) : takeEasy(stage) ?? stage.questions[0];
+    const original = isBossQuestion ? (s.mode === 'normal' ? pickBossQuestion(null, s.levelIdx, stageIdx, s.levelKey) : decks!.boss()) : takeEasy(stage) ?? stage.questions[0];
     const question = prepare(original);
 
     // 劇情檢查提前：若有開場或 BOSS 登場台詞，先開啟劇情視窗，避免戰前情報搶先顯示或唸出發音
@@ -659,7 +659,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     let qIdx = s.qIdx;
     let original: Question;
     if (isBossQuestion) {
-      original = s.mode === 'skill' ? decks!.boss() : pickBossQuestion(s.original, s.levelIdx, s.mode === 'normal' ? s.stageIdx : undefined, s.levelKey);
+      original = s.mode === 'normal' ? pickBossQuestion(s.original, s.levelIdx, s.stageIdx, s.levelKey) : decks!.boss();
     } else {
       qIdx += 1;
       const pref = s.mode === 'normal' && !s.executing ? modPreference(s.mods) : null;

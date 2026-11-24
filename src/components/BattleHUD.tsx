@@ -104,7 +104,9 @@ export default function BattleHUD() {
         if (e.key === 'Enter') { handled(); return s.confirmSkill(); }
         return;
       }
-      // Esc 先問要不要撤退，不會一按就離開（戰鬥結束後的結算畫面才直接離開）
+      // 通關快捷鍵共用結算出口，保留稱號與結局。
+      if (s.phase === 'levelClear' && (e.key === 'Enter' || e.key === 'Escape')) { handled(); return finishBattle(); }
+      // 戰鬥中先確認撤退，戰敗畫面可直接離開。
       if (e.key === 'Escape') {
         handled();
         return s.phase === 'answering' || s.phase === 'feedback' || s.phase === 'lesson' ? ui.setRetreatAsk(true) : s.exitToMap();
@@ -112,8 +114,6 @@ export default function BattleHUD() {
       if (s.phase === 'lesson' && e.key === 'Enter') { handled(); return s.startBattle(); }
       if (s.phase === 'feedback' && (e.key === 'Enter' || e.key === ' ')) { handled(); return s.continueAfterFeedback(); }
       if ((s.phase === 'monsterDown' || s.phase === 'summary') && e.key === 'Enter') { handled(); return s.nextStage(); }
-      // 通關：和「回到世界地圖」按鈕走同一個流程（通關劇情、稱號、黃金之路結局）
-      if (s.phase === 'levelClear' && e.key === 'Enter') { handled(); return finishBattle(); }
       // 失敗畫面不接受 Enter：連按 Enter 的玩家才不會沒看到結算就直接重來
       if (s.phase !== 'answering' || !q) return;
 

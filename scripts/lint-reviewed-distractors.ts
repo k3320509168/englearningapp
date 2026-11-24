@@ -47,6 +47,12 @@ const reviewed: [number, string, ('reading' | 'listening')?][] = [
   [7, "The comparison would be more persuasive if the students had faced"],
   [8, "The scene is sentimental only if we mistake its exposure of a des"],
   [7, "The promise to protect everyone becomes difficult to evaluate whe"],
+  [8, "【細微語意】The response is rueful rather than remorseful. What distinction ", "reading"],
+  [8, "【語用】I only wanted you to be happy, he says, as though this settled whe", "reading"],
+  [8, "【立場】To call the reform cosmetic is not to deny that appearances matter", "reading"],
+  [8, "【短文】An official says that the consultation demonstrated public support", "reading"],
+  [7, "【範圍】The pattern is suggestive of seasonal movement, though the observa", "reading"],
+  [6, "【語氣】The scout says, The path is passable, though I would not call it s", "reading"],
 ];
 for (const [region, prefix, skill = 'listening'] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];

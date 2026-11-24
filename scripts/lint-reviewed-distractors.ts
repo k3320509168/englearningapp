@@ -39,6 +39,14 @@ const reviewed: [number, string, ('reading' | 'listening')?][] = [
   [6, "【短文】A friend says, Any evening is fine, then rejects each proposed eve", "reading"],
   [8, "【短文】A ruler claims that the people’s gratitude proves his authority le", "reading"],
   [7, "【短文】A redevelopment promises a net gain in green space by replacing se", "reading"],
+  [8, "The qualification is framed as a minor technicality, when it is i"],
+  [6, "I would welcome the improvement, but only if the households most "],
+  [8, "The promise to preserve what matters is reassuring only until we "],
+  [6, "The new tool saves time on routine tasks, although checking the r"],
+  [8, "We risk laundering a judgement into an apparently impersonal resu"],
+  [7, "The comparison would be more persuasive if the students had faced"],
+  [8, "The scene is sentimental only if we mistake its exposure of a des"],
+  [7, "The promise to protect everyone becomes difficult to evaluate whe"],
 ];
 for (const [region, prefix, skill = 'listening'] of reviewed) {
   const pool = QUESTION_POOL[LEVELS[region]];

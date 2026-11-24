@@ -27,7 +27,7 @@ listening:[
 [2,'We have reduced the amount of packaging, but the material itself is still difficult to recycle.','包材用量減少了，但材質仍難回收。|材質變得易回收，但用量完全沒變。|包材已全部取消，不再使用任何材料。|減少用量已自動解決所有回收問題。','用量和材質可回收性是兩個不同面向。'],
 [3,'What looks like a saving on the construction budget may turn into higher maintenance costs over the building’s lifetime.','建造時看似省錢，卻可能帶來較高的長期維護費。|初期省錢保證終身維護費也較低。|維護費已被包含在所有工程報價中。|建築使用壽命與成本評估完全無關。','may 表可能性，重點是短期預算與全生命週期成本不同。'],
 [3,'The proposal would benefit frequent travellers more than occasional users, which is worth considering before calling it fair to everyone.','方案對常客較有利，宣稱人人公平前應考量差異。|所有使用者獲益已被證明完全相同。|偶爾使用者是唯一能得到好處的人。|說話者已要求禁止常客使用服務。','比較受益分配，不等於否定所有好處或要求禁用。'],
-[3,'I would welcome the improvement, but only if the households most affected by the work have a genuine say in how it is carried out.','我願支持改善，但條件是受影響最大的住戶能實際參與執行方式的決定。|只要宣布工程，住戶就不需要再表達意見。|我反對讓任何住戶參與。|受影響最大的住戶已獲准單獨決定一切。','only if 明示必要條件；genuine say 是實質發言權，非單獨掌控所有決策。']
+[3,'I would welcome the improvement, but only if the households most affected by the work have a genuine say in how it is carried out.','我願支持改善，但條件是受影響最大的住戶能實際參與執行方式的決定。|只要最大受影響的住戶在工程前得知確切時程，說話者就願意支持原定做法。|說話者願意支持改善，但希望所有住戶等工程完工後再評估執行方式。|說話者願意支持工程，條件是受影響住戶對任何施作決定都擁有最終裁決權。','only if 明示必要條件；genuine say 是實質發言權，非單獨掌控所有決策。']
 ],
 voices:[
 ['biodiversity','生物種類與生態差異的多樣性',1,'n.','The project aims to protect biodiversity along the river.','計畫旨在保護河岸生物多樣性。'],
@@ -140,7 +140,7 @@ listening:[
 [2,'The apparent inevitability of the decision depends on treating a contestable priority as though it were a fixed fact.','決定看似必然，是因可爭論的優先順序被當成固定事實。|所有優先順序已由不可改變的自然規律決定。|決定沒有任何理由，只是隨機選出。|說話者已證明所有人反對這個順序。','contestable priority 與 fixed fact 的混淆製造必然感。'],
 [2,'The scheme promises inclusion on terms that leave the existing hierarchy conspicuously intact.','方案承諾納入參與，但條件明顯保留了原有階序。|方案已把原有權力關係全部顛倒。|原有階序在方案提出前就已不存在。|方案明文拒絕任何形式的參與。','inclusion 與權力不變可以並存；批評是參與條件未改變階序。'],
 [3,'I am not persuaded that giving a burden a monetary equivalent makes it commensurable with the benefits enjoyed by entirely different people.','我不認為把負擔換成金額，就足以使它與另一群人享有的利益具有可比較性。|所有人承受負擔與享有利益的比例已完全相同。|只要標出金額，公平問題就必定解決。|說話者已證明任何兩個數字都不能比較。','質疑貨幣化是否充分處理跨群體代價，不是否定一切數值比較。'],
-[3,'The promise to preserve what matters is reassuring only until we notice who has reserved the right to decide what matters.','保存重要事物的承諾看似安心，但還要檢視誰保留了界定重要性的權力。|所有相關者已平等分享界定重要性的權力。|說話者確認沒有任何值得保存的事物。|承諾因使用簡單字詞而自動失效。','批評指向價值界定權，並不否定保存本身。'],
+[3,'The promise to preserve what matters is reassuring only until we notice who has reserved the right to decide what matters.','保存重要事物的承諾看似安心，但還要檢視誰保留了界定重要性的權力。|說話者對承諾有信心，因為訂定保存項目的人會依各方共同同意的標準行事。|說話者質疑的是承諾能否如期實現，對由誰決定保存項目則沒有提出疑問。|說話者認為只要列出應保存的項目，是否保留單方面的裁量權就無關緊要。','批評指向價值界定權，並不否定保存本身。'],
 [3,'The exception has become sufficiently routine that calling it exceptional now serves chiefly to protect the rule from reconsideration.','例外已很常見，繼續稱作例外主要是在保護規則免於重新檢視。|例外仍極少發生，因此足以證明規則永遠正確。|規則已被正式廢除，不再影響任何人。|每項例外都已被證明不曾發生。','例外常態化與標籤維持形成張力，稱呼可讓規則免於反思。']
 ],
 voices:[

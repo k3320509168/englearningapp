@@ -84,7 +84,7 @@ listening:[
 [2,'A concession made under pressure can still improve the situation, though it should not be redescribed as spontaneous generosity.','壓力下的讓步仍可改善情況，但不應改說成自發慷慨。|只要受到壓力，讓步就不可能帶來任何好處。|讓步已證明完全沒有外在壓力。|說話者認為改善結果必定證明善意動機。','效果與動機分開，保留改善但拒絕不當動機包裝。'],
 [3,'The treaty’s apparent symmetry conceals a difference between the party that defines the exceptions and the party that must live with them.','條約表面對稱，卻掩蓋誰界定例外、誰承受例外的差異。|雙方已平等掌握所有例外定義與後果。|條約沒有任何形式上的相似安排。|只要文字對稱，實質權力就必定相同。','文字對稱不等於實際權限與負擔對稱。'],
 [3,'What looks like a restoration of trust may be no more than a temporary alignment of interests that leaves the original grievance intact.','看似恢復信任，可能只是利益暫時一致，原有不滿仍在。|只要共同合作就已永久消除所有不滿。|利益一致已證明雙方從未有過衝突。|說話者斷言任何信任都完全不可能存在。','合作行為有替代解釋，may 保留可能性而不否定一切信任。'],
-[3,'The promise to protect everyone becomes difficult to evaluate when those denied protection are first reclassified as people to whom the promise never applied.','若未受保護者先被重新分類為承諾不涵蓋的人，保護所有人的承諾就難以評估。|承諾已逐一清楚列出所有受保護者並完全履行。|分類完全不影響承諾範圍。|說話者只關心每個人的姓名拼法。','事後改變涵蓋對象可使承諾免於檢驗。']
+[3,'The promise to protect everyone becomes difficult to evaluate when those denied protection are first reclassified as people to whom the promise never applied.','若未受保護者先被重新分類為承諾不涵蓋的人，保護所有人的承諾就難以評估。|若先把所有被排除者補列為受保護對象，說話者認為反而會更難界定承諾。|說話者的疑問是保護措施夠不夠有效，因為涵蓋哪些人已有一致的界定。|被排除者的身分分類給了我們清楚證據，證明原先承諾的保護範圍從未改變。','事後改變涵蓋對象可使承諾免於檢驗。']
 ],
 voices:[
 ['usurp','未經正當授權而奪取權位',1,'v.','The steward tried to usurp the council’s authority.','管事試圖奪取議會權力。'],

@@ -3,7 +3,7 @@ import { voiceFallback } from './battle';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { clearStoryId } from './story';
-import { LEVELS } from './QuestionData';
+import { isBankLoaded, LEVELS } from './QuestionData';
 import { GOLDEN_TITLE, MAIN_TITLE } from './golden';
 import { PROLOGUE, REGIONS } from './regions';
 import { PROLOGUE_CLEAR_STORY } from './story';
@@ -25,8 +25,41 @@ export function beginGoldenRoad() {
   useBattleStore.getState().startGoldenRoad(voiceTransform());
 }
 
+let cancelPendingLevel: (() => void) | undefined;
+
 export function beginLevel(levelKey: string, fromStage?: number) {
-  void loadBank(Math.max(0, LEVELS.indexOf(levelKey))).then(() => useBattleStore.getState().startLevel(levelKey, voiceTransform(), fromStage));
+  cancelPendingLevel?.();
+  if (useBattleStore.getState().active) return;
+
+  const start = () => useBattleStore.getState().startLevel(levelKey, voiceTransform(), fromStage);
+  const region = Math.max(0, LEVELS.indexOf(levelKey));
+  if (levelKey === PROLOGUE.id || isBankLoaded(region)) {
+    start();
+    return;
+  }
+
+  const setLoading = useUiStore.getState().setLevelLoading;
+  let cancelled = false;
+  const finish = () => {
+    cancelled = true;
+    stopWatchingUi();
+    stopWatchingBattle();
+    cancelPendingLevel = undefined;
+    setLoading(false);
+  };
+  const stopWatchingUi = useUiStore.subscribe((state, previous) => {
+    if (state.modal !== previous.modal || state.studyWord !== previous.studyWord) finish();
+  });
+  const stopWatchingBattle = useBattleStore.subscribe(state => {
+    if (state.active) finish();
+  });
+  cancelPendingLevel = finish;
+  setLoading(true);
+  void loadBank(region).then(() => {
+    if (cancelled) return;
+    finish();
+    start();
+  });
 }
 
 // 區域通關：回到世界地圖，第一次通關時播放通關劇情

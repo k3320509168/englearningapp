@@ -18,6 +18,8 @@ export interface Celebration {
 
 interface UiState {
   modal: ModalName | null;
+  levelLoading: boolean;
+  setLevelLoading: (loading: boolean) => void;
   forgeUid: string | null; // 神聖鍛造的裝備
   openHolyForge: (uid: string) => void;
   regionIdx: number;
@@ -52,6 +54,8 @@ interface UiState {
 
 export const useUiStore = create<UiState>()((set) => ({
   modal: null,
+  levelLoading: false,
+  setLevelLoading: (levelLoading) => set({ levelLoading }),
   forgeUid: null,
   studyWord: null,
   regionIdx: 0,

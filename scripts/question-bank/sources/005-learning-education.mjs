@@ -84,7 +84,7 @@ listening:[
 [2,'The example is deliberately atypical because a routine case would allow the misconception to remain unnoticed.','例子刻意不典型，以免常規案例讓誤解繼續被忽略。|例子不典型是教師無意間選錯。|只要用常規案例就能自動揭露所有誤解。|說話者認為例子完全不需要和概念相關。','非典型案例的目的在揭露原有理解中的問題。'],
 [3,'What is being mistaken for intellectual independence may simply be familiarity with the particular forms of disagreement that the course already rewards.','被當成獨立思考的表現，可能只是熟悉課程原本獎勵的異議形式。|熟悉異議形式必定代表完全無法獨立思考。|課程已明確禁止任何異議。|說話者確認所有學生都只在照抄答案。','may simply 質疑證據是否足夠，但沒有斷言所有表現都毫無自主性。'],
 [3,'The feedback is useful to the extent that it changes what the learner can notice, not merely what appears in the next submitted draft.','回饋的價值在於改變學習者能察覺的問題，而不只修好下一份交件。|只要交件看起來較好，就足以證明所有察覺能力已改變。|回饋完全不應影響下一份草稿。|察覺問題與任何寫作表現永遠無關。','重點是可自主察覺的改變，並非否定作品修正的價值。'],
-[3,'The comparison would be more persuasive if the students had faced tasks that were comparable in cognitive demand rather than merely similar in format.','若任務的認知要求可比，而不只格式相似，這項比較會更有說服力。|格式相似已保證所需思考完全相同。|只有外觀不同的任務才能比較。|學生表現已被證明與任務要求完全無關。','surface format 與 cognitive demand 是不同可比性條件。']
+[3,'The comparison would be more persuasive if the students had faced tasks that were comparable in cognitive demand rather than merely similar in format.','若任務的認知要求可比，而不只格式相似，這項比較會更有說服力。|若兩組題目的呈現格式完全相同，即使所需的思考深度不同，比較也會更有說服力。|只要學生接受相同時數的準備，任務的格式和思考要求便可各自安排。|說話者建議比較兩組學生面對不同難度時的表現，以觀察試題格式的影響。','surface format 與 cognitive demand 是不同可比性條件。']
 ],
 voices:[
 ['pedagogy','教學的方法與實踐原則',1,'n.','The course links pedagogy with classroom observation.','課程把教學原則與課堂觀察相連。'],

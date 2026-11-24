@@ -20,6 +20,7 @@ export default function MapLevelBar() {
   const storySeen = useSaveStore(s => s.storySeen);
   const prologueDone = useSaveStore(s => s.prologueDone);
   const notices = useNotices();
+  const levelLoading = useUiStore(s => s.levelLoading);
   const classHint = useSaveStore(s => classAdvanceMessage(s.character?.classId, s.player, s.classPaths, s.homeClass, s.classBadges));
   const daily = useSaveStore(s => s.daily);
   const tasksDone = daily?.tasks.filter(t => t.claimed || t.progress >= (dailyDef(t.id)?.goal ?? Infinity)).length ?? 0;
@@ -47,8 +48,8 @@ export default function MapLevelBar() {
             <small>重建封印、挑戰區域試煉，前往「{REGIONS[unlockedIndex + 1]?.name}」</small>
           </button>
         ) : (
-          <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney}>
-            <b>▶ {target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
+          <button className="btn btn-primary journey-btn" onMouseDown={keepFocus} onClick={continueJourney} disabled={levelLoading}>
+            <b>▶ {levelLoading ? '載入區域題庫…' : target.kind === 'golden' ? '挑戰黃金之路' : target.stage > 0 ? '繼續征途' : '踏上征途'}</b>
             <small>{target.kind === 'golden' ? '主線已通關，向沉默魔王證明你的英文'
               : target.kind === 'prologue' ? `${PROLOGUE.name}・${PROLOGUE.maps[0]}・第 P-${target.stage + 1} 關`
               : `${REGIONS[target.regionIdx].name}・${mapName(REGIONS[target.regionIdx].id, target.stage)}・第 ${stageLabel(target.stage, target.regionIdx)} 關`}</small>

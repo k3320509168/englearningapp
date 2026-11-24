@@ -1,5 +1,5 @@
 import { MASTERY_TARGET, masteryReady } from '../game/mapMastery';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Modal from './Modal';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
@@ -32,6 +32,8 @@ export default function RegionModal() {
   const currentMap = mapIndexOf(progress);
   const [heroAt, setHeroAt] = useState(currentMap);
   const [running, setRunning] = useState(false);
+  const walking = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearTimeout(walking.current), []);
   const portrait = useMemo(
     () => (character && party.includes('player') ? avatarDataUrl(character, 'idle', 2) : heroDataUrl(party[0] ?? 'knight', 2)),
     [character, party],
@@ -54,7 +56,12 @@ export default function RegionModal() {
     setRunning(true);
     setHeroAt(mapIdx);
     // 等主角跑到地圖節點再開始
-    window.setTimeout(() => { closeModal(); beginLevel(region.id, fromStage); }, mapIdx === heroAt ? 250 : 650);
+    walking.current = window.setTimeout(() => {
+      const current = useUiStore.getState();
+      if (current.modal !== 'region' || current.regionIdx !== regionIdx) return;
+      closeModal();
+      beginLevel(region.id, fromStage);
+    }, mapIdx === heroAt ? 250 : 650);
   };
 
   return (

@@ -1,5 +1,5 @@
 import type { Question } from './types';
-import { LEVELS, getPool } from './QuestionData';
+import { LEVELS, getPool, loadedBankCount } from './QuestionData';
 import { questionHint } from './battle';
 import { vocabFor } from './vocab';
 
@@ -7,9 +7,12 @@ import { vocabFor } from './vocab';
 // 只看中文會猜錯，所以補上詞性與第一個字母
 
 let collisions: Map<string, Set<string>> | null = null;
+let indexedBankCount = -1;
 
 function hintCollisions(): Map<string, Set<string>> {
-  if (collisions) return collisions;
+  const bankCount = loadedBankCount();
+  if (collisions && indexedBankCount === bankCount) return collisions;
+  indexedBankCount = bankCount;
   collisions = new Map();
   for (const level of LEVELS) {
     const pool = getPool(level);

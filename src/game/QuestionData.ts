@@ -187,6 +187,7 @@ QUESTION_POOL[PROLOGUE_KEY] = { normal: prologueQuestions, boss: prologueQuestio
 
 const loadedBanks = new Set<number>();
 export const isBankLoaded = (regionIdx: number) => loadedBanks.has(regionIdx);
+export const loadedBankCount = () => loadedBanks.size;
 // 把一個區域的 CEFR 題庫加進題庫（直接加到原本的陣列，已經拿到 pool 的地方也看得到）
 export function addBank(regionIdx: number, file: BankFile) {
   if (loadedBanks.has(regionIdx) || !LEVELS[regionIdx]) return;

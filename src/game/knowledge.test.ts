@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { loadBank } from './questions/bank/loader';
-import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, completeTrial, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
+import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, completeTrial, knowledgeKey, regionIndex, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
 import type { KnowledgeRecord } from './knowledge';
 import { addBank, questionDifficulty, questionSkill } from './QuestionData';
 import r0 from './questions/bank/r0.json';
 import type { BankFile } from './questions/bank';
 import { autoGrammarTags } from './grammar';
+import { voiceFallback } from './battle';
+import { spellingExtra } from './questionHelp';
 import type { Question } from './types';
 import { initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 
@@ -151,6 +153,30 @@ describe('區域試煉的難度分布', () => {
       await loadBank(region);
       expect(completeTrial(trialQuestions(region, () => false, () => 0.3), false), `R${region} 普通`).toBe(true);
       expect(completeTrial(trialQuestions(region, () => false, () => 0.3, true), true), `R${region} 高標準`).toBe(true);
+    }
+  });
+
+  it('後續載入題庫時更新同一個中文的首字提示', () => {
+    const first = { type: 'spell', desc: '請拼出：測試用碰撞提示', ans: 'FIRST' } satisfies Question;
+    const second = { ...first, ans: 'SECOND' };
+    expect(spellingExtra(first)).not.toContain('F 開頭');
+    addBank(8, { normal: [first, second], boss: [first, second] });
+    expect(spellingExtra(first)).toContain('F 開頭');
+    expect(spellingExtra(second)).toContain('S 開頭');
+  });
+
+  it('同一區的正式試煉拼寫提示含口說備援只能對應一種答案', async () => {
+    for (let region = 0; region < 8; region++) await loadBank(region);
+    for (let region = 0; region < 8; region++) {
+      const answers = new Map<string, string>();
+      for (const raw of [...regionIndex(region).values()].flat()) {
+        const q = voiceFallback(raw);
+        if (q.type !== 'spell' && q.type !== 'fill') continue;
+        const prompt = [q.desc.replace(/^【[^】]*試煉】/, ''), spellingExtra(q)].join('|');
+        const previous = answers.get(prompt);
+        expect(previous ?? q.ans, `R${region} ${prompt}`).toBe(q.ans);
+        answers.set(prompt, q.ans);
+      }
     }
   });
 

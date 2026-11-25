@@ -188,3 +188,54 @@ test('新手魔王等 A2 題庫完成，再以唯一提示完成拼寫首勝', a
   await defeatBoss(page, '咒文魔王', 'spell');
   expect(await readSave(page)).toMatchObject({ tickets: 5, skillBossCleared: ['writing'] });
 });
+
+const progressBands = ['A1', 'A2', 'A2+', 'B1', 'B1+', 'B2', 'B2+', 'C1'];
+const progressViewports = [{ width: 375, height: 812 }, { width: 1366, height: 768 }, { width: 1920, height: 1080 }];
+const firstClearCases = [
+  { id: 'listening', name: '魔音魔王', type: 'choice', title: '千里順風耳' },
+  { id: 'reading', name: '魔眼魔王', type: 'choice', title: '博覽群書者' },
+  { id: 'writing', name: '咒文魔王', type: 'spell', title: '咒文大師' },
+  { id: 'speaking', name: '鬼嘴魔王', type: 'voice', title: '雄辯之聲' },
+] as const;
+
+for (const [region, level] of progressBands.entries()) {
+  test(`第 ${region + 1} 區 ${level} 四位領域魔王完整首勝與重載`, async ({ page }, testInfo) => {
+    test.setTimeout(120_000);
+    await page.setViewportSize(progressViewports[region % progressViewports.length]);
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: async () => new MediaStream(),
+      });
+    });
+    await setupPlayer(page, false, region);
+    for (const [index, boss] of firstClearCases.entries()) {
+      await openBosses(page);
+      const card = bossCard(page, boss.name);
+      await expect(card).toContainText(/題目 [1-9]\d* 題/);
+      await card.getByRole('button', { name: '挑戰', exact: true }).click();
+      if (boss.id === 'listening') await expect(page.getByRole('button', { name: /再聽一次/ })).toBeVisible();
+      if (boss.id === 'speaking') {
+        const permission = page.getByRole('dialog', { name: /開啟麥克風/ });
+        await permission.getByRole('button', { name: /允許麥克風/ }).click();
+        await expect(permission).toContainText('麥克風已開啟');
+        await permission.getByRole('button', { name: '繼續冒險' }).click();
+      }
+      await defeatBoss(page, boss.name, boss.type);
+      expect(await readSave(page)).toMatchObject({
+        tickets: (index + 1) * 5,
+        skillBossCleared: firstClearCases.slice(0, index + 1).map(c => c.id),
+        titles: expect.arrayContaining([boss.title]),
+      });
+      await page.getByRole('button', { name: /回到世界地圖/ }).click();
+    }
+    await page.reload();
+    await openBosses(page);
+    for (const boss of firstClearCases) {
+      const card = bossCard(page, boss.name);
+      await expect(card).toContainText(`已獲得「${boss.title}」`);
+      await expect(card.getByRole('button', { name: '再次挑戰' })).toBeEnabled();
+    }
+    expect((await readSave(page)).tickets).toBe(20);
+    await page.screenshot({ path: testInfo.outputPath('skill-boss-first-clears.png'), animations: 'disabled', timeout: 3000 });
+  });
+}

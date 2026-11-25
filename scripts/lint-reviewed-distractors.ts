@@ -3,6 +3,12 @@ import { QUESTION_POOL, LEVELS } from '../src/game/QuestionData';
 
 // 已修正明顯長度暗示的高階聽讀題。只約束已審過的題，舊候選另排審查。
 const reviewed: [number, string, ('reading' | 'listening')?][] = [
+  [6, "【語意】The system is reliable on the whole", "reading"],
+  [6, "【短文】A reviewer praises a restaurant for using local produce", "reading"],
+  [7, "【短文】A museum removed entry fees, and attendance doubled", "reading"],
+  [7, "【短文】A compensation process requires evidence that the operator failed to provide", "reading"],
+  [8, "【立場】The critic objects less to the categories themselves", "reading"],
+  [8, "【修辭】The report treats the map’s blank spaces", "reading"],
   [6, "【語意】The new park is a welcome addition", "reading"],
   [7, "【短文】Two flatmates agree that chores should be shared fairly", "reading"],
   [8, "【短文】The treaty permits resistance to unlawful commands", "reading"],

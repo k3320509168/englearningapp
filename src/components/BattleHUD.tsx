@@ -546,19 +546,22 @@ function FeedbackPanel() {
 }
 
 function StageClearPanel() {
-  const { nextStage, stageIdx, levelKey, mode } = useBattleStore(useShallow(s => ({ nextStage: s.nextStage, stageIdx: s.stageIdx, levelKey: s.levelKey, mode: s.mode })));
+  const { nextStage, stageIdx, levelKey, mode, treasure, escaped } = useBattleStore(useShallow(s => ({
+    nextStage: s.nextStage, stageIdx: s.stageIdx, levelKey: s.levelKey, mode: s.mode,
+    treasure: s.stages[s.stageIdx]?.kind === 'treasure', escaped: s.event?.kind === 'escape',
+  })));
+  const title = treasure ? (escaped ? '💰 寶箱逃走了' : '💰 打開寶箱！') : '💥 擊敗怪獸！';
   // 前置區域 P-5：打倒第一隻菁英、還沒召喚過 → 用開局的召喚券找第一批夥伴（回來從 P-6 繼續）
   const firstSummon = useSaveStore(s => s.summonCounter.spark === 0 && s.heroes.length <= 1 && s.tickets >= TEN_PULL)
     && mode === 'normal' && isPrologue(levelKey) && stageIdx === ONBOARD_SUMMON_STAGE;
   return (
     <div className="result">
-      <p className="result-title">💥 擊敗怪獸！</p>
+      <p className="result-title">{title}</p>
       {firstSummon && (
         <div className="first-summon">
           <span aria-hidden>🔮</span>
           <p>打倒菁英了！你有開局送的召喚券，現在就召喚第一批夥伴，一起戰鬥更輕鬆。回來會從下一關繼續。</p>
           <button className="btn btn-primary btn-small" onMouseDown={keepFocus} onClick={() => {
-            useSaveStore.getState().setLevelProgress(levelKey, stageIdx + 1);
             useBattleStore.getState().exitToMap();
             useUiStore.getState().openModal('summon');
           }}>去召喚</button>

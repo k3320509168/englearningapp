@@ -1,8 +1,9 @@
 import { expect, test, type Page } from '@playwright/test';
 import { DEFAULT_CHARACTER } from '../src/game/character';
 import { ALL_HINTS } from '../src/game/hints';
-import { bossStoryId, clearStoryId, mapStoryId, regionStoryId } from '../src/game/story';
+import { STORIES, bossStoryId, clearStoryId, mapStoryId, regionStoryId } from '../src/game/story';
 import { regionStageCount } from '../src/game/stageLayout';
+import { wheelKey } from '../src/game/wheel';
 import type { useBattleStore } from '../src/store/battleStore';
 
 type GameWindow = Window & { __battle: typeof useBattleStore };
@@ -22,39 +23,46 @@ async function seedPlayer(page: Page, region: number, showIntro = false) {
   }, { character: DEFAULT_CHARACTER, region, storySeen, hintsSeen: ALL_HINTS });
 }
 
-async function answerCurrentQuestion(page: Page) {
+async function answerCurrentQuestion(page: Page, wrong = false) {
   const question = await page.evaluate(() => (window as GameWindow).__battle.getState().question);
   if (!question) throw Error('戰鬥沒有提供題目');
   if (question.type === 'choice') {
-    await page.locator('.answer-panel .option-btn').filter({ hasText: new RegExp(`^${question.ans}`) }).click();
+    const letter = wrong ? (question.ans === 'A' ? 'B' : 'A') : question.ans;
+    await page.locator('.answer-panel .option-btn').filter({ hasText: new RegExp(`^${letter}`) }).click();
   } else {
-    await page.keyboard.type(question.ans);
+    await page.keyboard.type(wrong ? `Z${question.ans}` : question.ans);
     await page.getByRole('button', { name: '送出 ⏎', exact: true }).click();
   }
 }
 
-async function winRegionBoss(page: Page) {
+async function fightUntilResult(page: Page, result: 'levelClear' | 'summary' | 'monsterDown', leaveResultStoryOpen = false) {
   for (let i = 0; i < 180; i++) {
-    const ready = await page.waitForFunction(() => {
-      if (document.querySelector('.celebrate')) return 'celebrate';
+    const ready = await page.waitForFunction(({ target, leaveResultStoryOpen }) => {
       const state = (window as GameWindow).__battle?.getState();
-      if (!state?.active || !['answering', 'gameOver', 'levelClear'].includes(state.phase)) return null;
+      if (leaveResultStoryOpen && state?.phase === target) return target;
+      if (document.querySelector('[role="dialog"][aria-label="故事"]')) return 'story';
+      if (document.querySelector('.celebrate')) return 'celebrate';
+      if (!state?.active || !['answering', 'feedback', 'gameOver', target].includes(state.phase)) return null;
       return state.modChoice ? 'reflect' : state.phase;
-    });
+    }, { target: result, leaveResultStoryOpen });
     const step = await ready.jsonValue();
-    if (step === 'celebrate') {
+    if (step === 'story') {
+      await page.getByRole('dialog', { name: '故事' }).getByRole('button', { name: /略過整段/ }).click();
+    } else if (step === 'celebrate') {
       await page.locator('.celebrate').click();
     } else if (step === 'reflect') {
       await page.getByRole('group', { name: '選擇反射的題型' }).getByRole('button').first().click();
-    } else if (step === 'levelClear') {
+    } else if (step === result) {
       return;
     } else if (step === 'gameOver') {
-      throw Error('區域魔王驗收存檔戰敗');
+      throw Error('主線驗收戰敗');
+    } else if (step === 'feedback') {
+      await page.getByRole('button', { name: /記住了，再試一次/ }).click();
     } else {
       await answerCurrentQuestion(page);
     }
   }
-  throw Error('區域魔王尚未結算');
+  throw Error('主線戰鬥尚未結算');
 }
 
 async function fightFirstStage(page: Page) {
@@ -175,28 +183,33 @@ const bossLevelKeys = [
   'B2+ 中高級進階', 'C1 高級 (945分以上)', 'C2 精通 (母語程度)',
 ];
 const bossPlayerLevels = [35, 55, 75, 96, 110, 128, 150, 170, 190];
+async function seedAdvancedPlayer(page: Page, region: number, stage: number, playerLevel: number, storySeen: string[]) {
+  const levelKey = bossLevelKeys[region];
+  await page.addInitScript(({ character, region, stage, levelKey, level, storySeen, hintsSeen }) => {
+    if (localStorage.getItem('english-rpg-save')) return;
+    const unlockedTiers = [30, 80, 120, 160].filter(required => level >= required).length;
+    const classPath = ['squire', 'paladin', 'crusader_lord', 'crusader_lord_awake'].slice(0, unlockedTiers);
+    localStorage.setItem('english-rpg-save', JSON.stringify({ version: 26, state: {
+      character, prologueDone: true, tutorialDone: true, unlockedIndex: region, storySeen, hintsSeen,
+      levelProgress: { [levelKey]: stage }, bestStage: { [levelKey]: stage }, weaponTickets: 0,
+      player: { level, xp: 0, classPath }, classPaths: { swordsman: classPath },
+      heroes: ['knight', 'mage', 'castle', 'bard'], party: ['player', 'mage', 'castle', 'bard'],
+      heroLevel: { knight: level, mage: level, castle: level, bard: level },
+      settings: { volume: 0, musicVolume: 0, sfxVolume: 0, autoSpeak: false, voiceAsSpelling: true, showLessons: false, reduceMotion: true },
+    } }));
+  }, { character: DEFAULT_CHARACTER, region, stage, levelKey, level: playerLevel, storySeen, hintsSeen: ALL_HINTS });
+}
+
 for (const [region, levelKey] of bossLevelKeys.entries()) {
   const [width, height] = viewports[region % viewports.length];
   test(`區域魔王首勝、結局與重載 ${levelKey.split(' ')[0]}`, async ({ page }, testInfo) => {
     test.setTimeout(90_000);
     await page.setViewportSize({ width, height });
     const stage = regionStageCount(region) - 1;
-    await page.addInitScript(({ character, region, stage, levelKey, level, storySeen, hintsSeen }) => {
-      if (localStorage.getItem('english-rpg-save')) return;
-      const unlockedTiers = [30, 80, 120, 160].filter(required => level >= required).length;
-      const classPath = ['squire', 'paladin', 'crusader_lord', 'crusader_lord_awake'].slice(0, unlockedTiers);
-      localStorage.setItem('english-rpg-save', JSON.stringify({ version: 26, state: {
-        character, prologueDone: true, tutorialDone: true, unlockedIndex: region, storySeen, hintsSeen,
-        levelProgress: { [levelKey]: stage }, bestStage: { [levelKey]: stage }, weaponTickets: 0,
-        player: { level, xp: 0, classPath }, classPaths: { swordsman: classPath },
-        heroes: ['knight', 'mage', 'castle', 'bard'], party: ['player', 'mage', 'castle', 'bard'],
-        heroLevel: { knight: level, mage: level, castle: level, bard: level },
-        settings: { volume: 0, musicVolume: 0, sfxVolume: 0, autoSpeak: false, voiceAsSpelling: true, showLessons: false, reduceMotion: true },
-      } }));
-    }, { character: DEFAULT_CHARACTER, region, stage, levelKey, level: bossPlayerLevels[region], storySeen: [regionStoryId(region), bossStoryId(region)], hintsSeen: ALL_HINTS });
+    await seedAdvancedPlayer(page, region, stage, bossPlayerLevels[region], [regionStoryId(region), bossStoryId(region)]);
     await page.goto('/englearningapp/');
     await journey(page).click();
-    await winRegionBoss(page);
+    await fightUntilResult(page, 'levelClear');
     await expect(page.getByRole('button', { name: /回到世界地圖/ })).toBeVisible();
     const weaponTickets = region === 3 || region === 8 ? 10 : region > 3 ? 5 : 0;
     expect(await readSave(page)).toMatchObject({
@@ -222,3 +235,139 @@ for (const [region, levelKey] of bossLevelKeys.entries()) {
     }
   });
 }
+
+const activeStage = (page: Page) => page.evaluate(() => (window as GameWindow).__battle.getState().stageIdx);
+const wheelDialog = (page: Page) => page.getByRole('dialog', { name: '獎勵轉盤' });
+const deferWheel = (page: Page) => wheelDialog(page).getByRole('button', { name: /稍後再轉/ }).click();
+
+for (const [region, levelKey] of bossLevelKeys.entries()) {
+  const [width, height] = viewports[region % viewports.length];
+  test(`第 ${region + 1} 區 ${levels[region + 1]} 小 BOSS 至跨地圖續接`, async ({ page }, testInfo) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height });
+    await seedAdvancedPlayer(page, region, 14, bossPlayerLevels[region], [regionStoryId(region)]);
+    await page.goto('/englearningapp/');
+    await journey(page).click();
+    await fightUntilResult(page, 'summary');
+    const summary = page.locator('.summary');
+    await expect(summary.locator('.result-title')).toContainText('擊敗小 BOSS');
+    await expect(summary.locator('.result-title')).not.toContainText('通關');
+    await expect(summary.getByRole('region', { name: '三星評價' })).toHaveCount(0);
+    const gateSave = await readSave(page);
+    expect(gateSave.levelProgress[levelKey]).toBe(15);
+    expect(gateSave.wheelClaimed).toEqual([wheelKey(levelKey, 14)]);
+    expect(gateSave.wheelPending).toBe(1);
+
+    // 未按「繼續冒險」就關頁，下一次應接已解鎖的下一關。
+    await page.reload();
+    await expect(journey(page)).toHaveAccessibleName(/1-16/);
+    await deferWheel(page);
+    await journey(page).click();
+    for (let stage = 15; stage < 19; stage++) {
+      await expect.poll(() => activeStage(page)).toBe(stage);
+      if (region === 0 && stage === 16) {
+        await expect(page.locator('.answer-panel')).toBeVisible();
+        await answerCurrentQuestion(page, true);
+        await expect(page.locator('.feedback')).toContainText('正確答案');
+        expect((await readSave(page)).levelProgress[levelKey]).toBe(stage);
+      }
+      await fightUntilResult(page, 'monsterDown');
+      await page.getByRole('button', { name: /前往下一關/ }).click();
+    }
+    await expect.poll(() => activeStage(page)).toBe(19);
+    const interruptStory = region === 0;
+    await fightUntilResult(page, 'summary', interruptStory);
+    if (interruptStory) await expect(page.getByRole('dialog', { name: '故事' })).toBeVisible();
+    await expect(summary.locator('.result-title')).toContainText('通關');
+    await expect(summary.getByRole('region', { name: '三星評價' })).toBeVisible();
+    const chapterSave = await readSave(page);
+    expect(chapterSave.levelProgress[levelKey]).toBe(20);
+    expect(chapterSave.wheelClaimed).toEqual([wheelKey(levelKey, 14), wheelKey(levelKey, 19)]);
+    expect(chapterSave.wheelPending).toBe(2);
+    expect(chapterSave.mapStars[`${levelKey}#0`]).toHaveLength(3);
+    if (STORIES[mapStoryId(region, 0, 'clear')]) expect(chapterSave.storySeen).toContain(mapStoryId(region, 0, 'clear'));
+    if (!interruptStory) await deferWheel(page);
+    await page.screenshot({ path: testInfo.outputPath('chapter-clear.png'), animations: 'disabled', timeout: 5000 });
+    if (region % 2 === 0) {
+      await page.reload();
+      await expect(journey(page)).toHaveAccessibleName(/2-1/);
+      await deferWheel(page);
+      if (interruptStory) {
+        await page.getByRole('button', { name: /更多/ }).click();
+        await page.getByRole('menuitem', { name: /劇情回顧/ }).click();
+        await page.getByRole('dialog', { name: /劇情回顧/ }).getByRole('button', { name: /新手村・通關/ }).click();
+        const replay = page.getByRole('dialog', { name: '故事' });
+        await expect(replay).toContainText('雜貨店的招牌回來了');
+        await replay.getByRole('button', { name: /略過整段/ }).click();
+        await page.getByText('首次重溫劇情獎勵！', { exact: true }).click();
+        expect((await readSave(page)).storyRewardClaimed).toContain(mapStoryId(region, 0, 'clear'));
+      }
+      await journey(page).click();
+    } else {
+      await summary.getByRole('button', { name: /繼續冒險/ }).click();
+    }
+    await expect.poll(() => activeStage(page)).toBe(20);
+    const restored = await readSave(page);
+    expect(restored.wheelClaimed).toEqual(chapterSave.wheelClaimed);
+    expect(restored.mapStars).toEqual(chapterSave.mapStars);
+  });
+}
+
+for (const [viewport, region] of [0, 5, 8].entries()) {
+  const [width, height] = viewports[viewport];
+  const levelKey = bossLevelKeys[region];
+  test(`第 ${region + 1} 區 ${levels[region + 1]} 菁英與寶箱第 5 至 10 關`, async ({ page }, testInfo) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height });
+    await seedAdvancedPlayer(page, region, 4, bossPlayerLevels[region], [regionStoryId(region)]);
+    await page.goto('/englearningapp/');
+    await journey(page).click();
+    for (let stage = 4; stage <= 9; stage++) {
+      await expect.poll(() => activeStage(page)).toBe(stage);
+      if (stage === 4 || stage === 9) {
+        const shield = () => page.evaluate(() => (window as GameWindow).__battle.getState().monsterShield);
+        const layers = await shield();
+        expect(layers).toBeGreaterThan(0);
+        await answerCurrentQuestion(page);
+        await expect.poll(shield).toBe(layers - 1);
+      }
+      if (stage === 6) await expect(page.getByText(/寶箱逃走倒數/)).toBeVisible();
+      await fightUntilResult(page, 'monsterDown');
+      const saved = await readSave(page);
+      expect(saved.levelProgress[levelKey]).toBe(stage + 1);
+      expect(saved.wheelClaimed).toEqual((stage === 9 ? [4, 9] : [4]).map(i => wheelKey(levelKey, i)));
+      if (stage === 4 || stage === 9) await deferWheel(page);
+      if (stage === 6) {
+        await expect(page.getByText('💰 打開寶箱！', { exact: true })).toBeVisible();
+        await page.screenshot({ path: testInfo.outputPath('treasure-open.png'), animations: 'disabled', timeout: 5000 });
+      }
+      await page.getByRole('button', { name: /前往下一關/ }).click();
+    }
+    await expect.poll(() => activeStage(page)).toBe(10);
+  });
+}
+
+test('寶箱倒數歸零仍需作答，逃走後保存下一關', async ({ page }, testInfo) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.clock.install();
+  await seedAdvancedPlayer(page, 0, 6, bossPlayerLevels[0], [regionStoryId(0)]);
+  await page.goto('/englearningapp/');
+  await journey(page).click();
+  await expect(page.getByText(/寶箱逃走倒數/)).toBeVisible();
+  await page.clock.runFor(31_000);
+  await expect(page.getByText(/寶箱逃走倒數/)).toHaveCount(0);
+  await expect(page.locator('.answer-panel')).toBeVisible();
+  const before = await readSave(page);
+  expect(before.levelProgress[bossLevelKeys[0]]).toBe(6);
+
+  await answerCurrentQuestion(page);
+  await fightUntilResult(page, 'monsterDown');
+  await expect(page.getByText('💰 寶箱逃走了', { exact: true })).toBeVisible();
+  const after = await readSave(page);
+  expect(after.levelProgress[bossLevelKeys[0]]).toBe(7);
+  expect(after.materials).toEqual(before.materials);
+  expect(after.wheelClaimed).toEqual(before.wheelClaimed);
+  await page.screenshot({ path: testInfo.outputPath('treasure-escaped.png'), animations: 'disabled', timeout: 5000 });
+  await page.reload();
+  await expect(journey(page)).toHaveAccessibleName(/1-8/);
+});

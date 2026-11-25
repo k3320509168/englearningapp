@@ -3,6 +3,9 @@ import { QUESTION_POOL, LEVELS } from '../src/game/QuestionData';
 
 // 已修正明顯長度暗示的高階聽讀題。只約束已審過的題，舊候選另排審查。
 const reviewed: [number, string, ('reading' | 'listening')?][] = [
+  [6, "【語意】The new park is a welcome addition", "reading"],
+  [7, "【短文】Two flatmates agree that chores should be shared fairly", "reading"],
+  [8, "【短文】The treaty permits resistance to unlawful commands", "reading"],
   [6, 'The visitor centre is nearby as the crow flies'],
   [7, 'The process becomes circular when'],
   [7, 'The menu is concise, but'],

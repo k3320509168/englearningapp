@@ -9,7 +9,7 @@ import { questionKey } from '../game/battle';
 import { answerLabel } from '../game/answerLabel';
 import { useSpeak } from './useSpeak';
 import { MAP_SIZE, REGIONS, mapIndexOf, regionOf } from '../game/regions';
-import { isPrologue } from '../game/stageLayout';
+import { isPrologue, stageInMap } from '../game/stageLayout';
 import { needsSeal } from '../game/knowledge';
 import { starConditions } from '../game/stars';
 import { finishBattle } from '../game/startLevel';
@@ -60,13 +60,16 @@ export default function SummaryPanel() {
   const region = regionOf(levelKey);
   const prologue = isPrologue(levelKey);
   const map = region.maps[mapIndexOf(stageIdx)] ?? '';
-  const bossName = stages[stageIdx]?.revenge ? '😈 擊敗復仇魔王' : '🏆 擊敗守門 Boss';
+  const revenge = stages[stageIdx]?.revenge;
+  const chapterCleared = stageInMap(stageIdx) === MAP_SIZE;
+  const bossName = revenge ? '😈 擊敗復仇魔王' : chapterCleared ? '🏆 擊敗關卡大 BOSS' : '⚔️ 擊敗小 BOSS';
+  const bossResult = chapterCleared ? `「${map}」通關` : `「${map}」第 ${stageInMap(stageIdx)} 關`;
   const skillDef = mode === 'skill' ? skillBossDef(useBattleStore.getState().skillBoss ?? '') : undefined;
   const title = skillDef
     ? (phase === 'levelClear' ? `⚔️ 擊敗${skillDef.name}！` : `⚔️ ${skillDef.name}挑戰失敗`)
     : golden
     ? (phase === 'levelClear' ? `👑 黃金之路通關！你就是「${GOLDEN_TITLE}」` : `👑 黃金之路：在第 ${stageIdx + 1} / ${stages.length} 關止步`)
-    : phase === 'summary' ? `${bossName}！「${map}」通關`
+    : phase === 'summary' ? `${bossName}！${bossResult}`
     : prologue && phase === 'levelClear' ? '🏃 逃出失語邊境！'
     : phase === 'levelClear' ? (unlockedNext ? '🎉 區域完全通關！' : '👑 擊敗區域魔王！') : '💀 體力耗盡';
 

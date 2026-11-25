@@ -839,6 +839,8 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       set({ ...patch, phase: 'levelClear' });
       return;
     }
+    // 在勝利結算保存下一關。若玩家在結算畫面離開，回來可以直接續接。
+    if (s.mode === 'normal' && !isLastStage) save().setLevelProgress(s.levelKey, s.stageIdx + 1);
     // 前置區域：沒有三星與轉盤；打倒追獵隊長就完成，之後「踏上征途」前往翠綠草原
     if (isPrologue(s.levelKey)) {
       if (isLastStage) {
@@ -864,7 +866,11 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     // 打完一張地圖（第 20 關）：播這張地圖的通關劇情
     if (s.mode === 'normal' && stageInMap(s.stageIdx) === MAP_SIZE) {
       const storyId = mapStoryId(s.levelIdx, mapIndexOf(s.stageIdx), 'clear');
-      if (STORIES[storyId] && !save().storySeen.includes(storyId)) useUiStore.getState().openStory(storyId);
+      if (STORIES[storyId] && !save().storySeen.includes(storyId)) {
+        // 通關就解鎖回顧，關掉遊戲時仍能從劇情回顧看完整段落。
+        save().markStorySeen(storyId);
+        useUiStore.getState().openStory(storyId);
+      }
     }
     // 三星關卡的第 20 關（大 BOSS）或區域最終魔王：三星評價（第 15 關的小 BOSS 不結算）
     if (stageInMap(s.stageIdx) === MAP_SIZE || isLastStage) {

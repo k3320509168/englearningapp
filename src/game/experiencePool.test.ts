@@ -54,9 +54,12 @@ describe('experience pools', () => {
     expect(useBattleStore.getState().isReplayStage).toBe(false);
     expect(useBattleStore.getState().runXp).toBe(firstClearXp(0, 0) + learningXp(0, true));
     expect(useSaveStore.getState().xpLedger['offered:firstClear']).toBe(firstClearXp(0, 0));
-    // Reload the same stage: classification must reflect the entry snapshot, not change mid-win.
+    // 回到主線會進下一關。從第 1 關重打才使用重玩獎勵規則。
+    expect(useSaveStore.getState().levelProgress[REGIONS[0].id]).toBe(1);
     useBattleStore.getState().startLevel(REGIONS[0].id);
-    expect(useBattleStore.getState().isReplayStage).toBe(true);
+    expect(useBattleStore.getState()).toMatchObject({ stageIdx: 1, isReplayStage: false });
+    useBattleStore.getState().startLevel(REGIONS[0].id, undefined, 0);
+    expect(useBattleStore.getState()).toMatchObject({ stageIdx: 0, isReplayStage: true });
     setBattleRandom(Math.random);
   });
   it('marks old cleared stages paid without granting new XP or gold', () => {

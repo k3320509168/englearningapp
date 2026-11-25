@@ -1547,6 +1547,16 @@ html[data-reduce-motion] .member-hp.is-low::after { animation: none; }
 .route-stars i.on { color: var(--accent); }
 .route-progress { padding: 0 4px; background: rgba(15, 16, 35, 0.75); color: var(--accent); font-size: 12px; }
 .route-node .level-restart { background: rgba(15, 16, 35, 0.75); }
+.route-sweep-result {
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: var(--panel);
+  color: var(--accent);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
 .star-rules ol { margin: 0; padding-left: 22px; line-height: 1.8; font-size: 14px; }
 @media (max-width: 560px) {
   .region-route { grid-template-columns: 1fr; padding: 16px 12px; }

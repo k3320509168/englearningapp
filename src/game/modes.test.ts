@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { RUSH_PER_DAY, isEndlessFloor, rushQuestions, rushReward, towerQuestions, towerRegion, towerReward } from './modes';
+import { mapKey, REGIONS } from './regions';
 import { initialSave, useSaveStore } from '../store/saveStore';
 
 describe('daily rush', () => {
@@ -60,9 +61,25 @@ describe('training ground and sweeping', () => {
     useSaveStore.setState({ ...initialSave, gold: 0, sweepTickets: 0, trainingDay: '', trainingGiven: 0 });
     for (let i = 0; i < 6; i++) useSaveStore.getState().earnSweepTickets();
     expect(useSaveStore.getState().sweepTickets).toBe(5);
-    const r = useSaveStore.getState().sweepMap(0, () => 0.5)!;
+    useSaveStore.setState({ mapStars: { [mapKey(REGIONS[0].id, 0)]: [true, true, true] } });
+    const r = useSaveStore.getState().sweepMap(0, 0, () => 0.5)!;
     expect(r.gold).toBeGreaterThan(0);
     expect(useSaveStore.getState().sweepTickets).toBe(4);
     expect(useSaveStore.getState().gold).toBe(r.gold);
   });
+});
+
+it('rejects locked regions, non-three-star maps and independent bosses before spending a sweep ticket', () => {
+  const grassland = REGIONS[0];
+  const boss = grassland.maps.length - 1;
+  useSaveStore.setState({ ...initialSave, sweepTickets: 1, mapStars: {
+    [mapKey(grassland.id, 0)]: [true, true, false],
+    [mapKey(grassland.id, boss)]: [true, true, true],
+    [mapKey(REGIONS[1].id, 0)]: [true, true, true],
+  } });
+  const before = useSaveStore.getState();
+  for (const [region, map] of [[0, 0], [0, 1], [0, -1], [0, 0.5], [0, boss], [1, 0], [-1, 0]]) {
+    expect(useSaveStore.getState().sweepMap(region, map)).toBeNull();
+  }
+  expect(useSaveStore.getState()).toBe(before);
 });

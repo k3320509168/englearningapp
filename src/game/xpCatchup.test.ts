@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { allowance, allowanceCap, catchupMultiplier, catchupXp, frontierRecommendedLevel } from './xpCatchup';
 import { cumulativeXpAtLevel, xpToNext } from './growth';
-import { REGIONS, regionStageCount } from './regions';
+import { REGIONS, mapKey, regionStageCount } from './regions';
 import { recommendedLevel } from './progression';
 
 describe('non-mainline catch-up', () => {
@@ -59,8 +59,8 @@ it('uses actual rush/tower/sweep store awards and reconciles daily allowance acr
   expect(t).toMatchObject({ xp: 0 });
   expect(sv().xpLedger['offered:tower']).toBe(towerReward(1).xp);
   expect(sv().clearTowerFloor(1, null)).toBeNull();
-  useSaveStore.setState({ sweepTickets: 1 });
-  const sweep = sv().sweepMap(0, () => .5)!;
+  useSaveStore.setState({ sweepTickets: 1, mapStars: { [mapKey(REGIONS[0].id, 0)]: [true, true, true] } });
+  const sweep = sv().sweepMap(0, 0, () => .5)!;
   expect(sweep.xp).toBe(0);
   expect(sv().xpLedger['offered:sweep']).toBe(84);
   const loaded = migrateSave(JSON.parse(JSON.stringify(sv())), SAVE_VERSION);

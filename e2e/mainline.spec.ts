@@ -183,9 +183,9 @@ const bossLevelKeys = [
   'B2+ 中高級進階', 'C1 高級 (945分以上)', 'C2 精通 (母語程度)',
 ];
 const bossPlayerLevels = [35, 55, 75, 96, 110, 128, 150, 170, 190];
-async function seedAdvancedPlayer(page: Page, region: number, stage: number, playerLevel: number, storySeen: string[]) {
+async function seedAdvancedPlayer(page: Page, region: number, stage: number, playerLevel: number, storySeen: string[], extras = {}) {
   const levelKey = bossLevelKeys[region];
-  await page.addInitScript(({ character, region, stage, levelKey, level, storySeen, hintsSeen }) => {
+  await page.addInitScript(({ character, region, stage, levelKey, level, storySeen, hintsSeen, extras }) => {
     if (localStorage.getItem('english-rpg-save')) return;
     const unlockedTiers = [30, 80, 120, 160].filter(required => level >= required).length;
     const classPath = ['squire', 'paladin', 'crusader_lord', 'crusader_lord_awake'].slice(0, unlockedTiers);
@@ -195,9 +195,10 @@ async function seedAdvancedPlayer(page: Page, region: number, stage: number, pla
       player: { level, xp: 0, classPath }, classPaths: { swordsman: classPath },
       heroes: ['knight', 'mage', 'castle', 'bard'], party: ['player', 'mage', 'castle', 'bard'],
       heroLevel: { knight: level, mage: level, castle: level, bard: level },
+      ...extras,
       settings: { volume: 0, musicVolume: 0, sfxVolume: 0, autoSpeak: false, voiceAsSpelling: true, showLessons: false, reduceMotion: true },
     } }));
-  }, { character: DEFAULT_CHARACTER, region, stage, levelKey, level: playerLevel, storySeen, hintsSeen: ALL_HINTS });
+  }, { character: DEFAULT_CHARACTER, region, stage, levelKey, level: playerLevel, storySeen, hintsSeen: ALL_HINTS, extras });
 }
 
 for (const [region, levelKey] of bossLevelKeys.entries()) {
@@ -370,4 +371,84 @@ test('寶箱倒數歸零仍需作答，逃走後保存下一關', async ({ page 
   await page.screenshot({ path: testInfo.outputPath('treasure-escaped.png'), animations: 'disabled', timeout: 5000 });
   await page.reload();
   await expect(journey(page)).toHaveAccessibleName(/1-8/);
+});
+
+async function openGrassland(page: Page) {
+  const canvas = page.locator('.game-canvas canvas');
+  const dialog = page.getByRole('dialog', { name: /翠綠草原/ });
+  await expect(async () => {
+    const bounds = await canvas.boundingBox();
+    if (!bounds) throw Error('世界地圖 Canvas 尚未顯示');
+    // Phaser 地圖為 800×480，第一面旗幟的點擊中心為 (70, 324)。
+    await canvas.click({ position: { x: bounds.width * 70 / 800, y: bounds.height * 324 / 480 }, timeout: 1500 });
+    await expect(dialog).toBeVisible({ timeout: 1000 });
+  }).toPass({ timeout: 10_000 });
+  return dialog;
+}
+
+for (const [width, height] of viewports) {
+  test(`重打舊地圖、掃蕩與續接前線 ${width}x${height}`, async ({ page }, testInfo) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height });
+    const levelKey = bossLevelKeys[0];
+    const wheelClaimed = [4, 9, 14, 19].map(i => wheelKey(levelKey, i));
+    const firstClearXpClaimed = Object.fromEntries(Array.from({ length: 20 }, (_, i) => [`${levelKey}:${i}`, true]));
+    await seedAdvancedPlayer(page, 0, 24, bossPlayerLevels[0], [
+      regionStoryId(0), ...(['intro', 'mini', 'big', 'clear'] as const).map(part => mapStoryId(0, 0, part)),
+    ], { wheelClaimed, firstClearXpClaimed, mapStars: { [`${levelKey}#0`]: [true, true, true] }, sweepTickets: 1 });
+    await page.goto('/englearningapp/');
+    const dialog = await openGrassland(page);
+    const firstMap = dialog.locator('.route-node').filter({ has: page.getByRole('button', { name: '新手村', exact: true }) });
+    const sweep = firstMap.getByRole('button', { name: /掃蕩/ });
+    const before = await readSave(page);
+    await sweep.click();
+    await expect(firstMap.getByRole('status')).toContainText('掃蕩「新手村」成功');
+    const swept = await readSave(page);
+    expect(swept.sweepTickets).toBe(0);
+    expect(swept.gold).toBeGreaterThan(before.gold);
+    expect(swept.materials.ore).toBeGreaterThanOrEqual((before.materials.ore ?? 0) + 5);
+    expect(swept.mapStars).toEqual(before.mapStars);
+    await expect(sweep).toBeDisabled();
+    await page.screenshot({ path: testInfo.outputPath('swept-map.png'), animations: 'disabled', timeout: 5000 });
+
+    await firstMap.getByRole('button', { name: '新手村', exact: true }).click();
+    await expect(page.locator('.answer-panel')).toBeVisible();
+    expect(await activeStage(page)).toBe(0);
+    expect((await readSave(page)).levelProgress[levelKey]).toBe(24);
+    const replayThrough = width === 375 ? 19 : 4;
+    for (let stage = 0; stage <= replayThrough; stage++) {
+      const isBoss = stage === 14 || stage === 19;
+      await expect.poll(() => activeStage(page)).toBe(stage);
+      await fightUntilResult(page, isBoss ? 'summary' : 'monsterDown');
+      if (stage < replayThrough) await page.getByRole('button', { name: isBoss ? /繼續冒險/ : /前往下一關/ }).click();
+    }
+    if (replayThrough === 19) {
+      await expect(page.getByRole('region', { name: '三星評價' })).toBeVisible();
+      await expect(page.locator('.star-gain')).toHaveCount(0);
+    }
+    const replay = await readSave(page);
+    expect(replay.mapStars).toEqual(before.mapStars);
+    expect(replay.wheelClaimed).toEqual(wheelClaimed);
+    expect(replay.wheelPending).toBe(0);
+    expect(replay.firstClearXpClaimed).toEqual(firstClearXpClaimed);
+    expect(replay.levelProgress[levelKey]).toBe(24);
+    await page.reload();
+    await expect(journey(page)).toHaveAccessibleName(/2-5/);
+    await journey(page).click();
+    await expect.poll(() => activeStage(page)).toBe(24);
+  });
+}
+
+test('區域最終魔王即使三星也沒有掃蕩，正常地圖仍可掃蕩', async ({ page }) => {
+  const levelKey = bossLevelKeys[0];
+  const finalStage = regionStageCount(0) - 1;
+  await seedAdvancedPlayer(page, 0, finalStage, bossPlayerLevels[0], [regionStoryId(0)], {
+    bossDown: [0], sweepTickets: 1, mapStars: { [`${levelKey}#0`]: [true, true, true], [`${levelKey}#5`]: [true, true, true] },
+  });
+  await page.goto('/englearningapp/');
+  await page.getByRole('button', { name: /守門人的考驗/ }).click();
+  const dialog = page.getByRole('dialog', { name: /翠綠草原/ });
+  const sweep = dialog.getByRole('button', { name: /掃蕩/ });
+  await expect(sweep).toHaveCount(1);
+  await expect(sweep).toBeEnabled();
 });

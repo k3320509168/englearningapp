@@ -277,6 +277,12 @@ export const setBattleRandom = (fn: () => number) => { random = fn; };
 
 const save = () => useSaveStore.getState();
 
+function advanceStageProgress(levelKey: string, stageIdx: number) {
+  const progress = save();
+  const current = progress.levelProgress[levelKey];
+  if (current === undefined || stageIdx > current) progress.setLevelProgress(levelKey, stageIdx);
+}
+
 // 升級慶祝：只在里程碑等級或剛好可以轉職時全螢幕慶祝（其他升級只在戰鬥畫面跳字）
 function celebrateLevelUp(level: number) {
   const { character, player } = save();
@@ -484,7 +490,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
     rebirthUsed.clear();
     const golden = s.mode === 'golden';
     if (golden) decks = goldenDecks![goldenTier(stageIdx)];
-    else if (s.mode === 'normal') save().setLevelProgress(s.levelKey, stageIdx);
+    else if (s.mode === 'normal') advanceStageProgress(s.levelKey, stageIdx);
     const stage = s.mode === 'normal' ? withRevenge(s.stages[stageIdx], stageIdx, s.levelIdx) : s.stages[stageIdx];
     const stages = s.stages.map((st, i) => (i === stageIdx ? stage : st));
     // 首領戰（一般模式）：魔王祝福＋各自的技能（沒有統一的護盾）；一般關連續 NORMAL_WAVES 隻怪物（新手前幾關少一點）。
@@ -840,7 +846,7 @@ export const useBattleStore = create<BattleState>()((set, get) => {
       return;
     }
     // 在勝利結算保存下一關。若玩家在結算畫面離開，回來可以直接續接。
-    if (s.mode === 'normal' && !isLastStage) save().setLevelProgress(s.levelKey, s.stageIdx + 1);
+    if (s.mode === 'normal' && !isLastStage) advanceStageProgress(s.levelKey, s.stageIdx + 1);
     // 前置區域：沒有三星與轉盤；打倒追獵隊長就完成，之後「踏上征途」前往翠綠草原
     if (isPrologue(s.levelKey)) {
       if (isLastStage) {

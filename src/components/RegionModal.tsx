@@ -20,6 +20,13 @@ import { SealPanel } from './GateTrialModal';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
 // 點一張已解鎖的地圖，主角會跑過去，然後進入那張地圖的第 1 關。
+interface SweepResult {
+  mapIdx: number;
+  gold: number;
+  xp: number;
+  drops: Record<string, number>;
+}
+
 export default function RegionModal() {
   const regionIdx = useUiStore(s => s.regionIdx);
   const { closeModal, openStory } = useUiStore.getState();
@@ -32,6 +39,7 @@ export default function RegionModal() {
   const currentMap = mapIndexOf(progress);
   const [heroAt, setHeroAt] = useState(currentMap);
   const [running, setRunning] = useState(false);
+  const [sweepResult, setSweepResult] = useState<SweepResult | null>(null);
   const walking = useRef<number | undefined>(undefined);
   useEffect(() => () => window.clearTimeout(walking.current), []);
   const portrait = useMemo(
@@ -100,18 +108,26 @@ export default function RegionModal() {
                 {[0, 1, 2].map(k => <i key={k} className={stars?.[k] ? 'on' : ''}>★</i>)}
               </span>
               {isCurrent && <small className="route-progress">進行到第 {(progress % MAP_SIZE) + 1} 關</small>}
-              {countStars(stars) === 3 && (
+              {i < region.maps.length - 1 && countStars(stars) === 3 && (
                 <button className="level-restart" onMouseDown={keepFocus} disabled={running || sweepTickets <= 0}
                   title={sweepTickets > 0 ? '用 1 張掃蕩券直接領這張地圖的獎勵' : '掃蕩券可以在「今日複習 → 錯題修煉場」取得'}
                   onClick={() => {
-                    const r = useSaveStore.getState().sweepMap(regionIdx);
-                    if (!r) return;
+                    const result = useSaveStore.getState().sweepMap(regionIdx, i);
+                    if (!result) return;
                     sfx.claim();
-                    useUiStore.getState().celebrate({ icon: '🎟️', title: `掃蕩「${name}」`, sub: `🪙 ${r.gold}・經驗 ${r.xp}・${Object.entries(r.drops).map(([k, v]) => `${materialIcon(k)}${v}`).join(' ')}`, color: '#ffcd4b' });
+                    setSweepResult({ mapIdx: i, ...result });
                   }}>🎟️ 掃蕩（{sweepTickets}）</button>
               )}
               {isCurrent && (
-                <button className="level-restart" onMouseDown={keepFocus} disabled={running} onClick={() => go(i, i * MAP_SIZE)}>↺ 從頭開始</button>
+                <button className="level-restart" onMouseDown={keepFocus} disabled={running}
+                  title="重打這張地圖，保留繼續征途的位置" onClick={() => go(i, i * MAP_SIZE)}>↺ 從頭開始</button>
+              )}
+              {sweepResult?.mapIdx === i && (
+                <p className="route-sweep-result" role="status">
+                  掃蕩「{name}」成功<br />
+                  🪙 {sweepResult.gold}・經驗 {sweepResult.xp}<br />
+                  {Object.entries(sweepResult.drops).map(([key, count]) => `${materialIcon(key)}${materialName(key)}×${count}`).join('、')}
+                </p>
               )}
             </li>
           );

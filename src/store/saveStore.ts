@@ -21,7 +21,7 @@ import {
   currentRarity, heroDef, isHeroId, summon,
 } from '../game/heroes';
 import type { HeroId, SummonCounter, SummonResult } from '../game/heroes';
-import { STAR_TICKETS, mergeStars } from '../game/stars';
+import { STAR_TICKETS, countStars, mergeStars } from '../game/stars';
 import { RUSH_PER_DAY, towerReward } from '../game/modes';
 import { BADGE_COST, HERO_LEVEL_CAPS, MAX_LEVEL, addXp, bestTier, canAdvance, classNode, cumulativeXpAtLevel, nextOptions, pathBadgeCost, playerLevelCap, xpScale, xpToNext } from '../game/growth';
 import { MAX_GRADE, SELL_RATE, enhanceChance, enhanceCost, equipDef, rollDrops, gradeMaterial, gradeOf, gradeRefund, maxPlus, resolveCost, sellValue } from '../game/equipment';
@@ -31,7 +31,7 @@ import { applyDailyEvent, claimableMilestones, dailyDef, localDate, refreshDaily
 import type { DailyEvent, DailyState, WeeklyState } from '../game/daily';
 import { ELEMENTS, normalizeCharacter } from '../game/character';
 import { ALL_HINTS } from '../game/hints';
-import { MAP_SIZE, REGIONS, regionStageCount } from '../game/regions';
+import { MAP_SIZE, REGIONS, mapKey, regionStageCount } from '../game/regions';
 
 // v15 以前：每區 5 張地圖 × 10 關
 const OLD_MAP_SIZE = 10;
@@ -251,7 +251,7 @@ interface SaveActions {
   grantRush: (reward: { gold: number; xp: number; ore: number }) => { gold: number; xp: number; ore: number; bonus: number; allowanceGold: number };
   clearTowerFloor: (floor: number, heroId: HeroId | null) => { shards: number; gold: number; xp: number; bonus: number; allowanceGold: number; tickets?: number } | null; // 第一次通過才有獎勵
   earnSweepTickets: () => number;    // 修煉場連對 5 題：回傳實際拿到的張數（每天上限）
-  sweepMap: (regionIdx: number, rand?: () => number) => { gold: number; xp: number; drops: Record<string, number> } | null;
+  sweepMap: (regionIdx: number, mapIdx: number, rand?: () => number) => { gold: number; xp: number; drops: Record<string, number> } | null;
   // 記錄地圖星星，回傳這次新拿到幾顆（每顆送召喚券）
   recordMapStars: (key: string, stars: boolean[]) => number;
   markStorySeen: (id: string) => void;
@@ -1395,9 +1395,12 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         },
 
         // 掃蕩：用一張掃蕩券直接拿到一張三星地圖的獎勵（金幣、經驗、素材），不用再手動打一次
-        sweepMap: (regionIdx, rand = Math.random) => {
+        sweepMap: (regionIdx, mapIdx, rand = Math.random) => {
           const s = get();
-          if (s.sweepTickets <= 0) return null;
+          const region = REGIONS[regionIdx];
+          if (!region || regionIdx > s.unlockedIndex || s.sweepTickets <= 0) return null;
+          if (!Number.isInteger(mapIdx) || mapIdx < 0 || mapIdx >= region.maps.length - 1) return null;
+          if (countStars(s.mapStars[mapKey(region.id, mapIdx)]) !== 3) return null;
           const gold = Math.round(400 * (1 + regionIdx * 0.3));
           const xp = Math.round(150 * xpScale(regionIdx));
           const drops = rollDrops('boss', ELEMENTS[Math.floor(rand() * ELEMENTS.length)].id, rand, regionIdx);

@@ -9,7 +9,7 @@ import type { StateStorage } from 'zustand/middleware';
 import type { Question } from '../game/types';
 import { questionKey } from '../game/battle';
 import { WHEEL_PRIZES, rollWheel } from '../game/wheel';
-import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, updateKnowledge } from '../game/knowledge';
+import { STABLE_GAP, STRICT_TRIALS_PER_DAY, knowledgeKey, strictTrialWait, updateKnowledge } from '../game/knowledge';
 import type { KnowledgeRecord } from '../game/knowledge';
 import { REGION_LEVELS } from '../game/progression';
 // v18 換算等級時用的推薦等級表（之後 A1 改從 Lv5 起，但舊存檔照當時的規則換算）
@@ -222,7 +222,7 @@ interface SaveActions {
   grantWheel: (key: string) => boolean;
   // 轉一次：回傳抽中的獎品序號（沒有轉盤機會時是 -1）
   spinWheel: (rand?: () => number) => number;
-  recordStrictTrial: (regionIdx: number, at: number) => void;
+  recordStrictTrial: (regionIdx: number, at: number) => boolean;
   updateSettings: (patch: Partial<Settings>) => void;
   setTutorialDone: (done: boolean) => void;
   finishPrologue: () => void;
@@ -757,7 +757,13 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         if (reviewed) get().trackDaily('review');
         return crossDay;
       },
-        recordStrictTrial: (regionIdx, at) => set(s => ({ strictTrials: { ...s.strictTrials, [regionIdx]: [...(s.strictTrials[regionIdx] ?? []), at].slice(-STRICT_TRIALS_PER_DAY) } })),
+        recordStrictTrial: (regionIdx, at) => {
+          const { strictTrials } = get();
+          const tries = strictTrials[regionIdx] ?? [];
+          if (strictTrialWait(tries, at) > 0) return false;
+          set({ strictTrials: { ...strictTrials, [regionIdx]: [...tries, at].slice(-STRICT_TRIALS_PER_DAY) } });
+          return true;
+        },
         grantWheel: (key) => {
           if (get().wheelClaimed.includes(key)) return false;
           set(s => ({ wheelClaimed: [...s.wheelClaimed, key], wheelPending: s.wheelPending + 1 }));

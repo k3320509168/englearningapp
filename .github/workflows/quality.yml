@@ -21,4 +21,4 @@ jobs:
       - run: node --import tsx scripts/question-bank/audit.ts
       - run: npm test
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:e2e -- e2e/caravan.spec.ts e2e/placement-review.spec.ts e2e/mode-entrances.spec.ts e2e/date-rollover.spec.ts e2e/rush.spec.ts e2e/world-boss.spec.ts e2e/tower.spec.ts e2e/review-training.spec.ts e2e/skill-boss.spec.ts e2e/golden.spec.ts e2e/mainline.spec.ts
+      - run: npm run test:e2e -- e2e/caravan.spec.ts e2e/placement-review.spec.ts e2e/mode-entrances.spec.ts e2e/date-rollover.spec.ts e2e/rush.spec.ts e2e/world-boss.spec.ts e2e/tower.spec.ts e2e/review-training.spec.ts e2e/skill-boss.spec.ts e2e/golden.spec.ts e2e/mainline.spec.ts e2e/gate-trial.spec.ts

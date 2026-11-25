@@ -19,7 +19,7 @@ const SKILL_LABEL: Record<QuestionSkill, string> = { listening: '🎧 聽', read
 
 // 守門人：打倒區域魔王之後，重建封印（跨日穩定的知識點）並通過區域試煉，才開啟下一區。
 // - 封印完成：試煉 24 題答對 18 題、每種能力至少 4 題。
-// - 封印還沒完成，或還沒打倒魔王就想跳級（主角要到一定等級）：答對 21 題、每種至少 5 題——用更好的表現證明實力。
+// - 封印還沒完成，或還沒打倒魔王就想跳級（主角要到一定等級）：試煉 40 題答對 36 題、每種至少 8 題——用更好的表現證明實力。
 // 沒有計時、不會受傷；沒通過沒有損失，可以再挑戰（每次換一批題目）。
 export default function GateTrialModal() {
   const regionIdx = useUiStore(s => s.regionIdx);
@@ -28,7 +28,7 @@ export default function GateTrialModal() {
   const region = REGIONS[regionIdx];
   const next = REGIONS[regionIdx + 1];
   const [ready, setReady] = useState(false);
-  const [now] = useState(() => Date.now());
+  const [now, setNow] = useState(() => Date.now());
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [round, setRound] = useState(0);
   const [score, setScore] = useState<TrialScore>(emptyTrialScore);
@@ -45,20 +45,30 @@ export default function GateTrialModal() {
   const activeStrict = questions === null ? strict : (attemptStrict ?? strict);
   const rule = activeStrict ? TRIAL_STRICT : TRIAL_PASS;
   const wait = strict ? strictTrialWait(strictTries, now) : 0;
-  const allowed = (beaten || canChallengeGate(regionIdx, level)) && wait === 0;
+  const eligible = beaten || canChallengeGate(regionIdx, level);
+  const allowed = eligible && wait === 0;
+
+  useEffect(() => {
+    if (wait <= 0) return;
+    const timer = window.setTimeout(() => setNow(Date.now()), Math.min(wait, 60_000));
+    return () => window.clearTimeout(timer);
+  }, [now, wait]);
   const done = questions !== null && answered >= questions.length;
   const passed = done && trialPassed(score, activeStrict);
   const correct = TRIAL_SKILLS.reduce((n, s) => n + score[s].correct, 0);
 
   const start = () => {
-    if (!allowed) return;
+    if (!eligible) return;
+    const at = Date.now();
+    setNow(at);
+    if (strict && strictTrialWait(useSaveStore.getState().strictTrials[regionIdx], at) > 0) return;
     const batch = trialQuestions(regionIdx, q => !!codex[questionKey(q)], Math.random, strict);
     if (!completeTrial(batch, strict)) {
       setIncomplete(true);
       return;
     }
     setIncomplete(false);
-    if (strict) useSaveStore.getState().recordStrictTrial(regionIdx, Date.now());
+    if (strict && !useSaveStore.getState().recordStrictTrial(regionIdx, at)) return;
     setAttemptStrict(strict);
     setQuestions(batch);
     setScore(emptyTrialScore());
@@ -101,10 +111,10 @@ export default function GateTrialModal() {
           <ul className="muted gate-rules">
             <li>{TRIAL_SKILLS.length * rule.perSkill} 題這一區的題目（聽、讀、說、寫各 {rule.perSkill} 題），盡量出你還沒看過的。</li>
             <li>答對 <b>{rule.total}</b> 題以上，而且每種能力至少 <b>{rule.each}</b> 題，就通過。</li>
-            <li>沒有計時、不會受傷；沒通過也沒有損失，可以再挑戰{strict ? `（高標準每天最多 ${STRICT_TRIALS_PER_DAY} 次）` : ''}。</li>
+            <li>沒有計時、不會受傷；沒通過也沒有損失，可以再挑戰{strict ? `（高標準每 24 小時最多 ${STRICT_TRIALS_PER_DAY} 次）` : ''}。</li>
             {!beaten && <li>跳過的區域之後隨時可以回來打，拿星星和召喚券。</li>}
           </ul>
-          {wait > 0 && <p>高標準試煉每天最多挑戰 {STRICT_TRIALS_PER_DAY} 次，約 <b>{Math.ceil(wait / 3600000)}</b> 小時後可以再來；完成封印後就沒有這個限制，標準也比較低。</p>}
+          {wait > 0 && <p>高標準試煉每 24 小時最多挑戰 {STRICT_TRIALS_PER_DAY} 次，約 <b>{Math.ceil(wait / 3600000)}</b> 小時後可以再來；完成封印後就沒有這個限制，標準也比較低。</p>}
           {!beaten && !canChallengeGate(regionIdx, level) && <p>主角達到 <b>Lv {GATE_LEVEL[regionIdx]}</b> 才能跳級挑戰（目前 Lv {level}）；或打倒這一區的魔王後再來。</p>}
           {incomplete && <p role="alert">這一區目前無法湊齊四種能力的試煉題目，請稍後再試；這次沒有扣除挑戰次數。</p>}
           <div className="tutorial-actions">

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { loadBank } from './questions/bank/loader';
 import { STABLE_GAP, isStable, strictTrialWait, TRIAL_PER_SKILL, TRIAL_SKILLS, emptyTrialScore, completeTrial, knowledgeKey, regionMastery, sealTargets, trialPassed, trialQuestions, updateKnowledge } from './knowledge';
 import type { KnowledgeRecord } from './knowledge';
 import { addBank, questionDifficulty, questionSkill } from './QuestionData';
@@ -145,6 +146,14 @@ describe('v17 存檔', () => {
 });
 
 describe('區域試煉的難度分布', () => {
+  it('八區正式題庫各能完整組出 24 題及 40 題的試煉', async () => {
+    for (let region = 0; region < 8; region++) {
+      await loadBank(region);
+      expect(completeTrial(trialQuestions(region, () => false, () => 0.3), false), `R${region} 普通`).toBe(true);
+      expect(completeTrial(trialQuestions(region, () => false, () => 0.3, true), true), `R${region} 高標準`).toBe(true);
+    }
+  });
+
   it('A1 題庫：每種能力難度 1、2、3 各 2 題', () => {
     addBank(0, r0 as BankFile);
     const qs = trialQuestions(0, () => false, () => 0.3);
@@ -168,6 +177,18 @@ describe('區域試煉的難度分布', () => {
 });
 
 describe('高標準試煉冷卻', () => {
+  it('即使同一時間多次請求，記帳仍只接受兩次並在第一筆到期後恢復', () => {
+    useSaveStore.setState({ strictTrials: {} });
+    const save = useSaveStore.getState();
+    const day = 24 * HOUR;
+    expect(save.recordStrictTrial(0, day)).toBe(true);
+    expect(save.recordStrictTrial(0, day)).toBe(true);
+    expect(save.recordStrictTrial(0, day)).toBe(false);
+    expect(save.recordStrictTrial(1, day)).toBe(true);
+    expect(save.recordStrictTrial(0, 2 * day)).toBe(true);
+    expect(useSaveStore.getState().strictTrials[0]).toEqual([day, 2 * day]);
+  });
+
   it('24 小時內最多 2 次，最早那次滿 24 小時後才能再來', () => {
     const DAY = 24 * HOUR;
     expect(strictTrialWait(undefined, 0)).toBe(0);

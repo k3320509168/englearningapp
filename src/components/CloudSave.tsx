@@ -96,7 +96,9 @@ export function CloudConflict() {
 export function BackupSection() {
   const [loaded, setLoaded] = useState<ReturnType<typeof parseSaveCode> | undefined>(undefined);
   const [msg, setMsg] = useState('');
+  const [restoreError, setRestoreError] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const selection = useRef(0);
 
   const download = () => {
     const { name, text } = exportBackupFile();
@@ -111,10 +113,32 @@ export function BackupSection() {
     setMsg(`已下載「${name}」，請把這個檔案收好（可以存到雲端硬碟或傳給自己）`);
   };
 
-  const pick = (file: File | undefined) => {
+  const pick = (file?: File) => {
+    const request = ++selection.current;
+    setLoaded(undefined);
     setMsg('');
+    setRestoreError(false);
     if (!file) return;
-    void file.text().then(text => setLoaded(parseSaveCode(text)), () => setLoaded(null));
+    void file.text().then(text => {
+      if (request === selection.current) setLoaded(parseSaveCode(text));
+    }, () => {
+      if (request === selection.current) setLoaded(null);
+    });
+  };
+
+  const restore = () => {
+    if (!loaded) return;
+    const request = ++selection.current;
+    setLoaded(undefined);
+    setMsg('');
+    setRestoreError(false);
+    void importSave(loaded).then(() => {
+      if (request === selection.current) setMsg('讀取完成！');
+    }, () => {
+      if (request !== selection.current) return;
+      setLoaded(loaded);
+      setRestoreError(true);
+    });
   };
 
   return (
@@ -122,17 +146,18 @@ export function BackupSection() {
       <p className="muted">把整份存檔下載成一個備份檔，自己保存；換瀏覽器或裝置時，再讀取這個檔案還原。要在多台裝置之間同步，建議使用上面的雲端存檔。</p>
       <div className="feedback-actions">
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={download}>📤 下載備份檔</button>
-        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { setLoaded(undefined); fileRef.current?.click(); }}>📥 讀取備份檔</button>
+        <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => { pick(); fileRef.current?.click(); }}>📥 讀取備份檔</button>
         <input ref={fileRef} type="file" accept=".json,application/json,text/plain" hidden
           onChange={e => { pick(e.target.files?.[0]); e.target.value = ''; }} aria-label="選擇備份檔" />
       </div>
+      {restoreError && <p className="voice-error" role="alert">備份讀取未完成，請確認瀏覽器可以儲存資料後再試。</p>}
       {loaded === null && <p className="voice-error">這個檔案無法讀取，請確認選的是遊戲下載的備份檔。</p>}
       {loaded && (
         <>
           <p>這份備份：<b>{describe(summarize(loaded.state))}</b>。讀取會取代目前的進度。</p>
           <div className="feedback-actions">
-            <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={() => { void importSave(loaded).then(() => { setMsg('讀取完成！'); setLoaded(undefined); }); }}>確定讀取</button>
-            <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => setLoaded(undefined)}>取消</button>
+            <button className="btn btn-small btn-danger" onMouseDown={keepFocus} onClick={restore}>確定讀取</button>
+            <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => pick()}>取消</button>
           </div>
         </>
       )}

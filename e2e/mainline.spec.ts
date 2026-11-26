@@ -635,3 +635,176 @@ for (const [index, [width, height]] of viewports.entries()) {
     await expect(quiz).toContainText('完整測驗每 7 天可以免費重測一次');
   });
 }
+
+function c1Answers() {
+  let firstC1 = true;
+  return (q: DiagnosticQuestion) => {
+    if (q.type !== 'choice') return true;
+    const wrong = q.level === 'C2' || (q.level === 'C1' && firstC1);
+    if (q.level === 'C1') firstC1 = false;
+    return !wrong;
+  };
+}
+
+async function openBackup(page: Page) {
+  await page.getByRole('button', { name: /更多/ }).click();
+  await page.getByRole('menuitem', { name: '⚙️ 設定', exact: true }).click();
+  await page.locator('.settings-tab').filter({ hasText: '存檔帳號' }).click();
+  return page.getByRole('dialog', { name: /設定/ });
+}
+
+for (const [index, [width, height]] of viewports.entries()) {
+  const acceptHigher = index !== 1;
+  test(`高分重測 ${acceptHigher ? '接受 C1' : '先去序章'} 與備份還原 ${width}x${height}`, async ({ page, browser }, testInfo) => {
+    test.setTimeout(90_000);
+    const viewport = { width, height };
+    await page.setViewportSize(viewport);
+    await page.clock.install({ time: retestTime });
+    const region = 6;
+    const frontier = 24;
+    const previous = {
+      level: 7, region, at: +retestTime - 20 * day, verifiedAt: +retestTime - 18 * day,
+      verified: true, speakingVerified: true, confidence: 'ok', weak: [], lastReviewAt: +retestTime - 9 * day, reviewPassed: true,
+      placementQuestionKeys: ['previous-formal-item'],
+    };
+    await seedAdvancedPlayer(page, region, frontier, 121, [regionStoryId(region)], { placement: previous });
+    await page.goto('/englearningapp/');
+    await page.getByRole('button', { name: /程度測驗/ }).click();
+    const quiz = page.getByRole('dialog', { name: /程度測驗/ });
+    await quiz.getByRole('button', { name: '不錯', exact: true }).click();
+    await quiz.getByRole('button', { name: '開始測驗' }).click();
+    const count = await finishFormalTest(quiz, 'C1', c1Answers());
+    await expect(quiz.getByText(/臨時戰力/)).toBeVisible();
+    const measured = await readSave(page);
+    expect(measured.lastPlacementTest).toMatchObject({ level: 8, speakingVerified: false, confidence: 'ok' });
+    expect(measured.lastPlacementTest.questionKeys).toHaveLength(count);
+    expect(measured.placement).toMatchObject({ ...previous, placementQuestionKeys: expect.arrayContaining(previous.placementQuestionKeys) });
+    expect(measured.unlockedIndex).toBe(region);
+    await page.screenshot({ path: testInfo.outputPath('higher-placement-result.png'), animations: 'disabled' });
+
+    if (acceptHigher) {
+      await quiz.getByRole('button', { name: '從「熔岩魔域」出發' }).click();
+      await page.getByRole('dialog', { name: '故事' }).getByRole('button', { name: /略過整段/ }).click();
+      await page.getByRole('dialog', { name: /熔岩魔域/ }).getByRole('button', { name: '關閉' }).click();
+    } else {
+      await quiz.getByRole('button', { name: '先去「失語邊境」' }).click();
+      await expect(page.getByRole('dialog', { name: '故事' })).toBeVisible();
+      await page.reload();
+    }
+    const accepted = await readSave(page);
+    expect(accepted.lastPlacementTest).toEqual(measured.lastPlacementTest);
+    expect(accepted.player).toEqual(measured.player);
+    expect(accepted.levelProgress[bossLevelKeys[region]]).toBe(frontier);
+    expect(accepted.unlockedIndex).toBe(acceptHigher ? 7 : region);
+    if (acceptHigher) {
+      expect(accepted.placement).toMatchObject({
+        level: 8, region: 7, verified: false, speakingVerified: false, at: measured.lastPlacementTest.at,
+      });
+      expect(accepted.placement.verifiedAt).toBeUndefined();
+      expect(accepted.placement.lastReviewAt).toBeUndefined();
+      expect(accepted.placement.reviewPassed).toBeUndefined();
+    } else {
+      expect(accepted.placement).toEqual(measured.placement);
+    }
+
+    const backup = await openBackup(page);
+    const download = page.waitForEvent('download');
+    await backup.getByRole('button', { name: /下載備份檔/ }).click();
+    const file = await download;
+    const path = await file.path();
+    const envelope = JSON.parse(readFileSync(path, 'utf8'));
+    expect(envelope.version).toBeGreaterThanOrEqual(27);
+    expect(envelope.state.lastPlacementTest).toEqual(accepted.lastPlacementTest);
+    expect(envelope.state.placement).toEqual(accepted.placement);
+
+    const receiver = await browser.newContext({ viewport });
+    try {
+      const restoredPage = await receiver.newPage();
+      await restoredPage.clock.install({ time: retestTime });
+      await seedPlayer(restoredPage, 0, true);
+      await restoredPage.goto('/englearningapp/');
+      const target = await openBackup(restoredPage);
+      await target.getByLabel('選擇備份檔').setInputFiles({ name: file.suggestedFilename(), mimeType: 'application/json', buffer: readFileSync(path) });
+      await target.getByRole('button', { name: '確定讀取' }).click();
+      await expect(target.getByText('讀取完成！', { exact: true })).toBeVisible();
+      await restoredPage.reload();
+      expect(await readSave(restoredPage)).toMatchObject({
+        unlockedIndex: accepted.unlockedIndex, player: accepted.player,
+        placement: accepted.placement, lastPlacementTest: accepted.lastPlacementTest,
+      });
+      await expect(journey(restoredPage)).toHaveAccessibleName(acceptHigher ? /熔岩魔域.*1-1/ : /雷鳴高原.*2-5/);
+      await restoredPage.getByRole('button', { name: /程度測驗/ }).click();
+      await expect(restoredPage.getByRole('button', { name: '開始測驗' })).toBeDisabled();
+    } finally {
+      await receiver.close();
+    }
+  });
+}
+
+test('備份選檔以最後選取的檔案為準', async ({ page }) => {
+  await seedPlayer(page, 0, true);
+  await page.addInitScript(() => {
+    const read = Blob.prototype.text;
+    File.prototype.text = async function () {
+      const contents = await read.call(this);
+      if (this.name === 'slow-backup.json') {
+        await new Promise<void>(resolve => {
+          window.addEventListener('release-old-file', () => resolve(), { once: true });
+          document.documentElement.setAttribute('data-test-backup-pending', 'true');
+        });
+      }
+      return contents;
+    };
+  });
+  await page.goto('/englearningapp/');
+  const backup = await openBackup(page);
+  const existing = await readSave(page);
+  const putFile = (fileName: string, character: string) => backup.getByLabel('選擇備份檔').setInputFiles({
+    name: fileName, mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify({ version: 27, state: { ...existing, character: { ...existing.character, name: character } } })),
+  });
+  await putFile('slow-backup.json', '先選的勇者');
+  await expect(page.locator('html')).toHaveAttribute('data-test-backup-pending', 'true');
+  await putFile('latest-backup.json', '後選的勇者');
+  await expect(backup.getByText(/這份備份/)).toContainText('後選的勇者');
+  await page.evaluate(async () => {
+    window.dispatchEvent(new Event('release-old-file'));
+    await new Promise(requestAnimationFrame);
+    await new Promise(requestAnimationFrame);
+  });
+  await expect(backup.getByText(/這份備份/)).toContainText('後選的勇者');
+  await backup.getByRole('button', { name: '確定讀取' }).click();
+  await expect(backup.getByText('讀取完成！', { exact: true })).toBeVisible();
+  expect((await readSave(page)).character.name).toBe('後選的勇者');
+});
+
+test('備份寫入失敗時保留現有存檔及重試入口', async ({ page }) => {
+  await seedPlayer(page, 0, true);
+  await page.addInitScript(() => {
+    const write = Storage.prototype.setItem;
+    let failOnce = true;
+    Storage.prototype.setItem = function (key, value) {
+      if (failOnce && key === 'english-rpg-save' && value.includes('還原備份勇者')) {
+        failOnce = false;
+        throw new DOMException('test quota limit', 'QuotaExceededError');
+      }
+      write.call(this, key, value);
+    };
+  });
+  await page.goto('/englearningapp/');
+  const backup = await openBackup(page);
+  const existing = await readSave(page);
+  await backup.getByLabel('選擇備份檔').setInputFiles({
+    name: 'retry-backup.json', mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify({ version: 27, state: { ...existing, character: { ...existing.character, name: '還原備份勇者' } } })),
+  });
+  const confirm = backup.getByRole('button', { name: '確定讀取' });
+  await confirm.click();
+  await expect(backup.getByRole('alert')).toContainText('備份讀取未完成');
+  expect((await readSave(page)).character.name).toBe(existing.character.name);
+  await expect(backup.getByText(/這份備份/)).toContainText('還原備份勇者');
+  await confirm.click();
+  await expect(backup.getByRole('alert')).toHaveCount(0);
+  await expect(backup.getByText('讀取完成！', { exact: true })).toBeVisible();
+  expect((await readSave(page)).character.name).toBe('還原備份勇者');
+});

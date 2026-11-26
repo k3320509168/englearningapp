@@ -1,9 +1,11 @@
+import { readFileSync } from 'node:fs';
 import { expect, test, type Page } from '@playwright/test';
 import { DEFAULT_CHARACTER } from '../src/game/character';
 import { ALL_HINTS } from '../src/game/hints';
 import { STORIES, bossStoryId, clearStoryId, mapStoryId, regionStoryId } from '../src/game/story';
 import { regionStageCount } from '../src/game/stageLayout';
 import { wheelKey } from '../src/game/wheel';
+import type { Question } from '../src/game/types';
 import type { useBattleStore } from '../src/store/battleStore';
 
 type GameWindow = Window & { __battle: typeof useBattleStore };
@@ -373,7 +375,7 @@ test('寶箱倒數歸零仍需作答，逃走後保存下一關', async ({ page 
   await expect(journey(page)).toHaveAccessibleName(/1-8/);
 });
 
-async function openGrassland(page: Page) {
+async function openGrassland(page: Page, expectIntro = false) {
   const canvas = page.locator('.game-canvas canvas');
   const dialog = page.getByRole('dialog', { name: /翠綠草原/ });
   await expect(async () => {
@@ -381,7 +383,7 @@ async function openGrassland(page: Page) {
     if (!bounds) throw Error('世界地圖 Canvas 尚未顯示');
     // Phaser 地圖為 800×480，第一面旗幟的點擊中心為 (70, 324)。
     await canvas.click({ position: { x: bounds.width * 70 / 800, y: bounds.height * 324 / 480 }, timeout: 1500 });
-    await expect(dialog).toBeVisible({ timeout: 1000 });
+    await expect(expectIntro ? page.getByRole('dialog', { name: '故事' }) : dialog).toBeVisible({ timeout: 1000 });
   }).toPass({ timeout: 10_000 });
   return dialog;
 }
@@ -451,4 +453,111 @@ test('區域最終魔王即使三星也沒有掃蕩，正常地圖仍可掃蕩',
   const sweep = dialog.getByRole('button', { name: /掃蕩/ });
   await expect(sweep).toHaveCount(1);
   await expect(sweep).toBeEnabled();
+});
+
+
+const diagnostics = JSON.parse(readFileSync(new URL('../src/game/questions/bank/diag.json', import.meta.url), 'utf8')) as (Question & { level: string })[];
+
+for (const [width, height] of viewports) {
+  test(`程度測驗跳到 B2+ 後回 A1 首通並續接前線 ${width}x${height}`, async ({ page }, testInfo) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height });
+    await seedPlayer(page, 0, true);
+    await page.goto('/englearningapp/');
+    await page.getByRole('button', { name: /程度測驗/ }).click();
+    const quiz = page.getByRole('dialog', { name: /程度測驗/ });
+    await quiz.getByRole('button', { name: '不錯', exact: true }).click();
+    await quiz.getByRole('button', { name: '開始測驗' }).click();
+
+    let firstB2 = true;
+    let answered = 0;
+    const result = quiz.getByText('你的程度：B2+', { exact: true });
+    for (let i = 0; i < 36 && !await result.isVisible(); i++) {
+      await expect(quiz.locator('.quiz-count')).toContainText(`第 ${i + 1} 題`);
+      const prompt = await quiz.locator('.q-desc').evaluate(el => el.firstChild?.textContent);
+      const options = await quiz.locator('.option-btn').allTextContents();
+      const [q] = diagnostics.filter(q => q.desc === prompt &&
+        (q.type === 'choice' ? q.options?.every((o, i) => o[0] + o.slice(2) === options[i]) : options.length === 0));
+      if (!q) throw Error(`找不到程度測驗題：${prompt}`);
+      if (q.type === 'choice') {
+        const wrong = q.level === 'C1' || q.level === 'C2' || (q.level === 'B2' && firstB2);
+        if (q.level === 'B2') firstB2 = false;
+        const letter = wrong ? (q.ans === 'A' ? 'B' : 'A') : q.ans;
+        await quiz.locator('.option-btn').filter({ hasText: new RegExp(`^${letter}`) }).click();
+      } else {
+        await quiz.getByRole('textbox', { name: '輸入答案' }).fill(q.ans);
+        await quiz.getByRole('button', { name: '確認 ⏎', exact: true }).click();
+      }
+      answered++;
+    }
+    await expect(result).toBeVisible();
+    await expect(quiz).toContainText('口說未驗證');
+    expect(answered).toBeGreaterThan(10);
+    await quiz.getByRole('button', { name: '從「雷鳴高原」出發' }).click();
+    const story = page.getByRole('dialog', { name: '故事' });
+    await story.getByRole('button', { name: /略過整段/ }).click();
+    await page.getByRole('dialog', { name: /雷鳴高原/ }).getByRole('button', { name: '關閉' }).click();
+
+    const jumped = await readSave(page);
+    expect(jumped).toMatchObject({
+      unlockedIndex: 6, bossDown: [], mapStars: {}, firstClearXpClaimed: {}, player: { level: 1 },
+      placement: { region: 6, verified: false, speakingVerified: false },
+    });
+    expect(jumped.storySeen).not.toContain(clearStoryId(0));
+    expect(jumped.storySeen).not.toContain(regionStoryId(0));
+    const oldRegion = await openGrassland(page, true);
+    await story.getByRole('button', { name: /略過整段/ }).click();
+    await expect(oldRegion).toBeVisible();
+    await oldRegion.getByRole('button', { name: '新手村', exact: true }).click();
+    await fightUntilResult(page, 'monsterDown');
+    const cleared = await readSave(page);
+    expect(cleared.firstClearXpClaimed[`${bossLevelKeys[0]}:0`]).toBe(true);
+    expect(cleared.xpLedger['accepted:firstClear']).toBeGreaterThan(0);
+    expect(cleared.levelProgress[bossLevelKeys[0]]).toBe(1);
+    expect(cleared.unlockedIndex).toBe(6);
+    await page.reload();
+    await expect(journey(page)).toHaveAccessibleName(/雷鳴高原.*1-1/);
+    await page.screenshot({ path: testInfo.outputPath('placement-frontier.png'), animations: 'disabled', timeout: 5000 });
+  });
+}
+
+test('舊跳級存檔補打 A1 魔王才開通關劇情並領重溫券', async ({ page }) => {
+  test.setTimeout(90_000);
+  const levelKey = bossLevelKeys[0];
+  const frontierKey = bossLevelKeys[6];
+  const clear = clearStoryId(0);
+  const bossStage = regionStageCount(0) - 1;
+  await seedAdvancedPlayer(page, 0, 0, bossPlayerLevels[0], [regionStoryId(0), clear, regionStoryId(6)], {
+    unlockedIndex: 6, bestStage: { [levelKey]: bossStage }, levelProgress: { [frontierKey]: 24 },
+  });
+  await page.goto('/englearningapp/');
+  await page.getByRole('button', { name: /更多/ }).click();
+  await page.getByRole('menuitem', { name: /劇情回顧/ }).click();
+  const storyLog = page.getByRole('dialog', { name: /劇情回顧/ });
+  await expect(storyLog.getByRole('button', { name: /通關/ })).toHaveCount(0);
+  expect((await readSave(page)).storySeen).not.toContain(clear);
+  await storyLog.getByRole('button', { name: '關閉' }).click();
+
+  const oldRegion = await openGrassland(page);
+  await oldRegion.getByRole('button', { name: '巨樹之心', exact: true }).click();
+  await fightUntilResult(page, 'levelClear');
+  await page.getByRole('button', { name: /回到世界地圖/ }).click();
+  await page.getByRole('dialog', { name: '故事' }).getByRole('button', { name: /略過整段/ }).click();
+  const won = await readSave(page);
+  expect(won).toMatchObject({ unlockedIndex: 6, bossDown: [0], levelProgress: { [frontierKey]: 24 } });
+  expect(won.storySeen).toContain(clear);
+  expect(won.storyRewardClaimed).not.toContain(clear);
+  await page.getByRole('button', { name: /更多/ }).click();
+  await page.getByRole('menuitem', { name: /劇情回顧/ }).click();
+  await storyLog.getByRole('button', { name: /通關/ }).click();
+  await page.getByRole('dialog', { name: '故事' }).getByRole('button', { name: /略過整段/ }).click();
+  await page.getByText('首次重溫劇情獎勵！', { exact: true }).click();
+  await page.reload();
+  const restored = await readSave(page);
+  expect(restored.storyRewardClaimed).toContain(clear);
+  expect(restored.tickets).toBe(won.tickets + 1);
+  await expect(journey(page)).toHaveAccessibleName(/雷鳴高原.*2-5/);
+  await page.getByRole('button', { name: /更多/ }).click();
+  await page.getByRole('menuitem', { name: /劇情回顧/ }).click();
+  await expect(storyLog.getByRole('button', { name: /通關/ })).toContainText('已領取');
 });

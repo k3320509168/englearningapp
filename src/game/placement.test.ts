@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { GATE_LEVEL, GATE_QUESTIONS, PLACEMENT_PER_LEVEL, SKIPPABLE_REGIONS, canChallengeGate, checkQuizAnswer, gateQuestions, placementQuestions } from './placement';
 import { REGIONS, regionStageCount } from './regions';
-import { initialSave, useSaveStore } from '../store/saveStore';
+import { clearStoryId, regionStoryId } from './story';
+import { SAVE_VERSION, initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 
 describe('跳級：守門試煉與程度測驗', () => {
   it('守門試煉需要等級門檻，最後一個區域不能跳過', () => {
@@ -27,18 +28,43 @@ describe('跳級：守門試煉與程度測驗', () => {
     expect(checkQuizAnswer({ type: 'choice', desc: '', ans: 'B', options: [] }, 'B')).toBe(true);
   });
 
-  it('跳過的區域算通關、地圖全開、劇情記為看過，但不給等級', () => {
+  it('跳級只開地圖，保留補打區域的劇情與首通', () => {
     useSaveStore.setState({ ...initialSave });
     useSaveStore.getState().skipRegions(2);
     const s = useSaveStore.getState();
     expect(s.unlockedIndex).toBe(2);
     expect(s.player.level).toBe(1);
     expect(s.bestStage[REGIONS[1].id]).toBe(regionStageCount(1) - 1);
-    expect(s.storySeen).toEqual(expect.arrayContaining(['region-0', 'clear-0', 'region-1', 'clear-1']));
-    expect(s.storySeen).not.toContain('region-2');
+    expect(s.storySeen).toEqual([]);
+    expect(s.bossDown).toEqual([]);
+    expect(s.firstClearXpClaimed).toEqual({});
+    expect(s.mapStars).toEqual({});
+    expect(s.claimStoryReward(clearStoryId(0))).toBeNull();
     useSaveStore.getState().skipRegions(1); // 不會倒退
     expect(useSaveStore.getState().unlockedIndex).toBe(2);
   });
+});
+
+it('舊跳級存檔只收回未擊倒魔王的通關劇情，保留曾領取的獎勵', () => {
+  const seen = [regionStoryId(0), clearStoryId(0), regionStoryId(1), clearStoryId(1)];
+  const current = migrateSave({
+    ...initialSave, unlockedIndex: 2, bossDown: [1], storySeen: seen,
+    storyRewardClaimed: [clearStoryId(0)], tickets: 42,
+  }, SAVE_VERSION);
+  expect(current.storySeen).toEqual([regionStoryId(0), regionStoryId(1), clearStoryId(1)]);
+  expect(current.storyRewardClaimed).toEqual([clearStoryId(0)]);
+  expect(current.tickets).toBe(42);
+  useSaveStore.setState(current);
+  const store = useSaveStore.getState();
+  store.markStorySeen(clearStoryId(2));
+  expect(store.claimStoryReward(clearStoryId(2))).toBeNull();
+  expect(store.claimStoryReward(clearStoryId(1))).toEqual({ rewardType: 'ticket', amount: 1 });
+  store.defeatRegionBoss(0);
+  expect(store.claimStoryReward(clearStoryId(0))).toBeNull();
+  expect(useSaveStore.getState().tickets).toBe(43);
+  const beforeBossFlags = migrateSave({ ...initialSave, unlockedIndex: 1, storySeen: [clearStoryId(0)] }, 16);
+  expect(beforeBossFlags.bossDown).toContain(0);
+  expect(beforeBossFlags.storySeen).toContain(clearStoryId(0));
 });
 
 describe('程度測驗的上限', () => {

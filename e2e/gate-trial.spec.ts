@@ -60,8 +60,12 @@ async function playTrial(dialog: Locator, count: number, pass: boolean, region =
     const prompt = await dialog.locator('.q-desc').evaluate(el => el.firstChild?.textContent);
     const options = await dialog.locator('.option-btn').allTextContents();
     const extra = await dialog.locator('.q-extra').allTextContents();
-    let matches = questions.filter(({ q, extra: hint }) => (hint ? `（${hint}）` : undefined) === extra[0] && q.desc.replace(/^【[^】]*試煉】/, '') === prompt &&
+    let matches = questions.filter(({ q }) => q.desc.replace(/^【[^】]*試煉】/, '') === prompt &&
       (q.type === 'choice' ? q.options?.every((o, index) => o[0] + o.slice(2) === options[index]) : options.length === 0));
+    // 其他區的詞庫會背景載入，可能在答題間補上詞性。只有題面確實對應多種輸入答案時才辨認補充提示。
+    if (!options.length && new Set(matches.map(({ q }) => q.ans)).size > 1) {
+      matches = matches.filter(({ extra: hint }) => (hint ? `（${hint}）` : undefined) === extra[0]);
+    }
     const replay = dialog.getByRole('button', { name: /再聽一次/ });
     if (await replay.count()) {
       await dialog.page().locator('html').evaluate(el => el.removeAttribute('data-test-utterance'));

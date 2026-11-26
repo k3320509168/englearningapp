@@ -36,7 +36,7 @@ import { MAP_SIZE, REGIONS, mapKey, regionStageCount } from '../game/regions';
 // v15 以前：每區 5 張地圖 × 10 關
 const OLD_MAP_SIZE = 10;
 const OLD_STAGES_PER_REGION = 50;
-import { clearStoryId, regionStoryId } from '../game/story';
+import { clearStoryId, storyRegion } from '../game/story';
 import type { Character, ClassId } from '../game/character';
 import { PARTY_MAX } from '../game/party';
 import type { MemberId } from '../game/party';
@@ -597,6 +597,10 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
     migrated.bossDown = Array.from({ length: Math.max(0, Math.floor(migrated.unlockedIndex)) }, (_, i) => i);
   }
   migrated.bossDown = migrated.bossDown.filter(n => Number.isInteger(n) && n >= 0);
+  // 舊版跳級會把略過區域的通關劇情標成已看。保留真正通關與已領獎紀錄。
+  const skippedClears = new Set(REGIONS.flatMap((_, region) =>
+    region < migrated.unlockedIndex && !migrated.bossDown.includes(region) ? [clearStoryId(region)] : []));
+  migrated.storySeen = migrated.storySeen.filter(id => !skippedClears.has(id));
   // 專武券補發：如果舊存檔已打倒 B1 或之後的魔王，但當時尚未配置全額專武券
   if (version < 24 && Array.isArray(migrated.bossDown) && migrated.bossDown.includes(WEAPON_UNLOCK_REGION)) {
     const passedAfterB1 = migrated.bossDown.filter(r => r > WEAPON_UNLOCK_REGION);
@@ -685,13 +689,11 @@ export const useSaveStore = create<SaveData & SaveActions>()(
           const n = Math.min(count, REGIONS.length - 1);
           if (n <= s.unlockedIndex) return {};
           const bestStage = { ...s.bestStage };
-          const storySeen = new Set(s.storySeen);
           for (let i = 0; i < n; i++) {
             const r = REGIONS[i];
             bestStage[r.id] = Math.max(bestStage[r.id] ?? 0, regionStageCount(i) - 1);
-            storySeen.add(regionStoryId(i)).add(clearStoryId(i));
           }
-          return { unlockedIndex: n, prologueDone: true, bestStage, storySeen: [...storySeen] };
+          return { unlockedIndex: n, prologueDone: true, bestStage };
         }),
         setLevelProgress: (levelKey, stageIdx) => set(s => ({
           levelProgress: { ...s.levelProgress, [levelKey]: stageIdx },
@@ -865,7 +867,8 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         claimStoryReward: (id) => {
           const s = get();
           const claimed = s.storyRewardClaimed ?? [];
-          if (claimed.includes(id)) return null;
+          if (!s.storySeen.includes(id) || claimed.includes(id)) return null;
+          if (id.startsWith('clear-') && !s.bossDown.includes(storyRegion(id))) return null;
           const isMajor = id.includes('clear') || id.includes('boss') || id === 'prologue';
           const rewardType: 'ticket' | 'sweep' = isMajor ? 'ticket' : 'sweep';
           const amount = 1;

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Question } from './types';
-import { MAX_PROBE_QUESTIONS, PLACEMENT_LEVELS, answerPlacement, answeredCount, currentQuestion, maxTestable, startPlacement } from './placementTest';
+import { MAX_PROBE_QUESTIONS, PLACEMENT_LEVELS, answerPlacement, answeredCount, currentQuestion, maxTestable, placementQuestionKey, startPlacement } from './placementTest';
 import type { PlacementState } from './placementTest';
 
 // 假題庫：每個層級聽讀各 12、口說 6、寫作 6，desc 帶層級方便模擬作答
@@ -115,4 +115,19 @@ it('確認階段超時且資料不足，不能宣稱高可信或口說已驗證'
   state = answerPlacement(state, true, { pool, rand, now: 15 * 60 * 1000 + 1 });
   expect(state.phase).toBe('done'); expect(state.confidence).toBe('low');
   expect(state.speakingVerified).toBe(false);
+});
+
+
+it('重測優先抽新題，題庫不足時回補而不中斷聽讀比例', () => {
+  const rand = () => 0.5;
+  const first = startPlacement(4, { pool, rand, voice: false });
+  const fresh = startPlacement(4, { pool, rand, voice: false, previousQuestionKeys: first.used });
+  expect(fresh.used).toHaveLength(5);
+  expect(fresh.used.every(key => !first.used.includes(key))).toBe(true);
+  const previous = pool[4].slice(0, 23).map(placementQuestionKey);
+  const reused = startPlacement(4, { pool, rand, voice: false, previousQuestionKeys: previous });
+  expect(reused.queue.filter(q => q.skill === 'reading')).toHaveLength(3);
+  expect(reused.queue.filter(q => q.skill === 'listening')).toHaveLength(2);
+  expect(reused.used).toContain(placementQuestionKey(pool[4][23]));
+  expect(new Set(reused.used).size).toBe(5);
 });

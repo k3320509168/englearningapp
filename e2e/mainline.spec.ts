@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '@playwright/test';
 import { DEFAULT_CHARACTER } from '../src/game/character';
 import { ALL_HINTS } from '../src/game/hints';
 import { STORIES, bossStoryId, clearStoryId, mapStoryId, regionStoryId } from '../src/game/story';
@@ -456,7 +456,42 @@ test('區域最終魔王即使三星也沒有掃蕩，正常地圖仍可掃蕩',
 });
 
 
-const diagnostics = JSON.parse(readFileSync(new URL('../src/game/questions/bank/diag.json', import.meta.url), 'utf8')) as (Question & { level: string })[];
+type DiagnosticQuestion = Question & { level?: string };
+const diagnostics = JSON.parse(readFileSync(new URL('../src/game/questions/bank/diag.json', import.meta.url), 'utf8')) as DiagnosticQuestion[];
+const prologueDiagnostics = JSON.parse(readFileSync(new URL('../src/game/questions/bank/r-pre.json', import.meta.url), 'utf8')) as { normal: DiagnosticQuestion[] };
+
+function b2PlusAnswers() {
+  let firstB2 = true;
+  return (q: DiagnosticQuestion) => {
+    if (q.type !== 'choice') return true;
+    const wrong = q.level === 'C1' || q.level === 'C2' || (q.level === 'B2' && firstB2);
+    if (q.level === 'B2') firstB2 = false;
+    return !wrong;
+  };
+}
+
+async function finishFormalTest(quiz: Locator, target: string, correct: (q: DiagnosticQuestion) => boolean) {
+  const result = quiz.getByText(`你的程度：${target}`, { exact: true });
+  for (let i = 0; i < 36; i++) {
+    if (await result.isVisible()) return i;
+    await expect(quiz.locator('.quiz-count')).toContainText(`第 ${i + 1} 題`);
+    const prompt = await quiz.locator('.q-desc').evaluate(el => el.firstChild?.textContent);
+    const options = await quiz.locator('.option-btn').allTextContents();
+    const q = diagnostics.concat(prologueDiagnostics.normal).find(q => q.desc === prompt &&
+      (q.type === 'choice' ? q.options?.every((o, i) => o[0] + o.slice(2) === options[i]) : options.length === 0));
+    if (!q) throw Error(`找不到程度測驗題：${prompt}`);
+    const right = correct(q);
+    if (q.type === 'choice') {
+      const letter = right ? q.ans : (q.ans === 'A' ? 'B' : 'A');
+      await quiz.locator('.option-btn').filter({ hasText: new RegExp(`^${letter}`) }).click();
+    } else {
+      await quiz.getByRole('textbox', { name: '輸入答案' }).fill(right ? q.ans : 'ZZZZ');
+      await quiz.getByRole('button', { name: '確認 ⏎', exact: true }).click();
+    }
+  }
+  await expect(result).toBeVisible();
+  return 36;
+}
 
 for (const [width, height] of viewports) {
   test(`程度測驗跳到 B2+ 後回 A1 首通並續接前線 ${width}x${height}`, async ({ page }, testInfo) => {
@@ -469,28 +504,7 @@ for (const [width, height] of viewports) {
     await quiz.getByRole('button', { name: '不錯', exact: true }).click();
     await quiz.getByRole('button', { name: '開始測驗' }).click();
 
-    let firstB2 = true;
-    let answered = 0;
-    const result = quiz.getByText('你的程度：B2+', { exact: true });
-    for (let i = 0; i < 36 && !await result.isVisible(); i++) {
-      await expect(quiz.locator('.quiz-count')).toContainText(`第 ${i + 1} 題`);
-      const prompt = await quiz.locator('.q-desc').evaluate(el => el.firstChild?.textContent);
-      const options = await quiz.locator('.option-btn').allTextContents();
-      const [q] = diagnostics.filter(q => q.desc === prompt &&
-        (q.type === 'choice' ? q.options?.every((o, i) => o[0] + o.slice(2) === options[i]) : options.length === 0));
-      if (!q) throw Error(`找不到程度測驗題：${prompt}`);
-      if (q.type === 'choice') {
-        const wrong = q.level === 'C1' || q.level === 'C2' || (q.level === 'B2' && firstB2);
-        if (q.level === 'B2') firstB2 = false;
-        const letter = wrong ? (q.ans === 'A' ? 'B' : 'A') : q.ans;
-        await quiz.locator('.option-btn').filter({ hasText: new RegExp(`^${letter}`) }).click();
-      } else {
-        await quiz.getByRole('textbox', { name: '輸入答案' }).fill(q.ans);
-        await quiz.getByRole('button', { name: '確認 ⏎', exact: true }).click();
-      }
-      answered++;
-    }
-    await expect(result).toBeVisible();
+    const answered = await finishFormalTest(quiz, 'B2+', b2PlusAnswers());
     await expect(quiz).toContainText('口說未驗證');
     expect(answered).toBeGreaterThan(10);
     await quiz.getByRole('button', { name: '從「雷鳴高原」出發' }).click();
@@ -561,3 +575,63 @@ test('舊跳級存檔補打 A1 魔王才開通關劇情並領重溫券', async (
   await page.getByRole('menuitem', { name: /劇情回顧/ }).click();
   await expect(storyLog.getByRole('button', { name: /通關/ })).toContainText('已領取');
 });
+
+
+const day = 86_400_000;
+const retestTime = new Date('2026-11-27T09:00:00+08:00');
+
+for (const [index, [width, height]] of viewports.entries()) {
+  const outcome = ['低分關閉', '低分去序章', '同級續玩'][index];
+  test(`正式重測 ${outcome} 保留跳級驗證和七天冷卻 ${width}x${height}`, async ({ page }, testInfo) => {
+    test.setTimeout(60_000);
+    await page.setViewportSize({ width, height });
+    await page.clock.install({ time: retestTime });
+    const region = 6;
+    const frontier = 24;
+    const previous = {
+      level: 7, region, at: +retestTime - 7 * day + 60_000, verifiedAt: +retestTime - 6 * day,
+      verified: true, speakingVerified: true, confidence: 'ok', weak: [], lastReviewAt: +retestTime - day, reviewPassed: true,
+      placementQuestionKeys: ['original-formal-item'],
+    };
+    await seedAdvancedPlayer(page, region, frontier, bossPlayerLevels[region], [regionStoryId(region)], { placement: previous });
+    await page.goto('/englearningapp/');
+    const openQuiz = () => page.getByRole('button', { name: /程度測驗/ }).click();
+    const quiz = page.getByRole('dialog', { name: /程度測驗/ });
+    const start = quiz.getByRole('button', { name: '開始測驗' });
+    await openQuiz();
+    await expect(start).toBeDisabled();
+    await page.clock.fastForward(61_000);
+    await expect(start).toBeEnabled();
+    const same = index === 2;
+    await quiz.getByRole('button', { name: same ? '不錯' : '幾乎不會', exact: true }).click();
+    await start.click();
+    const count = await finishFormalTest(quiz, same ? 'B2+' : 'Pre-A1', same ? b2PlusAnswers() : () => false);
+    await expect(quiz).toContainText('既有驗證紀錄會保留');
+    const after = await readSave(page);
+    expect(after.lastPlacementTest).toMatchObject({ level: same ? 7 : 0, speakingVerified: false });
+    expect(after.lastPlacementTest.questionKeys).toHaveLength(count);
+    expect(after.placement).toMatchObject({ ...previous, placementQuestionKeys: expect.arrayContaining(['original-formal-item']) });
+    expect(after.unlockedIndex).toBe(region);
+    await page.screenshot({ path: testInfo.outputPath('placement-retest.png'), animations: 'disabled', timeout: 5000 });
+
+    if (index === 0) await quiz.getByRole('button', { name: '關閉' }).click();
+    if (index === 1) {
+      await quiz.getByRole('button', { name: '先去「失語邊境」' }).click();
+      await expect(page.getByRole('dialog', { name: '故事' })).toBeVisible();
+    }
+    if (same) {
+      await quiz.getByRole('button', { name: '繼續目前征途' }).click();
+      await expect(page.locator('.answer-panel')).toBeVisible();
+      expect(await activeStage(page)).toBe(frontier);
+    }
+
+    await page.reload();
+    const restored = await readSave(page);
+    expect(restored.lastPlacementTest).toEqual(after.lastPlacementTest);
+    expect(restored.placement).toEqual(after.placement);
+    expect(restored.levelProgress[bossLevelKeys[region]]).toBe(frontier);
+    await openQuiz();
+    await expect(start).toBeDisabled();
+    await expect(quiz).toContainText('完整測驗每 7 天可以免費重測一次');
+  });
+}

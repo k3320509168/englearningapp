@@ -56,7 +56,7 @@ import type { WorldBossReward } from '../game/worldBoss';
 
 // 玩家存檔（存在瀏覽器 localStorage）。
 // 修改資料結構時：SAVE_VERSION +1，並在 migrateSave 補上舊版轉換，避免舊存檔壞掉。
-export const SAVE_VERSION = 26;
+export const SAVE_VERSION = 27;
 
 // 錯題本＝間隔重複（SRS）的複習清單：box 越高，下次複習間隔越長
 export interface MistakeRecord {
@@ -104,6 +104,15 @@ export interface PlacementRecord {
   reviewWeak?: string[];    // 回顧未通過時的弱項
 }
 
+export interface PlacementDiagnostic {
+  at: number;
+  level: number;
+  speakingVerified: boolean;
+  confidence: 'ok' | 'low';
+  weak: string[];
+  questionKeys: string[];
+}
+
 interface SaveData {
   // 玩家自創的主角；null 代表還沒建立（第一次進入遊戲會先開角色創建）
   character: Character | null;
@@ -112,6 +121,7 @@ interface SaveData {
   prologueDone: boolean;
   // 程度測驗 v1.6 的結果：跳級的玩家在該區（含之後）戰鬥時至少以該區最低推薦等級計算，通過區域試煉才正式補等級
   placement: PlacementRecord | null;
+  lastPlacementTest: PlacementDiagnostic | null;
   // 每個區域目前打到第幾關（stage index），離開後回來從這裡繼續
   levelProgress: Record<string, number>;
   micAsked: boolean;
@@ -227,6 +237,7 @@ interface SaveActions {
   setTutorialDone: (done: boolean) => void;
   finishPrologue: () => void;
   setPlacement: (rec: PlacementRecord) => void;
+  recordPlacementDiagnostic: (rec: PlacementDiagnostic) => void;
   verifyPlacement: (regionIdx: number, speakingVerified?: boolean) => void;
   recordPlacementReview: (passed: boolean, weak: string[], questionKeys?: string[]) => void;
   addGold: (amount: number) => void;
@@ -299,6 +310,7 @@ export const initialSave: SaveData = {
   unlockedIndex: 0,
   prologueDone: false,
   placement: null,
+  lastPlacementTest: null,
   levelProgress: {},
   micAsked: false,
   mistakes: {},
@@ -492,6 +504,19 @@ export function migrateSave(persisted: unknown, version: number): SaveData {
         ? [...new Set(keys.filter(key => typeof key === 'string' && key.length > 0 && key.length <= 4096))].slice(-256)
         : undefined,
     };
+  }
+  const lastDiagnostic = migrated.lastPlacementTest;
+  if (lastDiagnostic !== null) {
+    migrated.lastPlacementTest = isPlainObject(lastDiagnostic) && Number.isFinite(lastDiagnostic.at)
+      && Number.isInteger(lastDiagnostic.level) && lastDiagnostic.level >= 0 && lastDiagnostic.level <= 9
+      && typeof lastDiagnostic.speakingVerified === 'boolean'
+      && (lastDiagnostic.confidence === 'ok' || lastDiagnostic.confidence === 'low')
+      ? { ...lastDiagnostic,
+          weak: Array.isArray(lastDiagnostic.weak) ? lastDiagnostic.weak.filter(w => w === 'speaking' || w === 'writing') : [],
+          questionKeys: Array.isArray(lastDiagnostic.questionKeys) ? [...new Set(lastDiagnostic.questionKeys
+            .filter(k => typeof k === 'string' && k.length > 0 && k.length <= 4096))].slice(-256) : [],
+        }
+      : null;
   }
   if (migrated.weekly !== null && !(isPlainObject(migrated.weekly) && Array.isArray(migrated.weekly.tasks))) migrated.weekly = null;
   // 數量類的紀錄：去掉不是數字的項目，負數改成 0；等級至少 1
@@ -802,6 +827,13 @@ export const useSaveStore = create<SaveData & SaveActions>()(
         setTutorialDone: (done) => set({ tutorialDone: done }),
         finishPrologue: () => set({ prologueDone: true }),
         setPlacement: (rec) => set({ placement: rec }),
+        recordPlacementDiagnostic: (rec) => set(s => ({
+          lastPlacementTest: rec,
+          ...(s.placement && { placement: {
+            ...s.placement,
+            placementQuestionKeys: [...new Set([...(s.placement.placementQuestionKeys ?? []), ...rec.questionKeys])].slice(-256),
+          } }),
+        })),
         // 通過推薦區域（或之後）的區域試煉：跳級驗證完成，主角一次補到推薦區域的最低推薦等級
         verifyPlacement: (regionIdx, speakingVerified) => set(s => {
           const p = s.placement;
@@ -1467,7 +1499,7 @@ export const useSaveStore = create<SaveData & SaveActions>()(
       merge: (persisted, current) => (isPlainObject(persisted) ? { ...current, ...migrateSave(persisted, SAVE_VERSION) } : current),
       partialize: (s) => ({
         character: s.character, _weaponBossBackfilled: s._weaponBossBackfilled,
-        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
+        unlockedIndex: s.unlockedIndex, prologueDone: s.prologueDone, placement: s.placement, lastPlacementTest: s.lastPlacementTest, levelProgress: s.levelProgress, micAsked: s.micAsked, mistakes: s.mistakes, codex: s.codex, knowledge: s.knowledge, mapMastery: s.mapMastery, firstClearXpClaimed: s.firstClearXpClaimed, learningXpDay: s.learningXpDay, xpLedger: s.xpLedger, bossDown: s.bossDown, strictTrials: s.strictTrials, settings: s.settings,
         tutorialDone: s.tutorialDone, gold: s.gold, upgrades: s.upgrades, items: s.items, heroes: s.heroes, party: s.party,
         tickets: s.tickets, summonCounter: s.summonCounter, weaponTickets: s.weaponTickets, weapons: s.weapons, weaponShards: s.weaponShards, weaponCounter: s.weaponCounter, heroShards: s.heroShards, heroTier: s.heroTier,
         heroStars: s.heroStars, wishShards: s.wishShards, shardQuizDay: s.shardQuizDay, rushDay: s.rushDay, rushRuns: s.rushRuns, xpAllowanceDay: s.xpAllowanceDay, xpAllowanceGold: s.xpAllowanceGold, xpAllowanceRemainder: s.xpAllowanceRemainder, towerFloor: s.towerFloor,

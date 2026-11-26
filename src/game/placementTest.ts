@@ -55,6 +55,7 @@ export interface PlacementState {
   passed: number[];
   failed: number[];
   used: string[];
+  previousQuestionKeys: ReadonlySet<string>;
   confirm: { speaking: LevelResult; writing: LevelResult };
   speakingVerified: boolean;
   startedAt: number;
@@ -67,31 +68,35 @@ export const placementQuestionKey = (q: Question) => `${q.type}|${q.desc}|${q.sp
 
 const key = placementQuestionKey;
 
-function take(pool: Question[], n: number, used: Set<string>, rand: () => number): Question[] {
-  return shuffleArray(pool.filter(q => !used.has(key(q))), rand).slice(0, n);
+function take(pool: Question[], n: number, used: Set<string>, rand: () => number, previous: ReadonlySet<string>): Question[] {
+  const available = shuffleArray(pool.filter(q => !used.has(key(q))), rand);
+  const fresh = available.filter(q => !previous.has(key(q)));
+  return fresh.length >= n ? fresh.slice(0, n)
+    : [...fresh, ...available.filter(q => previous.has(key(q)))].slice(0, n);
 }
 
 // 一批聽讀：單數批 3 讀 2 聽、雙數批 2 讀 3 聽（補題 3 題混合）
-function probeBatch(level: number, batchNo: number, size: number, used: Set<string>, rand: () => number, pool: Question[][]): Question[] {
+function probeBatch(level: number, batchNo: number, size: number, used: Set<string>, rand: () => number, pool: Question[][], previous: ReadonlySet<string>): Question[] {
   const list = pool[level];
   const reading = size === BATCH_SIZE ? (batchNo % 2 === 0 ? 3 : 2) : 2;
-  const r = take(list.filter(isReading), reading, used, rand);
+  const r = take(list.filter(isReading), reading, used, rand, previous);
   r.forEach(q => used.add(key(q)));
-  const l = take(list.filter(isListening), size - r.length, used, rand);
+  const l = take(list.filter(isListening), size - r.length, used, rand, previous);
   // 聽力也要立即記錄，否則後續同級批次可能重出已經回答過的題目。
   l.forEach(q => used.add(key(q)));
   return shuffleArray([...r, ...l], rand);
 }
 
-export function startPlacement(start = PLACEMENT_START, opts: { voice?: boolean; rand?: () => number; now?: number; pool?: Question[][] } = {}): PlacementState {
+export function startPlacement(start = PLACEMENT_START, opts: { voice?: boolean; rand?: () => number; now?: number; pool?: Question[][]; previousQuestionKeys?: string[] } = {}): PlacementState {
   const rand = opts.rand ?? Math.random;
   const pool = opts.pool ?? POOL;
   const level = Math.min(Math.max(0, start), maxTestable(pool));
   const used = new Set<string>();
-  const queue = probeBatch(level, 0, BATCH_SIZE, used, rand, pool);
+  const previousQuestionKeys = new Set(opts.previousQuestionKeys);
+  const queue = probeBatch(level, 0, BATCH_SIZE, used, rand, pool, previousQuestionKeys);
   return {
     phase: 'probe', level, queue, batchCorrect: 0, batchTotal: 0, extra: false, batches: 0, probed: 0,
-    results: {}, passed: [], failed: [], used: [...used, ...queue.map(key)],
+    results: {}, passed: [], failed: [], used: [...used], previousQuestionKeys,
     confirm: { speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 } },
     speakingVerified: opts.voice ?? true, startedAt: opts.now ?? Date.now(), result: null, confidence: 'ok', weak: [],
   };
@@ -144,7 +149,7 @@ function afterBatch(s: PlacementState, rand: () => number, pool: Question[][], n
 
   const outOfTime = now - s.startedAt >= TIME_LIMIT_MS;
   if (!decided) {
-    const extra = probeBatch(s.level, next.batches, EXTRA_SIZE, used, rand, pool);
+    const extra = probeBatch(s.level, next.batches, EXTRA_SIZE, used, rand, pool, s.previousQuestionKeys);
     if (extra.length && next.probed + extra.length <= MAX_PROBE_QUESTIONS && !outOfTime) {
       return { ...next, extra: true, queue: extra, used: [...used] };
     }
@@ -162,7 +167,7 @@ function afterBatch(s: PlacementState, rand: () => number, pool: Question[][], n
   // 下一批：依答對數升降，但只在「最高通過」與「最低未通過」之間找
   let level = Math.min(Math.max(s.level + step, hi + 1), lo - 1);
   level = Math.min(Math.max(0, level), top);
-  const queue = probeBatch(level, next.batches, BATCH_SIZE, used, rand, pool);
+  const queue = probeBatch(level, next.batches, BATCH_SIZE, used, rand, pool, s.previousQuestionKeys);
   if (queue.length === 0) return toConfirm({ ...next, confidence: 'low' }, rand, pool);
   return { ...next, level, queue, used: [...used] };
 }
@@ -179,7 +184,7 @@ function toConfirm(s: PlacementState, rand: () => number, pool: Question[][]): P
   const pick = (filter: (q: Question) => boolean) => {
     const out: Question[] = [];
     for (const lv of [at, at, Math.max(1, at - 1), Math.min(top, at + 1)]) {
-      const q = take(pool[lv].filter(filter), 1, used, rand)[0] ?? take(pool[at].filter(filter), 1, used, rand)[0];
+      const q = take(pool[lv].filter(filter), 1, used, rand, s.previousQuestionKeys)[0] ?? take(pool[at].filter(filter), 1, used, rand, s.previousQuestionKeys)[0];
       if (q) { used.add(key(q)); out.push(q); }
     }
     return out;

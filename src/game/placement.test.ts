@@ -81,3 +81,18 @@ describe('測驗的同義寫法（M4）', () => {
     expect(checkQuizAnswer({ type: 'spell', desc: '請拼出：開始', ans: 'START' }, 'star')).toBe(false);
   });
 });
+
+
+it('正式重測保留既有試煉、回顧和前線，並可由 v27 存檔復原', () => {
+  const placement = { level: 7, region: 6, at: 1, verified: true, verifiedAt: 2, speakingVerified: true,
+    confidence: 'ok' as const, weak: [], lastReviewAt: 3, reviewPassed: true, placementQuestionKeys: ['old'] };
+  const diagnostic = { level: 0, at: 4, speakingVerified: false, confidence: 'low' as const, weak: [], questionKeys: ['new'] };
+  useSaveStore.setState({ ...initialSave, placement, unlockedIndex: 6 });
+  useSaveStore.getState().recordPlacementDiagnostic(diagnostic);
+  const saved = useSaveStore.persist.getOptions().partialize!(useSaveStore.getState());
+  const restored = migrateSave(JSON.parse(JSON.stringify(saved)), SAVE_VERSION);
+  expect(restored).toMatchObject({
+    unlockedIndex: 6, placement: { ...placement, placementQuestionKeys: ['old', 'new'] }, lastPlacementTest: diagnostic,
+  });
+  expect(migrateSave({ placement }, 26).lastPlacementTest).toBeNull();
+});

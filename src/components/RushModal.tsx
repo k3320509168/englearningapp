@@ -6,6 +6,7 @@ import { checkQuizAnswer } from '../game/placement';
 import { useSaveStore } from '../store/saveStore';
 import { useUiStore } from '../store/uiStore';
 import { useSpeak } from './useSpeak';
+import { useRegionBankReady } from './useRegionBankReady';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
 import { quickSpellingExtra } from '../game/questionHelp';
@@ -16,6 +17,7 @@ import { answerLabel } from '../game/answerLabel';
 export default function RushModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const save = useSaveStore();
+  const bankReady = useRegionBankReady(save.unlockedIndex);
   const today = new Date().toDateString();
   const runsLeft = RUSH_PER_DAY - (save.rushDay === today ? save.rushRuns : 0);
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -33,7 +35,7 @@ export default function RushModal() {
   const q = questions?.[idx % (questions?.length || 1)];
 
   const start = () => {
-    if (runRef.current) return;
+    if (!bankReady || runRef.current) return;
     const deck = rushQuestions(save.codex, save.unlockedIndex);
     if (!deck.length) return;
     const attempt = save.startRush();
@@ -97,7 +99,7 @@ export default function RushModal() {
           <p>優先出你學過的題目，題量不足時以當區基礎題補足。{RUSH_SECONDS} 秒內答越多越好！答錯不扣血，但會斷連擊。答對越多、連擊越高，金幣、經驗和礦石越多。</p>
           <p className="muted">口說題在快答模式以拼寫練習，不作口說驗證；前兩次至少獲得150金幣與1礦石。</p>
           <p className="muted">今天還可以挑戰 {Math.max(0, runsLeft)} / {RUSH_PER_DAY} 次</p>
-          <button className="btn btn-primary" onMouseDown={keepFocus} disabled={runsLeft <= 0} onClick={start}>{runsLeft > 0 ? '開始！' : '今天的次數用完了'}</button>
+          <button className="btn btn-primary" onMouseDown={keepFocus} disabled={runsLeft <= 0 || !bankReady} onClick={start}>{runsLeft <= 0 ? '今天的次數用完了' : bankReady ? '開始！' : '載入題庫中…'}</button>
         </>
       )}
       {questions && !done && q && (

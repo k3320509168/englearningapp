@@ -71,3 +71,68 @@ for (const [width, height] of viewports) {
     await page.screenshot({ path: testInfo.outputPath('cloud-conflict.png'), animations: 'disabled', timeout: 5000 });
   });
 }
+
+for (const [width, height] of viewports) {
+  test(`弱網首次開圖及三種當區出題入口 ${width}x${height}`, async ({ page }, testInfo) => {
+    await page.setViewportSize({ width, height });
+    page.setDefaultTimeout(12_000);
+    let releaseBank!: () => void;
+    const held = new Promise<void>(resolve => { releaseBank = resolve; });
+    const requestedBanks = new Set<string>();
+    await page.route(/\/questions\/bank\/(?:vocab-)?r[0-9]\.json(?:\?|$)/, async route => {
+      const filename = new URL(route.request().url()).pathname.split('/').pop()!;
+      requestedBanks.add(filename);
+      if (filename === 'r6.json') await held;
+      await route.continue();
+    });
+    await page.addInitScript(character => {
+      localStorage.setItem('english-rpg-save', JSON.stringify({ version: 27, state: {
+        character, prologueDone: true, tutorialDone: true, unlockedIndex: 6,
+        gold: 1234, materials: { ore: 50 }, equipment: [{ uid: 'test-equip', defId: 'blade_training', plus: 5 }],
+        settings: { musicVolume: 0, sfxVolume: 0, volume: 0, autoSpeak: false, voiceAsSpelling: true },
+      } }));
+    }, DEFAULT_CHARACTER);
+    const dialog = page.getByRole('dialog');
+    const close = () => dialog.getByLabel('關閉', { exact: true }).click();
+    const waiting = () => expect(dialog.getByRole('button', { name: '載入題庫中…' })).toBeDisabled();
+    const openRush = async () => {
+      await page.getByRole('button', { name: /副本與挑戰/ }).click();
+      await page.getByRole('button', { name: /極速挑戰/ }).click();
+    };
+    const openShard = async () => {
+      await page.getByRole('button', { name: /任務/ }).click();
+      await page.getByRole('button', { name: /每日碎片英文題/ }).click();
+    };
+    try {
+      await page.goto('/englearningapp/', { waitUntil: 'domcontentloaded' });
+      await expect.poll(() => requestedBanks.has('r6.json')).toBe(true);
+      await openRush();
+      await waiting();
+      await close();
+      await openShard();
+      await waiting();
+      await close();
+      await page.getByRole('button', { name: /成長/ }).click();
+      await dialog.getByRole('tab', { name: '裝備', exact: true }).click();
+      await dialog.getByRole('button', { name: /神聖鍛造/ }).click();
+      await waiting();
+      await page.screenshot({ path: testInfo.outputPath('bank-loading.png'), animations: 'disabled' });
+      releaseBank();
+      await dialog.getByRole('button', { name: '開始挑戰', exact: true }).click();
+      await expect(dialog).toContainText('第 1 / 3 題');
+      await close();
+      await close();
+      await openShard();
+      await dialog.getByRole('button', { name: /開始每日碎片挑戰/ }).click();
+      await expect(dialog).toContainText('第 1 / 5 題');
+      await close();
+      await openRush();
+      await expect(dialog).toContainText('3 / 3 次');
+      await dialog.getByRole('button', { name: '開始！' }).click();
+      await expect(dialog.locator('.q-desc')).toBeVisible();
+      expect([...requestedBanks].sort()).toEqual(['r6.json', 'vocab-r6.json']);
+    } finally {
+      releaseBank();
+    }
+  });
+}

@@ -15,7 +15,7 @@ import { powerVerdict, recommendedLevel, recommendedPower, teamPower } from '../
 import { previewParty } from '../store/battleStore';
 import { materialIcon, materialName } from '../game/equipment';
 import { regionMastery } from '../game/knowledge';
-import { loadBank } from '../game/questions/bank/loader';
+import { useRegionBankReady } from './useRegionBankReady';
 import { SealPanel } from './GateTrialModal';
 
 // 區域地圖：5 張地圖沿著小路排列，主角站在目前的地圖上。
@@ -163,9 +163,8 @@ export default function RegionModal() {
 // 守門人：魔王打倒了、下一區還沒開——顯示封印進度和區域試煉的入口
 function GateKeeper({ regionIdx }: { regionIdx: number }) {
   const knowledge = useSaveStore(s => s.knowledge);
-  const [ready, setReady] = useState(false);
+  const ready = useRegionBankReady(regionIdx);
   const [now] = useState(() => Date.now());
-  useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
   if (!ready) return null;
   const mastery = regionMastery(regionIdx, knowledge, now);
   return (

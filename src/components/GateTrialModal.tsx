@@ -10,7 +10,7 @@ import { STRICT_TRIALS_PER_DAY, TRIAL_PASS, TRIAL_SKILLS, TRIAL_STRICT, complete
 import type { TrialScore } from '../game/knowledge';
 import { questionSkill } from '../game/QuestionData';
 import { questionKey } from '../game/battle';
-import { loadBank } from '../game/questions/bank/loader';
+import { useRegionBankReady } from './useRegionBankReady';
 import type { Question, QuestionSkill } from '../game/types';
 import { keepFocus } from './keepFocus';
 import { grammarName } from '../game/grammar';
@@ -27,7 +27,7 @@ export default function GateTrialModal() {
   const { level, knowledge, codex, bossDown, strictTries, skipRegions } = useSaveStore(useShallow(s => ({ level: s.player.level, knowledge: s.knowledge, codex: s.codex, bossDown: s.bossDown, strictTries: s.strictTrials[regionIdx], skipRegions: s.skipRegions })));
   const region = REGIONS[regionIdx];
   const next = REGIONS[regionIdx + 1];
-  const [ready, setReady] = useState(false);
+  const ready = useRegionBankReady(regionIdx);
   const [now, setNow] = useState(() => Date.now());
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [round, setRound] = useState(0);
@@ -36,8 +36,6 @@ export default function GateTrialModal() {
   const [incomplete, setIncomplete] = useState(false);
   const [hasFallback, setHasFallback] = useState(false);
   const [attemptStrict, setAttemptStrict] = useState<boolean | null>(null);
-
-  useEffect(() => { loadBank(regionIdx).then(() => setReady(true)); }, [regionIdx]);
 
   const beaten = bossDown.includes(regionIdx);
   const mastery = ready ? regionMastery(regionIdx, knowledge, now) : null;

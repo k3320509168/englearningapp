@@ -8,6 +8,7 @@ import { shuffleArray, voiceFallback } from '../game/battle';
 import type { Question } from '../game/types';
 import { sfx } from '../game/sfx';
 import { keepFocus } from './keepFocus';
+import { useRegionBankReady } from './useRegionBankReady';
 
 // 每日碎片英文題：從目前最前線區域出 5 題，每答對一題得到 2 片願望碎片（任何英雄升星、升品階都能用）
 function pickQuestions(levelIdx: number): Question[] {
@@ -19,6 +20,7 @@ export default function ShardQuizModal() {
   const closeModal = useUiStore(s => s.closeModal);
   const openModal = useUiStore(s => s.openModal);
   const { unlockedIndex, shardQuizDay, wishShards, finishShardQuiz } = useSaveStore();
+  const bankReady = useRegionBankReady(unlockedIndex);
   const doneToday = shardQuizDay === new Date().toDateString();
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [score, setScore] = useState({ answered: 0, correct: 0 });
@@ -85,7 +87,7 @@ export default function ShardQuizModal() {
               className="btn btn-primary"
               style={{ width: '100%', maxWidth: 300, padding: 12 }}
               onMouseDown={keepFocus}
-              disabled={doneToday}
+              disabled={doneToday || !bankReady}
               onClick={() => {
                 setQuestions(pickQuestions(unlockedIndex));
                 setScore({ answered: 0, correct: 0 });
@@ -93,7 +95,7 @@ export default function ShardQuizModal() {
                 sfx.click();
               }}
             >
-              {doneToday ? '今日已完成，明日 00:00 刷新' : '⚔️ 開始每日碎片挑戰'}
+              {doneToday ? '今日已完成，明日 00:00 刷新' : bankReady ? '⚔️ 開始每日碎片挑戰' : '載入題庫中…'}
             </button>
           </div>
         </div>

@@ -155,7 +155,7 @@ it.each(['local', 'cloud'] as const)('兩邊都有進度須先等選擇，保留
   const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
   c.useSaveStore.setState({ character: { ...DEFAULT_CHARACTER, name: '本地' }, gold: 100 });
   mock.listener!('SIGNED_OUT', null);
-  mock.fetch.mockResolvedValueOnce({ data: {
+  mock.fetch.mockResolvedValue({ data: {
     data: { state: { ...structuredClone(initialSave), character: { ...DEFAULT_CHARACTER, name: '雲端' }, gold: 900 }, version: SAVE_VERSION },
     updated_at: '2026-11-22T00:00:00Z',
   }, error: null });
@@ -361,4 +361,109 @@ it('衝突時遠端遭移除，解除過期對話並保留本地，不會卡住�
   await c.uploadNow();
   expect(mock.write.mock.calls[1][1].kind).toBe('insert');
   expect(mock.write.mock.calls[1][0].data.state.gold).toBe(150);
+});
+
+async function setupConflict() {
+  const c = await setup();
+  const data = { state: { gold: 900 }, version: 27 };
+  const snapshot = { data, updatedAt: 'visible-revision' };
+  c.useCloudStore.setState({
+    status: 'conflict', conflict: { local: c.summarize({ gold: 100 }), cloud: c.summarize(data.state), snapshot },
+  });
+  return { c, snapshot };
+}
+
+it('選雲端時遠端版本有變，先展示新版本並保留本地，第二次確認後才套用', async () => {
+  const { c, snapshot } = await setupConflict();
+  const data = { ...snapshot.data, state: { gold: 1200 } };
+  mock.fetch.mockResolvedValue({ data: { data, updated_at: 'new-revision' }, error: null });
+  const before = localStorage.getItem(c.SAVE_KEY);
+  await c.resolveConflict('cloud');
+  expect(localStorage.getItem(c.SAVE_KEY)).toBe(before);
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'conflict', conflict: { cloud: { gold: 1200 },
+    snapshot: { updatedAt: 'new-revision' }, notice: '雲端已有更新，請重新比較兩份存檔。' } });
+  await c.resolveConflict('cloud');
+  expect(c.useSaveStore.getState().gold).toBe(1200);
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'idle', conflict: null, lastSync: 'new-revision' });
+  expect(mock.write).not.toHaveBeenCalled();
+});
+
+it('選雲端等待期間本地存檔變動，保留新進度並重新比較', async () => {
+  const { c, snapshot } = await setupConflict();
+  const wait = deferred<{ data: unknown; error: null }>();
+  mock.fetch.mockReturnValueOnce(wait.promise);
+  const choose = c.resolveConflict('cloud');
+  c.useSaveStore.getState().addGold(50);
+  wait.resolve({ data: { data: snapshot.data, updated_at: snapshot.updatedAt }, error: null });
+  await choose;
+  expect(c.useSaveStore.getState().gold).toBe(150);
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'conflict', conflict: { local: { gold: 150 },
+    notice: '這台裝置已有更新，請重新比較兩份存檔。' } });
+});
+
+it.each(['rejection', 'response'])('選雲端遇到斷線 %s 仍可重新確認，遠端消失時保留本地且等手動重建', async kind => {
+  const { c, snapshot } = await setupConflict();
+  if (kind === 'rejection') mock.fetch.mockRejectedValueOnce(new Error('offline'));
+  else mock.fetch.mockResolvedValueOnce({ data: null, error: { message: 'offline' } });
+  await c.resolveConflict('cloud');
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'error', error: 'offline', conflict: { snapshot } });
+  expect(c.useSaveStore.getState().gold).toBe(100);
+  await c.resolveConflict('cloud');
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'error', conflict: null });
+  expect(c.useSaveStore.getState().gold).toBe(100);
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(mock.write).not.toHaveBeenCalled();
+  await c.uploadNow();
+  expect(mock.write.mock.calls[0][1].kind).toBe('insert');
+});
+
+it('選雲端等待新版本時登出，遲到的存檔不會覆蓋本地', async () => {
+  const { c, snapshot } = await setupConflict();
+  const wait = deferred<{ data: unknown; error: null }>();
+  mock.fetch.mockReturnValueOnce(wait.promise);
+  const choose = c.resolveConflict('cloud');
+  mock.listener!('SIGNED_OUT', null);
+  wait.resolve({ data: { data: snapshot.data, updated_at: snapshot.updatedAt }, error: null });
+  await choose;
+  expect(c.useSaveStore.getState().gold).toBe(100);
+  expect(c.useCloudStore.getState()).toMatchObject({ user: null, status: 'signedOut', conflict: null });
+});
+
+it('衝突畫面確認期間鎖定選項，斷線可重試，遠端版本變動須再確認', async () => {
+  const { c, snapshot } = await setupConflict();
+  const { createElement, act } = await import('react');
+  const { createRoot } = await import('react-dom/client');
+  const { CloudConflict } = await import('../src/components/CloudSave');
+  vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
+  const container = document.createElement('div');
+  document.body.append(container);
+  const root = createRoot(container);
+  try {
+    await act(async () => root.render(createElement(CloudConflict)));
+    const buttons = () => [...container.querySelectorAll('button')];
+    const chooseCloud = () => act(async () => buttons()[0].click());
+    const wait = deferred<{ data: unknown; error: null }>();
+    mock.fetch.mockReturnValueOnce(wait.promise);
+    await chooseCloud();
+    expect(buttons()).toHaveLength(2);
+    expect(buttons().every(button => button.disabled)).toBe(true);
+    await act(async () => wait.reject(new Error('offline')));
+    expect(container.querySelector('[role=alert]')?.textContent).toContain('offline');
+    expect(buttons().every(button => !button.disabled)).toBe(true);
+
+    const data = { ...snapshot.data, state: { gold: 1200 } };
+    mock.fetch.mockResolvedValue({ data: { data, updated_at: 'recent' }, error: null });
+    await chooseCloud();
+    expect(container.querySelector('[role=status]')?.textContent).toContain('重新比較');
+    expect(buttons()[0].textContent).toContain('1200');
+    expect(c.useSaveStore.getState().gold).toBe(100);
+    await chooseCloud();
+    expect(container.querySelector('[role=dialog]')).toBeNull();
+    expect(c.useSaveStore.getState().gold).toBe(1200);
+    expect(mock.write).not.toHaveBeenCalled();
+  } finally {
+    await act(async () => root.unmount());
+    container.remove();
+    vi.unstubAllGlobals();
+  }
 });

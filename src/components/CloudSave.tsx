@@ -68,21 +68,21 @@ export function CloudSection() {
 export function CloudConflict() {
   const conflict = useCloudStore(s => s.conflict);
   const error = useCloudStore(s => s.status === 'error' ? s.error : '');
-  const [busy, setBusy] = useState(false);
+  const busy = useCloudStore(s => s.status === 'syncing');
   if (!conflict) return null;
-  const choose = async (keep: 'local' | 'cloud') => { setBusy(true); await resolveConflict(keep); setBusy(false); };
   return (
     <div className="modal-backdrop">
       <div className="modal" role="dialog" aria-label="選擇要保留的存檔">
         <header className="modal-head"><h2>☁️ 選擇要保留的存檔</h2></header>
         <div className="modal-body">
           <p>雲端和這台裝置都有新的進度，請選一份保留（另一份會被覆蓋）：</p>
+          {conflict.notice && !error && <p className="muted" role="status">{conflict.notice}</p>}
           {error && <p className="voice-error" role="alert">同步未完成：{error}。兩份進度仍保留，請重試選擇。</p>}
           <div className="conflict-grid">
-            <button className="conflict-card" disabled={busy} onMouseDown={keepFocus} onClick={() => void choose('cloud')}>
+            <button className="conflict-card" disabled={busy} onMouseDown={keepFocus} onClick={() => void resolveConflict('cloud')}>
               <b>☁️ 雲端的存檔</b><span>{describe(conflict.cloud)}</span><small className="muted">最後更新 {timeText(conflict.cloud.updatedAt)}</small>
             </button>
-            <button className="conflict-card" disabled={busy} onMouseDown={keepFocus} onClick={() => void choose('local')}>
+            <button className="conflict-card" disabled={busy} onMouseDown={keepFocus} onClick={() => void resolveConflict('local')}>
               <b>💻 這台裝置的存檔</b><span>{describe(conflict.local)}</span><small className="muted">選這份會上傳並取代雲端</small>
             </button>
           </div>

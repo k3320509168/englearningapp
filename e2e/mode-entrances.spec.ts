@@ -38,3 +38,36 @@ for (const [width, height, region] of viewports.flatMap(([width, height]) =>
     expect(errors).toEqual([]);
   });
 }
+
+for (const [width, height] of viewports) {
+  test(`雲端存檔版本變動提示和兩份比較卡 ${width}x${height}`, async ({ page }, testInfo) => {
+    await page.setViewportSize({ width, height });
+    await page.addInitScript(character => {
+      if (localStorage.getItem('english-rpg-save')) return;
+      localStorage.setItem('english-rpg-save', JSON.stringify({ version: 27, state: {
+        character, prologueDone: true, tutorialDone: true,
+        settings: { musicVolume: 0, sfxVolume: 0, volume: 0, autoSpeak: false, voiceAsSpelling: true },
+      } }));
+    }, DEFAULT_CHARACTER);
+    await page.goto('/englearningapp/');
+    await page.evaluate(async () => {
+      const entry = document.querySelector<HTMLScriptElement>('script[type="module"][src*="/src/main.tsx"]');
+      if (!entry) throw Error('找不到 Vite 遊戲入口');
+      const modulePath = new URL('./cloud/cloudSave.ts', entry.src).href;
+      const { useCloudStore } = await import(modulePath);
+      const updatedAt = '2026-11-27T08:12:30.000Z';
+      const data = { state: { character: { name: '雲端測試勇者' } }, version: 27 };
+      useCloudStore.setState({ status: 'conflict', conflict: {
+        local: { name: '本機測試勇者', level: 17, regions: 1, gold: 450 },
+        cloud: { name: '雲端測試勇者', level: 121, regions: 6, gold: 2200, updatedAt },
+        snapshot: { data, updatedAt }, notice: '雲端已有更新，請重新比較兩份存檔。',
+      } });
+    });
+    const dialog = page.getByRole('dialog', { name: '選擇要保留的存檔' });
+    await expect(dialog.getByRole('status')).toContainText('重新比較');
+    await expect(dialog.getByRole('button', { name: /雲端的存檔.*2200/ })).toBeVisible();
+    await expect(dialog.getByRole('button', { name: /這台裝置的存檔.*450/ })).toBeVisible();
+    expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
+    await page.screenshot({ path: testInfo.outputPath('cloud-conflict.png'), animations: 'disabled', timeout: 5000 });
+  });
+}

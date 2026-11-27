@@ -31,7 +31,7 @@ interface CloudState {
   lastSync: string | null;
   error: string;
   loginError: string; // 點登入連結失敗（連結過期、已使用過等）時顯示給玩家
-  conflict: { local: SaveSummary; cloud: SaveSummary; snapshot: CloudSnapshot } | null;
+  conflict: { local: SaveSummary; cloud: SaveSummary; snapshot: CloudSnapshot; notice?: string } | null;
 }
 export const useCloudStore = create<CloudState>()(() => ({
   status: cloudEnabled ? 'signedOut' : 'off', user: null, lastSync: null, error: '', loginError: '', conflict: null,
@@ -57,8 +57,19 @@ const isEmptySave = (state: Record<string, unknown> | undefined) => !state?.char
 
 async function fetchCloud(userId: string): Promise<CloudSnapshot | null> {
   const { data, error } = await supabase!.from('saves').select('data, updated_at').eq('user_id', userId).maybeSingle();
-  if (error) throw error;
+  if (error) throw new Error(error.message);
   return data ? { data: data.data, updatedAt: data.updated_at } : null;
+}
+
+function showConflict(snapshot: CloudSnapshot, notice?: string) {
+  setCloud({ status: 'conflict', error: '', conflict: {
+    local: summarize(readLocal()?.state), cloud: summarize(snapshot.data.state, snapshot.updatedAt), snapshot, notice,
+  } });
+}
+
+function cloudRemoved(userId: string) {
+  rememberMeta({ userId, syncedAt: '', dirty: true });
+  setCloud({ status: 'error', conflict: null, error: '雲端存檔已移除，已保留本地進度。請按「立即上傳」重新建立。' });
 }
 
 export async function uploadNow(expectedCloudTime?: string | null): Promise<void> {
@@ -93,17 +104,9 @@ export async function uploadNow(expectedCloudTime?: string | null): Promise<void
       if ((!error && !written) || (!expected && error?.code === '23505')) {
         const latest = await fetchCloud(user.id);
         if (!current()) return;
-        if (!latest) {
-          rememberMeta({ userId: user.id, syncedAt: '', dirty: true });
-          setCloud({ conflict: null });
-          throw new Error('雲端存檔已移除，已保留本地進度；請按「立即上傳」重新建立。');
-        }
-        const latestLocal = readLocal();
+        if (!latest) return cloudRemoved(user.id);
         rememberMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
-        setCloud({ status: 'conflict', conflict: {
-          local: summarize(latestLocal?.state), cloud: summarize(latest.data.state, latest.updatedAt), snapshot: latest,
-        } });
-        return;
+        return showConflict(latest, expectedCloudTime !== undefined ? '雲端已有更新，請重新比較兩份存檔。' : undefined);
       }
       if (error) throw new Error(error.message);
       if (!written?.updated_at) throw new Error('伺服器未回傳存檔版本，請重新同步。');
@@ -146,14 +149,27 @@ export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
 
 // 衝突時玩家選了要留哪一份
 export async function resolveConflict(keep: 'local' | 'cloud'): Promise<void> {
-  const c = useCloudStore.getState().conflict;
-  if (!c) return;
+  const { conflict, user, status } = useCloudStore.getState();
+  if (!conflict || !user || status === 'syncing') return;
+  if (keep === 'local') return uploadNow(conflict.snapshot.updatedAt);
+
   const generation = authGeneration;
+  const current = () => generation === authGeneration && useCloudStore.getState().user?.id === user.id;
+  setCloud({ status: 'syncing', error: '' });
   try {
-    if (keep === 'cloud') await applyCloud(c.snapshot);
-    else await uploadNow(c.snapshot.updatedAt);
+    const localBefore = localStorage.getItem(SAVE_KEY);
+    const latest = await fetchCloud(user.id);
+    if (!current()) return;
+    if (!latest) return cloudRemoved(user.id);
+    if (latest.updatedAt !== conflict.snapshot.updatedAt) {
+      return showConflict(latest, '雲端已有更新，請重新比較兩份存檔。');
+    }
+    if (localStorage.getItem(SAVE_KEY) !== localBefore) {
+      return showConflict(latest, '這台裝置已有更新，請重新比較兩份存檔。');
+    }
+    await applyCloud(latest);
   } catch (e) {
-    if (generation === authGeneration) setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
+    if (current()) setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });
   }
 }
 
@@ -177,10 +193,7 @@ async function syncOnLogin(user: User) {
     if (!cloudChanged) return localChanged ? uploadNow() : setCloud({ status: 'idle', lastSync: cloud.updatedAt });
     if (!localChanged) return await applyCloud(cloud);
     // 兩邊都有新進度：讓玩家選
-    setCloud({
-      status: 'conflict',
-      conflict: { local: summarize(local.state), cloud: summarize(cloud.data.state, cloud.updatedAt), snapshot: cloud },
-    });
+    showConflict(cloud);
   } catch (e) {
     if (generation !== authGeneration || useCloudStore.getState().user?.id !== user.id) return;
     setCloud({ status: 'error', error: e instanceof Error ? e.message : String(e) });

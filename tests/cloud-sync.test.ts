@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import type { AuthChangeEvent, Session, User } from '@supabase/supabase-js';
+import { DEFAULT_CHARACTER } from '../src/game/character';
 
 const mock = vi.hoisted(() => ({
   write: vi.fn(), fetch: vi.fn(),
@@ -41,7 +42,7 @@ const user = { id: 'test-player' } as User;
 async function setup(revision: string | null = 'old') {
   const cloud = await import('../src/cloud/cloudSave');
   const { useSaveStore, initialSave } = await import('../src/store/saveStore');
-  useSaveStore.setState({ ...structuredClone(initialSave), gold: 100 });
+  useSaveStore.setState({ ...structuredClone(initialSave), character: DEFAULT_CHARACTER, gold: 100 });
   if (revision !== null) localStorage.setItem('english-rpg-cloud', JSON.stringify({ userId: user.id, syncedAt: revision, dirty: true }));
   cloud.initCloud();
   cloud.useCloudStore.setState({ user, status: 'idle' });
@@ -151,7 +152,6 @@ it('登入下載尚未完成就登出，不得套用遲到的雲端進度', asyn
 
 it.each(['local', 'cloud'] as const)('兩邊都有進度須先等選擇，保留 %s 才執行對應動作', async keep => {
   const c = await setup();
-  const { DEFAULT_CHARACTER } = await import('../src/game/character');
   const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
   c.useSaveStore.setState({ character: { ...DEFAULT_CHARACTER, name: '本地' }, gold: 100 });
   mock.listener!('SIGNED_OUT', null);
@@ -189,7 +189,7 @@ it('下載的舊日期存檔換日後保留 dirty 並補傳每日進度', async 
   const c = await setup();
   vi.setSystemTime(new Date(2026, 10, 23, 9));
   const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
-  await c.applyCloud({ data: { state: structuredClone(initialSave), version: SAVE_VERSION }, updatedAt: 'old-cloud' });
+  await c.applyCloud({ data: { state: { ...structuredClone(initialSave), character: DEFAULT_CHARACTER }, version: SAVE_VERSION }, updatedAt: 'old-cloud' });
   expect(c.useSaveStore.getState().daily?.date).toBe('2026-11-23');
   expect(JSON.parse(localStorage.getItem('english-rpg-cloud')!).dirty).toBe(true);
   await vi.advanceTimersByTimeAsync(5000);
@@ -221,6 +221,104 @@ it('本地與雲端皆無存檔的登入不會卡在同步中，後續進度可�
   await vi.advanceTimersByTimeAsync(5000);
   expect(mock.write).toHaveBeenCalledTimes(1);
   expect(mock.write.mock.calls[0][0].data.state.gold).toBe(180);
+});
+
+it('已寫入日常但尚未建角，手動與自動同步均不建立空白副本', async () => {
+  const c = await setup();
+  mock.listener!('SIGNED_OUT', null);
+  c.useSaveStore.setState({ character: null, gold: 0 });
+  c.useSaveStore.getState().ensureDaily();
+  mock.listener!('SIGNED_IN', { user } as Session);
+  await vi.advanceTimersByTimeAsync(0);
+  await c.uploadNow();
+  c.useSaveStore.setState(s => ({ settings: { ...s.settings, musicVolume: 0 } }));
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(mock.write).not.toHaveBeenCalled();
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'idle', lastSync: null });
+  c.useSaveStore.setState({ character: DEFAULT_CHARACTER });
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(mock.write).toHaveBeenCalledExactlyOnceWith(
+    expect.objectContaining({ data: expect.objectContaining({ state: expect.objectContaining({ character: DEFAULT_CHARACTER }) }) }),
+    { kind: 'insert', filters: {} },
+  );
+});
+
+it.each([false, true])('舊空白快照保留本機設定與日常，有角色才條件上傳（已建角 %s）', async created => {
+  const c = await setup();
+  const { initialSave } = await import('../src/store/saveStore');
+  mock.listener!('SIGNED_OUT', null);
+  c.useSaveStore.setState(structuredClone(initialSave));
+  c.useSaveStore.getState().ensureDaily();
+  const remote = JSON.parse(localStorage.getItem(c.SAVE_KEY)!);
+  remote.state = Object.fromEntries(Object.entries(remote.state).reverse());
+  mock.fetch.mockResolvedValueOnce({ data: { data: remote, updated_at: 'blank' }, error: null });
+  c.useSaveStore.setState(s => ({ character: created ? DEFAULT_CHARACTER : null, settings: { ...s.settings, musicVolume: 0 } }));
+  mock.listener!('SIGNED_IN', { user } as Session);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(c.useSaveStore.getState().settings.musicVolume).toBe(0);
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'idle', conflict: null });
+  if (!created) {
+    expect(mock.write).not.toHaveBeenCalled();
+    expect(c.useCloudStore.getState().lastSync).toBeNull();
+    c.useSaveStore.setState({ character: DEFAULT_CHARACTER });
+    await vi.advanceTimersByTimeAsync(5000);
+  }
+  expect(mock.write).toHaveBeenCalledTimes(1);
+  expect(mock.write.mock.calls[0][1]).toEqual({ kind: 'update', filters: { user_id: user.id, updated_at: 'blank' } });
+});
+
+it('已有日常空檔的新裝置可直接下載真正的雲端角色', async () => {
+  const c = await setup();
+  const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
+  mock.listener!('SIGNED_OUT', null);
+  c.useSaveStore.setState(structuredClone(initialSave));
+  c.useSaveStore.getState().ensureDaily();
+  mock.fetch.mockResolvedValueOnce({
+    data: {
+      data: { state: { ...initialSave, character: { ...DEFAULT_CHARACTER, name: '原有主角' }, gold: 900 }, version: SAVE_VERSION },
+      updated_at: 'played',
+    },
+    error: null,
+  });
+  mock.listener!('SIGNED_IN', { user } as Session);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(c.useSaveStore.getState()).toMatchObject({ character: { name: '原有主角' }, gold: 900 });
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'idle', lastSync: 'played', conflict: null });
+  expect(mock.write).not.toHaveBeenCalled();
+});
+
+it('已讀到的空白雲端版本被另一台寫入進度時，保留兩邊存檔', async () => {
+  const c = await setup();
+  const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
+  mock.listener!('SIGNED_OUT', null);
+  mock.fetch.mockResolvedValueOnce({
+    data: { data: { state: initialSave, version: SAVE_VERSION }, updated_at: 'blank' }, error: null,
+  }).mockResolvedValueOnce({
+    data: { data: { state: { ...initialSave, character: DEFAULT_CHARACTER, gold: 900 }, version: SAVE_VERSION }, updated_at: 'played' }, error: null,
+  });
+  mock.write.mockResolvedValueOnce({ data: null, error: null });
+  mock.listener!('SIGNED_IN', { user } as Session);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(mock.write).toHaveBeenCalledTimes(1);
+  expect(mock.write.mock.calls[0][1].filters.updated_at).toBe('blank');
+  expect(c.useSaveStore.getState().gold).toBe(100);
+  expect(c.useCloudStore.getState()).toMatchObject({ status: 'conflict', conflict: { cloud: { gold: 900 }, snapshot: { updatedAt: 'played' } } });
+});
+
+it.each(['future', 'progress', 'missing'] as const)('無法確認是空白的雲端紀錄（%s）不會自動覆寫', async kind => {
+  const c = await setup();
+  const { initialSave, SAVE_VERSION } = await import('../src/store/saveStore');
+  mock.listener!('SIGNED_OUT', null);
+  const data = kind === 'future' ? { state: initialSave, version: SAVE_VERSION + 1 }
+    : kind === 'progress' ? { state: { ...initialSave, gold: 900 }, version: SAVE_VERSION }
+    : null;
+  mock.fetch.mockResolvedValue({ data: { data, updated_at: 'different' }, error: null });
+  mock.listener!('SIGNED_IN', { user } as Session);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(c.useCloudStore.getState().status).toBe(kind === 'progress' ? 'conflict' : 'error');
+  await c.uploadNow();
+  expect(mock.write).not.toHaveBeenCalled();
+  expect(c.useSaveStore.getState().gold).toBe(100);
 });
 
 it('另一裝置先寫入時，條件更新不得覆蓋遠端；玩家選本地後才用新版本更新', async () => {

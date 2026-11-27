@@ -54,7 +54,7 @@ export function CloudSection() {
     <>
       <p>已登入：<b>{user.email}</b></p>
       <p className="muted">
-        {status === 'syncing' ? '☁️ 同步中…' : status === 'error' ? `⚠️ 同步失敗：${error}` : status === 'conflict' ? '⚠️ 雲端與這台裝置的進度不同，請選擇要保留哪一份' : `✅ 已同步（${timeText(lastSync)}）`}
+        {status === 'syncing' ? '☁️ 同步中…' : status === 'error' ? `⚠️ 同步失敗：${error}` : status === 'conflict' ? '⚠️ 雲端與這台裝置的進度不同，請選擇要保留哪一份' : lastSync ? `✅ 已同步（${timeText(lastSync)}）` : '☁️ 尚無已同步的角色存檔'}
       </p>
       <div className="feedback-actions">
         <button className="btn btn-small" onMouseDown={keepFocus} onClick={() => void uploadNow()} disabled={status === 'syncing' || status === 'conflict'}>☁️ 立即上傳</button>

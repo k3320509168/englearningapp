@@ -1,7 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 import type { SupabaseClient, User } from '@supabase/supabase-js';
 import { create } from 'zustand';
-import { SAVE_VERSION, migrateSave, useSaveStore } from '../store/saveStore';
+import { applyDailyEvent, refreshDaily, refreshWeekly } from '../game/daily';
+import { SAVE_VERSION, initialSave, migrateSave, useSaveStore } from '../store/saveStore';
 
 // 雲端存檔（Supabase）：登入是選擇性的，不登入照常玩、存檔只在這個瀏覽器。
 // 登入後存檔自動上傳；換裝置登入時下載。兩邊都有新進度時，讓玩家選要留哪一份。
@@ -52,8 +53,33 @@ export function summarize(state: Record<string, unknown> | undefined, updatedAt?
   return { name: s.character?.name ?? '（未建立主角）', level: s.player?.level ?? 1, regions: s.unlockedIndex ?? 0, gold: s.gold ?? 0, updatedAt };
 }
 
-// 新玩家的空存檔（還沒建立主角）不必跟雲端比較
-const isEmptySave = (state: Record<string, unknown> | undefined) => !state?.character;
+function hasReadableEnvelope(data: { state: Record<string, unknown>; version: number } | null | undefined) {
+  return !!data?.state && typeof data.state === 'object' && !Array.isArray(data.state)
+    && Number.isInteger(data.version) && data.version >= 0 && data.version <= SAVE_VERSION;
+}
+
+// Supabase JSONB 不保證欄位順序。空白快照只接受目前版本、完整的初始資料與首次登入的日常。
+function sortedJson(value: unknown): string {
+  return JSON.stringify(value, (_key, item) => {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return item;
+    return Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]]));
+  });
+}
+
+function isCloudPlaceholder(snapshot: CloudSnapshot): boolean {
+  const { state, version } = snapshot.data;
+  if (version !== SAVE_VERSION || state.character !== null) return false;
+  const { daily, weekly } = state;
+  const ignored = { settings: null, daily: null, weekly: null };
+  if (sortedJson({ ...state, ...ignored }) !== sortedJson({ ...initialSave, ...ignored })) return false;
+  if (daily === null && weekly === null) return true;
+  const date = (daily as { date?: unknown } | null)?.date;
+  if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+  return sortedJson(daily) === sortedJson(refreshDaily(undefined, date))
+    && sortedJson(weekly) === sortedJson(applyDailyEvent(refreshWeekly(null, date), 'login', 1));
+}
+
+const unreadableSave = '雲端存檔格式或版本無法讀取，已保留這台裝置的進度。';
 
 async function fetchCloud(userId: string): Promise<CloudSnapshot | null> {
   const { data, error } = await supabase!.from('saves').select('data, updated_at').eq('user_id', userId).maybeSingle();
@@ -78,11 +104,13 @@ export async function uploadNow(expectedCloudTime?: string | null): Promise<void
   if (!supabase || !user) return;
   if (loginSyncPending) return syncOnLogin(user);
   if (conflict && expectedCloudTime === undefined) return;
-  // 新裝置尚未產生本地存檔；保持可監聽狀態，之後建角／作答才會自動排傳。
-  if (!local) return setCloud({ status: 'idle' });
   const generation = authGeneration;
   // 手動同步、備份匯入與自動計時器可能同時觸發，避免同帳號快照倒序抵達。
   if (uploadInFlight?.generation === generation && uploadInFlight.userId === user.id) return uploadInFlight.promise;
+  if (!local?.state?.character) {
+    if (conflict) return setCloud({ status: 'error', error: '這台裝置目前沒有可上傳的角色存檔。' });
+    return setCloud({ status: 'idle', lastSync: null, error: '' });
+  }
   window.clearTimeout(uploadTimer);
   const current = () => authGeneration === generation && useCloudStore.getState().user?.id === user.id;
   const promise = (async () => {
@@ -105,6 +133,11 @@ export async function uploadNow(expectedCloudTime?: string | null): Promise<void
         const latest = await fetchCloud(user.id);
         if (!current()) return;
         if (!latest) return cloudRemoved(user.id);
+        if (!hasReadableEnvelope(latest.data)) throw new Error(unreadableSave);
+        if (isCloudPlaceholder(latest)) {
+          rememberMeta({ userId: user.id, syncedAt: latest.updatedAt, dirty: true });
+          return setCloud({ status: 'error', conflict: null, error: '發現尚未建立角色的雲端存檔。請按「立即上傳」同步這台裝置的角色。' });
+        }
         rememberMeta({ userId: user.id, syncedAt: meta?.userId === user.id ? meta.syncedAt : '', dirty: true });
         return showConflict(latest, expectedCloudTime !== undefined ? '雲端已有更新，請重新比較兩份存檔。' : undefined);
       }
@@ -133,7 +166,7 @@ export async function applyCloud(snapshot: CloudSnapshot): Promise<void> {
   const generation = authGeneration;
   const data = parseSaveCode(JSON.stringify(snapshot.data));
   if (!data) {
-    setCloud({ status: 'error', error: '雲端存檔格式或版本無法讀取，已保留這台裝置的進度。' });
+    setCloud({ status: 'error', error: unreadableSave });
     return;
   }
   localStorage.setItem(SAVE_KEY, JSON.stringify(data));
@@ -161,6 +194,7 @@ export async function resolveConflict(keep: 'local' | 'cloud'): Promise<void> {
     const latest = await fetchCloud(user.id);
     if (!current()) return;
     if (!latest) return cloudRemoved(user.id);
+    if (!hasReadableEnvelope(latest.data)) throw new Error(unreadableSave);
     if (latest.updatedAt !== conflict.snapshot.updatedAt) {
       return showConflict(latest, '雲端已有更新，請重新比較兩份存檔。');
     }
@@ -178,15 +212,27 @@ async function syncOnLogin(user: User) {
   const generation = ++authGeneration;
   loginSyncPending = true;
   window.clearTimeout(uploadTimer);
-  setCloud({ user, status: 'syncing', error: '', conflict: null });
+  setCloud({ user, status: 'syncing', error: '', lastSync: null, conflict: null });
   try {
     const cloud = await fetchCloud(user.id);
     if (generation !== authGeneration || useCloudStore.getState().user?.id !== user.id) return;
     loginSyncPending = false;
     const local = readLocal();
     const meta = knownMeta;
-    if (!cloud) return uploadNow(null);                              // 雲端還沒有：建立，不覆蓋
-    if (!local || isEmptySave(local.state)) return await applyCloud(cloud); // 這台是新裝置：直接下載
+    if (!cloud) {
+      rememberMeta({ userId: user.id, syncedAt: '', dirty: true });
+      return uploadNow(null);
+    }
+    if (!hasReadableEnvelope(cloud.data)) {
+      loginSyncPending = true;
+      throw new Error(unreadableSave);
+    }
+    if (isCloudPlaceholder(cloud)) {
+      // 先記下空白版本，後續建角或斷線重試仍可在比對後更新。
+      rememberMeta({ userId: user.id, syncedAt: cloud.updatedAt, dirty: true });
+      return uploadNow(cloud.updatedAt);
+    }
+    if (!local?.state?.character) return await applyCloud(cloud);
     const sameDevice = meta?.userId === user.id;
     const cloudChanged = !sameDevice || cloud.updatedAt !== meta?.syncedAt;
     const localChanged = !sameDevice || (meta?.dirty ?? true);
@@ -323,8 +369,7 @@ export function parseSaveCode(code: string): { state: Record<string, unknown>; v
     const raw = code.trim();
     const text = raw.startsWith('{') ? raw : new TextDecoder().decode(Uint8Array.from(atob(raw), c => c.charCodeAt(0)));
     const data = JSON.parse(text);
-    if (!data || typeof data !== 'object' || !data.state || typeof data.state !== 'object' || Array.isArray(data.state)) return null;
-    if (!Number.isInteger(data.version) || data.version < 0 || data.version > SAVE_VERSION) return null;
+    if (!hasReadableEnvelope(data)) return null;
     // 補齊欄位、檢查型別，壞掉的欄位改回預設值；轉成目前的存檔版本
     const state = migrateSave(data.state, data.version) as unknown as Record<string, unknown>;
     return { state, version: SAVE_VERSION };

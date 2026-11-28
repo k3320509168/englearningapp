@@ -557,3 +557,5 @@
 - 2026-11-27 Codex × Antigravity｜本機未建角時不上傳空白存檔。支援版本中的初始空白快照可經條件更新替換，已存在的角色和無法識別的資料受到保護。SDK 替身和三尺寸無聲 Chrome 驗收完成，實際帳號與舊客戶端另驗。
 
 - 2026-11-27 Codex × Antigravity（Gemini 4 Hydrogen High）｜首次開圖只載入前線區域。補素材本、碎片題、神聖鍛造等待／關閉重進測試，弱網時不提前開題或扣次數。正式桌面樣本到商隊首題少傳約 3.34 MB，受控手機弱網首題耗時未顯示改善。
+
+- 2026-11-28 製作人指定 Antigravity 為主要程式建構者，Codex 轉任顧問，負責方案、審查與獨立驗收。接手程式基準為 `origin/codex/game-audit-fixes` 的 `0020c18`。分工與待驗項目見 [PM_STATUS](PM_STATUS.md) 和 [驗收佇列](QA_EXECUTION_QUEUE.md)。
